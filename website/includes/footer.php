@@ -11,9 +11,9 @@
         <div>
             <div class="font-medium text-white mb-3">Services</div>
             <div class="space-y-1.5 text-white/70">
-                <a href="pages/services/index.php" class="block hover:text-white font-medium">View all services</a>
+                <a href="/pages/services/index" class="block hover:text-white font-medium">View all services</a>
                 <?php foreach (array_slice($services, 0, 6, true) as $slug => $name): ?>
-                    <a href="pages/services/<?= htmlspecialchars($slug) ?>.php" class="block hover:text-white"><?= htmlspecialchars($name) ?></a>
+                    <a href="/pages/services/<?= htmlspecialchars($slug) ?>" class="block hover:text-white"><?= htmlspecialchars($name) ?></a>
                 <?php endforeach; ?>
             </div>
         </div>
@@ -28,7 +28,7 @@
         </div>
         <div>
             <a href="https://wa.me/<?= WHATSAPP ?>" class="block bg-green-600 hover:bg-green-700 text-center py-3 rounded-2xl font-semibold mb-3">Chat on WhatsApp</a>
-            <a href="contact.php" class="block border border-white/30 hover:bg-white/10 text-center py-3 rounded-2xl">Request a free quote</a>
+            <a href="/contact" class="block border border-white/30 hover:bg-white/10 text-center py-3 rounded-2xl">Request a free quote</a>
             <div class="mt-6 text-[10px] text-white/40">© <?= date('Y') ?> Icomply Property Services. All rights reserved.<br>Serving properties across the United Kingdom (North West focus).</div>
         </div>
     </div>

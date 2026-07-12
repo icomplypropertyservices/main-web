@@ -13,9 +13,9 @@ $areaName = 'Cadishead';
 $areaSlugVal = 'cadishead';
 $pageTitle = 'Nurse Call Systems in Cadishead | UK Install & Cert';
 $metaDesc = 'Nurse Call Systems in Cadishead — install, service & certificates. Stockport UK engineers covering Cadishead. Free quote.';
-$metaKeywords = 'nurse call system installation, nurse call maintenance, HTM 08-03, care home nurse call Cadishead, Cadishead electrician, Cadishead fire safety, Nurse Call Systems Cadishead, Cadishead Nurse Call Systems engineer, Cadishead compliance';
+$metaKeywords = 'nurse call system installation, nurse call maintenance, HTM 08-03, care home nurse call Cadishead, Cadishead renewable energy, Cadishead electrician, Nurse Call Systems Cadishead, Cadishead Nurse Call Systems engineer, Cadishead compliance';
 $ogImage = service_image($serviceSlug);
-$canonicalUrl = site_url("pages/{$serviceSlug}/{$areaSlugVal}.php");
+$canonicalUrl = site_url("pages/{$serviceSlug}/{$areaSlugVal}");
 $ogType = 'article';
 require __DIR__ . '/../../includes/header.php';
 
@@ -32,10 +32,10 @@ $nearby = nearby_areas($areaName, 16);
 $intro = seo_unique_intro($serviceName, $serviceSlug, $areaName);
 $angle = service_local_angle($serviceSlug, $serviceName, $areaName);
 $crumbs = [
-    ['name' => 'Home', 'url' => 'index.php'],
-    ['name' => 'Services', 'url' => 'pages/services/index.php'],
-    ['name' => $serviceName, 'url' => "pages/services/{$serviceSlug}.php"],
-    ['name' => $areaName, 'url' => "pages/{$serviceSlug}/{$areaSlugVal}.php"],
+    ['name' => 'Home', 'url' => '/'],
+    ['name' => 'Services', 'url' => '/pages/services/index'],
+    ['name' => $serviceName, 'url' => "/pages/services/{$serviceSlug}"],
+    ['name' => $areaName, 'url' => "/pages/{$serviceSlug}/{$areaSlugVal}"],
 ];
 $features = service_features($serviceSlug);
 ?>
@@ -51,7 +51,7 @@ $features = service_features($serviceSlug);
         <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Nurse Call Systems in Cadishead</h1>
         <p class="mt-4 max-w-2xl text-lg text-white/90">Install · service · test · certificate for landlords, agents and businesses in Cadishead (<?= htmlspecialchars($profile['districts']) ?>).</p>
         <div class="mt-8 flex flex-wrap gap-3">
-            <a href="contact.php" class="accent-btn px-8 py-3 rounded-2xl font-semibold">Free Cadishead quote</a>
+            <a href="/contact" class="accent-btn px-8 py-3 rounded-2xl font-semibold">Free Cadishead quote</a>
             <a href="tel:<?= PHONE ?>" class="px-8 py-3 rounded-2xl bg-white text-[#0a2540] font-semibold"><?= PHONE ?></a>
             <a href="https://wa.me/<?= WHATSAPP ?>?text=Quote%20for%20Nurse Call Systems%20in%20Cadishead" class="px-8 py-3 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
         </div>
@@ -137,7 +137,7 @@ $features = service_features($serviceSlug);
                 <h2 class="text-2xl font-extrabold">Who we help in Cadishead</h2>
                 <p class="mt-3 text-zinc-600 text-sm leading-relaxed">Landlords, letting agents, RTM companies, care providers, retailers, offices, industrial units and public-sector sites needing dependable Nurse Call Systems across <?= htmlspecialchars($profile['districts']) ?> with clear paperwork and local attendance.</p>
                 <p class="mt-3 text-zinc-600 text-sm leading-relaxed">Tell us storeys, occupancy, existing equipment and access windows — we scope Nurse Call Systems for real Cadishead conditions, not a generic checklist alone.</p>
-                <a href="contact.php" class="inline-block mt-6 accent-btn px-6 py-3 rounded-xl font-semibold">Request Cadishead quote</a>
+                <a href="/contact" class="inline-block mt-6 accent-btn px-6 py-3 rounded-xl font-semibold">Request Cadishead quote</a>
             </div>
         </div>
 
@@ -150,7 +150,7 @@ $features = service_features($serviceSlug);
             <h2 class="text-2xl font-bold mb-3">Book Nurse Call Systems in Cadishead today</h2>
             <p class="text-white/80 mb-6">Speak to a UK compliance specialist. Travel to Cadishead is <?= htmlspecialchars($profile['travel']) ?>.</p>
             <div class="flex flex-wrap gap-3">
-                <a href="contact.php" class="inline-block bg-[#ff6b00] px-8 py-3 rounded-2xl font-semibold">Free quote</a>
+                <a href="/contact" class="inline-block bg-[#ff6b00] px-8 py-3 rounded-2xl font-semibold">Free quote</a>
                 <a href="tel:<?= PHONE ?>" class="inline-block bg-white text-[#0a2540] px-8 py-3 rounded-2xl font-semibold"><?= PHONE ?></a>
                 <a href="https://wa.me/<?= WHATSAPP ?>?text=Quote%20for%20Nurse Call Systems%20in%20Cadishead" class="inline-block border border-white/40 px-8 py-3 rounded-2xl font-semibold">WhatsApp</a>
             </div>
@@ -165,7 +165,7 @@ $features = service_features($serviceSlug);
         'name' => "Nurse Call Systems in Cadishead",
         'serviceType' => 'Nurse Call Systems',
         'description' => $metaDesc,
-        'url' => site_url("pages/{$serviceSlug}/{$areaSlugVal}.php"),
+        'url' => site_url("pages/{$serviceSlug}/{$areaSlugVal}"),
         'image' => service_image($serviceSlug),
         'provider' => ['@id' => site_url() . '#business'],
         'areaServed' => [
@@ -188,7 +188,7 @@ $features = service_features($serviceSlug);
         <h2 class="font-bold text-xl mb-4">Other compliance services in Cadishead</h2>
         <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             <?php foreach ($GLOBALS['services'] as $sSlug => $sName): if ($sSlug === $serviceSlug) continue; ?>
-                <a href="pages/<?= htmlspecialchars($sSlug) ?>/<?= areaSlug($areaName) ?>.php" class="service-card bg-white border rounded-2xl overflow-hidden group">
+                <a href="/pages/<?= htmlspecialchars($sSlug) ?>/<?= areaSlug($areaName) ?>" class="service-card bg-white border rounded-2xl overflow-hidden group">
                     <div class="h-28 overflow-hidden">
                         <img src="assets/images/services/<?= htmlspecialchars($sSlug) ?>-photo.jpg"
                              alt="<?= htmlspecialchars($sName) ?> in Cadishead"
@@ -205,13 +205,13 @@ $features = service_features($serviceSlug);
         <h2 class="font-bold text-xl mb-4">Nurse Call Systems near Cadishead</h2>
         <div class="flex flex-wrap gap-2 text-sm">
             <?php foreach ($nearby as $a): ?>
-                <a href="pages/nurse-call/<?= areaSlug($a) ?>.php" class="px-4 py-1.5 bg-white border rounded-full hover:border-[#ff6b00]"><?= htmlspecialchars($a) ?> Nurse Call Systems</a>
+                <a href="/pages/nurse-call/<?= areaSlug($a) ?>" class="px-4 py-1.5 bg-white border rounded-full hover:border-[#ff6b00]"><?= htmlspecialchars($a) ?> Nurse Call Systems</a>
             <?php endforeach; ?>
         </div>
         <p class="mt-6 text-sm text-zinc-500">
-            <a class="text-[#ff6b00] font-semibold hover:underline" href="pages/services/nurse-call.php">All Nurse Call Systems services</a>
-            · <a class="text-[#ff6b00] font-semibold hover:underline" href="pages/areas/<?= areaSlug($areaName) ?>.php">All compliance in Cadishead</a>
-            · <a class="text-[#ff6b00] font-semibold hover:underline" href="contact.php">Free quote</a>
+            <a class="text-[#ff6b00] font-semibold hover:underline" href="/pages/services/nurse-call">All Nurse Call Systems services</a>
+            · <a class="text-[#ff6b00] font-semibold hover:underline" href="/pages/areas/<?= areaSlug($areaName) ?>">All compliance in Cadishead</a>
+            · <a class="text-[#ff6b00] font-semibold hover:underline" href="/contact">Free quote</a>
         </p>
     </div>
 </section>

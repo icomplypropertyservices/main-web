@@ -18,7 +18,7 @@ require_once __DIR__ . '/../../includes/seo.php';
 $pageTitle = 'Compliance Services North West | EICR & Fire';
 $metaDesc = 'UK property compliance services: EICR, fire alarms, gas, emergency lighting, CCTV & more across Greater Manchester & North West. Free quote.';
 $metaKeywords = 'property compliance services Manchester, EICR, fire alarms, emergency lighting, gas safety, nurse call, CCTV, access control, door entry';
-$canonicalUrl = site_url('pages/services/index.php');
+$canonicalUrl = site_url('pages/services/index');
 require '../../includes/header.php';
 $hubFaqs = [
     ['q' => 'Which compliance service do I need?', 'a' => 'It depends on your property type and legal duties. Landlords often need EICR and gas safety; commercial sites commonly need fire alarms, emergency lighting and sometimes AOV or access control. Tell us the building use and we will recommend the right package.'],
@@ -40,7 +40,7 @@ $hubFaqs = [
     <h2 class="text-2xl font-extrabold mb-8">Browse all 11 compliance services</h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <?php foreach ($GLOBALS['services'] as $slug => $name): ?>
-        <a href="<?= htmlspecialchars($slug) ?>.php" class="service-card bg-white rounded-3xl border group">
+        <a href="<?= htmlspecialchars($slug) ?>" class="service-card bg-white rounded-3xl border group">
             <div class="aspect-[16/10] overflow-hidden bg-zinc-100">
                 <img src="assets/images/services/<?= htmlspecialchars($slug) ?>-photo.jpg"
                      alt="<?= htmlspecialchars($name) ?> services North West UK"
@@ -60,7 +60,7 @@ $hubFaqs = [
     <?= render_faq_section($hubFaqs, 'FAQs about our compliance services') ?>
     
     <div class="mt-16 text-center">
-        <a href="index.php#quote" class="accent-btn inline-block px-10 py-4 rounded-2xl font-semibold">Get a quote for any service</a>
+        <a href="/#quote" class="accent-btn inline-block px-10 py-4 rounded-2xl font-semibold">Get a quote for any service</a>
     </div>
 </section>
 <?php require '../../includes/footer.php'; ?>

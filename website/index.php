@@ -25,7 +25,7 @@ $homeFaqs = [
             <p class="text-lg md:text-xl text-white/85 leading-relaxed max-w-xl">Certified UK engineers for EICR, fire alarms, gas safety, emergency lighting, AOV, nurse call, CCTV and access control — across 150+ North West towns.</p>
             <div class="mt-10 flex flex-wrap gap-4">
                 <a href="#quote" class="accent-btn px-8 py-4 rounded-2xl font-semibold text-lg">Get a free quote</a>
-                <a href="/pages/services/index.php" class="px-8 py-4 rounded-2xl border border-white/50 font-semibold text-lg hover:bg-white/10">Browse services</a>
+                <a href="/pages/services/index" class="px-8 py-4 rounded-2xl border border-white/50 font-semibold text-lg hover:bg-white/10">Browse services</a>
                 <a href="tel:<?= PHONE ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold text-lg">Call <?= PHONE ?></a>
             </div>
             <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
@@ -55,12 +55,12 @@ $homeFaqs = [
             <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mt-2">UK compliance services</h2>
             <p class="mt-3 text-zinc-600 max-w-xl">Installation, maintenance and certification for landlords, property managers and businesses across Greater Manchester and the North West.</p>
         </div>
-        <a href="/pages/services/index.php" class="text-[#ff6b00] font-semibold hover:underline">View all services →</a>
+        <a href="/pages/services/index" class="text-[#ff6b00] font-semibold hover:underline">View all services →</a>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         <?php foreach ($services as $slug => $name): ?>
-        <a href="/pages/services/<?= htmlspecialchars($slug) ?>.php" class="service-card bg-white rounded-3xl border group">
+        <a href="/pages/services/<?= htmlspecialchars($slug) ?>" class="service-card bg-white rounded-3xl border group">
             <div class="aspect-[16/10] overflow-hidden bg-zinc-100">
                 <img src="/assets/images/services/<?= htmlspecialchars($slug) ?>-photo.jpg"
                      alt="<?= htmlspecialchars($name) ?> services in the UK — North West"
@@ -89,7 +89,7 @@ $homeFaqs = [
             <p class="mt-4 text-white/80 text-lg leading-relaxed">From Stockport and Manchester to Liverpool, Preston, Blackpool and Chester — we send local engineers who know UK building regs and British Standards.</p>
             <div class="mt-8 flex flex-wrap gap-2">
                 <?php foreach (['Manchester','Stockport','Bolton','Oldham','Rochdale','Liverpool','Preston','Warrington'] as $a): ?>
-                    <a href="/pages/fire-alarms/<?= areaSlug($a) ?>.php" class="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm hover:bg-white/20"><?= $a ?></a>
+                    <a href="/pages/fire-alarms/<?= areaSlug($a) ?>" class="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm hover:bg-white/20"><?= $a ?></a>
                 <?php endforeach; ?>
             </div>
         </div>
@@ -202,7 +202,7 @@ $homeFaqs = [
                 <img src="/assets/images/heroes/contact-hero.jpg" alt="Modern UK commercial buildings" class="w-full h-64 object-cover" loading="lazy">
             </div>
         </div>
-        <form action="/contact.php" method="POST" class="bg-white p-8 md:p-10 rounded-3xl border shadow-sm space-y-5" aria-labelledby="quote-heading">
+        <form action="/contact" method="POST" class="bg-white p-8 md:p-10 rounded-3xl border shadow-sm space-y-5" aria-labelledby="quote-heading">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <label for="quote-name" class="block text-xs font-semibold text-zinc-500 mb-1">Full name</label>

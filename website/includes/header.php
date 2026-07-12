@@ -67,20 +67,20 @@ $__seoImage = $ogImage ?? site_url('assets/images/og-image.jpg');
 <body class="bg-zinc-50 text-zinc-900">
 <nav class="bg-white/95 backdrop-blur border-b sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
-        <a href="index.php" class="flex items-center gap-3 min-w-0">
+        <a href="/" class="flex items-center gap-3 min-w-0">
             <span class="w-10 h-10 rounded-xl bg-[#0a2540] text-white flex items-center justify-center font-bold text-sm shrink-0">IC</span>
             <span class="font-semibold text-lg tracking-tight truncate"><?= SITE_NAME ?></span>
         </a>
 
         <div class="hidden lg:flex items-center gap-7 text-sm font-medium">
-            <a href="index.php" class="nav-link">Home</a>
-            <a href="pages/services/index.php" class="nav-link">All Services</a>
+            <a href="/" class="nav-link">Home</a>
+            <a href="/pages/services/index" class="nav-link">All Services</a>
 
             <div class="relative group">
                 <button type="button" class="nav-link flex items-center gap-1">Services <span class="text-xs text-zinc-400">▼</span></button>
                 <div class="absolute hidden group-hover:block bg-white shadow-xl rounded-2xl py-2 w-72 mt-2 border z-50">
                     <?php foreach ($services as $slug => $name): ?>
-                        <a href="pages/services/<?= htmlspecialchars($slug) ?>.php" class="flex items-center gap-3 px-4 py-2.5 hover:bg-zinc-50">
+                        <a href="/pages/services/<?= htmlspecialchars($slug) ?>" class="flex items-center gap-3 px-4 py-2.5 hover:bg-zinc-50">
                             <img src="assets/images/services/<?= htmlspecialchars($slug) ?>-photo.jpg" alt="<?= htmlspecialchars($name) ?>" class="w-10 h-10 rounded-lg object-cover" width="40" height="40" loading="lazy"
                                  onerror="this.src='assets/images/services/<?= htmlspecialchars($slug) ?>.png'">
                             <span><?= htmlspecialchars($name) ?></span>
@@ -96,20 +96,20 @@ $__seoImage = $ogImage ?? site_url('assets/images/og-image.jpg');
                     $primaryServiceSlug = 'fire-alarms';
                     $primaryServiceName = $services[$primaryServiceSlug] ?? 'Fire Alarms';
                     foreach (array_slice($areas, 0, 40) as $area): ?>
-                        <a href="pages/<?= htmlspecialchars($primaryServiceSlug) ?>/<?= areaSlug($area) ?>.php" class="block px-5 py-1.5 hover:bg-zinc-50 text-sm"><?= htmlspecialchars($area) ?> <?= htmlspecialchars($primaryServiceName) ?></a>
+                        <a href="/pages/<?= htmlspecialchars($primaryServiceSlug) ?>/<?= areaSlug($area) ?>" class="block px-5 py-1.5 hover:bg-zinc-50 text-sm"><?= htmlspecialchars($area) ?> <?= htmlspecialchars($primaryServiceName) ?></a>
                     <?php endforeach; ?>
                     <div class="px-5 py-2 text-xs text-zinc-500 border-t">+ <?= count($areas) - 40 ?> more towns across the North West</div>
                 </div>
             </div>
 
-            <a href="contact.php" class="nav-link">Contact</a>
+            <a href="/contact" class="nav-link">Contact</a>
             <a href="https://wa.me/<?= WHATSAPP ?>" target="_blank" rel="noopener" class="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-full text-xs font-semibold">WhatsApp</a>
             <a href="tel:<?= PHONE ?>" class="px-4 py-2 modern-btn rounded-full text-xs font-semibold"><?= PHONE ?></a>
         </div>
 
         <div class="lg:hidden flex items-center gap-2">
             <a href="tel:<?= PHONE ?>" class="px-3 py-2 modern-btn rounded-full text-xs font-semibold">Call</a>
-            <a href="contact.php" class="px-3 py-2 border rounded-full text-xs font-semibold">Quote</a>
+            <a href="/contact" class="px-3 py-2 border rounded-full text-xs font-semibold">Quote</a>
         </div>
     </div>
 </nav>

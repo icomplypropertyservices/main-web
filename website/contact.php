@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-emerald-500 text-white flex items-center justify-center text-2xl font-bold">OK</div>
                     <h3 class="font-bold text-xl">Thank you — request received</h3>
                     <p class="mt-2 text-emerald-700">A member of the team will contact you within 2 hours on business days.</p>
-                    <a href="index.php" class="inline-block mt-6 modern-btn px-6 py-3 rounded-xl font-semibold">Back to home</a>
+                    <a href="/" class="inline-block mt-6 modern-btn px-6 py-3 rounded-xl font-semibold">Back to home</a>
                 </div>
             <?php else: ?>
                 <h2 class="font-bold text-2xl mb-2">Request a free quote</h2>

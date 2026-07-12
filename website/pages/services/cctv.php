@@ -12,7 +12,7 @@ $pageTitle = 'CCTV Systems North West | Install & Service';
 $metaDesc = 'CCTV Systems across Greater Manchester & North West UK. Install, service & certification. Stockport engineers. Free quote.';
 $metaKeywords = 'CCTV installation, IP CCTV system, commercial CCTV, video surveillance, CCTV Systems Manchester, CCTV Systems Stockport, CCTV Systems North West';
 $ogImage = service_image($serviceSlug);
-$canonicalUrl = site_url("pages/services/{$serviceSlug}.php");
+$canonicalUrl = site_url("pages/services/{$serviceSlug}");
 require __DIR__ . '/../../includes/header.php';
 $features = service_features($serviceSlug);
 $faqs = service_faqs($serviceSlug, $serviceName, '');
@@ -21,9 +21,9 @@ $standards = service_standards($serviceSlug);
 $priority = ['Manchester','Stockport','Bolton','Salford','Oldham','Rochdale','Liverpool','Preston','Blackpool','Chester','Warrington','Wigan','Burnley','Blackburn','Macclesfield','Crewe','Lancaster','Bury','St Helens','Southport','Chorley','Wilmslow','Altrincham','Sale'];
 $topAreas = array_values(array_unique(array_merge($priority, array_slice($GLOBALS['areas'], 0, 40))));
 $crumbs = [
-    ['name' => 'Home', 'url' => 'index.php'],
-    ['name' => 'Services', 'url' => 'pages/services/index.php'],
-    ['name' => $serviceName, 'url' => "pages/services/{$serviceSlug}.php"],
+    ['name' => 'Home', 'url' => '/'],
+    ['name' => 'Services', 'url' => '/pages/services/index'],
+    ['name' => $serviceName, 'url' => "/pages/services/{$serviceSlug}"],
 ];
 ?>
 <section class="relative text-white py-16 md:py-20 overflow-hidden">
@@ -35,7 +35,7 @@ $crumbs = [
         <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">CCTV Systems services</h1>
         <p class="mt-4 max-w-2xl text-lg text-white/90">Expert CCTV Systems installation, servicing, maintenance and certification for landlords, agents and businesses across Manchester, Stockport, Bolton, Liverpool, Preston and 140+ North West towns.</p>
         <div class="mt-8 flex flex-wrap gap-3">
-            <a href="contact.php" class="accent-btn px-8 py-3 rounded-2xl font-semibold">Free quote</a>
+            <a href="/contact" class="accent-btn px-8 py-3 rounded-2xl font-semibold">Free quote</a>
             <a href="tel:<?= PHONE ?>" class="px-8 py-3 rounded-2xl bg-white text-[#0a2540] font-semibold"><?= PHONE ?></a>
             <a href="#areas" class="px-8 py-3 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Areas covered</a>
         </div>
@@ -73,7 +73,7 @@ $crumbs = [
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Certificates and reports suitable for landlords &amp; insurers</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> One contractor for multi-discipline compliance works</li>
             </ul>
-            <a href="contact.php" class="inline-block mt-6 modern-btn px-6 py-3 rounded-xl font-semibold w-max">Book CCTV Systems</a>
+            <a href="/contact" class="inline-block mt-6 modern-btn px-6 py-3 rounded-xl font-semibold w-max">Book CCTV Systems</a>
         </div>
     </div>
 
@@ -84,7 +84,7 @@ $crumbs = [
         <p class="text-zinc-600 text-sm mb-5">Jump to a local landing page optimised for CCTV Systems in that area.</p>
         <div class="flex flex-wrap gap-2 text-sm">
             <?php foreach ($topAreas as $a): ?>
-                <a href="pages/cctv/<?= areaSlug($a) ?>.php" class="px-4 py-1.5 bg-white border rounded-full hover:border-[#ff6b00]"><?= htmlspecialchars($a) ?></a>
+                <a href="/pages/cctv/<?= areaSlug($a) ?>" class="px-4 py-1.5 bg-white border rounded-full hover:border-[#ff6b00]"><?= htmlspecialchars($a) ?></a>
             <?php endforeach; ?>
         </div>
     </div>
@@ -92,7 +92,7 @@ $crumbs = [
     <div class="mt-14 bg-zinc-900 text-white p-10 rounded-3xl text-center">
         <h2 class="text-2xl font-bold">Need CCTV Systems this week?</h2>
         <p class="mt-2 text-white/80">Get a free quote — typical response within 2 business hours.</p>
-        <a href="contact.php" class="inline-block mt-6 accent-btn px-10 py-4 rounded-2xl font-semibold">Request free quote</a>
+        <a href="/contact" class="inline-block mt-6 accent-btn px-10 py-4 rounded-2xl font-semibold">Request free quote</a>
     </div>
 </section>
 
@@ -103,7 +103,7 @@ $crumbs = [
     'name' => $serviceName,
     'serviceType' => $serviceName,
     'description' => $metaDesc,
-    'url' => site_url("pages/services/{$serviceSlug}.php"),
+    'url' => site_url("pages/services/{$serviceSlug}"),
     'image' => service_image($serviceSlug),
     'provider' => ['@id' => site_url() . '#business'],
     'areaServed' => 'North West England',

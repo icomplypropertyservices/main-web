@@ -13,9 +13,9 @@ $areaName = 'Longridge';
 $areaSlugVal = 'longridge';
 $pageTitle = 'CCTV Systems in Longridge | UK Install & Cert';
 $metaDesc = 'CCTV Systems in Longridge — install, service & certificates. Stockport UK engineers covering Longridge. Free quote.';
-$metaKeywords = 'CCTV installation, IP CCTV system, commercial CCTV, video surveillance Longridge, Longridge electrician, Longridge fire safety, CCTV Systems Longridge, Longridge CCTV Systems engineer, Longridge compliance';
+$metaKeywords = 'CCTV installation, IP CCTV system, commercial CCTV, video surveillance Longridge, Longridge renewable energy, Longridge electrician, CCTV Systems Longridge, Longridge CCTV Systems engineer, Longridge compliance';
 $ogImage = service_image($serviceSlug);
-$canonicalUrl = site_url("pages/{$serviceSlug}/{$areaSlugVal}.php");
+$canonicalUrl = site_url("pages/{$serviceSlug}/{$areaSlugVal}");
 $ogType = 'article';
 require __DIR__ . '/../../includes/header.php';
 
@@ -32,10 +32,10 @@ $nearby = nearby_areas($areaName, 16);
 $intro = seo_unique_intro($serviceName, $serviceSlug, $areaName);
 $angle = service_local_angle($serviceSlug, $serviceName, $areaName);
 $crumbs = [
-    ['name' => 'Home', 'url' => 'index.php'],
-    ['name' => 'Services', 'url' => 'pages/services/index.php'],
-    ['name' => $serviceName, 'url' => "pages/services/{$serviceSlug}.php"],
-    ['name' => $areaName, 'url' => "pages/{$serviceSlug}/{$areaSlugVal}.php"],
+    ['name' => 'Home', 'url' => '/'],
+    ['name' => 'Services', 'url' => '/pages/services/index'],
+    ['name' => $serviceName, 'url' => "/pages/services/{$serviceSlug}"],
+    ['name' => $areaName, 'url' => "/pages/{$serviceSlug}/{$areaSlugVal}"],
 ];
 $features = service_features($serviceSlug);
 ?>
@@ -51,7 +51,7 @@ $features = service_features($serviceSlug);
         <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">CCTV Systems in Longridge</h1>
         <p class="mt-4 max-w-2xl text-lg text-white/90">Install · service · test · certificate for landlords, agents and businesses in Longridge (<?= htmlspecialchars($profile['districts']) ?>).</p>
         <div class="mt-8 flex flex-wrap gap-3">
-            <a href="contact.php" class="accent-btn px-8 py-3 rounded-2xl font-semibold">Free Longridge quote</a>
+            <a href="/contact" class="accent-btn px-8 py-3 rounded-2xl font-semibold">Free Longridge quote</a>
             <a href="tel:<?= PHONE ?>" class="px-8 py-3 rounded-2xl bg-white text-[#0a2540] font-semibold"><?= PHONE ?></a>
             <a href="https://wa.me/<?= WHATSAPP ?>?text=Quote%20for%20CCTV Systems%20in%20Longridge" class="px-8 py-3 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
         </div>
@@ -137,7 +137,7 @@ $features = service_features($serviceSlug);
                 <h2 class="text-2xl font-extrabold">Who we help in Longridge</h2>
                 <p class="mt-3 text-zinc-600 text-sm leading-relaxed">Landlords, letting agents, RTM companies, care providers, retailers, offices, industrial units and public-sector sites needing dependable CCTV Systems across <?= htmlspecialchars($profile['districts']) ?> with clear paperwork and local attendance.</p>
                 <p class="mt-3 text-zinc-600 text-sm leading-relaxed">Tell us storeys, occupancy, existing equipment and access windows — we scope CCTV Systems for real Longridge conditions, not a generic checklist alone.</p>
-                <a href="contact.php" class="inline-block mt-6 accent-btn px-6 py-3 rounded-xl font-semibold">Request Longridge quote</a>
+                <a href="/contact" class="inline-block mt-6 accent-btn px-6 py-3 rounded-xl font-semibold">Request Longridge quote</a>
             </div>
         </div>
 
@@ -150,7 +150,7 @@ $features = service_features($serviceSlug);
             <h2 class="text-2xl font-bold mb-3">Book CCTV Systems in Longridge today</h2>
             <p class="text-white/80 mb-6">Speak to a UK compliance specialist. Travel to Longridge is <?= htmlspecialchars($profile['travel']) ?>.</p>
             <div class="flex flex-wrap gap-3">
-                <a href="contact.php" class="inline-block bg-[#ff6b00] px-8 py-3 rounded-2xl font-semibold">Free quote</a>
+                <a href="/contact" class="inline-block bg-[#ff6b00] px-8 py-3 rounded-2xl font-semibold">Free quote</a>
                 <a href="tel:<?= PHONE ?>" class="inline-block bg-white text-[#0a2540] px-8 py-3 rounded-2xl font-semibold"><?= PHONE ?></a>
                 <a href="https://wa.me/<?= WHATSAPP ?>?text=Quote%20for%20CCTV Systems%20in%20Longridge" class="inline-block border border-white/40 px-8 py-3 rounded-2xl font-semibold">WhatsApp</a>
             </div>
@@ -165,7 +165,7 @@ $features = service_features($serviceSlug);
         'name' => "CCTV Systems in Longridge",
         'serviceType' => 'CCTV Systems',
         'description' => $metaDesc,
-        'url' => site_url("pages/{$serviceSlug}/{$areaSlugVal}.php"),
+        'url' => site_url("pages/{$serviceSlug}/{$areaSlugVal}"),
         'image' => service_image($serviceSlug),
         'provider' => ['@id' => site_url() . '#business'],
         'areaServed' => [
@@ -188,7 +188,7 @@ $features = service_features($serviceSlug);
         <h2 class="font-bold text-xl mb-4">Other compliance services in Longridge</h2>
         <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             <?php foreach ($GLOBALS['services'] as $sSlug => $sName): if ($sSlug === $serviceSlug) continue; ?>
-                <a href="pages/<?= htmlspecialchars($sSlug) ?>/<?= areaSlug($areaName) ?>.php" class="service-card bg-white border rounded-2xl overflow-hidden group">
+                <a href="/pages/<?= htmlspecialchars($sSlug) ?>/<?= areaSlug($areaName) ?>" class="service-card bg-white border rounded-2xl overflow-hidden group">
                     <div class="h-28 overflow-hidden">
                         <img src="assets/images/services/<?= htmlspecialchars($sSlug) ?>-photo.jpg"
                              alt="<?= htmlspecialchars($sName) ?> in Longridge"
@@ -205,13 +205,13 @@ $features = service_features($serviceSlug);
         <h2 class="font-bold text-xl mb-4">CCTV Systems near Longridge</h2>
         <div class="flex flex-wrap gap-2 text-sm">
             <?php foreach ($nearby as $a): ?>
-                <a href="pages/cctv/<?= areaSlug($a) ?>.php" class="px-4 py-1.5 bg-white border rounded-full hover:border-[#ff6b00]"><?= htmlspecialchars($a) ?> CCTV Systems</a>
+                <a href="/pages/cctv/<?= areaSlug($a) ?>" class="px-4 py-1.5 bg-white border rounded-full hover:border-[#ff6b00]"><?= htmlspecialchars($a) ?> CCTV Systems</a>
             <?php endforeach; ?>
         </div>
         <p class="mt-6 text-sm text-zinc-500">
-            <a class="text-[#ff6b00] font-semibold hover:underline" href="pages/services/cctv.php">All CCTV Systems services</a>
-            · <a class="text-[#ff6b00] font-semibold hover:underline" href="pages/areas/<?= areaSlug($areaName) ?>.php">All compliance in Longridge</a>
-            · <a class="text-[#ff6b00] font-semibold hover:underline" href="contact.php">Free quote</a>
+            <a class="text-[#ff6b00] font-semibold hover:underline" href="/pages/services/cctv">All CCTV Systems services</a>
+            · <a class="text-[#ff6b00] font-semibold hover:underline" href="/pages/areas/<?= areaSlug($areaName) ?>">All compliance in Longridge</a>
+            · <a class="text-[#ff6b00] font-semibold hover:underline" href="/contact">Free quote</a>
         </p>
     </div>
 </section>

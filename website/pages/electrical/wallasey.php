@@ -13,9 +13,9 @@ $areaName = 'Wallasey';
 $areaSlugVal = 'wallasey';
 $pageTitle = 'Electrical in Wallasey | UK Install & Cert';
 $metaDesc = 'Electrical in Wallasey — install, service & certificates. Stockport UK engineers covering Wallasey. Free quote.';
-$metaKeywords = 'electrical installation, EICR, PAT testing, certified electrician, commercial electrician, EV charger installation, electrical compliance Wallasey, Wallasey electrician, Wallasey fire safety, Electrical Wallasey, Wallasey Electrical engineer, Wallasey compliance';
+$metaKeywords = 'electrical installation, EICR, PAT testing, certified electrician, commercial electrician, EV charger installation, electrical compliance Wallasey, Wallasey renewable energy, Wallasey electrician, Electrical Wallasey, Wallasey Electrical engineer, Wallasey compliance';
 $ogImage = service_image($serviceSlug);
-$canonicalUrl = site_url("pages/{$serviceSlug}/{$areaSlugVal}.php");
+$canonicalUrl = site_url("pages/{$serviceSlug}/{$areaSlugVal}");
 $ogType = 'article';
 require __DIR__ . '/../../includes/header.php';
 
@@ -32,10 +32,10 @@ $nearby = nearby_areas($areaName, 16);
 $intro = seo_unique_intro($serviceName, $serviceSlug, $areaName);
 $angle = service_local_angle($serviceSlug, $serviceName, $areaName);
 $crumbs = [
-    ['name' => 'Home', 'url' => 'index.php'],
-    ['name' => 'Services', 'url' => 'pages/services/index.php'],
-    ['name' => $serviceName, 'url' => "pages/services/{$serviceSlug}.php"],
-    ['name' => $areaName, 'url' => "pages/{$serviceSlug}/{$areaSlugVal}.php"],
+    ['name' => 'Home', 'url' => '/'],
+    ['name' => 'Services', 'url' => '/pages/services/index'],
+    ['name' => $serviceName, 'url' => "/pages/services/{$serviceSlug}"],
+    ['name' => $areaName, 'url' => "/pages/{$serviceSlug}/{$areaSlugVal}"],
 ];
 $features = service_features($serviceSlug);
 ?>
@@ -51,7 +51,7 @@ $features = service_features($serviceSlug);
         <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Electrical in Wallasey</h1>
         <p class="mt-4 max-w-2xl text-lg text-white/90">Install · service · test · certificate for landlords, agents and businesses in Wallasey (<?= htmlspecialchars($profile['districts']) ?>).</p>
         <div class="mt-8 flex flex-wrap gap-3">
-            <a href="contact.php" class="accent-btn px-8 py-3 rounded-2xl font-semibold">Free Wallasey quote</a>
+            <a href="/contact" class="accent-btn px-8 py-3 rounded-2xl font-semibold">Free Wallasey quote</a>
             <a href="tel:<?= PHONE ?>" class="px-8 py-3 rounded-2xl bg-white text-[#0a2540] font-semibold"><?= PHONE ?></a>
             <a href="https://wa.me/<?= WHATSAPP ?>?text=Quote%20for%20Electrical%20in%20Wallasey" class="px-8 py-3 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
         </div>
@@ -137,7 +137,7 @@ $features = service_features($serviceSlug);
                 <h2 class="text-2xl font-extrabold">Who we help in Wallasey</h2>
                 <p class="mt-3 text-zinc-600 text-sm leading-relaxed">Landlords, letting agents, RTM companies, care providers, retailers, offices, industrial units and public-sector sites needing dependable Electrical across <?= htmlspecialchars($profile['districts']) ?> with clear paperwork and local attendance.</p>
                 <p class="mt-3 text-zinc-600 text-sm leading-relaxed">Tell us storeys, occupancy, existing equipment and access windows — we scope Electrical for real Wallasey conditions, not a generic checklist alone.</p>
-                <a href="contact.php" class="inline-block mt-6 accent-btn px-6 py-3 rounded-xl font-semibold">Request Wallasey quote</a>
+                <a href="/contact" class="inline-block mt-6 accent-btn px-6 py-3 rounded-xl font-semibold">Request Wallasey quote</a>
             </div>
         </div>
 
@@ -150,7 +150,7 @@ $features = service_features($serviceSlug);
             <h2 class="text-2xl font-bold mb-3">Book Electrical in Wallasey today</h2>
             <p class="text-white/80 mb-6">Speak to a UK compliance specialist. Travel to Wallasey is <?= htmlspecialchars($profile['travel']) ?>.</p>
             <div class="flex flex-wrap gap-3">
-                <a href="contact.php" class="inline-block bg-[#ff6b00] px-8 py-3 rounded-2xl font-semibold">Free quote</a>
+                <a href="/contact" class="inline-block bg-[#ff6b00] px-8 py-3 rounded-2xl font-semibold">Free quote</a>
                 <a href="tel:<?= PHONE ?>" class="inline-block bg-white text-[#0a2540] px-8 py-3 rounded-2xl font-semibold"><?= PHONE ?></a>
                 <a href="https://wa.me/<?= WHATSAPP ?>?text=Quote%20for%20Electrical%20in%20Wallasey" class="inline-block border border-white/40 px-8 py-3 rounded-2xl font-semibold">WhatsApp</a>
             </div>
@@ -165,7 +165,7 @@ $features = service_features($serviceSlug);
         'name' => "Electrical in Wallasey",
         'serviceType' => 'Electrical',
         'description' => $metaDesc,
-        'url' => site_url("pages/{$serviceSlug}/{$areaSlugVal}.php"),
+        'url' => site_url("pages/{$serviceSlug}/{$areaSlugVal}"),
         'image' => service_image($serviceSlug),
         'provider' => ['@id' => site_url() . '#business'],
         'areaServed' => [
@@ -188,7 +188,7 @@ $features = service_features($serviceSlug);
         <h2 class="font-bold text-xl mb-4">Other compliance services in Wallasey</h2>
         <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             <?php foreach ($GLOBALS['services'] as $sSlug => $sName): if ($sSlug === $serviceSlug) continue; ?>
-                <a href="pages/<?= htmlspecialchars($sSlug) ?>/<?= areaSlug($areaName) ?>.php" class="service-card bg-white border rounded-2xl overflow-hidden group">
+                <a href="/pages/<?= htmlspecialchars($sSlug) ?>/<?= areaSlug($areaName) ?>" class="service-card bg-white border rounded-2xl overflow-hidden group">
                     <div class="h-28 overflow-hidden">
                         <img src="assets/images/services/<?= htmlspecialchars($sSlug) ?>-photo.jpg"
                              alt="<?= htmlspecialchars($sName) ?> in Wallasey"
@@ -205,13 +205,13 @@ $features = service_features($serviceSlug);
         <h2 class="font-bold text-xl mb-4">Electrical near Wallasey</h2>
         <div class="flex flex-wrap gap-2 text-sm">
             <?php foreach ($nearby as $a): ?>
-                <a href="pages/electrical/<?= areaSlug($a) ?>.php" class="px-4 py-1.5 bg-white border rounded-full hover:border-[#ff6b00]"><?= htmlspecialchars($a) ?> Electrical</a>
+                <a href="/pages/electrical/<?= areaSlug($a) ?>" class="px-4 py-1.5 bg-white border rounded-full hover:border-[#ff6b00]"><?= htmlspecialchars($a) ?> Electrical</a>
             <?php endforeach; ?>
         </div>
         <p class="mt-6 text-sm text-zinc-500">
-            <a class="text-[#ff6b00] font-semibold hover:underline" href="pages/services/electrical.php">All Electrical services</a>
-            · <a class="text-[#ff6b00] font-semibold hover:underline" href="pages/areas/<?= areaSlug($areaName) ?>.php">All compliance in Wallasey</a>
-            · <a class="text-[#ff6b00] font-semibold hover:underline" href="contact.php">Free quote</a>
+            <a class="text-[#ff6b00] font-semibold hover:underline" href="/pages/services/electrical">All Electrical services</a>
+            · <a class="text-[#ff6b00] font-semibold hover:underline" href="/pages/areas/<?= areaSlug($areaName) ?>">All compliance in Wallasey</a>
+            · <a class="text-[#ff6b00] font-semibold hover:underline" href="/contact">Free quote</a>
         </p>
     </div>
 </section>
