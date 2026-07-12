@@ -2,12 +2,9 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
   "framework": null,
-  "installCommand": null,
-  "buildCommand": null,
-  "outputDirectory": null,
   "functions": {
-    "website/api/index.php": {
-      "runtime": "vercel-php@0.7.3",
+    "api/index.php": {
+      "runtime": "vercel-php@0.7.4",
       "memory": 1024,
       "maxDuration": 15,
       "includeFiles": "website/**"
@@ -18,7 +15,7 @@
     { "source": "/robots.txt", "destination": "/website/robots.txt" },
     { "source": "/sitemap.xml", "destination": "/website/sitemap.xml" },
     { "source": "/favicon.ico", "destination": "/website/assets/images/og-image.jpg" },
-    { "source": "/(.*)", "destination": "/website/api/index.php" }
+    { "source": "/((?!website/).*)", "destination": "/api/index.php" }
   ],
   "headers": [
     {

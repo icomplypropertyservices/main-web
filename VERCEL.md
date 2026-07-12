@@ -1,13 +1,16 @@
 # Deploy iComply to Vercel
 
-This repo deploys the PHP site under `website/` using the community **vercel-php** runtime and a single front controller (`website/api/index.php`).
+This repo deploys the PHP site under `website/` using the community **vercel-php** runtime.
+
+**Entry point must be at repo root:** `api/index.php`  
+(Vercel only discovers Serverless Functions inside the top-level `api/` directory.)
 
 ## 1. Connect the repo
 
 1. Open [vercel.com/new](https://vercel.com/new)
 2. Import **icomplypropertyservices/main-web**
 3. Framework Preset: **Other**
-4. Root Directory: leave as repo root (uses root `vercel.json`)
+4. Root Directory: **leave empty / `.`** (must be repo root so `/api` is detected)
 5. Deploy
 
 ## 2. Environment variables
