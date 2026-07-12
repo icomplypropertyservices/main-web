@@ -10,6 +10,14 @@
       "includeFiles": "website/**"
     }
   },
+  {
+  "rewrites": [
+    { "source": "/:path*", "destination": "/index.php" }
+  ],
+  "redirects": [
+    { "source": "/pages/:path*", "destination": "/pages/:path*", "permanent": false }
+  ]
+},
   "rewrites": [
     { "source": "/assets/(.*)", "destination": "/website/assets/$1" },
     { "source": "/robots.txt", "destination": "/website/robots.txt" },
