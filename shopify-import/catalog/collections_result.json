@@ -1,0 +1,62 @@
+[
+  {
+    "action": "created",
+    "handle": "fire-alarm-control-panels",
+    "id": 686993015116
+  },
+  {
+    "action": "created",
+    "handle": "smoke-detectors",
+    "id": 686993047884
+  },
+  {
+    "action": "created",
+    "handle": "heat-detectors",
+    "id": 686993080652
+  },
+  {
+    "action": "created",
+    "handle": "multi-sensor-detectors",
+    "id": 686993113420
+  },
+  {
+    "action": "created",
+    "handle": "manual-call-points",
+    "id": 686993146188
+  },
+  {
+    "action": "created",
+    "handle": "sounders-beacons",
+    "id": 686993178956
+  },
+  {
+    "action": "created",
+    "handle": "bases-mounting",
+    "id": 686993211724
+  },
+  {
+    "action": "created",
+    "handle": "interfaces-modules",
+    "id": 686993244492
+  },
+  {
+    "action": "created",
+    "handle": "batteries-power",
+    "id": 686993277260
+  },
+  {
+    "action": "created",
+    "handle": "cables-accessories",
+    "id": 686993310028
+  },
+  {
+    "action": "created",
+    "handle": "emergency-lighting-products",
+    "id": 686993342796
+  },
+  {
+    "action": "created",
+    "handle": "service-packages",
+    "id": 686993375564
+  }
+]

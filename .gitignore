@@ -1,0 +1,26 @@
+# OS / editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+.idea/
+.vscode/
+*.log
+
+# PHP / Python cache
+**/__pycache__/
+*.pyc
+*.pyo
+
+# Local secrets (keep config.php tracked but never commit real env overrides)
+.env
+.env.*
+!.env.example
+
+# Runtime lead capture (may contain personal data)
+website/admin/leads.json
+
+# Local server / temp
+*.tmp
+_gen_*.php
+website/_gen_areas.php

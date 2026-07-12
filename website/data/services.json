@@ -1,0 +1,13 @@
+{
+    "electrical": "Electrical",
+    "fire-alarms": "Fire Alarms",
+    "emergency-lighting": "Emergency Lighting",
+    "aov-air-handling": "AOV & Air Handling",
+    "nurse-call": "Nurse Call Systems",
+    "gas-systems": "Gas Systems",
+    "intruder-alarm": "Intruder Alarms",
+    "cctv": "CCTV Systems",
+    "access-control": "Access Control",
+    "door-entry": "Door Entry Systems",
+    "intercoms": "Intercoms"
+}

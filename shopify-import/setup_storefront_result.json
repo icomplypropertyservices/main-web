@@ -1,0 +1,50 @@
+{
+  "store": "icomply-supplys.myshopify.com",
+  "storefront_dir": "C:\\Users\\E-Store\\Documents\\icomplyproperty\\shopify-import\\storefront",
+  "storefront_dir_exists": true,
+  "files_present": {
+    "pages.json": true,
+    "policies.json": true,
+    "navigation.json": true,
+    "shipping_notes.json": true,
+    "metafields.json": false
+  },
+  "pages": {
+    "status": "ok",
+    "items": [
+      {
+        "action": "created",
+        "handle": "about-us",
+        "id": 732202205516,
+        "title": "About Us"
+      },
+      {
+        "action": "updated",
+        "handle": "contact",
+        "id": 732200239436,
+        "title": "Contact"
+      },
+      {
+        "action": "created",
+        "handle": "trade-accounts",
+        "id": 732202238284,
+        "title": "Trade Accounts"
+      },
+      {
+        "action": "created",
+        "handle": "delivery-information",
+        "id": 732202271052,
+        "title": "Delivery Information"
+      },
+      {
+        "action": "created",
+        "handle": "fire-alarm-systems-guide",
+        "id": 732202303820,
+        "title": "Fire Alarm Systems Guide"
+      }
+    ]
+  },
+  "status": "failed",
+  "fatal_error": "'str' object has no attribute 'get'",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\E-Store\\Documents\\icomplyproperty\\shopify-import\\setup_storefront.py\", line 953, in main\n    setup_policies(result)\n  File \"C:\\Users\\E-Store\\Documents\\icomplyproperty\\shopify-import\\setup_storefront.py\", line 219, in setup_policies\n    item.get(\"title\")\n    ^^^^^^^^\nAttributeError: 'str' object has no attribute 'get'\n"
+}

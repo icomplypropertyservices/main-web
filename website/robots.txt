@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /bin/
+Disallow: /templates/
+Disallow: /data/
+
+Sitemap: https://icomplyproperty.co.uk/sitemap.xml

@@ -1,0 +1,181 @@
+{
+  "menus": [
+    {
+      "handle": "main-menu",
+      "title": "Main menu",
+      "items": [
+        {
+          "title": "Shop All",
+          "type": "collection",
+          "handle": "all",
+          "items": []
+        },
+        {
+          "title": "Fire Alarm Panels",
+          "type": "collection",
+          "handle": "fire-alarm-control-panels",
+          "items": []
+        },
+        {
+          "title": "Detection",
+          "type": "catalog",
+          "handle": null,
+          "items": [
+            {
+              "title": "Smoke Detectors",
+              "type": "collection",
+              "handle": "smoke-detectors",
+              "items": []
+            },
+            {
+              "title": "Heat Detectors",
+              "type": "collection",
+              "handle": "heat-detectors",
+              "items": []
+            },
+            {
+              "title": "Multi-Sensor Detectors",
+              "type": "collection",
+              "handle": "multi-sensor-detectors",
+              "items": []
+            },
+            {
+              "title": "Detector Bases & Mounting",
+              "type": "collection",
+              "handle": "bases-mounting",
+              "items": []
+            }
+          ]
+        },
+        {
+          "title": "Call Points",
+          "type": "collection",
+          "handle": "manual-call-points",
+          "items": []
+        },
+        {
+          "title": "Sounders & Beacons",
+          "type": "collection",
+          "handle": "sounders-beacons",
+          "items": []
+        },
+        {
+          "title": "Modules & Power",
+          "type": "catalog",
+          "handle": null,
+          "items": [
+            {
+              "title": "Interfaces & Modules",
+              "type": "collection",
+              "handle": "interfaces-modules",
+              "items": []
+            },
+            {
+              "title": "Batteries & Power Supplies",
+              "type": "collection",
+              "handle": "batteries-power",
+              "items": []
+            },
+            {
+              "title": "Fire Cable & Accessories",
+              "type": "collection",
+              "handle": "cables-accessories",
+              "items": []
+            }
+          ]
+        },
+        {
+          "title": "Emergency Lighting",
+          "type": "collection",
+          "handle": "emergency-lighting-products",
+          "items": []
+        },
+        {
+          "title": "Service Packages",
+          "type": "collection",
+          "handle": "service-packages",
+          "items": []
+        },
+        {
+          "title": "Trade & Help",
+          "type": "catalog",
+          "handle": null,
+          "items": [
+            {
+              "title": "Trade Accounts",
+              "type": "page",
+              "handle": "trade-accounts",
+              "items": []
+            },
+            {
+              "title": "Delivery Information",
+              "type": "page",
+              "handle": "delivery-information",
+              "items": []
+            },
+            {
+              "title": "Fire Alarm Systems Guide",
+              "type": "page",
+              "handle": "fire-alarm-systems-guide",
+              "items": []
+            },
+            {
+              "title": "About Us",
+              "type": "page",
+              "handle": "about-us",
+              "items": []
+            },
+            {
+              "title": "Contact",
+              "type": "page",
+              "handle": "contact",
+              "items": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "handle": "footer",
+      "title": "Footer",
+      "items": [
+        {
+          "title": "About Us",
+          "type": "page",
+          "handle": "about-us",
+          "items": []
+        },
+        {
+          "title": "Contact",
+          "type": "page",
+          "handle": "contact",
+          "items": []
+        },
+        {
+          "title": "Trade Accounts",
+          "type": "page",
+          "handle": "trade-accounts",
+          "items": []
+        },
+        {
+          "title": "Delivery Information",
+          "type": "page",
+          "handle": "delivery-information",
+          "items": []
+        },
+        {
+          "title": "Fire Alarm Systems Guide",
+          "type": "page",
+          "handle": "fire-alarm-systems-guide",
+          "items": []
+        },
+        {
+          "title": "Service Packages",
+          "type": "collection",
+          "handle": "service-packages",
+          "items": []
+        }
+      ]
+    }
+  ]
+}
