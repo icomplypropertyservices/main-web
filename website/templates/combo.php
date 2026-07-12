@@ -177,7 +177,7 @@ $features = service_features($serviceSlug);
             '@type' => 'Offer',
             'availability' => 'https://schema.org/InStock',
             'priceCurrency' => 'GBP',
-            'url' => site_url('contact.php'),
+            'url' => site_url('contact'),
             'description' => "Free quote for {$serviceName} in {$areaName}",
         ],
     ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) ?>

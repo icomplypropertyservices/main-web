@@ -13,12 +13,12 @@ if (mb_strlen($metaDesc) > 158) {
     $metaDesc = '{{AREA}} property compliance: EICR, fire alarms, gas, emergency lighting & CCTV. North West engineers. Free quote.';
 }
 $metaKeywords = '{{AREA}} electrician, {{AREA}} fire alarm, {{AREA}} EICR, {{AREA}} gas safety, property compliance {{AREA}}';
-$canonicalUrl = site_url('pages/areas/' . areaSlug($areaName) . '.php');
+$canonicalUrl = site_url('pages/areas/' . areaSlug($areaName));
 require __DIR__ . '/../../includes/header.php';
 $crumbs = [
-    ['name' => 'Home', 'url' => 'index.php'],
-    ['name' => 'Services', 'url' => 'pages/services/index.php'],
-    ['name' => $areaName, 'url' => 'pages/areas/' . areaSlug($areaName) . '.php'],
+    ['name' => 'Home', 'url' => ''],
+    ['name' => 'Services', 'url' => 'pages/services/index'],
+    ['name' => $areaName, 'url' => 'pages/areas/' . areaSlug($areaName)],
 ];
 $faqs = [
     ['q' => "What compliance services are available in {$areaName}?", 'a' => "Electrical (including EICR), fire alarms, emergency lighting, AOV, nurse call, gas systems, intruder alarms, CCTV, access control, door entry and intercoms across {$areaName} and {$profile['districts']}."],
@@ -35,7 +35,7 @@ $faqs = [
         <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">{{AREA}} property compliance</h1>
         <p class="mt-4 max-w-2xl text-lg text-white/90">Local UK engineers for {{AREA}} — electrical, fire, gas, emergency lighting, security and more. Certificates landlords and insurers accept.</p>
         <div class="mt-8 flex flex-wrap gap-3">
-            <a href="contact.php" class="accent-btn px-8 py-3 rounded-2xl font-semibold">Get a {{AREA}} quote</a>
+            <a href="/contact" class="accent-btn px-8 py-3 rounded-2xl font-semibold">Get a {{AREA}} quote</a>
             <a href="tel:<?= PHONE ?>" class="px-8 py-3 rounded-2xl bg-white text-[#0a2540] font-semibold"><?= PHONE ?></a>
         </div>
     </div>
@@ -72,7 +72,7 @@ $faqs = [
 
     <div class="mt-12 text-center">
         <a href="https://wa.me/<?= WHATSAPP ?>?text=Quote%20for%20{{AREA_URL}}" class="inline-block px-10 py-4 bg-green-600 hover:bg-green-700 text-white rounded-2xl font-semibold">WhatsApp for a {{AREA}} quote</a>
-        <p class="mt-4 text-sm text-zinc-500">Call <a class="text-[#ff6b00] font-semibold" href="tel:<?= PHONE ?>"><?= PHONE ?></a> · <a class="text-[#ff6b00] font-semibold" href="contact.php">contact form</a> · <?= ADDRESS ?></p>
+        <p class="mt-4 text-sm text-zinc-500">Call <a class="text-[#ff6b00] font-semibold" href="tel:<?= PHONE ?>"><?= PHONE ?></a> · <a class="text-[#ff6b00] font-semibold" href="/contact">contact form</a> · <?= ADDRESS ?></p>
     </div>
 </section>
 

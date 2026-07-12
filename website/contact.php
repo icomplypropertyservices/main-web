@@ -4,7 +4,7 @@ require_once __DIR__ . '/includes/seo.php';
 $pageTitle = 'Contact Icomply | Free Quote North West';
 $metaDesc = 'Contact Icomply in Stockport for free compliance quotes — EICR, fire alarms, gas, CCTV across Greater Manchester & North West.';
 $metaKeywords = 'contact Icomply Property Services, compliance quote Stockport, EICR quote Manchester, fire alarm quote North West';
-$canonicalUrl = site_url('contact.php');
+$canonicalUrl = site_url('contact');
 require 'includes/header.php';
 
 $success = false;

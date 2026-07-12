@@ -4,7 +4,7 @@ require_once __DIR__ . '/includes/seo.php';
 $pageTitle = 'Property Compliance North West | EICR & Fire';
 $metaDesc = 'Stockport UK compliance for Greater Manchester & North West. EICR, fire alarms, gas, emergency lighting, CCTV. Free quote.';
 $metaKeywords = 'property compliance Manchester, EICR Stockport, fire alarm installation Bolton, emergency lighting Oldham, gas safety certificate Rochdale, CCTV Manchester, UK compliance contractors North West';
-$canonicalUrl = site_url('index.php');
+$canonicalUrl = site_url('');
 require 'includes/header.php';
 $homeFaqs = [
     ['q' => 'What areas does Icomply cover?', 'a' => 'We cover Greater Manchester and 150+ North West towns from our Stockport SK2 base — including Manchester, Bolton, Oldham, Rochdale, Liverpool, Preston, Warrington, Chester and Blackpool.'],

@@ -15,8 +15,8 @@ $add = function (string $path, string $priority = '0.5', string $freq = 'weekly'
 };
 
 $add('', '1.0', 'daily');
-$add('contact.php', '0.9', 'monthly');
-$add('pages/services/index.php', '0.95', 'weekly');
+$add('contact', '0.9', 'monthly');
+$add('pages/services/index', '0.95', 'weekly');
 
 $allServices = array_merge($services, loadServices());
 foreach ($allServices as $slug => $name) {
