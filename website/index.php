@@ -16,7 +16,7 @@ $homeFaqs = [
 
 <!-- HERO with UK photo -->
 <section class="relative min-h-[78vh] flex items-center text-white overflow-hidden">
-    <img src="assets/images/heroes/home-hero.jpg" alt="UK commercial property in Greater Manchester" class="absolute inset-0 w-full h-full object-cover" width="1600" height="900" fetchpriority="high">
+    <img src="/assets/images/heroes/home-hero.jpg" alt="UK commercial property in Greater Manchester" class="absolute inset-0 w-full h-full object-cover" width="1600" height="900" fetchpriority="high">
     <div class="absolute inset-0 hero-overlay"></div>
     <div class="relative max-w-7xl mx-auto px-6 py-24 w-full">
         <div class="max-w-2xl">
@@ -25,7 +25,7 @@ $homeFaqs = [
             <p class="text-lg md:text-xl text-white/85 leading-relaxed max-w-xl">Certified UK engineers for EICR, fire alarms, gas safety, emergency lighting, AOV, nurse call, CCTV and access control — across 150+ North West towns.</p>
             <div class="mt-10 flex flex-wrap gap-4">
                 <a href="#quote" class="accent-btn px-8 py-4 rounded-2xl font-semibold text-lg">Get a free quote</a>
-                <a href="pages/services/index.php" class="px-8 py-4 rounded-2xl border border-white/50 font-semibold text-lg hover:bg-white/10">Browse services</a>
+                <a href="/pages/services/index.php" class="px-8 py-4 rounded-2xl border border-white/50 font-semibold text-lg hover:bg-white/10">Browse services</a>
                 <a href="tel:<?= PHONE ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold text-lg">Call <?= PHONE ?></a>
             </div>
             <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
@@ -55,18 +55,18 @@ $homeFaqs = [
             <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mt-2">UK compliance services</h2>
             <p class="mt-3 text-zinc-600 max-w-xl">Installation, maintenance and certification for landlords, property managers and businesses across Greater Manchester and the North West.</p>
         </div>
-        <a href="pages/services/index.php" class="text-[#ff6b00] font-semibold hover:underline">View all services →</a>
+        <a href="/pages/services/index.php" class="text-[#ff6b00] font-semibold hover:underline">View all services →</a>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         <?php foreach ($services as $slug => $name): ?>
-        <a href="pages/services/<?= htmlspecialchars($slug) ?>.php" class="service-card bg-white rounded-3xl border group">
+        <a href="/pages/services/<?= htmlspecialchars($slug) ?>.php" class="service-card bg-white rounded-3xl border group">
             <div class="aspect-[16/10] overflow-hidden bg-zinc-100">
-                <img src="assets/images/services/<?= htmlspecialchars($slug) ?>-photo.jpg"
+                <img src="/assets/images/services/<?= htmlspecialchars($slug) ?>-photo.jpg"
                      alt="<?= htmlspecialchars($name) ?> services in the UK — North West"
                      class="img-cover group-hover:scale-105 transition duration-500"
                      width="640" height="400" loading="lazy"
-                     onerror="this.src='assets/images/services/<?= htmlspecialchars($slug) ?>.png'">
+                     onerror="this.src='/assets/images/services/<?= htmlspecialchars($slug) ?>.png'">
             </div>
             <div class="p-6">
                 <div class="font-bold text-xl tracking-tight"><?= htmlspecialchars($name) ?></div>
@@ -80,7 +80,7 @@ $homeFaqs = [
 
 <!-- UK coverage band -->
 <section class="relative text-white py-20 overflow-hidden">
-    <img src="assets/images/heroes/manchester.jpg" alt="Manchester and North West UK skyline" class="absolute inset-0 w-full h-full object-cover" width="1600" height="900" loading="lazy">
+    <img src="/assets/images/heroes/manchester.jpg" alt="Manchester and North West UK skyline" class="absolute inset-0 w-full h-full object-cover" width="1600" height="900" loading="lazy">
     <div class="absolute inset-0 bg-[#0a2540]/85"></div>
     <div class="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         <div>
@@ -89,12 +89,12 @@ $homeFaqs = [
             <p class="mt-4 text-white/80 text-lg leading-relaxed">From Stockport and Manchester to Liverpool, Preston, Blackpool and Chester — we send local engineers who know UK building regs and British Standards.</p>
             <div class="mt-8 flex flex-wrap gap-2">
                 <?php foreach (['Manchester','Stockport','Bolton','Oldham','Rochdale','Liverpool','Preston','Warrington'] as $a): ?>
-                    <a href="pages/fire-alarms/<?= areaSlug($a) ?>.php" class="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm hover:bg-white/20"><?= $a ?></a>
+                    <a href="/pages/fire-alarms/<?= areaSlug($a) ?>.php" class="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm hover:bg-white/20"><?= $a ?></a>
                 <?php endforeach; ?>
             </div>
         </div>
         <div class="rounded-3xl overflow-hidden border border-white/20 shadow-2xl">
-            <img src="assets/images/heroes/uk-engineer.jpg" alt="UK property compliance engineer at work" class="w-full h-80 object-cover" width="800" height="520" loading="lazy">
+            <img src="/assets/images/heroes/uk-engineer.jpg" alt="UK property compliance engineer at work" class="w-full h-80 object-cover" width="800" height="520" loading="lazy">
         </div>
     </div>
 </section>
@@ -108,17 +108,17 @@ $homeFaqs = [
         </div>
         <div class="grid md:grid-cols-3 gap-8">
             <div class="p-8 rounded-3xl border bg-zinc-50">
-                <img src="assets/images/services/fire-alarms-photo.jpg" alt="Fire safety compliance" class="w-full h-40 object-cover rounded-2xl mb-6" loading="lazy">
+                <img src="/assets/images/services/fire-alarms-photo.jpg" alt="Fire safety compliance" class="w-full h-40 object-cover rounded-2xl mb-6" loading="lazy">
                 <h3 class="font-bold text-xl">British Standards first</h3>
                 <p class="text-zinc-600 mt-2 text-sm leading-relaxed">Work aligned to BS 7671, BS 5839, BS 5266 and relevant UK gas &amp; fire guidance — documentation ready for insurers.</p>
             </div>
             <div class="p-8 rounded-3xl border bg-zinc-50">
-                <img src="assets/images/heroes/about-team.jpg" alt="UK trades professionals" class="w-full h-40 object-cover rounded-2xl mb-6" loading="lazy">
+                <img src="/assets/images/heroes/about-team.jpg" alt="UK trades professionals" class="w-full h-40 object-cover rounded-2xl mb-6" loading="lazy">
                 <h3 class="font-bold text-xl">Local Stockport base</h3>
                 <p class="text-zinc-600 mt-2 text-sm leading-relaxed">North West coverage with a fixed address in Offerton, Stockport. Real engineers, fixed-price quotes, fast call-backs.</p>
             </div>
             <div class="p-8 rounded-3xl border bg-zinc-50">
-                <img src="assets/images/services/cctv-photo.jpg" alt="CCTV and security systems" class="w-full h-40 object-cover rounded-2xl mb-6" loading="lazy">
+                <img src="/assets/images/services/cctv-photo.jpg" alt="CCTV and security systems" class="w-full h-40 object-cover rounded-2xl mb-6" loading="lazy">
                 <h3 class="font-bold text-xl">One contractor, many systems</h3>
                 <p class="text-zinc-600 mt-2 text-sm leading-relaxed">Fire, electrical, gas, emergency lighting, nurse call, CCTV and access — coordinated under one UK compliance partner.</p>
             </div>
@@ -183,7 +183,7 @@ $homeFaqs = [
                     </div>
                 </div>
                 <div class="mt-6 rounded-3xl overflow-hidden border shadow-sm">
-                    <img src="assets/images/heroes/about-team.jpg" alt="Icomply Property Services team — UK compliance engineers" class="w-full h-48 object-cover" width="640" height="320" loading="lazy">
+                    <img src="/assets/images/heroes/about-team.jpg" alt="Icomply Property Services team — UK compliance engineers" class="w-full h-48 object-cover" width="640" height="320" loading="lazy">
                 </div>
             </aside>
         </div>
@@ -199,10 +199,10 @@ $homeFaqs = [
             <h2 id="quote-heading" class="text-4xl font-extrabold tracking-tight mt-2">Tell us about your property</h2>
             <p class="mt-3 text-zinc-600 text-lg">We respond within 2 hours on business days. Quotes are fixed-price where possible.</p>
             <div class="mt-8 rounded-3xl overflow-hidden shadow-lg">
-                <img src="assets/images/heroes/contact-hero.jpg" alt="Modern UK commercial buildings" class="w-full h-64 object-cover" loading="lazy">
+                <img src="/assets/images/heroes/contact-hero.jpg" alt="Modern UK commercial buildings" class="w-full h-64 object-cover" loading="lazy">
             </div>
         </div>
-        <form action="contact.php" method="POST" class="bg-white p-8 md:p-10 rounded-3xl border shadow-sm space-y-5" aria-labelledby="quote-heading">
+        <form action="/contact.php" method="POST" class="bg-white p-8 md:p-10 rounded-3xl border shadow-sm space-y-5" aria-labelledby="quote-heading">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <label for="quote-name" class="block text-xs font-semibold text-zinc-500 mb-1">Full name</label>
