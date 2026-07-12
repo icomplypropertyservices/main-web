@@ -1,0 +1,9 @@
+{
+    "base": "http://localhost:8000",
+    "when": "2026-07-12T16:00:59+02:00",
+    "php_files_on_disk": 2034,
+    "urls_checked": 2066,
+    "ok": 2067,
+    "broken_count": 0,
+    "broken": []
+}

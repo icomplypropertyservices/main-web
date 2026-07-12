@@ -26,7 +26,7 @@ $hubFaqs = [
     <h2 class="text-2xl font-extrabold mb-8">Browse all 11 compliance services</h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <?php foreach ($GLOBALS['services'] as $slug => $name): ?>
-        <a href="<?= htmlspecialchars($slug) ?>.php" class="service-card bg-white rounded-3xl border group">
+        <a href="pages/services/<?= htmlspecialchars($slug) ?>.php" class="service-card bg-white rounded-3xl border group">
             <div class="aspect-[16/10] overflow-hidden bg-zinc-100">
                 <img src="assets/images/services/<?= htmlspecialchars($slug) ?>-photo.jpg"
                      alt="<?= htmlspecialchars($name) ?> services North West UK"
