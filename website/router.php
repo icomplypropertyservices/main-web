@@ -6,6 +6,27 @@
 $uri = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 $file = __DIR__ . $uri;
 
+// Redirect legacy .php URLs to their clean extensionless route when available.
+if ($uri !== '/' && preg_match('#\.php$#i', $uri)) {
+    $extensionless = preg_replace('#\.php$#i', '', $uri);
+    $extensionlessFile = __DIR__ . $extensionless;
+    $extensionlessPhpFile = $extensionlessFile . '.php';
+    $extensionlessDirIndex = $extensionlessFile . '/index.php';
+    $target = $extensionless === '/index' ? '/' : $extensionless;
+
+    if ($target !== '/' || $uri === '/index.php') {
+        if (is_file($extensionlessPhpFile) || is_file($extensionlessDirIndex) || $uri === '/index.php') {
+            $qs = $_SERVER['QUERY_STRING'] ?? '';
+            if ($qs !== '') {
+                $target .= '?' . $qs;
+            }
+            http_response_code(301);
+            header('Location: ' . $target, true, 301);
+            return true;
+        }
+    }
+}
+
 // Serve real files as-is
 if ($uri !== '/' && is_file($file)) {
     return false;
