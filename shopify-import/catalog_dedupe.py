@@ -140,7 +140,9 @@ def fetch_product_collections(product_id: int) -> list[dict]:
 
 def normalize_title(title: str) -> str:
     t = (title or "").lower().strip()
-    t = re.sub(r"[^\w\s\-+./]", " ", t)
+    # Drop superscripts / non-ascii so 1.5mm² → 1.5mm
+    t = t.replace("²", "2").replace("³", "3")
+    t = re.sub(r"[^\w\s\-+./]", " ", t, flags=re.ASCII)
     for pat, repl in UNIT_SYNONYMS:
         t = pat.sub(repl, t)
     return t.strip()
