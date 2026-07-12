@@ -17,7 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'message' => $_POST['message'] ?? '',
         'timestamp' => date('c')
     ];
-    file_put_contents(__DIR__ . '/admin/leads.json', json_encode($lead) . "\n", FILE_APPEND);
+    // On Vercel the filesystem is ephemeral — write to /tmp when present, else local admin file
+    $leadsPath = (getenv('VERCEL') || getenv('VERCEL_ENV'))
+        ? (rtrim(sys_get_temp_dir(), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . 'icomply-leads.json')
+        : (__DIR__ . '/admin/leads.json');
+    @file_put_contents($leadsPath, json_encode($lead) . "\n", FILE_APPEND);
     $success = true;
 }
 ?>

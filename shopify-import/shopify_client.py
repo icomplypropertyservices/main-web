@@ -116,7 +116,7 @@ def get_token(force: bool = False) -> str:
     return _token
 
 
-def api(method: str, path: str, body: dict | None = None, retries: int = 5) -> dict:
+def api(method: str, path: str, body: dict | None = None, retries: int = 8) -> dict:
     token = get_token()
     store = get_store()
     url = f"https://{store}/admin/api/{API_VERSION}{path}"
@@ -135,14 +135,18 @@ def api(method: str, path: str, body: dict | None = None, retries: int = 5) -> d
         try:
             with urllib.request.urlopen(req, timeout=120) as resp:
                 raw = resp.read().decode()
-                time.sleep(0.35)  # rate limit courtesy
+                time.sleep(0.55)  # stay under 2 calls/sec client limit
                 return json.loads(raw) if raw else {}
         except urllib.error.HTTPError as e:
             err = e.read().decode(errors="replace")
             if e.code in (429, 500, 502, 503, 504) and attempt < retries - 1:
-                time.sleep(1.5 * (attempt + 1))
-                if e.code == 401:
-                    token = get_token(force=True)
+                # Honour Retry-After when present; otherwise exponential backoff
+                retry_after = e.headers.get("Retry-After") if e.headers else None
+                try:
+                    wait = float(retry_after) if retry_after else 2.0 * (attempt + 1)
+                except ValueError:
+                    wait = 2.0 * (attempt + 1)
+                time.sleep(max(wait, 1.5))
                 continue
             if e.code == 401 and attempt < retries - 1:
                 token = get_token(force=True)
@@ -151,22 +155,45 @@ def api(method: str, path: str, body: dict | None = None, retries: int = 5) -> d
     return {}
 
 
-def graphql(query: str, variables: dict | None = None) -> dict:
+def graphql(query: str, variables: dict | None = None, retries: int = 6) -> dict:
     token = get_token()
     store = get_store()
     payload = {"query": query, "variables": variables or {}}
-    req = urllib.request.Request(
-        f"https://{store}/admin/api/{API_VERSION}/graphql.json",
-        data=json.dumps(payload).encode(),
-        method="POST",
-        headers={
-            "X-Shopify-Access-Token": token,
-            "Content-Type": "application/json",
-        },
-    )
-    with urllib.request.urlopen(req, timeout=120) as resp:
-        data = json.loads(resp.read().decode())
-    time.sleep(0.35)
-    if data.get("errors"):
-        raise RuntimeError(f"GraphQL errors: {data['errors']}")
-    return data
+    last_err: Exception | None = None
+    for attempt in range(retries):
+        req = urllib.request.Request(
+            f"https://{store}/admin/api/{API_VERSION}/graphql.json",
+            data=json.dumps(payload).encode(),
+            method="POST",
+            headers={
+                "X-Shopify-Access-Token": token,
+                "Content-Type": "application/json",
+            },
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=120) as resp:
+                data = json.loads(resp.read().decode())
+            time.sleep(0.55)
+            if data.get("errors"):
+                # Throttle-style GraphQL errors
+                err_text = str(data["errors"])
+                if "Throttl" in err_text and attempt < retries - 1:
+                    time.sleep(2.0 * (attempt + 1))
+                    continue
+                raise RuntimeError(f"GraphQL errors: {data['errors']}")
+            return data
+        except urllib.error.HTTPError as e:
+            err = e.read().decode(errors="replace")
+            last_err = RuntimeError(f"GraphQL HTTP {e.code}: {err}")
+            if e.code in (429, 500, 502, 503, 504) and attempt < retries - 1:
+                time.sleep(2.0 * (attempt + 1))
+                if e.code == 401:
+                    token = get_token(force=True)
+                continue
+            if e.code == 401 and attempt < retries - 1:
+                token = get_token(force=True)
+                continue
+            raise last_err from e
+    if last_err:
+        raise last_err
+    return {}

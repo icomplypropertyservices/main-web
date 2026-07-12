@@ -1,0 +1,143 @@
+{
+  "status": "manual_required",
+  "workstream": "payments_domain",
+  "store": "icomply-supplys.myshopify.com",
+  "business": "iComply Property Services / iComply Supplys",
+  "contact_email": "icomplypropertyservices@gmail.com",
+  "phone": "07517806082",
+  "address": "17 Woodlands Park Road, Offerton, Stockport SK2 5DE, United Kingdom",
+  "currency": "GBP",
+  "suggested_primary_domain": "shop.icomplyservices.co.uk",
+  "checklist_file": "PAYMENTS_DOMAIN_CHECKLIST.md",
+  "api_secrets_included": false,
+  "completed_at": null,
+  "notes": "Shopify Payments KYC, PayPal OAuth, wallet device tests, DNS ownership, SSL issuance wait, customer-account mode, and staff order-email routing require merchant Admin actions. No secrets stored in this repo.",
+  "steps": [
+    {
+      "id": 1,
+      "title": "Shopify Payments / PayPal activation (UK)",
+      "status": "manual_required",
+      "admin_path": "Settings → Payments",
+      "actions": [
+        "Confirm store owner access and GBP currency",
+        "Activate Shopify Payments for United Kingdom with legal business details and Stockport address",
+        "Link UK GBP payout bank account and complete identity verification",
+        "Confirm cards active and SCA/3-D Secure left on",
+        "Connect PayPal Business under Additional payment methods / Express checkout",
+        "Optionally add manual Bank deposit / collection methods for trade",
+        "Run low-value paid test order and full refund"
+      ],
+      "acceptance_criteria": [
+        "Shopify Payments status Active/Verified or documented alternative gateway live",
+        "PayPal Active or consciously declined",
+        "Test order Paid then Refunded (or manual payment path documented)"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Google Pay / Apple Pay",
+      "status": "manual_required",
+      "admin_path": "Settings → Payments → Shopify Payments → Manage",
+      "depends_on": [1],
+      "actions": [
+        "Enable Google Pay under digital wallets",
+        "Enable Apple Pay under digital wallets",
+        "Enable theme dynamic checkout buttons if missing",
+        "Test Google Pay in supported Chrome/Android browser",
+        "Test Apple Pay in Safari on Apple device after custom domain + SSL",
+        "Disable wallets deliberately if trade policy prefers cards/BACS only"
+      ],
+      "acceptance_criteria": [
+        "Wallet buttons appear on product/cart/checkout on primary domain, or wallets disabled by policy",
+        "Optional small wallet test order succeeds"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Custom domain connection",
+      "status": "manual_required",
+      "admin_path": "Settings → Domains",
+      "suggested_hostname": "shop.icomplyservices.co.uk",
+      "actions": [
+        "Obtain DNS access for icomplyservices.co.uk (or chosen brand domain)",
+        "Settings → Domains → Connect existing domain",
+        "Add CNAME shop → shops.myshopify.com (copy exact target from Shopify Admin)",
+        "Remove conflicting DNS records for that host",
+        "Verify connection until status Connected",
+        "Set custom domain as primary",
+        "Redirect icomply-supplys.myshopify.com to primary",
+        "Update marketing site CTAs and external links"
+      ],
+      "acceptance_criteria": [
+        "https://shop.icomplyservices.co.uk (or chosen host) loads Shopify storefront",
+        "myshopify.com redirects to primary custom domain"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "SSL (HTTPS)",
+      "status": "manual_required",
+      "admin_path": "Settings → Domains → [custom domain]",
+      "depends_on": [3],
+      "actions": [
+        "Wait for Shopify TLS certificate status Issued after domain Connected",
+        "If Cloudflare/proxy used: DNS-only during connect or Full (strict) SSL — avoid Flexible",
+        "Check browser padlock on primary URL and through checkout",
+        "Re-test Apple Pay on custom HTTPS domain"
+      ],
+      "acceptance_criteria": [
+        "SSL certificate Issued for primary domain",
+        "Checkout remains on https:// with secure padlock"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Checkout customer accounts for trade",
+      "status": "manual_required",
+      "admin_path": "Settings → Customer accounts; Settings → Checkout",
+      "actions": [
+        "Set customer accounts to optional (recommended) or required for trade-only policy",
+        "Review new vs classic customer accounts and complete login branding if prompted",
+        "Settings → Checkout: require email; set phone required for trade despatch if preferred",
+        "Confirm Company name available on address/checkout for B2B buyers",
+        "Do not auto-fulfil physical goods unpaid/manual orders",
+        "Tag approved trade customers manually (e.g. trade-approved) if not using Shopify B2B Companies",
+        "Smoke-test guest checkout and account signup → login → checkout"
+      ],
+      "acceptance_criteria": [
+        "Chosen account mode saved",
+        "Guest and/or account checkout paths work on mobile and desktop",
+        "Trade process for unpaid/manual orders documented for staff"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Order notification email",
+      "status": "manual_required",
+      "admin_path": "Settings → Store details; Settings → Notifications; Settings → Users",
+      "recipient": "icomplypropertyservices@gmail.com",
+      "actions": [
+        "Set store contact / sender-related email to monitored address",
+        "Ensure owner or staff user is icomplypropertyservices@gmail.com with Orders access",
+        "Enable staff/new-order email notifications for that user",
+        "Add Gmail filter so Shopify order mail is not lost in Spam/Promotions",
+        "Place test order and confirm staff notification arrives at Gmail",
+        "Confirm customer still receives Order confirmation"
+      ],
+      "acceptance_criteria": [
+        "New order email received at icomplypropertyservices@gmail.com",
+        "Customer order confirmation still delivered"
+      ]
+    }
+  ],
+  "go_live_gates": [
+    "Shopify Payments or alternative card gateway Active with payout bank linked",
+    "PayPal connected or consciously declined",
+    "Google Pay / Apple Pay enabled and smoke-tested or consciously disabled",
+    "Custom domain Connected, primary, myshopify redirects",
+    "SSL Issued; HTTPS padlock on primary URL and checkout",
+    "Customer accounts mode set for trade; guest/login checkout tested",
+    "New order email arrives at icomplypropertyservices@gmail.com",
+    "Test order paid and refunded or manual payment path documented"
+  ]
+}

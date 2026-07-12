@@ -1,0 +1,2256 @@
+{
+  "store": "icomply-supplys.myshopify.com",
+  "online_store_publication_id": "gid://shopify/Publication/355356279116",
+  "publications": [
+    {
+      "id": "gid://shopify/Publication/355356279116",
+      "name": "Online Store",
+      "supportsFuturePublishing": true
+    },
+    {
+      "id": "gid://shopify/Publication/355356311884",
+      "name": "Point of Sale",
+      "supportsFuturePublishing": false
+    },
+    {
+      "id": "gid://shopify/Publication/355356344652",
+      "name": "Shop",
+      "supportsFuturePublishing": false
+    }
+  ],
+  "products": {
+    "total_active": 260,
+    "published_ok": 260,
+    "failed": 0,
+    "already_note": 0,
+    "items": [
+      {
+        "id": 15892770062668,
+        "handle": "electrical-compliance-package",
+        "title": "Electrical Compliance Package",
+        "gid": "gid://shopify/Product/15892770062668",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892770160972,
+        "handle": "fire-alarm-service-package",
+        "title": "Fire Alarm Service Package",
+        "gid": "gid://shopify/Product/15892770160972",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892770324812,
+        "handle": "emergency-lighting-package",
+        "title": "Emergency Lighting Package",
+        "gid": "gid://shopify/Product/15892770324812",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892770455884,
+        "handle": "aov-air-handling-package",
+        "title": "AOV & Air Handling Package",
+        "gid": "gid://shopify/Product/15892770455884",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892770521420,
+        "handle": "nurse-call-systems-package",
+        "title": "Nurse Call Systems Package",
+        "gid": "gid://shopify/Product/15892770521420",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892770652492,
+        "handle": "gas-safety-package",
+        "title": "Gas Safety Package",
+        "gid": "gid://shopify/Product/15892770652492",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892770849100,
+        "handle": "intruder-alarm-package",
+        "title": "Intruder Alarm Package",
+        "gid": "gid://shopify/Product/15892770849100",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892771012940,
+        "handle": "cctv-systems-package",
+        "title": "CCTV Systems Package",
+        "gid": "gid://shopify/Product/15892771012940",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892771144012,
+        "handle": "access-control-package",
+        "title": "Access Control Package",
+        "gid": "gid://shopify/Product/15892771144012",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892771275084,
+        "handle": "door-entry-package",
+        "title": "Door Entry Systems Package",
+        "gid": "gid://shopify/Product/15892771275084",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892771406156,
+        "handle": "intercoms-package",
+        "title": "Intercom Systems Package",
+        "gid": "gid://shopify/Product/15892771406156",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892779663692,
+        "handle": "kentec-syncro-as-1-loop",
+        "title": "Kentec Syncro AS 1-Loop Addressable Panel",
+        "gid": "gid://shopify/Product/15892779663692",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892779729228,
+        "handle": "kentec-syncro-as-2-loop",
+        "title": "Kentec Syncro AS 2-Loop Addressable Panel",
+        "gid": "gid://shopify/Product/15892779729228",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892779893068,
+        "handle": "kentec-sigma-cp-4-zone",
+        "title": "Kentec Sigma CP 4-Zone Conventional Panel",
+        "gid": "gid://shopify/Product/15892779893068",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892779991372,
+        "handle": "kentec-sigma-cp-8-zone",
+        "title": "Kentec Sigma CP 8-Zone Conventional Panel",
+        "gid": "gid://shopify/Product/15892779991372",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892780056908,
+        "handle": "advanced-mxpro5-1-loop",
+        "title": "Advanced MxPro 5 1-Loop Addressable Panel",
+        "gid": "gid://shopify/Product/15892780056908",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892780155212,
+        "handle": "advanced-mxpro5-2-loop",
+        "title": "Advanced MxPro 5 2-Loop Addressable Panel",
+        "gid": "gid://shopify/Product/15892780155212",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892780220748,
+        "handle": "advanced-axis-en-4-zone",
+        "title": "Advanced Axis EN 4-Zone Conventional Panel",
+        "gid": "gid://shopify/Product/15892780220748",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892780319052,
+        "handle": "ctec-xfp-1-loop",
+        "title": "C-TEC XFP 1-Loop Addressable Panel",
+        "gid": "gid://shopify/Product/15892780319052",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892780482892,
+        "handle": "ctec-xfp-2-loop",
+        "title": "C-TEC XFP 2-Loop Addressable Panel",
+        "gid": "gid://shopify/Product/15892780482892",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892780613964,
+        "handle": "ctec-cfp-2-zone",
+        "title": "C-TEC CFP 2-Zone Conventional Panel",
+        "gid": "gid://shopify/Product/15892780613964",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892780679500,
+        "handle": "ctec-cfp-4-zone",
+        "title": "C-TEC CFP 4-Zone Conventional Panel",
+        "gid": "gid://shopify/Product/15892780679500",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892780745036,
+        "handle": "ctec-cfp-8-zone",
+        "title": "C-TEC CFP 8-Zone Conventional Panel",
+        "gid": "gid://shopify/Product/15892780745036",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892780843340,
+        "handle": "haes-esento-4-zone",
+        "title": "Haes Esento 4-Zone Conventional Panel",
+        "gid": "gid://shopify/Product/15892780843340",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892780908876,
+        "handle": "haes-esento-8-zone",
+        "title": "Haes Esento 8-Zone Conventional Panel",
+        "gid": "gid://shopify/Product/15892780908876",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892780974412,
+        "handle": "morley-dxc1-1-loop",
+        "title": "Morley DX Connexion 1-Loop Panel",
+        "gid": "gid://shopify/Product/15892780974412",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892781039948,
+        "handle": "apollo-s65-optical-smoke",
+        "title": "Apollo Series 65 Optical Smoke Detector",
+        "gid": "gid://shopify/Product/15892781039948",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892781138252,
+        "handle": "apollo-s65-ionisation-smoke",
+        "title": "Apollo Series 65 Ionisation Smoke Detector",
+        "gid": "gid://shopify/Product/15892781138252",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892781236556,
+        "handle": "apollo-orbis-optical-smoke",
+        "title": "Apollo Orbis Optical Smoke Detector",
+        "gid": "gid://shopify/Product/15892781236556",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892781367628,
+        "handle": "apollo-xp95-optical-smoke",
+        "title": "Apollo XP95 Optical Smoke Detector",
+        "gid": "gid://shopify/Product/15892781367628",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892781433164,
+        "handle": "apollo-discovery-optical-smoke",
+        "title": "Apollo Discovery Optical Smoke Detector",
+        "gid": "gid://shopify/Product/15892781433164",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892781498700,
+        "handle": "hochiki-alg-en-smoke",
+        "title": "Hochiki ALG-EN Photoelectric Smoke Detector",
+        "gid": "gid://shopify/Product/15892781498700",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892781564236,
+        "handle": "hochiki-slo-e-smoke",
+        "title": "Hochiki SLR-E Conventional Optical Smoke",
+        "gid": "gid://shopify/Product/15892781564236",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892781662540,
+        "handle": "system-sensor-eco1003-smoke",
+        "title": "System Sensor ECO1003 Optical Smoke Detector",
+        "gid": "gid://shopify/Product/15892781662540",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892781728076,
+        "handle": "apollo-s65-heat-a1r",
+        "title": "Apollo Series 65 Heat Detector A1R",
+        "gid": "gid://shopify/Product/15892781728076",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892781793612,
+        "handle": "apollo-s65-heat-cs",
+        "title": "Apollo Series 65 Heat Detector CS",
+        "gid": "gid://shopify/Product/15892781793612",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892781891916,
+        "handle": "apollo-xp95-heat",
+        "title": "Apollo XP95 Heat Detector",
+        "gid": "gid://shopify/Product/15892781891916",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892781990220,
+        "handle": "hochiki-atj-en-heat",
+        "title": "Hochiki ATJ-EN Heat Detector",
+        "gid": "gid://shopify/Product/15892781990220",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892782055756,
+        "handle": "apollo-orbis-heat-a1r",
+        "title": "Apollo Orbis Heat Detector A1R",
+        "gid": "gid://shopify/Product/15892782055756",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892782121292,
+        "handle": "apollo-discovery-multisensor",
+        "title": "Apollo Discovery Multisensor Detector",
+        "gid": "gid://shopify/Product/15892782121292",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892782219596,
+        "handle": "apollo-xp95-multisensor",
+        "title": "Apollo XP95 Multisensor Detector",
+        "gid": "gid://shopify/Product/15892782219596",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892782285132,
+        "handle": "hochiki-acc-en-multisensor",
+        "title": "Hochiki ACC-EN Multisensor Detector",
+        "gid": "gid://shopify/Product/15892782285132",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892782350668,
+        "handle": "kac-mcp-conventional-red",
+        "title": "KAC Conventional Manual Call Point Red",
+        "gid": "gid://shopify/Product/15892782350668",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892782448972,
+        "handle": "apollo-xp95-mcp",
+        "title": "Apollo XP95 Addressable Manual Call Point",
+        "gid": "gid://shopify/Product/15892782448972",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892782547276,
+        "handle": "hochiki-hcp-e-mcp",
+        "title": "Hochiki HCP-E Addressable Call Point",
+        "gid": "gid://shopify/Product/15892782547276",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892782612812,
+        "handle": "kac-weatherproof-mcp",
+        "title": "KAC Weatherproof Manual Call Point",
+        "gid": "gid://shopify/Product/15892782612812",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892782711116,
+        "handle": "apollo-discovery-mcp",
+        "title": "Apollo Discovery Addressable Call Point",
+        "gid": "gid://shopify/Product/15892782711116",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892782776652,
+        "handle": "fulleon-roshni-sounder-red",
+        "title": "Fulleon Roshni Electronic Sounder Red",
+        "gid": "gid://shopify/Product/15892782776652",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892782842188,
+        "handle": "fulleon-roshni-sounder-beacon",
+        "title": "Fulleon Roshni Sounder Beacon Red",
+        "gid": "gid://shopify/Product/15892782842188",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892782907724,
+        "handle": "apollo-xp95-sounder-beacon-base",
+        "title": "Apollo XP95 Sounder Beacon Base",
+        "gid": "gid://shopify/Product/15892782907724",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892783006028,
+        "handle": "hochiki-chq-wsb-sounder-beacon",
+        "title": "Hochiki CHQ-WSB Wall Sounder Beacon",
+        "gid": "gid://shopify/Product/15892783006028",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892783104332,
+        "handle": "vimpex-square-sounder",
+        "title": "Vimpex Square Electronic Sounder",
+        "gid": "gid://shopify/Product/15892783104332",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892783169868,
+        "handle": "eaton-fulleon-flashni",
+        "title": "Eaton Fulleon Flashni Sounder Beacon",
+        "gid": "gid://shopify/Product/15892783169868",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892783300940,
+        "handle": "apollo-s65-standard-base",
+        "title": "Apollo Series 65 Standard Detector Base",
+        "gid": "gid://shopify/Product/15892783300940",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892783399244,
+        "handle": "apollo-s65-diode-base",
+        "title": "Apollo Series 65 Diode Base",
+        "gid": "gid://shopify/Product/15892783399244",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892783464780,
+        "handle": "apollo-xp95-isolator-base",
+        "title": "Apollo XP95 Isolator Base",
+        "gid": "gid://shopify/Product/15892783464780",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892783595852,
+        "handle": "hochiki-ybn-r-3-base",
+        "title": "Hochiki YBN-R/3 Sensor Base",
+        "gid": "gid://shopify/Product/15892783595852",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892783726924,
+        "handle": "apollo-deckhead-mounting",
+        "title": "Apollo Deckhead Mounting Base Accessory",
+        "gid": "gid://shopify/Product/15892783726924",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892783890764,
+        "handle": "apollo-xp95-io-unit",
+        "title": "Apollo XP95 Input/Output Unit",
+        "gid": "gid://shopify/Product/15892783890764",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892784120140,
+        "handle": "apollo-xp95-zone-monitor",
+        "title": "Apollo XP95 Zone Monitor Unit",
+        "gid": "gid://shopify/Product/15892784120140",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892784349516,
+        "handle": "apollo-xp95-sounder-control",
+        "title": "Apollo XP95 Sounder Control Unit",
+        "gid": "gid://shopify/Product/15892784349516",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892784546124,
+        "handle": "hochiki-chq-dim-module",
+        "title": "Hochiki CHQ-DIM Dual Input Module",
+        "gid": "gid://shopify/Product/15892784546124",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892784742732,
+        "handle": "hochiki-chq-som-module",
+        "title": "Hochiki CHQ-SOM Single Output Module",
+        "gid": "gid://shopify/Product/15892784742732",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892785037644,
+        "handle": "ctec-bf375-24v-psu",
+        "title": "C-TEC BF375 24V 1.5A Power Supply",
+        "gid": "gid://shopify/Product/15892785037644",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892785234252,
+        "handle": "ctec-bf562-24v-psu",
+        "title": "C-TEC BF562 24V 2.5A Power Supply",
+        "gid": "gid://shopify/Product/15892785234252",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892785463628,
+        "handle": "yuasa-np7-12-battery",
+        "title": "Yuasa NP7-12 12V 7Ah VRLA Battery",
+        "gid": "gid://shopify/Product/15892785463628",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892785594700,
+        "handle": "yuasa-np12-12-battery",
+        "title": "Yuasa NP12-12 12V 12Ah VRLA Battery",
+        "gid": "gid://shopify/Product/15892785594700",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892785758540,
+        "handle": "yuasa-np18-12b-battery",
+        "title": "Yuasa NP18-12B 12V 17/18Ah VRLA Battery",
+        "gid": "gid://shopify/Product/15892785758540",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892785889612,
+        "handle": "yuasa-np24-12-battery",
+        "title": "Yuasa NP24-12 12V 24Ah VRLA Battery",
+        "gid": "gid://shopify/Product/15892785889612",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892786118988,
+        "handle": "fp200-gold-1-5mm-2c-100m",
+        "title": "FP200 Gold 1.5mm 2C+E Fire Cable 100m",
+        "gid": "gid://shopify/Product/15892786118988",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892786315596,
+        "handle": "fp200-gold-1-5mm-2c-500m",
+        "title": "FP200 Gold 1.5mm 2C+E Fire Cable 500m",
+        "gid": "gid://shopify/Product/15892786315596",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892786479436,
+        "handle": "fp200-gold-2-5mm-2c-100m",
+        "title": "FP200 Gold 2.5mm 2C+E Fire Cable 100m",
+        "gid": "gid://shopify/Product/15892786479436",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892786676044,
+        "handle": "fire-cable-gland-pack-20",
+        "title": "Fire Cable Brass Gland Pack (20)",
+        "gid": "gid://shopify/Product/15892786676044",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892786872652,
+        "handle": "fire-junction-box-pack-10",
+        "title": "Fire Resistant Junction Box Pack (10)",
+        "gid": "gid://shopify/Product/15892786872652",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892787069260,
+        "handle": "eml-led-bulkhead-nm-3hr",
+        "title": "LED Emergency Bulkhead Non-Maintained 3hr",
+        "gid": "gid://shopify/Product/15892787069260",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892787298636,
+        "handle": "eml-led-bulkhead-m-3hr",
+        "title": "LED Emergency Bulkhead Maintained 3hr",
+        "gid": "gid://shopify/Product/15892787298636",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892787495244,
+        "handle": "eml-exit-sign-maintained",
+        "title": "LED Exit Sign Maintained 3hr",
+        "gid": "gid://shopify/Product/15892787495244",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892787626316,
+        "handle": "eml-exit-blade-suspended",
+        "title": "LED Suspended Exit Blade 3hr",
+        "gid": "gid://shopify/Product/15892787626316",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892787790156,
+        "handle": "eml-ip65-industrial-nm",
+        "title": "IP65 Industrial Emergency Bulkhead NM 3hr",
+        "gid": "gid://shopify/Product/15892787790156",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892788019532,
+        "handle": "eml-self-test-bulkhead",
+        "title": "Self-Test LED Emergency Bulkhead 3hr",
+        "gid": "gid://shopify/Product/15892788019532",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892788281676,
+        "handle": "ctec-cfp-2-zone-conventional-panel",
+        "title": "C-TEC CFP \u2014 2-Zone Conventional Fire Alarm Panel",
+        "gid": "gid://shopify/Product/15892788281676",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892788478284,
+        "handle": "ctec-cfp-4-zone-conventional-panel",
+        "title": "C-TEC CFP \u2014 4-Zone Conventional Fire Alarm Panel",
+        "gid": "gid://shopify/Product/15892788478284",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892788642124,
+        "handle": "ctec-cfp-8-zone-conventional-panel",
+        "title": "C-TEC CFP \u2014 8-Zone Conventional Fire Alarm Panel",
+        "gid": "gid://shopify/Product/15892788642124",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892788805964,
+        "handle": "ctec-xfp-1-loop-16-zone-addressable",
+        "title": "C-TEC XFP \u2014 1-Loop 16-Zone Addressable Panel",
+        "gid": "gid://shopify/Product/15892788805964",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892789002572,
+        "handle": "ctec-xfp-1-loop-32-zone-addressable",
+        "title": "C-TEC XFP \u2014 1-Loop 32-Zone Addressable Panel",
+        "gid": "gid://shopify/Product/15892789002572",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892789199180,
+        "handle": "ctec-xfp-2-loop-32-zone-addressable",
+        "title": "C-TEC XFP \u2014 2-Loop 32-Zone Addressable Panel",
+        "gid": "gid://shopify/Product/15892789199180",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892789395788,
+        "handle": "ctec-zfp-1-loop-addressable-panel",
+        "title": "C-TEC ZFP \u2014 1-Loop Addressable Fire Panel",
+        "gid": "gid://shopify/Product/15892789395788",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892789625164,
+        "handle": "kentec-sigma-cp-2-zone-conventional",
+        "title": "Kentec Sigma CP \u2014 2-Zone Conventional Panel",
+        "gid": "gid://shopify/Product/15892789625164",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892789821772,
+        "handle": "kentec-sigma-cp-4-zone-conventional",
+        "title": "Kentec Sigma CP \u2014 4-Zone Conventional Panel",
+        "gid": "gid://shopify/Product/15892789821772",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892789985612,
+        "handle": "kentec-sigma-cp-8-zone-conventional",
+        "title": "Kentec Sigma CP \u2014 8-Zone Conventional Panel",
+        "gid": "gid://shopify/Product/15892789985612",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892790182220,
+        "handle": "kentec-sigma-xt-extinguishing-panel",
+        "title": "Kentec Sigma XT \u2014 Single-Area Extinguishing Control Panel",
+        "gid": "gid://shopify/Product/15892790182220",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892790378828,
+        "handle": "kentec-syncro-as-1-loop-addressable",
+        "title": "Kentec Syncro AS \u2014 1-Loop Addressable Panel",
+        "gid": "gid://shopify/Product/15892790378828",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892790477132,
+        "handle": "kentec-syncro-as-2-loop-addressable",
+        "title": "Kentec Syncro AS \u2014 2-Loop Addressable Panel",
+        "gid": "gid://shopify/Product/15892790477132",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892790706508,
+        "handle": "kentec-syncro-as-4-loop-addressable",
+        "title": "Kentec Syncro AS \u2014 4-Loop Addressable Panel",
+        "gid": "gid://shopify/Product/15892790706508",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892790903116,
+        "handle": "kentec-syncro-focus-repeater",
+        "title": "Kentec Syncro Focus \u2014 Network Repeater / Remote Display",
+        "gid": "gid://shopify/Product/15892790903116",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892791066956,
+        "handle": "advanced-mxpro5-1-loop-addressable",
+        "title": "Advanced MxPro 5 \u2014 1-Loop Addressable Panel",
+        "gid": "gid://shopify/Product/15892791066956",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892791263564,
+        "handle": "advanced-mxpro5-2-loop-addressable",
+        "title": "Advanced MxPro 5 \u2014 2-Loop Addressable Panel",
+        "gid": "gid://shopify/Product/15892791263564",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892791460172,
+        "handle": "advanced-mxpro5-4-loop-addressable",
+        "title": "Advanced MxPro 5 \u2014 4-Loop Addressable Panel",
+        "gid": "gid://shopify/Product/15892791460172",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892791656780,
+        "handle": "advanced-mxpro5-8-loop-addressable",
+        "title": "Advanced MxPro 5 \u2014 8-Loop Addressable Panel",
+        "gid": "gid://shopify/Product/15892791656780",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892791820620,
+        "handle": "advanced-axis-en-2-zone-conventional",
+        "title": "Advanced Axis EN \u2014 2-Zone Conventional Panel",
+        "gid": "gid://shopify/Product/15892791820620",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892792049996,
+        "handle": "advanced-axis-en-4-zone-conventional",
+        "title": "Advanced Axis EN \u2014 4-Zone Conventional Panel",
+        "gid": "gid://shopify/Product/15892792049996",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892792246604,
+        "handle": "advanced-axis-en-8-zone-conventional",
+        "title": "Advanced Axis EN \u2014 8-Zone Conventional Panel",
+        "gid": "gid://shopify/Product/15892792246604",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892792475980,
+        "handle": "morley-zx1se-1-loop-addressable",
+        "title": "Morley-IAS ZX1Se \u2014 1-Loop Addressable Panel",
+        "gid": "gid://shopify/Product/15892792475980",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892792672588,
+        "handle": "morley-zx2se-2-loop-addressable",
+        "title": "Morley-IAS ZX2Se \u2014 2-Loop Addressable Panel",
+        "gid": "gid://shopify/Product/15892792672588",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892793098572,
+        "handle": "morley-zx5se-5-loop-addressable",
+        "title": "Morley-IAS ZX5Se \u2014 5-Loop Addressable Panel",
+        "gid": "gid://shopify/Product/15892793098572",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892793491788,
+        "handle": "haes-excel-2-zone-conventional",
+        "title": "Haes Excel \u2014 2-Zone Conventional Fire Panel",
+        "gid": "gid://shopify/Product/15892793491788",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892793688396,
+        "handle": "haes-excel-4-zone-conventional",
+        "title": "Haes Excel \u2014 4-Zone Conventional Fire Panel",
+        "gid": "gid://shopify/Product/15892793688396",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892793852236,
+        "handle": "haes-excel-8-zone-conventional",
+        "title": "Haes Excel \u2014 8-Zone Conventional Fire Panel",
+        "gid": "gid://shopify/Product/15892793852236",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892794016076,
+        "handle": "haes-eclipse-1-loop-addressable",
+        "title": "Haes Eclipse \u2014 1-Loop Addressable Panel",
+        "gid": "gid://shopify/Product/15892794016076",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892794212684,
+        "handle": "haes-eclipse-2-loop-addressable",
+        "title": "Haes Eclipse \u2014 2-Loop Addressable Panel",
+        "gid": "gid://shopify/Product/15892794212684",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892794409292,
+        "handle": "fike-twinflex-pro-2-zone-2-wire",
+        "title": "Fike Twinflex Pro \u2014 2-Zone 2-Wire Fire Panel",
+        "gid": "gid://shopify/Product/15892794409292",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892794605900,
+        "handle": "fike-twinflex-pro-4-zone-2-wire",
+        "title": "Fike Twinflex Pro \u2014 4-Zone 2-Wire Fire Panel",
+        "gid": "gid://shopify/Product/15892794605900",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892794802508,
+        "handle": "fike-twinflex-pro-8-zone-2-wire",
+        "title": "Fike Twinflex Pro \u2014 8-Zone 2-Wire Fire Panel",
+        "gid": "gid://shopify/Product/15892794802508",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892794999116,
+        "handle": "ems-firecell-radio-hub-panel",
+        "title": "EMS FireCell \u2014 Wireless Radio Fire Hub / Panel",
+        "gid": "gid://shopify/Product/15892794999116",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892795228492,
+        "handle": "apollo-series-65-optical-smoke",
+        "title": "Apollo Series 65 Optical Smoke Detector",
+        "gid": "gid://shopify/Product/15892795228492",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892795425100,
+        "handle": "apollo-series-65-ionisation-smoke",
+        "title": "Apollo Series 65 Ionisation Smoke Detector",
+        "gid": "gid://shopify/Product/15892795425100",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892795621708,
+        "handle": "apollo-orbis-multisensor-smoke",
+        "title": "Apollo Orbis Multisensor Smoke Detector",
+        "gid": "gid://shopify/Product/15892795621708",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892795883852,
+        "handle": "apollo-xp95-ionisation-smoke",
+        "title": "Apollo XP95 Ionisation Smoke Detector",
+        "gid": "gid://shopify/Product/15892795883852",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892796047692,
+        "handle": "apollo-discovery-ionisation-smoke",
+        "title": "Apollo Discovery Ionisation Smoke Detector",
+        "gid": "gid://shopify/Product/15892796047692",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892796309836,
+        "handle": "hochiki-esp-alg-en-optical-smoke",
+        "title": "Hochiki ESP ALG-EN Optical Smoke Detector",
+        "gid": "gid://shopify/Product/15892796309836",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892796506444,
+        "handle": "hochiki-esp-ala-e-optical-smoke",
+        "title": "Hochiki ESP ALA-E Optical Smoke Detector",
+        "gid": "gid://shopify/Product/15892796506444",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892796703052,
+        "handle": "hochiki-cdx-slof-as-optical-smoke",
+        "title": "Hochiki CDX SLR-E Conventional Optical Smoke Detector",
+        "gid": "gid://shopify/Product/15892796703052",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892796866892,
+        "handle": "system-sensor-eco1003-optical-smoke",
+        "title": "System Sensor ECO1003 Optical Smoke Detector",
+        "gid": "gid://shopify/Product/15892796866892",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892797063500,
+        "handle": "system-sensor-eco1002-optical-smoke",
+        "title": "System Sensor ECO1002 Optical Smoke Detector",
+        "gid": "gid://shopify/Product/15892797063500",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892797292876,
+        "handle": "system-sensor-2251em-optical-smoke",
+        "title": "System Sensor 2251EM Addressable Optical Smoke Detector",
+        "gid": "gid://shopify/Product/15892797292876",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892797522252,
+        "handle": "fike-twinflex-optical-smoke",
+        "title": "Fike Twinflex Multipoint Optical Smoke Detector",
+        "gid": "gid://shopify/Product/15892797522252",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892798275916,
+        "handle": "fike-sita-optical-smoke",
+        "title": "Fike Sita Optical Smoke Detector",
+        "gid": "gid://shopify/Product/15892798275916",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892799127884,
+        "handle": "apollo-series-65-integrating-ionisation",
+        "title": "Apollo Series 65 Integrating Ionisation Smoke Detector",
+        "gid": "gid://shopify/Product/15892799127884",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892799324492,
+        "handle": "apollo-xp95-black-optical-smoke",
+        "title": "Apollo XP95 Optical Smoke Detector \u2014 Black",
+        "gid": "gid://shopify/Product/15892799324492",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892799553868,
+        "handle": "hochiki-esp-alg-enw-white-optical",
+        "title": "Hochiki ESP ALG-ENW Optical Smoke Detector (White)",
+        "gid": "gid://shopify/Product/15892799553868",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892799717708,
+        "handle": "system-sensor-22051e-optical-smoke",
+        "title": "System Sensor 22051E Intelligent Optical Smoke Detector",
+        "gid": "gid://shopify/Product/15892799717708",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892799914316,
+        "handle": "apollo-series-65-heat-a1r",
+        "title": "Apollo Series 65 Heat Detector A1R (Rate-of-Rise)",
+        "gid": "gid://shopify/Product/15892799914316",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892800110924,
+        "handle": "apollo-series-65-heat-br",
+        "title": "Apollo Series 65 Heat Detector BR (Rate-of-Rise)",
+        "gid": "gid://shopify/Product/15892800110924",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892800340300,
+        "handle": "apollo-series-65-heat-cs",
+        "title": "Apollo Series 65 Heat Detector CS (Static)",
+        "gid": "gid://shopify/Product/15892800340300",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892800569676,
+        "handle": "apollo-orbis-heat-cs",
+        "title": "Apollo Orbis Heat Detector CS",
+        "gid": "gid://shopify/Product/15892800569676",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892800799052,
+        "handle": "apollo-xp95-heat-a1r",
+        "title": "Apollo XP95 Heat Detector A1R",
+        "gid": "gid://shopify/Product/15892800799052",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892800930124,
+        "handle": "apollo-xp95-heat-cs",
+        "title": "Apollo XP95 Heat Detector CS",
+        "gid": "gid://shopify/Product/15892800930124",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892801225036,
+        "handle": "apollo-discovery-heat-a1r",
+        "title": "Apollo Discovery Heat Detector A1R",
+        "gid": "gid://shopify/Product/15892801225036",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892801388876,
+        "handle": "apollo-discovery-heat-cs",
+        "title": "Apollo Discovery Heat Detector CS",
+        "gid": "gid://shopify/Product/15892801388876",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892801585484,
+        "handle": "hochiki-esp-atj-en-heat",
+        "title": "Hochiki ESP ATJ-EN Multi-Heat Detector",
+        "gid": "gid://shopify/Product/15892801585484",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892801880396,
+        "handle": "hochiki-esp-atj-enw-heat",
+        "title": "Hochiki ESP ATJ-ENW Multi-Heat Detector (White)",
+        "gid": "gid://shopify/Product/15892801880396",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892802044236,
+        "handle": "hochiki-cdx-dfj-ae3-heat",
+        "title": "Hochiki CDX DFJ-AE3 Conventional Heat Detector",
+        "gid": "gid://shopify/Product/15892802044236",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892802240844,
+        "handle": "system-sensor-eco1005-heat",
+        "title": "System Sensor ECO1005 Heat Detector",
+        "gid": "gid://shopify/Product/15892802240844",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892802404684,
+        "handle": "system-sensor-52051e-heat",
+        "title": "System Sensor 52051E Intelligent Heat Detector",
+        "gid": "gid://shopify/Product/15892802404684",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892802601292,
+        "handle": "fike-twinflex-heat",
+        "title": "Fike Twinflex Multipoint Heat Detector",
+        "gid": "gid://shopify/Product/15892802601292",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892802732364,
+        "handle": "fike-sita-heat",
+        "title": "Fike Sita Heat Detector",
+        "gid": "gid://shopify/Product/15892802732364",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892802863436,
+        "handle": "apollo-discovery-multisensor-black",
+        "title": "Apollo Discovery Multisensor Detector \u2014 Black",
+        "gid": "gid://shopify/Product/15892802863436",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892803027276,
+        "handle": "apollo-orbis-multisensor-oh",
+        "title": "Apollo Orbis Optical/Heat Multisensor Detector",
+        "gid": "gid://shopify/Product/15892803027276",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892803223884,
+        "handle": "hochiki-esp-acc-en-multisensor",
+        "title": "Hochiki ESP ACC-EN Multi-Sensor Detector",
+        "gid": "gid://shopify/Product/15892803223884",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892803453260,
+        "handle": "hochiki-esp-acc-enw-multisensor",
+        "title": "Hochiki ESP ACC-ENW Multi-Sensor Detector (White)",
+        "gid": "gid://shopify/Product/15892803453260",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892803682636,
+        "handle": "hochiki-esp-aca-e-multisensor",
+        "title": "Hochiki ESP ACA-E Multi-Sensor Detector",
+        "gid": "gid://shopify/Product/15892803682636",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892803846476,
+        "handle": "system-sensor-2251tem-multisensor",
+        "title": "System Sensor 2251TEM Multi-Criteria Detector",
+        "gid": "gid://shopify/Product/15892803846476",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892804010316,
+        "handle": "system-sensor-22051te-multisensor",
+        "title": "System Sensor 22051TE Intelligent Multi-Sensor Detector",
+        "gid": "gid://shopify/Product/15892804010316",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892804174156,
+        "handle": "fike-sita-multisensor",
+        "title": "Fike Sita Multi-Sensor Detector",
+        "gid": "gid://shopify/Product/15892804174156",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892804305228,
+        "handle": "fike-twinflex-multisensor",
+        "title": "Fike Twinflex Multipoint Multi-Sensor Detector",
+        "gid": "gid://shopify/Product/15892804305228",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892804469068,
+        "handle": "apollo-discovery-co-multisensor",
+        "title": "Apollo Discovery CO / Multisensor Detector",
+        "gid": "gid://shopify/Product/15892804469068",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892804632908,
+        "handle": "hochiki-esp-acb-e-multisensor",
+        "title": "Hochiki ESP ACB-E Multi-Sensor Detector",
+        "gid": "gid://shopify/Product/15892804632908",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892804829516,
+        "handle": "apollo-xp95-manual-call-point",
+        "title": "Apollo XP95 Addressable Manual Call Point",
+        "gid": "gid://shopify/Product/15892804829516",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892805026124,
+        "handle": "apollo-discovery-manual-call-point",
+        "title": "Apollo Discovery Addressable Manual Call Point",
+        "gid": "gid://shopify/Product/15892805026124",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892805255500,
+        "handle": "apollo-series65-manual-call-point",
+        "title": "Apollo Series 65 Conventional Manual Call Point",
+        "gid": "gid://shopify/Product/15892805255500",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892805452108,
+        "handle": "apollo-xp95-waterproof-mcp",
+        "title": "Apollo XP95 Waterproof Manual Call Point IP67",
+        "gid": "gid://shopify/Product/15892805452108",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892805681484,
+        "handle": "hochiki-chq-mcp-addressable",
+        "title": "Hochiki CHQ-MCP Addressable Manual Call Point",
+        "gid": "gid://shopify/Product/15892805681484",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892805845324,
+        "handle": "hochiki-ccp-e-conventional-mcp",
+        "title": "Hochiki CCP-E Conventional Manual Call Point",
+        "gid": "gid://shopify/Product/15892805845324",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892806074700,
+        "handle": "hochiki-hcp-w-weatherproof-mcp",
+        "title": "Hochiki HCP-W Weatherproof Manual Call Point",
+        "gid": "gid://shopify/Product/15892806074700",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892806238540,
+        "handle": "kac-indoor-resettable-mcp",
+        "title": "KAC Indoor Resettable Manual Call Point",
+        "gid": "gid://shopify/Product/15892806238540",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892806435148,
+        "handle": "kac-weatherproof-mcp-ip67",
+        "title": "KAC Weatherproof Manual Call Point IP67",
+        "gid": "gid://shopify/Product/15892806435148",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892806598988,
+        "handle": "kac-flush-mount-mcp",
+        "title": "KAC Flush Mount Manual Call Point",
+        "gid": "gid://shopify/Product/15892806598988",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892806795596,
+        "handle": "ctec-conventional-mcp",
+        "title": "C-TEC Conventional Manual Call Point",
+        "gid": "gid://shopify/Product/15892806795596",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892807024972,
+        "handle": "ctec-addressable-mcp-cast",
+        "title": "C-TEC CAST Addressable Manual Call Point",
+        "gid": "gid://shopify/Product/15892807024972",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892807188812,
+        "handle": "eaton-conventional-mcp",
+        "title": "Eaton Conventional Manual Call Point",
+        "gid": "gid://shopify/Product/15892807188812",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892807352652,
+        "handle": "fulleon-resettable-mcp",
+        "title": "Fulleon Resettable Manual Call Point",
+        "gid": "gid://shopify/Product/15892807352652",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892807582028,
+        "handle": "apollo-xp95-sounder-base",
+        "title": "Apollo XP95 Integrated Base Sounder",
+        "gid": "gid://shopify/Product/15892807582028",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892807745868,
+        "handle": "apollo-discovery-sounder-beacon-base",
+        "title": "Apollo Discovery Sounder Beacon Base",
+        "gid": "gid://shopify/Product/15892807745868",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892807909708,
+        "handle": "apollo-open-area-sounder",
+        "title": "Apollo Intelligent Open-Area Sounder",
+        "gid": "gid://shopify/Product/15892807909708",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892808040780,
+        "handle": "apollo-open-area-sounder-vad",
+        "title": "Apollo Intelligent Open-Area Sounder VAD",
+        "gid": "gid://shopify/Product/15892808040780",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892808237388,
+        "handle": "hochiki-chq-ws2-wall-sounder",
+        "title": "Hochiki CHQ-WS2 Addressable Wall Sounder",
+        "gid": "gid://shopify/Product/15892808237388",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892808433996,
+        "handle": "hochiki-chq-wsb2-sounder-beacon",
+        "title": "Hochiki CHQ-WSB2 Sounder Beacon",
+        "gid": "gid://shopify/Product/15892808433996",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892808630604,
+        "handle": "hochiki-ybo-bsb-base-sounder-beacon",
+        "title": "Hochiki YBO-BSB Base Sounder Beacon",
+        "gid": "gid://shopify/Product/15892808630604",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892808794444,
+        "handle": "fulleon-roshni-electronic-sounder",
+        "title": "Fulleon Roshni Electronic Sounder",
+        "gid": "gid://shopify/Product/15892808794444",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892809023820,
+        "handle": "fulleon-flashni-sounder-beacon",
+        "title": "Fulleon Flashni Sounder Beacon",
+        "gid": "gid://shopify/Product/15892809023820",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892809220428,
+        "handle": "fulleon-symphoni-compact-sounder",
+        "title": "Fulleon Symphoni Compact Sounder",
+        "gid": "gid://shopify/Product/15892809220428",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892809417036,
+        "handle": "fulleon-solo-vad-beacon",
+        "title": "Fulleon Solo EN54-23 Visual Alarm Device",
+        "gid": "gid://shopify/Product/15892809417036",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892809646412,
+        "handle": "vimpex-asserta-midi-sounder",
+        "title": "Vimpex Asserta Midi Electronic Sounder",
+        "gid": "gid://shopify/Product/15892809646412",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892809777484,
+        "handle": "vimpex-asserta-maxi-sounder",
+        "title": "Vimpex Asserta Maxi High Output Sounder",
+        "gid": "gid://shopify/Product/15892809777484",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892809941324,
+        "handle": "vimpex-asserta-sounder-beacon",
+        "title": "Vimpex Asserta Sounder Beacon",
+        "gid": "gid://shopify/Product/15892809941324",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892810170700,
+        "handle": "ctec-activ-sounder",
+        "title": "C-TEC ActiV Conventional Sounder",
+        "gid": "gid://shopify/Product/15892810170700",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892810301772,
+        "handle": "ctec-activ-sounder-vad",
+        "title": "C-TEC ActiV Sounder VAD Beacon",
+        "gid": "gid://shopify/Product/15892810301772",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892810465612,
+        "handle": "eaton-rolp-sounder",
+        "title": "Eaton Fulleon RoLP Electronic Sounder",
+        "gid": "gid://shopify/Product/15892810465612",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892810694988,
+        "handle": "eaton-sqg3-sounder-beacon",
+        "title": "Eaton Square LED Sounder Beacon",
+        "gid": "gid://shopify/Product/15892810694988",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892810891596,
+        "handle": "apollo-xp95-standard-base",
+        "title": "Apollo XP95 / Discovery Standard Detector Base",
+        "gid": "gid://shopify/Product/15892810891596",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892811055436,
+        "handle": "apollo-series65-diode-base",
+        "title": "Apollo Series 65 Diode Base",
+        "gid": "gid://shopify/Product/15892811055436",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892811219276,
+        "handle": "apollo-series65-standard-base",
+        "title": "Apollo Series 65 Standard Base",
+        "gid": "gid://shopify/Product/15892811219276",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892811415884,
+        "handle": "apollo-deep-base",
+        "title": "Apollo Deep Mounting Base",
+        "gid": "gid://shopify/Product/15892811415884",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892811612492,
+        "handle": "apollo-relay-base",
+        "title": "Apollo XP95 Relay Base",
+        "gid": "gid://shopify/Product/15892811612492",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892811874636,
+        "handle": "hochiki-ybn-r3-standard-base",
+        "title": "Hochiki YBN-R/3 Standard Detector Base",
+        "gid": "gid://shopify/Product/15892811874636",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892812071244,
+        "handle": "hochiki-ybo-r-sci-isolator-base",
+        "title": "Hochiki YBO-R/SCI Short Circuit Isolator Base",
+        "gid": "gid://shopify/Product/15892812071244",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892812300620,
+        "handle": "hochiki-ybn-rsa-base",
+        "title": "Hochiki YBN-R/3(SCI) Base with Isolator",
+        "gid": "gid://shopify/Product/15892812300620",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892812497228,
+        "handle": "hochiki-ybo-r-5-base",
+        "title": "Hochiki YBO-R/5 Remote Indicator Base Accessory",
+        "gid": "gid://shopify/Product/15892812497228",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892812693836,
+        "handle": "ctec-conventional-diode-base",
+        "title": "C-TEC Conventional Detector Diode Base",
+        "gid": "gid://shopify/Product/15892812693836",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892812923212,
+        "handle": "ctec-activ-standard-base",
+        "title": "C-TEC ActiV Standard Detector Base",
+        "gid": "gid://shopify/Product/15892812923212",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892813087052,
+        "handle": "eaton-conventional-detector-base",
+        "title": "Eaton Conventional Detector Base",
+        "gid": "gid://shopify/Product/15892813087052",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892813316428,
+        "handle": "apollo-deckhead-mounting-base",
+        "title": "Apollo Deckhead / Surface Spacer Ring",
+        "gid": "gid://shopify/Product/15892813316428",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892813611340,
+        "handle": "apollo-xp95-input-output-unit",
+        "title": "Apollo XP95 Single Input/Output Unit",
+        "gid": "gid://shopify/Product/15892813611340",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892813840716,
+        "handle": "apollo-xp95-sounder-control-unit",
+        "title": "Apollo XP95 Sounder Control Unit",
+        "gid": "gid://shopify/Product/15892813840716",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892814102860,
+        "handle": "apollo-xp95-dual-isolator",
+        "title": "Apollo XP95 Dual Isolator",
+        "gid": "gid://shopify/Product/15892814102860",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892814463308,
+        "handle": "apollo-discovery-mimic-driver",
+        "title": "Apollo Discovery Mini Switch Monitor",
+        "gid": "gid://shopify/Product/15892814463308",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892814889292,
+        "handle": "hochiki-chq-sim-single-input",
+        "title": "Hochiki CHQ-SIM Single Input Module",
+        "gid": "gid://shopify/Product/15892814889292",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892815610188,
+        "handle": "hochiki-chq-dim-dual-input",
+        "title": "Hochiki CHQ-DIM Dual Input Module",
+        "gid": "gid://shopify/Product/15892815610188",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892816462156,
+        "handle": "hochiki-chq-drc-dual-relay",
+        "title": "Hochiki CHQ-DRC Dual Relay Controller",
+        "gid": "gid://shopify/Product/15892816462156",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892816855372,
+        "handle": "hochiki-chq-szm-zone-monitor",
+        "title": "Hochiki CHQ-SZM Single Zone Monitor",
+        "gid": "gid://shopify/Product/15892816855372",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892817084748,
+        "handle": "hochiki-chq-som-sounder-module",
+        "title": "Hochiki CHQ-SOM Sounder Control Module",
+        "gid": "gid://shopify/Product/15892817084748",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892817314124,
+        "handle": "ctec-cast-input-output-unit",
+        "title": "C-TEC CAST Addressable Input/Output Unit",
+        "gid": "gid://shopify/Product/15892817314124",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892817510732,
+        "handle": "ctec-cast-zone-monitor",
+        "title": "C-TEC CAST Conventional Zone Monitor",
+        "gid": "gid://shopify/Product/15892817510732",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892817740108,
+        "handle": "eaton-addressable-io-module",
+        "title": "Eaton Addressable Input/Output Module",
+        "gid": "gid://shopify/Product/15892817740108",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892817936716,
+        "handle": "eaton-multi-io-interface",
+        "title": "Eaton Multi-Way Interface Module",
+        "gid": "gid://shopify/Product/15892817936716",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892818231628,
+        "handle": "yuasa-np7-12-12v-7ah-sla-battery",
+        "title": "Yuasa NP7-12 12V 7Ah VRLA Battery",
+        "gid": "gid://shopify/Product/15892818231628",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892818461004,
+        "handle": "yuasa-np12-12-12v-12ah-sla-battery",
+        "title": "Yuasa NP12-12 12V 12Ah VRLA Battery",
+        "gid": "gid://shopify/Product/15892818461004",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892818657612,
+        "handle": "yuasa-np17-12-12v-17ah-sla-battery",
+        "title": "Yuasa NP17-12 12V 17Ah VRLA Battery",
+        "gid": "gid://shopify/Product/15892818657612",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892818886988,
+        "handle": "yuasa-np24-12-12v-24ah-sla-battery",
+        "title": "Yuasa NP24-12 12V 24Ah VRLA Battery",
+        "gid": "gid://shopify/Product/15892818886988",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892819083596,
+        "handle": "trade-12v-7ah-vrla-battery-equivalent",
+        "title": "Trade Equivalent 12V 7Ah VRLA Battery",
+        "gid": "gid://shopify/Product/15892819083596",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892819378508,
+        "handle": "trade-12v-12ah-vrla-battery-equivalent",
+        "title": "Trade Equivalent 12V 12Ah VRLA Battery",
+        "gid": "gid://shopify/Product/15892819378508",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892819673420,
+        "handle": "trade-12v-17ah-vrla-battery-equivalent",
+        "title": "Trade Equivalent 12V 17Ah VRLA Battery",
+        "gid": "gid://shopify/Product/15892819673420",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892819902796,
+        "handle": "trade-12v-24ah-vrla-battery-equivalent",
+        "title": "Trade Equivalent 12V 24Ah VRLA Battery",
+        "gid": "gid://shopify/Product/15892819902796",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892820230476,
+        "handle": "trade-12v-3-2ah-vrla-battery",
+        "title": "Trade 12V 3.2Ah VRLA Battery (Door Holder / Small Panel)",
+        "gid": "gid://shopify/Product/15892820230476",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892820427084,
+        "handle": "trade-12v-5ah-vrla-battery",
+        "title": "Trade 12V 5Ah VRLA Battery",
+        "gid": "gid://shopify/Product/15892820427084",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892820754764,
+        "handle": "battery-pair-kit-12v-7ah-x2-24v",
+        "title": "Battery Pair Kit 2\u00d7 12V 7Ah (24V Standby Pack)",
+        "gid": "gid://shopify/Product/15892820754764",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892821016908,
+        "handle": "battery-pair-kit-12v-12ah-x2-24v",
+        "title": "Battery Pair Kit 2\u00d7 12V 12Ah (24V Standby Pack)",
+        "gid": "gid://shopify/Product/15892821016908",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892821377356,
+        "handle": "fire-psu-24v-1-5a-boxed",
+        "title": "24V 1.5A Boxed Fire System Power Supply",
+        "gid": "gid://shopify/Product/15892821377356",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892821737804,
+        "handle": "fire-psu-24v-2-5a-boxed",
+        "title": "24V 2.5A Boxed Fire System Power Supply",
+        "gid": "gid://shopify/Product/15892821737804",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892822163788,
+        "handle": "fire-psu-24v-5a-boxed",
+        "title": "24V 5A Boxed Fire System Power Supply",
+        "gid": "gid://shopify/Product/15892822163788",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892822655308,
+        "handle": "battery-terminal-spade-kit-4-8mm",
+        "title": "Battery Terminal Spade / Faston Kit 4.8mm (Pack of 20)",
+        "gid": "gid://shopify/Product/15892822655308",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892823114060,
+        "handle": "prysmian-fp200-gold-1-5mm-2c-e-100m",
+        "title": "Prysmian FP200 Gold 1.5mm\u00b2 2-Core + Earth \u2014 100m Drum",
+        "gid": "gid://shopify/Product/15892823114060",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892823540044,
+        "handle": "prysmian-fp200-gold-1-5mm-2c-e-500m",
+        "title": "Prysmian FP200 Gold 1.5mm\u00b2 2-Core + Earth \u2014 500m Drum",
+        "gid": "gid://shopify/Product/15892823540044",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892823998796,
+        "handle": "prysmian-fp200-gold-2-5mm-2c-e-100m",
+        "title": "Prysmian FP200 Gold 2.5mm\u00b2 2-Core + Earth \u2014 100m Drum",
+        "gid": "gid://shopify/Product/15892823998796",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892824555852,
+        "handle": "enhanced-fire-cable-1-5mm-2c-e-100m",
+        "title": "Enhanced Fire Cable 1.5mm\u00b2 2-Core + Earth \u2014 100m Drum",
+        "gid": "gid://shopify/Product/15892824555852",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892825047372,
+        "handle": "enhanced-fire-cable-1-5mm-2c-e-500m",
+        "title": "Enhanced Fire Cable 1.5mm\u00b2 2-Core + Earth \u2014 500m Drum",
+        "gid": "gid://shopify/Product/15892825047372",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892825538892,
+        "handle": "standard-fire-cable-1-5mm-2c-e-100m",
+        "title": "Standard Fire Resistant Cable 1.5mm\u00b2 2-Core + Earth \u2014 100m",
+        "gid": "gid://shopify/Product/15892825538892",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892825932108,
+        "handle": "fire-cable-clip-red-pack-100",
+        "title": "Red Fire Cable Clips \u2014 Pack of 100",
+        "gid": "gid://shopify/Product/15892825932108",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892826390860,
+        "handle": "brass-cable-gland-m20-pack-10",
+        "title": "Brass Cable Gland M20 CW \u2014 Pack of 10",
+        "gid": "gid://shopify/Product/15892826390860",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892826915148,
+        "handle": "brass-cable-gland-m25-pack-10",
+        "title": "Brass Cable Gland M25 CW \u2014 Pack of 10",
+        "gid": "gid://shopify/Product/15892826915148",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892827341132,
+        "handle": "nylon-cable-gland-m20-ip68-pack-20",
+        "title": "Nylon Cable Gland M20 IP68 \u2014 Pack of 20",
+        "gid": "gid://shopify/Product/15892827341132",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892827865420,
+        "handle": "fire-rated-junction-box-white-ip65",
+        "title": "Fire-Rated Junction Box White IP65",
+        "gid": "gid://shopify/Product/15892827865420",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892828356940,
+        "handle": "fire-rated-junction-box-red-ip65",
+        "title": "Fire-Rated Junction Box Red IP65",
+        "gid": "gid://shopify/Product/15892828356940",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892828913996,
+        "handle": "ceramic-terminal-block-5a-pack-10",
+        "title": "Ceramic High-Temp Terminal Block 5A \u2014 Pack of 10",
+        "gid": "gid://shopify/Product/15892828913996",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892829438284,
+        "handle": "fire-cable-joint-kit-inline",
+        "title": "Fire Cable Inline Joint Kit (Enhanced Compatible)",
+        "gid": "gid://shopify/Product/15892829438284",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892829995340,
+        "handle": "led-emergency-bulkhead-non-maintained-3h",
+        "title": "LED Emergency Bulkhead Non-Maintained 3-Hour",
+        "gid": "gid://shopify/Product/15892829995340",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892830519628,
+        "handle": "led-emergency-bulkhead-maintained-3h",
+        "title": "LED Emergency Bulkhead Maintained 3-Hour",
+        "gid": "gid://shopify/Product/15892830519628",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892831043916,
+        "handle": "led-emergency-bulkhead-switchable-m-nm-3h",
+        "title": "LED Emergency Bulkhead Switchable Maintained / Non-Maintained 3H",
+        "gid": "gid://shopify/Product/15892831043916",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892831535436,
+        "handle": "led-emergency-bulkhead-ip65-industrial-nm",
+        "title": "LED Emergency Bulkhead IP65 Industrial Non-Maintained 3H",
+        "gid": "gid://shopify/Product/15892831535436",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892832059724,
+        "handle": "led-emergency-bulkhead-ip65-industrial-m",
+        "title": "LED Emergency Bulkhead IP65 Industrial Maintained 3H",
+        "gid": "gid://shopify/Product/15892832059724",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892832551244,
+        "handle": "led-exit-sign-maintained-legend-kit",
+        "title": "LED Exit Sign Maintained 3H with Legend Kit",
+        "gid": "gid://shopify/Product/15892832551244",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892833108300,
+        "handle": "led-exit-sign-non-maintained-legend-kit",
+        "title": "LED Exit Sign Non-Maintained 3H with Legend Kit",
+        "gid": "gid://shopify/Product/15892833108300",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892833501516,
+        "handle": "led-exit-blade-stick-maintained",
+        "title": "LED Exit Stick / Blade Sign Maintained 3H",
+        "gid": "gid://shopify/Product/15892833501516",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892833861964,
+        "handle": "led-exit-blade-stick-non-maintained",
+        "title": "LED Exit Stick / Blade Sign Non-Maintained 3H",
+        "gid": "gid://shopify/Product/15892833861964",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892834320716,
+        "handle": "led-exit-blade-recessed-maintained",
+        "title": "LED Exit Blade Recessed Maintained 3H",
+        "gid": "gid://shopify/Product/15892834320716",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892834746700,
+        "handle": "self-test-led-emergency-bulkhead-3h",
+        "title": "Self-Test LED Emergency Bulkhead 3H (M/NM)",
+        "gid": "gid://shopify/Product/15892834746700",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892835041612,
+        "handle": "emergency-lighting-test-key-switch",
+        "title": "Emergency Lighting Key Test Switch (Secret Key)",
+        "gid": "gid://shopify/Product/15892835041612",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892835369292,
+        "handle": "emergency-luminaire-replacement-battery-pack-3-6v",
+        "title": "Emergency Luminaire Replacement Battery Pack 3.6V NiCd",
+        "gid": "gid://shopify/Product/15892835369292",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892835762508,
+        "handle": "led-twinspot-emergency-ip65-nm",
+        "title": "LED Twin-Spot Emergency Flood IP65 Non-Maintained 3H",
+        "gid": "gid://shopify/Product/15892835762508",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 15892836188492,
+        "handle": "exit-sign-legend-pack-iso7010",
+        "title": "Exit Sign Legend Pack ISO 7010 (5 Legends)",
+        "gid": "gid://shopify/Product/15892836188492",
+        "status": "published",
+        "errors": []
+      }
+    ]
+  },
+  "collections": {
+    "total": 13,
+    "published_ok": 13,
+    "failed": 0,
+    "items": [
+      {
+        "id": 686993277260,
+        "handle": "batteries-power",
+        "title": "Batteries & Power Supplies",
+        "kind": "custom",
+        "gid": "gid://shopify/Collection/686993277260",
+        "published_at_before": "2026-07-12T13:19:21+01:00",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 686993211724,
+        "handle": "bases-mounting",
+        "title": "Detector Bases & Mounting",
+        "kind": "custom",
+        "gid": "gid://shopify/Collection/686993211724",
+        "published_at_before": "2026-07-12T13:19:19+01:00",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 686993342796,
+        "handle": "emergency-lighting-products",
+        "title": "Emergency Lighting Products",
+        "kind": "custom",
+        "gid": "gid://shopify/Collection/686993342796",
+        "published_at_before": "2026-07-12T13:19:22+01:00",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 686993015116,
+        "handle": "fire-alarm-control-panels",
+        "title": "Fire Alarm Control Panels",
+        "kind": "custom",
+        "gid": "gid://shopify/Collection/686993015116",
+        "published_at_before": "2026-07-12T13:19:16+01:00",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 686993310028,
+        "handle": "cables-accessories",
+        "title": "Fire Cable & Accessories",
+        "kind": "custom",
+        "gid": "gid://shopify/Collection/686993310028",
+        "published_at_before": "2026-07-12T13:19:21+01:00",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 686993080652,
+        "handle": "heat-detectors",
+        "title": "Heat Detectors",
+        "kind": "custom",
+        "gid": "gid://shopify/Collection/686993080652",
+        "published_at_before": "2026-07-12T13:19:17+01:00",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 686989181260,
+        "handle": "frontpage",
+        "title": "Home page",
+        "kind": "custom",
+        "gid": "gid://shopify/Collection/686989181260",
+        "published_at_before": "2026-07-12T12:36:21+01:00",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 686993244492,
+        "handle": "interfaces-modules",
+        "title": "Interfaces & Modules",
+        "kind": "custom",
+        "gid": "gid://shopify/Collection/686993244492",
+        "published_at_before": "2026-07-12T13:19:20+01:00",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 686993146188,
+        "handle": "manual-call-points",
+        "title": "Manual Call Points",
+        "kind": "custom",
+        "gid": "gid://shopify/Collection/686993146188",
+        "published_at_before": "2026-07-12T13:19:18+01:00",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 686993113420,
+        "handle": "multi-sensor-detectors",
+        "title": "Multi-Sensor Detectors",
+        "kind": "custom",
+        "gid": "gid://shopify/Collection/686993113420",
+        "published_at_before": "2026-07-12T13:19:18+01:00",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 686993375564,
+        "handle": "service-packages",
+        "title": "Service Packages",
+        "kind": "custom",
+        "gid": "gid://shopify/Collection/686993375564",
+        "published_at_before": "2026-07-12T13:19:23+01:00",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 686993047884,
+        "handle": "smoke-detectors",
+        "title": "Smoke Detectors",
+        "kind": "custom",
+        "gid": "gid://shopify/Collection/686993047884",
+        "published_at_before": "2026-07-12T13:19:16+01:00",
+        "status": "published",
+        "errors": []
+      },
+      {
+        "id": 686993178956,
+        "handle": "sounders-beacons",
+        "title": "Sounders & Beacons",
+        "kind": "custom",
+        "gid": "gid://shopify/Collection/686993178956",
+        "published_at_before": "2026-07-12T13:19:19+01:00",
+        "status": "published",
+        "errors": []
+      }
+    ]
+  },
+  "summary": {
+    "products_total_active": 260,
+    "products_published": 260,
+    "products_failed": 0,
+    "collections_total": 13,
+    "collections_published": 13,
+    "collections_failed": 0,
+    "online_store_publication_id": "gid://shopify/Publication/355356279116",
+    "online_store_publication_name": "Online Store"
+  }
+}

@@ -13,7 +13,7 @@
     "status": "ok",
     "items": [
       {
-        "action": "created",
+        "action": "updated",
         "handle": "about-us",
         "id": 732202205516,
         "title": "About Us"
@@ -25,26 +25,466 @@
         "title": "Contact"
       },
       {
-        "action": "created",
+        "action": "updated",
         "handle": "trade-accounts",
         "id": 732202238284,
         "title": "Trade Accounts"
       },
       {
-        "action": "created",
+        "action": "updated",
         "handle": "delivery-information",
         "id": 732202271052,
         "title": "Delivery Information"
       },
       {
-        "action": "created",
+        "action": "updated",
         "handle": "fire-alarm-systems-guide",
         "id": 732202303820,
         "title": "Fire Alarm Systems Guide"
+      },
+      {
+        "action": "updated",
+        "handle": "shipping",
+        "id": 732204499276,
+        "title": "Shipping"
       }
     ]
   },
-  "status": "failed",
-  "fatal_error": "'str' object has no attribute 'get'",
-  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\E-Store\\Documents\\icomplyproperty\\shopify-import\\setup_storefront.py\", line 953, in main\n    setup_policies(result)\n  File \"C:\\Users\\E-Store\\Documents\\icomplyproperty\\shopify-import\\setup_storefront.py\", line 219, in setup_policies\n    item.get(\"title\")\n    ^^^^^^^^\nAttributeError: 'str' object has no attribute 'get'\n"
+  "policies": {
+    "status": "ok",
+    "shop_policy_api": true,
+    "items": [
+      {
+        "key": "privacyPolicy",
+        "handle": "privacy-policy",
+        "title": "Privacy Policy",
+        "action": "updated",
+        "via": "page_fallback:updated",
+        "notes": [
+          "GQL userErrors: [{'field': ['shopPolicy'], 'message': 'Automatic management for Privacy Policy must be turned off in order to make changes.'}]",
+          "REST: PUT /policies/privacy_policy.json -> 406: "
+        ]
+      },
+      {
+        "key": "refundPolicy",
+        "handle": "refund-policy",
+        "title": "Refund Policy",
+        "action": "updated",
+        "via": "graphql_shopPolicyUpdate",
+        "notes": null
+      },
+      {
+        "key": "shippingPolicy",
+        "handle": "shipping-policy",
+        "title": "Shipping Policy",
+        "action": "updated",
+        "via": "graphql_shopPolicyUpdate",
+        "notes": null
+      },
+      {
+        "key": "termsOfService",
+        "handle": "terms-of-service",
+        "title": "Terms of Service",
+        "action": "updated",
+        "via": "graphql_shopPolicyUpdate",
+        "notes": null
+      }
+    ]
+  },
+  "shipping_notes": {
+    "status": "printed",
+    "data": {
+      "currency": "GBP",
+      "market": "UK mainland",
+      "vendor": "iComply Supplys",
+      "company": "iComply Property Services",
+      "origin": {
+        "address": "17 Woodlands Park Road",
+        "locality": "Offerton",
+        "city": "Stockport",
+        "postcode": "SK2 5DE",
+        "country": "GB"
+      },
+      "coverage": {
+        "included": [
+          "England",
+          "Wales",
+          "Scotland mainland"
+        ],
+        "quote_only": [
+          "Northern Ireland",
+          "Scottish Highlands & Islands",
+          "Isle of Man",
+          "Channel Islands",
+          "Other non-mainland UK"
+        ],
+        "notes": "Checkout rates apply to UK mainland postcodes. Remote and offshore destinations require manual quote before acceptance."
+      },
+      "services": [
+        {
+          "code": "collection",
+          "name": "Collection",
+          "description": "Customer collection by prior arrangement from Stockport (Offerton) when order is marked ready.",
+          "price_gbp": 0.0,
+          "price_type": "flat",
+          "eta_working_days": {
+            "min": 0,
+            "max": 1
+          },
+          "conditions": [
+            "Must book collection slot by phone or email",
+            "Photo ID / order number on pickup",
+            "Free of charge when stock reserved"
+          ]
+        },
+        {
+          "code": "standard",
+          "name": "Standard tracked (UK mainland)",
+          "description": "Economy tracked parcel service for small to medium consignments.",
+          "eta_working_days": {
+            "min": 2,
+            "max": 4
+          },
+          "price_type": "tiered_by_basket",
+          "rate_suggestions": [
+            {
+              "basket_min_gbp": 0,
+              "basket_max_gbp": 49.99,
+              "shipping_gbp": 5.95
+            },
+            {
+              "basket_min_gbp": 50,
+              "basket_max_gbp": 149.99,
+              "shipping_gbp": 7.95
+            },
+            {
+              "basket_min_gbp": 150,
+              "basket_max_gbp": 399.99,
+              "shipping_gbp": 9.95
+            },
+            {
+              "basket_min_gbp": 400,
+              "basket_max_gbp": null,
+              "shipping_gbp": 0.0,
+              "note": "Suggested free standard carriage threshold for standard parcels"
+            }
+          ],
+          "weight_based_alternatives": [
+            {
+              "max_kg": 2,
+              "shipping_gbp": 4.95
+            },
+            {
+              "max_kg": 5,
+              "shipping_gbp": 6.95
+            },
+            {
+              "max_kg": 10,
+              "shipping_gbp": 8.95
+            },
+            {
+              "max_kg": 20,
+              "shipping_gbp": 12.95
+            },
+            {
+              "max_kg": 30,
+              "shipping_gbp": 18.95
+            }
+          ]
+        },
+        {
+          "code": "express",
+          "name": "Express next working day (UK mainland)",
+          "description": "Next working day tracked service when ordered before cut-off and stock available.",
+          "eta_working_days": {
+            "min": 1,
+            "max": 1
+          },
+          "cut_off_local": "13:00",
+          "timezone": "Europe/London",
+          "price_type": "tiered_by_basket",
+          "rate_suggestions": [
+            {
+              "basket_min_gbp": 0,
+              "basket_max_gbp": 49.99,
+              "shipping_gbp": 9.95
+            },
+            {
+              "basket_min_gbp": 50,
+              "basket_max_gbp": 149.99,
+              "shipping_gbp": 11.95
+            },
+            {
+              "basket_min_gbp": 150,
+              "basket_max_gbp": 399.99,
+              "shipping_gbp": 14.95
+            },
+            {
+              "basket_min_gbp": 400,
+              "basket_max_gbp": null,
+              "shipping_gbp": 9.95,
+              "note": "Reduced express surcharge above free-standard threshold"
+            }
+          ],
+          "weight_based_alternatives": [
+            {
+              "max_kg": 2,
+              "shipping_gbp": 8.95
+            },
+            {
+              "max_kg": 5,
+              "shipping_gbp": 10.95
+            },
+            {
+              "max_kg": 10,
+              "shipping_gbp": 13.95
+            },
+            {
+              "max_kg": 20,
+              "shipping_gbp": 18.95
+            },
+            {
+              "max_kg": 30,
+              "shipping_gbp": 26.95
+            }
+          ]
+        }
+      ],
+      "oversize_and_trade": {
+        "panel_or_bulky_surcharge_gbp": 15.0,
+        "pallet_quote_threshold_kg": 30,
+        "cable_drum_note": "Cable drums and long lengths may require pallet or specialist carrier \u2014 quote manually.",
+        "trade_account_notes": [
+          "Approved trade accounts may receive negotiated free-carriage thresholds",
+          "Site deliveries need site contact name and mobile number",
+          "Failed delivery / excess waiting time may be recharged at carrier cost"
+        ]
+      },
+      "exclusions": [
+        "Live rates must be validated against chosen carrier contracts before go-live",
+        "Highlands, islands and NI not covered by flat mainland suggestions",
+        "Hazmat rules for certain battery shipments may restrict air/express methods"
+      ],
+      "contact_for_quotes": {
+        "phone": "07517806082",
+        "email": "icomplypropertyservices@gmail.com"
+      }
+    }
+  },
+  "metafields": {
+    "status": "ok",
+    "items": [
+      {
+        "namespace": "icomply",
+        "key": "shipping_notes",
+        "action": "set",
+        "error": null
+      }
+    ]
+  },
+  "shop_details": {
+    "status": "failed",
+    "before": {
+      "name": "iComply Supplys",
+      "email": "icomplypropertyservices@gmail.com",
+      "phone": null,
+      "city": "Stockport",
+      "province": "England",
+      "country": "GB",
+      "address1": "17 Woodlands Park Road",
+      "zip": "SK2 5DE"
+    },
+    "attempted": {
+      "phone": "07517806082"
+    },
+    "error": "PUT /shop.json -> 406: ",
+    "manual": {
+      "phone": "07517806082",
+      "city": "Stockport",
+      "province": "Greater Manchester",
+      "country": "United Kingdom",
+      "email_hint": "sales@icomplysupplys.co.uk",
+      "admin_path": "Settings \u2192 Store details"
+    }
+  },
+  "navigation": {
+    "handle": "main-menu",
+    "title": "Main menu",
+    "item_count": 9,
+    "items_preview": [
+      {
+        "title": "Shop All",
+        "type": "CATALOG",
+        "url": null
+      },
+      {
+        "title": "Fire Alarm Panels",
+        "type": "COLLECTION",
+        "url": null
+      },
+      {
+        "title": "Detection",
+        "type": "CATALOG",
+        "url": null
+      },
+      {
+        "title": "Call Points",
+        "type": "COLLECTION",
+        "url": null
+      },
+      {
+        "title": "Sounders & Beacons",
+        "type": "COLLECTION",
+        "url": null
+      },
+      {
+        "title": "Modules & Power",
+        "type": "CATALOG",
+        "url": null
+      },
+      {
+        "title": "Emergency Lighting",
+        "type": "COLLECTION",
+        "url": null
+      },
+      {
+        "title": "Service Packages",
+        "type": "COLLECTION",
+        "url": null
+      },
+      {
+        "title": "Trade & Help",
+        "type": "CATALOG",
+        "url": null
+      }
+    ],
+    "status": "updated",
+    "menu": {
+      "id": "gid://shopify/Menu/340448248140",
+      "handle": "main-menu",
+      "title": "Main menu"
+    },
+    "menus": [
+      {
+        "handle": "main-menu",
+        "title": "Main menu",
+        "item_count": 9,
+        "items_preview": [
+          {
+            "title": "Shop All",
+            "type": "CATALOG",
+            "url": null
+          },
+          {
+            "title": "Fire Alarm Panels",
+            "type": "COLLECTION",
+            "url": null
+          },
+          {
+            "title": "Detection",
+            "type": "CATALOG",
+            "url": null
+          },
+          {
+            "title": "Call Points",
+            "type": "COLLECTION",
+            "url": null
+          },
+          {
+            "title": "Sounders & Beacons",
+            "type": "COLLECTION",
+            "url": null
+          },
+          {
+            "title": "Modules & Power",
+            "type": "CATALOG",
+            "url": null
+          },
+          {
+            "title": "Emergency Lighting",
+            "type": "COLLECTION",
+            "url": null
+          },
+          {
+            "title": "Service Packages",
+            "type": "COLLECTION",
+            "url": null
+          },
+          {
+            "title": "Trade & Help",
+            "type": "CATALOG",
+            "url": null
+          }
+        ],
+        "status": "updated",
+        "menu": {
+          "id": "gid://shopify/Menu/340448248140",
+          "handle": "main-menu",
+          "title": "Main menu"
+        }
+      },
+      {
+        "handle": "footer",
+        "title": "Footer",
+        "item_count": 6,
+        "items_preview": [
+          {
+            "title": "About Us",
+            "type": "PAGE",
+            "url": null
+          },
+          {
+            "title": "Contact",
+            "type": "PAGE",
+            "url": null
+          },
+          {
+            "title": "Trade Accounts",
+            "type": "PAGE",
+            "url": null
+          },
+          {
+            "title": "Delivery Information",
+            "type": "PAGE",
+            "url": null
+          },
+          {
+            "title": "Fire Alarm Systems Guide",
+            "type": "PAGE",
+            "url": null
+          },
+          {
+            "title": "Service Packages",
+            "type": "COLLECTION",
+            "url": null
+          }
+        ],
+        "status": "updated",
+        "menu": {
+          "id": "gid://shopify/Menu/340448280908",
+          "handle": "footer",
+          "title": "Footer"
+        }
+      }
+    ],
+    "menus_query_error": null,
+    "existing_menus": [
+      {
+        "id": "gid://shopify/Menu/340448248140",
+        "handle": "main-menu",
+        "title": "Main menu"
+      },
+      {
+        "id": "gid://shopify/Menu/340448280908",
+        "handle": "footer",
+        "title": "Footer"
+      },
+      {
+        "id": "gid://shopify/Menu/340448313676",
+        "handle": "customer-account-main-menu",
+        "title": "Customer account main menu"
+      }
+    ]
+  },
+  "status": "completed"
 }

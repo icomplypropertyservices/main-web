@@ -1,0 +1,151 @@
+{
+  "agent": "storefront_trade_ready",
+  "store": "icomply-supplys.myshopify.com",
+  "completed_at": "2026-07-12T12:00:00",
+  "status": "completed",
+  "summary": "Storefront setup succeeded: pages, shipping pages, policies, menus, shipping metafield. Catalog ~260 products with images and tax flags. Google Merchant pending owner login.",
+  "fixes_applied": [
+    "policies.json string values handled (HTML strings vs objects) in setup_policies",
+    "navigation.json menus[] list shape supported (main-menu + footer)",
+    "shipping hub page auto-created when missing",
+    "shopify_client rate-limit backoff increased (0.55s + Retry-After) to avoid 429s"
+  ],
+  "catalog": {
+    "products_total": 260,
+    "products_active": 260,
+    "products_with_images": 260,
+    "products_taxable": 260,
+    "currency": "GBP",
+    "taxes_included": true,
+    "custom_collections": 13,
+    "collection_handles": [
+      "batteries-power",
+      "bases-mounting",
+      "emergency-lighting-products",
+      "fire-alarm-control-panels",
+      "cables-accessories",
+      "heat-detectors",
+      "frontpage",
+      "interfaces-modules",
+      "manual-call-points",
+      "multi-sensor-detectors",
+      "service-packages",
+      "smoke-detectors",
+      "sounders-beacons"
+    ],
+    "local_images_products_fixed": 260,
+    "local_images_products": 249
+  },
+  "pages": {
+    "status": "ok",
+    "handles": [
+      "about-us",
+      "contact",
+      "delivery-information",
+      "fire-alarm-systems-guide",
+      "privacy-policy",
+      "refund-policy",
+      "shipping",
+      "shipping-policy",
+      "terms-of-service",
+      "trade-accounts",
+      "vat-information"
+    ],
+    "shipping_related": [
+      {
+        "handle": "delivery-information",
+        "id": 732202271052,
+        "title": "Delivery Information",
+        "action": "updated"
+      },
+      {
+        "handle": "shipping",
+        "id": 732204499276,
+        "title": "Shipping",
+        "action": "created_or_updated"
+      }
+    ]
+  },
+  "policies": {
+    "status": "ok",
+    "items": [
+      {
+        "key": "privacyPolicy",
+        "via": "page_fallback",
+        "note": "Shopify automatic privacy management blocks shopPolicyUpdate; page privacy-policy published"
+      },
+      {
+        "key": "refundPolicy",
+        "via": "graphql_shopPolicyUpdate"
+      },
+      {
+        "key": "shippingPolicy",
+        "via": "graphql_shopPolicyUpdate"
+      },
+      {
+        "key": "termsOfService",
+        "via": "graphql_shopPolicyUpdate"
+      }
+    ]
+  },
+  "navigation": {
+    "status": "updated",
+    "menu_api": "graphql_success",
+    "menu_manual_required": false,
+    "menu_manual_path": null,
+    "menus": [
+      {
+        "handle": "main-menu",
+        "status": "updated",
+        "id": "gid://shopify/Menu/340448248140"
+      },
+      {
+        "handle": "footer",
+        "status": "updated",
+        "id": "gid://shopify/Menu/340448280908"
+      }
+    ]
+  },
+  "metafields": {
+    "icomply.shipping_notes": "set"
+  },
+  "shop_details": {
+    "name": "iComply Supplys",
+    "email": "icomplypropertyservices@gmail.com",
+    "city": "Stockport",
+    "country": "GB",
+    "phone": null,
+    "phone_target": "07517806082",
+    "api_update": "failed_406",
+    "manual_required": true,
+    "manual_path": "Settings → Store details"
+  },
+  "vat": {
+    "status": "configured_at_product_level",
+    "taxes_included": true,
+    "taxable_products": 260,
+    "vat_information_page": "vat-information",
+    "admin_review_remaining": true
+  },
+  "google_merchant": {
+    "status": "pending",
+    "reason": "Merchant Center login / store claim required by owner",
+    "blocking": true
+  },
+  "artifacts": {
+    "setup_storefront_result": "setup_storefront_result.json",
+    "trade_ready_checklist": "TRADE_READY_CHECKLIST.md",
+    "shipping_notes": "storefront/shipping_notes.json",
+    "menu_manual": null
+  },
+  "remaining_owner_actions": [
+    "Set phone 07517806082 in Settings → Store details",
+    "Activate Shopify Payments / bank verification",
+    "Create UK Mainland shipping zones/rates from shipping_notes.json",
+    "Connect custom domain + SSL",
+    "Google Merchant Center login and claim store",
+    "Optional: disable automatic Privacy Policy to use custom body as official policy",
+    "Theme: assign header/footer menus; homepage branding",
+    "Place test order end-to-end"
+  ]
+}

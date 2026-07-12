@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Regenerate unique product images and re-upload so each Shopify product
-has the correct matching image (title + SKU + category), not a generic card.
+"""Audit + fix product images so each Shopify product has exactly one
+branded trade card: alt text = product title, CDN src present.
 
 Does NOT scrape manufacturer photo libraries (copyright). Uses distinct
 branded trade cards per product so images cannot be mixed up.
@@ -20,9 +20,10 @@ from shopify_client import api, get_token
 ROOT = Path(__file__).resolve().parent
 IMG_DIR = ROOT / "images" / "products_fixed"
 LOG = ROOT / "image_fix_log.json"
+AUDIT_FINAL = ROOT / "image_audit_final.json"
 
-NAVY = (10, 37, 64)
-ORANGE = (255, 107, 0)
+NAVY = (10, 37, 64)       # #0a2540
+ORANGE = (255, 107, 0)    # #ff6b00
 WHITE = (255, 255, 255)
 LIGHT = (248, 250, 252)
 
@@ -191,7 +192,6 @@ def make_image(title: str, sku: str, collection: str, handle: str, out: Path) ->
         draw.polygon([(cx, cy - 55), (cx + 55, cy + 40), (cx - 55, cy + 40)], outline=accent)
 
     out.parent.mkdir(parents=True, exist_ok=True)
-    # Filename MUST be unique per product handle
     img.save(out, "PNG", optimize=True)
     return out
 
@@ -211,81 +211,216 @@ def iter_products():
             yield p
         if len(batch) < 50:
             break
+        time.sleep(0.1)  # extra courtesy between pages
+
+
+def audit_product(product: dict) -> dict:
+    """Return audit status for one product.
+
+    OK when: exactly 1 image, alt == title, CDN src present.
+    """
+    pid = product["id"]
+    handle = product.get("handle") or ""
+    title = product.get("title") or ""
+    images = product.get("images") or []
+
+    issues = []
+    n = len(images)
+    if n == 0:
+        issues.append("zero_images")
+    elif n > 1:
+        issues.append(f"multi_images:{n}")
+
+    src = ""
+    alt = ""
+    if n >= 1:
+        img = images[0]
+        src = img.get("src") or ""
+        alt = img.get("alt") if img.get("alt") is not None else ""
+        if not src or "cdn.shopify.com" not in src:
+            issues.append("missing_cdn_src")
+        if alt != title:
+            issues.append("alt_mismatch")
+        # if multi, also check remaining alts for report
+        for extra in images[1:]:
+            if (extra.get("alt") or "") != title:
+                if "alt_mismatch" not in issues:
+                    issues.append("alt_mismatch")
+                break
+
+    return {
+        "id": pid,
+        "handle": handle,
+        "title": title,
+        "image_count": n,
+        "src": src,
+        "alt": alt,
+        "issues": issues,
+        "status": "ok" if not issues else "needs_fix",
+    }
+
+
+def fix_product(product: dict) -> dict:
+    """Regenerate branded card, delete old images, upload single new image."""
+    pid = product["id"]
+    handle = product["handle"]
+    title = product["title"]
+    sku = ""
+    if product.get("variants"):
+        sku = product["variants"][0].get("sku") or ""
+    coll = infer_collection(product)
+    out = IMG_DIR / f"{handle}.png"
+
+    make_image(title, sku, coll, handle, out)
+
+    # Delete ALL existing images so wrong/stale ones cannot remain
+    imgs = product.get("images") or []
+    if not imgs:
+        imgs = api("GET", f"/products/{pid}/images.json").get("images") or []
+    for im in imgs:
+        try:
+            api("DELETE", f"/products/{pid}/images/{im['id']}.json")
+        except Exception as ex:
+            print(f"  warn delete image {im.get('id')}: {ex}")
+
+    # Upload correct image with exact filename + alt = product title
+    b64 = base64.b64encode(out.read_bytes()).decode()
+    uploaded = api(
+        "POST",
+        f"/products/{pid}/images.json",
+        {
+            "image": {
+                "attachment": b64,
+                "filename": f"{handle}.png",
+                "alt": title,
+                "position": 1,
+            }
+        },
+    )["image"]
+
+    src = uploaded.get("src", "")
+    alt = uploaded.get("alt", "")
+    ok = bool(src) and "cdn.shopify.com" in src and alt == title
+    return {
+        "id": pid,
+        "handle": handle,
+        "sku": sku,
+        "collection": coll,
+        "src": src,
+        "alt": alt,
+        "ok": ok,
+        "action": "fixed",
+    }
 
 
 def main():
     print("Refreshing token...")
     get_token(force=True)
-    results = []
+
+    print("Fetching all products...")
     products = list(iter_products())
-    print(f"Products to fix: {len(products)}")
+    print(f"Products found: {len(products)}")
 
+    # --- Phase 1: Audit ---
+    print("\n=== AUDIT ===")
+    audit_rows = []
+    needs_fix = []
     for i, p in enumerate(products, 1):
-        pid = p["id"]
+        row = audit_product(p)
+        audit_rows.append(row)
+        if row["status"] != "ok":
+            needs_fix.append(p)
+            print(f"  NEED [{i}] {row['handle']}: {', '.join(row['issues'])}")
+        elif i % 50 == 0:
+            print(f"  audited {i}/{len(products)}...")
+
+    ok_count = sum(1 for r in audit_rows if r["status"] == "ok")
+    print(f"Audit: ok={ok_count} needs_fix={len(needs_fix)} total={len(products)}")
+
+    # --- Phase 2: Fix only broken products ---
+    print("\n=== FIX ===")
+    fix_results = []
+    fixed = 0
+    failed = 0
+
+    for i, p in enumerate(needs_fix, 1):
         handle = p["handle"]
-        title = p["title"]
-        sku = ""
-        if p.get("variants"):
-            sku = p["variants"][0].get("sku") or ""
-        coll = infer_collection(p)
-        out = IMG_DIR / f"{handle}.png"
-        print(f"[{i}/{len(products)}] {handle}")
+        print(f"[{i}/{len(needs_fix)}] fixing {handle}")
         try:
-            make_image(title, sku, coll, handle, out)
-
-            # Delete ALL existing images so wrong/stale ones cannot remain
-            imgs = p.get("images") or []
-            # re-fetch images in case list incomplete
-            if not imgs:
-                imgs = api("GET", f"/products/{pid}/images.json").get("images") or []
-            for im in imgs:
-                try:
-                    api("DELETE", f"/products/{pid}/images/{im['id']}.json")
-                except Exception as ex:
-                    print(f"  warn delete image {im.get('id')}: {ex}")
-
-            # Upload correct image with exact filename + alt = product title
-            b64 = base64.b64encode(out.read_bytes()).decode()
-            uploaded = api(
-                "POST",
-                f"/products/{pid}/images.json",
-                {
-                    "image": {
-                        "attachment": b64,
-                        "filename": f"{handle}.png",
-                        "alt": title,
-                        "position": 1,
-                    }
-                },
-            )["image"]
-
-            src = uploaded.get("src", "")
-            # Verify filename embeds handle
-            ok = handle in src or handle.replace("-", "_") in src
-            results.append(
-                {
-                    "id": pid,
-                    "handle": handle,
-                    "sku": sku,
-                    "collection": coll,
-                    "src": src,
-                    "alt": uploaded.get("alt"),
-                    "ok": ok,
-                }
-            )
-            print(f"  OK src=...{src[-60:] if src else 'NONE'}")
+            result = fix_product(p)
+            fix_results.append(result)
+            if result.get("ok"):
+                fixed += 1
+                print(f"  OK src=...{(result.get('src') or '')[-60:]}")
+            else:
+                failed += 1
+                print(f"  FAIL verify: alt={result.get('alt')!r} src={result.get('src')!r}")
         except Exception as ex:
+            failed += 1
             print(f"  ERROR: {ex}")
-            results.append({"id": pid, "handle": handle, "error": str(ex), "ok": False})
+            fix_results.append({
+                "id": p["id"],
+                "handle": handle,
+                "error": str(ex),
+                "ok": False,
+                "action": "failed",
+            })
         time.sleep(0.25)
 
-    LOG.write_text(json.dumps(results, indent=2), encoding="utf-8")
-    bad = [r for r in results if not r.get("ok")]
-    print(f"\nDone. fixed={len(results)-len(bad)} failed={len(bad)}")
-    print(f"Log: {LOG}")
-    if bad:
-        for b in bad[:20]:
-            print(" FAIL", b)
+    # --- Phase 3: Re-audit fixed products to confirm ---
+    print("\n=== RE-AUDIT FIXED ===")
+    final_products = {}
+    for r in audit_rows:
+        final_products[r["id"]] = dict(r)
+
+    # Re-fetch products that were fixed for final verification
+    recheck_ids = [r["id"] for r in fix_results if r.get("ok")]
+    for pid in recheck_ids:
+        try:
+            data = api("GET", f"/products/{pid}.json?fields=id,title,handle,images")
+            p = data.get("product") or {}
+            if p:
+                final_products[pid] = audit_product(p)
+                final_products[pid]["action"] = "fixed"
+            time.sleep(0.1)
+        except Exception as ex:
+            print(f"  re-audit warn {pid}: {ex}")
+
+    # Mark failed fixes
+    for r in fix_results:
+        if not r.get("ok"):
+            row = final_products.get(r["id"], {})
+            row["status"] = "failed"
+            row["error"] = r.get("error") or "verify_failed"
+            row["action"] = "failed"
+            final_products[r["id"]] = row
+
+    final_list = list(final_products.values())
+    final_ok = sum(1 for r in final_list if r.get("status") == "ok")
+    final_failed = sum(1 for r in final_list if r.get("status") == "failed")
+    final_still = sum(1 for r in final_list if r.get("status") == "needs_fix")
+
+    audit_out = {
+        "total": len(final_list),
+        "ok": final_ok,
+        "fixed": fixed,
+        "failed": final_failed + final_still,
+        "needs_fix_remaining": final_still,
+        "products": sorted(final_list, key=lambda x: x.get("handle") or ""),
+        "fix_log": fix_results,
+    }
+
+    AUDIT_FINAL.write_text(json.dumps(audit_out, indent=2), encoding="utf-8")
+    LOG.write_text(json.dumps(fix_results, indent=2), encoding="utf-8")
+
+    print(f"\n=== SUMMARY ===")
+    print(f"total={len(final_list)} ok={final_ok} fixed={fixed} failed={failed}")
+    print(f"Audit written: {AUDIT_FINAL}")
+    print(f"Fix log: {LOG}")
+    if failed:
+        for b in fix_results:
+            if not b.get("ok"):
+                print(" FAIL", b)
 
 
 if __name__ == "__main__":

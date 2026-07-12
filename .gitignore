@@ -16,6 +16,8 @@ Desktop.ini
 .env
 .env.*
 !.env.example
+config.local.php
+**/config.local.php
 
 # Runtime lead capture (may contain personal data)
 website/admin/leads.json
@@ -24,3 +26,5 @@ website/admin/leads.json
 *.tmp
 _gen_*.php
 website/_gen_areas.php
+.vercel
+website/api/.phpunit*

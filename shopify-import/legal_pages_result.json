@@ -1,0 +1,166 @@
+{
+  "company": {
+    "trading_name": "iComply Supplys",
+    "legal_name": "iComply Property Services",
+    "address": "17 Woodlands Park Road, Offerton, Stockport SK2 5DE",
+    "phone": "07517806082",
+    "phone_display": "07517 806082",
+    "email": "icomplypropertyservices@gmail.com"
+  },
+  "vat_page": {
+    "action": "created",
+    "handle": "vat-information",
+    "id": 732204400972,
+    "title": "VAT Information",
+    "url": "/pages/vat-information",
+    "body_len": 4026,
+    "topics": [
+      "UK VAT 20%",
+      "trade invoices",
+      "POA quotes exclusive/inclusive of VAT as stated on quote"
+    ]
+  },
+  "policies": [
+    {
+      "key": "privacy_policy",
+      "handle": "privacy-policy",
+      "title": "Privacy Policy",
+      "gql_type": "PRIVACY_POLICY",
+      "action": "created",
+      "via": "page_fallback:created",
+      "id": 732204433740,
+      "url": "/pages/privacy-policy",
+      "status": "ok",
+      "notes": [
+        "GQL: userErrors: [{'field': ['shopPolicy'], 'message': 'Automatic management for Privacy Policy must be turned off in order to make changes.'}]",
+        "REST: PUT /policies/privacy_policy.json -> 406: "
+      ]
+    },
+    {
+      "key": "refund_policy",
+      "handle": "refund-policy",
+      "title": "Refund policy",
+      "gql_type": "REFUND_POLICY",
+      "via": "graphql_shopPolicyUpdate",
+      "type": "REFUND_POLICY",
+      "url": "https://checkout.shopify.com/107355504972/policies/62766711116.html?locale=en",
+      "body_len": 3607,
+      "action": "updated",
+      "status": "ok",
+      "page_mirror": {
+        "action": "created",
+        "handle": "refund-policy",
+        "id": 732204466508,
+        "title": "Refund Policy",
+        "url": "/pages/refund-policy"
+      }
+    },
+    {
+      "key": "shipping_policy",
+      "handle": "shipping-policy",
+      "title": "Shipping",
+      "gql_type": "SHIPPING_POLICY",
+      "via": "graphql_shopPolicyUpdate",
+      "type": "SHIPPING_POLICY",
+      "url": "https://checkout.shopify.com/107355504972/policies/62766743884.html?locale=en",
+      "body_len": 2898,
+      "action": "updated",
+      "status": "ok",
+      "notes": [
+        "page_mirror_retry:created"
+      ],
+      "page_mirror": {
+        "action": "created",
+        "handle": "shipping-policy",
+        "id": 732204597580,
+        "title": "Shipping Policy",
+        "url": "/pages/shipping-policy"
+      }
+    },
+    {
+      "key": "terms_of_service",
+      "handle": "terms-of-service",
+      "title": "Terms of service",
+      "gql_type": "TERMS_OF_SERVICE",
+      "via": "graphql_shopPolicyUpdate",
+      "type": "TERMS_OF_SERVICE",
+      "url": "https://checkout.shopify.com/107355504972/policies/62766809420.html?locale=en",
+      "body_len": 5005,
+      "action": "updated",
+      "status": "ok",
+      "page_mirror": {
+        "action": "created",
+        "handle": "terms-of-service",
+        "id": 732204564812,
+        "title": "Terms of Service",
+        "url": "/pages/terms-of-service"
+      }
+    }
+  ],
+  "verification": {
+    "shop_policies": [
+      {
+        "type": "PRIVACY_POLICY",
+        "title": "Privacy policy",
+        "url": "https://checkout.shopify.com/107355504972/policies/62763303244.html?locale=en",
+        "body_len": 18308,
+        "body_preview": "<div>\n  <p>Last updated: {{ last_updated }}</p>\n  <p>{{ shop_name }} operates this store and website, including all rela"
+      },
+      {
+        "type": "REFUND_POLICY",
+        "title": "Refund policy",
+        "url": "https://checkout.shopify.com/107355504972/policies/62766711116.html?locale=en",
+        "body_len": 3607,
+        "body_preview": "<h2>Returns &amp; Refund Policy</h2><p><strong>iComply Supplys</strong> / <strong>iComply Property Services</strong>, 17"
+      },
+      {
+        "type": "SHIPPING_POLICY",
+        "title": "Shipping",
+        "url": "https://checkout.shopify.com/107355504972/policies/62766743884.html?locale=en",
+        "body_len": 2898,
+        "body_preview": "<h2>Shipping Policy</h2><p><strong>iComply Supplys</strong> / <strong>iComply Property Services</strong>, 17 Woodlands P"
+      },
+      {
+        "type": "TERMS_OF_SERVICE",
+        "title": "Terms of service",
+        "url": "https://checkout.shopify.com/107355504972/policies/62766809420.html?locale=en",
+        "body_len": 5005,
+        "body_preview": "<h2>Terms of Service</h2><p>These Terms govern use of the <strong>iComply Supplys</strong> online store and purchases fr"
+      }
+    ],
+    "pages": {
+      "vat-information": {
+        "exists": true,
+        "id": 732204400972,
+        "title": "VAT Information"
+      },
+      "privacy-policy": {
+        "exists": true,
+        "id": 732204433740,
+        "title": "Privacy Policy"
+      },
+      "refund-policy": {
+        "exists": true,
+        "id": 732204466508,
+        "title": "Refund Policy"
+      },
+      "shipping-policy": {
+        "exists": true,
+        "id": 732204597580,
+        "title": "Shipping Policy"
+      },
+      "terms-of-service": {
+        "exists": true,
+        "id": 732204564812,
+        "title": "Terms of Service"
+      }
+    }
+  },
+  "status": "ok",
+  "summary": {
+    "vat_page_ok": true,
+    "policies_ok": true,
+    "all_pages_present": true,
+    "policy_count": 4
+  }
+}

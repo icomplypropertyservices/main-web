@@ -1,0 +1,245 @@
+{
+  "store": "icomply-supplys.myshopify.com",
+  "run_at": "2026-07-12T13:18:45.573394+00:00",
+  "recommendation": {
+    "pricing_display": "tax_exclusive",
+    "taxes_included_target": false,
+    "uk_vat_rate": 0.2,
+    "tax_name": "VAT",
+    "summary": "Trade recommendation: catalogue prices EXCLUSIVE of VAT (taxes_included=false). Charge UK standard VAT 20% at checkout on taxable products. Matches UK fire/electrical trade norms."
+  },
+  "api_limitations": [
+    "Cannot set shop.taxes_included via REST (HTTP 406) or GraphQL on this store. Turn OFF 'Include sales tax in product price' in Admin \u2192 Taxes and duties.",
+    "Cannot set United Kingdom VAT rate to 20% via REST country/province tax fields (values remain 0.0 under Shopify Tax). Configure in Admin \u2192 Taxes and duties \u2192 United Kingdom."
+  ],
+  "steps": {
+    "shop_before": {
+      "taxes_included": true,
+      "tax_shipping": null,
+      "currency": "GBP",
+      "country": "GB",
+      "plan_name": "basic",
+      "name": "iComply Supplys",
+      "myshopify_domain": "c9zse6-gn.myshopify.com",
+      "domain": "icomply-supplys.myshopify.com"
+    },
+    "graphql_probe": {
+      "shop": {
+        "taxesIncluded": true,
+        "taxShipping": false,
+        "currencyCode": "GBP",
+        "billingAddress": {
+          "country": "United Kingdom",
+          "countryCodeV2": "GB"
+        },
+        "plan": {
+          "displayName": "Basic"
+        }
+      },
+      "taxRegions": "unavailable: GraphQL errors: [{'message': \"Field 'taxRegions' doesn't exist on type 'QueryRoot'\", 'locations': [{'line': 1, 'column': 3}], 'path': ['query', 'taxRegions'], 'extensions': {'code': 'undefinedField', 'typeName': 'QueryRoot', 'fieldName': 'taxRegions'}}]"
+    },
+    "taxes_included": {
+      "target": false,
+      "rest_put": {
+        "ok": false,
+        "error": "PUT /shop.json -> 406: "
+      },
+      "graphql": {
+        "error": "GraphQL errors: [{'message': \"ShopInput isn't a defined input type (on $input)\", 'locations': [{'line': 2, 'column': 33}], 'path': ['mutation ShopUpdate'], 'extensions': {'code': 'variableRequiresValidType', 'typeName': 'ShopInput', 'variableName': 'input'}}, {'message': \"Field 'shopUpdate' doesn't exist on type 'Mutation'\", 'locations': [{'line': 3, 'column': 15}], 'path': ['mutation ShopUpdate', 'shopUpdate'], 'extensions': {'code': 'undefinedField', 'typeName': 'Mutation', 'fieldName': 'shopUpdate'}}, {'message': 'Variable $input is declared by ShopUpdate but not used', 'locations': [{'line': 2, 'column': 13}], 'path': ['mutation ShopUpdate'], 'extensions': {'code': 'variableNotUsed', 'variableName': 'input'}}]"
+      },
+      "verified": {
+        "taxes_included": true,
+        "tax_shipping": null,
+        "currency": "GBP",
+        "country": "GB"
+      },
+      "api_can_set": false,
+      "errors": [
+        "REST shop PUT: PUT /shop.json -> 406: ",
+        "GraphQL shopUpdate: GraphQL errors: [{'message': \"ShopInput isn't a defined input type (on $input)\", 'locations': [{'line': 2, 'column': 33}], 'path': ['mutation ShopUpdate'], 'extensions': {'code': 'variableRequiresValidType', 'typeName': 'ShopInput', 'variableName': 'input'}}, {'message': \"Field 'shopUpdate' doesn't exist on type 'Mutation'\", 'locations': [{'line': 3, 'column': 15}], 'path': ['mutation ShopUpdate', 'shopUpdate'], 'extensions': {'code': 'undefinedField', 'typeName': 'Mutation', 'fieldName': 'shopUpdate'}}, {'message': 'Variable $input is declared by ShopUpdate but not used', 'locations': [{'line': 2, 'column': 13}], 'path': ['mutation ShopUpdate'], 'extensions': {'code': 'variableNotUsed', 'variableName': 'input'}}]"
+      ]
+    },
+    "gb_vat": {
+      "country_id": 1786965328204,
+      "country_name": "United Kingdom",
+      "before_tax": 0.0,
+      "before_tax_name": "GB VAT",
+      "country_put": {
+        "tax": 0.0,
+        "tax_name": "GB VAT",
+        "ok": false
+      },
+      "provinces": [
+        {
+          "id": 20866500264268,
+          "name": "British Forces",
+          "before_tax": 0.0,
+          "before_tax_percentage": 0.0,
+          "after_tax": 0.0,
+          "after_tax_percentage": 0.0,
+          "ok": false
+        },
+        {
+          "id": 20866500297036,
+          "name": "England",
+          "before_tax": 0.0,
+          "before_tax_percentage": 0.0,
+          "after_tax": 0.0,
+          "after_tax_percentage": 0.0,
+          "ok": false
+        },
+        {
+          "id": 20866500329804,
+          "name": "Northern Ireland",
+          "before_tax": 0.0,
+          "before_tax_percentage": 0.0,
+          "after_tax": 0.0,
+          "after_tax_percentage": 0.0,
+          "ok": false
+        },
+        {
+          "id": 20866500362572,
+          "name": "Scotland",
+          "before_tax": 0.0,
+          "before_tax_percentage": 0.0,
+          "after_tax": 0.0,
+          "after_tax_percentage": 0.0,
+          "ok": false
+        },
+        {
+          "id": 20866500395340,
+          "name": "Wales",
+          "before_tax": 0.0,
+          "before_tax_percentage": 0.0,
+          "after_tax": 0.0,
+          "after_tax_percentage": 0.0,
+          "ok": false
+        }
+      ],
+      "after": {
+        "tax": 0.0,
+        "tax_name": "GB VAT",
+        "provinces": [
+          {
+            "name": "British Forces",
+            "tax": 0.0,
+            "tax_percentage": 0.0,
+            "tax_name": "VAT"
+          },
+          {
+            "name": "England",
+            "tax": 0.0,
+            "tax_percentage": 0.0,
+            "tax_name": "VAT"
+          },
+          {
+            "name": "Northern Ireland",
+            "tax": 0.0,
+            "tax_percentage": 0.0,
+            "tax_name": "VAT"
+          },
+          {
+            "name": "Scotland",
+            "tax": 0.0,
+            "tax_percentage": 0.0,
+            "tax_name": "VAT"
+          },
+          {
+            "name": "Wales",
+            "tax": 0.0,
+            "tax_percentage": 0.0,
+            "tax_name": "VAT"
+          }
+        ]
+      },
+      "api_can_set_rate": false,
+      "errors": [],
+      "note": "Modern Shopify UK stores use automatic Shopify Tax. REST country/province tax fields often stay 0.0 even after PUT."
+    },
+    "variants_taxable": {
+      "products_scanned": 260,
+      "variants_scanned": 260,
+      "variants_already_taxable": 260,
+      "variants_updated": 0,
+      "variants_failed": 0,
+      "updated": [],
+      "failed": [],
+      "sample_non_taxable_before": [],
+      "verify": {
+        "variants_taxable_true": 260,
+        "variants_not_taxable": 0,
+        "all_taxable": true
+      }
+    },
+    "vat_page": {
+      "handle": "vat-and-pricing",
+      "title": "VAT & Pricing",
+      "action": "created",
+      "id": 732204794188,
+      "url_path": "/pages/vat-and-pricing"
+    },
+    "shop_after": {
+      "taxes_included": true,
+      "tax_shipping": null,
+      "currency": "GBP",
+      "country": "GB"
+    },
+    "gb_after": {
+      "id": 1786965328204,
+      "code": "GB",
+      "tax": 0.0,
+      "tax_name": "GB VAT",
+      "provinces": [
+        {
+          "name": "British Forces",
+          "tax": 0.0,
+          "tax_percentage": 0.0,
+          "tax_name": "VAT"
+        },
+        {
+          "name": "England",
+          "tax": 0.0,
+          "tax_percentage": 0.0,
+          "tax_name": "VAT"
+        },
+        {
+          "name": "Northern Ireland",
+          "tax": 0.0,
+          "tax_percentage": 0.0,
+          "tax_name": "VAT"
+        },
+        {
+          "name": "Scotland",
+          "tax": 0.0,
+          "tax_percentage": 0.0,
+          "tax_name": "VAT"
+        },
+        {
+          "name": "Wales",
+          "tax": 0.0,
+          "tax_percentage": 0.0,
+          "tax_name": "VAT"
+        }
+      ]
+    }
+  },
+  "manual_admin_required": true,
+  "manual_admin_checklist": [
+    "Settings \u2192 Taxes and duties \u2192 United Kingdom",
+    "Confirm collect VAT / 20% standard rate (Shopify Tax recommended)",
+    "Turn OFF include tax in product prices (tax-exclusive trade display)",
+    "Configure tax on shipping as required",
+    "Enter VAT registration number if VAT-registered",
+    "Place test UK order and verify 20% VAT line",
+    "Optional: footer link to /pages/vat-and-pricing"
+  ],
+  "success": {
+    "taxes_included_false": false,
+    "taxes_included_api_writable": false,
+    "variants_all_taxable": true,
+    "variants_updated_count": 0,
+    "gb_vat_20_via_api": false,
+    "vat_page_ok": true,
+    "manual_doc_written": true
+  }
+}

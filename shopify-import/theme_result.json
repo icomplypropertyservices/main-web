@@ -1,0 +1,162 @@
+{
+  "agent": "theme_homepage",
+  "store": "icomply-supplys.myshopify.com",
+  "shop_name": "iComply Supplys",
+  "audited_at": "2026-07-12T15:15:00+01:00",
+  "api_version": "2024-10",
+  "status": "ok",
+  "theme": {
+    "id": 201870311756,
+    "admin_graphql_api_id": "gid://shopify/Theme/201870311756",
+    "name": "Horizon",
+    "role": "main",
+    "theme_store_id": 2481,
+    "previewable": true,
+    "processing": false,
+    "created_at": "2026-07-12T12:36:22+01:00",
+    "updated_at": "2026-07-12T12:36:38+01:00"
+  },
+  "shop_context": {
+    "currency": "GBP",
+    "money_format": "£{{amount}}",
+    "taxes_included": true,
+    "primary_locale": "en",
+    "iana_timezone": "Europe/London",
+    "plan_name": "basic",
+    "address": {
+      "address1": "17 Woodlands Park Road",
+      "city": "Stockport",
+      "zip": "SK2 5DE",
+      "country_name": "United Kingdom"
+    },
+    "customer_email": "icomplypropertyservices@gmail.com",
+    "trade_phone": "07517806082"
+  },
+  "asset_api": {
+    "read": true,
+    "write": true,
+    "write_probe": {
+      "performed": true,
+      "key": "assets/_icomply_theme_probe.txt",
+      "result": "write_ok_then_deleted",
+      "notes": "OAuth includes write_themes and write_theme_code. Probe asset created, read back, and deleted successfully."
+    },
+    "asset_count": 448,
+    "limitation_notes": [
+      "Horizon is Online Store 2.0 with deep nested blocks; automated homepage JSON edits are fragile.",
+      "Prefer theme editor for section/block text, collection pickers, and images.",
+      "Asset API remains usable for soft-documentation and carefully scoped JSON updates with backup.",
+      "Rate limit ~2 calls/sec observed; client already sleeps 0.35s between calls."
+    ],
+    "key_assets_documented": [
+      "templates/index.json",
+      "config/settings_data.json",
+      "sections/header-group.json",
+      "sections/footer-group.json",
+      "sections/hero.liquid",
+      "sections/collection-list.liquid",
+      "sections/product-list.liquid",
+      "snippets/tax-info.liquid",
+      "templates/product.json"
+    ]
+  },
+  "homepage_current": {
+    "template": "templates/index.json",
+    "section_order": [
+      {
+        "id": "hero_jVaWmY",
+        "type": "hero",
+        "name": "Hero",
+        "heading_text": "Browse our latest products",
+        "button_label": "Shop all",
+        "button_link": "shopify://collections/all",
+        "section_height": "medium",
+        "overlay": true
+      },
+      {
+        "id": "product_list_fa6P9H",
+        "type": "product-list",
+        "name": "Featured collection",
+        "collection": "all",
+        "max_products": 8,
+        "columns": 4,
+        "show_tax_info_on_cards": false
+      }
+    ],
+    "header_announcement": {
+      "text": "Welcome to our store",
+      "source": "sections/header-group.json"
+    },
+    "header_menu": "main-menu"
+  },
+  "homepage_targets": {
+    "hero_heading": "UK Trade Fire & Security Supply",
+    "feature_collections": [
+      {
+        "title": "Fire Alarm Control Panels",
+        "handle": "fire-alarm-control-panels",
+        "id": 686993015116
+      },
+      {
+        "title": "Smoke Detectors",
+        "handle": "smoke-detectors",
+        "id": 686993047884
+      },
+      {
+        "title": "Service Packages",
+        "handle": "service-packages",
+        "id": 686993375564
+      }
+    ],
+    "vat_note": "Prices include UK VAT at 20% where applicable.",
+    "poa_note": "POA = Price on Application. Contact us for live trade pricing on selected lines.",
+    "poa_contact_line": "POA (Price on Application): call 07517 806082 or email icomplypropertyservices@gmail.com for live trade pricing."
+  },
+  "manual_actions_required": [
+    {
+      "id": "hero_text",
+      "priority": 1,
+      "action": "In theme editor Home page → Hero → Heading block, set text to 'UK Trade Fire & Security Supply'",
+      "done_via_api": false
+    },
+    {
+      "id": "collection_list",
+      "priority": 1,
+      "action": "Add Collection list section; select Fire Alarm Control Panels, Smoke Detectors, Service Packages",
+      "done_via_api": false
+    },
+    {
+      "id": "featured_products",
+      "priority": 2,
+      "action": "Retarget Featured collection product-list from 'all' to priority collections (panels first; optional extra strips for smoke detectors and service packages)",
+      "done_via_api": false
+    },
+    {
+      "id": "vat_note",
+      "priority": 1,
+      "action": "Announcement bar + optional product Price 'Tax information' + footer line for VAT-inclusive messaging",
+      "done_via_api": false
+    },
+    {
+      "id": "poa_note",
+      "priority": 1,
+      "action": "Announcement bar second slide and/or homepage text strip explaining POA + contact",
+      "done_via_api": false
+    },
+    {
+      "id": "collection_images",
+      "priority": 2,
+      "action": "Upload images on the three featured collections so Collection list cards are not empty",
+      "done_via_api": false
+    }
+  ],
+  "deliverables": {
+    "manual": "THEME_HOMEPAGE_MANUAL.md",
+    "result": "theme_result.json"
+  },
+  "notes": [
+    "Homepage content left to merchant theme editor per OS 2.0 best practice; full click-path manual written.",
+    "Product bodies/tags may already carry POA HTML from pricing agents; theme should explain POA globally.",
+    "taxes_included is true — VAT note must say prices include VAT, not exclude."
+  ]
+}

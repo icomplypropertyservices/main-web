@@ -1,15 +1,43 @@
 <?php
 // Icomply Property Services - Config
-define('SITE_NAME', 'Icomply Property Services');
-define('SITE_URL', 'http://localhost:8000');
-define('PHONE', '07517806082');
-define('EMAIL', 'info@icomplypropertyservices.co.uk');
-define('ADDRESS', '17 Woodlands Park Road, Offerton, Stockport, SK2 5DE');
-define('WHATSAPP', '447517806082');
+// On Vercel / production set env: SITE_URL, ADMIN_USER, ADMIN_PASS
+// Optional Shopify Buy Buttons: SHOPIFY_DOMAIN, SHOPIFY_STOREFRONT_TOKEN
 
-// Hardcoded admin
-define('ADMIN_USER', 'jackscott');
-define('ADMIN_PASS', 'Neverknow1');
+function icomply_env(string $key, string $default = ''): string {
+    $v = getenv($key);
+    if ($v === false || $v === '') {
+        $v = $_ENV[$key] ?? $_SERVER[$key] ?? '';
+    }
+    return ($v === '' || $v === false) ? $default : (string)$v;
+}
+
+// Public URL: explicit SITE_URL → Vercel URL → local dev
+$__siteUrl = icomply_env('SITE_URL');
+if ($__siteUrl === '') {
+    $vercel = icomply_env('VERCEL_URL');
+    if ($vercel !== '') {
+        $__siteUrl = (str_starts_with($vercel, 'http') ? $vercel : 'https://' . $vercel);
+    } else {
+        $__siteUrl = 'http://localhost:8000';
+    }
+}
+
+define('SITE_NAME', 'Icomply Property Services');
+define('SITE_URL', rtrim($__siteUrl, '/'));
+define('PHONE', icomply_env('PHONE', '07517806082'));
+define('EMAIL', icomply_env('EMAIL', 'info@icomplypropertyservices.co.uk'));
+define('ADDRESS', icomply_env('ADDRESS', '17 Woodlands Park Road, Offerton, Stockport, SK2 5DE'));
+define('WHATSAPP', icomply_env('WHATSAPP', '447517806082'));
+
+// Admin (override via env on Vercel — never rely on defaults in production)
+define('ADMIN_USER', icomply_env('ADMIN_USER', 'jackscott'));
+define('ADMIN_PASS', icomply_env('ADMIN_PASS', 'Neverknow1'));
+
+// Shopify Storefront (public token OK for Buy Buttons; never put Client Secret here)
+define('SHOPIFY_DOMAIN', icomply_env('SHOPIFY_DOMAIN', 'icomply-supplys.myshopify.com'));
+define('SHOPIFY_STORE_URL', icomply_env('SHOPIFY_STORE_URL', 'https://icomply-supplys.myshopify.com'));
+define('SHOPIFY_STOREFRONT_TOKEN', icomply_env('SHOPIFY_STOREFRONT_TOKEN', ''));
+define('SHOPIFY_ENABLED', SHOPIFY_STOREFRONT_TOKEN !== '');
 
 /** Build an absolute site URL path (works from any nested page). */
 function site_url(string $path = ''): string {

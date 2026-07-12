@@ -124,14 +124,71 @@ def upsert_page(
     }
 
 
+def _shipping_fallback_pages() -> list[dict]:
+    """Ensure core shipping-related pages exist even if pages.json omits them."""
+    return [
+        {
+            "handle": "delivery-information",
+            "title": "Delivery Information",
+            "body_html": (
+                "<h1>Delivery Information</h1>"
+                "<p>iComply Supplys despatches fire and electrical trade equipment across the "
+                "<strong>UK mainland</strong> from Stockport (Offerton).</p>"
+                "<h2>Coverage</h2>"
+                "<ul><li><strong>Standard checkout:</strong> England, Wales and mainland Scotland</li>"
+                "<li><strong>Quote only:</strong> Northern Ireland, Highlands &amp; Islands, "
+                "Isle of Man, Channel Islands</li></ul>"
+                "<h2>Services</h2>"
+                "<ul><li><strong>Collection</strong> — free by arrangement (Stockport / Offerton)</li>"
+                "<li><strong>Standard tracked</strong> — typically 2–4 working days after despatch</li>"
+                "<li><strong>Express</strong> — next working day when ordered before cut-off and in stock</li></ul>"
+                "<p>Live rates appear at checkout. For trade site deliveries or bulky panels/cable, "
+                "email <a href=\"mailto:icomplypropertyservices@gmail.com\">icomplypropertyservices@gmail.com</a> "
+                "or call <a href=\"tel:07517806082\">07517 806082</a>.</p>"
+                "<p>Full legal wording: <a href=\"/policies/shipping-policy\">Shipping Policy</a>.</p>"
+            ),
+        },
+        {
+            "handle": "shipping",
+            "title": "Shipping",
+            "body_html": (
+                "<h1>Shipping</h1>"
+                "<p>See our full <a href=\"/pages/delivery-information\">Delivery Information</a> guide "
+                "and the legal <a href=\"/policies/shipping-policy\">Shipping Policy</a>.</p>"
+                "<h2>Quick summary</h2>"
+                "<ul><li>UK mainland standard and express tracked services</li>"
+                "<li>Free collection from Stockport by arrangement</li>"
+                "<li>Remote destinations quoted manually</li>"
+                "<li>Cut-off for express: typically 13:00 UK time on working days (stock permitting)</li></ul>"
+                "<p>Phone: <a href=\"tel:07517806082\">07517 806082</a> · "
+                "Email: <a href=\"mailto:icomplypropertyservices@gmail.com\">icomplypropertyservices@gmail.com</a></p>"
+            ),
+        },
+    ]
+
+
 def setup_pages(result: dict) -> None:
     print("\n== Pages ==")
     pages_data = load_json(STOREFRONT / "pages.json")
+    items: list[dict] = []
     if pages_data is None:
-        result["pages"] = {"status": "skipped", "reason": "pages.json not found"}
+        print("  pages.json missing — using shipping fallback pages only")
+    else:
+        items = pages_data if isinstance(pages_data, list) else pages_data.get("pages", [])
+
+    # Merge shipping-related pages if handles are absent from pages.json
+    present_handles = {
+        (item.get("handle") or _slug(item.get("title", "page"))) for item in items
+    }
+    for fb in _shipping_fallback_pages():
+        if fb["handle"] not in present_handles:
+            items.append(fb)
+            print(f"  adding missing shipping page: {fb['handle']}")
+
+    if not items:
+        result["pages"] = {"status": "skipped", "reason": "no pages to create"}
         return
 
-    items = pages_data if isinstance(pages_data, list) else pages_data.get("pages", [])
     existing = existing_pages_by_handle()
     page_results: list[dict] = []
     for item in items:
@@ -594,6 +651,10 @@ def _resolve_menu_item_resource(item: dict) -> dict | None:
     handle = item.get("handle") or item.get("resource_handle")
     url = item.get("url") or item.get("href")
 
+    # Shopify "all products" is usually catalog, not a custom collection handle
+    if handle in ("all", "all-products") and itype in ("COLLECTION", "COLLECTIONS", "HTTP", "LINK"):
+        return {"type": "CATALOG"}
+
     if itype in ("COLLECTION", "COLLECTIONS") and handle:
         try:
             data = api("GET", f"/custom_collections.json?handle={handle}")
@@ -665,54 +726,111 @@ def _default_navigation() -> list[dict]:
     ]
 
 
-def setup_navigation(result: dict) -> None:
-    print("\n== Navigation / menus ==")
-    nav_data = load_json(STOREFRONT / "navigation.json")
-
+def _extract_menu_defs(nav_data: Any) -> list[dict]:
+    """Normalise navigation.json into a list of {title, handle, items} menus."""
     if nav_data is None:
-        items_src = _default_navigation()
-        menu_title = "Main menu"
-        menu_handle = "main-menu"
-        result_note = "navigation.json missing; using defaults"
-        print(f"  {result_note}")
-    else:
-        if isinstance(nav_data, list):
-            items_src = nav_data
-            menu_title = "Main menu"
-            menu_handle = "main-menu"
-        else:
-            items_src = (
-                nav_data.get("items")
-                or nav_data.get("links")
-                or nav_data.get("main_menu")
-                or nav_data.get("main-menu")
-                or []
-            )
-            menu_title = nav_data.get("title") or "Main menu"
-            menu_handle = nav_data.get("handle") or "main-menu"
-            # nested menus map
-            if not items_src and isinstance(nav_data.get("menus"), dict):
-                main = nav_data["menus"].get("main-menu") or nav_data["menus"].get("main")
-                if isinstance(main, dict):
-                    items_src = main.get("items") or main.get("links") or []
-                    menu_title = main.get("title") or menu_title
-                    menu_handle = main.get("handle") or menu_handle
-                elif isinstance(main, list):
-                    items_src = main
+        return [
+            {
+                "title": "Main menu",
+                "handle": "main-menu",
+                "items": _default_navigation(),
+            }
+        ]
+    if isinstance(nav_data, list):
+        # Either a flat item list, or a list of menu objects
+        if nav_data and isinstance(nav_data[0], dict) and (
+            "items" in nav_data[0] or "links" in nav_data[0]
+        ) and ("handle" in nav_data[0] or "title" in nav_data[0]):
+            return [
+                {
+                    "title": m.get("title") or "Main menu",
+                    "handle": m.get("handle") or "main-menu",
+                    "items": m.get("items") or m.get("links") or [],
+                }
+                for m in nav_data
+            ]
+        return [{"title": "Main menu", "handle": "main-menu", "items": nav_data}]
 
+    if not isinstance(nav_data, dict):
+        return [
+            {
+                "title": "Main menu",
+                "handle": "main-menu",
+                "items": _default_navigation(),
+            }
+        ]
+
+    menus_field = nav_data.get("menus")
+    if isinstance(menus_field, list):
+        return [
+            {
+                "title": m.get("title") or "Main menu",
+                "handle": m.get("handle") or "main-menu",
+                "items": m.get("items") or m.get("links") or [],
+            }
+            for m in menus_field
+            if isinstance(m, dict)
+        ]
+    if isinstance(menus_field, dict):
+        out = []
+        for h, m in menus_field.items():
+            if isinstance(m, dict):
+                out.append(
+                    {
+                        "title": m.get("title") or h.replace("-", " ").title(),
+                        "handle": m.get("handle") or h,
+                        "items": m.get("items") or m.get("links") or [],
+                    }
+                )
+            elif isinstance(m, list):
+                out.append(
+                    {
+                        "title": h.replace("-", " ").title(),
+                        "handle": h,
+                        "items": m,
+                    }
+                )
+        if out:
+            return out
+
+    items_src = (
+        nav_data.get("items")
+        or nav_data.get("links")
+        or nav_data.get("main_menu")
+        or nav_data.get("main-menu")
+        or []
+    )
+    return [
+        {
+            "title": nav_data.get("title") or "Main menu",
+            "handle": nav_data.get("handle") or "main-menu",
+            "items": items_src if isinstance(items_src, list) else [],
+        }
+    ]
+
+
+def _build_menu_items(items_src: list[dict]) -> list[dict]:
     menu_items: list[dict] = []
     for raw in items_src:
+        if not isinstance(raw, dict):
+            continue
         title = raw.get("title") or raw.get("name") or "Link"
         resource = _resolve_menu_item_resource(raw)
+        # Parent with only nested children and no useful type → HTTP #
         if not resource:
-            print(f"  skip menu item (unresolved): {title}")
-            continue
+            children = raw.get("items") or raw.get("links") or raw.get("children") or []
+            if children:
+                resource = {"type": "HTTP", "url": "#"}
+            else:
+                print(f"  skip menu item (unresolved): {title}")
+                continue
         entry: dict[str, Any] = {"title": title, **resource}
-        # Nested items (one level)
         children = raw.get("items") or raw.get("links") or raw.get("children") or []
         if children:
             nested = []
             for ch in children:
+                if not isinstance(ch, dict):
+                    continue
                 ct = ch.get("title") or ch.get("name") or "Link"
                 cr = _resolve_menu_item_resource(ch)
                 if cr:
@@ -720,7 +838,16 @@ def setup_navigation(result: dict) -> None:
             if nested:
                 entry["items"] = nested
         menu_items.append(entry)
+    return menu_items
 
+
+def _apply_menu(
+    menu_title: str,
+    menu_handle: str,
+    items_src: list[dict],
+    existing_menus: list[dict],
+) -> dict[str, Any]:
+    menu_items = _build_menu_items(items_src)
     nav_result: dict[str, Any] = {
         "handle": menu_handle,
         "title": menu_title,
@@ -735,36 +862,21 @@ def setup_navigation(result: dict) -> None:
         nav_result["status"] = "empty"
         write_menu_manual(menu_title, menu_handle, items_src or _default_navigation())
         nav_result["manual"] = str(MENU_MANUAL_PATH)
-        result["navigation"] = nav_result
-        return
+        return nav_result
 
-    # List existing menus
     existing_menu_id = None
-    try:
-        g = graphql(
-            """
-            query {
-              menus(first: 50) {
-                nodes { id handle title items { title type url } }
-              }
-            }
-            """
-        )
-        nodes = ((g.get("data") or {}).get("menus") or {}).get("nodes") or []
-        for n in nodes:
-            if n.get("handle") == menu_handle or n.get("handle") == "main-menu":
+    for n in existing_menus:
+        if n.get("handle") == menu_handle:
+            existing_menu_id = n.get("id")
+            print(f"  found existing menu {n.get('handle')} id={existing_menu_id}")
+            break
+    # Prefer main-menu match when handle aliases
+    if not existing_menu_id and menu_handle in ("main-menu", "main"):
+        for n in existing_menus:
+            if n.get("handle") in ("main-menu", "main"):
                 existing_menu_id = n.get("id")
-                print(f"  found existing menu {n.get('handle')} id={existing_menu_id}")
                 break
-        nav_result["existing_menus"] = [
-            {"id": n.get("id"), "handle": n.get("handle"), "title": n.get("title")}
-            for n in nodes
-        ]
-    except Exception as ex:
-        print(f"  warn: menus query failed: {ex}")
-        nav_result["menus_query_error"] = str(ex)
 
-    # Try menuUpdate / menuCreate
     try:
         if existing_menu_id:
             g = graphql(
@@ -813,14 +925,97 @@ def setup_navigation(result: dict) -> None:
             nav_result["menu"] = payload.get("menu")
             print(f"  menuCreate OK: {menu_handle}")
     except Exception as ex:
-        print(f"  menu API insufficient or failed: {ex}")
+        print(f"  menu API insufficient or failed ({menu_handle}): {ex}")
         nav_result["status"] = "manual_required"
         nav_result["error"] = str(ex)
         write_menu_manual(menu_title, menu_handle, items_src or menu_items)
         nav_result["manual"] = str(MENU_MANUAL_PATH)
         print(f"  wrote {MENU_MANUAL_PATH}")
 
-    result["navigation"] = nav_result
+    return nav_result
+
+
+def setup_navigation(result: dict) -> None:
+    print("\n== Navigation / menus ==")
+    nav_data = load_json(STOREFRONT / "navigation.json")
+    menu_defs = _extract_menu_defs(nav_data)
+    print(f"  menus to process: {[m.get('handle') for m in menu_defs]}")
+
+    existing_menus: list[dict] = []
+    menus_query_error = None
+    try:
+        g = graphql(
+            """
+            query {
+              menus(first: 50) {
+                nodes { id handle title items { title type url } }
+              }
+            }
+            """
+        )
+        existing_menus = ((g.get("data") or {}).get("menus") or {}).get("nodes") or []
+        print(f"  existing menus: {[n.get('handle') for n in existing_menus]}")
+    except Exception as ex:
+        menus_query_error = str(ex)
+        print(f"  warn: menus query failed: {ex}")
+
+    menu_results: list[dict] = []
+    any_manual = False
+    for mdef in menu_defs:
+        mr = _apply_menu(
+            mdef.get("title") or "Main menu",
+            mdef.get("handle") or "main-menu",
+            mdef.get("items") or [],
+            existing_menus,
+        )
+        if mr.get("status") in ("manual_required", "empty"):
+            any_manual = True
+        menu_results.append(mr)
+
+    # Always ensure MENU_MANUAL.md exists when any menu needs manual work or API failed
+    if any_manual or menus_query_error:
+        # Prefer writing a combined manual from the primary main-menu definition
+        primary = next(
+            (m for m in menu_defs if m.get("handle") in ("main-menu", "main")),
+            menu_defs[0] if menu_defs else None,
+        )
+        if primary:
+            write_menu_manual(
+                primary.get("title") or "Main menu",
+                primary.get("handle") or "main-menu",
+                primary.get("items") or _default_navigation(),
+            )
+            print(f"  ensured {MENU_MANUAL_PATH}")
+
+    # Also append footer guidance if footer menu was in defs
+    footer_def = next((m for m in menu_defs if "footer" in (m.get("handle") or "")), None)
+    if footer_def and MENU_MANUAL_PATH.exists():
+        extra = [
+            "",
+            "## Footer menu items (from navigation.json)",
+            "",
+        ]
+        for idx, raw in enumerate(footer_def.get("items") or [], 1):
+            t = raw.get("title") or f"Item {idx}"
+            h = raw.get("handle") or ""
+            ty = (raw.get("type") or "link").upper()
+            extra.append(f"{idx}. **{t}** — type `{ty}`" + (f" handle `{h}`" if h else ""))
+        with MENU_MANUAL_PATH.open("a", encoding="utf-8") as fh:
+            fh.write("\n".join(extra) + "\n")
+
+    primary_result = next(
+        (r for r in menu_results if r.get("handle") in ("main-menu", "main")),
+        menu_results[0] if menu_results else {"status": "empty"},
+    )
+    result["navigation"] = {
+        **primary_result,
+        "menus": menu_results,
+        "menus_query_error": menus_query_error,
+        "existing_menus": [
+            {"id": n.get("id"), "handle": n.get("handle"), "title": n.get("title")}
+            for n in existing_menus
+        ],
+    }
 
 
 def _to_create_items(items: list[dict]) -> list[dict]:

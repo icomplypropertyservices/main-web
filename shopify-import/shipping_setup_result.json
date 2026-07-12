@@ -1,0 +1,326 @@
+{
+  "timestamp_utc": "2026-07-12T13:17:27.921576+00:00",
+  "store": "icomply-supplys.myshopify.com",
+  "source": "C:\\Users\\E-Store\\Documents\\icomplyproperty\\shopify-import\\storefront\\shipping_notes.json",
+  "api_version": "2024-10",
+  "location_update": {
+    "attempted": true,
+    "success": true,
+    "method": "GraphQL locationEdit",
+    "after": {
+      "id": 123701035340,
+      "name": "iComply Supplys \u2014 Stockport",
+      "address1": "17 Woodlands Park Road",
+      "address2": "Offerton",
+      "city": "Stockport",
+      "zip": "SK2 5DE",
+      "country_code": "GB",
+      "phone": "07517806082"
+    }
+  },
+  "rates_api": {
+    "attempted": true,
+    "success": true,
+    "mutation": "deliveryProfileUpdate",
+    "uk_zone_id": "gid://shopify/DeliveryZone/709696815436",
+    "uk_zone_name": "United Kingdom",
+    "created_methods": [
+      "Standard tracked (UK mainland) \u2014 under \u00a350",
+      "Standard tracked (UK mainland) \u2014 \u00a350\u2013\u00a3149.99",
+      "Standard tracked (UK mainland) \u2014 \u00a3150\u2013\u00a3399.99",
+      "Free standard shipping (orders \u00a3400+)",
+      "Express next working day (UK mainland) \u2014 under \u00a350",
+      "Express next working day (UK mainland) \u2014 \u00a350\u2013\u00a3149.99",
+      "Express next working day (UK mainland) \u2014 \u00a3150\u2013\u00a3399.99",
+      "Express next working day (UK mainland) \u2014 \u00a3400+"
+    ],
+    "methods_detail": [
+      {
+        "id": "gid://shopify/DeliveryMethodDefinition/1363961774412",
+        "name": "Standard tracked (UK mainland) \u2014 under \u00a350",
+        "active": true,
+        "price": {
+          "amount": "5.95",
+          "currencyCode": "GBP"
+        },
+        "conditions": [
+          {
+            "field": "TOTAL_PRICE",
+            "operator": "GREATER_THAN_OR_EQUAL_TO",
+            "conditionCriteria": {
+              "__typename": "MoneyV2",
+              "amount": "0.0",
+              "currencyCode": "GBP"
+            }
+          },
+          {
+            "field": "TOTAL_PRICE",
+            "operator": "LESS_THAN_OR_EQUAL_TO",
+            "conditionCriteria": {
+              "__typename": "MoneyV2",
+              "amount": "49.99",
+              "currencyCode": "GBP"
+            }
+          }
+        ]
+      },
+      {
+        "id": "gid://shopify/DeliveryMethodDefinition/1363961807180",
+        "name": "Standard tracked (UK mainland) \u2014 \u00a350\u2013\u00a3149.99",
+        "active": true,
+        "price": {
+          "amount": "7.95",
+          "currencyCode": "GBP"
+        },
+        "conditions": [
+          {
+            "field": "TOTAL_PRICE",
+            "operator": "GREATER_THAN_OR_EQUAL_TO",
+            "conditionCriteria": {
+              "__typename": "MoneyV2",
+              "amount": "50.0",
+              "currencyCode": "GBP"
+            }
+          },
+          {
+            "field": "TOTAL_PRICE",
+            "operator": "LESS_THAN_OR_EQUAL_TO",
+            "conditionCriteria": {
+              "__typename": "MoneyV2",
+              "amount": "149.99",
+              "currencyCode": "GBP"
+            }
+          }
+        ]
+      },
+      {
+        "id": "gid://shopify/DeliveryMethodDefinition/1363961839948",
+        "name": "Standard tracked (UK mainland) \u2014 \u00a3150\u2013\u00a3399.99",
+        "active": true,
+        "price": {
+          "amount": "9.95",
+          "currencyCode": "GBP"
+        },
+        "conditions": [
+          {
+            "field": "TOTAL_PRICE",
+            "operator": "GREATER_THAN_OR_EQUAL_TO",
+            "conditionCriteria": {
+              "__typename": "MoneyV2",
+              "amount": "150.0",
+              "currencyCode": "GBP"
+            }
+          },
+          {
+            "field": "TOTAL_PRICE",
+            "operator": "LESS_THAN_OR_EQUAL_TO",
+            "conditionCriteria": {
+              "__typename": "MoneyV2",
+              "amount": "399.99",
+              "currencyCode": "GBP"
+            }
+          }
+        ]
+      },
+      {
+        "id": "gid://shopify/DeliveryMethodDefinition/1363961872716",
+        "name": "Free standard shipping (orders \u00a3400+)",
+        "active": true,
+        "price": {
+          "amount": "0.0",
+          "currencyCode": "GBP"
+        },
+        "conditions": [
+          {
+            "field": "TOTAL_PRICE",
+            "operator": "GREATER_THAN_OR_EQUAL_TO",
+            "conditionCriteria": {
+              "__typename": "MoneyV2",
+              "amount": "400.0",
+              "currencyCode": "GBP"
+            }
+          }
+        ]
+      },
+      {
+        "id": "gid://shopify/DeliveryMethodDefinition/1363961905484",
+        "name": "Express next working day (UK mainland) \u2014 under \u00a350",
+        "active": true,
+        "price": {
+          "amount": "9.95",
+          "currencyCode": "GBP"
+        },
+        "conditions": [
+          {
+            "field": "TOTAL_PRICE",
+            "operator": "GREATER_THAN_OR_EQUAL_TO",
+            "conditionCriteria": {
+              "__typename": "MoneyV2",
+              "amount": "0.0",
+              "currencyCode": "GBP"
+            }
+          },
+          {
+            "field": "TOTAL_PRICE",
+            "operator": "LESS_THAN_OR_EQUAL_TO",
+            "conditionCriteria": {
+              "__typename": "MoneyV2",
+              "amount": "49.99",
+              "currencyCode": "GBP"
+            }
+          }
+        ]
+      },
+      {
+        "id": "gid://shopify/DeliveryMethodDefinition/1363961938252",
+        "name": "Express next working day (UK mainland) \u2014 \u00a350\u2013\u00a3149.99",
+        "active": true,
+        "price": {
+          "amount": "11.95",
+          "currencyCode": "GBP"
+        },
+        "conditions": [
+          {
+            "field": "TOTAL_PRICE",
+            "operator": "GREATER_THAN_OR_EQUAL_TO",
+            "conditionCriteria": {
+              "__typename": "MoneyV2",
+              "amount": "50.0",
+              "currencyCode": "GBP"
+            }
+          },
+          {
+            "field": "TOTAL_PRICE",
+            "operator": "LESS_THAN_OR_EQUAL_TO",
+            "conditionCriteria": {
+              "__typename": "MoneyV2",
+              "amount": "149.99",
+              "currencyCode": "GBP"
+            }
+          }
+        ]
+      },
+      {
+        "id": "gid://shopify/DeliveryMethodDefinition/1363961971020",
+        "name": "Express next working day (UK mainland) \u2014 \u00a3150\u2013\u00a3399.99",
+        "active": true,
+        "price": {
+          "amount": "14.95",
+          "currencyCode": "GBP"
+        },
+        "conditions": [
+          {
+            "field": "TOTAL_PRICE",
+            "operator": "GREATER_THAN_OR_EQUAL_TO",
+            "conditionCriteria": {
+              "__typename": "MoneyV2",
+              "amount": "150.0",
+              "currencyCode": "GBP"
+            }
+          },
+          {
+            "field": "TOTAL_PRICE",
+            "operator": "LESS_THAN_OR_EQUAL_TO",
+            "conditionCriteria": {
+              "__typename": "MoneyV2",
+              "amount": "399.99",
+              "currencyCode": "GBP"
+            }
+          }
+        ]
+      },
+      {
+        "id": "gid://shopify/DeliveryMethodDefinition/1363962003788",
+        "name": "Express next working day (UK mainland) \u2014 \u00a3400+",
+        "active": true,
+        "price": {
+          "amount": "9.95",
+          "currencyCode": "GBP"
+        },
+        "conditions": [
+          {
+            "field": "TOTAL_PRICE",
+            "operator": "GREATER_THAN_OR_EQUAL_TO",
+            "conditionCriteria": {
+              "__typename": "MoneyV2",
+              "amount": "400.0",
+              "currencyCode": "GBP"
+            }
+          }
+        ]
+      }
+    ],
+    "note": "Replaced default Standard/Express with basket-value tiered rates from storefront/shipping_notes.json via priceConditionsToCreate. REST price_based_shipping_rates POST returns 406 (deprecated)."
+  },
+  "local_pickup": {
+    "attempted": true,
+    "success": true,
+    "mutation": "locationLocalPickupEnable",
+    "pickupTime": "TWENTY_FOUR_HOURS",
+    "instructions": "Free collection by prior arrangement from iComply Supplys \u2014 Stockport (17 Woodlands Park Road, Offerton, Stockport SK2 5DE). Book a slot: 07517806082 or icomplypropertyservices@gmail.com. Bring photo ID and order number. Usually ready same or next working day once stock reserved.",
+    "userErrors": [],
+    "note": "Free collection (\u00a30) at Stockport location"
+  },
+  "rest_shipping_rates": {
+    "attempted": true,
+    "success": false,
+    "errors": [
+      "POST /shipping_zones/{id}/price_based_shipping_rates.json -> 406 (deprecated)"
+    ]
+  },
+  "rates_from_notes": {
+    "collection": 0.0,
+    "standard_tiers": [
+      {
+        "basket_min_gbp": 0,
+        "basket_max_gbp": 49.99,
+        "shipping_gbp": 5.95
+      },
+      {
+        "basket_min_gbp": 50,
+        "basket_max_gbp": 149.99,
+        "shipping_gbp": 7.95
+      },
+      {
+        "basket_min_gbp": 150,
+        "basket_max_gbp": 399.99,
+        "shipping_gbp": 9.95
+      },
+      {
+        "basket_min_gbp": 400,
+        "basket_max_gbp": null,
+        "shipping_gbp": 0.0
+      }
+    ],
+    "express_tiers": [
+      {
+        "basket_min_gbp": 0,
+        "basket_max_gbp": 49.99,
+        "shipping_gbp": 9.95
+      },
+      {
+        "basket_min_gbp": 50,
+        "basket_max_gbp": 149.99,
+        "shipping_gbp": 11.95
+      },
+      {
+        "basket_min_gbp": 150,
+        "basket_max_gbp": 399.99,
+        "shipping_gbp": 14.95
+      },
+      {
+        "basket_min_gbp": 400,
+        "basket_max_gbp": null,
+        "shipping_gbp": 9.95
+      }
+    ],
+    "free_standard_over_gbp": 400
+  },
+  "manual_doc": "C:\\Users\\E-Store\\Documents\\icomplyproperty\\shopify-import\\SHIPPING_SETUP_MANUAL.md",
+  "summary": [
+    "UK tiered shipping rates live via GraphQL deliveryProfileUpdate (standard tiers, express tiers, free standard over \u00a3400)",
+    "Location: iComply Supplys \u2014 Stockport, 17 Woodlands Park Road, Offerton, Stockport SK2 5DE",
+    "Local pickup enabled (free collection, TWENTY_FOUR_HOURS readiness)",
+    "SHIPPING_SETUP_MANUAL.md written with exact rates from shipping_notes.json"
+  ]
+}

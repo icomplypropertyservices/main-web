@@ -1,0 +1,95 @@
+{
+  "store": "icomply-supplys.myshopify.com",
+  "brand": "iComply Supplys",
+  "timestamp_utc": "2026-07-12T13:15:43Z",
+  "overall": "PASS",
+  "overall_pass": true,
+  "summary": {
+    "product_count": 260,
+    "images_pct": 100.0,
+    "with_images": 260,
+    "taxable_variants_pct": 100.0,
+    "taxable_variants": 260,
+    "total_variants": 260,
+    "poa_tags_count": 0,
+    "storefront_token_ok": true,
+    "collections_count": 13,
+    "custom_collections": 13,
+    "smart_collections": 0
+  },
+  "checks": {
+    "product_count": {
+      "name": "Product count",
+      "value": 260,
+      "expected": ">= 250",
+      "pass": true,
+      "detail": "260 products on store"
+    },
+    "images_pct": {
+      "name": "Products with images (%)",
+      "value": 100.0,
+      "with_images": 260,
+      "without_images": 0,
+      "expected": ">= 95%",
+      "pass": true,
+      "detail": "260/260 products have at least one image (100.00%)"
+    },
+    "taxable_variants_pct": {
+      "name": "Taxable variants (%)",
+      "value": 100.0,
+      "taxable_variants": 260,
+      "total_variants": 260,
+      "expected": "100%",
+      "pass": true,
+      "detail": "260/260 variants taxable (100.00%)"
+    },
+    "poa_tags": {
+      "name": "POA-tagged products count",
+      "value": 0,
+      "expected": "count retrieved (non-negative integer)",
+      "pass": true,
+      "detail": "0 products tagged poa and/or price-on-application",
+      "sample_handles": []
+    },
+    "storefront_token": {
+      "name": "Storefront token query",
+      "value": true,
+      "token_prefix": "1c9d538a...",
+      "expected": "GraphQL shop query succeeds",
+      "pass": true,
+      "detail": "Storefront API returned shop data",
+      "shop": {
+        "name": "iComply Supplys",
+        "primaryDomain": {
+          "url": "https://icomply-supplys.myshopify.com"
+        }
+      }
+    },
+    "collections_count": {
+      "name": "Collections count",
+      "value": 13,
+      "custom": 13,
+      "smart": 0,
+      "custom_handles": [
+        "batteries-power",
+        "bases-mounting",
+        "emergency-lighting-products",
+        "fire-alarm-control-panels",
+        "cables-accessories",
+        "heat-detectors",
+        "frontpage",
+        "interfaces-modules",
+        "manual-call-points",
+        "multi-sensor-detectors",
+        "service-packages",
+        "smoke-detectors",
+        "sounders-beacons"
+      ],
+      "smart_handles": [],
+      "expected": ">= 12 (master plan trade collections)",
+      "pass": true,
+      "detail": "13 custom + 0 smart = 13 collections"
+    }
+  },
+  "poa_products": []
+}

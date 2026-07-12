@@ -1,0 +1,2082 @@
+[
+  {
+    "handle": "electrical-compliance-package",
+    "id": 15892770062668,
+    "old_price": "149.00",
+    "new_price": "149.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=service_package (50-600)"
+  },
+  {
+    "handle": "fire-alarm-service-package",
+    "id": 15892770160972,
+    "old_price": "299.00",
+    "new_price": "299.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=service_package (50-600)"
+  },
+  {
+    "handle": "emergency-lighting-package",
+    "id": 15892770324812,
+    "old_price": "199.00",
+    "new_price": "199.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=service_package (50-600)"
+  },
+  {
+    "handle": "aov-air-handling-package",
+    "id": 15892770455884,
+    "old_price": "349.00",
+    "new_price": "349.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=service_package (50-600)"
+  },
+  {
+    "handle": "nurse-call-systems-package",
+    "id": 15892770521420,
+    "old_price": "499.00",
+    "new_price": "499.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=service_package (50-600)"
+  },
+  {
+    "handle": "gas-safety-package",
+    "id": 15892770652492,
+    "old_price": "89.00",
+    "new_price": "89.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=service_package (50-600)"
+  },
+  {
+    "handle": "intruder-alarm-package",
+    "id": 15892770849100,
+    "old_price": "249.00",
+    "new_price": "249.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=service_package (50-600)"
+  },
+  {
+    "handle": "cctv-systems-package",
+    "id": 15892771012940,
+    "old_price": "349.00",
+    "new_price": "349.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=service_package (50-600)"
+  },
+  {
+    "handle": "access-control-package",
+    "id": 15892771144012,
+    "old_price": "399.00",
+    "new_price": "399.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=service_package (50-600)"
+  },
+  {
+    "handle": "door-entry-package",
+    "id": 15892771275084,
+    "old_price": "299.00",
+    "new_price": "299.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=service_package (50-600)"
+  },
+  {
+    "handle": "intercoms-package",
+    "id": 15892771406156,
+    "old_price": "249.00",
+    "new_price": "249.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=service_package (50-600)"
+  },
+  {
+    "handle": "kentec-syncro-as-1-loop",
+    "id": 15892779663692,
+    "old_price": "685.00",
+    "new_price": "685.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "kentec-syncro-as-2-loop",
+    "id": 15892779729228,
+    "old_price": "895.00",
+    "new_price": "895.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "kentec-sigma-cp-4-zone",
+    "id": 15892779893068,
+    "old_price": "245.00",
+    "new_price": "245.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "kentec-sigma-cp-8-zone",
+    "id": 15892779991372,
+    "old_price": "325.00",
+    "new_price": "325.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "advanced-mxpro5-1-loop",
+    "id": 15892780056908,
+    "old_price": "749.00",
+    "new_price": "749.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "advanced-mxpro5-2-loop",
+    "id": 15892780155212,
+    "old_price": "989.00",
+    "new_price": "989.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "advanced-axis-en-4-zone",
+    "id": 15892780220748,
+    "old_price": "229.00",
+    "new_price": "229.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "ctec-xfp-1-loop",
+    "id": 15892780319052,
+    "old_price": "625.00",
+    "new_price": "625.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "ctec-xfp-2-loop",
+    "id": 15892780482892,
+    "old_price": "825.00",
+    "new_price": "825.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "ctec-cfp-2-zone",
+    "id": 15892780613964,
+    "old_price": "165.00",
+    "new_price": "165.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "ctec-cfp-4-zone",
+    "id": 15892780679500,
+    "old_price": "195.00",
+    "new_price": "195.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "ctec-cfp-8-zone",
+    "id": 15892780745036,
+    "old_price": "275.00",
+    "new_price": "275.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "haes-esento-4-zone",
+    "id": 15892780843340,
+    "old_price": "189.00",
+    "new_price": "189.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "haes-esento-8-zone",
+    "id": 15892780908876,
+    "old_price": "259.00",
+    "new_price": "259.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "morley-dxc1-1-loop",
+    "id": 15892780974412,
+    "old_price": "720.00",
+    "new_price": "720.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "apollo-s65-optical-smoke",
+    "id": 15892781039948,
+    "old_price": "16.50",
+    "new_price": "16.50",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-s65-ionisation-smoke",
+    "id": 15892781138252,
+    "old_price": "17.50",
+    "new_price": "17.50",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-orbis-optical-smoke",
+    "id": 15892781236556,
+    "old_price": "18.90",
+    "new_price": "18.90",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-xp95-optical-smoke",
+    "id": 15892781367628,
+    "old_price": "32.00",
+    "new_price": "32.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-discovery-optical-smoke",
+    "id": 15892781433164,
+    "old_price": "38.50",
+    "new_price": "38.50",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=detector (8-100)"
+  },
+  {
+    "handle": "hochiki-alg-en-smoke",
+    "id": 15892781498700,
+    "old_price": "34.00",
+    "new_price": "34.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=detector (8-100)"
+  },
+  {
+    "handle": "hochiki-slo-e-smoke",
+    "id": 15892781564236,
+    "old_price": "15.80",
+    "new_price": "15.80",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=detector (8-100)"
+  },
+  {
+    "handle": "system-sensor-eco1003-smoke",
+    "id": 15892781662540,
+    "old_price": "14.50",
+    "new_price": "14.50",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-s65-heat-a1r",
+    "id": 15892781728076,
+    "old_price": "15.90",
+    "new_price": "15.90",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-s65-heat-cs",
+    "id": 15892781793612,
+    "old_price": "15.90",
+    "new_price": "15.90",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-xp95-heat",
+    "id": 15892781891916,
+    "old_price": "29.50",
+    "new_price": "29.50",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=detector (8-100)"
+  },
+  {
+    "handle": "hochiki-atj-en-heat",
+    "id": 15892781990220,
+    "old_price": "31.00",
+    "new_price": "31.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-orbis-heat-a1r",
+    "id": 15892782055756,
+    "old_price": "17.20",
+    "new_price": "17.20",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-discovery-multisensor",
+    "id": 15892782121292,
+    "old_price": "52.00",
+    "new_price": "52.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-xp95-multisensor",
+    "id": 15892782219596,
+    "old_price": "46.00",
+    "new_price": "46.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=detector (8-100)"
+  },
+  {
+    "handle": "hochiki-acc-en-multisensor",
+    "id": 15892782285132,
+    "old_price": "48.50",
+    "new_price": "48.50",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=detector (8-100)"
+  },
+  {
+    "handle": "kac-mcp-conventional-red",
+    "id": 15892782350668,
+    "old_price": "11.50",
+    "new_price": "11.50",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=device (5-250)"
+  },
+  {
+    "handle": "apollo-xp95-mcp",
+    "id": 15892782448972,
+    "old_price": "28.00",
+    "new_price": "28.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=device (5-250)"
+  },
+  {
+    "handle": "hochiki-hcp-e-mcp",
+    "id": 15892782547276,
+    "old_price": "29.50",
+    "new_price": "29.50",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=device (5-250)"
+  },
+  {
+    "handle": "kac-weatherproof-mcp",
+    "id": 15892782612812,
+    "old_price": "24.00",
+    "new_price": "24.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=device (5-250)"
+  },
+  {
+    "handle": "apollo-discovery-mcp",
+    "id": 15892782711116,
+    "old_price": "31.00",
+    "new_price": "31.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "fulleon-roshni-sounder-red",
+    "id": 15892782776652,
+    "old_price": "18.50",
+    "new_price": "18.50",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=device (5-250)"
+  },
+  {
+    "handle": "fulleon-roshni-sounder-beacon",
+    "id": 15892782842188,
+    "old_price": "32.00",
+    "new_price": "32.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=device (5-250)"
+  },
+  {
+    "handle": "apollo-xp95-sounder-beacon-base",
+    "id": 15892782907724,
+    "old_price": "48.00",
+    "new_price": "48.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (3-80)"
+  },
+  {
+    "handle": "hochiki-chq-wsb-sounder-beacon",
+    "id": 15892783006028,
+    "old_price": "54.00",
+    "new_price": "54.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=device (5-250)"
+  },
+  {
+    "handle": "vimpex-square-sounder",
+    "id": 15892783104332,
+    "old_price": "16.00",
+    "new_price": "16.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=device (5-250)"
+  },
+  {
+    "handle": "eaton-fulleon-flashni",
+    "id": 15892783169868,
+    "old_price": "36.50",
+    "new_price": "36.50",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=device (5-250)"
+  },
+  {
+    "handle": "apollo-s65-standard-base",
+    "id": 15892783300940,
+    "old_price": "0.00",
+    "new_price": "4.20",
+    "action": "adjust",
+    "reason": "restore guide price 4.20 (shop was zero/POA); band=device (3-80)"
+  },
+  {
+    "handle": "apollo-s65-diode-base",
+    "id": 15892783399244,
+    "old_price": "0.00",
+    "new_price": "5.40",
+    "action": "adjust",
+    "reason": "restore guide price 5.40 (shop was zero/POA); band=device (3-80)"
+  },
+  {
+    "handle": "apollo-xp95-isolator-base",
+    "id": 15892783464780,
+    "old_price": "14.50",
+    "new_price": "14.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (3-80)"
+  },
+  {
+    "handle": "hochiki-ybn-r-3-base",
+    "id": 15892783595852,
+    "old_price": "0.00",
+    "new_price": "5.90",
+    "action": "adjust",
+    "reason": "restore guide price 5.90 (shop was zero/POA); band=device (3-80)"
+  },
+  {
+    "handle": "apollo-deckhead-mounting",
+    "id": 15892783726924,
+    "old_price": "9.80",
+    "new_price": "9.80",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=device (3-80)"
+  },
+  {
+    "handle": "apollo-xp95-io-unit",
+    "id": 15892783890764,
+    "old_price": "72.00",
+    "new_price": "72.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "apollo-xp95-zone-monitor",
+    "id": 15892784120140,
+    "old_price": "78.00",
+    "new_price": "78.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "apollo-xp95-sounder-control",
+    "id": 15892784349516,
+    "old_price": "85.00",
+    "new_price": "85.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "hochiki-chq-dim-module",
+    "id": 15892784546124,
+    "old_price": "69.00",
+    "new_price": "69.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=device (5-250)"
+  },
+  {
+    "handle": "hochiki-chq-som-module",
+    "id": 15892784742732,
+    "old_price": "64.00",
+    "new_price": "64.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=device (5-250)"
+  },
+  {
+    "handle": "ctec-bf375-24v-psu",
+    "id": 15892785037644,
+    "old_price": "89.00",
+    "new_price": "89.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=power (40-800)"
+  },
+  {
+    "handle": "ctec-bf562-24v-psu",
+    "id": 15892785234252,
+    "old_price": "118.00",
+    "new_price": "118.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=power (40-800)"
+  },
+  {
+    "handle": "yuasa-np7-12-battery",
+    "id": 15892785463628,
+    "old_price": "18.50",
+    "new_price": "18.50",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=battery (10-100)"
+  },
+  {
+    "handle": "yuasa-np12-12-battery",
+    "id": 15892785594700,
+    "old_price": "32.00",
+    "new_price": "32.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=battery (10-100)"
+  },
+  {
+    "handle": "yuasa-np18-12b-battery",
+    "id": 15892785758540,
+    "old_price": "48.00",
+    "new_price": "48.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=battery (10-100)"
+  },
+  {
+    "handle": "yuasa-np24-12-battery",
+    "id": 15892785889612,
+    "old_price": "64.00",
+    "new_price": "64.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=battery (10-100)"
+  },
+  {
+    "handle": "fp200-gold-1-5mm-2c-100m",
+    "id": 15892786118988,
+    "old_price": "145.00",
+    "new_price": "145.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=cable (50-800)"
+  },
+  {
+    "handle": "fp200-gold-1-5mm-2c-500m",
+    "id": 15892786315596,
+    "old_price": "620.00",
+    "new_price": "620.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=cable (50-800)"
+  },
+  {
+    "handle": "fp200-gold-2-5mm-2c-100m",
+    "id": 15892786479436,
+    "old_price": "195.00",
+    "new_price": "195.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=cable (50-800)"
+  },
+  {
+    "handle": "fire-cable-gland-pack-20",
+    "id": 15892786676044,
+    "old_price": "0.00",
+    "new_price": "22.00",
+    "action": "adjust",
+    "reason": "restore guide price 22.00 (shop was zero/POA); band=cable_accessory (2-150)"
+  },
+  {
+    "handle": "fire-junction-box-pack-10",
+    "id": 15892786872652,
+    "old_price": "38.00",
+    "new_price": "38.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=cable_accessory (2-150)"
+  },
+  {
+    "handle": "eml-led-bulkhead-nm-3hr",
+    "id": 15892787069260,
+    "old_price": "24.00",
+    "new_price": "24.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=emergency_lighting (15-250)"
+  },
+  {
+    "handle": "eml-led-bulkhead-m-3hr",
+    "id": 15892787298636,
+    "old_price": "28.00",
+    "new_price": "28.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=emergency_lighting (15-250)"
+  },
+  {
+    "handle": "eml-exit-sign-maintained",
+    "id": 15892787495244,
+    "old_price": "32.00",
+    "new_price": "32.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=emergency_lighting (15-250)"
+  },
+  {
+    "handle": "eml-exit-blade-suspended",
+    "id": 15892787626316,
+    "old_price": "42.00",
+    "new_price": "42.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=emergency_lighting (15-250)"
+  },
+  {
+    "handle": "eml-ip65-industrial-nm",
+    "id": 15892787790156,
+    "old_price": "39.00",
+    "new_price": "39.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=emergency_lighting (15-250)"
+  },
+  {
+    "handle": "eml-self-test-bulkhead",
+    "id": 15892788019532,
+    "old_price": "48.00",
+    "new_price": "48.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=emergency_lighting (15-250)"
+  },
+  {
+    "handle": "ctec-cfp-2-zone-conventional-panel",
+    "id": 15892788281676,
+    "old_price": "165.00",
+    "new_price": "165.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "ctec-cfp-4-zone-conventional-panel",
+    "id": 15892788478284,
+    "old_price": "195.00",
+    "new_price": "195.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "ctec-cfp-8-zone-conventional-panel",
+    "id": 15892788642124,
+    "old_price": "275.00",
+    "new_price": "275.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "ctec-xfp-1-loop-16-zone-addressable",
+    "id": 15892788805964,
+    "old_price": "485.00",
+    "new_price": "485.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "ctec-xfp-1-loop-32-zone-addressable",
+    "id": 15892789002572,
+    "old_price": "545.00",
+    "new_price": "545.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "ctec-xfp-2-loop-32-zone-addressable",
+    "id": 15892789199180,
+    "old_price": "695.00",
+    "new_price": "695.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "ctec-zfp-1-loop-addressable-panel",
+    "id": 15892789395788,
+    "old_price": "780.00",
+    "new_price": "780.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "kentec-sigma-cp-2-zone-conventional",
+    "id": 15892789625164,
+    "old_price": "175.00",
+    "new_price": "175.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "kentec-sigma-cp-4-zone-conventional",
+    "id": 15892789821772,
+    "old_price": "215.00",
+    "new_price": "215.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "kentec-sigma-cp-8-zone-conventional",
+    "id": 15892789985612,
+    "old_price": "295.00",
+    "new_price": "295.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "kentec-sigma-xt-extinguishing-panel",
+    "id": 15892790182220,
+    "old_price": "520.00",
+    "new_price": "520.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "kentec-syncro-as-1-loop-addressable",
+    "id": 15892790378828,
+    "old_price": "625.00",
+    "new_price": "625.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "kentec-syncro-as-2-loop-addressable",
+    "id": 15892790477132,
+    "old_price": "785.00",
+    "new_price": "785.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "kentec-syncro-as-4-loop-addressable",
+    "id": 15892790706508,
+    "old_price": "1150.00",
+    "new_price": "1150.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "kentec-syncro-focus-repeater",
+    "id": 15892790903116,
+    "old_price": "385.00",
+    "new_price": "385.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "advanced-mxpro5-1-loop-addressable",
+    "id": 15892791066956,
+    "old_price": "695.00",
+    "new_price": "695.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "advanced-mxpro5-2-loop-addressable",
+    "id": 15892791263564,
+    "old_price": "895.00",
+    "new_price": "895.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "advanced-mxpro5-4-loop-addressable",
+    "id": 15892791460172,
+    "old_price": "1350.00",
+    "new_price": "1350.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "advanced-mxpro5-8-loop-addressable",
+    "id": 15892791656780,
+    "old_price": "2150.00",
+    "new_price": "2150.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "advanced-axis-en-2-zone-conventional",
+    "id": 15892791820620,
+    "old_price": "185.00",
+    "new_price": "185.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "advanced-axis-en-4-zone-conventional",
+    "id": 15892792049996,
+    "old_price": "225.00",
+    "new_price": "225.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "advanced-axis-en-8-zone-conventional",
+    "id": 15892792246604,
+    "old_price": "310.00",
+    "new_price": "310.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "morley-zx1se-1-loop-addressable",
+    "id": 15892792475980,
+    "old_price": "575.00",
+    "new_price": "575.00",
+    "action": "keep",
+    "reason": "valid UK trade guide price; band=panel (100-3000)"
+  },
+  {
+    "handle": "morley-zx2se-2-loop-addressable",
+    "id": 15892792672588,
+    "old_price": "745.00",
+    "new_price": "745.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=panel (100-3000)"
+  },
+  {
+    "handle": "morley-zx5se-5-loop-addressable",
+    "id": 15892793098572,
+    "old_price": "1450.00",
+    "new_price": "1450.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=panel (100-3000)"
+  },
+  {
+    "handle": "haes-excel-2-zone-conventional",
+    "id": 15892793491788,
+    "old_price": "155.00",
+    "new_price": "155.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=panel (100-3000)"
+  },
+  {
+    "handle": "haes-excel-4-zone-conventional",
+    "id": 15892793688396,
+    "old_price": "189.00",
+    "new_price": "189.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=panel (100-3000)"
+  },
+  {
+    "handle": "haes-excel-8-zone-conventional",
+    "id": 15892793852236,
+    "old_price": "265.00",
+    "new_price": "265.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=panel (100-3000)"
+  },
+  {
+    "handle": "haes-eclipse-1-loop-addressable",
+    "id": 15892794016076,
+    "old_price": "455.00",
+    "new_price": "455.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=panel (100-3000)"
+  },
+  {
+    "handle": "haes-eclipse-2-loop-addressable",
+    "id": 15892794212684,
+    "old_price": "595.00",
+    "new_price": "595.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=panel (100-3000)"
+  },
+  {
+    "handle": "fike-twinflex-pro-2-zone-2-wire",
+    "id": 15892794409292,
+    "old_price": "245.00",
+    "new_price": "245.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=panel (100-3000)"
+  },
+  {
+    "handle": "fike-twinflex-pro-4-zone-2-wire",
+    "id": 15892794605900,
+    "old_price": "295.00",
+    "new_price": "295.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=panel (100-3000)"
+  },
+  {
+    "handle": "fike-twinflex-pro-8-zone-2-wire",
+    "id": 15892794802508,
+    "old_price": "385.00",
+    "new_price": "385.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=panel (100-3000)"
+  },
+  {
+    "handle": "ems-firecell-radio-hub-panel",
+    "id": 15892794999116,
+    "old_price": "890.00",
+    "new_price": "890.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=panel (100-3000)"
+  },
+  {
+    "handle": "apollo-series-65-optical-smoke",
+    "id": 15892795228492,
+    "old_price": "14.95",
+    "new_price": "14.95",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-series-65-ionisation-smoke",
+    "id": 15892795425100,
+    "old_price": "16.50",
+    "new_price": "16.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-orbis-multisensor-smoke",
+    "id": 15892795621708,
+    "old_price": "24.50",
+    "new_price": "24.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-xp95-ionisation-smoke",
+    "id": 15892795883852,
+    "old_price": "34.50",
+    "new_price": "34.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-discovery-ionisation-smoke",
+    "id": 15892796047692,
+    "old_price": "44.50",
+    "new_price": "44.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "hochiki-esp-alg-en-optical-smoke",
+    "id": 15892796309836,
+    "old_price": "36.95",
+    "new_price": "36.95",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "hochiki-esp-ala-e-optical-smoke",
+    "id": 15892796506444,
+    "old_price": "38.50",
+    "new_price": "38.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "hochiki-cdx-slof-as-optical-smoke",
+    "id": 15892796703052,
+    "old_price": "17.25",
+    "new_price": "17.25",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "system-sensor-eco1003-optical-smoke",
+    "id": 15892796866892,
+    "old_price": "13.95",
+    "new_price": "13.95",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "system-sensor-eco1002-optical-smoke",
+    "id": 15892797063500,
+    "old_price": "12.95",
+    "new_price": "12.95",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "system-sensor-2251em-optical-smoke",
+    "id": 15892797292876,
+    "old_price": "39.95",
+    "new_price": "39.95",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "fike-twinflex-optical-smoke",
+    "id": 15892797522252,
+    "old_price": "22.50",
+    "new_price": "22.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "fike-sita-optical-smoke",
+    "id": 15892798275916,
+    "old_price": "41.00",
+    "new_price": "41.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-series-65-integrating-ionisation",
+    "id": 15892799127884,
+    "old_price": "17.95",
+    "new_price": "17.95",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-xp95-black-optical-smoke",
+    "id": 15892799324492,
+    "old_price": "36.50",
+    "new_price": "36.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "hochiki-esp-alg-enw-white-optical",
+    "id": 15892799553868,
+    "old_price": "37.50",
+    "new_price": "37.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "system-sensor-22051e-optical-smoke",
+    "id": 15892799717708,
+    "old_price": "45.00",
+    "new_price": "45.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-series-65-heat-a1r",
+    "id": 15892799914316,
+    "old_price": "13.50",
+    "new_price": "13.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-series-65-heat-br",
+    "id": 15892800110924,
+    "old_price": "13.95",
+    "new_price": "13.95",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-series-65-heat-cs",
+    "id": 15892800340300,
+    "old_price": "14.25",
+    "new_price": "14.25",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-orbis-heat-cs",
+    "id": 15892800569676,
+    "old_price": "17.50",
+    "new_price": "17.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-xp95-heat-a1r",
+    "id": 15892800799052,
+    "old_price": "28.95",
+    "new_price": "28.95",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-xp95-heat-cs",
+    "id": 15892800930124,
+    "old_price": "29.50",
+    "new_price": "29.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-discovery-heat-a1r",
+    "id": 15892801225036,
+    "old_price": "36.00",
+    "new_price": "36.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-discovery-heat-cs",
+    "id": 15892801388876,
+    "old_price": "37.50",
+    "new_price": "37.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "hochiki-esp-atj-en-heat",
+    "id": 15892801585484,
+    "old_price": "34.95",
+    "new_price": "34.95",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "hochiki-esp-atj-enw-heat",
+    "id": 15892801880396,
+    "old_price": "35.50",
+    "new_price": "35.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "hochiki-cdx-dfj-ae3-heat",
+    "id": 15892802044236,
+    "old_price": "15.95",
+    "new_price": "15.95",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "system-sensor-eco1005-heat",
+    "id": 15892802240844,
+    "old_price": "12.50",
+    "new_price": "12.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "system-sensor-52051e-heat",
+    "id": 15892802404684,
+    "old_price": "38.00",
+    "new_price": "38.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "fike-twinflex-heat",
+    "id": 15892802601292,
+    "old_price": "21.00",
+    "new_price": "21.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "fike-sita-heat",
+    "id": 15892802732364,
+    "old_price": "39.50",
+    "new_price": "39.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-discovery-multisensor-black",
+    "id": 15892802863436,
+    "old_price": "62.50",
+    "new_price": "62.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-orbis-multisensor-oh",
+    "id": 15892803027276,
+    "old_price": "26.95",
+    "new_price": "26.95",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "hochiki-esp-acc-en-multisensor",
+    "id": 15892803223884,
+    "old_price": "52.00",
+    "new_price": "52.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "hochiki-esp-acc-enw-multisensor",
+    "id": 15892803453260,
+    "old_price": "53.50",
+    "new_price": "53.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "hochiki-esp-aca-e-multisensor",
+    "id": 15892803682636,
+    "old_price": "54.95",
+    "new_price": "54.95",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "system-sensor-2251tem-multisensor",
+    "id": 15892803846476,
+    "old_price": "55.00",
+    "new_price": "55.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "system-sensor-22051te-multisensor",
+    "id": 15892804010316,
+    "old_price": "59.95",
+    "new_price": "59.95",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "fike-sita-multisensor",
+    "id": 15892804174156,
+    "old_price": "56.50",
+    "new_price": "56.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "fike-twinflex-multisensor",
+    "id": 15892804305228,
+    "old_price": "28.50",
+    "new_price": "28.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-discovery-co-multisensor",
+    "id": 15892804469068,
+    "old_price": "72.00",
+    "new_price": "72.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "hochiki-esp-acb-e-multisensor",
+    "id": 15892804632908,
+    "old_price": "57.50",
+    "new_price": "57.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=detector (8-100)"
+  },
+  {
+    "handle": "apollo-xp95-manual-call-point",
+    "id": 15892804829516,
+    "old_price": "18.50",
+    "new_price": "18.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "apollo-discovery-manual-call-point",
+    "id": 15892805026124,
+    "old_price": "22.00",
+    "new_price": "22.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "apollo-series65-manual-call-point",
+    "id": 15892805255500,
+    "old_price": "12.50",
+    "new_price": "12.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "apollo-xp95-waterproof-mcp",
+    "id": 15892805452108,
+    "old_price": "24.50",
+    "new_price": "24.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "hochiki-chq-mcp-addressable",
+    "id": 15892805681484,
+    "old_price": "19.95",
+    "new_price": "19.95",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "hochiki-ccp-e-conventional-mcp",
+    "id": 15892805845324,
+    "old_price": "11.50",
+    "new_price": "11.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "hochiki-hcp-w-weatherproof-mcp",
+    "id": 15892806074700,
+    "old_price": "21.00",
+    "new_price": "21.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "kac-indoor-resettable-mcp",
+    "id": 15892806238540,
+    "old_price": "14.50",
+    "new_price": "14.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "kac-weatherproof-mcp-ip67",
+    "id": 15892806435148,
+    "old_price": "23.00",
+    "new_price": "23.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "kac-flush-mount-mcp",
+    "id": 15892806598988,
+    "old_price": "15.50",
+    "new_price": "15.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "ctec-conventional-mcp",
+    "id": 15892806795596,
+    "old_price": "9.50",
+    "new_price": "9.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "ctec-addressable-mcp-cast",
+    "id": 15892807024972,
+    "old_price": "17.50",
+    "new_price": "17.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "eaton-conventional-mcp",
+    "id": 15892807188812,
+    "old_price": "10.95",
+    "new_price": "10.95",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "fulleon-resettable-mcp",
+    "id": 15892807352652,
+    "old_price": "13.75",
+    "new_price": "13.75",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "apollo-xp95-sounder-base",
+    "id": 15892807582028,
+    "old_price": "28.00",
+    "new_price": "28.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (3-80)"
+  },
+  {
+    "handle": "apollo-discovery-sounder-beacon-base",
+    "id": 15892807745868,
+    "old_price": "48.00",
+    "new_price": "48.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (3-80)"
+  },
+  {
+    "handle": "apollo-open-area-sounder",
+    "id": 15892807909708,
+    "old_price": "32.50",
+    "new_price": "32.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "apollo-open-area-sounder-vad",
+    "id": 15892808040780,
+    "old_price": "58.00",
+    "new_price": "58.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "hochiki-chq-ws2-wall-sounder",
+    "id": 15892808237388,
+    "old_price": "34.00",
+    "new_price": "34.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "hochiki-chq-wsb2-sounder-beacon",
+    "id": 15892808433996,
+    "old_price": "52.00",
+    "new_price": "52.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "hochiki-ybo-bsb-base-sounder-beacon",
+    "id": 15892808630604,
+    "old_price": "45.00",
+    "new_price": "45.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (3-80)"
+  },
+  {
+    "handle": "fulleon-roshni-electronic-sounder",
+    "id": 15892808794444,
+    "old_price": "18.50",
+    "new_price": "18.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "fulleon-flashni-sounder-beacon",
+    "id": 15892809023820,
+    "old_price": "36.00",
+    "new_price": "36.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "fulleon-symphoni-compact-sounder",
+    "id": 15892809220428,
+    "old_price": "16.50",
+    "new_price": "16.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "fulleon-solo-vad-beacon",
+    "id": 15892809417036,
+    "old_price": "42.00",
+    "new_price": "42.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "vimpex-asserta-midi-sounder",
+    "id": 15892809646412,
+    "old_price": "19.95",
+    "new_price": "19.95",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "vimpex-asserta-maxi-sounder",
+    "id": 15892809777484,
+    "old_price": "38.00",
+    "new_price": "38.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "vimpex-asserta-sounder-beacon",
+    "id": 15892809941324,
+    "old_price": "39.50",
+    "new_price": "39.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "ctec-activ-sounder",
+    "id": 15892810170700,
+    "old_price": "17.00",
+    "new_price": "17.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "ctec-activ-sounder-vad",
+    "id": 15892810301772,
+    "old_price": "44.00",
+    "new_price": "44.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "eaton-rolp-sounder",
+    "id": 15892810465612,
+    "old_price": "15.50",
+    "new_price": "15.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "eaton-sqg3-sounder-beacon",
+    "id": 15892810694988,
+    "old_price": "55.00",
+    "new_price": "55.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "apollo-xp95-standard-base",
+    "id": 15892810891596,
+    "old_price": "4.50",
+    "new_price": "4.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (3-80)"
+  },
+  {
+    "handle": "apollo-series65-diode-base",
+    "id": 15892811055436,
+    "old_price": "5.25",
+    "new_price": "5.25",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (3-80)"
+  },
+  {
+    "handle": "apollo-series65-standard-base",
+    "id": 15892811219276,
+    "old_price": "3.75",
+    "new_price": "3.75",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (3-80)"
+  },
+  {
+    "handle": "apollo-deep-base",
+    "id": 15892811415884,
+    "old_price": "6.50",
+    "new_price": "6.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (3-80)"
+  },
+  {
+    "handle": "apollo-relay-base",
+    "id": 15892811612492,
+    "old_price": "14.50",
+    "new_price": "14.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (3-80)"
+  },
+  {
+    "handle": "hochiki-ybn-r3-standard-base",
+    "id": 15892811874636,
+    "old_price": "4.25",
+    "new_price": "4.25",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (3-80)"
+  },
+  {
+    "handle": "hochiki-ybo-r-sci-isolator-base",
+    "id": 15892812071244,
+    "old_price": "13.50",
+    "new_price": "13.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (3-80)"
+  },
+  {
+    "handle": "hochiki-ybn-rsa-base",
+    "id": 15892812300620,
+    "old_price": "11.95",
+    "new_price": "11.95",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (3-80)"
+  },
+  {
+    "handle": "hochiki-ybo-r-5-base",
+    "id": 15892812497228,
+    "old_price": "8.50",
+    "new_price": "8.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (3-80)"
+  },
+  {
+    "handle": "ctec-conventional-diode-base",
+    "id": 15892812693836,
+    "old_price": "4.95",
+    "new_price": "4.95",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (3-80)"
+  },
+  {
+    "handle": "ctec-activ-standard-base",
+    "id": 15892812923212,
+    "old_price": "3.50",
+    "new_price": "3.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (3-80)"
+  },
+  {
+    "handle": "eaton-conventional-detector-base",
+    "id": 15892813087052,
+    "old_price": "4.00",
+    "new_price": "4.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (3-80)"
+  },
+  {
+    "handle": "apollo-deckhead-mounting-base",
+    "id": 15892813316428,
+    "old_price": "5.75",
+    "new_price": "5.75",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (3-80)"
+  },
+  {
+    "handle": "apollo-xp95-input-output-unit",
+    "id": 15892813611340,
+    "old_price": "62.00",
+    "new_price": "62.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "apollo-xp95-sounder-control-unit",
+    "id": 15892813840716,
+    "old_price": "95.00",
+    "new_price": "95.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "apollo-xp95-dual-isolator",
+    "id": 15892814102860,
+    "old_price": "48.00",
+    "new_price": "48.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "apollo-discovery-mimic-driver",
+    "id": 15892814463308,
+    "old_price": "55.00",
+    "new_price": "55.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "hochiki-chq-sim-single-input",
+    "id": 15892814889292,
+    "old_price": "58.00",
+    "new_price": "58.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "hochiki-chq-dim-dual-input",
+    "id": 15892815610188,
+    "old_price": "72.00",
+    "new_price": "72.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "hochiki-chq-drc-dual-relay",
+    "id": 15892816462156,
+    "old_price": "85.00",
+    "new_price": "85.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "hochiki-chq-szm-zone-monitor",
+    "id": 15892816855372,
+    "old_price": "88.00",
+    "new_price": "88.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "hochiki-chq-som-sounder-module",
+    "id": 15892817084748,
+    "old_price": "98.00",
+    "new_price": "98.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "ctec-cast-input-output-unit",
+    "id": 15892817314124,
+    "old_price": "68.00",
+    "new_price": "68.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "ctec-cast-zone-monitor",
+    "id": 15892817510732,
+    "old_price": "82.00",
+    "new_price": "82.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "eaton-addressable-io-module",
+    "id": 15892817740108,
+    "old_price": "75.00",
+    "new_price": "75.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "eaton-multi-io-interface",
+    "id": 15892817936716,
+    "old_price": "115.00",
+    "new_price": "115.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=device (5-250)"
+  },
+  {
+    "handle": "yuasa-np7-12-12v-7ah-sla-battery",
+    "id": 15892818231628,
+    "old_price": "18.50",
+    "new_price": "18.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=battery (10-100)"
+  },
+  {
+    "handle": "yuasa-np12-12-12v-12ah-sla-battery",
+    "id": 15892818461004,
+    "old_price": "32.00",
+    "new_price": "32.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=battery (10-100)"
+  },
+  {
+    "handle": "yuasa-np17-12-12v-17ah-sla-battery",
+    "id": 15892818657612,
+    "old_price": "48.00",
+    "new_price": "48.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=battery (10-100)"
+  },
+  {
+    "handle": "yuasa-np24-12-12v-24ah-sla-battery",
+    "id": 15892818886988,
+    "old_price": "68.00",
+    "new_price": "68.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=battery (10-100)"
+  },
+  {
+    "handle": "trade-12v-7ah-vrla-battery-equivalent",
+    "id": 15892819083596,
+    "old_price": "12.95",
+    "new_price": "12.95",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=battery (10-100)"
+  },
+  {
+    "handle": "trade-12v-12ah-vrla-battery-equivalent",
+    "id": 15892819378508,
+    "old_price": "22.50",
+    "new_price": "22.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=battery (10-100)"
+  },
+  {
+    "handle": "trade-12v-17ah-vrla-battery-equivalent",
+    "id": 15892819673420,
+    "old_price": "34.00",
+    "new_price": "34.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=battery (10-100)"
+  },
+  {
+    "handle": "trade-12v-24ah-vrla-battery-equivalent",
+    "id": 15892819902796,
+    "old_price": "49.00",
+    "new_price": "49.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=battery (10-100)"
+  },
+  {
+    "handle": "trade-12v-3-2ah-vrla-battery",
+    "id": 15892820230476,
+    "old_price": "9.50",
+    "new_price": "0.00",
+    "action": "poa",
+    "reason": "price 9.50 below band min 100; band=panel (100-3000)"
+  },
+  {
+    "handle": "trade-12v-5ah-vrla-battery",
+    "id": 15892820427084,
+    "old_price": "11.50",
+    "new_price": "11.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=battery (10-100)"
+  },
+  {
+    "handle": "battery-pair-kit-12v-7ah-x2-24v",
+    "id": 15892820754764,
+    "old_price": "24.95",
+    "new_price": "24.95",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=battery (10-100)"
+  },
+  {
+    "handle": "battery-pair-kit-12v-12ah-x2-24v",
+    "id": 15892821016908,
+    "old_price": "43.00",
+    "new_price": "43.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=battery (10-100)"
+  },
+  {
+    "handle": "fire-psu-24v-1-5a-boxed",
+    "id": 15892821377356,
+    "old_price": "68.00",
+    "new_price": "68.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=battery (10-100)"
+  },
+  {
+    "handle": "fire-psu-24v-2-5a-boxed",
+    "id": 15892821737804,
+    "old_price": "89.00",
+    "new_price": "89.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=battery (10-100)"
+  },
+  {
+    "handle": "fire-psu-24v-5a-boxed",
+    "id": 15892822163788,
+    "old_price": "135.00",
+    "new_price": "0.00",
+    "action": "poa",
+    "reason": "price 135.00 above band max 100; band=battery (10-100)"
+  },
+  {
+    "handle": "battery-terminal-spade-kit-4-8mm",
+    "id": 15892822655308,
+    "old_price": "6.50",
+    "new_price": "0.00",
+    "action": "poa",
+    "reason": "price 6.50 below band min 10; band=battery (10-100)"
+  },
+  {
+    "handle": "prysmian-fp200-gold-1-5mm-2c-e-100m",
+    "id": 15892823114060,
+    "old_price": "185.00",
+    "new_price": "185.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=cable (50-800)"
+  },
+  {
+    "handle": "prysmian-fp200-gold-1-5mm-2c-e-500m",
+    "id": 15892823540044,
+    "old_price": "820.00",
+    "new_price": "0.00",
+    "action": "poa",
+    "reason": "price 820.00 above band max 800; band=cable (50-800)"
+  },
+  {
+    "handle": "prysmian-fp200-gold-2-5mm-2c-e-100m",
+    "id": 15892823998796,
+    "old_price": "265.00",
+    "new_price": "265.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=cable (50-800)"
+  },
+  {
+    "handle": "enhanced-fire-cable-1-5mm-2c-e-100m",
+    "id": 15892824555852,
+    "old_price": "145.00",
+    "new_price": "145.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=cable (50-800)"
+  },
+  {
+    "handle": "enhanced-fire-cable-1-5mm-2c-e-500m",
+    "id": 15892825047372,
+    "old_price": "640.00",
+    "new_price": "640.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=cable (50-800)"
+  },
+  {
+    "handle": "standard-fire-cable-1-5mm-2c-e-100m",
+    "id": 15892825538892,
+    "old_price": "98.00",
+    "new_price": "98.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=cable (50-800)"
+  },
+  {
+    "handle": "fire-cable-clip-red-pack-100",
+    "id": 15892825932108,
+    "old_price": "8.50",
+    "new_price": "8.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=cable_accessory (2-150)"
+  },
+  {
+    "handle": "brass-cable-gland-m20-pack-10",
+    "id": 15892826390860,
+    "old_price": "14.50",
+    "new_price": "14.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=cable_accessory (2-150)"
+  },
+  {
+    "handle": "brass-cable-gland-m25-pack-10",
+    "id": 15892826915148,
+    "old_price": "18.50",
+    "new_price": "18.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=cable_accessory (2-150)"
+  },
+  {
+    "handle": "nylon-cable-gland-m20-ip68-pack-20",
+    "id": 15892827341132,
+    "old_price": "12.00",
+    "new_price": "12.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=cable_accessory (2-150)"
+  },
+  {
+    "handle": "fire-rated-junction-box-white-ip65",
+    "id": 15892827865420,
+    "old_price": "6.95",
+    "new_price": "6.95",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=cable_accessory (2-150)"
+  },
+  {
+    "handle": "fire-rated-junction-box-red-ip65",
+    "id": 15892828356940,
+    "old_price": "7.50",
+    "new_price": "7.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=cable_accessory (2-150)"
+  },
+  {
+    "handle": "ceramic-terminal-block-5a-pack-10",
+    "id": 15892828913996,
+    "old_price": "11.00",
+    "new_price": "11.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=cable_accessory (2-150)"
+  },
+  {
+    "handle": "fire-cable-joint-kit-inline",
+    "id": 15892829438284,
+    "old_price": "16.50",
+    "new_price": "16.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=cable_accessory (2-150)"
+  },
+  {
+    "handle": "led-emergency-bulkhead-non-maintained-3h",
+    "id": 15892829995340,
+    "old_price": "22.00",
+    "new_price": "22.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=emergency_lighting (15-250)"
+  },
+  {
+    "handle": "led-emergency-bulkhead-maintained-3h",
+    "id": 15892830519628,
+    "old_price": "26.00",
+    "new_price": "26.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=emergency_lighting (15-250)"
+  },
+  {
+    "handle": "led-emergency-bulkhead-switchable-m-nm-3h",
+    "id": 15892831043916,
+    "old_price": "28.50",
+    "new_price": "28.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=emergency_lighting (15-250)"
+  },
+  {
+    "handle": "led-emergency-bulkhead-ip65-industrial-nm",
+    "id": 15892831535436,
+    "old_price": "34.00",
+    "new_price": "34.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=emergency_lighting (15-250)"
+  },
+  {
+    "handle": "led-emergency-bulkhead-ip65-industrial-m",
+    "id": 15892832059724,
+    "old_price": "38.00",
+    "new_price": "38.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=emergency_lighting (15-250)"
+  },
+  {
+    "handle": "led-exit-sign-maintained-legend-kit",
+    "id": 15892832551244,
+    "old_price": "32.00",
+    "new_price": "32.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=emergency_lighting (15-250)"
+  },
+  {
+    "handle": "led-exit-sign-non-maintained-legend-kit",
+    "id": 15892833108300,
+    "old_price": "28.00",
+    "new_price": "28.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=emergency_lighting (15-250)"
+  },
+  {
+    "handle": "led-exit-blade-stick-maintained",
+    "id": 15892833501516,
+    "old_price": "42.00",
+    "new_price": "42.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=emergency_lighting (15-250)"
+  },
+  {
+    "handle": "led-exit-blade-stick-non-maintained",
+    "id": 15892833861964,
+    "old_price": "38.00",
+    "new_price": "38.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=emergency_lighting (15-250)"
+  },
+  {
+    "handle": "led-exit-blade-recessed-maintained",
+    "id": 15892834320716,
+    "old_price": "48.00",
+    "new_price": "48.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=emergency_lighting (15-250)"
+  },
+  {
+    "handle": "self-test-led-emergency-bulkhead-3h",
+    "id": 15892834746700,
+    "old_price": "39.00",
+    "new_price": "39.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=emergency_lighting (15-250)"
+  },
+  {
+    "handle": "emergency-lighting-test-key-switch",
+    "id": 15892835041612,
+    "old_price": "9.50",
+    "new_price": "0.00",
+    "action": "poa",
+    "reason": "price 9.50 below band min 15; band=emergency_lighting (15-250)"
+  },
+  {
+    "handle": "emergency-luminaire-replacement-battery-pack-3-6v",
+    "id": 15892835369292,
+    "old_price": "11.50",
+    "new_price": "11.50",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=battery (10-100)"
+  },
+  {
+    "handle": "led-twinspot-emergency-ip65-nm",
+    "id": 15892835762508,
+    "old_price": "54.00",
+    "new_price": "54.00",
+    "action": "adjust",
+    "reason": "valid price in band; fix tags/html; band=emergency_lighting (15-250)"
+  },
+  {
+    "handle": "exit-sign-legend-pack-iso7010",
+    "id": 15892836188492,
+    "old_price": "7.50",
+    "new_price": "0.00",
+    "action": "poa",
+    "reason": "price 7.50 below band min 15; band=emergency_lighting (15-250)"
+  }
+]

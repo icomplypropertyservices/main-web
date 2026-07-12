@@ -1,0 +1,195 @@
+{
+  "generated_at": "2026-07-12T15:18:05",
+  "total_service_packages": 11,
+  "ok": 11,
+  "failed": 0,
+  "products": [
+    {
+      "id": 15892770062668,
+      "handle": "electrical-compliance-package",
+      "title": "Electrical Compliance Package",
+      "sku": "IC-ELEC-PKG",
+      "src": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/electrical-compliance-package.png?v=1783862147",
+      "alt": "Electrical Compliance Package",
+      "local_path": "C:\\Users\\E-Store\\Documents\\icomplyproperty\\shopify-import\\images\\service_packages_regen\\electrical-compliance-package.png",
+      "ok": true,
+      "action": "regenerated",
+      "verified": {
+        "image_count": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/electrical-compliance-package.png?v=1783862147",
+        "alt": "Electrical Compliance Package",
+        "ok": true
+      }
+    },
+    {
+      "id": 15892770160972,
+      "handle": "fire-alarm-service-package",
+      "title": "Fire Alarm Service Package",
+      "sku": "IC-FIRE-PKG",
+      "src": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/fire-alarm-service-package.png?v=1783862150",
+      "alt": "Fire Alarm Service Package",
+      "local_path": "C:\\Users\\E-Store\\Documents\\icomplyproperty\\shopify-import\\images\\service_packages_regen\\fire-alarm-service-package.png",
+      "ok": true,
+      "action": "regenerated",
+      "verified": {
+        "image_count": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/fire-alarm-service-package.png?v=1783862150",
+        "alt": "Fire Alarm Service Package",
+        "ok": true
+      }
+    },
+    {
+      "id": 15892770324812,
+      "handle": "emergency-lighting-package",
+      "title": "Emergency Lighting Package",
+      "sku": "IC-EML-PKG",
+      "src": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/emergency-lighting-package.png?v=1783862154",
+      "alt": "Emergency Lighting Package",
+      "local_path": "C:\\Users\\E-Store\\Documents\\icomplyproperty\\shopify-import\\images\\service_packages_regen\\emergency-lighting-package.png",
+      "ok": true,
+      "action": "regenerated",
+      "verified": {
+        "image_count": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/emergency-lighting-package.png?v=1783862154",
+        "alt": "Emergency Lighting Package",
+        "ok": true
+      }
+    },
+    {
+      "id": 15892770455884,
+      "handle": "aov-air-handling-package",
+      "title": "AOV & Air Handling Package",
+      "sku": "IC-AOV-PKG",
+      "src": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/aov-air-handling-package.png?v=1783862161",
+      "alt": "AOV & Air Handling Package",
+      "local_path": "C:\\Users\\E-Store\\Documents\\icomplyproperty\\shopify-import\\images\\service_packages_regen\\aov-air-handling-package.png",
+      "ok": true,
+      "action": "regenerated",
+      "verified": {
+        "image_count": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/aov-air-handling-package.png?v=1783862161",
+        "alt": "AOV & Air Handling Package",
+        "ok": true
+      }
+    },
+    {
+      "id": 15892770521420,
+      "handle": "nurse-call-systems-package",
+      "title": "Nurse Call Systems Package",
+      "sku": "IC-NURSE-PKG",
+      "src": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/nurse-call-systems-package.png?v=1783862175",
+      "alt": "Nurse Call Systems Package",
+      "local_path": "C:\\Users\\E-Store\\Documents\\icomplyproperty\\shopify-import\\images\\service_packages_regen\\nurse-call-systems-package.png",
+      "ok": true,
+      "action": "regenerated",
+      "verified": {
+        "image_count": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/nurse-call-systems-package.png?v=1783862175",
+        "alt": "Nurse Call Systems Package",
+        "ok": true
+      }
+    },
+    {
+      "id": 15892770652492,
+      "handle": "gas-safety-package",
+      "title": "Gas Safety Package",
+      "sku": "IC-GAS-PKG",
+      "src": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/gas-safety-package.png?v=1783862189",
+      "alt": "Gas Safety Package",
+      "local_path": "C:\\Users\\E-Store\\Documents\\icomplyproperty\\shopify-import\\images\\service_packages_regen\\gas-safety-package.png",
+      "ok": true,
+      "action": "regenerated",
+      "verified": {
+        "image_count": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/gas-safety-package.png?v=1783862189",
+        "alt": "Gas Safety Package",
+        "ok": true
+      }
+    },
+    {
+      "id": 15892770849100,
+      "handle": "intruder-alarm-package",
+      "title": "Intruder Alarm Package",
+      "sku": "IC-INTR-PKG",
+      "src": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/intruder-alarm-package.png?v=1783862194",
+      "alt": "Intruder Alarm Package",
+      "local_path": "C:\\Users\\E-Store\\Documents\\icomplyproperty\\shopify-import\\images\\service_packages_regen\\intruder-alarm-package.png",
+      "ok": true,
+      "action": "regenerated",
+      "verified": {
+        "image_count": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/intruder-alarm-package.png?v=1783862194",
+        "alt": "Intruder Alarm Package",
+        "ok": true
+      }
+    },
+    {
+      "id": 15892771012940,
+      "handle": "cctv-systems-package",
+      "title": "CCTV Systems Package",
+      "sku": "IC-CCTV-PKG",
+      "src": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/cctv-systems-package.png?v=1783862197",
+      "alt": "CCTV Systems Package",
+      "local_path": "C:\\Users\\E-Store\\Documents\\icomplyproperty\\shopify-import\\images\\service_packages_regen\\cctv-systems-package.png",
+      "ok": true,
+      "action": "regenerated",
+      "verified": {
+        "image_count": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/cctv-systems-package.png?v=1783862197",
+        "alt": "CCTV Systems Package",
+        "ok": true
+      }
+    },
+    {
+      "id": 15892771144012,
+      "handle": "access-control-package",
+      "title": "Access Control Package",
+      "sku": "IC-ACCESS-PKG",
+      "src": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/access-control-package.png?v=1783862209",
+      "alt": "Access Control Package",
+      "local_path": "C:\\Users\\E-Store\\Documents\\icomplyproperty\\shopify-import\\images\\service_packages_regen\\access-control-package.png",
+      "ok": true,
+      "action": "regenerated",
+      "verified": {
+        "image_count": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/access-control-package.png?v=1783862209",
+        "alt": "Access Control Package",
+        "ok": true
+      }
+    },
+    {
+      "id": 15892771275084,
+      "handle": "door-entry-package",
+      "title": "Door Entry Systems Package",
+      "sku": "IC-DOOR-PKG",
+      "src": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/door-entry-package.png?v=1783862214",
+      "alt": "Door Entry Systems Package",
+      "local_path": "C:\\Users\\E-Store\\Documents\\icomplyproperty\\shopify-import\\images\\service_packages_regen\\door-entry-package.png",
+      "ok": true,
+      "action": "regenerated",
+      "verified": {
+        "image_count": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/door-entry-package.png?v=1783862214",
+        "alt": "Door Entry Systems Package",
+        "ok": true
+      }
+    },
+    {
+      "id": 15892771406156,
+      "handle": "intercoms-package",
+      "title": "Intercom Systems Package",
+      "sku": "IC-INT-PKG",
+      "src": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/intercoms-package.png?v=1783862316",
+      "alt": "Intercom Systems Package",
+      "local_path": "C:\\Users\\E-Store\\Documents\\icomplyproperty\\shopify-import\\images\\service_packages_regen\\intercoms-package.png",
+      "ok": true,
+      "action": "regenerated",
+      "verified": {
+        "image_count": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/intercoms-package.png?v=1783862316",
+        "alt": "Intercom Systems Package",
+        "ok": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,325 @@
+{
+  "report": "MASTER_TRADE_READY_REPORT.md",
+  "generated_at_utc": "2026-07-12T13:20:00Z",
+  "store": "icomply-supplys.myshopify.com",
+  "brand": "iComply Supplys",
+  "legal_name": "iComply Property Services",
+  "plan": "basic",
+  "currency": "GBP",
+  "market": "United Kingdom",
+  "timezone": "Europe/London",
+  "contact": {
+    "phone": "07517806082",
+    "phone_display": "07517 806082",
+    "email": "icomplypropertyservices@gmail.com",
+    "address": "17 Woodlands Park Road, Offerton, Stockport SK2 5DE, United Kingdom"
+  },
+  "overall": {
+    "final_qa": "PASS",
+    "final_qa_pass": true,
+    "catalog_ready": true,
+    "trade_live_ready": false,
+    "blocked_on_merchant": true,
+    "summary": "Catalog/images/taxable/collections/storefront API pass. Shipping rates applied. Merchant must complete payments, domain/SSL, Google OAuth, theme polish, local pickup, and review 14 POA SKUs."
+  },
+  "products": {
+    "count": 260,
+    "upload_hardware_created": 249,
+    "upload_service_packages_created": 11,
+    "qa_pass": true,
+    "expected_min": 250
+  },
+  "images": {
+    "with_images": 260,
+    "total": 260,
+    "pct": 100.0,
+    "failed": 0,
+    "needs_regen": 0,
+    "qa_pass": true,
+    "source": "image_audit_final.json"
+  },
+  "pricing_poa": {
+    "audit_total": 260,
+    "keep": 11,
+    "adjust": 235,
+    "poa_flagged_in_audit": 14,
+    "poa_tags_final_qa": 0,
+    "poa_tags_qa_pass": true,
+    "currency": "GBP",
+    "poa_handles": [
+      "apollo-s65-standard-base",
+      "apollo-xp95-standard-base",
+      "apollo-series65-standard-base",
+      "hochiki-ybn-r3-standard-base",
+      "ctec-conventional-diode-base",
+      "ctec-activ-standard-base",
+      "eaton-conventional-detector-base",
+      "fire-cable-gland-pack-20",
+      "fire-cable-clip-red-pack-100",
+      "fire-cable-joint-kit-inline",
+      "trade-12v-3-2ah-vrla-battery",
+      "battery-terminal-spade-kit-4-8mm",
+      "emergency-lighting-test-key-switch",
+      "exit-sign-legend-pack-iso7010"
+    ],
+    "note": "Pricing audit set 14 lines to POA/0.00; Final QA found 0 poa tags. Merchant must reconcile live prices and tags.",
+    "source": "catalog/pricing_audit.json"
+  },
+  "vat": {
+    "taxes_included": true,
+    "taxable_variants": 260,
+    "total_variants": 260,
+    "taxable_pct": 100.0,
+    "qa_pass": true,
+    "vat_page": {
+      "handle": "vat-information",
+      "id": 732204400972,
+      "url": "/pages/vat-information",
+      "ok": true
+    },
+    "standard_rate_target": 0.2,
+    "vat_setup_result_present": false,
+    "merchant_actions": [
+      "Confirm Settings → Taxes United Kingdom 20% VAT",
+      "Enter VAT registration number if registered",
+      "Apply theme VAT-inclusive messaging",
+      "Sample order VAT verification"
+    ],
+    "status": "product_level_ready_vat_agent_result_pending"
+  },
+  "google_services": {
+    "status": "manual_required",
+    "guide": "GOOGLE_SERVICES_SETUP.md",
+    "setup_script": "setup_google_services.py",
+    "google_setup_result_present": false,
+    "feed_sample_present": false,
+    "api_prep_confirmed": false,
+    "manual_steps_remaining": [
+      "Install Google & YouTube sales channel",
+      "Connect Google account OAuth",
+      "Create/link Merchant Center UK/GBP",
+      "Configure product sync (google-shopping tag or all Online Store)",
+      "Enable free listings and clear diagnostics",
+      "Create GA4 property and paste Measurement ID",
+      "Enable Google Pay after Shopify Payments",
+      "Optional: Google Ads",
+      "Re-run setup_google_services.py to produce google_setup_result.json and feed sample"
+    ]
+  },
+  "shipping": {
+    "status": "rates_ready_pickup_manual",
+    "location_ok": true,
+    "location_name": "iComply Supplys — Stockport",
+    "location_address": "17 Woodlands Park Road, Offerton, Stockport SK2 5DE",
+    "rates_api_ok": true,
+    "local_pickup_api_ok": false,
+    "uk_zone_id": "gid://shopify/DeliveryZone/709696815436",
+    "standard_tiers_gbp": [
+      { "min": 0, "max": 49.99, "price": 5.95 },
+      { "min": 50, "max": 149.99, "price": 7.95 },
+      { "min": 150, "max": 399.99, "price": 9.95 },
+      { "min": 400, "max": null, "price": 0.0 }
+    ],
+    "express_tiers_gbp": [
+      { "min": 0, "max": 49.99, "price": 9.95 },
+      { "min": 50, "max": 149.99, "price": 11.95 },
+      { "min": 150, "max": 399.99, "price": 14.95 },
+      { "min": 400, "max": null, "price": 9.95 }
+    ],
+    "free_standard_over_gbp": 400,
+    "manual_doc": "SHIPPING_SETUP_MANUAL.md",
+    "merchant_actions": [
+      "Enable local pickup free collection at Stockport",
+      "Test UK mainland checkout rates",
+      "Quote-only for NI/Highlands/islands"
+    ],
+    "source": "shipping_setup_result.json"
+  },
+  "storefront_api": {
+    "status": "ok",
+    "qa_pass": true,
+    "api_version": "2024-10",
+    "endpoint": "https://icomply-supplys.myshopify.com/api/2024-10/graphql.json",
+    "token_prefix": "1c9d538a...",
+    "products_query_ok": true,
+    "collections_query_ok": true,
+    "overall_success": true,
+    "sources": ["storefront_api_test.json", "final_qa.json"]
+  },
+  "collections": {
+    "total": 13,
+    "custom": 13,
+    "smart": 0,
+    "all_published": true,
+    "seo_updated": 12,
+    "qa_pass": true,
+    "handles": [
+      "batteries-power",
+      "bases-mounting",
+      "emergency-lighting-products",
+      "fire-alarm-control-panels",
+      "cables-accessories",
+      "heat-detectors",
+      "frontpage",
+      "interfaces-modules",
+      "manual-call-points",
+      "multi-sensor-detectors",
+      "service-packages",
+      "smoke-detectors",
+      "sounders-beacons"
+    ]
+  },
+  "legal_policies": {
+    "status": "ok",
+    "vat_page_ok": true,
+    "policies_ok": true,
+    "policy_count": 4,
+    "privacy_auto_management_blocks_custom_shop_policy": true,
+    "source": "legal_pages_result.json"
+  },
+  "theme": {
+    "status": "manual_required",
+    "theme_name": "Horizon",
+    "theme_id": 201870311756,
+    "role": "main",
+    "asset_api_write_ok": true,
+    "homepage_generic_defaults": true,
+    "manual_doc": "THEME_HOMEPAGE_MANUAL.md",
+    "manual_actions": [
+      "hero_text",
+      "collection_list",
+      "featured_products",
+      "vat_note",
+      "poa_note",
+      "collection_images"
+    ]
+  },
+  "payments_domain": {
+    "status": "manual_required",
+    "completed_at": null,
+    "suggested_primary_domain": "shop.icomplyservices.co.uk",
+    "checklist": "PAYMENTS_DOMAIN_CHECKLIST.md",
+    "steps": [
+      "shopify_payments_paypal",
+      "google_pay_apple_pay",
+      "custom_domain",
+      "ssl",
+      "customer_accounts",
+      "order_notification_email"
+    ],
+    "source": "payments_domain_result.json"
+  },
+  "merchant_must_do": {
+    "critical": [
+      {
+        "id": "payments",
+        "title": "Activate Shopify Payments / PayPal / trade manual methods",
+        "admin": "https://admin.shopify.com/store/icomply-supplys/settings/payments"
+      },
+      {
+        "id": "wallets",
+        "title": "Enable Google Pay / Apple Pay after Payments verified",
+        "admin": "https://admin.shopify.com/store/icomply-supplys/settings/payments"
+      },
+      {
+        "id": "domain",
+        "title": "Connect custom domain and set primary",
+        "admin": "https://admin.shopify.com/store/icomply-supplys/settings/domains",
+        "suggested": "shop.icomplyservices.co.uk"
+      },
+      {
+        "id": "ssl",
+        "title": "Wait for SSL Issued on primary domain",
+        "admin": "https://admin.shopify.com/store/icomply-supplys/settings/domains"
+      },
+      {
+        "id": "google_oauth",
+        "title": "Google & YouTube channel OAuth + Merchant Center + GA4",
+        "admin": "https://admin.shopify.com/store/icomply-supplys",
+        "guide": "GOOGLE_SERVICES_SETUP.md"
+      },
+      {
+        "id": "order_email",
+        "title": "Route new-order emails to icomplypropertyservices@gmail.com",
+        "admin": "https://admin.shopify.com/store/icomply-supplys/settings/notifications"
+      },
+      {
+        "id": "customer_accounts",
+        "title": "Set customer account mode for trade checkout",
+        "admin": "https://admin.shopify.com/store/icomply-supplys/settings/customer_accounts"
+      }
+    ],
+    "operational": [
+      "Theme homepage (THEME_HOMEPAGE_MANUAL.md)",
+      "Enable Stockport local pickup",
+      "Reconcile 14 POA SKUs",
+      "Confirm UK 20% VAT + VAT number if applicable",
+      "Privacy policy auto-management decision",
+      "Collection images for featured cards",
+      "Remove password page when ready",
+      "Full checkout smoke test"
+    ]
+  },
+  "admin_links": {
+    "admin_home": "https://admin.shopify.com/store/icomply-supplys",
+    "products": "https://admin.shopify.com/store/icomply-supplys/products",
+    "collections": "https://admin.shopify.com/store/icomply-supplys/collections",
+    "orders": "https://admin.shopify.com/store/icomply-supplys/orders",
+    "payments": "https://admin.shopify.com/store/icomply-supplys/settings/payments",
+    "domains": "https://admin.shopify.com/store/icomply-supplys/settings/domains",
+    "shipping": "https://admin.shopify.com/store/icomply-supplys/settings/shipping",
+    "taxes": "https://admin.shopify.com/store/icomply-supplys/settings/taxes",
+    "locations": "https://admin.shopify.com/store/icomply-supplys/settings/locations",
+    "customer_accounts": "https://admin.shopify.com/store/icomply-supplys/settings/customer_accounts",
+    "notifications": "https://admin.shopify.com/store/icomply-supplys/settings/notifications",
+    "legal": "https://admin.shopify.com/store/icomply-supplys/settings/legal",
+    "themes": "https://admin.shopify.com/store/icomply-supplys/themes",
+    "online_store_preferences": "https://admin.shopify.com/store/icomply-supplys/online_store/preferences",
+    "pages": "https://admin.shopify.com/store/icomply-supplys/pages",
+    "storefront": "https://icomply-supplys.myshopify.com",
+    "google_merchant_center": "https://merchants.google.com/",
+    "google_analytics": "https://analytics.google.com/",
+    "google_ads": "https://ads.google.com/"
+  },
+  "artifacts": {
+    "present": [
+      "final_qa.json",
+      "FINAL_QA_REPORT.md",
+      "image_audit_final.json",
+      "image_audit.json",
+      "catalog/pricing_audit.json",
+      "shipping_setup_result.json",
+      "SHIPPING_SETUP_MANUAL.md",
+      "GOOGLE_SERVICES_SETUP.md",
+      "payments_domain_result.json",
+      "PAYMENTS_DOMAIN_CHECKLIST.md",
+      "setup_storefront_result.json",
+      "storefront_api_test.json",
+      "legal_pages_result.json",
+      "theme_result.json",
+      "THEME_HOMEPAGE_MANUAL.md",
+      "collections_seo_result.json",
+      "catalog/collections_result.json",
+      "upload_log.json",
+      "upload-results.json",
+      "TRADE_READY_CHECKLIST.md"
+    ],
+    "missing_pending": [
+      "google_setup_result.json",
+      "catalog/google_product_feed_sample.json",
+      "vat_setup_result.json",
+      "vat_result.json"
+    ],
+    "scans_performed": 2
+  },
+  "final_qa_checks": {
+    "product_count": true,
+    "images_pct": true,
+    "taxable_variants_pct": true,
+    "poa_tags": true,
+    "storefront_token": true,
+    "collections_count": true,
+    "timestamp_utc": "2026-07-12T13:15:43Z",
+    "source": "final_qa.json"
+  }
+}

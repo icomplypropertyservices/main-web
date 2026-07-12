@@ -1,0 +1,6689 @@
+{
+  "summary": {
+    "total": 260,
+    "poa": 0,
+    "priced_from": 260,
+    "metafield_ok": 260,
+    "metafield_fail": 0,
+    "body_cta_updated": 0,
+    "body_cta_already_ok": 0,
+    "errors": 0
+  },
+  "rules": {
+    "poa": "tag \"poa\"/\"price-on-application\" OR min variant price == 0.00 -> price_display=POA + body CTA",
+    "priced": "otherwise -> price_display=FROM",
+    "metafield": "namespace=custom key=price_display type=single_line_text_field",
+    "cta_contact": {
+      "phone": "07517806082",
+      "email": "icomplypropertyservices@gmail.com"
+    }
+  },
+  "items": [
+    {
+      "id": 15892770062668,
+      "handle": "electrical-compliance-package",
+      "title": "Electrical Compliance Package",
+      "tags": [
+        "compliance",
+        "EICR",
+        "electrical",
+        "priced",
+        "service-package"
+      ],
+      "min_price": 149.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704806043980",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892770160972,
+      "handle": "fire-alarm-service-package",
+      "title": "Fire Alarm Service Package",
+      "tags": [
+        "BS5839",
+        "compliance",
+        "fire-alarms",
+        "priced",
+        "service-package"
+      ],
+      "min_price": 299.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704806863180",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892770324812,
+      "handle": "emergency-lighting-package",
+      "title": "Emergency Lighting Package",
+      "tags": [
+        "BS5266",
+        "compliance",
+        "emergency-lighting",
+        "priced",
+        "service-package"
+      ],
+      "min_price": 199.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704806928716",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892770455884,
+      "handle": "aov-air-handling-package",
+      "title": "AOV & Air Handling Package",
+      "tags": [
+        "aov",
+        "BS9991",
+        "priced",
+        "service-package",
+        "smoke-vents"
+      ],
+      "min_price": 349.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704807616844",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892770521420,
+      "handle": "nurse-call-systems-package",
+      "title": "Nurse Call Systems Package",
+      "tags": [
+        "care-homes",
+        "HTM0803",
+        "nurse-call",
+        "priced",
+        "service-package"
+      ],
+      "min_price": 499.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704807747916",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892770652492,
+      "handle": "gas-safety-package",
+      "title": "Gas Safety Package",
+      "tags": [
+        "CP12",
+        "gas",
+        "landlord",
+        "priced",
+        "service-package"
+      ],
+      "min_price": 89.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704807878988",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892770849100,
+      "handle": "intruder-alarm-package",
+      "title": "Intruder Alarm Package",
+      "tags": [
+        "BS4737",
+        "intruder-alarm",
+        "priced",
+        "security",
+        "service-package"
+      ],
+      "min_price": 249.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704807977292",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892771012940,
+      "handle": "cctv-systems-package",
+      "title": "CCTV Systems Package",
+      "tags": [
+        "cctv",
+        "priced",
+        "security",
+        "service-package",
+        "surveillance"
+      ],
+      "min_price": 349.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704808042828",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892771144012,
+      "handle": "access-control-package",
+      "title": "Access Control Package",
+      "tags": [
+        "access-control",
+        "biometric",
+        "priced",
+        "security",
+        "service-package"
+      ],
+      "min_price": 399.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704808272204",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892771275084,
+      "handle": "door-entry-package",
+      "title": "Door Entry Systems Package",
+      "tags": [
+        "apartments",
+        "door-entry",
+        "priced",
+        "service-package",
+        "video-entry"
+      ],
+      "min_price": 299.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704808599884",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892771406156,
+      "handle": "intercoms-package",
+      "title": "Intercom Systems Package",
+      "tags": [
+        "intercoms",
+        "multi-tenant",
+        "priced",
+        "service-package",
+        "video-intercom"
+      ],
+      "min_price": 249.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704808763724",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892779663692,
+      "handle": "kentec-syncro-as-1-loop",
+      "title": "Kentec Syncro AS 1-Loop Addressable Panel",
+      "tags": [
+        "addressable",
+        "fire-alarm",
+        "kentec",
+        "panel",
+        "priced"
+      ],
+      "min_price": 685.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704809124172",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892779729228,
+      "handle": "kentec-syncro-as-2-loop",
+      "title": "Kentec Syncro AS 2-Loop Addressable Panel",
+      "tags": [
+        "addressable",
+        "fire-alarm",
+        "kentec",
+        "panel",
+        "priced"
+      ],
+      "min_price": 895.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704809255244",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892779893068,
+      "handle": "kentec-sigma-cp-4-zone",
+      "title": "Kentec Sigma CP 4-Zone Conventional Panel",
+      "tags": [
+        "conventional",
+        "fire-alarm",
+        "kentec",
+        "panel",
+        "priced"
+      ],
+      "min_price": 245.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704809353548",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892779991372,
+      "handle": "kentec-sigma-cp-8-zone",
+      "title": "Kentec Sigma CP 8-Zone Conventional Panel",
+      "tags": [
+        "conventional",
+        "fire-alarm",
+        "kentec",
+        "panel"
+      ],
+      "min_price": 325.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704809484620",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892780056908,
+      "handle": "advanced-mxpro5-1-loop",
+      "title": "Advanced MxPro 5 1-Loop Addressable Panel",
+      "tags": [
+        "addressable",
+        "advanced",
+        "fire-alarm",
+        "panel"
+      ],
+      "min_price": 749.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704809615692",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892780155212,
+      "handle": "advanced-mxpro5-2-loop",
+      "title": "Advanced MxPro 5 2-Loop Addressable Panel",
+      "tags": [
+        "addressable",
+        "advanced",
+        "fire-alarm",
+        "panel"
+      ],
+      "min_price": 989.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704809681228",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892780220748,
+      "handle": "advanced-axis-en-4-zone",
+      "title": "Advanced Axis EN 4-Zone Conventional Panel",
+      "tags": [
+        "advanced",
+        "conventional",
+        "fire-alarm",
+        "panel"
+      ],
+      "min_price": 229.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704809877836",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892780319052,
+      "handle": "ctec-xfp-1-loop",
+      "title": "C-TEC XFP 1-Loop Addressable Panel",
+      "tags": [
+        "addressable",
+        "c-tec",
+        "fire-alarm",
+        "panel"
+      ],
+      "min_price": 625.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704809910604",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892780482892,
+      "handle": "ctec-xfp-2-loop",
+      "title": "C-TEC XFP 2-Loop Addressable Panel",
+      "tags": [
+        "addressable",
+        "c-tec",
+        "fire-alarm",
+        "panel"
+      ],
+      "min_price": 825.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704810139980",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892780613964,
+      "handle": "ctec-cfp-2-zone",
+      "title": "C-TEC CFP 2-Zone Conventional Panel",
+      "tags": [
+        "c-tec",
+        "conventional",
+        "fire-alarm",
+        "panel"
+      ],
+      "min_price": 165.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704810303820",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892780679500,
+      "handle": "ctec-cfp-4-zone",
+      "title": "C-TEC CFP 4-Zone Conventional Panel",
+      "tags": [
+        "c-tec",
+        "conventional",
+        "fire-alarm",
+        "panel"
+      ],
+      "min_price": 195.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704810402124",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892780745036,
+      "handle": "ctec-cfp-8-zone",
+      "title": "C-TEC CFP 8-Zone Conventional Panel",
+      "tags": [
+        "c-tec",
+        "conventional",
+        "fire-alarm",
+        "panel"
+      ],
+      "min_price": 275.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704810598732",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892780843340,
+      "handle": "haes-esento-4-zone",
+      "title": "Haes Esento 4-Zone Conventional Panel",
+      "tags": [
+        "conventional",
+        "fire-alarm",
+        "haes",
+        "panel"
+      ],
+      "min_price": 189.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704810729804",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892780908876,
+      "handle": "haes-esento-8-zone",
+      "title": "Haes Esento 8-Zone Conventional Panel",
+      "tags": [
+        "conventional",
+        "fire-alarm",
+        "haes",
+        "panel"
+      ],
+      "min_price": 259.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704810860876",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892780974412,
+      "handle": "morley-dxc1-1-loop",
+      "title": "Morley DX Connexion 1-Loop Panel",
+      "tags": [
+        "addressable",
+        "fire-alarm",
+        "morley",
+        "panel"
+      ],
+      "min_price": 720.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704810991948",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892781039948,
+      "handle": "apollo-s65-optical-smoke",
+      "title": "Apollo Series 65 Optical Smoke Detector",
+      "tags": [
+        "apollo",
+        "conventional",
+        "detector",
+        "fire-alarm",
+        "smoke"
+      ],
+      "min_price": 16.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704811188556",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892781138252,
+      "handle": "apollo-s65-ionisation-smoke",
+      "title": "Apollo Series 65 Ionisation Smoke Detector",
+      "tags": [
+        "apollo",
+        "conventional",
+        "detector",
+        "fire-alarm",
+        "smoke"
+      ],
+      "min_price": 17.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704811319628",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892781236556,
+      "handle": "apollo-orbis-optical-smoke",
+      "title": "Apollo Orbis Optical Smoke Detector",
+      "tags": [
+        "apollo",
+        "conventional",
+        "detector",
+        "fire-alarm",
+        "smoke"
+      ],
+      "min_price": 18.9,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704811549004",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892781367628,
+      "handle": "apollo-xp95-optical-smoke",
+      "title": "Apollo XP95 Optical Smoke Detector",
+      "tags": [
+        "addressable",
+        "apollo",
+        "detector",
+        "fire-alarm",
+        "smoke"
+      ],
+      "min_price": 32.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704811680076",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892781433164,
+      "handle": "apollo-discovery-optical-smoke",
+      "title": "Apollo Discovery Optical Smoke Detector",
+      "tags": [
+        "addressable",
+        "apollo",
+        "detector",
+        "fire-alarm",
+        "smoke"
+      ],
+      "min_price": 38.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704812106060",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892781498700,
+      "handle": "hochiki-alg-en-smoke",
+      "title": "Hochiki ALG-EN Photoelectric Smoke Detector",
+      "tags": [
+        "addressable",
+        "detector",
+        "fire-alarm",
+        "hochiki",
+        "smoke"
+      ],
+      "min_price": 34.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704812204364",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892781564236,
+      "handle": "hochiki-slo-e-smoke",
+      "title": "Hochiki SLR-E Conventional Optical Smoke",
+      "tags": [
+        "conventional",
+        "detector",
+        "fire-alarm",
+        "hochiki",
+        "smoke"
+      ],
+      "min_price": 15.8,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704812368204",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892781662540,
+      "handle": "system-sensor-eco1003-smoke",
+      "title": "System Sensor ECO1003 Optical Smoke Detector",
+      "tags": [
+        "conventional",
+        "detector",
+        "fire-alarm",
+        "smoke",
+        "system-sensor"
+      ],
+      "min_price": 14.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704812630348",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892781728076,
+      "handle": "apollo-s65-heat-a1r",
+      "title": "Apollo Series 65 Heat Detector A1R",
+      "tags": [
+        "apollo",
+        "conventional",
+        "detector",
+        "fire-alarm",
+        "heat"
+      ],
+      "min_price": 15.9,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704813220172",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892781793612,
+      "handle": "apollo-s65-heat-cs",
+      "title": "Apollo Series 65 Heat Detector CS",
+      "tags": [
+        "apollo",
+        "conventional",
+        "detector",
+        "fire-alarm",
+        "heat"
+      ],
+      "min_price": 15.9,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704813318476",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892781891916,
+      "handle": "apollo-xp95-heat",
+      "title": "Apollo XP95 Heat Detector",
+      "tags": [
+        "addressable",
+        "apollo",
+        "detector",
+        "fire-alarm",
+        "heat"
+      ],
+      "min_price": 29.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704813449548",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892781990220,
+      "handle": "hochiki-atj-en-heat",
+      "title": "Hochiki ATJ-EN Heat Detector",
+      "tags": [
+        "addressable",
+        "detector",
+        "fire-alarm",
+        "heat",
+        "hochiki"
+      ],
+      "min_price": 31.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704814006604",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892782055756,
+      "handle": "apollo-orbis-heat-a1r",
+      "title": "Apollo Orbis Heat Detector A1R",
+      "tags": [
+        "apollo",
+        "conventional",
+        "detector",
+        "fire-alarm",
+        "heat"
+      ],
+      "min_price": 17.2,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704814268748",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892782121292,
+      "handle": "apollo-discovery-multisensor",
+      "title": "Apollo Discovery Multisensor Detector",
+      "tags": [
+        "addressable",
+        "apollo",
+        "detector",
+        "fire-alarm",
+        "multi-sensor"
+      ],
+      "min_price": 52.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704814399820",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892782219596,
+      "handle": "apollo-xp95-multisensor",
+      "title": "Apollo XP95 Multisensor Detector",
+      "tags": [
+        "addressable",
+        "apollo",
+        "detector",
+        "fire-alarm",
+        "multi-sensor"
+      ],
+      "min_price": 46.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704814760268",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892782285132,
+      "handle": "hochiki-acc-en-multisensor",
+      "title": "Hochiki ACC-EN Multisensor Detector",
+      "tags": [
+        "addressable",
+        "detector",
+        "fire-alarm",
+        "hochiki",
+        "multi-sensor"
+      ],
+      "min_price": 48.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704814891340",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892782350668,
+      "handle": "kac-mcp-conventional-red",
+      "title": "KAC Conventional Manual Call Point Red",
+      "tags": [
+        "call-point",
+        "conventional",
+        "fire-alarm",
+        "kac",
+        "mcp"
+      ],
+      "min_price": 11.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704815219020",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892782448972,
+      "handle": "apollo-xp95-mcp",
+      "title": "Apollo XP95 Addressable Manual Call Point",
+      "tags": [
+        "addressable",
+        "apollo",
+        "call-point",
+        "fire-alarm",
+        "mcp"
+      ],
+      "min_price": 28.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704815874380",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892782547276,
+      "handle": "hochiki-hcp-e-mcp",
+      "title": "Hochiki HCP-E Addressable Call Point",
+      "tags": [
+        "addressable",
+        "call-point",
+        "fire-alarm",
+        "hochiki",
+        "mcp"
+      ],
+      "min_price": 29.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704816038220",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892782612812,
+      "handle": "kac-weatherproof-mcp",
+      "title": "KAC Weatherproof Manual Call Point",
+      "tags": [
+        "call-point",
+        "fire-alarm",
+        "ip65",
+        "kac",
+        "mcp"
+      ],
+      "min_price": 24.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704816267596",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892782711116,
+      "handle": "apollo-discovery-mcp",
+      "title": "Apollo Discovery Addressable Call Point",
+      "tags": [
+        "addressable",
+        "apollo",
+        "fire-alarm",
+        "mcp"
+      ],
+      "min_price": 31.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704816365900",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892782776652,
+      "handle": "fulleon-roshni-sounder-red",
+      "title": "Fulleon Roshni Electronic Sounder Red",
+      "tags": [
+        "fire-alarm",
+        "fulleon",
+        "sounder"
+      ],
+      "min_price": 18.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704816529740",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892782842188,
+      "handle": "fulleon-roshni-sounder-beacon",
+      "title": "Fulleon Roshni Sounder Beacon Red",
+      "tags": [
+        "beacon",
+        "fire-alarm",
+        "fulleon",
+        "sounder",
+        "vad"
+      ],
+      "min_price": 32.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704816660812",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892782907724,
+      "handle": "apollo-xp95-sounder-beacon-base",
+      "title": "Apollo XP95 Sounder Beacon Base",
+      "tags": [
+        "addressable",
+        "apollo",
+        "beacon",
+        "fire-alarm",
+        "sounder"
+      ],
+      "min_price": 48.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704816824652",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892783006028,
+      "handle": "hochiki-chq-wsb-sounder-beacon",
+      "title": "Hochiki CHQ-WSB Wall Sounder Beacon",
+      "tags": [
+        "addressable",
+        "beacon",
+        "fire-alarm",
+        "hochiki",
+        "sounder"
+      ],
+      "min_price": 54.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704817709388",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892783104332,
+      "handle": "vimpex-square-sounder",
+      "title": "Vimpex Square Electronic Sounder",
+      "tags": [
+        "fire-alarm",
+        "sounder",
+        "vimpex"
+      ],
+      "min_price": 16.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704817807692",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892783169868,
+      "handle": "eaton-fulleon-flashni",
+      "title": "Eaton Fulleon Flashni Sounder Beacon",
+      "tags": [
+        "beacon",
+        "eaton",
+        "fire-alarm",
+        "fulleon",
+        "sounder"
+      ],
+      "min_price": 36.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704818037068",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892783300940,
+      "handle": "apollo-s65-standard-base",
+      "title": "Apollo Series 65 Standard Detector Base",
+      "tags": [
+        "apollo",
+        "base",
+        "fire-alarm"
+      ],
+      "min_price": 4.2,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704818200908",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892783399244,
+      "handle": "apollo-s65-diode-base",
+      "title": "Apollo Series 65 Diode Base",
+      "tags": [
+        "apollo",
+        "base",
+        "diode",
+        "fire-alarm"
+      ],
+      "min_price": 5.4,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704818364748",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892783464780,
+      "handle": "apollo-xp95-isolator-base",
+      "title": "Apollo XP95 Isolator Base",
+      "tags": [
+        "addressable",
+        "apollo",
+        "base",
+        "fire-alarm",
+        "isolator"
+      ],
+      "min_price": 14.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704818463052",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892783595852,
+      "handle": "hochiki-ybn-r-3-base",
+      "title": "Hochiki YBN-R/3 Sensor Base",
+      "tags": [
+        "base",
+        "fire-alarm",
+        "hochiki"
+      ],
+      "min_price": 5.9,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704818889036",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892783726924,
+      "handle": "apollo-deckhead-mounting",
+      "title": "Apollo Deckhead Mounting Base Accessory",
+      "tags": [
+        "apollo",
+        "base",
+        "deckhead",
+        "fire-alarm"
+      ],
+      "min_price": 9.8,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704819085644",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892783890764,
+      "handle": "apollo-xp95-io-unit",
+      "title": "Apollo XP95 Input/Output Unit",
+      "tags": [
+        "addressable",
+        "apollo",
+        "fire-alarm",
+        "io",
+        "module"
+      ],
+      "min_price": 72.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704819151180",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892784120140,
+      "handle": "apollo-xp95-zone-monitor",
+      "title": "Apollo XP95 Zone Monitor Unit",
+      "tags": [
+        "apollo",
+        "fire-alarm",
+        "module",
+        "zone-monitor"
+      ],
+      "min_price": 78.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704819446092",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892784349516,
+      "handle": "apollo-xp95-sounder-control",
+      "title": "Apollo XP95 Sounder Control Unit",
+      "tags": [
+        "apollo",
+        "fire-alarm",
+        "module",
+        "sounder-control"
+      ],
+      "min_price": 85.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704819609932",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892784546124,
+      "handle": "hochiki-chq-dim-module",
+      "title": "Hochiki CHQ-DIM Dual Input Module",
+      "tags": [
+        "addressable",
+        "fire-alarm",
+        "hochiki",
+        "module"
+      ],
+      "min_price": 69.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704819970380",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892784742732,
+      "handle": "hochiki-chq-som-module",
+      "title": "Hochiki CHQ-SOM Single Output Module",
+      "tags": [
+        "addressable",
+        "fire-alarm",
+        "hochiki",
+        "module"
+      ],
+      "min_price": 64.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704820068684",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892785037644,
+      "handle": "ctec-bf375-24v-psu",
+      "title": "C-TEC BF375 24V 1.5A Power Supply",
+      "tags": [
+        "c-tec",
+        "fire-alarm",
+        "power",
+        "psu"
+      ],
+      "min_price": 89.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704820134220",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892785234252,
+      "handle": "ctec-bf562-24v-psu",
+      "title": "C-TEC BF562 24V 2.5A Power Supply",
+      "tags": [
+        "c-tec",
+        "fire-alarm",
+        "power",
+        "psu"
+      ],
+      "min_price": 118.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704820953420",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892785463628,
+      "handle": "yuasa-np7-12-battery",
+      "title": "Yuasa NP7-12 12V 7Ah VRLA Battery",
+      "tags": [
+        "12v",
+        "battery",
+        "fire-alarm",
+        "yuasa"
+      ],
+      "min_price": 18.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704821379404",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892785594700,
+      "handle": "yuasa-np12-12-battery",
+      "title": "Yuasa NP12-12 12V 12Ah VRLA Battery",
+      "tags": [
+        "12v",
+        "battery",
+        "fire-alarm",
+        "yuasa"
+      ],
+      "min_price": 32.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704821936460",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892785758540,
+      "handle": "yuasa-np18-12b-battery",
+      "title": "Yuasa NP18-12B 12V 17/18Ah VRLA Battery",
+      "tags": [
+        "12v",
+        "battery",
+        "fire-alarm",
+        "yuasa"
+      ],
+      "min_price": 48.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704822067532",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892785889612,
+      "handle": "yuasa-np24-12-battery",
+      "title": "Yuasa NP24-12 12V 24Ah VRLA Battery",
+      "tags": [
+        "12v",
+        "battery",
+        "fire-alarm",
+        "yuasa"
+      ],
+      "min_price": 64.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704822296908",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892786118988,
+      "handle": "fp200-gold-1-5mm-2c-100m",
+      "title": "FP200 Gold 1.5mm 2C+E Fire Cable 100m",
+      "tags": [
+        "cable",
+        "fire-alarm",
+        "fp200",
+        "prysmian"
+      ],
+      "min_price": 145.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704822362444",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892786315596,
+      "handle": "fp200-gold-1-5mm-2c-500m",
+      "title": "FP200 Gold 1.5mm 2C+E Fire Cable 500m",
+      "tags": [
+        "cable",
+        "fire-alarm",
+        "fp200",
+        "prysmian"
+      ],
+      "min_price": 620.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704822493516",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892786479436,
+      "handle": "fp200-gold-2-5mm-2c-100m",
+      "title": "FP200 Gold 2.5mm 2C+E Fire Cable 100m",
+      "tags": [
+        "cable",
+        "fire-alarm",
+        "fp200"
+      ],
+      "min_price": 195.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704822853964",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892786676044,
+      "handle": "fire-cable-gland-pack-20",
+      "title": "Fire Cable Brass Gland Pack (20)",
+      "tags": [
+        "accessory",
+        "fire-alarm",
+        "gland"
+      ],
+      "min_price": 22.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704823017804",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892786872652,
+      "handle": "fire-junction-box-pack-10",
+      "title": "Fire Resistant Junction Box Pack (10)",
+      "tags": [
+        "accessory",
+        "fire-alarm",
+        "junction-box"
+      ],
+      "min_price": 38.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704823148876",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892787069260,
+      "handle": "eml-led-bulkhead-nm-3hr",
+      "title": "LED Emergency Bulkhead Non-Maintained 3hr",
+      "tags": [
+        "bulkhead",
+        "emergency-lighting",
+        "led",
+        "non-maintained"
+      ],
+      "min_price": 24.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704823312716",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892787298636,
+      "handle": "eml-led-bulkhead-m-3hr",
+      "title": "LED Emergency Bulkhead Maintained 3hr",
+      "tags": [
+        "bulkhead",
+        "emergency-lighting",
+        "led",
+        "maintained"
+      ],
+      "min_price": 28.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704823443788",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892787495244,
+      "handle": "eml-exit-sign-maintained",
+      "title": "LED Exit Sign Maintained 3hr",
+      "tags": [
+        "emergency-lighting",
+        "exit-sign",
+        "led"
+      ],
+      "min_price": 32.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704823607628",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892787626316,
+      "handle": "eml-exit-blade-suspended",
+      "title": "LED Suspended Exit Blade 3hr",
+      "tags": [
+        "emergency-lighting",
+        "exit-blade",
+        "led"
+      ],
+      "min_price": 42.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704823738700",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892787790156,
+      "handle": "eml-ip65-industrial-nm",
+      "title": "IP65 Industrial Emergency Bulkhead NM 3hr",
+      "tags": [
+        "emergency-lighting",
+        "industrial",
+        "ip65"
+      ],
+      "min_price": 39.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704823837004",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892788019532,
+      "handle": "eml-self-test-bulkhead",
+      "title": "Self-Test LED Emergency Bulkhead 3hr",
+      "tags": [
+        "emergency-lighting",
+        "led",
+        "self-test"
+      ],
+      "min_price": 48.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704824230220",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892788281676,
+      "handle": "ctec-cfp-2-zone-conventional-panel",
+      "title": "C-TEC CFP \u2014 2-Zone Conventional Fire Alarm Panel",
+      "tags": [
+        "c-tec",
+        "conventional",
+        "fire-alarm",
+        "panel"
+      ],
+      "min_price": 165.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704824459596",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892788478284,
+      "handle": "ctec-cfp-4-zone-conventional-panel",
+      "title": "C-TEC CFP \u2014 4-Zone Conventional Fire Alarm Panel",
+      "tags": [
+        "c-tec",
+        "conventional",
+        "fire-alarm",
+        "panel"
+      ],
+      "min_price": 195.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704824623436",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892788642124,
+      "handle": "ctec-cfp-8-zone-conventional-panel",
+      "title": "C-TEC CFP \u2014 8-Zone Conventional Fire Alarm Panel",
+      "tags": [
+        "c-tec",
+        "conventional",
+        "fire-alarm",
+        "panel"
+      ],
+      "min_price": 275.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704824852812",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892788805964,
+      "handle": "ctec-xfp-1-loop-16-zone-addressable",
+      "title": "C-TEC XFP \u2014 1-Loop 16-Zone Addressable Panel",
+      "tags": [
+        "addressable",
+        "c-tec",
+        "fire-alarm",
+        "panel"
+      ],
+      "min_price": 485.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704825049420",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892789002572,
+      "handle": "ctec-xfp-1-loop-32-zone-addressable",
+      "title": "C-TEC XFP \u2014 1-Loop 32-Zone Addressable Panel",
+      "tags": [
+        "addressable",
+        "c-tec",
+        "fire-alarm",
+        "panel"
+      ],
+      "min_price": 545.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704825311564",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892789199180,
+      "handle": "ctec-xfp-2-loop-32-zone-addressable",
+      "title": "C-TEC XFP \u2014 2-Loop 32-Zone Addressable Panel",
+      "tags": [
+        "addressable",
+        "c-tec",
+        "fire-alarm",
+        "panel"
+      ],
+      "min_price": 695.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704825442636",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892789395788,
+      "handle": "ctec-zfp-1-loop-addressable-panel",
+      "title": "C-TEC ZFP \u2014 1-Loop Addressable Fire Panel",
+      "tags": [
+        "addressable",
+        "c-tec",
+        "fire-alarm",
+        "panel"
+      ],
+      "min_price": 780.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704825606476",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892789625164,
+      "handle": "kentec-sigma-cp-2-zone-conventional",
+      "title": "Kentec Sigma CP \u2014 2-Zone Conventional Panel",
+      "tags": [
+        "conventional",
+        "fire-alarm",
+        "kentec",
+        "panel"
+      ],
+      "min_price": 175.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704825770316",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892789821772,
+      "handle": "kentec-sigma-cp-4-zone-conventional",
+      "title": "Kentec Sigma CP \u2014 4-Zone Conventional Panel",
+      "tags": [
+        "conventional",
+        "fire-alarm",
+        "kentec",
+        "panel"
+      ],
+      "min_price": 215.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704826196300",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892789985612,
+      "handle": "kentec-sigma-cp-8-zone-conventional",
+      "title": "Kentec Sigma CP \u2014 8-Zone Conventional Panel",
+      "tags": [
+        "conventional",
+        "fire-alarm",
+        "kentec",
+        "panel"
+      ],
+      "min_price": 295.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704826491212",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892790182220,
+      "handle": "kentec-sigma-xt-extinguishing-panel",
+      "title": "Kentec Sigma XT \u2014 Single-Area Extinguishing Control Panel",
+      "tags": [
+        "conventional",
+        "extinguishing",
+        "fire-alarm",
+        "kentec",
+        "panel"
+      ],
+      "min_price": 520.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704826982732",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892790378828,
+      "handle": "kentec-syncro-as-1-loop-addressable",
+      "title": "Kentec Syncro AS \u2014 1-Loop Addressable Panel",
+      "tags": [
+        "addressable",
+        "fire-alarm",
+        "kentec",
+        "panel"
+      ],
+      "min_price": 625.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704827408716",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892790477132,
+      "handle": "kentec-syncro-as-2-loop-addressable",
+      "title": "Kentec Syncro AS \u2014 2-Loop Addressable Panel",
+      "tags": [
+        "addressable",
+        "fire-alarm",
+        "kentec",
+        "panel"
+      ],
+      "min_price": 785.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704827572556",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892790706508,
+      "handle": "kentec-syncro-as-4-loop-addressable",
+      "title": "Kentec Syncro AS \u2014 4-Loop Addressable Panel",
+      "tags": [
+        "addressable",
+        "fire-alarm",
+        "kentec",
+        "panel"
+      ],
+      "min_price": 1150.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704827769164",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892790903116,
+      "handle": "kentec-syncro-focus-repeater",
+      "title": "Kentec Syncro Focus \u2014 Network Repeater / Remote Display",
+      "tags": [
+        "addressable",
+        "fire-alarm",
+        "kentec",
+        "panel",
+        "repeater"
+      ],
+      "min_price": 385.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704828031308",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892791066956,
+      "handle": "advanced-mxpro5-1-loop-addressable",
+      "title": "Advanced MxPro 5 \u2014 1-Loop Addressable Panel",
+      "tags": [
+        "addressable",
+        "advanced",
+        "fire-alarm",
+        "panel"
+      ],
+      "min_price": 695.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704828195148",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892791263564,
+      "handle": "advanced-mxpro5-2-loop-addressable",
+      "title": "Advanced MxPro 5 \u2014 2-Loop Addressable Panel",
+      "tags": [
+        "addressable",
+        "advanced",
+        "fire-alarm",
+        "panel"
+      ],
+      "min_price": 895.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704828555596",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892791460172,
+      "handle": "advanced-mxpro5-4-loop-addressable",
+      "title": "Advanced MxPro 5 \u2014 4-Loop Addressable Panel",
+      "tags": [
+        "addressable",
+        "advanced",
+        "fire-alarm",
+        "panel"
+      ],
+      "min_price": 1350.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704828719436",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892791656780,
+      "handle": "advanced-mxpro5-8-loop-addressable",
+      "title": "Advanced MxPro 5 \u2014 8-Loop Addressable Panel",
+      "tags": [
+        "addressable",
+        "advanced",
+        "fire-alarm",
+        "panel"
+      ],
+      "min_price": 2150.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704828948812",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892791820620,
+      "handle": "advanced-axis-en-2-zone-conventional",
+      "title": "Advanced Axis EN \u2014 2-Zone Conventional Panel",
+      "tags": [
+        "advanced",
+        "conventional",
+        "fire-alarm",
+        "panel"
+      ],
+      "min_price": 185.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704829014348",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892792049996,
+      "handle": "advanced-axis-en-4-zone-conventional",
+      "title": "Advanced Axis EN \u2014 4-Zone Conventional Panel",
+      "tags": [
+        "advanced",
+        "conventional",
+        "fire-alarm",
+        "google-shopping",
+        "panel"
+      ],
+      "min_price": 225.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704833700172",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892792246604,
+      "handle": "advanced-axis-en-8-zone-conventional",
+      "title": "Advanced Axis EN \u2014 8-Zone Conventional Panel",
+      "tags": [
+        "advanced",
+        "conventional",
+        "fire-alarm",
+        "google-shopping",
+        "panel"
+      ],
+      "min_price": 310.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704833896780",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892792475980,
+      "handle": "morley-zx1se-1-loop-addressable",
+      "title": "Morley-IAS ZX1Se \u2014 1-Loop Addressable Panel",
+      "tags": [
+        "addressable",
+        "fire-alarm",
+        "morley",
+        "panel"
+      ],
+      "min_price": 575.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704833995084",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892792672588,
+      "handle": "morley-zx2se-2-loop-addressable",
+      "title": "Morley-IAS ZX2Se \u2014 2-Loop Addressable Panel",
+      "tags": [
+        "addressable",
+        "fire-alarm",
+        "morley",
+        "panel"
+      ],
+      "min_price": 745.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704834158924",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892793098572,
+      "handle": "morley-zx5se-5-loop-addressable",
+      "title": "Morley-IAS ZX5Se \u2014 5-Loop Addressable Panel",
+      "tags": [
+        "addressable",
+        "fire-alarm",
+        "morley",
+        "panel"
+      ],
+      "min_price": 1450.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704834257228",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892793491788,
+      "handle": "haes-excel-2-zone-conventional",
+      "title": "Haes Excel \u2014 2-Zone Conventional Fire Panel",
+      "tags": [
+        "conventional",
+        "fire-alarm",
+        "haes",
+        "panel"
+      ],
+      "min_price": 155.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704834552140",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892793688396,
+      "handle": "haes-excel-4-zone-conventional",
+      "title": "Haes Excel \u2014 4-Zone Conventional Fire Panel",
+      "tags": [
+        "conventional",
+        "fire-alarm",
+        "haes",
+        "panel"
+      ],
+      "min_price": 189.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704834683212",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892793852236,
+      "handle": "haes-excel-8-zone-conventional",
+      "title": "Haes Excel \u2014 8-Zone Conventional Fire Panel",
+      "tags": [
+        "conventional",
+        "fire-alarm",
+        "haes",
+        "panel"
+      ],
+      "min_price": 265.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704834814284",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892794016076,
+      "handle": "haes-eclipse-1-loop-addressable",
+      "title": "Haes Eclipse \u2014 1-Loop Addressable Panel",
+      "tags": [
+        "addressable",
+        "fire-alarm",
+        "haes",
+        "panel"
+      ],
+      "min_price": 455.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704835076428",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892794212684,
+      "handle": "haes-eclipse-2-loop-addressable",
+      "title": "Haes Eclipse \u2014 2-Loop Addressable Panel",
+      "tags": [
+        "addressable",
+        "fire-alarm",
+        "haes",
+        "panel"
+      ],
+      "min_price": 595.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704835371340",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892794409292,
+      "handle": "fike-twinflex-pro-2-zone-2-wire",
+      "title": "Fike Twinflex Pro \u2014 2-Zone 2-Wire Fire Panel",
+      "tags": [
+        "2-wire",
+        "conventional",
+        "fike",
+        "fire-alarm",
+        "panel"
+      ],
+      "min_price": 245.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704835502412",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892794605900,
+      "handle": "fike-twinflex-pro-4-zone-2-wire",
+      "title": "Fike Twinflex Pro \u2014 4-Zone 2-Wire Fire Panel",
+      "tags": [
+        "2-wire",
+        "conventional",
+        "fike",
+        "fire-alarm",
+        "panel"
+      ],
+      "min_price": 295.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704835633484",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892794802508,
+      "handle": "fike-twinflex-pro-8-zone-2-wire",
+      "title": "Fike Twinflex Pro \u2014 8-Zone 2-Wire Fire Panel",
+      "tags": [
+        "2-wire",
+        "conventional",
+        "fike",
+        "fire-alarm",
+        "panel"
+      ],
+      "min_price": 385.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704835862860",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892794999116,
+      "handle": "ems-firecell-radio-hub-panel",
+      "title": "EMS FireCell \u2014 Wireless Radio Fire Hub / Panel",
+      "tags": [
+        "addressable",
+        "ems",
+        "fire-alarm",
+        "panel",
+        "wireless"
+      ],
+      "min_price": 890.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704836026700",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892795228492,
+      "handle": "apollo-series-65-optical-smoke",
+      "title": "Apollo Series 65 Optical Smoke Detector",
+      "tags": [
+        "apollo",
+        "conventional",
+        "detector",
+        "fire-alarm",
+        "optical",
+        "series-65",
+        "smoke"
+      ],
+      "min_price": 14.95,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704836321612",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892795425100,
+      "handle": "apollo-series-65-ionisation-smoke",
+      "title": "Apollo Series 65 Ionisation Smoke Detector",
+      "tags": [
+        "apollo",
+        "conventional",
+        "detector",
+        "fire-alarm",
+        "ionisation",
+        "series-65",
+        "smoke"
+      ],
+      "min_price": 16.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704836518220",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892795621708,
+      "handle": "apollo-orbis-multisensor-smoke",
+      "title": "Apollo Orbis Multisensor Smoke Detector",
+      "tags": [
+        "apollo",
+        "conventional",
+        "detector",
+        "fire-alarm",
+        "multisensor",
+        "orbis",
+        "smoke"
+      ],
+      "min_price": 24.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704836747596",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892795883852,
+      "handle": "apollo-xp95-ionisation-smoke",
+      "title": "Apollo XP95 Ionisation Smoke Detector",
+      "tags": [
+        "addressable",
+        "apollo",
+        "detector",
+        "fire-alarm",
+        "ionisation",
+        "smoke",
+        "xp95"
+      ],
+      "min_price": 34.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704836944204",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892796047692,
+      "handle": "apollo-discovery-ionisation-smoke",
+      "title": "Apollo Discovery Ionisation Smoke Detector",
+      "tags": [
+        "addressable",
+        "apollo",
+        "detector",
+        "discovery",
+        "fire-alarm",
+        "ionisation",
+        "smoke"
+      ],
+      "min_price": 44.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704837402956",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892796309836,
+      "handle": "hochiki-esp-alg-en-optical-smoke",
+      "title": "Hochiki ESP ALG-EN Optical Smoke Detector",
+      "tags": [
+        "addressable",
+        "alg-en",
+        "detector",
+        "esp",
+        "fire-alarm",
+        "hochiki",
+        "optical",
+        "smoke"
+      ],
+      "min_price": 36.95,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704837665100",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892796506444,
+      "handle": "hochiki-esp-ala-e-optical-smoke",
+      "title": "Hochiki ESP ALA-E Optical Smoke Detector",
+      "tags": [
+        "addressable",
+        "detector",
+        "esp",
+        "fire-alarm",
+        "hochiki",
+        "optical",
+        "smoke"
+      ],
+      "min_price": 38.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704837730636",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892796703052,
+      "handle": "hochiki-cdx-slof-as-optical-smoke",
+      "title": "Hochiki CDX SLR-E Conventional Optical Smoke Detector",
+      "tags": [
+        "cdx",
+        "conventional",
+        "detector",
+        "fire-alarm",
+        "hochiki",
+        "optical",
+        "smoke"
+      ],
+      "min_price": 17.25,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704837861708",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892796866892,
+      "handle": "system-sensor-eco1003-optical-smoke",
+      "title": "System Sensor ECO1003 Optical Smoke Detector",
+      "tags": [
+        "conventional",
+        "detector",
+        "eco1000",
+        "fire-alarm",
+        "optical",
+        "smoke",
+        "system-sensor"
+      ],
+      "min_price": 13.95,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704838222156",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892797063500,
+      "handle": "system-sensor-eco1002-optical-smoke",
+      "title": "System Sensor ECO1002 Optical Smoke Detector",
+      "tags": [
+        "conventional",
+        "detector",
+        "eco1000",
+        "fire-alarm",
+        "optical",
+        "smoke",
+        "system-sensor"
+      ],
+      "min_price": 12.95,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704838484300",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892797292876,
+      "handle": "system-sensor-2251em-optical-smoke",
+      "title": "System Sensor 2251EM Addressable Optical Smoke Detector",
+      "tags": [
+        "addressable",
+        "detector",
+        "fire-alarm",
+        "optical",
+        "smoke",
+        "system-sensor"
+      ],
+      "min_price": 39.95,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704838582604",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892797522252,
+      "handle": "fike-twinflex-optical-smoke",
+      "title": "Fike Twinflex Multipoint Optical Smoke Detector",
+      "tags": [
+        "conventional",
+        "detector",
+        "fike",
+        "fire-alarm",
+        "optical",
+        "smoke",
+        "twinflex"
+      ],
+      "min_price": 22.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704838713676",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892798275916,
+      "handle": "fike-sita-optical-smoke",
+      "title": "Fike Sita Optical Smoke Detector",
+      "tags": [
+        "addressable",
+        "detector",
+        "fike",
+        "fire-alarm",
+        "optical",
+        "sita",
+        "smoke"
+      ],
+      "min_price": 41.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704838811980",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892799127884,
+      "handle": "apollo-series-65-integrating-ionisation",
+      "title": "Apollo Series 65 Integrating Ionisation Smoke Detector",
+      "tags": [
+        "apollo",
+        "conventional",
+        "detector",
+        "fire-alarm",
+        "ionisation",
+        "series-65",
+        "smoke"
+      ],
+      "min_price": 17.95,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704839008588",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892799324492,
+      "handle": "apollo-xp95-black-optical-smoke",
+      "title": "Apollo XP95 Optical Smoke Detector \u2014 Black",
+      "tags": [
+        "addressable",
+        "apollo",
+        "black",
+        "detector",
+        "fire-alarm",
+        "optical",
+        "smoke",
+        "xp95"
+      ],
+      "min_price": 36.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704839172428",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892799553868,
+      "handle": "hochiki-esp-alg-enw-white-optical",
+      "title": "Hochiki ESP ALG-ENW Optical Smoke Detector (White)",
+      "tags": [
+        "addressable",
+        "detector",
+        "esp",
+        "fire-alarm",
+        "hochiki",
+        "optical",
+        "smoke"
+      ],
+      "min_price": 37.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704839369036",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892799717708,
+      "handle": "system-sensor-22051e-optical-smoke",
+      "title": "System Sensor 22051E Intelligent Optical Smoke Detector",
+      "tags": [
+        "addressable",
+        "detector",
+        "fire-alarm",
+        "optical",
+        "smoke",
+        "system-sensor"
+      ],
+      "min_price": 45.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704839467340",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892799914316,
+      "handle": "apollo-series-65-heat-a1r",
+      "title": "Apollo Series 65 Heat Detector A1R (Rate-of-Rise)",
+      "tags": [
+        "a1r",
+        "apollo",
+        "conventional",
+        "detector",
+        "fire-alarm",
+        "heat",
+        "rate-of-rise",
+        "series-65"
+      ],
+      "min_price": 13.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704839598412",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892800110924,
+      "handle": "apollo-series-65-heat-br",
+      "title": "Apollo Series 65 Heat Detector BR (Rate-of-Rise)",
+      "tags": [
+        "apollo",
+        "br",
+        "conventional",
+        "detector",
+        "fire-alarm",
+        "heat",
+        "rate-of-rise",
+        "series-65"
+      ],
+      "min_price": 13.95,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704839696716",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892800340300,
+      "handle": "apollo-series-65-heat-cs",
+      "title": "Apollo Series 65 Heat Detector CS (Static)",
+      "tags": [
+        "apollo",
+        "conventional",
+        "cs",
+        "detector",
+        "fire-alarm",
+        "fixed-temperature",
+        "heat",
+        "series-65",
+        "static"
+      ],
+      "min_price": 14.25,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704839762252",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892800569676,
+      "handle": "apollo-orbis-heat-cs",
+      "title": "Apollo Orbis Heat Detector CS",
+      "tags": [
+        "apollo",
+        "conventional",
+        "cs",
+        "detector",
+        "fire-alarm",
+        "fixed-temperature",
+        "heat",
+        "orbis",
+        "static"
+      ],
+      "min_price": 17.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704839893324",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892800799052,
+      "handle": "apollo-xp95-heat-a1r",
+      "title": "Apollo XP95 Heat Detector A1R",
+      "tags": [
+        "a1r",
+        "addressable",
+        "apollo",
+        "detector",
+        "fire-alarm",
+        "heat",
+        "rate-of-rise",
+        "xp95"
+      ],
+      "min_price": 28.95,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704840089932",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892800930124,
+      "handle": "apollo-xp95-heat-cs",
+      "title": "Apollo XP95 Heat Detector CS",
+      "tags": [
+        "addressable",
+        "apollo",
+        "cs",
+        "detector",
+        "fire-alarm",
+        "fixed-temperature",
+        "heat",
+        "static",
+        "xp95"
+      ],
+      "min_price": 29.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704840384844",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892801225036,
+      "handle": "apollo-discovery-heat-a1r",
+      "title": "Apollo Discovery Heat Detector A1R",
+      "tags": [
+        "a1r",
+        "addressable",
+        "apollo",
+        "detector",
+        "discovery",
+        "fire-alarm",
+        "heat",
+        "rate-of-rise"
+      ],
+      "min_price": 36.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704840876364",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892801388876,
+      "handle": "apollo-discovery-heat-cs",
+      "title": "Apollo Discovery Heat Detector CS",
+      "tags": [
+        "addressable",
+        "apollo",
+        "cs",
+        "detector",
+        "discovery",
+        "fire-alarm",
+        "fixed-temperature",
+        "heat",
+        "static"
+      ],
+      "min_price": 37.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704840974668",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892801585484,
+      "handle": "hochiki-esp-atj-en-heat",
+      "title": "Hochiki ESP ATJ-EN Multi-Heat Detector",
+      "tags": [
+        "addressable",
+        "atj-en",
+        "detector",
+        "esp",
+        "fire-alarm",
+        "heat",
+        "hochiki",
+        "multi-heat"
+      ],
+      "min_price": 34.95,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704841171276",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892801880396,
+      "handle": "hochiki-esp-atj-enw-heat",
+      "title": "Hochiki ESP ATJ-ENW Multi-Heat Detector (White)",
+      "tags": [
+        "addressable",
+        "detector",
+        "esp",
+        "fire-alarm",
+        "heat",
+        "hochiki",
+        "multi-heat"
+      ],
+      "min_price": 35.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704841662796",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892802044236,
+      "handle": "hochiki-cdx-dfj-ae3-heat",
+      "title": "Hochiki CDX DFJ-AE3 Conventional Heat Detector",
+      "tags": [
+        "cdx",
+        "conventional",
+        "detector",
+        "fire-alarm",
+        "heat",
+        "hochiki",
+        "rate-of-rise"
+      ],
+      "min_price": 15.95,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704841826636",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892802240844,
+      "handle": "system-sensor-eco1005-heat",
+      "title": "System Sensor ECO1005 Heat Detector",
+      "tags": [
+        "conventional",
+        "detector",
+        "eco1000",
+        "fire-alarm",
+        "heat",
+        "rate-of-rise",
+        "system-sensor"
+      ],
+      "min_price": 12.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704842285388",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892802404684,
+      "handle": "system-sensor-52051e-heat",
+      "title": "System Sensor 52051E Intelligent Heat Detector",
+      "tags": [
+        "addressable",
+        "detector",
+        "fire-alarm",
+        "heat",
+        "system-sensor"
+      ],
+      "min_price": 38.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704842350924",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892802601292,
+      "handle": "fike-twinflex-heat",
+      "title": "Fike Twinflex Multipoint Heat Detector",
+      "tags": [
+        "conventional",
+        "detector",
+        "fike",
+        "fire-alarm",
+        "heat",
+        "twinflex"
+      ],
+      "min_price": 21.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704842875212",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892802732364,
+      "handle": "fike-sita-heat",
+      "title": "Fike Sita Heat Detector",
+      "tags": [
+        "addressable",
+        "detector",
+        "fike",
+        "fire-alarm",
+        "heat",
+        "sita"
+      ],
+      "min_price": 39.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704842940748",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892802863436,
+      "handle": "apollo-discovery-multisensor-black",
+      "title": "Apollo Discovery Multisensor Detector \u2014 Black",
+      "tags": [
+        "addressable",
+        "apollo",
+        "black",
+        "detector",
+        "discovery",
+        "fire-alarm",
+        "heat",
+        "multi-sensor",
+        "optical"
+      ],
+      "min_price": 62.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704843071820",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892803027276,
+      "handle": "apollo-orbis-multisensor-oh",
+      "title": "Apollo Orbis Optical/Heat Multisensor Detector",
+      "tags": [
+        "apollo",
+        "conventional",
+        "detector",
+        "fire-alarm",
+        "heat",
+        "multi-sensor",
+        "optical",
+        "orbis"
+      ],
+      "min_price": 26.95,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704843202892",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892803223884,
+      "handle": "hochiki-esp-acc-en-multisensor",
+      "title": "Hochiki ESP ACC-EN Multi-Sensor Detector",
+      "tags": [
+        "acc-en",
+        "addressable",
+        "detector",
+        "esp",
+        "fire-alarm",
+        "heat",
+        "hochiki",
+        "multi-sensor",
+        "optical"
+      ],
+      "min_price": 52.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704843432268",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892803453260,
+      "handle": "hochiki-esp-acc-enw-multisensor",
+      "title": "Hochiki ESP ACC-ENW Multi-Sensor Detector (White)",
+      "tags": [
+        "addressable",
+        "detector",
+        "esp",
+        "fire-alarm",
+        "heat",
+        "hochiki",
+        "multi-sensor",
+        "optical"
+      ],
+      "min_price": 53.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704843661644",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892803682636,
+      "handle": "hochiki-esp-aca-e-multisensor",
+      "title": "Hochiki ESP ACA-E Multi-Sensor Detector",
+      "tags": [
+        "addressable",
+        "detector",
+        "esp",
+        "fire-alarm",
+        "heat",
+        "hochiki",
+        "multi-sensor",
+        "optical"
+      ],
+      "min_price": 54.95,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704844251468",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892803846476,
+      "handle": "system-sensor-2251tem-multisensor",
+      "title": "System Sensor 2251TEM Multi-Criteria Detector",
+      "tags": [
+        "addressable",
+        "detector",
+        "fire-alarm",
+        "heat",
+        "multi-criteria",
+        "multi-sensor",
+        "optical",
+        "system-sensor"
+      ],
+      "min_price": 55.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704844415308",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892804010316,
+      "handle": "system-sensor-22051te-multisensor",
+      "title": "System Sensor 22051TE Intelligent Multi-Sensor Detector",
+      "tags": [
+        "addressable",
+        "detector",
+        "fire-alarm",
+        "heat",
+        "multi-sensor",
+        "optical",
+        "system-sensor"
+      ],
+      "min_price": 59.95,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704844546380",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892804174156,
+      "handle": "fike-sita-multisensor",
+      "title": "Fike Sita Multi-Sensor Detector",
+      "tags": [
+        "addressable",
+        "detector",
+        "fike",
+        "fire-alarm",
+        "heat",
+        "multi-sensor",
+        "optical",
+        "sita"
+      ],
+      "min_price": 56.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704844677452",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892804305228,
+      "handle": "fike-twinflex-multisensor",
+      "title": "Fike Twinflex Multipoint Multi-Sensor Detector",
+      "tags": [
+        "conventional",
+        "detector",
+        "fike",
+        "fire-alarm",
+        "heat",
+        "multi-sensor",
+        "optical",
+        "twinflex"
+      ],
+      "min_price": 28.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704844742988",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892804469068,
+      "handle": "apollo-discovery-co-multisensor",
+      "title": "Apollo Discovery CO / Multisensor Detector",
+      "tags": [
+        "addressable",
+        "apollo",
+        "co",
+        "detector",
+        "discovery",
+        "fire-alarm",
+        "heat",
+        "multi-sensor",
+        "optical"
+      ],
+      "min_price": 72.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704844906828",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892804632908,
+      "handle": "hochiki-esp-acb-e-multisensor",
+      "title": "Hochiki ESP ACB-E Multi-Sensor Detector",
+      "tags": [
+        "addressable",
+        "detector",
+        "esp",
+        "fire-alarm",
+        "heat",
+        "hochiki",
+        "multi-sensor",
+        "optical"
+      ],
+      "min_price": 57.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704845005132",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892804829516,
+      "handle": "apollo-xp95-manual-call-point",
+      "title": "Apollo XP95 Addressable Manual Call Point",
+      "tags": [
+        "addressable",
+        "apollo",
+        "call-point",
+        "en54-11",
+        "mcp",
+        "red",
+        "xp95"
+      ],
+      "min_price": 18.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704845168972",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892805026124,
+      "handle": "apollo-discovery-manual-call-point",
+      "title": "Apollo Discovery Addressable Manual Call Point",
+      "tags": [
+        "addressable",
+        "apollo",
+        "call-point",
+        "discovery",
+        "en54-11",
+        "mcp",
+        "red"
+      ],
+      "min_price": 22.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704845365580",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892805255500,
+      "handle": "apollo-series65-manual-call-point",
+      "title": "Apollo Series 65 Conventional Manual Call Point",
+      "tags": [
+        "apollo",
+        "call-point",
+        "conventional",
+        "mcp",
+        "red",
+        "series-65"
+      ],
+      "min_price": 12.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704845562188",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892805452108,
+      "handle": "apollo-xp95-waterproof-mcp",
+      "title": "Apollo XP95 Waterproof Manual Call Point IP67",
+      "tags": [
+        "addressable",
+        "apollo",
+        "ip67",
+        "mcp",
+        "outdoor",
+        "weatherproof",
+        "xp95"
+      ],
+      "min_price": 24.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704845791564",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892805681484,
+      "handle": "hochiki-chq-mcp-addressable",
+      "title": "Hochiki CHQ-MCP Addressable Manual Call Point",
+      "tags": [
+        "addressable",
+        "call-point",
+        "en54-11",
+        "esp",
+        "hochiki",
+        "mcp",
+        "red"
+      ],
+      "min_price": 19.95,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704845857100",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892805845324,
+      "handle": "hochiki-ccp-e-conventional-mcp",
+      "title": "Hochiki CCP-E Conventional Manual Call Point",
+      "tags": [
+        "call-point",
+        "ccp-e",
+        "conventional",
+        "hochiki",
+        "mcp",
+        "red"
+      ],
+      "min_price": 11.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704846053708",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892806074700,
+      "handle": "hochiki-hcp-w-weatherproof-mcp",
+      "title": "Hochiki HCP-W Weatherproof Manual Call Point",
+      "tags": [
+        "call-point",
+        "hochiki",
+        "ip65",
+        "mcp",
+        "outdoor",
+        "weatherproof"
+      ],
+      "min_price": 21.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704846119244",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892806238540,
+      "handle": "kac-indoor-resettable-mcp",
+      "title": "KAC Indoor Resettable Manual Call Point",
+      "tags": [
+        "call-point",
+        "en54-11",
+        "indoor",
+        "kac",
+        "mcp",
+        "red",
+        "resettable"
+      ],
+      "min_price": 14.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704846348620",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892806435148,
+      "handle": "kac-weatherproof-mcp-ip67",
+      "title": "KAC Weatherproof Manual Call Point IP67",
+      "tags": [
+        "call-point",
+        "ip67",
+        "kac",
+        "mcp",
+        "outdoor",
+        "weatherproof"
+      ],
+      "min_price": 23.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704846872908",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892806598988,
+      "handle": "kac-flush-mount-mcp",
+      "title": "KAC Flush Mount Manual Call Point",
+      "tags": [
+        "call-point",
+        "flush",
+        "indoor",
+        "kac",
+        "mcp",
+        "red"
+      ],
+      "min_price": 15.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704847135052",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892806795596,
+      "handle": "ctec-conventional-mcp",
+      "title": "C-TEC Conventional Manual Call Point",
+      "tags": [
+        "c-tec",
+        "call-point",
+        "conventional",
+        "ctec",
+        "mcp",
+        "red"
+      ],
+      "min_price": 9.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704847429964",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892807024972,
+      "handle": "ctec-addressable-mcp-cast",
+      "title": "C-TEC CAST Addressable Manual Call Point",
+      "tags": [
+        "addressable",
+        "c-tec",
+        "call-point",
+        "cast",
+        "ctec",
+        "mcp"
+      ],
+      "min_price": 17.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704847921484",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892807188812,
+      "handle": "eaton-conventional-mcp",
+      "title": "Eaton Conventional Manual Call Point",
+      "tags": [
+        "call-point",
+        "conventional",
+        "cooper",
+        "eaton",
+        "mcp",
+        "red"
+      ],
+      "min_price": 10.95,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704849002828",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892807352652,
+      "handle": "fulleon-resettable-mcp",
+      "title": "Fulleon Resettable Manual Call Point",
+      "tags": [
+        "call-point",
+        "eaton",
+        "fulleon",
+        "mcp",
+        "red",
+        "resettable"
+      ],
+      "min_price": 13.75,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704849428812",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892807582028,
+      "handle": "apollo-xp95-sounder-base",
+      "title": "Apollo XP95 Integrated Base Sounder",
+      "tags": [
+        "addressable",
+        "apollo",
+        "base-sounder",
+        "en54-3",
+        "sounder",
+        "xp95"
+      ],
+      "min_price": 28.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704849822028",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892807745868,
+      "handle": "apollo-discovery-sounder-beacon-base",
+      "title": "Apollo Discovery Sounder Beacon Base",
+      "tags": [
+        "addressable",
+        "apollo",
+        "base",
+        "discovery",
+        "en54-23",
+        "en54-3",
+        "sounder-beacon",
+        "vad"
+      ],
+      "min_price": 48.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704850116940",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892807909708,
+      "handle": "apollo-open-area-sounder",
+      "title": "Apollo Intelligent Open-Area Sounder",
+      "tags": [
+        "addressable",
+        "apollo",
+        "en54-3",
+        "open-area",
+        "sounder",
+        "wall"
+      ],
+      "min_price": 32.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704850477388",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892808040780,
+      "handle": "apollo-open-area-sounder-vad",
+      "title": "Apollo Intelligent Open-Area Sounder VAD",
+      "tags": [
+        "addressable",
+        "apollo",
+        "en54-23",
+        "open-area",
+        "sounder-beacon",
+        "vad"
+      ],
+      "min_price": 58.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704850575692",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892808237388,
+      "handle": "hochiki-chq-ws2-wall-sounder",
+      "title": "Hochiki CHQ-WS2 Addressable Wall Sounder",
+      "tags": [
+        "addressable",
+        "chq-ws2",
+        "en54-3",
+        "esp",
+        "hochiki",
+        "sounder",
+        "wall"
+      ],
+      "min_price": 34.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704850903372",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892808433996,
+      "handle": "hochiki-chq-wsb2-sounder-beacon",
+      "title": "Hochiki CHQ-WSB2 Sounder Beacon",
+      "tags": [
+        "addressable",
+        "chq-wsb2",
+        "en54-23",
+        "esp",
+        "hochiki",
+        "sounder-beacon",
+        "vad"
+      ],
+      "min_price": 52.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704851067212",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892808630604,
+      "handle": "hochiki-ybo-bsb-base-sounder-beacon",
+      "title": "Hochiki YBO-BSB Base Sounder Beacon",
+      "tags": [
+        "addressable",
+        "base-sounder",
+        "beacon",
+        "hochiki",
+        "vad",
+        "ybo-bsb"
+      ],
+      "min_price": 45.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704851362124",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892808794444,
+      "handle": "fulleon-roshni-electronic-sounder",
+      "title": "Fulleon Roshni Electronic Sounder",
+      "tags": [
+        "conventional",
+        "eaton",
+        "en54-3",
+        "fulleon",
+        "roshni",
+        "sounder",
+        "wall"
+      ],
+      "min_price": 18.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704851558732",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892809023820,
+      "handle": "fulleon-flashni-sounder-beacon",
+      "title": "Fulleon Flashni Sounder Beacon",
+      "tags": [
+        "beacon",
+        "conventional",
+        "en54-3",
+        "flashni",
+        "fulleon",
+        "sounder-beacon"
+      ],
+      "min_price": 36.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704851722572",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892809220428,
+      "handle": "fulleon-symphoni-compact-sounder",
+      "title": "Fulleon Symphoni Compact Sounder",
+      "tags": [
+        "compact",
+        "conventional",
+        "en54-3",
+        "fulleon",
+        "sounder",
+        "symphoni"
+      ],
+      "min_price": 16.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704851886412",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892809417036,
+      "handle": "fulleon-solo-vad-beacon",
+      "title": "Fulleon Solo EN54-23 Visual Alarm Device",
+      "tags": [
+        "beacon",
+        "en54-23",
+        "fulleon",
+        "solo",
+        "vad",
+        "visual-alarm"
+      ],
+      "min_price": 42.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704852017484",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892809646412,
+      "handle": "vimpex-asserta-midi-sounder",
+      "title": "Vimpex Asserta Midi Electronic Sounder",
+      "tags": [
+        "asserta",
+        "conventional",
+        "en54-3",
+        "midi",
+        "sounder",
+        "vimpex"
+      ],
+      "min_price": 19.95,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704852148556",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892809777484,
+      "handle": "vimpex-asserta-maxi-sounder",
+      "title": "Vimpex Asserta Maxi High Output Sounder",
+      "tags": [
+        "asserta",
+        "high-output",
+        "industrial",
+        "maxi",
+        "sounder",
+        "vimpex"
+      ],
+      "min_price": 38.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704852443468",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892809941324,
+      "handle": "vimpex-asserta-sounder-beacon",
+      "title": "Vimpex Asserta Sounder Beacon",
+      "tags": [
+        "asserta",
+        "beacon",
+        "conventional",
+        "sounder-beacon",
+        "vimpex"
+      ],
+      "min_price": 39.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704852607308",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892810170700,
+      "handle": "ctec-activ-sounder",
+      "title": "C-TEC ActiV Conventional Sounder",
+      "tags": [
+        "activ",
+        "c-tec",
+        "conventional",
+        "ctec",
+        "en54-3",
+        "sounder"
+      ],
+      "min_price": 17.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704852738380",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892810301772,
+      "handle": "ctec-activ-sounder-vad",
+      "title": "C-TEC ActiV Sounder VAD Beacon",
+      "tags": [
+        "activ",
+        "c-tec",
+        "ctec",
+        "en54-23",
+        "sounder-beacon",
+        "vad"
+      ],
+      "min_price": 44.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704853098828",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892810465612,
+      "handle": "eaton-rolp-sounder",
+      "title": "Eaton Fulleon RoLP Electronic Sounder",
+      "tags": [
+        "conventional",
+        "eaton",
+        "en54-3",
+        "fulleon",
+        "rolp",
+        "sounder"
+      ],
+      "min_price": 15.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704853328204",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892810694988,
+      "handle": "eaton-sqg3-sounder-beacon",
+      "title": "Eaton Square LED Sounder Beacon",
+      "tags": [
+        "conventional",
+        "eaton",
+        "led",
+        "sounder-beacon",
+        "square",
+        "vad"
+      ],
+      "min_price": 55.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704853524812",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892810891596,
+      "handle": "apollo-xp95-standard-base",
+      "title": "Apollo XP95 / Discovery Standard Detector Base",
+      "tags": [
+        "apollo",
+        "base",
+        "detector-base",
+        "discovery",
+        "standard",
+        "xp95"
+      ],
+      "min_price": 4.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704853721420",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892811055436,
+      "handle": "apollo-series65-diode-base",
+      "title": "Apollo Series 65 Diode Base",
+      "tags": [
+        "apollo",
+        "conventional",
+        "detector-base",
+        "diode-base",
+        "series-65"
+      ],
+      "min_price": 5.25,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704853918028",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892811219276,
+      "handle": "apollo-series65-standard-base",
+      "title": "Apollo Series 65 Standard Base",
+      "tags": [
+        "apollo",
+        "base",
+        "conventional",
+        "detector-base",
+        "series-65"
+      ],
+      "min_price": 3.75,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704854180172",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892811415884,
+      "handle": "apollo-deep-base",
+      "title": "Apollo Deep Mounting Base",
+      "tags": [
+        "apollo",
+        "cable-management",
+        "deep-base",
+        "detector-base",
+        "mounting"
+      ],
+      "min_price": 6.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704854376780",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892811612492,
+      "handle": "apollo-relay-base",
+      "title": "Apollo XP95 Relay Base",
+      "tags": [
+        "ancillary",
+        "apollo",
+        "detector-base",
+        "relay-base",
+        "xp95"
+      ],
+      "min_price": 14.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704854638924",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892811874636,
+      "handle": "hochiki-ybn-r3-standard-base",
+      "title": "Hochiki YBN-R/3 Standard Detector Base",
+      "tags": [
+        "base",
+        "detector-base",
+        "esp",
+        "hochiki",
+        "standard",
+        "ybn-r3"
+      ],
+      "min_price": 4.25,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704854704460",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892812071244,
+      "handle": "hochiki-ybo-r-sci-isolator-base",
+      "title": "Hochiki YBO-R/SCI Short Circuit Isolator Base",
+      "tags": [
+        "base",
+        "esp",
+        "hochiki",
+        "isolator",
+        "short-circuit",
+        "ybo-r-sci"
+      ],
+      "min_price": 13.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704854901068",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892812300620,
+      "handle": "hochiki-ybn-rsa-base",
+      "title": "Hochiki YBN-R/3(SCI) Base with Isolator",
+      "tags": [
+        "base",
+        "detector-base",
+        "esp",
+        "hochiki",
+        "isolator"
+      ],
+      "min_price": 11.95,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704855163212",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892812497228,
+      "handle": "hochiki-ybo-r-5-base",
+      "title": "Hochiki YBO-R/5 Remote Indicator Base Accessory",
+      "tags": [
+        "accessory",
+        "base",
+        "hochiki",
+        "mounting",
+        "remote-indicator"
+      ],
+      "min_price": 8.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704855327052",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892812693836,
+      "handle": "ctec-conventional-diode-base",
+      "title": "C-TEC Conventional Detector Diode Base",
+      "tags": [
+        "c-tec",
+        "conventional",
+        "ctec",
+        "detector-base",
+        "diode-base"
+      ],
+      "min_price": 4.95,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704855556428",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892812923212,
+      "handle": "ctec-activ-standard-base",
+      "title": "C-TEC ActiV Standard Detector Base",
+      "tags": [
+        "activ",
+        "base",
+        "c-tec",
+        "conventional",
+        "ctec",
+        "detector-base"
+      ],
+      "min_price": 3.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704855753036",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892813087052,
+      "handle": "eaton-conventional-detector-base",
+      "title": "Eaton Conventional Detector Base",
+      "tags": [
+        "base",
+        "conventional",
+        "cooper",
+        "detector-base",
+        "eaton"
+      ],
+      "min_price": 4.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704858276172",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892813316428,
+      "handle": "apollo-deckhead-mounting-base",
+      "title": "Apollo Deckhead / Surface Spacer Ring",
+      "tags": [
+        "accessory",
+        "apollo",
+        "deckhead",
+        "google-shopping",
+        "mounting",
+        "spacer"
+      ],
+      "min_price": 5.75,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704858505548",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892813611340,
+      "handle": "apollo-xp95-input-output-unit",
+      "title": "Apollo XP95 Single Input/Output Unit",
+      "tags": [
+        "addressable",
+        "apollo",
+        "interface",
+        "io-unit",
+        "module",
+        "xp95"
+      ],
+      "min_price": 62.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704858603852",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892813840716,
+      "handle": "apollo-xp95-sounder-control-unit",
+      "title": "Apollo XP95 Sounder Control Unit",
+      "tags": [
+        "24v",
+        "apollo",
+        "interface",
+        "module",
+        "sounder-control",
+        "xp95"
+      ],
+      "min_price": 95.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704858833228",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892814102860,
+      "handle": "apollo-xp95-dual-isolator",
+      "title": "Apollo XP95 Dual Isolator",
+      "tags": [
+        "apollo",
+        "isolator",
+        "loop",
+        "module",
+        "short-circuit",
+        "xp95"
+      ],
+      "min_price": 48.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704859062604",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892814463308,
+      "handle": "apollo-discovery-mimic-driver",
+      "title": "Apollo Discovery Mini Switch Monitor",
+      "tags": [
+        "apollo",
+        "discovery",
+        "google-shopping",
+        "input",
+        "interface",
+        "module",
+        "switch-monitor"
+      ],
+      "min_price": 55.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704859357516",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892814889292,
+      "handle": "hochiki-chq-sim-single-input",
+      "title": "Hochiki CHQ-SIM Single Input Module",
+      "tags": [
+        "addressable",
+        "chq-sim",
+        "esp",
+        "hochiki",
+        "input-module",
+        "interface"
+      ],
+      "min_price": 58.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704859652428",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892815610188,
+      "handle": "hochiki-chq-dim-dual-input",
+      "title": "Hochiki CHQ-DIM Dual Input Module",
+      "tags": [
+        "chq-dim",
+        "dual-input",
+        "esp",
+        "hochiki",
+        "interface",
+        "module"
+      ],
+      "min_price": 72.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704859947340",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892816462156,
+      "handle": "hochiki-chq-drc-dual-relay",
+      "title": "Hochiki CHQ-DRC Dual Relay Controller",
+      "tags": [
+        "chq-drc",
+        "esp",
+        "hochiki",
+        "module",
+        "output",
+        "relay"
+      ],
+      "min_price": 85.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704860176716",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892816855372,
+      "handle": "hochiki-chq-szm-zone-monitor",
+      "title": "Hochiki CHQ-SZM Single Zone Monitor",
+      "tags": [
+        "chq-szm",
+        "conventional-zone",
+        "esp",
+        "hochiki",
+        "module",
+        "zone-monitor"
+      ],
+      "min_price": 88.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704860373324",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892817084748,
+      "handle": "hochiki-chq-som-sounder-module",
+      "title": "Hochiki CHQ-SOM Sounder Control Module",
+      "tags": [
+        "24v",
+        "chq-som",
+        "esp",
+        "hochiki",
+        "interface",
+        "sounder-module"
+      ],
+      "min_price": 98.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704860635468",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892817314124,
+      "handle": "ctec-cast-input-output-unit",
+      "title": "C-TEC CAST Addressable Input/Output Unit",
+      "tags": [
+        "addressable",
+        "c-tec",
+        "cast",
+        "ctec",
+        "interface",
+        "io-unit",
+        "module"
+      ],
+      "min_price": 68.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704860897612",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892817510732,
+      "handle": "ctec-cast-zone-monitor",
+      "title": "C-TEC CAST Conventional Zone Monitor",
+      "tags": [
+        "c-tec",
+        "cast",
+        "ctec",
+        "interface",
+        "module",
+        "zone-monitor"
+      ],
+      "min_price": 82.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704861421900",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892817740108,
+      "handle": "eaton-addressable-io-module",
+      "title": "Eaton Addressable Input/Output Module",
+      "tags": [
+        "addressable",
+        "cooper",
+        "eaton",
+        "interface",
+        "io-module",
+        "relay"
+      ],
+      "min_price": 75.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704861749580",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892817936716,
+      "handle": "eaton-multi-io-interface",
+      "title": "Eaton Multi-Way Interface Module",
+      "tags": [
+        "addressable",
+        "eaton",
+        "interface",
+        "module",
+        "multi-io"
+      ],
+      "min_price": 115.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704861847884",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892818231628,
+      "handle": "yuasa-np7-12-12v-7ah-sla-battery",
+      "title": "Yuasa NP7-12 12V 7Ah VRLA Battery",
+      "tags": [
+        "12v",
+        "7ah",
+        "batteries-power",
+        "bs5839",
+        "fire-alarm",
+        "sla",
+        "vrla",
+        "yuasa"
+      ],
+      "min_price": 18.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704862175564",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892818461004,
+      "handle": "yuasa-np12-12-12v-12ah-sla-battery",
+      "title": "Yuasa NP12-12 12V 12Ah VRLA Battery",
+      "tags": [
+        "12ah",
+        "12v",
+        "batteries-power",
+        "bs5839",
+        "fire-alarm",
+        "sla",
+        "vrla",
+        "yuasa"
+      ],
+      "min_price": 32.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704862994764",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892818657612,
+      "handle": "yuasa-np17-12-12v-17ah-sla-battery",
+      "title": "Yuasa NP17-12 12V 17Ah VRLA Battery",
+      "tags": [
+        "12v",
+        "17ah",
+        "batteries-power",
+        "bs5839",
+        "fire-alarm",
+        "sla",
+        "vrla",
+        "yuasa"
+      ],
+      "min_price": 48.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704863224140",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892818886988,
+      "handle": "yuasa-np24-12-12v-24ah-sla-battery",
+      "title": "Yuasa NP24-12 12V 24Ah VRLA Battery",
+      "tags": [
+        "12v",
+        "24ah",
+        "batteries-power",
+        "bs5839",
+        "fire-alarm",
+        "sla",
+        "vrla",
+        "yuasa"
+      ],
+      "min_price": 68.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704863420748",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892819083596,
+      "handle": "trade-12v-7ah-vrla-battery-equivalent",
+      "title": "Trade Equivalent 12V 7Ah VRLA Battery",
+      "tags": [
+        "12v",
+        "7ah",
+        "batteries-power",
+        "equivalent",
+        "fire-alarm",
+        "sla",
+        "value",
+        "vrla"
+      ],
+      "min_price": 12.95,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704863715660",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892819378508,
+      "handle": "trade-12v-12ah-vrla-battery-equivalent",
+      "title": "Trade Equivalent 12V 12Ah VRLA Battery",
+      "tags": [
+        "12ah",
+        "12v",
+        "batteries-power",
+        "equivalent",
+        "fire-alarm",
+        "sla",
+        "value",
+        "vrla"
+      ],
+      "min_price": 22.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704863945036",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892819673420,
+      "handle": "trade-12v-17ah-vrla-battery-equivalent",
+      "title": "Trade Equivalent 12V 17Ah VRLA Battery",
+      "tags": [
+        "12v",
+        "17ah",
+        "batteries-power",
+        "equivalent",
+        "fire-alarm",
+        "sla",
+        "value",
+        "vrla"
+      ],
+      "min_price": 34.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704864043340",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892819902796,
+      "handle": "trade-12v-24ah-vrla-battery-equivalent",
+      "title": "Trade Equivalent 12V 24Ah VRLA Battery",
+      "tags": [
+        "12v",
+        "24ah",
+        "batteries-power",
+        "equivalent",
+        "fire-alarm",
+        "sla",
+        "value",
+        "vrla"
+      ],
+      "min_price": 49.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704864272716",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892820230476,
+      "handle": "trade-12v-3-2ah-vrla-battery",
+      "title": "Trade 12V 3.2Ah VRLA Battery (Door Holder / Small Panel)",
+      "tags": [
+        "12v",
+        "3.2ah",
+        "batteries-power",
+        "door-holder",
+        "small-panel",
+        "vrla"
+      ],
+      "min_price": 9.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704864403788",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892820427084,
+      "handle": "trade-12v-5ah-vrla-battery",
+      "title": "Trade 12V 5Ah VRLA Battery",
+      "tags": [
+        "12v",
+        "5ah",
+        "batteries-power",
+        "fire-alarm",
+        "sla",
+        "vrla"
+      ],
+      "min_price": 11.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704864665932",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892820754764,
+      "handle": "battery-pair-kit-12v-7ah-x2-24v",
+      "title": "Battery Pair Kit 2\u00d7 12V 7Ah (24V Standby Pack)",
+      "tags": [
+        "24v",
+        "7ah",
+        "batteries-power",
+        "battery-kit",
+        "fire-alarm",
+        "pair"
+      ],
+      "min_price": 24.95,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704864764236",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892821016908,
+      "handle": "battery-pair-kit-12v-12ah-x2-24v",
+      "title": "Battery Pair Kit 2\u00d7 12V 12Ah (24V Standby Pack)",
+      "tags": [
+        "12ah",
+        "24v",
+        "batteries-power",
+        "battery-kit",
+        "fire-alarm",
+        "pair"
+      ],
+      "min_price": 43.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704865059148",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892821377356,
+      "handle": "fire-psu-24v-1-5a-boxed",
+      "title": "24V 1.5A Boxed Fire System Power Supply",
+      "tags": [
+        "1.5a",
+        "24v",
+        "batteries-power",
+        "boxed",
+        "en54",
+        "fire-alarm",
+        "google-shopping",
+        "psu"
+      ],
+      "min_price": 68.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704865255756",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892821737804,
+      "handle": "fire-psu-24v-2-5a-boxed",
+      "title": "24V 2.5A Boxed Fire System Power Supply",
+      "tags": [
+        "2.5a",
+        "24v",
+        "batteries-power",
+        "boxed",
+        "en54",
+        "fire-alarm",
+        "google-shopping",
+        "psu"
+      ],
+      "min_price": 89.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704865583436",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892822163788,
+      "handle": "fire-psu-24v-5a-boxed",
+      "title": "24V 5A Boxed Fire System Power Supply",
+      "tags": [
+        "24v",
+        "5a",
+        "batteries-power",
+        "boxed",
+        "en54",
+        "fire-alarm",
+        "google-shopping",
+        "psu"
+      ],
+      "min_price": 135.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704865780044",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892822655308,
+      "handle": "battery-terminal-spade-kit-4-8mm",
+      "title": "Battery Terminal Spade / Faston Kit 4.8mm (Pack of 20)",
+      "tags": [
+        "accessories",
+        "batteries-power",
+        "faston",
+        "installation",
+        "terminals"
+      ],
+      "min_price": 6.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704866009420",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892823114060,
+      "handle": "prysmian-fp200-gold-1-5mm-2c-e-100m",
+      "title": "Prysmian FP200 Gold 1.5mm\u00b2 2-Core + Earth \u2014 100m Drum",
+      "tags": [
+        "1.5mm",
+        "2core",
+        "bs5839",
+        "cables-accessories",
+        "enhanced",
+        "fire-cable",
+        "fp200-gold",
+        "prysmian"
+      ],
+      "min_price": 185.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704866435404",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892823540044,
+      "handle": "prysmian-fp200-gold-1-5mm-2c-e-500m",
+      "title": "Prysmian FP200 Gold 1.5mm\u00b2 2-Core + Earth \u2014 500m Drum",
+      "tags": [
+        "1.5mm",
+        "2core",
+        "500m",
+        "bs5839",
+        "cables-accessories",
+        "enhanced",
+        "fire-cable",
+        "fp200-gold",
+        "prysmian"
+      ],
+      "min_price": 820.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704867025228",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892823998796,
+      "handle": "prysmian-fp200-gold-2-5mm-2c-e-100m",
+      "title": "Prysmian FP200 Gold 2.5mm\u00b2 2-Core + Earth \u2014 100m Drum",
+      "tags": [
+        "2.5mm",
+        "2core",
+        "cables-accessories",
+        "enhanced",
+        "fire-cable",
+        "fp200-gold",
+        "prysmian"
+      ],
+      "min_price": 265.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704867254604",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892824555852,
+      "handle": "enhanced-fire-cable-1-5mm-2c-e-100m",
+      "title": "Enhanced Fire Cable 1.5mm\u00b2 2-Core + Earth \u2014 100m Drum",
+      "tags": [
+        "1.5mm",
+        "2core",
+        "bs5839",
+        "cables-accessories",
+        "enhanced",
+        "fire-cable",
+        "value"
+      ],
+      "min_price": 145.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704867418444",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892825047372,
+      "handle": "enhanced-fire-cable-1-5mm-2c-e-500m",
+      "title": "Enhanced Fire Cable 1.5mm\u00b2 2-Core + Earth \u2014 500m Drum",
+      "tags": [
+        "1.5mm",
+        "2core",
+        "500m",
+        "bs5839",
+        "cables-accessories",
+        "enhanced",
+        "fire-cable",
+        "value"
+      ],
+      "min_price": 640.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704867582284",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892825538892,
+      "handle": "standard-fire-cable-1-5mm-2c-e-100m",
+      "title": "Standard Fire Resistant Cable 1.5mm\u00b2 2-Core + Earth \u2014 100m",
+      "tags": [
+        "1.5mm",
+        "2core",
+        "bs5839",
+        "cables-accessories",
+        "fire-cable",
+        "standard"
+      ],
+      "min_price": 98.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704867811660",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892825932108,
+      "handle": "fire-cable-clip-red-pack-100",
+      "title": "Red Fire Cable Clips \u2014 Pack of 100",
+      "tags": [
+        "cables-accessories",
+        "clips",
+        "fire-cable",
+        "installation",
+        "red"
+      ],
+      "min_price": 8.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704868073804",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892826390860,
+      "handle": "brass-cable-gland-m20-pack-10",
+      "title": "Brass Cable Gland M20 CW \u2014 Pack of 10",
+      "tags": [
+        "brass",
+        "cables-accessories",
+        "gland",
+        "installation",
+        "m20"
+      ],
+      "min_price": 14.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704868499788",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892826915148,
+      "handle": "brass-cable-gland-m25-pack-10",
+      "title": "Brass Cable Gland M25 CW \u2014 Pack of 10",
+      "tags": [
+        "brass",
+        "cables-accessories",
+        "gland",
+        "installation",
+        "m25"
+      ],
+      "min_price": 18.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704868761932",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892827341132,
+      "handle": "nylon-cable-gland-m20-ip68-pack-20",
+      "title": "Nylon Cable Gland M20 IP68 \u2014 Pack of 20",
+      "tags": [
+        "cables-accessories",
+        "gland",
+        "ip68",
+        "m20",
+        "nylon",
+        "weatherproof"
+      ],
+      "min_price": 12.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704869056844",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892827865420,
+      "handle": "fire-rated-junction-box-white-ip65",
+      "title": "Fire-Rated Junction Box White IP65",
+      "tags": [
+        "cables-accessories",
+        "fire-rated",
+        "ip65",
+        "junction-box",
+        "white"
+      ],
+      "min_price": 6.95,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704869155148",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892828356940,
+      "handle": "fire-rated-junction-box-red-ip65",
+      "title": "Fire-Rated Junction Box Red IP65",
+      "tags": [
+        "cables-accessories",
+        "fire-rated",
+        "ip65",
+        "junction-box",
+        "red"
+      ],
+      "min_price": 7.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704869351756",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892828913996,
+      "handle": "ceramic-terminal-block-5a-pack-10",
+      "title": "Ceramic High-Temp Terminal Block 5A \u2014 Pack of 10",
+      "tags": [
+        "cables-accessories",
+        "ceramic",
+        "fire-rated",
+        "junction",
+        "terminal-block"
+      ],
+      "min_price": 11.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704869482828",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892829438284,
+      "handle": "fire-cable-joint-kit-inline",
+      "title": "Fire Cable Inline Joint Kit (Enhanced Compatible)",
+      "tags": [
+        "cables-accessories",
+        "fire-cable",
+        "installation",
+        "joint-kit",
+        "repair"
+      ],
+      "min_price": 16.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704869777740",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892829995340,
+      "handle": "led-emergency-bulkhead-non-maintained-3h",
+      "title": "LED Emergency Bulkhead Non-Maintained 3-Hour",
+      "tags": [
+        "3-hour",
+        "bs5266",
+        "bulkhead",
+        "emergency-lighting-products",
+        "led",
+        "non-maintained"
+      ],
+      "min_price": 22.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704869908812",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892830519628,
+      "handle": "led-emergency-bulkhead-maintained-3h",
+      "title": "LED Emergency Bulkhead Maintained 3-Hour",
+      "tags": [
+        "3-hour",
+        "bs5266",
+        "bulkhead",
+        "emergency-lighting-products",
+        "led",
+        "maintained"
+      ],
+      "min_price": 26.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704870498636",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892831043916,
+      "handle": "led-emergency-bulkhead-switchable-m-nm-3h",
+      "title": "LED Emergency Bulkhead Switchable Maintained / Non-Maintained 3H",
+      "tags": [
+        "3-hour",
+        "bulkhead",
+        "emergency-lighting-products",
+        "led",
+        "maintained",
+        "non-maintained",
+        "switchable"
+      ],
+      "min_price": 28.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704870728012",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892831535436,
+      "handle": "led-emergency-bulkhead-ip65-industrial-nm",
+      "title": "LED Emergency Bulkhead IP65 Industrial Non-Maintained 3H",
+      "tags": [
+        "3-hour",
+        "bulkhead",
+        "emergency-lighting-products",
+        "industrial",
+        "ip65",
+        "led",
+        "non-maintained"
+      ],
+      "min_price": 34.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704871022924",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892832059724,
+      "handle": "led-emergency-bulkhead-ip65-industrial-m",
+      "title": "LED Emergency Bulkhead IP65 Industrial Maintained 3H",
+      "tags": [
+        "3-hour",
+        "bulkhead",
+        "emergency-lighting-products",
+        "industrial",
+        "ip65",
+        "led",
+        "maintained"
+      ],
+      "min_price": 38.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704871186764",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892832551244,
+      "handle": "led-exit-sign-maintained-legend-kit",
+      "title": "LED Exit Sign Maintained 3H with Legend Kit",
+      "tags": [
+        "3-hour",
+        "bs5266",
+        "emergency-lighting-products",
+        "exit-sign",
+        "led",
+        "legend",
+        "maintained"
+      ],
+      "min_price": 32.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704871809356",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892833108300,
+      "handle": "led-exit-sign-non-maintained-legend-kit",
+      "title": "LED Exit Sign Non-Maintained 3H with Legend Kit",
+      "tags": [
+        "3-hour",
+        "bs5266",
+        "emergency-lighting-products",
+        "exit-sign",
+        "led",
+        "non-maintained"
+      ],
+      "min_price": 28.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704872071500",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892833501516,
+      "handle": "led-exit-blade-stick-maintained",
+      "title": "LED Exit Stick / Blade Sign Maintained 3H",
+      "tags": [
+        "3-hour",
+        "blade",
+        "emergency-lighting-products",
+        "exit-sign",
+        "led",
+        "maintained",
+        "stick"
+      ],
+      "min_price": 42.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704872235340",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892833861964,
+      "handle": "led-exit-blade-stick-non-maintained",
+      "title": "LED Exit Stick / Blade Sign Non-Maintained 3H",
+      "tags": [
+        "3-hour",
+        "blade",
+        "emergency-lighting-products",
+        "exit-sign",
+        "led",
+        "non-maintained",
+        "stick"
+      ],
+      "min_price": 38.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704872431948",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892834320716,
+      "handle": "led-exit-blade-recessed-maintained",
+      "title": "LED Exit Blade Recessed Maintained 3H",
+      "tags": [
+        "3-hour",
+        "blade",
+        "emergency-lighting-products",
+        "exit-sign",
+        "led",
+        "maintained",
+        "recessed"
+      ],
+      "min_price": 48.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704872563020",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892834746700,
+      "handle": "self-test-led-emergency-bulkhead-3h",
+      "title": "Self-Test LED Emergency Bulkhead 3H (M/NM)",
+      "tags": [
+        "3-hour",
+        "auto-test",
+        "bs5266",
+        "bulkhead",
+        "emergency-lighting-products",
+        "led",
+        "self-test"
+      ],
+      "min_price": 39.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704872759628",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892835041612,
+      "handle": "emergency-lighting-test-key-switch",
+      "title": "Emergency Lighting Key Test Switch (Secret Key)",
+      "tags": [
+        "accessories",
+        "bs5266",
+        "emergency-lighting-products",
+        "key-switch",
+        "test-switch"
+      ],
+      "min_price": 9.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704872923468",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892835369292,
+      "handle": "emergency-luminaire-replacement-battery-pack-3-6v",
+      "title": "Emergency Luminaire Replacement Battery Pack 3.6V NiCd",
+      "tags": [
+        "3.6v",
+        "battery-pack",
+        "emergency-lighting-products",
+        "nicd",
+        "replacement",
+        "spares"
+      ],
+      "min_price": 11.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704873185612",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892835762508,
+      "handle": "led-twinspot-emergency-ip65-nm",
+      "title": "LED Twin-Spot Emergency Flood IP65 Non-Maintained 3H",
+      "tags": [
+        "3-hour",
+        "emergency-lighting-products",
+        "industrial",
+        "ip65",
+        "led",
+        "non-maintained",
+        "twin-spot"
+      ],
+      "min_price": 54.0,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704873382220",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    },
+    {
+      "id": 15892836188492,
+      "handle": "exit-sign-legend-pack-iso7010",
+      "title": "Exit Sign Legend Pack ISO 7010 (5 Legends)",
+      "tags": [
+        "emergency-lighting-products",
+        "exit-sign",
+        "iso7010",
+        "legend",
+        "spares"
+      ],
+      "min_price": 7.5,
+      "classification": "priced",
+      "price_display": "FROM",
+      "metafield": {
+        "ok": true,
+        "method": "graphql",
+        "metafield_id": "gid://shopify/Metafield/196704873742668",
+        "value": "FROM"
+      },
+      "body_cta": {
+        "updated": false,
+        "status": "n/a_priced"
+      }
+    }
+  ]
+}
