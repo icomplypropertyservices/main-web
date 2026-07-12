@@ -11,6 +11,21 @@ if ($uri !== '/' && is_file($file)) {
     return false;
 }
 
+// Support extensionless routes such as /contact or /pages/services/gas-systems
+if ($uri !== '/' && $uri !== '') {
+    $phpFile = $file . '.php';
+    if (is_file($phpFile)) {
+        require $phpFile;
+        return true;
+    }
+
+    $dirIndex = $file . '/index.php';
+    if (is_file($dirIndex)) {
+        require $dirIndex;
+        return true;
+    }
+}
+
 // Block sensitive paths
 foreach (['/admin/', '/bin/', '/templates/', '/data/', '/includes/'] as $blocked) {
     if (strpos($uri, $blocked) === 0 && !preg_match('#^/admin/(index|generate)\.php#', $uri)) {

@@ -15,7 +15,7 @@ $pageTitle = 'Gas Systems in Bolton | UK Install & Cert';
 $metaDesc = 'Gas Systems in Bolton — install, service & certificates. Stockport UK engineers covering Bolton. Free quote.';
 $metaKeywords = 'gas safety certificate, gas boiler servicing, landlord gas safety, CP44, gas installation Bolton, Bolton electrician, Bolton fire safety, Gas Systems Bolton, Bolton Gas Systems engineer, Bolton compliance';
 $ogImage = service_image($serviceSlug);
-$canonicalUrl = site_url("pages/{$serviceSlug}/{$areaSlugVal}.php");
+$canonicalUrl = site_url("pages/{$serviceSlug}/{$areaSlugVal}");
 $ogType = 'article';
 require __DIR__ . '/../../includes/header.php';
 
@@ -165,7 +165,7 @@ $features = service_features($serviceSlug);
         'name' => "Gas Systems in Bolton",
         'serviceType' => 'Gas Systems',
         'description' => $metaDesc,
-        'url' => site_url("pages/{$serviceSlug}/{$areaSlugVal}.php"),
+        'url' => site_url("pages/{$serviceSlug}/{$areaSlugVal}"),
         'image' => service_image($serviceSlug),
         'provider' => ['@id' => site_url() . '#business'],
         'areaServed' => [

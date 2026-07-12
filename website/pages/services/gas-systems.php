@@ -12,7 +12,7 @@ $pageTitle = 'Gas Systems North West | Install & Service';
 $metaDesc = 'Gas Systems across Greater Manchester & North West UK. Install, service & certification. Stockport engineers. Free quote.';
 $metaKeywords = 'gas safety certificate, gas boiler servicing, landlord gas safety, CP44, gas installation, Gas Systems Manchester, Gas Systems Stockport, Gas Systems North West';
 $ogImage = service_image($serviceSlug);
-$canonicalUrl = site_url("pages/services/{$serviceSlug}.php");
+$canonicalUrl = site_url("pages/services/{$serviceSlug}");
 require __DIR__ . '/../../includes/header.php';
 $features = service_features($serviceSlug);
 $faqs = service_faqs($serviceSlug, $serviceName, '');
@@ -103,7 +103,7 @@ $crumbs = [
     'name' => $serviceName,
     'serviceType' => $serviceName,
     'description' => $metaDesc,
-    'url' => site_url("pages/services/{$serviceSlug}.php"),
+    'url' => site_url("pages/services/{$serviceSlug}"),
     'image' => service_image($serviceSlug),
     'provider' => ['@id' => site_url() . '#business'],
     'areaServed' => 'North West England',

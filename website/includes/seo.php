@@ -7,7 +7,7 @@ require_once __DIR__ . '/local-content.php';
 
 /** Public production domain used in sitemap / canonicals when not on localhost deploy */
 if (!defined('SITE_PUBLIC_URL')) {
-    define('SITE_PUBLIC_URL', 'https://icomplyproperty.co.uk');
+    define('SITE_PUBLIC_URL', 'https://www.icomplypropertyservices.co.uk');
 }
 
 function seo_public_url(string $path = ''): string {

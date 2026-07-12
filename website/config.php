@@ -11,8 +11,35 @@ function icomply_env(string $key, string $default = ''): string {
     return ($v === '' || $v === false) ? $default : (string)$v;
 }
 
-// Public URL: explicit SITE_URL → Vercel URL → local dev
+function icomply_request_site_url(): string {
+    $scheme = 'http';
+    if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') {
+        $scheme = 'https';
+    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_PROTO'])) {
+        $parts = explode(',', $_SERVER['HTTP_X_FORWARDED_PROTO']);
+        $scheme = trim($parts[0]);
+    } elseif (!empty($_SERVER['REQUEST_SCHEME'])) {
+        $scheme = $_SERVER['REQUEST_SCHEME'];
+    }
+
+    $host = $_SERVER['HTTP_X_FORWARDED_HOST'] ?? $_SERVER['HTTP_HOST'] ?? $_SERVER['SERVER_NAME'] ?? '';
+    if ($host === '') {
+        return '';
+    }
+
+    $host = preg_replace('/:\d+$/', '', $host);
+    if ($host === '' || preg_match('/^(localhost|127\.0\.0\.1|\[::1\]|.*\.vercel\.app|.*\.vercel\.dev)$/i', $host)) {
+        return '';
+    }
+
+    return $scheme . '://' . $host;
+}
+
+// Public URL: explicit SITE_URL → current request host → Vercel URL → local dev
 $__siteUrl = icomply_env('SITE_URL');
+if ($__siteUrl === '') {
+    $__siteUrl = icomply_request_site_url();
+}
 if ($__siteUrl === '') {
     $vercel = icomply_env('VERCEL_URL');
     if ($vercel !== '') {
@@ -41,10 +68,16 @@ define('SHOPIFY_ENABLED', SHOPIFY_STOREFRONT_TOKEN !== '');
 
 /** Build an absolute site URL path (works from any nested page). */
 function site_url(string $path = ''): string {
+    $path = ltrim($path, '/');
+    if ($path === '' || $path === 'index' || $path === 'index.php') {
+        return rtrim(SITE_URL, '/') . '/';
+    }
+
+    $path = preg_replace('/\.php$/i', '', $path);
     return rtrim(SITE_URL, '/') . '/' . ltrim($path, '/');
 }
 
-// Services list (extendable via admin)
+// Services list (extendable via admin) — compliance + renewable energy
 $services = [
     'electrical' => 'Electrical',
     'fire-alarms' => 'Fire Alarms',
@@ -56,7 +89,14 @@ $services = [
     'cctv' => 'CCTV Systems',
     'access-control' => 'Access Control',
     'door-entry' => 'Door Entry Systems',
-    'intercoms' => 'Intercoms'
+    'intercoms' => 'Intercoms',
+    // Renewable energy
+    'solar-pv' => 'Solar PV',
+    'air-source-heat-pumps' => 'Air Source Heat Pumps',
+    'ground-source-heat-pumps' => 'Ground Source Heat Pumps',
+    'battery-storage' => 'Battery Storage',
+    'solar-thermal' => 'Solar Thermal',
+    'ev-charging' => 'EV Charging',
 ];
 
 /** UK photo path for a service (realistic photos preferred over package icons). */
@@ -82,6 +122,12 @@ function service_blurb(string $slug): string {
         'access-control' => 'Card, fob & biometric door access for multi-tenant sites.',
         'door-entry' => 'Audio & video door entry for flats, offices and estates.',
         'intercoms' => 'Video and audio intercom systems for residential & commercial.',
+        'solar-pv' => 'Roof-mounted solar PV design, install, MCS-aligned commissioning & monitoring.',
+        'air-source-heat-pumps' => 'ASHP design, install & service for homes and light commercial sites.',
+        'ground-source-heat-pumps' => 'GSHP ground-loop / borehole systems with full commissioning support.',
+        'battery-storage' => 'Home & commercial battery storage paired with solar or grid tariffs.',
+        'solar-thermal' => 'Solar hot-water systems for domestic and small commercial plant.',
+        'ev-charging' => 'Domestic & workplace EV charger install with load management options.',
     ];
     return $blurbs[$slug] ?? 'Professional installation, maintenance and certification.';
 }
@@ -144,6 +190,36 @@ function service_features(string $slug): array {
             ['title' => 'Multi-tenant setups', 'text' => 'Systems for flats, offices and mixed-use buildings.'],
             ['title' => 'Service & repair', 'text' => 'Fault finding, handset swaps and panel replacements.'],
         ],
+        'solar-pv' => [
+            ['title' => 'System design', 'text' => 'Roof survey, shading analysis and panel layout for maximum generation on UK roofs.'],
+            ['title' => 'Install & commission', 'text' => 'Inverters, mounting, AC/DC isolation and monitoring app setup with clear handover.'],
+            ['title' => 'Service & expand', 'text' => 'Inverter faults, optimisers, panel cleaning advice and battery-ready expansions.'],
+        ],
+        'air-source-heat-pumps' => [
+            ['title' => 'Heat loss design', 'text' => 'Room-by-room heat loss and emitter checks so the ASHP is sized correctly.'],
+            ['title' => 'Install & commission', 'text' => 'Outdoor unit siting, pipework, controls and commissioning to manufacturer specs.'],
+            ['title' => 'Service plans', 'text' => 'Annual checks, filter/coil care and performance reviews for lower running costs.'],
+        ],
+        'ground-source-heat-pumps' => [
+            ['title' => 'Ground loop design', 'text' => 'Horizontal trenches or borehole strategies matched to plot size and geology.'],
+            ['title' => 'Plant room install', 'text' => 'Heat pump, buffers, manifolds and controls integrated with existing heating.'],
+            ['title' => 'Commissioning', 'text' => 'Flow rates, glycol, and performance data logged for handover packs.'],
+        ],
+        'battery-storage' => [
+            ['title' => 'Solar pairing', 'text' => 'Store surplus PV generation for evening use and blackout resilience options.'],
+            ['title' => 'Tariff optimisation', 'text' => 'Charge from cheap-rate grid periods where smart tariffs allow.'],
+            ['title' => 'Safe install', 'text' => 'Correct isolation, fire-aware siting and app monitoring for homeowners and FM teams.'],
+        ],
+        'solar-thermal' => [
+            ['title' => 'Hot water design', 'text' => 'Collectors and cylinder sizing for domestic and small commercial DHW demand.'],
+            ['title' => 'Roof install', 'text' => 'On-roof or in-roof collectors with freeze protection for UK winters.'],
+            ['title' => 'Service', 'text' => 'Glycol checks, pump stations and expansion vessel health for long system life.'],
+        ],
+        'ev-charging' => [
+            ['title' => 'Home chargers', 'text' => '7kW domestic wallboxes with smart app control and load balancing.'],
+            ['title' => 'Workplace charge', 'text' => 'Multi-bay workplace and landlord installs with access control options.'],
+            ['title' => 'Electrical upgrade', 'text' => 'Supply assessment, consumer unit works and OZEV-aware documentation where relevant.'],
+        ],
     ];
     return $all[$slug] ?? [
         ['title' => 'Installation', 'text' => 'Full design, supply and install to current UK standards.'],
@@ -171,10 +247,16 @@ function getSeoKeywords($service, $area = '') {
         'cctv' => 'CCTV installation, IP CCTV system, commercial CCTV, video surveillance',
         'access-control' => 'access control installation, biometric access control, door access control',
         'door-entry' => 'door entry installation, video door entry, audio door entry, apartment door entry',
-        'intercoms' => 'intercom installation, video intercom, audio intercom, multi tenant intercom'
+        'intercoms' => 'intercom installation, video intercom, audio intercom, multi tenant intercom',
+        'solar-pv' => 'solar PV installation, solar panels North West, MCS solar install, roof solar system, solar inverter',
+        'air-source-heat-pumps' => 'air source heat pump installation, ASHP install, heat pump service, low carbon heating',
+        'ground-source-heat-pumps' => 'ground source heat pump, GSHP installation, borehole heat pump, ground loop heating',
+        'battery-storage' => 'home battery storage, solar battery install, energy storage system, Tesla Powerwall alternative',
+        'solar-thermal' => 'solar thermal installation, solar hot water, solar collectors, renewable DHW',
+        'ev-charging' => 'EV charger installation, home EV wallbox, workplace EV charging, electric car charger install',
     ];
     $kw = $base[$service] ?? $service;
-    return $area ? "$kw $area, $area electrician, $area fire safety" : $kw;
+    return $area ? "$kw $area, $area renewable energy, $area electrician" : $kw;
 }
 
 function areaSlug($area) {

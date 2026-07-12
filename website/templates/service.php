@@ -12,7 +12,7 @@ $pageTitle = '{{SERVICE_NAME}} North West | Install & Service';
 $metaDesc = '{{SERVICE_NAME}} across Greater Manchester & North West UK. Install, service & certification. Stockport engineers. Free quote.';
 $metaKeywords = '{{SEO_KEYWORDS}}, {{SERVICE_NAME}} Manchester, {{SERVICE_NAME}} Stockport, {{SERVICE_NAME}} North West';
 $ogImage = service_image($serviceSlug);
-$canonicalUrl = site_url("pages/services/{$serviceSlug}.php");
+$canonicalUrl = site_url("pages/services/{$serviceSlug}");
 require __DIR__ . '/../../includes/header.php';
 $features = service_features($serviceSlug);
 $faqs = service_faqs($serviceSlug, $serviceName, '');
@@ -23,7 +23,7 @@ $topAreas = array_values(array_unique(array_merge($priority, array_slice($GLOBAL
 $crumbs = [
     ['name' => 'Home', 'url' => 'index.php'],
     ['name' => 'Services', 'url' => 'pages/services/index.php'],
-    ['name' => $serviceName, 'url' => "pages/services/{$serviceSlug}.php"],
+    ['name' => $serviceName, 'url' => "pages/services/{$serviceSlug}"],
 ];
 ?>
 <section class="relative text-white py-16 md:py-20 overflow-hidden">
@@ -103,7 +103,7 @@ $crumbs = [
     'name' => $serviceName,
     'serviceType' => $serviceName,
     'description' => $metaDesc,
-    'url' => site_url("pages/services/{$serviceSlug}.php"),
+    'url' => site_url("pages/services/{$serviceSlug}"),
     'image' => service_image($serviceSlug),
     'provider' => ['@id' => site_url() . '#business'],
     'areaServed' => 'North West England',

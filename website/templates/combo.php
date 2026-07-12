@@ -15,7 +15,7 @@ $pageTitle = '{{SERVICE_NAME}} in {{AREA}} | UK Install & Cert';
 $metaDesc = '{{SERVICE_NAME}} in {{AREA}} — install, service & certificates. Stockport UK engineers covering {{AREA}}. Free quote.';
 $metaKeywords = '{{SEO_KEYWORDS}}, {{SERVICE_NAME}} {{AREA}}, {{AREA}} {{SERVICE_NAME}} engineer, {{AREA}} compliance';
 $ogImage = service_image($serviceSlug);
-$canonicalUrl = site_url("pages/{$serviceSlug}/{$areaSlugVal}.php");
+$canonicalUrl = site_url("pages/{$serviceSlug}/{$areaSlugVal}");
 $ogType = 'article';
 require __DIR__ . '/../../includes/header.php';
 
@@ -34,8 +34,8 @@ $angle = service_local_angle($serviceSlug, $serviceName, $areaName);
 $crumbs = [
     ['name' => 'Home', 'url' => 'index.php'],
     ['name' => 'Services', 'url' => 'pages/services/index.php'],
-    ['name' => $serviceName, 'url' => "pages/services/{$serviceSlug}.php"],
-    ['name' => $areaName, 'url' => "pages/{$serviceSlug}/{$areaSlugVal}.php"],
+    ['name' => $serviceName, 'url' => "pages/services/{$serviceSlug}"],
+    ['name' => $areaName, 'url' => "pages/{$serviceSlug}/{$areaSlugVal}"],
 ];
 $features = service_features($serviceSlug);
 ?>
@@ -165,7 +165,7 @@ $features = service_features($serviceSlug);
         'name' => "{{SERVICE_NAME}} in {{AREA}}",
         'serviceType' => '{{SERVICE_NAME}}',
         'description' => $metaDesc,
-        'url' => site_url("pages/{$serviceSlug}/{$areaSlugVal}.php"),
+        'url' => site_url("pages/{$serviceSlug}/{$areaSlugVal}"),
         'image' => service_image($serviceSlug),
         'provider' => ['@id' => site_url() . '#business'],
         'areaServed' => [
