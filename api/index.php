@@ -5,11 +5,12 @@
  */
 declare(strict_types=1);
 
-// === FORCE CUSTOM DOMAIN (fixes subpages showing Vercel URL) ===
+// === FORCE CUSTOM DOMAIN FOR ALL REQUESTS ===
 $_SERVER['HTTP_HOST'] = 'icomplypropertyservices.co.uk';
+$_SERVER['SERVER_NAME'] = 'icomplypropertyservices.co.uk';
 $base_url = 'https://icomplypropertyservices.co.uk';
 
-// ===============================================================
+// =============================================
 
 $root = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'website';
 if (!is_dir($root)) {
