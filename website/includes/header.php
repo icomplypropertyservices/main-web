@@ -277,11 +277,27 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
                     Services <span class="text-xs opacity-60">▼</span>
                 </a>
                 <div class="nav-panel">
-                    <div class="nav-panel-inner w-72 max-h-96 overflow-auto py-2">
-                        <a href="<?= url('/pages/services/index.php') ?>" class="block px-5 py-2.5 font-semibold text-[#ff6b00] hover:bg-zinc-50 border-b">View all services →</a>
-                        <?php foreach ($services as $slug => $name): ?>
-                            <a href="<?= url('/pages/services/' . rawurlencode($slug) . '.php') ?>" class="block px-5 py-2.5 hover:bg-zinc-50 text-black"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></a>
-                        <?php endforeach; ?>
+                    <div class="nav-panel-inner w-[22rem] max-h-[28rem] overflow-auto py-2">
+                        <a href="<?= url('/pages/services/index.php') ?>" class="block px-5 py-2.5 font-semibold text-[#ff6b00] hover:bg-zinc-50 border-b">View all <?= count($services) ?> services →</a>
+                        <?php
+                        $navCats = function_exists('getServiceCategories') ? getServiceCategories() : [];
+                        if ($navCats):
+                            foreach ($navCats as $catKey => $cat):
+                                $catServices = function_exists('getServicesInCategory') ? getServicesInCategory($catKey) : [];
+                                if (!$catServices) {
+                                    continue;
+                                }
+                                ?>
+                                <div class="px-5 pt-3 pb-1 text-[10px] uppercase tracking-wider text-zinc-400 font-semibold"><?= htmlspecialchars($cat['label'] ?? $catKey, ENT_QUOTES, 'UTF-8') ?></div>
+                                <?php foreach ($catServices as $slug => $name): ?>
+                                    <a href="<?= url('/pages/services/' . rawurlencode($slug) . '.php') ?>" class="block px-5 py-1.5 hover:bg-zinc-50 text-sm text-black"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></a>
+                                <?php endforeach;
+                            endforeach;
+                        else:
+                            foreach ($services as $slug => $name): ?>
+                                <a href="<?= url('/pages/services/' . rawurlencode($slug) . '.php') ?>" class="block px-5 py-2.5 hover:bg-zinc-50 text-black"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></a>
+                            <?php endforeach;
+                        endif; ?>
                     </div>
                 </div>
             </div>
@@ -374,10 +390,26 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     <div id="mobile-nav" class="border-t bg-white">
         <div class="max-w-7xl mx-auto px-4 py-4 space-y-1 text-sm font-medium">
             <a href="<?= htmlspecialchars($homeUrl, ENT_QUOTES, 'UTF-8') ?>" class="block px-3 py-3 rounded-xl hover:bg-zinc-50">Home</a>
-            <a href="<?= url('/pages/services/index.php') ?>" class="block px-3 py-3 rounded-xl hover:bg-zinc-50 font-semibold">All Services</a>
-            <?php foreach ($services as $slug => $name): ?>
-                <a href="<?= url('/pages/services/' . rawurlencode($slug) . '.php') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></a>
-            <?php endforeach; ?>
+            <a href="<?= url('/pages/services/index.php') ?>" class="block px-3 py-3 rounded-xl hover:bg-zinc-50 font-semibold">All Services (<?= count($services) ?>)</a>
+            <?php
+            $mobCats = function_exists('getServiceCategories') ? getServiceCategories() : [];
+            if ($mobCats):
+                foreach ($mobCats as $catKey => $cat):
+                    $catServices = function_exists('getServicesInCategory') ? getServicesInCategory($catKey) : [];
+                    if (!$catServices) {
+                        continue;
+                    }
+                    ?>
+                    <div class="px-3 pt-2 pb-1 text-[10px] uppercase tracking-wider text-zinc-400 font-semibold"><?= htmlspecialchars($cat['label'] ?? $catKey, ENT_QUOTES, 'UTF-8') ?></div>
+                    <?php foreach ($catServices as $slug => $name): ?>
+                        <a href="<?= url('/pages/services/' . rawurlencode($slug) . '.php') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></a>
+                    <?php endforeach;
+                endforeach;
+            else:
+                foreach ($services as $slug => $name): ?>
+                    <a href="<?= url('/pages/services/' . rawurlencode($slug) . '.php') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></a>
+                <?php endforeach;
+            endif; ?>
             <a href="<?= url('/pages/areas/index.php') ?>" class="block px-3 py-3 rounded-xl hover:bg-zinc-50 font-semibold mt-2">Areas We Cover</a>
             <?php foreach (array_slice($areas, 0, 12) as $area): ?>
                 <a href="<?= url('/pages/areas/' . areaSlug($area) . '.php') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50"><?= htmlspecialchars($area, ENT_QUOTES, 'UTF-8') ?></a>

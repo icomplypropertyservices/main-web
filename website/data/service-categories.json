@@ -1,0 +1,86 @@
+{
+    "fire-safety": {
+        "label": "Fire Safety Systems",
+        "blurb": "Detection, suppression, doors, FRA and life-safety compliance across the North West.",
+        "services": [
+            "fire-alarms",
+            "emergency-lighting",
+            "aov-air-handling",
+            "fire-risk-assessments",
+            "fire-extinguishers",
+            "fire-doors",
+            "fire-stopping",
+            "fire-suppression",
+            "sprinkler-systems",
+            "dry-risers",
+            "fire-signage",
+            "evacuation-alerts",
+            "kitchen-fire-suppression",
+            "fire-compartmentation"
+        ]
+    },
+    "electrical-gas": {
+        "label": "Electrical & Gas",
+        "blurb": "EICR, rewires, EV, gas safety and landlord certificates.",
+        "services": [
+            "electrical",
+            "gas-systems",
+            "electrics-first-fix"
+        ]
+    },
+    "security-care": {
+        "label": "Security & Care Systems",
+        "blurb": "CCTV, access, door entry, intercoms, nurse call and intruder alarms.",
+        "services": [
+            "cctv",
+            "access-control",
+            "door-entry",
+            "intercoms",
+            "intruder-alarm",
+            "nurse-call"
+        ]
+    },
+    "professional": {
+        "label": "Professional Services",
+        "blurb": "Landlord packages, FM support, surveys, CDM and compliance consultancy.",
+        "services": [
+            "landlord-compliance",
+            "facilities-management",
+            "building-maintenance",
+            "project-management",
+            "building-surveys",
+            "cdm-support",
+            "property-refurbishment-pm",
+            "compliance-consultancy"
+        ]
+    },
+    "construction": {
+        "label": "Construction & Fit-Out",
+        "blurb": "Kitchens, bathrooms, renovation, plastering, joinery and full property works.",
+        "services": [
+            "kitchens",
+            "bathrooms",
+            "renovation",
+            "plastering",
+            "tiling",
+            "painting-decorating",
+            "joinery",
+            "carpentry",
+            "flooring",
+            "plumbing",
+            "heating",
+            "roofing",
+            "brickwork",
+            "dry-lining",
+            "loft-conversions",
+            "extensions",
+            "insulation",
+            "damp-proofing",
+            "windows-doors",
+            "rendering",
+            "groundworks",
+            "landscaping",
+            "commercial-fit-out"
+        ]
+    }
+}

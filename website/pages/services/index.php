@@ -4,13 +4,14 @@
  */
 require_once __DIR__ . '/../../config.php';
 
-$pageTitle = 'All Services | Property Compliance North West';
-$metaDesc = 'Browse all Icomply property compliance services: electrical, fire alarms, emergency lighting, gas, AOV, nurse call, CCTV, access control and more across Greater Manchester and the North West.';
-$metaKeywords = 'property compliance services, EICR, fire alarm installation, emergency lighting, gas safety, CCTV, access control, Manchester, Stockport, North West';
+$pageTitle = 'All Services | Fire Safety, Professional & Construction | North West';
+$metaDesc = 'Browse Icomply services: fire safety systems and fire risk assessments, electrical, gas, security, professional services, kitchens, bathrooms, renovation and construction across the North West.';
+$metaKeywords = 'fire risk assessment, fire safety systems, kitchen fitting, bathroom renovation, plastering, landlord compliance, EICR, CCTV, Manchester, Stockport, North West';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 
 $services = getServices();
 $areas = getAreas();
+$categories = getServiceCategories();
 
 // Full blurbs via getServiceBlurb($slug) — see includes/content.php / config.php
 
@@ -46,17 +47,19 @@ require SITE_ROOT . '/includes/header.php';
                 <?= count($services) ?> core services · North West
             </div>
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
-                Property compliance<br>
-                <span class="text-[#ff6b00]">services</span>
+                Fire safety, professional<br>
+                <span class="text-[#ff6b00]">&amp; construction services</span>
             </h1>
             <p class="mt-6 text-lg md:text-xl text-white/80 max-w-2xl">
-                Installation, maintenance, testing and certification — electrical, fire, gas, emergency lighting,
-                security and more. Fixed-price quotes from Stockport-based engineers covering <?= count($areas) ?>+ towns.
+                Full fire safety systems including fire risk assessments, electrical &amp; gas, security,
+                professional compliance support, plus kitchens, bathrooms, renovation and building trades —
+                fixed-price quotes across <?= count($areas) ?>+ North West towns.
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
-                <a href="#services" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Browse services</a>
-                <a href="<?= url('/pages/areas/index.php') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">Find your area</a>
-                <a href="#quote" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Free quote</a>
+                <a href="#fire-safety" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Fire safety</a>
+                <a href="#professional" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">Professional</a>
+                <a href="#construction" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Construction</a>
+                <a href="<?= url('/pages/areas/index.php') ?>" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Areas</a>
             </div>
         </div>
     </div>
@@ -84,42 +87,57 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
-<!-- SERVICES GRID -->
-<section id="services" class="max-w-7xl mx-auto px-6 py-16 md:py-20">
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
-        <div>
-            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Full range</div>
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Everything for property compliance</h2>
-            <p class="mt-2 text-zinc-600 max-w-xl">From landlord certificates to commercial fire systems — open a service hub for manufacturers, local pages and a quote form.</p>
+<!-- CATEGORY GRIDS -->
+<?php
+$catAlt = false;
+foreach ($categories as $catKey => $cat):
+    $catServices = getServicesInCategory($catKey);
+    if (!$catServices) {
+        continue;
+    }
+    $sectionClass = $catAlt ? 'bg-zinc-50 border-y' : '';
+    $catAlt = !$catAlt;
+?>
+<section id="<?= htmlspecialchars($catKey, ENT_QUOTES, 'UTF-8') ?>" class="<?= $sectionClass ?> scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+            <div>
+                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold"><?= htmlspecialchars($cat['label'] ?? $catKey, ENT_QUOTES, 'UTF-8') ?></div>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2"><?= htmlspecialchars($cat['label'] ?? $catKey, ENT_QUOTES, 'UTF-8') ?></h2>
+                <?php if (!empty($cat['blurb'])): ?>
+                    <p class="mt-2 text-zinc-600 max-w-2xl"><?= htmlspecialchars($cat['blurb'], ENT_QUOTES, 'UTF-8') ?></p>
+                <?php endif; ?>
+            </div>
+            <span class="text-sm text-zinc-500"><?= count($catServices) ?> services · <?= count($areas) ?>+ towns each</span>
         </div>
-        <a href="<?= url('/shop/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Trade shop →</a>
-    </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <?php foreach ($services as $slug => $name):
-            $blurb = getServiceBlurb($slug);
-            $img = url('/assets/images/services/' . $slug . '.jpg');
-        ?>
-        <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
-           class="service-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
-            <div class="h-44 bg-zinc-100 overflow-hidden">
-                <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>"
-                     alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> services by Icomply Property Services"
-                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                     loading="lazy"
-                     onerror="this.parentElement.style.display='none'">
-            </div>
-            <div class="p-6 flex-1 flex flex-col">
-                <h2 class="font-semibold text-xl text-black tracking-tight"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></h2>
-                <p class="text-sm text-zinc-600 mt-2 flex-1"><?= htmlspecialchars($blurb, ENT_QUOTES, 'UTF-8') ?></p>
-                <div class="mt-5 flex items-center justify-between">
-                    <span class="text-sm font-semibold text-[#ff6b00]">View service →</span>
-                    <span class="text-xs text-zinc-400"><?= count($areas) ?>+ areas</span>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <?php foreach ($catServices as $slug => $name):
+                $blurb = getServiceBlurb($slug);
+                $img = url('/assets/images/services/' . $slug . '.jpg');
+            ?>
+            <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
+               class="service-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
+                <div class="h-44 bg-zinc-100 overflow-hidden">
+                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>"
+                         alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> services by Icomply Property Services"
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                         loading="lazy"
+                         onerror="this.src='<?= htmlspecialchars(url('/assets/images/services/fire-alarms.jpg'), ENT_QUOTES, 'UTF-8') ?>'">
                 </div>
-            </div>
-        </a>
-        <?php endforeach; ?>
+                <div class="p-6 flex-1 flex flex-col">
+                    <h3 class="font-semibold text-xl text-black tracking-tight"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></h3>
+                    <p class="text-sm text-zinc-600 mt-2 flex-1"><?= htmlspecialchars($blurb, ENT_QUOTES, 'UTF-8') ?></p>
+                    <div class="mt-5 flex items-center justify-between">
+                        <span class="text-sm font-semibold text-[#ff6b00]">View service →</span>
+                        <span class="text-xs text-zinc-400"><?= count($areas) ?>+ areas</span>
+                    </div>
+                </div>
+            </a>
+            <?php endforeach; ?>
+        </div>
     </div>
 </section>
+<?php endforeach; ?>
 
 <!-- POPULAR COMBOS -->
 <section class="bg-zinc-50 border-y">

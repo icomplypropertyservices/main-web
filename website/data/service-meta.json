@@ -1,57 +1,272 @@
 {
-  "electrical": {
-    "blurb": "EICR, rewires, consumer units, EV chargers, PAT and commercial electrical installs to BS 7671.",
-    "short": "EICR, rewires, EV chargers, PAT & commercial installs",
-    "standards": "BS 7671 (18th Edition) · EICR · Part P · EV charger regs"
-  },
-  "fire-alarms": {
-    "blurb": "BS 5839 design, install, service and certification for addressable, conventional and wireless systems.",
-    "short": "BS 5839 design, install, service & certification",
-    "standards": "BS 5839-1 · BS 5839-6 · BS EN 54 · Fire Safety Order"
-  },
-  "emergency-lighting": {
-    "blurb": "BS 5266 testing, upgrades, LED conversions and monthly/annual certification.",
-    "short": "BS 5266 testing, upgrades & LED conversions",
-    "standards": "BS 5266 · BS EN 1838 · monthly & annual tests"
-  },
-  "aov-air-handling": {
-    "blurb": "Smoke vents, AOV panels, AHU controls and smoke-control system maintenance.",
-    "short": "Smoke vents, AOV panels & AHU controls",
-    "standards": "BS 9991 · EN 12101 · smoke control guidance"
-  },
-  "nurse-call": {
-    "blurb": "Care home and hospital nurse call design, install, upgrades and planned maintenance.",
-    "short": "Care home & hospital nurse call systems",
-    "standards": "HTM 08-03 · care home & hospital specifications"
-  },
-  "gas-systems": {
-    "blurb": "CP12 / CP44 landlord certificates, boilers, commercial gas and safety checks.",
-    "short": "CP12/CP44 landlord certs, boilers & commercial gas",
-    "standards": "Gas Safe · CP12 / CP44 · manufacturer servicing"
-  },
-  "intruder-alarm": {
-    "blurb": "PD 6662 / BS EN 50131 wired and wireless intruder systems with monitoring options.",
-    "short": "Wired & wireless intruder systems",
-    "standards": "PD 6662 · BS EN 50131 · NSI / SSAIB style installs"
-  },
-  "cctv": {
-    "blurb": "IP and HD CCTV design, install, remote viewing and NVR/DVR recording.",
-    "short": "IP / HD CCTV design, install & monitoring setup",
-    "standards": "BS EN 62676 · GDPR / DPA camera siting"
-  },
-  "access-control": {
-    "blurb": "Paxton, HID, Salto door access, credentials and fire-override integration.",
-    "short": "Paxton, HID, Salto door access",
-    "standards": "BS EN 50133 · EN 60839 · fire-release integration"
-  },
-  "door-entry": {
-    "blurb": "Video and audio door entry for flats, multi-tenant and commercial sites.",
-    "short": "Video & audio door entry for flats & sites",
-    "standards": "BS EN 60839 · multi-tenant residential standards"
-  },
-  "intercoms": {
-    "blurb": "Multi-tenant and commercial intercom systems with master/substation setups.",
-    "short": "Multi-tenant & commercial intercom systems",
-    "standards": "Commercial intercom & master-station best practice"
-  }
+    "electrical": {
+        "blurb": "EICR, rewires, consumer units, EV chargers, PAT and commercial electrical installs to BS 7671.",
+        "short": "EICR, rewires, EV chargers, PAT & commercial installs",
+        "standards": "BS 7671 (18th Edition) · EICR · Part P · EV charger regs"
+    },
+    "fire-alarms": {
+        "blurb": "BS 5839 design, install, service and certification for addressable, conventional and wireless systems.",
+        "short": "BS 5839 design, install, service & certification",
+        "standards": "BS 5839-1 · BS 5839-6 · BS EN 54 · Fire Safety Order"
+    },
+    "emergency-lighting": {
+        "blurb": "BS 5266 testing, upgrades, LED conversions and monthly/annual certification.",
+        "short": "BS 5266 testing, upgrades & LED conversions",
+        "standards": "BS 5266 · BS EN 1838 · monthly & annual tests"
+    },
+    "aov-air-handling": {
+        "blurb": "Smoke vents, AOV panels, smoke control and AHU-related life-safety systems.",
+        "short": "Smoke vents, AOV panels & smoke control",
+        "standards": "BS 9991 · EN 12101 · smoke control guidance"
+    },
+    "nurse-call": {
+        "blurb": "Care home and hospital nurse call design, install, upgrades and planned maintenance.",
+        "short": "Care home & hospital nurse call systems",
+        "standards": "HTM 08-03 · care home & hospital specifications"
+    },
+    "gas-systems": {
+        "blurb": "CP12 / CP44 landlord certificates, boilers, commercial gas and safety checks.",
+        "short": "CP12/CP44 landlord certs, boilers & commercial gas",
+        "standards": "Gas Safe · CP12 / CP44 · manufacturer servicing"
+    },
+    "intruder-alarm": {
+        "blurb": "PD 6662 / BS EN 50131 wired and wireless intruder systems with monitoring options.",
+        "short": "Wired & wireless intruder systems",
+        "standards": "PD 6662 · BS EN 50131"
+    },
+    "cctv": {
+        "blurb": "IP and HD CCTV design, install, remote viewing and NVR/DVR recording.",
+        "short": "IP / HD CCTV design, install & monitoring",
+        "standards": "BS EN 62676 · GDPR / DPA camera siting"
+    },
+    "access-control": {
+        "blurb": "Paxton, HID, Salto door access, credentials and fire-override integration.",
+        "short": "Paxton, HID, Salto door access",
+        "standards": "BS EN 50133 · EN 60839 · fire-release integration"
+    },
+    "door-entry": {
+        "blurb": "Video and audio door entry for flats, multi-tenant and commercial sites.",
+        "short": "Video & audio door entry",
+        "standards": "BS EN 60839 · multi-tenant residential standards"
+    },
+    "intercoms": {
+        "blurb": "Multi-tenant and commercial intercom systems with master/substation setups.",
+        "short": "Multi-tenant & commercial intercoms",
+        "standards": "Commercial intercom best practice"
+    },
+    "fire-risk-assessments": {
+        "blurb": "Suitable and sufficient fire risk assessments for landlords, commercial sites, HMOs and multi-occupied buildings.",
+        "short": "FRA for landlords, HMO & commercial sites",
+        "standards": "Regulatory Reform (Fire Safety) Order 2005 · Fire Safety Act · PAS 79 guidance"
+    },
+    "fire-extinguishers": {
+        "blurb": "Supply, install, service and certificate portable fire extinguishers to BS 5306.",
+        "short": "Extinguisher supply, service & BS 5306 certs",
+        "standards": "BS 5306 · manufacturer servicing schedules"
+    },
+    "fire-doors": {
+        "blurb": "Fire door surveys, installation, repairs, seals, closers and certification for blocks and commercial buildings.",
+        "short": "Fire door survey, install, repair & certify",
+        "standards": "BS 476 / EN 1634 · BS 8214 · Fire Safety Act"
+    },
+    "fire-stopping": {
+        "blurb": "Passive fire protection — penetration seals, cavity barriers and compartmentation reinstatement.",
+        "short": "Penetration seals & compartmentation works",
+        "standards": "BS 476 · manufacturer tested systems · Building Regs B"
+    },
+    "fire-suppression": {
+        "blurb": "Specialist suppression systems for plant rooms, server rooms and high-risk spaces.",
+        "short": "Specialist suppression for high-risk spaces",
+        "standards": "BS EN 15004 · manufacturer design standards"
+    },
+    "sprinkler-systems": {
+        "blurb": "Sprinkler design support, installation liaison, inspection and maintenance for commercial sites.",
+        "short": "Sprinkler inspection & maintenance support",
+        "standards": "BS EN 12845 · LPC rules · insurer requirements"
+    },
+    "dry-risers": {
+        "blurb": "Dry and wet riser inspection, testing, maintenance and remedial works for multi-storey buildings.",
+        "short": "Dry/wet riser test & maintenance",
+        "standards": "BS 9990 · BS 5041 · fire service access"
+    },
+    "fire-signage": {
+        "blurb": "Fire exit, escape route, extinguisher and mandatory safety signage design and installation.",
+        "short": "Fire exit & safety signage packages",
+        "standards": "BS ISO 7010 · BS 5499 · escape route guidance"
+    },
+    "evacuation-alerts": {
+        "blurb": "Evacuation alert systems, deaf alerters and PEEP-friendly life-safety notifications.",
+        "short": "Evacuation alerts & deaf alerters",
+        "standards": "BS 8629 · BS 5839-9 · inclusive evacuation"
+    },
+    "kitchen-fire-suppression": {
+        "blurb": "Commercial kitchen canopy and cooking-range suppression install and service.",
+        "short": "Commercial kitchen suppression systems",
+        "standards": "LPS 1223 · manufacturer kitchen systems"
+    },
+    "fire-compartmentation": {
+        "blurb": "Compartmentation surveys, drawings support and remedial fire-separating construction.",
+        "short": "Compartmentation surveys & remedial works",
+        "standards": "Building Regs B · BS 9991 / BS 9999 guidance"
+    },
+    "landlord-compliance": {
+        "blurb": "Bundled landlord compliance — EICR, gas, fire, emergency lighting and documentation packs.",
+        "short": "Bundled landlord certificates & packs",
+        "standards": "Homes Act · Fire Safety Act · landlord regs"
+    },
+    "facilities-management": {
+        "blurb": "Planned maintenance, multi-site compliance scheduling and FM engineer call-outs.",
+        "short": "PPM, multi-site compliance & call-outs",
+        "standards": "SFG20-style PPM · site-specific specs"
+    },
+    "building-maintenance": {
+        "blurb": "Reactive and planned building maintenance for residential blocks and commercial estates.",
+        "short": "Reactive & planned building maintenance",
+        "standards": "Site RAMS · landlord & commercial SLAs"
+    },
+    "project-management": {
+        "blurb": "On-site coordination for multi-trade compliance and refurbishment programmes.",
+        "short": "Multi-trade programme coordination",
+        "standards": "CDM 2015 awareness · programme control"
+    },
+    "building-surveys": {
+        "blurb": "Condition surveys, snagging and pre-works surveys to scope compliance and fabric repairs.",
+        "short": "Condition, snagging & pre-works surveys",
+        "standards": "RICS-style condition reporting practice"
+    },
+    "cdm-support": {
+        "blurb": "Practical CDM support for smaller works — pre-construction info, RAMS coordination and handover.",
+        "short": "CDM paperwork & site coordination support",
+        "standards": "CDM 2015 · HSE guidance"
+    },
+    "property-refurbishment-pm": {
+        "blurb": "Refurbishment sequencing for kitchens, bathrooms and multi-room upgrades with compliance in mind.",
+        "short": "Refurb sequencing with compliance built-in",
+        "standards": "Building Regs · landlord void standards"
+    },
+    "compliance-consultancy": {
+        "blurb": "Independent compliance advice for portfolios — prioritised action plans and audit readiness.",
+        "short": "Portfolio compliance advice & action plans",
+        "standards": "Fire Safety Order · BS standards suite"
+    },
+    "kitchens": {
+        "blurb": "Supply and fit kitchens for homes, HMOs and light commercial — units, worktops, sinks and first/second fix coordination.",
+        "short": "Kitchen supply & fit for homes and HMOs",
+        "standards": "Building Regs · gas/electric safe isolation"
+    },
+    "bathrooms": {
+        "blurb": "Full bathroom and wet-room fitting — sanitaryware, tiling coordination, ventilation and waterproofing.",
+        "short": "Bathroom & wet-room fitting",
+        "standards": "Part P · Part F · waterproofing best practice"
+    },
+    "renovation": {
+        "blurb": "End-to-end property renovation and void refurbs for landlords, investors and homeowners.",
+        "short": "Full property & void renovations",
+        "standards": "Building Regs · landlord letting standards"
+    },
+    "plastering": {
+        "blurb": "Skim, board finish, patch repairs and full-room plastering for residential and commercial interiors.",
+        "short": "Skim, board finish & patch plastering",
+        "standards": "BS EN 13914 · trade finish standards"
+    },
+    "tiling": {
+        "blurb": "Wall and floor tiling for kitchens, bathrooms and commercial wet areas with correct adhesives and tanking.",
+        "short": "Wall & floor tiling with tanking",
+        "standards": "BS 5385 · manufacturer adhesive systems"
+    },
+    "painting-decorating": {
+        "blurb": "Interior and exterior painting, decorating and redecoration packages for voids and occupied homes.",
+        "short": "Interior & exterior redecoration",
+        "standards": "Trade prep standards · low-VOC options"
+    },
+    "joinery": {
+        "blurb": "Custom joinery — doors, frames, cupboards, boxing and built-in storage.",
+        "short": "Doors, frames, cupboards & built-ins",
+        "standards": "BS 4787 doors · site joinery practice"
+    },
+    "carpentry": {
+        "blurb": "First and second fix carpentry, stud walls, skirting, architraves and site carpentry packages.",
+        "short": "1st/2nd fix carpentry packages",
+        "standards": "NHBC-style detailing · site practice"
+    },
+    "flooring": {
+        "blurb": "Laminate, vinyl, engineered wood and commercial flooring supply and installation.",
+        "short": "Laminate, vinyl & engineered flooring",
+        "standards": "Manufacturer install warranties · subfloor prep"
+    },
+    "plumbing": {
+        "blurb": "Domestic and light commercial plumbing — bathrooms, kitchens, leaks, radiators and pipework.",
+        "short": "Domestic & light commercial plumbing",
+        "standards": "Water Regs · WRAS fittings · Gas Safe where required"
+    },
+    "heating": {
+        "blurb": "Boiler installs, radiator upgrades, system flushes and heating controls for homes and small commercial.",
+        "short": "Boilers, radiators & heating controls",
+        "standards": "Gas Safe · manufacturer instructions · Building Regs"
+    },
+    "roofing": {
+        "blurb": "Roof repairs, re-roofing, flat roofs, guttering and chimney works for residential properties.",
+        "short": "Roof repairs, flat roofs & gutters",
+        "standards": "BS 5534 · manufacturer roofing systems"
+    },
+    "brickwork": {
+        "blurb": "Brickwork repairs, repointing, openings and small masonry builds.",
+        "short": "Repointing, repairs & small masonry",
+        "standards": "BS 5628 / EN 1996 practice"
+    },
+    "dry-lining": {
+        "blurb": "Metal stud, plasterboard partitions, acoustic linings and fire-rated boarding.",
+        "short": "Partitions, acoustic & fire-rated board",
+        "standards": "BS 8212 · fire-rated board systems"
+    },
+    "loft-conversions": {
+        "blurb": "Loft conversion building works with insulation, stairs, fire doors and building control support.",
+        "short": "Loft conversion building packages",
+        "standards": "Building Regs Parts B/L/K · Party Wall awareness"
+    },
+    "extensions": {
+        "blurb": "Single-storey and small extension building packages — structure, envelope and first-fix readiness.",
+        "short": "Single-storey & small extensions",
+        "standards": "Building Regs · structural design input"
+    },
+    "insulation": {
+        "blurb": "Loft, cavity liaison, internal wall and floor insulation upgrades for comfort and EPC gains.",
+        "short": "Loft, IWI and floor insulation upgrades",
+        "standards": "Part L · PAS 2035 awareness where relevant"
+    },
+    "damp-proofing": {
+        "blurb": "Rising damp, penetrating damp diagnosis support, tanking and remedial damp treatments.",
+        "short": "Damp diagnosis, tanking & treatments",
+        "standards": "BS 6576 · manufacturer damp systems"
+    },
+    "windows-doors": {
+        "blurb": "uPVC and composite window and door replacement, fire door sets and ironmongery upgrades.",
+        "short": "Windows, doors & fire door sets",
+        "standards": "Part L · Part Q · fire door certification"
+    },
+    "rendering": {
+        "blurb": "External rendering, repairs and weatherproof coatings for houses and small blocks.",
+        "short": "External render & weatherproof coatings",
+        "standards": "BS EN 13914 · manufacturer render systems"
+    },
+    "groundworks": {
+        "blurb": "Foundations for small builds, drainage, hardstanding and site preparation.",
+        "short": "Foundations, drainage & hardstanding",
+        "standards": "Building Regs · NHBC-style groundworks practice"
+    },
+    "landscaping": {
+        "blurb": "Hard landscaping, fencing, patios and external works for residential plots.",
+        "short": "Patios, fencing & external works",
+        "standards": "Good practice drainage · boundary awareness"
+    },
+    "electrics-first-fix": {
+        "blurb": "First-fix electrical for new builds, renovations and conversions before plaster and second fix.",
+        "short": "First-fix electrics for renovations",
+        "standards": "BS 7671 · Part P notification where required"
+    },
+    "commercial-fit-out": {
+        "blurb": "Office and light commercial fit-out — partitions, services coordination, finishes and compliance.",
+        "short": "Office & light commercial fit-out",
+        "standards": "Building Regs · fire strategy coordination"
+    }
 }

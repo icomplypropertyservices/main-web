@@ -114,6 +114,39 @@ function getServices(): array {
     return array_merge($base, $custom);
 }
 
+/**
+ * Grouped service catalogue for nav / hubs.
+ * @return array<string, array{label:string,blurb?:string,services:list<string>}>
+ */
+function getServiceCategories(): array {
+    $cats = loadJsonData('service-categories', []);
+    if ($cats) {
+        return $cats;
+    }
+    // Fallback: single bucket if categories file missing
+    return [
+        'all' => [
+            'label' => 'All services',
+            'blurb' => 'Full service catalogue',
+            'services' => array_keys(getServices()),
+        ],
+    ];
+}
+
+/** Services for a category key (only those present in getServices()). */
+function getServicesInCategory(string $categoryKey): array {
+    $all = getServices();
+    $cats = getServiceCategories();
+    $slugs = $cats[$categoryKey]['services'] ?? [];
+    $out = [];
+    foreach ($slugs as $slug) {
+        if (isset($all[$slug])) {
+            $out[$slug] = $all[$slug];
+        }
+    }
+    return $out;
+}
+
 /** @deprecated use getServices() — kept for templates that still read $services */
 function loadServices(): array {
     return loadJsonData('services-custom', []);
@@ -149,6 +182,9 @@ function keywordDisplayName($slugOrName): string {
         'Eicr' => 'EICR', 'Pat' => 'PAT', 'Ev' => 'EV', 'Aov' => 'AOV', 'Ahu' => 'AHU',
         'Cctv' => 'CCTV', 'Ip' => 'IP', 'Hd' => 'HD', 'Bs' => 'BS', 'Htm' => 'HTM',
         'Niceic' => 'NICEIC', 'Lpg' => 'LPG', 'Ptz' => 'PTZ', 'Cp44' => 'CP44',
+        'Cp12' => 'CP12', 'Fra' => 'FRA', 'Cdm' => 'CDM', 'Hmo' => 'HMO', 'Epc' => 'EPC',
+        'Fd30' => 'FD30', 'Fd60' => 'FD60', 'Anpr' => 'ANPR', 'Nvr' => 'NVR', 'Dvr' => 'DVR',
+        'Ppm' => 'PPM', 'Gsm' => 'GSM', 'Epdm' => 'EPDM', 'Pir' => 'PIR',
     ];
     foreach ($acronyms as $from => $to) {
         $name = preg_replace('/\b' . preg_quote($from, '/') . '\b/', $to, $name);

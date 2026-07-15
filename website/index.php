@@ -5,13 +5,14 @@
 require_once __DIR__ . '/config.php';
 require_once SITE_ROOT . '/includes/shopify.php';
 
-$pageTitle = 'Property Compliance Experts | North West';
-$metaDesc = 'Icomply Property Services — EICR, fire alarms, gas safety, emergency lighting, CCTV & access control across Greater Manchester and the North West. Free quotes. Trade shop.';
-$metaKeywords = 'property compliance Manchester, EICR Stockport, fire alarm installation, gas safety certificate, emergency lighting, CCTV installation North West';
+$pageTitle = 'Fire Safety, Professional & Construction Services | North West';
+$metaDesc = 'Icomply Property Services — fire risk assessments, fire safety systems, electrical, gas, security, professional services, kitchens, bathrooms and renovation across Greater Manchester and the North West.';
+$metaKeywords = 'fire risk assessment Stockport, fire safety systems Manchester, kitchen fitting North West, bathroom renovation, EICR, landlord compliance';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 
 $services = getServices();
 $areas = getAreas();
+$categories = getServiceCategories();
 $catalog = getShopCatalog();
 $featuredProducts = array_slice($catalog['products'], 0, 4);
 $shopCollections = array_slice($catalog['collections'], 0, 4);
@@ -51,11 +52,12 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 Greater Manchester &amp; North West
             </div>
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
-                Property compliance.<br>
-                <span class="text-[#ff6b00]">Installed, tested, certified.</span>
+                Fire safety. Professional.<br>
+                <span class="text-[#ff6b00]">Construction. Certified.</span>
             </h1>
             <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl">
-                Electrical, fire alarms, gas, emergency lighting, AOV, nurse call, CCTV and access control —
+                Fire risk assessments and full fire safety systems, electrical &amp; gas, security,
+                landlord compliance, kitchens, bathrooms, renovation and building trades —
                 plus a trade shop for kits and parts.
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
@@ -106,36 +108,56 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
     </div>
 </section>
 
-<!-- SERVICES GRID -->
+<!-- SERVICES BY CATEGORY -->
 <section class="max-w-7xl mx-auto px-6 py-16 md:py-20">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
         <div>
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Services</div>
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Everything for property compliance</h2>
-            <p class="mt-2 text-zinc-600 max-w-xl">From landlord certificates to commercial fire systems — install, maintain and certify.</p>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2"><?= count($services) ?> services · <?= count($areas) ?>+ towns</h2>
+            <p class="mt-2 text-zinc-600 max-w-xl">Fire safety systems, professional support and construction trades — each with local area pages.</p>
         </div>
-        <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All services →</a>
+        <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Full catalogue →</a>
     </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-        <?php foreach ($services as $slug => $name):
-            $blurb = getServiceBlurb($slug, true);
-            $img = url('/assets/images/services/' . $slug . '.jpg');
-        ?>
-        <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
-           class="service-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
-            <div class="h-36 bg-zinc-100 overflow-hidden">
-                <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>"
-                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy"
-                     onerror="this.parentElement.style.display='none'">
+    <?php foreach ($categories as $catKey => $cat):
+        $catServices = getServicesInCategory($catKey);
+        if (!$catServices) {
+            continue;
+        }
+        // Homepage: show up to 8 per category for scannability
+        $show = array_slice($catServices, 0, 8, true);
+    ?>
+    <div class="mb-12" id="home-<?= htmlspecialchars($catKey, ENT_QUOTES, 'UTF-8') ?>">
+        <div class="flex items-end justify-between gap-4 mb-5">
+            <div>
+                <h3 class="text-xl md:text-2xl font-semibold text-black"><?= htmlspecialchars($cat['label'] ?? $catKey, ENT_QUOTES, 'UTF-8') ?></h3>
+                <?php if (!empty($cat['blurb'])): ?>
+                    <p class="text-sm text-zinc-600 mt-1 max-w-2xl"><?= htmlspecialchars($cat['blurb'], ENT_QUOTES, 'UTF-8') ?></p>
+                <?php endif; ?>
             </div>
-            <div class="p-5 flex-1 flex flex-col">
-                <h3 class="font-semibold text-lg text-black"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></h3>
-                <p class="text-sm text-zinc-600 mt-2 flex-1"><?= htmlspecialchars($blurb, ENT_QUOTES, 'UTF-8') ?></p>
-                <span class="mt-4 text-sm font-semibold text-[#ff6b00]">Explore →</span>
-            </div>
-        </a>
-        <?php endforeach; ?>
+            <a href="<?= url('/pages/services/index.php') ?>#<?= rawurlencode($catKey) ?>" class="text-sm font-semibold text-[#ff6b00] shrink-0">All →</a>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            <?php foreach ($show as $slug => $name):
+                $blurb = getServiceBlurb($slug, true);
+                $img = url('/assets/images/services/' . $slug . '.jpg');
+            ?>
+            <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
+               class="service-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
+                <div class="h-36 bg-zinc-100 overflow-hidden">
+                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>"
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy"
+                         onerror="this.src='<?= htmlspecialchars(url('/assets/images/services/fire-alarms.jpg'), ENT_QUOTES, 'UTF-8') ?>'">
+                </div>
+                <div class="p-5 flex-1 flex flex-col">
+                    <h4 class="font-semibold text-lg text-black"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></h4>
+                    <p class="text-sm text-zinc-600 mt-2 flex-1"><?= htmlspecialchars($blurb, ENT_QUOTES, 'UTF-8') ?></p>
+                    <span class="mt-4 text-sm font-semibold text-[#ff6b00]">Explore →</span>
+                </div>
+            </a>
+            <?php endforeach; ?>
+        </div>
     </div>
+    <?php endforeach; ?>
 </section>
 
 <!-- AUDIENCE CARDS -->

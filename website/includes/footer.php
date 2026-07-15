@@ -52,14 +52,27 @@ if (!$popularAreas) {
                 <?= socialIconsHtml('dark') ?>
             </div>
 
-            <!-- All services -->
+            <!-- Services by category -->
             <div>
                 <div class="font-semibold text-white mb-4 text-base">Services</div>
                 <div class="space-y-2 text-white/75">
-                    <a href="<?= url('/pages/services/index.php') ?>" class="block text-[#ff6b00] hover:text-white font-medium">All services →</a>
-                    <?php foreach ($services as $slug => $name): ?>
-                        <a href="<?= url('/pages/services/' . rawurlencode($slug) . '.php') ?>" class="block hover:text-white"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></a>
-                    <?php endforeach; ?>
+                    <a href="<?= url('/pages/services/index.php') ?>" class="block text-[#ff6b00] hover:text-white font-medium">All <?= count($services) ?> services →</a>
+                    <?php
+                    $footerCats = function_exists('getServiceCategories') ? getServiceCategories() : [];
+                    if ($footerCats):
+                        foreach ($footerCats as $catKey => $cat): ?>
+                            <a href="<?= url('/pages/services/index.php') ?>#<?= rawurlencode($catKey) ?>" class="block hover:text-white font-medium text-white/90"><?= htmlspecialchars($cat['label'] ?? $catKey, ENT_QUOTES, 'UTF-8') ?></a>
+                            <?php
+                            $catSvcs = function_exists('getServicesInCategory') ? array_slice(getServicesInCategory($catKey), 0, 4, true) : [];
+                            foreach ($catSvcs as $slug => $name): ?>
+                                <a href="<?= url('/pages/services/' . rawurlencode($slug) . '.php') ?>" class="block pl-2 text-white/60 hover:text-white text-xs"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></a>
+                            <?php endforeach;
+                        endforeach;
+                    else:
+                        foreach (array_slice($services, 0, 12, true) as $slug => $name): ?>
+                            <a href="<?= url('/pages/services/' . rawurlencode($slug) . '.php') ?>" class="block hover:text-white"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></a>
+                        <?php endforeach;
+                    endif; ?>
                 </div>
             </div>
 
