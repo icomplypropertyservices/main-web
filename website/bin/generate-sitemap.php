@@ -1,6 +1,8 @@
 <?php
 /**
  * Build sitemap index + chunked sitemap files (Google max 50,000 URLs per file).
+ * Uses data catalogues + front-controller virtual routes (stubs not required).
+ *
  * Usage: php bin/generate-sitemap.php
  */
 require_once __DIR__ . '/../config.php';
@@ -31,7 +33,7 @@ $exists = function (string $relPath): bool {
     return is_file(SITE_ROOT . DIRECTORY_SEPARATOR . $relPath);
 };
 
-// Core
+// Core static pages (file check for handcrafted landings only)
 $static = [
     ['/', '1.0', 'index.php'],
     ['/contact.php', '0.85', 'contact.php'],
@@ -49,7 +51,7 @@ $static = [
     ['/pages/maintenance.php', '0.75', 'pages/maintenance.php'],
     ['/pages/emergency.php', '0.75', 'pages/emergency.php'],
     ['/pages/reviews.php', '0.65', 'pages/reviews.php'],
-    ['/pages/site-map.php', '0.45', 'pages/site-map.php'],
+    ['/pages/site-map.php', '0.7', 'pages/site-map.php'],
     ['/pages/resources/index.php', '0.75', 'pages/resources/index.php'],
     ['/pages/resources/eicr-guide.php', '0.7', 'pages/resources/eicr-guide.php'],
     ['/pages/resources/fire-alarm-servicing.php', '0.7', 'pages/resources/fire-alarm-servicing.php'],
@@ -57,7 +59,7 @@ $static = [
     ['/pages/resources/emergency-lighting-testing.php', '0.7', 'pages/resources/emergency-lighting-testing.php'],
     ['/pages/resources/cctv-for-business.php', '0.7', 'pages/resources/cctv-for-business.php'],
     ['/pages/resources/access-control-guide.php', '0.7', 'pages/resources/access-control-guide.php'],
-    ['/pages/services/index.php', '0.9', 'pages/services/index.php'],
+    ['/pages/services/index.php', '0.95', 'pages/services/index.php'],
     ['/pages/areas/index.php', '0.9', 'pages/areas/index.php'],
     ['/pages/manufacturers/index.php', '0.9', 'pages/manufacturers/index.php'],
     ['/pages/keywords/index.php', '0.9', 'pages/keywords/index.php'],
@@ -68,50 +70,42 @@ foreach ($static as [$path, $pri, $file]) {
     }
 }
 
+// Service hubs (virtual via router)
 foreach (getServices() as $slug => $name) {
-    if ($exists('pages/services/' . $slug . '.php')) {
-        $add('/pages/services/' . $slug . '.php', '0.85');
-    }
+    $add('/pages/services/' . $slug . '.php', '0.85');
 }
+
+// Manufacturer hubs (virtual)
 foreach (getManufacturerCatalog() as $slug => $entry) {
-    if ($exists('pages/manufacturers/' . $slug . '.php')) {
-        $add('/pages/manufacturers/' . $slug . '.php', '0.72');
-    }
+    $add('/pages/manufacturers/' . $slug . '.php', '0.72');
 }
+
+// Service × area landings (virtual)
 foreach (getServices() as $sSlug => $sName) {
     foreach (getAreas() as $area) {
-        $aSlug = areaSlug($area);
-        if ($exists('pages/' . $sSlug . '/' . $aSlug . '.php')) {
-            $add('/pages/' . $sSlug . '/' . $aSlug . '.php', '0.55');
-        }
-    }
-}
-foreach (getAreas() as $area) {
-    $aSlug = areaSlug($area);
-    if ($exists('pages/areas/' . $aSlug . '.php')) {
-        $add('/pages/areas/' . $aSlug . '.php', '0.55');
+        $add('/pages/' . $sSlug . '/' . areaSlug($area) . '.php', '0.55');
     }
 }
 
-// Keyword hubs + keyword × area (do not require exists check for every area file — too slow at 100k+;
-// include if keyword hub exists OR directory exists)
-$kwDirsChecked = 0;
+// Area hubs (virtual)
+foreach (getAreas() as $area) {
+    $add('/pages/areas/' . areaSlug($area) . '.php', '0.6');
+}
+
+// Keyword hubs + keyword × area (virtual — full catalogue)
 foreach (array_keys(getMajorKeywords()) as $kw) {
     $kSlug = keywordSlug($kw);
-    if ($exists('pages/keywords/' . $kSlug . '.php')) {
-        $add('/pages/keywords/' . $kSlug . '.php', '0.68');
-    }
-    $kwDir = SITE_ROOT . '/pages/keywords/' . $kSlug;
-    if (!is_dir($kwDir)) {
-        continue;
-    }
-    $kwDirsChecked++;
+    $add('/pages/keywords/' . $kSlug . '.php', '0.68');
     foreach (getAreas() as $area) {
-        $aSlug = areaSlug($area);
-        // Prefer fast path: if directory exists, assume stubs generated for all areas
-        $add('/pages/keywords/' . $kSlug . '/' . $aSlug . '.php', '0.5');
+        $add('/pages/keywords/' . $kSlug . '/' . areaSlug($area) . '.php', '0.5');
     }
 }
+
+// Remove stale chunk files before write
+foreach (glob(SITE_ROOT . '/sitemap-*.xml') ?: [] as $old) {
+    @unlink($old);
+}
+@unlink(SITE_ROOT . '/sitemap-urls.xml');
 
 // Write chunked sitemaps
 $chunks = array_chunk($all, $chunkSize);
@@ -149,6 +143,10 @@ $robots = "User-agent: *\nAllow: /\n\n"
     . "Disallow: /config.local.php\n";
 file_put_contents(SITE_ROOT . '/robots.txt', $robots);
 
+$svc = count(getServices());
+$areas = count(getAreas());
+$kw = count(getMajorKeywords());
+$mfr = count(getManufacturerCatalog());
+echo "Catalogue: services={$svc} areas={$areas} keywords={$kw} manufacturers={$mfr}\n";
 echo "Total URLs: " . count($all) . "\n";
-echo "Keyword area dirs found: {$kwDirsChecked}\n";
 echo "Sitemap index: sitemap.xml (" . count($sitemapFiles) . " parts)\n";

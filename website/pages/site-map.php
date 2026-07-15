@@ -6,13 +6,14 @@ require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/share.php';
 
 $pageTitle = 'Site Map | Icomply Property Services';
-$metaDesc = 'Browse the Icomply site map — main pages, property compliance services, popular North West areas, featured manufacturers and free compliance resources.';
-$metaKeywords = 'Icomply site map, property compliance services, North West areas, fire alarm manufacturers, EICR guides';
+$metaDesc = 'Browse the Icomply site map — fire safety, professional and construction services, popular North West areas, manufacturers, keyword guides and XML sitemaps.';
+$metaKeywords = 'Icomply site map, fire risk assessment, kitchen fitting, property compliance, North West areas, EICR guides';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/site-map.php');
 
 $services = getServices();
 $areas = getAreas();
+$categories = getServiceCategories();
 
 $featuredMfr = array_filter(getManufacturerCatalog(), fn($c) => !empty($c['featured']));
 if (!$featuredMfr) {
@@ -158,28 +159,43 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
-<!-- SERVICES -->
+<!-- SERVICES BY CATEGORY -->
 <section id="services" class="bg-zinc-50 border-y scroll-mt-24">
     <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
             <div>
-                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Compliance</div>
-                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Services</h2>
-                <p class="mt-2 text-zinc-600 max-w-xl">Installation, maintenance, testing and certification across the North West.</p>
+                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Catalogue</div>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">All <?= count($services) ?> services</h2>
+                <p class="mt-2 text-zinc-600 max-w-xl">Fire safety, professional support and construction — each service has local pages for <?= count($areas) ?>+ towns.</p>
             </div>
-            <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All services →</a>
+            <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Services hub →</a>
         </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <?php foreach ($services as $slug => $name): ?>
-                <a href="<?= url('/pages/services/' . rawurlencode($slug) . '.php') ?>"
-                   class="bg-white border border-zinc-200 rounded-3xl p-6 hover:border-[#ff6b00] hover:shadow-lg transition group">
-                    <h3 class="font-semibold text-lg text-black tracking-tight group-hover:text-[#ff6b00] transition">
-                        <?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>
-                    </h3>
-                    <span class="inline-block mt-3 text-sm font-semibold text-[#ff6b00]">View service →</span>
-                </a>
-            <?php endforeach; ?>
+        <?php foreach ($categories as $catKey => $cat):
+            $catServices = getServicesInCategory($catKey);
+            if (!$catServices) {
+                continue;
+            }
+        ?>
+        <div class="mb-12" id="map-<?= htmlspecialchars($catKey, ENT_QUOTES, 'UTF-8') ?>">
+            <h3 class="text-xl font-semibold text-black mb-2"><?= htmlspecialchars($cat['label'] ?? $catKey, ENT_QUOTES, 'UTF-8') ?></h3>
+            <?php if (!empty($cat['blurb'])): ?>
+                <p class="text-sm text-zinc-600 mb-4 max-w-2xl"><?= htmlspecialchars($cat['blurb'], ENT_QUOTES, 'UTF-8') ?></p>
+            <?php endif; ?>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                <?php foreach ($catServices as $slug => $name): ?>
+                    <a href="<?= url('/pages/services/' . rawurlencode($slug) . '.php') ?>"
+                       class="bg-white border border-zinc-200 rounded-2xl px-5 py-4 hover:border-[#ff6b00] hover:shadow-md transition group flex items-center justify-between gap-3">
+                        <span class="font-medium text-black group-hover:text-[#ff6b00]"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></span>
+                        <span class="text-[#ff6b00] text-sm font-semibold shrink-0">→</span>
+                    </a>
+                <?php endforeach; ?>
+            </div>
         </div>
+        <?php endforeach; ?>
+        <p class="text-sm text-zinc-500">
+            Full machine-readable list (<?= number_format(count($services) * count($areas) + count(getMajorKeywords()) * count($areas) + count($services) + count(getMajorKeywords()) + count($areas)) ?>+ URLs):
+            <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/sitemap.xml') ?>">XML sitemap index</a>.
+        </p>
     </div>
 </section>
 
