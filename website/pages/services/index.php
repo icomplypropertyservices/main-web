@@ -44,7 +44,7 @@ require SITE_ROOT . '/includes/header.php';
         <div class="max-w-3xl">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs tracking-widest uppercase mb-5">
                 <span class="w-2 h-2 rounded-full bg-[#ff6b00]"></span>
-                <?= count($services) ?> core services · North West
+                <?= count($services) ?> services · <?= count($categories) ?> categories · North West
             </div>
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
                 Fire safety, professional<br>

@@ -17,9 +17,10 @@ foreach ($keywords as $meta) {
     $serviceCounts[$svc] = ($serviceCounts[$svc] ?? 0) + 1;
 }
 
-$pageTitle = 'Keyword Guides | Property Compliance Topics';
-$metaDesc = 'Browse ' . count($keywords) . '+ compliance keyword guides for fire alarms, EICR, CCTV, access control, gas safety and more. Installation, maintenance and certification topics across the North West.';
-$metaKeywords = 'property compliance guides, EICR, fire alarm installation, CCTV, access control, gas safety, emergency lighting, North West';
+$categories = getServiceCategories();
+$pageTitle = 'Keyword Guides | Fire Safety, Professional & Construction Topics';
+$metaDesc = 'Browse ' . count($keywords) . '+ guides covering fire risk assessments, fire safety systems, electrical, security, landlord compliance, kitchens, bathrooms, renovation and construction across the North West.';
+$metaKeywords = 'fire risk assessment guide, kitchen fitting guide, EICR, fire alarm installation, bathroom renovation, plastering, landlord compliance North West';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/keywords/index.php');
 
@@ -46,15 +47,16 @@ require SITE_ROOT . '/includes/header.php';
             <div>
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs tracking-widest uppercase mb-5">
                     <span class="w-2 h-2 rounded-full bg-[#ff6b00]"></span>
-                    SEO guides · <?= count($keywords) ?> topics
+                    <?= count($keywords) ?> topics · <?= count($services) ?> services · <?= count($areas) ?>+ towns
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
-                    Keyword<br>
+                    Topic &amp; keyword<br>
                     <span class="text-[#ff6b00]">guides</span>
                 </h1>
                 <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl">
-                    Explore installation, maintenance and certification topics — fire alarms, EICR, CCTV, access control and more.
-                    Each guide links to local service pages across <?= count($areas) ?>+ North West towns.
+                    Fire risk assessments, fire systems, electrical, security, professional compliance,
+                    kitchens, bathrooms, renovation and construction trades —
+                    each guide links to local pages across <?= count($areas) ?>+ North West towns.
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#directory" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Browse guides</a>
@@ -68,21 +70,49 @@ require SITE_ROOT . '/includes/header.php';
                 </div>
             </div>
             <div class="bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8">
-                <div class="text-xs uppercase tracking-[3px] text-white/50 mb-4">Jump by service</div>
+                <div class="text-xs uppercase tracking-[3px] text-white/50 mb-4">Jump by category</div>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <?php foreach ($categories as $catKey => $cat):
+                        $catSvcs = getServicesInCategory($catKey);
+                        $catCnt = 0;
+                        foreach ($catSvcs as $cs => $_) {
+                            $catCnt += (int)($serviceCounts[$cs] ?? 0);
+                        }
+                        if ($catCnt === 0) {
+                            continue;
+                        }
+                    ?>
+                        <a href="#directory"
+                           class="px-4 py-2 rounded-full bg-white/10 text-sm font-medium hover:bg-[#ff6b00] transition"
+                           data-cat="<?= htmlspecialchars($catKey, ENT_QUOTES, 'UTF-8') ?>">
+                            <?= htmlspecialchars($cat['label'] ?? $catKey, ENT_QUOTES, 'UTF-8') ?>
+                            <span class="text-white/50 ml-1"><?= $catCnt ?></span>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
+                <div class="text-xs uppercase tracking-[3px] text-white/50 mb-3">Popular services</div>
                 <div class="flex flex-wrap gap-2">
-                    <?php foreach ($services as $sSlug => $sName):
+                    <?php
+                    $jumpPref = ['fire-risk-assessments', 'fire-alarms', 'electrical', 'kitchens', 'bathrooms', 'plastering', 'landlord-compliance', 'cctv'];
+                    foreach ($jumpPref as $sSlug):
+                        if (!isset($services[$sSlug])) {
+                            continue;
+                        }
                         $cnt = $serviceCounts[$sSlug] ?? 0;
-                        if ($cnt === 0) continue;
+                        if ($cnt === 0) {
+                            continue;
+                        }
+                        $sName = $services[$sSlug];
                     ?>
                         <button type="button"
                                 data-jump-service="<?= htmlspecialchars($sSlug, ENT_QUOTES, 'UTF-8') ?>"
-                                class="kw-jump px-4 py-2 rounded-full bg-white/10 text-sm font-medium hover:bg-[#ff6b00] transition text-left">
+                                class="kw-jump px-3 py-1.5 rounded-full bg-white/10 text-xs font-medium hover:bg-[#ff6b00] transition text-left">
                             <?= htmlspecialchars($sName, ENT_QUOTES, 'UTF-8') ?>
                             <span class="text-white/50 ml-1"><?= (int)$cnt ?></span>
                         </button>
                     <?php endforeach; ?>
                 </div>
-                <p class="mt-6 text-sm text-white/50">Use search and filters below to find a specific topic fast.</p>
+                <p class="mt-6 text-sm text-white/50">Search and filter below for every topic.</p>
             </div>
         </div>
     </div>
@@ -93,8 +123,8 @@ require SITE_ROOT . '/includes/header.php';
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <?php
         $trust = [
-            ['Practical guides', 'Installation, testing, certification and maintenance topics'],
-            ['Service-linked', 'Every guide maps to a core compliance service'],
+            ['Full catalogue', 'Fire safety, professional & construction topics'],
+            ['Service-linked', 'Every guide maps to one of ' . count($services) . ' services'],
             ['Local coverage', count($areas) . '+ North West towns on related pages'],
             ['Fixed-price quotes', 'Clear scope before work starts'],
         ];

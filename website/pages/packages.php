@@ -4,10 +4,11 @@
  * Pricing shown as "from" / POA only (no fabricated fixed prices).
  */
 require_once __DIR__ . '/../config.php';
+require_once SITE_ROOT . '/includes/partials.php';
 
-$pageTitle = 'Compliance Packages | Multi-Service Landlord & FM';
-$metaDesc = 'Multi-service property compliance packages for landlords and facilities teams: Landlord Essentials, Fire, Security and Full FM. From / POA pricing. Free quotes across Greater Manchester and the North West.';
-$metaKeywords = 'compliance packages, landlord compliance, fire package, security package, facilities management, EICR, fire alarms, emergency lighting, gas safety, CCTV, North West';
+$pageTitle = 'Service Packages | Landlord, Fire Safety, Security & Projects';
+$metaDesc = 'Multi-service packages for landlords and facilities teams: Landlord Essentials, Fire Safety (incl. FRA), Security, Full FM and project/refurb support. From / POA. Free quotes across the North West.';
+$metaKeywords = 'compliance packages, fire risk assessment package, landlord compliance, fire package, security package, void renovation package, FM North West';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 
 $services = getServices();
@@ -157,27 +158,12 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
-<!-- TRUST -->
-<section class="bg-white border-b">
-    <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <?php
-        $trust = [
-            ['Honest pricing', 'Shown as From / POA — fixed quote after we agree scope'],
-            ['One visit plan', 'Combine services where practical to cut access days'],
-            ['Audit-ready packs', 'Certificates & reports in one place for insurers'],
-            ['Local engineers', 'Stockport-based team covering Greater Manchester & NW'],
-        ];
-        foreach ($trust as [$t, $d]): ?>
-            <div class="flex gap-3 items-start">
-                <div class="w-10 h-10 rounded-2xl bg-[#0a2540]/10 flex items-center justify-center text-[#0a2540] font-bold shrink-0">✓</div>
-                <div>
-                    <div class="font-semibold text-black"><?= htmlspecialchars($t, ENT_QUOTES, 'UTF-8') ?></div>
-                    <div class="text-sm text-zinc-600 mt-0.5"><?= htmlspecialchars($d, ENT_QUOTES, 'UTF-8') ?></div>
-                </div>
-            </div>
-        <?php endforeach; ?>
-    </div>
-</section>
+<?= sectionTrustStrip([
+    ['Honest pricing', 'Shown as From / POA — fixed quote after we agree scope'],
+    ['One visit plan', 'Combine services where practical to cut access days'],
+    ['Audit-ready packs', 'Certificates & reports in one place for insurers'],
+    ['Local engineers', 'Stockport-based team covering Greater Manchester & NW'],
+]) ?>
 
 <!-- PACKAGES GRID -->
 <section id="packages" class="max-w-7xl mx-auto px-6 py-16 md:py-20">

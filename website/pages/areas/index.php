@@ -8,9 +8,10 @@ $areas = getAreas();
 $services = getServices();
 
 $pageTitle = 'Areas We Cover | ' . count($areas) . '+ North West Towns';
-$metaDesc = 'Icomply covers ' . count($areas) . '+ towns across Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria. Find EICR, fire alarms, gas safety and more near you.';
-$metaKeywords = 'property compliance North West, electrician Manchester, fire alarms Stockport, gas safety Bolton, emergency lighting Liverpool, CCTV Preston';
+$metaDesc = 'Icomply covers ' . count($areas) . '+ towns across Greater Manchester and the North West. Every town hub links fire safety, electrical, professional services, kitchens, bathrooms and construction trades.';
+$metaKeywords = 'fire risk assessment Manchester, kitchen fitting Stockport, EICR Bolton, fire alarms Liverpool, property services North West towns';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
+$categories = getServiceCategories();
 
 $featured = array_values(array_filter(
     ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
@@ -60,18 +61,19 @@ require SITE_ROOT . '/includes/header.php';
                     <span class="text-[#ff6b00]">cover</span>
                 </h1>
                 <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl">
-                    Local engineers serving <strong class="text-white"><?= count($areas) ?> towns</strong> across
-                    Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria. Pick your area for full service links.
+                    Local team serving <strong class="text-white"><?= count($areas) ?> towns</strong> —
+                    fire safety (including FRAs), electrical &amp; gas, security, professional support,
+                    kitchens, bathrooms, renovation and construction trades in every hub.
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#directory" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Browse towns</a>
-                    <a href="<?= url('/pages/services/index.php') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">Browse services</a>
+                    <a href="<?= url('/pages/services/index.php') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">All <?= count($services) ?> services</a>
                     <a href="#quote" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Free quote</a>
                 </div>
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
                     <div><span class="text-white font-semibold text-xl block"><?= count($areas) ?>+</span> towns</div>
                     <div><span class="text-white font-semibold text-xl block"><?= count($services) ?></span> services each</div>
-                    <div><span class="text-white font-semibold text-xl block">Stockport</span> base (SK2)</div>
+                    <div><span class="text-white font-semibold text-xl block"><?= count($categories) ?></span> categories</div>
                 </div>
             </div>
             <div class="bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8">
@@ -95,10 +97,10 @@ require SITE_ROOT . '/includes/header.php';
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <?php
         $trust = [
-            ['Local response', 'Stockport engineers covering your postcode'],
-            ['All major services', count($services) . ' compliance services in every town hub'],
+            ['Local response', 'Stockport team covering your postcode'],
+            ['Full catalogue', count($services) . ' services in every town hub (fire, pro, construction)'],
             ['Fixed-price quotes', 'Clear scope before work starts'],
-            ['Full certification', 'Paperwork for landlords, insurers & FM'],
+            ['Full documentation', 'Certificates, FRAs and handover packs where required'],
         ];
         foreach ($trust as [$t, $d]): ?>
             <div class="flex gap-3 items-start">
@@ -149,7 +151,13 @@ require SITE_ROOT . '/includes/header.php';
         <div class="flex flex-wrap gap-2">
             <?php
             $showcase = array_slice($featured, 0, 5);
-            $topServices = array_slice($services, 0, 4, true);
+            $topSlugs = ['fire-risk-assessments', 'fire-alarms', 'electrical', 'kitchens', 'bathrooms', 'plastering'];
+            $topServices = [];
+            foreach ($topSlugs as $ts) {
+                if (isset($services[$ts])) {
+                    $topServices[$ts] = $services[$ts];
+                }
+            }
             foreach ($showcase as $a):
                 foreach ($topServices as $sSlug => $sName):
             ?>
@@ -167,7 +175,7 @@ require SITE_ROOT . '/includes/header.php';
     <div class="mb-10">
         <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Directory</div>
         <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">All <?= count($areas) ?> towns</h2>
-        <p class="mt-2 text-zinc-600">A–Z list of every area hub. Each page links to all <?= count($services) ?> services for that town.</p>
+        <p class="mt-2 text-zinc-600">A–Z list of every area hub. Each page links all <?= count($services) ?> services — fire safety, professional and construction — for that town.</p>
     </div>
 
     <!-- Letter jump -->

@@ -17,11 +17,12 @@ $catalog = getShopCatalog();
 $featuredProducts = array_slice($catalog['products'], 0, 4);
 $shopCollections = array_slice($catalog['collections'], 0, 4);
 
+$kwCount = count(getMajorKeywords());
 $trust = [
-    ['title' => 'Local engineers', 'text' => 'Based in Stockport — covering 150+ North West towns'],
-    ['title' => 'Standards-led', 'text' => 'BS 5839, BS 5266, BS 7671, gas safety & more'],
+    ['title' => 'Local team', 'text' => 'Stockport SK2 base — ' . count($areas) . '+ North West towns'],
+    ['title' => 'Full catalogue', 'text' => count($services) . ' services · fire, professional & construction'],
     ['title' => 'Fixed-price quotes', 'text' => 'Clear scope, documentation and certification'],
-    ['title' => 'Trade shop', 'text' => 'Kits & parts with Shopify checkout when live'],
+    ['title' => 'SEO guides', 'text' => number_format($kwCount) . '+ topic guides with local pages'],
 ];
 
 $popularTowns = array_values(array_filter(
@@ -62,27 +63,37 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get free quote</a>
-                <a href="<?= url('/shop/index.php') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">Shop products</a>
-                <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener"
-                   class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
+                <a href="<?= url('/pages/services/index.php') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">All services</a>
+                <a href="<?= url('/pages/services/index.php') ?>#fire-safety" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Fire safety</a>
+                <a href="<?= url('/pages/services/index.php') ?>#construction" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Construction</a>
             </div>
             <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
-                <div><span class="text-white font-semibold text-xl block"><?= count($services) ?></span> core services</div>
-                <div><span class="text-white font-semibold text-xl block"><?= count($areas) ?>+</span> towns covered</div>
-                <div><span class="text-white font-semibold text-xl block">Same-week</span> appointments*</div>
+                <div><span class="text-white font-semibold text-xl block"><?= count($services) ?></span> services</div>
+                <div><span class="text-white font-semibold text-xl block"><?= count($areas) ?>+</span> towns</div>
+                <div><span class="text-white font-semibold text-xl block"><?= number_format($kwCount) ?>+</span> guides</div>
             </div>
-            <p class="mt-3 text-[11px] text-white/40">*Subject to engineer capacity and site access.</p>
+            <p class="mt-3 text-[11px] text-white/40">Same-week appointments where capacity allows · Stockport SK2 5DE</p>
         </div>
         <div class="grid grid-cols-2 gap-3">
             <?php
-            $heroCards = array_slice($services, 0, 4, true);
+            // Highlight one card per major category (not just first array keys)
+            $heroPref = ['fire-risk-assessments', 'kitchens', 'electrical', 'landlord-compliance', 'fire-alarms', 'bathrooms'];
+            $heroCards = [];
+            foreach ($heroPref as $hs) {
+                if (isset($services[$hs])) {
+                    $heroCards[$hs] = $services[$hs];
+                }
+                if (count($heroCards) >= 4) {
+                    break;
+                }
+            }
             foreach ($heroCards as $slug => $name):
                 $img = url('/assets/images/services/' . $slug . '.jpg');
             ?>
             <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                class="group relative rounded-3xl overflow-hidden border border-white/10 min-h-[140px] bg-white/5 hover:border-[#ff6b00] transition">
                 <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-55 transition" loading="lazy"
-                     onerror="this.style.display='none'">
+                     onerror="this.src='<?= htmlspecialchars(url('/assets/images/services/fire-alarms.jpg'), ENT_QUOTES, 'UTF-8') ?>'">
                 <div class="relative p-5 h-full flex flex-col justify-end">
                     <div class="font-semibold text-white text-lg leading-tight"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></div>
                     <div class="text-xs text-white/70 mt-1">View service →</div>
@@ -176,21 +187,21 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                class="group bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="w-12 h-12 rounded-2xl bg-[#0a2540]/10 text-[#0a2540] font-bold flex items-center justify-center text-lg group-hover:bg-[#ff6b00] group-hover:text-white transition">L</div>
                 <h3 class="mt-5 font-semibold text-xl text-black tracking-tight">Landlords &amp; agents</h3>
-                <p class="mt-2 text-sm text-zinc-600 flex-1">EICR, gas CP12/CP44, fire alarms and emergency lighting for single lets, HMOs and multi-property portfolios.</p>
+                <p class="mt-2 text-sm text-zinc-600 flex-1">EICR, gas, fire risk assessments, fire doors, emergency lighting, voids, kitchens and bathrooms for portfolios and HMOs.</p>
                 <span class="mt-5 text-sm font-semibold text-[#ff6b00]">Landlord compliance →</span>
             </a>
             <a href="<?= url('/pages/commercial.php') ?>"
                class="group bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="w-12 h-12 rounded-2xl bg-[#0a2540]/10 text-[#0a2540] font-bold flex items-center justify-center text-lg group-hover:bg-[#ff6b00] group-hover:text-white transition">C</div>
                 <h3 class="mt-5 font-semibold text-xl text-black tracking-tight">Commercial &amp; FM</h3>
-                <p class="mt-2 text-sm text-zinc-600 flex-1">Multi-site fire, electrical, AOV, nurse call, CCTV and access control with planned maintenance for facilities teams.</p>
+                <p class="mt-2 text-sm text-zinc-600 flex-1">Fire safety systems, FRA, AOV, nurse call, CCTV, access control, fit-out and planned maintenance for estates.</p>
                 <span class="mt-5 text-sm font-semibold text-[#ff6b00]">Commercial services →</span>
             </a>
             <a href="<?= url('/pages/packages.php') ?>"
                class="group bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="w-12 h-12 rounded-2xl bg-[#0a2540]/10 text-[#0a2540] font-bold flex items-center justify-center text-lg group-hover:bg-[#ff6b00] group-hover:text-white transition">P</div>
-                <h3 class="mt-5 font-semibold text-xl text-black tracking-tight">Compliance packages</h3>
-                <p class="mt-2 text-sm text-zinc-600 flex-1">Bundle landlord essentials, fire, security or full FM into one fixed-scope quote and visit schedule.</p>
+                <h3 class="mt-5 font-semibold text-xl text-black tracking-tight">Packages &amp; projects</h3>
+                <p class="mt-2 text-sm text-zinc-600 flex-1">Bundle compliance, fire safety and refurb/construction works into one programme with a single point of contact.</p>
                 <span class="mt-5 text-sm font-semibold text-[#ff6b00]">View packages →</span>
             </a>
         </div>

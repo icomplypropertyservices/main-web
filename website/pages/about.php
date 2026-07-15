@@ -5,33 +5,34 @@
 require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/shopify.php';
 
-$pageTitle = 'About Us | Stockport Property Compliance';
-$metaDesc = 'About Icomply Property Services — Stockport SK2 5DE based engineers delivering electrical, fire, gas, emergency lighting, CCTV and access control across Greater Manchester and the North West. Free quotes.';
-$metaKeywords = 'about Icomply, property compliance Stockport, EICR North West, fire alarm engineers Greater Manchester, gas safety Stockport';
+$pageTitle = 'About Us | Fire Safety, Professional & Construction | Stockport';
+$metaDesc = 'About Icomply Property Services — Stockport SK2 5DE. Fire risk assessments and fire safety systems, electrical, gas, security, professional compliance, kitchens, bathrooms and construction across the North West.';
+$metaKeywords = 'about Icomply, fire risk assessment Stockport, kitchen fitting North West, property compliance Stockport, construction services Greater Manchester';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/about.php');
 
 $services = getServices();
 $areas = getAreas();
+$categories = getServiceCategories();
 $catalog = getShopCatalog();
 $featuredProducts = array_slice($catalog['products'], 0, 4);
 
 // Short blurbs via getServiceBlurb($slug, true) — see includes/content.php / config.php
 
 $trust = [
-    ['title' => 'Stockport based', 'text' => 'SK2 5DE HQ — local engineers, North West coverage'],
-    ['title' => 'Standards-led', 'text' => 'BS 5839, BS 5266, BS 7671, gas safety & more'],
+    ['title' => 'Stockport based', 'text' => 'SK2 5DE HQ — local team, North West coverage'],
+    ['title' => count($services) . ' services', 'text' => 'Fire safety, professional & construction catalogue'],
     ['title' => 'Fixed-price quotes', 'text' => 'Clear scope, documentation and certification'],
-    ['title' => 'Trade shop', 'text' => 'Kits & parts with Shopify checkout when live'],
+    ['title' => count($areas) . '+ towns', 'text' => 'Local pages for every service we deliver'],
 ];
 
 $standards = [
     ['code' => 'BS 7671', 'label' => 'Electrical wiring & EICR'],
     ['code' => 'BS 5839', 'label' => 'Fire detection & alarms'],
     ['code' => 'BS 5266', 'label' => 'Emergency lighting'],
+    ['code' => 'FSO / PAS 79', 'label' => 'Fire risk assessments'],
     ['code' => 'Gas Safe', 'label' => 'Landlord & commercial gas'],
-    ['code' => 'PD 6662', 'label' => 'Intruder alarm systems'],
-    ['code' => 'BS EN 50131', 'label' => 'Security systems'],
+    ['code' => 'Building Regs', 'label' => 'Construction & fit-out works'],
 ];
 
 $popularTowns = array_values(array_filter(
@@ -72,7 +73,7 @@ $aboutSchema = [
             'telephone' => PHONE,
             'email' => EMAIL,
             'image' => $ogImage,
-            'description' => 'Property compliance specialists — electrical, fire alarms, gas, emergency lighting, CCTV and access control across Greater Manchester and the North West.',
+            'description' => 'Fire safety, professional compliance and construction services — FRAs, fire systems, electrical, gas, security, kitchens, bathrooms and renovation across Greater Manchester and the North West.',
             'address' => [
                 '@type' => 'PostalAddress',
                 'streetAddress' => '17 Woodlands Park Road',
@@ -128,19 +129,19 @@ $aboutSchema = [
                     <span class="text-[#ff6b00]">Icomply Property Services</span>
                 </h1>
                 <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl">
-                    Local engineers delivering installation, testing and certification for electrical, fire, gas,
-                    emergency lighting, security and care systems — plus a trade shop for kits and parts.
+                    Fire risk assessments and full fire safety systems, electrical &amp; gas, security,
+                    professional compliance support, kitchens, bathrooms, renovation and construction —
+                    plus a trade shop for kits and parts.
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get free quote</a>
-                    <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
-                    <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener"
-                       class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
+                    <a href="<?= url('/pages/services/index.php') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">All services</a>
+                    <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
                 </div>
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
-                    <div><span class="text-white font-semibold text-xl block"><?= count($services) ?></span> core services</div>
-                    <div><span class="text-white font-semibold text-xl block"><?= count($areas) ?>+</span> towns covered</div>
-                    <div><span class="text-white font-semibold text-xl block">SK2 5DE</span> base</div>
+                    <div><span class="text-white font-semibold text-xl block"><?= count($services) ?></span> services</div>
+                    <div><span class="text-white font-semibold text-xl block"><?= count($categories) ?></span> categories</div>
+                    <div><span class="text-white font-semibold text-xl block"><?= count($areas) ?>+</span> towns</div>
                 </div>
             </div>
             <div class="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-10 backdrop-blur-sm">
@@ -190,28 +191,27 @@ $aboutSchema = [
     <div class="grid lg:grid-cols-2 gap-12 items-start">
         <div>
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Who we are</div>
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Compliance specialists you can call today</h2>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Fire safety, professional &amp; construction — one team</h2>
             <p class="mt-4 text-zinc-600 text-lg leading-relaxed">
-                <?= htmlspecialchars(SITE_NAME, ENT_QUOTES, 'UTF-8') ?> is a Stockport-based property compliance company
-                helping landlords, facilities managers, care providers and commercial clients keep buildings safe,
-                legal and audit-ready.
+                <?= htmlspecialchars(SITE_NAME, ENT_QUOTES, 'UTF-8') ?> is based in Stockport (SK2 5DE), helping landlords,
+                facilities managers, care providers, homeowners and commercial clients keep buildings safe, compliant and well-finished.
             </p>
             <p class="mt-4 text-zinc-600 leading-relaxed">
-                From single EICR certificates to multi-site fire alarm programmes, we install, maintain, test and
-                certify systems to the relevant British Standards — with fixed-price quotes and clear documentation.
+                From fire risk assessments and BS 5839 systems to EICRs, landlord packages, kitchens, bathrooms and full renovations —
+                we deliver survey-led quotes, clear documentation and local North West coverage.
             </p>
             <ul class="mt-6 space-y-3 text-sm text-zinc-700">
-                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> One point of contact for multi-service packages</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> <?= count($services) ?> services across <?= count($categories) ?> categories</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Local response across <?= count($areas) ?>+ North West towns</li>
-                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Manufacturer-aware installs (Paxton, Hikvision, C-TEC &amp; more)</li>
-                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Trade shop for kits, parts and install accessories</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Manufacturer-aware fire &amp; security installs</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Construction &amp; void works for landlords and investors</li>
             </ul>
         </div>
         <div class="grid sm:grid-cols-2 gap-4">
             <div class="bg-zinc-50 border rounded-3xl p-6">
                 <div class="text-3xl font-semibold text-[#0a2540]"><?= count($services) ?></div>
-                <div class="mt-1 font-semibold text-black">Core services</div>
-                <p class="mt-2 text-sm text-zinc-600">Electrical, fire, gas, lighting, AOV, nurse call, CCTV &amp; access.</p>
+                <div class="mt-1 font-semibold text-black">Services</div>
+                <p class="mt-2 text-sm text-zinc-600">Fire safety, electrical, security, professional &amp; construction.</p>
             </div>
             <div class="bg-zinc-50 border rounded-3xl p-6">
                 <div class="text-3xl font-semibold text-[#0a2540]"><?= count($areas) ?>+</div>

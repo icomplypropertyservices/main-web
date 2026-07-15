@@ -6,9 +6,9 @@
 require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/share.php';
 
-$pageTitle = 'Commercial & Facilities Management | Multi-Site Compliance';
-$metaDesc = 'Icomply commercial & facilities management: multi-site compliance across fire alarms, electrical, AOV, nurse call, CCTV, access control and planned maintenance contracts. Fixed-price quotes across the North West.';
-$metaKeywords = 'commercial facilities management, multi-site compliance, commercial fire alarms, commercial electrical, AOV maintenance, nurse call, CCTV, access control, maintenance contracts North West';
+$pageTitle = 'Commercial & Facilities Management | Fire Safety & Multi-Site';
+$metaDesc = 'Commercial & FM across the North West: fire risk assessments, fire systems, electrical, AOV, nurse call, CCTV, access control, fit-out and planned maintenance. Fixed-price quotes for multi-site portfolios.';
+$metaKeywords = 'commercial fire risk assessment, multi-site compliance, commercial fire alarms, AOV, nurse call, CCTV, access control, commercial fit out, FM North West';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/commercial.php');
 
@@ -18,6 +18,11 @@ $mfrCatalog = getManufacturerCatalog();
 
 // Core commercial / FM service pillars highlighted on this page
 $commercialPillars = [
+    'fire-risk-assessments' => [
+        'title' => 'Fire risk assessments',
+        'blurb' => 'Suitable and sufficient FRAs for offices, warehouses, multi-occupied and managed estates with action plans.',
+        'keywords' => ['FSO', 'PAS 79', 'Action plans'],
+    ],
     'fire-alarms' => [
         'title' => 'Fire alarms',
         'blurb' => 'BS 5839 design, install, service and certification for multi-site portfolios — addressable, conventional and wireless.',
@@ -29,14 +34,9 @@ $commercialPillars = [
         'keywords' => ['EICR programmes', 'BS 7671', 'Planned maintenance'],
     ],
     'aov-air-handling' => [
-        'title' => 'AOV & air handling',
-        'blurb' => 'Smoke vents, AOV panels, AHU controls and smoke-control maintenance for high-rise and commercial blocks.',
-        'keywords' => ['Smoke control', 'AOV panels', 'AHU controls'],
-    ],
-    'nurse-call' => [
-        'title' => 'Nurse call',
-        'blurb' => 'Care home and healthcare nurse call design, install, upgrades and HTM-aligned planned maintenance.',
-        'keywords' => ['Care homes', 'HTM 08-03', 'Upgrades'],
+        'title' => 'AOV & smoke control',
+        'blurb' => 'Smoke vents, AOV panels and smoke-control maintenance for high-rise and commercial blocks.',
+        'keywords' => ['Smoke control', 'AOV panels', 'EN 12101'],
     ],
     'cctv' => [
         'title' => 'CCTV',
@@ -48,10 +48,23 @@ $commercialPillars = [
         'blurb' => 'Paxton, HID, Salto and door access with fire-override integration for offices, multi-tenant and commercial sites.',
         'keywords' => ['Paxton / HID / Salto', 'Fire override', 'Credentials'],
     ],
+    'commercial-fit-out' => [
+        'title' => 'Commercial fit-out',
+        'blurb' => 'Light commercial and office fit-out — partitions, services coordination and compliance-aware finishes.',
+        'keywords' => ['Office fit-out', 'Partitions', 'Compliance'],
+    ],
+    'facilities-management' => [
+        'title' => 'FM support',
+        'blurb' => 'PPM scheduling, multi-site compliance coordination and reactive call-outs for estates teams.',
+        'keywords' => ['PPM', 'Multi-site', 'Call-outs'],
+    ],
 ];
 
 $extraServices = [
     'emergency-lighting' => 'BS 5266 testing, LED upgrades and monthly/annual certification across portfolios.',
+    'nurse-call' => 'Care home and healthcare nurse call design, install and planned maintenance.',
+    'fire-doors' => 'Fire door surveys, remedial works and certification programmes.',
+    'fire-stopping' => 'Penetration seals and compartmentation remedial packages.',
     'intruder-alarm' => 'PD 6662 / BS EN 50131 wired and wireless systems with monitoring options.',
     'door-entry' => 'Video and audio door entry for multi-tenant commercial blocks.',
     'intercoms' => 'Master/substation and commercial intercom systems.',

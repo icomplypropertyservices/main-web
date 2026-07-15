@@ -5,9 +5,9 @@
 require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/shopify.php';
 
-$pageTitle = 'Shop | Compliance Products & Kits';
-$metaDesc = 'Shop fire safety, electrical, CCTV and emergency lighting products from Icomply. Trade kits and install accessories for North West engineers and landlords.';
-$metaKeywords = 'fire alarm parts, emergency lighting buy, CCTV kits, electrical trade supplies Stockport';
+$pageTitle = 'Shop | Fire Safety, Electrical & Security Products';
+$metaDesc = 'Shop fire safety, electrical, CCTV and emergency lighting products from Icomply. Trade kits and install accessories for North West engineers, landlords and contractors.';
+$metaKeywords = 'fire alarm parts, emergency lighting buy, CCTV kits, electrical trade supplies Stockport, fire safety equipment';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 
 $catalog = getShopCatalog();
@@ -28,7 +28,7 @@ require SITE_ROOT . '/includes/header.php';
         <div class="max-w-2xl">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold mb-3">Icomply shop</div>
             <h1 class="text-4xl md:text-5xl font-semibold tracking-tighter">Trade products &amp; install kits</h1>
-            <p class="mt-4 text-lg text-white/80">Fire, electrical, security and emergency lighting gear — Shopify cart &amp; checkout when connected.</p>
+            <p class="mt-4 text-lg text-white/80">Fire safety, electrical, security and emergency lighting gear — pair with our full service catalogue (install, FRA, construction) across the North West.</p>
             <?php if (shopifyEnabled()): ?>
                 <div class="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-200 text-xs font-semibold">
                     <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Shopify live — add to cart available on mapped products

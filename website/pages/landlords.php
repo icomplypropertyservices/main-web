@@ -5,9 +5,9 @@
  */
 require_once __DIR__ . '/../config.php';
 
-$pageTitle = 'Landlord & Letting Agent Compliance | North West';
-$metaDesc = 'Landlord compliance packages for Stockport & the North West — EICR, gas CP12/CP44, fire alarms, emergency lighting and multi-property schedules. Free fixed-price quotes for landlords and letting agents.';
-$metaKeywords = 'landlord compliance North West, EICR landlords Stockport, CP12 gas safety certificate, CP44 landlord gas, fire alarm landlords, emergency lighting rental, multi-property compliance package, letting agent certificates Manchester';
+$pageTitle = 'Landlord & Letting Agent Services | Compliance, Fire & Voids | North West';
+$metaDesc = 'Landlord packages for Stockport & the North West — EICR, gas CP12/CP44, fire risk assessments, fire alarms, emergency lighting, fire doors, voids, kitchens and bathrooms. Fixed-price quotes for agents and portfolios.';
+$metaKeywords = 'landlord compliance North West, fire risk assessment landlords, EICR Stockport, CP12 gas, fire doors HMO, void kitchen bathroom, multi-property package';
 $ogImage = url('/assets/images/services/electrical.jpg');
 $canonicalUrl = url('/pages/landlords.php');
 
@@ -26,6 +26,11 @@ $landlordServices = [
         'blurb' => 'Annual landlord gas safety certificates (CP12/CP44), appliance checks, boilers and full Gas Safe documentation for tenancies.',
         'badge' => 'Annual',
     ],
+    'fire-risk-assessments' => [
+        'title' => 'Fire risk assessments',
+        'blurb' => 'Suitable and sufficient FRAs for HMOs, blocks and multi-occupied stock with prioritised action plans.',
+        'badge' => 'FSO / PAS 79',
+    ],
     'fire-alarms' => [
         'title' => 'Fire alarms',
         'blurb' => 'BS 5839 design, install, servicing and certification for HMOs, flats and rental stock — including Grade D/LD2/LD3 schemes.',
@@ -36,15 +41,24 @@ $landlordServices = [
         'blurb' => 'BS 5266 testing, logbooks, LED upgrades and duration tests for common parts, HMOs and multi-occupancy buildings.',
         'badge' => 'BS 5266',
     ],
+    'landlord-compliance' => [
+        'title' => 'Bundled landlord packs',
+        'blurb' => 'Combine certificates, fire safety and documentation into one portfolio-friendly package and schedule.',
+        'badge' => 'Multi-cert',
+    ],
 ];
 
 $extraLandlordServices = [
-    'cctv' => 'IP / HD CCTV for communal areas and plant rooms',
+    'fire-doors' => 'Fire door surveys, seals, closers and upgrades',
+    'fire-extinguishers' => 'Extinguisher supply, service and certificates',
+    'kitchens' => 'Void / HMO kitchen supply & fit',
+    'bathrooms' => 'Void bathroom and wet-room fitting',
+    'renovation' => 'Light-touch and full void renovations',
+    'cctv' => 'IP / HD CCTV for communal areas',
     'access-control' => 'Paxton, HID & Salto door access for blocks',
     'door-entry' => 'Video & audio entry for flats and HMOs',
-    'intercoms' => 'Multi-tenant intercom systems',
-    'intruder-alarm' => 'Wired & wireless intruder systems',
-    'aov-air-handling' => 'Smoke vents, AOV panels & AHU controls',
+    'aov-air-handling' => 'Smoke vents, AOV panels & smoke control',
+    'painting-decorating' => 'End-of-tenancy redecoration packages',
 ];
 
 $packages = [

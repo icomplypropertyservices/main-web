@@ -6,9 +6,9 @@
 require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/share.php';
 
-$pageTitle = 'Care Home Compliance Systems | Nurse Call, Fire & Security';
-$metaDesc = 'Care home compliance for Stockport & the North West — nurse call (Courtney Thorne & more), fire alarms, emergency lighting, access control and CCTV. HTM-aligned install, service and free quotes.';
-$metaKeywords = 'care home nurse call North West, care home fire alarm, emergency lighting care home, care home CCTV, care home access control, Courtney Thorne nurse call, HTM 08-03, CQC care home compliance Stockport Manchester';
+$pageTitle = 'Care Home Systems | Nurse Call, Fire Safety & FRA | North West';
+$metaDesc = 'Care home services for Stockport & the North West — nurse call, fire risk assessments, fire alarms, emergency lighting, access control and CCTV. HTM-aligned install, service and free quotes.';
+$metaKeywords = 'care home fire risk assessment, nurse call North West, care home fire alarm, emergency lighting care home, CQC care home compliance Stockport Manchester';
 $ogImage = url('/assets/images/services/nurse-call.jpg');
 $canonicalUrl = url('/pages/care-homes.php');
 

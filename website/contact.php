@@ -6,9 +6,9 @@
 require_once __DIR__ . '/config.php';
 require_once SITE_ROOT . '/includes/share.php';
 
-$pageTitle = 'Contact Us | Free Quote';
-$metaDesc = 'Contact Icomply Property Services for a free compliance quote. Call, WhatsApp or send a message. Based in Stockport SK2 5DE — covering Greater Manchester & the North West.';
-$metaKeywords = 'contact Icomply, free quote Stockport, property compliance quote, electrician Stockport, fire alarm quote Manchester';
+$pageTitle = 'Contact Us | Free Quote — Fire, Professional & Construction';
+$metaDesc = 'Contact Icomply for a free quote on fire safety, FRAs, electrical, security, landlord compliance, kitchens, bathrooms or construction works. Stockport SK2 5DE — North West coverage.';
+$metaKeywords = 'contact Icomply, free quote Stockport, fire risk assessment quote, kitchen fitting quote, electrician Stockport, fire alarm quote Manchester';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/contact.php');
 

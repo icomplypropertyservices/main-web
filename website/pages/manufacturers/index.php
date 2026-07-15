@@ -31,9 +31,9 @@ foreach ($catalog as $slug => $entry) {
     }
 }
 
-$pageTitle = 'Manufacturers & Brands | Trade Products North West';
-$metaDesc = 'Browse ' . count($catalog) . '+ manufacturers we install, service and supply — fire, electrical, CCTV, access control, gas and more. Trade kits and local engineers across the North West.';
-$metaKeywords = 'fire alarm manufacturers, Kentec, Paxton, Hikvision, Schneider Electric, trade electrical, CCTV suppliers North West';
+$pageTitle = 'Manufacturers & Brands | Fire, Electrical & Security North West';
+$metaDesc = 'Browse ' . count($catalog) . '+ manufacturers we install, service and supply — fire detection, electrical, CCTV, access control, gas and related systems. Trade kits and local teams across the North West.';
+$metaKeywords = 'fire alarm manufacturers, Kentec, Paxton, Hikvision, Schneider Electric, trade electrical, CCTV suppliers North West, fire safety brands';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/manufacturers/index.php');
 
@@ -57,7 +57,8 @@ require SITE_ROOT . '/includes/header.php';
                 Manufacturers<br>
                 <span class="text-[#ff6b00]">&amp; trade products</span>
             </h1>
-            <p class="mt-6 text-lg text-white/80">
+            <p class="mt-4 text-sm text-white/70">Pair brand pages with our <?= count($services) ?> services — fire safety systems, electrical, security and more — across every North West town we cover.</p>
+            <p class="mt-4 text-lg text-white/80">
                 Every major brand we install and service has a dedicated page with kits, SEO content and quote CTAs —
                 ready for Shopify product IDs when you sell online.
             </p>

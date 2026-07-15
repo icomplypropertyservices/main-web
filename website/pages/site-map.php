@@ -99,13 +99,15 @@ require SITE_ROOT . '/includes/header.php';
                 Site <span class="text-[#ff6b00]">map</span>
             </h1>
             <p class="mt-6 text-lg md:text-xl text-white/80 max-w-2xl">
-                A human-friendly directory of Icomply pages — services, popular towns, featured brands and resources.
-                Looking for the machine-readable file? See our
-                <a href="<?= url('/sitemap.xml') ?>" class="text-[#ff6b00] hover:underline font-medium">XML sitemap</a>.
+                Directory of <?= count($services) ?> services (fire safety, professional &amp; construction),
+                <?= count($areas) ?>+ towns, brands, keyword guides and resources.
+                Machine-readable list:
+                <a href="<?= url('/sitemap.xml') ?>" class="text-[#ff6b00] hover:underline font-medium">XML sitemap (<?= number_format(count($services) * count($areas) + count(getMajorKeywords())) ?>+ URLs)</a>.
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#main-pages" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Main pages</a>
-                <a href="#services" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">Services</a>
+                <a href="#services" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">All services</a>
+                <a href="#keywords" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Keywords</a>
                 <a href="#areas" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Areas</a>
             </div>
         </div>
