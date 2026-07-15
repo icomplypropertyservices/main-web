@@ -2,15 +2,15 @@
 /**
  * Area hub template. Placeholders: AREA, AREA_SLUG, AREA_URL
  */
-$pageTitle = '{{AREA}} Property Compliance Services';
-$metaDesc = '{{AREA}} experts for EICR, fire alarms, gas safety, emergency lighting, CCTV and access control. Fast local response from Stockport-based engineers. Free quotes.';
-$metaKeywords = '{{AREA}} electrician, {{AREA}} fire alarm installation, {{AREA}} EICR, {{AREA}} gas safety certificate, property compliance {{AREA}}, emergency lighting {{AREA}}';
+$pageTitle = $AREA . ' Property Compliance Services';
+$metaDesc = $AREA . ' experts for EICR, fire alarms, gas safety, emergency lighting, CCTV and access control. Fast local response from Stockport-based engineers. Free quotes.';
+$metaKeywords = $AREA . ' electrician, ' . $AREA . ' fire alarm installation, ' . $AREA . ' EICR, ' . $AREA . ' gas safety certificate, property compliance ' . $AREA . ', emergency lighting ' . $AREA;
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 
 $allServices = getServices();
 $allAreas = getAreas();
-$areaName = '{{AREA}}';
-$areaSlugVal = '{{AREA_SLUG}}';
+$areaName = $AREA;
+$areaSlugVal = $AREA_SLUG;
 
 $nearby = [];
 $idx = array_search($areaName, $allAreas, true);
@@ -104,19 +104,19 @@ $schema = [
             <div>
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs tracking-widest uppercase mb-5">
                     <span class="w-2 h-2 rounded-full bg-[#ff6b00]"></span>
-                    Local engineers · {{AREA}}
+                    Local engineers · <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
                     Property compliance in<br>
-                    <span class="text-[#ff6b00]">{{AREA}}</span>
+                    <span class="text-[#ff6b00]"><?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></span>
                 </h1>
                 <p class="mt-6 text-lg text-white/80 max-w-xl">
                     Electrical, fire alarms, gas safety, emergency lighting, CCTV and access control —
-                    installed, tested and certified for properties in {{AREA}} and nearby postcodes.
+                    installed, tested and certified for properties in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> and nearby postcodes.
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get free quote</a>
-                    <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Quote%20for%20{{AREA_URL}}"
+                    <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Quote%20for%20<?= htmlspecialchars($AREA_URL, ENT_QUOTES, 'UTF-8') ?>"
                        target="_blank" rel="noopener"
                        class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
                     <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>"
@@ -134,14 +134,14 @@ $schema = [
                 $heroCards = array_slice($allServices, 0, 4, true);
                 foreach ($heroCards as $slug => $name):
                 ?>
-                <a href="<?= url('/pages/' . $slug . '/{{AREA_SLUG}}.php') ?>"
+                <a href="<?= url('/pages/' . $slug . '/' . $AREA_SLUG . '.php') ?>"
                    class="group relative rounded-3xl overflow-hidden border border-white/10 min-h-[130px] bg-white/5 hover:border-[#ff6b00] transition">
                     <img src="<?= url('/assets/images/services/' . $slug . '.jpg') ?>" alt=""
                          class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-55 transition"
                          loading="lazy" onerror="this.style.display='none'">
                     <div class="relative p-4 h-full flex flex-col justify-end min-h-[130px]">
                         <div class="font-semibold text-white leading-tight"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></div>
-                        <div class="text-xs text-white/70 mt-1">in {{AREA}} →</div>
+                        <div class="text-xs text-white/70 mt-1">in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> →</div>
                     </div>
                 </a>
                 <?php endforeach; ?>
@@ -155,7 +155,7 @@ $schema = [
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <?php
         $trust = [
-            ['Local to {{AREA}}', 'Engineers covering {{AREA}} and surrounding postcodes from Stockport'],
+            ['Local to ' . $AREA, 'Engineers covering ' . $AREA . ' and surrounding postcodes from Stockport'],
             ['Standards-led', 'BS 5839, BS 5266, BS 7671, gas safety & more'],
             ['Full paperwork', 'Certificates and logbooks for landlords, insurers & FM'],
             ['One team', 'Multi-service packages in a single visit schedule'],
@@ -176,25 +176,25 @@ $schema = [
 <section class="max-w-7xl mx-auto px-6 py-16">
     <div class="grid lg:grid-cols-2 gap-12 items-start">
         <div>
-            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">About our {{AREA}} cover</div>
+            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">About our <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> cover</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">
-                Compliance engineers for {{AREA}}
+                Compliance engineers for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>
             </h2>
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
                 Icomply Property Services provides complete property compliance for landlords, facilities managers,
-                care providers and commercial occupiers in <strong>{{AREA}}</strong>. Whether you need an EICR,
+                care providers and commercial occupiers in <strong><?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></strong>. Whether you need an EICR,
                 fire alarm service, gas safety certificate, emergency lighting test or a full multi-system install,
                 we book local engineers with fixed-price quotes and clear documentation.
             </p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
-                Based in Offerton, Stockport (SK2 5DE), we routinely serve {{AREA}} and the wider North West with
+                Based in Offerton, Stockport (SK2 5DE), we routinely serve <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> and the wider North West with
                 same-week appointments where capacity allows. Choose a service below for a dedicated
-                <strong>{{AREA}}</strong> landing page, or request a package quote for several services at once.
+                <strong><?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></strong> landing page, or request a package quote for several services at once.
             </p>
         </div>
         <div class="bg-[#0a2540] text-white rounded-3xl p-8 md:p-10">
-            <h3 class="text-2xl font-semibold tracking-tight">{{AREA}} compliance package</h3>
-            <p class="mt-3 text-white/80">Combine EICR, fire alarms, emergency lighting and gas safety into one visit schedule for landlords and FM teams in {{AREA}}.</p>
+            <h3 class="text-2xl font-semibold tracking-tight"><?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> compliance package</h3>
+            <p class="mt-3 text-white/80">Combine EICR, fire alarms, emergency lighting and gas safety into one visit schedule for landlords and FM teams in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>.</p>
             <ul class="mt-6 space-y-3 text-sm text-white/90">
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Fixed-price multi-service quotes</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Full documentation for audits &amp; insurers</li>
@@ -211,9 +211,9 @@ $schema = [
     <div class="max-w-7xl mx-auto px-6 py-16">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
             <div>
-                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Services in {{AREA}}</div>
+                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Services in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></div>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Everything we do locally</h2>
-                <p class="mt-2 text-zinc-600 max-w-xl">Tap a service for install, service and certification details specific to {{AREA}}.</p>
+                <p class="mt-2 text-zinc-600 max-w-xl">Tap a service for install, service and certification details specific to <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>.</p>
             </div>
             <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All service hubs →</a>
         </div>
@@ -221,11 +221,11 @@ $schema = [
             <?php foreach ($allServices as $slug => $name):
                 $blurb = getServiceBlurb($slug, true);
             ?>
-            <a href="<?= url('/pages/' . $slug . '/{{AREA_SLUG}}.php') ?>"
+            <a href="<?= url('/pages/' . $slug . '/' . $AREA_SLUG . '.php') ?>"
                class="group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="h-36 bg-zinc-100 overflow-hidden">
                     <img src="<?= url('/assets/images/services/' . $slug . '.jpg') ?>"
-                         alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> in {{AREA}}"
+                         alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>"
                          class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
                          loading="lazy"
                          onerror="this.parentElement.style.display='none'">
@@ -233,10 +233,10 @@ $schema = [
                 <div class="p-5 flex-1 flex flex-col">
                     <h3 class="font-semibold text-lg text-black">
                         <?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>
-                        <span class="text-zinc-400 font-normal text-base">in {{AREA}}</span>
+                        <span class="text-zinc-400 font-normal text-base">in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></span>
                     </h3>
                     <p class="text-sm text-zinc-600 mt-2 flex-1"><?= htmlspecialchars($blurb, ENT_QUOTES, 'UTF-8') ?></p>
-                    <span class="mt-4 text-sm font-semibold text-[#ff6b00]">View {{AREA}} page →</span>
+                    <span class="mt-4 text-sm font-semibold text-[#ff6b00]">View <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> page →</span>
                 </div>
             </a>
             <?php endforeach; ?>
@@ -246,12 +246,12 @@ $schema = [
 
 <!-- HOW IT WORKS -->
 <section class="max-w-7xl mx-auto px-6 py-16">
-    <h2 class="text-3xl font-semibold tracking-tight text-black text-center mb-12">How it works in {{AREA}}</h2>
+    <h2 class="text-3xl font-semibold tracking-tight text-black text-center mb-12">How it works in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></h2>
     <div class="grid md:grid-cols-3 gap-8">
         <?php
         $steps = [
-            ['1', 'Tell us the job', 'Service, postcode in or near {{AREA}}, panel brand or system type — form, phone or WhatsApp.'],
-            ['2', 'Get a fixed quote', 'We confirm scope, standards and timeline for your {{AREA}} site. Clear price, no jargon.'],
+            ['1', 'Tell us the job', 'Service, postcode in or near ' . $AREA . ', panel brand or system type — form, phone or WhatsApp.'],
+            ['2', 'Get a fixed quote', 'We confirm scope, standards and timeline for your ' . $AREA . ' site. Clear price, no jargon.'],
             ['3', 'We deliver & certify', 'Engineers attend, complete the work and issue documentation for compliance.'],
         ];
         foreach ($steps as [$n, $t, $d]): ?>
@@ -272,7 +272,7 @@ $schema = [
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Nearby</div>
                 <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Other towns we cover</h2>
-                <p class="mt-2 text-zinc-600">Also serving areas near {{AREA}} across the North West.</p>
+                <p class="mt-2 text-zinc-600">Also serving areas near <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> across the North West.</p>
             </div>
             <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All <?= count($allAreas) ?> areas →</a>
         </div>
@@ -292,13 +292,13 @@ $schema = [
 <section class="bg-[#0a2540] text-white">
     <div class="max-w-7xl mx-auto px-6 py-14 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
         <div>
-            <h2 class="text-3xl font-semibold tracking-tight">Ready for a {{AREA}} quote?</h2>
+            <h2 class="text-3xl font-semibold tracking-tight">Ready for a <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> quote?</h2>
             <p class="mt-2 text-white/75">Chat on WhatsApp or call — we aim to respond within 2 hours on business days.</p>
         </div>
         <div class="flex flex-wrap gap-3">
-            <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Quote%20for%20{{AREA_URL}}"
+            <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Quote%20for%20<?= htmlspecialchars($AREA_URL, ENT_QUOTES, 'UTF-8') ?>"
                target="_blank" rel="noopener"
-               class="px-8 py-4 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp for {{AREA}}</a>
+               class="px-8 py-4 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></a>
             <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>"
                class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
         </div>
@@ -320,9 +320,9 @@ echo testimonialsSectionHtml();
         <div class="text-center mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">
-                Request your {{AREA}} quote
+                Request your <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> quote
             </h2>
-            <p class="mt-3 text-zinc-600">Include your {{AREA}} postcode, property type and any panel brands already on site.</p>
+            <p class="mt-3 text-zinc-600">Include your <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> postcode, property type and any panel brands already on site.</p>
         </div>
         <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
@@ -339,11 +339,11 @@ echo testimonialsSectionHtml();
                             <?= htmlspecialchars($name . ' in ' . $areaName, ENT_QUOTES, 'UTF-8') ?>
                         </option>
                     <?php endforeach; ?>
-                    <option value="Multi-service package">Multi-service package — {{AREA}}</option>
+                    <option value="Multi-service package">Multi-service package — <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></option>
                 </select>
             </div>
             <textarea name="message" rows="4" required maxlength="5000"
-                      placeholder="{{AREA}} postcode, property type, panel brand / system details…"
+                      placeholder="<?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> postcode, property type, panel brand / system details…"
                       class="w-full border px-5 py-3.5 rounded-2xl"></textarea>
             <button type="submit" class="w-full modern-btn text-white py-4 text-lg font-semibold rounded-2xl">Submit request</button>
             <p class="text-center text-xs text-zinc-500">

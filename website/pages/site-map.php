@@ -120,7 +120,9 @@ require SITE_ROOT . '/includes/header.php';
             $toc = [
                 'main-pages' => 'Main pages',
                 'services' => 'Services',
+                'service-areas' => 'Service × area',
                 'areas' => 'Popular areas',
+                'keywords' => 'Keyword guides',
                 'manufacturers' => 'Manufacturers',
                 'resources' => 'Resources',
             ];
@@ -178,6 +180,71 @@ require SITE_ROOT . '/includes/header.php';
                 </a>
             <?php endforeach; ?>
         </div>
+    </div>
+</section>
+
+<!-- SERVICE × AREA (sample of virtual landings — full set via XML sitemaps) -->
+<section id="service-areas" class="max-w-7xl mx-auto px-6 py-16 md:py-20 scroll-mt-24">
+    <div class="mb-10">
+        <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local landings</div>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Service × area examples</h2>
+        <p class="mt-2 text-zinc-600 max-w-2xl">
+            Every service has a local page for each town we cover (router-driven, no stub required).
+            Below: popular combos — full list is in the XML sitemaps.
+        </p>
+    </div>
+    <div class="flex flex-wrap gap-2">
+        <?php
+        $sampleTowns = array_slice($popularAreas, 0, 6);
+        $sampleServices = array_slice($services, 0, 6, true);
+        foreach ($sampleServices as $sSlug => $sName):
+            foreach ($sampleTowns as $town):
+                $aSlug = areaSlug($town);
+                ?>
+                <a href="<?= url('/pages/' . rawurlencode($sSlug) . '/' . rawurlencode($aSlug) . '.php') ?>"
+                   class="px-3 py-1.5 bg-white border rounded-full text-xs sm:text-sm text-black hover:border-[#ff6b00] transition">
+                    <?= htmlspecialchars($sName . ' in ' . $town, ENT_QUOTES, 'UTF-8') ?>
+                </a>
+            <?php endforeach;
+        endforeach; ?>
+    </div>
+    <p class="mt-6 text-sm text-zinc-500">
+        Also browse by <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/services/index.php') ?>">service</a>
+        or <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/areas/index.php') ?>">area hub</a>
+        (each area page links every service for that town).
+    </p>
+</section>
+
+<!-- KEYWORD GUIDES -->
+<section id="keywords" class="bg-zinc-50 border-y scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+            <div>
+                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">SEO guides</div>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Keyword guides</h2>
+                <p class="mt-2 text-zinc-600 max-w-xl">
+                    <?= (int)$kwCount ?> topic pages (e.g. EICR, fire alarm servicing) plus local keyword × town landings.
+                </p>
+            </div>
+            <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All keyword guides →</a>
+        </div>
+        <div class="flex flex-wrap gap-2">
+            <?php
+            $kwSample = array_slice(getMajorKeywords(), 0, 24, true);
+            foreach ($kwSample as $kSlug => $kMeta):
+                $kName = is_array($kMeta) ? ($kMeta['name'] ?? $kSlug) : (string)$kMeta;
+                ?>
+                <a href="<?= url('/pages/keywords/' . rawurlencode($kSlug) . '.php') ?>"
+                   class="px-3 py-1.5 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00] transition">
+                    <?= htmlspecialchars($kName, ENT_QUOTES, 'UTF-8') ?>
+                </a>
+            <?php endforeach; ?>
+        </div>
+        <p class="mt-4 text-sm text-zinc-500">
+            Example local page:
+            <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/keywords/eicr/stockport.php') ?>">EICR in Stockport</a>
+            — every keyword also has per-town URLs via the router.
+        </p>
     </div>
 </section>
 

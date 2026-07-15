@@ -1,51 +1,26 @@
 <?php
 /**
- * Generic service × area template (fallback when no templates/services/{slug}.php).
- * Placeholders: SERVICE_NAME, SERVICE_SLUG, AREA, AREA_SLUG, SEO_KEYWORDS,
+ * Single data-driven service × area template (all services).
+ * Pure PHP vars via executeTemplateVars() (no {{}} / eval).
+ * Content: getServiceBlurb / getServiceStandards + manufacturer helpers.
+ * Vars: SERVICE_NAME, SERVICE_SLUG, AREA, AREA_SLUG, SEO_KEYWORDS,
  * MANUFACTURER_TAGS, MANUFACTURER_IMAGES, KEYWORD_IMAGE_1/2/3
  */
-$pageTitle = '{{SERVICE_NAME}} in {{AREA}} | Icomply Property Services';
-$metaDesc = 'Expert {{SERVICE_NAME}} in {{AREA}}. Installation, maintenance, testing & certification. Local engineers. Free fixed-price quote.';
-$metaKeywords = '{{SEO_KEYWORDS}}';
-$ogImage = url('/assets/images/services/{{SERVICE_SLUG}}.jpg');
+$pageTitle = $SERVICE_NAME . ' in ' . $AREA . ' | Icomply Property Services';
+$metaDesc = 'Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing & certification. Local engineers. Free fixed-price quote.';
+$metaKeywords = $SEO_KEYWORDS;
+$ogImage = url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
 
 $allServices = getServices();
 $allAreas = getAreas();
-$serviceSlug = '{{SERVICE_SLUG}}';
-$serviceName = '{{SERVICE_NAME}}';
-$areaName = '{{AREA}}';
-$areaSlugVal = '{{AREA_SLUG}}';
+$serviceSlug = $SERVICE_SLUG;
+$serviceName = $SERVICE_NAME;
+$areaName = $AREA;
+$areaSlugVal = $AREA_SLUG;
 
-$serviceBlurbs = [
-    'electrical' => 'EICR, rewires, consumer units, EV chargers, PAT and commercial electrical installs to BS 7671.',
-    'fire-alarms' => 'BS 5839 design, install, service and certification for addressable, conventional and wireless systems.',
-    'emergency-lighting' => 'BS 5266 testing, upgrades, LED conversions and monthly/annual certification.',
-    'aov-air-handling' => 'Smoke vents, AOV panels, AHU controls and smoke-control system maintenance.',
-    'nurse-call' => 'Care home and hospital nurse call design, install, upgrades and planned maintenance.',
-    'gas-systems' => 'CP12 / CP44 landlord certificates, boilers, commercial gas and safety checks.',
-    'intruder-alarm' => 'PD 6662 / BS EN 50131 wired and wireless intruder systems with monitoring options.',
-    'cctv' => 'IP and HD CCTV design, install, remote viewing and NVR/DVR recording.',
-    'access-control' => 'Paxton, HID, Salto door access, credentials and fire-override integration.',
-    'door-entry' => 'Video and audio door entry for flats, multi-tenant and commercial sites.',
-    'intercoms' => 'Multi-tenant and commercial intercom systems with master/substation setups.',
-];
-
-$serviceStandards = [
-    'electrical' => 'BS 7671 (18th Edition) · EICR · Part P · EV charger regs',
-    'fire-alarms' => 'BS 5839-1 · BS 5839-6 · BS EN 54 · Fire Safety Order',
-    'emergency-lighting' => 'BS 5266 · BS EN 1838 · monthly & annual tests',
-    'aov-air-handling' => 'BS 9991 · EN 12101 · smoke control guidance',
-    'nurse-call' => 'HTM 08-03 · care home & hospital specifications',
-    'gas-systems' => 'Gas Safe · CP12 / CP44 · manufacturer servicing',
-    'intruder-alarm' => 'PD 6662 · BS EN 50131 · NSI / SSAIB style installs',
-    'cctv' => 'BS EN 62676 · GDPR / DPA camera siting',
-    'access-control' => 'BS EN 50133 · EN 60839 · fire-release integration',
-    'door-entry' => 'BS EN 60839 · multi-tenant residential standards',
-    'intercoms' => 'Commercial intercom & master-station best practice',
-];
-
-$blurb = $serviceBlurbs[$serviceSlug] ?? 'Installation, maintenance, testing and certification for properties across the North West.';
-$standards = $serviceStandards[$serviceSlug] ?? 'British Standards · manufacturer guidance · full certification';
+// Use getServiceBlurb / getServiceStandards (config.php ← data/service-meta.json). Do not hardcode $serviceBlurbs.
+$blurb = getServiceBlurb($serviceSlug);
+$standards = getServiceStandards($serviceSlug);
 
 // Nearby towns for “popular nearby” note (same service, other areas)
 $nearby = [];
@@ -77,7 +52,7 @@ if (empty($_SESSION['csrf'])) {
 }
 
 require_once SITE_ROOT . '/includes/share.php';
-$canonicalUrl = url('/pages/{{SERVICE_SLUG}}/{{AREA_SLUG}}.php');
+$canonicalUrl = url('/pages/' . $SERVICE_SLUG . '/' . $AREA_SLUG . '.php');
 require SITE_ROOT . '/includes/header.php';
 
 $schema = [
@@ -182,7 +157,7 @@ $schema = [
             <span>/</span>
             <a href="<?= url('/pages/services/index.php') ?>" class="hover:text-white">Services</a>
             <span>/</span>
-            <a href="<?= url('/pages/services/{{SERVICE_SLUG}}.php') ?>" class="hover:text-white"><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></a>
+            <a href="<?= url('/pages/services/' . $SERVICE_SLUG . '.php') ?>" class="hover:text-white"><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></a>
             <span>/</span>
             <span class="text-white/80"><?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></span>
         </nav>
@@ -211,7 +186,7 @@ $schema = [
                 <p class="mt-6 text-sm text-white/60"><?= htmlspecialchars($standards, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
-                <img src="<?= url('/assets/images/services/{{SERVICE_SLUG}}.jpg') ?>"
+                <img src="<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation and servicing in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> by Icomply Property Services"
                      width="1200" height="800"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
@@ -276,21 +251,21 @@ $schema = [
         </div>
         <div class="lg:col-span-2 space-y-4">
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
-                <img src="<?= url('/assets/images/keywords/{{KEYWORD_IMAGE_1}}.jpg') ?>"
+                <img src="<?= url('/assets/images/keywords/' . $KEYWORD_IMAGE_1 . '.jpg') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> panel and equipment used by Icomply in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
                      width="800" height="600"
                      class="w-full h-44 object-cover"
                      loading="lazy"
-                     onerror="this.src='<?= url('/assets/images/services/{{SERVICE_SLUG}}.jpg') ?>'">
+                     onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
                 <p class="text-xs text-zinc-500 px-3 py-2"><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> control equipment &amp; panels</p>
             </div>
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
-                <img src="<?= url('/assets/images/keywords/{{KEYWORD_IMAGE_2}}.jpg') ?>"
+                <img src="<?= url('/assets/images/keywords/' . $KEYWORD_IMAGE_2 . '.jpg') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation work and testing in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
                      width="800" height="600"
                      class="w-full h-44 object-cover"
                      loading="lazy"
-                     onerror="this.src='<?= url('/assets/images/services/{{SERVICE_SLUG}}.jpg') ?>'">
+                     onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
                 <p class="text-xs text-zinc-500 px-3 py-2">Installation, testing &amp; certification in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
         </div>
@@ -328,18 +303,18 @@ $schema = [
             <a href="<?= url('/shop/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Browse trade shop →</a>
         </div>
         <div class="flex flex-wrap gap-3 mb-8">
-            {{MANUFACTURER_TAGS}}
+            <?= $MANUFACTURER_TAGS ?>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {{MANUFACTURER_IMAGES}}
+            <?= $MANUFACTURER_IMAGES ?>
         </div>
         <div class="mt-10 rounded-3xl overflow-hidden border bg-white">
-            <img src="<?= url('/assets/images/keywords/{{KEYWORD_IMAGE_3}}.jpg') ?>"
+            <img src="<?= url('/assets/images/keywords/' . $KEYWORD_IMAGE_3 . '.jpg') ?>"
                  alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturer panels and equipment — Icomply <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
                  width="1200" height="700"
                  class="w-full h-64 md:h-80 object-cover"
                  loading="lazy"
-                 onerror="this.src='<?= url('/assets/images/services/{{SERVICE_SLUG}}.jpg') ?>'">
+                 onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
             <p class="text-xs text-zinc-500 px-4 py-3">Manufacturer panels &amp; systems commonly installed and serviced in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></p>
         </div>
     </div>
@@ -354,16 +329,16 @@ $schema = [
             <p class="mt-2 text-zinc-600">Combine multiple compliance services into one visit schedule for landlords and FM teams.</p>
         </div>
         <div class="flex flex-wrap gap-4">
-            <a href="<?= url('/pages/areas/{{AREA_SLUG}}.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All services in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> →</a>
+            <a href="<?= url('/pages/areas/' . $AREA_SLUG . '.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All services in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> →</a>
             <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-zinc-500 hover:text-[#ff6b00]">Service hubs →</a>
         </div>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         <?php foreach ($allServices as $slug => $name):
             if ($slug === $serviceSlug) continue;
-            $rBlurb = $serviceBlurbs[$slug] ?? 'Installation, maintenance and certification';
+            $rBlurb = getServiceBlurb($slug);
         ?>
-        <a href="<?= url('/pages/' . $slug . '/{{AREA_SLUG}}.php') ?>"
+        <a href="<?= url('/pages/' . $slug . '/' . $AREA_SLUG . '.php') ?>"
            class="group bg-white border rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
             <div class="h-32 bg-zinc-100 overflow-hidden">
                 <img src="<?= url('/assets/images/services/' . $slug . '.jpg') ?>"
@@ -400,14 +375,14 @@ $schema = [
                     open a dedicated local page for the same service.
                 </p>
             </div>
-            <a href="<?= url('/pages/services/{{SERVICE_SLUG}}.php') ?>" class="text-sm font-semibold text-[#ff6b00]">
+            <a href="<?= url('/pages/services/' . $SERVICE_SLUG . '.php') ?>" class="text-sm font-semibold text-[#ff6b00]">
                 <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> hub →
             </a>
         </div>
         <?php if (!empty($popularTowns)): ?>
         <div class="flex flex-wrap gap-2 mb-4">
             <?php foreach ($popularTowns as $town): ?>
-                <a href="<?= url('/pages/{{SERVICE_SLUG}}/' . areaSlug($town) . '.php') ?>"
+                <a href="<?= url('/pages/' . $SERVICE_SLUG . '/' . areaSlug($town) . '.php') ?>"
                    class="px-5 py-2.5 bg-white border rounded-full text-sm font-medium text-black hover:border-[#ff6b00] hover:shadow-sm transition">
                     <?= htmlspecialchars($serviceName . ' in ' . $town, ENT_QUOTES, 'UTF-8') ?>
                 </a>
@@ -420,7 +395,7 @@ $schema = [
             <?php foreach ($nearby as $town):
                 if (in_array($town, $popularTowns, true)) continue;
             ?>
-                <a href="<?= url('/pages/{{SERVICE_SLUG}}/' . areaSlug($town) . '.php') ?>"
+                <a href="<?= url('/pages/' . $SERVICE_SLUG . '/' . areaSlug($town) . '.php') ?>"
                    class="px-3 py-1.5 bg-zinc-50 border rounded-full text-xs text-zinc-700 hover:border-[#ff6b00]">
                     <?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?>
                 </a>

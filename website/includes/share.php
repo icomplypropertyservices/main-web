@@ -8,25 +8,19 @@ if (!defined('SITE_URL')) {
 }
 
 /**
- * Current page absolute URL (no query string).
+ * Current page absolute URL (no query string, extensionless — never forces .php).
  */
 function currentPageUrl(): string {
     $path = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
-    // Strip /icomply if SITE_URL already includes it — url() handles site root
-    $base = rtrim(SITE_URL, '/');
-    // Prefer configured SITE_URL + relative path under site
+    // Prefer path relative to SITE_URL base (e.g. strip /icomply subfolder)
     $sitePath = parse_url(SITE_URL, PHP_URL_PATH) ?: '';
     if ($sitePath !== '' && $sitePath !== '/' && str_starts_with($path, $sitePath)) {
         $rel = substr($path, strlen(rtrim($sitePath, '/'))) ?: '/';
-        return $base . ($rel === '' ? '' : $rel);
+    } else {
+        $rel = $path;
     }
-    // Fallback: full SITE_URL host + path
-    $host = parse_url(SITE_URL, PHP_URL_SCHEME) . '://' . parse_url(SITE_URL, PHP_URL_HOST);
-    $port = parse_url(SITE_URL, PHP_URL_PORT);
-    if ($port) {
-        $host .= ':' . $port;
-    }
-    return $host . $path;
+    // url() strips .php and /index so share/canonical stay clean
+    return url($rel === '' ? '/' : $rel);
 }
 
 /**

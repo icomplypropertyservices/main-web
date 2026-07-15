@@ -11,12 +11,19 @@ $all = [];
 $seen = [];
 
 $add = function (string $path, string $priority = '0.5') use (&$all, &$seen, $base) {
-    $path = '/' . ltrim($path, '/');
+    $path = '/' . ltrim(str_replace('\\', '/', $path), '/');
+    // Clean extensionless public URLs
+    $path = preg_replace('#\.php$#i', '', $path) ?? $path;
+    $path = preg_replace('#/index$#i', '', $path) ?? $path;
+    if ($path === '') {
+        $path = '/';
+    }
     if (isset($seen[$path])) {
         return;
     }
     $seen[$path] = true;
-    $all[] = ['loc' => $base . $path, 'priority' => $priority];
+    $loc = $path === '/' ? $base : ($base . $path);
+    $all[] = ['loc' => $loc, 'priority' => $priority];
 };
 
 $exists = function (string $relPath): bool {

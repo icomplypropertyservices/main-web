@@ -12,13 +12,6 @@ $metaDesc = 'Icomply covers ' . count($areas) . '+ towns across Greater Manchest
 $metaKeywords = 'property compliance North West, electrician Manchester, fire alarms Stockport, gas safety Bolton, emergency lighting Liverpool, CCTV Preston';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 
-$serviceBlurbs = [
-    'electrical' => 'EICR, rewires, EV chargers',
-    'fire-alarms' => 'BS 5839 install & service',
-    'emergency-lighting' => 'BS 5266 testing',
-    'gas-systems' => 'CP12 / CP44 certificates',
-];
-
 $featured = array_values(array_filter(
     ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
     function ($t) use ($areas) {

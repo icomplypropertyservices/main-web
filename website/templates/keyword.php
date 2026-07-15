@@ -1,23 +1,23 @@
 <?php
 /**
  * Keyword hub — high-contrast, unique SEO content per keyword.
- * Placeholders: KEYWORD_NAME, KEYWORD_SLUG, SERVICE_NAME, SERVICE_SLUG,
+ * Pure PHP vars via executeTemplateVars() (no {{}} / eval).
  * RELATED_SLUG, RELATED_NAME, MANUFACTURER_TAGS, SEO_KEYWORDS,
  * KEYWORD_INTRO, KEYWORD_BODY, KEYWORD_META, KEYWORD_FOCUS_HTML, KEYWORD_FAQ_HTML,
  * KEYWORD_IMAGE, SERVICE_IMAGE
  */
-$pageTitle = '{{KEYWORD_NAME}} | North West';
-$metaDesc = '{{KEYWORD_META}}';
-$metaKeywords = '{{SEO_KEYWORDS}}';
-$ogImage = '{{KEYWORD_IMAGE}}';
-$canonicalUrl = url('/pages/keywords/{{KEYWORD_SLUG}}.php');
+$pageTitle = $KEYWORD_NAME . ' | North West';
+$metaDesc = $KEYWORD_META;
+$metaKeywords = $SEO_KEYWORDS;
+$ogImage = $KEYWORD_IMAGE;
+$canonicalUrl = url('/pages/keywords/' . $KEYWORD_SLUG . '.php');
 
-$keywordName = '{{KEYWORD_NAME}}';
-$keywordSlug = '{{KEYWORD_SLUG}}';
-$serviceName = '{{SERVICE_NAME}}';
-$serviceSlug = '{{SERVICE_SLUG}}';
-$relatedSlug = '{{RELATED_SLUG}}';
-$relatedName = '{{RELATED_NAME}}';
+$keywordName = $KEYWORD_NAME;
+$keywordSlug = $KEYWORD_SLUG;
+$serviceName = $SERVICE_NAME;
+$serviceSlug = $SERVICE_SLUG;
+$relatedSlug = $RELATED_SLUG;
+$relatedName = $RELATED_NAME;
 $allAreas = getAreas();
 $allServices = getServices();
 
@@ -62,24 +62,24 @@ require SITE_ROOT . '/includes/header.php';
 <!-- HERO: solid navy + image with dark overlay for readable text -->
 <section class="relative overflow-hidden bg-[#061828] text-white">
     <div class="absolute inset-0">
-        <img src="{{KEYWORD_IMAGE}}" alt="" class="w-full h-full object-cover opacity-35" loading="eager"
-             onerror="this.src='{{SERVICE_IMAGE}}'">
+        <img src="<?= htmlspecialchars($KEYWORD_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="" class="w-full h-full object-cover opacity-35" loading="eager"
+             onerror="this.src=$SERVICE_IMAGE">
         <div class="absolute inset-0 bg-gradient-to-r from-[#061828] via-[#061828]/95 to-[#061828]/75"></div>
     </div>
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
         <nav class="text-xs text-white/70 mb-5 flex flex-wrap gap-2" aria-label="Breadcrumb">
             <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a><span class="text-white/40">/</span>
             <a href="<?= url('/pages/keywords/index.php') ?>" class="hover:text-white">Guides</a><span class="text-white/40">/</span>
-            <span class="text-white font-medium">{{KEYWORD_NAME}}</span>
+            <span class="text-white font-medium"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></span>
         </nav>
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ff6b00] text-white text-xs font-bold tracking-widest uppercase mb-5">
-            {{SERVICE_NAME}} guide
+            <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> guide
         </div>
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white max-w-3xl leading-[1.08] drop-shadow-lg">
-            {{KEYWORD_NAME}}
+            <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?>
         </h1>
         <p class="mt-5 text-lg md:text-xl text-white max-w-2xl leading-relaxed font-medium drop-shadow">
-            {{KEYWORD_INTRO}}
+            <?= htmlspecialchars($KEYWORD_INTRO, ENT_QUOTES, 'UTF-8') ?>
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
             <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-bold text-white shadow-lg">Get free quote</a>
@@ -121,28 +121,28 @@ require SITE_ROOT . '/includes/header.php';
                     <h2 class="text-2xl md:text-3xl font-bold text-[#061828] tracking-tight">
                         About <?= htmlspecialchars($keywordName, ENT_QUOTES, 'UTF-8') ?>
                     </h2>
-                    <p class="mt-4 text-base md:text-lg text-zinc-900 leading-relaxed font-medium">{{KEYWORD_INTRO}}</p>
-                    <p class="mt-4 text-base md:text-lg text-zinc-900 leading-relaxed">{{KEYWORD_BODY}}</p>
-                    <ul class="mt-6 space-y-3">{{KEYWORD_FOCUS_HTML}}</ul>
+                    <p class="mt-4 text-base md:text-lg text-zinc-900 leading-relaxed font-medium"><?= htmlspecialchars($KEYWORD_INTRO, ENT_QUOTES, 'UTF-8') ?></p>
+                    <p class="mt-4 text-base md:text-lg text-zinc-900 leading-relaxed"><?= htmlspecialchars($KEYWORD_BODY, ENT_QUOTES, 'UTF-8') ?></p>
+                    <ul class="mt-6 space-y-3"><?= $KEYWORD_FOCUS_HTML ?></ul>
                     <p class="mt-6 text-sm text-zinc-800">
                         Part of our
-                        <a href="<?= url('/pages/services/{{SERVICE_SLUG}}.php') ?>" class="font-bold text-[#ff6b00] hover:underline">{{SERVICE_NAME}}</a>
+                        <a href="<?= url('/pages/services/' . $SERVICE_SLUG . '.php') ?>" class="font-bold text-[#ff6b00] hover:underline"><?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?></a>
                         service · Related:
-                        <a href="<?= url('/pages/keywords/{{RELATED_SLUG}}.php') ?>" class="font-bold text-[#ff6b00] hover:underline">{{RELATED_NAME}}</a>
+                        <a href="<?= url('/pages/keywords/' . $RELATED_SLUG . '.php') ?>" class="font-bold text-[#ff6b00] hover:underline"><?= htmlspecialchars($RELATED_NAME, ENT_QUOTES, 'UTF-8') ?></a>
                     </p>
                 </div>
             </div>
             <div class="lg:col-span-2 space-y-5">
                 <div class="rounded-3xl overflow-hidden border-2 border-zinc-300 shadow-md bg-zinc-200">
-                    <img src="{{KEYWORD_IMAGE}}" alt="{{KEYWORD_NAME}} — Icomply Property Services"
+                    <img src="<?= htmlspecialchars($KEYWORD_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> — Icomply Property Services"
                          class="w-full h-52 object-cover" loading="lazy"
-                         onerror="this.src='{{SERVICE_IMAGE}}'">
-                    <div class="p-3 bg-[#061828] text-white text-sm font-semibold text-center">{{KEYWORD_NAME}}</div>
+                         onerror="this.src=$SERVICE_IMAGE">
+                    <div class="p-3 bg-[#061828] text-white text-sm font-semibold text-center"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></div>
                 </div>
                 <div class="rounded-3xl overflow-hidden border-2 border-zinc-300 shadow-md bg-zinc-200">
-                    <img src="{{SERVICE_IMAGE}}" alt="{{SERVICE_NAME}} by Icomply"
+                    <img src="<?= htmlspecialchars($SERVICE_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> by Icomply"
                          class="w-full h-40 object-cover" loading="lazy">
-                    <div class="p-3 bg-white text-[#061828] text-sm font-semibold text-center border-t-2 border-zinc-200">{{SERVICE_NAME}} service</div>
+                    <div class="p-3 bg-white text-[#061828] text-sm font-semibold text-center border-t-2 border-zinc-200"><?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> service</div>
                 </div>
             </div>
         </div>
@@ -153,21 +153,21 @@ require SITE_ROOT . '/includes/header.php';
 <section class="bg-white border-y-2 border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-14">
         <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">Brands we install &amp; service</h2>
-        <p class="mt-2 text-zinc-800 max-w-2xl">Click a manufacturer for products, kits and install quotes related to {{SERVICE_NAME}} and {{KEYWORD_NAME}}.</p>
-        <div class="mt-6 flex flex-wrap gap-2">{{MANUFACTURER_TAGS}}</div>
+        <p class="mt-2 text-zinc-800 max-w-2xl">Click a manufacturer for products, kits and install quotes related to <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> and <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?>.</p>
+        <div class="mt-6 flex flex-wrap gap-2"><?= $MANUFACTURER_TAGS ?></div>
     </div>
 </section>
 
 <!-- AREAS — high contrast chips -->
 <section class="bg-zinc-100">
     <div class="max-w-7xl mx-auto px-6 py-14">
-        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">{{KEYWORD_NAME}} by area</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> by area</h2>
         <p class="mt-2 text-zinc-800">Local landing pages for every town we cover (<?= count($allAreas) ?> areas).</p>
         <div class="mt-6 flex flex-wrap gap-2">
             <?php foreach ($popularTowns as $a): ?>
-                <a href="<?= url('/pages/keywords/{{KEYWORD_SLUG}}/' . areaSlug($a) . '.php') ?>"
+                <a href="<?= url('/pages/keywords/' . $KEYWORD_SLUG . '/' . areaSlug($a) . '.php') ?>"
                    class="px-4 py-2.5 bg-[#061828] text-white rounded-full text-sm font-semibold hover:bg-[#ff6b00] transition shadow">
-                    {{KEYWORD_NAME}} in <?= htmlspecialchars($a, ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> in <?= htmlspecialchars($a, ENT_QUOTES, 'UTF-8') ?>
                 </a>
             <?php endforeach; ?>
         </div>
@@ -175,7 +175,7 @@ require SITE_ROOT . '/includes/header.php';
             <?php foreach ($allAreas as $a):
                 if (in_array($a, $popularTowns, true)) continue;
             ?>
-                <a href="<?= url('/pages/keywords/{{KEYWORD_SLUG}}/' . areaSlug($a) . '.php') ?>"
+                <a href="<?= url('/pages/keywords/' . $KEYWORD_SLUG . '/' . areaSlug($a) . '.php') ?>"
                    class="px-3 py-1.5 bg-white border-2 border-zinc-300 text-zinc-900 rounded-full text-xs font-medium hover:border-[#ff6b00] hover:text-[#ff6b00]">
                     <?= htmlspecialchars($a, ENT_QUOTES, 'UTF-8') ?>
                 </a>
@@ -187,8 +187,8 @@ require SITE_ROOT . '/includes/header.php';
 <!-- FAQ -->
 <section class="bg-white border-t-2 border-zinc-200">
     <div class="max-w-3xl mx-auto px-6 py-14">
-        <h2 class="text-2xl md:text-3xl font-bold text-[#061828] text-center mb-8">{{KEYWORD_NAME}} FAQ</h2>
-        <div class="space-y-3">{{KEYWORD_FAQ_HTML}}</div>
+        <h2 class="text-2xl md:text-3xl font-bold text-[#061828] text-center mb-8"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> FAQ</h2>
+        <div class="space-y-3"><?= $KEYWORD_FAQ_HTML ?></div>
         <div class="mt-10"><?= shareButtonsHtml($keywordName, $metaDesc) ?></div>
     </div>
 </section>
@@ -196,7 +196,7 @@ require SITE_ROOT . '/includes/header.php';
 <!-- QUOTE -->
 <section id="quote" class="bg-[#061828] text-white">
     <div class="max-w-3xl mx-auto px-6 py-14">
-        <h2 class="text-3xl font-bold text-center">Quote for {{KEYWORD_NAME}}</h2>
+        <h2 class="text-3xl font-bold text-center">Quote for <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></h2>
         <p class="mt-2 text-center text-white/90">Fixed-price after scope is agreed. Stockport engineers · North West coverage.</p>
         <form action="<?= url('/contact.php') ?>" method="POST" class="mt-8 bg-white text-zinc-900 border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4 shadow-xl">
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">

@@ -6,7 +6,7 @@
 if (!defined('SITE_URL')) {
     require_once __DIR__ . '/../config.php';
 }
-$privacyUrl = function_exists('url') ? url('/privacy.php') : (rtrim(SITE_URL, '/') . '/privacy.php');
+$privacyUrl = function_exists('url') ? url('/privacy') : (rtrim(SITE_URL, '/') . '/privacy');
 ?>
 <div id="cookie-banner" role="dialog" aria-label="Cookie notice" aria-live="polite" hidden>
     <style>

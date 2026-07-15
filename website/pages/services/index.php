@@ -12,19 +12,7 @@ $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $services = getServices();
 $areas = getAreas();
 
-$serviceBlurbs = [
-    'electrical' => 'EICR, rewires, consumer units, EV chargers, PAT and commercial electrical installs to BS 7671.',
-    'fire-alarms' => 'BS 5839 design, install, service and certification for addressable, conventional and wireless systems.',
-    'emergency-lighting' => 'BS 5266 testing, upgrades, LED conversions and monthly/annual certification.',
-    'aov-air-handling' => 'Smoke vents, AOV panels, AHU controls and smoke-control system maintenance.',
-    'nurse-call' => 'Care home and hospital nurse call design, install, upgrades and planned maintenance.',
-    'gas-systems' => 'CP12 / CP44 landlord certificates, boilers, commercial gas and safety checks.',
-    'intruder-alarm' => 'PD 6662 / BS EN 50131 wired and wireless intruder systems with monitoring options.',
-    'cctv' => 'IP and HD CCTV design, install, remote viewing and NVR/DVR recording.',
-    'access-control' => 'Paxton, HID, Salto door access, credentials and fire-override integration.',
-    'door-entry' => 'Video and audio door entry for flats, multi-tenant and commercial sites.',
-    'intercoms' => 'Multi-tenant and commercial intercom systems with master/substation setups.',
-];
+// Full blurbs via getServiceBlurb($slug) — see includes/content.php / config.php
 
 $popularTowns = array_values(array_filter(
     ['Manchester', 'Stockport', 'Bolton', 'Liverpool', 'Preston', 'Warrington'],
@@ -108,7 +96,7 @@ require SITE_ROOT . '/includes/header.php';
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <?php foreach ($services as $slug => $name):
-            $blurb = $serviceBlurbs[$slug] ?? 'Installation, maintenance and certification';
+            $blurb = getServiceBlurb($slug);
             $img = url('/assets/images/services/' . $slug . '.jpg');
         ?>
         <a href="<?= url('/pages/services/' . $slug . '.php') ?>"

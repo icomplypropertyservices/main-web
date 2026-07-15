@@ -1,7 +1,10 @@
 <?php
 /**
  * Runtime page renderer — single source of truth for combo / keyword / area hubs.
- * Templates may use {{PLACEHOLDERS}}; they are substituted then executed as PHP.
+ *
+ * All page templates use executeTemplateVars() (extract + include, no eval).
+ * Legacy executeTemplate() remains only for emergency/debug use with old {{}} files.
+ * Templates must only be controlled site files — never user-supplied content.
  */
 require_once __DIR__ . '/../config.php';
 
@@ -19,7 +22,31 @@ function applyTemplatePlaceholders(string $template, array $map): string {
 }
 
 /**
- * Load template, substitute placeholders, execute in local scope.
+ * Safer path: extract placeholder keys as local variables and include the template.
+ * Template should use $KEYWORD_NAME, $AREA, etc. — not {{PLACEHOLDER}} tokens.
+ * Keys must be valid PHP variable names (A-Z0-9_).
+ */
+function executeTemplateVars(string $absolutePath, array $placeholders): void {
+    if (!is_file($absolutePath)) {
+        http_response_code(500);
+        echo 'Template missing: ' . htmlspecialchars(basename($absolutePath));
+        exit;
+    }
+    // Only extract string keys that form valid variable names
+    $vars = [];
+    foreach ($placeholders as $k => $v) {
+        if (is_string($k) && preg_match('/^[A-Za-z_][A-Za-z0-9_]*$/', $k)) {
+            $vars[$k] = $v;
+        }
+    }
+    extract($vars, EXTR_SKIP);
+    include $absolutePath;
+}
+
+/**
+ * Legacy: load template, substitute {{PLACEHOLDERS}}, execute via eval.
+ * Controlled site templates only — not user input.
+ * Prefer executeTemplateVars() for new / converted templates.
  */
 function executeTemplate(string $absolutePath, array $placeholders): void {
     if (!is_file($absolutePath)) {
@@ -32,12 +59,8 @@ function executeTemplate(string $absolutePath, array $placeholders): void {
     eval('?>' . $code);
 }
 
-/** Prefer rich per-service template; fall back to generic combo. */
-function comboTemplatePath(string $serviceSlug): string {
-    $specific = SITE_ROOT . '/templates/services/' . $serviceSlug . '.php';
-    if (is_file($specific)) {
-        return $specific;
-    }
+/** Single data-driven service × area template (service-meta + manufacturers). */
+function comboTemplatePath(string $serviceSlug = ''): string {
     return SITE_ROOT . '/templates/combo.php';
 }
 
@@ -59,7 +82,7 @@ function renderServiceAreaPage(string $serviceSlug, string $area): void {
     $GLOBALS['services'] = $services;
     $GLOBALS['areas'] = getAreas();
 
-    executeTemplate(comboTemplatePath($serviceSlug), [
+    executeTemplateVars(comboTemplatePath($serviceSlug), [
         'SERVICE_NAME' => $serviceName,
         'SERVICE_SLUG' => $serviceSlug,
         'AREA' => $area,
@@ -94,7 +117,7 @@ function renderKeywordPage(string $slug): void {
     $GLOBALS['services'] = $services;
     $GLOBALS['areas'] = getAreas();
 
-    executeTemplate(SITE_ROOT . '/templates/keyword.php', keywordTemplatePlaceholders($meta, $slug, $serviceSlug, $serviceName, $relatedSlug, $relatedName));
+    executeTemplateVars(SITE_ROOT . '/templates/keyword.php', keywordTemplatePlaceholders($meta, $slug, $serviceSlug, $serviceName, $relatedSlug, $relatedName));
 }
 
 /**
@@ -219,7 +242,8 @@ function renderKeywordAreaPage(string $keywordSlug, string $area): void {
         . '. Our engineers regularly attend jobs in ' . $areaName
         . ' and surrounding postcodes for ' . ($meta['name'] ?? $keywordSlug) . '.';
 
-    executeTemplate(SITE_ROOT . '/templates/keyword-area.php', $ph);
+    // Pure-PHP template (no {{}} / eval)
+    executeTemplateVars(SITE_ROOT . '/templates/keyword-area.php', $ph);
 }
 
 /**
@@ -230,7 +254,7 @@ function renderAreaHubPage(string $area): void {
     $GLOBALS['areas'] = getAreas();
     $areaSlug = areaSlug($area);
 
-    executeTemplate(SITE_ROOT . '/templates/area.php', [
+    executeTemplateVars(SITE_ROOT . '/templates/area.php', [
         'AREA' => $area,
         'AREA_SLUG' => $areaSlug,
         'AREA_URL' => rawurlencode($area),
@@ -252,7 +276,7 @@ function renderServiceHubPage(string $serviceSlug): void {
     $GLOBALS['areas'] = getAreas();
 
     $tpl = SITE_ROOT . '/templates/service.php';
-    executeTemplate($tpl, [
+    executeTemplateVars($tpl, [
         'SERVICE_NAME' => $services[$serviceSlug],
         'SERVICE_SLUG' => $serviceSlug,
         'SEO_KEYWORDS' => getSeoKeywords($serviceSlug),
@@ -321,7 +345,7 @@ function renderManufacturerPage(string $mfrSlug): void {
         }
     }
 
-    executeTemplate(SITE_ROOT . '/templates/manufacturer.php', [
+    executeTemplateVars(SITE_ROOT . '/templates/manufacturer.php', [
         'MFR_NAME' => $entry['name'],
         'MFR_SLUG' => $entry['slug'],
         'MFR_BLURB' => $entry['blurb'] ?? '',

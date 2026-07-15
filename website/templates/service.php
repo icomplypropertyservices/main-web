@@ -3,15 +3,15 @@
  * Service hub template. Placeholders: SERVICE_NAME, SERVICE_SLUG, SEO_KEYWORDS,
  * MANUFACTURER_TAGS, MANUFACTURER_IMAGES
  */
-$pageTitle = '{{SERVICE_NAME}} Services | North West';
-$metaDesc = 'Professional {{SERVICE_NAME}} across Greater Manchester and the North West. Installation, maintenance, testing & certification. Fixed-price quotes. Local engineers from Stockport.';
-$metaKeywords = '{{SEO_KEYWORDS}}';
-$ogImage = url('/assets/images/services/{{SERVICE_SLUG}}.jpg');
+$pageTitle = $SERVICE_NAME . ' Services | North West';
+$metaDesc = 'Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Installation, maintenance, testing & certification. Fixed-price quotes. Local engineers from Stockport.';
+$metaKeywords = $SEO_KEYWORDS;
+$ogImage = url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
 
 $allServices = getServices();
 $allAreas = getAreas();
-$serviceSlug = '{{SERVICE_SLUG}}';
-$serviceName = '{{SERVICE_NAME}}';
+$serviceSlug = $SERVICE_SLUG;
+$serviceName = $SERVICE_NAME;
 
 $serviceFaqs = [
     'electrical' => [
@@ -30,7 +30,7 @@ $serviceFaqs = [
         ['Do you issue emergency lighting certificates?', 'Every planned test and install includes documentation suitable for landlords, facilities managers and insurers.'],
     ],
     'default' => [
-        ['What areas do you cover for {{SERVICE_NAME}}?', 'We cover 150+ towns across Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria from our Stockport base.'],
+        ['What areas do you cover for ' . $SERVICE_NAME . '?', 'We cover 150+ towns across Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria from our Stockport base.'],
         ['Do you provide fixed-price quotes?', 'Yes. After we confirm scope, standards and access we issue a clear fixed-price quote with no jargon.'],
         ['Can you maintain systems already on site?', 'Absolutely — we inspect, service, repair and upgrade existing installations and issue matching compliance documentation.'],
     ],
@@ -69,10 +69,10 @@ $faqEntities = [];
 foreach ($faqs as $faq) {
     $faqEntities[] = [
         '@type' => 'Question',
-        'name' => str_replace('{{SERVICE_NAME}}', $serviceName, $faq[0]),
+        'name' => str_replace($SERVICE_NAME, $serviceName, $faq[0]),
         'acceptedAnswer' => [
             '@type' => 'Answer',
-            'text' => str_replace('{{SERVICE_NAME}}', $serviceName, $faq[1]),
+            'text' => str_replace($SERVICE_NAME, $serviceName, $faq[1]),
         ],
     ];
 }
@@ -192,7 +192,7 @@ $schema = [
                 <p class="mt-6 text-sm text-white/60"><?= htmlspecialchars($standards, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
-                <img src="<?= url('/assets/images/services/{{SERVICE_SLUG}}.jpg') ?>"
+                <img src="<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> by Icomply Property Services"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
                      loading="eager"
@@ -258,14 +258,14 @@ $schema = [
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> equipment"
                      class="w-full h-44 object-cover"
                      loading="lazy"
-                     onerror="this.src='<?= url('/assets/images/services/{{SERVICE_SLUG}}.jpg') ?>'">
+                     onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
             </div>
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
                 <img src="<?= url('/assets/images/keywords/' . htmlspecialchars($img3, ENT_QUOTES, 'UTF-8') . '.jpg') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation work"
                      class="w-full h-44 object-cover"
                      loading="lazy"
-                     onerror="this.src='<?= url('/assets/images/services/{{SERVICE_SLUG}}.jpg') ?>'">
+                     onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
             </div>
         </div>
     </div>
@@ -301,8 +301,8 @@ $schema = [
             </div>
             <a href="<?= url('/shop/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Browse trade shop →</a>
         </div>
-        <div class="flex flex-wrap gap-3 mb-8">{{MANUFACTURER_TAGS}}</div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">{{MANUFACTURER_IMAGES}}</div>
+        <div class="flex flex-wrap gap-3 mb-8"><?= $MANUFACTURER_TAGS ?></div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4"><?= $MANUFACTURER_IMAGES ?></div>
         <div class="mt-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold mb-3">Related brands</div>
             <h3 class="text-xl font-semibold tracking-tight text-black mb-5">More manufacturers for this service</h3>
@@ -325,7 +325,7 @@ $schema = [
     </div>
     <div class="flex flex-wrap gap-2">
         <?php foreach ($popularTowns as $a): ?>
-            <a href="<?= url('/pages/{{SERVICE_SLUG}}/' . areaSlug($a) . '.php') ?>"
+            <a href="<?= url('/pages/' . $SERVICE_SLUG . '/' . areaSlug($a) . '.php') ?>"
                class="px-5 py-2.5 bg-white border rounded-full text-sm font-medium text-black hover:border-[#ff6b00] hover:shadow-sm transition">
                 <?= htmlspecialchars($serviceName . ' in ' . $a, ENT_QUOTES, 'UTF-8') ?>
             </a>
@@ -335,7 +335,7 @@ $schema = [
         <?php foreach (array_slice($allAreas, 0, 40) as $a):
             if (in_array($a, $popularTowns, true)) continue;
         ?>
-            <a href="<?= url('/pages/{{SERVICE_SLUG}}/' . areaSlug($a) . '.php') ?>"
+            <a href="<?= url('/pages/' . $SERVICE_SLUG . '/' . areaSlug($a) . '.php') ?>"
                class="px-3 py-1.5 bg-zinc-50 border rounded-full text-xs text-zinc-700 hover:border-[#ff6b00]">
                 <?= htmlspecialchars($a, ENT_QUOTES, 'UTF-8') ?>
             </a>
@@ -388,8 +388,8 @@ $schema = [
         </h2>
         <div class="space-y-4">
             <?php foreach ($faqs as $faq):
-                $q = str_replace('{{SERVICE_NAME}}', $serviceName, $faq[0]);
-                $a = str_replace('{{SERVICE_NAME}}', $serviceName, $faq[1]);
+                $q = str_replace($SERVICE_NAME, $serviceName, $faq[0]);
+                $a = str_replace($SERVICE_NAME, $serviceName, $faq[1]);
             ?>
             <details class="bg-white border rounded-2xl p-5 group">
                 <summary class="font-semibold text-black cursor-pointer list-none flex justify-between items-center gap-4">

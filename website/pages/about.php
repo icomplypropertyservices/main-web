@@ -16,19 +16,7 @@ $areas = getAreas();
 $catalog = getShopCatalog();
 $featuredProducts = array_slice($catalog['products'], 0, 4);
 
-$serviceBlurbs = [
-    'electrical' => 'EICR, rewires, EV chargers, PAT & commercial installs',
-    'fire-alarms' => 'BS 5839 design, install, service & certification',
-    'emergency-lighting' => 'BS 5266 testing, upgrades & LED conversions',
-    'aov-air-handling' => 'Smoke vents, AOV panels & AHU controls',
-    'nurse-call' => 'Care home & hospital nurse call systems',
-    'gas-systems' => 'CP12 / CP44 landlord certs, boilers & commercial gas',
-    'intruder-alarm' => 'Wired & wireless intruder systems',
-    'cctv' => 'IP / HD CCTV design, install & monitoring setup',
-    'access-control' => 'Paxton, HID, Salto door access',
-    'door-entry' => 'Video & audio door entry for flats & sites',
-    'intercoms' => 'Multi-tenant & commercial intercom systems',
-];
+// Short blurbs via getServiceBlurb($slug, true) — see includes/content.php / config.php
 
 $trust = [
     ['title' => 'Stockport based', 'text' => 'SK2 5DE HQ — local engineers, North West coverage'],
@@ -258,7 +246,7 @@ $aboutSchema = [
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             <?php foreach ($services as $slug => $name):
-                $blurb = $serviceBlurbs[$slug] ?? 'Installation, maintenance and certification';
+                $blurb = getServiceBlurb($slug, true);
                 $img = url('/assets/images/services/' . $slug . '.jpg');
             ?>
             <a href="<?= url('/pages/services/' . $slug . '.php') ?>"

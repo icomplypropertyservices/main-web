@@ -1,69 +1,47 @@
-# Icomply Property Services — Apache / XAMPP
-# Site lives under DocumentRoot as /icomply (http://localhost/icomply).
-# Safe defaults only: no front-controller rewrites that would break real PHP files.
-
-# -----------------------------------------------------------------------------
-# Index & directory listing
-# -----------------------------------------------------------------------------
+﻿# Icomply — clean extensionless URLs (XAMPP subfolder /icomply)
 DirectoryIndex index.php index.html
 Options -Indexes
 
-# -----------------------------------------------------------------------------
-# Custom error documents (paths are relative to DocumentRoot)
-# Change /icomply/ to / if the site is ever served from the web root.
-# -----------------------------------------------------------------------------
-ErrorDocument 404 /icomply/404.php
+ErrorDocument 404 /icomply/index-router.php
 
-# -----------------------------------------------------------------------------
-# Security headers (safe defaults; no CSP/HSTS that could break local PHP/CSS)
-# Requires Apache mod_headers — ignored if the module is not loaded.
-# -----------------------------------------------------------------------------
 <IfModule mod_headers.c>
     Header set X-Content-Type-Options "nosniff"
     Header set X-Frame-Options "SAMEORIGIN"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
-    # Basic Permissions-Policy: disable high-risk browser features site-wide.
     Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()"
 </IfModule>
 
-# -----------------------------------------------------------------------------
-# Optional URL rewriting
-# Existing .php pages and static assets are left alone (no catch-all router).
-# RewriteBase is only needed when RewriteRule paths are relative — kept commented
-# until you add rules that require it.
-# -----------------------------------------------------------------------------
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    RewriteBase /icomply/
 
-    # Subfolder install on XAMPP — uncomment only if you add path-relative RewriteRules.
-    # RewriteBase /icomply/
-
-    # Block HTTP access to tooling / secrets (data/ also has its own Deny .htaccess).
-    # These do not affect PHP require/include on the filesystem.
     RewriteRule ^bin/ - [F,L]
     RewriteRule ^templates/ - [F,L]
     RewriteRule ^data/ - [F,L]
     RewriteRule ^config\.php$ - [F,L]
     RewriteRule ^config\.local\.php$ - [F,L]
-    # Lead / log dumps under data/ (defense in depth if data/ rule is ever relaxed).
     RewriteRule ^data/.*\.jsonl$ - [F,L]
+    RewriteRule ^includes/ - [F,L]
+
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # 301 strip .php from public URLs
+    RewriteCond %{THE_REQUEST} \s/icomply/([^\s?]*)\.php[\s?] [NC]
+    RewriteRule ^ %1 [R=301,L,NE]
+
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^(.+)$ $1.php [L]
+
+    RewriteRule ^ index-router.php [L,QSA]
 </IfModule>
 
-# Block config files if requested by name (mod_rewrite off / direct file hit)
 <IfModule mod_authz_core.c>
     <FilesMatch "^(?i)config(\.local)?\.php$">
         Require all denied
     </FilesMatch>
-    # Deny web access to lead log files (*.jsonl) wherever they live under this tree.
-    # PHP can still fopen()/file_get_contents() these on the filesystem.
     <FilesMatch "(?i)\.jsonl$">
         Require all denied
     </FilesMatch>
-</IfModule>
-
-# -----------------------------------------------------------------------------
-# Compression (optional; ignored if module missing)
-# -----------------------------------------------------------------------------
-<IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json image/svg+xml
 </IfModule>

@@ -1,20 +1,20 @@
 <?php
 /**
  * Manufacturer hub template.
- * Placeholders: MFR_NAME, MFR_SLUG, MFR_BLURB, MFR_SEO_KEYWORDS, MFR_SERVICES_HTML,
+ * Pure PHP vars via executeTemplateVars() (no {{}} / eval).
  * MFR_PRODUCTS_HTML, MFR_RELATED_HTML, SERVICE_NAME (primary)
  */
-$pageTitle = '{{MFR_NAME}} Products & Service';
-$metaDesc = '{{MFR_BLURB}}';
-$metaKeywords = '{{MFR_SEO_KEYWORDS}}';
-$ogImage = url('/assets/images/manufacturers/{{MFR_SLUG}}.jpg');
-$canonicalUrl = url('/pages/manufacturers/{{MFR_SLUG}}.php');
+$pageTitle = $MFR_NAME . ' Products & Service';
+$metaDesc = $MFR_BLURB;
+$metaKeywords = $MFR_SEO_KEYWORDS;
+$ogImage = url('/assets/images/manufacturers/' . $MFR_SLUG . '.jpg');
+$canonicalUrl = url('/pages/manufacturers/' . $MFR_SLUG . '.php');
 
 require_once SITE_ROOT . '/includes/share.php';
 require_once SITE_ROOT . '/includes/shopify.php';
 
-$mfrSlug = '{{MFR_SLUG}}';
-$mfrName = '{{MFR_NAME}}';
+$mfrSlug = $MFR_SLUG;
+$mfrName = $MFR_NAME;
 $entry = getManufacturerBySlug($mfrSlug) ?? [];
 $services = getServices();
 $mfrServices = $entry['services'] ?? [];
@@ -129,7 +129,7 @@ $schema = [
                     <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?><br>
                     <span class="text-[#ff6b00]">products &amp; service</span>
                 </h1>
-                <p class="mt-6 text-lg text-white/80 max-w-xl">{{MFR_BLURB}}</p>
+                <p class="mt-6 text-lg text-white/80 max-w-xl"><?= htmlspecialchars($MFR_BLURB, ENT_QUOTES, 'UTF-8') ?></p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#products" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Shop products</a>
                     <a href="#quote" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">Install quote</a>
@@ -139,7 +139,7 @@ $schema = [
                 </div>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
-                <img src="<?= url('/assets/images/manufacturers/{{MFR_SLUG}}.jpg') ?>"
+                <img src="<?= url('/assets/images/manufacturers/' . $MFR_SLUG . '.jpg') ?>"
                      alt="<?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> equipment — Icomply Property Services"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
                      loading="eager"
@@ -158,7 +158,7 @@ $schema = [
     <div class="max-w-7xl mx-auto px-6 py-8">
         <div class="text-xs uppercase tracking-[2px] text-zinc-500 font-semibold mb-3">Related services</div>
         <div class="flex flex-wrap gap-2">
-            {{MFR_SERVICES_HTML}}
+            <?= $MFR_SERVICES_HTML ?>
         </div>
     </div>
 </section>
@@ -171,7 +171,7 @@ $schema = [
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">
                 Install, service &amp; buy <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?>
             </h2>
-            <p class="mt-5 text-lg text-zinc-700 leading-relaxed">{{MFR_BLURB}}</p>
+            <p class="mt-5 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars($MFR_BLURB, ENT_QUOTES, 'UTF-8') ?></p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
                 Whether you need a new <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> system designed and commissioned,
                 planned maintenance on existing equipment, or trade kits and spares, our Stockport-based engineers
@@ -211,7 +211,7 @@ $schema = [
             <a href="<?= url('/shop/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All shop products →</a>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {{MFR_PRODUCTS_HTML}}
+            <?= $MFR_PRODUCTS_HTML ?>
         </div>
         <p class="mt-8 text-sm text-zinc-600">
             Looking for more trade kits?
@@ -258,7 +258,7 @@ $schema = [
             <a href="<?= url('/pages/manufacturers/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All manufacturers →</a>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {{MFR_RELATED_HTML}}
+            <?= $MFR_RELATED_HTML ?>
         </div>
     </div>
 </section>

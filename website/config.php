@@ -81,13 +81,30 @@ function saveJsonData(string $name, $data): void {
     loadJsonData('__clear__');
 }
 
-/** Absolute site URL for a path starting with / */
+/**
+ * Public absolute URL — extensionless (no .php).
+ * Accepts paths with or without .php; always emits clean URLs.
+ */
 function url(string $path = '/'): string {
-    $path = '/' . ltrim($path, '/');
-    if ($path === '/') {
-        return rtrim(SITE_URL, '/');
+    $path = '/' . ltrim(str_replace('\\', '/', $path), '/');
+    // Drop query for normalization; re-append later if present
+    $query = '';
+    if (str_contains($path, '?')) {
+        [$path, $q] = explode('?', $path, 2);
+        $query = '?' . $q;
     }
-    return rtrim(SITE_URL, '/') . $path;
+    $path = preg_replace('#\.php$#i', '', $path) ?? $path;
+    // /foo/index → /foo
+    $path = preg_replace('#/index$#i', '', $path) ?? $path;
+    if ($path === '' || $path === '/') {
+        return rtrim(SITE_URL, '/') . $query;
+    }
+    return rtrim(SITE_URL, '/') . $path . $query;
+}
+
+/** Alias used by older templates / seo helpers */
+function site_url(string $path = ''): string {
+    return url('/' . ltrim($path, '/'));
 }
 
 /** Core services (data/services.json) + any admin-added customs */

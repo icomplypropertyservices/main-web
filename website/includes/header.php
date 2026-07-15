@@ -344,7 +344,10 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
                         <a href="<?= url('/pages/keywords/index.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Keyword guides</a>
                         <a href="<?= url('/pages/faq.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">FAQ</a>
                         <a href="<?= url('/pages/reviews.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Reviews</a>
+                        <a href="<?= url('/privacy.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black border-t">Privacy</a>
+                        <a href="<?= url('/terms.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Terms</a>
                         <a href="<?= url('/pages/site-map.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-[#ff6b00] font-semibold border-t">Full site map →</a>
+                        <a href="<?= url('/sitemap.xml') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-zinc-500 text-xs">XML sitemap (all URLs)</a>
                     </div>
                 </div>
             </div>
@@ -397,6 +400,7 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
             <a href="<?= url('/pages/faq.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">FAQ</a>
             <a href="<?= url('/pages/reviews.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">Reviews</a>
             <a href="<?= url('/pages/site-map.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50 font-semibold text-[#ff6b00]">Full site map</a>
+            <a href="<?= url('/sitemap.xml') ?>" class="block px-3 py-2 text-zinc-500 text-xs">XML sitemap (all URLs)</a>
             <a href="<?= url('/contact.php') ?>" class="block px-3 py-3 rounded-xl hover:bg-zinc-50 font-semibold mt-1">Contact</a>
             <a href="<?= url('/privacy.php') ?>" class="block px-3 py-2 text-zinc-500 text-xs">Privacy</a>
             <a href="<?= url('/terms.php') ?>" class="block px-3 py-2 text-zinc-500 text-xs">Terms</a>

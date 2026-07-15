@@ -1,16 +1,17 @@
 <?php
 /**
- * Vercel serverless entry (must live at /api/index.php).
- * Boots the PHP site from /website.
+ * Vercel serverless entry — clean extensionless URLs + virtual routes.
  */
 declare(strict_types=1);
 
-// === FORCE CUSTOM DOMAIN ===
-$_SERVER['HTTP_HOST'] = 'icomplypropertyservices.co.uk';
-$_SERVER['SERVER_NAME'] = 'icomplypropertyservices.co.uk';
-$base_url = 'https://icomplypropertyservices.co.uk';
-
-// =============================================
+// Prefer real host when present (custom domain / preview)
+$host = $_SERVER['HTTP_HOST'] ?? 'icomplypropertyservices.co.uk';
+if (str_contains($host, 'localhost') || $host === '') {
+    $host = 'icomplypropertyservices.co.uk';
+}
+$https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+    || (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https');
+$base_url = ($https ? 'https' : 'https') . '://' . preg_replace('/:\d+$/', '', $host);
 
 $root = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'website';
 if (!is_dir($root)) {
@@ -22,68 +23,56 @@ if (!is_dir($root)) {
 
 chdir($root);
 
-$uri = urldecode((string)(parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/'));
-$uri = $uri === '' ? '/' : $uri;
+// Align SITE_URL for url() helper when config loads
+if (!defined('SITE_URL_OVERRIDE')) {
+    // config may define SITE_URL; we set env-style before require via local merge in render
+}
 
-// Block internal paths
-if (preg_match('#^/(bin|templates|data|includes|api)(/|$)#i', $uri)) {
+// Load router (defines SITE_ROOT via config)
+require_once $root . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'router.php';
+
+// Override SITE_URL for production clean links if still localhost in config
+// (constants can't be redefined — set only if config.local isn't used; use output base tag)
+
+$uri = routerRequestPath();
+// On Vercel, SITE_URL path may be empty — routerRequestPath already normalizes
+
+// Block internals (admin allowed)
+if (preg_match('#^/(bin|templates|data|includes)(/|$)#i', $uri)) {
     http_response_code(404);
     header('Content-Type: text/plain; charset=utf-8');
     echo 'Not found';
     exit;
 }
 
+ob_start();
+$handled = false;
+
 // Home
-if ($uri === '/' || $uri === '/index.php' || $uri === '/index') {
+if ($uri === '/' || $uri === '/index') {
     require $root . DIRECTORY_SEPARATOR . 'index.php';
-    exit;
+    $handled = true;
+} elseif (routerDispatchVirtual($uri)) {
+    $handled = true;
+} elseif (routerTryFile($uri)) {
+    $handled = true;
+} elseif (preg_match('#^/([a-z0-9\-]+)$#', $uri, $m)) {
+    if (routerTryFile('/' . $m[1]) || routerTryFile('/pages/' . $m[1])) {
+        $handled = true;
+    }
 }
 
-// Resolve PHP script
-$candidates = [];
-if (str_ends_with(strtolower($uri), '.php')) {
-    $candidates[] = $root . $uri;
-} else {
-    $candidates[] = $root . $uri . '.php';
-    $candidates[] = $root . $uri . DIRECTORY_SEPARATOR . 'index.php';
-    $candidates[] = $root . $uri;
+if (!$handled) {
+    http_response_code(404);
+    if (is_file($root . '/404.php')) {
+        require $root . '/404.php';
+    } else {
+        echo 'Not found';
+    }
 }
 
-$rootReal = realpath($root) ?: $root;
-foreach ($candidates as $file) {
-    $real = realpath($file);
-    if ($real === false || !is_file($real)) {
-        continue;
-    }
-    if (!str_starts_with($real, $rootReal)) {
-        continue;
-    }
-    if (!str_ends_with(strtolower($real), '.php')) {
-        continue;
-    }
-
-    // === AUTO INJECT <base> TAG FOR HTML OUTPUT ===
-    ob_start();
-    require $real;
-    $output = ob_get_clean();
-
-    if (stripos($output, '<head') !== false) {
-        $output = preg_replace('/(<head[^>]*>)/i', '$1<base href="' . $base_url . '/">', $output, 1);
-    }
-
-    echo $output;
-    exit;
+$output = ob_get_clean();
+if (stripos($output, '<head') !== false && stripos($output, '<base ') === false) {
+    $output = preg_replace('/(<head[^>]*>)/i', '$1<base href="' . htmlspecialchars($base_url, ENT_QUOTES, 'UTF-8') . '/">', $output, 1);
 }
-
-// 404
-http_response_code(404);
-header('Content-Type: text/html; charset=utf-8');
-echo '<!DOCTYPE html><html lang="en-GB"><head><meta charset="UTF-8"><title>Page not found | Icomply</title>';
-echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
-echo '<base href="' . $base_url . '/">';
-echo '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css"></head>';
-echo '<body class="bg-zinc-50 flex items-center justify-center min-h-screen"><div class="text-center p-10">';
-echo '<h1 class="text-4xl font-bold mb-4">Page not found</h1>';
-echo '<p class="text-zinc-600 mb-6">That URL is not on this site.</p>';
-echo '<a class="px-6 py-3 bg-[#0a2540] text-white rounded-xl" href="/">Back to home</a>';
-echo '</div></body></html>';
+echo $output;
