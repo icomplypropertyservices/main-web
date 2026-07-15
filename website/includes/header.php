@@ -26,6 +26,15 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     <meta name="theme-color" content="#0a2540">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <?php if (defined('GOOGLE_SITE_VERIFICATION') && GOOGLE_SITE_VERIFICATION !== ''): ?>
+    <meta name="google-site-verification" content="<?= htmlspecialchars(GOOGLE_SITE_VERIFICATION, ENT_QUOTES, 'UTF-8') ?>">
+    <?php endif; ?>
+    <?php
+    require_once __DIR__ . '/seo-monitor.php';
+    if (function_exists('seoShouldNoindex') && seoShouldNoindex()): ?>
+    <meta name="robots" content="noindex,nofollow">
+    <?php endif; ?>
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="<?= htmlspecialchars(url('/sitemap.xml'), ENT_QUOTES, 'UTF-8') ?>">
     <title><?= $pageTitleSafe ?> | Property Compliance Experts</title>
     <meta name="description" content="<?= $metaDescSafe ?>">
     <meta name="keywords" content="<?= $metaKeywordsSafe ?>">

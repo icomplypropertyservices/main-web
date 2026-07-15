@@ -34,8 +34,8 @@ website/pages/areas/*.php
 !website/pages/areas/index.php
 website/pages/manufacturers/*.php
 !website/pages/manufacturers/index.php
-website/pages/services/*.php
-!website/pages/services/index.php
+# Service HUB stubs under pages/services/*.php are tracked (router + reliability)
+# Service × area landings live under website/pages/{slug}/ and stay ignored below
 # Service × area stubs (pages/{service-slug}/{area}.php)
 website/pages/access-control/
 website/pages/aov-air-handling/

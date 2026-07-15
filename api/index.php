@@ -5,13 +5,23 @@
 declare(strict_types=1);
 
 // Prefer real host when present (custom domain / preview)
-$host = $_SERVER['HTTP_HOST'] ?? 'icomplypropertyservices.co.uk';
+$host = $_SERVER['HTTP_HOST'] ?? 'www.icomplypropertyservices.co.uk';
+$host = preg_replace('/:\d+$/', '', (string)$host) ?: 'www.icomplypropertyservices.co.uk';
 if (str_contains($host, 'localhost') || $host === '') {
-    $host = 'icomplypropertyservices.co.uk';
+    $host = 'www.icomplypropertyservices.co.uk';
 }
-$https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
-    || (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https');
-$base_url = ($https ? 'https' : 'https') . '://' . preg_replace('/:\d+$/', '', $host);
+// Canonical public host
+if (strcasecmp($host, 'icomplypropertyservices.co.uk') === 0) {
+    $host = 'www.icomplypropertyservices.co.uk';
+}
+$base_url = 'https://' . $host;
+
+// Force production SITE_URL before config loads (constants)
+putenv('SITE_URL=' . $base_url);
+$_ENV['SITE_URL'] = $base_url;
+$_SERVER['SITE_URL'] = $base_url;
+putenv('VERCEL=1');
+$_ENV['VERCEL'] = '1';
 
 $root = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'website';
 if (!is_dir($root)) {
@@ -23,26 +33,40 @@ if (!is_dir($root)) {
 
 chdir($root);
 
-// Align SITE_URL for url() helper when config loads
-if (!defined('SITE_URL_OVERRIDE')) {
-    // config may define SITE_URL; we set env-style before require via local merge in render
-}
-
-// Load router (defines SITE_ROOT via config)
 require_once $root . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'router.php';
 
-// Override SITE_URL for production clean links if still localhost in config
-// (constants can't be redefined — set only if config.local isn't used; use output base tag)
-
 $uri = routerRequestPath();
-// On Vercel, SITE_URL path may be empty — routerRequestPath already normalizes
 
 // Block internals (admin allowed)
 if (preg_match('#^/(bin|templates|data|includes)(/|$)#i', $uri)) {
-    http_response_code(404);
-    header('Content-Type: text/plain; charset=utf-8');
-    echo 'Not found';
-    exit;
+    if (preg_match('#^/admin#i', $uri)) {
+        // fall through to file router
+    } else {
+        // Allow SEO cron with key only
+        if (preg_match('#^/bin/cron-seo\.php$#i', $uri) || $uri === '/bin/cron-seo') {
+            require $root . '/bin/cron-seo.php';
+            exit;
+        }
+        http_response_code(404);
+        header('Content-Type: text/plain; charset=utf-8');
+        echo 'Not found';
+        exit;
+    }
+}
+
+// Dynamic multi-part sitemaps if static rewrite missed
+if (preg_match('#^/sitemap(-[0-9]+)?\.xml$#i', $uri, $sm)) {
+    $file = $root . ($sm[0] === '/sitemap.xml' || $sm[0] === '/sitemap.XML'
+        ? '/sitemap.xml'
+        : $sm[0]);
+    // normalize
+    $file = $root . str_replace('/', DIRECTORY_SEPARATOR, $uri);
+    if (is_file($file)) {
+        header('Content-Type: application/xml; charset=utf-8');
+        header('Cache-Control: public, max-age=3600');
+        readfile($file);
+        exit;
+    }
 }
 
 ob_start();
@@ -71,8 +95,34 @@ if (!$handled) {
     }
 }
 
-$output = ob_get_clean();
-if (stripos($output, '<head') !== false && stripos($output, '<base ') === false) {
-    $output = preg_replace('/(<head[^>]*>)/i', '$1<base href="' . htmlspecialchars($base_url, ENT_QUOTES, 'UTF-8') . '/">', $output, 1);
+$output = (string)ob_get_clean();
+
+// Auto-amend: never leak localhost URLs on production HTML/XML
+if ($output !== '') {
+    $output = str_replace(
+        [
+            'http://localhost/icomply',
+            'https://localhost/icomply',
+            'http://localhost',
+            'https://localhost',
+        ],
+        [
+            $base_url,
+            $base_url,
+            $base_url,
+            $base_url,
+        ],
+        $output
+    );
 }
+
+if (stripos($output, '<head') !== false && stripos($output, '<base ') === false) {
+    $output = preg_replace(
+        '/(<head[^>]*>)/i',
+        '$1<base href="' . htmlspecialchars($base_url, ENT_QUOTES, 'UTF-8') . '/">',
+        $output,
+        1
+    ) ?? $output;
+}
+
 echo $output;

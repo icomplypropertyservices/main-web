@@ -12,7 +12,24 @@
     { "source": "/assets/(.*)", "destination": "/website/assets/$1" },
     { "source": "/robots.txt", "destination": "/website/robots.txt" },
     { "source": "/sitemap.xml", "destination": "/website/sitemap.xml" },
+    { "source": "/sitemap-:part.xml", "destination": "/website/sitemap-$1.xml" },
+    { "source": "/google-site-verification=:token.txt", "destination": "/google-site-verification=$1.txt" },
     { "source": "/favicon.ico", "destination": "/website/assets/images/og-image.jpg" },
-    { "source": "/((?!assets|robots.txt|sitemap.xml|favicon.ico).*)", "destination": "/api/index.php" }
+    { "source": "/((?!assets|robots.txt|sitemap|favicon.ico|google-site-verification).*)", "destination": "/api/index.php" }
+  ],
+  "headers": [
+    {
+      "source": "/sitemap(.*).xml",
+      "headers": [
+        { "key": "Content-Type", "value": "application/xml; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
+      ]
+    }
   ]
 }

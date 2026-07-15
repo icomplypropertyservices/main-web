@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://localhost/icomply/sitemap.xml
+Sitemap: https://www.icomplypropertyservices.co.uk/sitemap.xml
 
 Disallow: /admin/
 Disallow: /bin/

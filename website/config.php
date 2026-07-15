@@ -5,7 +5,7 @@
  */
 define('SITE_ROOT', __DIR__);
 
-// Defaults (overridable via config.local.php)
+// Defaults (overridable via config.local.php / env / Vercel)
 $siteDefaults = [
     'SITE_NAME' => 'Icomply Property Services',
     'SITE_URL' => 'http://localhost/icomply',
@@ -20,6 +20,12 @@ $siteDefaults = [
     'ADMIN_PASS' => '',
     'GA_MEASUREMENT_ID' => '',
     'AW_CONVERSION_ID' => '',
+    // Google Search Console HTML-tag verification (content= value only)
+    'GOOGLE_SITE_VERIFICATION' => '',
+    // Bing/Yandex IndexNow key (optional; enables /{key}.txt + ping)
+    'INDEXNOW_KEY' => '',
+    // Secret for /bin/cron-seo.php?key=… (set in config.local / Vercel env)
+    'SEO_CRON_KEY' => '',
     // Shopify Storefront / Buy Button (set in config.local.php)
     // Domain example: your-store.myshopify.com  |  Store URL: https://your-store.myshopify.com
     'SHOPIFY_DOMAIN' => '',
@@ -37,12 +43,76 @@ $siteDefaults = [
     'SOCIAL_GOOGLE' => 'https://g.page/icomply-property-services',
 ];
 
+// Environment overrides (Vercel Project → Settings → Environment Variables)
+$envMap = [
+    'SITE_URL' => 'SITE_URL',
+    'PHONE' => 'PHONE',
+    'EMAIL' => 'EMAIL',
+    'WHATSAPP' => 'WHATSAPP',
+    'ADMIN_USER' => 'ADMIN_USER',
+    'ADMIN_PASS' => 'ADMIN_PASS',
+    'GA_MEASUREMENT_ID' => 'GA_MEASUREMENT_ID',
+    'AW_CONVERSION_ID' => 'AW_CONVERSION_ID',
+    'GOOGLE_SITE_VERIFICATION' => 'GOOGLE_SITE_VERIFICATION',
+    'INDEXNOW_KEY' => 'INDEXNOW_KEY',
+    'SEO_CRON_KEY' => 'SEO_CRON_KEY',
+    'SHOPIFY_DOMAIN' => 'SHOPIFY_DOMAIN',
+    'SHOPIFY_STORE_URL' => 'SHOPIFY_STORE_URL',
+    'SHOPIFY_STOREFRONT_TOKEN' => 'SHOPIFY_STOREFRONT_TOKEN',
+];
+foreach ($envMap as $const => $envName) {
+    $v = getenv($envName);
+    if ($v === false || $v === '') {
+        $v = $_ENV[$envName] ?? $_SERVER[$envName] ?? '';
+    }
+    if (is_string($v) && $v !== '') {
+        $siteDefaults[$const] = $v;
+    }
+}
+
+// On Vercel / production hosts, prefer public HTTPS origin (never localhost canonicals)
+$isVercel = (string)(getenv('VERCEL') ?: ($_ENV['VERCEL'] ?? '')) !== '';
+$host = (string)($_SERVER['HTTP_HOST'] ?? '');
+$host = preg_replace('/:\d+$/', '', $host);
+if ($isVercel || preg_match('/icomplypropertyservices\.co\.uk$/i', $host)) {
+    if ($host === '' || str_contains($host, 'localhost')) {
+        $host = 'www.icomplypropertyservices.co.uk';
+    }
+    // Canonical host: www
+    if (strcasecmp($host, 'icomplypropertyservices.co.uk') === 0) {
+        $host = 'www.icomplypropertyservices.co.uk';
+    }
+    if (empty($siteDefaults['SITE_URL']) || str_contains((string)$siteDefaults['SITE_URL'], 'localhost')) {
+        $siteDefaults['SITE_URL'] = 'https://' . $host;
+    }
+}
+
 $localFile = __DIR__ . '/config.local.php';
 if (is_file($localFile)) {
     $local = include $localFile;
     if (is_array($local)) {
         $siteDefaults = array_merge($siteDefaults, $local);
     }
+}
+
+// Production/Vercel: never keep localhost SITE_URL after local overrides
+$isVercelFinal = (string)(getenv('VERCEL') ?: ($_ENV['VERCEL'] ?? '')) !== '';
+$hostFinal = preg_replace('/:\d+$/', '', (string)($_SERVER['HTTP_HOST'] ?? ''));
+if ($isVercelFinal || preg_match('/icomplypropertyservices\.co\.uk$/i', (string)$hostFinal)) {
+    if ($hostFinal === '' || str_contains($hostFinal, 'localhost')) {
+        $hostFinal = 'www.icomplypropertyservices.co.uk';
+    }
+    if (strcasecmp($hostFinal, 'icomplypropertyservices.co.uk') === 0) {
+        $hostFinal = 'www.icomplypropertyservices.co.uk';
+    }
+    if (str_contains((string)$siteDefaults['SITE_URL'], 'localhost')) {
+        $siteDefaults['SITE_URL'] = 'https://' . $hostFinal;
+    }
+}
+// Explicit env always wins for SITE_URL when set (deploy / prod sitemap builds)
+$forcedSite = getenv('SITE_URL');
+if (is_string($forcedSite) && $forcedSite !== '' && !str_contains($forcedSite, 'localhost')) {
+    $siteDefaults['SITE_URL'] = rtrim($forcedSite, '/');
 }
 
 foreach ($siteDefaults as $key => $value) {
