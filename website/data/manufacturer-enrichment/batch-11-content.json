@@ -1,0 +1,272 @@
+{
+    "legrand-door-entry": {
+        "blurb": "Icomply installs and maintains Legrand door entry systems across Stockport, Manchester and the wider North West — from multi-dwelling video panels to retrofit handset upgrades. Our engineers handle commissioning, certification paperwork and planned servicing for landlords and FM teams. Shop trade Legrand entrance modules, faceplates and spares through our North West trade counter for fast project turnaround.",
+        "seo_desc": "Legrand door entry install, service & certs from Icomply. Trade panels & handsets across Stockport, Manchester & the North West.",
+        "seo_keywords": "Legrand door entry, Legrand door entry installation, Legrand video entry, Legrand handsets, door entry service North West, Legrand trade spares, multi-tenant door entry Manchester, Legrand Stockport, door entry certification, Icomply Legrand",
+        "products": [
+            {
+                "id": "legrand-door-entry-handset-spares",
+                "title": "Legrand Door Entry Handset & Faceplate Kit",
+                "blurb": "Replacement handsets, faceplates and audio modules for Legrand entry systems — ideal for block upgrades and reactive call-outs.",
+                "price": "From £59",
+                "handle": "legrand-door-entry-handset-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/legrand-door-entry.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "legrand-door-entry-entrance-pack",
+                "title": "Legrand Entrance Panel Install Pack",
+                "blurb": "Flush boxes, rain hoods and mounting hardware commonly specified on Legrand door entry installs across the North West.",
+                "price": "From £42",
+                "handle": "legrand-door-entry-entrance-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/legrand-door-entry.jpg",
+                "badge": "Install"
+            }
+        ]
+    },
+    "lenels2": {
+        "blurb": "Icomply delivers LenelS2 access control installation and lifecycle support for commercial sites across Greater Manchester, Lancashire and Cheshire. We design card and reader layouts, commission controllers to site policy and keep systems certified under planned maintenance. Trade readers, credentials and controller spares are available from our North West shop for contractors and in-house estates teams.",
+        "seo_desc": "LenelS2 access control install, service & certification by Icomply. Trade readers & controllers across Manchester & the North West.",
+        "seo_keywords": "LenelS2, LenelS2 installation, LenelS2 access control, LenelS2 service North West, LenelS2 readers, access control Manchester, LenelS2 trade spares, LenelS2 Stockport, BS EN 50133 access, Icomply LenelS2",
+        "products": [
+            {
+                "id": "lenels2-reader-credential-kit",
+                "title": "LenelS2 Reader & Credential Pack",
+                "blurb": "Engineer-ready readers and credential options for LenelS2 door controllers — suited to expansions and replacement works.",
+                "price": "From £89",
+                "handle": "lenels2-reader-credential-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/lenels2.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "lenels2-controller-service-kit",
+                "title": "LenelS2 Controller Service Kit",
+                "blurb": "Batteries, terminations and service consumables for LenelS2 panels on North West maintenance contracts.",
+                "price": "From £55",
+                "handle": "lenels2-controller-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/lenels2.jpg",
+                "badge": "Service"
+            }
+        ]
+    },
+    "lewden": {
+        "blurb": "Icomply is a North West electrical contractor for Lewden distribution equipment — consumer units, RCDs and protective devices installed to BS 7671. We carry out board upgrades, EICR remedial works and certification for landlords, developers and facilities managers. Stock trade Lewden breakers, enclosures and engineer spares via our shop for Stockport, Manchester and regional projects.",
+        "seo_desc": "Lewden electrical install, BS 7671 certs & trade spares from Icomply. Boards & breakers across Stockport, Manchester & North West.",
+        "seo_keywords": "Lewden, Lewden consumer unit, Lewden installation, Lewden RCBO, electrical service North West, Lewden trade, BS 7671 Stockport, Lewden spares Manchester, consumer unit upgrade, Icomply Lewden",
+        "products": [
+            {
+                "id": "lewden-board-service-kit",
+                "title": "Lewden Board Service & Spares Kit",
+                "blurb": "Trade consumables for Lewden consumer units and distribution boards — labels, blanks, links and common breaker spares.",
+                "price": "From £45",
+                "handle": "lewden-board-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/lewden.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "lewden-cu-install-pack",
+                "title": "Lewden Consumer Unit Install Pack",
+                "blurb": "Mounting, trunking adapters and termination accessories for Lewden board upgrades across the North West.",
+                "price": "From £38",
+                "handle": "lewden-cu-install-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/lewden.jpg",
+                "badge": "Install"
+            }
+        ]
+    },
+    "luxonic": {
+        "blurb": "Icomply specifies, installs and tests Luxonic emergency lighting to BS 5266 for commercial and multi-occupancy buildings in the North West. From LED conversions to full system design, we handle commissioning, monthly function tests and annual duration certification. Order Luxonic fittings, batteries and exit signage from our trade shop for Stockport, Manchester and regional maintenance rounds.",
+        "seo_desc": "Luxonic emergency lighting install, BS 5266 testing & trade kits from Icomply. North West service across Manchester & Stockport.",
+        "seo_keywords": "Luxonic, Luxonic emergency lighting, Luxonic installation, Luxonic LED, BS 5266 testing North West, Luxonic batteries, emergency lighting Manchester, Luxonic trade, exit signs Stockport, Icomply Luxonic",
+        "products": [
+            {
+                "id": "luxonic-battery-service-kit",
+                "title": "Luxonic Emergency Battery Service Kit",
+                "blurb": "Replacement batteries and service labels for Luxonic emergency luminaires on planned maintenance contracts.",
+                "price": "From £49",
+                "handle": "luxonic-battery-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/luxonic.jpg",
+                "badge": "Service"
+            },
+            {
+                "id": "luxonic-led-install-pack",
+                "title": "Luxonic LED Fitting Install Pack",
+                "blurb": "Mounting and wiring accessories for Luxonic emergency LED installs across Greater Manchester and Cheshire.",
+                "price": "From £36",
+                "handle": "luxonic-led-install-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/luxonic.jpg",
+                "badge": "Trade"
+            }
+        ]
+    },
+    "mackwell": {
+        "blurb": "Icomply installs and services Mackwell emergency lighting systems for estates, retail and commercial clients across the North West. Our engineers deliver BS 5266-compliant design, installation, duration testing and certification with clear asset records. Buy Mackwell modules, batteries and exit signage through our trade counter for rapid call-outs in Stockport, Manchester and surrounding towns.",
+        "seo_desc": "Mackwell emergency lighting install, service & BS 5266 certs by Icomply. Trade modules & batteries across the North West.",
+        "seo_keywords": "Mackwell, Mackwell emergency lighting, Mackwell installation, Mackwell modules, BS 5266 North West, Mackwell batteries, emergency lighting service Manchester, Mackwell trade, Mackwell Stockport, Icomply Mackwell",
+        "products": [
+            {
+                "id": "mackwell-module-spares-kit",
+                "title": "Mackwell Module & Battery Spares Kit",
+                "blurb": "Engineer-ready Mackwell inverter modules and batteries for emergency lighting repairs and annual service visits.",
+                "price": "From £52",
+                "handle": "mackwell-module-spares-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/mackwell.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "mackwell-exit-install-pack",
+                "title": "Mackwell Exit Sign Install Pack",
+                "blurb": "Brackets, legends and fixings used on Mackwell exit and escape-route installs throughout the North West.",
+                "price": "From £34",
+                "handle": "mackwell-exit-install-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/mackwell.jpg",
+                "badge": "Install"
+            }
+        ]
+    },
+    "main-heating": {
+        "blurb": "Icomply provides Gas Safe installation and servicing for Main Heating boilers and system components across Greater Manchester and the wider North West. We handle new installs, annual services, fault diagnosis and landlord certification with full paperwork. Trade service kits, flue accessories and engineer consumables for Main Heating are available from our shop for contractors and housing providers.",
+        "seo_desc": "Main Heating boiler install, Gas Safe service & certs from Icomply. Trade kits across Stockport, Manchester & the North West.",
+        "seo_keywords": "Main Heating, Main Heating boiler, Main Heating installation, Gas Safe service North West, Main Heating spares, boiler service Manchester, Main Heating trade, landlord gas cert Stockport, Main Heating flue, Icomply Main Heating",
+        "products": [
+            {
+                "id": "main-heating-service-kit",
+                "title": "Main Heating Annual Service Kit",
+                "blurb": "Washers, filters and service consumables for Main Heating boilers on planned Gas Safe maintenance rounds.",
+                "price": "From £39",
+                "handle": "main-heating-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/main-heating.jpg",
+                "badge": "Service"
+            },
+            {
+                "id": "main-heating-flue-accessory-pack",
+                "title": "Main Heating Flue & Install Accessory Pack",
+                "blurb": "Common flue and termination accessories for Main Heating installs across residential and light-commercial North West sites.",
+                "price": "From £48",
+                "handle": "main-heating-flue-accessory-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/main-heating.jpg",
+                "badge": "Trade"
+            }
+        ]
+    },
+    "mem": {
+        "blurb": "Icomply supports MEM electrical distribution gear with BS 7671 installation, board changes and certified testing across the North West. Whether you need a full consumer unit upgrade or reactive breaker replacements, our electricians document every job for landlords and FM teams. Source MEM breakers, enclosures and trade spares from our Stockport-based shop for Manchester and regional projects.",
+        "seo_desc": "MEM electrical install, BS 7671 certification & trade breakers from Icomply. Service across Stockport, Manchester & North West.",
+        "seo_keywords": "MEM, MEM consumer unit, MEM installation, MEM MCB, electrical certification North West, MEM trade spares, BS 7671 Manchester, MEM board upgrade Stockport, MEM breakers, Icomply MEM",
+        "products": [
+            {
+                "id": "mem-breaker-trade-pack",
+                "title": "MEM Breaker & Fuse Trade Pack",
+                "blurb": "Popular MEM protective devices and blanks for remedial electrical work and maintenance stock vans.",
+                "price": "From £44",
+                "handle": "mem-breaker-trade-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/mem.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "mem-board-install-pack",
+                "title": "MEM Distribution Board Install Pack",
+                "blurb": "Mounting and termination accessories for MEM board installs and upgrades across the North West.",
+                "price": "From £37",
+                "handle": "mem-board-install-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/mem.jpg",
+                "badge": "Install"
+            }
+        ]
+    },
+    "menvier": {
+        "blurb": "Icomply installs, maintains and certifies Menvier emergency lighting for commercial and multi-site portfolios throughout the North West. We cover LED upgrades, bulkhead replacements, BS 5266 testing schedules and full duration certification. Trade Menvier fittings, batteries and exit signage ship from our shop to engineers working Stockport, Manchester, Cheshire and Lancashire.",
+        "seo_desc": "Menvier emergency lighting install, BS 5266 tests & trade spares from Icomply. North West cover for Manchester & Stockport.",
+        "seo_keywords": "Menvier, Menvier emergency lighting, Menvier installation, Menvier bulkhead, BS 5266 North West, Menvier batteries, emergency lighting Manchester, Menvier trade, exit signage Stockport, Icomply Menvier",
+        "products": [
+            {
+                "id": "menvier-battery-service-kit",
+                "title": "Menvier Battery & Label Service Kit",
+                "blurb": "Replacement batteries and compliance labels for Menvier emergency luminaires on contract service visits.",
+                "price": "From £47",
+                "handle": "menvier-battery-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/menvier.jpg",
+                "badge": "Service"
+            },
+            {
+                "id": "menvier-fitting-install-pack",
+                "title": "Menvier Fitting Install Accessory Pack",
+                "blurb": "Fixings, glands and mounting hardware for Menvier emergency lighting projects across the North West.",
+                "price": "From £33",
+                "handle": "menvier-fitting-install-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/menvier.jpg",
+                "badge": "Trade"
+            }
+        ]
+    },
+    "milesight": {
+        "blurb": "Icomply designs and installs Milesight CCTV for commercial premises, warehouses and multi-site clients across the North West. From IP camera layouts to NVR commissioning, we deliver systems aligned to BS EN 62676 with clear handover documentation. Shop Milesight mounts, PoE accessories and engineer spares through our trade counter serving Stockport, Manchester and regional contractors.",
+        "seo_desc": "Milesight CCTV install, service & trade accessories from Icomply. Cameras & NVR kits across Manchester, Stockport & North West.",
+        "seo_keywords": "Milesight, Milesight CCTV, Milesight installation, Milesight IP camera, CCTV North West, Milesight NVR, CCTV service Manchester, Milesight trade, camera mounts Stockport, Icomply Milesight",
+        "products": [
+            {
+                "id": "milesight-camera-mount-kit",
+                "title": "Milesight Camera Mount & Bracket Kit",
+                "blurb": "Wall and pole mounts commonly used on Milesight IP camera installs across commercial North West sites.",
+                "price": "From £41",
+                "handle": "milesight-camera-mount-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/milesight.jpg",
+                "badge": "Install"
+            },
+            {
+                "id": "milesight-nvr-service-pack",
+                "title": "Milesight NVR Service & Cabling Pack",
+                "blurb": "PoE leads, terminations and service consumables for Milesight NVR systems on maintenance contracts.",
+                "price": "From £46",
+                "handle": "milesight-nvr-service-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/milesight.jpg",
+                "badge": "Trade"
+            }
+        ]
+    },
+    "mk-electric": {
+        "blurb": "Icomply installs and maintains MK Electric wiring accessories and distribution solutions to BS 7671 standards across the North West. From commercial fit-outs to landlord remedial programmes, we provide certified installation, testing and planned electrical maintenance. Buy MK sockets, switches, grid modules and trade spares from our shop for projects in Stockport, Manchester, Cheshire and Lancashire.",
+        "seo_desc": "MK Electric install, BS 7671 certs & trade accessories from Icomply. Sockets, switches & boards across Manchester & North West.",
+        "seo_keywords": "MK Electric, MK Electric installation, MK sockets, MK switches, electrical service North West, MK trade, BS 7671 Manchester, MK Electric Stockport, wiring accessories, Icomply MK Electric",
+        "products": [
+            {
+                "id": "mk-electric-accessory-trade-pack",
+                "title": "MK Electric Socket & Switch Trade Pack",
+                "blurb": "Popular MK wiring accessories for commercial fit-outs and reactive electrical call-outs across the North West.",
+                "price": "From £42",
+                "handle": "mk-electric-accessory-trade-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/mk-electric.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "mk-electric-grid-install-pack",
+                "title": "MK Electric Grid & Faceplate Install Pack",
+                "blurb": "Grid modules, faceplates and fixings for MK Electric installations on landlord and FM projects.",
+                "price": "From £35",
+                "handle": "mk-electric-grid-install-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/mk-electric.jpg",
+                "badge": "Install"
+            }
+        ]
+    }
+}

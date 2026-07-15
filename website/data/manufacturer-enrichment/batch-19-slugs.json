@@ -1,0 +1,51 @@
+[
+    {
+        "slug": "wylex",
+        "name": "Wylex",
+        "services": [
+            "electrical"
+        ]
+    },
+    {
+        "slug": "xtralis-vesda",
+        "name": "Xtralis VESDA",
+        "services": [
+            "fire-alarms"
+        ]
+    },
+    {
+        "slug": "yale",
+        "name": "Yale",
+        "services": [
+            "intruder-alarm"
+        ]
+    },
+    {
+        "slug": "zenitel",
+        "name": "Zenitel",
+        "services": [
+            "intercoms"
+        ]
+    },
+    {
+        "slug": "zettler",
+        "name": "Zettler",
+        "services": [
+            "nurse-call"
+        ]
+    },
+    {
+        "slug": "ziton",
+        "name": "Ziton",
+        "services": [
+            "fire-alarms"
+        ]
+    },
+    {
+        "slug": "zumtobel",
+        "name": "Zumtobel",
+        "services": [
+            "emergency-lighting"
+        ]
+    }
+]

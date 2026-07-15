@@ -1,0 +1,72 @@
+[
+    {
+        "slug": "se-controls",
+        "name": "SE Controls",
+        "services": [
+            "aov-air-handling"
+        ]
+    },
+    {
+        "slug": "siedle",
+        "name": "Siedle",
+        "services": [
+            "intercoms"
+        ]
+    },
+    {
+        "slug": "siemens",
+        "name": "Siemens",
+        "services": [
+            "electrical"
+        ]
+    },
+    {
+        "slug": "simon-rwa",
+        "name": "Simon RWA",
+        "services": [
+            "aov-air-handling"
+        ]
+    },
+    {
+        "slug": "smoke-control",
+        "name": "Smoke Control",
+        "services": [
+            "aov-air-handling"
+        ]
+    },
+    {
+        "slug": "software-house",
+        "name": "Software House",
+        "services": [
+            "access-control"
+        ]
+    },
+    {
+        "slug": "sony-security",
+        "name": "Sony Security",
+        "services": [
+            "cctv"
+        ]
+    },
+    {
+        "slug": "stanley-security",
+        "name": "Stanley Security",
+        "services": [
+            "access-control"
+        ]
+    },
+    {
+        "slug": "static-systems-group",
+        "name": "Static Systems Group",
+        "services": [
+            "nurse-call"
+        ]
+    },
+    {
+        "slug": "stentofon",
+        "name": "Stentofon",
+        "services": [
+            "intercoms"
+        ]
+    }
+]

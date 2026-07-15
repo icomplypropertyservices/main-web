@@ -1,0 +1,272 @@
+{
+    "barix": {
+        "blurb": "Icomply Property Services designs, installs and maintains Barix IP audio and intercom solutions for residential blocks, commercial premises and multi-site estates across the North West. From SIP door stations and paging to retrofit upgrades on ageing analogue loops, our engineers commission systems that integrate cleanly with existing networks and access control. Landlords, FM teams and trade partners can also source Barix-compatible spares, cabling kits and engineer consumables for planned maintenance rounds in Greater Manchester, Lancashire, Cheshire and Merseyside.",
+        "seo_desc": "Barix intercom install, service and trade kits with Icomply. IP audio, SIP stations and spares across Manchester, Stockport and the North West.",
+        "seo_keywords": "Barix, Barix installation, Barix service, Barix maintenance, Barix spares, Barix trade, Barix North West, Barix Manchester, Barix Stockport, Intercoms, IP intercom, SIP audio",
+        "products": [
+            {
+                "id": "barix-product-1",
+                "title": "Barix Master Station Accessory Kit",
+                "blurb": "Trade accessories for Barix master stations — ideal for commissioning and planned maintenance visits.",
+                "price": "From £48",
+                "handle": "barix-product-1",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/barix.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "barix-product-2",
+                "title": "Barix Door Station Spares Pack",
+                "blurb": "Weatherproof door-station modules and common field spares for Barix intercom installs.",
+                "price": "From £62",
+                "handle": "barix-product-2",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/barix.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "baxi": {
+        "blurb": "Icomply Property Services supports Baxi boilers and gas systems for landlords, housing associations and commercial clients throughout the North West. Gas Safe engineers handle installation, annual servicing, breakdown repair and system upgrades, with clear certification and compliance paperwork for every job. We also supply trade service kits, flue accessories and common Baxi consumables so contractors and in-house teams can keep plant rooms and domestic boilers running reliably across Stockport, Manchester and the wider region.",
+        "seo_desc": "Baxi boiler install, Gas Safe service and trade kits with Icomply. Spares, flues and repairs across Stockport, Manchester and the North West.",
+        "seo_keywords": "Baxi, Baxi installation, Baxi service, Baxi maintenance, Baxi spares, Baxi trade, Baxi North West, Baxi Manchester, Baxi Stockport, Gas Systems, Baxi boiler service, Gas Safe",
+        "products": [
+            {
+                "id": "baxi-product-1",
+                "title": "Baxi Annual Service Kit",
+                "blurb": "Engineer-ready service consumables for common Baxi boilers on domestic and light commercial plant.",
+                "price": "From £49",
+                "handle": "baxi-product-1",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/baxi.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "baxi-product-2",
+                "title": "Baxi Flue & Install Accessory Pack",
+                "blurb": "Flue fittings and install accessories frequently used on Baxi projects across the North West.",
+                "price": "From £35",
+                "handle": "baxi-product-2",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/baxi.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "beghelli": {
+        "blurb": "Icomply Property Services installs, tests and maintains Beghelli emergency lighting for commercial, residential and public buildings across the North West. Our team delivers BS 5266-aligned design, commissioning and periodic inspection, plus reactive call-outs when fittings fail monthly or annual tests. Trade customers can order LED emergency luminaires, battery packs and exit signage kits suited to Beghelli systems serving landlords, FM providers and contractors in Greater Manchester, Cheshire, Lancashire and Merseyside.",
+        "seo_desc": "Beghelli emergency lighting install, BS 5266 testing and trade kits with Icomply. LEDs, batteries and signage across the North West.",
+        "seo_keywords": "Beghelli, Beghelli installation, Beghelli service, Beghelli maintenance, Beghelli spares, Beghelli trade, Beghelli North West, Beghelli Manchester, Beghelli Stockport, Emergency Lighting, BS 5266, emergency light testing",
+        "products": [
+            {
+                "id": "beghelli-product-1",
+                "title": "Beghelli Emergency LED & Battery Kit",
+                "blurb": "Replacement LED modules and batteries for Beghelli emergency fittings on maintenance contracts.",
+                "price": "From £42",
+                "handle": "beghelli-product-1",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/beghelli.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "beghelli-product-2",
+                "title": "Beghelli Exit Signage Pack",
+                "blurb": "Exit signs and mounting accessories commonly specified with Beghelli emergency lighting schemes.",
+                "price": "From £38",
+                "handle": "beghelli-product-2",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/beghelli.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "bg-electrical": {
+        "blurb": "Icomply Property Services supplies and installs BG Electrical wiring accessories, consumer units and related distribution gear for domestic and commercial projects across the North West. Electricians complete BS 7671-compliant installations, board upgrades and planned electrical maintenance for landlords, developers and facilities teams. Our trade counter and online kits cover sockets, switches, breakers and engineer spares so North West contractors can finish jobs without delays between Stockport, Manchester and surrounding towns.",
+        "seo_desc": "BG Electrical install, board upgrades and trade kits with Icomply. BS 7671 work, sockets and spares across Manchester and the North West.",
+        "seo_keywords": "BG Electrical, BG Electrical installation, BG Electrical service, BG Electrical maintenance, BG Electrical spares, BG Electrical trade, BG Electrical North West, BG Electrical Manchester, BG Electrical Stockport, Electrical, consumer units, BS 7671",
+        "products": [
+            {
+                "id": "bg-electrical-product-1",
+                "title": "BG Electrical Consumer Unit Spares Kit",
+                "blurb": "Trade spares pack for BG boards, breakers and common field replacements.",
+                "price": "From £49",
+                "handle": "bg-electrical-product-1",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/bg-electrical.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "bg-electrical-product-2",
+                "title": "BG Electrical Install Accessory Pack",
+                "blurb": "Mounting, termination and finishing accessories for BG Electrical installs.",
+                "price": "From £35",
+                "handle": "bg-electrical-product-2",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/bg-electrical.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "bilco": {
+        "blurb": "Icomply Property Services installs and services Bilco access hatches, smoke vents and related AOV equipment for multi-storey residential and commercial buildings across the North West. We support smoke-control compliance under BS 9991 and EN 12101, covering new installs, actuator replacement and planned maintenance of roof and stairwell systems. FM teams and trade partners can source Bilco-compatible control spares, actuators and consumables for estates in Greater Manchester, Lancashire, Cheshire and Merseyside.",
+        "seo_desc": "Bilco AOV and hatch install, service and trade spares with Icomply. Smoke control support across Stockport, Manchester and the North West.",
+        "seo_keywords": "Bilco, Bilco installation, Bilco service, Bilco maintenance, Bilco spares, Bilco trade, Bilco North West, Bilco Manchester, Bilco Stockport, AOV & Air Handling, smoke vents, access hatches",
+        "products": [
+            {
+                "id": "bilco-product-1",
+                "title": "Bilco Actuator Service Spares",
+                "blurb": "Actuator and control consumables for Bilco smoke-vent and hatch maintenance rounds.",
+                "price": "From £55",
+                "handle": "bilco-product-1",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/bilco.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "bilco-product-2",
+                "title": "Bilco Control Panel Consumables Pack",
+                "blurb": "Panel fuses, relays and install accessories used on Bilco AOV projects in the North West.",
+                "price": "From £40",
+                "handle": "bilco-product-2",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/bilco.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "bitron-video": {
+        "blurb": "Icomply Property Services installs, upgrades and maintains Bitron Video door entry systems for apartments, HMOs and mixed-use developments across the North West. From traditional audio kits to video entrance panels and multi-way handsets, we commission reliable entry solutions and provide reactive repairs when residents lose door release or picture quality. Trade handsets, faceplates, rain hoods and entrance accessories are available for landlords, block managers and contractors working around Manchester, Stockport and the wider region.",
+        "seo_desc": "Bitron Video door entry install, repair and trade kits with Icomply. Handsets, panels and spares across Manchester and the North West.",
+        "seo_keywords": "Bitron Video, Bitron Video installation, Bitron Video service, Bitron Video maintenance, Bitron Video spares, Bitron Video trade, Bitron Video North West, Bitron Video Manchester, Bitron Video Stockport, Door Entry Systems, video door entry",
+        "products": [
+            {
+                "id": "bitron-video-product-1",
+                "title": "Bitron Video Handset / Panel Spares",
+                "blurb": "Replacement handsets and faceplates for Bitron Video door entry systems.",
+                "price": "From £52",
+                "handle": "bitron-video-product-1",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/bitron-video.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "bitron-video-product-2",
+                "title": "Bitron Video Entrance Panel Accessory",
+                "blurb": "Rain hoods, flush boxes and modules for Bitron Video entrance panels.",
+                "price": "From £36",
+                "handle": "bitron-video-product-2",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/bitron-video.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "bosch": {
+        "blurb": "Icomply Property Services designs, installs and services Bosch CCTV systems for residential blocks, commercial sites and industrial premises across the North West. Engineers specify cameras, NVRs and network infrastructure to BS EN 62676 practice, then provide ongoing maintenance, HDD health checks and camera realignment as sites evolve. Trade partners can order mounts, cabling, power supplies and recording accessories suited to Bosch surveillance projects in Greater Manchester, Lancashire, Cheshire and Merseyside.",
+        "seo_desc": "Bosch CCTV design, install and trade accessories with Icomply. Cameras, NVR spares and service across Stockport, Manchester and the North West.",
+        "seo_keywords": "Bosch, Bosch installation, Bosch service, Bosch maintenance, Bosch spares, Bosch trade, Bosch North West, Bosch Manchester, Bosch Stockport, CCTV Systems, Bosch CCTV, NVR accessories",
+        "products": [
+            {
+                "id": "bosch-product-1",
+                "title": "Bosch Camera Mount Kit",
+                "blurb": "Brackets and weatherproof mounts for Bosch cameras on external and internal runs.",
+                "price": "From £29",
+                "handle": "bosch-product-1",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/bosch.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "bosch-product-2",
+                "title": "Bosch NVR / HDD Accessory Pack",
+                "blurb": "Cabling, power and storage accessories commonly used with Bosch recording platforms.",
+                "price": "From £45",
+                "handle": "bosch-product-2",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/bosch.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "bosch-security": {
+        "blurb": "Icomply Property Services installs and maintains Bosch Security intruder alarm systems for homes, offices and multi-site portfolios across the North West. We deliver PD 6662 / BS EN 50131-aligned design, commissioning and engineered maintenance, including detector swaps, panel expansions and signalling checks. Landlords, FM teams and trade installers can source PIRs, contacts and panel accessories for Bosch Security projects covering Stockport, Manchester and surrounding North West towns.",
+        "seo_desc": "Bosch Security intruder alarms — install, service and trade spares with Icomply. PD 6662 systems across Manchester and the North West.",
+        "seo_keywords": "Bosch Security, Bosch Security installation, Bosch Security service, Bosch Security maintenance, Bosch Security spares, Bosch Security trade, Bosch Security North West, Bosch Security Manchester, Bosch Security Stockport, Intruder Alarms, PD 6662, BS EN 50131",
+        "products": [
+            {
+                "id": "bosch-security-product-1",
+                "title": "Bosch Security PIR & Contact Pack",
+                "blurb": "Trade detectors and door contacts for Bosch Security intruder systems on service contracts.",
+                "price": "From £45",
+                "handle": "bosch-security-product-1",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/bosch-security.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "bosch-security-product-2",
+                "title": "Bosch Security Panel Expansion Kit",
+                "blurb": "Panel expansions and engineer accessories for Bosch Security alarm installs and upgrades.",
+                "price": "From £58",
+                "handle": "bosch-security-product-2",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/bosch-security.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "bpt": {
+        "blurb": "Icomply Property Services is a trusted North West installer and service partner for BPT door entry systems in apartments, student housing and commercial receptions. We handle new video and audio installs, handset replacements, panel upgrades and planned maintenance so residents and staff keep reliable door release day and night. Trade kits cover handsets, entrance modules and weatherproof accessories for contractors and block managers working across Greater Manchester, Lancashire, Cheshire and Merseyside.",
+        "seo_desc": "BPT door entry install, handset repair and trade kits with Icomply. Audio and video systems across Stockport, Manchester and the North West.",
+        "seo_keywords": "BPT, BPT installation, BPT service, BPT maintenance, BPT spares, BPT trade, BPT North West, BPT Manchester, BPT Stockport, Door Entry Systems, BPT handsets, video door entry",
+        "products": [
+            {
+                "id": "bpt-product-1",
+                "title": "BPT Handset / Panel Spares",
+                "blurb": "Replacement handsets and faceplates for established BPT door entry installations.",
+                "price": "From £52",
+                "handle": "bpt-product-1",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/bpt.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "bpt-product-2",
+                "title": "BPT Entrance Panel Accessory",
+                "blurb": "Rain hoods, flush boxes and modules for BPT entrance panels on North West sites.",
+                "price": "From £36",
+                "handle": "bpt-product-2",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/bpt.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "bpt-x1": {
+        "blurb": "Icomply Property Services installs and supports BPT X1 door entry platforms for modern multi-dwelling and commercial schemes across the North West. Our engineers commission X1 entrance panels, indoor stations and system expansions, and provide reactive service when call quality, video or door release fails. We stock trade-friendly X1 handset spares, panel accessories and install hardware for landlords, developers and contractors operating from Stockport through Manchester and into Lancashire, Cheshire and Merseyside.",
+        "seo_desc": "BPT X1 door entry install, service and trade accessories with Icomply. Panels, handsets and spares across Manchester and the North West.",
+        "seo_keywords": "BPT X1, BPT X1 installation, BPT X1 service, BPT X1 maintenance, BPT X1 spares, BPT X1 trade, BPT X1 North West, BPT X1 Manchester, BPT X1 Stockport, Door Entry Systems, BPT X1 handsets, video door entry",
+        "products": [
+            {
+                "id": "bpt-x1-product-1",
+                "title": "BPT X1 Handset / Panel Spares",
+                "blurb": "Replacement indoor stations and faceplates for BPT X1 door entry systems.",
+                "price": "From £52",
+                "handle": "bpt-x1-product-1",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/bpt-x1.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "bpt-x1-product-2",
+                "title": "BPT X1 Entrance Panel Accessory",
+                "blurb": "Rain hoods, flush boxes and modules for BPT X1 entrance panels.",
+                "price": "From £36",
+                "handle": "bpt-x1-product-2",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/bpt-x1.jpg",
+                "badge": ""
+            }
+        ]
+    }
+}

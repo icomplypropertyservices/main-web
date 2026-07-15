@@ -1,0 +1,72 @@
+[
+    {
+        "slug": "rauland",
+        "name": "Rauland",
+        "services": [
+            "nurse-call"
+        ]
+    },
+    {
+        "slug": "ravenheat",
+        "name": "Ravenheat",
+        "services": [
+            "gas-systems"
+        ]
+    },
+    {
+        "slug": "remeha",
+        "name": "Remeha",
+        "services": [
+            "gas-systems"
+        ]
+    },
+    {
+        "slug": "reolink",
+        "name": "Reolink",
+        "services": [
+            "cctv"
+        ]
+    },
+    {
+        "slug": "risco",
+        "name": "Risco",
+        "services": [
+            "intruder-alarm"
+        ]
+    },
+    {
+        "slug": "rolec-ev",
+        "name": "Rolec EV",
+        "services": [
+            "electrical"
+        ]
+    },
+    {
+        "slug": "salto-systems",
+        "name": "Salto Systems",
+        "services": [
+            "access-control"
+        ]
+    },
+    {
+        "slug": "scantronic",
+        "name": "Scantronic",
+        "services": [
+            "intruder-alarm"
+        ]
+    },
+    {
+        "slug": "schneider-electric",
+        "name": "Schneider Electric",
+        "services": [
+            "electrical"
+        ]
+    },
+    {
+        "slug": "schrack-seconet",
+        "name": "Schrack Seconet",
+        "services": [
+            "nurse-call"
+        ]
+    }
+]

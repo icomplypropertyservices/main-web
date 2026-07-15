@@ -1,0 +1,72 @@
+[
+    {
+        "slug": "brooks",
+        "name": "Brooks",
+        "services": [
+            "aov-air-handling"
+        ]
+    },
+    {
+        "slug": "c-tec",
+        "name": "C-Tec",
+        "services": [
+            "fire-alarms"
+        ]
+    },
+    {
+        "slug": "cambric",
+        "name": "Cambric",
+        "services": [
+            "aov-air-handling"
+        ]
+    },
+    {
+        "slug": "caretech",
+        "name": "Caretech",
+        "services": [
+            "nurse-call"
+        ]
+    },
+    {
+        "slug": "cdvi",
+        "name": "CDVI",
+        "services": [
+            "access-control"
+        ]
+    },
+    {
+        "slug": "clear-com",
+        "name": "Clear-Com",
+        "services": [
+            "intercoms"
+        ]
+    },
+    {
+        "slug": "clevertronics",
+        "name": "Clevertronics",
+        "services": [
+            "emergency-lighting"
+        ]
+    },
+    {
+        "slug": "click-scolmore",
+        "name": "Click Scolmore",
+        "services": [
+            "electrical"
+        ]
+    },
+    {
+        "slug": "colt",
+        "name": "Colt",
+        "services": [
+            "aov-air-handling"
+        ]
+    },
+    {
+        "slug": "comelit",
+        "name": "Comelit",
+        "services": [
+            "door-entry"
+        ]
+    }
+]

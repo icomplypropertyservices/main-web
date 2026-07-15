@@ -1,0 +1,72 @@
+[
+    {
+        "slug": "timeguard",
+        "name": "Timeguard",
+        "services": [
+            "electrical"
+        ]
+    },
+    {
+        "slug": "toa",
+        "name": "TOA",
+        "services": [
+            "intercoms"
+        ]
+    },
+    {
+        "slug": "trox",
+        "name": "TROX",
+        "services": [
+            "aov-air-handling"
+        ]
+    },
+    {
+        "slug": "tunstall",
+        "name": "Tunstall",
+        "services": [
+            "nurse-call"
+        ]
+    },
+    {
+        "slug": "uniview",
+        "name": "Uniview",
+        "services": [
+            "cctv"
+        ]
+    },
+    {
+        "slug": "urmet",
+        "name": "Urmet",
+        "services": [
+            "door-entry"
+        ]
+    },
+    {
+        "slug": "vaillant",
+        "name": "Vaillant",
+        "services": [
+            "gas-systems"
+        ]
+    },
+    {
+        "slug": "vanderbilt",
+        "name": "Vanderbilt",
+        "services": [
+            "access-control"
+        ]
+    },
+    {
+        "slug": "ventilux",
+        "name": "Ventilux",
+        "services": [
+            "aov-air-handling"
+        ]
+    },
+    {
+        "slug": "videx",
+        "name": "Videx",
+        "services": [
+            "door-entry"
+        ]
+    }
+]

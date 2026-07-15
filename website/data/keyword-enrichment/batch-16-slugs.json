@@ -1,0 +1,202 @@
+[
+    {
+        "slug": "care-home-call-system",
+        "name": "Care Home Call System",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nursing-home-nurse-call",
+        "name": "Nursing Home Nurse Call",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "residential-care-call-system",
+        "name": "Residential Care Call System",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nurse-call-service-contract",
+        "name": "Nurse Call Service Contract",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nurse-call-repair",
+        "name": "Nurse Call Repair",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nurse-call-battery-replacement",
+        "name": "Nurse Call Battery Replacement",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "multi-site-nurse-call-maintenance",
+        "name": "Multi Site Nurse Call Maintenance",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "staff-attack-alarm-system",
+        "name": "Staff Attack Alarm System",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "assisted-living-call-system",
+        "name": "Assisted Living Call System",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nurse-call-system-design",
+        "name": "Nurse Call System Design",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nurse-call-engineers",
+        "name": "Nurse Call Engineers",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "ascom-nurse-call",
+        "name": "Ascom Nurse Call",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "quantec-nurse-call",
+        "name": "Quantec Nurse Call",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "healthcare-call-system-installation",
+        "name": "Healthcare Call System Installation",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "automatic-opening-vent-installation",
+        "name": "Automatic Opening Vent Installation",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "aov-actuator-installation",
+        "name": "AOV Actuator Installation",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "aov-panel-installation",
+        "name": "AOV Panel Installation",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "aov-testing-and-certification",
+        "name": "AOV Testing and Certification",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "bs-9991-smoke-control",
+        "name": "BS 9991 Smoke Control",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "en-12101-smoke-vent",
+        "name": "EN 12101 Smoke Vent",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "mechanical-smoke-ventilation",
+        "name": "Mechanical Smoke Ventilation",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "stairwell-smoke-vent",
+        "name": "Stairwell Smoke Vent",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "corridor-smoke-ventilation",
+        "name": "Corridor Smoke Ventilation",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "car-park-smoke-ventilation",
+        "name": "Car Park Smoke Ventilation",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "aov-for-apartment-blocks",
+        "name": "AOV for Apartment Blocks",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "aov-for-high-rise",
+        "name": "AOV for High Rise",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "ahu-controls-installation",
+        "name": "AHU Controls Installation",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "smoke-control-panel-service",
+        "name": "Smoke Control Panel Service",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "aov-fault-finding",
+        "name": "AOV Fault Finding",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "aov-battery-replacement",
+        "name": "AOV Battery Replacement",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "multi-site-aov-maintenance",
+        "name": "Multi Site AOV Maintenance",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "se-controls-aov",
+        "name": "SE Controls AOV",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "windowmaster-aov",
+        "name": "WindowMaster AOV",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "colt-smoke-vent",
+        "name": "Colt Smoke Vent",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "aov-system-design",
+        "name": "AOV System Design",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "smoke-control-engineers",
+        "name": "Smoke Control Engineers",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "life-safety-ventilation",
+        "name": "Life Safety Ventilation",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "aov-annual-service",
+        "name": "AOV Annual Service",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "roof-smoke-vent-installation",
+        "name": "Roof Smoke Vent Installation",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "lobby-smoke-ventilation",
+        "name": "Lobby Smoke Ventilation",
+        "service": "aov-air-handling"
+    }
+]

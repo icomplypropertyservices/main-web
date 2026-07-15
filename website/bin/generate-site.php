@@ -1,52 +1,56 @@
 #!/usr/bin/env php
 <?php
 /**
- * Icomply Property Services - Site Generator
- * 
- * Generates all /{service}/{area}.php SEO landing pages from templates/combo.php
- * 
+ * Writes thin stubs for /pages/{service}/{area}.php
+ * Content is rendered at request time from templates/services/{slug}.php (or combo.php).
+ *
  * Usage:
  *   php bin/generate-site.php
- *   php bin/generate-site.php --limit=50     (limit areas per service)
- *   php bin/generate-site.php --service=electrical
+ *   php bin/generate-site.php --limit=150
+ *   php bin/generate-site.php --service=fire-alarms
  */
-
 require_once __DIR__ . '/../config.php';
 
 $options = getopt('', ['limit::', 'service::']);
-$limit = isset($options['limit']) ? (int)$options['limit'] : 999;
+$limit = isset($options['limit']) ? (int)$options['limit'] : 0;
 $onlyService = $options['service'] ?? null;
 
-$allServices = array_merge($services, loadServices());
-$areasToUse = array_slice($areas, 0, $limit);
+$allServices = getServices();
+$areasToUse = getAreas();
+if ($limit > 0) {
+    $areasToUse = array_slice($areasToUse, 0, $limit);
+}
 
-echo "Icomply Site Generator\n";
-echo "======================\n\n";
+echo "Icomply Site Generator (thin stubs → runtime render)\n";
+echo "====================================================\n\n";
 
 $total = 0;
 foreach ($allServices as $sSlug => $sName) {
-    if ($onlyService && $sSlug !== $onlyService) continue;
+    if ($onlyService && $sSlug !== $onlyService) {
+        continue;
+    }
 
-    $dir = __DIR__ . "/../pages/{$sSlug}";
-    if (!is_dir($dir)) mkdir($dir, 0777, true);
+    $dir = SITE_ROOT . "/pages/{$sSlug}";
+    if (!is_dir($dir)) {
+        mkdir($dir, 0755, true);
+    }
 
+    // Remove obsolete files for areas no longer in the list (optional: keep for safety)
     foreach ($areasToUse as $area) {
         $aSlug = areaSlug($area);
         $file = "{$dir}/{$aSlug}.php";
-
-        $tpl = file_get_contents(__DIR__ . '/../templates/combo.php');
-        $tpl = str_replace('{{SERVICE_NAME}}', $sName, $tpl);
-        $tpl = str_replace('{{SERVICE_SLUG}}', $sSlug, $tpl);
-        $tpl = str_replace('{{AREA}}', $area, $tpl);
-        $tpl = str_replace('{{SEO_KEYWORDS}}', getSeoKeywords($sSlug, $area), $tpl);
-        $tpl = str_replace('{{AREA_SLUG}}', $aSlug, $tpl);
-
-        file_put_contents($file, $tpl);
+        $areaExport = var_export($area, true);
+        $slugExport = var_export($sSlug, true);
+        $stub = "<?php\n"
+            . "/** AUTO-GENERATED stub — php bin/generate-site.php */\n"
+            . "require_once __DIR__ . '/../../includes/render.php';\n"
+            . "renderServiceAreaPage({$slugExport}, {$areaExport});\n";
+        file_put_contents($file, $stub);
         $total++;
     }
-    echo "  [{$sSlug}] {$sName} → " . count($areasToUse) . " pages\n";
+
+    $tpl = is_file(SITE_ROOT . "/templates/services/{$sSlug}.php") ? "services/{$sSlug}.php" : 'combo.php';
+    echo "  [{$sSlug}] {$sName} → " . count($areasToUse) . " stubs | template: {$tpl}\n";
 }
 
-echo "\n✅ Generated {$total} pages total.\n";
-echo "Run with --limit=150 for full production site.\n";
-?>
+echo "\nGenerated {$total} service×area stubs.\n";

@@ -1,0 +1,272 @@
+{
+    "ems": {
+        "blurb": "Icomply installs, commissions and services EMS fire detection systems across Stockport, Manchester and the wider North West, with engineers who work to BS 5839 for new builds, refurbishments and retrofit upgrades. From panel programming and device addressing to planned maintenance, false-alarm reduction and full certification paperwork, we keep EMS kit compliant for landlords, FM teams and commercial sites. Trade panel batteries, detectors, call points and engineer consumables are available from our North West trade shop for contractors who need same-week turnaround.",
+        "seo_desc": "EMS fire alarm install, BS 5839 service & trade spares from Icomply. Stockport, Manchester & North West. Free quotes.",
+        "seo_keywords": "EMS, EMS fire alarm, EMS installation, EMS service, EMS maintenance, BS 5839, EMS detectors, EMS panel spares, EMS trade, EMS North West, EMS Manchester, EMS Stockport, fire detection certification",
+        "products": [
+            {
+                "id": "ems-panel-service-kit",
+                "title": "EMS Panel Service Kit",
+                "blurb": "Batteries, zone keys, fuses and engineer labels for routine EMS panel maintenance visits.",
+                "price": "From £78",
+                "handle": "ems-panel-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/ems.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "ems-detector-pack",
+                "title": "EMS Detector & Call Point Pack",
+                "blurb": "Trade pack of smoke/heat detectors and manual call points for EMS BS 5839 installs.",
+                "price": "From £62",
+                "handle": "ems-detector-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/ems.jpg",
+                "badge": "Install"
+            }
+        ]
+    },
+    "fagerhult": {
+        "blurb": "Icomply designs, installs and tests Fagerhult emergency lighting for offices, schools, warehouses and multi-storey residential schemes across Greater Manchester and the North West. Our electricians commission maintained and non-maintained luminaires to BS 5266, complete duration testing and issue certification so exit routes stay lit when power fails. Trade LED emergency fittings, replacement batteries and exit legend kits are stocked for facilities teams and electrical contractors working across Stockport, Cheshire and Lancashire.",
+        "seo_desc": "Fagerhult emergency lighting install, BS 5266 testing & trade batteries. Icomply — Manchester, Stockport, North West.",
+        "seo_keywords": "Fagerhult, Fagerhult emergency lighting, Fagerhult installation, Fagerhult service, BS 5266, emergency luminaire, exit signage, Fagerhult batteries, Fagerhult trade, Fagerhult North West, Fagerhult Manchester, Fagerhult Stockport",
+        "products": [
+            {
+                "id": "fagerhult-emergency-fitting",
+                "title": "Fagerhult Emergency Fitting Pack",
+                "blurb": "LED emergency bulkheads and recessed luminaires for Fagerhult-compatible escape routes.",
+                "price": "From £54",
+                "handle": "fagerhult-emergency-fitting",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/fagerhult.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "fagerhult-battery-kit",
+                "title": "Fagerhult Battery Replacement Kit",
+                "blurb": "NiMH/Li-ion packs sized for common Fagerhult emergency units — ideal for annual service rounds.",
+                "price": "From £26",
+                "handle": "fagerhult-battery-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/fagerhult.jpg",
+                "badge": "Service"
+            }
+        ]
+    },
+    "fermax": {
+        "blurb": "Icomply supplies and installs Fermax audio and video door entry systems for apartments, HMOs and commercial entrances across Stockport, Manchester and the North West. We replace ageing handsets, commission multi-way panels, integrate electric releases and provide planned maintenance so residents and site teams keep reliable access control. Trade handsets, outdoor panels, flush boxes and rain hoods are available through our trade shop for landlords, electrical contractors and FM providers who need local stock without long lead times.",
+        "seo_desc": "Fermax door entry install, service & trade handsets from Icomply. Stockport, Manchester & North West coverage.",
+        "seo_keywords": "Fermax, Fermax door entry, Fermax installation, Fermax service, Fermax handset, video door entry, multi-tenant intercom, Fermax trade, Fermax North West, Fermax Manchester, Fermax Stockport, door entry maintenance",
+        "products": [
+            {
+                "id": "fermax-handset-spares",
+                "title": "Fermax Handset & Panel Spares",
+                "blurb": "Replacement indoor handsets, faceplates and buttons for common Fermax residential systems.",
+                "price": "From £48",
+                "handle": "fermax-handset-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/fermax.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "fermax-entrance-accessory",
+                "title": "Fermax Entrance Panel Accessory",
+                "blurb": "Rain hoods, flush boxes and modular add-ons for weatherproof Fermax entrance installs.",
+                "price": "From £34",
+                "handle": "fermax-entrance-accessory",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/fermax.jpg",
+                "badge": "Install"
+            }
+        ]
+    },
+    "ferroli": {
+        "blurb": "Icomply is a Gas Safe partner for Ferroli boiler installation, servicing and repairs across Greater Manchester, Cheshire and Lancashire. From first-fix commissioning and flue certification to annual landlord services and reactive fault-finding, our engineers carry common Ferroli spares so downtime stays short for homes and small commercial plant. Trade service kits, electrodes, gaskets and flue accessories are sold through our North West shop for heating contractors who need dependable stock mid-job.",
+        "seo_desc": "Ferroli boiler install, Gas Safe service & trade kits from Icomply. Stockport, Manchester & North West. Free quotes.",
+        "seo_keywords": "Ferroli, Ferroli boiler installation, Ferroli service, Ferroli Gas Safe, Ferroli spares, Ferroli flue, boiler maintenance, Ferroli trade, Ferroli North West, Ferroli Manchester, Ferroli Stockport, gas systems",
+        "products": [
+            {
+                "id": "ferroli-service-kit",
+                "title": "Ferroli Boiler Service Kit",
+                "blurb": "Washers, electrodes and filters for routine Ferroli annual services on domestic plant.",
+                "price": "From £30",
+                "handle": "ferroli-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/ferroli.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "ferroli-flue-pack",
+                "title": "Ferroli Flue & Fitting Pack",
+                "blurb": "Concentric flue lengths, terminals and seals for compliant Ferroli installs in the North West.",
+                "price": "From £42",
+                "handle": "ferroli-flue-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/ferroli.jpg",
+                "badge": "Install"
+            }
+        ]
+    },
+    "fike": {
+        "blurb": "Icomply designs, installs and maintains Fike fire detection and alarm systems for industrial, commercial and multi-occupancy buildings across the North West. Our fire engineers programme addressable loops to BS 5839, integrate cause-and-effect, complete commissioning certificates and deliver planned service visits that keep Fike panels audit-ready. Trade detectors, bases, call points and panel service consumables are available from our Stockport-area trade counter for contractors and FM teams mid-project.",
+        "seo_desc": "Fike fire alarm install, BS 5839 certification & trade devices from Icomply. Manchester, Stockport & North West.",
+        "seo_keywords": "Fike, Fike fire alarm, Fike installation, Fike service, Fike maintenance, BS 5839, addressable fire detection, Fike detectors, Fike trade, Fike North West, Fike Manchester, Fike Stockport, fire alarm certification",
+        "products": [
+            {
+                "id": "fike-panel-service-kit",
+                "title": "Fike Panel Service Kit",
+                "blurb": "Engineer kit for Fike panels — batteries, keys, fuses and service labels for contract visits.",
+                "price": "From £86",
+                "handle": "fike-panel-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/fike.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "fike-device-pack",
+                "title": "Fike Detector & Device Pack",
+                "blurb": "Trade pack of smoke/heat detectors and manual call points for Fike loop expansions.",
+                "price": "From £68",
+                "handle": "fike-device-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/fike.jpg",
+                "badge": "Install"
+            }
+        ]
+    },
+    "firebird": {
+        "blurb": "Icomply installs and services Firebird oil and heating boilers for homes, rural properties and light commercial sites across Greater Manchester, Cheshire and Lancashire. Gas Safe and OFTEC-aware engineers handle commissioning, flue checks, annual servicing and reactive repairs so Firebird plant stays efficient and certified for landlords and owner-occupiers. Trade service consumables, nozzles, filters and flue fittings are stocked in our North West trade shop for heating engineers who need fast local supply.",
+        "seo_desc": "Firebird boiler install, service & trade kits from Icomply. Gas Safe cover — Stockport, Manchester & North West.",
+        "seo_keywords": "Firebird, Firebird boiler installation, Firebird service, Firebird oil boiler, Firebird Gas Safe, Firebird spares, Firebird flue, Firebird trade, Firebird North West, Firebird Manchester, Firebird Stockport, heating maintenance",
+        "products": [
+            {
+                "id": "firebird-service-kit",
+                "title": "Firebird Boiler Service Kit",
+                "blurb": "Nozzles, filters and gaskets for routine Firebird annual services on domestic plant.",
+                "price": "From £31",
+                "handle": "firebird-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/firebird.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "firebird-flue-accessory",
+                "title": "Firebird Flue & Fitting Accessory",
+                "blurb": "Flue lengths, terminals and seals for compliant Firebird installs across the North West.",
+                "price": "From £38",
+                "handle": "firebird-flue-accessory",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/firebird.jpg",
+                "badge": "Install"
+            }
+        ]
+    },
+    "fireclass": {
+        "blurb": "Icomply is your North West installer and service partner for FireClass fire detection systems in offices, retail, healthcare and residential blocks. We deliver BS 5839 design, installation, commissioning and planned maintenance with clear certification packs for insurers, building control and facilities managers. Trade panel batteries, loop devices, call points and engineer service kits are available through our Stockport-based trade shop so contractors and FM teams can keep FireClass systems online without waiting on national warehouses.",
+        "seo_desc": "FireClass fire alarm install, BS 5839 service & trade spares. Icomply — Stockport, Manchester & North West.",
+        "seo_keywords": "FireClass, FireClass fire alarm, FireClass installation, FireClass service, FireClass maintenance, BS 5839, FireClass detectors, FireClass panel, FireClass trade, FireClass North West, FireClass Manchester, FireClass Stockport",
+        "products": [
+            {
+                "id": "fireclass-panel-kit",
+                "title": "FireClass Panel Service Kit",
+                "blurb": "Batteries, zone keys and labels for FireClass panel service contracts across the North West.",
+                "price": "From £84",
+                "handle": "fireclass-panel-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/fireclass.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "fireclass-detector-pack",
+                "title": "FireClass Detector & Call Point Pack",
+                "blurb": "Trade detectors and manual call points for FireClass loop installs and upgrades.",
+                "price": "From £66",
+                "handle": "fireclass-detector-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/fireclass.jpg",
+                "badge": "Service"
+            }
+        ]
+    },
+    "flaktgroup": {
+        "blurb": "Icomply installs, commissions and maintains FlaktGroup AOV and air-handling equipment for smoke control and ventilation on multi-storey and commercial buildings across Greater Manchester and the North West. Our engineers work to BS 9991 and EN 12101 practice, covering actuators, control panels, sensors and annual functional testing with full certification for landlords and principal contractors. Trade actuator spares, panel batteries, fuses and interface modules are stocked for FM teams and specialists who need reliable North West supply.",
+        "seo_desc": "FlaktGroup AOV & air-handling install, EN 12101 service & trade spares. Icomply — Manchester & North West.",
+        "seo_keywords": "FlaktGroup, FlaktGroup AOV, FlaktGroup installation, FlaktGroup service, smoke control, EN 12101, BS 9991, air handling, FlaktGroup actuators, FlaktGroup trade, FlaktGroup North West, FlaktGroup Manchester, FlaktGroup Stockport",
+        "products": [
+            {
+                "id": "flaktgroup-actuator-kit",
+                "title": "FlaktGroup Actuator Service Kit",
+                "blurb": "Service consumables and fixings for FlaktGroup AOV actuators on smoke-control systems.",
+                "price": "From £74",
+                "handle": "flaktgroup-actuator-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/flaktgroup.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "flaktgroup-panel-spares",
+                "title": "FlaktGroup Control Panel Spares",
+                "blurb": "Fuses, batteries and keys for FlaktGroup smoke-control and AHU control panels.",
+                "price": "From £46",
+                "handle": "flaktgroup-panel-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/flaktgroup.jpg",
+                "badge": "Service"
+            }
+        ]
+    },
+    "flir": {
+        "blurb": "Icomply designs and installs FLIR thermal and security imaging cameras for industrial sites, critical plant rooms and commercial CCTV schemes across Stockport, Manchester and the North West. We handle survey, mounting, network integration, NVR setup and ongoing service so FLIR streams stay calibrated and recording retention stays compliant with BS EN 62676 best practice. Trade brackets, weatherproof housings, cabling and storage accessories are available from our trade shop for integrators and electrical contractors mid-install.",
+        "seo_desc": "FLIR thermal & CCTV install, service & trade mounts from Icomply. Stockport, Manchester & North West coverage.",
+        "seo_keywords": "FLIR, FLIR CCTV, FLIR thermal camera, FLIR installation, FLIR service, thermal imaging North West, BS EN 62676, FLIR NVR, FLIR trade, FLIR Manchester, FLIR Stockport, camera mounts, security imaging",
+        "products": [
+            {
+                "id": "flir-mount-kit",
+                "title": "FLIR Camera Mount Kit",
+                "blurb": "Wall and pole brackets with weather seals for FLIR thermal and visible cameras.",
+                "price": "From £36",
+                "handle": "flir-mount-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/flir.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "flir-nvr-accessory",
+                "title": "FLIR NVR & Cabling Accessory Pack",
+                "blurb": "PoE injectors, patch leads and HDD options for FLIR recording on commercial sites.",
+                "price": "From £52",
+                "handle": "flir-nvr-accessory",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/flir.jpg",
+                "badge": "Install"
+            }
+        ]
+    },
+    "fusebox": {
+        "blurb": "Icomply supplies and installs Fusebox consumer units, RCBO boards and electrical distribution gear for domestic and light commercial projects across Greater Manchester and the North West. Our electricians work to BS 7671, complete EICRs and installation certificates, and support landlords and contractors with board upgrades, SPD protection and EV-ready sub-mains. Trade breakers, blanking plates, busbars and engineer spares are stocked in our North West trade shop for sparkies who need Fusebox parts without courier delays.",
+        "seo_desc": "Fusebox consumer unit install, BS 7671 certification & trade breakers. Icomply — Stockport, Manchester, North West.",
+        "seo_keywords": "Fusebox, Fusebox consumer unit, Fusebox installation, Fusebox service, Fusebox RCBO, BS 7671, electrical board upgrade, Fusebox trade, Fusebox North West, Fusebox Manchester, Fusebox Stockport, consumer unit spares",
+        "products": [
+            {
+                "id": "fusebox-cu-spares",
+                "title": "Fusebox Consumer Unit Spares Kit",
+                "blurb": "RCBOs, MCBs and blanks for Fusebox boards — trade pricing for North West electricians.",
+                "price": "From £46",
+                "handle": "fusebox-cu-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/fusebox.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "fusebox-install-pack",
+                "title": "Fusebox Installation Accessory Pack",
+                "blurb": "Earth bars, cable glands and mounting hardware for clean Fusebox board installs.",
+                "price": "From £32",
+                "handle": "fusebox-install-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/fusebox.jpg",
+                "badge": "Install"
+            }
+        ]
+    }
+}

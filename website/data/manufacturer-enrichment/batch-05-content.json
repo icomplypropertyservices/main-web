@@ -1,0 +1,272 @@
+{
+    "commax": {
+        "blurb": "Icomply installs and services Commax video door entry across flats, HMOs and commercial entrances throughout the North West. From new multi-tenant panels to handset swaps and entrance upgrades, our engineers commission systems correctly and leave landlords with clear certification. Trade spares and entrance kits are available from our Stockport shop for contractors working across Manchester and Cheshire.",
+        "seo_desc": "Commax door entry install, service & trade spares with Icomply. Certified multi-tenant work across Stockport, Manchester & the North West.",
+        "seo_keywords": "Commax, Commax door entry, Commax installation, Commax service, Commax handsets, Commax trade, Commax North West, Commax Manchester, Commax Stockport, video door entry, multi-tenant door entry",
+        "products": [
+            {
+                "id": "commax-product-1",
+                "title": "Commax Handset / Monitor Spares",
+                "blurb": "Replacement indoor monitors and handsets for Commax video door entry.",
+                "price": "From £54",
+                "handle": "commax-product-1",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/commax.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "commax-product-2",
+                "title": "Commax Entrance Panel Accessory Kit",
+                "blurb": "Rain hoods, flush boxes and camera modules for Commax street panels.",
+                "price": "From £38",
+                "handle": "commax-product-2",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/commax.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "commend": {
+        "blurb": "Commend intercoms are a strong fit for hospitals, campuses and high-security sites — Icomply designs, installs and maintains them across Greater Manchester and the wider North West. We handle master stations, door stations and network integration, with planned service visits and reactive call-outs when stations fail. Trade accessories and engineer spares ship from our Stockport trade counter for FM teams and installers.",
+        "seo_desc": "Commend intercom installation, service & trade accessories via Icomply. Certified commercial systems across Manchester, Stockport & North West.",
+        "seo_keywords": "Commend, Commend intercom, Commend installation, Commend service, Commend master station, Commend trade, Commend North West, Commend Manchester, Commend Stockport, commercial intercoms, security intercom",
+        "products": [
+            {
+                "id": "commend-product-1",
+                "title": "Commend Master Station Accessory Pack",
+                "blurb": "Desk and wall accessories for Commend control-room master stations.",
+                "price": "From £52",
+                "handle": "commend-product-1",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/commend.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "commend-product-2",
+                "title": "Commend Door Station Spares",
+                "blurb": "Weatherproof door-station modules and faceplates for Commend systems.",
+                "price": "From £68",
+                "handle": "commend-product-2",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/commend.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "contactum": {
+        "blurb": "Icomply supplies and installs Contactum consumer units and circuit protection for landlords, refurbs and commercial fit-outs across the North West. Our electricians work to BS 7671 with full certification, EICRs and board upgrades completed to a tidy trade standard. Stock Contactum breakers, RCDs and board spares from our Stockport shop for same-day engineer call-outs around Manchester.",
+        "seo_desc": "Contactum consumer units, board upgrades & trade spares with Icomply. BS 7671 certified electrical work across Stockport, Manchester & North West.",
+        "seo_keywords": "Contactum, Contactum consumer unit, Contactum installation, Contactum service, Contactum breakers, Contactum trade, Contactum North West, Contactum Manchester, Contactum Stockport, electrical boards, BS 7671",
+        "products": [
+            {
+                "id": "contactum-product-1",
+                "title": "Contactum Consumer Unit Spares Kit",
+                "blurb": "Trade pack of breakers, blanks and busbar parts for Contactum boards.",
+                "price": "From £47",
+                "handle": "contactum-product-1",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/contactum.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "contactum-product-2",
+                "title": "Contactum RCD / RCBO Accessory Pack",
+                "blurb": "Protection devices and terminations for Contactum board upgrades.",
+                "price": "From £36",
+                "handle": "contactum-product-2",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/contactum.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "cooper-fire": {
+        "blurb": "Cooper Fire detection systems need disciplined install and BS 5839 servicing — Icomply covers both for commercial and residential sites across the North West. We commission panels, devices and interfaces, then run planned maintenance with full certification for landlords and duty holders. Panel service kits, detectors and call points are held as trade stock from our Stockport base for Manchester and Cheshire engineers.",
+        "seo_desc": "Cooper Fire alarms installed, serviced & certified by Icomply. BS 5839 maintenance and trade kits across Stockport, Manchester & the North West.",
+        "seo_keywords": "Cooper Fire, Cooper Fire alarm, Cooper Fire installation, Cooper Fire service, Cooper Fire panels, Cooper Fire trade, Cooper Fire North West, Cooper Fire Manchester, Cooper Fire Stockport, fire detection, BS 5839",
+        "products": [
+            {
+                "id": "cooper-fire-product-1",
+                "title": "Cooper Fire Panel Service Kit",
+                "blurb": "Batteries, keys, labels and engineer consumables for Cooper Fire panels.",
+                "price": "From £89",
+                "handle": "cooper-fire-product-1",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/cooper-fire.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "cooper-fire-product-2",
+                "title": "Cooper Fire Detector & Call-Point Pack",
+                "blurb": "Trade pack of smoke/heat detectors and MCP units for Cooper Fire loops.",
+                "price": "From £66",
+                "handle": "cooper-fire-product-2",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/cooper-fire.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "cooper-lighting": {
+        "blurb": "Icomply installs and tests Cooper Lighting emergency luminaires to BS 5266 for offices, retail and multi-occupancy housing across the North West. From new LED conversions to monthly function tests and annual three-hour discharges, we keep escape routes compliant with clear certification. Trade fittings, batteries and exit signage are available from our Stockport trade shop for contractors covering Greater Manchester.",
+        "seo_desc": "Cooper Lighting emergency lighting install, testing & trade fittings with Icomply. BS 5266 certification across Stockport, Manchester & North West.",
+        "seo_keywords": "Cooper Lighting, Cooper emergency lighting, Cooper Lighting installation, Cooper Lighting service, Cooper Lighting batteries, Cooper Lighting trade, Cooper Lighting North West, Cooper Lighting Manchester, Cooper Lighting Stockport, BS 5266, exit signs",
+        "products": [
+            {
+                "id": "cooper-lighting-product-1",
+                "title": "Cooper Lighting Emergency Fitting Pack",
+                "blurb": "LED emergency luminaires for Cooper Lighting commercial ranges.",
+                "price": "From £55",
+                "handle": "cooper-lighting-product-1",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/cooper-lighting.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "cooper-lighting-product-2",
+                "title": "Cooper Lighting Battery Replacement Kit",
+                "blurb": "NiCd/NiMH replacement packs for Cooper Lighting emergency units.",
+                "price": "From £29",
+                "handle": "cooper-lighting-product-2",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/cooper-lighting.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "courtney-thorne": {
+        "blurb": "Courtney Thorne nurse call is widely specified in care homes and assisted-living schemes — Icomply installs, expands and services systems to HTM 08-03 guidance across the North West. We replace call points, pear leads and panel batteries, and certify works for CQC-ready estates teams. Trade call-point kits and panel spares stock at our Stockport shop for rapid turnaround around Manchester and Lancashire.",
+        "seo_desc": "Courtney Thorne nurse call install, service & trade spares with Icomply. HTM-aligned care systems across Stockport, Manchester & the North West.",
+        "seo_keywords": "Courtney Thorne, Courtney Thorne nurse call, Courtney Thorne installation, Courtney Thorne service, Courtney Thorne call points, Courtney Thorne trade, Courtney Thorne North West, Courtney Thorne Manchester, Courtney Thorne Stockport, care home nurse call, HTM 08-03",
+        "products": [
+            {
+                "id": "courtney-thorne-product-1",
+                "title": "Courtney Thorne Call Point / Pear Lead Pack",
+                "blurb": "Replacement bedside call points and pear leads for Courtney Thorne.",
+                "price": "From £42",
+                "handle": "courtney-thorne-product-1",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/courtney-thorne.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "courtney-thorne-product-2",
+                "title": "Courtney Thorne Panel Battery Kit",
+                "blurb": "Backup battery sets for Courtney Thorne nurse call control panels.",
+                "price": "From £39",
+                "handle": "courtney-thorne-product-2",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/courtney-thorne.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "crabtree": {
+        "blurb": "Crabtree switchgear remains a staple on UK residential and light-commercial jobs — Icomply installs and upgrades Crabtree boards to BS 7671 across Stockport, Manchester and the wider North West. Expect tidy consumer-unit changeovers, full certification and practical advice for landlords and contractors. Our trade counter stocks Crabtree breakers, blanks and accessories for same-day engineer support.",
+        "seo_desc": "Crabtree consumer units, board upgrades & trade spares via Icomply. BS 7671 certified electrical work across Stockport, Manchester & the North West.",
+        "seo_keywords": "Crabtree, Crabtree consumer unit, Crabtree installation, Crabtree service, Crabtree breakers, Crabtree trade, Crabtree North West, Crabtree Manchester, Crabtree Stockport, electrical boards, BS 7671",
+        "products": [
+            {
+                "id": "crabtree-product-1",
+                "title": "Crabtree Consumer Unit Spares Kit",
+                "blurb": "Trade spares for Crabtree boards — breakers, blanks and busbar parts.",
+                "price": "From £48",
+                "handle": "crabtree-product-1",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/crabtree.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "crabtree-product-2",
+                "title": "Crabtree Installation Accessory Pack",
+                "blurb": "Mounting, glanding and termination accessories for Crabtree installs.",
+                "price": "From £34",
+                "handle": "crabtree-product-2",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/crabtree.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "crow-electronics": {
+        "blurb": "Icomply designs and installs Crow Electronics intruder alarms for shops, offices and residential portfolios across the North West. Systems are set out to PD 6662 / BS EN 50131, with programmed keypads, zone expansion and certified maintenance visits for insurers and landlords. PIRs, contacts and panel kits are available trade from Stockport for Manchester and Cheshire security installers.",
+        "seo_desc": "Crow Electronics intruder alarms installed, serviced & certified by Icomply. Trade sensors & kits across Stockport, Manchester & the North West.",
+        "seo_keywords": "Crow Electronics, Crow alarm, Crow Electronics installation, Crow Electronics service, Crow PIR, Crow trade, Crow Electronics North West, Crow Electronics Manchester, Crow Electronics Stockport, intruder alarm, PD 6662",
+        "products": [
+            {
+                "id": "crow-electronics-product-1",
+                "title": "Crow Electronics Panel Expansion Kit",
+                "blurb": "Zone expanders, keypads and modules for Crow Electronics control panels.",
+                "price": "From £59",
+                "handle": "crow-electronics-product-1",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/crow-electronics.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "crow-electronics-product-2",
+                "title": "Crow Electronics PIR / Contact Pack",
+                "blurb": "Trade motion sensors and door contacts for Crow Electronics installs.",
+                "price": "From £46",
+                "handle": "crow-electronics-product-2",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/crow-electronics.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "cyberdata": {
+        "blurb": "CyberData SIP intercoms and IP endpoints suit modern VoIP estates — Icomply installs and supports them across North West commercial and education sites. We integrate door stations with existing PBX platforms, commission paging endpoints and provide ongoing service when devices drop offline. Trade mounts, power accessories and station spares are stocked for contractors working out of Stockport and Greater Manchester.",
+        "seo_desc": "CyberData SIP intercom install, service & trade accessories with Icomply. IP endpoints certified across Stockport, Manchester & the North West.",
+        "seo_keywords": "CyberData, CyberData intercom, CyberData SIP, CyberData installation, CyberData service, CyberData trade, CyberData North West, CyberData Manchester, CyberData Stockport, IP intercom, VoIP door station",
+        "products": [
+            {
+                "id": "cyberdata-product-1",
+                "title": "CyberData SIP Station Accessory Pack",
+                "blurb": "Mounts, PoE and faceplate accessories for CyberData SIP endpoints.",
+                "price": "From £49",
+                "handle": "cyberdata-product-1",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/cyberdata.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "cyberdata-product-2",
+                "title": "CyberData Door Station Spares",
+                "blurb": "Outdoor door-station modules and weather seals for CyberData units.",
+                "price": "From £64",
+                "handle": "cyberdata-product-2",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/cyberdata.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "dh-mechatronic": {
+        "blurb": "D+H Mechatronic AOV and smoke-control actuators keep escape routes clear — Icomply installs, commissions and services them to BS 9991 / EN 12101 across the North West. We cover chain actuators, control panels and cause-and-effect testing with full certification for high-rise and multi-storey sites. Trade actuator service kits and panel consumables are available from our Stockport base for FM teams and fire engineers.",
+        "seo_desc": "D+H Mechatronic AOV install, service & trade actuator kits with Icomply. Smoke-control certification across Stockport, Manchester & North West.",
+        "seo_keywords": "D+H Mechatronic, D+H AOV, D+H installation, D+H service, D+H actuators, D+H trade, D+H Mechatronic North West, D+H Manchester, D+H Stockport, smoke control, BS 9991, EN 12101",
+        "products": [
+            {
+                "id": "dh-mechatronic-product-1",
+                "title": "D+H Mechatronic Actuator Service Kit",
+                "blurb": "Service consumables and brackets for D+H chain and spindle actuators.",
+                "price": "From £78",
+                "handle": "dh-mechatronic-product-1",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/dh-mechatronic.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "dh-mechatronic-product-2",
+                "title": "D+H Mechatronic Control Panel Spares",
+                "blurb": "Fuses, batteries and keys for D+H smoke-control panels.",
+                "price": "From £46",
+                "handle": "dh-mechatronic-product-2",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/dh-mechatronic.jpg",
+                "badge": ""
+            }
+        ]
+    }
+}

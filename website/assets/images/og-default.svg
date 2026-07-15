@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Icomply Property Services">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a2540"/>
+      <stop offset="100%" stop-color="#0f3a5f"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Accent bar -->
+  <rect x="0" y="0" width="12" height="630" fill="#ff6b00"/>
+  <!-- Decorative circle -->
+  <circle cx="1040" cy="120" r="180" fill="#ff6b00" opacity="0.08"/>
+  <circle cx="1100" cy="520" r="220" fill="#ffffff" opacity="0.04"/>
+  <!-- Brand mark -->
+  <rect x="80" y="160" width="88" height="88" rx="18" fill="#ff6b00"/>
+  <path d="M104 204.5l14 14 30-32" fill="none" stroke="#0a2540" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Wordmark -->
+  <text x="80" y="320" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="-1">Icomply</text>
+  <text x="80" y="372" fill="#ff6b00" font-family="system-ui, -apple-system, Segoe UI, Arial, sans-serif" font-size="28" font-weight="600">Property Services</text>
+  <!-- Tagline -->
+  <text x="80" y="440" fill="#c8d4e0" font-family="system-ui, -apple-system, Segoe UI, Arial, sans-serif" font-size="24">Property compliance experts · Greater Manchester &amp; North West</text>
+  <!-- Bottom strip -->
+  <rect x="0" y="560" width="1200" height="70" fill="#061828"/>
+  <text x="80" y="604" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, Arial, sans-serif" font-size="22" font-weight="500">Fire Alarms · EICR · Gas Safety · CCTV · Emergency Lighting</text>
+</svg>

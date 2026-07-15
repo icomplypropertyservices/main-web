@@ -1,0 +1,72 @@
+[
+    {
+        "slug": "mobotix",
+        "name": "Mobotix",
+        "services": [
+            "cctv"
+        ]
+    },
+    {
+        "slug": "morley",
+        "name": "Morley",
+        "services": [
+            "fire-alarms"
+        ]
+    },
+    {
+        "slug": "myenergi",
+        "name": "Myenergi",
+        "services": [
+            "electrical"
+        ]
+    },
+    {
+        "slug": "napit-approved-equipment",
+        "name": "NAPIT Approved Equipment",
+        "services": [
+            "electrical"
+        ]
+    },
+    {
+        "slug": "navien",
+        "name": "Navien",
+        "services": [
+            "gas-systems"
+        ]
+    },
+    {
+        "slug": "nedap",
+        "name": "Nedap",
+        "services": [
+            "access-control"
+        ]
+    },
+    {
+        "slug": "nittan",
+        "name": "Nittan",
+        "services": [
+            "fire-alarms"
+        ]
+    },
+    {
+        "slug": "notifier",
+        "name": "Notifier",
+        "services": [
+            "fire-alarms"
+        ]
+    },
+    {
+        "slug": "nuaire",
+        "name": "Nuaire",
+        "services": [
+            "aov-air-handling"
+        ]
+    },
+    {
+        "slug": "ohme",
+        "name": "Ohme",
+        "services": [
+            "electrical"
+        ]
+    }
+]

@@ -1,0 +1,272 @@
+{
+    "sterling-safety": {
+        "blurb": "Icomply Property Services installs, commissions and services Sterling Safety fire detection across Stockport, Manchester and the wider North West. Our engineers work to BS 5839, delivering new systems, upgrades and planned maintenance with full certification for landlords, FM teams and principal contractors. Trade detectors, call points and panel spares are available through our shop for site packs and reactive call-outs.",
+        "seo_desc": "Sterling Safety fire alarm install, BS 5839 service & trade spares from Icomply across Stockport, Manchester & the North West.",
+        "seo_keywords": "Sterling Safety, Sterling Safety fire alarms, Sterling Safety installation, Sterling Safety service, Sterling Safety BS 5839, Sterling Safety detectors, Sterling Safety trade spares, Sterling Safety North West, Sterling Safety Manchester, Sterling Safety Stockport, fire alarm certification",
+        "products": [
+            {
+                "id": "sterling-safety-panel-service-kit",
+                "title": "Sterling Safety Panel Service Kit",
+                "blurb": "Engineer-ready batteries, zone labels and consumables for Sterling Safety panel maintenance visits.",
+                "price": "From £89",
+                "handle": "sterling-safety-panel-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/sterling-safety.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "sterling-safety-detector-device-pack",
+                "title": "Sterling Safety Detector & Call-Point Pack",
+                "blurb": "Trade pack of detectors and manual call points for Sterling Safety installs and device replacements.",
+                "price": "From £65",
+                "handle": "sterling-safety-detector-device-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/sterling-safety.jpg",
+                "badge": "Popular"
+            }
+        ]
+    },
+    "suprema": {
+        "blurb": "Icomply designs and installs Suprema biometric and card access control for commercial sites across Greater Manchester, Cheshire and Lancashire. From BioStation readers to door controllers, we handle commissioning, staff credentialing and ongoing service so estates stay secure and audit-ready. Landlords and trade partners can order Suprema readers, tokens and controller spares direct from our North West trade shop.",
+        "seo_desc": "Suprema access control install, biometric readers & trade spares from Icomply in Manchester, Stockport & the North West.",
+        "seo_keywords": "Suprema, Suprema access control, Suprema biometric, Suprema BioStation, Suprema installation, Suprema service, Suprema readers, Suprema credentials, Suprema trade, Suprema North West, Suprema Manchester, Suprema Stockport",
+        "products": [
+            {
+                "id": "suprema-reader-credential-pack",
+                "title": "Suprema Reader & Credential Pack",
+                "blurb": "Biometric or card readers with matching credentials for Suprema access control roll-outs.",
+                "price": "From £129",
+                "handle": "suprema-reader-credential-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/suprema.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "suprema-controller-door-spares",
+                "title": "Suprema Controller & Door Spares",
+                "blurb": "PSU fuses, exit devices and controller consumables for Suprema door systems on service contracts.",
+                "price": "From £55",
+                "handle": "suprema-controller-door-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/suprema.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "system-sensor": {
+        "blurb": "Icomply specifies and installs System Sensor detection devices on BS 5839 fire alarm systems throughout the North West. Smoke, heat and multi-sensor heads are fitted, tested and certified with clear zone schedules for insurers and building control. Our trade shop supplies System Sensor bases, detectors and call-point packs for engineers and facilities teams in Manchester, Stockport and beyond.",
+        "seo_desc": "System Sensor detectors, BS 5839 fire install & trade packs from Icomply across Manchester, Stockport & the North West.",
+        "seo_keywords": "System Sensor, System Sensor detectors, System Sensor fire alarms, System Sensor installation, System Sensor service, System Sensor bases, System Sensor multi-sensor, System Sensor trade, System Sensor North West, System Sensor Manchester, System Sensor Stockport, BS 5839",
+        "products": [
+            {
+                "id": "system-sensor-detector-base-pack",
+                "title": "System Sensor Detector & Base Pack",
+                "blurb": "Trade pack of System Sensor heads and bases for new loops and device swaps on commercial fire systems.",
+                "price": "From £72",
+                "handle": "system-sensor-detector-base-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/system-sensor.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "system-sensor-service-consumables",
+                "title": "System Sensor Service Consumables Kit",
+                "blurb": "Call points, dust covers and engineer labels for planned System Sensor maintenance rounds.",
+                "price": "From £48",
+                "handle": "system-sensor-service-consumables",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/system-sensor.jpg",
+                "badge": "Stock"
+            }
+        ]
+    },
+    "systemair": {
+        "blurb": "Icomply installs and maintains Systemair AOV and smoke-control ventilation for residential and commercial buildings across the North West. Actuators, fans and control panels are commissioned to BS 9991 and EN 12101, with periodic testing and certification for fire strategies and landlord compliance. Trade actuator kits and panel spares keep FM teams and contractors stocked for reactive repairs.",
+        "seo_desc": "Systemair AOV & smoke control install, BS 9991 service & trade spares from Icomply in the North West.",
+        "seo_keywords": "Systemair, Systemair AOV, Systemair smoke control, Systemair installation, Systemair service, Systemair actuators, Systemair ventilation, Systemair EN 12101, Systemair trade, Systemair North West, Systemair Manchester, Systemair Stockport, BS 9991",
+        "products": [
+            {
+                "id": "systemair-actuator-service-kit",
+                "title": "Systemair Actuator Service Kit",
+                "blurb": "Service consumables and fixings for Systemair AOV actuators on planned maintenance visits.",
+                "price": "From £75",
+                "handle": "systemair-actuator-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/systemair.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "systemair-control-panel-spares",
+                "title": "Systemair Control Panel Spares",
+                "blurb": "Fuses, backup batteries and keys for Systemair smoke-control panels and override stations.",
+                "price": "From £45",
+                "handle": "systemair-control-panel-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/systemair.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "tdsi": {
+        "blurb": "Icomply is a North West partner for TDSi access control — designing, installing and servicing MICROgarde and related systems for offices, education and multi-tenant sites. We programme controllers, issue credentials and provide reactive support so doors stay secure and compliant. Trade readers, fobs and controller spares are available through our Stockport-based shop for engineers and FM teams.",
+        "seo_desc": "TDSi access control install, MICROgarde service & trade readers from Icomply across Manchester & the North West.",
+        "seo_keywords": "TDSi, TDSi access control, TDSi MICROgarde, TDSi installation, TDSi service, TDSi readers, TDSi fobs, TDSi controller, TDSi trade, TDSi North West, TDSi Manchester, TDSi Stockport, door access systems",
+        "products": [
+            {
+                "id": "tdsi-reader-token-pack",
+                "title": "TDSi Reader & Token Pack",
+                "blurb": "Proximity readers and credential packs for TDSi MICROgarde and multi-door access systems.",
+                "price": "From £69",
+                "handle": "tdsi-reader-token-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/tdsi.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "tdsi-controller-door-spares",
+                "title": "TDSi Controller & Door Spares",
+                "blurb": "PSU fuses, exit buttons and lock interfaces for TDSi door controllers on service contracts.",
+                "price": "From £55",
+                "handle": "tdsi-controller-door-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/tdsi.jpg",
+                "badge": "Popular"
+            }
+        ]
+    },
+    "tektone": {
+        "blurb": "Icomply installs and services TekTone nurse call systems for care homes, clinics and supported living across Greater Manchester and the North West. Call points, pear leads and corridor indicators are commissioned with clear zone mapping aligned to HTM 08-03 guidance. Planned maintenance, battery changes and trade spares keep TekTone systems reliable for care providers and estates managers.",
+        "seo_desc": "TekTone nurse call install, HTM 08-03 service & trade call-point packs from Icomply in the North West.",
+        "seo_keywords": "TekTone, TekTone nurse call, TekTone installation, TekTone service, TekTone call points, TekTone pear leads, TekTone care home, TekTone HTM 08-03, TekTone trade, TekTone North West, TekTone Manchester, TekTone Stockport",
+        "products": [
+            {
+                "id": "tektone-call-point-pear-lead-pack",
+                "title": "TekTone Call Point & Pear Lead Pack",
+                "blurb": "Replacement call points and pear leads for TekTone nurse call bedrooms and wet areas.",
+                "price": "From £42",
+                "handle": "tektone-call-point-pear-lead-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/tektone.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "tektone-panel-battery-kit",
+                "title": "TekTone Panel Battery Kit",
+                "blurb": "Backup battery sets for TekTone nurse call panels used on scheduled maintenance rounds.",
+                "price": "From £38",
+                "handle": "tektone-panel-battery-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/tektone.jpg",
+                "badge": "Stock"
+            }
+        ]
+    },
+    "texecom": {
+        "blurb": "Icomply installs and maintains Texecom Premier and Elite intruder alarms for homes, offices and commercial premises across the North West. Systems are designed to PD 6662 / BS EN 50131, with graded detectors, keypads and signalling options to suit insurers and end users. Trade PIRs, contacts and expansion modules are stocked for engineers and landlords who need fast spares from our trade shop.",
+        "seo_desc": "Texecom Premier & Elite alarm install, PD 6662 service & trade PIRs from Icomply in Manchester & the North West.",
+        "seo_keywords": "Texecom, Texecom Premier, Texecom Elite, Texecom installation, Texecom service, Texecom PIR, Texecom intruder alarm, Texecom PD 6662, Texecom trade, Texecom North West, Texecom Manchester, Texecom Stockport, BS EN 50131",
+        "products": [
+            {
+                "id": "texecom-pir-contact-pack",
+                "title": "Texecom PIR & Contact Pack",
+                "blurb": "Trade pack of motion sensors and door contacts for Texecom Premier and Elite systems.",
+                "price": "From £58",
+                "handle": "texecom-pir-contact-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/texecom.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "texecom-panel-expansion-kit",
+                "title": "Texecom Panel Expansion Kit",
+                "blurb": "Zone expanders, batteries and keypad accessories for Texecom upgrades and service visits.",
+                "price": "From £49",
+                "handle": "texecom-panel-expansion-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/texecom.jpg",
+                "badge": "Popular"
+            }
+        ]
+    },
+    "thorlux": {
+        "blurb": "Icomply supplies, installs and tests Thorlux emergency lighting for commercial and industrial sites across Stockport, Manchester and the North West. Maintained and non-maintained luminaires are designed to BS 5266 with full duration testing and certification for compliance audits. Trade LED fittings, batteries and exit legend packs support contractors and FM teams on planned and reactive works.",
+        "seo_desc": "Thorlux emergency lighting install, BS 5266 testing & trade LED kits from Icomply across the North West.",
+        "seo_keywords": "Thorlux, Thorlux emergency lighting, Thorlux LED, Thorlux installation, Thorlux service, Thorlux BS 5266, Thorlux exit signs, Thorlux batteries, Thorlux trade, Thorlux North West, Thorlux Manchester, Thorlux Stockport, emergency lighting testing",
+        "products": [
+            {
+                "id": "thorlux-emergency-led-kit",
+                "title": "Thorlux Emergency LED Fitting Kit",
+                "blurb": "Maintained or non-maintained Thorlux LED luminaires with mounting accessories for commercial installs.",
+                "price": "From £85",
+                "handle": "thorlux-emergency-led-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/thorlux.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "thorlux-battery-exit-pack",
+                "title": "Thorlux Battery & Exit Legend Pack",
+                "blurb": "Replacement batteries and exit legends for Thorlux emergency lighting service contracts.",
+                "price": "From £42",
+                "handle": "thorlux-battery-exit-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/thorlux.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "thorn-lighting": {
+        "blurb": "Icomply installs and services Thorn Lighting emergency luminaires for offices, retail and public buildings throughout the North West. From bulkheads to escape-route fittings, we design to BS 5266, complete duration tests and issue clear certification packs. Our trade shop stocks Thorn batteries, LED modules and exit signage for engineers covering Manchester, Cheshire and Lancashire.",
+        "seo_desc": "Thorn Lighting emergency install, BS 5266 certification & trade batteries from Icomply in the North West.",
+        "seo_keywords": "Thorn Lighting, Thorn emergency lighting, Thorn bulkhead, Thorn installation, Thorn service, Thorn BS 5266, Thorn exit signs, Thorn batteries, Thorn trade, Thorn North West, Thorn Manchester, Thorn Stockport, emergency lighting certification",
+        "products": [
+            {
+                "id": "thorn-lighting-emergency-bulkhead-pack",
+                "title": "Thorn Emergency Bulkhead Pack",
+                "blurb": "Trade pack of Thorn emergency bulkheads for escape routes and plant areas on commercial sites.",
+                "price": "From £79",
+                "handle": "thorn-lighting-emergency-bulkhead-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/thorn-lighting.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "thorn-lighting-battery-module-kit",
+                "title": "Thorn Battery & LED Module Kit",
+                "blurb": "Replacement batteries and LED modules for Thorn emergency fittings on planned maintenance.",
+                "price": "From £39",
+                "handle": "thorn-lighting-battery-module-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/thorn-lighting.jpg",
+                "badge": "Stock"
+            }
+        ]
+    },
+    "tiandy": {
+        "blurb": "Icomply designs and installs Tiandy CCTV for retail, industrial and multi-site portfolios across Greater Manchester and the North West. IP cameras, NVRs and remote viewing are commissioned to BS EN 62676 with clear coverage plans for insurers and security managers. Trade mounts, cabling and NVR accessories are available from our shop so contractors can complete Tiandy projects without delay.",
+        "seo_desc": "Tiandy CCTV install, NVR setup & trade camera mounts from Icomply across Manchester, Stockport & the North West.",
+        "seo_keywords": "Tiandy, Tiandy CCTV, Tiandy cameras, Tiandy NVR, Tiandy installation, Tiandy service, Tiandy IP camera, Tiandy trade, Tiandy North West, Tiandy Manchester, Tiandy Stockport, BS EN 62676, commercial CCTV",
+        "products": [
+            {
+                "id": "tiandy-camera-mount-kit",
+                "title": "Tiandy Camera Mount Kit",
+                "blurb": "Brackets, weatherproof housings and fixings for Tiandy dome and bullet camera installs.",
+                "price": "From £29",
+                "handle": "tiandy-camera-mount-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/tiandy.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "tiandy-nvr-hdd-accessory-pack",
+                "title": "Tiandy NVR & HDD Accessory Pack",
+                "blurb": "Cabling, storage accessories and rack hardware for Tiandy NVR recording systems.",
+                "price": "From £45",
+                "handle": "tiandy-nvr-hdd-accessory-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/tiandy.jpg",
+                "badge": "Popular"
+            }
+        ]
+    }
+}

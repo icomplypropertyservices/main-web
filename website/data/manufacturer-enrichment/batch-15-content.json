@@ -1,0 +1,272 @@
+{
+    "se-controls": {
+        "blurb": "Icomply designs, installs and maintains SE Controls AOV and smoke ventilation systems for multi-storey residential and commercial buildings across the North West. Our engineers commission actuators, OS2 panels and SHEV interfaces to BS 9991 and EN 12101, then back every job with planned service visits and full certification. Trade customers can also order SE Controls spares and install kits from our Stockport shop for rapid turnaround on Greater Manchester sites.",
+        "seo_desc": "SE Controls AOV install, service & certification from Icomply. Trade actuators & panel spares for Manchester, Stockport & the North West.",
+        "seo_keywords": "SE Controls, SE Controls AOV, SE Controls installation, SE Controls service, SE Controls maintenance, SE Controls certification, SE Controls spares, SE Controls trade, SE Controls North West, SE Controls Manchester, SE Controls Stockport, smoke ventilation, EN 12101, BS 9991",
+        "products": [
+            {
+                "id": "se-controls-actuator-service-kit",
+                "title": "SE Controls Actuator Service Kit",
+                "blurb": "Trade consumables for routine SE Controls AOV actuator servicing — ideal for planned maintenance contracts across the North West.",
+                "price": "From £75",
+                "handle": "se-controls-actuator-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/se-controls.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "se-controls-panel-spares-pack",
+                "title": "SE Controls Panel Spares Pack",
+                "blurb": "Batteries, fuses and engineer keys for SE Controls smoke-control panels used on Manchester and Stockport installs.",
+                "price": "From £45",
+                "handle": "se-controls-panel-spares-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/se-controls.jpg",
+                "badge": "Certified"
+            }
+        ]
+    },
+    "siedle": {
+        "blurb": "Icomply supplies and fits Siedle intercom and door communication systems for apartments, offices and high-spec residential schemes throughout Greater Manchester and the wider North West. From classic audio stations to IP video door entry, we handle survey, install, programming and ongoing service so FM teams keep every entrance working. Certification-ready handover packs and trade spares from our shop keep Siedle estates reliable year-round.",
+        "seo_desc": "Siedle intercom install, service & trade spares from Icomply. Door stations & master kits across Stockport, Manchester & North West.",
+        "seo_keywords": "Siedle, Siedle intercom, Siedle door entry, Siedle installation, Siedle service, Siedle maintenance, Siedle spares, Siedle trade, Siedle North West, Siedle Manchester, Siedle Stockport, video intercom, commercial intercoms",
+        "products": [
+            {
+                "id": "siedle-master-station-kit",
+                "title": "Siedle Master Station Accessory Kit",
+                "blurb": "Indoor station mounts, faceplates and cabling extras for Siedle master units on North West intercom projects.",
+                "price": "From £48",
+                "handle": "siedle-master-station-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/siedle.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "siedle-door-station-spares",
+                "title": "Siedle Door Station Spares",
+                "blurb": "Weather seals, modules and fixings for Siedle outdoor door stations — ready for reactive call-outs.",
+                "price": "From £62",
+                "handle": "siedle-door-station-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/siedle.jpg",
+                "badge": "Service"
+            }
+        ]
+    },
+    "siemens": {
+        "blurb": "Icomply installs and services Siemens electrical distribution equipment for commercial, industrial and multi-dwelling properties across the North West. Our NICEIC-aligned team works to BS 7671 on consumer units, distribution boards, breakers and protection devices, with full testing and certification on every job. Landlords, contractors and FM teams can buy Siemens trade spares and install accessories from our Stockport base for same-week site support.",
+        "seo_desc": "Siemens electrical install, BS 7671 testing & trade spares from Icomply. Boards, breakers & kits for Manchester & the North West.",
+        "seo_keywords": "Siemens, Siemens electrical, Siemens consumer unit, Siemens installation, Siemens service, Siemens maintenance, Siemens spares, Siemens trade, Siemens North West, Siemens Manchester, Siemens Stockport, BS 7671, distribution boards",
+        "products": [
+            {
+                "id": "siemens-board-spares-kit",
+                "title": "Siemens Board & Breaker Spares Kit",
+                "blurb": "Engineer-ready spares for Siemens distribution boards and MCBs — built for trade maintenance rounds.",
+                "price": "From £49",
+                "handle": "siemens-board-spares-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/siemens.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "siemens-install-accessory-pack",
+                "title": "Siemens Install Accessory Pack",
+                "blurb": "Glands, trunking clips and termination accessories commonly used on Siemens installs across Greater Manchester.",
+                "price": "From £35",
+                "handle": "siemens-install-accessory-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/siemens.jpg",
+                "badge": "Install"
+            }
+        ]
+    },
+    "simon-rwa": {
+        "blurb": "Icomply is a North West installer and service partner for Simon RWA smoke and heat exhaust ventilation systems on residential towers, care settings and commercial blocks. We commission AOVs, roof vents and control equipment to EN 12101 and BS 9991, then schedule planned maintenance with clear certification records for freeholders and managing agents. Trade actuator and panel kits from our shop keep Simon RWA sites compliant between full service visits.",
+        "seo_desc": "Simon RWA AOV install, service & EN 12101 certification by Icomply. Trade spares for Stockport, Manchester & North West sites.",
+        "seo_keywords": "Simon RWA, Simon RWA AOV, Simon RWA installation, Simon RWA service, Simon RWA maintenance, Simon RWA certification, Simon RWA spares, Simon RWA trade, Simon RWA North West, Simon RWA Manchester, smoke control, EN 12101, SHEV",
+        "products": [
+            {
+                "id": "simon-rwa-actuator-service-kit",
+                "title": "Simon RWA Actuator Service Kit",
+                "blurb": "Service lubricants, seals and fixings for Simon RWA AOV actuators on planned maintenance contracts.",
+                "price": "From £75",
+                "handle": "simon-rwa-actuator-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/simon-rwa.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "simon-rwa-control-panel-spares",
+                "title": "Simon RWA Control Panel Spares",
+                "blurb": "Backup batteries, fuses and engineer keys for Simon RWA smoke-control panels used across the North West.",
+                "price": "From £45",
+                "handle": "simon-rwa-control-panel-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/simon-rwa.jpg",
+                "badge": "Certified"
+            }
+        ]
+    },
+    "smoke-control": {
+        "blurb": "Icomply installs, commissions and maintains Smoke Control brand AOV and smoke ventilation solutions for landlords and developers across Greater Manchester, Lancashire and Cheshire. Our engineers handle shaft AOVs, natural and mechanical SHEV systems and panel upgrades, delivering service reports and certification that satisfy building-safety duties. Stock trade spares and install packs from our North West shop to keep Smoke Control systems operational between scheduled visits.",
+        "seo_desc": "Smoke Control AOV install, servicing & certification with Icomply. Trade kits for Manchester, Stockport & North West buildings.",
+        "seo_keywords": "Smoke Control, Smoke Control AOV, Smoke Control installation, Smoke Control service, Smoke Control maintenance, Smoke Control certification, Smoke Control spares, Smoke Control trade, Smoke Control North West, Smoke Control Manchester, SHEV, BS 9991, EN 12101",
+        "products": [
+            {
+                "id": "smoke-control-actuator-kit",
+                "title": "Smoke Control Actuator Service Kit",
+                "blurb": "Consumables pack for Smoke Control AOV actuators — suited to multi-site FM maintenance rounds.",
+                "price": "From £75",
+                "handle": "smoke-control-actuator-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/smoke-control.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "smoke-control-panel-spares",
+                "title": "Smoke Control Panel Spares Pack",
+                "blurb": "Fuses, batteries and panel keys for Smoke Control systems installed on North West residential blocks.",
+                "price": "From £45",
+                "handle": "smoke-control-panel-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/smoke-control.jpg",
+                "badge": "Service"
+            }
+        ]
+    },
+    "software-house": {
+        "blurb": "Icomply designs, installs and supports Software House (C•CURE) access control for corporate campuses, healthcare estates and multi-tenant buildings across the North West. From door controllers and readers to credential enrolment and integrations, we deliver BS EN 50133-aligned installs with clear commissioning and certification. Trade readers, tokens and controller spares are available from our Stockport shop for engineers and FM partners.",
+        "seo_desc": "Software House C•CURE access control install & service by Icomply. Trade readers & spares for Manchester & the North West.",
+        "seo_keywords": "Software House, Software House C-CURE, Software House access control, Software House installation, Software House service, Software House maintenance, Software House spares, Software House trade, Software House North West, Software House Manchester, CCure, door controllers",
+        "products": [
+            {
+                "id": "software-house-reader-token-pack",
+                "title": "Software House Reader & Token Pack",
+                "blurb": "Readers and credentials for Software House / C•CURE systems — trade-ready for North West access projects.",
+                "price": "From £69",
+                "handle": "software-house-reader-token-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/software-house.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "software-house-controller-spares",
+                "title": "Software House Controller Spares",
+                "blurb": "PSU fuses, lock interfaces and exit devices commonly fitted on Software House door controllers.",
+                "price": "From £55",
+                "handle": "software-house-controller-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/software-house.jpg",
+                "badge": "Install"
+            }
+        ]
+    },
+    "sony-security": {
+        "blurb": "Icomply specifies and installs Sony Security CCTV for retail, logistics, education and commercial sites across Greater Manchester and the North West. We design IP camera layouts, NVR/storage platforms and remote viewing to BS EN 62676, then provide planned servicing, lens cleans and firmware support. Trade mounts, cabling and NVR accessories from our shop help contractors complete Sony Security projects on time.",
+        "seo_desc": "Sony Security CCTV install, service & trade accessories from Icomply. Cameras & NVR kits for Stockport, Manchester & North West.",
+        "seo_keywords": "Sony Security, Sony CCTV, Sony Security cameras, Sony Security installation, Sony Security service, Sony Security maintenance, Sony Security spares, Sony Security trade, Sony Security North West, Sony Security Manchester, IP CCTV, NVR, BS EN 62676",
+        "products": [
+            {
+                "id": "sony-security-camera-mount-kit",
+                "title": "Sony Security Camera Mount Kit",
+                "blurb": "Brackets, poles and weatherproof mounts for Sony Security cameras on UK commercial installs.",
+                "price": "From £29",
+                "handle": "sony-security-camera-mount-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/sony-security.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "sony-security-nvr-accessory-pack",
+                "title": "Sony Security NVR Accessory Pack",
+                "blurb": "Cabling, HDD brackets and rack accessories for Sony Security NVR deployments across the North West.",
+                "price": "From £45",
+                "handle": "sony-security-nvr-accessory-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/sony-security.jpg",
+                "badge": "Install"
+            }
+        ]
+    },
+    "stanley-security": {
+        "blurb": "Icomply installs and maintains Stanley Security access control for offices, industrial units and residential schemes throughout the North West. Our engineers handle readers, controllers, maglocks and timed schedules, with commissioning documentation and certification for landlords and facilities managers. Stock Stanley Security trade spares and door hardware packs from our Stockport trade counter for fast reactive repairs.",
+        "seo_desc": "Stanley Security access control install, service & certification by Icomply. Trade readers & locks for Manchester & North West.",
+        "seo_keywords": "Stanley Security, Stanley access control, Stanley Security installation, Stanley Security service, Stanley Security maintenance, Stanley Security spares, Stanley Security trade, Stanley Security North West, Stanley Security Manchester, Stanley Security Stockport, door access, readers",
+        "products": [
+            {
+                "id": "stanley-security-reader-pack",
+                "title": "Stanley Security Reader & Credential Pack",
+                "blurb": "Trade readers and tokens for Stanley Security access systems — suited to multi-door North West estates.",
+                "price": "From £69",
+                "handle": "stanley-security-reader-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/stanley-security.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "stanley-security-door-spares",
+                "title": "Stanley Security Door Controller Spares",
+                "blurb": "PSU fuses, exit buttons and lock interfaces for Stanley Security controllers on reactive call-outs.",
+                "price": "From £55",
+                "handle": "stanley-security-door-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/stanley-security.jpg",
+                "badge": "Service"
+            }
+        ]
+    },
+    "static-systems-group": {
+        "blurb": "Icomply installs and services Static Systems Group nurse call solutions for care homes, hospitals and supported-living schemes across the North West. We survey ward layouts, fit call points and overdoor lights, commission panels to HTM 08-03 guidance and provide planned maintenance with full certification. Trade pear leads, call points and panel batteries are available from our shop for rapid restocking between visits.",
+        "seo_desc": "Static Systems Group nurse call install, HTM service & trade spares from Icomply. Care-home kits for Manchester & North West.",
+        "seo_keywords": "Static Systems Group, Static Systems nurse call, SSG nurse call, Static Systems installation, Static Systems service, Static Systems maintenance, Static Systems spares, Static Systems trade, Static Systems North West, Static Systems Manchester, HTM 08-03, care home call systems",
+        "products": [
+            {
+                "id": "static-systems-group-call-point-pack",
+                "title": "Static Systems Call Point & Pear Lead Pack",
+                "blurb": "Replacement call points and pear leads for Static Systems Group nurse call beds and bathrooms.",
+                "price": "From £42",
+                "handle": "static-systems-group-call-point-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/static-systems-group.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "static-systems-group-panel-battery-kit",
+                "title": "Static Systems Panel Battery Kit",
+                "blurb": "Backup batteries for Static Systems Group nurse call panels — essential for planned service rounds.",
+                "price": "From £38",
+                "handle": "static-systems-group-panel-battery-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/static-systems-group.jpg",
+                "badge": "Service"
+            }
+        ]
+    },
+    "stentofon": {
+        "blurb": "Icomply supplies, installs and maintains Stentofon (Zenitel) intercom systems for critical communications in industry, transport, education and commercial buildings across the North West. From master stations and door stations to IP integrations, we deliver robust installs with testing, user handover and ongoing service contracts. Trade accessories and weatherproof door-station spares from our Stockport shop keep Stentofon estates online.",
+        "seo_desc": "Stentofon intercom install, service & trade spares from Icomply. Master & door station kits for Manchester & the North West.",
+        "seo_keywords": "Stentofon, Stentofon intercom, Zenitel Stentofon, Stentofon installation, Stentofon service, Stentofon maintenance, Stentofon spares, Stentofon trade, Stentofon North West, Stentofon Manchester, Stentofon Stockport, critical communications, door station",
+        "products": [
+            {
+                "id": "stentofon-master-station-accessory",
+                "title": "Stentofon Master Station Accessory Kit",
+                "blurb": "Mounts, handset extras and cabling for Stentofon master stations on commercial North West projects.",
+                "price": "From £48",
+                "handle": "stentofon-master-station-accessory",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/stentofon.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "stentofon-door-station-spares",
+                "title": "Stentofon Door Station Spares",
+                "blurb": "Weatherproof modules and fixings for Stentofon door stations used on industrial and campus sites.",
+                "price": "From £62",
+                "handle": "stentofon-door-station-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/stentofon.jpg",
+                "badge": "Install"
+            }
+        ]
+    }
+}

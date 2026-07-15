@@ -1,0 +1,272 @@
+{
+  "2n": {
+    "blurb": "Icomply supply and install 2N IP door entry across Greater Manchester and the wider North West — from single-door kits to multi-tenant video systems for blocks and commercial sites. Our engineers handle commissioning, planned servicing and certification-ready handover, while our trade counter stocks handsets, entrance panels and upgrade modules. Ideal for landlords, FM teams and contractors who need reliable 2N support from our Stockport base.",
+    "seo_desc": "2N door entry install, service & trade kits from Icomply. Stockport, Greater Manchester & North West. Free quotes.",
+    "seo_keywords": "2N, 2N install, 2N installation, 2N service, 2N door entry, 2N North West, 2N Manchester, 2N Stockport, 2N trade kits, IP intercom",
+    "products": [
+      {
+        "id": "2n-product-1",
+        "title": "2N Handset & Indoor Station Spares",
+        "blurb": "Replacement 2N handsets, indoor stations and faceplates for residential and commercial door entry.",
+        "price": "From £52",
+        "handle": "2n-product-1",
+        "shopify_product_id": "",
+        "image": "/assets/images/manufacturers/2n.jpg",
+        "badge": "Trade"
+      },
+      {
+        "id": "2n-product-2",
+        "title": "2N Entrance Panel Accessory Kit",
+        "blurb": "Rain hoods, flush boxes, name modules and mounting kits for 2N outdoor panels.",
+        "price": "From £36",
+        "handle": "2n-product-2",
+        "shopify_product_id": "",
+        "image": "/assets/images/manufacturers/2n.jpg",
+        "badge": ""
+      }
+    ]
+  },
+  "abb": {
+    "blurb": "From consumer units to emergency lighting circuits, Icomply install and service ABB electrical equipment to BS 7671 across Stockport and Greater Manchester. We supply and fit boards, breakers and engineer spares, then provide the certification your compliance schedule needs. Trade customers can order ABB kits and accessories through our North West shop for site work and reactive call-outs.",
+    "seo_desc": "ABB electrical install, service & trade kits. Consumer units, breakers & emergency lighting — Stockport & North West.",
+    "seo_keywords": "ABB, ABB install, ABB installation, ABB service, ABB consumer units, ABB North West, ABB Manchester, ABB Stockport, electrical trade kits, emergency lighting",
+    "products": [
+      {
+        "id": "abb-product-1",
+        "title": "ABB Consumer Unit Spares Kit",
+        "blurb": "Trade pack of ABB breakers, blanks and board spares for install and service jobs.",
+        "price": "From £49",
+        "handle": "abb-product-1",
+        "shopify_product_id": "",
+        "image": "/assets/images/manufacturers/abb.jpg",
+        "badge": "Trade"
+      },
+      {
+        "id": "abb-product-2",
+        "title": "ABB Installation Accessory Pack",
+        "blurb": "Mounting, termination and labelling accessories for ABB boards and distribution work.",
+        "price": "From £35",
+        "handle": "abb-product-2",
+        "shopify_product_id": "",
+        "image": "/assets/images/manufacturers/abb.jpg",
+        "badge": ""
+      }
+    ]
+  },
+  "ackermann": {
+    "blurb": "Icomply install, maintain and support Ackermann nurse call systems for care homes, clinics and supported living across the North West. We supply call points, pear leads and panel batteries as trade kits, and our engineers complete servicing with clear certification paperwork. Based in Stockport, we help FM and care providers keep Ackermann estates reliable across Greater Manchester.",
+    "seo_desc": "Ackermann nurse call install, service & trade kits. Stockport, Greater Manchester & North West. Free quotes.",
+    "seo_keywords": "Ackermann, Ackermann install, Ackermann installation, Ackermann service, Ackermann nurse call, Ackermann North West, Ackermann Manchester, Ackermann Stockport, nurse call trade kits",
+    "products": [
+      {
+        "id": "ackermann-product-1",
+        "title": "Ackermann Call Point & Pear Lead Pack",
+        "blurb": "Replacement call points, pear leads and patient-side accessories for Ackermann systems.",
+        "price": "From £42",
+        "handle": "ackermann-product-1",
+        "shopify_product_id": "",
+        "image": "/assets/images/manufacturers/ackermann.jpg",
+        "badge": "Trade"
+      },
+      {
+        "id": "ackermann-product-2",
+        "title": "Ackermann Panel Battery Kit",
+        "blurb": "Backup batteries sized for Ackermann nurse call control panels and power supplies.",
+        "price": "From £38",
+        "handle": "ackermann-product-2",
+        "shopify_product_id": "",
+        "image": "/assets/images/manufacturers/ackermann.jpg",
+        "badge": ""
+      }
+    ]
+  },
+  "advanced-electronics": {
+    "blurb": "Icomply design, install and service Advanced Electronics fire alarm panels and devices to BS 5839 for commercial and residential landlords across Greater Manchester. We supply panel service kits, detectors and call-point packs through our trade shop, then commission and certify systems ready for audit. From Stockport we cover the wider North West for planned maintenance and reactive fire alarm support.",
+    "seo_desc": "Advanced Electronics fire alarm install, service & trade kits across Stockport, Manchester & the North West.",
+    "seo_keywords": "Advanced Electronics, Advanced Electronics install, Advanced Electronics installation, Advanced Electronics service, fire alarm North West, Advanced Electronics Manchester, Advanced Electronics Stockport, BS 5839, fire panel trade kits",
+    "products": [
+      {
+        "id": "advanced-electronics-product-1",
+        "title": "Advanced Electronics Panel Service Kit",
+        "blurb": "Engineer kit for Advanced panels — batteries, keys, zone labels and service consumables.",
+        "price": "From £89",
+        "handle": "advanced-electronics-product-1",
+        "shopify_product_id": "",
+        "image": "/assets/images/manufacturers/advanced-electronics.jpg",
+        "badge": "Trade"
+      },
+      {
+        "id": "advanced-electronics-product-2",
+        "title": "Advanced Electronics Detector & Device Pack",
+        "blurb": "Trade pack of smoke/heat detectors or manual call points for Advanced Electronics systems.",
+        "price": "From £65",
+        "handle": "advanced-electronics-product-2",
+        "shopify_product_id": "",
+        "image": "/assets/images/manufacturers/advanced-electronics.jpg",
+        "badge": ""
+      }
+    ]
+  },
+  "aid-call": {
+    "blurb": "Keep Aid Call nurse call systems dependable with Icomply installation, planned service and reactive repairs across Greater Manchester and the North West. We supply and fit call points, pear leads and panel batteries as trade kits, and provide certification-ready documentation for care and housing providers. Our Stockport team supports estates teams who need a single partner for Aid Call products and on-site work.",
+    "seo_desc": "Aid Call nurse call install, service & trade kits. Stockport, Greater Manchester & North West. Free quotes.",
+    "seo_keywords": "Aid Call, Aid Call install, Aid Call installation, Aid Call service, Aid Call nurse call, Aid Call North West, Aid Call Manchester, Aid Call Stockport, nurse call trade kits",
+    "products": [
+      {
+        "id": "aid-call-product-1",
+        "title": "Aid Call Call Point & Pear Lead Pack",
+        "blurb": "Replacement call points and pear leads for Aid Call nurse call installations.",
+        "price": "From £42",
+        "handle": "aid-call-product-1",
+        "shopify_product_id": "",
+        "image": "/assets/images/manufacturers/aid-call.jpg",
+        "badge": "Trade"
+      },
+      {
+        "id": "aid-call-product-2",
+        "title": "Aid Call Panel Battery Kit",
+        "blurb": "Standby batteries for Aid Call control panels and nurse call power supplies.",
+        "price": "From £38",
+        "handle": "aid-call-product-2",
+        "shopify_product_id": "",
+        "image": "/assets/images/manufacturers/aid-call.jpg",
+        "badge": ""
+      }
+    ]
+  },
+  "aiphone": {
+    "blurb": "Icomply supply and install Aiphone door entry and intercom systems for apartments, offices and mixed-use buildings across the North West. From handset replacements to full entrance panel upgrades, our engineers handle install, service and certification-ready commissioning. Trade kits and accessories ship from our Stockport base to contractors and FM teams across Greater Manchester.",
+    "seo_desc": "Aiphone door entry & intercom install, service & trade kits — Stockport, Manchester & North West.",
+    "seo_keywords": "Aiphone, Aiphone install, Aiphone installation, Aiphone service, Aiphone door entry, Aiphone intercom, Aiphone North West, Aiphone Manchester, Aiphone Stockport, trade kits",
+    "products": [
+      {
+        "id": "aiphone-product-1",
+        "title": "Aiphone Handset & Panel Spares",
+        "blurb": "Replacement Aiphone handsets, indoor stations and faceplates for multi-dwelling door entry.",
+        "price": "From £52",
+        "handle": "aiphone-product-1",
+        "shopify_product_id": "",
+        "image": "/assets/images/manufacturers/aiphone.jpg",
+        "badge": "Trade"
+      },
+      {
+        "id": "aiphone-product-2",
+        "title": "Aiphone Entrance Panel Accessory",
+        "blurb": "Rain hoods, flush boxes and modular add-ons for Aiphone outdoor entrance panels.",
+        "price": "From £36",
+        "handle": "aiphone-product-2",
+        "shopify_product_id": "",
+        "image": "/assets/images/manufacturers/aiphone.jpg",
+        "badge": ""
+      }
+    ]
+  },
+  "ajax-systems": {
+    "blurb": "Icomply install and maintain Ajax Systems wireless intruder alarms for commercial and residential clients across Greater Manchester. We supply hubs, PIRs, contacts and expansion modules as trade kits, then commission systems with the certification and handover packs your insurance or landlord schedule may require. Serving Stockport and the wider North West, we combine product supply with professional install and service.",
+    "seo_desc": "Ajax Systems intruder alarm install, service & trade kits across Stockport, Manchester & the North West.",
+    "seo_keywords": "Ajax Systems, Ajax install, Ajax installation, Ajax service, Ajax Systems North West, Ajax Manchester, Ajax Stockport, wireless intruder alarm, Ajax trade kits",
+    "products": [
+      {
+        "id": "ajax-systems-product-1",
+        "title": "Ajax Systems Hub Expansion Kit",
+        "blurb": "Keypads, range extenders and expansion modules for Ajax Systems installations.",
+        "price": "From £59",
+        "handle": "ajax-systems-product-1",
+        "shopify_product_id": "",
+        "image": "/assets/images/manufacturers/ajax-systems.jpg",
+        "badge": "Trade"
+      },
+      {
+        "id": "ajax-systems-product-2",
+        "title": "Ajax Systems PIR & Contact Pack",
+        "blurb": "Trade pack of motion detectors and door contacts for Ajax wireless systems.",
+        "price": "From £48",
+        "handle": "ajax-systems-product-2",
+        "shopify_product_id": "",
+        "image": "/assets/images/manufacturers/ajax-systems.jpg",
+        "badge": ""
+      }
+    ]
+  },
+  "akuvox": {
+    "blurb": "Icomply supply and install Akuvox IP intercoms for residential blocks, offices and managed estates across the North West. Our engineers handle door station and master station fit-out, ongoing service and certification-ready commissioning, while our trade shop stocks the modules and accessories sites need. Covering Stockport and Greater Manchester, we support landlords and contractors who want one partner for Akuvox products and on-site work.",
+    "seo_desc": "Akuvox IP intercom install, service & trade kits. Stockport, Greater Manchester & North West. Free quotes.",
+    "seo_keywords": "Akuvox, Akuvox install, Akuvox installation, Akuvox service, Akuvox intercom, Akuvox North West, Akuvox Manchester, Akuvox Stockport, IP door entry trade kits",
+    "products": [
+      {
+        "id": "akuvox-product-1",
+        "title": "Akuvox Master Station Accessory",
+        "blurb": "Indoor station brackets, power and interface accessories for Akuvox master stations.",
+        "price": "From £48",
+        "handle": "akuvox-product-1",
+        "shopify_product_id": "",
+        "image": "/assets/images/manufacturers/akuvox.jpg",
+        "badge": "Trade"
+      },
+      {
+        "id": "akuvox-product-2",
+        "title": "Akuvox Door Station Spares",
+        "blurb": "Weatherproof door stations, camera modules and mounting kits for Akuvox systems.",
+        "price": "From £62",
+        "handle": "akuvox-product-2",
+        "shopify_product_id": "",
+        "image": "/assets/images/manufacturers/akuvox.jpg",
+        "badge": ""
+      }
+    ]
+  },
+  "algo": {
+    "blurb": "Icomply install and service Algo SIP intercoms, speakers and paging endpoints for commercial sites across Greater Manchester. We supply door stations, master-side accessories and trade spares, then commission systems with clear service and certification documentation. From our Stockport base we support North West FM teams and contractors who need Algo product supply alongside professional install.",
+    "seo_desc": "Algo SIP intercom install, service & trade kits across Stockport, Manchester & the North West.",
+    "seo_keywords": "Algo, Algo install, Algo installation, Algo service, Algo intercom, Algo SIP, Algo North West, Algo Manchester, Algo Stockport, trade kits, paging speakers",
+    "products": [
+      {
+        "id": "algo-product-1",
+        "title": "Algo Master Station Accessory",
+        "blurb": "Mounting and interface accessories for Algo master stations and desk endpoints.",
+        "price": "From £48",
+        "handle": "algo-product-1",
+        "shopify_product_id": "",
+        "image": "/assets/images/manufacturers/algo.jpg",
+        "badge": "Trade"
+      },
+      {
+        "id": "algo-product-2",
+        "title": "Algo Door Station Spares",
+        "blurb": "Weatherproof door stations, speakers and modules for Algo SIP intercom systems.",
+        "price": "From £62",
+        "handle": "algo-product-2",
+        "shopify_product_id": "",
+        "image": "/assets/images/manufacturers/algo.jpg",
+        "badge": ""
+      }
+    ]
+  },
+  "allegion": {
+    "blurb": "Icomply supply and install Allegion access control hardware — readers, locks and controllers — for commercial and multi-tenant buildings across the North West. Our engineers handle install, service and certification-ready commissioning, and we stock trade packs of credentials and door controller spares for reactive work. Serving Stockport and Greater Manchester, we help landlords and FM teams keep Allegion access systems secure and maintainable.",
+    "seo_desc": "Allegion access control install, service & trade kits. Stockport, Greater Manchester & North West.",
+    "seo_keywords": "Allegion, Allegion install, Allegion installation, Allegion service, Allegion access control, Allegion North West, Allegion Manchester, Allegion Stockport, reader trade kits, door controllers",
+    "products": [
+      {
+        "id": "allegion-product-1",
+        "title": "Allegion Reader & Token Pack",
+        "blurb": "Readers, fobs and credentials for Allegion access control systems.",
+        "price": "From £69",
+        "handle": "allegion-product-1",
+        "shopify_product_id": "",
+        "image": "/assets/images/manufacturers/allegion.jpg",
+        "badge": "Trade"
+      },
+      {
+        "id": "allegion-product-2",
+        "title": "Allegion Door Controller Spares",
+        "blurb": "PSU fuses, lock interfaces and exit devices for Allegion door controllers.",
+        "price": "From £55",
+        "handle": "allegion-product-2",
+        "shopify_product_id": "",
+        "image": "/assets/images/manufacturers/allegion.jpg",
+        "badge": ""
+      }
+    ]
+  }
+}

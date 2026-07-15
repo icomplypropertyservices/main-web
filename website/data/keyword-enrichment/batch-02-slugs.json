@@ -1,0 +1,202 @@
+[
+    {
+        "slug": "battery-storage-electrical",
+        "name": "Battery Storage Electrical",
+        "service": "electrical"
+    },
+    {
+        "slug": "landlord-safety-certificate",
+        "name": "Landlord Safety Certificate",
+        "service": "electrical"
+    },
+    {
+        "slug": "commercial-electrical-maintenance",
+        "name": "Commercial Electrical Maintenance",
+        "service": "electrical"
+    },
+    {
+        "slug": "full-house-rewire",
+        "name": "Full House Rewire",
+        "service": "electrical"
+    },
+    {
+        "slug": "home-electrical-upgrade",
+        "name": "Home Electrical Upgrade",
+        "service": "electrical"
+    },
+    {
+        "slug": "energy-efficient-lighting",
+        "name": "Energy Efficient Lighting",
+        "service": "electrical"
+    },
+    {
+        "slug": "electrical-safety-inspection",
+        "name": "Electrical Safety Inspection",
+        "service": "electrical"
+    },
+    {
+        "slug": "electrical-certification",
+        "name": "Electrical Certification",
+        "service": "electrical"
+    },
+    {
+        "slug": "preventive-electrical-maintenance",
+        "name": "Preventive Electrical Maintenance",
+        "service": "electrical"
+    },
+    {
+        "slug": "power-surge-protection",
+        "name": "Power Surge Protection",
+        "service": "electrical"
+    },
+    {
+        "slug": "fire-alarm-installation",
+        "name": "Fire Alarm Installation",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-alarm-maintenance",
+        "name": "Fire Alarm Maintenance",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-alarm-repair",
+        "name": "Fire Alarm Repair",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-alarm-servicing",
+        "name": "Fire Alarm Servicing",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-alarm-engineer",
+        "name": "Fire Alarm Engineer",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-alarm-system",
+        "name": "Fire Alarm System",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-detection-system",
+        "name": "Fire Detection System",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "smoke-alarm-installation",
+        "name": "Smoke Alarm Installation",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "heat-detector-installation",
+        "name": "Heat Detector Installation",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-alarm-testing",
+        "name": "Fire Alarm Testing",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-alarm-inspection",
+        "name": "Fire Alarm Inspection",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-alarm-certification",
+        "name": "Fire Alarm Certification",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-alarm-compliance",
+        "name": "Fire Alarm Compliance",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "bs-5839",
+        "name": "BS 5839",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "addressable-fire-alarm-panel",
+        "name": "Addressable Fire Alarm Panel",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "conventional-fire-alarm-panel",
+        "name": "Conventional Fire Alarm Panel",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "wireless-fire-alarm-system",
+        "name": "Wireless Fire Alarm System",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-alarm-upgrade",
+        "name": "Fire Alarm Upgrade",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-safety-certificate",
+        "name": "Fire Safety Certificate",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "landlord-fire-alarm",
+        "name": "Landlord Fire Alarm",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "commercial-fire-alarm-system",
+        "name": "Commercial Fire Alarm System",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "industrial-fire-alarm",
+        "name": "Industrial Fire Alarm",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-alarm-commissioning",
+        "name": "Fire Alarm Commissioning",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-alarm-battery-replacement",
+        "name": "Fire Alarm Battery Replacement",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "aspirating-smoke-detection",
+        "name": "Aspirating Smoke Detection",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "beam-detection",
+        "name": "Beam Detection",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "manual-call-point",
+        "name": "Manual Call Point",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "sounder-beacon",
+        "name": "Sounder Beacon",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "voice-alarm-system",
+        "name": "Voice Alarm System",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "disabled-refuge-system",
+        "name": "Disabled Refuge System",
+        "service": "fire-alarms"
+    }
+]

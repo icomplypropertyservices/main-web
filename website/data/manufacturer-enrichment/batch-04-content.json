@@ -1,0 +1,272 @@
+{
+    "brooks": {
+        "blurb": "Icomply installs and maintains Brooks smoke-control and AOV equipment across the North West, from multi-storey residential to commercial cores. Our engineers handle commissioning, planned servicing and reactive call-outs to BS 9991 and EN 12101, with full certification for landlords and FM teams. Trade actuator spares, panel batteries and control-room consumables are available from our Stockport shop for contractors working on Brooks systems.",
+        "seo_desc": "Brooks AOV install, service & certification in the North West. Trade actuators & panel spares from Icomply Stockport. Free quotes for FM & trade.",
+        "seo_keywords": "Brooks, Brooks AOV, Brooks smoke control, Brooks installation North West, Brooks service Manchester, Brooks actuator spares, Brooks certification, Brooks trade shop Stockport, AOV maintenance Greater Manchester",
+        "products": [
+            {
+                "id": "brooks-actuator-service-kit",
+                "title": "Brooks AOV Actuator Service Kit",
+                "blurb": "Trade consumables for Brooks chain and spindle actuators — ideal for planned smoke-control maintenance.",
+                "price": "From £79",
+                "handle": "brooks-actuator-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/brooks.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "brooks-panel-battery-pack",
+                "title": "Brooks Smoke Control Panel Battery Pack",
+                "blurb": "Replacement batteries, fuses and keys for Brooks AOV control panels on North West estates.",
+                "price": "From £48",
+                "handle": "brooks-panel-battery-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/brooks.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "c-tec": {
+        "blurb": "C-Tec fire alarm panels and devices are a staple on North West commercial and residential sites — Icomply designs, installs and services them to BS 5839. We support new XFP and ZFP projects, annual inspections and emergency repairs, issuing clear certification for insurers and responsible persons. Our trade counter stocks panel batteries, call points, detectors and engineer keys so FM teams and electrical contractors can keep C-Tec systems compliant.",
+        "seo_desc": "C-Tec fire alarm install, BS 5839 service & certs across Manchester & the North West. Trade panel kits & detectors from Icomply.",
+        "seo_keywords": "C-Tec, C-Tec fire alarm, C-Tec XFP, C-Tec ZFP, C-Tec installation North West, C-Tec service Manchester, C-Tec BS 5839, C-Tec panel spares, C-Tec trade Stockport, fire alarm certification",
+        "products": [
+            {
+                "id": "c-tec-panel-service-kit",
+                "title": "C-Tec Panel Engineer Service Kit",
+                "blurb": "Batteries, zone labels, keys and fuses for C-Tec addressable and conventional panels.",
+                "price": "From £92",
+                "handle": "c-tec-panel-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/c-tec.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "c-tec-detector-callpoint-pack",
+                "title": "C-Tec Detector & Call Point Pack",
+                "blurb": "Trade pack of detectors and manual call points for C-Tec upgrades and replacements.",
+                "price": "From £68",
+                "handle": "c-tec-detector-callpoint-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/c-tec.jpg",
+                "badge": "Popular"
+            }
+        ]
+    },
+    "cambric": {
+        "blurb": "Icomply is a North West installer and service partner for Cambric smoke ventilation and AOV controls used in residential cores and mixed-use schemes. We commission new systems, complete scheduled maintenance and rectify faults to BS 9991 / EN 12101 with documented certification. Contractors and facilities managers can source Cambric actuator parts, interface modules and panel consumables from our trade shop in Stockport.",
+        "seo_desc": "Cambric AOV install, maintenance & EN 12101 certification in the North West. Trade actuators & panel parts from Icomply Stockport.",
+        "seo_keywords": "Cambric, Cambric AOV, Cambric smoke ventilation, Cambric installation North West, Cambric service Manchester, Cambric actuator spares, Cambric certification, Cambric trade shop, smoke control Greater Manchester",
+        "products": [
+            {
+                "id": "cambric-actuator-consumables",
+                "title": "Cambric Actuator Consumables Kit",
+                "blurb": "Service pack for Cambric AOV actuators — brackets, links and wear parts for engineers.",
+                "price": "From £76",
+                "handle": "cambric-actuator-consumables",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/cambric.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "cambric-control-interface-spares",
+                "title": "Cambric Control Interface Spares",
+                "blurb": "Fuses, batteries and interface modules for Cambric smoke-control panels.",
+                "price": "From £46",
+                "handle": "cambric-control-interface-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/cambric.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "caretech": {
+        "blurb": "Caretech nurse call systems keep care homes and healthcare settings responsive — Icomply installs, expands and services them across Greater Manchester, Cheshire and Lancashire. Work is delivered with HTM 08-03 guidance in mind, including call-point testing, panel health checks and certification for care providers and estates teams. Pear leads, call points, overdoor lights and panel batteries are stocked for trade and in-house engineers.",
+        "seo_desc": "Caretech nurse call install, service & HTM-aligned certification in the North West. Trade call points & pear leads from Icomply.",
+        "seo_keywords": "Caretech, Caretech nurse call, Caretech installation North West, Caretech service Manchester, Caretech pear leads, Caretech call points, Caretech panel batteries, care home nurse call Stockport, HTM 08-03",
+        "products": [
+            {
+                "id": "caretech-callpoint-pear-lead-pack",
+                "title": "Caretech Call Point & Pear Lead Pack",
+                "blurb": "Replacement bedside call points and pear leads for Caretech nurse call systems.",
+                "price": "From £44",
+                "handle": "caretech-callpoint-pear-lead-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/caretech.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "caretech-panel-battery-kit",
+                "title": "Caretech Panel Battery Kit",
+                "blurb": "Backup battery sets for Caretech nurse call panels — essential for planned service visits.",
+                "price": "From £39",
+                "handle": "caretech-panel-battery-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/caretech.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "cdvi": {
+        "blurb": "CDVI access control — from standalone readers to networked controllers — is installed and maintained by Icomply across the North West. We handle door hardware, credentials, timed access profiles and handover certification for offices, residential blocks and industrial sites. Trade packs of readers, fobs, exit devices and PSU spares are available from our Stockport counter for locksmiths and security contractors.",
+        "seo_desc": "CDVI access control install, service & certification across Manchester & the North West. Trade readers, fobs & controller spares.",
+        "seo_keywords": "CDVI, CDVI access control, CDVI readers, CDVI installation North West, CDVI service Manchester, CDVI fobs, CDVI controller spares, CDVI trade Stockport, door access certification",
+        "products": [
+            {
+                "id": "cdvi-reader-credential-pack",
+                "title": "CDVI Reader & Credential Pack",
+                "blurb": "Proximity readers and fob/card credentials for CDVI access control upgrades.",
+                "price": "From £72",
+                "handle": "cdvi-reader-credential-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/cdvi.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "cdvi-door-controller-spares",
+                "title": "CDVI Door Controller Spares Kit",
+                "blurb": "PSU fuses, exit buttons and lock interfaces commonly used on CDVI doors.",
+                "price": "From £58",
+                "handle": "cdvi-door-controller-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/cdvi.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "clear-com": {
+        "blurb": "Clear-Com intercoms are trusted in theatres, broadcast, venues and industrial sites — Icomply installs and services them throughout the North West. From beltpacks and party-line kits to digital matrix stations, we provide commissioning, fault-finding and scheduled maintenance with clear handover documentation. Master-station accessories, headset spares and door-station modules are available for trade and in-house AV teams.",
+        "seo_desc": "Clear-Com intercom install & service across the North West. Trade master-station accessories & door-station spares from Icomply.",
+        "seo_keywords": "Clear-Com, Clear-Com intercom, Clear-Com installation North West, Clear-Com service Manchester, Clear-Com beltpack, Clear-Com master station, Clear-Com trade spares, venue intercom Stockport, commercial intercom maintenance",
+        "products": [
+            {
+                "id": "clear-com-master-station-accessory",
+                "title": "Clear-Com Master Station Accessory Kit",
+                "blurb": "Cables, gooseneck and desk accessories for Clear-Com master stations.",
+                "price": "From £54",
+                "handle": "clear-com-master-station-accessory",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/clear-com.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "clear-com-door-station-spares",
+                "title": "Clear-Com Door / Remote Station Spares",
+                "blurb": "Weatherproof modules and replacement parts for Clear-Com remote and door stations.",
+                "price": "From £65",
+                "handle": "clear-com-door-station-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/clear-com.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "clevertronics": {
+        "blurb": "Clevertronics emergency lighting — including self-test and monitored ranges — is installed and tested by Icomply to BS 5266 across Greater Manchester and the wider North West. We cover new fit-outs, bulkhead replacements, exit signage and monthly/annual testing with full certification for duty holders. Trade packs of LED emergency fittings and battery modules help electrical contractors complete service rounds without delay.",
+        "seo_desc": "Clevertronics emergency lighting install, BS 5266 testing & certs in the North West. Trade LED fittings & batteries from Icomply.",
+        "seo_keywords": "Clevertronics, Clevertronics emergency lighting, Clevertronics installation North West, Clevertronics service Manchester, Clevertronics batteries, Clevertronics exit signs, BS 5266 testing, emergency lighting trade Stockport",
+        "products": [
+            {
+                "id": "clevertronics-emergency-fitting-pack",
+                "title": "Clevertronics LED Emergency Fitting Pack",
+                "blurb": "Maintained and non-maintained LED emergency luminaires from the Clevertronics range.",
+                "price": "From £58",
+                "handle": "clevertronics-emergency-fitting-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/clevertronics.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "clevertronics-battery-replacement-kit",
+                "title": "Clevertronics Battery Replacement Kit",
+                "blurb": "Replacement battery packs for Clevertronics emergency lighting units on service contracts.",
+                "price": "From £29",
+                "handle": "clevertronics-battery-replacement-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/clevertronics.jpg",
+                "badge": "Stock"
+            }
+        ]
+    },
+    "click-scolmore": {
+        "blurb": "Click Scolmore wiring accessories and distribution gear are widely specified on North West domestic and light-commercial jobs — Icomply installs, upgrades and faults-finds them to BS 7671. From consumer unit replacements and circuit additions to full rewires, we provide testing, certification and aftercare for landlords, homeowners and contractors. Our trade shop stocks Click Scolmore breakers, faceplates, grid modules and install accessories for same-day collection.",
+        "seo_desc": "Click Scolmore electrical install, BS 7671 testing & certification in the North West. Trade boards, breakers & accessories from Icomply.",
+        "seo_keywords": "Click Scolmore, Click Scolmore consumer unit, Click Scolmore installation North West, Click Scolmore service Manchester, Click Scolmore breakers, Click Mode, BS 7671 certification, electrical trade shop Stockport",
+        "products": [
+            {
+                "id": "click-scolmore-cu-spares-kit",
+                "title": "Click Scolmore Consumer Unit Spares Kit",
+                "blurb": "MCBs, RCBOs and blanking plates for Click Scolmore boards — trade-ready pack.",
+                "price": "From £52",
+                "handle": "click-scolmore-cu-spares-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/click-scolmore.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "click-scolmore-install-accessory-pack",
+                "title": "Click Scolmore Installation Accessory Pack",
+                "blurb": "Back boxes, grid modules and termination accessories for Click Scolmore installs.",
+                "price": "From £36",
+                "handle": "click-scolmore-install-accessory-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/click-scolmore.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "colt": {
+        "blurb": "Colt is a leading name in smoke ventilation and climate control — Icomply installs, services and certifies Colt AOV and natural-ventilation systems across the North West. Our engineers cover louvres, roof vents, actuators and control panels to BS 9991 and EN 12101, supporting developers, housing providers and FM contracts. Trade actuator kits, weather seals and panel batteries are available for contractors maintaining Colt equipment on site.",
+        "seo_desc": "Colt AOV & smoke ventilation install, service & EN 12101 certs in the North West. Trade actuator kits & panel spares from Icomply.",
+        "seo_keywords": "Colt, Colt AOV, Colt smoke ventilation, Colt installation North West, Colt service Manchester, Colt actuator, Colt control panel, EN 12101 certification, smoke control trade Stockport",
+        "products": [
+            {
+                "id": "colt-actuator-service-kit",
+                "title": "Colt AOV Actuator Service Kit",
+                "blurb": "Service consumables and wear parts for Colt smoke-vent actuators.",
+                "price": "From £82",
+                "handle": "colt-actuator-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/colt.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "colt-panel-seals-spares",
+                "title": "Colt Panel & Seal Spares Pack",
+                "blurb": "Batteries, fuses and weather-seal accessories for Colt AOV control and vent assemblies.",
+                "price": "From £49",
+                "handle": "colt-panel-seals-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/colt.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "comelit": {
+        "blurb": "Comelit video and audio door entry is a popular choice for UK apartment blocks and commercial entrances — Icomply designs, installs and maintains systems across Greater Manchester, Lancashire, Cheshire and Merseyside. We replace handsets, upgrade entrance panels, integrate access control and issue clear handover certification for freeholders and managing agents. Trade handsets, rain hoods, flush boxes and entrance modules are stocked for electrical and security contractors.",
+        "seo_desc": "Comelit door entry install, service & certification across the North West. Trade handsets, panels & entrance accessories from Icomply.",
+        "seo_keywords": "Comelit, Comelit door entry, Comelit video entry, Comelit installation North West, Comelit service Manchester, Comelit handset, Comelit entrance panel, door entry trade Stockport, multi-tenant door entry",
+        "products": [
+            {
+                "id": "comelit-handset-panel-spares",
+                "title": "Comelit Handset & Panel Spares",
+                "blurb": "Replacement internal handsets and faceplates for Comelit video and audio door entry.",
+                "price": "From £55",
+                "handle": "comelit-handset-panel-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/comelit.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "comelit-entrance-accessory-pack",
+                "title": "Comelit Entrance Panel Accessory Pack",
+                "blurb": "Rain hoods, flush boxes and module frames for Comelit entrance panels.",
+                "price": "From £38",
+                "handle": "comelit-entrance-accessory-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/comelit.jpg",
+                "badge": ""
+            }
+        ]
+    }
+}

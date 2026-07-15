@@ -1,0 +1,19 @@
+{
+  "name": "Icomply Property Services",
+  "short_name": "Icomply",
+  "description": "Expert property compliance services across Greater Manchester and North West UK.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0a2540",
+  "lang": "en-GB",
+  "icons": [
+    {
+      "src": "assets/images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

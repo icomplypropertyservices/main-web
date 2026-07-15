@@ -1,0 +1,202 @@
+[
+    {
+        "slug": "zettler-nurse-call",
+        "name": "Zettler Nurse Call",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "ackermann-nurse-call",
+        "name": "Ackermann Nurse Call",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "rauland-nurse-call",
+        "name": "Rauland Nurse Call",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nurse-call-battery-backup",
+        "name": "Nurse Call Battery Backup",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nurse-call-system-upgrade",
+        "name": "Nurse Call System Upgrade",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "gas-installation",
+        "name": "Gas Installation",
+        "service": "gas-systems"
+    },
+    {
+        "slug": "gas-maintenance",
+        "name": "Gas Maintenance",
+        "service": "gas-systems"
+    },
+    {
+        "slug": "gas-repair",
+        "name": "Gas Repair",
+        "service": "gas-systems"
+    },
+    {
+        "slug": "gas-servicing",
+        "name": "Gas Servicing",
+        "service": "gas-systems"
+    },
+    {
+        "slug": "gas-engineer",
+        "name": "Gas Engineer",
+        "service": "gas-systems"
+    },
+    {
+        "slug": "gas-safety-certificate",
+        "name": "Gas Safety Certificate",
+        "service": "gas-systems"
+    },
+    {
+        "slug": "gas-boiler-installation",
+        "name": "Gas Boiler Installation",
+        "service": "gas-systems"
+    },
+    {
+        "slug": "gas-boiler-servicing",
+        "name": "Gas Boiler Servicing",
+        "service": "gas-systems"
+    },
+    {
+        "slug": "gas-boiler-repair",
+        "name": "Gas Boiler Repair",
+        "service": "gas-systems"
+    },
+    {
+        "slug": "landlord-gas-safety-certificate",
+        "name": "Landlord Gas Safety Certificate",
+        "service": "gas-systems"
+    },
+    {
+        "slug": "cp44-gas-safety",
+        "name": "CP44 Gas Safety",
+        "service": "gas-systems"
+    },
+    {
+        "slug": "commercial-gas-installation",
+        "name": "Commercial Gas Installation",
+        "service": "gas-systems"
+    },
+    {
+        "slug": "industrial-gas-system",
+        "name": "Industrial Gas System",
+        "service": "gas-systems"
+    },
+    {
+        "slug": "gas-safety-near-me",
+        "name": "Gas Safety Near Me",
+        "service": "gas-systems"
+    },
+    {
+        "slug": "gas-system-upgrade",
+        "name": "Gas System Upgrade",
+        "service": "gas-systems"
+    },
+    {
+        "slug": "intruder-alarm-installation",
+        "name": "Intruder Alarm Installation",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "intruder-alarm-maintenance",
+        "name": "Intruder Alarm Maintenance",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "intruder-alarm-repair",
+        "name": "Intruder Alarm Repair",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "intruder-alarm-servicing",
+        "name": "Intruder Alarm Servicing",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "intruder-alarm-engineer",
+        "name": "Intruder Alarm Engineer",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "burglar-alarm-system",
+        "name": "Burglar Alarm System",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "wireless-intruder-alarm",
+        "name": "Wireless Intruder Alarm",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "wired-intruder-alarm",
+        "name": "Wired Intruder Alarm",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "intruder-alarm-panel",
+        "name": "Intruder Alarm Panel",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "intruder-alarm-certification",
+        "name": "Intruder Alarm Certification",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "bs-4737",
+        "name": "BS 4737",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "commercial-intruder-alarm",
+        "name": "Commercial Intruder Alarm",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "residential-intruder-alarm",
+        "name": "Residential Intruder Alarm",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "intruder-alarm-near-me",
+        "name": "Intruder Alarm Near Me",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "intruder-alarm-maintenance-contract",
+        "name": "Intruder Alarm Maintenance Contract",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "intruder-alarm-testing",
+        "name": "Intruder Alarm Testing",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "cctv-maintenance",
+        "name": "CCTV Maintenance",
+        "service": "cctv"
+    },
+    {
+        "slug": "cctv-repair",
+        "name": "CCTV Repair",
+        "service": "cctv"
+    },
+    {
+        "slug": "cctv-servicing",
+        "name": "CCTV Servicing",
+        "service": "cctv"
+    },
+    {
+        "slug": "cctv-engineer",
+        "name": "CCTV Engineer",
+        "service": "cctv"
+    }
+]

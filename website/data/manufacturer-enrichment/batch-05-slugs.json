@@ -1,0 +1,72 @@
+[
+    {
+        "slug": "commax",
+        "name": "Commax",
+        "services": [
+            "door-entry"
+        ]
+    },
+    {
+        "slug": "commend",
+        "name": "Commend",
+        "services": [
+            "intercoms"
+        ]
+    },
+    {
+        "slug": "contactum",
+        "name": "Contactum",
+        "services": [
+            "electrical"
+        ]
+    },
+    {
+        "slug": "cooper-fire",
+        "name": "Cooper Fire",
+        "services": [
+            "fire-alarms"
+        ]
+    },
+    {
+        "slug": "cooper-lighting",
+        "name": "Cooper Lighting",
+        "services": [
+            "emergency-lighting"
+        ]
+    },
+    {
+        "slug": "courtney-thorne",
+        "name": "Courtney Thorne",
+        "services": [
+            "nurse-call"
+        ]
+    },
+    {
+        "slug": "crabtree",
+        "name": "Crabtree",
+        "services": [
+            "electrical"
+        ]
+    },
+    {
+        "slug": "crow-electronics",
+        "name": "Crow Electronics",
+        "services": [
+            "intruder-alarm"
+        ]
+    },
+    {
+        "slug": "cyberdata",
+        "name": "CyberData",
+        "services": [
+            "intercoms"
+        ]
+    },
+    {
+        "slug": "dh-mechatronic",
+        "name": "D+H Mechatronic",
+        "services": [
+            "aov-air-handling"
+        ]
+    }
+]

@@ -1,0 +1,272 @@
+{
+    "orbik": {
+        "blurb": "Icomply installs, tests and maintains Orbik emergency lighting across Stockport, Manchester and the wider North West, from LED bulkheads and exit signage through to conversion modules and duration testing. Our engineers work to BS 5266 with full certification so commercial premises and residential blocks stay audit-ready. Trade Orbik fittings, batteries and legends are available from our North West trade shop for landlords, electrical contractors and FM teams.",
+        "seo_desc": "Orbik emergency lighting install, BS 5266 testing & certs by Icomply. Trade fittings — Stockport, Manchester & North West.",
+        "seo_keywords": "Orbik, Orbik emergency lighting, Orbik installation, Orbik service, Orbik testing, BS 5266, Orbik batteries, Orbik trade, Orbik North West, Orbik Manchester, Orbik Stockport, emergency lighting",
+        "products": [
+            {
+                "id": "orbik-emergency-fitting-pack",
+                "title": "Orbik Emergency Fitting Pack",
+                "blurb": "LED emergency bulkheads and exit fittings for Orbik ranges on commercial North West sites.",
+                "price": "From £52",
+                "handle": "orbik-emergency-fitting-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/orbik.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "orbik-battery-legend-kit",
+                "title": "Orbik Battery & Legend Kit",
+                "blurb": "Replacement batteries and exit legends for Orbik emergency lighting service visits.",
+                "price": "From £28",
+                "handle": "orbik-battery-legend-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/orbik.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "orisec": {
+        "blurb": "Icomply designs, installs and services Orisec intruder alarms for commercial and multi-site clients across Greater Manchester, Cheshire and the North West. Systems are engineered to PD 6662 / BS EN 50131 with keypad programming, zone expansions and certified handover on every project. Stock Orisec PIRs, contacts and panel modules from our Stockport trade counter for reactive repairs and planned upgrades.",
+        "seo_desc": "Orisec alarm install, service & PD 6662 certification with Icomply. Trade PIRs & kits — Stockport, Manchester & NW.",
+        "seo_keywords": "Orisec, Orisec alarms, Orisec installation, Orisec service, Orisec maintenance, Orisec PIR, Orisec trade, Orisec North West, Orisec Manchester, Orisec Stockport, intruder alarms, PD 6662",
+        "products": [
+            {
+                "id": "orisec-panel-expansion-kit",
+                "title": "Orisec Panel Expansion & Keypad Kit",
+                "blurb": "Zone expanders, keypads and bus modules for Orisec panel upgrades on commercial sites.",
+                "price": "From £58",
+                "handle": "orisec-panel-expansion-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/orisec.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "orisec-pir-contact-pack",
+                "title": "Orisec PIR & Door Contact Pack",
+                "blurb": "Trade sensors and magnetic contacts for Orisec wired installs and service call-outs.",
+                "price": "From £46",
+                "handle": "orisec-pir-contact-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/orisec.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "p4-limited": {
+        "blurb": "Icomply supplies and commissions P4 Limited emergency lighting for offices, industrial units and residential estates throughout the North West. We handle new installs, conversion work, monthly function tests and annual duration testing to BS 5266 with clear certification packs. Electrical contractors and FM teams can order P4 bulkheads, exit signs and battery packs from our Stockport-based trade shop serving Manchester, Lancashire and Merseyside.",
+        "seo_desc": "P4 Limited emergency lighting install, BS 5266 testing & certs. Trade bulkheads — Stockport, Manchester & North West.",
+        "seo_keywords": "P4 Limited, P4 emergency lighting, P4 installation, P4 service, P4 testing, BS 5266, P4 batteries, P4 trade, P4 North West, P4 Manchester, P4 Stockport, emergency lighting",
+        "products": [
+            {
+                "id": "p4-limited-emergency-fitting-pack",
+                "title": "P4 Limited Emergency Fitting Pack",
+                "blurb": "LED bulkheads and maintained exit fittings for P4 Limited emergency lighting projects.",
+                "price": "From £49",
+                "handle": "p4-limited-emergency-fitting-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/p4-limited.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "p4-limited-battery-test-kit",
+                "title": "P4 Limited Battery & Test Kit",
+                "blurb": "Standby batteries and engineer test accessories for P4 Limited service rounds.",
+                "price": "From £31",
+                "handle": "p4-limited-battery-test-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/p4-limited.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "panasonic-i-pro": {
+        "blurb": "Icomply designs and installs Panasonic i-PRO CCTV for retail, logistics and multi-site estates across Stockport, Manchester and the North West. From AI-ready camera layouts and NVR commissioning to remote viewing setup and planned maintenance, we keep footage clear and compliant to BS EN 62676 practice. Trade mounts, PoE cabling and recorder accessories for i-PRO are stocked at our North West trade shop for installers, landlords and FM teams.",
+        "seo_desc": "Panasonic i-PRO CCTV design, install & service by Icomply. Trade mounts & NVR kits — Stockport, Manchester & NW.",
+        "seo_keywords": "Panasonic i-PRO, i-PRO CCTV, Panasonic cameras, i-PRO installation, i-PRO service, i-PRO NVR, i-PRO trade, Panasonic CCTV North West, i-PRO Manchester, i-PRO Stockport, IP CCTV systems",
+        "products": [
+            {
+                "id": "panasonic-i-pro-camera-mount-kit",
+                "title": "Panasonic i-PRO Camera Mount Kit",
+                "blurb": "Brackets, junction boxes and weather seals for outdoor Panasonic i-PRO cameras.",
+                "price": "From £36",
+                "handle": "panasonic-i-pro-camera-mount-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/panasonic-i-pro.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "panasonic-i-pro-nvr-storage-pack",
+                "title": "Panasonic i-PRO NVR Storage Pack",
+                "blurb": "PoE patch leads, HDD accessories and install consumables for i-PRO recorders.",
+                "price": "From £54",
+                "handle": "panasonic-i-pro-nvr-storage-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/panasonic-i-pro.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "paradox": {
+        "blurb": "Icomply installs and maintains Paradox intruder alarms — including Spectra and Magellan ranges — for commercial and residential clients across the North West. Our engineers programme zones, expanders and keypads to PD 6662 / BS EN 50131 and provide full certification with every handover. Order Paradox PIRs, wireless modules and panel spares from our Stockport trade shop for same-week service jobs and upgrades.",
+        "seo_desc": "Paradox alarm install, service & certification with Icomply. Trade PIRs & wireless kits — Stockport, Manchester & NW.",
+        "seo_keywords": "Paradox, Paradox alarms, Paradox Spectra, Paradox Magellan, Paradox installation, Paradox service, Paradox PIR, Paradox trade, Paradox North West, Paradox Manchester, Paradox Stockport, intruder alarms",
+        "products": [
+            {
+                "id": "paradox-panel-expansion-kit",
+                "title": "Paradox Panel Expansion & Keypad Kit",
+                "blurb": "Zone expanders, keypads and modules for Paradox Spectra and Magellan systems.",
+                "price": "From £55",
+                "handle": "paradox-panel-expansion-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/paradox.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "paradox-pir-wireless-pack",
+                "title": "Paradox PIR & Wireless Sensor Pack",
+                "blurb": "Trade detection pack for Paradox wired and wireless installs across the North West.",
+                "price": "From £47",
+                "handle": "paradox-pir-wireless-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/paradox.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "paxton": {
+        "blurb": "Icomply designs, installs and services Paxton access control and door entry — including Net2 and PaxLock ranges — for workplaces, residential blocks and multi-site estates across the North West. From reader placement and controller commissioning to token enrolment and BS 7671-aligned power checks, we deliver certified systems with clear documentation. Trade Paxton readers, fobs, controllers and door furniture ship from our Stockport trade counter for FM teams and security contractors.",
+        "seo_desc": "Paxton Net2 access control & door entry install, service & certs. Trade readers & fobs — Stockport, Manchester & NW.",
+        "seo_keywords": "Paxton, Paxton Net2, Paxton PaxLock, Paxton access control, Paxton door entry, Paxton installation, Paxton service, Paxton trade, Paxton North West, Paxton Manchester, Paxton Stockport, access control systems",
+        "products": [
+            {
+                "id": "paxton-net2-reader-kit",
+                "title": "Paxton Net2 Reader & Token Kit",
+                "blurb": "Trade readers, proximity tokens and install accessories for Paxton Net2 door control.",
+                "price": "From £68",
+                "handle": "paxton-net2-reader-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/paxton.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "paxton-controller-psu-pack",
+                "title": "Paxton Controller & PSU Accessory Pack",
+                "blurb": "Controller mounts, PSUs and cabling accessories for Paxton access control installs.",
+                "price": "From £59",
+                "handle": "paxton-controller-psu-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/paxton.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "philips-emergency": {
+        "blurb": "Icomply installs, tests and certifies Philips Emergency lighting for commercial buildings and residential schemes across Greater Manchester, Cheshire and Lancashire. Our engineers commission LED exit signage, bulkheads and conversion kits, then deliver BS 5266 function and duration testing with full certification. Stock Philips Emergency fittings, batteries and legends from our North West trade shop for electrical contractors, landlords and FM teams.",
+        "seo_desc": "Philips Emergency lighting install, BS 5266 testing & certs by Icomply. Trade fittings — Stockport, Manchester & NW.",
+        "seo_keywords": "Philips Emergency, Philips emergency lighting, Philips installation, Philips service, Philips testing, BS 5266, Philips batteries, Philips trade, Philips North West, Philips Manchester, Philips Stockport, emergency lighting",
+        "products": [
+            {
+                "id": "philips-emergency-fitting-pack",
+                "title": "Philips Emergency Fitting Pack",
+                "blurb": "LED emergency bulkheads and exit fittings for Philips Emergency commercial installs.",
+                "price": "From £58",
+                "handle": "philips-emergency-fitting-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/philips-emergency.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "philips-emergency-battery-kit",
+                "title": "Philips Emergency Battery & Legend Kit",
+                "blurb": "Replacement batteries and exit legends for Philips Emergency service visits.",
+                "price": "From £33",
+                "handle": "philips-emergency-battery-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/philips-emergency.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "potterton": {
+        "blurb": "Icomply’s Gas Safe engineers install, service and repair Potterton boilers for landlords and commercial estates throughout Stockport, Manchester and the wider North West. Annual services, flue checks, breakdown call-outs and landlord certification keep plant efficient and compliant. Order Potterton service kits, seals and flue fittings from our North West trade counter for contractors and FM teams needing same-week parts.",
+        "seo_desc": "Potterton boiler install, Gas Safe service & landlord certs with Icomply. Trade kits — Stockport, Manchester & North West.",
+        "seo_keywords": "Potterton, Potterton boilers, Potterton installation, Potterton service, Potterton Gas Safe, Potterton maintenance, Potterton flue, Potterton trade, Potterton North West, Potterton Manchester, Potterton Stockport, gas systems",
+        "products": [
+            {
+                "id": "potterton-boiler-service-kit",
+                "title": "Potterton Boiler Annual Service Kit",
+                "blurb": "Washers, seals and service consumables matched to common Potterton boiler models.",
+                "price": "From £34",
+                "handle": "potterton-boiler-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/potterton.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "potterton-flue-accessory-pack",
+                "title": "Potterton Flue & Fitting Pack",
+                "blurb": "Terminals, adaptors and mounting fittings for Potterton flue runs on trade jobs.",
+                "price": "From £27",
+                "handle": "potterton-flue-accessory-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/potterton.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "pyronix": {
+        "blurb": "Icomply installs and maintains Pyronix intruder alarms — including Enforcer and PCX ranges — for homes, shops and commercial sites across the North West. Systems are designed to PD 6662 / BS EN 50131 with wireless or wired detection, app connectivity and engineer certification on completion. Trade Pyronix PIRs, keyfobs, contacts and panel expansions are available from our Stockport shop for reactive repairs and upgrade work.",
+        "seo_desc": "Pyronix alarm install, service & PD 6662 certs by Icomply. Trade Enforcer PIRs & kits — Stockport, Manchester & NW.",
+        "seo_keywords": "Pyronix, Pyronix Enforcer, Pyronix PCX, Pyronix alarms, Pyronix installation, Pyronix service, Pyronix PIR, Pyronix trade, Pyronix North West, Pyronix Manchester, Pyronix Stockport, intruder alarms",
+        "products": [
+            {
+                "id": "pyronix-enforcer-expansion-kit",
+                "title": "Pyronix Enforcer Expansion & Keypad Kit",
+                "blurb": "Zone expanders, keypads and modules for Pyronix Enforcer and PCX panel upgrades.",
+                "price": "From £61",
+                "handle": "pyronix-enforcer-expansion-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/pyronix.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "pyronix-pir-contact-pack",
+                "title": "Pyronix PIR & Contact Pack",
+                "blurb": "Trade sensors, contacts and keyfobs for Pyronix wired and wireless installs.",
+                "price": "From £48",
+                "handle": "pyronix-pir-contact-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/pyronix.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "quantec": {
+        "blurb": "Icomply designs, installs and services Quantec nurse call systems for care homes, clinics and supported living across Stockport, Manchester and the wider North West. We commission call points, overdoor lights and staff indicators to HTM 08-03 guidance, then provide planned maintenance, pear-lead replacements and certification-ready records. Trade Quantec call-point packs, batteries and panel spares are stocked at our North West trade shop for care operators, landlords and contractors.",
+        "seo_desc": "Quantec nurse call install, service & HTM-aligned certs by Icomply. Trade call points — Stockport, Manchester & NW.",
+        "seo_keywords": "Quantec, Quantec nurse call, Quantec installation, Quantec service, Quantec maintenance, Quantec call points, Quantec trade, Quantec North West, Quantec Manchester, Quantec Stockport, nurse call systems, HTM 08-03",
+        "products": [
+            {
+                "id": "quantec-call-point-pack",
+                "title": "Quantec Call Point & Pear Lead Pack",
+                "blurb": "Replacement call points and pear leads for Quantec nurse call bedrooms and wet areas.",
+                "price": "From £44",
+                "handle": "quantec-call-point-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/quantec.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "quantec-panel-battery-kit",
+                "title": "Quantec Panel Battery Kit",
+                "blurb": "Backup battery kits for Quantec nurse call panels on planned maintenance rounds.",
+                "price": "From £37",
+                "handle": "quantec-panel-battery-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/quantec.jpg",
+                "badge": ""
+            }
+        ]
+    }
+}

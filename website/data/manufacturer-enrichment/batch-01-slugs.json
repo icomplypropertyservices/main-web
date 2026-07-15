@@ -1,0 +1,74 @@
+[
+    {
+        "slug": "2n",
+        "name": "2N",
+        "services": [
+            "door-entry"
+        ]
+    },
+    {
+        "slug": "abb",
+        "name": "ABB",
+        "services": [
+            "electrical",
+            "emergency-lighting"
+        ]
+    },
+    {
+        "slug": "ackermann",
+        "name": "Ackermann",
+        "services": [
+            "nurse-call"
+        ]
+    },
+    {
+        "slug": "advanced-electronics",
+        "name": "Advanced Electronics",
+        "services": [
+            "fire-alarms"
+        ]
+    },
+    {
+        "slug": "aid-call",
+        "name": "Aid Call",
+        "services": [
+            "nurse-call"
+        ]
+    },
+    {
+        "slug": "aiphone",
+        "name": "Aiphone",
+        "services": [
+            "door-entry",
+            "intercoms"
+        ]
+    },
+    {
+        "slug": "ajax-systems",
+        "name": "Ajax Systems",
+        "services": [
+            "intruder-alarm"
+        ]
+    },
+    {
+        "slug": "akuvox",
+        "name": "Akuvox",
+        "services": [
+            "intercoms"
+        ]
+    },
+    {
+        "slug": "algo",
+        "name": "Algo",
+        "services": [
+            "intercoms"
+        ]
+    },
+    {
+        "slug": "allegion",
+        "name": "Allegion",
+        "services": [
+            "access-control"
+        ]
+    }
+]

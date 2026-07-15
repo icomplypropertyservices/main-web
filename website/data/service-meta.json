@@ -1,0 +1,57 @@
+{
+  "electrical": {
+    "blurb": "EICR, rewires, consumer units, EV chargers, PAT and commercial electrical installs to BS 7671.",
+    "short": "EICR, rewires, EV chargers, PAT & commercial installs",
+    "standards": "BS 7671 (18th Edition) · EICR · Part P · EV charger regs"
+  },
+  "fire-alarms": {
+    "blurb": "BS 5839 design, install, service and certification for addressable, conventional and wireless systems.",
+    "short": "BS 5839 design, install, service & certification",
+    "standards": "BS 5839-1 · BS 5839-6 · BS EN 54 · Fire Safety Order"
+  },
+  "emergency-lighting": {
+    "blurb": "BS 5266 testing, upgrades, LED conversions and monthly/annual certification.",
+    "short": "BS 5266 testing, upgrades & LED conversions",
+    "standards": "BS 5266 · BS EN 1838 · monthly & annual tests"
+  },
+  "aov-air-handling": {
+    "blurb": "Smoke vents, AOV panels, AHU controls and smoke-control system maintenance.",
+    "short": "Smoke vents, AOV panels & AHU controls",
+    "standards": "BS 9991 · EN 12101 · smoke control guidance"
+  },
+  "nurse-call": {
+    "blurb": "Care home and hospital nurse call design, install, upgrades and planned maintenance.",
+    "short": "Care home & hospital nurse call systems",
+    "standards": "HTM 08-03 · care home & hospital specifications"
+  },
+  "gas-systems": {
+    "blurb": "CP12 / CP44 landlord certificates, boilers, commercial gas and safety checks.",
+    "short": "CP12/CP44 landlord certs, boilers & commercial gas",
+    "standards": "Gas Safe · CP12 / CP44 · manufacturer servicing"
+  },
+  "intruder-alarm": {
+    "blurb": "PD 6662 / BS EN 50131 wired and wireless intruder systems with monitoring options.",
+    "short": "Wired & wireless intruder systems",
+    "standards": "PD 6662 · BS EN 50131 · NSI / SSAIB style installs"
+  },
+  "cctv": {
+    "blurb": "IP and HD CCTV design, install, remote viewing and NVR/DVR recording.",
+    "short": "IP / HD CCTV design, install & monitoring setup",
+    "standards": "BS EN 62676 · GDPR / DPA camera siting"
+  },
+  "access-control": {
+    "blurb": "Paxton, HID, Salto door access, credentials and fire-override integration.",
+    "short": "Paxton, HID, Salto door access",
+    "standards": "BS EN 50133 · EN 60839 · fire-release integration"
+  },
+  "door-entry": {
+    "blurb": "Video and audio door entry for flats, multi-tenant and commercial sites.",
+    "short": "Video & audio door entry for flats & sites",
+    "standards": "BS EN 60839 · multi-tenant residential standards"
+  },
+  "intercoms": {
+    "blurb": "Multi-tenant and commercial intercom systems with master/substation setups.",
+    "short": "Multi-tenant & commercial intercom systems",
+    "standards": "Commercial intercom & master-station best practice"
+  }
+}

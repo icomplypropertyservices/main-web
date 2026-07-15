@@ -1,0 +1,37 @@
+<?php
+/**
+ * Copy to config.local.php and adjust for your environment.
+ * config.local.php is optional; defaults live in config.php.
+ */
+return [
+    'SITE_URL' => 'http://localhost/icomply',
+    'EMAIL' => 'info@icomplypropertyservices.co.uk',
+    // Optional: where contact leads are emailed (empty = use EMAIL)
+    'LEADS_NOTIFY_EMAIL' => '',
+    'ADMIN_USER' => 'jackscott',
+    'ADMIN_PASS' => 'change-me',
+    // Leave empty to disable tracking scripts
+    'GA_MEASUREMENT_ID' => '',
+    'AW_CONVERSION_ID' => '',
+
+    // Shopify Buy Button / Storefront
+    // Easiest: Admin → Shopify setup (http://localhost/icomply/admin/shopify.php)
+    // Or paste here:
+    // 1. Shopify Admin → Settings → Apps → Develop apps → Storefront API
+    // 2. Token scopes: unauthenticated_read_product_listings (+ products)
+    // 3. Map numeric product IDs in admin or data/shopify-products.json
+    'SHOPIFY_DOMAIN' => 'your-store.myshopify.com',
+    'SHOPIFY_STORE_URL' => 'https://your-store.myshopify.com',
+    'SHOPIFY_STOREFRONT_TOKEN' => '',
+    'SHOPIFY_COLLECTION_ID' => '',
+    'SHOPIFY_ENABLED' => true,
+
+    // Social profiles (empty string hides that icon; WhatsApp always shown)
+    'SOCIAL_FACEBOOK' => 'https://www.facebook.com/your-page',
+    'SOCIAL_INSTAGRAM' => 'https://www.instagram.com/your-handle',
+    'SOCIAL_LINKEDIN' => 'https://www.linkedin.com/company/your-company',
+    'SOCIAL_TWITTER' => 'https://twitter.com/your-handle',
+    'SOCIAL_YOUTUBE' => '',
+    'SOCIAL_TIKTOK' => '',
+    'SOCIAL_GOOGLE' => 'https://g.page/your-business',
+];

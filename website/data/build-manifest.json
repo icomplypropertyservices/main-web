@@ -1,0 +1,43 @@
+{
+    "dirty": false,
+    "dirty_reason": null,
+    "built_at": "2026-07-12T13:22:16+02:00",
+    "last_log": "generate-site.php: exit 0; generate-keyword-pages.php: exit 0; generate-area-hubs.php: exit 0; generate-service-hubs.php: exit 0; generate-sitemap.php: exit 0",
+    "last_jobs": {
+        "combo": {
+            "ok": true,
+            "exit": 0,
+            "out": "[access-control] Access Control \u2192 168 stubs | template: services/access-control.php |   [door-entry] Door Entry Systems \u2192 168 stubs | template: services/door-entry.php |   [intercoms] Intercoms \u2192 168 stubs | template: services/intercoms.php |  | Generated 1848 service\u00d7area stubs."
+        },
+        "keywords": {
+            "ok": true,
+            "exit": 0,
+            "out": "intercoms: 26 |   intruder-alarm: 17 |   nurse-call: 37 |  | Generated 306 keyword stubs + index."
+        },
+        "areas": {
+            "ok": true,
+            "exit": 0,
+            "out": "Area hubs generated: 168"
+        },
+        "services": {
+            "ok": true,
+            "exit": 0,
+            "out": "services/access-control.php |   services/door-entry.php |   services/intercoms.php |   services/index.php | Service hubs: 11 + index"
+        },
+        "sitemap": {
+            "ok": true,
+            "exit": 0,
+            "out": "Sitemap URLs: 2337 | Wrote sitemap.xml"
+        }
+    },
+    "snapshot": {
+        "combo": 1848,
+        "keywords": 306,
+        "area_hubs": 168,
+        "service_hubs": 11,
+        "sitemap_urls": 2337,
+        "total_php_pages": 2335
+    },
+    "updated_at": "2026-07-12T13:22:16+02:00",
+    "dirty_at": "2026-07-12T13:22:15+02:00"
+}

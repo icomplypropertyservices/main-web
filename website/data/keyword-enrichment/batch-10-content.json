@@ -1,0 +1,682 @@
+{
+  "addressable-fire-alarm-system": {
+    "intro": "An addressable fire alarm system gives each detector, call point and interface a unique address, so the panel pinpoints the exact device in alarm rather than a broad zone. Icomply design, install and commission addressable fire systems to BS 5839 for offices, factories, care premises and multi-tenant buildings across Greater Manchester and the North West. From cause-and-effect programming to battery sizing and zone chart handover, our Stockport engineers deliver clear fixed-price quotes and certification-ready paperwork.",
+    "body": "Addressable loops suit larger or higher-risk buildings where speed of location reduces false evacuation and downtime. We survey existing conventional systems for upgrade paths, integrate sounders, interfaces and networked panels where needed, and train duty holders on silence, reset and weekly testing. Planned maintenance, fault finding and logbook support keep your addressable estate audit-ready for insurers and enforcing authorities.",
+    "meta_desc": "Addressable fire alarm system design, install & service to BS 5839. Stockport, Manchester & North West. Fixed quotes from Icomply.",
+    "focus_points": [
+      "BS 5839 survey, design and device addressing strategy",
+      "Loop install, programming and cause-and-effect commissioning",
+      "Zone charts, logbooks and service certificates",
+      "Upgrades from conventional systems with minimal disruption"
+    ],
+    "faq": [
+      ["What is an addressable fire alarm system?", "Each device has a unique address so the control panel shows the precise detector or call point in alarm or fault, improving response and reducing search time compared with conventional zones."],
+      ["Do I need addressable instead of conventional?", "It depends on building size, risk and fire strategy. We assess occupancy, travel distances and future expansion so you only pay for the category and technology that match the site."],
+      ["Can Icomply maintain my existing addressable panel?", "Yes. We service common commercial platforms, replace devices, clear faults and provide BS 5839-aligned inspection certificates across the North West."]
+    ],
+    "seo_keywords": "addressable fire alarm system, addressable fire alarm installation, BS 5839 addressable, fire alarm North West, addressable fire alarm Manchester, addressable fire alarm Stockport, loop system install, Icomply fire alarms"
+  },
+  "conventional-fire-alarm-system": {
+    "intro": "Conventional fire alarm systems group detectors and call points into hard-wired zones, offering a proven, cost-effective solution for smaller commercial units, shops and simple layouts. Icomply specify, install and service conventional panels to BS 5839 from our Stockport base, covering Greater Manchester, Cheshire, Lancashire and Merseyside. You receive a transparent scope, fixed pricing after survey and full commissioning documentation for landlords and facilities managers.",
+    "body": "We match zone layouts to escape routes and compartmentation, fit MCP and detector coverage to the agreed category, and leave clear zone charts at the panel. Where growth or multi-building complexity is likely, we discuss addressable options honestly so you are not locked into the wrong technology. Ongoing servicing, battery replacement and weekly-test support keep conventional systems reliable and inspection-ready.",
+    "meta_desc": "Conventional fire alarm system install & service to BS 5839. North West coverage from Stockport. Fixed-price quotes — Icomply.",
+    "focus_points": [
+      "Zone design aligned to your fire risk assessment",
+      "Panel, detector and call-point installation",
+      "Commissioning, certificates and zone charts",
+      "Servicing and reactive fault attendance"
+    ],
+    "faq": [
+      ["When is a conventional fire alarm suitable?", "Smaller premises with simple layouts and limited expansion often suit conventional zones. We confirm suitability against BS 5839 and your fire risk assessment."],
+      ["How many zones will I need?", "Zone count follows building size, floors and compartmentation. After survey we propose a layout that balances cost with clear location of alarms."],
+      ["Can you upgrade conventional to addressable later?", "Often yes. We plan cable routes and panel locations with future upgrades in mind where practical, and can stage works to control capital spend."]
+    ],
+    "seo_keywords": "conventional fire alarm system, conventional fire alarm installation, BS 5839 conventional, fire alarm zones, conventional fire alarm Manchester, conventional fire alarm Stockport, North West fire alarms, Icomply"
+  },
+  "fire-alarm-panel-service": {
+    "intro": "Fire alarm panel service keeps control equipment, batteries, power supplies and indications working when you need them most. Icomply engineers inspect, clean, test and certificate panels under BS 5839 planned maintenance across Stockport, Manchester and the wider North West. Whether you run Advanced, Kentec, C-TEC, Hochiki-compatible or mixed estates, we provide fixed-price service visits, clear defect lists and logbook entries your insurer and auditor will recognise.",
+    "body": "A typical panel service covers standby batteries, charger voltage, indicators, sounders, fault simulation and review of recent history. We replace ageing batteries before failure, rectify earth faults and open circuits where scope allows, and escalate major remediations with a written quote. Multi-site contracts and reactive call-outs are available for FM teams managing several buildings.",
+    "meta_desc": "Fire alarm panel service & BS 5839 maintenance. Batteries, faults & certificates. Stockport & North West — Icomply.",
+    "focus_points": [
+      "Scheduled panel inspection and battery checks",
+      "Fault diagnosis and remedial quotes",
+      "Service certificates and logbook updates",
+      "Multi-site and brand-aware engineer support"
+    ],
+    "faq": [
+      ["How often should a fire alarm panel be serviced?", "BS 5839 typically expects competent person inspection at least every six months, with additional weekly user tests. We tailor visit frequency to your risk assessment and insurer requirements."],
+      ["What brands do you service?", "We regularly work on Advanced, Kentec, C-TEC, Morley, Hochiki and Apollo device estates among others. Tell us the panel model when you enquire."],
+      ["Do you provide same-week panel call-outs?", "Where capacity and access allow we aim for same-week attendance, prioritising systems in fault or isolation across our North West coverage area."]
+    ],
+    "seo_keywords": "fire alarm panel service, fire alarm panel maintenance, BS 5839 servicing, fire panel batteries, fire alarm service Manchester, fire alarm service Stockport, North West fire engineers, Icomply"
+  },
+  "fire-detection-system-installation": {
+    "intro": "Professional fire detection system installation protects people and property by combining detectors, call points, sounders and control equipment into a coherent BS 5839 design. Icomply survey, design, install and commission detection systems for commercial, industrial and residential blocks throughout Greater Manchester and the North West. From first cable pull to cause-and-effect testing, our Stockport team works to fixed prices after agreement and leaves a full commissioning pack.",
+    "body": "We select optical, heat, multi-sensor or aspirating devices to suit environments such as kitchens, workshops and clean spaces, and coordinate interface modules for plant shutdown or access control release. Installation includes containment, labelling, zone charts and user training so duty holders can complete weekly tests confidently. Post-install maintenance contracts protect your investment and compliance position.",
+    "meta_desc": "Fire detection system installation to BS 5839. Design, install & commission across Manchester & the North West — Icomply.",
+    "focus_points": [
+      "Risk-based detection design and category selection",
+      "Full install, cabling and device positioning",
+      "Commissioning, training and documentation",
+      "Optional planned maintenance after handover"
+    ],
+    "faq": [
+      ["What standards apply to fire detection installation?", "Design and install work is aligned to BS 5839 for fire detection and fire alarm systems in non-domestic premises, plus your fire risk assessment recommendations."],
+      ["How long does installation take?", "Small systems may complete in days; larger multi-floor sites need phased programmes. We issue a programme after survey based on access and working hours."],
+      ["Will installation disrupt my business?", "We plan noisy and power-down works outside peak hours where possible and isolate only the circuits we need, keeping site safety under control throughout."]
+    ],
+    "seo_keywords": "fire detection system installation, fire detection install, BS 5839 installation, commercial fire detection, fire detection Manchester, fire detection Stockport, North West fire installers, Icomply"
+  },
+  "smoke-detector-installation-commercial": {
+    "intro": "Commercial smoke detector installation must match occupancy, ceiling height, airflow and false-alarm risk—not just place devices at random. Icomply specify and fit optical, multi-sensor and specialist detectors for offices, warehouses, retail and care environments across the North West. Working to BS 5839, our engineers from Stockport survey coverage gaps, upgrade ageing heads and integrate new detectors onto addressable or conventional panels with clear certification.",
+    "body": "We avoid common pitfalls such as detectors too close to kitchens, bathrooms or HVAC outlets that drive unwanted alarms. Heat or multi-criteria devices are recommended where smoke detectors are unsuitable. After install we test sensitivity paths, update device text and leave the logbook current so your responsible person can evidence compliance.",
+    "meta_desc": "Commercial smoke detector installation to BS 5839. Offices, retail & industrial — Manchester, Stockport & North West. Icomply.",
+    "focus_points": [
+      "Coverage survey against BS 5839 spacing rules",
+      "Optical, multi-sensor and heat device selection",
+      "Panel integration, labelling and testing",
+      "False-alarm reduction advice for busy sites"
+    ],
+    "faq": [
+      ["How many smoke detectors does my commercial building need?", "Quantity and type follow BS 5839 category, room geometry and fire strategy. We calculate coverage after measuring the premises rather than guessing from floor area alone."],
+      ["Can you replace detectors without changing the panel?", "Often yes, provided the protocol and bases match. We check compatibility before ordering devices so you avoid wasted stock."],
+      ["Do you install multi-sensor detectors?", "Yes. Multi-sensor heads are widely used in commercial spaces to balance early detection with fewer nuisance alarms."]
+    ],
+    "seo_keywords": "smoke detector installation commercial, commercial smoke detectors, BS 5839 detectors, office smoke detector install, smoke detector Manchester, smoke detector Stockport, North West fire detection, Icomply"
+  },
+  "fire-alarm-call-point-installation": {
+    "intro": "Manual call points let staff raise the alarm early when fire is seen before automatic detection. Icomply install, replace and reposition fire alarm call points to BS 5839 guidance—typically near exits and storey exits—across commercial and care premises in Greater Manchester and the North West. From Stockport we supply compatible MCPs, glass or resettable elements, protective covers where justified, and full testing into your panel.",
+    "body": "Poorly sited or damaged call points undermine evacuation strategy and fail inspections. We survey travel routes, fit surface or flush units, label correctly and update zone charts. For high false-alarm risk areas we discuss hinged covers only where risk assessment supports them. Service contracts include call-point operation checks on each visit.",
+    "meta_desc": "Fire alarm call point installation & replacement to BS 5839. North West engineers from Stockport — fixed quotes. Icomply.",
+    "focus_points": [
+      "Exit-route MCP positioning to BS 5839",
+      "New install, replacement and wiring repairs",
+      "Resettable elements and cover options where appropriate",
+      "Panel test, labels and logbook update"
+    ],
+    "faq": [
+      ["Where should fire alarm call points be fitted?", "Generally on escape routes at exits and storey exits, at heights and spacing consistent with BS 5839 and your fire risk assessment."],
+      ["Glass or resettable call points?", "Both are common. Resettable units reduce glass-spares issues; we match the type already on site unless you prefer a site-wide standard."],
+      ["Can you add call points to an existing system?", "Yes. We confirm spare capacity on conventional zones or addressable loops and quote materials and labour as a fixed package after survey."]
+    ],
+    "seo_keywords": "fire alarm call point installation, MCP installation, manual call point BS 5839, call point replacement, fire call point Manchester, fire call point Stockport, North West fire alarms, Icomply"
+  },
+  "care-home-fire-alarm": {
+    "intro": "Care home fire alarms must balance early warning with realistic management of vulnerable residents, staff response and false-alarm control. Icomply design, install and maintain care home fire alarm systems to BS 5839 and your fire risk assessment, supporting residential and nursing care operators across the North West. Based in Stockport, we understand progressive horizontal evacuation strategies, staff alarm variants and the documentation CQC and insurers expect.",
+    "body": "We work with care managers on detector choice in bedrooms and kitchens, call-point protection, cause-and-effect for doors and plant, and clear weekly-test routines that night staff can follow. Installation and upgrades are phased to limit resident disruption. Planned maintenance, 24/7 fault support options and multi-home packages help group providers keep every site inspection-ready.",
+    "meta_desc": "Care home fire alarm design, install & BS 5839 maintenance. North West care providers — Stockport-based Icomply.",
+    "focus_points": [
+      "Care-specific detection and staff-alarm design",
+      "Phased install with minimal resident disruption",
+      "Logbooks, certificates and audit-ready records",
+      "Group / multi-home maintenance contracts"
+    ],
+    "faq": [
+      ["What fire alarm category do care homes usually need?", "Many care homes require higher coverage categories following risk assessment—often L1 or L2 for life protection. We confirm category against your FRA and building layout."],
+      ["Can you work around residents during upgrades?", "Yes. We plan room-by-room or wing-by-wing works, coordinate with managers, and keep means of escape protected throughout."],
+      ["Do you train care staff on weekly tests?", "Handover includes practical weekly-test guidance and logbook completion so the responsible person can evidence routine checks."]
+    ],
+    "seo_keywords": "care home fire alarm, care home fire alarm system, nursing home fire detection, BS 5839 care home, care home fire alarm Manchester, care home fire alarm Stockport, North West care fire safety, Icomply"
+  },
+  "office-fire-alarm-installation": {
+    "intro": "Office fire alarm installation protects staff, visitors and business continuity in open-plan floors, meeting suites and multi-tenant blocks. Icomply design and install office systems to BS 5839, from compact conventional kits to networked addressable panels, across Manchester, Stockport and the wider North West. Fixed-price proposals after survey cover detection, MCPs, sounders/VADs, interfaces and commissioning paperwork for landlords and occupiers.",
+    "body": "Modern offices often need multi-sensor detection, visual alarm devices for accessibility, and interfaces to access control or HVAC. We coordinate out-of-hours works for fit-outs and refurbishments, label devices clearly for facilities teams, and offer ongoing servicing so your office stays compliant after practical completion.",
+    "meta_desc": "Office fire alarm installation to BS 5839. Design, fit & commission across Greater Manchester & North West — Icomply.",
+    "focus_points": [
+      "Office category design for open-plan and cellular space",
+      "Sounder/VAD coverage for inclusive warning",
+      "Landlord and multi-tenant integration options",
+      "Commissioning packs and planned maintenance"
+    ],
+    "faq": [
+      ["Do multi-tenant offices need a single system?", "Strategies vary: landlord base-build with tenant interfaces is common. We design so each party understands responsibilities and isolation rules."],
+      ["Can you install during a fit-out?", "Yes. We programme with principal contractors, protect finished areas and complete cause-and-effect before handover."],
+      ["Are visual alarm devices required?", "Where people may not hear sounders—or for accessibility—VADs may be needed. We assess against your FRA and relevant guidance."]
+    ],
+    "seo_keywords": "office fire alarm installation, office fire alarm system, commercial office fire detection, BS 5839 office, fire alarm Manchester offices, Stockport office fire alarm, North West, Icomply"
+  },
+  "factory-fire-alarm-system": {
+    "intro": "Factory fire alarm systems face harsh environments: dust, heat, high ceilings, process plant and shift working. Icomply design, install and maintain industrial fire detection to BS 5839 for manufacturing and warehouse-linked production sites across the North West. From Stockport our engineers specify robust devices—heat, beam, aspirating or multi-sensor—interface to plant shutdowns and deliver commissioning that production managers can trust.",
+    "body": "We survey mezzanines, racking and process lines for detector suitability, plan cable routes away from damage, and stage testing so production stoppages stay controlled. Cause-and-effect can include roller shutter release, extract isolation or process interlocks where the fire strategy requires it. Service contracts include industrial call-out options and spare device holding for critical lines.",
+    "meta_desc": "Factory fire alarm system design & install for industrial sites. BS 5839, North West coverage — Icomply Stockport.",
+    "focus_points": [
+      "Industrial detection selection for heat, dust and height",
+      "Plant interface and cause-and-effect programming",
+      "Phased install around production schedules",
+      "Robust servicing and reactive engineering support"
+    ],
+    "faq": [
+      ["Which detectors suit factory floors?", "It depends on the process. Heat, beam or aspirating systems often outperform standard optical smoke in dusty or high-ceiling spaces. We recommend after site survey."],
+      ["Can the fire system shut down machinery?", "Interfaces can signal plant or BMS for controlled shutdown where specified in the fire strategy. We coordinate with your electrical and process teams."],
+      ["Do you cover multi-building industrial estates?", "Yes. We design networked or zoned solutions and offer multi-building maintenance under one agreement."]
+    ],
+    "seo_keywords": "factory fire alarm system, industrial fire alarm installation, factory fire detection, BS 5839 industrial, factory fire alarm Manchester, factory fire alarm Stockport, North West industrial fire, Icomply"
+  },
+  "fire-alarm-zone-chart": {
+    "intro": "A fire alarm zone chart is the visual map that tells responders which area a zone or device relates to—essential at the panel for firefighters and duty holders. Icomply produce, update and install accurate zone charts after new installs, alterations or panel replacements across Greater Manchester and the North West. Our Stockport team aligns chart graphics with actual zone wiring and address text so inspections no longer fail on missing or out-of-date drawings.",
+    "body": "We survey the building, confirm zone boundaries, create clear laminated or framed charts and fix them adjacent to the control panel as expected under BS 5839 practice. When you add walls, tenants or detectors we revise the chart as part of the variation works. Combined with logbook and certificate packs, correct zone charts complete a professional compliance picture.",
+    "meta_desc": "Fire alarm zone chart creation & updates to BS 5839 practice. Manchester, Stockport & North West — Icomply.",
+    "focus_points": [
+      "Accurate zone boundary survey",
+      "Clear panel-side chart design and print",
+      "Updates after alterations or upgrades",
+      "Part of full BS 5839 documentation packs"
+    ],
+    "faq": [
+      ["Is a zone chart a legal requirement?", "BS 5839 expects suitable zone information at the control equipment so the origin of alarms can be identified quickly. Missing or wrong charts are a common inspection defect."],
+      ["Can you update charts without rewiring?", "Yes. If zoning is correct we redraw and replace the chart only. If zoning is wrong we quote remedial works separately."],
+      ["Do addressable systems still need charts?", "Yes. Device text helps, but a clear plan at the panel remains best practice for fire crews and unfamiliar staff."]
+    ],
+    "seo_keywords": "fire alarm zone chart, zone chart fire alarm, BS 5839 zone plan, fire panel zone diagram, zone chart Manchester, zone chart Stockport, fire alarm documentation, Icomply"
+  },
+  "fire-alarm-fault-finding": {
+    "intro": "Fire alarm fault finding restores systems stuck on earth fault, open circuit, battery trouble or intermittent device errors. Icomply diagnose and clear faults on conventional and addressable panels for commercial clients across the North West, working from our Stockport base with manufacturer-aware methods. You get a clear explanation of the cause, fixed-price remedials where possible and a return-to-service test with logbook entry.",
+    "body": "We start at the panel event log, isolate loops or zones methodically, and use insulation and device tools to pinpoint damaged cable, water ingress, contaminated heads or failing power supplies. Where full repair needs parts lead time, we agree temporary measures only where safe and permitted. Reactive attendance is prioritised for sites with active faults or isolated detection.",
+    "meta_desc": "Fire alarm fault finding & repairs. Earth faults, loop issues & panel errors — North West engineers. Icomply Stockport.",
+    "focus_points": [
+      "Structured diagnosis on conventional and addressable systems",
+      "Cable, device and power supply repairs",
+      "Clear defect reports and fixed remedial quotes",
+      "Return-to-service testing and certificates"
+    ],
+    "faq": [
+      ["Why is my fire panel showing an earth fault?", "Common causes include damaged cable, moisture in devices or junctions, and DIY cable damage. We locate the circuit and repair rather than silencing the problem."],
+      ["How fast can you attend a fault?", "We aim for same-week or faster where capacity allows, prioritising systems that are impaired. Share panel make, fault text and photos when you call."],
+      ["Do you charge a call-out fee?", "Attendance and labour are quoted transparently. Simple fixes may be completed on first visit; larger cable repairs are priced before works proceed."]
+    ],
+    "seo_keywords": "fire alarm fault finding, fire alarm repair, fire panel earth fault, loop fault diagnosis, fire alarm engineer Manchester, fire alarm engineer Stockport, North West fire fault, Icomply"
+  },
+  "l1-fire-alarm-system": {
+    "intro": "An L1 fire alarm system provides the highest automatic detection coverage category under BS 5839 for life protection in non-domestic buildings—detection throughout escape routes and almost all rooms and areas. Icomply design, install and maintain L1 systems for high-risk or complex premises across Greater Manchester and the North West. From Stockport we deliver category justification, device schedules, commissioning and ongoing service so your fire strategy is evidence-based, not guesswork.",
+    "body": "L1 is often specified for care, large public buildings or where the fire risk assessment demands maximum early warning. We balance coverage with false-alarm management using appropriate multi-sensor technology and zoning. Installation programmes, user training and six-monthly servicing keep L1 estates performing as designed.",
+    "meta_desc": "L1 fire alarm system design, install & service to BS 5839. North West coverage from Stockport — Icomply.",
+    "focus_points": [
+      "BS 5839 L1 category design and justification",
+      "Comprehensive detection and alarm coverage",
+      "Commissioning and cause-and-effect testing",
+      "Planned maintenance for high-integrity systems"
+    ],
+    "faq": [
+      ["What does L1 mean?", "L1 is a life-protection category with automatic detection in almost all areas plus escape routes, offering the most complete room coverage under BS 5839 Part 1."],
+      ["Is L1 always required?", "No. Category follows risk assessment and building use. We never oversell L1 where L2 or L3 meets the assessed need."],
+      ["Can you upgrade from L3 to L1?", "Yes, by extending detection into additional rooms and reviewing sounder coverage, power supplies and panel capacity as part of a staged upgrade."]
+    ],
+    "seo_keywords": "L1 fire alarm system, BS 5839 L1, L1 fire detection, category L1 install, L1 fire alarm Manchester, L1 fire alarm Stockport, North West, Icomply"
+  },
+  "l2-fire-alarm-system": {
+    "intro": "An L2 fire alarm system protects life with detection in escape routes plus defined high-risk rooms—such as plant rooms, kitchens or storage—identified by the fire risk assessment. Icomply specify and install L2 systems to BS 5839 for commercial and residential blocks across the North West. Our Stockport engineers survey risk rooms carefully so L2 delivers targeted coverage without unnecessary devices in low-risk spaces.",
+    "body": "We document which rooms are included and why, programme the panel accordingly and leave charts that match the agreed category. L2 is a frequent choice where L1 would be excessive but L3 would leave critical rooms unprotected. Maintenance visits verify detectors in both escape routes and risk rooms remain clean and responsive.",
+    "meta_desc": "L2 fire alarm system install & service to BS 5839. Escape routes plus risk rooms — Manchester & North West. Icomply.",
+    "focus_points": [
+      "Risk-room identification with your FRA",
+      "Escape route and risk-area detection design",
+      "Install, commission and certificate",
+      "Category-aware planned maintenance"
+    ],
+    "faq": [
+      ["How does L2 differ from L3?", "L3 covers escape routes and rooms opening onto them; L2 adds selected high-risk rooms beyond that. Your fire risk assessment drives which rooms join the L2 set."],
+      ["Who decides the risk rooms?", "The responsible person and fire risk assessor lead; we implement detection that matches their documented strategy."],
+      ["Can L2 be addressable or conventional?", "Either technology can achieve L2 if coverage and performance meet BS 5839. We recommend based on size and future flexibility."]
+    ],
+    "seo_keywords": "L2 fire alarm system, BS 5839 L2, L2 fire detection, category L2 installation, L2 fire alarm Manchester, L2 fire alarm Stockport, North West, Icomply"
+  },
+  "l3-fire-alarm-system": {
+    "intro": "An L3 fire alarm system focuses life protection on escape routes and rooms that open onto those routes, giving early warning to support evacuation. Icomply design, install and service L3 systems to BS 5839 for offices, light commercial and many multi-occupancy buildings across Greater Manchester and the North West. From Stockport we provide honest category advice—L3 only where it fits the fire risk assessment—and fixed-price delivery with full documentation.",
+    "body": "Typical L3 scopes include corridor and stair detection, rooms opening onto escapes, manual call points and adequate warning devices. We check door sets, voids and mezzanines that affect route protection, and integrate landlord systems where tenants share means of escape. Aftercare includes servicing and support for weekly tests by the duty holder.",
+    "meta_desc": "L3 fire alarm system design & installation to BS 5839. North West offices & commercial sites — Icomply Stockport.",
+    "focus_points": [
+      "Escape-route focused L3 design",
+      "Detector and MCP layout for corridors and adjoining rooms",
+      "Commissioning packs and zone charts",
+      "Service contracts and remedial support"
+    ],
+    "faq": [
+      ["Is L3 enough for my building?", "Many lower-risk commercial buildings use L3 successfully, but higher-risk uses may need L2 or L1. We align to your fire risk assessment rather than a one-size default."],
+      ["Does L3 include the whole floor plate?", "Not necessarily. Rooms that do not open onto escape routes may be omitted unless the FRA requires otherwise."],
+      ["Can you certificate an existing L3 system?", "We inspect and service existing systems, identify gaps against the claimed category, and quote upgrades if coverage falls short."]
+    ],
+    "seo_keywords": "L3 fire alarm system, BS 5839 L3, L3 fire detection, category L3 install, L3 fire alarm Manchester, L3 fire alarm Stockport, North West, Icomply"
+  },
+  "category-ld2-fire-alarm": {
+    "intro": "Category LD2 fire alarms for dwellings protect escape routes and rooms or areas where the fire risk is judged high—such as kitchens or living rooms—under BS 5839-6 guidance for domestic premises. Icomply install and maintain LD2 systems for HMOs, flats and residential landlords across the North West. Our Stockport team selects Grade A, C or D equipment to match the property type, with clear landlord documentation and testing guidance for tenants.",
+    "body": "LD2 is commonly specified where a simple LD3 hallway-only approach is not enough. We survey storeys, loft conversions and open-plan layouts that change escape risk, fit interlinked detection where required, and commission so alarms are loud enough in bedrooms. Landlord packages cover multi-property portfolios with consistent standards and service records.",
+    "meta_desc": "Category LD2 fire alarm install for dwellings & HMOs to BS 5839-6. North West landlords — Icomply Stockport.",
+    "focus_points": [
+      "BS 5839-6 LD2 design for houses, flats and HMOs",
+      "Grade selection (A/C/D) matched to risk",
+      "Interlinked detection and landlord certification",
+      "Portfolio install and maintenance options"
+    ],
+    "faq": [
+      ["What is the difference between LD2 and LD3?", "LD3 covers escape routes only; LD2 adds high-risk rooms. Local housing standards and your risk assessment determine which is appropriate."],
+      ["Do HMOs need LD2?", "Many larger or higher-risk HMOs require enhanced coverage. We check against licensing conditions and BS 5839-6 recommendations."],
+      ["Are battery-only alarms acceptable?", "Grade and power supply depend on property type and risk. We specify mains-powered with backup where the standard and licensing expect it."]
+    ],
+    "seo_keywords": "category LD2 fire alarm, LD2 fire alarm, BS 5839-6 LD2, HMO fire alarm LD2, LD2 install Manchester, LD2 Stockport, landlord fire detection, Icomply"
+  },
+  "category-ld3-fire-alarm": {
+    "intro": "Category LD3 fire alarms provide detection along the escape route of a dwelling—typically hallways and landings—under BS 5839-6. Icomply supply, install and certificate LD3 systems for landlords, agents and homeowners across Greater Manchester and the North West. From Stockport we fit interlinked smoke alarms or Grade-appropriate systems, test sound levels and leave simple tenant guidance so weekly or routine tests actually happen.",
+    "body": "LD3 suits many lower-risk single-family homes but may be insufficient for some HMOs or complex layouts. We advise honestly if LD2 or higher is wiser. Installations include correct siting away from kitchens and bathrooms where smoke alarms nuisance-trip, and we offer multi-property programmes for letting portfolios with standardised devices for easier maintenance.",
+    "meta_desc": "Category LD3 fire alarm installation to BS 5839-6. Landlords & homes across Manchester & North West — Icomply.",
+    "focus_points": [
+      "Escape-route LD3 detection design",
+      "Interlinked smoke alarm or Grade system install",
+      "Landlord packs and test guidance",
+      "Upgrade advice where LD2 is more appropriate"
+    ],
+    "faq": [
+      ["Is LD3 the legal minimum for rented homes?", "Requirements vary by nation and property type. In England, smoke and carbon monoxide rules apply; BS 5839-6 categories guide best practice. We install to the standard your risk and licensing demand."],
+      ["Should kitchen heat alarms be included?", "Heat alarms in kitchens are often recommended even when the formal category is LD3. We include them where they reduce risk and false alarms."],
+      ["Can you service existing domestic alarms?", "Yes. We test, replace expired units and document works for landlord compliance folders."]
+    ],
+    "seo_keywords": "category LD3 fire alarm, LD3 fire alarm, BS 5839-6 LD3, landlord smoke alarms, LD3 install Manchester, LD3 Stockport, domestic fire detection, Icomply"
+  },
+  "fire-alarm-weekly-test-support": {
+    "intro": "Fire alarm weekly test support helps duty holders meet BS 5839 user responsibilities without guesswork. Icomply train staff, set up simple test routines, supply logbooks and can attend to demonstrate or audit weekly testing across multi-site estates in the North West. Based in Stockport, we turn “we think someone tests it” into a repeatable process with call-point rotation, recorded results and escalation when the system fails to sound.",
+    "body": "Weekly testing is a user duty, not a substitute for six-monthly engineer service—but it catches faults early. We provide on-site toolbox talks, laminated instruction cards at the panel, and optional remote reminders for facilities teams. Where in-house resource is thin, we can combine planned engineer visits with coaching so your team becomes self-sufficient.",
+    "meta_desc": "Fire alarm weekly test support, training & logbooks. BS 5839 user duties — North West sites. Icomply Stockport.",
+    "focus_points": [
+      "Staff training on weekly call-point tests",
+      "Logbook setup and record-keeping coaching",
+      "Multi-site routines for FM teams",
+      "Escalation process when tests fail"
+    ],
+    "faq": [
+      ["Who should do the weekly fire alarm test?", "A competent person appointed by the responsible person—often facilities or a trained staff member. We train your nominees and document the method."],
+      ["Do you replace the need for engineer service?", "No. Weekly tests are additional to periodic inspection and servicing by a competent fire alarm company."],
+      ["What if the weekly test fails?", "Stop, record the fault, and call for engineer attendance. We provide priority fault-finding for clients on support agreements."]
+    ],
+    "seo_keywords": "fire alarm weekly test, weekly fire alarm test support, BS 5839 weekly test, fire alarm logbook training, weekly test Manchester, Stockport fire alarm test, North West FM support, Icomply"
+  },
+  "fire-alarm-logbook": {
+    "intro": "A fire alarm logbook records tests, faults, isolations, engineer visits and false alarms—evidence that the system is managed under BS 5839 and the Fire Safety Order. Icomply supply, set up and maintain logbooks for commercial and care sites across the North West, and complete professional entries during every service visit. From Stockport we help you replace missing books, digitise records where preferred and close the gaps auditors keep finding.",
+    "body": "We issue site-specific logbooks at commissioning, show duty holders how to record weekly tests, and review false-alarm history on each service to target remediations. Multi-site clients can standardise formats so regional managers see consistent compliance. Logbook support pairs naturally with panel service and weekly-test training.",
+    "meta_desc": "Fire alarm logbook supply, setup & engineer entries. BS 5839 records for North West sites — Icomply.",
+    "focus_points": [
+      "Compliant logbook issue at install or service",
+      "Engineer entries for visits, faults and tests",
+      "Duty-holder training on weekly records",
+      "False-alarm history review for improvement"
+    ],
+    "faq": [
+      ["Is a paper logbook still acceptable?", "Yes, if kept up to date and available at the panel or known location. Digital systems can work if accessible to inspectors and backed up."],
+      ["What must be recorded?", "Typically dates of tests, results, faults, isolations, engineer actions, false alarms and any modifications. We set out a simple checklist for staff."],
+      ["Can you recreate records if ours are missing?", "We start a new controlled logbook and complete a thorough service inspection so you have a clean baseline going forward."]
+    ],
+    "seo_keywords": "fire alarm logbook, BS 5839 logbook, fire alarm records, fire safety log book, logbook Manchester, logbook Stockport, fire alarm compliance documentation, Icomply"
+  },
+  "multi-site-fire-alarm-maintenance": {
+    "intro": "Multi-site fire alarm maintenance gives landlords, retailers and FM providers one competent partner for scheduled service, reactive faults and consistent certification across a portfolio. Icomply deliver North West multi-site programmes from Stockport—covering Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria—with coordinated diaries, brand-aware engineers and single-throat invoicing. Fixed-scope contracts reduce surprises while keeping every panel audit-ready.",
+    "body": "We map each site’s panel type, category and access rules, then schedule six-monthly (or agreed) visits to avoid clashes with trading peaks. Online or consolidated reporting shows open defects across the estate. Reactive SLAs can prioritise trading stores or care homes. One account manager keeps variations, upgrades and capital projects aligned with the maintenance plan.",
+    "meta_desc": "Multi-site fire alarm maintenance across the North West. Portfolio BS 5839 servicing from Icomply Stockport.",
+    "focus_points": [
+      "Portfolio asset register and visit scheduling",
+      "Consistent BS 5839 inspection standards",
+      "Consolidated reporting and defect tracking",
+      "Reactive cover with agreed response targets"
+    ],
+    "faq": [
+      ["Which areas do you cover for multi-site work?", "Primarily Greater Manchester and the wider North West. National outliers can be discussed case by case."],
+      ["Can you take over mid-contract from another provider?", "Yes. We survey sites, capture panel data, close critical faults and rebuild logbooks where needed."],
+      ["Do you maintain mixed manufacturer estates?", "Yes. Mixed Advanced, Kentec, C-TEC and device estates are common; we match engineer skills to panel types."]
+    ],
+    "seo_keywords": "multi site fire alarm maintenance, portfolio fire alarm service, multi-site BS 5839, FM fire alarm contract, fire maintenance Manchester, fire maintenance Stockport, North West portfolio, Icomply"
+  },
+  "vesda-installation": {
+    "intro": "VESDA installation delivers very early smoke detection through aspirating air sampling—ideal for high ceilings, clean rooms, warehouses, heritage voids and spaces where point detectors struggle. Icomply design, install and commission VESDA and compatible aspirating systems across the North West, integrating them with your main fire panel cause-and-effect. Stockport-based engineers handle pipe network design, sensitivity setup and documentation for insurers who specify aspirating detection.",
+    "body": "We survey airflow, room volume and dust loading to size sampling pipes and set staged alerts that warn before full fire alarm. Installation includes capillary drops, end-cap verification, transport-time testing and staff training on filters and faults. Planned maintenance keeps aspiration performance stable so early warning remains genuine, not nuisance.",
+    "meta_desc": "VESDA installation & aspirating smoke detection. Design, pipe networks & commission — North West. Icomply.",
+    "focus_points": [
+      "Aspirating system design for high or complex spaces",
+      "Pipe network install and transport-time testing",
+      "Panel integration and staged alert programming",
+      "Filter service and performance maintenance"
+    ],
+    "faq": [
+      ["When is VESDA better than point smoke detectors?", "High voids, strong airflow, cold stores, clean environments or where earliest possible warning is critical often favour aspirating detection."],
+      ["Does VESDA replace the main fire panel?", "Usually it signals into the building fire alarm system. We design interfaces so alerts and fire signals behave as the fire strategy requires."],
+      ["How often must VESDA units be serviced?", "Follow manufacturer and BS guidance—filters and sensitivity checks are routine. We include aspirating devices on planned maintenance visits."]
+    ],
+    "seo_keywords": "VESDA installation, VESDA fire detection, aspirating smoke detection install, VESDA North West, VESDA Manchester, VESDA Stockport, high ceiling smoke detection, Icomply"
+  },
+  "beam-detection-system": {
+    "intro": "A beam detection system uses projected optical beams to monitor large open volumes—warehouses, atria, sports halls and factories—where point detectors would be impractical. Icomply design, install and align reflective and end-to-end beam detectors to BS 5839 practice across the North West. From Stockport we survey mounting heights, building movement and sunlight paths so beams stay stable and false alarms stay low.",
+    "body": "Correct alignment, bracket rigidity and contamination planning are everything with beams. We install, commission with obscuration tests, integrate to the fire panel and train staff on temporary isolation during dust-producing works. Service visits re-check alignment and clean optics so warehouse changes do not silently defeat detection.",
+    "meta_desc": "Beam detection system install & alignment for warehouses and atria. BS 5839 — North West. Icomply Stockport.",
+    "focus_points": [
+      "Open-area beam design and mounting survey",
+      "Precision alignment and commissioning tests",
+      "Fire panel integration and zoning",
+      "Optics clean and realignment on service visits"
+    ],
+    "faq": [
+      ["Reflective or end-to-end beams?", "Reflective units need power at one end and suit many warehouses; end-to-end can suit very long ranges. We select after measuring the space."],
+      ["Will forklifts set beams off?", "Poor siting can. We position beams above traffic where practical and set delay/sensitivity within manufacturer limits to reduce nuisance alarms."],
+      ["Can beams work with high racking?", "Racking alters smoke behaviour and line of sight. We may combine beams with in-rack or aspirating options as the risk requires."]
+    ],
+    "seo_keywords": "beam detection system, beam smoke detector installation, warehouse beam detection, optical beam fire detection, beam detection Manchester, beam detection Stockport, North West, Icomply"
+  },
+  "fire-alarm-engineers-near-me": {
+    "intro": "Searching for fire alarm engineers near me in the North West? Icomply provide local, Stockport-based fire engineers for installation, servicing, fault finding and certification across Greater Manchester and surrounding counties. We combine rapid response with BS 5839 competence, fixed-price quotes after we understand the panel and site, and clear communication for landlords, FM teams and business owners who need someone reliable—not a remote call centre.",
+    "body": "Our coverage includes Manchester, Stockport, Bolton, Warrington, Chester, Preston, Liverpool approaches and many towns in between. Tell us your postcode, panel brand and fault message for faster triage. Whether you need a one-off repair or a standing maintenance agreement, local engineers mean realistic attendance times and knowledge of regional building stock.",
+    "meta_desc": "Fire alarm engineers near me in Greater Manchester & the North West. BS 5839 install & service — Icomply Stockport.",
+    "focus_points": [
+      "Local North West engineer coverage from Stockport",
+      "Install, service, faults and certification",
+      "Fast triage when you share panel details",
+      "Fixed-price quotes and maintenance agreements"
+    ],
+    "faq": [
+      ["Which towns do you cover?", "We cover 150+ towns across Greater Manchester, Cheshire, Lancashire, Merseyside and into Cumbria. Check your town page or send a postcode."],
+      ["Are you available for emergency faults?", "We prioritise impaired systems when engineers are available and aim for same-week or sooner attendance depending on demand."],
+      ["Do you only fit new systems?", "No. Much of our work is servicing, repairs and upgrades on existing panels and devices."]
+    ],
+    "seo_keywords": "fire alarm engineers near me, local fire alarm engineer, fire alarm engineer Manchester, fire alarm engineer Stockport, BS 5839 engineer North West, fire alarm company near me, Icomply"
+  },
+  "fire-safety-order-compliance": {
+    "intro": "Fire Safety Order compliance (Regulatory Reform (Fire Safety) Order 2005) requires a responsible person to assess risk and implement general fire precautions—including detection and warning where needed. Icomply help duty holders close fire alarm and emergency lighting gaps that undermine Order compliance across the North West. From Stockport we translate fire risk assessment actions into designed systems, maintenance regimes and records that stand up to audits and enforcement visits.",
+    "body": "We do not replace your fire risk assessor; we implement and maintain the systems their actions require. That includes category-correct fire alarms, testing regimes, logbooks, zone charts and interface with other precautions. Landlords of multi-occupied buildings can use us for portfolio remedial programmes after FRA reviews or Fire Safety Act-related updates.",
+    "meta_desc": "Fire Safety Order compliance support via BS 5839 alarms & records. North West responsible persons — Icomply.",
+    "focus_points": [
+      "FRA action implementation for detection and warning",
+      "Maintenance and record-keeping that evidence compliance",
+      "Remedial programmes for landlords and FM",
+      "Coordination with wider fire precautions on site"
+    ],
+    "faq": [
+      ["Does a fire alarm automatically make me compliant?", "No. Compliance is wider than equipment. A suitable system, maintained and managed, supports your precautions but does not replace risk assessment or training."],
+      ["Can you write my fire risk assessment?", "We focus on systems installation and maintenance. We work from your FRA and can recommend independent assessors if you need one."],
+      ["What records should I keep?", "Risk assessment, system design/commissioning info, logbooks, service certificates and training records. We help keep the systems side complete."]
+    ],
+    "seo_keywords": "Fire Safety Order compliance, RR(FS)O fire alarm, responsible person fire safety, fire compliance North West, fire safety compliance Manchester, Stockport fire compliance, BS 5839 compliance, Icomply"
+  },
+  "advanced-fire-panel-service": {
+    "intro": "Advanced fire panel service covers inspection, batteries, configuration support and fault clearance on Advanced Electronics control panels used widely in UK commercial buildings. Icomply maintain Advanced panels to BS 5839 across Greater Manchester and the North West, with Stockport engineers experienced on MxPro and related platforms. Expect structured service visits, clear defect lists, device text checks and certificates that match what facilities managers need for audit trails.",
+    "body": "We verify PSU health, standby batteries, loop integrity, networking where fitted and indication functions. Software or cause-and-effect changes are handled under controlled variations with updated documentation. Trade spares and reactive call-outs keep Advanced estates online between planned visits.",
+    "meta_desc": "Advanced fire panel service & BS 5839 maintenance. MxPro support across Manchester & North West — Icomply.",
+    "focus_points": [
+      "Manufacturer-aware Advanced panel servicing",
+      "Battery, PSU and loop performance checks",
+      "Fault clearance and configuration support",
+      "Certificates, logbooks and multi-site options"
+    ],
+    "faq": [
+      ["Which Advanced panels do you work on?", "We regularly service common Advanced commercial panels including MxPro series variants. Share the exact model from the fascia or inner door label."],
+      ["Can you reprogramme cause-and-effect?", "Yes, as a controlled change with testing and documentation—not as an informal panel tweak."],
+      ["Do you supply Advanced batteries and spares?", "We fit correct standby batteries and can source compatible service parts as part of maintenance or call-outs."]
+    ],
+    "seo_keywords": "Advanced fire panel service, Advanced Electronics service, MxPro maintenance, Advanced fire alarm engineer, Advanced panel Manchester, Advanced panel Stockport, BS 5839, Icomply"
+  },
+  "c-tec-fire-alarm-service": {
+    "intro": "C-TEC fire alarm service keeps C-TEC control panels, power supplies and associated devices reliable for schools, commercial sites and multi-occupancy buildings. Icomply inspect, test and certificate C-TEC systems to BS 5839 across the North West from our Stockport base. Whether you run conventional or addressable C-TEC equipment, we provide fixed-scope maintenance, battery care and practical fault finding with plain-English reports.",
+    "body": "Service visits include indicators, field circuits, sounders, batteries and a review of recent faults or false alarms. We update logbooks, advise on life-expired devices and quote remediations before work proceeds. Portfolio clients with mixed C-TEC and other brands can still hold a single maintenance agreement with Icomply.",
+    "meta_desc": "C-TEC fire alarm service & maintenance to BS 5839. North West engineers from Stockport — Icomply.",
+    "focus_points": [
+      "C-TEC panel and field device servicing",
+      "Battery replacement and power supply checks",
+      "Fault diagnosis and remedial quotations",
+      "Full service certification and logbook entries"
+    ],
+    "faq": [
+      ["Do you service both C-TEC conventional and addressable?", "Yes. Tell us the panel model and any protocol/devices used so we bring the right approach and spares mindset."],
+      ["Can you take over service from another contractor?", "Yes. We complete a baseline inspection, note outstanding defects and schedule ongoing visits."],
+      ["How often should C-TEC systems be serviced?", "Typically at least every six months by a competent person under BS 5839, plus weekly user tests."]
+    ],
+    "seo_keywords": "C-TEC fire alarm service, C-TEC panel maintenance, C-TEC fire engineer, C-TEC service Manchester, C-TEC Stockport, BS 5839 servicing, North West, Icomply"
+  },
+  "hochiki-fire-detection": {
+    "intro": "Hochiki fire detection is trusted for reliable addressable sensors, modules and sounders on many UK commercial systems. Icomply design, install and maintain Hochiki device estates—on compatible panels—to BS 5839 across Greater Manchester and the North West. From Stockport we survey, loop-load, programme device text and commission Hochiki optical, multi-sensor and specialist detectors with clean certification packs.",
+    "body": "Whether you are extending an existing Hochiki loop or specifying a new system, we check protocol compatibility, base types and sounder loads before ordering. Maintenance includes sensitivity-aware cleaning guidance, device replacement and false-alarm reviews. Landlords appreciate consistent device families that simplify spares across multiple buildings.",
+    "meta_desc": "Hochiki fire detection install, devices & service to BS 5839. Manchester, Stockport & North West — Icomply.",
+    "focus_points": [
+      "Hochiki device selection and loop design",
+      "Install, addressing and text programming",
+      "Compatible panel integration and testing",
+      "Maintenance and device lifecycle replacement"
+    ],
+    "faq": [
+      ["Are Hochiki devices panel-brand specific?", "Hochiki protocols work with approved panel partners. We confirm compatibility before supply so devices and panel speak the same language."],
+      ["Can you replace old Hochiki heads only?", "Often yes, if bases and protocol remain supported. We check dates, contamination and loop health first."],
+      ["Do you stock common Hochiki spares?", "We supply detectors, call points and modules for install and service jobs as part of quoted works."]
+    ],
+    "seo_keywords": "Hochiki fire detection, Hochiki detectors, Hochiki installation, Hochiki fire alarm devices, Hochiki Manchester, Hochiki Stockport, BS 5839, Icomply"
+  },
+  "apollo-fire-detectors": {
+    "intro": "Apollo fire detectors equip countless conventional and addressable systems across the UK. Icomply supply, install and replace Apollo smoke, heat and multi-sensor detectors for commercial clients throughout the North West, ensuring bases, protocols and panel compatibility are correct before a single head is swapped. Stockport engineers commission new devices, update labels and leave BS 5839-aligned test records for your compliance file.",
+    "body": "Life-expired or contaminated detectors cause both missed fires and nuisance alarms. We survey device age, environment and false-alarm history, then propose phased replacement programmes that control cost. Apollo XP95, Discovery and related ranges are handled regularly alongside compatible call points and interfaces. Maintenance contracts keep detector health under review year after year.",
+    "meta_desc": "Apollo fire detectors supply, install & replacement. BS 5839 device works — North West. Icomply Stockport.",
+    "focus_points": [
+      "Compatible Apollo detector supply and install",
+      "Phased replacement for ageing device estates",
+      "False-alarm reduction through correct device type",
+      "Testing, labelling and certification"
+    ],
+    "faq": [
+      ["How often should detectors be replaced?", "Follow manufacturer service life and condition. Many sites plan replacement around 10 years, sooner in harsh environments. We advise after inspection."],
+      ["Can Apollo detectors mix with other brands?", "Not on the same addressable loop protocol. We keep loops manufacturer-consistent and only mix where the system design allows separate circuits."],
+      ["Do you fit Apollo call points too?", "Yes. Matching call points and modules are installed as part of system works or standalone additions."]
+    ],
+    "seo_keywords": "Apollo fire detectors, Apollo smoke detector install, Apollo XP95, Apollo Discovery, Apollo detectors Manchester, Apollo Stockport, BS 5839 devices, Icomply"
+  },
+  "fire-alarm-monitoring-setup": {
+    "intro": "Fire alarm monitoring setup connects your panel to an Alarm Receiving Centre so signals reach keyholders or the fire service when the building is empty. Icomply configure monitoring links—digital communicators, IP/dual-path where specified—and test end-to-end signalling for North West commercial sites. From Stockport we coordinate ARC accounts, panel outputs and site procedures so monitoring is a controlled part of your fire strategy, not an afterthought.",
+    "body": "We survey existing panels for suitable fire and fault outputs, fit communicators, programme zone or fire signals correctly and run proving tests with the ARC. Keyholder lists, isolation procedures and false-alarm policies are documented with the client. Monitoring complements—never replaces—local alarms, staff response and maintenance.",
+    "meta_desc": "Fire alarm monitoring setup & ARC connection. Dual-path options, testing & North West install — Icomply.",
+    "focus_points": [
+      "ARC account coordination and signal mapping",
+      "Communicator install and panel interfacing",
+      "End-to-end proving tests and documentation",
+      "Keyholder and isolation procedure support"
+    ],
+    "faq": [
+      ["Do I need monitoring on every building?", "It depends on risk, occupancy patterns and insurer or strategy requirements. Unoccupied periods often justify monitoring; we advise case by case."],
+      ["What is dual-path monitoring?", "Two communication routes (for example IP and radio/cellular) improve resilience if one path fails. Insurers sometimes require it."],
+      ["Will monitoring stop false fire brigade calls?", "Procedures and filtering policies help, but detection design and management remain the main false-alarm controls. We align signalling with your agreed response plan."]
+    ],
+    "seo_keywords": "fire alarm monitoring setup, ARC fire monitoring, fire alarm remote signalling, dual path fire monitoring, monitoring install Manchester, Stockport fire monitoring, North West, Icomply"
+  },
+  "domestic-fire-alarm-installation": {
+    "intro": "Domestic fire alarm installation protects houses, flats and small residential premises with correctly sited smoke and heat detection to BS 5839-6. Icomply install interlinked alarms and Grade-appropriate systems for homeowners, landlords and agents across Greater Manchester and the North West. Based in Stockport, we specify LD categories that match layout and risk, fit tidy mains-powered units with backup where required, and leave simple test instructions for the household.",
+    "body": "We avoid kitchen smoke-alarm pitfalls by using heat detection where appropriate, cover landings and habitable levels, and consider CO detection alongside fire where fuel appliances exist. Landlord jobs include documentation for compliance folders. Upgrades from ageing battery-only units reduce the risk of silent failure when it matters.",
+    "meta_desc": "Domestic fire alarm installation to BS 5839-6. Homes, flats & landlords — Manchester & North West. Icomply.",
+    "focus_points": [
+      "BS 5839-6 category advice for dwellings",
+      "Interlinked smoke and heat alarm install",
+      "Landlord documentation and tenant guidance",
+      "Replacement of life-expired domestic units"
+    ],
+    "faq": [
+      ["Do you install smart domestic alarms?", "We can discuss connected options, but prioritise proven interlink performance and standard compliance over gadget features."],
+      ["Can you install in occupied homes quickly?", "Most domestic installs complete in a short visit with minimal mess. We protect décor and test every unit before leaving."],
+      ["Should flats use Grade A systems?", "Some buildings require Grade A communal or dwelling systems under BS 5839-6 and the fire strategy. We survey before specifying."]
+    ],
+    "seo_keywords": "domestic fire alarm installation, home smoke alarm install, BS 5839-6 domestic, landlord fire alarms, domestic fire alarm Manchester, domestic fire alarm Stockport, interlinked alarms, Icomply"
+  },
+  "commercial-fire-alarm-service": {
+    "intro": "Commercial fire alarm service keeps business-critical detection and warning systems inspected, tested and certified under BS 5839. Icomply deliver planned maintenance, remedials and reactive support for offices, retail, industrial and leisure premises across the North West. From our Stockport base we provide fixed-scope service visits, multi-site options and engineer reports that facilities and compliance managers can file with confidence.",
+    "body": "Each visit covers control equipment, batteries, field devices on a sampling or full basis as agreed, sounders, interfaces and logbook review. We track outstanding defects to closure and help reduce false alarms through device and environmental advice. Whether you need a single shop unit or a regional estate, commercial service is scheduled around trading hours wherever practical.",
+    "meta_desc": "Commercial fire alarm service to BS 5839. Offices, retail & industrial — North West maintenance by Icomply.",
+    "focus_points": [
+      "Scheduled commercial BS 5839 inspections",
+      "Batteries, devices, sounders and interfaces",
+      "Defect management and remedial works",
+      "Single-site and portfolio contracts"
+    ],
+    "faq": [
+      ["What is included in a commercial service visit?", "Panel functions, power supplies, batteries, device tests as per schedule, indicators, and documentation. Exact device percentages follow BS 5839 and the contract."],
+      ["Can you service out of hours?", "Yes, by arrangement for sites that cannot isolate or test during trading—priced transparently in the quote."],
+      ["Do you maintain landlord and tenant systems?", "Yes. We clarify demises and interfaces so responsibilities stay clear between parties."]
+    ],
+    "seo_keywords": "commercial fire alarm service, commercial fire alarm maintenance, BS 5839 commercial service, office fire alarm service, fire service Manchester, fire service Stockport, North West, Icomply"
+  },
+  "bs-5266-emergency-lighting": {
+    "intro": "BS 5266 emergency lighting sets the UK framework for escape route, open area and high-risk task lighting when mains power fails. Icomply design, install, test and certificate emergency lighting to BS 5266 for commercial, care and multi-occupied buildings across the North West. From Stockport our engineers deliver photometric-aware layouts, LED conversions, self-test options and the monthly/annual records responsible persons need for Fire Safety Order evidence.",
+    "body": "We survey lux-critical points—changes of direction, stairs, exits, fire equipment and open areas—then specify maintained or non-maintained luminaires accordingly. Installation includes correct legends, spacing and central battery or self-contained autonomy as designed. Planned testing regimes catch failed batteries before an evacuation is compromised.",
+    "meta_desc": "BS 5266 emergency lighting design, install & testing. North West compliance from Icomply Stockport.",
+    "focus_points": [
+      "BS 5266 escape and open-area design",
+      "Install, LED upgrade and central systems",
+      "Monthly and annual duration testing",
+      "Certificates and defect remediation"
+    ],
+    "faq": [
+      ["Is BS 5266 a legal requirement?", "The Fire Safety Order requires suitable emergency routes and lighting; BS 5266 is the key British Standard used to demonstrate good practice."],
+      ["Maintained or non-maintained fittings?", "Maintained stay on for normal lighting/signage roles; non-maintained energise on mains failure. We select per location function."],
+      ["How long should emergency lights last on battery?", "Typically three hours for many escape systems, but design duration follows risk and standard requirements for the premises."]
+    ],
+    "seo_keywords": "BS 5266 emergency lighting, emergency lighting standard, BS 5266 install, emergency lighting compliance, emergency lighting Manchester, emergency lighting Stockport, North West, Icomply"
+  },
+  "led-emergency-lighting-conversion": {
+    "intro": "LED emergency lighting conversion replaces inefficient fluorescent emergency fittings with efficient LED luminaires or conversion kits—cutting energy use, improving reliability and simplifying spares. Icomply survey existing emergency circuits and convert or renew to modern LED solutions under BS 5266 across Greater Manchester and the North West. Stockport engineers plan phasing so escape lighting remains available throughout the works and leave full test certification on completion.",
+    "body": "We identify failed inverters, tired nickel batteries and yellowed legends that fail inspections, then propose LED bulkheads, exit signs and recessed conversions matched to mounting points. Self-test LED options can reduce manual test labour for large estates. Payback often comes from energy and maintenance savings as well as compliance certainty.",
+    "meta_desc": "LED emergency lighting conversion & upgrades to BS 5266. Energy-saving North West installs — Icomply.",
+    "focus_points": [
+      "Survey of existing emergency luminaires and circuits",
+      "LED bulkhead, exit and recessed conversions",
+      "Phased works with continuous escape cover",
+      "Post-conversion duration testing and certificates"
+    ],
+    "faq": [
+      ["Can every old fitting be converted?", "Not always. Some chassis suit LED kits; others are better fully replaced. We recommend the safer, standards-compliant option per point."],
+      ["Will conversion reduce my electricity bill?", "Maintained LED signage and lower parasitic drain typically cut energy versus old fluorescent emergency gear—savings vary by quantity and hours."],
+      ["Do you remove old batteries responsibly?", "Yes. Life-expired batteries are removed and handled as part of responsible site practice during conversion."]
+    ],
+    "seo_keywords": "LED emergency lighting conversion, LED emergency lights upgrade, convert emergency lighting LED, LED emergency Manchester, LED emergency Stockport, BS 5266 LED, North West, Icomply"
+  },
+  "self-test-emergency-lighting": {
+    "intro": "Self-test emergency lighting automates function and duration checks inside each luminaire or via a monitored system, reducing reliance on manual ladder tests for every fitting. Icomply supply, install and configure self-test and addressable emergency lighting across North West commercial estates from our Stockport base. You still need competent oversight—but self-test makes BS 5266 routines more practical for multi-storey and multi-site operators.",
+    "body": "We specify stand-alone self-test heads or networked reporting systems depending on building size and FM preference. Installation includes correct labelling, dashboard or LED status interpretation training, and integration with your compliance calendar. Annual full-duration verification and defect repair remain part of a professional regime even when daily/monthly checks are automated.",
+    "meta_desc": "Self-test emergency lighting install & setup. BS 5266 automated testing — Manchester & North West. Icomply.",
+    "focus_points": [
+      "Self-test and monitored emergency lighting design",
+      "Install, addressing and status training",
+      "Alignment with monthly/annual compliance duties",
+      "Defect response when self-test reports failure"
+    ],
+    "faq": [
+      ["Does self-test remove all manual testing?", "It reduces routine manual function tests, but responsible persons must still monitor results and arrange repairs. Periodic competent inspection remains wise."],
+      ["Are self-test fittings more expensive?", "Unit cost is higher, yet labour savings on large sites often justify the investment. We can compare lifecycle cost on survey."],
+      ["Can self-test work on existing wiring?", "Many self-contained LED self-test luminaires retrofit onto existing unswitched permanent lives. We confirm circuit topology first."]
+    ],
+    "seo_keywords": "self test emergency lighting, self-testing emergency lights, automatic emergency lighting test, self-test BS 5266, self-test Manchester, Stockport emergency lighting, North West, Icomply"
+  },
+  "emergency-lighting-monthly-test": {
+    "intro": "An emergency lighting monthly test is a short function check—typically simulating mains failure briefly—to confirm luminaires energise as expected under BS 5266 user routines. Icomply train duty holders, perform monthly tests under contract, or audit your in-house process across North West sites. From Stockport we supply simple checklists, log formats and engineer backup when fittings fail to light or show battery faults.",
+    "body": "Monthly tests catch open circuits, failed lamps/LEDs and obvious charger issues before the annual duration test. We can schedule technician visits for sites without facilities staff, or coach your team to complete and record tests correctly. Failures are quoted promptly so escape lighting is restored without drift.",
+    "meta_desc": "Emergency lighting monthly test support & contracts. BS 5266 function checks — North West. Icomply Stockport.",
+    "focus_points": [
+      "BS 5266 monthly function test routines",
+      "Staff training or fully managed monthly visits",
+      "Logbook records and failure escalation",
+      "Quick remedial quotes for failed luminaires"
+    ],
+    "faq": [
+      ["How long is a monthly emergency lighting test?", "A short functional test—long enough to confirm operation, not a full three-hour drain. Exact method follows BS 5266 guidance and manufacturer instructions."],
+      ["Can tenants do the monthly test?", "If competent and trained, yes. We provide instruction and recording templates; complex systems may need technicians."],
+      ["What if several lights fail the monthly test?", "Record them, keep escape risk under review, and instruct repairs. We prioritise clusters of failures that impair routes."]
+    ],
+    "seo_keywords": "emergency lighting monthly test, monthly emergency light test, BS 5266 monthly test, emergency lighting function test, monthly test Manchester, Stockport, North West, Icomply"
+  },
+  "emergency-lighting-annual-test": {
+    "intro": "An emergency lighting annual test (full duration test) discharges batteries for the designed autonomy—often three hours—to prove the system still meets BS 5266 performance. Icomply plan and execute annual tests for commercial and care premises across the North West, managing risk during discharge and recharging afterwards. Stockport-coordinated teams document results, identify weak batteries and certificate the estate for your compliance year.",
+    "body": "We schedule tests to avoid leaving buildings unprotected—often phased by floor or circuit—and restore mains charging promptly. Failed luminaires are listed with locations and quoted for replacement, including LED upgrade options. Combining annual testing with a service inspection maximises engineer efficiency on multi-building portfolios.",
+    "meta_desc": "Emergency lighting annual duration test to BS 5266. Phased testing & certificates — North West. Icomply.",
+    "focus_points": [
+      "Full-duration annual testing programmes",
+      "Phased methods to manage escape risk",
+      "Failure schedules and replacement quotes",
+      "Compliance certificates and logbook entries"
+    ],
+    "faq": [
+      ["Will the annual test leave us in the dark afterwards?", "Batteries need recharge time after a full drain. We phase tests and advise on temporary precautions so risk stays controlled."],
+      ["How often is a full duration test required?", "BS 5266 expects a periodic full-duration test, commonly annually, plus more frequent function tests."],
+      ["Do self-test systems still need an engineer annual visit?", "Self-test helps, but many duty holders still engage competent engineers to verify records, inspect fittings and close defects."]
+    ],
+    "seo_keywords": "emergency lighting annual test, annual duration test emergency lighting, BS 5266 annual test, three hour emergency light test, annual test Manchester, Stockport, North West, Icomply"
+  },
+  "emergency-lighting-duration-test": {
+    "intro": "An emergency lighting duration test proves battery autonomy under load—the critical check that fittings remain lit for the designed period after mains failure. Icomply carry out duration testing to BS 5266 for offices, warehouses, care homes and common parts across Greater Manchester and the North West. Our Stockport engineers record pass/fail by location, replace weak batteries or luminaires, and leave clear certificates for insurers and enforcing officers.",
+    "body": "Duration testing is more than flipping a key switch: we monitor performance through the discharge window, note early failures, and manage restoration of supply. Results feed a prioritised remedial plan so capital spend targets true risk. For large sites we issue a programme and progress reports until the estate is closed out.",
+    "meta_desc": "Emergency lighting duration test to BS 5266. Full autonomy checks & remedials — North West. Icomply.",
+    "focus_points": [
+      "Full autonomy / duration testing by circuit or area",
+      "Pass-fail logging against design duration",
+      "Battery and luminaire remedial works",
+      "Certification for compliance files"
+    ],
+    "faq": [
+      ["Is a duration test the same as the annual test?", "The annual test is typically a full duration test. Additional duration tests may be needed after major battery or system changes."],
+      ["What duration should we achieve?", "Commonly three hours for escape lighting, but the design may specify otherwise. We test to the system’s designed duration."],
+      ["Can you duration-test central battery systems?", "Yes. Central battery and static inverter systems need specialist procedures; we plan load and isolation carefully with your site team."]
+    ],
+    "seo_keywords": "emergency lighting duration test, battery duration test emergency lights, BS 5266 duration test, emergency lighting autonomy test, duration test Manchester, Stockport, North West, Icomply"
+  },
+  "office-emergency-lighting": {
+    "intro": "Office emergency lighting keeps escape routes, open-plan floors and exits usable when the power fails—protecting staff and visitors under BS 5266 and the Fire Safety Order. Icomply design, install and test office emergency lighting across Manchester, Stockport and the wider North West, including LED upgrades, exit signage and self-test options for modern workplaces. Fixed quotes after survey cover design spacing, install and certification for landlords and occupiers.",
+    "body": "Open-plan offices need careful open-area coverage as well as corridor and stair lighting. We coordinate with fit-out contractors, match aesthetics where possible with discrete LED luminaires, and set testing regimes FM teams can run. Multi-tenant buildings benefit from clear demise responsibility and shared common-parts maintenance agreements.",
+    "meta_desc": "Office emergency lighting design, install & BS 5266 testing. Greater Manchester & North West — Icomply.",
+    "focus_points": [
+      "Office escape and open-area emergency design",
+      "Discrete LED luminaires and exit signage",
+      "Fit-out coordination and landlord systems",
+      "Monthly/annual testing and certification"
+    ],
+    "faq": [
+      ["Do open-plan offices need anti-panic lighting?", "Large open areas often require emergency illumination so people can reach escapes. We apply BS 5266 open-area guidance to your floor plates."],
+      ["Can emergency lighting look tidy in a CAT A/B fit-out?", "Yes. Recessed and slimline LED options integrate better than bulky legacy bulkheads while meeting performance."],
+      ["Who maintains common parts versus tenant demises?", "Leases differ. We map responsibilities and can maintain either or both under clear scopes."]
+    ],
+    "seo_keywords": "office emergency lighting, office emergency lights install, BS 5266 office, commercial office emergency lighting, emergency lighting Manchester offices, Stockport, North West, Icomply"
+  },
+  "warehouse-emergency-lighting": {
+    "intro": "Warehouse emergency lighting must cope with high ceilings, racking shadows, vehicle routes and large open floor plates while still meeting BS 5266 escape and open-area needs. Icomply design, install and maintain warehouse emergency lighting across the North West, using high-level LED luminaires, bulkheads and strategic exit signage. Stockport engineers survey for realistic mounting, test regimes and impact protection so fittings survive the industrial environment.",
+    "body": "We consider smoke plume behaviour only insofar as emergency lighting supports evacuation and firefighting access—not as detection—and focus lux on aisles, fire exits, plant rooms and outdoor final exits. Cold stores and dusty zones get appropriate IP-rated equipment. Duration testing is phased so logistics operations are not blindsided by a full-site drain.",
+    "meta_desc": "Warehouse emergency lighting design & install to BS 5266. High-bay LED & testing — North West. Icomply.",
+    "focus_points": [
+      "High-level and aisle emergency lighting design",
+      "IP-rated industrial luminaires and exit signs",
+      "Phased duration testing around logistics",
+      "Maintenance contracts for large floor plates"
+    ],
+    "faq": [
+      ["Do warehouses need open-area emergency lighting?", "Large spaces usually do, so people can orientate toward exits. We calculate coverage rather than only lighting the perimeter."],
+      ["How do you mount lights above racking?", "Using suitable high-level fixings and access equipment, planned with your H&S rules. We avoid obstructed photometric paths where possible."],
+      ["Can you upgrade old fluorescent warehouse emergency packs?", "Yes. LED conversions or replacements improve reliability and reduce maintenance at height."]
+    ],
+    "seo_keywords": "warehouse emergency lighting, industrial emergency lighting, warehouse emergency lights BS 5266, high bay emergency lighting, warehouse Manchester, Stockport, North West, Icomply"
+  },
+  "care-home-emergency-lighting": {
+    "intro": "Care home emergency lighting supports safe evacuation or progressive horizontal movement when mains fail—critical where residents need staff assistance. Icomply design, install and test care home emergency lighting to BS 5266 across the North West, working sensitively around residents from our Stockport base. Systems cover corridors, stairs, exits, nurse bases and high-risk task areas, with records that support CQC-related fire safety evidence and insurer expectations.",
+    "body": "We phase works to protect dignity and sleep patterns, use robust LED fittings suited to 24/7 environments, and train staff on monthly function checks. Annual duration tests are scheduled with managers so staffing levels match any temporary risk. Combined fire alarm and emergency lighting packages simplify compliance for group care providers.",
+    "meta_desc": "Care home emergency lighting install & BS 5266 testing. Resident-aware North West engineers — Icomply.",
+    "focus_points": [
+      "Care-specific escape lighting design",
+      "Resident-sensitive installation phasing",
+      "Staff test training and logbooks",
+      "Group home maintenance programmes"
+    ],
+    "faq": [
+      ["Do bedrooms need emergency lighting?", "It depends on the fire strategy and layout. Corridors and escapes always need cover; bedrooms are assessed case by case with the FRA."],
+      ["Can you work quietly in occupied homes?", "Yes. We coordinate with managers, limit noisy works, and keep tools and access controlled around residents."],
+      ["Do you maintain both fire alarms and emergency lights?", "Yes. Many care clients prefer one competent contractor for both life-safety systems."]
+    ],
+    "seo_keywords": "care home emergency lighting, nursing home emergency lights, BS 5266 care home, care emergency lighting testing, care home Manchester, Stockport, North West, Icomply"
+  },
+  "emergency-bulkhead-lights": {
+    "intro": "Emergency bulkhead lights are the workhorse luminaires of escape lighting—wall or ceiling mounted, robust and ideal for corridors, plant rooms, external exits and back-of-house areas. Icomply supply and install LED emergency bulkheads to BS 5266 across Greater Manchester and the North West, including maintained exit variants and self-test models. From Stockport we replace failed fluorescent bulkheads, correct spacing on under-lit routes and certificate the finished installation.",
+    "body": "Modern LED bulkheads offer better efficacy, longer life and clearer legends than ageing fluorescent units. We select IP ratings for external final exits, add wire guards where vandalism is a risk, and ensure unswitched permanent live supplies are correct. Bulkhead programmes for landlords can standardise spares across many blocks and simplify monthly testing.",
+    "meta_desc": "Emergency bulkhead lights supply & install. LED BS 5266 bulkheads — Manchester, Stockport & North West. Icomply.",
+    "focus_points": [
+      "LED emergency bulkhead specification and install",
+      "Internal and external IP-rated options",
+      "Replacement programmes for failed fluorescent units",
+      "Testing, legends and compliance documentation"
+    ],
+    "faq": [
+      ["Maintained or non-maintained bulkheads?", "Exit-sign and some permanently lit locations use maintained; many escape luminaires are non-maintained. We specify per point."],
+      ["Can bulkheads be self-test?", "Yes. Self-test LED bulkheads are popular for reducing manual test time on large estates."],
+      ["Do you fit bulkheads outdoors?", "Yes, with suitable IP-rated emergency bulkheads at final exits and external escape paths as the design requires."]
+    ],
+    "seo_keywords": "emergency bulkhead lights, LED emergency bulkhead, emergency bulkhead installation, BS 5266 bulkhead, emergency bulkhead Manchester, Stockport, North West, Icomply"
+  }
+}

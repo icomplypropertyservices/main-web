@@ -1,0 +1,282 @@
+{
+    "rauland": {
+        "blurb": "Icomply installs, commissions and services Rauland nurse call platforms for care homes, hospitals and supported living across the North West. Our engineers handle call-point replacements, corridor indicators and panel fault-finding to HTM 08-03 guidance, with full certification on every visit. Stock Rauland spares and trade kits from our Stockport shop for FM teams and healthcare contractors.",
+        "seo_title": "Rauland Nurse Call Installation & Service | North West",
+        "seo_desc": "Rauland nurse call install, service & certification by Icomply. Trade call points & panel kits — Stockport, Manchester & North West.",
+        "seo_keywords": "Rauland, Rauland nurse call, Rauland installation, Rauland service, Rauland maintenance, Rauland call points, Rauland trade spares, Rauland North West, Rauland Manchester, Rauland Stockport, nurse call systems",
+        "products": [
+            {
+                "id": "rauland-call-point-pack",
+                "title": "Rauland Call Point & Pear Lead Pack",
+                "blurb": "Trade pack of Rauland-compatible call points and patient leads for care suites.",
+                "price": "From £48",
+                "handle": "rauland-call-point-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/rauland.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "rauland-panel-battery-kit",
+                "title": "Rauland Panel Battery & Label Kit",
+                "blurb": "Backup batteries, zone labels and engineer consumables for Rauland panels.",
+                "price": "From £39",
+                "handle": "rauland-panel-battery-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/rauland.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "ravenheat": {
+        "blurb": "Icomply’s Gas Safe engineers install, service and repair Ravenheat boilers for landlords and commercial estates throughout Greater Manchester, Cheshire and Lancashire. Annual services, flue checks and breakdown call-outs come with clear certification and parts advice. Order Ravenheat service kits and flue fittings from our North West trade counter for same-week jobs.",
+        "seo_title": "Ravenheat Boiler Install, Service & Spares | North West",
+        "seo_desc": "Ravenheat boiler install, Gas Safe service & certification with Icomply. Trade kits & flues — Stockport, Manchester & North West.",
+        "seo_keywords": "Ravenheat, Ravenheat boilers, Ravenheat installation, Ravenheat service, Ravenheat Gas Safe, Ravenheat spares, Ravenheat flue, Ravenheat trade, Ravenheat North West, Ravenheat Manchester, Ravenheat Stockport, gas systems",
+        "products": [
+            {
+                "id": "ravenheat-boiler-service-kit",
+                "title": "Ravenheat Boiler Annual Service Kit",
+                "blurb": "Washers, seals and service consumables matched to common Ravenheat models.",
+                "price": "From £34",
+                "handle": "ravenheat-boiler-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/ravenheat.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "ravenheat-flue-accessory",
+                "title": "Ravenheat Flue & Fitting Pack",
+                "blurb": "Terminals, adaptors and mounting fittings for Ravenheat flue runs.",
+                "price": "From £28",
+                "handle": "ravenheat-flue-accessory",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/ravenheat.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "remeha": {
+        "blurb": "Icomply delivers Gas Safe installation and planned maintenance for Remeha commercial and domestic boilers across the North West. From cascade plant rooms to single-unit replacements, we commission to manufacturer guidance and issue full certification. FM teams and heating contractors can buy Remeha service kits and flue accessories through our Stockport trade shop.",
+        "seo_title": "Remeha Boiler Installation & Service | North West",
+        "seo_desc": "Remeha boiler install, service & Gas Safe certification by Icomply. Trade plant spares — Stockport, Manchester & North West.",
+        "seo_keywords": "Remeha, Remeha boilers, Remeha commercial, Remeha installation, Remeha service, Remeha Gas Safe, Remeha spares, Remeha trade, Remeha North West, Remeha Manchester, Remeha Stockport, gas systems",
+        "products": [
+            {
+                "id": "remeha-commercial-service-kit",
+                "title": "Remeha Commercial Boiler Service Kit",
+                "blurb": "Engineer-ready seals, sensors and service parts for Remeha plant boilers.",
+                "price": "From £52",
+                "handle": "remeha-commercial-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/remeha.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "remeha-flue-cascade-pack",
+                "title": "Remeha Flue & Cascade Accessory Pack",
+                "blurb": "Flue joints, supports and cascade fittings for Remeha installations.",
+                "price": "From £41",
+                "handle": "remeha-flue-cascade-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/remeha.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "reolink": {
+        "blurb": "Icomply designs and installs Reolink IP CCTV for retail, logistics and residential blocks across Manchester, Merseyside and the wider North West. We set up NVRs, remote viewing and camera positioning to BS EN 62676 practice, then provide ongoing service and hard-drive swaps. Trade mounts, PoE cabling and NVR accessories are available from our Stockport counter.",
+        "seo_title": "Reolink CCTV Installation & Service | North West",
+        "seo_desc": "Reolink CCTV design, install & service by Icomply. Trade mounts & NVR kits — Stockport, Manchester & North West. Free quotes.",
+        "seo_keywords": "Reolink, Reolink CCTV, Reolink cameras, Reolink NVR, Reolink installation, Reolink service, Reolink trade, Reolink North West, Reolink Manchester, Reolink Stockport, IP CCTV systems",
+        "products": [
+            {
+                "id": "reolink-camera-mount-kit",
+                "title": "Reolink Camera Mount & Weather Kit",
+                "blurb": "Brackets, junction boxes and weather seals for outdoor Reolink cameras.",
+                "price": "From £31",
+                "handle": "reolink-camera-mount-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/reolink.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "reolink-nvr-storage-pack",
+                "title": "Reolink NVR Cabling & Storage Pack",
+                "blurb": "PoE patch leads, HDD bays and install accessories for Reolink recorders.",
+                "price": "From £47",
+                "handle": "reolink-nvr-storage-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/reolink.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "risco": {
+        "blurb": "Icomply installs and maintains Risco intruder alarms — including LightSYS and wireless Agility ranges — for commercial and multi-site clients in the North West. Systems are designed to PD 6662 / BS EN 50131 with engineer certification and clear handover. Stock Risco PIRs, contacts and panel expansions from our trade shop for reactive repairs and upgrades.",
+        "seo_title": "Risco Alarm Installation, Service & Spares | North West",
+        "seo_desc": "Risco intruder alarm install, service & certification with Icomply. Trade PIRs & expansions — Stockport, Manchester & NW.",
+        "seo_keywords": "Risco, Risco alarms, Risco LightSYS, Risco Agility, Risco installation, Risco service, Risco PIR, Risco trade, Risco North West, Risco Manchester, Risco Stockport, intruder alarms",
+        "products": [
+            {
+                "id": "risco-panel-expansion-kit",
+                "title": "Risco Panel Expansion & Keypad Kit",
+                "blurb": "Zone expanders, keypads and bus modules for Risco LightSYS systems.",
+                "price": "From £62",
+                "handle": "risco-panel-expansion-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/risco.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "risco-pir-contact-pack",
+                "title": "Risco PIR & Door Contact Pack",
+                "blurb": "Trade sensors and contacts for Risco wired and wireless installs.",
+                "price": "From £49",
+                "handle": "risco-pir-contact-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/risco.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "rolec-ev": {
+        "blurb": "Icomply supplies and installs Rolec EV charge points for workplaces, car parks and residential schemes across Stockport, Manchester and the North West. Every install is BS 7671 compliant with isolation, earthing checks and full electrical certification. Landlords and electrical contractors can order Rolec pedestals, tethered units and install accessories from our trade shop.",
+        "seo_title": "Rolec EV Charger Installation & Service | North West",
+        "seo_desc": "Rolec EV charger install, service & BS 7671 certification by Icomply. Trade pedestals & kits — Stockport & North West.",
+        "seo_keywords": "Rolec EV, Rolec EV charger, Rolec installation, Rolec service, EV charge point, Rolec trade, Rolec North West, Rolec Manchester, Rolec Stockport, electrical installation, BS 7671",
+        "products": [
+            {
+                "id": "rolec-ev-charger-install-kit",
+                "title": "Rolec EV Charger Install Kit",
+                "blurb": "Isolation, glands and mounting hardware for Rolec EV charge-point installs.",
+                "price": "From £58",
+                "handle": "rolec-ev-charger-install-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/rolec-ev.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "rolec-ev-cable-accessory-pack",
+                "title": "Rolec EV Cable & Accessory Pack",
+                "blurb": "Tether management, weather covers and engineer spares for Rolec units.",
+                "price": "From £36",
+                "handle": "rolec-ev-cable-accessory-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/rolec-ev.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "salto-systems": {
+        "blurb": "Icomply is a North West installer for Salto Systems electronic access control — wireless locks, wall readers and cloud-managed credentials for offices, student housing and healthcare. We survey doors, programme access levels and issue commissioning certificates, then support ongoing service contracts. Trade escutcheons, batteries and reader spares ship from our Stockport base.",
+        "seo_title": "Salto Systems Access Control Install | North West",
+        "seo_desc": "Salto Systems access control install, service & certification by Icomply. Trade locks & readers — Manchester & North West.",
+        "seo_keywords": "Salto Systems, Salto access control, Salto KS, Salto locks, Salto installation, Salto service, Salto readers, Salto trade, Salto North West, Salto Manchester, Salto Stockport, access control",
+        "products": [
+            {
+                "id": "salto-systems-lock-battery-kit",
+                "title": "Salto Lock Battery & Escutcheon Kit",
+                "blurb": "Replacement batteries and escutcheons for Salto wireless door locks.",
+                "price": "From £44",
+                "handle": "salto-systems-lock-battery-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/salto-systems.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "salto-systems-reader-spares",
+                "title": "Salto Reader & Credential Spares Pack",
+                "blurb": "Wall readers, fobs and programmer accessories for Salto sites.",
+                "price": "From £55",
+                "handle": "salto-systems-reader-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/salto-systems.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "scantronic": {
+        "blurb": "Icomply services and upgrades Scantronic intruder alarm panels still widely fitted across North West commercial stock. Our engineers diagnose zone faults, replace keypads and expand systems to PD 6662 standards with full certification. Buy Scantronic-compatible PIRs, contacts and panel batteries from our trade counter for planned maintenance rounds.",
+        "seo_title": "Scantronic Alarm Service, Spares & Upgrade | North West",
+        "seo_desc": "Scantronic alarm service, upgrades & certification with Icomply. Trade PIRs & panel kits — Stockport, Manchester & NW.",
+        "seo_keywords": "Scantronic, Scantronic alarms, Scantronic panel, Scantronic service, Scantronic installation, Scantronic spares, Scantronic PIR, Scantronic trade, Scantronic North West, Scantronic Manchester, Scantronic Stockport, intruder alarms",
+        "products": [
+            {
+                "id": "scantronic-panel-service-kit",
+                "title": "Scantronic Panel Service & Battery Kit",
+                "blurb": "Standby batteries, fuses and engineer labels for Scantronic control panels.",
+                "price": "From £46",
+                "handle": "scantronic-panel-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/scantronic.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "scantronic-sensor-pack",
+                "title": "Scantronic PIR & Contact Sensor Pack",
+                "blurb": "Trade detectors and magnetic contacts for Scantronic zone replacements.",
+                "price": "From £42",
+                "handle": "scantronic-sensor-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/scantronic.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "schneider-electric": {
+        "blurb": "Icomply installs and maintains Schneider Electric distribution boards, breakers and metering for commercial and multi-residential sites across the North West. Consumer unit upgrades and circuit alterations are completed to BS 7671 with full electrical certification. Contractors and FM teams source Schneider MCBs, RCDs and enclosure accessories from our Stockport trade shop.",
+        "seo_title": "Schneider Electric Boards, Install & Spares | North West",
+        "seo_desc": "Schneider Electric board install, service & BS 7671 certs by Icomply. Trade MCBs & kits — Stockport, Manchester & NW.",
+        "seo_keywords": "Schneider Electric, Schneider boards, Schneider MCB, Schneider installation, Schneider service, Schneider consumer unit, Schneider trade, Schneider North West, Schneider Manchester, Schneider Stockport, electrical",
+        "products": [
+            {
+                "id": "schneider-electric-board-spares",
+                "title": "Schneider Electric Board Spares Kit",
+                "blurb": "MCBs, RCDs and blanking plates for Schneider distribution boards.",
+                "price": "From £54",
+                "handle": "schneider-electric-board-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/schneider-electric.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "schneider-electric-install-pack",
+                "title": "Schneider Electric Install Accessory Pack",
+                "blurb": "Glands, DIN rails and termination accessories for Schneider installs.",
+                "price": "From £33",
+                "handle": "schneider-electric-install-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/schneider-electric.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "schrack-seconet": {
+        "blurb": "Icomply installs and services Schrack Seconet nurse call systems for care homes and healthcare estates throughout Greater Manchester, Lancashire and Cheshire. Call-point mapping, panel programming and reactive repairs follow HTM 08-03 guidance with documented certification. Order Schrack Seconet pear leads, overdoor lights and panel batteries via our North West trade shop.",
+        "seo_title": "Schrack Seconet Nurse Call Install & Service | North West",
+        "seo_desc": "Schrack Seconet nurse call install, service & certification by Icomply. Trade call points — Stockport, Manchester & NW.",
+        "seo_keywords": "Schrack Seconet, Schrack nurse call, Schrack Seconet installation, Schrack Seconet service, Schrack call points, Schrack trade, Schrack North West, Schrack Manchester, Schrack Stockport, nurse call systems, HTM 08-03",
+        "products": [
+            {
+                "id": "schrack-seconet-call-point-pack",
+                "title": "Schrack Seconet Call Point & Lead Pack",
+                "blurb": "Replacement call points and pear leads for Schrack Seconet patient rooms.",
+                "price": "From £51",
+                "handle": "schrack-seconet-call-point-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/schrack-seconet.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "schrack-seconet-panel-kit",
+                "title": "Schrack Seconet Panel Battery & Indicator Kit",
+                "blurb": "Panel batteries and overdoor indicator spares for Schrack Seconet systems.",
+                "price": "From £43",
+                "handle": "schrack-seconet-panel-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/schrack-seconet.jpg",
+                "badge": ""
+            }
+        ]
+    }
+}

@@ -1,0 +1,272 @@
+{
+    "timeguard": {
+        "blurb": "Icomply installs and services Timeguard time switches, immersion controllers, PIR lighting and RCD protection across Greater Manchester and the wider North West. Our NICEIC-aligned electricians commission new Timeguard circuits to BS 7671, issue certification, and keep commercial and residential stock running with planned maintenance. Trade timers, sockets and engineer spares are available from our North West shop for landlords, FM teams and contractors.",
+        "seo_desc": "Timeguard installation, BS 7671 certification & trade timers from Icomply. Service across Stockport, Manchester & the North West.",
+        "seo_keywords": "Timeguard, Timeguard installation, Timeguard service, Timeguard timers, Timeguard PIR, Timeguard RCD, Timeguard spares, Timeguard trade, Timeguard North West, Timeguard Manchester, Timeguard Stockport, electrical installation, BS 7671",
+        "products": [
+            {
+                "id": "timeguard-timer-service-kit",
+                "title": "Timeguard Timer & Contactor Service Kit",
+                "blurb": "Engineer-ready fuses, terminals and contactor spares for Timeguard immersion and lighting timers on planned maintenance rounds.",
+                "price": "From £39",
+                "handle": "timeguard-timer-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/timeguard.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "timeguard-pir-install-pack",
+                "title": "Timeguard PIR & Socket Install Pack",
+                "blurb": "Mounting boxes, weatherproof seals and termination accessories for Timeguard outdoor PIR and RCD socket installs.",
+                "price": "From £32",
+                "handle": "timeguard-pir-install-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/timeguard.jpg",
+                "badge": "Popular"
+            }
+        ]
+    },
+    "toa": {
+        "blurb": "Icomply designs, installs and maintains TOA intercom and public-address systems for schools, care sites, industrial premises and multi-block estates across the North West. We commission door stations and master desks to commercial intercom best practice, provide reactive call-outs, and supply certified spares so communication stays clear when it matters. Landlords and FM contractors can order trade TOA accessories from our Stockport-based shop.",
+        "seo_desc": "TOA intercom installation, service & trade spares with Icomply. Certified systems across Manchester, Stockport & the North West.",
+        "seo_keywords": "TOA, TOA intercom, TOA installation, TOA service, TOA PA system, TOA master station, TOA door station, TOA spares, TOA trade, TOA North West, TOA Manchester, TOA Stockport, commercial intercoms",
+        "products": [
+            {
+                "id": "toa-master-station-kit",
+                "title": "TOA Master Station Accessory Kit",
+                "blurb": "Handset cords, desk brackets and call-station consumables for TOA master desks on commercial and education sites.",
+                "price": "From £54",
+                "handle": "toa-master-station-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/toa.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "toa-door-station-spares",
+                "title": "TOA Door Station Weatherproof Spares",
+                "blurb": "Gaskets, faceplates and module spares to keep TOA entrance stations serviceable in North West weather.",
+                "price": "From £48",
+                "handle": "toa-door-station-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/toa.jpg",
+                "badge": "Stock"
+            }
+        ]
+    },
+    "trox": {
+        "blurb": "Icomply commissions and services TROX smoke ventilation, AOV and air-handling equipment for high-rise residential and commercial buildings across Greater Manchester, Lancashire and Cheshire. Our engineers work to BS 9991 and EN 12101, complete certification packs for building control, and run planned AOV maintenance so dampers and actuators stay life-safety ready. Trade TROX control spares and actuator kits are stocked for North West contractors through our trade shop.",
+        "seo_desc": "TROX AOV & smoke-control install, BS 9991 certification & trade spares from Icomply across Manchester & the North West.",
+        "seo_keywords": "TROX, TROX AOV, TROX smoke control, TROX installation, TROX service, TROX actuator, TROX air handling, TROX spares, TROX trade, TROX North West, TROX Manchester, TROX Stockport, BS 9991, EN 12101",
+        "products": [
+            {
+                "id": "trox-actuator-service-kit",
+                "title": "TROX AOV Actuator Service Kit",
+                "blurb": "Linkage pins, seals and service consumables for TROX smoke-vent actuators on six-monthly life-safety checks.",
+                "price": "From £79",
+                "handle": "trox-actuator-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/trox.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "trox-panel-battery-pack",
+                "title": "TROX Smoke Control Panel Battery Pack",
+                "blurb": "Backup batteries, fuses and key-switch spares for TROX AOV control panels used on North West residential blocks.",
+                "price": "From £52",
+                "handle": "trox-panel-battery-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/trox.jpg",
+                "badge": "Certified"
+            }
+        ]
+    },
+    "tunstall": {
+        "blurb": "Icomply installs, services and upgrades Tunstall nurse call and telecare systems for care homes, extra-care schemes and supported living across the North West. We follow HTM 08-03 guidance, provide staff training handover, and keep call points, pear leads and panels certified under planned maintenance. Care operators and FM teams can buy genuine-fit Tunstall trade spares from our North West shop with rapid engineer support.",
+        "seo_desc": "Tunstall nurse call installation, HTM-aligned service & trade spares from Icomply across Manchester & the North West.",
+        "seo_keywords": "Tunstall, Tunstall nurse call, Tunstall installation, Tunstall service, Tunstall telecare, Tunstall call point, Tunstall pear lead, Tunstall spares, Tunstall trade, Tunstall North West, Tunstall Manchester, Tunstall Stockport, HTM 08-03",
+        "products": [
+            {
+                "id": "tunstall-call-point-pack",
+                "title": "Tunstall Call Point & Pear Lead Pack",
+                "blurb": "Replacement call points, pear leads and pull-cord kits for Tunstall nurse call bedrooms and bathrooms.",
+                "price": "From £44",
+                "handle": "tunstall-call-point-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/tunstall.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "tunstall-panel-battery-kit",
+                "title": "Tunstall Panel Battery & PSU Kit",
+                "blurb": "Backup batteries and power-supply consumables to keep Tunstall nurse call panels online during service visits.",
+                "price": "From £41",
+                "handle": "tunstall-panel-battery-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/tunstall.jpg",
+                "badge": "Popular"
+            }
+        ]
+    },
+    "uniview": {
+        "blurb": "Icomply designs and installs Uniview IP CCTV for retail parks, warehouses, housing schemes and commercial sites across Stockport, Manchester and the wider North West. Cameras and NVRs are commissioned to BS EN 62676 with remote viewing handover, and we provide reactive fault-finding plus planned camera cleans and firmware reviews. Trade Uniview mounts, PoE accessories and storage kits are available from our engineer shop for contractors on tight turnarounds.",
+        "seo_desc": "Uniview CCTV installation, BS EN 62676 service & trade camera kits from Icomply across Manchester & the North West.",
+        "seo_keywords": "Uniview, Uniview CCTV, Uniview installation, Uniview service, Uniview NVR, Uniview IP camera, Uniview spares, Uniview trade, Uniview North West, Uniview Manchester, Uniview Stockport, CCTV systems, BS EN 62676",
+        "products": [
+            {
+                "id": "uniview-camera-mount-kit",
+                "title": "Uniview Dome & Bullet Mount Kit",
+                "blurb": "Wall and soffit brackets with weather seals for Uniview dome and bullet cameras on commercial façades.",
+                "price": "From £34",
+                "handle": "uniview-camera-mount-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/uniview.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "uniview-nvr-accessory-pack",
+                "title": "Uniview NVR Cabling & HDD Accessory Pack",
+                "blurb": "PoE patch leads, rack fixings and storage accessories for Uniview NVR installs and upgrades.",
+                "price": "From £49",
+                "handle": "uniview-nvr-accessory-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/uniview.jpg",
+                "badge": "New"
+            }
+        ]
+    },
+    "urmet": {
+        "blurb": "Icomply supplies and installs Urmet door entry systems for multi-tenant residential blocks, student housing and mixed-use developments throughout the North West. From audio kits to video panels, we programme handsets, complete entrance commissioning and issue certification documentation for freeholders and managing agents. Planned service visits plus trade Urmet handsets, rain hoods and flush boxes keep estates secure and resident-friendly.",
+        "seo_desc": "Urmet door entry installation, multi-tenant service & trade handsets from Icomply across Stockport, Manchester & NW.",
+        "seo_keywords": "Urmet, Urmet door entry, Urmet installation, Urmet service, Urmet video entry, Urmet handset, Urmet panel, Urmet spares, Urmet trade, Urmet North West, Urmet Manchester, Urmet Stockport, multi-tenant door entry",
+        "products": [
+            {
+                "id": "urmet-handset-spares",
+                "title": "Urmet Handset & Faceplate Spares",
+                "blurb": "Replacement handsets, faceplates and wall brackets for Urmet audio and video apartment stations.",
+                "price": "From £56",
+                "handle": "urmet-handset-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/urmet.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "urmet-entrance-accessory",
+                "title": "Urmet Entrance Panel Accessory Pack",
+                "blurb": "Rain hoods, flush boxes and nameplate modules for Urmet street panels on North West apartment blocks.",
+                "price": "From £38",
+                "handle": "urmet-entrance-accessory",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/urmet.jpg",
+                "badge": "Stock"
+            }
+        ]
+    },
+    "vaillant": {
+        "blurb": "Icomply’s Gas Safe engineers install, service and repair Vaillant boilers and system components for landlords, housing providers and commercial premises across Greater Manchester and the North West. Annual services include combustion analysis, safety certification and landlord gas safety records where required, with reactive call-outs for no-heat faults. Trade Vaillant service kits, seals and flue accessories are available from our North West trade counter for engineers on the road.",
+        "seo_desc": "Vaillant boiler installation, Gas Safe service & trade kits from Icomply. Certified work across Manchester & the North West.",
+        "seo_keywords": "Vaillant, Vaillant boiler, Vaillant installation, Vaillant service, Vaillant Gas Safe, Vaillant spares, Vaillant flue, Vaillant trade, Vaillant North West, Vaillant Manchester, Vaillant Stockport, gas systems, landlord gas safety",
+        "products": [
+            {
+                "id": "vaillant-boiler-service-kit",
+                "title": "Vaillant Boiler Annual Service Kit",
+                "blurb": "Washers, filters and service consumables matched to common Vaillant domestic boilers for Gas Safe visits.",
+                "price": "From £36",
+                "handle": "vaillant-boiler-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/vaillant.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "vaillant-flue-accessory-pack",
+                "title": "Vaillant Flue & Fitting Accessory Pack",
+                "blurb": "Terminal seals, clips and fitting accessories for Vaillant flue runs on North West residential installs.",
+                "price": "From £28",
+                "handle": "vaillant-flue-accessory-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/vaillant.jpg",
+                "badge": "Popular"
+            }
+        ]
+    },
+    "vanderbilt": {
+        "blurb": "Icomply installs and maintains Vanderbilt access control for offices, logistics hubs, education campuses and multi-site estates across the North West. Readers, controllers and credentials are commissioned to BS EN 50133 practice with audit-ready user databases and certification handover. We support planned maintenance, door force testing and trade supply of Vanderbilt readers, tokens and PSU spares through our Stockport trade shop.",
+        "seo_desc": "Vanderbilt access control install, certified service & trade readers from Icomply across Manchester & the North West.",
+        "seo_keywords": "Vanderbilt, Vanderbilt access control, Vanderbilt installation, Vanderbilt service, Vanderbilt reader, Vanderbilt controller, Vanderbilt tokens, Vanderbilt spares, Vanderbilt trade, Vanderbilt North West, Vanderbilt Manchester, Vanderbilt Stockport, BS EN 50133",
+        "products": [
+            {
+                "id": "vanderbilt-reader-token-pack",
+                "title": "Vanderbilt Reader & Token Pack",
+                "blurb": "Proximity readers and credential packs for Vanderbilt door controllers on commercial access upgrades.",
+                "price": "From £72",
+                "handle": "vanderbilt-reader-token-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/vanderbilt.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "vanderbilt-controller-spares",
+                "title": "Vanderbilt Controller & Lock Spares",
+                "blurb": "PSU fuses, exit buttons and lock interface spares for Vanderbilt access doors under maintenance contracts.",
+                "price": "From £58",
+                "handle": "vanderbilt-controller-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/vanderbilt.jpg",
+                "badge": "Certified"
+            }
+        ]
+    },
+    "ventilux": {
+        "blurb": "Icomply specialises in Ventilux AOV, smoke ventilation and emergency-related control systems for residential towers and commercial cores across Manchester, Cheshire and Lancashire. Installation and service work is aligned to BS 9991 and EN 12101, with full certification for building safety cases and freeholder compliance packs. North West contractors can source Ventilux actuator kits, batteries and panel consumables from our trade shop for rapid turnaround jobs.",
+        "seo_desc": "Ventilux AOV installation, BS 9991 certification & trade actuator kits from Icomply across Manchester & the North West.",
+        "seo_keywords": "Ventilux, Ventilux AOV, Ventilux smoke ventilation, Ventilux installation, Ventilux service, Ventilux actuator, Ventilux panel, Ventilux spares, Ventilux trade, Ventilux North West, Ventilux Manchester, Ventilux Stockport, BS 9991, EN 12101",
+        "products": [
+            {
+                "id": "ventilux-actuator-service-kit",
+                "title": "Ventilux AOV Actuator Service Kit",
+                "blurb": "Service seals, pins and consumables for Ventilux smoke-vent actuators on scheduled life-safety inspections.",
+                "price": "From £76",
+                "handle": "ventilux-actuator-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/ventilux.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "ventilux-panel-spares",
+                "title": "Ventilux Control Panel Spares Pack",
+                "blurb": "Batteries, fuses and key switches for Ventilux AOV control panels serving North West multi-storey blocks.",
+                "price": "From £47",
+                "handle": "ventilux-panel-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/ventilux.jpg",
+                "badge": "Stock"
+            }
+        ]
+    },
+    "videx": {
+        "blurb": "Icomply is a trusted North West partner for Videx door entry — installing audio, video and GSM systems on apartment blocks, HMOs and commercial entrances from Stockport to Liverpool. We programme handsets, set up trade-friendly wiring standards and certify systems for managing agents and freeholders. Ongoing service contracts plus our trade shop for Videx handsets, panels and entrance accessories keep residents connected and doors secure.",
+        "seo_desc": "Videx door entry installation, service & trade handsets from Icomply. Certified systems across Manchester & the North West.",
+        "seo_keywords": "Videx, Videx door entry, Videx installation, Videx service, Videx video entry, Videx GSM, Videx handset, Videx panel, Videx spares, Videx trade, Videx North West, Videx Manchester, Videx Stockport, multi-tenant door entry",
+        "products": [
+            {
+                "id": "videx-handset-spares",
+                "title": "Videx Handset & Faceplate Spares",
+                "blurb": "Replacement handsets, faceplates and wall mounts for Videx audio and video apartment stations.",
+                "price": "From £54",
+                "handle": "videx-handset-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/videx.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "videx-entrance-accessory",
+                "title": "Videx Entrance Panel Accessory Pack",
+                "blurb": "Rain covers, flush boxes and call-button modules for Videx street panels on North West residential schemes.",
+                "price": "From £37",
+                "handle": "videx-entrance-accessory",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/videx.jpg",
+                "badge": "Popular"
+            }
+        ]
+    }
+}

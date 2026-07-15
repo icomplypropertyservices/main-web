@@ -1,0 +1,272 @@
+{
+    "group-scs": {
+        "blurb": "Icomply designs, installs and services Group SCS AOV and smoke-control systems across the North West, with commissioning to BS 9991 and EN 12101. From roof vents and actuators to control panels, our engineers keep life-safety smoke extract reliable for landlords, developers and FM teams. Trade spares and certification paperwork are available from our Stockport base for Greater Manchester, Cheshire and Lancashire sites.",
+        "seo_desc": "Group SCS AOV install, service & certification by Icomply. Trade smoke-control spares across Stockport, Manchester & the North West.",
+        "seo_keywords": "Group SCS, Group SCS AOV, Group SCS installation, Group SCS service, Group SCS certification, Group SCS spares, smoke control North West, AOV trade shop Manchester, Group SCS Stockport, AOV & Air Handling",
+        "products": [
+            {
+                "id": "group-scs-actuator-service-kit",
+                "title": "Group SCS Actuator Service Kit",
+                "blurb": "Trade consumables for Group SCS AOV actuators — ideal for planned maintenance rounds.",
+                "price": "From £75",
+                "handle": "group-scs-actuator-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/group-scs.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "group-scs-panel-spares-pack",
+                "title": "Group SCS Control Panel Spares Pack",
+                "blurb": "Batteries, fuses and keys for Group SCS smoke-control panels used on North West sites.",
+                "price": "From £45",
+                "handle": "group-scs-panel-spares-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/group-scs.jpg",
+                "badge": "Service"
+            }
+        ]
+    },
+    "haes-systems": {
+        "blurb": "Icomply is a North West installer and service partner for Haes Systems fire detection panels, covering new BS 5839 installs, upgrades and reactive call-outs. We support conventional and addressable Haes kits for offices, industrial units and multi-site portfolios, with full certification and log-book updates. Trade engineers can also pick up panel batteries, zone cards and device packs through our Stockport trade shop.",
+        "seo_desc": "Haes Systems fire alarm install, service & BS 5839 certs. Trade kits & spares from Icomply across Manchester & the North West.",
+        "seo_keywords": "Haes Systems, Haes fire alarm, Haes Systems installation, Haes Systems service, Haes panel spares, BS 5839 certification, fire alarm trade shop North West, Haes Manchester, Haes Stockport, Fire Alarms",
+        "products": [
+            {
+                "id": "haes-systems-panel-service-kit",
+                "title": "Haes Systems Panel Service Kit",
+                "blurb": "Batteries, keys and labels for Haes panel servicing on commercial fire contracts.",
+                "price": "From £89",
+                "handle": "haes-systems-panel-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/haes-systems.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "haes-systems-device-pack",
+                "title": "Haes Systems Detector & Call-Point Pack",
+                "blurb": "Trade device pack for Haes installs and expansions across Greater Manchester sites.",
+                "price": "From £65",
+                "handle": "haes-systems-device-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/haes-systems.jpg",
+                "badge": "Popular"
+            }
+        ]
+    },
+    "hager": {
+        "blurb": "Icomply supplies and installs Hager consumer units, distribution boards and circuit protection across the North West, working to BS 7671 with full EIC and EICR certification. Whether you need a board upgrade, EV-ready distribution or planned electrical maintenance, our electricians specify genuine Hager breakers and accessories. Contractors and landlords can source trade Hager spares from our Stockport counter for Manchester, Cheshire and Lancashire jobs.",
+        "seo_desc": "Hager consumer units & electrical install by Icomply. BS 7671 certs, service & trade spares across Stockport & the North West.",
+        "seo_keywords": "Hager, Hager consumer unit, Hager installation, Hager service, Hager RCBO, BS 7671 certification, electrical trade shop North West, Hager Manchester, Hager Stockport, Electrical",
+        "products": [
+            {
+                "id": "hager-board-spares-kit",
+                "title": "Hager Board & Breaker Spares Kit",
+                "blurb": "Trade pack of Hager MCBs, RCBOs and board accessories for service call-outs.",
+                "price": "From £49",
+                "handle": "hager-board-spares-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/hager.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "hager-install-accessory-pack",
+                "title": "Hager Install Accessory Pack",
+                "blurb": "Trunking, glands and termination kit commonly used on Hager installs in the North West.",
+                "price": "From £35",
+                "handle": "hager-install-accessory-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/hager.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "hanwha-vision": {
+        "blurb": "Icomply designs and installs Hanwha Vision (formerly Samsung) IP CCTV for commercial and multi-residential sites across Greater Manchester and the wider North West. From Wisenet cameras and NVRs to remote viewing and scheduled maintenance, we deliver BS EN 62676-aligned systems with clear certification packs. Trade mounts, PoE accessories and storage upgrades are available for FM teams and security contractors via our Stockport trade shop.",
+        "seo_desc": "Hanwha Vision CCTV install, service & trade kits by Icomply. Wisenet cameras across Stockport, Manchester & the North West.",
+        "seo_keywords": "Hanwha Vision, Hanwha CCTV, Wisenet cameras, Hanwha Vision installation, Hanwha Vision service, CCTV certification North West, CCTV trade shop Manchester, Hanwha Stockport, CCTV Systems",
+        "products": [
+            {
+                "id": "hanwha-vision-mount-kit",
+                "title": "Hanwha Vision Camera Mount Kit",
+                "blurb": "Weatherproof brackets and mounts for Hanwha Vision dome and bullet cameras.",
+                "price": "From £29",
+                "handle": "hanwha-vision-mount-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/hanwha-vision.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "hanwha-vision-nvr-accessory-pack",
+                "title": "Hanwha Vision NVR Accessory Pack",
+                "blurb": "Cabling, HDD hardware and rack accessories for Hanwha NVR installs.",
+                "price": "From £45",
+                "handle": "hanwha-vision-nvr-accessory-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/hanwha-vision.jpg",
+                "badge": "Stock"
+            }
+        ]
+    },
+    "hid-global": {
+        "blurb": "Icomply installs and maintains HID Global access control — readers, credentials and controllers — for offices, warehouses and residential blocks across the North West. We handle new door systems, card migrations and planned service visits with commissioning documentation to commercial best practice. Need spare iCLASS or Seos cards, reader modules or power supplies? Our Stockport trade counter supports contractors working Manchester, Cheshire and Lancashire routes.",
+        "seo_desc": "HID Global access control install, service & credentials. Trade readers & spares from Icomply across the North West.",
+        "seo_keywords": "HID Global, HID access control, HID readers, HID Global installation, HID Global service, access control certification, access trade shop North West, HID Manchester, HID Stockport, Access Control",
+        "products": [
+            {
+                "id": "hid-global-reader-credential-pack",
+                "title": "HID Global Reader & Credential Pack",
+                "blurb": "Readers and fobs/cards for HID Global door systems — trade-ready stock.",
+                "price": "From £69",
+                "handle": "hid-global-reader-credential-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/hid-global.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "hid-global-controller-spares",
+                "title": "HID Global Controller Spares Kit",
+                "blurb": "PSU fuses, lock interfaces and exit devices for HID Global maintenance jobs.",
+                "price": "From £55",
+                "handle": "hid-global-controller-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/hid-global.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "hikvision": {
+        "blurb": "Icomply is a North West Hikvision CCTV specialist — survey, install, NVR configuration and ongoing service for shops, estates and industrial parks. We specify ColorVu, AcuSense and multi-site recording solutions with tidy cabling and handover packs your insurers will accept. Trade cameras mounts, PoE injectors and HDD kits ship from our Stockport base to engineers across Manchester, Lancashire and Cheshire.",
+        "seo_desc": "Hikvision CCTV installation, service & trade accessories by Icomply. Stockport, Manchester & North West cover. Free quotes.",
+        "seo_keywords": "Hikvision, Hikvision CCTV, Hikvision installation, Hikvision service, Hikvision NVR, CCTV certification North West, CCTV trade shop Manchester, Hikvision Stockport, ColorVu, CCTV Systems",
+        "products": [
+            {
+                "id": "hikvision-camera-mount-kit",
+                "title": "Hikvision Camera Mount Kit",
+                "blurb": "Brackets and weather housings for Hikvision dome and bullet cameras.",
+                "price": "From £29",
+                "handle": "hikvision-camera-mount-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/hikvision.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "hikvision-nvr-hdd-pack",
+                "title": "Hikvision NVR & HDD Accessory Pack",
+                "blurb": "Storage and cabling accessories for Hikvision NVR installs and upgrades.",
+                "price": "From £45",
+                "handle": "hikvision-nvr-hdd-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/hikvision.jpg",
+                "badge": "Popular"
+            }
+        ]
+    },
+    "hikvision-ax-pro": {
+        "blurb": "Icomply installs and services Hikvision AX PRO wireless and hybrid intruder alarms for homes, SMEs and multi-site portfolios across the North West. Systems are set out to PD 6662 / BS EN 50131 with app monitoring, zone expansions and full certification on handover. Our trade shop stocks AX PRO PIRs, contacts, keypads and panel batteries for engineers covering Stockport, Manchester and surrounding counties.",
+        "seo_desc": "Hikvision AX PRO intruder alarm install, service & certs. Trade sensors & kits from Icomply across the North West.",
+        "seo_keywords": "Hikvision AX PRO, AX PRO alarm, Hikvision AX PRO installation, Hikvision AX PRO service, wireless intruder alarm, PD 6662 certification, alarm trade shop North West, AX PRO Manchester, AX PRO Stockport, Intruder Alarms",
+        "products": [
+            {
+                "id": "hikvision-ax-pro-expansion-kit",
+                "title": "Hikvision AX PRO Expansion Kit",
+                "blurb": "Zones, keypads and modules to expand Hikvision AX PRO panels on site.",
+                "price": "From £59",
+                "handle": "hikvision-ax-pro-expansion-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/hikvision-ax-pro.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "hikvision-ax-pro-sensor-pack",
+                "title": "Hikvision AX PRO PIR & Contact Pack",
+                "blurb": "Trade sensors for AX PRO installs and reactive replacements across the North West.",
+                "price": "From £48",
+                "handle": "hikvision-ax-pro-sensor-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/hikvision-ax-pro.jpg",
+                "badge": "New"
+            }
+        ]
+    },
+    "hochiki": {
+        "blurb": "Icomply installs, commissions and maintains Hochiki fire detection — ESP addressable devices, bases and interfaces — to BS 5839 across the North West. From new builds to detector swaps and annual servicing, we keep Hochiki loops healthy with clear certification for landlords and duty holders. Trade packs of Hochiki sensors, call points and panel batteries are available for contractors via our Stockport trade shop.",
+        "seo_desc": "Hochiki fire alarm install, BS 5839 service & certification. Trade detectors & kits from Icomply in the North West.",
+        "seo_keywords": "Hochiki, Hochiki ESP, Hochiki fire alarm, Hochiki installation, Hochiki service, BS 5839 certification, fire detector trade shop North West, Hochiki Manchester, Hochiki Stockport, Fire Alarms",
+        "products": [
+            {
+                "id": "hochiki-panel-service-kit",
+                "title": "Hochiki Panel Service Kit",
+                "blurb": "Engineer kit for Hochiki panels — batteries, keys and service labels.",
+                "price": "From £89",
+                "handle": "hochiki-panel-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/hochiki.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "hochiki-detector-device-pack",
+                "title": "Hochiki Detector & Device Pack",
+                "blurb": "Trade detectors and call points for Hochiki ESP loops and extensions.",
+                "price": "From £65",
+                "handle": "hochiki-detector-device-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/hochiki.jpg",
+                "badge": "Popular"
+            }
+        ]
+    },
+    "honeywell": {
+        "blurb": "Icomply delivers Honeywell fire, intruder and access solutions for commercial estates across Greater Manchester and the North West. Our engineers install and service Morley / Notifier-style fire panels, Honeywell intrusion kits and card access, with multi-discipline certification under one contractor. Trade spares — detectors, readers, batteries and zone modules — keep FM teams stocked from our Stockport trade counter.",
+        "seo_desc": "Honeywell fire, intruder & access install by Icomply. Service, certs & trade spares across Stockport & the North West.",
+        "seo_keywords": "Honeywell, Honeywell fire alarm, Honeywell access control, Honeywell intruder, Honeywell installation, Honeywell service, multi-system certification North West, Honeywell trade shop Manchester, Honeywell Stockport, Fire Alarms, Intruder Alarms, Access Control",
+        "products": [
+            {
+                "id": "honeywell-fire-service-kit",
+                "title": "Honeywell Fire Panel Service Kit",
+                "blurb": "Batteries, keys and labels for Honeywell / Notifier-style fire panel maintenance.",
+                "price": "From £89",
+                "handle": "honeywell-fire-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/honeywell.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "honeywell-security-device-pack",
+                "title": "Honeywell Detector & Device Pack",
+                "blurb": "Trade detectors and devices for Honeywell fire and security expansions.",
+                "price": "From £65",
+                "handle": "honeywell-security-device-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/honeywell.jpg",
+                "badge": "Stock"
+            }
+        ]
+    },
+    "ideal": {
+        "blurb": "Icomply’s Gas Safe engineers install, service and repair Ideal boilers and heating systems across Stockport, Manchester and the wider North West. From combi swaps and landlord gas safety to annual Ideal Logic and Vogue servicing, we keep plant efficient with full certification. Trade service kits, seals and flue accessories for Ideal appliances are available for heating contractors through our trade shop.",
+        "seo_desc": "Ideal boiler install, Gas Safe service & certification by Icomply. Trade kits across Stockport, Manchester & North West.",
+        "seo_keywords": "Ideal, Ideal boiler, Ideal Logic, Ideal installation, Ideal service, Gas Safe certification, boiler trade shop North West, Ideal Manchester, Ideal Stockport, Gas Systems",
+        "products": [
+            {
+                "id": "ideal-boiler-service-kit",
+                "title": "Ideal Boiler Service Kit",
+                "blurb": "Seals, washers and consumables for Ideal boiler annual services.",
+                "price": "From £32",
+                "handle": "ideal-boiler-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/ideal.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "ideal-flue-accessory-pack",
+                "title": "Ideal Flue & Fitting Accessory Pack",
+                "blurb": "Trade flue and fitting accessories for Ideal installs across the North West.",
+                "price": "From £24",
+                "handle": "ideal-flue-accessory-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/ideal.jpg",
+                "badge": ""
+            }
+        ]
+    }
+}

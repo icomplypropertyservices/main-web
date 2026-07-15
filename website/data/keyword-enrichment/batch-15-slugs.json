@@ -1,0 +1,202 @@
+[
+    {
+        "slug": "domestic-burglar-alarm",
+        "name": "Domestic Burglar Alarm",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "grade-3-intruder-alarm",
+        "name": "Grade 3 Intruder Alarm",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "pd-6662-alarm-system",
+        "name": "PD 6662 Alarm System",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "texecom-alarm-installation",
+        "name": "Texecom Alarm Installation",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "ajax-alarm-installation",
+        "name": "Ajax Alarm Installation",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "alarm-system-upgrade",
+        "name": "Alarm System Upgrade",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "monitored-intruder-alarm",
+        "name": "Monitored Intruder Alarm",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "police-response-alarm",
+        "name": "Police Response Alarm",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "pir-sensor-installation",
+        "name": "PIR Sensor Installation",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "door-contact-alarm-installation",
+        "name": "Door Contact Alarm Installation",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "shock-sensor-installation",
+        "name": "Shock Sensor Installation",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "alarm-keypad-installation",
+        "name": "Alarm Keypad Installation",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "intruder-alarm-panel-replacement",
+        "name": "Intruder Alarm Panel Replacement",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "shop-alarm-installation",
+        "name": "Shop Alarm Installation",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "office-alarm-installation",
+        "name": "Office Alarm Installation",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "warehouse-alarm-system",
+        "name": "Warehouse Alarm System",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "smart-home-alarm-installation",
+        "name": "Smart Home Alarm Installation",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "alarm-monitoring-setup",
+        "name": "Alarm Monitoring Setup",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "intruder-alarm-engineers",
+        "name": "Intruder Alarm Engineers",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "security-alarm-installation",
+        "name": "Security Alarm Installation",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "alarm-battery-replacement",
+        "name": "Alarm Battery Replacement",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "multi-site-alarm-maintenance",
+        "name": "Multi Site Alarm Maintenance",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "pyronix-alarm-installation",
+        "name": "Pyronix Alarm Installation",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "honeywell-intruder-alarm",
+        "name": "Honeywell Intruder Alarm",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "risco-alarm-installation",
+        "name": "Risco Alarm Installation",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "alarm-system-design",
+        "name": "Alarm System Design",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "business-premises-alarm",
+        "name": "Business Premises Alarm",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "nurse-call-maintenance",
+        "name": "Nurse Call Maintenance",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "htm-08-03-nurse-call",
+        "name": "HTM 08-03 Nurse Call",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nurse-call-panel-installation",
+        "name": "Nurse Call Panel Installation",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nurse-call-upgrade",
+        "name": "Nurse Call Upgrade",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "courtney-thorne-nurse-call",
+        "name": "Courtney Thorne Nurse Call",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "static-systems-nurse-call",
+        "name": "Static Systems Nurse Call",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "intercall-nurse-call",
+        "name": "Intercall Nurse Call",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "tunstall-nurse-call",
+        "name": "Tunstall Nurse Call",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "aid-call-system",
+        "name": "Aid Call System",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nurse-call-pear-lead-replacement",
+        "name": "Nurse Call Pear Lead Replacement",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nurse-call-point-installation",
+        "name": "Nurse Call Point Installation",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "disabled-toilet-alarm-installation",
+        "name": "Disabled Toilet Alarm Installation",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "emergency-pull-cord-installation",
+        "name": "Emergency Pull Cord Installation",
+        "service": "nurse-call"
+    }
+]

@@ -1,8 +1,10 @@
 User-agent: *
 Allow: /
+
+Sitemap: http://localhost/icomply/sitemap.xml
+
 Disallow: /admin/
 Disallow: /bin/
-Disallow: /templates/
 Disallow: /data/
-
-Sitemap: https://icomplyproperty.co.uk/sitemap.xml
+Disallow: /config.php
+Disallow: /config.local.php

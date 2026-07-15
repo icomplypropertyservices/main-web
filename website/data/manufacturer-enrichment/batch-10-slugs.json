@@ -1,0 +1,74 @@
+[
+    {
+        "slug": "idis",
+        "name": "IDIS",
+        "services": [
+            "cctv"
+        ]
+    },
+    {
+        "slug": "innerrange",
+        "name": "Innerrange",
+        "services": [
+            "intruder-alarm"
+        ]
+    },
+    {
+        "slug": "intercall",
+        "name": "Intercall",
+        "services": [
+            "nurse-call"
+        ]
+    },
+    {
+        "slug": "intergas",
+        "name": "Intergas",
+        "services": [
+            "gas-systems"
+        ]
+    },
+    {
+        "slug": "jeron",
+        "name": "Jeron",
+        "services": [
+            "nurse-call"
+        ]
+    },
+    {
+        "slug": "jsb-electrical",
+        "name": "JSB Electrical",
+        "services": [
+            "emergency-lighting"
+        ]
+    },
+    {
+        "slug": "kantech",
+        "name": "Kantech",
+        "services": [
+            "access-control"
+        ]
+    },
+    {
+        "slug": "kentec",
+        "name": "Kentec",
+        "services": [
+            "fire-alarms"
+        ]
+    },
+    {
+        "slug": "kingspan-air",
+        "name": "Kingspan Air",
+        "services": [
+            "aov-air-handling"
+        ]
+    },
+    {
+        "slug": "legrand",
+        "name": "Legrand",
+        "services": [
+            "electrical",
+            "emergency-lighting",
+            "intercoms"
+        ]
+    }
+]

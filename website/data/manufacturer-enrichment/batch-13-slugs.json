@@ -1,0 +1,73 @@
+[
+    {
+        "slug": "orbik",
+        "name": "Orbik",
+        "services": [
+            "emergency-lighting"
+        ]
+    },
+    {
+        "slug": "orisec",
+        "name": "Orisec",
+        "services": [
+            "intruder-alarm"
+        ]
+    },
+    {
+        "slug": "p4-limited",
+        "name": "P4 Limited",
+        "services": [
+            "emergency-lighting"
+        ]
+    },
+    {
+        "slug": "panasonic-i-pro",
+        "name": "Panasonic i-PRO",
+        "services": [
+            "cctv"
+        ]
+    },
+    {
+        "slug": "paradox",
+        "name": "Paradox",
+        "services": [
+            "intruder-alarm"
+        ]
+    },
+    {
+        "slug": "paxton",
+        "name": "Paxton",
+        "services": [
+            "access-control",
+            "door-entry"
+        ]
+    },
+    {
+        "slug": "philips-emergency",
+        "name": "Philips Emergency",
+        "services": [
+            "emergency-lighting"
+        ]
+    },
+    {
+        "slug": "potterton",
+        "name": "Potterton",
+        "services": [
+            "gas-systems"
+        ]
+    },
+    {
+        "slug": "pyronix",
+        "name": "Pyronix",
+        "services": [
+            "intruder-alarm"
+        ]
+    },
+    {
+        "slug": "quantec",
+        "name": "Quantec",
+        "services": [
+            "nurse-call"
+        ]
+    }
+]

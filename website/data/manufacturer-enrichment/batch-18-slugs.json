@@ -1,0 +1,72 @@
+[
+    {
+        "slug": "viessmann",
+        "name": "Viessmann",
+        "services": [
+            "gas-systems"
+        ]
+    },
+    {
+        "slug": "vingtor-stentofon",
+        "name": "Vingtor-Stentofon",
+        "services": [
+            "intercoms"
+        ]
+    },
+    {
+        "slug": "visonic",
+        "name": "Visonic",
+        "services": [
+            "intruder-alarm"
+        ]
+    },
+    {
+        "slug": "vivotek",
+        "name": "Vivotek",
+        "services": [
+            "cctv"
+        ]
+    },
+    {
+        "slug": "vokera",
+        "name": "Vokera",
+        "services": [
+            "gas-systems"
+        ]
+    },
+    {
+        "slug": "wallbox",
+        "name": "Wallbox",
+        "services": [
+            "electrical"
+        ]
+    },
+    {
+        "slug": "wandsworth",
+        "name": "Wandsworth",
+        "services": [
+            "nurse-call"
+        ]
+    },
+    {
+        "slug": "windowmaster",
+        "name": "WindowMaster",
+        "services": [
+            "aov-air-handling"
+        ]
+    },
+    {
+        "slug": "wisenet",
+        "name": "Wisenet",
+        "services": [
+            "cctv"
+        ]
+    },
+    {
+        "slug": "worcester-bosch",
+        "name": "Worcester Bosch",
+        "services": [
+            "gas-systems"
+        ]
+    }
+]

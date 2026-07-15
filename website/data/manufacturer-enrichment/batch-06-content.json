@@ -1,0 +1,272 @@
+{
+    "d-light": {
+        "blurb": "Icomply installs, tests and certifies D-Light emergency lighting across Stockport, Manchester and the wider North West to BS 5266. From new-build LED escape routes to battery replacements and monthly/annual duration tests, our engineers keep D-Light systems compliant for landlords and FM teams. Order D-Light fittings, exit signs and spare packs from our trade shop with next-day options for site call-outs.",
+        "seo_desc": "D-Light emergency lighting install, BS 5266 testing & certification. Trade fittings & batteries — Stockport, Manchester & North West. Free quotes.",
+        "seo_keywords": "D-Light, D-Light emergency lighting, D-Light installation, D-Light testing, D-Light BS 5266, D-Light batteries, D-Light trade, D-Light North West, D-Light Manchester, D-Light Stockport, emergency lighting service",
+        "products": [
+            {
+                "id": "d-light-led-fitting-pack",
+                "title": "D-Light LED Emergency Fitting Pack",
+                "blurb": "Trade LED bulkheads and luminaires for D-Light escape-route upgrades.",
+                "price": "From £55",
+                "handle": "d-light-led-fitting-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/d-light.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "d-light-battery-kit",
+                "title": "D-Light Battery & Duration Test Kit",
+                "blurb": "Replacement battery packs and labels for D-Light maintenance visits.",
+                "price": "From £28",
+                "handle": "d-light-battery-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/d-light.jpg",
+                "badge": "Stock"
+            }
+        ]
+    },
+    "dahua": {
+        "blurb": "Icomply designs, installs and services Dahua CCTV for commercial, residential and multi-site estates across Greater Manchester and the North West. We commission IP and hybrid Dahua recorders to BS EN 62676, with planned maintenance, camera swaps and remote health checks for FM and security teams. Buy Dahua mounts, cabling, HDDs and engineer spares from our trade counter or online shop.",
+        "seo_desc": "Dahua CCTV install, service & certification to BS EN 62676. Trade cameras, NVR spares — Manchester, Stockport & North West. Free quotes.",
+        "seo_keywords": "Dahua, Dahua CCTV, Dahua installation, Dahua NVR, Dahua cameras, Dahua service, Dahua trade, Dahua North West, Dahua Manchester, Dahua Stockport, CCTV maintenance",
+        "products": [
+            {
+                "id": "dahua-camera-mount-kit",
+                "title": "Dahua Camera Mount & Bracket Kit",
+                "blurb": "Weatherproof wall and pole mounts for Dahua dome and bullet cameras.",
+                "price": "From £29",
+                "handle": "dahua-camera-mount-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/dahua.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "dahua-nvr-storage-pack",
+                "title": "Dahua NVR Storage & Cable Pack",
+                "blurb": "HDD, PoE patch leads and install accessories for Dahua recorders.",
+                "price": "From £45",
+                "handle": "dahua-nvr-storage-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/dahua.jpg",
+                "badge": "Popular"
+            }
+        ]
+    },
+    "doorking": {
+        "blurb": "Icomply supplies and installs DoorKing door entry and gate control for apartments, estates and commercial sites across the North West. Our engineers programme panels, handsets and access modules, then provide planned servicing and reactive call-outs for landlords and managing agents. Stock DoorKing spares, rain hoods and entrance accessories via our Stockport trade shop for fast turnaround.",
+        "seo_desc": "DoorKing door entry install, service & trade spares. Panels, handsets & gate access across Stockport, Manchester & the North West.",
+        "seo_keywords": "DoorKing, DoorKing door entry, DoorKing installation, DoorKing gate access, DoorKing handsets, DoorKing service, DoorKing trade, DoorKing North West, DoorKing Manchester, DoorKing Stockport, multi-tenant entry",
+        "products": [
+            {
+                "id": "doorking-handset-spares",
+                "title": "DoorKing Handset & Faceplate Spares",
+                "blurb": "Replacement handsets and faceplates for DoorKing multi-tenant systems.",
+                "price": "From £52",
+                "handle": "doorking-handset-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/doorking.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "doorking-entrance-accessory",
+                "title": "DoorKing Entrance Panel Accessory Kit",
+                "blurb": "Rain hoods, flush boxes and modules for DoorKing entrance panels.",
+                "price": "From £36",
+                "handle": "doorking-entrance-accessory",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/doorking.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "dormakaba": {
+        "blurb": "Icomply is a North West installer and service partner for dormakaba access control — readers, controllers, locks and credentials for offices, healthcare and multi-occupancy buildings. We design, commission and certificate systems to BS EN 50133, with ongoing maintenance contracts from our Stockport base. Trade buyers can order dormakaba readers, tokens, PSU fuses and door hardware through our online shop.",
+        "seo_desc": "dormakaba access control install, service & certification. Readers, locks & trade spares — Stockport, Manchester & North West.",
+        "seo_keywords": "dormakaba, dormakaba access control, dormakaba installation, dormakaba readers, dormakaba locks, dormakaba service, dormakaba trade, dormakaba North West, dormakaba Manchester, dormakaba Stockport, BS EN 50133",
+        "products": [
+            {
+                "id": "dormakaba-reader-token-pack",
+                "title": "dormakaba Reader & Token Pack",
+                "blurb": "Proximity readers and credentials for dormakaba door controllers.",
+                "price": "From £69",
+                "handle": "dormakaba-reader-token-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/dormakaba.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "dormakaba-controller-spares",
+                "title": "dormakaba Controller & Lock Spares",
+                "blurb": "PSU fuses, electric locks and exit devices for dormakaba sites.",
+                "price": "From £55",
+                "handle": "dormakaba-controller-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/dormakaba.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "dsc": {
+        "blurb": "Icomply installs and maintains DSC intruder alarms to PD 6662 and BS EN 50131 for homes, shops and commercial premises across Manchester, Cheshire and the North West. From full panel upgrades to PIR swaps, keypad faults and annual certification, our alarm engineers keep DSC systems reliable. Source DSC zone expanders, contacts and sensor packs from our trade shop for same-week site works.",
+        "seo_desc": "DSC intruder alarm install, service & PD 6662 certification. Trade PIRs, keypads & spares — Manchester, Stockport & North West.",
+        "seo_keywords": "DSC, DSC alarm, DSC installation, DSC service, DSC PIR, DSC keypad, DSC PD 6662, DSC trade, DSC North West, DSC Manchester, DSC Stockport, intruder alarm maintenance",
+        "products": [
+            {
+                "id": "dsc-panel-expansion-kit",
+                "title": "DSC Panel Expansion & Keypad Kit",
+                "blurb": "Zone expanders, keypads and modules for DSC PowerSeries systems.",
+                "price": "From £59",
+                "handle": "dsc-panel-expansion-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/dsc.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "dsc-pir-contact-pack",
+                "title": "DSC PIR & Contact Sensor Pack",
+                "blurb": "Trade motion sensors and door contacts for DSC installations.",
+                "price": "From £48",
+                "handle": "dsc-pir-contact-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/dsc.jpg",
+                "badge": "Popular"
+            }
+        ]
+    },
+    "easee": {
+        "blurb": "Icomply installs and commissions Easee EV chargers for homes, fleets and workplace parking across Stockport, Greater Manchester and the North West. Every install is completed to BS 7671 with Part P / building-reg certification, load management and app setup included. Order Easee wall mounts, cable kits and engineer accessories from our electrical trade shop for rapid deployment.",
+        "seo_desc": "Easee EV charger install, BS 7671 certification & service. Trade mounts & accessories — Stockport, Manchester & North West.",
+        "seo_keywords": "Easee, Easee EV charger, Easee installation, Easee Charge, Easee service, Easee BS 7671, Easee trade, Easee North West, Easee Manchester, Easee Stockport, electric vehicle charging",
+        "products": [
+            {
+                "id": "easee-wall-mount-kit",
+                "title": "Easee Wall Mount & Fixing Kit",
+                "blurb": "Mounting brackets and fixings for Easee Home and Charge installs.",
+                "price": "From £49",
+                "handle": "easee-wall-mount-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/easee.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "easee-cable-accessory-pack",
+                "title": "Easee Cable & Install Accessory Pack",
+                "blurb": "Termination, isolation and cable accessories for Easee EV points.",
+                "price": "From £35",
+                "handle": "easee-cable-accessory-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/easee.jpg",
+                "badge": "New"
+            }
+        ]
+    },
+    "eaton": {
+        "blurb": "Icomply specifies, installs and services Eaton electrical distribution and emergency lighting products across the North West. From consumer units and RCBO boards to Memshield panels and BS 5266 emergency luminaires, we deliver compliant installs with full certification for landlords and contractors. Shop Eaton breakers, boards, batteries and engineer spares online or collect from our Stockport trade counter.",
+        "seo_desc": "Eaton electrical & emergency lighting install, service & certs. Trade boards, breakers & spares — Manchester & North West.",
+        "seo_keywords": "Eaton, Eaton consumer unit, Eaton Memshield, Eaton emergency lighting, Eaton installation, Eaton service, Eaton trade, Eaton North West, Eaton Manchester, Eaton Stockport, BS 7671, BS 5266",
+        "products": [
+            {
+                "id": "eaton-cu-spares-kit",
+                "title": "Eaton Consumer Unit Spares Kit",
+                "blurb": "RCBOs, MCBs and busbar spares for Eaton domestic and light commercial boards.",
+                "price": "From £49",
+                "handle": "eaton-cu-spares-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/eaton.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "eaton-em-lighting-pack",
+                "title": "Eaton Emergency Lighting Accessory Pack",
+                "blurb": "Batteries, legends and mount kits for Eaton emergency luminaires.",
+                "price": "From £35",
+                "handle": "eaton-em-lighting-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/eaton.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "eaton-fire": {
+        "blurb": "Icomply installs, commissions and maintains Eaton Fire detection and alarm systems to BS 5839 across Manchester, Lancashire, Cheshire and Merseyside. Addressable and conventional Eaton Fire panels, detectors and call points are supported with planned service visits, false-alarm reduction and full certification. Trade kits, panel batteries and device packs ship from our North West shop for engineers and FM teams.",
+        "seo_desc": "Eaton Fire alarm install, BS 5839 service & certification. Trade detectors, panels & kits — Stockport, Manchester & North West.",
+        "seo_keywords": "Eaton Fire, Eaton Fire alarm, Eaton Fire installation, Eaton Fire panel, Eaton Fire detectors, Eaton Fire BS 5839, Eaton Fire trade, Eaton Fire North West, Eaton Fire Manchester, Eaton Fire Stockport, fire alarm maintenance",
+        "products": [
+            {
+                "id": "eaton-fire-panel-service-kit",
+                "title": "Eaton Fire Panel Service Kit",
+                "blurb": "Batteries, keys, fuses and labels for Eaton Fire panel maintenance.",
+                "price": "From £89",
+                "handle": "eaton-fire-panel-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/eaton-fire.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "eaton-fire-detector-pack",
+                "title": "Eaton Fire Detector & Call-Point Pack",
+                "blurb": "Trade pack of smoke/heat detectors and MCP units for Eaton Fire systems.",
+                "price": "From £65",
+                "handle": "eaton-fire-detector-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/eaton-fire.jpg",
+                "badge": "Popular"
+            }
+        ]
+    },
+    "elvox": {
+        "blurb": "Icomply installs and repairs Elvox door entry systems for apartment blocks, student housing and commercial receptions across the North West. We replace handsets, upgrade entrance panels and programme audio/video Elvox kits, with BS-compliant cabling practice and landlord certification where required. Elvox faceplates, rain hoods and flush boxes are stocked in our trade shop for quick engineer collection.",
+        "seo_desc": "Elvox door entry install, repair & trade spares. Handsets, panels & accessories — Stockport, Manchester & the North West.",
+        "seo_keywords": "Elvox, Elvox door entry, Elvox installation, Elvox handset, Elvox panel, Elvox service, Elvox trade, Elvox North West, Elvox Manchester, Elvox Stockport, video door entry",
+        "products": [
+            {
+                "id": "elvox-handset-spares",
+                "title": "Elvox Handset & Faceplate Spares",
+                "blurb": "Replacement audio/video handsets and faceplates for Elvox systems.",
+                "price": "From £52",
+                "handle": "elvox-handset-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/elvox.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "elvox-entrance-accessory",
+                "title": "Elvox Entrance Panel Accessory Kit",
+                "blurb": "Rain hoods, flush boxes and modules for Elvox street panels.",
+                "price": "From £36",
+                "handle": "elvox-entrance-accessory",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/elvox.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "emergi-lite": {
+        "blurb": "Icomply is a trusted North West partner for Emergi-Lite emergency lighting — design, install, BS 5266 testing and full certification for commercial and multi-residential sites. Our engineers handle new Emergi-Lite schemes, self-test upgrades, battery changes and failure rectification for FM contractors. Buy Emergi-Lite LED fittings, exit signs and replacement packs from our trade shop with local Stockport support.",
+        "seo_desc": "Emergi-Lite emergency lighting install, BS 5266 testing & certs. Trade LED fittings & batteries — Manchester & North West.",
+        "seo_keywords": "Emergi-Lite, Emergi-Lite emergency lighting, Emergi-Lite installation, Emergi-Lite testing, Emergi-Lite BS 5266, Emergi-Lite batteries, Emergi-Lite trade, Emergi-Lite North West, Emergi-Lite Manchester, Emergi-Lite Stockport, exit signage",
+        "products": [
+            {
+                "id": "emergi-lite-led-fitting-pack",
+                "title": "Emergi-Lite LED Emergency Fitting Pack",
+                "blurb": "Maintained and non-maintained LED luminaires for Emergi-Lite ranges.",
+                "price": "From £55",
+                "handle": "emergi-lite-led-fitting-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/emergi-lite.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "emergi-lite-battery-kit",
+                "title": "Emergi-Lite Battery Replacement Kit",
+                "blurb": "OEM-style battery packs for Emergi-Lite emergency units and exit signs.",
+                "price": "From £28",
+                "handle": "emergi-lite-battery-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/emergi-lite.jpg",
+                "badge": "Stock"
+            }
+        ]
+    }
+}

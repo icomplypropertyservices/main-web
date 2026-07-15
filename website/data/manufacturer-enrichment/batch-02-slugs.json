@@ -1,0 +1,73 @@
+[
+    {
+        "slug": "alpha",
+        "name": "Alpha",
+        "services": [
+            "gas-systems"
+        ]
+    },
+    {
+        "slug": "ansell-lighting",
+        "name": "Ansell Lighting",
+        "services": [
+            "emergency-lighting"
+        ]
+    },
+    {
+        "slug": "apollo",
+        "name": "Apollo",
+        "services": [
+            "fire-alarms"
+        ]
+    },
+    {
+        "slug": "ariston",
+        "name": "Ariston",
+        "services": [
+            "gas-systems"
+        ]
+    },
+    {
+        "slug": "ascom",
+        "name": "Ascom",
+        "services": [
+            "nurse-call"
+        ]
+    },
+    {
+        "slug": "assa-abloy",
+        "name": "Assa Abloy",
+        "services": [
+            "aov-air-handling",
+            "access-control"
+        ]
+    },
+    {
+        "slug": "austco",
+        "name": "Austco",
+        "services": [
+            "nurse-call"
+        ]
+    },
+    {
+        "slug": "avigilon",
+        "name": "Avigilon",
+        "services": [
+            "cctv"
+        ]
+    },
+    {
+        "slug": "axis-communications",
+        "name": "Axis Communications",
+        "services": [
+            "cctv"
+        ]
+    },
+    {
+        "slug": "axis-intercom",
+        "name": "Axis Intercom",
+        "services": [
+            "intercoms"
+        ]
+    }
+]

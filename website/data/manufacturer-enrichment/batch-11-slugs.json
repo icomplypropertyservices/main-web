@@ -1,0 +1,72 @@
+[
+    {
+        "slug": "legrand-door-entry",
+        "name": "Legrand Door Entry",
+        "services": [
+            "door-entry"
+        ]
+    },
+    {
+        "slug": "lenels2",
+        "name": "LenelS2",
+        "services": [
+            "access-control"
+        ]
+    },
+    {
+        "slug": "lewden",
+        "name": "Lewden",
+        "services": [
+            "electrical"
+        ]
+    },
+    {
+        "slug": "luxonic",
+        "name": "Luxonic",
+        "services": [
+            "emergency-lighting"
+        ]
+    },
+    {
+        "slug": "mackwell",
+        "name": "Mackwell",
+        "services": [
+            "emergency-lighting"
+        ]
+    },
+    {
+        "slug": "main-heating",
+        "name": "Main Heating",
+        "services": [
+            "gas-systems"
+        ]
+    },
+    {
+        "slug": "mem",
+        "name": "MEM",
+        "services": [
+            "electrical"
+        ]
+    },
+    {
+        "slug": "menvier",
+        "name": "Menvier",
+        "services": [
+            "emergency-lighting"
+        ]
+    },
+    {
+        "slug": "milesight",
+        "name": "Milesight",
+        "services": [
+            "cctv"
+        ]
+    },
+    {
+        "slug": "mk-electric",
+        "name": "MK Electric",
+        "services": [
+            "electrical"
+        ]
+    }
+]

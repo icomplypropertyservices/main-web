@@ -1,0 +1,72 @@
+[
+    {
+        "slug": "sterling-safety",
+        "name": "Sterling Safety",
+        "services": [
+            "fire-alarms"
+        ]
+    },
+    {
+        "slug": "suprema",
+        "name": "Suprema",
+        "services": [
+            "access-control"
+        ]
+    },
+    {
+        "slug": "system-sensor",
+        "name": "System Sensor",
+        "services": [
+            "fire-alarms"
+        ]
+    },
+    {
+        "slug": "systemair",
+        "name": "Systemair",
+        "services": [
+            "aov-air-handling"
+        ]
+    },
+    {
+        "slug": "tdsi",
+        "name": "TDSi",
+        "services": [
+            "access-control"
+        ]
+    },
+    {
+        "slug": "tektone",
+        "name": "TekTone",
+        "services": [
+            "nurse-call"
+        ]
+    },
+    {
+        "slug": "texecom",
+        "name": "Texecom",
+        "services": [
+            "intruder-alarm"
+        ]
+    },
+    {
+        "slug": "thorlux",
+        "name": "Thorlux",
+        "services": [
+            "emergency-lighting"
+        ]
+    },
+    {
+        "slug": "thorn-lighting",
+        "name": "Thorn Lighting",
+        "services": [
+            "emergency-lighting"
+        ]
+    },
+    {
+        "slug": "tiandy",
+        "name": "Tiandy",
+        "services": [
+            "cctv"
+        ]
+    }
+]

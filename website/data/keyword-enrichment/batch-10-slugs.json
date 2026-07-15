@@ -1,0 +1,202 @@
+[
+    {
+        "slug": "addressable-fire-alarm-system",
+        "name": "Addressable Fire Alarm System",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "conventional-fire-alarm-system",
+        "name": "Conventional Fire Alarm System",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-alarm-panel-service",
+        "name": "Fire Alarm Panel Service",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-detection-system-installation",
+        "name": "Fire Detection System Installation",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "smoke-detector-installation-commercial",
+        "name": "Smoke Detector Installation Commercial",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-alarm-call-point-installation",
+        "name": "Fire Alarm Call Point Installation",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "care-home-fire-alarm",
+        "name": "Care Home Fire Alarm",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "office-fire-alarm-installation",
+        "name": "Office Fire Alarm Installation",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "factory-fire-alarm-system",
+        "name": "Factory Fire Alarm System",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-alarm-zone-chart",
+        "name": "Fire Alarm Zone Chart",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-alarm-fault-finding",
+        "name": "Fire Alarm Fault Finding",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "l1-fire-alarm-system",
+        "name": "L1 Fire Alarm System",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "l2-fire-alarm-system",
+        "name": "L2 Fire Alarm System",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "l3-fire-alarm-system",
+        "name": "L3 Fire Alarm System",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "category-ld2-fire-alarm",
+        "name": "Category LD2 Fire Alarm",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "category-ld3-fire-alarm",
+        "name": "Category LD3 Fire Alarm",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-alarm-weekly-test-support",
+        "name": "Fire Alarm Weekly Test Support",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-alarm-logbook",
+        "name": "Fire Alarm Logbook",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "multi-site-fire-alarm-maintenance",
+        "name": "Multi Site Fire Alarm Maintenance",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "vesda-installation",
+        "name": "VESDA Installation",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "beam-detection-system",
+        "name": "Beam Detection System",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-alarm-engineers-near-me",
+        "name": "Fire Alarm Engineers Near Me",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-safety-order-compliance",
+        "name": "Fire Safety Order Compliance",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "advanced-fire-panel-service",
+        "name": "Advanced Fire Panel Service",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "c-tec-fire-alarm-service",
+        "name": "C-Tec Fire Alarm Service",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "hochiki-fire-detection",
+        "name": "Hochiki Fire Detection",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "apollo-fire-detectors",
+        "name": "Apollo Fire Detectors",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-alarm-monitoring-setup",
+        "name": "Fire Alarm Monitoring Setup",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "domestic-fire-alarm-installation",
+        "name": "Domestic Fire Alarm Installation",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "commercial-fire-alarm-service",
+        "name": "Commercial Fire Alarm Service",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "bs-5266-emergency-lighting",
+        "name": "BS 5266 Emergency Lighting",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "led-emergency-lighting-conversion",
+        "name": "LED Emergency Lighting Conversion",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "self-test-emergency-lighting",
+        "name": "Self Test Emergency Lighting",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "emergency-lighting-monthly-test",
+        "name": "Emergency Lighting Monthly Test",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "emergency-lighting-annual-test",
+        "name": "Emergency Lighting Annual Test",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "emergency-lighting-duration-test",
+        "name": "Emergency Lighting Duration Test",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "office-emergency-lighting",
+        "name": "Office Emergency Lighting",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "warehouse-emergency-lighting",
+        "name": "Warehouse Emergency Lighting",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "care-home-emergency-lighting",
+        "name": "Care Home Emergency Lighting",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "emergency-bulkhead-lights",
+        "name": "Emergency Bulkhead Lights",
+        "service": "emergency-lighting"
+    }
+]

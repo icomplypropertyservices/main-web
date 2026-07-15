@@ -1,0 +1,202 @@
+[
+    {
+        "slug": "emergency-lighting-inverter",
+        "name": "Emergency Lighting Inverter",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "automatic-emergency-lighting-test",
+        "name": "Automatic Emergency Lighting Test",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "landlord-emergency-lighting",
+        "name": "Landlord Emergency Lighting",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "commercial-emergency-lighting",
+        "name": "Commercial Emergency Lighting",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "industrial-emergency-lighting",
+        "name": "Industrial Emergency Lighting",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "fire-alarm-and-emergency-lighting",
+        "name": "Fire Alarm and Emergency Lighting",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "emergency-lighting-near-me",
+        "name": "Emergency Lighting Near Me",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "emergency-lighting-service-contract",
+        "name": "Emergency Lighting Service Contract",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "aov-installation",
+        "name": "AOV Installation",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "aov-maintenance",
+        "name": "AOV Maintenance",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "aov-repair",
+        "name": "AOV Repair",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "aov-servicing",
+        "name": "AOV Servicing",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "aov-system",
+        "name": "AOV System",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "automatic-opening-vent",
+        "name": "Automatic Opening Vent",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "smoke-vent-system",
+        "name": "Smoke Vent System",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "aov-control-panel",
+        "name": "AOV Control Panel",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "aov-commissioning",
+        "name": "AOV Commissioning",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "aov-certification",
+        "name": "AOV Certification",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "bs-9991",
+        "name": "BS 9991",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "smoke-control-system",
+        "name": "Smoke Control System",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "natural-smoke-ventilation",
+        "name": "Natural Smoke Ventilation",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "automatic-smoke-vent",
+        "name": "Automatic Smoke Vent",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "aov-actuator",
+        "name": "AOV Actuator",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "aov-testing",
+        "name": "AOV Testing",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "aov-inspection",
+        "name": "AOV Inspection",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "emergency-smoke-ventilation",
+        "name": "Emergency Smoke Ventilation",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "fire-rated-aov",
+        "name": "Fire Rated AOV",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "roof-aov",
+        "name": "Roof AOV",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "window-aov",
+        "name": "Window AOV",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "louvre-aov",
+        "name": "Louvre AOV",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "aov-engineer",
+        "name": "AOV Engineer",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "aov-near-me",
+        "name": "AOV Near Me",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "aov-maintenance-contract",
+        "name": "AOV Maintenance Contract",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "aov-battery-backup",
+        "name": "AOV Battery Backup",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "aov-fire-alarm-interface",
+        "name": "AOV Fire Alarm Interface",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "air-handling-unit-installation",
+        "name": "Air Handling Unit Installation",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "ahu-installation",
+        "name": "AHU Installation",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "air-handling-unit-maintenance",
+        "name": "Air Handling Unit Maintenance",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "ahu-electrical-control",
+        "name": "AHU Electrical Control",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "air-handling-unit-servicing",
+        "name": "Air Handling Unit Servicing",
+        "service": "aov-air-handling"
+    }
+]

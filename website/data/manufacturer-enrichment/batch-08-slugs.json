@@ -1,0 +1,72 @@
+[
+    {
+        "slug": "gallagher",
+        "name": "Gallagher",
+        "services": [
+            "access-control"
+        ]
+    },
+    {
+        "slug": "garo",
+        "name": "Garo",
+        "services": [
+            "electrical"
+        ]
+    },
+    {
+        "slug": "gent",
+        "name": "Gent",
+        "services": [
+            "fire-alarms"
+        ]
+    },
+    {
+        "slug": "geze",
+        "name": "Geze",
+        "services": [
+            "aov-air-handling"
+        ]
+    },
+    {
+        "slug": "givenergy",
+        "name": "GivEnergy",
+        "services": [
+            "electrical"
+        ]
+    },
+    {
+        "slug": "gjd",
+        "name": "GJD",
+        "services": [
+            "intruder-alarm"
+        ]
+    },
+    {
+        "slug": "glow-worm",
+        "name": "Glow-worm",
+        "services": [
+            "gas-systems"
+        ]
+    },
+    {
+        "slug": "golmar",
+        "name": "Golmar",
+        "services": [
+            "door-entry"
+        ]
+    },
+    {
+        "slug": "grant",
+        "name": "Grant",
+        "services": [
+            "gas-systems"
+        ]
+    },
+    {
+        "slug": "greenbrook",
+        "name": "Greenbrook",
+        "services": [
+            "electrical"
+        ]
+    }
+]

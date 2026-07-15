@@ -1,0 +1,74 @@
+[
+    {
+        "slug": "group-scs",
+        "name": "Group SCS",
+        "services": [
+            "aov-air-handling"
+        ]
+    },
+    {
+        "slug": "haes-systems",
+        "name": "Haes Systems",
+        "services": [
+            "fire-alarms"
+        ]
+    },
+    {
+        "slug": "hager",
+        "name": "Hager",
+        "services": [
+            "electrical"
+        ]
+    },
+    {
+        "slug": "hanwha-vision",
+        "name": "Hanwha Vision",
+        "services": [
+            "cctv"
+        ]
+    },
+    {
+        "slug": "hid-global",
+        "name": "HID Global",
+        "services": [
+            "access-control"
+        ]
+    },
+    {
+        "slug": "hikvision",
+        "name": "Hikvision",
+        "services": [
+            "cctv"
+        ]
+    },
+    {
+        "slug": "hikvision-ax-pro",
+        "name": "Hikvision AX PRO",
+        "services": [
+            "intruder-alarm"
+        ]
+    },
+    {
+        "slug": "hochiki",
+        "name": "Hochiki",
+        "services": [
+            "fire-alarms"
+        ]
+    },
+    {
+        "slug": "honeywell",
+        "name": "Honeywell",
+        "services": [
+            "fire-alarms",
+            "intruder-alarm",
+            "access-control"
+        ]
+    },
+    {
+        "slug": "ideal",
+        "name": "Ideal",
+        "services": [
+            "gas-systems"
+        ]
+    }
+]

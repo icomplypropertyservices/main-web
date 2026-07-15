@@ -1,0 +1,72 @@
+[
+    {
+        "slug": "barix",
+        "name": "Barix",
+        "services": [
+            "intercoms"
+        ]
+    },
+    {
+        "slug": "baxi",
+        "name": "Baxi",
+        "services": [
+            "gas-systems"
+        ]
+    },
+    {
+        "slug": "beghelli",
+        "name": "Beghelli",
+        "services": [
+            "emergency-lighting"
+        ]
+    },
+    {
+        "slug": "bg-electrical",
+        "name": "BG Electrical",
+        "services": [
+            "electrical"
+        ]
+    },
+    {
+        "slug": "bilco",
+        "name": "Bilco",
+        "services": [
+            "aov-air-handling"
+        ]
+    },
+    {
+        "slug": "bitron-video",
+        "name": "Bitron Video",
+        "services": [
+            "door-entry"
+        ]
+    },
+    {
+        "slug": "bosch",
+        "name": "Bosch",
+        "services": [
+            "cctv"
+        ]
+    },
+    {
+        "slug": "bosch-security",
+        "name": "Bosch Security",
+        "services": [
+            "intruder-alarm"
+        ]
+    },
+    {
+        "slug": "bpt",
+        "name": "BPT",
+        "services": [
+            "door-entry"
+        ]
+    },
+    {
+        "slug": "bpt-x1",
+        "name": "BPT X1",
+        "services": [
+            "door-entry"
+        ]
+    }
+]

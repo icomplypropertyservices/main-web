@@ -28,3 +28,8 @@ _gen_*.php
 website/_gen_areas.php
 .vercel
 website/api/.phpunit*
+
+# Icomply local / PII
+website/config.local.php
+website/data/leads.jsonl
+website/data/leads.json

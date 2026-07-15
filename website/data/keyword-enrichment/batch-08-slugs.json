@@ -1,0 +1,202 @@
+[
+    {
+        "slug": "intercom-repair",
+        "name": "Intercom Repair",
+        "service": "intercoms"
+    },
+    {
+        "slug": "intercom-servicing",
+        "name": "Intercom Servicing",
+        "service": "intercoms"
+    },
+    {
+        "slug": "intercom-system",
+        "name": "Intercom System",
+        "service": "intercoms"
+    },
+    {
+        "slug": "door-entry-intercom",
+        "name": "Door Entry Intercom",
+        "service": "intercoms"
+    },
+    {
+        "slug": "audio-intercom",
+        "name": "Audio Intercom",
+        "service": "intercoms"
+    },
+    {
+        "slug": "video-intercom",
+        "name": "Video Intercom",
+        "service": "intercoms"
+    },
+    {
+        "slug": "ip-intercom",
+        "name": "IP Intercom",
+        "service": "intercoms"
+    },
+    {
+        "slug": "wireless-intercom",
+        "name": "Wireless Intercom",
+        "service": "intercoms"
+    },
+    {
+        "slug": "apartment-intercom-system",
+        "name": "Apartment Intercom System",
+        "service": "intercoms"
+    },
+    {
+        "slug": "multi-tenant-intercom",
+        "name": "Multi Tenant Intercom",
+        "service": "intercoms"
+    },
+    {
+        "slug": "intercom-engineer",
+        "name": "Intercom Engineer",
+        "service": "intercoms"
+    },
+    {
+        "slug": "intercom-panel",
+        "name": "Intercom Panel",
+        "service": "intercoms"
+    },
+    {
+        "slug": "intercom-certification",
+        "name": "Intercom Certification",
+        "service": "intercoms"
+    },
+    {
+        "slug": "intercom-testing",
+        "name": "Intercom Testing",
+        "service": "intercoms"
+    },
+    {
+        "slug": "commercial-intercom",
+        "name": "Commercial Intercom",
+        "service": "intercoms"
+    },
+    {
+        "slug": "residential-intercom",
+        "name": "Residential Intercom",
+        "service": "intercoms"
+    },
+    {
+        "slug": "intercom-near-me",
+        "name": "Intercom Near Me",
+        "service": "intercoms"
+    },
+    {
+        "slug": "intercom-maintenance-contract",
+        "name": "Intercom Maintenance Contract",
+        "service": "intercoms"
+    },
+    {
+        "slug": "video-intercom-installation",
+        "name": "Video Intercom Installation",
+        "service": "intercoms"
+    },
+    {
+        "slug": "audio-intercom-repair",
+        "name": "Audio Intercom Repair",
+        "service": "intercoms"
+    },
+    {
+        "slug": "intercom-battery-backup",
+        "name": "Intercom Battery Backup",
+        "service": "intercoms"
+    },
+    {
+        "slug": "intercom-upgrade",
+        "name": "Intercom Upgrade",
+        "service": "intercoms"
+    },
+    {
+        "slug": "aiphone-intercom",
+        "name": "Aiphone Intercom",
+        "service": "intercoms"
+    },
+    {
+        "slug": "intercom-commissioning",
+        "name": "Intercom Commissioning",
+        "service": "intercoms"
+    },
+    {
+        "slug": "hikvision-cctv",
+        "name": "Hikvision CCTV",
+        "service": "cctv"
+    },
+    {
+        "slug": "texecom-intruder-alarm",
+        "name": "Texecom Intruder Alarm",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "fire-risk-assessment-support",
+        "name": "Fire Risk Assessment Support",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "paxton-net2-install",
+        "name": "Paxton Net2 Install",
+        "service": "access-control"
+    },
+    {
+        "slug": "paxton-net2-maintenance",
+        "name": "Paxton Net2 Maintenance",
+        "service": "access-control"
+    },
+    {
+        "slug": "kentec-panel-service",
+        "name": "Kentec Panel Service",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "cp12-gas-certificate",
+        "name": "CP12 Gas Certificate",
+        "service": "gas-systems"
+    },
+    {
+        "slug": "gas-safe-register-engineer",
+        "name": "Gas Safe Register Engineer",
+        "service": "gas-systems"
+    },
+    {
+        "slug": "fire-door-inspection",
+        "name": "Fire Door Inspection",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "carbon-monoxide-alarm-installation",
+        "name": "Carbon Monoxide Alarm Installation",
+        "service": "gas-systems"
+    },
+    {
+        "slug": "fixed-wire-testing",
+        "name": "Fixed Wire Testing",
+        "service": "electrical"
+    },
+    {
+        "slug": "salto-access-control",
+        "name": "Salto Access Control",
+        "service": "access-control"
+    },
+    {
+        "slug": "videx-door-entry",
+        "name": "Videx Door Entry",
+        "service": "door-entry"
+    },
+    {
+        "slug": "fermax-door-entry",
+        "name": "Fermax Door Entry",
+        "service": "door-entry"
+    },
+    {
+        "slug": "anpr-cctv-system",
+        "name": "ANPR CCTV System",
+        "service": "cctv"
+    },
+    {
+        "slug": "nvr-installation",
+        "name": "NVR Installation",
+        "service": "cctv"
+    }
+]

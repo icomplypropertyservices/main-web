@@ -1,0 +1,202 @@
+[
+    {
+        "slug": "ahu-panel",
+        "name": "AHU Panel",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "ahu-inverter-drive",
+        "name": "AHU Inverter Drive",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "ahu-commissioning",
+        "name": "AHU Commissioning",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "air-handling-unit-certification",
+        "name": "Air Handling Unit Certification",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "hvac-electrical-installation",
+        "name": "HVAC Electrical Installation",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "air-handling-system-repair",
+        "name": "Air Handling System Repair",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "commercial-ahu-maintenance",
+        "name": "Commercial AHU Maintenance",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "industrial-air-handling-unit",
+        "name": "Industrial Air Handling Unit",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "nurse-call-system-installation",
+        "name": "Nurse Call System Installation",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nurse-call-system-maintenance",
+        "name": "Nurse Call System Maintenance",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nurse-call-system-repair",
+        "name": "Nurse Call System Repair",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nurse-call-servicing",
+        "name": "Nurse Call Servicing",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nurse-call-engineer",
+        "name": "Nurse Call Engineer",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nurse-call-system",
+        "name": "Nurse Call System",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nurse-call-panel",
+        "name": "Nurse Call Panel",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "emergency-nurse-call",
+        "name": "Emergency Nurse Call",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "hospital-nurse-call-system",
+        "name": "Hospital Nurse Call System",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "care-home-nurse-call",
+        "name": "Care Home Nurse Call",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "wireless-nurse-call-system",
+        "name": "Wireless Nurse Call System",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "wired-nurse-call-system",
+        "name": "Wired Nurse Call System",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nurse-call-pendant",
+        "name": "Nurse Call Pendant",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "pull-cord-nurse-call",
+        "name": "Pull Cord Nurse Call",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "bedside-nurse-call",
+        "name": "Bedside Nurse Call",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "over-door-light-nurse-call",
+        "name": "Over Door Light Nurse Call",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nurse-call-integration",
+        "name": "Nurse Call Integration",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nurse-call-testing",
+        "name": "Nurse Call Testing",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nurse-call-certification",
+        "name": "Nurse Call Certification",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "htm-08-03",
+        "name": "HTM 08-03",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nurse-call-compliance",
+        "name": "Nurse Call Compliance",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nurse-call-commissioning",
+        "name": "Nurse Call Commissioning",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "ip-nurse-call-system",
+        "name": "IP Nurse Call System",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "touch-screen-nurse-call",
+        "name": "Touch Screen Nurse Call",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "staff-attack-alarm",
+        "name": "Staff Attack Alarm",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "emergency-assistance-alarm",
+        "name": "Emergency Assistance Alarm",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "disabled-toilet-alarm",
+        "name": "Disabled Toilet Alarm",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "wander-alert-system",
+        "name": "Wander Alert System",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nurse-call-near-me",
+        "name": "Nurse Call Near Me",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "nurse-call-maintenance-contract",
+        "name": "Nurse Call Maintenance Contract",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "hospital-nurse-call-installation",
+        "name": "Hospital Nurse Call Installation",
+        "service": "nurse-call"
+    },
+    {
+        "slug": "residential-care-nurse-call",
+        "name": "Residential Care Nurse Call",
+        "service": "nurse-call"
+    }
+]

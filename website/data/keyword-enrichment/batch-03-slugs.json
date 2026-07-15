@@ -1,0 +1,202 @@
+[
+    {
+        "slug": "fire-alarm-monitoring",
+        "name": "Fire Alarm Monitoring",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-alarm-engineer-near-me",
+        "name": "Fire Alarm Engineer Near Me",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "periodic-fire-alarm-service",
+        "name": "Periodic Fire Alarm Service",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-alarm-maintenance-contract",
+        "name": "Fire Alarm Maintenance Contract",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "advanced-fire-alarm-panel",
+        "name": "Advanced Fire Alarm Panel",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "morley-fire-alarm-panel",
+        "name": "Morley Fire Alarm Panel",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "c-tec-fire-alarm-panel",
+        "name": "C-Tec Fire Alarm Panel",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "hochiki-fire-alarm",
+        "name": "Hochiki Fire Alarm",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "apollo-fire-alarm",
+        "name": "Apollo Fire Alarm",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-alarm-loop-tester",
+        "name": "Fire Alarm Loop Tester",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-alarm-design",
+        "name": "Fire Alarm Design",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "fire-alarm-installation-certificate",
+        "name": "Fire Alarm Installation Certificate",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "emergency-lighting-installation",
+        "name": "Emergency Lighting Installation",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "emergency-lighting-maintenance",
+        "name": "Emergency Lighting Maintenance",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "emergency-lighting-repair",
+        "name": "Emergency Lighting Repair",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "emergency-lighting-servicing",
+        "name": "Emergency Lighting Servicing",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "emergency-lighting-engineer",
+        "name": "Emergency Lighting Engineer",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "emergency-lighting-system",
+        "name": "Emergency Lighting System",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "emergency-light-fitting",
+        "name": "Emergency Light Fitting",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "emergency-lighting-testing",
+        "name": "Emergency Lighting Testing",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "emergency-lighting-inspection",
+        "name": "Emergency Lighting Inspection",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "emergency-lighting-certification",
+        "name": "Emergency Lighting Certification",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "emergency-lighting-compliance",
+        "name": "Emergency Lighting Compliance",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "bs-5266",
+        "name": "BS 5266",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "emergency-lighting-certificate",
+        "name": "Emergency Lighting Certificate",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "emergency-light-battery-replacement",
+        "name": "Emergency Light Battery Replacement",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "emergency-lighting-upgrade",
+        "name": "Emergency Lighting Upgrade",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "self-testing-emergency-lighting",
+        "name": "Self Testing Emergency Lighting",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "central-battery-emergency-lighting",
+        "name": "Central Battery Emergency Lighting",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "led-emergency-lighting",
+        "name": "LED Emergency Lighting",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "non-maintained-emergency-lighting",
+        "name": "Non Maintained Emergency Lighting",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "maintained-emergency-lighting",
+        "name": "Maintained Emergency Lighting",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "emergency-exit-lighting",
+        "name": "Emergency Exit Lighting",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "escape-route-lighting",
+        "name": "Escape Route Lighting",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "open-area-emergency-lighting",
+        "name": "Open Area Emergency Lighting",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "high-risk-task-area-lighting",
+        "name": "High Risk Task Area Lighting",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "emergency-lighting-design",
+        "name": "Emergency Lighting Design",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "emergency-lighting-commissioning",
+        "name": "Emergency Lighting Commissioning",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "periodic-emergency-lighting-test",
+        "name": "Periodic Emergency Lighting Test",
+        "service": "emergency-lighting"
+    },
+    {
+        "slug": "emergency-lighting-panel",
+        "name": "Emergency Lighting Panel",
+        "service": "emergency-lighting"
+    }
+]

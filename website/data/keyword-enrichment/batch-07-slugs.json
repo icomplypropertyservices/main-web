@@ -1,0 +1,202 @@
+[
+    {
+        "slug": "ip-cctv-system",
+        "name": "IP CCTV System",
+        "service": "cctv"
+    },
+    {
+        "slug": "hd-cctv-camera",
+        "name": "HD CCTV Camera",
+        "service": "cctv"
+    },
+    {
+        "slug": "cctv-recording",
+        "name": "CCTV Recording",
+        "service": "cctv"
+    },
+    {
+        "slug": "cctv-monitoring",
+        "name": "CCTV Monitoring",
+        "service": "cctv"
+    },
+    {
+        "slug": "ptz-camera-installation",
+        "name": "PTZ Camera Installation",
+        "service": "cctv"
+    },
+    {
+        "slug": "cctv-certification",
+        "name": "CCTV Certification",
+        "service": "cctv"
+    },
+    {
+        "slug": "commercial-cctv-system",
+        "name": "Commercial CCTV System",
+        "service": "cctv"
+    },
+    {
+        "slug": "wireless-cctv",
+        "name": "Wireless CCTV",
+        "service": "cctv"
+    },
+    {
+        "slug": "video-surveillance-system",
+        "name": "Video Surveillance System",
+        "service": "cctv"
+    },
+    {
+        "slug": "cctv-testing",
+        "name": "CCTV Testing",
+        "service": "cctv"
+    },
+    {
+        "slug": "cctv-compliance",
+        "name": "CCTV Compliance",
+        "service": "cctv"
+    },
+    {
+        "slug": "remote-cctv-access",
+        "name": "Remote CCTV Access",
+        "service": "cctv"
+    },
+    {
+        "slug": "cctv-near-me",
+        "name": "CCTV Near Me",
+        "service": "cctv"
+    },
+    {
+        "slug": "access-control-installation",
+        "name": "Access Control Installation",
+        "service": "access-control"
+    },
+    {
+        "slug": "access-control-maintenance",
+        "name": "Access Control Maintenance",
+        "service": "access-control"
+    },
+    {
+        "slug": "access-control-system",
+        "name": "Access Control System",
+        "service": "access-control"
+    },
+    {
+        "slug": "door-access-control",
+        "name": "Door Access Control",
+        "service": "access-control"
+    },
+    {
+        "slug": "proximity-card-reader",
+        "name": "Proximity Card Reader",
+        "service": "access-control"
+    },
+    {
+        "slug": "biometric-access-control",
+        "name": "Biometric Access Control",
+        "service": "access-control"
+    },
+    {
+        "slug": "access-control-panel",
+        "name": "Access Control Panel",
+        "service": "access-control"
+    },
+    {
+        "slug": "intercom-access",
+        "name": "Intercom Access",
+        "service": "access-control"
+    },
+    {
+        "slug": "electric-door-release",
+        "name": "Electric Door Release",
+        "service": "access-control"
+    },
+    {
+        "slug": "access-control-certification",
+        "name": "Access Control Certification",
+        "service": "access-control"
+    },
+    {
+        "slug": "access-control-servicing",
+        "name": "Access Control Servicing",
+        "service": "access-control"
+    },
+    {
+        "slug": "commercial-access-control",
+        "name": "Commercial Access Control",
+        "service": "access-control"
+    },
+    {
+        "slug": "office-access-control-system",
+        "name": "Office Access Control System",
+        "service": "access-control"
+    },
+    {
+        "slug": "access-control-near-me",
+        "name": "Access Control Near Me",
+        "service": "access-control"
+    },
+    {
+        "slug": "door-entry-installation",
+        "name": "Door Entry Installation",
+        "service": "door-entry"
+    },
+    {
+        "slug": "door-entry-maintenance",
+        "name": "Door Entry Maintenance",
+        "service": "door-entry"
+    },
+    {
+        "slug": "audio-door-entry",
+        "name": "Audio Door Entry",
+        "service": "door-entry"
+    },
+    {
+        "slug": "video-door-entry",
+        "name": "Video Door Entry",
+        "service": "door-entry"
+    },
+    {
+        "slug": "door-entry-system",
+        "name": "Door Entry System",
+        "service": "door-entry"
+    },
+    {
+        "slug": "apartment-door-entry",
+        "name": "Apartment Door Entry",
+        "service": "door-entry"
+    },
+    {
+        "slug": "door-entry-servicing",
+        "name": "Door Entry Servicing",
+        "service": "door-entry"
+    },
+    {
+        "slug": "door-entry-repair",
+        "name": "Door Entry Repair",
+        "service": "door-entry"
+    },
+    {
+        "slug": "door-entry-certification",
+        "name": "Door Entry Certification",
+        "service": "door-entry"
+    },
+    {
+        "slug": "multi-tenant-door-entry",
+        "name": "Multi Tenant Door Entry",
+        "service": "door-entry"
+    },
+    {
+        "slug": "door-entry-engineer",
+        "name": "Door Entry Engineer",
+        "service": "door-entry"
+    },
+    {
+        "slug": "intercom-installation",
+        "name": "Intercom Installation",
+        "service": "intercoms"
+    },
+    {
+        "slug": "intercom-maintenance",
+        "name": "Intercom Maintenance",
+        "service": "intercoms"
+    }
+]

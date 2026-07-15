@@ -1,241 +1,346 @@
 <?php
+/**
+ * Homepage — conversion-focused overhaul with services, areas, shop cards, trust, quote.
+ */
 require_once __DIR__ . '/config.php';
-require_once __DIR__ . '/includes/seo.php';
-$pageTitle = 'Property Compliance North West | EICR & Fire';
-$metaDesc = 'Stockport UK compliance for Greater Manchester & North West. EICR, fire alarms, gas, emergency lighting, CCTV. Free quote.';
-$metaKeywords = 'property compliance Manchester, EICR Stockport, fire alarm installation Bolton, emergency lighting Oldham, gas safety certificate Rochdale, CCTV Manchester, UK compliance contractors North West';
-$canonicalUrl = site_url('');
-require 'includes/header.php';
-$homeFaqs = [
-    ['q' => 'What areas does Icomply cover?', 'a' => 'We cover Greater Manchester and 150+ North West towns from our Stockport SK2 base — including Manchester, Bolton, Oldham, Rochdale, Liverpool, Preston, Warrington, Chester and Blackpool.'],
-    ['q' => 'Which compliance services do you offer?', 'a' => 'Electrical (including EICR), fire alarms, emergency lighting, AOV & air handling, nurse call, gas systems, intruder alarms, CCTV, access control, door entry and intercoms.'],
-    ['q' => 'How fast can I get a quote?', 'a' => 'Most enquiries receive a response within 2 business hours. Share the postcode, property type and service needed for the quickest fixed-price style quote.'],
-    ['q' => 'Do you provide certificates for landlords and insurers?', 'a' => 'Yes. We issue clear documentation and certificates suitable for landlords, managing agents, freeholders and insurers after testing and commissioning.'],
+require_once SITE_ROOT . '/includes/shopify.php';
+
+$pageTitle = 'Property Compliance Experts | North West';
+$metaDesc = 'Icomply Property Services — EICR, fire alarms, gas safety, emergency lighting, CCTV & access control across Greater Manchester and the North West. Free quotes. Trade shop.';
+$metaKeywords = 'property compliance Manchester, EICR Stockport, fire alarm installation, gas safety certificate, emergency lighting, CCTV installation North West';
+$ogImage = url('/assets/images/services/fire-alarms.jpg');
+
+$services = getServices();
+$areas = getAreas();
+$catalog = getShopCatalog();
+$featuredProducts = array_slice($catalog['products'], 0, 4);
+$shopCollections = array_slice($catalog['collections'], 0, 4);
+
+$trust = [
+    ['title' => 'Local engineers', 'text' => 'Based in Stockport — covering 150+ North West towns'],
+    ['title' => 'Standards-led', 'text' => 'BS 5839, BS 5266, BS 7671, gas safety & more'],
+    ['title' => 'Fixed-price quotes', 'text' => 'Clear scope, documentation and certification'],
+    ['title' => 'Trade shop', 'text' => 'Kits & parts with Shopify checkout when live'],
 ];
+
+$popularTowns = array_values(array_filter(
+    ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
+    function ($t) use ($areas) {
+        return in_array($t, $areas, true);
+    }
+));
+
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+if (empty($_SESSION['csrf'])) {
+    $_SESSION['csrf'] = bin2hex(random_bytes(16));
+}
+
+require SITE_ROOT . '/includes/header.php';
+$homeUrl = rtrim(SITE_URL, '/') . '/';
 ?>
 
-<!-- HERO with UK photo -->
-<section class="relative min-h-[78vh] flex items-center text-white overflow-hidden">
-    <img src="/assets/images/heroes/home-hero.jpg" alt="UK commercial property in Greater Manchester" class="absolute inset-0 w-full h-full object-cover" width="1600" height="900" fetchpriority="high">
-    <div class="absolute inset-0 hero-overlay"></div>
-    <div class="relative max-w-7xl mx-auto px-6 py-24 w-full">
-        <div class="max-w-2xl">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-xs badge-uk mb-6">UNITED KINGDOM · GREATER MANCHESTER & NORTH WEST</div>
-            <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.05] mb-6">North West property compliance.<br><span class="text-[#ff6b00]">EICR, fire, gas &amp; more.</span></h1>
-            <p class="text-lg md:text-xl text-white/85 leading-relaxed max-w-xl">Certified UK engineers for EICR, fire alarms, gas safety, emergency lighting, AOV, nurse call, CCTV and access control — across 150+ North West towns.</p>
-            <div class="mt-10 flex flex-wrap gap-4">
-                <a href="#quote" class="accent-btn px-8 py-4 rounded-2xl font-semibold text-lg">Get a free quote</a>
-                <a href="/pages/services/index" class="px-8 py-4 rounded-2xl border border-white/50 font-semibold text-lg hover:bg-white/10">Browse services</a>
-                <a href="tel:<?= PHONE ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold text-lg">Call <?= PHONE ?></a>
+<!-- HERO -->
+<section class="relative overflow-hidden bg-[#0a2540] text-white">
+    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 20% 20%,#ff6b00,transparent 40%),radial-gradient(circle at 80% 0%,#3b82f6,transparent 35%);"></div>
+    <div class="relative max-w-7xl mx-auto px-6 py-16 md:py-24 grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs tracking-widest uppercase mb-5">
+                <span class="w-2 h-2 rounded-full bg-[#ff6b00]"></span>
+                Greater Manchester &amp; North West
+            </div>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
+                Property compliance.<br>
+                <span class="text-[#ff6b00]">Installed, tested, certified.</span>
+            </h1>
+            <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl">
+                Electrical, fire alarms, gas, emergency lighting, AOV, nurse call, CCTV and access control —
+                plus a trade shop for kits and parts.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-3">
+                <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get free quote</a>
+                <a href="<?= url('/shop/index.php') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">Shop products</a>
+                <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener"
+                   class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
             </div>
             <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
-                <span>Based in Stockport SK2</span>
-                <span>Same-week appointments</span>
-                <span>Fixed-price quotes</span>
+                <div><span class="text-white font-semibold text-xl block"><?= count($services) ?></span> core services</div>
+                <div><span class="text-white font-semibold text-xl block"><?= count($areas) ?>+</span> towns covered</div>
+                <div><span class="text-white font-semibold text-xl block">Same-week</span> appointments*</div>
             </div>
+            <p class="mt-3 text-[11px] text-white/40">*Subject to engineer capacity and site access.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+            <?php
+            $heroCards = array_slice($services, 0, 4, true);
+            foreach ($heroCards as $slug => $name):
+                $img = url('/assets/images/services/' . $slug . '.jpg');
+            ?>
+            <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
+               class="group relative rounded-3xl overflow-hidden border border-white/10 min-h-[140px] bg-white/5 hover:border-[#ff6b00] transition">
+                <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-55 transition" loading="lazy"
+                     onerror="this.style.display='none'">
+                <div class="relative p-5 h-full flex flex-col justify-end">
+                    <div class="font-semibold text-white text-lg leading-tight"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></div>
+                    <div class="text-xs text-white/70 mt-1">View service →</div>
+                </div>
+            </a>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
 
-<!-- Trust strip -->
+<!-- TRUST STRIP -->
 <section class="bg-white border-b">
-    <div class="max-w-7xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-        <div><div class="text-3xl font-extrabold text-[#0a2540]">11</div><div class="text-sm text-zinc-500 mt-1">Compliance services</div></div>
-        <div><div class="text-3xl font-extrabold text-[#0a2540]">150+</div><div class="text-sm text-zinc-500 mt-1">North West towns</div></div>
-        <div><div class="text-3xl font-extrabold text-[#0a2540]">2hr</div><div class="text-sm text-zinc-500 mt-1">Typical quote response</div></div>
-        <div><div class="text-3xl font-extrabold text-[#0a2540]">UK</div><div class="text-sm text-zinc-500 mt-1">British Standards focus</div></div>
+    <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <?php foreach ($trust as $t): ?>
+            <div class="flex gap-3 items-start">
+                <div class="w-10 h-10 rounded-2xl bg-[#0a2540]/10 flex items-center justify-center text-[#0a2540] font-bold shrink-0">✓</div>
+                <div>
+                    <div class="font-semibold text-black"><?= htmlspecialchars($t['title'], ENT_QUOTES, 'UTF-8') ?></div>
+                    <div class="text-sm text-zinc-600 mt-0.5"><?= htmlspecialchars($t['text'], ENT_QUOTES, 'UTF-8') ?></div>
+                </div>
+            </div>
+        <?php endforeach; ?>
     </div>
 </section>
 
-<!-- Services with real photos -->
-<section class="max-w-7xl mx-auto px-6 py-20">
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+<!-- SERVICES GRID -->
+<section class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
         <div>
-            <div class="uppercase text-[#ff6b00] tracking-[.2em] text-xs font-semibold">Our expertise</div>
-            <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mt-2">UK compliance services</h2>
-            <p class="mt-3 text-zinc-600 max-w-xl">Installation, maintenance and certification for landlords, property managers and businesses across Greater Manchester and the North West.</p>
+            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Services</div>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Everything for property compliance</h2>
+            <p class="mt-2 text-zinc-600 max-w-xl">From landlord certificates to commercial fire systems — install, maintain and certify.</p>
         </div>
-        <a href="/pages/services/index" class="text-[#ff6b00] font-semibold hover:underline">View all services →</a>
+        <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All services →</a>
     </div>
-
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        <?php foreach ($services as $slug => $name): ?>
-        <a href="/pages/services/<?= htmlspecialchars($slug) ?>" class="service-card bg-white rounded-3xl border group">
-            <div class="aspect-[16/10] overflow-hidden bg-zinc-100">
-                <img src="/assets/images/services/<?= htmlspecialchars($slug) ?>-photo.jpg"
-                     alt="<?= htmlspecialchars($name) ?> services in the UK — North West"
-                     class="img-cover group-hover:scale-105 transition duration-500"
-                     width="640" height="400" loading="lazy"
-                     onerror="this.src='/assets/images/services/<?= htmlspecialchars($slug) ?>.png'">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <?php foreach ($services as $slug => $name):
+            $blurb = getServiceBlurb($slug, true);
+            $img = url('/assets/images/services/' . $slug . '.jpg');
+        ?>
+        <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
+           class="service-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
+            <div class="h-36 bg-zinc-100 overflow-hidden">
+                <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>"
+                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy"
+                     onerror="this.parentElement.style.display='none'">
             </div>
-            <div class="p-6">
-                <div class="font-bold text-xl tracking-tight"><?= htmlspecialchars($name) ?></div>
-                <p class="text-sm text-zinc-600 mt-2 leading-relaxed"><?= htmlspecialchars(service_blurb($slug)) ?></p>
-                <div class="mt-4 text-sm font-semibold text-[#ff6b00]">Explore service →</div>
+            <div class="p-5 flex-1 flex flex-col">
+                <h3 class="font-semibold text-lg text-black"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></h3>
+                <p class="text-sm text-zinc-600 mt-2 flex-1"><?= htmlspecialchars($blurb, ENT_QUOTES, 'UTF-8') ?></p>
+                <span class="mt-4 text-sm font-semibold text-[#ff6b00]">Explore →</span>
             </div>
         </a>
         <?php endforeach; ?>
     </div>
 </section>
 
-<!-- UK coverage band -->
-<section class="relative text-white py-20 overflow-hidden">
-    <img src="/assets/images/heroes/manchester.jpg" alt="Manchester and North West UK skyline" class="absolute inset-0 w-full h-full object-cover" width="1600" height="900" loading="lazy">
-    <div class="absolute inset-0 bg-[#0a2540]/85"></div>
-    <div class="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+<!-- AUDIENCE CARDS -->
+<section class="bg-zinc-50 border-y">
+    <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+            <div>
+                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Who we help</div>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Built for your property type</h2>
+                <p class="mt-2 text-zinc-600 max-w-xl">Landlord portfolios, commercial estates or multi-service packages — pick the path that fits.</p>
+            </div>
+            <a href="<?= url('/pages/resources/index.php') ?>" class="text-sm font-semibold text-zinc-500 hover:text-[#ff6b00] transition">Resources →</a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-5">
+            <a href="<?= url('/pages/landlords.php') ?>"
+               class="group bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
+                <div class="w-12 h-12 rounded-2xl bg-[#0a2540]/10 text-[#0a2540] font-bold flex items-center justify-center text-lg group-hover:bg-[#ff6b00] group-hover:text-white transition">L</div>
+                <h3 class="mt-5 font-semibold text-xl text-black tracking-tight">Landlords &amp; agents</h3>
+                <p class="mt-2 text-sm text-zinc-600 flex-1">EICR, gas CP12/CP44, fire alarms and emergency lighting for single lets, HMOs and multi-property portfolios.</p>
+                <span class="mt-5 text-sm font-semibold text-[#ff6b00]">Landlord compliance →</span>
+            </a>
+            <a href="<?= url('/pages/commercial.php') ?>"
+               class="group bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
+                <div class="w-12 h-12 rounded-2xl bg-[#0a2540]/10 text-[#0a2540] font-bold flex items-center justify-center text-lg group-hover:bg-[#ff6b00] group-hover:text-white transition">C</div>
+                <h3 class="mt-5 font-semibold text-xl text-black tracking-tight">Commercial &amp; FM</h3>
+                <p class="mt-2 text-sm text-zinc-600 flex-1">Multi-site fire, electrical, AOV, nurse call, CCTV and access control with planned maintenance for facilities teams.</p>
+                <span class="mt-5 text-sm font-semibold text-[#ff6b00]">Commercial services →</span>
+            </a>
+            <a href="<?= url('/pages/packages.php') ?>"
+               class="group bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
+                <div class="w-12 h-12 rounded-2xl bg-[#0a2540]/10 text-[#0a2540] font-bold flex items-center justify-center text-lg group-hover:bg-[#ff6b00] group-hover:text-white transition">P</div>
+                <h3 class="mt-5 font-semibold text-xl text-black tracking-tight">Compliance packages</h3>
+                <p class="mt-2 text-sm text-zinc-600 flex-1">Bundle landlord essentials, fire, security or full FM into one fixed-scope quote and visit schedule.</p>
+                <span class="mt-5 text-sm font-semibold text-[#ff6b00]">View packages →</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- MANUFACTURERS TEASER -->
+<section class="max-w-7xl mx-auto px-6 py-16">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
         <div>
-            <div class="uppercase text-[#ff6b00] tracking-[.2em] text-xs font-semibold">Local UK coverage</div>
-            <h2 class="text-4xl font-extrabold tracking-tight mt-3">Engineers across Greater Manchester &amp; the North West</h2>
-            <p class="mt-4 text-white/80 text-lg leading-relaxed">From Stockport and Manchester to Liverpool, Preston, Blackpool and Chester — we send local engineers who know UK building regs and British Standards.</p>
-            <div class="mt-8 flex flex-wrap gap-2">
-                <?php foreach (['Manchester','Stockport','Bolton','Oldham','Rochdale','Liverpool','Preston','Warrington'] as $a): ?>
-                    <a href="/pages/fire-alarms/<?= areaSlug($a) ?>" class="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm hover:bg-white/20"><?= $a ?></a>
+            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Brands</div>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Manufacturers we install &amp; sell</h2>
+            <p class="mt-2 text-zinc-600 max-w-xl">Dedicated brand pages with trade kits, install quotes and local coverage — <?= count(getManufacturerCatalog()) ?>+ manufacturers.</p>
+        </div>
+        <a href="<?= url('/pages/manufacturers/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All manufacturers →</a>
+    </div>
+    <div class="flex flex-wrap gap-2">
+        <?php
+        $homeMfr = array_filter(getManufacturerCatalog(), fn($c) => !empty($c['featured']));
+        if (!$homeMfr) {
+            $homeMfr = array_slice(getManufacturerCatalog(), 0, 16, true);
+        }
+        foreach (array_slice($homeMfr, 0, 20, true) as $mSlug => $mEntry):
+        ?>
+            <a href="<?= url('/pages/manufacturers/' . rawurlencode($mSlug) . '.php') ?>"
+               class="px-4 py-2 bg-white border rounded-full text-sm font-medium hover:border-[#ff6b00] transition">
+                <?= htmlspecialchars($mEntry['name'], ENT_QUOTES, 'UTF-8') ?>
+            </a>
+        <?php endforeach; ?>
+    </div>
+</section>
+
+<!-- SHOP TEASER -->
+<section class="bg-zinc-100 border-y">
+    <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+            <div>
+                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Shop</div>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Products &amp; trade kits</h2>
+                <p class="mt-2 text-zinc-600 max-w-xl">Shopify-ready cards and Buy Button mounts — shop fire, electrical, security and emergency lighting gear.</p>
+            </div>
+            <a href="<?= url('/shop/index.php') ?>" class="inline-flex px-5 py-2.5 rounded-full bg-[#0a2540] text-white text-sm font-semibold hover:bg-[#ff6b00] transition">Visit shop</a>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+            <?php foreach ($shopCollections as $col): ?>
+                <?= shopifyCollectionCardHtml($col) ?>
+            <?php endforeach; ?>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <?php foreach ($featuredProducts as $p): ?>
+                <?= shopifyProductCardHtml($p, true) ?>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
+<!-- AREAS -->
+<section class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+    <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <div>
+            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Coverage</div>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Serving <?= count($areas) ?>+ towns</h2>
+            <p class="mt-3 text-zinc-600">Local response across Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria. Pick a town for full service links.</p>
+            <div class="mt-6 flex flex-wrap gap-2">
+                <?php foreach ($popularTowns as $town): ?>
+                    <a href="<?= url('/pages/areas/' . areaSlug($town) . '.php') ?>"
+                       class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]"><?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?></a>
                 <?php endforeach; ?>
             </div>
+            <a href="<?= url('/pages/areas/index.php') ?>" class="inline-block mt-6 text-sm font-semibold text-[#ff6b00]">View all areas →</a>
         </div>
-        <div class="rounded-3xl overflow-hidden border border-white/20 shadow-2xl">
-            <img src="/assets/images/heroes/uk-engineer.jpg" alt="UK property compliance engineer at work" class="w-full h-80 object-cover" width="800" height="520" loading="lazy">
+        <div class="bg-[#0a2540] text-white rounded-3xl p-8 md:p-10">
+            <h3 class="text-2xl font-semibold tracking-tight">Need a compliance package?</h3>
+            <p class="mt-3 text-white/80">Combine EICR, fire alarms, emergency lighting and gas safety into one visit schedule for landlords and facilities teams.</p>
+            <ul class="mt-6 space-y-3 text-sm text-white/90">
+                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Fixed-price multi-service quotes</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Full documentation for audits &amp; insurers</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Maintenance contracts available</li>
+            </ul>
+            <a href="#quote" class="inline-block mt-8 px-6 py-3 bg-[#ff6b00] rounded-2xl font-semibold">Start your quote</a>
         </div>
     </div>
 </section>
 
-<!-- Why us -->
-<section class="bg-white py-20 border-y">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-12">
-            <div class="uppercase text-[#ff6b00] tracking-[.2em] text-xs font-semibold">Why Icomply</div>
-            <h2 class="text-4xl font-extrabold tracking-tight mt-2">Built for UK landlords &amp; businesses</h2>
-        </div>
+<!-- HOW IT WORKS -->
+<section class="bg-white border-t">
+    <div class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="text-3xl font-semibold tracking-tight text-black text-center mb-12">How it works</h2>
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="p-8 rounded-3xl border bg-zinc-50">
-                <img src="/assets/images/services/fire-alarms-photo.jpg" alt="Fire safety compliance" class="w-full h-40 object-cover rounded-2xl mb-6" loading="lazy">
-                <h3 class="font-bold text-xl">British Standards first</h3>
-                <p class="text-zinc-600 mt-2 text-sm leading-relaxed">Work aligned to BS 7671, BS 5839, BS 5266 and relevant UK gas &amp; fire guidance — documentation ready for insurers.</p>
+            <?php
+            $steps = [
+                ['1', 'Tell us the job', 'Service, postcode, panel brand or system type — via form, phone or WhatsApp.'],
+                ['2', 'Get a fixed quote', 'We confirm scope, standards and timeline. No jargon, clear price.'],
+                ['3', 'We deliver & certify', 'Engineers attend, complete the work and issue documentation.'],
+            ];
+            foreach ($steps as [$n, $t, $d]): ?>
+            <div class="text-center px-4">
+                <div class="w-12 h-12 mx-auto rounded-2xl bg-[#0a2540] text-white font-bold flex items-center justify-center text-lg"><?= $n ?></div>
+                <h3 class="mt-4 font-semibold text-xl text-black"><?= htmlspecialchars($t, ENT_QUOTES, 'UTF-8') ?></h3>
+                <p class="mt-2 text-sm text-zinc-600"><?= htmlspecialchars($d, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
-            <div class="p-8 rounded-3xl border bg-zinc-50">
-                <img src="/assets/images/heroes/about-team.jpg" alt="UK trades professionals" class="w-full h-40 object-cover rounded-2xl mb-6" loading="lazy">
-                <h3 class="font-bold text-xl">Local Stockport base</h3>
-                <p class="text-zinc-600 mt-2 text-sm leading-relaxed">North West coverage with a fixed address in Offerton, Stockport. Real engineers, fixed-price quotes, fast call-backs.</p>
-            </div>
-            <div class="p-8 rounded-3xl border bg-zinc-50">
-                <img src="/assets/images/services/cctv-photo.jpg" alt="CCTV and security systems" class="w-full h-40 object-cover rounded-2xl mb-6" loading="lazy">
-                <h3 class="font-bold text-xl">One contractor, many systems</h3>
-                <p class="text-zinc-600 mt-2 text-sm leading-relaxed">Fire, electrical, gas, emergency lighting, nurse call, CCTV and access — coordinated under one UK compliance partner.</p>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
 
-<!-- About Icomply — expertise & NAP -->
-<section id="about" class="bg-white border-y py-20" aria-labelledby="about-heading">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
-            <div class="lg:col-span-3">
-                <div class="uppercase text-[#ff6b00] tracking-[.2em] text-xs font-semibold">About Icomply</div>
-                <h2 id="about-heading" class="text-4xl font-extrabold tracking-tight mt-2">UK property compliance expertise from Stockport</h2>
-                <p class="mt-5 text-zinc-700 leading-relaxed">Icomply Property Services is a North West compliance contractor helping landlords, letting agents, facilities managers and business owners keep buildings safe and audit-ready. Our engineers deliver installation, servicing and certification across electrical (EICR), fire detection, gas safety, emergency lighting, AOV, nurse call, CCTV, access control, door entry and intercoms.</p>
-                <p class="mt-3 text-zinc-700 leading-relaxed">We work to recognised British Standards — including BS 7671, BS 5839 and BS 5266 — and provide clear documentation suitable for insurers, freeholders and managing agents. One coordinated UK team covers Greater Manchester and 150+ surrounding towns, so multi-system sites do not need a stack of separate contractors.</p>
-                <div class="mt-8 grid sm:grid-cols-2 gap-4">
-                    <div class="p-5 rounded-2xl border bg-zinc-50">
-                        <div class="font-bold text-[#0a2540]">Standards-led work</div>
-                        <p class="text-sm text-zinc-600 mt-1 leading-relaxed">Inspections, installs and certificates aligned to current UK practice and insurer expectations.</p>
-                    </div>
-                    <div class="p-5 rounded-2xl border bg-zinc-50">
-                        <div class="font-bold text-[#0a2540]">Regional coverage</div>
-                        <p class="text-sm text-zinc-600 mt-1 leading-relaxed">Local engineers across Manchester, Bolton, Oldham, Rochdale, Liverpool, Preston, Chester and more.</p>
-                    </div>
-                    <div class="p-5 rounded-2xl border bg-zinc-50">
-                        <div class="font-bold text-[#0a2540]">Multi-system partner</div>
-                        <p class="text-sm text-zinc-600 mt-1 leading-relaxed">Fire, electrical, gas, nurse call, CCTV and access coordinated under one compliance contact.</p>
-                    </div>
-                    <div class="p-5 rounded-2xl border bg-zinc-50">
-                        <div class="font-bold text-[#0a2540]">Fast, fixed-price quotes</div>
-                        <p class="text-sm text-zinc-600 mt-1 leading-relaxed">Typical response within 2 business hours once postcode, property type and service are shared.</p>
-                    </div>
-                </div>
-            </div>
-            <aside class="lg:col-span-2">
-                <div class="rounded-3xl border bg-zinc-50 p-8 shadow-sm">
-                    <div class="uppercase text-[#ff6b00] tracking-[.2em] text-xs font-semibold">Visit &amp; contact</div>
-                    <h3 class="text-2xl font-extrabold tracking-tight mt-2 text-[#0a2540]"><?= SITE_NAME ?></h3>
-                    <p class="mt-4 text-sm text-zinc-600 leading-relaxed">Speak to our Stockport team about testing, installation or multi-site compliance programmes.</p>
-                    <dl class="mt-6 space-y-5 text-sm">
-                        <div>
-                            <dt class="text-xs font-semibold uppercase tracking-wide text-zinc-500">Address</dt>
-                            <dd class="mt-1 text-zinc-800 leading-relaxed"><?= ADDRESS ?></dd>
-                        </div>
-                        <div>
-                            <dt class="text-xs font-semibold uppercase tracking-wide text-zinc-500">Phone</dt>
-                            <dd class="mt-1"><a href="tel:<?= PHONE ?>" class="text-[#ff6b00] font-semibold text-lg hover:underline"><?= PHONE ?></a></dd>
-                        </div>
-                        <div>
-                            <dt class="text-xs font-semibold uppercase tracking-wide text-zinc-500">Email</dt>
-                            <dd class="mt-1"><a href="mailto:<?= EMAIL ?>" class="text-zinc-800 font-medium hover:text-[#ff6b00]"><?= EMAIL ?></a></dd>
-                        </div>
-                        <div>
-                            <dt class="text-xs font-semibold uppercase tracking-wide text-zinc-500">Hours</dt>
-                            <dd class="mt-1 text-zinc-800">Mon–Fri 08:00–18:00</dd>
-                        </div>
-                    </dl>
-                    <div class="mt-8 flex flex-col sm:flex-row gap-3">
-                        <a href="#quote" class="accent-btn text-center px-6 py-3 rounded-2xl font-semibold">Request a quote</a>
-                        <a href="tel:<?= PHONE ?>" class="text-center px-6 py-3 rounded-2xl border border-[#0a2540]/15 font-semibold text-[#0a2540] hover:bg-white">Call now</a>
-                    </div>
-                </div>
-                <div class="mt-6 rounded-3xl overflow-hidden border shadow-sm">
-                    <img src="/assets/images/heroes/about-team.jpg" alt="Icomply Property Services team — UK compliance engineers" class="w-full h-48 object-cover" width="640" height="320" loading="lazy">
-                </div>
-            </aside>
-        </div>
-        <?= render_faq_section($homeFaqs, 'Common questions about our UK compliance services') ?>
-    </div>
-</section>
+<?php
+require_once SITE_ROOT . '/includes/testimonials.php';
+echo testimonialsSectionHtml();
+?>
 
-<!-- Quote -->
-<section id="quote" class="py-20">
-    <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-            <div class="uppercase text-[#ff6b00] tracking-[.2em] text-xs font-semibold">Free quote</div>
-            <h2 id="quote-heading" class="text-4xl font-extrabold tracking-tight mt-2">Tell us about your property</h2>
-            <p class="mt-3 text-zinc-600 text-lg">We respond within 2 hours on business days. Quotes are fixed-price where possible.</p>
-            <div class="mt-8 rounded-3xl overflow-hidden shadow-lg">
-                <img src="/assets/images/heroes/contact-hero.jpg" alt="Modern UK commercial buildings" class="w-full h-64 object-cover" loading="lazy">
-            </div>
+<!-- QUOTE -->
+<section id="quote" class="bg-zinc-50 border-t">
+    <div class="max-w-3xl mx-auto px-6 py-16 md:py-20">
+        <div class="text-center mb-10">
+            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request your free quote</h2>
+            <p class="mt-3 text-zinc-600">We aim to respond within 2 hours on business days. All quotes are fixed-price after scope is agreed.</p>
         </div>
-        <form action="/contact" method="POST" class="bg-white p-8 md:p-10 rounded-3xl border shadow-sm space-y-5" aria-labelledby="quote-heading">
+
+        <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm" aria-label="Free quote form">
+            <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
+            <input type="hidden" name="gclid" value="<?= htmlspecialchars($_GET['gclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+            <input type="hidden" name="fbclid" value="<?= htmlspecialchars($_GET['fbclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                    <label for="quote-name" class="block text-xs font-semibold text-zinc-500 mb-1">Full name</label>
-                    <input type="text" id="quote-name" name="name" required class="w-full border px-4 py-3 rounded-xl">
+                    <label for="quote-name" class="sr-only">Full name</label>
+                    <input id="quote-name" type="text" name="name" placeholder="Full name" required aria-required="true" maxlength="120" class="w-full border px-5 py-3.5 rounded-2xl" autocomplete="name">
                 </div>
                 <div>
-                    <label for="quote-email" class="block text-xs font-semibold text-zinc-500 mb-1">Email</label>
-                    <input type="email" id="quote-email" name="email" required class="w-full border px-4 py-3 rounded-xl">
+                    <label for="quote-email" class="sr-only">Email</label>
+                    <input id="quote-email" type="email" name="email" placeholder="Email" required aria-required="true" class="w-full border px-5 py-3.5 rounded-2xl" autocomplete="email">
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                    <label for="quote-phone" class="block text-xs font-semibold text-zinc-500 mb-1">Phone</label>
-                    <input type="tel" id="quote-phone" name="phone" class="w-full border px-4 py-3 rounded-xl" placeholder="<?= PHONE ?>">
+                    <label for="quote-phone" class="sr-only">Phone</label>
+                    <input id="quote-phone" type="tel" name="phone" placeholder="Phone" required aria-required="true" maxlength="40" class="w-full border px-5 py-3.5 rounded-2xl" autocomplete="tel">
                 </div>
                 <div>
-                    <label for="quote-service" class="block text-xs font-semibold text-zinc-500 mb-1">Service</label>
-                    <select id="quote-service" name="service" required class="w-full border px-4 py-3 rounded-xl bg-white">
+                    <label for="quote-service" class="sr-only">Service</label>
+                    <select id="quote-service" name="service" required aria-required="true" class="w-full border px-5 py-3.5 rounded-2xl bg-white">
                         <option value="">Select service…</option>
                         <?php foreach ($services as $slug => $name): ?>
-                            <option value="<?= htmlspecialchars($name) ?>"><?= htmlspecialchars($name) ?></option>
+                            <option value="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></option>
                         <?php endforeach; ?>
+                        <option value="Shop / products">Shop / products</option>
+                        <option value="Multi-service package">Multi-service package</option>
                     </select>
                 </div>
             </div>
             <div>
-                <label for="quote-message" class="block text-xs font-semibold text-zinc-500 mb-1">Property details &amp; postcode</label>
-                <textarea id="quote-message" name="message" rows="4" class="w-full border px-4 py-3 rounded-xl" placeholder="e.g. 3-storey office in Stockport SK2 needing EICR + fire alarms"></textarea>
+                <label for="quote-message" class="sr-only">Message</label>
+                <textarea id="quote-message" name="message" rows="4" required aria-required="true" maxlength="5000" placeholder="Postcode, property type, panel brand / system details…" class="w-full border px-5 py-3.5 rounded-2xl"></textarea>
             </div>
-            <button type="submit" class="w-full accent-btn py-4 text-lg font-semibold rounded-2xl">Submit request</button>
-            <p class="text-center text-xs text-zinc-500">We only use your details to respond to this enquiry.</p>
+            <button type="submit" class="w-full modern-btn text-white py-4 text-lg font-semibold rounded-2xl">Submit request</button>
+            <p class="text-center text-xs text-zinc-500">
+                By submitting you agree to our
+                <a href="<?= url('/privacy.php') ?>" class="underline hover:text-black">Privacy Policy</a>
+                and
+                <a href="<?= url('/terms.php') ?>" class="underline hover:text-black">Terms</a>.
+            </p>
         </form>
     </div>
 </section>
 
-<?php require 'includes/footer.php'; ?>
+<section class="max-w-3xl mx-auto px-6 py-10">
+    <?php require_once SITE_ROOT . '/includes/share.php'; ?>
+    <?= shareButtonsHtml($pageTitle, $metaDesc) ?>
+</section>
+
+<?= shopifyBuyButtonScript() ?>
+<?php require SITE_ROOT . '/includes/footer.php'; ?>

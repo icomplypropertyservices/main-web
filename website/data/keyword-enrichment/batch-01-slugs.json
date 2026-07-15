@@ -1,0 +1,202 @@
+[
+    {
+        "slug": "fire-alarm-panel",
+        "name": "Fire Alarm Panel",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "kentec-fire-alarm-panel",
+        "name": "Kentec Fire Alarm Panel",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "eicr",
+        "name": "EICR",
+        "service": "electrical"
+    },
+    {
+        "slug": "cctv-installation",
+        "name": "CCTV Installation",
+        "service": "cctv"
+    },
+    {
+        "slug": "paxton-access",
+        "name": "Paxton Access Control",
+        "service": "access-control"
+    },
+    {
+        "slug": "electrical-installation",
+        "name": "Electrical Installation",
+        "service": "electrical"
+    },
+    {
+        "slug": "electrical-maintenance",
+        "name": "Electrical Maintenance",
+        "service": "electrical"
+    },
+    {
+        "slug": "electrical-services",
+        "name": "Electrical Services",
+        "service": "electrical"
+    },
+    {
+        "slug": "certified-electrician",
+        "name": "Certified Electrician",
+        "service": "electrical"
+    },
+    {
+        "slug": "electrical-contractor",
+        "name": "Electrical Contractor",
+        "service": "electrical"
+    },
+    {
+        "slug": "electrical-repair",
+        "name": "Electrical Repair",
+        "service": "electrical"
+    },
+    {
+        "slug": "electrician-near-me",
+        "name": "Electrician Near Me",
+        "service": "electrical"
+    },
+    {
+        "slug": "commercial-electrician",
+        "name": "Commercial Electrician",
+        "service": "electrical"
+    },
+    {
+        "slug": "residential-electrician",
+        "name": "Residential Electrician",
+        "service": "electrical"
+    },
+    {
+        "slug": "electrical-wiring-installation",
+        "name": "Electrical Wiring Installation",
+        "service": "electrical"
+    },
+    {
+        "slug": "new-electrical-installation",
+        "name": "New Electrical Installation",
+        "service": "electrical"
+    },
+    {
+        "slug": "lighting-installation",
+        "name": "Lighting Installation",
+        "service": "electrical"
+    },
+    {
+        "slug": "ev-charger-installation",
+        "name": "EV Charger Installation",
+        "service": "electrical"
+    },
+    {
+        "slug": "generator-installation",
+        "name": "Generator Installation",
+        "service": "electrical"
+    },
+    {
+        "slug": "solar-panel-installation",
+        "name": "Solar Panel Installation",
+        "service": "electrical"
+    },
+    {
+        "slug": "panel-upgrade",
+        "name": "Panel Upgrade",
+        "service": "electrical"
+    },
+    {
+        "slug": "smart-home-wiring",
+        "name": "Smart Home Wiring",
+        "service": "electrical"
+    },
+    {
+        "slug": "data-cabling-installation",
+        "name": "Data Cabling Installation",
+        "service": "electrical"
+    },
+    {
+        "slug": "electrical-inspection",
+        "name": "Electrical Inspection",
+        "service": "electrical"
+    },
+    {
+        "slug": "electrical-troubleshooting",
+        "name": "Electrical Troubleshooting",
+        "service": "electrical"
+    },
+    {
+        "slug": "circuit-breaker-repair",
+        "name": "Circuit Breaker Repair",
+        "service": "electrical"
+    },
+    {
+        "slug": "electrical-fault-finding",
+        "name": "Electrical Fault Finding",
+        "service": "electrical"
+    },
+    {
+        "slug": "electrical-safety-certificate",
+        "name": "Electrical Safety Certificate",
+        "service": "electrical"
+    },
+    {
+        "slug": "niceic-certified",
+        "name": "NICEIC Certified",
+        "service": "electrical"
+    },
+    {
+        "slug": "part-p-certified",
+        "name": "Part P Certified",
+        "service": "electrical"
+    },
+    {
+        "slug": "pat-testing",
+        "name": "PAT Testing",
+        "service": "electrical"
+    },
+    {
+        "slug": "landlord-electrical-certificate",
+        "name": "Landlord Electrical Certificate",
+        "service": "electrical"
+    },
+    {
+        "slug": "periodic-inspection-report",
+        "name": "Periodic Inspection Report",
+        "service": "electrical"
+    },
+    {
+        "slug": "bs-7671",
+        "name": "BS 7671",
+        "service": "electrical"
+    },
+    {
+        "slug": "24-hour-emergency-electrician",
+        "name": "24 Hour Emergency Electrician",
+        "service": "electrical"
+    },
+    {
+        "slug": "electrical-installation-condition-report",
+        "name": "Electrical Installation Condition Report",
+        "service": "electrical"
+    },
+    {
+        "slug": "industrial-electrical-services",
+        "name": "Industrial Electrical Services",
+        "service": "electrical"
+    },
+    {
+        "slug": "kitchen-electrical-installation",
+        "name": "Kitchen Electrical Installation",
+        "service": "electrical"
+    },
+    {
+        "slug": "bathroom-electrical-safety",
+        "name": "Bathroom Electrical Safety",
+        "service": "electrical"
+    },
+    {
+        "slug": "solar-inverter-installation",
+        "name": "Solar Inverter Installation",
+        "service": "electrical"
+    }
+]

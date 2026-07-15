@@ -1,0 +1,73 @@
+[
+    {
+        "slug": "d-light",
+        "name": "D-Light",
+        "services": [
+            "emergency-lighting"
+        ]
+    },
+    {
+        "slug": "dahua",
+        "name": "Dahua",
+        "services": [
+            "cctv"
+        ]
+    },
+    {
+        "slug": "doorking",
+        "name": "DoorKing",
+        "services": [
+            "door-entry"
+        ]
+    },
+    {
+        "slug": "dormakaba",
+        "name": "dormakaba",
+        "services": [
+            "access-control"
+        ]
+    },
+    {
+        "slug": "dsc",
+        "name": "DSC",
+        "services": [
+            "intruder-alarm"
+        ]
+    },
+    {
+        "slug": "easee",
+        "name": "Easee",
+        "services": [
+            "electrical"
+        ]
+    },
+    {
+        "slug": "eaton",
+        "name": "Eaton",
+        "services": [
+            "electrical",
+            "emergency-lighting"
+        ]
+    },
+    {
+        "slug": "eaton-fire",
+        "name": "Eaton Fire",
+        "services": [
+            "fire-alarms"
+        ]
+    },
+    {
+        "slug": "elvox",
+        "name": "Elvox",
+        "services": [
+            "door-entry"
+        ]
+    },
+    {
+        "slug": "emergi-lite",
+        "name": "Emergi-Lite",
+        "services": [
+            "emergency-lighting"
+        ]
+    }
+]

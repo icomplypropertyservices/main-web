@@ -1,0 +1,282 @@
+{
+    "gallagher": {
+        "blurb": "Icomply installs and services Gallagher access control across Stockport, Manchester and the wider North West — card, fob and biometric readers with site-wide controller programming for commercial estates and multi-site FM. Our engineers handle commissioning, certificate packs and reactive call-outs, while the trade shop stocks Gallagher reader modules, tokens and power supplies for landlords and contractors who need next-day spares.",
+        "seo_title": "Gallagher Installation, Service & Products | North West",
+        "seo_desc": "Gallagher access control install, service & trade spares with Icomply. Certified North West engineers. Free quotes across Stockport & Manchester.",
+        "seo_keywords": "Gallagher, Gallagher access control, Gallagher installation, Gallagher service, Gallagher maintenance, Gallagher spares, Gallagher trade, Gallagher North West, Gallagher Manchester, Gallagher Stockport, access control systems",
+        "products": [
+            {
+                "id": "gallagher-reader-token-pack",
+                "title": "Gallagher Reader & Token Spares Pack",
+                "blurb": "Trade pack of Gallagher proximity tokens and reader faceplates for planned maintenance rounds.",
+                "price": "From £54",
+                "handle": "gallagher-reader-token-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/gallagher.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "gallagher-controller-psu-kit",
+                "title": "Gallagher Controller PSU & Battery Kit",
+                "blurb": "Power supply and backup battery kit commonly used on Gallagher controller installs in the North West.",
+                "price": "From £79",
+                "handle": "gallagher-controller-psu-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/gallagher.jpg",
+                "badge": "Install"
+            }
+        ]
+    },
+    "garo": {
+        "blurb": "Icomply is a North West electrical contractor for Garo consumer units, EV charge points and distribution boards — BS 7671 installation, EICR support and planned maintenance for homes, landlords and commercial sites. From Stockport and Manchester to Cheshire and Lancashire, we commission Garo equipment with full certification and keep trade-ready breakers, enclosures and EV accessories on the shelf for engineers on the road.",
+        "seo_title": "Garo Installation, Service & Products | North West",
+        "seo_desc": "Garo electrical install, EV charging & board service with Icomply. BS 7671 certified work across Stockport, Manchester & the North West.",
+        "seo_keywords": "Garo, Garo consumer unit, Garo EV charger, Garo installation, Garo service, Garo maintenance, Garo spares, Garo trade, Garo North West, Garo Manchester, Garo Stockport, electrical",
+        "products": [
+            {
+                "id": "garo-cu-breaker-spares",
+                "title": "Garo Consumer Unit Breaker Spares",
+                "blurb": "MCBs, RCBOs and blanking plates for Garo boards — ideal for service visits and board upgrades.",
+                "price": "From £28",
+                "handle": "garo-cu-breaker-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/garo.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "garo-ev-install-accessory-pack",
+                "title": "Garo EV Install Accessory Pack",
+                "blurb": "Cable glands, isolators and mounting hardware used on Garo EV charge-point installs.",
+                "price": "From £45",
+                "handle": "garo-ev-install-accessory-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/garo.jpg",
+                "badge": "Install"
+            }
+        ]
+    },
+    "gent": {
+        "blurb": "Icomply designs, installs and maintains Gent fire alarm systems to BS 5839 for offices, industrial units and multi-occupancy buildings across Greater Manchester and the North West. Whether you need a new addressable panel, detector loop extensions or annual certification, our fire engineers deliver compliant commissioning and keep Gent call points, sounders and detector heads available through the trade counter for FM teams and contractors.",
+        "seo_title": "Gent Fire Alarm Installation, Service & Products | North West",
+        "seo_desc": "Gent fire alarm install, BS 5839 service & trade kits with Icomply. Certified engineers across Stockport, Manchester & the North West.",
+        "seo_keywords": "Gent, Gent fire alarm, Gent installation, Gent service, Gent maintenance, Gent spares, Gent trade, Gent North West, Gent Manchester, Gent Stockport, fire detection, BS 5839",
+        "products": [
+            {
+                "id": "gent-detector-callpoint-pack",
+                "title": "Gent Detector & Call Point Pack",
+                "blurb": "Replacement optical detectors and manual call points for Gent addressable and conventional loops.",
+                "price": "From £62",
+                "handle": "gent-detector-callpoint-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/gent.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "gent-panel-service-kit",
+                "title": "Gent Panel Service & Battery Kit",
+                "blurb": "Standby batteries and engineer consumables for Gent fire panel maintenance contracts.",
+                "price": "From £48",
+                "handle": "gent-panel-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/gent.jpg",
+                "badge": "Service"
+            }
+        ]
+    },
+    "geze": {
+        "blurb": "Icomply supplies and installs Geze AOV and smoke-control actuators for stairwells, atria and commercial façades throughout Stockport, Manchester and the North West. Our team programmes control panels to BS 9991 / EN 12101, carries out periodic service visits and provides certificate evidence for building control and insurers. Trade customers can order Geze actuator spares, brackets and control-panel consumables direct from our shop.",
+        "seo_title": "Geze AOV Installation, Service & Products | North West",
+        "seo_desc": "Geze AOV & smoke-control install, service & spares with Icomply. EN 12101 certified work across Stockport, Manchester & the North West.",
+        "seo_keywords": "Geze, Geze AOV, Geze smoke control, Geze installation, Geze service, Geze maintenance, Geze spares, Geze trade, Geze North West, Geze Manchester, Geze Stockport, air handling",
+        "products": [
+            {
+                "id": "geze-actuator-spares-kit",
+                "title": "Geze Actuator Spares & Bracket Kit",
+                "blurb": "Common Geze chain-actuator spares and fixing brackets for AOV window and vent service work.",
+                "price": "From £85",
+                "handle": "geze-actuator-spares-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/geze.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "geze-control-panel-consumables",
+                "title": "Geze Control Panel Consumables Pack",
+                "blurb": "Fuses, batteries and interface modules for Geze smoke-control panel maintenance.",
+                "price": "From £55",
+                "handle": "geze-control-panel-consumables",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/geze.jpg",
+                "badge": "Service"
+            }
+        ]
+    },
+    "givenergy": {
+        "blurb": "Icomply installs GivEnergy battery storage and hybrid inverter systems for homes and light commercial sites across the North West — full design, BS 7671 electrical integration and commissioning with clear handover packs. From Stockport to Manchester and into Cheshire, we service existing GivEnergy setups, diagnose inverter faults and stock trade cables, CT clamps and battery accessories so installers can keep projects moving.",
+        "seo_title": "GivEnergy Installation, Service & Products | North West",
+        "seo_desc": "GivEnergy battery & inverter install, service & trade accessories with Icomply. North West certified electrical engineers. Free quotes.",
+        "seo_keywords": "GivEnergy, GivEnergy battery, GivEnergy inverter, GivEnergy installation, GivEnergy service, GivEnergy maintenance, GivEnergy spares, GivEnergy trade, GivEnergy North West, GivEnergy Manchester, GivEnergy Stockport, electrical storage",
+        "products": [
+            {
+                "id": "givenergy-ct-cable-pack",
+                "title": "GivEnergy CT Clamp & Cable Pack",
+                "blurb": "CT clamps and communication cabling for GivEnergy hybrid inverter installs and retrofits.",
+                "price": "From £39",
+                "handle": "givenergy-ct-cable-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/givenergy.jpg",
+                "badge": "Install"
+            },
+            {
+                "id": "givenergy-battery-service-kit",
+                "title": "GivEnergy Battery Service Accessory Kit",
+                "blurb": "Engineer-ready connectors and mounting accessories for GivEnergy battery stack maintenance.",
+                "price": "From £58",
+                "handle": "givenergy-battery-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/givenergy.jpg",
+                "badge": "Trade"
+            }
+        ]
+    },
+    "gjd": {
+        "blurb": "Icomply fits and maintains GJD external detectors and perimeter alarm devices for commercial yards, depots and residential sites across Greater Manchester and the North West. Our intruder-alarm engineers programme GJD PIRs and beam sets to PD 6662 / BS EN 50131 standards, issue certification and respond to fault call-outs. The trade shop carries GJD detector heads, brackets and power modules for contractors who need reliable outdoor detection spares.",
+        "seo_title": "GJD Installation, Service & Products | North West",
+        "seo_desc": "GJD external detector install, service & trade spares with Icomply. PD 6662 certified work across Stockport, Manchester & the North West.",
+        "seo_keywords": "GJD, GJD detector, GJD PIR, GJD installation, GJD service, GJD maintenance, GJD spares, GJD trade, GJD North West, GJD Manchester, GJD Stockport, intruder alarm, perimeter detection",
+        "products": [
+            {
+                "id": "gjd-external-detector-pack",
+                "title": "GJD External Detector Spares Pack",
+                "blurb": "Replacement GJD outdoor PIR heads and weather seals for perimeter maintenance contracts.",
+                "price": "From £72",
+                "handle": "gjd-external-detector-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/gjd.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "gjd-bracket-psu-kit",
+                "title": "GJD Bracket & PSU Install Kit",
+                "blurb": "Mounting brackets and power supplies commonly specified on GJD external detection installs.",
+                "price": "From £41",
+                "handle": "gjd-bracket-psu-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/gjd.jpg",
+                "badge": "Install"
+            }
+        ]
+    },
+    "glow-worm": {
+        "blurb": "Icomply’s Gas Safe engineers install, service and repair Glow-worm boilers and system components for landlords, homeowners and commercial premises across Stockport, Manchester and the North West. From annual landlord gas safety certificates to full boiler replacements and flue upgrades, we keep Glow-worm running reliably and stock trade service kits, seals and flue accessories for heating engineers who need same-day parts.",
+        "seo_title": "Glow-worm Installation, Service & Products | North West",
+        "seo_desc": "Glow-worm boiler install, Gas Safe service & trade kits with Icomply. Certified engineers across Stockport, Manchester & the North West.",
+        "seo_keywords": "Glow-worm, Glow-worm boiler, Glow-worm installation, Glow-worm service, Glow-worm maintenance, Glow-worm spares, Glow-worm trade, Glow-worm North West, Glow-worm Manchester, Glow-worm Stockport, gas systems, Gas Safe",
+        "products": [
+            {
+                "id": "glow-worm-annual-service-kit",
+                "title": "Glow-worm Annual Service Kit",
+                "blurb": "Seals, electrodes and filters for Glow-worm boiler annual service visits.",
+                "price": "From £36",
+                "handle": "glow-worm-annual-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/glow-worm.jpg",
+                "badge": "Service"
+            },
+            {
+                "id": "glow-worm-flue-accessory-pack",
+                "title": "Glow-worm Flue & Install Accessory Pack",
+                "blurb": "Flue extensions, terminals and fixing hardware used on Glow-worm boiler installs.",
+                "price": "From £49",
+                "handle": "glow-worm-flue-accessory-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/glow-worm.jpg",
+                "badge": "Trade"
+            }
+        ]
+    },
+    "golmar": {
+        "blurb": "Icomply installs and services Golmar door entry and video intercom systems for apartments, offices and gated developments across the North West. Our engineers programme multi-tenant panels, replace handsets and issue commissioning certificates that satisfy freeholders and managing agents. Trade customers across Stockport, Manchester and Cheshire can buy Golmar handsets, entrance modules and rain covers from our shop for reactive repairs and new builds.",
+        "seo_title": "Golmar Door Entry Installation, Service & Products | North West",
+        "seo_desc": "Golmar door entry install, service & trade handsets with Icomply. Multi-tenant certified work across Stockport, Manchester & the North West.",
+        "seo_keywords": "Golmar, Golmar door entry, Golmar intercom, Golmar installation, Golmar service, Golmar maintenance, Golmar spares, Golmar trade, Golmar North West, Golmar Manchester, Golmar Stockport, video door entry",
+        "products": [
+            {
+                "id": "golmar-handset-spares-pack",
+                "title": "Golmar Handset Spares Pack",
+                "blurb": "Replacement audio and video handsets for Golmar multi-dwelling door entry systems.",
+                "price": "From £58",
+                "handle": "golmar-handset-spares-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/golmar.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "golmar-entrance-panel-kit",
+                "title": "Golmar Entrance Panel Accessory Kit",
+                "blurb": "Rain hoods, flush boxes and nameplate modules for Golmar street-panel installs.",
+                "price": "From £44",
+                "handle": "golmar-entrance-panel-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/golmar.jpg",
+                "badge": "Install"
+            }
+        ]
+    },
+    "grant": {
+        "blurb": "Icomply installs and services Grant oil and renewable heating systems for rural and off-mains properties across Lancashire, Cheshire and the wider North West. Gas Safe and OFTEC-aligned engineers handle boiler replacements, flue work and annual servicing with full certification for landlords and homeowners. Our trade counter stocks Grant service kits, nozzle packs and flue accessories so heating contractors can complete jobs without delays.",
+        "seo_title": "Grant Boiler Installation, Service & Products | North West",
+        "seo_desc": "Grant oil & heating install, service & trade kits with Icomply. Certified engineers across Stockport, Manchester, Lancashire & Cheshire.",
+        "seo_keywords": "Grant, Grant boiler, Grant oil boiler, Grant installation, Grant service, Grant maintenance, Grant spares, Grant trade, Grant North West, Grant Manchester, Grant Stockport, gas systems, oil heating",
+        "products": [
+            {
+                "id": "grant-oil-service-kit",
+                "title": "Grant Oil Boiler Service Kit",
+                "blurb": "Nozzles, filters and seals for Grant oil boiler annual service and landlord checks.",
+                "price": "From £42",
+                "handle": "grant-oil-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/grant.jpg",
+                "badge": "Service"
+            },
+            {
+                "id": "grant-flue-install-pack",
+                "title": "Grant Flue & Install Accessory Pack",
+                "blurb": "Flue sections and fixing accessories commonly used on Grant boiler installations.",
+                "price": "From £56",
+                "handle": "grant-flue-install-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/grant.jpg",
+                "badge": "Trade"
+            }
+        ]
+    },
+    "greenbrook": {
+        "blurb": "Icomply specifies and installs Greenbrook electrical accessories, RCD protection and consumer-unit related products for domestic and light commercial work across Stockport, Manchester and the North West. Our electricians deliver BS 7671-compliant installs with certification, and support landlords and contractors with planned electrical upgrades. Trade stock includes Greenbrook timers, RCDs and outdoor sockets for engineers who need dependable everyday kit.",
+        "seo_title": "Greenbrook Installation, Service & Products | North West",
+        "seo_desc": "Greenbrook electrical install, RCD protection & trade accessories with Icomply. BS 7671 work across Stockport, Manchester & the North West.",
+        "seo_keywords": "Greenbrook, Greenbrook RCD, Greenbrook electrical, Greenbrook installation, Greenbrook service, Greenbrook maintenance, Greenbrook spares, Greenbrook trade, Greenbrook North West, Greenbrook Manchester, Greenbrook Stockport, electrical accessories",
+        "products": [
+            {
+                "id": "greenbrook-rcd-protection-pack",
+                "title": "Greenbrook RCD Protection Pack",
+                "blurb": "Trade RCD and socket protection units for Greenbrook electrical upgrades and landlord works.",
+                "price": "From £32",
+                "handle": "greenbrook-rcd-protection-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/greenbrook.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "greenbrook-timer-outdoor-kit",
+                "title": "Greenbrook Timer & Outdoor Socket Kit",
+                "blurb": "Timers and weatherproof sockets used on Greenbrook domestic and light commercial installs.",
+                "price": "From £27",
+                "handle": "greenbrook-timer-outdoor-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/greenbrook.jpg",
+                "badge": "Install"
+            }
+        ]
+    }
+}

@@ -1,0 +1,282 @@
+{
+    "mobotix": {
+        "blurb": "Icomply designs, installs and services Mobotix IP CCTV for commercial sites, logistics yards and multi-occupancy buildings across the North West. Our engineers commission camera platforms, edge storage and remote viewing to BS EN 62676 practice, with planned maintenance and reactive call-outs. Trade mounts, PoE cabling and engineer accessories for Mobotix projects are available from our Stockport shop.",
+        "seo_title": "Mobotix CCTV Installation & Service | North West",
+        "seo_desc": "Mobotix CCTV design, install & service by Icomply. Trade mounts & PoE kits — Stockport, Manchester & North West. Free quotes.",
+        "seo_keywords": "Mobotix, Mobotix CCTV, Mobotix cameras, Mobotix installation, Mobotix service, Mobotix maintenance, Mobotix trade spares, Mobotix North West, Mobotix Manchester, Mobotix Stockport, IP CCTV systems",
+        "products": [
+            {
+                "id": "mobotix-camera-mount-kit",
+                "title": "Mobotix Camera Mount & Weather Kit",
+                "blurb": "Brackets, housings and weather seals for outdoor Mobotix camera installs.",
+                "price": "From £39",
+                "handle": "mobotix-camera-mount-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/mobotix.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "mobotix-poe-cabling-pack",
+                "title": "Mobotix PoE Cabling & Accessory Pack",
+                "blurb": "Engineer-ready PoE leads, glands and fixings for Mobotix IP CCTV runs.",
+                "price": "From £45",
+                "handle": "mobotix-poe-cabling-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/mobotix.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "morley": {
+        "blurb": "Icomply installs, commissions and maintains Morley fire detection and alarm systems for commercial and multi-site estates throughout Greater Manchester, Lancashire and Cheshire. We handle panel upgrades, detector replacements and full BS 5839 certification with clear handover paperwork. Stock Morley service kits, call points and loop devices from our North West trade counter for planned maintenance contracts.",
+        "seo_title": "Morley Fire Alarm Installation & Service | North West",
+        "seo_desc": "Morley fire alarm install, service & BS 5839 certification by Icomply. Trade detectors & kits — Stockport, Manchester & NW.",
+        "seo_keywords": "Morley, Morley fire alarm, Morley IAS, Morley installation, Morley service, Morley maintenance, Morley detectors, Morley trade, Morley North West, Morley Manchester, Morley Stockport, BS 5839 fire alarms",
+        "products": [
+            {
+                "id": "morley-detector-call-point-pack",
+                "title": "Morley Detector & Call Point Pack",
+                "blurb": "Trade pack of Morley-compatible detectors and manual call points for service routes.",
+                "price": "From £68",
+                "handle": "morley-detector-call-point-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/morley.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "morley-panel-service-kit",
+                "title": "Morley Panel Service & Battery Kit",
+                "blurb": "Backup batteries, fuses and engineer consumables for Morley fire panels.",
+                "price": "From £54",
+                "handle": "morley-panel-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/morley.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "myenergi": {
+        "blurb": "Icomply installs and services Myenergi EV chargers — including zappi and eddi — for homes, fleets and commercial car parks across the North West. Every install is completed to BS 7671 with certification, load assessment and clear customer handover. Landlords and electrical contractors can order Myenergi cables, CT clamps and install accessories from our Stockport trade shop.",
+        "seo_title": "Myenergi EV Charger Install & Service | North West",
+        "seo_desc": "Myenergi zappi install, service & BS 7671 certification by Icomply. Trade cables & kits — Stockport, Manchester & North West.",
+        "seo_keywords": "Myenergi, Myenergi zappi, Myenergi eddi, Myenergi installation, Myenergi service, EV charger install, Myenergi trade, Myenergi North West, Myenergi Manchester, Myenergi Stockport, BS 7671 electrical",
+        "products": [
+            {
+                "id": "myenergi-zappi-cable-kit",
+                "title": "Myenergi Zappi Cable & CT Kit",
+                "blurb": "Charge cables, CT clamps and install extras commonly used on Myenergi zappi jobs.",
+                "price": "From £49",
+                "handle": "myenergi-zappi-cable-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/myenergi.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "myenergi-install-accessory-pack",
+                "title": "Myenergi Install Accessory Pack",
+                "blurb": "Mounting hardware, glands and engineer fixings for Myenergi EV installs.",
+                "price": "From £32",
+                "handle": "myenergi-install-accessory-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/myenergi.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "napit-approved-equipment": {
+        "blurb": "Icomply supplies and installs NAPIT Approved Equipment for electrical testing, inspection and compliance work across Greater Manchester and the wider North West. Our electricians use approved test gear on BS 7671 EICRs, consumer-unit upgrades and certification visits for landlords and FM teams. Buy NAPIT-ready leads, adaptors and engineer spares from our Stockport trade counter for same-week jobs.",
+        "seo_title": "NAPIT Approved Equipment Supply & Install | North West",
+        "seo_desc": "NAPIT Approved Equipment for testing, install & certification with Icomply. Trade leads & kits — Stockport, Manchester & NW.",
+        "seo_keywords": "NAPIT Approved Equipment, NAPIT test equipment, NAPIT installation, NAPIT service, electrical testing, EICR equipment, NAPIT trade, NAPIT North West, NAPIT Manchester, NAPIT Stockport, BS 7671",
+        "products": [
+            {
+                "id": "napit-approved-equipment-test-lead-pack",
+                "title": "NAPIT Approved Test Lead Pack",
+                "blurb": "Engineer-ready test leads and adaptors for NAPIT-compliant inspection work.",
+                "price": "From £42",
+                "handle": "napit-approved-equipment-test-lead-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/napit-approved-equipment.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "napit-approved-equipment-engineer-spares",
+                "title": "NAPIT Approved Engineer Spares Kit",
+                "blurb": "Consumables and accessories for NAPIT Approved Equipment on site visits.",
+                "price": "From £28",
+                "handle": "napit-approved-equipment-engineer-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/napit-approved-equipment.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "navien": {
+        "blurb": "Icomply’s Gas Safe engineers install, service and repair Navien boilers and water heaters for landlords, housing providers and commercial estates across the North West. Annual services, flue checks and breakdowns are completed with full certification and clear parts advice. Order Navien service kits, seals and flue fittings from our Stockport trade shop for planned maintenance routes.",
+        "seo_title": "Navien Boiler Install, Service & Spares | North West",
+        "seo_desc": "Navien boiler install, Gas Safe service & certification by Icomply. Trade kits & flues — Stockport, Manchester & North West.",
+        "seo_keywords": "Navien, Navien boilers, Navien water heater, Navien installation, Navien service, Navien Gas Safe, Navien spares, Navien trade, Navien North West, Navien Manchester, Navien Stockport, gas systems",
+        "products": [
+            {
+                "id": "navien-boiler-service-kit",
+                "title": "Navien Boiler Annual Service Kit",
+                "blurb": "Washers, seals and service consumables matched to common Navien boiler models.",
+                "price": "From £36",
+                "handle": "navien-boiler-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/navien.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "navien-flue-fitting-pack",
+                "title": "Navien Flue & Fitting Pack",
+                "blurb": "Terminals, adaptors and mounting fittings for Navien flue installations.",
+                "price": "From £29",
+                "handle": "navien-flue-fitting-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/navien.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "nedap": {
+        "blurb": "Icomply installs and maintains Nedap access control for offices, warehouses and multi-tenant sites across Manchester, Cheshire and Merseyside. We commission readers, controllers and credentials to BS EN 50133 best practice, with certification and ongoing service support. FM teams and security contractors can stock Nedap reader packs, tokens and controller spares from our North West trade shop.",
+        "seo_title": "Nedap Access Control Install & Service | North West",
+        "seo_desc": "Nedap access control install, service & certification by Icomply. Trade readers & tokens — Stockport, Manchester & North West.",
+        "seo_keywords": "Nedap, Nedap access control, Nedap AEOS, Nedap installation, Nedap service, Nedap readers, Nedap trade, Nedap North West, Nedap Manchester, Nedap Stockport, access control systems",
+        "products": [
+            {
+                "id": "nedap-reader-token-pack",
+                "title": "Nedap Reader & Token Pack",
+                "blurb": "Readers and credentials for Nedap access systems — ideal for upgrades and spares.",
+                "price": "From £79",
+                "handle": "nedap-reader-token-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/nedap.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "nedap-controller-spares-kit",
+                "title": "Nedap Controller Spares Kit",
+                "blurb": "PSU fuses, lock interfaces and engineer consumables for Nedap controllers.",
+                "price": "From £58",
+                "handle": "nedap-controller-spares-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/nedap.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "nittan": {
+        "blurb": "Icomply installs, services and certifies Nittan fire detection devices for commercial and multi-site clients throughout the North West. Our fire engineers handle detector replacements, base changes and loop investigations under BS 5839, with clear certification after every visit. Trade Nittan detectors, bases and call-point packs are available from our Stockport counter for maintenance contracts.",
+        "seo_title": "Nittan Fire Detection Install & Service | North West",
+        "seo_desc": "Nittan fire detection install, service & BS 5839 certification by Icomply. Trade detectors & bases — Stockport, Manchester & NW.",
+        "seo_keywords": "Nittan, Nittan fire alarm, Nittan detectors, Nittan installation, Nittan service, Nittan maintenance, Nittan trade, Nittan North West, Nittan Manchester, Nittan Stockport, BS 5839 fire detection",
+        "products": [
+            {
+                "id": "nittan-detector-base-pack",
+                "title": "Nittan Detector & Base Pack",
+                "blurb": "Trade pack of Nittan detectors and bases for service and upgrade routes.",
+                "price": "From £64",
+                "handle": "nittan-detector-base-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/nittan.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "nittan-call-point-spares-kit",
+                "title": "Nittan Call Point & Spares Kit",
+                "blurb": "Manual call points, glass elements and engineer consumables for Nittan systems.",
+                "price": "From £46",
+                "handle": "nittan-call-point-spares-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/nittan.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "notifier": {
+        "blurb": "Icomply delivers Notifier fire alarm installation, commissioning and planned maintenance for commercial estates across Greater Manchester and the North West. We support panel upgrades, device replacements and full BS 5839 certification with engineer-led handover. Landlords, FM teams and contractors can buy Notifier service kits, batteries and loop devices from our Stockport trade shop.",
+        "seo_title": "Notifier Fire Alarm Installation & Service | North West",
+        "seo_desc": "Notifier fire alarm install, service & BS 5839 certification by Icomply. Trade kits & devices — Stockport, Manchester & NW.",
+        "seo_keywords": "Notifier, Notifier fire alarm, Notifier Honeywell, Notifier installation, Notifier service, Notifier maintenance, Notifier trade, Notifier North West, Notifier Manchester, Notifier Stockport, BS 5839 fire alarms",
+        "products": [
+            {
+                "id": "notifier-device-service-pack",
+                "title": "Notifier Device & Service Pack",
+                "blurb": "Detectors, call points and service consumables for Notifier fire systems.",
+                "price": "From £72",
+                "handle": "notifier-device-service-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/notifier.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "notifier-panel-battery-kit",
+                "title": "Notifier Panel Battery & Fuse Kit",
+                "blurb": "Backup batteries, fuses and labels for Notifier panel maintenance visits.",
+                "price": "From £51",
+                "handle": "notifier-panel-battery-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/notifier.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "nuaire": {
+        "blurb": "Icomply installs and services Nuaire ventilation and smoke-control equipment for residential blocks, commercial buildings and AOV schemes across the North West. Our engineers commission fans, controls and related plant to BS 9991 / EN 12101 guidance with full certification. Stock Nuaire filters, actuators and control consumables from our Stockport trade counter for planned maintenance and reactive repairs.",
+        "seo_title": "Nuaire Ventilation & AOV Install | North West",
+        "seo_desc": "Nuaire AOV & ventilation install, service & certification by Icomply. Trade filters & spares — Stockport, Manchester & NW.",
+        "seo_keywords": "Nuaire, Nuaire ventilation, Nuaire AOV, Nuaire installation, Nuaire service, Nuaire maintenance, Nuaire filters, Nuaire trade, Nuaire North West, Nuaire Manchester, Nuaire Stockport, smoke control EN 12101",
+        "products": [
+            {
+                "id": "nuaire-filter-service-kit",
+                "title": "Nuaire Filter & Service Kit",
+                "blurb": "Replacement filters and service consumables for common Nuaire ventilation units.",
+                "price": "From £44",
+                "handle": "nuaire-filter-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/nuaire.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "nuaire-actuator-control-pack",
+                "title": "Nuaire Actuator & Control Pack",
+                "blurb": "Actuator spares and control accessories for Nuaire smoke-control projects.",
+                "price": "From £62",
+                "handle": "nuaire-actuator-control-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/nuaire.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "ohme": {
+        "blurb": "Icomply installs and services Ohme EV charge points for homes, workplaces and landlord parking across Manchester, Lancashire and Cheshire. Every install follows BS 7671 with load assessment, certification and clear user handover. Electrical contractors and fleet managers can order Ohme cables, mounts and install accessories from our North West trade shop.",
+        "seo_title": "Ohme EV Charger Installation & Service | North West",
+        "seo_desc": "Ohme EV charger install, service & BS 7671 certification by Icomply. Trade cables & mounts — Stockport, Manchester & NW.",
+        "seo_keywords": "Ohme, Ohme EV charger, Ohme Home Pro, Ohme installation, Ohme service, EV charger install, Ohme trade, Ohme North West, Ohme Manchester, Ohme Stockport, BS 7671 electrical",
+        "products": [
+            {
+                "id": "ohme-charge-cable-kit",
+                "title": "Ohme Charge Cable & Lead Kit",
+                "blurb": "Charge cables and leads commonly used on Ohme EV charger installations.",
+                "price": "From £46",
+                "handle": "ohme-charge-cable-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/ohme.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "ohme-mount-accessory-pack",
+                "title": "Ohme Mount & Install Accessory Pack",
+                "blurb": "Wall mounts, glands and engineer fixings for Ohme charge point installs.",
+                "price": "From £34",
+                "handle": "ohme-mount-accessory-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/ohme.jpg",
+                "badge": ""
+            }
+        ]
+    }
+}

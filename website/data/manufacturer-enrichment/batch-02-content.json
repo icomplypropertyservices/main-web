@@ -1,0 +1,272 @@
+{
+    "alpha": {
+        "blurb": "Icomply Property Services installs, services and certifies Alpha boilers and heating systems for homes, landlords and commercial sites across Stockport, Greater Manchester and the wider North West. Our Gas Safe engineers handle new installs, annual servicing and reactive call-outs, and we sell trade service kits, flue parts and consumables for Alpha plant. Whether you need a planned maintenance visit or same-week repairs, we keep Alpha systems running safely and efficiently.",
+        "seo_desc": "Alpha boiler install, Gas Safe service & certification in Stockport & Greater Manchester. Trade kits & parts from Icomply North West.",
+        "seo_keywords": "Alpha, Alpha install, Alpha service, Alpha boiler North West, Alpha Stockport, Alpha Greater Manchester, Gas Safe Alpha, Alpha trade kits",
+        "products": [
+            {
+                "id": "alpha-boiler-service-kit",
+                "title": "Alpha Boiler Service Kit",
+                "blurb": "Trade consumables for annual Alpha boiler servicing — washers, filters and common wear parts engineers keep on the van.",
+                "price": "From £32",
+                "handle": "alpha-boiler-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/alpha.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "alpha-flue-fitting-pack",
+                "title": "Alpha Flue & Fitting Pack",
+                "blurb": "Flue extensions, terminals and install accessories commonly specified on Alpha heating projects in the North West.",
+                "price": "From £24",
+                "handle": "alpha-flue-fitting-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/alpha.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "ansell-lighting": {
+        "blurb": "Icomply Property Services supplies, installs and maintains Ansell Lighting emergency luminaires and exit signage to BS 5266 across Greater Manchester and the North West. From Stockport offices to multi-site estates, we deliver full installation, periodic testing, certification and reactive repairs. Trade customers can also buy Ansell-compatible fittings, battery packs and install kits for their own projects.",
+        "seo_desc": "Ansell Lighting emergency install, BS 5266 testing & certification. Trade fittings & kits — Stockport, Manchester, North West.",
+        "seo_keywords": "Ansell Lighting, Ansell Lighting install, Ansell Lighting service, Ansell emergency lighting North West, Ansell Stockport, BS 5266, trade emergency lighting",
+        "products": [
+            {
+                "id": "ansell-lighting-emergency-fitting-pack",
+                "title": "Ansell Lighting Emergency Fitting Pack",
+                "blurb": "LED emergency luminaires and exit signs suited to Ansell Lighting ranges for commercial and residential schemes.",
+                "price": "From £55",
+                "handle": "ansell-lighting-emergency-fitting-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/ansell-lighting.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "ansell-lighting-battery-kit",
+                "title": "Ansell Lighting Battery Replacement Kit",
+                "blurb": "Replacement battery packs for Ansell emergency units — ideal for planned maintenance and bulk site swaps.",
+                "price": "From £28",
+                "handle": "ansell-lighting-battery-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/ansell-lighting.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "apollo": {
+        "blurb": "Icomply Property Services designs, installs and services Apollo fire detection systems to BS 5839 for landlords, FM teams and contractors across Stockport, Greater Manchester and the North West. We complete commissioning, certification and planned maintenance, and stock trade detector packs, call points and panel service kits. From open-protocol upgrades to full new builds, we supply and install Apollo devices you can rely on.",
+        "seo_desc": "Apollo fire alarm install, BS 5839 service & certification in the North West. Trade detectors & kits — Stockport & Manchester.",
+        "seo_keywords": "Apollo, Apollo install, Apollo service, Apollo fire alarm North West, Apollo Stockport, Apollo Greater Manchester, BS 5839 Apollo, Apollo trade kits",
+        "products": [
+            {
+                "id": "apollo-panel-service-kit",
+                "title": "Apollo Panel Service Kit",
+                "blurb": "Engineer-ready batteries, keys, labels and consumables for Apollo fire panel servicing and certification visits.",
+                "price": "From £89",
+                "handle": "apollo-panel-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/apollo.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "apollo-detector-device-pack",
+                "title": "Apollo Detector & Device Pack",
+                "blurb": "Trade pack of smoke/heat detectors or manual call points for Apollo loop installs and device replacements.",
+                "price": "From £65",
+                "handle": "apollo-detector-device-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/apollo.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "ariston": {
+        "blurb": "Icomply Property Services is a trusted North West partner for Ariston boiler installation, Gas Safe servicing and heating certification. We support homeowners, housing providers and commercial clients from Stockport through Greater Manchester with new installs, upgrades and reactive repairs. Trade service kits, flue parts and install accessories for Ariston systems are available for engineers and facilities teams.",
+        "seo_desc": "Ariston boiler install, Gas Safe service & certification across Stockport & Greater Manchester. Trade kits from Icomply NW.",
+        "seo_keywords": "Ariston, Ariston install, Ariston service, Ariston boiler North West, Ariston Stockport, Ariston Greater Manchester, Gas Safe Ariston, Ariston trade kits",
+        "products": [
+            {
+                "id": "ariston-boiler-service-kit",
+                "title": "Ariston Boiler Service Kit",
+                "blurb": "Service consumables compatible with Ariston boilers — seals, filters and parts for annual Gas Safe visits.",
+                "price": "From £32",
+                "handle": "ariston-boiler-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/ariston.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "ariston-flue-fitting-accessory",
+                "title": "Ariston Flue & Fitting Accessory",
+                "blurb": "Flue components and install fittings commonly used on Ariston heating projects across the North West.",
+                "price": "From £24",
+                "handle": "ariston-flue-fitting-accessory",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/ariston.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "ascom": {
+        "blurb": "Icomply Property Services installs, services and certifies Ascom nurse call systems for care homes, hospitals and supported living across Greater Manchester and the North West. Our engineers deliver new installs, upgrades and planned maintenance to HTM 08-03 guidance, with clear certification for compliance records. We also sell trade call points, pear leads and panel battery kits for Ascom estates managed from Stockport and beyond.",
+        "seo_desc": "Ascom nurse call install, service & certification in Greater Manchester & the North West. Trade kits — Stockport care sites.",
+        "seo_keywords": "Ascom, Ascom install, Ascom service, Ascom nurse call North West, Ascom Stockport, Ascom Greater Manchester, HTM 08-03, Ascom trade kits",
+        "products": [
+            {
+                "id": "ascom-call-point-pear-lead-pack",
+                "title": "Ascom Call Point & Pear Lead Pack",
+                "blurb": "Replacement call points and pear leads for Ascom nurse call bedrooms, bathrooms and common areas.",
+                "price": "From £42",
+                "handle": "ascom-call-point-pear-lead-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/ascom.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "ascom-panel-battery-kit",
+                "title": "Ascom Panel Battery Kit",
+                "blurb": "Backup batteries for Ascom nurse call panels — essential stock for planned service and certification rounds.",
+                "price": "From £38",
+                "handle": "ascom-panel-battery-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/ascom.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "assa-abloy": {
+        "blurb": "Icomply Property Services supplies and installs Assa Abloy access control, door hardware and smoke-control related solutions across Stockport, Greater Manchester and the North West. We handle new installs, system service, compliance certification and reactive repairs for landlords, FM contractors and commercial estates. Trade readers, credentials, controller spares and AOV actuator kits are available for engineers specifying Assa Abloy on live projects.",
+        "seo_desc": "Assa Abloy access control & AOV install, service & certification. Trade kits across Stockport, Manchester & North West.",
+        "seo_keywords": "Assa Abloy, Assa Abloy install, Assa Abloy service, Assa Abloy North West, Assa Abloy Stockport, access control Greater Manchester, AOV Assa Abloy, Assa Abloy trade",
+        "products": [
+            {
+                "id": "assa-abloy-reader-token-pack",
+                "title": "Assa Abloy Reader & Token Pack",
+                "blurb": "Readers and credentials for Assa Abloy access systems — suited to offices, residential blocks and multi-site FM.",
+                "price": "From £69",
+                "handle": "assa-abloy-reader-token-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/assa-abloy.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "assa-abloy-actuator-service-kit",
+                "title": "Assa Abloy Actuator Service Kit",
+                "blurb": "Service consumables and spares for Assa Abloy AOV actuators and related smoke-control door hardware.",
+                "price": "From £75",
+                "handle": "assa-abloy-actuator-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/assa-abloy.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "austco": {
+        "blurb": "Icomply Property Services installs and maintains Austco nurse call solutions for care providers and healthcare estates throughout the North West. From Stockport and Greater Manchester, we deliver system design support, installation, planned service and certification so your call system stays compliant and reliable. Trade call points, pear leads and panel battery kits for Austco sites are stocked for engineers and in-house maintenance teams.",
+        "seo_desc": "Austco nurse call install, service & certification across Greater Manchester & the North West. Trade kits from Stockport.",
+        "seo_keywords": "Austco, Austco install, Austco service, Austco nurse call North West, Austco Stockport, Austco Greater Manchester, care home nurse call, Austco trade kits",
+        "products": [
+            {
+                "id": "austco-call-point-pear-lead-pack",
+                "title": "Austco Call Point & Pear Lead Pack",
+                "blurb": "Replacement call points and leads for Austco nurse call bedrooms, wet rooms and staff stations.",
+                "price": "From £42",
+                "handle": "austco-call-point-pear-lead-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/austco.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "austco-panel-battery-kit",
+                "title": "Austco Panel Battery Kit",
+                "blurb": "Backup batteries for Austco nurse call panels used on planned maintenance and certification visits.",
+                "price": "From £38",
+                "handle": "austco-panel-battery-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/austco.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "avigilon": {
+        "blurb": "Icomply Property Services designs, installs and services Avigilon CCTV and video security systems for commercial and residential clients across Greater Manchester and the North West. We cover camera and NVR installation, ongoing service, system health checks and compliance-friendly documentation. Trade camera mount kits, cabling and NVR accessories for Avigilon projects are available from our Stockport-based trade offering.",
+        "seo_desc": "Avigilon CCTV install, service & certification in Stockport, Manchester & the North West. Trade mounts, NVR kits & more.",
+        "seo_keywords": "Avigilon, Avigilon install, Avigilon service, Avigilon CCTV North West, Avigilon Stockport, Avigilon Greater Manchester, video security trade, Avigilon NVR",
+        "products": [
+            {
+                "id": "avigilon-camera-mount-kit",
+                "title": "Avigilon Camera Mount Kit",
+                "blurb": "Brackets and weatherproof mounts for Avigilon cameras on commercial façades, car parks and internal runs.",
+                "price": "From £29",
+                "handle": "avigilon-camera-mount-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/avigilon.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "avigilon-nvr-hdd-accessory-pack",
+                "title": "Avigilon NVR & HDD Accessory Pack",
+                "blurb": "Cabling, storage and install accessories commonly used on Avigilon NVR deployments in the North West.",
+                "price": "From £45",
+                "handle": "avigilon-nvr-hdd-accessory-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/avigilon.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "axis-communications": {
+        "blurb": "Icomply Property Services supplies and installs Axis Communications network cameras and video systems for sites across Stockport, Greater Manchester and the wider North West. Our team handles design, installation, commissioning, planned service and system certification support for landlords, retailers and FM contractors. Trade mount kits, cabling packs and NVR accessories for Axis projects are available for engineers who need reliable parts on demand.",
+        "seo_desc": "Axis Communications CCTV install, service & certification. Trade kits across Stockport, Greater Manchester & North West.",
+        "seo_keywords": "Axis Communications, Axis install, Axis service, Axis CCTV North West, Axis Stockport, Axis Greater Manchester, network camera trade, Axis Communications kits",
+        "products": [
+            {
+                "id": "axis-communications-camera-mount-kit",
+                "title": "Axis Communications Camera Mount Kit",
+                "blurb": "Mounting brackets and weather housings for Axis cameras on commercial, retail and residential schemes.",
+                "price": "From £29",
+                "handle": "axis-communications-camera-mount-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/axis-communications.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "axis-communications-nvr-accessory-pack",
+                "title": "Axis Communications NVR Accessory Pack",
+                "blurb": "Storage, power and cabling accessories for Axis Communications recording and multi-camera installs.",
+                "price": "From £45",
+                "handle": "axis-communications-nvr-accessory-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/axis-communications.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "axis-intercom": {
+        "blurb": "Icomply Property Services installs, services and certifies Axis Intercom door stations and IP communication systems across Greater Manchester and the North West. From Stockport apartment blocks to commercial receptions, we deliver new installs, upgrades, planned maintenance and reactive repairs. Trade master-station accessories and door-station spares for Axis Intercom projects are available for contractors and facilities teams.",
+        "seo_desc": "Axis Intercom install, service & certification in Stockport & Greater Manchester. Trade door station kits — North West.",
+        "seo_keywords": "Axis Intercom, Axis Intercom install, Axis Intercom service, Axis Intercom North West, Axis Intercom Stockport, IP intercom Greater Manchester, door station trade, Axis Intercom kits",
+        "products": [
+            {
+                "id": "axis-intercom-master-station-accessory",
+                "title": "Axis Intercom Master Station Accessory",
+                "blurb": "Accessories and spares for Axis Intercom master stations used in receptions, porter desks and control rooms.",
+                "price": "From £48",
+                "handle": "axis-intercom-master-station-accessory",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/axis-intercom.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "axis-intercom-door-station-spares",
+                "title": "Axis Intercom Door Station Spares",
+                "blurb": "Weatherproof door station modules and install parts for Axis Intercom entrances across the North West.",
+                "price": "From £62",
+                "handle": "axis-intercom-door-station-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/axis-intercom.jpg",
+                "badge": ""
+            }
+        ]
+    }
+}

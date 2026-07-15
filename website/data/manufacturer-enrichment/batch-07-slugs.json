@@ -1,0 +1,72 @@
+[
+    {
+        "slug": "ems",
+        "name": "EMS",
+        "services": [
+            "fire-alarms"
+        ]
+    },
+    {
+        "slug": "fagerhult",
+        "name": "Fagerhult",
+        "services": [
+            "emergency-lighting"
+        ]
+    },
+    {
+        "slug": "fermax",
+        "name": "Fermax",
+        "services": [
+            "door-entry"
+        ]
+    },
+    {
+        "slug": "ferroli",
+        "name": "Ferroli",
+        "services": [
+            "gas-systems"
+        ]
+    },
+    {
+        "slug": "fike",
+        "name": "Fike",
+        "services": [
+            "fire-alarms"
+        ]
+    },
+    {
+        "slug": "firebird",
+        "name": "Firebird",
+        "services": [
+            "gas-systems"
+        ]
+    },
+    {
+        "slug": "fireclass",
+        "name": "FireClass",
+        "services": [
+            "fire-alarms"
+        ]
+    },
+    {
+        "slug": "flaktgroup",
+        "name": "FlaktGroup",
+        "services": [
+            "aov-air-handling"
+        ]
+    },
+    {
+        "slug": "flir",
+        "name": "FLIR",
+        "services": [
+            "cctv"
+        ]
+    },
+    {
+        "slug": "fusebox",
+        "name": "Fusebox",
+        "services": [
+            "electrical"
+        ]
+    }
+]

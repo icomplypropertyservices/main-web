@@ -1,0 +1,272 @@
+{
+    "idis": {
+        "blurb": "Icomply installs and services IDIS DirectIP CCTV across Stockport, Manchester and the wider North West, from camera layout and NVR commissioning through to planned maintenance and reactive call-outs. Our engineers handle recording health checks, HDD swaps and network tuning so multi-site estates keep clear, compliant footage. Trade mounts, cabling and storage accessories for IDIS are available from our North West shop for landlords, FM teams and installers.",
+        "seo_desc": "IDIS CCTV install, service & certification from Icomply. Trade NVR kits across Stockport, Manchester & the North West. Free quotes.",
+        "seo_keywords": "IDIS, IDIS CCTV, IDIS installation, IDIS service, IDIS NVR, IDIS cameras, IDIS trade, IDIS North West, IDIS Manchester, IDIS Stockport, CCTV Systems, DirectIP",
+        "products": [
+            {
+                "id": "idis-camera-mount-kit",
+                "title": "IDIS Camera Mount & Weather Kit",
+                "blurb": "Trade brackets, gaskets and outdoor mounts for IDIS dome and bullet cameras on North West sites.",
+                "price": "From £29",
+                "handle": "idis-camera-mount-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/idis.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "idis-nvr-storage-pack",
+                "title": "IDIS NVR Storage Accessory Pack",
+                "blurb": "Cabling, HDD rails and engineer consumables for IDIS recorder installs and service visits.",
+                "price": "From £45",
+                "handle": "idis-nvr-storage-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/idis.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "innerrange": {
+        "blurb": "Icomply is a North West partner for Innerrange (Inner Range) intruder and integrated security platforms, covering new installs, expansions and certified maintenance to PD 6662 / BS EN 50131. From Concept and Integriti-style controller work to PIR zoning and keypad replacements, we keep commercial alarms performing for FM teams and contractors. Trade sensors, expansions and panel spares ship from our Stockport-area trade shop across Greater Manchester, Lancashire, Cheshire and Merseyside.",
+        "seo_desc": "Innerrange alarm install, service & certs with Icomply. Trade PIRs & expansions across Manchester, Stockport & the North West.",
+        "seo_keywords": "Innerrange, Inner Range, Innerrange installation, Innerrange service, Innerrange maintenance, Concept, Integriti, Innerrange trade, Innerrange North West, Innerrange Manchester, Innerrange Stockport, Intruder Alarms",
+        "products": [
+            {
+                "id": "innerrange-panel-expansion",
+                "title": "Innerrange Panel Expansion Kit",
+                "blurb": "Zone expanders, keypads and modules for Innerrange controller upgrades on commercial sites.",
+                "price": "From £59",
+                "handle": "innerrange-panel-expansion",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/innerrange.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "innerrange-pir-contact-pack",
+                "title": "Innerrange PIR & Contact Pack",
+                "blurb": "Trade detection pack for Innerrange installs and reactive service across the North West.",
+                "price": "From £48",
+                "handle": "innerrange-pir-contact-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/innerrange.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "intercall": {
+        "blurb": "Icomply designs, installs and maintains Intercall nurse call systems for care homes, clinics and supported living across the North West, aligned with HTM 08-03 best practice. We commission call points, overdoor lights and staff indicators, then provide planned servicing, pear-lead replacements and certification-ready documentation. Trade call-point packs, batteries and panel spares for Intercall are stocked for landlords, care operators and contractors from Stockport to Manchester and beyond.",
+        "seo_desc": "Intercall nurse call install, service & HTM-aligned certs. Trade call points across Stockport, Manchester & the North West.",
+        "seo_keywords": "Intercall, Intercall nurse call, Intercall installation, Intercall service, Intercall maintenance, Intercall call points, Intercall trade, Intercall North West, Intercall Manchester, Intercall Stockport, Nurse Call Systems, HTM 08-03",
+        "products": [
+            {
+                "id": "intercall-call-point-pack",
+                "title": "Intercall Call Point & Pear Lead Pack",
+                "blurb": "Replacement call points and pear leads for Intercall nurse call bedrooms and bathrooms.",
+                "price": "From £42",
+                "handle": "intercall-call-point-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/intercall.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "intercall-panel-battery-kit",
+                "title": "Intercall Panel Battery Kit",
+                "blurb": "Backup battery kits for Intercall nurse call panels on planned maintenance rounds.",
+                "price": "From £38",
+                "handle": "intercall-panel-battery-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/intercall.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "intergas": {
+        "blurb": "Icomply provides Gas Safe Intergas boiler installation, servicing and reactive repairs for landlords and commercial sites across Greater Manchester, Cheshire and the wider North West. From Rapid and Xclusive-range work to flue checks, annual services and landlord certification, our engineers keep plant efficient and compliant. Trade service kits, seals and flue accessories for Intergas are available through our North West trade shop for contractors and FM teams.",
+        "seo_desc": "Intergas boiler install, Gas Safe service & landlord certs. Trade service kits across Stockport, Manchester & the North West.",
+        "seo_keywords": "Intergas, Intergas boilers, Intergas installation, Intergas service, Intergas Gas Safe, Intergas maintenance, Intergas flue, Intergas trade, Intergas North West, Intergas Manchester, Intergas Stockport, Gas Systems",
+        "products": [
+            {
+                "id": "intergas-boiler-service-kit",
+                "title": "Intergas Boiler Service Kit",
+                "blurb": "Annual service consumables compatible with popular Intergas boiler ranges for trade engineers.",
+                "price": "From £32",
+                "handle": "intergas-boiler-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/intergas.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "intergas-flue-fitting-pack",
+                "title": "Intergas Flue & Fitting Accessory Pack",
+                "blurb": "Trade flue terminals, seals and install fittings commonly used on Intergas projects.",
+                "price": "From £24",
+                "handle": "intergas-flue-fitting-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/intergas.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "jeron": {
+        "blurb": "Icomply installs and supports Jeron nurse call platforms for healthcare and care environments across the North West, with commissioning, staff training handover and ongoing maintenance. We replace call stations, corridor indicators and backup power, and supply certification-friendly service records for CQC-aware operators. Trade pear leads, call points and panel batteries for Jeron are available from our Stockport-based trade shop serving Manchester, Lancashire and Merseyside.",
+        "seo_desc": "Jeron nurse call install, service & certification support. Trade spares across Stockport, Manchester & the North West.",
+        "seo_keywords": "Jeron, Jeron nurse call, Jeron installation, Jeron service, Jeron maintenance, Jeron call stations, Jeron trade, Jeron North West, Jeron Manchester, Jeron Stockport, Nurse Call Systems, care home nurse call",
+        "products": [
+            {
+                "id": "jeron-call-station-pack",
+                "title": "Jeron Call Station & Lead Pack",
+                "blurb": "Trade call stations and pear leads for Jeron nurse call bedrooms and wet areas.",
+                "price": "From £44",
+                "handle": "jeron-call-station-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/jeron.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "jeron-panel-battery-kit",
+                "title": "Jeron Panel Battery Kit",
+                "blurb": "Standby battery kits for Jeron nurse call panels during planned service visits.",
+                "price": "From £38",
+                "handle": "jeron-panel-battery-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/jeron.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "jsb-electrical": {
+        "blurb": "Icomply installs, tests and certifies JSB Electrical emergency lighting to BS 5266 for commercial and residential blocks across Stockport, Manchester and the North West. From bulkheads and exit signage to conversion modules and duration testing, we keep escape routes compliant and audit-ready. Trade LED emergency fittings, batteries and legends for JSB Electrical are stocked for electrical contractors, landlords and FM teams via our North West trade counter.",
+        "seo_desc": "JSB Electrical emergency lighting install, BS 5266 testing & certs. Trade fittings across Manchester, Stockport & NW.",
+        "seo_keywords": "JSB Electrical, JSB emergency lighting, JSB installation, JSB service, JSB testing, BS 5266, JSB batteries, JSB trade, JSB North West, JSB Manchester, JSB Stockport, Emergency Lighting",
+        "products": [
+            {
+                "id": "jsb-emergency-fitting-pack",
+                "title": "JSB Electrical Emergency Fitting Pack",
+                "blurb": "LED emergency bulkheads and exit fittings for JSB Electrical ranges on commercial sites.",
+                "price": "From £55",
+                "handle": "jsb-emergency-fitting-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/jsb-electrical.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "jsb-battery-replacement-kit",
+                "title": "JSB Electrical Battery Replacement Kit",
+                "blurb": "Replacement battery packs for JSB emergency luminaires used on maintenance contracts.",
+                "price": "From £28",
+                "handle": "jsb-battery-replacement-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/jsb-electrical.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "kantech": {
+        "blurb": "Icomply designs and installs Kantech access control for offices, multi-tenant buildings and industrial sites across the North West, including KT-series controllers, readers and door hardware integration. We handle commissioning, credential enrolment, planned servicing and door fault call-outs with clear certification handover. Trade readers, tokens and controller spares for Kantech are available from our Stockport trade shop for installers and facilities teams in Manchester, Cheshire and Lancashire.",
+        "seo_desc": "Kantech access control install, service & certification. Trade readers & tokens across Stockport, Manchester & NW.",
+        "seo_keywords": "Kantech, Kantech access control, Kantech installation, Kantech service, Kantech maintenance, KT controller, Kantech readers, Kantech trade, Kantech North West, Kantech Manchester, Kantech Stockport, Access Control",
+        "products": [
+            {
+                "id": "kantech-reader-token-pack",
+                "title": "Kantech Reader & Token Pack",
+                "blurb": "Proximity readers and credential packs for Kantech door controllers on trade installs.",
+                "price": "From £52",
+                "handle": "kantech-reader-token-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/kantech.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "kantech-controller-spares",
+                "title": "Kantech Controller Spares Kit",
+                "blurb": "Engineer spares and door interface accessories for Kantech access control service work.",
+                "price": "From £39",
+                "handle": "kantech-controller-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/kantech.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "kentec": {
+        "blurb": "Icomply is an experienced North West installer and maintainer of Kentec fire alarm control equipment, covering addressable and conventional panels to BS 5839. We commission loops, programme cause-and-effect, carry out periodic servicing and issue certification for landlords, main contractors and FM providers. Trade panel service kits, batteries and engineer consumables for Kentec are available from our Stockport-area shop serving Greater Manchester, Lancashire, Cheshire and Merseyside.",
+        "seo_desc": "Kentec fire alarm install, BS 5839 service & certification. Trade panel kits across Stockport, Manchester & the North West.",
+        "seo_keywords": "Kentec, Kentec fire alarm, Kentec installation, Kentec service, Kentec maintenance, BS 5839, Kentec panels, Kentec trade, Kentec North West, Kentec Manchester, Kentec Stockport, Fire Alarms, Syncro",
+        "products": [
+            {
+                "id": "kentec-panel-service-kit",
+                "title": "Kentec Panel Service & Spares Kit",
+                "blurb": "Engineer service kit essentials for Kentec addressable and conventional fire panels.",
+                "price": "From £49",
+                "handle": "kentec-panel-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/kentec.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "kentec-battery-install-pack",
+                "title": "Kentec Battery & Install Accessory Pack",
+                "blurb": "Standby batteries and install accessories commonly used on Kentec fire system projects.",
+                "price": "From £36",
+                "handle": "kentec-battery-install-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/kentec.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "kingspan-air": {
+        "blurb": "Icomply installs and services Kingspan Air AOV and smoke-control ventilation systems for residential towers, commercial cores and stair pressurisation schemes across the North West. Our teams handle actuator setup, control panel testing, interface with fire alarms and certification support to BS 9991 / EN 12101 guidance. Trade actuator spares, magnets and control consumables for Kingspan Air are available through our North West trade shop for contractors and building managers.",
+        "seo_desc": "Kingspan Air AOV install, service & smoke-control certs. Trade actuator spares across Manchester, Stockport & NW.",
+        "seo_keywords": "Kingspan Air, Kingspan AOV, AOV installation, smoke control, Kingspan Air service, EN 12101, BS 9991, Kingspan Air trade, Kingspan Air North West, Kingspan Air Manchester, Kingspan Air Stockport, AOV & Air Handling",
+        "products": [
+            {
+                "id": "kingspan-air-actuator-spares",
+                "title": "Kingspan Air Actuator Spares Kit",
+                "blurb": "Actuator and linkage spares for Kingspan Air AOV vents used on service and retrofit work.",
+                "price": "From £65",
+                "handle": "kingspan-air-actuator-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/kingspan-air.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "kingspan-air-control-consumables",
+                "title": "Kingspan Air Control Panel Consumables",
+                "blurb": "Fuses, batteries and interface accessories for Kingspan Air smoke-control panels.",
+                "price": "From £41",
+                "handle": "kingspan-air-control-consumables",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/kingspan-air.jpg",
+                "badge": ""
+            }
+        ]
+    },
+    "legrand": {
+        "blurb": "Icomply supplies and installs Legrand electrical distribution, emergency lighting and intercom solutions for commercial and multi-residential projects across the North West. From consumer units and containment to emergency luminaires and door-entry intercoms, we deliver BS 7671 and BS 5266-aligned work with planned maintenance and certification. Trade boards, breakers, emergency fittings and intercom accessories for Legrand are available from our Stockport trade shop for electricians, landlords and FM teams.",
+        "seo_desc": "Legrand electrical, emergency lighting & intercom install. Trade kits & certs across Stockport, Manchester & the North West.",
+        "seo_keywords": "Legrand, Legrand electrical, Legrand emergency lighting, Legrand intercom, Legrand installation, Legrand service, BS 7671, Legrand trade, Legrand North West, Legrand Manchester, Legrand Stockport, Electrical, Emergency Lighting, Intercoms",
+        "products": [
+            {
+                "id": "legrand-consumer-unit-spares",
+                "title": "Legrand Consumer Unit Spares Kit",
+                "blurb": "Breakers, blanks and board spares for Legrand distribution equipment on trade installs.",
+                "price": "From £47",
+                "handle": "legrand-consumer-unit-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/legrand.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "legrand-em-intercom-pack",
+                "title": "Legrand Emergency & Intercom Accessory Pack",
+                "blurb": "Emergency lighting and intercom install accessories commonly used on Legrand North West projects.",
+                "price": "From £35",
+                "handle": "legrand-em-intercom-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/legrand.jpg",
+                "badge": ""
+            }
+        ]
+    }
+}

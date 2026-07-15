@@ -1,0 +1,198 @@
+{
+    "wylex": {
+        "blurb": "Icomply installs and upgrades Wylex consumer units, RCBO boards and distribution equipment across the North West, bringing older metalclad and dual-RCD setups up to current BS 7671 practice. Our electricians service and fault-find Wylex circuits on landlord portfolios, commercial fit-outs and domestic rewires, then issue full certification for insurers and compliance files. Trade customers can also order Wylex breakers, blanks, busbars and engineer spares through our Stockport-based shop for same-region delivery and site collection.",
+        "seo_title": "Wylex Installation, Service & Trade Spares | North West",
+        "seo_desc": "Wylex consumer unit install, BS 7671 certification & trade breakers from Icomply. Serving Stockport, Manchester & the North West. Free quotes.",
+        "seo_keywords": "Wylex, Wylex consumer unit, Wylex installation, Wylex RCBO, Wylex board upgrade, Wylex service, Wylex certification, Wylex trade spares, Wylex North West, Wylex Manchester, Wylex Stockport, electrical installation",
+        "products": [
+            {
+                "id": "wylex-rcbo-spares-kit",
+                "title": "Wylex RCBO & Breaker Spares Kit",
+                "blurb": "Trade pack of common Wylex RCBOs, MCBs and blanks for board upgrades and reactive call-outs.",
+                "price": "From £54",
+                "handle": "wylex-rcbo-spares-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/wylex.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "wylex-cu-install-accessory-pack",
+                "title": "Wylex Consumer Unit Install Pack",
+                "blurb": "Trunking glands, earth bars, labels and fixings used on Wylex board installs across the North West.",
+                "price": "From £32",
+                "handle": "wylex-cu-install-accessory-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/wylex.jpg",
+                "badge": "Install"
+            }
+        ]
+    },
+    "xtralis-vesda": {
+        "blurb": "Icomply designs, installs and maintains Xtralis VESDA aspirating smoke detection for high-risk and high-value sites across Greater Manchester, Lancashire, Cheshire and Merseyside. From pipe-network layout and detector commissioning to filter changes, sensitivity checks and BS 5839 servicing, our engineers keep VESDA systems audit-ready for FM teams and insurers. Landlords and contractors can also source VESDA filters, sampling points and engineer consumables from our North West trade counter.",
+        "seo_title": "Xtralis VESDA Install, Service & Spares | North West",
+        "seo_desc": "Xtralis VESDA aspirating smoke install, BS 5839 service & trade filters from Icomply. Stockport, Manchester & North West coverage.",
+        "seo_keywords": "Xtralis VESDA, VESDA installation, VESDA service, aspirating smoke detection, VESDA maintenance, VESDA filters, VESDA BS 5839, VESDA North West, VESDA Manchester, VESDA Stockport, fire alarms, early warning detection",
+        "products": [
+            {
+                "id": "xtralis-vesda-filter-service-kit",
+                "title": "Xtralis VESDA Filter Service Kit",
+                "blurb": "Genuine-spec filter and seal consumables for scheduled VESDA detector maintenance visits.",
+                "price": "From £95",
+                "handle": "xtralis-vesda-filter-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/xtralis-vesda.jpg",
+                "badge": "Service"
+            },
+            {
+                "id": "xtralis-vesda-sampling-point-pack",
+                "title": "Xtralis VESDA Sampling Point Pack",
+                "blurb": "Trade sampling points, capillary fittings and labels for VESDA pipe-network installs and extensions.",
+                "price": "From £68",
+                "handle": "xtralis-vesda-sampling-point-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/xtralis-vesda.jpg",
+                "badge": "Trade"
+            }
+        ]
+    },
+    "yale": {
+        "blurb": "Icomply supplies, installs and services Yale intruder alarms and smart security kits for homes, HMOs and small commercial premises throughout the North West. Whether you need a new Yale system, a keypad or contact replacement, or annual checks aligned with PD 6662 / BS EN 50131 best practice, our engineers deliver tidy installs and clear handover paperwork. Trade partners and landlords can buy Yale PIRs, door contacts, sirens and battery packs via our Stockport shop with regional support on hand.",
+        "seo_title": "Yale Alarm Installation, Service & Products | North West",
+        "seo_desc": "Yale intruder alarm install, service & trade sensors from Icomply. PD 6662-ready work across Stockport, Manchester & the North West.",
+        "seo_keywords": "Yale, Yale alarm, Yale installation, Yale intruder alarm, Yale service, Yale PIR, Yale smart alarm, Yale maintenance, Yale North West, Yale Manchester, Yale Stockport, home security, PD 6662",
+        "products": [
+            {
+                "id": "yale-pir-contact-trade-pack",
+                "title": "Yale PIR & Door Contact Pack",
+                "blurb": "Trade sensors for Yale alarm expansions, replacements and multi-property landlord stock.",
+                "price": "From £46",
+                "handle": "yale-pir-contact-trade-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/yale.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "yale-panel-battery-spares-kit",
+                "title": "Yale Panel & Siren Battery Kit",
+                "blurb": "Backup batteries and consumables for Yale control equipment and external sounders on service rounds.",
+                "price": "From £28",
+                "handle": "yale-panel-battery-spares-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/yale.jpg",
+                "badge": "Service"
+            }
+        ]
+    },
+    "zenitel": {
+        "blurb": "Icomply installs and maintains Zenitel critical communications and intercom systems for commercial sites, transport hubs and secure facilities across the North West. Our team handles master stations, door substations, IP integration and planned servicing so staff always have clear, reliable two-way audio when it matters. Facilities managers and contractors can order Zenitel station accessories, handsets and weatherproof modules through our trade shop with certification and commissioning support included on install projects.",
+        "seo_title": "Zenitel Intercom Installation & Service | North West",
+        "seo_desc": "Zenitel intercom install, service & trade station spares from Icomply. Critical comms for Manchester, Stockport & the North West.",
+        "seo_keywords": "Zenitel, Zenitel intercom, Zenitel installation, Zenitel service, Zenitel master station, Zenitel door station, critical communications, Zenitel North West, Zenitel Manchester, Zenitel Stockport, commercial intercom, IP intercom",
+        "products": [
+            {
+                "id": "zenitel-master-station-accessory",
+                "title": "Zenitel Master Station Accessory Kit",
+                "blurb": "Desk and wall accessories for Zenitel control-room master stations and operator positions.",
+                "price": "From £52",
+                "handle": "zenitel-master-station-accessory",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/zenitel.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "zenitel-door-station-spares",
+                "title": "Zenitel Door Station Spares Pack",
+                "blurb": "Weather seals, faceplates and modules for Zenitel outdoor and entrance substations.",
+                "price": "From £64",
+                "handle": "zenitel-door-station-spares",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/zenitel.jpg",
+                "badge": "Service"
+            }
+        ]
+    },
+    "zettler": {
+        "blurb": "Icomply installs, extends and services Zettler nurse call systems for care homes, hospitals and supported-living schemes across Greater Manchester and the wider North West. From call points and pear leads to panel batteries and corridor indicators, we keep Zettler platforms responsive and aligned with HTM 08-03 guidance, with full documentation for CQC and estates audits. Care operators and electrical contractors can stock Zettler consumables via our trade shop for planned maintenance and emergency call-outs.",
+        "seo_title": "Zettler Nurse Call Install, Service & Spares | North West",
+        "seo_desc": "Zettler nurse call installation, HTM 08-03 service & trade call points from Icomply. Stockport, Manchester & North West care sites.",
+        "seo_keywords": "Zettler, Zettler nurse call, Zettler installation, Zettler service, nurse call system, Zettler call point, Zettler pear lead, HTM 08-03, Zettler North West, Zettler Manchester, Zettler Stockport, care home nurse call",
+        "products": [
+            {
+                "id": "zettler-call-point-pear-lead-pack",
+                "title": "Zettler Call Point & Pear Lead Pack",
+                "blurb": "Replacement call points and pear pushes for Zettler ward and bedroom circuits.",
+                "price": "From £44",
+                "handle": "zettler-call-point-pear-lead-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/zettler.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "zettler-panel-battery-kit",
+                "title": "Zettler Panel Battery Kit",
+                "blurb": "Standby batteries for Zettler nurse call panels — essential stock for service contracts.",
+                "price": "From £36",
+                "handle": "zettler-panel-battery-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/zettler.jpg",
+                "badge": "Service"
+            }
+        ]
+    },
+    "ziton": {
+        "blurb": "Icomply commissions and maintains Ziton addressable fire detection across commercial, industrial and multi-occupancy buildings in the North West. We install panels, loops and field devices to BS 5839, carry out periodic servicing and provide clear certification for landlords, insurers and responsible persons. Our trade shop stocks Ziton-compatible detectors, call points, batteries and engineer labels so contractors can complete snags and reactive repairs without delay.",
+        "seo_title": "Ziton Fire Alarm Install, Service & Trade Kits | North West",
+        "seo_desc": "Ziton fire alarm installation, BS 5839 servicing & trade detector packs from Icomply. Covering Stockport, Manchester & the North West.",
+        "seo_keywords": "Ziton, Ziton fire alarm, Ziton installation, Ziton service, Ziton addressable, Ziton detector, Ziton call point, BS 5839, Ziton North West, Ziton Manchester, Ziton Stockport, fire detection, fire alarm certification",
+        "products": [
+            {
+                "id": "ziton-panel-service-kit",
+                "title": "Ziton Panel Service Kit",
+                "blurb": "Batteries, zone labels, keys and engineer consumables for Ziton panel maintenance visits.",
+                "price": "From £86",
+                "handle": "ziton-panel-service-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/ziton.jpg",
+                "badge": "Service"
+            },
+            {
+                "id": "ziton-detector-call-point-pack",
+                "title": "Ziton Detector & Call Point Pack",
+                "blurb": "Trade detectors and manual call points for Ziton loop extensions and device replacements.",
+                "price": "From £62",
+                "handle": "ziton-detector-call-point-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/ziton.jpg",
+                "badge": "Trade"
+            }
+        ]
+    },
+    "zumtobel": {
+        "blurb": "Icomply specifies, installs and tests Zumtobel emergency lighting for offices, education, healthcare and retail schemes across the North West. Our electricians handle maintained and non-maintained luminaires, exit signage and central-battery interfaces, then complete BS 5266 duration testing with full logbooks for building managers. Trade buyers can source Zumtobel emergency fittings, batteries and mounting accessories from our Stockport shop with install and certification support available on every project.",
+        "seo_title": "Zumtobel Emergency Lighting Install & Service | North West",
+        "seo_desc": "Zumtobel emergency lighting install, BS 5266 testing & trade fittings from Icomply. Stockport, Manchester & North West coverage.",
+        "seo_keywords": "Zumtobel, Zumtobel emergency lighting, Zumtobel installation, Zumtobel service, emergency lighting testing, BS 5266, Zumtobel exit sign, Zumtobel North West, Zumtobel Manchester, Zumtobel Stockport, emergency luminaires, trade lighting",
+        "products": [
+            {
+                "id": "zumtobel-emergency-luminaire-pack",
+                "title": "Zumtobel Emergency Luminaire Pack",
+                "blurb": "LED emergency bulkheads and exit fittings from the Zumtobel range for commercial projects.",
+                "price": "From £78",
+                "handle": "zumtobel-emergency-luminaire-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/zumtobel.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "zumtobel-battery-service-pack",
+                "title": "Zumtobel Battery Service Pack",
+                "blurb": "Replacement battery packs for Zumtobel emergency units used on annual BS 5266 service rounds.",
+                "price": "From £41",
+                "handle": "zumtobel-battery-service-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/zumtobel.jpg",
+                "badge": "Service"
+            }
+        ]
+    }
+}

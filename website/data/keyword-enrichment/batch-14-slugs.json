@@ -1,0 +1,202 @@
+[
+    {
+        "slug": "video-door-phone-installation",
+        "name": "Video Door Phone Installation",
+        "service": "door-entry"
+    },
+    {
+        "slug": "door-entry-system-upgrade",
+        "name": "Door Entry System Upgrade",
+        "service": "door-entry"
+    },
+    {
+        "slug": "smartphone-door-entry",
+        "name": "Smartphone Door Entry",
+        "service": "door-entry"
+    },
+    {
+        "slug": "bpt-door-entry",
+        "name": "BPT Door Entry",
+        "service": "door-entry"
+    },
+    {
+        "slug": "comelit-door-entry",
+        "name": "Comelit Door Entry",
+        "service": "door-entry"
+    },
+    {
+        "slug": "urmet-door-entry",
+        "name": "Urmet Door Entry",
+        "service": "door-entry"
+    },
+    {
+        "slug": "commercial-door-entry",
+        "name": "Commercial Door Entry",
+        "service": "door-entry"
+    },
+    {
+        "slug": "residential-door-entry",
+        "name": "Residential Door Entry",
+        "service": "door-entry"
+    },
+    {
+        "slug": "door-entry-cabling",
+        "name": "Door Entry Cabling",
+        "service": "door-entry"
+    },
+    {
+        "slug": "door-entry-engineers-near-me",
+        "name": "Door Entry Engineers Near Me",
+        "service": "door-entry"
+    },
+    {
+        "slug": "communal-door-entry-system",
+        "name": "Communal Door Entry System",
+        "service": "door-entry"
+    },
+    {
+        "slug": "door-entry-access-integration",
+        "name": "Door Entry Access Integration",
+        "service": "door-entry"
+    },
+    {
+        "slug": "video-intercom-door-entry",
+        "name": "Video Intercom Door Entry",
+        "service": "door-entry"
+    },
+    {
+        "slug": "video-intercom-system",
+        "name": "Video Intercom System",
+        "service": "intercoms"
+    },
+    {
+        "slug": "audio-intercom-system",
+        "name": "Audio Intercom System",
+        "service": "intercoms"
+    },
+    {
+        "slug": "office-intercom-system",
+        "name": "Office Intercom System",
+        "service": "intercoms"
+    },
+    {
+        "slug": "commercial-intercom-installation",
+        "name": "Commercial Intercom Installation",
+        "service": "intercoms"
+    },
+    {
+        "slug": "ip-intercom-system",
+        "name": "IP Intercom System",
+        "service": "intercoms"
+    },
+    {
+        "slug": "sip-intercom-installation",
+        "name": "SIP Intercom Installation",
+        "service": "intercoms"
+    },
+    {
+        "slug": "master-station-intercom",
+        "name": "Master Station Intercom",
+        "service": "intercoms"
+    },
+    {
+        "slug": "door-station-intercom",
+        "name": "Door Station Intercom",
+        "service": "intercoms"
+    },
+    {
+        "slug": "factory-intercom-system",
+        "name": "Factory Intercom System",
+        "service": "intercoms"
+    },
+    {
+        "slug": "school-intercom-system",
+        "name": "School Intercom System",
+        "service": "intercoms"
+    },
+    {
+        "slug": "hospital-intercom-system",
+        "name": "Hospital Intercom System",
+        "service": "intercoms"
+    },
+    {
+        "slug": "warehouse-intercom",
+        "name": "Warehouse Intercom",
+        "service": "intercoms"
+    },
+    {
+        "slug": "wireless-intercom-installation",
+        "name": "Wireless Intercom Installation",
+        "service": "intercoms"
+    },
+    {
+        "slug": "intercom-system-upgrade",
+        "name": "Intercom System Upgrade",
+        "service": "intercoms"
+    },
+    {
+        "slug": "gate-intercom-system",
+        "name": "Gate Intercom System",
+        "service": "intercoms"
+    },
+    {
+        "slug": "reception-intercom",
+        "name": "Reception Intercom",
+        "service": "intercoms"
+    },
+    {
+        "slug": "multi-building-intercom",
+        "name": "Multi Building Intercom",
+        "service": "intercoms"
+    },
+    {
+        "slug": "zenitel-intercom",
+        "name": "Zenitel Intercom",
+        "service": "intercoms"
+    },
+    {
+        "slug": "commend-intercom",
+        "name": "Commend Intercom",
+        "service": "intercoms"
+    },
+    {
+        "slug": "siedle-intercom",
+        "name": "Siedle Intercom",
+        "service": "intercoms"
+    },
+    {
+        "slug": "intercom-cabling-installation",
+        "name": "Intercom Cabling Installation",
+        "service": "intercoms"
+    },
+    {
+        "slug": "intercom-engineers-near-me",
+        "name": "Intercom Engineers Near Me",
+        "service": "intercoms"
+    },
+    {
+        "slug": "business-intercom-system",
+        "name": "Business Intercom System",
+        "service": "intercoms"
+    },
+    {
+        "slug": "secure-entry-intercom",
+        "name": "Secure Entry Intercom",
+        "service": "intercoms"
+    },
+    {
+        "slug": "outdoor-intercom-station",
+        "name": "Outdoor Intercom Station",
+        "service": "intercoms"
+    },
+    {
+        "slug": "burglar-alarm-installation",
+        "name": "Burglar Alarm Installation",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "wired-intruder-alarm-system",
+        "name": "Wired Intruder Alarm System",
+        "service": "intruder-alarm"
+    }
+]

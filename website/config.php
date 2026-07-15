@@ -1,279 +1,370 @@
 <?php
-// Icomply Property Services - Config
-// On Vercel / production set env: SITE_URL, ADMIN_USER, ADMIN_PASS
-// Optional Shopify Buy Buttons: SHOPIFY_DOMAIN, SHOPIFY_STOREFRONT_TOKEN
+/**
+ * Icomply Property Services — site config + helpers.
+ * Data lives in data/*.json; optional overrides in config.local.php.
+ */
+define('SITE_ROOT', __DIR__);
 
-function icomply_env(string $key, string $default = ''): string {
-    $v = getenv($key);
-    if ($v === false || $v === '') {
-        $v = $_ENV[$key] ?? $_SERVER[$key] ?? '';
-    }
-    return ($v === '' || $v === false) ? $default : (string)$v;
-}
-
-function icomply_request_site_url(): string {
-    $scheme = 'http';
-    if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') {
-        $scheme = 'https';
-    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_PROTO'])) {
-        $parts = explode(',', $_SERVER['HTTP_X_FORWARDED_PROTO']);
-        $scheme = trim($parts[0]);
-    } elseif (!empty($_SERVER['REQUEST_SCHEME'])) {
-        $scheme = $_SERVER['REQUEST_SCHEME'];
-    }
-
-    $host = $_SERVER['HTTP_X_FORWARDED_HOST'] ?? $_SERVER['HTTP_HOST'] ?? $_SERVER['SERVER_NAME'] ?? '';
-    if ($host === '') {
-        return '';
-    }
-
-    $host = preg_replace('/:\d+$/', '', $host);
-    if ($host === '' || preg_match('/^(localhost|127\.0\.0\.1|\[::1\]|.*\.vercel\.app|.*\.vercel\.dev)$/i', $host)) {
-        return '';
-    }
-
-    return $scheme . '://' . $host;
-}
-
-// Public URL: explicit SITE_URL → current request host → Vercel URL → local dev
-$__siteUrl = icomply_env('SITE_URL');
-if ($__siteUrl === '') {
-    $__siteUrl = icomply_request_site_url();
-}
-if ($__siteUrl === '') {
-    $vercel = icomply_env('VERCEL_URL');
-    if ($vercel !== '') {
-        $__siteUrl = (str_starts_with($vercel, 'http') ? $vercel : 'https://' . $vercel);
-    } else {
-        $__siteUrl = 'http://localhost:8000';
-    }
-}
-
-define('SITE_NAME', 'Icomply Property Services');
-define('SITE_URL', rtrim($__siteUrl, '/'));
-define('PHONE', icomply_env('PHONE', '07517806082'));
-define('EMAIL', icomply_env('EMAIL', 'info@icomplypropertyservices.co.uk'));
-define('ADDRESS', icomply_env('ADDRESS', '17 Woodlands Park Road, Offerton, Stockport, SK2 5DE'));
-define('WHATSAPP', icomply_env('WHATSAPP', '447517806082'));
-
-// Admin (override via env on Vercel — never rely on defaults in production)
-define('ADMIN_USER', icomply_env('ADMIN_USER', 'jackscott'));
-define('ADMIN_PASS', icomply_env('ADMIN_PASS', 'Neverknow1'));
-
-// Shopify Storefront (public token OK for Buy Buttons; never put Client Secret here)
-define('SHOPIFY_DOMAIN', icomply_env('SHOPIFY_DOMAIN', 'icomply-supplys.myshopify.com'));
-define('SHOPIFY_STORE_URL', icomply_env('SHOPIFY_STORE_URL', 'https://icomply-supplys.myshopify.com'));
-define('SHOPIFY_STOREFRONT_TOKEN', icomply_env('SHOPIFY_STOREFRONT_TOKEN', ''));
-define('SHOPIFY_ENABLED', SHOPIFY_STOREFRONT_TOKEN !== '');
-
-/** Build an absolute site URL path (works from any nested page). */
-function site_url(string $path = ''): string {
-    $path = ltrim($path, '/');
-    if ($path === '' || $path === 'index' || $path === 'index.php') {
-        return rtrim(SITE_URL, '/') . '/';
-    }
-
-    $path = preg_replace('/\.php$/i', '', $path);
-    return rtrim(SITE_URL, '/') . '/' . ltrim($path, '/');
-}
-
-// Services list (extendable via admin) — compliance + renewable energy
-$services = [
-    'electrical' => 'Electrical',
-    'fire-alarms' => 'Fire Alarms',
-    'emergency-lighting' => 'Emergency Lighting',
-    'aov-air-handling' => 'AOV & Air Handling',
-    'nurse-call' => 'Nurse Call Systems',
-    'gas-systems' => 'Gas Systems',
-    'intruder-alarm' => 'Intruder Alarms',
-    'cctv' => 'CCTV Systems',
-    'access-control' => 'Access Control',
-    'door-entry' => 'Door Entry Systems',
-    'intercoms' => 'Intercoms',
-    // Renewable energy
-    'solar-pv' => 'Solar PV',
-    'air-source-heat-pumps' => 'Air Source Heat Pumps',
-    'ground-source-heat-pumps' => 'Ground Source Heat Pumps',
-    'battery-storage' => 'Battery Storage',
-    'solar-thermal' => 'Solar Thermal',
-    'ev-charging' => 'EV Charging',
+// Defaults (overridable via config.local.php)
+$siteDefaults = [
+    'SITE_NAME' => 'Icomply Property Services',
+    'SITE_URL' => 'http://localhost/icomply',
+    'PHONE' => '07517806082',
+    'EMAIL' => 'info@icomplypropertyservices.co.uk',
+    // Lead form notify address (empty = use EMAIL)
+    'LEADS_NOTIFY_EMAIL' => '',
+    'ADDRESS' => '17 Woodlands Park Road, Offerton, Stockport, SK2 5DE',
+    'WHATSAPP' => '447517806082',
+    'ADMIN_USER' => 'admin',
+    // Never commit real passwords — set ADMIN_PASS in config.local.php
+    'ADMIN_PASS' => '',
+    'GA_MEASUREMENT_ID' => '',
+    'AW_CONVERSION_ID' => '',
+    // Shopify Storefront / Buy Button (set in config.local.php)
+    // Domain example: your-store.myshopify.com  |  Store URL: https://your-store.myshopify.com
+    'SHOPIFY_DOMAIN' => '',
+    'SHOPIFY_STORE_URL' => '',
+    'SHOPIFY_STOREFRONT_TOKEN' => '',
+    'SHOPIFY_COLLECTION_ID' => '',
+    'SHOPIFY_ENABLED' => false,
+    // Social profiles (leave empty to hide; WhatsApp always available via WHATSAPP)
+    'SOCIAL_FACEBOOK' => 'https://www.facebook.com/icomplypropertyservices',
+    'SOCIAL_INSTAGRAM' => 'https://www.instagram.com/icomplypropertyservices',
+    'SOCIAL_LINKEDIN' => 'https://www.linkedin.com/company/icomply-property-services',
+    'SOCIAL_TWITTER' => 'https://twitter.com/icomplyps',
+    'SOCIAL_YOUTUBE' => '',
+    'SOCIAL_TIKTOK' => '',
+    'SOCIAL_GOOGLE' => 'https://g.page/icomply-property-services',
 ];
 
-/** UK photo path for a service (realistic photos preferred over package icons). */
-function service_image(string $slug, string $type = 'photo'): string {
-    $photo = "assets/images/services/{$slug}-photo.jpg";
-    $pack  = "assets/images/services/{$slug}.png";
-    $path  = ($type === 'photo' && file_exists(__DIR__ . '/' . $photo)) ? $photo
-           : (file_exists(__DIR__ . '/' . $pack) ? $pack : 'assets/images/heroes/home-hero.jpg');
-    return site_url($path);
-}
-
-/** Short blurb for service cards */
-function service_blurb(string $slug): string {
-    $blurbs = [
-        'electrical' => 'EICR, PAT, rewires, EV chargers & commercial installs to BS 7671.',
-        'fire-alarms' => 'Design, install & service BS 5839 fire detection systems.',
-        'emergency-lighting' => 'BS 5266 emergency lighting install, testing & certification.',
-        'aov-air-handling' => 'Smoke vents, AOV systems & air handling maintenance.',
-        'nurse-call' => 'Care home & hospital nurse call install and HTM-aligned service.',
-        'gas-systems' => 'Gas Safe certificates, boiler service & landlord CP12/CP44.',
-        'intruder-alarm' => 'Wired & wireless burglar alarms for homes and businesses.',
-        'cctv' => 'IP CCTV design, install & remote monitoring setup.',
-        'access-control' => 'Card, fob & biometric door access for multi-tenant sites.',
-        'door-entry' => 'Audio & video door entry for flats, offices and estates.',
-        'intercoms' => 'Video and audio intercom systems for residential & commercial.',
-        'solar-pv' => 'Roof-mounted solar PV design, install, MCS-aligned commissioning & monitoring.',
-        'air-source-heat-pumps' => 'ASHP design, install & service for homes and light commercial sites.',
-        'ground-source-heat-pumps' => 'GSHP ground-loop / borehole systems with full commissioning support.',
-        'battery-storage' => 'Home & commercial battery storage paired with solar or grid tariffs.',
-        'solar-thermal' => 'Solar hot-water systems for domestic and small commercial plant.',
-        'ev-charging' => 'Domestic & workplace EV charger install with load management options.',
-    ];
-    return $blurbs[$slug] ?? 'Professional installation, maintenance and certification.';
-}
-
-/** Feature bullets for service landing pages */
-function service_features(string $slug): array {
-    $all = [
-        'electrical' => [
-            ['title' => 'Installation & upgrades', 'text' => 'New installs, full rewires, EV chargers, consumer unit upgrades and commercial wiring.'],
-            ['title' => 'Testing & certification', 'text' => 'EICR, PAT testing, landlord certificates and BS 7671 periodic inspections.'],
-            ['title' => 'Maintenance & emergency', 'text' => 'Planned contracts, fault finding and rapid callouts across the North West.'],
-        ],
-        'fire-alarms' => [
-            ['title' => 'System design & install', 'text' => 'Conventional and addressable fire alarm systems designed to BS 5839.'],
-            ['title' => 'Servicing & maintenance', 'text' => 'Scheduled servicing, battery checks and full documentation packs.'],
-            ['title' => 'Testing & certification', 'text' => 'Commissioning certificates and ongoing compliance reports for insurers and landlords.'],
-        ],
-        'emergency-lighting' => [
-            ['title' => 'LED emergency lighting', 'text' => 'Maintained and non-maintained bulkheads, exit signs and industrial fittings.'],
-            ['title' => 'BS 5266 testing', 'text' => 'Monthly function tests, annual full-duration tests and logbooks.'],
-            ['title' => 'Self-test systems', 'text' => 'Modern self-test emergency lighting for lower ongoing labour cost.'],
-        ],
-        'aov-air-handling' => [
-            ['title' => 'AOV installation', 'text' => 'Automatic opening vents and smoke shaft systems for multi-storey buildings.'],
-            ['title' => 'Air handling service', 'text' => 'Planned maintenance of AHUs and smoke control plant.'],
-            ['title' => 'Compliance support', 'text' => 'Inspection, certification and remedial works to fire strategy requirements.'],
-        ],
-        'nurse-call' => [
-            ['title' => 'Care home systems', 'text' => 'Wired and wireless nurse call for care homes, hospitals and supported living.'],
-            ['title' => 'HTM-aligned service', 'text' => 'Maintenance schedules aligned with HTM 08-03 best practice.'],
-            ['title' => 'Upgrades & repairs', 'text' => 'Panel upgrades, handset replacements and full system health checks.'],
-        ],
-        'gas-systems' => [
-            ['title' => 'Gas safety certificates', 'text' => 'Landlord gas safety checks and certification for rented properties.'],
-            ['title' => 'Boiler servicing', 'text' => 'Annual boiler service, breakdown repair and efficiency checks.'],
-            ['title' => 'Commercial gas work', 'text' => 'Commercial plant rooms, catering gas and multi-unit estates.'],
-        ],
-        'intruder-alarm' => [
-            ['title' => 'Home & business alarms', 'text' => 'Wired and wireless intruder systems with app control options.'],
-            ['title' => 'Detection coverage', 'text' => 'PIRs, door contacts, shock sensors and external detectors.'],
-            ['title' => 'Monitoring ready', 'text' => 'Installations prepared for ARC monitoring where required.'],
-        ],
-        'cctv' => [
-            ['title' => 'IP CCTV design', 'text' => 'HD/4K camera layouts for retail, warehouses, offices and estates.'],
-            ['title' => 'Recording & remote view', 'text' => 'NVR systems with secure remote viewing for managers and owners.'],
-            ['title' => 'Service & expansion', 'text' => 'Camera upgrades, hard drive replacement and multi-site expansions.'],
-        ],
-        'access-control' => [
-            ['title' => 'Door access systems', 'text' => 'Card, fob, PIN and biometric readers for single and multi-door sites.'],
-            ['title' => 'Multi-tenant control', 'text' => 'Time zones, user groups and audit trails for landlords and FM teams.'],
-            ['title' => 'Integration ready', 'text' => 'Works with door entry, intercoms and fire door release strategies.'],
-        ],
-        'door-entry' => [
-            ['title' => 'Video door entry', 'text' => 'Colour video panels for apartments, offices and gated developments.'],
-            ['title' => 'Audio systems', 'text' => 'Robust audio door entry for budgets and retrofit blocks.'],
-            ['title' => 'Block upgrades', 'text' => 'Full riser upgrades and handset replacements across multi-storey buildings.'],
-        ],
-        'intercoms' => [
-            ['title' => 'Video intercoms', 'text' => 'Internal handsets and door stations with clear two-way communication.'],
-            ['title' => 'Multi-tenant setups', 'text' => 'Systems for flats, offices and mixed-use buildings.'],
-            ['title' => 'Service & repair', 'text' => 'Fault finding, handset swaps and panel replacements.'],
-        ],
-        'solar-pv' => [
-            ['title' => 'System design', 'text' => 'Roof survey, shading analysis and panel layout for maximum generation on UK roofs.'],
-            ['title' => 'Install & commission', 'text' => 'Inverters, mounting, AC/DC isolation and monitoring app setup with clear handover.'],
-            ['title' => 'Service & expand', 'text' => 'Inverter faults, optimisers, panel cleaning advice and battery-ready expansions.'],
-        ],
-        'air-source-heat-pumps' => [
-            ['title' => 'Heat loss design', 'text' => 'Room-by-room heat loss and emitter checks so the ASHP is sized correctly.'],
-            ['title' => 'Install & commission', 'text' => 'Outdoor unit siting, pipework, controls and commissioning to manufacturer specs.'],
-            ['title' => 'Service plans', 'text' => 'Annual checks, filter/coil care and performance reviews for lower running costs.'],
-        ],
-        'ground-source-heat-pumps' => [
-            ['title' => 'Ground loop design', 'text' => 'Horizontal trenches or borehole strategies matched to plot size and geology.'],
-            ['title' => 'Plant room install', 'text' => 'Heat pump, buffers, manifolds and controls integrated with existing heating.'],
-            ['title' => 'Commissioning', 'text' => 'Flow rates, glycol, and performance data logged for handover packs.'],
-        ],
-        'battery-storage' => [
-            ['title' => 'Solar pairing', 'text' => 'Store surplus PV generation for evening use and blackout resilience options.'],
-            ['title' => 'Tariff optimisation', 'text' => 'Charge from cheap-rate grid periods where smart tariffs allow.'],
-            ['title' => 'Safe install', 'text' => 'Correct isolation, fire-aware siting and app monitoring for homeowners and FM teams.'],
-        ],
-        'solar-thermal' => [
-            ['title' => 'Hot water design', 'text' => 'Collectors and cylinder sizing for domestic and small commercial DHW demand.'],
-            ['title' => 'Roof install', 'text' => 'On-roof or in-roof collectors with freeze protection for UK winters.'],
-            ['title' => 'Service', 'text' => 'Glycol checks, pump stations and expansion vessel health for long system life.'],
-        ],
-        'ev-charging' => [
-            ['title' => 'Home chargers', 'text' => '7kW domestic wallboxes with smart app control and load balancing.'],
-            ['title' => 'Workplace charge', 'text' => 'Multi-bay workplace and landlord installs with access control options.'],
-            ['title' => 'Electrical upgrade', 'text' => 'Supply assessment, consumer unit works and OZEV-aware documentation where relevant.'],
-        ],
-    ];
-    return $all[$slug] ?? [
-        ['title' => 'Installation', 'text' => 'Full design, supply and install to current UK standards.'],
-        ['title' => 'Maintenance', 'text' => 'Planned servicing and reactive repairs.'],
-        ['title' => 'Certification', 'text' => 'Testing with full compliance documentation.'],
-    ];
-}
-
-// Major areas (from user list)
-$areas = ['Manchester','Salford','Bolton','Bury','Oldham','Rochdale','Stockport','Wigan','Leigh','Atherton','Tyldesley','Horwich','Westhoughton','Farnworth','Kearsley','Little Lever','Radcliffe','Whitefield','Prestwich','Swinton','Eccles','Walkden','Worsley','Pendlebury','Irlam','Cadishead','Altrincham','Sale','Stretford','Urmston','Chorlton','Didsbury','Withington','Wythenshawe','Cheadle','Cheadle Hulme','Bramhall','Hazel Grove','Marple','Romiley','Hyde','Stalybridge','Dukinfield','Ashton-under-Lyne','Mossley','Droylsden','Denton','Failsworth','Middleton','Chadderton','Heywood','Milnrow','Littleborough','Shaw','Royton','Lees','Uppermill','Saddleworth','Liverpool','Birkenhead','Wallasey','Bebington','Heswall','West Kirby','Hoylake','Bootle','Crosby','Maghull','Formby','Ainsdale','Southport','Ormskirk','Burscough','Skelmersdale','Rainford','Prescot','Whiston','Rainhill','St Helens','Haydock','Newton-le-Willows','Golborne','Ashton-in-Makerfield','Hindley','Ince','Standish','Shevington','Preston','Leyland','Chorley','Bamber Bridge','Penwortham','Fulwood','Longridge','Garstang','Kirkham','Wesham','Lytham St Annes','Blackpool','Fleetwood','Thornton-Cleveleys','Poulton-le-Fylde','Lancaster','Morecambe','Carnforth','Heysham','Barrow-in-Furness','Ulverston','Dalton-in-Furness','Millom','Kendal','Windermere','Ambleside','Keswick','Whitehaven','Workington','Maryport','Cockermouth','Penrith','Carlisle','Chester','Ellesmere Port','Neston','Frodsham','Helsby','Tarvin','Tarporley','Nantwich','Crewe','Sandbach','Middlewich','Winsford','Northwich','Knutsford','Wilmslow','Handforth','Poynton','Macclesfield','Congleton','Holmes Chapel','Alsager','Warrington','Runcorn','Widnes','Halton','Appleton','Stockton Heath','Lymm','Culcheth','Risley','Birchwood','Great Sankey','Penketh','Blackburn','Darwen','Accrington','Burnley','Nelson','Colne','Rawtenstall','Bacup','Rossendale','Clitheroe','Whalley','Padiham','Great Harwood','Clayton-le-Moors','Ramsbottom'];
-
-// Ensure templates using $GLOBALS always resolve correctly
-$GLOBALS['services'] = $services;
-$GLOBALS['areas'] = $areas;
-
-function getSeoKeywords($service, $area = '') {
-    $base = [
-        'electrical' => 'electrical installation, EICR, PAT testing, certified electrician, commercial electrician, EV charger installation, electrical compliance',
-        'fire-alarms' => 'fire alarm installation, fire alarm servicing, BS 5839, fire detection system, fire alarm certification, commercial fire alarm',
-        'emergency-lighting' => 'emergency lighting installation, BS 5266, emergency lighting testing, emergency lighting certification, landlord emergency lighting',
-        'aov-air-handling' => 'AOV installation, AOV maintenance, smoke vent system, BS 9991, automatic opening vent',
-        'nurse-call' => 'nurse call system installation, nurse call maintenance, HTM 08-03, care home nurse call',
-        'gas-systems' => 'gas safety certificate, gas boiler servicing, landlord gas safety, CP44, gas installation',
-        'intruder-alarm' => 'intruder alarm installation, burglar alarm, BS 4737, commercial intruder alarm',
-        'cctv' => 'CCTV installation, IP CCTV system, commercial CCTV, video surveillance',
-        'access-control' => 'access control installation, biometric access control, door access control',
-        'door-entry' => 'door entry installation, video door entry, audio door entry, apartment door entry',
-        'intercoms' => 'intercom installation, video intercom, audio intercom, multi tenant intercom',
-        'solar-pv' => 'solar PV installation, solar panels North West, MCS solar install, roof solar system, solar inverter',
-        'air-source-heat-pumps' => 'air source heat pump installation, ASHP install, heat pump service, low carbon heating',
-        'ground-source-heat-pumps' => 'ground source heat pump, GSHP installation, borehole heat pump, ground loop heating',
-        'battery-storage' => 'home battery storage, solar battery install, energy storage system, Tesla Powerwall alternative',
-        'solar-thermal' => 'solar thermal installation, solar hot water, solar collectors, renewable DHW',
-        'ev-charging' => 'EV charger installation, home EV wallbox, workplace EV charging, electric car charger install',
-    ];
-    $kw = $base[$service] ?? $service;
-    return $area ? "$kw $area, $area renewable energy, $area electrician" : $kw;
-}
-
-function areaSlug($area) {
-    return strtolower(str_replace([' ', '-'], ['-', ''], $area));
-}
-
-// Simple JSON-backed service storage for admin
-function loadServices() {
-    $file = __DIR__ . '/data/services.json';
-    if (file_exists($file)) {
-        return json_decode(file_get_contents($file), true) ?: [];
+$localFile = __DIR__ . '/config.local.php';
+if (is_file($localFile)) {
+    $local = include $localFile;
+    if (is_array($local)) {
+        $siteDefaults = array_merge($siteDefaults, $local);
     }
-    return [];
 }
 
-function saveServices($services) {
-    if (!is_dir(__DIR__ . '/data')) mkdir(__DIR__ . '/data', 0777, true);
-    file_put_contents(__DIR__ . '/data/services.json', json_encode($services, JSON_PRETTY_PRINT));
+foreach ($siteDefaults as $key => $value) {
+    if (!defined($key)) {
+        define($key, $value);
+    }
 }
-?>
+
+/** @return array decoded JSON file or $default */
+function loadJsonData(string $name, $default = []) {
+    static $cache = [];
+    if ($name === '__clear__') {
+        $cache = [];
+        return [];
+    }
+    if (array_key_exists($name, $cache)) {
+        return $cache[$name];
+    }
+    $file = SITE_ROOT . '/data/' . $name . '.json';
+    if (!is_file($file)) {
+        return $cache[$name] = $default;
+    }
+    $data = json_decode((string)file_get_contents($file), true);
+    return $cache[$name] = (is_array($data) ? $data : $default);
+}
+
+function saveJsonData(string $name, $data): void {
+    $dir = SITE_ROOT . '/data';
+    if (!is_dir($dir)) {
+        mkdir($dir, 0755, true);
+    }
+    file_put_contents(
+        $dir . '/' . $name . '.json',
+        json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)
+    );
+    loadJsonData('__clear__');
+}
+
+/** Absolute site URL for a path starting with / */
+function url(string $path = '/'): string {
+    $path = '/' . ltrim($path, '/');
+    if ($path === '/') {
+        return rtrim(SITE_URL, '/');
+    }
+    return rtrim(SITE_URL, '/') . $path;
+}
+
+/** Core services (data/services.json) + any admin-added customs */
+function getServices(): array {
+    $base = loadJsonData('services', []);
+    $custom = loadJsonData('services-custom', []);
+    return array_merge($base, $custom);
+}
+
+/** @deprecated use getServices() — kept for templates that still read $services */
+function loadServices(): array {
+    return loadJsonData('services-custom', []);
+}
+
+function saveServices(array $custom): void {
+    saveJsonData('services-custom', $custom);
+}
+
+function getAreas(): array {
+    return loadJsonData('areas', []);
+}
+
+/**
+ * Canonical slug: lowercase, non-alnum → hyphen, collapse hyphens.
+ * "Ashton-under-Lyne" → ashton-under-lyne
+ * "Cheadle Hulme" → cheadle-hulme
+ */
+function areaSlug(string $area): string {
+    $s = strtolower(trim($area));
+    $s = preg_replace('/[^a-z0-9]+/', '-', $s);
+    return trim((string)$s, '-');
+}
+
+function keywordSlug($phrase): string {
+    return areaSlug((string)$phrase);
+}
+
+function keywordDisplayName($slugOrName): string {
+    $name = str_replace('-', ' ', (string)$slugOrName);
+    $name = ucwords($name);
+    $acronyms = [
+        'Eicr' => 'EICR', 'Pat' => 'PAT', 'Ev' => 'EV', 'Aov' => 'AOV', 'Ahu' => 'AHU',
+        'Cctv' => 'CCTV', 'Ip' => 'IP', 'Hd' => 'HD', 'Bs' => 'BS', 'Htm' => 'HTM',
+        'Niceic' => 'NICEIC', 'Lpg' => 'LPG', 'Ptz' => 'PTZ', 'Cp44' => 'CP44',
+    ];
+    foreach ($acronyms as $from => $to) {
+        $name = preg_replace('/\b' . preg_quote($from, '/') . '\b/', $to, $name);
+    }
+    return $name;
+}
+
+function getMajorKeywords(): array {
+    $kw = loadJsonData('keywords', []);
+    $normalized = [];
+    foreach ($kw as $slug => $meta) {
+        if (!is_array($meta)) {
+            continue;
+        }
+        $slug = keywordSlug($slug);
+        $row = [
+            'name' => $meta['name'] ?? keywordDisplayName($slug),
+            'service' => $meta['service'] ?? 'electrical',
+            'related' => keywordSlug($meta['related'] ?? $slug),
+        ];
+        // Unique SEO content (from enrich / agent merge)
+        foreach (['intro', 'body', 'meta_desc', 'seo_keywords'] as $field) {
+            if (!empty($meta[$field]) && is_string($meta[$field])) {
+                $row[$field] = $meta[$field];
+            }
+        }
+        if (!empty($meta['focus_points']) && is_array($meta['focus_points'])) {
+            $row['focus_points'] = $meta['focus_points'];
+        }
+        if (!empty($meta['faq']) && is_array($meta['faq'])) {
+            $row['faq'] = $meta['faq'];
+        }
+        $normalized[$slug] = $row;
+    }
+    return $normalized;
+}
+
+function getSeoKeywords(string $service, string $area = ''): string {
+    $mfr = loadJsonData('manufacturers', []);
+    $base = $mfr['seo_keywords'][$service] ?? $service;
+    return $area !== '' ? "{$base} {$area}, {$area} electrician, {$area} fire safety" : $base;
+}
+
+/** Canonical service blurbs / standards (data/service-meta.json) */
+function getServiceMeta(string $slug = ''): array {
+    $all = loadJsonData('service-meta', []);
+    if ($slug === '') {
+        return $all;
+    }
+    return $all[$slug] ?? [
+        'blurb' => 'Installation, maintenance, testing and certification.',
+        'short' => 'Installation, maintenance and certification',
+        'standards' => 'British Standards · manufacturer guidance · full certification',
+    ];
+}
+
+function getServiceBlurb(string $slug, bool $short = false): string {
+    $m = getServiceMeta($slug);
+    return $short ? (string)($m['short'] ?? $m['blurb'] ?? '') : (string)($m['blurb'] ?? '');
+}
+
+function getServiceStandards(string $slug): string {
+    return (string)(getServiceMeta($slug)['standards'] ?? '');
+}
+
+function getManufacturers(string $serviceSlug): array {
+    $mfr = loadJsonData('manufacturers', []);
+    return $mfr['by_service'][$serviceSlug] ?? ['Industry Standard Equipment'];
+}
+
+/** Full manufacturer catalog keyed by slug */
+function getManufacturerCatalog(): array {
+    $mfr = loadJsonData('manufacturers', []);
+    $catalog = $mfr['catalog'] ?? [];
+    if ($catalog) {
+        return $catalog;
+    }
+    // Fallback: build minimal catalog from by_service names
+    $built = [];
+    foreach ($mfr['by_service'] ?? [] as $service => $names) {
+        foreach ($names as $name) {
+            $slug = areaSlug((string)$name);
+            if (!isset($built[$slug])) {
+                $built[$slug] = [
+                    'name' => $name,
+                    'slug' => $slug,
+                    'services' => [$service],
+                    'blurb' => "Icomply installs and services {$name} equipment across the North West.",
+                    'seo_title' => "{$name} Products & Service",
+                    'seo_desc' => "{$name} installation, servicing and trade products from Icomply Property Services.",
+                    'seo_keywords' => $name,
+                    'products' => [],
+                    'featured' => false,
+                ];
+            } elseif (!in_array($service, $built[$slug]['services'], true)) {
+                $built[$slug]['services'][] = $service;
+            }
+        }
+    }
+    return $built;
+}
+
+function getManufacturerBySlug(string $slug): ?array {
+    $slug = areaSlug($slug);
+    $catalog = getManufacturerCatalog();
+    return $catalog[$slug] ?? null;
+}
+
+function manufacturerSlugFromName(string $name): string {
+    return areaSlug($name);
+}
+
+function manufacturerImageSlug(string $name): string {
+    return areaSlug($name);
+}
+
+function getManufacturerImageSlugs(string $serviceSlug): array {
+    $mfr = loadJsonData('manufacturers', []);
+    if (!empty($mfr['images_by_service'][$serviceSlug])) {
+        return $mfr['images_by_service'][$serviceSlug];
+    }
+    $slugs = [];
+    foreach (getManufacturers($serviceSlug) as $name) {
+        $slugs[] = manufacturerSlugFromName($name);
+        if (count($slugs) >= 6) {
+            break;
+        }
+    }
+    return $slugs ?: ['kentec'];
+}
+
+/**
+ * Linked brand pill buttons for a service (every name → manufacturer page).
+ */
+function manufacturerTagsHtml(string $serviceSlug): string {
+    $html = '';
+    foreach (getManufacturers($serviceSlug) as $m) {
+        $slug = manufacturerSlugFromName($m);
+        $href = htmlspecialchars(url('/pages/manufacturers/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
+        $label = htmlspecialchars($m, ENT_QUOTES, 'UTF-8');
+        $html .= '<a href="' . $href . '" '
+            . 'class="inline-flex items-center gap-1.5 px-4 py-2.5 bg-white border-2 border-zinc-200 rounded-full text-sm text-black font-semibold hover:border-[#ff6b00] hover:text-[#ff6b00] hover:shadow-sm transition" '
+            . 'title="View ' . $label . ' products and service page">'
+            . $label
+            . '<span class="text-[#ff6b00]" aria-hidden="true">→</span></a>';
+    }
+    // Always offer full directory
+    $allHref = htmlspecialchars(url('/pages/manufacturers/index.php'), ENT_QUOTES, 'UTF-8');
+    $html .= '<a href="' . $allHref . '" class="inline-flex items-center gap-1.5 px-4 py-2.5 bg-[#0a2540] text-white rounded-full text-sm font-semibold hover:bg-[#ff6b00] transition">All brands →</a>';
+    return $html;
+}
+
+/**
+ * Linked brand image cards for a service (all brands when available).
+ * @param int $limit 0 = all brands for service
+ */
+function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
+    $slugs = getManufacturerImageSlugs($serviceSlug);
+    // Prefer full by_service list so every mentioned brand has a card
+    $fromNames = [];
+    foreach (getManufacturers($serviceSlug) as $m) {
+        $fromNames[] = manufacturerSlugFromName($m);
+    }
+    if ($fromNames) {
+        $slugs = $fromNames;
+    }
+    if ($limit > 0) {
+        $slugs = array_slice($slugs, 0, $limit);
+    }
+    $catalog = getManufacturerCatalog();
+    $html = '';
+    $fallback = htmlspecialchars(url('/assets/images/services/' . $serviceSlug . '.jpg'), ENT_QUOTES, 'UTF-8');
+    foreach ($slugs as $slug) {
+        $slug = preg_replace('/[^a-z0-9\-]/', '', (string)$slug);
+        if ($slug === '') {
+            continue;
+        }
+        $entry = $catalog[$slug] ?? null;
+        $label = htmlspecialchars($entry['name'] ?? ucwords(str_replace('-', ' ', $slug)), ENT_QUOTES, 'UTF-8');
+        $href = htmlspecialchars(url('/pages/manufacturers/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
+        $src = htmlspecialchars(url('/assets/images/manufacturers/' . $slug . '.jpg'), ENT_QUOTES, 'UTF-8');
+        $html .= '<a href="' . $href . '" class="bg-white border-2 border-zinc-200 rounded-2xl overflow-hidden hover:border-[#ff6b00] hover:shadow-md transition block group">'
+            . '<img src="' . $src . '" alt="' . $label . ' products and service — Icomply" '
+            . 'class="w-full h-28 object-cover group-hover:scale-105 transition duration-300" loading="lazy" '
+            . 'onerror="this.src=\'' . $fallback . '\'">'
+            . '<div class="p-3 text-sm text-black text-center font-semibold">' . $label
+            . ' <span class="text-[#ff6b00]">→</span></div>'
+            . '</a>';
+    }
+    return $html;
+}
+
+/**
+ * Turn brand names into links when they match the manufacturer catalog.
+ * Safe for plain text paragraphs (escapes HTML first, then injects links).
+ */
+function linkManufacturerNamesInText(string $text): string {
+    $safe = htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
+    $catalog = getManufacturerCatalog();
+    // Longest names first so "Advanced Electronics" wins over shorter fragments
+    $names = [];
+    foreach ($catalog as $slug => $entry) {
+        $n = (string)($entry['name'] ?? '');
+        if ($n !== '') {
+            $names[$n] = $slug;
+        }
+    }
+    uksort($names, fn($a, $b) => strlen($b) - strlen($a));
+    foreach ($names as $name => $slug) {
+        $escaped = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
+        $href = htmlspecialchars(url('/pages/manufacturers/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
+        $link = '<a href="' . $href . '" class="font-semibold text-[#ff6b00] hover:underline">' . $escaped . '</a>';
+        $safe = preg_replace('/\b' . preg_quote($escaped, '/') . '\b/u', $link, $safe);
+    }
+    return $safe;
+}
+
+function getKeywordImages(string $serviceSlug): array {
+    $mfr = loadJsonData('manufacturers', []);
+    return $mfr['keyword_images'][$serviceSlug] ?? [$serviceSlug, $serviceSlug, $serviceSlug];
+}
+
+/** Resolve area display name from slug (or return title-cased slug). */
+function areaFromSlug(string $slug): ?string {
+    $slug = areaSlug($slug);
+    foreach (getAreas() as $area) {
+        if (areaSlug($area) === $slug) {
+            return $area;
+        }
+    }
+    return null;
+}
+
+// Back-compat globals used by some templates/includes
+$services = getServices();
+$areas = getAreas();

@@ -1,0 +1,2 @@
+# Deny web access to data files (leads, JSON inventories)
+Require all denied

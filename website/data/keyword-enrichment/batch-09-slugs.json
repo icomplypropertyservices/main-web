@@ -1,0 +1,202 @@
+[
+    {
+        "slug": "grade-2-intruder-alarm",
+        "name": "Grade 2 Intruder Alarm",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "pd6662-alarm-system",
+        "name": "PD6662 Alarm System",
+        "service": "intruder-alarm"
+    },
+    {
+        "slug": "smoke-shaft-aov",
+        "name": "Smoke Shaft AOV",
+        "service": "aov-air-handling"
+    },
+    {
+        "slug": "hmo-fire-alarm-system",
+        "name": "HMO Fire Alarm System",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "commercial-gas-safety-certificate",
+        "name": "Commercial Gas Safety Certificate",
+        "service": "gas-systems"
+    },
+    {
+        "slug": "consumer-unit-upgrade",
+        "name": "Consumer Unit Upgrade",
+        "service": "electrical"
+    },
+    {
+        "slug": "eicr-report",
+        "name": "EICR Report",
+        "service": "electrical"
+    },
+    {
+        "slug": "eicr-certificate",
+        "name": "EICR Certificate",
+        "service": "electrical"
+    },
+    {
+        "slug": "landlord-eicr",
+        "name": "Landlord EICR",
+        "service": "electrical"
+    },
+    {
+        "slug": "commercial-eicr",
+        "name": "Commercial EICR",
+        "service": "electrical"
+    },
+    {
+        "slug": "eicr-cost",
+        "name": "EICR Cost",
+        "service": "electrical"
+    },
+    {
+        "slug": "eicr-testing",
+        "name": "EICR Testing",
+        "service": "electrical"
+    },
+    {
+        "slug": "periodic-electrical-inspection",
+        "name": "Periodic Electrical Inspection",
+        "service": "electrical"
+    },
+    {
+        "slug": "fuse-board-replacement",
+        "name": "Fuse Board Replacement",
+        "service": "electrical"
+    },
+    {
+        "slug": "partial-rewire",
+        "name": "Partial Rewire",
+        "service": "electrical"
+    },
+    {
+        "slug": "portable-appliance-testing",
+        "name": "Portable Appliance Testing",
+        "service": "electrical"
+    },
+    {
+        "slug": "home-ev-charger",
+        "name": "Home EV Charger",
+        "service": "electrical"
+    },
+    {
+        "slug": "commercial-ev-charging",
+        "name": "Commercial EV Charging",
+        "service": "electrical"
+    },
+    {
+        "slug": "three-phase-electrical-installation",
+        "name": "Three Phase Electrical Installation",
+        "service": "electrical"
+    },
+    {
+        "slug": "emergency-electrician",
+        "name": "Emergency Electrician",
+        "service": "electrical"
+    },
+    {
+        "slug": "socket-installation",
+        "name": "Socket Installation",
+        "service": "electrical"
+    },
+    {
+        "slug": "lighting-circuit-installation",
+        "name": "Lighting Circuit Installation",
+        "service": "electrical"
+    },
+    {
+        "slug": "outside-socket-installation",
+        "name": "Outside Socket Installation",
+        "service": "electrical"
+    },
+    {
+        "slug": "electrical-compliance-certificate",
+        "name": "Electrical Compliance Certificate",
+        "service": "electrical"
+    },
+    {
+        "slug": "hmo-electrical-certificate",
+        "name": "HMO Electrical Certificate",
+        "service": "electrical"
+    },
+    {
+        "slug": "office-electrical-testing",
+        "name": "Office Electrical Testing",
+        "service": "electrical"
+    },
+    {
+        "slug": "industrial-electrical-maintenance",
+        "name": "Industrial Electrical Maintenance",
+        "service": "electrical"
+    },
+    {
+        "slug": "electrical-remedial-works",
+        "name": "Electrical Remedial Works",
+        "service": "electrical"
+    },
+    {
+        "slug": "rcbo-consumer-unit",
+        "name": "RCBO Consumer Unit",
+        "service": "electrical"
+    },
+    {
+        "slug": "electrical-inspection-and-testing",
+        "name": "Electrical Inspection and Testing",
+        "service": "electrical"
+    },
+    {
+        "slug": "landlord-electrical-safety-check",
+        "name": "Landlord Electrical Safety Check",
+        "service": "electrical"
+    },
+    {
+        "slug": "bs-7671-inspection",
+        "name": "BS 7671 Inspection",
+        "service": "electrical"
+    },
+    {
+        "slug": "electrical-certificate-for-lettings",
+        "name": "Electrical Certificate for Lettings",
+        "service": "electrical"
+    },
+    {
+        "slug": "new-build-electrical-installation",
+        "name": "New Build Electrical Installation",
+        "service": "electrical"
+    },
+    {
+        "slug": "electrical-board-upgrade",
+        "name": "Electrical Board Upgrade",
+        "service": "electrical"
+    },
+    {
+        "slug": "distribution-board-installation",
+        "name": "Distribution Board Installation",
+        "service": "electrical"
+    },
+    {
+        "slug": "emergency-lighting-electrical-works",
+        "name": "Emergency Lighting Electrical Works",
+        "service": "electrical"
+    },
+    {
+        "slug": "landlord-electrical-certificate-north-west",
+        "name": "Landlord Electrical Certificate North West",
+        "service": "electrical"
+    },
+    {
+        "slug": "fire-alarm-certificate",
+        "name": "Fire Alarm Certificate",
+        "service": "fire-alarms"
+    },
+    {
+        "slug": "bs-5839-fire-alarm",
+        "name": "BS 5839 Fire Alarm",
+        "service": "fire-alarms"
+    }
+]
