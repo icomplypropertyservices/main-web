@@ -1,6 +1,7 @@
 <?php
 /**
  * Vercel serverless entry — clean extensionless URLs + virtual routes.
+ * Deploy marker: 2026-07-15-seo-v2
  */
 declare(strict_types=1);
 

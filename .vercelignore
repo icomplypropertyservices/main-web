@@ -1,0 +1,16 @@
+# Keep Vercel serverless + static deploy under size limits.
+# Keyword hero JPGs are optional (templates fall back to service images).
+shopify-import/**
+docs/**
+website/assets/images/keywords/**
+website/data/keyword-enrichment/**
+website/data/manufacturer-enrichment/**
+website/bin/_*
+website/bin/_smoke*
+website/bin/_download*
+website/bin/_eval*
+website/bin/debug*
+**/.DS_Store
+**/Thumbs.db
+**/*.log
+.git/**
