@@ -171,6 +171,62 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
     <?php endforeach; ?>
 </section>
 
+<!-- POPULAR KEYWORD GUIDES (each has a page per town) -->
+<section class="bg-white border-y">
+    <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+            <div>
+                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local SEO guides</div>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">EICR report, fire, gas &amp; more by town</h2>
+                <p class="mt-2 text-zinc-600 max-w-2xl">
+                    Every guide has a dedicated page for each North West area — e.g.
+                    <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/keywords/eicr-report/stockport.php') ?>">EICR report in Stockport</a>,
+                    <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/keywords/eicr/manchester.php') ?>">EICR in Manchester</a>.
+                </p>
+            </div>
+            <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All <?= number_format($kwCount) ?>+ guides →</a>
+        </div>
+        <?php
+        require_once SITE_ROOT . '/includes/related.php';
+        $homeKw = getPopularKeywordSlugs();
+        $allKw = getMajorKeywords();
+        $homeTowns = array_slice($popularTowns, 0, 8);
+        ?>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+            <?php foreach (array_slice($homeKw, 0, 12) as $kwSlug):
+                if (!isset($allKw[$kwSlug])) {
+                    continue;
+                }
+                $kwName = (string)($allKw[$kwSlug]['name'] ?? keywordDisplayName($kwSlug));
+            ?>
+            <div class="p-5 border border-zinc-200 rounded-2xl hover:border-[#ff6b00] transition bg-zinc-50">
+                <a href="<?= url('/pages/keywords/' . rawurlencode($kwSlug) . '.php') ?>" class="font-semibold text-black text-lg hover:text-[#ff6b00]">
+                    <?= htmlspecialchars($kwName, ENT_QUOTES, 'UTF-8') ?>
+                </a>
+                <div class="mt-3 flex flex-wrap gap-1.5">
+                    <?php foreach ($homeTowns as $town): ?>
+                        <a href="<?= url('/pages/keywords/' . rawurlencode($kwSlug) . '/' . areaSlug($town) . '.php') ?>"
+                           class="text-[11px] px-2 py-1 bg-white border rounded-full text-zinc-700 hover:border-[#ff6b00]">
+                            <?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?>
+                        </a>
+                    <?php endforeach; ?>
+                    <a href="<?= url('/pages/keywords/' . rawurlencode($kwSlug) . '.php') ?>" class="text-[11px] px-2 py-1 font-semibold text-[#ff6b00]">All towns →</a>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+        <div class="flex flex-wrap gap-2">
+            <?php foreach ($popularTowns as $town): ?>
+                <a href="<?= url('/pages/areas/' . areaSlug($town) . '.php') ?>"
+                   class="px-4 py-2 bg-[#0a2540] text-white rounded-full text-sm font-medium hover:bg-[#ff6b00] transition">
+                    All services in <?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?>
+                </a>
+            <?php endforeach; ?>
+            <a href="<?= url('/pages/areas/index.php') ?>" class="px-4 py-2 border border-zinc-300 rounded-full text-sm font-semibold text-[#ff6b00]">All <?= count($areas) ?> areas →</a>
+        </div>
+    </div>
+</section>
+
 <!-- AUDIENCE CARDS -->
 <section class="bg-zinc-50 border-y">
     <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">

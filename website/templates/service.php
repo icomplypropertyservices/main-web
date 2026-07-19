@@ -311,6 +311,71 @@ $schema = [
     </div>
 </section>
 
+<!-- KEYWORD GUIDES (every topic for this service → each has pages for all areas) -->
+<section class="bg-white border-y">
+    <div class="max-w-7xl mx-auto px-6 py-16">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
+            <div>
+                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Topic guides</div>
+                <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">
+                    <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> keywords &amp; local pages
+                </h2>
+                <p class="mt-2 text-zinc-600 max-w-2xl">
+                    Every guide below has a dedicated page for each town we cover
+                    (e.g. <strong>EICR report in Stockport</strong>). Click a topic, then pick your area.
+                </p>
+            </div>
+            <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All keyword guides →</a>
+        </div>
+        <?php
+        $svcKeywords = getKeywordsForService($serviceSlug);
+        if ($svcKeywords):
+            $kwPreviewTowns = array_slice($popularTowns, 0, 6);
+        ?>
+        <div class="mb-8">
+            <?= relatedKeywordsHtml($serviceSlug, 0) ?>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <?php
+            $shown = 0;
+            foreach ($svcKeywords as $kwSlug => $kwMeta):
+                if ($shown >= 18) {
+                    break;
+                }
+                $shown++;
+                $kwName = (string)($kwMeta['name'] ?? keywordDisplayName($kwSlug));
+            ?>
+            <div class="p-5 bg-zinc-50 border border-zinc-200 rounded-2xl hover:border-[#ff6b00] transition">
+                <a href="<?= url('/pages/keywords/' . rawurlencode($kwSlug) . '.php') ?>" class="font-semibold text-black hover:text-[#ff6b00]">
+                    <?= htmlspecialchars($kwName, ENT_QUOTES, 'UTF-8') ?>
+                </a>
+                <div class="mt-3 flex flex-wrap gap-1.5">
+                    <?php foreach ($kwPreviewTowns as $town): ?>
+                        <a href="<?= url('/pages/keywords/' . rawurlencode($kwSlug) . '/' . areaSlug($town) . '.php') ?>"
+                           class="text-[11px] px-2 py-1 bg-white border rounded-full text-zinc-700 hover:border-[#ff6b00] hover:text-[#ff6b00]">
+                            <?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?>
+                        </a>
+                    <?php endforeach; ?>
+                    <a href="<?= url('/pages/keywords/' . rawurlencode($kwSlug) . '.php') ?>"
+                       class="text-[11px] px-2 py-1 font-semibold text-[#ff6b00]">
+                        +<?= max(0, count($allAreas) - count($kwPreviewTowns)) ?> towns →
+                    </a>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+        <?php if (count($svcKeywords) > 18): ?>
+            <p class="mt-6 text-sm text-zinc-600">
+                Showing 18 of <?= count($svcKeywords) ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> guides —
+                <a href="<?= url('/pages/keywords/index.php') ?>" class="font-semibold text-[#ff6b00]">view full keyword index</a>.
+            </p>
+        <?php endif; ?>
+        <?php else: ?>
+            <p class="text-zinc-600">Keyword guides for this service are being expanded. See the <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/keywords/index.php') ?>">full guides index</a>.</p>
+        <?php endif; ?>
+    </div>
+</section>
+
 <!-- AREAS -->
 <section class="max-w-7xl mx-auto px-6 py-16">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">

@@ -292,6 +292,49 @@ function getMajorKeywords(): array {
     return $normalized;
 }
 
+/**
+ * Keywords belonging to a service (slug => meta), sorted by name.
+ * @return array<string, array>
+ */
+function getKeywordsForService(string $serviceSlug): array {
+    $serviceSlug = areaSlug($serviceSlug);
+    $out = [];
+    foreach (getMajorKeywords() as $slug => $meta) {
+        if (($meta['service'] ?? '') === $serviceSlug) {
+            $out[$slug] = $meta;
+        }
+    }
+    uasort($out, static function ($a, $b) {
+        return strcasecmp((string)($a['name'] ?? ''), (string)($b['name'] ?? ''));
+    });
+    return $out;
+}
+
+/**
+ * Priority keyword slugs for homepage / area hubs (only those present in data).
+ * @return list<string>
+ */
+function getPopularKeywordSlugs(): array {
+    $priority = [
+        'eicr', 'eicr-report', 'eicr-certificate', 'eicr-cost', 'landlord-eicr', 'commercial-eicr',
+        'pat-testing', 'consumer-unit-upgrade', 'rewire', 'domestic-eicr', 'eicr-near-me',
+        'fire-risk-assessment', 'fire-alarm-service', 'addressable-fire-alarm', 'fire-alarm-installation',
+        'emergency-lighting-test', 'emergency-lighting-certificate',
+        'gas-safety-certificate', 'cp12', 'landlord-gas-safety',
+        'cctv-installation', 'access-control-system', 'door-entry-system',
+        'nurse-call-system', 'landlord-compliance',
+    ];
+    $all = getMajorKeywords();
+    $out = [];
+    foreach ($priority as $slug) {
+        $slug = keywordSlug($slug);
+        if (isset($all[$slug])) {
+            $out[] = $slug;
+        }
+    }
+    return $out;
+}
+
 function getSeoKeywords(string $service, string $area = ''): string {
     $mfr = loadJsonData('manufacturers', []);
     $base = $mfr['seo_keywords'][$service] ?? $service;

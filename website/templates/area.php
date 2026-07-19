@@ -206,6 +206,27 @@ $schema = [
     </div>
 </section>
 
+<!-- POPULAR KEYWORD × THIS AREA (EICR report, FRA, gas cert, etc.) -->
+<section class="max-w-7xl mx-auto px-6 py-16">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
+        <div>
+            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local keyword pages</div>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">
+                Guides for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>
+            </h2>
+            <p class="mt-2 text-zinc-600 max-w-2xl">
+                High-intent topics with a dedicated page for <strong><?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></strong>
+                — EICR report, fire risk assessment, gas safety and more.
+            </p>
+        </div>
+        <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All guides →</a>
+    </div>
+    <?php
+    require_once SITE_ROOT . '/includes/related.php';
+    echo keywordAreaLinksHtml($AREA, null, 40);
+    ?>
+</section>
+
 <!-- ALL SERVICES -->
 <section class="bg-zinc-50 border-y">
     <div class="max-w-7xl mx-auto px-6 py-16">

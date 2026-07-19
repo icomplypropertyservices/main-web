@@ -158,11 +158,11 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
-<!-- AREAS — high contrast chips -->
+<!-- AREAS — every town linked (keyword × area pages) -->
 <section class="bg-zinc-100">
     <div class="max-w-7xl mx-auto px-6 py-14">
         <h2 class="text-2xl md:text-3xl font-bold text-[#061828]"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> by area</h2>
-        <p class="mt-2 text-zinc-800">Local landing pages for every town we cover (<?= count($allAreas) ?> areas).</p>
+        <p class="mt-2 text-zinc-800">Local landing pages for every town we cover (<?= count($allAreas) ?> areas) — e.g. <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> in Stockport.</p>
         <div class="mt-6 flex flex-wrap gap-2">
             <?php foreach ($popularTowns as $a): ?>
                 <a href="<?= url('/pages/keywords/' . $KEYWORD_SLUG . '/' . areaSlug($a) . '.php') ?>"
@@ -171,15 +171,29 @@ require SITE_ROOT . '/includes/header.php';
                 </a>
             <?php endforeach; ?>
         </div>
-        <div class="mt-4 flex flex-wrap gap-2 max-h-56 overflow-y-auto">
+        <div class="mt-4 flex flex-wrap gap-2 max-h-72 overflow-y-auto pr-1">
             <?php foreach ($allAreas as $a):
                 if (in_array($a, $popularTowns, true)) continue;
             ?>
                 <a href="<?= url('/pages/keywords/' . $KEYWORD_SLUG . '/' . areaSlug($a) . '.php') ?>"
                    class="px-3 py-1.5 bg-white border-2 border-zinc-300 text-zinc-900 rounded-full text-xs font-medium hover:border-[#ff6b00] hover:text-[#ff6b00]">
-                    <?= htmlspecialchars($a, ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($KEYWORD_NAME . ' · ' . $a, ENT_QUOTES, 'UTF-8') ?>
                 </a>
             <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
+<!-- RELATED KEYWORDS same service -->
+<section class="bg-white border-y-2 border-zinc-200">
+    <div class="max-w-7xl mx-auto px-6 py-14">
+        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">Related <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> guides</h2>
+        <p class="mt-2 text-zinc-800">More topics under the same service — each also has pages for every North West town.</p>
+        <div class="mt-6">
+            <?php
+            require_once SITE_ROOT . '/includes/related.php';
+            echo siblingKeywordsHtml($KEYWORD_SLUG, $SERVICE_SLUG, 24);
+            ?>
         </div>
     </div>
 </section>

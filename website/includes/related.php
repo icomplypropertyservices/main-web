@@ -173,3 +173,97 @@ function relatedManufacturersHtml(string $serviceSlug = '', int $limit = 8): str
 
     return $html;
 }
+
+/**
+ * Keyword guide chips for a service (links to /pages/keywords/{slug}).
+ */
+function relatedKeywordsHtml(string $serviceSlug, int $limit = 0): string {
+    $keywords = getKeywordsForService($serviceSlug);
+    if (!$keywords) {
+        return '';
+    }
+    if ($limit > 0) {
+        $keywords = array_slice($keywords, 0, $limit, true);
+    }
+
+    $html = '<div class="flex flex-wrap gap-2">';
+    foreach ($keywords as $slug => $meta) {
+        $href = htmlspecialchars(url('/pages/keywords/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
+        $label = htmlspecialchars((string)($meta['name'] ?? keywordDisplayName($slug)), ENT_QUOTES, 'UTF-8');
+        $html .= '<a href="' . $href . '" class="px-3 py-1.5 bg-white border border-zinc-200 rounded-full text-xs font-medium text-zinc-800 hover:border-[#ff6b00] hover:text-[#ff6b00] transition">'
+            . $label . '</a>';
+    }
+    $html .= '<a href="' . htmlspecialchars(url('/pages/keywords/index.php'), ENT_QUOTES, 'UTF-8') . '" class="px-3 py-1.5 text-xs font-semibold text-[#ff6b00]">All guides →</a>';
+    $html .= '</div>';
+    return $html;
+}
+
+/**
+ * Keyword × area chips for one town (e.g. EICR Report in Stockport).
+ * Uses popular + service-top keywords so every area links into local keyword pages.
+ *
+ * @param list<string>|null $extraSlugs
+ */
+function keywordAreaLinksHtml(string $area, ?array $extraSlugs = null, int $limit = 36): string {
+    $areaSlug = areaSlug($area);
+    $all = getMajorKeywords();
+    $slugs = getPopularKeywordSlugs();
+    if ($extraSlugs) {
+        foreach ($extraSlugs as $s) {
+            $s = keywordSlug((string)$s);
+            if ($s !== '' && !in_array($s, $slugs, true)) {
+                $slugs[] = $s;
+            }
+        }
+    }
+    // Pad with more from electrical / fire / gas if short
+    if (count($slugs) < $limit) {
+        foreach (['electrical', 'fire-alarms', 'gas-systems', 'emergency-lighting'] as $svc) {
+            foreach (getKeywordsForService($svc) as $slug => $_) {
+                if (!in_array($slug, $slugs, true)) {
+                    $slugs[] = $slug;
+                }
+                if (count($slugs) >= $limit) {
+                    break 2;
+                }
+            }
+        }
+    }
+    $slugs = array_slice($slugs, 0, $limit);
+
+    $html = '<div class="flex flex-wrap gap-2">';
+    foreach ($slugs as $slug) {
+        if (!isset($all[$slug])) {
+            continue;
+        }
+        $name = (string)($all[$slug]['name'] ?? keywordDisplayName($slug));
+        $href = htmlspecialchars(url('/pages/keywords/' . $slug . '/' . $areaSlug . '.php'), ENT_QUOTES, 'UTF-8');
+        $label = htmlspecialchars($name . ' in ' . $area, ENT_QUOTES, 'UTF-8');
+        $html .= '<a href="' . $href . '" class="px-3 py-1.5 bg-white border border-zinc-200 rounded-full text-xs font-medium text-zinc-800 hover:border-[#ff6b00] hover:text-[#ff6b00] transition">'
+            . $label . '</a>';
+    }
+    $html .= '</div>';
+    return $html;
+}
+
+/**
+ * For a keyword hub: link top related keywords under the same service.
+ */
+function siblingKeywordsHtml(string $keywordSlug, string $serviceSlug, int $limit = 16): string {
+    $keywordSlug = keywordSlug($keywordSlug);
+    $keywords = getKeywordsForService($serviceSlug);
+    unset($keywords[$keywordSlug]);
+    if (!$keywords) {
+        return '';
+    }
+    $keywords = array_slice($keywords, 0, $limit, true);
+    $html = '<div class="flex flex-wrap gap-2">';
+    foreach ($keywords as $slug => $meta) {
+        $href = htmlspecialchars(url('/pages/keywords/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
+        $label = htmlspecialchars((string)($meta['name'] ?? keywordDisplayName($slug)), ENT_QUOTES, 'UTF-8');
+        $html .= '<a href="' . $href . '" class="px-3 py-1.5 bg-white border-2 border-zinc-300 rounded-full text-xs font-semibold text-zinc-900 hover:border-[#ff6b00] hover:text-[#ff6b00]">'
+            . $label . '</a>';
+    }
+    $html .= '</div>';
+    return $html;
+}

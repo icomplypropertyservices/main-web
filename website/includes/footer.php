@@ -104,7 +104,8 @@ if (!$popularAreas) {
                 <div class="space-y-2 text-white/75 mb-8">
                     <a href="<?= htmlspecialchars($homeUrl, ENT_QUOTES, 'UTF-8') ?>" class="block hover:text-white">Home</a>
                     <a href="<?= url('/pages/about.php') ?>" class="block hover:text-white">About</a>
-                    <a href="<?= url('/shop/index.php') ?>" class="block hover:text-white text-[#ff6b00] font-medium">Shop</a>
+                    <a href="/products" class="block hover:text-white text-[#ff6b00] font-medium">Products</a>
+                    <a href="/shop" class="block hover:text-white">Shop</a>
                     <a href="<?= url('/pages/services/index.php') ?>" class="block hover:text-white">Services</a>
                     <a href="<?= url('/pages/areas/index.php') ?>" class="block hover:text-white">Areas</a>
                     <a href="<?= url('/pages/manufacturers/index.php') ?>" class="block hover:text-white">Manufacturers</a>
@@ -141,7 +142,8 @@ if (!$popularAreas) {
         <div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-white/45">
             <div>© <?= date('Y') ?> <?= htmlspecialchars(SITE_NAME, ENT_QUOTES, 'UTF-8') ?>. All rights reserved.</div>
             <div class="flex flex-wrap gap-4">
-                <a href="<?= url('/shop/index.php') ?>" class="hover:text-white">Shop</a>
+                <a href="/products" class="hover:text-white">Products</a>
+                <a href="/shop" class="hover:text-white">Shop</a>
                 <a href="<?= url('/pages/reviews.php') ?>" class="hover:text-white">Reviews</a>
                 <a href="<?= url('/pages/pricing.php') ?>" class="hover:text-white">Pricing</a>
                 <a href="<?= url('/pages/emergency.php') ?>" class="hover:text-white">Emergency</a>
