@@ -66,16 +66,22 @@ function routerTryFile(string $relPath): bool {
  */
 function routerDispatchVirtual(string $path): bool {
     // Directory indexes (url() strips /index)
+    // keywords-hub lives outside pages/keywords/** so it survives vercelignore of stubs.
     $indexes = [
-        '/pages/keywords' => '/pages/keywords/index',
-        '/pages/services' => '/pages/services/index',
-        '/pages/manufacturers' => '/pages/manufacturers/index',
-        '/pages/areas' => '/pages/areas/index',
-        '/pages/resources' => '/pages/resources/index',
-        '/shop' => '/shop/index',
+        '/pages/keywords' => ['/pages/keywords/index', '/pages/keywords-hub'],
+        '/pages/services' => ['/pages/services/index'],
+        '/pages/manufacturers' => ['/pages/manufacturers/index'],
+        '/pages/areas' => ['/pages/areas/index'],
+        '/pages/resources' => ['/pages/resources/index'],
+        '/shop' => ['/shop/index'],
     ];
     if (isset($indexes[$path])) {
-        return routerTryFile($indexes[$path]);
+        foreach ($indexes[$path] as $candidate) {
+            if (routerTryFile($candidate)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     // /pages/keywords/{kw}/{area}
@@ -83,8 +89,8 @@ function routerDispatchVirtual(string $path): bool {
         renderKeywordAreaPage($m[1], $m[2]);
         return true;
     }
-    // /pages/keywords/{kw}
-    if (preg_match('#^/pages/keywords/([a-z0-9\-]+)$#', $path, $m)) {
+    // /pages/keywords/{kw}  (not the directory index)
+    if (preg_match('#^/pages/keywords/([a-z0-9\-]+)$#', $path, $m) && $m[1] !== 'index') {
         renderKeywordPage($m[1]);
         return true;
     }

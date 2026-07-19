@@ -3,19 +3,61 @@
   "version": 2,
   "functions": {
     "api/index.php": {
-      "runtime": "vercel-php@0.7.4",
+      "runtime": "vercel-php@0.9.0",
       "memory": 1024,
-      "maxDuration": 30
+      "maxDuration": 30,
+      "excludeFiles": "{shopify-import/**,docs/**,website/pages/keywords/**,website/assets/images/keywords/**,website/data/keyword-enrichment/**,website/data/manufacturer-enrichment/**,website/bin/_*,**/.git/**,**/*.log,**/.DS_Store,**/Thumbs.db}"
     }
   },
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.icomplypropertyservices.co.uk" }],
+      "destination": "https://icomplypropertyservices.co.uk/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "group.icomplypropertyservices.co.uk" }],
+      "destination": "https://icomplypropertyservices.co.uk/group/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "shop.icomplypropertyservices.co.uk" }],
+      "destination": "https://icomplypropertyservices.co.uk/shop/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "shopweb.icomplypropertyservices.co.uk" }],
+      "destination": "https://icomplypropertyservices.co.uk/shop/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "products.icomplypropertyservices.co.uk" }],
+      "destination": "https://icomplypropertyservices.co.uk/products/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
+    { "source": "/group", "destination": "https://group-iota-six.vercel.app/" },
+    { "source": "/group/", "destination": "https://group-iota-six.vercel.app/" },
+    { "source": "/group/:path*", "destination": "https://group-iota-six.vercel.app/:path*" },
+    { "source": "/shop", "destination": "https://icomply-shopweb.vercel.app" },
+    { "source": "/shop/", "destination": "https://icomply-shopweb.vercel.app/" },
+    { "source": "/shop/:path*", "destination": "https://icomply-shopweb.vercel.app/:path*" },
+    { "source": "/products", "destination": "https://products-icomplypropertyservices-co.vercel.app" },
+    { "source": "/products/", "destination": "https://products-icomplypropertyservices-co.vercel.app/" },
+    { "source": "/products/:path*", "destination": "https://products-icomplypropertyservices-co.vercel.app/:path*" },
     { "source": "/assets/(.*)", "destination": "/website/assets/$1" },
     { "source": "/robots.txt", "destination": "/website/robots.txt" },
     { "source": "/sitemap.xml", "destination": "/website/sitemap.xml" },
     { "source": "/sitemap-:part.xml", "destination": "/website/sitemap-$1.xml" },
     { "source": "/google-site-verification=:token.txt", "destination": "/google-site-verification=$1.txt" },
     { "source": "/favicon.ico", "destination": "/website/assets/images/og-image.jpg" },
-    { "source": "/((?!assets|robots.txt|sitemap|favicon.ico|google-site-verification).*)", "destination": "/api/index.php" }
+    { "source": "/((?!assets|robots.txt|sitemap|favicon.ico|google-site-verification|group|shop|products).*)", "destination": "/api/index.php" }
   ],
   "headers": [
     {
