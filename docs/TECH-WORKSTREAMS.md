@@ -1,16 +1,17 @@
 # Tech workstreams (2026-09-11) — iComply main-web
 
-Production: Vercel `icomply-main-web` (RIDDLE) ← GitHub `main-web`. Burnley Next kept separate.
+**Production target: Netlify (static export).** Vercel `icomply-main-web` (RIDDLE) is **non-final** — preview/staging only until Netlify cutover. GitHub `main-web` remains source of truth. Burnley Next kept separate. See `docs/NETLIFY-MIGRATE.md`.
 
 ## Stream 1 — Website upgrade (P0 after apex claim)
 - [ ] Apex/www verified (Jack TXT / release old account)
-- [ ] `SITE_URL=https://icomplypropertyservices.co.uk` in Vercel env
+- [ ] Netlify site connected to `main-web`; P0 smoke publish = `website` (no PHP at request time)
+- [ ] `SITE_URL=https://icomplypropertyservices.co.uk` on Netlify (not Vercel) for production
 - [ ] Confirm robots/sitemap on apex; clear accidental noindex on production host
 - [ ] Sticky Call + WhatsApp (partially present in header; harden mobile sticky)
 - [ ] Contact/quote form end-to-end
 
 ## Stream 1b — Wave 1 pages (after domain + Jack-confirmed copy; **no invented prices**)
-New/upgrade routes in PHP `website/` pattern:
+New/upgrade routes in PHP `website/` pattern (exported to static `dist/` on Netlify P1+):
 - `/services/epc` (domestic + non-domestic tabs)
 - `/services/smoke-co-alarms`
 - `/services/pat-testing`
@@ -32,4 +33,6 @@ Separate repo `engineers-portal` (seeds frozen). Scaffold after Cursor SCM conne
 
 ## Blockers
 - Domain claim TXT with Jack
+- Netlify domain attach + account access (Jack)
+- Static exporter (P1) before real Netlify production publish
 - Cursor GitHub SCM connect required for cloud coding agents
