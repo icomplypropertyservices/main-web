@@ -16,16 +16,19 @@
             "fire-signage",
             "evacuation-alerts",
             "kitchen-fire-suppression",
-            "fire-compartmentation"
+            "fire-compartmentation",
+            "smoke-co-alarms"
         ]
     },
     "electrical-gas": {
         "label": "Electrical & Gas",
-        "blurb": "EICR, rewires, EV, gas safety and landlord certificates.",
+        "blurb": "EICR, rewires, EV, gas safety, PAT, EPC and landlord certificates.",
         "services": [
             "electrical",
             "gas-systems",
-            "electrics-first-fix"
+            "electrics-first-fix",
+            "pat-testing",
+            "epc"
         ]
     },
     "security-care": {
