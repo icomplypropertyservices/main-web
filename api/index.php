@@ -1,23 +1,24 @@
 <?php
 /**
- * Vercel serverless entry — clean extensionless URLs + virtual routes.
- * Deploy marker: 2026-07-15-seo-v2
+ * Front controller — clean extensionless URLs + virtual routes.
+ * Host-agnostic: Vercel interim + Netlify static-export source.
+ * Deploy marker: 2026-09-11-seo-p0-netlify
  */
 declare(strict_types=1);
 
-// Prefer real host when present (custom domain / preview)
-$host = $_SERVER['HTTP_HOST'] ?? 'www.icomplypropertyservices.co.uk';
-$host = preg_replace('/:\d+$/', '', (string)$host) ?: 'www.icomplypropertyservices.co.uk';
+// Prefer real host when present (custom domain / preview / Netlify)
+$host = $_SERVER['HTTP_HOST'] ?? 'icomplypropertyservices.co.uk';
+$host = preg_replace('/:\d+$/', '', (string)$host) ?: 'icomplypropertyservices.co.uk';
 if (str_contains($host, 'localhost') || $host === '') {
-    $host = 'www.icomplypropertyservices.co.uk';
+    $host = 'icomplypropertyservices.co.uk';
 }
-// Canonical public host
-if (strcasecmp($host, 'icomplypropertyservices.co.uk') === 0) {
-    $host = 'www.icomplypropertyservices.co.uk';
+// Canonical public host: apex (www redirects at edge)
+if (strcasecmp($host, 'www.icomplypropertyservices.co.uk') === 0) {
+    $host = 'icomplypropertyservices.co.uk';
 }
 $base_url = 'https://' . $host;
 
-// Force production SITE_URL before config loads (constants)
+// Force SITE_URL before config loads (constants)
 putenv('SITE_URL=' . $base_url);
 $_ENV['SITE_URL'] = $base_url;
 $_SERVER['SITE_URL'] = $base_url;
@@ -38,12 +39,36 @@ require_once $root . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'r
 
 $uri = routerRequestPath();
 
+/** Rewrite apex/www hosts in sitemap/robots to the live request host. */
+function seoRewritePublicHost(string $body, string $baseUrl): string {
+    $body = str_replace(
+        [
+            'https://www.icomplypropertyservices.co.uk',
+            'http://www.icomplypropertyservices.co.uk',
+            'https://icomplypropertyservices.co.uk',
+            'http://icomplypropertyservices.co.uk',
+        ],
+        $baseUrl,
+        $body
+    );
+    return $body;
+}
+
+/** Drop shop/products locs from served sitemaps (they 301 to packages). */
+function seoStripShopProductUrls(string $xml): string {
+    $xml = preg_replace(
+        '#<url>\s*<loc>[^<]*/(?:shop|products)(?:/[^<]*)?</loc>.*?</url>\s*#is',
+        '',
+        $xml
+    ) ?? $xml;
+    return $xml;
+}
+
 // Block internals (admin allowed)
 if (preg_match('#^/(bin|templates|data|includes)(/|$)#i', $uri)) {
     if (preg_match('#^/admin#i', $uri)) {
         // fall through to file router
     } else {
-        // Allow SEO cron with key only
         if (preg_match('#^/bin/cron-seo\.php$#i', $uri) || $uri === '/bin/cron-seo') {
             require $root . '/bin/cron-seo.php';
             exit;
@@ -55,17 +80,26 @@ if (preg_match('#^/(bin|templates|data|includes)(/|$)#i', $uri)) {
     }
 }
 
-// Dynamic multi-part sitemaps if static rewrite missed
-if (preg_match('#^/sitemap(-[0-9]+)?\.xml$#i', $uri, $sm)) {
-    $file = $root . ($sm[0] === '/sitemap.xml' || $sm[0] === '/sitemap.XML'
-        ? '/sitemap.xml'
-        : $sm[0]);
-    // normalize
+// robots.txt — host-aware Sitemap line
+if (strcasecmp($uri, '/robots.txt') === 0) {
+    $file = $root . DIRECTORY_SEPARATOR . 'robots.txt';
+    if (is_file($file)) {
+        header('Content-Type: text/plain; charset=utf-8');
+        header('Cache-Control: public, max-age=3600');
+        echo seoRewritePublicHost((string)file_get_contents($file), $base_url);
+        exit;
+    }
+}
+
+// Sitemaps — self-host locs on preview/prod host; keep all keyword URLs
+if (preg_match('#^/sitemap(-[0-9]+)?\.xml$#i', $uri)) {
     $file = $root . str_replace('/', DIRECTORY_SEPARATOR, $uri);
     if (is_file($file)) {
         header('Content-Type: application/xml; charset=utf-8');
         header('Cache-Control: public, max-age=3600');
-        readfile($file);
+        $xml = (string)file_get_contents($file);
+        $xml = seoStripShopProductUrls($xml);
+        echo seoRewritePublicHost($xml, $base_url);
         exit;
     }
 }
@@ -98,7 +132,6 @@ if (!$handled) {
 
 $output = (string)ob_get_clean();
 
-// Auto-amend: never leak localhost URLs on production HTML/XML
 if ($output !== '') {
     $output = str_replace(
         [
