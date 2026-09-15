@@ -157,12 +157,29 @@ if (!$popularAreas) {
     </div>
 </footer>
 
-<!-- WhatsApp floating button -->
+<!-- WhatsApp floating button (desktop) -->
 <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20Icomply%2C%20I%20need%20a%20quote%20for%20compliance%20services"
    target="_blank" rel="noopener" aria-label="WhatsApp"
-   class="fixed bottom-6 right-6 bg-green-600 hover:bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-xl z-50 transition transform hover:scale-105">
+   class="hidden md:flex fixed bottom-6 right-6 bg-green-600 hover:bg-green-500 text-white w-14 h-14 rounded-full items-center justify-center text-2xl shadow-xl z-50 transition transform hover:scale-105">
     💬
 </a>
+<!-- Sticky mobile CTA -->
+<div id="mobile-sticky-cta" class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-[#0a2540] border-t border-white/10 px-3 py-2.5 flex gap-2 shadow-2xl">
+    <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
+       class="flex-1 text-center py-3 rounded-xl bg-white text-[#0a2540] font-semibold text-sm">
+        Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>
+    </a>
+    <a href="<?= url('/contact') ?>"
+       class="flex-1 text-center py-3 rounded-xl bg-[#ff6b00] text-white font-semibold text-sm">
+        Free quote
+    </a>
+</div>
+<style>
+    @media (max-width: 767px) {
+        body { padding-bottom: 5.25rem; }
+        #cookie-banner { bottom: 4.75rem; }
+    }
+</style>
 <?php require_once __DIR__ . '/cookie-banner.php'; ?>
 </body>
 </html>

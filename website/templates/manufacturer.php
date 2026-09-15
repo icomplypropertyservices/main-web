@@ -7,7 +7,6 @@
 $pageTitle = $MFR_NAME . ' Products & Service';
 $metaDesc = $MFR_BLURB;
 $metaKeywords = $MFR_SEO_KEYWORDS;
-$ogImage = url('/assets/images/manufacturers/' . $MFR_SLUG . '.jpg');
 $canonicalUrl = url('/pages/manufacturers/' . $MFR_SLUG . '.php');
 
 require_once SITE_ROOT . '/includes/share.php';
@@ -21,6 +20,7 @@ $mfrServices = $entry['services'] ?? [];
 $products = $entry['products'] ?? [];
 $primaryService = $mfrServices[0] ?? 'fire-alarms';
 $primaryServiceName = $services[$primaryService] ?? 'Compliance';
+$ogImage = manufacturerImageUrl($mfrSlug, $primaryService);
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
@@ -139,11 +139,11 @@ $schema = [
                 </div>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
-                <img src="<?= url('/assets/images/manufacturers/' . $MFR_SLUG . '.jpg') ?>"
+                <img src="<?= htmlspecialchars(manufacturerImageUrl($mfrSlug, $primaryService), ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> equipment — Icomply Property Services"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
                      loading="eager"
-                     onerror="this.src='<?= url('/assets/images/services/' . htmlspecialchars($primaryService, ENT_QUOTES, 'UTF-8') . '.jpg') ?>'">
+                     onerror="this.src='<?= htmlspecialchars(serviceImageUrl($primaryService), ENT_QUOTES, 'UTF-8') ?>'">
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0a2540]/90 via-transparent to-transparent">
                     <div class="text-sm text-white/70">Authorised install &amp; trade supply</div>
                     <div class="text-2xl font-semibold mt-1"><?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> · North West</div>

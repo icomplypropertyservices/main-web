@@ -141,8 +141,10 @@ check('config.local.example exists', is_file(SITE_ROOT . '/config.local.php.exam
 $headerSrc = (string)file_get_contents(SITE_ROOT . '/includes/header.php');
 check(
     'tracking gated on real IDs',
-    strpos($headerSrc, 'GA_MEASUREMENT_ID !==') !== false || strpos($headerSrc, "GA_MEASUREMENT_ID !== ''") !== false,
-    'gtag only when configured'
+    strpos($headerSrc, '__icomplyAnalytics') !== false
+        && strpos($headerSrc, 'icomply_cookie_consent') !== false
+        && strpos($headerSrc, 'googletagmanager.com') !== false,
+    'gtag/GTM snippet present and cookie-gated'
 );
 check('admin build-status wired', is_file(SITE_ROOT . '/includes/build-status.php'));
 check('full-build script', is_file(SITE_ROOT . '/bin/full-build.php'));

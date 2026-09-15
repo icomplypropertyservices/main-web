@@ -76,6 +76,9 @@ $privacyUrl = function_exists('url') ? url('/privacy') : (rtrim(SITE_URL, '/') .
     btn.addEventListener('click', function () {
         try { localStorage.setItem(KEY, 'accepted'); } catch (e) {}
         banner.hidden = true;
+        if (window.__icomplyAnalytics && typeof window.__icomplyAnalytics.load === 'function') {
+            window.__icomplyAnalytics.load();
+        }
     });
 })();
 </script>

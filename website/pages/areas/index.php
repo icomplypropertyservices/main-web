@@ -11,6 +11,7 @@ $pageTitle = 'Areas We Cover | ' . count($areas) . '+ North West Towns';
 $metaDesc = 'Icomply covers ' . count($areas) . '+ towns across Greater Manchester and the North West. Every town hub links fire safety, electrical, professional services, kitchens, bathrooms and construction trades.';
 $metaKeywords = 'fire risk assessment Manchester, kitchen fitting Stockport, EICR Bolton, fire alarms Liverpool, property services North West towns';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
+$canonicalUrl = url('/pages/areas');
 $categories = getServiceCategories();
 
 $featured = array_values(array_filter(

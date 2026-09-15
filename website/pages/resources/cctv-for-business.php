@@ -4,6 +4,7 @@
  */
 require_once __DIR__ . '/../../config.php';
 require_once SITE_ROOT . '/includes/share.php';
+require_once SITE_ROOT . '/includes/resource-related.php';
 
 $pageTitle = 'CCTV for Business | Commercial Camera Systems Guide';
 $metaDesc = 'High-level UK guide to CCTV for business: camera types, recording, remote viewing, maintenance and practical privacy considerations for commercial and multi-site premises in the North West.';
@@ -215,4 +216,5 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
+<section class="max-w-3xl mx-auto px-6 pb-12"><?= resourceRelatedHtml('cctv-for-business') ?></section>
 <?php require SITE_ROOT . '/includes/footer.php'; ?>

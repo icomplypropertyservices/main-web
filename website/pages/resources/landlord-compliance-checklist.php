@@ -4,6 +4,7 @@
  */
 require_once __DIR__ . '/../../config.php';
 require_once SITE_ROOT . '/includes/share.php';
+require_once SITE_ROOT . '/includes/resource-related.php';
 
 $pageTitle = 'Landlord Compliance Checklist | UK Rented Property';
 $metaDesc = 'Practical UK landlord compliance checklist covering gas safety, EICR, smoke and CO alarms, fire safety, emergency lighting and EPC — high-level guidance for portfolio owners in the North West.';
@@ -221,4 +222,5 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
+<section class="max-w-3xl mx-auto px-6 pb-12"><?= resourceRelatedHtml('landlord-compliance-checklist') ?></section>
 <?php require SITE_ROOT . '/includes/footer.php'; ?>

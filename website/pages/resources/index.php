@@ -9,7 +9,7 @@ $pageTitle = 'Resources & Guides | Property Compliance North West';
 $metaDesc = 'Free property compliance guides for landlords, facilities managers and commercial sites — EICR, fire alarm servicing, emergency lighting testing, CCTV, access control, landlord checklists and keyword guides across the North West.';
 $metaKeywords = 'property compliance guides, EICR guide, fire alarm servicing, emergency lighting testing, CCTV for business, access control guide, landlord compliance checklist, commercial fire safety North West';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
-$canonicalUrl = url('/pages/resources/index.php');
+$canonicalUrl = url('/pages/resources');
 
 $services = getServices();
 

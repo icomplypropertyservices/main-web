@@ -1,0 +1,30 @@
+# Legacy legal aliases
+/privacy-policy    /privacy    301
+/privacy-policy/    /privacy    301
+/terms-and-conditions    /terms    301
+/terms-and-conditions/    /terms    301
+/about-us    /pages/about    301
+/about-us/    /pages/about    301
+/contact-us    /contact    301
+/contact-us/    /contact    301
+/cookie-policy    /privacy    301
+/cookie-policy/    /privacy    301
+/blog    /pages/resources    301
+/blog/    /pages/resources    301
+/news    /pages/resources    301
+/news/    /pages/resources    301
+
+# Shop / products → packages (also in netlify.toml)
+/shop    /pages/packages    301
+/shop/*    /pages/packages    301
+/products    /pages/packages    301
+/products/*    /pages/packages    301
+
+# Old 470-part sitemap index → single compact urlset
+/sitemap-*.xml    /sitemap.xml    301
+
+# Missing *-photo.jpg → working twin (static assets bypass PHP)
+/assets/images/services/*-photo.jpg    /assets/images/services/:splat.jpg    200
+
+# Missing manufacturer logos (existing files still win on Netlify) → service fallback
+/assets/images/manufacturers/*    /assets/images/services/fire-alarms.jpg    200

@@ -154,7 +154,7 @@ require SITE_ROOT . '/includes/header.php';
                class="service-card group bg-white border rounded-3xl overflow-hidden hover:border-[#ff6b00]">
                 <div class="relative h-36 bg-zinc-100">
                     <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>"
-                         alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>"
+                         alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> in the North West — Icomply Property Services"
                          class="w-full h-full object-cover"
                          loading="lazy"
                          onerror="this.style.display='none'">

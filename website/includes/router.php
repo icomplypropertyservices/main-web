@@ -68,11 +68,12 @@ function routerDispatchVirtual(string $path): bool {
     // Directory indexes (url() strips /index)
     // keywords-hub lives outside pages/keywords/** so it survives vercelignore of stubs.
     $indexes = [
-        '/pages/keywords' => ['/pages/keywords/index', '/pages/keywords-hub'],
-        '/pages/services' => ['/pages/services/index'],
-        '/pages/manufacturers' => ['/pages/manufacturers/index'],
-        '/pages/areas' => ['/pages/areas/index'],
-        '/pages/resources' => ['/pages/resources/index'],
+        // Prefer physical /pages/{hub}.php (live pretty-URL pattern) then directory index.
+        '/pages/keywords' => ['/pages/keywords', '/pages/keywords/index', '/pages/keywords-hub'],
+        '/pages/services' => ['/pages/services', '/pages/services/index'],
+        '/pages/manufacturers' => ['/pages/manufacturers', '/pages/manufacturers/index'],
+        '/pages/areas' => ['/pages/areas', '/pages/areas/index'],
+        '/pages/resources' => ['/pages/resources', '/pages/resources/index'],
         '/shop' => ['/shop/index'],
     ];
     if (isset($indexes[$path])) {
@@ -82,6 +83,11 @@ function routerDispatchVirtual(string $path): bool {
             }
         }
         return false;
+    }
+
+    // Resource guides: /pages/resources/{slug} → pages/resources/{slug}.php
+    if (preg_match('#^/pages/resources/([a-z0-9\-]+)$#', $path, $m) && $m[1] !== 'index') {
+        return routerTryFile('/pages/resources/' . $m[1]);
     }
 
     // /pages/keywords/{kw}/{area}
@@ -164,6 +170,21 @@ function routerDispatchVirtual(string $path): bool {
  */
 function routerHandleRequest(): void {
     $path = routerRequestPath();
+
+    // Legacy aliases (also in netlify.toml / _redirects)
+    $legacyAliases = [
+        '/privacy-policy' => '/privacy',
+        '/terms-and-conditions' => '/terms',
+        '/about-us' => '/pages/about',
+        '/contact-us' => '/contact',
+        '/cookie-policy' => '/privacy',
+        '/blog' => '/pages/resources',
+        '/news' => '/pages/resources',
+    ];
+    if (isset($legacyAliases[$path])) {
+        header('Location: ' . url($legacyAliases[$path]), true, 301);
+        exit;
+    }
 
     // Home
     if ($path === '/' || $path === '/index') {

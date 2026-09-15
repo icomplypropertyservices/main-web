@@ -161,7 +161,7 @@ require SITE_ROOT . '/includes/header.php';
                 ?>
                 <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                    class="group relative rounded-3xl overflow-hidden border border-white/10 min-h-[140px] bg-white/5 hover:border-[#ff6b00] transition">
-                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt=""
+                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($card['title'], ENT_QUOTES, 'UTF-8') ?> maintenance — Icomply Property Services"
                          class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-55 transition" loading="lazy"
                          onerror="this.style.display='none'">
                     <div class="relative p-5 h-full flex flex-col justify-end">

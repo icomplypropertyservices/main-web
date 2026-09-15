@@ -407,7 +407,10 @@ $contactSchema = [
                                   class="w-full border border-zinc-200 px-5 py-3.5 rounded-2xl focus:outline-none focus:border-[#ff6b00] focus:ring-1 focus:ring-[#ff6b00]"><?= htmlspecialchars($_POST['message'] ?? '', ENT_QUOTES, 'UTF-8') ?></textarea>
                     </div>
 
-                    <button type="submit" class="w-full modern-btn text-white py-4 text-lg font-semibold rounded-2xl">Submit request</button>
+                    <button type="submit" id="contact-submit" class="w-full modern-btn text-white py-4 text-lg font-semibold rounded-2xl">
+                        <span id="contact-submit-label">Submit request</span>
+                        <span id="contact-submit-loading" class="hidden">Sending…</span>
+                    </button>
                     <p class="text-center text-xs text-zinc-500">
                         By submitting you agree to our
                         <a href="<?= url('/privacy.php') ?>" class="underline hover:text-black">Privacy Policy</a>
@@ -505,4 +508,19 @@ $contactSchema = [
     <?= shareButtonsHtml($pageTitle, $metaDesc) ?>
 </section>
 
+<script>
+(function () {
+    var form = document.querySelector('form[action*="contact"]');
+    var btn = document.getElementById('contact-submit');
+    var label = document.getElementById('contact-submit-label');
+    var loading = document.getElementById('contact-submit-loading');
+    if (!form || !btn) return;
+    form.addEventListener('submit', function () {
+        if (!form.checkValidity()) return;
+        btn.disabled = true;
+        if (label) label.classList.add('hidden');
+        if (loading) loading.classList.remove('hidden');
+    });
+})();
+</script>
 <?php require SITE_ROOT . '/includes/footer.php'; ?>

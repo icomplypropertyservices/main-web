@@ -19,6 +19,7 @@ $siteDefaults = [
     // Never commit real passwords — set ADMIN_PASS in config.local.php
     'ADMIN_PASS' => '',
     'GA_MEASUREMENT_ID' => '',
+    'GTM_CONTAINER_ID' => '',
     'AW_CONVERSION_ID' => '',
     // Google Search Console HTML-tag verification (content= value only)
     'GOOGLE_SITE_VERIFICATION' => '',
@@ -52,6 +53,7 @@ $envMap = [
     'ADMIN_USER' => 'ADMIN_USER',
     'ADMIN_PASS' => 'ADMIN_PASS',
     'GA_MEASUREMENT_ID' => 'GA_MEASUREMENT_ID',
+    'GTM_CONTAINER_ID' => 'GTM_CONTAINER_ID',
     'AW_CONVERSION_ID' => 'AW_CONVERSION_ID',
     'GOOGLE_SITE_VERIFICATION' => 'GOOGLE_SITE_VERIFICATION',
     'INDEXNOW_KEY' => 'INDEXNOW_KEY',
@@ -478,7 +480,7 @@ function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
         $entry = $catalog[$slug] ?? null;
         $label = htmlspecialchars($entry['name'] ?? ucwords(str_replace('-', ' ', $slug)), ENT_QUOTES, 'UTF-8');
         $href = htmlspecialchars(url('/pages/manufacturers/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
-        $src = htmlspecialchars(url('/assets/images/manufacturers/' . $slug . '.jpg'), ENT_QUOTES, 'UTF-8');
+        $src = htmlspecialchars(manufacturerImageUrl($slug, $serviceSlug !== '' ? $serviceSlug : 'fire-alarms'), ENT_QUOTES, 'UTF-8');
         $html .= '<a href="' . $href . '" class="bg-white border-2 border-zinc-200 rounded-2xl overflow-hidden hover:border-[#ff6b00] hover:shadow-md transition block group">'
             . '<img src="' . $src . '" alt="' . $label . ' products and service — Icomply" '
             . 'class="w-full h-28 object-cover group-hover:scale-105 transition duration-300" loading="lazy" '
@@ -513,6 +515,33 @@ function linkManufacturerNamesInText(string $text): string {
         $safe = preg_replace('/\b' . preg_quote($escaped, '/') . '\b/u', $link, $safe);
     }
     return $safe;
+}
+
+/** First existing service image (.jpg, .png, then -photo.jpg). */
+function serviceImageUrl(string $slug): string {
+    $base = '/assets/images/services/' . $slug;
+    foreach ([$base . '.jpg', $base . '.png', $base . '-photo.jpg'] as $rel) {
+        if (is_file(SITE_ROOT . $rel)) {
+            return url($rel);
+        }
+    }
+    return url('/assets/images/services/fire-alarms.jpg');
+}
+
+/**
+ * Working service photo only — never emit *-photo.jpg in HTML.
+ * Live 404'd those names even when the twin without `-photo` was 200.
+ */
+function servicePhotoUrl(string $slug): string {
+    return serviceImageUrl($slug);
+}
+
+function manufacturerImageUrl(string $slug, string $fallbackService = 'fire-alarms'): string {
+    $rel = '/assets/images/manufacturers/' . $slug . '.jpg';
+    if (is_file(SITE_ROOT . $rel)) {
+        return url($rel);
+    }
+    return serviceImageUrl($fallbackService);
 }
 
 function getKeywordImages(string $serviceSlug): array {

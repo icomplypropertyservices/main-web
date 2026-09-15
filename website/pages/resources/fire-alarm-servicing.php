@@ -4,6 +4,7 @@
  */
 require_once __DIR__ . '/../../config.php';
 require_once SITE_ROOT . '/includes/share.php';
+require_once SITE_ROOT . '/includes/resource-related.php';
 
 $pageTitle = 'Fire Alarm Servicing Explained | BS 5839 Guidance';
 $metaDesc = 'High-level UK guide to fire alarm servicing: user tests, periodic maintenance, logbooks and BS 5839 best practice for commercial, multi-let and care premises in the North West.';
@@ -199,4 +200,5 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
+<section class="max-w-3xl mx-auto px-6 pb-12"><?= resourceRelatedHtml('fire-alarm-servicing') ?></section>
 <?php require SITE_ROOT . '/includes/footer.php'; ?>

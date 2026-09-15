@@ -36,6 +36,7 @@ if (!is_dir($root)) {
 chdir($root);
 
 require_once $root . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'router.php';
+require_once $root . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'sitemap.php';
 
 $uri = routerRequestPath();
 
@@ -52,6 +53,21 @@ function seoRewritePublicHost(string $body, string $baseUrl): string {
         $body
     );
     return $body;
+}
+
+/** Compact accurate sitemap (shared builder — never 500, never keyword×area junk). */
+function seoCompactSitemap(string $baseUrl): string {
+    if (function_exists('icomplyBuildSitemapXml')) {
+        return icomplyBuildSitemapXml($baseUrl);
+    }
+    $base = rtrim($baseUrl, '/');
+    return '<?xml version="1.0" encoding="UTF-8"?>' . "\n"
+        . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n"
+        . '  <url><loc>' . htmlspecialchars($base . '/', ENT_XML1) . '</loc></url>' . "\n"
+        . '  <url><loc>' . htmlspecialchars($base . '/pages/areas', ENT_XML1) . '</loc></url>' . "\n"
+        . '  <url><loc>' . htmlspecialchars($base . '/pages/manufacturers', ENT_XML1) . '</loc></url>' . "\n"
+        . '  <url><loc>' . htmlspecialchars($base . '/pages/resources', ENT_XML1) . '</loc></url>' . "\n"
+        . '</urlset>' . "\n";
 }
 
 /** Drop shop/products locs from served sitemaps (they 301 to packages). */
@@ -80,6 +96,96 @@ if (preg_match('#^/(bin|templates|data|includes)(/|$)#i', $uri)) {
     }
 }
 
+// Legacy aliases (also in netlify.toml / _redirects)
+$aliasPath = rtrim($uri, '/') ?: '/';
+$legacyAliases = [
+    '/privacy-policy' => '/privacy',
+    '/terms-and-conditions' => '/terms',
+    '/about-us' => '/pages/about',
+    '/contact-us' => '/contact',
+    '/cookie-policy' => '/privacy',
+    '/blog' => '/pages/resources',
+    '/news' => '/pages/resources',
+];
+if (isset($legacyAliases[$aliasPath])) {
+    header('Location: ' . $base_url . $legacyAliases[$aliasPath], true, 301);
+    exit;
+}
+
+// Missing service stills → fire-alarms fallback
+if (preg_match('#^/assets/images/services/([a-z0-9\-]+)\.(jpe?g|png)$#i', $uri, $svcMatch)
+    && !str_ends_with(strtolower($svcMatch[1]), '-photo')) {
+    $ext = strtolower($svcMatch[2]) === 'png' ? 'png' : 'jpg';
+    $wanted = $root . '/assets/images/services/' . $svcMatch[1] . '.' . $ext;
+    $fallback = $root . '/assets/images/services/fire-alarms.jpg';
+    if (!is_file($wanted) && is_file($fallback)) {
+        header('Content-Type: image/jpeg');
+        header('Cache-Control: public, max-age=86400');
+        readfile($fallback);
+        exit;
+    }
+}
+
+// Missing manufacturer logos → working service fallback
+if (preg_match('#^/assets/images/manufacturers/([a-z0-9\-]+)\.(jpe?g|png)$#i', $uri, $mfrMatch)) {
+    $ext = strtolower($mfrMatch[2]) === 'png' ? 'png' : 'jpg';
+    $wanted = $root . '/assets/images/manufacturers/' . $mfrMatch[1] . '.' . $ext;
+    $fallback = $root . '/assets/images/services/fire-alarms.jpg';
+    $serve = is_file($wanted) ? $wanted : (is_file($fallback) ? $fallback : '');
+    if ($serve !== '') {
+        header('Content-Type: image/jpeg');
+        header('Cache-Control: public, max-age=86400');
+        readfile($serve);
+        exit;
+    }
+}
+
+// Missing *-photo.jpg → working twin (Netlify static publish also has _redirects)
+if (preg_match('#^/assets/images/services/([a-z0-9\-]+)-photo\.(jpe?g|png)$#i', $uri, $photoMatch)) {
+    $ext = strtolower($photoMatch[2]) === 'png' ? 'png' : 'jpg';
+    $photo = $root . '/assets/images/services/' . $photoMatch[1] . '-photo.' . $ext;
+    $twin = $root . '/assets/images/services/' . $photoMatch[1] . '.' . $ext;
+    $serve = is_file($photo) ? $photo : (is_file($twin) ? $twin : '');
+    if ($serve !== '') {
+        header('Content-Type: ' . ($ext === 'png' ? 'image/png' : 'image/jpeg'));
+        header('Cache-Control: public, max-age=86400');
+        readfile($serve);
+        exit;
+    }
+}
+
+// Web app manifest — PHP front controller would otherwise 404 this static file
+if (strcasecmp($uri, '/manifest.json') === 0) {
+    $manifestCandidates = [
+        $root . DIRECTORY_SEPARATOR . 'manifest.json',
+        dirname($root) . DIRECTORY_SEPARATOR . 'manifest.json',
+    ];
+    foreach ($manifestCandidates as $manifestFile) {
+        if (is_file($manifestFile)) {
+            header('Content-Type: application/manifest+json; charset=utf-8');
+            header('Cache-Control: public, max-age=3600');
+            echo (string)file_get_contents($manifestFile);
+            exit;
+        }
+    }
+}
+
+// Root favicon when requested as /favicon.ico
+if (strcasecmp($uri, '/favicon.ico') === 0) {
+    $icoCandidates = [
+        $root . DIRECTORY_SEPARATOR . 'favicon.ico',
+        $root . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR . 'favicon.ico',
+    ];
+    foreach ($icoCandidates as $ico) {
+        if (is_file($ico)) {
+            header('Content-Type: image/x-icon');
+            header('Cache-Control: public, max-age=86400');
+            readfile($ico);
+            exit;
+        }
+    }
+}
+
 // robots.txt — host-aware Sitemap line
 if (strcasecmp($uri, '/robots.txt') === 0) {
     $file = $root . DIRECTORY_SEPARATOR . 'robots.txt';
@@ -91,15 +197,26 @@ if (strcasecmp($uri, '/robots.txt') === 0) {
     }
 }
 
-// Sitemaps — self-host locs on preview/prod host; keep all keyword URLs
+// Sitemaps — always 200 urlset. Prefer on-disk file; never rebuild keyword catalogues.
 if (preg_match('#^/sitemap(-[0-9]+)?\.xml$#i', $uri)) {
-    $file = $root . str_replace('/', DIRECTORY_SEPARATOR, $uri);
-    if (is_file($file)) {
-        header('Content-Type: application/xml; charset=utf-8');
-        header('Cache-Control: public, max-age=3600');
-        $xml = (string)file_get_contents($file);
-        $xml = seoStripShopProductUrls($xml);
-        echo seoRewritePublicHost($xml, $base_url);
+    header('Content-Type: application/xml; charset=utf-8');
+    header('Cache-Control: public, max-age=3600');
+    try {
+        if (preg_match('#^/sitemap-[0-9]+\.xml$#i', $uri)) {
+            header('Location: ' . $base_url . '/sitemap.xml', true, 301);
+            exit;
+        }
+        echo function_exists('icomplyServeSitemapXml')
+            ? icomplyServeSitemapXml($base_url)
+            : seoRewritePublicHost(seoCompactSitemap($base_url), $base_url);
+        exit;
+    } catch (Throwable $e) {
+        echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n"
+            . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n"
+            . '  <url><loc>' . htmlspecialchars($base_url . '/', ENT_XML1) . '</loc></url>' . "\n"
+            . '  <url><loc>' . htmlspecialchars($base_url . '/pages/areas', ENT_XML1) . '</loc></url>' . "\n"
+            . '  <url><loc>' . htmlspecialchars($base_url . '/pages/resources', ENT_XML1) . '</loc></url>' . "\n"
+            . '</urlset>' . "\n";
         exit;
     }
 }

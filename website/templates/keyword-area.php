@@ -46,7 +46,7 @@ $h = static function ($s): string {
 
 <section class="relative overflow-hidden bg-[#061828] text-white">
     <div class="absolute inset-0">
-        <img src="<?= $h($KEYWORD_IMAGE) ?>" alt="" class="w-full h-full object-cover opacity-30" loading="eager"
+        <img src="<?= $h($KEYWORD_IMAGE) ?>" alt="<?= $h(($KEYWORD_NAME ?? 'Compliance') . ' in ' . ($AREA ?? 'the North West')) ?>" class="w-full h-full object-cover opacity-30" loading="eager"
              onerror="this.src='<?= $h($SERVICE_IMAGE) ?>'">
         <div class="absolute inset-0 bg-gradient-to-r from-[#061828] via-[#061828]/95 to-[#061828]/80"></div>
     </div>

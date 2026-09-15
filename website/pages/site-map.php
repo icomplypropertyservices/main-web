@@ -102,7 +102,7 @@ require SITE_ROOT . '/includes/header.php';
                 Directory of <?= count($services) ?> services (fire safety, professional &amp; construction),
                 <?= count($areas) ?>+ towns, brands, keyword guides and resources.
                 Machine-readable list:
-                <a href="<?= url('/sitemap.xml') ?>" class="text-[#ff6b00] hover:underline font-medium">XML sitemap (<?= number_format(count($services) * count($areas) + count(getMajorKeywords())) ?>+ URLs)</a>.
+                <a href="<?= url('/sitemap.xml') ?>" class="text-[#ff6b00] hover:underline font-medium">XML sitemap (core pages, services, towns, brands and guides — no junk keyword×area URLs)</a>.
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#main-pages" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Main pages</a>

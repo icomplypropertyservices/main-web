@@ -10,8 +10,9 @@ return [
     'LEADS_NOTIFY_EMAIL' => '',
     'ADMIN_USER' => 'jackscott',
     'ADMIN_PASS' => 'change-me',
-    // Leave empty to disable tracking scripts
+    // Cookie-gated analytics (leave empty locally; set on Netlify for production)
     'GA_MEASUREMENT_ID' => '',
+    'GTM_CONTAINER_ID' => '',
     'AW_CONVERSION_ID' => '',
 
     // Shopify Buy Button / Storefront
