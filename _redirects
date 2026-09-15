@@ -53,21 +53,21 @@
 # Missing manufacturer logos (existing files still win on Netlify) → service fallback
 /assets/images/manufacturers/*    /assets/images/services/fire-alarms.jpg    200
 
-# Pretty URLs → matching .php (pre-rendered HTML in dist/)
-/privacy    /privacy.php    200
-/privacy/    /privacy.php    200
-/terms    /terms.php    200
-/terms/    /terms.php    200
-/contact    /contact.php    200
-/contact/    /contact.php    200
-/pages/about    /pages/about.php    200
-/pages/about/    /pages/about.php    200
-/pages/areas    /pages/areas.php    200
-/pages/areas/    /pages/areas.php    200
-/pages/manufacturers    /pages/manufacturers.php    200
-/pages/manufacturers/    /pages/manufacturers.php    200
-/pages/resources    /pages/resources.php    200
-/pages/resources/    /pages/resources.php    200
+# Pretty URLs → matching .php (pre-rendered HTML in dist/). 200! = force.
+/privacy    /privacy.php    200!
+/privacy/    /privacy.php    200!
+/terms    /terms.php    200!
+/terms/    /terms.php    200!
+/contact    /contact.php    200!
+/contact/    /contact.php    200!
+/pages/about    /pages/about.php    200!
+/pages/about/    /pages/about.php    200!
+/pages/areas    /pages/areas.php    200!
+/pages/areas/    /pages/areas.php    200!
+/pages/manufacturers    /pages/manufacturers.php    200!
+/pages/manufacturers/    /pages/manufacturers.php    200!
+/pages/resources    /pages/resources.php    200!
+/pages/resources/    /pages/resources.php    200!
 
 # Splat pretty URLs. No force — /assets and real files win.
 /*    /:splat.php    200

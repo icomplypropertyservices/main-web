@@ -234,76 +234,92 @@
   to = "/assets/images/services/fire-alarms.jpg"
   status = 200
 
-# Pretty URLs → pre-rendered HTML (stored as .php). No force: /assets wins.
+# Pretty URLs → pre-rendered HTML (stored as .php).
+# force=true on these hubs so a child-file directory (pages/areas/*)
+# cannot 301 /pages/areas → /pages/areas/. Splat has no force: /assets wins.
 [[redirects]]
   from = "/privacy"
   to = "/privacy.php"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/privacy/"
   to = "/privacy.php"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/terms"
   to = "/terms.php"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/terms/"
   to = "/terms.php"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/contact"
   to = "/contact.php"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/contact/"
   to = "/contact.php"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/pages/about"
   to = "/pages/about.php"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/pages/about/"
   to = "/pages/about.php"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/pages/areas"
   to = "/pages/areas.php"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/pages/areas/"
   to = "/pages/areas.php"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/pages/manufacturers"
   to = "/pages/manufacturers.php"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/pages/manufacturers/"
   to = "/pages/manufacturers.php"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/pages/resources"
   to = "/pages/resources.php"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/pages/resources/"
   to = "/pages/resources.php"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/*"

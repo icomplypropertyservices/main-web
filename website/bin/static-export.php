@@ -314,16 +314,13 @@ function icomplyWritePrettyFiles(string $dist, string $path, string $html): void
     }
     $rel = trim(str_replace('\\', '/', $path), '/');
     $phpFile = $dist . '/' . $rel . '.php';
-    $dir = $dist . '/' . $rel;
     $phpDir = dirname($phpFile);
     if (!is_dir($phpDir) && !mkdir($phpDir, 0755, true) && !is_dir($phpDir)) {
         throw new RuntimeException('Cannot mkdir ' . $phpDir);
     }
+    // Only write the .php HTML sibling. A {path}/index.html directory makes
+    // Netlify 301 /path → /path/ and breaks the 200 pretty-URL rewrite.
     file_put_contents($phpFile, $html);
-    if (!is_dir($dir) && !mkdir($dir, 0755, true) && !is_dir($dir)) {
-        throw new RuntimeException('Cannot mkdir ' . $dir);
-    }
-    file_put_contents($dir . '/index.html', $html);
 }
 
 function icomplyResetDist(string $dist): void
@@ -484,20 +481,22 @@ function icomplyPrettyUrlRedirects(): string
 /assets/images/manufacturers/*    /assets/images/services/fire-alarms.jpg    200
 
 # Explicit pretty URLs → pre-rendered HTML stored as .php
-/privacy                 /privacy.php                 200
-/privacy/                /privacy.php                 200
-/terms                   /terms.php                   200
-/terms/                  /terms.php                   200
-/contact                 /contact.php                 200
-/contact/                /contact.php                 200
-/pages/about             /pages/about.php             200
-/pages/about/            /pages/about.php             200
-/pages/areas             /pages/areas.php             200
-/pages/areas/            /pages/areas.php             200
-/pages/manufacturers     /pages/manufacturers.php     200
-/pages/manufacturers/    /pages/manufacturers.php     200
-/pages/resources         /pages/resources.php         200
-/pages/resources/        /pages/resources.php         200
+# 200! (force) so hubs with child files (e.g. /pages/areas/manchester.php)
+# do not 301 /pages/areas → /pages/areas/. Splat below stays unforced.
+/privacy                 /privacy.php                 200!
+/privacy/                /privacy.php                 200!
+/terms                   /terms.php                   200!
+/terms/                  /terms.php                   200!
+/contact                 /contact.php                 200!
+/contact/                /contact.php                 200!
+/pages/about             /pages/about.php             200!
+/pages/about/            /pages/about.php             200!
+/pages/areas             /pages/areas.php             200!
+/pages/areas/            /pages/areas.php             200!
+/pages/manufacturers     /pages/manufacturers.php     200!
+/pages/manufacturers/    /pages/manufacturers.php     200!
+/pages/resources         /pages/resources.php         200!
+/pages/resources/        /pages/resources.php         200!
 
 # Splat pretty URLs. No force — /assets and real files win.
 /*                       /:splat.php                  200
