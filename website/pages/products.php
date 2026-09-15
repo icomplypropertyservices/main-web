@@ -33,25 +33,25 @@ require SITE_ROOT . '/includes/header.php';
 </section>
 <section class="max-w-7xl mx-auto px-6 py-16">
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <a class="p-8 bg-white border rounded-3xl hover:border-[#FF6B00] transition" href="<?= url('/pages/electrical-safety-landlords') ?>">
+        <a class="p-8 bg-white border rounded-3xl hover:border-[#FF6B00] transition" href="/shop/electrical/">
             <div class="text-xs uppercase tracking-[3px] text-[#FF6B00] font-semibold">Electrical</div>
             <h2 class="text-xl font-semibold mt-2 text-black">Electrical</h2>
-            <p class="mt-2 text-sm text-zinc-600">Landlord EICR and electrical safety hub. Trade parts via the shop.</p>
+            <p class="mt-2 text-sm text-zinc-600">Live electrical SKUs on the trade hub. Checkout stays on shop.*</p>
         </a>
-        <a class="p-8 bg-white border rounded-3xl hover:border-[#FF6B00] transition" href="<?= url('/pages/commercial-fire-safety') ?>">
+        <a class="p-8 bg-white border rounded-3xl hover:border-[#FF6B00] transition" href="/shop/fire/">
             <div class="text-xs uppercase tracking-[3px] text-[#FF6B00] font-semibold">Fire</div>
             <h2 class="text-xl font-semibold mt-2 text-black">Fire</h2>
-            <p class="mt-2 text-sm text-zinc-600">Commercial fire safety hub. Alarms, lighting and extinguishers in the shop.</p>
+            <p class="mt-2 text-sm text-zinc-600">Panels, detectors and the live fire catalogue.</p>
         </a>
-        <a class="p-8 bg-white border rounded-3xl hover:border-[#FF6B00] transition" href="<?= url('/pages/services/cctv') ?>">
+        <a class="p-8 bg-white border rounded-3xl hover:border-[#FF6B00] transition" href="/shop/security/">
             <div class="text-xs uppercase tracking-[3px] text-[#FF6B00] font-semibold">Security</div>
             <h2 class="text-xl font-semibold mt-2 text-black">Security</h2>
-            <p class="mt-2 text-sm text-zinc-600">CCTV and access control. Kits and accessories on shop.*</p>
+            <p class="mt-2 text-sm text-zinc-600">Gates, intercoms and automation from the live dump.</p>
         </a>
-        <a class="p-8 bg-white border rounded-3xl hover:border-[#FF6B00] transition" href="<?= url('/pages/gas-safety-certificate') ?>">
+        <a class="p-8 bg-white border rounded-3xl hover:border-[#FF6B00] transition" href="/shop/gas/">
             <div class="text-xs uppercase tracking-[3px] text-[#FF6B00] font-semibold">Gas</div>
             <h2 class="text-xl font-semibold mt-2 text-black">Gas</h2>
-            <p class="mt-2 text-sm text-zinc-600">Enquire hub for landlord gas safety records — not a published parts catalogue.</p>
+            <p class="mt-2 text-sm text-zinc-600">Enquire / POA hub until a live gas SKU exists.</p>
         </a>
     </div>
     <?php /* Marketing subdomain optional until DNS live: https://marketing.icomplypropertyservices.co.uk */ ?>

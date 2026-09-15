@@ -309,6 +309,8 @@ function icomplyMegaHeaderHtml(): string
       <span class="mega-wordmark"><b>iComply</b><small>Property Services</small></span>
     </a>
     <nav class="mega-desktop" aria-label="Primary">
+      <!-- Shared suite (box handoff, do not invent): Shop shop.* · Products shop.* · Services /pages/services · Areas /pages/areas · Contact /contact -->
+      <!-- Marketing https://marketing.icomplypropertyservices.co.uk — optional until DNS live -->
       <a class="nav-link" href="{$home}">Home</a>
       <a class="nav-link" href="{$shopExt}" target="_blank" rel="noopener">Shop</a>
       <a class="nav-link" href="{$products}" target="_blank" rel="noopener">Products</a>
@@ -369,6 +371,7 @@ function icomplyMegaHeaderHtml(): string
     </div>
   </div>
   <nav class="mega-suite" aria-label="Trade suites">
+    <!-- Hub labels from box handoff: Electrical / Fire / Security / Gas → /shop/{hub}/ -->
     <a href="{$hubElectrical}">Electrical</a>
     <a href="{$hubFire}">Fire</a>
     <a href="{$hubSecurity}">Security</a>
@@ -586,11 +589,15 @@ function icomplyFooterHtml(): string
         <div class="foot-links">
           <a href="https://shop.icomplypropertyservices.co.uk/" target="_blank" rel="noopener">Shop</a>
           <a href="https://shop.icomplypropertyservices.co.uk/" target="_blank" rel="noopener">Products / trade materials</a>
+          <a href="{$svcHub}">Services</a>
+          <a href="{$areaHub}">Areas</a>
+          <a href="{$contact}">Contact</a>
           <a href="/shop/">Trade shop hubs</a>
-          <a href="/shop/fire/">Fire</a>
           <a href="/shop/electrical/">Electrical</a>
+          <a href="/shop/fire/">Fire</a>
           <a href="/shop/security/">Security</a>
           <a href="/shop/gas/">Gas</a>
+          <!-- Marketing https://marketing.icomplypropertyservices.co.uk — optional until DNS live -->
         </div>
       </details>
       <details class="foot-drop">
