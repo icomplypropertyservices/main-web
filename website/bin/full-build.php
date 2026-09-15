@@ -14,6 +14,7 @@ if (stripos(PHP_OS, 'WIN') === 0 && is_file('C:\\xampp\\php\\php.exe')) {
 $jobs = [
     'combo' => 'generate-site.php',
     'keywords' => 'generate-keyword-pages.php',
+    'building-gas' => 'generate-building-gas-pages.php',
     'keyword-areas' => 'generate-keyword-area-pages.php',
     'areas' => 'generate-area-hubs.php',
     'services' => 'generate-service-hubs.php',

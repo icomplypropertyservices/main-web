@@ -347,6 +347,9 @@ function getMajorKeywords(): array {
     if (function_exists('seoIaApplyJobOverlay')) {
         $normalized = seoIaApplyJobOverlay($normalized);
     }
+    if (function_exists('jobTypesApplyBuildingGas')) {
+        $normalized = jobTypesApplyBuildingGas($normalized);
+    }
     if (function_exists('jobTypesApplyMaster')) {
         $normalized = jobTypesApplyMaster($normalized);
     }
@@ -388,11 +391,12 @@ function getElectricalGasFamilyServices(): array {
 function getElectricalGasMatrixKeywordSlugs(): array {
     $out = [];
     foreach (getElectricalGasFamilyServices() as $svc) {
-        foreach (array_keys(getKeywordsForService($svc)) as $slug) {
+        foreach (getKeywordsForService($svc) as $slug => $meta) {
             $slug = keywordSlug((string)$slug);
-            if ($slug !== '') {
-                $out[$slug] = true;
+            if ($slug === '' || !empty($meta['hub_only'])) {
+                continue;
             }
+            $out[$slug] = true;
         }
     }
     return array_keys($out);
@@ -752,6 +756,11 @@ if (is_file($seoIaFile)) {
 $jobTypesMasterFile = __DIR__ . '/includes/job-types-master.php';
 if (is_file($jobTypesMasterFile)) {
     require_once $jobTypesMasterFile;
+}
+
+$jobTypesBuildingGasFile = __DIR__ . '/includes/job-types-building-gas.php';
+if (is_file($jobTypesBuildingGasFile)) {
+    require_once $jobTypesBuildingGasFile;
 }
 
 // Back-compat globals used by some templates/includes
