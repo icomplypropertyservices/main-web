@@ -72,23 +72,27 @@
 
 [[redirects]]
   from = "/shop"
-  to = "/shop/index"
+  to = "/shop.php"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/shop/"
-  to = "/shop/index"
+  to = "/shop.php"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/products"
-  to = "/pages/products"
+  to = "/products.php"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/products/"
-  to = "/pages/products"
+  to = "/products.php"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/about"

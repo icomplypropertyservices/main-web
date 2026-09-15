@@ -584,10 +584,10 @@ function icomplyPrettyUrlRedirects(): string
 /news/                   /pages/resources 301
 
 # Shop / products — trade hubs (never 301 to packages)
-/shop                    /shop/index.php           200!
-/shop/                   /shop/index.php           200!
-/products                /pages/products.php       200!
-/products/               /pages/products.php       200!
+/shop                    /shop.php                 200!
+/shop/                   /shop.php                 200!
+/products                /products.php             200!
+/products/               /products.php             200!
 
 # Old 470-part sitemap index → single compact urlset
 /sitemap-*.xml           /sitemap.xml    301
