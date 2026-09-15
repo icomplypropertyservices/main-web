@@ -36,6 +36,7 @@ if (!is_dir($root)) {
 chdir($root);
 
 require_once $root . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'router.php';
+require_once $root . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'sitemap.php';
 
 $uri = routerRequestPath();
 
@@ -54,50 +55,19 @@ function seoRewritePublicHost(string $body, string $baseUrl): string {
     return $body;
 }
 
-/** Compact accurate sitemap when the large on-disk parts are missing or fail. */
+/** Compact accurate sitemap (shared builder — never 500, never keyword×area junk). */
 function seoCompactSitemap(string $baseUrl): string {
+    if (function_exists('icomplyBuildSitemapXml')) {
+        return icomplyBuildSitemapXml($baseUrl);
+    }
     $base = rtrim($baseUrl, '/');
-    $paths = [
-        '/',
-        '/contact',
-        '/privacy',
-        '/terms',
-        '/thank-you',
-        '/pages/about',
-        '/pages/faq',
-        '/pages/services',
-        '/pages/areas',
-        '/pages/manufacturers',
-        '/pages/resources',
-        '/pages/keywords',
-        '/pages/packages',
-        '/pages/landlords',
-        '/pages/commercial',
-        '/pages/resources/eicr-guide',
-        '/pages/resources/fire-alarm-servicing',
-        '/pages/resources/emergency-lighting-testing',
-        '/pages/resources/cctv-for-business',
-        '/pages/resources/access-control-guide',
-        '/pages/resources/landlord-compliance-checklist',
-    ];
-    if (function_exists('getServices')) {
-        foreach (array_keys(getServices()) as $slug) {
-            $paths[] = '/pages/services/' . $slug;
-        }
-    }
-    $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
-    $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
-    $seen = [];
-    foreach ($paths as $path) {
-        if (isset($seen[$path])) {
-            continue;
-        }
-        $seen[$path] = true;
-        $loc = $path === '/' ? $base : $base . $path;
-        $xml .= '  <url><loc>' . htmlspecialchars($loc, ENT_XML1) . '</loc></url>' . "\n";
-    }
-    $xml .= '</urlset>' . "\n";
-    return $xml;
+    return '<?xml version="1.0" encoding="UTF-8"?>' . "\n"
+        . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n"
+        . '  <url><loc>' . htmlspecialchars($base . '/', ENT_XML1) . '</loc></url>' . "\n"
+        . '  <url><loc>' . htmlspecialchars($base . '/pages/areas', ENT_XML1) . '</loc></url>' . "\n"
+        . '  <url><loc>' . htmlspecialchars($base . '/pages/manufacturers', ENT_XML1) . '</loc></url>' . "\n"
+        . '  <url><loc>' . htmlspecialchars($base . '/pages/resources', ENT_XML1) . '</loc></url>' . "\n"
+        . '</urlset>' . "\n";
 }
 
 /** Drop shop/products locs from served sitemaps (they 301 to packages). */
@@ -135,6 +105,20 @@ if ($aliasPath === '/privacy-policy') {
 if ($aliasPath === '/terms-and-conditions') {
     header('Location: ' . $base_url . '/terms', true, 301);
     exit;
+}
+
+// Missing *-photo.jpg → working twin (Netlify static publish also has _redirects)
+if (preg_match('#^/assets/images/services/([a-z0-9\-]+)-photo\.(jpe?g|png)$#i', $uri, $photoMatch)) {
+    $ext = strtolower($photoMatch[2]) === 'png' ? 'png' : 'jpg';
+    $photo = $root . '/assets/images/services/' . $photoMatch[1] . '-photo.' . $ext;
+    $twin = $root . '/assets/images/services/' . $photoMatch[1] . '.' . $ext;
+    $serve = is_file($photo) ? $photo : (is_file($twin) ? $twin : '');
+    if ($serve !== '') {
+        header('Content-Type: ' . ($ext === 'png' ? 'image/png' : 'image/jpeg'));
+        header('Cache-Control: public, max-age=86400');
+        readfile($serve);
+        exit;
+    }
 }
 
 // Web app manifest — PHP front controller would otherwise 404 this static file
@@ -180,30 +164,23 @@ if (strcasecmp($uri, '/robots.txt') === 0) {
     }
 }
 
-// Sitemaps — never 500. Prefer on-disk parts; fall back to a compact accurate index.
+// Sitemaps — always emit a compact urlset. Never 500. Never serve 470-part junk.
 if (preg_match('#^/sitemap(-[0-9]+)?\.xml$#i', $uri)) {
     header('Content-Type: application/xml; charset=utf-8');
     header('Cache-Control: public, max-age=3600');
     try {
-        $file = $root . str_replace('/', DIRECTORY_SEPARATOR, $uri);
-        if (is_file($file) && is_readable($file)) {
-            $xml = (string)file_get_contents($file);
-            if ($xml !== '') {
-                $xml = seoStripShopProductUrls($xml);
-                echo seoRewritePublicHost($xml, $base_url);
-                exit;
-            }
-        }
-        // Compact fallback: only URLs this router will serve (no phantom parts).
-        if (preg_match('#^/sitemap-([0-9]+)\.xml$#i', $uri, $partMatch) && (int)$partMatch[1] > 1) {
-            http_response_code(404);
-            echo '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>';
+        if (preg_match('#^/sitemap-[0-9]+\.xml$#i', $uri)) {
+            // Old live index listed hundreds of parts; they are gone. Point crawlers at the real file.
+            header('Location: ' . $base_url . '/sitemap.xml', true, 301);
             exit;
         }
         echo seoRewritePublicHost(seoCompactSitemap($base_url), $base_url);
         exit;
     } catch (Throwable $e) {
-        echo seoRewritePublicHost(seoCompactSitemap($base_url), $base_url);
+        echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n"
+            . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n"
+            . '  <url><loc>' . htmlspecialchars($base_url . '/', ENT_XML1) . '</loc></url>' . "\n"
+            . '</urlset>' . "\n";
         exit;
     }
 }

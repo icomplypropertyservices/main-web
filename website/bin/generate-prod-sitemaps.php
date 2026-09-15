@@ -3,7 +3,7 @@
  * Generate sitemaps + robots for production domain.
  * Usage: php bin/generate-prod-sitemaps.php [https://www.icomplypropertyservices.co.uk]
  */
-$prod = $argv[1] ?? 'https://www.icomplypropertyservices.co.uk';
+$prod = $argv[1] ?? 'https://icomplypropertyservices.co.uk';
 $prod = rtrim($prod, '/');
 
 // Force SITE_URL before config defines constants

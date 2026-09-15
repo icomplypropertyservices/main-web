@@ -27,6 +27,7 @@ $required = [
     '/404.php',
     '/thank-you.php',
     '/robots.txt',
+    '/sitemap.xml',
 ];
 
 $fail = 0;

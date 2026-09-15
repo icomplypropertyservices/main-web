@@ -10,49 +10,8 @@
 /products    /pages/packages    301
 /products/*    /pages/packages    301
 
-# FRA photo: file is also committed; this 301 covers deploys that omit the extra asset
-/assets/images/services/fire-risk-assessments-photo.jpg    /assets/images/services/fire-risk-assessments.jpg    200
+# Old 470-part sitemap index → single compact urlset
+/sitemap-*.xml    /sitemap.xml    301
 
 # Missing *-photo.jpg → working twin (static assets bypass PHP)
-/assets/images/services/bathrooms-photo.jpg    /assets/images/services/bathrooms.jpg    301
-/assets/images/services/brickwork-photo.jpg    /assets/images/services/brickwork.jpg    301
-/assets/images/services/building-maintenance-photo.jpg    /assets/images/services/building-maintenance.jpg    301
-/assets/images/services/building-surveys-photo.jpg    /assets/images/services/building-surveys.jpg    301
-/assets/images/services/carpentry-photo.jpg    /assets/images/services/carpentry.jpg    301
-/assets/images/services/cdm-support-photo.jpg    /assets/images/services/cdm-support.jpg    301
-/assets/images/services/commercial-fit-out-photo.jpg    /assets/images/services/commercial-fit-out.jpg    301
-/assets/images/services/compliance-consultancy-photo.jpg    /assets/images/services/compliance-consultancy.jpg    301
-/assets/images/services/damp-proofing-photo.jpg    /assets/images/services/damp-proofing.jpg    301
-/assets/images/services/dry-lining-photo.jpg    /assets/images/services/dry-lining.jpg    301
-/assets/images/services/dry-risers-photo.jpg    /assets/images/services/dry-risers.jpg    301
-/assets/images/services/electrics-first-fix-photo.jpg    /assets/images/services/electrics-first-fix.jpg    301
-/assets/images/services/evacuation-alerts-photo.jpg    /assets/images/services/evacuation-alerts.jpg    301
-/assets/images/services/extensions-photo.jpg    /assets/images/services/extensions.jpg    301
-/assets/images/services/facilities-management-photo.jpg    /assets/images/services/facilities-management.jpg    301
-/assets/images/services/fire-compartmentation-photo.jpg    /assets/images/services/fire-compartmentation.jpg    301
-/assets/images/services/fire-doors-photo.jpg    /assets/images/services/fire-doors.jpg    301
-/assets/images/services/fire-extinguishers-photo.jpg    /assets/images/services/fire-extinguishers.jpg    301
-/assets/images/services/fire-signage-photo.jpg    /assets/images/services/fire-signage.jpg    301
-/assets/images/services/fire-stopping-photo.jpg    /assets/images/services/fire-stopping.jpg    301
-/assets/images/services/fire-suppression-photo.jpg    /assets/images/services/fire-suppression.jpg    301
-/assets/images/services/flooring-photo.jpg    /assets/images/services/flooring.jpg    301
-/assets/images/services/groundworks-photo.jpg    /assets/images/services/groundworks.jpg    301
-/assets/images/services/heating-photo.jpg    /assets/images/services/heating.jpg    301
-/assets/images/services/insulation-photo.jpg    /assets/images/services/insulation.jpg    301
-/assets/images/services/joinery-photo.jpg    /assets/images/services/joinery.jpg    301
-/assets/images/services/kitchen-fire-suppression-photo.jpg    /assets/images/services/kitchen-fire-suppression.jpg    301
-/assets/images/services/kitchens-photo.jpg    /assets/images/services/kitchens.jpg    301
-/assets/images/services/landlord-compliance-photo.jpg    /assets/images/services/landlord-compliance.jpg    301
-/assets/images/services/landscaping-photo.jpg    /assets/images/services/landscaping.jpg    301
-/assets/images/services/loft-conversions-photo.jpg    /assets/images/services/loft-conversions.jpg    301
-/assets/images/services/painting-decorating-photo.jpg    /assets/images/services/painting-decorating.jpg    301
-/assets/images/services/plastering-photo.jpg    /assets/images/services/plastering.jpg    301
-/assets/images/services/plumbing-photo.jpg    /assets/images/services/plumbing.jpg    301
-/assets/images/services/project-management-photo.jpg    /assets/images/services/project-management.jpg    301
-/assets/images/services/property-refurbishment-pm-photo.jpg    /assets/images/services/property-refurbishment-pm.jpg    301
-/assets/images/services/rendering-photo.jpg    /assets/images/services/rendering.jpg    301
-/assets/images/services/renovation-photo.jpg    /assets/images/services/renovation.jpg    301
-/assets/images/services/roofing-photo.jpg    /assets/images/services/roofing.jpg    301
-/assets/images/services/sprinkler-systems-photo.jpg    /assets/images/services/sprinkler-systems.jpg    301
-/assets/images/services/tiling-photo.jpg    /assets/images/services/tiling.jpg    301
-/assets/images/services/windows-doors-photo.jpg    /assets/images/services/windows-doors.jpg    301
+/assets/images/services/*-photo.jpg    /assets/images/services/:splat.jpg    200

@@ -177,16 +177,29 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
             @page { margin: 1.5cm; }
         }
     </style>
-    <?php if (GA_MEASUREMENT_ID !== '' || AW_CONVERSION_ID !== ''): ?>
+    <?php
+    $gaId = defined('GA_MEASUREMENT_ID') ? trim((string)GA_MEASUREMENT_ID) : '';
+    $awId = defined('AW_CONVERSION_ID') ? trim((string)AW_CONVERSION_ID) : '';
+    $gtmId = defined('GTM_CONTAINER_ID') ? trim((string)GTM_CONTAINER_ID) : '';
+    ?>
+    <!-- Google tag (gtag.js) / GTM — loads after #cookie-banner consent when IDs are set -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         window.__icomplyAnalytics = {
-            ga: <?= json_encode(GA_MEASUREMENT_ID !== '' ? GA_MEASUREMENT_ID : '') ?>,
-            aw: <?= json_encode(AW_CONVERSION_ID !== '' ? AW_CONVERSION_ID : '') ?>,
+            ga: <?= json_encode($gaId) ?>,
+            aw: <?= json_encode($awId) ?>,
+            gtm: <?= json_encode($gtmId) ?>,
             load: function () {
                 if (window.__icomplyAnalyticsLoaded) return;
                 window.__icomplyAnalyticsLoaded = true;
+                if (this.gtm) {
+                    var gtmS = document.createElement('script');
+                    gtmS.async = true;
+                    gtmS.src = 'https://www.googletagmanager.com/gtm.js?id=' + encodeURIComponent(this.gtm);
+                    document.head.appendChild(gtmS);
+                    window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+                }
                 var id = this.ga || this.aw;
                 if (!id) return;
                 var s = document.createElement('script');
@@ -204,7 +217,6 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
             }
         } catch (e) {}
     </script>
-    <?php endif; ?>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",

@@ -54,11 +54,54 @@ function shopifyCollectionUrl(array $collection): string {
     return url('/shop/index.php') . '#collection-' . rawurlencode($collection['id'] ?? '');
 }
 
-function shopifyImageSrc(string $path): string {
-    if (strpos($path, 'http') === 0) {
-        return $path;
+/**
+ * Never emit a broken Shopify CDN / missing local path.
+ * Homepage featured packages previously pointed at 404ing cdn.shopify.com PNGs.
+ */
+function shopifyImageSrc(string $path, string $hint = ''): string {
+    $path = trim($path);
+    if ($path !== '' && !preg_match('#^https?://#i', $path)) {
+        $rel = '/' . ltrim(str_replace('\\', '/', $path), '/');
+        if (is_file(SITE_ROOT . $rel)) {
+            return url($rel);
+        }
     }
-    return url($path);
+    $hay = strtolower($path . ' ' . $hint);
+    $aliases = [
+        'electrical' => 'electrical',
+        'fire-alarm' => 'fire-alarms',
+        'emergency-lighting' => 'emergency-lighting',
+        'aov' => 'aov-air-handling',
+        'air-handling' => 'aov-air-handling',
+        'nurse-call' => 'nurse-call',
+        'gas-safety' => 'gas-systems',
+        'gas' => 'gas-systems',
+        'intruder' => 'intruder-alarm',
+        'cctv' => 'cctv',
+        'access-control' => 'access-control',
+        'door-entry' => 'door-entry',
+        'intercom' => 'intercoms',
+        'landlord' => 'landlord-compliance',
+        'fire-risk' => 'fire-risk-assessments',
+        'kentec' => 'fire-alarms',
+        'apollo' => 'fire-alarms',
+        'hochiki' => 'fire-alarms',
+        'paxton' => 'access-control',
+        'hikvision' => 'cctv',
+    ];
+    foreach ($aliases as $needle => $slug) {
+        if (str_contains($hay, $needle)) {
+            return function_exists('serviceImageUrl') ? serviceImageUrl($slug) : url('/assets/images/services/' . $slug . '.jpg');
+        }
+    }
+    if (function_exists('getServices')) {
+        foreach (array_keys(getServices()) as $slug) {
+            if ($slug !== '' && str_contains($hay, $slug)) {
+                return serviceImageUrl($slug);
+            }
+        }
+    }
+    return url('/assets/images/services/fire-alarms.jpg');
 }
 
 /**
@@ -74,7 +117,7 @@ function shopifyCardFromManufacturerProduct(array $p, string $mfrSlug, string $m
         'title' => $p['title'] ?? ($mfrName . ' product'),
         'blurb' => $p['blurb'] ?? '',
         'price' => $p['price'] ?? 'POA',
-        'image' => $p['image'] ?? ('/assets/images/manufacturers/' . $mfrSlug . '.jpg'),
+        'image' => $p['image'] ?? (function_exists('manufacturerImageUrl') ? manufacturerImageUrl($mfrSlug) : ('/assets/images/manufacturers/' . $mfrSlug . '.jpg')),
         'handle' => $p['handle'] ?? '',
         'shopify_product_id' => $p['shopify_product_id'] ?? '',
         'badge' => $p['badge'] ?? '',
@@ -88,7 +131,10 @@ function shopifyProductCardHtml(array $product, bool $compact = false): string {
     $blurb = htmlspecialchars($product['blurb'] ?? '', ENT_QUOTES, 'UTF-8');
     $price = htmlspecialchars($product['price'] ?? '', ENT_QUOTES, 'UTF-8');
     $badge = trim((string)($product['badge'] ?? ''));
-    $img = htmlspecialchars(shopifyImageSrc($product['image'] ?? '/assets/images/services/fire-alarms.jpg'), ENT_QUOTES, 'UTF-8');
+    $img = htmlspecialchars(shopifyImageSrc(
+        (string)($product['image'] ?? ''),
+        (string)(($product['id'] ?? '') . ' ' . ($product['handle'] ?? '') . ' ' . ($product['title'] ?? ''))
+    ), ENT_QUOTES, 'UTF-8');
     $fallback = htmlspecialchars(url('/assets/images/services/fire-alarms.jpg'), ENT_QUOTES, 'UTF-8');
     $href = htmlspecialchars(shopifyProductUrl($product), ENT_QUOTES, 'UTF-8');
     $shopifyId = preg_replace('/\D+/', '', (string)($product['shopify_product_id'] ?? ''));
@@ -122,7 +168,10 @@ function shopifyProductCardHtml(array $product, bool $compact = false): string {
 function shopifyCollectionCardHtml(array $collection): string {
     $title = htmlspecialchars($collection['title'] ?? 'Collection', ENT_QUOTES, 'UTF-8');
     $blurb = htmlspecialchars($collection['blurb'] ?? '', ENT_QUOTES, 'UTF-8');
-    $img = htmlspecialchars(shopifyImageSrc($collection['image'] ?? '/assets/images/services/fire-alarms.jpg'), ENT_QUOTES, 'UTF-8');
+    $img = htmlspecialchars(shopifyImageSrc(
+        (string)($collection['image'] ?? ''),
+        (string)(($collection['id'] ?? '') . ' ' . ($collection['handle'] ?? '') . ' ' . ($collection['title'] ?? ''))
+    ), ENT_QUOTES, 'UTF-8');
     $href = htmlspecialchars(shopifyCollectionUrl($collection), ENT_QUOTES, 'UTF-8');
     $id = htmlspecialchars($collection['id'] ?? '', ENT_QUOTES, 'UTF-8');
     $collId = preg_replace('/\D+/', '', (string)($collection['shopify_collection_id'] ?? ''));
@@ -131,11 +180,12 @@ function shopifyCollectionCardHtml(array $collection): string {
     $extra = ($collId !== '' && shopifyEnabled())
         ? '<div id="' . $mountId . '" class="shopify-collection-mount mt-3" data-collection-id="' . htmlspecialchars($collId, ENT_QUOTES, 'UTF-8') . '"></div>'
         : '<span class="inline-block mt-4 text-sm font-semibold text-[#ff6b00]">Shop collection →</span>';
+    $fallback = htmlspecialchars(url('/assets/images/services/fire-alarms.jpg'), ENT_QUOTES, 'UTF-8');
 
     return <<<HTML
 <a id="collection-{$id}" href="{$href}" class="shop-collection-card group block bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition">
   <div class="relative h-40 overflow-hidden bg-zinc-100">
-    <img src="{$img}" alt="{$title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy">
+    <img src="{$img}" alt="{$title} — Icomply Property Services" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" onerror="this.src='{$fallback}'">
     <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
     <div class="absolute bottom-3 left-4 right-4 text-white font-semibold text-lg">{$title}</div>
   </div>

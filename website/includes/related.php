@@ -146,7 +146,7 @@ function relatedManufacturersHtml(string $serviceSlug = '', int $limit = 8): str
     foreach ($picked as $row) {
         $slug = preg_replace('/[^a-z0-9\-]/', '', (string)$row['slug']);
         $href = htmlspecialchars(url('/pages/manufacturers/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
-        $src = htmlspecialchars(url('/assets/images/manufacturers/' . $slug . '.jpg'), ENT_QUOTES, 'UTF-8');
+        $src = htmlspecialchars(manufacturerImageUrl($slug, $serviceSlug !== '' ? $serviceSlug : 'fire-alarms'), ENT_QUOTES, 'UTF-8');
         $label = htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8');
         $html .= '<a href="' . $href . '" class="group bg-white border rounded-2xl overflow-hidden hover:border-[#ff6b00] hover:shadow-md transition block">'
             . '<div class="h-24 bg-zinc-100 overflow-hidden">'

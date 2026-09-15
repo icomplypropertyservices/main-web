@@ -60,6 +60,16 @@
   to = "/terms"
   status = 301
 
+[[redirects]]
+  from = "/sitemap-*.xml"
+  to = "/sitemap.xml"
+  status = 301
+
+[[redirects]]
+  from = "/assets/images/services/*-photo.jpg"
+  to = "/assets/images/services/:splat.jpg"
+  status = 200
+
 [[headers]]
   for = "/robots.txt"
   [headers.values]

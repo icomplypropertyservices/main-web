@@ -9,7 +9,7 @@ $pageTitle = 'Property Compliance in the North West | Icomply Property Services'
 $metaDesc = 'Icomply Property Services — fire risk assessments, fire safety systems, electrical, gas, security, landlord compliance, kitchens, bathrooms and renovation across Greater Manchester and the North West. Based in Offerton, Stockport SK2 5DE.';
 $canonicalUrl = url('/');
 $metaKeywords = 'fire risk assessment Stockport, fire safety systems Manchester, kitchen fitting North West, bathroom renovation, EICR, landlord compliance';
-$ogImage = url('/assets/images/services/fire-alarms.jpg');
+$ogImage = url('/assets/images/services/fire-risk-assessments.jpg');
 
 $services = getServices();
 $areas = getAreas();
@@ -93,7 +93,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             ?>
             <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                class="group relative rounded-3xl overflow-hidden border border-white/10 min-h-[140px] bg-white/5 hover:border-[#ff6b00] transition">
-                <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> in the North West — Icomply Property Services" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-55 transition" loading="lazy">
+                <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> in the North West — Icomply Property Services" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-55 transition" loading="lazy"
                      onerror="this.src='<?= htmlspecialchars(url('/assets/images/services/fire-alarms.jpg'), ENT_QUOTES, 'UTF-8') ?>'">
                 <div class="relative p-5 h-full flex flex-col justify-end">
                     <div class="font-semibold text-white text-lg leading-tight"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></div>
@@ -151,12 +151,12 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             <?php foreach ($show as $slug => $name):
                 $blurb = getServiceBlurb($slug, true);
-                $img = url('/assets/images/services/' . $slug . '.jpg');
+                $img = serviceImageUrl($slug);
             ?>
             <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                class="service-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="h-36 bg-zinc-100 overflow-hidden">
-                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>"
+                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> in Greater Manchester and the North West — Icomply Property Services"
                          class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy"
                          onerror="this.src='<?= htmlspecialchars(url('/assets/images/services/fire-alarms.jpg'), ENT_QUOTES, 'UTF-8') ?>'">
                 </div>
