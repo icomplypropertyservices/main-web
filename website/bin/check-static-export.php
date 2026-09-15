@@ -38,6 +38,15 @@ $needHtml = [
     '/pages/keywords/fire-risk-assessment' => ['pages/keywords/fire-risk-assessment.php', ['Fire', '<!DOCTYPE']],
     '/pages/keywords/cctv-installation' => ['pages/keywords/cctv-installation.php', ['CCTV', '<!DOCTYPE']],
     '/pages/keywords/eicr/stockport' => ['pages/keywords/eicr/stockport.php', ['EICR', 'Stockport', '<!DOCTYPE']],
+    '/pages/keywords/rewire' => ['pages/keywords/rewire.php', ['Rewire', '<!DOCTYPE']],
+    '/pages/keywords/domestic-rewire' => ['pages/keywords/domestic-rewire.php', ['Domestic Rewire', '<!DOCTYPE']],
+    '/pages/keywords/emergency-electrician' => ['pages/keywords/emergency-electrician.php', ['Emergency Electrician', '<!DOCTYPE']],
+    '/pages/keywords/boiler' => ['pages/keywords/boiler.php', ['Boiler', '<!DOCTYPE']],
+    '/pages/keywords/rewire/stockport' => ['pages/keywords/rewire/stockport.php', ['Rewire', 'Stockport', '<!DOCTYPE']],
+    '/pages/keywords/domestic-rewire/manchester' => ['pages/keywords/domestic-rewire/manchester.php', ['Domestic Rewire', 'Manchester', '<!DOCTYPE']],
+    '/pages/keywords/emergency-electrician/bolton' => ['pages/keywords/emergency-electrician/bolton.php', ['Emergency Electrician', 'Bolton', '<!DOCTYPE']],
+    '/pages/keywords/boiler/stockport' => ['pages/keywords/boiler/stockport.php', ['Boiler', 'Stockport', '<!DOCTYPE']],
+    '/pages/keywords/price-of-rewire' => ['pages/keywords/price-of-rewire.php', ['POA', '<!DOCTYPE']],
 ];
 
 echo "Icomply static-export check  dist={$dist}\n";
@@ -157,6 +166,38 @@ if ($kwTownFiles >= 12) {
 } else {
     $fail++;
     echo "[FAIL] keyword×town exported={$kwTownFiles} (need town combos)\n";
+}
+
+require_once $websiteRoot . '/config.php';
+$elecGasSlugs = function_exists('getElectricalGasMatrixKeywordSlugs') ? getElectricalGasMatrixKeywordSlugs() : [];
+$areaCount = function_exists('getAreas') ? count(getAreas()) : 0;
+$matrixExpect = count($elecGasSlugs) * $areaCount;
+$matrixHave = 0;
+foreach ($elecGasSlugs as $slug) {
+    $dir = $kwDir . '/' . $slug;
+    if (!is_dir($dir)) {
+        continue;
+    }
+    foreach (glob($dir . '/*.php') ?: [] as $file) {
+        $matrixHave++;
+    }
+}
+if ($areaCount > 0 && $matrixHave >= (int)floor($matrixExpect * 0.98)) {
+    $pass++;
+    echo "[PASS] electrical+gas keyword×area exported={$matrixHave} (expect ~{$matrixExpect})\n";
+} else {
+    $fail++;
+    echo "[FAIL] electrical+gas keyword×area exported={$matrixHave} (expect ~{$matrixExpect})\n";
+}
+foreach (['rewire', 'domestic-rewire', 'emergency-electrician', 'boiler'] as $needSlug) {
+    $sample = $kwDir . '/' . $needSlug . '/stockport.php';
+    if (is_file($sample)) {
+        $pass++;
+        echo "[PASS] sample {$needSlug}/stockport.php\n";
+    } else {
+        $fail++;
+        echo "[FAIL] missing sample {$needSlug}/stockport.php\n";
+    }
 }
 
 $redirectNeedles = ['/*', '/:splat.php', '/privacy', '/pages/about', '/assets/', '/pages/keywords', '/pages/keywords/:slug'];

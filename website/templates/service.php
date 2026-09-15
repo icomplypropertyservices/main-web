@@ -338,8 +338,9 @@ $schema = [
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <?php
             $shown = 0;
+            $cardLimit = in_array($serviceSlug, getElectricalGasFamilyServices(), true) ? 0 : 18;
             foreach ($svcKeywords as $kwSlug => $kwMeta):
-                if ($shown >= 18) {
+                if ($cardLimit > 0 && $shown >= $cardLimit) {
                     break;
                 }
                 $shown++;
@@ -364,10 +365,15 @@ $schema = [
             </div>
             <?php endforeach; ?>
         </div>
-        <?php if (count($svcKeywords) > 18): ?>
+        <?php if ($cardLimit > 0 && count($svcKeywords) > $cardLimit): ?>
             <p class="mt-6 text-sm text-zinc-600">
-                Showing 18 of <?= count($svcKeywords) ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> guides —
+                Showing <?= (int)$cardLimit ?> of <?= count($svcKeywords) ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> guides —
                 <a href="<?= url('/pages/keywords/index.php') ?>" class="font-semibold text-[#ff6b00]">view full keyword index</a>.
+            </p>
+        <?php elseif (in_array($serviceSlug, getElectricalGasFamilyServices(), true)): ?>
+            <p class="mt-6 text-sm text-zinc-600">
+                All <?= count($svcKeywords) ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> keyword guides are listed above —
+                each has a page for every town we cover.
             </p>
         <?php endif; ?>
         <?php else: ?>

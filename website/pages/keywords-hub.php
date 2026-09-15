@@ -93,7 +93,7 @@ require SITE_ROOT . '/includes/header.php';
                 <div class="text-xs uppercase tracking-[3px] text-white/50 mb-3">Popular services</div>
                 <div class="flex flex-wrap gap-2">
                     <?php
-                    $jumpPref = ['fire-risk-assessments', 'fire-alarms', 'electrical', 'kitchens', 'bathrooms', 'plastering', 'landlord-compliance', 'cctv'];
+                    $jumpPref = ['electrical', 'gas-systems', 'fire-risk-assessments', 'fire-alarms', 'kitchens', 'bathrooms', 'plastering', 'landlord-compliance', 'cctv'];
                     foreach ($jumpPref as $sSlug):
                         if (!isset($services[$sSlug])) {
                             continue;

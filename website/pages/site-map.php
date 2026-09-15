@@ -271,6 +271,42 @@ require SITE_ROOT . '/includes/header.php';
             <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/keywords/eicr/stockport.php') ?>">EICR in Stockport</a>
             — every keyword also has per-town URLs via the router.
         </p>
+        <?php
+        $egFeatured = function_exists('getElectricalGasFeaturedKeywordSlugs') ? getElectricalGasFeaturedKeywordSlugs() : [];
+        $allKwMap = getMajorKeywords();
+        $elecKwN = count(getKeywordsForService('electrical'));
+        $gasKwN = count(getKeywordsForService('gas-systems'));
+        ?>
+        <div id="electrical-gas-keywords" class="mt-12 grid md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="text-xl font-semibold text-black">Electrical keyword family</h3>
+                <p class="mt-1 text-sm text-zinc-600"><?= (int)$elecKwN ?> guides × <?= count($areas) ?> towns. Rewire, EICR, consumer units and emergency electrician pages.</p>
+                <div class="mt-3 flex flex-wrap gap-2">
+                    <?php foreach ($egFeatured['electrical'] ?? [] as $egSlug):
+                        if (!isset($allKwMap[$egSlug])) { continue; }
+                        $egName = $allKwMap[$egSlug]['name'] ?? $egSlug;
+                    ?>
+                        <a href="<?= url('/pages/keywords/' . rawurlencode($egSlug) . '.php') ?>"
+                           class="px-3 py-1.5 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]"><?= htmlspecialchars($egName, ENT_QUOTES, 'UTF-8') ?></a>
+                    <?php endforeach; ?>
+                    <a href="<?= url('/pages/services/electrical.php') ?>" class="px-3 py-1.5 text-sm font-semibold text-[#ff6b00]">Electrical service hub →</a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold text-black">Gas keyword family</h3>
+                <p class="mt-1 text-sm text-zinc-600"><?= (int)$gasKwN ?> guides × <?= count($areas) ?> towns. Boiler, CP12, gas safety and emergency gas engineer pages.</p>
+                <div class="mt-3 flex flex-wrap gap-2">
+                    <?php foreach ($egFeatured['gas'] ?? [] as $egSlug):
+                        if (!isset($allKwMap[$egSlug])) { continue; }
+                        $egName = $allKwMap[$egSlug]['name'] ?? $egSlug;
+                    ?>
+                        <a href="<?= url('/pages/keywords/' . rawurlencode($egSlug) . '.php') ?>"
+                           class="px-3 py-1.5 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]"><?= htmlspecialchars($egName, ENT_QUOTES, 'UTF-8') ?></a>
+                    <?php endforeach; ?>
+                    <a href="<?= url('/pages/services/gas-systems.php') ?>" class="px-3 py-1.5 text-sm font-semibold text-[#ff6b00]">Gas service hub →</a>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 

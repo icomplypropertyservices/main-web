@@ -330,16 +330,69 @@ function getKeywordsForService(string $serviceSlug): array {
 }
 
 /**
+ * Service slugs whose keyword×area matrix is fully exported on Netlify.
+ *
+ * @return list<string>
+ */
+function getElectricalGasFamilyServices(): array {
+    return ['electrical', 'gas-systems'];
+}
+
+/**
+ * All electrical + gas keyword slugs (for full-town static export).
+ *
+ * @return list<string>
+ */
+function getElectricalGasMatrixKeywordSlugs(): array {
+    $out = [];
+    foreach (getElectricalGasFamilyServices() as $svc) {
+        foreach (array_keys(getKeywordsForService($svc)) as $slug) {
+            $slug = keywordSlug((string)$slug);
+            if ($slug !== '') {
+                $out[$slug] = true;
+            }
+        }
+    }
+    return array_keys($out);
+}
+
+/**
+ * Featured electrical / gas keyword slugs for nav, HTML site map and sitemap samples.
+ *
+ * @return array{electrical: list<string>, gas: list<string>}
+ */
+function getElectricalGasFeaturedKeywordSlugs(): array {
+    return [
+        'electrical' => [
+            'rewire', 'domestic-rewire', 'house-rewire', 'partial-rewire',
+            'consumer-unit', 'fuse-board', 'eicr', 'emergency-electrician',
+            'price-of-rewire', 'electrician',
+        ],
+        'gas' => [
+            'boiler', 'boiler-install', 'boiler-repair', 'cp12', 'gas-safety',
+            'emergency-gas-engineer', 'landlord-gas', 'gas-safety-certificate',
+            'boiler-cost', 'landlord-cp12',
+        ],
+    ];
+}
+
+function isCostStyleKeyword(string $slug, string $name = ''): bool {
+    return (bool)preg_match('/\b(cost|price|quote|how-much|how much)\b/i', $slug . ' ' . $name);
+}
+
+/**
  * Priority keyword slugs for homepage / area hubs (only those present in data).
  * @return list<string>
  */
 function getPopularKeywordSlugs(): array {
     $priority = [
         'eicr', 'eicr-report', 'eicr-certificate', 'eicr-cost', 'landlord-eicr', 'commercial-eicr',
-        'pat-testing', 'consumer-unit-upgrade', 'rewire', 'domestic-eicr', 'eicr-near-me',
+        'pat-testing', 'consumer-unit-upgrade', 'rewire', 'domestic-rewire', 'domestic-eicr',
+        'eicr-near-me', 'emergency-electrician', 'consumer-unit', 'fuse-board', 'price-of-rewire',
         'fire-risk-assessment', 'fire-alarm-service', 'addressable-fire-alarm', 'fire-alarm-installation',
         'emergency-lighting-test', 'emergency-lighting-certificate',
-        'gas-safety-certificate', 'cp12', 'landlord-gas-safety',
+        'gas-safety-certificate', 'cp12', 'landlord-gas-safety', 'boiler', 'boiler-install',
+        'boiler-repair', 'gas-safety', 'emergency-gas-engineer', 'landlord-gas',
         'cctv-installation', 'access-control-system', 'door-entry-system',
         'nurse-call-system', 'landlord-compliance',
     ];

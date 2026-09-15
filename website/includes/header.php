@@ -299,6 +299,19 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
                                 <?php foreach ($catServices as $slug => $name): ?>
                                     <a href="<?= url('/pages/services/' . rawurlencode($slug) . '.php') ?>" class="block px-5 py-1.5 hover:bg-zinc-50 text-sm text-black"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></a>
                                 <?php endforeach;
+                                if ($catKey === 'electrical-gas' && function_exists('getElectricalGasFeaturedKeywordSlugs')):
+                                    $navEg = getElectricalGasFeaturedKeywordSlugs();
+                                    $navKw = function_exists('getMajorKeywords') ? getMajorKeywords() : [];
+                                ?>
+                                <div class="px-5 pt-3 pb-1 text-[10px] uppercase tracking-wider text-zinc-400 font-semibold">Electrical &amp; gas guides</div>
+                                <?php foreach (array_merge($navEg['electrical'] ?? [], $navEg['gas'] ?? []) as $egSlug):
+                                    if (!isset($navKw[$egSlug])) { continue; }
+                                ?>
+                                    <a href="<?= url('/pages/keywords/' . rawurlencode($egSlug) . '.php') ?>" class="block px-5 py-1.5 hover:bg-zinc-50 text-sm text-black"><?= htmlspecialchars((string)($navKw[$egSlug]['name'] ?? $egSlug), ENT_QUOTES, 'UTF-8') ?></a>
+                                <?php endforeach; ?>
+                                    <a href="<?= url('/pages/site-map.php') ?>#electrical-gas-keywords" class="block px-5 py-1.5 text-xs font-semibold text-[#ff6b00]">All electrical &amp; gas keyword pages →</a>
+                                <?php
+                                endif;
                             endforeach;
                         else:
                             foreach ($services as $slug => $name): ?>
@@ -428,6 +441,19 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
                     <?php foreach ($catServices as $slug => $name): ?>
                         <a href="<?= url('/pages/services/' . rawurlencode($slug) . '.php') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></a>
                     <?php endforeach;
+                    if ($catKey === 'electrical-gas' && function_exists('getElectricalGasFeaturedKeywordSlugs')):
+                        $mobEg = getElectricalGasFeaturedKeywordSlugs();
+                        $mobKw = function_exists('getMajorKeywords') ? getMajorKeywords() : [];
+                    ?>
+                    <div class="px-3 pt-2 pb-1 text-[10px] uppercase tracking-wider text-zinc-400 font-semibold">Electrical &amp; gas guides</div>
+                    <?php foreach (['rewire', 'domestic-rewire', 'emergency-electrician', 'boiler', 'boiler-install', 'cp12'] as $egSlug):
+                        if (!isset($mobKw[$egSlug])) { continue; }
+                    ?>
+                        <a href="<?= url('/pages/keywords/' . rawurlencode($egSlug) . '.php') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50"><?= htmlspecialchars((string)($mobKw[$egSlug]['name'] ?? $egSlug), ENT_QUOTES, 'UTF-8') ?></a>
+                    <?php endforeach; ?>
+                        <a href="<?= url('/pages/site-map.php') ?>#electrical-gas-keywords" class="block px-6 py-2 text-[#ff6b00] text-xs">All electrical &amp; gas keyword pages →</a>
+                    <?php
+                    endif;
                 endforeach;
             else:
                 foreach ($services as $slug => $name): ?>

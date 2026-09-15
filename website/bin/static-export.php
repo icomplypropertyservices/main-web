@@ -24,7 +24,9 @@
  * plus town combos that the previous PHP router served from chrome:
  *   popular towns × all keywords, and all towns × priority keywords
  *   (eicr, eicr-report, FRA, gas, CCTV, …).
- * --keyword-towns=all renders the full keyword×area matrix (~200k HTML files).
+ * Electrical and gas keyword families always get the FULL areas list
+ * (keyword × every town) so the Netlify static export includes that matrix.
+ * --keyword-towns=all renders every keyword×area (~200k HTML files).
  * --full also renders service×area landings.
  */
 declare(strict_types=1);
@@ -235,10 +237,19 @@ function icomplyCollectKeywordRoutes(string $townMode): array
             $priorityKw[keywordSlug($slug)] = true;
         }
     }
+    $familyKw = [];
+    if (function_exists('getElectricalGasMatrixKeywordSlugs')) {
+        foreach (getElectricalGasMatrixKeywordSlugs() as $slug) {
+            $familyKw[keywordSlug($slug)] = true;
+        }
+    }
 
     foreach ($keywords as $kw) {
         $slug = keywordSlug($kw);
-        if ($townMode === 'all' || ($townMode === 'priority' && isset($priorityKw[$slug]))) {
+        $fullTowns = $townMode === 'all'
+            || isset($familyKw[$slug])
+            || ($townMode === 'priority' && isset($priorityKw[$slug]));
+        if ($fullTowns) {
             $towns = $areas;
         } else {
             $towns = $popularTowns;

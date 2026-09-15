@@ -135,6 +135,23 @@ foreach ($categories as $catKey => $cat):
             </a>
             <?php endforeach; ?>
         </div>
+        <?php if ($catKey === 'electrical-gas' && function_exists('getElectricalGasFeaturedKeywordSlugs')):
+            $svcEg = getElectricalGasFeaturedKeywordSlugs();
+            $svcKw = getMajorKeywords();
+        ?>
+        <div class="mt-8 p-6 bg-white border border-zinc-200 rounded-3xl">
+            <h3 class="font-semibold text-black">Electrical &amp; gas keyword guides</h3>
+            <p class="text-sm text-zinc-600 mt-1">Each topic has a hub plus a page for every town we cover. Cost and price searches are POA only.</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+                <?php foreach (array_merge($svcEg['electrical'] ?? [], $svcEg['gas'] ?? []) as $egSlug):
+                    if (!isset($svcKw[$egSlug])) { continue; }
+                ?>
+                    <a href="<?= url('/pages/keywords/' . rawurlencode($egSlug) . '.php') ?>"
+                       class="px-3 py-1.5 bg-zinc-50 border rounded-full text-sm hover:border-[#ff6b00]"><?= htmlspecialchars((string)($svcKw[$egSlug]['name'] ?? $egSlug), ENT_QUOTES, 'UTF-8') ?></a>
+                <?php endforeach; ?>
+            </div>
+        </div>
+        <?php endif; ?>
     </div>
 </section>
 <?php endforeach; ?>

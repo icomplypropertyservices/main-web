@@ -134,8 +134,37 @@ function icomplySitemapEntries(): array
     // Skip at request time: keywords.json is 3MB+ and is what OOMs the live 500.
     $requestSafe = !empty($GLOBALS['ICOMPLY_SITEMAP_REQUEST_SAFE']);
     if (!$requestSafe && function_exists('getMajorKeywords') && function_exists('keywordSlug')) {
+        $family = [];
+        if (function_exists('getElectricalGasMatrixKeywordSlugs')) {
+            foreach (getElectricalGasMatrixKeywordSlugs() as $fs) {
+                $family[keywordSlug($fs)] = true;
+            }
+        }
         foreach (array_keys(getMajorKeywords()) as $kw) {
-            $add('/pages/keywords/' . keywordSlug($kw), '0.68');
+            $slug = keywordSlug($kw);
+            $add('/pages/keywords/' . $slug, isset($family[$slug]) ? '0.78' : '0.68');
+        }
+        // Featured electrical + gas × popular towns so those families are crawlable
+        // without dumping the full matrix into sitemap.xml.
+        if (function_exists('getElectricalGasFeaturedKeywordSlugs') && function_exists('getAreas') && function_exists('areaSlug')) {
+            $areasFlip = array_flip(getAreas());
+            $sampleTowns = ['Stockport', 'Manchester', 'Bolton', 'Liverpool', 'Preston', 'Warrington'];
+            $featured = getElectricalGasFeaturedKeywordSlugs();
+            $allKw = getMajorKeywords();
+            foreach (['electrical', 'gas'] as $fam) {
+                foreach ($featured[$fam] ?? [] as $kwSlug) {
+                    $kwSlug = keywordSlug((string)$kwSlug);
+                    if ($kwSlug === '' || !isset($allKw[$kwSlug])) {
+                        continue;
+                    }
+                    foreach ($sampleTowns as $town) {
+                        if (!isset($areasFlip[$town])) {
+                            continue;
+                        }
+                        $add('/pages/keywords/' . $kwSlug . '/' . areaSlug($town), '0.62');
+                    }
+                }
+            }
         }
     }
     if (!$requestSafe && function_exists('getServices') && function_exists('getAreas') && function_exists('areaSlug')) {
