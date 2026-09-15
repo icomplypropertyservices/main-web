@@ -1,0 +1,2046 @@
+{
+    "count": 340,
+    "generated": "2026-09-15T21:47:41Z",
+    "jobs": [
+        {
+            "slug": "24-hour-emergency-electrician",
+            "name": "24 Hour Emergency Electrician",
+            "service": "electrical",
+            "related": "electrician-near-me"
+        },
+        {
+            "slug": "additional-socket",
+            "name": "Additional Socket",
+            "service": "electrical",
+            "related": "socket-installation"
+        },
+        {
+            "slug": "bathroom-electrical-safety",
+            "name": "Bathroom Electrical Safety",
+            "service": "electrical",
+            "related": "electrical-safety-inspection"
+        },
+        {
+            "slug": "bathroom-rewire",
+            "name": "Bathroom Rewire",
+            "service": "electrical",
+            "related": "bathroom-electrical-safety"
+        },
+        {
+            "slug": "battery-storage-electrical",
+            "name": "Battery Storage Electrical",
+            "service": "electrical",
+            "related": "solar-panel-installation"
+        },
+        {
+            "slug": "bs-7671",
+            "name": "BS 7671",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "bs-7671-inspection",
+            "name": "BS 7671 Inspection",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "certified-electrician",
+            "name": "Certified Electrician",
+            "service": "electrical",
+            "related": "niceic-certified"
+        },
+        {
+            "slug": "circuit-breaker-repair",
+            "name": "Circuit Breaker Repair",
+            "service": "electrical",
+            "related": "electrical-repair"
+        },
+        {
+            "slug": "commercial-eicr",
+            "name": "Commercial EICR",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "commercial-electrical-maintenance",
+            "name": "Commercial Electrical Maintenance",
+            "service": "electrical",
+            "related": "electrical-maintenance"
+        },
+        {
+            "slug": "commercial-electrician",
+            "name": "Commercial Electrician",
+            "service": "electrical",
+            "related": "commercial-electrical-maintenance"
+        },
+        {
+            "slug": "commercial-ev-charging",
+            "name": "Commercial EV Charging",
+            "service": "electrical",
+            "related": "ev-charger-installation"
+        },
+        {
+            "slug": "consumer-unit",
+            "name": "Consumer Unit",
+            "service": "electrical",
+            "related": "consumer-unit-upgrade"
+        },
+        {
+            "slug": "consumer-unit-cost",
+            "name": "Consumer Unit Cost",
+            "service": "electrical",
+            "related": "consumer-unit"
+        },
+        {
+            "slug": "consumer-unit-replacement",
+            "name": "Consumer Unit Replacement",
+            "service": "electrical",
+            "related": "consumer-unit"
+        },
+        {
+            "slug": "consumer-unit-upgrade",
+            "name": "Consumer Unit Upgrade",
+            "service": "electrical",
+            "related": "panel-upgrade"
+        },
+        {
+            "slug": "cooker-point-installation",
+            "name": "Cooker Point Installation",
+            "service": "electrical",
+            "related": "kitchen-electrical-installation"
+        },
+        {
+            "slug": "data-cabling-installation",
+            "name": "Data Cabling Installation",
+            "service": "electrical",
+            "related": "electrical-installation"
+        },
+        {
+            "slug": "distribution-board-install",
+            "name": "Distribution Board Install",
+            "service": "electrical",
+            "related": "rcbo-upgrade"
+        },
+        {
+            "slug": "distribution-board-installation",
+            "name": "Distribution Board Installation",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "domestic-eicr",
+            "name": "Domestic EICR",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "domestic-electrician",
+            "name": "Domestic Electrician",
+            "service": "electrical",
+            "related": "residential-electrician"
+        },
+        {
+            "slug": "domestic-rewire",
+            "name": "Domestic Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "domestic-rewire-cost",
+            "name": "Domestic Rewire Cost",
+            "service": "electrical",
+            "related": "domestic-rewire"
+        },
+        {
+            "slug": "eicr",
+            "name": "EICR",
+            "service": "electrical",
+            "related": "electrical-installation-condition-report"
+        },
+        {
+            "slug": "eicr-certificate",
+            "name": "EICR Certificate",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "eicr-cost",
+            "name": "EICR Cost",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "eicr-near-me",
+            "name": "EICR Near Me",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "eicr-price",
+            "name": "EICR Price",
+            "service": "electrical",
+            "related": "eicr-cost"
+        },
+        {
+            "slug": "eicr-report",
+            "name": "EICR Report",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "eicr-testing",
+            "name": "EICR Testing",
+            "service": "electrical",
+            "related": "fixed-wire-testing"
+        },
+        {
+            "slug": "electric-shower-installation",
+            "name": "Electric Shower Installation",
+            "service": "electrical",
+            "related": "bathroom-rewire"
+        },
+        {
+            "slug": "electrical-board-upgrade",
+            "name": "Electrical Board Upgrade",
+            "service": "electrical",
+            "related": "consumer-unit-upgrade"
+        },
+        {
+            "slug": "electrical-call-out",
+            "name": "Electrical Call Out",
+            "service": "electrical",
+            "related": "electrical-fault-finding"
+        },
+        {
+            "slug": "electrical-certificate-for-lettings",
+            "name": "Electrical Certificate for Lettings",
+            "service": "electrical",
+            "related": "landlord-eicr"
+        },
+        {
+            "slug": "electrical-certification",
+            "name": "Electrical Certification",
+            "service": "electrical",
+            "related": "electrical-safety-certificate"
+        },
+        {
+            "slug": "electrical-compliance-certificate",
+            "name": "Electrical Compliance Certificate",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "electrical-contractor",
+            "name": "Electrical Contractor",
+            "service": "electrical",
+            "related": "commercial-electrician"
+        },
+        {
+            "slug": "electrical-fault-finding",
+            "name": "Electrical Fault Finding",
+            "service": "electrical",
+            "related": "electrical-troubleshooting"
+        },
+        {
+            "slug": "electrical-inspection",
+            "name": "Electrical Inspection",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "electrical-inspection-and-testing",
+            "name": "Electrical Inspection and Testing",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "electrical-installation",
+            "name": "Electrical Installation",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "electrical-installation-condition-report",
+            "name": "Electrical Installation Condition Report",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "electrical-maintenance",
+            "name": "Electrical Maintenance",
+            "service": "electrical",
+            "related": "electrical-inspection"
+        },
+        {
+            "slug": "electrical-remedial-works",
+            "name": "Electrical Remedial Works",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "electrical-repair",
+            "name": "Electrical Repair",
+            "service": "electrical",
+            "related": "electrical-fault-finding"
+        },
+        {
+            "slug": "electrical-rewire",
+            "name": "Electrical Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "electrical-safety-certificate",
+            "name": "Electrical Safety Certificate",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "electrical-safety-inspection",
+            "name": "Electrical Safety Inspection",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "electrical-services",
+            "name": "Electrical Services",
+            "service": "electrical",
+            "related": "electrical-installation"
+        },
+        {
+            "slug": "electrical-troubleshooting",
+            "name": "Electrical Troubleshooting",
+            "service": "electrical",
+            "related": "electrical-fault-finding"
+        },
+        {
+            "slug": "electrical-wiring-installation",
+            "name": "Electrical Wiring Installation",
+            "service": "electrical",
+            "related": "new-electrical-installation"
+        },
+        {
+            "slug": "electrician",
+            "name": "Electrician",
+            "service": "electrical",
+            "related": "electrician-near-me"
+        },
+        {
+            "slug": "electrician-near-me",
+            "name": "Electrician Near Me",
+            "service": "electrical",
+            "related": "24-hour-emergency-electrician"
+        },
+        {
+            "slug": "emergency-electrician",
+            "name": "Emergency Electrician",
+            "service": "electrical",
+            "related": "24-hour-emergency-electrician"
+        },
+        {
+            "slug": "emergency-electrician-cost",
+            "name": "Emergency Electrician Cost",
+            "service": "electrical",
+            "related": "emergency-electrician"
+        },
+        {
+            "slug": "emergency-lighting-electrical-works",
+            "name": "Emergency Lighting Electrical Works",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "energy-efficient-lighting",
+            "name": "Energy Efficient Lighting",
+            "service": "electrical",
+            "related": "lighting-installation"
+        },
+        {
+            "slug": "ev-charger-installation",
+            "name": "EV Charger Installation",
+            "service": "electrical",
+            "related": "electrical-installation"
+        },
+        {
+            "slug": "fixed-wire-testing",
+            "name": "Fixed Wire Testing",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "full-house-rewire",
+            "name": "Full House Rewire",
+            "service": "electrical",
+            "related": "residential-electrician"
+        },
+        {
+            "slug": "fuse-board",
+            "name": "Fuse Board",
+            "service": "electrical",
+            "related": "fuse-board-replacement"
+        },
+        {
+            "slug": "fuse-board-cost",
+            "name": "Fuse Board Cost",
+            "service": "electrical",
+            "related": "fuse-board"
+        },
+        {
+            "slug": "fuse-board-replacement",
+            "name": "Fuse Board Replacement",
+            "service": "electrical",
+            "related": "consumer-unit-upgrade"
+        },
+        {
+            "slug": "fuse-box-upgrade",
+            "name": "Fuse Box Upgrade",
+            "service": "electrical",
+            "related": "fuse-board"
+        },
+        {
+            "slug": "generator-installation",
+            "name": "Generator Installation",
+            "service": "electrical",
+            "related": "industrial-electrical-services"
+        },
+        {
+            "slug": "hmo-electrical-certificate",
+            "name": "HMO Electrical Certificate",
+            "service": "electrical",
+            "related": "landlord-eicr"
+        },
+        {
+            "slug": "home-electrical-upgrade",
+            "name": "Home Electrical Upgrade",
+            "service": "electrical",
+            "related": "panel-upgrade"
+        },
+        {
+            "slug": "home-ev-charger",
+            "name": "Home EV Charger",
+            "service": "electrical",
+            "related": "ev-charger-installation"
+        },
+        {
+            "slug": "house-rewire",
+            "name": "House Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "industrial-electrical-maintenance",
+            "name": "Industrial Electrical Maintenance",
+            "service": "electrical",
+            "related": "commercial-electrical-maintenance"
+        },
+        {
+            "slug": "industrial-electrical-services",
+            "name": "Industrial Electrical Services",
+            "service": "electrical",
+            "related": "commercial-electrician"
+        },
+        {
+            "slug": "kitchen-electrical-installation",
+            "name": "Kitchen Electrical Installation",
+            "service": "electrical",
+            "related": "electrical-installation"
+        },
+        {
+            "slug": "kitchen-rewire",
+            "name": "Kitchen Rewire",
+            "service": "electrical",
+            "related": "kitchen-electrical-installation"
+        },
+        {
+            "slug": "landlord-eicr",
+            "name": "Landlord EICR",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "landlord-electrical-certificate",
+            "name": "Landlord Electrical Certificate",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "landlord-electrical-certificate-north-west",
+            "name": "Landlord Electrical Certificate North West",
+            "service": "electrical",
+            "related": "landlord-eicr"
+        },
+        {
+            "slug": "landlord-electrical-safety-check",
+            "name": "Landlord Electrical Safety Check",
+            "service": "electrical",
+            "related": "landlord-eicr"
+        },
+        {
+            "slug": "landlord-rewire",
+            "name": "Landlord Rewire",
+            "service": "electrical",
+            "related": "domestic-rewire"
+        },
+        {
+            "slug": "landlord-safety-certificate",
+            "name": "Landlord Safety Certificate",
+            "service": "electrical",
+            "related": "landlord-electrical-certificate"
+        },
+        {
+            "slug": "lighting-circuit-installation",
+            "name": "Lighting Circuit Installation",
+            "service": "electrical",
+            "related": "electrical-installation"
+        },
+        {
+            "slug": "lighting-installation",
+            "name": "Lighting Installation",
+            "service": "electrical",
+            "related": "energy-efficient-lighting"
+        },
+        {
+            "slug": "loft-rewire",
+            "name": "Loft Rewire",
+            "service": "electrical",
+            "related": "partial-rewire"
+        },
+        {
+            "slug": "new-build-electrical",
+            "name": "New Build Electrical",
+            "service": "electrical",
+            "related": "landlord-electrical-safety-check"
+        },
+        {
+            "slug": "new-build-electrical-installation",
+            "name": "New Build Electrical Installation",
+            "service": "electrical",
+            "related": "new-electrical-installation"
+        },
+        {
+            "slug": "new-electrical-installation",
+            "name": "New Electrical Installation",
+            "service": "electrical",
+            "related": "electrical-installation"
+        },
+        {
+            "slug": "niceic-certified",
+            "name": "NICEIC Certified",
+            "service": "electrical",
+            "related": "certified-electrician"
+        },
+        {
+            "slug": "office-electrical-testing",
+            "name": "Office Electrical Testing",
+            "service": "electrical",
+            "related": "commercial-eicr"
+        },
+        {
+            "slug": "out-of-hours-electrician",
+            "name": "Out of Hours Electrician",
+            "service": "electrical",
+            "related": "emergency-electrician"
+        },
+        {
+            "slug": "outside-socket-installation",
+            "name": "Outside Socket Installation",
+            "service": "electrical",
+            "related": "electrical-installation"
+        },
+        {
+            "slug": "panel-upgrade",
+            "name": "Panel Upgrade",
+            "service": "electrical",
+            "related": "consumer-unit-upgrade"
+        },
+        {
+            "slug": "part-p-certified",
+            "name": "Part P Certified",
+            "service": "electrical",
+            "related": "certified-electrician"
+        },
+        {
+            "slug": "partial-rewire",
+            "name": "Partial Rewire",
+            "service": "electrical",
+            "related": "electrical-wiring-installation"
+        },
+        {
+            "slug": "pat-testing",
+            "name": "PAT Testing",
+            "service": "electrical",
+            "related": "electrical-safety-inspection"
+        },
+        {
+            "slug": "periodic-electrical-inspection",
+            "name": "Periodic Electrical Inspection",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "periodic-inspection",
+            "name": "Periodic Inspection",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "periodic-inspection-report",
+            "name": "Periodic Inspection Report",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "portable-appliance-testing",
+            "name": "Portable Appliance Testing",
+            "service": "electrical",
+            "related": "pat-testing"
+        },
+        {
+            "slug": "power-surge-protection",
+            "name": "Power Surge Protection",
+            "service": "electrical",
+            "related": "electrical-installation"
+        },
+        {
+            "slug": "preventive-electrical-maintenance",
+            "name": "Preventive Electrical Maintenance",
+            "service": "electrical",
+            "related": "electrical-maintenance"
+        },
+        {
+            "slug": "price-of-rewire",
+            "name": "Price of Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "rcbo-consumer-unit",
+            "name": "RCBO Consumer Unit",
+            "service": "electrical",
+            "related": "consumer-unit-upgrade"
+        },
+        {
+            "slug": "rcbo-upgrade",
+            "name": "RCBO Upgrade",
+            "service": "electrical",
+            "related": "electrical-remedial-works"
+        },
+        {
+            "slug": "residential-electrician",
+            "name": "Residential Electrician",
+            "service": "electrical",
+            "related": "full-house-rewire"
+        },
+        {
+            "slug": "rewire",
+            "name": "House Rewire",
+            "service": "electrical",
+            "related": "consumer-unit-upgrade"
+        },
+        {
+            "slug": "rewire-cost",
+            "name": "Rewire Cost",
+            "service": "electrical",
+            "related": "price-of-rewire"
+        },
+        {
+            "slug": "smart-home-wiring",
+            "name": "Smart Home Wiring",
+            "service": "electrical",
+            "related": "home-electrical-upgrade"
+        },
+        {
+            "slug": "socket-installation",
+            "name": "Socket Installation",
+            "service": "electrical",
+            "related": "electrical-installation"
+        },
+        {
+            "slug": "solar-inverter-installation",
+            "name": "Solar Inverter Installation",
+            "service": "electrical",
+            "related": "solar-panel-installation"
+        },
+        {
+            "slug": "solar-panel-installation",
+            "name": "Solar Panel Installation",
+            "service": "electrical",
+            "related": "solar-inverter-installation"
+        },
+        {
+            "slug": "three-phase-electrical-installation",
+            "name": "Three Phase Electrical Installation",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "three-phase-installation",
+            "name": "Three Phase Installation",
+            "service": "electrical",
+            "related": "electrical-fault-finding"
+        },
+        {
+            "slug": "hmo-eicr",
+            "name": "HMO EICR",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "void-eicr",
+            "name": "Void EICR",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "change-of-tenancy-eicr",
+            "name": "Change of Tenancy EICR",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "five-year-eicr",
+            "name": "Five Year EICR",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "unsatisfactory-eicr-remedial",
+            "name": "Unsatisfactory EICR Remedial",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "eicr-c1-remedial",
+            "name": "EICR C1 Remedial",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "eicr-c2-remedial",
+            "name": "EICR C2 Remedial",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "eicr-fi-code-investigation",
+            "name": "EICR FI Code Investigation",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "industrial-eicr",
+            "name": "Industrial EICR",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "office-eicr",
+            "name": "Office EICR",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "retail-eicr",
+            "name": "Retail EICR",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "warehouse-eicr",
+            "name": "Warehouse EICR",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "school-eicr",
+            "name": "School EICR",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "care-home-eicr",
+            "name": "Care Home EICR",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "student-let-eicr",
+            "name": "Student Let EICR",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "new-tenancy-electrical-certificate",
+            "name": "New Tenancy Electrical Certificate",
+            "service": "electrical",
+            "related": "electrical-safety-certificate"
+        },
+        {
+            "slug": "electrical-condition-report",
+            "name": "Electrical Condition Report",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "pir-electrical",
+            "name": "PIR Electrical",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "electrical-testing-certificate",
+            "name": "Electrical Testing Certificate",
+            "service": "electrical",
+            "related": "electrical-safety-certificate"
+        },
+        {
+            "slug": "visual-electrical-inspection",
+            "name": "Visual Electrical Inspection",
+            "service": "electrical",
+            "related": "electrical-inspection"
+        },
+        {
+            "slug": "electrical-dead-testing",
+            "name": "Electrical Dead Testing",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "electrical-live-testing",
+            "name": "Electrical Live Testing",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "insulation-resistance-test",
+            "name": "Insulation Resistance Test",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "earth-fault-loop-impedance-test",
+            "name": "Earth Fault Loop Impedance Test",
+            "service": "electrical",
+            "related": "electrical-fault-finding"
+        },
+        {
+            "slug": "rcd-testing",
+            "name": "RCD Testing",
+            "service": "electrical",
+            "related": "consumer-unit"
+        },
+        {
+            "slug": "rcd-trip-time-test",
+            "name": "RCD Trip Time Test",
+            "service": "electrical",
+            "related": "consumer-unit"
+        },
+        {
+            "slug": "ze-zs-testing",
+            "name": "Ze Zs Testing",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "continuity-testing",
+            "name": "Continuity Testing",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "polarity-testing",
+            "name": "Polarity Testing",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "board-schedule-of-circuits",
+            "name": "Board Schedule of Circuits",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "overdue-eicr",
+            "name": "Overdue EICR",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "eicr-remedial-works",
+            "name": "EICR Remedial Works",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "coded-electrical-remedials",
+            "name": "Coded Electrical Remedials",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "electrical-certificate-renewal",
+            "name": "Electrical Certificate Renewal",
+            "service": "electrical",
+            "related": "electrical-safety-certificate"
+        },
+        {
+            "slug": "electrical-inspection-certificate",
+            "name": "Electrical Inspection Certificate",
+            "service": "electrical",
+            "related": "electrical-inspection"
+        },
+        {
+            "slug": "minor-works-certificate",
+            "name": "Minor Works Certificate",
+            "service": "electrical",
+            "related": "electrical-safety-certificate"
+        },
+        {
+            "slug": "electrical-installation-certificate",
+            "name": "Electrical Installation Certificate",
+            "service": "electrical",
+            "related": "electrical-safety-certificate"
+        },
+        {
+            "slug": "eic-certificate",
+            "name": "EIC Certificate",
+            "service": "electrical",
+            "related": "electrical-safety-certificate"
+        },
+        {
+            "slug": "part-p-notification",
+            "name": "Part P Notification",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "building-control-electrical-notification",
+            "name": "Building Control Electrical Notification",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "electrical-sign-off",
+            "name": "Electrical Sign Off",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "landlord-electrical-compliance",
+            "name": "Landlord Electrical Compliance",
+            "service": "electrical",
+            "related": "landlord-eicr"
+        },
+        {
+            "slug": "hmo-electrical-safety",
+            "name": "HMO Electrical Safety",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "electrical-risk-assessment",
+            "name": "Electrical Risk Assessment",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "pre-purchase-electrical-survey",
+            "name": "Pre Purchase Electrical Survey",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "electrical-snagging",
+            "name": "Electrical Snagging",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "new-build-electrical-snagging",
+            "name": "New Build Electrical Snagging",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "insurance-electrical-report",
+            "name": "Insurance Electrical Report",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "communal-area-eicr",
+            "name": "Communal Area EICR",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "block-eicr",
+            "name": "Block EICR",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "landlord-portfolio-eicr",
+            "name": "Landlord Portfolio EICR",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "same-day-eicr",
+            "name": "Same Day EICR",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "weekend-eicr",
+            "name": "Weekend EICR",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "eicr-after-remedials",
+            "name": "EICR After Remedials",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "satisfactory-eicr-recheck",
+            "name": "Satisfactory EICR Recheck",
+            "service": "electrical",
+            "related": "eicr"
+        },
+        {
+            "slug": "limitation-electrical-inspection",
+            "name": "Limitation Electrical Inspection",
+            "service": "electrical",
+            "related": "electrical-inspection"
+        },
+        {
+            "slug": "full-rewire",
+            "name": "Full Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "complete-house-rewire",
+            "name": "Complete House Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "flat-rewire",
+            "name": "Flat Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "apartment-rewire",
+            "name": "Apartment Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "commercial-rewire",
+            "name": "Commercial Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "office-rewire",
+            "name": "Office Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "shop-rewire",
+            "name": "Shop Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "industrial-rewire",
+            "name": "Industrial Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "hmo-rewire",
+            "name": "HMO Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "period-property-rewire",
+            "name": "Period Property Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "garage-rewire",
+            "name": "Garage Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "extension-rewire",
+            "name": "Extension Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "emergency-rewire",
+            "name": "Emergency Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "fire-damage-rewire",
+            "name": "Fire Damage Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "flood-damage-electrical-rewire",
+            "name": "Flood Damage Electrical Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "rewire-with-making-good",
+            "name": "Rewire with Making Good",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "second-fix-electrical",
+            "name": "Second Fix Electrical",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "rewire-consumer-unit-package",
+            "name": "Rewire Consumer Unit Package",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "rewire-quote",
+            "name": "Rewire Quote",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "how-much-to-rewire",
+            "name": "How Much to Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "partial-house-rewire",
+            "name": "Partial House Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "upstairs-rewire",
+            "name": "Upstairs Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "downstairs-rewire",
+            "name": "Downstairs Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "landlord-void-rewire",
+            "name": "Landlord Void Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "student-house-rewire",
+            "name": "Student House Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "terrace-rewire",
+            "name": "Terrace Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "victorian-house-rewire",
+            "name": "Victorian House Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "rewire-certification",
+            "name": "Rewire Certification",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "dual-rcd-consumer-unit",
+            "name": "Dual RCD Consumer Unit",
+            "service": "electrical",
+            "related": "consumer-unit"
+        },
+        {
+            "slug": "spd-consumer-unit",
+            "name": "SPD Consumer Unit",
+            "service": "electrical",
+            "related": "consumer-unit"
+        },
+        {
+            "slug": "metal-consumer-unit",
+            "name": "Metal Consumer Unit",
+            "service": "electrical",
+            "related": "consumer-unit"
+        },
+        {
+            "slug": "insulated-consumer-unit",
+            "name": "Insulated Consumer Unit",
+            "service": "electrical",
+            "related": "consumer-unit"
+        },
+        {
+            "slug": "garage-consumer-unit",
+            "name": "Garage Consumer Unit",
+            "service": "electrical",
+            "related": "consumer-unit"
+        },
+        {
+            "slug": "three-phase-consumer-unit",
+            "name": "Three Phase Consumer Unit",
+            "service": "electrical",
+            "related": "consumer-unit"
+        },
+        {
+            "slug": "consumer-unit-relocation",
+            "name": "Consumer Unit Relocation",
+            "service": "electrical",
+            "related": "consumer-unit"
+        },
+        {
+            "slug": "split-load-consumer-unit",
+            "name": "Split Load Consumer Unit",
+            "service": "electrical",
+            "related": "consumer-unit"
+        },
+        {
+            "slug": "fuseboard-upgrade",
+            "name": "Fuseboard Upgrade",
+            "service": "electrical",
+            "related": "fuse-board"
+        },
+        {
+            "slug": "old-fuse-box-replacement",
+            "name": "Old Fuse Box Replacement",
+            "service": "electrical",
+            "related": "fuse-board"
+        },
+        {
+            "slug": "rewireable-fuse-replacement",
+            "name": "Rewireable Fuse Replacement",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "mcb-replacement",
+            "name": "MCB Replacement",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "rcbo-replacement",
+            "name": "RCBO Replacement",
+            "service": "electrical",
+            "related": "rcbo-consumer-unit"
+        },
+        {
+            "slug": "rcd-replacement",
+            "name": "RCD Replacement",
+            "service": "electrical",
+            "related": "consumer-unit"
+        },
+        {
+            "slug": "surge-protection-device-install",
+            "name": "Surge Protection Device Install",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "consumer-unit-inspection",
+            "name": "Consumer Unit Inspection",
+            "service": "electrical",
+            "related": "electrical-inspection"
+        },
+        {
+            "slug": "afdd-consumer-unit",
+            "name": "AFDD Consumer Unit",
+            "service": "electrical",
+            "related": "consumer-unit"
+        },
+        {
+            "slug": "arc-fault-detection-device",
+            "name": "Arc Fault Detection Device",
+            "service": "electrical",
+            "related": "electrical-fault-finding"
+        },
+        {
+            "slug": "18th-edition-upgrade",
+            "name": "18th Edition Upgrade",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "amendment-2-consumer-unit",
+            "name": "Amendment 2 Consumer Unit",
+            "service": "electrical",
+            "related": "consumer-unit"
+        },
+        {
+            "slug": "ev-ready-consumer-unit",
+            "name": "EV Ready Consumer Unit",
+            "service": "electrical",
+            "related": "consumer-unit"
+        },
+        {
+            "slug": "main-switch-replacement",
+            "name": "Main Switch Replacement",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "consumer-unit-labelling",
+            "name": "Consumer Unit Labelling",
+            "service": "electrical",
+            "related": "consumer-unit"
+        },
+        {
+            "slug": "garage-fuseboard",
+            "name": "Garage Fuseboard",
+            "service": "electrical",
+            "related": "fuse-board"
+        },
+        {
+            "slug": "outbuilding-consumer-unit",
+            "name": "Outbuilding Consumer Unit",
+            "service": "electrical",
+            "related": "consumer-unit"
+        },
+        {
+            "slug": "high-integrity-consumer-unit",
+            "name": "High Integrity Consumer Unit",
+            "service": "electrical",
+            "related": "consumer-unit"
+        },
+        {
+            "slug": "metal-clad-consumer-unit",
+            "name": "Metal Clad Consumer Unit",
+            "service": "electrical",
+            "related": "consumer-unit"
+        },
+        {
+            "slug": "wylex-consumer-unit-upgrade",
+            "name": "Wylex Consumer Unit Upgrade",
+            "service": "electrical",
+            "related": "consumer-unit"
+        },
+        {
+            "slug": "hager-consumer-unit-upgrade",
+            "name": "Hager Consumer Unit Upgrade",
+            "service": "electrical",
+            "related": "consumer-unit"
+        },
+        {
+            "slug": "outdoor-socket",
+            "name": "Outdoor Socket",
+            "service": "electrical",
+            "related": "socket-installation"
+        },
+        {
+            "slug": "usb-socket-installation",
+            "name": "USB Socket Installation",
+            "service": "electrical",
+            "related": "socket-installation"
+        },
+        {
+            "slug": "kitchen-socket-installation",
+            "name": "Kitchen Socket Installation",
+            "service": "electrical",
+            "related": "socket-installation"
+        },
+        {
+            "slug": "fused-spur-installation",
+            "name": "Fused Spur Installation",
+            "service": "electrical",
+            "related": "fuse-board"
+        },
+        {
+            "slug": "cooker-switch-installation",
+            "name": "Cooker Switch Installation",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "shower-pull-cord",
+            "name": "Shower Pull Cord",
+            "service": "electrical",
+            "related": "electric-shower-installation"
+        },
+        {
+            "slug": "extractor-fan-isolation",
+            "name": "Extractor Fan Isolation",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "additional-lighting-point",
+            "name": "Additional Lighting Point",
+            "service": "electrical",
+            "related": "lighting-circuit-installation"
+        },
+        {
+            "slug": "dimmer-switch-installation",
+            "name": "Dimmer Switch Installation",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "two-way-lighting",
+            "name": "Two Way Lighting",
+            "service": "electrical",
+            "related": "lighting-circuit-installation"
+        },
+        {
+            "slug": "garden-socket",
+            "name": "Garden Socket",
+            "service": "electrical",
+            "related": "socket-installation"
+        },
+        {
+            "slug": "metal-clad-socket",
+            "name": "Metal Clad Socket",
+            "service": "electrical",
+            "related": "socket-installation"
+        },
+        {
+            "slug": "industrial-socket-installation",
+            "name": "Industrial Socket Installation",
+            "service": "electrical",
+            "related": "socket-installation"
+        },
+        {
+            "slug": "commando-socket",
+            "name": "Commando Socket",
+            "service": "electrical",
+            "related": "socket-installation"
+        },
+        {
+            "slug": "32-amp-supply",
+            "name": "32 Amp Supply",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "63-amp-supply",
+            "name": "63 Amp Supply",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "double-socket-installation",
+            "name": "Double Socket Installation",
+            "service": "electrical",
+            "related": "socket-installation"
+        },
+        {
+            "slug": "socket-relocation",
+            "name": "Socket Relocation",
+            "service": "electrical",
+            "related": "socket-installation"
+        },
+        {
+            "slug": "socket-replacement",
+            "name": "Socket Replacement",
+            "service": "electrical",
+            "related": "socket-installation"
+        },
+        {
+            "slug": "fused-connection-unit",
+            "name": "Fused Connection Unit",
+            "service": "electrical",
+            "related": "fuse-board"
+        },
+        {
+            "slug": "cooker-circuit-installation",
+            "name": "Cooker Circuit Installation",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "hob-connection-electrical",
+            "name": "Hob Connection Electrical",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "oven-connection-electrical",
+            "name": "Oven Connection Electrical",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "induction-hob-connection",
+            "name": "Induction Hob Connection",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "dishwasher-fused-spur",
+            "name": "Dishwasher Fused Spur",
+            "service": "electrical",
+            "related": "fuse-board"
+        },
+        {
+            "slug": "washer-isolator",
+            "name": "Washer Isolator",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "kitchen-extraction-isolator",
+            "name": "Kitchen Extraction Isolator",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "loft-power-supply",
+            "name": "Loft Power Supply",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "shed-power-supply",
+            "name": "Shed Power Supply",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "garage-electrical-installation",
+            "name": "Garage Electrical Installation",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "outdoor-supply",
+            "name": "Outdoor Supply",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "outbuilding-electrical-supply",
+            "name": "Outbuilding Electrical Supply",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "summer-house-electrics",
+            "name": "Summer House Electrics",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "workshop-electrical-installation",
+            "name": "Workshop Electrical Installation",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "outdoor-lighting-circuit",
+            "name": "Outdoor Lighting Circuit",
+            "service": "electrical",
+            "related": "lighting-circuit-installation"
+        },
+        {
+            "slug": "garden-lighting-installation",
+            "name": "Garden Lighting Installation",
+            "service": "electrical",
+            "related": "lighting-circuit-installation"
+        },
+        {
+            "slug": "security-lighting-electrical",
+            "name": "Security Lighting Electrical",
+            "service": "electrical",
+            "related": "lighting-circuit-installation"
+        },
+        {
+            "slug": "led-downlight-installation",
+            "name": "LED Downlight Installation",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "loft-lighting-circuit",
+            "name": "Loft Lighting Circuit",
+            "service": "electrical",
+            "related": "lighting-circuit-installation"
+        },
+        {
+            "slug": "bathroom-lighting-circuit",
+            "name": "Bathroom Lighting Circuit",
+            "service": "electrical",
+            "related": "lighting-circuit-installation"
+        },
+        {
+            "slug": "kitchen-lighting-circuit",
+            "name": "Kitchen Lighting Circuit",
+            "service": "electrical",
+            "related": "lighting-circuit-installation"
+        },
+        {
+            "slug": "three-phase-lighting",
+            "name": "Three Phase Lighting",
+            "service": "electrical",
+            "related": "three-phase-installation"
+        },
+        {
+            "slug": "lighting-maintenance-electrical",
+            "name": "Lighting Maintenance Electrical",
+            "service": "electrical",
+            "related": "lighting-circuit-installation"
+        },
+        {
+            "slug": "lighting-design-electrical",
+            "name": "Lighting Design Electrical",
+            "service": "electrical",
+            "related": "lighting-circuit-installation"
+        },
+        {
+            "slug": "pir-lighting-install",
+            "name": "PIR Lighting Install",
+            "service": "electrical",
+            "related": "lighting-circuit-installation"
+        },
+        {
+            "slug": "occupancy-sensor-lighting",
+            "name": "Occupancy Sensor Lighting",
+            "service": "electrical",
+            "related": "lighting-circuit-installation"
+        },
+        {
+            "slug": "floodlight-installation",
+            "name": "Floodlight Installation",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "car-park-lighting-electrical",
+            "name": "Car Park Lighting Electrical",
+            "service": "electrical",
+            "related": "lighting-circuit-installation"
+        },
+        {
+            "slug": "lighting-control-system",
+            "name": "Lighting Control System",
+            "service": "electrical",
+            "related": "lighting-circuit-installation"
+        },
+        {
+            "slug": "emergency-exit-lighting-electrical",
+            "name": "Emergency Exit Lighting Electrical",
+            "service": "electrical",
+            "related": "lighting-circuit-installation"
+        },
+        {
+            "slug": "two-way-switching-installation",
+            "name": "Two Way Switching Installation",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "intermediate-switching",
+            "name": "Intermediate Switching",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "outside-light-installation",
+            "name": "Outside Light Installation",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "led-conversion-electrical",
+            "name": "LED Conversion Electrical",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "spot-light-installation",
+            "name": "Spot Light Installation",
+            "service": "electrical",
+            "related": "electrical-services"
+        },
+        {
+            "slug": "pendant-lighting-installation",
+            "name": "Pendant Lighting Installation",
+            "service": "electrical",
+            "related": "lighting-circuit-installation"
+        },
+        {
+            "slug": "three-phase-supply",
+            "name": "Three Phase Supply",
+            "service": "electrical",
+            "related": "three-phase-installation"
+        },
+        {
+            "slug": "three-phase-board",
+            "name": "Three Phase Board",
+            "service": "electrical",
+            "related": "three-phase-installation"
+        },
+        {
+            "slug": "three-phase-distribution",
+            "name": "Three Phase Distribution",
+            "service": "electrical",
+            "related": "three-phase-installation"
+        },
+        {
+            "slug": "three-phase-rewire",
+            "name": "Three Phase Rewire",
+            "service": "electrical",
+            "related": "rewire"
+        },
+        {
+            "slug": "three-phase-testing",
+            "name": "Three Phase Testing",
+            "service": "electrical",
+            "related": "three-phase-installation"
+        },
+        {
+            "slug": "three-phase-upgrade",
+            "name": "Three Phase Upgrade",
+            "service": "electrical",
+            "related": "three-phase-installation"
+        },
+        {
+            "slug": "three-phase-ev-charger",
+            "name": "Three Phase EV Charger",
+            "service": "electrical",
+            "related": "ev-charger-installation"
+        },
+        {
+            "slug": "three-phase-motor-circuit",
+            "name": "Three Phase Motor Circuit",
+            "service": "electrical",
+            "related": "three-phase-installation"
+        },
+        {
+            "slug": "single-to-three-phase",
+            "name": "Single to Three Phase",
+            "service": "electrical",
+            "related": "three-phase-installation"
+        },
+        {
+            "slug": "three-phase-meter-tails",
+            "name": "Three Phase Meter Tails",
+            "service": "electrical",
+            "related": "three-phase-installation"
+        },
+        {
+            "slug": "three-phase-isolator",
+            "name": "Three Phase Isolator",
+            "service": "electrical",
+            "related": "three-phase-installation"
+        },
+        {
+            "slug": "three-phase-distribution-board",
+            "name": "Three Phase Distribution Board",
+            "service": "electrical",
+            "related": "three-phase-installation"
+        },
+        {
+            "slug": "commercial-three-phase-install",
+            "name": "Commercial Three Phase Install",
+            "service": "electrical",
+            "related": "three-phase-installation"
+        },
+        {
+            "slug": "industrial-three-phase-testing",
+            "name": "Industrial Three Phase Testing",
+            "service": "electrical",
+            "related": "three-phase-installation"
+        },
+        {
+            "slug": "ev-charger",
+            "name": "EV Charger",
+            "service": "electrical",
+            "related": "ev-charger-installation"
+        },
+        {
+            "slug": "ev-charge-point",
+            "name": "EV Charge Point",
+            "service": "electrical",
+            "related": "ev-charger-installation"
+        },
+        {
+            "slug": "ev-charger-upgrade",
+            "name": "EV Charger Upgrade",
+            "service": "electrical",
+            "related": "ev-charger-installation"
+        },
+        {
+            "slug": "ev-charger-relocation",
+            "name": "EV Charger Relocation",
+            "service": "electrical",
+            "related": "ev-charger-installation"
+        },
+        {
+            "slug": "ev-charger-isolator",
+            "name": "EV Charger Isolator",
+            "service": "electrical",
+            "related": "ev-charger-installation"
+        },
+        {
+            "slug": "ev-charger-load-balancing",
+            "name": "EV Charger Load Balancing",
+            "service": "electrical",
+            "related": "ev-charger-installation"
+        },
+        {
+            "slug": "workplace-ev-charging",
+            "name": "Workplace EV Charging",
+            "service": "electrical",
+            "related": "ev-charger-installation"
+        },
+        {
+            "slug": "tethered-ev-charger",
+            "name": "Tethered EV Charger",
+            "service": "electrical",
+            "related": "ev-charger-installation"
+        },
+        {
+            "slug": "untethered-ev-charger",
+            "name": "Untethered EV Charger",
+            "service": "electrical",
+            "related": "ev-charger-installation"
+        },
+        {
+            "slug": "7kw-ev-charger",
+            "name": "7kW EV Charger",
+            "service": "electrical",
+            "related": "ev-charger-installation"
+        },
+        {
+            "slug": "22kw-ev-charger",
+            "name": "22kW EV Charger",
+            "service": "electrical",
+            "related": "ev-charger-installation"
+        },
+        {
+            "slug": "domestic-ev-charge-point",
+            "name": "Domestic EV Charge Point",
+            "service": "electrical",
+            "related": "ev-charger-installation"
+        },
+        {
+            "slug": "commercial-ev-charge-point",
+            "name": "Commercial EV Charge Point",
+            "service": "electrical",
+            "related": "ev-charger-installation"
+        },
+        {
+            "slug": "ev-charger-consumer-unit-upgrade",
+            "name": "EV Charger Consumer Unit Upgrade",
+            "service": "electrical",
+            "related": "consumer-unit"
+        },
+        {
+            "slug": "smart-ev-charger-installation",
+            "name": "Smart EV Charger Installation",
+            "service": "electrical",
+            "related": "ev-charger-installation"
+        },
+        {
+            "slug": "rolec-ev-charger-installation",
+            "name": "Rolec EV Charger Installation",
+            "service": "electrical",
+            "related": "ev-charger-installation"
+        },
+        {
+            "slug": "ohme-ev-charger-installation",
+            "name": "Ohme EV Charger Installation",
+            "service": "electrical",
+            "related": "ev-charger-installation"
+        },
+        {
+            "slug": "wallbox-ev-charger-installation",
+            "name": "Wallbox EV Charger Installation",
+            "service": "electrical",
+            "related": "ev-charger-installation"
+        },
+        {
+            "slug": "office-pat",
+            "name": "Office PAT",
+            "service": "electrical",
+            "related": "pat-testing"
+        },
+        {
+            "slug": "commercial-pat-testing",
+            "name": "Commercial PAT Testing",
+            "service": "electrical",
+            "related": "pat-testing"
+        },
+        {
+            "slug": "industrial-pat",
+            "name": "Industrial PAT",
+            "service": "electrical",
+            "related": "pat-testing"
+        },
+        {
+            "slug": "landlord-pat-testing",
+            "name": "Landlord PAT Testing",
+            "service": "electrical",
+            "related": "pat-testing"
+        },
+        {
+            "slug": "portable-appliance-test",
+            "name": "Portable Appliance Test",
+            "service": "electrical",
+            "related": "portable-appliance-testing"
+        },
+        {
+            "slug": "pat-testing-certificate",
+            "name": "PAT Testing Certificate",
+            "service": "electrical",
+            "related": "electrical-safety-certificate"
+        },
+        {
+            "slug": "pat-testing-near-me",
+            "name": "PAT Testing Near Me",
+            "service": "electrical",
+            "related": "pat-testing"
+        },
+        {
+            "slug": "it-equipment-pat",
+            "name": "IT Equipment PAT",
+            "service": "electrical",
+            "related": "pat-testing"
+        },
+        {
+            "slug": "hire-equipment-pat",
+            "name": "Hire Equipment PAT",
+            "service": "electrical",
+            "related": "pat-testing"
+        },
+        {
+            "slug": "annual-pat-testing",
+            "name": "Annual PAT Testing",
+            "service": "electrical",
+            "related": "pat-testing"
+        },
+        {
+            "slug": "retail-pat-testing-electrical",
+            "name": "Retail PAT Testing Electrical",
+            "service": "electrical",
+            "related": "pat-testing"
+        },
+        {
+            "slug": "warehouse-pat-testing-electrical",
+            "name": "Warehouse PAT Testing Electrical",
+            "service": "electrical",
+            "related": "pat-testing"
+        },
+        {
+            "slug": "school-pat-testing-electrical",
+            "name": "School PAT Testing Electrical",
+            "service": "electrical",
+            "related": "pat-testing"
+        },
+        {
+            "slug": "microwave-pat-testing",
+            "name": "Microwave PAT Testing",
+            "service": "electrical",
+            "related": "pat-testing"
+        },
+        {
+            "slug": "pat-testing-register",
+            "name": "PAT Testing Register",
+            "service": "electrical",
+            "related": "pat-testing"
+        },
+        {
+            "slug": "failed-pat-repair",
+            "name": "Failed PAT Repair",
+            "service": "electrical",
+            "related": "pat-testing"
+        },
+        {
+            "slug": "emergency-lighting-circuit-install",
+            "name": "Emergency Lighting Circuit Install",
+            "service": "electrical",
+            "related": "lighting-circuit-installation"
+        },
+        {
+            "slug": "emergency-light-conversion-electrical",
+            "name": "Emergency Light Conversion Electrical",
+            "service": "electrical",
+            "related": "emergency-lighting-electrical-works"
+        },
+        {
+            "slug": "maintained-emergency-lighting-electrical",
+            "name": "Maintained Emergency Lighting Electrical",
+            "service": "electrical",
+            "related": "lighting-circuit-installation"
+        },
+        {
+            "slug": "bulkhead-emergency-light-electrical",
+            "name": "Bulkhead Emergency Light Electrical",
+            "service": "electrical",
+            "related": "emergency-lighting-electrical-works"
+        },
+        {
+            "slug": "emergency-lighting-supply-circuit",
+            "name": "Emergency Lighting Supply Circuit",
+            "service": "electrical",
+            "related": "lighting-circuit-installation"
+        },
+        {
+            "slug": "self-test-emergency-light-wiring",
+            "name": "Self Test Emergency Light Wiring",
+            "service": "electrical",
+            "related": "emergency-lighting-electrical-works"
+        },
+        {
+            "slug": "central-battery-emergency-lighting-electrical",
+            "name": "Central Battery Emergency Lighting Electrical",
+            "service": "electrical",
+            "related": "lighting-circuit-installation"
+        },
+        {
+            "slug": "emergency-lighting-isolator",
+            "name": "Emergency Lighting Isolator",
+            "service": "electrical",
+            "related": "lighting-circuit-installation"
+        },
+        {
+            "slug": "landlord-electrical-works",
+            "name": "Landlord Electrical Works",
+            "service": "electrical",
+            "related": "landlord-eicr"
+        },
+        {
+            "slug": "void-property-electrics",
+            "name": "Void Property Electrics",
+            "service": "electrical",
+            "related": "electrical-services"
+        }
+    ]
+}

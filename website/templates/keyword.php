@@ -67,11 +67,11 @@ require SITE_ROOT . '/includes/header.php';
 <?php endif; ?>
 
 <!-- HERO: solid navy + image with dark overlay for readable text -->
-<section class="relative overflow-hidden bg-[#061828] text-white">
+<section class="relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="absolute inset-0">
         <img src="<?= htmlspecialchars($KEYWORD_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($KEYWORD_NAME ?? 'Property compliance', ENT_QUOTES, 'UTF-8') ?> — Icomply Property Services" class="w-full h-full object-cover opacity-35" loading="eager"
              onerror="this.src=$SERVICE_IMAGE">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#061828] via-[#061828]/95 to-[#061828]/75"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0B1F3A] via-[#0B1F3A]/95 to-[#0B1F3A]/75"></div>
     </div>
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
         <nav class="text-xs text-white/70 mb-5 flex flex-wrap gap-2" aria-label="Breadcrumb">
@@ -90,10 +90,10 @@ require SITE_ROOT . '/includes/header.php';
             <?= htmlspecialchars($KEYWORD_INTRO, ENT_QUOTES, 'UTF-8') ?>
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
-            <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-bold text-white shadow-lg">Get free quote</a>
+            <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-bold text-white shadow-lg">Enquire for POA</a>
             <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode($keywordName . ' quote') ?>"
                target="_blank" rel="noopener" class="px-8 py-4 rounded-2xl bg-green-600 hover:bg-green-500 font-bold text-white shadow-lg">WhatsApp</a>
-            <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="px-8 py-4 rounded-2xl bg-white text-[#061828] font-bold shadow-lg"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+            <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-bold shadow-lg"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
         </div>
     </div>
 </section>
@@ -105,14 +105,14 @@ require SITE_ROOT . '/includes/header.php';
         $trust = [
             ['Local engineers', 'Stockport base — 150+ North West towns'],
             ['Standards-led', 'British Standards & manufacturer guidance'],
-            ['Fixed quotes', 'Clear scope before work starts'],
+            ['POA / enquire', 'Written scope — no invented £'],
             ['Full paperwork', 'Certificates & logbooks for compliance'],
         ];
         foreach ($trust as [$t, $d]): ?>
         <div class="flex gap-3">
-            <div class="w-10 h-10 rounded-xl bg-[#061828] text-white flex items-center justify-center font-bold shrink-0">✓</div>
+            <div class="w-10 h-10 rounded-xl bg-[#0B1F3A] text-white flex items-center justify-center font-bold shrink-0">✓</div>
             <div>
-                <div class="font-bold text-[#061828]"><?= htmlspecialchars($t, ENT_QUOTES, 'UTF-8') ?></div>
+                <div class="font-bold text-[#0B1F3A]"><?= htmlspecialchars($t, ENT_QUOTES, 'UTF-8') ?></div>
                 <div class="text-sm text-zinc-800 mt-0.5"><?= htmlspecialchars($d, ENT_QUOTES, 'UTF-8') ?></div>
             </div>
         </div>
@@ -126,7 +126,7 @@ require SITE_ROOT . '/includes/header.php';
         <div class="grid lg:grid-cols-5 gap-10">
             <div class="lg:col-span-3">
                 <div class="bg-white border-2 border-zinc-200 rounded-3xl p-6 md:p-8 shadow-sm">
-                    <h2 class="text-2xl md:text-3xl font-bold text-[#061828] tracking-tight">
+                    <h2 class="text-2xl md:text-3xl font-bold text-[#0B1F3A] tracking-tight">
                         About <?= htmlspecialchars($keywordName, ENT_QUOTES, 'UTF-8') ?>
                     </h2>
                     <p class="mt-4 text-base md:text-lg text-zinc-900 leading-relaxed font-medium"><?= htmlspecialchars($KEYWORD_INTRO, ENT_QUOTES, 'UTF-8') ?></p>
@@ -152,12 +152,12 @@ require SITE_ROOT . '/includes/header.php';
                     <img src="<?= htmlspecialchars($KEYWORD_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> — Icomply Property Services"
                          class="w-full h-52 object-cover" loading="lazy"
                          onerror="this.src=$SERVICE_IMAGE">
-                    <div class="p-3 bg-[#061828] text-white text-sm font-semibold text-center"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></div>
+                    <div class="p-3 bg-[#0B1F3A] text-white text-sm font-semibold text-center"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></div>
                 </div>
                 <div class="rounded-3xl overflow-hidden border-2 border-zinc-300 shadow-md bg-zinc-200">
                     <img src="<?= htmlspecialchars($SERVICE_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> by Icomply"
                          class="w-full h-40 object-cover" loading="lazy">
-                    <div class="p-3 bg-white text-[#061828] text-sm font-semibold text-center border-t-2 border-zinc-200"><?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> service</div>
+                    <div class="p-3 bg-white text-[#0B1F3A] text-sm font-semibold text-center border-t-2 border-zinc-200"><?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> service</div>
                 </div>
             </div>
         </div>
@@ -167,7 +167,7 @@ require SITE_ROOT . '/includes/header.php';
 <!-- MANUFACTURERS -->
 <section class="bg-white border-y-2 border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-14">
-        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">Brands we install &amp; service</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-[#0B1F3A]">Brands we install &amp; service</h2>
         <p class="mt-2 text-zinc-800 max-w-2xl">Click a manufacturer for products, kits and install quotes related to <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> and <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?>.</p>
         <div class="mt-6 flex flex-wrap gap-2"><?= $MANUFACTURER_TAGS ?></div>
     </div>
@@ -176,7 +176,7 @@ require SITE_ROOT . '/includes/header.php';
 <!-- AREAS — every town linked (keyword × area pages) -->
 <section class="bg-zinc-100">
     <div class="max-w-7xl mx-auto px-6 py-14">
-        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> by area</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-[#0B1F3A]"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> by area</h2>
         <p class="mt-2 text-zinc-800">Indexable local landings where this job is exported — e.g. <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> in Stockport. Other towns sit on the area hubs.</p>
         <div class="mt-6 flex flex-wrap gap-2">
             <?php
@@ -187,7 +187,7 @@ require SITE_ROOT . '/includes/header.php';
             $restTowns = array_values(array_filter($linkTowns, static fn($t) => !in_array($t, $featured, true)));
             foreach ($featured as $a): ?>
                 <a href="<?= url('/pages/keywords/' . $KEYWORD_SLUG . '/' . areaSlug($a) . '.php') ?>"
-                   class="px-4 py-2.5 bg-[#061828] text-white rounded-full text-sm font-semibold hover:bg-[#ff6b00] transition shadow">
+                   class="px-4 py-2.5 bg-[#0B1F3A] text-white rounded-full text-sm font-semibold hover:bg-[#ff6b00] transition shadow">
                     <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> in <?= htmlspecialchars($a, ENT_QUOTES, 'UTF-8') ?>
                 </a>
             <?php endforeach; ?>
@@ -210,7 +210,7 @@ require SITE_ROOT . '/includes/header.php';
 <!-- RELATED KEYWORDS same service -->
 <section class="bg-white border-y-2 border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-14">
-        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">Related <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> guides</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-[#0B1F3A]">Related <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> guides</h2>
         <p class="mt-2 text-zinc-800">More topics under the same service — each also has pages for every North West town.</p>
         <div class="mt-6">
             <?php
@@ -224,17 +224,17 @@ require SITE_ROOT . '/includes/header.php';
 <!-- FAQ -->
 <section class="bg-white border-t-2 border-zinc-200">
     <div class="max-w-3xl mx-auto px-6 py-14">
-        <h2 class="text-2xl md:text-3xl font-bold text-[#061828] text-center mb-8"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> FAQ</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-[#0B1F3A] text-center mb-8"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> FAQ</h2>
         <div class="space-y-3"><?= $KEYWORD_FAQ_HTML ?></div>
         <div class="mt-10"><?= shareButtonsHtml($keywordName, $metaDesc) ?></div>
     </div>
 </section>
 
 <!-- QUOTE -->
-<section id="quote" class="bg-[#061828] text-white">
+<section id="quote" class="bg-[#0B1F3A] text-white">
     <div class="max-w-3xl mx-auto px-6 py-14">
-        <h2 class="text-3xl font-bold text-center">Quote for <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></h2>
-        <p class="mt-2 text-center text-white/90">Fixed-price after scope is agreed. Stockport engineers · North West coverage.</p>
+        <h2 class="text-3xl font-bold text-center">Enquire for <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></h2>
+        <p class="mt-2 text-center text-white/90">POA after we confirm the scope. Stockport engineers · North West coverage. No invented £ prices.</p>
         <form action="<?= url('/contact.php') ?>" method="POST" class="mt-8 bg-white text-zinc-900 border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4 shadow-xl">
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid md:grid-cols-2 gap-4">

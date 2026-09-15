@@ -25,10 +25,10 @@ website/config.local.php
 website/data/leads.jsonl
 website/data/leads.json
 
-# Generated mass stubs (router virtual routes; regenerable via bin/*)
-# Keep index.php and handcrafted landings tracked.
+# Keyword × area landings stay generated-only (router virtual routes).
+# Hub stubs under pages/keywords/*.php are tracked so category check scripts
+# can assert files exist (Electrical master = 340).
 website/pages/keywords/*/
-website/pages/keywords/*.php
 !website/pages/keywords/index.php
 website/pages/areas/*.php
 !website/pages/areas/index.php
