@@ -171,8 +171,33 @@ function saveJsonData(string $name, $data): void {
 }
 
 /**
- * Public absolute URL — extensionless (no .php).
- * Accepts paths with or without .php; always emits clean URLs.
+ * Root-relative static file URL. Never prefixes SITE_URL — draft deploys
+ * 404 if CSS/JS/favicons point at the production domain.
+ */
+function assetUrl(string $path = '/'): string
+{
+    $path = '/' . ltrim(str_replace('\\', '/', $path), '/');
+    $query = '';
+    if (str_contains($path, '?')) {
+        [$path, $q] = explode('?', $path, 2);
+        $query = '?' . $q;
+    }
+    return $path . $query;
+}
+
+function icomplyIsStaticAssetPath(string $path): bool
+{
+    return (bool) preg_match(
+        '#^/(assets/|favicon\.ico$|manifest\.json$|site\.webmanifest$|robots\.txt$)#',
+        $path
+    );
+}
+
+/**
+ * Public URL — extensionless (no .php).
+ * Static assets (/assets, favicons, manifests) are always root-relative
+ * so Netlify drafts load CSS from the same origin.
+ * Page URLs stay absolute via SITE_URL (canonicals / sitemap / OG).
  */
 function url(string $path = '/'): string {
     $path = '/' . ltrim(str_replace('\\', '/', $path), '/');
@@ -185,6 +210,9 @@ function url(string $path = '/'): string {
     $path = preg_replace('#\.php$#i', '', $path) ?? $path;
     // /foo/index → /foo
     $path = preg_replace('#/index$#i', '', $path) ?? $path;
+    if (icomplyIsStaticAssetPath($path)) {
+        return $path . $query;
+    }
     if ($path === '' || $path === '/') {
         return rtrim(SITE_URL, '/') . $query;
     }

@@ -91,7 +91,15 @@ foreach ($needHtml as $url => $spec) {
 
 $mustExist = [
     'assets',
+    'assets/css/site.css',
+    'assets/js/site-nav.js',
+    'assets/js/lead-popup.js',
+    'assets/images/favicon.svg',
+    'assets/images/favicon-32.png',
+    'assets/images/android-chrome-192.png',
+    'assets/images/brand/icomply-mark.svg',
     'manifest.json',
+    'site.webmanifest',
     'robots.txt',
     'sitemap.xml',
     'favicon.ico',
@@ -109,6 +117,23 @@ foreach ($mustExist as $rel) {
         $fail++;
         echo "[FAIL] missing {$rel}\n";
     }
+}
+
+$cssFile = $dist . '/assets/css/site.css';
+$homeHtml = is_file($dist . '/index.html') ? (string)file_get_contents($dist . '/index.html') : '';
+if (is_file($cssFile) && str_contains((string)file_get_contents($cssFile), '--brand') && str_contains((string)file_get_contents($cssFile), '#0B1F3A')) {
+    $pass++;
+    echo "[PASS] assets/css/site.css is brand CSS\n";
+} else {
+    $fail++;
+    echo "[FAIL] assets/css/site.css missing brand tokens\n";
+}
+if (str_contains($homeHtml, 'href="/assets/css/site.css"') && !str_contains($homeHtml, 'https://icomplypropertyservices.co.uk/assets/css/site.css')) {
+    $pass++;
+    echo "[PASS] homepage CSS href is root-relative /assets/css/site.css\n";
+} else {
+    $fail++;
+    echo "[FAIL] homepage CSS href must be /assets/css/site.css (not a production domain)\n";
 }
 
 $mustNotExist = [

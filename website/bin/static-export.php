@@ -98,6 +98,8 @@ $log("keyword-towns={$keywordTowns}\n");
 $log(str_repeat('=', 56) . "\n");
 
 icomplyResetDist($dist);
+// Copy CSS/JS/favicons first so a long export still has /assets even if interrupted.
+icomplyCopyStaticAssets($websiteRoot, $repoRoot, $dist);
 
 $routes = icomplyCollectExportRoutes($full, $keywordTowns);
 sort($routes);

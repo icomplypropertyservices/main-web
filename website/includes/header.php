@@ -100,23 +100,23 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     <meta name="twitter:site" content="<?= htmlspecialchars($twitterSite, ENT_QUOTES, 'UTF-8') ?>">
     <?php endif; ?>
     <link rel="canonical" href="<?= htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8') ?>">
-    <link rel="icon" href="<?= htmlspecialchars(url('/favicon.ico'), ENT_QUOTES, 'UTF-8') ?>" sizes="any">
-    <link rel="icon" href="<?= htmlspecialchars(url('/assets/images/favicon.ico'), ENT_QUOTES, 'UTF-8') ?>" sizes="any">
-    <link rel="icon" type="image/svg+xml" href="<?= htmlspecialchars(url('/assets/images/favicon.svg'), ENT_QUOTES, 'UTF-8') ?>">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?= htmlspecialchars(url('/assets/images/favicon-16.png'), ENT_QUOTES, 'UTF-8') ?>">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?= htmlspecialchars(url('/assets/images/favicon-32.png'), ENT_QUOTES, 'UTF-8') ?>">
-    <link rel="icon" type="image/png" sizes="192x192" href="<?= htmlspecialchars(url('/assets/images/android-chrome-192.png'), ENT_QUOTES, 'UTF-8') ?>">
-    <link rel="icon" type="image/png" sizes="512x512" href="<?= htmlspecialchars(url('/assets/images/android-chrome-512.png'), ENT_QUOTES, 'UTF-8') ?>">
-    <link rel="apple-touch-icon" sizes="180x180" href="<?= htmlspecialchars(url('/assets/images/apple-touch-icon.png'), ENT_QUOTES, 'UTF-8') ?>">
-    <link rel="manifest" href="<?= htmlspecialchars(url('/site.webmanifest'), ENT_QUOTES, 'UTF-8') ?>">
-    <link rel="manifest" href="<?= htmlspecialchars(url('/manifest.json'), ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="icon" href="<?= htmlspecialchars(assetUrl('/favicon.ico'), ENT_QUOTES, 'UTF-8') ?>" sizes="any">
+    <link rel="icon" href="<?= htmlspecialchars(assetUrl('/assets/images/favicon.ico'), ENT_QUOTES, 'UTF-8') ?>" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="<?= htmlspecialchars(assetUrl('/assets/images/favicon.svg'), ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= htmlspecialchars(assetUrl('/assets/images/favicon-16.png'), ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= htmlspecialchars(assetUrl('/assets/images/favicon-32.png'), ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="icon" type="image/png" sizes="192x192" href="<?= htmlspecialchars(assetUrl('/assets/images/android-chrome-192.png'), ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="icon" type="image/png" sizes="512x512" href="<?= htmlspecialchars(assetUrl('/assets/images/android-chrome-512.png'), ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= htmlspecialchars(assetUrl('/assets/images/apple-touch-icon.png'), ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="manifest" href="<?= htmlspecialchars(assetUrl('/site.webmanifest'), ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="manifest" href="<?= htmlspecialchars(assetUrl('/manifest.json'), ENT_QUOTES, 'UTF-8') ?>">
     <meta name="msapplication-TileColor" content="#0B1F3A">
-    <meta name="msapplication-TileImage" content="<?= htmlspecialchars(url('/assets/images/android-chrome-192.png'), ENT_QUOTES, 'UTF-8') ?>">
+    <meta name="msapplication-TileImage" content="<?= htmlspecialchars(assetUrl('/assets/images/android-chrome-192.png'), ENT_QUOTES, 'UTF-8') ?>">
     <meta name="author" content="<?= htmlspecialchars(SITE_NAME, ENT_QUOTES, 'UTF-8') ?>">
     <meta name="geo.region" content="GB-MAN">
     <meta name="geo.placename" content="Stockport">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css">
-    <link rel="stylesheet" href="<?= htmlspecialchars(url('/assets/css/site.css'), ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="stylesheet" href="<?= htmlspecialchars(assetUrl('/assets/css/site.css'), ENT_QUOTES, 'UTF-8') ?>">
     <?php
     $gaId = defined('GA_MEASUREMENT_ID') ? trim((string)GA_MEASUREMENT_ID) : '';
     $awId = defined('AW_CONVERSION_ID') ? trim((string)AW_CONVERSION_ID) : '';

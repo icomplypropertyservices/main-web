@@ -21,7 +21,7 @@ function icomplyMatrixH(string $s): string
 function icomplyMatrixLeadPopupHtml(): string
 {
     $s = icomplyMatrixShared();
-    $js = icomplyMatrixH(url('/assets/js/lead-popup.js'));
+    $js = icomplyMatrixH(assetUrl('/assets/js/lead-popup.js'));
     $contact = icomplyMatrixH($s['contact']);
     $phone = icomplyMatrixH($s['phone']);
     $phoneHref = icomplyMatrixH($s['phoneHref']);
@@ -99,7 +99,7 @@ function icomplyMatrixShared(): array
     }
 
     $home = rtrim(SITE_URL, '/') . '/';
-    $css = url('/assets/css/site.css');
+    $css = assetUrl('/assets/css/site.css');
     $phone = defined('PHONE') ? PHONE : '';
     $phoneHref = 'tel:' . preg_replace('/\s+/', '', $phone);
     $wa = defined('WHATSAPP') ? WHATSAPP : '';

@@ -107,8 +107,8 @@ function icomplyNavCatalog(): array
         'whatsapp' => defined('WHATSAPP') ? WHATSAPP : '',
         'email' => defined('EMAIL') ? EMAIL : '',
         'brand' => defined('SITE_NAME') ? SITE_NAME : 'Icomply Property Services',
-        'js' => url('/assets/js/site-nav.js'),
-        'logo' => url('/assets/images/brand/icomply-mark.svg'),
+        'js' => assetUrl('/assets/js/site-nav.js'),
+        'logo' => assetUrl('/assets/images/brand/icomply-mark.svg'),
     ];
     return $c;
 }

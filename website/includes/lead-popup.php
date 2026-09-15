@@ -62,4 +62,4 @@ $lpServices = function_exists('getServices') ? getServices() : [];
         </form>
     </div>
 </div>
-<script src="<?= htmlspecialchars(url('/assets/js/lead-popup.js'), ENT_QUOTES, 'UTF-8') ?>" defer></script>
+<script src="<?= htmlspecialchars(assetUrl('/assets/js/lead-popup.js'), ENT_QUOTES, 'UTF-8') ?>" defer></script>
