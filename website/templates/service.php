@@ -390,13 +390,13 @@ $schema = [
             <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">
                 <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> near you
             </h2>
-            <p class="mt-2 text-zinc-600">Pick a town for a dedicated <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> landing page with local SEO and quote CTAs.</p>
+            <p class="mt-2 text-zinc-600">Town hubs we cover — electrical and gas also open a real keyword×town page. We do not publish thin service×area doorways.</p>
         </div>
         <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All areas →</a>
     </div>
     <div class="flex flex-wrap gap-2">
         <?php foreach ($popularTowns as $a): ?>
-            <a href="<?= url('/pages/' . $SERVICE_SLUG . '/' . areaSlug($a) . '.php') ?>"
+            <a href="<?= htmlspecialchars(exportedServiceLocalUrl($SERVICE_SLUG, $a, 'service'), ENT_QUOTES, 'UTF-8') ?>"
                class="px-5 py-2.5 bg-white border rounded-full text-sm font-medium text-black hover:border-[#ff6b00] hover:shadow-sm transition">
                 <?= htmlspecialchars($serviceName . ' in ' . $a, ENT_QUOTES, 'UTF-8') ?>
             </a>
@@ -406,7 +406,7 @@ $schema = [
         <?php foreach (array_slice($allAreas, 0, 40) as $a):
             if (in_array($a, $popularTowns, true)) continue;
         ?>
-            <a href="<?= url('/pages/' . $SERVICE_SLUG . '/' . areaSlug($a) . '.php') ?>"
+            <a href="<?= htmlspecialchars(exportedServiceLocalUrl($SERVICE_SLUG, $a, 'service'), ENT_QUOTES, 'UTF-8') ?>"
                class="px-3 py-1.5 bg-zinc-50 border rounded-full text-xs text-zinc-700 hover:border-[#ff6b00]">
                 <?= htmlspecialchars($a, ENT_QUOTES, 'UTF-8') ?>
             </a>

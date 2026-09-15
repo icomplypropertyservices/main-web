@@ -91,6 +91,26 @@ $featured = getElectricalGasFeaturedKeywordSlugs();
 $ok(in_array('rewire', $featured['electrical'] ?? [], true), 'featured electrical includes rewire');
 $ok(in_array('boiler', $featured['gas'] ?? [], true), 'featured gas includes boiler');
 
+require_once SITE_ROOT . '/includes/sitemap.php';
+$sitemapXml = icomplyBuildSitemapXml('https://icomplypropertyservices.co.uk');
+$ok(!preg_match('#/pages/gas-systems/[a-z0-9\-]+</loc>#', $sitemapXml), 'sitemap has zero /pages/gas-systems/{town}');
+$ok(!preg_match('#/pages/electrical/[a-z0-9\-]+</loc>#', $sitemapXml), 'sitemap has zero /pages/electrical/{town}');
+$ok(str_contains($sitemapXml, '/pages/services/gas-systems</loc>'), 'sitemap still lists gas-systems service hub');
+$ok(str_contains($sitemapXml, '/pages/keywords/boiler</loc>'), 'sitemap still lists boiler keyword hub');
+
+ob_start();
+renderServiceHubPage('gas-systems');
+$gasHub = (string)ob_get_clean();
+$ok(!preg_match('#/pages/gas-systems/[a-z0-9\-]+#', $gasHub), 'gas-systems hub HTML has no /pages/gas-systems/{town} 404s');
+ob_start();
+renderServiceHubPage('electrical');
+$elecHub = (string)ob_get_clean();
+$ok(!preg_match('#/pages/electrical/[a-z0-9\-]+#', $elecHub), 'electrical hub HTML has no /pages/electrical/{town} 404s');
+ob_start();
+renderAreaHubPage('Stockport');
+$areaHub = (string)ob_get_clean();
+$ok(!preg_match('#/pages/(gas-systems|electrical|fire-alarms)/[a-z0-9\-]+#', $areaHub), 'area hub HTML has no service×area 404s');
+
 echo str_repeat('=', 56) . "\n";
 echo "PASS={$pass} FAIL={$fail}\n";
 exit($fail > 0 ? 1 : 0);

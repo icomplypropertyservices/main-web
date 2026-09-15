@@ -27,7 +27,11 @@ $bannedNeedles = [
     '/products/',
     '/sitemap-1.xml',
     '-photo.jpg',
-    '/pages/keywords/eicr/stockport', // keyword×area junk sample
+    '/pages/gas-systems/stockport</loc>',
+    '/pages/gas-systems/manchester</loc>',
+    '/pages/electrical/stockport</loc>',
+    '/pages/electrical/manchester</loc>',
+    '/pages/fire-alarms/liverpool</loc>',
 ];
 foreach ($bannedNeedles as $n) {
     if (str_contains($xml, $n)) {
@@ -54,6 +58,11 @@ $required = [
     '/pages/stockport-property-compliance</loc>',
     '/pages/manchester-property-compliance</loc>',
     '/pages/services/fire-risk-assessments</loc>',
+    '/pages/services/electrical</loc>',
+    '/pages/services/gas-systems</loc>',
+    '/pages/keywords/rewire</loc>',
+    '/pages/keywords/boiler</loc>',
+    '/pages/keywords/rewire/stockport</loc>',
     '/privacy</loc>',
     '/terms</loc>',
 ];
@@ -68,6 +77,35 @@ $count = substr_count($xml, '<url>');
 if ($count < 200 || $count > 20000) {
     echo "FAIL: unexpected URL count {$count} (want 200–20000 compact)\n";
     $fail++;
+}
+
+$services = function_exists('getServices') ? getServices() : [];
+$areaSlugs = [];
+if (function_exists('getAreas') && function_exists('areaSlug')) {
+    foreach (getAreas() as $area) {
+        $areaSlugs[areaSlug((string)$area)] = true;
+    }
+}
+preg_match_all('#<loc>https://icomplypropertyservices\.co\.uk(/pages/[^<]+)</loc>#', $xml, $locHits);
+$serviceAreaHits = [];
+foreach ($locHits[1] ?? [] as $path) {
+    if (!preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        continue;
+    }
+    $first = $m[1];
+    $second = $m[2];
+    if (in_array($first, ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages'], true)) {
+        continue;
+    }
+    if (isset($services[$first]) && isset($areaSlugs[$second])) {
+        $serviceAreaHits[] = $path;
+    }
+}
+if ($serviceAreaHits) {
+    $fail++;
+    echo 'FAIL: sitemap lists service×area 404s (sample): ' . implode(', ', array_slice($serviceAreaHits, 0, 8)) . "\n";
+} else {
+    echo "OK: no /pages/{service}/{town} service×area locs\n";
 }
 
 echo "URLs={$count} bytes=" . strlen($xml) . PHP_EOL;

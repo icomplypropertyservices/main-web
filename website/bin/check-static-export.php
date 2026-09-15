@@ -210,6 +210,15 @@ foreach ($redirectNeedles as $n) {
         echo "[PASS] _redirects has {$n}\n";
     }
 }
+$sitemapDist = is_file($dist . '/sitemap.xml') ? (string)file_get_contents($dist . '/sitemap.xml') : '';
+if (preg_match('#/pages/gas-systems/[a-z0-9\-]+</loc>#', $sitemapDist) || preg_match('#/pages/electrical/[a-z0-9\-]+</loc>#', $sitemapDist)) {
+    $fail++;
+    echo "[FAIL] dist/sitemap.xml still lists /pages/{service}/{town} 404s\n";
+} else {
+    $pass++;
+    echo "[PASS] dist/sitemap.xml has no service×area 404 locs\n";
+}
+
 if (!str_contains($headerFile, 'text/html')) {
     $fail++;
     echo "[FAIL] _headers missing text/html for .php\n";

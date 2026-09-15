@@ -209,35 +209,43 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
-<!-- SERVICE × AREA (sample of virtual landings — full set via XML sitemaps) -->
+<!-- LOCAL LANDINGS — only URLs that exist on the default Netlify export -->
 <section id="service-areas" class="max-w-7xl mx-auto px-6 py-16 md:py-20 scroll-mt-24">
     <div class="mb-10">
         <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local landings</div>
-        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Service × area examples</h2>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Service hubs &amp; keyword towns</h2>
         <p class="mt-2 text-zinc-600 max-w-2xl">
-            Every service has a local page for each town we cover (router-driven, no stub required).
-            Below: popular combos — full list is in the XML sitemaps.
+            Browse a service hub, then open a keyword guide for your town. We do not publish thin
+            service×area doorway pages for all 168 towns.
         </p>
     </div>
     <div class="flex flex-wrap gap-2">
         <?php
-        $sampleTowns = array_slice($popularAreas, 0, 6);
-        $sampleServices = array_slice($services, 0, 6, true);
-        foreach ($sampleServices as $sSlug => $sName):
-            foreach ($sampleTowns as $town):
-                $aSlug = areaSlug($town);
+        foreach (['electrical' => 'Electrical', 'gas-systems' => 'Gas Systems', 'fire-alarms' => 'Fire Alarms', 'cctv' => 'CCTV'] as $sSlug => $sName):
+            if (!isset($services[$sSlug])) { continue; }
+            ?>
+            <a href="<?= url('/pages/services/' . rawurlencode($sSlug) . '.php') ?>"
+               class="px-3 py-1.5 bg-white border rounded-full text-xs sm:text-sm text-black hover:border-[#ff6b00] transition">
+                <?= htmlspecialchars($sName, ENT_QUOTES, 'UTF-8') ?> hub
+            </a>
+        <?php endforeach;
+        $egKwMap = getMajorKeywords();
+        $egTowns = array_values(array_intersect($popularAreas, ['Stockport', 'Manchester', 'Bolton']));
+        foreach (['rewire', 'emergency-electrician', 'boiler', 'cp12'] as $egSlug):
+            if (!isset($egKwMap[$egSlug])) { continue; }
+            $egName = $egKwMap[$egSlug]['name'] ?? $egSlug;
+            foreach ($egTowns as $town):
                 ?>
-                <a href="<?= url('/pages/' . rawurlencode($sSlug) . '/' . rawurlencode($aSlug) . '.php') ?>"
+                <a href="<?= url('/pages/keywords/' . rawurlencode($egSlug) . '/' . areaSlug($town) . '.php') ?>"
                    class="px-3 py-1.5 bg-white border rounded-full text-xs sm:text-sm text-black hover:border-[#ff6b00] transition">
-                    <?= htmlspecialchars($sName . ' in ' . $town, ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($egName . ' in ' . $town, ENT_QUOTES, 'UTF-8') ?>
                 </a>
             <?php endforeach;
         endforeach; ?>
     </div>
     <p class="mt-6 text-sm text-zinc-500">
         Also browse by <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/services/index.php') ?>">service</a>
-        or <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/areas/index.php') ?>">area hub</a>
-        (each area page links every service for that town).
+        or <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/areas/index.php') ?>">area hub</a>.
     </p>
 </section>
 

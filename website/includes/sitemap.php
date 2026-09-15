@@ -1,8 +1,9 @@
 <?php
 /**
- * Compact, accurate sitemap — core pages + hubs + resources + services +
- * areas + manufacturers + keyword hubs + service×area landings.
- * Never includes keyword×area (the 200k+ junk that made live generate 470 parts / 500).
+ * Compact, accurate sitemap — core pages + hubs + resources + service hubs +
+ * areas + manufacturers + keyword hubs + featured electrical/gas keyword×town.
+ * Never lists /pages/{service}/{town} service×area landings: those are only
+ * rendered with --full and 404 on the default Netlify export.
  */
 declare(strict_types=1);
 
@@ -167,13 +168,9 @@ function icomplySitemapEntries(): array
             }
         }
     }
-    if (!$requestSafe && function_exists('getServices') && function_exists('getAreas') && function_exists('areaSlug')) {
-        foreach (array_keys(getServices()) as $sSlug) {
-            foreach (getAreas() as $area) {
-                $add('/pages/' . $sSlug . '/' . areaSlug($area), '0.55');
-            }
-        }
-    }
+    // Do NOT list /pages/{service}/{town}. Default static export skips those
+    // (they sit behind --full). Listing them 404s on Netlify (gas-systems,
+    // electrical, and every other service × 168 towns).
 
     return $entries;
 }
