@@ -50,20 +50,20 @@ $checklist = [
     [
         'title' => 'Fire detection and warning',
         'body' => 'Licence conditions and the FRA usually specify a detection grade/category (often BS 5839-6 for houses). Interlinked smoke/heat/CO in smaller houses is not always enough for a larger HMO. We quote fire alarms as an add-on, not as a hidden package line.',
-        'link' => url('/pages/services/fire-alarms'),
-        'linkLabel' => 'Fire alarm services',
+        'link' => url('/pages/hmo-fire-alarms'),
+        'linkLabel' => 'HMO fire alarms',
     ],
     [
         'title' => 'Emergency lighting (where required)',
         'body' => 'Common parts of larger or higher-risk HMOs often need emergency lighting, tested to BS 5266 practice, with a logbook. Not every small HMO needs a full commercial system — the FRA and licence conditions decide.',
-        'link' => url('/pages/services/emergency-lighting'),
-        'linkLabel' => 'Emergency lighting',
+        'link' => url('/pages/hmo-emergency-lighting'),
+        'linkLabel' => 'HMO emergency lighting',
     ],
     [
         'title' => 'Fire doors and means of escape',
         'body' => 'Self-closers, intumescent strips, vision panels and clear escape routes are frequent licence and FRA findings. We survey and upgrade fire doors as an optional add-on after we have seen the house.',
-        'link' => url('/pages/services/fire-doors'),
-        'linkLabel' => 'Fire doors',
+        'link' => url('/pages/hmo-fire-doors'),
+        'linkLabel' => 'HMO fire doors',
     ],
     [
         'title' => 'Smoke and carbon monoxide alarms',

@@ -31,10 +31,14 @@ function resourceRelatedLinks(string $slug): array {
             ['href' => url('/pages/packages/hmo'), 'label' => 'HMO packages'],
         ],
         'hmo-licence-compliance-checklist' => [
+            ['href' => url('/pages/packages/hmo'), 'label' => 'HMO packages'],
             ['href' => url('/pages/packages/hmo-compliance'), 'label' => 'HMO compliance package'],
+            ['href' => url('/pages/packages/hmo-fire-safety'), 'label' => 'HMO fire safety pack'],
+            ['href' => url('/pages/hmo-landlords'), 'label' => 'HMO landlords'],
             ['href' => url('/pages/hmo-eicr'), 'label' => 'HMO EICR'],
             ['href' => url('/pages/hmo-fra'), 'label' => 'HMO fire risk assessment'],
             ['href' => url('/pages/hmo-gas-safety'), 'label' => 'HMO gas safety'],
+            ['href' => url('/pages/hmo-fire-alarms'), 'label' => 'HMO fire alarms'],
             ['href' => url('/pages/landlords'), 'label' => 'Landlord services'],
         ],
     ];

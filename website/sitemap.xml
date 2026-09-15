@@ -11,6 +11,9 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/packages</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/packages/hmo</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/packages/hmo-compliance</loc><priority>0.85</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/packages/hmo-fire-safety</loc><priority>0.85</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/packages/hmo-occupancy</loc><priority>0.85</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/hmo-landlords</loc><priority>0.82</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/packages/let-ready</loc><priority>0.7</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/packages/fire-ready</loc><priority>0.7</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/packages/workplace-essentials</loc><priority>0.7</priority></url>
@@ -23,6 +26,9 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/hmo-gas-safety</loc><priority>0.82</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/hmo-gas-safety/stockport</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/hmo-gas-safety/manchester</loc><priority>0.8</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/hmo-fire-alarms</loc><priority>0.82</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/hmo-emergency-lighting</loc><priority>0.82</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/hmo-fire-doors</loc><priority>0.82</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/pricing</loc><priority>0.75</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/care-homes</loc><priority>0.75</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/ev-chargers</loc><priority>0.75</priority></url>

@@ -355,8 +355,11 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
                         <a href="<?= url('/pages/packages.php') ?>" class="block px-5 py-2.5 font-semibold text-[#ff6b00] hover:bg-zinc-50 border-b">All packages →</a>
                         <a href="<?= url('/pages/packages/hmo') ?>" class="block px-5 py-2.5 hover:bg-zinc-50 text-black font-semibold">HMO Packages</a>
                         <a href="<?= url('/pages/packages/hmo-compliance') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-zinc-700 text-sm">HMO Compliance (EICR + gas + FRA)</a>
+                        <a href="<?= url('/pages/packages/hmo-fire-safety') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-zinc-700 text-sm">HMO Fire Safety Pack</a>
+                        <a href="<?= url('/pages/packages/hmo-occupancy') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-zinc-700 text-sm">HMO Occupancy Pack</a>
+                        <a href="<?= url('/pages/hmo-landlords') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-zinc-700 text-sm">HMO landlords</a>
                         <?php foreach ($packageHubs as $pkgSlug => $pkg):
-                            if (in_array($pkgSlug, ['hmo', 'hmo-compliance'], true)) {
+                            if (in_array($pkgSlug, ['hmo', 'hmo-compliance', 'hmo-fire-safety', 'hmo-occupancy'], true)) {
                                 continue;
                             }
                             ?>
@@ -379,6 +382,7 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
                         <a href="<?= url('/pages/about.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">About</a>
                         <a href="<?= url('/pages/packages.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Packages</a>
                         <a href="<?= url('/pages/packages/hmo') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">HMO packages</a>
+                        <a href="<?= url('/pages/hmo-landlords') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">HMO landlords</a>
                         <a href="<?= url('/pages/pricing.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Pricing guide</a>
                         <a href="<?= url('/pages/landlords.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Landlords</a>
                         <a href="<?= url('/pages/commercial.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Commercial / FM</a>
@@ -445,6 +449,9 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
             <a href="<?= url('/pages/packages.php') ?>" class="block px-3 py-3 rounded-xl hover:bg-zinc-50 font-semibold text-[#ff6b00]">Packages</a>
             <a href="<?= url('/pages/packages/hmo') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50">HMO Packages</a>
             <a href="<?= url('/pages/packages/hmo-compliance') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50">HMO Compliance</a>
+            <a href="<?= url('/pages/packages/hmo-fire-safety') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50">HMO Fire Safety</a>
+            <a href="<?= url('/pages/packages/hmo-occupancy') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50">HMO Occupancy</a>
+            <a href="<?= url('/pages/hmo-landlords') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50">HMO landlords</a>
             <div class="px-3 pt-3 pb-1 text-xs uppercase tracking-wider text-zinc-400 font-semibold">Explore</div>
             <a href="<?= url('/pages/about.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">About</a>
             <a href="<?= url('/pages/packages.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">Packages</a>

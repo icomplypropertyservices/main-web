@@ -67,13 +67,13 @@ $faqs = [
     [
         'cat' => 'HMO packages',
         'q' => 'Do you offer an HMO compliance package?',
-        'a' => 'Yes. The HMO compliance package combines an EICR, landlord gas safety (where gas is present) and a fire risk assessment in one visit plan. Emergency lighting, fire alarms and fire doors are optional add-ons if the house needs them. Pricing is POA — we issue a fixed quote after scope. This is not a licence application and not legal advice.',
+        'a' => 'Yes. Three POA variants: HMO Compliance (EICR + gas + FRA), HMO Fire Safety (FRA plus alarms, lighting and doors as required), and HMO Occupancy (EICR, gas and smoke/CO for a re-let). This is not a licence application and not legal advice.',
         'link' => ['/pages/packages/hmo', 'HMO packages'],
     ],
     [
         'cat' => 'HMO packages',
         'q' => 'Can you do HMO EICR, FRA or gas safety as standalone jobs?',
-        'a' => 'Yes. Dedicated pages cover HMO EICR, HMO fire risk assessment and HMO gas safety for Greater Manchester, with Stockport and Manchester landings. Book a single certificate if the others are already in date.',
+        'a' => 'Yes. Dedicated hubs cover HMO EICR, FRA, gas safety, fire alarms, emergency lighting and fire doors. Stockport and Manchester landings exist only for EICR, FRA and gas. Book a single job if the others are already in date.',
         'link' => ['/pages/hmo-eicr', 'HMO EICR'],
     ],
     [

@@ -98,15 +98,19 @@ echo sectionTrustStrip([
                 <?php endforeach; ?>
             </ul>
 
-            <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-black pt-4">Bundle with the HMO package</h2>
+            <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-black pt-4">Bundle with an HMO package</h2>
             <p>
-                If gas safety and a fire risk assessment are also due, use the
-                <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= htmlspecialchars(url('/pages/packages/hmo-compliance'), ENT_QUOTES, 'UTF-8') ?>">HMO compliance package</a>
-                (EICR + gas + FRA). Add
-                <a class="text-[#ff6b00] hover:underline" href="<?= htmlspecialchars(url('/pages/services/emergency-lighting'), ENT_QUOTES, 'UTF-8') ?>">emergency lighting</a>,
-                <a class="text-[#ff6b00] hover:underline" href="<?= htmlspecialchars(url('/pages/services/fire-alarms'), ENT_QUOTES, 'UTF-8') ?>">fire alarms</a>
+                If several certificates fall due together, pick a variant:
+                <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= htmlspecialchars(url('/pages/packages/hmo-compliance'), ENT_QUOTES, 'UTF-8') ?>">HMO Compliance</a>
+                (EICR + gas + FRA),
+                <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= htmlspecialchars(url('/pages/packages/hmo-fire-safety'), ENT_QUOTES, 'UTF-8') ?>">HMO Fire Safety</a>
+                (FRA plus life-safety work), or
+                <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= htmlspecialchars(url('/pages/packages/hmo-occupancy'), ENT_QUOTES, 'UTF-8') ?>">HMO Occupancy</a>
+                (re-let file). Add
+                <a class="text-[#ff6b00] hover:underline" href="<?= htmlspecialchars(url('/pages/hmo-emergency-lighting'), ENT_QUOTES, 'UTF-8') ?>">emergency lighting</a>,
+                <a class="text-[#ff6b00] hover:underline" href="<?= htmlspecialchars(url('/pages/hmo-fire-alarms'), ENT_QUOTES, 'UTF-8') ?>">fire alarms</a>
                 or
-                <a class="text-[#ff6b00] hover:underline" href="<?= htmlspecialchars(url('/pages/services/fire-doors'), ENT_QUOTES, 'UTF-8') ?>">fire doors</a>
+                <a class="text-[#ff6b00] hover:underline" href="<?= htmlspecialchars(url('/pages/hmo-fire-doors'), ENT_QUOTES, 'UTF-8') ?>">fire doors</a>
                 only where the house needs them.
             </p>
 

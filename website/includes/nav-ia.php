@@ -47,6 +47,16 @@ if (!function_exists('getPackageHubs')) {
                 'tagline' => 'Core HMO certificate bundle',
                 'audience' => 'Domestic',
             ],
+            'hmo-fire-safety' => [
+                'name' => 'HMO Fire Safety',
+                'tagline' => 'FRA, alarms, lighting, doors',
+                'audience' => 'Domestic',
+            ],
+            'hmo-occupancy' => [
+                'name' => 'HMO Occupancy',
+                'tagline' => 'Re-let certificates and alarms',
+                'audience' => 'Domestic',
+            ],
             'let-ready' => [
                 'name' => 'Let Ready',
                 'tagline' => 'Landlord / void compliance pack',

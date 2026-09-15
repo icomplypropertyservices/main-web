@@ -94,7 +94,7 @@ $hubLinks = [
     [
         'href' => url('/pages/packages/hmo'),
         'title' => 'HMO packages',
-        'blurb' => 'EICR + gas safety + fire risk assessment for licensed and licensable HMOs.',
+        'blurb' => 'Compliance, fire safety or occupancy packs for licensed and licensable HMOs.',
         'cta' => 'HMO packages →',
     ],
     [

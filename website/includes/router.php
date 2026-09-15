@@ -131,7 +131,7 @@ function routerDispatchVirtual(string $path): bool {
     if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         $serviceSlug = $m[1];
         $areaSlugVal = $m[2];
-        $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages', 'hmo-eicr', 'hmo-fra', 'hmo-gas-safety'];
+        $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages', 'hmo-eicr', 'hmo-fra', 'hmo-gas-safety', 'hmo-fire-alarms', 'hmo-emergency-lighting', 'hmo-fire-doors', 'hmo-landlords'];
         if (in_array($serviceSlug, $reserved, true)) {
             return false;
         }
@@ -156,7 +156,7 @@ function routerDispatchVirtual(string $path): bool {
     // /pages/{service-slug} → canonical /pages/services/{slug}
     if (preg_match('#^/pages/([a-z0-9\-]+)$#', $path, $m)) {
         $slug = $m[1];
-        $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages', 'hmo-eicr', 'hmo-fra', 'hmo-gas-safety'];
+        $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages', 'hmo-eicr', 'hmo-fra', 'hmo-gas-safety', 'hmo-fire-alarms', 'hmo-emergency-lighting', 'hmo-fire-doors', 'hmo-landlords'];
         if (!in_array($slug, $reserved, true) && isset(getServices()[$slug])) {
             header('Location: ' . url('/pages/services/' . $slug), true, 301);
             exit;

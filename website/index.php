@@ -251,8 +251,8 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                class="group bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="w-12 h-12 rounded-2xl bg-[#0a2540]/10 text-[#0a2540] font-bold flex items-center justify-center text-lg group-hover:bg-[#ff6b00] group-hover:text-white transition">H</div>
                 <h3 class="mt-5 font-semibold text-xl text-black tracking-tight">HMO packages</h3>
-                <p class="mt-2 text-sm text-zinc-600 flex-1">EICR + gas safety + FRA for licensed and licensable HMOs across Stockport, Manchester and Greater Manchester. POA after scope.</p>
-                <span class="mt-5 text-sm font-semibold text-[#ff6b00]">HMO compliance →</span>
+                <p class="mt-2 text-sm text-zinc-600 flex-1">Compliance, fire safety or occupancy packs for licensed and licensable HMOs across Stockport, Manchester and Greater Manchester. POA after scope.</p>
+                <span class="mt-5 text-sm font-semibold text-[#ff6b00]">HMO packages →</span>
             </a>
             <a href="<?= url('/pages/commercial.php') ?>"
                class="group bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
@@ -341,7 +341,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
         </div>
         <div class="bg-[#0a2540] text-white rounded-3xl p-8 md:p-10">
             <h3 class="text-2xl font-semibold tracking-tight">Need a compliance package?</h3>
-            <p class="mt-3 text-white/80">Combine EICR, fire alarms, emergency lighting and gas safety into one visit schedule — or book the <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/packages/hmo') ?>">HMO compliance package</a> (EICR + gas + FRA) for licensed houses.</p>
+            <p class="mt-3 text-white/80">Combine EICR, fire alarms, emergency lighting and gas safety into one visit schedule — or book an <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/packages/hmo') ?>">HMO package</a> (compliance, fire safety or occupancy) for licensed houses.</p>
             <ul class="mt-6 space-y-3 text-sm text-white/90">
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Fixed-price multi-service quotes</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Full documentation for audits &amp; insurers</li>

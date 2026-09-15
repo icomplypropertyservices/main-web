@@ -10,24 +10,164 @@ if (!defined('SITE_ROOT')) {
 /** Core HMO compliance bundle + optional add-ons already sold on the site. */
 function hmoComplianceBundle(): array
 {
+    $variants = hmoPackageVariants();
+    return $variants['hmo-compliance'];
+}
+
+/**
+ * Honest package variants — POA only, scoped after we see the house.
+ *
+ * @return array<string, array<string, mixed>>
+ */
+function hmoPackageVariants(): array
+{
+    $addons = [
+        ['slug' => 'emergency-lighting', 'label' => 'Emergency lighting testing / install'],
+        ['slug' => 'fire-alarms', 'label' => 'Fire alarm design, install or service'],
+        ['slug' => 'fire-doors', 'label' => 'Fire door survey and upgrades'],
+        ['slug' => 'smoke-co-alarms', 'label' => 'Smoke & CO alarm checks'],
+        ['slug' => 'fire-extinguishers', 'label' => 'Extinguisher supply and service'],
+        ['slug' => 'pat-testing', 'label' => 'PAT testing (furnished lets)'],
+        ['slug' => 'epc', 'label' => 'Domestic EPC'],
+    ];
+
     return [
-        'name' => 'HMO Compliance Package',
-        'tagline' => 'EICR + gas safety + fire risk assessment in one visit plan',
-        'price' => 'POA',
-        'includes' => [
-            'Electrical Installation Condition Report (EICR) for the HMO installation',
-            'Landlord gas safety record (CP12 / CP44 as required) where gas is present',
-            'Suitable and sufficient fire risk assessment (FRA) for the HMO / multi-occupied house',
-            'Single documentation pack for licence, agent and insurer files',
-            'Coordinated access plan to reduce repeat visits for tenants',
+        'hmo-compliance' => [
+            'id' => 'hmo-compliance',
+            'path' => '/pages/packages/hmo-compliance',
+            'name' => 'HMO Compliance Package',
+            'short' => 'Core certificates',
+            'tagline' => 'EICR + gas safety + fire risk assessment in one visit plan',
+            'badge' => 'Most requested',
+            'highlight' => true,
+            'price' => 'POA',
+            'ideal' => 'Licence applications, renewals and agent instructions where the three core certificates are due together.',
+            'intro' => 'The core HMO bundle is for landlords who need the three documents licensing officers and agents ask for most often: an EICR, a landlord gas safety record where gas is present, and a suitable and sufficient fire risk assessment. We coordinate access, then hand back one pack. Price is POA until we agree what the house actually needs.',
+            'includes' => [
+                'Electrical Installation Condition Report (EICR) for the HMO installation',
+                'Landlord gas safety record (CP12 / CP44 as required) where gas is present',
+                'Suitable and sufficient fire risk assessment (FRA) for the HMO / multi-occupied house',
+                'Single documentation pack for licence, agent and insurer files',
+                'Coordinated access plan to reduce repeat visits for tenants',
+            ],
+            'not_included' => [
+                'An HMO licence (the council grants that)',
+                'Legal advice or a guarantee of approval',
+                'Fire alarms, emergency lighting or fire doors unless you add them',
+            ],
+            'service_slugs' => ['electrical', 'gas-systems', 'fire-risk-assessments'],
+            'defaultService' => 'HMO Compliance Package',
+            'ogImage' => url('/assets/images/services/electrical.jpg'),
+            'pageTitle' => 'HMO Compliance Package | EICR + Gas + FRA',
+            'metaDesc' => 'HMO compliance package for Greater Manchester: EICR, landlord gas safety and fire risk assessment in one coordinated visit plan. Optional fire add-ons. POA after scope.',
+            'metaKeywords' => 'HMO compliance package, HMO EICR gas FRA, HMO landlord package Stockport, HMO licence certificates Manchester',
+            'h1' => 'HMO compliance',
+            'h1Accent' => 'package',
+            'heroBadge' => 'Package · EICR + gas + FRA',
+            'addons' => $addons,
+            'faqs' => [
+                ['q' => 'What if the HMO has no gas?', 'a' => 'We drop the gas safety record from the bundle and quote EICR + FRA (plus any fire add-ons). Tell us on the form so we do not price a CP12 you do not need.'],
+                ['q' => 'Is this the right pack if I already have a current FRA?', 'a' => 'If the fire risk assessment is in date and you only need electrical/gas or a re-let file, look at the HMO Occupancy Pack instead. If the FRA is driving alarms, lighting or doors, use the HMO Fire Safety Pack.'],
+            ],
         ],
-        'addons' => [
-            ['slug' => 'emergency-lighting', 'label' => 'Emergency lighting testing / install'],
-            ['slug' => 'fire-alarms', 'label' => 'Fire alarm design, install or service'],
-            ['slug' => 'fire-doors', 'label' => 'Fire door survey and upgrades'],
-            ['slug' => 'smoke-co-alarms', 'label' => 'Smoke & CO alarm checks'],
-            ['slug' => 'fire-extinguishers', 'label' => 'Extinguisher supply and service'],
+        'hmo-fire-safety' => [
+            'id' => 'hmo-fire-safety',
+            'path' => '/pages/packages/hmo-fire-safety',
+            'name' => 'HMO Fire Safety Pack',
+            'short' => 'Life safety',
+            'tagline' => 'FRA plus detection, emergency lighting and fire doors as required',
+            'badge' => 'Fire-focused',
+            'highlight' => false,
+            'price' => 'POA',
+            'ideal' => 'Houses where the FRA or licence condition is driving detection, lighting or door work — not just a paper assessment.',
+            'intro' => 'The fire-focused variant starts with a fire risk assessment, then quotes only the life-safety work the house needs: fire alarms, emergency lighting and fire doors. We do not pad the pack with electrical or gas certificates if those are already in date.',
+            'includes' => [
+                'Suitable and sufficient HMO fire risk assessment',
+                'Fire alarm survey / service or install quote as fitted and as required',
+                'Emergency lighting check or install where escape routes need it',
+                'Fire door survey and upgrade quote where doorsets fail a walk-through',
+                'Written action list you can file with the FRA',
+            ],
+            'not_included' => [
+                'EICR or gas safety unless you also book the core compliance package',
+                'A fire certificate or licence grant',
+            ],
+            'service_slugs' => ['fire-risk-assessments', 'fire-alarms', 'emergency-lighting', 'fire-doors'],
+            'defaultService' => 'HMO Fire Safety Pack',
+            'ogImage' => url('/assets/images/services/fire-alarms.jpg'),
+            'pageTitle' => 'HMO Fire Safety Pack | FRA, Alarms & Doors',
+            'metaDesc' => 'HMO fire safety pack for Greater Manchester: fire risk assessment plus fire alarms, emergency lighting and fire doors as required. POA after scope. Not a licence grant.',
+            'metaKeywords' => 'HMO fire safety pack, HMO fire alarms, HMO emergency lighting, HMO fire doors Greater Manchester, HMO FRA Stockport',
+            'h1' => 'HMO fire safety',
+            'h1Accent' => 'pack',
+            'heroBadge' => 'Package · FRA + life safety',
+            'addons' => $addons,
+            'faqs' => [
+                ['q' => 'Do I have to buy alarms, lighting and doors together?', 'a' => 'No. The pack starts with the FRA. We only quote detection, emergency lighting or fire doors where the house, the assessment or a licence condition actually requires them.'],
+                ['q' => 'Is this a fire certificate?', 'a' => 'No. There is no generic “HMO fire certificate” we can sell. You receive a written FRA and, if booked, install or service paperwork for the systems we work on.'],
+            ],
         ],
+        'hmo-occupancy' => [
+            'id' => 'hmo-occupancy',
+            'path' => '/pages/packages/hmo-occupancy',
+            'name' => 'HMO Occupancy Pack',
+            'short' => 'Change of tenant',
+            'tagline' => 'EICR, gas and smoke/CO so a house can be re-let with a clean file',
+            'badge' => 'Re-let / void',
+            'highlight' => false,
+            'price' => 'POA',
+            'ideal' => 'Voids and tenant changeover on an HMO when fire FRA is already current but electrical, gas and alarms need a refresh.',
+            'intro' => 'The occupancy variant is the HMO cousin of a single-let “Let Ready” pack: EICR, gas safety where present, and smoke/CO checks so the house can be occupied with a current file. Optional PAT and EPC. Distinct from /packages/let-ready, which is aimed at single dwellings.',
+            'includes' => [
+                'EICR scoped for the HMO installation',
+                'Gas safety record where gas appliances or flues are present',
+                'Smoke and carbon monoxide alarm check / install as required',
+                'Optional PAT for furnished rooms',
+                'Optional domestic EPC',
+                'Documentation pack for the incoming tenants and agent',
+            ],
+            'not_included' => [
+                'A full FRA unless you add it or book HMO Compliance',
+                'Fire alarm design or fire-door upgrades unless quoted separately',
+            ],
+            'service_slugs' => ['electrical', 'gas-systems', 'smoke-co-alarms', 'pat-testing', 'epc'],
+            'defaultService' => 'HMO Occupancy Pack',
+            'ogImage' => url('/assets/images/services/smoke-co-alarms.jpg'),
+            'pageTitle' => 'HMO Occupancy Pack | EICR, Gas & Alarms',
+            'metaDesc' => 'HMO occupancy pack for Greater Manchester re-lets: EICR, gas safety and smoke/CO checks. Optional PAT and EPC. POA after scope. Not a licence application.',
+            'metaKeywords' => 'HMO occupancy pack, HMO re-let certificates, HMO EICR gas smoke CO, HMO void compliance Greater Manchester',
+            'h1' => 'HMO occupancy',
+            'h1Accent' => 'pack',
+            'heroBadge' => 'Package · re-let / void',
+            'addons' => $addons,
+            'faqs' => [
+                ['q' => 'How is this different from Let Ready?', 'a' => 'Let Ready is aimed at single dwellings. The occupancy pack is scoped for a shared house — more boards, more alarms, more access. If you have a one-bed or family AST, use Let Ready instead.'],
+                ['q' => 'Does occupancy include a fire risk assessment?', 'a' => 'Not by default. If the FRA is due as well, book the HMO Compliance Package or add an FRA on the quote form.'],
+            ],
+        ],
+    ];
+}
+
+/**
+ * Twelve quality hubs — not doorway spam.
+ *
+ * @return list<array{path:string,label:string,blurb:string}>
+ */
+function hmoQualityHubs(): array
+{
+    return [
+        ['path' => '/pages/packages/hmo', 'label' => 'HMO packages', 'blurb' => 'Choose a bundle or a single certificate'],
+        ['path' => '/pages/packages/hmo-compliance', 'label' => 'HMO Compliance Package', 'blurb' => 'EICR + gas + FRA'],
+        ['path' => '/pages/packages/hmo-fire-safety', 'label' => 'HMO Fire Safety Pack', 'blurb' => 'FRA, alarms, lighting, doors'],
+        ['path' => '/pages/packages/hmo-occupancy', 'label' => 'HMO Occupancy Pack', 'blurb' => 'Re-let certificates and alarms'],
+        ['path' => '/pages/hmo-landlords', 'label' => 'HMO landlords', 'blurb' => 'Greater Manchester audience hub'],
+        ['path' => '/pages/hmo-eicr', 'label' => 'HMO EICR', 'blurb' => 'Electrical condition reports'],
+        ['path' => '/pages/hmo-fra', 'label' => 'HMO fire risk assessment', 'blurb' => 'Written FRA and action plan'],
+        ['path' => '/pages/hmo-gas-safety', 'label' => 'HMO gas safety', 'blurb' => 'CP12 for shared houses'],
+        ['path' => '/pages/hmo-fire-alarms', 'label' => 'HMO fire alarms', 'blurb' => 'Detection and warning'],
+        ['path' => '/pages/hmo-emergency-lighting', 'label' => 'HMO emergency lighting', 'blurb' => 'Escape-route lighting'],
+        ['path' => '/pages/hmo-fire-doors', 'label' => 'HMO fire doors', 'blurb' => 'Doorsets and closers'],
+        ['path' => '/pages/resources/hmo-licence-compliance-checklist', 'label' => 'HMO licence checklist', 'blurb' => 'High-level licence prompts'],
     ];
 }
 
@@ -37,6 +177,10 @@ function hmoComplianceBundle(): array
 function hmoCommonFaqs(): array
 {
     return [
+        [
+            'q' => 'What HMO packages do you offer?',
+            'a' => 'Three honest variants, all POA: HMO Compliance (EICR + gas + FRA), HMO Fire Safety (FRA plus alarms, emergency lighting and fire doors as required), and HMO Occupancy (EICR, gas and smoke/CO for a re-let). We do not invent a fourth “licence guarantee” pack.',
+        ],
         [
             'q' => 'What is in the HMO compliance package?',
             'a' => 'The core bundle combines an EICR, a landlord gas safety check where gas appliances or flues are present, and a fire risk assessment for the HMO or multi-occupied house. Emergency lighting, fire alarms and fire doors can be added after we confirm what is already fitted and what your licence or FRA asks for. Price is POA — we issue a fixed quote once scope and access are agreed.',
@@ -146,9 +290,15 @@ function hmoInternalLinks(): array
     return [
         ['href' => url('/pages/packages/hmo'), 'label' => 'HMO packages'],
         ['href' => url('/pages/packages/hmo-compliance'), 'label' => 'HMO compliance package'],
+        ['href' => url('/pages/packages/hmo-fire-safety'), 'label' => 'HMO fire safety pack'],
+        ['href' => url('/pages/packages/hmo-occupancy'), 'label' => 'HMO occupancy pack'],
+        ['href' => url('/pages/hmo-landlords'), 'label' => 'HMO landlords'],
         ['href' => url('/pages/hmo-eicr'), 'label' => 'HMO EICR'],
         ['href' => url('/pages/hmo-fra'), 'label' => 'HMO fire risk assessment'],
         ['href' => url('/pages/hmo-gas-safety'), 'label' => 'HMO gas safety'],
+        ['href' => url('/pages/hmo-fire-alarms'), 'label' => 'HMO fire alarms'],
+        ['href' => url('/pages/hmo-emergency-lighting'), 'label' => 'HMO emergency lighting'],
+        ['href' => url('/pages/hmo-fire-doors'), 'label' => 'HMO fire doors'],
         ['href' => url('/pages/resources/hmo-licence-compliance-checklist'), 'label' => 'HMO licence checklist'],
         ['href' => url('/pages/landlords'), 'label' => 'Landlord services'],
         ['href' => url('/pages/packages'), 'label' => 'All packages'],
@@ -187,6 +337,8 @@ function hmoQuoteFormHtml(string $csrf, string $defaultService, string $placehol
     }
     $hmoOptions = [
         'HMO Compliance Package' => 'HMO Compliance Package (EICR + gas + FRA)',
+        'HMO Fire Safety Pack' => 'HMO Fire Safety Pack (FRA + life safety)',
+        'HMO Occupancy Pack' => 'HMO Occupancy Pack (re-let certificates)',
         'HMO EICR' => 'HMO EICR',
         'HMO fire risk assessment' => 'HMO fire risk assessment',
         'HMO gas safety' => 'HMO gas safety',
@@ -375,6 +527,117 @@ function hmoTopicLandings(): array
             'towns' => $gmTowns,
             'defaultService' => 'HMO gas safety',
         ],
+        'hmo-fire-alarms' => [
+            'path' => '/pages/hmo-fire-alarms',
+            'file' => 'pages/hmo-fire-alarms.php',
+            'pageTitle' => 'HMO Fire Alarms | Detection Greater Manchester',
+            'metaDesc' => 'HMO fire alarms for licensed and licensable houses in Greater Manchester — survey, service or install as the FRA and licence condition require. Stockport-based. POA after scope.',
+            'metaKeywords' => 'HMO fire alarms, HMO fire alarm install, HMO smoke detection Greater Manchester, HMO Grade D LD2 Stockport',
+            'ogImage' => url('/assets/images/services/fire-alarms.jpg'),
+            'h1' => 'HMO fire alarms',
+            'h1Accent' => 'Greater Manchester',
+            'badge' => 'Detection · HMO landlords',
+            'intro' => 'HMO fire detection is set by how the house is used, the current FRA and any licence condition — not by a one-line “Grade D for every house” rule we can publish honestly. We survey what is fitted, say whether it matches the risk, and quote service or a new system only if you ask for that work.',
+            'body' => [
+                'Smaller shared houses sometimes run on interlinked domestic alarms. Larger or higher-risk HMOs more often need a designed system to the grade and category named in the FRA or licence. We will not specify a grade on this page as if it fitted every Stockport terrace and every Manchester conversion.',
+                'Install, alteration and periodic service are separate quotes. Combine detection with an FRA, emergency lighting and fire doors in the HMO Fire Safety Pack when those items are due together. Electrical and gas certificates stay on the compliance or occupancy packs unless you add them.',
+            ],
+            'points' => [
+                'Survey of the existing detection and warning as found',
+                'Scope written against the FRA / licence wording you supply',
+                'Service or install quoted only for the work you book',
+                'Paperwork you can file with the licence and insurer pack',
+            ],
+            'faqs' => [
+                ['q' => 'What grade of fire alarm does an HMO need?', 'a' => 'That depends on the house, occupancy and the current FRA or licence condition. We do not publish a single grade that covers every HMO in Greater Manchester. Send the last FRA or licence wording and we will quote against that.'],
+                ['q' => 'Can you service an existing HMO fire alarm?', 'a' => 'Yes, where the system is within the work we already sell. Tell us the manufacturer, number of devices and last service date. If the system is beyond economical repair we will say so rather than pad a service visit.'],
+                ['q' => 'Is this the same as smoke and CO alarms for a single let?', 'a' => 'Smoke and CO checks are a baseline duty on many tenancies. An HMO often needs more than room alarms. Use the occupancy pack for a re-let refresh; use this page or the fire safety pack when the FRA is driving a designed system.'],
+            ],
+            'serviceSlug' => 'fire-alarms',
+            'areaLinks' => [
+                ['href' => url('/pages/packages/hmo-fire-safety'), 'label' => 'HMO Fire Safety Pack'],
+                ['href' => url('/pages/hmo-fra'), 'label' => 'HMO fire risk assessment'],
+                ['href' => url('/pages/hmo-emergency-lighting'), 'label' => 'HMO emergency lighting'],
+                ['href' => url('/pages/hmo-fire-doors'), 'label' => 'HMO fire doors'],
+                ['href' => url('/pages/services/fire-alarms'), 'label' => 'Fire alarm service page'],
+            ],
+            'towns' => $gmTowns,
+            'defaultService' => 'HMO fire alarms',
+        ],
+        'hmo-emergency-lighting' => [
+            'path' => '/pages/hmo-emergency-lighting',
+            'file' => 'pages/hmo-emergency-lighting.php',
+            'pageTitle' => 'HMO Emergency Lighting | Escape Routes Greater Manchester',
+            'metaDesc' => 'HMO emergency lighting for shared houses in Greater Manchester — check, test or install where escape routes need it. Stockport-based. POA after scope. Not every small HMO needs a full commercial system.',
+            'metaKeywords' => 'HMO emergency lighting, HMO escape lighting Greater Manchester, HMO emergency light test Stockport, BS 5266 HMO',
+            'ogImage' => url('/assets/images/services/emergency-lighting.jpg'),
+            'h1' => 'HMO emergency lighting',
+            'h1Accent' => 'Greater Manchester',
+            'badge' => 'Escape routes · HMO landlords',
+            'intro' => 'Emergency lighting on an HMO is there so people can see the escape route if the mains fail. Whether a house needs a full maintained system, a few self-contained fittings or no dedicated lighting at all is a property-specific call — usually from the FRA and any licence condition, not from a catalogue line.',
+            'body' => [
+                'Common parts of larger, taller or more complex HMOs often need emergency lighting tested to accepted practice, with a logbook. A small two-storey conversion may not. We will not sell a commercial system to every landlord who lands on this page.',
+                'We test, repair or install the fittings the house actually needs, then hand back paperwork for the file. Pair lighting with FRA, alarms and fire doors in the HMO Fire Safety Pack when those items fall due together.',
+            ],
+            'points' => [
+                'Walk-through of escape routes and existing fittings',
+                'Periodic test or new install quoted only if required',
+                'Logbook / certificate for the licence or insurer file',
+                'Optional bundle with FRA, alarms and fire doors',
+            ],
+            'faqs' => [
+                ['q' => 'Does every HMO need emergency lighting?', 'a' => 'No. Many smaller houses rely on borrowed light and a simple layout. Larger or higher-risk HMOs, and houses with a licence condition naming lighting, usually do. The FRA is the honest starting point — we do not invent a universal “yes”.'],
+                ['q' => 'Do you do monthly and annual tests?', 'a' => 'We can carry out periodic tests and duration tests as part of a booked visit. Tell us whether you need a one-off check or a recurring schedule. We do not claim a 24/7 monitoring contract on this page.'],
+                ['q' => 'Can lighting be added after the FRA?', 'a' => 'Yes. If the assessment recommends fittings, we quote them as a follow-on — not as a hidden line inside a “pass” fee.'],
+            ],
+            'serviceSlug' => 'emergency-lighting',
+            'areaLinks' => [
+                ['href' => url('/pages/packages/hmo-fire-safety'), 'label' => 'HMO Fire Safety Pack'],
+                ['href' => url('/pages/hmo-fra'), 'label' => 'HMO fire risk assessment'],
+                ['href' => url('/pages/hmo-fire-alarms'), 'label' => 'HMO fire alarms'],
+                ['href' => url('/pages/resources/emergency-lighting-testing'), 'label' => 'Emergency lighting testing guide'],
+                ['href' => url('/pages/services/emergency-lighting'), 'label' => 'Emergency lighting service page'],
+            ],
+            'towns' => $gmTowns,
+            'defaultService' => 'HMO emergency lighting',
+        ],
+        'hmo-fire-doors' => [
+            'path' => '/pages/hmo-fire-doors',
+            'file' => 'pages/hmo-fire-doors.php',
+            'pageTitle' => 'HMO Fire Doors | Doorsets Greater Manchester',
+            'metaDesc' => 'HMO fire door surveys and upgrades for shared houses in Greater Manchester — closers, strips and doorsets as found. Stockport-based. POA after scope. Not a licence grant.',
+            'metaKeywords' => 'HMO fire doors, HMO fire door survey, HMO FD30 Greater Manchester, HMO door closers Stockport',
+            'ogImage' => url('/assets/images/services/fire-doors.jpg'),
+            'h1' => 'HMO fire doors',
+            'h1Accent' => 'Greater Manchester',
+            'badge' => 'Means of escape · HMO landlords',
+            'intro' => 'Fire doors on an HMO are a frequent licence and FRA finding: missing closers, tired strips, letter plates cut into the leaf, or a kitchen door that no longer holds. We survey doorsets as they are, then quote only the upgrades that are actually needed.',
+            'body' => [
+                'A walk-through is not a laboratory test and we do not issue a “certified fire door” badge we cannot stand behind. We report what we see — gaps, hardware, glazing, frames — and price repairs or replacements from the work we already sell.',
+                'Door work sits naturally with the HMO Fire Safety Pack when the FRA is also due. It is not included in the core compliance or occupancy packs unless you add it. We do not grant licences and we do not guarantee that new doorsets will satisfy every officer without a site-specific brief.',
+            ],
+            'points' => [
+                'Survey of existing doorsets on the escape route',
+                'Written list of defects — not a one-line “pass”',
+                'Upgrade or replacement quote only for doors you book',
+                'Can be scheduled with FRA, alarms and emergency lighting',
+            ],
+            'faqs' => [
+                ['q' => 'Do all doors in an HMO need to be fire doors?', 'a' => 'Not always. The FRA, the layout and any licence condition decide which leaves must hold. A cupboard under the stairs is not the same as a kitchen opening onto the hallway. We survey first rather than selling an FD30 for every opening.'],
+                ['q' => 'Can you upgrade existing doors?', 'a' => 'Sometimes — closers, strips, hinges and glazing can bring a doorset back. Sometimes the leaf or frame has to be replaced. We say which after we have seen it.'],
+                ['q' => 'Is a fire door survey the same as an FRA?', 'a' => 'No. The FRA looks at the whole fire strategy. A door survey is a closer look at the doorsets. Book both in the fire safety pack if they are due together.'],
+            ],
+            'serviceSlug' => 'fire-doors',
+            'areaLinks' => [
+                ['href' => url('/pages/packages/hmo-fire-safety'), 'label' => 'HMO Fire Safety Pack'],
+                ['href' => url('/pages/hmo-fra'), 'label' => 'HMO fire risk assessment'],
+                ['href' => url('/pages/hmo-fire-alarms'), 'label' => 'HMO fire alarms'],
+                ['href' => url('/pages/hmo-emergency-lighting'), 'label' => 'HMO emergency lighting'],
+                ['href' => url('/pages/services/fire-doors'), 'label' => 'Fire door service page'],
+            ],
+            'towns' => $gmTowns,
+            'defaultService' => 'HMO fire doors',
+        ],
     ];
 }
 
@@ -458,9 +721,16 @@ function hmoAreaTopicLandings(): array
     ];
 
     $out = [];
-    foreach ($topics as $topicKey => $topic) {
+    foreach ($copy as $topicKey => $areaCopy) {
+        if (!isset($topics[$topicKey])) {
+            continue;
+        }
+        $topic = $topics[$topicKey];
         foreach ($areas as $areaKey => $area) {
-            $extra = $copy[$topicKey][$areaKey];
+            if (!isset($areaCopy[$areaKey])) {
+                continue;
+            }
+            $extra = $areaCopy[$areaKey];
             $path = $topic['path'] . '/' . $area['slug'];
             $out[$topicKey . '-' . $areaKey] = [
                 'path' => $path,
@@ -502,16 +772,24 @@ function hmoAreaTopicLandings(): array
 
 function hmoSitemapPaths(): array
 {
-    $paths = [
-        '/pages/packages/hmo',
-        '/pages/packages/hmo-compliance',
-        '/pages/resources/hmo-licence-compliance-checklist',
-    ];
+    $paths = [];
+    foreach (hmoQualityHubs() as $hub) {
+        $paths[] = $hub['path'];
+    }
     foreach (hmoTopicLandings() as $page) {
         $paths[] = $page['path'];
     }
     foreach (hmoAreaTopicLandings() as $page) {
         $paths[] = $page['path'];
     }
-    return $paths;
+    return array_values(array_unique($paths));
+}
+
+function hmoHubChipsHtml(): string
+{
+    $links = [];
+    foreach (hmoQualityHubs() as $hub) {
+        $links[] = ['href' => url($hub['path']), 'label' => $hub['label']];
+    }
+    return hmoLinkChipsHtml($links);
 }

@@ -111,6 +111,7 @@ if (!$popularAreas) {
                     <a href="<?= url('/pages/manufacturers/index.php') ?>" class="block hover:text-white">Manufacturers</a>
                     <a href="<?= url('/pages/packages.php') ?>" class="block hover:text-white">Packages</a>
                     <a href="<?= url('/pages/packages/hmo') ?>" class="block hover:text-white">HMO packages</a>
+                    <a href="<?= url('/pages/hmo-landlords') ?>" class="block hover:text-white">HMO landlords</a>
                     <a href="<?= url('/pages/pricing.php') ?>" class="block hover:text-white">Pricing guide</a>
                     <a href="<?= url('/pages/landlords.php') ?>" class="block hover:text-white">Landlords</a>
                     <a href="<?= url('/pages/commercial.php') ?>" class="block hover:text-white">Commercial / FM</a>
