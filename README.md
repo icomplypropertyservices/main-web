@@ -25,4 +25,6 @@ Full steps, manual deploy, and Netlify UI checks: **[DEPLOY.md](DEPLOY.md)**.
 php -S 127.0.0.1:8000 -t website website/router.php
 php website/bin/static-export.php
 php website/bin/check-static-export.php
+# optional: php website/bin/static-export.php --full
+# optional: php website/bin/static-export.php --keyword-towns=all
 ```

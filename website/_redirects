@@ -68,6 +68,10 @@
 /pages/manufacturers/    /pages/manufacturers.php    200!
 /pages/resources    /pages/resources.php    200!
 /pages/resources/    /pages/resources.php    200!
+/pages/keywords    /pages/keywords.php    200!
+/pages/keywords/    /pages/keywords.php    200!
+/pages/keywords/:slug    /pages/keywords/:slug.php    200!
+/pages/keywords/:slug/    /pages/keywords/:slug.php    200!
 
 # Splat pretty URLs. No force — /assets and real files win.
 /*    /:splat.php    200
