@@ -79,6 +79,9 @@ function icomplyMatrixShared(): array
     if (!function_exists('area_profile')) {
         require_once SITE_ROOT . '/includes/local-content.php';
     }
+    if (!function_exists('service_standards')) {
+        require_once SITE_ROOT . '/includes/seo.php';
+    }
 
     $areas = getAreas();
     $areaPairs = [];
@@ -167,8 +170,11 @@ function icomplyMatrixChromeEnd(): string
         . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH($s['svcHub']) . '">All services</a>'
         . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH($s['areasHub']) . '">All areas</a>'
         . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH($s['kwHub']) . '">All keyword guides</a>'
+        . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH(url('/pages/site-map.php')) . '">Site map / full inventory</a>'
         . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH($s['contact']) . '">Contact / POA quote</a>'
-        . '</div></div></footer>' . $popup . '</body></html>';
+        . '</div>'
+        . '<p class="text-white/60 text-xs">Hub pages carry the mega menu and footer dropdowns for every service, town and keyword family. This matrix page stays compact on purpose.</p>'
+        . '</div></footer>' . $popup . '</body></html>';
 }
 
 function icomplyMatrixAreaChips(string $hrefPrefix): string

@@ -3,6 +3,12 @@
  * Unique local content engine — reduces doorway/template risk.
  * Deterministic per (service, area) so pages stay stable across regenerations.
  */
+if (!function_exists('service_standards')) {
+    $seoFile = __DIR__ . '/seo.php';
+    if (is_file($seoFile)) {
+        require_once $seoFile;
+    }
+}
 
 function area_seed(string $area, string $extra = ''): int {
     return abs(crc32(mb_strtolower($area) . '|' . $extra));

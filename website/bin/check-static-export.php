@@ -21,7 +21,7 @@ $fail = 0;
 $pass = 0;
 
 $needHtml = [
-    '/' => ['index.html', ['Icomply', '<!DOCTYPE']],
+    '/' => ['index.html', ['Icomply', '<!DOCTYPE', 'mega-header', 'foot-drop', 'Keyword × town']],
     '/privacy' => ['privacy.php', ['Privacy', '<!DOCTYPE']],
     '/terms' => ['terms.php', ['Terms', '<!DOCTYPE']],
     '/contact' => ['contact.php', ['Contact', '<!DOCTYPE']],
