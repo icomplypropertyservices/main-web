@@ -1,3 +1,27 @@
+# Sensitive source paths
+/config.php              /404.html    404
+/config.local.php        /404.html    404
+/router.php              /404.html    404
+/includes/*              /404.html    404
+/bin/*                   /404.html    404
+/data/*                  /404.html    404
+/admin/*                 /404.html    404
+/templates/*             /404.html    404
+
+# Root PHP aliases
+/about                   /pages/about    301
+/about/                  /pages/about    301
+/faq                     /pages/faq      301
+/faq/                    /pages/faq      301
+/packages                /pages/packages 301
+/packages/               /pages/packages 301
+/landlords               /pages/landlords 301
+/landlords/              /pages/landlords 301
+/commercial              /pages/commercial 301
+/commercial/             /pages/commercial 301
+/care-homes              /pages/care-homes 301
+/care-homes/             /pages/care-homes 301
+
 # Legacy legal aliases
 /privacy-policy    /privacy    301
 /privacy-policy/    /privacy    301
@@ -28,3 +52,22 @@
 
 # Missing manufacturer logos (existing files still win on Netlify) → service fallback
 /assets/images/manufacturers/*    /assets/images/services/fire-alarms.jpg    200
+
+# Pretty URLs → matching .php (pre-rendered HTML in dist/). 200! = force.
+/privacy    /privacy.php    200!
+/privacy/    /privacy.php    200!
+/terms    /terms.php    200!
+/terms/    /terms.php    200!
+/contact    /contact.php    200!
+/contact/    /contact.php    200!
+/pages/about    /pages/about.php    200!
+/pages/about/    /pages/about.php    200!
+/pages/areas    /pages/areas.php    200!
+/pages/areas/    /pages/areas.php    200!
+/pages/manufacturers    /pages/manufacturers.php    200!
+/pages/manufacturers/    /pages/manufacturers.php    200!
+/pages/resources    /pages/resources.php    200!
+/pages/resources/    /pages/resources.php    200!
+
+# Splat pretty URLs. No force — /assets and real files win.
+/*    /:splat.php    200

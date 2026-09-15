@@ -1,32 +1,73 @@
-# iComply main-web — PHP / static site (not Next.js, not Node)
+# iComply main-web — Netlify (PHP pre-render → static HTML)
 #
-# Publish directory is `website/` (the real site tree: pages, assets,
-# manifest.json, robots, sitemap). There is no npm/Next.js build.
+# Netlify does NOT execute PHP at request time. Publishing raw `website/`
+# served `.php` as source and 404'd extensionless pretty URLs.
 #
-# Production branch is `main`. Every push to main is deployed by
-# `.github/workflows/netlify-deploy.yml` (NETLIFY_AUTH_TOKEN +
-# NETLIFY_SITE_ID). See DEPLOY.md.
+# Build runs `php website/bin/static-export.php`, which renders public
+# routes to HTML under `dist/` (also written as `.php` filenames so splat
+# rewrites match the pretty-URL contract). See docs/NETLIFY-MIGRATE.md.
+#
+# Production branch is `main`. GitHub Actions
+# (`.github/workflows/netlify-deploy.yml`) must deploy `--dir=dist`
+# after the same export. See DEPLOY.md.
 #
 # `ignore = "false"` means never skip a build — empty-diff heuristics
-# must not block production after a merge (the PR #1 failure mode).
+# must not block production after a merge.
 
 [build]
-  command = "test -f website/manifest.json && test -f website/pages/areas.php && test -d website/assets && echo 'Publish website/ (PHP/static; no Node/Next.js build)'"
-  publish = "website"
+  command = "php website/bin/static-export.php && php website/bin/check-static-export.php"
+  publish = "dist"
   ignore = "false"
 
 [build.environment]
   PHP_VERSION = "8.3"
+  SITE_URL = "https://icomplypropertyservices.co.uk"
 
 [context.production]
-  command = "test -f website/manifest.json && test -f website/pages/areas.php && test -d website/assets && echo 'Production publish website/ from main'"
-  publish = "website"
+  command = "php website/bin/static-export.php && php website/bin/check-static-export.php"
+  publish = "dist"
 
 [[redirects]]
   from = "https://www.icomplypropertyservices.co.uk/*"
   to = "https://icomplypropertyservices.co.uk/:splat"
   status = 301
   force = true
+
+# Never expose PHP source / internals if a publish dir is mis-set
+[[redirects]]
+  from = "/config.php"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/config.local.php"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/includes/*"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/bin/*"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/data/*"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/templates/*"
+  to = "/404.html"
+  status = 404
 
 [[redirects]]
   from = "/shop"
@@ -46,6 +87,66 @@
 [[redirects]]
   from = "/products/*"
   to = "/pages/packages"
+  status = 301
+
+[[redirects]]
+  from = "/about"
+  to = "/pages/about"
+  status = 301
+
+[[redirects]]
+  from = "/about/"
+  to = "/pages/about"
+  status = 301
+
+[[redirects]]
+  from = "/faq"
+  to = "/pages/faq"
+  status = 301
+
+[[redirects]]
+  from = "/faq/"
+  to = "/pages/faq"
+  status = 301
+
+[[redirects]]
+  from = "/packages"
+  to = "/pages/packages"
+  status = 301
+
+[[redirects]]
+  from = "/packages/"
+  to = "/pages/packages"
+  status = 301
+
+[[redirects]]
+  from = "/landlords"
+  to = "/pages/landlords"
+  status = 301
+
+[[redirects]]
+  from = "/landlords/"
+  to = "/pages/landlords"
+  status = 301
+
+[[redirects]]
+  from = "/commercial"
+  to = "/pages/commercial"
+  status = 301
+
+[[redirects]]
+  from = "/commercial/"
+  to = "/pages/commercial"
+  status = 301
+
+[[redirects]]
+  from = "/care-homes"
+  to = "/pages/care-homes"
+  status = 301
+
+[[redirects]]
+  from = "/care-homes/"
+  to = "/pages/care-homes"
   status = 301
 
 [[redirects]]
@@ -132,6 +233,134 @@
   from = "/assets/images/manufacturers/*"
   to = "/assets/images/services/fire-alarms.jpg"
   status = 200
+
+# Pretty URLs → pre-rendered HTML (stored as .php).
+# force=true on these hubs so a child-file directory (pages/areas/*)
+# cannot 301 /pages/areas → /pages/areas/. Splat has no force: /assets wins.
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/privacy/"
+  to = "/privacy.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/terms"
+  to = "/terms.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/terms/"
+  to = "/terms.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/contact/"
+  to = "/contact.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/about"
+  to = "/pages/about.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/about/"
+  to = "/pages/about.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/areas"
+  to = "/pages/areas.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/areas/"
+  to = "/pages/areas.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/manufacturers"
+  to = "/pages/manufacturers.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/manufacturers/"
+  to = "/pages/manufacturers.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/resources"
+  to = "/pages/resources.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/resources/"
+  to = "/pages/resources.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/:splat.php"
+  status = 200
+
+[[headers]]
+  for = "/*.php"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/privacy"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/terms"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/contact"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/thank-you"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/pages/*"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
 
 [[headers]]
   for = "/robots.txt"

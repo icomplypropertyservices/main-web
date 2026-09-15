@@ -159,7 +159,8 @@ function routerDispatchVirtual(string $path): bool {
         $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources'];
         if (!in_array($slug, $reserved, true) && isset(getServices()[$slug])) {
             header('Location: ' . url('/pages/services/' . $slug), true, 301);
-            exit;
+            icomplyRequestExit();
+            return true;
         }
     }
     return false;
@@ -183,7 +184,8 @@ function routerHandleRequest(): void {
     ];
     if (isset($legacyAliases[$path])) {
         header('Location: ' . url($legacyAliases[$path]), true, 301);
-        exit;
+        icomplyRequestExit();
+        return;
     }
 
     // Home

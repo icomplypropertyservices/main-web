@@ -102,6 +102,9 @@ website/pages/commercial-fit-out/
 website/sitemap-*.xml
 !website/sitemap.xml
 
+# Netlify static export (generated at build by website/bin/static-export.php)
+/dist/
+
 # Local server / temp
 *.tmp
 _gen_*.php
