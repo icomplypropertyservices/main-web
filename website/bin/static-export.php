@@ -17,9 +17,15 @@
  * Usage (repo root):
  *   php website/bin/static-export.php
  *   php website/bin/static-export.php --full
+ *   php website/bin/static-export.php --keyword-towns=all
  *   php website/bin/static-export.php --out=dist
  *
- * --full also renders keyword hubs and service×area landings (large dist).
+ * Default export includes every sitemap keyword hub (/pages/keywords/{slug})
+ * plus town combos that the previous PHP router served from chrome:
+ *   popular towns × all keywords, and all towns × priority keywords
+ *   (eicr, eicr-report, FRA, gas, CCTV, …).
+ * --keyword-towns=all renders the full keyword×area matrix (~200k HTML files).
+ * --full also renders service×area landings.
  */
 declare(strict_types=1);
 
@@ -28,9 +34,9 @@ if (PHP_SAPI !== 'cli') {
     exit(1);
 }
 
-$options = getopt('', ['full', 'out::', 'help']);
+$options = getopt('', ['full', 'out::', 'help', 'keyword-towns::']);
 if (isset($options['help'])) {
-    echo "Usage: php website/bin/static-export.php [--full] [--out=dist]\n";
+    echo "Usage: php website/bin/static-export.php [--full] [--keyword-towns=priority|popular|all|none] [--out=dist]\n";
     exit(0);
 }
 
@@ -45,6 +51,11 @@ if ($dist[0] !== '/') {
     $dist = $repoRoot . '/' . ltrim($dist, '/');
 }
 $full = isset($options['full']);
+$keywordTowns = strtolower(trim((string)($options['keyword-towns'] ?? 'priority')));
+if (!in_array($keywordTowns, ['priority', 'popular', 'all', 'none'], true)) {
+    fwrite(STDERR, "Invalid --keyword-towns={$keywordTowns} (use priority|popular|all|none)\n");
+    exit(1);
+}
 
 putenv('ICOMPLY_STATIC_EXPORT=1');
 $_ENV['ICOMPLY_STATIC_EXPORT'] = '1';
@@ -81,14 +92,25 @@ $log = static function (string $msg): void {
 $log("Icomply static export (Netlify pre-render)\n");
 $log("SITE_URL=" . SITE_URL . "\n");
 $log("dist={$dist}\n");
-$log($full ? "mode=full (hubs + keywords + service×area)\n" : "mode=default (core + hubs)\n");
+$log($full ? "mode=full (core + hubs + keywords + service×area)\n" : "mode=default (core + hubs + keywords)\n");
+$log("keyword-towns={$keywordTowns}\n");
 $log(str_repeat('=', 56) . "\n");
 
 icomplyResetDist($dist);
 
-$routes = icomplyCollectExportRoutes($full);
+$routes = icomplyCollectExportRoutes($full, $keywordTowns);
 sort($routes);
 $routes = array_values(array_unique($routes));
+$kwHubs = 0;
+$kwTowns = 0;
+foreach ($routes as $path) {
+    if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path)) {
+        $kwTowns++;
+    } elseif (preg_match('#^/pages/keywords/([a-z0-9\-]+)$#', $path) && $path !== '/pages/keywords/index') {
+        $kwHubs++;
+    }
+}
+$log("keyword hubs={$kwHubs} keyword×town={$kwTowns} total_routes=" . count($routes) . "\n");
 
 $ok = 0;
 $skip = 0;
@@ -102,6 +124,8 @@ $required = [
     '/pages/areas',
     '/pages/manufacturers',
     '/pages/resources',
+    '/pages/keywords',
+    '/pages/keywords/eicr',
 ];
 
 foreach ($routes as $i => $path) {
@@ -129,7 +153,8 @@ foreach ($routes as $i => $path) {
 
     icomplyWritePrettyFiles($dist, $path, $html);
     $ok++;
-    if ($n === 1 || $n === $total || $n % 50 === 0 || in_array($path, $required, true)) {
+    $every = $total > 2000 ? 500 : ($total > 400 ? 100 : 50);
+    if ($n === 1 || $n === $total || $n % $every === 0 || in_array($path, $required, true)) {
         $log(sprintf("[%d/%d] OK   %s (%d bytes)\n", $n, $total, $path, strlen($html)));
     }
 }
@@ -165,9 +190,71 @@ $log("static-export OK → {$dist}\n");
 exit(0);
 
 /**
+ * Featured towns linked from homepage / keyword hubs (must exist as HTML).
+ *
  * @return list<string>
  */
-function icomplyCollectExportRoutes(bool $full): array
+function icomplyPopularTownNames(): array
+{
+    $areas = function_exists('getAreas') ? getAreas() : [];
+    $popular = [
+        'Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale',
+        'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool',
+    ];
+    return array_values(array_filter(
+        $popular,
+        static fn(string $t): bool => in_array($t, $areas, true)
+    ));
+}
+
+/**
+ * Keyword hubs (sitemap) plus town combos from the previous PHP router set.
+ *
+ * @return list<string>
+ */
+function icomplyCollectKeywordRoutes(string $townMode): array
+{
+    $routes = [];
+    if (!function_exists('getMajorKeywords') || !function_exists('keywordSlug')) {
+        return $routes;
+    }
+    $keywords = array_keys(getMajorKeywords());
+    foreach ($keywords as $kw) {
+        $routes[] = '/pages/keywords/' . keywordSlug($kw);
+    }
+
+    if ($townMode === 'none' || !function_exists('getAreas') || !function_exists('areaSlug')) {
+        return $routes;
+    }
+
+    $areas = getAreas();
+    $popularTowns = icomplyPopularTownNames();
+    $priorityKw = [];
+    if (function_exists('getPopularKeywordSlugs')) {
+        foreach (getPopularKeywordSlugs() as $slug) {
+            $priorityKw[keywordSlug($slug)] = true;
+        }
+    }
+
+    foreach ($keywords as $kw) {
+        $slug = keywordSlug($kw);
+        if ($townMode === 'all' || ($townMode === 'priority' && isset($priorityKw[$slug]))) {
+            $towns = $areas;
+        } else {
+            $towns = $popularTowns;
+        }
+        foreach ($towns as $area) {
+            $routes[] = '/pages/keywords/' . $slug . '/' . areaSlug((string)$area);
+        }
+    }
+
+    return $routes;
+}
+
+/**
+ * @return list<string>
+ */
+function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority'): array
 {
     $routes = [
         '/',
@@ -234,12 +321,11 @@ function icomplyCollectExportRoutes(bool $full): array
         $routes[] = '/pages/manufacturers/' . $slug;
     }
 
+    foreach (icomplyCollectKeywordRoutes($keywordTowns) as $path) {
+        $routes[] = $path;
+    }
+
     if ($full) {
-        if (function_exists('getMajorKeywords') && function_exists('keywordSlug')) {
-            foreach (array_keys(getMajorKeywords()) as $kw) {
-                $routes[] = '/pages/keywords/' . keywordSlug($kw);
-            }
-        }
         foreach (array_keys(getServices()) as $sSlug) {
             foreach (getAreas() as $area) {
                 $routes[] = '/pages/' . $sSlug . '/' . areaSlug((string)$area);
@@ -497,6 +583,13 @@ function icomplyPrettyUrlRedirects(): string
 /pages/manufacturers/    /pages/manufacturers.php     200!
 /pages/resources         /pages/resources.php         200!
 /pages/resources/        /pages/resources.php         200!
+/pages/keywords          /pages/keywords.php          200!
+/pages/keywords/         /pages/keywords.php          200!
+
+# Keyword hubs have child town files (pages/keywords/{slug}/*.php).
+# force so /pages/keywords/eicr does not 301 to /pages/keywords/eicr/.
+/pages/keywords/:slug    /pages/keywords/:slug.php    200!
+/pages/keywords/:slug/   /pages/keywords/:slug.php    200!
 
 # Splat pretty URLs. No force — /assets and real files win.
 /*                       /:splat.php                  200

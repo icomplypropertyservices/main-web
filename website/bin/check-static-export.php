@@ -31,6 +31,13 @@ $needHtml = [
     '/pages/resources/gas-safety-certificate-landlords' => ['pages/resources/gas-safety-certificate-landlords.php', ['gas safety', '<!DOCTYPE']],
     '/pages/landlord-certificates' => ['pages/landlord-certificates.php', ['Landlord certificates', '<!DOCTYPE']],
     '/pages/fire-risk-assessment' => ['pages/fire-risk-assessment.php', ['Fire risk', '<!DOCTYPE']],
+    '/pages/keywords' => ['pages/keywords.php', ['Keyword', '<!DOCTYPE']],
+    '/pages/keywords/eicr' => ['pages/keywords/eicr.php', ['EICR', '<!DOCTYPE']],
+    '/pages/keywords/eicr-report' => ['pages/keywords/eicr-report.php', ['EICR', '<!DOCTYPE']],
+    '/pages/keywords/eicr-certificate' => ['pages/keywords/eicr-certificate.php', ['EICR', '<!DOCTYPE']],
+    '/pages/keywords/fire-risk-assessment' => ['pages/keywords/fire-risk-assessment.php', ['Fire', '<!DOCTYPE']],
+    '/pages/keywords/cctv-installation' => ['pages/keywords/cctv-installation.php', ['CCTV', '<!DOCTYPE']],
+    '/pages/keywords/eicr/stockport' => ['pages/keywords/eicr/stockport.php', ['EICR', 'Stockport', '<!DOCTYPE']],
 ];
 
 echo "Icomply static-export check  dist={$dist}\n";
@@ -114,7 +121,45 @@ foreach ($mustNotExist as $rel) {
 
 $redirects = is_file($dist . '/_redirects') ? (string)file_get_contents($dist . '/_redirects') : '';
 $headerFile = is_file($dist . '/_headers') ? (string)file_get_contents($dist . '/_headers') : '';
-$redirectNeedles = ['/*', '/:splat.php', '/privacy', '/pages/about', '/assets/'];
+$kwDir = $dist . '/pages/keywords';
+$kwHubFiles = 0;
+$kwTownFiles = 0;
+if (is_dir($kwDir)) {
+    foreach (glob($kwDir . '/*.php') ?: [] as $file) {
+        if (strtolower(basename($file)) === 'index.php') {
+            continue;
+        }
+        $kwHubFiles++;
+    }
+    $townIter = new RecursiveIteratorIterator(
+        new RecursiveDirectoryIterator($kwDir, FilesystemIterator::SKIP_DOTS)
+    );
+    foreach ($townIter as $file) {
+        if (!$file->isFile() || strtolower($file->getExtension()) !== 'php') {
+            continue;
+        }
+        $rel = substr($file->getPathname(), strlen($kwDir) + 1);
+        if (substr_count(str_replace('\\', '/', $rel), '/') >= 1) {
+            $kwTownFiles++;
+        }
+    }
+}
+if ($kwHubFiles >= 1200) {
+    $pass++;
+    echo "[PASS] keyword hubs exported={$kwHubFiles}\n";
+} else {
+    $fail++;
+    echo "[FAIL] keyword hubs exported={$kwHubFiles} (need >= 1200 sitemap slugs)\n";
+}
+if ($kwTownFiles >= 12) {
+    $pass++;
+    echo "[PASS] keyword×town exported={$kwTownFiles}\n";
+} else {
+    $fail++;
+    echo "[FAIL] keyword×town exported={$kwTownFiles} (need town combos)\n";
+}
+
+$redirectNeedles = ['/*', '/:splat.php', '/privacy', '/pages/about', '/assets/', '/pages/keywords', '/pages/keywords/:slug'];
 foreach ($redirectNeedles as $n) {
     if (!str_contains($redirects, $n)) {
         $fail++;
