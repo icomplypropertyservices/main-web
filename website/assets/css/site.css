@@ -250,8 +250,8 @@ h1, h2, h3 { letter-spacing: -0.03em; }
 }
 .lead-popup-dialog {
   width: min(32rem, 100%);
-  background: #0e2236;
-  color: #f4f7fb;
+  background: var(--brand);
+  color: var(--white);
   border: 1px solid rgba(255, 107, 0, 0.45);
   border-radius: 1.25rem 1.25rem 0.5rem 0.5rem;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
@@ -270,9 +270,9 @@ h1, h2, h3 { letter-spacing: -0.03em; }
   flex: 1 1 8rem; text-align: center; padding: 0.7rem 0.8rem; border-radius: 0.85rem;
   font-weight: 700; text-decoration: none; font-size: 0.875rem;
 }
-.lead-popup .lead-call { background: #fff; color: #0B1F3A; }
-.lead-popup .lead-wa { background: #16a34a; color: #fff; }
-.lead-popup .lead-book { background: #ff6b00; color: #fff; }
+.lead-popup .lead-call { background: var(--white); color: var(--brand); }
+.lead-popup .lead-wa { background: #16a34a; color: var(--white); }
+.lead-popup .lead-book { background: var(--accent); color: var(--white); }
 .lead-popup label { display: block; font-size: 0.75rem; font-weight: 600; margin: 0.55rem 0 0.25rem; color: #e8eef4; }
 .lead-popup input, .lead-popup select, .lead-popup textarea {
   width: 100%; border-radius: 0.75rem; padding: 0.65rem 0.8rem;
@@ -280,7 +280,7 @@ h1, h2, h3 { letter-spacing: -0.03em; }
 }
 .lead-popup button[type="submit"] {
   width: 100%; margin-top: 0.9rem; padding: 0.85rem; border: 0; border-radius: 0.85rem;
-  background: #ff6b00; color: #fff; font-weight: 700; cursor: pointer;
+  background: var(--accent); color: var(--white); font-weight: 700; cursor: pointer;
 }
 .lead-popup .lead-close {
   position: absolute; top: 0.65rem; right: 0.75rem;
@@ -307,7 +307,7 @@ h1, h2, h3 { letter-spacing: -0.03em; }
 
 /* Mega header + footer inventory dropdowns */
 .mega-header {
-  background: rgba(6, 16, 24, 0.94);
+  background: var(--brand);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
   position: sticky;
@@ -346,7 +346,7 @@ h1, h2, h3 { letter-spacing: -0.03em; }
 .mega-item:nth-child(2) .mega-panel,
 .mega-item:nth-child(4) .mega-panel { left: auto; right: 0; }
 .mega-panel-inner {
-  background: #0e2236;
+  background: var(--brand-card);
   border: 1px solid rgba(255,107,0,0.28);
   border-radius: 1rem;
   box-shadow: 0 28px 60px rgba(0,0,0,0.5);
@@ -442,8 +442,8 @@ h1, h2, h3 { letter-spacing: -0.03em; }
 }
 
 .site-footer {
-  background: #061018;
-  color: #f4f7fb;
+  background: var(--brand);
+  color: var(--white);
   margin-top: 2.5rem;
   border-top: 1px solid var(--line);
 }
@@ -463,7 +463,7 @@ h1, h2, h3 { letter-spacing: -0.03em; }
 .foot-cta--quote { background: var(--accent); }
 .foot-drops { display: grid; gap: 0.55rem; }
 .foot-drop, .foot-sub {
-  background: #0e2236;
+  background: var(--brand-card);
   border: 1px solid var(--line);
   border-radius: 0.85rem;
 }
@@ -632,7 +632,7 @@ section.relative.overflow-hidden.text-white > .absolute[style*="radial-gradient"
 .home-hero-card span { display: block; margin-top: 0.3rem; color: #d6dde6; font-size: 0.75rem; }
 
 .mega-header {
-  background: rgba(11, 31, 58, 0.96);
+  background: var(--brand);
 }
 .mega-wordmark {
   display: flex; flex-direction: column; line-height: 1.05;
