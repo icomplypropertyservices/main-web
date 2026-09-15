@@ -9,7 +9,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) { session_start(); }
 if (empty($_SESSION['csrf'])) { $_SESSION['csrf'] = bin2hex(random_bytes(16)); }
 require SITE_ROOT . '/includes/header.php';
 ?>
-<section class="relative overflow-hidden bg-[#0a2540] text-white">
+<section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
   <div class="relative max-w-7xl mx-auto px-6 py-14">
     <nav class="text-xs text-white/50 mb-6"><a href="<?= rtrim(SITE_URL,'/') ?>/" class="hover:text-white">Home</a> / <a href="<?= url('/pages/packages.php') ?>" class="hover:text-white">Packages</a> / Fire Ready</nav>
     <p class="text-xs uppercase tracking-widest text-white/60 mb-3">Commercial · Wave 1</p>

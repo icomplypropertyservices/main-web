@@ -78,6 +78,7 @@ $_SERVER['REQUEST_SCHEME'] = 'https';
 require_once $websiteRoot . '/config.php';
 require_once $websiteRoot . '/includes/router.php';
 require_once $websiteRoot . '/includes/matrix-page.php';
+require_once $websiteRoot . '/bin/build-shop-hubs.php';
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
@@ -265,7 +266,6 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         '/terms',
         '/contact',
         '/thank-you',
-        '/shop',
         '/products',
     ];
 
@@ -495,6 +495,9 @@ function icomplyCopyStaticAssets(string $websiteRoot, string $repoRoot, string $
             copy($src, $dest);
         }
     }
+
+    // PR #9 trade hubs: /shop/index.html + Fire/Electrical/Security/Gas (never PHP source).
+    icomplyCopyShopStatic($websiteRoot . '/shop', $dist . '/shop');
 }
 
 function icomplyCopyDir(string $src, string $dest): void
@@ -584,10 +587,18 @@ function icomplyPrettyUrlRedirects(): string
 /news/                   /pages/resources 301
 
 # Shop / products — trade hubs (never 301 to packages)
-/shop                    /shop.php                 200!
-/shop/                   /shop.php                 200!
-/products                /products.php             200!
-/products/               /products.php             200!
+/shop                    /shop/index.html              200!
+/shop/                   /shop/index.html              200!
+/shop/fire               /shop/fire/index.html         200!
+/shop/fire/              /shop/fire/index.html         200!
+/shop/electrical         /shop/electrical/index.html   200!
+/shop/electrical/        /shop/electrical/index.html   200!
+/shop/security           /shop/security/index.html     200!
+/shop/security/          /shop/security/index.html     200!
+/shop/gas                /shop/gas/index.html          200!
+/shop/gas/               /shop/gas/index.html          200!
+/products                /products.php                 200!
+/products/               /products.php                 200!
 
 # Old 470-part sitemap index → single compact urlset
 /sitemap-*.xml           /sitemap.xml    301
@@ -650,6 +661,10 @@ function icomplyPrettyUrlHeaders(): string
   X-Content-Type-Options: nosniff
 
 /shop
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/*
   Content-Type: text/html; charset=utf-8
   X-Content-Type-Options: nosniff
 

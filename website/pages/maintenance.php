@@ -120,8 +120,7 @@ require SITE_ROOT . '/includes/header.php';
 ?>
 
 <!-- HERO -->
-<section class="relative overflow-hidden bg-[#0a2540] text-white">
-    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 20% 20%,#ff6b00,transparent 40%),radial-gradient(circle at 80% 0%,#3b82f6,transparent 35%);"></div>
+<section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
         <nav class="text-xs text-white/50 mb-6 flex flex-wrap gap-2 items-center" aria-label="Breadcrumb">
             <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a>
@@ -146,7 +145,7 @@ require SITE_ROOT . '/includes/header.php';
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get contract quote</a>
-                    <a href="#systems" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">View systems</a>
+                    <a href="#systems" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">View systems</a>
                     <a href="<?= url('/pages/packages.php') ?>" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Compliance packages</a>
                 </div>
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
@@ -181,7 +180,7 @@ require SITE_ROOT . '/includes/header.php';
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <?php foreach ($benefits as $b): ?>
             <div class="flex gap-3 items-start">
-                <div class="w-10 h-10 rounded-2xl bg-[#0a2540]/10 flex items-center justify-center text-[#0a2540] font-bold shrink-0">✓</div>
+                <div class="w-10 h-10 rounded-2xl bg-[#0B1F3A]/10 flex items-center justify-center text-[#0B1F3A] font-bold shrink-0">✓</div>
                 <div>
                     <div class="font-semibold text-black"><?= htmlspecialchars($b['title'], ENT_QUOTES, 'UTF-8') ?></div>
                     <div class="text-sm text-zinc-600 mt-0.5"><?= htmlspecialchars($b['text'], ENT_QUOTES, 'UTF-8') ?></div>
@@ -209,12 +208,12 @@ require SITE_ROOT . '/includes/header.php';
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Remedials and upgrades quoted clearly when systems need work</li>
             </ul>
             <div class="mt-8 flex flex-wrap gap-3">
-                <a href="<?= url('/pages/packages.php') ?>" class="px-6 py-3 rounded-2xl bg-[#0a2540] text-white text-sm font-semibold hover:bg-[#ff6b00] transition">View compliance packages</a>
+                <a href="<?= url('/pages/packages.php') ?>" class="px-6 py-3 rounded-2xl bg-[#0B1F3A] text-white text-sm font-semibold hover:bg-[#ff6b00] transition">View compliance packages</a>
                 <a href="<?= url('/pages/commercial.php') ?>" class="px-6 py-3 rounded-2xl border border-zinc-300 text-sm font-semibold hover:border-[#ff6b00] transition">Commercial / FM</a>
                 <a href="<?= url('/pages/services/index.php') ?>" class="px-6 py-3 rounded-2xl border border-zinc-300 text-sm font-semibold hover:border-[#ff6b00] transition">All services</a>
             </div>
         </div>
-        <div class="bg-[#0a2540] text-white rounded-3xl p-8 md:p-10">
+        <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
             <h3 class="text-2xl font-semibold tracking-tight">Ideal for</h3>
             <ul class="mt-6 space-y-4 text-sm text-white/90">
                 <li class="flex gap-3"><span class="text-[#ff6b00]">●</span> Facilities managers needing multi-site fire &amp; life-safety PPM</li>
@@ -258,7 +257,7 @@ require SITE_ROOT . '/includes/header.php';
                          loading="lazy"
                          onerror="this.parentElement.style.display='none'">
                     <div class="absolute top-4 left-4">
-                        <span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-[#0a2540] text-white">
+                        <span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-[#0B1F3A] text-white">
                             <?= htmlspecialchars($sys['badge'], ENT_QUOTES, 'UTF-8') ?>
                         </span>
                     </div>
@@ -290,7 +289,7 @@ require SITE_ROOT . '/includes/header.php';
                             WhatsApp
                         </a>
                         <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
-                           class="px-6 py-3 rounded-2xl border border-zinc-200 hover:border-[#0a2540] font-semibold text-sm text-black">
+                           class="px-6 py-3 rounded-2xl border border-zinc-200 hover:border-[#0B1F3A] font-semibold text-sm text-black">
                             Service hub →
                         </a>
                     </div>
@@ -339,7 +338,7 @@ require SITE_ROOT . '/includes/header.php';
         </div>
         <div class="text-center md:text-right flex flex-col md:items-end gap-3">
             <a href="<?= url('/pages/packages.php') ?>"
-               class="inline-flex px-8 py-4 rounded-2xl bg-[#0a2540] hover:bg-[#ff6b00] font-semibold text-white transition">
+               class="inline-flex px-8 py-4 rounded-2xl bg-[#0B1F3A] hover:bg-[#ff6b00] font-semibold text-white transition">
                 Browse compliance packages →
             </a>
             <a href="<?= url('/pages/commercial.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Commercial &amp; facilities →</a>
@@ -357,7 +356,7 @@ require SITE_ROOT . '/includes/header.php';
         <div class="grid md:grid-cols-3 gap-8">
             <?php foreach ($howItWorks as [$n, $t, $d]): ?>
             <div class="text-center px-4">
-                <div class="w-12 h-12 mx-auto rounded-2xl bg-[#0a2540] text-white font-bold flex items-center justify-center text-lg"><?= $n ?></div>
+                <div class="w-12 h-12 mx-auto rounded-2xl bg-[#0B1F3A] text-white font-bold flex items-center justify-center text-lg"><?= $n ?></div>
                 <h3 class="mt-4 font-semibold text-xl text-black"><?= htmlspecialchars($t, ENT_QUOTES, 'UTF-8') ?></h3>
                 <p class="mt-2 text-sm text-zinc-600"><?= htmlspecialchars($d, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
@@ -397,12 +396,12 @@ require SITE_ROOT . '/includes/header.php';
                 <a href="<?= url('/pages/areas/index.php') ?>" class="font-semibold text-[#ff6b00]">Areas →</a>
             </div>
         </div>
-        <div class="bg-[#0a2540] text-white rounded-3xl p-8 md:p-10">
+        <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
             <h3 class="text-2xl font-semibold">Talk maintenance today</h3>
             <p class="mt-3 text-white/80">Call, WhatsApp or use the quote form — we aim to respond within 2 hours on business days.</p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
-                   class="px-6 py-3 rounded-2xl bg-white text-[#0a2540] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                   class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
                 <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi Icomply, I need a planned maintenance contract quote') ?>"
                    target="_blank" rel="noopener"
                    class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>
@@ -462,7 +461,7 @@ require SITE_ROOT . '/includes/header.php';
                target="_blank" rel="noopener"
                class="px-5 py-2.5 rounded-2xl bg-green-600 hover:bg-green-500 text-white font-semibold">WhatsApp us instead</a>
             <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
-               class="px-5 py-2.5 rounded-2xl border border-zinc-300 font-semibold text-black hover:border-[#0a2540]"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+               class="px-5 py-2.5 rounded-2xl border border-zinc-300 font-semibold text-black hover:border-[#0B1F3A]"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
             <a href="<?= url('/pages/packages.php') ?>"
                class="px-5 py-2.5 rounded-2xl border border-zinc-300 font-semibold text-black hover:border-[#ff6b00]">View packages</a>
         </div>

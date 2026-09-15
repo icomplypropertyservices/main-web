@@ -17,7 +17,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) { session_start(); }
 if (empty($_SESSION['csrf'])) { $_SESSION['csrf'] = bin2hex(random_bytes(16)); }
 require SITE_ROOT . '/includes/header.php';
 ?>
-<section class="relative overflow-hidden bg-[#0B1F3A] text-white">
+<section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
         <nav class="text-xs text-white/50 mb-6" aria-label="Breadcrumb">
             <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a> / <span class="text-white/80">Products</span>

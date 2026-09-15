@@ -182,7 +182,7 @@ $mapped = count(array_filter($products, fn($p) => trim((string)($p['shopify_prod
         </div>
         <div class="flex gap-2">
             <a href="index.php" class="px-4 py-2 bg-white border rounded-xl text-sm">← Dashboard</a>
-            <a href="<?= url('/shop/index.php') ?>" target="_blank" class="px-4 py-2 bg-[#0a2540] text-white rounded-xl text-sm">Open shop</a>
+            <a href="<?= url('/shop/index.php') ?>" target="_blank" class="px-4 py-2 bg-[#0B1F3A] text-white rounded-xl text-sm">Open shop</a>
         </div>
     </div>
 
@@ -230,7 +230,7 @@ $mapped = count(array_filter($products, fn($p) => trim((string)($p['shopify_prod
                 Enable Shopify Buy Buttons
             </label>
             <div class="flex flex-wrap gap-3">
-                <button class="px-6 py-3 bg-[#0a2540] text-white rounded-2xl font-semibold">Save credentials</button>
+                <button class="px-6 py-3 bg-[#0B1F3A] text-white rounded-2xl font-semibold">Save credentials</button>
             </div>
         </form>
         <form method="POST" class="mt-4">

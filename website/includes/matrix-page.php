@@ -135,7 +135,7 @@ function icomplyMatrixChromeStart(string $title, string $desc, string $canonical
     $phoneHref = icomplyMatrixH($s['phoneHref']);
     return '<!DOCTYPE html><html lang="en-GB"><head><meta charset="utf-8">'
         . '<meta name="viewport" content="width=device-width, initial-scale=1">'
-        . '<meta name="theme-color" content="#0a2540">'
+        . '<meta name="theme-color" content="#0B1F3A">'
         . '<meta name="robots" content="' . icomplyMatrixH($robots) . '">'
         . '<title>' . $t . '</title>'
         . '<meta name="description" content="' . $d . '">'
@@ -162,7 +162,7 @@ function icomplyMatrixChromeEnd(): string
 {
     $s = icomplyMatrixShared();
     $popup = icomplyMatrixLeadPopupHtml();
-    return '<footer class="bg-[#0a2540] text-white mt-12">'
+    return '<footer class="bg-[#0B1F3A] text-white mt-12">'
         . '<div class="matrix-wrap py-10 text-sm text-white/80 space-y-2">'
         . '<div class="font-semibold text-white">' . icomplyMatrixH($s['brand']) . '</div>'
         . '<p>Stockport SK2 5DE · Greater Manchester and the North West.</p>'

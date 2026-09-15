@@ -24,7 +24,7 @@ $needHtml = [
     '/' => ['index.html', ['Icomply', '<!DOCTYPE', 'mega-header', 'foot-drop', 'Keyword × town']],
     '/privacy' => ['privacy.php', ['Privacy', '<!DOCTYPE']],
     '/terms' => ['terms.php', ['Terms', '<!DOCTYPE']],
-    '/contact' => ['contact.php', ['Contact', '<!DOCTYPE']],
+    '/contact' => ['contact.php', ['Contact', 'page-hero', '#0B1F3A', '<!DOCTYPE']],
     '/pages/about' => ['pages/about.php', ['About', '<!DOCTYPE']],
     '/pages/areas' => ['pages/areas.php', ['Areas', '<!DOCTYPE']],
     '/pages/manufacturers' => ['pages/manufacturers.php', ['Manufacturer', '<!DOCTYPE']],
@@ -49,6 +49,11 @@ $needHtml = [
     '/pages/keywords/asbestos-survey/manchester' => ['pages/keywords/asbestos-survey/manchester.php', ['Asbestos', 'Manchester', '<!DOCTYPE']],
     '/pages/legionella-risk-assessment/stockport' => ['pages/legionella-risk-assessment/stockport.php', ['Legionella', 'Stockport', '<!DOCTYPE']],
     '/pages/asbestos-survey/manchester' => ['pages/asbestos-survey/manchester.php', ['Asbestos', 'Manchester', '<!DOCTYPE']],
+    '/shop' => ['shop/index.html', ['Fire', 'Electrical', 'Security', 'Gas', 'shop.icomplypropertyservices.co.uk', '<!DOCTYPE']],
+    '/shop/fire' => ['shop/fire/index.html', ['Fire', '<!DOCTYPE']],
+    '/shop/electrical' => ['shop/electrical/index.html', ['Electrical', '<!DOCTYPE']],
+    '/shop/security' => ['shop/security/index.html', ['Security', '<!DOCTYPE']],
+    '/shop/gas' => ['shop/gas/index.html', ['Gas', '<!DOCTYPE']],
 ];
 
 echo "Icomply static-export check  dist={$dist}\n";
@@ -98,6 +103,11 @@ $mustExist = [
     'assets/images/favicon-32.png',
     'assets/images/android-chrome-192.png',
     'assets/images/brand/icomply-mark.svg',
+    'assets/images/brand/icomply-logo.svg',
+    'assets/images/brand/icomply-logo-on-dark.svg',
+    'assets/images/brand/icomply-mark-512.png',
+    'assets/images/apple-touch-icon.png',
+    'assets/images/android-chrome-512.png',
     'manifest.json',
     'site.webmanifest',
     'robots.txt',
@@ -106,6 +116,13 @@ $mustExist = [
     '_redirects',
     '_headers',
     '404.html',
+    'shop/index.html',
+    'shop/fire/index.html',
+    'shop/electrical/index.html',
+    'shop/security/index.html',
+    'shop/gas/index.html',
+    'shop/assets/shop.css',
+    'shop/assets/logo.svg',
 ];
 foreach ($mustExist as $rel) {
     $path = $dist . '/' . $rel;
@@ -197,7 +214,7 @@ if ($kwTownFiles >= max(12, (int)floor($expectTowns * 0.95))) {
     echo "[FAIL] keyword×town exported={$kwTownFiles} (need ~{$expectTowns} = hubs×all areas)\n";
 }
 
-$redirectNeedles = ['/*', '/:splat.php', '/privacy', '/pages/about', '/assets/', '/pages/keywords', '/pages/keywords/:slug'];
+$redirectNeedles = ['/*', '/:splat.php', '/privacy', '/pages/about', '/assets/', '/pages/keywords', '/pages/keywords/:slug', '/shop/index.html', '/shop/fire/index.html', '/products.php'];
 foreach ($redirectNeedles as $n) {
     if (!str_contains($redirects, $n)) {
         $fail++;
@@ -206,6 +223,13 @@ foreach ($redirectNeedles as $n) {
         $pass++;
         echo "[PASS] _redirects has {$n}\n";
     }
+}
+if (preg_match('#^/shop\\s+/pages/packages#m', $redirects)) {
+    $fail++;
+    echo "[FAIL] _redirects still 301s /shop to /pages/packages\n";
+} else {
+    $pass++;
+    echo "[PASS] _redirects does not send /shop to packages\n";
 }
 if (!str_contains($headerFile, 'text/html')) {
     $fail++;

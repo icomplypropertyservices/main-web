@@ -113,7 +113,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <?php foreach ($trust as $t): ?>
             <div class="flex gap-3 items-start">
-                <div class="w-10 h-10 rounded-2xl bg-[#0a2540]/10 flex items-center justify-center text-[#0a2540] font-bold shrink-0">✓</div>
+                <div class="w-10 h-10 rounded-2xl bg-[#0B1F3A]/10 flex items-center justify-center text-[#0B1F3A] font-bold shrink-0">✓</div>
                 <div>
                     <div class="font-semibold text-black"><?= htmlspecialchars($t['title'], ENT_QUOTES, 'UTF-8') ?></div>
                     <div class="text-sm text-zinc-600 mt-0.5"><?= htmlspecialchars($t['text'], ENT_QUOTES, 'UTF-8') ?></div>
@@ -222,7 +222,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
         <div class="flex flex-wrap gap-2">
             <?php foreach ($popularTowns as $town): ?>
                 <a href="<?= url('/pages/areas/' . areaSlug($town) . '.php') ?>"
-                   class="px-4 py-2 bg-[#0a2540] text-white rounded-full text-sm font-medium hover:bg-[#ff6b00] transition">
+                   class="px-4 py-2 bg-[#0B1F3A] text-white rounded-full text-sm font-medium hover:bg-[#ff6b00] transition">
                     All services in <?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?>
                 </a>
             <?php endforeach; ?>
@@ -245,21 +245,21 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
         <div class="grid md:grid-cols-3 gap-5">
             <a href="<?= url('/pages/landlords.php') ?>"
                class="group bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
-                <div class="w-12 h-12 rounded-2xl bg-[#0a2540]/10 text-[#0a2540] font-bold flex items-center justify-center text-lg group-hover:bg-[#ff6b00] group-hover:text-white transition">L</div>
+                <div class="w-12 h-12 rounded-2xl bg-[#0B1F3A]/10 text-[#0B1F3A] font-bold flex items-center justify-center text-lg group-hover:bg-[#ff6b00] group-hover:text-white transition">L</div>
                 <h3 class="mt-5 font-semibold text-xl text-black tracking-tight">Landlords &amp; agents</h3>
                 <p class="mt-2 text-sm text-zinc-600 flex-1">EICR, CP12 / gas, FRA, Legionella, asbestos, voids, kitchens and bathrooms for portfolios. HMO work is quoted through existing landlord packages — not a separate invented product.</p>
                 <span class="mt-5 text-sm font-semibold text-[#ff6b00]">Landlord compliance →</span>
             </a>
             <a href="<?= url('/pages/commercial.php') ?>"
                class="group bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
-                <div class="w-12 h-12 rounded-2xl bg-[#0a2540]/10 text-[#0a2540] font-bold flex items-center justify-center text-lg group-hover:bg-[#ff6b00] group-hover:text-white transition">C</div>
+                <div class="w-12 h-12 rounded-2xl bg-[#0B1F3A]/10 text-[#0B1F3A] font-bold flex items-center justify-center text-lg group-hover:bg-[#ff6b00] group-hover:text-white transition">C</div>
                 <h3 class="mt-5 font-semibold text-xl text-black tracking-tight">Commercial &amp; FM</h3>
                 <p class="mt-2 text-sm text-zinc-600 flex-1">Fire safety systems, FRA, AOV, nurse call, CCTV, access control, fit-out and planned maintenance for estates.</p>
                 <span class="mt-5 text-sm font-semibold text-[#ff6b00]">Commercial services →</span>
             </a>
             <a href="<?= url('/pages/packages.php') ?>"
                class="group bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
-                <div class="w-12 h-12 rounded-2xl bg-[#0a2540]/10 text-[#0a2540] font-bold flex items-center justify-center text-lg group-hover:bg-[#ff6b00] group-hover:text-white transition">P</div>
+                <div class="w-12 h-12 rounded-2xl bg-[#0B1F3A]/10 text-[#0B1F3A] font-bold flex items-center justify-center text-lg group-hover:bg-[#ff6b00] group-hover:text-white transition">P</div>
                 <h3 class="mt-5 font-semibold text-xl text-black tracking-tight">Packages &amp; projects</h3>
                 <p class="mt-2 text-sm text-zinc-600 flex-1">Bundle compliance, fire safety and refurb/construction works into one programme with a single point of contact.</p>
                 <span class="mt-5 text-sm font-semibold text-[#ff6b00]">View packages →</span>
@@ -303,7 +303,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Products &amp; trade kits</h2>
                 <p class="mt-2 text-zinc-600 max-w-xl">Shopify-ready cards and Buy Button mounts — shop fire, electrical, security and emergency lighting gear.</p>
             </div>
-            <a href="<?= url('/shop/index.php') ?>" class="inline-flex px-5 py-2.5 rounded-full bg-[#0a2540] text-white text-sm font-semibold hover:bg-[#ff6b00] transition">Visit shop</a>
+            <a href="<?= url('/shop/index.php') ?>" class="inline-flex px-5 py-2.5 rounded-full bg-[#0B1F3A] text-white text-sm font-semibold hover:bg-[#ff6b00] transition">Visit shop</a>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
@@ -335,7 +335,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             </div>
             <a href="<?= url('/pages/areas/index.php') ?>" class="inline-block mt-6 text-sm font-semibold text-[#ff6b00]">View all areas →</a>
         </div>
-        <div class="bg-[#0a2540] text-white rounded-3xl p-8 md:p-10">
+        <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
             <h3 class="text-2xl font-semibold tracking-tight">Need a compliance package?</h3>
             <p class="mt-3 text-white/80">Combine EICR, gas, FRA, water hygiene, asbestos surveys, security and refurb works into one visit schedule for landlords and facilities teams.</p>
             <ul class="mt-6 space-y-3 text-sm text-white/90">
@@ -361,7 +361,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             ];
             foreach ($steps as [$n, $t, $d]): ?>
             <div class="text-center px-4">
-                <div class="w-12 h-12 mx-auto rounded-2xl bg-[#0a2540] text-white font-bold flex items-center justify-center text-lg"><?= $n ?></div>
+                <div class="w-12 h-12 mx-auto rounded-2xl bg-[#0B1F3A] text-white font-bold flex items-center justify-center text-lg"><?= $n ?></div>
                 <h3 class="mt-4 font-semibold text-xl text-black"><?= htmlspecialchars($t, ENT_QUOTES, 'UTF-8') ?></h3>
                 <p class="mt-2 text-sm text-zinc-600"><?= htmlspecialchars($d, ENT_QUOTES, 'UTF-8') ?></p>
             </div>

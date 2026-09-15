@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 64" role="img" aria-label="iComply Property Services">
+  <circle cx="32" cy="32" r="32" fill="#0B1F3A"/>
+  <path d="M19.2 33.4 28.1 42.6 45.8 22.2" fill="none" stroke="#FF6B00" stroke-width="7.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(78 18)">
+    <text x="0" y="16" fill="#FFFFFF" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="800" letter-spacing="-0.6">iComply</text>
+    <text x="0" y="36" fill="#A8B0BA" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0.2">Property Services</text>
+  </g>
+</svg>

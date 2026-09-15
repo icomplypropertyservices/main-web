@@ -1,5 +1,5 @@
 /* iComply high-contrast theme.
-   Tailwind v2 CDN does not honour arbitrary colours like bg-[#0a2540].
+   Tailwind v2 CDN does not honour arbitrary colours like bg-[#0B1F3A].
    This sheet supplies those colours, dark surfaces, and readable type.
    Locked tokens: navy #0B1F3A, orange #FF6B00, ink #0F172A, muted #5B6472,
    white #FFFFFF, surface #F4F6F9. */
@@ -34,12 +34,10 @@ body {
 }
 
 /* Make the arbitrary brand utilities used across PHP templates actually paint. */
-[class*="bg-[#0a2540]"],
 [class*="bg-[#0B1F3A]"],
 [class*="bg-[#061828]"] { background-color: #0B1F3A !important; }
 [class*="bg-[#ff6b00]"],
 [class*="bg-[#FF6B00]"] { background-color: #FF6B00 !important; color: #fff !important; }
-[class*="text-[#0a2540]"],
 [class*="text-[#0B1F3A]"] { color: #0B1F3A !important; }
 [class*="text-[#ff6b00]"],
 [class*="text-[#FF6B00]"] { color: #FF6B00 !important; }
@@ -70,10 +68,10 @@ body.theme-dark .nav-panel-inner {
 }
 
 /* Keep high-contrast white buttons in heroes */
-body.theme-dark a.bg-white[class*="text-[#0a2540]"],
+body.theme-dark a.bg-white[class*="text-[#0B1F3A]"],
 body.theme-dark a.bg-white[class*="text-[#061828]"] {
   background-color: #fff !important;
-  color: #0a2540 !important;
+  color: #0B1F3A !important;
 }
 
 body.theme-dark .text-black,
@@ -272,7 +270,7 @@ h1, h2, h3 { letter-spacing: -0.03em; }
   flex: 1 1 8rem; text-align: center; padding: 0.7rem 0.8rem; border-radius: 0.85rem;
   font-weight: 700; text-decoration: none; font-size: 0.875rem;
 }
-.lead-popup .lead-call { background: #fff; color: #0a2540; }
+.lead-popup .lead-call { background: #fff; color: #0B1F3A; }
 .lead-popup .lead-wa { background: #16a34a; color: #fff; }
 .lead-popup .lead-book { background: #ff6b00; color: #fff; }
 .lead-popup label { display: block; font-size: 0.75rem; font-weight: 600; margin: 0.55rem 0 0.25rem; color: #e8eef4; }
@@ -304,7 +302,7 @@ h1, h2, h3 { letter-spacing: -0.03em; }
   footer, #cookie-banner, .share-bar, a.fixed.bottom-6.right-6, .lead-popup,
   #mobile-sticky-cta, .matrix-header, .mega-header, .site-footer, .wa-float,
   .mobile-sticky-cta { display: none !important; }
-  h1, h2, h3 { color: #0a2540 !important; }
+  h1, h2, h3 { color: #0B1F3A !important; }
 }
 
 /* Mega header + footer inventory dropdowns */
@@ -506,7 +504,7 @@ h1, h2, h3 { letter-spacing: -0.03em; }
 }
 .mobile-sticky-cta a {
   flex: 1; text-align: center; padding: 0.75rem 0.4rem; border-radius: 0.8rem;
-  background: #fff; color: #0a2540 !important; font-weight: 700; text-decoration: none; font-size: 0.8125rem;
+  background: #fff; color: #0B1F3A !important; font-weight: 700; text-decoration: none; font-size: 0.8125rem;
 }
 .mobile-sticky-cta .sticky-quote { background: var(--accent); color: #fff !important; }
 @media (min-width: 768px) {
@@ -514,6 +512,27 @@ h1, h2, h3 { letter-spacing: -0.03em; }
   .mobile-sticky-cta { display: none; }
 }
 body.mega-drawer-open { overflow: hidden; }
+
+/* Shared inner-page heroes — solid navy. Never peach/blue wash under white type. */
+.page-hero,
+section.relative.overflow-hidden.text-white {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(165deg, #0B1F3A 0%, #0f172a 55%, #071422 100%) !important;
+  color: #f8fafc !important;
+}
+.page-hero h1,
+.page-hero h2,
+section.relative.overflow-hidden.text-white h1,
+section.relative.overflow-hidden.text-white h2 {
+  color: #fff !important;
+}
+.page-hero > .absolute[style*="radial-gradient"],
+section.relative.overflow-hidden.text-white > .absolute[style*="radial-gradient"] {
+  display: none !important;
+  opacity: 0 !important;
+  background: none !important;
+}
 
 /* Homepage hero — dark navy only. Never pale peach/orange wash. */
 .home-hero {
@@ -527,8 +546,8 @@ body.mega-drawer-open { overflow: hidden; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 12% 0%, rgba(255, 107, 0, 0.14), transparent 42%),
-    radial-gradient(ellipse at 90% 10%, rgba(15, 23, 42, 0.9), transparent 46%);
+    radial-gradient(ellipse at 12% 0%, rgba(255, 107, 0, 0.08), transparent 36%),
+    radial-gradient(ellipse at 90% 10%, rgba(7, 20, 34, 0.95), transparent 46%);
   pointer-events: none;
 }
 .home-hero-inner {
@@ -618,6 +637,11 @@ body.mega-drawer-open { overflow: hidden; }
 .mega-wordmark {
   display: flex; flex-direction: column; line-height: 1.05;
 }
-.mega-wordmark b { font-size: 1.05rem; font-weight: 800; color: #fff; }
-.mega-wordmark small { font-size: 0.62rem; letter-spacing: 0.04em; color: #d6dde6; font-weight: 600; }
+.mega-wordmark b { font-size: 1.05rem; font-weight: 800; color: #FFFFFF; letter-spacing: -0.02em; }
+.mega-wordmark small { font-size: 0.62rem; letter-spacing: 0.02em; color: #A8B0BA; font-weight: 600; }
 .mega-logo-img { width: 2.25rem; height: 2.25rem; border-radius: 999px; }
+/* Light surfaces: navy wordmark + muted Property Services */
+.logo-on-light .mega-wordmark b,
+.theme-light .mega-wordmark b { color: #0B1F3A; }
+.logo-on-light .mega-wordmark small,
+.theme-light .mega-wordmark small { color: #5B6472; }

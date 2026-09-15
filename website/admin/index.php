@@ -343,7 +343,7 @@ $truncateLead = static function (string $text, int $max = 80): string {
                 <div class="flex gap-3">
                     <input name="new_slug" placeholder="new-service-slug" class="flex-1 border px-4 py-2 rounded-xl text-sm" required pattern="[a-z0-9\-]+">
                     <input name="new_name" placeholder="Display Name" class="flex-1 border px-4 py-2 rounded-xl text-sm" required>
-                    <button class="px-6 bg-[#0a2540] text-white rounded-xl text-sm">Add</button>
+                    <button class="px-6 bg-[#0B1F3A] text-white rounded-xl text-sm">Add</button>
                 </div>
             </form>
         </div>

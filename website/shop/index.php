@@ -23,7 +23,7 @@ if ($filter !== '') {
 
 require SITE_ROOT . '/includes/header.php';
 ?>
-<section class="bg-[#0a2540] text-white">
+<section class="page-hero bg-[#0B1F3A] text-white">
     <div class="max-w-7xl mx-auto px-6 py-14 md:py-20">
         <div class="max-w-2xl">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold mb-3">Icomply shop</div>
@@ -37,9 +37,32 @@ require SITE_ROOT . '/includes/header.php';
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#products" class="px-6 py-3 bg-[#ff6b00] hover:bg-orange-600 rounded-2xl font-semibold text-white">Browse products</a>
                 <a href="<?= url('/contact.php') ?>" class="px-6 py-3 border border-white/40 hover:bg-white/10 rounded-2xl font-semibold">Trade account / bulk quote</a>
-                <a href="<?= htmlspecialchars(icomplyTradeShopUrl(), ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener" class="px-6 py-3 bg-white text-[#0a2540] rounded-2xl font-semibold">Open shop.icomplypropertyservices.co.uk</a>
+                <a href="<?= htmlspecialchars(icomplyTradeShopUrl(), ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener" class="px-6 py-3 bg-white text-[#0B1F3A] rounded-2xl font-semibold">Open shop.icomplypropertyservices.co.uk</a>
             </div>
         </div>
+    </div>
+</section>
+
+<section class="max-w-7xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-semibold tracking-tight text-[#0B1F3A]">Trade shop hubs</h2>
+    <p class="text-[#5B6472] mt-2">Fire, Electrical, Security and Gas landings. Checkout stays on <a class="font-semibold text-[#FF6B00]" href="https://shop.icomplypropertyservices.co.uk/">shop.icomplypropertyservices.co.uk</a>.</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-8">
+        <a href="/shop/fire/" class="p-6 bg-white border rounded-3xl hover:border-[#FF6B00]">
+            <h3 class="font-semibold text-lg text-[#0B1F3A]">Fire</h3>
+            <p class="text-sm text-[#5B6472] mt-2">Panels, detectors, AOV and the live fire catalogue.</p>
+        </a>
+        <a href="/shop/electrical/" class="p-6 bg-white border rounded-3xl hover:border-[#FF6B00]">
+            <h3 class="font-semibold text-lg text-[#0B1F3A]">Electrical</h3>
+            <p class="text-sm text-[#5B6472] mt-2">Batteries, fire cable, SigTEL / disabled refuge.</p>
+        </a>
+        <a href="/shop/security/" class="p-6 bg-white border rounded-3xl hover:border-[#FF6B00]">
+            <h3 class="font-semibold text-lg text-[#0B1F3A]">Security</h3>
+            <p class="text-sm text-[#5B6472] mt-2">Gates, barriers, intercoms and automation.</p>
+        </a>
+        <a href="/shop/gas/" class="p-6 bg-white border rounded-3xl hover:border-[#FF6B00]">
+            <h3 class="font-semibold text-lg text-[#0B1F3A]">Gas</h3>
+            <p class="text-sm text-[#5B6472] mt-2">Enquire / POA until live gas SKUs exist.</p>
+        </a>
     </div>
 </section>
 
@@ -73,13 +96,13 @@ require SITE_ROOT . '/includes/header.php';
                 </p>
             </div>
             <div class="flex flex-wrap gap-2">
-                <a href="<?= url('/shop/index.php') ?>" class="px-3 py-1.5 rounded-full text-xs font-medium border <?= $filter === '' ? 'bg-[#0a2540] text-white border-[#0a2540]' : 'bg-white text-black' ?>">All</a>
+                <a href="<?= url('/shop/index.php') ?>" class="px-3 py-1.5 rounded-full text-xs font-medium border <?= $filter === '' ? 'bg-[#0B1F3A] text-white border-[#0B1F3A]' : 'bg-white text-black' ?>">All</a>
                 <?php foreach ($collections as $col):
                     $cid = $col['id'] ?? '';
                     $active = $filter === $cid;
                 ?>
                     <a href="<?= url('/shop/index.php?c=' . rawurlencode($cid)) ?>"
-                       class="px-3 py-1.5 rounded-full text-xs font-medium border <?= $active ? 'bg-[#0a2540] text-white border-[#0a2540]' : 'bg-white text-black hover:border-[#ff6b00]' ?>">
+                       class="px-3 py-1.5 rounded-full text-xs font-medium border <?= $active ? 'bg-[#0B1F3A] text-white border-[#0B1F3A]' : 'bg-white text-black hover:border-[#ff6b00]' ?>">
                         <?= htmlspecialchars($col['title'] ?? $cid, ENT_QUOTES, 'UTF-8') ?>
                     </a>
                 <?php endforeach; ?>
@@ -108,7 +131,7 @@ require SITE_ROOT . '/includes/header.php';
                 </ol>
                 <p class="text-xs">Do <strong>not</strong> use the Admin API access token — the site uses the Storefront Buy Button SDK.</p>
                 <?php if (shopifyStoreUrl()): ?>
-                    <p><a class="font-semibold text-[#0a2540] underline" href="<?= htmlspecialchars(shopifyStoreUrl(), ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener">Open Shopify storefront →</a></p>
+                    <p><a class="font-semibold text-[#0B1F3A] underline" href="<?= htmlspecialchars(shopifyStoreUrl(), ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener">Open Shopify storefront →</a></p>
                 <?php endif; ?>
             </div>
         <?php else: ?>

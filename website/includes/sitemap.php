@@ -41,7 +41,7 @@ function icomplySitemapEntries(): array
         if (isset($seen[$path]) || isset($banned[$path])) {
             return;
         }
-        if (preg_match('#^/shop/.+#', $path) || preg_match('#^/products/.+#', $path)) {
+        if (preg_match('#^/shop/[^/]+/.+#', $path) || preg_match('#^/products/.+#', $path)) {
             return;
         }
         if (preg_match('#-photo\.(jpe?g|png)$#i', $path)) {
@@ -84,7 +84,11 @@ function icomplySitemapEntries(): array
         ['/pages/areas', '0.9', 'pages/areas.php'],
         ['/pages/manufacturers', '0.9', 'pages/manufacturers.php'],
         ['/pages/keywords', '0.9', 'pages/keywords.php'],
-        ['/shop', '0.8', 'shop/index.php'],
+        ['/shop', '0.8', 'shop/index.html'],
+        ['/shop/fire', '0.75', 'shop/fire/index.html'],
+        ['/shop/electrical', '0.75', 'shop/electrical/index.html'],
+        ['/shop/security', '0.75', 'shop/security/index.html'],
+        ['/shop/gas', '0.75', 'shop/gas/index.html'],
         ['/products', '0.8', 'pages/products.php'],
     ];
     foreach ($static as [$path, $pri, $file]) {

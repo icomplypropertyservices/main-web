@@ -16,7 +16,7 @@ $privacyUrl = function_exists('url') ? url('/privacy') : (rtrim(SITE_URL, '/') .
             left: 0;
             right: 0;
             z-index: 9999;
-            background: #0a2540;
+            background: #0B1F3A;
             color: #fff;
             padding: 1rem 1.25rem;
             box-shadow: 0 -4px 20px rgba(0,0,0,.18);

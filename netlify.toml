@@ -72,13 +72,61 @@
 
 [[redirects]]
   from = "/shop"
-  to = "/shop.php"
+  to = "/shop/index.html"
   status = 200
   force = true
 
 [[redirects]]
   from = "/shop/"
-  to = "/shop.php"
+  to = "/shop/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/fire"
+  to = "/shop/fire/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/fire/"
+  to = "/shop/fire/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/electrical"
+  to = "/shop/electrical/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/electrical/"
+  to = "/shop/electrical/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/security"
+  to = "/shop/security/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/security/"
+  to = "/shop/security/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/gas"
+  to = "/shop/gas/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/gas/"
+  to = "/shop/gas/index.html"
   status = 200
   force = true
 
@@ -376,6 +424,24 @@
 
 [[headers]]
   for = "/contact"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/*"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/products"
   [headers.values]
     Content-Type = "text/html; charset=utf-8"
     X-Content-Type-Options = "nosniff"

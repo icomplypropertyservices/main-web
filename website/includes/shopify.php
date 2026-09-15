@@ -147,7 +147,7 @@ function shopifyProductCardHtml(array $product, bool $compact = false): string {
     $imgH = $compact ? 'h-36' : 'h-44';
     $liveWidget = ($shopifyId !== '' && shopifyEnabled())
         ? '<div id="' . $mountId . '" class="shopify-buy-mount mt-3" data-product-id="' . htmlspecialchars($shopifyId, ENT_QUOTES, 'UTF-8') . '"></div>'
-        : '<a href="' . $href . '" class="mt-4 inline-flex items-center justify-center w-full py-3 rounded-xl bg-[#0a2540] hover:bg-[#ff6b00] text-white text-sm font-semibold transition">View in shop</a>';
+        : '<a href="' . $href . '" class="mt-4 inline-flex items-center justify-center w-full py-3 rounded-xl bg-[#0B1F3A] hover:bg-[#ff6b00] text-white text-sm font-semibold transition">View in shop</a>';
 
     return '<article id="' . $id . '" class="shop-product-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">'
         . '<a href="' . $href . '" class="relative block bg-zinc-100 overflow-hidden">'
@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function () {
             styles: {
               product: { '@media (min-width: 601px)': { 'max-width': '100%', 'margin-left': '0', 'margin-bottom': '0' } },
               button: {
-                'background-color': '#0a2540',
+                'background-color': '#0B1F3A',
                 ':hover': { 'background-color': '#ff6b00' },
                 'border-radius': '12px',
                 'font-weight': '600'
@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function () {
           },
           cart: {
             styles: {
-              button: { 'background-color': '#0a2540', ':hover': { 'background-color': '#ff6b00' }, 'border-radius': '12px' }
+              button: { 'background-color': '#0B1F3A', ':hover': { 'background-color': '#ff6b00' }, 'border-radius': '12px' }
             },
             text: { total: 'Subtotal', button: 'Checkout' }
           }
@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function () {
         options: {
           product: {
             styles: {
-              button: { 'background-color': '#0a2540', ':hover': { 'background-color': '#ff6b00' }, 'border-radius': '12px' }
+              button: { 'background-color': '#0B1F3A', ':hover': { 'background-color': '#ff6b00' }, 'border-radius': '12px' }
             },
             text: { button: 'Add to cart' }
           }

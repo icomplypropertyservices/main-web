@@ -14,12 +14,12 @@ $documentTitle = $hasBrandInTitle ? $rawPageTitle : ($rawPageTitle . ' | Icomply
 $pageTitleSafe = htmlspecialchars($documentTitle, ENT_QUOTES, 'UTF-8');
 $ogTitleSafe = htmlspecialchars($rawPageTitle, ENT_QUOTES, 'UTF-8');
 $metaDescSafe = htmlspecialchars(
-    $metaDesc ?? 'Icomply Property Services — fire, electrical, gas, security and construction compliance across Greater Manchester and the North West. Based in Offerton, Stockport SK2 5DE.',
+    $metaDesc ?? 'Icomply Property Services — property maintenance and compliance across Greater Manchester and the North West: EICR, gas, fire, kitchens, renovations, CCTV, Legionella and asbestos. Offerton, Stockport SK2 5DE.',
     ENT_QUOTES,
     'UTF-8'
 );
 $metaKeywordsSafe = htmlspecialchars(
-    $metaKeywords ?? 'property compliance, EICR, fire alarms, emergency lighting, gas safety, Manchester electrician',
+    $metaKeywords ?? 'property maintenance, landlord compliance, EICR, gas safety, fire risk assessment, kitchens, renovations, CCTV, legionella, asbestos, Stockport, Manchester',
     ENT_QUOTES,
     'UTF-8'
 );

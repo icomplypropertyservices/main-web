@@ -109,6 +109,8 @@ function icomplyNavCatalog(): array
         'brand' => defined('SITE_NAME') ? SITE_NAME : 'Icomply Property Services',
         'js' => assetUrl('/assets/js/site-nav.js'),
         'logo' => assetUrl('/assets/images/brand/icomply-mark.svg'),
+        'logoLight' => assetUrl('/assets/images/brand/icomply-logo.svg'),
+        'logoDark' => assetUrl('/assets/images/brand/icomply-logo-on-dark.svg'),
     ];
     return $c;
 }
@@ -212,11 +214,11 @@ function icomplyMegaHeaderHtml(): string
     $pkgHub = icomplyNavH(url('/pages/packages.php'));
     $contact = icomplyNavH(url('/contact.php'));
     $shopExt = icomplyNavH(function_exists('icomplyTradeShopUrl') ? icomplyTradeShopUrl() : 'https://shop.icomplypropertyservices.co.uk');
-    $products = icomplyNavH(url('/pages/products.php'));
-    $hubElectrical = icomplyNavH(url('/pages/electrical-safety-landlords.php'));
-    $hubFire = icomplyNavH(url('/pages/commercial-fire-safety.php'));
-    $hubSecurity = icomplyNavH(url('/pages/services/cctv.php'));
-    $hubGas = icomplyNavH(url('/pages/gas-safety-certificate.php'));
+    $products = '/products';
+    $hubElectrical = '/shop/electrical/';
+    $hubFire = '/shop/fire/';
+    $hubSecurity = '/shop/security/';
+    $hubGas = '/shop/gas/';
 
     $svcCols = '';
     foreach ($n['cats'] as $catKey => $cat) {
@@ -303,7 +305,7 @@ function icomplyMegaHeaderHtml(): string
 <header class="site-header mega-header" data-site-header>
   <div class="mega-bar">
     <a class="mega-logo" href="{$home}">
-      <img src="{$logo}" width="36" height="36" alt="iComply checkmark on navy" class="mega-logo-img">
+      <img src="{$logo}" width="36" height="36" alt="iComply" class="mega-logo-img" decoding="async">
       <span class="mega-wordmark"><b>iComply</b><small>Property Services</small></span>
     </a>
     <nav class="mega-desktop" aria-label="Primary">
@@ -417,11 +419,11 @@ function icomplyMobileDrawerHtml(array $n): string
     }
 
     $shopExtD = icomplyNavH(function_exists('icomplyTradeShopUrl') ? icomplyTradeShopUrl() : 'https://shop.icomplypropertyservices.co.uk');
-    $productsD = icomplyNavH(url('/pages/products.php'));
-    $hubElectricalD = icomplyNavH(url('/pages/electrical-safety-landlords.php'));
-    $hubFireD = icomplyNavH(url('/pages/commercial-fire-safety.php'));
-    $hubSecurityD = icomplyNavH(url('/pages/services/cctv.php'));
-    $hubGasD = icomplyNavH(url('/pages/gas-safety-certificate.php'));
+    $productsD = '/products';
+    $hubElectricalD = '/shop/electrical/';
+    $hubFireD = '/shop/fire/';
+    $hubSecurityD = '/shop/security/';
+    $hubGasD = '/shop/gas/';
 
     return <<<HTML
 <div id="mega-drawer" class="mega-drawer" hidden>
@@ -578,6 +580,18 @@ function icomplyFooterHtml(): string
       <details class="foot-drop">
         <summary>Resources</summary>
         {$resDrop}
+      </details>
+      <details class="foot-drop">
+        <summary>Shop / supplies</summary>
+        <div class="foot-links">
+          <a href="https://shop.icomplypropertyservices.co.uk/" target="_blank" rel="noopener">Shopify checkout</a>
+          <a href="/shop/">Trade shop hubs</a>
+          <a href="/products">Products / trade materials</a>
+          <a href="/shop/fire/">Fire</a>
+          <a href="/shop/electrical/">Electrical</a>
+          <a href="/shop/security/">Security</a>
+          <a href="/shop/gas/">Gas</a>
+        </div>
       </details>
       <details class="foot-drop">
         <summary>Packages / Landlords</summary>

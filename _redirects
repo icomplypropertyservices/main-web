@@ -39,8 +39,16 @@
 /news/    /pages/resources    301
 
 # Shop / products are trade hubs (never 301 to packages)
-/shop    /shop.php    200!
-/shop/    /shop.php    200!
+/shop    /shop/index.html    200!
+/shop/    /shop/index.html    200!
+/shop/fire    /shop/fire/index.html    200!
+/shop/fire/    /shop/fire/index.html    200!
+/shop/electrical    /shop/electrical/index.html    200!
+/shop/electrical/    /shop/electrical/index.html    200!
+/shop/security    /shop/security/index.html    200!
+/shop/security/    /shop/security/index.html    200!
+/shop/gas    /shop/gas/index.html    200!
+/shop/gas/    /shop/gas/index.html    200!
 /products    /products.php    200!
 /products/    /products.php    200!
 

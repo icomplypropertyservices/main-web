@@ -171,7 +171,7 @@ require SITE_ROOT . '/includes/header.php';
         </div>
     </div>
 
-    <div class="mt-16 bg-[#0a2540] text-white p-12 rounded-3xl text-center">
+    <div class="mt-16 bg-[#0B1F3A] text-white p-12 rounded-3xl text-center">
         <h2 class="text-3xl font-semibold mb-4">Need Fire Alarms in {{AREA}}?</h2>
         <p class="max-w-md mx-auto text-white/90 mb-8">Tell us your panel brand — Kentec, Advanced, C-Tec, Morley, Hochiki, Apollo or another make — and we quote fast with local engineers.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">

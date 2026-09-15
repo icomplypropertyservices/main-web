@@ -123,8 +123,7 @@ require SITE_ROOT . '/includes/header.php';
 ?>
 
 <!-- HERO -->
-<section class="relative overflow-hidden bg-[#0a2540] text-white">
-    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 20% 20%,#ff6b00,transparent 40%),radial-gradient(circle at 80% 0%,#3b82f6,transparent 35%);"></div>
+<section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
         <nav class="text-xs text-white/50 mb-6 flex flex-wrap gap-2 items-center" aria-label="Breadcrumb">
             <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a>
@@ -146,7 +145,7 @@ require SITE_ROOT . '/includes/header.php';
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#batch-a" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Batch A guides</a>
-                <a href="#batch-c" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">Batch C hubs</a>
+                <a href="#batch-c" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">Batch C hubs</a>
                 <a href="<?= url('/contact.php') ?>" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Contact / quote</a>
             </div>
         </div>
@@ -332,12 +331,12 @@ $batchC = $queue['C'];
                 </div>
                 <a href="<?= url('/pages/services/index.php') ?>" class="inline-block mt-6 text-sm font-semibold text-[#ff6b00]">All services →</a>
             </div>
-            <div class="bg-[#0a2540] text-white rounded-3xl p-8 md:p-10">
+            <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
                 <h3 class="text-2xl font-semibold">Talk to a local engineer</h3>
                 <p class="mt-3 text-white/80">Fixed-price quotes, clear documentation and same-week appointments where capacity allows.</p>
                 <div class="mt-6 flex flex-wrap gap-3">
                     <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>"
-                       class="px-6 py-3 rounded-2xl bg-white text-[#0a2540] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                       class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
                     <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>"
                        target="_blank" rel="noopener"
                        class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>

@@ -35,8 +35,7 @@ require SITE_ROOT . '/includes/header.php';
 ?>
 
 <!-- HERO -->
-<section class="relative overflow-hidden bg-[#0a2540] text-white">
-    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 20% 20%,#ff6b00,transparent 40%),radial-gradient(circle at 80% 0%,#3b82f6,transparent 35%);"></div>
+<section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
         <nav class="text-xs text-white/50 mb-6 flex flex-wrap gap-2 items-center">
             <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a>
@@ -60,7 +59,7 @@ require SITE_ROOT . '/includes/header.php';
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#directory" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Browse guides</a>
-                    <a href="<?= url('/pages/services/index.php') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">All services</a>
+                    <a href="<?= url('/pages/services/index.php') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">All services</a>
                     <a href="#quote" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Free quote</a>
                 </div>
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
@@ -130,7 +129,7 @@ require SITE_ROOT . '/includes/header.php';
         ];
         foreach ($trust as [$t, $d]): ?>
             <div class="flex gap-3 items-start">
-                <div class="w-10 h-10 rounded-2xl bg-[#0a2540]/10 flex items-center justify-center text-[#0a2540] font-bold shrink-0">✓</div>
+                <div class="w-10 h-10 rounded-2xl bg-[#0B1F3A]/10 flex items-center justify-center text-[#0B1F3A] font-bold shrink-0">✓</div>
                 <div>
                     <div class="font-semibold text-black"><?= htmlspecialchars($t, ENT_QUOTES, 'UTF-8') ?></div>
                     <div class="text-sm text-zinc-600 mt-0.5"><?= htmlspecialchars((string)$d, ENT_QUOTES, 'UTF-8') ?></div>
@@ -160,7 +159,7 @@ require SITE_ROOT . '/includes/header.php';
                        class="w-full border border-zinc-200 bg-white px-5 py-3.5 rounded-2xl text-sm text-black focus:outline-none focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/20">
             </div>
             <div class="flex flex-wrap gap-2" id="kw-service-filters" role="group" aria-label="Filter by service">
-                <button type="button" data-service="" class="kw-filter active px-4 py-2 rounded-full text-sm font-semibold border bg-[#0a2540] text-white border-[#0a2540]">
+                <button type="button" data-service="" class="kw-filter active px-4 py-2 rounded-full text-sm font-semibold border bg-[#0B1F3A] text-white border-[#0B1F3A]">
                     All <span class="opacity-70"><?= count($keywords) ?></span>
                 </button>
                 <?php foreach ($services as $sSlug => $sName):
@@ -192,7 +191,7 @@ require SITE_ROOT . '/includes/header.php';
                data-service="<?= htmlspecialchars($svc, ENT_QUOTES, 'UTF-8') ?>"
                data-search="<?= htmlspecialchars($searchBlob, ENT_QUOTES, 'UTF-8') ?>">
                 <div class="flex items-start justify-between gap-3">
-                    <div class="w-10 h-10 rounded-2xl bg-[#0a2540] text-white flex items-center justify-center font-bold text-sm shrink-0">
+                    <div class="w-10 h-10 rounded-2xl bg-[#0B1F3A] text-white flex items-center justify-center font-bold text-sm shrink-0">
                         <?= htmlspecialchars(strtoupper(substr($name, 0, 1)), ENT_QUOTES, 'UTF-8') ?>
                     </div>
                     <span class="text-[10px] uppercase tracking-wider px-2 py-1 rounded-full bg-zinc-100 text-zinc-600 font-semibold">
@@ -211,7 +210,7 @@ require SITE_ROOT . '/includes/header.php';
     <div id="kw-empty" class="hidden text-center py-16">
         <p class="text-lg font-semibold text-black">No guides match your search</p>
         <p class="mt-2 text-zinc-600">Try a different term or clear the service filter.</p>
-        <button type="button" id="kw-reset" class="mt-6 px-6 py-3 rounded-2xl bg-[#0a2540] text-white font-semibold hover:bg-[#ff6b00] transition">Reset filters</button>
+        <button type="button" id="kw-reset" class="mt-6 px-6 py-3 rounded-2xl bg-[#0B1F3A] text-white font-semibold hover:bg-[#ff6b00] transition">Reset filters</button>
     </div>
 
     <?= shareButtonsHtml($pageTitle, $metaDesc) ?>
@@ -233,16 +232,16 @@ require SITE_ROOT . '/includes/header.php';
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Trade shop for kits &amp; parts</li>
             </ul>
             <div class="mt-8 flex flex-wrap gap-3">
-                <a href="<?= url('/pages/services/index.php') ?>" class="px-6 py-3 rounded-2xl bg-[#0a2540] text-white font-semibold hover:bg-[#ff6b00] transition">Browse services</a>
+                <a href="<?= url('/pages/services/index.php') ?>" class="px-6 py-3 rounded-2xl bg-[#0B1F3A] text-white font-semibold hover:bg-[#ff6b00] transition">Browse services</a>
                 <a href="<?= url('/pages/areas/index.php') ?>" class="px-6 py-3 rounded-2xl border font-semibold hover:border-[#ff6b00] transition">Find your area</a>
             </div>
         </div>
-        <div class="bg-[#0a2540] text-white rounded-3xl p-8 md:p-10">
+        <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
             <h3 class="text-2xl font-semibold">Talk to us today</h3>
             <p class="mt-3 text-white/80">Call, WhatsApp or use the quote form — we aim to respond within 2 hours on business days.</p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>"
-                   class="px-6 py-3 rounded-2xl bg-white text-[#0a2540] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                   class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
                 <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>"
                    target="_blank" rel="noopener"
                    class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>
@@ -324,10 +323,10 @@ require SITE_ROOT . '/includes/header.php';
             var on = (btn.getAttribute('data-service') || '') === activeService;
             btn.classList.toggle('active', on);
             if (on) {
-                btn.classList.add('bg-[#0a2540]', 'text-white', 'border-[#0a2540]', 'font-semibold');
+                btn.classList.add('bg-[#0B1F3A]', 'text-white', 'border-[#0B1F3A]', 'font-semibold');
                 btn.classList.remove('bg-white', 'text-black', 'border-zinc-200', 'font-medium');
             } else {
-                btn.classList.remove('bg-[#0a2540]', 'text-white', 'border-[#0a2540]', 'font-semibold');
+                btn.classList.remove('bg-[#0B1F3A]', 'text-white', 'border-[#0B1F3A]', 'font-semibold');
                 btn.classList.add('bg-white', 'text-black', 'border-zinc-200', 'font-medium');
             }
         });
