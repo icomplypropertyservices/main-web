@@ -13,6 +13,9 @@ $options = getopt('', ['dist::', 'require-dist', 'skip-render', 'skip-build']);
 require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/render.php';
 require_once SITE_ROOT . '/includes/sitemap.php';
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
 
 $repoRoot = dirname(SITE_ROOT);
 $dist = $options['dist'] ?? ($repoRoot . '/dist');
