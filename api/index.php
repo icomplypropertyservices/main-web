@@ -197,22 +197,25 @@ if (strcasecmp($uri, '/robots.txt') === 0) {
     }
 }
 
-// Sitemaps — always emit a compact urlset. Never 500. Never serve 470-part junk.
+// Sitemaps — always 200 urlset. Prefer on-disk file; never rebuild keyword catalogues.
 if (preg_match('#^/sitemap(-[0-9]+)?\.xml$#i', $uri)) {
     header('Content-Type: application/xml; charset=utf-8');
     header('Cache-Control: public, max-age=3600');
     try {
         if (preg_match('#^/sitemap-[0-9]+\.xml$#i', $uri)) {
-            // Old live index listed hundreds of parts; they are gone. Point crawlers at the real file.
             header('Location: ' . $base_url . '/sitemap.xml', true, 301);
             exit;
         }
-        echo seoRewritePublicHost(seoCompactSitemap($base_url), $base_url);
+        echo function_exists('icomplyServeSitemapXml')
+            ? icomplyServeSitemapXml($base_url)
+            : seoRewritePublicHost(seoCompactSitemap($base_url), $base_url);
         exit;
     } catch (Throwable $e) {
         echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n"
             . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n"
             . '  <url><loc>' . htmlspecialchars($base_url . '/', ENT_XML1) . '</loc></url>' . "\n"
+            . '  <url><loc>' . htmlspecialchars($base_url . '/pages/areas', ENT_XML1) . '</loc></url>' . "\n"
+            . '  <url><loc>' . htmlspecialchars($base_url . '/pages/resources', ENT_XML1) . '</loc></url>' . "\n"
             . '</urlset>' . "\n";
         exit;
     }

@@ -85,9 +85,8 @@ if (preg_match('#^/assets/images/services/([a-z0-9\-]+)-photo\.(jpe?g|png)$#i', 
     }
 }
 
-// Compact sitemap even if stale chunk files linger on disk
+// Compact sitemap — serve disk urlset; never 500 from keyword generation
 if (preg_match('#^/sitemap(-[0-9]+)?\.xml$#i', $uri)) {
-    require_once __DIR__ . '/includes/sitemap.php';
     header('Content-Type: application/xml; charset=utf-8');
     header('Cache-Control: public, max-age=3600');
     if (preg_match('#^/sitemap-[0-9]+\.xml$#i', $uri)) {
@@ -96,8 +95,18 @@ if (preg_match('#^/sitemap(-[0-9]+)?\.xml$#i', $uri)) {
     }
     $host = $_SERVER['HTTP_HOST'] ?? 'icomplypropertyservices.co.uk';
     $host = preg_replace('/:\d+$/', '', (string)$host) ?: 'icomplypropertyservices.co.uk';
-    $base = (str_contains($host, 'localhost') ? 'https://icomplypropertyservices.co.uk' : ('https://' . $host));
-    echo icomplyBuildSitemapXml($base);
+    $base = (str_contains($host, 'localhost') || $host === '127.0.0.1'
+        ? 'https://icomplypropertyservices.co.uk'
+        : ('https://' . $host));
+    try {
+        require_once __DIR__ . '/includes/sitemap.php';
+        echo icomplyServeSitemapXml($base);
+    } catch (Throwable $e) {
+        echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n"
+            . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n"
+            . '  <url><loc>https://icomplypropertyservices.co.uk/</loc></url>' . "\n"
+            . '</urlset>' . "\n";
+    }
     return true;
 }
 

@@ -108,14 +108,15 @@ function icomplySitemapEntries(): array
             $add('/pages/areas/' . areaSlug($area), '0.6');
         }
     }
-    // Keyword hubs only — not keyword × area (that explosion 500'd live sitemap.xml)
-    if (function_exists('getMajorKeywords') && function_exists('keywordSlug')) {
+    // Keyword hubs only — not keyword × area (that explosion 500'd live sitemap.xml).
+    // Skip at request time: keywords.json is 3MB+ and is what OOMs the live 500.
+    $requestSafe = !empty($GLOBALS['ICOMPLY_SITEMAP_REQUEST_SAFE']);
+    if (!$requestSafe && function_exists('getMajorKeywords') && function_exists('keywordSlug')) {
         foreach (array_keys(getMajorKeywords()) as $kw) {
             $add('/pages/keywords/' . keywordSlug($kw), '0.68');
         }
     }
-    // Service × area landings (real virtual 200s, not keyword junk)
-    if (function_exists('getServices') && function_exists('getAreas') && function_exists('areaSlug')) {
+    if (!$requestSafe && function_exists('getServices') && function_exists('getAreas') && function_exists('areaSlug')) {
         foreach (array_keys(getServices()) as $sSlug) {
             foreach (getAreas() as $area) {
                 $add('/pages/' . $sSlug . '/' . areaSlug($area), '0.55');
@@ -129,7 +130,7 @@ function icomplySitemapEntries(): array
 function icomplyBuildSitemapXml(string $baseUrl): string
 {
     $base = rtrim($baseUrl, '/');
-    if (str_contains($base, 'localhost')) {
+    if (str_contains($base, 'localhost') || str_contains($base, '127.0.0.1')) {
         $base = 'https://icomplypropertyservices.co.uk';
     }
     $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
@@ -141,6 +142,53 @@ function icomplyBuildSitemapXml(string $baseUrl): string
     }
     $xml .= '</urlset>' . "\n";
     return $xml;
+}
+
+/** Tiny urlset that never touches keywords.json — last-resort 200. */
+function icomplyBuildSafeSitemapXml(string $baseUrl): string
+{
+    $GLOBALS['ICOMPLY_SITEMAP_REQUEST_SAFE'] = true;
+    try {
+        return icomplyBuildSitemapXml($baseUrl);
+    } finally {
+        unset($GLOBALS['ICOMPLY_SITEMAP_REQUEST_SAFE']);
+    }
+}
+
+function icomplyRewriteSitemapHost(string $xml, string $baseUrl): string
+{
+    $base = rtrim($baseUrl, '/');
+    if (str_contains($base, 'localhost') || str_contains($base, '127.0.0.1')) {
+        $base = 'https://icomplypropertyservices.co.uk';
+    }
+    return str_replace(
+        [
+            'https://www.icomplypropertyservices.co.uk',
+            'http://www.icomplypropertyservices.co.uk',
+            'https://icomplypropertyservices.co.uk',
+            'http://icomplypropertyservices.co.uk',
+            'http://localhost/icomply',
+            'https://localhost/icomply',
+        ],
+        $base,
+        $xml
+    );
+}
+
+/**
+ * Request-time sitemap: prefer the pre-built urlset on disk.
+ * Never generate keyword catalogues here (that is what 500'd live).
+ */
+function icomplyServeSitemapXml(string $baseUrl): string
+{
+    $file = SITE_ROOT . '/sitemap.xml';
+    if (is_file($file) && is_readable($file)) {
+        $xml = (string)file_get_contents($file);
+        if ($xml !== '' && str_contains($xml, '<urlset') && !str_contains($xml, '<sitemapindex')) {
+            return icomplyRewriteSitemapHost($xml, $baseUrl);
+        }
+    }
+    return icomplyBuildSafeSitemapXml($baseUrl);
 }
 
 /**
@@ -159,7 +207,7 @@ function icomplyWriteSitemapFiles(string $baseUrl): array
     file_put_contents($file, $xml);
 
     $base = rtrim($baseUrl, '/');
-    if (str_contains($base, 'localhost')) {
+    if (str_contains($base, 'localhost') || str_contains($base, '127.0.0.1')) {
         $base = 'https://icomplypropertyservices.co.uk';
     }
     $robots = "User-agent: *\nAllow: /\n\n"
