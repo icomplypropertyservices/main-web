@@ -622,6 +622,12 @@ function icomplyTradeShopUrl(): string
     return 'https://shop.icomplypropertyservices.co.uk';
 }
 
+/** Products / trade materials. products.* is not live — use the Shopify shop host. */
+function icomplyTradeProductsUrl(): string
+{
+    return icomplyTradeShopUrl();
+}
+
 $waFile = __DIR__ . '/includes/water-asbestos.php';
 if (is_file($waFile)) {
     require_once $waFile;

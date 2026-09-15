@@ -214,7 +214,7 @@ function icomplyMegaHeaderHtml(): string
     $pkgHub = icomplyNavH(url('/pages/packages.php'));
     $contact = icomplyNavH(url('/contact.php'));
     $shopExt = icomplyNavH(function_exists('icomplyTradeShopUrl') ? icomplyTradeShopUrl() : 'https://shop.icomplypropertyservices.co.uk');
-    $products = '/products';
+    $products = icomplyNavH(function_exists('icomplyTradeProductsUrl') ? icomplyTradeProductsUrl() : $shopExt);
     $hubElectrical = '/shop/electrical/';
     $hubFire = '/shop/fire/';
     $hubSecurity = '/shop/security/';
@@ -311,7 +311,7 @@ function icomplyMegaHeaderHtml(): string
     <nav class="mega-desktop" aria-label="Primary">
       <a class="nav-link" href="{$home}">Home</a>
       <a class="nav-link" href="{$shopExt}" target="_blank" rel="noopener">Shop</a>
-      <a class="nav-link" href="{$products}">Products</a>
+      <a class="nav-link" href="{$products}" target="_blank" rel="noopener">Products</a>
       <div class="mega-item" data-mega>
         <button type="button" class="mega-trigger" aria-expanded="false" aria-controls="mega-services" aria-haspopup="true">Services</button>
         <div id="mega-services" class="mega-panel" hidden>
@@ -419,7 +419,7 @@ function icomplyMobileDrawerHtml(array $n): string
     }
 
     $shopExtD = icomplyNavH(function_exists('icomplyTradeShopUrl') ? icomplyTradeShopUrl() : 'https://shop.icomplypropertyservices.co.uk');
-    $productsD = '/products';
+    $productsD = icomplyNavH(function_exists('icomplyTradeProductsUrl') ? icomplyTradeProductsUrl() : $shopExtD);
     $hubElectricalD = '/shop/electrical/';
     $hubFireD = '/shop/fire/';
     $hubSecurityD = '/shop/security/';
@@ -430,7 +430,7 @@ function icomplyMobileDrawerHtml(array $n): string
   <nav class="mega-drawer-inner" aria-label="Mobile">
     <a href="{$home}">Home</a>
     <a href="{$shopExtD}" target="_blank" rel="noopener">Shop</a>
-    <a href="{$productsD}">Products</a>
+    <a href="{$productsD}" target="_blank" rel="noopener">Products</a>
     <details class="drawer-acc"><summary>Suites</summary><div>
       <a href="{$hubElectricalD}">Electrical</a>
       <a href="{$hubFireD}">Fire</a>
@@ -584,9 +584,9 @@ function icomplyFooterHtml(): string
       <details class="foot-drop">
         <summary>Shop / supplies</summary>
         <div class="foot-links">
-          <a href="https://shop.icomplypropertyservices.co.uk/" target="_blank" rel="noopener">Shopify checkout</a>
+          <a href="https://shop.icomplypropertyservices.co.uk/" target="_blank" rel="noopener">Shop</a>
+          <a href="https://shop.icomplypropertyservices.co.uk/" target="_blank" rel="noopener">Products / trade materials</a>
           <a href="/shop/">Trade shop hubs</a>
-          <a href="/products">Products / trade materials</a>
           <a href="/shop/fire/">Fire</a>
           <a href="/shop/electrical/">Electrical</a>
           <a href="/shop/security/">Security</a>
