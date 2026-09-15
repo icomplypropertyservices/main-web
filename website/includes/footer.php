@@ -118,6 +118,9 @@ if (!$popularAreas) {
                     <a href="<?= url('/pages/maintenance.php') ?>" class="block hover:text-white">Maintenance</a>
                     <a href="<?= url('/pages/emergency.php') ?>" class="block hover:text-white">Emergency call-out</a>
                     <a href="<?= url('/pages/resources/index.php') ?>" class="block hover:text-white">Resources</a>
+                    <a href="<?= url('/pages/landlord-certificates') ?>" class="block hover:text-white">Landlord certificates</a>
+                    <a href="<?= url('/pages/gas-safety-certificate') ?>" class="block hover:text-white">Gas safety certificate</a>
+                    <a href="<?= url('/pages/fire-risk-assessment') ?>" class="block hover:text-white">Fire risk assessment</a>
                     <a href="<?= url('/pages/keywords/index.php') ?>" class="block hover:text-white">Keyword guides</a>
                     <a href="<?= url('/pages/faq.php') ?>" class="block hover:text-white">FAQ</a>
                     <a href="<?= url('/pages/reviews.php') ?>" class="block hover:text-white">Reviews</a>
