@@ -10,6 +10,9 @@
 /products    /pages/packages    301
 /products/*    /pages/packages    301
 
+# FRA photo: file is also committed; this 301 covers deploys that omit the extra asset
+/assets/images/services/fire-risk-assessments-photo.jpg    /assets/images/services/fire-risk-assessments.jpg    200
+
 # Missing *-photo.jpg → working twin (static assets bypass PHP)
 /assets/images/services/bathrooms-photo.jpg    /assets/images/services/bathrooms.jpg    301
 /assets/images/services/brickwork-photo.jpg    /assets/images/services/brickwork.jpg    301

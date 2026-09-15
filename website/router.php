@@ -27,12 +27,13 @@ if ($uri !== '/' && preg_match('#\.php$#i', $uri)) {
     }
 }
 
-// Legacy legal aliases
-if ($uri === '/privacy-policy') {
+// Legacy legal aliases (with or without trailing slash)
+$aliasPath = rtrim($uri, '/') ?: '/';
+if ($aliasPath === '/privacy-policy') {
     header('Location: /privacy', true, 301);
     return true;
 }
-if ($uri === '/terms-and-conditions') {
+if ($aliasPath === '/terms-and-conditions') {
     header('Location: /terms', true, 301);
     return true;
 }

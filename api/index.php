@@ -54,6 +54,52 @@ function seoRewritePublicHost(string $body, string $baseUrl): string {
     return $body;
 }
 
+/** Compact accurate sitemap when the large on-disk parts are missing or fail. */
+function seoCompactSitemap(string $baseUrl): string {
+    $base = rtrim($baseUrl, '/');
+    $paths = [
+        '/',
+        '/contact',
+        '/privacy',
+        '/terms',
+        '/thank-you',
+        '/pages/about',
+        '/pages/faq',
+        '/pages/services',
+        '/pages/areas',
+        '/pages/manufacturers',
+        '/pages/resources',
+        '/pages/keywords',
+        '/pages/packages',
+        '/pages/landlords',
+        '/pages/commercial',
+        '/pages/resources/eicr-guide',
+        '/pages/resources/fire-alarm-servicing',
+        '/pages/resources/emergency-lighting-testing',
+        '/pages/resources/cctv-for-business',
+        '/pages/resources/access-control-guide',
+        '/pages/resources/landlord-compliance-checklist',
+    ];
+    if (function_exists('getServices')) {
+        foreach (array_keys(getServices()) as $slug) {
+            $paths[] = '/pages/services/' . $slug;
+        }
+    }
+    $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+    $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+    $seen = [];
+    foreach ($paths as $path) {
+        if (isset($seen[$path])) {
+            continue;
+        }
+        $seen[$path] = true;
+        $loc = $path === '/' ? $base : $base . $path;
+        $xml .= '  <url><loc>' . htmlspecialchars($loc, ENT_XML1) . '</loc></url>' . "\n";
+    }
+    $xml .= '</urlset>' . "\n";
+    return $xml;
+}
+
 /** Drop shop/products locs from served sitemaps (they 301 to packages). */
 function seoStripShopProductUrls(string $xml): string {
     $xml = preg_replace(
@@ -81,11 +127,12 @@ if (preg_match('#^/(bin|templates|data|includes)(/|$)#i', $uri)) {
 }
 
 // Legacy legal aliases (also in netlify.toml / _redirects)
-if ($uri === '/privacy-policy') {
+$aliasPath = rtrim($uri, '/') ?: '/';
+if ($aliasPath === '/privacy-policy') {
     header('Location: ' . $base_url . '/privacy', true, 301);
     exit;
 }
-if ($uri === '/terms-and-conditions') {
+if ($aliasPath === '/terms-and-conditions') {
     header('Location: ' . $base_url . '/terms', true, 301);
     exit;
 }
@@ -133,15 +180,30 @@ if (strcasecmp($uri, '/robots.txt') === 0) {
     }
 }
 
-// Sitemaps — self-host locs on preview/prod host; keep all keyword URLs
+// Sitemaps — never 500. Prefer on-disk parts; fall back to a compact accurate index.
 if (preg_match('#^/sitemap(-[0-9]+)?\.xml$#i', $uri)) {
-    $file = $root . str_replace('/', DIRECTORY_SEPARATOR, $uri);
-    if (is_file($file)) {
-        header('Content-Type: application/xml; charset=utf-8');
-        header('Cache-Control: public, max-age=3600');
-        $xml = (string)file_get_contents($file);
-        $xml = seoStripShopProductUrls($xml);
-        echo seoRewritePublicHost($xml, $base_url);
+    header('Content-Type: application/xml; charset=utf-8');
+    header('Cache-Control: public, max-age=3600');
+    try {
+        $file = $root . str_replace('/', DIRECTORY_SEPARATOR, $uri);
+        if (is_file($file) && is_readable($file)) {
+            $xml = (string)file_get_contents($file);
+            if ($xml !== '') {
+                $xml = seoStripShopProductUrls($xml);
+                echo seoRewritePublicHost($xml, $base_url);
+                exit;
+            }
+        }
+        // Compact fallback: only URLs this router will serve (no phantom parts).
+        if (preg_match('#^/sitemap-([0-9]+)\.xml$#i', $uri, $partMatch) && (int)$partMatch[1] > 1) {
+            http_response_code(404);
+            echo '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>';
+            exit;
+        }
+        echo seoRewritePublicHost(seoCompactSitemap($base_url), $base_url);
+        exit;
+    } catch (Throwable $e) {
+        echo seoRewritePublicHost(seoCompactSitemap($base_url), $base_url);
         exit;
     }
 }
