@@ -4,8 +4,9 @@
 # served `.php` as source and 404'd extensionless pretty URLs.
 #
 # Build runs `php website/bin/static-export.php`, which renders public
-# routes to HTML under `dist/` (also written as `.php` filenames so splat
-# rewrites match the pretty-URL contract). See docs/NETLIFY-MIGRATE.md.
+# routes (including the sitemap keyword matrix) to HTML under `dist/`
+# (also written as `.php` filenames so splat rewrites match the pretty-URL
+# contract). See docs/NETLIFY-MIGRATE.md.
 #
 # Production branch is `main`. GitHub Actions
 # (`.github/workflows/netlify-deploy.yml`) must deploy `--dir=dist`
@@ -318,6 +319,31 @@
 [[redirects]]
   from = "/pages/resources/"
   to = "/pages/resources.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords"
+  to = "/pages/keywords.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/"
+  to = "/pages/keywords.php"
+  status = 200
+  force = true
+
+# Child town files must not 301 /pages/keywords/{slug} → trailing slash.
+[[redirects]]
+  from = "/pages/keywords/:slug"
+  to = "/pages/keywords/:slug.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/:slug/"
+  to = "/pages/keywords/:slug.php"
   status = 200
   force = true
 

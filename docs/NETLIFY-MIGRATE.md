@@ -11,9 +11,10 @@ Netlify does not run PHP at request time. The existing `website/` tree is PHP-dr
 `website/bin/static-export.php` renders public routes to HTML under `dist/` (plus `_redirects` / `_headers`). Pretty URLs rewrite to the matching `.php` file with status **200**. Those `.php` files are **pre-rendered HTML**, not source. Splat `/* → /:splat.php` does **not** use `force`, so `/assets/*` still wins as real files.
 
 ```bash
-php website/bin/static-export.php          # core + hubs (default Netlify build)
+php website/bin/static-export.php          # core + hubs + keyword matrix (default Netlify build)
 php website/bin/check-static-export.php
-php website/bin/static-export.php --full   # also keyword hubs + service×area (large)
+php website/bin/static-export.php --full   # also service×area landings
+php website/bin/static-export.php --keyword-towns=all   # full keyword×area (~200k files)
 ```
 
 `netlify.toml` sets `publish = dist` and `command = php website/bin/static-export.php`.
@@ -33,7 +34,7 @@ php website/bin/static-export.php --full   # also keyword hubs + service×area (
 - `/` is `dist/index.html`.
 - Preserve redirects: www→apex, `/shop` + `/products` → `/pages/packages`.
 - Verify robots + sitemap on the Netlify preview host before domain attach.
-- Default export is core pages + hubs (services / areas / manufacturers / resources / packages). `--full` adds keyword hubs and service×area landings.
+- Default export is core pages + hubs + every sitemap keyword hub (`/pages/keywords/{slug}`) and the town combos linked from chrome (popular towns × all keywords; all towns × priority keywords). `--full` adds service×area landings. `--keyword-towns=all` is the previous PHP router’s full keyword×area set (~200k HTML files).
 
 ### P2 — Domain cutover
 - Attach apex + www on Netlify; force www→apex 301.

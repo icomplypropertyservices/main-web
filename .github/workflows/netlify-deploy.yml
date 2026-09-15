@@ -69,6 +69,7 @@ jobs:
         env:
           SITE_URL: https://icomplypropertyservices.co.uk
         run: php website/bin/static-export.php
+        timeout-minutes: 20
 
       - name: Verify dist/ pretty URLs
         run: php website/bin/check-static-export.php
