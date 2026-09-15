@@ -4,9 +4,17 @@ if (!defined('SITE_URL')) {
 }
 $services = getServices();
 $areas = getAreas();
-$pageTitleSafe = htmlspecialchars($pageTitle ?? SITE_NAME, ENT_QUOTES, 'UTF-8');
+$rawPageTitle = trim((string)($pageTitle ?? SITE_NAME));
+if ($rawPageTitle === '') {
+    $rawPageTitle = SITE_NAME;
+}
+$hasBrandInTitle = (stripos($rawPageTitle, 'Icomply') !== false)
+    || (stripos($rawPageTitle, (string)SITE_NAME) !== false);
+$documentTitle = $hasBrandInTitle ? $rawPageTitle : ($rawPageTitle . ' | Icomply Property Services');
+$pageTitleSafe = htmlspecialchars($documentTitle, ENT_QUOTES, 'UTF-8');
+$ogTitleSafe = htmlspecialchars($rawPageTitle, ENT_QUOTES, 'UTF-8');
 $metaDescSafe = htmlspecialchars(
-    $metaDesc ?? 'Expert property compliance services across Greater Manchester and North West UK. EICR, Fire Alarms, Gas Safety, Emergency Lighting & more. Get your free quote today.',
+    $metaDesc ?? 'Icomply Property Services — fire, electrical, gas, security and construction compliance across Greater Manchester and the North West. Based in Offerton, Stockport SK2 5DE.',
     ENT_QUOTES,
     'UTF-8'
 );
@@ -37,30 +45,49 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     }
     ?>
     <meta name="robots" content="<?= htmlspecialchars($robotsContent, ENT_QUOTES, 'UTF-8') ?>">
+    <?php
+    if (empty($canonicalUrl)) {
+        require_once __DIR__ . '/share.php';
+        $canonicalUrl = function_exists('currentPageUrl') ? currentPageUrl() : url('/');
+    }
+    ?>
     <link rel="sitemap" type="application/xml" title="Sitemap" href="<?= htmlspecialchars(url('/sitemap.xml'), ENT_QUOTES, 'UTF-8') ?>">
-    <title><?= $pageTitleSafe ?> | Property Compliance Experts</title>
+    <title><?= $pageTitleSafe ?></title>
     <meta name="description" content="<?= $metaDescSafe ?>">
     <meta name="keywords" content="<?= $metaKeywordsSafe ?>">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_GB">
+    <meta property="og:locale:alternate" content="en_US">
     <meta property="og:site_name" content="<?= htmlspecialchars(SITE_NAME, ENT_QUOTES, 'UTF-8') ?>">
-    <meta property="og:title" content="<?= $pageTitleSafe ?> | Property Compliance Experts">
+    <meta property="og:title" content="<?= $ogTitleSafe ?>">
     <meta property="og:description" content="<?= $metaDescSafe ?>">
-    <meta property="og:url" content="<?= htmlspecialchars(url($_SERVER['REQUEST_URI'] ?? '/'), ENT_QUOTES, 'UTF-8') ?>">
+    <meta property="og:url" content="<?= htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8') ?>">
     <?php
     // Default OG image when page does not set $ogImage
     if (empty($ogImage)) {
-        $ogImage = url('/assets/images/services/fire-alarms.jpg');
+        $ogImage = url('/assets/images/og-image.jpg');
+        if (!is_file(SITE_ROOT . '/assets/images/og-image.jpg')) {
+            $ogImage = url('/assets/images/services/fire-alarms.jpg');
+        }
     }
     $ogImageSafe = htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8');
+    $ogAltSafe = htmlspecialchars(
+        $ogImageAlt ?? ($rawPageTitle . ' — Icomply Property Services, Stockport and the North West'),
+        ENT_QUOTES,
+        'UTF-8'
+    );
     ?>
     <meta property="og:image" content="<?= $ogImageSafe ?>">
+    <meta property="og:image:secure_url" content="<?= $ogImageSafe ?>">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="<?= $ogAltSafe ?>">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="<?= $pageTitleSafe ?> | Property Compliance Experts">
+    <meta name="twitter:title" content="<?= $ogTitleSafe ?>">
     <meta name="twitter:description" content="<?= $metaDescSafe ?>">
     <meta name="twitter:image" content="<?= $ogImageSafe ?>">
+    <meta name="twitter:image:alt" content="<?= $ogAltSafe ?>">
     <?php if (defined('SOCIAL_TWITTER') && SOCIAL_TWITTER !== ''): ?>
     <?php
     $twitterSite = SOCIAL_TWITTER;
@@ -72,16 +99,16 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     ?>
     <meta name="twitter:site" content="<?= htmlspecialchars($twitterSite, ENT_QUOTES, 'UTF-8') ?>">
     <?php endif; ?>
-    <?php
-    // Canonical URL — prefer explicit $canonicalUrl, else derive from SITE_URL + path
-    if (empty($canonicalUrl)) {
-        require_once __DIR__ . '/share.php';
-        $canonicalUrl = function_exists('currentPageUrl') ? currentPageUrl() : url('/');
-    }
-    ?>
     <link rel="canonical" href="<?= htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="icon" href="<?= htmlspecialchars(url('/favicon.ico'), ENT_QUOTES, 'UTF-8') ?>" sizes="any">
+    <link rel="icon" href="<?= htmlspecialchars(url('/assets/images/favicon.ico'), ENT_QUOTES, 'UTF-8') ?>" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= htmlspecialchars(url('/assets/images/favicon-32.png'), ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= htmlspecialchars(url('/assets/images/favicon-16.png'), ENT_QUOTES, 'UTF-8') ?>">
     <link rel="icon" href="<?= htmlspecialchars(url('/assets/images/favicon.svg'), ENT_QUOTES, 'UTF-8') ?>" type="image/svg+xml">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= htmlspecialchars(url('/assets/images/apple-touch-icon.png'), ENT_QUOTES, 'UTF-8') ?>">
     <link rel="manifest" href="<?= htmlspecialchars(url('/manifest.json'), ENT_QUOTES, 'UTF-8') ?>">
+    <meta name="msapplication-TileColor" content="#0a2540">
+    <meta name="msapplication-TileImage" content="<?= htmlspecialchars(url('/assets/images/favicon-192.png'), ENT_QUOTES, 'UTF-8') ?>">
     <meta name="author" content="<?= htmlspecialchars(SITE_NAME, ENT_QUOTES, 'UTF-8') ?>">
     <meta name="geo.region" content="GB-MAN">
     <meta name="geo.placename" content="Stockport">
@@ -95,6 +122,8 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
         .service-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
         .modern-btn { background: #0a2540; transition: all 0.2s; }
         .modern-btn:hover { background: #ff6b00; transform: translateY(-1px); }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+        [aria-invalid="true"] { border-color: #dc2626 !important; box-shadow: 0 0 0 3px rgba(220,38,38,.15); }
         .nav-drop { position: relative; }
         .nav-drop > .nav-panel {
             display: none;
@@ -149,13 +178,31 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
         }
     </style>
     <?php if (GA_MEASUREMENT_ID !== '' || AW_CONVERSION_ID !== ''): ?>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=<?= htmlspecialchars(GA_MEASUREMENT_ID !== '' ? GA_MEASUREMENT_ID : AW_CONVERSION_ID, ENT_QUOTES, 'UTF-8') ?>"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        <?php if (GA_MEASUREMENT_ID !== ''): ?>gtag('config', <?= json_encode(GA_MEASUREMENT_ID) ?>);<?php endif; ?>
-        <?php if (AW_CONVERSION_ID !== ''): ?>gtag('config', <?= json_encode(AW_CONVERSION_ID) ?>);<?php endif; ?>
+        window.__icomplyAnalytics = {
+            ga: <?= json_encode(GA_MEASUREMENT_ID !== '' ? GA_MEASUREMENT_ID : '') ?>,
+            aw: <?= json_encode(AW_CONVERSION_ID !== '' ? AW_CONVERSION_ID : '') ?>,
+            load: function () {
+                if (window.__icomplyAnalyticsLoaded) return;
+                window.__icomplyAnalyticsLoaded = true;
+                var id = this.ga || this.aw;
+                if (!id) return;
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);
+                document.head.appendChild(s);
+                gtag('js', new Date());
+                if (this.ga) gtag('config', this.ga);
+                if (this.aw) gtag('config', this.aw);
+            }
+        };
+        try {
+            if (localStorage.getItem('icomply_cookie_consent') === 'accepted') {
+                window.__icomplyAnalytics.load();
+            }
+        } catch (e) {}
     </script>
     <?php endif; ?>
     <script type="application/ld+json">

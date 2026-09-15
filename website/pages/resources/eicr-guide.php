@@ -4,6 +4,7 @@
  */
 require_once __DIR__ . '/../../config.php';
 require_once SITE_ROOT . '/includes/share.php';
+require_once SITE_ROOT . '/includes/resource-related.php';
 
 $pageTitle = 'EICR Guide for Landlords & Commercial Sites';
 $metaDesc = 'Plain-English EICR guide for UK landlords and commercial properties — what an Electrical Installation Condition Report covers, typical intervals, C1–C3 codes and how to book testing in the North West.';
@@ -195,4 +196,5 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
+<section class="max-w-3xl mx-auto px-6 pb-12"><?= resourceRelatedHtml('eicr-guide') ?></section>
 <?php require SITE_ROOT . '/includes/footer.php'; ?>

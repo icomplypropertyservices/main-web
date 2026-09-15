@@ -4,6 +4,7 @@
  */
 require_once __DIR__ . '/../../config.php';
 require_once SITE_ROOT . '/includes/share.php';
+require_once SITE_ROOT . '/includes/resource-related.php';
 
 $pageTitle = 'Emergency Lighting Testing Guide | BS 5266 Overview';
 $metaDesc = 'High-level UK guide to emergency lighting testing: monthly function checks, annual full-duration tests, BS 5266 practice, logbooks and when to upgrade for commercial and multi-let sites in the North West.';
@@ -222,4 +223,5 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
+<section class="max-w-3xl mx-auto px-6 pb-12"><?= resourceRelatedHtml('emergency-lighting-testing') ?></section>
 <?php require SITE_ROOT . '/includes/footer.php'; ?>

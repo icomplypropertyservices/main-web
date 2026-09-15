@@ -39,7 +39,7 @@ $static = [
     ['/contact.php', '0.85', 'contact.php'],
     ['/privacy.php', '0.3', 'privacy.php'],
     ['/terms.php', '0.3', 'terms.php'],
-    ['/shop/index.php', '0.85', 'shop/index.php'],
+    // /shop and /products 301 to /pages/packages — do not list in sitemap
     ['/pages/about.php', '0.75', 'pages/about.php'],
     ['/pages/faq.php', '0.75', 'pages/faq.php'],
     ['/pages/landlords.php', '0.8', 'pages/landlords.php'],

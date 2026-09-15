@@ -7,10 +7,12 @@ require_once __DIR__ . '/config.php';
 
 http_response_code(404);
 
-$pageTitle = 'Page Not Found';
-$metaDesc = 'Sorry — that page could not be found on Icomply Property Services. Browse our services, areas, manufacturers or contact us for a free quote.';
+$pageTitle = 'Page Not Found | Icomply Property Services';
+$metaDesc = 'Sorry — that page could not be found on Icomply Property Services. Browse our services, areas, manufacturers, resources or contact us for a free quote.';
 $metaRobots = 'noindex, follow';
-$canonicalUrl = url('/404.php');
+$canonicalUrl = url('/404');
+$ogImage = url('/assets/images/og-image.jpg');
+$ogImageAlt = 'Icomply Property Services — page not found. Fire, electrical and construction compliance, Stockport SK2.';
 
 $homeUrl = rtrim(SITE_URL, '/') . '/';
 $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
@@ -26,7 +28,8 @@ $quickLinks = [
     ['label' => 'Home', 'href' => $homeUrl, 'blurb' => 'Back to the homepage'],
     ['label' => 'Services', 'href' => url('/pages/services/index.php'), 'blurb' => 'Electrical, fire, gas, CCTV & more'],
     ['label' => 'Areas', 'href' => url('/pages/areas/index.php'), 'blurb' => 'Towns we cover across the North West'],
-    ['label' => 'Manufacturers', 'href' => url('/pages/manufacturers/index.php'), 'blurb' => 'Brands we install & supply'],
+    ['label' => 'Manufacturers', 'href' => url('/pages/manufacturers'), 'blurb' => 'Brands we install & supply'],
+    ['label' => 'Resources', 'href' => url('/pages/resources'), 'blurb' => 'Guides for landlords and FM teams'],
     ['label' => 'Contact', 'href' => url('/contact.php'), 'blurb' => 'Free quote — call, WhatsApp or form'],
 ];
 

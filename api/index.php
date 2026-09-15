@@ -80,6 +80,48 @@ if (preg_match('#^/(bin|templates|data|includes)(/|$)#i', $uri)) {
     }
 }
 
+// Legacy legal aliases (also in netlify.toml / _redirects)
+if ($uri === '/privacy-policy') {
+    header('Location: ' . $base_url . '/privacy', true, 301);
+    exit;
+}
+if ($uri === '/terms-and-conditions') {
+    header('Location: ' . $base_url . '/terms', true, 301);
+    exit;
+}
+
+// Web app manifest — PHP front controller would otherwise 404 this static file
+if (strcasecmp($uri, '/manifest.json') === 0) {
+    $manifestCandidates = [
+        $root . DIRECTORY_SEPARATOR . 'manifest.json',
+        dirname($root) . DIRECTORY_SEPARATOR . 'manifest.json',
+    ];
+    foreach ($manifestCandidates as $manifestFile) {
+        if (is_file($manifestFile)) {
+            header('Content-Type: application/manifest+json; charset=utf-8');
+            header('Cache-Control: public, max-age=3600');
+            echo (string)file_get_contents($manifestFile);
+            exit;
+        }
+    }
+}
+
+// Root favicon when requested as /favicon.ico
+if (strcasecmp($uri, '/favicon.ico') === 0) {
+    $icoCandidates = [
+        $root . DIRECTORY_SEPARATOR . 'favicon.ico',
+        $root . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR . 'favicon.ico',
+    ];
+    foreach ($icoCandidates as $ico) {
+        if (is_file($ico)) {
+            header('Content-Type: image/x-icon');
+            header('Cache-Control: public, max-age=86400');
+            readfile($ico);
+            exit;
+        }
+    }
+}
+
 // robots.txt — host-aware Sitemap line
 if (strcasecmp($uri, '/robots.txt') === 0) {
     $file = $root . DIRECTORY_SEPARATOR . 'robots.txt';

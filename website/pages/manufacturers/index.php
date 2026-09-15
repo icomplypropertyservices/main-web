@@ -35,7 +35,7 @@ $pageTitle = 'Manufacturers & Brands | Fire, Electrical & Security North West';
 $metaDesc = 'Browse ' . count($catalog) . '+ manufacturers we install, service and supply — fire detection, electrical, CCTV, access control, gas and related systems. Trade kits and local teams across the North West.';
 $metaKeywords = 'fire alarm manufacturers, Kentec, Paxton, Hikvision, Schneider Electric, trade electrical, CCTV suppliers North West, fire safety brands';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
-$canonicalUrl = url('/pages/manufacturers/index.php');
+$canonicalUrl = url('/pages/manufacturers');
 
 require SITE_ROOT . '/includes/header.php';
 ?>

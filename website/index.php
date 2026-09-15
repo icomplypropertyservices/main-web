@@ -5,8 +5,9 @@
 require_once __DIR__ . '/config.php';
 require_once SITE_ROOT . '/includes/shopify.php';
 
-$pageTitle = 'Fire Safety, Professional & Construction Services | North West';
-$metaDesc = 'Icomply Property Services — fire risk assessments, fire safety systems, electrical, gas, security, professional services, kitchens, bathrooms and renovation across Greater Manchester and the North West.';
+$pageTitle = 'Property Compliance in the North West | Icomply Property Services';
+$metaDesc = 'Icomply Property Services — fire risk assessments, fire safety systems, electrical, gas, security, landlord compliance, kitchens, bathrooms and renovation across Greater Manchester and the North West. Based in Offerton, Stockport SK2 5DE.';
+$canonicalUrl = url('/');
 $metaKeywords = 'fire risk assessment Stockport, fire safety systems Manchester, kitchen fitting North West, bathroom renovation, EICR, landlord compliance';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 
