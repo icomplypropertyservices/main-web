@@ -507,8 +507,28 @@ function icomplyPrettyUrlHeaders(): string
 {
     return <<<'TXT'
 # Pre-rendered HTML is stored with a .php filename so splat rewrites work.
-# Force browsers to treat it as HTML, never as downloadable source.
+# Headers match the *request* path (pretty URL), not only the .php destination.
 /*.php
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/privacy
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/terms
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/contact
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/thank-you
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/pages/*
   Content-Type: text/html; charset=utf-8
   X-Content-Type-Options: nosniff
 
