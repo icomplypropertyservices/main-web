@@ -3,6 +3,8 @@
 /**
  * Expand ELECTRICAL and GAS keyword families to ~100 each with unique
  * UK-English copy (Stockport / North West). Cost/price keywords are POA only.
+ * Source of truth: website/data/seo-matrix-electrical.md + seo-matrix-gas.md
+ * (see seo-matrix-rollout-notes.md for P090 / anti-junk / HMO rules).
  *
  * Usage: php website/bin/expand-electrical-gas-matrix.php
  */

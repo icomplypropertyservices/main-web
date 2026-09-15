@@ -97,6 +97,8 @@ $ok(!preg_match('#/pages/gas-systems/[a-z0-9\-]+</loc>#', $sitemapXml), 'sitemap
 $ok(!preg_match('#/pages/electrical/[a-z0-9\-]+</loc>#', $sitemapXml), 'sitemap has zero /pages/electrical/{town}');
 $ok(str_contains($sitemapXml, '/pages/services/gas-systems</loc>'), 'sitemap still lists gas-systems service hub');
 $ok(str_contains($sitemapXml, '/pages/keywords/boiler</loc>'), 'sitemap still lists boiler keyword hub');
+$ok(is_file(SITE_ROOT . '/data/seo-matrix-electrical.md') && is_file(SITE_ROOT . '/data/seo-matrix-gas.md'), 'Marketing seo-matrix md files present');
+$ok(is_file(SITE_ROOT . '/data/seo-matrix-rollout-notes.md'), 'seo-matrix-rollout-notes.md present');
 
 ob_start();
 renderServiceHubPage('gas-systems');
