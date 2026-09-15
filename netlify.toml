@@ -375,6 +375,18 @@
   force = true
 
 [[redirects]]
+  from = "/pages/services"
+  to = "/pages/services.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/services/"
+  to = "/pages/services.php"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/pages/manufacturers"
   to = "/pages/manufacturers.php"
   status = 200

@@ -410,14 +410,9 @@ h1, h2, h3 { letter-spacing: -0.03em; }
 }
 .drawer-cta--wa { background: #16a34a; }
 .drawer-cta--quote { background: var(--accent); }
-.mega-suite {
-  display: none;
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 0 1rem 0.55rem;
-  gap: 0.35rem;
-  flex-wrap: wrap;
-}
+.mega-suite { display: none !important; }
+.mega-panel--shop .mega-panel-inner { min-width: 16rem; }
+.mega-grid--shop { grid-template-columns: 1fr; }
 .mega-suite a {
   color: #d6dde6;
   text-decoration: none;
@@ -438,7 +433,6 @@ h1, h2, h3 { letter-spacing: -0.03em; }
 @media (min-width: 1024px) {
   .mega-desktop { display: flex; }
   .mega-burger, .mega-drawer, #mega-drawer { display: none !important; }
-  .mega-suite { display: flex; }
 }
 
 .site-footer {

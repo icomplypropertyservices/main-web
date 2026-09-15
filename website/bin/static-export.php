@@ -632,6 +632,8 @@ function icomplyPrettyUrlRedirects(): string
 /pages/about/            /pages/about.php             200!
 /pages/areas             /pages/areas.php             200!
 /pages/areas/            /pages/areas.php             200!
+/pages/services          /pages/services.php          200!
+/pages/services/         /pages/services.php          200!
 /pages/manufacturers     /pages/manufacturers.php     200!
 /pages/manufacturers/    /pages/manufacturers.php     200!
 /pages/resources         /pages/resources.php         200!
@@ -721,6 +723,10 @@ function icomplyPrettyUrlHeaders(): string
   X-Content-Type-Options: nosniff
 
 /thank-you
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/pages/services
   Content-Type: text/html; charset=utf-8
   X-Content-Type-Options: nosniff
 

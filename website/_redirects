@@ -81,6 +81,8 @@
 /pages/about/    /pages/about.php    200!
 /pages/areas    /pages/areas.php    200!
 /pages/areas/    /pages/areas.php    200!
+/pages/services    /pages/services.php    200!
+/pages/services/    /pages/services.php    200!
 /pages/manufacturers    /pages/manufacturers.php    200!
 /pages/manufacturers/    /pages/manufacturers.php    200!
 /pages/resources    /pages/resources.php    200!

@@ -209,16 +209,14 @@ function icomplyMegaHeaderHtml(): string
     $js = icomplyNavH($n['js']);
     $svcHub = icomplyNavH(url('/pages/services/index.php'));
     $areaHub = icomplyNavH(url('/pages/areas/index.php'));
-    $kwHub = icomplyNavH(url('/pages/keywords/index.php'));
-    $resHub = icomplyNavH(url('/pages/resources/index.php'));
-    $pkgHub = icomplyNavH(url('/pages/packages.php'));
     $contact = icomplyNavH(url('/contact.php'));
-    $shopExt = icomplyNavH(function_exists('icomplyTradeShopUrl') ? icomplyTradeShopUrl() : 'https://shop.icomplypropertyservices.co.uk');
-    $products = icomplyNavH(function_exists('icomplyTradeProductsUrl') ? icomplyTradeProductsUrl() : $shopExt);
+    $products = icomplyNavH(url('/products.php'));
+    $shopAll = '/shop/';
     $hubElectrical = '/shop/electrical/';
     $hubFire = '/shop/fire/';
     $hubSecurity = '/shop/security/';
     $hubGas = '/shop/gas/';
+    $shopLive = icomplyNavH(function_exists('icomplyTradeShopUrl') ? icomplyTradeShopUrl() : 'https://shop.icomplypropertyservices.co.uk');
 
     $svcCols = '';
     foreach ($n['cats'] as $catKey => $cat) {
@@ -244,62 +242,9 @@ function icomplyMegaHeaderHtml(): string
     }
     $areaCols .= '</div><p class="mega-note">Every town has its own area page. Keyword×town pages open from a keyword hub.</p></div>';
 
-    $kwCols = '<div class="mega-col">';
-    $kwCols .= '<p class="mega-col-title">Featured keyword hubs</p>';
-    foreach ($n['featuredKw'] as $slug => $name) {
-        $kwCols .= icomplyNavLink(url('/pages/keywords/' . rawurlencode((string)$slug) . '.php'), (string)$name);
-    }
-    $kwCols .= icomplyNavLink(url('/pages/keywords/index.php'), 'All ' . count($n['keywords']) . ' keyword hubs →', 'mega-more');
-    $kwCols .= '</div>';
-    $kwShown = 0;
-    foreach ($n['cats'] as $cat) {
-        if ($kwShown >= 3) {
-            break;
-        }
-        if (empty($cat['keywords'])) {
-            continue;
-        }
-        $kwShown++;
-        $kwCols .= '<div class="mega-col"><p class="mega-col-title">' . icomplyNavH($cat['label']) . '</p>';
-        $i = 0;
-        foreach ($cat['keywords'] as $svcSlug => $block) {
-            foreach ($block['keywords'] as $kSlug => $meta) {
-                if ($i >= 8) {
-                    break 2;
-                }
-                $kwCols .= icomplyNavLink(url('/pages/keywords/' . rawurlencode((string)$kSlug) . '.php'), (string)($meta['name'] ?? $kSlug));
-                $i++;
-            }
-        }
-        $kwCols .= '</div>';
-    }
-
-    $resCols = '<div class="mega-col">';
-    $resCols .= '<p class="mega-col-title">Guides &amp; hubs</p>';
-    foreach (array_slice($n['resources'], 0, 16) as $row) {
-        $resCols .= icomplyNavLink($row['href'], $row['label']);
-    }
-    $resCols .= icomplyNavLink(url('/pages/resources/index.php'), 'All resources →', 'mega-more');
-    $resCols .= '</div><div class="mega-col"><p class="mega-col-title">Water &amp; asbestos</p>';
-    $resCols .= icomplyNavLink(url('/pages/services/legionella-risk-assessment.php'), 'Legionella risk assessment');
-    $resCols .= icomplyNavLink(url('/pages/legionella-landlords.php'), 'Legionella for landlords');
-    $resCols .= icomplyNavLink(url('/pages/services/asbestos-survey.php'), 'Asbestos survey');
-    $resCols .= icomplyNavLink(url('/pages/asbestos-landlords.php'), 'Asbestos for landlords');
-    $resCols .= icomplyNavLink(url('/pages/resources/legionella-risk-assessment.php'), 'Legionella guide');
-    $resCols .= icomplyNavLink(url('/pages/resources/asbestos-survey.php'), 'Asbestos guide');
-    $resCols .= '</div>';
-
-    $pkgCols = '<div class="mega-col">';
-    $pkgCols .= '<p class="mega-col-title">Packages &amp; audiences</p>';
-    foreach ($n['packages'] as $row) {
-        $pkgCols .= icomplyNavLink($row['href'], $row['label']);
-    }
-    $pkgCols .= '</div>';
-
     $drawer = icomplyMobileDrawerHtml($n);
     $svcCount = count($n['services']);
     $areaCount = count($n['areas']);
-    $kwCount = count($n['keywords']);
 
     return <<<HTML
 <header class="site-header mega-header" data-site-header>
@@ -309,11 +254,7 @@ function icomplyMegaHeaderHtml(): string
       <span class="mega-wordmark"><b>iComply</b><small>Property Services</small></span>
     </a>
     <nav class="mega-desktop" aria-label="Primary">
-      <!-- Shared suite (box handoff, do not invent): Shop shop.* · Products shop.* · Services /pages/services · Areas /pages/areas · Contact /contact -->
-      <!-- Marketing https://marketing.icomplypropertyservices.co.uk — optional until DNS live -->
       <a class="nav-link" href="{$home}">Home</a>
-      <a class="nav-link" href="{$shopExt}" target="_blank" rel="noopener">Shop</a>
-      <a class="nav-link" href="{$products}" target="_blank" rel="noopener">Products</a>
       <div class="mega-item" data-mega>
         <button type="button" class="mega-trigger" aria-expanded="false" aria-controls="mega-services" aria-haspopup="true">Services</button>
         <div id="mega-services" class="mega-panel" hidden>
@@ -335,48 +276,32 @@ function icomplyMegaHeaderHtml(): string
         </div>
       </div>
       <div class="mega-item" data-mega>
-        <button type="button" class="mega-trigger" aria-expanded="false" aria-controls="mega-keywords" aria-haspopup="true">Keywords</button>
-        <div id="mega-keywords" class="mega-panel" hidden>
-          <div class="mega-panel-inner mega-panel-inner--wide">
-            <div class="mega-panel-head"><a href="{$kwHub}">All {$kwCount} keyword hubs →</a></div>
-            <div class="mega-grid">{$kwCols}</div>
-          </div>
-        </div>
-      </div>
-      <div class="mega-item" data-mega>
-        <button type="button" class="mega-trigger" aria-expanded="false" aria-controls="mega-resources" aria-haspopup="true">Resources</button>
-        <div id="mega-resources" class="mega-panel" hidden>
+        <button type="button" class="mega-trigger" aria-expanded="false" aria-controls="mega-shop" aria-haspopup="true">Shop</button>
+        <div id="mega-shop" class="mega-panel mega-panel--shop" hidden>
           <div class="mega-panel-inner">
-            <div class="mega-panel-head"><a href="{$resHub}">Resource library →</a></div>
-            <div class="mega-grid">{$resCols}</div>
+            <div class="mega-panel-head"><a href="{$shopAll}">Trade supplies →</a></div>
+            <div class="mega-grid mega-grid--shop">
+              <div class="mega-col">
+                <p class="mega-col-title">Category hubs</p>
+                <a href="{$hubFire}">Fire</a>
+                <a href="{$hubElectrical}">Electrical</a>
+                <a href="{$hubSecurity}">Security</a>
+                <a href="{$hubGas}">Gas</a>
+                <a href="{$shopAll}" class="mega-more">All supplies →</a>
+                <a href="{$shopLive}" class="mega-more" target="_blank" rel="noopener">Shopify checkout →</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="mega-item" data-mega>
-        <button type="button" class="mega-trigger" aria-expanded="false" aria-controls="mega-packages" aria-haspopup="true">Packages</button>
-        <div id="mega-packages" class="mega-panel" hidden>
-          <div class="mega-panel-inner">
-            <div class="mega-panel-head"><a href="{$pkgHub}">Packages &amp; landlords →</a></div>
-            <div class="mega-grid">{$pkgCols}</div>
-          </div>
-        </div>
-      </div>
+      <a class="nav-link" href="{$products}">Products</a>
       <a class="nav-link" href="{$contact}">Contact</a>
-      <a class="mega-wa" href="https://wa.me/{$wa}" target="_blank" rel="noopener">WhatsApp</a>
     </nav>
     <div class="mega-tools">
-      <a class="mega-phone" href="{$phoneHref}">{$phone}</a>
-      <a class="mega-quote" href="{$contact}">Book quote</a>
+      <a class="mega-quote" href="{$contact}">Get a quote</a>
       <button type="button" class="mega-burger" id="nav-toggle" aria-expanded="false" aria-controls="mega-drawer">Menu</button>
     </div>
   </div>
-  <nav class="mega-suite" aria-label="Trade suites">
-    <!-- Hub labels from box handoff: Electrical / Fire / Security / Gas → /shop/{hub}/ -->
-    <a href="{$hubElectrical}">Electrical</a>
-    <a href="{$hubFire}">Fire</a>
-    <a href="{$hubSecurity}">Security</a>
-    <a href="{$hubGas}">Gas</a>
-  </nav>
   {$drawer}
 </header>
 <script src="{$js}" defer></script>
@@ -407,22 +332,7 @@ function icomplyMobileDrawerHtml(array $n): string
         $areas .= icomplyNavLink(url('/pages/areas/' . areaSlug($area) . '.php'), (string)$area);
     }
 
-    $kws = '<a class="drawer-all" href="' . icomplyNavH(url('/pages/keywords/index.php')) . '">All keyword hubs →</a>';
-    foreach ($n['featuredKw'] as $slug => $name) {
-        $kws .= icomplyNavLink(url('/pages/keywords/' . rawurlencode((string)$slug) . '.php'), (string)$name);
-    }
-
-    $res = '';
-    foreach (array_slice($n['resources'], 0, 20) as $row) {
-        $res .= icomplyNavLink($row['href'], $row['label']);
-    }
-    $pkg = '';
-    foreach ($n['packages'] as $row) {
-        $pkg .= icomplyNavLink($row['href'], $row['label']);
-    }
-
-    $shopExtD = icomplyNavH(function_exists('icomplyTradeShopUrl') ? icomplyTradeShopUrl() : 'https://shop.icomplypropertyservices.co.uk');
-    $productsD = icomplyNavH(function_exists('icomplyTradeProductsUrl') ? icomplyTradeProductsUrl() : $shopExtD);
+    $productsD = icomplyNavH(url('/products.php'));
     $hubElectricalD = '/shop/electrical/';
     $hubFireD = '/shop/fire/';
     $hubSecurityD = '/shop/security/';
@@ -432,23 +342,17 @@ function icomplyMobileDrawerHtml(array $n): string
 <div id="mega-drawer" class="mega-drawer" hidden>
   <nav class="mega-drawer-inner" aria-label="Mobile">
     <a href="{$home}">Home</a>
-    <a href="{$shopExtD}" target="_blank" rel="noopener">Shop</a>
-    <a href="{$productsD}" target="_blank" rel="noopener">Products</a>
-    <details class="drawer-acc"><summary>Suites</summary><div>
-      <a href="{$hubElectricalD}">Electrical</a>
-      <a href="{$hubFireD}">Fire</a>
-      <a href="{$hubSecurityD}">Security</a>
-      <a href="{$hubGasD}">Gas</a>
-    </div></details>
     <details class="drawer-acc" open><summary>Services</summary><div>{$svc}</div></details>
     <details class="drawer-acc"><summary>Areas</summary><div>{$areas}</div></details>
-    <details class="drawer-acc"><summary>Keywords</summary><div>{$kws}</div></details>
-    <details class="drawer-acc"><summary>Resources</summary><div>{$res}</div></details>
-    <details class="drawer-acc"><summary>Packages / Landlords</summary><div>{$pkg}</div></details>
-    <a href="{$siteMap}">Site map</a>
-    <a class="drawer-cta" href="{$phoneHref}">Call {$phone}</a>
-    <a class="drawer-cta drawer-cta--wa" href="https://wa.me/{$wa}" target="_blank" rel="noopener">WhatsApp</a>
-    <a class="drawer-cta drawer-cta--quote" href="{$contactDrawer}">Contact</a>
+    <details class="drawer-acc"><summary>Shop</summary><div>
+      <a href="{$hubFireD}">Fire</a>
+      <a href="{$hubElectricalD}">Electrical</a>
+      <a href="{$hubSecurityD}">Security</a>
+      <a href="{$hubGasD}">Gas</a>
+      <a href="/shop/">All supplies</a>
+    </div></details>
+    <a href="{$productsD}">Products</a>
+    <a class="drawer-cta drawer-cta--quote" href="{$contactDrawer}">Get a quote</a>
   </nav>
 </div>
 HTML;
