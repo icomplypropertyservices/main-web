@@ -37,9 +37,7 @@ require SITE_ROOT . '/includes/header.php';
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#products" class="px-6 py-3 bg-[#ff6b00] hover:bg-orange-600 rounded-2xl font-semibold text-white">Browse products</a>
                 <a href="<?= url('/contact.php') ?>" class="px-6 py-3 border border-white/40 hover:bg-white/10 rounded-2xl font-semibold">Trade account / bulk quote</a>
-                <?php if (shopifyStoreUrl()): ?>
-                    <a href="<?= htmlspecialchars(shopifyStoreUrl(), ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener" class="px-6 py-3 bg-white text-[#0a2540] rounded-2xl font-semibold">Open full Shopify store →</a>
-                <?php endif; ?>
+                <a href="<?= htmlspecialchars(icomplyTradeShopUrl(), ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener" class="px-6 py-3 bg-white text-[#0a2540] rounded-2xl font-semibold">Open shop.icomplypropertyservices.co.uk</a>
             </div>
         </div>
     </div>

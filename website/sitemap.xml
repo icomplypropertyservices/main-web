@@ -27,6 +27,8 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/areas</loc><priority>0.9</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers</loc><priority>0.9</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords</loc><priority>0.9</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/shop</loc><priority>0.8</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/products</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/resources/asbestos-survey</loc><priority>0.7</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/resources/booking-compliance-certificates</loc><priority>0.7</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/resources/care-home-fire-and-nurse-call</loc><priority>0.7</priority></url>
@@ -55,6 +57,8 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting-compliance</loc><priority>0.78</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/stockport-property-compliance</loc><priority>0.78</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/manchester-property-compliance</loc><priority>0.78</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/legionella-landlords</loc><priority>0.78</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/asbestos-landlords</loc><priority>0.78</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/electrical</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/gas-systems</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/nurse-call</loc><priority>0.85</priority></url>

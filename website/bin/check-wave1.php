@@ -1,6 +1,6 @@
 <?php
 /**
- * Wave-1 marketing pages: 14 fortnight guides + 12 quality hubs exist.
+ * Wave-1 marketing pages: 14 fortnight guides + quality hubs exist.
  * HMO package landings and keyword-matrix files must not be added here.
  *
  * Usage: php website/bin/check-wave1.php
@@ -27,11 +27,12 @@ if (count($queue['B']['guides'] ?? []) !== 9) {
 } else {
     echo "OK   Batch B days 6–14\n";
 }
-if (count($queue['C']['hubs'] ?? []) !== 12) {
-    echo 'FAIL: Batch C must be 12 quality hubs, got ' . count($queue['C']['hubs'] ?? []) . PHP_EOL;
+$hubCount = count($queue['C']['hubs'] ?? []);
+if ($hubCount < 12) {
+    echo 'FAIL: Batch C must have at least 12 quality hubs, got ' . $hubCount . PHP_EOL;
     $fail++;
 } else {
-    echo "OK   Batch C 12 hubs\n";
+    echo "OK   Batch C {$hubCount} hubs\n";
 }
 if (wave1ContactPath() !== '/contact') {
     echo "FAIL: CTA target must remain /contact\n";
@@ -59,11 +60,11 @@ if (count($guides) !== 14) {
 } else {
     echo "OK   14 fortnight guides\n";
 }
-if (count($hubs) !== 12) {
-    echo "FAIL: expected 12 quality hubs, got " . count($hubs) . PHP_EOL;
+if (count($hubs) < 12) {
+    echo "FAIL: expected at least 12 quality hubs, got " . count($hubs) . PHP_EOL;
     $fail++;
 } else {
-    echo "OK   12 quality hubs\n";
+    echo "OK   " . count($hubs) . " quality hubs\n";
 }
 
 foreach (array_keys($guides) as $slug) {

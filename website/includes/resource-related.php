@@ -86,11 +86,15 @@ function resourceRelatedLinks(string $slug): array {
         ],
         'legionella-risk-assessment' => [
             ['href' => url('/pages/services/legionella-risk-assessment'), 'label' => 'Legionella service'],
+            ['href' => url('/pages/legionella-landlords'), 'label' => 'Landlord Legionella hub'],
             ['href' => url('/pages/keywords/legionella-risk-assessment'), 'label' => 'Legionella keyword hub'],
+            ['href' => url('/pages/keywords/landlord-legionella-risk-assessment'), 'label' => 'Landlord RA keyword'],
         ],
         'asbestos-survey' => [
             ['href' => url('/pages/services/asbestos-survey'), 'label' => 'Asbestos service'],
+            ['href' => url('/pages/asbestos-landlords'), 'label' => 'Landlord asbestos hub'],
             ['href' => url('/pages/keywords/asbestos-survey'), 'label' => 'Asbestos keyword hub'],
+            ['href' => url('/pages/keywords/landlord-asbestos-survey'), 'label' => 'Landlord asbestos keyword'],
         ],
     ];
     return $map[$slug] ?? [];

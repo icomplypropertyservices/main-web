@@ -27,7 +27,7 @@ function waterAsbestosKeywordCatalog(): array
             'name' => 'Legionella Risk Assessment',
             'service' => 'legionella-risk-assessment',
             'related' => 'legionella-testing',
-            'intro' => 'A Legionella risk assessment looks at how stored and circulated water could allow Legionella bacteria to grow, and what a dutyholder should do about it. iComply scopes assessments for rented homes, blocks and workplaces across the North West. Price on application after we know the system type and access.',
+            'intro' => 'A Legionella risk assessment looks at how stored and circulated water could allow Legionella bacteria to grow, and what a landlord or other dutyholder should do about it. iComply scopes assessments for rented homes, blocks and workplaces across the North West. Price on application after we know the system type and access.',
             'body' => 'UK dutyholders use HSE Approved Code of Practice L8 and HSG274 as the usual reference for managing Legionella risk. An assessment typically records water storage, outlets, temperatures, little-used parts of the system and who is responsible for flushing or temperature checks. Sampling is not automatically required for every property — we only recommend it when the assessment suggests it would help. We do not list catalogue prices; quotes are POA once scope is clear. We do not claim a named laboratory accreditation on this page.',
             'meta_desc' => 'Legionella risk assessment across Greater Manchester and the North West. Water hygiene scoped from Stockport. POA after we confirm the system.',
             'focus_points' => [
@@ -122,8 +122,8 @@ function waterAsbestosKeywordCatalog(): array
             'name' => 'Landlord Legionella Risk Assessment',
             'service' => 'legionella-risk-assessment',
             'related' => 'commercial-legionella-risk-assessment',
-            'intro' => 'Landlords remain responsible for considering Legionella risk in rented homes. iComply offers a scoped landlord Legionella risk assessment from Stockport. POA — not a published let-fee.',
-            'body' => 'A typical house with a combi and no stored cold-water tank is often lower risk than a property with tanks, unused en-suites or a shared system. We still need to see or be told how water is stored and used. The written note is for your management file, not a substitute for ongoing flushing if that is the agreed control.',
+            'intro' => 'Landlords remain responsible for considering Legionella risk in rented homes. iComply offers a scoped landlord Legionella risk assessment from Stockport — houses, flats and small shared lets, not a published let-fee. POA after property details.',
+            'body' => 'A typical house with a combi and no stored cold-water tank is often lower risk than a property with tanks, unused en-suites or a shared system. We still need to see or be told how water is stored and used. The written note is for your management file, not a substitute for ongoing flushing if that is the agreed control. Pair with the landlord hub and the service page; we do not invent an annual test price or a UKAS line.',
             'meta_desc' => 'Landlord Legionella risk assessment in Greater Manchester and the North West. POA after property details.',
             'focus_points' => [
                 'Rented houses, flats and small HMOs',
@@ -249,8 +249,8 @@ function waterAsbestosKeywordCatalog(): array
             'name' => 'Landlord Asbestos Survey',
             'service' => 'asbestos-survey',
             'related' => 'commercial-asbestos-survey',
-            'intro' => 'Landlords of non-domestic parts and many blocks need to manage asbestos in common areas. iComply scopes landlord asbestos surveys from Stockport. POA.',
-            'body' => 'A single private house that is purely domestic is a different duty from a house converted to flats with shared halls. We ask which you have. Inside a tenanted dwelling, access and type of survey still follow the planned works. We do not invent a “landlord pack price”.',
+            'intro' => 'Landlords of non-domestic parts and many blocks need to manage asbestos in common areas. iComply scopes landlord asbestos surveys from Stockport — management or refurbishment, quoted POA, never a published pack price.',
+            'body' => 'A single private house that is purely domestic is a different duty from a house converted to flats with shared halls. We ask which you have. Inside a tenanted dwelling, access and type of survey still follow the planned works. Licensed removal is by others. We do not invent a “landlord pack price” or a UKAS / licence claim on this page.',
             'meta_desc' => 'Landlord asbestos survey for common parts and rented stock in the North West. POA.',
             'focus_points' => [
                 'Common parts vs purely domestic explained',
@@ -320,32 +320,80 @@ function waterAsbestosServiceCopy(string $slug): ?array
 {
     if ($slug === 'legionella-risk-assessment') {
         return [
-            'hero_accent' => 'Assessed, sampled only if needed, POA.',
+            'hero_accent' => 'For landlords — assessed, sampled only if needed, POA.',
             'pillars' => [
-                ['title' => 'Risk assessment', 'text' => 'A written look at stored water, outlets, temperatures and who does the controls — aligned with HSE L8 / HSG274 language, not a made-up standard.'],
-                ['title' => 'Testing when useful', 'text' => 'Water samples are recommended only when the system and occupancy justify them. Not a default extra.'],
-                ['title' => 'Honest commercial terms', 'text' => 'Every job is price on application. We do not publish fake starting fees or claim laboratory badges we have not stated.'],
+                ['title' => 'Landlord risk assessment', 'text' => 'A written look at stored water, outlets, temperatures and who does the controls — aligned with HSE Approved Code of Practice L8 and HSG274, not a made-up certificate product.'],
+                ['title' => 'Testing when useful', 'text' => 'Water samples are recommended only when the system and occupancy justify them. Not a default extra on every let.'],
+                ['title' => 'Honest commercial terms', 'text' => 'Every job is price on application. We do not publish fake starting fees, annual “must-test” prices or laboratory badges we have not stated.'],
             ],
             'intro' => [
-                'iComply helps landlords, agents and facilities teams in Greater Manchester and the wider North West document Legionella risk in real water systems — houses with tanks, blocks, workplaces and care settings.',
-                'We start with how the system is built and used. A combi-fed house is not the same job as a roof tank and little-used showers. Sampling is a tool, not the whole service.',
-                'Quotes are POA after you send the postcode, property type and a short note on stored water or plant. Based in Offerton, Stockport SK2.',
+                'Landlords remain responsible for considering Legionella risk in rented homes. iComply writes a scoped Legionella risk assessment for single lets, small portfolios, blocks and workplaces across Greater Manchester and the wider North West — from Offerton, Stockport SK2.',
+                'A typical house with a combi boiler and no stored cold-water tank is often lower risk than a property with tanks, unused en-suites or a shared system. We still need to see or be told how water is stored and used. The written note is for your management file, not a substitute for ongoing flushing if that is the agreed control.',
+                'Sampling is a tool, not the whole service. We do not invent a legal “annual water test” for every terrace. Quotes are POA after you send the postcode, property type and a short note on stored water or plant.',
             ],
+            'sections' => [
+                [
+                    'h2' => 'What a landlord Legionella assessment covers',
+                    'p' => [
+                        'UK dutyholders use HSE ACOP L8 and HSG274 as the usual reference for managing Legionella risk. An assessment typically records water storage, outlets, temperatures, little-used parts of the system and who is responsible for flushing or temperature checks.',
+                        'We describe the system you actually have. We will not claim a medical diagnosis service or a guaranteed “disease-free” building. Legionnaires’ disease is the illness; Legionella is the bacterium — the property duty is to manage the risk in water systems.',
+                    ],
+                ],
+                [
+                    'h2' => 'When water samples help — and when they do not',
+                    'p' => [
+                        'Testing without a risk picture is easy to over- or under-do. Assessment comes first. Sampling is useful on some stored-water or complex systems and is quoted separately as POA if recommended.',
+                        'A result is evidence at a point in time, not a certificate that the building is safe forever. Control measures (flushing, temperature, cleaning) still matter. Laboratory identity and method are confirmed at quote stage — this page does not invent a UKAS claim.',
+                    ],
+                ],
+                [
+                    'h2' => 'Review, not a date we invented',
+                    'p' => [
+                        'Review when the system or occupancy changes, and at an interval that matches risk — not a calendar date invented for marketing. Many landlords book water hygiene in the same conversation as an EICR or gas safety record. Each item is still scoped and POA.',
+                    ],
+                ],
+            ],
+            'cta_line' => 'Postcode, property type and whether you have stored water. No catalogue fee.',
+            'quote_placeholder' => 'Postcode, rented or commercial, stored tanks / unused showers, access notes…',
         ];
     }
     if ($slug === 'asbestos-survey') {
         return [
-            'hero_accent' => 'Surveyed, sampled if needed, POA.',
+            'hero_accent' => 'For landlords — surveyed, sampled if needed, POA.',
             'pillars' => [
                 ['title' => 'Management survey', 'text' => 'For normal occupation and the duty to manage under the Control of Asbestos Regulations 2012 — accessible materials, honest inaccessible notes.'],
-                ['title' => 'Refurbishment survey', 'text' => 'For planned opening-up, strip-out or demolition. Scoped to the rooms and trades involved.'],
-                ['title' => 'Testing & limits', 'text' => 'Sampling is part of scope when needed. Licensed asbestos removal is not this service. No invented UKAS or licence line.'],
+                ['title' => 'Refurbishment survey', 'text' => 'For planned opening-up, strip-out or demolition. Scoped to the rooms and trades involved — not a cheap add-on line.'],
+                ['title' => 'Testing & honest limits', 'text' => 'Sampling is part of scope when needed. Licensed asbestos removal is not this service. No invented UKAS, BOHS or HSE-licence line.'],
             ],
             'intro' => [
-                'iComply scopes asbestos surveys so dutyholders in Stockport, Manchester and the North West can manage materials instead of guessing.',
-                'Survey type follows the building use and the works you have planned. We will not dress a management survey up as a demolition survey, or the other way around.',
-                'Price on application. Tell us age, floor area, access and whether walls are coming open. Licensed removal, if required, is appointed separately.',
+                'Landlords of non-domestic parts and many blocks need to manage asbestos in common areas. A single private house that is purely domestic is a different duty from a house converted to flats with shared halls. iComply scopes the survey type to the building you actually have — from Stockport SK2 across the North West.',
+                'A management survey is the usual starting point during normal occupation. A refurbishment or demolition survey is more intrusive and is used before strip-out or opening-up. We will not sell one as if it were the other.',
+                'Price on application. Tell us age, floor area, access and whether walls are coming open. Licensed removal, if required, is appointed separately. We do not invent a “landlord pack price”.',
             ],
+            'sections' => [
+                [
+                    'h2' => 'Duty to manage — common parts versus a single let',
+                    'p' => [
+                        'The Control of Asbestos Regulations 2012 sit behind the duty to manage in non-domestic premises and in the common parts of many multi-occupied buildings. Inside a tenanted dwelling, access and type of survey still follow the planned works.',
+                        'Not every rented terrace automatically needs a full commercial-style survey. Duty depends on the building. Describe the property and we will say what is proportionate.',
+                    ],
+                ],
+                [
+                    'h2' => 'Sampling that belongs on a register',
+                    'p' => [
+                        'A sample is only useful if the location is recorded and the result goes into your management plan. We will not scrape random decorative coatings “just in case” without a reason. Do not post debris — uncontrolled sampling can spread fibres.',
+                        'Analysis is arranged as part of the quote. This page does not name a certificate brand or laboratory badge we have not stated.',
+                    ],
+                ],
+                [
+                    'h2' => 'What this service is not',
+                    'p' => [
+                        'Licensed asbestos removal is by others. If the survey says removal is required, appoint a suitable licensed contractor. Re-inspections check condition of items already on a register; a first visit to an unknown building is usually a survey, not a ten-minute glance.',
+                    ],
+                ],
+            ],
+            'cta_line' => 'Building age, floor area, access and whether walls are coming open.',
+            'quote_placeholder' => 'Postcode, age, common parts or single let, planned works, access…',
         ];
     }
     return null;
@@ -355,10 +403,63 @@ function waterAsbestosAreaIntro(string $slug, string $area): string
 {
     $p = function_exists('area_profile') ? area_profile($area) : ['districts' => $area, 'stock' => 'local property', 'travel' => 'from our Stockport base', 'focus' => 'local compliance'];
     if ($slug === 'legionella-risk-assessment') {
-        return "In {$area} ({$p['districts']}) we see {$p['stock']}. Legionella work here is quoted POA after we know whether the property has stored water, little-used outlets or shared plant. Travel is {$p['travel']}. Typical local focus: {$p['focus']}.";
+        return "Landlords and agents in {$area} ({$p['districts']}) typically ask us to document Legionella risk on {$p['stock']}. We quote POA after we know whether the property has stored water, little-used outlets or shared plant — a combi-fed house is not the same job as a tanked block. Travel is {$p['travel']}. Local focus: {$p['focus']}. This is a scoped assessment for your file, not a published per-town fee or an invented annual test.";
     }
     if ($slug === 'asbestos-survey') {
-        return "In {$area} ({$p['districts']}) building stock includes {$p['stock']}. Asbestos surveys are scoped to occupation versus refurbishment, then quoted POA. Travel is {$p['travel']}. Local focus: {$p['focus']}.";
+        return "In {$area} ({$p['districts']}) stock includes {$p['stock']}. Landlord asbestos work here is scoped to occupation versus refurbishment — common parts and conversions are a different duty from a purely domestic terrace. Quotes are POA. Travel is {$p['travel']}. Local focus: {$p['focus']}. Licensed removal, if required, is by others.";
     }
     return '';
+}
+
+/**
+ * SEO outline used for keyword hubs + area landings (marketing briefs were not
+ * mounted on disk; headings follow HSE L8 / HSG274 and CAR 2012 landlord duties).
+ * No invented prices, certificates, reviews or accreditations.
+ *
+ * @return array<string,mixed>
+ */
+function waterAsbestosSeoOutline(): array
+{
+    return [
+        'legionella' => [
+            'primary' => [
+                'legionella-risk-assessment',
+                'landlord-legionella-risk-assessment',
+                'legionella-testing',
+                'water-hygiene-testing',
+            ],
+            'secondary' => [
+                'legionella-water-testing',
+                'legionnaires-disease-risk-assessment',
+                'commercial-legionella-risk-assessment',
+                'water-risk-assessment',
+            ],
+            'quality_hub' => 'legionella-landlords',
+            'resource' => 'legionella-risk-assessment',
+            'service' => 'legionella-risk-assessment',
+            'h1_family' => 'Legionella risk assessment for landlords',
+            'intent' => 'Dutyholder assessment first; sampling only when justified; POA; Stockport + full area set.',
+        ],
+        'asbestos' => [
+            'primary' => [
+                'asbestos-survey',
+                'landlord-asbestos-survey',
+                'asbestos-management-survey',
+                'asbestos-testing',
+            ],
+            'secondary' => [
+                'asbestos-refurbishment-survey',
+                'commercial-asbestos-survey',
+                'asbestos-sample-testing',
+                'asbestos-inspection',
+            ],
+            'quality_hub' => 'asbestos-landlords',
+            'resource' => 'asbestos-survey',
+            'service' => 'asbestos-survey',
+            'h1_family' => 'Asbestos survey for landlords',
+            'intent' => 'CAR 2012 duty to manage; management vs refurbishment; no licensed removal claim; POA.',
+        ],
+        'cta' => ['/contact', 'tel:07517806082', 'whatsapp'],
+        'exclude' => ['hmo-package-landings'],
+    ];
 }

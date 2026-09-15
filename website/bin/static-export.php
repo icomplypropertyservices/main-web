@@ -265,6 +265,8 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         '/terms',
         '/contact',
         '/thank-you',
+        '/shop',
+        '/products',
     ];
 
     $skipBasenames = [
@@ -581,11 +583,11 @@ function icomplyPrettyUrlRedirects(): string
 /news                    /pages/resources 301
 /news/                   /pages/resources 301
 
-# Shop / products → packages
-/shop                    /pages/packages    301
-/shop/*                  /pages/packages    301
-/products                /pages/packages    301
-/products/*              /pages/packages    301
+# Shop / products — trade hubs (never 301 to packages)
+/shop                    /shop/index.php           200!
+/shop/                   /shop/index.php           200!
+/products                /pages/products.php       200!
+/products/               /pages/products.php       200!
 
 # Old 470-part sitemap index → single compact urlset
 /sitemap-*.xml           /sitemap.xml    301

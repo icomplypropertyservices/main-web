@@ -21,10 +21,6 @@ if (str_contains($xml, '<sitemapindex')) {
 $bannedNeedles = [
     '/privacy-policy</loc>',
     '/terms-and-conditions</loc>',
-    '/shop</loc>',
-    '/shop/',
-    '/products</loc>',
-    '/products/',
     '/sitemap-1.xml',
     '-photo.jpg',
     '/pages/keywords/eicr/stockport', // keyword×area junk sample
@@ -58,6 +54,10 @@ $required = [
     '/pages/services/asbestos-survey</loc>',
     '/pages/resources/legionella-risk-assessment</loc>',
     '/pages/resources/asbestos-survey</loc>',
+    '/pages/legionella-landlords</loc>',
+    '/pages/asbestos-landlords</loc>',
+    '/shop</loc>',
+    '/products</loc>',
     '/privacy</loc>',
     '/terms</loc>',
 ];

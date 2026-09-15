@@ -211,6 +211,12 @@ function icomplyMegaHeaderHtml(): string
     $resHub = icomplyNavH(url('/pages/resources/index.php'));
     $pkgHub = icomplyNavH(url('/pages/packages.php'));
     $contact = icomplyNavH(url('/contact.php'));
+    $shopExt = icomplyNavH(function_exists('icomplyTradeShopUrl') ? icomplyTradeShopUrl() : 'https://shop.icomplypropertyservices.co.uk');
+    $products = icomplyNavH(url('/pages/products.php'));
+    $hubElectrical = icomplyNavH(url('/pages/electrical-safety-landlords.php'));
+    $hubFire = icomplyNavH(url('/pages/commercial-fire-safety.php'));
+    $hubSecurity = icomplyNavH(url('/pages/services/cctv.php'));
+    $hubGas = icomplyNavH(url('/pages/gas-safety-certificate.php'));
 
     $svcCols = '';
     foreach ($n['cats'] as $catKey => $cat) {
@@ -274,7 +280,9 @@ function icomplyMegaHeaderHtml(): string
     $resCols .= icomplyNavLink(url('/pages/resources/index.php'), 'All resources →', 'mega-more');
     $resCols .= '</div><div class="mega-col"><p class="mega-col-title">Water &amp; asbestos</p>';
     $resCols .= icomplyNavLink(url('/pages/services/legionella-risk-assessment.php'), 'Legionella risk assessment');
+    $resCols .= icomplyNavLink(url('/pages/legionella-landlords.php'), 'Legionella for landlords');
     $resCols .= icomplyNavLink(url('/pages/services/asbestos-survey.php'), 'Asbestos survey');
+    $resCols .= icomplyNavLink(url('/pages/asbestos-landlords.php'), 'Asbestos for landlords');
     $resCols .= icomplyNavLink(url('/pages/resources/legionella-risk-assessment.php'), 'Legionella guide');
     $resCols .= icomplyNavLink(url('/pages/resources/asbestos-survey.php'), 'Asbestos guide');
     $resCols .= '</div>';
@@ -300,6 +308,8 @@ function icomplyMegaHeaderHtml(): string
     </a>
     <nav class="mega-desktop" aria-label="Primary">
       <a class="nav-link" href="{$home}">Home</a>
+      <a class="nav-link" href="{$shopExt}" target="_blank" rel="noopener">Shop</a>
+      <a class="nav-link" href="{$products}">Products</a>
       <div class="mega-item" data-mega>
         <button type="button" class="mega-trigger" aria-expanded="false" aria-controls="mega-services" aria-haspopup="true">Services</button>
         <div id="mega-services" class="mega-panel" hidden>
@@ -356,6 +366,12 @@ function icomplyMegaHeaderHtml(): string
       <button type="button" class="mega-burger" id="nav-toggle" aria-expanded="false" aria-controls="mega-drawer">Menu</button>
     </div>
   </div>
+  <nav class="mega-suite" aria-label="Trade suites">
+    <a href="{$hubElectrical}">Electrical</a>
+    <a href="{$hubFire}">Fire</a>
+    <a href="{$hubSecurity}">Security</a>
+    <a href="{$hubGas}">Gas</a>
+  </nav>
   {$drawer}
 </header>
 <script src="{$js}" defer></script>
@@ -400,10 +416,25 @@ function icomplyMobileDrawerHtml(array $n): string
         $pkg .= icomplyNavLink($row['href'], $row['label']);
     }
 
+    $shopExtD = icomplyNavH(function_exists('icomplyTradeShopUrl') ? icomplyTradeShopUrl() : 'https://shop.icomplypropertyservices.co.uk');
+    $productsD = icomplyNavH(url('/pages/products.php'));
+    $hubElectricalD = icomplyNavH(url('/pages/electrical-safety-landlords.php'));
+    $hubFireD = icomplyNavH(url('/pages/commercial-fire-safety.php'));
+    $hubSecurityD = icomplyNavH(url('/pages/services/cctv.php'));
+    $hubGasD = icomplyNavH(url('/pages/gas-safety-certificate.php'));
+
     return <<<HTML
 <div id="mega-drawer" class="mega-drawer" hidden>
   <nav class="mega-drawer-inner" aria-label="Mobile">
     <a href="{$home}">Home</a>
+    <a href="{$shopExtD}" target="_blank" rel="noopener">Shop</a>
+    <a href="{$productsD}">Products</a>
+    <details class="drawer-acc"><summary>Suites</summary><div>
+      <a href="{$hubElectricalD}">Electrical</a>
+      <a href="{$hubFireD}">Fire</a>
+      <a href="{$hubSecurityD}">Security</a>
+      <a href="{$hubGasD}">Gas</a>
+    </div></details>
     <details class="drawer-acc" open><summary>Services</summary><div>{$svc}</div></details>
     <details class="drawer-acc"><summary>Areas</summary><div>{$areas}</div></details>
     <details class="drawer-acc"><summary>Keywords</summary><div>{$kws}</div></details>

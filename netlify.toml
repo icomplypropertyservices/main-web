@@ -72,23 +72,23 @@
 
 [[redirects]]
   from = "/shop"
-  to = "/pages/packages"
-  status = 301
+  to = "/shop/index"
+  status = 200
 
 [[redirects]]
-  from = "/shop/*"
-  to = "/pages/packages"
-  status = 301
+  from = "/shop/"
+  to = "/shop/index"
+  status = 200
 
 [[redirects]]
   from = "/products"
-  to = "/pages/packages"
-  status = 301
+  to = "/pages/products"
+  status = 200
 
 [[redirects]]
-  from = "/products/*"
-  to = "/pages/packages"
-  status = 301
+  from = "/products/"
+  to = "/pages/products"
+  status = 200
 
 [[redirects]]
   from = "/about"

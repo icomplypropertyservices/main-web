@@ -52,7 +52,7 @@ function wave1PublishQueue(): array
         'C' => [
             'id' => 'batch-c',
             'label' => 'Batch C — SEO hubs',
-            'blurb' => 'Twelve quality hubs. Not doorway spam, not HMO package landings, not keyword-matrix URLs.',
+            'blurb' => 'Quality hubs including landlord Legionella and asbestos. Not doorway spam, not HMO package landings, not keyword-matrix URLs.',
             'hubs' => wave1QualityHubs(),
         ],
     ];
@@ -168,6 +168,8 @@ function wave1NavFeatured(): array
         ['href' => url('/pages/commercial-fire-safety'), 'label' => 'Commercial fire safety'],
         ['href' => url('/pages/stockport-property-compliance'), 'label' => 'Stockport'],
         ['href' => url('/pages/manchester-property-compliance'), 'label' => 'Manchester'],
+        ['href' => url('/pages/legionella-landlords'), 'label' => 'Legionella for landlords'],
+        ['href' => url('/pages/asbestos-landlords'), 'label' => 'Asbestos for landlords'],
     ];
     return $items;
 }

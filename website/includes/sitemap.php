@@ -18,8 +18,6 @@ function icomplySitemapBannedPaths(): array
         '/privacy-policy/' => true,
         '/terms-and-conditions' => true,
         '/terms-and-conditions/' => true,
-        '/shop' => true,
-        '/products' => true,
         '/thank-you' => true,
     ];
 }
@@ -43,7 +41,7 @@ function icomplySitemapEntries(): array
         if (isset($seen[$path]) || isset($banned[$path])) {
             return;
         }
-        if (str_starts_with($path, '/shop') || str_starts_with($path, '/products')) {
+        if (preg_match('#^/shop/.+#', $path) || preg_match('#^/products/.+#', $path)) {
             return;
         }
         if (preg_match('#-photo\.(jpe?g|png)$#i', $path)) {
@@ -86,6 +84,8 @@ function icomplySitemapEntries(): array
         ['/pages/areas', '0.9', 'pages/areas.php'],
         ['/pages/manufacturers', '0.9', 'pages/manufacturers.php'],
         ['/pages/keywords', '0.9', 'pages/keywords.php'],
+        ['/shop', '0.8', 'shop/index.php'],
+        ['/products', '0.8', 'pages/products.php'],
     ];
     foreach ($static as [$path, $pri, $file]) {
         if ($path === '/' || $exists($file) || $exists(preg_replace('#\.php$#', '/index.php', $file) ?? $file)) {

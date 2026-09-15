@@ -30,7 +30,7 @@ $siteDefaults = [
     // Shopify Storefront / Buy Button (set in config.local.php)
     // Domain example: your-store.myshopify.com  |  Store URL: https://your-store.myshopify.com
     'SHOPIFY_DOMAIN' => '',
-    'SHOPIFY_STORE_URL' => '',
+    'SHOPIFY_STORE_URL' => 'https://shop.icomplypropertyservices.co.uk',
     'SHOPIFY_STOREFRONT_TOKEN' => '',
     'SHOPIFY_COLLECTION_ID' => '',
     'SHOPIFY_ENABLED' => false,
@@ -605,6 +605,21 @@ function areaFromSlug(string $slug): ?string {
         }
     }
     return null;
+}
+
+/** Live Shopify storefront — never 301 /shop to packages. */
+function icomplyTradeShopUrl(): string
+{
+    if (function_exists('shopifyStoreUrl')) {
+        $u = shopifyStoreUrl();
+        if ($u !== '') {
+            return $u;
+        }
+    }
+    if (defined('SHOPIFY_STORE_URL') && SHOPIFY_STORE_URL !== '') {
+        return rtrim((string)SHOPIFY_STORE_URL, '/');
+    }
+    return 'https://shop.icomplypropertyservices.co.uk';
 }
 
 $waFile = __DIR__ . '/includes/water-asbestos.php';

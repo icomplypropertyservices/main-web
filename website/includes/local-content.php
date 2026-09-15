@@ -195,7 +195,9 @@ function seo_unique_intro(string $serviceName, string $slug, string $area): stri
         "{$area} sites — from {$p['stock']} — need {$serviceName} that matches UK standards and real building use.",
         "Searching for {$serviceName} near {$area}? Our Stockport team covers {$p['districts']} with documented install and service work.",
     ];
-    $mid = "We design, install, maintain and certificate {$serviceName} with attention to {$standards}. {$angle}";
+    $mid = (function_exists('isPoaService') && isPoaService($slug))
+        ? "We scope {$serviceName} against {$standards} for the system or building you actually have — written notes for the file, not a catalogue install. {$angle}"
+        : "We design, install, maintain and certificate {$serviceName} with attention to {$standards}. {$angle}";
     $close = (function_exists('isPoaService') && isPoaService($slug))
         ? "Travel to {$area} is {$p['travel']}. Typical focus in this area: {$p['focus']}. Quotes are price on application after we confirm scope — no invented fee on this page."
         : "Travel to {$area} is {$p['travel']}. Typical focus in this area: {$p['focus']}. Quotes are free; fixed pricing is used whenever the scope is clear after survey or photos.";

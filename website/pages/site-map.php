@@ -42,6 +42,7 @@ $mainPages = [
     ['href' => url('/pages/manufacturers/index.php'), 'label' => 'Manufacturers / brands'],
     ['href' => url('/pages/keywords/index.php'), 'label' => 'Keyword guides'],
     ['href' => url('/shop/index.php'), 'label' => 'Shop'],
+    ['href' => url('/pages/products.php'), 'label' => 'Products'],
     ['href' => url('/pages/packages.php'), 'label' => 'Packages'],
     ['href' => url('/pages/pricing.php'), 'label' => 'Pricing guide'],
     ['href' => url('/pages/landlords.php'), 'label' => 'Landlords'],

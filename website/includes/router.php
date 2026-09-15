@@ -75,6 +75,7 @@ function routerDispatchVirtual(string $path): bool {
         '/pages/areas' => ['/pages/areas', '/pages/areas/index'],
         '/pages/resources' => ['/pages/resources', '/pages/resources/index'],
         '/shop' => ['/shop/index'],
+        '/products' => ['/pages/products', '/products'],
     ];
     if (isset($indexes[$path])) {
         foreach ($indexes[$path] as $candidate) {
