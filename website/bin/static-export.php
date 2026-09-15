@@ -51,7 +51,7 @@ if ($dist[0] !== '/') {
     $dist = $repoRoot . '/' . ltrim($dist, '/');
 }
 $full = isset($options['full']);
-$keywordTowns = strtolower(trim((string)($options['keyword-towns'] ?? 'priority')));
+$keywordTowns = strtolower(trim((string)($options['keyword-towns'] ?? 'all')));
 if (!in_array($keywordTowns, ['priority', 'popular', 'all', 'none'], true)) {
     fwrite(STDERR, "Invalid --keyword-towns={$keywordTowns} (use priority|popular|all|none)\n");
     exit(1);
@@ -77,6 +77,7 @@ $_SERVER['REQUEST_SCHEME'] = 'https';
 
 require_once $websiteRoot . '/config.php';
 require_once $websiteRoot . '/includes/router.php';
+require_once $websiteRoot . '/includes/matrix-page.php';
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
@@ -129,7 +130,7 @@ $required = [
 ];
 
 foreach ($routes as $i => $path) {
-    $result = icomplyRenderRoute($path);
+    $result = icomplyRenderExportRoute($path);
     $status = $result['status'];
     $html = $result['html'];
     $n = $i + 1;
@@ -325,15 +326,40 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         $routes[] = $path;
     }
 
-    if ($full) {
-        foreach (array_keys(getServices()) as $sSlug) {
-            foreach (getAreas() as $area) {
-                $routes[] = '/pages/' . $sSlug . '/' . areaSlug((string)$area);
-            }
+    // Jack: every service has every area landing (not only --full).
+    foreach (array_keys(getServices()) as $sSlug) {
+        foreach (getAreas() as $area) {
+            $routes[] = '/pages/' . $sSlug . '/' . areaSlug((string)$area);
         }
     }
 
     return $routes;
+}
+
+/**
+ * Fast path for the full keyword×town and service×area matrix.
+ *
+ * @return array{html:string,status:int}
+ */
+function icomplyRenderExportRoute(string $path): array
+{
+    if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        $area = function_exists('areaFromSlug') ? areaFromSlug($m[2]) : $m[2];
+        $html = icomplyRenderKeywordTownHtml($m[1], (string)($area ?: $m[2]));
+        if ($html !== '' && icomplyLooksLikeHtml($html)) {
+            return ['html' => $html, 'status' => 200];
+        }
+    }
+    if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)
+        && function_exists('getServices')
+        && isset(getServices()[$m[1]])) {
+        $area = function_exists('areaFromSlug') ? areaFromSlug($m[2]) : $m[2];
+        $html = icomplyRenderServiceAreaHtml($m[1], (string)($area ?: $m[2]));
+        if ($html !== '' && icomplyLooksLikeHtml($html)) {
+            return ['html' => $html, 'status' => 200];
+        }
+    }
+    return icomplyRenderRoute($path);
 }
 
 /**
@@ -446,6 +472,7 @@ function icomplyCopyStaticAssets(string $websiteRoot, string $repoRoot, string $
         'sitemap.xml',
         'manifest.json',
         'favicon.ico',
+        'lead-popup-form.html',
     ];
     foreach ($copyFiles as $name) {
         $src = $websiteRoot . '/' . $name;

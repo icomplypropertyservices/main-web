@@ -54,6 +54,10 @@ $required = [
     '/pages/stockport-property-compliance</loc>',
     '/pages/manchester-property-compliance</loc>',
     '/pages/services/fire-risk-assessments</loc>',
+    '/pages/services/legionella-risk-assessment</loc>',
+    '/pages/services/asbestos-survey</loc>',
+    '/pages/resources/legionella-risk-assessment</loc>',
+    '/pages/resources/asbestos-survey</loc>',
     '/privacy</loc>',
     '/terms</loc>',
 ];

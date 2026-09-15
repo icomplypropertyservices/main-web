@@ -11,6 +11,7 @@ declare(strict_types=1);
 $options = getopt('', ['dist::']);
 $websiteRoot = dirname(__DIR__);
 $repoRoot = dirname($websiteRoot);
+require_once $websiteRoot . '/config.php';
 $dist = $options['dist'] ?? ($repoRoot . '/dist');
 if ($dist !== '' && $dist[0] !== '/') {
     $dist = $repoRoot . '/' . ltrim($dist, '/');
@@ -38,6 +39,16 @@ $needHtml = [
     '/pages/keywords/fire-risk-assessment' => ['pages/keywords/fire-risk-assessment.php', ['Fire', '<!DOCTYPE']],
     '/pages/keywords/cctv-installation' => ['pages/keywords/cctv-installation.php', ['CCTV', '<!DOCTYPE']],
     '/pages/keywords/eicr/stockport' => ['pages/keywords/eicr/stockport.php', ['EICR', 'Stockport', '<!DOCTYPE']],
+    '/pages/services/legionella-risk-assessment' => ['pages/services/legionella-risk-assessment.php', ['Legionella', '<!DOCTYPE']],
+    '/pages/services/asbestos-survey' => ['pages/services/asbestos-survey.php', ['Asbestos', '<!DOCTYPE']],
+    '/pages/resources/legionella-risk-assessment' => ['pages/resources/legionella-risk-assessment.php', ['Legionella', '<!DOCTYPE']],
+    '/pages/resources/asbestos-survey' => ['pages/resources/asbestos-survey.php', ['Asbestos', '<!DOCTYPE']],
+    '/pages/keywords/legionella-risk-assessment' => ['pages/keywords/legionella-risk-assessment.php', ['Legionella', '<!DOCTYPE']],
+    '/pages/keywords/asbestos-survey' => ['pages/keywords/asbestos-survey.php', ['Asbestos', '<!DOCTYPE']],
+    '/pages/keywords/legionella-risk-assessment/stockport' => ['pages/keywords/legionella-risk-assessment/stockport.php', ['Legionella', 'Stockport', '<!DOCTYPE']],
+    '/pages/keywords/asbestos-survey/manchester' => ['pages/keywords/asbestos-survey/manchester.php', ['Asbestos', 'Manchester', '<!DOCTYPE']],
+    '/pages/legionella-risk-assessment/stockport' => ['pages/legionella-risk-assessment/stockport.php', ['Legionella', 'Stockport', '<!DOCTYPE']],
+    '/pages/asbestos-survey/manchester' => ['pages/asbestos-survey/manchester.php', ['Asbestos', 'Manchester', '<!DOCTYPE']],
 ];
 
 echo "Icomply static-export check  dist={$dist}\n";
@@ -151,12 +162,14 @@ if ($kwHubFiles >= 1200) {
     $fail++;
     echo "[FAIL] keyword hubs exported={$kwHubFiles} (need >= 1200 sitemap slugs)\n";
 }
-if ($kwTownFiles >= 12) {
+$areaCount = function_exists('getAreas') ? count(getAreas()) : 168;
+$expectTowns = $kwHubFiles * $areaCount;
+if ($kwTownFiles >= max(12, (int)floor($expectTowns * 0.95))) {
     $pass++;
-    echo "[PASS] keyword×town exported={$kwTownFiles}\n";
+    echo "[PASS] keyword×town exported={$kwTownFiles} (hubs={$kwHubFiles} areas={$areaCount})\n";
 } else {
     $fail++;
-    echo "[FAIL] keyword×town exported={$kwTownFiles} (need town combos)\n";
+    echo "[FAIL] keyword×town exported={$kwTownFiles} (need ~{$expectTowns} = hubs×all areas)\n";
 }
 
 $redirectNeedles = ['/*', '/:splat.php', '/privacy', '/pages/about', '/assets/', '/pages/keywords', '/pages/keywords/:slug'];

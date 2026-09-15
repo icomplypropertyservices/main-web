@@ -183,6 +183,9 @@ if (!$popularAreas) {
         #cookie-banner { bottom: 4.75rem; }
     }
 </style>
-<?php require_once __DIR__ . '/cookie-banner.php'; ?>
+<?php
+require_once __DIR__ . '/cookie-banner.php';
+require_once __DIR__ . '/lead-popup.php';
+?>
 </body>
 </html>

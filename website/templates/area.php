@@ -223,7 +223,7 @@ $schema = [
     </div>
     <?php
     require_once SITE_ROOT . '/includes/related.php';
-    echo keywordAreaLinksHtml($AREA, null, 40);
+    echo keywordAreaLinksHtml($AREA, null, 0);
     ?>
 </section>
 

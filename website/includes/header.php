@@ -113,70 +113,7 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     <meta name="geo.region" content="GB-MAN">
     <meta name="geo.placename" content="Stockport">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css">
-    <style>
-        :root { --brand: #0a2540; --accent: #ff6b00; }
-        body { color: #000; }
-        .nav-link { transition: color 0.15s ease; color: #111; }
-        .nav-link:hover { color: #ff6b00; }
-        .service-card { transition: transform 0.2s, box-shadow 0.2s; }
-        .service-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
-        .modern-btn { background: #0a2540; transition: all 0.2s; }
-        .modern-btn:hover { background: #ff6b00; transform: translateY(-1px); }
-        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-        [aria-invalid="true"] { border-color: #dc2626 !important; box-shadow: 0 0 0 3px rgba(220,38,38,.15); }
-        .nav-drop { position: relative; }
-        .nav-drop > .nav-panel {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            padding-top: 0.5rem;
-            z-index: 60;
-        }
-        .nav-drop:hover > .nav-panel,
-        .nav-drop:focus-within > .nav-panel,
-        .nav-drop.is-open > .nav-panel { display: block; }
-        .nav-panel-inner {
-            background: #fff;
-            border: 1px solid #e4e4e7;
-            border-radius: 1rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,.12);
-            overflow: hidden;
-        }
-        #mobile-nav { display: none; }
-        #mobile-nav.is-open { display: block; }
-        @media (max-width: 1023px) {
-            .desktop-nav { display: none !important; }
-            .desktop-phone { display: none !important; }
-        }
-        @media (min-width: 1024px) {
-            .mobile-toggle { display: none !important; }
-            #mobile-nav { display: none !important; }
-        }
-        @media print {
-            body { background: #fff !important; color: #000 !important; font-size: 11pt; line-height: 1.45; }
-            .skip-to-content, nav .desktop-nav, nav .desktop-phone, nav .mobile-toggle, nav #mobile-nav,
-            footer, #cookie-banner, .share-bar, a.fixed.bottom-6.right-6, a[aria-label="WhatsApp"].fixed { display: none !important; }
-            nav {
-                position: static !important; top: auto !important; border: none !important;
-                border-bottom: 2px solid #0a2540 !important; background: #fff !important;
-                box-shadow: none !important; margin-bottom: 1rem; padding: 0 0 0.75rem !important;
-            }
-            nav > div { padding: 0 !important; max-width: none !important; }
-            nav a.font-semibold.shrink-0, nav a.font-semibold.text-lg {
-                display: inline-block !important; font-size: 16pt !important; font-weight: 700 !important;
-                color: #0a2540 !important; letter-spacing: -0.02em; text-decoration: none !important;
-            }
-            #main-content { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
-            a { color: #000 !important; text-decoration: none !important; }
-            a[href^="http"]::after, a[href^="tel:"]::after, a[href^="mailto:"]::after { content: none !important; }
-            .shadow-xl, .shadow-lg, .shadow-md, .shadow { box-shadow: none !important; }
-            img { max-width: 100% !important; page-break-inside: avoid; }
-            h1, h2, h3 { color: #0a2540 !important; page-break-after: avoid; }
-            section, article, .rounded-3xl, .rounded-2xl { break-inside: avoid; }
-            @page { margin: 1.5cm; }
-        }
-    </style>
+    <link rel="stylesheet" href="<?= htmlspecialchars(url('/assets/css/site.css'), ENT_QUOTES, 'UTF-8') ?>">
     <?php
     $gaId = defined('GA_MEASUREMENT_ID') ? trim((string)GA_MEASUREMENT_ID) : '';
     $awId = defined('AW_CONVERSION_ID') ? trim((string)AW_CONVERSION_ID) : '';
@@ -256,22 +193,11 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     }
     </script>
 </head>
-<body class="bg-zinc-50 text-black">
+<body class="theme-dark bg-zinc-50 text-black">
 <a href="#main-content" class="skip-to-content">Skip to main content</a>
-<style>
-    .skip-to-content {
-        position: absolute; left: -9999px; top: 0.5rem; z-index: 100;
-        padding: 0.5rem 1rem; background: #fff; color: #000; font-weight: 600;
-        font-size: 0.875rem; border-radius: 0.5rem; box-shadow: 0 10px 25px rgba(0,0,0,.15);
-        text-decoration: none;
-    }
-    .skip-to-content:focus {
-        left: 0.5rem; outline: 2px solid #ff6b00; outline-offset: 2px;
-    }
-</style>
-<nav class="bg-white border-b sticky top-0 z-50">
+<nav class="site-header bg-white border-b sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 lg:py-4 flex items-center justify-between gap-4">
-        <a href="<?= htmlspecialchars($homeUrl, ENT_QUOTES, 'UTF-8') ?>" class="flex items-center gap-2 font-semibold text-lg sm:text-2xl tracking-tight text-black shrink-0">
+        <a href="<?= htmlspecialchars($homeUrl, ENT_QUOTES, 'UTF-8') ?>" class="flex items-center gap-2 font-semibold text-lg sm:text-2xl tracking-tight text-white shrink-0">
             <img src="<?= htmlspecialchars(url('/assets/images/favicon-32.png'), ENT_QUOTES, 'UTF-8') ?>"
                  width="32" height="32" alt="Icomply Property Services logo"
                  class="w-8 h-8 rounded-lg shrink-0">
@@ -363,6 +289,10 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
                         <a href="<?= url('/pages/commercial-fire-safety') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Commercial fire safety</a>
                         <a href="<?= url('/pages/stockport-property-compliance') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Stockport</a>
                         <a href="<?= url('/pages/manchester-property-compliance') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Manchester</a>
+                        <a href="<?= url('/pages/services/legionella-risk-assessment.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black border-t">Legionella risk assessment</a>
+                        <a href="<?= url('/pages/services/asbestos-survey.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Asbestos survey</a>
+                        <a href="<?= url('/pages/resources/legionella-risk-assessment.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Legionella guide</a>
+                        <a href="<?= url('/pages/resources/asbestos-survey.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Asbestos guide</a>
                         <a href="<?= url('/pages/resources/eicr-guide.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black border-t">EICR guide</a>
                         <a href="<?= url('/pages/site-map.php') ?>#resources" class="block px-5 py-2 hover:bg-zinc-50 text-[#ff6b00] text-sm font-semibold">Full list on site map →</a>
                     </div>

@@ -6910,6 +6910,8 @@
         "cctv": "CCTV installation, IP CCTV system, commercial CCTV, video surveillance",
         "access-control": "access control installation, biometric access control, door access control",
         "door-entry": "door entry installation, video door entry, audio door entry, apartment door entry",
-        "intercoms": "intercom installation, video intercom, audio intercom, multi tenant intercom"
+        "intercoms": "intercom installation, video intercom, audio intercom, multi tenant intercom",
+        "legionella-risk-assessment": "legionella risk assessment, legionella testing, water hygiene, Legionnaires disease, Stockport, Manchester, North West, POA",
+        "asbestos-survey": "asbestos survey, asbestos testing, asbestos management survey, asbestos refurbishment survey, Stockport, Manchester, North West, POA"
     }
 }

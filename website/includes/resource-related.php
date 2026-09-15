@@ -84,6 +84,14 @@ function resourceRelatedLinks(string $slug): array {
             ['href' => url('/pages/stockport-property-compliance'), 'label' => 'Stockport hub'],
             ['href' => url('/pages/manchester-property-compliance'), 'label' => 'Manchester hub'],
         ],
+        'legionella-risk-assessment' => [
+            ['href' => url('/pages/services/legionella-risk-assessment'), 'label' => 'Legionella service'],
+            ['href' => url('/pages/keywords/legionella-risk-assessment'), 'label' => 'Legionella keyword hub'],
+        ],
+        'asbestos-survey' => [
+            ['href' => url('/pages/services/asbestos-survey'), 'label' => 'Asbestos service'],
+            ['href' => url('/pages/keywords/asbestos-survey'), 'label' => 'Asbestos keyword hub'],
+        ],
     ];
     return $map[$slug] ?? [];
 }

@@ -64,6 +64,20 @@ $featuredGuides = [
         'tag' => 'Access control',
         'img' => '/assets/images/services/access-control.jpg',
     ],
+    [
+        'slug' => 'legionella-risk-assessment',
+        'title' => 'Legionella risk assessment & water hygiene',
+        'blurb' => 'HSE L8 / HSG274-style assessment, when sampling helps, POA only — no invented prices.',
+        'tag' => 'Water hygiene',
+        'img' => '/assets/images/services/plumbing.jpg',
+    ],
+    [
+        'slug' => 'asbestos-survey',
+        'title' => 'Asbestos survey & testing',
+        'blurb' => 'Management vs refurbishment surveys. Licensed removal is by others. POA.',
+        'tag' => 'Asbestos',
+        'img' => '/assets/images/services/building-surveys.jpg',
+    ],
 ];
 
 $hubLinks = [

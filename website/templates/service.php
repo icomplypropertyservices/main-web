@@ -3,8 +3,11 @@
  * Service hub template. Placeholders: SERVICE_NAME, SERVICE_SLUG, SEO_KEYWORDS,
  * MANUFACTURER_TAGS, MANUFACTURER_IMAGES
  */
+$poaService = function_exists('isPoaService') && isPoaService($SERVICE_SLUG);
 $pageTitle = $SERVICE_NAME . ' Services | North West';
-$metaDesc = 'Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Installation, maintenance, testing & certification. Fixed-price quotes. Local engineers from Stockport.';
+$metaDesc = $poaService
+    ? ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Price on application after scope. Local team from Stockport. No invented fees.')
+    : ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Installation, maintenance, testing & certification. Written quotes after scope. Local engineers from Stockport.');
 $metaKeywords = $SEO_KEYWORDS;
 $ogImage = url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
 
@@ -29,16 +32,27 @@ $serviceFaqs = [
         ['Can you convert fluorescent emergency fittings to LED?', 'Yes. We supply and fit LED conversions and full system upgrades while maintaining correct coverage and certification.'],
         ['Do you issue emergency lighting certificates?', 'Every planned test and install includes documentation suitable for landlords, facilities managers and insurers.'],
     ],
+    'legionella-risk-assessment' => [
+        ['What is a Legionella risk assessment?', 'A written look at how the water system could allow Legionella to grow, and what controls are proportionate. UK dutyholders use HSE L8 and HSG274 as the usual reference.'],
+        ['Do you always take water samples?', 'No. Assessment comes first. Sampling is only recommended when the system and occupancy justify it, and it is quoted POA.'],
+        ['What does it cost?', 'Price on application. We do not publish a made-up fee. Tell us property type, stored water and access.'],
+    ],
+    'asbestos-survey' => [
+        ['What survey do I need?', 'A management survey is for normal occupation. A refurbishment or demolition survey is for intrusive works. We scope the type to the building and the planned job.'],
+        ['Do you remove asbestos?', 'Licensed removal is not this service. If the survey says removal is required, that work is appointed separately.'],
+        ['What does it cost?', 'Price on application. Size, access and how intrusive the survey must be all change the quote. No invented starting price.'],
+    ],
     'default' => [
-        ['What areas do you cover for ' . $SERVICE_NAME . '?', 'We cover 150+ towns across Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria from our Stockport base.'],
-        ['Do you provide fixed-price quotes?', 'Yes. After we confirm scope, standards and access we issue a clear fixed-price quote with no jargon.'],
-        ['Can you maintain systems already on site?', 'Absolutely — we inspect, service, repair and upgrade existing installations and issue matching compliance documentation.'],
+        ['What areas do you cover for ' . $SERVICE_NAME . '?', 'We cover every town in our published areas list across Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria from our Stockport base.'],
+        ['How do you price the work?', $poaService ? 'Price on application after we confirm scope, standards and access. No catalogue prices on this page.' : 'After we confirm scope, standards and access we issue a written quote. We do not invent a fee here.'],
+        ['Can you maintain systems already on site?', 'Where the service is about existing systems, we inspect, service and document. For survey-led work we record what is there and what should happen next.'],
     ],
 ];
 
 $blurb = getServiceBlurb($serviceSlug);
 $standards = getServiceStandards($serviceSlug);
 $faqs = $serviceFaqs[$serviceSlug] ?? $serviceFaqs['default'];
+$svcCopy = function_exists('waterAsbestosServiceCopy') ? waterAsbestosServiceCopy($serviceSlug) : null;
 
 $popularTowns = array_values(array_filter(
     ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool', 'Bury', 'Sale', 'Altrincham', 'Macclesfield', 'Burnley', 'Blackburn', 'Warrington', 'St Helens'],
@@ -47,7 +61,6 @@ $popularTowns = array_values(array_filter(
     }
 ));
 $popularTowns = array_values(array_unique($popularTowns));
-$popularTowns = array_slice($popularTowns, 0, 16);
 
 $keywordImages = getKeywordImages($serviceSlug);
 $img2 = $keywordImages[0] ?? $serviceSlug;
@@ -178,11 +191,11 @@ $schema = [
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
                     <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?>.<br>
-                    <span class="text-[#ff6b00]">Installed, tested, certified.</span>
+                    <span class="text-[#ff6b00]"><?= htmlspecialchars($svcCopy['hero_accent'] ?? ($poaService ? 'Surveyed, documented, POA.' : 'Installed, tested, certified.'), ENT_QUOTES, 'UTF-8') ?></span>
                 </h1>
                 <p class="mt-6 text-lg text-white/80 max-w-xl"><?= htmlspecialchars($blurb, ENT_QUOTES, 'UTF-8') ?></p>
                 <div class="mt-8 flex flex-wrap gap-3">
-                    <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get free quote</a>
+                    <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white"><?= $poaService ? 'Request POA quote' : 'Get free quote' ?></a>
                     <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Quote for ' . $serviceName) ?>"
                        target="_blank" rel="noopener"
                        class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
@@ -199,7 +212,7 @@ $schema = [
                      onerror="this.style.display='none'">
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0a2540]/90 via-[#0a2540]/20 to-transparent">
                     <div class="text-sm text-white/70">Serving <?= count($allAreas) ?>+ towns</div>
-                    <div class="text-2xl font-semibold mt-1">Local engineers · Fixed-price quotes</div>
+                    <div class="text-2xl font-semibold mt-1"><?= $poaService ? 'Local team · Price on application' : 'Local engineers · Written quotes' ?></div>
                 </div>
             </div>
         </div>
@@ -213,8 +226,8 @@ $schema = [
         $trust = [
             ['Local response', 'Stockport-based engineers across Greater Manchester & the North West'],
             ['Standards-led', $standards],
-            ['Full certification', 'Documentation for landlords, insurers and fire officers'],
-            ['Trade shop', 'Kits & parts via our Shopify-ready shop'],
+            ['Full documentation', 'Records for landlords, insurers, agents and dutyholders'],
+            [$poaService ? 'POA quotes' : 'Written quotes', $poaService ? 'No invented prices — scoped after we see the job' : 'Clear scope before work starts'],
         ];
         foreach ($trust as [$t, $d]): ?>
             <div class="flex gap-3 items-start">
@@ -337,12 +350,7 @@ $schema = [
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <?php
-            $shown = 0;
             foreach ($svcKeywords as $kwSlug => $kwMeta):
-                if ($shown >= 18) {
-                    break;
-                }
-                $shown++;
                 $kwName = (string)($kwMeta['name'] ?? keywordDisplayName($kwSlug));
             ?>
             <div class="p-5 bg-zinc-50 border border-zinc-200 rounded-2xl hover:border-[#ff6b00] transition">
@@ -350,7 +358,7 @@ $schema = [
                     <?= htmlspecialchars($kwName, ENT_QUOTES, 'UTF-8') ?>
                 </a>
                 <div class="mt-3 flex flex-wrap gap-1.5">
-                    <?php foreach ($kwPreviewTowns as $town): ?>
+                    <?php foreach ($popularTowns as $town): ?>
                         <a href="<?= url('/pages/keywords/' . rawurlencode($kwSlug) . '/' . areaSlug($town) . '.php') ?>"
                            class="text-[11px] px-2 py-1 bg-white border rounded-full text-zinc-700 hover:border-[#ff6b00] hover:text-[#ff6b00]">
                             <?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?>
@@ -358,18 +366,15 @@ $schema = [
                     <?php endforeach; ?>
                     <a href="<?= url('/pages/keywords/' . rawurlencode($kwSlug) . '.php') ?>"
                        class="text-[11px] px-2 py-1 font-semibold text-[#ff6b00]">
-                        +<?= max(0, count($allAreas) - count($kwPreviewTowns)) ?> towns →
+                        All <?= count($allAreas) ?> towns →
                     </a>
                 </div>
             </div>
             <?php endforeach; ?>
         </div>
-        <?php if (count($svcKeywords) > 18): ?>
-            <p class="mt-6 text-sm text-zinc-600">
-                Showing 18 of <?= count($svcKeywords) ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> guides —
-                <a href="<?= url('/pages/keywords/index.php') ?>" class="font-semibold text-[#ff6b00]">view full keyword index</a>.
-            </p>
-        <?php endif; ?>
+        <p class="mt-6 text-sm text-zinc-600">
+            All <?= count($svcKeywords) ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> keyword guides, each with every town we cover.
+        </p>
         <?php else: ?>
             <p class="text-zinc-600">Keyword guides for this service are being expanded. See the <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/keywords/index.php') ?>">full guides index</a>.</p>
         <?php endif; ?>
@@ -397,7 +402,7 @@ $schema = [
         <?php endforeach; ?>
     </div>
     <div class="mt-6 flex flex-wrap gap-2">
-        <?php foreach (array_slice($allAreas, 0, 40) as $a):
+        <?php foreach ($allAreas as $a):
             if (in_array($a, $popularTowns, true)) continue;
         ?>
             <a href="<?= url('/pages/' . $SERVICE_SLUG . '/' . areaSlug($a) . '.php') ?>"
@@ -405,7 +410,7 @@ $schema = [
                 <?= htmlspecialchars($a, ENT_QUOTES, 'UTF-8') ?>
             </a>
         <?php endforeach; ?>
-        <a href="<?= url('/pages/areas/index.php') ?>" class="px-3 py-1.5 text-xs font-semibold text-[#ff6b00]">+ more towns</a>
+        <a href="<?= url('/pages/areas/index.php') ?>" class="px-3 py-1.5 text-xs font-semibold text-[#ff6b00]">Areas hub →</a>
     </div>
 </section>
 

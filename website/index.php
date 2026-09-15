@@ -59,8 +59,8 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             </h1>
             <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl">
                 Fire risk assessments and full fire safety systems, electrical &amp; gas, security,
-                landlord compliance, kitchens, bathrooms, renovation and building trades —
-                plus a trade shop for kits and parts.
+                landlord compliance, Legionella / water hygiene, asbestos surveys, kitchens, bathrooms
+                and building trades — plus a trade shop for kits and parts.
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get free quote</a>

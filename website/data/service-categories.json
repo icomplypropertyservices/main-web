@@ -45,7 +45,7 @@
     },
     "professional": {
         "label": "Professional Services",
-        "blurb": "Landlord packages, FM support, surveys, CDM and compliance consultancy.",
+        "blurb": "Landlord packages, FM support, surveys, CDM, water hygiene, asbestos surveys and compliance consultancy.",
         "services": [
             "landlord-compliance",
             "facilities-management",
@@ -54,7 +54,9 @@
             "building-surveys",
             "cdm-support",
             "property-refurbishment-pm",
-            "compliance-consultancy"
+            "compliance-consultancy",
+            "legionella-risk-assessment",
+            "asbestos-survey"
         ]
     },
     "construction": {

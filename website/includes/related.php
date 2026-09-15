@@ -204,32 +204,34 @@ function relatedKeywordsHtml(string $serviceSlug, int $limit = 0): string {
  *
  * @param list<string>|null $extraSlugs
  */
-function keywordAreaLinksHtml(string $area, ?array $extraSlugs = null, int $limit = 36): string {
+function keywordAreaLinksHtml(string $area, ?array $extraSlugs = null, int $limit = 0): string {
     $areaSlug = areaSlug($area);
     $all = getMajorKeywords();
-    $slugs = getPopularKeywordSlugs();
-    if ($extraSlugs) {
-        foreach ($extraSlugs as $s) {
-            $s = keywordSlug((string)$s);
-            if ($s !== '' && !in_array($s, $slugs, true)) {
-                $slugs[] = $s;
+    $slugs = [];
+    if ($limit === 0) {
+        $slugs = array_keys($all);
+    } else {
+        $slugs = getPopularKeywordSlugs();
+        if ($extraSlugs) {
+            foreach ($extraSlugs as $s) {
+                $s = keywordSlug((string)$s);
+                if ($s !== '' && !in_array($s, $slugs, true)) {
+                    $slugs[] = $s;
+                }
             }
         }
-    }
-    // Pad with more from electrical / fire / gas if short
-    if (count($slugs) < $limit) {
-        foreach (['electrical', 'fire-alarms', 'gas-systems', 'emergency-lighting'] as $svc) {
-            foreach (getKeywordsForService($svc) as $slug => $_) {
+        if (count($slugs) < $limit) {
+            foreach (array_keys($all) as $slug) {
                 if (!in_array($slug, $slugs, true)) {
                     $slugs[] = $slug;
                 }
                 if (count($slugs) >= $limit) {
-                    break 2;
+                    break;
                 }
             }
         }
+        $slugs = array_slice($slugs, 0, $limit);
     }
-    $slugs = array_slice($slugs, 0, $limit);
 
     $html = '<div class="flex flex-wrap gap-2">';
     foreach ($slugs as $slug) {
@@ -249,14 +251,16 @@ function keywordAreaLinksHtml(string $area, ?array $extraSlugs = null, int $limi
 /**
  * For a keyword hub: link top related keywords under the same service.
  */
-function siblingKeywordsHtml(string $keywordSlug, string $serviceSlug, int $limit = 16): string {
+function siblingKeywordsHtml(string $keywordSlug, string $serviceSlug, int $limit = 0): string {
     $keywordSlug = keywordSlug($keywordSlug);
     $keywords = getKeywordsForService($serviceSlug);
     unset($keywords[$keywordSlug]);
     if (!$keywords) {
         return '';
     }
-    $keywords = array_slice($keywords, 0, $limit, true);
+    if ($limit > 0) {
+        $keywords = array_slice($keywords, 0, $limit, true);
+    }
     $html = '<div class="flex flex-wrap gap-2">';
     foreach ($keywords as $slug => $meta) {
         $href = htmlspecialchars(url('/pages/keywords/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');

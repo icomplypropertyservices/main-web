@@ -6,8 +6,11 @@
  * Vars: SERVICE_NAME, SERVICE_SLUG, AREA, AREA_SLUG, SEO_KEYWORDS,
  * MANUFACTURER_TAGS, MANUFACTURER_IMAGES, KEYWORD_IMAGE_1/2/3
  */
+$poaCombo = function_exists('isPoaService') && isPoaService($SERVICE_SLUG);
 $pageTitle = $SERVICE_NAME . ' in ' . $AREA . ' | Icomply Property Services';
-$metaDesc = 'Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing & certification. Local engineers. Free fixed-price quote.';
+$metaDesc = $poaCombo
+    ? ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Price on application after scope. Local North West team from Stockport.')
+    : ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing & certification. Local engineers. Written quote after scope.');
 $metaKeywords = $SEO_KEYWORDS;
 $ogImage = url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
 

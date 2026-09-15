@@ -28,7 +28,7 @@ Pushes to `main` always deploy via GitHub Actions. Do not rely on the Netlify Gi
 | `/pages/keywords/{slug}`, `/pages/keywords/{slug}/{town}` | pre-rendered keyword matrix |
 | `/assets/*` | real files; splat does not apply (`force` is off) |
 
-Keyword hubs (`/pages/keywords/{slug}`) from `sitemap.xml` / `getMajorKeywords()` are in the **default** export, plus town combos the previous PHP router served from site chrome (popular towns × all keywords, and all towns × priority keywords such as EICR / FRA). Service×area landings stay behind `--full`. The complete keyword×area matrix (`--keyword-towns=all`, ~200k HTML files) is optional — it is too large for a typical Netlify publish.
+The **default** export is the full matrix Jack asked for: every keyword hub × **every** area, plus every service × every area. Compact unique HTML (local-content + POA for water/asbestos) keeps the build publishable. XML sitemap still lists hubs only (not 200k keyword×town rows — that 500’d live).
 
 Contact form POST still needs a server (the static page is GET-only). That is unchanged and out of scope for pretty URLs.
 

@@ -342,6 +342,8 @@ function getPopularKeywordSlugs(): array {
         'gas-safety-certificate', 'cp12', 'landlord-gas-safety',
         'cctv-installation', 'access-control-system', 'door-entry-system',
         'nurse-call-system', 'landlord-compliance',
+        'legionella-risk-assessment', 'legionella-testing', 'water-hygiene-testing',
+        'asbestos-survey', 'asbestos-testing', 'asbestos-management-survey',
     ];
     $all = getMajorKeywords();
     $out = [];
@@ -575,6 +577,11 @@ function areaFromSlug(string $slug): ?string {
         }
     }
     return null;
+}
+
+$waFile = __DIR__ . '/includes/water-asbestos.php';
+if (is_file($waFile)) {
+    require_once $waFile;
 }
 
 // Back-compat globals used by some templates/includes
