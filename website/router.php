@@ -43,6 +43,34 @@ if (isset($legacyAliases[$aliasPath])) {
     return true;
 }
 
+// Missing service stills (Wave-1 slugs etc.) → fire-alarms fallback
+if (preg_match('#^/assets/images/services/([a-z0-9\-]+)\.(jpe?g|png)$#i', $uri, $svcMatch)
+    && !str_ends_with(strtolower($svcMatch[1]), '-photo')) {
+    $ext = strtolower($svcMatch[2]) === 'png' ? 'png' : 'jpg';
+    $wanted = __DIR__ . '/assets/images/services/' . $svcMatch[1] . '.' . $ext;
+    $fallback = __DIR__ . '/assets/images/services/fire-alarms.jpg';
+    if (!is_file($wanted) && is_file($fallback)) {
+        header('Content-Type: image/jpeg');
+        header('Cache-Control: public, max-age=86400');
+        readfile($fallback);
+        return true;
+    }
+}
+
+// Missing manufacturer logos → service fallback (existing files still served above)
+if (preg_match('#^/assets/images/manufacturers/([a-z0-9\-]+)\.(jpe?g|png)$#i', $uri, $mfrMatch)) {
+    $ext = strtolower($mfrMatch[2]) === 'png' ? 'png' : 'jpg';
+    $wanted = __DIR__ . '/assets/images/manufacturers/' . $mfrMatch[1] . '.' . $ext;
+    $fallback = __DIR__ . '/assets/images/services/fire-alarms.jpg';
+    $serve = is_file($wanted) ? $wanted : (is_file($fallback) ? $fallback : '');
+    if ($serve !== '') {
+        header('Content-Type: ' . ($ext === 'png' && $serve === $wanted ? 'image/png' : 'image/jpeg'));
+        header('Cache-Control: public, max-age=86400');
+        readfile($serve);
+        return true;
+    }
+}
+
 // Missing *-photo.jpg → working twin (php -S serves assets before PHP otherwise 404s)
 if (preg_match('#^/assets/images/services/([a-z0-9\-]+)-photo\.(jpe?g|png)$#i', $uri, $photoMatch)) {
     $ext = strtolower($photoMatch[2]) === 'png' ? 'png' : 'jpg';

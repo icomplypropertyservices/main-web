@@ -120,6 +120,11 @@
   to = "/assets/images/services/:splat.jpg"
   status = 200
 
+[[redirects]]
+  from = "/assets/images/manufacturers/*"
+  to = "/assets/images/services/fire-alarms.jpg"
+  status = 200
+
 [[headers]]
   for = "/robots.txt"
   [headers.values]

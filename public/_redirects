@@ -25,3 +25,6 @@
 
 # Missing *-photo.jpg → working twin (static assets bypass PHP)
 /assets/images/services/*-photo.jpg    /assets/images/services/:splat.jpg    200
+
+# Missing manufacturer logos (existing files still win on Netlify) → service fallback
+/assets/images/manufacturers/*    /assets/images/services/fire-alarms.jpg    200

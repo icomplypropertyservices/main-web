@@ -156,7 +156,10 @@ require SITE_ROOT . '/includes/header.php';
             </div>
             <div class="grid grid-cols-2 gap-3">
                 <?php foreach ($brands as $brand):
-                    $img = url($brand['img']);
+                    $rel = '/' . ltrim((string)$brand['img'], '/');
+                    $img = is_file(SITE_ROOT . $rel)
+                        ? url($rel)
+                        : manufacturerImageUrl((string)$brand['slug'], 'electrical');
                 ?>
                 <a href="<?= url('/pages/manufacturers/' . rawurlencode($brand['slug']) . '.php') ?>"
                    class="group relative rounded-3xl overflow-hidden border border-white/10 min-h-[140px] bg-white/5 hover:border-[#ff6b00] transition">
@@ -244,7 +247,10 @@ require SITE_ROOT . '/includes/header.php';
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             <?php foreach ($brands as $brand):
-                $img = url($brand['img']);
+                $rel = '/' . ltrim((string)$brand['img'], '/');
+                $img = is_file(SITE_ROOT . $rel)
+                    ? url($rel)
+                    : manufacturerImageUrl((string)$brand['slug'], 'electrical');
             ?>
             <a href="<?= url('/pages/manufacturers/' . rawurlencode($brand['slug']) . '.php') ?>"
                class="service-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">

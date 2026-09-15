@@ -427,7 +427,7 @@ $schema = [
             <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                class="group bg-white border rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="h-32 bg-zinc-100 overflow-hidden">
-                    <img src="<?= url('/assets/images/services/' . $slug . '.jpg') ?>"
+                    <img src="<?= htmlspecialchars(serviceImageUrl($slug), ENT_QUOTES, 'UTF-8') ?>"
                          alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>"
                          class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
                          loading="lazy"

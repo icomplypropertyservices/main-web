@@ -112,6 +112,34 @@ if (isset($legacyAliases[$aliasPath])) {
     exit;
 }
 
+// Missing service stills → fire-alarms fallback
+if (preg_match('#^/assets/images/services/([a-z0-9\-]+)\.(jpe?g|png)$#i', $uri, $svcMatch)
+    && !str_ends_with(strtolower($svcMatch[1]), '-photo')) {
+    $ext = strtolower($svcMatch[2]) === 'png' ? 'png' : 'jpg';
+    $wanted = $root . '/assets/images/services/' . $svcMatch[1] . '.' . $ext;
+    $fallback = $root . '/assets/images/services/fire-alarms.jpg';
+    if (!is_file($wanted) && is_file($fallback)) {
+        header('Content-Type: image/jpeg');
+        header('Cache-Control: public, max-age=86400');
+        readfile($fallback);
+        exit;
+    }
+}
+
+// Missing manufacturer logos → working service fallback
+if (preg_match('#^/assets/images/manufacturers/([a-z0-9\-]+)\.(jpe?g|png)$#i', $uri, $mfrMatch)) {
+    $ext = strtolower($mfrMatch[2]) === 'png' ? 'png' : 'jpg';
+    $wanted = $root . '/assets/images/manufacturers/' . $mfrMatch[1] . '.' . $ext;
+    $fallback = $root . '/assets/images/services/fire-alarms.jpg';
+    $serve = is_file($wanted) ? $wanted : (is_file($fallback) ? $fallback : '');
+    if ($serve !== '') {
+        header('Content-Type: image/jpeg');
+        header('Cache-Control: public, max-age=86400');
+        readfile($serve);
+        exit;
+    }
+}
+
 // Missing *-photo.jpg → working twin (Netlify static publish also has _redirects)
 if (preg_match('#^/assets/images/services/([a-z0-9\-]+)-photo\.(jpe?g|png)$#i', $uri, $photoMatch)) {
     $ext = strtolower($photoMatch[2]) === 'png' ? 'png' : 'jpg';
