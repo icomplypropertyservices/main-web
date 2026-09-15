@@ -182,7 +182,8 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     $awId = defined('AW_CONVERSION_ID') ? trim((string)AW_CONVERSION_ID) : '';
     $gtmId = defined('GTM_CONTAINER_ID') ? trim((string)GTM_CONTAINER_ID) : '';
     ?>
-    <!-- Google tag (gtag.js) / GTM — loads after #cookie-banner consent when IDs are set -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <!-- Google tag (gtag.js) / Google Tag Manager — cookie-gated via #cookie-banner -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -270,7 +271,10 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
 </style>
 <nav class="bg-white border-b sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 lg:py-4 flex items-center justify-between gap-4">
-        <a href="<?= htmlspecialchars($homeUrl, ENT_QUOTES, 'UTF-8') ?>" class="font-semibold text-lg sm:text-2xl tracking-tight text-black shrink-0">
+        <a href="<?= htmlspecialchars($homeUrl, ENT_QUOTES, 'UTF-8') ?>" class="flex items-center gap-2 font-semibold text-lg sm:text-2xl tracking-tight text-black shrink-0">
+            <img src="<?= htmlspecialchars(url('/assets/images/favicon-32.png'), ENT_QUOTES, 'UTF-8') ?>"
+                 width="32" height="32" alt="Icomply Property Services logo"
+                 class="w-8 h-8 rounded-lg shrink-0">
             <?= htmlspecialchars(SITE_NAME, ENT_QUOTES, 'UTF-8') ?>
         </a>
 

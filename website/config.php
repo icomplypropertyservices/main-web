@@ -528,12 +528,11 @@ function serviceImageUrl(string $slug): string {
     return url('/assets/images/services/fire-alarms.jpg');
 }
 
-/** Prefer *-photo.jpg when present, otherwise the working twin. */
+/**
+ * Working service photo only — never emit *-photo.jpg in HTML.
+ * Live 404'd those names even when the twin without `-photo` was 200.
+ */
 function servicePhotoUrl(string $slug): string {
-    $photo = '/assets/images/services/' . $slug . '-photo.jpg';
-    if (is_file(SITE_ROOT . $photo)) {
-        return url($photo);
-    }
     return serviceImageUrl($slug);
 }
 

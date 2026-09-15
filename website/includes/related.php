@@ -31,12 +31,12 @@ function relatedServicesHtml(string $currentSlug, int $limit = 6): string {
     $html = '<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">';
     foreach ($items as $slug => $name) {
         $href = htmlspecialchars(url('/pages/services/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
-        $img = htmlspecialchars(url('/assets/images/services/' . $slug . '.jpg'), ENT_QUOTES, 'UTF-8');
-        $label = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
+        $img = htmlspecialchars(function_exists('serviceImageUrl') ? serviceImageUrl($slug) : url('/assets/images/services/' . $slug . '.jpg'), ENT_QUOTES, 'UTF-8');
+        $label = htmlspecialchars($name !== '' ? $name : 'Property compliance', ENT_QUOTES, 'UTF-8');
         $blurb = htmlspecialchars(getServiceBlurb($slug, true), ENT_QUOTES, 'UTF-8');
         $html .= '<a href="' . $href . '" class="group bg-white border rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">'
             . '<div class="h-28 bg-zinc-100 overflow-hidden">'
-            . '<img src="' . $img . '" alt="' . $label . '" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" onerror="this.parentElement.style.display=\'none\'">'
+            . '<img src="' . $img . '" alt="' . $label . ' in the North West — Icomply Property Services" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" onerror="this.parentElement.style.display=\'none\'">'
             . '</div>'
             . '<div class="p-5 flex-1 flex flex-col">'
             . '<h3 class="font-semibold text-black">' . $label . '</h3>'
