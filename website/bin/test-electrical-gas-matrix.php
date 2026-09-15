@@ -95,9 +95,13 @@ require_once SITE_ROOT . '/includes/sitemap.php';
 $sitemapXml = icomplyBuildSitemapXml('https://icomplypropertyservices.co.uk');
 $ok(!preg_match('#/pages/gas-systems/[a-z0-9\-]+</loc>#', $sitemapXml), 'sitemap has zero /pages/gas-systems/{town}');
 $ok(!preg_match('#/pages/electrical/[a-z0-9\-]+</loc>#', $sitemapXml), 'sitemap has zero /pages/electrical/{town}');
+$ok(!str_contains($sitemapXml, '/pages/epc/stockport'), 'sitemap has no /pages/epc/stockport');
+$ok(!str_contains($sitemapXml, '/pages/emergency-lighting/stockport'), 'sitemap has no /pages/emergency-lighting/stockport');
 $ok(str_contains($sitemapXml, '/pages/services/gas-systems</loc>'), 'sitemap still lists gas-systems service hub');
 $ok(str_contains($sitemapXml, '/pages/keywords/boiler</loc>'), 'sitemap still lists boiler keyword hub');
 $ok(is_file(SITE_ROOT . '/data/seo-matrix-electrical.md') && is_file(SITE_ROOT . '/data/seo-matrix-gas.md'), 'Marketing seo-matrix md files present');
+$sitemapSrc = (string)file_get_contents(SITE_ROOT . '/includes/sitemap.php');
+$ok(str_contains($sitemapSrc, 'Hard reject /pages/{service}/{town}'), 'sitemap $add hard-rejects service×town (merge-safe vs PR #7)');
 $ok(is_file(SITE_ROOT . '/data/seo-matrix-rollout-notes.md'), 'seo-matrix-rollout-notes.md present');
 
 ob_start();

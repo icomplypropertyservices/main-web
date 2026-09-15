@@ -31,6 +31,8 @@ $bannedNeedles = [
     '/pages/gas-systems/manchester</loc>',
     '/pages/electrical/stockport</loc>',
     '/pages/electrical/manchester</loc>',
+    '/pages/epc/stockport</loc>',
+    '/pages/emergency-lighting/stockport</loc>',
     '/pages/fire-alarms/liverpool</loc>',
 ];
 foreach ($bannedNeedles as $n) {

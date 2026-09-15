@@ -33,8 +33,15 @@ function icomplySitemapEntries(): array
     $banned = icomplySitemapBannedPaths();
     $entries = [];
     $seen = [];
+    $serviceSlugs = function_exists('getServices') ? getServices() : [];
+    $areaSlugSet = [];
+    if (function_exists('getAreas') && function_exists('areaSlug')) {
+        foreach (getAreas() as $area) {
+            $areaSlugSet[areaSlug((string)$area)] = true;
+        }
+    }
 
-    $add = static function (string $path, string $priority = '0.5') use (&$entries, &$seen, $banned): void {
+    $add = static function (string $path, string $priority = '0.5') use (&$entries, &$seen, $banned, $serviceSlugs, $areaSlugSet): void {
         $path = '/' . ltrim(str_replace('\\', '/', $path), '/');
         $path = preg_replace('#\.php$#i', '', $path) ?? $path;
         $path = preg_replace('#/index$#i', '', $path) ?? $path;
@@ -49,6 +56,14 @@ function icomplySitemapEntries(): array
         }
         if (preg_match('#-photo\.(jpe?g|png)$#i', $path)) {
             return;
+        }
+        // Hard reject /pages/{service}/{town} even if a merge (e.g. PR #7)
+        // reintroduces the old loop. Those locs 404 on the default export.
+        if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+            $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages'];
+            if (!in_array($m[1], $reserved, true) && isset($serviceSlugs[$m[1]]) && isset($areaSlugSet[$m[2]])) {
+                return;
+            }
         }
         $seen[$path] = true;
         $entries[] = ['path' => $path, 'priority' => $priority];
