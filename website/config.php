@@ -515,6 +515,34 @@ function linkManufacturerNamesInText(string $text): string {
     return $safe;
 }
 
+/** First existing service image (.jpg, .png, then -photo.jpg). */
+function serviceImageUrl(string $slug): string {
+    $base = '/assets/images/services/' . $slug;
+    foreach ([$base . '.jpg', $base . '.png', $base . '-photo.jpg'] as $rel) {
+        if (is_file(SITE_ROOT . $rel)) {
+            return url($rel);
+        }
+    }
+    return url('/assets/images/services/fire-alarms.jpg');
+}
+
+/** Prefer *-photo.jpg when present, otherwise the working twin. */
+function servicePhotoUrl(string $slug): string {
+    $photo = '/assets/images/services/' . $slug . '-photo.jpg';
+    if (is_file(SITE_ROOT . $photo)) {
+        return url($photo);
+    }
+    return serviceImageUrl($slug);
+}
+
+function manufacturerImageUrl(string $slug, string $fallbackService = 'fire-alarms'): string {
+    $rel = '/assets/images/manufacturers/' . $slug . '.jpg';
+    if (is_file(SITE_ROOT . $rel)) {
+        return url($rel);
+    }
+    return serviceImageUrl($fallbackService);
+}
+
 function getKeywordImages(string $serviceSlug): array {
     $mfr = loadJsonData('manufacturers', []);
     return $mfr['keyword_images'][$serviceSlug] ?? [$serviceSlug, $serviceSlug, $serviceSlug];

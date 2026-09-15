@@ -27,7 +27,7 @@ $crumbs = [
 ];
 ?>
 <section class="relative text-white py-16 md:py-20 overflow-hidden">
-    <img src="assets/images/services/ground-source-heat-pumps-photo.jpg" alt="Ground Source Heat Pumps services across Greater Manchester and North West UK" class="absolute inset-0 w-full h-full object-cover" width="1600" height="700" fetchpriority="high" onerror="this.src='assets/images/services/ground-source-heat-pumps.png'">
+    <img src="<?= htmlspecialchars(servicePhotoUrl('ground-source-heat-pumps'), ENT_QUOTES, 'UTF-8') ?>" alt="Ground Source Heat Pumps services across Greater Manchester and North West UK" class="absolute inset-0 w-full h-full object-cover" width="1600" height="700" fetchpriority="high">
     <div class="absolute inset-0 hero-overlay"></div>
     <div class="relative max-w-5xl mx-auto px-6">
         <?= render_breadcrumbs($crumbs) ?>

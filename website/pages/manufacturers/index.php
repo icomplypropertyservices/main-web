@@ -85,11 +85,10 @@ require SITE_ROOT . '/includes/header.php';
         <a href="<?= url('/pages/manufacturers/' . $slug . '.php') ?>"
            class="group bg-white border rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
             <div class="h-32 bg-zinc-100 overflow-hidden">
-                <img src="<?= url('/assets/images/manufacturers/' . $slug . '.jpg') ?>"
-                     alt="<?= htmlspecialchars($entry['name'], ENT_QUOTES, 'UTF-8') ?>"
+                <img src="<?= htmlspecialchars(manufacturerImageUrl($slug, $primary), ENT_QUOTES, 'UTF-8') ?>"
+                     alt="<?= htmlspecialchars($entry['name'], ENT_QUOTES, 'UTF-8') ?> equipment — Icomply Property Services"
                      class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                     loading="lazy"
-                     onerror="this.src='<?= url('/assets/images/services/' . $primary . '.jpg') ?>'">
+                     loading="lazy">
             </div>
             <div class="p-5 flex-1 flex flex-col">
                 <h3 class="font-semibold text-lg text-black"><?= htmlspecialchars($entry['name'], ENT_QUOTES, 'UTF-8') ?></h3>

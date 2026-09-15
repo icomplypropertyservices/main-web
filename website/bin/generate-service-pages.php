@@ -42,7 +42,7 @@ $hubFaqs = [
         <?php foreach ($GLOBALS['services'] as $slug => $name): ?>
         <a href="<?= htmlspecialchars($slug) ?>" class="service-card bg-white rounded-3xl border group">
             <div class="aspect-[16/10] overflow-hidden bg-zinc-100">
-                <img src="assets/images/services/<?= htmlspecialchars($slug) ?>-photo.jpg"
+                <img src="<?= htmlspecialchars(function_exists('servicePhotoUrl') ? servicePhotoUrl($slug) : ('assets/images/services/' . $slug . '.jpg'), ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($name) ?> services North West UK"
                      class="img-cover group-hover:scale-105 transition duration-500"
                      width="640" height="400" loading="lazy"

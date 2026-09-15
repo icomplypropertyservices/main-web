@@ -27,7 +27,7 @@ $crumbs = [
 ];
 ?>
 <section class="relative text-white py-16 md:py-20 overflow-hidden">
-    <img src="assets/images/services/solar-pv-photo.jpg" alt="Solar PV services across Greater Manchester and North West UK" class="absolute inset-0 w-full h-full object-cover" width="1600" height="700" fetchpriority="high" onerror="this.src='assets/images/services/solar-pv.png'">
+    <img src="<?= htmlspecialchars(servicePhotoUrl('solar-pv'), ENT_QUOTES, 'UTF-8') ?>" alt="Solar PV services across Greater Manchester and North West UK" class="absolute inset-0 w-full h-full object-cover" width="1600" height="700" fetchpriority="high">
     <div class="absolute inset-0 hero-overlay"></div>
     <div class="relative max-w-5xl mx-auto px-6">
         <?= render_breadcrumbs($crumbs) ?>

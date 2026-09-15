@@ -62,7 +62,7 @@ require SITE_ROOT . '/includes/header.php';
 <!-- HERO: solid navy + image with dark overlay for readable text -->
 <section class="relative overflow-hidden bg-[#061828] text-white">
     <div class="absolute inset-0">
-        <img src="<?= htmlspecialchars($KEYWORD_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="" class="w-full h-full object-cover opacity-35" loading="eager"
+        <img src="<?= htmlspecialchars($KEYWORD_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($KEYWORD_NAME ?? 'Property compliance', ENT_QUOTES, 'UTF-8') ?> — Icomply Property Services" class="w-full h-full object-cover opacity-35" loading="eager"
              onerror="this.src=$SERVICE_IMAGE">
         <div class="absolute inset-0 bg-gradient-to-r from-[#061828] via-[#061828]/95 to-[#061828]/75"></div>
     </div>
