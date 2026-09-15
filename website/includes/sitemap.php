@@ -100,7 +100,7 @@ function icomplySitemapEntries(): array
         // Hard reject /pages/{service}/{town} even if a leftover matrix file
         // sits in dist/. Keep only real hub prefixes.
         if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
-            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages'];
+            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'kits'];
             if (!in_array($m[1], $okPrefix, true)) {
                 return;
             }
@@ -156,6 +156,16 @@ function icomplySitemapEntries(): array
         ['/shop/security', '0.75', 'shop/security/index.html'],
         ['/shop/gas', '0.75', 'shop/gas/index.html'],
         ['/products', '0.8', 'pages/products.php'],
+        ['/pages/kits', '0.85', 'pages/kits/index.php'],
+        ['/pages/kits/rewire', '0.8', 'pages/kits/rewire.php'],
+        ['/pages/kits/heating', '0.8', 'pages/kits/heating.php'],
+        ['/pages/kits/fire-alarm', '0.8', 'pages/kits/fire-alarm.php'],
+        ['/pages/kits/emergency-lighting', '0.8', 'pages/kits/emergency-lighting.php'],
+        ['/pages/kits/aov', '0.8', 'pages/kits/aov.php'],
+        ['/pages/kits/intercom', '0.8', 'pages/kits/intercom.php'],
+        ['/pages/kits/access-control', '0.8', 'pages/kits/access-control.php'],
+        ['/pages/kits/gates', '0.8', 'pages/kits/gates.php'],
+        ['/pages/kits/barriers', '0.8', 'pages/kits/barriers.php'],
     ];
     foreach ($static as [$path, $pri, $file]) {
         if ($path === '/' || $exists($file) || $exists(preg_replace('#\.php$#', '/index.php', $file) ?? $file)) {
@@ -164,6 +174,15 @@ function icomplySitemapEntries(): array
     }
 
     // Resource articles that exist on the publish root (not source-only).
+    foreach (glob(SITE_ROOT . '/pages/kits/*.php') ?: [] as $kitFile) {
+        $base = basename($kitFile, '.php');
+        if ($base === 'index') {
+            $add('/pages/kits', '0.85');
+        } else {
+            $add('/pages/kits/' . $base, '0.8');
+        }
+    }
+
     foreach (glob($publish . '/pages/resources/*.php') ?: [] as $resFile) {
         $base = basename($resFile, '.php');
         if ($base === 'index') {

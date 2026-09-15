@@ -76,6 +76,7 @@ function routerDispatchVirtual(string $path): bool {
         '/pages/resources' => ['/pages/resources', '/pages/resources/index'],
         '/shop' => ['/shop/index'],
         '/products' => ['/pages/products', '/products'],
+        '/pages/kits' => ['/pages/kits', '/pages/kits/index'],
     ];
     if (isset($indexes[$path])) {
         foreach ($indexes[$path] as $candidate) {
@@ -132,7 +133,7 @@ function routerDispatchVirtual(string $path): bool {
     if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         $serviceSlug = $m[1];
         $areaSlugVal = $m[2];
-        $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources'];
+        $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages', 'kits'];
         if (in_array($serviceSlug, $reserved, true)) {
             return false;
         }
@@ -157,7 +158,7 @@ function routerDispatchVirtual(string $path): bool {
     // /pages/{service-slug} → canonical /pages/services/{slug}
     if (preg_match('#^/pages/([a-z0-9\-]+)$#', $path, $m)) {
         $slug = $m[1];
-        $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources'];
+        $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages', 'kits'];
         if (!in_array($slug, $reserved, true) && isset(getServices()[$slug])) {
             header('Location: ' . url('/pages/services/' . $slug), true, 301);
             icomplyRequestExit();

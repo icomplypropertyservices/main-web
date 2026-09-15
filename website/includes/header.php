@@ -118,6 +118,9 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     <meta name="geo.placename" content="Stockport">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css">
     <link rel="stylesheet" href="<?= htmlspecialchars(assetUrl('/assets/css/site.css'), ENT_QUOTES, 'UTF-8') ?>">
+    <?php foreach ((array)($extraStylesheets ?? []) as $sheet): ?>
+    <link rel="stylesheet" href="<?= htmlspecialchars(assetUrl((string)$sheet), ENT_QUOTES, 'UTF-8') ?>">
+    <?php endforeach; ?>
     <?php
     $gaId = defined('GA_MEASUREMENT_ID') ? trim((string)GA_MEASUREMENT_ID) : '';
     $awId = defined('AW_CONVERSION_ID') ? trim((string)AW_CONVERSION_ID) : '';

@@ -403,7 +403,7 @@ $contactSchema = [
                         <label for="contact-message" class="block text-xs font-semibold uppercase tracking-wider text-zinc-500 mb-1.5">Message</label>
                         <textarea id="contact-message" name="message" rows="5" required maxlength="5000"
                                   placeholder="Postcode, property type, panel brand / system details…"
-                                  class="w-full border border-zinc-200 px-5 py-3.5 rounded-2xl focus:outline-none focus:border-[#ff6b00] focus:ring-1 focus:ring-[#ff6b00]"><?= htmlspecialchars($_POST['message'] ?? '', ENT_QUOTES, 'UTF-8') ?></textarea>
+                                  class="w-full border border-zinc-200 px-5 py-3.5 rounded-2xl focus:outline-none focus:border-[#ff6b00] focus:ring-1 focus:ring-[#ff6b00]"><?= htmlspecialchars($_POST['message'] ?? (isset($_GET['kit']) ? (string)$_GET['kit'] : ''), ENT_QUOTES, 'UTF-8') ?></textarea>
                     </div>
 
                     <button type="submit" id="contact-submit" class="w-full modern-btn text-white py-4 text-lg font-semibold rounded-2xl">

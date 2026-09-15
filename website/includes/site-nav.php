@@ -217,6 +217,7 @@ function icomplyMegaHeaderHtml(): string
     $hubSecurity = '/shop/security/';
     $hubGas = '/shop/gas/';
     $shopLive = icomplyNavH(function_exists('icomplyTradeShopUrl') ? icomplyTradeShopUrl() : 'https://shop.icomplypropertyservices.co.uk');
+    $kitsHub = icomplyNavH(url('/pages/kits'));
 
     $svcCols = '';
     foreach ($n['cats'] as $catKey => $cat) {
@@ -287,6 +288,7 @@ function icomplyMegaHeaderHtml(): string
                 <a href="{$hubElectrical}">Electrical</a>
                 <a href="{$hubSecurity}">Security</a>
                 <a href="{$hubGas}">Gas</a>
+                <a href="{$kitsHub}">Kit builders</a>
                 <a href="{$shopAll}" class="mega-more">All supplies →</a>
                 <a href="{$shopLive}" class="mega-more" target="_blank" rel="noopener">Shopify checkout →</a>
               </div>
@@ -337,6 +339,7 @@ function icomplyMobileDrawerHtml(array $n): string
     $hubFireD = '/shop/fire/';
     $hubSecurityD = '/shop/security/';
     $hubGasD = '/shop/gas/';
+    $kitsHub = icomplyNavH(url('/pages/kits'));
 
     return <<<HTML
 <div id="mega-drawer" class="mega-drawer" hidden>
@@ -350,6 +353,7 @@ function icomplyMobileDrawerHtml(array $n): string
       <a href="{$hubSecurityD}">Security</a>
       <a href="{$hubGasD}">Gas</a>
       <a href="/shop/">All supplies</a>
+      <a href="{$kitsHub}">Kit builders</a>
     </div></details>
     <a href="{$productsD}">Products</a>
     <a class="drawer-cta drawer-cta--quote" href="{$contactDrawer}">Get a quote</a>
@@ -448,6 +452,7 @@ function icomplyFooterHtml(): string
     $privacy = icomplyNavH($n['legal'][0]['href']);
     $terms = icomplyNavH($n['legal'][1]['href']);
     $siteMap = icomplyNavH($n['legal'][2]['href']);
+    $kitsHub = icomplyNavH(url('/pages/kits'));
 
     return <<<HTML
 <footer class="site-footer" data-site-footer>
@@ -501,6 +506,7 @@ function icomplyFooterHtml(): string
           <a href="/shop/fire/">Fire</a>
           <a href="/shop/security/">Security</a>
           <a href="/shop/gas/">Gas</a>
+          <a href="{$kitsHub}">Kit builders</a>
           <!-- Marketing https://marketing.icomplypropertyservices.co.uk — optional until DNS live -->
         </div>
       </details>
