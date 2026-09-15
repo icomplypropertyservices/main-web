@@ -150,6 +150,9 @@ require SITE_ROOT . '/includes/header.php';
             </div>
             <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Service hubs →</a>
         </div>
+        <?php if (function_exists('coreComplianceLiveFeaturedHtml')): ?>
+            <?= coreComplianceLiveFeaturedHtml() ?>
+        <?php endif; ?>
         <?= seoIaJobIndexHtml() ?>
     </div>
 </section>

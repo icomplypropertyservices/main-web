@@ -51,6 +51,17 @@ $serviceFaqs = [
 
 $blurb = getServiceBlurb($serviceSlug);
 $standards = getServiceStandards($serviceSlug);
+$liveFaqsFile = SITE_ROOT . '/data/live-service-faqs.json';
+if (is_file($liveFaqsFile)) {
+    $liveFaqs = json_decode((string)file_get_contents($liveFaqsFile), true);
+    if (is_array($liveFaqs)) {
+        foreach ($liveFaqs as $faqSlug => $pairs) {
+            if (is_array($pairs) && $pairs) {
+                $serviceFaqs[(string)$faqSlug] = $pairs;
+            }
+        }
+    }
+}
 $faqs = $serviceFaqs[$serviceSlug] ?? $serviceFaqs['default'];
 $svcCopy = function_exists('waterAsbestosServiceCopy') ? waterAsbestosServiceCopy($serviceSlug) : null;
 

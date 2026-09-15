@@ -16,6 +16,10 @@ function isPoaService(string $slug): bool
     if (in_array($slug, waterAsbestosServiceSlugs(), true)) {
         return true;
     }
+    if (function_exists('coreComplianceLiveServiceSlugs')
+        && in_array($slug, coreComplianceLiveServiceSlugs(), true)) {
+        return true;
+    }
     $pricing = strtoupper((string)(getServiceMeta($slug)['pricing'] ?? ''));
     return $pricing === 'POA';
 }

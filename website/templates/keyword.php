@@ -90,7 +90,7 @@ require SITE_ROOT . '/includes/header.php';
             <?= htmlspecialchars($KEYWORD_INTRO, ENT_QUOTES, 'UTF-8') ?>
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
-            <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-bold text-white shadow-lg">Get free quote</a>
+            <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-bold text-white shadow-lg">Request POA quote</a>
             <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode($keywordName . ' quote') ?>"
                target="_blank" rel="noopener" class="px-8 py-4 rounded-2xl bg-green-600 hover:bg-green-500 font-bold text-white shadow-lg">WhatsApp</a>
             <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="px-8 py-4 rounded-2xl bg-white text-[#061828] font-bold shadow-lg"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
@@ -105,7 +105,7 @@ require SITE_ROOT . '/includes/header.php';
         $trust = [
             ['Local engineers', 'Stockport base — 150+ North West towns'],
             ['Standards-led', 'British Standards & manufacturer guidance'],
-            ['Fixed quotes', 'Clear scope before work starts'],
+            ['Written POA quotes', 'Clear scope before work starts — no invented £'],
             ['Full paperwork', 'Certificates & logbooks for compliance'],
         ];
         foreach ($trust as [$t, $d]): ?>
@@ -234,7 +234,7 @@ require SITE_ROOT . '/includes/header.php';
 <section id="quote" class="bg-[#061828] text-white">
     <div class="max-w-3xl mx-auto px-6 py-14">
         <h2 class="text-3xl font-bold text-center">Quote for <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></h2>
-        <p class="mt-2 text-center text-white/90">Fixed-price after scope is agreed. Stockport engineers · North West coverage.</p>
+        <p class="mt-2 text-center text-white/90">Written POA quote after we know the property. Stockport engineers · North West coverage. No invented £ prices.</p>
         <form action="<?= url('/contact.php') ?>" method="POST" class="mt-8 bg-white text-zinc-900 border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4 shadow-xl">
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid md:grid-cols-2 gap-4">

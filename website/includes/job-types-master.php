@@ -77,18 +77,30 @@ function jobTypesApplyMaster(array $keywords): array
         $synth = jobTypesSynthesize($job, $base);
         $keywords[$slug] = jobTypesMergePreferExisting($base, $synth);
     }
+    return jobTypesDedupeSeoFields($keywords);
+}
+
+/**
+ * @param array<string, array<string, mixed>> $keywords
+ * @return array<string, array<string, mixed>>
+ */
+function jobTypesDedupeSeoFields(array $keywords): array
+{
     $seenTitle = [];
     $seenH1 = [];
     foreach ($keywords as $slug => &$row) {
+        if (!is_array($row)) {
+            continue;
+        }
         $title = trim((string)($row['seo_title'] ?? $row['name'] ?? $slug));
         if ($title === '' || isset($seenTitle[$title])) {
-            $title = (string)($row['name'] ?? keywordDisplayName($slug)) . ' · ' . $slug . ' | iComply';
+            $title = (string)($row['name'] ?? keywordDisplayName((string)$slug)) . ' · ' . $slug . ' | iComply';
             $row['seo_title'] = $title;
         }
         $seenTitle[$title] = true;
         $h1 = trim((string)($row['h1'] ?? $row['name'] ?? $slug));
         if ($h1 === '' || isset($seenH1[$h1])) {
-            $h1 = (string)($row['name'] ?? keywordDisplayName($slug)) . ' (' . $slug . ')';
+            $h1 = (string)($row['name'] ?? keywordDisplayName((string)$slug)) . ' (' . $slug . ')';
             $row['h1'] = $h1;
         }
         $seenH1[$h1] = true;

@@ -350,6 +350,12 @@ function getMajorKeywords(): array {
     if (function_exists('jobTypesApplyMaster')) {
         $normalized = jobTypesApplyMaster($normalized);
     }
+    if (function_exists('jobPacksApply')) {
+        $normalized = jobPacksApply($normalized);
+    }
+    if (function_exists('jobTypesDedupeSeoFields')) {
+        $normalized = jobTypesDedupeSeoFields($normalized);
+    }
     return $cached = $normalized;
 }
 
@@ -752,6 +758,11 @@ if (is_file($seoIaFile)) {
 $jobTypesMasterFile = __DIR__ . '/includes/job-types-master.php';
 if (is_file($jobTypesMasterFile)) {
     require_once $jobTypesMasterFile;
+}
+
+$jobPacksFile = __DIR__ . '/includes/job-packs.php';
+if (is_file($jobPacksFile)) {
+    require_once $jobPacksFile;
 }
 
 // Back-compat globals used by some templates/includes

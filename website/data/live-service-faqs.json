@@ -1,0 +1,192 @@
+{
+  "electrical": [
+    ["How often is an EICR required?", "Landlords typically need an EICR every 5 years or on change of tenancy where the last report has expired. Commercial intervals follow risk."],
+    ["Do you publish electrical prices?", "No. Consumer units, rewires and EICRs are written POA after we see the installation. No invented £ list."],
+    ["Can you upgrade consumer units and rewire?", "Yes. Both are quoted after a survey against BS 7671."]
+  ],
+  "fire-alarms": [
+    ["What is BS 5839?", "The British Standard for design, installation, commissioning and maintenance of fire detection and alarm systems."],
+    ["How often do fire alarms need servicing?", "Most non-domestic systems at least twice a year, plus weekly user tests and a logbook."],
+    ["Which panels do you support?", "Apollo, Hochiki, C-TEC, Advanced, Kentec and others we see on North West sites. Say the make when you enquire."]
+  ],
+  "emergency-lighting": [
+    ["How often should emergency lighting be tested?", "Monthly function tests and a yearly duration test under BS 5266, with a record."],
+    ["Do you install as well as test?", "Yes — new fittings, LED conversions and certificates. POA after a count."],
+    ["Do you issue an emergency lighting certificate?", "Yes after the agreed test or install. We do not sell a certificate without the visit."]
+  ],
+  "aov-air-handling": [
+    ["What is an AOV?", "An automatic opening vent or smoke-control system on stairs and shafts. It has to match the fire strategy."],
+    ["Do you maintain existing AOVs?", "Yes — actuators, batteries, panels and fire-alarm interfaces. POA after a look at the kit."],
+    ["Which brands?", "Ventlux and related AOV equipment. Tell us what is on site."]
+  ],
+  "fire-risk-assessments": [
+    ["Who needs an FRA?", "Responsible persons for workplaces and common parts of residential buildings under the Fire Safety Order."],
+    ["Is an annual review required?", "Review when the building or use changes. Many North West sites book yearly."],
+    ["Do you publish an FRA fee?", "No. Storeys and sleeping risk change the visit. Written POA only."]
+  ],
+  "fire-extinguishers": [
+    ["How often are extinguishers serviced?", "Typically yearly to BS 5306, with longer-interval extended service on some types."],
+    ["Do all rented houses need them?", "The FRA decides. Many single lets do not."],
+    ["Price?", "POA after a unit count. No website £ per extinguisher."]
+  ],
+  "fire-doors": [
+    ["What does a fire door inspection cover?", "Leaf, frame, gaps, seals, closer, glazing and ironmongery — not just the FD30 disc."],
+    ["Can you repair and replace?", "Seals and closers often yes; certificated leaves are quoted after the survey."],
+    ["Per-door web price?", "No. POA after door count and access."]
+  ],
+  "fire-stopping": [
+    ["Is expanding foam enough?", "No. We use tested systems for the service that pierced the wall."],
+    ["Do you record each seal?", "Yes — photos and a schedule the FRA can use."],
+    ["Price?", "POA after a hole schedule."]
+  ],
+  "fire-suppression": [
+    ["What systems do you service?", "Special-hazard and plant-room suppression. Kitchen canopies have their own service page."],
+    ["Discharge tests?", "Only when the standard and the client agree. They are disruptive and POA."],
+    ["Price?", "POA after system type."]
+  ],
+  "sprinkler-systems": [
+    ["Do you maintain existing sprinklers?", "Yes — inspection and maintenance support to BS EN 12845 and insurer rules."],
+    ["New design?", "Design liaison is scoped. Full hydraulic design is agreed separately if we take it."],
+    ["Price?", "POA after valve count."]
+  ],
+  "dry-risers": [
+    ["Dry or wet riser?", "Tell us which you have. Tests differ under BS 9990."],
+    ["How often?", "Typically six-monthly and annual elements plus the FRA."],
+    ["Price?", "POA after inlet and landing-valve count."]
+  ],
+  "fire-signage": [
+    ["Do you survey before installing signs?", "Yes. Contradictory old signs are the usual problem."],
+    ["Photoluminescent or illuminated?", "Depends on the escape lighting and the strategy."],
+    ["Price?", "POA after a walk and a count."]
+  ],
+  "evacuation-alerts": [
+    ["Is this a fire alarm?", "Related but different. Evacuation alert (BS 8629) is for specified residential buildings."],
+    ["Does every block need one?", "No. Height and the strategy decide."],
+    ["Price?", "POA after a strategy review."]
+  ],
+  "kitchen-fire-suppression": [
+    ["Do you service existing kitchen systems?", "Yes once we know the manufacturer and last service date."],
+    ["Is this a domestic cooker hood?", "No. Commercial canopy and range systems only."],
+    ["Price?", "POA after canopy size."]
+  ],
+  "fire-compartmentation": [
+    ["What is a compartmentation survey?", "A look at whether fire-resisting construction still exists where the FRA assumes it does."],
+    ["Then fire stopping?", "Usually the next job, quoted POA."],
+    ["Price?", "POA after access and floor area."]
+  ],
+  "smoke-co-alarms": [
+    ["Landlord smoke and CO rules?", "England requires working smoke alarms on each storey and CO alarms at combustion appliances — we site and test to the house."],
+    ["Aico sets?", "Yes. Kidde and FireAngel where specified."],
+    ["Price?", "POA after storeys and existing detectors."]
+  ],
+  "gas-systems": [
+    ["Is a CP12 the same as a gas safety certificate?", "Agents still say CP12. We issue the current landlord gas safety record."],
+    ["Boiler install and service?", "Yes — Gas Safe, manufacturer rules, written POA after a survey."],
+    ["Website boiler price?", "No invented £. Flue, system type and access first."]
+  ],
+  "electrics-first-fix": [
+    ["Do you return for second fix?", "Yes. Most clients keep the same team."],
+    ["Part P?", "Notified where required. First fix does not finish the certificate."],
+    ["Price?", "POA after drawings or a walk-through."]
+  ],
+  "pat-testing": [
+    ["Is PAT an EICR?", "No. PAT is portable equipment. The EICR is fixed wiring."],
+    ["How often?", "Risk-based. Offices, sites and HMOs differ."],
+    ["Price?", "POA after an item count."]
+  ],
+  "epc": [
+    ["How long does an EPC last?", "Typically ten years unless you replace it after works or for a new listing."],
+    ["Commercial EPCs?", "Say if the building is non-domestic. Different assessment."],
+    ["EPC cost?", "POA after property type. No from-£ figure."]
+  ],
+  "cctv": [
+    ["Hikvision or Dahua?", "Both where specified. Insurers sometimes name a brand."],
+    ["GDPR siting?", "We will not point cameras into neighbours' homes."],
+    ["Price?", "POA after camera count."]
+  ],
+  "access-control": [
+    ["Paxton, Videx, CAME?", "Yes. Fire override has to match the strategy."],
+    ["Takeover of existing fobs?", "Often, after a survey."],
+    ["Price?", "POA after door count."]
+  ],
+  "door-entry": [
+    ["Videx, Bell System, Aiphone?", "Common on UK blocks. We replace tired risers as well as panels."],
+    ["Video without changing every handset?", "Depends on the protocol. Survey first."],
+    ["Price?", "POA after flat count."]
+  ],
+  "intercoms": [
+    ["Intercom vs door entry?", "Intercom is often internal or a simpler door kit. Communal block panels sit on the door-entry page."],
+    ["Wireless in a block?", "Only if the radio survey says so. We prefer cable."],
+    ["Price?", "POA after station count."]
+  ],
+  "intruder-alarm": [
+    ["Ajax or wired?", "Either after a survey. Grade and monitoring are scoped honestly."],
+    ["Police response?", "Only where the grade and URN path allow. We do not promise it on this page."],
+    ["Price?", "POA after a radio or cable survey."]
+  ],
+  "nurse-call": [
+    ["HTM 08-03?", "Care specifications drive the design. Tell us the building type."],
+    ["Maintain existing systems?", "Yes after a panel and device survey."],
+    ["Price?", "POA after bed count."]
+  ],
+  "landlord-compliance": [
+    ["Is this a fixed-price landlord pack?", "No. We quote the certificates that are actually due. POA after your dates."],
+    ["HMO extras?", "FRA, alarms and doors are added when the house needs them — not as a web bundle price."],
+    ["Do you cover the North West?", "Yes from Stockport SK2."]
+  ],
+  "facilities-management": [
+    ["Will you take over existing PPM?", "Yes after a gap review of dates and assets."],
+    ["Out of hours?", "Scoped if the estate needs it. POA."],
+    ["Helpdesk software?", "We attend and record. We are not selling you a SaaS."]
+  ],
+  "building-maintenance": [
+    ["Is this unlimited handyman cover?", "No. The quote lists what is in. Materials stay POA."],
+    ["Compliance included?", "Only named jobs. Fire and electrical stay explicit."],
+    ["SLA on the website?", "We do not invent a 1-hour promise. Diary when you call."]
+  ],
+  "project-management": [
+    ["Do you manage other contractors?", "We can coordinate. Principal-contractor CDM roles are only if agreed in writing."],
+    ["FRA action programmes?", "Yes — that is the usual reason clients book this."],
+    ["Price?", "POA after the action list."]
+  ],
+  "building-surveys": [
+    ["Is this a RICS HomeBuyer?", "No. It is a contractor condition look for works and compliance. We do not claim a RICS brand here."],
+    ["Snagging?", "Yes for voids and new lets."],
+    ["Price?", "POA after floor area."]
+  ],
+  "cdm-support": [
+    ["Do small landlord voids need CDM?", "Simple RAMS and competence still matter. We will not over-paper a tap washer."],
+    ["Will you be principal designer?", "Only if we agree that role in writing."],
+    ["Price?", "POA after the works list."]
+  ],
+  "property-refurbishment-pm": [
+    ["Do you do the trades yourselves?", "Many compliance and building trades yes. We say when a specialist is better."],
+    ["Occupied refurb?", "Possible but slower. POA."],
+    ["Price?", "POA after a condition walk."]
+  ],
+  "compliance-consultancy": [
+    ["Is this legal advice?", "No. It is practical prioritisation of inspections and works."],
+    ["Then will you do the jobs?", "Yes — advice first, visits quoted POA."],
+    ["Price?", "POA after how many buildings and how thick the file is."]
+  ],
+  "legionella-risk-assessment": [
+    ["What is a Legionella risk assessment?", "A written look at how the water system could allow Legionella to grow, and what controls are proportionate. HSE L8 and HSG274 are the usual references."],
+    ["Do you always take water samples?", "No. Assessment first. Sampling only when it would help — quoted POA."],
+    ["What does it cost?", "Price on application. No invented fee. Tell us property type, stored water and access."]
+  ],
+  "asbestos-survey": [
+    ["Management or refurbishment survey?", "Management for occupation. Refurbishment or demolition when you will disturb the fabric."],
+    ["Do you remove asbestos?", "Licensed removal is not this service. It is appointed separately if the survey says so."],
+    ["What does it cost?", "POA. Size, access and how intrusive the survey must be. No starting £."]
+  ],
+  "plumbing": [
+    ["Emergency leaks?", "Make-safe first. Permanent repair is POA."],
+    ["Is a boiler swap plumbing?", "Boiler installs sit under gas systems. We will point you there."],
+    ["Price?", "POA after the fault or the drawing."]
+  ],
+  "heating": [
+    ["Service vs CP12?", "A service is the manufacturer visit. The landlord gas record is the safety certificate. We can do both on one attendance."],
+    ["Powerflush everyone?", "No. Only when the system condition supports it."],
+    ["Price?", "POA after system type."]
+  ]
+}
