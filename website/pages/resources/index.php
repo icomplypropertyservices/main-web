@@ -43,6 +43,13 @@ $featuredGuides = [
         'img' => '/assets/images/services/gas-systems.jpg',
     ],
     [
+        'slug' => 'hmo-licence-compliance-checklist',
+        'title' => 'HMO licence compliance checklist',
+        'blurb' => 'High-level prompts for gas, EICR, FRA, alarms and documentation when applying for or holding an HMO licence.',
+        'tag' => 'HMO landlords',
+        'img' => '/assets/images/services/fire-risk-assessments.jpg',
+    ],
+    [
         'slug' => 'emergency-lighting-testing',
         'title' => 'Emergency lighting testing explained',
         'blurb' => 'Monthly function checks, annual full-duration tests, BS 5266 practice, logbooks and upgrade triggers.',
@@ -83,6 +90,12 @@ $hubLinks = [
         'title' => 'Packages',
         'blurb' => 'Multi-service compliance packages for landlords and facilities teams.',
         'cta' => 'View packages →',
+    ],
+    [
+        'href' => url('/pages/packages/hmo'),
+        'title' => 'HMO packages',
+        'blurb' => 'EICR + gas safety + fire risk assessment for licensed and licensable HMOs.',
+        'cta' => 'HMO packages →',
     ],
     [
         'href' => url('/landlords.php'),

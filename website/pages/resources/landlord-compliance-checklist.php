@@ -64,6 +64,12 @@ $checklist = [
         'link' => url('/packages.php'),
         'linkLabel' => 'Multi-service packages',
     ],
+    [
+        'title' => 'HMO licence extras (if the house is an HMO)',
+        'body' => 'Licensed and licensable HMOs usually need a current fire risk assessment plus the same gas and electrical records — and often detection, emergency lighting or fire-door work. Use the dedicated HMO checklist rather than treating the house as a single let.',
+        'link' => url('/pages/resources/hmo-licence-compliance-checklist'),
+        'linkLabel' => 'HMO licence compliance checklist',
+    ],
 ];
 
 require SITE_ROOT . '/includes/header.php';
@@ -144,6 +150,8 @@ require SITE_ROOT . '/includes/header.php';
             <div class="flex flex-wrap gap-2">
                 <a href="<?= url('/landlords.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Landlords hub</a>
                 <a href="<?= url('/packages.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Packages</a>
+                <a href="<?= url('/pages/packages/hmo') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">HMO packages</a>
+                <a href="<?= url('/pages/resources/hmo-licence-compliance-checklist') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">HMO licence checklist</a>
                 <a href="<?= url('/faq.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">FAQ</a>
                 <a href="<?= url('/pages/resources/eicr-guide.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">EICR guide</a>
                 <a href="<?= url('/pages/resources/fire-alarm-servicing.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Fire alarm servicing</a>

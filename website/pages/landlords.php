@@ -232,7 +232,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Packages</div>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Multi-property packages</h2>
-                <p class="mt-2 text-zinc-600 max-w-xl">Combine EICR, gas safety, fire alarms and emergency lighting into one visit schedule for landlords and letting agents.</p>
+                <p class="mt-2 text-zinc-600 max-w-xl">Combine EICR, gas safety, fire alarms and emergency lighting into one visit schedule — or book the dedicated <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/packages/hmo') ?>">HMO compliance package</a> (EICR + gas + FRA).</p>
             </div>
             <a href="#quote" class="inline-flex px-5 py-2.5 rounded-full bg-[#0a2540] text-white text-sm font-semibold hover:bg-[#ff6b00] transition">Request package quote</a>
         </div>
@@ -311,6 +311,11 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                     <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/keywords/landlord-fire-alarm.php') ?>">Landlord fire alarms</a></li>
                     <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/keywords/landlord-emergency-lighting.php') ?>">Landlord emergency lighting</a></li>
                     <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/keywords/landlord-safety-certificate.php') ?>">Landlord safety certificates</a></li>
+                    <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/packages/hmo') ?>">HMO packages (EICR + gas + FRA)</a></li>
+                    <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/hmo-eicr') ?>">HMO EICR — Greater Manchester</a></li>
+                    <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/hmo-fra') ?>">HMO fire risk assessment</a></li>
+                    <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/hmo-gas-safety') ?>">HMO gas safety</a></li>
+                    <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/resources/hmo-licence-compliance-checklist') ?>">HMO licence compliance checklist</a></li>
                 </ul>
             </div>
         </div>

@@ -9,6 +9,20 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/landlords</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/commercial</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/packages</loc><priority>0.8</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/packages/hmo</loc><priority>0.85</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/packages/hmo-compliance</loc><priority>0.85</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/packages/let-ready</loc><priority>0.7</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/packages/fire-ready</loc><priority>0.7</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/packages/workplace-essentials</loc><priority>0.7</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/hmo-eicr</loc><priority>0.82</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/hmo-eicr/stockport</loc><priority>0.8</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/hmo-eicr/manchester</loc><priority>0.8</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/hmo-fra</loc><priority>0.82</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/hmo-fra/stockport</loc><priority>0.8</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/hmo-fra/manchester</loc><priority>0.8</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/hmo-gas-safety</loc><priority>0.82</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/hmo-gas-safety/stockport</loc><priority>0.8</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/hmo-gas-safety/manchester</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/pricing</loc><priority>0.75</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/care-homes</loc><priority>0.75</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/ev-chargers</loc><priority>0.75</priority></url>
@@ -20,6 +34,7 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/resources/eicr-guide</loc><priority>0.7</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/resources/fire-alarm-servicing</loc><priority>0.7</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/resources/landlord-compliance-checklist</loc><priority>0.7</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/resources/hmo-licence-compliance-checklist</loc><priority>0.78</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/resources/emergency-lighting-testing</loc><priority>0.7</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/resources/cctv-for-business</loc><priority>0.7</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/resources/access-control-guide</loc><priority>0.7</priority></url>

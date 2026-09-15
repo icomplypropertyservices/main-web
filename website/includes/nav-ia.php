@@ -37,6 +37,16 @@ if (!function_exists('getPackageHubs')) {
     /** Wave 1 package hubs under /pages/packages/* */
     function getPackageHubs(): array {
         return [
+            'hmo' => [
+                'name' => 'HMO Packages',
+                'tagline' => 'EICR + gas + FRA for licensed HMOs',
+                'audience' => 'Domestic',
+            ],
+            'hmo-compliance' => [
+                'name' => 'HMO Compliance',
+                'tagline' => 'Core HMO certificate bundle',
+                'audience' => 'Domestic',
+            ],
             'let-ready' => [
                 'name' => 'Let Ready',
                 'tagline' => 'Landlord / void compliance pack',

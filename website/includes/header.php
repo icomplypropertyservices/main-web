@@ -2,8 +2,10 @@
 if (!defined('SITE_URL')) {
     require_once __DIR__ . '/../config.php';
 }
+require_once __DIR__ . '/nav-ia.php';
 $services = getServices();
 $areas = getAreas();
+$packageHubs = function_exists('getPackageHubs') ? getPackageHubs() : [];
 $rawPageTitle = trim((string)($pageTitle ?? SITE_NAME));
 if ($rawPageTitle === '') {
     $rawPageTitle = SITE_NAME;
@@ -344,7 +346,29 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
                 </div>
             </div>
 
-            <a href="<?= url('/pages/packages.php') ?>" class="nav-link font-semibold text-[#ff6b00]">Packages</a>
+            <div class="nav-drop">
+                <a href="<?= url('/pages/packages.php') ?>" class="nav-link font-semibold text-[#ff6b00] flex items-center gap-1">
+                    Packages <span class="text-xs opacity-60">▼</span>
+                </a>
+                <div class="nav-panel">
+                    <div class="nav-panel-inner w-80 py-2">
+                        <a href="<?= url('/pages/packages.php') ?>" class="block px-5 py-2.5 font-semibold text-[#ff6b00] hover:bg-zinc-50 border-b">All packages →</a>
+                        <a href="<?= url('/pages/packages/hmo') ?>" class="block px-5 py-2.5 hover:bg-zinc-50 text-black font-semibold">HMO Packages</a>
+                        <a href="<?= url('/pages/packages/hmo-compliance') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-zinc-700 text-sm">HMO Compliance (EICR + gas + FRA)</a>
+                        <?php foreach ($packageHubs as $pkgSlug => $pkg):
+                            if (in_array($pkgSlug, ['hmo', 'hmo-compliance'], true)) {
+                                continue;
+                            }
+                            ?>
+                            <a href="<?= url('/pages/packages/' . rawurlencode($pkgSlug)) ?>" class="block px-5 py-2 hover:bg-zinc-50 text-sm text-black">
+                                <?= htmlspecialchars($pkg['name'], ENT_QUOTES, 'UTF-8') ?>
+                            </a>
+                        <?php endforeach; ?>
+                        <a href="<?= url('/pages/landlords.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-sm text-black border-t">Landlords</a>
+                        <a href="<?= url('/pages/resources/hmo-licence-compliance-checklist') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-sm text-black">HMO licence checklist</a>
+                    </div>
+                </div>
+            </div>
 
             <div class="nav-drop">
                 <a href="<?= url('/pages/site-map.php') ?>" class="nav-link flex items-center gap-1" aria-haspopup="true">
@@ -354,6 +378,7 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
                     <div class="nav-panel-inner w-64 max-h-96 overflow-auto py-2">
                         <a href="<?= url('/pages/about.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">About</a>
                         <a href="<?= url('/pages/packages.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Packages</a>
+                        <a href="<?= url('/pages/packages/hmo') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">HMO packages</a>
                         <a href="<?= url('/pages/pricing.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Pricing guide</a>
                         <a href="<?= url('/pages/landlords.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Landlords</a>
                         <a href="<?= url('/pages/commercial.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Commercial / FM</a>
@@ -418,9 +443,12 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
             <a href="<?= url('/pages/areas/index.php') ?>" class="block px-6 py-2 text-[#ff6b00] text-xs">View all <?= count($areas) ?> areas →</a>
             <a href="<?= url('/pages/manufacturers/index.php') ?>" class="block px-3 py-3 rounded-xl hover:bg-zinc-50 font-semibold">Manufacturers / Brands</a>
             <a href="<?= url('/pages/packages.php') ?>" class="block px-3 py-3 rounded-xl hover:bg-zinc-50 font-semibold text-[#ff6b00]">Packages</a>
+            <a href="<?= url('/pages/packages/hmo') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50">HMO Packages</a>
+            <a href="<?= url('/pages/packages/hmo-compliance') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50">HMO Compliance</a>
             <div class="px-3 pt-3 pb-1 text-xs uppercase tracking-wider text-zinc-400 font-semibold">Explore</div>
             <a href="<?= url('/pages/about.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">About</a>
             <a href="<?= url('/pages/packages.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">Packages</a>
+            <a href="<?= url('/pages/packages/hmo') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">HMO packages</a>
             <a href="<?= url('/pages/pricing.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">Pricing guide</a>
             <a href="<?= url('/pages/landlords.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">Landlords</a>
             <a href="<?= url('/pages/commercial.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">Commercial / FM</a>

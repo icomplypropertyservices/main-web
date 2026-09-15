@@ -117,6 +117,28 @@ $packages = [
         ],
         'wa_text' => 'Hi Icomply, I need a quote for the Full FM compliance package',
     ],
+    [
+        'id' => 'hmo',
+        'name' => 'HMO Compliance',
+        'tagline' => 'EICR + gas safety + fire risk assessment for licensed HMOs',
+        'badge' => 'HMO landlords',
+        'highlight' => false,
+        'price_label' => 'From',
+        'price' => 'POA',
+        'price_note' => 'Scoped per house / licence conditions — fixed quote after survey',
+        'ideal' => 'Licensed and licensable HMO operators in Greater Manchester',
+        'includes' => [
+            'EICR scoped for the HMO installation',
+            'Gas safety certificate (CP12 / CP44 as required)',
+            'Fire risk assessment with prioritised actions',
+            'Single documentation pack for licence / agent files',
+            'Optional add-ons: emergency lighting, fire alarms, fire doors',
+            'Dedicated HMO package page with Stockport & Manchester guides',
+        ],
+        'service_slugs' => ['electrical', 'gas-systems', 'fire-risk-assessments', 'fire-alarms', 'emergency-lighting', 'fire-doors'],
+        'wa_text' => 'Hi Icomply, I need a quote for the HMO Compliance package',
+        'landing' => '/pages/packages/hmo-compliance',
+    ],
 ];
 
 require SITE_ROOT . '/includes/header.php';
@@ -170,7 +192,7 @@ require SITE_ROOT . '/includes/header.php';
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
         <div>
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Choose a package</div>
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Four ways to stay compliant</h2>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Five ways to stay compliant</h2>
             <p class="mt-2 text-zinc-600 max-w-2xl">
                 Packages are starting points — we tailor scope to your buildings, system brands and renewals.
                 Prices are <strong class="text-black">from / POA</strong> only; you always get a fixed quote before work starts.
@@ -241,6 +263,12 @@ require SITE_ROOT . '/includes/header.php';
                 </div>
 
                 <div class="mt-8 flex flex-wrap gap-3">
+                    <?php if (!empty($pkg['landing'])): ?>
+                    <a href="<?= htmlspecialchars(url($pkg['landing']), ENT_QUOTES, 'UTF-8') ?>"
+                       class="px-6 py-3 rounded-2xl bg-[#0a2540] hover:bg-[#ff6b00] text-white font-semibold text-sm">
+                        Package page
+                    </a>
+                    <?php endif; ?>
                     <a href="#quote"
                        class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 text-white font-semibold text-sm"
                        data-package="<?= htmlspecialchars($pkg['name'], ENT_QUOTES, 'UTF-8') ?>">
@@ -273,7 +301,7 @@ require SITE_ROOT . '/includes/header.php';
         <div class="grid md:grid-cols-3 gap-8">
             <?php
             $steps = [
-                ['1', 'Tell us the package', 'Pick Landlord Essentials, Fire, Security or Full FM — plus postcode and property type.'],
+                ['1', 'Tell us the package', 'Pick Landlord Essentials, HMO Compliance, Fire, Security or Full FM — plus postcode and property type.'],
                 ['2', 'We scope & quote', 'We confirm systems, standards and access. Pricing is From / POA until the fixed quote is issued.'],
                 ['3', 'Deliver & certify', 'Engineers complete the works, issue certificates and hand over an audit-ready pack.'],
             ];
@@ -343,6 +371,7 @@ require SITE_ROOT . '/includes/header.php';
                 <select name="service" id="package-service" required class="w-full border px-5 py-3.5 rounded-2xl bg-white">
                     <option value="">Select package…</option>
                     <option value="Landlord Essentials package">Landlord Essentials</option>
+                    <option value="HMO Compliance Package">HMO Compliance</option>
                     <option value="Fire Package">Fire Package</option>
                     <option value="Security Package">Security Package</option>
                     <option value="Full FM package">Full FM</option>
@@ -388,6 +417,7 @@ require SITE_ROOT . '/includes/header.php';
             if (!name) return;
             var map = {
                 'Landlord Essentials': 'Landlord Essentials package',
+                'HMO Compliance': 'HMO Compliance Package',
                 'Fire Package': 'Fire Package',
                 'Security Package': 'Security Package',
                 'Full FM': 'Full FM package'

@@ -202,6 +202,26 @@ $schema = [
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> WhatsApp or phone for a fast response</li>
             </ul>
             <a href="#quote" class="inline-block mt-8 px-6 py-3 bg-[#ff6b00] rounded-2xl font-semibold hover:bg-orange-600">Start your quote</a>
+            <p class="mt-5 text-sm text-white/70">
+                Running an HMO in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>?
+                <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/packages/hmo') ?>">HMO packages</a>
+                (EICR + gas + FRA)
+                <?php
+                $areaSlugLower = strtolower((string) $AREA_SLUG);
+                if (in_array($areaSlugLower, ['stockport', 'manchester'], true)): ?>
+                    ·
+                    <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/hmo-eicr/' . $areaSlugLower) ?>">HMO EICR</a>
+                    ·
+                    <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/hmo-fra/' . $areaSlugLower) ?>">HMO FRA</a>
+                    ·
+                    <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/hmo-gas-safety/' . $areaSlugLower) ?>">HMO gas</a>
+                <?php else: ?>
+                    ·
+                    <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/hmo-eicr') ?>">HMO EICR</a>
+                    ·
+                    <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/hmo-fra') ?>">HMO FRA</a>
+                <?php endif; ?>
+            </p>
         </div>
     </div>
 </section>

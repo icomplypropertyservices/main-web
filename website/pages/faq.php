@@ -65,6 +65,18 @@ $faqs = [
         'link' => ['/pages/services/gas-systems.php', 'Gas systems services'],
     ],
     [
+        'cat' => 'HMO packages',
+        'q' => 'Do you offer an HMO compliance package?',
+        'a' => 'Yes. The HMO compliance package combines an EICR, landlord gas safety (where gas is present) and a fire risk assessment in one visit plan. Emergency lighting, fire alarms and fire doors are optional add-ons if the house needs them. Pricing is POA — we issue a fixed quote after scope. This is not a licence application and not legal advice.',
+        'link' => ['/pages/packages/hmo', 'HMO packages'],
+    ],
+    [
+        'cat' => 'HMO packages',
+        'q' => 'Can you do HMO EICR, FRA or gas safety as standalone jobs?',
+        'a' => 'Yes. Dedicated pages cover HMO EICR, HMO fire risk assessment and HMO gas safety for Greater Manchester, with Stockport and Manchester landings. Book a single certificate if the others are already in date.',
+        'link' => ['/pages/hmo-eicr', 'HMO EICR'],
+    ],
+    [
         'cat' => 'Gas safety',
         'q' => 'Do you service commercial gas plant as well as domestic boilers?',
         'a' => 'Yes. We cover domestic landlord certificates and commercial gas systems where within our competence and registration, including safety checks and planned servicing. Tell us the appliance type and site postcode on the quote form for an accurate scope.',

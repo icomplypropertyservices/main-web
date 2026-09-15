@@ -27,6 +27,15 @@ function resourceRelatedLinks(string $slug): array {
         'landlord-compliance-checklist' => [
             ['href' => url('/pages/services/landlord-compliance'), 'label' => 'Landlord compliance service'],
             ['href' => url('/pages/landlords'), 'label' => 'Landlord services'],
+            ['href' => url('/pages/resources/hmo-licence-compliance-checklist'), 'label' => 'HMO licence checklist'],
+            ['href' => url('/pages/packages/hmo'), 'label' => 'HMO packages'],
+        ],
+        'hmo-licence-compliance-checklist' => [
+            ['href' => url('/pages/packages/hmo-compliance'), 'label' => 'HMO compliance package'],
+            ['href' => url('/pages/hmo-eicr'), 'label' => 'HMO EICR'],
+            ['href' => url('/pages/hmo-fra'), 'label' => 'HMO fire risk assessment'],
+            ['href' => url('/pages/hmo-gas-safety'), 'label' => 'HMO gas safety'],
+            ['href' => url('/pages/landlords'), 'label' => 'Landlord services'],
         ],
     ];
     return $map[$slug] ?? [];
