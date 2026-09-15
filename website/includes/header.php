@@ -347,6 +347,27 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
             <a href="<?= url('/pages/packages.php') ?>" class="nav-link font-semibold text-[#ff6b00]">Packages</a>
 
             <div class="nav-drop">
+                <a href="<?= url('/pages/resources/index.php') ?>" class="nav-link flex items-center gap-1" aria-haspopup="true">
+                    Resources <span class="text-xs opacity-60">▼</span>
+                </a>
+                <div class="nav-panel">
+                    <div class="nav-panel-inner w-72 max-h-96 overflow-auto py-2">
+                        <a href="<?= url('/pages/resources/index.php') ?>" class="block px-5 py-2.5 font-semibold text-[#ff6b00] hover:bg-zinc-50 border-b">All resources →</a>
+                        <a href="<?= url('/pages/resources/index.php') ?>#fortnight" class="block px-5 py-2 hover:bg-zinc-50 text-black">Fortnight guides</a>
+                        <a href="<?= url('/pages/landlord-certificates') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Landlord certificates</a>
+                        <a href="<?= url('/pages/gas-safety-certificate') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Gas safety certificate</a>
+                        <a href="<?= url('/pages/fire-risk-assessment') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Fire risk assessment</a>
+                        <a href="<?= url('/pages/electrical-safety-landlords') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Electrical safety</a>
+                        <a href="<?= url('/pages/commercial-fire-safety') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Commercial fire safety</a>
+                        <a href="<?= url('/pages/stockport-property-compliance') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Stockport</a>
+                        <a href="<?= url('/pages/manchester-property-compliance') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Manchester</a>
+                        <a href="<?= url('/pages/resources/eicr-guide.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black border-t">EICR guide</a>
+                        <a href="<?= url('/pages/site-map.php') ?>#resources" class="block px-5 py-2 hover:bg-zinc-50 text-[#ff6b00] text-sm font-semibold">Full list on site map →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-drop">
                 <a href="<?= url('/pages/site-map.php') ?>" class="nav-link flex items-center gap-1" aria-haspopup="true">
                     More <span class="text-xs opacity-60">▼</span>
                 </a>
@@ -428,7 +449,12 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
             <a href="<?= url('/pages/ev-chargers.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">EV chargers</a>
             <a href="<?= url('/pages/maintenance.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">Maintenance contracts</a>
             <a href="<?= url('/pages/emergency.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">Emergency call-out</a>
-            <a href="<?= url('/pages/resources/index.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">Resources</a>
+            <a href="<?= url('/pages/resources/index.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50 font-semibold">Resources</a>
+            <a href="<?= url('/pages/resources/index.php') ?>#fortnight" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50">Fortnight guides</a>
+            <a href="<?= url('/pages/landlord-certificates') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50">Landlord certificates</a>
+            <a href="<?= url('/pages/gas-safety-certificate') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50">Gas safety certificate</a>
+            <a href="<?= url('/pages/fire-risk-assessment') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50">Fire risk assessment</a>
+            <a href="<?= url('/pages/commercial-fire-safety') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50">Commercial fire safety</a>
             <a href="<?= url('/pages/keywords/index.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">Keyword guides</a>
             <a href="<?= url('/pages/faq.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">FAQ</a>
             <a href="<?= url('/pages/reviews.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">Reviews</a>

@@ -93,6 +93,28 @@ function icomplySitemapEntries(): array
         }
     }
 
+    // All resource articles (existing + wave-1 fortnight guides).
+    foreach (glob(SITE_ROOT . '/pages/resources/*.php') ?: [] as $resFile) {
+        $base = basename($resFile, '.php');
+        if ($base === 'index') {
+            continue;
+        }
+        $add('/pages/resources/' . $base, '0.7');
+    }
+
+    // Quality SEO hubs (wave 1). Never include HMO package landings from PR #3.
+    if (!function_exists('wave1SitemapEntries')) {
+        $wave1 = SITE_ROOT . '/includes/wave1.php';
+        if (is_file($wave1)) {
+            require_once $wave1;
+        }
+    }
+    if (function_exists('wave1SitemapEntries')) {
+        foreach (wave1SitemapEntries() as $w) {
+            $add($w['path'], $w['priority']);
+        }
+    }
+
     if (function_exists('getServices')) {
         foreach (array_keys(getServices()) as $slug) {
             $add('/pages/services/' . $slug, '0.85');

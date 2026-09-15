@@ -28,6 +28,62 @@ function resourceRelatedLinks(string $slug): array {
             ['href' => url('/pages/services/landlord-compliance'), 'label' => 'Landlord compliance service'],
             ['href' => url('/pages/landlords'), 'label' => 'Landlord services'],
         ],
+        'gas-safety-certificate-landlords' => [
+            ['href' => url('/pages/gas-safety-certificate'), 'label' => 'Gas safety certificate hub'],
+            ['href' => url('/pages/services/gas-systems'), 'label' => 'Gas systems'],
+        ],
+        'fire-risk-assessment-guide' => [
+            ['href' => url('/pages/fire-risk-assessment'), 'label' => 'Fire risk assessment hub'],
+            ['href' => url('/pages/services/fire-risk-assessments'), 'label' => 'FRA service'],
+        ],
+        'smoke-and-co-alarms' => [
+            ['href' => url('/pages/smoke-carbon-monoxide-alarms'), 'label' => 'Smoke & CO hub'],
+            ['href' => url('/pages/services/smoke-co-alarms'), 'label' => 'Smoke & CO alarms'],
+        ],
+        'pat-testing-guide' => [
+            ['href' => url('/pages/portable-appliance-testing'), 'label' => 'PAT testing hub'],
+            ['href' => url('/pages/services/pat-testing'), 'label' => 'PAT testing'],
+        ],
+        'epc-for-landlords' => [
+            ['href' => url('/pages/energy-performance-certificates'), 'label' => 'EPC hub'],
+            ['href' => url('/pages/services/epc'), 'label' => 'EPC service'],
+        ],
+        'fire-door-inspection' => [
+            ['href' => url('/pages/fire-door-compliance'), 'label' => 'Fire door hub'],
+            ['href' => url('/pages/services/fire-doors'), 'label' => 'Fire doors'],
+        ],
+        'fire-extinguisher-servicing' => [
+            ['href' => url('/pages/commercial-fire-safety'), 'label' => 'Commercial fire hub'],
+            ['href' => url('/pages/services/fire-extinguishers'), 'label' => 'Fire extinguishers'],
+        ],
+        'kitchen-fire-suppression-guide' => [
+            ['href' => url('/pages/services/kitchen-fire-suppression'), 'label' => 'Kitchen fire suppression'],
+            ['href' => url('/pages/commercial-fire-safety'), 'label' => 'Commercial fire hub'],
+        ],
+        'let-ready-void-checklist' => [
+            ['href' => url('/pages/landlord-certificates'), 'label' => 'Landlord certificates hub'],
+            ['href' => url('/pages/packages/let-ready'), 'label' => 'Let Ready package'],
+        ],
+        'commercial-fire-safety-basics' => [
+            ['href' => url('/pages/commercial-fire-safety'), 'label' => 'Commercial fire hub'],
+            ['href' => url('/pages/commercial'), 'label' => 'Commercial / FM'],
+        ],
+        'care-home-fire-and-nurse-call' => [
+            ['href' => url('/pages/care-homes'), 'label' => 'Care homes'],
+            ['href' => url('/pages/services/nurse-call'), 'label' => 'Nurse call'],
+        ],
+        'electrical-safety-rented-homes' => [
+            ['href' => url('/pages/electrical-safety-landlords'), 'label' => 'Electrical safety hub'],
+            ['href' => url('/pages/resources/eicr-guide'), 'label' => 'EICR guide'],
+        ],
+        'booking-compliance-certificates' => [
+            ['href' => url('/contact'), 'label' => 'Contact / quote'],
+            ['href' => url('/pages/landlord-certificates'), 'label' => 'Landlord certificates'],
+        ],
+        'greater-manchester-property-compliance' => [
+            ['href' => url('/pages/stockport-property-compliance'), 'label' => 'Stockport hub'],
+            ['href' => url('/pages/manchester-property-compliance'), 'label' => 'Manchester hub'],
+        ],
     ];
     return $map[$slug] ?? [];
 }

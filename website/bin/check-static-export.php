@@ -28,6 +28,9 @@ $needHtml = [
     '/pages/areas' => ['pages/areas.php', ['Areas', '<!DOCTYPE']],
     '/pages/manufacturers' => ['pages/manufacturers.php', ['Manufacturer', '<!DOCTYPE']],
     '/pages/resources' => ['pages/resources.php', ['Resource', '<!DOCTYPE']],
+    '/pages/resources/gas-safety-certificate-landlords' => ['pages/resources/gas-safety-certificate-landlords.php', ['gas safety', '<!DOCTYPE']],
+    '/pages/landlord-certificates' => ['pages/landlord-certificates.php', ['Landlord certificates', '<!DOCTYPE']],
+    '/pages/fire-risk-assessment' => ['pages/fire-risk-assessment.php', ['Fire risk', '<!DOCTYPE']],
 ];
 
 echo "Icomply static-export check  dist={$dist}\n";

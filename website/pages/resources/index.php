@@ -4,6 +4,7 @@
  */
 require_once __DIR__ . '/../../config.php';
 require_once SITE_ROOT . '/includes/share.php';
+require_once SITE_ROOT . '/includes/wave1.php';
 
 $pageTitle = 'Resources & Guides | Property Compliance North West';
 $metaDesc = 'Free property compliance guides for landlords, facilities managers and commercial sites — EICR, fire alarm servicing, emergency lighting testing, CCTV, access control, landlord checklists and keyword guides across the North West.';
@@ -178,6 +179,52 @@ require SITE_ROOT . '/includes/header.php';
             </div>
         </a>
         <?php endforeach; ?>
+    </div>
+</section>
+
+<!-- FORTNIGHT GUIDES -->
+<section id="fortnight" class="bg-white border-t">
+    <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+            <div>
+                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Fortnight guides</div>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Days 1–14</h2>
+                <p class="mt-2 text-zinc-600 max-w-2xl">Fourteen new resource articles — Batch A (days 1–5) then Batch B (days 6–14). Educational copy, quotes via contact, no published price list.</p>
+            </div>
+            <a href="<?= url('/pages/landlord-certificates') ?>" class="text-sm font-semibold text-[#ff6b00]">Landlord certificates hub →</a>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <?php foreach (wave1FortnightGuides() as $slug => $g): ?>
+            <a href="<?= url('/pages/resources/' . $slug . '.php') ?>"
+               class="service-card group bg-zinc-50 border border-zinc-200 rounded-3xl p-6 hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
+                <div class="text-xs uppercase tracking-[2px] text-[#ff6b00] font-semibold">Day <?= (int)$g['day'] ?> · <?= htmlspecialchars($g['tag'], ENT_QUOTES, 'UTF-8') ?></div>
+                <h2 class="font-semibold text-xl text-black tracking-tight mt-2"><?= htmlspecialchars($g['cardTitle'], ENT_QUOTES, 'UTF-8') ?></h2>
+                <p class="text-sm text-zinc-600 mt-2 flex-1"><?= htmlspecialchars($g['blurb'], ENT_QUOTES, 'UTF-8') ?></p>
+                <span class="mt-5 text-sm font-semibold text-[#ff6b00]">Read article →</span>
+            </a>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
+<!-- QUALITY HUBS -->
+<section id="hubs" class="bg-zinc-50 border-y">
+    <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div class="mb-10">
+            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Quality hubs</div>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">High-intent landings</h2>
+            <p class="mt-2 text-zinc-600 max-w-2xl">Twelve substantial hubs — not area×keyword doorway pages, and not HMO package landings (those stay on their own PR).</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <?php foreach (wave1QualityHubs() as $slug => $h): ?>
+            <a href="<?= url('/pages/' . $slug) ?>"
+               class="bg-white border border-zinc-200 rounded-3xl p-7 hover:border-[#ff6b00] hover:shadow-lg transition group">
+                <h3 class="font-semibold text-xl text-black tracking-tight group-hover:text-[#ff6b00] transition"><?= htmlspecialchars($h['navLabel'], ENT_QUOTES, 'UTF-8') ?></h3>
+                <p class="text-sm text-zinc-600 mt-2"><?= htmlspecialchars($h['lede'], ENT_QUOTES, 'UTF-8') ?></p>
+                <span class="inline-block mt-5 text-sm font-semibold text-[#ff6b00]">Open hub →</span>
+            </a>
+            <?php endforeach; ?>
+        </div>
     </div>
 </section>
 
