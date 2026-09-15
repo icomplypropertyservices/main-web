@@ -15,7 +15,7 @@ $canonicalUrl = url('/pages/areas');
 $categories = getServiceCategories();
 
 $featured = array_values(array_filter(
-    ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool', 'Trafford', 'Glossop', 'Buxton'],
+    ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool', 'Trafford', 'Glossop', 'Buxton', 'Burnley', 'Bradford', 'Leeds', 'Halifax', 'Skipton', 'Keighley', 'Huddersfield', 'Hebden Bridge'],
     function ($t) use ($areas) {
         return in_array($t, $areas, true);
     }
@@ -137,6 +137,33 @@ require SITE_ROOT . '/includes/header.php';
         <?php endforeach; ?>
     </div>
 </section>
+
+<?php if (function_exists('seoIaRadiusOnlyAreaSlugs')):
+    $radiusTowns = [];
+    foreach (seoIaRadiusOnlyAreaSlugs() as $rSlug) {
+        $rName = areaFromSlug($rSlug);
+        if ($rName) {
+            $radiusTowns[] = $rName;
+        }
+    }
+    if ($radiusTowns):
+?>
+<section class="bg-white border-y">
+    <div class="max-w-7xl mx-auto px-6 py-16">
+        <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Burnley ~50 miles</div>
+        <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Towns in the Burnley radius</h2>
+        <p class="mt-2 text-zinc-600 max-w-2xl">Area hubs for Pendle, Calderdale, Craven, Aire Valley and nearby cities — unique title, FAQ and job links. Quotes POA / enquire.</p>
+        <div class="mt-8 flex flex-wrap gap-2">
+            <?php foreach ($radiusTowns as $town): ?>
+                <a href="<?= url('/pages/areas/' . areaSlug($town) . '.php') ?>"
+                   class="px-4 py-2 bg-zinc-50 border rounded-full text-sm font-medium hover:border-[#ff6b00]">
+                    <?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?>
+                </a>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+<?php endif; endif; ?>
 
 <!-- POPULAR COMBOS -->
 <section class="bg-zinc-50 border-y">

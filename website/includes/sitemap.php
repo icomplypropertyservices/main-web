@@ -121,8 +121,8 @@ function icomplySitemapEntries(): array
             $wave1Ok = true;
         }
         if (preg_match('#^/pages/areas/([a-z0-9\-]+)$#', $path, $wa)
-            && function_exists('seoIaWave1AreaSlugs')
-            && in_array($wa[1], seoIaWave1AreaSlugs(), true)) {
+            && function_exists('areaFromSlug')
+            && areaFromSlug($wa[1]) !== null) {
             $wave1Ok = true;
         }
         if (!$isKeywordLoc && !$wave1Ok && !icomplySitemapUrlHasFile($path)) {
@@ -214,9 +214,9 @@ function icomplySitemapEntries(): array
             $add('/pages/manufacturers/' . areaSlug((string)$mfrSlug), '0.74');
         }
     }
-    if (function_exists('seoIaWave1AreaSlugs')) {
-        foreach (seoIaWave1AreaSlugs() as $areaSlugVal) {
-            $add('/pages/areas/' . areaSlug((string)$areaSlugVal), '0.65');
+    if (function_exists('getAreas') && function_exists('areaSlug')) {
+        foreach (getAreas() as $areaName) {
+            $add('/pages/areas/' . areaSlug((string)$areaName), '0.6');
         }
     }
 

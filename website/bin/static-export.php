@@ -247,6 +247,18 @@ function icomplyCollectKeywordRoutes(string $townMode): array
             $familyKw[keywordSlug($slug)] = true;
         }
     }
+    $radiusOnly = [];
+    if (function_exists('seoIaRadiusOnlyAreaSlugs')) {
+        foreach (seoIaRadiusOnlyAreaSlugs() as $rs) {
+            $radiusOnly[areaSlug((string)$rs)] = true;
+        }
+    }
+    $radiusKw = [];
+    if (function_exists('seoIaRadiusKeywordSlugs')) {
+        foreach (seoIaRadiusKeywordSlugs() as $rk) {
+            $radiusKw[keywordSlug((string)$rk)] = true;
+        }
+    }
 
     foreach ($keywords as $kw) {
         $slug = keywordSlug($kw);
@@ -259,7 +271,12 @@ function icomplyCollectKeywordRoutes(string $townMode): array
             $towns = $popularTowns;
         }
         foreach ($towns as $area) {
-            $routes[] = '/pages/keywords/' . $slug . '/' . areaSlug((string)$area);
+            $townSlug = areaSlug((string)$area);
+            // Burnley-radius hubs are live; do not explode the full keyword matrix for them.
+            if (isset($radiusOnly[$townSlug]) && !isset($radiusKw[$slug])) {
+                continue;
+            }
+            $routes[] = '/pages/keywords/' . $slug . '/' . $townSlug;
         }
     }
 
@@ -341,9 +358,13 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         $routes[] = $path;
     }
 
-    // Jack: every service has every area landing (not only --full).
+    // Jack: every service has every historic area landing (not only --full).
+    // Burnley-radius towns get area hubs + money-job keyword pages only.
     foreach (array_keys(getServices()) as $sSlug) {
         foreach (getAreas() as $area) {
+            if (function_exists('seoIaIsRadiusOnlyArea') && seoIaIsRadiusOnlyArea((string)$area)) {
+                continue;
+            }
             $routes[] = '/pages/' . $sSlug . '/' . areaSlug((string)$area);
         }
     }

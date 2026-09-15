@@ -208,7 +208,10 @@ function keywordAreaLinksHtml(string $area, ?array $extraSlugs = null, int $limi
     $areaSlug = areaSlug($area);
     $all = getMajorKeywords();
     $slugs = [];
-    if ($limit === 0) {
+    if ($limit === 0 && function_exists('seoIaIsRadiusOnlyArea') && seoIaIsRadiusOnlyArea($area)
+        && function_exists('seoIaRadiusKeywordSlugs')) {
+        $slugs = seoIaRadiusKeywordSlugs();
+    } elseif ($limit === 0) {
         $slugs = array_keys($all);
     } else {
         $slugs = getPopularKeywordSlugs();

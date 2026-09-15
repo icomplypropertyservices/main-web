@@ -48,6 +48,21 @@ foreach (['trafford', 'glossop', 'buxton'] as $areaSlug) {
     }
 }
 
+$radiusNeed = function_exists('seoIaBurnleyRadiusRequiredSlugs')
+    ? seoIaBurnleyRadiusRequiredSlugs()
+    : [];
+$radiusMissing = [];
+foreach ($radiusNeed as $areaSlug) {
+    if (areaFromSlug($areaSlug) === null) {
+        $radiusMissing[] = $areaSlug;
+    }
+}
+if ($radiusMissing) {
+    $bad('Burnley-radius missing: ' . implode(', ', $radiusMissing));
+} else {
+    $ok(count($radiusNeed) . ' Burnley-radius required slugs present');
+}
+
 foreach (seoIaWave1ManufacturerSlugs() as $slug) {
     $entry = getManufacturerBySlug($slug);
     if (!$entry) {
@@ -105,15 +120,18 @@ foreach ($sampleMfr as $slug) {
     }
 }
 
-foreach (['Trafford', 'Glossop', 'Buxton'] as $area) {
+foreach (['Trafford', 'Glossop', 'Buxton', 'Keighley', 'Hebden Bridge', 'Leeds', 'Worsthorne', 'Skipton'] as $area) {
     ob_start();
     renderAreaHubPage($area);
     $html = (string)ob_get_clean();
     $missing = [];
-    foreach (['<h1', 'FAQPage', htmlspecialchars($area, ENT_QUOTES, 'UTF-8'), 'og:image'] as $n) {
+    foreach (['<h1', 'FAQPage', htmlspecialchars($area, ENT_QUOTES, 'UTF-8'), 'og:image', '#0B1F3A'] as $n) {
         if (!str_contains($html, $n)) {
             $missing[] = $n;
         }
+    }
+    if (preg_match('/£\s*\d/', $html)) {
+        $missing[] = 'invented-£-price';
     }
     if ($missing) {
         $bad("area {$area} " . implode(', ', $missing));
@@ -125,7 +143,7 @@ foreach (['Trafford', 'Glossop', 'Buxton'] as $area) {
 require_once SITE_ROOT . '/includes/sitemap.php';
 $entries = icomplySitemapEntries();
 $paths = array_column($entries, 'path');
-foreach (['/pages/keywords/eicr', '/pages/keywords/epc', '/pages/keywords/fire-door-compliance', '/pages/manufacturers/advanced', '/pages/manufacturers/ventlux', '/pages/areas/trafford', '/pages/areas/glossop', '/pages/areas/buxton'] as $need) {
+foreach (['/pages/keywords/eicr', '/pages/keywords/epc', '/pages/keywords/fire-door-compliance', '/pages/manufacturers/advanced', '/pages/manufacturers/ventlux', '/pages/areas/trafford', '/pages/areas/glossop', '/pages/areas/buxton', '/pages/areas/keighley', '/pages/areas/hebden-bridge', '/pages/areas/leeds', '/pages/areas/worsthorne', '/pages/areas/skipton', '/pages/areas/church'] as $need) {
     if (!in_array($need, $paths, true)) {
         $bad("sitemap missing {$need}");
     } else {

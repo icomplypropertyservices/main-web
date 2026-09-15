@@ -65,11 +65,32 @@ function seoIaIsWave1Manufacturer(string $slug): bool
         || isset(seoIaManufacturerAliases()[$slug]);
 }
 
+function seoIaBurnleyRadiusData(): array
+{
+    static $data = null;
+    if ($data !== null) {
+        return $data;
+    }
+    $file = SITE_ROOT . '/data/burnley-radius-areas.json';
+    if (!is_file($file)) {
+        return $data = [];
+    }
+    $decoded = json_decode((string)file_get_contents($file), true);
+    return $data = (is_array($decoded) ? $decoded : []);
+}
+
 /** @return list<array<string, mixed>> */
 function seoIaWave1Areas(): array
 {
     $areas = seoIaData()['areas'] ?? [];
-    return is_array($areas) ? $areas : [];
+    $out = is_array($areas) ? $areas : [];
+    foreach (seoIaBurnleyRadiusData()['towns'] ?? [] as $row) {
+        if (!is_array($row) || empty($row['name'])) {
+            continue;
+        }
+        $out[] = seoIaRadiusTownOverlay($row);
+    }
+    return $out;
 }
 
 /** @return list<string> */
@@ -82,7 +103,64 @@ function seoIaWave1AreaSlugs(): array
             $out[] = $slug;
         }
     }
+    return array_values(array_unique($out));
+}
+
+/** Jack Burnley ~50mi slugs (existing + new). */
+function seoIaBurnleyRadiusRequiredSlugs(): array
+{
+    $raw = seoIaBurnleyRadiusData()['required_slugs'] ?? [];
+    $out = [];
+    foreach (is_array($raw) ? $raw : [] as $slug) {
+        $slug = areaSlug((string)$slug);
+        if ($slug !== '') {
+            $out[] = $slug;
+        }
+    }
     return $out;
+}
+
+/** Slugs created for the Burnley radius (not already on the historic list). */
+function seoIaRadiusOnlyAreaSlugs(): array
+{
+    $out = [];
+    foreach (seoIaBurnleyRadiusData()['towns'] ?? [] as $row) {
+        if (!is_array($row)) {
+            continue;
+        }
+        $slug = areaSlug((string)($row['slug'] ?? $row['name'] ?? ''));
+        if ($slug !== '') {
+            $out[] = $slug;
+        }
+    }
+    return $out;
+}
+
+function seoIaIsRadiusOnlyArea(string $areaNameOrSlug): bool
+{
+    return in_array(areaSlug($areaNameOrSlug), seoIaRadiusOnlyAreaSlugs(), true);
+}
+
+/**
+ * @param array<string, mixed> $row
+ * @return array<string, mixed>
+ */
+function seoIaRadiusTownOverlay(array $row): array
+{
+    $name = trim((string)($row['name'] ?? ''));
+    $slug = areaSlug((string)($row['slug'] ?? $name));
+    $cluster = trim((string)($row['cluster'] ?? 'North West'));
+    $note = trim((string)($row['note'] ?? 'local housing and commercial stock'));
+    return [
+        'name' => $name,
+        'slug' => $slug,
+        'seo_title' => $name . ' Property Compliance | EICR, FRA & Gas',
+        'h1' => 'Property compliance in ' . $name,
+        'meta_desc' => 'EICR, fire risk assessment, gas safety and landlord certificates in ' . $name
+            . ' (' . $cluster . '). Stockport engineers, POA quotes — no invented £ prices.',
+        'lede' => $name . ' sits in the ' . $cluster . ' radius from Burnley — ' . $note
+            . '. iComply attends from Stockport SK2 for EICR certificates, fire risk assessments, CP12 / gas safety and fire systems. Quotes are written POA after we know the property.',
+    ];
 }
 
 /** @param list<string> $areas */
@@ -116,6 +194,22 @@ function seoIaAreaOverlay(string $areaNameOrSlug): ?array
         }
     }
     return null;
+}
+
+/** Money + popular job slugs to pair with Burnley-radius towns (not the full matrix). */
+function seoIaRadiusKeywordSlugs(): array
+{
+    $out = [];
+    foreach (seoIaWave1JobSlugs() as $slug) {
+        $out[keywordSlug((string)$slug)] = true;
+    }
+    if (function_exists('getPopularKeywordSlugs')) {
+        foreach (getPopularKeywordSlugs() as $slug) {
+            $out[keywordSlug((string)$slug)] = true;
+        }
+    }
+    unset($out['']);
+    return array_keys($out);
 }
 
 /**
