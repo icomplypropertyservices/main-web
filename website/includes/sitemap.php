@@ -1,10 +1,11 @@
 <?php
 /**
- * Compact, accurate sitemap — core pages + hubs + resources + services +
- * areas + manufacturers + keyword hubs.
+ * Compact, accurate sitemap — only URLs that exist on the deploy.
  * Never includes keyword×area (the 200k+ junk that made live generate 470 parts / 500).
- * Never lists synthetic /pages/{service}/{town} unless a real PHP file exists
- * (prod 404'd ~118 Stockport/Manchester service×town locs).
+ * Never lists synthetic /pages/{service}/{town} unless a real file exists.
+ * Never lists /pages/services* or /pages/keywords/{slug} from the catalogue
+ * unless the built HTML/PHP file is on disk (Quality 404'd ~58/60 services
+ * and ~75/80 keyword samples). Do not mass-build thin pages to fill gaps.
  */
 declare(strict_types=1);
 
@@ -22,6 +23,46 @@ function icomplySitemapBannedPaths(): array
         '/terms-and-conditions/' => true,
         '/thank-you' => true,
     ];
+}
+
+/** Prefer dist/ (what Netlify publishes) when a build is present. */
+function icomplySitemapPublishRoot(): string
+{
+    $dist = dirname(SITE_ROOT) . DIRECTORY_SEPARATOR . 'dist';
+    if (is_dir($dist) && is_file($dist . DIRECTORY_SEPARATOR . 'index.html')) {
+        return $dist;
+    }
+    return SITE_ROOT;
+}
+
+/** True when the pretty URL has a built file on the publish root. */
+function icomplySitemapUrlHasFile(string $urlPath): bool
+{
+    $urlPath = '/' . ltrim(str_replace('\\', '/', $urlPath), '/');
+    $urlPath = preg_replace('#\.php$#i', '', $urlPath) ?? $urlPath;
+    $urlPath = preg_replace('#/index$#i', '', $urlPath) ?? $urlPath;
+    if ($urlPath === '') {
+        $urlPath = '/';
+    }
+    $root = icomplySitemapPublishRoot();
+    if ($urlPath === '/') {
+        return is_file($root . DIRECTORY_SEPARATOR . 'index.html')
+            || is_file($root . DIRECTORY_SEPARATOR . 'index.php');
+    }
+    $rel = ltrim($urlPath, '/');
+    $candidates = [
+        $rel . '.php',
+        $rel . '.html',
+        $rel . DIRECTORY_SEPARATOR . 'index.php',
+        $rel . DIRECTORY_SEPARATOR . 'index.html',
+        $rel,
+    ];
+    foreach ($candidates as $c) {
+        if (is_file($root . DIRECTORY_SEPARATOR . $c)) {
+            return true;
+        }
+    }
+    return false;
 }
 
 /**
@@ -49,13 +90,27 @@ function icomplySitemapEntries(): array
         if (preg_match('#-photo\.(jpe?g|png)$#i', $path)) {
             return;
         }
+        // /pages/{service}/{town} 404s on prod — never list, even if a leftover
+        // matrix file sits in dist/. Keep only real hub prefixes.
+        if (preg_match('#^/pages/([^/]+)/([^/]+)$#', $path, $m)) {
+            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources'];
+            if (!in_array($m[1], $okPrefix, true)) {
+                return;
+            }
+        }
+        // Never advertise a loc that 404s on the deploy.
+        if (!icomplySitemapUrlHasFile($path)) {
+            return;
+        }
         $seen[$path] = true;
         $entries[] = ['path' => $path, 'priority' => $priority];
     };
 
-    $exists = static function (string $relPath): bool {
+    $publish = icomplySitemapPublishRoot();
+    $exists = static function (string $relPath) use ($publish): bool {
         $relPath = ltrim(str_replace(['/', '\\'], DIRECTORY_SEPARATOR, $relPath), DIRECTORY_SEPARATOR);
-        return is_file(SITE_ROOT . DIRECTORY_SEPARATOR . $relPath);
+        return is_file($publish . DIRECTORY_SEPARATOR . $relPath)
+            || is_file(SITE_ROOT . DIRECTORY_SEPARATOR . $relPath);
     };
 
     $static = [
@@ -99,8 +154,8 @@ function icomplySitemapEntries(): array
         }
     }
 
-    // All resource articles (existing + wave-1 fortnight guides).
-    foreach (glob(SITE_ROOT . '/pages/resources/*.php') ?: [] as $resFile) {
+    // Resource articles that exist on the publish root (not source-only).
+    foreach (glob($publish . '/pages/resources/*.php') ?: [] as $resFile) {
         $base = basename($resFile, '.php');
         if ($base === 'index') {
             continue;
@@ -121,43 +176,36 @@ function icomplySitemapEntries(): array
         }
     }
 
-    if (function_exists('getServices')) {
-        foreach (array_keys(getServices()) as $slug) {
-            $add('/pages/services/' . $slug, '0.85');
+    // Service / manufacturer / area / keyword hubs: only files that exist
+    // on the publish root. Do not emit the full catalogue (Quality 404).
+    foreach (glob($publish . '/pages/services/*.php') ?: [] as $svcFile) {
+        $base = basename($svcFile, '.php');
+        if ($base === 'index') {
+            continue;
         }
+        $add('/pages/services/' . $base, '0.85');
     }
-    if (function_exists('getManufacturerCatalog')) {
-        foreach (array_keys(getManufacturerCatalog()) as $slug) {
-            $add('/pages/manufacturers/' . $slug, '0.72');
+    foreach (glob($publish . '/pages/manufacturers/*.php') ?: [] as $mFile) {
+        $base = basename($mFile, '.php');
+        if ($base === 'index') {
+            continue;
         }
+        $add('/pages/manufacturers/' . $base, '0.72');
     }
-    if (function_exists('getAreas') && function_exists('areaSlug')) {
-        foreach (getAreas() as $area) {
-            $add('/pages/areas/' . areaSlug($area), '0.6');
+    foreach (glob($publish . '/pages/areas/*.php') ?: [] as $aFile) {
+        $base = basename($aFile, '.php');
+        if ($base === 'index') {
+            continue;
         }
+        $add('/pages/areas/' . $base, '0.6');
     }
-    // Keyword hubs only — not keyword × area (that explosion 500'd live sitemap.xml).
-    // Skip at request time: keywords.json is 3MB+ and is what OOMs the live 500.
-    $requestSafe = !empty($GLOBALS['ICOMPLY_SITEMAP_REQUEST_SAFE']);
-    if (!$requestSafe && function_exists('getMajorKeywords') && function_exists('keywordSlug')) {
-        foreach (array_keys(getMajorKeywords()) as $kw) {
-            $add('/pages/keywords/' . keywordSlug($kw), '0.68');
+    foreach (glob($publish . '/pages/keywords/*.php') ?: [] as $kwFile) {
+        $base = basename($kwFile, '.php');
+        if ($base === 'index') {
+            continue;
         }
+        $add('/pages/keywords/' . $base, '0.68');
     }
-    // Service × town: only real files. Do not invent thin /pages/{service}/{town}
-    // rows — live sitemap listed ~114–120 Stockport/Manchester locs that 404.
-    if (function_exists('getServices') && function_exists('getAreas') && function_exists('areaSlug')) {
-        foreach (array_keys(getServices()) as $sSlug) {
-            foreach (getAreas() as $area) {
-                $town = areaSlug((string)$area);
-                $rel = 'pages/' . $sSlug . '/' . $town . '.php';
-                if ($exists($rel)) {
-                    $add('/pages/' . $sSlug . '/' . $town, '0.55');
-                }
-            }
-        }
-    }
-
     return $entries;
 }
 
@@ -239,6 +287,10 @@ function icomplyWriteSitemapFiles(string $baseUrl): array
     $xml = icomplyBuildSitemapXml($baseUrl);
     $file = SITE_ROOT . '/sitemap.xml';
     file_put_contents($file, $xml);
+    $distMap = dirname(SITE_ROOT) . DIRECTORY_SEPARATOR . 'dist' . DIRECTORY_SEPARATOR . 'sitemap.xml';
+    if (is_dir(dirname($distMap))) {
+        file_put_contents($distMap, $xml);
+    }
 
     $base = rtrim($baseUrl, '/');
     if (str_contains($base, 'localhost') || str_contains($base, '127.0.0.1')) {

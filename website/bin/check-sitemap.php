@@ -27,6 +27,9 @@ $bannedNeedles = [
     '/pages/gas-systems/manchester', // service×town 404 on prod
     '/pages/epc/stockport',
     '/pages/emergency-lighting/stockport',
+    '/pages/keywords/eicr-cost</loc>', // keyword hub 404 on draft
+    '/pages/keywords/eicr-near-me</loc>',
+    '/pages/keywords/aov-system</loc>',
 ];
 foreach ($bannedNeedles as $n) {
     if (str_contains($xml, $n)) {
@@ -56,24 +59,14 @@ $required = [
     '/pages/manufacturers</loc>',
     '/pages/resources</loc>',
     '/pages/resources/eicr-guide</loc>',
-    '/pages/resources/fire-alarm-servicing</loc>',
-    '/pages/resources/emergency-lighting-testing</loc>',
-    '/pages/resources/cctv-for-business</loc>',
-    '/pages/resources/access-control-guide</loc>',
-    '/pages/resources/landlord-compliance-checklist</loc>',
     '/pages/resources/gas-safety-certificate-landlords</loc>',
     '/pages/landlord-certificates</loc>',
-    '/pages/gas-safety-certificate</loc>',
     '/pages/fire-risk-assessment</loc>',
-    '/pages/stockport-property-compliance</loc>',
-    '/pages/manchester-property-compliance</loc>',
-    '/pages/services/fire-risk-assessments</loc>',
+    '/pages/keywords/eicr</loc>',
     '/pages/services/legionella-risk-assessment</loc>',
     '/pages/services/asbestos-survey</loc>',
     '/pages/resources/legionella-risk-assessment</loc>',
     '/pages/resources/asbestos-survey</loc>',
-    '/pages/legionella-landlords</loc>',
-    '/pages/asbestos-landlords</loc>',
     '/shop</loc>',
     '/products</loc>',
     '/privacy</loc>',
@@ -86,9 +79,31 @@ foreach ($required as $n) {
     }
 }
 
+// Every remaining /pages/services* and /pages/keywords/{slug} loc must have a file.
+if (preg_match_all('#<loc>https://icomplypropertyservices\.co\.uk(/pages/services(?:/[^<]+)?)</loc>#', $xml, $sm)) {
+    foreach ($sm[1] as $path) {
+        if (!icomplySitemapUrlHasFile($path)) {
+            echo "FAIL: sitemap services loc has no deploy file: {$path}\n";
+            $fail++;
+        }
+    }
+}
+if (preg_match_all('#<loc>https://icomplypropertyservices\.co\.uk(/pages/keywords/[^<]+)</loc>#', $xml, $km)) {
+    foreach ($km[1] as $path) {
+        if (!icomplySitemapUrlHasFile($path)) {
+            echo "FAIL: sitemap keyword loc has no deploy file: {$path}\n";
+            $fail++;
+        }
+        if (substr_count($path, '/') > 3) {
+            echo "FAIL: keyword×town loc leaked into sitemap: {$path}\n";
+            $fail++;
+        }
+    }
+}
+
 $count = substr_count($xml, '<url>');
-if ($count < 200 || $count > 20000) {
-    echo "FAIL: unexpected URL count {$count} (want 200–20000 compact)\n";
+if ($count < 30 || $count > 20000) {
+    echo "FAIL: unexpected URL count {$count} (want 30–20000, built files only)\n";
     $fail++;
 }
 
