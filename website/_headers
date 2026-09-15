@@ -17,6 +17,56 @@
   Content-Type: text/html; charset=utf-8
   X-Content-Type-Options: nosniff
 
+/shop
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/fire
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/fire/
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/electrical
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/electrical/
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/security
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/security/
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/gas
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/gas/
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/assets/*.css
+  Content-Type: text/css; charset=utf-8
+
+/shop/assets/*.svg
+  Content-Type: image/svg+xml
+
+/products
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
 /thank-you
   Content-Type: text/html; charset=utf-8
   X-Content-Type-Options: nosniff
@@ -28,7 +78,18 @@
 /robots.txt
   Cache-Control: public, max-age=3600
 
+/assets/css/*
+  Content-Type: text/css; charset=utf-8
+
 /manifest.json
+  Content-Type: application/manifest+json; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/manifest.webmanifest
+  Content-Type: application/manifest+json; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/site.webmanifest
   Content-Type: application/manifest+json; charset=utf-8
   Cache-Control: public, max-age=3600
 

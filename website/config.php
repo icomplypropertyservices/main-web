@@ -188,7 +188,7 @@ function assetUrl(string $path = '/'): string
 function icomplyIsStaticAssetPath(string $path): bool
 {
     return (bool) preg_match(
-        '#^/(assets/|favicon\.ico$|manifest\.json$|site\.webmanifest$|robots\.txt$)#',
+        '#^/(assets/|favicon\.ico$|manifest\.json$|manifest\.webmanifest$|site\.webmanifest$|robots\.txt$)#',
         $path
     );
 }

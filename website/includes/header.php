@@ -108,6 +108,7 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     <link rel="icon" type="image/png" sizes="192x192" href="<?= htmlspecialchars(assetUrl('/assets/images/android-chrome-192.png'), ENT_QUOTES, 'UTF-8') ?>">
     <link rel="icon" type="image/png" sizes="512x512" href="<?= htmlspecialchars(assetUrl('/assets/images/android-chrome-512.png'), ENT_QUOTES, 'UTF-8') ?>">
     <link rel="apple-touch-icon" sizes="180x180" href="<?= htmlspecialchars(assetUrl('/assets/images/apple-touch-icon.png'), ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="manifest" href="<?= htmlspecialchars(assetUrl('/manifest.webmanifest'), ENT_QUOTES, 'UTF-8') ?>">
     <link rel="manifest" href="<?= htmlspecialchars(assetUrl('/site.webmanifest'), ENT_QUOTES, 'UTF-8') ?>">
     <link rel="manifest" href="<?= htmlspecialchars(assetUrl('/manifest.json'), ENT_QUOTES, 'UTF-8') ?>">
     <meta name="msapplication-TileColor" content="#0B1F3A">

@@ -109,6 +109,7 @@ $mustExist = [
     'assets/images/apple-touch-icon.png',
     'assets/images/android-chrome-512.png',
     'manifest.json',
+    'manifest.webmanifest',
     'site.webmanifest',
     'robots.txt',
     'sitemap.xml',
@@ -151,6 +152,20 @@ if (str_contains($homeHtml, 'href="/assets/css/site.css"') && !str_contains($hom
 } else {
     $fail++;
     echo "[FAIL] homepage CSS href must be /assets/css/site.css (not a production domain)\n";
+}
+if (stripos($homeHtml, '#0a2540') !== false) {
+    $fail++;
+    echo "[FAIL] homepage still contains #0a2540 — must be #0B1F3A\n";
+} else {
+    $pass++;
+    echo "[PASS] homepage has no leftover #0a2540\n";
+}
+if (str_contains($homeHtml, '#0B1F3A') && str_contains($homeHtml, 'href="/manifest.webmanifest"')) {
+    $pass++;
+    echo "[PASS] homepage has #0B1F3A and /manifest.webmanifest\n";
+} else {
+    $fail++;
+    echo "[FAIL] homepage missing #0B1F3A or /manifest.webmanifest\n";
 }
 
 $mustNotExist = [
@@ -237,6 +252,20 @@ if (!str_contains($headerFile, 'text/html')) {
 } else {
     $pass++;
     echo "[PASS] _headers Content-Type text/html\n";
+}
+if (preg_match('#^/shop/\\*\\s*\n\\s*Content-Type:\\s*text/html#m', $headerFile)) {
+    $fail++;
+    echo "[FAIL] _headers blanket /shop/* text/html would break shop.css MIME\n";
+} else {
+    $pass++;
+    echo "[PASS] _headers does not force /shop/* as text/html\n";
+}
+if (!str_contains($headerFile, '/shop/assets/*.css')) {
+    $fail++;
+    echo "[FAIL] _headers missing /shop/assets/*.css text/css\n";
+} else {
+    $pass++;
+    echo "[PASS] _headers has /shop/assets/*.css\n";
 }
 
 echo str_repeat('=', 56) . "\n";

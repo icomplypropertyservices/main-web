@@ -273,6 +273,30 @@
   status = 301
 
 [[redirects]]
+  from = "/manifest.webmanifest"
+  to = "/manifest.webmanifest"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/site.webmanifest"
+  to = "/site.webmanifest"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/manifest.json"
+  to = "/manifest.json"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/assets/css/site.css"
+  to = "/assets/css/site.css"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/sitemap-*.xml"
   to = "/sitemap.xml"
   status = 301
@@ -435,10 +459,68 @@
     X-Content-Type-Options = "nosniff"
 
 [[headers]]
-  for = "/shop/*"
+  for = "/shop/"
   [headers.values]
     Content-Type = "text/html; charset=utf-8"
     X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/fire"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/fire/"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/electrical"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/electrical/"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/security"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/security/"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/gas"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/gas/"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/assets/*.css"
+  [headers.values]
+    Content-Type = "text/css; charset=utf-8"
+
+[[headers]]
+  for = "/shop/assets/*.svg"
+  [headers.values]
+    Content-Type = "image/svg+xml"
 
 [[headers]]
   for = "/products"
@@ -464,7 +546,24 @@
     Cache-Control = "public, max-age=3600"
 
 [[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Content-Type = "text/css; charset=utf-8"
+
+[[headers]]
   for = "/manifest.json"
+  [headers.values]
+    Content-Type = "application/manifest+json; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/manifest.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/site.webmanifest"
   [headers.values]
     Content-Type = "application/manifest+json; charset=utf-8"
     Cache-Control = "public, max-age=3600"

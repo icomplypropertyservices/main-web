@@ -475,6 +475,7 @@ function icomplyCopyStaticAssets(string $websiteRoot, string $repoRoot, string $
         'robots.txt',
         'sitemap.xml',
         'manifest.json',
+        'manifest.webmanifest',
         'site.webmanifest',
         'favicon.ico',
         'lead-popup-form.html',
@@ -600,6 +601,15 @@ function icomplyPrettyUrlRedirects(): string
 /products                /products.php                 200!
 /products/               /products.php                 200!
 
+# PWA manifest aliases (Ellie live 404 on /manifest.webmanifest)
+/manifest.webmanifest    /manifest.webmanifest    200!
+/site.webmanifest        /site.webmanifest        200!
+/manifest.json           /manifest.json           200!
+
+# Brand CSS must never be splat-rewritten to .php
+/assets/css/site.css     /assets/css/site.css     200!
+/assets/css/*            /assets/css/:splat       200
+
 # Old 470-part sitemap index → single compact urlset
 /sitemap-*.xml           /sitemap.xml    301
 
@@ -664,9 +674,47 @@ function icomplyPrettyUrlHeaders(): string
   Content-Type: text/html; charset=utf-8
   X-Content-Type-Options: nosniff
 
-/shop/*
+/shop/
   Content-Type: text/html; charset=utf-8
   X-Content-Type-Options: nosniff
+
+/shop/fire
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/fire/
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/electrical
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/electrical/
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/security
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/security/
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/gas
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/gas/
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/assets/*.css
+  Content-Type: text/css; charset=utf-8
+
+/shop/assets/*.svg
+  Content-Type: image/svg+xml
 
 /products
   Content-Type: text/html; charset=utf-8
@@ -683,7 +731,18 @@ function icomplyPrettyUrlHeaders(): string
 /robots.txt
   Cache-Control: public, max-age=3600
 
+/assets/css/*
+  Content-Type: text/css; charset=utf-8
+
 /manifest.json
+  Content-Type: application/manifest+json; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/manifest.webmanifest
+  Content-Type: application/manifest+json; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/site.webmanifest
   Content-Type: application/manifest+json; charset=utf-8
   Cache-Control: public, max-age=3600
 

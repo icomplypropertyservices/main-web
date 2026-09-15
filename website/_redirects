@@ -52,6 +52,15 @@
 /products    /products.php    200!
 /products/    /products.php    200!
 
+# PWA manifest aliases (Ellie live 404 on /manifest.webmanifest)
+/manifest.webmanifest    /manifest.webmanifest    200!
+/site.webmanifest    /site.webmanifest    200!
+/manifest.json    /manifest.json    200!
+
+# Brand CSS must never be splat-rewritten to .php
+/assets/css/site.css    /assets/css/site.css    200!
+/assets/css/*    /assets/css/:splat    200
+
 # Old 470-part sitemap index → single compact urlset
 /sitemap-*.xml    /sitemap.xml    301
 
