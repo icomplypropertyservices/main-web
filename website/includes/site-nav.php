@@ -108,7 +108,7 @@ function icomplyNavCatalog(): array
         'email' => defined('EMAIL') ? EMAIL : '',
         'brand' => defined('SITE_NAME') ? SITE_NAME : 'Icomply Property Services',
         'js' => url('/assets/js/site-nav.js'),
-        'logo' => url('/assets/images/favicon-32.png'),
+        'logo' => url('/assets/images/brand/icomply-mark.svg'),
     ];
     return $c;
 }
@@ -295,8 +295,8 @@ function icomplyMegaHeaderHtml(): string
 <header class="site-header mega-header" data-site-header>
   <div class="mega-bar">
     <a class="mega-logo" href="{$home}">
-      <img src="{$logo}" width="32" height="32" alt="" class="mega-logo-img">
-      <span>{$brand}</span>
+      <img src="{$logo}" width="36" height="36" alt="iComply checkmark on navy" class="mega-logo-img">
+      <span class="mega-wordmark"><b>iComply</b><small>Property Services</small></span>
     </a>
     <nav class="mega-desktop" aria-label="Primary">
       <a class="nav-link" href="{$home}">Home</a>

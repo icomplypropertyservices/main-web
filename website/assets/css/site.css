@@ -1,15 +1,15 @@
 /* iComply high-contrast theme.
    Tailwind v2 CDN does not honour arbitrary colours like bg-[#0a2540].
    This sheet supplies those colours, dark surfaces, and readable type.
-   Brand: navy #0a2540 / ink #061018 / accent #ff6b00. */
+   Brand: navy #0B1F3A / ink #0f172a / accent #FF6B00. */
 
 :root {
-  --brand: #0a2540;
-  --brand-ink: #061018;
+  --brand: #0B1F3A;
+  --brand-ink: #0f172a;
   --brand-deep: #071422;
   --brand-card: #12263a;
   --brand-elev: #17314a;
-  --accent: #ff6b00;
+  --accent: #FF6B00;
   --accent-hover: #ff8533;
   --text: #f4f7fb;
   --text-muted: #d6dde6;
@@ -30,10 +30,14 @@ body {
 
 /* Make the arbitrary brand utilities used across PHP templates actually paint. */
 [class*="bg-[#0a2540]"],
-[class*="bg-[#061828]"] { background-color: #0a2540 !important; }
-[class*="bg-[#ff6b00]"] { background-color: #ff6b00 !important; color: #fff !important; }
-[class*="text-[#0a2540]"] { color: #0a2540 !important; }
-[class*="text-[#ff6b00]"] { color: #ff6b00 !important; }
+[class*="bg-[#0B1F3A]"],
+[class*="bg-[#061828]"] { background-color: #0B1F3A !important; }
+[class*="bg-[#ff6b00]"],
+[class*="bg-[#FF6B00]"] { background-color: #FF6B00 !important; color: #fff !important; }
+[class*="text-[#0a2540]"],
+[class*="text-[#0B1F3A]"] { color: #0B1F3A !important; }
+[class*="text-[#ff6b00]"],
+[class*="text-[#FF6B00]"] { color: #FF6B00 !important; }
 [class*="border-[#ff6b00]"] { border-color: #ff6b00 !important; }
 [class*="hover:bg-orange-600"]:hover { background-color: #ea580c !important; }
 [class*="hover:text-[#ff6b00]"]:hover { color: #ff6b00 !important; }
@@ -74,6 +78,19 @@ body.theme-dark h1,
 body.theme-dark h2,
 body.theme-dark h3 {
   color: #fff !important;
+}
+/* Light panels must never inherit forced white headings. */
+body.theme-dark .panel-light,
+body.theme-dark .panel-light h1,
+body.theme-dark .panel-light h2,
+body.theme-dark .panel-light h3,
+body.theme-dark .panel-light .text-black {
+  background-color: #f4f7fb !important;
+  color: #0f172a !important;
+}
+body.theme-dark .panel-light p,
+body.theme-dark .panel-light .text-zinc-600 {
+  color: #1e293b !important;
 }
 body.theme-dark .text-zinc-700,
 body.theme-dark .text-zinc-600 {
@@ -470,3 +487,110 @@ h1, h2, h3 { letter-spacing: -0.03em; }
   .mobile-sticky-cta { display: none; }
 }
 body.mega-drawer-open { overflow: hidden; }
+
+/* Homepage hero — dark navy only. Never pale peach/orange wash. */
+.home-hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(165deg, #0B1F3A 0%, #0f172a 55%, #071422 100%);
+  color: #f8fafc;
+}
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 12% 0%, rgba(255, 107, 0, 0.14), transparent 42%),
+    radial-gradient(ellipse at 90% 10%, rgba(15, 23, 42, 0.9), transparent 46%);
+  pointer-events: none;
+}
+.home-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 4rem;
+  display: grid;
+  gap: 2.5rem;
+}
+@media (min-width: 1024px) {
+  .home-hero-inner { grid-template-columns: 1.15fr 0.85fr; align-items: center; }
+}
+.home-hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.home-hero-kicker i {
+  width: 0.5rem; height: 0.5rem; border-radius: 999px; background: #FF6B00;
+}
+.home-hero h1 {
+  color: #fff !important;
+  font-size: clamp(2.1rem, 5vw, 3.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+.home-hero h1 span { color: #FF6B00; }
+.hero-lede {
+  margin: 1.25rem 0 0;
+  max-width: 38rem;
+  color: #e8eef6 !important;
+  font-size: 1.125rem;
+  line-height: 1.55;
+}
+.home-hero-cta { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.75rem; }
+.home-hero-cta a {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0.95rem 1.4rem; border-radius: 1rem;
+  font-weight: 700; text-decoration: none; font-size: 0.95rem;
+}
+.btn-hero-accent { background: #FF6B00; color: #fff !important; }
+.btn-hero-accent:hover { background: #ff8533; }
+.btn-hero-light { background: #fff; color: #0B1F3A !important; }
+.btn-hero-ghost {
+  background: transparent; color: #f8fafc !important;
+  border: 1px solid rgba(255,255,255,0.45);
+}
+.home-hero-stats {
+  display: flex; flex-wrap: wrap; gap: 1.5rem;
+  margin-top: 1.75rem; color: #d6dde6; font-size: 0.875rem;
+}
+.home-hero-stats strong { display: block; color: #fff; font-size: 1.25rem; }
+.home-hero-fine { margin-top: 0.75rem; color: #cbd5e1; font-size: 0.75rem; }
+.home-hero-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+}
+.home-hero-card {
+  display: flex; flex-direction: column; justify-content: flex-end;
+  min-height: 7.5rem; padding: 1rem 1.05rem;
+  border-radius: 1.1rem;
+  background: #12263a;
+  border: 1px solid rgba(255,255,255,0.14);
+  color: #fff !important;
+  text-decoration: none;
+}
+.home-hero-card:hover { border-color: #FF6B00; }
+.home-hero-card strong { display: block; font-size: 1rem; line-height: 1.2; }
+.home-hero-card span { display: block; margin-top: 0.3rem; color: #d6dde6; font-size: 0.75rem; }
+
+.mega-header {
+  background: rgba(11, 31, 58, 0.96);
+}
+.mega-wordmark {
+  display: flex; flex-direction: column; line-height: 1.05;
+}
+.mega-wordmark b { font-size: 1.05rem; font-weight: 800; color: #fff; }
+.mega-wordmark small { font-size: 0.62rem; letter-spacing: 0.04em; color: #d6dde6; font-weight: 600; }
+.mega-logo-img { width: 2.25rem; height: 2.25rem; border-radius: 999px; }

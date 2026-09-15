@@ -31,7 +31,7 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0a2540">
+    <meta name="theme-color" content="#0B1F3A">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <?php if (defined('GOOGLE_SITE_VERIFICATION') && GOOGLE_SITE_VERIFICATION !== ''): ?>
@@ -102,13 +102,16 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     <link rel="canonical" href="<?= htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8') ?>">
     <link rel="icon" href="<?= htmlspecialchars(url('/favicon.ico'), ENT_QUOTES, 'UTF-8') ?>" sizes="any">
     <link rel="icon" href="<?= htmlspecialchars(url('/assets/images/favicon.ico'), ENT_QUOTES, 'UTF-8') ?>" sizes="any">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?= htmlspecialchars(url('/assets/images/favicon-32.png'), ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="icon" type="image/svg+xml" href="<?= htmlspecialchars(url('/assets/images/favicon.svg'), ENT_QUOTES, 'UTF-8') ?>">
     <link rel="icon" type="image/png" sizes="16x16" href="<?= htmlspecialchars(url('/assets/images/favicon-16.png'), ENT_QUOTES, 'UTF-8') ?>">
-    <link rel="icon" href="<?= htmlspecialchars(url('/assets/images/favicon.svg'), ENT_QUOTES, 'UTF-8') ?>" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= htmlspecialchars(url('/assets/images/favicon-32.png'), ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="icon" type="image/png" sizes="192x192" href="<?= htmlspecialchars(url('/assets/images/android-chrome-192.png'), ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="icon" type="image/png" sizes="512x512" href="<?= htmlspecialchars(url('/assets/images/android-chrome-512.png'), ENT_QUOTES, 'UTF-8') ?>">
     <link rel="apple-touch-icon" sizes="180x180" href="<?= htmlspecialchars(url('/assets/images/apple-touch-icon.png'), ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="manifest" href="<?= htmlspecialchars(url('/site.webmanifest'), ENT_QUOTES, 'UTF-8') ?>">
     <link rel="manifest" href="<?= htmlspecialchars(url('/manifest.json'), ENT_QUOTES, 'UTF-8') ?>">
-    <meta name="msapplication-TileColor" content="#0a2540">
-    <meta name="msapplication-TileImage" content="<?= htmlspecialchars(url('/assets/images/favicon-192.png'), ENT_QUOTES, 'UTF-8') ?>">
+    <meta name="msapplication-TileColor" content="#0B1F3A">
+    <meta name="msapplication-TileImage" content="<?= htmlspecialchars(url('/assets/images/android-chrome-192.png'), ENT_QUOTES, 'UTF-8') ?>">
     <meta name="author" content="<?= htmlspecialchars(SITE_NAME, ENT_QUOTES, 'UTF-8') ?>">
     <meta name="geo.region" content="GB-MAN">
     <meta name="geo.placename" content="Stockport">

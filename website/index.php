@@ -5,11 +5,11 @@
 require_once __DIR__ . '/config.php';
 require_once SITE_ROOT . '/includes/shopify.php';
 
-$pageTitle = 'Property Compliance in the North West | Icomply Property Services';
-$metaDesc = 'Icomply Property Services — fire risk assessments, fire safety systems, electrical, gas, security, landlord compliance, kitchens, bathrooms and renovation across Greater Manchester and the North West. Based in Offerton, Stockport SK2 5DE.';
+$pageTitle = 'Property Maintenance & Compliance | Icomply Property Services';
+$metaDesc = 'iComply Property Services — landlord compliance (EICR, CP12/gas, FRA), electrical, gas, fire safety, kitchens, bathrooms, renovations, CCTV, Legionella, asbestos surveys and trade shop across Greater Manchester and the North West. Stockport SK2 5DE.';
 $canonicalUrl = url('/');
-$metaKeywords = 'fire risk assessment Stockport, fire safety systems Manchester, kitchen fitting North West, bathroom renovation, EICR, landlord compliance';
-$ogImage = url('/assets/images/services/fire-risk-assessments.jpg');
+$metaKeywords = 'landlord compliance Stockport, EICR Manchester, gas safety CP12, fire risk assessment, kitchen fitting, renovation, CCTV, legionella, asbestos survey, North West';
+$ogImage = url('/assets/images/android-chrome-512.png');
 
 $services = getServices();
 $areas = getAreas();
@@ -21,9 +21,9 @@ $shopCollections = array_slice($catalog['collections'], 0, 4);
 $kwCount = count(getMajorKeywords());
 $trust = [
     ['title' => 'Local team', 'text' => 'Stockport SK2 base — ' . count($areas) . '+ North West towns'],
-    ['title' => 'Full catalogue', 'text' => count($services) . ' services · fire, professional & construction'],
-    ['title' => 'Fixed-price quotes', 'text' => 'Clear scope, documentation and certification'],
-    ['title' => 'SEO guides', 'text' => number_format($kwCount) . '+ topic guides with local pages'],
+    ['title' => 'Full catalogue', 'text' => count($services) . ' services · maintenance, compliance and trades'],
+    ['title' => 'Scoped quotes', 'text' => 'Written figure after we confirm the job — POA where listed'],
+    ['title' => 'Local guides', 'text' => number_format($kwCount) . '+ topic pages across the area set'],
 ];
 
 $popularTowns = array_values(array_filter(
@@ -44,63 +44,66 @@ require SITE_ROOT . '/includes/header.php';
 $homeUrl = rtrim(SITE_URL, '/') . '/';
 ?>
 
-<!-- HERO -->
-<section class="relative overflow-hidden bg-[#0a2540] text-white">
-    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 20% 20%,#ff6b00,transparent 40%),radial-gradient(circle at 80% 0%,#3b82f6,transparent 35%);"></div>
-    <div class="relative max-w-7xl mx-auto px-6 py-16 md:py-24 grid lg:grid-cols-2 gap-12 items-center">
+<!-- HERO — dark navy panel only; light text never sits on peach/orange wash -->
+<section class="home-hero">
+    <div class="home-hero-inner">
         <div>
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs tracking-widest uppercase mb-5">
-                <span class="w-2 h-2 rounded-full bg-[#ff6b00]"></span>
-                Greater Manchester &amp; North West
-            </div>
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
-                Fire safety. Professional.<br>
-                <span class="text-[#ff6b00]">Construction. Certified.</span>
-            </h1>
-            <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl">
-                Fire risk assessments and full fire safety systems, electrical &amp; gas, security,
-                landlord compliance, Legionella / water hygiene, asbestos surveys, kitchens, bathrooms
-                and building trades — plus a trade shop for kits and parts.
+            <p class="home-hero-kicker"><i></i> Greater Manchester &amp; North West</p>
+            <h1>Property maintenance<br><span>&amp; compliance</span></h1>
+            <p class="hero-lede">
+                Landlord certificates (EICR, CP12 / gas, FRA), electrical, gas, fire safety,
+                kitchens and bathrooms, renovations, CCTV and security, Legionella, asbestos
+                surveys, HMO / landlord packages and a trade shop — one Stockport team covering
+                Greater Manchester and the North West.
             </p>
-            <div class="mt-8 flex flex-wrap gap-3">
-                <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get free quote</a>
-                <a href="<?= url('/pages/services/index.php') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">All services</a>
-                <a href="<?= url('/pages/services/index.php') ?>#fire-safety" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Fire safety</a>
-                <a href="<?= url('/pages/services/index.php') ?>#construction" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Construction</a>
+            <div class="home-hero-cta">
+                <a class="btn-hero-accent" href="#quote">Get a quote</a>
+                <a class="btn-hero-light" href="<?= url('/pages/services/index.php') ?>">All services</a>
+                <a class="btn-hero-ghost" href="<?= url('/pages/landlords.php') ?>">Landlords</a>
+                <a class="btn-hero-ghost" href="<?= url('/pages/packages.php') ?>">Packages</a>
             </div>
-            <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
-                <div><span class="text-white font-semibold text-xl block"><?= count($services) ?></span> services</div>
-                <div><span class="text-white font-semibold text-xl block"><?= count($areas) ?>+</span> towns</div>
-                <div><span class="text-white font-semibold text-xl block"><?= number_format($kwCount) ?>+</span> guides</div>
+            <div class="home-hero-stats">
+                <div><strong><?= count($services) ?></strong> services</div>
+                <div><strong><?= count($areas) ?>+</strong> towns</div>
+                <div><strong><?= number_format($kwCount) ?>+</strong> guides</div>
             </div>
-            <p class="mt-3 text-[11px] text-white/40">Same-week appointments where capacity allows · Stockport SK2 5DE</p>
+            <p class="home-hero-fine">Stockport SK2 5DE · Scoped quotes · Legionella and asbestos are POA</p>
         </div>
-        <div class="grid grid-cols-2 gap-3">
+        <div class="home-hero-cards">
             <?php
-            // Highlight one card per major category (not just first array keys)
-            $heroPref = ['fire-risk-assessments', 'kitchens', 'electrical', 'landlord-compliance', 'fire-alarms', 'bathrooms'];
-            $heroCards = [];
-            foreach ($heroPref as $hs) {
-                if (isset($services[$hs])) {
-                    $heroCards[$hs] = $services[$hs];
+            $heroPref = [
+                'electrical' => 'EICR / electrical',
+                'gas-systems' => 'Gas safety (CP12)',
+                'fire-risk-assessments' => 'Fire risk assessments',
+                'landlord-compliance' => 'Landlord compliance',
+                'kitchens' => 'Kitchens &amp; bathrooms',
+                'renovation' => 'Renovations',
+                'cctv' => 'CCTV / security',
+                'legionella-risk-assessment' => 'Legionella',
+            ];
+            foreach ($heroPref as $slug => $label):
+                if (!isset($services[$slug]) && $slug !== 'legionella-risk-assessment') {
+                    continue;
                 }
-                if (count($heroCards) >= 4) {
-                    break;
-                }
-            }
-            foreach ($heroCards as $slug => $name):
-                $img = serviceImageUrl($slug);
+                $href = url('/pages/services/' . $slug . '.php');
             ?>
-            <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
-               class="group relative rounded-3xl overflow-hidden border border-white/10 min-h-[140px] bg-white/5 hover:border-[#ff6b00] transition">
-                <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> in the North West — Icomply Property Services" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-55 transition" loading="lazy"
-                     onerror="this.src='<?= htmlspecialchars(url('/assets/images/services/fire-alarms.jpg'), ENT_QUOTES, 'UTF-8') ?>'">
-                <div class="relative p-5 h-full flex flex-col justify-end">
-                    <div class="font-semibold text-white text-lg leading-tight"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></div>
-                    <div class="text-xs text-white/70 mt-1">View service →</div>
-                </div>
+            <a class="home-hero-card" href="<?= htmlspecialchars($href, ENT_QUOTES, 'UTF-8') ?>">
+                <strong><?= $label ?></strong>
+                <span>View service →</span>
             </a>
             <?php endforeach; ?>
+            <a class="home-hero-card" href="<?= url('/pages/services/asbestos-survey.php') ?>">
+                <strong>Asbestos surveys</strong>
+                <span>View service →</span>
+            </a>
+            <a class="home-hero-card" href="<?= url('/pages/packages.php') ?>">
+                <strong>HMO / landlord packages</strong>
+                <span>Existing packages →</span>
+            </a>
+            <a class="home-hero-card" href="<?= url('/shop/index.php') ?>">
+                <strong>Trade shop</strong>
+                <span>Kits and parts →</span>
+            </a>
         </div>
     </div>
 </section>
@@ -126,7 +129,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
         <div>
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Services</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2"><?= count($services) ?> services · <?= count($areas) ?>+ towns</h2>
-            <p class="mt-2 text-zinc-600 max-w-xl">Fire safety systems, professional support and construction trades — each with local area pages.</p>
+            <p class="mt-2 text-zinc-600 max-w-xl">Landlord compliance, electrical, gas, fire safety, water hygiene, asbestos, security, kitchens, bathrooms and building trades — each with local area pages.</p>
         </div>
         <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Full catalogue →</a>
     </div>
@@ -178,7 +181,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local SEO guides</div>
-                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">EICR report, fire, gas &amp; more by town</h2>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">EICR, gas, fire, Legionella, asbestos &amp; more by town</h2>
                 <p class="mt-2 text-zinc-600 max-w-2xl">
                     Every guide has a dedicated page for each North West area — e.g.
                     <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/keywords/eicr-report/stockport.php') ?>">EICR report in Stockport</a>,
@@ -244,7 +247,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                class="group bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="w-12 h-12 rounded-2xl bg-[#0a2540]/10 text-[#0a2540] font-bold flex items-center justify-center text-lg group-hover:bg-[#ff6b00] group-hover:text-white transition">L</div>
                 <h3 class="mt-5 font-semibold text-xl text-black tracking-tight">Landlords &amp; agents</h3>
-                <p class="mt-2 text-sm text-zinc-600 flex-1">EICR, gas, fire risk assessments, fire doors, emergency lighting, voids, kitchens and bathrooms for portfolios and HMOs.</p>
+                <p class="mt-2 text-sm text-zinc-600 flex-1">EICR, CP12 / gas, FRA, Legionella, asbestos, voids, kitchens and bathrooms for portfolios. HMO work is quoted through existing landlord packages — not a separate invented product.</p>
                 <span class="mt-5 text-sm font-semibold text-[#ff6b00]">Landlord compliance →</span>
             </a>
             <a href="<?= url('/pages/commercial.php') ?>"
@@ -334,7 +337,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
         </div>
         <div class="bg-[#0a2540] text-white rounded-3xl p-8 md:p-10">
             <h3 class="text-2xl font-semibold tracking-tight">Need a compliance package?</h3>
-            <p class="mt-3 text-white/80">Combine EICR, fire alarms, emergency lighting and gas safety into one visit schedule for landlords and facilities teams.</p>
+            <p class="mt-3 text-white/80">Combine EICR, gas, FRA, water hygiene, asbestos surveys, security and refurb works into one visit schedule for landlords and facilities teams.</p>
             <ul class="mt-6 space-y-3 text-sm text-white/90">
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Fixed-price multi-service quotes</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Full documentation for audits &amp; insurers</li>

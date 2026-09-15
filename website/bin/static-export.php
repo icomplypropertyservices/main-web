@@ -471,6 +471,7 @@ function icomplyCopyStaticAssets(string $websiteRoot, string $repoRoot, string $
         'robots.txt',
         'sitemap.xml',
         'manifest.json',
+        'site.webmanifest',
         'favicon.ico',
         'lead-popup-form.html',
     ];
