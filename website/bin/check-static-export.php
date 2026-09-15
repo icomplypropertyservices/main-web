@@ -54,6 +54,15 @@ $needHtml = [
     '/shop/electrical' => ['shop/electrical/index.html', ['Electrical', '<!DOCTYPE']],
     '/shop/security' => ['shop/security/index.html', ['Security', '<!DOCTYPE']],
     '/shop/gas' => ['shop/gas/index.html', ['Gas', '<!DOCTYPE']],
+    '/pages/keywords/rewire' => ['pages/keywords/rewire.php', ['Rewire', '<!DOCTYPE']],
+    '/pages/keywords/domestic-rewire' => ['pages/keywords/domestic-rewire.php', ['Domestic Rewire', '<!DOCTYPE']],
+    '/pages/keywords/emergency-electrician' => ['pages/keywords/emergency-electrician.php', ['Emergency Electrician', '<!DOCTYPE']],
+    '/pages/keywords/boiler' => ['pages/keywords/boiler.php', ['Boiler', '<!DOCTYPE']],
+    '/pages/keywords/rewire/stockport' => ['pages/keywords/rewire/stockport.php', ['Rewire', 'Stockport', '<!DOCTYPE']],
+    '/pages/keywords/domestic-rewire/manchester' => ['pages/keywords/domestic-rewire/manchester.php', ['Domestic Rewire', 'Manchester', '<!DOCTYPE']],
+    '/pages/keywords/emergency-electrician/bolton' => ['pages/keywords/emergency-electrician/bolton.php', ['Emergency Electrician', 'Bolton', '<!DOCTYPE']],
+    '/pages/keywords/boiler/stockport' => ['pages/keywords/boiler/stockport.php', ['Boiler', 'Stockport', '<!DOCTYPE']],
+    '/pages/keywords/price-of-rewire' => ['pages/keywords/price-of-rewire.php', ['POA', '<!DOCTYPE']],
 ];
 
 echo "Icomply static-export check  dist={$dist}\n";
@@ -229,6 +238,36 @@ if ($kwTownFiles >= max(12, (int)floor($expectTowns * 0.95))) {
     echo "[FAIL] keyword×town exported={$kwTownFiles} (need ~{$expectTowns} = hubs×all areas)\n";
 }
 
+$elecGasSlugs = function_exists('getElectricalGasMatrixKeywordSlugs') ? getElectricalGasMatrixKeywordSlugs() : [];
+$matrixExpect = count($elecGasSlugs) * $areaCount;
+$matrixHave = 0;
+foreach ($elecGasSlugs as $slug) {
+    $dir = $kwDir . '/' . $slug;
+    if (!is_dir($dir)) {
+        continue;
+    }
+    foreach (glob($dir . '/*.php') ?: [] as $file) {
+        $matrixHave++;
+    }
+}
+if ($areaCount > 0 && $matrixHave >= (int)floor($matrixExpect * 0.98)) {
+    $pass++;
+    echo "[PASS] electrical+gas keyword×area exported={$matrixHave} (expect ~{$matrixExpect})\n";
+} else {
+    $fail++;
+    echo "[FAIL] electrical+gas keyword×area exported={$matrixHave} (expect ~{$matrixExpect})\n";
+}
+foreach (['rewire', 'domestic-rewire', 'emergency-electrician', 'boiler'] as $needSlug) {
+    $sample = $kwDir . '/' . $needSlug . '/stockport.php';
+    if (is_file($sample)) {
+        $pass++;
+        echo "[PASS] sample {$needSlug}/stockport.php\n";
+    } else {
+        $fail++;
+        echo "[FAIL] missing sample {$needSlug}/stockport.php\n";
+    }
+}
+
 $redirectNeedles = ['/*', '/:splat.php', '/privacy', '/pages/about', '/assets/', '/pages/keywords', '/pages/keywords/:slug', '/shop/index.html', '/shop/fire/index.html', '/products.php'];
 foreach ($redirectNeedles as $n) {
     if (!str_contains($redirects, $n)) {
@@ -246,6 +285,15 @@ if (preg_match('#^/shop\\s+/pages/packages#m', $redirects)) {
     $pass++;
     echo "[PASS] _redirects does not send /shop to packages\n";
 }
+$sitemapDist = is_file($dist . '/sitemap.xml') ? (string)file_get_contents($dist . '/sitemap.xml') : '';
+if (preg_match('#/pages/gas-systems/[a-z0-9\-]+</loc>#', $sitemapDist) || preg_match('#/pages/electrical/[a-z0-9\-]+</loc>#', $sitemapDist)) {
+    $fail++;
+    echo "[FAIL] dist/sitemap.xml still lists /pages/{service}/{town} 404s\n";
+} else {
+    $pass++;
+    echo "[PASS] dist/sitemap.xml has no service×area 404 locs\n";
+}
+
 if (!str_contains($headerFile, 'text/html')) {
     $fail++;
     echo "[FAIL] _headers missing text/html for .php\n";

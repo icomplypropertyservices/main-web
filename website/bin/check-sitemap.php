@@ -23,13 +23,13 @@ $bannedNeedles = [
     '/terms-and-conditions</loc>',
     '/sitemap-1.xml',
     '-photo.jpg',
-    '/pages/keywords/eicr/stockport', // keyword×area junk sample
-    '/pages/gas-systems/manchester', // service×town 404 on prod
-    '/pages/epc/stockport',
-    '/pages/emergency-lighting/stockport',
-    '/pages/keywords/eicr-cost</loc>', // keyword hub 404 on draft
-    '/pages/keywords/eicr-near-me</loc>',
-    '/pages/keywords/aov-system</loc>',
+    '/pages/gas-systems/stockport</loc>',
+    '/pages/gas-systems/manchester</loc>',
+    '/pages/electrical/stockport</loc>',
+    '/pages/electrical/manchester</loc>',
+    '/pages/epc/stockport</loc>',
+    '/pages/emergency-lighting/stockport</loc>',
+    '/pages/fire-alarms/liverpool</loc>',
 ];
 foreach ($bannedNeedles as $n) {
     if (str_contains($xml, $n)) {
@@ -69,6 +69,12 @@ $required = [
     '/pages/resources/asbestos-survey</loc>',
     '/shop</loc>',
     '/products</loc>',
+    '/pages/services/fire-risk-assessments</loc>',
+    '/pages/services/electrical</loc>',
+    '/pages/services/gas-systems</loc>',
+    '/pages/keywords/rewire</loc>',
+    '/pages/keywords/boiler</loc>',
+    '/pages/keywords/rewire/stockport</loc>',
     '/privacy</loc>',
     '/terms</loc>',
 ];
@@ -88,23 +94,59 @@ if (preg_match_all('#<loc>https://icomplypropertyservices\.co\.uk(/pages/service
         }
     }
 }
+$kwTownCount = 0;
 if (preg_match_all('#<loc>https://icomplypropertyservices\.co\.uk(/pages/keywords/[^<]+)</loc>#', $xml, $km)) {
     foreach ($km[1] as $path) {
-        if (!icomplySitemapUrlHasFile($path)) {
-            echo "FAIL: sitemap keyword loc has no deploy file: {$path}\n";
-            $fail++;
+        $depth = substr_count($path, '/');
+        if ($depth === 4) {
+            $kwTownCount++;
         }
-        if (substr_count($path, '/') > 3) {
-            echo "FAIL: keyword×town loc leaked into sitemap: {$path}\n";
+        if ($depth > 4) {
+            echo "FAIL: unexpected deep keyword loc leaked into sitemap: {$path}\n";
             $fail++;
         }
     }
+}
+if ($kwTownCount < 1 || $kwTownCount > 180) {
+    echo "FAIL: sitemap keyword×town count {$kwTownCount} (want featured-only 1–180)\n";
+    $fail++;
+} else {
+    echo "OK: sitemap keyword×town featured-only={$kwTownCount}\n";
 }
 
 $count = substr_count($xml, '<url>');
 if ($count < 30 || $count > 20000) {
     echo "FAIL: unexpected URL count {$count} (want 30–20000, built files only)\n";
     $fail++;
+}
+
+$services = function_exists('getServices') ? getServices() : [];
+$areaSlugs = [];
+if (function_exists('getAreas') && function_exists('areaSlug')) {
+    foreach (getAreas() as $area) {
+        $areaSlugs[areaSlug((string)$area)] = true;
+    }
+}
+preg_match_all('#<loc>https://icomplypropertyservices\.co\.uk(/pages/[^<]+)</loc>#', $xml, $locHits);
+$serviceAreaHits = [];
+foreach ($locHits[1] ?? [] as $path) {
+    if (!preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        continue;
+    }
+    $first = $m[1];
+    $second = $m[2];
+    if (in_array($first, ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages'], true)) {
+        continue;
+    }
+    if (isset($services[$first]) && isset($areaSlugs[$second])) {
+        $serviceAreaHits[] = $path;
+    }
+}
+if ($serviceAreaHits) {
+    $fail++;
+    echo 'FAIL: sitemap lists service×area 404s (sample): ' . implode(', ', array_slice($serviceAreaHits, 0, 8)) . "\n";
+} else {
+    echo "OK: no /pages/{service}/{town} service×area locs\n";
 }
 
 echo "URLs={$count} bytes=" . strlen($xml) . PHP_EOL;

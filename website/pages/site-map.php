@@ -217,35 +217,43 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
-<!-- SERVICE × AREA (sample of virtual landings — full set via XML sitemaps) -->
+<!-- LOCAL LANDINGS — only URLs that exist on the default Netlify export -->
 <section id="service-areas" class="max-w-7xl mx-auto px-6 py-16 md:py-20 scroll-mt-24">
     <div class="mb-10">
         <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local landings</div>
-        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Service × area examples</h2>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Service hubs &amp; keyword towns</h2>
         <p class="mt-2 text-zinc-600 max-w-2xl">
-            Every service has a local page for each town we cover (router-driven, no stub required).
-            Below: popular combos — full list is in the XML sitemaps.
+            Browse a service hub, then open a keyword guide for your town. We do not publish thin
+            service×area doorway pages for all 168 towns.
         </p>
     </div>
     <div class="flex flex-wrap gap-2">
         <?php
-        $sampleTowns = array_slice($popularAreas, 0, 6);
-        $sampleServices = array_slice($services, 0, 6, true);
-        foreach ($sampleServices as $sSlug => $sName):
-            foreach ($sampleTowns as $town):
-                $aSlug = areaSlug($town);
+        foreach (['electrical' => 'Electrical', 'gas-systems' => 'Gas Systems', 'fire-alarms' => 'Fire Alarms', 'cctv' => 'CCTV'] as $sSlug => $sName):
+            if (!isset($services[$sSlug])) { continue; }
+            ?>
+            <a href="<?= url('/pages/services/' . rawurlencode($sSlug) . '.php') ?>"
+               class="px-3 py-1.5 bg-white border rounded-full text-xs sm:text-sm text-black hover:border-[#ff6b00] transition">
+                <?= htmlspecialchars($sName, ENT_QUOTES, 'UTF-8') ?> hub
+            </a>
+        <?php endforeach;
+        $egKwMap = getMajorKeywords();
+        $egTowns = array_values(array_intersect($popularAreas, ['Stockport', 'Manchester', 'Bolton']));
+        foreach (['rewire', 'emergency-electrician', 'boiler', 'cp12'] as $egSlug):
+            if (!isset($egKwMap[$egSlug])) { continue; }
+            $egName = $egKwMap[$egSlug]['name'] ?? $egSlug;
+            foreach ($egTowns as $town):
                 ?>
-                <a href="<?= url('/pages/' . rawurlencode($sSlug) . '/' . rawurlencode($aSlug) . '.php') ?>"
+                <a href="<?= url('/pages/keywords/' . rawurlencode($egSlug) . '/' . areaSlug($town) . '.php') ?>"
                    class="px-3 py-1.5 bg-white border rounded-full text-xs sm:text-sm text-black hover:border-[#ff6b00] transition">
-                    <?= htmlspecialchars($sName . ' in ' . $town, ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($egName . ' in ' . $town, ENT_QUOTES, 'UTF-8') ?>
                 </a>
             <?php endforeach;
         endforeach; ?>
     </div>
     <p class="mt-6 text-sm text-zinc-500">
         Also browse by <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/services/index.php') ?>">service</a>
-        or <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/areas/index.php') ?>">area hub</a>
-        (each area page links every service for that town).
+        or <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/areas/index.php') ?>">area hub</a>.
     </p>
 </section>
 
@@ -279,6 +287,42 @@ require SITE_ROOT . '/includes/header.php';
             <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/keywords/eicr/stockport.php') ?>">EICR in Stockport</a>
             — every keyword also has per-town URLs via the router.
         </p>
+        <?php
+        $egFeatured = function_exists('getElectricalGasFeaturedKeywordSlugs') ? getElectricalGasFeaturedKeywordSlugs() : [];
+        $allKwMap = getMajorKeywords();
+        $elecKwN = count(getKeywordsForService('electrical'));
+        $gasKwN = count(getKeywordsForService('gas-systems'));
+        ?>
+        <div id="electrical-gas-keywords" class="mt-12 grid md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="text-xl font-semibold text-black">Electrical keyword family</h3>
+                <p class="mt-1 text-sm text-zinc-600"><?= (int)$elecKwN ?> guides × <?= count($areas) ?> towns. Rewire, EICR, consumer units and emergency electrician pages.</p>
+                <div class="mt-3 flex flex-wrap gap-2">
+                    <?php foreach ($egFeatured['electrical'] ?? [] as $egSlug):
+                        if (!isset($allKwMap[$egSlug])) { continue; }
+                        $egName = $allKwMap[$egSlug]['name'] ?? $egSlug;
+                    ?>
+                        <a href="<?= url('/pages/keywords/' . rawurlencode($egSlug) . '.php') ?>"
+                           class="px-3 py-1.5 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]"><?= htmlspecialchars($egName, ENT_QUOTES, 'UTF-8') ?></a>
+                    <?php endforeach; ?>
+                    <a href="<?= url('/pages/services/electrical.php') ?>" class="px-3 py-1.5 text-sm font-semibold text-[#ff6b00]">Electrical service hub →</a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold text-black">Gas keyword family</h3>
+                <p class="mt-1 text-sm text-zinc-600"><?= (int)$gasKwN ?> guides × <?= count($areas) ?> towns. Boiler, CP12, gas safety and emergency gas engineer pages.</p>
+                <div class="mt-3 flex flex-wrap gap-2">
+                    <?php foreach ($egFeatured['gas'] ?? [] as $egSlug):
+                        if (!isset($allKwMap[$egSlug])) { continue; }
+                        $egName = $allKwMap[$egSlug]['name'] ?? $egSlug;
+                    ?>
+                        <a href="<?= url('/pages/keywords/' . rawurlencode($egSlug) . '.php') ?>"
+                           class="px-3 py-1.5 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]"><?= htmlspecialchars($egName, ENT_QUOTES, 'UTF-8') ?></a>
+                    <?php endforeach; ?>
+                    <a href="<?= url('/pages/services/gas-systems.php') ?>" class="px-3 py-1.5 text-sm font-semibold text-[#ff6b00]">Gas service hub →</a>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 

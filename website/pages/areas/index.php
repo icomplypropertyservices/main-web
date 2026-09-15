@@ -143,27 +143,30 @@ require SITE_ROOT . '/includes/header.php';
     <div class="max-w-7xl mx-auto px-6 py-16">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
             <div>
-                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Service × area</div>
+                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local pages</div>
                 <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Popular local pages</h2>
+                <p class="mt-2 text-zinc-600">Town hubs and electrical / gas keyword landings that exist on the static site.</p>
             </div>
             <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All services →</a>
         </div>
         <div class="flex flex-wrap gap-2">
             <?php
             $showcase = array_slice($featured, 0, 5);
-            $topSlugs = ['fire-risk-assessments', 'fire-alarms', 'electrical', 'kitchens', 'bathrooms', 'plastering'];
-            $topServices = [];
-            foreach ($topSlugs as $ts) {
-                if (isset($services[$ts])) {
-                    $topServices[$ts] = $services[$ts];
-                }
-            }
             foreach ($showcase as $a):
-                foreach ($topServices as $sSlug => $sName):
             ?>
-                <a href="<?= url('/pages/' . $sSlug . '/' . areaSlug($a) . '.php') ?>"
+                <a href="<?= url('/pages/areas/' . areaSlug($a) . '.php') ?>"
                    class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00] transition">
-                    <?= htmlspecialchars($sName . ' in ' . $a, ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($a, ENT_QUOTES, 'UTF-8') ?>
+                </a>
+            <?php endforeach;
+            $comboKw = getMajorKeywords();
+            foreach (['rewire' => 'Rewire', 'emergency-electrician' => 'Emergency electrician', 'boiler' => 'Boiler', 'cp12' => 'CP12'] as $cSlug => $cName):
+                if (!isset($comboKw[$cSlug])) { continue; }
+                foreach (array_slice($showcase, 0, 3) as $town):
+            ?>
+                <a href="<?= url('/pages/keywords/' . rawurlencode($cSlug) . '/' . areaSlug($town) . '.php') ?>"
+                   class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00] transition">
+                    <?= htmlspecialchars($cName . ' in ' . $town, ENT_QUOTES, 'UTF-8') ?>
                 </a>
             <?php endforeach; endforeach; ?>
         </div>

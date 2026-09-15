@@ -134,6 +134,23 @@ foreach ($categories as $catKey => $cat):
             </a>
             <?php endforeach; ?>
         </div>
+        <?php if ($catKey === 'electrical-gas' && function_exists('getElectricalGasFeaturedKeywordSlugs')):
+            $svcEg = getElectricalGasFeaturedKeywordSlugs();
+            $svcKw = getMajorKeywords();
+        ?>
+        <div class="mt-8 p-6 bg-white border border-zinc-200 rounded-3xl">
+            <h3 class="font-semibold text-black">Electrical &amp; gas keyword guides</h3>
+            <p class="text-sm text-zinc-600 mt-1">Each topic has a hub plus a page for every town we cover. Cost and price searches are POA only.</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+                <?php foreach (array_merge($svcEg['electrical'] ?? [], $svcEg['gas'] ?? []) as $egSlug):
+                    if (!isset($svcKw[$egSlug])) { continue; }
+                ?>
+                    <a href="<?= url('/pages/keywords/' . rawurlencode($egSlug) . '.php') ?>"
+                       class="px-3 py-1.5 bg-zinc-50 border rounded-full text-sm hover:border-[#ff6b00]"><?= htmlspecialchars((string)($svcKw[$egSlug]['name'] ?? $egSlug), ENT_QUOTES, 'UTF-8') ?></a>
+                <?php endforeach; ?>
+            </div>
+        </div>
+        <?php endif; ?>
     </div>
 </section>
 <?php endforeach; ?>
@@ -144,20 +161,28 @@ foreach ($categories as $catKey => $cat):
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local pages</div>
-                <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Popular service × area pages</h2>
-                <p class="mt-2 text-zinc-600">Jump straight to a town-specific landing page.</p>
+                <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Popular local pages</h2>
+                <p class="mt-2 text-zinc-600">Town hubs and electrical / gas keyword landings that exist on the static site — not thin service×area doorways.</p>
             </div>
             <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All areas →</a>
         </div>
         <div class="flex flex-wrap gap-2">
             <?php
-            $showcaseServices = array_slice($services, 0, 5, true);
             foreach ($popularTowns as $town):
-                foreach ($showcaseServices as $sSlug => $sName):
             ?>
-                <a href="<?= url('/pages/' . $sSlug . '/' . areaSlug($town) . '.php') ?>"
+                <a href="<?= url('/pages/areas/' . areaSlug($town) . '.php') ?>"
                    class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00] transition">
-                    <?= htmlspecialchars($sName . ' in ' . $town, ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?>
+                </a>
+            <?php endforeach;
+            $comboKw = getMajorKeywords();
+            foreach (['rewire' => 'Rewire', 'emergency-electrician' => 'Emergency electrician', 'boiler' => 'Boiler', 'cp12' => 'CP12'] as $cSlug => $cName):
+                if (!isset($comboKw[$cSlug])) { continue; }
+                foreach (array_slice($popularTowns, 0, 3) as $town):
+            ?>
+                <a href="<?= url('/pages/keywords/' . rawurlencode($cSlug) . '/' . areaSlug($town) . '.php') ?>"
+                   class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00] transition">
+                    <?= htmlspecialchars($cName . ' in ' . $town, ENT_QUOTES, 'UTF-8') ?>
                 </a>
             <?php endforeach; endforeach; ?>
         </div>

@@ -371,7 +371,13 @@ $schema = [
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <?php
+            $shown = 0;
+            $cardLimit = in_array($serviceSlug, getElectricalGasFamilyServices(), true) ? 0 : 18;
             foreach ($svcKeywords as $kwSlug => $kwMeta):
+                if ($cardLimit > 0 && $shown >= $cardLimit) {
+                    break;
+                }
+                $shown++;
                 $kwName = (string)($kwMeta['name'] ?? keywordDisplayName($kwSlug));
             ?>
             <div class="p-5 bg-zinc-50 border border-zinc-200 rounded-2xl hover:border-[#ff6b00] transition">
@@ -393,9 +399,16 @@ $schema = [
             </div>
             <?php endforeach; ?>
         </div>
-        <p class="mt-6 text-sm text-zinc-600">
-            All <?= count($svcKeywords) ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> keyword guides, each with every town we cover.
-        </p>
+        <?php if ($cardLimit > 0 && count($svcKeywords) > $cardLimit): ?>
+            <p class="mt-6 text-sm text-zinc-600">
+                Showing <?= (int)$cardLimit ?> of <?= count($svcKeywords) ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> keyword guides —
+                <a href="<?= url('/pages/keywords/index.php') ?>" class="font-semibold text-[#ff6b00]">view full keyword index</a>.
+            </p>
+        <?php else: ?>
+            <p class="mt-6 text-sm text-zinc-600">
+                All <?= count($svcKeywords) ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> keyword guides, each with every town we cover.
+            </p>
+        <?php endif; ?>
         <?php else: ?>
             <p class="text-zinc-600">Keyword guides for this service are being expanded. See the <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/keywords/index.php') ?>">full guides index</a>.</p>
         <?php endif; ?>
@@ -410,13 +423,13 @@ $schema = [
             <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">
                 <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> near you
             </h2>
-            <p class="mt-2 text-zinc-600">Pick a town for a dedicated <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> landing page with local SEO and quote CTAs.</p>
+            <p class="mt-2 text-zinc-600">Town hubs we cover — electrical and gas also open a real keyword×town page. We do not publish thin service×area doorways.</p>
         </div>
         <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All areas →</a>
     </div>
     <div class="flex flex-wrap gap-2">
         <?php foreach ($popularTowns as $a): ?>
-            <a href="<?= url('/pages/' . $SERVICE_SLUG . '/' . areaSlug($a) . '.php') ?>"
+            <a href="<?= htmlspecialchars(exportedServiceLocalUrl($SERVICE_SLUG, $a, 'service'), ENT_QUOTES, 'UTF-8') ?>"
                class="px-5 py-2.5 bg-white border rounded-full text-sm font-medium text-black hover:border-[#ff6b00] hover:shadow-sm transition">
                 <?= htmlspecialchars($serviceName . ' in ' . $a, ENT_QUOTES, 'UTF-8') ?>
             </a>
@@ -426,7 +439,7 @@ $schema = [
         <?php foreach ($allAreas as $a):
             if (in_array($a, $popularTowns, true)) continue;
         ?>
-            <a href="<?= url('/pages/' . $SERVICE_SLUG . '/' . areaSlug($a) . '.php') ?>"
+            <a href="<?= htmlspecialchars(exportedServiceLocalUrl($SERVICE_SLUG, $a, 'service'), ENT_QUOTES, 'UTF-8') ?>"
                class="px-3 py-1.5 bg-zinc-50 border rounded-full text-xs text-zinc-700 hover:border-[#ff6b00]">
                 <?= htmlspecialchars($a, ENT_QUOTES, 'UTF-8') ?>
             </a>

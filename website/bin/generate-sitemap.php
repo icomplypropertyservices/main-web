@@ -16,5 +16,5 @@ $kw = function_exists('getMajorKeywords') ? count(getMajorKeywords()) : 0;
 $mfr = function_exists('getManufacturerCatalog') ? count(getManufacturerCatalog()) : 0;
 
 echo "Catalogue: services={$svc} areas={$areas} keywords={$kw} manufacturers={$mfr}\n";
-echo "Wrote sitemap.xml ({$result['urls']} URLs, compact urlset — no keyword×area)\n";
+echo "Wrote sitemap.xml ({$result['urls']} URLs, compact urlset — hubs + featured elec/gas samples, no service×town 404s)\n";
 echo "Removed stale sitemap-*.xml parts if present\n";

@@ -22,7 +22,7 @@
     },
     "electrical-gas": {
         "label": "Electrical & Gas",
-        "blurb": "EICR, rewires, EV, gas safety, PAT, EPC and landlord certificates.",
+        "blurb": "EICR, rewires, consumer units, emergency electrician, boilers, CP12, gas safety, PAT, EPC and landlord certificates — each with a full North West town matrix.",
         "services": [
             "electrical",
             "gas-systems",
