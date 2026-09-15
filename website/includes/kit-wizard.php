@@ -75,7 +75,7 @@ function kitWizardRender(array $wizard): void
                 </div>
                 <h1 class="text-4xl sm:text-5xl font-semibold tracking-tighter leading-[1.05]"><?= $title ?></h1>
                 <p class="mt-5 text-lg text-white/80 max-w-xl"><?= $blurb ?></p>
-                <p class="mt-4 text-sm text-white/60">Branded manufacturers only. Screwfix is a price reference for the same branded SKU — never Screwfix own-brand, LAP, Time/SFX or BG boards. No invented £.</p>
+                <p class="mt-4 text-sm text-white/60"><?= htmlspecialchars((string)($wizard['brand_policy'] ?? 'Branded manufacturers only. Screwfix is a price reference for the same branded SKU — never Screwfix own-brand, LAP, Time/SFX, SFX accessories, BG boards or unbranded sockets. No invented £.'), ENT_QUOTES, 'UTF-8') ?></p>
             </div>
             <?php if ($hero !== ''): ?>
             <img src="<?= $hero ?>" alt="<?= $title ?>" class="w-full h-64 object-cover rounded-3xl border border-white/10" width="800" height="256">

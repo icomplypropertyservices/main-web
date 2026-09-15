@@ -44,6 +44,7 @@
 
   function firstIncomplete() {
     for (var i = 0; i < steps.length; i++) {
+      if (!stepVisible(i)) continue;
       if (!selectedIds(steps[i]).length && !steps[i].optional) return i;
     }
     return steps.length - 1;
@@ -52,10 +53,13 @@
   function renderProgress() {
     if (!progress) return;
     progress.innerHTML = '';
+    var n = 0;
     steps.forEach(function (step, i) {
+      if (!stepVisible(i) && !selectedIds(step).length) return;
+      n += 1;
       var btn = document.createElement('button');
       btn.type = 'button';
-      btn.textContent = (i + 1) + '. ' + step.short;
+      btn.textContent = n + '. ' + step.short;
       if (i === idx) btn.setAttribute('aria-current', 'step');
       if (selectedIds(step).length) btn.classList.add('is-done');
       btn.addEventListener('click', function () {
@@ -68,6 +72,31 @@
     });
   }
 
+  function stepVisible(i) {
+    return visibleOptions(steps[i] || {}).length > 0;
+  }
+
+  function nextVisibleIdx(from) {
+    for (var i = from + 1; i < steps.length; i++) {
+      if (stepVisible(i)) return i;
+    }
+    return steps.length;
+  }
+
+  function prevVisibleIdx(from) {
+    for (var i = from - 1; i >= 0; i--) {
+      if (stepVisible(i)) return i;
+    }
+    return 0;
+  }
+
+  function clearDownstream(fromStep) {
+    var si = steps.indexOf(fromStep);
+    for (var i = si + 1; i < steps.length; i++) {
+      delete state[steps[i].id];
+    }
+  }
+
   function toggle(step, id) {
     if (step.multi) {
       var cur = selectedIds(step);
@@ -78,6 +107,7 @@
     } else {
       state[step.id] = id;
     }
+    clearDownstream(step);
   }
 
   function collectLines() {
@@ -89,7 +119,7 @@
         if (!opt) return;
         var bit = step.title + ': ' + opt.label;
         if (opt.sku) bit += ' (SKU ' + opt.sku + ')';
-        if (opt.screwfix_ref) bit += ' [trade/Screwfix ref ' + opt.screwfix_ref + ']';
+        if (opt.screwfix_ref) bit += ' [price ref Screwfix ' + opt.screwfix_ref + ' for branded ' + (opt.brand || 'SKU') + ']';
         if (opt.sell_price) bit += ' — sell £' + opt.sell_price;
         if (opt.cta === 'poa') bit += ' — enquire/POA';
         lines.push(bit);
@@ -104,7 +134,10 @@
   function renderSummary() {
     var picked = collectLines();
     var html = '<h2>' + escapeHtml(data.summary_title || 'Your kit') + '</h2>';
-    html += '<p class="kit-muted">' + escapeHtml(data.summary_blurb || 'No invented catalogue prices. Branded manufacturers only.') + '</p>';
+    html += '<p class="kit-muted">' + escapeHtml(data.summary_blurb || data.brand_policy || 'No invented catalogue prices. Branded manufacturers only.') + '</p>';
+    if (data.brand_policy && data.summary_blurb && data.brand_policy !== data.summary_blurb) {
+      html += '<p class="kit-note">' + escapeHtml(data.brand_policy) + '</p>';
+    }
     html += '<div class="kit-summary">';
     steps.forEach(function (step) {
       selectedIds(step).forEach(function (id) {
@@ -121,7 +154,7 @@
         if (opt.sell_price) {
           html += '<div class="kit-price">Sell £' + escapeHtml(opt.sell_price) + '</div>';
           if (opt.screwfix_ref) {
-            html += '<span class="kit-ref">Trade / Screwfix ref ' + escapeHtml(opt.screwfix_ref) + ' (price reference only)</span>';
+            html += '<span class="kit-ref">Price reference (Screwfix) ' + escapeHtml(opt.screwfix_ref) + ' for this branded ' + escapeHtml(opt.brand || 'SKU') + '</span>';
           }
         } else if (opt.cta === 'poa' || opt.cta === 'enquire') {
           html += '<div class="kit-price">Enquire / POA</div>';
@@ -183,7 +216,7 @@
       if (opt.sell_price) {
         html += '<div class="kit-price">Sell £' + escapeHtml(opt.sell_price) + '</div>';
         if (opt.screwfix_ref) {
-          html += '<span class="kit-ref">Screwfix ref ' + escapeHtml(opt.screwfix_ref) + ' · branded ' + escapeHtml(opt.brand || '') + ' (price reference only)</span>';
+          html += '<span class="kit-ref">Price reference (Screwfix) ' + escapeHtml(opt.screwfix_ref) + ' · branded ' + escapeHtml(opt.brand || 'SKU') + '</span>';
         }
       } else if (opt.sku && opt.cta === 'shop') {
         html += '<span class="kit-ref">SKU ' + escapeHtml(opt.sku) + '</span>';
@@ -217,14 +250,18 @@
         if (idx >= steps.length - 1) {
           idx = steps.length;
         } else {
-          idx += 1;
+          idx = nextVisibleIdx(idx);
         }
         render();
       });
     }
     if (back) {
       back.addEventListener('click', function () {
-        idx = Math.max(0, idx - 1);
+        if (idx >= steps.length) {
+          idx = prevVisibleIdx(steps.length);
+        } else {
+          idx = prevVisibleIdx(idx);
+        }
         render();
       });
     }
@@ -238,6 +275,9 @@
   function escapeAttr(s) { return escapeHtml(s); }
 
   function render() {
+    if (idx < steps.length && !stepVisible(idx)) {
+      idx = nextVisibleIdx(idx - 1);
+    }
     renderProgress();
     if (idx >= steps.length) renderSummary();
     else renderStep();

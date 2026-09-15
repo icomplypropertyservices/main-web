@@ -65,7 +65,7 @@ require SITE_ROOT . '/includes/header.php';
         </a>
         <a href="<?= url('/pages/kits') ?>" class="p-6 bg-white border rounded-3xl hover:border-[#FF6B00] sm:col-span-2 lg:col-span-4">
             <h3 class="font-semibold text-lg text-[#0B1F3A]">Kit builders</h3>
-            <p class="text-sm text-[#5B6472] mt-2">Rewire (Wylex + Click), fire, AOV, intercom, access, CAME gates and barriers — branded SKUs or enquire / POA.</p>
+            <p class="text-sm text-[#5B6472] mt-2">Rewire (Wylex + Click), fire, AOV, intercom, access, CAME gates and barriers — branded manufacturers only. Screwfix is a price reference, never own-brand.</p>
         </a>
     </div>
 </section>

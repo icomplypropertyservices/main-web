@@ -6,7 +6,7 @@ require_once __DIR__ . '/../../config.php';
 require_once SITE_ROOT . '/includes/kit-wizard-catalog.php';
 
 $pageTitle = 'Trade kit builders | Rewire, fire, AOV, gates & more';
-$metaDesc = 'Build branded trade kits for rewire, heating, fire alarms, emergency lighting, AOV, intercom, access control, CAME gates and barriers. Live Shopify SKUs or enquire / POA. No invented prices.';
+$metaDesc = 'Build branded trade kits for rewire, heating, fire alarms, emergency lighting, AOV, intercom, access control, CAME gates and barriers. Screwfix is a price reference only — never own-brand. Live Shopify SKUs or enquire / POA.';
 $metaKeywords = 'kit builder, rewire kit, fire alarm kit, AOV kit, CAME gates, Wylex, Click Scolmore, Apollo, Ventlux';
 $canonicalUrl = url('/pages/kits');
 $ogImage = url('/assets/images/services/electrical.jpg');
@@ -26,7 +26,8 @@ $wizards = kitWizardCatalog();
         <h1 class="text-4xl md:text-5xl font-semibold tracking-tighter mt-3">Kit builders</h1>
         <p class="mt-4 text-lg text-white/80 max-w-2xl">
             Step through a job, pick branded manufacturers, then enquire / POA or open a live Shopify SKU.
-            Screwfix is a price reference for the same branded SKU only — we never sell Screwfix own-brand, LAP, Time/SFX or BG boards.
+            Screwfix is a price reference for the same branded SKU only (sell = that inc-VAT figure + 15%).
+            We never list Screwfix own-make / own-brand, LAP, Time (SFX cable), SFX accessories, British General / BG boards, or unbranded white-label sockets.
         </p>
     </div>
 </section>

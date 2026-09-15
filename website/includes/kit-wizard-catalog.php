@@ -57,6 +57,69 @@ function kitPoaOpt(array $p): array
     ], $p);
 }
 
+/** Jack lock — Screwfix is a price reference, never a brand we list. */
+function kitBrandPolicy(): string
+{
+    return 'Branded manufacturers only. Screwfix is a price reference for the same branded SKU (sell = that inc-VAT figure + 15%). Never Screwfix own-make / own-brand, LAP, Time (SFX cable), SFX accessories, British General / BG boards, or unbranded white-label sockets. If a line is only sold as Screwfix own-brand, skip it and quote a branded equivalent — enquire / POA. No invented £.';
+}
+
+/** @return list<string> */
+function kitBannedBrandKeys(): array
+{
+    return [
+        'lap',
+        'time',
+        'sfx',
+        'screwfix',
+        'british general',
+        'bg',
+        'bg electrical',
+        'unbranded',
+        'white-label',
+        'white label',
+        'own-brand',
+        'own brand',
+    ];
+}
+
+function kitBrandIsBanned(string $brand): bool
+{
+    $key = strtolower(trim($brand));
+    return $key !== '' && in_array($key, kitBannedBrandKeys(), true);
+}
+
+function kitWithPolicy(array $w): array
+{
+    $w['brand_policy'] = kitBrandPolicy();
+    $summary = trim((string)($w['summary_blurb'] ?? ''));
+    if ($summary === '') {
+        $w['summary_blurb'] = kitBrandPolicy();
+    } elseif (!str_contains(strtolower($summary), 'price reference')) {
+        $w['summary_blurb'] = rtrim($summary, '.') . '. Screwfix is a price reference for the same branded SKU only — never own-brand / LAP / Time / SFX / BG.';
+    }
+    return $w;
+}
+
+/** @param array<string,array<string,mixed>> $wizards */
+function kitAssertCatalogBrands(array $wizards): void
+{
+    foreach ($wizards as $w) {
+        foreach ($w['steps'] ?? [] as $step) {
+            foreach ($step['options'] ?? [] as $opt) {
+                $brand = (string)($opt['brand'] ?? '');
+                if ($brand !== '' && kitBrandIsBanned($brand)) {
+                    throw new RuntimeException('Banned brand in kit ' . ($w['slug'] ?? '?') . ': ' . $brand);
+                }
+                if ((string)($opt['sell_price'] ?? '') !== '') {
+                    if ($brand !== 'Wylex' || (string)($opt['screwfix_ref'] ?? '') === '') {
+                        throw new RuntimeException('Invented sell price without a branded Wylex Screwfix ref in kit ' . ($w['slug'] ?? '?'));
+                    }
+                }
+            }
+        }
+    }
+}
+
 /**
  * Wylex consumer units — Screwfix inc VAT fetched 2026-09-15 + 15% sell.
  * Same branded Wylex SKU only. Screwfix is not the manufacturer.
@@ -84,7 +147,7 @@ function kitWylexBoards(): array
         $out[] = [
             'id' => $r['id'],
             'label' => $r['label'],
-            'blurb' => $r['blurb'] . ' Sell = branded Screwfix inc VAT + 15%.',
+            'blurb' => $r['blurb'] . ' Sell = Screwfix inc VAT of this same Wylex SKU + 15% (price reference only).',
             'brand' => 'Wylex',
             'image' => $img,
             'cover' => true,
@@ -107,11 +170,11 @@ function kitRewireWizard(): array
         'title' => 'Rewire kit builder',
         'short' => 'Rewire',
         'kicker' => 'Consumer unit / circuits',
-        'blurb' => 'Wylex boards (priced) plus Click Scolmore accessories (enquire / POA). Branded manufacturers only — no Screwfix own-brand, LAP, Time/SFX cable or BG boards.',
+        'blurb' => 'Wylex boards (priced where Screwfix stocks that Wylex SKU) plus Click Scolmore accessories (enquire / POA). Hager / MK / Schneider protection is enquire / POA. Branded manufacturers only — no Screwfix own-brand, LAP, Time/SFX cable, SFX accessories, BG boards or unbranded sockets.',
         'service' => 'electrical',
         'hero_image' => $elec,
         'summary_title' => 'Rewire kit',
-        'summary_blurb' => 'Wylex sell price = Screwfix inc VAT of that same Wylex SKU + 15% (fetched 15 Sep 2026). Click CMA/VP codes are not on Screwfix — enquire / POA. Screwfix is a price reference, not a brand we sell.',
+        'summary_blurb' => 'Wylex sell price = Screwfix inc VAT of that same Wylex SKU + 15% (fetched 15 Sep 2026). Click CMA/VP codes are not stocked as those branded SKUs on Screwfix — enquire / POA. Hager / MK / Schneider stay enquire / POA until a matching branded Screwfix (or trade-list) price exists. Screwfix is a price reference, not a brand we sell.',
         'steps' => [
             [
                 'id' => 'property',
@@ -140,22 +203,29 @@ function kitRewireWizard(): array
                 'id' => 'cu-style',
                 'title' => 'Wylex board style',
                 'short' => 'CU style',
-                'blurb' => 'Wylex only for now. Hager / MK / Schneider protection is enquire / POA — no BG / British General boards.',
-                'note' => 'Hager consumer units will be added when we hold a real branded SKU and a matching Screwfix (or trade-list) price. Not listed until then.',
+                'blurb' => 'Wylex for priced boards. Hager, MK and Schneider are allowed branded protection — enquire / POA until we hold a real branded SKU and a matching Screwfix (or trade-list) price. No BG / British General boards.',
+                'note' => 'If Screwfix does not stock that branded SKU, we do not invent a price. Own-brand / LAP / SFX boards are never listed.',
                 'options' => [
                     kitPoaOpt(['id' => 'populated-dual-rcd', 'label' => 'Populated dual RCD', 'brand' => 'Wylex', 'image' => $elec, 'cover' => true, 'blurb' => '10- or 12-way populated Wylex dual-RCD boards.']),
                     kitPoaOpt(['id' => 'hi-spd', 'label' => 'High integrity + SPD', 'brand' => 'Wylex', 'image' => $elec, 'cover' => true, 'blurb' => 'HI boards with surge protection.']),
                     kitPoaOpt(['id' => 'part-pop', 'label' => 'Part-populated main switch', 'brand' => 'Wylex', 'image' => $elec, 'cover' => true, 'blurb' => 'Add branded RCBOs / MCBs to suit the job.']),
                     kitPoaOpt(['id' => 'special', 'label' => 'Garage / shower unit', 'brand' => 'Wylex', 'image' => $elec, 'cover' => true, 'blurb' => 'Small dedicated Wylex units.']),
+                    kitPoaOpt(['id' => 'hager-poa', 'label' => 'Hager (enquire / POA)', 'brand' => 'Hager', 'logo' => kitLogo('Hager'), 'image' => kitAsset('manufacturers/hager-consumer-unit.jpg'), 'blurb' => 'Allowed branded protection. No Screwfix price attached to a Hager SKU here.']),
+                    kitPoaOpt(['id' => 'mk-poa', 'label' => 'MK (enquire / POA)', 'brand' => 'MK', 'image' => $elec, 'cover' => true, 'blurb' => 'Allowed branded protection. No invented £.']),
+                    kitPoaOpt(['id' => 'schneider-poa', 'label' => 'Schneider (enquire / POA)', 'brand' => 'Schneider', 'logo' => kitLogo('Schneider'), 'image' => kitAsset('manufacturers/schneider-electrical.jpg'), 'blurb' => 'Allowed branded protection. Enquire / POA.']),
                 ],
             ],
             [
                 'id' => 'cu',
                 'title' => 'Wylex consumer unit',
                 'short' => 'Wylex CU',
-                'blurb' => 'Sell price is the branded Wylex Screwfix inc-VAT figure + 15%. Ref is the same Wylex SKU.',
-                'note' => 'Screwfix is a price reference only. We supply Wylex — never Screwfix own-brand boards.',
-                'options' => kitWylexBoards(),
+                'blurb' => 'Sell price is the branded Wylex Screwfix inc-VAT figure + 15%. Ref is the same Wylex SKU. Hager / MK / Schneider stay enquire / POA.',
+                'note' => 'Screwfix is a price reference only. We supply the manufacturer named on the card — never Screwfix own-brand boards.',
+                'options' => array_merge(kitWylexBoards(), [
+                    kitPoaOpt(['id' => 'hager-cu', 'label' => 'Hager consumer unit', 'brand' => 'Hager', 'logo' => kitLogo('Hager'), 'image' => kitAsset('manufacturers/hager-consumer-unit.jpg'), 'blurb' => 'Branded Hager — enquire / POA. No invented £.', 'show_if' => ['step' => 'cu-style', 'values' => ['hager-poa']]]),
+                    kitPoaOpt(['id' => 'mk-cu', 'label' => 'MK circuit protection', 'brand' => 'MK', 'image' => $elec, 'cover' => true, 'blurb' => 'Branded MK — enquire / POA. No invented £.', 'show_if' => ['step' => 'cu-style', 'values' => ['mk-poa']]]),
+                    kitPoaOpt(['id' => 'schneider-cu', 'label' => 'Schneider circuit protection', 'brand' => 'Schneider', 'logo' => kitLogo('Schneider'), 'image' => kitAsset('manufacturers/schneider-electrical.jpg'), 'blurb' => 'Branded Schneider — enquire / POA. No invented £.', 'show_if' => ['step' => 'cu-style', 'values' => ['schneider-poa']]]),
+                ]),
             ],
             [
                 'id' => 'click-range',
@@ -234,10 +304,10 @@ function kitHeatingWizard(): array
         'title' => 'Central heating kit builder',
         'short' => 'Heating',
         'kicker' => 'Boiler / system',
-        'blurb' => 'Worcester Bosch, Vaillant, Ideal and Baxi. Gas Safe survey — no invented boiler £.',
+        'blurb' => 'Worcester Bosch, Vaillant, Ideal and Baxi only. Gas Safe survey — no invented boiler £. No Screwfix own-brand boilers or unbranded white-label plant.',
         'service' => 'heating',
         'hero_image' => $heat,
-        'summary_blurb' => 'Heating plant is quoted after survey. No Screwfix own-brand boilers.',
+        'summary_blurb' => 'Heating plant is quoted after survey. Branded manufacturers only. Screwfix is a price reference for the same branded SKU — never own-brand boilers.',
         'steps' => [
             [
                 'id' => 'system',
@@ -254,7 +324,7 @@ function kitHeatingWizard(): array
                 'id' => 'brand',
                 'title' => 'Boiler brand',
                 'short' => 'Brand',
-                'blurb' => 'Branded manufacturers only. Output and flue are confirmed on survey.',
+                'blurb' => 'Worcester Bosch, Vaillant, Ideal or Baxi only. Output and flue are confirmed on survey. No Screwfix own-brand.',
                 'options' => [
                     kitPoaOpt(['id' => 'worcester', 'label' => 'Worcester Bosch', 'brand' => 'Worcester Bosch', 'logo' => kitLogo('Worcester Bosch'), 'image' => $wb]),
                     kitPoaOpt(['id' => 'vaillant', 'label' => 'Vaillant', 'brand' => 'Vaillant', 'image' => $heat, 'cover' => true, 'blurb' => 'No unique Vaillant still in the repo — enquire / POA.']),
@@ -268,11 +338,14 @@ function kitHeatingWizard(): array
                 'short' => 'Extras',
                 'multi' => true,
                 'optional' => true,
-                'blurb' => 'Manufacturer controls and heating extras — enquire / POA.',
+                'blurb' => 'Matching manufacturer controls and extras — enquire / POA. Never Screwfix own-brand controls.',
                 'options' => [
-                    kitPoaOpt(['id' => 'controls', 'label' => 'Programmer / thermostat', 'brand' => 'Worcester Bosch', 'logo' => kitLogo('Worcester Bosch'), 'image' => $wb]),
-                    kitPoaOpt(['id' => 'filter', 'label' => 'System filter', 'brand' => 'Worcester Bosch', 'logo' => kitLogo('Worcester Bosch'), 'image' => $wb]),
-                    kitPoaOpt(['id' => 'flue', 'label' => 'Flue / plume kit', 'brand' => 'Worcester Bosch', 'logo' => kitLogo('Worcester Bosch'), 'image' => $wb]),
+                    kitPoaOpt(['id' => 'worcester-controls', 'label' => 'Worcester programmer / thermostat', 'brand' => 'Worcester Bosch', 'logo' => kitLogo('Worcester Bosch'), 'image' => $wb, 'show_if' => ['step' => 'brand', 'values' => ['worcester']]]),
+                    kitPoaOpt(['id' => 'worcester-filter', 'label' => 'Worcester system filter', 'brand' => 'Worcester Bosch', 'logo' => kitLogo('Worcester Bosch'), 'image' => $wb, 'show_if' => ['step' => 'brand', 'values' => ['worcester']]]),
+                    kitPoaOpt(['id' => 'worcester-flue', 'label' => 'Worcester flue / plume kit', 'brand' => 'Worcester Bosch', 'logo' => kitLogo('Worcester Bosch'), 'image' => $wb, 'show_if' => ['step' => 'brand', 'values' => ['worcester']]]),
+                    kitPoaOpt(['id' => 'vaillant-controls', 'label' => 'Vaillant controls / extras', 'brand' => 'Vaillant', 'image' => $heat, 'cover' => true, 'blurb' => 'Manufacturer extras — enquire / POA.', 'show_if' => ['step' => 'brand', 'values' => ['vaillant']]]),
+                    kitPoaOpt(['id' => 'ideal-controls', 'label' => 'Ideal controls / extras', 'brand' => 'Ideal', 'image' => $heat, 'cover' => true, 'blurb' => 'Manufacturer extras — enquire / POA.', 'show_if' => ['step' => 'brand', 'values' => ['ideal']]]),
+                    kitPoaOpt(['id' => 'baxi-controls', 'label' => 'Baxi controls / extras', 'brand' => 'Baxi', 'image' => $heat, 'cover' => true, 'blurb' => 'Manufacturer extras — enquire / POA.', 'show_if' => ['step' => 'brand', 'values' => ['baxi']]]),
                 ],
             ],
         ],
@@ -287,10 +360,10 @@ function kitFireWizard(): array
         'title' => 'Fire alarm kit builder',
         'short' => 'Fire alarm',
         'kicker' => 'BS 5839',
-        'blurb' => 'Advanced, C-TEC, Kentec panels with Apollo or Hochiki devices — live Shopify SKUs. No invented £.',
+        'blurb' => 'Advanced, C-TEC, Kentec panels with Apollo or Hochiki devices — live branded Shopify SKUs. No invented £. No Screwfix own-brand detectors or panels.',
         'service' => 'fire-alarms',
         'hero_image' => $fire,
-        'summary_blurb' => 'Known SKUs deep-link to Shopify. Loop counts and cause-and-effect stay enquire / POA.',
+        'summary_blurb' => 'Known branded SKUs deep-link to Shopify. Loop counts and cause-and-effect stay enquire / POA. Screwfix is a price reference only — never own-brand fire kit.',
         'steps' => [
             [
                 'id' => 'system',
@@ -355,10 +428,10 @@ function kitElWizard(): array
         'title' => 'Emergency lighting kit builder',
         'short' => 'Emergency lighting',
         'kicker' => 'BS 5266',
-        'blurb' => 'Espire / Eaton preference when a branded SKU exists. No live EL SKUs on Shopify today — enquire / POA. No invented £.',
+        'blurb' => 'Branded Espire / Eaton fittings when a manufacturer SKU exists. No live EL SKUs on Shopify today — enquire / POA. Never Screwfix own-brand emergency fittings. No invented £.',
         'service' => 'emergency-lighting',
         'hero_image' => $el,
-        'summary_blurb' => 'Fittings and central battery are quoted after a lux / occupancy survey.',
+        'summary_blurb' => 'Fittings and central battery are quoted after a lux / occupancy survey. Branded manufacturers only — Screwfix is a price reference, never own-brand EL.',
         'steps' => [
             [
                 'id' => 'building',
@@ -394,10 +467,10 @@ function kitAovWizard(): array
         'title' => 'AOV / smoke ventilation kit builder',
         'short' => 'AOV',
         'kicker' => 'Ventlux',
-        'blurb' => 'Ventlux controllers, vents and orange AOV call points from the live Shopify catalogue.',
+        'blurb' => 'Ventlux controllers, vents and orange AOV call points from the live Shopify catalogue. Branded Ventlux / KAC only — never Screwfix own-brand vents.',
         'service' => 'aov-air-handling',
         'hero_image' => $aov,
-        'summary_blurb' => 'Known Ventlux SKUs open on Shopify. Cause-and-effect remains enquire / POA.',
+        'summary_blurb' => 'Known branded Ventlux / KAC SKUs open on Shopify. Cause-and-effect remains enquire / POA. Screwfix is a price reference only.',
         'steps' => [
             [
                 'id' => 'controller',
@@ -442,7 +515,7 @@ function kitIntercomWizard(): array
         'title' => 'Intercom kit builder',
         'short' => 'Intercom',
         'kicker' => 'Videx / Bell / Aiphone',
-        'blurb' => 'Videx and Bell System kits from the live shop. Aiphone is enquire / POA until a shop SKU exists.',
+        'blurb' => 'Videx and Bell System kits from the live shop. Aiphone is enquire / POA until a shop SKU exists. Branded manufacturers only — never Screwfix own-brand door entry.',
         'service' => 'intercoms',
         'hero_image' => $int,
         'steps' => [
@@ -495,7 +568,7 @@ function kitAccessWizard(): array
         'title' => 'Access control kit builder',
         'short' => 'Access control',
         'kicker' => 'Paxton / CAME',
-        'blurb' => 'Paxton door access is enquire / POA until a shop SKU exists. CAME selectors and locks are live Shopify SKUs.',
+        'blurb' => 'Paxton door access is enquire / POA until a shop SKU exists. CAME selectors and locks are live Shopify SKUs. Branded Paxton / CAME / Salto only — never Screwfix own-brand access.',
         'service' => 'access-control',
         'hero_image' => $ac,
         'steps' => [
@@ -544,10 +617,10 @@ function kitGatesWizard(): array
         'title' => 'Gates kit builder',
         'short' => 'Gates',
         'kicker' => 'CAME sliding / swing / underground',
-        'blurb' => 'Official CAME stills from the Shopify CDN. Pick type, leaf size, operator family, safety and controls.',
+        'blurb' => 'Official CAME stills from the Shopify CDN. Pick type, leaf size, operator family, safety and controls. CAME only — never Screwfix own-brand gate kit.',
         'service' => 'access-control',
         'hero_image' => $hero,
-        'summary_blurb' => 'CAME SKUs deep-link to Shopify. Leaf weight and site survey remain enquire / POA. No invented £.',
+        'summary_blurb' => 'Branded CAME SKUs deep-link to Shopify. Leaf weight and site survey remain enquire / POA. Screwfix is a price reference only. No invented £.',
         'steps' => [
             [
                 'id' => 'type',
@@ -631,10 +704,10 @@ function kitBarriersWizard(): array
         'title' => 'Barriers kit builder',
         'short' => 'Barriers',
         'kicker' => 'CAME GARD',
-        'blurb' => 'CAME GARD boom barriers with DIR photocells, TOP remotes and ZLX / site controls.',
+        'blurb' => 'CAME GARD boom barriers with DIR photocells, TOP remotes and ZLX / site controls. CAME only — never Screwfix own-brand barriers.',
         'service' => 'access-control',
         'hero_image' => $hero,
-        'summary_blurb' => 'Boom length is confirmed on site. Live CAME SKUs open on Shopify.',
+        'summary_blurb' => 'Boom length is confirmed on site. Live branded CAME SKUs open on Shopify. Screwfix is a price reference only.',
         'steps' => [
             [
                 'id' => 'type',
@@ -698,7 +771,9 @@ function kitWizardCatalog(): array
     ];
     $out = [];
     foreach ($list as $w) {
+        $w = kitWithPolicy($w);
         $out[$w['slug']] = $w;
     }
+    kitAssertCatalogBrands($out);
     return $out;
 }
