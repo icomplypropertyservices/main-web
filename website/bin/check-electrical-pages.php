@@ -12,6 +12,12 @@ declare(strict_types=1);
 $options = getopt('', ['skip-render']);
 require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/render.php';
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    @session_start();
+}
+if (empty($_SESSION['csrf'])) {
+    $_SESSION['csrf'] = bin2hex(random_bytes(16));
+}
 
 $fail = 0;
 $pass = 0;
