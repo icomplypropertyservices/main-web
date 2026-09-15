@@ -649,6 +649,14 @@ function icomplyPrettyUrlHeaders(): string
   Content-Type: text/html; charset=utf-8
   X-Content-Type-Options: nosniff
 
+/shop
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/products
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
 /thank-you
   Content-Type: text/html; charset=utf-8
   X-Content-Type-Options: nosniff
