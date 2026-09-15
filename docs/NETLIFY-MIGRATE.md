@@ -1,5 +1,7 @@
 # Netlify migrate plan (static export)
 
+**Continuous deploy:** every push to `main` publishes `website/` via GitHub Actions. Required secrets and manual trigger: **[DEPLOY.md](../DEPLOY.md)**. Do not rely on the Netlify GitHub webhook alone.
+
 Production target: **Netlify** with build-time PHP static export. Vercel is **non-final** (preview/staging only until cutover).
 
 ## Why static export is required

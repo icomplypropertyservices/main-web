@@ -1,18 +1,26 @@
-# Netlify scaffold for iComply main-web
+# iComply main-web — PHP / static site (not Next.js, not Node)
 #
-# IMPORTANT (scaffold only):
-# Publishing raw `website/` does NOT execute PHP at request time.
-# Netlify serves static files only. Dynamic PHP pages will not run until
-# a build-time static exporter ships (P1+) and publish points at `dist`.
-# This file enables smoke deploys of existing static assets under website/.
+# Publish directory is `website/` (the real site tree: pages, assets,
+# manifest.json, robots, sitemap). There is no npm/Next.js build.
+#
+# Production branch is `main`. Every push to main is deployed by
+# `.github/workflows/netlify-deploy.yml` (NETLIFY_AUTH_TOKEN +
+# NETLIFY_SITE_ID). See DEPLOY.md.
+#
+# `ignore = "false"` means never skip a build — empty-diff heuristics
+# must not block production after a merge (the PR #1 failure mode).
 
 [build]
-  command = "# P0: placeholder until static exporter ships; publish existing website static assets for smoke deploy"
+  command = "test -f website/manifest.json && test -f website/pages/areas.php && test -d website/assets && echo 'Publish website/ (PHP/static; no Node/Next.js build)'"
   publish = "website"
-  # Real build will become: php bin/static-export.php && publish = dist
+  ignore = "false"
 
 [build.environment]
   PHP_VERSION = "8.3"
+
+[context.production]
+  command = "test -f website/manifest.json && test -f website/pages/areas.php && test -d website/assets && echo 'Production publish website/ from main'"
+  publish = "website"
 
 [[redirects]]
   from = "https://www.icomplypropertyservices.co.uk/*"
