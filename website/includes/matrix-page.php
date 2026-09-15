@@ -18,6 +18,52 @@ function icomplyMatrixH(string $s): string
     return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
 }
 
+function icomplyMatrixLeadPopupHtml(): string
+{
+    $s = icomplyMatrixShared();
+    $js = icomplyMatrixH(url('/assets/js/lead-popup.js'));
+    $contact = icomplyMatrixH($s['contact']);
+    $phone = icomplyMatrixH($s['phone']);
+    $phoneHref = icomplyMatrixH($s['phoneHref']);
+    $wa = icomplyMatrixH($s['whatsapp']);
+    return '<form name="lead-popup" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field" hidden>'
+        . '<input type="hidden" name="form-name" value="lead-popup">'
+        . '<input name="bot-field"><input name="name"><input name="email"><input name="phone">'
+        . '<input name="service"><textarea name="message"></textarea><input name="source" value="lead-popup">'
+        . '</form>'
+        . '<div id="lead-popup" class="lead-popup" hidden>'
+        . '<div class="lead-popup-dialog" role="dialog" aria-modal="true" aria-labelledby="lead-popup-title" tabindex="-1">'
+        . '<button type="button" class="lead-close" data-lead-close aria-label="Close quote popup">&times;</button>'
+        . '<h2 id="lead-popup-title">Need a compliance quote?</h2>'
+        . '<p>Price on application. Call, WhatsApp, or send a short note.</p>'
+        . '<div class="lead-quick">'
+        . '<a class="lead-call" href="' . $phoneHref . '">Call ' . $phone . '</a>'
+        . '<a class="lead-wa" href="https://wa.me/' . $wa . '?text=Hi%20iComply%2C%20I%20need%20a%20quote" target="_blank" rel="noopener">WhatsApp</a>'
+        . '<a class="lead-book" href="' . $contact . '">Book quote</a>'
+        . '</div>'
+        . '<form id="lead-popup-form" name="lead-popup" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">'
+        . '<input type="hidden" name="form-name" value="lead-popup">'
+        . '<label for="lp-name">Name</label><input id="lp-name" name="name" required maxlength="120">'
+        . '<label for="lp-email">Email</label><input id="lp-email" name="email" type="email" required>'
+        . '<label for="lp-phone">Phone</label><input id="lp-phone" name="phone" required maxlength="40">'
+        . '<label for="lp-service">Service interest</label>'
+        . '<select id="lp-service" name="service" required>'
+        . '<option value="">Select…</option>'
+        . '<option value="Legionella Risk Assessment">Legionella risk assessment</option>'
+        . '<option value="Asbestos Survey">Asbestos survey</option>'
+        . '<option value="Electrical">Electrical</option>'
+        . '<option value="Fire Risk Assessments">Fire risk assessments</option>'
+        . '<option value="Multi-service / not sure">Multi-service / not sure</option>'
+        . '</select>'
+        . '<label for="lp-message">Message (short)</label>'
+        . '<textarea id="lp-message" name="message" rows="3" required maxlength="800"></textarea>'
+        . '<input type="hidden" name="source" value="lead-popup">'
+        . '<button type="submit">Send to iComply</button>'
+        . '<p class="lead-status" id="lead-popup-status" role="status" aria-live="polite"></p>'
+        . '</form></div></div>'
+        . '<script src="' . $js . '" defer></script>';
+}
+
 function icomplyMatrixShared(): array
 {
     static $s = null;
@@ -112,13 +158,7 @@ function icomplyMatrixChromeStart(string $title, string $desc, string $canonical
 function icomplyMatrixChromeEnd(): string
 {
     $s = icomplyMatrixShared();
-    $popup = '';
-    $lp = SITE_ROOT . '/includes/lead-popup.php';
-    if (is_file($lp)) {
-        ob_start();
-        include $lp;
-        $popup = (string)ob_get_clean();
-    }
+    $popup = icomplyMatrixLeadPopupHtml();
     return '<footer class="bg-[#0a2540] text-white mt-12">'
         . '<div class="matrix-wrap py-10 text-sm text-white/80 space-y-2">'
         . '<div class="font-semibold text-white">' . icomplyMatrixH($s['brand']) . '</div>'
