@@ -1,0 +1,3127 @@
+{
+    "count": 390,
+    "category": "Fire",
+    "generated": "2026-09-15T21:48:29+00:00",
+    "jobs": [
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "addressable-fire-alarm",
+            "status": "live",
+            "name": "Addressable Fire Alarm",
+            "related": "bs-5839-fire-alarm"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "addressable-fire-alarm-panel",
+            "status": "live",
+            "name": "Addressable Fire Alarm Panel",
+            "related": "fire-alarm-panel"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "addressable-fire-alarm-system",
+            "status": "live",
+            "name": "Addressable Fire Alarm System",
+            "related": "fire-alarm-panel"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "advanced-fire-alarm-panel",
+            "status": "live",
+            "name": "Advanced Fire Alarm Panel",
+            "related": "fire-alarm-panel"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "advanced-fire-panel-service",
+            "status": "live",
+            "name": "Advanced Fire Panel Service",
+            "related": "fire-alarm-panel"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "annual-fire-risk-assessment",
+            "status": "live",
+            "name": "Annual Fire Risk Assessment",
+            "related": "fire-risk-assessment-update"
+        },
+        {
+            "category": "Fire",
+            "service_type": "kitchen-fire-suppression",
+            "slug": "ansul-style-kitchen-system-service",
+            "status": "live",
+            "name": "Ansul Style Kitchen System Service",
+            "related": "kitchen-suppression-certificate"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-actuator",
+            "status": "live",
+            "name": "AOV Actuator",
+            "related": "aov-control-panel"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-actuator-installation",
+            "status": "live",
+            "name": "AOV Actuator Installation",
+            "related": "aov-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-actuator-replacement",
+            "status": "live",
+            "name": "AOV Actuator Replacement",
+            "related": "corridor-smoke-vent"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-annual-service",
+            "status": "live",
+            "name": "AOV Annual Service",
+            "related": "aov-maintenance"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-battery-backup",
+            "status": "live",
+            "name": "AOV Battery Backup",
+            "related": "aov-control-panel"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-battery-replacement",
+            "status": "live",
+            "name": "AOV Battery Replacement",
+            "related": "aov-maintenance"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-certification",
+            "status": "live",
+            "name": "AOV Certification",
+            "related": "bs-9991"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-commissioning",
+            "status": "live",
+            "name": "AOV Commissioning",
+            "related": "aov-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-control-panel",
+            "status": "live",
+            "name": "AOV Control Panel",
+            "related": "aov-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-engineer",
+            "status": "live",
+            "name": "AOV Engineer",
+            "related": "aov-near-me"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-fault-finding",
+            "status": "live",
+            "name": "AOV Fault Finding",
+            "related": "aov-maintenance"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-fire-alarm-interface",
+            "status": "live",
+            "name": "AOV Fire Alarm Interface",
+            "related": "aov-control-panel"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-for-apartment-blocks",
+            "status": "live",
+            "name": "AOV for Apartment Blocks",
+            "related": "smoke-shaft-aov"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-for-high-rise",
+            "status": "live",
+            "name": "AOV for High Rise",
+            "related": "smoke-control-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-inspection",
+            "status": "live",
+            "name": "AOV Inspection",
+            "related": "aov-testing"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-installation",
+            "status": "live",
+            "name": "AOV Installation",
+            "related": "aov-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-maintenance",
+            "status": "live",
+            "name": "AOV Maintenance",
+            "related": "aov-servicing"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-maintenance-contract",
+            "status": "live",
+            "name": "AOV Maintenance Contract",
+            "related": "aov-maintenance"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-panel-installation",
+            "status": "live",
+            "name": "AOV Panel Installation",
+            "related": "aov-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-panel-replacement",
+            "status": "live",
+            "name": "AOV Panel Replacement",
+            "related": "smoke-control-system-maintenance"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-repair",
+            "status": "live",
+            "name": "AOV Repair",
+            "related": "aov-engineer"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-servicing",
+            "status": "live",
+            "name": "AOV Servicing",
+            "related": "aov-maintenance"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-system",
+            "status": "live",
+            "name": "AOV System",
+            "related": "automatic-opening-vent"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-system-design",
+            "status": "live",
+            "name": "AOV System Design",
+            "related": "aov-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-system-installation",
+            "status": "live",
+            "name": "AOV System Installation",
+            "related": "aov-servicing"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-testing",
+            "status": "live",
+            "name": "AOV Testing",
+            "related": "aov-inspection"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "aov-testing-and-certification",
+            "status": "live",
+            "name": "AOV Testing and Certification",
+            "related": "aov-maintenance"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "apartment-block-smoke-control",
+            "status": "live",
+            "name": "Apartment Block Smoke Control",
+            "related": "high-rise-aov-maintenance"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-doors",
+            "slug": "apartment-fire-door",
+            "status": "live",
+            "name": "Apartment Fire Door",
+            "related": "fd60-fire-door"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "apollo-fire-alarm",
+            "status": "live",
+            "name": "Apollo Fire Alarm",
+            "related": "fire-alarm-panel"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "apollo-fire-detectors",
+            "status": "live",
+            "name": "Apollo Fire Detectors",
+            "related": "fire-alarm-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-suppression",
+            "slug": "archive-room-suppression",
+            "status": "live",
+            "name": "Archive Room Suppression",
+            "related": "data-centre-fire-suppression"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "aspirating-smoke-detection",
+            "status": "live",
+            "name": "Aspirating Smoke Detection",
+            "related": "fire-detection-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-signage",
+            "slug": "assembly-point-signs",
+            "status": "live",
+            "name": "Assembly Point Signs",
+            "related": "fire-action-notices"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "automatic-emergency-lighting-test",
+            "status": "live",
+            "name": "Automatic Emergency Lighting Test",
+            "related": "self-testing-emergency-lighting"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "automatic-opening-vent",
+            "status": "live",
+            "name": "Automatic Opening Vent",
+            "related": "aov-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "automatic-opening-vent-installation",
+            "status": "live",
+            "name": "Automatic Opening Vent Installation",
+            "related": "aov-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "automatic-smoke-vent",
+            "status": "live",
+            "name": "Automatic Smoke Vent",
+            "related": "aov-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "beam-detection",
+            "status": "live",
+            "name": "Beam Detection",
+            "related": "fire-detection-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "beam-detection-system",
+            "status": "live",
+            "name": "Beam Detection System",
+            "related": "fire-alarm-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-compartmentation",
+            "slug": "block-compartmentation-upgrade",
+            "status": "live",
+            "name": "Block Compartmentation Upgrade",
+            "related": "landlord-compartmentation-survey"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-doors",
+            "slug": "block-fire-door-upgrade",
+            "status": "live",
+            "name": "Block Fire Door Upgrade",
+            "related": "landlord-fire-door-survey"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "block-of-flats-fire-risk-assessment",
+            "status": "live",
+            "name": "Block of Flats Fire Risk Assessment",
+            "related": "hmo-fire-risk-assessment"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "bs-5266",
+            "status": "live",
+            "name": "BS 5266",
+            "related": "emergency-lighting-compliance"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "bs-5266-compliance-certificate",
+            "status": "live",
+            "name": "BS 5266 Compliance Certificate",
+            "related": "emergency-lighting-certificate"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "bs-5266-emergency-lighting",
+            "status": "live",
+            "name": "BS 5266 Emergency Lighting",
+            "related": "bs-5266"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-extinguishers",
+            "slug": "bs-5306-extinguisher-service",
+            "status": "live",
+            "name": "BS 5306 Extinguisher Service",
+            "related": "fire-extinguisher-certificate"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "bs-5839",
+            "status": "live",
+            "name": "BS 5839",
+            "related": "fire-alarm-certification"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "bs-5839-fire-alarm",
+            "status": "live",
+            "name": "BS 5839 Fire Alarm",
+            "related": "bs-5839"
+        },
+        {
+            "category": "Fire",
+            "service_type": "evacuation-alerts",
+            "slug": "bs-8629-evacuation-alert",
+            "status": "live",
+            "name": "BS 8629 Evacuation Alert",
+            "related": "vibrating-pillow-alarmer"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "bs-9991",
+            "status": "live",
+            "name": "BS 9991",
+            "related": "aov-certification"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "bs-9991-smoke-control",
+            "status": "live",
+            "name": "BS 9991 Smoke Control",
+            "related": "smoke-control-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-signage",
+            "slug": "bs-iso-7010-signage",
+            "status": "live",
+            "name": "BS ISO 7010 Signage",
+            "related": "landlord-fire-signage"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "c-tec-fire-alarm-panel",
+            "status": "live",
+            "name": "C-Tec Fire Alarm Panel",
+            "related": "fire-alarm-panel"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "c-tec-fire-alarm-service",
+            "status": "live",
+            "name": "C-Tec Fire Alarm Service",
+            "related": "fire-alarm-panel"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-stopping",
+            "slug": "cable-fire-stopping",
+            "status": "live",
+            "name": "Cable Fire Stopping",
+            "related": "pipe-fire-stopping"
+        },
+        {
+            "category": "Fire",
+            "service_type": "kitchen-fire-suppression",
+            "slug": "canopy-suppression-install",
+            "status": "live",
+            "name": "Canopy Suppression Install",
+            "related": "kitchen-fire-suppression-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "car-park-lighting-installation",
+            "status": "live",
+            "name": "Car Park Lighting Installation",
+            "related": "external-security-lighting"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "car-park-smoke-ventilation",
+            "status": "live",
+            "name": "Car Park Smoke Ventilation",
+            "related": "smoke-control-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "care-home-emergency-lighting",
+            "status": "live",
+            "name": "Care Home Emergency Lighting",
+            "related": "emergency-lighting-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "evacuation-alerts",
+            "slug": "care-home-evacuation-alerts",
+            "status": "live",
+            "name": "Care Home Evacuation Alerts",
+            "related": "inclusive-evacuation-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "care-home-fire-alarm",
+            "status": "live",
+            "name": "Care Home Fire Alarm",
+            "related": "nurse-call-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "care-home-fire-risk-assessment",
+            "status": "live",
+            "name": "Care Home Fire Risk Assessment",
+            "related": "warehouse-fire-risk-assessment"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "category-ld2-fire-alarm",
+            "status": "live",
+            "name": "Category LD2 Fire Alarm",
+            "related": "landlord-fire-alarm"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "category-ld3-fire-alarm",
+            "status": "live",
+            "name": "Category LD3 Fire Alarm",
+            "related": "landlord-fire-alarm"
+        },
+        {
+            "category": "Fire",
+            "service_type": "kitchen-fire-suppression",
+            "slug": "catering-fire-suppression-maintenance",
+            "status": "live",
+            "name": "Catering Fire Suppression Maintenance",
+            "related": "ansul-style-kitchen-system-service"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-stopping",
+            "slug": "cavity-barrier-installation",
+            "status": "live",
+            "name": "Cavity Barrier Installation",
+            "related": "penetration-seals"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "central-battery-emergency-lighting",
+            "status": "live",
+            "name": "Central Battery Emergency Lighting",
+            "related": "emergency-lighting-inverter"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "change-of-use-fire-risk-assessment",
+            "status": "live",
+            "name": "Change of Use Fire Risk Assessment",
+            "related": "new-premises-fire-risk-assessment"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-suppression",
+            "slug": "clean-agent-suppression",
+            "status": "live",
+            "name": "Clean Agent Suppression",
+            "related": "plant-room-suppression"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-extinguishers",
+            "slug": "co2-fire-extinguisher",
+            "status": "live",
+            "name": "CO2 Fire Extinguisher",
+            "related": "fire-extinguisher-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "colt-smoke-vent",
+            "status": "live",
+            "name": "Colt Smoke Vent",
+            "related": "smoke-vent-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "commercial-emergency-lighting",
+            "status": "live",
+            "name": "Commercial Emergency Lighting",
+            "related": "industrial-emergency-lighting"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-extinguishers",
+            "slug": "commercial-extinguisher-package",
+            "status": "live",
+            "name": "Commercial Extinguisher Package",
+            "related": "extinguisher-wall-mounting"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "commercial-fire-alarm",
+            "status": "live",
+            "name": "Commercial Fire Alarm",
+            "related": "hmo-fire-alarm-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "commercial-fire-alarm-service",
+            "status": "live",
+            "name": "Commercial Fire Alarm Service",
+            "related": "fire-alarm-panel"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "commercial-fire-alarm-system",
+            "status": "live",
+            "name": "Commercial Fire Alarm System",
+            "related": "industrial-fire-alarm"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-doors",
+            "slug": "commercial-fire-door",
+            "status": "live",
+            "name": "Commercial Fire Door",
+            "related": "apartment-fire-door"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "commercial-fire-risk-assessment",
+            "status": "live",
+            "name": "Commercial Fire Risk Assessment",
+            "related": "fire-risk-assessment"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-signage",
+            "slug": "commercial-fire-sign-survey",
+            "status": "live",
+            "name": "Commercial Fire Sign Survey",
+            "related": "mandatory-fire-signage-package"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-stopping",
+            "slug": "commercial-fire-stopping-package",
+            "status": "live",
+            "name": "Commercial Fire Stopping Package",
+            "related": "landlord-fire-stopping"
+        },
+        {
+            "category": "Fire",
+            "service_type": "kitchen-fire-suppression",
+            "slug": "commercial-kitchen-fire-system",
+            "status": "live",
+            "name": "Commercial Kitchen Fire System",
+            "related": "canopy-suppression-install"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "commercial-security-lighting",
+            "status": "live",
+            "name": "Commercial Security Lighting",
+            "related": "external-security-lighting"
+        },
+        {
+            "category": "Fire",
+            "service_type": "sprinkler-systems",
+            "slug": "commercial-sprinkler-service",
+            "status": "live",
+            "name": "Commercial Sprinkler Service",
+            "related": "sprinkler-system-testing"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "communal-area-fire-risk-assessment",
+            "status": "live",
+            "name": "Communal Area Fire Risk Assessment",
+            "related": "multi-site-fire-risk-assessments"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-compartmentation",
+            "slug": "compartment-drawings-support",
+            "status": "live",
+            "name": "Compartment Drawings Support",
+            "related": "service-riser-compartmentation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-stopping",
+            "slug": "compartment-wall-fire-stopping",
+            "status": "live",
+            "name": "Compartment Wall Fire Stopping",
+            "related": "fire-stopping-remedial-works"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-compartmentation",
+            "slug": "compartmentation-certificate-support",
+            "status": "live",
+            "name": "Compartmentation Certificate Support",
+            "related": "hidden-voids-fire-survey"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-compartmentation",
+            "slug": "compartmentation-remedial-works",
+            "status": "live",
+            "name": "Compartmentation Remedial Works",
+            "related": "fire-compartmentation-survey"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "conventional-fire-alarm",
+            "status": "live",
+            "name": "Conventional Fire Alarm",
+            "related": "addressable-fire-alarm"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "conventional-fire-alarm-panel",
+            "status": "live",
+            "name": "Conventional Fire Alarm Panel",
+            "related": "fire-alarm-panel"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "conventional-fire-alarm-system",
+            "status": "live",
+            "name": "Conventional Fire Alarm System",
+            "related": "fire-alarm-panel"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "corridor-smoke-vent",
+            "status": "live",
+            "name": "Corridor Smoke Vent",
+            "related": "stairwell-smoke-vent"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "corridor-smoke-ventilation",
+            "status": "live",
+            "name": "Corridor Smoke Ventilation",
+            "related": "smoke-control-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-suppression",
+            "slug": "data-centre-fire-suppression",
+            "status": "live",
+            "name": "Data Centre Fire Suppression",
+            "related": "suppression-system-design-support"
+        },
+        {
+            "category": "Fire",
+            "service_type": "evacuation-alerts",
+            "slug": "deaf-alerter-installation",
+            "status": "live",
+            "name": "Deaf Alerter Installation",
+            "related": "evacuation-alert-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-signage",
+            "slug": "directional-escape-signs",
+            "status": "live",
+            "name": "Directional Escape Signs",
+            "related": "bs-iso-7010-signage"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "disabled-refuge-system",
+            "status": "live",
+            "name": "Disabled Refuge System",
+            "related": "fire-alarm-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "domestic-fire-alarm-installation",
+            "status": "live",
+            "name": "Domestic Fire Alarm Installation",
+            "related": "landlord-fire-alarm"
+        },
+        {
+            "category": "Fire",
+            "service_type": "dry-risers",
+            "slug": "dry-riser-annual-test",
+            "status": "live",
+            "name": "Dry Riser Annual Test",
+            "related": "fire-service-inlet-box"
+        },
+        {
+            "category": "Fire",
+            "service_type": "dry-risers",
+            "slug": "dry-riser-certificate",
+            "status": "live",
+            "name": "Dry Riser Certificate",
+            "related": "rising-main-test"
+        },
+        {
+            "category": "Fire",
+            "service_type": "dry-risers",
+            "slug": "dry-riser-inlet-inspection",
+            "status": "live",
+            "name": "Dry Riser Inlet Inspection",
+            "related": "wet-riser-testing"
+        },
+        {
+            "category": "Fire",
+            "service_type": "dry-risers",
+            "slug": "dry-riser-maintenance",
+            "status": "live",
+            "name": "Dry Riser Maintenance",
+            "related": "dry-riser-testing"
+        },
+        {
+            "category": "Fire",
+            "service_type": "dry-risers",
+            "slug": "dry-riser-outlet-service",
+            "status": "live",
+            "name": "Dry Riser Outlet Service",
+            "related": "dry-riser-inlet-inspection"
+        },
+        {
+            "category": "Fire",
+            "service_type": "dry-risers",
+            "slug": "dry-riser-pressure-test",
+            "status": "live",
+            "name": "Dry Riser Pressure Test",
+            "related": "landing-valve-replacement"
+        },
+        {
+            "category": "Fire",
+            "service_type": "dry-risers",
+            "slug": "dry-riser-remedial-works",
+            "status": "live",
+            "name": "Dry Riser Remedial Works",
+            "related": "high-rise-dry-riser"
+        },
+        {
+            "category": "Fire",
+            "service_type": "dry-risers",
+            "slug": "dry-riser-testing",
+            "status": "live",
+            "name": "Dry Riser Testing",
+            "related": "dry-riser-maintenance"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-bulkhead-lights",
+            "status": "live",
+            "name": "Emergency Bulkhead Lights",
+            "related": "emergency-lighting-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-exit-lighting",
+            "status": "live",
+            "name": "Emergency Exit Lighting",
+            "related": "escape-route-lighting"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-light-battery-replacement",
+            "status": "live",
+            "name": "Emergency Light Battery Replacement",
+            "related": "emergency-lighting-maintenance"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-light-fitting",
+            "status": "live",
+            "name": "Emergency Light Fitting",
+            "related": "emergency-exit-lighting"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-annual-test",
+            "status": "live",
+            "name": "Emergency Lighting Annual Test",
+            "related": "emergency-lighting-certificate"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-battery-replacement",
+            "status": "live",
+            "name": "Emergency Lighting Battery Replacement",
+            "related": "emergency-lighting-servicing"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-certificate",
+            "status": "live",
+            "name": "Emergency Lighting Certificate",
+            "related": "emergency-lighting-certification"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-certification",
+            "status": "live",
+            "name": "Emergency Lighting Certification",
+            "related": "emergency-lighting-certificate"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-commissioning",
+            "status": "live",
+            "name": "Emergency Lighting Commissioning",
+            "related": "emergency-lighting-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-compliance",
+            "status": "live",
+            "name": "Emergency Lighting Compliance",
+            "related": "bs-5266"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-design",
+            "status": "live",
+            "name": "Emergency Lighting Design",
+            "related": "emergency-lighting-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-duration-test",
+            "status": "live",
+            "name": "Emergency Lighting Duration Test",
+            "related": "emergency-lighting-testing"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-engineer",
+            "status": "live",
+            "name": "Emergency Lighting Engineer",
+            "related": "emergency-lighting-near-me"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-engineers",
+            "status": "live",
+            "name": "Emergency Lighting Engineers",
+            "related": "emergency-lighting-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-for-landlords",
+            "status": "live",
+            "name": "Emergency Lighting for Landlords",
+            "related": "landlord-emergency-lighting"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-inspection",
+            "status": "live",
+            "name": "Emergency Lighting Inspection",
+            "related": "emergency-lighting-testing"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-installation",
+            "status": "live",
+            "name": "Emergency Lighting Installation",
+            "related": "emergency-lighting-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-inverter",
+            "status": "live",
+            "name": "Emergency Lighting Inverter",
+            "related": "central-battery-emergency-lighting"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-logbook",
+            "status": "live",
+            "name": "Emergency Lighting Logbook",
+            "related": "emergency-lighting-certificate"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-maintenance",
+            "status": "live",
+            "name": "Emergency Lighting Maintenance",
+            "related": "emergency-lighting-servicing"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-monthly-test",
+            "status": "live",
+            "name": "Emergency Lighting Monthly Test",
+            "related": "emergency-lighting-testing"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-panel",
+            "status": "live",
+            "name": "Emergency Lighting Panel",
+            "related": "central-battery-emergency-lighting"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-remedials",
+            "status": "live",
+            "name": "Emergency Lighting Remedials",
+            "related": "emergency-lighting-certificate"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-repair",
+            "status": "live",
+            "name": "Emergency Lighting Repair",
+            "related": "emergency-light-battery-replacement"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-service-contract",
+            "status": "live",
+            "name": "Emergency Lighting Service Contract",
+            "related": "emergency-lighting-maintenance"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-servicing",
+            "status": "live",
+            "name": "Emergency Lighting Servicing",
+            "related": "emergency-lighting-testing"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-survey",
+            "status": "live",
+            "name": "Emergency Lighting Survey",
+            "related": "emergency-lighting-testing"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-system",
+            "status": "live",
+            "name": "Emergency Lighting System",
+            "related": "led-emergency-lighting"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-test",
+            "status": "live",
+            "name": "Emergency Lighting Test",
+            "related": "emergency-lighting-certificate"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-testing",
+            "status": "live",
+            "name": "Emergency Lighting Testing",
+            "related": "periodic-emergency-lighting-test"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-upgrade",
+            "status": "live",
+            "name": "Emergency Lighting Upgrade",
+            "related": "led-emergency-lighting"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "emergency-smoke-ventilation",
+            "status": "live",
+            "name": "Emergency Smoke Ventilation",
+            "related": "smoke-control-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-twin-spot-lights",
+            "status": "live",
+            "name": "Emergency Twin Spot Lights",
+            "related": "emergency-lighting-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "en-12101-smoke-vent",
+            "status": "live",
+            "name": "EN 12101 Smoke Vent",
+            "related": "smoke-vent-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "escape-route-lighting",
+            "status": "live",
+            "name": "Escape Route Lighting",
+            "related": "emergency-exit-lighting"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-signage",
+            "slug": "escape-route-signs",
+            "status": "live",
+            "name": "Escape Route Signs",
+            "related": "fire-exit-signage"
+        },
+        {
+            "category": "Fire",
+            "service_type": "evacuation-alerts",
+            "slug": "evacuation-alert-maintenance",
+            "status": "live",
+            "name": "Evacuation Alert Maintenance",
+            "related": "wireless-deaf-alerter"
+        },
+        {
+            "category": "Fire",
+            "service_type": "evacuation-alerts",
+            "slug": "evacuation-alert-system",
+            "status": "live",
+            "name": "Evacuation Alert System",
+            "related": "deaf-alerter-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "evacuation-strategy-review",
+            "status": "live",
+            "name": "Evacuation Strategy Review",
+            "related": "significant-findings-fire-risk"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "exit-sign-installation",
+            "status": "live",
+            "name": "Exit Sign Installation",
+            "related": "emergency-exit-lighting"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "external-security-lighting",
+            "status": "live",
+            "name": "External Security Lighting",
+            "related": "emergency-lighting-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-extinguishers",
+            "slug": "extinguisher-maintenance-contract",
+            "status": "live",
+            "name": "Extinguisher Maintenance Contract",
+            "related": "bs-5306-extinguisher-service"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-extinguishers",
+            "slug": "extinguisher-replacement",
+            "status": "live",
+            "name": "Extinguisher Replacement",
+            "related": "kitchen-fire-extinguishers"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-extinguishers",
+            "slug": "extinguisher-survey",
+            "status": "live",
+            "name": "Extinguisher Survey",
+            "related": "extinguisher-replacement"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-extinguishers",
+            "slug": "extinguisher-wall-mounting",
+            "status": "live",
+            "name": "Extinguisher Wall Mounting",
+            "related": "fire-blanket-supply"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "factory-fire-alarm-system",
+            "status": "live",
+            "name": "Factory Fire Alarm System",
+            "related": "fire-alarm-panel"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-doors",
+            "slug": "fd30-fire-door",
+            "status": "live",
+            "name": "FD30 Fire Door",
+            "related": "fire-door-seals"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-doors",
+            "slug": "fd60-fire-door",
+            "status": "live",
+            "name": "FD60 Fire Door",
+            "related": "fd30-fire-door"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-signage",
+            "slug": "fire-action-notices",
+            "status": "live",
+            "name": "Fire Action Notices",
+            "related": "fire-extinguisher-signs"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "fire-alarm-and-emergency-lighting",
+            "status": "live",
+            "name": "Fire Alarm and Emergency Lighting",
+            "related": "emergency-lighting-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-battery-replacement",
+            "status": "live",
+            "name": "Fire Alarm Battery Replacement",
+            "related": "fire-alarm-maintenance"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-call-point-installation",
+            "status": "live",
+            "name": "Fire Alarm Call Point Installation",
+            "related": "fire-alarm-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-certificate",
+            "status": "live",
+            "name": "Fire Alarm Certificate",
+            "related": "fire-safety-certificate"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-certification",
+            "status": "live",
+            "name": "Fire Alarm Certification",
+            "related": "fire-alarm-compliance"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-commissioning",
+            "status": "live",
+            "name": "Fire Alarm Commissioning",
+            "related": "fire-alarm-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-compliance",
+            "status": "live",
+            "name": "Fire Alarm Compliance",
+            "related": "bs-5839"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-design",
+            "status": "live",
+            "name": "Fire Alarm Design",
+            "related": "fire-alarm-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-engineer",
+            "status": "live",
+            "name": "Fire Alarm Engineer",
+            "related": "fire-alarm-engineer-near-me"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-fault-finding",
+            "status": "live",
+            "name": "Fire Alarm Fault Finding",
+            "related": "fire-alarm-repair"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-inspection",
+            "status": "live",
+            "name": "Fire Alarm Inspection",
+            "related": "fire-alarm-testing"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-installation",
+            "status": "live",
+            "name": "Fire Alarm Installation",
+            "related": "fire-alarm-panel"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-installation-certificate",
+            "status": "live",
+            "name": "Fire Alarm Installation Certificate",
+            "related": "fire-alarm-certification"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-logbook",
+            "status": "live",
+            "name": "Fire Alarm Logbook",
+            "related": "fire-alarm-certificate"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-loop-tester",
+            "status": "live",
+            "name": "Fire Alarm Loop Tester",
+            "related": "fire-alarm-testing"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-maintenance",
+            "status": "live",
+            "name": "Fire Alarm Maintenance",
+            "related": "fire-alarm-servicing"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-maintenance-contract",
+            "status": "live",
+            "name": "Fire Alarm Maintenance Contract",
+            "related": "fire-alarm-maintenance"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-monitoring",
+            "status": "live",
+            "name": "Fire Alarm Monitoring",
+            "related": "fire-alarm-maintenance"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-monitoring-setup",
+            "status": "live",
+            "name": "Fire Alarm Monitoring Setup",
+            "related": "fire-alarm-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-panel",
+            "status": "live",
+            "name": "Fire Alarm Panel",
+            "related": "fire-alarm-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-panel-service",
+            "status": "live",
+            "name": "Fire Alarm Panel Service",
+            "related": "fire-alarm-panel"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-repair",
+            "status": "live",
+            "name": "Fire Alarm Repair",
+            "related": "fire-alarm-engineer"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-service",
+            "status": "live",
+            "name": "Fire Alarm Service",
+            "related": "fire-alarm-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-servicing",
+            "status": "live",
+            "name": "Fire Alarm Servicing",
+            "related": "periodic-fire-alarm-service"
+        },
+        {
+            "category": "Fire",
+            "service_type": "evacuation-alerts",
+            "slug": "fire-alarm-strobe-installation",
+            "status": "live",
+            "name": "Fire Alarm Strobe Installation",
+            "related": "visual-alarm-devices"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-system",
+            "status": "live",
+            "name": "Fire Alarm System",
+            "related": "fire-detection-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-testing",
+            "status": "live",
+            "name": "Fire Alarm Testing",
+            "related": "fire-alarm-inspection"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-upgrade",
+            "status": "live",
+            "name": "Fire Alarm Upgrade",
+            "related": "fire-alarm-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-weekly-test-support",
+            "status": "live",
+            "name": "Fire Alarm Weekly Test Support",
+            "related": "fire-alarm-servicing"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-alarm-zone-chart",
+            "status": "live",
+            "name": "Fire Alarm Zone Chart",
+            "related": "fire-alarm-panel"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-compartmentation",
+            "slug": "fire-barrier-installation",
+            "status": "live",
+            "name": "Fire Barrier Installation",
+            "related": "compartment-drawings-support"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-stopping",
+            "slug": "fire-batt-installation",
+            "status": "live",
+            "name": "Fire Batt Installation",
+            "related": "fire-rated-sealant-works"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-extinguishers",
+            "slug": "fire-blanket-supply",
+            "status": "live",
+            "name": "Fire Blanket Supply",
+            "related": "extinguisher-maintenance-contract"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-stopping",
+            "slug": "fire-collar-installation",
+            "status": "live",
+            "name": "Fire Collar Installation",
+            "related": "cavity-barrier-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-compartmentation",
+            "slug": "fire-compartmentation-survey",
+            "status": "live",
+            "name": "Fire Compartmentation Survey",
+            "related": "compartmentation-remedial-works"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-detection-system",
+            "status": "live",
+            "name": "Fire Detection System",
+            "related": "fire-alarm-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-detection-system-installation",
+            "status": "live",
+            "name": "Fire Detection System Installation",
+            "related": "fire-alarm-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-doors",
+            "slug": "fire-door-certification",
+            "status": "live",
+            "name": "Fire Door Certification",
+            "related": "fire-door-inspection"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-doors",
+            "slug": "fire-door-closer-replacement",
+            "status": "live",
+            "name": "Fire Door Closer Replacement",
+            "related": "fire-door-repair"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-doors",
+            "slug": "fire-door-compliance-check",
+            "status": "live",
+            "name": "Fire Door Compliance Check",
+            "related": "fire-exit-door-maintenance"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-doors",
+            "slug": "fire-door-frame-repair",
+            "status": "live",
+            "name": "Fire Door Frame Repair",
+            "related": "glazed-fire-door"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-doors",
+            "slug": "fire-door-gap-remedial",
+            "status": "live",
+            "name": "Fire Door Gap Remedial",
+            "related": "fire-door-ironmongery"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-door-inspection",
+            "status": "live",
+            "name": "Fire Door Inspection",
+            "related": "fire-safety-certificate"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-doors",
+            "slug": "fire-door-installation",
+            "status": "live",
+            "name": "Fire Door Installation",
+            "related": "fire-door-survey"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-doors",
+            "slug": "fire-door-intumescent-seals",
+            "status": "live",
+            "name": "Fire Door Intumescent Seals",
+            "related": "block-fire-door-upgrade"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-doors",
+            "slug": "fire-door-ironmongery",
+            "status": "live",
+            "name": "Fire Door Ironmongery",
+            "related": "commercial-fire-door"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-signage",
+            "slug": "fire-door-keep-shut-signs",
+            "status": "live",
+            "name": "Fire Door Keep Shut Signs",
+            "related": "directional-escape-signs"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-doors",
+            "slug": "fire-door-repair",
+            "status": "live",
+            "name": "Fire Door Repair",
+            "related": "fire-door-certification"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-doors",
+            "slug": "fire-door-replacement-programme",
+            "status": "live",
+            "name": "Fire Door Replacement Programme",
+            "related": "master-key-fire-door-sets"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-doors",
+            "slug": "fire-door-seals",
+            "status": "live",
+            "name": "Fire Door Seals",
+            "related": "fire-door-closer-replacement"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-doors",
+            "slug": "fire-door-survey",
+            "status": "live",
+            "name": "Fire Door Survey",
+            "related": "fire-door-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-doors",
+            "slug": "fire-exit-door-maintenance",
+            "status": "live",
+            "name": "Fire Exit Door Maintenance",
+            "related": "fire-door-intumescent-seals"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-signage",
+            "slug": "fire-exit-signage",
+            "status": "live",
+            "name": "Fire Exit Signage",
+            "related": "escape-route-signs"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-extinguishers",
+            "slug": "fire-extinguisher-certificate",
+            "status": "live",
+            "name": "Fire Extinguisher Certificate",
+            "related": "wet-chemical-extinguisher"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-extinguishers",
+            "slug": "fire-extinguisher-installation",
+            "status": "live",
+            "name": "Fire Extinguisher Installation",
+            "related": "fire-extinguisher-supply"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-extinguishers",
+            "slug": "fire-extinguisher-service",
+            "status": "live",
+            "name": "Fire Extinguisher Service",
+            "related": "fire-extinguisher-supply"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-signage",
+            "slug": "fire-extinguisher-signs",
+            "status": "live",
+            "name": "Fire Extinguisher Signs",
+            "related": "photoluminescent-signage"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-extinguishers",
+            "slug": "fire-extinguisher-supply",
+            "status": "live",
+            "name": "Fire Extinguisher Supply",
+            "related": "fire-extinguisher-service"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-compartmentation",
+            "slug": "fire-integrity-survey",
+            "status": "live",
+            "name": "Fire Integrity Survey",
+            "related": "block-compartmentation-upgrade"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-extinguishers",
+            "slug": "fire-point-setup",
+            "status": "live",
+            "name": "Fire Point Setup",
+            "related": "extinguisher-survey"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "fire-rated-aov",
+            "status": "live",
+            "name": "Fire Rated AOV",
+            "related": "aov-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-stopping",
+            "slug": "fire-rated-sealant-works",
+            "status": "live",
+            "name": "Fire Rated Sealant Works",
+            "related": "compartment-wall-fire-stopping"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "fire-risk-assessment",
+            "status": "live",
+            "name": "Fire Risk Assessment",
+            "related": "commercial-fire-risk-assessment"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "fire-risk-assessment-action-plan",
+            "status": "live",
+            "name": "Fire Risk Assessment Action Plan",
+            "related": "communal-area-fire-risk-assessment"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "fire-risk-assessment-certificate",
+            "status": "live",
+            "name": "Fire Risk Assessment Certificate",
+            "related": "fire-safety-order-assessment"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "fire-risk-assessment-review",
+            "status": "live",
+            "name": "Fire Risk Assessment Review",
+            "related": "school-fire-risk-assessment"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-risk-assessment-support",
+            "status": "live",
+            "name": "Fire Risk Assessment Support",
+            "related": "fire-alarm-compliance"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "fire-risk-assessment-update",
+            "status": "live",
+            "name": "Fire Risk Assessment Update",
+            "related": "evacuation-strategy-review"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "fire-safety-audit",
+            "status": "live",
+            "name": "Fire Safety Audit",
+            "related": "suitable-and-sufficient-fra"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-safety-certificate",
+            "status": "live",
+            "name": "Fire Safety Certificate",
+            "related": "fire-alarm-certification"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "fire-safety-order-assessment",
+            "status": "live",
+            "name": "Fire Safety Order Assessment",
+            "related": "pas-79-fire-risk-assessment"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "fire-safety-order-compliance",
+            "status": "live",
+            "name": "Fire Safety Order Compliance",
+            "related": "fire-safety-certificate"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-signage",
+            "slug": "fire-safety-signs-installation",
+            "status": "live",
+            "name": "Fire Safety Signs Installation",
+            "related": "escape-route-signs"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-compartmentation",
+            "slug": "fire-separating-wall-works",
+            "status": "live",
+            "name": "Fire Separating Wall Works",
+            "related": "compartmentation-remedial-works"
+        },
+        {
+            "category": "Fire",
+            "service_type": "dry-risers",
+            "slug": "fire-service-inlet-box",
+            "status": "live",
+            "name": "Fire Service Inlet Box",
+            "related": "dry-riser-pressure-test"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-stopping",
+            "slug": "fire-stopping-certificate",
+            "status": "live",
+            "name": "Fire Stopping Certificate",
+            "related": "commercial-fire-stopping-package"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-stopping",
+            "slug": "fire-stopping-installation",
+            "status": "live",
+            "name": "Fire Stopping Installation",
+            "related": "fire-stopping-survey"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-stopping",
+            "slug": "fire-stopping-remedial-works",
+            "status": "live",
+            "name": "Fire Stopping Remedial Works",
+            "related": "passive-fire-protection"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-stopping",
+            "slug": "fire-stopping-survey",
+            "status": "live",
+            "name": "Fire Stopping Survey",
+            "related": "fire-stopping-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-suppression",
+            "slug": "fire-suppression-commissioning",
+            "status": "live",
+            "name": "Fire Suppression Commissioning",
+            "related": "inert-gas-suppression"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-suppression",
+            "slug": "fire-suppression-maintenance-contract",
+            "status": "live",
+            "name": "Fire Suppression Maintenance Contract",
+            "related": "suppression-detection-integration"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-suppression",
+            "slug": "fire-suppression-servicing",
+            "status": "live",
+            "name": "Fire Suppression Servicing",
+            "related": "fire-suppression-system-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-suppression",
+            "slug": "fire-suppression-system-installation",
+            "status": "live",
+            "name": "Fire Suppression System Installation",
+            "related": "fire-suppression-servicing"
+        },
+        {
+            "category": "Fire",
+            "service_type": "evacuation-alerts",
+            "slug": "flats-evacuation-alert-system",
+            "status": "live",
+            "name": "Flats Evacuation Alert System",
+            "related": "care-home-evacuation-alerts"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-compartmentation",
+            "slug": "floor-compartmentation",
+            "status": "live",
+            "name": "Floor Compartmentation",
+            "related": "fire-separating-wall-works"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-extinguishers",
+            "slug": "foam-fire-extinguisher",
+            "status": "live",
+            "name": "Foam Fire Extinguisher",
+            "related": "co2-fire-extinguisher"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "fra-for-managing-agents",
+            "status": "live",
+            "name": "FRA for Managing Agents",
+            "related": "fire-risk-assessment-action-plan"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-doors",
+            "slug": "glazed-fire-door",
+            "status": "live",
+            "name": "Glazed Fire Door",
+            "related": "fire-door-gap-remedial"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "heat-detector-installation",
+            "status": "live",
+            "name": "Heat Detector Installation",
+            "related": "smoke-alarm-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-compartmentation",
+            "slug": "hidden-voids-fire-survey",
+            "status": "live",
+            "name": "Hidden Voids Fire Survey",
+            "related": "fire-integrity-survey"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "high-rise-aov-maintenance",
+            "status": "live",
+            "name": "High Rise AOV Maintenance",
+            "related": "aov-fault-finding"
+        },
+        {
+            "category": "Fire",
+            "service_type": "dry-risers",
+            "slug": "high-rise-dry-riser",
+            "status": "live",
+            "name": "High Rise Dry Riser",
+            "related": "dry-riser-certificate"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "high-risk-task-area-lighting",
+            "status": "live",
+            "name": "High Risk Task Area Lighting",
+            "related": "emergency-lighting-design"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "hmo-fire-alarm-system",
+            "status": "live",
+            "name": "HMO Fire Alarm System",
+            "related": "landlord-fire-alarm"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "hmo-fire-risk-assessment",
+            "status": "live",
+            "name": "HMO Fire Risk Assessment",
+            "related": "landlord-fire-risk-assessment"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "hochiki-fire-alarm",
+            "status": "live",
+            "name": "Hochiki Fire Alarm",
+            "related": "fire-alarm-panel"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "hochiki-fire-detection",
+            "status": "live",
+            "name": "Hochiki Fire Detection",
+            "related": "fire-alarm-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "evacuation-alerts",
+            "slug": "inclusive-evacuation-system",
+            "status": "live",
+            "name": "Inclusive Evacuation System",
+            "related": "fire-alarm-strobe-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "industrial-emergency-lighting",
+            "status": "live",
+            "name": "Industrial Emergency Lighting",
+            "related": "commercial-emergency-lighting"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "industrial-fire-alarm",
+            "status": "live",
+            "name": "Industrial Fire Alarm",
+            "related": "commercial-fire-alarm-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-suppression",
+            "slug": "inert-gas-suppression",
+            "status": "live",
+            "name": "Inert Gas Suppression",
+            "related": "clean-agent-suppression"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "kentec-fire-alarm-panel",
+            "status": "live",
+            "name": "Kentec Fire Alarm Panel",
+            "related": "fire-alarm-panel"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "kentec-panel-service",
+            "status": "live",
+            "name": "Kentec Panel Service",
+            "related": "kentec-fire-alarm-panel"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-extinguishers",
+            "slug": "kitchen-fire-extinguishers",
+            "status": "live",
+            "name": "Kitchen Fire Extinguishers",
+            "related": "office-fire-extinguishers"
+        },
+        {
+            "category": "Fire",
+            "service_type": "kitchen-fire-suppression",
+            "slug": "kitchen-fire-suppression-system",
+            "status": "live",
+            "name": "Kitchen Fire Suppression System",
+            "related": "canopy-suppression-install"
+        },
+        {
+            "category": "Fire",
+            "service_type": "kitchen-fire-suppression",
+            "slug": "kitchen-hood-suppression",
+            "status": "live",
+            "name": "Kitchen Hood Suppression",
+            "related": "takeaway-kitchen-fire-safety"
+        },
+        {
+            "category": "Fire",
+            "service_type": "kitchen-fire-suppression",
+            "slug": "kitchen-suppression-certificate",
+            "status": "live",
+            "name": "Kitchen Suppression Certificate",
+            "related": "kitchen-hood-suppression"
+        },
+        {
+            "category": "Fire",
+            "service_type": "kitchen-fire-suppression",
+            "slug": "kitchen-suppression-servicing",
+            "status": "live",
+            "name": "Kitchen Suppression Servicing",
+            "related": "wet-chemical-kitchen-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "l1-fire-alarm-system",
+            "status": "live",
+            "name": "L1 Fire Alarm System",
+            "related": "bs-5839"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "l2-fire-alarm-system",
+            "status": "live",
+            "name": "L2 Fire Alarm System",
+            "related": "bs-5839"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "l3-fire-alarm-system",
+            "status": "live",
+            "name": "L3 Fire Alarm System",
+            "related": "bs-5839"
+        },
+        {
+            "category": "Fire",
+            "service_type": "dry-risers",
+            "slug": "landing-valve-replacement",
+            "status": "live",
+            "name": "Landing Valve Replacement",
+            "related": "dry-riser-remedial-works"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-compartmentation",
+            "slug": "landlord-compartmentation-survey",
+            "status": "live",
+            "name": "Landlord Compartmentation Survey",
+            "related": "fire-barrier-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "landlord-emergency-lighting",
+            "status": "live",
+            "name": "Landlord Emergency Lighting",
+            "related": "emergency-lighting-certificate"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-extinguishers",
+            "slug": "landlord-extinguisher-service",
+            "status": "live",
+            "name": "Landlord Extinguisher Service",
+            "related": "commercial-extinguisher-package"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "landlord-fire-alarm",
+            "status": "live",
+            "name": "Landlord Fire Alarm",
+            "related": "fire-alarm-certification"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-doors",
+            "slug": "landlord-fire-door-survey",
+            "status": "live",
+            "name": "Landlord Fire Door Survey",
+            "related": "fire-door-frame-repair"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "landlord-fire-risk-assessment",
+            "status": "live",
+            "name": "Landlord Fire Risk Assessment",
+            "related": "commercial-fire-risk-assessment"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-signage",
+            "slug": "landlord-fire-signage",
+            "status": "live",
+            "name": "Landlord Fire Signage",
+            "related": "commercial-fire-sign-survey"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-stopping",
+            "slug": "landlord-fire-stopping",
+            "status": "live",
+            "name": "Landlord Fire Stopping",
+            "related": "putty-pad-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "led-emergency-lighting",
+            "status": "live",
+            "name": "LED Emergency Lighting",
+            "related": "emergency-lighting-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "led-emergency-lighting-conversion",
+            "status": "live",
+            "name": "LED Emergency Lighting Conversion",
+            "related": "led-emergency-lighting"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "life-safety-ventilation",
+            "status": "live",
+            "name": "Life Safety Ventilation",
+            "related": "smoke-control-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-stopping",
+            "slug": "linear-gap-seals",
+            "status": "live",
+            "name": "Linear Gap Seals",
+            "related": "open-state-cavity-barrier"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "lobby-smoke-ventilation",
+            "status": "live",
+            "name": "Lobby Smoke Ventilation",
+            "related": "smoke-control-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-suppression",
+            "slug": "local-application-suppression",
+            "status": "live",
+            "name": "Local Application Suppression",
+            "related": "fire-suppression-maintenance-contract"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "louvre-aov",
+            "status": "live",
+            "name": "Louvre AOV",
+            "related": "roof-aov"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "maintained-emergency-lighting",
+            "status": "live",
+            "name": "Maintained Emergency Lighting",
+            "related": "non-maintained-emergency-lighting"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-signage",
+            "slug": "mandatory-fire-signage-package",
+            "status": "live",
+            "name": "Mandatory Fire Signage Package",
+            "related": "no-smoking-fire-signs"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "manual-call-point",
+            "status": "live",
+            "name": "Manual Call Point",
+            "related": "fire-alarm-panel"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-doors",
+            "slug": "master-key-fire-door-sets",
+            "status": "live",
+            "name": "Master Key Fire Door Sets",
+            "related": "fire-door-compliance-check"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "mechanical-smoke-extract",
+            "status": "live",
+            "name": "Mechanical Smoke Extract",
+            "related": "natural-smoke-ventilation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "mechanical-smoke-ventilation",
+            "status": "live",
+            "name": "Mechanical Smoke Ventilation",
+            "related": "smoke-control-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "morley-fire-alarm-panel",
+            "status": "live",
+            "name": "Morley Fire Alarm Panel",
+            "related": "fire-alarm-panel"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "multi-site-aov-maintenance",
+            "status": "live",
+            "name": "Multi Site AOV Maintenance",
+            "related": "aov-maintenance"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "multi-site-emergency-lighting-contract",
+            "status": "live",
+            "name": "Multi Site Emergency Lighting Contract",
+            "related": "emergency-lighting-maintenance"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-extinguishers",
+            "slug": "multi-site-extinguisher-service",
+            "status": "live",
+            "name": "Multi Site Extinguisher Service",
+            "related": "fire-point-setup"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "multi-site-fire-alarm-maintenance",
+            "status": "live",
+            "name": "Multi Site Fire Alarm Maintenance",
+            "related": "fire-alarm-maintenance"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "multi-site-fire-risk-assessments",
+            "status": "live",
+            "name": "Multi Site Fire Risk Assessments",
+            "related": "fire-risk-assessment-certificate"
+        },
+        {
+            "category": "Fire",
+            "service_type": "sprinkler-systems",
+            "slug": "multi-site-sprinkler-contracts",
+            "status": "live",
+            "name": "Multi Site Sprinkler Contracts",
+            "related": "sprinkler-system-remedial-works"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "natural-smoke-ventilation",
+            "status": "live",
+            "name": "Natural Smoke Ventilation",
+            "related": "automatic-smoke-vent"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "new-premises-fire-risk-assessment",
+            "status": "live",
+            "name": "New Premises Fire Risk Assessment",
+            "related": "annual-fire-risk-assessment"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-signage",
+            "slug": "no-smoking-fire-signs",
+            "status": "live",
+            "name": "No Smoking Fire Signs",
+            "related": "assembly-point-signs"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "non-maintained-emergency-lighting",
+            "status": "live",
+            "name": "Non Maintained Emergency Lighting",
+            "related": "maintained-emergency-lighting"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "office-emergency-lighting",
+            "status": "live",
+            "name": "Office Emergency Lighting",
+            "related": "emergency-lighting-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "office-fire-alarm-installation",
+            "status": "live",
+            "name": "Office Fire Alarm Installation",
+            "related": "fire-alarm-panel"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-extinguishers",
+            "slug": "office-fire-extinguishers",
+            "status": "live",
+            "name": "Office Fire Extinguishers",
+            "related": "landlord-extinguisher-service"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "office-fire-risk-assessment",
+            "status": "live",
+            "name": "Office Fire Risk Assessment",
+            "related": "block-of-flats-fire-risk-assessment"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "open-area-emergency-lighting",
+            "status": "live",
+            "name": "Open Area Emergency Lighting",
+            "related": "emergency-lighting-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-stopping",
+            "slug": "open-state-cavity-barrier",
+            "status": "live",
+            "name": "Open State Cavity Barrier",
+            "related": "retrofit-fire-stopping"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "pas-79-fire-risk-assessment",
+            "status": "live",
+            "name": "PAS 79 Fire Risk Assessment",
+            "related": "type-4-fire-risk-assessment"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-stopping",
+            "slug": "passive-fire-protection",
+            "status": "live",
+            "name": "Passive Fire Protection",
+            "related": "service-riser-fire-stopping"
+        },
+        {
+            "category": "Fire",
+            "service_type": "evacuation-alerts",
+            "slug": "peep-alert-devices",
+            "status": "live",
+            "name": "PEEP Alert Devices",
+            "related": "bs-8629-evacuation-alert"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-stopping",
+            "slug": "penetration-seals",
+            "status": "live",
+            "name": "Penetration Seals",
+            "related": "fire-stopping-survey"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "periodic-emergency-lighting-test",
+            "status": "live",
+            "name": "Periodic Emergency Lighting Test",
+            "related": "emergency-lighting-testing"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "periodic-fire-alarm-service",
+            "status": "live",
+            "name": "Periodic Fire Alarm Service",
+            "related": "fire-alarm-servicing"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-signage",
+            "slug": "photoluminescent-signage",
+            "status": "live",
+            "name": "Photoluminescent Signage",
+            "related": "fire-safety-signs-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-stopping",
+            "slug": "pipe-fire-stopping",
+            "status": "live",
+            "name": "Pipe Fire Stopping",
+            "related": "fire-collar-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "pir-security-lighting",
+            "status": "live",
+            "name": "PIR Security Lighting",
+            "related": "external-security-lighting"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-suppression",
+            "slug": "plant-room-suppression",
+            "status": "live",
+            "name": "Plant Room Suppression",
+            "related": "server-room-suppression"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-extinguishers",
+            "slug": "powder-fire-extinguisher",
+            "status": "live",
+            "name": "Powder Fire Extinguisher",
+            "related": "water-fire-extinguisher"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-stopping",
+            "slug": "putty-pad-installation",
+            "status": "live",
+            "name": "Putty Pad Installation",
+            "related": "fire-batt-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "sprinkler-systems",
+            "slug": "residential-sprinkler-advice",
+            "status": "live",
+            "name": "Residential Sprinkler Advice",
+            "related": "sprinkler-system-survey"
+        },
+        {
+            "category": "Fire",
+            "service_type": "kitchen-fire-suppression",
+            "slug": "restaurant-fire-suppression",
+            "status": "live",
+            "name": "Restaurant Fire Suppression",
+            "related": "kitchen-suppression-servicing"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "retail-fire-risk-assessment",
+            "status": "live",
+            "name": "Retail Fire Risk Assessment",
+            "related": "care-home-fire-risk-assessment"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-stopping",
+            "slug": "retrofit-fire-stopping",
+            "status": "live",
+            "name": "Retrofit Fire Stopping",
+            "related": "fire-stopping-certificate"
+        },
+        {
+            "category": "Fire",
+            "service_type": "dry-risers",
+            "slug": "rising-main-test",
+            "status": "live",
+            "name": "Rising Main Test",
+            "related": "dry-riser-outlet-service"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "roof-aov",
+            "status": "live",
+            "name": "Roof AOV",
+            "related": "window-aov"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "roof-smoke-vent-installation",
+            "status": "live",
+            "name": "Roof Smoke Vent Installation",
+            "related": "smoke-vent-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "running-man-exit-signs",
+            "status": "live",
+            "name": "Running Man Exit Signs",
+            "related": "emergency-exit-lighting"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "school-fire-risk-assessment",
+            "status": "live",
+            "name": "School Fire Risk Assessment",
+            "related": "retail-fire-risk-assessment"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "se-controls-aov",
+            "status": "live",
+            "name": "SE Controls AOV",
+            "related": "aov-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "security-lighting-installation",
+            "status": "live",
+            "name": "Security Lighting Installation",
+            "related": "emergency-lighting-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "self-test-emergency-lighting",
+            "status": "live",
+            "name": "Self Test Emergency Lighting",
+            "related": "emergency-lighting-testing"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "self-testing-emergency-lighting",
+            "status": "live",
+            "name": "Self Testing Emergency Lighting",
+            "related": "automatic-emergency-lighting-test"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-suppression",
+            "slug": "server-room-suppression",
+            "status": "live",
+            "name": "Server Room Suppression",
+            "related": "fire-suppression-servicing"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-compartmentation",
+            "slug": "service-riser-compartmentation",
+            "status": "live",
+            "name": "Service Riser Compartmentation",
+            "related": "floor-compartmentation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-stopping",
+            "slug": "service-riser-fire-stopping",
+            "status": "live",
+            "name": "Service Riser Fire Stopping",
+            "related": "cable-fire-stopping"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "significant-findings-fire-risk",
+            "status": "live",
+            "name": "Significant Findings Fire Risk",
+            "related": "fire-safety-audit"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "smoke-alarm-installation",
+            "status": "live",
+            "name": "Smoke Alarm Installation",
+            "related": "heat-detector-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "smoke-control-engineers",
+            "status": "live",
+            "name": "Smoke Control Engineers",
+            "related": "smoke-control-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "smoke-control-panel-service",
+            "status": "live",
+            "name": "Smoke Control Panel Service",
+            "related": "aov-maintenance"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "smoke-control-system",
+            "status": "live",
+            "name": "Smoke Control System",
+            "related": "smoke-vent-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "smoke-control-system-maintenance",
+            "status": "live",
+            "name": "Smoke Control System Maintenance",
+            "related": "smoke-vent-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "smoke-curtain-maintenance",
+            "status": "live",
+            "name": "Smoke Curtain Maintenance",
+            "related": "aov-battery-replacement"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "smoke-detector-installation-commercial",
+            "status": "live",
+            "name": "Smoke Detector Installation Commercial",
+            "related": "fire-alarm-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "smoke-shaft-aov",
+            "status": "live",
+            "name": "Smoke Shaft AOV",
+            "related": "smoke-control-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "smoke-shaft-maintenance",
+            "status": "live",
+            "name": "Smoke Shaft Maintenance",
+            "related": "aov-actuator-replacement"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "smoke-vent-installation",
+            "status": "live",
+            "name": "Smoke Vent Installation",
+            "related": "aov-servicing"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "smoke-vent-system",
+            "status": "live",
+            "name": "Smoke Vent System",
+            "related": "smoke-control-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "sounder-beacon",
+            "status": "live",
+            "name": "Sounder Beacon",
+            "related": "fire-alarm-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "sprinkler-systems",
+            "slug": "sprinkler-alarm-interface",
+            "status": "live",
+            "name": "Sprinkler Alarm Interface",
+            "related": "warehouse-sprinkler-maintenance"
+        },
+        {
+            "category": "Fire",
+            "service_type": "sprinkler-systems",
+            "slug": "sprinkler-compliance-check",
+            "status": "live",
+            "name": "Sprinkler Compliance Check",
+            "related": "multi-site-sprinkler-contracts"
+        },
+        {
+            "category": "Fire",
+            "service_type": "sprinkler-systems",
+            "slug": "sprinkler-flow-test",
+            "status": "live",
+            "name": "Sprinkler Flow Test",
+            "related": "residential-sprinkler-advice"
+        },
+        {
+            "category": "Fire",
+            "service_type": "sprinkler-systems",
+            "slug": "sprinkler-head-replacement",
+            "status": "live",
+            "name": "Sprinkler Head Replacement",
+            "related": "sprinkler-valve-inspection"
+        },
+        {
+            "category": "Fire",
+            "service_type": "sprinkler-systems",
+            "slug": "sprinkler-system-inspection",
+            "status": "live",
+            "name": "Sprinkler System Inspection",
+            "related": "sprinkler-system-maintenance"
+        },
+        {
+            "category": "Fire",
+            "service_type": "sprinkler-systems",
+            "slug": "sprinkler-system-maintenance",
+            "status": "live",
+            "name": "Sprinkler System Maintenance",
+            "related": "sprinkler-system-inspection"
+        },
+        {
+            "category": "Fire",
+            "service_type": "sprinkler-systems",
+            "slug": "sprinkler-system-remedial-works",
+            "status": "live",
+            "name": "Sprinkler System Remedial Works",
+            "related": "sprinkler-flow-test"
+        },
+        {
+            "category": "Fire",
+            "service_type": "sprinkler-systems",
+            "slug": "sprinkler-system-survey",
+            "status": "live",
+            "name": "Sprinkler System Survey",
+            "related": "sprinkler-head-replacement"
+        },
+        {
+            "category": "Fire",
+            "service_type": "sprinkler-systems",
+            "slug": "sprinkler-system-testing",
+            "status": "live",
+            "name": "Sprinkler System Testing",
+            "related": "sprinkler-system-inspection"
+        },
+        {
+            "category": "Fire",
+            "service_type": "sprinkler-systems",
+            "slug": "sprinkler-valve-inspection",
+            "status": "live",
+            "name": "Sprinkler Valve Inspection",
+            "related": "commercial-sprinkler-service"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "stairwell-smoke-vent",
+            "status": "live",
+            "name": "Stairwell Smoke Vent",
+            "related": "smoke-shaft-aov"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "suitable-and-sufficient-fra",
+            "status": "live",
+            "name": "Suitable and Sufficient FRA",
+            "related": "fire-risk-assessment-north-west"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-suppression",
+            "slug": "suppression-cylinder-service",
+            "status": "live",
+            "name": "Suppression Cylinder Service",
+            "related": "fire-suppression-commissioning"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-suppression",
+            "slug": "suppression-detection-integration",
+            "status": "live",
+            "name": "Suppression Detection Integration",
+            "related": "archive-room-suppression"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-suppression",
+            "slug": "suppression-system-design-support",
+            "status": "live",
+            "name": "Suppression System Design Support",
+            "related": "suppression-cylinder-service"
+        },
+        {
+            "category": "Fire",
+            "service_type": "kitchen-fire-suppression",
+            "slug": "takeaway-kitchen-fire-safety",
+            "status": "live",
+            "name": "Takeaway Kitchen Fire Safety",
+            "related": "restaurant-fire-suppression"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "type-1-fire-risk-assessment",
+            "status": "live",
+            "name": "Type 1 Fire Risk Assessment",
+            "related": "fire-risk-assessment-review"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "type-3-fire-risk-assessment",
+            "status": "live",
+            "name": "Type 3 Fire Risk Assessment",
+            "related": "type-1-fire-risk-assessment"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "type-4-fire-risk-assessment",
+            "status": "live",
+            "name": "Type 4 Fire Risk Assessment",
+            "related": "type-3-fire-risk-assessment"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "vesda-installation",
+            "status": "live",
+            "name": "VESDA Installation",
+            "related": "fire-alarm-panel"
+        },
+        {
+            "category": "Fire",
+            "service_type": "evacuation-alerts",
+            "slug": "vibrating-pillow-alarmer",
+            "status": "live",
+            "name": "Vibrating Pillow Alarmer",
+            "related": "deaf-alerter-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "evacuation-alerts",
+            "slug": "visual-alarm-devices",
+            "status": "live",
+            "name": "Visual Alarm Devices",
+            "related": "peep-alert-devices"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "voice-alarm-system",
+            "status": "live",
+            "name": "Voice Alarm System",
+            "related": "fire-alarm-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "emergency-lighting",
+            "slug": "warehouse-emergency-lighting",
+            "status": "live",
+            "name": "Warehouse Emergency Lighting",
+            "related": "emergency-lighting-installation"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-risk-assessments",
+            "slug": "warehouse-fire-risk-assessment",
+            "status": "live",
+            "name": "Warehouse Fire Risk Assessment",
+            "related": "office-fire-risk-assessment"
+        },
+        {
+            "category": "Fire",
+            "service_type": "sprinkler-systems",
+            "slug": "warehouse-sprinkler-maintenance",
+            "status": "live",
+            "name": "Warehouse Sprinkler Maintenance",
+            "related": "sprinkler-compliance-check"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-extinguishers",
+            "slug": "water-fire-extinguisher",
+            "status": "live",
+            "name": "Water Fire Extinguisher",
+            "related": "foam-fire-extinguisher"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-extinguishers",
+            "slug": "wet-chemical-extinguisher",
+            "status": "live",
+            "name": "Wet Chemical Extinguisher",
+            "related": "powder-fire-extinguisher"
+        },
+        {
+            "category": "Fire",
+            "service_type": "kitchen-fire-suppression",
+            "slug": "wet-chemical-kitchen-system",
+            "status": "live",
+            "name": "Wet Chemical Kitchen System",
+            "related": "commercial-kitchen-fire-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "dry-risers",
+            "slug": "wet-riser-maintenance",
+            "status": "live",
+            "name": "Wet Riser Maintenance",
+            "related": "dry-riser-annual-test"
+        },
+        {
+            "category": "Fire",
+            "service_type": "dry-risers",
+            "slug": "wet-riser-testing",
+            "status": "live",
+            "name": "Wet Riser Testing",
+            "related": "dry-riser-maintenance"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "window-aov",
+            "status": "live",
+            "name": "Window AOV",
+            "related": "louvre-aov"
+        },
+        {
+            "category": "Fire",
+            "service_type": "aov-air-handling",
+            "slug": "windowmaster-aov",
+            "status": "live",
+            "name": "WindowMaster AOV",
+            "related": "aov-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "evacuation-alerts",
+            "slug": "wireless-deaf-alerter",
+            "status": "live",
+            "name": "Wireless Deaf Alerter",
+            "related": "flats-evacuation-alert-system"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "wireless-fire-alarm",
+            "status": "live",
+            "name": "Wireless Fire Alarm",
+            "related": "conventional-fire-alarm"
+        },
+        {
+            "category": "Fire",
+            "service_type": "fire-alarms",
+            "slug": "wireless-fire-alarm-system",
+            "status": "live",
+            "name": "Wireless Fire Alarm System",
+            "related": "fire-alarm-system"
+        }
+    ]
+}
