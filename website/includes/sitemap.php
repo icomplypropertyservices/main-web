@@ -1,8 +1,10 @@
 <?php
 /**
  * Compact, accurate sitemap — core pages + hubs + resources + services +
- * areas + manufacturers + keyword hubs + service×area landings.
+ * areas + manufacturers + keyword hubs.
  * Never includes keyword×area (the 200k+ junk that made live generate 470 parts / 500).
+ * Never lists synthetic /pages/{service}/{town} unless a real PHP file exists
+ * (prod 404'd ~118 Stockport/Manchester service×town locs).
  */
 declare(strict_types=1);
 
@@ -142,10 +144,16 @@ function icomplySitemapEntries(): array
             $add('/pages/keywords/' . keywordSlug($kw), '0.68');
         }
     }
-    if (!$requestSafe && function_exists('getServices') && function_exists('getAreas') && function_exists('areaSlug')) {
+    // Service × town: only real files. Do not invent thin /pages/{service}/{town}
+    // rows — live sitemap listed ~114–120 Stockport/Manchester locs that 404.
+    if (function_exists('getServices') && function_exists('getAreas') && function_exists('areaSlug')) {
         foreach (array_keys(getServices()) as $sSlug) {
             foreach (getAreas() as $area) {
-                $add('/pages/' . $sSlug . '/' . areaSlug($area), '0.55');
+                $town = areaSlug((string)$area);
+                $rel = 'pages/' . $sSlug . '/' . $town . '.php';
+                if ($exists($rel)) {
+                    $add('/pages/' . $sSlug . '/' . $town, '0.55');
+                }
             }
         }
     }

@@ -24,11 +24,29 @@ $bannedNeedles = [
     '/sitemap-1.xml',
     '-photo.jpg',
     '/pages/keywords/eicr/stockport', // keyword×area junk sample
+    '/pages/gas-systems/manchester', // service×town 404 on prod
+    '/pages/epc/stockport',
+    '/pages/emergency-lighting/stockport',
 ];
 foreach ($bannedNeedles as $n) {
     if (str_contains($xml, $n)) {
         echo "FAIL: banned URL in sitemap: {$n}\n";
         $fail++;
+    }
+}
+
+// Live sitemap listed ~114–120 /pages/{service}/{stockport|manchester} that 404.
+// Generation must not invent those unless a real PHP file exists.
+if (function_exists('getServices')) {
+    foreach (array_keys(getServices()) as $sSlug) {
+        foreach (['stockport', 'manchester'] as $town) {
+            $rel = 'pages/' . $sSlug . '/' . $town . '.php';
+            $needle = '/pages/' . $sSlug . '/' . $town . '</loc>';
+            if (str_contains($xml, $needle) && !is_file(SITE_ROOT . '/' . $rel)) {
+                echo "FAIL: dead service×town in sitemap (no PHP file): {$needle}\n";
+                $fail++;
+            }
+        }
     }
 }
 
