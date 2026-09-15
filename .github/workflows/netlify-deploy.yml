@@ -1,0 +1,83 @@
+# Deploy iComply main-web to Netlify on every push to main.
+# Official CLI action: https://github.com/netlify/actions
+#
+# Jack must add these GitHub Actions secrets once (never commit them):
+#   NETLIFY_AUTH_TOKEN  — Netlify personal access token
+#   NETLIFY_SITE_ID     — Project ID for site icomply-main-web
+# See DEPLOY.md.
+
+name: Deploy to Netlify
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: netlify-production
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Production deploy (main)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check required secrets
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          missing=0
+          if [ -z "$NETLIFY_AUTH_TOKEN" ]; then
+            echo "::error::NETLIFY_AUTH_TOKEN is not set. Add it in GitHub → Settings → Secrets and variables → Actions. See DEPLOY.md."
+            missing=1
+          fi
+          if [ -z "$NETLIFY_SITE_ID" ]; then
+            echo "::error::NETLIFY_SITE_ID is not set. Add it in GitHub → Settings → Secrets and variables → Actions. See DEPLOY.md."
+            missing=1
+          fi
+          exit "$missing"
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify publish directory (website/)
+        run: |
+          set -e
+          test -f website/manifest.json
+          test -f website/pages/areas.php
+          test -f website/pages/services.php
+          test -f website/pages/resources.php
+          test -d website/assets
+          echo "website/ OK — PHP/static publish dir (no Node/Next.js build)"
+
+      # Official Netlify CLI action. --dir matches netlify.toml publish.
+      - name: Deploy website/ to Netlify production
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --dir=website --prod --message "github.com/${{ github.repository }}@${{ github.sha }}"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      # Queue a Netlify-side build of main as well. Does not rely on the
+      # GitHub↔Netlify webhook (the path that missed PR #1). Keeps any
+      # site-level PHP / ServerlessWP plugins from the Netlify UI.
+      # Best-effort: file deploy above already published website/.
+      - name: Queue Netlify production rebuild of main
+        continue-on-error: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          curl -fsS -X POST \
+            "https://api.netlify.com/api/v1/sites/${NETLIFY_SITE_ID}/builds" \
+            -H "Authorization: Bearer ${NETLIFY_AUTH_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -d '{"clear_cache":true}'
+          echo
+          echo "Queued Netlify build for site ${NETLIFY_SITE_ID}"
