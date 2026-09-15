@@ -16,6 +16,120 @@ function jobTypesMasterFile(): string
     return SITE_ROOT . '/data/job-types-master.json';
 }
 
+function jobTypesMasterCsvFile(): string
+{
+    return SITE_ROOT . '/data/job-types-master.csv';
+}
+
+function jobTypesPacksDir(): string
+{
+    return SITE_ROOT . '/data/job-packs';
+}
+
+/**
+ * Load jobs from a CSV with a header row (slug,name,service,related,...).
+ *
+ * @return list<array<string, string>>
+ */
+function jobTypesLoadCsvJobs(string $file): array
+{
+    if (!is_file($file)) {
+        return [];
+    }
+    $fh = fopen($file, 'r');
+    if ($fh === false) {
+        return [];
+    }
+    $header = fgetcsv($fh);
+    if (!is_array($header) || $header === []) {
+        fclose($fh);
+        return [];
+    }
+    $header = array_map(static fn($h) => strtolower(trim((string)$h)), $header);
+    $out = [];
+    while (($row = fgetcsv($fh)) !== false) {
+        if (!is_array($row) || $row === [] || ($row[0] ?? '') === '') {
+            continue;
+        }
+        $assoc = [];
+        foreach ($header as $i => $key) {
+            if ($key === '') {
+                continue;
+            }
+            $assoc[$key] = trim((string)($row[$i] ?? ''));
+        }
+        $slug = keywordSlug((string)($assoc['slug'] ?? $assoc['name'] ?? ''));
+        if ($slug === '') {
+            continue;
+        }
+        $assoc['slug'] = $slug;
+        if (empty($assoc['name'])) {
+            $assoc['name'] = keywordDisplayName($slug);
+        }
+        if (empty($assoc['service'])) {
+            $assoc['service'] = 'electrical';
+        }
+        $out[] = $assoc;
+    }
+    fclose($fh);
+    return $out;
+}
+
+/**
+ * Sibling category packs (JSON or CSV) overlay richer copy onto master slugs.
+ *
+ * @return array<string, array<string, mixed>> slug => fields
+ */
+function jobTypesPackOverlays(): array
+{
+    static $packs = null;
+    if ($packs !== null) {
+        return $packs;
+    }
+    $packs = [];
+    $dir = jobTypesPacksDir();
+    if (!is_dir($dir)) {
+        return $packs;
+    }
+    $files = array_merge(
+        glob($dir . '/*.json') ?: [],
+        glob($dir . '/*.csv') ?: []
+    );
+    sort($files);
+    foreach ($files as $file) {
+        $rows = [];
+        if (str_ends_with($file, '.csv')) {
+            $rows = jobTypesLoadCsvJobs($file);
+        } else {
+            $decoded = json_decode((string)file_get_contents($file), true);
+            if (isset($decoded['jobs']) && is_array($decoded['jobs'])) {
+                $decoded = $decoded['jobs'];
+            }
+            if (is_array($decoded)) {
+                foreach ($decoded as $key => $row) {
+                    if (!is_array($row)) {
+                        continue;
+                    }
+                    if (empty($row['slug']) && is_string($key) && !is_numeric($key)) {
+                        $row['slug'] = $key;
+                    }
+                    $rows[] = $row;
+                }
+            }
+        }
+        foreach ($rows as $row) {
+            $slug = keywordSlug((string)($row['slug'] ?? $row['name'] ?? ''));
+            if ($slug === '') {
+                continue;
+            }
+            $prev = $packs[$slug] ?? [];
+            $packs[$slug] = array_merge($prev, $row);
+            $packs[$slug]['slug'] = $slug;
+        }
+    }
+    return $packs;
+}
+
 /** @return array{count?:int,jobs?:list<array<string,mixed>>} */
 function jobTypesMasterData(): array
 {
@@ -23,12 +137,36 @@ function jobTypesMasterData(): array
     if ($data !== null) {
         return $data;
     }
-    $file = jobTypesMasterFile();
-    if (!is_file($file)) {
-        return $data = [];
+    $bySlug = [];
+    $csv = jobTypesLoadCsvJobs(jobTypesMasterCsvFile());
+    foreach ($csv as $row) {
+        $bySlug[$row['slug']] = $row;
     }
-    $decoded = json_decode((string)file_get_contents($file), true);
-    return $data = (is_array($decoded) ? $decoded : []);
+    $jsonFile = jobTypesMasterFile();
+    if (is_file($jsonFile)) {
+        $decoded = json_decode((string)file_get_contents($jsonFile), true);
+        foreach (($decoded['jobs'] ?? []) as $row) {
+            if (!is_array($row)) {
+                continue;
+            }
+            $slug = keywordSlug((string)($row['slug'] ?? ''));
+            if ($slug === '') {
+                continue;
+            }
+            $bySlug[$slug] = array_merge($bySlug[$slug] ?? [], $row, ['slug' => $slug]);
+        }
+    }
+    foreach (jobTypesPackOverlays() as $slug => $row) {
+        if (!isset($bySlug[$slug])) {
+            continue; // packs cannot grow the 1,753 master
+        }
+        $bySlug[$slug] = array_merge($bySlug[$slug], $row, ['slug' => $slug]);
+    }
+    $jobs = array_values($bySlug);
+    return $data = [
+        'count' => count($jobs),
+        'jobs' => $jobs,
+    ];
 }
 
 /** @return list<array{slug:string,name:string,service:string,related?:string}> */
@@ -75,7 +213,17 @@ function jobTypesApplyMaster(array $keywords): array
             $base = [];
         }
         $synth = jobTypesSynthesize($job, $base);
-        $keywords[$slug] = jobTypesMergePreferExisting($base, $synth);
+        $merged = jobTypesMergePreferExisting($base, $synth);
+        $pack = jobTypesPackOverlays()[$slug] ?? [];
+        if ($pack) {
+            $merged = jobTypesMergePreferExisting($merged, $pack);
+            foreach (['seo_title', 'h1', 'intro', 'body', 'meta_desc', 'faq', 'focus_points', 'secondaries'] as $field) {
+                if (!empty($pack[$field])) {
+                    $merged[$field] = $pack[$field];
+                }
+            }
+        }
+        $keywords[$slug] = $merged;
     }
     $seenTitle = [];
     $seenH1 = [];
@@ -92,6 +240,21 @@ function jobTypesApplyMaster(array $keywords): array
             $row['h1'] = $h1;
         }
         $seenH1[$h1] = true;
+    }
+    unset($row);
+    foreach ($keywords as $slug => &$row) {
+        $rel = keywordSlug((string)($row['related'] ?? ''));
+        if ($rel === '' || !isset($keywords[$rel])) {
+            $svc = (string)($row['service'] ?? '');
+            $fallback = $slug;
+            foreach ($keywords as $other => $meta) {
+                if ($other !== $slug && ($meta['service'] ?? '') === $svc) {
+                    $fallback = $other;
+                    break;
+                }
+            }
+            $row['related'] = $fallback;
+        }
     }
     unset($row);
     return $keywords;

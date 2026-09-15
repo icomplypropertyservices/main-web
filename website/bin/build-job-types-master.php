@@ -126,7 +126,24 @@ if ($json === false) {
 }
 $file = SITE_ROOT . '/data/job-types-master.json';
 file_put_contents($file, $json . "\n");
+$csvFile = SITE_ROOT . '/data/job-types-master.csv';
+$fh = fopen($csvFile, 'w');
+if ($fh === false) {
+    fwrite(STDERR, "Could not write {$csvFile}\n");
+    exit(1);
+}
+fputcsv($fh, ['slug', 'name', 'service', 'related']);
+foreach ($outJobs as $row) {
+    fputcsv($fh, [
+        $row['slug'],
+        $row['name'],
+        $row['service'],
+        $row['related'] ?? $row['slug'],
+    ]);
+}
+fclose($fh);
 echo 'Wrote ' . count($outJobs) . " jobs → {$file}\n";
+echo 'Wrote CSV → ' . $csvFile . "\n";
 echo 'existing=' . count($existing) . ' added=' . (count($outJobs) - count($existing)) . "\n";
 exit(0);
 
