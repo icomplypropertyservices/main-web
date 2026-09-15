@@ -185,7 +185,7 @@ if (preg_match('#^/shop(?:/\\*)?\s+/pages/packages\s+301#m', $redirects)) {
 }
 
 $shopIndex = is_file($dist . '/shop/index.html') ? (string)file_get_contents($dist . '/shop/index.html') : '';
-$shopNeedles = ['iComply Supplies', '/shop/fire/', '/shop/security/', '/shop/electrical/', '/shop/gas/'];
+$shopNeedles = ['iComply Supplies', 'Home', 'Areas', 'Contact', '/shop/fire/', '/shop/security/', '/shop/electrical/', '/shop/gas/'];
 $shopOk = $shopIndex !== '' && !str_contains($shopIndex, '<?php');
 $shopMissing = [];
 if ($shopOk) {
@@ -195,6 +195,10 @@ if ($shopOk) {
             $shopOk = false;
         }
     }
+}
+if ($shopOk && (str_contains($shopIndex, 'Free quote') || str_contains($shopIndex, '>Supplies</a>'))) {
+    $shopOk = false;
+    $shopMissing[] = 'nav-must-be-Home-Services-Areas-Shop-Products-Fire-Electrical-Security-Gas-Contact';
 }
 if ($shopOk) {
     $pass++;

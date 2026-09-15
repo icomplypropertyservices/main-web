@@ -357,7 +357,7 @@ function icomplyRenderShopCategory(string $slug, array $products, array $ctx): s
             . '<p>No live gas products were returned by <code>products.json</code>. Use enquire or POA. When a real gas SKU is published on Shopify it will appear here.</p>'
             . '<div class="cta-row">'
             . '<a class="btn btn-orange" href="mailto:' . icomplyH((string)$ctx['enquire_email']) . '?subject=' . rawurlencode('Gas supplies enquiry / POA') . '">Enquire / POA</a>'
-            . '<a class="btn btn-ghost" href="https://icomplypropertyservices.co.uk/contact">Free quote</a>'
+            . '<a class="btn btn-ghost" href="https://icomplypropertyservices.co.uk/contact">Contact</a>'
             . '</div></div>';
     } else {
         $grid = '<div class="product-grid">';
@@ -584,7 +584,7 @@ function icomplyShopPage(string $current, array $hero, string $main, array $ctx)
         . '<main id="main">' . $main . '</main>'
         . '<footer class="site-footer"><div class="wrap footer-inner">'
         . '<div>iComply Property Services · 17 Woodlands Park Road, Offerton, Stockport SK2 5DE</div>'
-        . '<div><a href="https://shop.icomplypropertyservices.co.uk/">Shopify checkout</a> · <a href="https://icomplypropertyservices.co.uk/contact">Free quote</a> · <a href="mailto:' . icomplyH((string)$ctx['enquire_email']) . '">Enquire</a></div>'
+        . '<div><a href="https://shop.icomplypropertyservices.co.uk/">Shopify checkout</a> · <a href="https://icomplypropertyservices.co.uk/contact">Contact</a> · <a href="mailto:' . icomplyH((string)$ctx['enquire_email']) . '">Enquire</a></div>'
         . '</div></footer>'
         . '<script>'
         . 'document.querySelector(".menu-toggle")?.addEventListener("click",function(){var n=document.getElementById("shop-nav");var open=n.classList.toggle("is-open");this.setAttribute("aria-expanded",open?"true":"false");});'
@@ -595,24 +595,22 @@ function icomplyShopPage(string $current, array $hero, string $main, array $ctx)
 function icomplyShopNav(string $current): string
 {
     $items = [
+        ['Home', 'https://icomplypropertyservices.co.uk/', false, ''],
         ['Services', 'https://icomplypropertyservices.co.uk/pages/services', false, ''],
-        ['Products', 'https://icomplypropertyservices.co.uk/products', false, ''],
+        ['Areas', 'https://icomplypropertyservices.co.uk/pages/areas', false, ''],
         ['Shop', 'https://shop.icomplypropertyservices.co.uk/', true, 'shop-live'],
-        ['Supplies', '/shop/', false, 'index'],
+        ['Products', 'https://icomplypropertyservices.co.uk/products', false, ''],
         ['Fire', '/shop/fire/', false, 'fire'],
         ['Electrical', '/shop/electrical/', false, 'electrical'],
         ['Security', '/shop/security/', false, 'security'],
         ['Gas', '/shop/gas/', false, 'gas'],
-        ['Free quote', 'https://icomplypropertyservices.co.uk/contact', false, 'quote'],
+        ['Contact', 'https://icomplypropertyservices.co.uk/contact', false, ''],
     ];
-    $html = '<nav id="shop-nav" class="nav" aria-label="Supplies">';
+    $html = '<nav id="shop-nav" class="nav" aria-label="Site">';
     foreach ($items as [$label, $href, $shopLive, $key]) {
         $class = [];
         if ($shopLive) {
             $class[] = 'shop-live';
-        }
-        if ($key === 'quote') {
-            $class[] = 'quote';
         }
         $attr = $class !== [] ? ' class="' . implode(' ', $class) . '"' : '';
         $cur = ($key !== '' && $key === $current) ? ' aria-current="page"' : '';
