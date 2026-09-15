@@ -72,11 +72,13 @@ foreach ($envMap as $const => $envName) {
     }
 }
 
-// On Vercel / production hosts, prefer public HTTPS origin (never localhost canonicals)
+// On Vercel / Netlify / production hosts, prefer public HTTPS origin (never localhost canonicals)
 $isVercel = (string)(getenv('VERCEL') ?: ($_ENV['VERCEL'] ?? '')) !== '';
+$isNetlify = (string)(getenv('NETLIFY') ?: ($_ENV['NETLIFY'] ?? '')) !== ''
+    || (string)(getenv('ICOMPLY_STATIC_EXPORT') ?: ($_ENV['ICOMPLY_STATIC_EXPORT'] ?? '')) !== '';
 $host = (string)($_SERVER['HTTP_HOST'] ?? '');
 $host = preg_replace('/:\d+$/', '', $host);
-if ($isVercel || preg_match('/icomplypropertyservices\.co\.uk$/i', $host)) {
+if ($isVercel || $isNetlify || preg_match('/icomplypropertyservices\.co\.uk$/i', $host)) {
     if ($host === '' || str_contains($host, 'localhost')) {
         $host = 'icomplypropertyservices.co.uk';
     }
@@ -97,10 +99,12 @@ if (is_file($localFile)) {
     }
 }
 
-// Production/Vercel: never keep localhost SITE_URL after local overrides
+// Production / Netlify / Vercel: never keep localhost SITE_URL after local overrides
 $isVercelFinal = (string)(getenv('VERCEL') ?: ($_ENV['VERCEL'] ?? '')) !== '';
+$isNetlifyFinal = (string)(getenv('NETLIFY') ?: ($_ENV['NETLIFY'] ?? '')) !== ''
+    || (string)(getenv('ICOMPLY_STATIC_EXPORT') ?: ($_ENV['ICOMPLY_STATIC_EXPORT'] ?? '')) !== '';
 $hostFinal = preg_replace('/:\d+$/', '', (string)($_SERVER['HTTP_HOST'] ?? ''));
-if ($isVercelFinal || preg_match('/icomplypropertyservices\.co\.uk$/i', (string)$hostFinal)) {
+if ($isVercelFinal || $isNetlifyFinal || preg_match('/icomplypropertyservices\.co\.uk$/i', (string)$hostFinal)) {
     if ($hostFinal === '' || str_contains($hostFinal, 'localhost')) {
         $hostFinal = 'icomplypropertyservices.co.uk';
     }
@@ -121,6 +125,19 @@ foreach ($siteDefaults as $key => $value) {
     if (!defined($key)) {
         define($key, $value);
     }
+}
+
+/** During static export, do not kill the CLI process on page-level exit(). */
+function icomplyRequestExit(): void
+{
+    $flag = getenv('ICOMPLY_STATIC_EXPORT');
+    if ($flag === false || $flag === '') {
+        $flag = $_ENV['ICOMPLY_STATIC_EXPORT'] ?? $_SERVER['ICOMPLY_STATIC_EXPORT'] ?? '';
+    }
+    if ((string)$flag !== '') {
+        return;
+    }
+    exit;
 }
 
 /** @return array decoded JSON file or $default */

@@ -30,7 +30,8 @@ function executeTemplateVars(string $absolutePath, array $placeholders): void {
     if (!is_file($absolutePath)) {
         http_response_code(500);
         echo 'Template missing: ' . htmlspecialchars(basename($absolutePath));
-        exit;
+        icomplyRequestExit();
+        return;
     }
     // Only extract string keys that form valid variable names
     $vars = [];
@@ -52,7 +53,8 @@ function executeTemplate(string $absolutePath, array $placeholders): void {
     if (!is_file($absolutePath)) {
         http_response_code(500);
         echo 'Template missing: ' . htmlspecialchars(basename($absolutePath));
-        exit;
+        icomplyRequestExit();
+        return;
     }
     $code = applyTemplatePlaceholders((string)file_get_contents($absolutePath), $placeholders);
     // Controlled site templates only — not user input.
@@ -72,7 +74,8 @@ function renderServiceAreaPage(string $serviceSlug, string $area): void {
     if (!isset($services[$serviceSlug])) {
         http_response_code(404);
         echo 'Service not found';
-        exit;
+        icomplyRequestExit();
+        return;
     }
     $serviceName = $services[$serviceSlug];
     $areaSlug = areaSlug($area);
@@ -105,7 +108,8 @@ function renderKeywordPage(string $slug): void {
     if (!isset($keywords[$slug])) {
         http_response_code(404);
         echo 'Keyword not found';
-        exit;
+        icomplyRequestExit();
+        return;
     }
     $meta = $keywords[$slug];
     $services = getServices();
@@ -202,7 +206,8 @@ function renderKeywordAreaPage(string $keywordSlug, string $area): void {
     if (!isset($keywords[$keywordSlug])) {
         http_response_code(404);
         echo 'Keyword not found';
-        exit;
+        icomplyRequestExit();
+        return;
     }
     $areas = getAreas();
     // Accept display name or slug for area
@@ -270,7 +275,8 @@ function renderServiceHubPage(string $serviceSlug): void {
     if (!isset($services[$serviceSlug])) {
         http_response_code(404);
         echo 'Service not found';
-        exit;
+        icomplyRequestExit();
+        return;
     }
     $GLOBALS['services'] = $services;
     $GLOBALS['areas'] = getAreas();
@@ -293,7 +299,8 @@ function renderManufacturerPage(string $mfrSlug): void {
     if (!$entry) {
         http_response_code(404);
         echo 'Manufacturer not found';
-        exit;
+        icomplyRequestExit();
+        return;
     }
     $services = getServices();
     $GLOBALS['services'] = $services;

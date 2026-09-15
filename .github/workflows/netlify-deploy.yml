@@ -5,6 +5,9 @@
 #   NETLIFY_AUTH_TOKEN  — Netlify personal access token
 #   NETLIFY_SITE_ID     — Project ID for site icomply-main-web
 # See DEPLOY.md.
+#
+# PHP does not run at request time on Netlify. This workflow pre-renders
+# website/ → dist/ then publishes dist/ (pretty URLs + HTML, not PHP source).
 
 name: Deploy to Netlify
 
@@ -45,7 +48,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Verify publish directory (website/)
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          coverage: none
+
+      - name: Verify source tree (website/)
         run: |
           set -e
           test -f website/manifest.json
@@ -53,21 +62,29 @@ jobs:
           test -f website/pages/services.php
           test -f website/pages/resources.php
           test -d website/assets
-          echo "website/ OK — PHP/static publish dir (no Node/Next.js build)"
+          test -f website/bin/static-export.php
+          echo "website/ OK — will pre-render to dist/"
 
-      # Official Netlify CLI action. --dir matches netlify.toml publish.
-      - name: Deploy website/ to Netlify production
+      - name: Static export (PHP → HTML in dist/)
+        env:
+          SITE_URL: https://icomplypropertyservices.co.uk
+        run: php website/bin/static-export.php
+
+      - name: Verify dist/ pretty URLs
+        run: php website/bin/check-static-export.php
+
+      # Official Netlify CLI action. --dir matches netlify.toml publish = dist.
+      - name: Deploy dist/ to Netlify production
         uses: netlify/actions/cli@master
         with:
-          args: deploy --dir=website --prod --message "github.com/${{ github.repository }}@${{ github.sha }}"
+          args: deploy --dir=dist --prod --message "github.com/${{ github.repository }}@${{ github.sha }}"
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 
       # Queue a Netlify-side build of main as well. Does not rely on the
-      # GitHub↔Netlify webhook (the path that missed PR #1). Keeps any
-      # site-level PHP / ServerlessWP plugins from the Netlify UI.
-      # Best-effort: file deploy above already published website/.
+      # GitHub↔Netlify webhook (the path that missed PR #1). That build
+      # also runs php website/bin/static-export.php (see netlify.toml).
       - name: Queue Netlify production rebuild of main
         continue-on-error: true
         env:
@@ -80,4 +97,4 @@ jobs:
             -H "Content-Type: application/json" \
             -d '{"clear_cache":true}'
           echo
-          echo "Queued Netlify build for site ${NETLIFY_SITE_ID}"
+          echo "Queued Netlify build for site"
