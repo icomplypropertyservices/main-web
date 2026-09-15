@@ -10,6 +10,12 @@ declare(strict_types=1);
 if (!defined('SITE_ROOT')) {
     require_once dirname(__DIR__) . '/config.php';
 }
+if (!function_exists('seoIaWave1JobSlugs')) {
+    $seoIa = dirname(__DIR__) . '/includes/seo-ia.php';
+    if (is_file($seoIa)) {
+        require_once $seoIa;
+    }
+}
 
 /** Paths that 404 or 301 — never list these. */
 function icomplySitemapBannedPaths(): array
@@ -106,9 +112,20 @@ function icomplySitemapEntries(): array
             }
         }
         // Keyword hubs + featured keyword×town are generated at export time.
-        // Do not require a source PHP file for those catalogue locs.
+        // Wave-1 manufacturer + area hubs are router virtual routes (no committed stubs).
         $isKeywordLoc = (bool)preg_match('#^/pages/keywords(/[a-z0-9\-]+){1,2}$#', $path);
-        if (!$isKeywordLoc && !icomplySitemapUrlHasFile($path)) {
+        $wave1Ok = false;
+        if (preg_match('#^/pages/manufacturers/([a-z0-9\-]+)$#', $path, $wm)
+            && function_exists('seoIaWave1ManufacturerSlugs')
+            && in_array($wm[1], seoIaWave1ManufacturerSlugs(), true)) {
+            $wave1Ok = true;
+        }
+        if (preg_match('#^/pages/areas/([a-z0-9\-]+)$#', $path, $wa)
+            && function_exists('seoIaWave1AreaSlugs')
+            && in_array($wa[1], seoIaWave1AreaSlugs(), true)) {
+            $wave1Ok = true;
+        }
+        if (!$isKeywordLoc && !$wave1Ok && !icomplySitemapUrlHasFile($path)) {
             return;
         }
         $seen[$path] = true;
@@ -182,6 +199,24 @@ function icomplySitemapEntries(): array
     if (function_exists('wave1SitemapEntries')) {
         foreach (wave1SitemapEntries() as $w) {
             $add($w['path'], $w['priority']);
+        }
+    }
+
+    // Wave-1 SEO IA: money jobs, manufacturer children, new area hubs.
+    // Listed from data so draft sitemaps stay accurate before a full dist export.
+    if (function_exists('seoIaWave1JobSlugs')) {
+        foreach (seoIaWave1JobSlugs() as $jobSlug) {
+            $add('/pages/keywords/' . keywordSlug((string)$jobSlug), '0.8');
+        }
+    }
+    if (function_exists('seoIaWave1ManufacturerSlugs')) {
+        foreach (seoIaWave1ManufacturerSlugs() as $mfrSlug) {
+            $add('/pages/manufacturers/' . areaSlug((string)$mfrSlug), '0.74');
+        }
+    }
+    if (function_exists('seoIaWave1AreaSlugs')) {
+        foreach (seoIaWave1AreaSlugs() as $areaSlugVal) {
+            $add('/pages/areas/' . areaSlug((string)$areaSlugVal), '0.65');
         }
     }
 

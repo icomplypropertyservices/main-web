@@ -15,7 +15,7 @@ $canonicalUrl = url('/pages/areas');
 $categories = getServiceCategories();
 
 $featured = array_values(array_filter(
-    ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
+    ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool', 'Trafford', 'Glossop', 'Buxton'],
     function ($t) use ($areas) {
         return in_array($t, $areas, true);
     }

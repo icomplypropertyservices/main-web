@@ -6,11 +6,14 @@
  * KEYWORD_INTRO, KEYWORD_BODY, KEYWORD_META, KEYWORD_FOCUS_HTML, KEYWORD_FAQ_HTML,
  * KEYWORD_IMAGE, SERVICE_IMAGE
  */
-$pageTitle = $KEYWORD_NAME . ' | North West';
+$pageTitle = !empty($KEYWORD_SEO_TITLE) ? $KEYWORD_SEO_TITLE : ($KEYWORD_NAME . ' | North West');
 $metaDesc = $KEYWORD_META;
 $metaKeywords = $SEO_KEYWORDS;
 $ogImage = $KEYWORD_IMAGE;
 $canonicalUrl = url('/pages/keywords/' . $KEYWORD_SLUG . '.php');
+$keywordH1 = !empty($KEYWORD_H1) ? $KEYWORD_H1 : $KEYWORD_NAME;
+$categoryLabel = $CATEGORY_LABEL ?? 'Services';
+$categoryKey = $CATEGORY_KEY ?? 'all';
 
 $keywordName = $KEYWORD_NAME;
 $keywordSlug = $KEYWORD_SLUG;
@@ -52,12 +55,16 @@ require SITE_ROOT . '/includes/header.php';
             '@type' => 'BreadcrumbList',
             'itemListElement' => [
                 ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => rtrim(SITE_URL, '/') . '/'],
-                ['@type' => 'ListItem', 'position' => 2, 'name' => 'Guides', 'item' => url('/pages/keywords/index.php')],
-                ['@type' => 'ListItem', 'position' => 3, 'name' => $keywordName, 'item' => $canonicalUrl],
+                ['@type' => 'ListItem', 'position' => 2, 'name' => $categoryLabel, 'item' => url('/pages/services/index.php') . '#' . $categoryKey],
+                ['@type' => 'ListItem', 'position' => 3, 'name' => $serviceName, 'item' => url('/pages/services/' . $serviceSlug . '.php')],
+                ['@type' => 'ListItem', 'position' => 4, 'name' => $keywordH1, 'item' => $canonicalUrl],
             ],
         ],
     ],
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
+<?php if (!empty($KEYWORD_FAQ_JSON)): ?>
+<script type="application/ld+json"><?= $KEYWORD_FAQ_JSON ?></script>
+<?php endif; ?>
 
 <!-- HERO: solid navy + image with dark overlay for readable text -->
 <section class="relative overflow-hidden bg-[#061828] text-white">
@@ -69,14 +76,15 @@ require SITE_ROOT . '/includes/header.php';
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
         <nav class="text-xs text-white/70 mb-5 flex flex-wrap gap-2" aria-label="Breadcrumb">
             <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a><span class="text-white/40">/</span>
-            <a href="<?= url('/pages/keywords/index.php') ?>" class="hover:text-white">Guides</a><span class="text-white/40">/</span>
-            <span class="text-white font-medium"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></span>
+            <a href="<?= url('/pages/services/index.php') ?>#<?= htmlspecialchars($categoryKey, ENT_QUOTES, 'UTF-8') ?>" class="hover:text-white"><?= htmlspecialchars($categoryLabel, ENT_QUOTES, 'UTF-8') ?></a><span class="text-white/40">/</span>
+            <a href="<?= url('/pages/services/' . $serviceSlug . '.php') ?>" class="hover:text-white"><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></a><span class="text-white/40">/</span>
+            <span class="text-white font-medium"><?= htmlspecialchars($keywordH1, ENT_QUOTES, 'UTF-8') ?></span>
         </nav>
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ff6b00] text-white text-xs font-bold tracking-widest uppercase mb-5">
             <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> guide
         </div>
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white max-w-3xl leading-[1.08] drop-shadow-lg">
-            <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?>
+            <?= htmlspecialchars($keywordH1, ENT_QUOTES, 'UTF-8') ?>
         </h1>
         <p class="mt-5 text-lg md:text-xl text-white max-w-2xl leading-relaxed font-medium drop-shadow">
             <?= htmlspecialchars($KEYWORD_INTRO, ENT_QUOTES, 'UTF-8') ?>
@@ -124,10 +132,17 @@ require SITE_ROOT . '/includes/header.php';
                     <p class="mt-4 text-base md:text-lg text-zinc-900 leading-relaxed font-medium"><?= htmlspecialchars($KEYWORD_INTRO, ENT_QUOTES, 'UTF-8') ?></p>
                     <p class="mt-4 text-base md:text-lg text-zinc-900 leading-relaxed"><?= htmlspecialchars($KEYWORD_BODY, ENT_QUOTES, 'UTF-8') ?></p>
                     <ul class="mt-6 space-y-3"><?= $KEYWORD_FOCUS_HTML ?></ul>
+                    <?= $KEYWORD_SECONDARY_HTML ?? '' ?>
                     <p class="mt-6 text-sm text-zinc-800">
-                        Part of our
+                        IA:
+                        <a href="<?= url('/pages/services/index.php') ?>#<?= htmlspecialchars($categoryKey, ENT_QUOTES, 'UTF-8') ?>" class="font-bold text-[#ff6b00] hover:underline"><?= htmlspecialchars($categoryLabel, ENT_QUOTES, 'UTF-8') ?></a>
+                        →
                         <a href="<?= url('/pages/services/' . $SERVICE_SLUG . '.php') ?>" class="font-bold text-[#ff6b00] hover:underline"><?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?></a>
-                        service · Related:
+                        →
+                        <span class="font-bold"><?= htmlspecialchars($keywordH1, ENT_QUOTES, 'UTF-8') ?></span>
+                        →
+                        <a href="<?= url('/pages/areas/index.php') ?>" class="font-bold text-[#ff6b00] hover:underline">Area</a>
+                        · Related:
                         <a href="<?= url('/pages/keywords/' . $RELATED_SLUG . '.php') ?>" class="font-bold text-[#ff6b00] hover:underline"><?= htmlspecialchars($RELATED_NAME, ENT_QUOTES, 'UTF-8') ?></a>
                     </p>
                 </div>

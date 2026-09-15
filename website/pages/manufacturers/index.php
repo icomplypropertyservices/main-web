@@ -70,6 +70,27 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
+<?php if (function_exists('seoIaWave1ManufacturerSlugs')): ?>
+<section class="bg-white border-b">
+    <div class="max-w-7xl mx-auto px-6 py-14">
+        <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Wave 1 brands</div>
+        <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Priority manufacturer pages</h2>
+        <p class="mt-2 text-zinc-600 max-w-2xl">Each brand page has an H1, related job links, FAQ + FAQPage JSON-LD, and a real photo when one exists in the repo — otherwise honest placeholder text, not AI art. Trade prices are POA / enquire.</p>
+        <div class="mt-8 flex flex-wrap gap-2">
+            <?php foreach (seoIaWave1ManufacturerSlugs() as $wSlug):
+                $wEntry = getManufacturerBySlug($wSlug);
+                if (!$wEntry) { continue; }
+            ?>
+                <a href="<?= url('/pages/manufacturers/' . $wSlug . '.php') ?>"
+                   class="px-4 py-2 bg-zinc-50 border rounded-full text-sm font-medium hover:border-[#ff6b00]">
+                    <?= htmlspecialchars((string)$wEntry['name'], ENT_QUOTES, 'UTF-8') ?>
+                </a>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
 <section class="max-w-7xl mx-auto px-6 py-16">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
         <div>

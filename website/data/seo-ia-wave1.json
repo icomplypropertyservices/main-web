@@ -1,0 +1,364 @@
+{
+  "areas": [
+    {
+      "name": "Trafford",
+      "slug": "trafford",
+      "seo_title": "Trafford Property Compliance | EICR, FRA, Gas & Fire",
+      "h1": "Property compliance in Trafford",
+      "meta_desc": "EICR, fire risk assessment, gas safety, alarms and landlord certificates across Trafford — Altrincham, Sale, Stretford and Urmston. Stockport engineers, POA quotes.",
+      "lede": "Trafford covers Altrincham, Sale, Stretford, Urmston and the Trafford Park fringe. iComply attends from Stockport SK2 for landlord certificates, fire systems and electrical work — quoted after we know the property, never a made-up pound price."
+    },
+    {
+      "name": "Glossop",
+      "slug": "glossop",
+      "seo_title": "Glossop Property Compliance | EICR, FRA & Landlord Certificates",
+      "h1": "Property compliance in Glossop",
+      "meta_desc": "EICR, fire risk assessment, CP12 and landlord compliance in Glossop and High Peak. Local Stockport team, written POA quotes.",
+      "lede": "Glossop sits on the High Peak edge of Greater Manchester. We cover terrace lets, mills conversions and High Street commercial units with the same certificate set we issue in Stockport — EICR, gas safety, FRA and fire systems, scoped on site."
+    },
+    {
+      "name": "Buxton",
+      "slug": "buxton",
+      "seo_title": "Buxton Property Compliance | EICR, Fire & Gas Safety",
+      "h1": "Property compliance in Buxton",
+      "meta_desc": "EICR, fire alarms, gas safety and landlord certificates in Buxton and the Peak District fringe. Stockport engineers, POA after scope.",
+      "lede": "Buxton is a Peak District spa town with guest houses, stone terraces and hillside lets. iComply travels from Stockport for electrical condition reports, landlord gas records and fire work — written quotes only, no invented £ list."
+    }
+  ],
+  "aliases": {
+    "advanced": "advanced-electronics",
+    "vesda": "xtralis-vesda",
+    "click": "click-scolmore",
+    "mk": "mk-electric"
+  },
+  "manufacturers": {
+    "advanced": {
+      "name": "Advanced",
+      "alias_of": "advanced-electronics",
+      "services": ["fire-alarms"],
+      "blurb": "Advanced (Advanced Electronics) fire panels — MxPro and related ranges — installed, commissioned and serviced to BS 5839 across Greater Manchester and the North West. iComply programmes cause-and-effect, issues certificates and supplies trade kits. Quotes are POA after we see the panel and the building.",
+      "seo_title": "Advanced Fire Alarm Panels | Install & Service North West",
+      "seo_keywords": "Advanced fire panel, Advanced Electronics, MxPro, fire alarm panel North West, Advanced install Stockport",
+      "jobs": ["fire-alarm-installation", "fire-alarm-service"],
+      "lines": ["MxPro addressable panels", "Networked fire systems", "Panel replacements and takeovers"]
+    },
+    "vesda": {
+      "name": "VESDA",
+      "alias_of": "xtralis-vesda",
+      "services": ["fire-alarms"],
+      "blurb": "VESDA aspirating smoke detection for high-ceiling, warehouse and heritage spaces where point detectors are a poor fit. iComply designs pipe networks, commissions VESDA units and maintains them on planned visits. No AI product shots — ask for site photos from jobs we have completed.",
+      "seo_title": "VESDA Aspirating Smoke Detection | North West",
+      "seo_keywords": "VESDA, Xtralis VESDA, aspirating smoke detection, warehouse fire detection North West",
+      "jobs": ["fire-alarm-installation", "fire-alarm-service"],
+      "lines": ["Aspirating smoke detection", "Warehouse and atrium coverage", "Pipe network design and service"]
+    },
+    "ventlux": {
+      "name": "Ventlux",
+      "services": ["aov-air-handling"],
+      "blurb": "Ventlux AOV and smoke-ventilation equipment for common stairs and commercial smoke shafts. iComply installs, maintains and certificates Ventlux systems alongside related AOV work (SE Controls, Ventilux and others where specified). Scope and price are POA after a site look — we do not invent a catalogue £ figure.",
+      "seo_title": "Ventlux AOV Installation & Maintenance | North West",
+      "seo_keywords": "Ventlux, Ventlux AOV, smoke ventilation, AOV installation North West, AOV maintenance Stockport",
+      "jobs": ["aov-installation", "aov-maintenance"],
+      "lines": ["AOV smoke ventilation", "Stair and corridor extract", "Planned AOV maintenance"],
+      "featured": false
+    },
+    "came": {
+      "name": "CAME",
+      "services": ["access-control", "door-entry"],
+      "blurb": "CAME barriers, gates and related access hardware for car parks, industrial yards and managed blocks. iComply specifies, installs and services CAME operators with safety edges and access control so the entrance matches the fire strategy. Enquire for a written POA quote.",
+      "seo_title": "CAME Gates & Barriers | Access Control North West",
+      "seo_keywords": "CAME, CAME barrier, CAME gate, access control installation North West, CAME Stockport",
+      "jobs": ["access-control-installation", "door-entry-installation"],
+      "lines": ["Barrier and gate operators", "Vehicle access", "Integration with fobs and fire override"]
+    },
+    "bell-system": {
+      "name": "Bell System",
+      "services": ["door-entry", "intercoms"],
+      "blurb": "Bell System door entry for UK blocks of flats — audio, video and combined panels that managing agents already recognise. iComply replaces failing panels, rewires risers and ties entry into access control and fire release. Parts and labour are POA after we see the existing kit.",
+      "seo_title": "Bell System Door Entry | Install & Repair North West",
+      "seo_keywords": "Bell System, Bell door entry, block intercom, door entry installation North West, Bell System Stockport",
+      "jobs": ["door-entry-installation", "access-control-installation"],
+      "lines": ["Audio and video door entry", "Block riser replacements", "Trade handsets and panels"]
+    },
+    "aico": {
+      "name": "Aico",
+      "services": ["smoke-co-alarms"],
+      "blurb": "Aico smoke and carbon monoxide alarms for rented homes and small HMOs where a domestic interlinked set is the right answer — not a full BS 5839 panel. iComply supplies, sites and tests Aico units and records the visit for the tenancy file. Pricing is POA once we know storeys and existing detectors.",
+      "seo_title": "Aico Smoke & CO Alarms | Landlord Install North West",
+      "seo_keywords": "Aico, Aico smoke alarm, Aico CO alarm, landlord smoke alarms North West, Aico installation Stockport",
+      "jobs": ["smoke-alarm-installation"],
+      "lines": ["Mains and sealed-battery alarms", "Interlinked landlord sets", "CO alarms at combustion appliances"]
+    },
+    "ajax": {
+      "name": "Ajax",
+      "services": ["intruder-alarm", "cctv"],
+      "blurb": "Ajax wireless intrusion and related kits for shops, offices and homes that need a monitored or self-monitored alarm without a full wired retrofit. iComply surveys, installs and hands over Ajax apps and users. Quotes stay POA — radio surveys change the kit list.",
+      "seo_title": "Ajax Alarm Installation | Security North West",
+      "seo_keywords": "Ajax alarm, Ajax security, wireless intruder alarm North West, Ajax install Stockport",
+      "jobs": ["cctv-installation", "access-control-installation"],
+      "lines": ["Wireless hubs and detectors", "App handover", "Add-on CCTV where specified"]
+    }
+  },
+  "jobs": {
+    "eicr": {
+      "seo_title": "EICR Certificate | Electrical Condition Report North West",
+      "h1": "EICR certificate",
+      "primary": "EICR certificate",
+      "secondaries": ["EICR report", "electrical installation condition report", "landlord EICR"],
+      "manufacturers": ["wylex", "hager", "mk-electric", "click-scolmore"],
+      "intro": "An EICR certificate is the everyday name for an Electrical Installation Condition Report — the BS 7671 inspection that grades fixed wiring. iComply issues EICR certificates for rentals, workplaces and portfolios from Stockport across the North West."
+    },
+    "eicr-certificate": {
+      "seo_title": "EICR Certificate for Landlords | BS 7671 North West",
+      "h1": "EICR certificate for landlords and workplaces",
+      "primary": "EICR certificate",
+      "secondaries": ["EICR", "electrical safety certificate", "landlord electrical certificate"],
+      "manufacturers": ["wylex", "hager", "mk-electric", "click-scolmore"]
+    },
+    "eicr-report": {
+      "seo_title": "EICR Report | Electrical Installation Condition Report",
+      "h1": "EICR report",
+      "primary": "EICR report",
+      "secondaries": ["EICR certificate", "C1 C2 C3 codes", "unsatisfactory EICR"],
+      "manufacturers": ["wylex", "hager", "mk-electric", "click-scolmore"]
+    },
+    "gas-safety-certificate": {
+      "seo_title": "Gas Safety Certificate | Landlord CP12 North West",
+      "h1": "Gas safety certificate (CP12)",
+      "primary": "gas safety certificate",
+      "secondaries": ["CP12", "landlord gas safety record", "annual gas safety certificate"],
+      "manufacturers": ["worcester-bosch", "vaillant", "ideal", "baxi"]
+    },
+    "cp12": {
+      "seo_title": "CP12 Gas Safety Certificate | Landlords North West",
+      "h1": "CP12 gas safety certificate",
+      "primary": "CP12",
+      "secondaries": ["gas safety certificate", "landlord gas safety", "annual gas safety certificate"],
+      "manufacturers": ["worcester-bosch", "vaillant", "ideal", "baxi"]
+    },
+    "annual-gas-safety-certificate": {
+      "seo_title": "Annual Gas Safety Certificate | CP12 Renewal",
+      "h1": "Annual gas safety certificate",
+      "primary": "annual gas safety certificate",
+      "secondaries": ["CP12", "gas safety certificate", "landlord gas renewal"],
+      "manufacturers": ["worcester-bosch", "vaillant", "ideal", "baxi"]
+    },
+    "fire-risk-assessment": {
+      "seo_title": "Fire Risk Assessment | FRA North West",
+      "h1": "Fire risk assessment",
+      "primary": "fire risk assessment",
+      "secondaries": ["annual fire risk assessment", "FRA", "PAS 79"],
+      "manufacturers": []
+    },
+    "annual-fire-risk-assessment": {
+      "seo_title": "Annual Fire Risk Assessment | FRA Review North West",
+      "h1": "Annual fire risk assessment",
+      "primary": "annual fire risk assessment",
+      "secondaries": ["fire risk assessment", "FRA review", "significant findings"],
+      "manufacturers": []
+    },
+    "fire-alarm-installation": {
+      "seo_title": "Fire Alarm Installation | BS 5839 North West",
+      "h1": "Fire alarm installation",
+      "primary": "fire alarm installation",
+      "secondaries": ["addressable fire alarm", "BS 5839", "fire alarm panel"],
+      "manufacturers": ["apollo", "hochiki", "c-tec", "advanced", "kentec"]
+    },
+    "fire-alarm-service": {
+      "seo_title": "Fire Alarm Service | BS 5839 Maintenance North West",
+      "h1": "Fire alarm service",
+      "primary": "fire alarm service",
+      "secondaries": ["fire alarm maintenance", "quarterly fire alarm", "logbook"],
+      "manufacturers": ["apollo", "hochiki", "c-tec", "advanced", "kentec"]
+    },
+    "emergency-lighting-installation": {
+      "seo_title": "Emergency Lighting Installation | BS 5266 North West",
+      "h1": "Emergency lighting installation",
+      "primary": "emergency lighting installation",
+      "secondaries": ["emergency lighting testing", "emergency lighting certificate", "BS 5266"],
+      "manufacturers": ["eaton", "c-tec"],
+      "extra_manufacturer_names": ["Espire"]
+    },
+    "emergency-lighting-test": {
+      "seo_title": "Emergency Lighting Test | Monthly & Annual Duration",
+      "h1": "Emergency lighting testing",
+      "primary": "emergency lighting testing",
+      "secondaries": ["emergency lighting certificate", "duration test", "BS 5266"],
+      "manufacturers": ["eaton", "c-tec"],
+      "extra_manufacturer_names": ["Espire"]
+    },
+    "emergency-lighting-testing": {
+      "seo_title": "Emergency Lighting Testing | Certificate North West",
+      "h1": "Emergency lighting testing and certificates",
+      "primary": "emergency lighting testing",
+      "secondaries": ["emergency lighting certificate", "emergency lighting installation", "duration test"],
+      "manufacturers": ["eaton", "c-tec"],
+      "extra_manufacturer_names": ["Espire"]
+    },
+    "emergency-lighting-certificate": {
+      "seo_title": "Emergency Lighting Certificate | BS 5266 North West",
+      "h1": "Emergency lighting certificate",
+      "primary": "emergency lighting certificate",
+      "secondaries": ["emergency lighting testing", "annual duration test", "emergency lighting installation"],
+      "manufacturers": ["eaton", "c-tec"],
+      "extra_manufacturer_names": ["Espire"]
+    },
+    "fire-door-inspection": {
+      "service": "fire-doors",
+      "seo_title": "Fire Door Inspection | Compliance Survey North West",
+      "h1": "Fire door inspection",
+      "primary": "fire door inspection",
+      "secondaries": ["fire door compliance", "FD30", "intumescent seals"],
+      "manufacturers": []
+    },
+    "fire-door-compliance": {
+      "name": "Fire Door Compliance",
+      "service": "fire-doors",
+      "related": "fire-door-inspection",
+      "seo_title": "Fire Door Compliance | Inspection & Remedials North West",
+      "h1": "Fire door compliance",
+      "primary": "fire door compliance",
+      "secondaries": ["fire door inspection", "fire door survey", "compartmentation"],
+      "intro": "Fire door compliance means doors that are supposed to hold back smoke and fire still do that job — gaps, seals, closers and unauthorised ironmongery included. iComply inspects and reports fire door compliance for blocks and workplaces across the North West, then quotes remedials as POA.",
+      "body": "We walk the escape routes and high-risk rooms, measure gaps, check intumescent strips, smoke seals, hinges, glazing and self-closing devices, and note doors that have been planed, wedged or fitted with the wrong lock. The report feeds your FRA actions. Some doors can be repaired with certified methods; others need a new certificated leaf. We do not invent a per-door pound price on the website — layouts and door counts decide the quote.",
+      "meta_desc": "Fire door compliance inspections and remedials for blocks and commercial sites. Defect reports, FRA support, POA quotes from Stockport.",
+      "seo_keywords": "fire door compliance, fire door inspection, fire door survey North West, FD30 inspection Stockport, compartmentation doors",
+      "focus_points": [
+        "Inspection of leaves, frames, seals, closers and ironmongery",
+        "Prioritised defects on escape routes",
+        "FRA action support for responsible persons",
+        "Remedial quotes after the survey — POA, not a web price list"
+      ],
+      "faq": [
+        ["What is fire door compliance?", "It is evidence that fire doors still perform — not just that they were once labelled FD30 or FD60. Inspection looks at the whole doorset and how it is used."],
+        ["How often should fire doors be checked?", "Formal inspections follow the building risk and your FRA. Many blocks add routine caretaker checks between formal visits."],
+        ["Do you publish a price per door?", "No. Door count, access and whether leaves can be repaired versus replaced are scoped first. Ask for a written POA quote."]
+      ],
+      "manufacturers": []
+    },
+    "pat-testing": {
+      "seo_title": "PAT Testing | Portable Appliance Testing North West",
+      "h1": "PAT testing",
+      "primary": "PAT testing",
+      "secondaries": ["portable appliance testing", "landlord PAT", "workplace PAT"],
+      "manufacturers": []
+    },
+    "legionella-risk-assessment": {
+      "seo_title": "Legionella Risk Assessment | Landlords & Workplaces",
+      "h1": "Legionella risk assessment",
+      "primary": "legionella risk assessment",
+      "secondaries": ["legionella testing", "water hygiene", "landlord legionella"],
+      "manufacturers": []
+    },
+    "asbestos-survey": {
+      "seo_title": "Asbestos Survey | Management Survey North West",
+      "h1": "Asbestos survey",
+      "primary": "asbestos survey",
+      "secondaries": ["asbestos management survey", "asbestos testing", "refurbishment survey"],
+      "manufacturers": []
+    },
+    "asbestos-management-survey": {
+      "seo_title": "Asbestos Management Survey | Duty to Manage",
+      "h1": "Asbestos management survey",
+      "primary": "asbestos management survey",
+      "secondaries": ["asbestos survey", "duty to manage", "asbestos register"],
+      "manufacturers": []
+    },
+    "aov-installation": {
+      "seo_title": "AOV Installation | Smoke Ventilation North West",
+      "h1": "AOV installation",
+      "primary": "AOV installation",
+      "secondaries": ["AOV maintenance", "smoke ventilation", "Ventlux"],
+      "manufacturers": ["ventlux"]
+    },
+    "aov-maintenance": {
+      "seo_title": "AOV Maintenance | Smoke Vent Service North West",
+      "h1": "AOV maintenance",
+      "primary": "AOV maintenance",
+      "secondaries": ["AOV installation", "smoke shaft service", "Ventlux"],
+      "manufacturers": ["ventlux"]
+    },
+    "cctv-installation": {
+      "seo_title": "CCTV Installation | IP Cameras North West",
+      "h1": "CCTV installation",
+      "primary": "CCTV installation",
+      "secondaries": ["IP CCTV", "Hikvision", "Dahua"],
+      "manufacturers": ["hikvision", "dahua"]
+    },
+    "access-control-installation": {
+      "seo_title": "Access Control Installation | Paxton, Videx, CAME",
+      "h1": "Access control installation",
+      "primary": "access control installation",
+      "secondaries": ["Paxton", "Videx", "CAME"],
+      "manufacturers": ["paxton", "videx", "came"]
+    },
+    "door-entry-installation": {
+      "seo_title": "Door Entry Installation | Videx, Bell, Aiphone",
+      "h1": "Door entry installation",
+      "primary": "door entry installation",
+      "secondaries": ["Videx", "Bell System", "Aiphone"],
+      "manufacturers": ["videx", "bell-system", "aiphone"]
+    },
+    "boiler-service": {
+      "seo_title": "Boiler Service | Gas Safe North West",
+      "h1": "Boiler service",
+      "primary": "boiler service",
+      "secondaries": ["boiler installation", "Worcester Bosch", "Vaillant"],
+      "manufacturers": ["worcester-bosch", "vaillant", "ideal", "baxi"]
+    },
+    "boiler-installation": {
+      "seo_title": "Boiler Installation | Gas Safe North West",
+      "h1": "Boiler installation",
+      "primary": "boiler installation",
+      "secondaries": ["boiler service", "combi boiler", "Worcester Bosch"],
+      "manufacturers": ["worcester-bosch", "vaillant", "ideal", "baxi"]
+    },
+    "consumer-unit-upgrade": {
+      "seo_title": "Consumer Unit Upgrade | Fuse Board North West",
+      "h1": "Consumer unit upgrade",
+      "primary": "consumer unit upgrade",
+      "secondaries": ["fuse board", "rewire", "RCD RCBO"],
+      "manufacturers": ["wylex", "hager", "mk-electric", "click-scolmore"]
+    },
+    "rewire": {
+      "seo_title": "House Rewire | Domestic Rewire North West",
+      "h1": "Rewire",
+      "primary": "rewire",
+      "secondaries": ["domestic rewire", "consumer unit upgrade", "EICR"],
+      "manufacturers": ["wylex", "hager", "mk-electric", "click-scolmore"]
+    },
+    "smoke-alarm-installation": {
+      "seo_title": "Smoke Alarm Installation | Aico, Kidde, FireAngel",
+      "h1": "Smoke alarm installation",
+      "primary": "smoke alarm installation",
+      "secondaries": ["Aico", "Kidde", "FireAngel"],
+      "manufacturers": ["aico"],
+      "extra_manufacturer_names": ["Kidde", "FireAngel"]
+    },
+    "epc": {
+      "name": "EPC",
+      "service": "epc",
+      "related": "pat-testing",
+      "seo_title": "EPC | Energy Performance Certificate North West",
+      "h1": "EPC — energy performance certificate",
+      "primary": "EPC",
+      "secondaries": ["energy performance certificate", "landlord EPC", "EPC for sale or let"],
+      "intro": "An EPC (energy performance certificate) is the document buyers, tenants and listing portals expect when a home is marketed. iComply arranges domestic EPCs for landlords and sellers across Greater Manchester and the North West from our Stockport base. Fees are POA after we know the property type — we do not invent a website pound price.",
+      "body": "The assessor walks the property, records construction, heating, insulation and lighting, and lodges the certificate on the national register. We are honest when a full commercial EPC or a retrofit design is a different job. Combine an EPC with an EICR or gas safety visit on a void when dates line up. Recommendations on the EPC are not a quote for works; ask if you want those items priced separately.",
+      "meta_desc": "EPC (energy performance certificate) for lets and sales in Greater Manchester and the North West. Stockport assessors, POA after property type.",
+      "seo_keywords": "EPC, energy performance certificate, landlord EPC, EPC Stockport, EPC Manchester, domestic EPC North West",
+      "focus_points": [
+        "Domestic EPCs for marketing a let or sale",
+        "Lodged on the official register",
+        "Can be booked with other void certificates",
+        "No invented £ EPC price on this page — enquire"
+      ],
+      "faq": [
+        ["How long does an EPC last?", "A domestic EPC is typically valid for ten years unless you replace it earlier for a new listing or after major works."],
+        ["Do you do commercial EPCs?", "Say if the building is non-domestic. That is a different assessment; we will tell you if we can take it or who to ask."],
+        ["What does an EPC cost?", "POA after we know house type and location. We do not publish a made-up from-£ figure."]
+      ],
+      "manufacturers": []
+    }
+  }
+}

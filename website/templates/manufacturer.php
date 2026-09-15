@@ -4,7 +4,7 @@
  * Pure PHP vars via executeTemplateVars() (no {{}} / eval).
  * MFR_PRODUCTS_HTML, MFR_RELATED_HTML, SERVICE_NAME (primary)
  */
-$pageTitle = $MFR_NAME . ' Products & Service';
+$pageTitle = !empty($MFR_SEO_TITLE) ? $MFR_SEO_TITLE : ($MFR_NAME . ' Products & Service');
 $metaDesc = $MFR_BLURB;
 $metaKeywords = $MFR_SEO_KEYWORDS;
 $canonicalUrl = url('/pages/manufacturers/' . $MFR_SLUG . '.php');
@@ -126,7 +126,7 @@ $schema = [
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
                     <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?><br>
-                    <span class="text-[#ff6b00]">products &amp; service</span>
+                    <span class="text-[#ff6b00]">install, service &amp; trade</span>
                 </h1>
                 <p class="mt-6 text-lg text-white/80 max-w-xl"><?= htmlspecialchars($MFR_BLURB, ENT_QUOTES, 'UTF-8') ?></p>
                 <div class="mt-8 flex flex-wrap gap-3">
@@ -138,13 +138,17 @@ $schema = [
                 </div>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
+                <?php if (!empty($MFR_IMAGE_HTML)): ?>
+                    <?= $MFR_IMAGE_HTML ?>
+                <?php else: ?>
                 <img src="<?= htmlspecialchars(manufacturerImageUrl($mfrSlug, $primaryService), ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> equipment — Icomply Property Services"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
                      loading="eager"
-                     onerror="this.src='<?= htmlspecialchars(serviceImageUrl($primaryService), ENT_QUOTES, 'UTF-8') ?>'">
+                     onerror="this.style.display='none'">
+                <?php endif; ?>
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-transparent to-transparent">
-                    <div class="text-sm text-white/70">Authorised install &amp; trade supply</div>
+                    <div class="text-sm text-white/70">Install &amp; trade supply · POA / enquire</div>
                     <div class="text-2xl font-semibold mt-1"><?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> · North West</div>
                 </div>
             </div>
@@ -178,11 +182,22 @@ $schema = [
                 landlords, insurers and facilities managers.
             </p>
             <ul class="mt-6 space-y-2 text-sm text-zinc-700">
+                <?php if (!empty($MFR_LINES_HTML)): ?>
+                    <?= $MFR_LINES_HTML ?>
+                <?php else: ?>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> New installs &amp; system upgrades</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Servicing, repairs &amp; certification</li>
-                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Trade products &amp; engineer kits (Shopify-ready)</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Trade products quoted POA / enquire</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Multi-site &amp; landlord packages</li>
+                <?php endif; ?>
             </ul>
+            <?php if (!empty($MFR_JOBS_HTML)): ?>
+            <div class="mt-8">
+                <h2 class="text-xl font-semibold text-black">Related job pages</h2>
+                <p class="mt-2 text-sm text-zinc-600">Job-type guides that link this brand — Category → Service → Job → Area.</p>
+                <div class="mt-4 flex flex-wrap gap-2"><?= $MFR_JOBS_HTML ?></div>
+            </div>
+            <?php endif; ?>
         </div>
         <div class="lg:col-span-2 bg-[#0B1F3A] text-white rounded-3xl p-8">
             <h3 class="text-xl font-semibold">Need <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> support?</h3>

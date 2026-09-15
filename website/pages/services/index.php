@@ -58,7 +58,8 @@ require SITE_ROOT . '/includes/header.php';
                 <a href="#fire-safety" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Fire safety</a>
                 <a href="#professional" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">Professional</a>
                 <a href="#construction" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Construction</a>
-                <a href="<?= url('/pages/areas/index.php') ?>" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Areas</a>
+                    <a href="<?= url('/pages/keywords/index.php') ?>#job-types" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Job types</a>
+                    <a href="<?= url('/pages/areas/index.php') ?>" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Areas</a>
             </div>
         </div>
     </div>
@@ -85,6 +86,22 @@ require SITE_ROOT . '/includes/header.php';
         <?php endforeach; ?>
     </div>
 </section>
+
+<?php if (function_exists('seoIaJobIndexHtml')): ?>
+<section id="job-types" class="bg-white border-b">
+    <div class="max-w-7xl mx-auto px-6 py-14">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+            <div>
+                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">IA · Job types</div>
+                <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Priority job pages</h2>
+                <p class="mt-2 text-zinc-600 max-w-2xl">Wave-1 money keywords under each service — EICR, CP12, FRA, fire alarms, PAT, EPC and more. Full directory on the keyword hub.</p>
+            </div>
+            <a href="<?= url('/pages/keywords/index.php') ?>#job-types" class="text-sm font-semibold text-[#ff6b00]">All job types →</a>
+        </div>
+        <?= seoIaJobIndexHtml() ?>
+    </div>
+</section>
+<?php endif; ?>
 
 <!-- CATEGORY GRIDS -->
 <?php

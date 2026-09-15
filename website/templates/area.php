@@ -2,8 +2,10 @@
 /**
  * Area hub template. Placeholders: AREA, AREA_SLUG, AREA_URL
  */
-$pageTitle = $AREA . ' Property Compliance Services';
-$metaDesc = $AREA . ' experts for EICR, fire alarms, gas safety, emergency lighting, CCTV and access control. Fast local response from Stockport-based engineers. Free quotes.';
+$pageTitle = !empty($AREA_SEO_TITLE) ? $AREA_SEO_TITLE : ($AREA . ' Property Compliance Services');
+$metaDesc = !empty($AREA_META)
+    ? $AREA_META
+    : ($AREA . ' experts for EICR, fire alarms, gas safety, emergency lighting, CCTV and access control. Fast local response from Stockport-based engineers. Free quotes.');
 $metaKeywords = $AREA . ' electrician, ' . $AREA . ' fire alarm installation, ' . $AREA . ' EICR, ' . $AREA . ' gas safety certificate, property compliance ' . $AREA . ', emergency lighting ' . $AREA;
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 
@@ -86,6 +88,12 @@ $schema = [
         ],
     ],
 ];
+if (!empty($AREA_FAQ_JSON)) {
+    $faqNode = json_decode($AREA_FAQ_JSON, true);
+    if (is_array($faqNode)) {
+        $schema['@graph'][] = $faqNode;
+    }
+}
 ?>
 <script type="application/ld+json"><?= json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
 
@@ -106,12 +114,17 @@ $schema = [
                     Local engineers · <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
+                    <?php if (!empty($AREA_H1) && !str_contains($AREA_H1, $AREA)): ?>
+                        <?= htmlspecialchars($AREA_H1, ENT_QUOTES, 'UTF-8') ?>
+                    <?php else: ?>
                     Property compliance in<br>
                     <span class="text-[#ff6b00]"><?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></span>
+                    <?php endif; ?>
                 </h1>
                 <p class="mt-6 text-lg text-white/80 max-w-xl">
-                    Electrical, fire alarms, gas safety, emergency lighting, CCTV and access control —
-                    installed, tested and certified for properties in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> and nearby postcodes.
+                    <?= !empty($AREA_LEDE)
+                        ? htmlspecialchars($AREA_LEDE, ENT_QUOTES, 'UTF-8')
+                        : ('Electrical, fire alarms, gas safety, emergency lighting, CCTV and access control — installed, tested and certified for properties in ' . $AREA . ' and nearby postcodes.') ?>
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get free quote</a>
@@ -304,6 +317,17 @@ $schema = [
                 </a>
             <?php endforeach; ?>
         </div>
+    </div>
+</section>
+<?php endif; ?>
+
+<?php if (!empty($AREA_FAQ_HTML)): ?>
+<section class="bg-zinc-50 border-t">
+    <div class="max-w-3xl mx-auto px-6 py-16">
+        <h2 class="text-3xl font-semibold tracking-tight text-black text-center mb-10">
+            <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> FAQ
+        </h2>
+        <div class="space-y-4"><?= $AREA_FAQ_HTML ?></div>
     </div>
 </section>
 <?php endif; ?>

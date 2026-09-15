@@ -274,7 +274,11 @@ function saveServices(array $custom): void {
 }
 
 function getAreas(): array {
-    return loadJsonData('areas', []);
+    $areas = loadJsonData('areas', []);
+    if (function_exists('seoIaEnsureAreas')) {
+        $areas = seoIaEnsureAreas($areas);
+    }
+    return $areas;
 }
 
 /**
@@ -335,6 +339,9 @@ function getMajorKeywords(): array {
             $row['faq'] = $meta['faq'];
         }
         $normalized[$slug] = $row;
+    }
+    if (function_exists('seoIaApplyJobOverlay')) {
+        $normalized = seoIaApplyJobOverlay($normalized);
     }
     return $normalized;
 }
@@ -452,6 +459,10 @@ function getPopularKeywordSlugs(): array {
         'nurse-call-system', 'landlord-compliance',
         'legionella-risk-assessment', 'legionella-testing', 'water-hygiene-testing',
         'asbestos-survey', 'asbestos-testing', 'asbestos-management-survey',
+        'fire-door-compliance', 'fire-door-inspection', 'epc', 'smoke-alarm-installation',
+        'emergency-lighting-installation', 'emergency-lighting-certificate', 'emergency-lighting-testing',
+        'aov-installation', 'aov-maintenance', 'access-control-installation', 'door-entry-installation',
+        'boiler-service', 'boiler-installation', 'annual-gas-safety-certificate', 'annual-fire-risk-assessment',
     ];
     $all = getMajorKeywords();
     $out = [];
@@ -502,6 +513,9 @@ function getManufacturerCatalog(): array {
     $mfr = loadJsonData('manufacturers', []);
     $catalog = $mfr['catalog'] ?? [];
     if ($catalog) {
+        if (function_exists('seoIaMergeManufacturerCatalog')) {
+            $catalog = seoIaMergeManufacturerCatalog($catalog);
+        }
         return $catalog;
     }
     // Fallback: build minimal catalog from by_service names
@@ -526,13 +540,23 @@ function getManufacturerCatalog(): array {
             }
         }
     }
+    if (function_exists('seoIaMergeManufacturerCatalog')) {
+        $built = seoIaMergeManufacturerCatalog($built);
+    }
     return $built;
 }
 
 function getManufacturerBySlug(string $slug): ?array {
     $slug = areaSlug($slug);
     $catalog = getManufacturerCatalog();
-    return $catalog[$slug] ?? null;
+    if (isset($catalog[$slug])) {
+        return $catalog[$slug];
+    }
+    if (function_exists('seoIaResolveManufacturerSlug')) {
+        $canon = seoIaResolveManufacturerSlug($slug);
+        return $catalog[$canon] ?? null;
+    }
+    return null;
 }
 
 function manufacturerSlugFromName(string $name): string {
@@ -711,6 +735,11 @@ function icomplyTradeProductsUrl(): string
 $waFile = __DIR__ . '/includes/water-asbestos.php';
 if (is_file($waFile)) {
     require_once $waFile;
+}
+
+$seoIaFile = __DIR__ . '/includes/seo-ia.php';
+if (is_file($seoIaFile)) {
+    require_once $seoIaFile;
 }
 
 // Back-compat globals used by some templates/includes
