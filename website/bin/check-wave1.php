@@ -14,6 +14,45 @@ $fail = 0;
 
 $guides = wave1FortnightGuides();
 $hubs = wave1QualityHubs();
+$queue = wave1PublishQueue();
+if (count($queue['A']['guides'] ?? []) !== 5) {
+    echo 'FAIL: Batch A must be days 1–5 (5 guides), got ' . count($queue['A']['guides'] ?? []) . PHP_EOL;
+    $fail++;
+} else {
+    echo "OK   Batch A days 1–5\n";
+}
+if (count($queue['B']['guides'] ?? []) !== 9) {
+    echo 'FAIL: Batch B must be days 6–14 (9 guides), got ' . count($queue['B']['guides'] ?? []) . PHP_EOL;
+    $fail++;
+} else {
+    echo "OK   Batch B days 6–14\n";
+}
+if (count($queue['C']['hubs'] ?? []) !== 12) {
+    echo 'FAIL: Batch C must be 12 quality hubs, got ' . count($queue['C']['hubs'] ?? []) . PHP_EOL;
+    $fail++;
+} else {
+    echo "OK   Batch C 12 hubs\n";
+}
+if (wave1ContactPath() !== '/contact') {
+    echo "FAIL: CTA target must remain /contact\n";
+    $fail++;
+} else {
+    echo "OK   CTA target /contact\n";
+}
+foreach ($queue['A']['guides'] as $g) {
+    if (($g['batch'] ?? '') !== 'A' || (int)$g['day'] < 1 || (int)$g['day'] > 5) {
+        echo "FAIL: Batch A item has wrong batch/day\n";
+        $fail++;
+        break;
+    }
+}
+foreach ($queue['B']['guides'] as $g) {
+    if (($g['batch'] ?? '') !== 'B' || (int)$g['day'] < 6 || (int)$g['day'] > 14) {
+        echo "FAIL: Batch B item has wrong batch/day\n";
+        $fail++;
+        break;
+    }
+}
 if (count($guides) !== 14) {
     echo "FAIL: expected 14 fortnight guides, got " . count($guides) . PHP_EOL;
     $fail++;

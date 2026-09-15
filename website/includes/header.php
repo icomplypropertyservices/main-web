@@ -353,7 +353,9 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
                 <div class="nav-panel">
                     <div class="nav-panel-inner w-72 max-h-96 overflow-auto py-2">
                         <a href="<?= url('/pages/resources/index.php') ?>" class="block px-5 py-2.5 font-semibold text-[#ff6b00] hover:bg-zinc-50 border-b">All resources →</a>
-                        <a href="<?= url('/pages/resources/index.php') ?>#fortnight" class="block px-5 py-2 hover:bg-zinc-50 text-black">Fortnight guides</a>
+                        <a href="<?= url('/pages/resources/index.php') ?>#batch-a" class="block px-5 py-2 hover:bg-zinc-50 text-black">Batch A — days 1–5</a>
+                        <a href="<?= url('/pages/resources/index.php') ?>#batch-b" class="block px-5 py-2 hover:bg-zinc-50 text-black">Batch B — days 6–14</a>
+                        <a href="<?= url('/pages/resources/index.php') ?>#batch-c" class="block px-5 py-2 hover:bg-zinc-50 text-black">Batch C — SEO hubs</a>
                         <a href="<?= url('/pages/landlord-certificates') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Landlord certificates</a>
                         <a href="<?= url('/pages/gas-safety-certificate') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Gas safety certificate</a>
                         <a href="<?= url('/pages/fire-risk-assessment') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Fire risk assessment</a>
@@ -450,7 +452,9 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
             <a href="<?= url('/pages/maintenance.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">Maintenance contracts</a>
             <a href="<?= url('/pages/emergency.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">Emergency call-out</a>
             <a href="<?= url('/pages/resources/index.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50 font-semibold">Resources</a>
-            <a href="<?= url('/pages/resources/index.php') ?>#fortnight" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50">Fortnight guides</a>
+            <a href="<?= url('/pages/resources/index.php') ?>#batch-a" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50">Batch A — days 1–5</a>
+            <a href="<?= url('/pages/resources/index.php') ?>#batch-b" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50">Batch B — days 6–14</a>
+            <a href="<?= url('/pages/resources/index.php') ?>#batch-c" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50">Batch C — SEO hubs</a>
             <a href="<?= url('/pages/landlord-certificates') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50">Landlord certificates</a>
             <a href="<?= url('/pages/gas-safety-certificate') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50">Gas safety certificate</a>
             <a href="<?= url('/pages/fire-risk-assessment') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50">Fire risk assessment</a>

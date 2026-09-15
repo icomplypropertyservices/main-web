@@ -14,6 +14,50 @@ function wave1ContactPath(): string
     return '/contact';
 }
 
+/**
+ * Official publish sequence from Marketing follow-up / PUBLISH-QUEUE.md
+ * (file was not on disk; order is Batch A days 1–5, B days 6–14, C hubs).
+ * HMO package landings and keyword-matrix URLs are excluded.
+ *
+ * @return array{A:array,B:array,C:array}
+ */
+function wave1PublishQueue(): array
+{
+    $guides = wave1FortnightGuides();
+    $a = [];
+    $b = [];
+    foreach ($guides as $slug => $g) {
+        $day = (int)($g['day'] ?? 0);
+        if ($day >= 1 && $day <= 5) {
+            $a[$slug] = $g;
+        } elseif ($day >= 6 && $day <= 14) {
+            $b[$slug] = $g;
+        }
+    }
+    uasort($a, static fn($x, $y) => ((int)$x['day']) <=> ((int)$y['day']));
+    uasort($b, static fn($x, $y) => ((int)$x['day']) <=> ((int)$y['day']));
+    return [
+        'A' => [
+            'id' => 'batch-a',
+            'label' => 'Batch A — Days 1–5',
+            'blurb' => 'Core landlord certificates first: gas, FRA, smoke/CO, PAT and EPC.',
+            'guides' => $a,
+        ],
+        'B' => [
+            'id' => 'batch-b',
+            'label' => 'Batch B — Days 6–14',
+            'blurb' => 'Fire, commercial, care, process and Greater Manchester — after Batch A.',
+            'guides' => $b,
+        ],
+        'C' => [
+            'id' => 'batch-c',
+            'label' => 'Batch C — SEO hubs',
+            'blurb' => 'Twelve quality hubs. Not doorway spam, not HMO package landings, not keyword-matrix URLs.',
+            'hubs' => wave1QualityHubs(),
+        ],
+    ];
+}
+
 function wave1Rich(string $text): string
 {
     $out = '';

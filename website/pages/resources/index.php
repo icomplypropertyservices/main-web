@@ -131,9 +131,9 @@ require SITE_ROOT . '/includes/header.php';
                 and the North West — plus links to packages, services and detailed keyword guides.
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
-                <a href="#articles" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Featured articles</a>
-                <a href="#explore" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">Explore hub</a>
-                <a href="#quote" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Free quote</a>
+                <a href="#batch-a" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Batch A guides</a>
+                <a href="#batch-c" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">Batch C hubs</a>
+                <a href="<?= url('/contact.php') ?>" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Contact / quote</a>
             </div>
         </div>
     </div>
@@ -182,21 +182,31 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
-<!-- FORTNIGHT GUIDES -->
-<section id="fortnight" class="bg-white border-t">
+<?php
+$queue = wave1PublishQueue();
+foreach (['A', 'B'] as $batchKey):
+    $batch = $queue[$batchKey];
+    $sectionBg = $batchKey === 'A' ? 'bg-white border-t' : 'bg-zinc-50 border-y';
+    $cardBg = $batchKey === 'A' ? 'bg-zinc-50' : 'bg-white';
+?>
+<section id="<?= htmlspecialchars($batch['id'], ENT_QUOTES, 'UTF-8') ?>" class="<?= $sectionBg ?>">
     <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
             <div>
-                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Fortnight guides</div>
-                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Days 1–14</h2>
-                <p class="mt-2 text-zinc-600 max-w-2xl">Fourteen new resource articles — Batch A (days 1–5) then Batch B (days 6–14). Educational copy, quotes via contact, no published price list.</p>
+                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold"><?= htmlspecialchars($batch['label'], ENT_QUOTES, 'UTF-8') ?></div>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2"><?= $batchKey === 'A' ? 'First five guides' : 'Days 6–14' ?></h2>
+                <p class="mt-2 text-zinc-600 max-w-2xl"><?= htmlspecialchars($batch['blurb'], ENT_QUOTES, 'UTF-8') ?> Quotes go to <a href="<?= url('/contact.php') ?>" class="text-[#ff6b00] font-semibold hover:underline">contact</a>.</p>
             </div>
-            <a href="<?= url('/pages/landlord-certificates') ?>" class="text-sm font-semibold text-[#ff6b00]">Landlord certificates hub →</a>
+            <?php if ($batchKey === 'A'): ?>
+            <a href="#batch-b" class="text-sm font-semibold text-[#ff6b00]">Next: Batch B →</a>
+            <?php else: ?>
+            <a href="#batch-c" class="text-sm font-semibold text-[#ff6b00]">Next: Batch C hubs →</a>
+            <?php endif; ?>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <?php foreach (wave1FortnightGuides() as $slug => $g): ?>
+            <?php foreach ($batch['guides'] as $slug => $g): ?>
             <a href="<?= url('/pages/resources/' . $slug . '.php') ?>"
-               class="service-card group bg-zinc-50 border border-zinc-200 rounded-3xl p-6 hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
+               class="service-card group <?= $cardBg ?> border border-zinc-200 rounded-3xl p-6 hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="text-xs uppercase tracking-[2px] text-[#ff6b00] font-semibold">Day <?= (int)$g['day'] ?> · <?= htmlspecialchars($g['tag'], ENT_QUOTES, 'UTF-8') ?></div>
                 <h2 class="font-semibold text-xl text-black tracking-tight mt-2"><?= htmlspecialchars($g['cardTitle'], ENT_QUOTES, 'UTF-8') ?></h2>
                 <p class="text-sm text-zinc-600 mt-2 flex-1"><?= htmlspecialchars($g['blurb'], ENT_QUOTES, 'UTF-8') ?></p>
@@ -206,19 +216,22 @@ require SITE_ROOT . '/includes/header.php';
         </div>
     </div>
 </section>
+<?php endforeach;
+$batchC = $queue['C'];
+?>
 
-<!-- QUALITY HUBS -->
-<section id="hubs" class="bg-zinc-50 border-y">
+<!-- BATCH C QUALITY HUBS -->
+<section id="batch-c" class="bg-white border-t">
     <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
         <div class="mb-10">
-            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Quality hubs</div>
+            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold"><?= htmlspecialchars($batchC['label'], ENT_QUOTES, 'UTF-8') ?></div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">High-intent landings</h2>
-            <p class="mt-2 text-zinc-600 max-w-2xl">Twelve substantial hubs — not area×keyword doorway pages, and not HMO package landings (those stay on their own PR).</p>
+            <p class="mt-2 text-zinc-600 max-w-2xl"><?= htmlspecialchars($batchC['blurb'], ENT_QUOTES, 'UTF-8') ?> CTA remains <a href="<?= url('/contact.php') ?>" class="text-[#ff6b00] font-semibold hover:underline">/contact</a>.</p>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            <?php foreach (wave1QualityHubs() as $slug => $h): ?>
+            <?php foreach ($batchC['hubs'] as $slug => $h): ?>
             <a href="<?= url('/pages/' . $slug) ?>"
-               class="bg-white border border-zinc-200 rounded-3xl p-7 hover:border-[#ff6b00] hover:shadow-lg transition group">
+               class="bg-zinc-50 border border-zinc-200 rounded-3xl p-7 hover:border-[#ff6b00] hover:shadow-lg transition group">
                 <h3 class="font-semibold text-xl text-black tracking-tight group-hover:text-[#ff6b00] transition"><?= htmlspecialchars($h['navLabel'], ENT_QUOTES, 'UTF-8') ?></h3>
                 <p class="text-sm text-zinc-600 mt-2"><?= htmlspecialchars($h['lede'], ENT_QUOTES, 'UTF-8') ?></p>
                 <span class="inline-block mt-5 text-sm font-semibold text-[#ff6b00]">Open hub →</span>
