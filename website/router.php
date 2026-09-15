@@ -27,14 +27,19 @@ if ($uri !== '/' && preg_match('#\.php$#i', $uri)) {
     }
 }
 
-// Legacy legal aliases (with or without trailing slash)
+// Legacy aliases (with or without trailing slash)
 $aliasPath = rtrim($uri, '/') ?: '/';
-if ($aliasPath === '/privacy-policy') {
-    header('Location: /privacy', true, 301);
-    return true;
-}
-if ($aliasPath === '/terms-and-conditions') {
-    header('Location: /terms', true, 301);
+$legacyAliases = [
+    '/privacy-policy' => '/privacy',
+    '/terms-and-conditions' => '/terms',
+    '/about-us' => '/pages/about',
+    '/contact-us' => '/contact',
+    '/cookie-policy' => '/privacy',
+    '/blog' => '/pages/resources',
+    '/news' => '/pages/resources',
+];
+if (isset($legacyAliases[$aliasPath])) {
+    header('Location: ' . $legacyAliases[$aliasPath], true, 301);
     return true;
 }
 

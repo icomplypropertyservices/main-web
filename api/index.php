@@ -96,14 +96,19 @@ if (preg_match('#^/(bin|templates|data|includes)(/|$)#i', $uri)) {
     }
 }
 
-// Legacy legal aliases (also in netlify.toml / _redirects)
+// Legacy aliases (also in netlify.toml / _redirects)
 $aliasPath = rtrim($uri, '/') ?: '/';
-if ($aliasPath === '/privacy-policy') {
-    header('Location: ' . $base_url . '/privacy', true, 301);
-    exit;
-}
-if ($aliasPath === '/terms-and-conditions') {
-    header('Location: ' . $base_url . '/terms', true, 301);
+$legacyAliases = [
+    '/privacy-policy' => '/privacy',
+    '/terms-and-conditions' => '/terms',
+    '/about-us' => '/pages/about',
+    '/contact-us' => '/contact',
+    '/cookie-policy' => '/privacy',
+    '/blog' => '/pages/resources',
+    '/news' => '/pages/resources',
+];
+if (isset($legacyAliases[$aliasPath])) {
+    header('Location: ' . $base_url . $legacyAliases[$aliasPath], true, 301);
     exit;
 }
 

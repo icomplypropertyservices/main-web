@@ -3,6 +3,16 @@
 /privacy-policy/    /privacy    301
 /terms-and-conditions    /terms    301
 /terms-and-conditions/    /terms    301
+/about-us    /pages/about    301
+/about-us/    /pages/about    301
+/contact-us    /contact    301
+/contact-us/    /contact    301
+/cookie-policy    /privacy    301
+/cookie-policy/    /privacy    301
+/blog    /pages/resources    301
+/blog/    /pages/resources    301
+/news    /pages/resources    301
+/news/    /pages/resources    301
 
 # Shop / products → packages (also in netlify.toml)
 /shop    /pages/packages    301

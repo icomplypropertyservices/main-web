@@ -171,13 +171,18 @@ function routerDispatchVirtual(string $path): bool {
 function routerHandleRequest(): void {
     $path = routerRequestPath();
 
-    // Legacy aliases
-    if ($path === '/privacy-policy') {
-        header('Location: ' . url('/privacy'), true, 301);
-        exit;
-    }
-    if ($path === '/terms-and-conditions') {
-        header('Location: ' . url('/terms'), true, 301);
+    // Legacy aliases (also in netlify.toml / _redirects)
+    $legacyAliases = [
+        '/privacy-policy' => '/privacy',
+        '/terms-and-conditions' => '/terms',
+        '/about-us' => '/pages/about',
+        '/contact-us' => '/contact',
+        '/cookie-policy' => '/privacy',
+        '/blog' => '/pages/resources',
+        '/news' => '/pages/resources',
+    ];
+    if (isset($legacyAliases[$path])) {
+        header('Location: ' . url($legacyAliases[$path]), true, 301);
         exit;
     }
 

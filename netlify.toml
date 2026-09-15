@@ -61,6 +61,56 @@
   status = 301
 
 [[redirects]]
+  from = "/about-us"
+  to = "/pages/about"
+  status = 301
+
+[[redirects]]
+  from = "/about-us/"
+  to = "/pages/about"
+  status = 301
+
+[[redirects]]
+  from = "/contact-us"
+  to = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/contact-us/"
+  to = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/cookie-policy"
+  to = "/privacy"
+  status = 301
+
+[[redirects]]
+  from = "/cookie-policy/"
+  to = "/privacy"
+  status = 301
+
+[[redirects]]
+  from = "/blog"
+  to = "/pages/resources"
+  status = 301
+
+[[redirects]]
+  from = "/blog/"
+  to = "/pages/resources"
+  status = 301
+
+[[redirects]]
+  from = "/news"
+  to = "/pages/resources"
+  status = 301
+
+[[redirects]]
+  from = "/news/"
+  to = "/pages/resources"
+  status = 301
+
+[[redirects]]
   from = "/sitemap-*.xml"
   to = "/sitemap.xml"
   status = 301
