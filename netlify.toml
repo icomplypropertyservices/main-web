@@ -70,15 +70,66 @@
   to = "/404.html"
   status = 404
 
+# Supplies hubs are static HTML under /shop/. Do not 301 them to packages.
 [[redirects]]
   from = "/shop"
-  to = "/pages/packages"
-  status = 301
+  to = "/shop/index.html"
+  status = 200
+  force = true
 
 [[redirects]]
-  from = "/shop/*"
-  to = "/pages/packages"
-  status = 301
+  from = "/shop/"
+  to = "/shop/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/fire"
+  to = "/shop/fire/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/fire/"
+  to = "/shop/fire/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/electrical"
+  to = "/shop/electrical/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/electrical/"
+  to = "/shop/electrical/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/security"
+  to = "/shop/security/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/security/"
+  to = "/shop/security/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/gas"
+  to = "/shop/gas/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/gas/"
+  to = "/shop/gas/index.html"
+  status = 200
+  force = true
 
 [[redirects]]
   from = "/products"

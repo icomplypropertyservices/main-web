@@ -56,21 +56,6 @@
       "permanent": true
     },
     {
-      "source": "/shop",
-      "destination": "/pages/packages",
-      "permanent": true
-    },
-    {
-      "source": "/shop/",
-      "destination": "/pages/packages",
-      "permanent": true
-    },
-    {
-      "source": "/shop/:path*",
-      "destination": "/pages/packages",
-      "permanent": true
-    },
-    {
       "source": "/products",
       "destination": "/pages/packages",
       "permanent": true
@@ -87,13 +72,24 @@
     }
   ],
   "rewrites": [
+    { "source": "/shop/assets/(.*)", "destination": "/website/shop/assets/$1" },
+    { "source": "/shop", "destination": "/website/shop/index.html" },
+    { "source": "/shop/", "destination": "/website/shop/index.html" },
+    { "source": "/shop/fire", "destination": "/website/shop/fire/index.html" },
+    { "source": "/shop/fire/", "destination": "/website/shop/fire/index.html" },
+    { "source": "/shop/electrical", "destination": "/website/shop/electrical/index.html" },
+    { "source": "/shop/electrical/", "destination": "/website/shop/electrical/index.html" },
+    { "source": "/shop/security", "destination": "/website/shop/security/index.html" },
+    { "source": "/shop/security/", "destination": "/website/shop/security/index.html" },
+    { "source": "/shop/gas", "destination": "/website/shop/gas/index.html" },
+    { "source": "/shop/gas/", "destination": "/website/shop/gas/index.html" },
     { "source": "/assets/(.*)", "destination": "/website/assets/$1" },
     { "source": "/robots.txt", "destination": "/api/index.php" },
     { "source": "/sitemap.xml", "destination": "/api/index.php" },
     { "source": "/sitemap-:part.xml", "destination": "/api/index.php" },
     { "source": "/google-site-verification=:token.txt", "destination": "/google-site-verification=$1.txt" },
     { "source": "/favicon.ico", "destination": "/website/assets/images/og-image.jpg" },
-    { "source": "/((?!assets|robots.txt|sitemap|favicon.ico|google-site-verification).*)", "destination": "/api/index.php" }
+    { "source": "/((?!assets|shop|robots.txt|sitemap|favicon.ico|google-site-verification).*)", "destination": "/api/index.php" }
   ],
   "headers": [
     {

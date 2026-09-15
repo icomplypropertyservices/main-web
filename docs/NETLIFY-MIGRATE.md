@@ -32,7 +32,7 @@ php website/bin/static-export.php --keyword-towns=all   # full keyword×area (~2
 - `publish = dist`; build command: `php website/bin/static-export.php`.
 - Pretty URL 200 rewrites: `/privacy`, `/terms`, `/contact`, `/pages/about`, `/pages/areas`, `/pages/manufacturers`, `/pages/resources`, plus splat `/* → /:splat.php`.
 - `/` is `dist/index.html`.
-- Preserve redirects: www→apex, `/shop` + `/products` → `/pages/packages`.
+- Preserve redirects: www→apex, `/products` → `/pages/packages`. `/shop` hubs are static HTML (do not 301 them to packages).
 - Verify robots + sitemap on the Netlify preview host before domain attach.
 - Default export is core pages + hubs + every sitemap keyword hub (`/pages/keywords/{slug}`) and the town combos linked from chrome (popular towns × all keywords; all towns × priority keywords). `--full` adds service×area landings. `--keyword-towns=all` is the previous PHP router’s full keyword×area set (~200k HTML files).
 
@@ -46,7 +46,8 @@ php website/bin/static-export.php --keyword-towns=all   # full keyword×area (~2
 - **100% keywords** — do not prune, thin, or rewrite keyword inventories during migrate.
 - **Single robots** — one canonical `robots.txt` for the live host; no conflicting copies.
 - **Sitemap = live host** — sitemap URLs must use the production apex (`https://icomplypropertyservices.co.uk`); do not point sitemap at preview hosts after cutover.
-- **shop / products** — keep 301s to `/pages/packages` (see `netlify.toml`); do not drop legacy paths without redirects.
+- **products** — keep `/products` 301s to `/pages/packages` (see `netlify.toml`).
+- **shop hubs** — serve static HTML under `/shop/`; do not 301 `/shop` or `/shop/*` to packages.
 - Do **not** touch sitemap XML body content except host/base URL when switching live host.
 
 ## Domain attach steps (Netlify)
@@ -55,7 +56,7 @@ php website/bin/static-export.php --keyword-towns=all   # full keyword×area (~2
 2. Follow Netlify DNS / external DNS instructions; complete Jack TXT verification / release old account if still blocked.
 3. Enable HTTPS; confirm www→apex force redirect (also in `netlify.toml`).
 4. Set site env if needed; keep `PHP_VERSION=8.3` and `SITE_URL=https://icomplypropertyservices.co.uk` for the exporter.
-5. Deploy production from `main`; smoke-check apex, robots, sitemap, shop/products redirects, and pretty URLs (`/privacy`, `/pages/about`).
+5. Deploy production from `main`; smoke-check apex, robots, sitemap, `/shop/` hubs (not 301 to packages), `/products` → packages, and pretty URLs (`/privacy`, `/pages/about`).
 
 ## Auth blockers for Jack
 

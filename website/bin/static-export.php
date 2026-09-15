@@ -13,6 +13,7 @@
  *
  * Netlify splat rewrite `/* → /:splat.php` (200, no force) then serves the
  * pre-rendered HTML. Existing files win, so `/assets/*` is untouched.
+ * Supplies hubs are copied/rebuilt into dist/shop/ from live Shopify JSON.
  *
  * Usage (repo root):
  *   php website/bin/static-export.php
@@ -166,6 +167,7 @@ if (!icomplyLooksLikeHtml($notFoundHtml)) {
 file_put_contents($dist . '/404.html', $notFoundHtml);
 
 icomplyCopyStaticAssets($websiteRoot, $repoRoot, $dist);
+icomplyPublishShopHubs($websiteRoot, $dist);
 icomplyWriteDistRedirects($dist);
 icomplyWriteDistHeaders($dist);
 
@@ -437,6 +439,28 @@ function icomplyRmrf(string $path): void
     rmdir($path);
 }
 
+function icomplyPublishShopHubs(string $websiteRoot, string $dist): void
+{
+    require_once $websiteRoot . '/bin/build-shop-hubs.php';
+    $dest = $dist . '/shop';
+    icomplyCopyShopStatic($websiteRoot . '/shop', $dest);
+    try {
+        $summary = icomplyBuildShopHubs($dest);
+        fwrite(STDERR, sprintf(
+            "shop hubs live fire=%d electrical=%d security=%d gas=%d\n",
+            $summary['counts']['fire'],
+            $summary['counts']['electrical'],
+            $summary['counts']['security'],
+            $summary['counts']['gas']
+        ));
+    } catch (Throwable $e) {
+        fwrite(STDERR, "shop hubs live rebuild skipped: " . $e->getMessage() . "\n");
+        if (!is_file($dest . '/index.html')) {
+            throw new RuntimeException('Shop hubs missing after copy and live rebuild failed');
+        }
+    }
+}
+
 function icomplyCopyStaticAssets(string $websiteRoot, string $repoRoot, string $dist): void
 {
     icomplyCopyDir($websiteRoot . '/assets', $dist . '/assets');
@@ -551,11 +575,21 @@ function icomplyPrettyUrlRedirects(): string
 /news                    /pages/resources 301
 /news/                   /pages/resources 301
 
-# Shop / products → packages
-/shop                    /pages/packages    301
-/shop/*                  /pages/packages    301
+# Products catalogue still 301s to packages. /shop hubs are real HTML.
 /products                /pages/packages    301
 /products/*              /pages/packages    301
+
+# Supplies hubs (static HTML). force so /shop is not swallowed by splat or children.
+/shop                    /shop/index.html              200!
+/shop/                   /shop/index.html              200!
+/shop/fire               /shop/fire/index.html         200!
+/shop/fire/              /shop/fire/index.html         200!
+/shop/electrical         /shop/electrical/index.html   200!
+/shop/electrical/        /shop/electrical/index.html   200!
+/shop/security           /shop/security/index.html     200!
+/shop/security/          /shop/security/index.html     200!
+/shop/gas                /shop/gas/index.html          200!
+/shop/gas/               /shop/gas/index.html          200!
 
 # Old 470-part sitemap index → single compact urlset
 /sitemap-*.xml           /sitemap.xml    301

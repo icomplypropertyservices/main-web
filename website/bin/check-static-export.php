@@ -87,6 +87,13 @@ $mustExist = [
     '_redirects',
     '_headers',
     '404.html',
+    'shop/index.html',
+    'shop/fire/index.html',
+    'shop/electrical/index.html',
+    'shop/security/index.html',
+    'shop/gas/index.html',
+    'shop/assets/shop.css',
+    'shop/assets/logo.svg',
 ];
 foreach ($mustExist as $rel) {
     $path = $dist . '/' . $rel;
@@ -159,7 +166,7 @@ if ($kwTownFiles >= 12) {
     echo "[FAIL] keyword×town exported={$kwTownFiles} (need town combos)\n";
 }
 
-$redirectNeedles = ['/*', '/:splat.php', '/privacy', '/pages/about', '/assets/', '/pages/keywords', '/pages/keywords/:slug'];
+$redirectNeedles = ['/*', '/:splat.php', '/privacy', '/pages/about', '/assets/', '/pages/keywords', '/pages/keywords/:slug', '/shop/index.html'];
 foreach ($redirectNeedles as $n) {
     if (!str_contains($redirects, $n)) {
         $fail++;
@@ -168,6 +175,49 @@ foreach ($redirectNeedles as $n) {
         $pass++;
         echo "[PASS] _redirects has {$n}\n";
     }
+}
+if (preg_match('#^/shop(?:/\\*)?\s+/pages/packages\s+301#m', $redirects)) {
+    $fail++;
+    echo "[FAIL] _redirects still 301s /shop to /pages/packages\n";
+} else {
+    $pass++;
+    echo "[PASS] _redirects does not 301 /shop hubs to packages\n";
+}
+
+$shopIndex = is_file($dist . '/shop/index.html') ? (string)file_get_contents($dist . '/shop/index.html') : '';
+$shopNeedles = ['iComply Supplies', '/shop/fire/', '/shop/security/', '/shop/electrical/', '/shop/gas/'];
+$shopOk = $shopIndex !== '' && !str_contains($shopIndex, '<?php');
+$shopMissing = [];
+if ($shopOk) {
+    foreach ($shopNeedles as $n) {
+        if (!str_contains($shopIndex, $n)) {
+            $shopMissing[] = $n;
+            $shopOk = false;
+        }
+    }
+}
+if ($shopOk) {
+    $pass++;
+    echo "[PASS] /shop hub HTML (" . strlen($shopIndex) . " bytes)\n";
+} else {
+    $fail++;
+    echo "[FAIL] /shop hub HTML " . ($shopMissing !== [] ? implode(',', $shopMissing) : 'missing-or-php') . "\n";
+}
+$fireHtml = is_file($dist . '/shop/fire/index.html') ? (string)file_get_contents($dist . '/shop/fire/index.html') : '';
+if ($fireHtml !== '' && str_contains($fireHtml, 'Order on Shopify') && str_contains($fireHtml, 'cdn.shopify.com')) {
+    $pass++;
+    echo "[PASS] /shop/fire product cards from live Shopify\n";
+} else {
+    $fail++;
+    echo "[FAIL] /shop/fire missing live product cards / Shopify images\n";
+}
+$gasHtml = is_file($dist . '/shop/gas/index.html') ? (string)file_get_contents($dist . '/shop/gas/index.html') : '';
+if ($gasHtml !== '' && (str_contains($gasHtml, 'Nothing to list yet') || str_contains($gasHtml, 'Enquire / POA'))) {
+    $pass++;
+    echo "[PASS] /shop/gas empty/POA hub\n";
+} else {
+    $fail++;
+    echo "[FAIL] /shop/gas must stay an honest empty/POA hub\n";
 }
 if (!str_contains($headerFile, 'text/html')) {
     $fail++;
