@@ -177,9 +177,15 @@ require SITE_ROOT . '/includes/header.php';
 <section class="bg-zinc-100">
     <div class="max-w-7xl mx-auto px-6 py-14">
         <h2 class="text-2xl md:text-3xl font-bold text-[#061828]"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> by area</h2>
-        <p class="mt-2 text-zinc-800">Local landing pages for every town we cover (<?= count($allAreas) ?> areas) — e.g. <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> in Stockport.</p>
+        <p class="mt-2 text-zinc-800">Indexable local landings where this job is exported — e.g. <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> in Stockport. Other towns sit on the area hubs.</p>
         <div class="mt-6 flex flex-wrap gap-2">
-            <?php foreach ($popularTowns as $a): ?>
+            <?php
+            $linkTowns = function_exists('jobTypeExportedAreaNames')
+                ? jobTypeExportedAreaNames((string)$KEYWORD_SLUG)
+                : $popularTowns;
+            $featured = array_values(array_intersect($popularTowns, $linkTowns));
+            $restTowns = array_values(array_filter($linkTowns, static fn($t) => !in_array($t, $featured, true)));
+            foreach ($featured as $a): ?>
                 <a href="<?= url('/pages/keywords/' . $KEYWORD_SLUG . '/' . areaSlug($a) . '.php') ?>"
                    class="px-4 py-2.5 bg-[#061828] text-white rounded-full text-sm font-semibold hover:bg-[#ff6b00] transition shadow">
                     <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> in <?= htmlspecialchars($a, ENT_QUOTES, 'UTF-8') ?>
@@ -187,14 +193,16 @@ require SITE_ROOT . '/includes/header.php';
             <?php endforeach; ?>
         </div>
         <div class="mt-4 flex flex-wrap gap-2">
-            <?php foreach ($allAreas as $a):
-                if (in_array($a, $popularTowns, true)) continue;
-            ?>
+            <?php foreach ($restTowns as $a): ?>
                 <a href="<?= url('/pages/keywords/' . $KEYWORD_SLUG . '/' . areaSlug($a) . '.php') ?>"
                    class="px-3 py-1.5 bg-white border-2 border-zinc-300 text-zinc-900 rounded-full text-xs font-medium hover:border-[#ff6b00] hover:text-[#ff6b00]">
                     <?= htmlspecialchars($KEYWORD_NAME . ' · ' . $a, ENT_QUOTES, 'UTF-8') ?>
                 </a>
             <?php endforeach; ?>
+            <a href="<?= url('/pages/areas/index.php') ?>"
+               class="px-3 py-1.5 bg-[#ff6b00] text-white rounded-full text-xs font-semibold hover:bg-orange-600">
+                All area hubs →
+            </a>
         </div>
     </div>
 </section>

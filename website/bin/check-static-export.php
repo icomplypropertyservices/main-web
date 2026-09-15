@@ -63,6 +63,8 @@ $needHtml = [
     '/pages/keywords/emergency-electrician/bolton' => ['pages/keywords/emergency-electrician/bolton.php', ['Emergency Electrician', 'Bolton', '<!DOCTYPE']],
     '/pages/keywords/boiler/stockport' => ['pages/keywords/boiler/stockport.php', ['Boiler', 'Stockport', '<!DOCTYPE']],
     '/pages/keywords/price-of-rewire' => ['pages/keywords/price-of-rewire.php', ['POA', '<!DOCTYPE']],
+    '/pages/keywords/aico-multi-sensor-install' => ['pages/keywords/aico-multi-sensor-install.php', ['Aico', '<!DOCTYPE', 'canonical']],
+    '/pages/keywords/after-hours-pat-testing' => ['pages/keywords/after-hours-pat-testing.php', ['PAT', '<!DOCTYPE', 'canonical']],
 ];
 
 echo "Icomply static-export check  dist={$dist}\n";

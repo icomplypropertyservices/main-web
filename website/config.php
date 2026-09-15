@@ -314,6 +314,10 @@ function keywordDisplayName($slugOrName): string {
 }
 
 function getMajorKeywords(): array {
+    static $cached = null;
+    if ($cached !== null) {
+        return $cached;
+    }
     $kw = loadJsonData('keywords', []);
     $normalized = [];
     foreach ($kw as $slug => $meta) {
@@ -343,7 +347,10 @@ function getMajorKeywords(): array {
     if (function_exists('seoIaApplyJobOverlay')) {
         $normalized = seoIaApplyJobOverlay($normalized);
     }
-    return $normalized;
+    if (function_exists('jobTypesApplyMaster')) {
+        $normalized = jobTypesApplyMaster($normalized);
+    }
+    return $cached = $normalized;
 }
 
 /**
@@ -740,6 +747,11 @@ if (is_file($waFile)) {
 $seoIaFile = __DIR__ . '/includes/seo-ia.php';
 if (is_file($seoIaFile)) {
     require_once $seoIaFile;
+}
+
+$jobTypesMasterFile = __DIR__ . '/includes/job-types-master.php';
+if (is_file($jobTypesMasterFile)) {
+    require_once $jobTypesMasterFile;
 }
 
 // Back-compat globals used by some templates/includes

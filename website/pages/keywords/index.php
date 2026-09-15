@@ -144,9 +144,9 @@ require SITE_ROOT . '/includes/header.php';
     <div class="max-w-7xl mx-auto px-6 py-16">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
             <div>
-                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Job types · Wave 1</div>
-                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Money job pages</h2>
-                <p class="mt-2 text-zinc-600 max-w-2xl">Category → service → job → area. Each job page has a unique title, H1, meta, FAQ + FAQPage JSON-LD, and manufacturer links. Quotes are POA / enquire.</p>
+                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Job types · <?= number_format(count($keywords)) ?> / 1,753</div>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">All master job types</h2>
+                <p class="mt-2 text-zinc-600 max-w-2xl">Category → service → job → area. Every master slug has an indexable <code>/pages/keywords/&lt;slug&gt;</code> page with unique title, H1, meta, FAQ + FAQPage JSON-LD, and enquiry CTA. Quotes are POA / enquire. Featured money jobs below; full directory underneath.</p>
             </div>
             <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Service hubs →</a>
         </div>
