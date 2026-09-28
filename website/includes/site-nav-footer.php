@@ -77,7 +77,7 @@ function icomplyFooterHtml(): string
 
     $legalDrop = '<div class="foot-links">';
     $legalDrop .= icomplyNavLink(url('/contact.php'), 'Contact / quote');
-    $legalDrop .= icomplyNavLink(url('/become-a-subcontractor.php'), 'Become a subcontractor');
+    $legalDrop .= icomplyNavLink(url('/become-a-subcontractor.php'), 'Work with us');
     $legalDrop .= icomplyNavLink($n['phoneHref'], 'Call ' . $n['phone']);
     $legalDrop .= '<a href="mailto:' . $email . '">' . $email . '</a>';
     foreach ($n['legal'] as $row) {
@@ -100,7 +100,6 @@ function icomplyFooterHtml(): string
     <div class="foot-nap">
       <div class="foot-brand">{$brand}</div>
       <p>Property compliance — electrical, fire, water hygiene and asbestos surveys across Greater Manchester and the North West. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not carry out gas work or issue those certificates. Quotes are POA until scope is confirmed. Call {$phone}.</p>
-      <p>Gas works are carried out by Gas Safe registered engineers. Some specialist works may be carried out by approved subcontractors.</p>
       <p><span class="foot-label">Phone</span> <a href="{$phoneHref}">{$phone}</a></p>
       <p><span class="foot-label">Email</span> <a href="mailto:{$email}">{$email}</a></p>
       <p><span class="foot-label">Address</span> 17 Woodlands Park Road, Offerton, Stockport SK2 5DE</p>
@@ -163,7 +162,7 @@ function icomplyFooterHtml(): string
       <div>© {$year} {$brand}. All rights reserved.</div>
       <div class="foot-base-links">
         <a href="{$contact}">Contact</a>
-        <a href="{$subcontract}">Become a subcontractor</a>
+        <a href="{$subcontract}">Work with us</a>
         <a href="{$privacy}">Privacy</a>
         <a href="{$terms}">Terms</a>
         <a href="{$siteMap}">Site map</a>

@@ -137,7 +137,7 @@ require SITE_ROOT . '/includes/header.php';
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
                     <div><span class="text-white font-semibold text-xl block"><?= count($services) ?></span> core services</div>
                     <div><span class="text-white font-semibold text-xl block"><?= count($areas) ?>+</span> towns covered</div>
-                    <div><span class="text-white font-semibold text-xl block">One</span> compliance partner</div>
+                    <div><span class="text-white font-semibold text-xl block">Our</span> qualified engineers</div>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-3">

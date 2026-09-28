@@ -56,7 +56,7 @@ require SITE_ROOT . '/includes/header.php';
                 'cookies' => 'Cookies',
                 'shopify' => 'Shopify store',
                 'retention' => 'Retention',
-                'subcontractor-applicants' => 'Subcontractor applicants',
+                'trade-applicants' => 'Trade applicants',
                 'your-rights' => 'Your rights',
                 'security' => 'Security',
                 'changes' => 'Changes',
@@ -168,10 +168,10 @@ require SITE_ROOT . '/includes/header.php';
             </p>
         </article>
 
-        <article id="subcontractor-applicants" class="bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 scroll-mt-24">
-            <h2 class="text-xl md:text-2xl font-semibold tracking-tight mb-3">Subcontractor applicants</h2>
+        <article id="trade-applicants" class="bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-semibold tracking-tight mb-3">Trade applicants</h2>
             <p class="text-zinc-700">
-                If you apply on our become-a-subcontractor page, we collect the fields on that form and any documents
+                If you apply to carry out work for us, we collect the fields on that form and any documents
                 you upload: name, business type, company name, trades, qualifications and cards, whether you hold
                 public liability insurance, insurance expiry, coverage postcodes, travel radius, phone, email and
                 availability.

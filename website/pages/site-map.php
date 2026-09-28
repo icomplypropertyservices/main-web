@@ -59,7 +59,7 @@ $mainPages = [
     ['href' => url('/pages/resources/index.php'), 'label' => 'Resources hub'],
     ['href' => url('/pages/faq.php'), 'label' => 'FAQ'],
     ['href' => url('/contact.php'), 'label' => 'Contact / free quote'],
-    ['href' => url('/become-a-subcontractor.php'), 'label' => 'Become a subcontractor'],
+    ['href' => url('/become-a-subcontractor.php'), 'label' => 'Work with us'],
     ['href' => url('/privacy.php'), 'label' => 'Privacy policy'],
     ['href' => url('/terms.php'), 'label' => 'Terms & conditions'],
     ['href' => url('/sitemap.xml'), 'label' => 'XML sitemap'],

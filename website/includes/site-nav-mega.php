@@ -112,7 +112,7 @@ function icomplyMegaHeaderHtml(): string
         </div>
       </div>
       <a class="nav-link" href="{$products}">Products</a>
-      <a class="nav-link" href="{$subcontract}">Subcontractors</a>
+      <a class="nav-link" href="{$subcontract}">Work with us</a>
       <a class="nav-link" href="{$contact}">Contact</a>
     </nav>
     <div class="mega-tools">
@@ -174,7 +174,7 @@ function icomplyMobileDrawerHtml(array $n): string
       <a href="/shop/">All supplies</a>
     </div></details>
     <a href="{$productsD}">Products</a>
-    <a href="{$subcontractD}">Become a subcontractor</a>
+    <a href="{$subcontractD}">Work with us</a>
     <a class="drawer-cta drawer-cta--quote" href="{$contactDrawer}">Get a quote</a>
   </nav>
 </div>

@@ -23,7 +23,7 @@ require '../../includes/header.php';
 $hubFaqs = [
     ['q' => 'Which compliance service do I need?', 'a' => 'It depends on your property type and legal duties. Landlords often need EICR and gas safety; commercial sites commonly need fire alarms, emergency lighting and sometimes AOV or access control. Tell us the building use and we will recommend the right package.'],
     ['q' => 'Do you cover the whole North West?', 'a' => 'Yes. From our Stockport base we cover Greater Manchester and 150+ towns including Liverpool, Preston, Blackpool, Chester and Warrington.'],
-    ['q' => 'Can one contractor handle multiple systems?', 'a' => 'Yes. iComply coordinates electrical, fire, gas, emergency lighting, nurse call, CCTV and access works so you deal with one UK compliance partner.'],
+    ['q' => 'Can one contractor handle multiple systems?', 'a' => 'Yes. iComply coordinates electrical, fire, gas, emergency lighting, nurse call, CCTV and access works so you deal with our qualified engineers.'],
 ];
 ?>
 <section class="relative text-white py-20 overflow-hidden">

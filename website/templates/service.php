@@ -533,9 +533,6 @@ $schema = [
                 <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold">Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
                 <a href="<?= url('/contact.php') ?>" class="px-6 py-3 rounded-2xl bg-white/10 border border-white/20 font-semibold hover:bg-white/15">Book / contact</a>
             </div>
-            <?php if ($serviceSlug === 'gas-systems' && function_exists('icomplySpecialistWorksLine')): ?>
-            <p class="mt-4 text-sm text-white/80"><?= htmlspecialchars(icomplySpecialistWorksLine(), ENT_QUOTES, 'UTF-8') ?></p>
-            <?php endif; ?>
         </div>
         <ul class="space-y-3 text-sm text-white/90">
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Based in Stockport — North West coverage</li>

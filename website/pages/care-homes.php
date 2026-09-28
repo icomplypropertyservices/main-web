@@ -68,7 +68,7 @@ $packages = [
     ],
     [
         'name' => 'Multi-home estate',
-        'text' => 'Bundle several homes into one visit schedule — ideal for groups and FM partners managing 2–20+ care sites across the North West.',
+        'text' => 'Bundle several homes into one visit schedule — ideal for groups and facilities managers looking after 2–20+ care sites across the North West.',
         'points' => ['Shared visit days', 'Portfolio discount', 'One point of contact'],
     ],
     [
@@ -79,7 +79,7 @@ $packages = [
 ];
 
 $trust = [
-    ['title' => 'Care-home ready', 'text' => 'Nurse call, fire, lighting, access & CCTV under one partner'],
+    ['title' => 'Care-home ready', 'text' => 'Nurse call, fire, lighting, access and CCTV with our qualified engineers'],
     ['title' => 'HTM & BS standards', 'text' => 'HTM 08-03, BS 5839, BS 5266 and fire-override access'],
     ['title' => 'Manufacturer brands', 'text' => 'Courtney Thorne, Static Systems, Intercall, Tunstall & more'],
     ['title' => 'Fixed-price quotes', 'text' => 'Clear scope, certification and multi-home options'],
@@ -317,7 +317,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                     <li class="flex gap-3"><span class="text-[#ff6b00]">●</span> Residential care &amp; nursing homes</li>
                     <li class="flex gap-3"><span class="text-[#ff6b00]">●</span> Supported living &amp; extra-care schemes</li>
                     <li class="flex gap-3"><span class="text-[#ff6b00]">●</span> Care groups managing multi-home estates</li>
-                    <li class="flex gap-3"><span class="text-[#ff6b00]">●</span> FM partners &amp; estates managers</li>
+                    <li class="flex gap-3"><span class="text-[#ff6b00]">●</span> Facilities managers &amp; estates managers</li>
                     <li class="flex gap-3"><span class="text-[#ff6b00]">●</span> Clinics and healthcare annexes on care sites</li>
                 </ul>
                 <a href="#quote" class="inline-block mt-8 px-6 py-3 bg-[#ff6b00] rounded-2xl font-semibold">Request care home quote</a>
@@ -351,7 +351,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
     </div>
     <div class="mt-10 bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10 grid lg:grid-cols-2 gap-8 items-center">
         <div>
-            <h3 class="text-2xl font-semibold tracking-tight">Built for care operators &amp; FM partners</h3>
+            <h3 class="text-2xl font-semibold tracking-tight">Built for care operators and facilities managers</h3>
             <p class="mt-3 text-white/80">Share site list, panel brands and certificate due dates — we’ll map nurse call, fire, emergency lighting, access and CCTV into a single compliance programme.</p>
         </div>
         <ul class="space-y-3 text-sm text-white/90">

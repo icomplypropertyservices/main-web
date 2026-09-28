@@ -173,8 +173,6 @@ function icomplyMatrixChromeEnd(): string
         . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH(url('/pages/site-map.php')) . '">Site map / full inventory</a>'
         . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH($s['contact']) . '">Contact / POA quote</a>'
         . '</div>'
-        . '<p>Gas works are carried out by Gas Safe registered engineers. Some specialist works may be carried out by approved subcontractors.</p>'
-        . '<p>Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not carry out gas work or issue those certificates.</p>'
         . '<p class="text-white/60 text-xs">Quotes are POA. Call ' . icomplyMatrixH($s['phone']) . ' or use the quote form.</p>'
         . '</div></footer>' . $popup . '</body></html>';
 }
@@ -284,9 +282,6 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         . '<a class="matrix-cta matrix-cta-accent" href="' . icomplyMatrixH($s['contact']) . '">Request a quote</a>'
         . '<a class="matrix-cta matrix-cta-light" href="' . icomplyMatrixH($s['phoneHref']) . '">' . icomplyMatrixH($s['phone']) . '</a>'
         . '</div>'
-        . ($gasTopic && function_exists('icomplySpecialistWorksLine')
-            ? '<p class="mt-4 text-sm text-white/80">' . icomplyMatrixH(icomplySpecialistWorksLine()) . '</p>'
-            : '')
         . '<p class="mt-4 text-sm text-white/60">' . icomplyMatrixH($priceLine) . '</p>'
         . '<p class="mt-2 text-sm text-white/70">' . icomplyMatrixH($localLine) . '</p>'
         . '</div></section>';
@@ -371,9 +366,6 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         . '<a class="matrix-cta matrix-cta-accent" href="' . icomplyMatrixH($s['contact']) . '">Request a quote</a>'
         . '<a class="matrix-cta matrix-cta-light" href="' . icomplyMatrixH($s['phoneHref']) . '">' . icomplyMatrixH($s['phone']) . '</a>'
         . '</div>'
-        . ($serviceSlug === 'gas-systems' && function_exists('icomplySpecialistWorksLine')
-            ? '<p class="mt-4 text-sm text-white/80">' . icomplyMatrixH(icomplySpecialistWorksLine()) . '</p>'
-            : '')
         . '<p class="mt-4 text-sm text-white/60">' . icomplyMatrixH($standards) . ' · ' . icomplyMatrixH($priceLine) . '</p>'
         . '<p class="mt-2 text-sm text-white/70">' . icomplyMatrixH($localLine) . '</p>'
         . '</div></section>';

@@ -110,7 +110,7 @@ function icomplySubcontractorFormRegistrationDocument(): string
 <html lang="en-GB">
 <head>
   <meta charset="utf-8">
-  <title>Subcontractor onboarding form (Netlify registration)</title>
+  <title>Onboarding form (Netlify registration)</title>
   <meta name="robots" content="noindex">
   <link rel="canonical" href="https://icomplypropertyservices.co.uk/subcontractor-onboarding-form.html">
 </head>
