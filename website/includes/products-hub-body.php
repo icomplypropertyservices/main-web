@@ -1,4 +1,7 @@
 <?php
+// Exported twice in one process (/pages/products and /products). Guard so the
+// second include still prints this body.
+if (!function_exists('icomplyBar5mCameGardImageMap')) {
 function icomplyBar5mCameGardImageMap(): array {
     static $map = null;
     if ($map !== null) return $map;
@@ -14,8 +17,10 @@ function icomplyBar5mCameGardImageMap(): array {
     }
     return $map;
 }
+}
 
 /** Marketing AOV kit CDN map (Rev C). Keys: aov-act, aov-motor, aov-kit-1m2, … */
+if (!function_exists('icomplyAovKitCdnImageMap')) {
 function icomplyAovKitCdnImageMap(): array {
     static $map = null;
     if ($map !== null) return $map;
@@ -31,13 +36,16 @@ function icomplyAovKitCdnImageMap(): array {
     }
     return $map;
 }
+}
 
+if (!function_exists('icomplyAovKitImageUrl')) {
 function icomplyAovKitImageUrl(string $sku): string {
     $map = icomplyAovKitCdnImageMap();
     $key = strtolower(str_replace('_', '-', $sku));
     if (isset($map[$key])) return $map[$key];
     // SKU AOV-MOTOR-HVY → aov-motor-hvy
     return $map[$key] ?? ('/assets/images/products/' . $sku . '.jpg');
+}
 }
 ?>
 <section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
