@@ -96,7 +96,7 @@ $schema = [
                     'latitude' => '53.3904',
                     'longitude' => '-2.1219',
                 ],
-                'priceRange' => '££',
+                'priceRange' => 'POA',
             ],
             'areaServed' => [
                 '@type' => 'City',
@@ -146,7 +146,7 @@ $schema = [
                 '@type' => 'City',
                 'name' => $areaName,
             ],
-            'priceRange' => '££',
+            'priceRange' => 'POA',
             'parentOrganization' => [
                 '@type' => 'LocalBusiness',
                 '@id' => rtrim(SITE_URL, '/') . '/#business',
@@ -225,7 +225,7 @@ $schema = [
                 ['Local to ' . $areaName, 'Stockport-based engineers covering ' . $areaName . ' and surrounding postcodes'],
                 ['Standards-led', $standards],
                 ['Full certification', 'Documentation for landlords, insurers and fire officers'],
-                ['Fixed-price quotes', 'Clear scope, same-week appointments where capacity allows'],
+                ['Fixed-price quotes', 'Clear scope, appointments booked when the diary allows'],
             ];
         foreach ($trust as [$t, $d]): ?>
             <div class="flex gap-3 items-start">
@@ -259,7 +259,7 @@ $schema = [
                 Icomply Property Services provides complete <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong>
                 design, installation, commissioning, maintenance and certification across
                 <strong><?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></strong> and the wider North West.
-                Our qualified engineers deliver fixed-price quotes, same-week appointments and full compliance documentation on every job.
+                Our qualified engineers deliver fixed-price quotes, appointments booked when the diary allows, and full compliance documentation on every job.
             </p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
                 Whether you need a new system, an upgrade, periodic testing or emergency repairs, we support commercial,
@@ -441,7 +441,7 @@ $schema = [
             <h2 class="text-3xl font-semibold tracking-tight">Need <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>?</h2>
             <p class="mt-3 text-white/75"><?= $poaCombo
                 ? 'Price on application after we confirm the property in ' . htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') . '. No invented fee list — call, WhatsApp or send the form.'
-                : 'Written quotes after scope. Same-week appointments where capacity allows. Full certification on every job. Tell us your panel brand or system type.' ?></p>
+                : 'Written quotes after scope. Appointments booked when the diary allows where capacity allows. Full certification on every job. Tell us your panel brand or system type.' ?></p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="#quote" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold">Request quote</a>
                 <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Quote for ' . $serviceName . ' in ' . $areaName) ?>"
@@ -460,7 +460,7 @@ $schema = [
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Based in Stockport — covering <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> &amp; the North West</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Installation, servicing and certification</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Multi-service packages for landlords &amp; FM teams</li>
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Response aim: within 2 hours on business days</li>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Quotes are POA</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Manufacturer brands supported — see tags above</li>
         </ul>
     </div>
@@ -480,7 +480,7 @@ $schema = [
             </h2>
             <p class="mt-3 text-zinc-600">
                 Service and area are pre-filled below. Add your postcode, property type and any panel brand —
-                we aim to respond within 2 hours on business days.
+                we will reply with a quote.
             </p>
         </div>
         <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>

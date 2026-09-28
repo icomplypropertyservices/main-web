@@ -17,7 +17,7 @@ Official rules for the electrical + gas keyword expansion.
 
 ## Copy / POA
 
-- Cost, price, quote and “how much” keywords always say **POA**. Never invent a £ figure.
+- Cost, price, quote and “how much” keywords always say **POA**. Never invent a POA figure.
 - UK English, Stockport / North West. No fake accreditations, reviews or prices.
 
 ## HMO packages

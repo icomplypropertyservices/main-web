@@ -405,7 +405,7 @@ function keywordDisplayName($slugOrName): string {
     $acronyms = [
         'Eicr' => 'EICR', 'Pat' => 'PAT', 'Ev' => 'EV', 'Aov' => 'AOV', 'Ahu' => 'AHU',
         'Cctv' => 'CCTV', 'Ip' => 'IP', 'Hd' => 'HD', 'Bs' => 'BS', 'Htm' => 'HTM',
-        'Niceic' => 'NICEIC', 'Lpg' => 'LPG', 'Ptz' => 'PTZ', 'Cp44' => 'CP44',
+        'Lpg' => 'LPG', 'Ptz' => 'PTZ', 'Cp44' => 'CP44',
         'Cp12' => 'CP12', 'Fra' => 'FRA', 'Cdm' => 'CDM', 'Hmo' => 'HMO', 'Epc' => 'EPC',
         'Fd30' => 'FD30', 'Fd60' => 'FD60', 'Anpr' => 'ANPR', 'Nvr' => 'NVR', 'Dvr' => 'DVR',
         'Ppm' => 'PPM', 'Gsm' => 'GSM', 'Epdm' => 'EPDM', 'Pir' => 'PIR',
@@ -413,7 +413,15 @@ function keywordDisplayName($slugOrName): string {
     foreach ($acronyms as $from => $to) {
         $name = preg_replace('/\b' . preg_quote($from, '/') . '\b/', $to, $name);
     }
-    return $name;
+    $banned = [
+        'Certified Electrician' => 'Electrical testing',
+        'Part P' => 'Electrical testing',
+        'NICEIC' => 'Electrical testing',
+        'Niceic' => 'Electrical testing',
+        'Gas Safety' => 'Gas safety',
+        'Gas Safe' => 'Gas safety certificates (CP12)',
+    ];
+    return str_replace(array_keys($banned), array_values($banned), $name);
 }
 
 function getMajorKeywords(): array {

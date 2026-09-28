@@ -37,7 +37,7 @@ require SITE_ROOT . '/includes/header.php';
           "postalCode": "SK2 5DE",
           "addressCountry": "GB"
         },
-        "priceRange": "££"
+        "priceRange": "POA"
       },
       "areaServed": {"@type": "City", "name": "{{AREA}}"},
       "offers": {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Fourteen fortnight resource drafts (Batch A days 1–5, Batch B days 6–14).
+ * Fourteen fortnight resource drafts (Guides landlord topics, Guides fire and commercial topics).
  * Educational guides — not HMO package landings, not keyword-matrix pages.
  */
 declare(strict_types=1);
@@ -15,7 +15,7 @@ function wave1FortnightGuides(): array
             'day' => 1, 'batch' => 'A', 'tag' => 'Gas',
             'cardTitle' => 'Gas safety certificate for landlords',
             'blurb' => 'What a CP12 / landlord gas safety record covers, typical annual timing, and how to book a visit in the North West.',
-            'pageTitle' => 'Landlord Gas Safety Certificate (CP12) | North West',
+            'pageTitle' => 'Landlord Gas safety Certificate (CP12) | North West',
             'metaDesc' => 'Plain-English guide to landlord gas safety records (often called CP12) in England — what is checked, typical annual timing, and how to request a quote from Stockport.',
             'metaKeywords' => 'landlord gas safety certificate, CP12, CP44, gas safety record landlords North West, Stockport gas safety',
             'ogImage' => '/assets/images/services/gas-systems.jpg',
@@ -32,7 +32,7 @@ function wave1FortnightGuides(): array
                 [
                     'h2' => 'What the record is for',
                     'p' => [
-                        'Where gas appliances or flues are present, private landlords in Great Britain generally need a gas safety check by a **Gas Safe** registered engineer and a written record for the tenancy file. People still say **CP12**; the important part is a current record that matches the appliances on site.',
+                        'Where gas appliances or flues are present, private landlords in Great Britain generally need a gas safety check by an engineer, with a **gas safety certificate (CP12)** and a written record for the tenancy file. People still say **CP12**; the important part is a current record that matches the appliances on site.',
                         'It is not the same as a repair invoice or a manufacturer warranty stamp. The engineer records the appliances, the checks completed, and whether each appliance was safe to use at the time of the visit.',
                     ],
                 ],

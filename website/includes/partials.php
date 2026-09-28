@@ -90,7 +90,7 @@ function sectionQuoteForm(array $services, string $csrf, string $defaultService 
         <div class="text-center mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request your free quote</h2>
-            <p class="mt-3 text-zinc-600">We aim to respond within 2 hours on business days. All quotes are fixed-price after scope is agreed.</p>
+            <p class="mt-3 text-zinc-600">Send the property details and we will reply with a quote. The price is POA until the scope is agreed.</p>
         </div>
 
         <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm', 'aria-label="Free quote form"') ?>

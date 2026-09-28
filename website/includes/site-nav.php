@@ -120,9 +120,9 @@ function icomplyNavResourceLinks(): array
 {
     $links = [
         ['href' => url('/pages/resources/index.php'), 'label' => 'All resources'],
-        ['href' => url('/pages/resources/index.php') . '#batch-a', 'label' => 'Batch A — days 1–5'],
-        ['href' => url('/pages/resources/index.php') . '#batch-b', 'label' => 'Batch B — days 6–14'],
-        ['href' => url('/pages/resources/index.php') . '#batch-c', 'label' => 'Batch C — SEO hubs'],
+        ['href' => url('/pages/resources/index.php') . '#batch-a', 'label' => 'Landlord guides'],
+        ['href' => url('/pages/resources/index.php') . '#batch-b', 'label' => 'Fire and commercial guides'],
+        ['href' => url('/pages/resources/index.php') . '#batch-c', 'label' => 'Service hubs'],
     ];
     $landers = [
         '/pages/landlord-certificates' => 'Landlord certificates',

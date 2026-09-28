@@ -133,7 +133,7 @@ require SITE_ROOT . '/includes/header.php';
         <div>
             <h2 class="text-2xl font-semibold tracking-tight mb-3">Day-to-day management tips</h2>
             <ul class="space-y-2 text-zinc-700">
-                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold shrink-0">✓</span> Disable leavers the same day — do not wait for a monthly tidy-up.</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold shrink-0">✓</span> Disable leavers after the visit — do not wait for a monthly tidy-up.</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold shrink-0">✓</span> Use named credentials, not shared “contractor” fobs that never expire.</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold shrink-0">✓</span> Review event logs after incidents; keep admin passwords under dual control.</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold shrink-0">✓</span> Book periodic service for door closers, locks, batteries and controller health.</li>

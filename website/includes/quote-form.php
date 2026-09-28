@@ -15,7 +15,7 @@ if (empty($_SESSION['csrf'])) {
 $services = $services ?? getServices();
 $selectedService = $selectedService ?? '';
 $heading = $heading ?? 'Request your free quote';
-$sub = $sub ?? 'We aim to respond within 2 hours on business days.';
+$sub = $sub ?? 'Send the details and we will reply with a quote.';
 $showHeading = $showHeading ?? true;
 ?>
 <?php if ($showHeading): ?>

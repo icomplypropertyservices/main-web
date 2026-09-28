@@ -79,7 +79,7 @@
   },
   "door-entry-intercom": {
     "intro": "A door entry intercom is the first line of controlled access for flats, offices and managed estates. Icomply Property Services install, repair and upgrade door entry intercom solutions so visitors can call, residents or staff can identify callers, and doors release only when authorised. We work to practical multi-tenant best practice, issue clear commissioning notes, and support managing agents across Greater Manchester from our Stockport base. Fixed-price quotes follow survey so scope, materials and programme are transparent.",
-    "body": "Door entry intercom projects range from a single commercial lobby kit to large residential risers with multiple entrances and trades buttons. We specify weather-rated panels, suitable indoor stations, power supplies and release interfaces matched to the lock or maglock on site. Where blocks suffer repeated vandalism or water ingress, we recommend robust housings, better sealing and protective measures. Upgrades from ageing audio to video or IP improve identification and reduce unauthorised entry. After install we test every call path that site access allows, confirm fire-release behaviour where linked, and brief caretakers or agents. Coverage spans Manchester, Cheshire, Lancashire, Merseyside and Cumbria with same-week appointments where capacity allows.",
+    "body": "Door entry intercom projects range from a single commercial lobby kit to large residential risers with multiple entrances and trades buttons. We specify weather-rated panels, suitable indoor stations, power supplies and release interfaces matched to the lock or maglock on site. Where blocks suffer repeated vandalism or water ingress, we recommend robust housings, better sealing and protective measures. Upgrades from ageing audio to video or IP improve identification and reduce unauthorised entry. After install we test every call path that site access allows, confirm fire-release behaviour where linked, and brief caretakers or agents. Coverage spans Manchester, Cheshire, Lancashire, Merseyside and Cumbria with appointments booked when the diary allows.",
     "meta_desc": "Door entry intercom install, repair & upgrade for flats & offices. Icomply North West engineers. Fixed quotes from Stockport.",
     "focus_points": [
       "Multi-tenant and commercial door entry intercom specification",
@@ -272,7 +272,7 @@
     "faq": [
       [
         "How quickly can an intercom engineer attend?",
-        "We aim for same-week appointments where capacity and access allow, and prioritise complete system failures when engineers are available."
+        "We aim for appointments booked when the diary allows where capacity and access allow, and prioritise complete system failures when engineers are available."
       ],
       [
         "Do your engineers work on all brands?",
@@ -416,7 +416,7 @@
     "seo_keywords": "residential intercom, home intercom system, residential door entry, residential intercom Manchester, residential intercom North West, flat intercom install, Stockport"
   },
   "intercom-near-me": {
-    "intro": "Searching for intercom near me in the North West? Icomply Property Services provide local intercom install, repair and servicing from Stockport (SK2) with engineers covering Greater Manchester, Cheshire, Lancashire, Merseyside and Cumbria. Whether your panel has failed, a block needs a multi-tenant upgrade or a commercial gate requires a new station, we respond with practical surveys and fixed-price quotes. Same-week appointments are often available subject to capacity and site access.",
+    "intro": "Searching for intercom near me in the North West? Icomply Property Services provide local intercom install, repair and servicing from Stockport (SK2) with engineers covering Greater Manchester, Cheshire, Lancashire, Merseyside and Cumbria. Whether your panel has failed, a block needs a multi-tenant upgrade or a commercial gate requires a new station, we respond with practical surveys and fixed-price quotes. Appointments booked when the diary allows are often available subject to capacity and site access.",
     "body": "Local intercom support means faster attendance, knowledge of common regional housing stock, and easier multi-visit projects for managing agents. We handle audio, video, wireless and IP systems, plus related door-entry and access-control works so you are not juggling multiple contractors for one entrance. Share your postcode, photos of the outdoor panel and a brief fault description to speed diagnosis. Towns we regularly serve include Manchester, Bolton, Stockport, Warrington, Preston, Liverpool and many surrounding areas — browse local service pages or request a multi-property package if you manage several sites. Manufacturer-aware support helps when you search by brand as well as by ‘near me’.",
     "meta_desc": "Intercom near me in Greater Manchester & the North West. Local Icomply engineers from Stockport. Repair, install & service.",
     "focus_points": [
@@ -432,7 +432,7 @@
       ],
       [
         "How do I book a local engineer?",
-        "Use the form on this page, call or WhatsApp with postcode, property type and panel photos. We aim to reply within 2 hours on business days."
+        "Use the form on this page, call or WhatsApp with postcode, property type and panel photos. We reply with a quote."
       ],
       [
         "Do you charge call-out fees?",
@@ -780,11 +780,11 @@
     "seo_keywords": "Kentec panel service, Kentec fire alarm service, Kentec maintenance, BS 5839 servicing, Kentec Manchester, Kentec North West, fire panel service Stockport"
   },
   "cp12-gas-certificate": {
-    "intro": "A CP12 gas certificate — the landlord gas safety record — is a legal requirement for most rented homes with gas appliances in the UK. Icomply Property Services arrange Gas Safe registered engineers to inspect and certificate landlord gas safety across Greater Manchester and the wider North West. From Stockport we support landlords, letting agents and portfolio managers with clear appointments, CP12/CP44 documentation where applicable, and straightforward remedial quotes if appliances fail checks.",
-    "body": "During a landlord gas safety visit, appliances and flues are examined for safe operation, visual condition and appropriate ventilation as required by Gas Safe practice. Passed appliances are recorded on the gas safety record issued to the landlord or agent for tenant files. Failed items are isolated or condemned following regulations, with clear next steps for repair or replacement. We help agents schedule annual cycles so certificates do not lapse across portfolios. Related works include carbon monoxide alarm installation and appliance servicing where requested. Coverage includes Manchester, Stockport, Cheshire, Lancashire, Merseyside and Cumbria with efficient multi-property booking for busy letting teams.",
-    "meta_desc": "CP12 gas certificate for landlords & agents. Gas Safe inspections across the North West. Icomply from Stockport.",
+    "intro": "A CP12 gas certificate — the landlord gas safety record — is a legal requirement for most rented homes with gas appliances in the UK. Icomply Property Services arrange engineers to inspect and certificate landlord gas safety across Greater Manchester and the wider North West. From Stockport we support landlords, letting agents and portfolio managers with clear appointments, CP12/CP44 documentation where applicable, and straightforward remedial quotes if appliances fail checks.",
+    "body": "During a landlord gas safety visit, appliances and flues are examined for safe operation, visual condition and appropriate ventilation as required by gas safety certificates (CP12) practice. Passed appliances are recorded on the gas safety record issued to the landlord or agent for tenant files. Failed items are isolated or condemned following regulations, with clear next steps for repair or replacement. We help agents schedule annual cycles so certificates do not lapse across portfolios. Related works include carbon monoxide alarm installation and appliance servicing where requested. Coverage includes Manchester, Stockport, Cheshire, Lancashire, Merseyside and Cumbria with efficient multi-property booking for busy letting teams.",
+    "meta_desc": "CP12 gas certificate for landlords & agents. gas safety certificates (CP12) inspections across the North West. Icomply from Stockport.",
     "focus_points": [
-      "Landlord gas safety inspections by Gas Safe engineers",
+      "Landlord gas safety inspections by engineers",
       "CP12 records issued for tenancy and agent files",
       "Clear remedial advice if appliances fail safety checks",
       "Portfolio scheduling for multi-property landlords and agents"
@@ -796,29 +796,29 @@
       ],
       [
         "What if an appliance fails?",
-        "Unsafe appliances are dealt with under Gas Safe rules. We explain whether repair or replacement is needed and quote remediations clearly."
+        "Unsafe appliances are dealt with under gas safety certificates (CP12) rules. We explain whether repair or replacement is needed and quote remediations clearly."
       ],
       [
         "Do homeowners need a CP12?",
         "CP12-style landlord records are aimed at rented properties. Homeowners may still want appliance servicing and safety checks — ask us for the right visit type."
       ]
     ],
-    "seo_keywords": "CP12 gas certificate, landlord gas safety certificate, CP12 Manchester, CP12 North West, gas safety record Stockport, landlord gas check, Gas Safe CP12"
+    "seo_keywords": "CP12 gas certificate, landlord gas safety certificate, CP12 Manchester, CP12 North West, gas safety record Stockport, landlord gas check, gas safety certificates (CP12) CP12"
   },
   "gas-safe-register-engineer": {
-    "intro": "Hiring a Gas Safe Register engineer protects lives, meets legal duties for landlords and ensures gas work is carried out by competent operatives. Icomply Property Services provide Gas Safe registered engineers for inspections, servicing, installation support and certification across Greater Manchester and the North West. Based in Stockport, we help agents, landlords and commercial kitchen clients book qualified gas work with transparent scope, CP12/CP44 documentation where required, and clear communication if appliances are unsafe.",
-    "body": "Gas Safe engineers carry out landlord safety checks, boiler and appliance servicing within competence, and related gas safety tasks defined at booking. We verify site details, appliance types and access before attendance so the right engineer and parts approach is planned. After works you receive the appropriate certification and advice on carbon monoxide alarms where relevant. Portfolio clients can align gas visits with electrical EICRs and other compliance cycles for efficient property management. Emergency unsafe situations are handled under Gas Safe procedures with tenant and agent safety prioritised. Coverage includes Manchester, Cheshire, Lancashire, Merseyside and Cumbria with responsive diary slots for certificate deadlines.",
-    "meta_desc": "Gas Safe Register engineer for landlord checks, servicing & certification. North West cover from Icomply Stockport.",
+    "intro": "Hiring a engineer protects lives, meets legal duties for landlords and ensures gas work is carried out by competent operatives. Icomply Property Services provide engineers for inspections, servicing, installation support and certification across Greater Manchester and the North West. Based in Stockport, we help agents, landlords and commercial kitchen clients book qualified gas work with transparent scope, CP12/CP44 documentation where required, and clear communication if appliances are unsafe.",
+    "body": "engineers carry out landlord safety checks, boiler and appliance servicing within competence, and related gas safety tasks defined at booking. We verify site details, appliance types and access before attendance so the right engineer and parts approach is planned. After works you receive the appropriate certification and advice on carbon monoxide alarms where relevant. Portfolio clients can align gas visits with electrical EICRs and other compliance cycles for efficient property management. Emergency unsafe situations are handled under gas safety certificates (CP12) procedures with tenant and agent safety prioritised. Coverage includes Manchester, Cheshire, Lancashire, Merseyside and Cumbria with responsive diary slots for certificate deadlines.",
+    "meta_desc": "engineer for landlord checks, servicing & certification. North West cover from Icomply Stockport.",
     "focus_points": [
-      "Gas Safe registered engineers for domestic and agreed commercial gas work",
+      "engineers for domestic and agreed commercial gas work",
       "Landlord gas safety records and service documentation",
       "Unsafe appliance procedures explained in plain English",
       "Portfolio booking for agents and multi-property landlords"
     ],
     "faq": [
       [
-        "How do I check an engineer is Gas Safe registered?",
-        "Ask for the engineer’s Gas Safe ID and licence details. Legitimate operatives can be verified on the Gas Safe Register."
+        "How do I check an engineer is available for gas safety certificates (CP12)?",
+        "Ask for the engineer’s gas safety certificates (CP12) ID and licence details. Legitimate operatives can be verified on the gas safety certificates (CP12)."
       ],
       [
         "Can one engineer cover all gas appliances in a flat?",
@@ -829,7 +829,7 @@
         "Discuss boiler install needs at enquiry. We confirm whether the works fall within our current service scope or recommend the right path."
       ]
     ],
-    "seo_keywords": "Gas Safe Register engineer, Gas Safe engineer near me, Gas Safe Manchester, Gas Safe Stockport, landlord gas engineer North West, Gas Safe certificate"
+    "seo_keywords": "engineer, engineer near me, gas safety certificates (CP12) Manchester, gas safety certificates (CP12) Stockport, landlord gas engineer North West, gas safety certificates (CP12) certificate"
   },
   "fire-door-inspection": {
     "intro": "Fire door inspection helps responsible persons prove that doors intended to hold back smoke and fire remain fit for purpose. Icomply Property Services support fire door inspection programmes across the North West with thorough condition surveys of door leaves, frames, seals, hinges, closers and ironmongery — reporting defects that undermine fire performance. From Stockport we work with landlords, agents and FM teams managing blocks and commercial premises, producing clear defect lists that feed FRA actions and remedial programmes.",
@@ -859,7 +859,7 @@
   },
   "carbon-monoxide-alarm-installation": {
     "intro": "Carbon monoxide alarm installation is a vital safety measure wherever gas, oil or solid-fuel appliances can produce CO. Icomply Property Services supply and install carbon monoxide alarms for landlords, agents and homeowners across Greater Manchester and the North West. From Stockport our team positions alarms to manufacturer and guidance best practice, tests devices on handover, and can align visits with landlord gas safety checks for efficient compliance scheduling.",
-    "body": "Correct placement matters: CO alarms should follow product instructions relative to appliances and sleeping areas, avoiding dead-air spots and humid zones that cause nuisance faults. We install sealed battery or mains-powered units as specified, label test dates where helpful for agents, and demonstrate the test button for occupants. Portfolio landlords can standardise alarm models across properties for simpler maintenance. Combined bookings with CP12 visits reduce tenant disruption. If an alarm sounds, occupants should follow emergency advice and treat the event seriously — we can attend to check related gas appliances via Gas Safe engineers where appropriate. Coverage includes Manchester, Cheshire, Lancashire, Merseyside and Cumbria.",
+    "body": "Correct placement matters: CO alarms should follow product instructions relative to appliances and sleeping areas, avoiding dead-air spots and humid zones that cause nuisance faults. We install sealed battery or mains-powered units as specified, label test dates where helpful for agents, and demonstrate the test button for occupants. Portfolio landlords can standardise alarm models across properties for simpler maintenance. Combined bookings with CP12 visits reduce tenant disruption. If an alarm sounds, occupants should follow emergency advice and treat the event seriously — we can attend to check related gas appliances via engineers where appropriate. Coverage includes Manchester, Cheshire, Lancashire, Merseyside and Cumbria.",
     "meta_desc": "Carbon monoxide alarm installation for landlords & homes. Correct siting & testing. Icomply Stockport & North West.",
     "focus_points": [
       "Supply and professional siting of CO alarms",
@@ -1015,7 +1015,7 @@
   },
   "nvr-installation": {
     "intro": "NVR installation is the backbone of modern IP CCTV — recording cameras reliably, managing storage and enabling secure playback. Icomply Property Services supply and install network video recorders for businesses, landlords and multi-site operators across the North West. From Stockport we size NVRs for camera count, resolution and retention targets, install them in ventilated secure locations, configure networks and user accounts, and hand over systems your team can operate day to day.",
-    "body": "Good NVR installation covers more than racking a box: PoE switch capacity, cable certification where needed, UPS options, hard-drive health, cyber hygiene and remote access hardening all matter. We migrate existing IP cameras where compatible, or install new camera estates with matching licences and firmware. RAID or multi-drive setups are specified for higher-resilience sites. Training covers live view, search, export for incidents and basic troubleshooting. Maintenance plans include health checks and storage warnings before disks fail. NVR works pair with Hikvision and other major platforms we support. Coverage spans Greater Manchester, Cheshire, Lancashire, Merseyside and Cumbria with same-week appointments where capacity allows.",
+    "body": "Good NVR installation covers more than racking a box: PoE switch capacity, cable certification where needed, UPS options, hard-drive health, cyber hygiene and remote access hardening all matter. We migrate existing IP cameras where compatible, or install new camera estates with matching licences and firmware. RAID or multi-drive setups are specified for higher-resilience sites. Training covers live view, search, export for incidents and basic troubleshooting. Maintenance plans include health checks and storage warnings before disks fail. NVR works pair with Hikvision and other major platforms we support. Coverage spans Greater Manchester, Cheshire, Lancashire, Merseyside and Cumbria with appointments booked when the diary allows.",
     "meta_desc": "NVR installation for IP CCTV. Storage sizing, secure setup & training. Icomply engineers — Stockport & North West.",
     "focus_points": [
       "NVR specification for camera count, resolution and retention",

@@ -31,7 +31,7 @@ $standards = [
     ['code' => 'BS 5839', 'label' => 'Fire detection & alarms'],
     ['code' => 'BS 5266', 'label' => 'Emergency lighting'],
     ['code' => 'FSO / PAS 79', 'label' => 'Fire risk assessments'],
-    ['code' => 'Gas Safe', 'label' => 'Landlord & commercial gas'],
+    ['code' => 'gas safety certificates (CP12)', 'label' => 'Landlord & commercial gas'],
     ['code' => 'Building Regs', 'label' => 'Construction & fit-out works'],
 ];
 
@@ -95,7 +95,7 @@ $aboutSchema = [
                 'Merseyside',
                 'Cumbria',
             ],
-            'priceRange' => '££',
+            'priceRange' => 'POA',
             'sameAs' => array_values(array_filter([
                 defined('SOCIAL_FACEBOOK') ? SOCIAL_FACEBOOK : '',
                 defined('SOCIAL_INSTAGRAM') ? SOCIAL_INSTAGRAM : '',
@@ -226,7 +226,7 @@ $aboutSchema = [
             <div class="bg-[#0B1F3A] text-white rounded-3xl p-6">
                 <div class="text-3xl font-semibold text-[#ff6b00]">2 hrs</div>
                 <div class="mt-1 font-semibold">Typical response*</div>
-                <p class="mt-2 text-sm text-white/75">We aim to reply to quote requests within 2 hours on business days.</p>
+                <p class="mt-2 text-sm text-white/75">We reply to quote requests with a quote.</p>
             </div>
         </div>
     </div>
@@ -393,7 +393,7 @@ $aboutSchema = [
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Work with Icomply</h2>
             <p class="mt-3 text-zinc-600">Call <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="text-[#ff6b00] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>,
-                WhatsApp, or send the form — we aim to respond within 2 hours on business days.</p>
+                WhatsApp, or send the form — we will reply with a quote.</p>
             <div class="mt-6 flex flex-wrap justify-center gap-3">
                 <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="px-6 py-3 rounded-2xl bg-[#0B1F3A] text-white font-semibold hover:bg-[#ff6b00] transition">Call now</a>
                 <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener"

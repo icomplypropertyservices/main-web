@@ -19,7 +19,7 @@ function getTestimonials(): array
 {
     return [
         [
-            'quote' => 'Needed EICR certificates across a small rental portfolio before a new tenancy. The engineer was on time, explained the remedial work clearly and the paperwork arrived the same day. Exactly what a landlord needs.',
+            'quote' => 'Needed EICR certificates across a small rental portfolio before a new tenancy. The engineer was on time, explained the remedial work clearly and the paperwork arrived after the visit. Exactly what a landlord needs.',
             'name' => 'Sarah',
             'role' => 'Landlord in Stockport',
             'rating' => 5,

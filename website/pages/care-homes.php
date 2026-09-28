@@ -490,7 +490,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
         <div class="text-center mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Care home quote request</h2>
-            <p class="mt-3 text-zinc-600">Tell us about the home(s), systems and brands on site. We aim to respond within 2 hours on business days.</p>
+            <p class="mt-3 text-zinc-600">Tell us about the home(s), systems and brands on site. Send the details and we will reply with a quote.</p>
         </div>
 
         <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>

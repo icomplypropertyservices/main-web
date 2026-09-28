@@ -36,12 +36,12 @@ function seo_title(string $title): string {
 /** Standards / compliance keywords per service for on-page SEO */
 function service_standards(string $slug): array {
     $map = [
-        'electrical' => ['BS 7671', 'EICR', 'PAT testing', 'Part P', 'NICEIC-aligned practice', 'EV charger install'],
+        'electrical' => ['BS 7671', 'EICR', 'PAT testing', 'electrical regulations', 'electrical testing', 'EV charger install'],
         'fire-alarms' => ['BS 5839', 'fire detection', 'L1–L5 categories', 'addressable systems', 'commissioning certificates'],
         'emergency-lighting' => ['BS 5266', 'maintained / non-maintained', 'exit signage', 'duration testing', 'self-test LED'],
         'aov-air-handling' => ['BS 9991 guidance', 'smoke ventilation', 'AOV controls', 'smoke shafts', 'fire strategy support'],
         'nurse-call' => ['HTM 08-03 aligned', 'care home systems', 'wireless / wired', 'panel upgrades', 'handset repair'],
-        'gas-systems' => ['Gas Safe', 'landlord gas safety', 'CP12 / CP44', 'boiler servicing', 'commercial gas'],
+        'gas-systems' => ['gas safety certificates (CP12)', 'landlord gas safety', 'CP12 / CP44', 'boiler servicing', 'commercial gas'],
         'intruder-alarm' => ['BS 4737 / PD 6662 practice', 'wired & wireless', 'PIR detection', 'app control', 'ARC-ready'],
         'cctv' => ['IP / HD CCTV', 'NVR recording', 'remote viewing', 'retail & warehouse', 'GDPR-aware install'],
         'access-control' => ['card / fob / biometric', 'multi-door control', 'audit trails', 'time zones', 'fire door release'],
@@ -60,7 +60,7 @@ function seo_combo_intro(string $serviceName, string $slug, string $area): strin
         . "maintenance and certification for landlords, managing agents, facilities teams and businesses across {$area} "
         . "and the wider North West. Our engineers work to UK best practice including {$standards}, with clear paperwork "
         . "you can show insurers, freeholders and local authorities. Based in Stockport (SK2), we cover {$area} with "
-        . "same-week appointments where diary capacity allows and "
+        . "appointments booked when the diary allows and "
         . ((function_exists('isPoaService') && isPoaService($slug))
             ? "a price-on-application quote once scope is clear."
             : "fixed-price quotes whenever the scope is clear.");
@@ -91,7 +91,7 @@ function service_faqs(string $slug, string $serviceName, string $area = ''): arr
     $base = [
         'electrical' => [
             ['q' => "How often do I need an EICR{$loc}?", 'a' => "Most rented homes need an EICR at least every 5 years (or on change of tenancy). Commercial intervals depend on risk and insurer requirements — we advise based on the property type{$loc}."],
-            ['q' => "Do you offer same-week electrical work{$loc}?", 'a' => "Yes where diary capacity allows. Emergency fault-finding and consumer unit issues are prioritised for {$area} and surrounding postcodes."],
+            ['q' => "How is electrical work booked{$loc}?", 'a' => "Appointments are booked when an engineer is available. Emergency fault-finding and consumer unit issues are prioritised for {$area} and surrounding postcodes."],
             ['q' => "Are quotes fixed-price?", 'a' => "Where the scope is clear after survey or photos, we issue fixed-price quotes for EICR, PAT, installs and upgrades."],
         ],
         'fire-alarms' => [

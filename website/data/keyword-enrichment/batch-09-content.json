@@ -104,11 +104,11 @@
     "seo_keywords": "HMO fire alarm system, HMO fire alarm install, landlord HMO detection, BS 5839 HMO, multi let fire alarm Manchester, HMO fire safety Stockport"
   },
   "commercial-gas-safety-certificate": {
-    "intro": "A commercial gas safety certificate records that gas appliances, flues and pipework under your control have been checked by a Gas Safe engineer to the standard expected for the premises. Icomply provides commercial gas safety inspections and certification for workplaces, kitchens, plant rooms and multi-tenant sites across Greater Manchester and the North West. From Stockport we schedule inspections around trading hours, flag defects clearly, and issue the paperwork facilities teams and landlords need for compliance files.",
+    "intro": "A commercial gas safety certificate records that gas appliances, flues and pipework under your control have been checked by a engineer to the standard expected for the premises. Icomply provides commercial gas safety inspections and certification for workplaces, kitchens, plant rooms and multi-tenant sites across Greater Manchester and the North West. From Stockport we schedule inspections around trading hours, flag defects clearly, and issue the paperwork facilities teams and landlords need for compliance files.",
     "body": "Commercial gas safety work goes beyond a quick boiler glance: we assess appliances in service, ventilation and flue arrangements, and visible pipework integrity within the agreed scope. Unsafe situations are explained plainly with recommended remedial actions. Where you manage several units, we can batch visits and keep a simple asset list so renewal dates do not slip. Combined with our wider gas and heating support, you get one local contractor for inspection, remedial works and re-certification after repairs.",
-    "meta_desc": "Commercial gas safety certificate & Gas Safe inspections across Greater Manchester & the North West. Clear reports from Icomply Stockport.",
+    "meta_desc": "Commercial gas safety certificate & gas safety certificates (CP12) inspections across Greater Manchester & the North West. Clear reports from Icomply Stockport.",
     "focus_points": [
-      "Gas Safe commercial inspections for workplaces and kitchens",
+      "gas safety certificates (CP12) commercial inspections for workplaces and kitchens",
       "Clear defect reporting and remedial recommendations",
       "Certification suited to FM, landlord and audit files",
       "Multi-site scheduling across the North West"
@@ -124,10 +124,10 @@
       ],
       [
         "What if appliances fail the inspection?",
-        "We explain the issue, isolate or make safe where required under Gas Safe rules, and quote remedial works so you can retest and obtain a clean certificate once fixed."
+        "We explain the issue, isolate or make safe where required under gas safety certificates (CP12) rules, and quote remedial works so you can retest and obtain a clean certificate once fixed."
       ]
     ],
-    "seo_keywords": "commercial gas safety certificate, Gas Safe commercial inspection, workplace gas certificate, commercial gas check Manchester, gas safety Stockport, North West Gas Safe"
+    "seo_keywords": "commercial gas safety certificate, gas safety certificates (CP12) commercial inspection, workplace gas certificate, commercial gas check Manchester, gas safety Stockport, North West gas safety certificates (CP12)"
   },
   "consumer-unit-upgrade": {
     "intro": "Upgrading a consumer unit is one of the most effective ways to bring an older electrical installation closer to modern BS 7671 expectations—especially where residual current protection is missing or the board is overloaded. Icomply plans and installs consumer unit upgrades for homes, landlords and light commercial premises across Stockport, Greater Manchester and the North West. We assess existing circuits, surge and RCD/RCBO strategy, then swap boards with minimal disruption and full certification on completion.",
@@ -150,7 +150,7 @@
       ],
       [
         "Do you notify Building Control?",
-        "Notifiable domestic work is handled under the appropriate Part P route by our qualified electricians, with certificates for your records and solicitor packs."
+        "Notifiable domestic work is handled under the appropriate electrical regulations route by our qualified electricians, with certificates for your records and solicitor packs."
       ]
     ],
     "seo_keywords": "consumer unit upgrade, fuse board upgrade, RCBO consumer unit, BS 7671 board change, consumer unit Manchester, electrical board Stockport"
@@ -193,12 +193,12 @@
     ],
     "faq": [
       [
-        "Is an EICR the same as a Part P certificate?",
+        "Is an EICR the same as a electrical regulations certificate?",
         "No. An EICR assesses the condition of an existing installation. New or altered circuits usually need an Electrical Installation Certificate under different rules."
       ],
       [
         "How soon can I get an EICR certificate?",
-        "We aim for same-week appointments where capacity and access allow, with the report following promptly after testing is complete."
+        "We aim for appointments booked when the diary allows where capacity and access allow, with the report following promptly after testing is complete."
       ],
       [
         "Do tenants need to be present?",

@@ -37,7 +37,7 @@ require SITE_ROOT . '/includes/header.php';
           "postalCode": "SK2 5DE",
           "addressCountry": "GB"
         },
-        "priceRange": "££"
+        "priceRange": "POA"
       },
       "areaServed": {"@type": "City", "name": "{{AREA}}"},
       "offers": {
@@ -77,7 +77,7 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 1 -->
     <p class="mt-8 text-lg text-black max-w-3xl leading-relaxed">
-        Icomply Property Services designs, installs and maintains <strong>PD 6662</strong> and <strong>BS EN 50131</strong> compliant <strong>{{SERVICE_NAME}}</strong> across <strong>{{AREA}}</strong> and the wider North West. From Grade 2 domestic kits to Grade 3 commercial systems with police response, our engineers deliver fixed-price quotes, same-week appointments and full commissioning documentation.
+        Icomply Property Services designs, installs and maintains <strong>PD 6662</strong> and <strong>BS EN 50131</strong> compliant <strong>{{SERVICE_NAME}}</strong> across <strong>{{AREA}}</strong> and the wider North West. From Grade 2 domestic kits to Grade 3 commercial systems with police response, our engineers deliver fixed-price quotes, appointments booked when the diary allows, and full commissioning documentation.
     </p>
 
     <!-- PARAGRAPH 2 -->

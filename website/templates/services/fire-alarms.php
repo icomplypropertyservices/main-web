@@ -34,7 +34,7 @@ require SITE_ROOT . '/includes/header.php';
           "postalCode": "SK2 5DE",
           "addressCountry": "GB"
         },
-        "priceRange": "££"
+        "priceRange": "POA"
       },
       "areaServed": {"@type": "City", "name": "{{AREA}}"},
       "offers": {
@@ -74,7 +74,7 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 1 -->
     <p class="mt-8 text-lg text-black max-w-3xl leading-relaxed">
-        Icomply Property Services designs, installs, commissions and maintains <strong>BS 5839 fire alarm systems</strong> across <strong>{{AREA}}</strong> and the wider North West. From addressable multi-loop panels in commercial buildings to conventional and wireless systems for landlords and smaller premises, our engineers deliver fixed-price quotes, same-week appointments and full certification on every job.
+        Icomply Property Services designs, installs, commissions and maintains <strong>BS 5839 fire alarm systems</strong> across <strong>{{AREA}}</strong> and the wider North West. From addressable multi-loop panels in commercial buildings to conventional and wireless systems for landlords and smaller premises, our engineers deliver fixed-price quotes, appointments booked when the diary allows, and full certification on every job.
     </p>
 
     <!-- PARAGRAPH 2 -->

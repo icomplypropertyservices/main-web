@@ -303,7 +303,7 @@ $schema = [
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Based in Stockport — North West coverage</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Install, service &amp; certification for <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?></li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Multi-service packages for landlords &amp; FM teams</li>
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Response aim: within 2 hours on business days</li>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Quotes are POA</li>
         </ul>
     </div>
 </section>

@@ -84,7 +84,7 @@ require SITE_ROOT . '/includes/header.php';
             <?php
             $steps = [
                 ['1', 'We review your request', 'Service, postcode and details you sent — no spam, just a clear scope.'],
-                ['2', 'We contact you', 'Usually by phone or email within 2 hours on business days.'],
+                ['2', 'We contact you', 'By phone or email after we have read the enquiry.'],
                 ['3', 'Fixed-price quote', 'Clear price after scope is agreed, then we book engineers.'],
             ];
             foreach ($steps as [$n, $t, $d]): ?>
@@ -106,7 +106,7 @@ require SITE_ROOT . '/includes/header.php';
            class="group block bg-white border rounded-3xl p-8 hover:border-green-500 transition shadow-sm">
             <div class="text-xs uppercase tracking-[3px] text-green-600 font-semibold mb-2">Fastest reply</div>
             <h2 class="text-2xl font-semibold text-black group-hover:text-green-700">Chat on WhatsApp</h2>
-            <p class="mt-3 text-zinc-600 text-sm">Send photos, postcodes or panel brands — ideal if you need a same-day steer.</p>
+            <p class="mt-3 text-zinc-600 text-sm">Send photos, postcodes or panel brands — useful if you want a steer on the job.</p>
             <div class="mt-6 inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-green-600 text-white font-semibold text-sm group-hover:bg-green-500">
                 Open WhatsApp →
             </div>

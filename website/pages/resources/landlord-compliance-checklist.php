@@ -24,7 +24,7 @@ if (empty($_SESSION['csrf'])) {
 $checklist = [
     [
         'title' => 'Gas safety (CP12 / landlord gas safety record)',
-        'body' => 'Where gas appliances or flues are present, private landlords in Great Britain generally need an annual gas safety check by a Gas Safe registered engineer, with a record issued to tenants. Keep copies for your portfolio records.',
+        'body' => 'Where gas appliances or flues are present, private landlords in Great Britain generally need an annual gas safety check by a engineer, with a record issued to tenants. Keep copies for your portfolio records.',
         'link' => url('/pages/keywords/landlord-gas-safety-certificate.php'),
         'linkLabel' => 'Landlord gas safety certificate',
     ],

@@ -2,7 +2,7 @@
     "electrical": {
         "blurb": "EICR, rewires, consumer units, EV chargers, PAT and commercial electrical installs to BS 7671.",
         "short": "EICR, rewires, EV chargers, PAT & commercial installs",
-        "standards": "BS 7671 (18th Edition) · EICR · Part P · EV charger regs"
+        "standards": "BS 7671 (18th Edition) · EICR · electrical regulations · EV charger regs"
     },
     "fire-alarms": {
         "blurb": "BS 5839 design, install, service and certification for addressable, conventional and wireless systems.",
@@ -27,7 +27,7 @@
     "gas-systems": {
         "blurb": "CP12 / CP44 landlord certificates, boilers, commercial gas and safety checks.",
         "short": "CP12/CP44 landlord certs, boilers & commercial gas",
-        "standards": "Gas Safe · CP12 / CP44 · manufacturer servicing"
+        "standards": "gas safety certificates (CP12) · CP12 / CP44 · manufacturer servicing"
     },
     "intruder-alarm": {
         "blurb": "PD 6662 / BS EN 50131 wired and wireless intruder systems with monitoring options.",
@@ -157,7 +157,7 @@
     "bathrooms": {
         "blurb": "Full bathroom and wet-room fitting — sanitaryware, tiling coordination, ventilation and waterproofing.",
         "short": "Bathroom & wet-room fitting",
-        "standards": "Part P · Part F · waterproofing best practice"
+        "standards": "electrical regulations · Part F · waterproofing best practice"
     },
     "renovation": {
         "blurb": "End-to-end property renovation and void refurbs for landlords, investors and homeowners.",
@@ -197,12 +197,12 @@
     "plumbing": {
         "blurb": "Domestic and light commercial plumbing — bathrooms, kitchens, leaks, radiators and pipework.",
         "short": "Domestic & light commercial plumbing",
-        "standards": "Water Regs · WRAS fittings · Gas Safe where required"
+        "standards": "Water Regs · WRAS fittings · gas safety certificates (CP12) where required"
     },
     "heating": {
         "blurb": "Boiler installs, radiator upgrades, system flushes and heating controls for homes and small commercial.",
         "short": "Boilers, radiators & heating controls",
-        "standards": "Gas Safe · manufacturer instructions · Building Regs"
+        "standards": "gas safety certificates (CP12) · manufacturer instructions · Building Regs"
     },
     "roofing": {
         "blurb": "Roof repairs, re-roofing, flat roofs, guttering and chimney works for residential properties.",
@@ -262,7 +262,7 @@
     "electrics-first-fix": {
         "blurb": "First-fix electrical for new builds, renovations and conversions before plaster and second fix.",
         "short": "First-fix electrics for renovations",
-        "standards": "BS 7671 · Part P notification where required"
+        "standards": "BS 7671 · building-regulations notification where required"
     },
     "commercial-fit-out": {
         "blurb": "Office and light commercial fit-out — partitions, services coordination, finishes and compliance.",

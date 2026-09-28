@@ -161,7 +161,7 @@ require SITE_ROOT . '/includes/header.php';
                 Nothing in these terms limits liability for death or personal injury caused by negligence, fraud,
                 or any other liability that cannot be limited by law. Subject to that, we are not liable for
                 indirect or consequential loss, and our total liability for any claim relating to website use is
-                limited to £100, and for services or goods to the price paid for the relevant service or goods.
+                limited to POA and for services or goods to the price paid for the relevant service or goods.
             </p>
         </article>
 

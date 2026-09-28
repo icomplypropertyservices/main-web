@@ -38,7 +38,7 @@ require SITE_ROOT . '/includes/header.php';
           "postalCode": "SK2 5DE",
           "addressCountry": "GB"
         },
-        "priceRange": "££"
+        "priceRange": "POA"
       },
       "areaServed": {"@type": "City", "name": "{{AREA}}"},
       "offers": {
@@ -78,7 +78,7 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 1 -->
     <p class="mt-8 text-lg text-black max-w-3xl leading-relaxed">
-        Icomply Property Services provides complete <strong>nurse call system</strong> design, installation, commissioning, maintenance and certification across <strong>{{AREA}}</strong> and the wider North West. Our engineers deliver fixed-price quotes, same-week appointments and full HTM 08-03 compliant documentation for care homes, hospitals and assisted living facilities.
+        Icomply Property Services provides complete <strong>nurse call system</strong> design, installation, commissioning, maintenance and certification across <strong>{{AREA}}</strong> and the wider North West. Our engineers deliver fixed-price quotes, appointments booked when the diary allows, and full HTM 08-03 compliant documentation for care homes, hospitals and assisted living facilities.
     </p>
 
     <!-- PARAGRAPH 2 -->

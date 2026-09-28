@@ -4,7 +4,7 @@
  * 3 images · 3 paragraphs · manufacturers · SEO
  */
 $pageTitle = '{{SERVICE_NAME}} in {{AREA}} | Icomply Property Services';
-$metaDesc = 'Gas Safe registered engineers. Landlord gas safety certificates, boiler servicing and commercial gas in {{AREA}}. Worcester Bosch, Vaillant, Ideal, Baxi.';
+$metaDesc = 'Gas safety certificates (CP12), boiler servicing and commercial gas in {{AREA}}. Worcester Bosch, Vaillant, Ideal, Baxi.';
 $metaKeywords = 'gas safety certificate {{AREA}}, gas boiler servicing {{AREA}}, landlord gas safety {{AREA}}, Worcester Bosch, Vaillant, Ideal, Baxi, gas engineer {{AREA}}';
 $ogImage = url('/assets/images/services/gas-systems.jpg');
 require SITE_ROOT . '/includes/header.php'; 
@@ -38,7 +38,7 @@ require SITE_ROOT . '/includes/header.php';
           "postalCode": "SK2 5DE",
           "addressCountry": "GB"
         },
-        "priceRange": "££"
+        "priceRange": "POA"
       },
       "areaServed": {"@type": "City", "name": "{{AREA}}"},
       "offers": {
@@ -53,10 +53,10 @@ require SITE_ROOT . '/includes/header.php';
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type": "Question", "name": "What is a Gas Safety Certificate?", "acceptedAnswer": {"@type": "Answer", "text": "It is a legal requirement for landlords proving gas appliances are safe."}},
+        {"@type": "Question", "name": "What is a Gas safety Certificate?", "acceptedAnswer": {"@type": "Answer", "text": "It is a legal requirement for landlords proving gas appliances are safe."}},
         {"@type": "Question", "name": "How often are gas safety checks needed?", "acceptedAnswer": {"@type": "Answer", "text": "Annual gas safety inspections are mandatory for rental properties."}},
         {"@type": "Question", "name": "Do you service commercial gas systems?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we handle commercial boilers, pipework and gas compliance."}},
-        {"@type": "Question", "name": "Are your gas engineers Gas Safe registered?", "acceptedAnswer": {"@type": "Answer", "text": "All engineers are Gas Safe registered with current qualifications."}}
+        {"@type": "Question", "name": "Are your gas engineers available for gas safety certificates (CP12)?", "acceptedAnswer": {"@type": "Answer", "text": "All engineers are available for gas safety certificates (CP12) with current qualifications."}}
       ]
     }
   ]
@@ -78,12 +78,12 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 1 -->
     <p class="mt-8 text-lg text-black max-w-3xl leading-relaxed">
-        Icomply Property Services provides complete <strong>gas systems</strong> installation, boiler servicing, landlord gas safety certificates and commercial gas compliance across <strong>{{AREA}}</strong> and the wider North West. Our Gas Safe registered engineers deliver fixed-price quotes, same-week appointments and full certification on every job.
+        Icomply Property Services provides complete <strong>gas systems</strong> installation, boiler servicing, landlord gas safety certificates and commercial gas compliance across <strong>{{AREA}}</strong> and the wider North West. Our engineers deliver fixed-price quotes, appointments booked when the diary allows, and full certification on every job.
     </p>
 
     <!-- PARAGRAPH 2 -->
     <p class="mt-4 text-lg text-black max-w-3xl leading-relaxed">
-        Whether you need a new boiler, annual service, CP12 landlord certificate, gas pipework installation or emergency repair, we support commercial, industrial, residential and landlord properties in {{AREA}}. All work is carried out by Gas Safe registered engineers using manufacturer-approved parts for Worcester Bosch, Vaillant, Ideal and Baxi systems.
+        Whether you need a new boiler, annual service, CP12 landlord certificate, gas pipework installation or emergency repair, we support commercial, industrial, residential and landlord properties in {{AREA}}. All work is carried out by engineers using manufacturer-approved parts for Worcester Bosch, Vaillant, Ideal and Baxi systems.
     </p>
 
     <!-- IMAGE 2 + keyword visuals -->
@@ -128,12 +128,12 @@ require SITE_ROOT . '/includes/header.php';
     <!-- IMAGE 3 -->
     <div class="mt-10">
         <img src="<?= url('/assets/images/keywords/gas-engineer.jpg') ?>"
-             alt="Gas Safe engineer servicing boilers — Worcester Bosch, Vaillant, Ideal, Baxi in {{AREA}}"
+             alt="Engineer servicing boilers — Worcester Bosch, Vaillant, Ideal, Baxi in {{AREA}}"
              width="1200" height="700"
              class="w-full h-64 md:h-80 object-cover rounded-3xl border"
              loading="lazy"
              onerror="this.src='<?= url('/assets/images/services/gas-systems.jpg') ?>'">
-        <p class="text-xs text-black mt-2">Gas Safe engineers servicing major boiler brands across {{AREA}}</p>
+        <p class="text-xs text-black mt-2">Engineers servicing major boiler brands across {{AREA}}</p>
     </div>
 
     <div class="mt-12 grid md:grid-cols-3 gap-6">
@@ -163,15 +163,15 @@ require SITE_ROOT . '/includes/header.php';
                 <p class="mt-2 text-black">We install and service Worcester Bosch, Vaillant, Ideal and Baxi boilers across {{AREA}}, plus other major UK brands.</p>
             </details>
             <details class="bg-white border rounded-2xl p-5">
-                <summary class="font-medium cursor-pointer text-black">Are your gas engineers Gas Safe registered?</summary>
-                <p class="mt-2 text-black">Yes. All engineers are Gas Safe registered with current qualifications for domestic and commercial work.</p>
+                <summary class="font-medium cursor-pointer text-black">Are your gas engineers available for gas safety certificates (CP12)?</summary>
+                <p class="mt-2 text-black">Yes. All engineers are available for gas safety certificates (CP12) with current qualifications for domestic and commercial work.</p>
             </details>
         </div>
     </div>
 
     <div class="mt-16 bg-[#0B1F3A] text-white p-12 rounded-3xl text-center">
         <h2 class="text-3xl font-semibold mb-4">Need Gas Systems in {{AREA}}?</h2>
-        <p class="max-w-md mx-auto text-white/90 mb-8">Tell us your boiler brand or job type — we quote fast and book local Gas Safe engineers.</p>
+        <p class="max-w-md mx-auto text-white/90 mb-8">Tell us your boiler brand or job type — we quote fast and book local engineers.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="<?= url('/contact.php') ?>" class="bg-[#ff6b00] px-10 py-4 rounded-2xl font-semibold">Request Quote</a>
             <a href="https://wa.me/<?= WHATSAPP ?>?text=Quote%20for%20Gas%20Systems%20in%20{{AREA}}"

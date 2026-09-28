@@ -81,7 +81,7 @@ $faqs = [
     ],
     [
         'q' => 'Is the install certified?',
-        'a' => 'Yes. Work is completed to BS 7671 with the appropriate electrical certificate. Building-reg / Part P notification is arranged where required for the property type.',
+        'a' => 'Yes. Work is completed to BS 7671 with the appropriate electrical certificate. Building-reg / building-regulations notification is arranged where required for the property type.',
     ],
     [
         'q' => 'Can you install workplace or multi-bay chargers?',

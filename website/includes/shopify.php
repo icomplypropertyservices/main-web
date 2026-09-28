@@ -208,7 +208,13 @@ function shopifyProductCardHtml(array $product, bool $compact = false): string {
     $id = htmlspecialchars($product['id'] ?? '', ENT_QUOTES, 'UTF-8');
     $title = htmlspecialchars($product['title'] ?? 'Product', ENT_QUOTES, 'UTF-8');
     $blurb = htmlspecialchars($product['blurb'] ?? '', ENT_QUOTES, 'UTF-8');
-    $price = htmlspecialchars($product['price'] ?? '', ENT_QUOTES, 'UTF-8');
+    $priceRaw = (string)($product['price'] ?? '');
+    $reqPath = (string)(parse_url((string)($_SERVER['REQUEST_URI'] ?? ''), PHP_URL_PATH) ?: '');
+    $onShopSurface = (bool)preg_match('#^/(shop|products)(/|$)#', $reqPath);
+    if (!$onShopSurface && str_contains($priceRaw, '£')) {
+        $priceRaw = 'POA';
+    }
+    $price = htmlspecialchars($priceRaw, ENT_QUOTES, 'UTF-8');
     $badge = trim((string)($product['badge'] ?? ''));
     $img = htmlspecialchars(shopifyImageSrc(
         (string)($product['image'] ?? ''),
@@ -310,7 +316,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 'font-weight': '600'
               }
             },
-            contents: { img: false, title: false, price: true, description: false },
+            contents: { img: false, title: false, price: false, description: false },
             text: { button: 'Add to cart' }
           },
           cart: {

@@ -23,7 +23,7 @@ $landlordServices = [
     ],
     'gas-systems' => [
         'title' => 'Gas CP12 / CP44',
-        'blurb' => 'Annual landlord gas safety certificates (CP12/CP44), appliance checks, boilers and full Gas Safe documentation for tenancies.',
+        'blurb' => 'Annual landlord gas safety certificates (CP12/CP44), appliance checks, boilers and full gas safety certificates (CP12) documentation for tenancies.',
         'badge' => 'Annual',
     ],
     'fire-risk-assessments' => [
@@ -83,7 +83,7 @@ $trust = [
     ['title' => 'Stockport-based', 'text' => 'Local engineers covering Greater Manchester & the North West'],
     ['title' => 'Letting-agent ready', 'text' => 'Certificates and reports formatted for tenancy files & portals'],
     ['title' => 'Multi-property quotes', 'text' => 'Fixed prices across portfolios — no per-visit surprises'],
-    ['title' => 'Standards-led', 'text' => 'BS 7671, BS 5839, BS 5266, Gas Safe & more'],
+    ['title' => 'Standards-led', 'text' => 'BS 7671, BS 5839, BS 5266, gas safety certificates (CP12)'],
 ];
 
 $popularTowns = array_values(array_filter(
@@ -120,7 +120,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             </div>
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
                 Landlord compliance.<br>
-                <span class="text-[#ff6b00]">Certificates on time, every time.</span>
+                <span class="text-[#ff6b00]">EICR inspections and gas safety certificates (CP12).</span>
             </h1>
             <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl">
                 EICR, gas CP12/CP44, fire alarms and emergency lighting for private landlords and letting agents —
@@ -135,7 +135,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             </div>
             <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
                 <div><span class="text-white font-semibold text-xl block">EICR</span> BS 7671 reports</div>
-                <div><span class="text-white font-semibold text-xl block">CP12 / CP44</span> Gas Safe certs</div>
+                <div><span class="text-white font-semibold text-xl block">CP12 / CP44</span> gas safety certificates (CP12)</div>
                 <div><span class="text-white font-semibold text-xl block">Multi-unit</span> portfolio plans</div>
             </div>
             <p class="mt-3 text-[11px] text-white/40">*EICR frequency depends on property type and previous report recommendations.</p>
@@ -278,7 +278,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 <?php
                 $why = [
                     ['EICR', 'Condition reports and remedial electrical works for rental stock'],
-                    ['Gas CP12 / CP44', 'Annual landlord gas safety with Gas Safe engineers'],
+                    ['Gas CP12 / CP44', 'Annual landlord gas safety with engineers'],
                     ['Fire alarms', 'Install, service and certify to BS 5839'],
                     ['Emergency lighting', 'Function & duration tests with logbooks'],
                 ];
@@ -344,7 +344,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
         <div class="text-center mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Landlord &amp; agent quote request</h2>
-            <p class="mt-3 text-zinc-600">Tell us how many properties and which certificates you need. We aim to respond within 2 hours on business days.</p>
+            <p class="mt-3 text-zinc-600">Tell us how many properties and which certificates you need. Send the details and we will reply with a quote.</p>
         </div>
 
         <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>

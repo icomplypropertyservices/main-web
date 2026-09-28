@@ -142,7 +142,7 @@
     "faq": [
       [
         "Will you notify Building Control if required?",
-        "Notifiable work is handled through the appropriate route for the job type. We advise early which elements fall under Part P or commercial notification duties."
+        "Notifiable work is handled through the appropriate route for the job type. We advise early which elements fall under electrical regulations or commercial notification duties."
       ],
       [
         "Can installation work happen outside normal hours?",
@@ -728,9 +728,9 @@
     "seo_keywords": "electrical safety certificate, electrical certificate, installation certificate, electrical compliance certificate, electrical safety certificate North West"
   },
   "niceic-certified": {
-    "intro": "NICEIC certified status signals that an electrical business meets assessed competence and quality standards recognised across the industry. iComply’s NICEIC certified approach gives clients confidence that design, install and test processes are audited rather than informal.",
+    "intro": "electrical testing certified status signals that an electrical business meets assessed competence and quality standards recognised across the industry. iComply’s electrical testing certified approach gives clients confidence that design, install and test processes are audited rather than informal.",
     "body": "Scheme membership supports Building Control notification routes for many domestic jobs and reassures commercial clients during vendor approval. You still receive full test results and certificates specific to your property. Ask for scheme details at tender stage if your procurement checklist requires them.",
-    "meta_desc": "NICEIC certified electrical work across Manchester and the North West. Assessed competence you can verify.",
+    "meta_desc": "electrical testing certified electrical work across Manchester and the North West. Assessed competence you can verify.",
     "focus_points": [
       "Scheme-assessed working practices",
       "Notification pathways for qualifying domestic work",
@@ -739,24 +739,24 @@
     ],
     "faq": [
       [
-        "How can I check NICEIC certification?",
+        "How can I check electrical testing certification?",
         "Scheme websites allow searches by business name. We can also provide membership details on request for your compliance file."
       ],
       [
-        "Does NICEIC certified mean a guarantee on all work?",
+        "Does electrical testing certified mean a guarantee on all work?",
         "Scheme rules and warranties depend on membership type and job category. Contractual warranties for your project are stated in our paperwork."
       ],
       [
-        "Is NICEIC mandatory for every electrical job?",
+        "Is electrical testing mandatory for every electrical job?",
         "Not every task legally requires scheme membership, but many clients and Building Control routes expect a registered competent person."
       ]
     ],
-    "seo_keywords": "NICEIC certified, NICEIC electrician, NICEIC registered, NICEIC contractor, NICEIC certified North West"
+    "seo_keywords": "electrical testing certified, electrical testing electrician, electrical testing registered, electrical testing contractor, electrical testing certified North West"
   },
   "part-p-certified": {
-    "intro": "Part P certified electricians understand the Building Regulations requirements that apply to electrical work in dwellings in England. iComply undertakes Part P relevant works with self-certification routes where scheme membership allows, reducing hassle for homeowners and landlords.",
-    "body": "Not all electrical tasks are notifiable, but new circuits, consumer unit changes and work in bathrooms often are. We advise which jobs need notification and complete the process as part of the package. Describe your planned kitchen or bathroom project and we will map Part P duties before work starts.",
-    "meta_desc": "Part P certified electrical works for dwellings in the North West. Notifiable jobs handled with correct certs.",
+    "intro": "electrical regulations certified electricians understand the Building Regulations requirements that apply to electrical work in dwellings in England. iComply undertakes electrical regulations relevant works with self-certification routes where scheme membership allows, reducing hassle for homeowners and landlords.",
+    "body": "Not all electrical tasks are notifiable, but new circuits, consumer unit changes and work in bathrooms often are. We advise which jobs need notification and complete the process as part of the package. Describe your planned kitchen or bathroom project and we will map electrical regulations duties before work starts.",
+    "meta_desc": "electrical regulations certified electrical works for dwellings in the North West. Notifiable jobs handled with correct certs.",
     "focus_points": [
       "Domestic notifiable work guidance",
       "Consumer unit and new circuit compliance",
@@ -765,11 +765,11 @@
     ],
     "faq": [
       [
-        "What is Part P in simple terms?",
-        "Part P is the Building Regulations part covering electrical safety in dwellings. It aims to ensure work is designed and installed to avoid danger."
+        "What is electrical regulations in simple terms?",
+        "electrical regulations is the Building Regulations part covering electrical safety in dwellings. It aims to ensure work is designed and installed to avoid danger."
       ],
       [
-        "Do like-for-like socket swaps need Part P notification?",
+        "Do like-for-like socket swaps need building-regulations notification?",
         "Many minor like-for-like replacements are non-notifiable, but condition and earthing still matter. We confirm classification per job."
       ],
       [
@@ -777,7 +777,7 @@
         "We can inspect and test, but we only certify work that meets standards. Rework may be required before certification is possible."
       ]
     ],
-    "seo_keywords": "Part P certified, Part P electrician, Building Regulations electrical, notifiable electrical work, Part P certified North West"
+    "seo_keywords": "electrical regulations certified, electrical regulations electrician, Building Regulations electrical, notifiable electrical work, electrical regulations certified North West"
   },
   "pat-testing": {
     "intro": "PAT testing (portable appliance testing) checks plugs, leads and portable equipment for faults that fixed-wire EICRs do not cover. iComply delivers PAT testing for offices, landlords of furnished lets and facilities teams who need asset labels and registers.",

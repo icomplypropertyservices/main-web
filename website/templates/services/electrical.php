@@ -4,7 +4,7 @@
  * 3 images · 3 paragraphs · manufacturers · SEO
  */
 $pageTitle = '{{SERVICE_NAME}} in {{AREA}} | Icomply Property Services';
-$metaDesc = 'NICEIC Part P electrical installation, EICR, PAT testing, EV charger installation and commercial electrician services in {{AREA}}. Schneider, Hager, Wylex, Rolec, Myenergi.';
+$metaDesc = 'Electrical installation, EICR, PAT testing, EV charger installation and commercial electrician services in {{AREA}}. Schneider, Hager, Wylex, Rolec, Myenergi.';
 $metaKeywords = 'electrician {{AREA}}, EICR {{AREA}}, electrical installation {{AREA}}, EV charger {{AREA}}, certified electrician {{AREA}}, commercial electrician {{AREA}}, PAT testing {{AREA}}, Schneider, Hager, Wylex, Rolec, Myenergi';
 $ogImage = url('/assets/images/services/electrical.jpg');
 require SITE_ROOT . '/includes/header.php'; 
@@ -38,7 +38,7 @@ require SITE_ROOT . '/includes/header.php';
           "postalCode": "SK2 5DE",
           "addressCountry": "GB"
         },
-        "priceRange": "££"
+        "priceRange": "POA"
       },
       "areaServed": {"@type": "City", "name": "{{AREA}}"},
       "offers": {
@@ -56,7 +56,7 @@ require SITE_ROOT . '/includes/header.php';
         {"@type": "Question", "name": "What is an EICR?", "acceptedAnswer": {"@type": "Answer", "text": "An Electrical Installation Condition Report (EICR) is a periodic inspection to check the safety of electrical systems."}},
         {"@type": "Question", "name": "How often should commercial properties have electrical testing?", "acceptedAnswer": {"@type": "Answer", "text": "Every 5 years or upon change of tenancy for most commercial premises."}},
         {"@type": "Question", "name": "Do you install EV chargers?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we provide full EV charger installation services with Rolec and Myenergi systems, compliant with current regulations."}},
-        {"@type": "Question", "name": "Are your electricians certified?", "acceptedAnswer": {"@type": "Answer", "text": "All our engineers are fully qualified, Part P registered and insured."}}
+        {"@type": "Question", "name": "Are your electricians certified?", "acceptedAnswer": {"@type": "Answer", "text": "All our engineers are fully qualified and insured."}}
       ]
     }
   ]
@@ -78,7 +78,7 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 1 -->
     <p class="mt-8 text-lg text-black max-w-3xl leading-relaxed">
-        Icomply Property Services provides complete <strong>electrical</strong> design, installation, commissioning, testing and certification across <strong>{{AREA}}</strong> and the wider North West. Our NICEIC and Part P registered engineers deliver fixed-price quotes, same-week appointments and full BS 7671 compliance documentation on every job — from domestic rewires to commercial distribution boards.
+        Icomply Property Services provides complete <strong>electrical</strong> design, installation, commissioning, testing and certification across <strong>{{AREA}}</strong> and the wider North West. Our electricians deliver fixed-price quotes, appointments booked when the diary allows, and full BS 7671 compliance documentation on every job — from domestic rewires to commercial distribution boards.
     </p>
 
     <!-- PARAGRAPH 2 -->

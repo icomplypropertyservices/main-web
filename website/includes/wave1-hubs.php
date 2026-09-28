@@ -1,6 +1,6 @@
 <?php
 /**
- * Twelve quality SEO hubs (Batch C). Not doorway spam, not HMO package landings.
+ * Twelve quality SEO hubs (Guides). Not doorway spam, not HMO package landings.
  */
 declare(strict_types=1);
 
@@ -52,16 +52,16 @@ function wave1QualityHubs(): array
         ],
         'gas-safety-certificate' => [
             'navLabel' => 'Gas safety certificate',
-            'pageTitle' => 'Gas Safety Certificate | Landlord CP12 North West',
-            'metaDesc' => 'Landlord gas safety certificates (CP12 / gas safety records) across Greater Manchester from Stockport SK2. Gas Safe engineers, written records, quote after appliance count.',
+            'pageTitle' => 'Gas safety Certificate | Landlord CP12 North West',
+            'metaDesc' => 'Landlord gas safety certificates (CP12) across Greater Manchester from Stockport SK2. Written records. Quote after the appliance count.',
             'metaKeywords' => 'gas safety certificate, CP12 Stockport, landlord gas safety Greater Manchester, CP44 gas record',
             'ogImage' => '/assets/images/services/gas-systems.jpg',
             'kicker' => 'Quality hub · Gas',
             'crumb' => 'Gas safety certificate',
             'h1' => 'Gas safety certificate',
             'h1Accent' => 'landlord records, written straight',
-            'lede' => 'A Gas Safe visit, a record that matches the appliances on site, and a quote that waits until we know how many there are.',
-            'honest' => 'Engineers are Gas Safe registered for the work we accept. Unsafe appliances stay unsafe on the record. No published per-appliance web price.',
+            'lede' => 'A gas safety certificates (CP12) visit, a record that matches the appliances on site, and a quote that waits until we know how many there are.',
+            'honest' => 'Engineers are available for gas safety certificates (CP12) for the work we accept. Unsafe appliances stay unsafe on the record. No published per-appliance web price.',
             'coverTitle' => 'The landlord gas record, not a service sticker',
             'cover' => [
                 'Private landlords with gas appliances or flues generally need a periodic safety check and a written record for the tenancy. People still call it a CP12. The file needs the current record, not a verbal “it was fine last year”.',

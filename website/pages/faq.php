@@ -61,13 +61,13 @@ $faqs = [
     [
         'cat' => 'Gas safety',
         'q' => 'What is a landlord gas safety certificate (CP12)?',
-        'a' => 'A landlord gas safety record (often called a CP12) confirms that gas appliances, flues and pipework in a rented property have been checked by a Gas Safe registered engineer. Landlords must have checks at least every 12 months and issue the record to tenants. We provide CP12 / CP44 landlord certificates, boiler servicing and commercial gas safety work.',
+        'a' => 'A landlord gas safety record (often called a CP12) confirms that gas appliances, flues and pipework in a rented property have been checked by an engineer. Landlords must have checks at least every 12 months and issue the record to tenants. We provide CP12 / CP44 landlord certificates, boiler servicing and commercial gas safety work.',
         'link' => ['/pages/services/gas-systems.php', 'Gas systems services'],
     ],
     [
         'cat' => 'Gas safety',
         'q' => 'Do you service commercial gas plant as well as domestic boilers?',
-        'a' => 'Yes. We cover domestic landlord certificates and commercial gas systems where within our competence and registration, including safety checks and planned servicing. Tell us the appliance type and site postcode on the quote form for an accurate scope.',
+        'a' => 'Yes. We cover domestic landlord certificates and commercial gas systems where the work is within our competence, including safety checks and planned servicing. Tell us the appliance type and site postcode on the quote form for an accurate scope.',
     ],
     // CCTV
     [
@@ -98,7 +98,7 @@ $faqs = [
     [
         'cat' => 'Response times & appointments',
         'q' => 'How quickly do you respond to enquiries and emergencies?',
-        'a' => 'On business days we aim to respond to quote and contact requests within 2 hours during opening hours (typically Monday–Friday 08:00–18:00). Same-week appointments are often available subject to engineer capacity and site access. Urgent fault call-outs for fire, life-safety and security systems are prioritised where capacity allows — call or WhatsApp for the fastest response.',
+        'a' => 'Quote and contact requests are answered on business days (typically Monday–Friday 08:00–18:00). Appointments are booked when an engineer and site access are available. Urgent fault call-outs for fire, life-safety and security systems are prioritised where capacity allows — call or WhatsApp and we will say when an engineer can attend.',
     ],
     [
         'cat' => 'Response times & appointments',
@@ -355,7 +355,7 @@ require SITE_ROOT . '/includes/header.php';
             <a href="<?= url('/contact.php') ?>" class="service-card bg-zinc-50 border rounded-3xl p-6 hover:border-[#ff6b00] transition">
                 <div class="text-2xl mb-3">✉️</div>
                 <div class="font-semibold text-black text-lg">Contact / free quote</div>
-                <p class="mt-2 text-sm text-zinc-600">Call, WhatsApp or form — aim to reply within 2 hours on business days.</p>
+                <p class="mt-2 text-sm text-zinc-600">Call, WhatsApp or the quote form.</p>
                 <div class="mt-4 text-sm font-semibold text-[#ff6b00]">Get a quote →</div>
             </a>
         </div>
@@ -390,7 +390,7 @@ require SITE_ROOT . '/includes/header.php';
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> BS 5839 · BS 5266 · BS 7671 · gas safety</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Installation, servicing and certification</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> <?= (int)$areaCount ?>+ towns across the North West</li>
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Response aim: within 2 hours on business days</li>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Quotes are POA</li>
         </ul>
     </div>
 </section>

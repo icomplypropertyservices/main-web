@@ -421,7 +421,7 @@ require SITE_ROOT . '/includes/header.php';
         <div>
             <h2 class="text-3xl font-semibold tracking-tight">Ready for the same standard of service?</h2>
             <p class="mt-3 text-white/75">
-                Free fixed-price quotes from Stockport-based engineers — we aim to respond within 2 hours on business days.
+                Free fixed-price quotes from Stockport-based engineers — we will reply with a quote.
             </p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="<?= url('/contact.php') ?>" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold">Request a quote</a>

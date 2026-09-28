@@ -16,7 +16,7 @@ function wave1ContactPath(): string
 
 /**
  * Official publish sequence from Marketing follow-up / PUBLISH-QUEUE.md
- * (file was not on disk; order is Batch A days 1–5, B days 6–14, C hubs).
+ * (file was not on disk; order is Guides landlord topics, B fire and commercial topics, C hubs).
  * HMO package landings and keyword-matrix URLs are excluded.
  *
  * @return array{A:array,B:array,C:array}
@@ -39,19 +39,19 @@ function wave1PublishQueue(): array
     return [
         'A' => [
             'id' => 'batch-a',
-            'label' => 'Batch A — Days 1–5',
+            'label' => 'Landlord guides',
             'blurb' => 'Core landlord certificates first: gas, FRA, smoke/CO, PAT and EPC.',
             'guides' => $a,
         ],
         'B' => [
             'id' => 'batch-b',
-            'label' => 'Batch B — Days 6–14',
-            'blurb' => 'Fire, commercial, care, process and Greater Manchester — after Batch A.',
+            'label' => 'Fire and commercial guides',
+            'blurb' => 'Fire, commercial, care, process and Greater Manchester — after the landlord guides.',
             'guides' => $b,
         ],
         'C' => [
             'id' => 'batch-c',
-            'label' => 'Batch C — SEO hubs',
+            'label' => 'Service hubs',
             'blurb' => 'Quality hubs including landlord Legionella and asbestos. Not doorway spam, not HMO package landings, not keyword-matrix URLs.',
             'hubs' => wave1QualityHubs(),
         ],

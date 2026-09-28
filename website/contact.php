@@ -108,7 +108,7 @@ $fbclidPrefill = htmlspecialchars($_GET['fbclid'] ?? $_POST['fbclid'] ?? '', ENT
 $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
 
 $trust = [
-    ['title' => 'Fast response', 'text' => 'We aim to reply within 2 hours on business days'],
+    ['title' => 'Fast response', 'text' => 'We reply with a quote'],
     ['title' => 'Local engineers', 'text' => 'Based in Stockport SK2 — covering 150+ towns'],
     ['title' => 'Fixed-price quotes', 'text' => 'Clear scope, documentation and certification'],
     ['title' => 'Standards-led', 'text' => 'BS 5839, BS 5266, BS 7671, gas safety & more'],
@@ -117,7 +117,7 @@ $trust = [
 $faqs = [
     [
         'q' => 'How quickly will you respond?',
-        'a' => 'We aim to respond to quote requests within 2 hours on business days. For urgent call-outs, phone or WhatsApp us directly.',
+        'a' => 'We reply to quote requests with a quote. For urgent call-outs, phone or WhatsApp us directly.',
     ],
     [
         'q' => 'Do you cover my area?',
@@ -195,7 +195,7 @@ $contactSchema = [
                 'Merseyside',
                 'Cumbria',
             ],
-            'priceRange' => '££',
+            'priceRange' => 'POA',
             'contactPoint' => [
                 [
                     '@type' => 'ContactPoint',
@@ -431,7 +431,7 @@ $contactSchema = [
             <div class="lg:col-span-2 space-y-5">
                 <div class="bg-[#0B1F3A] text-white rounded-3xl p-6 md:p-8">
                     <h3 class="text-xl font-semibold tracking-tight">Prefer to talk?</h3>
-                    <p class="mt-2 text-white/75 text-sm">Same-week appointments often available. Phone or WhatsApp for the fastest route.</p>
+                    <p class="mt-2 text-white/75 text-sm">Appointments booked when the diary allows often available. Phone or WhatsApp for the fastest route.</p>
                     <div class="mt-6 space-y-3">
                         <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
                            class="flex items-center justify-between gap-3 w-full px-5 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold transition">

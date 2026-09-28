@@ -184,7 +184,7 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
         "opens": "08:00",
         "closes": "18:00"
       },
-      "priceRange": "££",
+      "priceRange": "POA",
       "sameAs": <?= json_encode(array_values(array_filter([
           defined('SOCIAL_FACEBOOK') ? SOCIAL_FACEBOOK : '',
           defined('SOCIAL_INSTAGRAM') ? SOCIAL_INSTAGRAM : '',

@@ -57,7 +57,7 @@ $schema = [
                 '@type' => 'City',
                 'name' => $areaName,
             ],
-            'priceRange' => '££',
+            'priceRange' => 'POA',
         ],
         [
             '@type' => 'BreadcrumbList',
@@ -187,7 +187,7 @@ $schema = [
             </p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
                 Based in Offerton, Stockport (SK2 5DE), we routinely serve <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> and the wider North West with
-                same-week appointments where capacity allows. Choose a service below for a dedicated
+                appointments booked when the diary allows. Choose a service below for a dedicated
                 <strong><?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></strong> landing page, or request a package quote for several services at once.
             </p>
         </div>
@@ -313,7 +313,7 @@ $schema = [
     <div class="max-w-7xl mx-auto px-6 py-14 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
         <div>
             <h2 class="text-3xl font-semibold tracking-tight">Ready for a <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> quote?</h2>
-            <p class="mt-2 text-white/75">Chat on WhatsApp or call — we aim to respond within 2 hours on business days.</p>
+            <p class="mt-2 text-white/75">Chat on WhatsApp or call — we will reply with a quote.</p>
         </div>
         <div class="flex flex-wrap gap-3">
             <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Quote%20for%20<?= htmlspecialchars($AREA_URL, ENT_QUOTES, 'UTF-8') ?>"
