@@ -129,7 +129,7 @@ $ok(!preg_match('#/pages/gas-systems/[a-z0-9\-]+</loc>#', $xml), 'sitemap has ze
 $ok(!preg_match('#/pages/electrical/[a-z0-9\-]+</loc>#', $xml), 'sitemap has zero /pages/electrical/{town}');
 $ok(!str_contains($xml, '/pages/packages/hmo'), 'sitemap has no HMO package locs');
 $kwTown = preg_match_all('#/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+</loc>#', $xml);
-$ok($kwTown > 0 && $kwTown <= 180, 'sitemap keyword×town is featured-only (' . $kwTown . ', not the full matrix)');
+$ok($kwTown === 0, 'sitemap keyword×town count is 0 (' . $kwTown . ')');
 
 $exportSrc = (string)file_get_contents(__DIR__ . '/static-export.php');
 $ok(str_contains($exportSrc, 'getElectricalGasMatrixKeywordSlugs'), 'static-export still wires full electrical+gas × areas');

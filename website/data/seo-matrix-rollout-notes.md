@@ -12,8 +12,8 @@ Official rules for the electrical + gas keyword expansion.
 
 - `sitemap.xml` must **only** list URLs that return HTTP **200**.
 - **Never** list `/pages/{service}/{town}` (gas-systems, electrical, fire-alarms, …). Those landings are `--full` only and 404 on the default export. Do **not** mass-generate thin service×area doorway pages for all 168 towns.
-- Do **not** mass-include thin keyword×area doorways in the sitemap. Featured electrical/gas × a handful of towns is allowed because those files exist and return 200.
-- The full ~36k keyword×town matrix stays in `dist/` for Jack; it stays **out** of `sitemap.xml`.
+- Do **not** list thin keyword×area doorways in the sitemap, including the old electrical/gas × town sample. Those URLs 404 or are matrix placeholders.
+- The keyword×town HTML matrix may stay in `dist/` for direct visits; it stays **out** of `sitemap.xml`.
 
 ## Copy / POA
 

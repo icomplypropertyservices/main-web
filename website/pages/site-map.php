@@ -211,8 +211,8 @@ require SITE_ROOT . '/includes/header.php';
         </div>
         <?php endforeach; ?>
         <p class="text-sm text-zinc-500">
-            Full machine-readable list (<?= number_format(count($services) * count($areas) + count(getMajorKeywords()) * count($areas) + count($services) + count(getMajorKeywords()) + count($areas)) ?>+ URLs):
-            <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/sitemap.xml') ?>">XML sitemap index</a>.
+            Machine-readable list of the working pages (not service×town or keyword×town doorways):
+            <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/sitemap.xml') ?>">XML sitemap</a>.
         </p>
     </div>
 </section>

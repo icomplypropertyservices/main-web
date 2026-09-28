@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
+export default async () => {
+  return new Response(`<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://icomplypropertyservices.co.uk/</loc><priority>1.0</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/contact</loc><priority>0.85</priority></url>
@@ -1828,3 +1829,12 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/ziton</loc><priority>0.72</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/zumtobel</loc><priority>0.72</priority></url>
 </urlset>
+`, {
+    headers: {
+      "content-type": "application/xml; charset=utf-8",
+      "cache-control": "public, max-age=3600",
+    },
+  });
+};
+
+export const config = { path: "/sitemap.xml" };

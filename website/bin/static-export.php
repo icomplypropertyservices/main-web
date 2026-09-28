@@ -174,6 +174,9 @@ file_put_contents($dist . '/404.html', $notFoundHtml);
 icomplyCopyStaticAssets($websiteRoot, $repoRoot, $dist);
 icomplyWriteDistRedirects($dist);
 icomplyWriteDistHeaders($dist);
+require_once $websiteRoot . '/includes/sitemap.php';
+$sitemapResult = icomplyWriteSitemapForDist($dist, SITE_URL);
+$log("sitemap published urls={$sitemapResult['urls']} (hubs only, no service×town or keyword×town)\n");
 
 $log(str_repeat('=', 56) . "\n");
 $log("OK={$ok} SKIP={$skip} FAIL={$fail} routes=" . count($routes) . "\n");
@@ -341,10 +344,13 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         $routes[] = $path;
     }
 
-    // Jack: every service has every area landing (not only --full).
-    foreach (array_keys(getServices()) as $sSlug) {
-        foreach (getAreas() as $area) {
-            $routes[] = '/pages/' . $sSlug . '/' . areaSlug((string)$area);
+    // Service×town landings 404 on the default export and must not be
+    // regenerated into dist (a file-crawl sitemap would list them again).
+    if ($full) {
+        foreach (array_keys(getServices()) as $sSlug) {
+            foreach (getAreas() as $area) {
+                $routes[] = '/pages/' . $sSlug . '/' . areaSlug((string)$area);
+            }
         }
     }
 
@@ -621,8 +627,14 @@ function icomplyPrettyUrlRedirects(): string
 /assets/css/site.css     /assets/css/site.css     200!
 /assets/css/*            /assets/css/:splat       200
 
-# Old 470-part sitemap index → single compact urlset
-/sitemap-*.xml           /sitemap.xml    301
+# Old multi-part index and nested shop/products sitemaps (those 404).
+# Force so a file-crawl plugin cannot keep serving sitemap-N.xml.
+/sitemap-*.xml           /sitemap.xml    301!
+/sitemaps/*              /sitemap.xml    301!
+/products/sitemap.xml    /sitemap.xml    301!
+/products/sitemap        /sitemap.xml    301!
+/shop/sitemap.xml        /sitemap.xml    301!
+/shop/sitemap            /sitemap.xml    301!
 
 # Missing *-photo.jpg → working twin (static assets bypass PHP)
 /assets/images/services/*-photo.jpg    /assets/images/services/:splat.jpg    200

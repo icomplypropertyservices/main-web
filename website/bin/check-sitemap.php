@@ -74,7 +74,9 @@ $required = [
     '/pages/services/gas-systems</loc>',
     '/pages/keywords/rewire</loc>',
     '/pages/keywords/boiler</loc>',
-    '/pages/keywords/rewire/stockport</loc>',
+    '/pages/areas/manchester</loc>',
+    '/pages/areas/stockport</loc>',
+    '/pages/manufacturers/abb</loc>',
     '/privacy</loc>',
     '/terms</loc>',
 ];
@@ -107,11 +109,24 @@ if (preg_match_all('#<loc>https://icomplypropertyservices\.co\.uk(/pages/keyword
         }
     }
 }
-if ($kwTownCount < 1 || $kwTownCount > 180) {
-    echo "FAIL: sitemap keyword×town count {$kwTownCount} (want featured-only 1–180)\n";
+if ($kwTownCount !== 0) {
+    echo "FAIL: sitemap keyword×town count {$kwTownCount} (want 0 — thin matrix stays out)\n";
     $fail++;
 } else {
-    echo "OK: sitemap keyword×town featured-only={$kwTownCount}\n";
+    echo "OK: sitemap keyword×town count=0\n";
+}
+if (str_contains($xml, '/shop/sitemap') || str_contains($xml, '/products/sitemap')) {
+    echo "FAIL: nested shop/products sitemap loc\n";
+    $fail++;
+}
+$robots = icomplyRobotsTxt('https://icomplypropertyservices.co.uk');
+if (substr_count($robots, 'Sitemap:') !== 1 || !str_contains($robots, 'https://icomplypropertyservices.co.uk/sitemap.xml')) {
+    echo "FAIL: robots.txt must name only the apex sitemap\n";
+    $fail++;
+}
+if (str_contains($robots, '/shop/sitemap') || str_contains($robots, '/products/sitemap')) {
+    echo "FAIL: robots.txt still points at shop/products sitemaps\n";
+    $fail++;
 }
 
 $count = substr_count($xml, '<url>');
