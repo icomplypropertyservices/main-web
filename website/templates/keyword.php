@@ -127,8 +127,11 @@ require SITE_ROOT . '/includes/header.php';
                     <p class="mt-6 text-sm text-zinc-800">
                         Part of our
                         <a href="<?= url('/pages/services/' . $SERVICE_SLUG . '.php') ?>" class="font-bold text-[#ff6b00] hover:underline"><?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?></a>
-                        service · Related:
+                        service · Areas hub:
+                        <a href="<?= url('/pages/areas/index.php') ?>" class="font-bold text-[#ff6b00] hover:underline">all towns</a>
+                        · Related:
                         <a href="<?= url('/pages/keywords/' . $RELATED_SLUG . '.php') ?>" class="font-bold text-[#ff6b00] hover:underline"><?= htmlspecialchars($RELATED_NAME, ENT_QUOTES, 'UTF-8') ?></a>
+                        · Quotes are POA. Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.
                     </p>
                 </div>
             </div>

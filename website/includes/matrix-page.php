@@ -173,7 +173,7 @@ function icomplyMatrixChromeEnd(): string
         . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH(url('/pages/site-map.php')) . '">Site map / full inventory</a>'
         . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH($s['contact']) . '">Contact / POA quote</a>'
         . '</div>'
-        . '<p class="text-white/60 text-xs">Hub pages carry the mega menu and footer dropdowns for every service, town and keyword family. This matrix page stays compact on purpose.</p>'
+        . '<p class="text-white/60 text-xs">Quotes are POA. Call ' . icomplyMatrixH($s['phone']) . ' or use the quote form.</p>'
         . '</div></footer>' . $popup . '</body></html>';
 }
 
@@ -202,6 +202,32 @@ function icomplyMatrixKeywordChips(string $serviceSlug): string
     return $html;
 }
 
+function icomplyMatrixLocalLine(string $areaName): string
+{
+    $s = icomplyMatrixShared();
+    $names = [];
+    foreach ($s['areas'] as $a) {
+        $names[] = $a['name'];
+    }
+    $idx = array_search($areaName, $names, true);
+    $nearby = [];
+    if ($idx !== false && $names) {
+        $n = count($names);
+        for ($i = 1; $i <= 4 && $i < $n; $i++) {
+            $nearby[] = $names[($idx + $i) % $n];
+        }
+    }
+    $profile = function_exists('area_profile') ? area_profile($areaName) : ['region' => 'the North West', 'stock' => ''];
+    $region = (string)($profile['region'] ?? 'the North West');
+    $stock = (string)($profile['stock'] ?? '');
+    $line = 'Nearby towns we also cover: ' . implode(', ', $nearby) . '.';
+    $line .= ' Regional setting: ' . $region . '.';
+    if ($stock !== '') {
+        $line .= ' Local building mix: ' . $stock . '.';
+    }
+    return $line;
+}
+
 function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): string
 {
     $s = icomplyMatrixShared();
@@ -215,10 +241,8 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
     $svcSlug = (string)($meta['service'] ?? 'electrical');
     $svcName = $s['services'][$svcSlug] ?? keywordDisplayName($svcSlug);
     $areaSlugVal = areaSlug($areaName);
-    $poa = function_exists('isPoaService') && isPoaService($svcSlug);
-    $priceLine = $poa
-        ? 'Price on application after we confirm property type, access and scope. No catalogue fee.'
-        : 'Written quote after we confirm scope. We do not invent a price on this page.';
+    $priceLine = 'POA. Price on application after we confirm property type, access and scope. Call ' . $s['phone'] . '.';
+    $localLine = icomplyMatrixLocalLine($areaName);
 
     $intro = function_exists('seo_unique_intro')
         ? seo_unique_intro($svcName, $svcSlug, $areaName)
@@ -251,6 +275,7 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         . '<a class="matrix-cta matrix-cta-light" href="' . icomplyMatrixH($s['phoneHref']) . '">' . icomplyMatrixH($s['phone']) . '</a>'
         . '</div>'
         . '<p class="mt-4 text-sm text-white/60">' . icomplyMatrixH($priceLine) . '</p>'
+        . '<p class="mt-2 text-sm text-white/70">' . icomplyMatrixH($localLine) . '</p>'
         . '</div></section>';
 
     $html .= '<main class="matrix-wrap py-10 space-y-10">'
@@ -295,10 +320,8 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     }
     $svcName = $s['services'][$serviceSlug];
     $areaSlugVal = areaSlug($areaName);
-    $poa = function_exists('isPoaService') && isPoaService($serviceSlug);
-    $priceLine = $poa
-        ? 'Price on application after scope. No invented catalogue price.'
-        : 'Written quote after scope is agreed.';
+    $priceLine = 'POA. Price on application after scope is agreed. Call ' . $s['phone'] . '. No invented catalogue price.';
+    $localLine = icomplyMatrixLocalLine($areaName);
     $intro = function_exists('seo_unique_intro')
         ? seo_unique_intro($svcName, $serviceSlug, $areaName)
         : $svcName . ' in ' . $areaName . '.';
@@ -324,6 +347,7 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         . '<a class="matrix-cta matrix-cta-light" href="' . icomplyMatrixH($s['phoneHref']) . '">' . icomplyMatrixH($s['phone']) . '</a>'
         . '</div>'
         . '<p class="mt-4 text-sm text-white/60">' . icomplyMatrixH($standards) . ' · ' . icomplyMatrixH($priceLine) . '</p>'
+        . '<p class="mt-2 text-sm text-white/70">' . icomplyMatrixH($localLine) . '</p>'
         . '</div></section>';
 
     $html .= '<main class="matrix-wrap py-10 space-y-10">'

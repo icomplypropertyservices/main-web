@@ -2,8 +2,8 @@
 /**
  * Compact, accurate sitemap — core pages + shop/products hubs + service hubs +
  * area hubs + manufacturer hubs + keyword hubs.
- * Never lists /pages/{service}/{town} (those 404 as sitemap locs).
- * Never lists /pages/keywords/{slug}/{town} (thin matrix doorways, many 404).
+ * Lists service×town and keyword×town pages for every North West town in config.
+ * Those pages render real content. Broken or unknown URLs stay out.
  * Never lists /shop/sitemap.xml or /products/sitemap.xml (separate sites; 404 here).
  */
 declare(strict_types=1);
@@ -125,18 +125,6 @@ function icomplySitemapEntries(): array
         if (preg_match('#-photo\.(jpe?g|png)$#i', $path)) {
             return;
         }
-        // Hard reject /pages/{service}/{town} even if a leftover matrix file
-        // sits in dist/. Keep only real hub prefixes.
-        if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
-            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages'];
-            if (!in_array($m[1], $okPrefix, true)) {
-                return;
-            }
-        }
-        // Keyword×town matrix pages are thin and often 404. Hubs only.
-        if (preg_match('#^/pages/keywords/[a-z0-9\-]+/.+#', $path)) {
-            return;
-        }
         // Hubs are rendered at export time from the catalogue, so they do not
         // need a committed PHP stub. Town combinations never qualify.
         $generatedHub = (bool)preg_match('#^/pages/(keywords|areas|manufacturers|services)/[a-z0-9\-]+$#', $path);
@@ -252,7 +240,7 @@ function icomplySitemapEntries(): array
         }
         $add('/pages/keywords/' . $base, '0.68');
     }
-    // Keyword hubs from the catalogue (generated at export). Never keyword×town.
+    // Keyword hubs and keyword×town pages from the catalogue.
     // Skip the catalogue at request time so keywords.json cannot OOM a live PHP sitemap.
     $requestSafe = !empty($GLOBALS['ICOMPLY_SITEMAP_REQUEST_SAFE']);
     if (!$requestSafe && function_exists('getMajorKeywords') && function_exists('keywordSlug')) {
@@ -262,9 +250,21 @@ function icomplySitemapEntries(): array
                 $family[keywordSlug($fs)] = true;
             }
         }
+        $areaSlugs = [];
+        if (function_exists('getAreas') && function_exists('areaSlug')) {
+            foreach (getAreas() as $areaName) {
+                $areaSlugs[] = areaSlug((string)$areaName);
+            }
+        }
         foreach (array_keys(getMajorKeywords()) as $kw) {
             $slug = keywordSlug($kw);
             $add('/pages/keywords/' . $slug, isset($family[$slug]) ? '0.78' : '0.68');
+            foreach ($areaSlugs as $town) {
+                if ($town === '') {
+                    continue;
+                }
+                $add('/pages/keywords/' . $slug . '/' . $town, '0.55');
+            }
         }
     }
     if (function_exists('getAreas') && function_exists('areaSlug')) {
@@ -282,8 +282,21 @@ function icomplySitemapEntries(): array
         }
     }
     if (function_exists('getServices')) {
+        $townSlugs = [];
+        if (function_exists('getAreas') && function_exists('areaSlug')) {
+            foreach (getAreas() as $areaName) {
+                $town = areaSlug((string)$areaName);
+                if ($town !== '') {
+                    $townSlugs[] = $town;
+                }
+            }
+        }
         foreach (array_keys(getServices()) as $slug) {
-            $add('/pages/services/' . (string)$slug, '0.85');
+            $slug = (string)$slug;
+            $add('/pages/services/' . $slug, '0.85');
+            foreach ($townSlugs as $town) {
+                $add('/pages/' . $slug . '/' . $town, '0.5');
+            }
         }
     }
 
@@ -412,8 +425,29 @@ function icomplyWriteSitemapEdgeFunctions(string $xml, string $robots): void
     if (!is_dir($dir) && !mkdir($dir, 0755, true) && !is_dir($dir)) {
         throw new RuntimeException('Cannot mkdir ' . $dir);
     }
-    $xmlJs = icomplyJsTemplateLiteral($xml);
     $robotsJs = icomplyJsTemplateLiteral($robots);
+    // A full matrix urlset is tens of megabytes. Publish sitemap.xml as a file.
+    // This module has no path config, so it cannot shadow that file.
+    if (strlen($xml) > 200000) {
+        file_put_contents($dir . '/sitemap.js', <<<'JS'
+// Static sitemap.xml is the published urlset. No path config on purpose.
+export default async () => new Response('', { status: 204 });
+JS);
+        file_put_contents($dir . '/robots.js', <<<JS
+export default async () => {
+  return new Response(`{$robotsJs}`, {
+    headers: {
+      "content-type": "text/plain; charset=utf-8",
+      "cache-control": "public, max-age=3600",
+    },
+  });
+};
+
+export const config = { path: "/robots.txt" };
+JS);
+        return;
+    }
+    $xmlJs = icomplyJsTemplateLiteral($xml);
     file_put_contents($dir . '/sitemap.js', <<<JS
 export default async () => {
   return new Response(`{$xmlJs}`, {
@@ -530,7 +564,7 @@ function icomplyWriteSitemapForDist(string $dist, string $baseUrl): array
         }
     }
     if (count($entries) < 800) {
-        throw new RuntimeException('Published sitemap has only ' . count($entries) . ' URLs (expected the real hub set)');
+        throw new RuntimeException('Published sitemap has only ' . count($entries) . ' URLs (expected hubs plus town pages)');
     }
     $xml = icomplySitemapXmlFromEntries($baseUrl, $entries);
     $installed = icomplyInstallSitemap($baseUrl, $xml, $dist);

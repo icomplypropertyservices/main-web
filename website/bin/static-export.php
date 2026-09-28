@@ -184,7 +184,7 @@ icomplyWriteDistRedirects($dist);
 icomplyWriteDistHeaders($dist);
 require_once $websiteRoot . '/includes/sitemap.php';
 $sitemapResult = icomplyWriteSitemapForDist($dist, SITE_URL);
-$log("sitemap published urls={$sitemapResult['urls']} (hubs only, no service×town or keyword×town)\n");
+$log("sitemap published urls={$sitemapResult['urls']} (hubs + service×town + keyword×town)\n");
 
 $log(str_repeat('=', 56) . "\n");
 $log("OK={$ok} SKIP={$skip} FAIL={$fail} routes=" . count($routes) . "\n");
@@ -371,13 +371,11 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         }
     }
 
-    // Service×town landings 404 on the default export and must not be
-    // regenerated into dist (a file-crawl sitemap would list them again).
-    if ($full) {
-        foreach (array_keys(getServices()) as $sSlug) {
-            foreach (getAreas() as $area) {
-                $routes[] = '/pages/' . $sSlug . '/' . areaSlug((string)$area);
-            }
+    // Every North West town × service the catalogue supports. These are real
+    // pages (200), not thin URLs to prune.
+    foreach (array_keys(getServices()) as $sSlug) {
+        foreach (getAreas() as $area) {
+            $routes[] = '/pages/' . $sSlug . '/' . areaSlug((string)$area);
         }
     }
 
@@ -710,69 +708,15 @@ TXT;
 }
 
 /**
- * Pattern 301s for URLs removed from the sitemap.
- * One rule per live hub (`:town`), never one line per town.
- * Targets are hubs whose HTML is in the export. Unknown slugs are omitted
- * so they stay a real 404 instead of a redirect to a missing page or home.
+ * Service×town and keyword×town pages are real 200s. Do not 301 them.
+ * Unknown slugs still 404; nothing soft-404s to the homepage.
  */
 function icomplyLegacyMatrixRedirectBlock(): string
 {
-    $dist = dirname(SITE_ROOT) . '/dist';
-    $reserved = [
-        'services' => true,
-        'keywords' => true,
-        'areas' => true,
-        'manufacturers' => true,
-        'resources' => true,
-        'packages' => true,
-    ];
-    $lines = [
-        '# BEGIN legacy-matrix-redirects',
-        '# Dropped sitemap URLs. Keyword×town → that keyword hub. Service×town → that service hub.',
-        '# Force (301!) so an exported town file cannot shadow the redirect. No homepage soft-404.',
-    ];
-    $kwRules = 0;
-    if (function_exists('getMajorKeywords') && function_exists('keywordSlug')) {
-        $slugs = [];
-        foreach (array_keys(getMajorKeywords()) as $kw) {
-            $slug = keywordSlug((string)$kw);
-            if ($slug !== '' && preg_match('/^[a-z0-9\-]+$/', $slug)) {
-                $slugs[$slug] = true;
-            }
-        }
-        ksort($slugs);
-        foreach (array_keys($slugs) as $slug) {
-            if (!is_file($dist . '/pages/keywords/' . $slug . '.php')) {
-                continue;
-            }
-            $lines[] = "/pages/keywords/{$slug}/:town     /pages/keywords/{$slug}    301!";
-            $lines[] = "/pages/keywords/{$slug}/:town/    /pages/keywords/{$slug}    301!";
-            $kwRules += 2;
-        }
-    }
-    $svcRules = 0;
-    if (function_exists('getServices')) {
-        $slugs = [];
-        foreach (array_keys(getServices()) as $svc) {
-            $slug = function_exists('areaSlug') ? areaSlug((string)$svc) : (string)$svc;
-            if ($slug === '' || isset($reserved[$slug]) || !preg_match('/^[a-z0-9\-]+$/', $slug)) {
-                continue;
-            }
-            $slugs[$slug] = true;
-        }
-        ksort($slugs);
-        foreach (array_keys($slugs) as $slug) {
-            if (!is_file($dist . '/pages/services/' . $slug . '.php')) {
-                continue;
-            }
-            $lines[] = "/pages/{$slug}/:town     /pages/services/{$slug}    301!";
-            $lines[] = "/pages/{$slug}/:town/    /pages/services/{$slug}    301!";
-            $svcRules += 2;
-        }
-    }
-    $lines[] = '# legacy-matrix counts keyword_rules=' . $kwRules . ' service_rules=' . $svcRules;
-    $lines[] = '# END legacy-matrix-redirects';
-    return implode("\n", $lines) . "\n";
+    return "# BEGIN legacy-matrix-redirects\n"
+        . "# keyword_rules=0 service_rules=0\n"
+        . "# Real matrix pages are 200. No town-pattern 301s.\n"
+        . "# END legacy-matrix-redirects\n";
 }
 
 function icomplyLegacyMatrixNetlifyToml(): string

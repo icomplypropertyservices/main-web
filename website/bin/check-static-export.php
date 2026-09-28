@@ -284,18 +284,37 @@ if (preg_match('#^/shop\\s+/pages/packages#m', $redirects)) {
     echo "[PASS] _redirects does not send /shop to packages\n";
 }
 foreach ([
-    '/pages/keywords/eicr/:town' => '/pages/keywords/eicr',
-    '/pages/electrical/:town' => '/pages/services/electrical',
-    '/pages/asbestos-survey/:town' => '/pages/services/asbestos-survey',
-    '/pages/legionella-risk-assessment/:town' => '/pages/services/legionella-risk-assessment',
-] as $from => $to) {
-    if (preg_match('#^' . preg_quote($from, '#') . '\\s+' . preg_quote($to, '#') . '\\s+301!#m', $redirects)) {
-        $pass++;
-        echo "[PASS] legacy 301 {$from} → {$to}\n";
-    } else {
+    '/pages/keywords/eicr/:town',
+    '/pages/electrical/:town',
+    '/pages/asbestos-survey/:town',
+    '/pages/legionella-risk-assessment/:town',
+] as $from) {
+    if (preg_match('#^' . preg_quote($from, '#') . '\\s+\\S+\\s+301!#m', $redirects)) {
         $fail++;
-        echo "[FAIL] legacy 301 missing {$from} → {$to}\n";
+        echo "[FAIL] matrix page still 301s {$from}\n";
+    } else {
+        $pass++;
+        echo "[PASS] {$from} is not a 301\n";
     }
+}
+$svcAreaFiles = 0;
+$svcCount = function_exists('getServices') ? count(getServices()) : 0;
+foreach (array_keys(function_exists('getServices') ? getServices() : []) as $svcSlug) {
+    $dir = $dist . '/pages/' . $svcSlug;
+    if (!is_dir($dir)) {
+        continue;
+    }
+    foreach (glob($dir . '/*.php') ?: [] as $file) {
+        $svcAreaFiles++;
+    }
+}
+$svcAreaExpect = $svcCount * $areaCount;
+if ($svcAreaFiles >= (int)floor($svcAreaExpect * 0.98)) {
+    $pass++;
+    echo "[PASS] service×area exported={$svcAreaFiles} (expect ~{$svcAreaExpect})\n";
+} else {
+    $fail++;
+    echo "[FAIL] service×area exported={$svcAreaFiles} (expect ~{$svcAreaExpect})\n";
 }
 if (preg_match('#^/\\*\\s+/\\s+301#m', $redirects) || preg_match('#^/\\s+/\\s+301#m', $redirects)) {
     $fail++;
@@ -329,12 +348,12 @@ if (str_contains($sitemapDist, '/pages/products</loc>') || substr_count($sitemap
     $pass++;
     echo "[PASS] sitemap lists /products only\n";
 }
-if (preg_match('#/pages/gas-systems/[a-z0-9\-]+</loc>#', $sitemapDist) || preg_match('#/pages/electrical/[a-z0-9\-]+</loc>#', $sitemapDist)) {
-    $fail++;
-    echo "[FAIL] dist/sitemap.xml still lists /pages/{service}/{town} 404s\n";
-} else {
+if (str_contains($sitemapDist, '/pages/electrical/stockport</loc>') && str_contains($sitemapDist, '/pages/keywords/eicr/stockport</loc>')) {
     $pass++;
-    echo "[PASS] dist/sitemap.xml has no service×area 404 locs\n";
+    echo "[PASS] dist/sitemap.xml lists service×area and keyword×area samples\n";
+} else {
+    $fail++;
+    echo "[FAIL] dist/sitemap.xml is missing service×area or keyword×area samples\n";
 }
 
 if (!str_contains($headerFile, 'text/html')) {

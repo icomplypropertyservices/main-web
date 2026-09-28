@@ -438,21 +438,7 @@ function isCostStyleKeyword(string $slug, string $name = ''): bool {
 function exportedServiceLocalUrl(string $serviceSlug, string $area, string $from = 'service'): string {
     $serviceSlug = areaSlug($serviceSlug);
     $town = areaSlug($area);
-    $featured = getElectricalGasFeaturedKeywordSlugs();
-    $kw = getMajorKeywords();
-    $pick = null;
-    if ($serviceSlug === 'electrical') {
-        $pick = $featured['electrical'][0] ?? 'rewire';
-    } elseif ($serviceSlug === 'gas-systems') {
-        $pick = $featured['gas'][0] ?? 'boiler';
-    }
-    if ($pick && isset($kw[keywordSlug((string)$pick)])) {
-        return url('/pages/keywords/' . keywordSlug((string)$pick) . '/' . $town . '.php');
-    }
-    if ($from === 'area') {
-        return url('/pages/services/' . $serviceSlug . '.php');
-    }
-    return url('/pages/areas/' . $town . '.php');
+    return url('/pages/' . $serviceSlug . '/' . $town . '.php');
 }
 
 /**

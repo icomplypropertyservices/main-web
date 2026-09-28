@@ -23,13 +23,6 @@ $bannedNeedles = [
     '/terms-and-conditions</loc>',
     '/sitemap-1.xml',
     '-photo.jpg',
-    '/pages/gas-systems/stockport</loc>',
-    '/pages/gas-systems/manchester</loc>',
-    '/pages/electrical/stockport</loc>',
-    '/pages/electrical/manchester</loc>',
-    '/pages/epc/stockport</loc>',
-    '/pages/emergency-lighting/stockport</loc>',
-    '/pages/fire-alarms/liverpool</loc>',
 ];
 foreach ($bannedNeedles as $n) {
     if (str_contains($xml, $n)) {
@@ -38,15 +31,16 @@ foreach ($bannedNeedles as $n) {
     }
 }
 
-// Live sitemap listed ~114–120 /pages/{service}/{stockport|manchester} that 404.
-// Generation must not invent those unless a real PHP file exists.
+// Service×town locs must have a rendered file in dist or source.
 if (function_exists('getServices')) {
+    $distRoot = dirname(SITE_ROOT) . '/dist';
     foreach (array_keys(getServices()) as $sSlug) {
         foreach (['stockport', 'manchester'] as $town) {
             $rel = 'pages/' . $sSlug . '/' . $town . '.php';
             $needle = '/pages/' . $sSlug . '/' . $town . '</loc>';
-            if (str_contains($xml, $needle) && !is_file(SITE_ROOT . '/' . $rel)) {
-                echo "FAIL: dead service×town in sitemap (no PHP file): {$needle}\n";
+            $has = is_file(SITE_ROOT . '/' . $rel) || is_file($distRoot . '/' . $rel);
+            if (str_contains($xml, $needle) && !$has) {
+                echo "FAIL: service×town in sitemap has no file: {$needle}\n";
                 $fail++;
             }
         }
@@ -113,11 +107,15 @@ if (preg_match_all('#<loc>https://icomplypropertyservices\.co\.uk(/pages/keyword
         }
     }
 }
-if ($kwTownCount !== 0) {
-    echo "FAIL: sitemap keyword×town count {$kwTownCount} (want 0 — thin matrix stays out)\n";
+$kwExpect = 0;
+if (function_exists('getMajorKeywords') && function_exists('getAreas')) {
+    $kwExpect = count(getMajorKeywords()) * count(getAreas());
+}
+if ($kwTownCount < (int)floor($kwExpect * 0.98)) {
+    echo "FAIL: sitemap keyword×town count {$kwTownCount} (want about {$kwExpect})\n";
     $fail++;
 } else {
-    echo "OK: sitemap keyword×town count=0\n";
+    echo "OK: sitemap keyword×town count={$kwTownCount}\n";
 }
 if (str_contains($xml, '/pages/products</loc>')) {
     echo "FAIL: /pages/products is a duplicate; sitemap lists /products only\n";
@@ -156,8 +154,8 @@ if (str_contains($robots, '/shop/sitemap') || str_contains($robots, '/products/s
 }
 
 $count = substr_count($xml, '<url>');
-if ($count < 30 || $count > 20000) {
-    echo "FAIL: unexpected URL count {$count} (want 30–20000, built files only)\n";
+if ($count < 30 || $count > 400000) {
+    echo "FAIL: unexpected URL count {$count} (want 30–400000)\n";
     $fail++;
 }
 
@@ -183,11 +181,12 @@ foreach ($locHits[1] ?? [] as $path) {
         $serviceAreaHits[] = $path;
     }
 }
-if ($serviceAreaHits) {
+$svcAreaExpect = (function_exists('getServices') ? count(getServices()) : 0) * count($areaSlugs);
+if (count($serviceAreaHits) < (int)floor($svcAreaExpect * 0.98)) {
     $fail++;
-    echo 'FAIL: sitemap lists service×area 404s (sample): ' . implode(', ', array_slice($serviceAreaHits, 0, 8)) . "\n";
+    echo 'FAIL: sitemap service×area count ' . count($serviceAreaHits) . " (want about {$svcAreaExpect})\n";
 } else {
-    echo "OK: no /pages/{service}/{town} service×area locs\n";
+    echo 'OK: sitemap service×area count=' . count($serviceAreaHits) . "\n";
 }
 
 echo "URLs={$count} bytes=" . strlen($xml) . PHP_EOL;
