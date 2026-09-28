@@ -11,6 +11,12 @@ function icomplyGasLegalPhrase(): string
     return 'carried out by a Gas Safe registered engineer';
 }
 
+/** Short site footer and gas-page CTA line. Engineers are registered; iComply is not. */
+function icomplySpecialistWorksLine(): string
+{
+    return 'Gas works are carried out by Gas Safe registered engineers. Some specialist works may be carried out by approved subcontractors.';
+}
+
 function icomplyGasLegalSentence(): string
 {
     return 'Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. '
