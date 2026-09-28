@@ -222,7 +222,7 @@
             ],
             [
                 "Can you help today if our door will not release?",
-                "We prioritise safety-critical door faults when engineers are available. Call for the latest diary-dependent or next-day options."
+                "We prioritise safety-critical door faults when engineers are available. Call and we will say when an engineer can attend."
             ],
             [
                 "Is the quote free?",
@@ -13313,7 +13313,7 @@
                 "We focus on Stockport and the wider North West corridor. Edge-of-area jobs are confirmed at enquiry based on engineer routing."
             ],
             [
-                "Can I get a diary-dependent electrician?",
+                "How do I book an electrician?",
                 "Diary-dependent attendance depends on diary load and fault severity. Urgent safety issues are prioritised whenever capacity allows."
             ],
             [
@@ -13650,7 +13650,7 @@
         "faq": [
             [
                 "How quickly is an emergency lighting certificate issued?",
-                "Documentation follows completion of the agreed site works or tests—typically issued promptly after results are confirmed and any diary-dependent remedials are recorded."
+                "Documentation follows completion of the agreed site works or tests—typically issued promptly after results are confirmed and any remedial work from that visit is recorded."
             ],
             [
                 "Is one certificate enough for a multi-building estate?",
@@ -20730,8 +20730,8 @@
                 "We work on a wide range of common domestic and commercial brands. If a specialist OEM visit is more appropriate we will tell you after diagnosis rather than prolong downtime."
             ],
             [
-                "Do you provide diary-dependent gas repairs?",
-                "We prioritise no-heat and safety-related faults and aim for diary-dependent or next-available attendance depending on engineer capacity and your location in the North West."
+                "Do you repair gas appliances?",
+                "We prioritise no-heat and safety-related faults and book the next available attendance depending on engineer capacity and your location in the North West."
             ]
         ],
         "seo_keywords": "gas repair, gas boiler repair, gas safety certificates (CP12) repair, emergency gas engineer, gas appliance repair Manchester, gas repair Stockport, North West gas engineer"
@@ -35331,7 +35331,7 @@
     "same-day-cp12": {
         "name": "CP12 gas safety certificate",
         "service": "gas-systems",
-        "related": "gas-certificate-diary-dependent",
+        "related": "gas-certificate-same-day",
         "intro": "A CP12 is the landlord gas safety record. iComply completes it when diary and travel allow. We do not guarantee a visit on the day you call. The quote is POA.",
         "body": "Send the postcode and the appliance list. We book the inspection and issue the record after the checks. If an appliance fails, the certificate waits until the remedial work is done.",
         "meta_desc": "CP12 gas safety certificates across the North West. POA. Visit date agreed when an engineer is free. iComply, Stockport.",
