@@ -200,7 +200,7 @@ function icomplyLocalEssay(string $serviceName, string $slug, string $area): str
         $authorityLine,
         $angle,
         $gasTopic
-            ? "Any {$serviceName} check in {$area} means landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not carry out that gas work, does not issue the certificate, and is not Gas Safe registered. Non-gas compliance in {$area} is quoted POA. Call {$phone}."
+            ? "Any {$serviceName} check in {$area} means landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out that gas work, does not issue the certificate, and is not Gas Safe registered. Non-gas compliance in {$area} is quoted POA. Call {$phone}."
             : "A {$area} {$serviceName} visit is quoted only after scope is agreed. There is no catalogue price for {$serviceName} in {$area}.",
     ];
     $seed = area_seed($area, 'essay|' . $slug);
@@ -248,7 +248,7 @@ function service_local_angle(string $slug, string $serviceName, string $area): s
         'gas-systems' => function_exists('icomplyGasLocalAngles')
             ? icomplyGasLocalAngles($serviceName, $area)
             : [
-                "Landlord gas safety certificates (CP12) in {$area}, carried out by a Gas Safe registered engineer. iComply does not issue them.",
+                "Landlord gas safety certificates (CP12) in {$area}, carried out by Gas Safe registered engineers. iComply does not issue them.",
             ],
         'intruder-alarm' => [
             "{$area} retail and SME units often upgrade to app-connected hybrid intruder systems.",

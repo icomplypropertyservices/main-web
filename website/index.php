@@ -54,7 +54,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 Landlord electrical certificates (EICR), fire risk assessments, fire safety,
                 kitchens and bathrooms, renovations, CCTV and security, Legionella and asbestos
                 surveys — one Stockport team covering Greater Manchester and the North West.
-                Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer.
+                Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.
                 iComply does not carry out gas work or issue those certificates.
             </p>
             <div class="home-hero-cta">
@@ -130,7 +130,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
         <div>
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Services</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2"><?= count($services) ?> services · <?= count($areas) ?>+ towns</h2>
-            <p class="mt-2 text-zinc-600 max-w-xl">Landlord compliance, electrical, fire safety, water hygiene, asbestos, security, kitchens, bathrooms and building trades — each with local area pages. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not issue them.</p>
+            <p class="mt-2 text-zinc-600 max-w-xl">Landlord compliance, electrical, fire safety, water hygiene, asbestos, security, kitchens, bathrooms and building trades — each with local area pages. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue them.</p>
         </div>
         <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Full catalogue →</a>
     </div>
@@ -248,7 +248,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                class="group bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="w-12 h-12 rounded-2xl bg-[#0B1F3A]/10 text-[#0B1F3A] font-bold flex items-center justify-center text-lg group-hover:bg-[#ff6b00] group-hover:text-white transition">L</div>
                 <h3 class="mt-5 font-semibold text-xl text-black tracking-tight">Landlords &amp; agents</h3>
-                <p class="mt-2 text-sm text-zinc-600 flex-1">EICR, FRA, Legionella, asbestos, voids, kitchens and bathrooms for portfolios. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not issue them. HMO work is quoted through existing landlord packages.</p>
+                <p class="mt-2 text-sm text-zinc-600 flex-1">EICR, FRA, Legionella, asbestos, voids, kitchens and bathrooms for portfolios. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue them. HMO work is quoted through existing landlord packages.</p>
                 <span class="mt-5 text-sm font-semibold text-[#ff6b00]">Landlord compliance →</span>
             </a>
             <a href="<?= url('/pages/commercial.php') ?>"
@@ -338,7 +338,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
         </div>
         <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
             <h3 class="text-2xl font-semibold tracking-tight">Need a compliance package?</h3>
-            <p class="mt-3 text-white/80">Combine EICR, FRA, water hygiene, asbestos surveys, security and refurb works into one visit schedule for landlords and facilities teams. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer.</p>
+            <p class="mt-3 text-white/80">Combine EICR, FRA, water hygiene, asbestos surveys, security and refurb works into one visit schedule for landlords and facilities teams. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.</p>
             <ul class="mt-6 space-y-3 text-sm text-white/90">
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Fixed-price multi-service quotes</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Full documentation for audits &amp; insurers</li>

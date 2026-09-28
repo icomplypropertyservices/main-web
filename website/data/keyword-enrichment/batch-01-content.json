@@ -245,7 +245,7 @@
     ],
     "faq": [
       [
-        "Do you work as a domestic subcontractor only?",
+        "Do you work as a domestic tradesperson only?",
         "We support main contractors, managing agents and end clients. Contract form and insurance levels are confirmed before start on site."
       ],
       [
@@ -469,7 +469,7 @@
   },
   "generator-installation": {
     "intro": "Generator installation provides standby or prime power when grid failure would halt operations or compromise safety systems. iComply plans generator electrical interfaces, changeover arrangements and protection so transfer to generator power is controlled and testable.",
-    "body": "Fuel, exhaust, acoustic and structural elements may involve specialist partners; our focus is electrical integration, earthing, interlocks and commissioning tests. Weekly or monthly test schedules can be written into your maintenance plan. Share load lists and critical circuit priorities so sizing and transfer logic match real need.",
+    "body": "Fuel, exhaust, acoustic and structural elements may involve specialist engineers; our focus is electrical integration, earthing, interlocks and commissioning tests. Weekly or monthly test schedules can be written into your maintenance plan. Share load lists and critical circuit priorities so sizing and transfer logic match real need.",
     "meta_desc": "Generator installation and electrical integration in the North West. Changeover, protection and commissioning.",
     "focus_points": [
       "Standby generator electrical design input",
@@ -495,7 +495,7 @@
   },
   "solar-panel-installation": {
     "intro": "Solar panel installation turns roof space into on-site generation when structural, electrical and grid connection factors align. iComply supports solar PV electrical works including AC connection, isolation, generation meters and compliance with relevant standards.",
-    "body": "Roof mounting and panel supply may be packaged with partners; electrical safety, G98/G99 considerations and consumer unit integration remain central to a durable system. Monitoring setup helps you verify output after handover. Request a desk study with roof photos and a recent electricity bill to start feasibility.",
+    "body": "Roof mounting and panel supply may be packaged with clients; electrical safety, G98/G99 considerations and consumer unit integration remain central to a durable system. Monitoring setup helps you verify output after handover. Request a desk study with roof photos and a recent electricity bill to start feasibility.",
     "meta_desc": "Solar panel installation support and PV electrical connection across the North West. Safe grid-tied systems.",
     "focus_points": [
       "PV electrical connection and isolation",

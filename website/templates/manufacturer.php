@@ -186,7 +186,7 @@ $schema = [
             <?php if ($gasBrand): ?>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars(icomplyGasLegalSentence(), ENT_QUOTES, 'UTF-8') ?> Trade kits for <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?>, where listed, are supplies only.</p>
             <ul class="mt-6 space-y-2 text-sm text-zinc-700">
-                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> iComply does not install, service, or repair this brand</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> No Gas Safe logo, badge, or registration number</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Non-gas compliance is quoted POA</li>

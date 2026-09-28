@@ -237,7 +237,7 @@ require SITE_ROOT . '/includes/header.php';
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold mb-3">Google reviews</div>
                 <h2 class="text-2xl font-semibold tracking-tight">Happy with our work?</h2>
                 <p class="mt-3 text-white/75 text-sm leading-relaxed">
-                    A short Google review helps other landlords and facilities managers find a reliable compliance partner —
+                    A short Google review helps other landlords and facilities managers find our qualified engineers —
                     and helps our Stockport team keep improving.
                 </p>
                 <ul class="mt-6 space-y-3 text-sm text-white/90">

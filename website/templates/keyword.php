@@ -156,7 +156,7 @@ require SITE_ROOT . '/includes/header.php';
 <section class="bg-white border-y-2 border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-14">
         <h2 class="text-2xl md:text-3xl font-bold text-[#061828]"><?= $SERVICE_SLUG === 'gas-systems' ? 'Trade brands listed here' : 'Brands we install &amp; service' ?></h2>
-        <p class="mt-2 text-zinc-800 max-w-2xl"><?php if ($SERVICE_SLUG === 'gas-systems'): ?>Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not install these brands.<?php else: ?>Click a manufacturer for products, kits and install quotes related to <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> and <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?>.<?php endif; ?></p>
+        <p class="mt-2 text-zinc-800 max-w-2xl"><?php if ($SERVICE_SLUG === 'gas-systems'): ?>Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not install these brands.<?php else: ?>Click a manufacturer for products, kits and install quotes related to <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> and <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?>.<?php endif; ?></p>
         <div class="mt-6 flex flex-wrap gap-2"><?= $MANUFACTURER_TAGS ?></div>
     </div>
 </section>

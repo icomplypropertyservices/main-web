@@ -68,7 +68,7 @@ $extraServices = [
     'intruder-alarm' => 'PD 6662 / BS EN 50131 wired and wireless systems with monitoring options.',
     'door-entry' => 'Video and audio door entry for multi-tenant commercial blocks.',
     'intercoms' => 'Master/substation and commercial intercom systems.',
-    'gas-systems' => 'Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not issue them.',
+    'gas-systems' => 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue them.',
 ];
 
 $contractFeatures = [
@@ -137,7 +137,7 @@ require SITE_ROOT . '/includes/header.php';
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
                     <div><span class="text-white font-semibold text-xl block"><?= count($services) ?></span> core services</div>
                     <div><span class="text-white font-semibold text-xl block"><?= count($areas) ?>+</span> towns covered</div>
-                    <div><span class="text-white font-semibold text-xl block">One</span> compliance partner</div>
+                    <div><span class="text-white font-semibold text-xl block">Our</span> qualified engineers</div>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-3">

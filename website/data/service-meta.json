@@ -25,9 +25,9 @@
         "standards": "HTM 08-03 · care home & hospital specifications"
     },
     "gas-systems": {
-        "blurb": "Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not carry out gas work or issue CP12 or gas safety certificates.",
-        "short": "Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not issue them.",
-        "standards": "Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not issue CP12 or gas safety certificates."
+        "blurb": "Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out gas work or issue CP12 or gas safety certificates.",
+        "short": "Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue them.",
+        "standards": "Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue CP12 or gas safety certificates."
     },
     "intruder-alarm": {
         "blurb": "PD 6662 / BS EN 50131 wired and wireless intruder systems with monitoring options.",

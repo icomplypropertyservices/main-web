@@ -164,7 +164,7 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": <?= json_encode(SITE_NAME) ?>,
-      "description": "Property compliance including electrical, fire alarms, emergency lighting, CCTV and access control across Greater Manchester and the North West. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not carry out gas work or issue those certificates.",
+      "description": "Property compliance including electrical, fire alarms, emergency lighting, CCTV and access control across Greater Manchester and the North West. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out gas work or issue those certificates.",
       "url": <?= json_encode(SITE_URL) ?>,
       "telephone": <?= json_encode('+' . (strpos(WHATSAPP, '44') === 0 ? WHATSAPP : '44' . ltrim(PHONE, '0'))) ?>,
       "email": <?= json_encode(EMAIL) ?>,

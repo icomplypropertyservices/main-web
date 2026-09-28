@@ -106,7 +106,7 @@ $schema = [
             '@id' => $canonicalUrl . '#service',
             'name' => $serviceName . ' Services',
             'alternateName' => $serviceSlug === 'gas-systems'
-                ? 'Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer'
+                ? 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers'
                 : $serviceName . ' installation, maintenance and certification',
             'description' => $metaDesc,
             'url' => $canonicalUrl,
@@ -341,7 +341,7 @@ $schema = [
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Manufacturers</div>
                 <h2 class="text-3xl font-semibold tracking-tight text-black mt-2"><?= $serviceSlug === 'gas-systems' ? 'Trade brands listed here' : 'Brands we install &amp; service' ?></h2>
-                <p class="mt-2 text-zinc-600 max-w-2xl"><?= $serviceSlug === 'gas-systems' ? 'Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not install or service these brands.' : ('Looking for your exact panel brand? We support major ' . htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') . ' manufacturers across the North West.') ?></p>
+                <p class="mt-2 text-zinc-600 max-w-2xl"><?= $serviceSlug === 'gas-systems' ? 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not install or service these brands.' : ('Looking for your exact panel brand? We support major ' . htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') . ' manufacturers across the North West.') ?></p>
             </div>
             <a href="<?= htmlspecialchars(function_exists('icomplyTradeShopUrl') ? icomplyTradeShopUrl() : url('/shop/index.php'), ENT_QUOTES, 'UTF-8') ?>" class="text-sm font-semibold text-[#ff6b00]">Browse trade shop →</a>
         </div>

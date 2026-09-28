@@ -76,7 +76,7 @@ foreach ($catalog as $slug => &$entry) {
         return $map[$s] ?? $s;
     }, $services));
 
-    $entry['blurb'] = "iComply Property Services is your North West partner for {$name} — "
+    $entry['blurb'] = "iComply Property Services sends our qualified engineers for {$name} — "
         . "{$p['install']} to {$p['std']}, plus planned maintenance and reactive repairs. "
         . "We supply trade {$p['buy']} for {$name} and support landlords, FM teams and contractors "
         . "across Greater Manchester, Lancashire, Cheshire and Merseyside.";

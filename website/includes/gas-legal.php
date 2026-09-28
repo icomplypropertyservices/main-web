@@ -2,18 +2,18 @@
 /**
  * iComply holds no Gas Safe registration.
  * Gas work and CP12 / gas safety certificates must be described as carried out
- * by a Gas Safe registered engineer. Do not claim iComply performs that work.
+ * by Gas Safe registered engineers. Do not claim iComply performs that work.
  */
 declare(strict_types=1);
 
 function icomplyGasLegalPhrase(): string
 {
-    return 'carried out by a Gas Safe registered engineer';
+    return 'carried out by Gas Safe registered engineers';
 }
 
 function icomplyGasLegalSentence(): string
 {
-    return 'Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. '
+    return 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. '
         . 'iComply does not carry out gas work, does not issue CP12 or gas safety certificates, and is not Gas Safe registered.';
 }
 
@@ -45,7 +45,7 @@ function icomplyKeywordRecordIsGas(array $meta, string $slug): bool
 function icomplyGasServiceBlurb(bool $short = false): string
 {
     if ($short) {
-        return 'Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not issue them.';
+        return 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue them.';
     }
     return icomplyGasLegalSentence()
         . ' This page explains the record landlords ask for. iComply quotes electrical, fire, water hygiene and asbestos work on the same property. Price on application.';
@@ -53,16 +53,16 @@ function icomplyGasServiceBlurb(bool $short = false): string
 
 function icomplyGasServiceStandards(): string
 {
-    return 'Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not issue CP12 or gas safety certificates.';
+    return 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue CP12 or gas safety certificates.';
 }
 
 function icomplyGasMetaDesc(string $name, string $area = ''): string
 {
     $where = $area !== '' ? ' in ' . $area : ' across the North West';
-    $desc = 'Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. '
+    $desc = 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. '
         . $name . $where . '. iComply does not issue them.';
     if (strlen($desc) > 160) {
-        $desc = 'Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not issue them.';
+        $desc = 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue them.';
     }
     return $desc;
 }
@@ -70,7 +70,7 @@ function icomplyGasMetaDesc(string $name, string $area = ''): string
 function icomplyGasKeywordIntro(string $name, string $area = ''): string
 {
     $where = $area !== '' ? ' in ' . $area : ' across the North West';
-    return $name . $where . ' is listed for landlords and agents who need landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. '
+    return $name . $where . ' is listed for landlords and agents who need landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. '
         . 'iComply Property Services does not carry out gas work and does not issue CP12 or gas safety certificates.';
 }
 
@@ -100,11 +100,11 @@ function icomplyGasKeywordFaqs(string $name): array
     return [
         [
             'Does iComply issue a ' . $name . ' or a CP12?',
-            'No. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not carry out gas work or issue gas safety certificates.',
+            'No. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out gas work or issue gas safety certificates.',
         ],
         [
             'Does iComply hold a Gas Safe registration?',
-            'No. iComply does not hold a Gas Safe registration and does not show a Gas Safe logo, badge, or registration number. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer.',
+            'No. iComply does not hold a Gas Safe registration and does not show a Gas Safe logo, badge, or registration number. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.',
         ],
     ];
 }
@@ -113,7 +113,7 @@ function icomplyGasKeywordFaqs(string $name): array
 function icomplyGasKeywordPoints(): array
 {
     return [
-        'Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer',
+        'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers',
         'iComply does not carry out gas work or issue CP12 certificates',
         'Non-gas compliance on the same property is quoted POA',
         'No Gas Safe logo, badge, or registration number',
@@ -124,10 +124,10 @@ function icomplyGasKeywordPoints(): array
 function icomplyGasLocalAngles(string $serviceName, string $area): array
 {
     return [
-        "In {$area}, rented homes with gas appliances need a current landlord gas safety record. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not issue that record.",
-        "{$area} landlords still ask for CP12 paperwork. iComply does not carry out the gas check in {$area}. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer.",
-        "Boiler and flue questions in {$area} are gas work. iComply does not install, service, or repair boilers in {$area}. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer.",
-        "Commercial kitchens around {$area} may need a gas safety record. That visit is not carried out by iComply. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer.",
+        "In {$area}, rented homes with gas appliances need a current landlord gas safety record. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue that record.",
+        "{$area} landlords still ask for CP12 paperwork. iComply does not carry out the gas check in {$area}. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.",
+        "Boiler and flue questions in {$area} are gas work. iComply does not install, service, or repair boilers in {$area}. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.",
+        "Commercial kitchens around {$area} may need a gas safety record. That visit is not carried out by iComply. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.",
     ];
 }
 
@@ -140,8 +140,8 @@ function icomplyGasServiceHubCopy(): array
         'blurb' => icomplyGasServiceBlurb(false),
         'standards' => icomplyGasServiceStandards(),
         'faqs' => [
-            ['Does iComply issue landlord gas safety certificates (CP12)?', 'No. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not carry out gas work or issue CP12 or gas safety certificates.'],
-            ['Does iComply hold a Gas Safe registration?', 'No. iComply does not hold a Gas Safe registration. This site does not show a Gas Safe logo, badge, or registration number. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer.'],
+            ['Does iComply issue landlord gas safety certificates (CP12)?', 'No. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out gas work or issue CP12 or gas safety certificates.'],
+            ['Does iComply hold a Gas Safe registration?', 'No. iComply does not hold a Gas Safe registration. This site does not show a Gas Safe logo, badge, or registration number. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.'],
             ['What can iComply quote on a property that also has gas?', 'Electrical, fire, water hygiene and asbestos work is quoted POA. Gas work and CP12 records stay with a Gas Safe registered engineer.'],
         ],
         'copy' => [
@@ -152,7 +152,7 @@ function icomplyGasServiceHubCopy(): array
                 'There is no Gas Safe logo, badge, or registration number on this site, because iComply does not hold a Gas Safe registration.',
             ],
             'pillars' => [
-                ['title' => 'What a CP12 is', 'text' => 'A landlord gas safety certificate (CP12) is the written record of a gas safety check. It is carried out by a Gas Safe registered engineer, not by iComply.'],
+                ['title' => 'What a CP12 is', 'text' => 'A landlord gas safety certificate (CP12) is the written record of a gas safety check. It is carried out by Gas Safe registered engineers, not by iComply.'],
                 ['title' => 'What iComply does not do', 'text' => 'iComply does not install, service, or repair boilers, and does not issue CP12 or gas safety certificates.'],
                 ['title' => 'What iComply can quote', 'text' => 'Non-gas compliance on the same property is POA. Call ' . (defined('PHONE') ? PHONE : '') . ' or use the quote form.'],
             ],
