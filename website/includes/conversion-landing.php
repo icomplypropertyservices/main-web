@@ -237,7 +237,7 @@ require SITE_ROOT . '/includes/header.php';
             <a href="<?= htmlspecialchars($callHref, ENT_QUOTES, 'UTF-8') ?>" class="px-8 py-4 rounded-2xl border border-white font-semibold text-white hover:bg-white/10"><?= htmlspecialchars($callLabel, ENT_QUOTES, 'UTF-8') ?></a>
         </div>
         <p class="mt-8 text-sm text-white leading-relaxed">
-            Icomply Property Services, 17 Woodlands Park Road, Offerton, Stockport SK2 5DE
+            iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport SK2 5DE
             · <a class="underline" href="<?= htmlspecialchars($callHref, ENT_QUOTES, 'UTF-8') ?>">07517806082</a>
             · <a class="underline" href="mailto:info@icomplypropertyservices.co.uk">info@icomplypropertyservices.co.uk</a>
         </p>
