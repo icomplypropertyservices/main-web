@@ -229,7 +229,7 @@ $schema = [
     <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">
         <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> near you
     </h2>
-    <p class="mt-2 text-zinc-600 mb-6">Open a local <?= htmlspecialchars($primaryServiceName, ENT_QUOTES, 'UTF-8') ?> page for dedicated SEO and quotes.</p>
+    <p class="mt-2 text-zinc-600 mb-6">Open the <?= htmlspecialchars($primaryServiceName, ENT_QUOTES, 'UTF-8') ?> area page for a quote in that town.</p>
     <div class="flex flex-wrap gap-2">
         <?php
         $towns = array_values(array_filter(
@@ -238,7 +238,7 @@ $schema = [
         ));
         foreach ($towns as $t):
         ?>
-            <a href="<?= url('/pages/' . htmlspecialchars($primaryService, ENT_QUOTES, 'UTF-8') . '/' . areaSlug($t) . '.php') ?>"
+            <a href="<?= url('/pages/areas/' . areaSlug($t) . '.php') ?>"
                class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">
                 <?= htmlspecialchars($primaryServiceName . ' in ' . $t, ENT_QUOTES, 'UTF-8') ?>
             </a>

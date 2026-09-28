@@ -182,6 +182,11 @@ function shopifyCardFromManufacturerProduct(array $p, string $mfrSlug, string $m
         'shopify_product_id' => $p['shopify_product_id'] ?? '',
         'badge' => $p['badge'] ?? '',
     ];
+    // Placeholder brand cards are not Shopify PDPs. Land on the brand page
+    // anchor, which the static export actually publishes.
+    $anchorId = (string)($p['id'] ?? ($mfrSlug . '-product'));
+    $product['public_href'] = url('/pages/manufacturers/' . rawurlencode($mfrSlug) . '.php')
+        . '#' . rawurlencode($anchorId);
     return shopifyProductCardHtml($product, false);
 }
 

@@ -656,6 +656,18 @@ function serviceImageUrl(string $slug): string {
 }
 
 /**
+ * Keyword hero that is actually on disk. Missing keyword JPGs fall back to
+ * the parent service image (then the shared fire-alarms photo).
+ */
+function keywordImageUrl(string $slug, string $serviceSlug = ''): string {
+    $rel = '/assets/images/keywords/' . $slug . '.jpg';
+    if ($slug !== '' && is_file(SITE_ROOT . $rel)) {
+        return url($rel);
+    }
+    return serviceImageUrl($serviceSlug !== '' ? $serviceSlug : 'fire-alarms');
+}
+
+/**
  * Working service photo only — never emit *-photo.jpg in HTML.
  * Live 404'd those names even when the twin without `-photo` was 200.
  */

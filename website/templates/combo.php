@@ -362,7 +362,7 @@ $schema = [
             if ($slug === $serviceSlug) continue;
             $rBlurb = getServiceBlurb($slug);
         ?>
-        <a href="<?= url('/pages/' . $slug . '/' . $AREA_SLUG . '.php') ?>"
+        <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
            class="group bg-white border rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
             <div class="h-32 bg-zinc-100 overflow-hidden">
                 <img src="<?= htmlspecialchars(serviceImageUrl($slug), ENT_QUOTES, 'UTF-8') ?>"

@@ -90,7 +90,7 @@ $h = static function ($s): string {
                     Also see
                     <a class="font-bold text-[#ff6b00] hover:underline" href="<?= url('/pages/keywords/' . rawurlencode($RELATED_SLUG) . '/' . rawurlencode($AREA_SLUG) . '.php') ?>"><?= $h($RELATED_NAME) ?> in <?= $h($AREA) ?></a>
                     and
-                    <a class="font-bold text-[#ff6b00] hover:underline" href="<?= url('/pages/' . rawurlencode($SERVICE_SLUG) . '/' . rawurlencode($AREA_SLUG) . '.php') ?>"><?= $h($SERVICE_NAME) ?> in <?= $h($AREA) ?></a>.
+                    <a class="font-bold text-[#ff6b00] hover:underline" href="<?= url('/pages/services/' . rawurlencode($SERVICE_SLUG) . '.php') ?>"><?= $h($SERVICE_NAME) ?></a>.
                 </p>
                 <ul class="mt-6 space-y-3"><?= $KEYWORD_FOCUS_HTML ?></ul>
             </div>

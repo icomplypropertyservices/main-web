@@ -174,9 +174,8 @@ function keywordTemplatePlaceholders(
             . '<p class="mt-3 text-sm text-zinc-900 leading-relaxed font-medium">' . $a . '</p></details>';
     }
 
-    $kwImg = url('/assets/images/keywords/' . $slug . '.jpg');
-    $svcImg = url('/assets/images/services/' . $serviceSlug . '.jpg');
-    // Prefer keyword image path; template onerror falls back to service
+    $kwImg = keywordImageUrl($slug, $serviceSlug);
+    $svcImg = serviceImageUrl($serviceSlug);
 
     return [
         'KEYWORD_NAME' => $name,

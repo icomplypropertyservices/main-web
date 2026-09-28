@@ -170,6 +170,7 @@ if (!icomplyLooksLikeHtml($notFoundHtml)) {
     $notFoundHtml = "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>Not found</title></head><body><h1>Not found</h1></body></html>\n";
 }
 file_put_contents($dist . '/404.html', $notFoundHtml);
+file_put_contents($dist . '/404.php', $notFoundHtml);
 
 icomplyCopyStaticAssets($websiteRoot, $repoRoot, $dist);
 icomplyWriteDistRedirects($dist);
@@ -342,6 +343,25 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
 
     foreach (icomplyCollectKeywordRoutes($keywordTowns) as $path) {
         $routes[] = $path;
+    }
+
+    // On-site trade PDPs linked from the catalogue (handles that exist in data).
+    if (!function_exists('getShopCatalog')) {
+        $shopify = SITE_ROOT . '/includes/shopify.php';
+        if (is_file($shopify)) {
+            require_once $shopify;
+        }
+    }
+    if (function_exists('getShopCatalog')) {
+        foreach (getShopCatalog()['products'] ?? [] as $product) {
+            if (!is_array($product)) {
+                continue;
+            }
+            $handle = strtolower(trim((string)($product['handle'] ?? '')));
+            if ($handle !== '' && preg_match('/^[a-z0-9\-]+$/', $handle)) {
+                $routes[] = '/products/product/' . $handle;
+            }
+        }
     }
 
     // Service×town landings 404 on the default export and must not be
