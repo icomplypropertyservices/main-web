@@ -6,7 +6,7 @@ require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/share.php';
 
 $pageTitle = 'FAQ | Property Compliance Questions Answered';
-$metaDesc = 'Frequently asked questions about EICR, BS 5839 fire alarms, emergency lighting, gas safety, CCTV, access control, response times, coverage areas, free quotes and the Icomply shop.';
+$metaDesc = 'Frequently asked questions about EICR, BS 5839 fire alarms, emergency lighting, CCTV and access control. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not issue them.';
 $metaKeywords = 'property compliance FAQ, EICR questions, BS 5839 fire alarm, emergency lighting testing, gas safety certificate, CCTV installation, access control, North West';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/faq.php');
@@ -61,13 +61,13 @@ $faqs = [
     [
         'cat' => 'Gas safety',
         'q' => 'What is a landlord gas safety certificate (CP12)?',
-        'a' => 'A landlord gas safety record (often called a CP12) confirms that gas appliances, flues and pipework in a rented property have been checked by an engineer. Landlords must have checks at least every 12 months and issue the record to tenants. We provide CP12 / CP44 landlord certificates, boiler servicing and commercial gas safety work.',
+        'a' => 'A landlord gas safety record (often called a CP12) confirms that gas appliances, flues and pipework in a rented property have been checked. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not carry out gas work or issue CP12 or gas safety certificates.',
         'link' => ['/pages/services/gas-systems.php', 'Gas systems services'],
     ],
     [
         'cat' => 'Gas safety',
         'q' => 'Do you service commercial gas plant as well as domestic boilers?',
-        'a' => 'Yes. We cover domestic landlord certificates and commercial gas systems where the work is within our competence, including safety checks and planned servicing. Tell us the appliance type and site postcode on the quote form for an accurate scope.',
+        'a' => 'No. iComply does not service boilers or commercial gas plant. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply is not Gas Safe registered.',
     ],
     // CCTV
     [
@@ -146,13 +146,13 @@ $faqs = [
     [
         'cat' => 'Manufacturers & other services',
         'q' => 'Which manufacturers do you support?',
-        'a' => 'We work with a wide range of industry brands across fire, electrical, gas, CCTV and access — including Apollo, Hochiki, Kentec, Advanced, C-Tec, Paxton, Salto, Hikvision, Dahua, Axis, Hager, Schneider, Worcester Bosch and more. Browse manufacturer pages for brand-specific guidance and related services.',
+        'a' => 'We work with a wide range of industry brands across fire, electrical, CCTV and access — including Apollo, Hochiki, Kentec, Advanced, C-Tec, Paxton, Salto, Hikvision, Dahua, Axis, Hager and Schneider. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not install or service gas appliances.',
         'link' => ['/pages/manufacturers/index.php', 'All manufacturers'],
     ],
     [
         'cat' => 'Manufacturers & other services',
         'q' => 'Do you also handle AOV, nurse call and intruder alarms?',
-        'a' => 'Yes. In addition to electrical, fire, emergency lighting, gas, CCTV and access control we provide AOV & air handling, nurse call systems, intruder alarms and intercoms — installation, maintenance and certification as appropriate. Start from the services index to open each hub.',
+        'a' => 'Yes. In addition to electrical, fire, emergency lighting, CCTV and access control we provide AOV and air handling, nurse call systems, intruder alarms and intercoms. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not carry out gas work.',
         'link' => ['/pages/services/index.php', 'All services'],
     ],
     [

@@ -250,14 +250,23 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         }
     }
     $body = (string)($meta['body'] ?? '');
+    $gasTopic = function_exists('icomplyKeywordRecordIsGas') && icomplyKeywordRecordIsGas($meta, $keywordSlug);
+    if ($gasTopic && function_exists('icomplyGasKeywordBody')) {
+        $body = icomplyGasKeywordBody($kwName, $areaName);
+        $desc = icomplyGasMetaDesc($kwName, $areaName);
+    }
     $bullets = function_exists('seo_unique_local_block')
         ? seo_unique_local_block($svcName, $svcSlug, $areaName)
         : [];
 
     $title = $kwName . ' in ' . $areaName . ' | ' . $s['brand'];
-    $desc = $kwName . ' in ' . $areaName . '. ' . $priceLine;
+    if (!$gasTopic) {
+        $desc = $kwName . ' in ' . $areaName . '. ' . $priceLine;
+    }
     if (strlen($desc) > 160) {
-        $desc = substr($desc, 0, 157) . '…';
+        $desc = function_exists('icomplyGasLegalPhrase') && str_contains($desc, icomplyGasLegalPhrase())
+            ? 'Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not issue them.'
+            : (substr($desc, 0, 157) . '…');
     }
     $canonical = url('/pages/keywords/' . $keywordSlug . '/' . $areaSlugVal);
     $robots = function_exists('icomplyRobotsMetaForPath')
@@ -307,7 +316,7 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         . '</section></main>';
 
     $html .= icomplyMatrixChromeEnd();
-    return $html;
+    return function_exists('icomplyApplyGasLegalHtml') ? icomplyApplyGasLegalHtml($html) : $html;
 }
 
 function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): string
@@ -337,7 +346,12 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     $blurb = getServiceBlurb($serviceSlug);
     $standards = getServiceStandards($serviceSlug);
     $title = $svcName . ' in ' . $areaName . ' | ' . $s['brand'];
-    $desc = $svcName . ' in ' . $areaName . '. ' . $priceLine;
+    $desc = $serviceSlug === 'gas-systems' && function_exists('icomplyGasMetaDesc')
+        ? icomplyGasMetaDesc($svcName, $areaName)
+        : ($svcName . ' in ' . $areaName . '. ' . $priceLine);
+    if ($serviceSlug === 'gas-systems' && strlen($desc) > 160) {
+        $desc = 'Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not issue them.';
+    }
     $canonical = url('/pages/' . $serviceSlug . '/' . $areaSlugVal);
     $robots = function_exists('icomplyRobotsMetaForPath')
         ? icomplyRobotsMetaForPath('/pages/' . $serviceSlug . '/' . $areaSlugVal)
@@ -358,7 +372,7 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
 
     $html .= '<main class="matrix-wrap py-10 space-y-10">'
         . '<article class="matrix-card space-y-4">'
-        . '<h2 class="text-2xl font-semibold">What we do in ' . icomplyMatrixH($areaName) . '</h2>'
+        . '<h2 class="text-2xl font-semibold">' . ($serviceSlug === 'gas-systems' ? 'What this page covers in ' : 'What we do in ') . icomplyMatrixH($areaName) . '</h2>'
         . '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($blurb) . '</p>'
         . '<p class="text-sm">Service hub: <a class="text-[#ff6b00] font-semibold" href="'
         . icomplyMatrixH(url('/pages/services/' . $serviceSlug)) . '">' . icomplyMatrixH($svcName) . '</a>'
@@ -376,5 +390,5 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         . '</section></main>';
 
     $html .= icomplyMatrixChromeEnd();
-    return $html;
+    return function_exists('icomplyApplyGasLegalHtml') ? icomplyApplyGasLegalHtml($html) : $html;
 }

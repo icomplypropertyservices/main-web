@@ -137,13 +137,13 @@ require SITE_ROOT . '/includes/header.php';
             </div>
             <div class="lg:col-span-2 space-y-5">
                 <div class="rounded-3xl overflow-hidden border-2 border-zinc-300 shadow-md bg-zinc-200">
-                    <img src="<?= htmlspecialchars($KEYWORD_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> — Icomply Property Services"
+                    <img src="<?= htmlspecialchars($KEYWORD_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars(($SERVICE_SLUG === 'gas-systems' && function_exists('icomplyGasLegalSentence')) ? icomplyGasLegalSentence() : ($KEYWORD_NAME . ' — Icomply Property Services'), ENT_QUOTES, 'UTF-8') ?>"
                          class="w-full h-52 object-cover" loading="lazy"
                          onerror="this.src=$SERVICE_IMAGE">
                     <div class="p-3 bg-[#061828] text-white text-sm font-semibold text-center"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></div>
                 </div>
                 <div class="rounded-3xl overflow-hidden border-2 border-zinc-300 shadow-md bg-zinc-200">
-                    <img src="<?= htmlspecialchars($SERVICE_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> by Icomply"
+                    <img src="<?= htmlspecialchars($SERVICE_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars(($SERVICE_SLUG === 'gas-systems' && function_exists('icomplyGasLegalSentence')) ? icomplyGasLegalSentence() : ($SERVICE_NAME . ' by Icomply'), ENT_QUOTES, 'UTF-8') ?>"
                          class="w-full h-40 object-cover" loading="lazy">
                     <div class="p-3 bg-white text-[#061828] text-sm font-semibold text-center border-t-2 border-zinc-200"><?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> service</div>
                 </div>
@@ -155,8 +155,8 @@ require SITE_ROOT . '/includes/header.php';
 <!-- MANUFACTURERS -->
 <section class="bg-white border-y-2 border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-14">
-        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">Brands we install &amp; service</h2>
-        <p class="mt-2 text-zinc-800 max-w-2xl">Click a manufacturer for products, kits and install quotes related to <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> and <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?>.</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]"><?= $SERVICE_SLUG === 'gas-systems' ? 'Trade brands listed here' : 'Brands we install &amp; service' ?></h2>
+        <p class="mt-2 text-zinc-800 max-w-2xl"><?php if ($SERVICE_SLUG === 'gas-systems'): ?>Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not install these brands.<?php else: ?>Click a manufacturer for products, kits and install quotes related to <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> and <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?>.<?php endif; ?></p>
         <div class="mt-6 flex flex-wrap gap-2"><?= $MANUFACTURER_TAGS ?></div>
     </div>
 </section>

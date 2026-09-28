@@ -97,7 +97,7 @@ function icomplyFooterHtml(): string
   <div class="foot-wrap">
     <div class="foot-nap">
       <div class="foot-brand">{$brand}</div>
-      <p>Property compliance — electrical, fire, gas, water hygiene and asbestos surveys across Greater Manchester and the North West. Quotes are POA until scope is confirmed. Call {$phone}.</p>
+      <p>Property compliance — electrical, fire, water hygiene and asbestos surveys across Greater Manchester and the North West. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not carry out gas work or issue those certificates. Quotes are POA until scope is confirmed. Call {$phone}.</p>
       <p><span class="foot-label">Phone</span> <a href="{$phoneHref}">{$phone}</a></p>
       <p><span class="foot-label">Email</span> <a href="mailto:{$email}">{$email}</a></p>
       <p><span class="foot-label">Address</span> 17 Woodlands Park Road, Offerton, Stockport SK2 5DE</p>

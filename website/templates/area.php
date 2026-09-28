@@ -3,7 +3,7 @@
  * Area hub template. Placeholders: AREA, AREA_SLUG, AREA_URL
  */
 $pageTitle = $AREA . ' Property Compliance Services';
-$metaDesc = $AREA . ' experts for EICR, fire alarms, gas safety, emergency lighting, CCTV and access control. Fast local response from Stockport-based engineers. Free quotes.';
+$metaDesc = $AREA . ' compliance for EICR, fire alarms, emergency lighting, CCTV and access control. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not issue them. POA quotes from Stockport.';
 $metaKeywords = $AREA . ' electrician, ' . $AREA . ' fire alarm installation, ' . $AREA . ' EICR, ' . $AREA . ' gas safety certificate, property compliance ' . $AREA . ', emergency lighting ' . $AREA;
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 
@@ -110,8 +110,8 @@ $schema = [
                     <span class="text-[#ff6b00]"><?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></span>
                 </h1>
                 <p class="mt-6 text-lg text-white/80 max-w-xl">
-                    Electrical, fire alarms, gas safety, emergency lighting, CCTV and access control —
-                    installed, tested and certified for properties in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> and nearby postcodes.
+                    Electrical, fire alarms, emergency lighting, CCTV and access control for properties in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> and nearby postcodes.
+                    Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not issue them.
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get free quote</a>
@@ -123,7 +123,7 @@ $schema = [
                 </div>
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
                     <div><span class="text-white font-semibold text-xl block"><?= count($allServices) ?></span> core services</div>
-                    <div><span class="text-white font-semibold text-xl block">Same-week</span> appointments*</div>
+                    <div><span class="text-white font-semibold text-xl block">Diary</span> appointments*</div>
                     <div><span class="text-white font-semibold text-xl block">Fixed-price</span> quotes</div>
                 </div>
                 <p class="mt-3 text-[11px] text-white/40">*Subject to engineer capacity and site access.</p>
@@ -155,7 +155,7 @@ $schema = [
         <?php
         $trust = [
             ['Local to ' . $AREA, 'Engineers covering ' . $AREA . ' and surrounding postcodes from Stockport'],
-            ['Standards-led', 'BS 5839, BS 5266, BS 7671, gas safety & more'],
+            ['Standards-led', 'BS 5839, BS 5266, BS 7671. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer'],
             ['Full paperwork', 'Certificates and logbooks for landlords, insurers & FM'],
             ['One team', 'Multi-service packages in a single visit schedule'],
         ];
@@ -182,8 +182,9 @@ $schema = [
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
                 Icomply Property Services provides complete property compliance for landlords, facilities managers,
                 care providers and commercial occupiers in <strong><?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></strong>. Whether you need an EICR,
-                fire alarm service, gas safety certificate, emergency lighting test or a full multi-system install,
-                we book local engineers with fixed-price quotes and clear documentation.
+                fire alarm service or emergency lighting test,
+                we book local engineers with quotes and clear documentation.
+                Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not issue them.
             </p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
                 Based in Offerton, Stockport (SK2 5DE), we routinely serve <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> and the wider North West with
@@ -193,7 +194,7 @@ $schema = [
         </div>
         <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
             <h3 class="text-2xl font-semibold tracking-tight"><?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> compliance package</h3>
-            <p class="mt-3 text-white/80">Combine EICR, fire alarms, emergency lighting and gas safety into one visit schedule for landlords and FM teams in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>.</p>
+            <p class="mt-3 text-white/80">Combine EICR, fire alarms and emergency lighting into one visit schedule for landlords and FM teams in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer.</p>
             <ul class="mt-6 space-y-3 text-sm text-white/90">
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Fixed-price multi-service quotes</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Full documentation for audits &amp; insurers</li>
@@ -215,7 +216,7 @@ $schema = [
             </h2>
             <p class="mt-2 text-zinc-600 max-w-2xl">
                 High-intent topics with a dedicated page for <strong><?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></strong>
-                — EICR report, fire risk assessment, gas safety and more.
+                — EICR report, fire risk assessment, and more. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer.
             </p>
         </div>
         <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All guides →</a>

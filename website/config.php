@@ -585,11 +585,17 @@ function getServiceMeta(string $slug = ''): array {
 }
 
 function getServiceBlurb(string $slug, bool $short = false): string {
+    if ($slug === 'gas-systems' && function_exists('icomplyGasServiceBlurb')) {
+        return icomplyGasServiceBlurb($short);
+    }
     $m = getServiceMeta($slug);
     return $short ? (string)($m['short'] ?? $m['blurb'] ?? '') : (string)($m['blurb'] ?? '');
 }
 
 function getServiceStandards(string $slug): string {
+    if ($slug === 'gas-systems' && function_exists('icomplyGasServiceStandards')) {
+        return icomplyGasServiceStandards();
+    }
     return (string)(getServiceMeta($slug)['standards'] ?? '');
 }
 
@@ -825,6 +831,11 @@ function icomplyTradeShopUrl(): string
 function icomplyTradeProductsUrl(): string
 {
     return icomplyTradeShopUrl();
+}
+
+$gasLegalFile = __DIR__ . '/includes/gas-legal.php';
+if (is_file($gasLegalFile)) {
+    require_once $gasLegalFile;
 }
 
 $waFile = __DIR__ . '/includes/water-asbestos.php';

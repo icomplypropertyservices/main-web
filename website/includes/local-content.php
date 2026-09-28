@@ -178,6 +178,7 @@ function icomplyLocalEssay(string $serviceName, string $slug, string $area): str
     $nearby = icomplyNearbyTowns($area, 6);
     $nearbyText = $nearby ? implode(', ', $nearby) : 'other North West towns on our list';
     $authority = trim((string)($p['authority'] ?? ''));
+    $gasTopic = function_exists('icomplyCopyIsGasTopic') && icomplyCopyIsGasTopic($slug, $serviceName);
     $angle = function_exists('service_local_angle')
         ? service_local_angle($slug, $serviceName, $area)
         : "{$serviceName} in {$area} is scoped before any quote.";
@@ -188,7 +189,9 @@ function icomplyLocalEssay(string $serviceName, string $slug, string $area): str
         $authorityLine = "This {$area} page does not name a local authority, because the town profile does not store one. No council contract is claimed for {$area}.";
     }
     $sentences = [
-        "{$serviceName} in {$area} is POA. Call {$phone} and ask for a {$area} quote once property type and access are known.",
+        $gasTopic
+            ? "{$serviceName} in {$area} is not a visit iComply carries out. Call {$phone} for non-gas compliance in {$area}. Price on application."
+            : "{$serviceName} in {$area} is POA. Call {$phone} and ask for a {$area} quote once property type and access are known.",
         "Postcode districts used for {$area}: {$p['districts']}. Regional setting for {$area}: {$p['region']}.",
         "Building mix already recorded for {$area}: {$p['stock']}.",
         "Work this {$area} page is written around: {$p['focus']}.",
@@ -196,7 +199,9 @@ function icomplyLocalEssay(string $serviceName, string $slug, string $area): str
         "Nearby towns we also cover from the {$area} page, all of them already on the North West list: {$nearbyText}.",
         $authorityLine,
         $angle,
-        "A {$area} {$serviceName} visit is quoted only after scope is agreed. There is no catalogue price for {$serviceName} in {$area}.",
+        $gasTopic
+            ? "Any {$serviceName} check in {$area} means landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not carry out that gas work, does not issue the certificate, and is not Gas Safe registered. Non-gas compliance in {$area} is quoted POA. Call {$phone}."
+            : "A {$area} {$serviceName} visit is quoted only after scope is agreed. There is no catalogue price for {$serviceName} in {$area}.",
     ];
     $seed = area_seed($area, 'essay|' . $slug);
     $rot = $seed % count($sentences);
@@ -206,6 +211,9 @@ function icomplyLocalEssay(string $serviceName, string $slug, string $area): str
 
 function service_local_angle(string $slug, string $serviceName, string $area): string {
     $seed = area_seed($area, $slug);
+    if (function_exists('icomplyCopyIsGasTopic') && icomplyCopyIsGasTopic($slug, $serviceName) && function_exists('icomplyGasLocalAngles')) {
+        return pick_seeded(icomplyGasLocalAngles($serviceName, $area), $seed, 0);
+    }
     $angles = [
         'electrical' => [
             "In {$area}, EICR demand is driven by landlord regulations and insurer checks on older consumer units.",
@@ -237,12 +245,11 @@ function service_local_angle(string $slug, string $serviceName, string $area): s
             "Wireless expansions are useful where {$area} buildings cannot take new hard wiring easily.",
             "Handset and panel upgrades restore coverage room-by-room without full rip-outs in {$area}.",
         ],
-        'gas-systems' => [
-            "Landlord gas safety certificates remain a core compliance duty for rented stock in {$area}.",
-            "Boiler servicing and breakdown cover are high demand for {$area} residential portfolios.",
-            "Commercial kitchens and plant rooms around {$area} need planned gas maintenance.",
-            "We prioritise unsafe situations and diary routine CP12-style checks across {$area} postcodes.",
-        ],
+        'gas-systems' => function_exists('icomplyGasLocalAngles')
+            ? icomplyGasLocalAngles($serviceName, $area)
+            : [
+                "Landlord gas safety certificates (CP12) in {$area}, carried out by a Gas Safe registered engineer. iComply does not issue them.",
+            ],
         'intruder-alarm' => [
             "{$area} retail and SME units often upgrade to app-connected hybrid intruder systems.",
             "PIR, door contacts and shock sensors are tailored to {$area} building layouts.",
@@ -337,7 +344,7 @@ function seo_unique_why(string $serviceName, string $area): array {
         "{$serviceName} plus related fire/electrical/security trades under one contractor",
         "Clear scope — fixed-price quotes when survey/photos define the works",
         "Experience with {$p['stock']} typical of {$area}",
-        "Same-week slots often available depending on {$area} diary load",
+        "Diary slots for {$area} depend on access and the published town list",
         "Remedial advice prioritised so {$area} sites pass the next inspection first time where practical",
     ];
     $out = [];

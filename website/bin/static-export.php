@@ -393,6 +393,9 @@ function icomplyRenderExportRoute(string $path): array
         $area = function_exists('areaFromSlug') ? areaFromSlug($m[2]) : $m[2];
         $html = icomplyRenderKeywordTownHtml($m[1], (string)($area ?: $m[2]));
         if ($html !== '' && icomplyLooksLikeHtml($html)) {
+            if (function_exists('icomplyApplyGasLegalHtml')) {
+                $html = icomplyApplyGasLegalHtml($html);
+            }
             return ['html' => $html, 'status' => 200];
         }
     }
@@ -402,6 +405,9 @@ function icomplyRenderExportRoute(string $path): array
         $area = function_exists('areaFromSlug') ? areaFromSlug($m[2]) : $m[2];
         $html = icomplyRenderServiceAreaHtml($m[1], (string)($area ?: $m[2]));
         if ($html !== '' && icomplyLooksLikeHtml($html)) {
+            if (function_exists('icomplyApplyGasLegalHtml')) {
+                $html = icomplyApplyGasLegalHtml($html);
+            }
             return ['html' => $html, 'status' => 200];
         }
     }
@@ -433,6 +439,10 @@ function icomplyRenderRoute(string $path): array
         ob_end_clean();
         fwrite(STDERR, "Render error {$path}: " . $e->getMessage() . "\n");
         return ['html' => '', 'status' => 500];
+    }
+
+    if ($html !== '' && function_exists('icomplyApplyGasLegalHtml')) {
+        $html = icomplyApplyGasLegalHtml($html);
     }
 
     $status = (int)http_response_code();
@@ -570,7 +580,16 @@ function icomplyCopyDir(string $src, string $dest): void
         if (!is_dir($targetDir) && !mkdir($targetDir, 0755, true) && !is_dir($targetDir)) {
             throw new RuntimeException('Cannot mkdir ' . $targetDir);
         }
-        copy($file->getPathname(), $target);
+        if (
+            str_contains($target, '/shop/')
+            && preg_match('/\.(html|php)$/i', $target)
+            && function_exists('icomplyApplyGasLegalHtml')
+        ) {
+            $raw = (string)file_get_contents($file->getPathname());
+            file_put_contents($target, icomplyApplyGasLegalHtml($raw));
+        } else {
+            copy($file->getPathname(), $target);
+        }
     }
 }
 

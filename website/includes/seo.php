@@ -41,7 +41,7 @@ function service_standards(string $slug): array {
         'emergency-lighting' => ['BS 5266', 'maintained / non-maintained', 'exit signage', 'duration testing', 'self-test LED'],
         'aov-air-handling' => ['BS 9991 guidance', 'smoke ventilation', 'AOV controls', 'smoke shafts', 'fire strategy support'],
         'nurse-call' => ['HTM 08-03 aligned', 'care home systems', 'wireless / wired', 'panel upgrades', 'handset repair'],
-        'gas-systems' => ['gas safety certificates (CP12)', 'landlord gas safety', 'CP12 / CP44', 'boiler servicing', 'commercial gas'],
+        'gas-systems' => ['landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer', 'iComply does not issue CP12', 'no Gas Safe registration'],
         'intruder-alarm' => ['BS 4737 / PD 6662 practice', 'wired & wireless', 'PIR detection', 'app control', 'ARC-ready'],
         'cctv' => ['IP / HD CCTV', 'NVR recording', 'remote viewing', 'retail & warehouse', 'GDPR-aware install'],
         'access-control' => ['card / fob / biometric', 'multi-door control', 'audit trails', 'time zones', 'fire door release'],
@@ -55,6 +55,9 @@ function service_standards(string $slug): array {
 
 /** Long-form intro paragraph for service×area pages (unique enough via placeholders) */
 function seo_combo_intro(string $serviceName, string $slug, string $area): string {
+    if (function_exists('icomplyCopyIsGasTopic') && icomplyCopyIsGasTopic($slug, $serviceName) && function_exists('icomplyGasLegalSentence')) {
+        return icomplyGasLegalSentence() . ' ' . $serviceName . ' in ' . $area . ' is not carried out by iComply. Non-gas compliance in ' . $area . ' is quoted POA.';
+    }
     $standards = implode(', ', array_slice(service_standards($slug), 0, 3));
     return "Looking for professional {$serviceName} in {$area}? Icomply Property Services provides design, installation, "
         . "maintenance and certification for landlords, managing agents, facilities teams and businesses across {$area} "
@@ -115,9 +118,9 @@ function service_faqs(string $slug, string $serviceName, string $area = ''): arr
             ['q' => "Do you offer maintenance contracts?", 'a' => "Yes. Planned visits keep systems reliable and create an audit trail for CQC and internal compliance teams."],
         ],
         'gas-systems' => [
-            ['q' => "Do you issue landlord gas safety certificates{$loc}?", 'a' => "Yes. Gas safety checks and certification for rented properties{$loc}, with clear records for landlords and agents."],
-            ['q' => "Can you service commercial boilers?", 'a' => "We handle domestic and many commercial gas servicing needs — tell us plant type and access for an accurate quote."],
-            ['q' => "How quickly can you attend{$loc}?", 'a' => "Routine services are diary-booked; urgent unsafe situations are prioritised. Call us with the postcode for the next slot."],
+            ['q' => "Does iComply issue landlord gas safety certificates{$loc}?", 'a' => "No. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not carry out gas work or issue CP12 or gas safety certificates."],
+            ['q' => "Can iComply service boilers{$loc}?", 'a' => "No. Boiler installation, servicing and repair are gas work. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply is not Gas Safe registered."],
+            ['q' => "What can iComply quote{$loc}?", 'a' => "Electrical, fire, water hygiene and asbestos work is quoted POA. Gas work stays with a Gas Safe registered engineer."],
         ],
         'intruder-alarm' => [
             ['q' => "Do you install wireless alarms{$loc}?", 'a' => "Yes — wireless and hybrid systems for homes and businesses{$loc}, including app control options."],

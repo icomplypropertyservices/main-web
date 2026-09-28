@@ -56,7 +56,7 @@ $extraCareServices = [
     'intercoms' => 'Staff and multi-area intercom systems',
     'intruder-alarm' => 'Wired & wireless intruder systems with monitoring options',
     'electrical' => 'EICR programmes, consumer units and electrical remedials',
-    'gas-systems' => 'Gas safety checks and commercial / landlord certs',
+    'gas-systems' => 'Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not issue them.',
     'aov-air-handling' => 'Smoke vents, AOV panels & air-handling controls',
 ];
 

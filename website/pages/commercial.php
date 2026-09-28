@@ -68,7 +68,7 @@ $extraServices = [
     'intruder-alarm' => 'PD 6662 / BS EN 50131 wired and wireless systems with monitoring options.',
     'door-entry' => 'Video and audio door entry for multi-tenant commercial blocks.',
     'intercoms' => 'Master/substation and commercial intercom systems.',
-    'gas-systems' => 'Commercial gas, landlord certs and safety checks for mixed portfolios.',
+    'gas-systems' => 'Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not issue them.',
 ];
 
 $contractFeatures = [

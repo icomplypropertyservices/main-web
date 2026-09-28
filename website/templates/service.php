@@ -53,6 +53,15 @@ $blurb = getServiceBlurb($serviceSlug);
 $standards = getServiceStandards($serviceSlug);
 $faqs = $serviceFaqs[$serviceSlug] ?? $serviceFaqs['default'];
 $svcCopy = function_exists('waterAsbestosServiceCopy') ? waterAsbestosServiceCopy($serviceSlug) : null;
+if ($serviceSlug === 'gas-systems' && function_exists('icomplyGasServiceHubCopy')) {
+    $gasHub = icomplyGasServiceHubCopy();
+    $pageTitle = $gasHub['title'];
+    $metaDesc = $gasHub['meta'];
+    $blurb = $gasHub['blurb'];
+    $standards = $gasHub['standards'];
+    $faqs = $gasHub['faqs'];
+    $svcCopy = $gasHub['copy'];
+}
 
 $popularTowns = array_values(array_filter(
     ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool', 'Bury', 'Sale', 'Altrincham', 'Macclesfield', 'Burnley', 'Blackburn', 'Warrington', 'St Helens'],
@@ -96,7 +105,9 @@ $schema = [
             '@type' => 'Service',
             '@id' => $canonicalUrl . '#service',
             'name' => $serviceName . ' Services',
-            'alternateName' => $serviceName . ' installation, maintenance and certification',
+            'alternateName' => $serviceSlug === 'gas-systems'
+                ? 'Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer'
+                : $serviceName . ' installation, maintenance and certification',
             'description' => $metaDesc,
             'url' => $canonicalUrl,
             'image' => $ogImage,
@@ -207,7 +218,7 @@ $schema = [
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
                 <img src="<?= htmlspecialchars(serviceImageUrl($SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>"
-                     alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> by Icomply Property Services"
+                     alt="<?= htmlspecialchars($serviceSlug === 'gas-systems' && function_exists('icomplyGasLegalSentence') ? icomplyGasLegalSentence() : ($serviceName . ' by Icomply Property Services'), ENT_QUOTES, 'UTF-8') ?>"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
                      loading="eager"
                      onerror="this.style.display='none'">
@@ -329,8 +340,8 @@ $schema = [
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Manufacturers</div>
-                <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Brands we install &amp; service</h2>
-                <p class="mt-2 text-zinc-600 max-w-2xl">Looking for your exact panel brand? We support major <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturers across the North West.</p>
+                <h2 class="text-3xl font-semibold tracking-tight text-black mt-2"><?= $serviceSlug === 'gas-systems' ? 'Trade brands listed here' : 'Brands we install &amp; service' ?></h2>
+                <p class="mt-2 text-zinc-600 max-w-2xl"><?= $serviceSlug === 'gas-systems' ? 'Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not install or service these brands.' : ('Looking for your exact panel brand? We support major ' . htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') . ' manufacturers across the North West.') ?></p>
             </div>
             <a href="<?= htmlspecialchars(function_exists('icomplyTradeShopUrl') ? icomplyTradeShopUrl() : url('/shop/index.php'), ENT_QUOTES, 'UTF-8') ?>" class="text-sm font-semibold text-[#ff6b00]">Browse trade shop →</a>
         </div>
