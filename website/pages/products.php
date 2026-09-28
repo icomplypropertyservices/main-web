@@ -17,5 +17,5 @@ $aovService = url('/pages/services/aov-air-handling.php');
 if (session_status() !== PHP_SESSION_ACTIVE) { session_start(); }
 if (empty($_SESSION['csrf'])) { $_SESSION['csrf'] = bin2hex(random_bytes(16)); }
 require SITE_ROOT . '/includes/header.php';
-require_once SITE_ROOT . '/includes/products-hub-body.php';
+require SITE_ROOT . '/includes/products-hub-body.php';
 require SITE_ROOT . '/includes/footer.php';
