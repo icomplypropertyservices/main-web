@@ -404,6 +404,81 @@ if (!str_contains($headerFile, '/shop/assets/*.css')) {
     echo "[PASS] _headers has /shop/assets/*.css\n";
 }
 
+/**
+ * Every HTML page canonical must be that page. /pages/products may point at /products.
+ */
+$canonBad = 0;
+$canonSeen = 0;
+$canonIter = new RecursiveIteratorIterator(
+    new RecursiveDirectoryIterator($dist, FilesystemIterator::SKIP_DOTS)
+);
+foreach ($canonIter as $canonFile) {
+    if (!$canonFile->isFile()) {
+        continue;
+    }
+    $ext = strtolower($canonFile->getExtension());
+    if (!in_array($ext, ['php', 'html', 'htm'], true)) {
+        continue;
+    }
+    $rel = str_replace('\\', '/', substr($canonFile->getPathname(), strlen($dist) + 1));
+    if (str_starts_with($rel, 'assets/')) {
+        continue;
+    }
+    $page = '/' . $rel;
+    if ($rel === 'index.html' || $rel === 'index.php') {
+        $page = '/';
+    } elseif (str_ends_with($rel, '/index.html') || str_ends_with($rel, '/index.php')) {
+        $page = '/' . substr($rel, 0, (int)strrpos($rel, '/index.'));
+        if (str_starts_with($page, '/shop') && !str_ends_with($page, '/')) {
+            $page .= '/';
+        }
+    } elseif ($rel === '404.html') {
+        $page = '/404';
+    } elseif (str_ends_with($rel, '.php')) {
+        $page = '/' . substr($rel, 0, -4);
+    }
+    $head = (string)file_get_contents($canonFile->getPathname(), false, null, 0, 12000);
+    if (!preg_match('/<link[^>]+rel=["\']canonical["\'][^>]*>/i', $head, $tag)) {
+        $canonBad++;
+        if ($canonBad <= 8) {
+            echo "[FAIL] missing canonical on {$page}\n";
+        }
+        continue;
+    }
+    if (!preg_match('/href=["\']([^"\']+)["\']/', $tag[0], $href)) {
+        $canonBad++;
+        if ($canonBad <= 8) {
+            echo "[FAIL] canonical without href on {$page}\n";
+        }
+        continue;
+    }
+    $canonPath = (string)(parse_url($href[1], PHP_URL_PATH) ?: '/');
+    if (str_ends_with($canonPath, '.php')) {
+        $canonPath = substr($canonPath, 0, -4) ?: '/';
+    }
+    if (str_ends_with($canonPath, '/index')) {
+        $canonPath = substr($canonPath, 0, -6) ?: '/';
+    }
+    if ($canonPath !== '/' && str_ends_with($canonPath, '/') && !str_starts_with($canonPath, '/shop')) {
+        $canonPath = rtrim($canonPath, '/');
+    }
+    $canonSeen++;
+    $allowed = $page === $canonPath || ($page === '/pages/products' && $canonPath === '/products');
+    if (!$allowed) {
+        $canonBad++;
+        if ($canonBad <= 8) {
+            echo "[FAIL] canonical {$canonPath} is not {$page}\n";
+        }
+    }
+}
+if ($canonBad === 0 && $canonSeen > 1000) {
+    $pass++;
+    echo "[PASS] canonicals are self-referencing ({$canonSeen} pages; /pages/products → /products only)\n";
+} else {
+    $fail++;
+    echo "[FAIL] canonical mismatches={$canonBad} checked={$canonSeen}\n";
+}
+
 echo str_repeat('=', 56) . "\n";
 echo "PASS={$pass} FAIL={$fail}\n";
 exit($fail > 0 ? 1 : 0);

@@ -22,7 +22,11 @@ $pageTitle = 'Keyword Guides | Fire Safety, Professional & Construction Topics';
 $metaDesc = 'Browse ' . count($keywords) . '+ guides covering fire risk assessments, fire safety systems, electrical, security, landlord compliance, kitchens, bathrooms, renovation and construction across the North West.';
 $metaKeywords = 'fire risk assessment guide, kitchen fitting guide, EICR, fire alarm installation, bathroom renovation, plastering, landlord compliance North West';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
-$canonicalUrl = url('/pages/keywords');
+// /pages/keywords includes this file. /pages/keywords-hub is the same document at its own URL.
+$reqPath = (string)(parse_url((string)($_SERVER['REQUEST_URI'] ?? ''), PHP_URL_PATH) ?: '');
+$canonicalUrl = str_contains($reqPath, '/pages/keywords-hub')
+    ? url('/pages/keywords-hub.php')
+    : url('/pages/keywords');
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
