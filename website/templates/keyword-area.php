@@ -148,7 +148,7 @@ $h = static function ($s): string {
 <section id="quote" class="bg-zinc-100 border-t-2 border-zinc-300">
     <div class="max-w-3xl mx-auto px-6 py-14">
         <h2 class="text-3xl font-bold text-[#061828] text-center"><?= $h($KEYWORD_NAME) ?> in <?= $h($AREA) ?></h2>
-        <form action="<?= url('/contact.php') ?>" method="POST" class="mt-8 bg-white border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4 shadow-md">
+        <?= icomplyQuoteFormOpen('mt-8 bg-white border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4 shadow-md') ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid md:grid-cols-2 gap-4">
                 <input type="text" name="name" placeholder="Full name" required class="w-full border-2 border-zinc-300 px-4 py-3 rounded-xl font-medium text-zinc-900">

@@ -356,7 +356,7 @@ $contactSchema = [
                         <?= htmlspecialchars(implode(' ', $errors), ENT_QUOTES, 'UTF-8') ?>
                     </div>
                 <?php endif; ?>
-                <form method="POST" action="<?= url('/contact.php') ?>" class="bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
+                <?= icomplyQuoteFormOpen('bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
                     <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
                     <input type="hidden" name="gclid" value="<?= $gclidPrefill ?>">
                     <input type="hidden" name="fbclid" value="<?= $fbclidPrefill ?>">

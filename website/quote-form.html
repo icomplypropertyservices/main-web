@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <title>Quote form (Netlify registration)</title>
+  <meta name="robots" content="noindex">
+</head>
+<body>
+  <!-- Netlify parses .html at deploy. Pages are published as .php, so this file registers the quote form. -->
+  <form name="quote" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="quote">
+    <p hidden>
+      <label>Leave this field blank <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+    </p>
+    <input type="hidden" name="csrf">
+    <input type="hidden" name="gclid">
+    <input type="hidden" name="fbclid">
+    <input type="text" name="name">
+    <input type="email" name="email">
+    <input type="tel" name="phone">
+    <input type="text" name="service">
+    <textarea name="message"></textarea>
+  </form>
+</body>
+</html>

@@ -384,7 +384,7 @@ echo testimonialsSectionHtml();
             <p class="mt-3 text-zinc-600">We aim to respond within 2 hours on business days. All quotes are fixed-price after scope is agreed.</p>
         </div>
 
-        <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm" aria-label="Free quote form">
+        <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm', 'aria-label="Free quote form"') ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <input type="hidden" name="gclid" value="<?= htmlspecialchars($_GET['gclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
             <input type="hidden" name="fbclid" value="<?= htmlspecialchars($_GET['fbclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">

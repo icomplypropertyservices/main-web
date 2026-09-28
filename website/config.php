@@ -225,6 +225,25 @@ function site_url(string $path = ''): string {
     return url('/' . ltrim($path, '/'));
 }
 
+/**
+ * Public quote form for static Netlify (no PHP).
+ * Customer fields stay in the caller. Posts to /thank-you, which is a 200 rewrite.
+ * $extra is raw attributes already safe to print (aria-label, novalidate).
+ */
+function icomplyQuoteFormOpen(string $class = '', string $extra = ''): string
+{
+    $attrs = 'name="quote" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field"';
+    if ($class !== '') {
+        $attrs .= ' class="' . htmlspecialchars($class, ENT_QUOTES, 'UTF-8') . '"';
+    }
+    if ($extra !== '') {
+        $attrs .= ' ' . $extra;
+    }
+    return '<form ' . $attrs . '>'
+        . '<input type="hidden" name="form-name" value="quote">'
+        . '<p hidden><label>Leave this field blank <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>';
+}
+
 /** Core services (data/services.json) + any admin-added customs */
 function getServices(): array {
     $base = loadJsonData('services', []);

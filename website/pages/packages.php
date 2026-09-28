@@ -329,7 +329,7 @@ require SITE_ROOT . '/includes/header.php';
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request a package quote</h2>
             <p class="mt-3 text-zinc-600">Tell us which package and your postcode — we’ll return a fixed-price proposal after scope is agreed. No obligation.</p>
         </div>
-        <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
+        <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <input type="hidden" name="gclid" value="<?= htmlspecialchars($_GET['gclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
             <input type="hidden" name="fbclid" value="<?= htmlspecialchars($_GET['fbclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">

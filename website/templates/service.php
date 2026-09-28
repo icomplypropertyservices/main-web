@@ -551,7 +551,7 @@ echo testimonialsSectionHtml();
             </h2>
             <p class="mt-3 text-zinc-600"><?= htmlspecialchars((string)($svcCopy['cta_line'] ?? 'Tell us the postcode, property type and any panel brand — we aim to respond within 2 hours on business days.'), ENT_QUOTES, 'UTF-8') ?></p>
         </div>
-        <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
+        <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input type="text" name="name" placeholder="Full name" required maxlength="120" class="w-full border px-5 py-3.5 rounded-2xl">

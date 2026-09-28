@@ -13,7 +13,6 @@ if (empty($_SESSION['csrf'])) {
     $_SESSION['csrf'] = bin2hex(random_bytes(16));
 }
 $services = $services ?? getServices();
-$formAction = $formAction ?? url('/contact.php');
 $selectedService = $selectedService ?? '';
 $heading = $heading ?? 'Request your free quote';
 $sub = $sub ?? 'We aim to respond within 2 hours on business days.';
@@ -26,7 +25,7 @@ $showHeading = $showHeading ?? true;
     <p class="mt-3 text-zinc-600"><?= htmlspecialchars($sub, ENT_QUOTES, 'UTF-8') ?></p>
 </div>
 <?php endif; ?>
-<form action="<?= htmlspecialchars($formAction, ENT_QUOTES, 'UTF-8') ?>" method="POST" class="js-quote-form bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm" novalidate>
+<?= icomplyQuoteFormOpen('js-quote-form bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm', 'novalidate') ?>
     <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
     <input type="hidden" name="gclid" value="<?= htmlspecialchars($_GET['gclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
     <input type="hidden" name="fbclid" value="<?= htmlspecialchars($_GET['fbclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
