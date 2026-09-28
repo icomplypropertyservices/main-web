@@ -259,7 +259,7 @@ function shopifyCollectionCardHtml(array $collection): string {
     return <<<HTML
 <a id="collection-{$id}" href="{$href}" class="shop-collection-card group block bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition">
   <div class="relative h-40 overflow-hidden bg-zinc-100">
-    <img src="{$img}" alt="{$title} — Icomply Property Services" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" onerror="this.src='{$fallback}'">
+    <img src="{$img}" alt="{$title} — iComply Property Services" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" onerror="this.src='{$fallback}'">
     <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
     <div class="absolute bottom-3 left-4 right-4 text-white font-semibold text-lg">{$title}</div>
   </div>

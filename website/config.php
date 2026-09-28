@@ -41,7 +41,8 @@ $siteDefaults = [
     'SOCIAL_TWITTER' => 'https://twitter.com/icomplyps',
     'SOCIAL_YOUTUBE' => '',
     'SOCIAL_TIKTOK' => '',
-    'SOCIAL_GOOGLE' => 'https://g.page/icomply-property-services',
+    // No verified Google Business Profile yet — leave empty. Do not use a g.page search link.
+    'SOCIAL_GOOGLE' => '',
 ];
 
 // Environment overrides (Vercel Project → Settings → Environment Variables)
@@ -82,7 +83,7 @@ if ($isVercel || $isNetlify || preg_match('/icomplypropertyservices\.co\.uk$/i',
     if ($host === '' || str_contains($host, 'localhost')) {
         $host = 'icomplypropertyservices.co.uk';
     }
-    // Canonical host: apex (www → apex redirect in vercel.json)
+    // Canonical host: apex (www → apex redirect in netlify.toml)
     if (strcasecmp($host, 'www.icomplypropertyservices.co.uk') === 0) {
         $host = 'icomplypropertyservices.co.uk';
     }

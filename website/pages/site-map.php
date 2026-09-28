@@ -5,9 +5,9 @@
 require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/share.php';
 
-$pageTitle = 'Site Map | Icomply Property Services';
-$metaDesc = 'Browse the Icomply site map — fire safety, professional and construction services, popular North West areas, manufacturers, keyword guides and XML sitemaps.';
-$metaKeywords = 'Icomply site map, fire risk assessment, kitchen fitting, property compliance, North West areas, EICR guides';
+$pageTitle = 'Site Map | iComply Property Services';
+$metaDesc = 'Browse the iComply site map — fire safety, professional and construction services, popular North West areas, manufacturers, keyword guides and XML sitemaps.';
+$metaKeywords = 'iComply site map, fire risk assessment, kitchen fitting, property compliance, North West areas, EICR guides';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/site-map.php');
 

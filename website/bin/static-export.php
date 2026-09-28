@@ -93,7 +93,7 @@ $log = static function (string $msg): void {
     fwrite(STDERR, $msg);
 };
 
-$log("Icomply static export (Netlify pre-render)\n");
+$log("iComply static export (Netlify pre-render)\n");
 $log("SITE_URL=" . SITE_URL . "\n");
 $log("dist={$dist}\n");
 $log($full ? "mode=full (core + hubs + keywords + service×area)\n" : "mode=default (core + hubs + keywords)\n");
