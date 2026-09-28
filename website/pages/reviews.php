@@ -169,6 +169,7 @@ $schema = [
                 defined('SOCIAL_INSTAGRAM') ? SOCIAL_INSTAGRAM : '',
                 defined('SOCIAL_LINKEDIN') ? SOCIAL_LINKEDIN : '',
                 defined('SOCIAL_TWITTER') ? SOCIAL_TWITTER : '',
+                defined('SOCIAL_GOOGLE') ? SOCIAL_GOOGLE : '',
             ])),
         ],
         [
@@ -348,7 +349,6 @@ require SITE_ROOT . '/includes/header.php';
                     If we’ve completed an EICR, fire alarm service, gas certificate, CCTV install or any other job for you,
                     a Google review is the best way to share that experience.
                 </p>
-                <p class="mt-6 text-sm text-zinc-700">A public Google listing is not linked here yet. Call or message the team with feedback in the meantime.</p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
                        class="px-8 py-4 rounded-2xl bg-[#0B1F3A] text-white font-semibold hover:bg-[#ff6b00] transition">

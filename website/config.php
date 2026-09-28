@@ -41,8 +41,7 @@ $siteDefaults = [
     'SOCIAL_TWITTER' => 'https://twitter.com/icomplyps',
     'SOCIAL_YOUTUBE' => '',
     'SOCIAL_TIKTOK' => '',
-    // No verified Google Business Profile yet — leave empty. Do not use a g.page search link.
-    'SOCIAL_GOOGLE' => '',
+    'SOCIAL_GOOGLE' => 'https://www.google.com/maps/place/iComply+Property+Services/@53.4722454,-2.2234628,12z/data=!3m1!4b1!4m6!3m5!1s0x23f1a3169673630b:0xf80a415364a6510a!8m2!3d53.4722454!4d-2.2234628!16s%2Fg%2F11nr2vwl8z',
 ];
 
 // Environment overrides (Vercel Project → Settings → Environment Variables)

@@ -290,9 +290,10 @@ function organization_schema(): array {
             'postalCode' => 'SK2 5DE',
             'addressCountry' => 'GB',
         ],
-        'sameAs' => [
+        'sameAs' => array_values(array_filter([
+            defined('SOCIAL_GOOGLE') ? SOCIAL_GOOGLE : '',
             'https://wa.me/' . WHATSAPP,
-        ],
+        ])),
     ];
 }
 
