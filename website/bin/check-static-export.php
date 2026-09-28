@@ -47,8 +47,6 @@ $needHtml = [
     '/pages/keywords/asbestos-survey' => ['pages/keywords/asbestos-survey.php', ['Asbestos', '<!DOCTYPE']],
     '/pages/keywords/legionella-risk-assessment/stockport' => ['pages/keywords/legionella-risk-assessment/stockport.php', ['Legionella', 'Stockport', '<!DOCTYPE']],
     '/pages/keywords/asbestos-survey/manchester' => ['pages/keywords/asbestos-survey/manchester.php', ['Asbestos', 'Manchester', '<!DOCTYPE']],
-    '/pages/legionella-risk-assessment/stockport' => ['pages/legionella-risk-assessment/stockport.php', ['Legionella', 'Stockport', '<!DOCTYPE']],
-    '/pages/asbestos-survey/manchester' => ['pages/asbestos-survey/manchester.php', ['Asbestos', 'Manchester', '<!DOCTYPE']],
     '/shop' => ['shop/index.html', ['Fire', 'Electrical', 'Security', 'Gas', 'shop.icomplypropertyservices.co.uk', '<!DOCTYPE']],
     '/shop/fire' => ['shop/fire/index.html', ['Fire', '<!DOCTYPE']],
     '/shop/electrical' => ['shop/electrical/index.html', ['Electrical', '<!DOCTYPE']],
@@ -284,6 +282,27 @@ if (preg_match('#^/shop\\s+/pages/packages#m', $redirects)) {
 } else {
     $pass++;
     echo "[PASS] _redirects does not send /shop to packages\n";
+}
+foreach ([
+    '/pages/keywords/eicr/:town' => '/pages/keywords/eicr',
+    '/pages/electrical/:town' => '/pages/services/electrical',
+    '/pages/asbestos-survey/:town' => '/pages/services/asbestos-survey',
+    '/pages/legionella-risk-assessment/:town' => '/pages/services/legionella-risk-assessment',
+] as $from => $to) {
+    if (preg_match('#^' . preg_quote($from, '#') . '\\s+' . preg_quote($to, '#') . '\\s+301!#m', $redirects)) {
+        $pass++;
+        echo "[PASS] legacy 301 {$from} → {$to}\n";
+    } else {
+        $fail++;
+        echo "[FAIL] legacy 301 missing {$from} → {$to}\n";
+    }
+}
+if (preg_match('#^/\\*\\s+/\\s+301#m', $redirects) || preg_match('#^/\\s+/\\s+301#m', $redirects)) {
+    $fail++;
+    echo "[FAIL] _redirects soft-404s to the homepage\n";
+} else {
+    $pass++;
+    echo "[PASS] _redirects has no homepage soft-404\n";
 }
 $sitemapDist = is_file($dist . '/sitemap.xml') ? (string)file_get_contents($dist . '/sitemap.xml') : '';
 $productsCanonical = 'https://icomplypropertyservices.co.uk/products';
