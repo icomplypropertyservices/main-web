@@ -25,6 +25,7 @@ $needHtml = [
     '/privacy' => ['privacy.php', ['Privacy', '<!DOCTYPE']],
     '/terms' => ['terms.php', ['Terms', '<!DOCTYPE']],
     '/contact' => ['contact.php', ['Contact', 'page-hero', '#0B1F3A', '<!DOCTYPE']],
+    '/become-a-subcontractor' => ['become-a-subcontractor.php', ['Are you a highly skilled tradesperson', 'subcontractor-onboarding', 'WebPage', 'iComply Property Services', '<!DOCTYPE']],
     '/pages/about' => ['pages/about.php', ['About', '<!DOCTYPE']],
     '/pages/areas' => ['pages/areas.php', ['Areas', '<!DOCTYPE']],
     '/pages/manufacturers' => ['pages/manufacturers.php', ['Manufacturer', '<!DOCTYPE']],
@@ -101,6 +102,23 @@ foreach ($needHtml as $url => $spec) {
     }
 }
 
+$subPage = is_file($dist . '/become-a-subcontractor.php') ? (string)file_get_contents($dist . '/become-a-subcontractor.php') : '';
+$subReg = is_file($dist . '/subcontractor-onboarding-form.html') ? (string)file_get_contents($dist . '/subcontractor-onboarding-form.html') : '';
+$subFields = ['name="subcontractor-onboarding"', 'name="form-name"', 'name="business_type"', 'value="company"', 'value="sole_trader"', 'name="company_name"', 'name="trades"', 'name="qualifications"', 'name="insured"', 'name="insurance_expiry"', 'name="coverage_postcodes"', 'name="travel_radius"', 'name="phone"', 'name="email"', 'name="availability"', 'name="documents"', 'name="gdpr_consent"', 'netlify-honeypot="bot-field"', 'enctype="multipart/form-data"', 'action="/thank-you"', 'data-netlify="true"'];
+$subOk = $subPage !== '' && $subReg !== '' && !str_contains($subPage, 'JobPosting') && !str_contains($subReg, 'JobPosting');
+foreach ($subFields as $field) {
+    if (!str_contains($subPage, $field) || !str_contains($subReg, $field)) {
+        $subOk = false;
+        echo "[FAIL] subcontractor form missing {$field}\n";
+    }
+}
+if ($subOk) {
+    $pass++;
+    echo "[PASS] subcontractor form fields match the Netlify HTML registration file\n";
+} else {
+    $fail++;
+}
+
 $mustExist = [
     'assets',
     'assets/css/site.css',
@@ -121,6 +139,7 @@ $mustExist = [
     'robots.txt',
     'sitemap.xml',
     'favicon.ico',
+    'subcontractor-onboarding-form.html',
     '_redirects',
     '_headers',
     '404.html',

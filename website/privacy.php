@@ -9,7 +9,7 @@ $pageTitle = 'Privacy Policy | How We Use Your Data';
 $metaDesc = 'Privacy policy for iComply Property Services (Stockport). How we collect, use and protect personal data from enquiries, quotes, compliance work and Shopify shop orders. UK GDPR rights explained.';
 $metaKeywords = 'iComply privacy policy, data protection, UK GDPR, Stockport property compliance, Shopify privacy';
 $canonicalUrl = url('/privacy.php');
-$updated = '12 July 2026';
+$updated = '28 September 2026';
 
 require SITE_ROOT . '/includes/header.php';
 ?>
@@ -56,6 +56,7 @@ require SITE_ROOT . '/includes/header.php';
                 'cookies' => 'Cookies',
                 'shopify' => 'Shopify store',
                 'retention' => 'Retention',
+                'subcontractor-applicants' => 'Subcontractor applicants',
                 'your-rights' => 'Your rights',
                 'security' => 'Security',
                 'changes' => 'Changes',
@@ -164,6 +165,31 @@ require SITE_ROOT . '/includes/header.php';
             <p class="text-zinc-700">
                 We keep enquiry and job records for as long as needed to provide services, handle warranties or claims,
                 and meet legal retention periods, then delete or anonymise where practicable.
+            </p>
+        </article>
+
+        <article id="subcontractor-applicants" class="bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-semibold tracking-tight mb-3">Subcontractor applicants</h2>
+            <p class="text-zinc-700">
+                If you apply on our become-a-subcontractor page, we collect the fields on that form and any documents
+                you upload: name, business type, company name, trades, qualifications and cards, whether you hold
+                public liability insurance, insurance expiry, coverage postcodes, travel radius, phone, email and
+                availability.
+            </p>
+            <p class="text-zinc-700 mt-3">
+                We use that information to vet applications and to assign work.
+            </p>
+            <p class="text-zinc-700 mt-3">
+                The lawful basis is steps taken at your request prior to entering a contract, and our legitimate
+                interests in selecting tradespeople and keeping a record of who we work with.
+            </p>
+            <p class="text-zinc-700 mt-3">
+                We keep these records while you are actively working with us. We delete unsuccessful applications
+                after 12 months.
+            </p>
+            <p class="text-zinc-700 mt-3">
+                Your access, correction and deletion rights are described below. Contact
+                <a class="text-[#ff6b00] font-medium" href="mailto:<?= htmlspecialchars(EMAIL, ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars(EMAIL, ENT_QUOTES, 'UTF-8') ?></a>.
             </p>
         </article>
 

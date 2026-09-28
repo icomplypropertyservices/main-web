@@ -75,6 +75,7 @@ $required = [
     '/pages/areas/manchester</loc>',
     '/pages/areas/stockport</loc>',
     '/pages/manufacturers/abb</loc>',
+    '/become-a-subcontractor</loc>',
     '/privacy</loc>',
     '/terms</loc>',
 ];

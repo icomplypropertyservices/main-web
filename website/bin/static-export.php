@@ -133,6 +133,7 @@ $required = [
     '/privacy',
     '/terms',
     '/contact',
+    '/become-a-subcontractor',
     '/pages/about',
     '/pages/areas',
     '/pages/manufacturers',
@@ -287,6 +288,7 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         '/privacy',
         '/terms',
         '/contact',
+        '/become-a-subcontractor',
         '/thank-you',
         '/products',
     ];
@@ -532,11 +534,22 @@ function icomplyCopyStaticAssets(string $websiteRoot, string $repoRoot, string $
         'favicon.ico',
         'lead-popup-form.html',
         'quote-form.html',
+        'subcontractor-onboarding-form.html',
     ];
     foreach ($copyFiles as $name) {
         $src = $websiteRoot . '/' . $name;
         if (is_file($src)) {
             copy($src, $dist . '/' . $name);
+        }
+    }
+    $subForm = $websiteRoot . '/includes/subcontractor-form.php';
+    if (is_file($subForm)) {
+        require_once $subForm;
+        if (function_exists('icomplySubcontractorFormRegistrationDocument')) {
+            file_put_contents(
+                $dist . '/subcontractor-onboarding-form.html',
+                icomplySubcontractorFormRegistrationDocument()
+            );
         }
     }
 
@@ -700,6 +713,8 @@ function icomplyPrettyUrlRedirects(): string
 /terms/                  /terms.php                   200!
 /contact                 /contact.php                 200!
 /contact/                /contact.php                 200!
+/become-a-subcontractor  /become-a-subcontractor.php  200!
+/become-a-subcontractor/ /become-a-subcontractor.php  200!
 /pages/about             /pages/about.php             200!
 /pages/about/            /pages/about.php             200!
 /pages/areas             /pages/areas.php             200!
@@ -819,6 +834,10 @@ function icomplyPrettyUrlHeaders(): string
   X-Content-Type-Options: nosniff
 
 /contact
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/become-a-subcontractor
   Content-Type: text/html; charset=utf-8
   X-Content-Type-Options: nosniff
 

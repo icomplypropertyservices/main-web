@@ -15,6 +15,7 @@ function icomplyMegaHeaderHtml(): string
     $areaHub = icomplyNavH(url('/pages/areas/index.php'));
     $contact = icomplyNavH(url('/contact.php'));
     $products = icomplyNavH(url('/products.php'));
+    $subcontract = icomplyNavH(url('/become-a-subcontractor.php'));
     $shopAll = '/shop/';
     $hubElectrical = '/shop/electrical/';
     $hubFire = '/shop/fire/';
@@ -111,6 +112,7 @@ function icomplyMegaHeaderHtml(): string
         </div>
       </div>
       <a class="nav-link" href="{$products}">Products</a>
+      <a class="nav-link" href="{$subcontract}">Subcontractors</a>
       <a class="nav-link" href="{$contact}">Contact</a>
     </nav>
     <div class="mega-tools">
@@ -151,6 +153,7 @@ function icomplyMobileDrawerHtml(array $n): string
     }
 
     $productsD = icomplyNavH(url('/products.php'));
+    $subcontractD = icomplyNavH(url('/become-a-subcontractor.php'));
     $hubElectricalD = '/shop/electrical/';
     $hubFireD = '/shop/fire/';
     $hubSecurityD = '/shop/security/';
@@ -171,6 +174,7 @@ function icomplyMobileDrawerHtml(array $n): string
       <a href="/shop/">All supplies</a>
     </div></details>
     <a href="{$productsD}">Products</a>
+    <a href="{$subcontractD}">Become a subcontractor</a>
     <a class="drawer-cta drawer-cta--quote" href="{$contactDrawer}">Get a quote</a>
   </nav>
 </div>
