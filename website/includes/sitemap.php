@@ -125,6 +125,10 @@ function icomplySitemapEntries(): array
         if (preg_match('#-photo\.(jpe?g|png)$#i', $path)) {
             return;
         }
+        // noindex URLs never appear in the sitemap (tiered keyword×area and non-Tier-1 service×area).
+        if (function_exists('icomplyPathIsIndexable') && !icomplyPathIsIndexable($path)) {
+            return;
+        }
         // Hubs are rendered at export time from the catalogue, so they do not
         // need a committed PHP stub. Town combinations never qualify.
         $generatedHub = (bool)preg_match('#^/pages/(keywords|areas|manufacturers|services)/[a-z0-9\-]+$#', $path);

@@ -111,7 +111,15 @@ $kwExpect = 0;
 if (function_exists('getMajorKeywords') && function_exists('getAreas')) {
     $kwExpect = count(getMajorKeywords()) * count(getAreas());
 }
-if ($kwTownCount < (int)floor($kwExpect * 0.98)) {
+$indexMode = function_exists('icomplyIndexMode') ? icomplyIndexMode() : 'all';
+if ($indexMode === 'tiered') {
+    if ($kwTownCount !== 0) {
+        echo "FAIL: tiered sitemap must omit keyword×town (found {$kwTownCount})\n";
+        $fail++;
+    } else {
+        echo "OK: sitemap keyword×town count=0 (tiered noindex)\n";
+    }
+} elseif ($kwTownCount < (int)floor($kwExpect * 0.98)) {
     echo "FAIL: sitemap keyword×town count {$kwTownCount} (want about {$kwExpect})\n";
     $fail++;
 } else {
@@ -181,12 +189,34 @@ foreach ($locHits[1] ?? [] as $path) {
         $serviceAreaHits[] = $path;
     }
 }
-$svcAreaExpect = (function_exists('getServices') ? count(getServices()) : 0) * count($areaSlugs);
-if (count($serviceAreaHits) < (int)floor($svcAreaExpect * 0.98)) {
+$svcCount = function_exists('getServices') ? count(getServices()) : 0;
+$tier1Count = 0;
+if (function_exists('icomplyTier1Towns') && function_exists('areaSlug')) {
+    foreach (icomplyTier1Towns() as $town) {
+        if (isset($areaSlugs[areaSlug($town)])) {
+            $tier1Count++;
+        }
+    }
+}
+$svcAreaExpect = $indexMode === 'tiered' ? ($svcCount * $tier1Count) : ($svcCount * count($areaSlugs));
+if ($indexMode === 'tiered' && count($serviceAreaHits) !== $svcAreaExpect) {
+    $fail++;
+    echo 'FAIL: tiered sitemap service×area count ' . count($serviceAreaHits) . " (want exactly {$svcAreaExpect})\n";
+} elseif ($indexMode !== 'tiered' && count($serviceAreaHits) < (int)floor($svcAreaExpect * 0.98)) {
     $fail++;
     echo 'FAIL: sitemap service×area count ' . count($serviceAreaHits) . " (want about {$svcAreaExpect})\n";
 } else {
     echo 'OK: sitemap service×area count=' . count($serviceAreaHits) . "\n";
+}
+if ($indexMode === 'tiered') {
+    if (str_contains($xml, '/pages/keywords/eicr/stockport</loc>') || str_contains($xml, '/pages/electrical/preston</loc>')) {
+        $fail++;
+        echo "FAIL: tiered sitemap lists a noindex combination\n";
+    }
+    if (!str_contains($xml, '/pages/electrical/stockport</loc>') || !str_contains($xml, '/pages/electrical/trafford</loc>')) {
+        $fail++;
+        echo "FAIL: tiered sitemap missing a Tier-1 service×area loc\n";
+    }
 }
 
 echo "URLs={$count} bytes=" . strlen($xml) . PHP_EOL;

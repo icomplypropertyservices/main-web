@@ -43,6 +43,9 @@ $siteDefaults = [
     'SOCIAL_YOUTUBE' => 'https://www.youtube.com/@icomplypropertyservices',
     'SOCIAL_TIKTOK' => '',
     'SOCIAL_GOOGLE' => 'https://www.google.com/maps/place/iComply+Property+Services/@53.4722454,-2.2234628,12z/data=!3m1!4b1!4m6!3m5!1s0x23f1a3169673630b:0xf80a415364a6510a!8m2!3d53.4722454!4d-2.2234628!16s%2Fg%2F11nr2vwl8z',
+    // tiered: only hubs, core pages, and Tier-1 service×area URLs are indexable.
+    // all: every generated combination is indexable and listed in the sitemap.
+    'INDEX_MODE' => 'tiered',
 ];
 
 // Environment overrides (Vercel Project → Settings → Environment Variables)
@@ -120,6 +123,16 @@ if ($isVercelFinal || $isNetlifyFinal || preg_match('/icomplypropertyservices\.c
 $forcedSite = getenv('SITE_URL');
 if (is_string($forcedSite) && $forcedSite !== '' && !str_contains($forcedSite, 'localhost')) {
     $siteDefaults['SITE_URL'] = rtrim($forcedSite, '/');
+}
+$forcedIndex = getenv('INDEX_MODE');
+if (!is_string($forcedIndex) || $forcedIndex === '') {
+    $forcedIndex = $_ENV['INDEX_MODE'] ?? $_SERVER['INDEX_MODE'] ?? '';
+}
+if (is_string($forcedIndex) && $forcedIndex !== '') {
+    $siteDefaults['INDEX_MODE'] = strtolower($forcedIndex);
+}
+if (!in_array((string)($siteDefaults['INDEX_MODE'] ?? 'tiered'), ['tiered', 'all'], true)) {
+    $siteDefaults['INDEX_MODE'] = 'tiered';
 }
 
 foreach ($siteDefaults as $key => $value) {
@@ -295,6 +308,80 @@ function saveServices(array $custom): void {
 
 function getAreas(): array {
     return loadJsonData('areas', []);
+}
+
+/** Indexing switch: `tiered` (default) or `all`. */
+function icomplyIndexMode(): string
+{
+    $mode = defined('INDEX_MODE') ? strtolower((string)INDEX_MODE) : 'tiered';
+    return $mode === 'all' ? 'all' : 'tiered';
+}
+
+/**
+ * Towns whose service×area pages stay indexable in tiered mode.
+ *
+ * @return list<string>
+ */
+function icomplyTier1Towns(): array
+{
+    return [
+        'Stockport',
+        'Manchester',
+        'Salford',
+        'Trafford',
+        'Tameside',
+        'Oldham',
+        'Bolton',
+        'Wigan',
+        'Liverpool',
+        'Warrington',
+    ];
+}
+
+function icomplyIsTier1Area(string $areaOrSlug): bool
+{
+    static $keys = null;
+    if ($keys === null) {
+        $keys = [];
+        foreach (icomplyTier1Towns() as $town) {
+            $keys[areaSlug($town)] = true;
+            $keys[mb_strtolower($town)] = true;
+        }
+    }
+    $slug = areaSlug($areaOrSlug);
+    return isset($keys[$slug]) || isset($keys[mb_strtolower($areaOrSlug)]);
+}
+
+/**
+ * In tiered mode, keyword×area and service×non-Tier-1 pages stay live (200)
+ * but are not indexable. Hubs, core pages, and Tier-1 service×area pages are.
+ */
+function icomplyPathIsIndexable(string $path): bool
+{
+    if (icomplyIndexMode() === 'all') {
+        return true;
+    }
+    $path = '/' . ltrim(str_replace('\\', '/', $path), '/');
+    $path = preg_replace('#\.php$#i', '', $path) ?? $path;
+    $path = preg_replace('#/index$#i', '', $path) ?? $path;
+    if ($path === '') {
+        $path = '/';
+    }
+    if (preg_match('#^/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+$#', $path)) {
+        return false;
+    }
+    if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        $reserved = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'jobs'];
+        if (!in_array($m[1], $reserved, true) && function_exists('getServices') && isset(getServices()[$m[1]])) {
+            return icomplyIsTier1Area($m[2]);
+        }
+    }
+    return true;
+}
+
+function icomplyRobotsMetaForPath(string $path): string
+{
+    return icomplyPathIsIndexable($path) ? 'index, follow' : 'noindex, follow';
 }
 
 /**

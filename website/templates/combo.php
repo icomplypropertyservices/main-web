@@ -58,6 +58,9 @@ if (empty($_SESSION['csrf'])) {
 
 require_once SITE_ROOT . '/includes/share.php';
 $canonicalUrl = url('/pages/' . $SERVICE_SLUG . '/' . $AREA_SLUG . '.php');
+if (function_exists('icomplyRobotsMetaForPath')) {
+    $metaRobots = icomplyRobotsMetaForPath('/pages/' . $SERVICE_SLUG . '/' . $AREA_SLUG);
+}
 require SITE_ROOT . '/includes/header.php';
 
 $schema = [

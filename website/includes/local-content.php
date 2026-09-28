@@ -24,19 +24,21 @@ function area_profile(string $area): array {
     static $map = null;
     if ($map === null) {
         $map = [
-            'Manchester' => ['districts' => 'M1–M40', 'region' => 'Greater Manchester core', 'stock' => 'city-centre apartments, Victorian terraces, commercial offices and multi-let stock', 'travel' => 'typically under 40 minutes from our Stockport base', 'focus' => 'high-rise residential, retail and office compliance'],
-            'Salford' => ['districts' => 'M3, M5–M7, M50', 'region' => 'Greater Manchester', 'stock' => 'MediaCity offices, new-build apartments and industrial estates', 'travel' => 'typically under 35 minutes from Stockport', 'focus' => 'mixed-use and multi-tenant buildings'],
-            'Stockport' => ['districts' => 'SK1–SK8', 'region' => 'Greater Manchester', 'stock' => 'suburban housing, industrial units and town-centre retail', 'travel' => 'local Stockport coverage from SK2', 'focus' => 'landlord portfolios and SME commercial sites'],
-            'Bolton' => ['districts' => 'BL1–BL7', 'region' => 'Greater Manchester', 'stock' => 'terraced housing, mills converted to commercial and retail parks', 'travel' => 'typically 35–50 minutes from Stockport', 'focus' => 'landlord and light-industrial compliance'],
-            'Oldham' => ['districts' => 'OL1–OL9', 'region' => 'Greater Manchester', 'stock' => 'terraced streets, industrial estates and local authority stock', 'travel' => 'typically 35–50 minutes from Stockport', 'focus' => 'residential portfolios and warehouse units'],
+            'Manchester' => ['districts' => 'M1–M40', 'region' => 'Greater Manchester core', 'stock' => 'city-centre apartments, Victorian terraces, commercial offices and multi-let stock', 'travel' => 'typically under 40 minutes from our Stockport base', 'focus' => 'high-rise residential, retail and office compliance', 'authority' => 'Manchester City Council'],
+            'Salford' => ['districts' => 'M3, M5–M7, M50', 'region' => 'Greater Manchester', 'stock' => 'MediaCity offices, new-build apartments and industrial estates', 'travel' => 'typically under 35 minutes from Stockport', 'focus' => 'mixed-use and multi-tenant buildings', 'authority' => 'Salford City Council'],
+            'Stockport' => ['districts' => 'SK1–SK8', 'region' => 'Greater Manchester', 'stock' => 'suburban housing, industrial units and town-centre retail', 'travel' => 'local Stockport coverage from SK2', 'focus' => 'landlord portfolios and SME commercial sites', 'authority' => 'Stockport Metropolitan Borough Council'],
+            'Bolton' => ['districts' => 'BL1–BL7', 'region' => 'Greater Manchester', 'stock' => 'terraced housing, mills converted to commercial and retail parks', 'travel' => 'typically 35–50 minutes from Stockport', 'focus' => 'landlord and light-industrial compliance', 'authority' => 'Bolton Council'],
+            'Oldham' => ['districts' => 'OL1–OL9', 'region' => 'Greater Manchester', 'stock' => 'terraced streets, industrial estates and local authority stock', 'travel' => 'typically 35–50 minutes from Stockport', 'focus' => 'residential portfolios and warehouse units', 'authority' => 'Oldham Council'],
             'Rochdale' => ['districts' => 'OL11–OL16', 'region' => 'Greater Manchester', 'stock' => 'mixed housing, town retail and industrial estates', 'travel' => 'typically 40–55 minutes from Stockport', 'focus' => 'landlords, agents and SME facilities'],
             'Bury' => ['districts' => 'BL9, M25–M26', 'region' => 'Greater Manchester', 'stock' => 'suburban homes, retail and light industry', 'travel' => 'typically 40–55 minutes from Stockport', 'focus' => 'residential and high-street commercial'],
-            'Wigan' => ['districts' => 'WN1–WN6', 'region' => 'Greater Manchester', 'stock' => 'housing estates, industrial corridors and town-centre units', 'travel' => 'typically 50–70 minutes from Stockport', 'focus' => 'commercial and multi-site landlords'],
-            'Liverpool' => ['districts' => 'L1–L25', 'region' => 'Merseyside', 'stock' => 'city apartments, Georgian terraces, docks-side commercial and retail', 'travel' => 'typically 50–70 minutes from Stockport', 'focus' => 'HMOs, offices and hospitality sites'],
+            'Wigan' => ['districts' => 'WN1–WN6', 'region' => 'Greater Manchester', 'stock' => 'housing estates, industrial corridors and town-centre units', 'travel' => 'typically 50–70 minutes from Stockport', 'focus' => 'commercial and multi-site landlords', 'authority' => 'Wigan Council'],
+            'Liverpool' => ['districts' => 'L1–L25', 'region' => 'Merseyside', 'stock' => 'city apartments, Georgian terraces, docks-side commercial and retail', 'travel' => 'typically 50–70 minutes from Stockport', 'focus' => 'HMOs, offices and hospitality sites', 'authority' => 'Liverpool City Council'],
             'Preston' => ['districts' => 'PR1–PR5', 'region' => 'Lancashire', 'stock' => 'city housing, student HMOs and industrial parks', 'travel' => 'typically 50–70 minutes from Stockport', 'focus' => 'student lets, offices and warehouses'],
             'Blackpool' => ['districts' => 'FY1–FY4', 'region' => 'Lancashire coast', 'stock' => 'HMOs, guest houses, seafront retail and leisure', 'travel' => 'typically 70–90 minutes from Stockport', 'focus' => 'hospitality and multi-let residential'],
             'Chester' => ['districts' => 'CH1–CH4', 'region' => 'Cheshire', 'stock' => 'historic city retail, offices and suburban housing', 'travel' => 'typically 50–70 minutes from Stockport', 'focus' => 'retail, heritage-sensitive commercial and residential'],
-            'Warrington' => ['districts' => 'WA1–WA5', 'region' => 'Cheshire / Merseyside border', 'stock' => 'logistics warehouses, business parks and new housing', 'travel' => 'typically 35–50 minutes from Stockport', 'focus' => 'warehouses, offices and estates'],
+            'Warrington' => ['districts' => 'WA1–WA5', 'region' => 'Cheshire / Merseyside border', 'stock' => 'logistics warehouses, business parks and new housing', 'travel' => 'typically 35–50 minutes from Stockport', 'focus' => 'warehouses, offices and estates', 'authority' => 'Warrington Borough Council'],
+            'Trafford' => ['districts' => 'M16, M17, M32, M33, M41, WA14–WA15', 'region' => 'Greater Manchester', 'stock' => 'suburban housing, market-town retail and commercial parks across Altrincham, Sale, Stretford and Urmston', 'travel' => 'typically 20–40 minutes from our Stockport base', 'focus' => 'residential portfolios and town-centre commercial sites', 'authority' => 'Trafford Council'],
+            'Tameside' => ['districts' => 'OL5–OL7, SK14–SK16', 'region' => 'Greater Manchester', 'stock' => 'terraced housing, town-centre retail and industrial estates in Ashton-under-Lyne, Hyde, Denton, Dukinfield and Stalybridge', 'travel' => 'typically 20–40 minutes from our Stockport base', 'focus' => 'landlord housing and SME industrial sites', 'authority' => 'Tameside Metropolitan Borough Council'],
             'Altrincham' => ['districts' => 'WA14–WA15', 'region' => 'Trafford', 'stock' => 'premium housing, market-town retail and offices', 'travel' => 'typically 25–40 minutes from Stockport', 'focus' => 'professional offices and residential portfolios'],
             'Sale' => ['districts' => 'M33', 'region' => 'Trafford', 'stock' => 'suburban housing and local retail', 'travel' => 'typically 25–40 minutes from Stockport', 'focus' => 'landlords and small commercial'],
             'Wilmslow' => ['districts' => 'SK9', 'region' => 'Cheshire East', 'stock' => 'premium residential and town retail', 'travel' => 'typically 20–35 minutes from Stockport', 'focus' => 'high-spec residential and boutique commercial'],
@@ -95,7 +97,111 @@ function area_profile(string $area): array {
         'stock' => pick_seeded($stocks, $seed, 1),
         'travel' => "typically {$mins}–" . ($mins + 20) . ' minutes from our Stockport SK2 base',
         'focus' => pick_seeded($focus, $seed, 2),
+        'authority' => '',
     ];
+}
+
+/**
+ * Nearby towns already on the North West list. Tier-1 uses real neighbours
+ * from that list. Other towns use the next names in catalogue order.
+ *
+ * @return list<string>
+ */
+function icomplyNearbyTowns(string $area, int $limit = 6): array
+{
+    $curated = [
+        'Stockport' => ['Cheadle', 'Cheadle Hulme', 'Bramhall', 'Hazel Grove', 'Marple', 'Romiley', 'Poynton', 'Manchester'],
+        'Manchester' => ['Salford', 'Trafford', 'Stockport', 'Oldham', 'Tameside', 'Chorlton', 'Didsbury', 'Bolton'],
+        'Salford' => ['Manchester', 'Eccles', 'Swinton', 'Walkden', 'Worsley', 'Trafford', 'Bolton', 'Irlam'],
+        'Trafford' => ['Altrincham', 'Sale', 'Stretford', 'Urmston', 'Manchester', 'Salford', 'Chorlton', 'Stockport'],
+        'Tameside' => ['Ashton-under-Lyne', 'Hyde', 'Denton', 'Dukinfield', 'Stalybridge', 'Mossley', 'Droylsden', 'Stockport', 'Oldham'],
+        'Oldham' => ['Rochdale', 'Tameside', 'Ashton-under-Lyne', 'Chadderton', 'Royton', 'Shaw', 'Lees', 'Failsworth', 'Manchester'],
+        'Bolton' => ['Bury', 'Wigan', 'Horwich', 'Farnworth', 'Westhoughton', 'Salford', 'Radcliffe', 'Manchester'],
+        'Wigan' => ['Leigh', 'Bolton', 'Ashton-in-Makerfield', 'Hindley', 'Standish', 'Golborne', 'St Helens', 'Atherton'],
+        'Liverpool' => ['Bootle', 'Birkenhead', 'Crosby', 'Wallasey', 'Maghull', 'Prescot', 'St Helens', 'Warrington'],
+        'Warrington' => ['Lymm', 'Culcheth', 'Birchwood', 'Great Sankey', 'Newton-le-Willows', 'Runcorn', 'Widnes', 'Manchester'],
+    ];
+    $known = [];
+    if (function_exists('getAreas')) {
+        foreach (getAreas() as $name) {
+            $known[(string)$name] = true;
+        }
+    }
+    $picked = [];
+    foreach ($curated[$area] ?? [] as $name) {
+        if ($name !== $area && isset($known[$name])) {
+            $picked[] = $name;
+        }
+        if (count($picked) >= $limit) {
+            return $picked;
+        }
+    }
+    if (count($picked) >= 4) {
+        return $picked;
+    }
+    $names = array_keys($known);
+    $idx = array_search($area, $names, true);
+    if ($idx === false || !$names) {
+        return $picked;
+    }
+    $n = count($names);
+    for ($i = 1; $i <= $limit && count($picked) < $limit; $i++) {
+        $name = $names[($idx + $i) % $n];
+        if ($name !== $area && !in_array($name, $picked, true)) {
+            $picked[] = $name;
+        }
+    }
+    return $picked;
+}
+
+function icomplyVariedH1(string $label, string $area): string
+{
+    $p = area_profile($area);
+    $seed = area_seed($area, 'h1|' . $label);
+    $focus = (string)($p['focus'] ?? 'local property compliance');
+    $districts = (string)($p['districts'] ?? $area);
+    $patterns = [
+        "{$label} in {$area}",
+        "{$area} {$label} — {$focus}",
+        "{$label} across {$area} ({$districts})",
+        "{$area}: {$label} for local property stock",
+    ];
+    return $patterns[$seed % count($patterns)];
+}
+
+/**
+ * Town-specific copy. Council names are only the ones stored on the profile.
+ */
+function icomplyLocalEssay(string $serviceName, string $slug, string $area): string
+{
+    $p = area_profile($area);
+    $nearby = icomplyNearbyTowns($area, 6);
+    $nearbyText = $nearby ? implode(', ', $nearby) : 'other North West towns on our list';
+    $authority = trim((string)($p['authority'] ?? ''));
+    $angle = function_exists('service_local_angle')
+        ? service_local_angle($slug, $serviceName, $area)
+        : "{$serviceName} in {$area} is scoped before any quote.";
+    $phone = defined('PHONE') ? PHONE : '';
+    if ($authority !== '') {
+        $authorityLine = "{$authority} is the local authority for {$area}. iComply Property Services is a separate business in {$area}. This page does not speak for {$authority}, and it does not claim a {$area} council contract or a council accreditation.";
+    } else {
+        $authorityLine = "This {$area} page does not name a local authority, because the town profile does not store one. No council contract is claimed for {$area}.";
+    }
+    $sentences = [
+        "{$serviceName} in {$area} is POA. Call {$phone} and ask for a {$area} quote once property type and access are known.",
+        "Postcode districts used for {$area}: {$p['districts']}. Regional setting for {$area}: {$p['region']}.",
+        "Building mix already recorded for {$area}: {$p['stock']}.",
+        "Work this {$area} page is written around: {$p['focus']}.",
+        "Travel to {$area} from the Stockport SK2 base: {$p['travel']}.",
+        "Nearby towns we also cover from the {$area} page, all of them already on the North West list: {$nearbyText}.",
+        $authorityLine,
+        $angle,
+        "A {$area} {$serviceName} visit is quoted only after scope is agreed. There is no catalogue price for {$serviceName} in {$area}.",
+    ];
+    $seed = area_seed($area, 'essay|' . $slug);
+    $rot = $seed % count($sentences);
+    $ordered = array_merge(array_slice($sentences, $rot), array_slice($sentences, 0, $rot));
+    return implode(' ', $ordered);
 }
 
 function service_local_angle(string $slug, string $serviceName, string $area): string {

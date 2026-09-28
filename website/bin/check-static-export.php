@@ -348,7 +348,33 @@ if (str_contains($sitemapDist, '/pages/products</loc>') || substr_count($sitemap
     $pass++;
     echo "[PASS] sitemap lists /products only\n";
 }
-if (str_contains($sitemapDist, '/pages/electrical/stockport</loc>') && str_contains($sitemapDist, '/pages/keywords/eicr/stockport</loc>')) {
+$indexMode = function_exists('icomplyIndexMode') ? icomplyIndexMode() : 'tiered';
+if ($indexMode === 'tiered') {
+    $tierOk = str_contains($sitemapDist, '/pages/electrical/stockport</loc>')
+        && str_contains($sitemapDist, '/pages/electrical/trafford</loc>')
+        && !str_contains($sitemapDist, '/pages/keywords/eicr/stockport</loc>')
+        && !str_contains($sitemapDist, '/pages/electrical/preston</loc>');
+    $kwSample = is_file($dist . '/pages/keywords/eicr/stockport.php')
+        ? (string)file_get_contents($dist . '/pages/keywords/eicr/stockport.php')
+        : '';
+    $tierSample = is_file($dist . '/pages/electrical/stockport.php')
+        ? (string)file_get_contents($dist . '/pages/electrical/stockport.php')
+        : '';
+    $offSample = is_file($dist . '/pages/electrical/preston.php')
+        ? (string)file_get_contents($dist . '/pages/electrical/preston.php')
+        : '';
+    $robotsOk = str_contains($kwSample, 'noindex, follow')
+        && str_contains($offSample, 'noindex, follow')
+        && str_contains($tierSample, 'index, follow')
+        && !str_contains($tierSample, 'noindex');
+    if ($tierOk && $robotsOk) {
+        $pass++;
+        echo "[PASS] tiered sitemap lists Tier-1 service×area only; noindex pages stay out\n";
+    } else {
+        $fail++;
+        echo "[FAIL] tiered sitemap/robots mismatch (sitemap samples or noindex meta)\n";
+    }
+} elseif (str_contains($sitemapDist, '/pages/electrical/stockport</loc>') && str_contains($sitemapDist, '/pages/keywords/eicr/stockport</loc>')) {
     $pass++;
     echo "[PASS] dist/sitemap.xml lists service×area and keyword×area samples\n";
 } else {
