@@ -106,7 +106,7 @@ function icomplyNavCatalog(): array
         'phoneHref' => 'tel:' . preg_replace('/\s+/', '', defined('PHONE') ? PHONE : ''),
         'whatsapp' => defined('WHATSAPP') ? WHATSAPP : '',
         'email' => defined('EMAIL') ? EMAIL : '',
-        'brand' => defined('SITE_NAME') ? SITE_NAME : 'Icomply Property Services',
+        'brand' => defined('SITE_NAME') ? SITE_NAME : 'iComply Property Services',
         'js' => assetUrl('/assets/js/site-nav.js'),
         'logo' => assetUrl('/assets/images/brand/icomply-mark.svg'),
         'logoLight' => assetUrl('/assets/images/brand/icomply-logo.svg'),

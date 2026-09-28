@@ -65,7 +65,7 @@ require SITE_ROOT . '/includes/header.php';
     <!-- IMAGE 1: Hero service image -->
     <div class="mt-8">
         <img src="<?= url('/assets/images/services/aov-air-handling.jpg') ?>"
-             alt="{{SERVICE_NAME}} installation and servicing in {{AREA}} by Icomply Property Services"
+             alt="{{SERVICE_NAME}} installation and servicing in {{AREA}} by iComply Property Services"
              width="1200" height="800"
              class="w-full h-72 md:h-96 object-cover rounded-3xl border"
              loading="eager">
@@ -74,7 +74,7 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 1 -->
     <p class="mt-8 text-lg text-black max-w-3xl leading-relaxed">
-        Icomply Property Services designs, installs, commissions and maintains <strong>Automatic Opening Vent (AOV)</strong> and <strong>air handling</strong> systems across <strong>{{AREA}}</strong> and the wider North West. From natural smoke ventilation on stairwells and façades to mechanical extraction, pressurisation and AHU control, our engineers deliver BS EN 12101-compliant solutions with fixed-price quotes and full certification.
+        iComply Property Services designs, installs, commissions and maintains <strong>Automatic Opening Vent (AOV)</strong> and <strong>air handling</strong> systems across <strong>{{AREA}}</strong> and the wider North West. From natural smoke ventilation on stairwells and façades to mechanical extraction, pressurisation and AHU control, our engineers deliver BS EN 12101-compliant solutions with fixed-price quotes and full certification.
     </p>
 
     <!-- PARAGRAPH 2 -->
@@ -86,7 +86,7 @@ require SITE_ROOT . '/includes/header.php';
     <div class="mt-10 grid md:grid-cols-2 gap-6">
         <div>
             <img src="<?= url('/assets/images/keywords/aov-system.jpg') ?>"
-                 alt="AOV smoke ventilation system and control equipment used by Icomply in {{AREA}}"
+                 alt="AOV smoke ventilation system and control equipment used by iComply in {{AREA}}"
                  width="800" height="600"
                  class="w-full h-56 object-cover rounded-2xl border"
                  loading="lazy"
@@ -95,7 +95,7 @@ require SITE_ROOT . '/includes/header.php';
         </div>
         <div>
             <img src="<?= url('/assets/images/keywords/air-handling-unit-installation.jpg') ?>"
-                 alt="Air handling unit and smoke vent installation and testing in {{AREA}} by Icomply"
+                 alt="Air handling unit and smoke vent installation and testing in {{AREA}} by iComply"
                  width="800" height="600"
                  class="w-full h-56 object-cover rounded-2xl border"
                  loading="lazy"

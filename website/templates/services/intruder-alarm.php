@@ -2,7 +2,7 @@
 /**
  * Intruder Alarms — 3 images · 3 paragraphs · manufacturers · SEO brand alts
  */
-$pageTitle = '{{SERVICE_NAME}} in {{AREA}} | Icomply Property Services';
+$pageTitle = '{{SERVICE_NAME}} in {{AREA}} | iComply Property Services';
 $metaDesc = 'BS EN 50131 intruder alarm systems in {{AREA}}. Texecom, Honeywell and Pyronix panels — design, install, monitoring and maintenance.';
 $metaKeywords = 'intruder alarm installation {{AREA}}, Texecom panel {{AREA}}, Honeywell alarm {{AREA}}, Pyronix alarm {{AREA}}, BS EN 50131 {{AREA}}, burglar alarm {{AREA}}, PD 6662 {{AREA}}';
 $ogImage = url('/assets/images/services/intruder-alarm.jpg');
@@ -68,7 +68,7 @@ require SITE_ROOT . '/includes/header.php';
     <!-- IMAGE 1: Hero -->
     <div class="mt-8">
         <img src="<?= url('/assets/images/services/intruder-alarm.jpg') ?>"
-             alt="Texecom Honeywell Pyronix intruder alarm panel installation and servicing in {{AREA}} by Icomply Property Services"
+             alt="Texecom Honeywell Pyronix intruder alarm panel installation and servicing in {{AREA}} by iComply Property Services"
              width="1200" height="800"
              class="w-full h-72 md:h-96 object-cover rounded-3xl border"
              loading="eager">
@@ -77,7 +77,7 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 1 -->
     <p class="mt-8 text-lg text-black max-w-3xl leading-relaxed">
-        Icomply Property Services designs, installs and maintains <strong>PD 6662</strong> and <strong>BS EN 50131</strong> compliant <strong>{{SERVICE_NAME}}</strong> across <strong>{{AREA}}</strong> and the wider North West. From Grade 2 domestic kits to Grade 3 commercial systems with police response, our engineers deliver fixed-price quotes, appointments booked when the diary allows, and full commissioning documentation.
+        iComply Property Services designs, installs and maintains <strong>PD 6662</strong> and <strong>BS EN 50131</strong> compliant <strong>{{SERVICE_NAME}}</strong> across <strong>{{AREA}}</strong> and the wider North West. From Grade 2 domestic kits to Grade 3 commercial systems with police response, our engineers deliver fixed-price quotes, appointments booked when the diary allows, and full commissioning documentation.
     </p>
 
     <!-- PARAGRAPH 2 -->
@@ -89,7 +89,7 @@ require SITE_ROOT . '/includes/header.php';
     <div class="mt-10 grid md:grid-cols-2 gap-6">
         <div>
             <img src="<?= url('/assets/images/keywords/intruder-alarm-panel.jpg') ?>"
-                 alt="Texecom and Honeywell Grade 2 Grade 3 intruder alarm control panel installed by Icomply in {{AREA}}"
+                 alt="Texecom and Honeywell Grade 2 Grade 3 intruder alarm control panel installed by iComply in {{AREA}}"
                  width="800" height="600"
                  class="w-full h-56 object-cover rounded-2xl border"
                  loading="lazy"
@@ -127,7 +127,7 @@ require SITE_ROOT . '/includes/header.php';
     <!-- IMAGE 3: Brand / panel focus -->
     <div class="mt-10">
         <img src="<?= url('/assets/images/keywords/burglar-alarm-system.jpg') ?>"
-             alt="Texecom Honeywell Pyronix burglar alarm panels and PIR sensors serviced by Icomply in {{AREA}}"
+             alt="Texecom Honeywell Pyronix burglar alarm panels and PIR sensors serviced by iComply in {{AREA}}"
              width="1200" height="700"
              class="w-full h-64 md:h-80 object-cover rounded-3xl border"
              loading="lazy"

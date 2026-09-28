@@ -6,8 +6,8 @@ require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/shopify.php';
 
 $pageTitle = 'About Us | Fire Safety, Professional & Construction | Stockport';
-$metaDesc = 'About Icomply Property Services — Stockport SK2 5DE. Fire risk assessments and fire safety systems, electrical, gas, security, professional compliance, kitchens, bathrooms and construction across the North West.';
-$metaKeywords = 'about Icomply, fire risk assessment Stockport, kitchen fitting North West, property compliance Stockport, construction services Greater Manchester';
+$metaDesc = 'About iComply Property Services — Stockport SK2 5DE. Fire risk assessments and fire safety systems, electrical, gas, security, professional compliance, kitchens, bathrooms and construction across the North West.';
+$metaKeywords = 'about iComply, fire risk assessment Stockport, kitchen fitting North West, property compliance Stockport, construction services Greater Manchester';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/about.php');
 
@@ -126,7 +126,7 @@ $aboutSchema = [
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
                     About<br>
-                    <span class="text-[#ff6b00]">Icomply Property Services</span>
+                    <span class="text-[#ff6b00]">iComply Property Services</span>
                 </h1>
                 <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl">
                     Fire risk assessments and full fire safety systems, electrical &amp; gas, security,
@@ -295,7 +295,7 @@ $aboutSchema = [
             </ul>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#quote" class="px-6 py-3 bg-[#ff6b00] rounded-2xl font-semibold">Start your quote</a>
-                <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20Icomply%2C%20I%20need%20a%20quote"
+                <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20iComply%2C%20I%20need%20a%20quote"
                    target="_blank" rel="noopener"
                    class="px-6 py-3 border border-white/30 rounded-2xl font-semibold hover:bg-white/10">WhatsApp</a>
             </div>
@@ -391,7 +391,7 @@ $aboutSchema = [
     <div class="max-w-3xl mx-auto px-6 py-16 md:py-20">
         <div class="text-center mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Work with Icomply</h2>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Work with iComply</h2>
             <p class="mt-3 text-zinc-600">Call <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="text-[#ff6b00] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>,
                 WhatsApp, or send the form — we will reply with a quote.</p>
             <div class="mt-6 flex flex-wrap justify-center gap-3">

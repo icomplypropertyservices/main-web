@@ -6,8 +6,8 @@ require_once __DIR__ . '/config.php';
 require_once SITE_ROOT . '/includes/share.php';
 
 $pageTitle = 'Terms & Conditions | Website, Services & Shop';
-$metaDesc = 'Terms and conditions for Icomply Property Services (Stockport): website use, compliance service quotes, installations and Shopify product purchases across Greater Manchester and the North West.';
-$metaKeywords = 'Icomply terms and conditions, property compliance terms, Shopify shop terms, Stockport electrician terms';
+$metaDesc = 'Terms and conditions for iComply Property Services (Stockport): website use, compliance service quotes, installations and Shopify product purchases across Greater Manchester and the North West.';
+$metaKeywords = 'iComply terms and conditions, property compliance terms, Shopify shop terms, Stockport electrician terms';
 $canonicalUrl = url('/terms.php');
 $updated = '12 July 2026';
 
@@ -141,7 +141,7 @@ require SITE_ROOT . '/includes/header.php';
                 <li>Distance-selling cancellation rights for consumers may apply to goods, subject to statutory exceptions (for example sealed goods opened for hygiene or safety reasons).</li>
             </ul>
             <p class="mt-3 text-sm text-zinc-500">
-                Visit the <a class="text-[#ff6b00] font-medium" href="<?= url('/shop/index.php') ?>">Icomply shop</a>
+                Visit the <a class="text-[#ff6b00] font-medium" href="<?= url('/shop/index.php') ?>">iComply shop</a>
                 for trade products and install kits.
             </p>
         </article>
@@ -225,7 +225,7 @@ require SITE_ROOT . '/includes/header.php';
         </div>
 
         <div class="p-6 md:p-8 bg-[#0B1F3A] text-white rounded-3xl">
-            <div class="text-xs uppercase tracking-[2px] text-[#ff6b00] font-semibold mb-2">Explore Icomply</div>
+            <div class="text-xs uppercase tracking-[2px] text-[#ff6b00] font-semibold mb-2">Explore iComply</div>
             <h2 class="text-xl font-semibold tracking-tight mb-3">Ready to work with us?</h2>
             <p class="text-white/75 text-sm mb-5 max-w-xl">
                 Compliance services, trade kits and manufacturer support across Greater Manchester and the North West.

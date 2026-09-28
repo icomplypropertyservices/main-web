@@ -1,6 +1,6 @@
 <?php
 /**
- * SEO helpers for Icomply Property Services
+ * SEO helpers for iComply Property Services
  * Rank-focused local content, FAQs, schema, breadcrumbs.
  */
 require_once __DIR__ . '/local-content.php';
@@ -24,7 +24,7 @@ function seo_title(string $title): string {
     // Keep SERP titles short (~50–60 chars). Brand only if room remains.
     $title = trim($title);
     if (mb_strlen($title) <= 55) {
-        $withBrand = $title . ' | Icomply';
+        $withBrand = $title . ' | iComply';
         if (mb_strlen($withBrand) <= 60) return $withBrand;
     }
     if (mb_strlen($title) > 60) {
@@ -59,7 +59,7 @@ function seo_combo_intro(string $serviceName, string $slug, string $area): strin
         return icomplyGasLegalSentence() . ' ' . $serviceName . ' in ' . $area . ' is not carried out by iComply. Non-gas compliance in ' . $area . ' is quoted POA.';
     }
     $standards = implode(', ', array_slice(service_standards($slug), 0, 3));
-    return "Looking for professional {$serviceName} in {$area}? Icomply Property Services provides design, installation, "
+    return "Looking for professional {$serviceName} in {$area}? iComply Property Services provides design, installation, "
         . "maintenance and certification for landlords, managing agents, facilities teams and businesses across {$area} "
         . "and the wider North West. Our engineers work to UK best practice including {$standards}, with clear paperwork "
         . "you can show insurers, freeholders and local authorities. Based in Stockport (SK2), we cover {$area} with "
@@ -159,7 +159,7 @@ function service_faqs(string $slug, string $serviceName, string $area = ''): arr
         ],
     ];
     $faqs = $base[$slug] ?? [
-        ['q' => "Do you provide {$serviceName}{$loc}?", 'a' => "Yes. Icomply installs, services and certificates {$serviceName}{$loc} for residential and commercial clients."],
+        ['q' => "Do you provide {$serviceName}{$loc}?", 'a' => "Yes. iComply installs, services and certificates {$serviceName}{$loc} for residential and commercial clients."],
         ['q' => "How do I get a quote?", 'a' => "Call, WhatsApp or use our online form with the postcode and property type for a fast fixed-price style quote."],
         ['q' => "What areas do you cover?", 'a' => "Greater Manchester and 150+ North West towns from our Stockport base."],
     ];

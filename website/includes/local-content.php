@@ -304,7 +304,7 @@ function seo_unique_intro(string $serviceName, string $slug, string $area): stri
     $seed = area_seed($area, $slug . 'intro');
     $openers = [
         "If you manage property in {$area} ({$p['districts']}), reliable {$serviceName} is not optional — it is how you stay audit-ready.",
-        "For {$serviceName} in {$area}, Icomply Property Services supports landlords, agents and businesses across {$p['region']}.",
+        "For {$serviceName} in {$area}, iComply Property Services supports landlords, agents and businesses across {$p['region']}.",
         "{$area} sites — from {$p['stock']} — need {$serviceName} that matches UK standards and real building use.",
         "Searching for {$serviceName} near {$area}? Our Stockport team covers {$p['districts']} with documented install and service work.",
     ];
@@ -375,7 +375,7 @@ function howto_schema(string $serviceName, string $area): array {
         '@context' => 'https://schema.org',
         '@type' => 'HowTo',
         'name' => "How to book {$serviceName} in {$area}",
-        'description' => "Steps to arrange professional {$serviceName} with Icomply Property Services in {$area}.",
+        'description' => "Steps to arrange professional {$serviceName} with iComply Property Services in {$area}.",
         'step' => [
             ['@type' => 'HowToStep', 'position' => 1, 'name' => 'Request a quote', 'text' => "Share your {$area} postcode, property type and {$serviceName} requirement."],
             ['@type' => 'HowToStep', 'position' => 2, 'name' => 'Survey / scope', 'text' => 'We confirm standards, access and existing equipment.'],

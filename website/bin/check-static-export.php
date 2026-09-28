@@ -21,7 +21,7 @@ $fail = 0;
 $pass = 0;
 
 $needHtml = [
-    '/' => ['index.html', ['Icomply', '<!DOCTYPE', 'mega-header', 'foot-drop', 'Keyword × town']],
+    '/' => ['index.html', ['iComply', '<!DOCTYPE', 'mega-header', 'foot-drop', 'Keyword × town']],
     '/privacy' => ['privacy.php', ['Privacy', '<!DOCTYPE']],
     '/terms' => ['terms.php', ['Terms', '<!DOCTYPE']],
     '/contact' => ['contact.php', ['Contact', 'page-hero', '#0B1F3A', '<!DOCTYPE']],
@@ -63,7 +63,7 @@ $needHtml = [
     '/pages/keywords/price-of-rewire' => ['pages/keywords/price-of-rewire.php', ['POA', '<!DOCTYPE']],
 ];
 
-echo "Icomply static-export check  dist={$dist}\n";
+echo "iComply static-export check  dist={$dist}\n";
 echo str_repeat('=', 56) . "\n";
 
 if (!is_dir($dist)) {

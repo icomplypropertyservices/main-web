@@ -3,7 +3,7 @@
  * Gas Systems service template
  * 3 images · 3 paragraphs · manufacturers · SEO
  */
-$pageTitle = '{{SERVICE_NAME}} in {{AREA}} | Icomply Property Services';
+$pageTitle = '{{SERVICE_NAME}} in {{AREA}} | iComply Property Services';
 $metaDesc = 'Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not carry out gas work or issue CP12 certificates in {{AREA}}.';
 $metaKeywords = 'gas safety certificate {{AREA}}, gas boiler servicing {{AREA}}, landlord gas safety {{AREA}}, Worcester Bosch, Vaillant, Ideal, Baxi, gas engineer {{AREA}}';
 $ogImage = url('/assets/images/services/gas-systems.jpg');
@@ -90,7 +90,7 @@ require SITE_ROOT . '/includes/header.php';
     <div class="mt-10 grid md:grid-cols-2 gap-6">
         <div>
             <img src="<?= url('/assets/images/keywords/gas-installation.jpg') ?>"
-                 alt="Gas installation and boiler equipment used by Icomply in {{AREA}}"
+                 alt="Gas installation and boiler equipment used by iComply in {{AREA}}"
                  width="800" height="600"
                  class="w-full h-56 object-cover rounded-2xl border"
                  loading="lazy"

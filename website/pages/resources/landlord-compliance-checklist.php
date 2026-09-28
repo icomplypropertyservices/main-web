@@ -104,7 +104,7 @@ require SITE_ROOT . '/includes/header.php';
     <div class="space-y-6 text-black leading-relaxed">
         <p class="text-zinc-700 text-lg">
             Whether you manage one flat or a multi-site portfolio, a simple schedule of certificates keeps tenants safer and reduces last-minute scrambles at tenancy changeover.
-            Icomply helps North West landlords combine
+            iComply helps North West landlords combine
             <a href="<?= url('/pages/services/electrical.php') ?>" class="text-[#ff6b00] hover:underline">electrical</a>,
             <a href="<?= url('/pages/services/gas-systems.php') ?>" class="text-[#ff6b00] hover:underline">gas</a>,
             <a href="<?= url('/pages/services/fire-alarms.php') ?>" class="text-[#ff6b00] hover:underline">fire</a>

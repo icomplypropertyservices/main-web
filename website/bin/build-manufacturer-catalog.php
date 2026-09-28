@@ -117,7 +117,7 @@ $productTemplates = [
 ];
 
 $blurbs = [
-    'default' => 'Icomply Property Services installs, services and supplies {brand} equipment across Greater Manchester and the North West. We support new installs, upgrades and planned maintenance, and stock trade kits for engineers and facilities teams.',
+    'default' => 'iComply Property Services installs, services and supplies {brand} equipment across Greater Manchester and the North West. We support new installs, upgrades and planned maintenance, and stock trade kits for engineers and facilities teams.',
 ];
 
 $existing = loadJsonData('manufacturers', []);
@@ -150,7 +150,7 @@ foreach ($byService as $service => $brands) {
                 'services' => [$service],
                 'blurb' => str_replace('{brand}', $name, $blurbs['default']),
                 'seo_title' => $name . ' Products & Service | North West',
-                'seo_desc' => 'Buy and install ' . $name . ' systems with Icomply Property Services. Trade kits, installation, servicing and certification across Greater Manchester and the North West.',
+                'seo_desc' => 'Buy and install ' . $name . ' systems with iComply Property Services. Trade kits, installation, servicing and certification across Greater Manchester and the North West.',
                 'seo_keywords' => $name . ', ' . $name . ' installation, ' . $name . ' service, ' . $name . ' spares, ' . $name . ' North West, trade ' . $name,
                 'products' => $products,
                 'featured' => in_array($name, [

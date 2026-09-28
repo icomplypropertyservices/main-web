@@ -8,13 +8,13 @@ $rawPageTitle = trim((string)($pageTitle ?? SITE_NAME));
 if ($rawPageTitle === '') {
     $rawPageTitle = SITE_NAME;
 }
-$hasBrandInTitle = (stripos($rawPageTitle, 'Icomply') !== false)
+$hasBrandInTitle = (stripos($rawPageTitle, 'iComply') !== false)
     || (stripos($rawPageTitle, (string)SITE_NAME) !== false);
-$documentTitle = $hasBrandInTitle ? $rawPageTitle : ($rawPageTitle . ' | Icomply Property Services');
+$documentTitle = $hasBrandInTitle ? $rawPageTitle : ($rawPageTitle . ' | iComply Property Services');
 $pageTitleSafe = htmlspecialchars($documentTitle, ENT_QUOTES, 'UTF-8');
 $ogTitleSafe = htmlspecialchars($rawPageTitle, ENT_QUOTES, 'UTF-8');
 $metaDescSafe = htmlspecialchars(
-    $metaDesc ?? 'Icomply Property Services — property maintenance and compliance across Greater Manchester and the North West: EICR, gas, fire, kitchens, renovations, CCTV, Legionella and asbestos. Offerton, Stockport SK2 5DE.',
+    $metaDesc ?? 'iComply Property Services — property maintenance and compliance across Greater Manchester and the North West: EICR, fire, kitchens, renovations, CCTV, Legionella and asbestos. Offerton, Stockport SK2 5DE.',
     ENT_QUOTES,
     'UTF-8'
 );
@@ -72,7 +72,7 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     }
     $ogImageSafe = htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8');
     $ogAltSafe = htmlspecialchars(
-        $ogImageAlt ?? ($rawPageTitle . ' — Icomply Property Services, Stockport and the North West'),
+        $ogImageAlt ?? ($rawPageTitle . ' — iComply Property Services, Stockport and the North West'),
         ENT_QUOTES,
         'UTF-8'
     );

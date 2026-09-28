@@ -94,7 +94,7 @@ $schema = [
                         '@type' => 'Answer',
                         'text' => $gasBrand
                             ? ('No. ' . icomplyGasLegalSentence() . ' iComply does not install, service, or repair ' . $mfrName . ' boilers or gas appliances.')
-                            : ('Yes. Icomply Property Services installs, commissions, maintains and certifies ' . $mfrName . ' equipment across Greater Manchester and the North West.'),
+                            : ('Yes. iComply Property Services installs, commissions, maintains and certifies ' . $mfrName . ' equipment across Greater Manchester and the North West.'),
                     ],
                 ],
                 [
@@ -151,7 +151,7 @@ $schema = [
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
                 <img src="<?= htmlspecialchars(manufacturerImageUrl($mfrSlug, $primaryService), ENT_QUOTES, 'UTF-8') ?>"
-                     alt="<?= htmlspecialchars($gasBrand && function_exists('icomplyGasLegalSentence') ? icomplyGasLegalSentence() : ($mfrName . ' equipment — Icomply Property Services'), ENT_QUOTES, 'UTF-8') ?>"
+                     alt="<?= htmlspecialchars($gasBrand && function_exists('icomplyGasLegalSentence') ? icomplyGasLegalSentence() : ($mfrName . ' equipment — iComply Property Services'), ENT_QUOTES, 'UTF-8') ?>"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
                      loading="eager"
                      onerror="this.src='<?= htmlspecialchars(serviceImageUrl($primaryService), ENT_QUOTES, 'UTF-8') ?>'">

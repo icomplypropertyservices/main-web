@@ -62,7 +62,7 @@ require SITE_ROOT . '/includes/header.php';
 <!-- HERO: solid navy + image with dark overlay for readable text -->
 <section class="relative overflow-hidden bg-[#061828] text-white">
     <div class="absolute inset-0">
-        <img src="<?= htmlspecialchars($KEYWORD_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($KEYWORD_NAME ?? 'Property compliance', ENT_QUOTES, 'UTF-8') ?> — Icomply Property Services" class="w-full h-full object-cover opacity-35" loading="eager"
+        <img src="<?= htmlspecialchars($KEYWORD_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($KEYWORD_NAME ?? 'Property compliance', ENT_QUOTES, 'UTF-8') ?> — iComply Property Services" class="w-full h-full object-cover opacity-35" loading="eager"
              onerror="this.src=$SERVICE_IMAGE">
         <div class="absolute inset-0 bg-gradient-to-r from-[#061828] via-[#061828]/95 to-[#061828]/75"></div>
     </div>
@@ -137,13 +137,13 @@ require SITE_ROOT . '/includes/header.php';
             </div>
             <div class="lg:col-span-2 space-y-5">
                 <div class="rounded-3xl overflow-hidden border-2 border-zinc-300 shadow-md bg-zinc-200">
-                    <img src="<?= htmlspecialchars($KEYWORD_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars(($SERVICE_SLUG === 'gas-systems' && function_exists('icomplyGasLegalSentence')) ? icomplyGasLegalSentence() : ($KEYWORD_NAME . ' — Icomply Property Services'), ENT_QUOTES, 'UTF-8') ?>"
+                    <img src="<?= htmlspecialchars($KEYWORD_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars(($SERVICE_SLUG === 'gas-systems' && function_exists('icomplyGasLegalSentence')) ? icomplyGasLegalSentence() : ($KEYWORD_NAME . ' — iComply Property Services'), ENT_QUOTES, 'UTF-8') ?>"
                          class="w-full h-52 object-cover" loading="lazy"
                          onerror="this.src=$SERVICE_IMAGE">
                     <div class="p-3 bg-[#061828] text-white text-sm font-semibold text-center"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></div>
                 </div>
                 <div class="rounded-3xl overflow-hidden border-2 border-zinc-300 shadow-md bg-zinc-200">
-                    <img src="<?= htmlspecialchars($SERVICE_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars(($SERVICE_SLUG === 'gas-systems' && function_exists('icomplyGasLegalSentence')) ? icomplyGasLegalSentence() : ($SERVICE_NAME . ' by Icomply'), ENT_QUOTES, 'UTF-8') ?>"
+                    <img src="<?= htmlspecialchars($SERVICE_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars(($SERVICE_SLUG === 'gas-systems' && function_exists('icomplyGasLegalSentence')) ? icomplyGasLegalSentence() : ($SERVICE_NAME . ' by iComply'), ENT_QUOTES, 'UTF-8') ?>"
                          class="w-full h-40 object-cover" loading="lazy">
                     <div class="p-3 bg-white text-[#061828] text-sm font-semibold text-center border-t-2 border-zinc-200"><?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> service</div>
                 </div>

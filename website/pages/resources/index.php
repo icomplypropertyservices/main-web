@@ -259,7 +259,7 @@ $batchC = $queue['C'];
     <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
         <div class="mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Explore</div>
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">More from Icomply</h2>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">More from iComply</h2>
             <p class="mt-2 text-zinc-600 max-w-2xl">Jump to keyword guides, FAQ, packages and dedicated landlord or commercial pages — or browse the full service list.</p>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">

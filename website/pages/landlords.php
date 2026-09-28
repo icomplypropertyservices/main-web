@@ -131,7 +131,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get portfolio quote</a>
                 <a href="#packages" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">View packages</a>
-                <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20Icomply%2C%20I%20need%20a%20landlord%20compliance%20quote"
+                <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20iComply%2C%20I%20need%20a%20landlord%20compliance%20quote"
                    target="_blank" rel="noopener"
                    class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
             </div>
@@ -148,7 +148,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             ?>
             <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                class="group relative rounded-3xl overflow-hidden border border-white/10 min-h-[140px] bg-white/5 hover:border-[#ff6b00] transition">
-                <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($card['title'], ENT_QUOTES, 'UTF-8') ?> for landlords — Icomply Property Services" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-55 transition" loading="lazy"
+                <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($card['title'], ENT_QUOTES, 'UTF-8') ?> for landlords — iComply Property Services" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-55 transition" loading="lazy"
                      onerror="this.style.display='none'">
                 <div class="relative p-5 h-full flex flex-col justify-end">
                     <div class="text-[10px] uppercase tracking-wider text-[#ff6b00] font-semibold mb-1"><?= htmlspecialchars($card['badge'], ENT_QUOTES, 'UTF-8') ?></div>
@@ -269,10 +269,10 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
 <section class="max-w-7xl mx-auto px-6 py-16 md:py-20">
     <div class="grid lg:grid-cols-2 gap-12 items-start">
         <div>
-            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Why Icomply</div>
+            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Why iComply</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Stockport engineers, North West coverage</h2>
             <p class="mt-4 text-zinc-600 leading-relaxed">
-                Based in Offerton, Stockport, Icomply Property Services supports landlords and letting agents across
+                Based in Offerton, Stockport, iComply Property Services supports landlords and letting agents across
                 Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria. We focus on clear scope, fixed-price
                 quotes and paperwork that stands up to tenancy deposits, local authority checks and insurer audits.
             </p>

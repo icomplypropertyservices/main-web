@@ -11,14 +11,14 @@ if ($ref === '') {
 }
 
 $pageTitle = 'Thank You — Request Received';
-$metaDesc = 'Thanks for contacting Icomply Property Services. We will respond shortly. Prefer faster help? Call or WhatsApp us now.';
-$metaKeywords = 'Icomply contact, property compliance quote North West';
+$metaDesc = 'Thanks for contacting iComply Property Services. We will respond shortly. Prefer faster help? Call or WhatsApp us now.';
+$metaKeywords = 'iComply contact, property compliance quote North West';
 $metaRobots = 'noindex, follow'; // post-submit page — avoid thin/duplicate indexing
 $canonicalUrl = url('/thank-you.php');
 
 $services = getServices();
 $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
-$waText = rawurlencode('Hi Icomply, I just submitted a quote request and would like a quicker reply.');
+$waText = rawurlencode('Hi iComply, I just submitted a quote request and would like a quicker reply.');
 $waUrl = 'https://wa.me/' . WHATSAPP . '?text=' . $waText;
 
 $serviceBlurbs = [
@@ -153,7 +153,7 @@ require SITE_ROOT . '/includes/header.php';
                class="service-card group bg-white border rounded-3xl overflow-hidden hover:border-[#ff6b00]">
                 <div class="relative h-36 bg-zinc-100">
                     <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>"
-                         alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> in the North West — Icomply Property Services"
+                         alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> in the North West — iComply Property Services"
                          class="w-full h-full object-cover"
                          loading="lazy"
                          onerror="this.style.display='none'">

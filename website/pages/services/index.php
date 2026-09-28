@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../../config.php';
 
 $pageTitle = 'All Services | Fire Safety, Professional & Construction | North West';
-$metaDesc = 'Browse Icomply services: fire safety systems and fire risk assessments, electrical, gas, security, professional services, kitchens, bathrooms, renovation and construction across the North West.';
+$metaDesc = 'Browse iComply services: fire safety systems and fire risk assessments, electrical, gas, security, professional services, kitchens, bathrooms, renovation and construction across the North West.';
 $metaKeywords = 'fire risk assessment, fire safety systems, kitchen fitting, bathroom renovation, plastering, landlord compliance, EICR, CCTV, Manchester, Stockport, North West';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 
@@ -118,7 +118,7 @@ foreach ($categories as $catKey => $cat):
                class="service-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="h-44 bg-zinc-100 overflow-hidden">
                     <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>"
-                         alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> services by Icomply Property Services"
+                         alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> services by iComply Property Services"
                          class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
                          loading="lazy"
                          onerror="this.src='<?= htmlspecialchars(url('/assets/images/services/fire-alarms.jpg'), ENT_QUOTES, 'UTF-8') ?>'">

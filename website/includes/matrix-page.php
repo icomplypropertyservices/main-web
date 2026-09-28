@@ -117,7 +117,7 @@ function icomplyMatrixShared(): array
         'areasHub' => url('/pages/areas'),
         'kwHub' => url('/pages/keywords'),
         'svcHub' => url('/pages/services'),
-        'brand' => defined('SITE_NAME') ? SITE_NAME : 'Icomply Property Services',
+        'brand' => defined('SITE_NAME') ? SITE_NAME : 'iComply Property Services',
     ];
     return $s;
 }

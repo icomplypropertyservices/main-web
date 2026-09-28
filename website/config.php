@@ -1,13 +1,13 @@
 <?php
 /**
- * Icomply Property Services — site config + helpers.
+ * iComply Property Services — site config + helpers.
  * Data lives in data/*.json; optional overrides in config.local.php.
  */
 define('SITE_ROOT', __DIR__);
 
 // Defaults (overridable via config.local.php / env / Vercel)
 $siteDefaults = [
-    'SITE_NAME' => 'Icomply Property Services',
+    'SITE_NAME' => 'iComply Property Services',
     'SITE_URL' => 'http://localhost/icomply',
     'PHONE' => '07517806082',
     'EMAIL' => 'info@icomplypropertyservices.co.uk',
@@ -621,9 +621,9 @@ function getManufacturerCatalog(): array {
                     'name' => $name,
                     'slug' => $slug,
                     'services' => [$service],
-                    'blurb' => "Icomply installs and services {$name} equipment across the North West.",
+                    'blurb' => "iComply installs and services {$name} equipment across the North West.",
                     'seo_title' => "{$name} Products & Service",
-                    'seo_desc' => "{$name} installation, servicing and trade products from Icomply Property Services.",
+                    'seo_desc' => "{$name} installation, servicing and trade products from iComply Property Services.",
                     'seo_keywords' => $name,
                     'products' => [],
                     'featured' => false,
@@ -722,7 +722,7 @@ function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
         $href = htmlspecialchars($brandHref, ENT_QUOTES, 'UTF-8');
         $src = htmlspecialchars(manufacturerImageUrl($slug, $serviceSlug !== '' ? $serviceSlug : 'fire-alarms'), ENT_QUOTES, 'UTF-8');
         $html .= '<a href="' . $href . '" class="bg-white border-2 border-zinc-200 rounded-2xl overflow-hidden hover:border-[#ff6b00] hover:shadow-md transition block group">'
-            . '<img src="' . $src . '" alt="' . $label . ' products and service — Icomply" '
+            . '<img src="' . $src . '" alt="' . $label . ' products and service — iComply" '
             . 'class="w-full h-28 object-cover group-hover:scale-105 transition duration-300" loading="lazy" '
             . 'onerror="this.src=\'' . $fallback . '\'">'
             . '<div class="p-3 text-sm text-black text-center font-semibold">' . $label

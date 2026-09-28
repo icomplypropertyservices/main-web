@@ -32,7 +32,7 @@ $contractSystems = [
             'Optional priority call-out within SLA',
         ],
         'frequency' => 'Typically 6-monthly (system-dependent)',
-        'wa_text' => 'Hi Icomply, I need a fire alarm maintenance contract quote',
+        'wa_text' => 'Hi iComply, I need a fire alarm maintenance contract quote',
     ],
     'emergency-lighting' => [
         'title' => 'Emergency lighting',
@@ -46,7 +46,7 @@ $contractSystems = [
             'Portfolio scheduling across multi-site stock',
         ],
         'frequency' => 'Monthly + annual duration',
-        'wa_text' => 'Hi Icomply, I need an emergency lighting maintenance contract quote',
+        'wa_text' => 'Hi iComply, I need an emergency lighting maintenance contract quote',
     ],
     'nurse-call' => [
         'title' => 'Nurse call',
@@ -60,7 +60,7 @@ $contractSystems = [
             'Documentation for CQC / estate audits',
         ],
         'frequency' => 'Agreed PPM calendar',
-        'wa_text' => 'Hi Icomply, I need a nurse call maintenance contract quote',
+        'wa_text' => 'Hi iComply, I need a nurse call maintenance contract quote',
     ],
     'cctv' => [
         'title' => 'CCTV',
@@ -74,7 +74,7 @@ $contractSystems = [
             'Priority engineer response on contract',
         ],
         'frequency' => 'Quarterly or bi-annual',
-        'wa_text' => 'Hi Icomply, I need a CCTV maintenance contract quote',
+        'wa_text' => 'Hi iComply, I need a CCTV maintenance contract quote',
     ],
 ];
 
@@ -160,7 +160,7 @@ require SITE_ROOT . '/includes/header.php';
                 ?>
                 <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                    class="group relative rounded-3xl overflow-hidden border border-white/10 min-h-[140px] bg-white/5 hover:border-[#ff6b00] transition">
-                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($card['title'], ENT_QUOTES, 'UTF-8') ?> maintenance — Icomply Property Services"
+                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($card['title'], ENT_QUOTES, 'UTF-8') ?> maintenance — iComply Property Services"
                          class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-55 transition" loading="lazy"
                          onerror="this.style.display='none'">
                     <div class="relative p-5 h-full flex flex-col justify-end">
@@ -402,7 +402,7 @@ require SITE_ROOT . '/includes/header.php';
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
                    class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
-                <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi Icomply, I need a planned maintenance contract quote') ?>"
+                <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi iComply, I need a planned maintenance contract quote') ?>"
                    target="_blank" rel="noopener"
                    class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>
                 <a href="#quote" class="px-6 py-3 rounded-2xl border border-white/30 font-semibold hover:bg-white/10">Quote form</a>
@@ -457,7 +457,7 @@ require SITE_ROOT . '/includes/header.php';
             </p>
         </form>
         <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm">
-            <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi Icomply, I need a planned maintenance contract quote') ?>"
+            <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi iComply, I need a planned maintenance contract quote') ?>"
                target="_blank" rel="noopener"
                class="px-5 py-2.5 rounded-2xl bg-green-600 hover:bg-green-500 text-white font-semibold">WhatsApp us instead</a>
             <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"

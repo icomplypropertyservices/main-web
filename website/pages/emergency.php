@@ -17,7 +17,7 @@ $services = getServices();
 $areas = getAreas();
 
 $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
-$waText = rawurlencode('Hi Icomply, I need a priority reactive call-out. Fault type / postcode: ');
+$waText = rawurlencode('Hi iComply, I need a priority reactive call-out. Fault type / postcode: ');
 $waUrl = 'https://wa.me/' . WHATSAPP . '?text=' . $waText;
 
 // Primary reactive scenarios
@@ -378,7 +378,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             ?>
             <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                class="relative rounded-3xl overflow-hidden min-h-[130px] border border-zinc-200 group">
-                <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?> — Icomply Property Services"
+                <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?> — iComply Property Services"
                      class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-90 transition" loading="lazy"
                      onerror="this.style.display='none'">
                 <div class="relative p-4 h-full flex items-end bg-gradient-to-t from-black/55 to-transparent">

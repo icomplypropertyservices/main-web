@@ -137,7 +137,7 @@ require SITE_ROOT . '/includes/header.php';
         </div>
 
         <div>
-            <h2 class="text-2xl font-semibold tracking-tight mb-3">Related Icomply services</h2>
+            <h2 class="text-2xl font-semibold tracking-tight mb-3">Related iComply services</h2>
             <div class="flex flex-wrap gap-2">
                 <a href="<?= url('/pages/services/cctv.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">CCTV services</a>
                 <a href="<?= url('/pages/keywords/cctv-installation.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">CCTV installation</a>

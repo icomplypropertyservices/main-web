@@ -132,7 +132,7 @@ $faqs = [
     // Shop
     [
         'cat' => 'Shop & products',
-        'q' => 'What can I buy in the Icomply shop?',
+        'q' => 'What can I buy in the iComply shop?',
         'a' => 'Our trade shop offers compliance-related kits, parts and products via Shopify checkout when the store is live. Product pages show descriptions and pricing; stock and shipping are handled at checkout.',
         'link' => ['/shop/index.php', 'Visit the shop'],
     ],
@@ -159,7 +159,7 @@ $faqs = [
         'cat' => 'Manufacturers & other services',
         'q' => 'How do I get started?',
         'a' => 'Call ' . PHONE . ', message us on WhatsApp, email ' . EMAIL . ', or use the free quote form on the contact page. Include your postcode and the service you need — we will confirm scope, price and the soonest suitable appointment.',
-        'link' => ['/contact.php', 'Contact Icomply'],
+        'link' => ['/contact.php', 'Contact iComply'],
     ],
 ];
 
@@ -181,7 +181,7 @@ $schema = [
     '@graph' => [
         [
             '@type' => 'FAQPage',
-            'name' => 'Property Compliance FAQ — Icomply Property Services',
+            'name' => 'Property Compliance FAQ — iComply Property Services',
             'description' => $metaDesc,
             'url' => url('/pages/faq.php'),
             'mainEntity' => $faqEntities,
@@ -244,7 +244,7 @@ require SITE_ROOT . '/includes/header.php';
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#faqs" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Browse FAQs</a>
                 <a href="<?= url('/contact.php') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">Free quote</a>
-                <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20Icomply%2C%20I%20have%20a%20question"
+                <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20iComply%2C%20I%20have%20a%20question"
                    target="_blank" rel="noopener"
                    class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
             </div>
@@ -379,7 +379,7 @@ require SITE_ROOT . '/includes/header.php';
             <p class="mt-3 text-white/75">Tell us your postcode and the system or certificate you need — free fixed-price quotes from Stockport-based engineers.</p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="<?= url('/contact.php') ?>" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold">Request a quote</a>
-                <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20Icomply%2C%20I%20have%20a%20compliance%20question"
+                <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20iComply%2C%20I%20have%20a%20compliance%20question"
                    target="_blank" rel="noopener"
                    class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>
                 <a href="tel:<?= htmlspecialchars(preg_replace('/\s+/', '', PHONE), ENT_QUOTES, 'UTF-8') ?>"

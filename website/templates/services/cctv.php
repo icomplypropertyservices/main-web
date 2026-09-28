@@ -2,7 +2,7 @@
 /**
  * CCTV Systems — 3 images · 3 paragraphs · manufacturers · SEO brand alts
  */
-$pageTitle = '{{SERVICE_NAME}} in {{AREA}} | Icomply Property Services';
+$pageTitle = '{{SERVICE_NAME}} in {{AREA}} | iComply Property Services';
 $metaDesc = 'BS EN 62676 CCTV installation in {{AREA}}. Hikvision, Axis and Dahua IP cameras, NVRs, ANPR and remote monitoring.';
 $metaKeywords = 'cctv installation {{AREA}}, Hikvision CCTV {{AREA}}, Axis camera {{AREA}}, Dahua NVR {{AREA}}, BS EN 62676 {{AREA}}, IP CCTV {{AREA}}, ANPR {{AREA}}';
 $ogImage = url('/assets/images/services/cctv.jpg');
@@ -68,7 +68,7 @@ require SITE_ROOT . '/includes/header.php';
     <!-- IMAGE 1: Hero -->
     <div class="mt-8">
         <img src="<?= url('/assets/images/services/cctv.jpg') ?>"
-             alt="Hikvision Axis Dahua CCTV camera and NVR panel installation in {{AREA}} by Icomply Property Services"
+             alt="Hikvision Axis Dahua CCTV camera and NVR panel installation in {{AREA}} by iComply Property Services"
              width="1200" height="800"
              class="w-full h-72 md:h-96 object-cover rounded-3xl border"
              loading="eager">
@@ -77,7 +77,7 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 1 -->
     <p class="mt-8 text-lg text-black max-w-3xl leading-relaxed">
-        Icomply Property Services provides complete <strong>BS EN 62676</strong> compliant <strong>{{SERVICE_NAME}}</strong> design, installation, remote viewing, ANPR and 24/7 monitoring across <strong>{{AREA}}</strong> and the wider North West. Our engineers specify Hikvision, Axis and Dahua IP cameras with professional NVR/DVR recording for clear, prosecutable evidence.
+        iComply Property Services provides complete <strong>BS EN 62676</strong> compliant <strong>{{SERVICE_NAME}}</strong> design, installation, remote viewing, ANPR and 24/7 monitoring across <strong>{{AREA}}</strong> and the wider North West. Our engineers specify Hikvision, Axis and Dahua IP cameras with professional NVR/DVR recording for clear, prosecutable evidence.
     </p>
 
     <!-- PARAGRAPH 2 -->
@@ -89,7 +89,7 @@ require SITE_ROOT . '/includes/header.php';
     <div class="mt-10 grid md:grid-cols-2 gap-6">
         <div>
             <img src="<?= url('/assets/images/keywords/hd-cctv-camera.jpg') ?>"
-                 alt="Hikvision and Axis 4K IP CCTV camera dome and bullet cameras installed by Icomply in {{AREA}}"
+                 alt="Hikvision and Axis 4K IP CCTV camera dome and bullet cameras installed by iComply in {{AREA}}"
                  width="800" height="600"
                  class="w-full h-56 object-cover rounded-2xl border"
                  loading="lazy"
@@ -127,7 +127,7 @@ require SITE_ROOT . '/includes/header.php';
     <!-- IMAGE 3: Brand focus -->
     <div class="mt-10">
         <img src="<?= url('/assets/images/keywords/cctv-installation.jpg') ?>"
-             alt="Hikvision Axis Dahua CCTV installation panels cameras and video wall equipment — Icomply {{AREA}}"
+             alt="Hikvision Axis Dahua CCTV installation panels cameras and video wall equipment — iComply {{AREA}}"
              width="1200" height="700"
              class="w-full h-64 md:h-80 object-cover rounded-3xl border"
              loading="lazy"

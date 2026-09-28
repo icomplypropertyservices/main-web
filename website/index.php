@@ -5,10 +5,10 @@
 require_once __DIR__ . '/config.php';
 require_once SITE_ROOT . '/includes/shopify.php';
 
-$pageTitle = 'Property Maintenance & Compliance | Icomply Property Services';
-$metaDesc = 'iComply Property Services — landlord compliance (EICR, FRA), electrical, fire safety, kitchens, bathrooms, renovations, CCTV, Legionella and asbestos surveys across Greater Manchester. Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not issue them.';
+$pageTitle = 'Property Maintenance & Compliance | iComply Property Services';
+$metaDesc = 'iComply Property Services — landlord compliance (EICR, FRA), electrical, fire safety, kitchens, bathrooms, renovations, CCTV, Legionella and asbestos surveys across Greater Manchester and the North West. Stockport SK2 5DE.';
 $canonicalUrl = url('/');
-$metaKeywords = 'landlord compliance Stockport, EICR Manchester, gas safety CP12, fire risk assessment, kitchen fitting, renovation, CCTV, legionella, asbestos survey, North West';
+$metaKeywords = 'landlord compliance Stockport, EICR Manchester, fire risk assessment, kitchen fitting, renovation, CCTV, legionella, asbestos survey, North West';
 $ogImage = url('/assets/images/android-chrome-512.png');
 
 $services = getServices();
@@ -160,7 +160,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                class="service-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="h-36 bg-zinc-100 overflow-hidden">
-                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> in Greater Manchester and the North West — Icomply Property Services"
+                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> in Greater Manchester and the North West — iComply Property Services"
                          class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy"
                          onerror="this.src='<?= htmlspecialchars(url('/assets/images/services/fire-alarms.jpg'), ENT_QUOTES, 'UTF-8') ?>'">
                 </div>

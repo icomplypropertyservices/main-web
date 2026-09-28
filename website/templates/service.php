@@ -218,7 +218,7 @@ $schema = [
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
                 <img src="<?= htmlspecialchars(serviceImageUrl($SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>"
-                     alt="<?= htmlspecialchars($serviceSlug === 'gas-systems' && function_exists('icomplyGasLegalSentence') ? icomplyGasLegalSentence() : ($serviceName . ' by Icomply Property Services'), ENT_QUOTES, 'UTF-8') ?>"
+                     alt="<?= htmlspecialchars($serviceSlug === 'gas-systems' && function_exists('icomplyGasLegalSentence') ? icomplyGasLegalSentence() : ($serviceName . ' by iComply Property Services'), ENT_QUOTES, 'UTF-8') ?>"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
                      loading="eager"
                      onerror="this.style.display='none'">
@@ -267,7 +267,7 @@ $schema = [
                 <?php endforeach; ?>
             <?php else: ?>
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
-                Icomply Property Services designs, installs, commissions, maintains and certifies
+                iComply Property Services designs, installs, commissions, maintains and certifies
                 <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong>
                 for commercial, industrial, multi-let, care and residential properties across Greater Manchester,
                 Lancashire, Cheshire, Merseyside and Cumbria.

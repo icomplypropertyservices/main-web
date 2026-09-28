@@ -180,7 +180,7 @@ $schema = [
                 Compliance engineers for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>
             </h2>
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
-                Icomply Property Services provides complete property compliance for landlords, facilities managers,
+                iComply Property Services provides complete property compliance for landlords, facilities managers,
                 care providers and commercial occupiers in <strong><?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></strong>. Whether you need an EICR,
                 fire alarm service or emergency lighting test,
                 we book local engineers with quotes and clear documentation.

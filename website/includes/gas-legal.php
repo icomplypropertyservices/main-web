@@ -188,20 +188,20 @@ function icomplySentenceClaimsGasWork(string $sentence): bool
     }
     $negated = (bool) preg_match('/\b(?:does not|do not|is not|are not|not Gas Safe)\b/i', $sentence);
     $positive = (bool) preg_match(
-        '/\b(?:Icomply|iComply|we|our)\s+(?:issue|issues|install|installs|service|services|repair|repairs|deliver|delivers|provide|provides)\b/i',
+        '/\b(?:iComply|iComply|we|our)\s+(?:issue|issues|install|installs|service|services|repair|repairs|deliver|delivers|provide|provides)\b/i',
         $sentence
     );
     if ($negated && !$positive) {
         return false;
     }
-    if (preg_match('/\b(?:Icomply|iComply|we|our engineers)\s+(?:are|is)\s+Gas Safe registered\b/i', $sentence)) {
+    if (preg_match('/\b(?:iComply|iComply|we|our engineers)\s+(?:are|is)\s+Gas Safe registered\b/i', $sentence)) {
         return true;
     }
     return (bool) preg_match(
-        '/\b(?:Icomply|iComply|we|our)\b.{0,200}\b(?:issue|issues|issuing|install|installs|installed|service|services|servicing|repair|repairs|deliver|delivers|provide|provides|attend|surveys|certificate|certify|certifies|carry out|carries out)\b.{0,120}\b(?:gas|CP12|CP44|boiler)\b/is',
+        '/\b(?:iComply|iComply|we|our)\b.{0,200}\b(?:issue|issues|issuing|install|installs|installed|service|services|servicing|repair|repairs|deliver|delivers|provide|provides|attend|surveys|certificate|certify|certifies|carry out|carries out)\b.{0,120}\b(?:gas|CP12|CP44|boiler)\b/is',
         $sentence
     ) || (bool) preg_match(
-        '/\b(?:gas|CP12|CP44|boiler)\b.{0,120}\b(?:Icomply|iComply|we|our)\b.{0,100}\b(?:issue|install|service|repair|deliver|provide|attend|certificate)\b/is',
+        '/\b(?:gas|CP12|CP44|boiler)\b.{0,120}\b(?:iComply|iComply|we|our)\b.{0,100}\b(?:issue|install|service|repair|deliver|provide|attend|certificate)\b/is',
         $sentence
     );
 }
@@ -249,8 +249,8 @@ function icomplyHtmlNeedsGasRewrite(string $html): bool
     foreach ([
         'we issue', 'We issue', 'we install', 'We install', 'we service', 'We service',
         'we repair', 'We repair', 'we deliver', 'We deliver', 'we provide', 'We provide',
-        'our engineers', 'Our engineers', 'Icomply deliver', 'Icomply provide', 'Icomply install',
-        'Icomply installs', 'Icomply arranges', 'Icomply surveys', 'Icomply engineers',
+        'our engineers', 'Our engineers', 'iComply deliver', 'iComply provide', 'iComply install',
+        'iComply installs', 'iComply arranges', 'iComply surveys', 'iComply engineers',
         'iComply inspects', 'issues CP12', 'issue CP12', 'issuing CP12',
         'same-week', 'same week', 'Same-week', 'within 24 hours', 'within 2 hours',
         'on time, every time',
