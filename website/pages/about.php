@@ -246,7 +246,7 @@ $aboutSchema = [
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             <?php foreach ($services as $slug => $name):
                 $blurb = getServiceBlurb($slug, true);
-                $img = url('/assets/images/services/' . $slug . '.jpg');
+                $img = serviceImageUrl($slug);
             ?>
             <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                class="service-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">

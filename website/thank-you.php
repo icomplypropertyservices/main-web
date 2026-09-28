@@ -147,7 +147,7 @@ require SITE_ROOT . '/includes/header.php';
             <?php foreach ($featuredSlugs as $slug):
                 $name = $services[$slug] ?? ucwords(str_replace('-', ' ', $slug));
                 $blurb = $serviceBlurbs[$slug] ?? 'Professional install, service and certification.';
-                $img = url('/assets/images/services/' . $slug . '.jpg');
+                $img = serviceImageUrl($slug);
             ?>
             <a href="<?= url('/pages/services/' . rawurlencode($slug) . '.php') ?>"
                class="service-card group bg-white border rounded-3xl overflow-hidden hover:border-[#ff6b00]">

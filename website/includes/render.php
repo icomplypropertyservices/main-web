@@ -306,7 +306,7 @@ function renderManufacturerPage(string $mfrSlug): void {
     $GLOBALS['areas'] = getAreas();
 
     $primary = $entry['services'][0] ?? 'fire-alarms';
-    $fallbackImg = htmlspecialchars(url('/assets/images/services/' . $primary . '.jpg'), ENT_QUOTES, 'UTF-8');
+    $fallbackImg = htmlspecialchars(serviceImageUrl($primary), ENT_QUOTES, 'UTF-8');
 
     // Services chips
     $servicesHtml = '';

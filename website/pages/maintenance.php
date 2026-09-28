@@ -156,7 +156,7 @@ require SITE_ROOT . '/includes/header.php';
             </div>
             <div class="grid grid-cols-2 gap-3">
                 <?php foreach ($contractSystems as $slug => $card):
-                    $img = url('/assets/images/services/' . $slug . '.jpg');
+                    $img = serviceImageUrl($slug);
                 ?>
                 <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                    class="group relative rounded-3xl overflow-hidden border border-white/10 min-h-[140px] bg-white/5 hover:border-[#ff6b00] transition">
@@ -245,7 +245,7 @@ require SITE_ROOT . '/includes/header.php';
         <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
             <?php foreach ($contractSystems as $slug => $sys):
                 $name = $services[$slug] ?? $sys['title'];
-                $img = url('/assets/images/services/' . $slug . '.jpg');
+                $img = serviceImageUrl($slug);
                 $waUrl = $waBase . '?text=' . rawurlencode($sys['wa_text']);
             ?>
             <article id="<?= htmlspecialchars($slug, ENT_QUOTES, 'UTF-8') ?>"

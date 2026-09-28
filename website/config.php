@@ -565,7 +565,10 @@ function manufacturerTagsHtml(string $serviceSlug): string {
     $html = '';
     foreach (getManufacturers($serviceSlug) as $m) {
         $slug = manufacturerSlugFromName($m);
-        $href = htmlspecialchars(url('/pages/manufacturers/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
+        $brandHref = getManufacturerBySlug($slug)
+            ? url('/pages/manufacturers/' . $slug . '.php')
+            : url('/pages/manufacturers/index.php');
+        $href = htmlspecialchars($brandHref, ENT_QUOTES, 'UTF-8');
         $label = htmlspecialchars($m, ENT_QUOTES, 'UTF-8');
         $html .= '<a href="' . $href . '" '
             . 'class="inline-flex items-center gap-1.5 px-4 py-2.5 bg-white border-2 border-zinc-200 rounded-full text-sm text-black font-semibold hover:border-[#ff6b00] hover:text-[#ff6b00] hover:shadow-sm transition" '
@@ -598,7 +601,7 @@ function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
     }
     $catalog = getManufacturerCatalog();
     $html = '';
-    $fallback = htmlspecialchars(url('/assets/images/services/' . $serviceSlug . '.jpg'), ENT_QUOTES, 'UTF-8');
+    $fallback = htmlspecialchars(serviceImageUrl($serviceSlug), ENT_QUOTES, 'UTF-8');
     foreach ($slugs as $slug) {
         $slug = preg_replace('/[^a-z0-9\-]/', '', (string)$slug);
         if ($slug === '') {
@@ -606,7 +609,10 @@ function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
         }
         $entry = $catalog[$slug] ?? null;
         $label = htmlspecialchars($entry['name'] ?? ucwords(str_replace('-', ' ', $slug)), ENT_QUOTES, 'UTF-8');
-        $href = htmlspecialchars(url('/pages/manufacturers/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
+        $brandHref = $entry
+            ? url('/pages/manufacturers/' . $slug . '.php')
+            : url('/pages/manufacturers/index.php');
+        $href = htmlspecialchars($brandHref, ENT_QUOTES, 'UTF-8');
         $src = htmlspecialchars(manufacturerImageUrl($slug, $serviceSlug !== '' ? $serviceSlug : 'fire-alarms'), ENT_QUOTES, 'UTF-8');
         $html .= '<a href="' . $href . '" class="bg-white border-2 border-zinc-200 rounded-2xl overflow-hidden hover:border-[#ff6b00] hover:shadow-md transition block group">'
             . '<img src="' . $src . '" alt="' . $label . ' products and service — Icomply" '

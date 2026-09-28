@@ -142,7 +142,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
         </div>
         <div class="grid grid-cols-2 gap-3">
             <?php foreach ($landlordServices as $slug => $card):
-                $img = url('/assets/images/services/' . $slug . '.jpg');
+                $img = serviceImageUrl($slug);
             ?>
             <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                class="group relative rounded-3xl overflow-hidden border border-white/10 min-h-[140px] bg-white/5 hover:border-[#ff6b00] transition">
@@ -186,7 +186,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <?php foreach ($landlordServices as $slug => $card):
-            $img = url('/assets/images/services/' . $slug . '.jpg');
+            $img = serviceImageUrl($slug);
             $svcName = $services[$slug] ?? $card['title'];
         ?>
         <a href="<?= url('/pages/services/' . $slug . '.php') ?>"

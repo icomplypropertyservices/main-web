@@ -229,7 +229,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
 
     <div class="grid md:grid-cols-3 gap-6">
         <?php foreach ($scenarios as $slug => $card):
-            $img = url('/assets/images/services/' . $slug . '.jpg');
+            $img = serviceImageUrl($slug);
             $svcName = $services[$slug] ?? $card['title'];
         ?>
         <div class="service-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
@@ -374,7 +374,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 'cctv' => 'Security systems',
             ];
             foreach ($prevSlugs as $slug => $label):
-                $img = url('/assets/images/services/' . $slug . '.jpg');
+                $img = serviceImageUrl($slug);
             ?>
             <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                class="relative rounded-3xl overflow-hidden min-h-[130px] border border-zinc-200 group">

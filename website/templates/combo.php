@@ -12,7 +12,7 @@ $metaDesc = $poaCombo
     ? ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Price on application after scope. Local North West team from Stockport.')
     : ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing & certification. Local engineers. Written quote after scope.');
 $metaKeywords = $SEO_KEYWORDS;
-$ogImage = url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
+$ogImage = serviceImageUrl($SERVICE_SLUG);
 
 $allServices = getServices();
 $allAreas = getAreas();
@@ -70,7 +70,7 @@ $schema = [
             'alternateName' => $serviceName . ' installation and maintenance in ' . $areaName,
             'description' => $metaDesc,
             'url' => $canonicalUrl,
-            'image' => $ogImage ?? url('/assets/images/services/' . $serviceSlug . '.jpg'),
+            'image' => $ogImage ?? serviceImageUrl($serviceSlug),
             'serviceType' => $serviceName,
             'category' => $serviceName,
             'provider' => [
@@ -138,7 +138,7 @@ $schema = [
             'url' => $canonicalUrl,
             'telephone' => PHONE,
             'email' => EMAIL,
-            'image' => $ogImage ?? url('/assets/images/services/' . $serviceSlug . '.jpg'),
+            'image' => $ogImage ?? serviceImageUrl($serviceSlug),
             'areaServed' => [
                 '@type' => 'City',
                 'name' => $areaName,
@@ -192,7 +192,7 @@ $schema = [
                 <p class="mt-6 text-sm text-white/60"><?= htmlspecialchars($standards, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
-                <img src="<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>"
+                <img src="<?= htmlspecialchars(serviceImageUrl($SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation and servicing in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> by Icomply Property Services"
                      width="1200" height="800"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
@@ -278,7 +278,7 @@ $schema = [
                      width="800" height="600"
                      class="w-full h-44 object-cover"
                      loading="lazy"
-                     onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
+                     onerror="this.src='<?= htmlspecialchars(serviceImageUrl($SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>'">
                 <p class="text-xs text-zinc-500 px-3 py-2"><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> control equipment &amp; panels</p>
             </div>
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
@@ -287,7 +287,7 @@ $schema = [
                      width="800" height="600"
                      class="w-full h-44 object-cover"
                      loading="lazy"
-                     onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
+                     onerror="this.src='<?= htmlspecialchars(serviceImageUrl($SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>'">
                 <p class="text-xs text-zinc-500 px-3 py-2">Installation, testing &amp; certification in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
         </div>
@@ -337,7 +337,7 @@ $schema = [
                  width="1200" height="700"
                  class="w-full h-64 md:h-80 object-cover"
                  loading="lazy"
-                 onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
+                 onerror="this.src='<?= htmlspecialchars(serviceImageUrl($SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>'">
             <p class="text-xs text-zinc-500 px-4 py-3">Manufacturer panels &amp; systems commonly installed and serviced in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></p>
         </div>
     </div>
