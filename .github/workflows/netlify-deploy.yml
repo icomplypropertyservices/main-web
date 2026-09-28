@@ -1,4 +1,4 @@
-# Deploy iComply main-web to Netlify on every push to main.
+# Deploy iComply main-web to Netlify.
 # Official CLI action: https://github.com/netlify/actions
 #
 # Jack must add these GitHub Actions secrets once (never commit them):
@@ -8,6 +8,10 @@
 #
 # PHP does not run at request time on Netlify. This workflow pre-renders
 # website/ → dist/ then publishes dist/ (pretty URLs + HTML, not PHP source).
+#
+# Production (`--prod` and the Netlify production rebuild) runs only from the
+# `deploy` job. Pull requests run `preview` instead: a draft alias
+# https://pr-<N>--<site-name>.netlify.app with no `--prod` flag.
 
 name: Deploy to Netlify
 
@@ -15,11 +19,11 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
   workflow_dispatch:
-
-concurrency:
-  group: netlify-production
-  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -27,7 +31,13 @@ permissions:
 jobs:
   deploy:
     name: Production deploy (main)
+    # Push to main, or a manual run, as before this workflow gained pull_request.
+    # pull_request never matches, so this job cannot publish production for a PR.
+    if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
+    concurrency:
+      group: netlify-production
+      cancel-in-progress: true
     steps:
       - name: Check required secrets
         env:
@@ -75,7 +85,10 @@ jobs:
         run: php website/bin/check-static-export.php
 
       # Official Netlify CLI action. --dir matches netlify.toml publish = dist.
+      # Guarded again so --prod cannot run unless this is a push to main
+      # or a manual workflow_dispatch (the two production triggers).
       - name: Deploy dist/ to Netlify production
+        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event_name == 'workflow_dispatch'
         uses: netlify/actions/cli@master
         with:
           args: deploy --dir=dist --prod --message "github.com/${{ github.repository }}@${{ github.sha }}"
@@ -87,6 +100,7 @@ jobs:
       # GitHub↔Netlify webhook (the path that missed PR #1). That build
       # also runs php website/bin/static-export.php (see netlify.toml).
       - name: Queue Netlify production rebuild of main
+        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event_name == 'workflow_dispatch'
         continue-on-error: true
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -99,3 +113,203 @@ jobs:
             -d '{"clear_cache":true}'
           echo
           echo "Queued Netlify build for site"
+
+  preview:
+    name: Draft preview (pull request)
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    concurrency:
+      group: netlify-preview-${{ github.event.pull_request.number }}
+      cancel-in-progress: true
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Check Netlify secrets
+        id: secrets
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          HEAD_REPO: ${{ github.event.pull_request.head.repo.full_name }}
+        run: |
+          set -euo pipefail
+          if [ "$HEAD_REPO" != "$GITHUB_REPOSITORY" ]; then
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            msg="Pull request is from a fork (${HEAD_REPO}); Netlify secrets are not available. Skipping draft deploy. Production was not deployed."
+            echo "$msg"
+            echo "::warning::$msg"
+            echo "$msg" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          if [ -z "$NETLIFY_AUTH_TOKEN" ] || [ -z "$NETLIFY_SITE_ID" ]; then
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            msg="NETLIFY_AUTH_TOKEN or NETLIFY_SITE_ID is not available to this pull_request run. Skipping draft deploy. Production was not deployed."
+            echo "$msg"
+            echo "::warning::$msg"
+            echo "$msg" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          echo "available=true" >> "$GITHUB_OUTPUT"
+
+      - name: Checkout
+        if: steps.secrets.outputs.available == 'true'
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        if: steps.secrets.outputs.available == 'true'
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          coverage: none
+
+      - name: Verify source tree (website/)
+        if: steps.secrets.outputs.available == 'true'
+        run: |
+          set -e
+          test -f website/manifest.json
+          test -f website/pages/areas.php
+          test -f website/pages/services.php
+          test -f website/pages/resources.php
+          test -d website/assets
+          test -f website/bin/static-export.php
+          echo "website/ OK — will pre-render to dist/"
+
+      - name: Static export (PHP → HTML in dist/)
+        if: steps.secrets.outputs.available == 'true'
+        env:
+          SITE_URL: https://icomplypropertyservices.co.uk
+        run: php website/bin/static-export.php
+        timeout-minutes: 90
+
+      - name: Verify dist/ pretty URLs
+        if: steps.secrets.outputs.available == 'true'
+        run: php website/bin/check-static-export.php
+
+      # Same action, secrets, and --dir=dist as production. No --prod.
+      # --alias pins https://pr-<N>--<site-name>.netlify.app.
+      # --no-build uploads the dist/ this job just rendered. Current Netlify
+      # CLI builds by default; a second build would run inside the action
+      # image, which does not have PHP.
+      - name: Deploy dist/ to Netlify draft
+        id: preview_deploy
+        if: steps.secrets.outputs.available == 'true' && github.event_name == 'pull_request'
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --dir=dist --alias pr-${{ github.event.pull_request.number }} --no-build --message "github.com/${{ github.repository }} PR #${{ github.event.pull_request.number }}@${{ github.sha }}"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      - name: Resolve draft deploy_url
+        id: draft
+        if: steps.secrets.outputs.available == 'true' && github.event_name == 'pull_request'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          NETLIFY_URL: ${{ steps.preview_deploy.outputs.NETLIFY_URL }}
+        run: |
+          python3 - << 'PY'
+          import json, os, re, urllib.request
+
+          pr = os.environ["PR_NUMBER"]
+          token = os.environ["NETLIFY_AUTH_TOKEN"]
+          site_id = os.environ["NETLIFY_SITE_ID"]
+          alias_re = re.compile(rf"https://pr-{re.escape(pr)}--[A-Za-z0-9-]+\.netlify\.app")
+
+          def get(path):
+              req = urllib.request.Request(
+                  f"https://api.netlify.com{path}",
+                  headers={"Authorization": f"Bearer {token}"},
+              )
+              with urllib.request.urlopen(req) as resp:
+                  return json.load(resp)
+
+          site = get(f"/api/v1/sites/{site_id}")
+          site_name = site.get("name") or ""
+          alias_url = f"https://pr-{pr}--{site_name}.netlify.app"
+          deploys = get(f"/api/v1/sites/{site_id}/deploys?per_page=20")
+          match = next((d for d in deploys if str(d.get("branch") or "") == f"pr-{pr}"), None)
+          api_deploy_url = ""
+          if match:
+              api_deploy_url = match.get("deploy_ssl_url") or match.get("deploy_url") or ""
+              if api_deploy_url.startswith("http://"):
+                  api_deploy_url = "https://" + api_deploy_url[len("http://"):]
+
+          # Prefer the deploy's own URL when it is already the PR alias.
+          # Otherwise publish the alias this deploy requested. That is the
+          # stable draft URL (deploy_url for the comment).
+          if alias_re.fullmatch(api_deploy_url):
+              deploy_url = api_deploy_url
+          elif alias_re.fullmatch(alias_url):
+              deploy_url = alias_url
+          else:
+              fallback = (os.environ.get("NETLIFY_URL") or "").splitlines()
+              fallback = fallback[0].strip() if fallback else ""
+              if fallback.startswith("http://"):
+                  fallback = "https://" + fallback[len("http://"):]
+              if not fallback.startswith("https://") or "--" not in fallback or " " in fallback:
+                  raise SystemExit("Could not resolve a Netlify draft deploy_url")
+              deploy_url = fallback
+
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as fh:
+              fh.write(f"deploy_url={deploy_url}\n")
+          print(f"deploy_url={deploy_url}")
+          if api_deploy_url and api_deploy_url != deploy_url:
+              print(f"api deploy_url={api_deploy_url}")
+          PY
+
+      - name: Post or update draft URL comment
+        if: steps.secrets.outputs.available == 'true' && github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEPLOY_URL: ${{ steps.draft.outputs.deploy_url }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python3 - << 'PY'
+          import json, os, re, urllib.request
+
+          deploy_url = os.environ["DEPLOY_URL"]
+          pr = os.environ["PR_NUMBER"]
+          if not re.fullmatch(r"https://[A-Za-z0-9.-]+\.netlify\.app/?", deploy_url):
+              raise SystemExit(f"Refusing to comment unexpected deploy_url: {deploy_url}")
+          marker = "<!-- netlify-draft-preview -->"
+          body = (
+              f"{marker}\n"
+              f"**Netlify draft preview** (not production)\n\n"
+              f"{deploy_url}\n\n"
+              f"Draft alias for PR #{pr}. This does not publish production.\n"
+          )
+          token = os.environ["GH_TOKEN"]
+          repo = os.environ["GITHUB_REPOSITORY"]
+
+          def api(method, path, payload=None):
+              data = None if payload is None else json.dumps(payload).encode()
+              req = urllib.request.Request(
+                  f"https://api.github.com{path}",
+                  data=data,
+                  method=method,
+                  headers={
+                      "Authorization": f"Bearer {token}",
+                      "Accept": "application/vnd.github+json",
+                      "X-GitHub-Api-Version": "2022-11-28",
+                      "Content-Type": "application/json",
+                  },
+              )
+              with urllib.request.urlopen(req) as resp:
+                  raw = resp.read().decode()
+                  return json.loads(raw) if raw else None
+
+          comments = api("GET", f"/repos/{repo}/issues/{pr}/comments?per_page=100")
+          existing = next((c for c in comments if marker in (c.get("body") or "")), None)
+          if existing:
+              api("PATCH", f"/repos/{repo}/issues/comments/{existing['id']}", {"body": body})
+              print(f"Updated comment {existing['id']} with {deploy_url}")
+          else:
+              created = api("POST", f"/repos/{repo}/issues/{pr}/comments", {"body": body})
+              print(f"Created comment {created['id']} with {deploy_url}")
+          summary = os.environ.get("GITHUB_STEP_SUMMARY")
+          if summary:
+              with open(summary, "a", encoding="utf-8") as fh:
+                  fh.write(f"Draft preview: {deploy_url}\n")
+          PY
