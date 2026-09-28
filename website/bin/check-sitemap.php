@@ -67,7 +67,11 @@ $required = [
     '/pages/services/asbestos-survey</loc>',
     '/pages/resources/legionella-risk-assessment</loc>',
     '/pages/resources/asbestos-survey</loc>',
-    '/shop</loc>',
+    '/shop/</loc>',
+    '/shop/fire/</loc>',
+    '/shop/electrical/</loc>',
+    '/shop/security/</loc>',
+    '/shop/gas/</loc>',
     '/products</loc>',
     '/pages/services/fire-risk-assessments</loc>',
     '/pages/services/electrical</loc>',
@@ -118,6 +122,20 @@ if ($kwTownCount !== 0) {
 if (str_contains($xml, '/shop/sitemap') || str_contains($xml, '/products/sitemap')) {
     echo "FAIL: nested shop/products sitemap loc\n";
     $fail++;
+}
+// Live /shop and /shop/fire 301 to the trailing-slash canonical. List only that URL.
+$nonCanonicalShop = [
+    'https://icomplypropertyservices.co.uk/shop</loc>',
+    'https://icomplypropertyservices.co.uk/shop/fire</loc>',
+    'https://icomplypropertyservices.co.uk/shop/electrical</loc>',
+    'https://icomplypropertyservices.co.uk/shop/security</loc>',
+    'https://icomplypropertyservices.co.uk/shop/gas</loc>',
+];
+foreach ($nonCanonicalShop as $bare) {
+    if (str_contains($xml, $bare)) {
+        echo "FAIL: shop loc is not the trailing-slash canonical: {$bare}\n";
+        $fail++;
+    }
 }
 $robots = icomplyRobotsTxt('https://icomplypropertyservices.co.uk');
 if (substr_count($robots, 'Sitemap:') !== 1 || !str_contains($robots, 'https://icomplypropertyservices.co.uk/sitemap.xml')) {

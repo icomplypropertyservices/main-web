@@ -27,11 +27,11 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/areas</loc><priority>0.9</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers</loc><priority>0.9</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords</loc><priority>0.9</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/shop</loc><priority>0.8</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/shop/fire</loc><priority>0.75</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/shop/electrical</loc><priority>0.75</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/shop/security</loc><priority>0.75</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/shop/gas</loc><priority>0.75</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/shop/</loc><priority>0.8</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/shop/fire/</loc><priority>0.75</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/shop/electrical/</loc><priority>0.75</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/shop/security/</loc><priority>0.75</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/shop/gas/</loc><priority>0.75</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/products</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/resources/asbestos-survey</loc><priority>0.7</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/resources/booking-compliance-certificates</loc><priority>0.7</priority></url>

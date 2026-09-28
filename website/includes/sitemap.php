@@ -42,15 +42,28 @@ function icomplySitemapPublishRoot(): string
     return SITE_ROOT;
 }
 
-/** True when the pretty URL has a built file on the publish root. */
-function icomplySitemapUrlHasFile(string $urlPath): bool
+/**
+ * File lookup path. Trailing slashes stay in the public loc (shop canonicals)
+ * but the built file is shop/index.html, not a directory URL.
+ */
+function icomplySitemapLookupPath(string $urlPath): string
 {
     $urlPath = '/' . ltrim(str_replace('\\', '/', $urlPath), '/');
     $urlPath = preg_replace('#\.php$#i', '', $urlPath) ?? $urlPath;
     $urlPath = preg_replace('#/index$#i', '', $urlPath) ?? $urlPath;
+    if ($urlPath !== '/') {
+        $urlPath = rtrim($urlPath, '/');
+    }
     if ($urlPath === '') {
         $urlPath = '/';
     }
+    return $urlPath;
+}
+
+/** True when the pretty URL has a built file on the publish root. */
+function icomplySitemapUrlHasFile(string $urlPath): bool
+{
+    $urlPath = icomplySitemapLookupPath($urlPath);
     $root = icomplySitemapPublishRoot();
     if ($urlPath === '/') {
         return is_file($root . DIRECTORY_SEPARATOR . 'index.html')
@@ -169,11 +182,12 @@ function icomplySitemapEntries(): array
         ['/pages/areas', '0.9', 'pages/areas.php'],
         ['/pages/manufacturers', '0.9', 'pages/manufacturers.php'],
         ['/pages/keywords', '0.9', 'pages/keywords.php'],
-        ['/shop', '0.8', 'shop/index.html'],
-        ['/shop/fire', '0.75', 'shop/fire/index.html'],
-        ['/shop/electrical', '0.75', 'shop/electrical/index.html'],
-        ['/shop/security', '0.75', 'shop/security/index.html'],
-        ['/shop/gas', '0.75', 'shop/gas/index.html'],
+        // Trailing slash is the canonical (live /shop 301s to /shop/).
+        ['/shop/', '0.8', 'shop/index.html'],
+        ['/shop/fire/', '0.75', 'shop/fire/index.html'],
+        ['/shop/electrical/', '0.75', 'shop/electrical/index.html'],
+        ['/shop/security/', '0.75', 'shop/security/index.html'],
+        ['/shop/gas/', '0.75', 'shop/gas/index.html'],
         ['/products', '0.8', 'pages/products.php'],
     ];
     foreach ($static as [$path, $pri, $file]) {
@@ -445,7 +459,7 @@ function icomplySitemapXmlFromEntries(string $baseUrl, array $entries): string
 
 function icomplyDistHasPage(string $dist, string $path): bool
 {
-    $path = '/' . ltrim(str_replace('\\', '/', $path), '/');
+    $path = icomplySitemapLookupPath($path);
     if ($path === '/') {
         return is_file($dist . '/index.html') || is_file($dist . '/index.php');
     }
