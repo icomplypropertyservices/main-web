@@ -286,6 +286,30 @@ if (preg_match('#^/shop\\s+/pages/packages#m', $redirects)) {
     echo "[PASS] _redirects does not send /shop to packages\n";
 }
 $sitemapDist = is_file($dist . '/sitemap.xml') ? (string)file_get_contents($dist . '/sitemap.xml') : '';
+$productsCanonical = 'https://icomplypropertyservices.co.uk/products';
+foreach ([
+    '/products' => 'products.php',
+    '/pages/products' => 'pages/products.php',
+] as $productsUrl => $productsRel) {
+    $productsBody = is_file($dist . '/' . $productsRel) ? (string)file_get_contents($dist . '/' . $productsRel) : '';
+    $productsCanon = $productsBody !== ''
+        && !str_contains($productsBody, '<?php')
+        && str_contains($productsBody, 'rel="canonical" href="' . $productsCanonical . '"');
+    if ($productsCanon) {
+        $pass++;
+        echo "[PASS] {$productsUrl} is HTML and canonical {$productsCanonical}\n";
+    } else {
+        $fail++;
+        echo "[FAIL] {$productsUrl} must be a direct HTML page with canonical {$productsCanonical}\n";
+    }
+}
+if (str_contains($sitemapDist, '/pages/products</loc>') || substr_count($sitemapDist, '/products</loc>') !== 1) {
+    $fail++;
+    echo "[FAIL] sitemap must list /products once and omit /pages/products\n";
+} else {
+    $pass++;
+    echo "[PASS] sitemap lists /products only\n";
+}
 if (preg_match('#/pages/gas-systems/[a-z0-9\-]+</loc>#', $sitemapDist) || preg_match('#/pages/electrical/[a-z0-9\-]+</loc>#', $sitemapDist)) {
     $fail++;
     echo "[FAIL] dist/sitemap.xml still lists /pages/{service}/{town} 404s\n";

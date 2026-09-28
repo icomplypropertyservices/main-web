@@ -119,6 +119,14 @@ if ($kwTownCount !== 0) {
 } else {
     echo "OK: sitemap keyword×town count=0\n";
 }
+if (str_contains($xml, '/pages/products</loc>')) {
+    echo "FAIL: /pages/products is a duplicate; sitemap lists /products only\n";
+    $fail++;
+}
+if (substr_count($xml, '/products</loc>') !== 1) {
+    echo "FAIL: sitemap must list /products exactly once\n";
+    $fail++;
+}
 if (str_contains($xml, '/shop/sitemap') || str_contains($xml, '/products/sitemap')) {
     echo "FAIL: nested shop/products sitemap loc\n";
     $fail++;
