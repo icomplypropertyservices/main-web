@@ -34,12 +34,13 @@ $siteDefaults = [
     'SHOPIFY_STOREFRONT_TOKEN' => '',
     'SHOPIFY_COLLECTION_ID' => '',
     'SHOPIFY_ENABLED' => false,
-    // Social profiles (leave empty to hide; WhatsApp always available via WHATSAPP)
-    'SOCIAL_FACEBOOK' => 'https://www.facebook.com/icomplypropertyservices',
-    'SOCIAL_INSTAGRAM' => 'https://www.instagram.com/icomplypropertyservices',
-    'SOCIAL_LINKEDIN' => 'https://www.linkedin.com/company/icomply-property-services',
-    'SOCIAL_TWITTER' => 'https://twitter.com/icomplyps',
-    'SOCIAL_YOUTUBE' => '',
+    // Social profiles (leave empty to hide; WhatsApp always available via WHATSAPP).
+    // Facebook, Instagram, X, and LinkedIn are not live — do not publish placeholder URLs.
+    'SOCIAL_FACEBOOK' => '',
+    'SOCIAL_INSTAGRAM' => '',
+    'SOCIAL_LINKEDIN' => '',
+    'SOCIAL_TWITTER' => '',
+    'SOCIAL_YOUTUBE' => 'https://www.youtube.com/@icomplypropertyservices',
     'SOCIAL_TIKTOK' => '',
     'SOCIAL_GOOGLE' => 'https://www.google.com/maps/place/iComply+Property+Services/@53.4722454,-2.2234628,12z/data=!3m1!4b1!4m6!3m5!1s0x23f1a3169673630b:0xf80a415364a6510a!8m2!3d53.4722454!4d-2.2234628!16s%2Fg%2F11nr2vwl8z',
 ];

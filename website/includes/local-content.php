@@ -292,6 +292,7 @@ function organization_schema(): array {
         ],
         'sameAs' => array_values(array_filter([
             defined('SOCIAL_GOOGLE') ? SOCIAL_GOOGLE : '',
+            defined('SOCIAL_YOUTUBE') ? SOCIAL_YOUTUBE : '',
             'https://wa.me/' . WHATSAPP,
         ])),
     ];

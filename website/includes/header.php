@@ -190,8 +190,8 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
           defined('SOCIAL_INSTAGRAM') ? SOCIAL_INSTAGRAM : '',
           defined('SOCIAL_LINKEDIN') ? SOCIAL_LINKEDIN : '',
           defined('SOCIAL_TWITTER') ? SOCIAL_TWITTER : '',
-          defined('SOCIAL_YOUTUBE') ? SOCIAL_YOUTUBE : '',
           defined('SOCIAL_GOOGLE') ? SOCIAL_GOOGLE : '',
+          defined('SOCIAL_YOUTUBE') ? SOCIAL_YOUTUBE : '',
           'https://wa.me/' . WHATSAPP,
       ]))) ?>
     }

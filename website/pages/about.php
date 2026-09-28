@@ -102,6 +102,7 @@ $aboutSchema = [
                 defined('SOCIAL_LINKEDIN') ? SOCIAL_LINKEDIN : '',
                 defined('SOCIAL_TWITTER') ? SOCIAL_TWITTER : '',
                 defined('SOCIAL_GOOGLE') ? SOCIAL_GOOGLE : '',
+                defined('SOCIAL_YOUTUBE') ? SOCIAL_YOUTUBE : '',
             ])),
         ],
     ],
