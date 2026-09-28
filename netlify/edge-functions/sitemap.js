@@ -65,11 +65,9 @@ export default async () => {
   <url><loc>https://icomplypropertyservices.co.uk/pages/legionella-landlords</loc><priority>0.78</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/asbestos-landlords</loc><priority>0.78</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/access-control</loc><priority>0.85</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/services/air-source-heat-pumps</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/aov-air-handling</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/asbestos-survey</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/bathrooms</loc><priority>0.85</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/services/battery-storage</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/brickwork</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/building-maintenance</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/building-surveys</loc><priority>0.85</priority></url>
@@ -86,7 +84,6 @@ export default async () => {
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/electrics-first-fix</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/emergency-lighting</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/epc</loc><priority>0.85</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/services/ev-charging</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/evacuation-alerts</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/extensions</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/facilities-management</loc><priority>0.85</priority></url>
@@ -100,7 +97,6 @@ export default async () => {
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/fire-suppression</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/flooring</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/gas-systems</loc><priority>0.85</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/services/ground-source-heat-pumps</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/groundworks</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/heating</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/insulation</loc><priority>0.85</priority></url>
@@ -124,8 +120,6 @@ export default async () => {
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/renovation</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/roofing</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/smoke-co-alarms</loc><priority>0.85</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/services/solar-pv</loc><priority>0.85</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/services/solar-thermal</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/sprinkler-systems</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/tiling</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/windows-doors</loc><priority>0.85</priority></url>

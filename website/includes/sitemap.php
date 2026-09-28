@@ -211,6 +211,10 @@ function icomplySitemapEntries(): array
         if ($base === 'index') {
             continue;
         }
+        // Exporter skips service stubs that are not in the live catalogue.
+        if (function_exists('getServices') && !isset(getServices()[$base])) {
+            continue;
+        }
         $add('/pages/services/' . $base, '0.85');
     }
     foreach (glob($publish . '/pages/manufacturers/*.php') ?: [] as $mFile) {
