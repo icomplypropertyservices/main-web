@@ -300,7 +300,7 @@ $kwSeed = [
         'Gas Safety Check', 'Commercial Gas Installation', 'Gas Cooker Installation', 'Gas Leak Investigation',
         'Boiler Installation', 'Gas Meter Relocation Support', 'HMO Gas Safety', 'Portfolio Gas Certificates',
         'Gas Appliance Service', 'Landlord Gas Safety North West', 'Annual Gas Safety Certificate',
-        'Gas Safe Engineer Stockport', 'Commercial Kitchen Gas Works', 'Gas Valve Replacement',
+        'Gas engineer Stockport', 'Commercial Kitchen Gas Works', 'Gas Valve Replacement',
     ],
     'nurse-call' => [
         'Nurse Call System Installation', 'Nurse Call System Maintenance', 'Care Home Nurse Call',

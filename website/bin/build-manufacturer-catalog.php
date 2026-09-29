@@ -12,7 +12,7 @@ $byService = [
         'Schneider Electric', 'Hager', 'Wylex', 'MK Electric', 'Crabtree', 'Fusebox',
         'Rolec EV', 'Myenergi', 'GivEnergy', 'BG Electrical', 'Contactum', 'Lewden',
         'Timeguard', 'Greenbrook', 'Garo', 'Easee', 'Ohme', 'Wallbox', 'ABB',
-        'Siemens', 'Legrand', 'Eaton', 'MEM', 'Click Scolmore', 'NAPIT Approved Equipment',
+        'Siemens', 'Legrand', 'Eaton', 'MEM', 'Click Scolmore',
     ],
     'fire-alarms' => [
         'Kentec', 'Advanced Electronics', 'C-Tec', 'Morley', 'Hochiki', 'Apollo',

@@ -203,7 +203,7 @@ $schema = [
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
                     <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?>.<br>
-                    <span class="text-[#ff6b00]"><?= htmlspecialchars($svcCopy['hero_accent'] ?? ($poaService ? 'Surveyed, documented, POA.' : 'Installed, tested, certified.'), ENT_QUOTES, 'UTF-8') ?></span>
+                    <span class="text-[#ff6b00]"><?= htmlspecialchars($svcCopy['hero_accent'] ?? ($poaService ? 'Surveyed, documented, POA.' : 'Design, installation, testing and servicing.'), ENT_QUOTES, 'UTF-8') ?></span>
                 </h1>
                 <p class="mt-6 text-lg text-white/80 max-w-xl"><?= htmlspecialchars($blurb, ENT_QUOTES, 'UTF-8') ?></p>
                 <div class="mt-8 flex flex-wrap gap-3">

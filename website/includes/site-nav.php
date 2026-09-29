@@ -34,7 +34,7 @@ function icomplyNavCatalog(): array
         foreach ($list as $slug => $name) {
             $used[$slug] = true;
             $kws = function_exists('getKeywordsForService') ? getKeywordsForService((string)$slug) : [];
-            foreach (['niceic-certified', 'part-p-certified', 'gas-certificate-same-day'] as $hideSlug) {
+            foreach (['niceic-certified', 'part-p-certified', 'gas-certificate-same-day', 'certified-electrician', 'gas-safe-engineer'] as $hideSlug) {
                 unset($kws[$hideSlug]);
             }
             if ($kws) {

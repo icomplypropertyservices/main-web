@@ -5,7 +5,7 @@
  */
 $pageTitle = '{{SERVICE_NAME}} in {{AREA}} | iComply Property Services';
 $metaDesc = 'Electrical installation, EICR, PAT testing, EV charger installation and commercial electrician services in {{AREA}}. Schneider, Hager, Wylex, Rolec, Myenergi.';
-$metaKeywords = 'electrician {{AREA}}, EICR {{AREA}}, electrical installation {{AREA}}, EV charger {{AREA}}, certified electrician {{AREA}}, commercial electrician {{AREA}}, PAT testing {{AREA}}, Schneider, Hager, Wylex, Rolec, Myenergi';
+$metaKeywords = 'electrician {{AREA}}, EICR {{AREA}}, electrical installation {{AREA}}, EV charger {{AREA}}, electrical testing {{AREA}}, commercial electrician {{AREA}}, PAT testing {{AREA}}, Schneider, Hager, Wylex, Rolec, Myenergi';
 $ogImage = url('/assets/images/services/electrical.jpg');
 require SITE_ROOT . '/includes/header.php'; 
 ?>
@@ -56,7 +56,7 @@ require SITE_ROOT . '/includes/header.php';
         {"@type": "Question", "name": "What is an EICR?", "acceptedAnswer": {"@type": "Answer", "text": "An Electrical Installation Condition Report (EICR) is a periodic inspection to check the safety of electrical systems."}},
         {"@type": "Question", "name": "How often should commercial properties have electrical testing?", "acceptedAnswer": {"@type": "Answer", "text": "Every 5 years or upon change of tenancy for most commercial premises."}},
         {"@type": "Question", "name": "Do you install EV chargers?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we provide full EV charger installation services with Rolec and Myenergi systems, compliant with current regulations."}},
-        {"@type": "Question", "name": "Are your electricians certified?", "acceptedAnswer": {"@type": "Answer", "text": "All our engineers are fully qualified and insured."}}
+        {"@type": "Question", "name": "Are your electricians qualified?", "acceptedAnswer": {"@type": "Answer", "text": "All our engineers are fully qualified and insured."}}
       ]
     }
   ]

@@ -7,7 +7,7 @@ require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/share.php';
 
 $pageTitle = 'EV Charger Installation | Rolec, Myenergi, Easee & Ohme';
-$metaDesc = 'Professional EV charger installation across Stockport, Greater Manchester and the North West. Rolec, Myenergi, Easee and Ohme charge points — BS 7671 certified, load assessment and fixed-price quotes.';
+$metaDesc = 'Professional EV charger installation across Stockport, Greater Manchester and the North West. Rolec, Myenergi, Easee and Ohme charge points — installed to BS 7671, with load assessment and fixed-price quotes.';
 $metaKeywords = 'EV charger installation, Rolec EV, Myenergi zappi, Easee charger, Ohme Home Pro, electric vehicle charge point North West, home EV charger Stockport, workplace EV charging Manchester, BS 7671 EV install';
 $ogImage = url('/assets/images/keywords/ev-charger-installation.jpg');
 $canonicalUrl = url('/pages/ev-chargers.php');
@@ -58,7 +58,7 @@ $included = [
 ];
 
 $trust = [
-    ['title' => 'BS 7671 installs', 'text' => 'Every charge point certified to current wiring regs'],
+    ['title' => 'BS 7671 installs', 'text' => 'Every charge point installed to current wiring regs'],
     ['title' => 'Leading brands', 'text' => 'Rolec, Myenergi, Easee & Ohme supported'],
     ['title' => 'Fixed-price quotes', 'text' => 'Clear scope after survey — no hidden extras'],
     ['title' => 'North West coverage', 'text' => 'Stockport-based · ' . count($areas) . '+ towns'],
@@ -80,8 +80,8 @@ $faqs = [
         'a' => 'Not always. We assess spare ways, protective devices and overall load first. If an upgrade or additional distribution is required, we quote it clearly before work starts.',
     ],
     [
-        'q' => 'Is the install certified?',
-        'a' => 'Yes. Work is completed to BS 7671 with the appropriate electrical certificate. Building-reg / building-regulations notification is arranged where required for the property type.',
+        'q' => 'Do you issue an electrical certificate?',
+        'a' => 'Work follows BS 7671. We issue an electrical installation certificate or minor works certificate for the work we complete. Building-regulations notification is arranged where required for the property type.',
     ],
     [
         'q' => 'Can you install workplace or multi-bay chargers?',
@@ -138,7 +138,7 @@ require SITE_ROOT . '/includes/header.php';
                     <strong class="text-white font-semibold">Myenergi</strong>,
                     <strong class="text-white font-semibold">Easee</strong> and
                     <strong class="text-white font-semibold">Ohme</strong> —
-                    surveyed, installed and certified by Stockport-based electrical engineers.
+                    surveyed and installed by Stockport-based electrical engineers.
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get EV install quote</a>

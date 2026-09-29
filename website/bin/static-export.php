@@ -713,6 +713,16 @@ function icomplyPrettyUrlRedirects(): string
 /pages/keywords          /pages/keywords.php          200!
 /pages/keywords/         /pages/keywords.php          200!
 
+# Old accreditation and timing URLs. Pages are not published.
+/pages/manufacturers/napit-approved-equipment     /pages/services/electrical  301!
+/pages/manufacturers/napit-approved-equipment/    /pages/services/electrical  301!
+/pages/keywords/certified-electrician             /pages/services/electrical  301!
+/pages/keywords/certified-electrician/            /pages/services/electrical  301!
+/pages/keywords/certified-electrician/*           /pages/services/electrical  301!
+/pages/keywords/gas-safe-engineer                 /pages/services/gas-systems  301!
+/pages/keywords/gas-safe-engineer/                /pages/services/gas-systems  301!
+/pages/keywords/gas-safe-engineer/*               /pages/services/gas-systems  301!
+
 # Keyword hubs have child town files (pages/keywords/{slug}/*.php).
 # force so /pages/keywords/eicr does not 301 to /pages/keywords/eicr/.
 /pages/keywords/:slug    /pages/keywords/:slug.php    200!

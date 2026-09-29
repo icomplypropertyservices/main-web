@@ -60,7 +60,7 @@ $manufacturers = [
         'intercoms' => ['video-intercom','aiphone-intercom','intercom-system'],
     ],
     'seo_keywords' => [
-        'electrical' => 'electrical installation, EICR, PAT testing, certified electrician, commercial electrician, EV charger installation, electrical compliance',
+        'electrical' => 'electrical installation, EICR, PAT testing, electrical testing, commercial electrician, EV charger installation, electrical compliance',
         'fire-alarms' => 'fire alarm installation, fire alarm servicing, BS 5839, fire detection system, fire alarm certification, commercial fire alarm',
         'emergency-lighting' => 'emergency lighting installation, BS 5266, emergency lighting testing, emergency lighting certification, landlord emergency lighting',
         'aov-air-handling' => 'AOV installation, AOV maintenance, smoke vent system, BS 9991, automatic opening vent',
