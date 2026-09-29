@@ -94,7 +94,7 @@ $schema = [
                         '@type' => 'Answer',
                         'text' => $gasBrand
                             ? ('No. ' . icomplyGasLegalSentence() . ' iComply does not install, service, or repair ' . $mfrName . ' boilers or gas appliances.')
-                            : ('Yes. iComply Property Services installs, commissions, maintains and certifies ' . $mfrName . ' equipment across Greater Manchester and the North West.'),
+                            : ('Yes. We install and service ' . $mfrName . ' equipment across Greater Manchester and the North West.'),
                     ],
                 ],
                 [
@@ -156,7 +156,7 @@ $schema = [
                      loading="eager"
                      onerror="this.src='<?= htmlspecialchars(serviceImageUrl($primaryService), ENT_QUOTES, 'UTF-8') ?>'">
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-transparent to-transparent">
-                    <div class="text-sm text-white/70"><?= $gasBrand ? 'Trade supply only. iComply is not Gas Safe registered.' : 'Authorised install &amp; trade supply' ?></div>
+                    <div class="text-sm text-white/70"><?= $gasBrand ? 'Trade supply only. iComply is not Gas Safe registered.' : 'Install, service and trade supply' ?></div>
                     <div class="text-2xl font-semibold mt-1"><?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> · North West</div>
                 </div>
             </div>
