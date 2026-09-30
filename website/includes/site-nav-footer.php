@@ -11,6 +11,7 @@ function icomplyFooterHtml(): string
     $brand = icomplyNavH($n['brand']);
     $year = date('Y');
     $contact = icomplyNavH(url('/contact.php'));
+    $quote = icomplyNavH(url('/get-a-quote.php'));
     $svcCount = count($n['services']);
     $areaCount = count($n['areas']);
     $kwCount = count($n['keywords']);
@@ -104,7 +105,7 @@ function icomplyFooterHtml(): string
       {$social}
       <div class="foot-cta-row">
         <a class="foot-cta foot-cta--wa" href="https://wa.me/{$wa}?text=Hi%20iComply%2C%20I%20need%20a%20quote" target="_blank" rel="noopener">WhatsApp</a>
-        <a class="foot-cta foot-cta--quote" href="{$contact}">Request a quote</a>
+        <a class="foot-cta foot-cta--quote" href="{$quote}">Get a quote</a>
       </div>
     </div>
     <div class="foot-drops">
@@ -170,7 +171,7 @@ function icomplyFooterHtml(): string
 <a href="https://wa.me/{$wa}?text=Hi%20Icomply%2C%20I%20need%20a%20quote%20for%20compliance%20services" target="_blank" rel="noopener" aria-label="WhatsApp" class="wa-float">💬</a>
 <div id="mobile-sticky-cta" class="mobile-sticky-cta">
   <a href="{$phoneHref}">Call {$phone}</a>
-  <a class="sticky-quote" href="{$contact}">Free quote</a>
+  <a class="sticky-quote" href="{$quote}">Get a quote</a>
 </div>
 HTML;
 }

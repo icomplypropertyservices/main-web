@@ -1,0 +1,289 @@
+{
+  "baselineNote": "Typical 6-bed HMO, North West. Outside NW we agree travel before booking. Remedials/parts POA after survey.",
+  "vatNote": "All-in prices. iComply is not VAT registered, so VAT is not added.",
+  "confirmNote": "This is an indicative list total for a typical North West 6-bed HMO. We confirm the visit before you are booked.",
+  "tiers": [
+    {"id": "T0", "min": 1, "max": 1, "percent": 0},
+    {"id": "T1", "min": 2, "max": 5, "percent": 5},
+    {"id": "T2", "min": 6, "max": 10, "percent": 10},
+    {"id": "T3", "min": 11, "max": 20, "percent": 12.5},
+    {"id": "T4", "min": 21, "max": null, "percent": 15}
+  ],
+  "groups": [
+    {
+      "id": "certs",
+      "title": "Certificates and inspections",
+      "intro": "Approved list for a typical 6-bed HMO in the North West. The multi-property discount applies to these lines only."
+    },
+    {
+      "id": "callout",
+      "title": "Call-out",
+      "intro": "One attendance, not one fee per property. The multi-property discount does not apply. Materials are extra."
+    },
+    {
+      "id": "contracts",
+      "title": "Contracts and other list rates",
+      "intro": "Charged at list. The certificate discount does not apply."
+    },
+    {
+      "id": "poa",
+      "title": "Price on application",
+      "intro": "We will confirm a price after scope. These lines do not add a figure to the total."
+    },
+    {
+      "id": "advanced",
+      "title": "Advanced — after survey / proposed",
+      "intro": "After survey / proposed. Not the standard 6-bed list. Inspection-style tests can take the certificate discount. Install labour and remedials stay at list."
+    }
+  ],
+  "services": [
+    {
+      "id": "fra",
+      "code": "FIRE-FRA-6BED-NW",
+      "name": "Fire risk assessment (FRA)",
+      "detail": "Typical 6-bed HMO. Remedials are quoted after the assessment.",
+      "pence": 35000,
+      "unit": "per property",
+      "group": "certs",
+      "discount": true,
+      "qty": "properties"
+    },
+    {
+      "id": "eicr",
+      "code": "ELEC-EICR-6BED-NW",
+      "name": "EICR",
+      "detail": "Typical 6-bed HMO. Remedials are quoted after the inspection.",
+      "pence": 24900,
+      "unit": "per property",
+      "group": "certs",
+      "discount": true,
+      "qty": "properties"
+    },
+    {
+      "id": "gas",
+      "code": "GAS-CP12-6BED-NW",
+      "name": "Gas safety (CP12)",
+      "detail": "Landlord gas safety record for a typical 6-bed HMO. Carried out by Gas Safe registered engineers. Remedials are quoted after the visit.",
+      "pence": 8500,
+      "unit": "per property",
+      "group": "certs",
+      "discount": true,
+      "qty": "properties"
+    },
+    {
+      "id": "bundle",
+      "code": "LAND-PKG-FRA-EICR-GAS-6BED-NW",
+      "name": "Landlord bundle: FRA + EICR + gas",
+      "detail": "Same property. The discount applies to £650. FRA, EICR and gas are not added on top.",
+      "pence": 65000,
+      "unit": "per property",
+      "group": "certs",
+      "discount": true,
+      "qty": "properties",
+      "supersedes": ["fra", "eicr", "gas"]
+    },
+    {
+      "id": "fa-insp",
+      "code": "FIRE-ALARM-INSP-6BED-NW",
+      "name": "Fire alarm inspection",
+      "detail": "Inspection visit for a typical 6-bed HMO. Remedials and parts are quoted after survey.",
+      "pence": 15000,
+      "unit": "per property",
+      "group": "certs",
+      "discount": true,
+      "qty": "properties"
+    },
+    {
+      "id": "el-check",
+      "code": "FIRE-EL-CHECK-6BED-NW",
+      "name": "Emergency lighting check",
+      "detail": "Check for a typical 6-bed HMO. Remedials are quoted after survey.",
+      "pence": 12500,
+      "unit": "per property",
+      "group": "certs",
+      "discount": true,
+      "qty": "properties"
+    },
+    {
+      "id": "aov",
+      "code": "AOV-INSP-6BED-NW",
+      "name": "AOV / smoke ventilation inspection",
+      "detail": "Inspection for a typical 6-bed HMO. Remedials are quoted after survey.",
+      "pence": 20000,
+      "unit": "per property",
+      "group": "certs",
+      "discount": true,
+      "qty": "properties"
+    },
+    {
+      "id": "callout-first",
+      "code": "EMERG-CALLOUT-1ST-HR",
+      "name": "Reactive call-out — first hour",
+      "detail": "First hour outside a scheduled visit. No multi-property discount. Materials are extra.",
+      "pence": 8500,
+      "unit": "per call-out",
+      "group": "callout",
+      "discount": false,
+      "qty": "once"
+    },
+    {
+      "id": "callout-extra",
+      "code": "EMERG-CALLOUT-ADD-HR",
+      "name": "Reactive call-out — additional hour",
+      "detail": "Each hour after the first. No multi-property discount. Materials are extra.",
+      "pence": 5500,
+      "unit": "per extra hour",
+      "group": "callout",
+      "discount": false,
+      "qty": "hours"
+    },
+    {
+      "id": "fa-contract",
+      "code": "FIRE-ALARM-CONTRACT-2V",
+      "name": "Fire alarm service contract",
+      "detail": "12 months, two visits. Remedials and parts are not included. Not part of the certificate discount.",
+      "pence": 30000,
+      "unit": "per property / year",
+      "group": "contracts",
+      "discount": false,
+      "qty": "properties"
+    },
+    {
+      "id": "nurse",
+      "code": "COMM-NURSECALL-ANNUAL",
+      "name": "Nurse-call annual service",
+      "detail": "Per site, commercial. One annual service, functional test and report. Labour only — materials excluded. Not part of the certificate discount.",
+      "pence": 19999,
+      "unit": "per site",
+      "group": "contracts",
+      "discount": false,
+      "qty": "properties"
+    },
+    {
+      "id": "cctv-dvr",
+      "code": "CCTV-DVR-FAULTFIND",
+      "name": "CCTV DVR fault-find",
+      "detail": "Inspection and fault-find on an existing DVR. Not part of the certificate discount.",
+      "pence": 20000,
+      "unit": "per inspection",
+      "group": "contracts",
+      "discount": false,
+      "qty": "each"
+    },
+    {
+      "id": "eicr-1bed",
+      "code": "ELEC-EICR-1BED",
+      "name": "EICR — 1-bed / small dwelling",
+      "detail": "No list price yet. We confirm after the property is known.",
+      "pence": null,
+      "unit": "per property",
+      "group": "poa",
+      "discount": false,
+      "qty": "properties",
+      "poa": true
+    },
+    {
+      "id": "eicr-comm",
+      "code": "ELEC-EICR-COMM",
+      "name": "EICR — commercial",
+      "detail": "No list price yet. We confirm after scope.",
+      "pence": null,
+      "unit": "per property",
+      "group": "poa",
+      "discount": false,
+      "qty": "properties",
+      "poa": true
+    },
+    {
+      "id": "fra-other",
+      "code": "FIRE-FRA-OTHER",
+      "name": "FRA — other than a typical 6-bed HMO",
+      "detail": "No list price yet. We confirm after scope.",
+      "pence": null,
+      "unit": "per property",
+      "group": "poa",
+      "discount": false,
+      "qty": "properties",
+      "poa": true
+    },
+    {
+      "id": "travel",
+      "code": "TRAVEL-MAINLAND-UPLIFT",
+      "name": "Travel outside the North West",
+      "detail": "Mainland travel is agreed before booking. No figure until then.",
+      "pence": null,
+      "unit": "per booking",
+      "group": "poa",
+      "discount": false,
+      "qty": "once",
+      "poa": true
+    },
+    {
+      "id": "abort",
+      "code": "TRAVEL-ABORT",
+      "name": "Aborted visit / no access",
+      "detail": "May be chargeable. The amount is confirmed if it applies.",
+      "pence": null,
+      "unit": "per visit",
+      "group": "poa",
+      "discount": false,
+      "qty": "once",
+      "poa": true
+    },
+    {
+      "id": "fa-single",
+      "code": "FIRE-ALARM-SINGLE-TEST",
+      "name": "Fire alarm — single test",
+      "detail": "After survey / proposed. Certificate discount applies.",
+      "pence": 18000,
+      "unit": "per property",
+      "group": "advanced",
+      "discount": true,
+      "qty": "properties"
+    },
+    {
+      "id": "fa-el",
+      "code": "FIRE-ALARM-EL-PKG-OFFER",
+      "name": "Fire alarm + emergency lighting package",
+      "detail": "After survey / proposed. Certificate discount applies to this package price.",
+      "pence": 40000,
+      "unit": "per property",
+      "group": "advanced",
+      "discount": true,
+      "qty": "properties"
+    },
+    {
+      "id": "cctv-labour",
+      "code": "CCTV-CAM-INSTALL-LABOUR",
+      "name": "CCTV camera install — engineer labour",
+      "detail": "After survey / proposed. Labour only. Cameras and cable are extra. No certificate discount.",
+      "pence": 40000,
+      "unit": "per install",
+      "group": "advanced",
+      "discount": false,
+      "qty": "each"
+    },
+    {
+      "id": "downlight",
+      "code": "ELEC-DOWNLIGHT-FIT",
+      "name": "Downlight supply and fit",
+      "detail": "After survey / proposed. Each fitting. No certificate discount.",
+      "pence": 4000,
+      "unit": "each",
+      "group": "advanced",
+      "discount": false,
+      "qty": "each"
+    },
+    {
+      "id": "fan",
+      "code": "ELEC-FAN-REMEDIAL",
+      "name": "Extractor fan remedial",
+      "detail": "After survey / proposed. Per job. No certificate discount.",
+      "pence": 9500,
+      "unit": "per job",
+      "group": "advanced",
+      "discount": false,
+      "qty": "each"
+    }
+  ]
+}

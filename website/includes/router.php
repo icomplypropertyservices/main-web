@@ -197,6 +197,7 @@ function routerHandleRequest(): void {
         '/terms-and-conditions' => '/terms',
         '/about-us' => '/pages/about',
         '/contact-us' => '/contact',
+        '/quote-builder' => '/get-a-quote',
         '/cookie-policy' => '/privacy',
         '/blog' => '/pages/resources',
         '/news' => '/pages/resources',

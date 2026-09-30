@@ -29,6 +29,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $token = $_POST['csrf'] ?? '';
     if (!hash_equals($_SESSION['csrf'] ?? '', $token)) {
         $errors[] = 'Invalid form token. Please try again.';
+    } elseif (trim((string)($_POST['source'] ?? '')) === 'quote-builder') {
+        require_once SITE_ROOT . '/includes/quote-builder.php';
+        $built = quoteBuilderLeadFromPost($_POST);
+        $errors = $built['errors'];
+        if (!$errors) {
+            $lead = $built['lead'];
+            $leadsDir = SITE_ROOT . '/data';
+            if (!is_dir($leadsDir)) {
+                mkdir($leadsDir, 0755, true);
+            }
+            file_put_contents($leadsDir . '/leads.jsonl', json_encode($lead, JSON_UNESCAPED_UNICODE) . "\n", FILE_APPEND | LOCK_EX);
+
+            $notifyTo = (defined('LEADS_NOTIFY_EMAIL') && LEADS_NOTIFY_EMAIL !== '')
+                ? LEADS_NOTIFY_EMAIL
+                : EMAIL;
+            $headers = 'From: ' . EMAIL . "\r\n"
+                . 'Reply-To: ' . ($lead['email'] ?? '') . "\r\n"
+                . "Content-Type: text/plain; charset=UTF-8\r\n";
+            @mail($notifyTo, $built['subject'], $built['body'], $headers);
+
+            $_SESSION['csrf'] = bin2hex(random_bytes(16));
+            header('Location: ' . url('/thank-you.php?ref=quote-builder'), true, 303);
+            exit;
+        }
     } else {
         $name = trim((string)($_POST['name'] ?? ''));
         $email = trim((string)($_POST['email'] ?? ''));
@@ -261,7 +285,8 @@ $contactSchema = [
                     Call, WhatsApp or send a message — electrical, fire, gas, emergency lighting, CCTV and access control across the North West.
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
-                    <a href="#quote-form" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Send a message</a>
+                    <a href="<?= url('/get-a-quote.php') ?>" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Build a services quote</a>
+                <a href="#quote-form" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Send a message</a>
                     <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
                        class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">
                         Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>

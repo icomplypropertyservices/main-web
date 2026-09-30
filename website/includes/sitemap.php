@@ -125,6 +125,7 @@ function icomplySitemapEntries(): array
     $static = [
         ['/', '1.0', 'index.php'],
         ['/contact', '0.85', 'contact.php'],
+        ['/get-a-quote', '0.9', 'get-a-quote.php'],
         ['/privacy', '0.3', 'privacy.php'],
         ['/terms', '0.3', 'terms.php'],
         ['/pages/about', '0.75', 'pages/about.php'],

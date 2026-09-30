@@ -62,6 +62,10 @@ require SITE_ROOT . '/includes/header.php';
                class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">
                 Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>
             </a>
+            <a href="<?= url('/get-a-quote.php') ?>"
+               class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">
+                Quote builder
+            </a>
             <a href="<?= url('/contact.php') ?>"
                class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">
                 Back to contact

@@ -174,6 +174,7 @@ function icomplyNavResourceLinks(): array
 function icomplyNavPackageLinks(): array
 {
     return [
+        ['href' => url('/get-a-quote.php'), 'label' => 'Get a quote'],
         ['href' => url('/pages/packages.php'), 'label' => 'All packages'],
         ['href' => url('/pages/packages/let-ready.php'), 'label' => 'Let-ready package'],
         ['href' => url('/pages/packages/fire-ready.php'), 'label' => 'Fire-ready package'],

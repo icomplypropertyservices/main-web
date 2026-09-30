@@ -196,6 +196,9 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
       ]))) ?>
     }
     </script>
+    <?php if (!empty($extraHead)) {
+        echo $extraHead;
+    } ?>
 </head>
 <body class="theme-dark bg-zinc-50 text-black">
 <a href="#main-content" class="skip-to-content">Skip to main content</a>

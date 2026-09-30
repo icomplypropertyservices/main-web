@@ -31,7 +31,7 @@ $lpServices = function_exists('getServices') ? getServices() : [];
         <div class="lead-quick">
             <a class="lead-call" href="<?= htmlspecialchars($lpPhoneHref, ENT_QUOTES, 'UTF-8') ?>">Call <?= htmlspecialchars($lpPhone, ENT_QUOTES, 'UTF-8') ?></a>
             <a class="lead-wa" href="https://wa.me/<?= htmlspecialchars($lpWa, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi iComply, I need a quote') ?>" target="_blank" rel="noopener">WhatsApp</a>
-            <a class="lead-book" href="<?= htmlspecialchars(url('/contact'), ENT_QUOTES, 'UTF-8') ?>">Book quote</a>
+            <a class="lead-book" href="<?= htmlspecialchars(url('/get-a-quote.php'), ENT_QUOTES, 'UTF-8') ?>">Get a quote</a>
         </div>
         <form id="lead-popup-form" name="lead-popup" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="lead-popup">

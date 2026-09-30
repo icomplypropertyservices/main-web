@@ -57,7 +57,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 Greater Manchester and the North West.
             </p>
             <div class="home-hero-cta">
-                <a class="btn-hero-accent" href="#quote">Get a quote</a>
+                <a class="btn-hero-accent" href="<?= url('/get-a-quote.php') ?>">Get a quote</a>
                 <a class="btn-hero-light" href="<?= url('/pages/services/index.php') ?>">All services</a>
                 <a class="btn-hero-ghost" href="<?= url('/pages/landlords.php') ?>">Landlords</a>
                 <a class="btn-hero-ghost" href="<?= url('/pages/packages.php') ?>">Packages</a>
@@ -382,6 +382,7 @@ echo testimonialsSectionHtml();
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request your free quote</h2>
             <p class="mt-3 text-zinc-600">We aim to respond within 2 hours on business days. All quotes are fixed-price after scope is agreed.</p>
+            <p class="mt-3 text-zinc-600"><a href="<?= url('/get-a-quote.php') ?>" class="text-[#ff6b00] font-semibold">Build a services quote</a> for landlord certificates, inspections and call-outs — the total updates from the approved North West list.</p>
         </div>
 
         <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm" aria-label="Free quote form">

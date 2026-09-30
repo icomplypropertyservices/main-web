@@ -591,6 +591,9 @@ function icomplyPrettyUrlRedirects(): string
 /about-us/               /pages/about 301
 /contact-us              /contact    301
 /contact-us/             /contact    301
+/quote-builder           /get-a-quote 301
+/quote-builder/          /get-a-quote 301
+/get-a-quote/            /get-a-quote 301
 /cookie-policy           /privacy    301
 /cookie-policy/          /privacy    301
 /blog                    /pages/resources 301
@@ -680,6 +683,14 @@ function icomplyPrettyUrlHeaders(): string
   X-Content-Type-Options: nosniff
 
 /contact
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/get-a-quote
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/get-a-quote/
   Content-Type: text/html; charset=utf-8
   X-Content-Type-Options: nosniff
 

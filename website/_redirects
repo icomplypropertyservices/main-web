@@ -31,6 +31,9 @@
 /about-us/    /pages/about    301
 /contact-us    /contact    301
 /contact-us/    /contact    301
+/quote-builder    /get-a-quote    301
+/quote-builder/   /get-a-quote    301
+/get-a-quote/     /get-a-quote    301
 /cookie-policy    /privacy    301
 /cookie-policy/    /privacy    301
 /blog    /pages/resources    301

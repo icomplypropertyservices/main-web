@@ -31,6 +31,13 @@ registers it.
 Until that notification is saved, submissions still land in the Netlify
 Forms inbox even if email is not yet confirmed.
 
+The services quote builder (`/get-a-quote`) posts a second Netlify Form
+named `quote-builder` (name, email, phone, postcode, property count,
+tier, indicative total, services summary, notes). Add the same email
+notification for that form after the first deploy that includes it.
+On a PHP server the same fields post to `/contact` and are stored in
+`data/leads.jsonl`.
+
 PHP `mail()` on `/contact` does **not** run on Netlify (static HTML).
 Contact POSTs need a server; the popup uses Netlify Forms instead.
 

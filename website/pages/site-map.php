@@ -58,6 +58,7 @@ $mainPages = [
     ['href' => url('/pages/reviews.php'), 'label' => 'Reviews'],
     ['href' => url('/pages/resources/index.php'), 'label' => 'Resources hub'],
     ['href' => url('/pages/faq.php'), 'label' => 'FAQ'],
+    ['href' => url('/get-a-quote.php'), 'label' => 'Get a quote'],
     ['href' => url('/contact.php'), 'label' => 'Contact / free quote'],
     ['href' => url('/privacy.php'), 'label' => 'Privacy policy'],
     ['href' => url('/terms.php'), 'label' => 'Terms & conditions'],

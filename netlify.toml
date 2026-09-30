@@ -351,6 +351,21 @@
   force = true
 
 [[redirects]]
+  from = "/get-a-quote/"
+  to = "/get-a-quote"
+  status = 301
+
+[[redirects]]
+  from = "/quote-builder"
+  to = "/get-a-quote"
+  status = 301
+
+[[redirects]]
+  from = "/quote-builder/"
+  to = "/get-a-quote"
+  status = 301
+
+[[redirects]]
   from = "/pages/about"
   to = "/pages/about.php"
   status = 200
@@ -460,6 +475,18 @@
 
 [[headers]]
   for = "/contact"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/get-a-quote"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/get-a-quote/"
   [headers.values]
     Content-Type = "text/html; charset=utf-8"
     X-Content-Type-Options = "nosniff"
