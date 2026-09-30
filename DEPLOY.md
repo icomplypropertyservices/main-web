@@ -59,6 +59,8 @@ Workflow [`.github/workflows/netlify-draft-preview.yml`](.github/workflows/netli
 
 It runs on pull requests to `main`, and on **Actions → Netlify draft preview → Run workflow** (input `pr_numbers`, for example `11,12,17,18`) so existing PRs get a URL without a new commit on those branches. A platform `Not Found` on those hostnames means no draft has been published yet.
 
+The first run of this workflow found `NETLIFY_AUTH_TOKEN` empty in repository secrets and in the Preview and Production GitHub Environments, so it did not upload a draft. Add the token (Preview environment is enough), then re-run the workflow. Until that upload succeeds, `pr-<N>` and `deploy-preview-<N>` stay Netlify's platform 404.
+
 Production stays on [`.github/workflows/netlify-deploy.yml`](.github/workflows/netlify-deploy.yml) (`--prod` only for a push to `main`, or a manual run of that production workflow).
 
 ## Manual deploy
