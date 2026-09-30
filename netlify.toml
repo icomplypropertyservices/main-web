@@ -28,6 +28,24 @@
   command = "php website/bin/static-export.php && php website/bin/check-static-export.php"
   publish = "dist"
 
+# Deploy Previews and branch deploys publish the same pre-rendered dist/.
+# They do not change the production context above.
+[context.deploy-preview]
+  command = "php website/bin/static-export.php && php website/bin/check-static-export.php"
+  publish = "dist"
+
+[context.deploy-preview.environment]
+  PHP_VERSION = "8.3"
+  SITE_URL = "https://icomplypropertyservices.co.uk"
+
+[context.branch-deploy]
+  command = "php website/bin/static-export.php && php website/bin/check-static-export.php"
+  publish = "dist"
+
+[context.branch-deploy.environment]
+  PHP_VERSION = "8.3"
+  SITE_URL = "https://icomplypropertyservices.co.uk"
+
 [[redirects]]
   from = "https://www.icomplypropertyservices.co.uk/*"
   to = "https://icomplypropertyservices.co.uk/:splat"

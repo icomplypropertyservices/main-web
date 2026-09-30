@@ -46,6 +46,21 @@ After both secrets exist, re-run the workflow (or push to `main`). Until they ar
 
 If Jack resets his Netlify password, the PAT is invalidated — generate a new token and update `NETLIFY_AUTH_TOKEN`.
 
+The same two names are also read from GitHub Environments, in this order, because repository Actions secrets have been empty: `Preview – icomply-main-web`, then `Production – icomply-main-web`, then `Production`. Put the token on the Preview environment when you can. The production environment is only a secret source. Draft jobs never pass `--prod`.
+
+## Draft URLs for pull requests
+
+Workflow [`.github/workflows/netlify-draft-preview.yml`](.github/workflows/netlify-draft-preview.yml) pre-renders the pull request and uploads `dist/` twice, without `--prod`:
+
+| Alias | URL |
+|-------|-----|
+| `pr-<N>` | `https://pr-<N>--icomply-main-web.netlify.app` |
+| `deploy-preview-<N>` | `https://deploy-preview-<N>--icomply-main-web.netlify.app` |
+
+It runs on pull requests to `main`, and on **Actions → Netlify draft preview → Run workflow** (input `pr_numbers`, for example `11,12,17,18`) so existing PRs get a URL without a new commit on those branches. A platform `Not Found` on those hostnames means no draft has been published yet.
+
+Production stays on [`.github/workflows/netlify-deploy.yml`](.github/workflows/netlify-deploy.yml) (`--prod` only for a push to `main`, or a manual run of that production workflow).
+
 ## Manual deploy
 
 Any one of these publishes current `main` to production:

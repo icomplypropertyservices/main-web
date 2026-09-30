@@ -1,0 +1,358 @@
+# Non-production Netlify draft URLs for pull requests.
+# Aliases, draft only:
+#   https://pr-<N>--icomply-main-web.netlify.app
+#   https://deploy-preview-<N>--icomply-main-web.netlify.app
+#
+# Repository Actions secrets are empty, so this job reads the same secret
+# names from GitHub Environments. The production workflow is untouched.
+# Manual runs backfill existing PRs without pushing to those branches.
+
+name: Netlify draft preview
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      pr_numbers:
+        description: "Comma-separated pull request numbers to publish as drafts"
+        required: false
+        default: "11,12,17,18"
+        type: string
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  targets:
+    name: Pull requests to preview
+    runs-on: ubuntu-latest
+    outputs:
+      prs: ${{ steps.set.outputs.prs }}
+    steps:
+      - name: Resolve PR numbers
+        id: set
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_INPUT: ${{ github.event.inputs.pr_numbers }}
+        run: |
+          python3 - << 'PY'
+          import json, os
+          event = os.environ["EVENT_NAME"]
+          if event == "pull_request":
+              prs = [int(os.environ["PR_NUMBER"])]
+          else:
+              raw = os.environ.get("PR_INPUT") or "11,12,17,18"
+              prs = [int(part.strip()) for part in raw.split(",") if part.strip()]
+          if not prs:
+              raise SystemExit("No pull request numbers")
+          line = "prs=" + json.dumps(prs)
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as handle:
+              handle.write(line + "\n")
+          print(line)
+          PY
+
+  auth-preview:
+    name: Secrets in Preview environment
+    runs-on: ubuntu-latest
+    environment: Preview – icomply-main-web
+    outputs:
+      available: ${{ steps.probe.outputs.available }}
+      environment_name: ${{ steps.probe.outputs.environment_name }}
+    steps:
+      - name: Probe Netlify token
+        id: probe
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          echo "environment_name=Preview – icomply-main-web" >> "$GITHUB_OUTPUT"
+          if [ -n "$NETLIFY_AUTH_TOKEN" ]; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+            echo "NETLIFY_AUTH_TOKEN is set (length ${#NETLIFY_AUTH_TOKEN})"
+          else
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            echo "NETLIFY_AUTH_TOKEN is empty in Preview – icomply-main-web"
+          fi
+          if [ -n "$NETLIFY_SITE_ID" ]; then
+            echo "NETLIFY_SITE_ID is set (length ${#NETLIFY_SITE_ID})"
+          else
+            echo "NETLIFY_SITE_ID is empty; the deploy script can read the public site id"
+          fi
+
+  auth-production-site:
+    name: Secrets in Production site environment
+    needs: auth-preview
+    if: needs.auth-preview.outputs.available != 'true'
+    runs-on: ubuntu-latest
+    environment: Production – icomply-main-web
+    outputs:
+      available: ${{ steps.probe.outputs.available }}
+      environment_name: ${{ steps.probe.outputs.environment_name }}
+    steps:
+      - name: Probe Netlify token
+        id: probe
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          echo "environment_name=Production – icomply-main-web" >> "$GITHUB_OUTPUT"
+          if [ -n "$NETLIFY_AUTH_TOKEN" ]; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+            echo "NETLIFY_AUTH_TOKEN is set (length ${#NETLIFY_AUTH_TOKEN}). Draft aliases only."
+          else
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            echo "NETLIFY_AUTH_TOKEN is empty in Production – icomply-main-web"
+          fi
+
+  auth-production:
+    name: Secrets in Production environment
+    needs: [auth-preview, auth-production-site]
+    if: needs.auth-preview.outputs.available != 'true' && needs.auth-production-site.outputs.available != 'true'
+    runs-on: ubuntu-latest
+    environment: Production
+    outputs:
+      available: ${{ steps.probe.outputs.available }}
+      environment_name: ${{ steps.probe.outputs.environment_name }}
+    steps:
+      - name: Probe Netlify token
+        id: probe
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          echo "environment_name=Production" >> "$GITHUB_OUTPUT"
+          if [ -n "$NETLIFY_AUTH_TOKEN" ]; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+            echo "NETLIFY_AUTH_TOKEN is set (length ${#NETLIFY_AUTH_TOKEN}). Draft aliases only."
+          else
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            echo "NETLIFY_AUTH_TOKEN is empty in Production"
+          fi
+
+  choose-environment:
+    name: Choose secret source
+    needs: [auth-preview, auth-production-site, auth-production]
+    if: always() && !cancelled()
+    runs-on: ubuntu-latest
+    outputs:
+      name: ${{ steps.pick.outputs.name }}
+    steps:
+      - name: Pick the first environment that has a token
+        id: pick
+        env:
+          PREVIEW_OK: ${{ needs.auth-preview.outputs.available }}
+          PREVIEW_NAME: ${{ needs.auth-preview.outputs.environment_name }}
+          SITE_OK: ${{ needs.auth-production-site.outputs.available }}
+          SITE_NAME: ${{ needs.auth-production-site.outputs.environment_name }}
+          PROD_OK: ${{ needs.auth-production.outputs.available }}
+          PROD_NAME: ${{ needs.auth-production.outputs.environment_name }}
+        run: |
+          if [ "$PREVIEW_OK" = "true" ] && [ -n "$PREVIEW_NAME" ]; then
+            echo "name=$PREVIEW_NAME" >> "$GITHUB_OUTPUT"
+            echo "Using $PREVIEW_NAME"
+          elif [ "$SITE_OK" = "true" ] && [ -n "$SITE_NAME" ]; then
+            echo "name=$SITE_NAME" >> "$GITHUB_OUTPUT"
+            echo "Using $SITE_NAME for a draft deploy only"
+          elif [ "$PROD_OK" = "true" ] && [ -n "$PROD_NAME" ]; then
+            echo "name=$PROD_NAME" >> "$GITHUB_OUTPUT"
+            echo "Using $PROD_NAME for a draft deploy only"
+          else
+            echo "::error::NETLIFY_AUTH_TOKEN is empty in repository secrets and in the Preview and Production GitHub Environments. Draft aliases were not published. Production was not deployed."
+            exit 1
+          fi
+
+  export:
+    name: Pre-render PR #${{ matrix.pr }}
+    needs: [targets, choose-environment]
+    if: needs.choose-environment.outputs.name != ''
+    runs-on: ubuntu-latest
+    concurrency:
+      group: netlify-draft-export-${{ matrix.pr }}
+      cancel-in-progress: true
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        pr: ${{ fromJson(needs.targets.outputs.prs) }}
+    steps:
+      - name: Checkout pull request head
+        uses: actions/checkout@v4
+        with:
+          ref: refs/pull/${{ matrix.pr }}/head
+          path: preview-src
+          fetch-depth: 1
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          coverage: none
+
+      - name: Static export (PHP → HTML in dist/)
+        working-directory: preview-src
+        timeout-minutes: 90
+        env:
+          SITE_URL: https://icomplypropertyservices.co.uk
+        run: php website/bin/static-export.php
+
+      - name: Verify dist/ pretty URLs
+        working-directory: preview-src
+        run: php website/bin/check-static-export.php
+
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: netlify-dist-${{ matrix.pr }}
+          path: preview-src/dist
+          retention-days: 1
+          if-no-files-found: error
+
+  draft:
+    name: Draft preview PR #${{ matrix.pr }}
+    needs: [targets, choose-environment, export]
+    if: always() && !cancelled() && needs.choose-environment.outputs.name != '' && needs.export.result != 'cancelled'
+    runs-on: ubuntu-latest
+    environment: ${{ needs.choose-environment.outputs.name }}
+    concurrency:
+      group: netlify-draft-${{ matrix.pr }}
+      cancel-in-progress: true
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        pr: ${{ fromJson(needs.targets.outputs.prs) }}
+    steps:
+      - name: Checkout draft workflow
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: workflow
+
+      - name: Guard against a production deploy flag
+        run: bash workflow/website/bin/test-netlify-draft-deploy.sh
+
+      - name: Download pre-rendered dist
+        uses: actions/download-artifact@v4
+        with:
+          name: netlify-dist-${{ matrix.pr }}
+          path: dist
+
+      - name: Deploy dist/ to Netlify draft aliases
+        id: deploy
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          PR_NUMBER: ${{ matrix.pr }}
+        run: |
+          set -euo pipefail
+          urls="$(mktemp)"
+          bash workflow/website/bin/netlify-draft-deploy.sh \
+            "$GITHUB_WORKSPACE/dist" \
+            "$PR_NUMBER" \
+            "$urls"
+          {
+            echo "urls<<EOF"
+            cat "$urls"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Require the draft hostnames to answer
+        id: live
+        env:
+          URLS: ${{ steps.deploy.outputs.urls }}
+        run: |
+          python3 - << 'PY'
+          import os, time, urllib.request
+          urls = [line.strip() for line in os.environ["URLS"].splitlines() if line.strip()]
+          if len(urls) < 2:
+              raise SystemExit("expected pr-N and deploy-preview-N URLs")
+          pending = set(urls)
+          last = {}
+          for _ in range(18):
+              still = set()
+              for url in pending:
+                  try:
+                      req = urllib.request.Request(url, method="GET")
+                      with urllib.request.urlopen(req, timeout=30) as resp:
+                          body = resp.read(80)
+                          code = resp.status
+                          ctype = resp.headers.get("content-type", "")
+                  except Exception as exc:
+                      code = getattr(getattr(exc, "code", None), "__str__", lambda: "")()
+                      if hasattr(exc, "code"):
+                          code = exc.code
+                          body = exc.read(80) if hasattr(exc, "read") else b""
+                          ctype = ""
+                      else:
+                          code = 0
+                          body = str(exc).encode()
+                          ctype = ""
+                  last[url] = (code, ctype, body[:60])
+                  platform_miss = code == 404 and body.startswith(b"Not Found")
+                  if code == 200 and not platform_miss:
+                      print(f"live {code} {url}")
+                  else:
+                      print(f"waiting {code} {url}")
+                      still.add(url)
+              pending = still
+              if not pending:
+                  break
+              time.sleep(10)
+          if pending:
+              for url in pending:
+                  print(f"FAIL {last.get(url)} {url}")
+              raise SystemExit("draft alias did not return HTTP 200")
+          PY
+
+      - name: Post or update draft URL comment
+        env:
+          GH_TOKEN: ${{ github.token }}
+          URLS: ${{ steps.deploy.outputs.urls }}
+          PR_NUMBER: ${{ matrix.pr }}
+        run: |
+          python3 - << 'PY'
+          import json, os, urllib.request
+          urls = [line.strip() for line in os.environ["URLS"].splitlines() if line.strip()]
+          pr = os.environ["PR_NUMBER"]
+          marker = "<!-- netlify-draft-preview -->"
+          lines = "\n".join(f"- {url}" for url in urls)
+          body = (
+              f"{marker}\n"
+              f"**Netlify draft preview** (not production)\n\n"
+              f"{lines}\n\n"
+              f"Draft aliases for PR #{pr}. This does not publish production.\n"
+          )
+          token = os.environ["GH_TOKEN"]
+          repo = os.environ["GITHUB_REPOSITORY"]
+
+          def api(method, path, payload=None):
+              data = None if payload is None else json.dumps(payload).encode()
+              req = urllib.request.Request(
+                  f"https://api.github.com{path}",
+                  data=data,
+                  method=method,
+                  headers={
+                      "Authorization": f"Bearer {token}",
+                      "Accept": "application/vnd.github+json",
+                      "X-GitHub-Api-Version": "2022-11-28",
+                      "Content-Type": "application/json",
+                  },
+              )
+              with urllib.request.urlopen(req) as resp:
+                  raw = resp.read().decode()
+                  return json.loads(raw) if raw else None
+
+          comments = api("GET", f"/repos/{repo}/issues/{pr}/comments?per_page=100")
+          existing = next((item for item in comments if marker in (item.get("body") or "")), None)
+          if existing:
+              api("PATCH", f"/repos/{repo}/issues/comments/{existing['id']}", {"body": body})
+              print(f"Updated comment {existing['id']}")
+          else:
+              created = api("POST", f"/repos/{repo}/issues/{pr}/comments", {"body": body})
+              print(f"Created comment {created['id']}")
+          PY
