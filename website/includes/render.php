@@ -105,7 +105,7 @@ function renderServiceAreaPage(string $serviceSlug, string $area): void {
 function renderKeywordPage(string $slug): void {
     $keywords = getMajorKeywords();
     $slug = keywordSlug($slug);
-    if (!isset($keywords[$slug])) {
+    if (in_array($slug, unpublishedKeywordSlugs(), true) || !isset($keywords[$slug])) {
         http_response_code(404);
         echo 'Keyword not found';
         icomplyRequestExit();
@@ -295,6 +295,12 @@ function renderServiceHubPage(string $serviceSlug): void {
  * Manufacturer brand / product hub (pages/manufacturers/{slug}.php).
  */
 function renderManufacturerPage(string $mfrSlug): void {
+    if (!manufacturerSlugIsPublic($mfrSlug)) {
+        http_response_code(404);
+        echo 'Manufacturer not found';
+        icomplyRequestExit();
+        return;
+    }
     $entry = getManufacturerBySlug($mfrSlug);
     if (!$entry) {
         http_response_code(404);
@@ -318,15 +324,22 @@ function renderManufacturerPage(string $mfrSlug): void {
             . htmlspecialchars($sName, ENT_QUOTES, 'UTF-8') . '</a>';
     }
 
-    // Product cards (Shopify-ready via shared card helper)
+    // Product cards. Missing helper must not fatal the page or emit product links.
     require_once SITE_ROOT . '/includes/shopify.php';
     $productsHtml = '';
     $products = $entry['products'] ?? [];
-    if (!$products) {
-        $productsHtml = '<p class="text-zinc-600 col-span-full">Contact us for ' . htmlspecialchars($entry['name'], ENT_QUOTES, 'UTF-8') . ' pricing and availability, or <a class="text-[#ff6b00] font-semibold" href="' . htmlspecialchars(url('/shop/index.php'), ENT_QUOTES, 'UTF-8') . '">browse the shop</a>.</p>';
+    $contactHtml = '<p class="text-zinc-600 col-span-full">Contact us for ' . htmlspecialchars($entry['name'], ENT_QUOTES, 'UTF-8') . ' pricing and availability, or <a class="text-[#ff6b00] font-semibold" href="' . htmlspecialchars(url('/shop/index.php'), ENT_QUOTES, 'UTF-8') . '">browse the shop</a>.</p>';
+    if (!$products || !function_exists('shopifyCardFromManufacturerProduct')) {
+        $productsHtml = $contactHtml;
     } else {
         foreach ($products as $p) {
+            if (!is_array($p)) {
+                continue;
+            }
             $productsHtml .= shopifyCardFromManufacturerProduct($p, $entry['slug'], $entry['name']);
+        }
+        if ($productsHtml === '') {
+            $productsHtml = $contactHtml;
         }
     }
 

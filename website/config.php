@@ -312,11 +312,15 @@ function keywordDisplayName($slugOrName): string {
 function getMajorKeywords(): array {
     $kw = loadJsonData('keywords', []);
     $normalized = [];
+    $hiddenKeywords = array_flip(unpublishedKeywordSlugs());
     foreach ($kw as $slug => $meta) {
         if (!is_array($meta)) {
             continue;
         }
         $slug = keywordSlug($slug);
+        if (isset($hiddenKeywords[$slug])) {
+            continue;
+        }
         $row = [
             'name' => $meta['name'] ?? keywordDisplayName($slug),
             'service' => $meta['service'] ?? 'electrical',
@@ -492,9 +496,46 @@ function getServiceStandards(string $slug): string {
     return (string)(getServiceMeta($slug)['standards'] ?? '');
 }
 
+/**
+ * Brands kept off public manufacturer pages, cards, and keyword hubs.
+ * Tunstall stays unpublished even when older catalog JSON still lists it.
+ */
+function unpublishedManufacturerSlugs(): array
+{
+    return ['tunstall'];
+}
+
+function unpublishedKeywordSlugs(): array
+{
+    return ['tunstall-nurse-call'];
+}
+
+function manufacturerSlugIsPublic(string $slug): bool
+{
+    return !in_array(areaSlug($slug), unpublishedManufacturerSlugs(), true);
+}
+
+function icomplyStripUnpublishedManufacturers(array $catalog): array
+{
+    foreach (array_keys($catalog) as $slug) {
+        if (!manufacturerSlugIsPublic((string)$slug)) {
+            unset($catalog[$slug]);
+        }
+    }
+    return $catalog;
+}
+
 function getManufacturers(string $serviceSlug): array {
     $mfr = loadJsonData('manufacturers', []);
-    return $mfr['by_service'][$serviceSlug] ?? ['Industry Standard Equipment'];
+    $names = $mfr['by_service'][$serviceSlug] ?? ['Industry Standard Equipment'];
+    $out = [];
+    foreach ($names as $name) {
+        if (!manufacturerSlugIsPublic(manufacturerSlugFromName((string)$name))) {
+            continue;
+        }
+        $out[] = $name;
+    }
+    return $out;
 }
 
 /** Full manufacturer catalog keyed by slug */
@@ -502,7 +543,7 @@ function getManufacturerCatalog(): array {
     $mfr = loadJsonData('manufacturers', []);
     $catalog = $mfr['catalog'] ?? [];
     if ($catalog) {
-        return $catalog;
+        return icomplyStripUnpublishedManufacturers($catalog);
     }
     // Fallback: build minimal catalog from by_service names
     $built = [];
@@ -526,7 +567,7 @@ function getManufacturerCatalog(): array {
             }
         }
     }
-    return $built;
+    return icomplyStripUnpublishedManufacturers($built);
 }
 
 function getManufacturerBySlug(string $slug): ?array {
@@ -546,7 +587,10 @@ function manufacturerImageSlug(string $name): string {
 function getManufacturerImageSlugs(string $serviceSlug): array {
     $mfr = loadJsonData('manufacturers', []);
     if (!empty($mfr['images_by_service'][$serviceSlug])) {
-        return $mfr['images_by_service'][$serviceSlug];
+        return array_values(array_filter(
+            $mfr['images_by_service'][$serviceSlug],
+            static fn($slug) => manufacturerSlugIsPublic((string)$slug)
+        ));
     }
     $slugs = [];
     foreach (getManufacturers($serviceSlug) as $name) {
@@ -555,7 +599,11 @@ function getManufacturerImageSlugs(string $serviceSlug): array {
             break;
         }
     }
-    return $slugs ?: ['kentec'];
+    $slugs = array_values(array_filter(
+        $slugs ?: ['kentec'],
+        static fn($slug) => manufacturerSlugIsPublic((string)$slug)
+    ));
+    return $slugs;
 }
 
 /**
@@ -601,7 +649,7 @@ function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
     $fallback = htmlspecialchars(url('/assets/images/services/' . $serviceSlug . '.jpg'), ENT_QUOTES, 'UTF-8');
     foreach ($slugs as $slug) {
         $slug = preg_replace('/[^a-z0-9\-]/', '', (string)$slug);
-        if ($slug === '') {
+        if ($slug === '' || !manufacturerSlugIsPublic($slug)) {
             continue;
         }
         $entry = $catalog[$slug] ?? null;
