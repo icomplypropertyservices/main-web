@@ -85,6 +85,7 @@ $resourceLinks = [
     ['href' => url('/pages/resources/index.php') . '#batch-c', 'label' => 'Batch C — SEO hubs', 'blurb' => 'Twelve quality hubs (not HMO packages)'],
     ['href' => url('/pages/services/legionella-risk-assessment.php'), 'label' => 'Legionella risk assessment', 'blurb' => 'Water hygiene / Legionnaires — POA'],
     ['href' => url('/pages/services/asbestos-survey.php'), 'label' => 'Asbestos survey', 'blurb' => 'Management & refurbishment surveys — POA'],
+    ['href' => url('/pages/asbestos-jobs.php'), 'label' => 'Asbestos survey and awareness jobs', 'blurb' => 'Survey lane and awareness briefings — POA'],
     ['href' => url('/pages/resources/legionella-risk-assessment.php'), 'label' => 'Legionella guide', 'blurb' => 'L8 / HSG274 plain English'],
     ['href' => url('/pages/resources/asbestos-survey.php'), 'label' => 'Asbestos guide', 'blurb' => 'Duty to manage, CAR 2012'],
     ['href' => url('/pages/keywords/index.php'), 'label' => "Keyword guides ({$kwCount})", 'blurb' => 'EICR reports, gas certs, security lighting & more'],

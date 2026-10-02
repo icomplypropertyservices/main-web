@@ -271,6 +271,12 @@ $schema = [
                 find local support for the exact panel or equipment already on site.
             </p>
             <?php endif; ?>
+            <?php if ($serviceSlug === 'asbestos-survey'): ?>
+            <p class="mt-6 text-lg text-zinc-700 leading-relaxed">
+                <a href="<?= url('/pages/asbestos-jobs') ?>" class="font-semibold text-[#ff6b00] hover:underline">Asbestos survey and awareness job pages</a>
+                list the management, refurbishment and briefing visits. Quotes are POA. Licensed asbestos removal is by others.
+            </p>
+            <?php endif; ?>
         </div>
         <div class="lg:col-span-2 space-y-4">
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">

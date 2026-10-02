@@ -310,6 +310,10 @@ function keywordDisplayName($slugOrName): string {
 }
 
 function getMajorKeywords(): array {
+    static $cached = null;
+    if ($cached !== null) {
+        return $cached;
+    }
     $kw = loadJsonData('keywords', []);
     $normalized = [];
     foreach ($kw as $slug => $meta) {
@@ -336,7 +340,10 @@ function getMajorKeywords(): array {
         }
         $normalized[$slug] = $row;
     }
-    return $normalized;
+    if (function_exists('asbestosJobsApply')) {
+        $normalized = asbestosJobsApply($normalized);
+    }
+    return $cached = $normalized;
 }
 
 /**
@@ -711,6 +718,11 @@ function icomplyTradeProductsUrl(): string
 $waFile = __DIR__ . '/includes/water-asbestos.php';
 if (is_file($waFile)) {
     require_once $waFile;
+}
+
+$asbestosJobsFile = __DIR__ . '/includes/asbestos-jobs.php';
+if (is_file($asbestosJobsFile)) {
+    require_once $asbestosJobsFile;
 }
 
 // Back-compat globals used by some templates/includes

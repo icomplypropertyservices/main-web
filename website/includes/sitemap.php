@@ -139,6 +139,7 @@ function icomplySitemapEntries(): array
         ['/pages/emergency', '0.75', 'pages/emergency.php'],
         ['/pages/reviews', '0.65', 'pages/reviews.php'],
         ['/pages/site-map', '0.7', 'pages/site-map.php'],
+        ['/pages/asbestos-jobs', '0.8', 'pages/asbestos-jobs.php'],
         ['/pages/resources', '0.75', 'pages/resources.php'],
         ['/pages/resources/eicr-guide', '0.7', 'pages/resources/eicr-guide.php'],
         ['/pages/resources/fire-alarm-servicing', '0.7', 'pages/resources/fire-alarm-servicing.php'],
