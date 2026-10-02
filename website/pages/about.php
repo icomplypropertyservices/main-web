@@ -5,8 +5,9 @@
 require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/shopify.php';
 
+$seoFamily = 'static';
 $pageTitle = 'About Us | Fire Safety, Professional & Construction | Stockport';
-$metaDesc = 'About Icomply Property Services — Stockport SK2 5DE. Fire risk assessments and fire safety systems, electrical, gas, security, professional compliance, kitchens, bathrooms and construction across the North West.';
+$metaDesc = 'About Icomply Property Services at Stockport SK2 5DE. Fire, electrical and landlord work is quoted after we see the building. Call 07517806082.';
 $metaKeywords = 'about Icomply, fire risk assessment Stockport, kitchen fitting North West, property compliance Stockport, construction services Greater Manchester';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/about.php');
@@ -31,7 +32,7 @@ $standards = [
     ['code' => 'BS 5839', 'label' => 'Fire detection & alarms'],
     ['code' => 'BS 5266', 'label' => 'Emergency lighting'],
     ['code' => 'FSO / PAS 79', 'label' => 'Fire risk assessments'],
-    ['code' => 'Gas Safe', 'label' => 'Landlord & commercial gas'],
+    ['code' => 'CP12 record', 'label' => 'Landlord gas safety — registration checked per job'],
     ['code' => 'Building Regs', 'label' => 'Construction & fit-out works'],
 ];
 
@@ -244,7 +245,9 @@ $aboutSchema = [
             <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All services →</a>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            <?php foreach ($services as $slug => $name):
+            <?php
+            $aboutImgEager = true;
+            foreach ($services as $slug => $name):
                 $blurb = getServiceBlurb($slug, true);
                 $img = url('/assets/images/services/' . $slug . '.jpg');
             ?>
@@ -252,7 +255,9 @@ $aboutSchema = [
                class="service-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="h-36 bg-zinc-100 overflow-hidden">
                     <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>"
-                         class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy"
+                         width="640" height="360"
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="<?= $aboutImgEager ? 'eager' : 'lazy' ?>"
+                         <?php $aboutImgEager = false; ?>
                          onerror="this.parentElement.style.display='none'">
                 </div>
                 <div class="p-5 flex-1 flex flex-col">

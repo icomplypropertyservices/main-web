@@ -2,8 +2,11 @@
 /**
  * Area hub template. Placeholders: AREA, AREA_SLUG, AREA_URL
  */
-$pageTitle = $AREA . ' Property Compliance Services';
-$metaDesc = $AREA . ' experts for EICR, fire alarms, gas safety, emergency lighting, CCTV and access control. Fast local response from Stockport-based engineers. Free quotes.';
+require_once SITE_ROOT . '/includes/seo.php';
+$areaProfile = area_profile($AREA);
+$seoFamily = 'area-hub';
+$pageTitle = $AREA . ' property compliance';
+$metaDesc = seo_fit_meta($AREA . ' (' . $areaProfile['districts'] . ') property compliance. ' . $areaProfile['stock'] . '. Fire, AOV, nurse call and barriers; other trades where the town is on the local list.');
 $metaKeywords = $AREA . ' electrician, ' . $AREA . ' fire alarm installation, ' . $AREA . ' EICR, ' . $AREA . ' gas safety certificate, property compliance ' . $AREA . ', emergency lighting ' . $AREA;
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 
@@ -136,8 +139,9 @@ $schema = [
                 <a href="<?= htmlspecialchars(exportedServiceLocalUrl($slug, $AREA, 'area'), ENT_QUOTES, 'UTF-8') ?>"
                    class="group relative rounded-3xl overflow-hidden border border-white/10 min-h-[130px] bg-white/5 hover:border-[#ff6b00] transition">
                     <img src="<?= htmlspecialchars(function_exists('serviceImageUrl') ? serviceImageUrl($slug) : url('/assets/images/services/' . $slug . '.jpg'), ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars(($services[$slug] ?? $slug) . ' in ' . ($areaName ?? $AREA ?? 'the North West'), ENT_QUOTES, 'UTF-8') ?>"
+                         width="640" height="360"
                          class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-55 transition"
-                         loading="lazy" onerror="this.style.display='none'">
+                         loading="<?= $slug === array_key_first($heroCards) ? 'eager' : 'lazy' ?>" onerror="this.style.display='none'">
                     <div class="relative p-4 h-full flex flex-col justify-end min-h-[130px]">
                         <div class="font-semibold text-white leading-tight"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></div>
                         <div class="text-xs text-white/70 mt-1">in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> →</div>
@@ -180,15 +184,19 @@ $schema = [
                 Compliance engineers for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>
             </h2>
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
-                Icomply Property Services provides complete property compliance for landlords, facilities managers,
-                care providers and commercial occupiers in <strong><?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></strong>. Whether you need an EICR,
-                fire alarm service, gas safety certificate, emergency lighting test or a full multi-system install,
-                we book local engineers with fixed-price quotes and clear documentation.
+                Property compliance for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> uses outward codes
+                <strong><?= htmlspecialchars($areaProfile['districts'], ENT_QUOTES, 'UTF-8') ?></strong>
+                in <?= htmlspecialchars($areaProfile['region'], ENT_QUOTES, 'UTF-8') ?>.
+                The buildings we usually see are <?= htmlspecialchars($areaProfile['stock'], ENT_QUOTES, 'UTF-8') ?>.
+                Local priority on this page: <?= htmlspecialchars($areaProfile['focus'], ENT_QUOTES, 'UTF-8') ?>.
+                Fire alarms, AOV and smoke control, nurse call, and vehicle barriers are covered here.
+                Other trades are indexed when the town is Greater Manchester or Burnley.
             </p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
-                Based in Offerton, Stockport (SK2 5DE), we routinely serve <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> and the wider North West with
-                same-week appointments where capacity allows. Choose a service below for a dedicated
-                <strong><?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></strong> landing page, or request a package quote for several services at once.
+                The office is 17 Woodlands Park Road, Offerton, Stockport SK2 5DE. Visits in
+                <?= htmlspecialchars($areaProfile['districts'], ENT_QUOTES, 'UTF-8') ?> are diary-booked.
+                Phone <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.
+                We do not print a NICEIC or Gas Safe registration number on this town page.
             </p>
         </div>
         <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
@@ -246,15 +254,13 @@ $schema = [
                 <div class="h-36 bg-zinc-100 overflow-hidden">
                     <img src="<?= htmlspecialchars(serviceImageUrl($slug), ENT_QUOTES, 'UTF-8') ?>"
                          alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>"
+                         width="640" height="360"
                          class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
                          loading="lazy"
                          onerror="this.parentElement.style.display='none'">
                 </div>
                 <div class="p-5 flex-1 flex flex-col">
-                    <h3 class="font-semibold text-lg text-black">
-                        <?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>
-                        <span class="text-zinc-400 font-normal text-base">in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></span>
-                    </h3>
+                    <h3 class="font-semibold text-lg text-black"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></h3>
                     <p class="text-sm text-zinc-600 mt-2 flex-1"><?= htmlspecialchars($blurb, ENT_QUOTES, 'UTF-8') ?></p>
                     <span class="mt-4 text-sm font-semibold text-[#ff6b00]">View service →</span>
                 </div>

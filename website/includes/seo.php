@@ -36,12 +36,12 @@ function seo_title(string $title): string {
 /** Standards / compliance keywords per service for on-page SEO */
 function service_standards(string $slug): array {
     $map = [
-        'electrical' => ['BS 7671', 'EICR', 'PAT testing', 'Part P', 'NICEIC-aligned practice', 'EV charger install'],
+        'electrical' => ['BS 7671', 'EICR', 'PAT testing', 'Part P', 'EV charger install'],
         'fire-alarms' => ['BS 5839', 'fire detection', 'L1–L5 categories', 'addressable systems', 'commissioning certificates'],
         'emergency-lighting' => ['BS 5266', 'maintained / non-maintained', 'exit signage', 'duration testing', 'self-test LED'],
         'aov-air-handling' => ['BS 9991 guidance', 'smoke ventilation', 'AOV controls', 'smoke shafts', 'fire strategy support'],
         'nurse-call' => ['HTM 08-03 aligned', 'care home systems', 'wireless / wired', 'panel upgrades', 'handset repair'],
-        'gas-systems' => ['Gas Safe', 'landlord gas safety', 'CP12 / CP44', 'boiler servicing', 'commercial gas'],
+        'gas-systems' => ['landlord gas safety record', 'CP12 / CP44', 'boiler servicing', 'commercial gas'],
         'intruder-alarm' => ['BS 4737 / PD 6662 practice', 'wired & wireless', 'PIR detection', 'app control', 'ARC-ready'],
         'cctv' => ['IP / HD CCTV', 'NVR recording', 'remote viewing', 'retail & warehouse', 'GDPR-aware install'],
         'access-control' => ['card / fob / biometric', 'multi-door control', 'audit trails', 'time zones', 'fire door release'],
@@ -274,4 +274,106 @@ function local_business_schema(array $extra = []): array {
         ],
     ];
     return array_merge($base, $extra);
+}
+
+/** Visible <title> length for the hard SEO gate: 30–65 characters. */
+function seo_document_title(string $raw): string {
+    $raw = trim(preg_replace('/\s+/u', ' ', $raw) ?? $raw);
+    if ($raw === '') {
+        $raw = 'Icomply Property Services';
+    }
+    $hasBrand = stripos($raw, 'Icomply') !== false;
+    if (!$hasBrand) {
+        $full = $raw . ' | Icomply Property Services';
+        $short = $raw . ' | Icomply';
+        if (mb_strlen($full) <= 65) {
+            $raw = $full;
+        } elseif (mb_strlen($short) <= 65) {
+            $raw = $short;
+        }
+    }
+    if (mb_strlen($raw) > 65) {
+        $cut = rtrim(mb_substr($raw, 0, 65));
+        $word = preg_replace('/\s+\S*$/u', '', $cut);
+        if (is_string($word) && mb_strlen($word) >= 30) {
+            $raw = $word;
+        } else {
+            $raw = $cut;
+        }
+    }
+    if (mb_strlen($raw) < 30 && stripos($raw, 'Icomply') === false) {
+        $raw .= ' | Icomply Property Services';
+        if (mb_strlen($raw) > 65) {
+            $raw = mb_substr($raw, 0, 65);
+        }
+    }
+    return $raw;
+}
+
+/** Meta description length for the hard gate: 70–160 characters. */
+function seo_fit_meta(string $text): string {
+    $text = trim(preg_replace('/\s+/u', ' ', $text) ?? $text);
+    $pad = ' Call 07517806082. Stockport SK2.';
+    if (mb_strlen($text) < 70) {
+        $text .= $pad;
+    }
+    if (mb_strlen($text) > 160) {
+        $cut = rtrim(mb_substr($text, 0, 157));
+        $word = preg_replace('/\s+\S*$/u', '', $cut);
+        $text = (is_string($word) && mb_strlen($word) >= 70) ? $word : rtrim(mb_substr($text, 0, 159));
+    }
+    if (mb_strlen($text) < 70) {
+        $text = mb_substr($text . $pad, 0, 160);
+    }
+    return $text;
+}
+
+/**
+ * Rewrite company self-claims of NICEIC / Gas Safe registration.
+ * Sentences that only state the legal duty (no we/our/Icomply) are left alone.
+ */
+function scrub_unverified_accreditation(string $text): string {
+    $text = trim($text);
+    if ($text === '') {
+        return $text;
+    }
+    $parts = preg_split('/(?<=[.!?])\s+/u', $text) ?: [$text];
+    $denial = 'We do not print a NICEIC or Gas Safe badge here; registration is confirmed against the specific job before anyone is booked.';
+    $out = [];
+    foreach ($parts as $sentence) {
+        $self = preg_match('/\b(Icomply|iComply|our|we|all engineers)\b/u', $sentence) === 1;
+        $claim = preg_match('/\bNICEIC\b|\bGas Safe registered\b/u', $sentence) === 1;
+        $denies = preg_match('/\b(do not|does not|don\'t|not claim|not print|no NICEIC)\b/ui', $sentence) === 1;
+        $out[] = ($self && $claim && !$denies) ? $denial : $sentence;
+    }
+    return implode(' ', $out);
+}
+
+/** True when visible text asserts an accreditation this repo does not verify. */
+function seo_unverified_badge_label(string $text): bool {
+    return preg_match('/\b(NICEIC|BAFE|CHAS|SafeContractor|award-winning|ISO\s*9001|Gas Safe)\b/ui', $text) === 1;
+}
+
+/** Fire category, nurse call, and access control (barriers) are nationwide. */
+function seo_nationwide_service_slugs(): array {
+    static $slugs = null;
+    if ($slugs !== null) {
+        return $slugs;
+    }
+    $cats = function_exists('getServiceCategories') ? getServiceCategories() : [];
+    $fire = $cats['fire-safety']['services'] ?? [];
+    $slugs = array_values(array_unique(array_merge($fire, ['nurse-call', 'access-control'])));
+    return $slugs;
+}
+
+/** Other services stay indexable for Greater Manchester and Burnley only. */
+function seo_local_landing_indexable(string $serviceSlug, string $area): bool {
+    if (in_array($serviceSlug, seo_nationwide_service_slugs(), true)) {
+        return true;
+    }
+    if ($area === 'Burnley') {
+        return true;
+    }
+    $profile = area_profile($area);
+    return ($profile['region'] ?? '') === 'Greater Manchester';
 }

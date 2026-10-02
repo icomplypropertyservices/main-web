@@ -19,82 +19,33 @@ function pick_seeded(array $pool, int $seed, int $offset = 0) {
     return $pool[($seed + $offset) % count($pool)];
 }
 
-/** Approximate postcode districts + region flavour for NW towns */
+/** Outward codes and building stock. See area-profiles.php for the full town list. */
 function area_profile(string $area): array {
     static $map = null;
     if ($map === null) {
-        $map = [
-            'Manchester' => ['districts' => 'M1–M40', 'region' => 'Greater Manchester core', 'stock' => 'city-centre apartments, Victorian terraces, commercial offices and multi-let stock', 'travel' => 'typically under 40 minutes from our Stockport base', 'focus' => 'high-rise residential, retail and office compliance'],
-            'Salford' => ['districts' => 'M3, M5–M7, M50', 'region' => 'Greater Manchester', 'stock' => 'MediaCity offices, new-build apartments and industrial estates', 'travel' => 'typically under 35 minutes from Stockport', 'focus' => 'mixed-use and multi-tenant buildings'],
-            'Stockport' => ['districts' => 'SK1–SK8', 'region' => 'Greater Manchester', 'stock' => 'suburban housing, industrial units and town-centre retail', 'travel' => 'local Stockport coverage from SK2', 'focus' => 'landlord portfolios and SME commercial sites'],
-            'Bolton' => ['districts' => 'BL1–BL7', 'region' => 'Greater Manchester', 'stock' => 'terraced housing, mills converted to commercial and retail parks', 'travel' => 'typically 35–50 minutes from Stockport', 'focus' => 'landlord and light-industrial compliance'],
-            'Oldham' => ['districts' => 'OL1–OL9', 'region' => 'Greater Manchester', 'stock' => 'terraced streets, industrial estates and local authority stock', 'travel' => 'typically 35–50 minutes from Stockport', 'focus' => 'residential portfolios and warehouse units'],
-            'Rochdale' => ['districts' => 'OL11–OL16', 'region' => 'Greater Manchester', 'stock' => 'mixed housing, town retail and industrial estates', 'travel' => 'typically 40–55 minutes from Stockport', 'focus' => 'landlords, agents and SME facilities'],
-            'Bury' => ['districts' => 'BL9, M25–M26', 'region' => 'Greater Manchester', 'stock' => 'suburban homes, retail and light industry', 'travel' => 'typically 40–55 minutes from Stockport', 'focus' => 'residential and high-street commercial'],
-            'Wigan' => ['districts' => 'WN1–WN6', 'region' => 'Greater Manchester', 'stock' => 'housing estates, industrial corridors and town-centre units', 'travel' => 'typically 50–70 minutes from Stockport', 'focus' => 'commercial and multi-site landlords'],
-            'Liverpool' => ['districts' => 'L1–L25', 'region' => 'Merseyside', 'stock' => 'city apartments, Georgian terraces, docks-side commercial and retail', 'travel' => 'typically 50–70 minutes from Stockport', 'focus' => 'HMOs, offices and hospitality sites'],
-            'Preston' => ['districts' => 'PR1–PR5', 'region' => 'Lancashire', 'stock' => 'city housing, student HMOs and industrial parks', 'travel' => 'typically 50–70 minutes from Stockport', 'focus' => 'student lets, offices and warehouses'],
-            'Blackpool' => ['districts' => 'FY1–FY4', 'region' => 'Lancashire coast', 'stock' => 'HMOs, guest houses, seafront retail and leisure', 'travel' => 'typically 70–90 minutes from Stockport', 'focus' => 'hospitality and multi-let residential'],
-            'Chester' => ['districts' => 'CH1–CH4', 'region' => 'Cheshire', 'stock' => 'historic city retail, offices and suburban housing', 'travel' => 'typically 50–70 minutes from Stockport', 'focus' => 'retail, heritage-sensitive commercial and residential'],
-            'Warrington' => ['districts' => 'WA1–WA5', 'region' => 'Cheshire / Merseyside border', 'stock' => 'logistics warehouses, business parks and new housing', 'travel' => 'typically 35–50 minutes from Stockport', 'focus' => 'warehouses, offices and estates'],
-            'Altrincham' => ['districts' => 'WA14–WA15', 'region' => 'Trafford', 'stock' => 'premium housing, market-town retail and offices', 'travel' => 'typically 25–40 minutes from Stockport', 'focus' => 'professional offices and residential portfolios'],
-            'Sale' => ['districts' => 'M33', 'region' => 'Trafford', 'stock' => 'suburban housing and local retail', 'travel' => 'typically 25–40 minutes from Stockport', 'focus' => 'landlords and small commercial'],
-            'Wilmslow' => ['districts' => 'SK9', 'region' => 'Cheshire East', 'stock' => 'premium residential and town retail', 'travel' => 'typically 20–35 minutes from Stockport', 'focus' => 'high-spec residential and boutique commercial'],
-            'Macclesfield' => ['districts' => 'SK10–SK11', 'region' => 'Cheshire East', 'stock' => 'market-town housing, mills and industrial estates', 'travel' => 'typically 25–40 minutes from Stockport', 'focus' => 'SME industrial and residential'],
-            'Crewe' => ['districts' => 'CW1–CW2', 'region' => 'Cheshire East', 'stock' => 'rail-town housing, logistics and industrial', 'travel' => 'typically 40–55 minutes from Stockport', 'focus' => 'industrial and multi-let'],
-            'Lancaster' => ['districts' => 'LA1–LA2', 'region' => 'Lancashire', 'stock' => 'university housing, city retail and offices', 'travel' => 'typically 70–90 minutes from Stockport', 'focus' => 'student HMOs and commercial'],
-            'Burnley' => ['districts' => 'BB10–BB12', 'region' => 'East Lancashire', 'stock' => 'terraced housing and industrial estates', 'travel' => 'typically 55–75 minutes from Stockport', 'focus' => 'landlord portfolios and factories'],
-            'Blackburn' => ['districts' => 'BB1–BB2', 'region' => 'East Lancashire', 'stock' => 'terraced streets, mills and retail parks', 'travel' => 'typically 50–70 minutes from Stockport', 'focus' => 'residential and industrial'],
-            'Southport' => ['districts' => 'PR8–PR9', 'region' => 'Merseyside coast', 'stock' => 'Victorian housing, guest accommodation and retail', 'travel' => 'typically 60–80 minutes from Stockport', 'focus' => 'hospitality and residential'],
-            'St Helens' => ['districts' => 'WA9–WA11', 'region' => 'Merseyside', 'stock' => 'housing estates and industrial corridors', 'travel' => 'typically 45–60 minutes from Stockport', 'focus' => 'commercial and social housing stock'],
-            'Chorley' => ['districts' => 'PR6–PR7', 'region' => 'Lancashire', 'stock' => 'market-town housing and business parks', 'travel' => 'typically 45–60 minutes from Stockport', 'focus' => 'SME and residential'],
-            'Kendal' => ['districts' => 'LA9', 'region' => 'Cumbria', 'stock' => 'market-town retail, tourism and residential', 'travel' => 'typically 80–100 minutes from Stockport', 'focus' => 'tourism hospitality and town retail'],
-            'Carlisle' => ['districts' => 'CA1–CA3', 'region' => 'Cumbria', 'stock' => 'city housing, retail and logistics', 'travel' => 'typically 90–120 minutes from Stockport', 'focus' => 'commercial and multi-site'],
-            'Windermere' => ['districts' => 'LA23', 'region' => 'Lake District', 'stock' => 'hotels, guest houses and holiday lets', 'travel' => 'typically 80–100 minutes from Stockport', 'focus' => 'hospitality fire and electrical compliance'],
-            'Morecambe' => ['districts' => 'LA3–LA4', 'region' => 'Lancashire coast', 'stock' => 'seafront HMOs, guest houses and retail', 'travel' => 'typically 75–95 minutes from Stockport', 'focus' => 'hospitality and multi-let'],
-            'Knutsford' => ['districts' => 'WA16', 'region' => 'Cheshire East', 'stock' => 'premium residential and town retail', 'travel' => 'typically 30–45 minutes from Stockport', 'focus' => 'high-spec residential and offices'],
-            'Nantwich' => ['districts' => 'CW5', 'region' => 'Cheshire East', 'stock' => 'historic town retail and housing', 'travel' => 'typically 45–60 minutes from Stockport', 'focus' => 'town retail and residential'],
-            'Didsbury' => ['districts' => 'M20', 'region' => 'South Manchester', 'stock' => 'period houses, apartments and high-street retail', 'travel' => 'typically 20–30 minutes from Stockport', 'focus' => 'landlord apartments and offices'],
-            'Chorlton' => ['districts' => 'M21', 'region' => 'South Manchester', 'stock' => 'terraces, apartments and independent retail', 'travel' => 'typically 25–35 minutes from Stockport', 'focus' => 'residential portfolios'],
-            'Withington' => ['districts' => 'M20', 'region' => 'South Manchester', 'stock' => 'student HMOs and terraced housing', 'travel' => 'typically 20–30 minutes from Stockport', 'focus' => 'HMO electrical and fire compliance'],
-            'Wythenshawe' => ['districts' => 'M22–M23', 'region' => 'South Manchester', 'stock' => 'estate housing, retail and industrial', 'travel' => 'typically 20–35 minutes from Stockport', 'focus' => 'social housing and commercial'],
-            'Eccles' => ['districts' => 'M30', 'region' => 'Salford', 'stock' => 'suburban housing and industrial', 'travel' => 'typically 30–45 minutes from Stockport', 'focus' => 'residential and light industry'],
-            'Leigh' => ['districts' => 'WN7', 'region' => 'Wigan', 'stock' => 'town housing and industrial estates', 'travel' => 'typically 45–60 minutes from Stockport', 'focus' => 'commercial and landlord stock'],
-            'Runcorn' => ['districts' => 'WA7', 'region' => 'Halton', 'stock' => 'new-town housing and chemical/industrial estates', 'travel' => 'typically 40–55 minutes from Stockport', 'focus' => 'industrial and multi-let'],
-            'Widnes' => ['districts' => 'WA8', 'region' => 'Halton', 'stock' => 'housing and industrial riverside stock', 'travel' => 'typically 40–55 minutes from Stockport', 'focus' => 'industrial compliance'],
-            'Birkenhead' => ['districts' => 'CH41–CH42', 'region' => 'Wirral', 'stock' => 'terraced housing, docks and retail', 'travel' => 'typically 55–75 minutes from Stockport', 'focus' => 'residential and commercial'],
-            'Wallasey' => ['districts' => 'CH44–CH45', 'region' => 'Wirral', 'stock' => 'coastal housing and local retail', 'travel' => 'typically 60–80 minutes from Stockport', 'focus' => 'residential portfolios'],
-        ];
+        $loaded = require __DIR__ . '/area-profiles.php';
+        $map = is_array($loaded) ? $loaded : [];
     }
 
     if (isset($map[$area])) {
-        return $map[$area] + ['name' => $area];
+        $row = $map[$area];
+        return [
+            'name' => $area,
+            'districts' => (string)$row['districts'],
+            'region' => (string)$row['region'],
+            'stock' => (string)$row['stock'],
+            'travel' => 'scheduled from our Stockport SK2 base — we confirm a diary slot rather than a drive time',
+            'focus' => (string)$row['focus'],
+        ];
     }
 
-    // Generic but still unique-ish profile for remaining towns
-    $seed = area_seed($area);
-    $regions = ['Greater Manchester fringe', 'Lancashire', 'Cheshire', 'Merseyside fringe', 'North West England'];
-    $stocks = [
-        'mixed residential terraces and local retail parades',
-        'suburban housing, schools and small industrial units',
-        'town-centre shops, offices and multi-let flats',
-        'estate housing and light-industrial workshops',
-        'period housing and independent high-street units',
-    ];
-    $focus = [
-        'landlord and SME compliance',
-        'residential portfolios and small commercial',
-        'multi-let and facilities-managed sites',
-        'retail, offices and HMO stock',
-    ];
-    $mins = 25 + ($seed % 55);
     return [
         'name' => $area,
-        'districts' => 'local postcodes around ' . $area,
-        'region' => pick_seeded($regions, $seed, 0),
-        'stock' => pick_seeded($stocks, $seed, 1),
-        'travel' => "typically {$mins}–" . ($mins + 20) . ' minutes from our Stockport SK2 base',
-        'focus' => pick_seeded($focus, $seed, 2),
+        'districts' => 'unspecified',
+        'region' => 'North West',
+        'stock' => 'mixed property — confirm on survey',
+        'travel' => 'scheduled from our Stockport SK2 base — we confirm a diary slot rather than a drive time',
+        'focus' => 'confirm the building before quoting',
     ];
 }
 
@@ -150,10 +101,10 @@ function service_local_angle(string $slug, string $serviceName, string $area): s
             "Multi-building {$area} estates benefit from unified viewing for facilities teams.",
         ],
         'access-control' => [
-            "Card/fob access with audit trails suits multi-tenant offices and blocks across {$area}.",
-            "Time zones and user groups help {$area} landlords control cleaners, contractors and tenants.",
-            "Fire door release strategies must stay safe while securing {$area} entry points.",
-            "Biometric and mobile credentials are increasingly specified on newer {$area} fit-outs.",
+            "Door controllers and vehicle barriers in {$area} are surveyed separately: safety edges, induction loops and fire-release are confirmed on site, not from a national price list.",
+            "Card, fob and barrier readers in {$area} need a user list and a fail-safe exit path before we quote.",
+            "Car-park barriers around {$area} are quoted after the loop, pedestal and existing controller are seen.",
+            "Pedestrian doors and vehicle gates in {$area} stay on one access schedule only when the fire strategy allows it.",
         ],
         'door-entry' => [
             "Video door entry upgrades are frequent on {$area} apartment risers and older audio panels.",
@@ -180,8 +131,12 @@ function service_local_angle(string $slug, string $serviceName, string $area): s
             "Licensed removal, if the {$area} survey finds it necessary, is by others — not this page.",
         ],
     ];
-    $pool = $angles[$slug] ?? ["Professional {$serviceName} is available across {$area} and nearby postcodes."];
-    return pick_seeded($pool, $seed, 0);
+    if (isset($angles[$slug])) {
+        return pick_seeded($angles[$slug], $seed, 0);
+    }
+    $blurb = function_exists('getServiceBlurb') ? getServiceBlurb($slug) : $serviceName;
+    $standards = function_exists('getServiceStandards') ? getServiceStandards($slug) : 'the standard named in the quote';
+    return $blurb . ' In ' . $area . ' the notes cite ' . $standards . '.';
 }
 
 function seo_unique_intro(string $serviceName, string $slug, string $area): string {
@@ -244,16 +199,42 @@ function seo_unique_why(string $serviceName, string $area): array {
 function seo_extra_faqs(string $slug, string $serviceName, string $area): array {
     $p = area_profile($area);
     $seed = area_seed($area, $slug . 'faq');
+    $d = $p['districts'];
+    $angle = service_local_angle($slug, $serviceName, $area);
     $extras = [
-        ['q' => "Which postcodes do you cover for {$serviceName} around {$area}?", 'a' => "We regularly serve {$p['districts']} and neighbouring {$area} streets, plus wider {$p['region']} when diary capacity allows."],
-        ['q' => "How quickly can engineers reach {$area}?", 'a' => "From Stockport SK2, travel is {$p['travel']}. Urgent unsafe situations are prioritised; routine works are booked to the next suitable slot."],
-        ['q' => "What property types in {$area} do you work on?", 'a' => "Typical {$area} stock includes {$p['stock']}. Tell us building use, floors and access so we can scope {$serviceName} correctly."],
-        ['q' => "Can you coordinate {$serviceName} with other compliance works in {$area}?", 'a' => "Yes. Many {$area} clients book combined visits (for example fire alarms with emergency lighting, or access control with door entry) to reduce disruption."],
-        ['q' => "Do you leave certificates after {$serviceName} in {$area}?", 'a' => "Yes. You receive documentation suitable for landlords, managing agents and insurers after testing/commissioning on your {$area} site."],
+        ['q' => "Which postcodes do you cover for {$serviceName} around {$area}?", 'a' => "For {$serviceName} the outward codes we use for {$area} are {$d}. Neighbouring streets in {$p['region']} are booked when the diary allows. {$angle}"],
+        ['q' => "How do you schedule {$serviceName} in {$area}?", 'a' => "Work in {$d} is scheduled from Stockport SK2. We confirm a slot for {$area}. We do not print a drive-time promise on this page. {$angle}"],
+        ['q' => "What property types in {$area} do you work on?", 'a' => "In {$d} the buildings we usually see are {$p['stock']}. Tell us use, floors and access so {$serviceName} is scoped to that building. {$angle}"],
+        ['q' => "Can you coordinate {$serviceName} with other compliance works in {$area}?", 'a' => "Yes, when the {$d} site can take a combined visit — for example fire alarms with emergency lighting, or door access with a vehicle barrier. Each system is still written up separately. {$angle}"],
+        ['q' => "Do you leave paperwork after {$serviceName} in {$area}?", 'a' => "Yes. After testing or commissioning on a {$d} site you get the notes for that visit. We do not add a NICEIC or Gas Safe badge to the {$area} page. {$angle}"],
     ];
     return [
         pick_seeded($extras, $seed, 0),
         pick_seeded($extras, $seed, 2),
+    ];
+}
+
+/** Town FAQs. Every answer includes the outward-code string so pages are not town-name swaps. */
+function seo_town_faqs(string $slug, string $serviceName, string $area): array {
+    $p = area_profile($area);
+    $d = $p['districts'];
+    $angle = service_local_angle($slug, $serviceName, $area);
+    $barrier = $slug === 'access-control'
+        ? " Vehicle barriers in {$d} are quoted only after the induction loop, safety edge and pedestal are seen."
+        : '';
+    return [
+        [
+            'q' => "Where in {$area} do you cover {$serviceName}?",
+            'a' => "For {$serviceName} we schedule work in {$d}. Buildings we usually see: {$p['stock']}. {$angle}{$barrier}",
+        ],
+        [
+            'q' => "What should I send for a {$area} {$serviceName} quote?",
+            'a' => "A postcode in {$d}, the property use, and photos of the existing kit. {$serviceName} is quoted after that scope, from the Stockport SK2 office. Call 07517806082 if you need a diary slot. {$angle}",
+        ],
+        [
+            'q' => "Do you show an accreditation badge for {$serviceName} in {$area}?",
+            'a' => "No. This {$area} page ({$d}) does not claim NICEIC, Gas Safe, BAFE or CHAS for {$serviceName}. If a task needs a registered engineer, that check happens when the job is accepted. {$angle}",
+        ],
     ];
 }
 

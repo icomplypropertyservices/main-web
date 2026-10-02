@@ -609,7 +609,7 @@ function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
         $href = htmlspecialchars(url('/pages/manufacturers/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
         $src = htmlspecialchars(manufacturerImageUrl($slug, $serviceSlug !== '' ? $serviceSlug : 'fire-alarms'), ENT_QUOTES, 'UTF-8');
         $html .= '<a href="' . $href . '" class="bg-white border-2 border-zinc-200 rounded-2xl overflow-hidden hover:border-[#ff6b00] hover:shadow-md transition block group">'
-            . '<img src="' . $src . '" alt="' . $label . ' products and service — Icomply" '
+            . '<img src="' . $src . '" alt="' . $label . ' products and service — Icomply" width="640" height="360" '
             . 'class="w-full h-28 object-cover group-hover:scale-105 transition duration-300" loading="lazy" '
             . 'onerror="this.src=\'' . $fallback . '\'">'
             . '<div class="p-3 text-sm text-black text-center font-semibold">' . $label

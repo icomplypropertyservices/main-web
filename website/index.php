@@ -5,8 +5,9 @@
 require_once __DIR__ . '/config.php';
 require_once SITE_ROOT . '/includes/shopify.php';
 
+$seoFamily = 'home';
 $pageTitle = 'Property Maintenance & Compliance | Icomply Property Services';
-$metaDesc = 'iComply Property Services — landlord compliance (EICR, CP12/gas, FRA), electrical, gas, fire safety, kitchens, bathrooms, renovations, CCTV, Legionella, asbestos surveys and trade shop across Greater Manchester and the North West. Stockport SK2 5DE.';
+$metaDesc = 'Icomply Property Services in Stockport SK2. Fire, electrical and landlord compliance quotes are written after scope. Call 07517806082.';
 $canonicalUrl = url('/');
 $metaKeywords = 'landlord compliance Stockport, EICR Manchester, gas safety CP12, fire risk assessment, kitchen fitting, renovation, CCTV, legionella, asbestos survey, North West';
 $ogImage = url('/assets/images/android-chrome-512.png');
@@ -133,7 +134,9 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
         </div>
         <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Full catalogue →</a>
     </div>
-    <?php foreach ($categories as $catKey => $cat):
+    <?php
+    $homeImgEager = true;
+    foreach ($categories as $catKey => $cat):
         $catServices = getServicesInCategory($catKey);
         if (!$catServices) {
             continue;
@@ -159,8 +162,9 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                class="service-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="h-36 bg-zinc-100 overflow-hidden">
-                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> in Greater Manchester and the North West — Icomply Property Services"
-                         class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy"
+                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" width="640" height="360" alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> in Greater Manchester and the North West — Icomply Property Services"
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="<?= $homeImgEager ? 'eager' : 'lazy' ?>"
+                         <?php $homeImgEager = false; ?>
                          onerror="this.src='<?= htmlspecialchars(url('/assets/images/services/fire-alarms.jpg'), ENT_QUOTES, 'UTF-8') ?>'">
                 </div>
                 <div class="p-5 flex-1 flex flex-col">

@@ -3,11 +3,12 @@
  * Service hub template. Placeholders: SERVICE_NAME, SERVICE_SLUG, SEO_KEYWORDS,
  * MANUFACTURER_TAGS, MANUFACTURER_IMAGES
  */
+require_once SITE_ROOT . '/includes/seo.php';
+$seoFamily = 'service-hub';
 $poaService = function_exists('isPoaService') && isPoaService($SERVICE_SLUG);
-$pageTitle = $SERVICE_NAME . ' Services | North West';
-$metaDesc = $poaService
-    ? ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Price on application after scope. Local team from Stockport. No invented fees.')
-    : ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Installation, maintenance, testing & certification. Written quotes after scope. Local engineers from Stockport.');
+$hubBlurb = getServiceBlurb($SERVICE_SLUG);
+$pageTitle = $SERVICE_NAME . ' | North West';
+$metaDesc = seo_fit_meta($SERVICE_NAME . ' from Stockport SK2. ' . $hubBlurb);
 $metaKeywords = $SEO_KEYWORDS;
 $ogImage = url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
 
@@ -49,9 +50,13 @@ $serviceFaqs = [
     ],
 ];
 
-$blurb = getServiceBlurb($serviceSlug);
+$blurb = $hubBlurb;
 $standards = getServiceStandards($serviceSlug);
 $faqs = $serviceFaqs[$serviceSlug] ?? $serviceFaqs['default'];
+foreach ($faqs as &$faqRow) {
+    $faqRow[1] = rtrim((string)$faqRow[1], '.') . '. ' . $blurb;
+}
+unset($faqRow);
 $svcCopy = function_exists('waterAsbestosServiceCopy') ? waterAsbestosServiceCopy($serviceSlug) : null;
 
 $popularTowns = array_values(array_filter(
@@ -208,6 +213,7 @@ $schema = [
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
                 <img src="<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> by Icomply Property Services"
+                     width="1200" height="800"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
                      loading="eager"
                      onerror="this.style.display='none'">
@@ -255,27 +261,23 @@ $schema = [
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars((string)$para, ENT_QUOTES, 'UTF-8') ?></p>
                 <?php endforeach; ?>
             <?php else: ?>
-            <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
-                Icomply Property Services designs, installs, commissions, maintains and certifies
-                <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong>
-                for commercial, industrial, multi-let, care and residential properties across Greater Manchester,
-                Lancashire, Cheshire, Merseyside and Cumbria.
-            </p>
+            <p class="mt-5 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars($blurb, ENT_QUOTES, 'UTF-8') ?> Work is booked from Stockport SK2. Phone <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
-                From new system design to reactive call-outs and planned maintenance contracts, our engineers deliver
-                fixed-price quotes, clear scope and full compliance documentation. Based in Stockport (SK2), we cover
-                Manchester, Bolton, Oldham, Rochdale, Wigan, Liverpool, Preston and 140+ surrounding towns.
+                <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> on this hub follows
+                <?= htmlspecialchars($standards !== '' ? $standards : 'the standard named in the quote', ENT_QUOTES, 'UTF-8') ?>.
+                <?= htmlspecialchars($blurb, ENT_QUOTES, 'UTF-8') ?>
+                We write the scope before a price.
             </p>
-            <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
-                Searching for a specific manufacturer? We install and service the major brands listed below so you can
-                find local support for the exact panel or equipment already on site.
-            </p>
+            <?php if ($serviceSlug === 'access-control'): ?>
+            <p class="mt-4 text-lg text-zinc-700 leading-relaxed">Vehicle barriers, safety edges and induction loops are surveyed separately from pedestrian doors. There is no national barrier price list on this page.</p>
+            <?php endif; ?>
             <?php endif; ?>
         </div>
         <div class="lg:col-span-2 space-y-4">
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
                 <img src="<?= url('/assets/images/keywords/' . htmlspecialchars($img2, ENT_QUOTES, 'UTF-8') . '.jpg') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> equipment"
+                     width="800" height="450"
                      class="w-full h-44 object-cover"
                      loading="lazy"
                      onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
@@ -283,6 +285,7 @@ $schema = [
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
                 <img src="<?= url('/assets/images/keywords/' . htmlspecialchars($img3, ENT_QUOTES, 'UTF-8') . '.jpg') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation work"
+                     width="800" height="450"
                      class="w-full h-44 object-cover"
                      loading="lazy"
                      onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
@@ -377,8 +380,11 @@ $schema = [
                 if ($cardLimit > 0 && $shown >= $cardLimit) {
                     break;
                 }
-                $shown++;
                 $kwName = (string)($kwMeta['name'] ?? keywordDisplayName($kwSlug));
+                if (seo_unverified_badge_label($kwName)) {
+                    continue;
+                }
+                $shown++;
             ?>
             <div class="p-5 bg-zinc-50 border border-zinc-200 rounded-2xl hover:border-[#ff6b00] transition">
                 <a href="<?= url('/pages/keywords/' . rawurlencode($kwSlug) . '.php') ?>" class="font-semibold text-black hover:text-[#ff6b00]">
@@ -466,7 +472,7 @@ $schema = [
             <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                class="group bg-white border rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="h-32 bg-zinc-100 overflow-hidden">
-                    <img src="<?= htmlspecialchars(serviceImageUrl($slug), ENT_QUOTES, 'UTF-8') ?>"
+                    <img src="<?= htmlspecialchars(serviceImageUrl($slug), ENT_QUOTES, 'UTF-8') ?>" width="640" height="360"
                          alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>"
                          class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
                          loading="lazy"
@@ -484,7 +490,7 @@ $schema = [
 </section>
 
 <!-- FAQ -->
-<section class="bg-zinc-50 border-t">
+<section class="bg-zinc-50 border-t" data-seo-faq="1">
     <div class="max-w-3xl mx-auto px-6 py-16">
         <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold text-center">FAQ</div>
         <h2 class="text-3xl font-semibold tracking-tight text-black mt-2 text-center mb-10">

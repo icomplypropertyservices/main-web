@@ -5,8 +5,14 @@
  * MANUFACTURER_TAGS, KEYWORD_INTRO, KEYWORD_BODY, KEYWORD_META, KEYWORD_FOCUS_HTML,
  * KEYWORD_IMAGE, SERVICE_IMAGE, SEO_KEYWORDS
  */
-$pageTitle = $KEYWORD_NAME . ' in ' . $AREA;
-$metaDesc = $KEYWORD_NAME . ' in ' . $AREA . '. ' . $KEYWORD_META;
+require_once SITE_ROOT . '/includes/seo.php';
+$kwProfile = area_profile($AREA);
+$pageTitle = $KEYWORD_NAME . ' guide in ' . $AREA;
+$metaDesc = seo_fit_meta($KEYWORD_NAME . ' in ' . $AREA . ' (' . $kwProfile['districts'] . '). ' . $kwProfile['stock'] . '.');
+$seoFamily = 'keyword-area';
+if (!seo_local_landing_indexable($SERVICE_SLUG, $AREA)) {
+    $metaRobots = 'noindex, follow';
+}
 $metaKeywords = $KEYWORD_NAME . ' ' . $AREA . ', ' . $SERVICE_NAME . ' ' . $AREA . ', ' . $SEO_KEYWORDS;
 $ogImage = $KEYWORD_IMAGE;
 $canonicalUrl = url('/pages/keywords/' . $KEYWORD_SLUG . '/' . $AREA_SLUG . '.php');
@@ -46,7 +52,7 @@ $h = static function ($s): string {
 
 <section class="relative overflow-hidden bg-[#061828] text-white">
     <div class="absolute inset-0">
-        <img src="<?= $h($KEYWORD_IMAGE) ?>" alt="<?= $h(($KEYWORD_NAME ?? 'Compliance') . ' in ' . ($AREA ?? 'the North West')) ?>" class="w-full h-full object-cover opacity-30" loading="eager"
+        <img src="<?= $h($KEYWORD_IMAGE) ?>" alt="<?= $h(($KEYWORD_NAME ?? 'Compliance') . ' in ' . ($AREA ?? 'the North West')) ?>" width="1200" height="800" class="w-full h-full object-cover opacity-30" loading="eager"
              onerror="this.src='<?= $h($SERVICE_IMAGE) ?>'">
         <div class="absolute inset-0 bg-gradient-to-r from-[#061828] via-[#061828]/95 to-[#061828]/80"></div>
     </div>
@@ -61,11 +67,12 @@ $h = static function ($s): string {
             <?= $h($SERVICE_NAME) ?> · <?= $h($AREA) ?>
         </div>
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-[1.08] drop-shadow-lg">
-            <?= $h($KEYWORD_NAME) ?><br><span class="text-[#ff6b00]">in <?= $h($AREA) ?></span>
+            <?= $h($KEYWORD_NAME) ?> guide<br><span class="text-[#ff6b00]"> in <?= $h($AREA) ?></span>
         </h1>
         <p class="mt-5 text-lg text-white font-medium max-w-2xl leading-relaxed drop-shadow">
-            Local engineers for <strong><?= $h($KEYWORD_NAME) ?></strong> in <strong><?= $h($AREA) ?></strong> and nearby postcodes.
-            Fixed-price quotes · Stockport-based team covering the North West.
+            <?= $h($KEYWORD_NAME) ?> for properties in <?= $h($kwProfile['districts']) ?>.
+            Usual buildings: <?= $h($kwProfile['stock']) ?>.
+            Booked from Stockport SK2. Call <?= $h(PHONE) ?>.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
             <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-bold text-white shadow-lg">Get free quote</a>
@@ -80,22 +87,20 @@ $h = static function ($s): string {
     <div class="max-w-7xl mx-auto px-6 py-12 md:py-16 grid lg:grid-cols-5 gap-10">
         <div class="lg:col-span-3">
             <div class="bg-white border-2 border-zinc-300 rounded-3xl p-6 md:p-8 shadow-sm">
-                <h2 class="text-2xl font-bold text-[#061828]"><?= $h($KEYWORD_NAME) ?> for properties in <?= $h($AREA) ?></h2>
+                <h2 class="text-2xl font-bold text-[#061828]"><?= $h($KEYWORD_NAME) ?> for properties in <?= $h($kwProfile['districts']) ?></h2>
                 <p class="mt-4 text-lg text-zinc-900 leading-relaxed font-medium"><?= $h($KEYWORD_INTRO) ?></p>
-                <p class="mt-4 text-lg text-zinc-900 leading-relaxed">
-                    Serving <strong class="text-[#061828]"><?= $h($AREA) ?></strong>: <?= $h($KEYWORD_BODY) ?>
-                </p>
+                <p class="mt-4 text-lg text-zinc-900 leading-relaxed"><?= $h($KEYWORD_BODY) ?></p>
                 <p class="mt-4 text-base text-zinc-900 leading-relaxed">
-                    Searching for <strong><?= $h($KEYWORD_NAME) ?> near <?= $h($AREA) ?></strong>? Book Icomply for install, service, testing or certification.
+                    Book <?= $h($KEYWORD_NAME) ?> against outward codes <?= $h($kwProfile['districts']) ?>.
                     Also see
-                    <a class="font-bold text-[#ff6b00] hover:underline" href="<?= url('/pages/keywords/' . rawurlencode($RELATED_SLUG) . '/' . rawurlencode($AREA_SLUG) . '.php') ?>"><?= $h($RELATED_NAME) ?> in <?= $h($AREA) ?></a>
+                    <a class="font-bold text-[#ff6b00] hover:underline" href="<?= url('/pages/keywords/' . rawurlencode($RELATED_SLUG) . '/' . rawurlencode($AREA_SLUG) . '.php') ?>"><?= $h($RELATED_NAME) ?></a>
                     and
-                    <a class="font-bold text-[#ff6b00] hover:underline" href="<?= url('/pages/' . rawurlencode($SERVICE_SLUG) . '/' . rawurlencode($AREA_SLUG) . '.php') ?>"><?= $h($SERVICE_NAME) ?> in <?= $h($AREA) ?></a>.
+                    <a class="font-bold text-[#ff6b00] hover:underline" href="<?= url('/pages/services/' . rawurlencode($SERVICE_SLUG) . '.php') ?>"><?= $h($SERVICE_NAME) ?> service hub</a>.
                 </p>
                 <ul class="mt-6 space-y-3"><?= $KEYWORD_FOCUS_HTML ?></ul>
             </div>
             <div class="mt-6 grid sm:grid-cols-3 gap-4">
-                <?php foreach (['Install' => 'New works in ' . $AREA, 'Service' => 'Repairs & maintenance', 'Certify' => 'Compliance paperwork'] as $t => $d): ?>
+                <?php foreach (['Install' => 'New works after survey', 'Service' => 'Repairs and maintenance', 'Certify' => 'Compliance paperwork'] as $t => $d): ?>
                 <div class="p-5 bg-white border-2 border-zinc-300 rounded-2xl shadow-sm">
                     <div class="font-bold text-[#061828] text-lg"><?= $h($t) ?></div>
                     <p class="text-sm text-zinc-800 mt-1 font-medium"><?= $h($d) ?></p>
@@ -105,12 +110,12 @@ $h = static function ($s): string {
         </div>
         <div class="lg:col-span-2 space-y-4">
             <div class="rounded-3xl overflow-hidden border-2 border-zinc-400 shadow-md">
-                <img src="<?= $h($KEYWORD_IMAGE) ?>" alt="<?= $h($KEYWORD_NAME . ' in ' . $AREA) ?>" class="w-full h-48 object-cover" loading="eager"
+                <img src="<?= $h($KEYWORD_IMAGE) ?>" alt="<?= $h($KEYWORD_NAME . ' in ' . $AREA) ?>" width="800" height="450" class="w-full h-48 object-cover" loading="eager"
                      onerror="this.src='<?= $h($SERVICE_IMAGE) ?>'">
                 <div class="bg-[#061828] text-white p-3 text-center font-bold text-sm"><?= $h($KEYWORD_NAME) ?> · <?= $h($AREA) ?></div>
             </div>
             <div class="bg-[#061828] text-white rounded-3xl p-6 shadow-lg">
-                <h3 class="text-xl font-bold">Quote — <?= $h($AREA) ?></h3>
+                <h3 class="text-xl font-bold">Quote from Stockport SK2</h3>
                 <p class="mt-2 text-white/95 text-sm font-medium">Same-week visits where capacity allows. Include postcode &amp; brand.</p>
                 <a href="#quote" class="inline-block mt-4 px-5 py-3 bg-[#ff6b00] rounded-xl font-bold">Request quote</a>
                 <a href="<?= url('/pages/areas/' . rawurlencode($AREA_SLUG) . '.php') ?>" class="block mt-3 text-sm font-semibold text-[#ff6b00] hover:underline">All services in <?= $h($AREA) ?> →</a>
@@ -129,8 +134,8 @@ $h = static function ($s): string {
         <div class="mt-4 flex flex-wrap gap-2">
             <?php
             $towns = array_values(array_filter(
-                ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Liverpool', 'Preston', 'Warrington', 'Chester', 'Blackpool'],
-                fn($t) => in_array($t, $allAreas, true) && $t !== $areaName
+                nearby_areas($areaName, 8),
+                fn($t) => $t !== $areaName && seo_local_landing_indexable($serviceSlug, $t)
             ));
             foreach ($towns as $t):
             ?>
@@ -145,9 +150,16 @@ $h = static function ($s): string {
 
 <section class="max-w-3xl mx-auto px-6 py-6"><?= shareButtonsHtml($keywordName . ' in ' . $areaName, $metaDesc) ?></section>
 
+<?php if (!empty($KEYWORD_FAQ_HTML)): ?>
+<section class="max-w-3xl mx-auto px-6 py-10" id="faqs">
+    <h2 class="text-2xl font-bold text-[#061828] mb-6"><?= $h($KEYWORD_NAME) ?> questions</h2>
+    <div class="space-y-3" data-seo-faq="1"><?= $KEYWORD_FAQ_HTML ?></div>
+</section>
+<?php endif; ?>
+
 <section id="quote" class="bg-zinc-100 border-t-2 border-zinc-300">
     <div class="max-w-3xl mx-auto px-6 py-14">
-        <h2 class="text-3xl font-bold text-[#061828] text-center"><?= $h($KEYWORD_NAME) ?> in <?= $h($AREA) ?></h2>
+        <h2 class="text-3xl font-bold text-[#061828] text-center">Request a <?= $h($KEYWORD_NAME) ?> quote</h2>
         <form action="<?= url('/contact.php') ?>" method="POST" class="mt-8 bg-white border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4 shadow-md">
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid md:grid-cols-2 gap-4">

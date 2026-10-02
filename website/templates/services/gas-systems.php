@@ -4,7 +4,7 @@
  * 3 images · 3 paragraphs · manufacturers · SEO
  */
 $pageTitle = '{{SERVICE_NAME}} in {{AREA}} | Icomply Property Services';
-$metaDesc = 'Gas Safe registered engineers. Landlord gas safety certificates, boiler servicing and commercial gas in {{AREA}}. Worcester Bosch, Vaillant, Ideal, Baxi.';
+$metaDesc = 'Landlord gas safety records, boiler servicing and commercial gas in {{AREA}}. Worcester Bosch, Vaillant, Ideal, Baxi. Registration is checked per job.';
 $metaKeywords = 'gas safety certificate {{AREA}}, gas boiler servicing {{AREA}}, landlord gas safety {{AREA}}, Worcester Bosch, Vaillant, Ideal, Baxi, gas engineer {{AREA}}';
 $ogImage = url('/assets/images/services/gas-systems.jpg');
 require SITE_ROOT . '/includes/header.php'; 
@@ -56,7 +56,7 @@ require SITE_ROOT . '/includes/header.php';
         {"@type": "Question", "name": "What is a Gas Safety Certificate?", "acceptedAnswer": {"@type": "Answer", "text": "It is a legal requirement for landlords proving gas appliances are safe."}},
         {"@type": "Question", "name": "How often are gas safety checks needed?", "acceptedAnswer": {"@type": "Answer", "text": "Annual gas safety inspections are mandatory for rental properties."}},
         {"@type": "Question", "name": "Do you service commercial gas systems?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we handle commercial boilers, pipework and gas compliance."}},
-        {"@type": "Question", "name": "Are your gas engineers Gas Safe registered?", "acceptedAnswer": {"@type": "Answer", "text": "All engineers are Gas Safe registered with current qualifications."}}
+        {"@type": "Question", "name": "Do you print a Gas Safe badge on this page?", "acceptedAnswer": {"@type": "Answer", "text": "No. This legacy template does not claim Gas Safe registration. A landlord gas record has to be completed by an engineer registered for that appliance."}}
       ]
     }
   ]
@@ -78,12 +78,12 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 1 -->
     <p class="mt-8 text-lg text-black max-w-3xl leading-relaxed">
-        Icomply Property Services provides complete <strong>gas systems</strong> installation, boiler servicing, landlord gas safety certificates and commercial gas compliance across <strong>{{AREA}}</strong> and the wider North West. Our Gas Safe registered engineers deliver fixed-price quotes, same-week appointments and full certification on every job.
+        Icomply Property Services provides <strong>gas systems</strong> work across <strong>{{AREA}}</strong>. This legacy template is unused. Live pages do not claim Gas Safe registration. Landlord gas records are only issued by an engineer registered for that appliance.
     </p>
 
     <!-- PARAGRAPH 2 -->
     <p class="mt-4 text-lg text-black max-w-3xl leading-relaxed">
-        Whether you need a new boiler, annual service, CP12 landlord certificate, gas pipework installation or emergency repair, we support commercial, industrial, residential and landlord properties in {{AREA}}. All work is carried out by Gas Safe registered engineers using manufacturer-approved parts for Worcester Bosch, Vaillant, Ideal and Baxi systems.
+        Boiler service, a landlord gas record, pipework or a repair in {{AREA}} is quoted after the appliance list is known. Gas work is booked only with an engineer registered for that appliance. Parts follow Worcester Bosch, Vaillant, Ideal and Baxi guidance where those appliances are on site.
     </p>
 
     <!-- IMAGE 2 + keyword visuals -->
@@ -163,8 +163,8 @@ require SITE_ROOT . '/includes/header.php';
                 <p class="mt-2 text-black">We install and service Worcester Bosch, Vaillant, Ideal and Baxi boilers across {{AREA}}, plus other major UK brands.</p>
             </details>
             <details class="bg-white border rounded-2xl p-5">
-                <summary class="font-medium cursor-pointer text-black">Are your gas engineers Gas Safe registered?</summary>
-                <p class="mt-2 text-black">Yes. All engineers are Gas Safe registered with current qualifications for domestic and commercial work.</p>
+                <summary class="font-medium cursor-pointer text-black">Do you print a Gas Safe badge on this page?</summary>
+                <p class="mt-2 text-black">No. This legacy template does not claim Gas Safe registration. A landlord gas record has to be completed by an engineer registered for that appliance.</p>
             </details>
         </div>
     </div>
