@@ -326,7 +326,8 @@ function icomplyCollectKeywordRoutes(string $townMode): array
     $keywordMeta = function_exists('getMajorKeywords') ? getMajorKeywords() : [];
     foreach ($keywords as $kw) {
         $slug = keywordSlug($kw);
-        if (($keywordMeta[$slug]['service'] ?? '') === 'aov-air-handling') {
+        $kwService = $keywordMeta[$slug]['service'] ?? '';
+        if ($kwService === 'barriers' || $kwService === 'aov-air-handling') {
             continue;
         }
         $fullTowns = $townMode === 'all'
@@ -426,13 +427,25 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
     }
 
     // Jack: every service has every area landing (not only --full).
-    // AOV town pages are /pages/aov/{slug}, not the North West matrix.
+    // AOV and barriers use their own town lists, not the North West matrix.
     foreach (array_keys(getServices()) as $sSlug) {
-        if ($sSlug === 'aov-air-handling') {
+        if ($sSlug === 'barriers' || $sSlug === 'aov-air-handling') {
             continue;
         }
         foreach (getAreas() as $area) {
             $routes[] = '/pages/' . $sSlug . '/' . areaSlug((string)$area);
+        }
+    }
+    $barriersInc = SITE_ROOT . '/includes/barriers.php';
+    if (is_file($barriersInc)) {
+        require_once $barriersInc;
+        if (function_exists('barriersPlaces')) {
+            foreach (barriersPlaces() as $place) {
+                $slug = (string)($place['slug'] ?? '');
+                if ($slug !== '') {
+                    $routes[] = '/pages/barriers/' . $slug;
+                }
+            }
         }
     }
 
@@ -458,7 +471,14 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
  */
 function icomplyRenderExportRoute(string $path): array
 {
+    if (preg_match('#^/pages/barriers/([a-z0-9\-]+)$#', $path)) {
+        return icomplyRenderRoute($path);
+    }
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        $kwMeta = function_exists('getMajorKeywords') ? (getMajorKeywords()[function_exists('keywordSlug') ? keywordSlug($m[1]) : $m[1]] ?? null) : null;
+        if (is_array($kwMeta) && ($kwMeta['service'] ?? '') === 'barriers') {
+            return icomplyRenderRoute($path);
+        }
         $area = function_exists('areaFromSlug') ? areaFromSlug($m[2]) : $m[2];
         $html = icomplyRenderKeywordTownHtml($m[1], (string)($area ?: $m[2]));
         if ($html !== '' && icomplyLooksLikeHtml($html)) {
@@ -466,6 +486,7 @@ function icomplyRenderExportRoute(string $path): array
         }
     }
     if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)
+        && $m[1] !== 'barriers'
         && function_exists('getServices')
         && isset(getServices()[$m[1]])) {
         $area = function_exists('areaFromSlug') ? areaFromSlug($m[2]) : $m[2];
@@ -785,18 +806,24 @@ __MATRIX_REDIRECTS__
 /pages/keywords/:slug    /pages/keywords/:slug.php    200!
 /pages/keywords/:slug/   /pages/keywords/:slug.php    200!
 
+# Barrier town pages are files under /pages/barriers/. Force the hub redirect
+# and the town pretty URL so a directory does not 301 the leaf.
+/pages/barriers          /pages/services/barriers.php  301
+/pages/barriers/         /pages/services/barriers.php  301
+/pages/barriers/:slug    /pages/barriers/:slug.php     200!
+/pages/barriers/:slug/   /pages/barriers/:slug.php     200!
+
 # /pages/aov/{town}.php makes /pages/aov a directory. Force the directory index.
 /pages/aov               /pages/aov.php               200!
 /pages/aov/              /pages/aov.php               200!
 
 TXT;
-    return $txt . icomplyAovLegacyRedirectLines() . <<<'TXT'
+    $txt = str_replace("__MATRIX_REDIRECTS__\n", icomplyUnpublishedMatrixRedirects(), $base);
+    return rtrim($txt, "\r\n") . "\n" . icomplyAovLegacyRedirectLines() . <<<'TXT'
 
 # Splat pretty URLs. No force — /assets and real files win.
 /*                       /:splat.php                  200
 TXT;
-    $txt = str_replace("__MATRIX_REDIRECTS__\n", icomplyUnpublishedMatrixRedirects(), $base);
-    return rtrim($txt, "\r\n") . "\n";
 }
 
 /**

@@ -54,6 +54,12 @@
         "short": "Paxton, HID, Salto door access",
         "standards": "BS EN 50133 · EN 60839 · fire-release integration"
     },
+    "barriers": {
+        "blurb": "CAME partner rising-arm barriers for private lanes, plus service and replacement of other barrier manufacturers. A page for every UK town over 10,000. Price on application.",
+        "short": "CAME partner barriers, UK towns over 10,000",
+        "standards": "Manufacturer instructions · site risk assessment · Supply of Machinery (Safety) Regulations. BS EN 12453 applies to powered gates, not automatically to rising-arm barriers.",
+        "pricing": "POA"
+    },
     "door-entry": {
         "blurb": "Video and audio door entry for flats, multi-tenant and commercial sites.",
         "short": "Video & audio door entry",

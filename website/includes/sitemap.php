@@ -1,7 +1,8 @@
 <?php
 /**
  * Compact sitemap — hubs plus Tier-1 service×town pages that have a bespoke
- * article. Keyword×town, non-Tier-1 towns, area-town templates, and services
+ * article. AOV and barrier town pages for places over 10,000 stay in.
+ * Keyword×town, non-Tier-1 towns, area-town templates, and services
  * without their own town copy stay out. Broken or unknown URLs stay out.
  * Never lists /shop/sitemap.xml or /products/sitemap.xml (separate sites; 404 here).
  */
@@ -132,12 +133,16 @@ function icomplySitemapEntries(): array
                 return;
             }
         }
-        // Keyword hubs + featured keyword×town are generated at export time.
-        // AOV and barrier town pages are virtual (rendered at export) for pop>10k.
+        // Keyword hubs and AOV/barrier town pages are generated at export time.
         $isKeywordLoc = (bool)preg_match('#^/pages/keywords(/[a-z0-9\-]+){1,2}$#', $path);
         $isTownLoc = (bool)preg_match('#^/pages/(aov|barriers)(/[a-z0-9\-]+)?$#', $path);
         $isMfrTown = (bool)preg_match('#^/pages/(aov-air-handling|barriers)/([a-z0-9\-]+)$#', $path);
-        if (!$isKeywordLoc && !$isTownLoc && !$isMfrTown && !icomplySitemapUrlHasFile($path)) {
+        $isBarrierBrandLoc = false;
+        if (preg_match('#^/pages/manufacturers/([a-z0-9\-]+)$#', $path, $brandMatch) && function_exists('getManufacturerBySlug')) {
+            $brandEntry = getManufacturerBySlug($brandMatch[1]);
+            $isBarrierBrandLoc = is_array($brandEntry) && in_array('barriers', $brandEntry['services'] ?? [], true);
+        }
+        if (!$isKeywordLoc && !$isTownLoc && !$isMfrTown && !$isBarrierBrandLoc && !icomplySitemapUrlHasFile($path)) {
             return;
         }
         $seen[$path] = true;
@@ -296,6 +301,26 @@ function icomplySitemapEntries(): array
                 }
                 $add('/pages/keywords/' . $slug . '/' . $town, '0.55');
             }
+        }
+    }
+    $barriersInc = SITE_ROOT . '/includes/barriers.php';
+    if (is_file($barriersInc)) {
+        require_once $barriersInc;
+        if (function_exists('barriersPlaces')) {
+            foreach (barriersPlaces() as $place) {
+                $slug = (string)($place['slug'] ?? '');
+                if ($slug !== '') {
+                    $add('/pages/barriers/' . $slug, '0.55');
+                }
+            }
+        }
+    }
+    if (function_exists('getManufacturerCatalog')) {
+        foreach (getManufacturerCatalog() as $mSlug => $mEntry) {
+            if (!is_array($mEntry) || !in_array('barriers', $mEntry['services'] ?? [], true)) {
+                continue;
+            }
+            $add('/pages/manufacturers/' . $mSlug, !empty($mEntry['partner']) ? '0.8' : '0.7');
         }
     }
     if (function_exists('getAreas') && function_exists('areaSlug')) {

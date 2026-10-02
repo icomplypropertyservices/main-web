@@ -160,6 +160,12 @@ function routerDispatchVirtual(string $path): bool {
         renderServiceHubPage($m[1]);
         return true;
     }
+    // /pages/barriers/{town} — census places only. Unknown slugs 404.
+    if (preg_match('#^/pages/barriers/([a-z0-9\-]+)$#', $path, $m)) {
+        require_once SITE_ROOT . '/includes/barriers.php';
+        renderBarriersPlacePage($m[1]);
+        return true;
+    }
     // /pages/manufacturers/{slug}/{area}
     if (preg_match('#^/pages/manufacturers/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         renderManufacturerAreaPage($m[1], $m[2]);

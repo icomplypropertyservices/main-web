@@ -218,6 +218,35 @@
             "CyberData",
             "Axis Intercom",
             "Akuvox"
+        ],
+        "barriers": [
+            "CAME",
+            "FAAC",
+            "BFT",
+            "Nice",
+            "Magnetic Autocontrol",
+            "Automatic Systems",
+            "Beninca",
+            "Roger Technology",
+            "DEA System",
+            "Gibidi",
+            "Cardin",
+            "Tau",
+            "King Gates",
+            "Hormann",
+            "ELKA",
+            "Ditec",
+            "Fadini",
+            "Centurion",
+            "Genius",
+            "SEA",
+            "V2",
+            "Aprimatic",
+            "Proteco",
+            "Life Home Integration",
+            "DoorHan",
+            "LiftMaster",
+            "DoorKing"
         ]
     },
     "catalog": {
@@ -2066,7 +2095,8 @@
             "name": "DoorKing",
             "slug": "doorking",
             "services": [
-                "door-entry"
+                "door-entry",
+                "barriers"
             ],
             "blurb": "iComply supplies and installs DoorKing door entry and gate control for apartments, estates and commercial sites across the North West. Our engineers programme panels, handsets and access modules, then provide planned servicing and reactive call-outs for landlords and managing agents. Stock DoorKing spares, rain hoods and entrance accessories via our Stockport trade shop for fast turnaround.",
             "seo_title": "DoorKing Installation, Service & Products | North West",
@@ -2089,6 +2119,26 @@
                     "blurb": "Rain hoods, flush boxes and modules for DoorKing entrance panels.",
                     "price": "From POA",
                     "handle": "doorking-entrance-accessory",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/doorking.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "doorking-vehicle-gate-service",
+                    "title": "DoorKing vehicle gate service",
+                    "blurb": "Service visit for a DoorKing vehicle gate operator already on a private site. Not a rising-arm barrier. Price on application.",
+                    "price": "POA",
+                    "handle": "doorking-vehicle-gate-service",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/doorking.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "doorking-gate-safety-check",
+                    "title": "DoorKing gate safety device check",
+                    "blurb": "Safety-device check on a DoorKing gate, scoped separately from door-entry handsets. Price on application.",
+                    "price": "POA",
+                    "handle": "doorking-gate-safety-check",
                     "shopify_product_id": "",
                     "image": "/assets/images/manufacturers/doorking.jpg",
                     "badge": ""
@@ -6589,6 +6639,891 @@
                 }
             ],
             "featured": false
+        },
+        "came": {
+            "name": "CAME",
+            "slug": "came",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "iComply Property Services is a CAME partner. New rising-arm barriers are specified from the CAME Gard range: Gard 4 and Gard 8 for straight booms, Gard PT and Gard PX where the arm must fold under a soffit. We survey the private lane, set the safety devices the CAME manual requires, and commission the logic. Other names on the barriers hub are brands we service or replace. They are not partnerships. Quotes are on application after the lane is seen. Attendance is planned from Stockport SK2.",
+            "seo_title": "CAME Vehicle Barriers | Service & Quote",
+            "seo_desc": "CAME partner for Gard rising-arm barriers. Private lanes, UK towns over 10,000. Price on application.",
+            "seo_keywords": "CAME partner, CAME Gard barrier, Gard 4, Gard 8, Gard PT, rising arm barrier",
+            "products": [
+                {
+                    "id": "came-gard-4-8",
+                    "title": "CAME Gard 4 and Gard 8 rising arm",
+                    "blurb": "Straight-arm CAME Gard cabinets. Boom length and duty decide Gard 4 or Gard 8. Quoted on application after the lane survey.",
+                    "price": "POA",
+                    "handle": "came-gard-4-8",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/came.jpg",
+                    "badge": "Partner"
+                },
+                {
+                    "id": "came-gard-pt-px",
+                    "title": "CAME Gard PT and Gard PX articulated boom",
+                    "blurb": "Folding CAME boom for a low soffit. Specified only when a straight arm does not clear the structure. Price on application.",
+                    "price": "POA",
+                    "handle": "came-gard-pt-px",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/came.jpg",
+                    "badge": "Partner"
+                }
+            ],
+            "featured": true,
+            "partner": true
+        },
+        "faac": {
+            "name": "FAAC",
+            "slug": "faac",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "FAAC barriers we meet in the UK are usually the 615, the 620 or the B680H hybrid. iComply services and replaces them. We are not a FAAC partner. The barrier partnership on this site is CAME. A 620 spare is not a B680H spare. If the lane suits a CAME Gard better than another FAAC cabinet, both options are priced on application.",
+            "seo_title": "FAAC Vehicle Barriers | Service & Quote",
+            "seo_desc": "FAAC 615, 620 and B680H barrier service and replacement. Not a FAAC partnership. Price on application.",
+            "seo_keywords": "FAAC barrier, FAAC 620, FAAC 615, FAAC B680H",
+            "products": [
+                {
+                    "id": "faac-615-620",
+                    "title": "FAAC 615 and 620 barrier",
+                    "blurb": "Electromechanical FAAC cabinets. Parts are identified from the model plate before anything is ordered. Price on application.",
+                    "price": "POA",
+                    "handle": "faac-615-620",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/faac.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "faac-b680h",
+                    "title": "FAAC B680H hybrid barrier",
+                    "blurb": "Hybrid FAAC cabinet with its own spare path, separate from a 620. Price on application.",
+                    "price": "POA",
+                    "handle": "faac-b680h",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/faac.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
+        },
+        "bft": {
+            "name": "BFT",
+            "slug": "bft",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "BFT Moovi barriers are serviced as Moovi 30, 50 or 60. The number tracks boom length. iComply repairs and replaces them and does not claim a BFT partnership. Spring balance and limit settings are checked against the real horizontal stop. Price on application.",
+            "seo_title": "BFT Vehicle Barriers | Service & Quote",
+            "seo_desc": "BFT Moovi 30, 50 and 60 barrier repair and replacement. Price on application.",
+            "seo_keywords": "BFT Moovi barrier, Moovi 30, Moovi 50, Moovi 60",
+            "products": [
+                {
+                    "id": "bft-moovi-30",
+                    "title": "BFT Moovi 30 barrier",
+                    "blurb": "Shorter Moovi arm. Boom, spring and limits matched to that model. Price on application.",
+                    "price": "POA",
+                    "handle": "bft-moovi-30",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/bft.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "bft-moovi-50-60",
+                    "title": "BFT Moovi 50 and Moovi 60 barrier",
+                    "blurb": "Longer Moovi arms. Wind exposure and spring balance are part of the survey. Price on application.",
+                    "price": "POA",
+                    "handle": "bft-moovi-50-60",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/bft.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
+        },
+        "nice": {
+            "name": "Nice",
+            "slug": "nice",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "Nice Wide M and Wide L are the rising arms we identify under the Nice badge. iComply services them. We are not a Nice partner. A Wide L is not a Wide M with a longer sticker. Replacement onto CAME Gard is offered when that is the cleaner supported route. Price on application.",
+            "seo_title": "Nice Vehicle Barriers | Service & Quote",
+            "seo_desc": "Nice Wide M and Wide L barrier service. Not a Nice partnership. Price on application.",
+            "seo_keywords": "Nice Wide barrier, Nice Wide M, Nice Wide L",
+            "products": [
+                {
+                    "id": "nice-wide-m",
+                    "title": "Nice Wide M barrier",
+                    "blurb": "Nice Wide M cabinet and boom, identified before parts are ordered. Price on application.",
+                    "price": "POA",
+                    "handle": "nice-wide-m",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/nice.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "nice-wide-l",
+                    "title": "Nice Wide L barrier",
+                    "blurb": "Longer Nice Wide L lane. Not quoted as a Wide M. Price on application.",
+                    "price": "POA",
+                    "handle": "nice-wide-l",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/nice.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
+        },
+        "magnetic-autocontrol": {
+            "name": "Magnetic Autocontrol",
+            "slug": "magnetic-autocontrol",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "Magnetic Autocontrol Access and Parking barriers are higher-duty arms, often on wider lanes. Magnetic sits in the wider FAAC group, but the hardware is not interchangeable with a FAAC 620. iComply services the badge on the cabinet and does not claim a Magnetic partnership. Price on application.",
+            "seo_title": "Magnetic Autocontrol Vehicle Barriers | Service & Quote",
+            "seo_desc": "Magnetic Autocontrol Access and Parking barrier service. Not a FAAC 620 spare. Price on application.",
+            "seo_keywords": "Magnetic Autocontrol barrier, Magnetic Access, Magnetic Parking barrier",
+            "products": [
+                {
+                    "id": "magnetic-autocontrol-access",
+                    "title": "Magnetic Autocontrol Access barrier",
+                    "blurb": "Access-range cabinet, boom and spring pack identified separately from Parking. Price on application.",
+                    "price": "POA",
+                    "handle": "magnetic-autocontrol-access",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/magnetic-autocontrol.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "magnetic-autocontrol-parking",
+                    "title": "Magnetic Autocontrol Parking barrier",
+                    "blurb": "Parking-range arm for higher duty. Loop geometry is surveyed for the vehicles that actually use the lane. Price on application.",
+                    "price": "POA",
+                    "handle": "magnetic-autocontrol-parking",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/magnetic-autocontrol.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
+        },
+        "automatic-systems": {
+            "name": "Automatic Systems",
+            "slug": "automatic-systems",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "Automatic Systems BL barriers are serviced as the boom mechanism. A pay station or ticketing head on the same lane is a different contract and is not absorbed into a barrier call-out. iComply is not an Automatic Systems partner. Where a full replacement is the better route, CAME is the partnership we specify. Price on application.",
+            "seo_title": "Automatic Systems Vehicle Barriers | Service & Quote",
+            "seo_desc": "Automatic Systems BL barrier repair, separate from pay stations. Price on application.",
+            "seo_keywords": "Automatic Systems barrier, BL barrier, BL229",
+            "products": [
+                {
+                    "id": "automatic-systems-bl",
+                    "title": "Automatic Systems BL barrier",
+                    "blurb": "BL boom, safety devices and open/close command. The pay station is out of scope. Price on application.",
+                    "price": "POA",
+                    "handle": "automatic-systems-bl",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/automatic-systems.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "automatic-systems-bl229",
+                    "title": "Automatic Systems BL229 barrier",
+                    "blurb": "BL229 identified from the cabinet label before parts. Price on application.",
+                    "price": "POA",
+                    "handle": "automatic-systems-bl229",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/automatic-systems.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
+        },
+        "beninca": {
+            "name": "Beninca",
+            "slug": "beninca",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "Beninca EVA.5 and EVA.7 barriers are repaired when the board revision is known. iComply is not a Beninca partner. Water-damaged cabinets are quoted as replacement, with a CAME Gard as the partner alternative. Price on application.",
+            "seo_title": "Beninca Vehicle Barriers | Service & Quote",
+            "seo_desc": "Beninca EVA.5 and EVA.7 barrier repair. Price on application.",
+            "seo_keywords": "Beninca EVA barrier, EVA.5, EVA.7",
+            "products": [
+                {
+                    "id": "beninca-eva5",
+                    "title": "Beninca EVA.5 barrier",
+                    "blurb": "EVA.5 boom, spring or board, matched to that revision. Price on application.",
+                    "price": "POA",
+                    "handle": "beninca-eva5",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/beninca.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "beninca-eva7",
+                    "title": "Beninca EVA.7 barrier",
+                    "blurb": "EVA.7 lane. Not ordered as an EVA.5. Price on application.",
+                    "price": "POA",
+                    "handle": "beninca-eva7",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/beninca.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
+        },
+        "roger-technology": {
+            "name": "Roger Technology",
+            "slug": "roger-technology",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "Roger Technology Bionik barriers use a brushless motor and a digital controller. iComply connects with the Roger programmer rather than forcing a generic remote. We are not a Roger partner. A dead controller can be priced beside a CAME Gard. Price on application.",
+            "seo_title": "Roger Technology Vehicle Barriers | Service & Quote",
+            "seo_desc": "Roger Technology Bionik brushless barrier service. Price on application.",
+            "seo_keywords": "Roger Technology barrier, Bionik barrier, BI series barrier",
+            "products": [
+                {
+                    "id": "roger-technology-bionik",
+                    "title": "Roger Technology Bionik barrier",
+                    "blurb": "Brushless Bionik cabinet. Spares follow the BI series on the label. Price on application.",
+                    "price": "POA",
+                    "handle": "roger-technology-bionik",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/roger-technology.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "roger-technology-programmer",
+                    "title": "Roger Technology barrier programmer session",
+                    "blurb": "On-site programming with the Roger tool for that controller. Price on application.",
+                    "price": "POA",
+                    "handle": "roger-technology-programmer",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/roger-technology.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
+        },
+        "dea-system": {
+            "name": "DEA System",
+            "slug": "dea-system",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "DEA STOP and PASS barriers are serviced as separate model families. Board generations do not share one programming lead. iComply is not a DEA partner. A CAME Gard is the comparison we can specify when the cabinet is finished. Price on application.",
+            "seo_title": "DEA System Vehicle Barriers | Service & Quote",
+            "seo_desc": "DEA STOP and PASS barrier repair or replacement. Price on application.",
+            "seo_keywords": "DEA barrier, DEA STOP, DEA PASS",
+            "products": [
+                {
+                    "id": "dea-system-stop",
+                    "title": "DEA STOP barrier",
+                    "blurb": "DEA STOP cabinet identified from the plate before parts. Price on application.",
+                    "price": "POA",
+                    "handle": "dea-system-stop",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/dea-system.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "dea-system-pass",
+                    "title": "DEA PASS barrier",
+                    "blurb": "DEA PASS lane. Not quoted as a STOP. Price on application.",
+                    "price": "POA",
+                    "handle": "dea-system-pass",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/dea-system.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
+        },
+        "gibidi": {
+            "name": "Gibidi",
+            "slug": "gibidi",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "Gibidi PASS barriers are identified before parts are ordered. iComply does not claim a Gibidi partnership and does not pretend every boom is on the van. A CAME replacement is a separate price on application when the spare lead time is the problem.",
+            "seo_title": "Gibidi Vehicle Barriers | Service & Quote",
+            "seo_desc": "Gibidi PASS barrier identification and repair. Price on application.",
+            "seo_keywords": "Gibidi PASS barrier, Gibidi barrier repair",
+            "products": [
+                {
+                    "id": "gibidi-pass",
+                    "title": "Gibidi PASS barrier",
+                    "blurb": "PASS model, boom section and limit type confirmed first. Price on application.",
+                    "price": "POA",
+                    "handle": "gibidi-pass",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/gibidi.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "gibidi-boom",
+                    "title": "Gibidi PASS boom",
+                    "blurb": "Replacement boom only when the section matches the cabinet. Price on application.",
+                    "price": "POA",
+                    "handle": "gibidi-boom",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/gibidi.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
+        },
+        "cardin": {
+            "name": "Cardin",
+            "slug": "cardin",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "Cardin 24-volt barriers are serviced on smaller private car parks. Radio faults are separated from motor faults before a cabinet is condemned. iComply is not a Cardin partner. An obsolete board is priced against a CAME Gard. Price on application.",
+            "seo_title": "Cardin Vehicle Barriers | Service & Quote",
+            "seo_desc": "Cardin 24V barrier repair and radio faults. Price on application.",
+            "seo_keywords": "Cardin barrier, Cardin 24V barrier",
+            "products": [
+                {
+                    "id": "cardin-barrier",
+                    "title": "Cardin 24V barrier",
+                    "blurb": "Board generation checked before a like-for-like repair. Price on application.",
+                    "price": "POA",
+                    "handle": "cardin-barrier",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/cardin.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "cardin-receiver",
+                    "title": "Cardin radio receiver",
+                    "blurb": "Receiver and fob fault-finding when the loop still opens the lane. Price on application.",
+                    "price": "POA",
+                    "handle": "cardin-receiver",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/cardin.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
+        },
+        "tau": {
+            "name": "Tau",
+            "slug": "tau",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "Tau barriers, including RBLO-style arms, are programmed from the Tau board sticker. A CAME sequence is not written onto a Tau controller. iComply is not a Tau partner. Gearbox failure is compared with a CAME Gard replacement. Price on application.",
+            "seo_title": "Tau Vehicle Barriers | Service & Quote",
+            "seo_desc": "Tau barrier service. Not programmed as a CAME. Price on application.",
+            "seo_keywords": "Tau barrier, Tau RBLO, Tau barrier repair",
+            "products": [
+                {
+                    "id": "tau-barrier",
+                    "title": "Tau barrier cabinet",
+                    "blurb": "Model taken from the board sticker before programming or parts. Price on application.",
+                    "price": "POA",
+                    "handle": "tau-barrier",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/tau.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "tau-boom",
+                    "title": "Tau barrier boom",
+                    "blurb": "Boom matched to the Tau socket. Not a casual swap with a CAME arm. Price on application.",
+                    "price": "POA",
+                    "handle": "tau-boom",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/tau.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
+        },
+        "king-gates": {
+            "name": "King Gates",
+            "slug": "king-gates",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "King Gates is often a gate motor and sometimes a short-lane barrier. Powered gates are assessed against BS EN 12453. A rising arm follows the barrier manufacturer's instructions and the site risk assessment. iComply does not claim a King Gates partnership. A true rising arm is specified as CAME. Price on application.",
+            "seo_title": "King Gates Vehicle Barriers | Service & Quote",
+            "seo_desc": "King Gates barriers and gate motors, scoped separately. Price on application.",
+            "seo_keywords": "King Gates barrier, King Gates gate motor, BS EN 12453",
+            "products": [
+                {
+                    "id": "king-gates-barrier",
+                    "title": "King Gates barrier",
+                    "blurb": "Rising-arm scope only, kept separate from a swinging-gate test. Price on application.",
+                    "price": "POA",
+                    "handle": "king-gates-barrier",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/king-gates.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "king-gates-gate-motor",
+                    "title": "King Gates gate motor",
+                    "blurb": "Powered-gate motor service under gate safety practice, not a barrier checklist. Price on application.",
+                    "price": "POA",
+                    "handle": "king-gates-gate-motor",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/king-gates.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
+        },
+        "hormann": {
+            "name": "Hörmann",
+            "slug": "hormann",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "Hörmann SH barriers are industrial rising arms. They are not Hörmann dock levellers or sectional doors, and the spares are not shared. iComply is not a Hörmann partner. A CAME Gard swap is only offered when the measured lane fits that arm. Price on application.",
+            "seo_title": "Hörmann Vehicle Barriers | Service & Quote",
+            "seo_desc": "Hörmann SH barrier service, distinct from Hörmann doors. Price on application.",
+            "seo_keywords": "Hormann barrier, Hörmann SH barrier, industrial barrier",
+            "products": [
+                {
+                    "id": "hormann-sh",
+                    "title": "Hörmann SH barrier",
+                    "blurb": "SH barrier cabinet, boom and safety devices. Dock equipment is a different visit. Price on application.",
+                    "price": "POA",
+                    "handle": "hormann-sh",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/hormann.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "hormann-boom",
+                    "title": "Hörmann SH boom",
+                    "blurb": "Replacement boom for the SH model on the label. Price on application.",
+                    "price": "POA",
+                    "handle": "hormann-boom",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/hormann.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
+        },
+        "elka": {
+            "name": "ELKA",
+            "slug": "elka",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "ELKA ES barriers are specified by boom length, including long ES arms for wide lanes. A short-lane spring is not fitted to a long arm. iComply is not an ELKA partner. A CAME Gard is not forced onto a lane that is too wide for it. Price on application.",
+            "seo_title": "ELKA Vehicle Barriers | Service & Quote",
+            "seo_desc": "ELKA ES barrier service by boom length. Price on application.",
+            "seo_keywords": "ELKA barrier, ELKA ES, ELKA ES 80",
+            "products": [
+                {
+                    "id": "elka-es",
+                    "title": "ELKA ES barrier",
+                    "blurb": "ES model matched to the measured boom length and footing. Price on application.",
+                    "price": "POA",
+                    "handle": "elka-es",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/elka.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "elka-es-long",
+                    "title": "ELKA long-lane ES barrier",
+                    "blurb": "Longer ES arm, spring pack and loop for the whole vehicle. Price on application.",
+                    "price": "POA",
+                    "handle": "elka-es-long",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/elka.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
+        },
+        "ditec": {
+            "name": "Ditec",
+            "slug": "ditec",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "Ditec Qik barriers are serviced from the Ditec label. Being in the ASSA ABLOY automation family does not make the barrier a door-lock job, and it is not the CAME partnership. iComply can repair the Qik or replace it with a CAME Gard when asked to standardise. Both prices are on application.",
+            "seo_title": "Ditec Vehicle Barriers | Service & Quote",
+            "seo_desc": "Ditec Qik barrier repair. Not an ASSA door partnership. Price on application.",
+            "seo_keywords": "Ditec Qik barrier, Ditec barrier repair",
+            "products": [
+                {
+                    "id": "ditec-qik",
+                    "title": "Ditec Qik barrier",
+                    "blurb": "Qik cabinet and board from the Ditec label. Price on application.",
+                    "price": "POA",
+                    "handle": "ditec-qik",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/ditec.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "ditec-boom",
+                    "title": "Ditec Qik boom",
+                    "blurb": "Boom for that Qik model. Not an ASSA door part. Price on application.",
+                    "price": "POA",
+                    "handle": "ditec-boom",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/ditec.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
+        },
+        "fadini": {
+            "name": "Fadini",
+            "slug": "fadini",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "Fadini Bayt 980 barriers are older Italian arms. Parts are confirmed for that socket before a boom is promised. A non-matching arm is refused. iComply is not a Fadini partner. The supportable replacement is a CAME Gard. Price on application.",
+            "seo_title": "Fadini Vehicle Barriers | Service & Quote",
+            "seo_desc": "Fadini Bayt 980 barrier repair where parts exist. Price on application.",
+            "seo_keywords": "Fadini Bayt barrier, Bayt 980",
+            "products": [
+                {
+                    "id": "fadini-bayt-980",
+                    "title": "Fadini Bayt 980 barrier",
+                    "blurb": "Bayt 980 identification and repair when the part still exists. Price on application.",
+                    "price": "POA",
+                    "handle": "fadini-bayt-980",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/fadini.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "fadini-boom",
+                    "title": "Fadini Bayt boom",
+                    "blurb": "Boom only when the socket matches. Price on application.",
+                    "price": "POA",
+                    "handle": "fadini-boom",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/fadini.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
+        },
+        "centurion": {
+            "name": "Centurion",
+            "slug": "centurion",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "Centurion SECTOR barriers use battery-backed low-voltage logic. A flat battery can look like a dead motor, so both are tested. iComply is not a Centurion partner. Spares lead time is part of the quote. A CAME Gard is priced when one supported range is the goal. Price on application.",
+            "seo_title": "Centurion Vehicle Barriers | Service & Quote",
+            "seo_desc": "Centurion SECTOR barrier battery and motor diagnosis. Price on application.",
+            "seo_keywords": "Centurion SECTOR barrier, Centurion barrier",
+            "products": [
+                {
+                    "id": "centurion-sector",
+                    "title": "Centurion SECTOR barrier",
+                    "blurb": "SECTOR cabinet, battery and motor tested separately. Price on application.",
+                    "price": "POA",
+                    "handle": "centurion-sector",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/centurion.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "centurion-battery",
+                    "title": "Centurion SECTOR battery",
+                    "blurb": "Battery and charging check before the gearbox is condemned. Price on application.",
+                    "price": "POA",
+                    "handle": "centurion-battery",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/centurion.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
+        },
+        "genius": {
+            "name": "Genius",
+            "slug": "genius",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "Genius Rainbow barriers are in the FAAC group and are still not a FAAC 620. Boards, booms and receivers stay with the Genius label. iComply is not a Genius partner. When support for that revision has ended, a CAME Gard is the partner replacement. Price on application.",
+            "seo_title": "Genius Vehicle Barriers | Service & Quote",
+            "seo_desc": "Genius Rainbow barrier service. Not a FAAC 620. Price on application.",
+            "seo_keywords": "Genius Rainbow barrier, Genius barrier repair",
+            "products": [
+                {
+                    "id": "genius-rainbow",
+                    "title": "Genius Rainbow barrier",
+                    "blurb": "Rainbow cabinet identified from the board, not from the FAAC group name. Price on application.",
+                    "price": "POA",
+                    "handle": "genius-rainbow",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/genius.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "genius-receiver",
+                    "title": "Genius Rainbow receiver",
+                    "blurb": "Receiver and boom for that Rainbow revision. Price on application.",
+                    "price": "POA",
+                    "handle": "genius-receiver",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/genius.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
+        },
+        "sea": {
+            "name": "SEA",
+            "slug": "sea",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "SEA Sprint and SEA Storm are different duties. Storm is the heavier of the two. iComply records which model is installed before changing loops or readers. A Sprint is not sped up to do an HGV job. We are not an SEA partner. Price on application.",
+            "seo_title": "SEA Vehicle Barriers | Service & Quote",
+            "seo_desc": "SEA Sprint and Storm barrier service. Price on application.",
+            "seo_keywords": "SEA barrier, SEA Sprint, SEA Storm",
+            "products": [
+                {
+                    "id": "sea-sprint",
+                    "title": "SEA Sprint barrier",
+                    "blurb": "Sprint cabinet for the duty it was built for. Price on application.",
+                    "price": "POA",
+                    "handle": "sea-sprint",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/sea.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "sea-storm",
+                    "title": "SEA Storm barrier",
+                    "blurb": "Heavier Storm lane. Not quoted as a Sprint. Price on application.",
+                    "price": "POA",
+                    "handle": "sea-storm",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/sea.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
+        },
+        "v2": {
+            "name": "V2",
+            "slug": "v2",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "V2 ZARISS barriers are identified from the label and the board before parts are ordered. iComply does not fold V2 into CAME or FAAC. If the label is missing, we photograph the board rather than guess. A CAME Gard is the partner alternative when identification fails. Price on application.",
+            "seo_title": "V2 Vehicle Barriers | Service & Quote",
+            "seo_desc": "V2 ZARISS barrier identification and service. Price on application.",
+            "seo_keywords": "V2 barrier, V2 ZARISS",
+            "products": [
+                {
+                    "id": "v2-zariss",
+                    "title": "V2 ZARISS barrier",
+                    "blurb": "ZARISS label and controller confirmed before parts. Price on application.",
+                    "price": "POA",
+                    "handle": "v2-zariss",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/v2.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "v2-board",
+                    "title": "V2 ZARISS board identification",
+                    "blurb": "Board photograph and identification when the label is missing. Price on application.",
+                    "price": "POA",
+                    "handle": "v2-board",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/v2.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
+        },
+        "aprimatic": {
+            "name": "Aprimatic",
+            "slug": "aprimatic",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "Aprimatic ZT barriers differ by boom length and board. iComply is not an Aprimatic dealer. Handset faults are tested against the safety inputs before another remote is added. A CAME replacement is a separate quote. Price on application.",
+            "seo_title": "Aprimatic Vehicle Barriers | Service & Quote",
+            "seo_desc": "Aprimatic ZT barrier repair. Price on application.",
+            "seo_keywords": "Aprimatic barrier, Aprimatic ZT",
+            "products": [
+                {
+                    "id": "aprimatic-zt",
+                    "title": "Aprimatic ZT barrier",
+                    "blurb": "ZT length and board matched before a parts visit. Price on application.",
+                    "price": "POA",
+                    "handle": "aprimatic-zt",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/aprimatic.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "aprimatic-handset",
+                    "title": "Aprimatic ZT handset",
+                    "blurb": "Handset or receiver work only when the receiver still learns. Price on application.",
+                    "price": "POA",
+                    "handle": "aprimatic-handset",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/aprimatic.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
+        },
+        "proteco": {
+            "name": "Proteco",
+            "slug": "proteco",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "Proteco Strike barriers are quoted from the model on the cabinet, not from a catalogue price. iComply is not a Proteco partner. An unsupported Strike board is not patched forever. The next service cycle can be a CAME Gard. Price on application for either path.",
+            "seo_title": "Proteco Vehicle Barriers | Service & Quote",
+            "seo_desc": "Proteco Strike barrier repair. Price on application.",
+            "seo_keywords": "Proteco Strike barrier, Proteco barrier",
+            "products": [
+                {
+                    "id": "proteco-strike",
+                    "title": "Proteco Strike barrier",
+                    "blurb": "Strike model repair when the board is still supported. Price on application.",
+                    "price": "POA",
+                    "handle": "proteco-strike",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/proteco.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "proteco-boom",
+                    "title": "Proteco Strike boom",
+                    "blurb": "Boom for that Strike model. Price on application.",
+                    "price": "POA",
+                    "handle": "proteco-boom",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/proteco.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
+        },
+        "life-home-integration": {
+            "name": "Life Home Integration",
+            "slug": "life-home-integration",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "Life Supra is a vehicle rising-arm barrier. It is not a fire-alarm, AOV or life-safety product, and the similar name causes the wrong trade to be booked. iComply reads the Life label and orders Life parts. We are not a Life partner. A new rising arm is specified as CAME when replacement is the instruction. Price on application.",
+            "seo_title": "Life Home Integration Vehicle Barriers | Service & Quote",
+            "seo_desc": "Life Supra vehicle barrier. Not a fire or AOV product. Price on application.",
+            "seo_keywords": "Life Supra barrier, Life barrier, vehicle barrier",
+            "products": [
+                {
+                    "id": "life-home-integration-supra",
+                    "title": "Life Supra barrier",
+                    "blurb": "Life Supra vehicle barrier, booked separately from fire systems. Price on application.",
+                    "price": "POA",
+                    "handle": "life-home-integration-supra",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/life-home-integration.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "life-home-integration-boom",
+                    "title": "Life Supra boom",
+                    "blurb": "Supra boom ordered as a Life part. Price on application.",
+                    "price": "POA",
+                    "handle": "life-home-integration-boom",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/life-home-integration.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
+        },
+        "doorhan": {
+            "name": "DoorHan",
+            "slug": "doorhan",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "DoorHan Barrier PRO is serviced as a barrier, not as a DoorHan sectional door. The springs are different parts. iComply is not a DoorHan partner. Footings and loops on older imports are checked rather than trusted. CAME Gard is the partner range when one supported cabinet is wanted. Price on application.",
+            "seo_title": "DoorHan Vehicle Barriers | Service & Quote",
+            "seo_desc": "DoorHan Barrier PRO service, separate from DoorHan doors. Price on application.",
+            "seo_keywords": "DoorHan barrier, Barrier PRO",
+            "products": [
+                {
+                    "id": "doorhan-barrier-pro",
+                    "title": "DoorHan Barrier PRO",
+                    "blurb": "Barrier PRO cabinet, not the door range. Price on application.",
+                    "price": "POA",
+                    "handle": "doorhan-barrier-pro",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/doorhan.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "doorhan-boom",
+                    "title": "DoorHan Barrier PRO boom",
+                    "blurb": "Boom and spring for the barrier, not a door torsion spring. Price on application.",
+                    "price": "POA",
+                    "handle": "doorhan-boom",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/doorhan.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
+        },
+        "liftmaster": {
+            "name": "LiftMaster",
+            "slug": "liftmaster",
+            "services": [
+                "barriers"
+            ],
+            "blurb": "LiftMaster on a UK site is often a gate or garage operator, not a rising-arm barrier. iComply confirms which machine is installed before quoting. We are not a LiftMaster partner. New rising arms are specified as CAME unless you instruct otherwise. Parts lead time is stated rather than guessed. Price on application.",
+            "seo_title": "LiftMaster Vehicle Barriers | Service & Quote",
+            "seo_desc": "LiftMaster barrier or gate operator identification. Price on application.",
+            "seo_keywords": "LiftMaster barrier, LiftMaster gate operator",
+            "products": [
+                {
+                    "id": "liftmaster-barrier",
+                    "title": "LiftMaster barrier operator",
+                    "blurb": "Confirmed barrier operator, with parts lead time in the quote. Price on application.",
+                    "price": "POA",
+                    "handle": "liftmaster-barrier",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/liftmaster.jpg",
+                    "badge": ""
+                },
+                {
+                    "id": "liftmaster-gate",
+                    "title": "LiftMaster gate operator",
+                    "blurb": "Gate operator scope, kept separate from a rising-arm specification. Price on application.",
+                    "price": "POA",
+                    "handle": "liftmaster-gate",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/liftmaster.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
         }
     },
     "images_by_service": {
@@ -6810,6 +7745,35 @@
             "kingspan-air",
             "flaktgroup",
             "systemair"
+        ],
+        "barriers": [
+            "came",
+            "faac",
+            "bft",
+            "nice",
+            "magnetic-autocontrol",
+            "automatic-systems",
+            "beninca",
+            "roger-technology",
+            "dea-system",
+            "gibidi",
+            "cardin",
+            "tau",
+            "king-gates",
+            "hormann",
+            "elka",
+            "ditec",
+            "fadini",
+            "centurion",
+            "genius",
+            "sea",
+            "v2",
+            "aprimatic",
+            "proteco",
+            "life-home-integration",
+            "doorhan",
+            "liftmaster",
+            "doorking"
         ]
     },
     "keyword_images": {
@@ -6888,6 +7852,7 @@
         "intercoms": "intercom installation, video intercom, audio intercom, multi tenant intercom",
         "barriers": "CAME barriers, Gard barrier, gate operators, vehicle barrier installation, barriers partner, install POA",
         "legionella-risk-assessment": "legionella risk assessment, legionella testing, water hygiene, Legionnaires disease, Stockport, Manchester, North West, POA",
-        "asbestos-survey": "asbestos survey, asbestos testing, asbestos management survey, asbestos refurbishment survey, Stockport, Manchester, North West, POA"
+        "asbestos-survey": "asbestos survey, asbestos testing, asbestos management survey, asbestos refurbishment survey, Stockport, Manchester, North West, POA",
+        "barriers": "vehicle barrier, rising arm barrier, CAME partner, CAME Gard, barrier servicing, private car park barrier, UK towns over 10000, price on application"
     }
 }
