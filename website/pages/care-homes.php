@@ -68,7 +68,7 @@ $packages = [
     ],
     [
         'name' => 'Multi-home estate',
-        'text' => 'Bundle several homes into one visit schedule — ideal for groups and facilities managers looking after 2–20+ care sites across the North West.',
+        'text' => 'Bundle several homes into one visit schedule — ideal for groups and FM partners managing 2–20+ care sites across the North West.',
         'points' => ['Shared visit days', 'Portfolio discount', 'One point of contact'],
     ],
     [
@@ -79,9 +79,9 @@ $packages = [
 ];
 
 $trust = [
-    ['title' => 'Care-home ready', 'text' => 'Nurse call, fire, lighting, access and CCTV with our qualified engineers'],
+    ['title' => 'Care-home ready', 'text' => 'Nurse call, fire, lighting, access & CCTV under one partner'],
     ['title' => 'HTM & BS standards', 'text' => 'HTM 08-03, BS 5839, BS 5266 and fire-override access'],
-    ['title' => 'Manufacturer brands', 'text' => 'Courtney Thorne, Static Systems, Intercall, Aidcall, Quantec'],
+    ['title' => 'Manufacturer brands', 'text' => 'Courtney Thorne, Static Systems, Intercall & more'],
     ['title' => 'Fixed-price quotes', 'text' => 'Clear scope, certification and multi-home options'],
 ];
 
@@ -134,7 +134,7 @@ foreach ($supportMfrSlugs as $slug) {
 }
 
 $popularTowns = array_values(array_filter(
-    ['Manchester', 'Burnley', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
+    ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
     function ($t) use ($areas) {
         return in_array($t, $areas, true);
     }
@@ -316,7 +316,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                     <li class="flex gap-3"><span class="text-[#ff6b00]">●</span> Residential care &amp; nursing homes</li>
                     <li class="flex gap-3"><span class="text-[#ff6b00]">●</span> Supported living &amp; extra-care schemes</li>
                     <li class="flex gap-3"><span class="text-[#ff6b00]">●</span> Care groups managing multi-home estates</li>
-                    <li class="flex gap-3"><span class="text-[#ff6b00]">●</span> Facilities managers &amp; estates managers</li>
+                    <li class="flex gap-3"><span class="text-[#ff6b00]">●</span> FM partners &amp; estates managers</li>
                     <li class="flex gap-3"><span class="text-[#ff6b00]">●</span> Clinics and healthcare annexes on care sites</li>
                 </ul>
                 <a href="#quote" class="inline-block mt-8 px-6 py-3 bg-[#ff6b00] rounded-2xl font-semibold">Request care home quote</a>
@@ -350,7 +350,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
     </div>
     <div class="mt-10 bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10 grid lg:grid-cols-2 gap-8 items-center">
         <div>
-            <h3 class="text-2xl font-semibold tracking-tight">Built for care operators and facilities managers</h3>
+            <h3 class="text-2xl font-semibold tracking-tight">Built for care operators &amp; FM partners</h3>
             <p class="mt-3 text-white/80">Share site list, panel brands and certificate due dates — we’ll map nurse call, fire, emergency lighting, access and CCTV into a single compliance programme.</p>
         </div>
         <ul class="space-y-3 text-sm text-white/90">
@@ -438,15 +438,8 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Popular areas</h2>
                 <p class="mt-3 text-zinc-600">Pick a town for local service links — or request a multi-home quote covering your full care map.</p>
                 <div class="mt-6 flex flex-wrap gap-2">
-                    <?php foreach ($popularTowns as $town):
-                        $townHref = url('/pages/areas/' . areaSlug($town) . '.php');
-                        if ($town === 'Manchester') {
-                            $townHref = url('/pages/nurse-call-manchester');
-                        } elseif ($town === 'Burnley') {
-                            $townHref = url('/pages/nurse-call-burnley');
-                        }
-                    ?>
-                        <a href="<?= $townHref ?>"
+                    <?php foreach ($popularTowns as $town): ?>
+                        <a href="<?= url('/pages/areas/' . areaSlug($town) . '.php') ?>"
                            class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]"><?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?></a>
                     <?php endforeach; ?>
                 </div>
@@ -455,13 +448,9 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 <div class="mt-10 bg-white border rounded-3xl p-6">
                     <h3 class="font-semibold text-black">Related care home guides</h3>
                     <ul class="mt-4 space-y-2 text-sm">
-                        <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/nurse-call-systems') ?>">Nurse call hub</a> — care homes, wards and warden call</li>
-                        <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/services/nurse-call.php') ?>">Nurse call service</a></li>
-                        <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/nurse-call-manchester') ?>">Nurse call in Manchester</a></li>
-                        <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/nurse-call-burnley') ?>">Nurse call in Burnley</a></li>
+                        <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/services/nurse-call.php') ?>">Nurse call systems</a></li>
                         <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/keywords/care-home-nurse-call.php') ?>">Care home nurse call</a></li>
                         <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/keywords/hospital-nurse-call-system.php') ?>">Hospital nurse call systems</a></li>
-                        <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/keywords/warden-call') ?>">Warden call</a></li>
                         <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/services/fire-alarms.php') ?>">Fire alarm installation &amp; servicing</a></li>
                         <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/services/emergency-lighting.php') ?>">Emergency lighting</a></li>
                         <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/manufacturers/courtney-thorne.php') ?>">Courtney Thorne nurse call</a></li>

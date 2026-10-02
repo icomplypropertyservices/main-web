@@ -78,6 +78,7 @@ $_SERVER['SERVER_PORT'] = '443';
 $_SERVER['REQUEST_SCHEME'] = 'https';
 
 require_once $websiteRoot . '/config.php';
+require_once $websiteRoot . '/includes/manufacturer-hub.php';
 require_once $websiteRoot . '/includes/router.php';
 if (function_exists('manufacturerWriteLineLogos')) {
     manufacturerWriteLineLogos();
@@ -471,6 +472,13 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
     if (function_exists('getMainlandAreaRecords')) {
         foreach (getMainlandAreaRecords() as $row) {
             $routes[] = '/pages/fire-risk-assessments/' . $row['slug'];
+        }
+    }
+
+    // Manufacturer × every area is routed now. --full adds the matrix to the export.
+    if ($full && function_exists('manufacturerAreaRoutes')) {
+        foreach (manufacturerAreaRoutes() as $path) {
+            $routes[] = $path;
         }
     }
 
