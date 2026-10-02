@@ -22,10 +22,12 @@ function icomplyMegaHeaderHtml(): string
     $hubGas = '/shop/gas/';
     $shopLive = icomplyNavH(function_exists('icomplyTradeShopUrl') ? icomplyTradeShopUrl() : 'https://shop.icomplypropertyservices.co.uk');
     $aovHub = icomplyNavH(url('/pages/services/aov-air-handling.php'));
+    $barriersHub = icomplyNavH(url('/products.php') . '#barriers');
     $aovFeatured = '<div class="mega-featured mega-featured--aov">'
-        . '<p class="mega-featured-title">Priority — AOV &amp; smoke control</p>'
+        . '<p class="mega-featured-title">Priority — AOV &amp; barriers</p>'
         . '<a class="mega-featured-link" href="' . $aovHub . '">AOV &amp; Smoke Control</a>'
-        . '<p class="mega-note">Smoke vents, AOV panels, EN 12101 / BS 9991. Quotes POA after scope.</p>'
+        . '<a class="mega-featured-link" href="' . $barriersHub . '">Barriers</a>'
+        . '<p class="mega-note">Smoke vents and AOV panels (EN 12101 / BS 9991). 5m barrier packs. Install POA after scope.</p>'
         . '</div>';
 
     $svcCols = '';
@@ -114,7 +116,14 @@ function icomplyMegaHeaderHtml(): string
       <a class="nav-link" href="{$contact}">Contact</a>
     </nav>
     <div class="mega-tools">
-      <a class="mega-quote" href="{$contact}">Get a quote</a>
+      <a class="mega-phone" href="{$phoneHref}" aria-label="Call {$phone}">
+        <span class="mega-phone-full">{$phone}</span>
+        <span class="mega-phone-short">Call</span>
+      </a>
+      <a class="mega-quote" href="{$contact}">
+        <span class="mega-quote-full">Get a quote</span>
+        <span class="mega-quote-short">Quote</span>
+      </a>
       <button type="button" class="mega-burger" id="nav-toggle" aria-expanded="false" aria-controls="mega-drawer">Menu</button>
     </div>
   </div>
@@ -135,8 +144,10 @@ function icomplyMobileDrawerHtml(array $n): string
     $siteMap = icomplyNavH(url('/pages/site-map.php'));
 
     $aovHubDrawer = icomplyNavH(url('/pages/services/aov-air-handling.php'));
+    $barriersDrawer = icomplyNavH(url('/products.php') . '#barriers');
     $svc = '<a class="drawer-featured" href="' . $aovHubDrawer . '">AOV &amp; Smoke Control</a>';
-    $svc .= '<p class="drawer-note">Priority — smoke vents, AOV panels, EN 12101 / BS 9991. POA after scope.</p>';
+    $svc .= '<a class="drawer-featured" href="' . $barriersDrawer . '">Barriers</a>';
+    $svc .= '<p class="drawer-note">Priority — AOV / smoke control and 5m barrier packs. Install POA after scope.</p>';
     foreach ($n['cats'] as $cat) {
         $svc .= '<details class="drawer-acc"><summary>' . icomplyNavH($cat['label']) . '</summary><div>';
         foreach ($cat['services'] as $slug => $name) {
@@ -163,14 +174,17 @@ function icomplyMobileDrawerHtml(array $n): string
     <details class="drawer-acc" open><summary>Services</summary><div>{$svc}</div></details>
     <details class="drawer-acc"><summary>Areas</summary><div>{$areas}</div></details>
     <details class="drawer-acc"><summary>Shop</summary><div>
+      <a href="{$aovHubDrawer}">AOV &amp; smoke control</a>
+      <a href="{$barriersDrawer}">Barriers</a>
       <a href="{$hubFireD}">Fire</a>
-      <a href="{$aovHubDrawer}">AOV &amp; smoke control (service)</a>
       <a href="{$hubElectricalD}">Electrical</a>
       <a href="{$hubSecurityD}">Security</a>
       <a href="{$hubGasD}">Gas</a>
       <a href="/shop/">All supplies</a>
     </div></details>
     <a href="{$productsD}">Products</a>
+    <a class="drawer-cta drawer-cta--call" href="{$phoneHref}">Call {$phone}</a>
+    <a class="drawer-cta drawer-cta--wa" href="https://wa.me/{$wa}?text=Hi%20iComply%2C%20I%20need%20a%20quote" target="_blank" rel="noopener">WhatsApp</a>
     <a class="drawer-cta drawer-cta--quote" href="{$contactDrawer}">Get a quote</a>
   </nav>
 </div>

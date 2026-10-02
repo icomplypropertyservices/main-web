@@ -88,7 +88,8 @@ function icomplyAovKitImageUrl(string $sku): string {
   </div>
 </section>
 
-<section class="max-w-7xl mx-auto px-6 pb-12">
+<section id="barriers" class="max-w-7xl mx-auto px-6 pb-12">
+  <span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-[#FF6B00] text-white mb-3">Priority · Barriers</span>
   <h2 class="text-2xl font-semibold text-black mb-2">Barrier packs (5m)</h2>
   <p class="text-sm text-zinc-600 mb-6">SoT supply prices. Install POA. Images from Marketing CAME GARD CDN map.</p>
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
