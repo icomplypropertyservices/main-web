@@ -555,7 +555,7 @@ function wave1FortnightGuides(): array
                 ],
                 [
                     'h2' => 'How to start',
-                    'p' => ['Read [care homes](/pages/care-homes) or send kit brands via [contact](/contact). Photos of the panel and a nurse-call printer ticket help.'],
+                    'p' => ['Read [care homes](/pages/care-homes) or the [nurse call hub](/pages/nurse-call-systems). Manchester and Burnley have their own nurse-call pages. Photos of the panel and a printer ticket help. Call 07517806082.'],
                 ],
             ],
             'faqs' => [

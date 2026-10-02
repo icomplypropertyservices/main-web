@@ -265,6 +265,8 @@ function routerHandleRequest(): void {
         '/cookie-policy' => '/privacy',
         '/blog' => '/pages/resources',
         '/news' => '/pages/resources',
+        '/pages/keywords/tunstall-nurse-call' => '/pages/nurse-call-systems',
+        '/pages/manufacturers/tunstall' => '/pages/nurse-call-systems',
     ];
     if (isset($legacyAliases[$path])) {
         header('Location: ' . url($legacyAliases[$path]), true, 301);

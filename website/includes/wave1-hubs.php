@@ -9,7 +9,7 @@ declare(strict_types=1);
  */
 function wave1QualityHubs(): array
 {
-    return [
+    $hubs = [
         'landlord-certificates' => [
             'navLabel' => 'Landlord certificates',
             'pageTitle' => 'Landlord Certificates | EICR, Gas, FRA & Alarms',
@@ -558,4 +558,14 @@ function wave1QualityHubs(): array
             ],
         ],
     ];
+    $extra = __DIR__ . '/nurse-call-priority.php';
+    if (is_file($extra)) {
+        require_once $extra;
+        if (function_exists('nurseCallPriorityHubs')) {
+            foreach (nurseCallPriorityHubs() as $slug => $hub) {
+                $hubs[$slug] = $hub;
+            }
+        }
+    }
+    return $hubs;
 }
