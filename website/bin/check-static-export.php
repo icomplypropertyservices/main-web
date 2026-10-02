@@ -268,7 +268,7 @@ foreach (['rewire', 'domestic-rewire', 'emergency-electrician', 'boiler'] as $ne
     }
 }
 
-$redirectNeedles = ['/*', '/:splat.php', '/privacy', '/pages/about', '/assets/', '/pages/keywords', '/pages/keywords/:slug', '/shop/index.html', '/shop/fire/index.html', '/products.php'];
+$redirectNeedles = ['/*', '/:splat.php', '/privacy', '/pages/about', '/assets/', '/pages/keywords', '/pages/keywords/:slug', '/pages/keywords/:slug/:town', '/pages/electrical/:town', '/pages/fire-alarms/:town', '/shop/index.html', '/shop/fire/index.html', '/products.php', '/products/aov-air-handling-package', '/manifest.json', '/group'];
 foreach ($redirectNeedles as $n) {
     if (!str_contains($redirects, $n)) {
         $fail++;

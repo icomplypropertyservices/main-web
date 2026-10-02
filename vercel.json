@@ -54,36 +54,6 @@
       "has": [{ "type": "host", "value": "products.icomplypropertyservices.co.uk" }],
       "destination": "https://icomplypropertyservices.co.uk/products/:path*",
       "permanent": true
-    },
-    {
-      "source": "/shop",
-      "destination": "/pages/packages",
-      "permanent": true
-    },
-    {
-      "source": "/shop/",
-      "destination": "/pages/packages",
-      "permanent": true
-    },
-    {
-      "source": "/shop/:path*",
-      "destination": "/pages/packages",
-      "permanent": true
-    },
-    {
-      "source": "/products",
-      "destination": "/pages/packages",
-      "permanent": true
-    },
-    {
-      "source": "/products/",
-      "destination": "/pages/packages",
-      "permanent": true
-    },
-    {
-      "source": "/products/:path*",
-      "destination": "/pages/packages",
-      "permanent": true
     }
   ],
   "rewrites": [
