@@ -100,7 +100,7 @@ function icomplySitemapEntries(): array
         // Hard reject /pages/{service}/{town} even if a leftover matrix file
         // sits in dist/. Keep only real hub prefixes.
         if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
-            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages'];
+            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'jobs'];
             if (!in_array($m[1], $okPrefix, true)) {
                 return;
             }
@@ -132,6 +132,10 @@ function icomplySitemapEntries(): array
         ['/pages/landlords', '0.8', 'pages/landlords.php'],
         ['/pages/commercial', '0.8', 'pages/commercial.php'],
         ['/pages/packages', '0.8', 'pages/packages.php'],
+        ['/pages/jobs/hmo', '0.8', 'pages/jobs/hmo.php'],
+        ['/pages/jobs/hmo-compliance', '0.85', 'pages/jobs/hmo-compliance.php'],
+        ['/pages/jobs/hmo-fire-safety', '0.75', 'pages/jobs/hmo-fire-safety.php'],
+        ['/pages/jobs/hmo-occupancy', '0.75', 'pages/jobs/hmo-occupancy.php'],
         ['/pages/pricing', '0.75', 'pages/pricing.php'],
         ['/pages/care-homes', '0.75', 'pages/care-homes.php'],
         ['/pages/ev-chargers', '0.75', 'pages/ev-chargers.php'],

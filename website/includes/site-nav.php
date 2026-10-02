@@ -175,6 +175,8 @@ function icomplyNavPackageLinks(): array
 {
     return [
         ['href' => url('/pages/packages.php'), 'label' => 'All packages'],
+        ['href' => url('/pages/jobs/hmo.php'), 'label' => 'HMO landlord packages'],
+        ['href' => url('/pages/jobs/hmo-compliance.php'), 'label' => 'HMO bundle £650'],
         ['href' => url('/pages/packages/let-ready.php'), 'label' => 'Let-ready package'],
         ['href' => url('/pages/packages/fire-ready.php'), 'label' => 'Fire-ready package'],
         ['href' => url('/pages/packages/workplace-essentials.php'), 'label' => 'Workplace essentials'],
