@@ -4,10 +4,11 @@
  * MANUFACTURER_TAGS, MANUFACTURER_IMAGES
  */
 $poaService = function_exists('isPoaService') && isPoaService($SERVICE_SLUG);
-$pageTitle = $SERVICE_NAME . ' Services | North West';
-$metaDesc = $poaService
-    ? ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Price on application after scope. Local team from Stockport. No invented fees.')
-    : ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Installation, maintenance, testing & certification. Written quotes after scope. Local engineers from Stockport.');
+$pageTitle = $SERVICE_NAME . ' | North West';
+$metaDesc = $SERVICE_NAME . ' across Greater Manchester and the North West. '
+    . getServiceBlurb($SERVICE_SLUG) . ' '
+    . ($poaService ? 'Price on application after scope.' : 'Written quote after scope.')
+    . ' Stockport SK2.';
 $metaKeywords = $SEO_KEYWORDS;
 $ogImage = url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
 
@@ -255,20 +256,17 @@ $schema = [
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars((string)$para, ENT_QUOTES, 'UTF-8') ?></p>
                 <?php endforeach; ?>
             <?php else: ?>
-            <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
-                Icomply Property Services designs, installs, commissions, maintains and certifies
-                <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong>
-                for commercial, industrial, multi-let, care and residential properties across Greater Manchester,
-                Lancashire, Cheshire, Merseyside and Cumbria.
+            <?php $hubAngle = function_exists('service_local_angle') ? service_local_angle($serviceSlug, $serviceName, 'the North West') : ''; ?>
+            <p id="service-intro" class="mt-5 text-lg text-zinc-700 leading-relaxed">
+                <?= htmlspecialchars($blurb, ENT_QUOTES, 'UTF-8') ?>
+                Standards we work to: <?= htmlspecialchars($standards, ENT_QUOTES, 'UTF-8') ?>.
             </p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
-                From new system design to reactive call-outs and planned maintenance contracts, our engineers deliver
-                fixed-price quotes, clear scope and full compliance documentation. Based in Stockport (SK2), we cover
-                Manchester, Bolton, Oldham, Rochdale, Wigan, Liverpool, Preston and 140+ surrounding towns.
-            </p>
-            <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
-                Searching for a specific manufacturer? We install and service the major brands listed below so you can
-                find local support for the exact panel or equipment already on site.
+                <?= htmlspecialchars($hubAngle, ENT_QUOTES, 'UTF-8') ?>
+                The team is based in Stockport SK2 and covers Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria.
+                <?= $poaService
+                    ? 'Price on application after the building and access are confirmed. No catalogue fee.'
+                    : 'A written quote follows once the scope is confirmed. We do not publish a guessed fee here.' ?>
             </p>
             <?php endif; ?>
         </div>
@@ -330,7 +328,7 @@ $schema = [
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Manufacturers</div>
                 <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Brands we install &amp; service</h2>
-                <p class="mt-2 text-zinc-600 max-w-2xl">Looking for your exact panel brand? We support major <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturers across the North West.</p>
+                <p class="mt-2 text-zinc-600 max-w-2xl">Panel already on site? We install and service the major <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturers across the North West.</p>
             </div>
             <a href="<?= htmlspecialchars(function_exists('icomplyTradeShopUrl') ? icomplyTradeShopUrl() : url('/shop/index.php'), ENT_QUOTES, 'UTF-8') ?>" class="text-sm font-semibold text-[#ff6b00]">Browse trade shop →</a>
         </div>

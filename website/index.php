@@ -5,8 +5,8 @@
 require_once __DIR__ . '/config.php';
 require_once SITE_ROOT . '/includes/shopify.php';
 
-$pageTitle = 'Property Maintenance & Compliance | Icomply Property Services';
-$metaDesc = 'iComply Property Services — landlord compliance (EICR, CP12/gas, FRA), electrical, gas, fire safety, kitchens, bathrooms, renovations, CCTV, Legionella, asbestos surveys and trade shop across Greater Manchester and the North West. Stockport SK2 5DE.';
+$pageTitle = 'Property Maintenance & Compliance';
+$metaDesc = 'Landlord compliance, EICR, gas, fire, Legionella and asbestos from Stockport SK2. Written quotes after scope across Greater Manchester and the North West.';
 $canonicalUrl = url('/');
 $metaKeywords = 'landlord compliance Stockport, EICR Manchester, gas safety CP12, fire risk assessment, kitchen fitting, renovation, CCTV, legionella, asbestos survey, North West';
 $ogImage = url('/assets/images/android-chrome-512.png');

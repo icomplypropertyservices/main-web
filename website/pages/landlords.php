@@ -5,8 +5,8 @@
  */
 require_once __DIR__ . '/../config.php';
 
-$pageTitle = 'Landlord & Letting Agent Services | Compliance, Fire & Voids | North West';
-$metaDesc = 'Landlord packages for Stockport & the North West — EICR, gas CP12/CP44, fire risk assessments, fire alarms, emergency lighting, fire doors, voids, kitchens and bathrooms. Fixed-price quotes for agents and portfolios.';
+$pageTitle = 'Landlord Compliance | North West';
+$metaDesc = 'Landlord compliance for agents and portfolios in Stockport and the North West: EICR, gas safety, FRA and fire systems. Written quote after scope.';
 $metaKeywords = 'landlord compliance North West, fire risk assessment landlords, EICR Stockport, CP12 gas, fire doors HMO, void kitchen bathroom, multi-property package';
 $ogImage = url('/assets/images/services/electrical.jpg');
 $canonicalUrl = url('/pages/landlords.php');

@@ -7,6 +7,7 @@
  * Templates must only be controlled site files — never user-supplied content.
  */
 require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/seo.php';
 
 /**
  * Apply {{KEY}} replacements (values must already be safe for their context).
@@ -137,9 +138,14 @@ function keywordTemplatePlaceholders(
     string $areaName = ''
 ): array {
     $name = $meta['name'] ?? keywordDisplayName($slug);
-    $intro = (string)($meta['intro'] ?? "Professional {$name} from Icomply Property Services across the North West.");
+    $intro = (string)($meta['intro'] ?? "{$name} from Icomply Property Services across the North West, with a written quote after scope.");
     $body = (string)($meta['body'] ?? "We install, service and certify {$name} as part of our {$serviceName} range for landlords, FM teams and commercial sites.");
-    $metaDesc = (string)($meta['meta_desc'] ?? "{$name} across Greater Manchester & the North West. Fixed-price quotes. Local engineers.");
+    $metaDesc = (string)($meta['meta_desc'] ?? "{$name} across Greater Manchester and the North West. Written quote after scope. Local engineers from Stockport.");
+    if (function_exists('seo_clean_copy')) {
+        $intro = seo_clean_copy($intro);
+        $body = seo_clean_copy($body);
+        $metaDesc = seo_clean_copy($metaDesc);
+    }
     $seoKw = (string)($meta['seo_keywords'] ?? getSeoKeywords($serviceSlug, $areaName));
 
     $focusHtml = '';
@@ -241,11 +247,24 @@ function renderKeywordAreaPage(string $keywordSlug, string $area): void {
     $ph['AREA'] = $areaName;
     $ph['AREA_SLUG'] = $areaSlugVal;
     $ph['AREA_URL'] = rawurlencode($areaName);
-    // Localise meta for area pages
-    $ph['KEYWORD_META'] = $meta['meta_desc'] ?? $ph['KEYWORD_META'];
-    $ph['KEYWORD_BODY'] = rtrim($ph['KEYWORD_BODY'], '.')
-        . '. Our engineers regularly attend jobs in ' . $areaName
-        . ' and surrounding postcodes for ' . ($meta['name'] ?? $keywordSlug) . '.';
+    $focus0 = '';
+    $points = $meta['focus_points'] ?? [];
+    if (is_array($points) && isset($points[0])) {
+        $focus0 = (string)$points[0];
+    }
+    $kwName = (string)($meta['name'] ?? $keywordSlug);
+    $poaPage = (function_exists('isPoaService') && isPoaService($serviceSlug))
+        || (function_exists('isCostStyleKeyword') && isCostStyleKeyword($keywordSlug, $kwName));
+    $districts = function_exists('area_profile') ? (string)(area_profile($areaName)['districts'] ?? $areaName) : $areaName;
+    $ph['KEYWORD_LOCAL_LEAD'] = function_exists('seo_keyword_town_lead')
+        ? seo_keyword_town_lead($kwName, $keywordSlug, $serviceName, $serviceSlug, $areaName, $focus0)
+        : ($kwName . ' in ' . $areaName . '.');
+    $ph['KEYWORD_POA'] = $poaPage ? '1' : '0';
+    $ph['KEYWORD_META'] = $kwName . ' in ' . $areaName . ' (' . $districts . '). '
+        . ($poaPage
+            ? 'Price on application after scope. No catalogue fee.'
+            : 'Written quote after scope is confirmed.')
+        . ' Stockport SK2.';
 
     // Pure-PHP template (no {{}} / eval)
     executeTemplateVars(SITE_ROOT . '/templates/keyword-area.php', $ph);

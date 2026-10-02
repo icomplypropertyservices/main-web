@@ -2,8 +2,10 @@
 /**
  * Area hub template. Placeholders: AREA, AREA_SLUG, AREA_URL
  */
-$pageTitle = $AREA . ' Property Compliance Services';
-$metaDesc = $AREA . ' experts for EICR, fire alarms, gas safety, emergency lighting, CCTV and access control. Fast local response from Stockport-based engineers. Free quotes.';
+$pageTitle = $AREA . ' Property Compliance';
+$areaProfile = function_exists('area_profile') ? area_profile($AREA) : ['districts' => $AREA, 'stock' => 'local property', 'travel' => 'from Stockport SK2', 'focus' => 'landlord compliance', 'region' => 'the North West'];
+$metaDesc = $AREA . ' property compliance (' . ($areaProfile['districts'] ?? $AREA) . '): EICR, gas safety, fire alarms and landlord files. '
+    . ($areaProfile['focus'] ?? 'Landlord and commercial work') . '. Written quote after scope. Stockport SK2.';
 $metaKeywords = $AREA . ' electrician, ' . $AREA . ' fire alarm installation, ' . $AREA . ' EICR, ' . $AREA . ' gas safety certificate, property compliance ' . $AREA . ', emergency lighting ' . $AREA;
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 
@@ -124,7 +126,7 @@ $schema = [
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
                     <div><span class="text-white font-semibold text-xl block"><?= count($allServices) ?></span> core services</div>
                     <div><span class="text-white font-semibold text-xl block">Same-week</span> appointments*</div>
-                    <div><span class="text-white font-semibold text-xl block">Fixed-price</span> quotes</div>
+                    <div><span class="text-white font-semibold text-xl block">Written</span> quotes</div>
                 </div>
                 <p class="mt-3 text-[11px] text-white/40">*Subject to engineer capacity and site access.</p>
             </div>
@@ -179,23 +181,24 @@ $schema = [
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">
                 Compliance engineers for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>
             </h2>
-            <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
-                Icomply Property Services provides complete property compliance for landlords, facilities managers,
-                care providers and commercial occupiers in <strong><?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></strong>. Whether you need an EICR,
-                fire alarm service, gas safety certificate, emergency lighting test or a full multi-system install,
-                we book local engineers with fixed-price quotes and clear documentation.
+            <p id="local-intro" class="mt-5 text-lg text-zinc-700 leading-relaxed">
+                Property compliance in <strong><?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></strong>
+                (<?= htmlspecialchars((string)($areaProfile['districts'] ?? $AREA), ENT_QUOTES, 'UTF-8') ?>)
+                covers <?= htmlspecialchars((string)($areaProfile['stock'] ?? 'local property'), ENT_QUOTES, 'UTF-8') ?>.
+                The usual brief here is <?= htmlspecialchars((string)($areaProfile['focus'] ?? 'landlord and commercial compliance'), ENT_QUOTES, 'UTF-8') ?>,
+                in <?= htmlspecialchars((string)($areaProfile['region'] ?? 'the North West'), ENT_QUOTES, 'UTF-8') ?>.
+                Travel from Offerton, Stockport SK2 5DE is <?= htmlspecialchars((string)($areaProfile['travel'] ?? 'scheduled from Stockport'), ENT_QUOTES, 'UTF-8') ?>.
             </p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
-                Based in Offerton, Stockport (SK2 5DE), we routinely serve <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> and the wider North West with
-                same-week appointments where capacity allows. Choose a service below for a dedicated
-                <strong><?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></strong> landing page, or request a package quote for several services at once.
+                EICR, fire alarms, gas safety and emergency lighting can be booked as separate jobs or one visit schedule.
+                Quotes are written after scope. Open a service below for the <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> page, or send a package enquiry.
             </p>
         </div>
         <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
             <h3 class="text-2xl font-semibold tracking-tight"><?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> compliance package</h3>
             <p class="mt-3 text-white/80">Combine EICR, fire alarms, emergency lighting and gas safety into one visit schedule for landlords and FM teams in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>.</p>
             <ul class="mt-6 space-y-3 text-sm text-white/90">
-                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Fixed-price multi-service quotes</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Written multi-service quotes after scope</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Full documentation for audits &amp; insurers</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Maintenance contracts available</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> WhatsApp or phone for a fast response</li>

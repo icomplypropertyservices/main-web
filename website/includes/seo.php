@@ -21,16 +21,102 @@ function seo_current_url(): string {
 }
 
 function seo_title(string $title): string {
-    // Keep SERP titles short (~50–60 chars). Brand only if room remains.
+    // Hard rule: one brand, 15–60 characters, no mid-word ellipsis.
+    $title = trim(preg_replace('/\s+/u', ' ', $title) ?? $title);
+    $title = preg_replace('/\s*[|–—-]\s*Icomply Property Services\s*$/iu', '', $title) ?? $title;
+    $title = preg_replace('/\s*[|–—-]\s*Icomply\s*$/iu', '', $title) ?? $title;
     $title = trim($title);
-    if (mb_strlen($title) <= 55) {
-        $withBrand = $title . ' | Icomply';
-        if (mb_strlen($withBrand) <= 60) return $withBrand;
+    if ($title === '' || strcasecmp($title, 'Icomply Property Services') === 0 || strcasecmp($title, 'Icomply') === 0) {
+        return 'Icomply Property Services';
     }
-    if (mb_strlen($title) > 60) {
-        return mb_substr($title, 0, 57) . '…';
+    $brand = ' | Icomply';
+    $max = 60;
+    if (mb_strlen($title) + mb_strlen($brand) <= $max) {
+        return $title . $brand;
     }
-    return $title;
+    $room = $max - mb_strlen($brand);
+    $cut = mb_substr($title, 0, $room);
+    $sp = mb_strrpos($cut, ' ');
+    if ($sp !== false && $sp >= 18) {
+        $cut = mb_substr($cut, 0, $sp);
+    }
+    $cut = rtrim($cut, " \t|–—-");
+    if ($cut === '') {
+        return 'Icomply Property Services';
+    }
+    return $cut . $brand;
+}
+
+/**
+ * Meta description hard rule: 70–160 characters, boilerplate stripped, unique prefix kept.
+ */
+function seo_meta_description(string $desc): string {
+    $desc = trim(preg_replace('/\s+/u', ' ', $desc) ?? $desc);
+    $desc = seo_clean_copy($desc);
+    $max = 160;
+    $min = 70;
+    if (mb_strlen($desc) > $max) {
+        $cut = mb_substr($desc, 0, $max - 1);
+        $sp = mb_strrpos($cut, ' ');
+        if ($sp !== false && $sp >= $min) {
+            $cut = mb_substr($cut, 0, $sp);
+        }
+        $desc = rtrim($cut, " \t,;:—-–.") . '.';
+    }
+    if (mb_strlen($desc) < $min) {
+        $desc = rtrim($desc, '.') . '. Stockport SK2 team, written quote after scope, North West coverage.';
+        if (mb_strlen($desc) > $max) {
+            $desc = rtrim(mb_substr($desc, 0, $max - 1), " \t,;:—-–.") . '.';
+        }
+    }
+    return $desc;
+}
+
+/**
+ * Strip doorway / AI-boilerplate openers and stock phrases from rendered copy.
+ */
+function seo_clean_copy(string $text): string {
+    $text = trim($text);
+    $text = preg_replace(
+        '/^(?:Looking for|Searching for)\s+(?:professional\s+|expert\s+|a\s+|an\s+)?/iu',
+        '',
+        $text
+    ) ?? $text;
+    $text = preg_replace('/^Whether you need a new system,?\s*/iu', '', $text) ?? $text;
+    if ($text !== '' && preg_match('/^[a-z]/u', $text)) {
+        $text = mb_strtoupper(mb_substr($text, 0, 1)) . mb_substr($text, 1);
+    }
+    // Doorway openers are written as fake questions ("EICR near me?"). Keep real question words.
+    if (preg_match('/^([^?!.]{8,220})\?(\s+)/u', $text, $m)
+        && !preg_match('/^(who|what|when|where|why|how|do|does|did|can|could|is|are|will|would|should|which|if)\b/iu', $m[1])
+    ) {
+        $text = $m[1] . '.' . $m[2] . substr($text, strlen($m[0]));
+    }
+    $repl = [
+        '/\bpeace of mind\b/iu' => 'a clear record',
+        '/\bcomprehensive solutions?\b/iu' => 'scoped works',
+        '/\bcutting-edge\b/iu' => 'current',
+        '/\bstate-of-the-art\b/iu' => 'current',
+        '/\bone-stop shop\b/iu' => 'single contractor',
+        '/\bwe pride ourselves on\b/iu' => 'we focus on',
+        '/\bin today\'s (?:fast-paced )?(?:world|landscape|market)\b/iu' => 'in practice',
+        '/\btailored to your needs\b/iu' => 'scoped to the building',
+        '/\bworld-class\b/iu' => 'documented',
+        '/\bseamless(?:ly)?\b/iu' => 'straightforward',
+        '/\bprovides complete\b/iu' => 'covers',
+    ];
+    foreach ($repl as $re => $to) {
+        $text = preg_replace($re, $to, $text) ?? $text;
+    }
+    $text = preg_replace_callback(
+        '/(^|[.!?]\s+)whether you need a new\b/iu',
+        static function (array $m): string {
+            return $m[1] . 'When a site needs a new';
+        },
+        $text
+    ) ?? $text;
+    $text = preg_replace('/\bwhether you need a new\b/iu', 'when a site needs a new', $text) ?? $text;
+    return trim(preg_replace('/\s+/u', ' ', $text) ?? $text);
 }
 
 /** Standards / compliance keywords per service for on-page SEO */
@@ -53,26 +139,27 @@ function service_standards(string $slug): array {
     return $map[$slug] ?? ['UK installation', 'servicing', 'certification'];
 }
 
-/** Long-form intro paragraph for service×area pages (unique enough via placeholders) */
+/** Long-form intro for service×area pages. Delegates to the seeded local writer. */
 function seo_combo_intro(string $serviceName, string $slug, string $area): string {
+    if (function_exists('seo_unique_intro')) {
+        return seo_unique_intro($serviceName, $slug, $area);
+    }
     $standards = implode(', ', array_slice(service_standards($slug), 0, 3));
-    return "Looking for professional {$serviceName} in {$area}? Icomply Property Services provides design, installation, "
-        . "maintenance and certification for landlords, managing agents, facilities teams and businesses across {$area} "
-        . "and the wider North West. Our engineers work to UK best practice including {$standards}, with clear paperwork "
-        . "you can show insurers, freeholders and local authorities. Based in Stockport (SK2), we cover {$area} with "
-        . "same-week appointments where diary capacity allows and "
-        . ((function_exists('isPoaService') && isPoaService($slug))
-            ? "a price-on-application quote once scope is clear."
-            : "fixed-price quotes whenever the scope is clear.");
+    $poa = function_exists('isPoaService') && isPoaService($slug);
+    return $serviceName . ' in ' . $area . ' is scoped against ' . $standards . '. '
+        . ($poa
+            ? 'Price on application after the building and access are confirmed.'
+            : 'Written quote after survey or photos confirm the scope.');
 }
 
 function seo_combo_why(string $serviceName, string $area): array {
+    if (function_exists('seo_unique_why')) {
+        return seo_unique_why($serviceName, $area);
+    }
     return [
         "Local {$area} coverage from a Stockport-based UK compliance team",
-        "Clear scope, fixed-price quotes where possible, and written reports",
         "{$serviceName} install, service and certification under one contractor",
         "Documentation packs suitable for landlords, insurers and block managers",
-        "Responsive scheduling across Greater Manchester and the North West",
     ];
 }
 

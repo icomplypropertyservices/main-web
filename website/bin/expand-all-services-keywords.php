@@ -571,11 +571,11 @@ foreach (['landlord-compliance', 'facilities-management', 'building-maintenance'
 }
 
 $openers = [
-    'Looking for expert {kw} across Greater Manchester and the North West?',
-    'Need reliable {kw} from a Stockport-based team with fixed-price quotes?',
-    'Searching for professional {kw} with clear scope and documentation?',
-    'Planning {kw} for a home, rental portfolio or commercial site?',
-    'Want {kw} delivered to current UK standards with local engineers?',
+    '{kw} across Greater Manchester and the North West, from the Stockport team.',
+    '{kw} from a Stockport-based team, with the quote written after scope.',
+    '{kw} with the scope and paperwork agreed before work starts.',
+    '{kw} for homes, rental portfolios and commercial sites.',
+    '{kw} delivered to current UK standards by local engineers.',
 ];
 $middles = [
     'Icomply Property Services {verb} {kw} as part of our {svc} offering, working to {std}.',
@@ -604,11 +604,11 @@ function buildUniqueContent(string $name, string $serviceSlug, array $copy, int 
     $verb = $copy['verb'] ?? 'deliver';
 
     $openers = [
-        "Looking for expert {$name} across Greater Manchester and the North West?",
-        "Need reliable {$name} from a Stockport-based team with fixed-price quotes?",
-        "Searching for professional {$name} with clear scope and documentation?",
-        "Planning {$name} for a home, rental portfolio or commercial site?",
-        "Want {$name} delivered to current UK standards with local engineers?",
+        "{$name} across Greater Manchester and the North West, from the Stockport team.",
+        "{$name} from a Stockport-based team, with the quote written after scope.",
+        "{$name} with the scope and paperwork agreed before work starts.",
+        "{$name} for homes, rental portfolios and commercial sites.",
+        "{$name} delivered to current UK standards by local engineers.",
     ];
     $middles = [
         "Icomply Property Services {$verb} {$name} as part of our {$svc} offering, working to {$std}.",

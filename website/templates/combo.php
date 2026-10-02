@@ -7,10 +7,6 @@
  * MANUFACTURER_TAGS, MANUFACTURER_IMAGES, KEYWORD_IMAGE_1/2/3
  */
 $poaCombo = function_exists('isPoaService') && isPoaService($SERVICE_SLUG);
-$pageTitle = $SERVICE_NAME . ' in ' . $AREA . ' | Icomply Property Services';
-$metaDesc = $poaCombo
-    ? ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Price on application after scope. Local North West team from Stockport.')
-    : ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing & certification. Local engineers. Written quote after scope.');
 $metaKeywords = $SEO_KEYWORDS;
 $ogImage = url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
 
@@ -26,6 +22,29 @@ $blurb = getServiceBlurb($serviceSlug);
 $standards = getServiceStandards($serviceSlug);
 $svcCopy = function_exists('waterAsbestosServiceCopy') ? waterAsbestosServiceCopy($serviceSlug) : null;
 $areaExtra = function_exists('waterAsbestosAreaIntro') ? waterAsbestosAreaIntro($serviceSlug, $areaName) : '';
+$areaProfile = function_exists('area_profile') ? area_profile($areaName) : ['districts' => $areaName, 'focus' => $areaName];
+$uniqueIntro = function_exists('seo_unique_intro')
+    ? seo_unique_intro($serviceName, $serviceSlug, $areaName)
+    : ($serviceName . ' in ' . $areaName . '. ' . $blurb);
+if ($areaExtra !== '') {
+    $uniqueIntro .= ' ' . $areaExtra;
+}
+$localBits = function_exists('seo_unique_local_block') ? seo_unique_local_block($serviceName, $serviceSlug, $areaName) : [];
+$pageTitle = $serviceName . ' in ' . $areaName;
+$metaDesc = function_exists('seo_meta_description')
+    ? seo_meta_description(
+        $serviceName . ' in ' . $areaName . ' (' . ($areaProfile['districts'] ?? $areaName) . '). '
+        . ($poaCombo ? 'Price on application after scope.' : 'Written quote after scope.')
+        . ' ' . ($areaProfile['focus'] ?? '')
+    )
+    : ($serviceName . ' in ' . $areaName . '. Written quote after scope from Stockport SK2.');
+$comboFaqs = [];
+if (function_exists('service_faqs')) {
+    $comboFaqs = service_faqs($serviceSlug, $serviceName, $areaName);
+}
+if (function_exists('seo_extra_faqs')) {
+    $comboFaqs = array_merge($comboFaqs, seo_extra_faqs($serviceSlug, $serviceName, $areaName));
+}
 
 // Nearby towns for “popular nearby” note (same service, other areas)
 $nearby = [];
@@ -93,7 +112,7 @@ $schema = [
                     'latitude' => '53.3904',
                     'longitude' => '-2.1219',
                 ],
-                'priceRange' => '££',
+                'priceRange' => $poaCombo ? 'POA' : 'GBP',
             ],
             'areaServed' => [
                 '@type' => 'City',
@@ -143,7 +162,7 @@ $schema = [
                 '@type' => 'City',
                 'name' => $areaName,
             ],
-            'priceRange' => '££',
+            'priceRange' => $poaCombo ? 'POA' : 'GBP',
             'parentOrganization' => [
                 '@type' => 'LocalBusiness',
                 '@id' => rtrim(SITE_URL, '/') . '/#business',
@@ -152,6 +171,26 @@ $schema = [
         ],
     ],
 ];
+if ($comboFaqs) {
+    $faqEntities = [];
+    foreach ($comboFaqs as $f) {
+        $faqEntities[] = [
+            '@type' => 'Question',
+            'name' => $f['q'],
+            'acceptedAnswer' => ['@type' => 'Answer', 'text' => $f['a']],
+        ];
+    }
+    $schema['@graph'][] = [
+        '@type' => 'FAQPage',
+        '@id' => $canonicalUrl . '#faq',
+        'mainEntity' => $faqEntities,
+    ];
+}
+if (function_exists('howto_schema')) {
+    $how = howto_schema($serviceName, $areaName);
+    unset($how['@context']);
+    $schema['@graph'][] = $how;
+}
 ?>
 <script type="application/ld+json"><?= json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
 
@@ -178,8 +217,7 @@ $schema = [
                     <span class="text-[#ff6b00]"><?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></span>
                 </h1>
                 <p class="mt-6 text-lg text-white/80 max-w-xl">
-                    <?= htmlspecialchars($blurb, ENT_QUOTES, 'UTF-8') ?>
-                    Local engineers covering <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> and nearby postcodes.
+                    <?= htmlspecialchars(($areaProfile['districts'] ?? $areaName) . '. ' . $blurb, ENT_QUOTES, 'UTF-8') ?>
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get free quote</a>
@@ -244,30 +282,24 @@ $schema = [
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">
                 Expert <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>
             </h2>
-            <?php if ($areaExtra !== ''): ?>
-            <p class="mt-5 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars($areaExtra, ENT_QUOTES, 'UTF-8') ?></p>
+            <p id="local-intro" class="mt-5 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars($uniqueIntro, ENT_QUOTES, 'UTF-8') ?></p>
+            <?php if ($localBits): ?>
+            <ul class="mt-4 space-y-2 text-zinc-800">
+                <?php foreach (array_slice($localBits, 0, 4) as $bit): ?>
+                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span><span><?= htmlspecialchars((string)$bit, ENT_QUOTES, 'UTF-8') ?></span></li>
+                <?php endforeach; ?>
+            </ul>
             <?php endif; ?>
             <?php if (!empty($svcCopy['intro']) && is_array($svcCopy['intro'])): ?>
                 <?php foreach (array_slice($svcCopy['intro'], 0, 2) as $para): ?>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars((string)$para, ENT_QUOTES, 'UTF-8') ?></p>
                 <?php endforeach; ?>
             <?php else: ?>
-            <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
-                Icomply Property Services provides complete <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong>
-                design, installation, commissioning, maintenance and certification across
-                <strong><?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></strong> and the wider North West.
-                Our qualified engineers deliver fixed-price quotes, same-week appointments and full compliance documentation on every job.
-            </p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
-                Whether you need a new system, an upgrade, periodic testing or emergency repairs, we support commercial,
-                industrial, residential and landlord properties in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>.
-                All work is carried out to current British Standards with manufacturer-approved equipment where required.
-            </p>
-            <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
-                Searching for a specific manufacturer or panel brand? We install, service and replace major
-                <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> systems including the brands listed below.
-                If you already have a panel on site in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>,
-                we can inspect, maintain or upgrade it and supply matching certificates.
+                Standards for this <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> work: <?= htmlspecialchars($standards, ENT_QUOTES, 'UTF-8') ?>.
+                <?= $poaCombo
+                    ? 'Price on application once access and the existing system are confirmed.'
+                    : 'A written quote follows once access and the existing system are confirmed.' ?>
             </p>
             <?php endif; ?>
         </div>
@@ -321,7 +353,7 @@ $schema = [
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Manufacturers</div>
                 <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Brands we install &amp; service in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></h2>
-                <p class="mt-2 text-zinc-600 max-w-2xl">Looking for your exact panel brand? We support major <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturers so customers searching for their equipment in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> find Icomply.</p>
+                <p class="mt-2 text-zinc-600 max-w-2xl">Panel already on site in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>? We install and service the major <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturers listed below.</p>
             </div>
             <a href="<?= url('/shop/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Browse trade shop →</a>
         </div>
@@ -466,6 +498,20 @@ $schema = [
 <section class="max-w-3xl mx-auto px-6 pt-8">
     <?= shareButtonsHtml($serviceName . ' in ' . $areaName, $metaDesc) ?>
 </section>
+
+<?php if ($comboFaqs): ?>
+<section class="max-w-3xl mx-auto px-6 py-16" id="faqs">
+    <h2 class="text-3xl font-semibold tracking-tight text-black mb-6"><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> questions in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></h2>
+    <div class="space-y-4">
+        <?php foreach ($comboFaqs as $f): ?>
+        <details class="bg-white border rounded-2xl p-5">
+            <summary class="font-semibold cursor-pointer"><?= htmlspecialchars($f['q'], ENT_QUOTES, 'UTF-8') ?></summary>
+            <p class="mt-3 text-sm text-zinc-600 leading-relaxed"><?= htmlspecialchars($f['a'], ENT_QUOTES, 'UTF-8') ?></p>
+        </details>
+        <?php endforeach; ?>
+    </div>
+</section>
+<?php endif; ?>
 
 <!-- QUOTE -->
 <section id="quote" class="bg-zinc-50 border-t">

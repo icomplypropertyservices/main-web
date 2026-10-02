@@ -75,11 +75,11 @@ $serviceCopy = [
 ];
 
 $openers = [
-    'Looking for expert {kw} support across the North West?',
-    'Need reliable {kw} from a local Stockport-based team?',
-    'Searching for professional {kw} with clear fixed-price quotes?',
-    'Want {kw} handled by engineers who work to current UK standards?',
-    'Planning {kw} for a landlord, commercial or multi-site property?',
+    '{kw} support across the North West, booked from Stockport SK2.',
+    '{kw} from the Stockport team, with the scope written down before a quote.',
+    '{kw} with a written quote after survey, not a catalogue fee.',
+    '{kw} carried out to current UK standards by local engineers.',
+    '{kw} for landlords, commercial sites and multi-site portfolios.',
 ];
 
 $middles = [

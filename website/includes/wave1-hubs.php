@@ -358,7 +358,7 @@ function wave1QualityHubs(): array
         ],
         'emergency-lighting-compliance' => [
             'navLabel' => 'Emergency lighting',
-            'pageTitle' => 'Emergency Lighting Compliance | Testing & Upgrades',
+            'pageTitle' => 'Emergency Lighting | Testing & Upgrades',
             'metaDesc' => 'Emergency lighting testing and upgrades for HMOs, blocks and workplaces in the North West. Monthly function and annual duration tests, logbooks, quote after a walk of the escape.',
             'metaKeywords' => 'emergency lighting testing, BS 5266, emergency lighting service North West, annual duration test',
             'ogImage' => '/assets/images/services/emergency-lighting.jpg',
@@ -396,7 +396,7 @@ function wave1QualityHubs(): array
         ],
         'stockport-property-compliance' => [
             'navLabel' => 'Stockport',
-            'pageTitle' => 'Property Compliance Stockport SK2 | Local Contractor',
+            'pageTitle' => 'Stockport Compliance | SK2 Contractor',
             'metaDesc' => 'Property compliance in Stockport from Offerton SK2 — EICR, gas safety, FRA, fire systems and landlord files. Local yard, scoped quotes, no thin doorway clones.',
             'metaKeywords' => 'property compliance Stockport, EICR Stockport, landlord certificates Offerton SK2, FRA Stockport',
             'ogImage' => '/assets/images/services/building-maintenance.jpg',
@@ -472,7 +472,7 @@ function wave1QualityHubs(): array
         ],
         'legionella-landlords' => [
             'navLabel' => 'Legionella for landlords',
-            'pageTitle' => 'Legionella Risk Assessment for Landlords | North West',
+            'pageTitle' => 'Landlord Legionella Assessment | North West',
             'metaDesc' => 'Landlord Legionella risk assessment from Stockport SK2. HSE L8 / HSG274 language. Sampling only when justified. Price on application — no invented fees or lab badges.',
             'metaKeywords' => 'landlord legionella risk assessment, legionella testing landlords, water hygiene North West, Stockport legionella, Manchester legionella',
             'ogImage' => '/assets/images/services/plumbing.jpg',

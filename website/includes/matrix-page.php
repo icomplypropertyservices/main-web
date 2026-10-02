@@ -202,6 +202,26 @@ function icomplyMatrixKeywordChips(string $serviceSlug): string
     return $html;
 }
 
+function icomplyMatrixLd(string $name, string $desc, string $canonical, string $areaName): string
+{
+    $s = icomplyMatrixShared();
+    $json = json_encode([
+        '@context' => 'https://schema.org',
+        '@type' => 'Service',
+        'name' => $name,
+        'description' => $desc,
+        'url' => $canonical,
+        'areaServed' => ['@type' => 'City', 'name' => $areaName],
+        'provider' => [
+            '@type' => 'LocalBusiness',
+            'name' => $s['brand'],
+            'telephone' => $s['phone'],
+            'url' => $s['home'],
+        ],
+    ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+    return is_string($json) ? $json : '{}';
+}
+
 function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): string
 {
     $s = icomplyMatrixShared();
@@ -220,32 +240,48 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         ? 'Price on application after we confirm property type, access and scope. No catalogue fee.'
         : 'Written quote after we confirm scope. We do not invent a price on this page.';
 
-    $intro = function_exists('seo_unique_intro')
-        ? seo_unique_intro($svcName, $svcSlug, $areaName)
-        : $kwName . ' in ' . $areaName . ' from iComply Property Services.';
+    $focus0 = '';
+    $points = $meta['focus_points'] ?? [];
+    if (is_array($points) && isset($points[0])) {
+        $focus0 = (string)$points[0];
+    }
+    $intro = function_exists('seo_keyword_town_lead')
+        ? seo_keyword_town_lead($kwName, $keywordSlug, $svcName, $svcSlug, $areaName, $focus0)
+        : ($kwName . ' in ' . $areaName . ' from iComply Property Services.');
     if (function_exists('waterAsbestosAreaIntro')) {
         $extra = waterAsbestosAreaIntro($svcSlug, $areaName);
         if ($extra !== '') {
             $intro .= ' ' . $extra;
         }
     }
-    $body = (string)($meta['body'] ?? '');
+    $body = function_exists('seo_clean_copy') ? seo_clean_copy((string)($meta['body'] ?? '')) : (string)($meta['body'] ?? '');
+    if (mb_strlen($body) > 420) {
+        $body = rtrim(mb_substr($body, 0, 400));
+        $sp = mb_strrpos($body, ' ');
+        if ($sp !== false && $sp > 220) {
+            $body = rtrim(mb_substr($body, 0, $sp), ' ,;') . '.';
+        }
+    }
     $bullets = function_exists('seo_unique_local_block')
         ? seo_unique_local_block($svcName, $svcSlug, $areaName)
         : [];
 
-    $title = $kwName . ' in ' . $areaName . ' | ' . $s['brand'];
-    $desc = $kwName . ' in ' . $areaName . '. ' . $priceLine;
-    if (strlen($desc) > 160) {
-        $desc = substr($desc, 0, 157) . '…';
-    }
+    $profile = function_exists('area_profile') ? area_profile($areaName) : ['districts' => $areaName];
+    $title = function_exists('seo_title')
+        ? seo_title($kwName . ' in ' . $areaName)
+        : ($kwName . ' in ' . $areaName);
+    $desc = function_exists('seo_meta_description')
+        ? seo_meta_description($kwName . ' in ' . $areaName . ' (' . ($profile['districts'] ?? $areaName) . '). ' . $priceLine)
+        : ($kwName . ' in ' . $areaName . '. ' . $priceLine);
     $canonical = url('/pages/keywords/' . $keywordSlug . '/' . $areaSlugVal);
+    $img = url('/assets/images/services/' . $svcSlug . '.jpg');
 
     $html = icomplyMatrixChromeStart($title, $desc, $canonical);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
         . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($svcName) . ' · ' . icomplyMatrixH($areaName) . '</p>'
         . '<h1>' . icomplyMatrixH($kwName) . ' <span class="accent">in ' . icomplyMatrixH($areaName) . '</span></h1>'
-        . '<p class="mt-4 text-white/80 max-w-2xl">' . icomplyMatrixH($intro) . '</p>'
+        . '<p id="local-intro" class="local-intro mt-4 text-white/80 max-w-2xl">' . icomplyMatrixH($intro) . '</p>'
+        . '<img src="' . icomplyMatrixH($img) . '" alt="' . icomplyMatrixH($kwName . ' in ' . $areaName) . '" width="1200" height="630">'
         . '<div class="mt-6 flex flex-wrap gap-3">'
         . '<a class="matrix-cta matrix-cta-accent" href="' . icomplyMatrixH($s['contact']) . '">Request a quote</a>'
         . '<a class="matrix-cta matrix-cta-light" href="' . icomplyMatrixH($s['phoneHref']) . '">' . icomplyMatrixH($s['phone']) . '</a>'
@@ -282,6 +318,7 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         . icomplyMatrixKeywordChips($svcSlug)
         . '</section></main>';
 
+    $html .= '<script type="application/ld+json">' . icomplyMatrixLd($kwName . ' in ' . $areaName, $desc, $canonical, $areaName) . '</script>';
     $html .= icomplyMatrixChromeEnd();
     return $html;
 }
@@ -310,15 +347,20 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     }
     $blurb = getServiceBlurb($serviceSlug);
     $standards = getServiceStandards($serviceSlug);
-    $title = $svcName . ' in ' . $areaName . ' | ' . $s['brand'];
-    $desc = $svcName . ' in ' . $areaName . '. ' . $priceLine;
+    $profile = function_exists('area_profile') ? area_profile($areaName) : ['districts' => $areaName];
+    $title = function_exists('seo_title') ? seo_title($svcName . ' in ' . $areaName) : ($svcName . ' in ' . $areaName);
+    $desc = function_exists('seo_meta_description')
+        ? seo_meta_description($svcName . ' in ' . $areaName . ' (' . ($profile['districts'] ?? $areaName) . '). ' . $priceLine)
+        : ($svcName . ' in ' . $areaName . '. ' . $priceLine);
     $canonical = url('/pages/' . $serviceSlug . '/' . $areaSlugVal);
+    $img = url('/assets/images/services/' . $serviceSlug . '.jpg');
 
     $html = icomplyMatrixChromeStart($title, $desc, $canonical);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
         . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($areaName) . ' · North West</p>'
         . '<h1>' . icomplyMatrixH($svcName) . ' <span class="accent">in ' . icomplyMatrixH($areaName) . '</span></h1>'
-        . '<p class="mt-4 text-white/80 max-w-2xl">' . icomplyMatrixH($intro) . '</p>'
+        . '<p id="local-intro" class="local-intro mt-4 text-white/80 max-w-2xl">' . icomplyMatrixH($intro) . '</p>'
+        . '<img src="' . icomplyMatrixH($img) . '" alt="' . icomplyMatrixH($svcName . ' in ' . $areaName) . '" width="1200" height="630">'
         . '<div class="mt-6 flex flex-wrap gap-3">'
         . '<a class="matrix-cta matrix-cta-accent" href="' . icomplyMatrixH($s['contact']) . '">Request a quote</a>'
         . '<a class="matrix-cta matrix-cta-light" href="' . icomplyMatrixH($s['phoneHref']) . '">' . icomplyMatrixH($s['phone']) . '</a>'
@@ -345,6 +387,7 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         . icomplyMatrixKeywordChips($serviceSlug)
         . '</section></main>';
 
+    $html .= '<script type="application/ld+json">' . icomplyMatrixLd($svcName . ' in ' . $areaName, $desc, $canonical, $areaName) . '</script>';
     $html .= icomplyMatrixChromeEnd();
     return $html;
 }

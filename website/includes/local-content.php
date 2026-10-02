@@ -241,6 +241,31 @@ function seo_unique_why(string $serviceName, string $area): array {
     return array_values(array_unique($out));
 }
 
+/**
+ * Keyword × town lead. Unique per (keyword, town): postcode profile + that keyword's focus.
+ * Not a synonym spin of the same sentence.
+ */
+function seo_keyword_town_lead(
+    string $kwName,
+    string $kwSlug,
+    string $serviceName,
+    string $serviceSlug,
+    string $area,
+    string $focus = ''
+): string {
+    $p = area_profile($area);
+    $angle = service_local_angle($serviceSlug, $serviceName, $area);
+    $focus = trim($focus);
+    $focusBit = $focus !== '' ? ' Job focus: ' . rtrim($focus, '.') . '.' : '';
+    $poa = (function_exists('isPoaService') && isPoaService($serviceSlug))
+        || (function_exists('isCostStyleKeyword') && isCostStyleKeyword($kwSlug, $kwName));
+    $price = $poa
+        ? 'Price on application after scope — no catalogue fee on this page.'
+        : 'Written quote after the ' . $area . ' scope is confirmed.';
+    return $kwName . ' in ' . $area . ' (' . $p['districts'] . ') is booked from Stockport SK2 for '
+        . $p['stock'] . '. Travel is ' . $p['travel'] . '. ' . $angle . $focusBit . ' ' . $price;
+}
+
 function seo_extra_faqs(string $slug, string $serviceName, string $area): array {
     $p = area_profile($area);
     $seed = area_seed($area, $slug . 'faq');

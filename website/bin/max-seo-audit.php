@@ -53,13 +53,21 @@ foreach ($samples as $path) {
     }
 }
 
-// Uniqueness smoke: two cities should not share identical intro hash for same service
+// Uniqueness smoke: two cities must not share a town-name-swap of #local-intro
 $a = fetch($base . '/pages/electrical/manchester.php');
 $b = fetch($base . '/pages/electrical/blackpool.php');
-preg_match('/specialists covering[^<]+<\/h2>\s*<p[^>]*>([^<]{80,})/i', $a, $ma);
-preg_match('/specialists covering[^<]+<\/h2>\s*<p[^>]*>([^<]{80,})/i', $b, $mb);
-if (!empty($ma[1]) && !empty($mb[1]) && $ma[1] === $mb[1]) {
-    echo "FAIL uniqueness electrical manchester vs blackpool intros identical\n";
+$grab = static function (string $html): string {
+    if (!preg_match('/id="local-intro"[^>]*>(.*?)<\/p>/is', $html, $m)) {
+        return '';
+    }
+    $text = html_entity_decode(strip_tags($m[1]), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    $text = trim(preg_replace('/\s+/u', ' ', $text) ?? $text);
+    return str_ireplace(['Manchester', 'Blackpool'], '{AREA}', $text);
+};
+$ia = $grab($a);
+$ib = $grab($b);
+if ($ia === '' || $ib === '' || $ia === $ib) {
+    echo "FAIL uniqueness electrical manchester vs blackpool intros\n";
     $fail++;
 } else {
     echo "OK   uniqueness electrical intros differ\n";

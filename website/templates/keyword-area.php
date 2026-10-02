@@ -6,7 +6,9 @@
  * KEYWORD_IMAGE, SERVICE_IMAGE, SEO_KEYWORDS
  */
 $pageTitle = $KEYWORD_NAME . ' in ' . $AREA;
-$metaDesc = $KEYWORD_NAME . ' in ' . $AREA . '. ' . $KEYWORD_META;
+$metaDesc = $KEYWORD_META;
+$keywordPoa = (($KEYWORD_POA ?? '0') === '1');
+$keywordLead = trim((string)($KEYWORD_LOCAL_LEAD ?? ''));
 $metaKeywords = $KEYWORD_NAME . ' ' . $AREA . ', ' . $SERVICE_NAME . ' ' . $AREA . ', ' . $SEO_KEYWORDS;
 $ogImage = $KEYWORD_IMAGE;
 $canonicalUrl = url('/pages/keywords/' . $KEYWORD_SLUG . '/' . $AREA_SLUG . '.php');
@@ -63,9 +65,8 @@ $h = static function ($s): string {
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-[1.08] drop-shadow-lg">
             <?= $h($KEYWORD_NAME) ?><br><span class="text-[#ff6b00]">in <?= $h($AREA) ?></span>
         </h1>
-        <p class="mt-5 text-lg text-white font-medium max-w-2xl leading-relaxed drop-shadow">
-            Local engineers for <strong><?= $h($KEYWORD_NAME) ?></strong> in <strong><?= $h($AREA) ?></strong> and nearby postcodes.
-            Fixed-price quotes · Stockport-based team covering the North West.
+        <p id="local-intro" class="mt-5 text-lg text-white font-medium max-w-2xl leading-relaxed drop-shadow">
+            <?= $h($keywordLead !== '' ? $keywordLead : ($KEYWORD_NAME . ' in ' . $AREA . ' from the Stockport SK2 team.')) ?>
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
             <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-bold text-white shadow-lg">Get free quote</a>
@@ -82,15 +83,34 @@ $h = static function ($s): string {
             <div class="bg-white border-2 border-zinc-300 rounded-3xl p-6 md:p-8 shadow-sm">
                 <h2 class="text-2xl font-bold text-[#061828]"><?= $h($KEYWORD_NAME) ?> for properties in <?= $h($AREA) ?></h2>
                 <p class="mt-4 text-lg text-zinc-900 leading-relaxed font-medium"><?= $h($KEYWORD_INTRO) ?></p>
-                <p class="mt-4 text-lg text-zinc-900 leading-relaxed">
-                    Serving <strong class="text-[#061828]"><?= $h($AREA) ?></strong>: <?= $h($KEYWORD_BODY) ?>
-                </p>
+                <?php
+                $bodyExcerpt = (string)$KEYWORD_BODY;
+                if (function_exists('mb_strlen') && mb_strlen($bodyExcerpt) > 420) {
+                    $bodyExcerpt = rtrim(mb_substr($bodyExcerpt, 0, 400));
+                    $sp = mb_strrpos($bodyExcerpt, ' ');
+                    if ($sp !== false && $sp > 220) {
+                        $bodyExcerpt = rtrim(mb_substr($bodyExcerpt, 0, $sp), ' ,;') . '.';
+                    }
+                }
+                $townBits = function_exists('seo_unique_local_block')
+                    ? array_slice(seo_unique_local_block($serviceName, $serviceSlug, $areaName), 0, 3)
+                    : [];
+                ?>
+                <p class="mt-4 text-lg text-zinc-900 leading-relaxed"><?= $h($bodyExcerpt) ?></p>
+                <?php if ($townBits): ?>
+                <ul class="mt-4 space-y-2 text-zinc-900">
+                    <?php foreach ($townBits as $bit): ?>
+                    <li><?= $h($bit) ?></li>
+                    <?php endforeach; ?>
+                </ul>
+                <?php endif; ?>
                 <p class="mt-4 text-base text-zinc-900 leading-relaxed">
-                    Searching for <strong><?= $h($KEYWORD_NAME) ?> near <?= $h($AREA) ?></strong>? Book Icomply for install, service, testing or certification.
-                    Also see
+                    <?= $keywordPoa ? 'Price on application after scope.' : 'Written quote after scope.' ?>
+                    Related:
                     <a class="font-bold text-[#ff6b00] hover:underline" href="<?= url('/pages/keywords/' . rawurlencode($RELATED_SLUG) . '/' . rawurlencode($AREA_SLUG) . '.php') ?>"><?= $h($RELATED_NAME) ?> in <?= $h($AREA) ?></a>
                     and
                     <a class="font-bold text-[#ff6b00] hover:underline" href="<?= url('/pages/' . rawurlencode($SERVICE_SLUG) . '/' . rawurlencode($AREA_SLUG) . '.php') ?>"><?= $h($SERVICE_NAME) ?> in <?= $h($AREA) ?></a>.
+                    <a class="font-bold text-[#ff6b00] hover:underline" href="<?= url('/pages/keywords/' . rawurlencode($KEYWORD_SLUG) . '.php') ?>">Full <?= $h($KEYWORD_NAME) ?> guide</a>.
                 </p>
                 <ul class="mt-6 space-y-3"><?= $KEYWORD_FOCUS_HTML ?></ul>
             </div>

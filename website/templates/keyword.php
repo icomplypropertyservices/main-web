@@ -16,6 +16,8 @@ $keywordName = $KEYWORD_NAME;
 $keywordSlug = $KEYWORD_SLUG;
 $serviceName = $SERVICE_NAME;
 $serviceSlug = $SERVICE_SLUG;
+$keywordPoa = (function_exists('isPoaService') && isPoaService($serviceSlug))
+    || (function_exists('isCostStyleKeyword') && isCostStyleKeyword($keywordSlug, $keywordName));
 $relatedSlug = $RELATED_SLUG;
 $relatedName = $RELATED_NAME;
 $allAreas = getAreas();
@@ -97,8 +99,10 @@ require SITE_ROOT . '/includes/header.php';
         $trust = [
             ['Local engineers', 'Stockport base — 150+ North West towns'],
             ['Standards-led', 'British Standards & manufacturer guidance'],
-            ['Fixed quotes', 'Clear scope before work starts'],
-            ['Full paperwork', 'Certificates & logbooks for compliance'],
+            $keywordPoa
+                ? ['POA quotes', 'Price on application after scope. No catalogue fee.']
+                : ['Written quotes', 'Scope confirmed before a figure is issued'],
+            ['Full paperwork', 'Certificates and logbooks for the file'],
         ];
         foreach ($trust as [$t, $d]): ?>
         <div class="flex gap-3">
