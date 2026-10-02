@@ -36,9 +36,9 @@ if (PHP_SAPI !== 'cli') {
     exit(1);
 }
 
-$options = getopt('', ['full', 'out::', 'help', 'keyword-towns::']);
+$options = getopt('', ['full', 'out::', 'help', 'keyword-towns::', 'print-redirects']);
 if (isset($options['help'])) {
-    echo "Usage: php website/bin/static-export.php [--full] [--keyword-towns=priority|popular|all|none] [--out=dist]\n";
+    echo "Usage: php website/bin/static-export.php [--full] [--keyword-towns=priority|popular|all|none] [--out=dist] [--print-redirects]\n";
     exit(0);
 }
 
@@ -89,23 +89,88 @@ if (empty($_SESSION['csrf'])) {
     $_SESSION['csrf'] = bin2hex(random_bytes(16));
 }
 
+if (isset($options['print-redirects'])) {
+    $txt = icomplyPrettyUrlRedirects();
+    $needles = [
+        '/pages/keywords/:slug/:town',
+        '/pages/electrical/:town',
+        '/pages/fire-alarms/:town',
+        '/pages/gas-systems/:town',
+        '/pages/nurse-call/:town',
+        '/pages/emergency-lighting/:town',
+        '/products/aov-air-handling-package',
+        '/products/intruder-alarm-package',
+        '/manifest.webmanifest',
+        '/manifest.json',
+        '/group',
+        '/pages/products',
+        '/shop/fire/index.html',
+    ];
+    foreach ($needles as $n) {
+        if (!str_contains($txt, $n)) {
+            fwrite(STDERR, "redirects missing {$n}\n");
+            exit(1);
+        }
+    }
+    if (preg_match('#^/shop\\s+/pages/packages#m', $txt) || preg_match('#^/products\\s+/pages/packages#m', $txt)) {
+        fwrite(STDERR, "redirects still send /shop or /products to /pages/packages\n");
+        exit(1);
+    }
+    // AOV / Barriers town exports are .php siblings. A 301 (even without !)
+    // matches before the splat and would hide /pages/aov/{town}.php.
+    $protected = [
+        '/pages/aov/:town',
+        '/pages/aov/:town/',
+        '/pages/barriers/:town',
+        '/pages/barriers/:town/',
+        '/pages/aov-air-handling/:town',
+        '/pages/aov-air-handling/:town/',
+        '/pages/services/aov/:town',
+        '/pages/services/aov/:town/',
+        '/pages/services/aov-air-handling/:town',
+        '/pages/services/aov-air-handling/:town/',
+        '/pages/services/barriers/:town',
+        '/pages/services/barriers/:town/',
+    ];
+    $seen = [];
+    foreach (preg_split("/\\r?\\n/", $txt) as $line) {
+        if ($line === '' || str_starts_with($line, '#')) {
+            continue;
+        }
+        $parts = preg_split('/\\s+/', trim($line));
+        if (count($parts) < 3) {
+            continue;
+        }
+        [$from, $to, $status] = [$parts[0], $parts[1], $parts[2]];
+        if (!in_array($from, $protected, true)) {
+            continue;
+        }
+        $seen[$from] = true;
+        if ($status !== '200' || !str_ends_with($to, '.php')) {
+            fwrite(STDERR, "AOV/Barriers town rule must be an unforced 200 to the exported .php file: {$line}\n");
+            exit(1);
+        }
+    }
+    foreach ($protected as $from) {
+        if (!isset($seen[$from])) {
+            fwrite(STDERR, "missing unforced 200 for {$from}\n");
+            exit(1);
+        }
+    }
+    echo $txt;
+    exit(0);
+}
+
 $log = static function (string $msg): void {
     fwrite(STDERR, $msg);
 };
 
-$log("iComply static export (Netlify pre-render)\n");
+$log("Icomply static export (Netlify pre-render)\n");
 $log("SITE_URL=" . SITE_URL . "\n");
 $log("dist={$dist}\n");
 $log($full ? "mode=full (core + hubs + keywords + service×area)\n" : "mode=default (core + hubs + keywords)\n");
 $log("keyword-towns={$keywordTowns}\n");
 $log(str_repeat('=', 56) . "\n");
-
-if (getenv('ICOMPLY_REDIRECTS_ONLY') === '1') {
-    file_put_contents($dist . '/_redirects', icomplyPrettyUrlRedirects());
-    icomplyInstallLegacyRedirectsIntoRepo($repoRoot);
-    fwrite(STDERR, "redirects-only OK\n");
-    exit(0);
-}
 
 icomplyResetDist($dist);
 // Copy CSS/JS/favicons first so a long export still has /assets even if interrupted.
@@ -177,14 +242,10 @@ if (!icomplyLooksLikeHtml($notFoundHtml)) {
     $notFoundHtml = "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>Not found</title></head><body><h1>Not found</h1></body></html>\n";
 }
 file_put_contents($dist . '/404.html', $notFoundHtml);
-file_put_contents($dist . '/404.php', $notFoundHtml);
 
 icomplyCopyStaticAssets($websiteRoot, $repoRoot, $dist);
 icomplyWriteDistRedirects($dist);
 icomplyWriteDistHeaders($dist);
-require_once $websiteRoot . '/includes/sitemap.php';
-$sitemapResult = icomplyWriteSitemapForDist($dist, SITE_URL);
-$log("sitemap published urls={$sitemapResult['urls']} (hubs + service×town + keyword×town)\n");
 
 $log(str_repeat('=', 56) . "\n");
 $log("OK={$ok} SKIP={$skip} FAIL={$fail} routes=" . count($routes) . "\n");
@@ -352,27 +413,7 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         $routes[] = $path;
     }
 
-    // On-site trade PDPs linked from the catalogue (handles that exist in data).
-    if (!function_exists('getShopCatalog')) {
-        $shopify = SITE_ROOT . '/includes/shopify.php';
-        if (is_file($shopify)) {
-            require_once $shopify;
-        }
-    }
-    if (function_exists('getShopCatalog')) {
-        foreach (getShopCatalog()['products'] ?? [] as $product) {
-            if (!is_array($product)) {
-                continue;
-            }
-            $handle = strtolower(trim((string)($product['handle'] ?? '')));
-            if ($handle !== '' && preg_match('/^[a-z0-9\-]+$/', $handle)) {
-                $routes[] = '/products/product/' . $handle;
-            }
-        }
-    }
-
-    // Every North West town × service the catalogue supports. These are real
-    // pages (200), not thin URLs to prune.
+    // Jack: every service has every area landing (not only --full).
     foreach (array_keys(getServices()) as $sSlug) {
         foreach (getAreas() as $area) {
             $routes[] = '/pages/' . $sSlug . '/' . areaSlug((string)$area);
@@ -393,9 +434,6 @@ function icomplyRenderExportRoute(string $path): array
         $area = function_exists('areaFromSlug') ? areaFromSlug($m[2]) : $m[2];
         $html = icomplyRenderKeywordTownHtml($m[1], (string)($area ?: $m[2]));
         if ($html !== '' && icomplyLooksLikeHtml($html)) {
-            if (function_exists('icomplyApplyGasLegalHtml')) {
-                $html = icomplyApplyGasLegalHtml($html);
-            }
             return ['html' => $html, 'status' => 200];
         }
     }
@@ -405,9 +443,6 @@ function icomplyRenderExportRoute(string $path): array
         $area = function_exists('areaFromSlug') ? areaFromSlug($m[2]) : $m[2];
         $html = icomplyRenderServiceAreaHtml($m[1], (string)($area ?: $m[2]));
         if ($html !== '' && icomplyLooksLikeHtml($html)) {
-            if (function_exists('icomplyApplyGasLegalHtml')) {
-                $html = icomplyApplyGasLegalHtml($html);
-            }
             return ['html' => $html, 'status' => 200];
         }
     }
@@ -439,10 +474,6 @@ function icomplyRenderRoute(string $path): array
         ob_end_clean();
         fwrite(STDERR, "Render error {$path}: " . $e->getMessage() . "\n");
         return ['html' => '', 'status' => 500];
-    }
-
-    if ($html !== '' && function_exists('icomplyApplyGasLegalHtml')) {
-        $html = icomplyApplyGasLegalHtml($html);
     }
 
     $status = (int)http_response_code();
@@ -531,7 +562,6 @@ function icomplyCopyStaticAssets(string $websiteRoot, string $repoRoot, string $
         'site.webmanifest',
         'favicon.ico',
         'lead-popup-form.html',
-        'quote-form.html',
     ];
     foreach ($copyFiles as $name) {
         $src = $websiteRoot . '/' . $name;
@@ -580,26 +610,13 @@ function icomplyCopyDir(string $src, string $dest): void
         if (!is_dir($targetDir) && !mkdir($targetDir, 0755, true) && !is_dir($targetDir)) {
             throw new RuntimeException('Cannot mkdir ' . $targetDir);
         }
-        if (
-            str_contains($target, '/shop/')
-            && preg_match('/\.(html|php)$/i', $target)
-            && function_exists('icomplyApplyGasLegalHtml')
-        ) {
-            $raw = (string)file_get_contents($file->getPathname());
-            file_put_contents($target, icomplyApplyGasLegalHtml($raw));
-        } else {
-            copy($file->getPathname(), $target);
-        }
+        copy($file->getPathname(), $target);
     }
 }
 
 function icomplyWriteDistRedirects(string $dist): void
 {
     file_put_contents($dist . '/_redirects', icomplyPrettyUrlRedirects());
-    $repoRoot = dirname(SITE_ROOT);
-    if (is_file($repoRoot . '/netlify.toml')) {
-        icomplyInstallLegacyRedirectsIntoRepo($repoRoot);
-    }
 }
 
 function icomplyWriteDistHeaders(string $dist): void
@@ -609,7 +626,7 @@ function icomplyWriteDistHeaders(string $dist): void
 
 function icomplyPrettyUrlRedirects(): string
 {
-    $head = <<<'TXT'
+    $base = <<<'TXT'
 # Generated by website/bin/static-export.php — do not publish raw website/.
 # Existing files win (no force) so /assets/* is never rewritten.
 
@@ -653,6 +670,30 @@ function icomplyPrettyUrlRedirects(): string
 /news                    /pages/resources 301
 /news/                   /pages/resources 301
 
+# Retired group host paths
+/group                   /            301
+/group/                  /            301
+/group/*                 /            301
+
+# Dead Shopify package handles → the live service hub (before /products rules)
+/products/aov-air-handling-package       /pages/services/aov-air-handling     301
+/products/electrical-compliance-package  /pages/services/electrical           301
+/products/emergency-lighting-package     /pages/services/emergency-lighting   301
+/products/fire-alarm-service-package     /pages/services/fire-alarms          301
+/products/nurse-call-systems-package     /pages/services/nurse-call           301
+/products/gas-safety-package             /pages/services/gas-systems          301
+/products/intruder-alarm-package         /pages/services/intruder-alarm       301
+/products/cctv-systems-package           /pages/services/cctv                 301
+/products/access-control-package         /pages/services/access-control       301
+/products/door-entry-package             /pages/services/door-entry           301
+/products/intercoms-package              /pages/services/intercoms            301
+
+# Catalogue PDPs (before the products hub rewrite)
+/products/product/*      /products/product.php?handle=:splat   200
+/shop/products/*         /shop/products.php?handle=:splat      200
+/products/sitemap.xml    /products/sitemap.php                 200
+/shop/sitemap.xml        /shop/sitemap.php                     200
+
 # Shop / products — trade hubs (never 301 to packages)
 /shop                    /shop/index.html              200!
 /shop/                   /shop/index.html              200!
@@ -666,24 +707,21 @@ function icomplyPrettyUrlRedirects(): string
 /shop/gas/               /shop/gas/index.html          200!
 /products                /products.php                 200!
 /products/               /products.php                 200!
+/pages/products          /products                     301
+/pages/products/         /products                     301
 
-# PWA manifest aliases (Ellie live 404 on /manifest.webmanifest)
-/manifest.webmanifest    /manifest.webmanifest    200!
-/site.webmanifest        /site.webmanifest        200!
-/manifest.json           /manifest.json           200!
+# PWA manifests. Non-force: a real file wins. Missing .webmanifest
+# (live 404) falls through to manifest.json, which is published.
+/manifest.webmanifest    /manifest.json               200
+/site.webmanifest        /manifest.json               200
+/manifest.json           /manifest.json               200!
 
 # Brand CSS must never be splat-rewritten to .php
 /assets/css/site.css     /assets/css/site.css     200!
 /assets/css/*            /assets/css/:splat       200
 
-# Old multi-part index and nested shop/products sitemaps (those 404).
-# Force so a file-crawl plugin cannot keep serving sitemap-N.xml.
-/sitemap-*.xml           /sitemap.xml    301!
-/sitemaps/*              /sitemap.xml    301!
-/products/sitemap.xml    /sitemap.xml    301!
-/products/sitemap        /sitemap.xml    301!
-/shop/sitemap.xml        /sitemap.xml    301!
-/shop/sitemap            /sitemap.xml    301!
+# Old 470-part sitemap index → single compact urlset
+/sitemap-*.xml           /sitemap.xml    301
 
 # Missing *-photo.jpg → working twin (static assets bypass PHP)
 /assets/images/services/*-photo.jpg    /assets/images/services/:splat.jpg    200
@@ -713,102 +751,80 @@ function icomplyPrettyUrlRedirects(): string
 /pages/keywords          /pages/keywords.php          200!
 /pages/keywords/         /pages/keywords.php          200!
 
-# Old accreditation and timing URLs. Pages are not published.
-/pages/manufacturers/napit-approved-equipment     /pages/services/electrical  301!
-/pages/manufacturers/napit-approved-equipment/    /pages/services/electrical  301!
-/pages/keywords/certified-electrician             /pages/services/electrical  301!
-/pages/keywords/certified-electrician/            /pages/services/electrical  301!
-/pages/keywords/certified-electrician/*           /pages/services/electrical  301!
-/pages/keywords/gas-safe-engineer                 /pages/services/gas-systems  301!
-/pages/keywords/gas-safe-engineer/                /pages/services/gas-systems  301!
-/pages/keywords/gas-safe-engineer/*               /pages/services/gas-systems  301!
-
+__MATRIX_REDIRECTS__
 # Keyword hubs have child town files (pages/keywords/{slug}/*.php).
 # force so /pages/keywords/eicr does not 301 to /pages/keywords/eicr/.
 /pages/keywords/:slug    /pages/keywords/:slug.php    200!
 /pages/keywords/:slug/   /pages/keywords/:slug.php    200!
 
-TXT;
-    return $head . icomplyLegacyMatrixRedirectBlock() . <<<'TXT'
-
 # Splat pretty URLs. No force — /assets and real files win.
 /*                       /:splat.php                  200
 TXT;
+    $txt = str_replace("__MATRIX_REDIRECTS__\n", icomplyUnpublishedMatrixRedirects(), $base);
+    return rtrim($txt, "\r\n") . "\n";
 }
 
 /**
- * Service×town and keyword×town pages are real 200s. Do not 301 them.
- * Unknown slugs still 404; nothing soft-404s to the homepage.
+ * True for AOV and Barriers town exports. Those pages are real files
+ * (towns with population over 10k), stored as /pages/.../{town}.php.
+ * They must never be 301'd. A non-force 301 still wins over a .php sibling
+ * because Netlify only skips an unforced rule when a file exists at the
+ * request path itself.
  */
-function icomplyLegacyMatrixRedirectBlock(): string
+function icomplyTownExportMustNotRedirect(string $slug): bool
 {
-    return "# BEGIN legacy-matrix-redirects\n"
-        . "# keyword_rules=0 service_rules=0\n"
-        . "# Real matrix pages are 200. No town-pattern 301s.\n"
-        . "# END legacy-matrix-redirects\n";
+    return $slug === 'aov'
+        || $slug === 'barriers'
+        || str_starts_with($slug, 'aov-')
+        || str_starts_with($slug, 'barriers');
 }
 
-function icomplyLegacyMatrixNetlifyToml(): string
+/**
+ * Keyword×town and service×town URLs are linked from hubs but are not in the
+ * published file set (live 404). Send them to the hub that does exist.
+ * AOV and Barriers town paths are excluded and rewritten 200 to their .php file.
+ */
+function icomplyUnpublishedMatrixRedirects(): string
 {
-    $block = icomplyLegacyMatrixRedirectBlock();
-    $out = ["# BEGIN legacy-matrix-redirects"];
-    foreach (preg_split("/\r\n|\n|\r/", $block) ?: [] as $line) {
-        $line = trim($line);
-        if ($line === '' || str_starts_with($line, '#')) {
+    $lines = [
+        '# AOV and Barriers × town (pop > 10k) are real exports. Never 301 them.',
+        '# 200 with no ! serves /pages/aov/{town}.php, /pages/barriers/{town}.php,',
+        '# /pages/services/aov/{town}.php and /pages/services/aov-air-handling/{town}.php.',
+        '# An exported file at the request path still wins. A 301 is not used.',
+        '/pages/aov/:town                              /pages/aov/:town.php                              200',
+        '/pages/aov/:town/                             /pages/aov/:town.php                              200',
+        '/pages/barriers/:town                         /pages/barriers/:town.php                         200',
+        '/pages/barriers/:town/                        /pages/barriers/:town.php                         200',
+        '/pages/aov-air-handling/:town                 /pages/aov-air-handling/:town.php                 200',
+        '/pages/aov-air-handling/:town/                /pages/aov-air-handling/:town.php                 200',
+        '/pages/services/aov/:town                     /pages/services/aov/:town.php                     200',
+        '/pages/services/aov/:town/                    /pages/services/aov/:town.php                     200',
+        '/pages/services/aov-air-handling/:town        /pages/services/aov-air-handling/:town.php        200',
+        '/pages/services/aov-air-handling/:town/       /pages/services/aov-air-handling/:town.php        200',
+        '/pages/services/barriers/:town                /pages/services/barriers/:town.php                200',
+        '/pages/services/barriers/:town/               /pages/services/barriers/:town.php                200',
+        '',
+        '# Unpublished matrix URLs (linked from nav/hubs, 404 on the static site).',
+        '# Keyword×town → that keyword hub. Service×town → that service hub.',
+        '# aov, barriers, and aov-* / barriers* slugs are not in this list.',
+        '/pages/keywords/:slug/:town     /pages/keywords/:slug    301',
+        '/pages/keywords/:slug/:town/    /pages/keywords/:slug    301',
+        '',
+    ];
+    $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages'];
+    foreach (array_keys(getServices()) as $slug) {
+        $slug = (string)$slug;
+        if (!preg_match('/^[a-z0-9\-]+$/', $slug) || in_array($slug, $reserved, true)) {
             continue;
         }
-        $parts = preg_split('/\s+/', $line) ?: [];
-        if (count($parts) < 3) {
+        if (icomplyTownExportMustNotRedirect($slug)) {
             continue;
         }
-        $from = $parts[0];
-        $to = $parts[1];
-        $out[] = "[[redirects]]";
-        $out[] = '  from = "' . $from . '"';
-        $out[] = '  to = "' . $to . '"';
-        $out[] = '  status = 301';
-        $out[] = '  force = true';
-        $out[] = '';
+        $lines[] = "/pages/{$slug}/:town     /pages/services/{$slug}    301";
+        $lines[] = "/pages/{$slug}/:town/    /pages/services/{$slug}    301";
     }
-    $out[] = '# END legacy-matrix-redirects';
-    return implode("\n", $out) . "\n";
-}
-
-function icomplyInstallLegacyRedirectsIntoRepo(string $repoRoot): void
-{
-    $redirectBlock = icomplyLegacyMatrixRedirectBlock();
-    foreach (['_redirects', 'website/_redirects', 'public/_redirects'] as $rel) {
-        $path = $repoRoot . '/' . $rel;
-        if (!is_file($path)) {
-            continue;
-        }
-        $text = (string)file_get_contents($path);
-        $text = preg_replace('/# BEGIN legacy-matrix-redirects\n.*?# END legacy-matrix-redirects\n/s', '', $text) ?? $text;
-        $needle = '# Splat pretty URLs';
-        if (!str_contains($text, $needle)) {
-            $needle = "/*";
-        }
-        $pos = strpos($text, $needle);
-        if ($pos === false) {
-            continue;
-        }
-        $text = substr($text, 0, $pos) . $redirectBlock . "\n" . substr($text, $pos);
-        file_put_contents($path, $text);
-    }
-    $tomlPath = $repoRoot . '/netlify.toml';
-    if (!is_file($tomlPath)) {
-        return;
-    }
-    $toml = (string)file_get_contents($tomlPath);
-    $toml = preg_replace('/# BEGIN legacy-matrix-redirects\n.*?# END legacy-matrix-redirects\n/s', '', $toml) ?? $toml;
-    $splat = "[[redirects]]\n  from = \"/*\"\n  to = \"/:splat.php\"\n  status = 200\n";
-    $pos = strpos($toml, $splat);
-    if ($pos === false) {
-        fwrite(STDERR, "netlify.toml splat redirect not found; legacy matrix rules not inserted\n");
-        return;
-    }
-    $toml = substr($toml, 0, $pos) . icomplyLegacyMatrixNetlifyToml() . "\n" . substr($toml, $pos);
-    file_put_contents($tomlPath, $toml);
+    $lines[] = '';
+    return implode("\n", $lines);
 }
 
 function icomplyPrettyUrlHeaders(): string

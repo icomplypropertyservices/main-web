@@ -27,7 +27,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
 $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,12 +63,16 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     <meta property="og:description" content="<?= $metaDescSafe ?>">
     <meta property="og:url" content="<?= htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8') ?>">
     <?php
-    // Default OG image when page does not set $ogImage
+    require_once __DIR__ . '/seo.php';
+    // Default OG image when page does not set $ogImage. Always absolute for og:image.
     if (empty($ogImage)) {
-        $ogImage = url('/assets/images/og-image.jpg');
+        $ogImage = '/assets/images/og-image.jpg';
         if (!is_file(SITE_ROOT . '/assets/images/og-image.jpg')) {
-            $ogImage = url('/assets/images/services/fire-alarms.jpg');
+            $ogImage = '/assets/images/brand/icomply-logo.svg';
         }
+    }
+    if (!preg_match('#^https?://#i', (string)$ogImage)) {
+        $ogImage = icomply_absolute_url((string)$ogImage);
     }
     $ogImageSafe = htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8');
     $ogAltSafe = htmlspecialchars(
@@ -77,9 +81,19 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
         'UTF-8'
     );
     ?>
+    <?php
+    $ogImageType = 'image/jpeg';
+    if (preg_match('/\.png($|\?)/i', (string)$ogImage)) {
+        $ogImageType = 'image/png';
+    } elseif (preg_match('/\.webp($|\?)/i', (string)$ogImage)) {
+        $ogImageType = 'image/webp';
+    } elseif (preg_match('/\.svg($|\?)/i', (string)$ogImage)) {
+        $ogImageType = 'image/svg+xml';
+    }
+    ?>
     <meta property="og:image" content="<?= $ogImageSafe ?>">
     <meta property="og:image:secure_url" content="<?= $ogImageSafe ?>">
-    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:type" content="<?= htmlspecialchars($ogImageType, ENT_QUOTES, 'UTF-8') ?>">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="<?= $ogAltSafe ?>">
@@ -116,6 +130,8 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     <meta name="author" content="<?= htmlspecialchars(SITE_NAME, ENT_QUOTES, 'UTF-8') ?>">
     <meta name="geo.region" content="GB-MAN">
     <meta name="geo.placename" content="Stockport">
+    <meta name="geo.position" content="53.3904;-2.1219">
+    <meta name="ICBM" content="53.3904, -2.1219">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css">
     <link rel="stylesheet" href="<?= htmlspecialchars(assetUrl('/assets/css/site.css'), ENT_QUOTES, 'UTF-8') ?>">
     <?php
@@ -159,43 +175,15 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
             }
         } catch (e) {}
     </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": <?= json_encode(SITE_NAME) ?>,
-      "description": "Property compliance including electrical, fire alarms, emergency lighting, CCTV and access control across Greater Manchester and the North West. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out gas work or issue those certificates.",
-      "url": <?= json_encode(SITE_URL) ?>,
-      "telephone": <?= json_encode('+' . (strpos(WHATSAPP, '44') === 0 ? WHATSAPP : '44' . ltrim(PHONE, '0'))) ?>,
-      "email": <?= json_encode(EMAIL) ?>,
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "17 Woodlands Park Road",
-        "addressLocality": "Offerton, Stockport",
-        "addressRegion": "Greater Manchester",
-        "postalCode": "SK2 5DE",
-        "addressCountry": "GB"
-      },
-      "geo": { "@type": "GeoCoordinates", "latitude": "53.3904", "longitude": "-2.1219" },
-      "areaServed": ["Greater Manchester", "North West England", "Cheshire", "Lancashire", "Merseyside"],
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "08:00",
-        "closes": "18:00"
-      },
-      "priceRange": "POA",
-      "sameAs": <?= json_encode(array_values(array_filter([
-          defined('SOCIAL_FACEBOOK') ? SOCIAL_FACEBOOK : '',
-          defined('SOCIAL_INSTAGRAM') ? SOCIAL_INSTAGRAM : '',
-          defined('SOCIAL_LINKEDIN') ? SOCIAL_LINKEDIN : '',
-          defined('SOCIAL_TWITTER') ? SOCIAL_TWITTER : '',
-          defined('SOCIAL_GOOGLE') ? SOCIAL_GOOGLE : '',
-          defined('SOCIAL_YOUTUBE') ? SOCIAL_YOUTUBE : '',
-          'https://wa.me/' . WHATSAPP,
-      ]))) ?>
+    <?php
+    if (!empty($pageJsonLd) && is_array($pageJsonLd)) {
+        echo icomply_jsonld_script($pageJsonLd);
+    } else {
+        $defaultLd = icomply_local_business();
+        $defaultLd['@context'] = 'https://schema.org';
+        echo icomply_jsonld_script($defaultLd);
     }
-    </script>
+    ?>
 </head>
 <body class="theme-dark bg-zinc-50 text-black">
 <a href="#main-content" class="skip-to-content">Skip to main content</a>

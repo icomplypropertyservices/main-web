@@ -32,7 +32,7 @@ $byService = [
         'Simon RWA', 'Bilco', 'Cambric', 'Kingspan Air', 'FlaktGroup', 'Systemair',
     ],
     'nurse-call' => [
-        'Courtney Thorne', 'Static Systems Group', 'Intercall', 'Aid Call', 'Tunstall',
+        'Courtney Thorne', 'Static Systems Group', 'Intercall', 'Aid Call',
         'Ascom', 'Schrack Seconet', 'Zettler', 'Ackermann', 'Rauland', 'Jeron',
         'Austco', 'TekTone', 'Caretech', 'Wandsworth', 'Quantec',
     ],

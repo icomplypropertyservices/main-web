@@ -38475,35 +38475,6 @@
             ]
         ]
     },
-    "tunstall-nurse-call": {
-        "name": "Tunstall Nurse Call",
-        "service": "nurse-call",
-        "related": "nurse-call-system",
-        "intro": "Tunstall is a major player in telecare and nurse call-related solutions used across social care and supported living. iComply support Tunstall nurse call and call-system installation, maintenance and device replacement across the North West, helping providers keep vulnerable residents connected to staff response.",
-        "body": "We work with care and housing providers on on-site call systems, point devices and related peripherals, coordinating with existing telecare arrangements where they exist. PPM, battery attention and fault-finding reduce silent failures. Stockport engineers document visits for landlord and care governance. Where platforms differ between buildings, we help standardise maintenance even if hardware varies.",
-        "meta_desc": "Tunstall nurse call & care call system support — install, maintain and repair across Greater Manchester & the North West.",
-        "focus_points": [
-            "Tunstall-related call system install and remedial support",
-            "Device and consumable replacements on living estates",
-            "PPM aligned with social care and housing providers",
-            "Clear visit records for compliance evidence"
-        ],
-        "faq": [
-            [
-                "Do you handle dispersed telecare and hardwired nurse call?",
-                "We focus on premises call systems and related devices; dispersed telecare contracts vary. Tell us what is installed and we will confirm scope."
-            ],
-            [
-                "Can you maintain Tunstall equipment in sheltered schemes?",
-                "Yes — subject to access arrangements and system type. Surveys establish what is on site before quoting."
-            ],
-            [
-                "How fast can you attend a failed system?",
-                "We aim for scheduled visits and prioritise life-safety faults when engineer capacity allows."
-            ]
-        ],
-        "seo_keywords": "Tunstall nurse call, Tunstall call system, Tunstall maintenance North West, Tunstall care home, Tunstall engineer Manchester, supported living call system"
-    },
     "turf-laying": {
         "name": "Turf Laying",
         "service": "landscaping",

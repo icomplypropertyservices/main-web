@@ -4,12 +4,12 @@
  * MANUFACTURER_TAGS, MANUFACTURER_IMAGES
  */
 $poaService = function_exists('isPoaService') && isPoaService($SERVICE_SLUG);
-$pageTitle = $SERVICE_NAME . ' Services | North West';
-$metaDesc = $poaService
-    ? ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Price on application after scope. Local team from Stockport. No invented fees.')
-    : ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Installation, maintenance, testing & certification. Written quotes after scope. Local engineers from Stockport.');
+require_once SITE_ROOT . '/includes/seo.php';
+$hubSeo = icomply_service_hub_seo($SERVICE_SLUG, $SERVICE_NAME, $poaService);
+$pageTitle = $hubSeo['title'];
+$metaDesc = $hubSeo['description'];
 $metaKeywords = $SEO_KEYWORDS;
-$ogImage = serviceImageUrl($SERVICE_SLUG);
+$ogImage = icomply_absolute_url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
 
 $allServices = getServices();
 $allAreas = getAreas();
@@ -85,105 +85,17 @@ if (empty($_SESSION['csrf'])) {
 require_once SITE_ROOT . '/includes/share.php';
 require_once SITE_ROOT . '/includes/related.php';
 $canonicalUrl = url('/pages/services/' . $serviceSlug . '.php');
+$pageJsonLd = icomply_service_hub_jsonld(
+    $serviceName,
+    $pageTitle,
+    $metaDesc,
+    $canonicalUrl,
+    $ogImage,
+    $faqs,
+    $poaService
+);
 require SITE_ROOT . '/includes/header.php';
-
-$faqEntities = [];
-foreach ($faqs as $faq) {
-    $faqEntities[] = [
-        '@type' => 'Question',
-        'name' => str_replace($SERVICE_NAME, $serviceName, $faq[0]),
-        'acceptedAnswer' => [
-            '@type' => 'Answer',
-            'text' => str_replace($SERVICE_NAME, $serviceName, $faq[1]),
-        ],
-    ];
-}
-$schema = [
-    '@context' => 'https://schema.org',
-    '@graph' => [
-        [
-            '@type' => 'Service',
-            '@id' => $canonicalUrl . '#service',
-            'name' => $serviceName . ' Services',
-            'alternateName' => $serviceSlug === 'gas-systems'
-                ? 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers'
-                : $serviceName . ' installation, maintenance and certification',
-            'description' => $metaDesc,
-            'url' => $canonicalUrl,
-            'image' => $ogImage,
-            'serviceType' => $serviceName,
-            'category' => $serviceName,
-            'provider' => [
-                '@type' => 'LocalBusiness',
-                '@id' => rtrim(SITE_URL, '/') . '/#business',
-                'name' => SITE_NAME,
-                'url' => SITE_URL,
-                'telephone' => PHONE,
-                'email' => EMAIL,
-                'image' => $ogImage,
-                'address' => [
-                    '@type' => 'PostalAddress',
-                    'streetAddress' => '17 Woodlands Park Road',
-                    'addressLocality' => 'Offerton, Stockport',
-                    'addressRegion' => 'Greater Manchester',
-                    'postalCode' => 'SK2 5DE',
-                    'addressCountry' => 'GB',
-                ],
-                'geo' => [
-                    '@type' => 'GeoCoordinates',
-                    'latitude' => '53.3904',
-                    'longitude' => '-2.1219',
-                ],
-                'priceRange' => 'POA',
-            ],
-            'areaServed' => array_map(static function ($region) {
-                return ['@type' => 'AdministrativeArea', 'name' => $region];
-            }, ['Greater Manchester', 'Lancashire', 'Cheshire', 'Merseyside', 'Cumbria', 'North West England']),
-            'offers' => [
-                '@type' => 'Offer',
-                'name' => ($poaService ? 'Price on application — ' : 'Written quote — ') . $serviceName,
-                'description' => $poaService
-                    ? ('Request a scoped POA quote for ' . $serviceName . '. No published fee list.')
-                    : ('Request a written quote for ' . $serviceName . ' installation, servicing and certification.'),
-                'availability' => 'https://schema.org/InStock',
-                'priceCurrency' => 'GBP',
-                'url' => url('/contact.php'),
-            ],
-            'brand' => [
-                '@type' => 'Brand',
-                'name' => SITE_NAME,
-            ],
-            'termsOfService' => url('/terms.php'),
-            'mainEntityOfPage' => [
-                '@type' => 'WebPage',
-                '@id' => $canonicalUrl . '#webpage',
-                'url' => $canonicalUrl,
-                'name' => $pageTitle,
-                'description' => $metaDesc,
-                'isPartOf' => [
-                    '@type' => 'WebSite',
-                    'name' => SITE_NAME,
-                    'url' => SITE_URL,
-                ],
-            ],
-        ],
-        [
-            '@type' => 'BreadcrumbList',
-            'itemListElement' => [
-                ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => rtrim(SITE_URL, '/') . '/'],
-                ['@type' => 'ListItem', 'position' => 2, 'name' => 'Services', 'item' => url('/pages/services/index.php')],
-                ['@type' => 'ListItem', 'position' => 3, 'name' => $serviceName, 'item' => $canonicalUrl],
-            ],
-        ],
-        [
-            '@type' => 'FAQPage',
-            '@id' => $canonicalUrl . '#faq',
-            'mainEntity' => $faqEntities,
-        ],
-    ],
-];
 ?>
-<script type="application/ld+json"><?= json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
 
 <!-- HERO -->
 <section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
