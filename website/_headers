@@ -90,6 +90,10 @@
 
 /assets/css/*
   Content-Type: text/css; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/assets/images/opt/*
+  Cache-Control: public, max-age=31536000, immutable
 
 /manifest.json
   Content-Type: application/manifest+json; charset=utf-8

@@ -1210,3 +1210,25 @@ if (is_file($barrierPanelFile)) {
 // Back-compat globals used by some templates/includes
 $services = getServices();
 $areas = getAreas();
+
+require_once __DIR__ . '/includes/perf.php';
+
+// Live PHP requests: rewrite <img> after the page finishes. CLI export
+// applies the same rewrite explicitly so this buffer never swallows build logs.
+if (PHP_SAPI !== 'cli' && !defined('ICOMPLY_PERF_BUFFER')) {
+    define('ICOMPLY_PERF_BUFFER', true);
+    ob_start();
+    register_shutdown_function(static function (): void {
+        if (!function_exists('icomplyPerfRewriteHtml')) {
+            return;
+        }
+        $parts = [];
+        while (ob_get_level() > 0) {
+            $parts[] = (string)ob_get_clean();
+        }
+        if (!$parts) {
+            return;
+        }
+        echo icomplyPerfRewriteHtml(implode('', array_reverse($parts)));
+    });
+}

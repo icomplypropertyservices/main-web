@@ -172,6 +172,28 @@ if (is_file($cssFile) && str_contains((string)file_get_contents($cssFile), '--br
     $fail++;
     echo "[FAIL] assets/css/site.css missing brand tokens\n";
 }
+if (str_contains($homeHtml, 'cdn.jsdelivr.net/npm/tailwindcss')) {
+    $fail++;
+    echo "[FAIL] homepage still loads the full Tailwind CDN\n";
+} else {
+    $pass++;
+    echo "[PASS] homepage does not load the Tailwind CDN\n";
+}
+$utilCss = $dist . '/assets/css/utilities.css';
+if (is_file($utilCss) && filesize($utilCss) > 0 && filesize($utilCss) < 80000 && str_contains($homeHtml, '/assets/css/utilities.css')) {
+    $pass++;
+    echo "[PASS] homepage uses purged utilities.css (" . filesize($utilCss) . " bytes)\n";
+} else {
+    $fail++;
+    echo "[FAIL] homepage missing purged utilities.css under 80KB\n";
+}
+if (str_contains($homeHtml, 'data-perf="1"') && str_contains($homeHtml, 'loading="lazy"')) {
+    $pass++;
+    echo "[PASS] homepage images are resized and lazy-loaded\n";
+} else {
+    $fail++;
+    echo "[FAIL] homepage images missing perf srcset or lazy-load\n";
+}
 if (str_contains($homeHtml, 'href="/assets/css/site.css"') && !str_contains($homeHtml, 'https://icomplypropertyservices.co.uk/assets/css/site.css')) {
     $pass++;
     echo "[PASS] homepage CSS href is root-relative /assets/css/site.css\n";

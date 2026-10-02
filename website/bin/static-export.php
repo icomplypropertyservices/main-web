@@ -212,6 +212,9 @@ $required = [
 
 foreach ($routes as $i => $path) {
     $result = icomplyRenderExportRoute($path);
+    if (isset($result['html']) && is_string($result['html']) && function_exists('icomplyPerfRewriteHtml')) {
+        $result['html'] = icomplyPerfRewriteHtml($result['html']);
+    }
     $status = $result['status'];
     $html = $result['html'];
     $n = $i + 1;
@@ -1040,6 +1043,10 @@ function icomplyPrettyUrlHeaders(): string
 
 /assets/css/*
   Content-Type: text/css; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/assets/images/opt/*
+  Cache-Control: public, max-age=31536000, immutable
 
 /manifest.json
   Content-Type: application/manifest+json; charset=utf-8
