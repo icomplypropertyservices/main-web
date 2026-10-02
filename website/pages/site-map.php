@@ -39,6 +39,7 @@ $mainPages = [
     ['href' => url('/pages/about.php'), 'label' => 'About'],
     ['href' => url('/pages/services/index.php'), 'label' => 'All services'],
     ['href' => url('/pages/areas/index.php'), 'label' => 'All areas'],
+    ['href' => url('/pages/aov'), 'label' => 'AOV towns over 10,000'],
     ['href' => url('/pages/manufacturers/index.php'), 'label' => 'Manufacturers / brands'],
     ['href' => url('/pages/keywords/index.php'), 'label' => 'Keyword guides'],
     ['href' => '/shop/', 'label' => 'Shop / supplies hubs'],

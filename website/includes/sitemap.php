@@ -100,17 +100,18 @@ function icomplySitemapEntries(): array
         // Hard reject /pages/{service}/{town} even if a leftover matrix file
         // sits in dist/. Keep only real hub prefixes.
         if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
-            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages'];
+            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'aov'];
             if (!in_array($m[1], $okPrefix, true)) {
                 return;
             }
         }
-        // Keyword hubs + featured keyword×town are generated at export time.
-        // Do not require a source PHP file for those catalogue locs.
-        $isKeywordLoc = (bool)preg_match('#^/pages/keywords(/[a-z0-9\-]+){1,2}$#', $path);
-        if (!$isKeywordLoc && !icomplySitemapUrlHasFile($path)) {
-            return;
-        }
+    // Keyword hubs and AOV town pages are generated from data at export time.
+    // Do not require a source PHP file for those catalogue locs.
+    $isKeywordLoc = (bool)preg_match('#^/pages/keywords(/[a-z0-9\-]+){1,2}$#', $path);
+    $isAovLoc = (bool)preg_match('#^/pages/aov(?:/[a-z0-9\-]+)?$#', $path);
+    if (!$isKeywordLoc && !$isAovLoc && !icomplySitemapUrlHasFile($path)) {
+        return;
+    }
         $seen[$path] = true;
         $entries[] = ['path' => $path, 'priority' => $priority];
     };
@@ -249,6 +250,20 @@ function icomplySitemapEntries(): array
                     }
                 }
             }
+        }
+    }
+
+    // Mainland AOV town pages (population > 10,000). Not the service×town matrix.
+    if (!function_exists('aovTownPaths')) {
+        $aovLib = SITE_ROOT . '/includes/aov-towns.php';
+        if (is_file($aovLib)) {
+            require_once $aovLib;
+        }
+    }
+    if (function_exists('aovTownPaths')) {
+        foreach (aovTownPaths() as $aovPath) {
+            $pri = $aovPath === '/pages/aov' ? '0.7' : '0.45';
+            $add($aovPath, $pri);
         }
     }
 

@@ -341,6 +341,18 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         $routes[] = $path;
     }
 
+    if (!function_exists('aovTownPaths')) {
+        $aovLib = SITE_ROOT . '/includes/aov-towns.php';
+        if (is_file($aovLib)) {
+            require_once $aovLib;
+        }
+    }
+    if (function_exists('aovTownPaths')) {
+        foreach (aovTownPaths() as $path) {
+            $routes[] = $path;
+        }
+    }
+
     // Jack: every service has every area landing (not only --full).
     foreach (array_keys(getServices()) as $sSlug) {
         foreach (getAreas() as $area) {
@@ -651,6 +663,10 @@ function icomplyPrettyUrlRedirects(): string
 /pages/resources/        /pages/resources.php         200!
 /pages/keywords          /pages/keywords.php          200!
 /pages/keywords/         /pages/keywords.php          200!
+/pages/aov               /pages/aov.php               200!
+/pages/aov/              /pages/aov.php               200!
+/pages/aov/:slug         /pages/aov/:slug.php         200!
+/pages/aov/:slug/        /pages/aov/:slug.php         200!
 
 # Keyword hubs have child town files (pages/keywords/{slug}/*.php).
 # force so /pages/keywords/eicr does not 301 to /pages/keywords/eicr/.

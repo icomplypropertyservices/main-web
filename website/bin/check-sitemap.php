@@ -135,7 +135,7 @@ foreach ($locHits[1] ?? [] as $path) {
     }
     $first = $m[1];
     $second = $m[2];
-    if (in_array($first, ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages'], true)) {
+    if (in_array($first, ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages', 'aov'], true)) {
         continue;
     }
     if (isset($services[$first]) && isset($areaSlugs[$second])) {

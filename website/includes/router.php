@@ -111,6 +111,21 @@ function routerDispatchVirtual(string $path): bool {
         renderManufacturerPage($m[1]);
         return true;
     }
+    // /pages/aov and /pages/aov/{town} — mainland towns over 10,000.
+    if ($path === '/pages/aov' || $path === '/pages/aov/index') {
+        require_once SITE_ROOT . '/includes/aov-towns.php';
+        renderAovTownIndex();
+        return true;
+    }
+    if (preg_match('#^/pages/aov/([a-z0-9\-]+)$#', $path, $m) && $m[1] !== 'index') {
+        require_once SITE_ROOT . '/includes/aov-towns.php';
+        $aovTown = aovTownBySlug($m[1]);
+        if ($aovTown === null) {
+            return false;
+        }
+        renderAovTownPage($aovTown);
+        return true;
+    }
     // /pages/areas/{slug}
     if (preg_match('#^/pages/areas/([a-z0-9\-]+)$#', $path, $m)) {
         $area = areaFromSlug($m[1]);
@@ -132,7 +147,7 @@ function routerDispatchVirtual(string $path): bool {
     if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         $serviceSlug = $m[1];
         $areaSlugVal = $m[2];
-        $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources'];
+        $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'aov'];
         if (in_array($serviceSlug, $reserved, true)) {
             return false;
         }

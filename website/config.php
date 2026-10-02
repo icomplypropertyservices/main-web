@@ -429,6 +429,20 @@ function exportedServiceLocalUrl(string $serviceSlug, string $area, string $from
     if ($pick && isset($kw[keywordSlug((string)$pick)])) {
         return url('/pages/keywords/' . keywordSlug((string)$pick) . '/' . $town . '.php');
     }
+    if ($serviceSlug === 'aov-air-handling') {
+        if (!function_exists('aovTownBySlug')) {
+            $aovLib = SITE_ROOT . '/includes/aov-towns.php';
+            if (is_file($aovLib)) {
+                require_once $aovLib;
+            }
+        }
+        if (function_exists('aovTownBySlug')) {
+            $aovTown = aovTownBySlug($town);
+            if ($aovTown) {
+                return url('/pages/aov/' . $aovTown['slug']);
+            }
+        }
+    }
     if ($from === 'area') {
         return url('/pages/services/' . $serviceSlug . '.php');
     }

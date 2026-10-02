@@ -424,6 +424,9 @@ $schema = [
                 <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> near you
             </h2>
             <p class="mt-2 text-zinc-600">Town hubs we cover — electrical and gas also open a real keyword×town page. We do not publish thin service×area doorways.</p>
+            <?php if ($serviceSlug === 'aov-air-handling'): ?>
+            <p class="mt-2 text-zinc-600">Mainland towns with a GeoNames population over 10,000 have an AOV page: county, population, and straight-line distance from Stockport. <a class="font-semibold text-[#ff6b00]" href="<?= url('/pages/aov') ?>">AOV town index</a>.</p>
+            <?php endif; ?>
         </div>
         <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All areas →</a>
     </div>
