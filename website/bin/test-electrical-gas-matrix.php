@@ -93,8 +93,12 @@ $ok(in_array('boiler', $featured['gas'] ?? [], true), 'featured gas includes boi
 
 require_once SITE_ROOT . '/includes/sitemap.php';
 $sitemapXml = icomplyBuildSitemapXml('https://icomplypropertyservices.co.uk');
-$ok(!preg_match('#/pages/gas-systems/[a-z0-9\-]+</loc>#', $sitemapXml), 'sitemap has zero /pages/gas-systems/{town}');
-$ok(!preg_match('#/pages/electrical/[a-z0-9\-]+</loc>#', $sitemapXml), 'sitemap has zero /pages/electrical/{town}');
+$ok(str_contains($sitemapXml, '/pages/gas-systems/manchester</loc>'), 'sitemap lists gas × Manchester');
+$ok(str_contains($sitemapXml, '/pages/gas-systems/burnley</loc>'), 'sitemap lists gas × Burnley');
+$ok(str_contains($sitemapXml, '/pages/electrical/manchester</loc>'), 'sitemap lists electrical × Manchester');
+$ok(!preg_match('#/pages/gas-systems/(?!manchester</loc>|burnley</loc>)[a-z0-9\-]+</loc>#', $sitemapXml), 'sitemap gas × town is Manchester and Burnley only');
+$ok(!preg_match('#/pages/electrical/(?!manchester</loc>|burnley</loc>)[a-z0-9\-]+</loc>#', $sitemapXml), 'sitemap electrical × town is Manchester and Burnley only');
+$ok(!preg_match('#/pages/fire-alarms/[a-z0-9\-]+</loc>#', $sitemapXml), 'sitemap has no fire-alarms × town');
 $ok(!str_contains($sitemapXml, '/pages/epc/stockport'), 'sitemap has no /pages/epc/stockport');
 $ok(!str_contains($sitemapXml, '/pages/emergency-lighting/stockport'), 'sitemap has no /pages/emergency-lighting/stockport');
 $ok(str_contains($sitemapXml, '/pages/services/gas-systems</loc>'), 'sitemap still lists gas-systems service hub');
@@ -107,11 +111,15 @@ $ok(is_file(SITE_ROOT . '/data/seo-matrix-rollout-notes.md'), 'seo-matrix-rollou
 ob_start();
 renderServiceHubPage('gas-systems');
 $gasHub = (string)ob_get_clean();
-$ok(!preg_match('#/pages/gas-systems/[a-z0-9\-]+#', $gasHub), 'gas-systems hub HTML has no /pages/gas-systems/{town} 404s');
+$ok(str_contains($gasHub, '/pages/gas-systems/manchester'), 'gas hub links Manchester landing');
+$ok(str_contains($gasHub, '/pages/gas-systems/burnley'), 'gas hub links Burnley landing');
+$ok(!preg_match('#/pages/gas-systems/(?!manchester\b|burnley\b)[a-z0-9\-]+#', $gasHub), 'gas hub has no other service×area towns');
 ob_start();
 renderServiceHubPage('electrical');
 $elecHub = (string)ob_get_clean();
-$ok(!preg_match('#/pages/electrical/[a-z0-9\-]+#', $elecHub), 'electrical hub HTML has no /pages/electrical/{town} 404s');
+$ok(str_contains($elecHub, '/pages/electrical/manchester'), 'electrical hub links Manchester landing');
+$ok(str_contains($elecHub, '/pages/electrical/burnley'), 'electrical hub links Burnley landing');
+$ok(!preg_match('#/pages/electrical/(?!manchester\b|burnley\b)[a-z0-9\-]+#', $elecHub), 'electrical hub has no other service×area towns');
 ob_start();
 renderAreaHubPage('Stockport');
 $areaHub = (string)ob_get_clean();

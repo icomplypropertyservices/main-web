@@ -282,5 +282,10 @@
         "standards": "Control of Asbestos Regulations 2012 · duty to manage",
         "pricing": "POA",
         "hero_accent": "Surveyed, sampled if needed, POA."
+    },
+    "ev-charging": {
+        "blurb": "Home and workplace EV charge points — survey, supply, install and BS 7671 certification. Written quote after the supply and cable route are known.",
+        "short": "EV charge point survey, install and certification",
+        "standards": "BS 7671 · IET Code of Practice for EV charging"
     }
 }

@@ -423,7 +423,7 @@ $schema = [
             <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">
                 <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> near you
             </h2>
-            <p class="mt-2 text-zinc-600">Town hubs we cover — electrical and gas also open a real keyword×town page. We do not publish thin service×area doorways.</p>
+            <p class="mt-2 text-zinc-600">Manchester and Burnley open a dedicated landing for this service. Other towns stay on their area hub, or a keyword page for electrical and gas. Fire × town pages are not published here.</p>
         </div>
         <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All areas →</a>
     </div>

@@ -59,7 +59,8 @@ Official rules for the electrical + gas keyword expansion.
 ## Sitemap (P090 — priority over new volume)
 
 - `sitemap.xml` must **only** list URLs that return HTTP **200**.
-- **Never** list `/pages/{service}/{town}` (gas-systems, electrical, fire-alarms, …). Those landings are `--full` only and 404 on the default export. Do **not** mass-generate thin service×area doorway pages for all 168 towns.
+- **Never** list `/pages/{service}/{town}` for towns other than Manchester and Burnley, and never list fire × town. Those URLs 404.
+- Jack pilot (this rollout): every **non-fire** service × `manchester` and `burnley` is exported and may be listed. Fire × area nationwide is a different workstream. Do **not** mass-generate service×area doorway pages for all 168 towns.
 - Do **not** mass-include thin keyword×area doorways in the sitemap. Featured electrical/gas × a handful of towns is allowed because those files exist and return 200.
 - The full ~36k keyword×town matrix stays in `dist/` for Jack; it stays **out** of `sitemap.xml`.
 

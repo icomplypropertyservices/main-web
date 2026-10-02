@@ -410,14 +410,18 @@ function isCostStyleKeyword(string $slug, string $name = ''): bool {
 
 /**
  * Local URL that returns 200 on the default Netlify export.
- * /pages/{service}/{town} is --full only and 404s on draft/prod static.
  *
- * Electrical + gas → featured keyword×town. Other services → area hub
- * (from a service page) or the service hub (from an area page).
+ * Non-fire × Manchester and Burnley → /pages/{service}/{town}.
+ * Fire services link out to the service hub (from an area page) or the
+ * town hub (from a fire service page). Other towns stay on keyword or hub
+ * URLs — service×area is not nationwide yet.
  */
 function exportedServiceLocalUrl(string $serviceSlug, string $area, string $from = 'service'): string {
     $serviceSlug = areaSlug($serviceSlug);
     $town = areaSlug($area);
+    if (function_exists('jackPilotServiceAreaPublished') && jackPilotServiceAreaPublished($serviceSlug, $town)) {
+        return url(jackPilotServiceAreaPath($serviceSlug, $town) . '.php');
+    }
     $featured = getElectricalGasFeaturedKeywordSlugs();
     $kw = getMajorKeywords();
     $pick = null;
@@ -711,6 +715,10 @@ function icomplyTradeProductsUrl(): string
 $waFile = __DIR__ . '/includes/water-asbestos.php';
 if (is_file($waFile)) {
     require_once $waFile;
+}
+$jackPilotFile = __DIR__ . '/includes/jack-pilot.php';
+if (is_file($jackPilotFile)) {
+    require_once $jackPilotFile;
 }
 
 // Back-compat globals used by some templates/includes

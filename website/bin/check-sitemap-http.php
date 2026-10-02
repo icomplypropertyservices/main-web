@@ -36,8 +36,9 @@ $say($code === 200, 'GET /sitemap.xml HTTP 200', (string)$code);
 $say($xml !== '' && str_contains($xml, '<urlset'), 'body is <urlset> not a 470-part index');
 $say(!str_contains($xml, '<sitemapindex'), 'not a sitemapindex');
 $say(!str_contains($xml, '/privacy-policy'), 'no /privacy-policy');
-$say(!str_contains($xml, '/pages/gas-systems/stockport'), 'no /pages/gas-systems/{town} (404 on default export)');
-$say(!str_contains($xml, '/pages/electrical/manchester'), 'no /pages/electrical/{town} (404 on default export)');
+$say(!str_contains($xml, '/pages/gas-systems/stockport'), 'no gas × Stockport (outside the Manchester/Burnley pilot)');
+$say(str_contains($xml, '/pages/electrical/manchester') && str_contains($xml, '/pages/electrical/burnley'), 'electrical × Manchester and Burnley are listed');
+$say(!str_contains($xml, '/pages/fire-alarms/manchester'), 'no fire × Manchester in the sitemap');
 $say(str_contains($xml, '/pages/areas') && str_contains($xml, '/pages/resources/eicr-guide'), 'includes hubs + resource guide');
 
 $samples = [

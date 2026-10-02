@@ -125,8 +125,11 @@ foreach ($hmoPackages as $rel) {
 $ok($hmoPresent === [], 'HMO package pages stay out');
 
 $xml = icomplyBuildSitemapXml('https://icomplypropertyservices.co.uk');
-$ok(!preg_match('#/pages/gas-systems/[a-z0-9\-]+</loc>#', $xml), 'sitemap has zero /pages/gas-systems/{town}');
-$ok(!preg_match('#/pages/electrical/[a-z0-9\-]+</loc>#', $xml), 'sitemap has zero /pages/electrical/{town}');
+$ok(str_contains($xml, '/pages/gas-systems/manchester</loc>') && str_contains($xml, '/pages/gas-systems/burnley</loc>'), 'sitemap lists gas × Manchester and Burnley');
+$ok(!preg_match('#/pages/gas-systems/(?!manchester</loc>|burnley</loc>)[a-z0-9\-]+</loc>#', $xml), 'sitemap gas × town is the pilot only');
+$ok(str_contains($xml, '/pages/electrical/manchester</loc>') && str_contains($xml, '/pages/electrical/burnley</loc>'), 'sitemap lists electrical × Manchester and Burnley');
+$ok(!preg_match('#/pages/electrical/(?!manchester</loc>|burnley</loc>)[a-z0-9\-]+</loc>#', $xml), 'sitemap electrical × town is the pilot only');
+$ok(!preg_match('#/pages/fire-alarms/[a-z0-9\-]+</loc>#', $xml), 'sitemap has no fire × town');
 $ok(!str_contains($xml, '/pages/packages/hmo'), 'sitemap has no HMO package locs');
 $kwTown = preg_match_all('#/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+</loc>#', $xml);
 $ok($kwTown > 0 && $kwTown <= 180, 'sitemap keyword×town is featured-only (' . $kwTown . ', not the full matrix)');

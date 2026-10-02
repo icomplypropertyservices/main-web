@@ -162,7 +162,29 @@ foreach ($categories as $catKey => $cat):
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local pages</div>
                 <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Popular local pages</h2>
-                <p class="mt-2 text-zinc-600">Town hubs and electrical / gas keyword landings that exist on the static site — not thin service×area doorways.</p>
+                <p class="mt-2 text-zinc-600">Town hubs, electrical and gas keyword landings, and non-fire service pages for Manchester and Burnley.</p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                    <?php
+                    $pilotChipServices = [
+                        'electrical' => 'EICR from £249',
+                        'gas-systems' => 'Gas from £85',
+                        'cctv' => 'CCTV',
+                        'access-control' => 'Access control',
+                        'legionella-risk-assessment' => 'Legionella',
+                        'asbestos-survey' => 'Asbestos',
+                        'ev-charging' => 'EV',
+                        'plumbing' => 'Plumbing',
+                        'building-maintenance' => 'Building',
+                    ];
+                    foreach (['Manchester', 'Burnley'] as $pilotTown):
+                        foreach ($pilotChipServices as $chipSlug => $chipName):
+                    ?>
+                        <a href="<?= url('/pages/' . rawurlencode($chipSlug) . '/' . areaSlug($pilotTown) . '.php') ?>"
+                           class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00] transition">
+                            <?= htmlspecialchars($chipName . ' in ' . $pilotTown, ENT_QUOTES, 'UTF-8') ?>
+                        </a>
+                    <?php endforeach; endforeach; ?>
+                </div>
             </div>
             <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All areas →</a>
         </div>

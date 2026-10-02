@@ -24,12 +24,13 @@ $bannedNeedles = [
     '/sitemap-1.xml',
     '-photo.jpg',
     '/pages/gas-systems/stockport</loc>',
-    '/pages/gas-systems/manchester</loc>',
     '/pages/electrical/stockport</loc>',
-    '/pages/electrical/manchester</loc>',
     '/pages/epc/stockport</loc>',
     '/pages/emergency-lighting/stockport</loc>',
+    '/pages/emergency-lighting/manchester</loc>',
     '/pages/fire-alarms/liverpool</loc>',
+    '/pages/fire-alarms/manchester</loc>',
+    '/pages/fire-alarms/burnley</loc>',
 ];
 foreach ($bannedNeedles as $n) {
     if (str_contains($xml, $n)) {
@@ -38,11 +39,14 @@ foreach ($bannedNeedles as $n) {
     }
 }
 
-// Live sitemap listed ~114–120 /pages/{service}/{stockport|manchester} that 404.
-// Generation must not invent those unless a real PHP file exists.
+// Service×town locs are only valid for the Jack pilot (rendered at export,
+// no source stub required). Anything else still needs a real PHP file.
 if (function_exists('getServices')) {
     foreach (array_keys(getServices()) as $sSlug) {
-        foreach (['stockport', 'manchester'] as $town) {
+        foreach (['stockport', 'manchester', 'burnley'] as $town) {
+            if (function_exists('jackPilotServiceAreaPublished') && jackPilotServiceAreaPublished($sSlug, $town)) {
+                continue;
+            }
             $rel = 'pages/' . $sSlug . '/' . $town . '.php';
             $needle = '/pages/' . $sSlug . '/' . $town . '</loc>';
             if (str_contains($xml, $needle) && !is_file(SITE_ROOT . '/' . $rel)) {
@@ -142,11 +146,26 @@ foreach ($locHits[1] ?? [] as $path) {
         $serviceAreaHits[] = $path;
     }
 }
-if ($serviceAreaHits) {
+$pilotSlugs = function_exists('getJackPilotAreaSlugs') ? array_flip(getJackPilotAreaSlugs()) : ['manchester' => true, 'burnley' => true];
+$pilotServices = function_exists('getJackPilotServices') ? getJackPilotServices() : [];
+$badServiceArea = [];
+$pilotServiceArea = 0;
+foreach ($serviceAreaHits as $path) {
+    if (!preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        $badServiceArea[] = $path;
+        continue;
+    }
+    if (isset($pilotServices[$m[1]]) && isset($pilotSlugs[$m[2]])) {
+        $pilotServiceArea++;
+        continue;
+    }
+    $badServiceArea[] = $path;
+}
+if ($badServiceArea) {
     $fail++;
-    echo 'FAIL: sitemap lists service×area 404s (sample): ' . implode(', ', array_slice($serviceAreaHits, 0, 8)) . "\n";
+    echo 'FAIL: sitemap lists non-pilot service×area (sample): ' . implode(', ', array_slice($badServiceArea, 0, 8)) . "\n";
 } else {
-    echo "OK: no /pages/{service}/{town} service×area locs\n";
+    echo "OK: service×area locs are Manchester/Burnley non-fire only ({$pilotServiceArea})\n";
 }
 
 echo "URLs={$count} bytes=" . strlen($xml) . PHP_EOL;

@@ -290,15 +290,31 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
 {
     $s = icomplyMatrixShared();
     $serviceSlug = areaSlug($serviceSlug);
-    if (!isset($s['services'][$serviceSlug])) {
+    $resolvedArea = function_exists('jackPilotAreaName') ? jackPilotAreaName($areaName) : null;
+    if ($resolvedArea === null && function_exists('areaFromSlug')) {
+        $resolvedArea = areaFromSlug(areaSlug($areaName));
+    }
+    if (!is_string($resolvedArea) || $resolvedArea === '') {
+        $resolvedArea = $areaName;
+    }
+    if (!function_exists('jackPilotServiceAreaPublished') || !jackPilotServiceAreaPublished($serviceSlug, $resolvedArea)) {
         return '';
     }
-    $svcName = $s['services'][$serviceSlug];
+    $svcName = jackPilotServiceName($serviceSlug) ?? ($s['services'][$serviceSlug] ?? '');
+    if ($svcName === '') {
+        return '';
+    }
+    $areaName = $resolvedArea;
     $areaSlugVal = areaSlug($areaName);
+    $guide = function_exists('jackPilotGuidePrice') ? jackPilotGuidePrice($serviceSlug) : null;
     $poa = function_exists('isPoaService') && isPoaService($serviceSlug);
-    $priceLine = $poa
-        ? 'Price on application after scope. No invented catalogue price.'
-        : 'Written quote after scope is agreed.';
+    if ($guide !== null) {
+        $priceLine = $guide['label'] . ' from ' . $guide['from'] . '. ' . $guide['note'];
+    } elseif ($poa) {
+        $priceLine = 'Price on application after scope. No invented catalogue price.';
+    } else {
+        $priceLine = 'Written quote after scope is agreed.';
+    }
     $intro = function_exists('seo_unique_intro')
         ? seo_unique_intro($svcName, $serviceSlug, $areaName)
         : $svcName . ' in ' . $areaName . '.';
@@ -312,7 +328,13 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     $standards = getServiceStandards($serviceSlug);
     $title = $svcName . ' in ' . $areaName . ' | ' . $s['brand'];
     $desc = $svcName . ' in ' . $areaName . '. ' . $priceLine;
+    if (strlen($desc) > 160) {
+        $desc = substr($desc, 0, 157) . '…';
+    }
     $canonical = url('/pages/' . $serviceSlug . '/' . $areaSlugVal);
+    $hubHref = isset($s['services'][$serviceSlug])
+        ? url('/pages/services/' . $serviceSlug)
+        : url('/pages/services/electrical');
 
     $html = icomplyMatrixChromeStart($title, $desc, $canonical);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
@@ -330,18 +352,33 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         . '<article class="matrix-card space-y-4">'
         . '<h2 class="text-2xl font-semibold">What we do in ' . icomplyMatrixH($areaName) . '</h2>'
         . '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($blurb) . '</p>'
+        . (function_exists('jackPilotGuidePriceHtml') ? jackPilotGuidePriceHtml($serviceSlug, $areaName) : '')
         . '<p class="text-sm">Service hub: <a class="text-[#ff6b00] font-semibold" href="'
-        . icomplyMatrixH(url('/pages/services/' . $serviceSlug)) . '">' . icomplyMatrixH($svcName) . '</a>'
+        . icomplyMatrixH($hubHref) . '">' . icomplyMatrixH($svcName) . '</a>'
         . ' · Town: <a class="text-[#ff6b00] font-semibold" href="'
         . icomplyMatrixH(url('/pages/areas/' . $areaSlugVal)) . '">' . icomplyMatrixH($areaName) . '</a></p>'
         . '</article>';
 
-    $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($svcName) . ' in every area</h2>'
-        . '<p class="text-sm text-zinc-600 mb-4">' . count($s['areas']) . ' towns.</p>'
-        . icomplyMatrixAreaChips(url('/pages/' . $serviceSlug . '/'))
+    $pilotAreas = function_exists('getJackPilotAreas') ? getJackPilotAreas() : [];
+    $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($svcName) . ' in Manchester and Burnley</h2>'
+        . '<p class="text-sm text-zinc-600 mb-4">These two towns only. Other towns stay on their area hubs until a later rollout.</p>'
+        . '<div class="chip-cloud">';
+    foreach ($pilotAreas as $pilotName => $pilotSlug) {
+        $html .= '<a class="area-chip" href="' . icomplyMatrixH(url('/pages/' . $serviceSlug . '/' . $pilotSlug)) . '">'
+            . icomplyMatrixH($pilotName) . '</a>';
+    }
+    $html .= '</div></section>';
+
+    $html .= '<section><h2 class="text-2xl font-semibold mb-3">Electrical, gas, security, water and building in ' . icomplyMatrixH($areaName) . '</h2>'
+        . (function_exists('jackPilotHubLinksHtml') ? jackPilotHubLinksHtml($areaName) : '')
         . '</section>';
 
-    $html .= '<section><h2 class="text-2xl font-semibold mb-3">All keywords for this service</h2>'
+    $html .= '<section><h2 class="text-2xl font-semibold mb-3">Fire services</h2>'
+        . '<p class="text-sm text-zinc-600 mb-4">Fire pages link out to their service hubs. Fire × town nationwide is a separate rollout.</p>'
+        . (function_exists('jackPilotFireLinkOutHtml') ? jackPilotFireLinkOutHtml() : '')
+        . '</section>';
+
+    $html .= '<section><h2 class="text-2xl font-semibold mb-3">Keyword guides for this service</h2>'
         . icomplyMatrixKeywordChips($serviceSlug)
         . '</section></main>';
 

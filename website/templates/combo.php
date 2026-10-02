@@ -236,6 +236,13 @@ $schema = [
     </div>
 </section>
 
+<?php if (function_exists('jackPilotGuidePriceHtml')) {
+    $guideHtml = jackPilotGuidePriceHtml($serviceSlug, $areaName);
+    if ($guideHtml !== '') {
+        echo '<section class="max-w-7xl mx-auto px-6 pt-10">' . $guideHtml . '</section>';
+    }
+} ?>
+
 <!-- INTRO + IMAGES -->
 <section class="max-w-7xl mx-auto px-6 py-16">
     <div class="grid lg:grid-cols-5 gap-12">
@@ -362,7 +369,7 @@ $schema = [
             if ($slug === $serviceSlug) continue;
             $rBlurb = getServiceBlurb($slug);
         ?>
-        <a href="<?= url('/pages/' . $slug . '/' . $AREA_SLUG . '.php') ?>"
+        <a href="<?= htmlspecialchars(exportedServiceLocalUrl($slug, $areaName, 'area'), ENT_QUOTES, 'UTF-8') ?>"
            class="group bg-white border rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
             <div class="h-32 bg-zinc-100 overflow-hidden">
                 <img src="<?= htmlspecialchars(serviceImageUrl($slug), ENT_QUOTES, 'UTF-8') ?>"
@@ -406,7 +413,7 @@ $schema = [
         <?php if (!empty($popularTowns)): ?>
         <div class="flex flex-wrap gap-2 mb-4">
             <?php foreach ($popularTowns as $town): ?>
-                <a href="<?= url('/pages/' . $SERVICE_SLUG . '/' . areaSlug($town) . '.php') ?>"
+                <a href="<?= htmlspecialchars(exportedServiceLocalUrl($SERVICE_SLUG, $town, 'service'), ENT_QUOTES, 'UTF-8') ?>"
                    class="px-5 py-2.5 bg-white border rounded-full text-sm font-medium text-black hover:border-[#ff6b00] hover:shadow-sm transition">
                     <?= htmlspecialchars($serviceName . ' in ' . $town, ENT_QUOTES, 'UTF-8') ?>
                 </a>
@@ -419,7 +426,7 @@ $schema = [
             <?php foreach ($nearby as $town):
                 if (in_array($town, $popularTowns, true)) continue;
             ?>
-                <a href="<?= url('/pages/' . $SERVICE_SLUG . '/' . areaSlug($town) . '.php') ?>"
+                <a href="<?= htmlspecialchars(exportedServiceLocalUrl($SERVICE_SLUG, $town, 'service'), ENT_QUOTES, 'UTF-8') ?>"
                    class="px-3 py-1.5 bg-zinc-50 border rounded-full text-xs text-zinc-700 hover:border-[#ff6b00]">
                     <?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?>
                 </a>

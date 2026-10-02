@@ -27,7 +27,8 @@
  * Electrical and gas keyword families always get the FULL areas list
  * (keyword × every town) so the Netlify static export includes that matrix.
  * --keyword-towns=all renders every keyword×area (~200k HTML files).
- * --full also renders service×area landings.
+ * Service×area landings are the Jack pilot only: every non-fire service
+ * × Manchester and Burnley. Fire × area nationwide is not this export.
  */
 declare(strict_types=1);
 
@@ -96,7 +97,7 @@ $log = static function (string $msg): void {
 $log("Icomply static export (Netlify pre-render)\n");
 $log("SITE_URL=" . SITE_URL . "\n");
 $log("dist={$dist}\n");
-$log($full ? "mode=full (core + hubs + keywords + service×area)\n" : "mode=default (core + hubs + keywords)\n");
+$log($full ? "mode=full (core + hubs + keywords + Jack pilot service×area)\n" : "mode=default (core + hubs + keywords + Manchester/Burnley non-fire)\n");
 $log("keyword-towns={$keywordTowns}\n");
 $log(str_repeat('=', 56) . "\n");
 
@@ -324,6 +325,14 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
             && !isset(getServices()[$m[1]])) {
             continue;
         }
+        // Service×area files on disk are not the source of truth. Pilot
+        // routes are added below so a leftover nationwide stub cannot ship.
+        if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+            $reserved = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages'];
+            if (!in_array($m[1], $reserved, true)) {
+                continue;
+            }
+        }
         $routes[] = $path;
     }
 
@@ -341,10 +350,10 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         $routes[] = $path;
     }
 
-    // Jack: every service has every area landing (not only --full).
-    foreach (array_keys(getServices()) as $sSlug) {
-        foreach (getAreas() as $area) {
-            $routes[] = '/pages/' . $sSlug . '/' . areaSlug((string)$area);
+    // Jack pilot: non-fire × Manchester + Burnley only (not nationwide, not fire).
+    if (function_exists('jackPilotExportPaths')) {
+        foreach (jackPilotExportPaths() as $path) {
+            $routes[] = $path;
         }
     }
 
@@ -366,8 +375,8 @@ function icomplyRenderExportRoute(string $path): array
         }
     }
     if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)
-        && function_exists('getServices')
-        && isset(getServices()[$m[1]])) {
+        && function_exists('jackPilotServiceAreaPublished')
+        && jackPilotServiceAreaPublished($m[1], $m[2])) {
         $area = function_exists('areaFromSlug') ? areaFromSlug($m[2]) : $m[2];
         $html = icomplyRenderServiceAreaHtml($m[1], (string)($area ?: $m[2]));
         if ($html !== '' && icomplyLooksLikeHtml($html)) {

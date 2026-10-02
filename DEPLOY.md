@@ -28,7 +28,7 @@ Pushes to `main` always deploy via GitHub Actions. Do not rely on the Netlify Gi
 | `/pages/keywords/{slug}`, `/pages/keywords/{slug}/{town}` | pre-rendered keyword matrix |
 | `/assets/*` | real files; splat does not apply (`force` is off) |
 
-The **default** export is the full matrix: every keyword hub × **every** area, plus every service × every area. Electrical and gas keyword families always get the full areas list. Compact unique HTML (local-content + POA for water/asbestos) keeps the build publishable. XML sitemap lists built hubs plus a small featured electrical/gas keyword×town sample — never 200k keyword×town rows and never `/pages/{service}/{town}` 404s. `/shop` and `/products` stay 200 trade hubs.
+The **default** export is the keyword matrix (every keyword hub × the areas list, with electrical and gas covering every town) plus **non-fire service × Manchester and Burnley only**. Fire × town pages are not in this export. Compact unique HTML (local-content + POA for water/asbestos) keeps the build publishable. XML sitemap lists built hubs, a small featured electrical/gas keyword×town sample, and those Manchester/Burnley landings — never 200k keyword×town rows and never other `/pages/{service}/{town}` URLs. `/shop` and `/products` stay 200 trade hubs.
 
 Contact form POST still needs a server (the static page is GET-only). That is unchanged and out of scope for pretty URLs.
 

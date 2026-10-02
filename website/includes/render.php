@@ -71,13 +71,20 @@ function comboTemplatePath(string $serviceSlug = ''): string {
  */
 function renderServiceAreaPage(string $serviceSlug, string $area): void {
     $services = getServices();
-    if (!isset($services[$serviceSlug])) {
+    $extras = function_exists('getJackPilotExtraServices') ? getJackPilotExtraServices() : [];
+    if (!isset($services[$serviceSlug]) && !isset($extras[$serviceSlug])) {
         http_response_code(404);
         echo 'Service not found';
         icomplyRequestExit();
         return;
     }
-    $serviceName = $services[$serviceSlug];
+    if (function_exists('jackPilotServiceAreaPublished') && !jackPilotServiceAreaPublished($serviceSlug, $area)) {
+        http_response_code(404);
+        echo 'Service area not published';
+        icomplyRequestExit();
+        return;
+    }
+    $serviceName = $services[$serviceSlug] ?? $extras[$serviceSlug];
     $areaSlug = areaSlug($area);
     $imgs = getKeywordImages($serviceSlug);
 

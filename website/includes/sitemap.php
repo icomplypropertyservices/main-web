@@ -98,17 +98,21 @@ function icomplySitemapEntries(): array
             return;
         }
         // Hard reject /pages/{service}/{town} even if a leftover matrix file
-        // sits in dist/. Keep only real hub prefixes.
+        // sits in dist/. Keep hub prefixes, plus the Jack pilot
+        // (non-fire × manchester|burnley). Fire × town stays out.
+        $isPilotLoc = false;
         if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
             $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages'];
-            if (!in_array($m[1], $okPrefix, true)) {
+            $isPilotLoc = function_exists('jackPilotServiceAreaPublished')
+                && jackPilotServiceAreaPublished($m[1], $m[2]);
+            if (!in_array($m[1], $okPrefix, true) && !$isPilotLoc) {
                 return;
             }
         }
-        // Keyword hubs + featured keyword×town are generated at export time.
-        // Do not require a source PHP file for those catalogue locs.
+        // Keyword hubs, featured keyword×town, and Jack pilot landings are
+        // generated at export time. Do not require a source PHP file.
         $isKeywordLoc = (bool)preg_match('#^/pages/keywords(/[a-z0-9\-]+){1,2}$#', $path);
-        if (!$isKeywordLoc && !icomplySitemapUrlHasFile($path)) {
+        if (!$isKeywordLoc && !$isPilotLoc && !icomplySitemapUrlHasFile($path)) {
             return;
         }
         $seen[$path] = true;
@@ -249,6 +253,12 @@ function icomplySitemapEntries(): array
                     }
                 }
             }
+        }
+    }
+
+    if (!$requestSafe && function_exists('jackPilotExportPaths')) {
+        foreach (jackPilotExportPaths() as $path) {
+            $add($path, '0.64');
         }
     }
 

@@ -47,8 +47,15 @@ $needHtml = [
     '/pages/keywords/asbestos-survey' => ['pages/keywords/asbestos-survey.php', ['Asbestos', '<!DOCTYPE']],
     '/pages/keywords/legionella-risk-assessment/stockport' => ['pages/keywords/legionella-risk-assessment/stockport.php', ['Legionella', 'Stockport', '<!DOCTYPE']],
     '/pages/keywords/asbestos-survey/manchester' => ['pages/keywords/asbestos-survey/manchester.php', ['Asbestos', 'Manchester', '<!DOCTYPE']],
-    '/pages/legionella-risk-assessment/stockport' => ['pages/legionella-risk-assessment/stockport.php', ['Legionella', 'Stockport', '<!DOCTYPE']],
+    '/pages/legionella-risk-assessment/burnley' => ['pages/legionella-risk-assessment/burnley.php', ['Legionella', 'Burnley', '<!DOCTYPE']],
     '/pages/asbestos-survey/manchester' => ['pages/asbestos-survey/manchester.php', ['Asbestos', 'Manchester', '<!DOCTYPE']],
+    '/pages/electrical/manchester' => ['pages/electrical/manchester.php', ['£249', 'Manchester', '<!DOCTYPE']],
+    '/pages/gas-systems/burnley' => ['pages/gas-systems/burnley.php', ['£85', 'Burnley', '<!DOCTYPE']],
+    '/pages/cctv/manchester' => ['pages/cctv/manchester.php', ['CCTV', 'Manchester', '<!DOCTYPE']],
+    '/pages/access-control/burnley' => ['pages/access-control/burnley.php', ['Access Control', 'Burnley', '<!DOCTYPE']],
+    '/pages/ev-charging/manchester' => ['pages/ev-charging/manchester.php', ['EV Charging', 'Manchester', '<!DOCTYPE']],
+    '/pages/plumbing/burnley' => ['pages/plumbing/burnley.php', ['Plumbing', 'Burnley', '<!DOCTYPE']],
+    '/pages/building-maintenance/manchester' => ['pages/building-maintenance/manchester.php', ['Building Maintenance', 'Manchester', '<!DOCTYPE']],
     '/shop' => ['shop/index.html', ['Fire', 'Electrical', 'Security', 'Gas', 'shop.icomplypropertyservices.co.uk', '<!DOCTYPE']],
     '/shop/fire' => ['shop/fire/index.html', ['Fire', '<!DOCTYPE']],
     '/shop/electrical' => ['shop/electrical/index.html', ['Electrical', '<!DOCTYPE']],
@@ -100,6 +107,21 @@ foreach ($needHtml as $url => $spec) {
     } else {
         $fail++;
         echo "[FAIL] {$url} → {$rel} " . implode(',', $missing) . "\n";
+    }
+}
+
+foreach ([
+    'pages/fire-alarms/manchester.php',
+    'pages/fire-alarms/burnley.php',
+    'pages/electrical/stockport.php',
+    'pages/legionella-risk-assessment/stockport.php',
+] as $rel) {
+    if (is_file($dist . '/' . $rel)) {
+        $fail++;
+        echo "[FAIL] out-of-scope service×area shipped: {$rel}\n";
+    } else {
+        $pass++;
+        echo "[PASS] not shipped {$rel}\n";
     }
 }
 
@@ -286,12 +308,22 @@ if (preg_match('#^/shop\\s+/pages/packages#m', $redirects)) {
     echo "[PASS] _redirects does not send /shop to packages\n";
 }
 $sitemapDist = is_file($dist . '/sitemap.xml') ? (string)file_get_contents($dist . '/sitemap.xml') : '';
-if (preg_match('#/pages/gas-systems/[a-z0-9\-]+</loc>#', $sitemapDist) || preg_match('#/pages/electrical/[a-z0-9\-]+</loc>#', $sitemapDist)) {
+$badPilot = false;
+if (preg_match_all('#/pages/(gas-systems|electrical|fire-alarms)/([a-z0-9\-]+)</loc>#', $sitemapDist, $smHits, PREG_SET_ORDER)) {
+    foreach ($smHits as $hit) {
+        $townOk = in_array($hit[2], ['manchester', 'burnley'], true) && $hit[1] !== 'fire-alarms';
+        if (!$townOk) {
+            $badPilot = true;
+            break;
+        }
+    }
+}
+if ($badPilot) {
     $fail++;
-    echo "[FAIL] dist/sitemap.xml still lists /pages/{service}/{town} 404s\n";
+    echo "[FAIL] dist/sitemap.xml lists service×area outside Manchester/Burnley non-fire\n";
 } else {
     $pass++;
-    echo "[PASS] dist/sitemap.xml has no service×area 404 locs\n";
+    echo "[PASS] dist/sitemap.xml service×area locs stay inside the Jack pilot\n";
 }
 
 if (!str_contains($headerFile, 'text/html')) {

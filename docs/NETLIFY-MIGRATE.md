@@ -13,7 +13,7 @@ Netlify does not run PHP at request time. The existing `website/` tree is PHP-dr
 ```bash
 php website/bin/static-export.php          # core + hubs + keyword matrix (default Netlify build)
 php website/bin/check-static-export.php
-php website/bin/static-export.php --full   # also service×area landings
+php website/bin/static-export.php --full   # same core; service×area is already Manchester + Burnley non-fire
 php website/bin/static-export.php --keyword-towns=all   # full keyword×area (~200k files)
 ```
 
@@ -34,7 +34,7 @@ php website/bin/static-export.php --keyword-towns=all   # full keyword×area (~2
 - `/` is `dist/index.html`.
 - Preserve redirects: www→apex, `/shop` + `/products` → `/pages/packages`.
 - Verify robots + sitemap on the Netlify preview host before domain attach.
-- Default export is core pages + hubs + every sitemap keyword hub (`/pages/keywords/{slug}`) and the town combos linked from chrome (popular towns × all keywords; all towns × priority keywords). `--full` adds service×area landings. `--keyword-towns=all` is the previous PHP router’s full keyword×area set (~200k HTML files).
+- Default export is core pages + hubs + every sitemap keyword hub (`/pages/keywords/{slug}`) and the town combos linked from chrome (popular towns × all keywords; all towns × priority keywords), plus non-fire service × Manchester and Burnley. Fire × town is not included. `--keyword-towns=all` is the previous PHP router’s full keyword×area set (~200k HTML files).
 
 ### P2 — Domain cutover
 - Attach apex + www on Netlify; force www→apex 301.

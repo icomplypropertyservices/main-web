@@ -233,7 +233,11 @@ $schema = [
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Services in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></div>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Everything we do locally</h2>
-                <p class="mt-2 text-zinc-600 max-w-xl">Open a live service hub — or, for electrical and gas, a keyword page for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Thin service×area doorways are not published.</p>
+                <p class="mt-2 text-zinc-600 max-w-xl"><?php if (function_exists('isJackPilotAreaSlug') && isJackPilotAreaSlug($AREA)): ?>
+                    Non-fire services open a <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> landing. Fire services link out to their national hubs.
+                <?php else: ?>
+                    Open a live service hub — or, for electrical and gas, a keyword page for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Service × town landings are published for Manchester and Burnley only.
+                <?php endif; ?></p>
             </div>
             <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All service hubs →</a>
         </div>

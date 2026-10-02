@@ -6,20 +6,18 @@
  *
  * Usage:
  *   php bin/generate-site.php
- *   php bin/generate-site.php --limit=150
- *   php bin/generate-site.php --service=fire-alarms
+ *   php bin/generate-site.php --service=electrical
+ *
+ * Default scope is the Jack pilot: non-fire services × Manchester and Burnley.
+ * Fire × area nationwide is not generated here.
  */
 require_once __DIR__ . '/../config.php';
 
-$options = getopt('', ['limit::', 'service::']);
-$limit = isset($options['limit']) ? (int)$options['limit'] : 0;
+$options = getopt('', ['service::']);
 $onlyService = $options['service'] ?? null;
 
-$allServices = getServices();
-$areasToUse = getAreas();
-if ($limit > 0) {
-    $areasToUse = array_slice($areasToUse, 0, $limit);
-}
+$allServices = function_exists('getJackPilotServices') ? getJackPilotServices() : getServices();
+$areasToUse = function_exists('getJackPilotAreaNames') ? getJackPilotAreaNames() : ['Manchester', 'Burnley'];
 
 echo "Icomply Site Generator (thin stubs → runtime render)\n";
 echo "====================================================\n\n";
@@ -27,6 +25,10 @@ echo "====================================================\n\n";
 $total = 0;
 foreach ($allServices as $sSlug => $sName) {
     if ($onlyService && $sSlug !== $onlyService) {
+        continue;
+    }
+    if (function_exists('isFireServiceSlug') && isFireServiceSlug($sSlug)) {
+        echo "  [{$sSlug}] skipped — fire × area is not this pilot\n";
         continue;
     }
 
