@@ -72,6 +72,7 @@ php website/bin/check-static-export.php
 - **Production branch** = `main` (Site configuration → Build & deploy → Continuous deployment → Production branch).
 - **Publish directory** = `dist` (must match `netlify.toml`; do **not** publish raw `website/`).
 - **Build command** can stay empty in the UI — `netlify.toml` owns it (`php website/bin/static-export.php`).
+- **Powered by Netlify badge** = off (Project configuration → General → Powered by Netlify badge). The repo `script-src` also blocks `/.netlify/scripts/hud` so the badge cannot come back on deploy. See [README](README.md).
 - Unlock production deploys if the CLI logs say deployments are locked.
 
 ## What gets published

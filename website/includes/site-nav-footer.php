@@ -7,7 +7,11 @@ function icomplyFooterHtml(): string
     $phone = icomplyNavH($n['phone']);
     $phoneHref = icomplyNavH($n['phoneHref']);
     $email = icomplyNavH($n['email']);
-    $wa = icomplyNavH($n['whatsapp']);
+    $waDigits = preg_replace('/\D+/', '', (string)($n['whatsapp'] ?? ''));
+    if ($waDigits === '') {
+        $waDigits = '447517806082';
+    }
+    $wa = icomplyNavH($waDigits);
     $brand = icomplyNavH($n['brand']);
     $year = date('Y');
     $contact = icomplyNavH(url('/contact.php'));

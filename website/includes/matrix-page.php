@@ -160,6 +160,7 @@ function icomplyMatrixChromeStart(string $title, string $desc, string $canonical
 
 function icomplyMatrixChromeEnd(): string
 {
+    require_once __DIR__ . '/netlify-badge.php';
     $s = icomplyMatrixShared();
     $popup = icomplyMatrixLeadPopupHtml();
     return '<footer class="bg-[#0B1F3A] text-white mt-12">'
@@ -174,7 +175,10 @@ function icomplyMatrixChromeEnd(): string
         . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH($s['contact']) . '">Contact / POA quote</a>'
         . '</div>'
         . '<p class="text-white/60 text-xs">Quotes are POA. Call ' . icomplyMatrixH($s['phone']) . ' or use the quote form.</p>'
-        . '</div></footer>' . $popup . '</body></html>';
+        . '</div></footer>' . $popup
+        . icomplyWhatsappFloatHtml($s['whatsapp'])
+        . icomplyNetlifyBadgeStripHtml()
+        . '</body></html>';
 }
 
 function icomplyMatrixAreaChips(string $hrefPrefix): string

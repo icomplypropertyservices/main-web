@@ -414,6 +414,15 @@ if (!str_contains($headerFile, '/shop/assets/*.css')) {
     $pass++;
     echo "[PASS] _headers has /shop/assets/*.css\n";
 }
+if (!str_contains($headerFile, 'Content-Security-Policy:')
+    || !str_contains($headerFile, 'icomplypropertyservices.co.uk/assets/')
+    || preg_match("/Content-Security-Policy:[^\n]*'self'/", $headerFile)) {
+    $fail++;
+    echo "[FAIL] _headers CSP must block /.netlify/scripts/hud (path-scoped script-src, no 'self')\n";
+} else {
+    $pass++;
+    echo "[PASS] _headers CSP blocks Netlify HUD badge script\n";
+}
 
 /**
  * Every HTML page canonical must be that page. /pages/products may point at /products.
