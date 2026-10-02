@@ -326,6 +326,36 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
+<!-- COMMERCIAL JOBS -->
+<section id="commercial-jobs" class="bg-zinc-50 border-y scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+            <div>
+                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Commercial</div>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Commercial compliance jobs</h2>
+                <p class="mt-2 text-zinc-600 max-w-2xl">Workplace and FM job pages. Quotes are price on application after scope.</p>
+            </div>
+            <a href="<?= url('/pages/commercial.php') ?>#jobs" class="text-sm font-semibold text-[#ff6b00]">Commercial hub →</a>
+        </div>
+        <?php
+        require_once SITE_ROOT . '/includes/commercial-jobs.php';
+        foreach (commercialJobGroups() as $group => $groupJobs): ?>
+            <h3 class="text-lg font-semibold text-black mt-6 mb-3"><?= htmlspecialchars($group, ENT_QUOTES, 'UTF-8') ?></h3>
+            <div class="flex flex-wrap gap-2">
+                <?php foreach ($groupJobs as $job):
+                    $jobSlug = keywordSlug((string)($job['slug'] ?? ''));
+                    $jobName = (string)($job['name'] ?? $jobSlug);
+                ?>
+                    <a href="<?= url(commercialJobPath($jobSlug) . '.php') ?>"
+                       class="px-3 py-1.5 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00] transition">
+                        <?= htmlspecialchars($jobName, ENT_QUOTES, 'UTF-8') ?>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</section>
+
 <!-- POPULAR AREAS -->
 <section id="areas" class="max-w-7xl mx-auto px-6 py-16 md:py-20 scroll-mt-24">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">

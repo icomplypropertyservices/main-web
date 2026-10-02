@@ -1,0 +1,2216 @@
+{
+  "count": 47,
+  "lane": "commercial-property-compliance",
+  "note": "POA only. Draft lane for /pages/commercial/{slug}. Not a production price list.",
+  "jobs": [
+    {
+      "slug": "commercial-fire-risk-assessment",
+      "name": "Commercial fire risk assessment",
+      "group": "Fire & life safety",
+      "service": "fire-risk-assessments",
+      "title": "Commercial Fire Risk Assessment | Workplaces & FM",
+      "h1": "Commercial fire risk assessment",
+      "h1_accent": "written for the building you occupy",
+      "meta": "Workplace fire risk assessments for offices, warehouses and mixed-use sites in the North West. Written FRA and action plan from Stockport. Quote after we know the premises.",
+      "kicker": "Commercial fire · FRA",
+      "intro": "A workplace FRA describes this building and the people in it, then a prioritised action list your facilities team can schedule.",
+      "paragraphs": [
+        "We walk the occupied premises, record hazards and the precautions already there, and write the assessment against how the site is actually used — shifts, public access, sleeping risk if any, and plant.",
+        "Actions are split between management tasks and physical upgrades. Alarms, lighting, doors and extinguishers are quoted separately unless you asked us to include them in the same instruction."
+      ],
+      "points": [
+        "Occupied walkaround with the responsible person or FM",
+        "Written assessment and prioritised action plan",
+        "Clear split between paperwork tasks and trade work",
+        "Follow-on quotes only for the actions you instruct"
+      ],
+      "standards": "Regulatory Reform (Fire Safety) Order practice; PAS 79-style structure where it fits the premises",
+      "premises": "Offices, warehouses, retail, industrial units, mixed-use common parts",
+      "deliverable": "A written commercial FRA and an action plan you can file",
+      "honest": "An FRA is not a licence, not legal advice, and not a guarantee of an enforcement outcome. Price on application after storeys and use are known.",
+      "faqs": [
+        {
+          "q": "Is a commercial FRA the same as a landlord house assessment?",
+          "a": "No. A workplace or mixed-use assessment follows the people, processes and common parts on that site. A single-let house checklist is the wrong document."
+        },
+        {
+          "q": "Will you re-date last year's PDF?",
+          "a": "No. If little has changed we still review the building. We do not sell a re-dated file."
+        },
+        {
+          "q": "Do you include alarm servicing in the FRA fee?",
+          "a": "Only if you ask. The assessment names the systems; servicing is a separate visit and a separate quote."
+        }
+      ],
+      "related": [
+        "commercial-fire-alarm-service",
+        "commercial-emergency-lighting",
+        "commercial-fire-door"
+      ],
+      "keyword": "commercial-fire-risk-assessment",
+      "seo_keywords": "Commercial fire risk assessment, commercial property compliance, Offices, warehouses, retail, industrial units, mixed-use common parts, North West, Stockport"
+    },
+    {
+      "slug": "commercial-fire-alarm",
+      "name": "Commercial fire alarm",
+      "group": "Fire & life safety",
+      "service": "fire-alarms",
+      "title": "Commercial Fire Alarm | Design, Install & Handover",
+      "h1": "Commercial fire alarm",
+      "h1_accent": "scoped to the FRA, not a catalogue panel",
+      "meta": "Commercial fire alarm design and install for North West workplaces. Addressable and conventional systems, commissioned with a logbook. POA after device count and panel brand.",
+      "kicker": "Commercial fire · install",
+      "intro": "New and replacement workplace alarms are designed from the fire strategy and the building, then commissioned so the FM can actually operate the panel.",
+      "paragraphs": [
+        "We survey zones, cause-and-effect, sound levels and existing cable before naming a panel. Conventional suits simple units; addressable suits larger floor plates and multi-tenant blocks.",
+        "Handover includes a demonstration for the people who will silence and reset it, plus the paperwork insurers and auditors ask to see. Orphaned systems are quoted only after we have seen the panel."
+      ],
+      "points": [
+        "Survey against the FRA and the floor plate",
+        "Conventional or addressable recommendation, with reasons",
+        "Commissioning, cause-and-effect and as-fitted notes",
+        "Staff handover on silence, reset and weekly tests"
+      ],
+      "standards": "BS 5839-1 for commercial systems",
+      "premises": "Offices, retail, warehouses, schools, mixed-use commercial",
+      "deliverable": "An installed, commissioned commercial fire alarm and a logbook start",
+      "honest": "We do not publish panel prices. Device count, protocol and access decide the quote.",
+      "faqs": [
+        {
+          "q": "Can you take over a panel another company fitted?",
+          "a": "Often, after we read the panel, the zone chart and any cause-and-effect. That look is part of quoting."
+        },
+        {
+          "q": "Do you design to the FRA or replace it?",
+          "a": "We design to the current assessment. If the FRA is missing or stale, book that first."
+        },
+        {
+          "q": "Will staff be shown how to use it?",
+          "a": "Yes. Handover includes the weekly test and who to call when it faults."
+        }
+      ],
+      "related": [
+        "commercial-fire-alarm-system",
+        "commercial-fire-alarm-service",
+        "commercial-fire-risk-assessment"
+      ],
+      "keyword": "commercial-fire-alarm",
+      "seo_keywords": "Commercial fire alarm, commercial property compliance, Offices, retail, warehouses, schools, mixed-use commercial, North West, Stockport"
+    },
+    {
+      "slug": "commercial-fire-alarm-service",
+      "name": "Commercial fire alarm service",
+      "group": "Fire & life safety",
+      "service": "fire-alarms",
+      "title": "Commercial Fire Alarm Service | BS 5839 Visits",
+      "h1": "Commercial fire alarm service",
+      "h1_accent": "on a diary your sites can keep",
+      "meta": "Periodic commercial fire alarm servicing across Greater Manchester and the North West. Logbook visits, defect lists and certificates. Quote after panel brand and device count.",
+      "kicker": "Commercial fire · service",
+      "intro": "Servicing is the visit that keeps a workplace alarm in the logbook — batteries, devices, cause-and-effect spot checks and a defect list written for the FM, not only for an engineer.",
+      "paragraphs": [
+        "We attend on an agreed cadence, test to the standard that applies to the system, and leave a certificate plus any faults priced as options. Multi-site diaries are grouped so one engineer is not crossing the region twice in a week.",
+        "If the panel is unknown, send a photo of the fascia before we promise a date. Parts for discontinued ranges are called out before the visit, not discovered as a surprise invoice."
+      ],
+      "points": [
+        "Scheduled service aligned to the logbook",
+        "Battery, device and control checks",
+        "Defect list with optional remedial quote",
+        "Portfolio diaries for more than one site"
+      ],
+      "standards": "BS 5839-1 periodic inspection and servicing",
+      "premises": "Occupied offices, industrial units, retail parks, managed blocks",
+      "deliverable": "A service certificate, updated logbook and a defect list",
+      "honest": "Service frequency follows the standard and the risk assessment, not a one-line retainer price on this page.",
+      "faqs": [
+        {
+          "q": "How often is a commercial alarm serviced?",
+          "a": "Most systems need a competent person at least every six months, with the weekly user test staying on site. We confirm the interval from the system and the FRA."
+        },
+        {
+          "q": "Can several sites share one calendar?",
+          "a": "Yes. Send the list, panel brands and preferred windows."
+        },
+        {
+          "q": "What if you find a fault?",
+          "a": "You get it in writing. Remedial work is a separate instruction unless the contract already includes an agreed repair pot."
+        }
+      ],
+      "related": [
+        "commercial-fire-alarm",
+        "commercial-emergency-lighting-test",
+        "fm-fire-safety-support"
+      ],
+      "keyword": "commercial-fire-alarm-service",
+      "seo_keywords": "Commercial fire alarm service, commercial property compliance, Occupied offices, industrial units, retail parks, managed blocks, North West, Stockport"
+    },
+    {
+      "slug": "commercial-fire-alarm-system",
+      "name": "Commercial fire alarm system",
+      "group": "Fire & life safety",
+      "service": "fire-alarms",
+      "title": "Commercial Fire Alarm System | Panels, Loops & Zones",
+      "h1": "Commercial fire alarm system",
+      "h1_accent": "the whole system, not a single device",
+      "meta": "Commercial fire alarm systems for North West workplaces — panels, loops or zones, devices and interfaces. Survey-led quotes. No catalogue price on this page.",
+      "kicker": "Commercial fire · system",
+      "intro": "A system page is for the panel, the field devices and the way they behave together when a call point or detector operates.",
+      "paragraphs": [
+        "We look at loop loading or zone counts, interfaces to doors, plant and lifts, and whether the existing cable can stay. Replacing a head is a repair; replacing the system is this conversation.",
+        "Documentation names the protocol and the cause-and-effect you approved. We do not leave a panel that only the installing engineer can log into."
+      ],
+      "points": [
+        "Panel, devices and interfaces treated as one system",
+        "Protocol and cause-and-effect recorded",
+        "Interfaces to doors, shutters and plant called out",
+        "Admin access handed to the site, not held hostage"
+      ],
+      "standards": "BS 5839-1 system design, installation and commissioning",
+      "premises": "Medium offices, multi-tenant commercial, light industrial",
+      "deliverable": "A specified commercial system with drawings or zone text you can file",
+      "honest": "System size changes the quote. Send storeys, approximate device count and a photo of the current panel if there is one.",
+      "faqs": [
+        {
+          "q": "Is this the same as a service visit?",
+          "a": "No. Service maintains what you have. A system job designs, replaces or materially extends it."
+        },
+        {
+          "q": "Can you network more than one panel?",
+          "a": "Where the panels support it and the fire strategy needs it. Say if buildings are linked."
+        },
+        {
+          "q": "Do you specify a brand before the survey?",
+          "a": "No. Brand follows protocol, spares and what is already on the wall."
+        }
+      ],
+      "related": [
+        "commercial-fire-alarm",
+        "commercial-fire-alarm-service",
+        "commercial-fire-stopping-package"
+      ],
+      "keyword": "commercial-fire-alarm-system",
+      "seo_keywords": "Commercial fire alarm system, commercial property compliance, Medium offices, multi-tenant commercial, light industrial, North West, Stockport"
+    },
+    {
+      "slug": "commercial-emergency-lighting",
+      "name": "Commercial emergency lighting",
+      "group": "Fire & life safety",
+      "service": "emergency-lighting",
+      "title": "Commercial Emergency Lighting | Install & Upgrades",
+      "h1": "Commercial emergency lighting",
+      "h1_accent": "on the escape routes you actually use",
+      "meta": "Commercial emergency lighting installs and LED upgrades for North West workplaces. Escape routes, open areas and final exits. POA after a walkaround.",
+      "kicker": "Commercial fire · lighting",
+      "intro": "Escape lighting is specified for the routes, open areas and high-risk rooms on this floor plate — not copied from a domestic bulkhead pack.",
+      "paragraphs": [
+        "We check existing fittings, duration, and whether self-test or a planned monthly test suits the FM team. LED upgrades are quoted where fittings are failed or obsolete, not as an automatic whole-building swap.",
+        "Final exits, plant rooms and changes of direction are the usual gaps. The quote lists locations, not a vague 'make it compliant' line."
+      ],
+      "points": [
+        "Escape-route and open-area review",
+        "Maintained and non-maintained fittings where each is needed",
+        "LED upgrade options for failed gear",
+        "Handover notes for the monthly flicker test"
+      ],
+      "standards": "BS 5266-1 emergency lighting",
+      "premises": "Offices, warehouses, retail, stair cores in commercial blocks",
+      "deliverable": "Fittings installed or upgraded, with locations recorded",
+      "honest": "We do not sell a per-fitting web price. Count, mounting height and access hours change the job.",
+      "faqs": [
+        {
+          "q": "Is install the same as the annual test?",
+          "a": "No. This job puts fittings in or replaces them. The duration test is a separate booking."
+        },
+        {
+          "q": "Do you replace every fitting because one has failed?",
+          "a": "No. Failed points are listed. A wider upgrade is an option."
+        },
+        {
+          "q": "Can tests happen after the public has left?",
+          "a": "Yes, when the building can be opened out of hours."
+        }
+      ],
+      "related": [
+        "commercial-emergency-lighting-test",
+        "commercial-fire-risk-assessment",
+        "commercial-security-lighting"
+      ],
+      "keyword": "commercial-emergency-lighting",
+      "seo_keywords": "Commercial emergency lighting, commercial property compliance, Offices, warehouses, retail, stair cores in commercial blocks, North West, Stockport"
+    },
+    {
+      "slug": "commercial-emergency-lighting-test",
+      "name": "Commercial emergency lighting test",
+      "group": "Fire & life safety",
+      "service": "emergency-lighting",
+      "title": "Commercial Emergency Lighting Test | Monthly & Annual",
+      "h1": "Commercial emergency lighting test",
+      "h1_accent": "duration evidence for the logbook",
+      "meta": "Monthly function tests and annual duration tests for commercial emergency lighting in the North West. Logbook entries and failed-fitting lists. POA.",
+      "kicker": "Commercial fire · lighting tests",
+      "intro": "The test is the evidence: function tests through the year and a full duration test that shows fittings still last the rated period.",
+      "paragraphs": [
+        "We discharge on the annual visit, record pass and fail by location, and price replacements as a follow-on. Monthly flick tests can stay with your team or sit on our diary if nobody on site will own them.",
+        "Self-test fittings still need someone to read the faults. We do not treat a green LED as a completed logbook."
+      ],
+      "points": [
+        "Annual full-duration discharge",
+        "Optional monthly function tests",
+        "Failed points listed by location",
+        "Logbook or certificate the auditor can read"
+      ],
+      "standards": "BS 5266-1 routine testing",
+      "premises": "Offices, retail, warehouses, common stairs in commercial buildings",
+      "deliverable": "A test record and a list of fittings that failed",
+      "honest": "Testing is not an install quote. Replacements are priced after the failures are known.",
+      "faqs": [
+        {
+          "q": "Do you need the lights off for the annual test?",
+          "a": "The duration test discharges the fittings. We agree a window so occupied areas are not left dark unexpectedly."
+        },
+        {
+          "q": "Can our caretaker keep doing the monthly test?",
+          "a": "Yes. We will say what must be written down. We can take the monthly round if the site will not."
+        },
+        {
+          "q": "What happens to failed fittings?",
+          "a": "They are listed. You choose whether we replace them."
+        }
+      ],
+      "related": [
+        "commercial-emergency-lighting",
+        "commercial-fire-alarm-service",
+        "fm-fire-safety-support"
+      ],
+      "keyword": "",
+      "seo_keywords": "Commercial emergency lighting test, commercial property compliance, Offices, retail, warehouses, common stairs in commercial buildings, North West, Stockport"
+    },
+    {
+      "slug": "commercial-fire-door",
+      "name": "Commercial fire door",
+      "group": "Fire & life safety",
+      "service": "fire-doors",
+      "title": "Commercial Fire Doors | Survey, Repair & Replacement",
+      "h1": "Commercial fire doors",
+      "h1_accent": "gaps, closers and the leaf that is actually there",
+      "meta": "Commercial fire door surveys, repairs and replacements for North West workplaces and common parts. POA after a door schedule, not a per-door web price.",
+      "kicker": "Commercial fire · doors",
+      "intro": "A commercial door fails on gaps, seals, closers, glass and ironmongery — we record the leaf in front of us rather than assuming a catalogue FD30.",
+      "paragraphs": [
+        "Surveys produce a door-by-door sheet: location, defects, and whether repair or replacement is the honest fix. Replacements are specified to the rating the FRA or the compartment needs.",
+        "We do not certify a door we have not seen, and we do not hide ironmongery changes inside a 'compliant door' bundle price."
+      ],
+      "points": [
+        "Door-by-door defect sheet",
+        "Repair versus replace called honestly",
+        "Closers, seals, gaps and glazing checked",
+        "Replacements specified to the rating required"
+      ],
+      "standards": "Fire door inspection practice aligned to the FRA and BS 8214 installation where doors are replaced",
+      "premises": "Offices, stair cores, plant rooms, commercial common parts",
+      "deliverable": "A door schedule with repairs or a replacement quote",
+      "honest": "Nominal fire ratings are not a product we invent on the web. The leaf and the frame decide the work.",
+      "faqs": [
+        {
+          "q": "Can you inspect without replacing?",
+          "a": "Yes. Inspection and remedial quotes are separate instructions."
+        },
+        {
+          "q": "Do you upgrade a domestic door in a shop unit?",
+          "a": "Only if the FRA and the opening allow it. Many commercial doors need a different leaf and frame."
+        },
+        {
+          "q": "Will one failed closer fail the whole survey?",
+          "a": "The survey records it. Whether that stops occupation is the responsible person's decision, not a slogan on this page."
+        }
+      ],
+      "related": [
+        "commercial-fire-door-inspection",
+        "commercial-fire-stopping-package",
+        "commercial-fire-risk-assessment"
+      ],
+      "keyword": "commercial-fire-door",
+      "seo_keywords": "Commercial fire door, commercial property compliance, Offices, stair cores, plant rooms, commercial common parts, North West, Stockport"
+    },
+    {
+      "slug": "commercial-fire-door-inspection",
+      "name": "Commercial fire door inspection",
+      "group": "Fire & life safety",
+      "service": "fire-doors",
+      "title": "Commercial Fire Door Inspection | Schedules for FM",
+      "h1": "Commercial fire door inspection",
+      "h1_accent": "a schedule, not a single closer swap",
+      "meta": "Commercial fire door inspections for facilities teams in the North West. Door schedules, defect grades and remedial options. Quote after door count.",
+      "kicker": "Commercial fire · door inspection",
+      "intro": "Inspection is the scheduled look at every fire door on the list — risers, stair lobbies, plant and cross-corridor doors — written so an FM can brief a joiner.",
+      "paragraphs": [
+        "We grade defects so a missing smoke seal is not written up the same way as a door that does not close. Photos sit against the door reference your CAFM system already uses, when you share those codes.",
+        "The visit does not include carpentry unless you add it. You leave with a schedule, not a surprise invoice for ironmongery."
+      ],
+      "points": [
+        "Every listed fire door opened and checked",
+        "Defects graded for repair priority",
+        "References matched to your door codes where you have them",
+        "Remedial quote only if you want one"
+      ],
+      "standards": "Fire door inspection aligned to the FRA and accepted UK inspection checklists",
+      "premises": "Multi-door offices, commercial stair cores, managed mixed-use",
+      "deliverable": "An inspection schedule with graded defects",
+      "honest": "Door count and access (risers, tenant demises) set the quote. No per-door price is published here.",
+      "faqs": [
+        {
+          "q": "How many doors justify a formal schedule?",
+          "a": "Any common-part or workplace set you must evidence. A pair of stair doors is still an inspection; a tower needs a schedule."
+        },
+        {
+          "q": "Do you inspect flat entrance doors in a commercial block?",
+          "a": "If they are fire doors on the list and we can access them. Tenant doors need notice."
+        },
+        {
+          "q": "Is this the same as a fire risk assessment?",
+          "a": "No. The FRA may tell you to inspect doors. This visit is the inspection."
+        }
+      ],
+      "related": [
+        "commercial-fire-door",
+        "commercial-fire-risk-assessment",
+        "commercial-fire-sign-survey"
+      ],
+      "keyword": "",
+      "seo_keywords": "Commercial fire door inspection, commercial property compliance, Multi-door offices, commercial stair cores, managed mixed-use, North West, Stockport"
+    },
+    {
+      "slug": "commercial-fire-stopping-package",
+      "name": "Commercial fire stopping",
+      "group": "Fire & life safety",
+      "service": "fire-stopping",
+      "title": "Commercial Fire Stopping | Service Penetrations",
+      "h1": "Commercial fire stopping",
+      "h1_accent": "sealed to the compartment, not a tub of mastic",
+      "meta": "Commercial fire-stopping for cable, pipe and duct penetrations in North West workplaces. Survey and remedial packages. POA after openings are seen.",
+      "kicker": "Commercial fire · compartmentation",
+      "intro": "Fire stopping fails where later trades have punched the wall. We record the opening, the services through it, and the seal that belongs there.",
+      "paragraphs": [
+        "A package can be a survey only, or survey plus the seals you approve. We do not blanket a riser with the wrong product because it was on the van.",
+        "Photos and locations go back to the FRA actions. If a penetration needs a specialist seal or a builder to remake the substrate, that is written as such."
+      ],
+      "points": [
+        "Penetration survey with photos",
+        "Product matched to the service and the wall",
+        "Optional install of approved seals",
+        "Locations tied back to FRA actions"
+      ],
+      "standards": "Compartmentation remedial work; third-party certified products where the detail requires them",
+      "premises": "Risers, plant rooms, ceiling voids in offices and retail units",
+      "deliverable": "A penetration schedule and, if instructed, completed seals",
+      "honest": "We will not guess a price from a photo of one hole and call it the whole riser.",
+      "faqs": [
+        {
+          "q": "Do you certify the whole building as compartmented?",
+          "a": "No. We record the openings we were asked to survey or seal."
+        },
+        {
+          "q": "Can you work above a live office?",
+          "a": "Often out of hours. Dust, access and tenant notice are part of the quote."
+        },
+        {
+          "q": "Is mastic always enough?",
+          "a": "No. Cables, pipes and dampers need the detail that matches the wall."
+        }
+      ],
+      "related": [
+        "commercial-fire-door",
+        "commercial-fire-risk-assessment",
+        "commercial-fire-alarm-system"
+      ],
+      "keyword": "commercial-fire-stopping-package",
+      "seo_keywords": "Commercial fire stopping, commercial property compliance, Risers, plant rooms, ceiling voids in offices and retail units, North West, Stockport"
+    },
+    {
+      "slug": "commercial-extinguisher-package",
+      "name": "Commercial extinguisher service",
+      "group": "Fire & life safety",
+      "service": "fire-extinguishers",
+      "title": "Commercial Extinguisher Service | Site Schedules",
+      "h1": "Commercial extinguishers",
+      "h1_accent": "the right unit at the point the FRA named",
+      "meta": "Commercial fire extinguisher supply and annual service for North West workplaces. Site schedules, discharge tests where due, and replacement quotes. POA.",
+      "kicker": "Commercial fire · extinguishers",
+      "intro": "Extinguishers are a schedule: type, location, date and whether the unit is still the one the FRA asked for.",
+      "paragraphs": [
+        "Annual service covers the units on the wall. Missing or wrong types are listed against the assessment rather than quietly swapped for whatever is cheapest.",
+        "New sites get a layout from the FRA, not a van stock guess. Training your staff to use them is a separate conversation."
+      ],
+      "points": [
+        "Annual service of the units on site",
+        "Types checked against the FRA",
+        "Discharge and replacement when a unit is due",
+        "Schedule left for the fire log"
+      ],
+      "standards": "BS 5306-3 servicing; selection aligned to the FRA",
+      "premises": "Offices, workshops, retail, plant rooms, commercial kitchens",
+      "deliverable": "A serviced schedule and certificates for the units attended",
+      "honest": "Unit counts change the visit. We do not publish a per-extinguisher price.",
+      "faqs": [
+        {
+          "q": "Do you condemn an extinguisher that is only old?",
+          "a": "If it is out of date, damaged or the wrong type, yes. Age alone is explained on the report."
+        },
+        {
+          "q": "Can one visit cover three units on an estate?",
+          "a": "Yes. Send addresses and rough counts."
+        },
+        {
+          "q": "Is this included in the fire alarm service?",
+          "a": "Only when the contract says so. Otherwise it is its own visit."
+        }
+      ],
+      "related": [
+        "commercial-fire-risk-assessment",
+        "commercial-kitchen-fire-system",
+        "commercial-fire-sign-survey"
+      ],
+      "keyword": "commercial-extinguisher-package",
+      "seo_keywords": "Commercial extinguisher service, commercial property compliance, Offices, workshops, retail, plant rooms, commercial kitchens, North West, Stockport"
+    },
+    {
+      "slug": "commercial-sprinkler-service",
+      "name": "Commercial sprinkler service",
+      "group": "Fire & life safety",
+      "service": "sprinkler-systems",
+      "title": "Commercial Sprinkler Service | Weekly To Annual",
+      "h1": "Commercial sprinkler service",
+      "h1_accent": "the valve set and the tests you must record",
+      "meta": "Commercial sprinkler servicing and defect reporting for North West sites that already have a system. POA after we know the valve set and standard.",
+      "kicker": "Commercial fire · sprinklers",
+      "intro": "Sprinkler maintenance is the pump, the valves, the alarms and the weekly tests somebody has to sign — not a detector clean.",
+      "paragraphs": [
+        "We service systems we are competent to attend and say so when a specialist contractor must stay on the insurance schedule. Defects are written against the valve house, not buried in a generic fire report.",
+        "Install of a new sprinkler system is a design job with a fire engineer. This page is service and defect attendance on an existing installation."
+      ],
+      "points": [
+        "Valve set and alarm inspection",
+        "Agreed test attendance",
+        "Defects reported for the insurer file",
+        "Honest handover when a specialist must lead"
+      ],
+      "standards": "Sprinkler maintenance aligned to the installed standard and the insurer's schedule",
+      "premises": "Warehouses, retail, commercial buildings with an existing sprinkler system",
+      "deliverable": "A service report for the valve set we attended",
+      "honest": "We do not quote a new sprinkler design from this page, and we do not publish a contract price.",
+      "faqs": [
+        {
+          "q": "Will you design a new warehouse sprinkler system?",
+          "a": "That is a fire-engineering design. Ask us and we will say whether we lead or introduce a specialist."
+        },
+        {
+          "q": "Can you do the weekly bell test?",
+          "a": "We can attend agreed tests. Many sites keep the weekly test in-house and book us for the planned service."
+        },
+        {
+          "q": "Do you cover dry and wet systems?",
+          "a": "Tell us which you have. We confirm competence before the diary is booked."
+        }
+      ],
+      "related": [
+        "commercial-fire-alarm-service",
+        "commercial-fire-risk-assessment",
+        "fm-fire-safety-support"
+      ],
+      "keyword": "commercial-sprinkler-service",
+      "seo_keywords": "Commercial sprinkler service, commercial property compliance, Warehouses, retail, commercial buildings with an existing sprinkler system, North West, Stockport"
+    },
+    {
+      "slug": "commercial-kitchen-fire-system",
+      "name": "Commercial kitchen fire system",
+      "group": "Fire & life safety",
+      "service": "kitchen-fire-suppression",
+      "title": "Commercial Kitchen Fire Suppression | Service & Install",
+      "h1": "Commercial kitchen fire suppression",
+      "h1_accent": "over the line, not a domestic blanket",
+      "meta": "Commercial kitchen fire suppression surveys, installs and servicing for North West catering sites. Hood, filters and fuel shut-off included in the scope we quote. POA.",
+      "kicker": "Commercial fire · kitchens",
+      "intro": "A catering line needs suppression matched to the appliances under the canopy, plus a shut-off that actually closes the gas or the electric supply.",
+      "paragraphs": [
+        "We survey hood length, appliance layout and existing heads before naming a system. Servicing is a separate diary from a new install.",
+        "Filters, nozzles and links are listed. We do not sign off a canopy we could not access because the kitchen was in full service without a window."
+      ],
+      "points": [
+        "Canopy and appliance survey",
+        "Install or service of the suppression system",
+        "Fuel shut-off checked",
+        "Access window agreed with the kitchen"
+      ],
+      "standards": "Kitchen suppression installed and serviced to the manufacturer's schedule and the FRA",
+      "premises": "Restaurants, schools, workplace canteens, dark kitchens",
+      "deliverable": "A quoted system or a service record for the canopy we saw",
+      "honest": "Appliance layout changes the design. There is no flat kitchen price on this page.",
+      "faqs": [
+        {
+          "q": "Can you service a system you did not install?",
+          "a": "Often, if we can identify it and get parts. Send a photo of the control box."
+        },
+        {
+          "q": "Does this replace extinguishers in the kitchen?",
+          "a": "No. Wet chemical or the correct extinguisher class still belongs in the FRA."
+        },
+        {
+          "q": "Will you work during service?",
+          "a": "Shutdowns are agreed. A live pass is a bad time to discharge a test."
+        }
+      ],
+      "related": [
+        "commercial-kitchen-gas-safety",
+        "commercial-extinguisher-package",
+        "commercial-fire-risk-assessment"
+      ],
+      "keyword": "commercial-kitchen-fire-system",
+      "seo_keywords": "Commercial kitchen fire system, commercial property compliance, Restaurants, schools, workplace canteens, dark kitchens, North West, Stockport"
+    },
+    {
+      "slug": "commercial-fire-sign-survey",
+      "name": "Commercial fire sign survey",
+      "group": "Fire & life safety",
+      "service": "fire-signage",
+      "title": "Commercial Fire Sign Survey | Escape & Equipment",
+      "h1": "Commercial fire signs",
+      "h1_accent": "the signs the route actually needs",
+      "meta": "Commercial fire exit and fire-equipment sign surveys for North West workplaces. Missing, contradictory and obsolete signs listed. Supply quoted after the survey. POA.",
+      "kicker": "Commercial fire · signage",
+      "intro": "Sign surveys catch contradictory arrows, missing final-exit signs and extinguisher ID signs that no longer match the unit underneath.",
+      "paragraphs": [
+        "We walk the escape routes and equipment points, photograph gaps, and quote only the signs that should change. A full reprint of every door is not the default.",
+        "Running-man legends follow the current format. We will not add a sign that points through a door the FRA says is not an exit."
+      ],
+      "points": [
+        "Escape-route walk",
+        "Equipment identification signs checked",
+        "Contradictory arrows flagged",
+        "Supply quote for the signs that should change"
+      ],
+      "standards": "BS 5499 / ISO 7010 style safety signs as specified for the premises",
+      "premises": "Offices, warehouses, retail, commercial common stairs",
+      "deliverable": "A sign schedule and an optional supply quote",
+      "honest": "This is not a printing price list. Count and fixing height come after the walk.",
+      "faqs": [
+        {
+          "q": "Do you print one replacement sign?",
+          "a": "Yes. The survey is optional if you already know the legend and the size."
+        },
+        {
+          "q": "Will new signs fix a bad escape route?",
+          "a": "No. Signs mark the route the FRA already accepts."
+        },
+        {
+          "q": "Can signs go on the same visit as the FRA?",
+          "a": "Yes, if we are booked to do both."
+        }
+      ],
+      "related": [
+        "commercial-fire-risk-assessment",
+        "commercial-extinguisher-package",
+        "commercial-emergency-lighting"
+      ],
+      "keyword": "commercial-fire-sign-survey",
+      "seo_keywords": "Commercial fire sign survey, commercial property compliance, Offices, warehouses, retail, commercial common stairs, North West, Stockport"
+    },
+    {
+      "slug": "smoke-detector-installation-commercial",
+      "name": "Commercial smoke detector installation",
+      "group": "Fire & life safety",
+      "service": "fire-alarms",
+      "title": "Commercial Smoke Detector Installation | Zones & Loops",
+      "h1": "Commercial smoke detectors",
+      "h1_accent": "added to the system, not stuck to a ceiling",
+      "meta": "Commercial smoke detector installation on existing or new fire alarm systems in the North West. Device type, base and cause-and-effect included. POA.",
+      "kicker": "Commercial fire · detection",
+      "intro": "Adding detection on a commercial site means the right head, the right base and a panel that knows the address or the zone.",
+      "paragraphs": [
+        "Offices often want optical or multi-sensor heads; plant and kitchens often want heat. We will not add a domestic battery alarm and call it a BS 5839 extension.",
+        "If the panel is full, out of protocol or unsupported, the quote says so before we drill the ceiling."
+      ],
+      "points": [
+        "Head type matched to the room",
+        "Base and cabling suited to the panel",
+        "Cause-and-effect updated when the device must do more than ring",
+        "Domestic mains alarms refused when a system is required"
+      ],
+      "standards": "BS 5839-1 device selection and installation",
+      "premises": "Offices, corridors, stores, commercial common parts",
+      "deliverable": "Detectors installed on a system, with the panel text updated",
+      "honest": "A handful of heads is still a system job. We quote the panel and access, not a unit price in a shop window.",
+      "faqs": [
+        {
+          "q": "Can you add two heads to a shop system?",
+          "a": "Yes, when the panel and the cable route allow it."
+        },
+        {
+          "q": "Are battery alarms ever right commercially?",
+          "a": "Rarely, and not where the FRA calls for a system. We will say which conversation you are in."
+        },
+        {
+          "q": "Do you match Apollo, Hochiki and similar protocols?",
+          "a": "We match the protocol already on the loop. Tell us the panel."
+        }
+      ],
+      "related": [
+        "commercial-fire-alarm",
+        "commercial-fire-alarm-system",
+        "commercial-fire-alarm-service"
+      ],
+      "keyword": "smoke-detector-installation-commercial",
+      "seo_keywords": "Commercial smoke detector installation, commercial property compliance, Offices, corridors, stores, commercial common parts, North West, Stockport"
+    },
+    {
+      "slug": "commercial-eicr",
+      "name": "Commercial EICR",
+      "group": "Electrical",
+      "service": "electrical",
+      "title": "Commercial EICR | Workplace Electrical Reports",
+      "h1": "Commercial EICR",
+      "h1_accent": "coded for the boards you isolate",
+      "meta": "Commercial EICR testing for offices, retail and industrial sites in the North West. BS 7671 reports written for duty holders. Quote after board count and access hours.",
+      "kicker": "Commercial electrical · condition report",
+      "intro": "A commercial EICR is the fixed wiring in a workplace: distribution, three-phase where it exists, and circuits that have to be isolated without guessing.",
+      "paragraphs": [
+        "We agree which boards can come off and when. Observations are coded so a C1 is not written like a C3, and remedials are a follow-on quote rather than a surprise.",
+        "Reports are labelled to the board schedule your FM already uses. Phased inspections are normal on large floor plates."
+      ],
+      "points": [
+        "Isolation plan agreed before the test",
+        "Boards and circuits identified in the report",
+        "C1–C3 observations separated",
+        "Remedial quote only for the codes you instruct"
+      ],
+      "standards": "BS 7671 inspection and testing",
+      "premises": "Offices, retail, warehouses, hospitality back-of-house, light industrial",
+      "deliverable": "A commercial EICR and, if needed, a remedial quote",
+      "honest": "Circuit count and whether we can isolate in hours decide the fee. Nothing is priced on this page.",
+      "faqs": [
+        {
+          "q": "Is a commercial EICR the same as PAT?",
+          "a": "No. PAT is appliances. The EICR is the fixed installation."
+        },
+        {
+          "q": "Will you turn the building off?",
+          "a": "Some circuits must be isolated. We schedule that with you."
+        },
+        {
+          "q": "How often?",
+          "a": "Many workplaces sit on three- to five-year intervals. Harsh sites are shorter. The report recommends the next date."
+        }
+      ],
+      "related": [
+        "commercial-electrical-maintenance",
+        "commercial-electrician",
+        "commercial-pat-testing"
+      ],
+      "keyword": "commercial-eicr",
+      "seo_keywords": "Commercial EICR, commercial property compliance, Offices, retail, warehouses, hospitality back-of-house, light industrial, North West, Stockport"
+    },
+    {
+      "slug": "commercial-electrical-maintenance",
+      "name": "Commercial electrical maintenance",
+      "group": "Electrical",
+      "service": "electrical",
+      "title": "Commercial Electrical Maintenance | PPM & Faults",
+      "h1": "Commercial electrical maintenance",
+      "h1_accent": "planned visits, then a fault number",
+      "meta": "Planned commercial electrical maintenance for North West estates. Distribution checks, lighting and small power, plus a fault route. POA after site list.",
+      "kicker": "Commercial electrical · PPM",
+      "intro": "Maintenance is the diary that stops Friday-night board faults becoming the whole compliance plan.",
+      "paragraphs": [
+        "Visits inspect the items on the contract: boards, RCDs, emergency circuits, lighting failures and small power. Findings go back as a short defect list.",
+        "Reactive attendance is quoted as a response, not disguised as a free extra. Multi-site clients get one schedule rather than four ad-hoc electricians."
+      ],
+      "points": [
+        "PPM visits on an agreed list",
+        "Defects written for the FM file",
+        "Reactive route with a stated response",
+        "One diary across several postcodes"
+      ],
+      "standards": "BS 7671 safe working; maintenance scope is the contract, not a substitute EICR",
+      "premises": "Shops, offices, warehouses, multi-let commercial",
+      "deliverable": "A maintenance report each visit and a fault path between visits",
+      "honest": "This does not replace an EICR. Both can sit on the same estate with different dates.",
+      "faqs": [
+        {
+          "q": "Does PPM include a new EICR?",
+          "a": "Only if the contract says the periodic inspection is in scope."
+        },
+        {
+          "q": "Can you attend a retail park after close?",
+          "a": "Yes. Access hours are part of the quote."
+        },
+        {
+          "q": "Who do we call at 7am?",
+          "a": "Contract sites get the fault route written on the schedule, not a generic inbox."
+        }
+      ],
+      "related": [
+        "commercial-eicr",
+        "commercial-electrician",
+        "fm-electrical-support"
+      ],
+      "keyword": "commercial-electrical-maintenance",
+      "seo_keywords": "Commercial electrical maintenance, commercial property compliance, Shops, offices, warehouses, multi-let commercial, North West, Stockport"
+    },
+    {
+      "slug": "commercial-electrician",
+      "name": "Commercial electrician",
+      "group": "Electrical",
+      "service": "electrical",
+      "title": "Commercial Electrician | Live Sites, North West",
+      "h1": "Commercial electrician",
+      "h1_accent": "for sites that stay open",
+      "meta": "Commercial electrician for offices, retail and light industrial sites across the North West. Small power, lighting, boards and landlord supplies. POA after scope.",
+      "kicker": "Commercial electrical · attendance",
+      "intro": "A commercial electrician job is defined work on a live site: a board change, a shop-floor circuit, a landlord supply, or a fault that has to be made safe.",
+      "paragraphs": [
+        "We plan isolation so neighbouring tenants are not taken off supply by accident. Metering boundaries are identified before we alter a riser.",
+        "Certification follows the work. We do not leave an undocumented alteration because the shop had to reopen."
+      ],
+      "points": [
+        "Scope agreed before attendance",
+        "Isolation planned around trade",
+        "Landlord and tenant supplies kept distinct",
+        "Certification for the work completed"
+      ],
+      "standards": "BS 7671",
+      "premises": "Retail units, offices, hospitality, light industrial",
+      "deliverable": "Completed electrical work and the certificate that matches it",
+      "honest": "Call-out and install prices are quoted. This page is not a rate card.",
+      "faqs": [
+        {
+          "q": "Can you add sockets in a trading shop?",
+          "a": "Yes. We agree a window so customers are not standing in an open floor box."
+        },
+        {
+          "q": "Do you split landlord and tenant supplies?",
+          "a": "We identify them. We do not alter a neighbour's supply without authority."
+        },
+        {
+          "q": "Is emergency lighting included automatically?",
+          "a": "Only when it is in the scope. Otherwise it is its own job."
+        }
+      ],
+      "related": [
+        "commercial-eicr",
+        "commercial-electrical-maintenance",
+        "commercial-ev-charging"
+      ],
+      "keyword": "commercial-electrician",
+      "seo_keywords": "Commercial electrician, commercial property compliance, Retail units, offices, hospitality, light industrial, North West, Stockport"
+    },
+    {
+      "slug": "commercial-ev-charging",
+      "name": "Commercial EV charging",
+      "group": "Electrical",
+      "service": "electrical",
+      "title": "Commercial EV Charging | Workplace Bays",
+      "h1": "Commercial EV charging",
+      "h1_accent": "bays, supply and the board that feeds them",
+      "meta": "Workplace and commercial EV charge-point installs in the North West. Supply capacity, bays and load called out before equipment is named. POA.",
+      "kicker": "Commercial electrical · EV",
+      "intro": "A workplace charger job starts with the supply, the bay count and who will manage the sockets — not with a domestic wall unit copied onto a car park.",
+      "paragraphs": [
+        "We check three-phase availability, existing load and where the bays sit relative to the board. Managed workplace schemes are quoted differently from a single bay behind a unit.",
+        "Grant paperwork is only included when a live scheme applies and you ask us to help with it. We do not invent grant values."
+      ],
+      "points": [
+        "Supply capacity checked first",
+        "Bay count and cable route surveyed",
+        "Single bay through to multi-bay workplaces",
+        "Handover for whoever administers the points"
+      ],
+      "standards": "BS 7671, including the EV requirements in force at the time of the job",
+      "premises": "Workplaces, commercial car parks, small business units",
+      "deliverable": "A quoted install based on supply and bay count",
+      "honest": "No charger price is published here. The incoming supply often decides the job more than the pedestal.",
+      "faqs": [
+        {
+          "q": "Can you add four bays at an office?",
+          "a": "Yes, if the supply can support them or we include an upgrade in the quote."
+        },
+        {
+          "q": "Do you cover a single bay at a workshop?",
+          "a": "Yes. Tell us the parking position and the board location."
+        },
+        {
+          "q": "Is this the same as a home zappi install?",
+          "a": "The equipment family may overlap. The supply, bays and management do not."
+        }
+      ],
+      "related": [
+        "commercial-electrician",
+        "commercial-eicr",
+        "commercial-electrical-maintenance"
+      ],
+      "keyword": "commercial-ev-charging",
+      "seo_keywords": "Commercial EV charging, commercial property compliance, Workplaces, commercial car parks, small business units, North West, Stockport"
+    },
+    {
+      "slug": "commercial-security-lighting",
+      "name": "Commercial security lighting",
+      "group": "Electrical",
+      "service": "emergency-lighting",
+      "title": "Commercial Security Lighting | Yards & Elevations",
+      "h1": "Commercial security lighting",
+      "h1_accent": "aimed at the yard, separate from escape lights",
+      "meta": "Commercial security and external lighting for North West yards, car parks and elevations. Surveyed aims and supplies. Not a substitute for emergency lighting. POA.",
+      "kicker": "Commercial electrical · external lighting",
+      "intro": "Security lighting is the external scheme that lets cameras and staff see the yard. It is not the three-hour escape fitting inside the stair.",
+      "paragraphs": [
+        "We survey mounting, glare onto neighbours, and whether the circuit is the landlord's or the tenant's. PIR, photocell or time control is chosen for the site, not copied from a domestic bulkhead.",
+        "If the FRA also needs emergency lighting on an external escape route, that is specified separately so the two systems are not muddled."
+      ],
+      "points": [
+        "Yard, car park or elevation survey",
+        "Controls matched to how the site is used",
+        "Supplies identified before cabling",
+        "Emergency lighting kept as its own spec"
+      ],
+      "standards": "BS 7671 for the electrical install; emergency fittings, where needed, to BS 5266",
+      "premises": "Industrial yards, retail car parks, commercial elevations",
+      "deliverable": "An external lighting quote with aims and controls described",
+      "honest": "We do not publish luminaire prices. Columns, reaches and supply all move the figure.",
+      "faqs": [
+        {
+          "q": "Will this satisfy the emergency lighting standard?",
+          "a": "Only the fittings that are specified as emergency lighting. Floods on a PIR are not automatically escape lighting."
+        },
+        {
+          "q": "Do you aim cameras at the same time?",
+          "a": "We can coordinate with the CCTV job. They are still two systems."
+        },
+        {
+          "q": "Can you avoid glare into flats next door?",
+          "a": "That is part of the survey. If an aim is unacceptable we say so."
+        }
+      ],
+      "related": [
+        "commercial-cctv-system",
+        "commercial-emergency-lighting",
+        "commercial-electrician"
+      ],
+      "keyword": "commercial-security-lighting",
+      "seo_keywords": "Commercial security lighting, commercial property compliance, Industrial yards, retail car parks, commercial elevations, North West, Stockport"
+    },
+    {
+      "slug": "commercial-pat-testing",
+      "name": "Commercial PAT testing",
+      "group": "Electrical",
+      "service": "pat-testing",
+      "title": "Commercial PAT Testing | Workplaces & Furnished Lets",
+      "h1": "Commercial PAT testing",
+      "h1_accent": "appliances only, counted before we attend",
+      "meta": "Commercial PAT testing for workplaces and furnished commercial units in the North West. Item counts, failed-item lists and labels. Not an EICR. POA.",
+      "kicker": "Commercial electrical · appliances",
+      "intro": "PAT is the portable equipment: kettles, leads, monitors, tools. It does not describe the fixed wiring.",
+      "paragraphs": [
+        "We quote from an approximate item count and whether the site is occupied. Failures are listed so you can remove or repair them; we do not hide a fail under a pass sticker.",
+        "Construction-site tools and office IT are different environments. Tell us which, because the interval in your risk assessment should not be a generic annual slogan."
+      ],
+      "points": [
+        "Item count agreed before the day",
+        "Pass and fail labels",
+        "Failed items listed, not quietly passed",
+        "Explicitly not a fixed-wiring EICR"
+      ],
+      "standards": "In-service inspection and testing of electrical equipment (IET Code of Practice)",
+      "premises": "Offices, workshops, salons, furnished commercial units, site cabins",
+      "deliverable": "A PAT schedule for the items we tested",
+      "honest": "There is no per-item price on this page. Count and access set the quote.",
+      "faqs": [
+        {
+          "q": "Does PAT replace the commercial EICR?",
+          "a": "No."
+        },
+        {
+          "q": "Can you test during the working day?",
+          "a": "Usually, item by item. Tell us if a production line cannot stop."
+        },
+        {
+          "q": "What about fixed boilers and the alarm panel?",
+          "a": "Those are not PAT. They sit on their own maintenance."
+        }
+      ],
+      "related": [
+        "commercial-eicr",
+        "commercial-electrical-maintenance",
+        "commercial-epc"
+      ],
+      "keyword": "",
+      "seo_keywords": "Commercial PAT testing, commercial property compliance, Offices, workshops, salons, furnished commercial units, site cabins, North West, Stockport"
+    },
+    {
+      "slug": "commercial-epc",
+      "name": "Commercial EPC",
+      "group": "Electrical",
+      "service": "epc",
+      "title": "Commercial EPC | Non-Domestic Energy Certificates",
+      "h1": "Commercial EPC",
+      "h1_accent": "for the unit you are letting or selling",
+      "meta": "Non-domestic EPCs for commercial units in the North West. Lodged certificates after a site survey. Marketing advice is not legal advice. POA.",
+      "kicker": "Commercial energy · EPC",
+      "intro": "A commercial EPC is the energy certificate for a non-domestic unit that is being marketed, not a domestic landlord EPC with the address changed.",
+      "paragraphs": [
+        "We survey the unit as it is: heating, lighting, fabric and the floor area that belongs in the certificate. Shell units and fitted restaurants do not get the same assumptions.",
+        "We lodge what the survey supports. We do not adjust inputs to chase a letter you asked for in the email."
+      ],
+      "points": [
+        "Non-domestic survey",
+        "Floor area and services recorded",
+        "Certificate lodged when the assessment is complete",
+        "Separate from a domestic landlord EPC"
+      ],
+      "standards": "Non-domestic energy assessment and lodging practice current at the visit",
+      "premises": "Shops, offices, warehouses, workshops being let or sold",
+      "deliverable": "A lodged commercial EPC for the unit surveyed",
+      "honest": "We do not publish a letter-band price. Unit type and size decide the survey.",
+      "faqs": [
+        {
+          "q": "Is this the same as a house EPC?",
+          "a": "No. Non-domestic software and conventions are different."
+        },
+        {
+          "q": "Can you guarantee a B?",
+          "a": "No. The rating follows the building."
+        },
+        {
+          "q": "Do you cover a whole parade?",
+          "a": "Each unit that must be marketed is its own certificate unless the rules for that building say otherwise. We will say which."
+        }
+      ],
+      "related": [
+        "commercial-eicr",
+        "commercial-gas",
+        "facilities-management-compliance"
+      ],
+      "keyword": "",
+      "seo_keywords": "Commercial EPC, commercial property compliance, Shops, offices, warehouses, workshops being let or sold, North West, Stockport"
+    },
+    {
+      "slug": "commercial-gas-safety-certificate",
+      "name": "Commercial gas safety certificate",
+      "group": "Gas",
+      "service": "gas-systems",
+      "title": "Commercial Gas Safety Certificate | Plant & Catering",
+      "h1": "Commercial gas safety certificate",
+      "h1_accent": "records for the appliances on this site",
+      "meta": "Commercial gas safety checks and written records for North West workplaces and catering sites. Gas Safe engineers for the work we accept. POA after appliance list.",
+      "kicker": "Commercial gas · records",
+      "intro": "A commercial gas record lists the appliances and flues we were asked to check. It is not a domestic CP12 with a shop address written on it.",
+      "paragraphs": [
+        "Send the appliance list: boilers, water heaters, catering ranges, and any plant in a rooftop enclosure. We confirm the engineer holds the right competence before the diary is fixed.",
+        "Unsafe appliances stay unsafe on the record. We isolate where we must and quote the repair; we do not rewrite a pass."
+      ],
+      "points": [
+        "Appliance list agreed first",
+        "Competence matched to the plant",
+        "Written record of what was checked",
+        "Failures left as failures"
+      ],
+      "standards": "Gas Safety (Installation and Use) Regulations; Gas Safe registration for the work accepted",
+      "premises": "Commercial boilers, catering kitchens, workplace plant rooms",
+      "deliverable": "A written gas safety record for the appliances in scope",
+      "honest": "Appliance count and type set the quote. No per-burner price is published.",
+      "faqs": [
+        {
+          "q": "Is this a landlord CP12?",
+          "a": "Use the landlord gas page for houses. This record is for commercial appliances and plant."
+        },
+        {
+          "q": "Do you cover a restaurant range and a boiler?",
+          "a": "Often on one visit if the competence covers both. Tell us both."
+        },
+        {
+          "q": "What if an appliance fails?",
+          "a": "It is recorded and made safe. The repair is a new instruction."
+        }
+      ],
+      "related": [
+        "commercial-kitchen-gas-safety",
+        "commercial-boiler-service",
+        "commercial-gas-engineer"
+      ],
+      "keyword": "commercial-gas-safety-certificate",
+      "seo_keywords": "Commercial gas safety certificate, commercial property compliance, Commercial boilers, catering kitchens, workplace plant rooms, North West, Stockport"
+    },
+    {
+      "slug": "commercial-boiler-service",
+      "name": "Commercial boiler service",
+      "group": "Gas",
+      "service": "gas-systems",
+      "title": "Commercial Boiler Service | Plant Rooms",
+      "h1": "Commercial boiler service",
+      "h1_accent": "the plant room, not a house combi",
+      "meta": "Commercial boiler servicing for North West workplaces and small plant rooms. Scope after appliance nameplates. POA. Domestic combis have their own page.",
+      "kicker": "Commercial gas · boilers",
+      "intro": "Commercial boiler service is planned attendance on the appliances that heat the building or the hot water, with combustion checks and a defect list.",
+      "paragraphs": [
+        "We need model and location before we book. A rooftop atmospheric boiler is not the same visit as a cascade in a basement.",
+        "Parts are identified before they are fitted. A service visit does not become a replacement quote halfway through without a conversation."
+      ],
+      "points": [
+        "Nameplate and location captured first",
+        "Service on the agreed appliances",
+        "Combustion and safety devices recorded",
+        "Parts and replacement called out separately"
+      ],
+      "standards": "Manufacturer service requirements; Gas Safe for the category of appliance",
+      "premises": "Office plant rooms, retail units, small commercial boilers",
+      "deliverable": "A service record for the boilers attended",
+      "honest": "We do not publish a boiler service price. Model and access change it.",
+      "faqs": [
+        {
+          "q": "Will you service a domestic combi in a flat above a shop?",
+          "a": "That is a domestic appliance. Say so and we will book it as such."
+        },
+        {
+          "q": "Can several boilers on one site be done together?",
+          "a": "Yes. Send the count."
+        },
+        {
+          "q": "Do you include the gas safety record?",
+          "a": "When you ask for both. They are listed separately on the quote."
+        }
+      ],
+      "related": [
+        "commercial-gas-safety-certificate",
+        "commercial-gas",
+        "commercial-gas-engineer"
+      ],
+      "keyword": "commercial-boiler-service",
+      "seo_keywords": "Commercial boiler service, commercial property compliance, Office plant rooms, retail units, small commercial boilers, North West, Stockport"
+    },
+    {
+      "slug": "commercial-gas",
+      "name": "Commercial gas",
+      "group": "Gas",
+      "service": "gas-systems",
+      "title": "Commercial Gas | Safety, Service & Install",
+      "h1": "Commercial gas",
+      "h1_accent": "tell us the appliance before we name the job",
+      "meta": "Commercial gas work across the North West: safety records, servicing and installs within our competence. Quote after the appliance and the site are known. POA.",
+      "kicker": "Commercial gas · overview",
+      "intro": "This is the front door for commercial gas. The actual job is a safety record, a service, a repair or an install — and those are not the same visit.",
+      "paragraphs": [
+        "Start with what is on site: boiler, water heater, catering, or pipework alteration. We accept work inside our Gas Safe categories and decline the rest before a date is wasted.",
+        "Landlords with houses should use the domestic gas pages. Mixed sites can be one diary if the appliances are listed properly."
+      ],
+      "points": [
+        "Appliance type identified first",
+        "Work limited to our competence",
+        "Safety record, service or install quoted separately",
+        "Domestic lets pointed at the landlord gas pages"
+      ],
+      "standards": "Gas Safe registration for accepted commercial categories",
+      "premises": "Workplaces, catering, small plant, commercial units",
+      "deliverable": "A scoped quote for the gas job you described",
+      "honest": "There is no single commercial gas price. The appliance decides the engineer.",
+      "faqs": [
+        {
+          "q": "Do you cover LPG as well as natural gas?",
+          "a": "Tell us the fuel. We confirm before attending."
+        },
+        {
+          "q": "Can you move a meter?",
+          "a": "Meter moves are the gas transporter or supplier. We do the installation pipework we are competent for, downstream of that."
+        },
+        {
+          "q": "Is a quote a promise to pass the appliance?",
+          "a": "No. The visit finds the condition."
+        }
+      ],
+      "related": [
+        "commercial-gas-engineer",
+        "commercial-gas-safety-certificate",
+        "commercial-gas-installation"
+      ],
+      "keyword": "commercial-gas",
+      "seo_keywords": "Commercial gas, commercial property compliance, Workplaces, catering, small plant, commercial units, North West, Stockport"
+    },
+    {
+      "slug": "commercial-gas-engineer",
+      "name": "Commercial gas engineer",
+      "group": "Gas",
+      "service": "gas-systems",
+      "title": "Commercial Gas Engineer | North West Attendance",
+      "h1": "Commercial gas engineer",
+      "h1_accent": "the right card for the appliance",
+      "meta": "Commercial gas engineer attendance across Greater Manchester and the North West. Faults, services and installs booked against the appliance, not a generic call-out menu. POA.",
+      "kicker": "Commercial gas · engineer",
+      "intro": "You are booking an engineer whose competence matches the appliance. Send the model. We will not send a domestic-only visit to a commercial plant room and hope.",
+      "paragraphs": [
+        "Faults are diagnosed and made safe. Repairs are quoted when parts and time are known. We do not carry every heat exchanger on the van.",
+        "Out-of-hours is available when the diary and the risk justify it. It is priced as attendance, not hidden inside a daytime service."
+      ],
+      "points": [
+        "Competence matched to the nameplate",
+        "Make-safe on faults",
+        "Repair quoted when parts are known",
+        "Out-of-hours only when agreed"
+      ],
+      "standards": "Gas Safe categories covering the appliance we accept",
+      "premises": "Commercial plant, catering, workplace boilers",
+      "deliverable": "An engineer visit with findings written down",
+      "honest": "Attendance is quoted. We do not publish an hourly rate card here.",
+      "faqs": [
+        {
+          "q": "How fast can you attend?",
+          "a": "Same day when the diary and the risk allow. Safety issues are prioritised over routine services."
+        },
+        {
+          "q": "Will you look at a boiler you did not install?",
+          "a": "Yes, if we cover that appliance."
+        },
+        {
+          "q": "Do you work for FM companies on more than one site?",
+          "a": "Yes. A site list is better than five separate phone calls."
+        }
+      ],
+      "related": [
+        "commercial-gas",
+        "commercial-boiler-service",
+        "commercial-kitchen-gas-works"
+      ],
+      "keyword": "commercial-gas-engineer",
+      "seo_keywords": "Commercial gas engineer, commercial property compliance, Commercial plant, catering, workplace boilers, North West, Stockport"
+    },
+    {
+      "slug": "commercial-gas-installation",
+      "name": "Commercial gas installation",
+      "group": "Gas",
+      "service": "gas-systems",
+      "title": "Commercial Gas Installation | Pipework & Appliances",
+      "h1": "Commercial gas installation",
+      "h1_accent": "pipework and appliances, tested and recorded",
+      "meta": "Commercial gas installation and pipework alterations in the North West, within our competence. Tightness testing and records included in the quoted scope. POA.",
+      "kicker": "Commercial gas · install",
+      "intro": "Installation is new appliances or altered pipework, tightness tested and recorded. It is not a service sticker on equipment that was already there.",
+      "paragraphs": [
+        "We design the route, the ventilation and the flue before we fix anything. If the existing flue cannot be reused, the quote says so.",
+        "Commissioning records go to the site file. We do not leave an uncommissioned appliance because the fitter had another job."
+      ],
+      "points": [
+        "Route, ventilation and flue agreed",
+        "Pipework and appliance install",
+        "Tightness test and commissioning record",
+        "Work limited to appliances we can sign for"
+      ],
+      "standards": "Gas Safety (Installation and Use) Regulations; manufacturer instructions",
+      "premises": "Commercial units, catering fit-outs, small plant replacements",
+      "deliverable": "An installed appliance or pipework alteration with test records",
+      "honest": "Materials and hours are quoted per job. No install price is printed here.",
+      "faqs": [
+        {
+          "q": "Can you reuse the old flue?",
+          "a": "Only if it is suitable. We check before we rely on it."
+        },
+        {
+          "q": "Do you install catering ranges?",
+          "a": "When the competence and the kitchen ventilation are right. Send the spec."
+        },
+        {
+          "q": "Is a tightness test included?",
+          "a": "Yes, on installation and alteration work we carry out."
+        }
+      ],
+      "related": [
+        "commercial-gas",
+        "commercial-kitchen-gas-works",
+        "commercial-gas-safety-certificate"
+      ],
+      "keyword": "commercial-gas-installation",
+      "seo_keywords": "Commercial gas installation, commercial property compliance, Commercial units, catering fit-outs, small plant replacements, North West, Stockport"
+    },
+    {
+      "slug": "commercial-kitchen-gas-safety",
+      "name": "Commercial kitchen gas safety",
+      "group": "Gas",
+      "service": "gas-systems",
+      "title": "Commercial Kitchen Gas Safety | Ranges & Shut-Offs",
+      "h1": "Commercial kitchen gas safety",
+      "h1_accent": "interlocks, valves and the appliances under the hood",
+      "meta": "Commercial kitchen gas safety checks for North West catering sites. Ranges, interlocks and shut-offs inspected against the kitchen that is actually fitted. POA.",
+      "kicker": "Commercial gas · kitchens",
+      "intro": "Kitchen gas safety is the appliances, the ventilation interlock and the shut-off — a domestic boiler check does not cover a six-burner range.",
+      "paragraphs": [
+        "We need the appliance list and whether a suppression system already drops the gas. Access has to be outside service or in a planned shutdown.",
+        "Defects that leave an appliance unsafe are isolated. We do not turn it back on so the lunch sitting can continue."
+      ],
+      "points": [
+        "Catering appliances listed",
+        "Interlocks and shut-offs checked",
+        "Ventilation noted where it affects safe use",
+        "Unsafe appliances isolated"
+      ],
+      "standards": "Gas Safe catering competence where the appliances require it",
+      "premises": "Restaurants, school kitchens, workplace canteens, dark kitchens",
+      "deliverable": "A kitchen gas safety record for the appliances in scope",
+      "honest": "Burner count and interlocks change the visit. No kitchen package price is published.",
+      "faqs": [
+        {
+          "q": "Does this include the suppression system?",
+          "a": "Only if you book that job as well. Gas and suppression are different competences."
+        },
+        {
+          "q": "Can you come before a council visit?",
+          "a": "Ask early. We will not promise a pass."
+        },
+        {
+          "q": "What about the basement boiler as well?",
+          "a": "List it. It may be the same engineer or a second attendance."
+        }
+      ],
+      "related": [
+        "commercial-kitchen-gas-works",
+        "commercial-kitchen-fire-system",
+        "commercial-gas-safety-certificate"
+      ],
+      "keyword": "commercial-kitchen-gas-safety",
+      "seo_keywords": "Commercial kitchen gas safety, commercial property compliance, Restaurants, school kitchens, workplace canteens, dark kitchens, North West, Stockport"
+    },
+    {
+      "slug": "commercial-kitchen-gas-works",
+      "name": "Commercial kitchen gas works",
+      "group": "Gas",
+      "service": "gas-systems",
+      "title": "Commercial Kitchen Gas Works | Moves, Repairs, Installs",
+      "h1": "Commercial kitchen gas works",
+      "h1_accent": "when the line changes, not just when it is due a check",
+      "meta": "Commercial kitchen gas repairs, appliance moves and installs in the North West. Quoted after the kitchen layout is known. POA.",
+      "kicker": "Commercial gas · kitchen works",
+      "intro": "Works means something is being altered: a range move, a new appliance, a failed valve. The safety record is the check; this is the job that changes the kitchen.",
+      "paragraphs": [
+        "Send a sketch or photos of the line and the hood. We price pipework, valves and commissioning, and we say if the interlock has to move with the appliance.",
+        "We will not cut into a live kitchen during service. Shutdown is part of the method."
+      ],
+      "points": [
+        "Layout captured before a price",
+        "Pipework, valves and appliance work",
+        "Interlock implications called out",
+        "Commissioning after the alteration"
+      ],
+      "standards": "Gas Safe catering installation practice; manufacturer instructions",
+      "premises": "Catering fit-outs, appliance swaps, failed kitchen gas equipment",
+      "deliverable": "Completed kitchen gas work with test records",
+      "honest": "Layout and parts set the quote. We do not publish a 'commercial kitchen gas' fee.",
+      "faqs": [
+        {
+          "q": "Can you swap one fryer?",
+          "a": "Often. Confirm gas type, the interlock and whether the suppression nozzle still covers it."
+        },
+        {
+          "q": "Do you do full kitchen fit-outs?",
+          "a": "Gas works can sit inside a fit-out. Joinery and extraction are scoped separately."
+        },
+        {
+          "q": "Will you match an existing manifold?",
+          "a": "If it is suitable. If it is not, we say so before we connect."
+        }
+      ],
+      "related": [
+        "commercial-kitchen-gas-safety",
+        "commercial-gas-installation",
+        "commercial-kitchen-fire-system"
+      ],
+      "keyword": "commercial-kitchen-gas-works",
+      "seo_keywords": "Commercial kitchen gas works, commercial property compliance, Catering fit-outs, appliance swaps, failed kitchen gas equipment, North West, Stockport"
+    },
+    {
+      "slug": "commercial-cctv-system",
+      "name": "Commercial CCTV system",
+      "group": "Security",
+      "service": "cctv",
+      "title": "Commercial CCTV System | Design & Install",
+      "h1": "Commercial CCTV",
+      "h1_accent": "views, retention and the network that carries them",
+      "meta": "Commercial CCTV design and install for North West workplaces. Cameras, recording and remote viewing scoped to the site. POA. No per-camera web price.",
+      "kicker": "Commercial security · CCTV",
+      "intro": "A commercial system is coverage, retention and who can view it — not a dome count copied from a domestic kit.",
+      "paragraphs": [
+        "We survey entrances, yards, tills and the lighting those views depend on. Recorders are sized for the retention you asked for, at the resolution those views need.",
+        "Staff viewing and signage are part of the handover. We do not hide cameras or promise identification the lens cannot deliver."
+      ],
+      "points": [
+        "Views agreed on a survey",
+        "Retention sized to the brief",
+        "Remote viewing for the people who should have it",
+        "Lighting limits called out honestly"
+      ],
+      "standards": "Surveillance Camera Code of Practice awareness; electrical install to BS 7671",
+      "premises": "Retail, warehouses, yards, offices, commercial car parks",
+      "deliverable": "An installed system with views and users documented",
+      "honest": "Camera count is not a price. Cabling, height and network often cost more than the dome.",
+      "faqs": [
+        {
+          "q": "Do you cover GDPR paperwork?",
+          "a": "We explain what the system does. Your privacy notice is yours; we do not draft your legal policy."
+        },
+        {
+          "q": "Can you use the existing network?",
+          "a": "If it can carry the streams. We test that rather than assume."
+        },
+        {
+          "q": "Will 4K be specified everywhere?",
+          "a": "Only on views that need it. The rest stay at a sensible resolution."
+        }
+      ],
+      "related": [
+        "commercial-cctv-package",
+        "commercial-security-lighting",
+        "commercial-access-control"
+      ],
+      "keyword": "commercial-cctv-system",
+      "seo_keywords": "Commercial CCTV system, commercial property compliance, Retail, warehouses, yards, offices, commercial car parks, North West, Stockport"
+    },
+    {
+      "slug": "commercial-cctv-package",
+      "name": "Commercial CCTV package",
+      "group": "Security",
+      "service": "cctv",
+      "title": "Commercial CCTV Package | Quoted Scope, Not a Kit",
+      "h1": "Commercial CCTV package",
+      "h1_accent": "a written scope for this building",
+      "meta": "Commercial CCTV packages for North West sites: survey, cameras, recording and handover as one scope. Still priced after the building is known. POA.",
+      "kicker": "Commercial security · CCTV scope",
+      "intro": "A package here means one quoted scope — survey through handover — not a boxed kit with a made-up camera count.",
+      "paragraphs": [
+        "You get a schedule of views, a recorder spec and a note of what is excluded (monitoring centre, door access, lighting). Exclusions are how packages stay honest.",
+        "Service after install can be added. It is not assumed."
+      ],
+      "points": [
+        "One scope from survey to handover",
+        "Views and exclusions written down",
+        "No boxed camera-count price",
+        "Maintenance optional, not assumed"
+      ],
+      "standards": "Same practical standard as a surveyed commercial CCTV install",
+      "premises": "Single commercial buildings and small retail groups",
+      "deliverable": "A written package quote for the views agreed",
+      "honest": "Packages on this page are POA. We are not publishing a four-camera offer.",
+      "faqs": [
+        {
+          "q": "Is this the workplace essentials package?",
+          "a": "No. Workplace essentials stays on its own page. This is CCTV scope only."
+        },
+        {
+          "q": "Can monitoring be added?",
+          "a": "If you want a monitoring centre, it is a separate line with its own provider."
+        },
+        {
+          "q": "Do you reuse old cable?",
+          "a": "When it tests out. Failed cable is a variation, not a silent extra."
+        }
+      ],
+      "related": [
+        "commercial-cctv-system",
+        "commercial-intruder-alarm",
+        "commercial-access-control"
+      ],
+      "keyword": "commercial-cctv-package",
+      "seo_keywords": "Commercial CCTV package, commercial property compliance, Single commercial buildings and small retail groups, North West, Stockport"
+    },
+    {
+      "slug": "commercial-access-control",
+      "name": "Commercial access control",
+      "group": "Security",
+      "service": "access-control",
+      "title": "Commercial Access Control | Doors, Tokens & Fire Release",
+      "h1": "Commercial access control",
+      "h1_accent": "doors that still release on fire",
+      "meta": "Commercial access control for North West offices and multi-tenant buildings. Readers, controllers and fire release. POA after door count.",
+      "kicker": "Commercial security · access",
+      "intro": "Access control is who gets through which door, and how that door opens when the fire alarm operates.",
+      "paragraphs": [
+        "We survey doors, locks and the fire interface before naming Paxton, HID, Salto or another platform. The brand follows the estate you already have when a match is possible.",
+        "Fire release is tested and written down. A locked stair is not an acceptable handover."
+      ],
+      "points": [
+        "Door and lock survey",
+        "Tokens or mobile credentials specified",
+        "Fire-alarm release included in the test",
+        "Admin software handed to the site"
+      ],
+      "standards": "Access control install practice with fire-alarm interface tested",
+      "premises": "Offices, commercial stairs, warehouses, multi-tenant receptions",
+      "deliverable": "A commissioned door schedule and working admin access",
+      "honest": "Door furniture and fire interfaces move the price. No per-door figure is published.",
+      "faqs": [
+        {
+          "q": "Can you add one door to an existing Paxton system?",
+          "a": "Often. Send the controller details."
+        },
+        {
+          "q": "Will maglocks drop on fire?",
+          "a": "They must. We test that before we leave."
+        },
+        {
+          "q": "Do you programme tokens after handover?",
+          "a": "Yes, if you want that on a support visit. The first admin user is included at commissioning."
+        }
+      ],
+      "related": [
+        "commercial-door-entry",
+        "commercial-intruder-alarm",
+        "commercial-cctv-system"
+      ],
+      "keyword": "commercial-access-control",
+      "seo_keywords": "Commercial access control, commercial property compliance, Offices, commercial stairs, warehouses, multi-tenant receptions, North West, Stockport"
+    },
+    {
+      "slug": "commercial-door-entry",
+      "name": "Commercial door entry",
+      "group": "Security",
+      "service": "door-entry",
+      "title": "Commercial Door Entry | Audio & Video",
+      "h1": "Commercial door entry",
+      "h1_accent": "reception, gates and the lock release",
+      "meta": "Commercial audio and video door entry for North West offices, gates and multi-tenant doors. Surveyed cable and release. POA.",
+      "kicker": "Commercial security · door entry",
+      "intro": "Door entry is the panel at the door and the station that answers it. It is not the same design as a flat video phone copied onto a loading bay.",
+      "paragraphs": [
+        "We match panels to the entrance, the lock and whether access control tokens sit on the same door. Gates need a different station and a different weather rating.",
+        "Commissioning includes a call test and a release test. Staff get a short note, not a manual they will not read."
+      ],
+      "points": [
+        "Entrance and lock surveyed",
+        "Audio or video chosen for the door",
+        "Release tested",
+        "Access-control overlap called out"
+      ],
+      "standards": "Manufacturer install practice; lock release coordinated with fire strategy where the door is on an escape route",
+      "premises": "Commercial receptions, yard gates, small multi-tenant doors",
+      "deliverable": "A working door-entry system and a release test",
+      "honest": "Panel type and cable route set the quote. No kit price is listed.",
+      "faqs": [
+        {
+          "q": "Can this share a door with fob access?",
+          "a": "Yes. We design the lock once, not twice."
+        },
+        {
+          "q": "Do you cover gates?",
+          "a": "Yes, when the station and the lock are specified for outside."
+        },
+        {
+          "q": "Will you replace a dead Aiphone station?",
+          "a": "If parts exist. If the system is obsolete we say so."
+        }
+      ],
+      "related": [
+        "commercial-intercom",
+        "commercial-access-control",
+        "commercial-cctv-system"
+      ],
+      "keyword": "commercial-door-entry",
+      "seo_keywords": "Commercial door entry, commercial property compliance, Commercial receptions, yard gates, small multi-tenant doors, North West, Stockport"
+    },
+    {
+      "slug": "commercial-intruder-alarm",
+      "name": "Commercial intruder alarm",
+      "group": "Security",
+      "service": "intruder-alarm",
+      "title": "Commercial Intruder Alarm | Install & Takeover",
+      "h1": "Commercial intruder alarm",
+      "h1_accent": "signalling and the setting procedure staff will use",
+      "meta": "Commercial intruder alarms for North West workplaces. Wired and wireless systems, monitoring options, and takeovers after we have seen the panel. POA.",
+      "kicker": "Commercial security · intruder",
+      "intro": "An intruder system has to be set by the people who lock up. If the procedure does not match the last person out, it will false-alarm.",
+      "paragraphs": [
+        "We survey doors, rooms and the signalling path. Monitoring is optional and named as a third-party cost when a centre is involved — we do not bury it.",
+        "Takeovers need the current panel and codes. Without them the quote may be a replacement, and we will say that up front."
+      ],
+      "points": [
+        "Setting procedure designed with the people who lock up",
+        "Detection matched to rooms and doors",
+        "Monitoring listed separately when used",
+        "Takeover versus replacement stated honestly"
+      ],
+      "standards": "PD 6662 / BS EN 50131 systems appropriate to the insurer grade asked for",
+      "premises": "Offices, retail, warehouses, workshops",
+      "deliverable": "An installed or taken-over system the staff can set",
+      "honest": "Grade and signalling change the price. Nothing is listed as a starter kit fee.",
+      "faqs": [
+        {
+          "q": "Can you match an insurer's grade?",
+          "a": "Tell us the grade they asked for. We quote to that, or we say we cannot."
+        },
+        {
+          "q": "Do you monitor the alarms yourselves?",
+          "a": "Monitoring is through an alarm receiving centre. That cost is separate."
+        },
+        {
+          "q": "What if nobody knows the engineer code?",
+          "a": "Then a takeover may be impossible and a replacement is the honest quote."
+        }
+      ],
+      "related": [
+        "commercial-cctv-package",
+        "commercial-access-control",
+        "commercial-security-lighting"
+      ],
+      "keyword": "commercial-intruder-alarm",
+      "seo_keywords": "Commercial intruder alarm, commercial property compliance, Offices, retail, warehouses, workshops, North West, Stockport"
+    },
+    {
+      "slug": "commercial-intercom",
+      "name": "Commercial intercom",
+      "group": "Security",
+      "service": "intercoms",
+      "title": "Commercial Intercom | Stations & Masters",
+      "h1": "Commercial intercom",
+      "h1_accent": "stations people will actually answer",
+      "meta": "Commercial intercom systems for North West sites: master stations, substations and gate stations. Surveyed and commissioned. POA.",
+      "kicker": "Commercial security · intercom",
+      "intro": "An intercom job is the speech (and video, if specified) between a door or gate and the person who answers.",
+      "paragraphs": [
+        "We count stations, cable type and whether the lock release shares the same call. Obsolete systems are identified before we promise spare handsets.",
+        "Commissioning is a call to every station, not a single bench test in the riser."
+      ],
+      "points": [
+        "Station count and cable surveyed",
+        "Master and sub roles agreed",
+        "Lock release included only when specified",
+        "Every station call-tested"
+      ],
+      "standards": "Manufacturer intercom installation practice",
+      "premises": "Offices, yards, commercial receptions, small multi-door sites",
+      "deliverable": "A commissioned intercom with stations labelled",
+      "honest": "Station count sets the quote. We do not publish handset prices here.",
+      "faqs": [
+        {
+          "q": "Is this the same as door entry?",
+          "a": "Door entry is the visitor panel. An intercom system may include internal stations as well. We will use the right page in the quote."
+        },
+        {
+          "q": "Can you expand an Aiphone system?",
+          "a": "When the model allows. Send the master station photo."
+        },
+        {
+          "q": "Do you programme ring groups?",
+          "a": "Yes, when the system supports them and you tell us who should ring."
+        }
+      ],
+      "related": [
+        "commercial-intercom-installation",
+        "commercial-intercom-package",
+        "commercial-door-entry"
+      ],
+      "keyword": "commercial-intercom",
+      "seo_keywords": "Commercial intercom, commercial property compliance, Offices, yards, commercial receptions, small multi-door sites, North West, Stockport"
+    },
+    {
+      "slug": "commercial-intercom-installation",
+      "name": "Commercial intercom installation",
+      "group": "Security",
+      "service": "intercoms",
+      "title": "Commercial Intercom Installation | Cable & Commissioning",
+      "h1": "Commercial intercom installation",
+      "h1_accent": "cable routes agreed before the panel is on the wall",
+      "meta": "Commercial intercom installation in the North West, including cable routes, power and commissioning. POA after station positions are known.",
+      "kicker": "Commercial security · intercom install",
+      "intro": "Installation is the new system: containment, cable, power and the first day it has to work with the people on reception.",
+      "paragraphs": [
+        "We agree where stations go before we decorate around them. External stations get the IP rating the entrance actually needs.",
+        "If door entry and intercom are both required, they are one design so you do not pay for two lock releases."
+      ],
+      "points": [
+        "Station positions agreed on site",
+        "Cable and power in the scope",
+        "External stations rated for the entrance",
+        "Commissioned with the people who answer"
+      ],
+      "standards": "Manufacturer installation instructions",
+      "premises": "New commercial receptions, gatehouses, refurbished offices",
+      "deliverable": "An installed and call-tested intercom",
+      "honest": "Routes through finished ceilings cost more than a shell unit. The survey picks that up.",
+      "faqs": [
+        {
+          "q": "Can you install while the office is occupied?",
+          "a": "Yes, with a plan for noise and for which door is released that day."
+        },
+        {
+          "q": "Do you include the lock?",
+          "a": "When you want the intercom to release a door. Otherwise the lock stays with the access-control job."
+        },
+        {
+          "q": "Will you certify the data cabling?",
+          "a": "We install the manufacturer cable. Formal data certification is separate if your consultant asked for it."
+        }
+      ],
+      "related": [
+        "commercial-intercom",
+        "commercial-door-entry",
+        "commercial-access-control"
+      ],
+      "keyword": "commercial-intercom-installation",
+      "seo_keywords": "Commercial intercom installation, commercial property compliance, New commercial receptions, gatehouses, refurbished offices, North West, Stockport"
+    },
+    {
+      "slug": "commercial-intercom-package",
+      "name": "Commercial intercom package",
+      "group": "Security",
+      "service": "intercoms",
+      "title": "Commercial Intercom Package | Scope Without a Kit Price",
+      "h1": "Commercial intercom package",
+      "h1_accent": "one scope, stations listed",
+      "meta": "Commercial intercom packages for North West buildings: stations, master and commissioning in one written scope. POA. Not a boxed kit price.",
+      "kicker": "Commercial security · intercom scope",
+      "intro": "The package is a defined station list and handover. It is not a national 'from' price for a two-station kit.",
+      "paragraphs": [
+        "You see what is included (stations, power, commissioning) and what is not (access tokens, CCTV, monitoring). That list is the quote.",
+        "Service after year one is optional."
+      ],
+      "points": [
+        "Stations listed in the scope",
+        "Exclusions written down",
+        "Commissioning included",
+        "Aftercare optional"
+      ],
+      "standards": "Manufacturer package installed as surveyed",
+      "premises": "Small commercial buildings that want one intercom scope",
+      "deliverable": "A package quote with stations named",
+      "honest": "We will not print a starter-kit price that ignores cable route.",
+      "faqs": [
+        {
+          "q": "Is a two-station office a package?",
+          "a": "It can be, once we have seen the door and the master location."
+        },
+        {
+          "q": "Can CCTV be in the same package?",
+          "a": "It can be the same visit. It is still specified as CCTV, not hidden inside the intercom line."
+        },
+        {
+          "q": "Do you discount against a trade website?",
+          "a": "No. The quote is this building."
+        }
+      ],
+      "related": [
+        "commercial-intercom",
+        "commercial-intercom-installation",
+        "commercial-door-entry"
+      ],
+      "keyword": "commercial-intercom-package",
+      "seo_keywords": "Commercial intercom package, commercial property compliance, Small commercial buildings that want one intercom scope, North West, Stockport"
+    },
+    {
+      "slug": "commercial-legionella-risk-assessment",
+      "name": "Commercial Legionella risk assessment",
+      "group": "Water & asbestos",
+      "service": "legionella-risk-assessment",
+      "title": "Commercial Legionella Risk Assessment | Hot & Cold Water",
+      "h1": "Commercial Legionella risk assessment",
+      "h1_accent": "the water system on this site",
+      "meta": "Commercial Legionella risk assessments for North West workplaces and managed buildings. Written assessment and practical actions. POA after the system is described.",
+      "kicker": "Commercial water · Legionella",
+      "intro": "A commercial assessment maps the hot and cold system you have — calorifiers, outlets, infrequently used rooms — and writes actions a caretaker can actually do.",
+      "paragraphs": [
+        "We record temperatures, dead legs and who is responsible for flushing. The report does not pretend a missing logbook is a pass.",
+        "Sampling, if you want it, is separate from the assessment. We say which one you asked for."
+      ],
+      "points": [
+        "System schematic from what is on site",
+        "Little-used outlets and dead legs noted",
+        "Actions written for the people who flush and record",
+        "Sampling quoted only when requested"
+      ],
+      "standards": "L8 / HSG274 practical control of Legionella",
+      "premises": "Offices, commercial blocks, workshops, hospitality back-of-house",
+      "deliverable": "A written Legionella risk assessment and action list",
+      "honest": "This is not a certificate that Legionella is absent. It is an assessment of the system. No fee is published.",
+      "faqs": [
+        {
+          "q": "Do you sample on the same day?",
+          "a": "Only if sampling is in the instruction. Assessment and sampling are different."
+        },
+        {
+          "q": "Is this a landlord house assessment?",
+          "a": "Houses have their own page. This is for commercial and managed systems."
+        },
+        {
+          "q": "Will you write the logbook readings for us?",
+          "a": "We can set the log up. Someone on site still has to take the ongoing readings."
+        }
+      ],
+      "related": [
+        "commercial-water-hygiene",
+        "commercial-asbestos-survey",
+        "facilities-management-compliance"
+      ],
+      "keyword": "commercial-legionella-risk-assessment",
+      "seo_keywords": "Commercial Legionella risk assessment, commercial property compliance, Offices, commercial blocks, workshops, hospitality back-of-house, North West, Stockport"
+    },
+    {
+      "slug": "commercial-water-hygiene",
+      "name": "Commercial water hygiene",
+      "group": "Water & asbestos",
+      "service": "legionella-risk-assessment",
+      "title": "Commercial Water Hygiene | Monitoring & Cleaning",
+      "h1": "Commercial water hygiene",
+      "h1_accent": "the tasks between assessments",
+      "meta": "Commercial water hygiene monitoring for North West sites: temperature checks, flushing support and tank condition call-outs. POA. Not a substitute for the risk assessment.",
+      "kicker": "Commercial water · monitoring",
+      "intro": "Water hygiene visits are the ongoing tasks the assessment named — temperatures, flushing, and a look at tanks and outlets that have gone quiet.",
+      "paragraphs": [
+        "We attend on the interval you were given, or we recommend one after seeing the system. Results are written so they can sit next to last month's sheet.",
+        "Cleaning and disinfection are quoted when the assessment or the condition of the tank says they are due. They are not automatic."
+      ],
+      "points": [
+        "Temperature and outlet checks",
+        "Flushing support for little-used rooms",
+        "Tank condition noted",
+        "Disinfection quoted when it is due"
+      ],
+      "standards": "HSG274 monitoring tasks arising from the Legionella assessment",
+      "premises": "Commercial buildings with stored water or complex hot water",
+      "deliverable": "A monitoring record for the visit",
+      "honest": "Monitoring does not replace the written risk assessment. Both have their own quote.",
+      "faqs": [
+        {
+          "q": "How often do you attend?",
+          "a": "The assessment should say. If you do not have one, start there."
+        },
+        {
+          "q": "Can you just clean the tank?",
+          "a": "Yes, as its own job, when access and drain-down are agreed."
+        },
+        {
+          "q": "Do you sample every visit?",
+          "a": "No. Sampling is booked when you need it."
+        }
+      ],
+      "related": [
+        "commercial-legionella-risk-assessment",
+        "facilities-management-compliance",
+        "commercial-ppm-package"
+      ],
+      "keyword": "",
+      "seo_keywords": "Commercial water hygiene, commercial property compliance, Commercial buildings with stored water or complex hot water, North West, Stockport"
+    },
+    {
+      "slug": "commercial-asbestos-survey",
+      "name": "Commercial asbestos survey",
+      "group": "Water & asbestos",
+      "service": "asbestos-survey",
+      "title": "Commercial Asbestos Survey | Management & Refurbishment",
+      "h1": "Commercial asbestos survey",
+      "h1_accent": "the right survey for the work you are about to do",
+      "meta": "Commercial asbestos surveys for North West workplaces. Management surveys, and refurbishment surveys when you are about to disturb the building. POA.",
+      "kicker": "Commercial asbestos · survey",
+      "intro": "The survey type follows the job. A management survey is not permission to strip a ceiling. A refurbishment survey is what you need before you disturb it.",
+      "paragraphs": [
+        "We agree the areas, the access and whether the work is management or refurbishment before the surveyor attends. Samples are taken only where the method says so.",
+        "Results are written for the duty holder. We do not offer a removal price disguised as a survey."
+      ],
+      "points": [
+        "Survey type agreed before attendance",
+        "Areas and access listed",
+        "Samples only where required",
+        "Report written for the duty holder"
+      ],
+      "standards": "CAR 2012; HSG264 survey types",
+      "premises": "Offices, warehouses, retail units, commercial refurbishments",
+      "deliverable": "An asbestos survey report of the type you instructed",
+      "honest": "We do not publish sample prices. Area and survey type decide the quote. Removal is a licensed contractor's job when the law says so.",
+      "faqs": [
+        {
+          "q": "Will a management survey cover a strip-out?",
+          "a": "No. Book a refurbishment or demolition survey before you disturb the fabric."
+        },
+        {
+          "q": "Do you remove asbestos?",
+          "a": "Not as a licensed removal contractor. The survey tells you what a licensed contractor must do."
+        },
+        {
+          "q": "Can you survey one shop unit?",
+          "a": "Yes. Define the demise."
+        }
+      ],
+      "related": [
+        "commercial-asbestos-management-survey",
+        "commercial-fire-stopping-package",
+        "facilities-management-compliance"
+      ],
+      "keyword": "commercial-asbestos-survey",
+      "seo_keywords": "Commercial asbestos survey, commercial property compliance, Offices, warehouses, retail units, commercial refurbishments, North West, Stockport"
+    },
+    {
+      "slug": "commercial-asbestos-management-survey",
+      "name": "Commercial asbestos management survey",
+      "group": "Water & asbestos",
+      "service": "asbestos-survey",
+      "title": "Commercial Asbestos Management Survey | Duty to Manage",
+      "h1": "Commercial asbestos management survey",
+      "h1_accent": "for the duty holder who is not about to strip the building",
+      "meta": "Management asbestos surveys for commercial buildings in the North West. Duty-to-manage reports and registers. POA. Not a refurbishment survey.",
+      "kicker": "Commercial asbestos · management",
+      "intro": "A management survey supports the duty to manage asbestos in an occupied commercial building. It is the wrong survey if you are about to drill or strip.",
+      "paragraphs": [
+        "We inspect accessible areas, sample where needed, and leave a register your contractors can read before they work. Inaccessible voids are marked as presumed, not as clear.",
+        "If you later refurbish, you will need a further survey of the area being disturbed. We will not stretch a management report to cover that."
+      ],
+      "points": [
+        "Occupied-building management survey",
+        "Register contractors can read",
+        "Inaccessible areas presumed, not cleared",
+        "Refurbishment called out as a different survey"
+      ],
+      "standards": "HSG264 management survey; Control of Asbestos Regulations duty to manage",
+      "premises": "Occupied offices, commercial units, warehouses",
+      "deliverable": "A management survey and register",
+      "honest": "Floor area and access set the fee. No sample rate is printed.",
+      "faqs": [
+        {
+          "q": "Is presumed asbestos a fail?",
+          "a": "It means we could not see it and it must be managed as asbestos until proven otherwise."
+        },
+        {
+          "q": "How long is the survey valid?",
+          "a": "Until the building changes or the material is disturbed. There is no magic expiry that replaces a new look."
+        },
+        {
+          "q": "Do you train our staff?",
+          "a": "We explain the register. Formal awareness training is a separate booking if you want it."
+        }
+      ],
+      "related": [
+        "commercial-asbestos-survey",
+        "facilities-management-compliance",
+        "commercial-building-maintenance"
+      ],
+      "keyword": "",
+      "seo_keywords": "Commercial asbestos management survey, commercial property compliance, Occupied offices, commercial units, warehouses, North West, Stockport"
+    },
+    {
+      "slug": "commercial-ppm-package",
+      "name": "Commercial PPM package",
+      "group": "Facilities programmes",
+      "service": "facilities-management",
+      "title": "Commercial PPM Package | One Diary, Several Systems",
+      "h1": "Commercial PPM",
+      "h1_accent": "one diary for the systems you already have",
+      "meta": "Commercial planned maintenance packages for North West estates. Fire, electrical, lighting and security visits on one schedule. POA after the asset list. Not a published retainer.",
+      "kicker": "Facilities · PPM",
+      "intro": "PPM here means the visits your assets already need, put on one calendar with one report style.",
+      "paragraphs": [
+        "Send the asset list: panels, boards, emergency lighting, extinguishers, access doors. We price the visits, not a vague 'compliance retainer'.",
+        "Anything not on the list is not included. That is how a package stays smaller than a surprise."
+      ],
+      "points": [
+        "Asset list before a price",
+        "Visits combined where access allows",
+        "One report style across the estate",
+        "Exclusions written on the quote"
+      ],
+      "standards": "Each trade visit still follows that trade's standard — the package only joins the diary",
+      "premises": "Multi-site offices, retail groups, mixed commercial estates",
+      "deliverable": "A PPM quote tied to a named asset list",
+      "honest": "There is no monthly retainer figure on this page. Assets and geography decide it.",
+      "faqs": [
+        {
+          "q": "Is this the workplace essentials package?",
+          "a": "No. That package has its own page. This is a maintenance diary for assets you name."
+        },
+        {
+          "q": "Can you add Legionella monitoring?",
+          "a": "Yes, as a line, if the assessment exists or is booked."
+        },
+        {
+          "q": "What if a visit finds a fault?",
+          "a": "The fault is reported. Repair is extra unless the contract includes a repair pot you already agreed."
+        }
+      ],
+      "related": [
+        "facilities-management-compliance",
+        "fm-fire-safety-support",
+        "fm-electrical-support"
+      ],
+      "keyword": "commercial-ppm-package",
+      "seo_keywords": "Commercial PPM package, commercial property compliance, Multi-site offices, retail groups, mixed commercial estates, North West, Stockport"
+    },
+    {
+      "slug": "facilities-management-compliance",
+      "name": "Facilities management compliance",
+      "group": "Facilities programmes",
+      "service": "facilities-management",
+      "title": "FM Compliance | Evidence For The Sites You Run",
+      "h1": "Facilities compliance",
+      "h1_accent": "evidence, not a dashboard slogan",
+      "meta": "Facilities compliance support for North West commercial estates. Gaps in FRA, EICR, gas, water and asbestos evidence listed, then the visits quoted. POA.",
+      "kicker": "Facilities · compliance file",
+      "intro": "FM compliance work starts from the file you already have. We list what is missing or out of date, then quote the inspections — we do not sell a software platform.",
+      "paragraphs": [
+        "Bring expiry dates and the systems on each site. We return a gap list in plain language: overdue FRA, no emergency-lighting certificate, asbestos register not on site.",
+        "We do not claim to be your legally appointed responsible person. We provide the trade evidence that person needs."
+      ],
+      "points": [
+        "Gap list from the documents you hold",
+        "Visits quoted only for the gaps",
+        "One contact for several trades",
+        "No pretend software platform"
+      ],
+      "standards": "The standards of each trade we are asked to evidence",
+      "premises": "FM companies, managing agents, owner-occupied commercial estates",
+      "deliverable": "A gap list and quotes for the missing evidence",
+      "honest": "This is not legal advice and not a fixed compliance subscription.",
+      "faqs": [
+        {
+          "q": "Will you be our responsible person?",
+          "a": "No. We supply competent trade work and records."
+        },
+        {
+          "q": "Can you audit five sites from a spreadsheet?",
+          "a": "Yes, if the spreadsheet is honest. We still have to see a site before we sign a report about it."
+        },
+        {
+          "q": "Do you replace our CAFM system?",
+          "a": "No. We can reference your asset codes in our reports."
+        }
+      ],
+      "related": [
+        "fm-compliance-reporting",
+        "commercial-ppm-package",
+        "commercial-fire-risk-assessment"
+      ],
+      "keyword": "facilities-management-compliance",
+      "seo_keywords": "Facilities management compliance, commercial property compliance, FM companies, managing agents, owner-occupied commercial estates, North West, Stockport"
+    },
+    {
+      "slug": "fm-compliance-reporting",
+      "name": "FM compliance reporting",
+      "group": "Facilities programmes",
+      "service": "facilities-management",
+      "title": "FM Compliance Reporting | Visit Records That Match",
+      "h1": "FM compliance reporting",
+      "h1_accent": "the same shape of report on every site",
+      "meta": "Compliance reporting for facilities managers running several North West sites. Consistent visit records across fire, electrical and water jobs. POA.",
+      "kicker": "Facilities · reporting",
+      "intro": "Reporting is how visit notes become something head office can compare. Same headings, same defect language, site by site.",
+      "paragraphs": [
+        "If we already attend the sites, reporting is part of those visits. If you want a one-off read of certificates someone else issued, we will say what we can and cannot verify without re-attending.",
+        "We do not re-badge another contractor's certificate as our own."
+      ],
+      "points": [
+        "Consistent headings across sites",
+        "Defects written the same way each visit",
+        "Other contractors' certificates not re-badged",
+        "Optional one-off file review, clearly limited"
+      ],
+      "standards": "Reporting follows the trade record of the visit we did",
+      "premises": "Multi-site FM portfolios",
+      "deliverable": "Reports you can compare across the estate",
+      "honest": "A report is included in a visit we do. A file review of other people's PDFs is a different, limited job.",
+      "faqs": [
+        {
+          "q": "Can you upload to our portal?",
+          "a": "If you give us access and a template. We do not build you a portal."
+        },
+        {
+          "q": "Will you score our contractor?",
+          "a": "We will say whether a document is present and in date. We will not pretend we witnessed their visit."
+        },
+        {
+          "q": "Is this a monthly PDF?",
+          "a": "The rhythm follows the visits. Empty monthly PDFs are not a product we sell."
+        }
+      ],
+      "related": [
+        "facilities-management-compliance",
+        "commercial-ppm-package",
+        "facilities-helpdesk-engineer"
+      ],
+      "keyword": "fm-compliance-reporting",
+      "seo_keywords": "FM compliance reporting, commercial property compliance, Multi-site FM portfolios, North West, Stockport"
+    },
+    {
+      "slug": "fm-electrical-support",
+      "name": "FM electrical support",
+      "group": "Facilities programmes",
+      "service": "facilities-management",
+      "title": "FM Electrical Support | Estates, Not One-Off Call-Outs",
+      "h1": "FM electrical support",
+      "h1_accent": "a named contact for the boards on your estate",
+      "meta": "Electrical support for facilities teams with more than one commercial site in the North West. Faults, small works and EICR planning. POA.",
+      "kicker": "Facilities · electrical",
+      "intro": "This is electrical capacity for an FM contract: faults, small works and the plan for when EICRs fall due.",
+      "paragraphs": [
+        "You get a route for faults and a way to book small works without re-tendering every socket. Larger projects are still quoted.",
+        "We keep landlord and tenant supplies straight so a shop fault does not become a building shutdown."
+      ],
+      "points": [
+        "Fault route for contract sites",
+        "Small works without a new tender each time",
+        "EICR dates planned, not discovered",
+        "Landlord and tenant supplies respected"
+      ],
+      "standards": "BS 7671",
+      "premises": "FM portfolios, managing agents, multi-let commercial",
+      "deliverable": "Electrical support tied to a site list",
+      "honest": "Support is quoted from the site list and the fault expectation. No retainer number is printed.",
+      "faqs": [
+        {
+          "q": "Is this an electrician on exclusive retainer?",
+          "a": "It is agreed response and planned work, not a person sitting in your office unless that is separately scoped."
+        },
+        {
+          "q": "Can you cover a Saturday retail fault?",
+          "a": "When the contract includes it. Otherwise it is a quoted attendance."
+        },
+        {
+          "q": "Do you bring the EICR in house?",
+          "a": "We can plan and deliver them. They remain their own reports."
+        }
+      ],
+      "related": [
+        "commercial-electrical-maintenance",
+        "commercial-eicr",
+        "facilities-management-compliance"
+      ],
+      "keyword": "fm-electrical-support",
+      "seo_keywords": "FM electrical support, commercial property compliance, FM portfolios, managing agents, multi-let commercial, North West, Stockport"
+    },
+    {
+      "slug": "fm-fire-safety-support",
+      "name": "FM fire safety support",
+      "group": "Facilities programmes",
+      "service": "facilities-management",
+      "title": "FM Fire Safety Support | Alarms, Lighting, Doors",
+      "h1": "FM fire safety support",
+      "h1_accent": "the fire diary across the estate",
+      "meta": "Fire safety support for facilities managers in the North West: alarms, emergency lighting, doors and extinguishers on one fire diary. POA after the asset list.",
+      "kicker": "Facilities · fire",
+      "intro": "Fire support joins the visits an estate already owes — service, duration tests, door inspections — so they are not four forgotten anniversaries.",
+      "paragraphs": [
+        "We build the diary from panel brands, lighting test months and door counts. The FRA remains the document that says what 'enough' is.",
+        "A failed alarm visit does not get marked complete. You see the open defect."
+      ],
+      "points": [
+        "Fire diary from real assets",
+        "Alarms, lighting, doors and extinguishers coordinated",
+        "Open defects left open",
+        "FRA treated as the parent document"
+      ],
+      "standards": "BS 5839, BS 5266 and fire-door inspection practice for the visits included",
+      "premises": "Multi-site FM and managing agents",
+      "deliverable": "A fire support diary and the certificates from the visits we do",
+      "honest": "This does not replace the responsible person. It supplies the visits they schedule.",
+      "faqs": [
+        {
+          "q": "Will you write the FRA as well?",
+          "a": "Yes, as its own job. Support visits do not invent an assessment."
+        },
+        {
+          "q": "Can one engineer do alarms and lighting on the same day?",
+          "a": "Often, and we plan for that so the building is opened once."
+        },
+        {
+          "q": "What about sites with a sprinkler?",
+          "a": "Listed separately. We only attend systems we are competent to service."
+        }
+      ],
+      "related": [
+        "commercial-fire-alarm-service",
+        "commercial-emergency-lighting-test",
+        "commercial-ppm-package"
+      ],
+      "keyword": "fm-fire-safety-support",
+      "seo_keywords": "FM fire safety support, commercial property compliance, Multi-site FM and managing agents, North West, Stockport"
+    },
+    {
+      "slug": "facilities-helpdesk-engineer",
+      "name": "Facilities helpdesk engineer",
+      "group": "Facilities programmes",
+      "service": "facilities-management",
+      "title": "Facilities Helpdesk Engineer | One Number For Trade Faults",
+      "h1": "Facilities helpdesk engineer",
+      "h1_accent": "faults logged once, then the right trade",
+      "meta": "A helpdesk route for commercial trade faults across the North West: you log it once, we send the fire, electrical, gas or security engineer the job needs. POA.",
+      "kicker": "Facilities · helpdesk",
+      "intro": "The helpdesk is a front door, not a person who pretends to be every trade. The value is one log and the correct engineer.",
+      "paragraphs": [
+        "Contract sites log faults to us with the site, the system and the urgency. We dispatch within the response you have paid for, and we tell you when a job is outside our competence.",
+        "Quotes for non-urgent work still happen in writing. Urgent make-safe is not a blank cheque."
+      ],
+      "points": [
+        "One log for contract sites",
+        "Dispatched to the trade the fault needs",
+        "Response matched to the contract",
+        "Out-of-competence work declined early"
+      ],
+      "standards": "Each attendance still follows that trade's standard",
+      "premises": "FM helpdesks that want a single trade route",
+      "deliverable": "A fault route with the trades named on the contract",
+      "honest": "Response times are agreed per contract. They are not a universal SLA printed here.",
+      "faqs": [
+        {
+          "q": "Do you answer the phone at night?",
+          "a": "Only if the contract includes out-of-hours. Otherwise the next working window applies."
+        },
+        {
+          "q": "Can tenants call you directly?",
+          "a": "If you want that. Many FMs prefer tenants to call them, and they call us."
+        },
+        {
+          "q": "Is every fault included in a monthly fee?",
+          "a": "No. Make-safe and chargeable repairs are defined in the quote."
+        }
+      ],
+      "related": [
+        "fm-electrical-support",
+        "fm-fire-safety-support",
+        "commercial-ppm-package"
+      ],
+      "keyword": "facilities-helpdesk-engineer",
+      "seo_keywords": "Facilities helpdesk engineer, commercial property compliance, FM helpdesks that want a single trade route, North West, Stockport"
+    },
+    {
+      "slug": "commercial-building-maintenance",
+      "name": "Commercial building maintenance",
+      "group": "Facilities programmes",
+      "service": "building-maintenance",
+      "title": "Commercial Building Maintenance | Fabric & Compliance Visits",
+      "h1": "Commercial building maintenance",
+      "h1_accent": "fabric visits that do not ignore the certificates",
+      "meta": "Commercial building maintenance for North West workplaces: planned fabric visits coordinated with the compliance diary. POA after the building list.",
+      "kicker": "Facilities · building",
+      "intro": "Building maintenance is the fabric — doors, finishes, minor repairs — planned so it does not wipe out the fire-door or electrical evidence you just paid for.",
+      "paragraphs": [
+        "We agree a visit list: ironmongery, making good, minor leaks, and the compliance dates that must not be buried. Specialist fire stopping, gas and electrical remain their own competences.",
+        "You get notes of what was done. We do not describe a handyman visit as a fire certificate."
+      ],
+      "points": [
+        "Planned fabric visits",
+        "Minor repairs logged",
+        "Compliance dates kept visible",
+        "Specialist trades left as specialist trades"
+      ],
+      "standards": "General building maintenance; life-safety systems stay on their own standards",
+      "premises": "Offices, retail units, small commercial blocks",
+      "deliverable": "A maintenance visit record for the fabric work agreed",
+      "honest": "This is not a compliance certificate and not a priced handyman menu.",
+      "faqs": [
+        {
+          "q": "Will the maintenance visit include the fire alarm service?",
+          "a": "Only if that visit is booked. We will not pencil 'serviced' on a logbook we did not complete."
+        },
+        {
+          "q": "Can you do small joinery and a door closer?",
+          "a": "Small joinery, yes. A fire door closer that is part of a fire door schedule should be on the fire door job so the record is right."
+        },
+        {
+          "q": "Do you cover grounds?",
+          "a": "Only if it is on the list. It is not assumed."
+        }
+      ],
+      "related": [
+        "commercial-ppm-package",
+        "facilities-management-compliance",
+        "commercial-fire-door"
+      ],
+      "keyword": "commercial-building-maintenance",
+      "seo_keywords": "Commercial building maintenance, commercial property compliance, Offices, retail units, small commercial blocks, North West, Stockport"
+    }
+  ]
+}

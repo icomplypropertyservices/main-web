@@ -435,6 +435,31 @@
   status = 200
   force = true
 
+# Commercial hub has child job files. Force so /pages/commercial does not 301.
+[[redirects]]
+  from = "/pages/commercial"
+  to = "/pages/commercial.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/commercial/"
+  to = "/pages/commercial.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/commercial/:slug"
+  to = "/pages/commercial/:slug.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/commercial/:slug/"
+  to = "/pages/commercial/:slug.php"
+  status = 200
+  force = true
+
 [[redirects]]
   from = "/*"
   to = "/:splat.php"

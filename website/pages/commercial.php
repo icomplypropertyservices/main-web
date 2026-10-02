@@ -5,6 +5,7 @@
  */
 require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/share.php';
+require_once SITE_ROOT . '/includes/commercial-jobs.php';
 
 $pageTitle = 'Commercial & Facilities Management | Fire Safety & Multi-Site';
 $metaDesc = 'Commercial & FM across the North West: fire risk assessments, fire systems, electrical, AOV, nurse call, CCTV, access control, fit-out and planned maintenance. Fixed-price quotes for multi-site portfolios.';
@@ -131,7 +132,7 @@ require SITE_ROOT . '/includes/header.php';
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get FM quote</a>
-                    <a href="<?= url('/pages/services/index.php') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">All services</a>
+                    <a href="#jobs" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">Compliance jobs</a>
                     <a href="#contracts" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Maintenance contracts</a>
                 </div>
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
@@ -274,6 +275,38 @@ require SITE_ROOT . '/includes/header.php';
             </div>
         </div>
     </div>
+</section>
+
+<!-- COMMERCIAL COMPLIANCE JOBS -->
+<section id="jobs" class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+        <div>
+            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Job lane</div>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Commercial compliance jobs</h2>
+            <p class="mt-2 text-zinc-600 max-w-2xl">
+                Workplace and FM bookings — fire, electrical, gas, security, water, asbestos and planned programmes.
+                Each job is quoted after scope. Nothing on these pages is a published price.
+            </p>
+        </div>
+        <a href="#quote" class="text-sm font-semibold text-[#ff6b00]">Quote a job →</a>
+    </div>
+    <?php foreach (commercialJobGroups() as $group => $groupJobs): ?>
+        <div class="mb-10">
+            <h3 class="text-xl font-semibold text-black mb-4"><?= htmlspecialchars($group, ENT_QUOTES, 'UTF-8') ?></h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                <?php foreach ($groupJobs as $job):
+                    $jobSlug = keywordSlug((string)($job['slug'] ?? ''));
+                    $jobName = (string)($job['name'] ?? keywordDisplayName($jobSlug));
+                ?>
+                    <a href="<?= url(commercialJobPath($jobSlug) . '.php') ?>"
+                       class="bg-white border border-zinc-200 rounded-2xl px-5 py-4 hover:border-[#ff6b00] transition group flex items-center justify-between gap-3">
+                        <span class="font-medium text-black group-hover:text-[#ff6b00]"><?= htmlspecialchars($jobName, ENT_QUOTES, 'UTF-8') ?></span>
+                        <span class="text-[#ff6b00] text-sm font-semibold shrink-0">→</span>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    <?php endforeach; ?>
 </section>
 
 <!-- MAINTENANCE CONTRACTS -->

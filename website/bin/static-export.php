@@ -657,6 +657,12 @@ function icomplyPrettyUrlRedirects(): string
 /pages/keywords/:slug    /pages/keywords/:slug.php    200!
 /pages/keywords/:slug/   /pages/keywords/:slug.php    200!
 
+# Commercial hub has child job files (pages/commercial/{slug}.php).
+/pages/commercial        /pages/commercial.php        200!
+/pages/commercial/       /pages/commercial.php        200!
+/pages/commercial/:slug  /pages/commercial/:slug.php  200!
+/pages/commercial/:slug/ /pages/commercial/:slug.php  200!
+
 # Splat pretty URLs. No force — /assets and real files win.
 /*                       /:splat.php                  200
 TXT;

@@ -63,6 +63,9 @@ $needHtml = [
     '/pages/keywords/emergency-electrician/bolton' => ['pages/keywords/emergency-electrician/bolton.php', ['Emergency Electrician', 'Bolton', '<!DOCTYPE']],
     '/pages/keywords/boiler/stockport' => ['pages/keywords/boiler/stockport.php', ['Boiler', 'Stockport', '<!DOCTYPE']],
     '/pages/keywords/price-of-rewire' => ['pages/keywords/price-of-rewire.php', ['POA', '<!DOCTYPE']],
+    '/pages/commercial' => ['pages/commercial.php', ['Commercial', 'id="jobs"', '<!DOCTYPE']],
+    '/pages/commercial/commercial-eicr' => ['pages/commercial/commercial-eicr.php', ['Commercial EICR', 'FAQPage', '<!DOCTYPE']],
+    '/pages/commercial/commercial-legionella-risk-assessment' => ['pages/commercial/commercial-legionella-risk-assessment.php', ['Legionella', 'POA', '<!DOCTYPE']],
 ];
 
 echo "Icomply static-export check  dist={$dist}\n";

@@ -24,6 +24,11 @@ jobs:
           php-version: "8.3"
           coverage: none
 
+      - name: Commercial compliance job lane
+        env:
+          SITE_URL: https://icomplypropertyservices.co.uk
+        run: php website/bin/check-commercial-jobs.php
+
       - name: SEO matrix + sitemap hygiene
         env:
           SITE_URL: https://icomplypropertyservices.co.uk

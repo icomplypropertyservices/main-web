@@ -75,6 +75,9 @@ $required = [
     '/pages/keywords/rewire</loc>',
     '/pages/keywords/boiler</loc>',
     '/pages/keywords/rewire/stockport</loc>',
+    '/pages/commercial</loc>',
+    '/pages/commercial/commercial-eicr</loc>',
+    '/pages/commercial/commercial-fire-risk-assessment</loc>',
     '/privacy</loc>',
     '/terms</loc>',
 ];

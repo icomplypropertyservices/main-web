@@ -20,3 +20,5 @@ Any manual changes will be lost on the next generation run.
 The source of truth is:
 - `templates/combo.php`
 - `config.php` ($services and $areas arrays)
+
+Commercial compliance job stubs in `commercial/` are separate. Regenerate them with `php bin/build-commercial-job-pages.php` from `data/commercial-jobs.json`. Do not hand-edit those stubs. The hub file `commercial.php` is maintained directly.

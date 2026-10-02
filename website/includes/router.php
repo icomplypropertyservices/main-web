@@ -91,6 +91,12 @@ function routerDispatchVirtual(string $path): bool {
         return routerTryFile('/pages/resources/' . $m[1]);
     }
 
+    // Commercial compliance jobs: /pages/commercial/{slug}
+    // Reserved so this never falls through to /pages/{service}/{town}.
+    if (preg_match('#^/pages/commercial/([a-z0-9\-]+)$#', $path, $m) && $m[1] !== 'index') {
+        return routerTryFile('/pages/commercial/' . $m[1]);
+    }
+
     // /pages/keywords/{kw}/{area}
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         renderKeywordAreaPage($m[1], $m[2]);
@@ -132,7 +138,7 @@ function routerDispatchVirtual(string $path): bool {
     if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         $serviceSlug = $m[1];
         $areaSlugVal = $m[2];
-        $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources'];
+        $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'commercial', 'packages'];
         if (in_array($serviceSlug, $reserved, true)) {
             return false;
         }
@@ -157,7 +163,7 @@ function routerDispatchVirtual(string $path): bool {
     // /pages/{service-slug} → canonical /pages/services/{slug}
     if (preg_match('#^/pages/([a-z0-9\-]+)$#', $path, $m)) {
         $slug = $m[1];
-        $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources'];
+        $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'commercial', 'packages'];
         if (!in_array($slug, $reserved, true) && isset(getServices()[$slug])) {
             header('Location: ' . url('/pages/services/' . $slug), true, 301);
             icomplyRequestExit();

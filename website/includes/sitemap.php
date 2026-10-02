@@ -100,7 +100,7 @@ function icomplySitemapEntries(): array
         // Hard reject /pages/{service}/{town} even if a leftover matrix file
         // sits in dist/. Keep only real hub prefixes.
         if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
-            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages'];
+            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'commercial'];
             if (!in_array($m[1], $okPrefix, true)) {
                 return;
             }
@@ -214,6 +214,23 @@ function icomplySitemapEntries(): array
             continue;
         }
         $add('/pages/keywords/' . $base, '0.68');
+    }
+    // Commercial compliance jobs live next to the hub. Source stubs count
+    // before dist/ exists; after export, dist copies are the publish root.
+    $commercialDirs = [
+        $publish . '/pages/commercial',
+        SITE_ROOT . '/pages/commercial',
+    ];
+    $commercialSeen = [];
+    foreach ($commercialDirs as $commercialDir) {
+        foreach (glob($commercialDir . '/*.php') ?: [] as $cFile) {
+            $base = basename($cFile, '.php');
+            if ($base === 'index' || isset($commercialSeen[$base])) {
+                continue;
+            }
+            $commercialSeen[$base] = true;
+            $add('/pages/commercial/' . $base, '0.74');
+        }
     }
     // Keyword hubs from the catalogue (generated at export) plus a small
     // featured electrical/gas × town sample. Skip at request time so
