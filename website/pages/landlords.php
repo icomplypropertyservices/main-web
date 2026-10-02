@@ -224,6 +224,11 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
     </div>
 </section>
 
+<?php
+require_once SITE_ROOT . '/includes/compliance-bundle.php';
+echo icomplyComplianceBundleCrossSellHtml('landlords');
+?>
+
 <!-- MULTI-PROPERTY PACKAGES -->
 <section id="packages" class="bg-zinc-100 border-y">
     <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">

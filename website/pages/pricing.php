@@ -224,7 +224,7 @@ $categories = [
                 'name' => 'Landlord essentials (EICR + gas safety)',
                 'from' => '£199',
                 'typical' => 'Guide where both can be coordinated on the same property access day.',
-                'includes' => 'EICR + CP12 scoped together — see Packages for full bundles',
+                'includes' => 'EICR + CP12 guide only — separate from the published Compliance Bundle',
             ],
             [
                 'name' => 'Fire + emergency lighting service visit',
@@ -331,6 +331,11 @@ require SITE_ROOT . '/includes/header.php';
         </p>
     </div>
 </section>
+
+<?php
+require_once SITE_ROOT . '/includes/compliance-bundle.php';
+echo icomplyComplianceBundleCrossSellHtml('pricing');
+?>
 
 <!-- JUMP LINKS -->
 <section class="max-w-7xl mx-auto px-6 pt-10">

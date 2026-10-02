@@ -132,6 +132,8 @@ function icomplySitemapEntries(): array
         ['/pages/landlords', '0.8', 'pages/landlords.php'],
         ['/pages/commercial', '0.8', 'pages/commercial.php'],
         ['/pages/packages', '0.8', 'pages/packages.php'],
+        ['/pages/packages/compliance-bundle', '0.85', 'pages/packages/compliance-bundle.php'],
+        ['/pages/packages/landlord-pack', '0.8', 'pages/packages/landlord-pack.php'],
         ['/pages/pricing', '0.75', 'pages/pricing.php'],
         ['/pages/care-homes', '0.75', 'pages/care-homes.php'],
         ['/pages/ev-chargers', '0.75', 'pages/ev-chargers.php'],

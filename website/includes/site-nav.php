@@ -173,8 +173,21 @@ function icomplyNavResourceLinks(): array
 /** @return list<array{href:string,label:string}> */
 function icomplyNavPackageLinks(): array
 {
-    return [
+    if (!function_exists('icomplyComplianceBundle')) {
+        $ssot = __DIR__ . '/compliance-bundle.php';
+        if (is_file($ssot)) {
+            require_once $ssot;
+        }
+    }
+    $bundle = function_exists('icomplyComplianceBundle') ? icomplyComplianceBundle() : null;
+    $links = [
         ['href' => url('/pages/packages.php'), 'label' => 'All packages'],
+    ];
+    if ($bundle) {
+        $links[] = ['href' => url($bundle['canonical_path']), 'label' => $bundle['nav_label']];
+        $links[] = ['href' => url($bundle['alias_path']), 'label' => $bundle['alias']];
+    }
+    return array_merge($links, [
         ['href' => url('/pages/packages/let-ready.php'), 'label' => 'Let-ready package'],
         ['href' => url('/pages/packages/fire-ready.php'), 'label' => 'Fire-ready package'],
         ['href' => url('/pages/packages/workplace-essentials.php'), 'label' => 'Workplace essentials'],
@@ -188,7 +201,7 @@ function icomplyNavPackageLinks(): array
         ['href' => url('/pages/about.php'), 'label' => 'About'],
         ['href' => url('/pages/faq.php'), 'label' => 'FAQ'],
         ['href' => url('/pages/reviews.php'), 'label' => 'Reviews'],
-    ];
+    ]);
 }
 
 function icomplyNavLink(string $href, string $label, string $class = ''): string
