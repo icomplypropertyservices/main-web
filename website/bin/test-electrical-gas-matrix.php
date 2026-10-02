@@ -56,7 +56,7 @@ foreach (array_merge($elec, $gas) as $slug => $meta) {
         (string)($meta['meta_desc'] ?? ''),
         json_encode($meta['faq'] ?? []),
     ]);
-    if (preg_match('/£\s*\d/', $blob)) {
+    if (function_exists('icomplyBlobHasInventedPrice') ? icomplyBlobHasInventedPrice($blob) : preg_match('/£\s*\d/', $blob)) {
         $poundHits[] = $slug;
     }
     if (isCostStyleKeyword((string)$slug, $name) && !preg_match('/\bPOA\b/i', $blob)) {

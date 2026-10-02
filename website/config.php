@@ -688,7 +688,19 @@ function getMajorKeywords(): array {
     if (function_exists('securitySystemsApplyOverlay')) {
         $normalized = securitySystemsApplyOverlay($normalized);
     }
-    return $normalized;
+    if (function_exists('eicrLaneOverlayKeyword')) {
+        foreach ($normalized as $slug => $row) {
+            if (!is_array($row)) {
+                continue;
+            }
+            $normalized[$slug] = eicrLaneOverlayKeyword((string)$slug, $row);
+        }
+    }
+    if (function_exists('openJobLanesApply')) {
+        $normalized = openJobLanesApply($normalized);
+    }
+    $cached = $normalized;
+    return $cached;
 }
 
 /**
@@ -732,11 +744,12 @@ function getElectricalGasFamilyServices(): array {
 function getElectricalGasMatrixKeywordSlugs(): array {
     $out = [];
     foreach (getElectricalGasFamilyServices() as $svc) {
-        foreach (array_keys(getKeywordsForService($svc)) as $slug) {
+        foreach (getKeywordsForService($svc) as $slug => $meta) {
             $slug = keywordSlug((string)$slug);
-            if ($slug !== '') {
-                $out[$slug] = true;
+            if ($slug === '' || (is_array($meta) && !empty($meta['hub_only']))) {
+                continue;
             }
+            $out[$slug] = true;
         }
     }
     return array_keys($out);
@@ -764,6 +777,15 @@ function getElectricalGasFeaturedKeywordSlugs(): array {
 
 function isCostStyleKeyword(string $slug, string $name = ''): bool {
     return (bool)preg_match('/\b(cost|price|quote|how-much|how much)\b/i', $slug . ' ' . $name);
+}
+
+/**
+ * Approved list prices. Any other £ figure in electrical or gas copy is rejected.
+ */
+function icomplyBlobHasInventedPrice(string $blob): bool
+{
+    $stripped = preg_replace('/£\s*(?:249|85|350|650)\b/', '', $blob) ?? $blob;
+    return (bool)preg_match('/£\s*\d/', $stripped);
 }
 
 /**
@@ -1335,6 +1357,10 @@ if (is_file($legionellaLaneFile)) {
 $plumbingLaneFile = __DIR__ . '/includes/job-types-plumbing.php';
 if (is_file($plumbingLaneFile)) {
     require_once $plumbingLaneFile;
+}
+$openJobLanesFile = __DIR__ . '/includes/open-job-lanes.php';
+if (is_file($openJobLanesFile)) {
+    require_once $openJobLanesFile;
 }
 $securitySystemsFile = __DIR__ . '/includes/security-systems-jobs.php';
 if (is_file($securitySystemsFile)) {

@@ -91,6 +91,9 @@ function icomplyMatrixShared(): array
 
     $kwByService = [];
     foreach (getMajorKeywords() as $slug => $meta) {
+        if (!is_array($meta) || !empty($meta['hub_only'])) {
+            continue;
+        }
         $svc = (string)($meta['service'] ?? '');
         if ($svc === '') {
             continue;
@@ -246,8 +249,11 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         $desc = substr($desc, 0, 157) . '…';
     }
     $canonical = url('/pages/keywords/' . $keywordSlug . '/' . $areaSlugVal);
+    $robots = function_exists('icomplyRobotsMetaForPath')
+        ? icomplyRobotsMetaForPath('/pages/keywords/' . $keywordSlug . '/' . $areaSlugVal)
+        : 'noindex, follow';
 
-    $html = icomplyMatrixChromeStart($title, $desc, $canonical);
+    $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
         . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($svcName) . ' · ' . icomplyMatrixH($areaName) . '</p>'
         . '<h1>' . icomplyMatrixH($kwName) . ' <span class="accent">in ' . icomplyMatrixH($areaName) . '</span></h1>'
@@ -323,6 +329,9 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     $title = $svcName . ' in ' . $areaName . ' | ' . $s['brand'];
     $desc = $svcName . ' in ' . $areaName . '. ' . $priceLine;
     $canonical = url('/pages/' . $serviceSlug . '/' . $areaSlugVal);
+    $robots = function_exists('icomplyRobotsMetaForPath')
+        ? icomplyRobotsMetaForPath('/pages/' . $serviceSlug . '/' . $areaSlugVal)
+        : 'index, follow';
     $ownsMainland = function_exists('serviceOwnsMainlandAreas') && serviceOwnsMainlandAreas($serviceSlug);
     $coverageLabel = $ownsMainland ? 'UK mainland' : 'North West';
     $areaPairs = $s['areas'];
@@ -336,7 +345,7 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         ? url('/pages/areas/' . $areaSlugVal)
         : $canonical;
 
-    $html = icomplyMatrixChromeStart($title, $desc, $canonical);
+    $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
         . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($areaName) . ' · ' . icomplyMatrixH($coverageLabel) . '</p>'
         . '<h1>' . icomplyMatrixH($svcName) . ' <span class="accent">in ' . icomplyMatrixH($areaName) . '</span></h1>'

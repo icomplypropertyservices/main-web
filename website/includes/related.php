@@ -264,6 +264,9 @@ function siblingKeywordsHtml(string $keywordSlug, string $serviceSlug, int $limi
     }
     $html = '<div class="flex flex-wrap gap-2">';
     foreach ($keywords as $slug => $meta) {
+        if (is_array($meta) && !empty($meta['hub_only'])) {
+            continue;
+        }
         $href = htmlspecialchars(url('/pages/keywords/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
         $label = htmlspecialchars((string)($meta['name'] ?? keywordDisplayName($slug)), ENT_QUOTES, 'UTF-8');
         $html .= '<a href="' . $href . '" class="px-3 py-1.5 bg-white border-2 border-zinc-300 rounded-full text-xs font-semibold text-zinc-900 hover:border-[#ff6b00] hover:text-[#ff6b00]">'

@@ -324,10 +324,14 @@ function icomplySitemapEntries(): array
                 $areaSlugs[] = areaSlug((string)$areaName);
             }
         }
-        foreach (array_keys(getMajorKeywords()) as $kw) {
+        $keywordMeta = getMajorKeywords();
+        foreach (array_keys($keywordMeta) as $kw) {
             $slug = keywordSlug($kw);
             $add('/pages/keywords/' . $slug, isset($family[$slug]) ? '0.78' : '0.68');
             if (function_exists('icomplyIndexMode') && icomplyIndexMode() === 'tiered') {
+                continue;
+            }
+            if (!empty($keywordMeta[$slug]['hub_only'])) {
                 continue;
             }
             foreach ($areaSlugs as $town) {

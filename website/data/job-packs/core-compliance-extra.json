@@ -1,0 +1,279 @@
+{
+  "lane": "core-compliance-extra",
+  "count": 7,
+  "jobs": [
+    {
+      "slug": "fire-door-compliance",
+      "name": "Fire Door Compliance",
+      "service": "fire-doors",
+      "related": "fire-door-inspection",
+      "bucket": "core_money",
+      "seo_title": "Fire Door Compliance | Inspection & Remedials North West",
+      "h1": "Fire door compliance",
+      "primary": "fire door compliance",
+      "secondaries": [
+        "fire door inspection",
+        "compartmentation doors",
+        "FD30 FD60"
+      ],
+      "intro": "Fire door compliance is evidence that doors still hold back smoke and fire — not that they were once labelled FD30. iComply delivers this for responsible persons closing FRA actions on doors from Stockport SK2 across Greater Manchester and the North West. We do not sell uncertified planed-down doors as compliant. Quotes are written POA after we know the property — we do not invent a catalogue £ price.",
+      "body": "The visit is scoped against BS 476 / EN 1634 · BS 8214. Typical scope includes inspection, prioritised defects, and remedial quotes after the survey. We do not sell uncertified planed-down doors as compliant. North West stock for this job runs from terraces and purpose-built flats to HMOs, offices and light industrial. We say when fire door compliance is the right next step and when a wider service visit is safer. Enquire with postcode, property type and any brand already on site. WhatsApp and phone are on this page.",
+      "meta_desc": "Fire Door Compliance across the North West. BS 476 / EN 1634 · BS 8214. POA after scope from Stockport engineers.",
+      "seo_keywords": "fire door compliance, Fire Door Compliance, BS 476 / EN 1634 · BS 8214, North West, Stockport, POA",
+      "focus_points": [
+        "Scoped against BS 476 / EN 1634 · BS 8214",
+        "Written POA quote — no invented £ on this page",
+        "Inspection",
+        "Stockport engineers covering 150+ North West towns"
+      ],
+      "faq": [
+        [
+          "What is fire door compliance?",
+          "The whole doorset still performing: leaf, frame, seals, closer, glazing and how it is used."
+        ],
+        [
+          "Wedges and extra locks?",
+          "They fail the door. The report will say so."
+        ],
+        [
+          "Price per door?",
+          "POA after the survey."
+        ]
+      ]
+    },
+    {
+      "slug": "epc",
+      "name": "EPC",
+      "service": "epc",
+      "related": "pat-testing",
+      "bucket": "core_money",
+      "seo_title": "EPC | Energy Performance Certificate North West",
+      "h1": "EPC — energy performance certificate",
+      "primary": "EPC",
+      "secondaries": [
+        "energy performance certificate",
+        "landlord EPC",
+        "EPC for sale or let"
+      ],
+      "intro": "EPC is the certificate listing portals and tenants expect when a home is marketed. iComply delivers this for landlords and sellers from Stockport SK2 across Greater Manchester and the North West. EPC recommendations are not a quote for insulation works. Quotes are written POA after we know the property — we do not invent a catalogue £ price.",
+      "body": "The visit is scoped against RdSAP · MEES for lets. Typical scope includes the visit, lodge on the register, and a copy for the file. EPC recommendations are not a quote for insulation works. North West stock for this job runs from terraces and purpose-built flats to HMOs, offices and light industrial. We say when EPC is the right next step and when a wider service visit is safer. Enquire with postcode, property type and any brand already on site. WhatsApp and phone are on this page.",
+      "meta_desc": "EPC for landlords and sellers across Greater Manchester and the North West. RdSAP · MEES for lets. Written POA quote from Stockport — no invented £ prices.",
+      "seo_keywords": "EPC, EPC, RdSAP · MEES for lets, North West, Stockport, POA",
+      "focus_points": [
+        "Scoped against RdSAP · MEES for lets",
+        "Written POA quote — no invented £ on this page",
+        "The visit",
+        "Stockport engineers covering 150+ North West towns"
+      ],
+      "faq": [
+        [
+          "How long does an EPC last?",
+          "Typically ten years unless you replace it earlier after works or for a new listing."
+        ],
+        [
+          "Commercial EPCs?",
+          "Say if the building is non-domestic. That is a different assessment."
+        ],
+        [
+          "EPC cost?",
+          "POA after house type and location. No from-£ figure."
+        ]
+      ]
+    },
+    {
+      "slug": "change-of-tenancy-pack",
+      "name": "Change of Tenancy Pack",
+      "service": "landlord-compliance",
+      "related": "agent-compliance-support",
+      "bucket": "compliance_packs",
+      "seo_title": "Change of Tenancy Pack | Mid-Void Certificates",
+      "h1": "Change of tenancy compliance pack",
+      "primary": "change of tenancy pack",
+      "secondaries": [
+        "new tenancy pack",
+        "void certificates",
+        "tenancy change compliance"
+      ],
+      "intro": "Change of tenancy compliance pack is what to re-check when tenants change even if some certificates are still in date. iComply delivers this for agents with a fast turnaround between tenancies from Stockport SK2 across Greater Manchester and the North West. Repeating a five-year EICR every tenancy for the sake of it if it is still valid — unless you ask or the house changed. Quotes are written POA after we know the property — we do not invent a catalogue £ price.",
+      "body": "The visit is scoped against PRS electrical (report still valid?) · gas if appliances present · alarms tested on the day. Typical scope includes a sense-check of dates plus any visit that is actually due. Repeating a five-year EICR every tenancy for the sake of it if it is still valid — unless you ask or the house changed. North West stock for this job runs from terraces and purpose-built flats to HMOs, offices and light industrial. We say when change of tenancy pack is the right next step and when a wider service visit is safer. Enquire with postcode, property type and any brand already on site. WhatsApp and phone are on this page.",
+      "meta_desc": "Change of Tenancy Pack across the North West. PRS electrical (report still valid?) · gas if appliances present · alarms tested on the day. POA after scope from Stockport engineers.",
+      "seo_keywords": "change of tenancy pack, Change of Tenancy Pack, PRS electrical (report still valid?) · gas if appliances present · alarms tested on the day, North West, Stockport, POA",
+      "focus_points": [
+        "Scoped against PRS electrical (report still valid?) · gas if appliances present · alarms tested on the day",
+        "Written POA quote — no invented £ on this page",
+        "A sense-check of dates plus any visit that is actually due",
+        "Stockport engineers covering 150+ North West towns"
+      ],
+      "faq": [
+        [
+          "Must I redo the EICR every tenancy?",
+          "Not if it is still in date and the installation has not been heavily altered. We will say if a new report is the honest job."
+        ],
+        [
+          "Alarms?",
+          "Test and record on change of tenancy even if the units are recent."
+        ],
+        [
+          "Price?",
+          "POA after we see what is still valid."
+        ]
+      ]
+    },
+    {
+      "slug": "compliance-pack-for-new-build-let",
+      "name": "Compliance Pack for New Build Let",
+      "service": "landlord-compliance",
+      "related": "agent-compliance-support",
+      "bucket": "compliance_packs",
+      "seo_title": "New-Build Let Compliance Pack | First Tenancy",
+      "h1": "Compliance pack for a new-build let",
+      "primary": "compliance pack for new-build let",
+      "secondaries": [
+        "new build landlord certificates",
+        "first let pack",
+        "new apartment compliance"
+      ],
+      "intro": "Compliance pack for a new-build let is first-let paperwork when the house is new — warranties, first certificates and what building control already covered. iComply delivers this for investors letting a new house or apartment from Stockport SK2 across Greater Manchester and the North West. We do not re-issue the developer's building-control completion as an EICR unless you book a real inspection. Quotes are written POA after we know the property — we do not invent a catalogue £ price.",
+      "body": "The visit is scoped against PRS start-of-tenancy duties · EPC · gas if present. Typical scope includes a gap check against the warranty pack and the certificates the agent still needs. We do not re-issue the developer's building-control completion as an EICR unless you book a real inspection. North West stock for this job runs from terraces and purpose-built flats to HMOs, offices and light industrial. We say when compliance pack for new-build let is the right next step and when a wider service visit is safer. Enquire with postcode, property type and any brand already on site. WhatsApp and phone are on this page.",
+      "meta_desc": "Compliance Pack for New Build Let across the North West. PRS start-of-tenancy duties · EPC · gas if present. POA after scope from Stockport engineers.",
+      "seo_keywords": "compliance pack for new-build let, Compliance Pack for New Build Let, PRS start-of-tenancy duties · EPC · gas if present, North West, Stockport, POA",
+      "focus_points": [
+        "Scoped against PRS start-of-tenancy duties · EPC · gas if present",
+        "Written POA quote — no invented £ on this page",
+        "A gap check against the warranty pack and the certificates the agent still needs",
+        "Stockport engineers covering 150+ North West towns"
+      ],
+      "faq": [
+        [
+          "Does a new build need an EICR immediately?",
+          "New installations have their own certificates. Whether you also want an EICR is a scoping question — we will not invent a rule that suits a sale."
+        ],
+        [
+          "EPC?",
+          "Usually required to market the let. We can arrange one."
+        ],
+        [
+          "Price?",
+          "POA after we see the warranty file."
+        ]
+      ]
+    },
+    {
+      "slug": "guarantor-let-compliance-bundle",
+      "name": "Guarantor Let Compliance Bundle",
+      "service": "landlord-compliance",
+      "related": "agent-compliance-support",
+      "bucket": "compliance_packs",
+      "seo_title": "Guarantor Let Compliance Bundle | Student & First Lets",
+      "h1": "Guarantor-let compliance bundle",
+      "primary": "guarantor let compliance bundle",
+      "secondaries": [
+        "student let certificates",
+        "guarantor tenancy compliance",
+        "HMO student pack"
+      ],
+      "intro": "Guarantor-let compliance bundle is the certificate file student and guarantor lets still need — the house, not the guarantor paperwork. iComply delivers this for landlords of student and first-time-renter stock from Stockport SK2 across Greater Manchester and the North West. Legal drafting of guarantor agreements. Quotes are written POA after we know the property — we do not invent a catalogue £ price.",
+      "body": "The visit is scoped against same PRS + HMO-if-applicable set. Typical scope includes certificates and alarm tests; not credit checks or guarantor deeds. Legal drafting of guarantor agreements. North West stock for this job runs from terraces and purpose-built flats to HMOs, offices and light industrial. We say when guarantor let compliance bundle is the right next step and when a wider service visit is safer. Enquire with postcode, property type and any brand already on site. WhatsApp and phone are on this page.",
+      "meta_desc": "Guarantor Let Compliance Bundle across the North West. same PRS + HMO-if-applicable set. POA after scope from Stockport engineers.",
+      "seo_keywords": "guarantor let compliance bundle, Guarantor Let Compliance Bundle, same PRS + HMO-if-applicable set, North West, Stockport, POA",
+      "focus_points": [
+        "Scoped against same PRS + HMO-if-applicable set",
+        "Written POA quote — no invented £ on this page",
+        "Certificates and alarm tests; not credit checks or guarantor deeds",
+        "Stockport engineers covering 150+ North West towns"
+      ],
+      "faq": [
+        [
+          "Do you handle the guarantor contract?",
+          "No. We do the property compliance file."
+        ],
+        [
+          "Student HMO extras?",
+          "If it is an HMO, the FRA and licence conditions sit in the quote."
+        ],
+        [
+          "Price?",
+          "POA."
+        ]
+      ]
+    },
+    {
+      "slug": "licence-application-evidence-pack",
+      "name": "Licence Application Evidence Pack",
+      "service": "landlord-compliance",
+      "related": "agent-compliance-support",
+      "bucket": "compliance_packs",
+      "seo_title": "Licence Evidence Pack | HMO & Selective Licensing",
+      "h1": "Licence application evidence pack",
+      "primary": "licence application evidence pack",
+      "secondaries": [
+        "HMO licence evidence",
+        "selective licensing certificates",
+        "licence conditions pack"
+      ],
+      "intro": "Licence application evidence pack is gathering the inspection evidence councils ask for on a licence application. iComply delivers this for landlords applying or renewing HMO or selective licences from Stockport SK2 across Greater Manchester and the North West. Filling the council form for you as a lawyer. Quotes are written POA after we know the property — we do not invent a catalogue £ price.",
+      "body": "The visit is scoped against local licensing conditions · Fire Safety Order · BS 7671. Typical scope includes the inspections and certificates the application list names — mapped, not guessed. Filling the council form for you as a lawyer. North West stock for this job runs from terraces and purpose-built flats to HMOs, offices and light industrial. We say when licence application evidence pack is the right next step and when a wider service visit is safer. Enquire with postcode, property type and any brand already on site. WhatsApp and phone are on this page.",
+      "meta_desc": "Licence Application Evidence Pack across the North West. local licensing conditions · Fire Safety Order · BS 7671. POA after scope from Stockport engineers.",
+      "seo_keywords": "licence application evidence pack, Licence Application Evidence Pack, local licensing conditions · Fire Safety Order · BS 7671, North West, Stockport, POA",
+      "focus_points": [
+        "Scoped against local licensing conditions · Fire Safety Order · BS 7671",
+        "Written POA quote — no invented £ on this page",
+        "The inspections and certificates the application list names — mapped",
+        "Stockport engineers covering 150+ North West towns"
+      ],
+      "faq": [
+        [
+          "Will this guarantee a licence?",
+          "No. The council decides. We supply evidence."
+        ],
+        [
+          "Can you work from the council PDF?",
+          "Yes. Send it."
+        ],
+        [
+          "Price?",
+          "POA after the conditions list."
+        ]
+      ]
+    },
+    {
+      "slug": "landlord-emergency-works-pack",
+      "name": "Landlord Emergency Works Pack",
+      "service": "landlord-compliance",
+      "related": "agent-compliance-support",
+      "bucket": "compliance_packs",
+      "seo_title": "Landlord Emergency Works | Make-Safe + Follow-On",
+      "h1": "Landlord emergency works pack",
+      "primary": "landlord emergency works pack",
+      "secondaries": [
+        "landlord emergency electrician",
+        "make safe rental",
+        "urgent landlord repairs"
+      ],
+      "intro": "Landlord emergency works pack is make-safe electrical or gas issues that stop a let or a tenancy, then a planned finish. iComply delivers this for agents with a dangerous fault mid-tenancy or on a void from Stockport SK2 across Greater Manchester and the North West. A standing 24/7 contract unless you book FM cover. Quotes are written POA after we know the property — we do not invent a catalogue £ price.",
+      "body": "The visit is scoped against make-safe first · certificates after the proper repair. Typical scope includes isolation, temporary safe condition, POA permanent repair. A standing 24/7 contract unless you book FM cover. North West stock for this job runs from terraces and purpose-built flats to HMOs, offices and light industrial. We say when landlord emergency works pack is the right next step and when a wider service visit is safer. Enquire with postcode, property type and any brand already on site. WhatsApp and phone are on this page.",
+      "meta_desc": "Landlord Emergency Works Pack across the North West. make-safe first · certificates after the proper repair. POA after scope from Stockport engineers.",
+      "seo_keywords": "landlord emergency works pack, Landlord Emergency Works Pack, make-safe first · certificates after the proper repair, North West, Stockport, POA",
+      "focus_points": [
+        "Scoped against make-safe first · certificates after the proper repair",
+        "Written POA quote — no invented £ on this page",
+        "Isolation",
+        "Stockport engineers covering 150+ North West towns"
+      ],
+      "faq": [
+        [
+          "Is this the emergency electrician page?",
+          "Related. This pack is for landlords who also need the compliance file updated after the emergency."
+        ],
+        [
+          "Tenant still in?",
+          "We work around access. Dangerous C1 is not left because it is inconvenient."
+        ],
+        [
+          "Call-out price?",
+          "POA — no website £."
+        ]
+      ]
+    }
+  ]
+}

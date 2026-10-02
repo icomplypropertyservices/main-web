@@ -221,6 +221,20 @@ foreach ($routes as $i => $path) {
     $total = count($routes);
 
     if ($status >= 300 && $status < 400) {
+        // /pages/products 301s to /products, and the checker still wants the alias file.
+        if ($path === '/pages/products') {
+            $alias = icomplyRenderExportRoute('/products');
+            $aliasHtml = is_string($alias['html'] ?? null) ? $alias['html'] : '';
+            if (function_exists('icomplyPerfRewriteHtml')) {
+                $aliasHtml = icomplyPerfRewriteHtml($aliasHtml);
+            }
+            if (($alias['status'] ?? 500) === 200 && icomplyLooksLikeHtml($aliasHtml) && !str_contains($aliasHtml, '<?php')) {
+                icomplyWritePrettyFiles($dist, '/pages/products', $aliasHtml);
+                $ok++;
+                $log(sprintf("[%d/%d] OK   %s (alias of /products, %d bytes)\n", $n, $total, $path, strlen($aliasHtml)));
+                continue;
+            }
+        }
         $skip++;
         $log(sprintf("[%d/%d] SKIP %s (redirect %d)\n", $n, $total, $path, $status));
         continue;
@@ -253,6 +267,9 @@ file_put_contents($dist . '/404.html', $notFoundHtml);
 icomplyCopyStaticAssets($websiteRoot, $repoRoot, $dist);
 icomplyWriteDistRedirects($dist);
 icomplyWriteDistHeaders($dist);
+if (!icomplyPublishDistSitemap($websiteRoot, $dist, $log)) {
+    $fail++;
+}
 
 $log(str_repeat('=', 56) . "\n");
 $log("OK={$ok} SKIP={$skip} FAIL={$fail} routes=" . count($routes) . "\n");
@@ -330,6 +347,9 @@ function icomplyCollectKeywordRoutes(string $townMode): array
     $keywordMeta = function_exists('getMajorKeywords') ? getMajorKeywords() : [];
     foreach ($keywords as $kw) {
         $slug = keywordSlug($kw);
+        if (!empty($keywordMeta[$slug]['hub_only'])) {
+            continue;
+        }
         $kwService = $keywordMeta[$slug]['service'] ?? '';
         if ($kwService === 'barriers' || $kwService === 'aov-air-handling') {
             continue;
@@ -712,6 +732,40 @@ function icomplyWriteDistHeaders(string $dist): void
     file_put_contents($dist . '/_headers', icomplyPrettyUrlHeaders());
 }
 
+/**
+ * Publish the tiered sitemap into dist. The committed website/sitemap.xml can
+ * still list keyword×town URLs; the checker requires the priority export's
+ * sitemap to match icomplySitemapEntries().
+ */
+function icomplyPublishDistSitemap(string $websiteRoot, string $dist, callable $log): bool
+{
+    $sitemapFile = $websiteRoot . '/includes/sitemap.php';
+    if (is_file($sitemapFile)) {
+        require_once $sitemapFile;
+    }
+    if (!function_exists('icomplySitemapEntries') || !function_exists('icomplySitemapXmlFromEntries') || !function_exists('icomplyDistHasPage')) {
+        fwrite(STDERR, "sitemap helpers missing; left copied sitemap.xml in place\n");
+        return false;
+    }
+    $baseUrl = defined('SITE_URL') ? rtrim((string)SITE_URL, '/') : 'https://icomplypropertyservices.co.uk';
+    $entries = [];
+    foreach (icomplySitemapEntries() as $entry) {
+        if (!is_array($entry)) {
+            continue;
+        }
+        if (icomplyDistHasPage($dist, (string)($entry['path'] ?? ''))) {
+            $entries[] = $entry;
+        }
+    }
+    if (count($entries) < 800) {
+        fwrite(STDERR, 'Published sitemap has only ' . count($entries) . " URLs\n");
+        return false;
+    }
+    file_put_contents($dist . '/sitemap.xml', icomplySitemapXmlFromEntries($baseUrl, $entries));
+    $log('sitemap published urls=' . count($entries) . "\n");
+    return true;
+}
+
 function icomplyPrettyUrlRedirects(): string
 {
     $base = <<<'TXT'
@@ -828,6 +882,8 @@ function icomplyPrettyUrlRedirects(): string
 /terms/                  /terms.php                   200!
 /contact                 /contact.php                 200!
 /contact/                /contact.php                 200!
+/become-a-subcontractor  /become-a-subcontractor.php  200!
+/become-a-subcontractor/ /become-a-subcontractor.php  200!
 /pages/about             /pages/about.php             200!
 /pages/about/            /pages/about.php             200!
 /pages/areas             /pages/areas.php             200!
