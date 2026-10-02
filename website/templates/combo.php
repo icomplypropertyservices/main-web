@@ -16,7 +16,11 @@ $metaDesc = $isFraEarly
     ? ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Price on application after scope. Local North West team from Stockport.')
     : ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing & certification. Local engineers. Written quote after scope.'));
 $metaKeywords = $SEO_KEYWORDS;
-$ogImage = url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
+$areaHeroRel = function_exists('icomplyAreaHero') ? icomplyAreaHero($SERVICE_SLUG, $AREA) : null;
+$ogImage = url($areaHeroRel ?: ('/assets/images/services/' . $SERVICE_SLUG . '.jpg'));
+$inlineHero1 = function_exists('icomplyAreaInline') ? icomplyAreaInline($SERVICE_SLUG, $AREA, 1) : null;
+$inlineHero2 = function_exists('icomplyAreaInline') ? icomplyAreaInline($SERVICE_SLUG, $AREA, 2) : null;
+$inlineHero3 = function_exists('icomplyAreaInline') ? icomplyAreaInline($SERVICE_SLUG, $AREA, 3) : null;
 
 $allServices = getServices();
 $allAreas = getAreas();
@@ -210,7 +214,7 @@ $schema = [
                 <p class="mt-6 text-sm text-white/60"><?= htmlspecialchars($standards, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
-                <img src="<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>"
+                <img src="<?= htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation and servicing in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> by Icomply Property Services"
                      width="1200" height="800"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
@@ -291,7 +295,7 @@ $schema = [
         </div>
         <div class="lg:col-span-2 space-y-4">
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
-                <img src="<?= url('/assets/images/keywords/' . $KEYWORD_IMAGE_1 . '.jpg') ?>"
+                <img src="<?= htmlspecialchars(url($inlineHero1 ?: ('/assets/images/keywords/' . $KEYWORD_IMAGE_1 . '.jpg')), ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> panel and equipment used by Icomply in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
                      width="800" height="600"
                      class="w-full h-44 object-cover"
@@ -300,7 +304,7 @@ $schema = [
                 <p class="text-xs text-zinc-500 px-3 py-2"><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> control equipment &amp; panels</p>
             </div>
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
-                <img src="<?= url('/assets/images/keywords/' . $KEYWORD_IMAGE_2 . '.jpg') ?>"
+                <img src="<?= htmlspecialchars(url($inlineHero2 ?: ('/assets/images/keywords/' . $KEYWORD_IMAGE_2 . '.jpg')), ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation work and testing in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
                      width="800" height="600"
                      class="w-full h-44 object-cover"
@@ -350,7 +354,7 @@ $schema = [
             <?= $MANUFACTURER_IMAGES ?>
         </div>
         <div class="mt-10 rounded-3xl overflow-hidden border bg-white">
-            <img src="<?= url('/assets/images/keywords/' . $KEYWORD_IMAGE_3 . '.jpg') ?>"
+            <img src="<?= htmlspecialchars(url($inlineHero3 ?: ('/assets/images/keywords/' . $KEYWORD_IMAGE_3 . '.jpg')), ENT_QUOTES, 'UTF-8') ?>"
                  alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturer panels and equipment — Icomply <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
                  width="1200" height="700"
                  class="w-full h-64 md:h-80 object-cover"

@@ -35,6 +35,9 @@ if ($gasBrand && function_exists('icomplyGasBrandBlurb')) {
     $metaDesc = $MFR_BLURB;
 }
 $ogImage = manufacturerImageUrl($mfrSlug, $primaryService);
+if ($ogImage === '') {
+    $ogImage = url('/assets/images/og-default.svg');
+}
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
@@ -162,12 +165,14 @@ $schema = [
                 </div>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
-                <img src="<?= htmlspecialchars(manufacturerImageUrl($mfrSlug, $primaryService), ENT_QUOTES, 'UTF-8') ?>"
+                <?php $mfrHero = manufacturerImageUrl($mfrSlug, $primaryService); ?>
+                <?php if ($mfrHero !== ''): ?>
+                <img src="<?= htmlspecialchars($mfrHero, ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> equipment — Icomply Property Services"
                      width="1200" height="800"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
-                     loading="eager"
-                     onerror="this.src='<?= htmlspecialchars(serviceImageUrl($primaryService), ENT_QUOTES, 'UTF-8') ?>'">
+                     loading="eager">
+                <?php endif; ?>
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-transparent to-transparent">
                     <div class="text-sm text-white/70"><?php if ($gasBrand): ?>Trade supply only. iComply is not Gas Safe registered.<?php elseif ($isPartner): ?>CAME partner · install and service<?php elseif ($isBarrierBrand): ?>Service and replacement · not a brand partnership<?php else: ?>Install, service and trade supply<?php endif; ?></div>
                     <div class="text-2xl font-semibold mt-1"><?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> · <?= $isBarrierBrand ? 'UK towns over 10,000' : 'North West' ?></div>

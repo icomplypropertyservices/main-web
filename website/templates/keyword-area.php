@@ -110,7 +110,7 @@ $h = static function ($s): string {
         </div>
         <div class="lg:col-span-2 space-y-4">
             <div class="rounded-3xl overflow-hidden border-2 border-zinc-400 shadow-md">
-                <img src="<?= $h($KEYWORD_IMAGE) ?>" alt="<?= $h($KEYWORD_NAME . ' in ' . $AREA) ?>" class="w-full h-48 object-cover" loading="eager"
+                <img src="<?= $h($KEYWORD_INLINE ?? $KEYWORD_IMAGE) ?>" alt="<?= $h($KEYWORD_NAME . ' equipment in ' . $AREA) ?>" class="w-full h-48 object-cover" loading="eager"
                      onerror="this.src='<?= $h($SERVICE_IMAGE) ?>'">
                 <div class="bg-[#061828] text-white p-3 text-center font-bold text-sm"><?= $h($KEYWORD_NAME) ?> · <?= $h($AREA) ?></div>
             </div>

@@ -1,0 +1,60 @@
+{
+  "max_per_lane": 8,
+  "cluster_size": 8,
+  "note": "Same primary hero src may appear on at most 8 pages in one lane. Town clusters are 8 consecutive areas from data/areas.json. Pools are AOV and vehicle barriers only (v1).",
+  "pools": {
+    "aov-air-handling": [
+      "/assets/images/services/aov-air-handling.jpg",
+      "/assets/images/services/aov-air-handling-photo.jpg",
+      "/assets/images/lanes/aov-air-handling/02.jpg",
+      "/assets/images/lanes/aov-air-handling/03.jpg",
+      "/assets/images/lanes/aov-air-handling/04.jpg",
+      "/assets/images/lanes/aov-air-handling/05.jpg",
+      "/assets/images/lanes/aov-air-handling/06.jpg",
+      "/assets/images/lanes/aov-air-handling/07.jpg",
+      "/assets/images/lanes/aov-air-handling/08.jpg",
+      "/assets/images/lanes/aov-air-handling/09.jpg",
+      "/assets/images/lanes/aov-air-handling/10.jpg",
+      "/assets/images/lanes/aov-air-handling/11.jpg",
+      "/assets/images/lanes/aov-air-handling/12.jpg",
+      "/assets/images/lanes/aov-air-handling/13.jpg",
+      "/assets/images/lanes/aov-air-handling/21.jpg",
+      "/assets/images/lanes/aov-air-handling/22.jpg",
+      "/assets/images/lanes/aov-air-handling/38.jpg",
+      "/assets/images/lanes/aov-air-handling/39.jpg",
+      "/assets/images/lanes/aov-air-handling/40.png",
+      "/assets/images/lanes/aov-air-handling/41.jpg",
+      "/assets/images/lanes/aov-air-handling/43.jpg"
+    ],
+    "barriers": [
+      "/assets/images/lanes/barriers/01.jpg",
+      "/assets/images/lanes/barriers/04.jpg",
+      "/assets/images/lanes/barriers/05.jpg",
+      "/assets/images/lanes/barriers/06.jpg",
+      "/assets/images/lanes/barriers/07.jpg",
+      "/assets/images/lanes/barriers/08.jpg",
+      "/assets/images/lanes/barriers/09.jpg",
+      "/assets/images/lanes/barriers/10.jpg",
+      "/assets/images/lanes/barriers/11.jpg",
+      "/assets/images/lanes/barriers/12.jpg",
+      "/assets/images/lanes/barriers/13.jpg",
+      "/assets/images/lanes/barriers/14.jpg",
+      "/assets/images/lanes/barriers/15.jpg",
+      "/assets/images/lanes/barriers/16.jpg",
+      "/assets/images/lanes/barriers/17.jpg",
+      "/assets/images/lanes/barriers/18.jpg",
+      "/assets/images/lanes/barriers/19.jpg",
+      "/assets/images/lanes/barriers/21.jpg",
+      "/assets/images/lanes/barriers/22.jpg",
+      "/assets/images/lanes/barriers/23.jpg",
+      "/assets/images/lanes/barriers/24.jpg"
+    ]
+  },
+  "service_pools": {
+    "aov-air-handling": "aov-air-handling"
+  },
+  "barrier_keywords": [
+    "car-park-barrier-access",
+    "gate-access-control"
+  ]
+}

@@ -1012,6 +1012,11 @@ function servicePhotoUrl(string $slug): string {
     return serviceImageUrl($slug);
 }
 
+/**
+ * Brand photo only. Do not borrow a service stock frame — that made every
+ * logo-less card on a lane look like the same picture.
+ * $fallbackService is unused and kept so existing call sites stay valid.
+ */
 function manufacturerImageUrl(string $slug, string $fallbackService = 'fire-alarms'): string {
     foreach (['svg', 'jpg', 'png', 'webp'] as $ext) {
         $rel = '/assets/images/manufacturers/' . $slug . '.' . $ext;
@@ -1023,7 +1028,7 @@ function manufacturerImageUrl(string $slug, string $fallbackService = 'fire-alar
     if (is_file(SITE_ROOT . $svg)) {
         return url($svg);
     }
-    return serviceImageUrl($fallbackService);
+    return '';
 }
 
 function getKeywordImages(string $serviceSlug): array {
@@ -1094,6 +1099,8 @@ $elJobTypesFile = __DIR__ . '/includes/emergency-lighting-job-types.php';
 if (is_file($elJobTypesFile)) {
     require_once $elJobTypesFile;
 }
+
+    require_once $heroFile;
 
     require_once $fraFile;
 

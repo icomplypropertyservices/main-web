@@ -7,7 +7,7 @@ require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/share.php';
 
 $pageTitle = 'EV Charger Installation | Rolec, Myenergi, Easee & Ohme';
-$metaDesc = 'Professional EV charger installation across Stockport, Greater Manchester and the North West. Rolec, Myenergi, Easee and Ohme charge points — installed to BS 7671, with load assessment and fixed-price quotes.';
+$metaDesc = 'Professional EV charger installation across Stockport, Greater Manchester and the North West. Rolec, Myenergi, Easee and Ohme charge points — BS 7671 certified, load assessment and fixed-price quotes.';
 $metaKeywords = 'EV charger installation, Rolec EV, Myenergi zappi, Easee charger, Ohme Home Pro, electric vehicle charge point North West, home EV charger Stockport, workplace EV charging Manchester, BS 7671 EV install';
 $ogImage = url('/assets/images/keywords/ev-charger-installation.jpg');
 $canonicalUrl = url('/pages/ev-chargers.php');
@@ -58,7 +58,7 @@ $included = [
 ];
 
 $trust = [
-    ['title' => 'BS 7671 installs', 'text' => 'Every charge point installed to current wiring regs'],
+    ['title' => 'BS 7671 installs', 'text' => 'Every charge point certified to current wiring regs'],
     ['title' => 'Leading brands', 'text' => 'Rolec, Myenergi, Easee & Ohme supported'],
     ['title' => 'Fixed-price quotes', 'text' => 'Clear scope after survey — no hidden extras'],
     ['title' => 'North West coverage', 'text' => 'Stockport-based · ' . count($areas) . '+ towns'],
@@ -80,8 +80,8 @@ $faqs = [
         'a' => 'Not always. We assess spare ways, protective devices and overall load first. If an upgrade or additional distribution is required, we quote it clearly before work starts.',
     ],
     [
-        'q' => 'Do you issue an electrical certificate?',
-        'a' => 'Work follows BS 7671. We issue an electrical installation certificate or minor works certificate for the work we complete. Building-regulations notification is arranged where required for the property type.',
+        'q' => 'Is the install certified?',
+        'a' => 'Yes. Work is completed to BS 7671 with the appropriate electrical certificate. Building-reg / Part P notification is arranged where required for the property type.',
     ],
     [
         'q' => 'Can you install workplace or multi-bay chargers?',
@@ -138,12 +138,12 @@ require SITE_ROOT . '/includes/header.php';
                     <strong class="text-white font-semibold">Myenergi</strong>,
                     <strong class="text-white font-semibold">Easee</strong> and
                     <strong class="text-white font-semibold">Ohme</strong> —
-                    surveyed and installed by Stockport-based electrical engineers.
+                    surveyed, installed and certified by Stockport-based electrical engineers.
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get EV install quote</a>
                     <a href="#brands" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">View brands</a>
-                    <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi iComply, I need an EV charger installation quote') ?>"
+                    <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi Icomply, I need an EV charger installation quote') ?>"
                        target="_blank" rel="noopener"
                        class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
                 </div>
@@ -162,9 +162,10 @@ require SITE_ROOT . '/includes/header.php';
                 ?>
                 <a href="<?= url('/pages/manufacturers/' . rawurlencode($brand['slug']) . '.php') ?>"
                    class="group relative rounded-3xl overflow-hidden border border-white/10 min-h-[140px] bg-white/5 hover:border-[#ff6b00] transition">
-                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($brand['name'], ENT_QUOTES, 'UTF-8') ?> EV charging — iComply Property Services"
-                         class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-55 transition" loading="lazy"
-                         onerror="this.style.display='none'">
+                    <?php if ($img !== ''): ?>
+                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($brand['name'], ENT_QUOTES, 'UTF-8') ?> EV charging — Icomply Property Services"
+                         class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-55 transition" loading="lazy">
+                    <?php endif; ?>
                     <div class="relative p-5 h-full flex flex-col justify-end">
                         <div class="text-[10px] uppercase tracking-wider text-[#ff6b00] font-semibold mb-1"><?= htmlspecialchars($brand['badge'], ENT_QUOTES, 'UTF-8') ?></div>
                         <div class="font-semibold text-white text-lg leading-tight"><?= htmlspecialchars($brand['name'], ENT_QUOTES, 'UTF-8') ?></div>
@@ -200,7 +201,7 @@ require SITE_ROOT . '/includes/header.php';
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Charge points done properly</h2>
             <p class="mt-4 text-zinc-600 text-lg">
                 An EV charger is more than a wall box. Supply capacity, protective devices, cable sizing, earthing and
-                isolation all need to be right for a safe, reliable install. iComply designs and installs charge points
+                isolation all need to be right for a safe, reliable install. Icomply designs and installs charge points
                 as part of our wider
                 <a href="<?= url('/pages/services/electrical.php') ?>" class="text-[#ff6b00] font-semibold hover:underline">electrical services</a>
                 — from single home units to workplace multi-bay schemes.
@@ -254,11 +255,14 @@ require SITE_ROOT . '/includes/header.php';
             <a href="<?= url('/pages/manufacturers/' . rawurlencode($brand['slug']) . '.php') ?>"
                class="service-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="h-40 bg-zinc-100 overflow-hidden">
+                    <?php if ($img !== ''): ?>
                     <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>"
-                         alt="<?= htmlspecialchars($brand['name'], ENT_QUOTES, 'UTF-8') ?> EV charger installation by iComply"
-                         class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                         loading="lazy"
-                         onerror="this.src='<?= htmlspecialchars(url('/assets/images/services/electrical.jpg'), ENT_QUOTES, 'UTF-8') ?>'">
+                         alt="<?= htmlspecialchars($brand['name'], ENT_QUOTES, 'UTF-8') ?> EV charger installation by Icomply"
+                         class="w-full h-full object-contain bg-white group-hover:scale-105 transition duration-300"
+                         loading="lazy">
+                    <?php else: ?>
+                    <div class="w-full h-full flex items-center justify-center text-sm font-semibold text-zinc-500 px-4 text-center"><?= htmlspecialchars($brand['name'], ENT_QUOTES, 'UTF-8') ?></div>
+                    <?php endif; ?>
                 </div>
                 <div class="p-6 flex-1 flex flex-col">
                     <div class="text-[10px] uppercase tracking-wider text-[#ff6b00] font-semibold"><?= htmlspecialchars($brand['badge'], ENT_QUOTES, 'UTF-8') ?></div>
@@ -385,7 +389,7 @@ require SITE_ROOT . '/includes/header.php';
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
                    class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
-                <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi iComply, I need an EV charger installation quote') ?>"
+                <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi Icomply, I need an EV charger installation quote') ?>"
                    target="_blank" rel="noopener"
                    class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>
                 <a href="#quote" class="px-6 py-3 rounded-2xl border border-white/30 font-semibold hover:bg-white/10">Quote form</a>
@@ -406,7 +410,7 @@ require SITE_ROOT . '/includes/header.php';
             </p>
         </div>
 
-        <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
+        <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <input type="hidden" name="gclid" value="<?= htmlspecialchars($_GET['gclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
             <input type="hidden" name="fbclid" value="<?= htmlspecialchars($_GET['fbclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
