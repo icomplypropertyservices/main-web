@@ -598,7 +598,6 @@ function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
     }
     $catalog = getManufacturerCatalog();
     $html = '';
-    $fallback = htmlspecialchars(url('/assets/images/services/' . $serviceSlug . '.jpg'), ENT_QUOTES, 'UTF-8');
     foreach ($slugs as $slug) {
         $slug = preg_replace('/[^a-z0-9\-]/', '', (string)$slug);
         if ($slug === '') {
@@ -607,11 +606,17 @@ function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
         $entry = $catalog[$slug] ?? null;
         $label = htmlspecialchars($entry['name'] ?? ucwords(str_replace('-', ' ', $slug)), ENT_QUOTES, 'UTF-8');
         $href = htmlspecialchars(url('/pages/manufacturers/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
-        $src = htmlspecialchars(manufacturerImageUrl($slug, $serviceSlug !== '' ? $serviceSlug : 'fire-alarms'), ENT_QUOTES, 'UTF-8');
+        $src = manufacturerImageUrl($slug, $serviceSlug !== '' ? $serviceSlug : 'fire-alarms');
+        $img = '';
+        if ($src !== '') {
+            $img = '<img src="' . htmlspecialchars($src, ENT_QUOTES, 'UTF-8') . '" alt="' . $label . ' products and service — Icomply" '
+                . 'class="w-full h-28 object-contain bg-white group-hover:scale-105 transition duration-300" loading="lazy">';
+        } else {
+            $img = '<div class="w-full h-28 bg-zinc-50 flex items-center justify-center text-xs font-semibold text-zinc-500 px-3 text-center">'
+                . $label . '</div>';
+        }
         $html .= '<a href="' . $href . '" class="bg-white border-2 border-zinc-200 rounded-2xl overflow-hidden hover:border-[#ff6b00] hover:shadow-md transition block group">'
-            . '<img src="' . $src . '" alt="' . $label . ' products and service — Icomply" '
-            . 'class="w-full h-28 object-cover group-hover:scale-105 transition duration-300" loading="lazy" '
-            . 'onerror="this.src=\'' . $fallback . '\'">'
+            . $img
             . '<div class="p-3 text-sm text-black text-center font-semibold">' . $label
             . ' <span class="text-[#ff6b00]">→</span></div>'
             . '</a>';
@@ -663,12 +668,20 @@ function servicePhotoUrl(string $slug): string {
     return serviceImageUrl($slug);
 }
 
+/**
+ * Brand photo only. Do not borrow a service stock frame — that made every
+ * logo-less card on a lane look like the same picture.
+ * $fallbackService is unused and kept so existing call sites stay valid.
+ */
 function manufacturerImageUrl(string $slug, string $fallbackService = 'fire-alarms'): string {
-    $rel = '/assets/images/manufacturers/' . $slug . '.jpg';
-    if (is_file(SITE_ROOT . $rel)) {
-        return url($rel);
+    unset($fallbackService);
+    foreach (['.jpg', '.png', '.webp'] as $ext) {
+        $rel = '/assets/images/manufacturers/' . $slug . $ext;
+        if (is_file(SITE_ROOT . $rel)) {
+            return url($rel);
+        }
     }
-    return serviceImageUrl($fallbackService);
+    return '';
 }
 
 function getKeywordImages(string $serviceSlug): array {
@@ -711,6 +724,10 @@ function icomplyTradeProductsUrl(): string
 $waFile = __DIR__ . '/includes/water-asbestos.php';
 if (is_file($waFile)) {
     require_once $waFile;
+}
+$heroFile = __DIR__ . '/includes/hero-images.php';
+if (is_file($heroFile)) {
+    require_once $heroFile;
 }
 
 // Back-compat globals used by some templates/includes

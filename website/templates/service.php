@@ -9,7 +9,10 @@ $metaDesc = $poaService
     ? ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Price on application after scope. Local team from Stockport. No invented fees.')
     : ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Installation, maintenance, testing & certification. Written quotes after scope. Local engineers from Stockport.');
 $metaKeywords = $SEO_KEYWORDS;
-$ogImage = url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
+$hubHeroRel = function_exists('icomplyHubHero') ? icomplyHubHero($SERVICE_SLUG) : null;
+$hubInline1 = function_exists('icomplyHubInline') ? icomplyHubInline($SERVICE_SLUG, 1) : null;
+$hubInline2 = function_exists('icomplyHubInline') ? icomplyHubInline($SERVICE_SLUG, 2) : null;
+$ogImage = url($hubHeroRel ?: ('/assets/images/services/' . $SERVICE_SLUG . '.jpg'));
 
 $allServices = getServices();
 $allAreas = getAreas();
@@ -206,7 +209,7 @@ $schema = [
                 <p class="mt-6 text-sm text-white/60"><?= htmlspecialchars($standards, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
-                <img src="<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>"
+                <img src="<?= htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> by Icomply Property Services"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
                      loading="eager"
@@ -274,14 +277,14 @@ $schema = [
         </div>
         <div class="lg:col-span-2 space-y-4">
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
-                <img src="<?= url('/assets/images/keywords/' . htmlspecialchars($img2, ENT_QUOTES, 'UTF-8') . '.jpg') ?>"
+                <img src="<?= htmlspecialchars(url($hubInline1 ?: ('/assets/images/keywords/' . $img2 . '.jpg')), ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> equipment"
                      class="w-full h-44 object-cover"
                      loading="lazy"
                      onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
             </div>
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
-                <img src="<?= url('/assets/images/keywords/' . htmlspecialchars($img3, ENT_QUOTES, 'UTF-8') . '.jpg') ?>"
+                <img src="<?= htmlspecialchars(url($hubInline2 ?: ('/assets/images/keywords/' . $img3 . '.jpg')), ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation work"
                      class="w-full h-44 object-cover"
                      loading="lazy"

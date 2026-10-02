@@ -1,11 +1,11 @@
 {
-  "aov-ctrl": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/svm-panel.jpg?v=1788977786",
-  "aov-sensor": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/A_SD_CON_DB.jpg?v=1788978073",
-  "aov-act": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/aov-act_a8eabc59-8beb-44e4-964d-8562aaa344d6.jpg?v=1789513551",
-  "aov-act-hvy": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/hcv-chain.jpg?v=1788977801",
-  "aov-motor": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/aov-act_a8eabc59-8beb-44e4-964d-8562aaa344d6.jpg?v=1789513551",
-  "aov-motor-hvy": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/hcv-chain.jpg?v=1788977801",
-  "aov-kit-1m2": "https://ventlux.co.uk/wp-content/uploads/2026/04/Dakea-Kit-2Bg-key.jpg",
-  "aov-kit-1m2_alt_hatch": "https://ventlux.co.uk/wp-content/uploads/2023/08/AOV-Roof-Hatch-VSK285.jpg",
-  "aov-kit-1m2_shopify_hatch": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/AOV_Roof_Hatch_inter.jpg?v=1788977928"
+  "aov-ctrl": "/assets/images/products/aov-ctrl.jpg",
+  "aov-sensor": "/assets/images/products/aov-sensor.jpg",
+  "aov-act": "/assets/images/products/aov-act.jpg",
+  "aov-act-hvy": "/assets/images/products/aov-act-hvy.jpg",
+  "aov-motor": "/assets/images/products/aov-motor.jpg",
+  "aov-motor-hvy": "/assets/images/products/aov-motor-hvy.jpg",
+  "aov-kit-1m2": "/assets/images/products/aov-kit-1m2.jpg",
+  "aov-kit-1m2_alt_hatch": "/assets/images/products/aov-kit-1m2-hatch.jpg",
+  "aov-kit-1m2_shopify_hatch": "/assets/images/products/aov-kit-1m2-hatch.jpg"
 }

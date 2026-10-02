@@ -174,9 +174,15 @@ function keywordTemplatePlaceholders(
             . '<p class="mt-3 text-sm text-zinc-900 leading-relaxed font-medium">' . $a . '</p></details>';
     }
 
-    $kwImg = url('/assets/images/keywords/' . $slug . '.jpg');
+    $hero = function_exists('icomplyKeywordHero')
+        ? icomplyKeywordHero($slug, $serviceSlug, $areaName)
+        : [
+            'primary' => '/assets/images/keywords/' . $slug . '.jpg',
+            'inline' => '/assets/images/services/' . $serviceSlug . '.jpg',
+        ];
+    $kwImg = url($hero['primary']);
+    $kwInline = url($hero['inline']);
     $svcImg = url('/assets/images/services/' . $serviceSlug . '.jpg');
-    // Prefer keyword image path; template onerror falls back to service
 
     return [
         'KEYWORD_NAME' => $name,
@@ -193,6 +199,7 @@ function keywordTemplatePlaceholders(
         'KEYWORD_FOCUS_HTML' => $focusHtml,
         'KEYWORD_FAQ_HTML' => $faqHtml,
         'KEYWORD_IMAGE' => $kwImg,
+        'KEYWORD_INLINE' => $kwInline,
         'SERVICE_IMAGE' => $svcImg,
     ];
 }
