@@ -205,6 +205,11 @@ $schema = [
     </div>
 </section>
 
+<?php
+require_once SITE_ROOT . '/includes/owned-nonfire.php';
+echo ownedNonFireAreaSectionHtml($areaName);
+?>
+
 <!-- POPULAR KEYWORD × THIS AREA (EICR report, FRA, gas cert, etc.) -->
 <section class="max-w-7xl mx-auto px-6 py-16">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
@@ -233,7 +238,7 @@ $schema = [
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Services in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></div>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Everything we do locally</h2>
-                <p class="mt-2 text-zinc-600 max-w-xl">Open a live service hub — or, for electrical and gas, a keyword page for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Thin service×area doorways are not published.</p>
+                <p class="mt-2 text-zinc-600 max-w-xl"><?php if (function_exists('ownedNonFireTown') && ownedNonFireTown($AREA)): ?>Top non-fire services in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> have a written local page above. Fire systems stay on the nationwide hubs. Other trades open the live service hub.<?php else: ?>Open a live service hub — or, for electrical and gas, a keyword page for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Thin service×area doorways are not published.<?php endif; ?></p>
             </div>
             <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All service hubs →</a>
         </div>

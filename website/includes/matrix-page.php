@@ -326,10 +326,16 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         . '<p class="mt-4 text-sm text-white/60">' . icomplyMatrixH($standards) . ' · ' . icomplyMatrixH($priceLine) . '</p>'
         . '</div></section>';
 
+    if (!function_exists('ownedNonFireMatrixArticleHtml')) {
+        require_once SITE_ROOT . '/includes/owned-nonfire.php';
+    }
+    $ownedArticle = ownedNonFireMatrixArticleHtml($serviceSlug, $areaName);
+
     $html .= '<main class="matrix-wrap py-10 space-y-10">'
         . '<article class="matrix-card space-y-4">'
         . '<h2 class="text-2xl font-semibold">What we do in ' . icomplyMatrixH($areaName) . '</h2>'
         . '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($blurb) . '</p>'
+        . $ownedArticle
         . '<p class="text-sm">Service hub: <a class="text-[#ff6b00] font-semibold" href="'
         . icomplyMatrixH(url('/pages/services/' . $serviceSlug)) . '">' . icomplyMatrixH($svcName) . '</a>'
         . ' · Town: <a class="text-[#ff6b00] font-semibold" href="'

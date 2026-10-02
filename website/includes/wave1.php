@@ -168,6 +168,7 @@ function wave1NavFeatured(): array
         ['href' => url('/pages/commercial-fire-safety'), 'label' => 'Commercial fire safety'],
         ['href' => url('/pages/stockport-property-compliance'), 'label' => 'Stockport'],
         ['href' => url('/pages/manchester-property-compliance'), 'label' => 'Manchester'],
+        ['href' => url('/pages/burnley-property-compliance'), 'label' => 'Burnley'],
         ['href' => url('/pages/legionella-landlords'), 'label' => 'Legionella for landlords'],
         ['href' => url('/pages/asbestos-landlords'), 'label' => 'Asbestos for landlords'],
     ];

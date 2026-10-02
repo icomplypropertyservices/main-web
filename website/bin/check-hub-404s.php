@@ -43,6 +43,7 @@ $required = [
     '/pages/emergency-lighting-compliance.php',
     '/pages/stockport-property-compliance.php',
     '/pages/manchester-property-compliance.php',
+    '/pages/burnley-property-compliance.php',
     '/manifest.json',
     '/manifest.webmanifest',
     '/site.webmanifest',
