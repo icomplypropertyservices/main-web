@@ -4,10 +4,15 @@
  * MANUFACTURER_TAGS, MANUFACTURER_IMAGES
  */
 $poaService = function_exists('isPoaService') && isPoaService($SERVICE_SLUG);
-$pageTitle = $SERVICE_NAME . ' Services | North West';
-$metaDesc = $poaService
-    ? ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Price on application after scope. Local team from Stockport. No invented fees.')
-    : ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Installation, maintenance, testing & certification. Written quotes after scope. Local engineers from Stockport.');
+$ownsMainland = function_exists('serviceOwnsMainlandAreas') && serviceOwnsMainlandAreas($SERVICE_SLUG);
+$pageTitle = $ownsMainland
+    ? ($SERVICE_NAME . ' | UK mainland fire protection')
+    : ($SERVICE_NAME . ' Services | North West');
+$metaDesc = $ownsMainland
+    ? ('Fire alarm design, installation, servicing and certification across UK mainland — England, Wales and mainland Scotland. Scheduled from Stockport. Written quote after scope.')
+    : ($poaService
+        ? ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Price on application after scope. Local team from Stockport. No invented fees.')
+        : ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Installation, maintenance, testing & certification. Written quotes after scope. Local engineers from Stockport.'));
 $metaKeywords = $SEO_KEYWORDS;
 $hubHeroRel = function_exists('icomplyHubHero') ? icomplyHubHero($SERVICE_SLUG) : null;
 $hubInline1 = function_exists('icomplyHubInline') ? icomplyHubInline($SERVICE_SLUG, 1) : null;
@@ -15,7 +20,11 @@ $hubInline2 = function_exists('icomplyHubInline') ? icomplyHubInline($SERVICE_SL
 $ogImage = url($hubHeroRel ?: ('/assets/images/services/' . $SERVICE_SLUG . '.jpg'));
 
 $allServices = getServices();
-$allAreas = getAreas();
+$allAreas = $ownsMainland && function_exists('getMainlandAreas') ? getMainlandAreas() : getAreas();
+$coverageLabel = $ownsMainland ? 'UK mainland' : 'North West';
+$areaServedNames = $ownsMainland
+    ? ['England', 'Wales', 'Mainland Scotland']
+    : ['Greater Manchester', 'Lancashire', 'Cheshire', 'Merseyside', 'Cumbria', 'North West England'];
 $serviceSlug = $SERVICE_SLUG;
 $serviceName = $SERVICE_NAME;
 
@@ -29,6 +38,7 @@ $serviceFaqs = [
         ['What is BS 5839 compliance?', 'BS 5839 is the British Standard covering design, installation, commissioning and maintenance of fire detection and alarm systems in buildings.'],
         ['How often do fire alarms need servicing?', 'Most systems need servicing at least twice a year, with weekly user tests and full documentation for insurers and fire officers.'],
         ['Do you support existing panels (Kentec, Advanced, C-Tec)?', 'Yes. We install, service, reprogram and upgrade major brands including Kentec, Advanced, C-Tec, Morley, Hochiki and Apollo.'],
+        ['Do you cover fire alarms outside the North West?', 'Yes. Fire alarms are scheduled across England, Wales and mainland Scotland. Northern Ireland, the Scottish Highlands and Islands, the Isle of Man and the Channel Islands are not on this list.'],
     ],
     'emergency-lighting' => [
         ['How often should emergency lighting be tested?', 'Monthly functional tests and annual full-duration tests are required under BS 5266, with records kept for compliance.'],
@@ -67,12 +77,22 @@ $standards = getServiceStandards($serviceSlug);
 $faqs = $serviceFaqs[$serviceSlug] ?? $serviceFaqs['default'];
 $svcCopy = function_exists('waterAsbestosServiceCopy') ? waterAsbestosServiceCopy($serviceSlug) : null;
 
-$popularTowns = array_values(array_filter(
+$nwAreas = getAreas();
+$keywordTowns = array_values(array_filter(
     ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool', 'Bury', 'Sale', 'Altrincham', 'Macclesfield', 'Burnley', 'Blackburn', 'Warrington', 'St Helens'],
-    function ($t) use ($allAreas) {
-        return in_array($t, $allAreas, true);
+    function ($t) use ($nwAreas) {
+        return in_array($t, $nwAreas, true);
     }
 ));
+$popularTowns = $keywordTowns;
+if ($ownsMainland) {
+    $popularTowns = array_values(array_filter(
+        ['London', 'Birmingham', 'Leeds', 'Bristol', 'Cardiff', 'Edinburgh', 'Glasgow', 'Manchester', 'Stockport', 'Newcastle upon Tyne', 'Southampton', 'Nottingham'],
+        function ($t) use ($allAreas) {
+            return in_array($t, $allAreas, true);
+        }
+    ));
+}
 $popularTowns = array_values(array_unique($popularTowns));
 
 $keywordImages = getKeywordImages($serviceSlug);
@@ -140,7 +160,7 @@ $schema = [
             ],
             'areaServed' => array_map(static function ($region) {
                 return ['@type' => 'AdministrativeArea', 'name' => $region];
-            }, ['Greater Manchester', 'Lancashire', 'Cheshire', 'Merseyside', 'Cumbria', 'North West England']),
+            }, $areaServedNames),
             'offers' => [
                 '@type' => 'Offer',
                 'name' => ($poaService ? 'Price on application — ' : 'Written quote — ') . $serviceName,
@@ -201,7 +221,7 @@ $schema = [
             <div>
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs tracking-widest uppercase mb-5">
                     <span class="w-2 h-2 rounded-full bg-[#ff6b00]"></span>
-                    <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> · North West
+                    <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> · <?= htmlspecialchars($coverageLabel, ENT_QUOTES, 'UTF-8') ?>
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
                     <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?>.<br>
@@ -277,7 +297,9 @@ $schema = [
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <?php
         $trust = [
-            ['Local response', 'Stockport-based engineers across Greater Manchester & the North West'],
+            ['Local response', $ownsMainland
+                ? 'Stockport base — fire alarms scheduled across UK mainland'
+                : 'Stockport-based engineers across Greater Manchester & the North West'],
             ['Standards-led', $standards],
             ['Full documentation', 'Records for landlords, insurers, agents and dutyholders'],
             [$poaService ? 'POA quotes' : 'Written quotes', $poaService ? 'No invented prices — scoped after we see the job' : 'Clear scope before work starts'],
@@ -300,7 +322,7 @@ $schema = [
         <div class="lg:col-span-3">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Overview</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">
-                Expert <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> across the North West
+                Expert <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> across <?= $ownsMainland ? 'UK mainland' : 'the North West' ?>
             </h2>
             <?php if (!empty($svcCopy['intro']) && is_array($svcCopy['intro'])): ?>
                 <?php foreach ($svcCopy['intro'] as $para): ?>
@@ -310,13 +332,23 @@ $schema = [
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
                 Icomply Property Services designs, installs, commissions, maintains and certifies
                 <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong>
+                <?php if ($ownsMainland): ?>
+                for commercial, industrial, multi-let, care and residential properties across England, Wales and mainland Scotland.
+                <?php else: ?>
                 for commercial, industrial, multi-let, care and residential properties across Greater Manchester,
                 Lancashire, Cheshire, Merseyside and Cumbria.
+                <?php endif; ?>
             </p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
+                <?php if ($ownsMainland): ?>
+                Fire protection on these pages is UK mainland. Each place below has its own fire alarm page.
+                Northern Ireland, the Scottish Highlands and Islands, the Isle of Man and the Channel Islands are not listed.
+                Attendance outside the North West is scheduled from our Stockport (SK2) base and confirmed on the quote.
+                <?php else: ?>
                 From new system design to reactive call-outs and planned maintenance contracts, our engineers deliver
                 fixed-price quotes, clear scope and full compliance documentation. Based in Stockport (SK2), we cover
                 Manchester, Bolton, Oldham, Rochdale, Wigan, Liverpool, Preston and 140+ surrounding towns.
+                <?php endif; ?>
             </p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
                 Searching for a specific manufacturer? We install and service the major brands listed below so you can
@@ -414,8 +446,12 @@ if (function_exists('accessControlLaneHubSection')) {
                     <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> keywords &amp; local pages
                 </h2>
                 <p class="mt-2 text-zinc-600 max-w-2xl">
+                    <?php if ($ownsMainland): ?>
+                    Topic guides stay on the North West town set. The area list further down is every UK mainland fire alarm page.
+                    <?php else: ?>
                     Every guide below has a dedicated page for each town we cover
                     (e.g. <strong>EICR report in Stockport</strong>). Click a topic, then pick your area.
+                    <?php endif; ?>
                 </p>
             </div>
             <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All keyword guides →</a>
@@ -426,7 +462,7 @@ if (function_exists('accessControlLaneHubSection')) {
             $svcKeywords = accessControlLaneSortKeywordMap($svcKeywords);
         }
         if ($svcKeywords):
-            $kwPreviewTowns = array_slice($popularTowns, 0, 6);
+            $kwPreviewTowns = array_slice($keywordTowns, 0, 6);
         ?>
         <div class="mb-8">
             <?= relatedKeywordsHtml($serviceSlug, 0) ?>
@@ -450,7 +486,7 @@ if (function_exists('accessControlLaneHubSection')) {
                     <?= htmlspecialchars($kwName, ENT_QUOTES, 'UTF-8') ?>
                 </a>
                 <div class="mt-3 flex flex-wrap gap-1.5">
-                    <?php foreach ($popularTowns as $town): ?>
+                    <?php foreach ($keywordTowns as $town): ?>
                         <a href="<?= url('/pages/keywords/' . rawurlencode($kwSlug) . '/' . areaSlug($town) . '.php') ?>"
                            class="text-[11px] px-2 py-1 bg-white border rounded-full text-zinc-700 hover:border-[#ff6b00] hover:text-[#ff6b00]">
                             <?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?>
@@ -458,7 +494,7 @@ if (function_exists('accessControlLaneHubSection')) {
                     <?php endforeach; ?>
                     <a href="<?= url('/pages/keywords/' . rawurlencode($kwSlug) . '.php') ?>"
                        class="text-[11px] px-2 py-1 font-semibold text-[#ff6b00]">
-                        All <?= count($allAreas) ?> towns →
+                        All <?= count($nwAreas) ?> towns →
                     </a>
                 </div>
             </div>
@@ -488,7 +524,9 @@ if (function_exists('accessControlLaneHubSection')) {
             <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">
                 <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> near you
             </h2>
-            <p class="mt-2 text-zinc-600">Town hubs we cover — electrical and gas also open a real keyword×town page. We do not publish thin service×area doorways.</p>
+            <p class="mt-2 text-zinc-600"><?= $ownsMainland
+                ? 'Every UK mainland place we own for fire alarms. Each link is that place’s fire alarm page.'
+                : 'Town hubs we cover — electrical and gas also open a real keyword×town page. We do not publish thin service×area doorways.' ?></p>
         </div>
         <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All areas →</a>
     </div>
@@ -589,7 +627,7 @@ if (function_exists('accessControlLaneHubSection')) {
             </div>
         </div>
         <ul class="space-y-3 text-sm text-white/90">
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Based in Stockport — North West coverage</li>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Based in Stockport — <?= $ownsMainland ? 'UK mainland fire alarms' : 'North West coverage' ?></li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> <?= $poaService ? 'Written assessment or survey notes for your file' : 'Installation, servicing and certification' ?></li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> <?= $poaService ? 'POA only — no invented prices, certs or reviews' : 'Multi-service packages for landlords & FM teams' ?></li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Response aim: within 2 hours on business days</li>

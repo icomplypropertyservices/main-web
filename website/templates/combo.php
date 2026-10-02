@@ -7,10 +7,12 @@
  * MANUFACTURER_TAGS, MANUFACTURER_IMAGES, KEYWORD_IMAGE_1/2/3
  */
 $poaCombo = function_exists('isPoaService') && isPoaService($SERVICE_SLUG);
+$ownsMainland = function_exists('serviceOwnsMainlandAreas') && serviceOwnsMainlandAreas($SERVICE_SLUG);
+$coveragePhrase = $ownsMainland ? 'UK mainland' : 'the North West';
 $pageTitle = $SERVICE_NAME . ' in ' . $AREA . ' | Icomply Property Services';
 $metaDesc = $poaCombo
     ? ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Price on application after scope. Local North West team from Stockport.')
-    : ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing & certification. Local engineers. Written quote after scope.');
+    : ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing and certification. ' . ($ownsMainland ? 'UK mainland fire protection, scheduled from Stockport.' : 'Local engineers.') . ' Written quote after scope.');
 $metaKeywords = $SEO_KEYWORDS;
 $ogImage = function_exists('serviceImageUrl')
     ? serviceImageUrl($SERVICE_SLUG)
@@ -23,7 +25,7 @@ if ($SERVICE_SLUG === 'barriers' && function_exists('barrierManufacturerBySlug')
 }
 
 $allServices = getServices();
-$allAreas = getAreas();
+$allAreas = function_exists('getAreasForService') ? getAreasForService($SERVICE_SLUG) : getAreas();
 $serviceSlug = $SERVICE_SLUG;
 $serviceName = $SERVICE_NAME;
 $areaName = $AREA;
@@ -48,9 +50,26 @@ if ($idx === false) {
     }));
     $nearby = array_slice($nearby, 0, 12);
 }
+if ($ownsMainland && function_exists('mainlandAreaRecord') && function_exists('getMainlandAreaRecords')) {
+    $here = mainlandAreaRecord($areaName);
+    $region = is_array($here) ? (string)($here['region'] ?? '') : '';
+    if ($region !== '' && empty($here['local'])) {
+        $same = [];
+        foreach (getMainlandAreaRecords() as $row) {
+            if ((string)($row['region'] ?? '') === $region && (string)$row['name'] !== $areaName) {
+                $same[] = (string)$row['name'];
+            }
+        }
+        if ($same) {
+            $nearby = array_slice($same, 0, 12);
+        }
+    }
+}
 
 $popularTowns = array_values(array_filter(
-    ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool', 'Bury', 'Sale', 'Altrincham', 'Macclesfield'],
+    $ownsMainland
+        ? ['London', 'Birmingham', 'Leeds', 'Bristol', 'Cardiff', 'Edinburgh', 'Glasgow', 'Manchester', 'Stockport', 'Liverpool', 'Newcastle upon Tyne', 'Southampton']
+        : ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool', 'Bury', 'Sale', 'Altrincham', 'Macclesfield'],
     function ($t) use ($allAreas, $areaName) {
         return $t !== $areaName && in_array($t, $allAreas, true);
     }
@@ -207,7 +226,7 @@ $schema = [
                      loading="eager"
                      onerror="this.style.display='none'">
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-[#0B1F3A]/20 to-transparent">
-                    <div class="text-sm text-white/70">Serving <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> &amp; the North West</div>
+                    <div class="text-sm text-white/70">Serving <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> &amp; <?= htmlspecialchars($coveragePhrase, ENT_QUOTES, 'UTF-8') ?></div>
                     <div class="text-2xl font-semibold mt-1">Local engineers · Fixed-price quotes</div>
                 </div>
             </div>
@@ -263,7 +282,7 @@ $schema = [
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
                 Icomply Property Services provides complete <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong>
                 design, installation, commissioning, maintenance and certification across
-                <strong><?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></strong> and the wider North West.
+                <strong><?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></strong> and the wider <?= htmlspecialchars($coveragePhrase, ENT_QUOTES, 'UTF-8') ?>.
                 Our qualified engineers deliver fixed-price quotes, same-week appointments and full compliance documentation on every job.
             </p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
@@ -467,7 +486,7 @@ $schema = [
             </div>
         </div>
         <ul class="space-y-3 text-sm text-white/90">
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Based in Stockport — covering <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> &amp; the North West</li>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Based in Stockport — covering <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> &amp; <?= htmlspecialchars($coveragePhrase, ENT_QUOTES, 'UTF-8') ?></li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Installation, servicing and certification</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Multi-service packages for landlords &amp; FM teams</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Response aim: within 2 hours on business days</li>

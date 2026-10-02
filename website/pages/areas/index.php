@@ -65,6 +65,10 @@ require SITE_ROOT . '/includes/header.php';
                     fire safety (including FRAs), electrical &amp; gas, security, professional support,
                     kitchens, bathrooms, renovation and construction trades in every hub.
                 </p>
+                <p class="mt-4 text-sm text-white/70 max-w-xl">
+                    Fire alarms also cover the rest of UK mainland — England, Wales and mainland Scotland.
+                    <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/services/fire-alarms.php') ?>">Fire alarm areas</a>
+                </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#directory" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Browse towns</a>
                     <a href="<?= url('/pages/services/index.php') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">All <?= count($services) ?> services</a>

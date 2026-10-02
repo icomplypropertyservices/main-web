@@ -413,6 +413,58 @@ function icomplyRobotsMetaForPath(string $path): string
 }
 
 /**
+ * UK mainland places for fire-alarm coverage.
+ * England, Wales and mainland Scotland. Not Northern Ireland, the Scottish
+ * Highlands & Islands, the Isle of Man or the Channel Islands.
+ *
+ * @return list<array{name:string,nation:string,region:string,local:bool,districts?:string}>
+ */
+function getMainlandAreaRecords(): array {
+    $rows = loadJsonData('areas-mainland', []);
+    $out = [];
+    foreach ($rows as $row) {
+        if (!is_array($row) || empty($row['name']) || !is_string($row['name'])) {
+            continue;
+        }
+        $out[] = $row;
+    }
+    return $out;
+}
+
+/** @return list<string> */
+function getMainlandAreas(): array {
+    $names = [];
+    foreach (getMainlandAreaRecords() as $row) {
+        $names[] = (string)$row['name'];
+    }
+    return $names;
+}
+
+function mainlandAreaRecord(string $name): ?array {
+    static $map = null;
+    if ($map === null) {
+        $map = [];
+        foreach (getMainlandAreaRecords() as $row) {
+            $map[(string)$row['name']] = $row;
+        }
+    }
+    return $map[$name] ?? null;
+}
+
+/** Fire alarms own every mainland area. Other services stay on the North West list. */
+function serviceOwnsMainlandAreas(string $serviceSlug): bool {
+    return areaSlug($serviceSlug) === 'fire-alarms';
+}
+
+/** @return list<string> */
+function getAreasForService(string $serviceSlug): array {
+    if (serviceOwnsMainlandAreas($serviceSlug)) {
+        return getMainlandAreas();
+    }
+    return getAreas();
+}
+
+/**
  * Canonical slug: lowercase, non-alnum → hyphen, collapse hyphens.
  * "Ashton-under-Lyne" → ashton-under-lyne
  * "Cheadle Hulme" → cheadle-hulme
