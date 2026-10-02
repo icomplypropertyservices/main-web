@@ -57,15 +57,15 @@ $serviceFaqs = [
 $blurb = getServiceBlurb($serviceSlug);
 $standards = getServiceStandards($serviceSlug);
 $faqs = $serviceFaqs[$serviceSlug] ?? $serviceFaqs['default'];
+if (function_exists('icomplyMfrFaqs')) {
+    $mfrFaqs = icomplyMfrFaqs($serviceSlug);
+    if ($mfrFaqs) {
+        $faqs = $mfrFaqs;
+    }
+}
 $svcCopy = function_exists('waterAsbestosServiceCopy') ? waterAsbestosServiceCopy($serviceSlug) : null;
-if ($serviceSlug === 'gas-systems' && function_exists('icomplyGasServiceHubCopy')) {
-    $gasHub = icomplyGasServiceHubCopy();
-    $pageTitle = $gasHub['title'];
-    $metaDesc = $gasHub['meta'];
-    $blurb = $gasHub['blurb'];
-    $standards = $gasHub['standards'];
-    $faqs = $gasHub['faqs'];
-    $svcCopy = $gasHub['copy'];
+if (!$svcCopy && function_exists('icomplyMfrServiceCopy')) {
+    $svcCopy = icomplyMfrServiceCopy($serviceSlug);
 }
 
 $popularTowns = array_values(array_filter(
@@ -90,15 +90,10 @@ if (empty($_SESSION['csrf'])) {
 require_once SITE_ROOT . '/includes/share.php';
 require_once SITE_ROOT . '/includes/related.php';
 $canonicalUrl = url('/pages/services/' . $serviceSlug . '.php');
-$pageJsonLd = icomply_service_hub_jsonld(
-    $serviceName,
-    $pageTitle,
-    $metaDesc,
-    $canonicalUrl,
-    $ogImage,
-    $faqs,
-    $poaService
-);
+if (function_exists('icomplyMfrShowcaseApplies') && icomplyMfrShowcaseApplies($serviceSlug)) {
+    $pageTitle = icomplyMfrPageTitle($serviceName, '');
+    $metaDesc = icomplyMfrMetaDesc($serviceSlug, '');
+}
 require SITE_ROOT . '/includes/header.php';
 ?>
 
@@ -250,7 +245,9 @@ require SITE_ROOT . '/includes/header.php';
     <?php endif; ?>
 </section>
 
-<?php if (!$poaService): ?>
+<?php if (function_exists('icomplyMfrShowcaseHtml') && icomplyMfrShowcaseApplies($serviceSlug)): ?>
+<?= icomplyMfrShowcaseHtml($serviceSlug, '') ?>
+<?php elseif (!$poaService): ?>
 <!-- MANUFACTURERS -->
 <section class="bg-zinc-50 border-y">
     <div class="max-w-7xl mx-auto px-6 py-16">

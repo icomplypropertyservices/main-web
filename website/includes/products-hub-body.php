@@ -96,12 +96,12 @@ function icomplyAovKitImageUrl(string $sku): string {
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
     <?php
     $barCame = icomplyBar5mCameGardImageMap();
-    $barPacks = [
-      ['sku'=>'BAR-5M-STD','handle'=>'bar-5m-std','price'=>'POA','blurb'=>'Standard 5m barrier pack'],
-      ['sku'=>'BAR-5M-VIDEX','handle'=>'bar-5m-videx','price'=>'POA','blurb'=>'5m barrier + Videx'],
-      ['sku'=>'BAR-5M-PAXTON','handle'=>'bar-5m-paxton','price'=>'POA','blurb'=>'5m barrier + Paxton'],
-      ['sku'=>'BAR-5M-GSM','handle'=>'bar-5m-gsm','price'=>'POA','blurb'=>'5m barrier + GSM'],
-      ['sku'=>'BAR-5M-ALLIN','handle'=>'bar-5m-allin','price'=>'POA','blurb'=>'5m barrier all-in (Jack-confirmed)'],
+    $barPacks = function_exists('icomplyCameBarrierPacks') ? icomplyCameBarrierPacks() : [
+      ['sku'=>'BAR-5M-STD','handle'=>'bar-5m-std','price'=>'£5,850.00','blurb'=>'Standard 5m barrier pack'],
+      ['sku'=>'BAR-5M-VIDEX','handle'=>'bar-5m-videx','price'=>'£7,441.83','blurb'=>'5m barrier + Videx'],
+      ['sku'=>'BAR-5M-PAXTON','handle'=>'bar-5m-paxton','price'=>'£8,375.45','blurb'=>'5m barrier + Paxton'],
+      ['sku'=>'BAR-5M-GSM','handle'=>'bar-5m-gsm','price'=>'£7,393.18','blurb'=>'5m barrier + GSM'],
+      ['sku'=>'BAR-5M-ALLIN','handle'=>'bar-5m-allin','price'=>'£5,199.99','blurb'=>'5m barrier all-in (Jack-confirmed)'],
     ];
     foreach ($barPacks as $bp):
       $img = $barCame[$bp['handle']] ?? $barCame[strtolower($bp['sku'])] ?? '';

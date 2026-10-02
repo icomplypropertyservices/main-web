@@ -124,24 +124,19 @@ function icomplySitemapEntries(): array
         if (preg_match('#-photo\.(jpe?g|png)$#i', $path)) {
             return;
         }
-        // /pages/aov and /pages/aov/{slug} are the nationwide AOV set. Always list them.
-        // /pages/aov-air-handling/{town} stays a virtual service×town route.
-        $isAovLoc = (bool)preg_match('#^/pages/aov(/[a-z0-9\-]+)?$#', $path);
-        if (!$isAovLoc && function_exists('icomplyPathIsIndexable') && !icomplyPathIsIndexable($path)) {
-            return;
-        }
-        $generatedHub = $path === '/pages/aov'
-            || (bool)preg_match('#^/pages/(keywords|areas|manufacturers|services|aov)/[a-z0-9\-]+$#', $path);
-        $virtualServiceTown = false;
-        if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $stm)) {
-            $reservedHubs = ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages', 'jobs', 'aov'];
-            if (!in_array($stm[1], $reservedHubs, true)
-                && isset($serviceSlugs[$stm[1]])
-                && isset($areaSlugSet[$stm[2]])) {
-                $virtualServiceTown = true;
+        // Hard reject /pages/{service}/{town} even if a leftover matrix file
+        // sits in dist/. Keep only real hub prefixes.
+        if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'aov-air-handling', 'barriers'];
+            if (!in_array($m[1], $okPrefix, true)) {
+                return;
             }
         }
-        if (!$generatedHub && !$virtualServiceTown && !$isAovLoc && !icomplySitemapUrlHasFile($path)) {
+        // Keyword hubs + featured keyword×town are generated at export time.
+        // AOV and barrier town pages are virtual (rendered at export) for pop>10k.
+        $isKeywordLoc = (bool)preg_match('#^/pages/keywords(/[a-z0-9\-]+){1,2}$#', $path);
+        $isMfrTown = (bool)preg_match('#^/pages/(aov-air-handling|barriers)/([a-z0-9\-]+)$#', $path);
+        if (!$isKeywordLoc && !$isMfrTown && !icomplySitemapUrlHasFile($path)) {
             return;
         }
         $seen[$path] = true;
@@ -342,6 +337,14 @@ function icomplySitemapEntries(): array
         $add('/pages/aov', '0.85');
         foreach (array_keys(aovPlaces()) as $slug) {
             $add('/pages/aov/' . $slug, '0.64');
+        }
+    }
+
+    if (!$requestSafe && function_exists('icomplyMfrIndexableTowns') && function_exists('areaSlug')) {
+        foreach (['aov-air-handling', 'barriers'] as $svc) {
+            foreach (icomplyMfrIndexableTowns() as $town) {
+                $add('/pages/' . $svc . '/' . areaSlug($town), '0.64');
+            }
         }
     }
 
