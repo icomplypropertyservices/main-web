@@ -10,6 +10,12 @@
 declare(strict_types=1);
 
 $options = getopt('', ['skip-render']);
+putenv('ICOMPLY_STATIC_EXPORT=1');
+$_ENV['ICOMPLY_STATIC_EXPORT'] = '1';
+$_SERVER['ICOMPLY_STATIC_EXPORT'] = '1';
+putenv('SITE_URL=https://icomplypropertyservices.co.uk');
+$_ENV['SITE_URL'] = 'https://icomplypropertyservices.co.uk';
+$_SERVER['HTTP_HOST'] = 'icomplypropertyservices.co.uk';
 require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/render.php';
 if (session_status() !== PHP_SESSION_ACTIVE) {
@@ -135,6 +141,35 @@ if (!$skipRender) {
         }
         if (strlen($html) < 1800) {
             $missing[] = 'short-html';
+        }
+        $canon = 'https://icomplypropertyservices.co.uk/pages/keywords/' . $slug;
+        if (!str_contains($html, 'rel="canonical" href="' . $canon . '"')) {
+            $missing[] = 'canonical';
+        }
+        if (str_contains($html, 'this.src=$SERVICE_IMAGE') || str_contains($html, 'this.src=$KEYWORD')) {
+            $missing[] = 'broken-image-fallback';
+        }
+        if (stripos($html, 'boiler or door brand') !== false || stripos($html, 'IETS Code of Practice') !== false) {
+            $missing[] = 'wrong-claim';
+        }
+        if (preg_match('/fixed[ -]?price/i', $html)) {
+            $missing[] = 'fixed-price-claim';
+        }
+        if (str_contains($html, 'every North West town')) {
+            $missing[] = 'every-town-claim';
+        }
+        $siblings = preg_match_all('/rounded-full text-xs font-semibold text-zinc-900/', $html);
+        if ($siblings > 16) {
+            $missing[] = 'sibling-overflow-' . $siblings;
+        }
+        $areaLinks = preg_match_all('#/pages/keywords/' . preg_quote($slug, '#') . '/#', $html);
+        $matrix = function_exists('electricalTownMatrixSlugs') ? electricalTownMatrixSlugs() : [];
+        if (isset($matrix[$slug])) {
+            if ($areaLinks < 100) {
+                $missing[] = 'matrix-areas-' . $areaLinks;
+            }
+        } elseif ($areaLinks > 16) {
+            $missing[] = 'hub-area-overflow-' . $areaLinks;
         }
         if ($missing) {
             $seoFail[] = $slug . '(' . implode('|', $missing) . ')';

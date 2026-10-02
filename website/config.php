@@ -390,12 +390,21 @@ function getElectricalGasFamilyServices(): array {
  */
 function getElectricalGasMatrixKeywordSlugs(): array {
     $out = [];
+    // Hub-only Electrical master slugs (the 227 beyond seo-matrix-electrical.md)
+    // must not inherit the full town matrix. Gas stays on every gas keyword.
+    $matrixElectrical = function_exists('electricalTownMatrixSlugs')
+        ? electricalTownMatrixSlugs()
+        : null;
     foreach (getElectricalGasFamilyServices() as $svc) {
         foreach (array_keys(getKeywordsForService($svc)) as $slug) {
             $slug = keywordSlug((string)$slug);
-            if ($slug !== '') {
-                $out[$slug] = true;
+            if ($slug === '') {
+                continue;
             }
+            if ($svc === 'electrical' && is_array($matrixElectrical) && $matrixElectrical !== [] && !isset($matrixElectrical[$slug])) {
+                continue;
+            }
+            $out[$slug] = true;
         }
     }
     return array_keys($out);

@@ -88,7 +88,7 @@ function electricalJobsApply(array $keywords): array
             : array_merge($synth, array_filter($base, static fn($v) => $v !== null && $v !== '' && $v !== []));
         $merged['service'] = 'electrical';
         $merged['electrical_master'] = true;
-        $keywords[$slug] = $merged;
+        $keywords[$slug] = electricalJobsSanitizeRow($merged, $slug);
     }
 
     $seenTitle = [];
@@ -195,10 +195,13 @@ function electricalJobsAngle(string $hay): array
         return ['standard' => 'BS 7671 rewire and Part P notification where the work is notifiable.', 'focus' => 'Full or partial rewire scoped against existing containment'];
     }
     if (preg_match('/consumer unit|fuse board|fuse box|rcbo|rcd|afdd|spd/', $hay)) {
-        return ['standard' => 'BS 7671 Amendment 2 consumer-unit rules (RCD/RCBO, SPD, enclosure).', 'focus' => 'Board replacement labelled and tested before energising'];
+        return ['standard' => 'BS 7671 consumer-unit rules (non-combustible enclosure, RCD or RCBO, and SPD where required).', 'focus' => 'Board replacement labelled and tested before energising'];
     }
     if (preg_match('/\bpat\b|portable appliance/', $hay)) {
-        return ['standard' => 'IETS Code of Practice for in-service inspection and testing of electrical equipment.', 'focus' => 'PAT labelling and a register — failures quoted as remedials, POA'];
+        return ['standard' => 'The IET Code of Practice for in-service inspection and testing of electrical equipment.', 'focus' => 'PAT labelling and a register — failures quoted as remedials, POA'];
+    }
+    if (preg_match('/data cabling|structured cabling|\bcat6\b/', $hay)) {
+        return ['standard' => 'BS EN 50173 structured cabling, with mains kept to BS 7671 where the job includes power.', 'focus' => 'Labelled outlets and test results — power and data kept apart'];
     }
     if (preg_match('/ev charger|charge point|ev charge/', $hay)) {
         return ['standard' => 'BS 7671 Section 722 and the current EV charge-point installation guidance.', 'focus' => 'Supply capacity, earthing and isolator checked before an EV point'];
@@ -242,6 +245,129 @@ function electricalJobsFallbackSynth(array $job, string $slug): array
         ],
         'focus_points' => ['POA / enquire after scope'],
     ];
+}
+
+/**
+ * Marketing matrix slugs (seo-matrix-electrical.md) keep a full town export.
+ * The other Electrical master hubs stay job pages with the popular-town set only.
+ *
+ * @return array<string, true>
+ */
+function electricalTownMatrixSlugs(): array
+{
+    static $slugs = null;
+    if ($slugs !== null) {
+        return $slugs;
+    }
+    $slugs = [];
+    $file = SITE_ROOT . '/data/seo-matrix-electrical.md';
+    if (!is_file($file)) {
+        return $slugs;
+    }
+    $text = (string)file_get_contents($file);
+    if (preg_match_all('/^- `([a-z0-9\-]+)`/m', $text, $m)) {
+        foreach ($m[1] as $slug) {
+            $slug = keywordSlug((string)$slug);
+            if ($slug !== '') {
+                $slugs[$slug] = true;
+            }
+        }
+    }
+    return $slugs;
+}
+
+/**
+ * Correct copy that the shared job synthesizer pastes onto every Electrical slug.
+ *
+ * @param array<string, mixed> $row
+ * @return array<string, mixed>
+ */
+function electricalJobsSanitizeRow(array $row, string $slug): array
+{
+    $name = trim((string)($row['name'] ?? keywordDisplayName($slug)));
+    $angle = electricalJobsAngle(strtolower($slug . ' ' . $name));
+    $fix = static function (string $text) use ($angle, $name): string {
+        return electricalJobsSanitizeString($text, $angle, $name);
+    };
+    foreach (['intro', 'body', 'meta_desc', 'seo_title', 'h1', 'seo_keywords'] as $key) {
+        if (isset($row[$key]) && is_string($row[$key])) {
+            $row[$key] = $fix($row[$key]);
+        }
+    }
+    foreach (['focus_points', 'secondaries'] as $key) {
+        if (!isset($row[$key]) || !is_array($row[$key])) {
+            continue;
+        }
+        foreach ($row[$key] as $i => $part) {
+            if (is_string($part)) {
+                $row[$key][$i] = $fix($part);
+            }
+        }
+    }
+    if (isset($row['faq']) && is_array($row['faq'])) {
+        foreach ($row['faq'] as $i => $pair) {
+            if (!is_array($pair)) {
+                continue;
+            }
+            foreach ($pair as $j => $part) {
+                if (is_string($part)) {
+                    $row['faq'][$i][$j] = $fix($part);
+                }
+            }
+        }
+    }
+    return $row;
+}
+
+function electricalJobsSanitizeString(string $text, array $angle, string $name): string
+{
+    $text = str_replace(
+        'any panel, boiler or door brand already on site',
+        'the consumer unit, charger or accessory already on site',
+        $text
+    );
+    $text = str_replace(
+        'IETS Code of Practice',
+        'IET Code of Practice',
+        $text
+    );
+    $text = preg_replace(
+        '/\bWe (inspect, document and certificate|survey, record findings and recommend remedials|diagnose, repair and make good|service, test and keep on a planned cycle|test, record results and flag failures|design, commission and handover|specify, install and commission|scope, deliver and handover) the work you actually have/',
+        'We $1 for the job you actually have',
+        $text
+    ) ?? $text;
+    $text = preg_replace(
+        '/^(inspect, document and certificate|survey, record findings and recommend remedials|diagnose, repair and make good|service, test and keep on a planned cycle|test, record results and flag failures|design, commission and handover|specify, install and commission|scope, deliver and handover) as part of /',
+        'Delivered as part of ',
+        $text
+    ) ?? $text;
+
+    $text = preg_replace('/\bfixed-price quotes\b/i', 'POA quotes after scope', $text) ?? $text;
+    $text = preg_replace('/\bfixed-price quote\b/i', 'written POA quote', $text) ?? $text;
+    $text = preg_replace('/\bfixed-price rewire proposal\b/i', 'written POA rewire proposal', $text) ?? $text;
+    $text = preg_replace('/\bfixed-price inspections(?:\s*&\s*|\s+and\s+)remediations\b/i', 'POA inspections and remedials', $text) ?? $text;
+    $text = preg_replace('/\bfixed-price material and labour packages\b/i', 'POA material and labour', $text) ?? $text;
+    $text = preg_replace('/\bfixed-price before we attend\b/i', 'written POA before we attend', $text) ?? $text;
+    $text = preg_replace('/\bfixed-price\b/i', 'POA', $text) ?? $text;
+    $text = preg_replace('/\bfixed price\b/i', 'POA', $text) ?? $text;
+
+    $catalogue = 'EICR, rewires, consumer units, EV chargers, PAT and commercial electrical installs to BS 7671.';
+    if (str_contains($text, $catalogue)) {
+        $text = str_replace($catalogue, rtrim((string)$angle['standard'], '.') . '.', $text);
+    }
+    $short = 'EICR, rewires, EV chargers, PAT & commercial installs';
+    $genericMeta = $name . ' across the North West. ' . $short . '. POA after scope from Stockport engineers.';
+    if ($text === $genericMeta) {
+        $text = $name . ' across the North West. ' . rtrim((string)$angle['standard'], '.') . '. POA after scope from Stockport engineers.';
+        if (strlen($text) > 165) {
+            $text = $name . ' across the North West. POA after scope from Stockport engineers.';
+        }
+    }
+    $genericFocus = 'Scope confirmed against BS 7671 (18th Edition) · EICR · Part P · EV charger regs';
+    if ($text === $genericFocus) {
+        $text = 'Scope confirmed against ' . rtrim((string)$angle['standard'], '.');
+    }
+    return $text;
 }
 
 function electricalJobsStubPhp(string $slug): string

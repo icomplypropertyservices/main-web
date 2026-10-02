@@ -244,7 +244,7 @@ function jobTypesSynthesize(array $job, array $existing = []): array
         'testing' => 'test, record results and flag failures',
         'design' => 'design, commission and handover',
         'install' => 'specify, install and commission',
-        'works' => 'scope, deliver and handover',
+        'works' => 'scope, deliver and hand over',
     ][$intent];
 
     $h1Choices = [
@@ -277,13 +277,13 @@ function jobTypesSynthesize(array $job, array $existing = []): array
     }
 
     $intro = $name . ' sits under our ' . $serviceName . ' service in the ' . $catLabel
-        . ' group. We ' . $intentVerb . ' the work you actually have — not a generic package — for '
+        . ' group. We ' . $intentVerb . ' for the job you actually have — not a generic package — for '
         . $audience . ' from our Stockport SK2 base.';
 
     $bodyBits = [
         $svcMeta['blurb'] . ' For ' . $name . ' that means a site look, a written scope and a POA figure once access, standards and any existing equipment are clear.',
         'Typical North West stock for this job includes terraces, purpose-built flats, HMOs, offices and light industrial. We say when ' . $name . ' is the right next step and when a wider ' . $serviceName . ' visit is safer.',
-        'Paperwork is issued after the agreed works or inspection. Related ' . $serviceName . ' jobs (and the towns we cover) are linked below so you can move Category → Service → Job → Area without a doorway page.',
+        'Paperwork is issued after the agreed works or inspection. Related ' . $serviceName . ' jobs, and the towns we cover, are linked on this page.',
         'Enquire with postcode, property type and any brand already on site. WhatsApp and phone are on this page — we do not publish catalogue pound figures.',
     ];
     // Rotate starting sentence so neighbouring slugs do not share the same first line.

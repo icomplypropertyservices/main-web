@@ -70,7 +70,7 @@ require SITE_ROOT . '/includes/header.php';
 <section class="relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="absolute inset-0">
         <img src="<?= htmlspecialchars($KEYWORD_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($KEYWORD_NAME ?? 'Property compliance', ENT_QUOTES, 'UTF-8') ?> — Icomply Property Services" class="w-full h-full object-cover opacity-35" loading="eager"
-             onerror="this.src=$SERVICE_IMAGE">
+             onerror="this.onerror=null;this.src='<?= htmlspecialchars($SERVICE_IMAGE, ENT_QUOTES, 'UTF-8') ?>'">
         <div class="absolute inset-0 bg-gradient-to-r from-[#0B1F3A] via-[#0B1F3A]/95 to-[#0B1F3A]/75"></div>
     </div>
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
@@ -151,7 +151,7 @@ require SITE_ROOT . '/includes/header.php';
                 <div class="rounded-3xl overflow-hidden border-2 border-zinc-300 shadow-md bg-zinc-200">
                     <img src="<?= htmlspecialchars($KEYWORD_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> — Icomply Property Services"
                          class="w-full h-52 object-cover" loading="lazy"
-                         onerror="this.src=$SERVICE_IMAGE">
+                         onerror="this.onerror=null;this.src='<?= htmlspecialchars($SERVICE_IMAGE, ENT_QUOTES, 'UTF-8') ?>'">
                     <div class="p-3 bg-[#0B1F3A] text-white text-sm font-semibold text-center"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></div>
                 </div>
                 <div class="rounded-3xl overflow-hidden border-2 border-zinc-300 shadow-md bg-zinc-200">
@@ -167,8 +167,8 @@ require SITE_ROOT . '/includes/header.php';
 <!-- MANUFACTURERS -->
 <section class="bg-white border-y-2 border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-14">
-        <h2 class="text-2xl md:text-3xl font-bold text-[#0B1F3A]">Brands we install &amp; service</h2>
-        <p class="mt-2 text-zinc-800 max-w-2xl">Click a manufacturer for products, kits and install quotes related to <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> and <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?>.</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-[#0B1F3A]">Brands we work with</h2>
+        <p class="mt-2 text-zinc-800 max-w-2xl">Manufacturer pages for kit we specify, install or test on <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> jobs, including <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?>.</p>
         <div class="mt-6 flex flex-wrap gap-2"><?= $MANUFACTURER_TAGS ?></div>
     </div>
 </section>
@@ -177,7 +177,7 @@ require SITE_ROOT . '/includes/header.php';
 <section class="bg-zinc-100">
     <div class="max-w-7xl mx-auto px-6 py-14">
         <h2 class="text-2xl md:text-3xl font-bold text-[#0B1F3A]"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> by area</h2>
-        <p class="mt-2 text-zinc-800">Indexable local landings where this job is exported — e.g. <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> in Stockport. Other towns sit on the area hubs.</p>
+        <p class="mt-2 text-zinc-800">Town pages for this job, including <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> in Stockport. Further towns sit on the area hubs.</p>
         <div class="mt-6 flex flex-wrap gap-2">
             <?php
             $linkTowns = function_exists('jobTypeExportedAreaNames')
@@ -192,15 +192,22 @@ require SITE_ROOT . '/includes/header.php';
                 </a>
             <?php endforeach; ?>
         </div>
-        <div class="mt-4 flex flex-wrap gap-2">
-            <?php foreach ($restTowns as $a): ?>
-                <a href="<?= url('/pages/keywords/' . $KEYWORD_SLUG . '/' . areaSlug($a) . '.php') ?>"
-                   class="px-3 py-1.5 bg-white border-2 border-zinc-300 text-zinc-900 rounded-full text-xs font-medium hover:border-[#ff6b00] hover:text-[#ff6b00]">
-                    <?= htmlspecialchars($KEYWORD_NAME . ' · ' . $a, ENT_QUOTES, 'UTF-8') ?>
-                </a>
-            <?php endforeach; ?>
+        <?php if ($restTowns): ?>
+        <details class="mt-4">
+            <summary class="cursor-pointer text-sm font-bold text-[#0B1F3A]">More towns (<?= count($restTowns) ?>)</summary>
+            <div class="mt-4 flex flex-wrap gap-2">
+                <?php foreach ($restTowns as $a): ?>
+                    <a href="<?= url('/pages/keywords/' . $KEYWORD_SLUG . '/' . areaSlug($a) . '.php') ?>"
+                       class="px-3 py-1.5 bg-white border-2 border-zinc-300 text-zinc-900 rounded-full text-xs font-medium hover:border-[#ff6b00] hover:text-[#ff6b00]">
+                        <?= htmlspecialchars($KEYWORD_NAME . ' · ' . $a, ENT_QUOTES, 'UTF-8') ?>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+        </details>
+        <?php endif; ?>
+        <div class="mt-4">
             <a href="<?= url('/pages/areas/index.php') ?>"
-               class="px-3 py-1.5 bg-[#ff6b00] text-white rounded-full text-xs font-semibold hover:bg-orange-600">
+               class="inline-flex px-3 py-1.5 bg-[#ff6b00] text-white rounded-full text-xs font-semibold hover:bg-orange-600">
                 All area hubs →
             </a>
         </div>
@@ -211,11 +218,11 @@ require SITE_ROOT . '/includes/header.php';
 <section class="bg-white border-y-2 border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-14">
         <h2 class="text-2xl md:text-3xl font-bold text-[#0B1F3A]">Related <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> guides</h2>
-        <p class="mt-2 text-zinc-800">More topics under the same service — each also has pages for every North West town.</p>
+        <p class="mt-2 text-zinc-800">A short list of other <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> jobs. Open a hub for its own town pages.</p>
         <div class="mt-6">
             <?php
             require_once SITE_ROOT . '/includes/related.php';
-            echo siblingKeywordsHtml($KEYWORD_SLUG, $SERVICE_SLUG, 0);
+            echo siblingKeywordsHtml($KEYWORD_SLUG, $SERVICE_SLUG, 12);
             ?>
         </div>
     </div>

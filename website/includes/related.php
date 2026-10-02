@@ -261,8 +261,24 @@ function siblingKeywordsHtml(string $keywordSlug, string $serviceSlug, int $limi
     if (!$keywords) {
         return '';
     }
-    if ($limit > 0) {
-        $keywords = array_slice($keywords, 0, $limit, true);
+    if ($limit > 0 && count($keywords) > $limit) {
+        $related = '';
+        if (function_exists('getMajorKeywords')) {
+            $all = getMajorKeywords();
+            $related = keywordSlug((string)($all[$keywordSlug]['related'] ?? ''));
+        }
+        $picked = [];
+        if ($related !== '' && isset($keywords[$related])) {
+            $picked[$related] = $keywords[$related];
+            unset($keywords[$related]);
+        }
+        foreach ($keywords as $slug => $meta) {
+            if (count($picked) >= $limit) {
+                break;
+            }
+            $picked[$slug] = $meta;
+        }
+        $keywords = $picked;
     }
     $html = '<div class="flex flex-wrap gap-2">';
     foreach ($keywords as $slug => $meta) {
