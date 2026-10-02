@@ -55,9 +55,12 @@
         "standards": "Commercial intercom best practice"
     },
     "fire-risk-assessments": {
-        "blurb": "Suitable and sufficient fire risk assessments for landlords, commercial sites, HMOs and multi-occupied buildings.",
+        "blurb": "Suitable and sufficient fire risk assessments for landlords, commercial sites, HMOs and multi-occupied buildings across UK mainland.",
         "short": "FRA for landlords, HMO & commercial sites",
-        "standards": "Regulatory Reform (Fire Safety) Order 2005 · Fire Safety Act · PAS 79 guidance"
+        "standards": "Regulatory Reform (Fire Safety) Order 2005 · Fire Safety Act · PAS 79 guidance",
+        "guide_price_gbp": 350,
+        "guide_price_label": "£350",
+        "coverage": "uk-mainland"
     },
     "fire-extinguishers": {
         "blurb": "Supply, install, service and certificate portable fire extinguishers to BS 5306.",

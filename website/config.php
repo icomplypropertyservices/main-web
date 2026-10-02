@@ -429,6 +429,10 @@ function exportedServiceLocalUrl(string $serviceSlug, string $area, string $from
     if ($pick && isset($kw[keywordSlug((string)$pick)])) {
         return url('/pages/keywords/' . keywordSlug((string)$pick) . '/' . $town . '.php');
     }
+    // FRA owns a real local page on every mainland town (guide price £350).
+    if ($serviceSlug === 'fire-risk-assessments') {
+        return url('/pages/fire-risk-assessments/' . $town . '.php');
+    }
     if ($from === 'area') {
         return url('/pages/services/' . $serviceSlug . '.php');
     }
@@ -684,6 +688,12 @@ function areaFromSlug(string $slug): ?string {
             return $area;
         }
     }
+    if (function_exists('mainlandAreaName')) {
+        $mainland = mainlandAreaName($slug);
+        if ($mainland !== null) {
+            return $mainland;
+        }
+    }
     return null;
 }
 
@@ -711,6 +721,10 @@ function icomplyTradeProductsUrl(): string
 $waFile = __DIR__ . '/includes/water-asbestos.php';
 if (is_file($waFile)) {
     require_once $waFile;
+}
+$fraFile = __DIR__ . '/includes/fra-nationwide.php';
+if (is_file($fraFile)) {
+    require_once $fraFile;
 }
 
 // Back-compat globals used by some templates/includes

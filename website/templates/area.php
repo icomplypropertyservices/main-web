@@ -149,6 +149,26 @@ $schema = [
     </div>
 </section>
 
+<section class="bg-white border-b">
+    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Fire risk assessment</div>
+            <h2 class="text-2xl font-semibold tracking-tight text-black mt-1">
+                FRA in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> — <?= htmlspecialchars(function_exists('fraGuidePrice') ? fraGuidePrice() : '£350', ENT_QUOTES, 'UTF-8') ?>
+            </h2>
+            <p class="mt-2 text-zinc-600 max-w-2xl">
+                Suitable and sufficient fire risk assessment for this town. Guide price
+                <?= htmlspecialchars(function_exists('fraGuidePrice') ? fraGuidePrice() : '£350', ENT_QUOTES, 'UTF-8') ?>
+                for a standard FRA. UK mainland coverage. Larger premises are confirmed in writing.
+            </p>
+        </div>
+        <a href="<?= htmlspecialchars(url('/pages/fire-risk-assessments/' . $areaSlugVal . '.php'), ENT_QUOTES, 'UTF-8') ?>"
+           class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white shrink-0">
+            FRA in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> →
+        </a>
+    </div>
+</section>
+
 <!-- TRUST -->
 <section class="bg-white border-b">
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

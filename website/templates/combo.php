@@ -7,16 +7,25 @@
  * MANUFACTURER_TAGS, MANUFACTURER_IMAGES, KEYWORD_IMAGE_1/2/3
  */
 $poaCombo = function_exists('isPoaService') && isPoaService($SERVICE_SLUG);
+$isFraEarly = function_exists('isFraService') && isFraService($SERVICE_SLUG);
+$fraPriceEarly = $isFraEarly && function_exists('fraGuidePrice') ? fraGuidePrice() : '';
 $pageTitle = $SERVICE_NAME . ' in ' . $AREA . ' | Icomply Property Services';
-$metaDesc = $poaCombo
+$metaDesc = $isFraEarly
+    ? ('Fire risk assessment in ' . $AREA . '. Guide price ' . $fraPriceEarly . ' for a standard FRA. UK mainland coverage from Stockport. Larger premises confirmed in writing.')
+    : ($poaCombo
     ? ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Price on application after scope. Local North West team from Stockport.')
-    : ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing & certification. Local engineers. Written quote after scope.');
+    : ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing & certification. Local engineers. Written quote after scope.'));
 $metaKeywords = $SEO_KEYWORDS;
 $ogImage = url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
 
 $allServices = getServices();
 $allAreas = getAreas();
 $serviceSlug = $SERVICE_SLUG;
+$isFraPage = function_exists('isFraService') && isFraService($serviceSlug);
+$fraPrice = $isFraPage && function_exists('fraGuidePrice') ? fraGuidePrice() : '';
+if ($isFraPage && function_exists('getMainlandAreaNames')) {
+    $allAreas = getMainlandAreaNames();
+}
 $serviceName = $SERVICE_NAME;
 $areaName = $AREA;
 $areaSlugVal = $AREA_SLUG;
@@ -101,14 +110,18 @@ $schema = [
             ],
             'offers' => [
                 '@type' => 'Offer',
-                'name' => ($poaCombo ? 'Price on application — ' : 'Written quote — ') . $serviceName . ' in ' . $areaName,
-                'description' => $poaCombo
+                'name' => $isFraPage
+                    ? ('Fire risk assessment in ' . $areaName . ' — ' . $fraPrice)
+                    : (($poaCombo ? 'Price on application — ' : 'Written quote — ') . $serviceName . ' in ' . $areaName),
+                'description' => $isFraPage
+                    ? fraPriceNote()
+                    : ($poaCombo
                     ? ('Request a scoped POA quote for ' . $serviceName . ' in ' . $areaName . '. No published fee list.')
-                    : ('Request a written quote for ' . $serviceName . ' in ' . $areaName . '.'),
+                    : ('Request a written quote for ' . $serviceName . ' in ' . $areaName . '.')),
                 'availability' => 'https://schema.org/InStock',
                 'priceCurrency' => 'GBP',
                 'url' => url('/contact.php'),
-            ],
+            ] + ($isFraPage ? ['price' => fraGuidePriceGbp()] : []),
             'brand' => [
                 '@type' => 'Brand',
                 'name' => SITE_NAME,
@@ -179,7 +192,12 @@ $schema = [
                 </h1>
                 <p class="mt-6 text-lg text-white/80 max-w-xl">
                     <?= htmlspecialchars($blurb, ENT_QUOTES, 'UTF-8') ?>
+                    <?php if ($isFraPage): ?>
+                    Suitable and sufficient fire risk assessment in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>.
+                    Guide price <?= htmlspecialchars($fraPrice, ENT_QUOTES, 'UTF-8') ?> for a standard FRA. UK mainland attendance from Stockport.
+                    <?php else: ?>
                     Local engineers covering <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> and nearby postcodes.
+                    <?php endif; ?>
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get free quote</a>
@@ -199,8 +217,8 @@ $schema = [
                      loading="eager"
                      onerror="this.style.display='none'">
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-[#0B1F3A]/20 to-transparent">
-                    <div class="text-sm text-white/70">Serving <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> &amp; the North West</div>
-                    <div class="text-2xl font-semibold mt-1">Local engineers · Fixed-price quotes</div>
+                    <div class="text-sm text-white/70">Serving <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> · <?= $isFraPage ? 'UK mainland' : 'the North West' ?></div>
+                    <div class="text-2xl font-semibold mt-1"><?= $isFraPage ? ('Guide price ' . htmlspecialchars($fraPrice, ENT_QUOTES, 'UTF-8')) : 'Local engineers · Fixed-price quotes' ?></div>
                 </div>
             </div>
         </div>
@@ -222,7 +240,7 @@ $schema = [
                 ['Local to ' . $areaName, 'Stockport-based engineers covering ' . $areaName . ' and surrounding postcodes'],
                 ['Standards-led', $standards],
                 ['Full certification', 'Documentation for landlords, insurers and fire officers'],
-                ['Fixed-price quotes', 'Clear scope, same-week appointments where capacity allows'],
+                [$isFraPage ? ($fraPrice . ' guide') : 'Fixed-price quotes', $isFraPage ? fraPriceNote() : 'Clear scope, same-week appointments where capacity allows'],
             ];
         foreach ($trust as [$t, $d]): ?>
             <div class="flex gap-3 items-start">
@@ -424,7 +442,7 @@ $schema = [
                     <?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?>
                 </a>
             <?php endforeach; ?>
-            <a href="<?= url('/pages/areas/index.php') ?>" class="px-3 py-1.5 text-xs font-semibold text-[#ff6b00]">+ more towns</a>
+            <a href="<?= $isFraPage ? url('/pages/services/fire-risk-assessments.php') : url('/pages/areas/index.php') ?>" class="px-3 py-1.5 text-xs font-semibold text-[#ff6b00]"><?= $isFraPage ? 'All mainland FRA towns' : '+ more towns' ?></a>
         </div>
         <?php endif; ?>
     </div>

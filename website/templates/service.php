@@ -42,6 +42,11 @@ $serviceFaqs = [
         ['Do you remove asbestos?', 'Licensed removal is not this service. If the survey says removal is required, that work is appointed separately.'],
         ['What does it cost?', 'Price on application. Size, access and how intrusive the survey must be all change the quote. No invented starting price.'],
     ],
+    'fire-risk-assessments' => [
+        ['What does a fire risk assessment cost?', 'The published guide price is £350 for a standard fire risk assessment. Larger, multi-storey or higher-risk premises are confirmed in writing before we attend.'],
+        ['Where do you carry out fire risk assessments?', 'UK mainland — England, Wales and mainland Scotland. Each town on this page has its own FRA page. Northern Ireland and offshore islands are outside this guide.'],
+        ['Is £350 a fixed quote for every building?', 'It is the guide for a standard assessment. Sleeping risk, complex layouts and multi-occupied buildings can change the visit, and you get that figure in writing first.'],
+    ],
     'default' => [
         ['What areas do you cover for ' . $SERVICE_NAME . '?', 'We cover every town in our published areas list across Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria from our Stockport base.'],
         ['How do you price the work?', $poaService ? 'Price on application after we confirm scope, standards and access. No catalogue prices on this page.' : 'After we confirm scope, standards and access we issue a written quote. We do not invent a fee here.'],
@@ -61,6 +66,20 @@ $popularTowns = array_values(array_filter(
     }
 ));
 $popularTowns = array_values(array_unique($popularTowns));
+
+$isFraHub = function_exists('isFraService') && isFraService($serviceSlug);
+$fraPrice = $isFraHub && function_exists('fraGuidePrice') ? fraGuidePrice() : '';
+if ($isFraHub && function_exists('getMainlandAreaNames')) {
+    $allAreas = getMainlandAreaNames();
+    $pageTitle = $SERVICE_NAME . ' | UK Mainland | ' . $fraPrice;
+    $metaDesc = 'Fire risk assessments across UK mainland. Guide price ' . $fraPrice . ' for a standard FRA. Written report and action plan from a Stockport team. Larger premises confirmed in writing.';
+    $popularTowns = array_values(array_filter(
+        ['London', 'Birmingham', 'Manchester', 'Leeds', 'Liverpool', 'Stockport', 'Cardiff', 'Glasgow', 'Edinburgh', 'Bristol', 'Sheffield', 'Newcastle upon Tyne', 'Nottingham', 'Leicester', 'Southampton'],
+        static function ($t) use ($allAreas) {
+            return in_array($t, $allAreas, true);
+        }
+    ));
+}
 
 $keywordImages = getKeywordImages($serviceSlug);
 $img2 = $keywordImages[0] ?? $serviceSlug;
@@ -127,17 +146,23 @@ $schema = [
             ],
             'areaServed' => array_map(static function ($region) {
                 return ['@type' => 'AdministrativeArea', 'name' => $region];
-            }, ['Greater Manchester', 'Lancashire', 'Cheshire', 'Merseyside', 'Cumbria', 'North West England']),
+            }, $isFraHub
+                ? ['England', 'Wales', 'Mainland Scotland', 'United Kingdom']
+                : ['Greater Manchester', 'Lancashire', 'Cheshire', 'Merseyside', 'Cumbria', 'North West England']),
             'offers' => [
                 '@type' => 'Offer',
-                'name' => ($poaService ? 'Price on application — ' : 'Written quote — ') . $serviceName,
-                'description' => $poaService
-                    ? ('Request a scoped POA quote for ' . $serviceName . '. No published fee list.')
-                    : ('Request a written quote for ' . $serviceName . ' installation, servicing and certification.'),
+                'name' => $isFraHub
+                    ? ('Fire risk assessment guide — ' . $fraPrice)
+                    : (($poaService ? 'Price on application — ' : 'Written quote — ') . $serviceName),
+                'description' => $isFraHub
+                    ? fraPriceNote()
+                    : ($poaService
+                        ? ('Request a scoped POA quote for ' . $serviceName . '. No published fee list.')
+                        : ('Request a written quote for ' . $serviceName . ' installation, servicing and certification.')),
                 'availability' => 'https://schema.org/InStock',
                 'priceCurrency' => 'GBP',
                 'url' => url('/contact.php'),
-            ],
+            ] + ($isFraHub ? ['price' => fraGuidePriceGbp()] : []),
             'brand' => [
                 '@type' => 'Brand',
                 'name' => SITE_NAME,
@@ -188,11 +213,11 @@ $schema = [
             <div>
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs tracking-widest uppercase mb-5">
                     <span class="w-2 h-2 rounded-full bg-[#ff6b00]"></span>
-                    <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> · North West
+                    <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> · <?= $isFraHub ? 'UK mainland' : 'North West' ?>
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
                     <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?>.<br>
-                    <span class="text-[#ff6b00]"><?= htmlspecialchars($svcCopy['hero_accent'] ?? ($poaService ? 'Surveyed, documented, POA.' : 'Installed, tested, certified.'), ENT_QUOTES, 'UTF-8') ?></span>
+                    <span class="text-[#ff6b00]"><?= htmlspecialchars($isFraHub ? ($fraPrice . ' guide price') : ($svcCopy['hero_accent'] ?? ($poaService ? 'Surveyed, documented, POA.' : 'Installed, tested, certified.')), ENT_QUOTES, 'UTF-8') ?></span>
                 </h1>
                 <p class="mt-6 text-lg text-white/80 max-w-xl"><?= htmlspecialchars($blurb, ENT_QUOTES, 'UTF-8') ?></p>
                 <div class="mt-8 flex flex-wrap gap-3">
@@ -212,8 +237,8 @@ $schema = [
                      loading="eager"
                      onerror="this.style.display='none'">
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-[#0B1F3A]/20 to-transparent">
-                    <div class="text-sm text-white/70">Serving <?= count($allAreas) ?>+ towns</div>
-                    <div class="text-2xl font-semibold mt-1"><?= $poaService ? 'Local team · Price on application' : 'Local engineers · Written quotes' ?></div>
+                    <div class="text-sm text-white/70"><?= $isFraHub ? 'UK mainland' : 'North West' ?> · <?= count($allAreas) ?>+ towns</div>
+                    <div class="text-2xl font-semibold mt-1"><?= $isFraHub ? ('Guide price ' . htmlspecialchars($fraPrice, ENT_QUOTES, 'UTF-8')) : ($poaService ? 'Local team · Price on application' : 'Local engineers · Written quotes') ?></div>
                 </div>
             </div>
         </div>
@@ -225,10 +250,10 @@ $schema = [
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <?php
         $trust = [
-            ['Local response', 'Stockport-based engineers across Greater Manchester & the North West'],
+            ['Local response', $isFraHub ? 'Stockport team attending UK mainland towns' : 'Stockport-based engineers across Greater Manchester & the North West'],
             ['Standards-led', $standards],
             ['Full documentation', 'Records for landlords, insurers, agents and dutyholders'],
-            [$poaService ? 'POA quotes' : 'Written quotes', $poaService ? 'No invented prices — scoped after we see the job' : 'Clear scope before work starts'],
+            [$isFraHub ? ($fraPrice . ' guide') : ($poaService ? 'POA quotes' : 'Written quotes'), $isFraHub ? fraPriceNote() : ($poaService ? 'No invented prices — scoped after we see the job' : 'Clear scope before work starts')],
         ];
         foreach ($trust as [$t, $d]): ?>
             <div class="flex gap-3 items-start">
@@ -248,7 +273,7 @@ $schema = [
         <div class="lg:col-span-3">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Overview</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">
-                Expert <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> across the North West
+                Expert <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> across <?= $isFraHub ? 'UK mainland' : 'the North West' ?>
             </h2>
             <?php if (!empty($svcCopy['intro']) && is_array($svcCopy['intro'])): ?>
                 <?php foreach ($svcCopy['intro'] as $para): ?>
@@ -256,15 +281,28 @@ $schema = [
                 <?php endforeach; ?>
             <?php else: ?>
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
+                <?php if ($isFraHub): ?>
+                Icomply Property Services writes suitable and sufficient
+                <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong>
+                for landlords, agents, workplaces and multi-occupied buildings across England, Wales and mainland Scotland.
+                The published guide price is <strong><?= htmlspecialchars($fraPrice, ENT_QUOTES, 'UTF-8') ?></strong> for a standard assessment.
+                <?php else: ?>
                 Icomply Property Services designs, installs, commissions, maintains and certifies
                 <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong>
                 for commercial, industrial, multi-let, care and residential properties across Greater Manchester,
                 Lancashire, Cheshire, Merseyside and Cumbria.
+                <?php endif; ?>
             </p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
+                <?php if ($isFraHub): ?>
+                The visit records the people, the hazards and the precautions already there, then a prioritised action list.
+                Follow-on alarms, lighting or doors are quoted separately. Based in Stockport (SK2), the same FRA is available in
+                <?= count($allAreas) ?> mainland towns — open the town page for the local wording and the <?= htmlspecialchars($fraPrice, ENT_QUOTES, 'UTF-8') ?> guide.
+                <?php else: ?>
                 From new system design to reactive call-outs and planned maintenance contracts, our engineers deliver
                 fixed-price quotes, clear scope and full compliance documentation. Based in Stockport (SK2), we cover
                 Manchester, Bolton, Oldham, Rochdale, Wigan, Liverpool, Preston and 140+ surrounding towns.
+                <?php endif; ?>
             </p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
                 Searching for a specific manufacturer? We install and service the major brands listed below so you can
@@ -423,7 +461,9 @@ $schema = [
             <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">
                 <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> near you
             </h2>
-            <p class="mt-2 text-zinc-600">Town hubs we cover — electrical and gas also open a real keyword×town page. We do not publish thin service×area doorways.</p>
+            <p class="mt-2 text-zinc-600"><?= $isFraHub
+                ? ('Every mainland town below opens a fire risk assessment page. Guide price ' . $fraPrice . ' for a standard FRA.')
+                : 'Town hubs we cover — electrical and gas also open a real keyword×town page. We do not publish thin service×area doorways.' ?></p>
         </div>
         <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All areas →</a>
     </div>
