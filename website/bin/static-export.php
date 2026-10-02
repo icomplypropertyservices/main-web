@@ -330,6 +330,9 @@ function icomplyCollectKeywordRoutes(string $townMode): array
     $keywordMeta = function_exists('getMajorKeywords') ? getMajorKeywords() : [];
     foreach ($keywords as $kw) {
         $slug = keywordSlug($kw);
+        if (!empty($keywordMeta[$slug]['hub_only'])) {
+            continue;
+        }
         $kwService = $keywordMeta[$slug]['service'] ?? '';
         if ($kwService === 'barriers' || $kwService === 'aov-air-handling') {
             continue;
