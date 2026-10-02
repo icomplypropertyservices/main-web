@@ -16,6 +16,8 @@ jobs:
   draft:
     name: Netlify draft deploy
     runs-on: ubuntu-latest
+    # Preview environment only. Do not use Production — that would be a production deploy context.
+    environment: "Preview – icomply-main-web"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
