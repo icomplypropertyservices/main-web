@@ -353,8 +353,10 @@ function icomplyIsTier1Area(string $areaOrSlug): bool
 }
 
 /**
- * In tiered mode, keyword×area and service×non-Tier-1 pages stay live (200)
- * but are not indexable. Hubs, core pages, and Tier-1 service×area pages are.
+ * In tiered mode, keyword×area pages, area-town hubs, and service×town pages
+ * without a bespoke article stay live (200) but are not indexable. A service×town
+ * URL is indexable only for a Tier-1 town that has its own written article.
+ * Spun "same page, town name swapped" copies stay out of the sitemap.
  */
 function icomplyPathIsIndexable(string $path): bool
 {
@@ -370,10 +372,24 @@ function icomplyPathIsIndexable(string $path): bool
     if (preg_match('#^/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+$#', $path)) {
         return false;
     }
+    // Area town hubs share one template. They are navigation, not sitemap URLs.
+    if (preg_match('#^/pages/areas/[a-z0-9\-]+$#', $path)) {
+        return false;
+    }
     if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         $reserved = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'jobs'];
         if (!in_array($m[1], $reserved, true) && function_exists('getServices') && isset(getServices()[$m[1]])) {
-            return icomplyIsTier1Area($m[2]);
+            if (!icomplyIsTier1Area($m[2])) {
+                return false;
+            }
+            if (!function_exists('icomplyTier1ServiceArticle')) {
+                $copy = __DIR__ . '/includes/tier1-copy.php';
+                if (is_file($copy)) {
+                    require_once $copy;
+                }
+            }
+            return function_exists('icomplyTier1ServiceArticle')
+                && icomplyTier1ServiceArticle($m[1], $m[2]) !== '';
         }
     }
     return true;

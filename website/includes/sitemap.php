@@ -1,9 +1,8 @@
 <?php
 /**
- * Compact, accurate sitemap — core pages + shop/products hubs + service hubs +
- * area hubs + manufacturer hubs + keyword hubs.
- * Lists service×town and keyword×town pages for every North West town in config.
- * Those pages render real content. Broken or unknown URLs stay out.
+ * Compact sitemap — hubs plus Tier-1 service×town pages that have a bespoke
+ * article. Keyword×town, non-Tier-1 towns, area-town templates, and services
+ * without their own town copy stay out. Broken or unknown URLs stay out.
  * Never lists /shop/sitemap.xml or /products/sitemap.xml (separate sites; 404 here).
  */
 declare(strict_types=1);
@@ -125,14 +124,25 @@ function icomplySitemapEntries(): array
         if (preg_match('#-photo\.(jpe?g|png)$#i', $path)) {
             return;
         }
-        // noindex URLs never appear in the sitemap (tiered keyword×area and non-Tier-1 service×area).
+        // noindex URLs never appear in the sitemap (thin town templates, keyword×area, non-Tier-1).
         if (function_exists('icomplyPathIsIndexable') && !icomplyPathIsIndexable($path)) {
             return;
         }
         // Hubs are rendered at export time from the catalogue, so they do not
-        // need a committed PHP stub. Town combinations never qualify.
+        // need a committed PHP stub. Indexable service×town pages are virtual
+        // routes the exporter always writes; the dist publisher still drops
+        // any loc whose HTML file is missing.
         $generatedHub = (bool)preg_match('#^/pages/(keywords|areas|manufacturers|services)/[a-z0-9\-]+$#', $path);
-        if (!$generatedHub && !icomplySitemapUrlHasFile($path)) {
+        $virtualServiceTown = false;
+        if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $stm)) {
+            $reservedHubs = ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages', 'jobs'];
+            if (!in_array($stm[1], $reservedHubs, true)
+                && isset($serviceSlugs[$stm[1]])
+                && isset($areaSlugSet[$stm[2]])) {
+                $virtualServiceTown = true;
+            }
+        }
+        if (!$generatedHub && !$virtualServiceTown && !icomplySitemapUrlHasFile($path)) {
             return;
         }
         $seen[$path] = true;

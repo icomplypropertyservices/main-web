@@ -11,7 +11,7 @@ Cost / price / quote slugs are **POA only**. Never invent a POA figure.
 Sitemap must **not** list the full keyword×area matrix (P090 / anti-junk).
 See `seo-matrix-rollout-notes.md`.
 
-## Keywords (113)
+## Keywords (112)
 
 - `24-hour-emergency-electrician` — 24 Hour Emergency Electrician
 - `additional-socket` — Additional Socket
@@ -20,7 +20,6 @@ See `seo-matrix-rollout-notes.md`.
 - `battery-storage-electrical` — Battery Storage Electrical
 - `bs-7671` — BS 7671
 - `bs-7671-inspection` — BS 7671 Inspection
-- `certified-electrician` — Electrical testing
 - `circuit-breaker-repair` — Circuit Breaker Repair
 - `commercial-eicr` — Commercial EICR
 - `commercial-electrical-maintenance` — Commercial Electrical Maintenance

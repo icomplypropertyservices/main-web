@@ -363,16 +363,27 @@ if ($indexMode === 'tiered') {
     $offSample = is_file($dist . '/pages/electrical/preston.php')
         ? (string)file_get_contents($dist . '/pages/electrical/preston.php')
         : '';
+    $thinSample = is_file($dist . '/pages/plastering/stockport.php')
+        ? (string)file_get_contents($dist . '/pages/plastering/stockport.php')
+        : '';
+    $areaSample = is_file($dist . '/pages/areas/stockport.php')
+        ? (string)file_get_contents($dist . '/pages/areas/stockport.php')
+        : '';
     $robotsOk = str_contains($kwSample, 'noindex, follow')
         && str_contains($offSample, 'noindex, follow')
+        && str_contains($thinSample, 'noindex, follow')
+        && str_contains($areaSample, 'noindex, follow')
+        && str_contains($tierSample, 'id="local-copy"')
         && str_contains($tierSample, 'index, follow')
-        && !str_contains($tierSample, 'noindex');
+        && !str_contains($tierSample, 'noindex')
+        && !str_contains($sitemapDist, '/pages/plastering/stockport</loc>')
+        && !str_contains($sitemapDist, '/pages/areas/stockport</loc>');
     if ($tierOk && $robotsOk) {
         $pass++;
-        echo "[PASS] tiered sitemap lists Tier-1 service×area only; noindex pages stay out\n";
+        echo "[PASS] tiered sitemap lists bespoke Tier-1 articles only; thin town templates stay noindex\n";
     } else {
         $fail++;
-        echo "[FAIL] tiered sitemap/robots mismatch (sitemap samples or noindex meta)\n";
+        echo "[FAIL] tiered sitemap/robots mismatch (sitemap samples, local copy, or noindex meta)\n";
     }
 } elseif (str_contains($sitemapDist, '/pages/electrical/stockport</loc>') && str_contains($sitemapDist, '/pages/keywords/eicr/stockport</loc>')) {
     $pass++;

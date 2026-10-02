@@ -11,7 +11,7 @@ Cost / price / quote slugs are **POA only**. Never invent a POA figure.
 Sitemap must **not** list the full keyword×area matrix (P090 / anti-junk).
 See `seo-matrix-rollout-notes.md`.
 
-## Keywords (105)
+## Keywords (104)
 
 - `annual-boiler-service` — Annual Boiler Service
 - `annual-gas-safety-certificate` — Annual Gas safety Certificate
@@ -73,7 +73,6 @@ See `seo-matrix-rollout-notes.md`.
 - `gas-meter-relocation-support` — Gas Meter Relocation Support
 - `gas-meter-works` — Gas Meter Works
 - `gas-repair` — Gas Repair
-- `gas-safe-engineer` — gas safety certificates (CP12) Engineer
 - `gas-safe-engineer-stockport` — gas safety certificates (CP12) Engineer Stockport
 - `gas-safe-register-engineer` — gas safety certificates (CP12) Engineer
 - `gas-safety` — Gas safety

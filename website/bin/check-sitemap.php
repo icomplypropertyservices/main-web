@@ -31,20 +31,23 @@ foreach ($bannedNeedles as $n) {
     }
 }
 
-// Service×town locs must have a rendered file in dist or source.
-if (function_exists('getServices')) {
-    $distRoot = dirname(SITE_ROOT) . '/dist';
-    foreach (array_keys(getServices()) as $sSlug) {
-        foreach (['stockport', 'manchester'] as $town) {
-            $rel = 'pages/' . $sSlug . '/' . $town . '.php';
-            $needle = '/pages/' . $sSlug . '/' . $town . '</loc>';
-            $has = is_file(SITE_ROOT . '/' . $rel) || is_file($distRoot . '/' . $rel);
-            if (str_contains($xml, $needle) && !$has) {
-                echo "FAIL: service×town in sitemap has no file: {$needle}\n";
-                $fail++;
-            }
-        }
-    }
+$dom = new DOMDocument();
+$prevXmlErrors = libxml_use_internal_errors(true);
+$xmlOk = $dom->loadXML($xml);
+$xmlErrors = libxml_get_errors();
+libxml_clear_errors();
+libxml_use_internal_errors($prevXmlErrors);
+if (!$xmlOk || $xmlErrors !== []) {
+    echo "FAIL: sitemap XML is not well-formed\n";
+    $fail++;
+}
+$locValues = [];
+foreach ($dom->getElementsByTagName('loc') as $locNode) {
+    $locValues[] = trim($locNode->textContent);
+}
+if (count($locValues) !== count(array_unique($locValues))) {
+    echo "FAIL: sitemap has duplicate loc values\n";
+    $fail++;
 }
 
 $required = [
@@ -72,8 +75,6 @@ $required = [
     '/pages/services/gas-systems</loc>',
     '/pages/keywords/rewire</loc>',
     '/pages/keywords/boiler</loc>',
-    '/pages/areas/manchester</loc>',
-    '/pages/areas/stockport</loc>',
     '/pages/manufacturers/abb</loc>',
     '/privacy</loc>',
     '/terms</loc>',
@@ -190,18 +191,27 @@ foreach ($locHits[1] ?? [] as $path) {
     }
 }
 $svcCount = function_exists('getServices') ? count(getServices()) : 0;
-$tier1Count = 0;
-if (function_exists('icomplyTier1Towns') && function_exists('areaSlug')) {
+$indexablePairs = [];
+if ($indexMode === 'tiered' && function_exists('icomplyTier1Towns') && function_exists('icomplyPathIsIndexable')) {
+    foreach (array_keys($services) as $svcSlug) {
+        foreach (icomplyTier1Towns() as $town) {
+            $pair = '/pages/' . $svcSlug . '/' . areaSlug($town);
+            if (icomplyPathIsIndexable($pair)) {
+                $indexablePairs[] = $pair;
+            }
+        }
+    }
     foreach (icomplyTier1Towns() as $town) {
-        if (isset($areaSlugs[areaSlug($town)])) {
-            $tier1Count++;
+        if (!isset($areaSlugs[areaSlug($town)])) {
+            $fail++;
+            echo "FAIL: tier-1 town missing from areas.json: {$town}\n";
         }
     }
 }
-$svcAreaExpect = $indexMode === 'tiered' ? ($svcCount * $tier1Count) : ($svcCount * count($areaSlugs));
+$svcAreaExpect = $indexMode === 'tiered' ? count($indexablePairs) : ($svcCount * count($areaSlugs));
 if ($indexMode === 'tiered' && count($serviceAreaHits) !== $svcAreaExpect) {
     $fail++;
-    echo 'FAIL: tiered sitemap service×area count ' . count($serviceAreaHits) . " (want exactly {$svcAreaExpect})\n";
+    echo 'FAIL: tiered sitemap service×area count ' . count($serviceAreaHits) . " (want exactly {$svcAreaExpect} bespoke articles)\n";
 } elseif ($indexMode !== 'tiered' && count($serviceAreaHits) < (int)floor($svcAreaExpect * 0.98)) {
     $fail++;
     echo 'FAIL: sitemap service×area count ' . count($serviceAreaHits) . " (want about {$svcAreaExpect})\n";
@@ -209,14 +219,27 @@ if ($indexMode === 'tiered' && count($serviceAreaHits) !== $svcAreaExpect) {
     echo 'OK: sitemap service×area count=' . count($serviceAreaHits) . "\n";
 }
 if ($indexMode === 'tiered') {
-    if (str_contains($xml, '/pages/keywords/eicr/stockport</loc>') || str_contains($xml, '/pages/electrical/preston</loc>')) {
+    if (str_contains($xml, '/pages/keywords/eicr/stockport</loc>') || str_contains($xml, '/pages/electrical/preston</loc>') || str_contains($xml, '/pages/areas/stockport</loc>') || str_contains($xml, '/pages/plastering/stockport</loc>')) {
         $fail++;
-        echo "FAIL: tiered sitemap lists a noindex combination\n";
+        echo "FAIL: tiered sitemap lists a noindex town template\n";
     }
-    if (!str_contains($xml, '/pages/electrical/stockport</loc>') || !str_contains($xml, '/pages/electrical/trafford</loc>')) {
-        $fail++;
-        echo "FAIL: tiered sitemap missing a Tier-1 service×area loc\n";
+    $missingPairs = 0;
+    foreach ($indexablePairs as $pair) {
+        if (!str_contains($xml, $pair . '</loc>')) {
+            $missingPairs++;
+            if ($missingPairs <= 6) {
+                echo "FAIL: tiered sitemap missing bespoke loc {$pair}\n";
+            }
+        }
     }
+    if ($missingPairs > 0) {
+        $fail += $missingPairs;
+    }
+}
+$diskSitemap = is_file(SITE_ROOT . '/sitemap.xml') ? (string)file_get_contents(SITE_ROOT . '/sitemap.xml') : '';
+if ($diskSitemap !== $xml) {
+    $fail++;
+    echo "FAIL: website/sitemap.xml does not match the generator\n";
 }
 
 echo "URLs={$count} bytes=" . strlen($xml) . PHP_EOL;

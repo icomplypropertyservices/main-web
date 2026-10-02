@@ -329,15 +329,26 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     $svcName = $s['services'][$serviceSlug];
     $areaSlugVal = areaSlug($areaName);
     $priceLine = 'POA. Price on application after scope is agreed. Call ' . $s['phone'] . '. No invented catalogue price.';
+    if (!function_exists('icomplyTier1ServiceArticle')) {
+        $copyFile = __DIR__ . '/tier1-copy.php';
+        if (is_file($copyFile)) {
+            require_once $copyFile;
+        }
+    }
+    $bespoke = function_exists('icomplyTier1ServiceArticle')
+        ? icomplyTier1ServiceArticle($serviceSlug, $areaName)
+        : '';
     $localLine = icomplyMatrixLocalLine($areaName);
-    $h1 = function_exists('icomplyVariedH1') ? icomplyVariedH1($svcName, $areaName) : ($svcName . ' in ' . $areaName);
+    $h1 = $bespoke !== ''
+        ? ($svcName . ' in ' . $areaName)
+        : (function_exists('icomplyVariedH1') ? icomplyVariedH1($svcName, $areaName) : ($svcName . ' in ' . $areaName));
     $essay = function_exists('icomplyLocalEssay') ? icomplyLocalEssay($svcName, $serviceSlug, $areaName) : '';
     $intro = $essay !== ''
         ? $essay
         : (function_exists('seo_unique_intro')
             ? seo_unique_intro($svcName, $serviceSlug, $areaName)
             : $svcName . ' in ' . $areaName . '.');
-    if (function_exists('waterAsbestosAreaIntro')) {
+    if ($bespoke === '' && function_exists('waterAsbestosAreaIntro')) {
         $extra = waterAsbestosAreaIntro($serviceSlug, $areaName);
         if ($extra !== '') {
             $intro .= ' ' . $extra;
@@ -360,25 +371,42 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
         . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($areaName) . ' · North West</p>'
-        . '<h1>' . icomplyMatrixH($h1) . '</h1>'
-        . '<p class="mt-4 text-white/80 max-w-2xl">' . icomplyMatrixH($intro) . '</p>'
-        . '<div class="mt-6 flex flex-wrap gap-3">'
+        . '<h1>' . icomplyMatrixH($h1) . '</h1>';
+    if ($bespoke !== '') {
+        $html .= '<article id="local-copy" class="mt-4 text-white/80 max-w-2xl leading-relaxed"><p>'
+            . icomplyMatrixH($bespoke) . '</p></article>';
+        $note = $priceLine;
+        if ($serviceSlug === 'gas-systems' && function_exists('icomplyGasLegalSentence')) {
+            $note = icomplyGasLegalSentence() . ' ' . $note;
+        }
+        $html .= '<p class="mt-4 text-sm text-white/70 max-w-2xl">' . icomplyMatrixH($note) . '</p>';
+    } else {
+        $html .= '<p class="mt-4 text-white/80 max-w-2xl">' . icomplyMatrixH($intro) . '</p>'
+            . '<p class="mt-4 text-sm text-white/60">' . icomplyMatrixH($standards) . ' · ' . icomplyMatrixH($priceLine) . '</p>'
+            . '<p class="mt-2 text-sm text-white/70">' . icomplyMatrixH($localLine) . '</p>';
+    }
+    $html .= '<div class="mt-6 flex flex-wrap gap-3">'
         . '<a class="matrix-cta matrix-cta-accent" href="' . icomplyMatrixH($s['contact']) . '">Request a quote</a>'
         . '<a class="matrix-cta matrix-cta-light" href="' . icomplyMatrixH($s['phoneHref']) . '">' . icomplyMatrixH($s['phone']) . '</a>'
         . '</div>'
-        . '<p class="mt-4 text-sm text-white/60">' . icomplyMatrixH($standards) . ' · ' . icomplyMatrixH($priceLine) . '</p>'
-        . '<p class="mt-2 text-sm text-white/70">' . icomplyMatrixH($localLine) . '</p>'
         . '</div></section>';
 
-    $html .= '<main class="matrix-wrap py-10 space-y-10">'
-        . '<article class="matrix-card space-y-4">'
-        . '<h2 class="text-2xl font-semibold">' . ($serviceSlug === 'gas-systems' ? 'What this page covers in ' : 'What we do in ') . icomplyMatrixH($areaName) . '</h2>'
-        . '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($blurb) . '</p>'
-        . '<p class="text-sm">Service hub: <a class="text-[#ff6b00] font-semibold" href="'
-        . icomplyMatrixH(url('/pages/services/' . $serviceSlug)) . '">' . icomplyMatrixH($svcName) . '</a>'
-        . ' · Town: <a class="text-[#ff6b00] font-semibold" href="'
-        . icomplyMatrixH(url('/pages/areas/' . $areaSlugVal)) . '">' . icomplyMatrixH($areaName) . '</a></p>'
-        . '</article>';
+    $html .= '<main class="matrix-wrap py-10 space-y-10">';
+    if ($bespoke === '') {
+        $html .= '<article class="matrix-card space-y-4">'
+            . '<h2 class="text-2xl font-semibold">' . ($serviceSlug === 'gas-systems' ? 'What this page covers in ' : 'What we do in ') . icomplyMatrixH($areaName) . '</h2>'
+            . '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($blurb) . '</p>'
+            . '<p class="text-sm">Service hub: <a class="text-[#ff6b00] font-semibold" href="'
+            . icomplyMatrixH(url('/pages/services/' . $serviceSlug)) . '">' . icomplyMatrixH($svcName) . '</a>'
+            . ' · Town: <a class="text-[#ff6b00] font-semibold" href="'
+            . icomplyMatrixH(url('/pages/areas/' . $areaSlugVal)) . '">' . icomplyMatrixH($areaName) . '</a></p>'
+            . '</article>';
+    } else {
+        $html .= '<p class="text-sm">Service hub: <a class="text-[#ff6b00] font-semibold" href="'
+            . icomplyMatrixH(url('/pages/services/' . $serviceSlug)) . '">' . icomplyMatrixH($svcName) . '</a>'
+            . ' · Town: <a class="text-[#ff6b00] font-semibold" href="'
+            . icomplyMatrixH(url('/pages/areas/' . $areaSlugVal)) . '">' . icomplyMatrixH($areaName) . '</a></p>';
+    }
 
     $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($svcName) . ' in every area</h2>'
         . '<p class="text-sm text-zinc-600 mb-4">' . count($s['areas']) . ' towns.</p>'
