@@ -14,6 +14,10 @@ require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/render.php';
 require_once SITE_ROOT . '/includes/sitemap.php';
 
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
 $repoRoot = dirname(SITE_ROOT);
 $dist = $options['dist'] ?? ($repoRoot . '/dist');
 if ($dist !== '' && $dist[0] !== '/') {
@@ -88,6 +92,130 @@ $h1s = [];
 $broken = [];
 $seoFail = [];
 $rendered = 0;
+
+$indexWarnings = [];
+set_error_handler(static function (int $severity, string $message, string $file, int $line) use (&$indexWarnings): bool {
+    if (!(error_reporting() & $severity)) {
+        return false;
+    }
+    $indexWarnings[] = $message . ' @ ' . basename($file) . ':' . $line;
+    return true;
+});
+ob_start();
+require SITE_ROOT . '/pages/keywords.php';
+$indexHtml = (string)ob_get_clean();
+restore_error_handler();
+
+if (!str_contains($indexHtml, 'id="job-types"')) {
+    $bad('published keyword hub missing #job-types (pages/keywords.php must include the master index)');
+} else {
+    $ok('published keyword hub has #job-types');
+}
+if (!preg_match('/data-master-expected="' . $expected . '"/', $indexHtml)
+    || !preg_match('/data-master-present="' . $expected . '"/', $indexHtml)) {
+    $bad('keyword hub coverage badge is not ' . $expected . '/' . $expected);
+} else {
+    $ok("keyword hub badge is {$expected}/{$expected}");
+}
+preg_match_all('/data-job-slug="([^"]+)"/', $indexHtml, $slugMatches);
+$indexCounts = array_count_values($slugMatches[1] ?? []);
+$indexMissing = [];
+$indexDup = [];
+foreach ($unique as $slug) {
+    $n = $indexCounts[$slug] ?? 0;
+    if ($n === 0) {
+        $indexMissing[] = $slug;
+    } elseif ($n > 1) {
+        $indexDup[] = $slug;
+    }
+}
+$indexExtra = array_diff(array_keys($indexCounts), $unique);
+if ($indexMissing || $indexDup || $indexExtra) {
+    $bad('keyword hub index integrity missing=' . count($indexMissing)
+        . ' dup=' . count($indexDup)
+        . ' extra=' . count($indexExtra)
+        . ' (sample ' . implode(',', array_slice(array_merge($indexMissing, $indexDup, $indexExtra), 0, 8)) . ')');
+} else {
+    $ok('keyword hub lists each of the ' . $expected . ' master slugs once');
+}
+if (preg_match('/(?:Â|â€|âœ|Ã.|this\.src=\$)/u', $indexHtml)) {
+    $bad('keyword hub HTML contains mojibake or an uninterpolated template variable');
+} else {
+    $ok('keyword hub HTML has no mojibake or raw template variables');
+}
+if ($indexWarnings) {
+    $bad('keyword hub PHP warnings: ' . implode('; ', array_slice($indexWarnings, 0, 4)));
+} else {
+    $ok('keyword hub rendered without PHP warnings');
+}
+
+$keywordTpl = (string)file_get_contents(SITE_ROOT . '/templates/keyword.php');
+if (preg_match('/onerror="this\.src=\$[A-Za-z_]+"/', $keywordTpl)) {
+    $bad('templates/keyword.php image fallback is an uninterpolated PHP variable');
+} else {
+    $ok('keyword template image fallback is interpolated');
+}
+
+$sampleSlugs = jobTypesSampleSlugs();
+$sampleFail = [];
+$sampleBroken = [];
+$knownPages = jobTypesKnownInternalPaths();
+foreach ($sampleSlugs as $slug) {
+    $sampleWarnings = [];
+    set_error_handler(static function (int $severity, string $message, string $file, int $line) use (&$sampleWarnings): bool {
+        if (!(error_reporting() & $severity)) {
+            return false;
+        }
+        $sampleWarnings[] = $message . ' @ ' . basename($file) . ':' . $line;
+        return true;
+    });
+    ob_start();
+    renderKeywordPage($slug);
+    $html = (string)ob_get_clean();
+    restore_error_handler();
+    $missing = [];
+    foreach (['<title>', '<h1', 'name="description"', 'rel="canonical"', '/pages/keywords/' . $slug, 'FAQPage', '#quote', 'Submit request'] as $n) {
+        if (!str_contains($html, $n)) {
+            $missing[] = $n;
+        }
+    }
+    if (preg_match('/£\s*\d/', $html)) {
+        $missing[] = 'invented-£';
+    }
+    if (preg_match('/this\.src=\$|\$SERVICE_IMAGE|\$KEYWORD_IMAGE|\{\{/', $html)) {
+        $missing[] = 'raw-template-token';
+    }
+    if (strlen($html) < 1800) {
+        $missing[] = 'short-html';
+    }
+    if ($sampleWarnings) {
+        $missing[] = 'php-warning';
+    }
+    if ($missing) {
+        $sampleFail[] = $slug . '(' . implode('|', $missing) . ')';
+    }
+    if (preg_match_all('/href="([^"]+)"/', $html, $mm)) {
+        foreach ($mm[1] as $href) {
+            $err = jobTypesHrefError((string)$href, $slug, $knownPages);
+            if ($err !== null) {
+                $sampleBroken[] = $slug . ' → ' . $err;
+                break;
+            }
+        }
+    }
+}
+if ($sampleSlugs === []) {
+    $bad('sample slug list is empty');
+} elseif ($sampleFail) {
+    $bad('sample slug smoke failed ' . count($sampleFail) . '/' . count($sampleSlugs) . ' (sample ' . implode('; ', array_slice($sampleFail, 0, 5)) . ')');
+} else {
+    $ok('sample slug smoke passed for ' . count($sampleSlugs) . ' jobs');
+}
+if ($sampleBroken) {
+    $bad('sample slug broken links: ' . count($sampleBroken) . ' (sample ' . implode('; ', array_slice($sampleBroken, 0, 4)) . ')');
+} else {
+    $ok('sample slug pages have no broken internal links');
+}
 
 if (!$skipRender) {
     $knownPages = jobTypesKnownInternalPaths();

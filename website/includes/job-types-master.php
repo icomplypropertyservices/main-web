@@ -192,6 +192,114 @@ function jobTypesMasterSlugs(): array
     return $out;
 }
 
+/** How many master slugs are actually in the live keyword catalogue. */
+function jobTypesMasterPresentCount(): int
+{
+    $keywords = function_exists('getMajorKeywords') ? getMajorKeywords() : [];
+    $n = 0;
+    foreach (array_unique(jobTypesMasterSlugs()) as $slug) {
+        if (isset($keywords[$slug])) {
+            $n++;
+        }
+    }
+    return $n;
+}
+
+/**
+ * Compact service-grouped index of every master slug.
+ * Each link carries data-job-slug so the published hub can be checked for 1,753/1,753.
+ */
+function jobTypesMasterIndexHtml(): string
+{
+    $keywords = function_exists('getMajorKeywords') ? getMajorKeywords() : [];
+    $services = function_exists('getServices') ? getServices() : [];
+    $byService = [];
+    foreach (array_values(array_unique(jobTypesMasterSlugs())) as $slug) {
+        $row = $keywords[$slug] ?? null;
+        $svc = is_array($row) ? (string)($row['service'] ?? 'electrical') : 'electrical';
+        if ($svc === '') {
+            $svc = 'electrical';
+        }
+        $byService[$svc][] = $slug;
+    }
+
+    $html = '';
+    $emit = static function (string $svc, string $svcName, array $slugs) use (&$html, $keywords): void {
+        $html .= '<div class="mb-6" data-master-service="' . htmlspecialchars($svc, ENT_QUOTES, 'UTF-8') . '">';
+        $html .= '<h3 class="font-semibold text-black mb-2">' . htmlspecialchars($svcName, ENT_QUOTES, 'UTF-8')
+            . ' <span class="text-zinc-400 font-normal text-sm">' . count($slugs) . '</span></h3>';
+        $html .= '<div class="flex flex-wrap gap-2">';
+        foreach ($slugs as $slug) {
+            $row = $keywords[$slug] ?? null;
+            $name = is_array($row)
+                ? (string)($row['name'] ?? keywordDisplayName($slug))
+                : keywordDisplayName($slug);
+            $href = htmlspecialchars(url('/pages/keywords/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
+            $html .= '<a href="' . $href . '" data-job-slug="' . htmlspecialchars($slug, ENT_QUOTES, 'UTF-8') . '"'
+                . ' class="px-3 py-1.5 bg-zinc-50 border rounded-full text-sm hover:border-[#ff6b00]">'
+                . htmlspecialchars($name, ENT_QUOTES, 'UTF-8') . '</a>';
+        }
+        $html .= '</div></div>';
+    };
+
+    foreach ($services as $svc => $svcName) {
+        $slugs = $byService[$svc] ?? [];
+        if (!$slugs) {
+            continue;
+        }
+        unset($byService[$svc]);
+        $emit((string)$svc, (string)$svcName, $slugs);
+    }
+    ksort($byService);
+    foreach ($byService as $svc => $slugs) {
+        $emit((string)$svc, keywordDisplayName((string)$svc), $slugs);
+    }
+    return $html;
+}
+
+/**
+ * Stratified sample: ends of the master, one slug per service, plus money jobs.
+ *
+ * @return list<string>
+ */
+function jobTypesSampleSlugs(): array
+{
+    $slugs = array_values(array_unique(jobTypesMasterSlugs()));
+    $pick = [];
+    $add = static function (string $slug) use (&$pick, $slugs): void {
+        if ($slug !== '' && in_array($slug, $slugs, true)) {
+            $pick[$slug] = true;
+        }
+    };
+    if ($slugs !== []) {
+        $add($slugs[0]);
+        $add($slugs[(int)floor((count($slugs) - 1) / 2)]);
+        $add($slugs[count($slugs) - 1]);
+    }
+    $seenSvc = [];
+    foreach (jobTypesMasterJobs() as $job) {
+        if (!is_array($job)) {
+            continue;
+        }
+        $slug = keywordSlug((string)($job['slug'] ?? ''));
+        $svc = (string)($job['service'] ?? '');
+        if ($slug === '' || $svc === '' || isset($seenSvc[$svc])) {
+            continue;
+        }
+        $seenSvc[$svc] = true;
+        $add($slug);
+    }
+    foreach ([
+        'eicr', 'eicr-certificate', 'gas-safety-certificate', 'cp12',
+        'fire-risk-assessment', 'pat-testing', 'epc', 'fire-door-compliance',
+        'cctv-installation', 'aico-multi-sensor-install', 'after-hours-pat-testing',
+        'rewire', 'boiler',
+    ] as $slug) {
+        $add($slug);
+    }
+    return array_keys($pick);
+}
+
 /**
  * Merge the 1,753-job master into the live keyword catalogue and fill unique SEO fields.
  *

@@ -1,6 +1,6 @@
-﻿<?php
+<?php
 /**
- * KEYWORDS_INDEX_V2 â€” keyword guides directory (handcrafted; generators skip overwrite).
+ * KEYWORDS_INDEX_V2 — keyword guides directory (handcrafted; generators skip overwrite).
  */
 require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/share.php';
@@ -46,7 +46,7 @@ require SITE_ROOT . '/includes/header.php';
             <div>
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs tracking-widest uppercase mb-5">
                     <span class="w-2 h-2 rounded-full bg-[#ff6b00]"></span>
-                    <?= count($keywords) ?> topics Â· <?= count($services) ?> services Â· <?= count($areas) ?>+ towns
+                    <?= count($keywords) ?> topics · <?= count($services) ?> services · <?= count($areas) ?>+ towns
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
                     Topic &amp; keyword<br>
@@ -54,7 +54,7 @@ require SITE_ROOT . '/includes/header.php';
                 </h1>
                 <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl">
                     Fire risk assessments, fire systems, electrical, security, professional compliance,
-                    kitchens, bathrooms, renovation and construction trades â€”
+                    kitchens, bathrooms, renovation and construction trades —
                     each guide links to local pages across <?= count($areas) ?>+ North West towns.
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
@@ -129,13 +129,38 @@ require SITE_ROOT . '/includes/header.php';
         ];
         foreach ($trust as [$t, $d]): ?>
             <div class="flex gap-3 items-start">
-                <div class="w-10 h-10 rounded-2xl bg-[#0B1F3A]/10 flex items-center justify-center text-[#0B1F3A] font-bold shrink-0">âœ“</div>
+                <div class="w-10 h-10 rounded-2xl bg-[#0B1F3A]/10 flex items-center justify-center text-[#0B1F3A] font-bold shrink-0">✓</div>
                 <div>
                     <div class="font-semibold text-black"><?= htmlspecialchars($t, ENT_QUOTES, 'UTF-8') ?></div>
                     <div class="text-sm text-zinc-600 mt-0.5"><?= htmlspecialchars((string)$d, ENT_QUOTES, 'UTF-8') ?></div>
                 </div>
             </div>
         <?php endforeach; ?>
+    </div>
+</section>
+
+<?php
+$masterExpected = function_exists('jobTypesMasterExpectedCount') ? jobTypesMasterExpectedCount() : 1753;
+$masterPresent = function_exists('jobTypesMasterPresentCount') ? jobTypesMasterPresentCount() : 0;
+?>
+<section id="job-types" class="bg-white border-b" data-master-expected="<?= (int)$masterExpected ?>" data-master-present="<?= (int)$masterPresent ?>">
+    <div class="max-w-7xl mx-auto px-6 py-16">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+            <div>
+                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Job types · <?= number_format($masterPresent) ?> / <?= number_format($masterExpected) ?></div>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">All master job types</h2>
+                <p class="mt-2 text-zinc-600 max-w-2xl">Category → service → job → area. Every master slug is linked in the complete index below and has an indexable <code>/pages/keywords/&lt;slug&gt;</code> page with a unique title, H1, meta, FAQ + FAQPage JSON-LD, and enquiry CTA. Quotes are POA / enquire.</p>
+            </div>
+            <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Service hubs →</a>
+        </div>
+        <?php if (function_exists('seoIaJobIndexHtml')): ?>
+            <h3 class="text-lg font-semibold text-black mb-4">Featured money jobs</h3>
+            <?= seoIaJobIndexHtml() ?>
+        <?php endif; ?>
+        <h3 class="text-lg font-semibold text-black mt-10 mb-4">Complete master index</h3>
+        <?php if (function_exists('jobTypesMasterIndexHtml')): ?>
+            <?= jobTypesMasterIndexHtml() ?>
+        <?php endif; ?>
     </div>
 </section>
 
@@ -147,7 +172,7 @@ require SITE_ROOT . '/includes/header.php';
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">All keyword guides</h2>
             <p class="mt-2 text-zinc-600 max-w-xl">Search by topic or filter by service. Showing <span id="kw-visible-count"><?= count($keywords) ?></span> of <?= count($keywords) ?> guides.</p>
         </div>
-        <a href="<?= url('/pages/manufacturers/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Manufacturers â†’</a>
+        <a href="<?= url('/pages/manufacturers/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Manufacturers →</a>
     </div>
 
     <!-- Search + service filter (client-side) -->
@@ -155,7 +180,7 @@ require SITE_ROOT . '/includes/header.php';
         <div class="flex flex-col lg:flex-row gap-3 lg:items-center">
             <div class="relative flex-1 max-w-xl">
                 <label for="kw-search" class="sr-only">Search keyword guides</label>
-                <input type="search" id="kw-search" autocomplete="off" placeholder="Search guides (e.g. EICR, Paxton, fire panel)â€¦"
+                <input type="search" id="kw-search" autocomplete="off" placeholder="Search guides (e.g. EICR, Paxton, fire panel)…"
                        class="w-full border border-zinc-200 bg-white px-5 py-3.5 rounded-2xl text-sm text-black focus:outline-none focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/20">
             </div>
             <div class="flex flex-wrap gap-2" id="kw-service-filters" role="group" aria-label="Filter by service">
@@ -201,8 +226,8 @@ require SITE_ROOT . '/includes/header.php';
                 <h3 class="mt-4 font-semibold text-lg text-black leading-snug group-hover:text-[#ff6b00] transition">
                     <?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>
                 </h3>
-                <p class="mt-2 text-sm text-zinc-500 flex-1">Guide Â· local service links</p>
-                <span class="mt-4 text-sm font-semibold text-[#ff6b00]">Read guide â†’</span>
+                <p class="mt-2 text-sm text-zinc-500 flex-1">Guide · local service links</p>
+                <span class="mt-4 text-sm font-semibold text-[#ff6b00]">Read guide →</span>
             </a>
         <?php endforeach; ?>
     </div>
@@ -223,13 +248,13 @@ require SITE_ROOT . '/includes/header.php';
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Next steps</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Need the work done?</h2>
             <p class="mt-4 text-zinc-600 text-lg">
-                Guides explain the topic â€” our engineers install, test and certify across Greater Manchester and the North West.
+                Guides explain the topic — our engineers install, test and certify across Greater Manchester and the North West.
                 Request a fixed-price quote or browse services and areas.
             </p>
             <ul class="mt-6 space-y-3 text-sm text-zinc-700">
-                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">âœ“</span> Standards-led install &amp; certification</li>
-                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">âœ“</span> <?= count($areas) ?>+ towns covered from Stockport</li>
-                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">âœ“</span> Trade shop for kits &amp; parts</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Standards-led install &amp; certification</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> <?= count($areas) ?>+ towns covered from Stockport</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Trade shop for kits &amp; parts</li>
             </ul>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="<?= url('/pages/services/index.php') ?>" class="px-6 py-3 rounded-2xl bg-[#0B1F3A] text-white font-semibold hover:bg-[#ff6b00] transition">Browse services</a>
@@ -238,7 +263,7 @@ require SITE_ROOT . '/includes/header.php';
         </div>
         <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
             <h3 class="text-2xl font-semibold">Talk to us today</h3>
-            <p class="mt-3 text-white/80">Call, WhatsApp or use the quote form â€” we aim to respond within 2 hours on business days.</p>
+            <p class="mt-3 text-white/80">Call, WhatsApp or use the quote form — we aim to respond within 2 hours on business days.</p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>"
                    class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
@@ -268,7 +293,7 @@ require SITE_ROOT . '/includes/header.php';
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input type="tel" name="phone" placeholder="Phone" required maxlength="40" class="w-full border px-5 py-3.5 rounded-2xl">
                 <select name="service" required class="w-full border px-5 py-3.5 rounded-2xl bg-white">
-                    <option value="">Select serviceâ€¦</option>
+                    <option value="">Select service…</option>
                     <?php foreach ($services as $slug => $name): ?>
                         <option value="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></option>
                     <?php endforeach; ?>
@@ -276,7 +301,7 @@ require SITE_ROOT . '/includes/header.php';
                     <option value="Shop / products">Shop / products</option>
                 </select>
             </div>
-            <textarea name="message" rows="4" required maxlength="5000" placeholder="Postcode, property type, panel brand / system detailsâ€¦" class="w-full border px-5 py-3.5 rounded-2xl"></textarea>
+            <textarea name="message" rows="4" required maxlength="5000" placeholder="Postcode, property type, panel brand / system details…" class="w-full border px-5 py-3.5 rounded-2xl"></textarea>
             <button type="submit" class="w-full modern-btn text-white py-4 text-lg font-semibold rounded-2xl">Submit request</button>
             <p class="text-center text-xs text-zinc-500">
                 By submitting you agree to our
@@ -362,4 +387,3 @@ require SITE_ROOT . '/includes/header.php';
 </script>
 
 <?php require SITE_ROOT . '/includes/footer.php'; ?>
-
