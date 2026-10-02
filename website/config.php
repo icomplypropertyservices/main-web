@@ -336,6 +336,13 @@ function getMajorKeywords(): array {
         }
         $normalized[$slug] = $row;
     }
+    $lane = __DIR__ . '/includes/access-control-jobs.php';
+    if (is_file($lane)) {
+        require_once $lane;
+        if (function_exists('accessControlJobsApplyOverlay')) {
+            $normalized = accessControlJobsApplyOverlay($normalized);
+        }
+    }
     return $normalized;
 }
 
@@ -449,6 +456,8 @@ function getPopularKeywordSlugs(): array {
         'gas-safety-certificate', 'cp12', 'landlord-gas-safety', 'boiler', 'boiler-install',
         'boiler-repair', 'gas-safety', 'emergency-gas-engineer', 'landlord-gas',
         'cctv-installation', 'access-control-system', 'door-entry-system',
+        'car-park-barrier', 'car-park-barrier-manchester', 'car-park-barrier-burnley',
+        'came-barrier', 'maglock-installation',
         'nurse-call-system', 'landlord-compliance',
         'legionella-risk-assessment', 'legionella-testing', 'water-hygiene-testing',
         'asbestos-survey', 'asbestos-testing', 'asbestos-management-survey',

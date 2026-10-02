@@ -29,6 +29,10 @@ if (empty($_SESSION['csrf'])) {
 
 require_once SITE_ROOT . '/includes/share.php';
 require SITE_ROOT . '/includes/header.php';
+require_once SITE_ROOT . '/includes/access-control-jobs.php';
+if (function_exists('accessControlLaneKeywordStrip')) {
+    echo accessControlLaneKeywordStrip($keywordSlug, $areaName);
+}
 
 $h = static function ($s): string {
     return htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8');

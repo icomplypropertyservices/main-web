@@ -40,13 +40,13 @@
         "standards": "BS EN 62676 · GDPR / DPA camera siting"
     },
     "access-control": {
-        "blurb": "Paxton, HID, Salto door access, credentials and fire-override integration.",
-        "short": "Paxton, HID, Salto door access",
-        "standards": "BS EN 50133 · EN 60839 · fire-release integration"
+        "blurb": "Car park barriers are the hardest job on this lane — rising arms, loops and CAME Gard cabinets — plus maglocks, Paxton, HID and Salto door access. Manchester and Burnley are named towns. Quotes are POA after survey.",
+        "short": "Barriers, maglocks and door access",
+        "standards": "BS EN 50133 · EN 60839 · fire-release integration · barrier safety devices"
     },
     "door-entry": {
-        "blurb": "Video and audio door entry for flats, multi-tenant and commercial sites.",
-        "short": "Video & audio door entry",
+        "blurb": "Video and audio door entry for flats, multi-tenant and commercial sites, including panels that release a maglock or call a car park barrier. Manchester and Burnley are named towns. Quotes are POA after survey.",
+        "short": "Video and audio door entry",
         "standards": "BS EN 60839 · multi-tenant residential standards"
     },
     "intercoms": {
