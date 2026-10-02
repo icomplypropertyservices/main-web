@@ -131,6 +131,11 @@ function renderKeywordPage(string $slug): void {
     $relatedName = $keywords[$relatedSlug]['name'] ?? keywordDisplayName($relatedSlug);
     $serviceName = $services[$serviceSlug] ?? keywordDisplayName($serviceSlug);
 
+    if (!empty($meta['el_master']) && function_exists('emergencyLightingRenderJobPage')) {
+        emergencyLightingRenderJobPage($slug, $meta, $serviceSlug, $serviceName, $relatedSlug, $relatedName);
+        return;
+    }
+
     $GLOBALS['services'] = $services;
     $GLOBALS['areas'] = getAreas();
 

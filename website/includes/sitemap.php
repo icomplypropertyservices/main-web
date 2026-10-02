@@ -175,6 +175,7 @@ function icomplySitemapEntries(): array
         ['/pages/resources/fire-alarm-servicing', '0.7', 'pages/resources/fire-alarm-servicing.php'],
         ['/pages/resources/landlord-compliance-checklist', '0.7', 'pages/resources/landlord-compliance-checklist.php'],
         ['/pages/resources/emergency-lighting-testing', '0.7', 'pages/resources/emergency-lighting-testing.php'],
+        ['/pages/emergency-lighting-jobs', '0.8', 'pages/emergency-lighting-jobs.php'],
         ['/pages/resources/cctv-for-business', '0.7', 'pages/resources/cctv-for-business.php'],
         ['/pages/resources/access-control-guide', '0.7', 'pages/resources/access-control-guide.php'],
         ['/pages/services/aov-air-handling', '0.96', 'pages/services/aov-air-handling.php'],

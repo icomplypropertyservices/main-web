@@ -470,6 +470,9 @@ function getMajorKeywords(): array {
         }
         $normalized[$slug] = $row;
     }
+    if (function_exists('emergencyLightingJobsApplyOverlay')) {
+        $normalized = emergencyLightingJobsApplyOverlay($normalized);
+    }
     return $normalized;
 }
 
@@ -930,6 +933,11 @@ if (is_file($waFile)) {
 $mfrBoardFile = __DIR__ . '/includes/mfr-showcase.php';
 if (is_file($mfrBoardFile)) {
     require_once $mfrBoardFile;
+}
+
+$elJobTypesFile = __DIR__ . '/includes/emergency-lighting-job-types.php';
+if (is_file($elJobTypesFile)) {
+    require_once $elJobTypesFile;
 }
 
 // Back-compat globals used by some templates/includes
