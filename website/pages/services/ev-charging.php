@@ -44,7 +44,7 @@ $crumbs = [
 
 <section class="max-w-5xl mx-auto px-6 py-14">
     <h2 class="text-3xl font-extrabold tracking-tight">What our EV Charging service includes</h2>
-    <p class="mt-4 text-zinc-700 leading-relaxed text-lg"><?= htmlspecialchars(service_blurb($serviceSlug)) ?> Icomply Property Services is based in Offerton, Stockport (SK2) and delivers UK-standard workmanship with documentation you can pass to insurers and freeholders.</p>
+    <p class="mt-4 text-zinc-700 leading-relaxed text-lg"><?= htmlspecialchars(service_blurb($serviceSlug)) ?> iComply Property Services is based in Offerton, Stockport (SK2) and delivers UK-standard workmanship with documentation you can pass to insurers and freeholders.</p>
     <p class="mt-3 text-zinc-700 leading-relaxed">From Manchester and Stockport to Liverpool, Preston, Blackpool, Chester and Warrington, we schedule EV Charging around access windows that work for landlords and FM teams. Standards we align to include <?= htmlspecialchars(implode(', ', service_standards($serviceSlug))) ?>.</p>
     <p class="mt-3 text-zinc-700 leading-relaxed"><?= htmlspecialchars(service_local_angle($serviceSlug, $serviceName, 'Manchester')) ?> Similar patterns appear across the wider North West portfolio we support.</p>
 
@@ -66,7 +66,7 @@ $crumbs = [
     <div class="mt-14 rounded-3xl overflow-hidden border grid md:grid-cols-2 bg-white">
         <img src="assets/images/services/ev-charging.png" alt="EV Charging UK compliance package" class="w-full h-64 md:h-full object-contain bg-zinc-50 p-8" loading="lazy" width="600" height="400">
         <div class="p-8 md:p-10 flex flex-col justify-center">
-            <h2 class="text-2xl font-extrabold">Why North West clients choose Icomply</h2>
+            <h2 class="text-2xl font-extrabold">Why North West clients choose iComply</h2>
             <ul class="mt-4 space-y-2 text-sm text-zinc-700">
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Stockport-based team covering Greater Manchester &amp; the North West</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Clear scope and fixed-price quotes where possible</li>

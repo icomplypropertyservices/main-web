@@ -7,7 +7,7 @@ require_once __DIR__ . '/../config.php';
 
 $base = rtrim(SITE_URL, '/');
 $paths = [
-    '/' => ['min' => 2000, 'needles' => ['Icomply']],
+    '/' => ['min' => 2000, 'needles' => ['iComply']],
     '/contact.php' => ['min' => 1000, 'needles' => ['csrf', 'gclid', '@']],
     '/pages/services/index.php' => ['min' => 2000, 'needles' => ['Services']],
     '/pages/services/fire-alarms.php' => ['min' => 2000, 'needles' => ['Fire']],
@@ -25,7 +25,7 @@ $paths = [
 $fail = 0;
 $pass = 0;
 
-echo "Icomply HTTP CHECK  base={$base}\n";
+echo "iComply HTTP CHECK  base={$base}\n";
 echo str_repeat('=', 50) . "\n";
 
 foreach ($paths as $path => $spec) {
@@ -34,7 +34,7 @@ foreach ($paths as $path => $spec) {
         'http' => [
             'timeout' => 25,
             'ignore_errors' => true,
-            'header' => "User-Agent: IcomplyHttpCheck/1.0\r\n",
+            'header' => "User-Agent: iComplyHttpCheck/1.0\r\n",
         ],
     ]);
     $body = @file_get_contents($url, false, $ctx);
