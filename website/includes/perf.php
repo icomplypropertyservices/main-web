@@ -90,7 +90,7 @@ function icomplyPerfRewriteImg(string $tag, bool &$gaveHigh, array &$seen): stri
     foreach ($matches as $one) {
         $name = strtolower($one[1]);
         $raw = $one[2] !== '' ? $one[2] : ($one[3] !== '' ? $one[3] : ($one[4] ?? ''));
-        $attrs[$name] = html_entity_decode($raw, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        $attrs[$name] = html_entity_decode((string)$raw, ENT_QUOTES | ENT_HTML5, 'UTF-8');
     }
     if (!isset($attrs['src']) || $attrs['src'] === '') {
         return $tag;

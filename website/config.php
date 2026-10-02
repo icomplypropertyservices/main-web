@@ -573,6 +573,21 @@ function getMajorKeywords(): array {
     if (function_exists('emergencyLightingJobsApplyOverlay')) {
         $normalized = emergencyLightingJobsApplyOverlay($normalized);
     }
+    if (function_exists('asbestosJobsApply')) {
+        $normalized = asbestosJobsApply($normalized);
+    }
+    if (function_exists('nurseCallPriorityKeywordOverlay')) {
+        foreach (nurseCallPriorityKeywordOverlay() as $slug => $meta) {
+            if (!is_array($meta)) {
+                continue;
+            }
+            $slug = keywordSlug((string)$slug);
+            if ($slug === '' || isset($normalized[$slug])) {
+                continue;
+            }
+            $normalized[$slug] = $meta;
+        }
+    }
     return $normalized;
 }
 
@@ -1195,6 +1210,11 @@ if (is_file($fireAlarmsLaneFile)) {
 $asbestosJobsFile = __DIR__ . '/includes/asbestos-jobs.php';
 if (is_file($asbestosJobsFile)) {
     require_once $asbestosJobsFile;
+}
+
+$nurseCallPriorityFile = __DIR__ . '/includes/nurse-call-priority.php';
+if (is_file($nurseCallPriorityFile)) {
+    require_once $nurseCallPriorityFile;
 }
 
 $barrierFile = __DIR__ . '/includes/barriers.php';

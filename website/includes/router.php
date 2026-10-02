@@ -160,6 +160,24 @@ function routerDispatchVirtual(string $path): bool {
         renderServiceHubPage($m[1]);
         return true;
     }
+    // Access control nationwide hub + city pages.
+    if ($path === '/pages/access-control-systems') {
+        require_once SITE_ROOT . '/includes/access-control-nationwide.php';
+        acnRenderHub();
+        return true;
+    }
+    if (preg_match('#^/pages/access-control-systems/([a-z0-9\-]+)$#', $path, $m)) {
+        require_once SITE_ROOT . '/includes/access-control-nationwide.php';
+        $city = acnCity($m[1]);
+        if ($city === null) {
+            http_response_code(404);
+            echo 'Access control city not found';
+            return true;
+        }
+        acnRenderCity($city);
+        return true;
+    }
+
     // /pages/barriers/{town} — census places only. Unknown slugs 404.
     if (preg_match('#^/pages/barriers/([a-z0-9\-]+)$#', $path, $m)) {
         require_once SITE_ROOT . '/includes/barriers.php';

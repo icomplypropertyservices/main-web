@@ -13,6 +13,9 @@ require_once SITE_ROOT . '/includes/wave1.php';
 
 $slug = $WAVE1_HUB ?? '';
 $hub = $slug !== '' ? wave1Hub($slug) : null;
+if (!$hub && $slug !== '' && function_exists('nurseCallPriorityHubs')) {
+    $hub = nurseCallPriorityHubs()[$slug] ?? null;
+}
 if (!$hub) {
     http_response_code(404);
     require SITE_ROOT . '/404.php';

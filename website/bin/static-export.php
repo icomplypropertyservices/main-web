@@ -438,11 +438,13 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
 
     // Jack: every service has every area landing (not only --full).
     // AOV and barriers use their own town lists, not the North West matrix.
+    // Match router allowlists so export does not queue soft-404 boroughs.
     foreach (array_keys(getServices()) as $sSlug) {
         if ($sSlug === 'barriers' || $sSlug === 'aov-air-handling') {
             continue;
         }
-        foreach (getAreas() as $area) {
+        $areasFor = function_exists('getAreasForService') ? getAreasForService($sSlug) : getAreas();
+        foreach ($areasFor as $area) {
             $routes[] = '/pages/' . $sSlug . '/' . areaSlug((string)$area);
         }
     }
@@ -474,7 +476,10 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
     // FRA only: every UK mainland town, including places outside the North West list.
     if (function_exists('getMainlandAreaRecords')) {
         foreach (getMainlandAreaRecords() as $row) {
-            $routes[] = '/pages/fire-risk-assessments/' . $row['slug'];
+            $slug = (string)($row['slug'] ?? '');
+            if ($slug !== '') {
+                $routes[] = '/pages/fire-risk-assessments/' . $slug;
+            }
         }
     }
 

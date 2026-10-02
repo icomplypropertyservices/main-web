@@ -6,6 +6,29 @@
  */
 declare(strict_types=1);
 
+function barrierCameHeroImage(): string
+{
+    $map = barrierCameImageMap();
+    $url = (string)($map['bar-5m-std'] ?? $map['bar-5m-allin'] ?? '');
+    if ($url !== '') {
+        return $url;
+    }
+    return 'https://cdn.shopify.com/s/files/1/1073/5550/4972/files/came-gard-gt4.jpg?v=1788884803';
+}
+
+/** @return array<string,string> */
+function barrierCameImageMap(): array
+{
+    static $map = null;
+    if ($map !== null) {
+        return $map;
+    }
+    $file = SITE_ROOT . '/data/bar-5m-came-gard-images.json';
+    $decoded = is_file($file) ? json_decode((string)file_get_contents($file), true) : [];
+    $map = is_array($decoded) ? $decoded : [];
+    return $map;
+}
+
 function barriersPlaces(): array
 {
     static $rows = null;
