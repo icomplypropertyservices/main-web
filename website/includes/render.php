@@ -114,6 +114,11 @@ function renderKeywordPage(string $slug): void {
     $meta = $keywords[$slug];
     $services = getServices();
     $serviceSlug = $meta['service'] ?? 'electrical';
+    if ($serviceSlug === 'barriers') {
+        require_once SITE_ROOT . '/includes/barriers.php';
+        renderBarriersKeywordPage($slug, $meta);
+        return;
+    }
     $relatedSlug = keywordSlug($meta['related'] ?? $slug);
     $relatedName = $keywords[$relatedSlug]['name'] ?? keywordDisplayName($relatedSlug);
     $serviceName = $services[$serviceSlug] ?? keywordDisplayName($serviceSlug);
@@ -209,6 +214,12 @@ function renderKeywordAreaPage(string $keywordSlug, string $area): void {
         icomplyRequestExit();
         return;
     }
+    if (($keywords[$keywordSlug]['service'] ?? '') === 'barriers') {
+        http_response_code(404);
+        echo 'Keyword not found';
+        icomplyRequestExit();
+        return;
+    }
     $areas = getAreas();
     // Accept display name or slug for area
     $areaName = $area;
@@ -276,6 +287,11 @@ function renderServiceHubPage(string $serviceSlug): void {
         http_response_code(404);
         echo 'Service not found';
         icomplyRequestExit();
+        return;
+    }
+    if ($serviceSlug === 'barriers') {
+        require_once SITE_ROOT . '/includes/barriers.php';
+        renderBarriersHubPage();
         return;
     }
     $GLOBALS['services'] = $services;

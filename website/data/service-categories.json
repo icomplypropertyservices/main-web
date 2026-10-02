@@ -33,12 +33,13 @@
     },
     "security-care": {
         "label": "Security & Care Systems",
-        "blurb": "CCTV, access, door entry, intercoms, nurse call and intruder alarms.",
+        "blurb": "CCTV, access, door entry, intercoms, vehicle barriers, nurse call and intruder alarms.",
         "services": [
             "cctv",
             "access-control",
             "door-entry",
             "intercoms",
+            "barriers",
             "intruder-alarm",
             "nurse-call"
         ]

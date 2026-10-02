@@ -3,6 +3,7 @@
  * Compact, accurate sitemap — core pages + shop/products + service hubs +
  * areas + manufacturers + keyword hubs + featured electrical/gas keyword×town.
  * Never lists /pages/{service}/{town} (those 404 as sitemap locs).
+ * Exception: /pages/barriers/{town} for official places of 10,000+.
  * Never dumps the full keyword×area matrix (that 500'd live).
  */
 declare(strict_types=1);
@@ -100,15 +101,21 @@ function icomplySitemapEntries(): array
         // Hard reject /pages/{service}/{town} even if a leftover matrix file
         // sits in dist/. Keep only real hub prefixes.
         if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
-            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages'];
+            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'barriers'];
             if (!in_array($m[1], $okPrefix, true)) {
                 return;
             }
         }
-        // Keyword hubs + featured keyword×town are generated at export time.
+        // Keyword hubs and barrier town/brand pages are generated at export time.
         // Do not require a source PHP file for those catalogue locs.
         $isKeywordLoc = (bool)preg_match('#^/pages/keywords(/[a-z0-9\-]+){1,2}$#', $path);
-        if (!$isKeywordLoc && !icomplySitemapUrlHasFile($path)) {
+        $isBarrierLoc = (bool)preg_match('#^/pages/barriers/[a-z0-9\-]+$#', $path);
+        $isBarrierBrandLoc = false;
+        if (preg_match('#^/pages/manufacturers/([a-z0-9\-]+)$#', $path, $brandMatch) && function_exists('getManufacturerBySlug')) {
+            $brandEntry = getManufacturerBySlug($brandMatch[1]);
+            $isBarrierBrandLoc = is_array($brandEntry) && in_array('barriers', $brandEntry['services'] ?? [], true);
+        }
+        if (!$isKeywordLoc && !$isBarrierLoc && !$isBarrierBrandLoc && !icomplySitemapUrlHasFile($path)) {
             return;
         }
         $seen[$path] = true;
@@ -229,6 +236,26 @@ function icomplySitemapEntries(): array
         foreach (array_keys(getMajorKeywords()) as $kw) {
             $slug = keywordSlug($kw);
             $add('/pages/keywords/' . $slug, isset($family[$slug]) ? '0.78' : '0.68');
+        }
+        $barriersInc = SITE_ROOT . '/includes/barriers.php';
+        if (is_file($barriersInc)) {
+            require_once $barriersInc;
+            if (function_exists('barriersPlaces')) {
+                foreach (barriersPlaces() as $place) {
+                    $slug = (string)($place['slug'] ?? '');
+                    if ($slug !== '') {
+                        $add('/pages/barriers/' . $slug, '0.55');
+                    }
+                }
+            }
+        }
+        if (function_exists('getManufacturerCatalog')) {
+            foreach (getManufacturerCatalog() as $mSlug => $mEntry) {
+                if (!in_array('barriers', $mEntry['services'] ?? [], true)) {
+                    continue;
+                }
+                $add('/pages/manufacturers/' . $mSlug, !empty($mEntry['partner']) ? '0.8' : '0.7');
+            }
         }
         if (function_exists('getElectricalGasFeaturedKeywordSlugs') && function_exists('getAreas') && function_exists('areaSlug')) {
             $areasFlip = array_flip(getAreas());

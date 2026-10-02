@@ -1,0 +1,590 @@
+{
+  "came-gard-barrier": {
+    "name": "CAME Gard barrier",
+    "service": "barriers",
+    "related": "came-partner",
+    "intro": "CAME Gard is the rising-arm family we specify first because iComply is a CAME partner. Gard 4 and Gard 8 cover the usual private-car-park lane. The choice between them is boom length, duty cycle and the cabinet footing, not a brochure slogan.",
+    "body": "A Gard survey measures the lane width, the queue space before the boom, and whether the arm can rise without hitting a soffit, a tree or a lighting column. We set the safety devices the CAME manual requires for that model, then commission the logic so a fire signal or a manual release opens the lane if the site risk assessment says it must. This is not a public-highway product. Price is on application after the lane is seen. Other CAME barrier pages on this site cover the low-headroom Gard PT and the partnership itself.",
+    "meta_desc": "CAME Gard rising-arm barriers from a CAME partner. Private lanes, UK towns over 10,000. Price on application. Call 07517806082.",
+    "focus_points": ["CAME partner supply and commissioning", "Gard 4 and Gard 8 lane selection", "Safety devices and manual release", "POA after a lane survey"],
+    "faq": [
+      ["Are you a CAME partner?", "Yes. iComply Property Services is a CAME partner. That is the barrier partnership we state. Other brands on the hub are equipment we can service or replace."],
+      ["Do you publish a Gard price?", "No. The quote is on application after width, duty and safety devices are known."]
+    ],
+    "seo_keywords": "CAME Gard barrier, CAME partner, Gard 4, Gard 8, rising arm barrier"
+  },
+  "came-partner": {
+    "name": "CAME partner barriers",
+    "service": "barriers",
+    "related": "came-gard-barrier",
+    "intro": "iComply is a CAME partner for vehicle barriers. The partnership is how we specify Gard rising arms, spares and commissioning. It is not a claim we make about FAAC, BFT, Nice or any other brand on the hub.",
+    "body": "Partnership work still starts with the lane. We confirm the CAME model, the boom type, the loop or photocell arrangement, and who owns the land. UK mainland towns over 10,000 each have a barrier page on this site. Those pages carry that town's census or NRS profile. They do not pretend a CAME cabinet is already installed there. Call 07517806082 or use the quote form. Fees are on application.",
+    "meta_desc": "iComply is a CAME partner for vehicle barriers across UK towns over 10,000. Gard range. Price on application.",
+    "focus_points": ["CAME partnership, stated plainly", "Gard range specification", "No partnership claim for other brands", "Town pages are census profiles, not fake installs"],
+    "faq": [
+      ["Which CAME products does the partnership cover?", "Rising-arm barriers in the Gard family, including low-headroom articulated options where the survey shows they fit."],
+      ["Does partnership mean you only fit CAME?", "No. We are a CAME partner and we also service other barrier manufacturers listed on the hub when that is the equipment already on site."]
+    ],
+    "seo_keywords": "CAME partner, CAME barrier installer, iComply CAME"
+  },
+  "came-gard-pt": {
+    "name": "CAME Gard PT low headroom",
+    "service": "barriers",
+    "related": "came-gard-barrier",
+    "intro": "CAME Gard PT uses an articulated boom where a straight arm would hit a car-park soffit or a canopy. It is a headroom solution, not a shorter version of every Gard job.",
+    "body": "We only move to an articulated boom after measuring the clear height through the full swing, including lights, signs and pipes. The folding joint needs its own safety check so it cannot close on a vehicle roof. Cabinet position still has to leave the pedestrian route outside the boom's sweep. If the soffit is high enough for a straight Gard arm, we do not sell the articulated version for novelty. Price on application.",
+    "meta_desc": "CAME Gard PT articulated booms for low-headroom private car parks. CAME partner. Survey before specification.",
+    "focus_points": ["Articulated boom for low soffits", "Full swing clearance, not just the lane centre", "Pedestrian route kept outside the sweep", "Straight arm kept where headroom allows"],
+    "faq": [
+      ["When is Gard PT the wrong choice?", "When a straight arm clears the structure. Articulation adds a joint to maintain."],
+      ["Can it go on a public road?", "No. Private land only."]
+    ],
+    "seo_keywords": "CAME Gard PT, articulated barrier boom, low headroom barrier"
+  },
+  "faac-barrier": {
+    "name": "FAAC barrier",
+    "service": "barriers",
+    "related": "barrier-servicing",
+    "intro": "FAAC barriers we meet in the UK are usually the 615, the 620 or the B680H hybrid. We service and replace them. We are not a FAAC partner. The partnership on this site is CAME.",
+    "body": "A FAAC takeover starts with the model plate, the boom length and whether the existing loop still changes state when a vehicle stands on it. Hybrid B680H cabinets are a different spare-parts path from the older 620. We do not quote a like-for-like swap until those parts are identified. If the lane geometry suits a CAME Gard better than another FAAC cabinet, we say that and price both options on application.",
+    "meta_desc": "FAAC 615, 620 and B680H barrier service and replacement. Not a FAAC partnership. CAME is the stated partner.",
+    "focus_points": ["615, 620 and B680H identified separately", "Loop test before a replacement quote", "CAME alternative priced when it fits", "POA, no catalogue fee"],
+    "faq": [
+      ["Are you a FAAC partner?", "No. iComply is a CAME partner. FAAC is equipment we service or replace."],
+      ["Can you get FAAC booms?", "Yes when the model is identified. Lead time is confirmed on the quote, not guessed here."]
+    ],
+    "seo_keywords": "FAAC barrier, FAAC 620, FAAC B680H, FAAC 615"
+  },
+  "bft-moovi-barrier": {
+    "name": "BFT Moovi barrier",
+    "service": "barriers",
+    "related": "barrier-servicing",
+    "intro": "BFT Moovi barriers show up as Moovi 30, 50 or 60, the number tracking boom length more than a marketing grade. We repair and replace them without calling ourselves a BFT partner.",
+    "body": "Moovi spring and boom balance is the usual wear point, especially where the arm is long and the wind exposure is open. We check the encoder or limit settings against the actual horizontal stop, not against a factory photo. Control inputs from an access-control reader can stay if they are clean volt-free contacts. Price on application after the model and the lane are known.",
+    "meta_desc": "BFT Moovi 30, 50 and 60 barrier repair and replacement. Service, not a BFT partnership.",
+    "focus_points": ["Moovi 30/50/60 matched to boom length", "Spring balance and limits", "Reader inputs kept when they are clean", "POA"],
+    "faq": [
+      ["Is BFT part of the CAME partnership?", "No. CAME is the partner. BFT is serviced on its own merits."],
+      ["Do you replace just the boom?", "Often yes, if the cabinet and spring are sound. We confirm that on site."]
+    ],
+    "seo_keywords": "BFT Moovi barrier, Moovi 30, BFT barrier repair"
+  },
+  "nice-wide-barrier": {
+    "name": "Nice Wide barrier",
+    "service": "barriers",
+    "related": "barrier-servicing",
+    "intro": "Nice Wide M and Wide L are the rising arms we most often inherit on Nice sites. M-Bar and Signo appear as well. We are not a Nice partner.",
+    "body": "Nice cabinets of that era need the correct boom profile. A generic aluminium arm is not always a safe substitute. We identify the control board before promising a reader interface, because some boards want a pulse and some want a held contact. If spares are obsolete we will say so and offer a CAME Gard replacement as the partner option, priced on application against a repair.",
+    "meta_desc": "Nice Wide, M-Bar and Signo barrier service. Repair or CAME replacement on application.",
+    "focus_points": ["Wide M and Wide L identified", "Board type before any reader link", "Obsolete spares called out honestly", "CAME Gard as the partner alternative"],
+    "faq": [
+      ["Will you only replace Nice with CAME?", "No. If Nice parts are available and the cabinet is sound, repair is on the table."],
+      ["Are you a Nice dealer?", "No. The stated partnership is CAME."]
+    ],
+    "seo_keywords": "Nice Wide barrier, Nice M-Bar, Nice Signo barrier"
+  },
+  "magnetic-autocontrol-barrier": {
+    "name": "Magnetic Autocontrol barrier",
+    "service": "barriers",
+    "related": "hgv-barrier",
+    "intro": "Magnetic Autocontrol barriers, including Access and Parking lines, are built for higher duty than a light office boom. We service them. We do not claim a Magnetic partnership.",
+    "body": "These lanes are often wider and the arm is heavier. A like-for-like boom, the correct spring pack and a loop that sees an HGV rather than only a car are the survey points. Toll-style logic, if present, is left with the parking contractor unless we are asked to interface a simple open command. Price on application.",
+    "meta_desc": "Magnetic Autocontrol Access and Parking barrier service. High-duty lanes. Price on application.",
+    "focus_points": ["Access and Parking ranges distinguished", "HGV loop geometry", "Heavy-arm spring packs", "No Magnetic partnership claim"],
+    "faq": [
+      ["Is Magnetic the same as FAAC?", "Magnetic Autocontrol is part of the wider FAAC group, but the hardware and spares are not interchangeable with a FAAC 620. We identify the badge on the cabinet."],
+      ["Can this run a car-park payment system?", "Only if that system already provides a clean open command. We do not invent a payment specification."]
+    ],
+    "seo_keywords": "Magnetic Autocontrol barrier, Magnetic Access barrier, Parking barrier"
+  },
+  "automatic-systems-barrier": {
+    "name": "Automatic Systems barrier",
+    "service": "barriers",
+    "related": "barrier-servicing",
+    "intro": "Automatic Systems BL barriers are a distinct Belgian range, often on managed car parks. We service the barrier. The ticketing head, if there is one, may belong to another contractor.",
+    "body": "We separate the boom mechanism from the payment terminal. A dead barrier and a dead pay station are different faults. Our scope is the arm, the safety devices and the open/close command. We will not absorb a proprietary parking contract into a barrier call-out. CAME remains our stated partnership if a full replacement is the better route. Price on application.",
+    "meta_desc": "Automatic Systems BL barrier repair, separate from pay-station contracts. Price on application.",
+    "focus_points": ["BL mechanism, not the pay station", "Open command identified", "Replacement route can be CAME", "POA"],
+    "faq": [
+      ["Do you take over the parking revenue system?", "No. We work on the barrier and its safety devices."],
+      ["Are you an Automatic Systems partner?", "No. CAME is the partner named on this site."]
+    ],
+    "seo_keywords": "Automatic Systems barrier, BL229 barrier, car park barrier repair"
+  },
+  "beninca-eva-barrier": {
+    "name": "Beninca EVA barrier",
+    "service": "barriers",
+    "related": "barrier-boom-replacement",
+    "intro": "Beninca EVA barriers, including EVA.5 and EVA.7, are Italian rising arms we service when they are already on a private lane. We are not a Beninca partner.",
+    "body": "EVA work is usually a boom, a spring or a control-board fault rather than a full car-park redesign. We read the dip switches or the programmer against the manual for that board before changing a reader's behaviour. If the cabinet is water-damaged we say replacement, and we can price a CAME Gard as the partner alternative. No published fee.",
+    "meta_desc": "Beninca EVA.5 and EVA.7 barrier repair. CAME alternative where replacement is cleaner. POA.",
+    "focus_points": ["EVA.5 and EVA.7 distinguished", "Board settings read before changes", "Water damage called as replacement", "POA"],
+    "faq": [
+      ["Can you programme a Beninca board?", "Yes when we have the manual for that board revision. We do not guess dip switches."],
+      ["Is Beninca covered by the CAME partnership?", "No."]
+    ],
+    "seo_keywords": "Beninca EVA barrier, EVA.5, Beninca barrier repair"
+  },
+  "roger-technology-barrier": {
+    "name": "Roger Technology barrier",
+    "service": "barriers",
+    "related": "barrier-servicing",
+    "intro": "Roger Technology Bionik barriers use a brushless motor and a digital controller. That is a different service job from a single-phase electromechanical arm.",
+    "body": "We connect with the Roger programmer rather than forcing a generic remote to learn a code. Encoder faults and boom-balance errors show up as specific alarms. Spares have to match the BI series on the label. Where the controller is dead and the lane suits a simpler Gard cabinet, we price that CAME option beside a Roger repair. Partnership status remains CAME only. Price on application.",
+    "meta_desc": "Roger Technology Bionik brushless barrier service and repair. Price on application.",
+    "focus_points": ["Brushless Bionik, not a generic motor", "Programmer rather than guesswork", "CAME alternative priced alongside repair", "POA"],
+    "faq": [
+      ["Do brushless barriers need less service?", "The motor may wear differently. Springs, booms and safety edges still need inspection."],
+      ["Are you a Roger partner?", "No."]
+    ],
+    "seo_keywords": "Roger Technology barrier, Bionik barrier, brushless barrier"
+  },
+  "dea-barrier": {
+    "name": "DEA barrier",
+    "service": "barriers",
+    "related": "barrier-servicing",
+    "intro": "DEA STOP and PASS barriers appear on smaller private lanes. We repair them when parts are realistic and replace them when they are not.",
+    "body": "DEA boards of different generations do not share a single programming lead. We identify the board before ordering. A bent boom on a short lane is often a repair. A rusted cabinet in a salt environment is often a replacement. The CAME Gard is the partner product we compare against, not a hidden default. Price on application.",
+    "meta_desc": "DEA STOP and PASS barrier repair or replacement. Price on application.",
+    "focus_points": ["STOP and PASS identified", "Board generation before parts", "Repair versus replacement called honestly", "POA"],
+    "faq": [
+      ["Are DEA and CAME the same company?", "No."],
+      ["Will you attend a single small lane?", "Yes if it is private land and the journey is agreed. Remote UK towns are planned visits."]
+    ],
+    "seo_keywords": "DEA barrier, DEA STOP barrier, DEA PASS"
+  },
+  "gibidi-pass-barrier": {
+    "name": "Gibidi PASS barrier",
+    "service": "barriers",
+    "related": "barrier-boom-replacement",
+    "intro": "Gibidi PASS barriers are a less common UK badge. We still service them when the model can be identified, rather than refusing the lane because it is not CAME.",
+    "body": "The first visit confirms the PASS model, the boom section and whether the limit system is a mechanical stop or an encoder. If the maker's spares lead time is long, we tell you before stripping the lane. A CAME replacement is offered as the partner route with its own price, on application, so you can choose repair delay against a new cabinet.",
+    "meta_desc": "Gibidi PASS barrier identification, repair and CAME replacement option. POA.",
+    "focus_points": ["Model identified before parts", "Lead times stated before strip-down", "CAME replacement as a priced option", "POA"],
+    "faq": [
+      ["Do you stock every Gibidi boom?", "No. We identify the section and order it. We do not pretend it is on the van."],
+      ["Is Gibidi part of CAME?", "No."]
+    ],
+    "seo_keywords": "Gibidi PASS barrier, Gibidi barrier repair"
+  },
+  "cardin-barrier": {
+    "name": "Cardin barrier",
+    "service": "barriers",
+    "related": "barrier-servicing",
+    "intro": "Cardin barriers are 24-volt Italian arms we see on smaller private car parks. Service is board, boom and radio, not a partnership.",
+    "body": "Cardin radio receivers are often the failed part when handsets stop working while the loop still opens the lane. We separate radio faults from motor faults before replacing a cabinet. Where the 24-volt board is obsolete, a CAME Gard is the partner replacement we can specify properly. Price on application.",
+    "meta_desc": "Cardin 24V barrier repair, radio faults and replacement. Price on application.",
+    "focus_points": ["Radio faults separated from motor faults", "24V board generation checked", "CAME replacement when obsolete", "POA"],
+    "faq": [
+      ["Can new fobs be added?", "Only if the receiver still learns them. A dead receiver is a parts job, not a code we invent."],
+      ["Are you a Cardin partner?", "No. CAME is the partner."]
+    ],
+    "seo_keywords": "Cardin barrier, Cardin 24V barrier repair"
+  },
+  "tau-barrier": {
+    "name": "Tau barrier",
+    "service": "barriers",
+    "related": "barrier-servicing",
+    "intro": "Tau RBLO-style barriers turn up on private European-spec lanes in the UK. We service the arm that is there.",
+    "body": "Tau documentation has to match the board sticker. We do not apply a CAME programming sequence to a Tau controller. If the gearbox is stripped, replacement is usually cheaper than a rebuild, and we price a CAME Gard beside any Tau repair so the comparison is visible. No catalogue price.",
+    "meta_desc": "Tau barrier service and replacement comparison with CAME Gard. Price on application.",
+    "focus_points": ["Board sticker matched to the manual", "No cross-brand programming", "Repair versus CAME replacement shown together", "POA"],
+    "faq": [
+      ["Can Tau and CAME booms be mixed?", "Not as a casual swap. The section and the balance have to suit the cabinet."],
+      ["Do you cover Tau under the CAME partnership?", "No."]
+    ],
+    "seo_keywords": "Tau barrier, Tau RBLO, Tau barrier repair"
+  },
+  "king-gates-barrier": {
+    "name": "King Gates barrier",
+    "service": "barriers",
+    "related": "powered-gate-versus-barrier",
+    "intro": "King Gates is better known for gate motors, and some sites use their barrier models on short private lanes. We treat a barrier and a swinging gate as different safety jobs.",
+    "body": "A swinging gate is assessed against BS EN 12453 force and safety-edge practice. A rising arm is assessed against the manufacturer's barrier instructions and the site risk assessment. We do not quote one test sheet for the other. King Gates partnership is not claimed. CAME is the barrier partner if a rising arm is the right machine. Price on application.",
+    "meta_desc": "King Gates barrier and gate motors. Gates to BS EN 12453. Barriers specified separately. POA.",
+    "focus_points": ["Gate and barrier safety kept apart", "EN 12453 for powered gates", "CAME for a true rising arm", "POA"],
+    "faq": [
+      ["Is a barrier a gate under EN 12453?", "Powered gates are. A rising-arm barrier follows the barrier manufacturer's instructions and a site risk assessment. We do not blur the two."],
+      ["Are you a King Gates partner?", "No."]
+    ],
+    "seo_keywords": "King Gates barrier, King Gates gate motor, EN 12453"
+  },
+  "hormann-barrier": {
+    "name": "Hörmann barrier",
+    "service": "barriers",
+    "related": "barrier-servicing",
+    "intro": "Hörmann industrial barriers, including SH ranges, are a German industrial product. We service the barrier. We do not claim a Hörmann partnership, and we do not treat a Hörmann loading door as the same machine.",
+    "body": "The survey separates the car-park or yard boom from any dock leveller or sectional door on the same building. Different duty, different safety devices, different spare. If the SH cabinet is obsolete we price a CAME industrial-length Gard where the lane geometry allows, on application, and we say when the lane is too wide for that swap.",
+    "meta_desc": "Hörmann SH barrier service, distinct from Hörmann dock doors. Price on application.",
+    "focus_points": ["SH barrier, not the loading door", "Lane width checked before any swap", "CAME alternative only when it fits", "POA"],
+    "faq": [
+      ["Do you service Hörmann doors as well?", "Door repairs are a different scope. This page is the barrier."],
+      ["Are you a Hörmann partner?", "No. CAME is the barrier partner."]
+    ],
+    "seo_keywords": "Hormann barrier, Hörmann SH barrier, industrial barrier"
+  },
+  "elka-barrier": {
+    "name": "ELKA barrier",
+    "service": "barriers",
+    "related": "hgv-barrier",
+    "intro": "ELKA ES barriers are sized by boom length, from shorter ES models up to long ES 80 arms for wide lanes. The length is the specification, not a trim level.",
+    "body": "A long ELKA arm needs a footing and a spring that match that length, plus a loop that holds the boom open for the whole vehicle. We do not fit a short-lane spring to a long arm. Replacement with a CAME Gard is only offered when the lane length is inside what Gard can do honestly. Price on application.",
+    "meta_desc": "ELKA ES barrier service by boom length, including long-lane ES models. POA.",
+    "focus_points": ["Boom length drives the model", "Spring matched to that length", "Long lanes not forced onto a short Gard", "POA"],
+    "faq": [
+      ["Can ELKA run an HGV lane?", "The longer ES models can, if the loop and the footing are right. We measure rather than assume."],
+      ["Are you an ELKA partner?", "No."]
+    ],
+    "seo_keywords": "ELKA barrier, ELKA ES 50, ELKA ES 80"
+  },
+  "ditec-qik-barrier": {
+    "name": "Ditec Qik barrier",
+    "service": "barriers",
+    "related": "barrier-servicing",
+    "intro": "Ditec Qik barriers sit in the ASSA ABLOY automation family. We service the Qik barrier. That is not an ASSA ABLOY door partnership and it is not the CAME partnership.",
+    "body": "Qik boards and booms are ordered against the Ditec label, not against a generic ASSA lock code. If the site also has ASSA doors, those stay a separate access-control scope. A failed Qik can be repaired or replaced with a CAME Gard when we are asked to standardise on the partner range. Both prices are on application.",
+    "meta_desc": "Ditec Qik barrier repair and CAME replacement option. Price on application.",
+    "focus_points": ["Qik barrier kept separate from door hardware", "Parts matched to the Ditec label", "CAME standardisation only when asked", "POA"],
+    "faq": [
+      ["Is Ditec the same as CAME?", "No."],
+      ["Do you maintain the door readers as well?", "Only if that is a separate access-control instruction. It is not included by default."]
+    ],
+    "seo_keywords": "Ditec Qik barrier, Ditec barrier repair"
+  },
+  "fadini-bayt-barrier": {
+    "name": "Fadini Bayt barrier",
+    "service": "barriers",
+    "related": "barrier-boom-replacement",
+    "intro": "Fadini Bayt 980 barriers are an older Italian arm still in service on some private lanes. Parts availability decides repair versus replacement.",
+    "body": "We check the Bayt model and the boom socket before promising a new arm. If the socket is obsolete, forcing a non-matching boom is unsafe. The alternative we can support properly is a CAME Gard, because that is the partnership. We put both routes in writing. No fee is published on this page.",
+    "meta_desc": "Fadini Bayt 980 barrier repair where parts exist, or CAME replacement. POA.",
+    "focus_points": ["Bayt 980 identified", "Non-matching booms refused", "CAME Gard as the supportable replacement", "POA"],
+    "faq": [
+      ["Are Fadini parts still made?", "Some are. We confirm the specific part rather than guess from the brand name."],
+      ["Are you a Fadini partner?", "No."]
+    ],
+    "seo_keywords": "Fadini Bayt barrier, Bayt 980, Fadini barrier"
+  },
+  "centurion-sector-barrier": {
+    "name": "Centurion SECTOR barrier",
+    "service": "barriers",
+    "related": "barrier-servicing",
+    "intro": "Centurion SECTOR barriers are a South African design that appears on some UK commercial lanes. Battery-backed 12-volt logic is the point to understand before anyone quotes a mains-only replacement.",
+    "body": "SECTOR cabinets often rely on a battery and a low-voltage motor. A flat battery can look like a dead motor. We test that before condemning the gearbox. Spares are not as local as CAME Gard parts, so lead time is part of the quote. If you want one UK-supported range, we price a CAME replacement on application and explain what the battery backup was doing.",
+    "meta_desc": "Centurion SECTOR barrier battery and motor diagnosis. CAME alternative on application.",
+    "focus_points": ["Battery faults separated from motor faults", "12V logic understood", "Lead time stated", "CAME alternative priced"],
+    "faq": [
+      ["Does SECTOR need a mains supply?", "It still needs charging current. The motor behaviour is battery-backed. We test both."],
+      ["Are you a Centurion partner?", "No."]
+    ],
+    "seo_keywords": "Centurion SECTOR barrier, Centurion barrier UK"
+  },
+  "genius-rainbow-barrier": {
+    "name": "Genius Rainbow barrier",
+    "service": "barriers",
+    "related": "faac-barrier",
+    "intro": "Genius Rainbow barriers sit in the FAAC group, but the Rainbow cabinet is not a FAAC 620. Spares and programming stay with the Genius label on the board.",
+    "body": "We open the cabinet and read the board before ordering. Group ownership does not make the boom or the receiver interchangeable. Where Genius support for that revision has ended, we price a CAME Gard replacement as the partner product. Repair remains available when the part is real. Price on application.",
+    "meta_desc": "Genius Rainbow barrier service. Not interchangeable with FAAC 620. CAME replacement when parts end. POA.",
+    "focus_points": ["Rainbow distinguished from FAAC 620", "Board read before parts", "End-of-support called early", "POA"],
+    "faq": [
+      ["Is Genius a FAAC product?", "Genius is in the FAAC group. The barrier in front of us is still serviced as a Genius Rainbow, not as a 620."],
+      ["Are you a Genius partner?", "No. CAME is the partner."]
+    ],
+    "seo_keywords": "Genius Rainbow barrier, Genius barrier repair"
+  },
+  "sea-barrier": {
+    "name": "SEA barrier",
+    "service": "barriers",
+    "related": "barrier-servicing",
+    "intro": "SEA Sprint and Storm barriers are Italian rising arms we service on private sites. The names are not interchangeable. Storm is the heavier duty of the two.",
+    "body": "We record which SEA model is installed before talking about loops or readers. A Sprint on a busy HGV mouth is the wrong machine even if it still moves. Replacement is then a specification change, and CAME Gard or a heavier partner-specified arm is priced against keeping a struggling Sprint. Price on application.",
+    "meta_desc": "SEA Sprint and Storm barrier service. Duty matched to the lane. Price on application.",
+    "focus_points": ["Sprint and Storm not mixed up", "Duty compared with the actual traffic", "CAME when the duty has outgrown the cabinet", "POA"],
+    "faq": [
+      ["Can you speed a Sprint up for a busier lane?", "Not beyond what that model is built for. Busier duty needs a different specification."],
+      ["Are you an SEA partner?", "No."]
+    ],
+    "seo_keywords": "SEA barrier, SEA Sprint, SEA Storm barrier"
+  },
+  "v2-barrier": {
+    "name": "V2 barrier",
+    "service": "barriers",
+    "related": "barrier-servicing",
+    "intro": "V2 ZARISS barriers are a low-volume UK sighting. We identify the V2 board and service it without folding the brand into CAME or FAAC.",
+    "body": "The ZARISS label decides the boom and the controller. If the label is missing we photograph the board and wait for identification rather than guess a part. A CAME Gard replacement is available as a clean partner-specified alternative when identification fails or parts do not. Both are on application.",
+    "meta_desc": "V2 ZARISS barrier identification and service, or CAME replacement. POA.",
+    "focus_points": ["Label and board photographed", "No guessed parts", "CAME Gard when identification fails", "POA"],
+    "faq": [
+      ["Is V2 a common UK barrier?", "No. That is why identification comes before parts."],
+      ["Are you a V2 partner?", "No."]
+    ],
+    "seo_keywords": "V2 barrier, V2 ZARISS, V2 barrier repair"
+  },
+  "aprimatic-barrier": {
+    "name": "Aprimatic barrier",
+    "service": "barriers",
+    "related": "barrier-servicing",
+    "intro": "Aprimatic ZT barriers are an Italian  range we maintain on existing private lanes. We do not claim an Aprimatic dealership.",
+    "body": "ZT models differ by boom length and board. We match both before a visit with parts. Radio handsets on these systems are often the complaint, while the motor is fine. We test the safety inputs before adding another remote. Replacement onto CAME is a separate quoted option. Price on application.",
+    "meta_desc": "Aprimatic ZT barrier repair, handset faults and CAME replacement option. POA.",
+    "focus_points": ["ZT length and board matched", "Handset faults tested properly", "Safety inputs checked first", "POA"],
+    "faq": [
+      ["Can you add handsets on the day?", "Only if the receiver learns and we have a compatible fob. Otherwise it is a parts order."],
+      ["Are you an Aprimatic partner?", "No."]
+    ],
+    "seo_keywords": "Aprimatic barrier, Aprimatic ZT, barrier handset"
+  },
+  "proteco-barrier": {
+    "name": "Proteco barrier",
+    "service": "barriers",
+    "related": "barrier-boom-replacement",
+    "intro": "Proteco Strike barriers are another Italian arm found on smaller UK car parks. Service is practical: boom, spring, board, loop.",
+    "body": "We do not keep a Proteco catalogue price online. The quote follows the model. Where the Strike board is no longer supported, we will not leave you with a one-off repair that cannot be repeated. A CAME Gard replacement is the partner product we can support next time. Price on application for either path.",
+    "meta_desc": "Proteco Strike barrier repair and supported CAME replacement. Price on application.",
+    "focus_points": ["Strike model identified", "Unsupported boards not patched forever", "CAME for the next service cycle", "POA"],
+    "faq": [
+      ["Do you publish Strike prices?", "No."],
+      ["Are you a Proteco partner?", "No. CAME is the partner."]
+    ],
+    "seo_keywords": "Proteco Strike barrier, Proteco barrier repair"
+  },
+  "life-supra-barrier": {
+    "name": "Life Supra barrier",
+    "service": "barriers",
+    "related": "barrier-servicing",
+    "intro": "Life Supra barriers are a specific Italian model, not a generic 'life-safety' product. The name causes mix-ups with fire systems. This page is the vehicle barrier.",
+    "body": "We read the Life label so the job is not booked as an AOV or a fire-alarm call. Supra booms and boards are ordered as Life parts. If you actually needed a fire-alarm engineer, we will redirect you rather than force a barrier visit. CAME partnership applies when the right machine is a new rising arm. Price on application.",
+    "meta_desc": "Life Supra vehicle barrier service. Not a fire-alarm or AOV product. Price on application.",
+    "focus_points": ["Vehicle barrier, not life-safety fire kit", "Life label checked", "Wrong trade redirected", "POA"],
+    "faq": [
+      ["Is this the same as a fire barrier?", "No. Life Supra is a vehicle rising arm. Fire curtains and cavity barriers are different services."],
+      ["Are you a Life partner?", "No."]
+    ],
+    "seo_keywords": "Life Supra barrier, Life barrier, vehicle barrier not fire barrier"
+  },
+  "doorhan-barrier": {
+    "name": "DoorHan barrier",
+    "service": "barriers",
+    "related": "barrier-servicing",
+    "intro": "DoorHan Barrier PRO models appear on some UK yards, often alongside DoorHan doors. We service the barrier as its own machine.",
+    "body": "A DoorHan door spring and a barrier spring are not the same part. We identify Barrier PRO against the door range before ordering. Installation quality on older imports varies, so the footing and the loop are checked rather than trusted. CAME Gard is the partner replacement when you want one supported range. Price on application.",
+    "meta_desc": "DoorHan Barrier PRO service, separate from DoorHan doors. CAME replacement option. POA.",
+    "focus_points": ["Barrier PRO, not the sectional door", "Footing and loop checked", "CAME if you want one range", "POA"],
+    "faq": [
+      ["Can the door engineer do the barrier?", "Only if the visit is scoped for the barrier. The parts are different."],
+      ["Are you a DoorHan partner?", "No."]
+    ],
+    "seo_keywords": "DoorHan barrier, Barrier PRO, DoorHan Barrier"
+  },
+  "liftmaster-barrier": {
+    "name": "LiftMaster barrier",
+    "service": "barriers",
+    "related": "barrier-servicing",
+    "intro": "LiftMaster operators are uncommon on UK rising-arm lanes and more familiar as gate or garage operators. When a true LiftMaster barrier is on site, parts lead times are often longer than CAME.",
+    "body": "We confirm it is a barrier operator and not a LiftMaster gate motor before quoting. US-market part numbers do not always land quickly in the UK. If the lane should simply work next month, a CAME Gard replacement is usually the supportable partner route, priced on application against waiting for LiftMaster parts. We do not invent a UK list price.",
+    "meta_desc": "LiftMaster barrier identification. Parts lead time versus a CAME Gard replacement. POA.",
+    "focus_points": ["Barrier versus gate motor confirmed", "Lead time stated", "CAME when waiting is the wrong plan", "No invented list price"],
+    "faq": [
+      ["Do you fit new LiftMaster barriers as a preference?", "No. New rising arms are specified as CAME, our partner range, unless you instruct otherwise."],
+      ["Are you a LiftMaster partner?", "No."]
+    ],
+    "seo_keywords": "LiftMaster barrier, LiftMaster gate operator UK"
+  },
+  "doorking-vehicle-gate": {
+    "name": "DoorKing vehicle gate",
+    "service": "barriers",
+    "related": "powered-gate-versus-barrier",
+    "intro": "DoorKing is already on this site for door entry and gate control. Vehicle gates are a different safety job from a rising-arm barrier, even when the same company attends.",
+    "body": "We programme DoorKing gate access when that is the system installed, and we apply powered-gate safety practice rather than a barrier checklist. If what you actually need is a rising arm, we specify CAME Gard under the partnership instead of forcing a swing gate. The DoorKing manufacturer page remains the parts and entry reference. Price on application.",
+    "meta_desc": "DoorKing vehicle gate control, distinct from CAME rising-arm barriers. Price on application.",
+    "focus_points": ["DoorKing page linked for entry hardware", "Gates and barriers not mixed", "CAME Gard when a boom is the right machine", "POA"],
+    "faq": [
+      ["Where is the DoorKing product page?", "On the DoorKing manufacturer page, linked from the barriers hub."],
+      ["Are you a DoorKing partner?", "No. We install and service the equipment. The stated barrier partnership is CAME."]
+    ],
+    "seo_keywords": "DoorKing gate, DoorKing barrier, vehicle gate access"
+  },
+  "rising-arm-barrier": {
+    "name": "Rising arm barrier",
+    "service": "barriers",
+    "related": "came-gard-barrier",
+    "intro": "A rising-arm barrier controls one private vehicle lane with a boom that lifts. It is not a swinging gate, a turnstile or a fire curtain.",
+    "body": "We specify the arm length, the opening time, the safety devices and what happens when the power fails. CAME Gard is the range we specify as a CAME partner. The hub lists every other barrier manufacturer we will service. Installation is on private land only. Every UK mainland town over 10,000 people has its own page with that town's official population profile, not a copied paragraph. Call 07517806082. Price on application.",
+    "meta_desc": "Rising-arm vehicle barriers for private lanes. CAME partner. UK towns over 10,000. POA.",
+    "focus_points": ["One lane, one boom", "CAME Gard as the specified new range", "Private land only", "Town pages use official population figures"],
+    "faq": [
+      ["Can you barrier a public road?", "No."],
+      ["How many towns have a page?", "Every England and Wales built-up area of 10,000 or more in the ONS Census 2021 towns data, London boroughs of 10,000 or more, and Scottish localities of 10,000 or more in the NRS mid-2020 estimates. Isle of Wight and Northern Ireland are not in that set."]
+    ],
+    "seo_keywords": "rising arm barrier, vehicle barrier, car park barrier installation"
+  },
+  "barrier-servicing": {
+    "name": "Barrier servicing",
+    "service": "barriers",
+    "related": "barrier-maintenance-contract",
+    "intro": "Barrier servicing is a planned visit to a known cabinet: boom, spring, loops, photocells, manual release and the log of what failed.",
+    "body": "We do not sell a generic 'barrier health check' with a made-up price. The visit length depends on how many lanes and which manufacturer. CAME Gard visits are the partner routine. Other brands on the hub are serviced when we can get the parts. A service visit is not a substitute for a site risk assessment you have never had. Findings are written down. Price on application.",
+    "meta_desc": "Planned vehicle-barrier servicing for CAME and other listed brands. Price on application.",
+    "focus_points": ["Per-lane scope, not a flat slogan", "CAME as the routine partner range", "Other brands when parts exist", "Written findings"],
+    "faq": [
+      ["How often should a barrier be serviced?", "Follow the manufacturer and how hard the lane works. We do not invent a single interval for every site."],
+      ["Do you include the pay machine?", "No, unless a separate instruction says so."]
+    ],
+    "seo_keywords": "barrier servicing, barrier maintenance, car park barrier service"
+  },
+  "barrier-induction-loop": {
+    "name": "Barrier induction loop",
+    "service": "barriers",
+    "related": "rising-arm-barrier",
+    "intro": "An induction loop is a coil in the road surface that tells the barrier a vehicle is there. Cut depth, number of turns and feeder pair decide whether it works.",
+    "body": "We test loop inductance and the detector's tuning rather than replacing a boom because 'the barrier is slow'. A loop that misses a motorcycle or holds on for an HGV is a geometry fault. Resin and slot depth matter on a worn deck. We will not cut a loop into a public highway. Price on application once the slab or the block paving is seen.",
+    "meta_desc": "Barrier induction loop fault-finding and replacement on private lanes. Price on application.",
+    "focus_points": ["Inductance tested, not guessed", "HGV and motorcycle edge cases", "Private surface only", "POA"],
+    "faq": [
+      ["Can a photocell replace a loop?", "Sometimes as a safety device. It is not automatically a replacement for vehicle presence."],
+      ["Do you cut loops in tarmac you do not own?", "No."]
+    ],
+    "seo_keywords": "barrier induction loop, loop detector, car park loop"
+  },
+  "barrier-safety-photocell": {
+    "name": "Barrier safety photocell",
+    "service": "barriers",
+    "related": "barrier-induction-loop",
+    "intro": "Photocells stop a boom closing through a person or a vehicle that is still in the sweep. They are safety devices, not an optional extra we skip to save a visit.",
+    "body": "Alignment, hoods against low sun, and the height relative to a car bonnet are the usual faults. A photocell aimed at a pedestrian desire-line that never crosses the boom is in the wrong place. We record the test: beam broken, boom behaviour, restore. CAME Gard kits are specified with the devices that model requires. Price on application.",
+    "meta_desc": "Barrier photocell alignment, replacement and witness testing. Price on application.",
+    "focus_points": ["Safety device, not a luxury", "Height and sun hoods checked", "Witnessed break test", "POA"],
+    "faq": [
+      ["Can we turn the photocell off because it nuisance-trips?", "Not as a permanent fix. We find the cause. Bypassing a safety device is refused."],
+      ["Does every lane need the same pair?", "No. The manufacturer manual and the lane layout decide."]
+    ],
+    "seo_keywords": "barrier photocell, safety beam barrier, boom safety device"
+  },
+  "barrier-boom-replacement": {
+    "name": "Barrier boom replacement",
+    "service": "barriers",
+    "related": "came-gard-barrier",
+    "intro": "A boom replacement is the arm, the end rest and the balance, not a piece of tube from a builders' merchant.",
+    "body": "We match the section, the length and the LED strip if the old arm had one. A longer arm needs a spring change. An articulated arm is a different part from a straight one. CAME Gard booms are partner-specified. Other manufacturers' booms are ordered against the model plate. We do not fit an unrated arm to keep a lane open. Price on application.",
+    "meta_desc": "Barrier boom replacement matched to the cabinet, including CAME Gard arms. POA.",
+    "focus_points": ["Section and length matched", "Spring rebalanced", "No unrated substitute arms", "POA"],
+    "faq": [
+      ["Can you fit a boom the same day?", "Only if the correct arm is available. We do not improvise one."],
+      ["The arm is only cracked. Do we need a new one?", "Usually yes. A cracked boom is a failed safety component."]
+    ],
+    "seo_keywords": "barrier boom replacement, barrier arm replacement, CAME boom"
+  },
+  "barrier-fail-open": {
+    "name": "Barrier fail-open and manual release",
+    "service": "barriers",
+    "related": "rising-arm-barrier",
+    "intro": "Fail-open means the boom rises or releases when power or a fire signal is lost, if that is what the site risk assessment requires. It is a designed behaviour, not a hope.",
+    "body": "We ask what your fire strategy says about the lane. Some private car parks must release so fire appliances are not trapped. Others must not fly open onto a fast road. We wire the input the assessment asks for and we show the manual release to the people who will use it at 2am. We do not invent a fire-strategy clause. CAME Gard logic is what we commission as partner. Price on application.",
+    "meta_desc": "Barrier fail-open, fire-signal release and manual release, set to the site assessment. POA.",
+    "focus_points": ["Follows the written fire strategy", "Manual release demonstrated", "No invented cause-and-effect", "POA"],
+    "faq": [
+      ["Should every barrier fail open?", "No. It depends on the lane and the fire strategy."],
+      ["Who writes the fire strategy?", "Not this page. We implement the release the responsible person has already specified."]
+    ],
+    "seo_keywords": "barrier fail open, barrier fire release, manual release barrier"
+  },
+  "anpr-barrier-integration": {
+    "name": "ANPR barrier integration",
+    "service": "barriers",
+    "related": "rising-arm-barrier",
+    "intro": "ANPR can open a barrier for an allow-list. The camera, the list and the reason you hold plate data are a separate design from the boom.",
+    "body": "We interface a clean open command from an ANPR or access-control system. We do not invent a retention policy or a GDPR wording for you. If the camera cannot read plates at that angle, we say so before selling a boom. CAME Gard accepts a proper open input. The camera brand is specified on its own merits. Price on application for the combined lane.",
+    "meta_desc": "ANPR open-command integration to a vehicle barrier. Data protection stays your design. POA.",
+    "focus_points": ["Open command, not a bundled surveillance pitch", "Camera angle checked first", "No invented retention policy", "POA"],
+    "faq": [
+      ["Do you supply the ANPR camera?", "We can scope it. It is not automatically included with a CAME barrier."],
+      ["Can ANPR replace a loop?", "No. Presence detection and plate recognition do different jobs."]
+    ],
+    "seo_keywords": "ANPR barrier, number plate barrier, barrier access control"
+  },
+  "hgv-barrier": {
+    "name": "HGV barrier",
+    "service": "barriers",
+    "related": "magnetic-autocontrol-barrier",
+    "intro": "An HGV lane needs a longer boom, a loop that sees the trailer, and timing that does not drop the arm on the drawbar.",
+    "body": "We measure the longest vehicle you actually receive, not a car width. Magnetic Autocontrol and long ELKA arms exist for this duty. A short CAME Gard is the partner product for car lanes. We will not stretch it into an HGV specification it does not meet. Price on application after the vehicle list and the lane width are known.",
+    "meta_desc": "HGV and trailer barrier lanes. Duty matched to the vehicle, not a car boom stretched. POA.",
+    "focus_points": ["Longest vehicle measured", "Loop holds for the trailer", "CAME Gard kept to car-lane duty", "POA"],
+    "faq": [
+      ["Will a car barrier do if lorries are rare?", "Only if those lorries still fit the arm and the loop. Rare does not mean short."],
+      ["Do you barrier the public dock road?", "No. Private yard entrance only."]
+    ],
+    "seo_keywords": "HGV barrier, lorry barrier, trailer loop barrier"
+  },
+  "private-car-park-barrier": {
+    "name": "Private car park barrier",
+    "service": "barriers",
+    "related": "rising-arm-barrier",
+    "intro": "A private car park barrier is installed on land the client controls: an office, a block, a yard, a hospital estate, a campus. Council highways and red routes are out.",
+    "body": "Town pages on this site tell you the census or NRS profile of that town. They do not claim we have a barrier crew living there. The hardware we specify new is CAME, because we are a CAME partner. Existing barriers from the manufacturers on the hub can be serviced. Call 07517806082. The price is on application after the lane survey.",
+    "meta_desc": "Private car park barriers, CAME partner, UK towns over 10,000. Not the public highway. POA.",
+    "focus_points": ["Private land only", "CAME for new arms", "Town pages are population profiles", "POA"],
+    "faq": [
+      ["Do you cover every town over 10,000?", "Yes for the England and Wales built-up areas, London boroughs and Scottish localities in our published list. Isle of Wight and Northern Ireland are outside that list."],
+      ["Is there a call-out fee on this page?", "No figure is published. It is on application."]
+    ],
+    "seo_keywords": "private car park barrier, car park barrier installation UK"
+  },
+  "barrier-maintenance-contract": {
+    "name": "Barrier maintenance contract",
+    "service": "barriers",
+    "related": "barrier-servicing",
+    "intro": "A barrier maintenance contract is a diary of lanes, manufacturers and response, agreed after we know the estate. It is not a price list.",
+    "body": "Multi-site contracts list each cabinet: CAME Gard or whichever other brand is actually there. We do not roll FAAC, BFT and CAME into one anonymous 'barrier' line. Attendance across UK mainland towns is planned from Stockport. Islands and Northern Ireland are outside the town-page set. Price on application once the asset list exists.",
+    "meta_desc": "Multi-site barrier maintenance contracts, listed by manufacturer. Price on application.",
+    "focus_points": ["Asset list before a contract", "Brands kept distinct", "Mainland scheduling from Stockport", "POA"],
+    "faq": [
+      ["Can one contract cover mixed brands?", "Yes, if each lane is listed. We do not pretend the spares are the same."],
+      ["Do you include 24-hour cover by default?", "No. Response is whatever the contract states after the estate is known."]
+    ],
+    "seo_keywords": "barrier maintenance contract, multi site barrier service"
+  },
+  "barrier-price-on-application": {
+    "name": "Barrier cost and quote",
+    "service": "barriers",
+    "related": "private-car-park-barrier",
+    "intro": "Barrier prices are on application. Lane width, boom type, safety devices, ground conditions and travel all change the figure. This page does not print a starting price.",
+    "body": "Send the town, the lane width if you know it, and a photo of any existing cabinet badge. We will say whether the job is a CAME Gard supply, a service of another brand, or a survey before either. Phone 07517806082. There is no online checkout price for an installed barrier.",
+    "meta_desc": "Vehicle barrier quotes are price on application. No published starting fee. CAME partner.",
+    "focus_points": ["No published starting price", "Photo of the badge speeds the quote", "CAME supply versus other-brand service", "Phone 07517806082"],
+    "faq": [
+      ["Why will you not give a from-price?", "Because a short office lane and a long HGV lane are not the same job, and a made-up from-price would be false."],
+      ["Is the survey free?", "We do not advertise a free survey fee or a paid one here. Ask and we will say which applies to that lane."]
+    ],
+    "seo_keywords": "barrier cost, barrier quote, car park barrier price POA"
+  },
+  "powered-gate-versus-barrier": {
+    "name": "Powered gate or barrier",
+    "service": "barriers",
+    "related": "rising-arm-barrier",
+    "intro": "A powered gate swings or slides and is assessed to BS EN 12453. A rising-arm barrier lifts a boom and follows the barrier manufacturer's instructions plus a site risk assessment.",
+    "body": "Mixing the two documents is how lanes get the wrong safety devices. If you need a leaf gate, say so. If you need a boom, we specify CAME Gard as a CAME partner. King Gates and DoorKing pages cover gate-style equipment we already list. We will tell you which machine the opening actually wants. Price on application.",
+    "meta_desc": "Powered gates to BS EN 12453. Rising-arm barriers specified separately. CAME partner for booms.",
+    "focus_points": ["EN 12453 for gates", "Manufacturer instructions for booms", "CAME Gard when a boom is right", "POA"],
+    "faq": [
+      ["Can one risk assessment cover both?", "Only if it treats them as different machines. We do not use a gate force test on a boom."],
+      ["Which do blocks of flats usually need?", "Often a boom on a car-park ramp, and a separate pedestrian gate. We confirm on survey."]
+    ],
+    "seo_keywords": "powered gate BS EN 12453, barrier or gate, CAME barrier"
+  },
+  "vehicle-barrier-survey": {
+    "name": "Vehicle barrier survey",
+    "service": "barriers",
+    "related": "barrier-price-on-application",
+    "intro": "A barrier survey measures the lane and names the owner of the land. It is not a sales visit that assumes a cabinet will be ordered.",
+    "body": "We record width, headroom, gradients, pedestrian routes, existing loops, power location and what the fire strategy already says. New equipment is specified as CAME where a rising arm is right, because we are a CAME partner. If the right answer is 'do not fit a barrier', we write that. UK towns over 10,000 are listed so you can open your town's page and see the official population context before you call 07517806082.",
+    "meta_desc": "Vehicle barrier lane survey. CAME specification when a boom is right. Price on application.",
+    "focus_points": ["Measurements before a model", "Land ownership checked", "A no-barrier answer is allowed", "Town profile linked"],
+    "faq": [
+      ["Do I need drawings?", "Photos and a width help. A drawing is better. We can still survey without one."],
+      ["Will you survey a town you have no page for?", "Pages cover towns over 10,000 in the published set. Smaller places can still be quoted. They do not get a thin doorway page."]
+    ],
+    "seo_keywords": "barrier survey, car park barrier survey, CAME survey"
+  }
+}

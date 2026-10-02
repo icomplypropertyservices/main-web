@@ -436,6 +436,30 @@
   force = true
 
 [[redirects]]
+  from = "/pages/barriers"
+  to = "/pages/services/barriers.php"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/barriers/"
+  to = "/pages/services/barriers.php"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/barriers/:slug"
+  to = "/pages/barriers/:slug.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/barriers/:slug/"
+  to = "/pages/barriers/:slug.php"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/:splat.php"
   status = 200

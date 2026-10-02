@@ -248,8 +248,12 @@ function icomplyCollectKeywordRoutes(string $townMode): array
         }
     }
 
+    $keywordMeta = getMajorKeywords();
     foreach ($keywords as $kw) {
         $slug = keywordSlug($kw);
+        if (($keywordMeta[$slug]['service'] ?? '') === 'barriers') {
+            continue;
+        }
         $fullTowns = $townMode === 'all'
             || isset($familyKw[$slug])
             || ($townMode === 'priority' && isset($priorityKw[$slug]));
@@ -342,9 +346,25 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
     }
 
     // Jack: every service has every area landing (not only --full).
+    // Barriers uses the official 10,000+ town list, not areas.json.
     foreach (array_keys(getServices()) as $sSlug) {
+        if ($sSlug === 'barriers') {
+            continue;
+        }
         foreach (getAreas() as $area) {
             $routes[] = '/pages/' . $sSlug . '/' . areaSlug((string)$area);
+        }
+    }
+    $barriersInc = SITE_ROOT . '/includes/barriers.php';
+    if (is_file($barriersInc)) {
+        require_once $barriersInc;
+        if (function_exists('barriersPlaces')) {
+            foreach (barriersPlaces() as $place) {
+                $slug = (string)($place['slug'] ?? '');
+                if ($slug !== '') {
+                    $routes[] = '/pages/barriers/' . $slug;
+                }
+            }
         }
     }
 
@@ -358,7 +378,14 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
  */
 function icomplyRenderExportRoute(string $path): array
 {
+    if (preg_match('#^/pages/barriers/([a-z0-9\-]+)$#', $path)) {
+        return icomplyRenderRoute($path);
+    }
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        $kwMeta = function_exists('getMajorKeywords') ? (getMajorKeywords()[function_exists('keywordSlug') ? keywordSlug($m[1]) : $m[1]] ?? null) : null;
+        if (is_array($kwMeta) && ($kwMeta['service'] ?? '') === 'barriers') {
+            return icomplyRenderRoute($path);
+        }
         $area = function_exists('areaFromSlug') ? areaFromSlug($m[2]) : $m[2];
         $html = icomplyRenderKeywordTownHtml($m[1], (string)($area ?: $m[2]));
         if ($html !== '' && icomplyLooksLikeHtml($html)) {
@@ -366,6 +393,7 @@ function icomplyRenderExportRoute(string $path): array
         }
     }
     if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)
+        && $m[1] !== 'barriers'
         && function_exists('getServices')
         && isset(getServices()[$m[1]])) {
         $area = function_exists('areaFromSlug') ? areaFromSlug($m[2]) : $m[2];
@@ -656,6 +684,13 @@ function icomplyPrettyUrlRedirects(): string
 # force so /pages/keywords/eicr does not 301 to /pages/keywords/eicr/.
 /pages/keywords/:slug    /pages/keywords/:slug.php    200!
 /pages/keywords/:slug/   /pages/keywords/:slug.php    200!
+
+# Barrier town pages are files under /pages/barriers/. Force the hub redirect
+# and the town pretty URL so a directory does not 301 the leaf.
+/pages/barriers          /pages/services/barriers.php  301
+/pages/barriers/         /pages/services/barriers.php  301
+/pages/barriers/:slug    /pages/barriers/:slug.php     200!
+/pages/barriers/:slug/   /pages/barriers/:slug.php     200!
 
 # Splat pretty URLs. No force — /assets and real files win.
 /*                       /:splat.php                  200

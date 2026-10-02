@@ -17,6 +17,8 @@ $mfrName = $MFR_NAME;
 $entry = getManufacturerBySlug($mfrSlug) ?? [];
 $services = getServices();
 $mfrServices = $entry['services'] ?? [];
+$isBarrierBrand = in_array('barriers', $mfrServices, true);
+$isPartner = !empty($entry['partner']);
 $products = $entry['products'] ?? [];
 $primaryService = $mfrServices[0] ?? 'fire-alarms';
 $primaryServiceName = $services[$primaryService] ?? 'Compliance';
@@ -82,7 +84,11 @@ $schema = [
                     'name' => 'Do you install and service ' . $mfrName . ' systems?',
                     'acceptedAnswer' => [
                         '@type' => 'Answer',
-                        'text' => 'Yes. Icomply Property Services installs, commissions, maintains and certifies ' . $mfrName . ' equipment across Greater Manchester and the North West.',
+                        'text' => $isPartner
+                        ? 'Yes. iComply Property Services is a CAME partner. Gard rising-arm barriers are the range we specify. Other barrier brands are serviced or replaced and are not partnerships.'
+                        : ($isBarrierBrand
+                            ? 'We service and replace ' . $mfrName . ' barriers already on private sites. That is not a ' . $mfrName . ' partnership. The barrier partnership is CAME.'
+                            : 'Yes. Icomply Property Services installs, commissions, maintains and certifies ' . $mfrName . ' equipment across Greater Manchester and the North West.'),
                     ],
                 ],
                 [
@@ -90,7 +96,9 @@ $schema = [
                     'name' => 'Can I buy ' . $mfrName . ' parts and kits from you?',
                     'acceptedAnswer' => [
                         '@type' => 'Answer',
-                        'text' => 'We supply trade kits and accessories for ' . $mfrName . ' via our shop (Shopify when live) and can quote project-specific equipment for install jobs.',
+                        'text' => $isBarrierBrand
+                        ? 'Barrier equipment is quoted on application after the lane is surveyed. This page does not publish a fee.'
+                        : 'We supply trade kits and accessories for ' . $mfrName . ' via our shop (Shopify when live) and can quote project-specific equipment for install jobs.',
                     ],
                 ],
                 [
@@ -98,7 +106,9 @@ $schema = [
                     'name' => 'Which areas do you cover for ' . $mfrName . ' work?',
                     'acceptedAnswer' => [
                         '@type' => 'Answer',
-                        'text' => 'We cover 150+ towns including Manchester, Stockport, Bolton, Liverpool, Preston and the wider North West from our Stockport base.',
+                        'text' => $isBarrierBrand
+                        ? 'Barrier pages cover UK towns over 10,000 people. Attendance is planned from Stockport SK2. We do not claim a depot in each town.'
+                        : 'We cover 150+ towns including Manchester, Stockport, Bolton, Liverpool, Preston and the wider North West from our Stockport base.',
                     ],
                 ],
             ],
@@ -144,8 +154,8 @@ $schema = [
                      loading="eager"
                      onerror="this.src='<?= htmlspecialchars(serviceImageUrl($primaryService), ENT_QUOTES, 'UTF-8') ?>'">
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-transparent to-transparent">
-                    <div class="text-sm text-white/70">Authorised install &amp; trade supply</div>
-                    <div class="text-2xl font-semibold mt-1"><?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> · North West</div>
+                    <div class="text-sm text-white/70"><?php if ($isPartner): ?>CAME partner · install and service<?php elseif ($isBarrierBrand): ?>Service and replacement · not a brand partnership<?php else: ?>Authorised install &amp; trade supply<?php endif; ?></div>
+                    <div class="text-2xl font-semibold mt-1"><?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> · <?= $isBarrierBrand ? 'UK towns over 10,000' : 'North West' ?></div>
                 </div>
             </div>
         </div>
@@ -171,12 +181,40 @@ $schema = [
                 Install, service &amp; buy <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?>
             </h2>
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars($MFR_BLURB, ENT_QUOTES, 'UTF-8') ?></p>
+            <?php if ($isBarrierBrand): ?>
+            <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
+                <?php if ($isPartner): ?>
+                    iComply is a CAME partner. Gard barriers are specified for private lanes, with safety devices taken from the CAME manual for that model.
+                    UK towns over 10,000 each have a barrier page. Those pages carry official population figures. They do not invent a local depot.
+                    The quote is on application.
+                <?php else: ?>
+                    <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> barriers are equipment we service or replace.
+                    This is not a <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> partnership and not an authorised-dealer claim.
+                    The barrier partnership is CAME. Town pages cover UK places over 10,000 people. Visits are planned from Stockport SK2. Price on application.
+                <?php endif; ?>
+            </p>
+            <?php if ($isPartner): ?>
+            <p class="mt-4 text-sm font-semibold flex flex-wrap gap-x-4 gap-y-2">
+                <a class="text-[#ff6b00]" href="<?= url('/pages/services/barriers') ?>">Barriers hub</a>
+                <a class="text-[#ff6b00]" href="<?= url('/pages/keywords/came-partner') ?>">Partnership guide</a>
+                <a class="text-[#ff6b00]" href="<?= url('/pages/keywords/came-gard-barrier') ?>">Gard barrier</a>
+                <a class="text-[#ff6b00]" href="<?= url('/pages/keywords/came-gard-pt') ?>">Gard PT</a>
+            </p>
+            <?php else: ?>
+            <p class="mt-4 text-sm">
+                <a class="font-semibold text-[#ff6b00]" href="<?= url('/pages/manufacturers/came') ?>">CAME partner page</a>
+                <span class="text-zinc-400"> · </span>
+                <a class="font-semibold text-[#ff6b00]" href="<?= url('/pages/services/barriers') ?>">All barrier towns</a>
+            </p>
+            <?php endif; ?>
+            <?php else: ?>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
                 Whether you need a new <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> system designed and commissioned,
                 planned maintenance on existing equipment, or trade kits and spares, our Stockport-based engineers
                 cover Manchester, Bolton, Liverpool, Preston and 150+ North West towns. All work is documented for
                 landlords, insurers and facilities managers.
             </p>
+            <?php endif; ?>
             <ul class="mt-6 space-y-2 text-sm text-zinc-700">
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> New installs &amp; system upgrades</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Servicing, repairs &amp; certification</li>
@@ -229,6 +267,24 @@ $schema = [
     <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">
         <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> near you
     </h2>
+    <?php if ($isBarrierBrand): ?>
+    <p class="mt-2 text-zinc-600 mb-6">Town pages use the official count for that place. Attendance is from Stockport. Price on application.</p>
+    <div class="flex flex-wrap gap-2">
+        <?php
+        require_once SITE_ROOT . '/includes/barriers.php';
+        foreach (['Manchester', 'Birmingham', 'Leeds', 'Glasgow', 'Cardiff', 'Westminster', 'Aberdeen', 'Stockport'] as $t):
+            $tSlug = barriersPlaceSlugByName($t);
+            if (!$tSlug) {
+                continue;
+            }
+        ?>
+            <a href="<?= url('/pages/barriers/' . $tSlug) ?>"
+               class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">
+                <?= htmlspecialchars('Barriers in ' . $t, ENT_QUOTES, 'UTF-8') ?>
+            </a>
+        <?php endforeach; ?>
+    </div>
+    <?php else: ?>
     <p class="mt-2 text-zinc-600 mb-6">Open a local <?= htmlspecialchars($primaryServiceName, ENT_QUOTES, 'UTF-8') ?> page for dedicated SEO and quotes.</p>
     <div class="flex flex-wrap gap-2">
         <?php
@@ -244,6 +300,7 @@ $schema = [
             </a>
         <?php endforeach; ?>
     </div>
+    <?php endif; ?>
 </section>
 
 <!-- RELATED BRANDS -->

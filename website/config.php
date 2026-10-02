@@ -336,6 +336,38 @@ function getMajorKeywords(): array {
         }
         $normalized[$slug] = $row;
     }
+    $barrierKwFile = SITE_ROOT . '/data/barriers-keywords.json';
+    if (is_file($barrierKwFile)) {
+        $extra = json_decode((string)file_get_contents($barrierKwFile), true);
+        if (is_array($extra)) {
+            foreach ($extra as $slug => $meta) {
+                if (!is_array($meta)) {
+                    continue;
+                }
+                $slug = keywordSlug((string)$slug);
+                if ($slug === '' || isset($normalized[$slug])) {
+                    continue;
+                }
+                $row = [
+                    'name' => $meta['name'] ?? keywordDisplayName($slug),
+                    'service' => $meta['service'] ?? 'barriers',
+                    'related' => keywordSlug($meta['related'] ?? $slug),
+                ];
+                foreach (['intro', 'body', 'meta_desc', 'seo_keywords'] as $field) {
+                    if (!empty($meta[$field]) && is_string($meta[$field])) {
+                        $row[$field] = $meta[$field];
+                    }
+                }
+                if (!empty($meta['focus_points']) && is_array($meta['focus_points'])) {
+                    $row['focus_points'] = $meta['focus_points'];
+                }
+                if (!empty($meta['faq']) && is_array($meta['faq'])) {
+                    $row['faq'] = $meta['faq'];
+                }
+                $normalized[$slug] = $row;
+            }
+        }
+    }
     return $normalized;
 }
 

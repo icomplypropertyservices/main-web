@@ -66,6 +66,16 @@ $byService = [
         'Clear-Com', 'Vingtor-Stentofon', 'Legrand', 'Algo', 'CyberData',
         'Axis Intercom', 'Akuvox',
     ],
+    // Source list only. Do not run this script to refresh barriers: it rebuilds
+    // the whole catalogue and would wipe the CAME partner flag and POA blurbs.
+    // Use website/bin/apply-barriers-catalog.py instead.
+    'barriers' => [
+        'CAME', 'FAAC', 'BFT', 'Nice', 'Magnetic Autocontrol', 'Automatic Systems',
+        'Beninca', 'Roger Technology', 'DEA System', 'Gibidi', 'Cardin', 'Tau',
+        'King Gates', 'Hormann', 'ELKA', 'Ditec', 'Fadini', 'Centurion', 'Genius',
+        'SEA', 'V2', 'Aprimatic', 'Proteco', 'Life Home Integration', 'DoorHan',
+        'LiftMaster', 'DoorKing',
+    ],
 ];
 
 // Product templates per service (trade-oriented placeholders for Shopify)
@@ -113,6 +123,10 @@ $productTemplates = [
     'intercoms' => [
         ['{brand} Master Station Accessory', 'Accessories for {brand} master stations.', 'From £48'],
         ['{brand} Door Station Spares', 'Weatherproof door stations and modules for {brand}.', 'From £62'],
+    ],
+    'barriers' => [
+        ['{brand} barrier survey', 'Lane survey for {brand}. Price on application.', 'POA'],
+        ['{brand} barrier service', 'Service or replacement for {brand}. Price on application.', 'POA'],
     ],
 ];
 
