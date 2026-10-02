@@ -1179,15 +1179,18 @@ if (is_file($elJobTypesFile)) {
     require_once $elJobTypesFile;
 }
 
+$heroFile = __DIR__ . '/includes/hero-images.php';
+if (is_file($heroFile)) {
     require_once $heroFile;
-
-    require_once $fraFile;
-
+}
+$fraJobFile = __DIR__ . '/includes/fra-job-lane.php';
+if (is_file($fraJobFile)) {
+    require_once $fraJobFile;
+}
+$fireAlarmsLaneFile = __DIR__ . '/includes/fire-alarms-lane.php';
+if (is_file($fireAlarmsLaneFile)) {
     require_once $fireAlarmsLaneFile;
-
-        require_once $priorityFile;
-
-        require_once $lane;
+}
 
 $asbestosJobsFile = __DIR__ . '/includes/asbestos-jobs.php';
 if (is_file($asbestosJobsFile)) {
@@ -1198,6 +1201,11 @@ $barrierFile = __DIR__ . '/includes/barriers.php';
 if (is_file($barrierFile)) {
     require_once $barrierFile;
 }
+$barrierPanelFile = __DIR__ . '/includes/barrier-brand-panel.php';
+if (is_file($barrierPanelFile)) {
+    require_once $barrierPanelFile;
+}
+
 
 // Back-compat globals used by some templates/includes
 $services = getServices();
