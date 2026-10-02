@@ -1,0 +1,123 @@
+{
+    "generatedAt": "2026-10-02T17:10:54.512Z",
+    "note": "Non-prod performance pass. Numbers are transfer sizes before HTTP compression except where gzip is named.",
+    "css": {
+        "before": {
+            "stylesheet": "https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css",
+            "bytes": 2934019,
+            "gzipBytes": 300244,
+            "siteCssBytes": 23157
+        },
+        "after": {
+            "stylesheet": "/assets/css/utilities.css",
+            "bytes": 22306,
+            "gzipBytes": 4753,
+            "siteCssBytes": 23157,
+            "safelistedClasses": 0,
+            "stillMissing": []
+        }
+    },
+    "images": {
+        "files": 778,
+        "unique": 93,
+        "origBytes": 186542864,
+        "optBytes": 8116434,
+        "optFiles": 261
+    },
+    "pages": {
+        "cssGzip": {
+            "beforeHomeAndInner": 305744,
+            "afterHomeCritical": 5500,
+            "afterInnerBlocking": 10243,
+            "utilities": 4743,
+            "site": 5500,
+            "tailwindCdn": 300244
+        },
+        "templates": {
+            "home": {
+                "imgs": 44,
+                "lazy": 43,
+                "eager": 0,
+                "dims": 44,
+                "perf": 43,
+                "mobile": 1149164,
+                "desktop": 1149164,
+                "orig": 9188959,
+                "logos": 1,
+                "htmlBytes": 362492
+            },
+            "service": {
+                "imgs": 95,
+                "lazy": 93,
+                "eager": 1,
+                "dims": 95,
+                "perf": 94,
+                "mobile": 2756442,
+                "desktop": 2784392,
+                "orig": 21425028,
+                "logos": 1,
+                "htmlBytes": 1227808
+            },
+            "keyword": {
+                "imgs": 4,
+                "lazy": 2,
+                "eager": 1,
+                "dims": 4,
+                "perf": 3,
+                "mobile": 81948,
+                "desktop": 137848,
+                "orig": 830370,
+                "logos": 1,
+                "htmlBytes": 315764
+            },
+            "landlords": {
+                "imgs": 13,
+                "lazy": 12,
+                "eager": 0,
+                "dims": 13,
+                "perf": 12,
+                "mobile": 252456,
+                "desktop": 367378,
+                "orig": 2445808,
+                "logos": 1,
+                "htmlBytes": 255061
+            },
+            "commercial": {
+                "imgs": 17,
+                "lazy": 16,
+                "eager": 0,
+                "dims": 17,
+                "perf": 16,
+                "mobile": 437380,
+                "desktop": 653452,
+                "orig": 4068190,
+                "logos": 1,
+                "htmlBytes": 266899
+            },
+            "contact": {
+                "imgs": 1,
+                "lazy": 0,
+                "eager": 0,
+                "dims": 1,
+                "perf": 0,
+                "mobile": 0,
+                "desktop": 0,
+                "orig": 0,
+                "logos": 1,
+                "htmlBytes": 242876
+            },
+            "keyword-town": {
+                "imgs": 0,
+                "lazy": 0,
+                "eager": 0,
+                "dims": 0,
+                "perf": 0,
+                "mobile": 0,
+                "desktop": 0,
+                "orig": 0,
+                "logos": 0,
+                "htmlBytes": 36994
+            }
+        }
+    }
+}

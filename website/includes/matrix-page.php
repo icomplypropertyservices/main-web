@@ -143,7 +143,7 @@ function icomplyMatrixChromeStart(string $title, string $desc, string $canonical
         . '<meta property="og:title" content="' . $t . '">'
         . '<meta property="og:description" content="' . $d . '">'
         . '<meta property="og:url" content="' . $c . '">'
-        . '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css">'
+        . '<link rel="stylesheet" href="' . icomplyMatrixH(assetUrl('/assets/css/utilities.css')) . '">'
         . '<link rel="stylesheet" href="' . $css . '">'
         . '</head><body class="matrix-page bg-zinc-50 text-black">'
         . '<header class="matrix-header">'

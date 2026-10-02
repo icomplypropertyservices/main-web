@@ -116,7 +116,18 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     <meta name="author" content="<?= htmlspecialchars(SITE_NAME, ENT_QUOTES, 'UTF-8') ?>">
     <meta name="geo.region" content="GB-MAN">
     <meta name="geo.placename" content="Stockport">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css">
+    <?php
+    $utilityHref = htmlspecialchars(assetUrl('/assets/css/utilities.css'), ENT_QUOTES, 'UTF-8');
+    if (!empty($perfDeferUtilities)) {
+        // Homepage hero and header are styled by site.css. Utilities paint the
+        // sections below the fold, so they must not block first paint.
+        echo '<link rel="preload" href="' . $utilityHref . '" as="style">' . "\n";
+        echo '    <link rel="stylesheet" href="' . $utilityHref . '" media="print" onload="this.media=\'all\'">' . "\n";
+        echo '    <noscript><link rel="stylesheet" href="' . $utilityHref . '"></noscript>' . "\n";
+    } else {
+        echo '    <link rel="stylesheet" href="' . $utilityHref . '">' . "\n";
+    }
+    ?>
     <link rel="stylesheet" href="<?= htmlspecialchars(assetUrl('/assets/css/site.css'), ENT_QUOTES, 'UTF-8') ?>">
     <?php
     $gaId = defined('GA_MEASUREMENT_ID') ? trim((string)GA_MEASUREMENT_ID) : '';

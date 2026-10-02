@@ -40,6 +40,7 @@ if (empty($_SESSION['csrf'])) {
     $_SESSION['csrf'] = bin2hex(random_bytes(16));
 }
 
+$perfDeferUtilities = true;
 require SITE_ROOT . '/includes/header.php';
 $homeUrl = rtrim(SITE_URL, '/') . '/';
 ?>

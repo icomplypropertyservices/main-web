@@ -129,6 +129,9 @@ h1, h2, h3 { letter-spacing: -0.03em; }
 .nav-link { transition: color 0.15s ease; color: #f4f7fb; }
 .nav-link:hover { color: var(--accent); }
 
+/* Tailwind v2 has flex-shrink-0, not the v3 shrink-0 alias used in templates. */
+.shrink-0 { flex-shrink: 0; }
+
 .service-card {
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   border-radius: var(--radius-card);
