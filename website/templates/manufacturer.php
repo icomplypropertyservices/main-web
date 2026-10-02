@@ -162,6 +162,18 @@ $schema = [
     </div>
 </section>
 
+<?php if (function_exists('manufacturerProductLines') && function_exists('manufacturerLineCardsHtml')): ?>
+<section class="max-w-7xl mx-auto px-6 py-12">
+    <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Product lines</div>
+    <h2 class="text-3xl font-semibold tracking-tight text-black mt-2"><?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> ranges</h2>
+    <p class="mt-2 text-zinc-600 max-w-3xl">Each range has its own mark. Area pages repeat these lines with a local introduction.</p>
+    <?= manufacturerLineCardsHtml($entry) ?>
+    <?php if (function_exists('manufacturerWizardFamily') && manufacturerWizardFamily($entry)): ?>
+        <p class="mt-4 text-sm text-zinc-600">AOV and barriers pages include a quote wizard. Kit list prices stay on the <a class="text-[#ff6b00] font-semibold" href="<?= url('/products') ?>#<?= manufacturerWizardFamily($entry) === 'barriers' ? 'barrier-packs' : 'aov-kits' ?>">products hub</a>.</p>
+    <?php endif; ?>
+</section>
+<?php endif; ?>
+
 <!-- INTRO -->
 <section class="max-w-7xl mx-auto px-6 py-16">
     <div class="grid lg:grid-cols-5 gap-12">
@@ -229,12 +241,17 @@ $schema = [
     <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">
         <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> near you
     </h2>
-    <p class="mt-2 text-zinc-600 mb-6">Open a local <?= htmlspecialchars($primaryServiceName, ENT_QUOTES, 'UTF-8') ?> page for dedicated SEO and quotes.</p>
+    <p class="mt-2 text-zinc-600 mb-6"><?= function_exists('manufacturerCoverageLabel') ? htmlspecialchars(manufacturerCoverageLabel($entry), ENT_QUOTES, 'UTF-8') : 'Local pages' ?> — each town has its own <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> introduction.</p>
+    <?php if (function_exists('manufacturerAreaChipsHtml')): ?>
+        <?= manufacturerAreaChipsHtml($entry) ?>
+    <?php endif; ?>
+    <p class="mt-6 text-sm text-zinc-600">Service pages for context:</p>
     <div class="flex flex-wrap gap-2">
         <?php
+        $scoped = function_exists('manufacturerAreasFor') ? manufacturerAreasFor($entry) : getAreas();
         $towns = array_values(array_filter(
-            ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
-            fn($t) => in_array($t, getAreas(), true)
+            ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool', 'Burnley'],
+            fn($t) => in_array($t, $scoped, true)
         ));
         foreach ($towns as $t):
         ?>

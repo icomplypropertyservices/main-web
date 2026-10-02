@@ -219,6 +219,18 @@ function icomplySitemapEntries(): array
     // featured electrical/gas × town sample. Skip at request time so
     // keywords.json cannot OOM the live sitemap.
     $requestSafe = !empty($GLOBALS['ICOMPLY_SITEMAP_REQUEST_SAFE']);
+    // AOV and barriers manufacturer×area pages only. Other brand×town URLs
+    // are exported but omitted here, same rule as the full keyword×town matrix.
+    if (!$requestSafe && function_exists('getManufacturerCatalog') && function_exists('manufacturerWizardFamily')) {
+        foreach (getManufacturerCatalog() as $mSlug => $mEntry) {
+            if (!is_array($mEntry) || manufacturerWizardFamily($mEntry) === null) {
+                continue;
+            }
+            foreach (manufacturerAreasFor($mEntry) as $town) {
+                $add('/pages/manufacturers/' . $mSlug . '/' . areaSlug((string)$town), '0.64');
+            }
+        }
+    }
     if (!$requestSafe && function_exists('getMajorKeywords') && function_exists('keywordSlug')) {
         $family = [];
         if (function_exists('getElectricalGasMatrixKeywordSlugs')) {

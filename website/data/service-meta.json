@@ -39,6 +39,11 @@
         "short": "IP / HD CCTV design, install & monitoring",
         "standards": "BS EN 62676 · GDPR / DPA camera siting"
     },
+    "barriers": {
+        "blurb": "Vehicle barriers and gate operators. CAME is our barriers partner. Published 5m supply packs are priced on the products hub. Installation is POA after survey.",
+        "short": "CAME partner barriers and gate operators",
+        "standards": "CAME partner supply · safety edges and loops · install POA"
+    },
     "access-control": {
         "blurb": "Paxton, HID, Salto door access, credentials and fire-override integration.",
         "short": "Paxton, HID, Salto door access",

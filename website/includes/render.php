@@ -363,3 +363,30 @@ function renderManufacturerPage(string $mfrSlug): void {
         'SERVICE_NAME' => $services[$primary] ?? 'Compliance',
     ]);
 }
+
+/**
+ * Manufacturer × area. 404 when the brand is excluded or the town is outside its coverage.
+ */
+function renderManufacturerAreaPage(string $mfrSlug, string $areaSlugVal): void {
+    $entry = getManufacturerBySlug($mfrSlug);
+    if (!$entry || (function_exists('manufacturerIsExcluded') && manufacturerIsExcluded($mfrSlug))) {
+        http_response_code(404);
+        echo 'Manufacturer not found';
+        icomplyRequestExit();
+        return;
+    }
+    $area = areaFromSlug($areaSlugVal);
+    if ($area === null || !manufacturerAreaAllowed($entry, $area)) {
+        http_response_code(404);
+        echo 'Area not found';
+        icomplyRequestExit();
+        return;
+    }
+    $GLOBALS['services'] = getServices();
+    $GLOBALS['areas'] = getAreas();
+    executeTemplateVars(SITE_ROOT . '/templates/manufacturer-area.php', [
+        'MFR_SLUG' => $entry['slug'],
+        'AREA' => $area,
+        'AREA_SLUG' => areaSlug($area),
+    ]);
+}

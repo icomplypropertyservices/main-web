@@ -639,3 +639,36 @@ section.relative.overflow-hidden.text-white > .absolute[style*="radial-gradient"
 .theme-light .mega-wordmark b { color: #0B1F3A; }
 .logo-on-light .mega-wordmark small,
 .theme-light .mega-wordmark small { color: #5B6472; }
+
+/* Manufacturer product lines and AOV/barriers wizards.
+   Deliberately not .product-card, .hub-card or .aov-kit-prices. */
+.mfr-kicker { font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: #ff6b00; font-weight: 700; }
+.mfr-line-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.mfr-line-card { background: #fff; border: 1px solid #e4e4e7; border-radius: 1.25rem; padding: 1rem; }
+.mfr-line-card h3 { margin: 0.75rem 0 0.35rem; font-size: 1rem; font-weight: 700; color: #0B1F3A; }
+.mfr-line-card p { margin: 0; color: #3f3f46; font-size: 0.875rem; line-height: 1.45; }
+.mfr-line-logo { width: 100%; height: auto; border-radius: 0.75rem; background: #0B1F3A; display: block; }
+.mfr-wizard { max-width: 72rem; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+.mfr-wizard-head h2 { font-size: 1.75rem; font-weight: 700; color: #0B1F3A; margin-top: 0.35rem; }
+.mfr-wizard-lead, .mfr-wizard-linkout { color: #3f3f46; margin-top: 0.75rem; }
+.mfr-partner-banner { background: #fff7ed; color: #0B1F3A; border-left: 4px solid #ff6b00; padding: 0.85rem 1rem; border-radius: 0.75rem; font-weight: 600; }
+.mfr-wizard-progress { display: flex; gap: 0.5rem; list-style: none; padding: 0; margin: 1.25rem 0; }
+.mfr-wizard-progress li { padding: 0.35rem 0.7rem; border-radius: 999px; background: #f4f4f5; font-size: 0.8rem; font-weight: 700; }
+.mfr-wizard-progress li[data-current="true"] { background: #0B1F3A; color: #fff; }
+.mfr-wizard-step { border: 1px solid #e4e4e7; border-radius: 1.25rem; padding: 1rem; margin: 0 0 1rem; background: #fff; }
+.mfr-wizard-step legend { font-weight: 700; padding: 0 0.35rem; }
+.mfr-wizard-options { display: grid; gap: 0.6rem; }
+.mfr-wizard-option { display: flex; gap: 0.75rem; align-items: center; border: 1px solid #e4e4e7; border-radius: 0.9rem; padding: 0.7rem 0.8rem; cursor: pointer; }
+.mfr-wizard-option img { width: 72px; height: 40px; object-fit: cover; flex: 0 0 auto; }
+.mfr-wizard-option small { display: block; color: #52525b; font-weight: 500; }
+.mfr-wizard-nav { display: flex; gap: 0.6rem; }
+.mfr-wizard-back, .mfr-wizard-next { border: 0; border-radius: 0.9rem; padding: 0.75rem 1.1rem; font-weight: 700; cursor: pointer; }
+.mfr-wizard-next { background: #ff6b00; color: #fff; }
+.mfr-wizard-back { background: #e4e4e7; color: #0B1F3A; }
+.mfr-link-panel { max-width: 72rem; margin: 0 auto; padding: 2rem 1.5rem; }
+.mfr-link-row { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; padding: 0; margin: 1rem 0 0; }
+.mfr-text-link { display: inline-flex; padding: 0.45rem 0.8rem; border: 1px solid #e4e4e7; border-radius: 999px; background: #fff; color: #0B1F3A; text-decoration: none; font-weight: 600; font-size: 0.875rem; }
+.mfr-text-link:hover { border-color: #ff6b00; color: #ff6b00; }
+.mfr-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.8rem; margin-top: 1.25rem; }
+.mfr-gallery-item { margin: 0; background: #fff; border: 1px solid #e4e4e7; border-radius: 1rem; overflow: hidden; }
+.mfr-gallery-item img { width: 100%; height: 160px; object-fit: cover; display: block; }

@@ -56,7 +56,7 @@ require SITE_ROOT . '/includes/header.php';
                 Manufacturers<br>
                 <span class="text-[#ff6b00]">&amp; trade products</span>
             </h1>
-            <p class="mt-4 text-sm text-white/70">Pair brand pages with our <?= count($services) ?> services — fire safety systems, electrical, security and more — across every North West town we cover.</p>
+            <p class="mt-4 text-sm text-white/70">Fire, AOV, barriers, access control and nurse call each have a page in every published town. Other brands are scoped to Greater Manchester and Burnley. Tunstall is not listed. CAME is the barriers partner.</p>
             <p class="mt-4 text-lg text-white/80">
                 Every major brand we install and service has a dedicated page with kits, SEO content and quote CTAs —
                 ready for Shopify product IDs when you sell online.

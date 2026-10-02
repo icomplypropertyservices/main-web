@@ -40,6 +40,7 @@ function service_standards(string $slug): array {
         'fire-alarms' => ['BS 5839', 'fire detection', 'L1–L5 categories', 'addressable systems', 'commissioning certificates'],
         'emergency-lighting' => ['BS 5266', 'maintained / non-maintained', 'exit signage', 'duration testing', 'self-test LED'],
         'aov-air-handling' => ['BS 9991 guidance', 'smoke ventilation', 'AOV controls', 'smoke shafts', 'fire strategy support'],
+        'barriers' => ['CAME barriers partner', 'vehicle barriers', 'gate operators', 'safety edges and loops', 'install POA'],
         'nurse-call' => ['HTM 08-03 aligned', 'care home systems', 'wireless / wired', 'panel upgrades', 'handset repair'],
         'gas-systems' => ['Gas Safe', 'landlord gas safety', 'CP12 / CP44', 'boiler servicing', 'commercial gas'],
         'intruder-alarm' => ['BS 4737 / PD 6662 practice', 'wired & wireless', 'PIR detection', 'app control', 'ARC-ready'],
@@ -103,6 +104,11 @@ function service_faqs(string $slug, string $serviceName, string $area = ''): arr
             ['q' => "What is BS 5266 emergency lighting?", 'a' => "BS 5266 is the key UK code of practice for emergency lighting. We install, test and certificate systems to support safe escape routes{$loc}."],
             ['q' => "How often should emergency lights be tested?", 'a' => "Monthly function tests and annual full-duration tests are common. We can run testing programmes and keep logbooks for your {$area} properties."],
             ['q' => "Do you supply self-test LED fittings?", 'a' => "Yes — self-test bulkheads and exit signs reduce labour while keeping compliance evidence for landlords and FM teams."],
+        ],
+        'barriers' => [
+            ['q' => "Who is the barriers partner{$loc}?", 'a' => "CAME is our barriers partner. Gard barriers and gate operators are specified with us. Supply prices for the published 5m packs are on the products hub. Installation is POA after survey."],
+            ['q' => "Do you install gates as well as barriers?", 'a' => "Yes. Sliding and swing operators are quoted with the barrier or on their own once the opening, safety edges and access control are known."],
+            ['q' => "Can a barrier share fobs with the building?", 'a' => "Often yes, after the survey checks the barrier inputs and the access platform. Paxton and Videx options are listed as supply packs, not assumed."],
         ],
         'aov-air-handling' => [
             ['q' => "What is an AOV system?", 'a' => "Automatic Opening Vents help clear smoke from stairs and corridors. We install and maintain AOV and related smoke control plant for multi-storey buildings{$loc}."],

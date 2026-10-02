@@ -32,7 +32,7 @@ $byService = [
         'Simon RWA', 'Bilco', 'Cambric', 'Kingspan Air', 'FlaktGroup', 'Systemair',
     ],
     'nurse-call' => [
-        'Courtney Thorne', 'Static Systems Group', 'Intercall', 'Aid Call', 'Tunstall',
+        'Courtney Thorne', 'Static Systems Group', 'Intercall', 'Aid Call',
         'Ascom', 'Schrack Seconet', 'Zettler', 'Ackermann', 'Rauland', 'Jeron',
         'Austco', 'TekTone', 'Caretech', 'Wandsworth', 'Quantec',
     ],
@@ -54,7 +54,10 @@ $byService = [
     'access-control' => [
         'Paxton', 'HID Global', 'Salto Systems', 'ASSA ABLOY', 'Honeywell',
         'Gallagher', 'Stanley Security', 'CDVI', 'TDSi', 'Kantech', 'Vanderbilt',
-        'Nedap', 'Suprema', 'dormakaba', 'Allegion', 'LenelS2', 'Software House',
+        'Nedap', 'Suprema', 'dormakaba', 'Allegion', 'LenelS2',         'Software House',
+    ],
+    'barriers' => [
+        'CAME',
     ],
     'door-entry' => [
         'Videx', 'Fermax', 'BPT', 'Comelit', 'Aiphone', 'Paxton', 'Urmet',
@@ -105,6 +108,10 @@ $productTemplates = [
     'access-control' => [
         ['{brand} Reader / Token Pack', 'Readers or credentials for {brand} access systems.', 'From £69'],
         ['{brand} Door Controller Spares', 'PSU fuses, locks and exit devices for {brand}.', 'From £55'],
+    ],
+    'barriers' => [
+        ['{brand} Barrier', 'Vehicle barrier from the {brand} range. Installation is POA.', 'POA'],
+        ['{brand} Gate Operator', 'Sliding or swing operator from the {brand} range. Installation is POA.', 'POA'],
     ],
     'door-entry' => [
         ['{brand} Handset / Panel Spares', 'Replacement handsets and faceplates for {brand}.', 'From £52'],
@@ -158,7 +165,7 @@ foreach ($byService as $service => $brands) {
                     'Hikvision', 'Axis Communications', 'Paxton', 'Salto Systems',
                     'Schneider Electric', 'Hager', 'Myenergi', 'Rolec EV',
                     'Texecom', 'Worcester Bosch', 'Vaillant', 'Videx', 'Aiphone',
-                    'Emergi-Lite', 'SE Controls', 'Courtney Thorne', 'Honeywell',
+                    'Emergi-Lite', 'SE Controls', 'Courtney Thorne', 'Honeywell', 'CAME',
                 ], true),
             ];
             $nameToSlug[$name] = $slug;

@@ -79,6 +79,9 @@ $_SERVER['REQUEST_SCHEME'] = 'https';
 
 require_once $websiteRoot . '/config.php';
 require_once $websiteRoot . '/includes/router.php';
+if (function_exists('manufacturerWriteLineLogos')) {
+    manufacturerWriteLineLogos();
+}
 require_once $websiteRoot . '/includes/matrix-page.php';
 require_once $websiteRoot . '/bin/build-shop-hubs.php';
 
@@ -333,8 +336,13 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
     foreach (getAreas() as $area) {
         $routes[] = '/pages/areas/' . areaSlug((string)$area);
     }
-    foreach (array_keys(getManufacturerCatalog()) as $slug) {
+    foreach (getManufacturerCatalog() as $slug => $entry) {
         $routes[] = '/pages/manufacturers/' . $slug;
+        if (is_array($entry) && function_exists('manufacturerAreasFor')) {
+            foreach (manufacturerAreasFor($entry) as $area) {
+                $routes[] = '/pages/manufacturers/' . $slug . '/' . areaSlug((string)$area);
+            }
+        }
     }
 
     foreach (icomplyCollectKeywordRoutes($keywordTowns) as $path) {

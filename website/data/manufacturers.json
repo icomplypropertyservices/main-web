@@ -96,7 +96,6 @@
             "Static Systems Group",
             "Intercall",
             "Aid Call",
-            "Tunstall",
             "Ascom",
             "Schrack Seconet",
             "Zettler",
@@ -184,6 +183,9 @@
             "Allegion",
             "LenelS2",
             "Software House"
+        ],
+        "barriers": [
+            "CAME"
         ],
         "door-entry": [
             "Videx",
@@ -1344,6 +1346,42 @@
                 }
             ],
             "featured": false
+        },
+        "came": {
+            "name": "CAME",
+            "slug": "came",
+            "services": [
+                "barriers"
+            ],
+            "partner": true,
+            "partner_note": "CAME is our barriers partner for vehicle barriers and gate operators.",
+            "blurb": "CAME is our barriers partner. Icomply surveys, supplies and maintains Gard barriers and CAME gate operators for car parks, yards and gated sites. Published 5m supply packs are priced on the products hub. Installation, safety devices and access-control links are POA after survey. Coverage follows the full published town list, with engineers based in Stockport.",
+            "seo_title": "CAME Barriers Partner | Gard & Gate Operators",
+            "seo_desc": "CAME barriers partner for Gard barriers and gate operators. Supply packs on the products hub. Installation POA. Stockport engineers.",
+            "seo_keywords": "CAME, CAME barriers, CAME Gard, CAME partner, Gard GT, Gard 4, BXV, gate operators, vehicle barriers, North West",
+            "products": [
+                {
+                    "id": "came-gard-barrier",
+                    "title": "CAME Gard barrier",
+                    "blurb": "Gard GT and Gard 4 barriers. Supply options for 5m packs are on the products hub. Installation is POA.",
+                    "price": "POA",
+                    "handle": "came-gard-barrier",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/came.jpg",
+                    "badge": "Partner"
+                },
+                {
+                    "id": "came-gate-operators",
+                    "title": "CAME gate operators",
+                    "blurb": "BXV, Krono, Frog and Fast operators, quoted once the leaf, safety edges and access control are known.",
+                    "price": "POA",
+                    "handle": "came-gate-operators",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/came.jpg",
+                    "badge": "Partner"
+                }
+            ],
+            "featured": true
         },
         "caretech": {
             "name": "Caretech",
@@ -5805,40 +5843,6 @@
             ],
             "featured": false
         },
-        "tunstall": {
-            "name": "Tunstall",
-            "slug": "tunstall",
-            "services": [
-                "nurse-call"
-            ],
-            "blurb": "Icomply installs, services and upgrades Tunstall nurse call and telecare systems for care homes, extra-care schemes and supported living across the North West. We follow HTM 08-03 guidance, provide staff training handover, and keep call points, pear leads and panels certified under planned maintenance. Care operators and FM teams can buy genuine-fit Tunstall trade spares from our North West shop with rapid engineer support.",
-            "seo_title": "Tunstall Installation, Service & Products | North West",
-            "seo_desc": "Tunstall nurse call installation, HTM-aligned service & trade spares from Icomply across Manchester & the North West.",
-            "seo_keywords": "Tunstall, Tunstall nurse call, Tunstall installation, Tunstall service, Tunstall telecare, Tunstall call point, Tunstall pear lead, Tunstall spares, Tunstall trade, Tunstall North West, Tunstall Manchester, Tunstall Stockport, HTM 08-03",
-            "products": [
-                {
-                    "id": "tunstall-call-point-pack",
-                    "title": "Tunstall Call Point & Pear Lead Pack",
-                    "blurb": "Replacement call points, pear leads and pull-cord kits for Tunstall nurse call bedrooms and bathrooms.",
-                    "price": "From £44",
-                    "handle": "tunstall-call-point-pack",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/tunstall.jpg",
-                    "badge": "Trade"
-                },
-                {
-                    "id": "tunstall-panel-battery-kit",
-                    "title": "Tunstall Panel Battery & PSU Kit",
-                    "blurb": "Backup batteries and power-supply consumables to keep Tunstall nurse call panels online during service visits.",
-                    "price": "From £41",
-                    "handle": "tunstall-panel-battery-kit",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/tunstall.jpg",
-                    "badge": "Popular"
-                }
-            ],
-            "featured": false
-        },
         "uniview": {
             "name": "Uniview",
             "slug": "uniview",
@@ -6710,6 +6714,9 @@
             "lenels2",
             "software-house"
         ],
+        "barriers": [
+            "came"
+        ],
         "door-entry": [
             "videx",
             "fermax",
@@ -6808,7 +6815,6 @@
             "static-systems-group",
             "intercall",
             "aid-call",
-            "tunstall",
             "ascom",
             "schrack-seconet",
             "zettler",
@@ -6888,6 +6894,11 @@
             "biometric-access-control",
             "proximity-card-reader"
         ],
+        "barriers": [
+            "car-park-barrier-access",
+            "access-control-system",
+            "video-door-entry"
+        ],
         "door-entry": [
             "video-door-entry",
             "door-entry-system",
@@ -6911,6 +6922,7 @@
         "access-control": "access control installation, biometric access control, door access control",
         "door-entry": "door entry installation, video door entry, audio door entry, apartment door entry",
         "intercoms": "intercom installation, video intercom, audio intercom, multi tenant intercom",
+        "barriers": "CAME barriers, Gard barrier, gate operators, vehicle barrier installation, barriers partner, install POA",
         "legionella-risk-assessment": "legionella risk assessment, legionella testing, water hygiene, Legionnaires disease, Stockport, Manchester, North West, POA",
         "asbestos-survey": "asbestos survey, asbestos testing, asbestos management survey, asbestos refurbishment survey, Stockport, Manchester, North West, POA"
     }
