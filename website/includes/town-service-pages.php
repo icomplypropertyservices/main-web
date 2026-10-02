@@ -671,6 +671,11 @@ function icomplyDispatchTownPath(string $path): bool
         return true;
     }
     if (preg_match('#^/pages/(aov|barriers)/([a-z0-9\-]+)$#', $path, $m)) {
+        // Only claim census towns we know. Other published AOV / barrier place
+        // slugs fall through to aov-place.php / barriers.php handlers.
+        if (icomplyUkTownBySlug($m[2]) === null) {
+            return false;
+        }
         icomplyRenderTownPage($m[1], $m[2]);
         return true;
     }
