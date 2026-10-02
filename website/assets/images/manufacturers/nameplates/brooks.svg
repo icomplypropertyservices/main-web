@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="160" viewBox="0 0 320 160" role="img" aria-label="Brooks">
+  <rect width="320" height="160" fill="#0B1F3A"/>
+  <rect x="16" y="40" width="56" height="56" rx="10" fill="#FF6B00"/>
+  <text x="44" y="75" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#ffffff">BRO</text>
+  <text x="84" y="72" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#ffffff">Brooks</text>
+  <text x="84" y="98" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#FFB080">AOV</text>
+</svg>
