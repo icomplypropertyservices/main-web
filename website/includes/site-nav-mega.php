@@ -15,7 +15,7 @@ function icomplyMegaHeaderHtml(): string
     $areaHub = icomplyNavH(url('/pages/areas/index.php'));
     $contact = icomplyNavH(url('/contact.php'));
     $products = icomplyNavH(url('/products.php'));
-    $subcontract = icomplyNavH(url('/become-a-subcontractor.php'));
+    $subcontract = icomplyNavH('/become-a-subcontractor');
     $shopAll = '/shop/';
     $hubElectrical = '/shop/electrical/';
     $hubFire = '/shop/fire/';
@@ -153,7 +153,7 @@ function icomplyMobileDrawerHtml(array $n): string
     }
 
     $productsD = icomplyNavH(url('/products.php'));
-    $subcontractD = icomplyNavH(url('/become-a-subcontractor.php'));
+    $subcontractD = icomplyNavH('/become-a-subcontractor');
     $hubElectricalD = '/shop/electrical/';
     $hubFireD = '/shop/fire/';
     $hubSecurityD = '/shop/security/';

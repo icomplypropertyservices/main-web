@@ -99,6 +99,7 @@ require SITE_ROOT . '/includes/header.php';
                 if (file && file.files && file.files[0] && file.files[0].size > 8 * 1024 * 1024) {
                     event.preventDefault();
                     window.alert('Please keep uploaded documents to 8MB or less.');
+                    return;
                 }
                 var trades = form.querySelectorAll('input[name="trades"]:checked');
                 if (!trades.length) {

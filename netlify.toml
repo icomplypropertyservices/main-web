@@ -390,6 +390,18 @@
   force = true
 
 [[redirects]]
+  from = "/become-a-subcontractor"
+  to = "/become-a-subcontractor.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/become-a-subcontractor/"
+  to = "/become-a-subcontractor.php"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/pages/about"
   to = "/pages/about.php"
   status = 200
@@ -503,6 +515,18 @@
 
 [[headers]]
   for = "/contact"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/become-a-subcontractor"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/become-a-subcontractor/"
   [headers.values]
     Content-Type = "text/html; charset=utf-8"
     X-Content-Type-Options = "nosniff"

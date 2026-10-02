@@ -193,6 +193,13 @@ if (str_contains($homeHtml, '#0B1F3A') && str_contains($homeHtml, 'href="/manife
     $fail++;
     echo "[FAIL] homepage missing #0B1F3A or /manifest.webmanifest\n";
 }
+if (str_contains($homeHtml, 'href="/become-a-subcontractor"') && str_contains($homeHtml, 'Work with us')) {
+    $pass++;
+    echo "[PASS] homepage links Work with us to /become-a-subcontractor\n";
+} else {
+    $fail++;
+    echo "[FAIL] homepage must link Work with us to /become-a-subcontractor\n";
+}
 
 $mustNotExist = [
     'config.php',
@@ -285,7 +292,7 @@ foreach (['rewire', 'domestic-rewire', 'emergency-electrician', 'boiler'] as $ne
     }
 }
 
-$redirectNeedles = ['/*', '/:splat.php', '/privacy', '/pages/about', '/assets/', '/pages/keywords', '/pages/keywords/:slug', '/shop/index.html', '/shop/fire/index.html', '/products.php'];
+$redirectNeedles = ['/*', '/:splat.php', '/privacy', '/pages/about', '/assets/', '/pages/keywords', '/pages/keywords/:slug', '/shop/index.html', '/shop/fire/index.html', '/products.php', '/become-a-subcontractor'];
 foreach ($redirectNeedles as $n) {
     if (!str_contains($redirects, $n)) {
         $fail++;

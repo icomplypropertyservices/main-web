@@ -19,6 +19,7 @@
  *   php website/bin/static-export.php --full
  *   php website/bin/static-export.php --keyword-towns=all
  *   php website/bin/static-export.php --out=dist
+ *   php website/bin/static-export.php --only=/,/become-a-subcontractor,/thank-you
  *
  * Default export includes every sitemap keyword hub (/pages/keywords/{slug})
  * plus town combos that the previous PHP router served from chrome:
@@ -36,9 +37,9 @@ if (PHP_SAPI !== 'cli') {
     exit(1);
 }
 
-$options = getopt('', ['full', 'out::', 'help', 'keyword-towns::']);
+$options = getopt('', ['full', 'out::', 'help', 'keyword-towns::', 'only:']);
 if (isset($options['help'])) {
-    echo "Usage: php website/bin/static-export.php [--full] [--keyword-towns=priority|popular|all|none] [--out=dist]\n";
+    echo "Usage: php website/bin/static-export.php [--full] [--keyword-towns=priority|popular|all|none] [--out=dist] [--only=/,/become-a-subcontractor]\n";
     exit(0);
 }
 
@@ -111,7 +112,29 @@ icomplyResetDist($dist);
 // Copy CSS/JS/favicons first so a long export still has /assets even if interrupted.
 icomplyCopyStaticAssets($websiteRoot, $repoRoot, $dist);
 
-$routes = icomplyCollectExportRoutes($full, $keywordTowns);
+$only = [];
+$onlyOpt = $options['only'] ?? '';
+if (is_string($onlyOpt) && $onlyOpt !== '') {
+    foreach (explode(',', $onlyOpt) as $part) {
+        $part = trim($part);
+        if ($part === '') {
+            continue;
+        }
+        if ($part !== '/' && !str_starts_with($part, '/')) {
+            $part = '/' . $part;
+        }
+        $part = $part === '/' ? '/' : (rtrim($part, '/') ?: '/');
+        $only[] = $part;
+    }
+    $only = array_values(array_unique($only));
+}
+
+if ($only !== []) {
+    $routes = $only;
+    $log("only=" . implode(',', $routes) . " (draft/preview slice, not the full matrix)\n");
+} else {
+    $routes = icomplyCollectExportRoutes($full, $keywordTowns);
+}
 sort($routes);
 $routes = array_values(array_unique($routes));
 $kwHubs = 0;
@@ -183,14 +206,27 @@ file_put_contents($dist . '/404.php', $notFoundHtml);
 icomplyCopyStaticAssets($websiteRoot, $repoRoot, $dist);
 icomplyWriteDistRedirects($dist);
 icomplyWriteDistHeaders($dist);
-require_once $websiteRoot . '/includes/sitemap.php';
-$sitemapResult = icomplyWriteSitemapForDist($dist, SITE_URL);
-$log("sitemap published urls={$sitemapResult['urls']} (hubs + service×town + keyword×town)\n");
+if ($only === []) {
+    require_once $websiteRoot . '/includes/sitemap.php';
+    $sitemapResult = icomplyWriteSitemapForDist($dist, SITE_URL);
+    $log("sitemap published urls={$sitemapResult['urls']} (hubs + service×town + keyword×town)\n");
+} else {
+    $previewXml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+        . "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n";
+    foreach ($routes as $previewPath) {
+        $loc = rtrim(SITE_URL, '/') . ($previewPath === '/' ? '/' : $previewPath);
+        $previewXml .= '  <url><loc>' . htmlspecialchars($loc, ENT_QUOTES, 'UTF-8') . "</loc></url>\n";
+    }
+    $previewXml .= "</urlset>\n";
+    file_put_contents($dist . '/sitemap.xml', $previewXml);
+    $log("preview sitemap urls=" . count($routes) . " (not the production urlset)\n");
+}
 
 $log(str_repeat('=', 56) . "\n");
 $log("OK={$ok} SKIP={$skip} FAIL={$fail} routes=" . count($routes) . "\n");
 
-foreach ($required as $need) {
+$must = $only === [] ? $required : $only;
+foreach ($must as $need) {
     $php = $need === '/' ? $dist . '/index.html' : $dist . $need . '.php';
     $dir = $need === '/' ? $dist . '/index.html' : $dist . $need . '/index.html';
     if (!is_file($php) && !is_file($dir)) {
@@ -199,7 +235,7 @@ foreach ($required as $need) {
     }
 }
 
-if ($fail > 0 || $ok < count($required)) {
+if ($fail > 0 || ($only === [] && $ok < count($required))) {
     fwrite(STDERR, "static-export FAILED\n");
     exit(1);
 }
