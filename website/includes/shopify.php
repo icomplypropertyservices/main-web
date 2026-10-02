@@ -125,63 +125,122 @@ function shopifyCollectionUrl(array $collection): string {
     return url('/shop/index.php') . '#collection-' . rawurlencode($collection['id'] ?? '');
 }
 
-/**
- * Manufacturer catalogue card. Price text is shown as stored (POA or a trade kit price).
- */
-
-function shopifyImageSrc(string $path): string {
-    if (strpos($path, 'http') === 0) {
-        return $path;
+function shopifyImageSrc(string $path, string $hint = ''): string {
+    $path = trim($path);
+    if ($path !== '' && !preg_match('#^https?://#i', $path)) {
+        $rel = '/' . ltrim(str_replace('\\', '/', $path), '/');
+        if (is_file(SITE_ROOT . $rel)) {
+            return url($rel);
+        }
     }
-    return url($path);
+    $hay = strtolower($path . ' ' . $hint);
+    $aliases = [
+        'electrical' => 'electrical',
+        'fire-alarm' => 'fire-alarms',
+        'emergency-lighting' => 'emergency-lighting',
+        'aov' => 'aov-air-handling',
+        'air-handling' => 'aov-air-handling',
+        'nurse-call' => 'nurse-call',
+        'gas-safety' => 'gas-systems',
+        'gas' => 'gas-systems',
+        'intruder' => 'intruder-alarm',
+        'cctv' => 'cctv',
+        'access-control' => 'access-control',
+        'door-entry' => 'door-entry',
+        'intercom' => 'intercoms',
+        'landlord' => 'landlord-compliance',
+        'fire-risk' => 'fire-risk-assessments',
+        'kentec' => 'fire-alarms',
+        'apollo' => 'fire-alarms',
+        'hochiki' => 'fire-alarms',
+        'paxton' => 'access-control',
+        'hikvision' => 'cctv',
+    ];
+    foreach ($aliases as $needle => $slug) {
+        if (str_contains($hay, $needle)) {
+            return function_exists('serviceImageUrl') ? serviceImageUrl($slug) : url('/assets/images/services/' . $slug . '.jpg');
+        }
+    }
+    if (function_exists('getServices')) {
+        foreach (array_keys(getServices()) as $slug) {
+            if ($slug !== '' && str_contains($hay, $slug)) {
+                return serviceImageUrl($slug);
+            }
+        }
+    }
+    return url('/assets/images/services/fire-alarms.jpg');
 }
 
-/**
- * Product card HTML (works with or without live Shopify).
- * When product has shopify_product_id + live config, a Buy Button mount node is included.
- */
-/**
- * Build a shop product card from a manufacturer catalog product entry.
- */
 function shopifyCardFromManufacturerProduct(array $p, string $mfrSlug, string $mfrName): string {
     $product = [
         'id' => $p['id'] ?? ($mfrSlug . '-product'),
         'title' => $p['title'] ?? ($mfrName . ' product'),
         'blurb' => $p['blurb'] ?? '',
         'price' => $p['price'] ?? 'POA',
-        'image' => $p['image'] ?? ('/assets/images/manufacturers/' . $mfrSlug . '.jpg'),
+        'image' => $p['image'] ?? (function_exists('manufacturerImageUrl') ? manufacturerImageUrl($mfrSlug) : ('/assets/images/manufacturers/' . $mfrSlug . '.jpg')),
         'handle' => $p['handle'] ?? '',
         'shopify_product_id' => $p['shopify_product_id'] ?? '',
         'badge' => $p['badge'] ?? '',
     ];
+    // Placeholder brand cards are not Shopify PDPs. Land on the brand page
+    // anchor, which the static export actually publishes.
+    $anchorId = (string)($p['id'] ?? ($mfrSlug . '-product'));
+    $product['public_href'] = url('/pages/manufacturers/' . rawurlencode($mfrSlug) . '.php')
+        . '#' . rawurlencode($anchorId);
     return shopifyProductCardHtml($product, false);
 }
 
 function shopifyProductCardHtml(array $product, bool $compact = false): string {
+    $over = icomplyPackagePublicOverride($product);
+    if ($over['price'] !== null) {
+        $product['price'] = $over['price'];
+    }
+    if ($over['href'] !== null) {
+        $product['public_href'] = $over['href'];
+    }
+    if ($over['is_aov_package']) {
+        $product['badge'] = 'POA';
+    }
+    if (!empty($over['blurb'])) {
+        $product['blurb'] = $over['blurb'];
+    }
+
     $id = htmlspecialchars($product['id'] ?? '', ENT_QUOTES, 'UTF-8');
     $title = htmlspecialchars($product['title'] ?? 'Product', ENT_QUOTES, 'UTF-8');
     $blurb = htmlspecialchars($product['blurb'] ?? '', ENT_QUOTES, 'UTF-8');
-    $price = htmlspecialchars($product['price'] ?? '', ENT_QUOTES, 'UTF-8');
+    $priceRaw = (string)($product['price'] ?? '');
+    $reqPath = (string)(parse_url((string)($_SERVER['REQUEST_URI'] ?? ''), PHP_URL_PATH) ?: '');
+    $onShopSurface = (bool)preg_match('#^/(shop|products)(/|$)#', $reqPath);
+    if (!$onShopSurface && str_contains($priceRaw, '£')) {
+        $priceRaw = 'POA';
+    }
+    $price = htmlspecialchars($priceRaw, ENT_QUOTES, 'UTF-8');
     $badge = trim((string)($product['badge'] ?? ''));
-    $img = htmlspecialchars(shopifyImageSrc($product['image'] ?? '/assets/images/services/fire-alarms.jpg'), ENT_QUOTES, 'UTF-8');
+    $img = htmlspecialchars(shopifyImageSrc(
+        (string)($product['image'] ?? ''),
+        (string)(($product['id'] ?? '') . ' ' . ($product['handle'] ?? '') . ' ' . ($product['title'] ?? ''))
+    ), ENT_QUOTES, 'UTF-8');
     $fallback = htmlspecialchars(url('/assets/images/services/fire-alarms.jpg'), ENT_QUOTES, 'UTF-8');
     $href = htmlspecialchars(shopifyProductUrl($product), ENT_QUOTES, 'UTF-8');
     $shopifyId = preg_replace('/\D+/', '', (string)($product['shopify_product_id'] ?? ''));
     $mountId = 'shopify-buy-' . preg_replace('/[^a-z0-9\-]/i', '', $product['id'] ?? uniqid('p'));
+    $ctaLabel = htmlspecialchars((string)($product['public_cta'] ?? $over['cta'] ?? 'View in shop'), ENT_QUOTES, 'UTF-8');
 
     $badgeHtml = $badge !== ''
         ? '<span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide bg-[#ff6b00] text-white">' . htmlspecialchars($badge, ENT_QUOTES, 'UTF-8') . '</span>'
         : '';
 
     $imgH = $compact ? 'h-36' : 'h-44';
-    $liveWidget = ($shopifyId !== '' && shopifyEnabled())
+    // Never mount Buy Button on retargeted / AOV-POA package cards
+    $useLive = ($shopifyId !== '' && shopifyEnabled() && empty($product['public_href']) && !$over['is_aov_package']);
+    $liveWidget = $useLive
         ? '<div id="' . $mountId . '" class="shopify-buy-mount mt-3" data-product-id="' . htmlspecialchars($shopifyId, ENT_QUOTES, 'UTF-8') . '"></div>'
-        : '<a href="' . $href . '" class="mt-4 inline-flex items-center justify-center w-full py-3 rounded-xl bg-[#0a2540] hover:bg-[#ff6b00] text-white text-sm font-semibold transition">View in shop</a>';
+        : '<a href="' . $href . '" class="mt-4 inline-flex items-center justify-center w-full py-3 rounded-xl bg-[#0B1F3A] hover:bg-[#ff6b00] text-white text-sm font-semibold transition">' . $ctaLabel . '</a>';
 
     return '<article id="' . $id . '" class="shop-product-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">'
         . '<a href="' . $href . '" class="relative block bg-zinc-100 overflow-hidden">'
         . $badgeHtml
-        . '<img src="' . $img . '" alt="' . $title . '" class="w-full ' . $imgH . ' object-cover group-hover:scale-105 transition duration-300" loading="lazy" onerror="this.src=\'' . $fallback . '\'">'
+        . '<img src="' . $img . '" alt="' . $title . '" width="640" height="360" class="w-full ' . $imgH . ' object-cover group-hover:scale-105 transition duration-300" loading="lazy" onerror="this.src=\'' . $fallback . '\'">'
         . '</a>'
         . '<div class="p-5 flex flex-col flex-1">'
         . '<div class="text-xs font-semibold text-[#ff6b00] mb-1">' . $price . '</div>'
@@ -191,13 +250,13 @@ function shopifyProductCardHtml(array $product, bool $compact = false): string {
         . '</div></article>';
 }
 
-/**
- * Collection card HTML.
- */
 function shopifyCollectionCardHtml(array $collection): string {
     $title = htmlspecialchars($collection['title'] ?? 'Collection', ENT_QUOTES, 'UTF-8');
     $blurb = htmlspecialchars($collection['blurb'] ?? '', ENT_QUOTES, 'UTF-8');
-    $img = htmlspecialchars(shopifyImageSrc($collection['image'] ?? '/assets/images/services/fire-alarms.jpg'), ENT_QUOTES, 'UTF-8');
+    $img = htmlspecialchars(shopifyImageSrc(
+        (string)($collection['image'] ?? ''),
+        (string)(($collection['id'] ?? '') . ' ' . ($collection['handle'] ?? '') . ' ' . ($collection['title'] ?? ''))
+    ), ENT_QUOTES, 'UTF-8');
     $href = htmlspecialchars(shopifyCollectionUrl($collection), ENT_QUOTES, 'UTF-8');
     $id = htmlspecialchars($collection['id'] ?? '', ENT_QUOTES, 'UTF-8');
     $collId = preg_replace('/\D+/', '', (string)($collection['shopify_collection_id'] ?? ''));
@@ -206,11 +265,12 @@ function shopifyCollectionCardHtml(array $collection): string {
     $extra = ($collId !== '' && shopifyEnabled())
         ? '<div id="' . $mountId . '" class="shopify-collection-mount mt-3" data-collection-id="' . htmlspecialchars($collId, ENT_QUOTES, 'UTF-8') . '"></div>'
         : '<span class="inline-block mt-4 text-sm font-semibold text-[#ff6b00]">Shop collection →</span>';
+    $fallback = htmlspecialchars(url('/assets/images/services/fire-alarms.jpg'), ENT_QUOTES, 'UTF-8');
 
     return <<<HTML
 <a id="collection-{$id}" href="{$href}" class="shop-collection-card group block bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition">
   <div class="relative h-40 overflow-hidden bg-zinc-100">
-    <img src="{$img}" alt="{$title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy">
+    <img src="{$img}" alt="{$title} — iComply Property Services" width="640" height="360" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" onerror="this.src='{$fallback}'">
     <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
     <div class="absolute bottom-3 left-4 right-4 text-white font-semibold text-lg">{$title}</div>
   </div>
@@ -222,9 +282,6 @@ function shopifyCollectionCardHtml(array $collection): string {
 HTML;
 }
 
-/**
- * Inject Shopify Buy Button SDK bootstrapping (call once before </body> or in page).
- */
 function shopifyBuyButtonScript(): string {
     if (!shopifyEnabled()) {
         return '<!-- Shopify Buy Button inactive: set SHOPIFY_DOMAIN + SHOPIFY_STOREFRONT_TOKEN in config.local.php -->';
@@ -253,18 +310,18 @@ document.addEventListener('DOMContentLoaded', function () {
             styles: {
               product: { '@media (min-width: 601px)': { 'max-width': '100%', 'margin-left': '0', 'margin-bottom': '0' } },
               button: {
-                'background-color': '#0a2540',
+                'background-color': '#0B1F3A',
                 ':hover': { 'background-color': '#ff6b00' },
                 'border-radius': '12px',
                 'font-weight': '600'
               }
             },
-            contents: { img: false, title: false, price: true, description: false },
+            contents: { img: false, title: false, price: false, description: false },
             text: { button: 'Add to cart' }
           },
           cart: {
             styles: {
-              button: { 'background-color': '#0a2540', ':hover': { 'background-color': '#ff6b00' }, 'border-radius': '12px' }
+              button: { 'background-color': '#0B1F3A', ':hover': { 'background-color': '#ff6b00' }, 'border-radius': '12px' }
             },
             text: { total: 'Subtotal', button: 'Checkout' }
           }
@@ -281,7 +338,7 @@ document.addEventListener('DOMContentLoaded', function () {
         options: {
           product: {
             styles: {
-              button: { 'background-color': '#0a2540', ':hover': { 'background-color': '#ff6b00' }, 'border-radius': '12px' }
+              button: { 'background-color': '#0B1F3A', ':hover': { 'background-color': '#ff6b00' }, 'border-radius': '12px' }
             },
             text: { button: 'Add to cart' }
           }

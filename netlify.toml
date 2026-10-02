@@ -28,6 +28,11 @@
   command = "php website/bin/static-export.php && php website/bin/check-static-export.php"
   publish = "dist"
 
+# Re-apply the curated sitemap after other build plugins. A file-crawl plugin
+# (live /sitemaps/sitemap-1.xml … sitemap-6.xml) must not be the last writer.
+[[plugins]]
+  package = "./netlify/plugins/lock-sitemap"
+
 [[redirects]]
   from = "https://www.icomplypropertyservices.co.uk/*"
   to = "https://icomplypropertyservices.co.uk/:splat"
@@ -272,23 +277,184 @@
   to = "/pages/resources"
   status = 301
 
+# Missing .webmanifest falls through to the published manifest.json.
+# No force: a real file at that path still wins.
 [[redirects]]
   from = "/manifest.webmanifest"
-  to = "/manifest.webmanifest"
+  to = "/manifest.json"
   status = 200
-  force = true
 
 [[redirects]]
   from = "/site.webmanifest"
-  to = "/site.webmanifest"
+  to = "/manifest.json"
   status = 200
-  force = true
 
 [[redirects]]
   from = "/manifest.json"
   to = "/manifest.json"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/group"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/group/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/group/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/pages/products"
+  to = "/products"
+  status = 301
+
+[[redirects]]
+  from = "/pages/products/"
+  to = "/products"
+  status = 301
+
+[[redirects]]
+  from = "/products/aov-air-handling-package"
+  to = "/pages/services/aov-air-handling"
+  status = 301
+
+[[redirects]]
+  from = "/products/electrical-compliance-package"
+  to = "/pages/services/electrical"
+  status = 301
+
+[[redirects]]
+  from = "/products/emergency-lighting-package"
+  to = "/pages/services/emergency-lighting"
+  status = 301
+
+[[redirects]]
+  from = "/products/fire-alarm-service-package"
+  to = "/pages/services/fire-alarms"
+  status = 301
+
+[[redirects]]
+  from = "/products/nurse-call-systems-package"
+  to = "/pages/services/nurse-call"
+  status = 301
+
+[[redirects]]
+  from = "/products/gas-safety-package"
+  to = "/pages/services/gas-systems"
+  status = 301
+
+[[redirects]]
+  from = "/products/intruder-alarm-package"
+  to = "/pages/services/intruder-alarm"
+  status = 301
+
+[[redirects]]
+  from = "/products/cctv-systems-package"
+  to = "/pages/services/cctv"
+  status = 301
+
+[[redirects]]
+  from = "/products/access-control-package"
+  to = "/pages/services/access-control"
+  status = 301
+
+[[redirects]]
+  from = "/products/door-entry-package"
+  to = "/pages/services/door-entry"
+  status = 301
+
+[[redirects]]
+  from = "/products/intercoms-package"
+  to = "/pages/services/intercoms"
+  status = 301
+
+# AOV and Barriers × town (pop > 10k) are real exports stored as .php.
+# 200, no force. These must never 301. An exported file at the path wins;
+# otherwise the .php sibling is served:
+#   /pages/aov/{town}
+#   /pages/barriers/{town}
+#   /pages/services/aov/{town}
+#   /pages/services/aov-air-handling/{town}
+#   /pages/services/barriers/{town}
+#   /pages/aov-air-handling/{town}
+[[redirects]]
+  from = "/pages/aov/:town"
+  to = "/pages/aov/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/aov/:town/"
+  to = "/pages/aov/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/barriers/:town"
+  to = "/pages/barriers/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/barriers/:town/"
+  to = "/pages/barriers/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/aov-air-handling/:town"
+  to = "/pages/aov-air-handling/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/aov-air-handling/:town/"
+  to = "/pages/aov-air-handling/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/services/aov/:town"
+  to = "/pages/services/aov/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/services/aov/:town/"
+  to = "/pages/services/aov/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/services/aov-air-handling/:town"
+  to = "/pages/services/aov-air-handling/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/services/aov-air-handling/:town/"
+  to = "/pages/services/aov-air-handling/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/services/barriers/:town"
+  to = "/pages/services/barriers/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/services/barriers/:town/"
+  to = "/pages/services/barriers/:town.php"
+  status = 200
+
+# Linked keyword×town and service×town URLs 404 when the matrix is not published.
+# aov, barriers, and aov-* slugs are not in the service×town 301 list.
+[[redirects]]
+  from = "/pages/keywords/:slug/:town"
+  to = "/pages/keywords/:slug"
+  status = 301
+
+[[redirects]]
+  from = "/pages/keywords/:slug/:town/"
+  to = "/pages/keywords/:slug"
+  status = 301
 
 [[redirects]]
   from = "/assets/css/site.css"
@@ -300,6 +466,40 @@
   from = "/sitemap-*.xml"
   to = "/sitemap.xml"
   status = 301
+  force = true
+
+# Live index used /sitemaps/sitemap-1.xml … sitemap-6.xml plus nested
+# /products/sitemap.xml and /shop/sitemap.xml. Those files 404. Send them
+# at the one sitemap this site publishes. Do not touch /shop or /products hubs.
+[[redirects]]
+  from = "/sitemaps/*"
+  to = "/sitemap.xml"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/products/sitemap.xml"
+  to = "/sitemap.xml"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/products/sitemap"
+  to = "/sitemap.xml"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/sitemap.xml"
+  to = "/sitemap.xml"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/sitemap"
+  to = "/sitemap.xml"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/assets/images/services/*-photo.jpg"
@@ -434,6 +634,590 @@
   to = "/pages/keywords/:slug.php"
   status = 200
   force = true
+
+
+# BEGIN legacy-matrix-redirects
+# END legacy-matrix-redirects
+
+[[redirects]]
+  from = "/pages/electrical/:town"
+  to = "/pages/services/electrical"
+  status = 301
+
+[[redirects]]
+  from = "/pages/electrical/:town/"
+  to = "/pages/services/electrical"
+  status = 301
+
+[[redirects]]
+  from = "/pages/gas-systems/:town"
+  to = "/pages/services/gas-systems"
+  status = 301
+
+[[redirects]]
+  from = "/pages/gas-systems/:town/"
+  to = "/pages/services/gas-systems"
+  status = 301
+
+[[redirects]]
+  from = "/pages/nurse-call/:town"
+  to = "/pages/services/nurse-call"
+  status = 301
+
+[[redirects]]
+  from = "/pages/nurse-call/:town/"
+  to = "/pages/services/nurse-call"
+  status = 301
+
+[[redirects]]
+  from = "/pages/fire-alarms/:town"
+  to = "/pages/services/fire-alarms"
+  status = 301
+
+[[redirects]]
+  from = "/pages/fire-alarms/:town/"
+  to = "/pages/services/fire-alarms"
+  status = 301
+
+[[redirects]]
+  from = "/pages/emergency-lighting/:town"
+  to = "/pages/services/emergency-lighting"
+  status = 301
+
+[[redirects]]
+  from = "/pages/emergency-lighting/:town/"
+  to = "/pages/services/emergency-lighting"
+  status = 301
+
+[[redirects]]
+  from = "/pages/fire-risk-assessments/:town"
+  to = "/pages/services/fire-risk-assessments"
+  status = 301
+
+[[redirects]]
+  from = "/pages/fire-risk-assessments/:town/"
+  to = "/pages/services/fire-risk-assessments"
+  status = 301
+
+[[redirects]]
+  from = "/pages/fire-extinguishers/:town"
+  to = "/pages/services/fire-extinguishers"
+  status = 301
+
+[[redirects]]
+  from = "/pages/fire-extinguishers/:town/"
+  to = "/pages/services/fire-extinguishers"
+  status = 301
+
+[[redirects]]
+  from = "/pages/fire-doors/:town"
+  to = "/pages/services/fire-doors"
+  status = 301
+
+[[redirects]]
+  from = "/pages/fire-doors/:town/"
+  to = "/pages/services/fire-doors"
+  status = 301
+
+[[redirects]]
+  from = "/pages/fire-stopping/:town"
+  to = "/pages/services/fire-stopping"
+  status = 301
+
+[[redirects]]
+  from = "/pages/fire-stopping/:town/"
+  to = "/pages/services/fire-stopping"
+  status = 301
+
+[[redirects]]
+  from = "/pages/fire-suppression/:town"
+  to = "/pages/services/fire-suppression"
+  status = 301
+
+[[redirects]]
+  from = "/pages/fire-suppression/:town/"
+  to = "/pages/services/fire-suppression"
+  status = 301
+
+[[redirects]]
+  from = "/pages/sprinkler-systems/:town"
+  to = "/pages/services/sprinkler-systems"
+  status = 301
+
+[[redirects]]
+  from = "/pages/sprinkler-systems/:town/"
+  to = "/pages/services/sprinkler-systems"
+  status = 301
+
+[[redirects]]
+  from = "/pages/dry-risers/:town"
+  to = "/pages/services/dry-risers"
+  status = 301
+
+[[redirects]]
+  from = "/pages/dry-risers/:town/"
+  to = "/pages/services/dry-risers"
+  status = 301
+
+[[redirects]]
+  from = "/pages/fire-signage/:town"
+  to = "/pages/services/fire-signage"
+  status = 301
+
+[[redirects]]
+  from = "/pages/fire-signage/:town/"
+  to = "/pages/services/fire-signage"
+  status = 301
+
+[[redirects]]
+  from = "/pages/evacuation-alerts/:town"
+  to = "/pages/services/evacuation-alerts"
+  status = 301
+
+[[redirects]]
+  from = "/pages/evacuation-alerts/:town/"
+  to = "/pages/services/evacuation-alerts"
+  status = 301
+
+[[redirects]]
+  from = "/pages/kitchen-fire-suppression/:town"
+  to = "/pages/services/kitchen-fire-suppression"
+  status = 301
+
+[[redirects]]
+  from = "/pages/kitchen-fire-suppression/:town/"
+  to = "/pages/services/kitchen-fire-suppression"
+  status = 301
+
+[[redirects]]
+  from = "/pages/fire-compartmentation/:town"
+  to = "/pages/services/fire-compartmentation"
+  status = 301
+
+[[redirects]]
+  from = "/pages/fire-compartmentation/:town/"
+  to = "/pages/services/fire-compartmentation"
+  status = 301
+
+[[redirects]]
+  from = "/pages/intruder-alarm/:town"
+  to = "/pages/services/intruder-alarm"
+  status = 301
+
+[[redirects]]
+  from = "/pages/intruder-alarm/:town/"
+  to = "/pages/services/intruder-alarm"
+  status = 301
+
+[[redirects]]
+  from = "/pages/cctv/:town"
+  to = "/pages/services/cctv"
+  status = 301
+
+[[redirects]]
+  from = "/pages/cctv/:town/"
+  to = "/pages/services/cctv"
+  status = 301
+
+[[redirects]]
+  from = "/pages/access-control/:town"
+  to = "/pages/services/access-control"
+  status = 301
+
+[[redirects]]
+  from = "/pages/access-control/:town/"
+  to = "/pages/services/access-control"
+  status = 301
+
+[[redirects]]
+  from = "/pages/door-entry/:town"
+  to = "/pages/services/door-entry"
+  status = 301
+
+[[redirects]]
+  from = "/pages/door-entry/:town/"
+  to = "/pages/services/door-entry"
+  status = 301
+
+[[redirects]]
+  from = "/pages/intercoms/:town"
+  to = "/pages/services/intercoms"
+  status = 301
+
+[[redirects]]
+  from = "/pages/intercoms/:town/"
+  to = "/pages/services/intercoms"
+  status = 301
+
+[[redirects]]
+  from = "/pages/landlord-compliance/:town"
+  to = "/pages/services/landlord-compliance"
+  status = 301
+
+[[redirects]]
+  from = "/pages/landlord-compliance/:town/"
+  to = "/pages/services/landlord-compliance"
+  status = 301
+
+[[redirects]]
+  from = "/pages/facilities-management/:town"
+  to = "/pages/services/facilities-management"
+  status = 301
+
+[[redirects]]
+  from = "/pages/facilities-management/:town/"
+  to = "/pages/services/facilities-management"
+  status = 301
+
+[[redirects]]
+  from = "/pages/building-maintenance/:town"
+  to = "/pages/services/building-maintenance"
+  status = 301
+
+[[redirects]]
+  from = "/pages/building-maintenance/:town/"
+  to = "/pages/services/building-maintenance"
+  status = 301
+
+[[redirects]]
+  from = "/pages/project-management/:town"
+  to = "/pages/services/project-management"
+  status = 301
+
+[[redirects]]
+  from = "/pages/project-management/:town/"
+  to = "/pages/services/project-management"
+  status = 301
+
+[[redirects]]
+  from = "/pages/building-surveys/:town"
+  to = "/pages/services/building-surveys"
+  status = 301
+
+[[redirects]]
+  from = "/pages/building-surveys/:town/"
+  to = "/pages/services/building-surveys"
+  status = 301
+
+[[redirects]]
+  from = "/pages/cdm-support/:town"
+  to = "/pages/services/cdm-support"
+  status = 301
+
+[[redirects]]
+  from = "/pages/cdm-support/:town/"
+  to = "/pages/services/cdm-support"
+  status = 301
+
+[[redirects]]
+  from = "/pages/property-refurbishment-pm/:town"
+  to = "/pages/services/property-refurbishment-pm"
+  status = 301
+
+[[redirects]]
+  from = "/pages/property-refurbishment-pm/:town/"
+  to = "/pages/services/property-refurbishment-pm"
+  status = 301
+
+[[redirects]]
+  from = "/pages/compliance-consultancy/:town"
+  to = "/pages/services/compliance-consultancy"
+  status = 301
+
+[[redirects]]
+  from = "/pages/compliance-consultancy/:town/"
+  to = "/pages/services/compliance-consultancy"
+  status = 301
+
+[[redirects]]
+  from = "/pages/kitchens/:town"
+  to = "/pages/services/kitchens"
+  status = 301
+
+[[redirects]]
+  from = "/pages/kitchens/:town/"
+  to = "/pages/services/kitchens"
+  status = 301
+
+[[redirects]]
+  from = "/pages/bathrooms/:town"
+  to = "/pages/services/bathrooms"
+  status = 301
+
+[[redirects]]
+  from = "/pages/bathrooms/:town/"
+  to = "/pages/services/bathrooms"
+  status = 301
+
+[[redirects]]
+  from = "/pages/renovation/:town"
+  to = "/pages/services/renovation"
+  status = 301
+
+[[redirects]]
+  from = "/pages/renovation/:town/"
+  to = "/pages/services/renovation"
+  status = 301
+
+[[redirects]]
+  from = "/pages/plastering/:town"
+  to = "/pages/services/plastering"
+  status = 301
+
+[[redirects]]
+  from = "/pages/plastering/:town/"
+  to = "/pages/services/plastering"
+  status = 301
+
+[[redirects]]
+  from = "/pages/tiling/:town"
+  to = "/pages/services/tiling"
+  status = 301
+
+[[redirects]]
+  from = "/pages/tiling/:town/"
+  to = "/pages/services/tiling"
+  status = 301
+
+[[redirects]]
+  from = "/pages/painting-decorating/:town"
+  to = "/pages/services/painting-decorating"
+  status = 301
+
+[[redirects]]
+  from = "/pages/painting-decorating/:town/"
+  to = "/pages/services/painting-decorating"
+  status = 301
+
+[[redirects]]
+  from = "/pages/joinery/:town"
+  to = "/pages/services/joinery"
+  status = 301
+
+[[redirects]]
+  from = "/pages/joinery/:town/"
+  to = "/pages/services/joinery"
+  status = 301
+
+[[redirects]]
+  from = "/pages/carpentry/:town"
+  to = "/pages/services/carpentry"
+  status = 301
+
+[[redirects]]
+  from = "/pages/carpentry/:town/"
+  to = "/pages/services/carpentry"
+  status = 301
+
+[[redirects]]
+  from = "/pages/flooring/:town"
+  to = "/pages/services/flooring"
+  status = 301
+
+[[redirects]]
+  from = "/pages/flooring/:town/"
+  to = "/pages/services/flooring"
+  status = 301
+
+[[redirects]]
+  from = "/pages/plumbing/:town"
+  to = "/pages/services/plumbing"
+  status = 301
+
+[[redirects]]
+  from = "/pages/plumbing/:town/"
+  to = "/pages/services/plumbing"
+  status = 301
+
+[[redirects]]
+  from = "/pages/heating/:town"
+  to = "/pages/services/heating"
+  status = 301
+
+[[redirects]]
+  from = "/pages/heating/:town/"
+  to = "/pages/services/heating"
+  status = 301
+
+[[redirects]]
+  from = "/pages/roofing/:town"
+  to = "/pages/services/roofing"
+  status = 301
+
+[[redirects]]
+  from = "/pages/roofing/:town/"
+  to = "/pages/services/roofing"
+  status = 301
+
+[[redirects]]
+  from = "/pages/brickwork/:town"
+  to = "/pages/services/brickwork"
+  status = 301
+
+[[redirects]]
+  from = "/pages/brickwork/:town/"
+  to = "/pages/services/brickwork"
+  status = 301
+
+[[redirects]]
+  from = "/pages/dry-lining/:town"
+  to = "/pages/services/dry-lining"
+  status = 301
+
+[[redirects]]
+  from = "/pages/dry-lining/:town/"
+  to = "/pages/services/dry-lining"
+  status = 301
+
+[[redirects]]
+  from = "/pages/loft-conversions/:town"
+  to = "/pages/services/loft-conversions"
+  status = 301
+
+[[redirects]]
+  from = "/pages/loft-conversions/:town/"
+  to = "/pages/services/loft-conversions"
+  status = 301
+
+[[redirects]]
+  from = "/pages/extensions/:town"
+  to = "/pages/services/extensions"
+  status = 301
+
+[[redirects]]
+  from = "/pages/extensions/:town/"
+  to = "/pages/services/extensions"
+  status = 301
+
+[[redirects]]
+  from = "/pages/insulation/:town"
+  to = "/pages/services/insulation"
+  status = 301
+
+[[redirects]]
+  from = "/pages/insulation/:town/"
+  to = "/pages/services/insulation"
+  status = 301
+
+[[redirects]]
+  from = "/pages/damp-proofing/:town"
+  to = "/pages/services/damp-proofing"
+  status = 301
+
+[[redirects]]
+  from = "/pages/damp-proofing/:town/"
+  to = "/pages/services/damp-proofing"
+  status = 301
+
+[[redirects]]
+  from = "/pages/windows-doors/:town"
+  to = "/pages/services/windows-doors"
+  status = 301
+
+[[redirects]]
+  from = "/pages/windows-doors/:town/"
+  to = "/pages/services/windows-doors"
+  status = 301
+
+[[redirects]]
+  from = "/pages/rendering/:town"
+  to = "/pages/services/rendering"
+  status = 301
+
+[[redirects]]
+  from = "/pages/rendering/:town/"
+  to = "/pages/services/rendering"
+  status = 301
+
+[[redirects]]
+  from = "/pages/groundworks/:town"
+  to = "/pages/services/groundworks"
+  status = 301
+
+[[redirects]]
+  from = "/pages/groundworks/:town/"
+  to = "/pages/services/groundworks"
+  status = 301
+
+[[redirects]]
+  from = "/pages/landscaping/:town"
+  to = "/pages/services/landscaping"
+  status = 301
+
+[[redirects]]
+  from = "/pages/landscaping/:town/"
+  to = "/pages/services/landscaping"
+  status = 301
+
+[[redirects]]
+  from = "/pages/electrics-first-fix/:town"
+  to = "/pages/services/electrics-first-fix"
+  status = 301
+
+[[redirects]]
+  from = "/pages/electrics-first-fix/:town/"
+  to = "/pages/services/electrics-first-fix"
+  status = 301
+
+[[redirects]]
+  from = "/pages/commercial-fit-out/:town"
+  to = "/pages/services/commercial-fit-out"
+  status = 301
+
+[[redirects]]
+  from = "/pages/commercial-fit-out/:town/"
+  to = "/pages/services/commercial-fit-out"
+  status = 301
+
+[[redirects]]
+  from = "/pages/epc/:town"
+  to = "/pages/services/epc"
+  status = 301
+
+[[redirects]]
+  from = "/pages/epc/:town/"
+  to = "/pages/services/epc"
+  status = 301
+
+[[redirects]]
+  from = "/pages/smoke-co-alarms/:town"
+  to = "/pages/services/smoke-co-alarms"
+  status = 301
+
+[[redirects]]
+  from = "/pages/smoke-co-alarms/:town/"
+  to = "/pages/services/smoke-co-alarms"
+  status = 301
+
+[[redirects]]
+  from = "/pages/pat-testing/:town"
+  to = "/pages/services/pat-testing"
+  status = 301
+
+[[redirects]]
+  from = "/pages/pat-testing/:town/"
+  to = "/pages/services/pat-testing"
+  status = 301
+
+[[redirects]]
+  from = "/pages/legionella-risk-assessment/:town"
+  to = "/pages/services/legionella-risk-assessment"
+  status = 301
+
+[[redirects]]
+  from = "/pages/legionella-risk-assessment/:town/"
+  to = "/pages/services/legionella-risk-assessment"
+  status = 301
+
+[[redirects]]
+  from = "/pages/asbestos-survey/:town"
+  to = "/pages/services/asbestos-survey"
+  status = 301
+
+[[redirects]]
+  from = "/pages/asbestos-survey/:town/"
+  to = "/pages/services/asbestos-survey"
+  status = 301
 
 [[redirects]]
   from = "/pages/barriers"
@@ -609,3 +1393,13 @@
   [headers.values]
     Content-Type = "application/xml; charset=utf-8"
     Cache-Control = "public, max-age=3600"
+
+# Powered by Netlify badge: Netlify injects /.netlify/scripts/hud at the edge
+# (Project configuration → General → Powered by Netlify badge). That toggle
+# is not in git. This policy allows inline scripts and same-site /assets/
+# only, so the HUD script cannot execute on the next deploy.
+# Keep this path-scoped. Adding 'self' would allow the badge back.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "script-src 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.google.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://icomplypropertyservices.co.uk/assets/ https://www.icomplypropertyservices.co.uk/assets/ https://*.netlify.app/assets/"

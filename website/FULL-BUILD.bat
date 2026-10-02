@@ -1,7 +1,7 @@
 @echo off
 set PHP=C:\xampp\php\php.exe
 cd /d %~dp0
-echo === Icomply FULL BUILD ===
+echo === iComply FULL BUILD ===
 "%PHP%" bin\full-build.php
 if errorlevel 1 (
   echo BUILD reported issues

@@ -27,11 +27,11 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/areas</loc><priority>0.9</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers</loc><priority>0.9</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords</loc><priority>0.9</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/shop</loc><priority>0.8</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/shop/fire</loc><priority>0.75</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/shop/electrical</loc><priority>0.75</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/shop/security</loc><priority>0.75</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/shop/gas</loc><priority>0.75</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/shop/</loc><priority>0.8</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/shop/fire/</loc><priority>0.75</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/shop/electrical/</loc><priority>0.75</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/shop/security/</loc><priority>0.75</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/shop/gas/</loc><priority>0.75</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/products</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/resources/asbestos-survey</loc><priority>0.7</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/resources/booking-compliance-certificates</loc><priority>0.7</priority></url>
@@ -64,12 +64,10 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/legionella-landlords</loc><priority>0.78</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/asbestos-landlords</loc><priority>0.78</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/access-control</loc><priority>0.85</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/services/air-source-heat-pumps</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/aov-air-handling</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/asbestos-survey</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/barriers</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/bathrooms</loc><priority>0.85</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/services/battery-storage</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/brickwork</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/building-maintenance</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/building-surveys</loc><priority>0.85</priority></url>
@@ -86,7 +84,6 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/electrics-first-fix</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/emergency-lighting</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/epc</loc><priority>0.85</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/services/ev-charging</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/evacuation-alerts</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/extensions</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/facilities-management</loc><priority>0.85</priority></url>
@@ -100,7 +97,6 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/fire-suppression</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/flooring</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/gas-systems</loc><priority>0.85</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/services/ground-source-heat-pumps</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/groundworks</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/heating</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/insulation</loc><priority>0.85</priority></url>
@@ -124,8 +120,6 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/renovation</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/roofing</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/smoke-co-alarms</loc><priority>0.85</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/services/solar-pv</loc><priority>0.85</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/services/solar-thermal</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/sprinkler-systems</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/tiling</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/windows-doors</loc><priority>0.85</priority></url>
@@ -388,7 +382,6 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/central-battery-emergency-lighting</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/central-heating-upgrade</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/ceramic-tile-fitting</loc><priority>0.68</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/certified-electrician</loc><priority>0.78</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/change-of-use-fire-risk-assessment</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/chemical-dpc-injection</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/chimney-brickwork</loc><priority>0.68</priority></url>
@@ -822,7 +815,6 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/gas-meter-relocation-support</loc><priority>0.78</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/gas-meter-works</loc><priority>0.78</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/gas-repair</loc><priority>0.78</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/gas-safe-engineer</loc><priority>0.78</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/gas-safe-engineer-stockport</loc><priority>0.78</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/gas-safe-register-engineer</loc><priority>0.78</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/gas-safety</loc><priority>0.78</priority></url>
@@ -1397,7 +1389,6 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/touch-screen-nurse-call</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/trade-button-door-entry</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/trench-dig-services</loc><priority>0.68</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/tunstall-nurse-call</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/turf-laying</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/type-1-fire-risk-assessment</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/type-3-fire-risk-assessment</loc><priority>0.68</priority></url>
@@ -1472,6 +1463,233 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/woodwork-painting</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/zenitel-intercom</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/zettler-nurse-call</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/2n</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/abb</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/ackermann</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/advanced-electronics</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/aid-call</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/aiphone</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/ajax-systems</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/akuvox</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/algo</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/allegion</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/alpha</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/ansell-lighting</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/apollo</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/ariston</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/ascom</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/assa-abloy</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/austco</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/avigilon</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/axis-communications</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/axis-intercom</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/barix</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/baxi</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/beghelli</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/bg-electrical</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/bilco</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/bitron-video</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/bosch</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/bosch-security</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/bpt</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/bpt-x1</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/brooks</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/c-tec</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/cambric</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/caretech</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/cdvi</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/clear-com</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/clevertronics</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/click-scolmore</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/colt</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/comelit</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/commax</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/commend</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/contactum</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/cooper-fire</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/cooper-lighting</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/courtney-thorne</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/crabtree</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/crow-electronics</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/cyberdata</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/dh-mechatronic</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/d-h-mechatronic</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/d-light</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/dahua</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/doorking</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/dormakaba</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/dsc</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/easee</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/eaton</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/eaton-fire</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/elvox</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/emergi-lite</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/ems</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/fagerhult</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/fermax</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/ferroli</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/fike</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/firebird</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/fireclass</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/flaktgroup</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/flir</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/fusebox</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/gallagher</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/garo</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/gent</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/geze</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/givenergy</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/gjd</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/glow-worm</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/golmar</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/grant</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/greenbrook</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/group-scs</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/haes-systems</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/hager</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/hanwha-vision</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/hid-global</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/hikvision</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/hikvision-ax-pro</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/hochiki</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/honeywell</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/ideal</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/idis</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/innerrange</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/intercall</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/intergas</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/jeron</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/jsb-electrical</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/kantech</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/kentec</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/kingspan-air</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/legrand</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/legrand-door-entry</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/lenels2</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/lewden</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/luxonic</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/mackwell</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/main-heating</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/mem</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/menvier</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/milesight</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/mk-electric</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/mobotix</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/morley</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/myenergi</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/navien</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/nedap</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/nittan</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/notifier</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/nuaire</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/ohme</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/orbik</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/orisec</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/p4-limited</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/panasonic-i-pro</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/paradox</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/paxton</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/philips-emergency</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/potterton</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/pyronix</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/quantec</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/rauland</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/ravenheat</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/remeha</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/reolink</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/risco</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/rolec-ev</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/salto-systems</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/scantronic</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/schneider-electric</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/schrack-seconet</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/se-controls</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/siedle</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/siemens</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/simon-rwa</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/smoke-control</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/software-house</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/sony-security</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/stanley-security</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/static-systems-group</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/stentofon</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/sterling-safety</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/suprema</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/system-sensor</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/systemair</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/tdsi</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/tektone</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/texecom</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/thorlux</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/thorn-lighting</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/tiandy</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/timeguard</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/toa</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/trox</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/tunstall</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/uniview</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/urmet</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/vaillant</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/vanderbilt</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/ventilux</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/videx</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/viessmann</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/vingtor-stentofon</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/visonic</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/vivotek</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/vokera</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/wallbox</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/wandsworth</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/windowmaster</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/wisenet</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/worcester-bosch</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/wylex</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/xtralis-vesda</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/yale</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/zenitel</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/zettler</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/ziton</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/zumtobel</loc><priority>0.72</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/electrical/manchester</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/electrical/salford</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/electrical/bolton</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/electrical/oldham</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/electrical/stockport</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/electrical/wigan</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/electrical/trafford</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/electrical/tameside</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/electrical/liverpool</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/electrical/warrington</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/gas-systems/manchester</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/gas-systems/salford</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/gas-systems/bolton</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/gas-systems/oldham</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/gas-systems/stockport</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/gas-systems/wigan</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/gas-systems/trafford</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/gas-systems/tameside</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/gas-systems/liverpool</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/gas-systems/warrington</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/manchester</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/salford</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/bolton</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/oldham</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/stockport</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/wigan</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/trafford</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/tameside</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/liverpool</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/warrington</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/manchester</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/salford</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/bolton</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/oldham</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/stockport</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/wigan</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/trafford</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/tameside</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/liverpool</loc><priority>0.5</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/warrington</loc><priority>0.5</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/came-gard-barrier</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/came-partner</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/came-gard-pt</loc><priority>0.68</priority></url>
@@ -2493,7 +2711,6 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/barriers/tredegar</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/barriers/wrexham</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/barriers/ystrad-mynach</loc><priority>0.55</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/doorking</loc><priority>0.7</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/came</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/faac</loc><priority>0.7</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers/bft</loc><priority>0.7</priority></url>

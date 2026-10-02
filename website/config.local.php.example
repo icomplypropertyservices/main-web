@@ -34,5 +34,5 @@ return [
     'SOCIAL_TWITTER' => 'https://twitter.com/your-handle',
     'SOCIAL_YOUTUBE' => '',
     'SOCIAL_TIKTOK' => '',
-    'SOCIAL_GOOGLE' => 'https://g.page/your-business',
+    'SOCIAL_GOOGLE' => '',
 ];
