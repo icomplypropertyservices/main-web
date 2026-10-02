@@ -2,7 +2,7 @@
 /**
  * Door Entry Systems — 3 images · 3 paragraphs · manufacturers · SEO brand alts
  */
-$pageTitle = '{{SERVICE_NAME}} in {{AREA}} | Icomply Property Services';
+$pageTitle = '{{SERVICE_NAME}} in {{AREA}} | iComply Property Services';
 $metaDesc = 'Door entry installation in {{AREA}}. Videx, Fermax and Aiphone video/audio panels — multi-tenant, GSM and IP systems.';
 $metaKeywords = 'door entry installation {{AREA}}, Videx door entry {{AREA}}, Fermax panel {{AREA}}, Aiphone video door entry {{AREA}}, apartment door entry {{AREA}}, BS EN 50133 {{AREA}}';
 $ogImage = url('/assets/images/services/door-entry.jpg');
@@ -37,7 +37,7 @@ require SITE_ROOT . '/includes/header.php';
           "postalCode": "SK2 5DE",
           "addressCountry": "GB"
         },
-        "priceRange": "££"
+        "priceRange": "POA"
       },
       "areaServed": {"@type": "City", "name": "{{AREA}}"},
       "offers": {
@@ -68,7 +68,7 @@ require SITE_ROOT . '/includes/header.php';
     <!-- IMAGE 1: Hero -->
     <div class="mt-8">
         <img src="<?= url('/assets/images/services/door-entry.jpg') ?>"
-             alt="Videx Fermax Aiphone video door entry panel and handset installation in {{AREA}} by Icomply Property Services"
+             alt="Videx Fermax Aiphone video door entry panel and handset installation in {{AREA}} by iComply Property Services"
              width="1200" height="800"
              class="w-full h-72 md:h-96 object-cover rounded-3xl border"
              loading="eager">
@@ -77,7 +77,7 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 1 -->
     <p class="mt-8 text-lg text-black max-w-3xl leading-relaxed">
-        Icomply Property Services provides complete audio and video <strong>{{SERVICE_NAME}}</strong> design, installation and maintenance for residential, multi-tenant and commercial properties across <strong>{{AREA}}</strong> and the wider North West. We specialise in <strong>Videx</strong>, <strong>Fermax</strong> and <strong>Aiphone</strong> entrance panels with colour video, GSM/4G and IP smartphone unlock.
+        iComply Property Services provides complete audio and video <strong>{{SERVICE_NAME}}</strong> design, installation and maintenance for residential, multi-tenant and commercial properties across <strong>{{AREA}}</strong> and the wider North West. We specialise in <strong>Videx</strong>, <strong>Fermax</strong> and <strong>Aiphone</strong> entrance panels with colour video, GSM/4G and IP smartphone unlock.
     </p>
 
     <!-- PARAGRAPH 2 -->
@@ -89,7 +89,7 @@ require SITE_ROOT . '/includes/header.php';
     <div class="mt-10 grid md:grid-cols-2 gap-6">
         <div>
             <img src="<?= url('/assets/images/keywords/video-door-entry.jpg') ?>"
-                 alt="Videx and Fermax video door entry panel with camera installed by Icomply in {{AREA}}"
+                 alt="Videx and Fermax video door entry panel with camera installed by iComply in {{AREA}}"
                  width="800" height="600"
                  class="w-full h-56 object-cover rounded-2xl border"
                  loading="lazy"
@@ -127,7 +127,7 @@ require SITE_ROOT . '/includes/header.php';
     <!-- IMAGE 3: Brand focus -->
     <div class="mt-10">
         <img src="<?= url('/assets/images/keywords/door-entry-system.jpg') ?>"
-             alt="Videx Fermax Aiphone door entry panels handsets and electric release systems — Icomply {{AREA}}"
+             alt="Videx Fermax Aiphone door entry panels handsets and electric release systems — iComply {{AREA}}"
              width="1200" height="700"
              class="w-full h-64 md:h-80 object-cover rounded-3xl border"
              loading="lazy"
