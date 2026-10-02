@@ -4,12 +4,14 @@
  * Does not replace /pages/services/fire-risk-assessments or /pages/fire-risk-assessment.
  */
 require_once dirname(__DIR__, 2) . '/config.php';
+require_once SITE_ROOT . '/includes/landlord-guide-prices.php';
+$fraFrom = icomplyLandlordGuideMoney('fra');
 
 $pageTitle = 'Fire risk assessment for HMOs | Stockport & MCR';
 $metaTitleExact = true;
-$metaDesc = 'FRA support for HMO and shared housing landlords in Stockport and Greater Manchester. Competent assessment — quote after scope (POA).';
+$metaDesc = 'FRA support for HMO and shared housing landlords in Stockport and Greater Manchester. Competent assessment — guide from ' . $fraFrom . ', fixed quote after scope.';
 $ogTitle = 'Fire risk assessment for HMOs';
-$ogDescription = 'FRA for HMO landlords — high-level guidance plus quote after scope (POA). Not legal advice.';
+$ogDescription = 'FRA for HMO landlords — guide from ' . $fraFrom . '. Not legal advice.';
 $ogImage = rtrim(SITE_URL, '/') . '/assets/images/services/fire-risk-assessments.jpg';
 $ogImageAlt = 'Fire risk assessment for HMOs and shared housing — iComply Property Services';
 $canonicalUrl = url('/pages/jobs/fire-risk-assessment');
@@ -17,6 +19,7 @@ $metaKeywords = 'fire risk assessment HMO, FRA landlords Manchester, fire risk a
 $omitPriceRange = true;
 
 $landing = [
+    'priceKey' => 'fra',
     'kicker' => 'HMOs, shared housing & multi-occupied buildings',
     'h1' => 'Fire risk assessment for HMOs: what Stockport and Manchester landlords should have on file',
     'lede' => 'Houses in multiple occupation are not the same fire-safety problem as a single self-contained let. Shared escape routes, denser occupation and building-wide detection mean landlords and agents need a clear **fire risk assessment (FRA)** — and the paperwork to show what was found and what was done next.',
@@ -24,7 +27,7 @@ $landing = [
     'proof' => [
         'Stockport-based',
         'Greater Manchester / North West',
-        'Fixed quote after scope (POA)',
+        'Guide from ' . $fraFrom,
     ],
     'crumbs' => [
         ['name' => 'Services', 'href' => '/pages/services'],
@@ -62,7 +65,7 @@ $landing = [
         ],
         [
             'title' => 'Fixed quote after scope',
-            'text' => 'FRA alone, or a coordinated plan with related checks where diary capacity allows. **POA** until scope is agreed, then a **fixed quote**. Related installs stay separate unless included in that scope.',
+            'text' => 'FRA alone, or a coordinated plan with related checks where diary capacity allows. Guide from **' . $fraFrom . '**, then a **fixed quote** once scope is agreed. Related installs stay separate unless included in that scope.',
         ],
         [
             'title' => 'Assess and file the actions',
@@ -94,11 +97,11 @@ $landing = [
         ],
         [
             'q' => 'Do you cover commercial buildings as well as HMOs?',
-            'a' => 'Ask us to scope it. Commercial and other multi-occupied buildings are fact-specific under the Fire Safety Order. Tell us the building type, floors and borough. The quote stays POA until that scope is agreed. The service page is linked above; this landing does not replace it.',
+            'a' => 'Ask us to scope it. Commercial and other multi-occupied buildings are fact-specific under the Fire Safety Order. Tell us the building type, floors and borough. The guide is ' . $fraFrom . ' where the assessment is in scope; the fixed quote follows that scope. The service page is linked above; this landing does not replace it.',
         ],
         [
             'q' => 'Will you quote a fixed price up front?',
-            'a' => 'We give a fixed price after scope is agreed. Until then, pricing is POA. Alarms, emergency lighting and extinguishers are quoted separately unless they are included in an agreed package.',
+            'a' => 'The published guide is ' . $fraFrom . '. You get a fixed price after scope is agreed. Alarms, emergency lighting and extinguishers are quoted separately unless they are included in an agreed package.',
         ],
     ],
     'links' => [
@@ -122,7 +125,7 @@ $landing = [
         ],
     ],
     'ctaTitle' => 'Request an FRA quote',
-    'ctaText' => 'Tell us HMO size, floors and borough (Stockport, Manchester or other North West), or describe a commercial / multi-occupied building so we can say whether it is in scope. **Fixed price** once we agree what is included. **POA** until then.',
+    'ctaText' => 'Tell us HMO size, floors and borough (Stockport, Manchester or other North West), or describe a commercial / multi-occupied building so we can say whether it is in scope. Guide from **' . $fraFrom . '**. The fixed price follows what is included.',
 ];
 
 require SITE_ROOT . '/includes/conversion-landing.php';

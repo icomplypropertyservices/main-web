@@ -4,12 +4,14 @@
  * Does not replace /pages/services/electrical (there is no /pages/services/eicr route).
  */
 require_once dirname(__DIR__, 2) . '/config.php';
+require_once SITE_ROOT . '/includes/landlord-guide-prices.php';
+$eicrFrom = icomplyLandlordGuideMoney('eicr');
 
 $pageTitle = 'EICR for landlords | Stockport & Manchester';
 $metaTitleExact = true;
-$metaDesc = 'Electrical Installation Condition Reports for England PRS landlords and agents. Stockport-based — fixed quote after scope (POA).';
+$metaDesc = 'Electrical Installation Condition Reports for England PRS landlords and agents. Stockport-based — guide from ' . $eicrFrom . ', fixed quote after scope.';
 $ogTitle = 'EICR for landlords — Stockport & Manchester';
-$ogDescription = 'EICR for portfolios and single lets. Quote after scope (POA).';
+$ogDescription = 'EICR for portfolios and single lets. Guide from ' . $eicrFrom . '. Fixed quote after scope.';
 $ogImage = rtrim(SITE_URL, '/') . '/assets/images/services/electrical.jpg';
 $ogImageAlt = 'Electrical installation work for landlord EICR — iComply Property Services';
 $canonicalUrl = url('/pages/jobs/eicr');
@@ -17,6 +19,7 @@ $metaKeywords = 'EICR landlords, electrical installation condition report, Stock
 $omitPriceRange = true;
 
 $landing = [
+    'priceKey' => 'eicr',
     'kicker' => 'Landlords & letting agents · England PRS',
     'h1' => 'EICR for landlords: frequency, satisfactory vs unsatisfactory, and remedial timelines',
     'lede' => 'An **Electrical Installation Condition Report (EICR)** is a formal inspection and testing report on the fixed electrical installation — consumer unit, wiring, sockets, lighting circuits and related fixed equipment as scoped by the inspector. For private landlords in England it is one of the core safety documents you should be able to produce.',
@@ -24,7 +27,7 @@ $landing = [
     'proof' => [
         'Stockport-based',
         'Greater Manchester / North West',
-        'Fixed quote after scope (POA)',
+        'Guide from ' . $eicrFrom,
     ],
     'crumbs' => [
         ['name' => 'Services', 'href' => '/pages/services'],
@@ -62,7 +65,7 @@ $landing = [
         ],
         [
             'title' => 'Fixed quote after scope',
-            'text' => 'Pricing is **POA** until scope is clear, then a fixed quote. Inspection and remedials may be separate line items. No obligation until you accept.',
+            'text' => 'The published guide is **' . $eicrFrom . '**. That is not the fixed quote. Inspection and remedials may be separate line items. No obligation until you accept a fixed price.',
         ],
         [
             'title' => 'Test and file the report',
@@ -118,7 +121,7 @@ $landing = [
         ],
     ],
     'ctaTitle' => 'Book an EICR quote',
-    'ctaText' => 'Single let, HMO or a small portfolio — or line electrical checks up with gas and fire on one schedule. Share the postcode and property type. **Fixed price after scope**; until then, **POA**.',
+    'ctaText' => 'Single let, HMO or a small portfolio — or line electrical checks up with gas and fire on one schedule. Share the postcode and property type. Guide from **' . $eicrFrom . '**. The fixed price follows scope.',
 ];
 
 require SITE_ROOT . '/includes/conversion-landing.php';

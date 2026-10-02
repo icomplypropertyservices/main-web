@@ -4,12 +4,17 @@
  * Does not replace /pages/services/landlord-compliance or /pages/packages.
  */
 require_once dirname(__DIR__, 2) . '/config.php';
+require_once SITE_ROOT . '/includes/landlord-guide-prices.php';
+$packFrom = icomplyLandlordGuideMoney('bundle');
+$eicrFrom = icomplyLandlordGuideMoney('eicr');
+$gasFrom = icomplyLandlordGuideMoney('gas');
+$fraFrom = icomplyLandlordGuideMoney('fra');
 
 $pageTitle = 'Landlord compliance & void certificates | iComply';
 $metaTitleExact = true;
-$metaDesc = 'EICR, gas, fire checks and void-ready certs on one schedule for Stockport & GM portfolios. Fixed quote after scope (POA).';
+$metaDesc = 'EICR, gas and FRA on one schedule for Stockport & GM portfolios. Guide from ' . $packFrom . '. Fixed quote after scope.';
 $ogTitle = 'Landlord compliance & void certificates';
-$ogDescription = 'Bundle electrical, gas and fire paperwork for voids and portfolios. POA → fixed after scope.';
+$ogDescription = 'EICR ' . $eicrFrom . ', gas ' . $gasFrom . ', FRA ' . $fraFrom . '. Pack guide ' . $packFrom . '. Fixed quote after scope.';
 $ogImage = rtrim(SITE_URL, '/') . '/assets/images/services/landlord-compliance.jpg';
 $ogImageAlt = 'Landlord compliance documents — iComply Property Services, Stockport';
 $canonicalUrl = url('/pages/jobs/landlord-compliance');
@@ -17,6 +22,7 @@ $metaKeywords = 'landlord compliance package, EICR gas FRA, void certificates, S
 $omitPriceRange = true;
 
 $landing = [
+    'priceKey' => 'bundle',
     'kicker' => 'Landlords, agents & small portfolios',
     'h1' => 'Landlord essentials — one schedule, one documentation pack',
     'lede' => 'One coordinated visit plan. One documentation pack for landlords and agents. **Fixed price after we agree scope.** Typically **EICR**, **gas safety (CP12 / Landlord Gas Safety Record)**, and **core fire and alarm checks as scoped** — with an FRA where the building needs one.',
@@ -24,7 +30,7 @@ $landing = [
     'proof' => [
         'Stockport-based',
         'Greater Manchester / North West',
-        'Fixed quote after scope (POA)',
+        'Guide from ' . $packFrom,
     ],
     'crumbs' => [
         ['name' => 'Services', 'href' => '/pages/services'],
@@ -33,7 +39,7 @@ $landing = [
     'scopeTitle' => 'What is typically discussed',
     'scope' => [
         'iComply Property Services is a Stockport-based team helping private landlords, letting agents and small portfolios across Greater Manchester and the wider North West bring the usual certificate set onto one schedule.',
-        'Pricing is **POA** until we understand the job. Once scope is agreed, you get a **fixed quote**. We do not publish package prices: property type, access, certificate mix and any fire or FRA elements change the job.',
+        'The pack guide is **' . $packFrom . '** for **EICR (' . $eicrFrom . ')**, **gas safety (' . $gasFrom . ')** and **FRA (' . $fraFrom . ')** on one schedule. That is a guide, not the fixed quote. Property type, access and anything outside those three items change the job.',
         'The wider [landlord compliance service](/pages/services/landlord-compliance) stays the service page. This landing is the quote route for a coordinated schedule. It does not replace that page or the [packages hub](/pages/packages).',
     ],
     'scopeItems' => [
@@ -62,7 +68,7 @@ $landing = [
         ],
         [
             'title' => 'Fixed quote after scope',
-            'text' => 'We confirm what is included and what is quoted separately. Until then, **POA**. We aim to respond within 2 hours on business days once we have postcodes and property types. That is an aim, not a contractual SLA.',
+            'text' => 'We confirm what is included and what is quoted separately. The pack guide is **' . $packFrom . '**. We aim to respond within 2 hours on business days once we have postcodes and property types. That is an aim, not a contractual SLA.',
         ],
         [
             'title' => 'Deliver and file the pack',
@@ -78,7 +84,7 @@ $landing = [
     'faqs' => [
         [
             'q' => 'How much does the landlord package cost?',
-            'a' => 'POA until we agree scope. Then you receive a fixed quote. Property type, access, certificate mix and any fire or FRA elements change the job, so this page does not publish a package price.',
+            'a' => 'The published guide is ' . $packFrom . ' for EICR, gas safety and FRA together. You then receive a fixed quote. Property type, access and any work outside those three items change the job.',
         ],
         [
             'q' => 'Is this the same as a wider compliance brief?',
@@ -94,7 +100,7 @@ $landing = [
         ],
         [
             'q' => 'Can agents use this for several landlords?',
-            'a' => 'Yes. Tell us you are an agent, how many properties, and how you need certificates handed back. Multi-property quotes still follow POA, then a fixed price after scope.',
+            'a' => 'Yes. Tell us you are an agent, how many properties, and how you need certificates handed back. The ' . $packFrom . ' guide is per agreed schedule, not a portfolio total. The fixed price follows scope.',
         ],
         [
             'q' => 'Will everything happen in one visit?',
@@ -130,7 +136,7 @@ $landing = [
         ],
     ],
     'ctaTitle' => 'Request a landlord compliance quote',
-    'ctaText' => 'Tell us postcodes, property types (flat, house, HMO) and which certificates or checks are due, including alarms if you want them on the same schedule. **Fixed price after scope. POA until then.**',
+    'ctaText' => 'Tell us postcodes, property types (flat, house, HMO) and which certificates or checks are due, including alarms if you want them on the same schedule. Pack guide **' . $packFrom . '** (EICR ' . $eicrFrom . ', gas ' . $gasFrom . ', FRA ' . $fraFrom . '). The fixed price follows scope.',
 ];
 
 require SITE_ROOT . '/includes/conversion-landing.php';

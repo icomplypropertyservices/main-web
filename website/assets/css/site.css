@@ -639,3 +639,85 @@ section.relative.overflow-hidden.text-white > .absolute[style*="radial-gradient"
 .theme-light .mega-wordmark b { color: #0B1F3A; }
 .logo-on-light .mega-wordmark small,
 .theme-light .mega-wordmark small { color: #5B6472; }
+
+/* Landlord conversion landings — buttons that paint without Tailwind v3 opacity utilities. */
+.landing-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+  position: relative;
+  z-index: 2;
+}
+.landing-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  padding: 0.9rem 1.45rem;
+  border-radius: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  line-height: 1.2;
+  cursor: pointer;
+}
+.landing-cta--quote {
+  background: #FF6B00;
+  color: #fff !important;
+}
+.landing-cta--quote:hover { background: #e56000; }
+.landing-cta--call {
+  background: transparent;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+}
+.landing-cta--call:hover { background: rgba(255, 255, 255, 0.08); }
+.landing-price {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.25rem;
+  align-items: flex-end;
+  margin-top: 1.5rem;
+}
+.landing-price-kicker {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffb27a;
+  font-weight: 700;
+}
+.landing-price strong {
+  display: block;
+  color: #fff !important;
+  font-size: 2.75rem;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.landing-price p {
+  margin: 0;
+  max-width: 28rem;
+  color: #e8eef6;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+.landing-price-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+.landing-price-row a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #12263a;
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+.landing-price-row a strong { color: #FF6B00 !important; font-size: 0.8125rem; letter-spacing: 0; }
+.landing-price-row a:hover { border-color: #FF6B00; }

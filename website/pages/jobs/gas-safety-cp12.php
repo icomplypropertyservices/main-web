@@ -4,12 +4,14 @@
  * Does not replace /pages/services/gas-systems (there is no /pages/services/gas-safety route).
  */
 require_once dirname(__DIR__, 2) . '/config.php';
+require_once SITE_ROOT . '/includes/landlord-guide-prices.php';
+$gasFrom = icomplyLandlordGuideMoney('gas');
 
 $pageTitle = 'Gas safety certificate (CP12) for landlords';
 $metaTitleExact = true;
-$metaDesc = 'Landlord Gas Safety Records for Stockport & Greater Manchester agents and landlords. Annual checks — quote after scope (POA).';
+$metaDesc = 'Landlord Gas Safety Records for Stockport & Greater Manchester agents and landlords. Annual checks — guide from ' . $gasFrom . ', fixed quote after scope.';
 $ogTitle = 'Gas safety certificate (CP12)';
-$ogDescription = 'CP12 for landlords and agents. Stockport-based — POA after scope.';
+$ogDescription = 'CP12 for landlords and agents. Stockport-based — guide from ' . $gasFrom . '.';
 $ogImage = rtrim(SITE_URL, '/') . '/assets/images/services/gas-systems.jpg';
 $ogImageAlt = 'Gas safety checks for landlords — iComply Property Services';
 $canonicalUrl = url('/pages/jobs/gas-safety-cp12');
@@ -17,6 +19,7 @@ $metaKeywords = 'gas safety certificate landlords, CP12, landlord gas safety rec
 $omitPriceRange = true;
 
 $landing = [
+    'priceKey' => 'gas',
     'kicker' => 'Landlords & letting agents · England PRS',
     'h1' => 'Gas safety certificate (CP12): annual duties landlords cannot skip',
     'lede' => 'A **Landlord Gas Safety Record** — often called a **CP12** — is the written proof that relevant gas appliances, flues and associated pipework at a rented property have been checked. For private rented landlords in England it sits alongside the EICR and, where they apply, fire documents.',
@@ -24,7 +27,7 @@ $landing = [
     'proof' => [
         'Stockport-based',
         'Greater Manchester / North West',
-        'Fixed quote after scope (POA)',
+        'Guide from ' . $gasFrom,
     ],
     'crumbs' => [
         ['name' => 'Services', 'href' => '/pages/services'],
@@ -62,7 +65,7 @@ $landing = [
         ],
         [
             'title' => 'Fixed quote after scope',
-            'text' => 'Gas safety alone, or with an EICR on the same schedule where capacity allows. **POA** until scope is agreed, then a **fixed quote**. Same-week combinations are discussed against diary capacity, not promised for every job.',
+            'text' => 'Gas safety alone, or with an EICR on the same schedule where capacity allows. Guide from **' . $gasFrom . '**, then a **fixed quote** once scope is agreed. Same-week combinations are discussed against diary capacity, not promised for every job.',
         ],
         [
             'title' => 'Check and hand back the record',
@@ -88,7 +91,7 @@ $landing = [
         ],
         [
             'q' => 'Can I book gas safety and an EICR together?',
-            'a' => 'Yes. Tell us the postcode, property type and which certificates are due. We can discuss one schedule where capacity allows and quote once scope is agreed. POA until then; fixed price after scope.',
+            'a' => 'Yes. Tell us the postcode, property type and which certificates are due. We can discuss one schedule where capacity allows. Gas safety on its own is guided from ' . $gasFrom . '; the fixed price follows the agreed scope.',
         ],
         [
             'q' => 'Do you cover Stockport and Greater Manchester?',
@@ -113,7 +116,7 @@ $landing = [
         ],
     ],
     'ctaTitle' => 'Enquire for gas safety',
-    'ctaText' => 'Bring a Landlord Gas Safety Record up to date, or add an **EICR** on the same schedule. **POA** until we agree what is included, then a fixed quote.',
+    'ctaText' => 'Bring a Landlord Gas Safety Record up to date, or add an **EICR** on the same schedule. Guide from **' . $gasFrom . '**. The fixed quote follows what is included.',
 ];
 
 require SITE_ROOT . '/includes/conversion-landing.php';

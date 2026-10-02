@@ -37,11 +37,16 @@ function landingRich(string $text): string
 }
 }
 
+require_once SITE_ROOT . '/includes/landlord-guide-prices.php';
+
 $landing = $landing ?? [];
 $home = rtrim(SITE_URL, '/');
-$quoteHref = '/contact';
+$priceKey = (string)($landing['priceKey'] ?? '');
+$guide = $priceKey !== '' ? icomplyLandlordGuidePrice($priceKey) : null;
+$quoteHref = $guide ? icomplyLandlordQuoteHref($guide['service']) : '/contact';
 $callHref = 'tel:+447517806082';
 $callLabel = 'Call 07517806082';
+$guideMoney = $guide ? icomplyLandlordGuideMoney($priceKey) : '';
 $crumbs = $landing['crumbs'] ?? [];
 $faqs = $landing['faqs'] ?? [];
 
@@ -119,9 +124,27 @@ require SITE_ROOT . '/includes/header.php';
                     <li><?= htmlspecialchars((string)$item, ENT_QUOTES, 'UTF-8') ?></li>
                 <?php endforeach; ?>
             </ul>
-            <div class="mt-8 flex flex-wrap gap-3">
-                <a href="<?= htmlspecialchars($quoteHref, ENT_QUOTES, 'UTF-8') ?>" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get a quote</a>
-                <a href="<?= htmlspecialchars($callHref, ENT_QUOTES, 'UTF-8') ?>" class="px-8 py-4 rounded-2xl border border-white font-semibold text-white hover:bg-white/10"><?= htmlspecialchars($callLabel, ENT_QUOTES, 'UTF-8') ?></a>
+            <?php if ($guide): ?>
+                <div class="landing-price">
+                    <div>
+                        <div class="landing-price-kicker">Guide from</div>
+                        <strong><?= htmlspecialchars($guideMoney, ENT_QUOTES, 'UTF-8') ?></strong>
+                    </div>
+                    <p><?= htmlspecialchars($guide['guide'], ENT_QUOTES, 'UTF-8') ?></p>
+                </div>
+                <div class="landing-price-row" aria-label="Landlord guide prices">
+                    <?php foreach (icomplyLandlordGuidePrices() as $key => $row): ?>
+                        <?php if ($key === $priceKey) { continue; } ?>
+                        <a href="<?= htmlspecialchars($row['path'], ENT_QUOTES, 'UTF-8') ?>">
+                            <?= htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8') ?>
+                            <strong><?= htmlspecialchars(icomplyLandlordGuideMoney($key), ENT_QUOTES, 'UTF-8') ?></strong>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+            <div class="landing-cta-row">
+                <a href="<?= htmlspecialchars($quoteHref, ENT_QUOTES, 'UTF-8') ?>" class="landing-cta landing-cta--quote">Get a quote</a>
+                <a href="<?= htmlspecialchars($callHref, ENT_QUOTES, 'UTF-8') ?>" class="landing-cta landing-cta--call"><?= htmlspecialchars($callLabel, ENT_QUOTES, 'UTF-8') ?></a>
             </div>
             <?php if (!empty($landing['note'])): ?>
                 <p class="mt-6 text-sm text-white max-w-2xl"><?= landingRich((string)$landing['note']) ?></p>
@@ -179,10 +202,10 @@ require SITE_ROOT . '/includes/header.php';
         <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Supply or supply and fit</div>
         <h2 class="text-3xl font-semibold tracking-tight mt-2 text-white"><?= htmlspecialchars((string)$landing['shop']['title'], ENT_QUOTES, 'UTF-8') ?></h2>
         <p class="mt-4 text-white max-w-3xl leading-relaxed"><?= landingRich((string)$landing['shop']['text']) ?></p>
-        <div class="mt-8 flex flex-wrap gap-3">
-            <a href="<?= htmlspecialchars($quoteHref, ENT_QUOTES, 'UTF-8') ?>" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get a quote</a>
-            <a href="<?= htmlspecialchars($callHref, ENT_QUOTES, 'UTF-8') ?>" class="px-8 py-4 rounded-2xl border border-white font-semibold text-white hover:bg-white/10"><?= htmlspecialchars($callLabel, ENT_QUOTES, 'UTF-8') ?></a>
-            <a href="<?= htmlspecialchars((string)$landing['shop']['href'], ENT_QUOTES, 'UTF-8') ?>" class="px-8 py-4 rounded-2xl border border-white font-semibold text-white hover:bg-white/10"><?= htmlspecialchars((string)$landing['shop']['label'], ENT_QUOTES, 'UTF-8') ?></a>
+        <div class="landing-cta-row">
+            <a href="<?= htmlspecialchars($quoteHref, ENT_QUOTES, 'UTF-8') ?>" class="landing-cta landing-cta--quote">Get a quote</a>
+            <a href="<?= htmlspecialchars($callHref, ENT_QUOTES, 'UTF-8') ?>" class="landing-cta landing-cta--call"><?= htmlspecialchars($callLabel, ENT_QUOTES, 'UTF-8') ?></a>
+            <a href="<?= htmlspecialchars((string)$landing['shop']['href'], ENT_QUOTES, 'UTF-8') ?>" class="landing-cta landing-cta--call"><?= htmlspecialchars((string)$landing['shop']['label'], ENT_QUOTES, 'UTF-8') ?></a>
         </div>
     </div>
 </section>
@@ -210,8 +233,14 @@ require SITE_ROOT . '/includes/header.php';
         <h2 class="text-3xl font-semibold tracking-tight mt-2">Services and guides</h2>
         <ul class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             <?php foreach ($landing['links'] ?? [] as $link): ?>
+                <?php
+                $linkHref = (string)$link['href'];
+                if ($linkHref === '/contact' || str_starts_with($linkHref, '/contact?')) {
+                    $linkHref = $quoteHref;
+                }
+                ?>
                 <li>
-                    <a class="block border border-white/15 rounded-2xl px-5 py-4 font-semibold hover:border-[#ff6b00]" href="<?= htmlspecialchars((string)$link['href'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars((string)$link['label'], ENT_QUOTES, 'UTF-8') ?></a>
+                    <a class="block border border-white/15 rounded-2xl px-5 py-4 font-semibold hover:border-[#ff6b00]" href="<?= htmlspecialchars($linkHref, ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars((string)$link['label'], ENT_QUOTES, 'UTF-8') ?></a>
                 </li>
             <?php endforeach; ?>
         </ul>
@@ -232,16 +261,16 @@ require SITE_ROOT . '/includes/header.php';
     <div class="max-w-7xl mx-auto px-6 py-16">
         <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-white"><?= htmlspecialchars((string)$landing['ctaTitle'], ENT_QUOTES, 'UTF-8') ?></h2>
         <p class="mt-4 text-white max-w-2xl leading-relaxed"><?= landingRich((string)$landing['ctaText']) ?></p>
-        <div class="mt-8 flex flex-wrap gap-3">
-            <a href="<?= htmlspecialchars($quoteHref, ENT_QUOTES, 'UTF-8') ?>" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get a quote</a>
-            <a href="<?= htmlspecialchars($callHref, ENT_QUOTES, 'UTF-8') ?>" class="px-8 py-4 rounded-2xl border border-white font-semibold text-white hover:bg-white/10"><?= htmlspecialchars($callLabel, ENT_QUOTES, 'UTF-8') ?></a>
+        <div class="landing-cta-row">
+            <a href="<?= htmlspecialchars($quoteHref, ENT_QUOTES, 'UTF-8') ?>" class="landing-cta landing-cta--quote">Get a quote</a>
+            <a href="<?= htmlspecialchars($callHref, ENT_QUOTES, 'UTF-8') ?>" class="landing-cta landing-cta--call"><?= htmlspecialchars($callLabel, ENT_QUOTES, 'UTF-8') ?></a>
         </div>
         <p class="mt-8 text-sm text-white leading-relaxed">
             iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport SK2 5DE
             · <a class="underline" href="<?= htmlspecialchars($callHref, ENT_QUOTES, 'UTF-8') ?>">07517806082</a>
             · <a class="underline" href="mailto:info@icomplypropertyservices.co.uk">info@icomplypropertyservices.co.uk</a>
         </p>
-        <p class="mt-3 text-sm text-white">Fixed quote after scope (POA until then). No obligation until you accept a fixed price. We aim to respond within 2 hours on business days — an aim, not a contractual SLA.</p>
+        <p class="mt-3 text-sm text-white"><?php if ($guide): ?>Guide from <?= htmlspecialchars($guideMoney, ENT_QUOTES, 'UTF-8') ?>. <?php endif; ?>You get a fixed quote after scope, before any work. No obligation until you accept that price. We aim to respond within 2 hours on business days — an aim, not a contractual SLA.</p>
     </div>
 </section>
 <?php require SITE_ROOT . '/includes/footer.php'; ?>
