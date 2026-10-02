@@ -52,7 +52,16 @@ $serviceFaqs = [
 $blurb = getServiceBlurb($serviceSlug);
 $standards = getServiceStandards($serviceSlug);
 $faqs = $serviceFaqs[$serviceSlug] ?? $serviceFaqs['default'];
+if (function_exists('icomplyMfrFaqs')) {
+    $mfrFaqs = icomplyMfrFaqs($serviceSlug);
+    if ($mfrFaqs) {
+        $faqs = $mfrFaqs;
+    }
+}
 $svcCopy = function_exists('waterAsbestosServiceCopy') ? waterAsbestosServiceCopy($serviceSlug) : null;
+if (!$svcCopy && function_exists('icomplyMfrServiceCopy')) {
+    $svcCopy = icomplyMfrServiceCopy($serviceSlug);
+}
 
 $popularTowns = array_values(array_filter(
     ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool', 'Bury', 'Sale', 'Altrincham', 'Macclesfield', 'Burnley', 'Blackburn', 'Warrington', 'St Helens'],
@@ -76,6 +85,10 @@ if (empty($_SESSION['csrf'])) {
 require_once SITE_ROOT . '/includes/share.php';
 require_once SITE_ROOT . '/includes/related.php';
 $canonicalUrl = url('/pages/services/' . $serviceSlug . '.php');
+if (function_exists('icomplyMfrShowcaseApplies') && icomplyMfrShowcaseApplies($serviceSlug)) {
+    $pageTitle = icomplyMfrPageTitle($serviceName, '');
+    $metaDesc = icomplyMfrMetaDesc($serviceSlug, '');
+}
 require SITE_ROOT . '/includes/header.php';
 
 $faqEntities = [];
@@ -322,7 +335,9 @@ $schema = [
     <?php endif; ?>
 </section>
 
-<?php if (!$poaService): ?>
+<?php if (function_exists('icomplyMfrShowcaseHtml') && icomplyMfrShowcaseApplies($serviceSlug)): ?>
+<?= icomplyMfrShowcaseHtml($serviceSlug, '') ?>
+<?php elseif (!$poaService): ?>
 <!-- MANUFACTURERS -->
 <section class="bg-zinc-50 border-y">
     <div class="max-w-7xl mx-auto px-6 py-16">

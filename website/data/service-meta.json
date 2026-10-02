@@ -15,9 +15,14 @@
         "standards": "BS 5266 · BS EN 1838 · monthly & annual tests"
     },
     "aov-air-handling": {
-        "blurb": "Smoke vents, AOV panels, smoke control and AHU-related life-safety systems.",
-        "short": "Smoke vents, AOV panels & smoke control",
-        "standards": "BS 9991 · EN 12101 · smoke control guidance"
+        "blurb": "Smoke vents, AOV panels, smoke control and AHU-related life-safety systems. Every brand we install or service is listed on the page.",
+        "short": "Smoke vents, AOV panels and smoke control",
+        "standards": "BS 9991 · BS EN 12101 · Approved Document B · installation quoted after survey"
+    },
+    "barriers": {
+        "blurb": "CAME partner supply for vehicle barriers, plus service of existing booms from the brands listed on the page.",
+        "short": "CAME barrier packs and existing-barrier service",
+        "standards": "BS EN 12453 safety rules for power-operated barriers · installation quoted after survey"
     },
     "nurse-call": {
         "blurb": "Care home and hospital nurse call design, install, upgrades and planned maintenance.",

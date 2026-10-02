@@ -94,7 +94,7 @@ function icomplyAovKitImageUrl(string $sku): string {
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
     <?php
     $barCame = icomplyBar5mCameGardImageMap();
-    $barPacks = [
+    $barPacks = function_exists('icomplyCameBarrierPacks') ? icomplyCameBarrierPacks() : [
       ['sku'=>'BAR-5M-STD','handle'=>'bar-5m-std','price'=>'£5,850.00','blurb'=>'Standard 5m barrier pack'],
       ['sku'=>'BAR-5M-VIDEX','handle'=>'bar-5m-videx','price'=>'£7,441.83','blurb'=>'5m barrier + Videx'],
       ['sku'=>'BAR-5M-PAXTON','handle'=>'bar-5m-paxton','price'=>'£8,375.45','blurb'=>'5m barrier + Paxton'],

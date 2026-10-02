@@ -639,3 +639,29 @@ section.relative.overflow-hidden.text-white > .absolute[style*="radial-gradient"
 .theme-light .mega-wordmark b { color: #0B1F3A; }
 .logo-on-light .mega-wordmark small,
 .theme-light .mega-wordmark small { color: #5B6472; }
+
+.mfr-board { max-width: 80rem; margin: 0 auto; padding: 3.5rem 1.5rem; }
+.mfr-kicker { color: #FF6B00; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; }
+.mfr-board-head h2 { font-size: 1.875rem; font-weight: 650; margin: 0.4rem 0 0.6rem; }
+.mfr-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.mfr-card { padding: 1.25rem; display: flex; flex-direction: column; gap: 0.65rem; }
+.mfr-card--partner { grid-column: 1 / -1; border-color: #FF6B00 !important; }
+.mfr-partner-kicker { margin: 0; color: #FF6B00; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+.mfr-wordmark { width: 100%; height: 72px; display: block; }
+.mfr-card h3 { margin: 0; font-size: 1.15rem; }
+.mfr-card h4 { margin: 0.2rem 0 0; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.mfr-framing, .mfr-wizard-note, .mfr-pack-note { margin: 0; font-size: 0.92rem; line-height: 1.5; }
+.mfr-lines { margin: 0; padding-left: 1.1rem; font-size: 0.92rem; }
+.mfr-actions { display: flex; flex-wrap: wrap; gap: 0.6rem 1rem; align-items: center; margin-top: auto; }
+.mfr-link, .mfr-quote-btn { background: none; border: 0; padding: 0; color: #FF6B00; font-weight: 700; font-size: 0.875rem; cursor: pointer; text-decoration: none; }
+.mfr-kit { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.mfr-kit caption { text-align: left; font-weight: 700; margin-bottom: 0.4rem; }
+.mfr-kit th, .mfr-kit td { text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.12); }
+.mfr-wizard { padding: 1.25rem; margin: 1.25rem 0; }
+.mfr-wizard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; margin: 0.8rem 0; }
+.mfr-wizard label, .mfr-notes { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.8rem; font-weight: 700; }
+.mfr-wizard input, .mfr-wizard select, .mfr-wizard textarea { font-weight: 500; border: 1px solid rgba(255,255,255,0.2); border-radius: 0.8rem; padding: 0.7rem 0.8rem; background: #0B1F3A; color: #fff; }
+.mfr-submit { background: #FF6B00; color: #fff; border: 0; border-radius: 0.8rem; padding: 0.75rem 1rem; font-weight: 700; cursor: pointer; }
+.mfr-towns ul { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; padding: 0; margin: 0.6rem 0 0; }
+.mfr-towns a { display: inline-block; border: 1px solid rgba(255,255,255,0.16); border-radius: 999px; padding: 0.35rem 0.7rem; font-size: 0.8rem; text-decoration: none; }
+body.theme-dark .mfr-kit th, body.theme-dark .mfr-kit td { border-bottom-color: rgba(255,255,255,0.12); }

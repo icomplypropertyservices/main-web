@@ -25,6 +25,9 @@ $areaSlugVal = $AREA_SLUG;
 $blurb = getServiceBlurb($serviceSlug);
 $standards = getServiceStandards($serviceSlug);
 $svcCopy = function_exists('waterAsbestosServiceCopy') ? waterAsbestosServiceCopy($serviceSlug) : null;
+if (!$svcCopy && function_exists('icomplyMfrServiceCopy')) {
+    $svcCopy = icomplyMfrServiceCopy($serviceSlug);
+}
 $areaExtra = function_exists('waterAsbestosAreaIntro') ? waterAsbestosAreaIntro($serviceSlug, $areaName) : '';
 
 // Nearby towns for “popular nearby” note (same service, other areas)
@@ -58,6 +61,14 @@ if (empty($_SESSION['csrf'])) {
 
 require_once SITE_ROOT . '/includes/share.php';
 $canonicalUrl = url('/pages/' . $SERVICE_SLUG . '/' . $AREA_SLUG . '.php');
+if (function_exists('icomplyMfrShowcaseApplies') && icomplyMfrShowcaseApplies($SERVICE_SLUG)) {
+    $pageTitle = icomplyMfrPageTitle($serviceName, $areaName);
+    $metaDesc = icomplyMfrMetaDesc($SERVICE_SLUG, $areaName);
+    if (!icomplyMfrTownIndexable($areaName)) {
+        $metaRobots = 'noindex, follow';
+        $canonicalUrl = url('/pages/services/' . $SERVICE_SLUG . '.php');
+    }
+}
 require SITE_ROOT . '/includes/header.php';
 
 $schema = [
@@ -251,6 +262,11 @@ $schema = [
                 <?php foreach (array_slice($svcCopy['intro'], 0, 2) as $para): ?>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars((string)$para, ENT_QUOTES, 'UTF-8') ?></p>
                 <?php endforeach; ?>
+                <?php if (function_exists('icomplyMfrLocalHtml') && icomplyMfrShowcaseApplies($serviceSlug)): ?>
+                <?= icomplyMfrLocalHtml($serviceSlug, $areaName) ?>
+                <?php endif; ?>
+            <?php elseif (function_exists('icomplyMfrLocalHtml') && icomplyMfrShowcaseApplies($serviceSlug)): ?>
+            <?= icomplyMfrLocalHtml($serviceSlug, $areaName) ?>
             <?php else: ?>
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
                 Icomply Property Services provides complete <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong>
@@ -313,7 +329,9 @@ $schema = [
     </div>
 </section>
 
-<?php if (!$poaCombo): ?>
+<?php if (function_exists('icomplyMfrShowcaseHtml') && icomplyMfrShowcaseApplies($serviceSlug)): ?>
+<?= icomplyMfrShowcaseHtml($serviceSlug, $areaName) ?>
+<?php elseif (!$poaCombo): ?>
 <!-- MANUFACTURERS -->
 <section class="bg-zinc-50 border-y">
     <div class="max-w-7xl mx-auto px-6 py-16">

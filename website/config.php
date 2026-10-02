@@ -467,6 +467,9 @@ function getPopularKeywordSlugs(): array {
 function getSeoKeywords(string $service, string $area = ''): string {
     $mfr = loadJsonData('manufacturers', []);
     $base = $mfr['seo_keywords'][$service] ?? $service;
+    if ($service === 'barriers') {
+        $base = 'vehicle barriers, CAME barriers, car park barrier, boom barrier, barrier installation, barrier servicing';
+    }
     return $area !== '' ? "{$base} {$area}, {$area} electrician, {$area} fire safety" : $base;
 }
 
@@ -493,6 +496,12 @@ function getServiceStandards(string $slug): string {
 }
 
 function getManufacturers(string $serviceSlug): array {
+    if (function_exists('icomplyCoverageManufacturerNames')) {
+        $covered = icomplyCoverageManufacturerNames($serviceSlug);
+        if ($covered) {
+            return $covered;
+        }
+    }
     $mfr = loadJsonData('manufacturers', []);
     return $mfr['by_service'][$serviceSlug] ?? ['Industry Standard Equipment'];
 }
@@ -502,7 +511,9 @@ function getManufacturerCatalog(): array {
     $mfr = loadJsonData('manufacturers', []);
     $catalog = $mfr['catalog'] ?? [];
     if ($catalog) {
-        return $catalog;
+        return function_exists('icomplyApplyMfrCoverageCatalog')
+            ? icomplyApplyMfrCoverageCatalog($catalog)
+            : $catalog;
     }
     // Fallback: build minimal catalog from by_service names
     $built = [];
@@ -526,7 +537,9 @@ function getManufacturerCatalog(): array {
             }
         }
     }
-    return $built;
+    return function_exists('icomplyApplyMfrCoverageCatalog')
+        ? icomplyApplyMfrCoverageCatalog($built)
+        : $built;
 }
 
 function getManufacturerBySlug(string $slug): ?array {
@@ -673,6 +686,9 @@ function manufacturerImageUrl(string $slug, string $fallbackService = 'fire-alar
 
 function getKeywordImages(string $serviceSlug): array {
     $mfr = loadJsonData('manufacturers', []);
+    if ($serviceSlug === 'barriers' && empty($mfr['keyword_images'][$serviceSlug])) {
+        return $mfr['keyword_images']['access-control'] ?? ['access-control-system', 'proximity-card-reader', 'access-control-system'];
+    }
     return $mfr['keyword_images'][$serviceSlug] ?? [$serviceSlug, $serviceSlug, $serviceSlug];
 }
 
@@ -711,6 +727,10 @@ function icomplyTradeProductsUrl(): string
 $waFile = __DIR__ . '/includes/water-asbestos.php';
 if (is_file($waFile)) {
     require_once $waFile;
+}
+$mfrBoardFile = __DIR__ . '/includes/mfr-showcase.php';
+if (is_file($mfrBoardFile)) {
+    require_once $mfrBoardFile;
 }
 
 // Back-compat globals used by some templates/includes
