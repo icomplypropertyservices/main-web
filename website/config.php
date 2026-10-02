@@ -278,6 +278,70 @@ function getAreas(): array {
 }
 
 /**
+ * Core service slugs for expansion-town landings.
+ * electrical covers EICR; gas-systems covers gas safety certificates.
+ *
+ * @return list<string>
+ */
+function getCoreAreaServiceSlugs(): array {
+    return [
+        'electrical',
+        'gas-systems',
+        'fire-risk-assessments',
+        'fire-alarms',
+        'emergency-lighting',
+        'cctv',
+        'access-control',
+        'legionella-risk-assessment',
+        'asbestos-survey',
+    ];
+}
+
+/**
+ * Extra town batches (display names). Kept out of getAreas() so the
+ * electrical/gas keyword matrix stays on the original catalogue.
+ *
+ * @return list<string>
+ */
+function getExpansionAreas(): array {
+    static $areas = null;
+    if ($areas !== null) {
+        return $areas;
+    }
+    $areas = [];
+    $files = glob(SITE_ROOT . '/data/areas-b*.json') ?: [];
+    sort($files, SORT_STRING);
+    foreach ($files as $file) {
+        $data = json_decode((string)file_get_contents($file), true);
+        if (!is_array($data)) {
+            continue;
+        }
+        foreach ($data as $name) {
+            if (is_string($name) && trim($name) !== '') {
+                $areas[] = $name;
+            }
+        }
+    }
+    return $areas;
+}
+
+/** True for batch towns that are not already in the canonical areas list. */
+function isExpansionOnlyArea(string $areaOrSlug): bool {
+    $slug = areaSlug($areaOrSlug);
+    foreach (getAreas() as $area) {
+        if (areaSlug((string)$area) === $slug) {
+            return false;
+        }
+    }
+    foreach (getExpansionAreas() as $area) {
+        if (areaSlug((string)$area) === $slug) {
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
  * Canonical slug: lowercase, non-alnum → hyphen, collapse hyphens.
  * "Ashton-under-Lyne" → ashton-under-lyne
  * "Cheadle Hulme" → cheadle-hulme
@@ -418,6 +482,14 @@ function isCostStyleKeyword(string $slug, string $name = ''): bool {
 function exportedServiceLocalUrl(string $serviceSlug, string $area, string $from = 'service'): string {
     $serviceSlug = areaSlug($serviceSlug);
     $town = areaSlug($area);
+    // Expansion towns only have the core service×area set. Do not send
+    // electrical/gas at those towns to keyword pages that were not exported.
+    if (isExpansionOnlyArea($town)) {
+        if (in_array($serviceSlug, getCoreAreaServiceSlugs(), true)) {
+            return url('/pages/' . $serviceSlug . '/' . $town . '.php');
+        }
+        return url('/pages/services/' . $serviceSlug . '.php');
+    }
     $featured = getElectricalGasFeaturedKeywordSlugs();
     $kw = getMajorKeywords();
     $pick = null;
@@ -680,6 +752,11 @@ function getKeywordImages(string $serviceSlug): array {
 function areaFromSlug(string $slug): ?string {
     $slug = areaSlug($slug);
     foreach (getAreas() as $area) {
+        if (areaSlug($area) === $slug) {
+            return $area;
+        }
+    }
+    foreach (getExpansionAreas() as $area) {
         if (areaSlug($area) === $slug) {
             return $area;
         }

@@ -214,15 +214,36 @@ $schema = [
                 Guides for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>
             </h2>
             <p class="mt-2 text-zinc-600 max-w-2xl">
+                <?php if (function_exists('isExpansionOnlyArea') && isExpansionOnlyArea($AREA)): ?>
+                Core compliance services with a dedicated page for <strong><?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></strong>
+                — electrical and EICR, gas safety, fire risk assessment, fire alarms, emergency lighting, CCTV, access control, legionella and asbestos.
+                <?php else: ?>
                 High-intent topics with a dedicated page for <strong><?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></strong>
                 — EICR report, fire risk assessment, gas safety and more.
+                <?php endif; ?>
             </p>
         </div>
         <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All guides →</a>
     </div>
     <?php
-    require_once SITE_ROOT . '/includes/related.php';
-    echo keywordAreaLinksHtml($AREA, null, 0);
+    if (function_exists('isExpansionOnlyArea') && isExpansionOnlyArea($AREA)): ?>
+    <div class="flex flex-wrap gap-2">
+        <?php foreach (getCoreAreaServiceSlugs() as $coreSlug):
+            if (!isset($allServices[$coreSlug])) {
+                continue;
+            }
+            $coreName = $allServices[$coreSlug];
+        ?>
+        <a href="<?= htmlspecialchars(url('/pages/' . $coreSlug . '/' . $areaSlugVal . '.php'), ENT_QUOTES, 'UTF-8') ?>"
+           class="px-3 py-1.5 bg-white border border-zinc-200 rounded-full text-xs font-medium text-zinc-800 hover:border-[#ff6b00] hover:text-[#ff6b00] transition">
+            <?= htmlspecialchars($coreName . ' in ' . $AREA, ENT_QUOTES, 'UTF-8') ?>
+        </a>
+        <?php endforeach; ?>
+    </div>
+    <?php else:
+        require_once SITE_ROOT . '/includes/related.php';
+        echo keywordAreaLinksHtml($AREA, null, 0);
+    endif;
     ?>
 </section>
 
@@ -233,7 +254,11 @@ $schema = [
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Services in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></div>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Everything we do locally</h2>
-                <p class="mt-2 text-zinc-600 max-w-xl">Open a live service hub — or, for electrical and gas, a keyword page for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Thin service×area doorways are not published.</p>
+                <p class="mt-2 text-zinc-600 max-w-xl"><?php if (function_exists('isExpansionOnlyArea') && isExpansionOnlyArea($AREA)): ?>
+                    Electrical and EICR, gas safety, fire risk assessments, fire alarms, emergency lighting, CCTV, access control, legionella and asbestos each have a <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> page. Other services open the national service hub.
+                <?php else: ?>
+                    Open a live service hub — or, for electrical and gas, a keyword page for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Thin service×area doorways are not published.
+                <?php endif; ?></p>
             </div>
             <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All service hubs →</a>
         </div>

@@ -333,6 +333,11 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
     foreach (getAreas() as $area) {
         $routes[] = '/pages/areas/' . areaSlug((string)$area);
     }
+    if (function_exists('getExpansionAreas')) {
+        foreach (getExpansionAreas() as $area) {
+            $routes[] = '/pages/areas/' . areaSlug((string)$area);
+        }
+    }
     foreach (array_keys(getManufacturerCatalog()) as $slug) {
         $routes[] = '/pages/manufacturers/' . $slug;
     }
@@ -345,6 +350,18 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
     foreach (array_keys(getServices()) as $sSlug) {
         foreach (getAreas() as $area) {
             $routes[] = '/pages/' . $sSlug . '/' . areaSlug((string)$area);
+        }
+    }
+    // Expansion batches: core services only (electrical/EICR, gas safety, FRA, …).
+    if (function_exists('getCoreAreaServiceSlugs') && function_exists('getExpansionAreas')) {
+        $services = getServices();
+        foreach (getCoreAreaServiceSlugs() as $sSlug) {
+            if (!isset($services[$sSlug])) {
+                continue;
+            }
+            foreach (getExpansionAreas() as $area) {
+                $routes[] = '/pages/' . $sSlug . '/' . areaSlug((string)$area);
+            }
         }
     }
 

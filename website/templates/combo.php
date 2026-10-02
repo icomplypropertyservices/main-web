@@ -358,7 +358,17 @@ $schema = [
         </div>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-        <?php foreach ($allServices as $slug => $name):
+        <?php
+        $relatedServices = $allServices;
+        if (function_exists('isExpansionOnlyArea') && isExpansionOnlyArea($areaName)) {
+            $relatedServices = [];
+            foreach (getCoreAreaServiceSlugs() as $coreSlug) {
+                if (isset($allServices[$coreSlug])) {
+                    $relatedServices[$coreSlug] = $allServices[$coreSlug];
+                }
+            }
+        }
+        foreach ($relatedServices as $slug => $name):
             if ($slug === $serviceSlug) continue;
             $rBlurb = getServiceBlurb($slug);
         ?>

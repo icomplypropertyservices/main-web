@@ -30,7 +30,35 @@ foreach ($areas as $area) {
     }
     $byLetter[$letter][] = $area;
 }
+$knownSlugs = [];
+foreach ($areas as $area) {
+    $knownSlugs[areaSlug($area)] = true;
+}
+if (function_exists('getExpansionAreas')) {
+    foreach (getExpansionAreas() as $area) {
+        $slug = areaSlug($area);
+        if (isset($knownSlugs[$slug])) {
+            continue;
+        }
+        $knownSlugs[$slug] = true;
+        $letter = strtoupper(substr($area, 0, 1));
+        if (!isset($byLetter[$letter])) {
+            $byLetter[$letter] = [];
+        }
+        $byLetter[$letter][] = $area;
+    }
+}
 ksort($byLetter);
+foreach ($byLetter as &$letterTowns) {
+    sort($letterTowns, SORT_NATURAL | SORT_FLAG_CASE);
+}
+unset($letterTowns);
+$directoryCount = 0;
+foreach ($byLetter as $letterTowns) {
+    $directoryCount += count($letterTowns);
+}
+$pageTitle = 'Areas We Cover | ' . $directoryCount . '+ North West Towns';
+$metaDesc = 'Icomply covers ' . $directoryCount . '+ towns across Greater Manchester and the North West. Every town hub links fire safety, electrical, professional services, kitchens, bathrooms and construction trades.';
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
@@ -61,7 +89,7 @@ require SITE_ROOT . '/includes/header.php';
                     <span class="text-[#ff6b00]">cover</span>
                 </h1>
                 <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl">
-                    Local team serving <strong class="text-white"><?= count($areas) ?> towns</strong> —
+                    Local team serving <strong class="text-white"><?= (int)$directoryCount ?> towns</strong> —
                     fire safety (including FRAs), electrical &amp; gas, security, professional support,
                     kitchens, bathrooms, renovation and construction trades in every hub.
                 </p>
@@ -71,7 +99,7 @@ require SITE_ROOT . '/includes/header.php';
                     <a href="#quote" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Free quote</a>
                 </div>
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
-                    <div><span class="text-white font-semibold text-xl block"><?= count($areas) ?>+</span> towns</div>
+                    <div><span class="text-white font-semibold text-xl block"><?= (int)$directoryCount ?>+</span> towns</div>
                     <div><span class="text-white font-semibold text-xl block"><?= count($services) ?></span> services each</div>
                     <div><span class="text-white font-semibold text-xl block"><?= count($categories) ?></span> categories</div>
                 </div>
@@ -86,7 +114,7 @@ require SITE_ROOT . '/includes/header.php';
                         </a>
                     <?php endforeach; ?>
                 </div>
-                <p class="mt-6 text-sm text-white/50">Plus <?= max(0, count($areas) - count($featured)) ?> more towns in the full directory below.</p>
+                <p class="mt-6 text-sm text-white/50">Plus <?= max(0, $directoryCount - count($featured)) ?> more towns in the full directory below.</p>
             </div>
         </div>
     </div>
@@ -177,7 +205,7 @@ require SITE_ROOT . '/includes/header.php';
 <section id="directory" class="max-w-7xl mx-auto px-6 py-16 md:py-20">
     <div class="mb-10">
         <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Directory</div>
-        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">All <?= count($areas) ?> towns</h2>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">All <?= (int)$directoryCount ?> towns</h2>
         <p class="mt-2 text-zinc-600">A–Z list of every area hub. Each page links all <?= count($services) ?> services — fire safety, professional and construction — for that town.</p>
     </div>
 
