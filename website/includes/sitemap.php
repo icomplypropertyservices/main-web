@@ -127,11 +127,7 @@ function icomplySitemapEntries(): array
         // Hard reject /pages/{service}/{town} even if a leftover matrix file
         // sits in dist/. Keep only real hub prefixes.
         if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
-<<<<<<< HEAD
-            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'aov', 'barriers'];
-=======
-            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'aov-air-handling', 'barriers'];
->>>>>>> origin/main
+            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'aov', 'aov-air-handling', 'barriers'];
             if (!in_array($m[1], $okPrefix, true)) {
                 return;
             }
@@ -139,13 +135,9 @@ function icomplySitemapEntries(): array
         // Keyword hubs + featured keyword×town are generated at export time.
         // AOV and barrier town pages are virtual (rendered at export) for pop>10k.
         $isKeywordLoc = (bool)preg_match('#^/pages/keywords(/[a-z0-9\-]+){1,2}$#', $path);
-<<<<<<< HEAD
         $isTownLoc = (bool)preg_match('#^/pages/(aov|barriers)(/[a-z0-9\-]+)?$#', $path);
-        if (!$isKeywordLoc && !$isTownLoc && !icomplySitemapUrlHasFile($path)) {
-=======
         $isMfrTown = (bool)preg_match('#^/pages/(aov-air-handling|barriers)/([a-z0-9\-]+)$#', $path);
-        if (!$isKeywordLoc && !$isMfrTown && !icomplySitemapUrlHasFile($path)) {
->>>>>>> origin/main
+        if (!$isKeywordLoc && !$isTownLoc && !$isMfrTown && !icomplySitemapUrlHasFile($path)) {
             return;
         }
         $seen[$path] = true;

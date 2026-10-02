@@ -21,18 +21,6 @@ function icomplyMegaHeaderHtml(): string
     $hubSecurity = '/shop/security/';
     $hubGas = '/shop/gas/';
     $shopLive = icomplyNavH(function_exists('icomplyTradeShopUrl') ? icomplyTradeShopUrl() : 'https://shop.icomplypropertyservices.co.uk');
-<<<<<<< HEAD
-    $aovHub = icomplyNavH(url('/pages/services/aov-air-handling.php'));
-    $aovTowns = icomplyNavH(url('/pages/aov'));
-    $barTowns = icomplyNavH(url('/pages/barriers'));
-    $aovFeatured = '<div class="mega-featured mega-featured--aov">'
-        . '<p class="mega-featured-title">Priority — AOV &amp; barriers</p>'
-        . '<a class="mega-featured-link" href="' . $aovHub . '">AOV &amp; Smoke Control</a>'
-        . '<a class="mega-featured-link" href="' . $aovTowns . '">AOV towns</a>'
-        . '<a class="mega-featured-link" href="' . $barTowns . '">Barriers towns (CAME)</a>'
-        . '<p class="mega-note">Smoke vents and CAME vehicle barriers for mainland towns over 10,000. Quotes POA.</p>'
-        . '</div>';
-=======
     $priorityPills = '';
     $priorityCards = '<div class="mega-featured-row">';
     foreach ($n['featured'] as $hub) {
@@ -62,7 +50,13 @@ function icomplyMegaHeaderHtml(): string
     $hubCols .= icomplyNavLink(url('/pages/keywords/index.php'), 'All keyword guides →', 'mega-more');
     $hubCols .= icomplyNavLink(url('/pages/site-map.php'), 'HTML site map →', 'mega-more');
     $hubCols .= '</div>';
->>>>>>> origin/main
+
+    $priorityCards = str_replace(
+        '</div>',
+        '<a class="mega-featured-card" href="' . icomplyNavH(url('/pages/aov')) . '"><span>AOV towns</span><strong>Smoke vents</strong><em>Mainland towns over 10,000. Kit prices listed, install POA.</em></a>'
+        . '<a class="mega-featured-card" href="' . icomplyNavH(url('/pages/barriers')) . '"><span>Barrier towns</span><strong>CAME partner</strong><em>5m pack prices, install POA.</em></a></div>',
+        $priorityCards
+    );
 
     $svcCols = '';
     foreach ($n['cats'] as $catKey => $cat) {
@@ -172,15 +166,6 @@ function icomplyMobileDrawerHtml(array $n): string
     $contactDrawer = icomplyNavH(url('/contact.php'));
     $siteMap = icomplyNavH(url('/pages/site-map.php'));
 
-<<<<<<< HEAD
-    $aovHubDrawer = icomplyNavH(url('/pages/services/aov-air-handling.php'));
-    $aovTownsDrawer = icomplyNavH(url('/pages/aov'));
-    $barTownsDrawer = icomplyNavH(url('/pages/barriers'));
-    $svc = '<a class="drawer-featured" href="' . $aovHubDrawer . '">AOV &amp; Smoke Control</a>';
-    $svc .= '<a class="drawer-featured" href="' . $aovTownsDrawer . '">AOV towns</a>';
-    $svc .= '<a class="drawer-featured" href="' . $barTownsDrawer . '">Barriers towns (CAME)</a>';
-    $svc .= '<p class="drawer-note">Priority — AOV and CAME barriers. Mainland towns over 10,000. POA after scope.</p>';
-=======
     $priorityDrawer = '';
     foreach ($n['featured'] as $hub) {
         $priorityDrawer .= '<a class="drawer-priority" href="' . icomplyNavH(icomplyFeaturedPushHref($hub)) . '">'
@@ -188,7 +173,9 @@ function icomplyMobileDrawerHtml(array $n): string
     }
     $barrierJob = $n['barrierJob'];
     $svc = '<a class="drawer-featured" href="' . icomplyNavH($barrierJob['href']) . '">' . icomplyNavH($barrierJob['label']) . '</a>';
->>>>>>> origin/main
+    $svc = '<a class="drawer-featured" href="' . icomplyNavH(url('/pages/aov')) . '">AOV towns</a>'
+        . '<a class="drawer-featured" href="' . icomplyNavH(url('/pages/barriers')) . '">Barriers towns (CAME)</a>'
+        . $svc;
     foreach ($n['cats'] as $cat) {
         $svc .= '<details class="drawer-acc"><summary>' . icomplyNavH($cat['label']) . '</summary><div>';
         foreach ($cat['services'] as $slug => $name) {
@@ -233,11 +220,8 @@ function icomplyMobileDrawerHtml(array $n): string
       <a href="/shop/">All supplies</a>
     </div></details>
     <a href="{$productsD}">Products</a>
-<<<<<<< HEAD
     <a class="drawer-cta" href="{$phoneHref}">Call {$phone}</a>
-=======
     <a href="{$siteMap}">Site map</a>
->>>>>>> origin/main
     <a class="drawer-cta drawer-cta--quote" href="{$contactDrawer}">Get a quote</a>
   </nav>
 </div>

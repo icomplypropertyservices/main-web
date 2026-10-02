@@ -710,11 +710,6 @@ function icomplyMergeBarrierManufacturers(array $catalog): array
         ];
     }
     return $catalog;
-=======
-    return function_exists('icomplyApplyMfrCoverageCatalog')
-        ? icomplyApplyMfrCoverageCatalog($built)
-        : $built;
->>>>>>> origin/main
 }
 
 function getManufacturerBySlug(string $slug): ?array {
@@ -870,21 +865,15 @@ function servicePhotoUrl(string $slug): string {
 }
 
 function manufacturerImageUrl(string $slug, string $fallbackService = 'fire-alarms'): string {
-<<<<<<< HEAD
-    $jpg = '/assets/images/manufacturers/' . $slug . '.jpg';
-    if (is_file(SITE_ROOT . $jpg)) {
-        return url($jpg);
-    }
-    $svg = '/assets/images/manufacturers/nameplates/' . $slug . '.svg';
-    if (is_file(SITE_ROOT . $svg)) {
-        return url($svg);
-=======
     foreach (['svg', 'jpg', 'png', 'webp'] as $ext) {
         $rel = '/assets/images/manufacturers/' . $slug . '.' . $ext;
         if (is_file(SITE_ROOT . $rel)) {
             return url($rel);
         }
->>>>>>> origin/main
+    }
+    $svg = '/assets/images/manufacturers/nameplates/' . $slug . '.svg';
+    if (is_file(SITE_ROOT . $svg)) {
+        return url($svg);
     }
     return serviceImageUrl($fallbackService);
 }
