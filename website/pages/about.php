@@ -102,13 +102,14 @@ $aboutSchema = [
                 'Merseyside',
                 'Cumbria',
             ],
-            'priceRange' => '££',
+            'priceRange' => 'POA',
             'sameAs' => array_values(array_filter([
                 defined('SOCIAL_FACEBOOK') ? SOCIAL_FACEBOOK : '',
                 defined('SOCIAL_INSTAGRAM') ? SOCIAL_INSTAGRAM : '',
                 defined('SOCIAL_LINKEDIN') ? SOCIAL_LINKEDIN : '',
                 defined('SOCIAL_TWITTER') ? SOCIAL_TWITTER : '',
                 defined('SOCIAL_GOOGLE') ? SOCIAL_GOOGLE : '',
+                defined('SOCIAL_YOUTUBE') ? SOCIAL_YOUTUBE : '',
             ])),
         ],
     ],
@@ -132,7 +133,7 @@ $aboutSchema = [
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
                     About<br>
-                    <span class="text-[#ff6b00]">Icomply Property Services</span>
+                    <span class="text-[#ff6b00]">iComply Property Services</span>
                 </h1>
                 <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl">
                     Fire risk assessments and fire safety systems, electrical and gas, security,
@@ -232,7 +233,7 @@ $aboutSchema = [
             <div class="bg-[#0B1F3A] text-white rounded-3xl p-6">
                 <div class="text-3xl font-semibold text-[#ff6b00]">2 hrs</div>
                 <div class="mt-1 font-semibold">Typical response*</div>
-                <p class="mt-2 text-sm text-white/75">We aim to reply to quote requests within 2 hours on business days.</p>
+                <p class="mt-2 text-sm text-white/75">We reply to quote requests with a quote.</p>
             </div>
         </div>
     </div>
@@ -323,7 +324,7 @@ $aboutSchema = [
             </ul>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#quote" class="px-6 py-3 bg-[#ff6b00] rounded-2xl font-semibold">Start your quote</a>
-                <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20Icomply%2C%20I%20need%20a%20quote"
+                <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20iComply%2C%20I%20need%20a%20quote"
                    target="_blank" rel="noopener"
                    class="px-6 py-3 border border-white/30 rounded-2xl font-semibold hover:bg-white/10">WhatsApp</a>
             </div>
@@ -419,7 +420,7 @@ $aboutSchema = [
     <div class="max-w-3xl mx-auto px-6 py-16 md:py-20">
         <div class="text-center mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Work with Icomply</h2>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Work with iComply</h2>
             <p class="mt-3 text-zinc-600">Call <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="text-[#ff6b00] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>,
                 WhatsApp the same mobile, or send the form. We aim to reply within 2 hours on business days — that is a target, not a guaranteed call-out.</p>
             <div class="mt-6 flex flex-wrap justify-center gap-3">
@@ -430,7 +431,7 @@ $aboutSchema = [
             </div>
         </div>
 
-        <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
+        <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <input type="hidden" name="gclid" value="<?= htmlspecialchars($_GET['gclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
             <input type="hidden" name="fbclid" value="<?= htmlspecialchars($_GET['fbclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">

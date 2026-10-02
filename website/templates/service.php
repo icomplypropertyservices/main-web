@@ -19,7 +19,7 @@ $serviceName = $SERVICE_NAME;
 $serviceFaqs = [
     'electrical' => [
         ['How often is an EICR required?', 'Landlords typically need an EICR every 5 years (or on change of tenancy). Commercial premises often follow a risk-based schedule of 1–5 years.'],
-        ['Do you offer same-week electrical appointments?', 'Where engineer capacity and site access allow, yes — especially for landlord certificates and urgent remedial work across the North West.'],
+        ['How are electrical appointments booked?', 'Appointments are booked when an engineer and site access are available, including landlord certificates and urgent remedial work across the North West.'],
         ['Can you upgrade consumer units and install EV chargers?', 'Yes. We design and install consumer unit upgrades, rewires, EV chargers and commercial electrical works to current regulations with full certification.'],
     ],
     'fire-alarms' => [
@@ -53,6 +53,15 @@ $blurb = getServiceBlurb($serviceSlug);
 $standards = getServiceStandards($serviceSlug);
 $faqs = $serviceFaqs[$serviceSlug] ?? $serviceFaqs['default'];
 $svcCopy = function_exists('waterAsbestosServiceCopy') ? waterAsbestosServiceCopy($serviceSlug) : null;
+if ($serviceSlug === 'gas-systems' && function_exists('icomplyGasServiceHubCopy')) {
+    $gasHub = icomplyGasServiceHubCopy();
+    $pageTitle = $gasHub['title'];
+    $metaDesc = $gasHub['meta'];
+    $blurb = $gasHub['blurb'];
+    $standards = $gasHub['standards'];
+    $faqs = $gasHub['faqs'];
+    $svcCopy = $gasHub['copy'];
+}
 
 $popularTowns = array_values(array_filter(
     ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool', 'Bury', 'Sale', 'Altrincham', 'Macclesfield', 'Burnley', 'Blackburn', 'Warrington', 'St Helens'],
@@ -106,7 +115,7 @@ require SITE_ROOT . '/includes/header.php';
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
                     <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?>.<br>
-                    <span class="text-[#ff6b00]"><?= htmlspecialchars($svcCopy['hero_accent'] ?? ($poaService ? 'Surveyed, documented, POA.' : 'Installed, tested, certified.'), ENT_QUOTES, 'UTF-8') ?></span>
+                    <span class="text-[#ff6b00]"><?= htmlspecialchars($svcCopy['hero_accent'] ?? ($poaService ? 'Surveyed, documented, POA.' : 'Design, installation, testing and servicing.'), ENT_QUOTES, 'UTF-8') ?></span>
                 </h1>
                 <p class="mt-6 text-lg text-white/80 max-w-xl"><?= htmlspecialchars($blurb, ENT_QUOTES, 'UTF-8') ?></p>
                 <div class="mt-8 flex flex-wrap gap-3">
@@ -120,8 +129,8 @@ require SITE_ROOT . '/includes/header.php';
                 <p class="mt-6 text-sm text-white/60"><?= htmlspecialchars($standards, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
-                <img src="<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>"
-                     alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> by Icomply Property Services"
+                <img src="<?= htmlspecialchars(serviceImageUrl($SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>"
+                     alt="<?= htmlspecialchars($serviceSlug === 'gas-systems' && function_exists('icomplyGasLegalSentence') ? icomplyGasLegalSentence() : ($serviceName . ' by iComply Property Services'), ENT_QUOTES, 'UTF-8') ?>"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
                      loading="eager"
                      onerror="this.style.display='none'">
@@ -170,7 +179,7 @@ require SITE_ROOT . '/includes/header.php';
                 <?php endforeach; ?>
             <?php else: ?>
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
-                Icomply Property Services designs, installs, commissions, maintains and certifies
+                iComply Property Services designs, installs, commissions, maintains and certifies
                 <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong>
                 for commercial, industrial, multi-let, care and residential properties across Greater Manchester,
                 Lancashire, Cheshire, Merseyside and Cumbria.
@@ -188,18 +197,18 @@ require SITE_ROOT . '/includes/header.php';
         </div>
         <div class="lg:col-span-2 space-y-4">
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
-                <img src="<?= url('/assets/images/keywords/' . htmlspecialchars($img2, ENT_QUOTES, 'UTF-8') . '.jpg') ?>"
+                <img src="<?= htmlspecialchars(keywordImageUrl($img2, $SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> equipment"
                      class="w-full h-44 object-cover"
                      loading="lazy"
-                     onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
+                     onerror="this.src='<?= htmlspecialchars(serviceImageUrl($SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>'">
             </div>
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
-                <img src="<?= url('/assets/images/keywords/' . htmlspecialchars($img3, ENT_QUOTES, 'UTF-8') . '.jpg') ?>"
+                <img src="<?= htmlspecialchars(keywordImageUrl($img3, $SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation work"
                      class="w-full h-44 object-cover"
                      loading="lazy"
-                     onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
+                     onerror="this.src='<?= htmlspecialchars(serviceImageUrl($SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>'">
             </div>
         </div>
     </div>
@@ -243,8 +252,8 @@ require SITE_ROOT . '/includes/header.php';
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Manufacturers</div>
-                <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Brands we install &amp; service</h2>
-                <p class="mt-2 text-zinc-600 max-w-2xl">Looking for your exact panel brand? We support major <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturers across the North West.</p>
+                <h2 class="text-3xl font-semibold tracking-tight text-black mt-2"><?= $serviceSlug === 'gas-systems' ? 'Trade brands listed here' : 'Brands we install &amp; service' ?></h2>
+                <p class="mt-2 text-zinc-600 max-w-2xl"><?= $serviceSlug === 'gas-systems' ? 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not install or service these brands.' : ('Looking for your exact panel brand? We support major ' . htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') . ' manufacturers across the North West.') ?></p>
             </div>
             <a href="<?= htmlspecialchars(function_exists('icomplyTradeShopUrl') ? icomplyTradeShopUrl() : url('/shop/index.php'), ENT_QUOTES, 'UTF-8') ?>" class="text-sm font-semibold text-[#ff6b00]">Browse trade shop →</a>
         </div>
@@ -337,7 +346,7 @@ require SITE_ROOT . '/includes/header.php';
             <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">
                 <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> near you
             </h2>
-            <p class="mt-2 text-zinc-600">Town hubs we cover — electrical and gas also open a real keyword×town page. We do not publish thin service×area doorways.</p>
+            <p class="mt-2 text-zinc-600">Every North West town has a <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> page. Quotes are POA. Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
         </div>
         <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All areas →</a>
     </div>
@@ -428,7 +437,7 @@ require SITE_ROOT . '/includes/header.php';
             <h2 class="text-3xl font-semibold tracking-tight">Need <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?>?</h2>
             <p class="mt-3 text-white/75"><?= $poaService
                 ? 'Price on application after we confirm the property and access. Call, WhatsApp or send the form — no invented fee list.'
-                : 'Written quotes after scope. Same-week appointments where capacity allows. Full certification on every job.' ?></p>
+                : 'Written quotes after scope. Appointments booked when the diary allows where capacity allows. Full certification on every job.' ?></p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Quote for ' . $serviceName) ?>"
                    target="_blank" rel="noopener"
@@ -441,7 +450,7 @@ require SITE_ROOT . '/includes/header.php';
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Based in Stockport — North West coverage</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> <?= $poaService ? 'Written assessment or survey notes for your file' : 'Installation, servicing and certification' ?></li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> <?= $poaService ? 'POA only — no invented prices, certs or reviews' : 'Multi-service packages for landlords & FM teams' ?></li>
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Response aim: within 2 hours on business days</li>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Quotes are POA</li>
         </ul>
     </div>
 </section>
@@ -463,9 +472,9 @@ echo testimonialsSectionHtml();
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">
                 Request <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> quote
             </h2>
-            <p class="mt-3 text-zinc-600"><?= htmlspecialchars((string)($svcCopy['cta_line'] ?? 'Tell us the postcode, property type and any panel brand — we aim to respond within 2 hours on business days.'), ENT_QUOTES, 'UTF-8') ?></p>
+            <p class="mt-3 text-zinc-600"><?= htmlspecialchars((string)($svcCopy['cta_line'] ?? 'Tell us the postcode, property type and any panel brand — we will reply with a quote.'), ENT_QUOTES, 'UTF-8') ?></p>
         </div>
-        <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
+        <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input type="text" name="name" placeholder="Full name" required maxlength="120" class="w-full border px-5 py-3.5 rounded-2xl">

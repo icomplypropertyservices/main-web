@@ -1,9 +1,9 @@
 <?php
 /**
- * Compact, accurate sitemap — core pages + shop/products + service hubs +
- * areas + manufacturers + keyword hubs + featured electrical/gas keyword×town.
- * Never lists /pages/{service}/{town} (those 404 as sitemap locs).
- * Never dumps the full keyword×area matrix (that 500'd live).
+ * Compact sitemap — hubs plus Tier-1 service×town pages that have a bespoke
+ * article. Keyword×town, non-Tier-1 towns, area-town templates, and services
+ * without their own town copy stay out. Broken or unknown URLs stay out.
+ * Never lists /shop/sitemap.xml or /products/sitemap.xml (separate sites; 404 here).
  */
 declare(strict_types=1);
 
@@ -20,6 +20,14 @@ function icomplySitemapBannedPaths(): array
         '/terms-and-conditions' => true,
         '/terms-and-conditions/' => true,
         '/thank-you' => true,
+        '/404' => true,
+        '/404/' => true,
+        '/lead-popup-form' => true,
+        '/lead-popup-form/' => true,
+        '/shop/sitemap' => true,
+        '/shop/sitemap/' => true,
+        '/products/sitemap' => true,
+        '/products/sitemap/' => true,
     ];
 }
 
@@ -33,15 +41,28 @@ function icomplySitemapPublishRoot(): string
     return SITE_ROOT;
 }
 
-/** True when the pretty URL has a built file on the publish root. */
-function icomplySitemapUrlHasFile(string $urlPath): bool
+/**
+ * File lookup path. Trailing slashes stay in the public loc (shop canonicals)
+ * but the built file is shop/index.html, not a directory URL.
+ */
+function icomplySitemapLookupPath(string $urlPath): string
 {
     $urlPath = '/' . ltrim(str_replace('\\', '/', $urlPath), '/');
     $urlPath = preg_replace('#\.php$#i', '', $urlPath) ?? $urlPath;
     $urlPath = preg_replace('#/index$#i', '', $urlPath) ?? $urlPath;
+    if ($urlPath !== '/') {
+        $urlPath = rtrim($urlPath, '/');
+    }
     if ($urlPath === '') {
         $urlPath = '/';
     }
+    return $urlPath;
+}
+
+/** True when the pretty URL has a built file on the publish root. */
+function icomplySitemapUrlHasFile(string $urlPath): bool
+{
+    $urlPath = icomplySitemapLookupPath($urlPath);
     $root = icomplySitemapPublishRoot();
     if ($urlPath === '/') {
         return is_file($root . DIRECTORY_SEPARATOR . 'index.html')
@@ -94,21 +115,34 @@ function icomplySitemapEntries(): array
         if (preg_match('#^/shop/[^/]+/.+#', $path) || preg_match('#^/products/.+#', $path)) {
             return;
         }
+        if (str_contains($path, '/sitemap')) {
+            return;
+        }
+        if (preg_match('#^/pages/packages/hmo(?:-|$)#', $path)) {
+            return;
+        }
         if (preg_match('#-photo\.(jpe?g|png)$#i', $path)) {
             return;
         }
-        // Hard reject /pages/{service}/{town} even if a leftover matrix file
-        // sits in dist/. Keep only real hub prefixes.
-        if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
-            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages'];
-            if (!in_array($m[1], $okPrefix, true)) {
-                return;
+        // noindex URLs never appear in the sitemap (thin town templates, keyword×area, non-Tier-1).
+        if (function_exists('icomplyPathIsIndexable') && !icomplyPathIsIndexable($path)) {
+            return;
+        }
+        // Hubs are rendered at export time from the catalogue, so they do not
+        // need a committed PHP stub. Indexable service×town pages are virtual
+        // routes the exporter always writes; the dist publisher still drops
+        // any loc whose HTML file is missing.
+        $generatedHub = (bool)preg_match('#^/pages/(keywords|areas|manufacturers|services)/[a-z0-9\-]+$#', $path);
+        $virtualServiceTown = false;
+        if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $stm)) {
+            $reservedHubs = ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages', 'jobs'];
+            if (!in_array($stm[1], $reservedHubs, true)
+                && isset($serviceSlugs[$stm[1]])
+                && isset($areaSlugSet[$stm[2]])) {
+                $virtualServiceTown = true;
             }
         }
-        // Keyword hubs + featured keyword×town are generated at export time.
-        // Do not require a source PHP file for those catalogue locs.
-        $isKeywordLoc = (bool)preg_match('#^/pages/keywords(/[a-z0-9\-]+){1,2}$#', $path);
-        if (!$isKeywordLoc && !icomplySitemapUrlHasFile($path)) {
+        if (!$generatedHub && !$virtualServiceTown && !icomplySitemapUrlHasFile($path)) {
             return;
         }
         $seen[$path] = true;
@@ -154,12 +188,13 @@ function icomplySitemapEntries(): array
         ['/pages/areas', '0.9', 'pages/areas.php'],
         ['/pages/manufacturers', '0.9', 'pages/manufacturers.php'],
         ['/pages/keywords', '0.9', 'pages/keywords.php'],
-        ['/shop', '0.8', 'shop/index.html'],
-        ['/shop/fire', '0.75', 'shop/fire/index.html'],
-        ['/shop/electrical', '0.75', 'shop/electrical/index.html'],
-        ['/shop/security', '0.75', 'shop/security/index.html'],
-        ['/shop/gas', '0.75', 'shop/gas/index.html'],
-        ['/products', '0.9', 'pages/products.php'],
+        // Trailing slash is the canonical (live /shop 301s to /shop/).
+        ['/shop/', '0.8', 'shop/index.html'],
+        ['/shop/fire/', '0.75', 'shop/fire/index.html'],
+        ['/shop/electrical/', '0.75', 'shop/electrical/index.html'],
+        ['/shop/security/', '0.75', 'shop/security/index.html'],
+        ['/shop/gas/', '0.75', 'shop/gas/index.html'],
+        ['/products', '0.8', 'pages/products.php'],
     ];
     foreach ($static as [$path, $pri, $file]) {
         if ($path === '/' || $exists($file) || $exists(preg_replace('#\.php$#', '/index.php', $file) ?? $file)) {
@@ -198,6 +233,10 @@ function icomplySitemapEntries(): array
         if ($base === 'index') {
             continue;
         }
+        // Exporter skips service stubs that are not in the live catalogue.
+        if (function_exists('getServices') && !isset(getServices()[$base])) {
+            continue;
+        }
         $add('/pages/services/' . $base, '0.85');
     }
     foreach (glob($publish . '/pages/manufacturers/*.php') ?: [] as $mFile) {
@@ -221,9 +260,8 @@ function icomplySitemapEntries(): array
         }
         $add('/pages/keywords/' . $base, '0.68');
     }
-    // Keyword hubs from the catalogue (generated at export) plus a small
-    // featured electrical/gas × town sample. Skip at request time so
-    // keywords.json cannot OOM the live sitemap.
+    // Keyword hubs and keyword×town pages from the catalogue.
+    // Skip the catalogue at request time so keywords.json cannot OOM a live PHP sitemap.
     $requestSafe = !empty($GLOBALS['ICOMPLY_SITEMAP_REQUEST_SAFE']);
     if (!$requestSafe && function_exists('getMajorKeywords') && function_exists('keywordSlug')) {
         $family = [];
@@ -232,28 +270,52 @@ function icomplySitemapEntries(): array
                 $family[keywordSlug($fs)] = true;
             }
         }
+        $areaSlugs = [];
+        if (function_exists('getAreas') && function_exists('areaSlug')) {
+            foreach (getAreas() as $areaName) {
+                $areaSlugs[] = areaSlug((string)$areaName);
+            }
+        }
         foreach (array_keys(getMajorKeywords()) as $kw) {
             $slug = keywordSlug($kw);
             $add('/pages/keywords/' . $slug, isset($family[$slug]) ? '0.78' : '0.68');
-        }
-        if (function_exists('getElectricalGasFeaturedKeywordSlugs') && function_exists('getAreas') && function_exists('areaSlug')) {
-            $areasFlip = array_flip(getAreas());
-            $sampleTowns = ['Stockport', 'Manchester', 'Bolton', 'Liverpool', 'Preston', 'Warrington'];
-            $featured = getElectricalGasFeaturedKeywordSlugs();
-            $allKw = getMajorKeywords();
-            foreach (['electrical', 'gas'] as $fam) {
-                foreach ($featured[$fam] ?? [] as $kwSlug) {
-                    $kwSlug = keywordSlug((string)$kwSlug);
-                    if ($kwSlug === '' || !isset($allKw[$kwSlug])) {
-                        continue;
-                    }
-                    foreach ($sampleTowns as $town) {
-                        if (!isset($areasFlip[$town])) {
-                            continue;
-                        }
-                        $add('/pages/keywords/' . $kwSlug . '/' . areaSlug($town), '0.62');
-                    }
+            foreach ($areaSlugs as $town) {
+                if ($town === '') {
+                    continue;
                 }
+                $add('/pages/keywords/' . $slug . '/' . $town, '0.55');
+            }
+        }
+    }
+    if (function_exists('getAreas') && function_exists('areaSlug')) {
+        foreach (getAreas() as $area) {
+            $add('/pages/areas/' . areaSlug((string)$area), '0.6');
+        }
+    }
+    if (function_exists('getManufacturerCatalog')) {
+        foreach (array_keys(getManufacturerCatalog()) as $slug) {
+            $slug = (string)$slug;
+            if ($slug === '' || $slug === 'index') {
+                continue;
+            }
+            $add('/pages/manufacturers/' . $slug, '0.72');
+        }
+    }
+    if (function_exists('getServices')) {
+        $townSlugs = [];
+        if (function_exists('getAreas') && function_exists('areaSlug')) {
+            foreach (getAreas() as $areaName) {
+                $town = areaSlug((string)$areaName);
+                if ($town !== '') {
+                    $townSlugs[] = $town;
+                }
+            }
+        }
+        foreach (array_keys(getServices()) as $slug) {
+            $slug = (string)$slug;
+            $add('/pages/services/' . $slug, '0.85');
+            foreach ($townSlugs as $town) {
+                $add('/pages/' . $slug . '/' . $town, '0.5');
             }
         }
     }
@@ -325,37 +387,206 @@ function icomplyServeSitemapXml(string $baseUrl): string
     return icomplyBuildSafeSitemapXml($baseUrl);
 }
 
-/**
- * Write a single compact sitemap.xml and remove stale chunk files.
- * @return array{urls:int,file:string}
- */
-function icomplyWriteSitemapFiles(string $baseUrl): array
+function icomplyCanonicalSiteBase(string $baseUrl): string
 {
-    foreach (glob(SITE_ROOT . '/sitemap-*.xml') ?: [] as $old) {
-        @unlink($old);
-    }
-    @unlink(SITE_ROOT . '/sitemap-urls.xml');
-
-    $xml = icomplyBuildSitemapXml($baseUrl);
-    $file = SITE_ROOT . '/sitemap.xml';
-    file_put_contents($file, $xml);
-    $distMap = dirname(SITE_ROOT) . DIRECTORY_SEPARATOR . 'dist' . DIRECTORY_SEPARATOR . 'sitemap.xml';
-    if (is_dir(dirname($distMap))) {
-        file_put_contents($distMap, $xml);
-    }
-
     $base = rtrim($baseUrl, '/');
-    if (str_contains($base, 'localhost') || str_contains($base, '127.0.0.1')) {
-        $base = 'https://icomplypropertyservices.co.uk';
+    if ($base === '' || str_contains($base, 'localhost') || str_contains($base, '127.0.0.1')) {
+        return 'https://icomplypropertyservices.co.uk';
     }
-    $robots = "User-agent: *\nAllow: /\n\n"
+    return $base;
+}
+
+/** robots.txt may name only the one sitemap this site actually publishes. */
+function icomplyRobotsTxt(string $baseUrl): string
+{
+    $base = icomplyCanonicalSiteBase($baseUrl);
+    return "User-agent: *\nAllow: /\n\n"
         . "Sitemap: {$base}/sitemap.xml\n\n"
         . "Disallow: /admin/\n"
         . "Disallow: /bin/\n"
         . "Disallow: /data/\n"
         . "Disallow: /config.php\n"
         . "Disallow: /config.local.php\n";
-    file_put_contents(SITE_ROOT . '/robots.txt', $robots);
+}
 
-    return ['urls' => substr_count($xml, '<url>'), 'file' => $file];
+function icomplyDeleteSitemapChunks(string $root): void
+{
+    if ($root === '' || !is_dir($root)) {
+        return;
+    }
+    foreach (glob($root . '/sitemap-*.xml') ?: [] as $old) {
+        @unlink($old);
+    }
+    @unlink($root . '/sitemap-urls.xml');
+    $dir = $root . '/sitemaps';
+    if (!is_dir($dir)) {
+        return;
+    }
+    foreach (glob($dir . '/*') ?: [] as $file) {
+        if (is_file($file)) {
+            @unlink($file);
+        }
+    }
+    @rmdir($dir);
+}
+
+function icomplyJsTemplateLiteral(string $value): string
+{
+    return str_replace(['\\', '`', '${'], ['\\\\', '\\`', '\\${'], $value);
+}
+
+/**
+ * Edge functions serve the curated sitemap and robots even if a Netlify
+ * file-crawl plugin rewrites dist/sitemap.xml after the build command.
+ */
+function icomplyWriteSitemapEdgeFunctions(string $xml, string $robots): void
+{
+    $dir = dirname(SITE_ROOT) . '/netlify/edge-functions';
+    if (!is_dir($dir) && !mkdir($dir, 0755, true) && !is_dir($dir)) {
+        throw new RuntimeException('Cannot mkdir ' . $dir);
+    }
+    $robotsJs = icomplyJsTemplateLiteral($robots);
+    // A full matrix urlset is tens of megabytes. Publish sitemap.xml as a file.
+    // This module has no path config, so it cannot shadow that file.
+    if (strlen($xml) > 200000) {
+        file_put_contents($dir . '/sitemap.js', <<<'JS'
+// Static sitemap.xml is the published urlset. No path config on purpose.
+export default async () => new Response('', { status: 204 });
+JS);
+        file_put_contents($dir . '/robots.js', <<<JS
+export default async () => {
+  return new Response(`{$robotsJs}`, {
+    headers: {
+      "content-type": "text/plain; charset=utf-8",
+      "cache-control": "public, max-age=3600",
+    },
+  });
+};
+
+export const config = { path: "/robots.txt" };
+JS);
+        return;
+    }
+    $xmlJs = icomplyJsTemplateLiteral($xml);
+    file_put_contents($dir . '/sitemap.js', <<<JS
+export default async () => {
+  return new Response(`{$xmlJs}`, {
+    headers: {
+      "content-type": "application/xml; charset=utf-8",
+      "cache-control": "public, max-age=3600",
+    },
+  });
+};
+
+export const config = { path: "/sitemap.xml" };
+JS);
+    file_put_contents($dir . '/robots.js', <<<JS
+export default async () => {
+  return new Response(`{$robotsJs}`, {
+    headers: {
+      "content-type": "text/plain; charset=utf-8",
+      "cache-control": "public, max-age=3600",
+    },
+  });
+};
+
+export const config = { path: "/robots.txt" };
+JS);
+}
+
+/**
+ * @param list<array{path:string,priority:string}> $entries
+ */
+function icomplySitemapXmlFromEntries(string $baseUrl, array $entries): string
+{
+    $base = icomplyCanonicalSiteBase($baseUrl);
+    $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+    $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+    foreach ($entries as $u) {
+        $loc = $u['path'] === '/' ? $base . '/' : $base . $u['path'];
+        $xml .= '  <url><loc>' . htmlspecialchars($loc, ENT_XML1) . '</loc>'
+            . '<priority>' . $u['priority'] . '</priority></url>' . "\n";
+    }
+    $xml .= '</urlset>' . "\n";
+    return $xml;
+}
+
+function icomplyDistHasPage(string $dist, string $path): bool
+{
+    $path = icomplySitemapLookupPath($path);
+    if ($path === '/') {
+        return is_file($dist . '/index.html') || is_file($dist . '/index.php');
+    }
+    $rel = ltrim($path, '/');
+    foreach ([$rel . '.php', $rel . '.html', $rel . '/index.html', $rel . '/index.php'] as $candidate) {
+        if (is_file($dist . '/' . $candidate)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
+ * @return array{urls:int,file:string,xml:string}
+ */
+function icomplyInstallSitemap(string $baseUrl, string $xml, ?string $dist = null): array
+{
+    if (!str_contains($xml, '<urlset') || str_contains($xml, '<sitemapindex')) {
+        throw new RuntimeException('Refusing to publish a sitemap index');
+    }
+    if (str_contains($xml, '/products/sitemap') || str_contains($xml, '/shop/sitemap')) {
+        throw new RuntimeException('Refusing to publish nested shop/products sitemap locs');
+    }
+
+    icomplyDeleteSitemapChunks(SITE_ROOT);
+    $file = SITE_ROOT . '/sitemap.xml';
+    file_put_contents($file, $xml);
+
+    $robots = icomplyRobotsTxt($baseUrl);
+    file_put_contents(SITE_ROOT . '/robots.txt', $robots);
+    icomplyWriteSitemapEdgeFunctions($xml, $robots);
+
+    if ($dist !== null && is_dir($dist)) {
+        icomplyDeleteSitemapChunks($dist);
+        file_put_contents($dist . '/sitemap.xml', $xml);
+        file_put_contents($dist . '/robots.txt', $robots);
+    }
+
+    return ['urls' => substr_count($xml, '<url>'), 'file' => $file, 'xml' => $xml];
+}
+
+/**
+ * Write a single compact sitemap.xml and remove stale chunk files.
+ * @return array{urls:int,file:string}
+ */
+function icomplyWriteSitemapFiles(string $baseUrl): array
+{
+    $installed = icomplyInstallSitemap($baseUrl, icomplyBuildSitemapXml($baseUrl), null);
+    $dist = dirname(SITE_ROOT) . DIRECTORY_SEPARATOR . 'dist';
+    if (is_dir($dist)) {
+        icomplyDeleteSitemapChunks($dist);
+        file_put_contents($dist . '/sitemap.xml', $installed['xml']);
+        file_put_contents($dist . '/robots.txt', icomplyRobotsTxt($baseUrl));
+    }
+    return ['urls' => $installed['urls'], 'file' => $installed['file']];
+}
+
+/**
+ * Publish only allowlisted locs whose HTML was actually written into dist.
+ * @return array{urls:int,file:string}
+ */
+function icomplyWriteSitemapForDist(string $dist, string $baseUrl): array
+{
+    $entries = [];
+    foreach (icomplySitemapEntries() as $entry) {
+        if (icomplyDistHasPage($dist, $entry['path'])) {
+            $entries[] = $entry;
+        }
+    }
+    if (count($entries) < 800) {
+        throw new RuntimeException('Published sitemap has only ' . count($entries) . ' URLs (expected hubs plus town pages)');
+    }
+    $xml = icomplySitemapXmlFromEntries($baseUrl, $entries);
+    $installed = icomplyInstallSitemap($baseUrl, $xml, $dist);
+    return ['urls' => $installed['urls'], 'file' => $installed['file']];
 }

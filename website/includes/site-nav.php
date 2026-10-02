@@ -36,6 +36,9 @@ function icomplyNavCatalog(): array
         foreach ($list as $slug => $name) {
             $used[$slug] = true;
             $kws = function_exists('getKeywordsForService') ? getKeywordsForService((string)$slug) : [];
+            foreach (['niceic-certified', 'part-p-certified', 'gas-certificate-same-day', 'certified-electrician', 'gas-safe-engineer'] as $hideSlug) {
+                unset($kws[$hideSlug]);
+            }
             if ($kws) {
                 $kwForCat[$slug] = [
                     'name' => (string)$name,
@@ -111,7 +114,7 @@ function icomplyNavCatalog(): array
         'phoneHref' => 'tel:' . preg_replace('/\s+/', '', defined('PHONE') ? PHONE : ''),
         'whatsapp' => defined('WHATSAPP') ? WHATSAPP : '',
         'email' => defined('EMAIL') ? EMAIL : '',
-        'brand' => defined('SITE_NAME') ? SITE_NAME : 'Icomply Property Services',
+        'brand' => defined('SITE_NAME') ? SITE_NAME : 'iComply Property Services',
         'js' => assetUrl('/assets/js/site-nav.js'),
         'logo' => assetUrl('/assets/images/brand/icomply-mark.svg'),
         'logoLight' => assetUrl('/assets/images/brand/icomply-logo.svg'),
@@ -125,9 +128,9 @@ function icomplyNavResourceLinks(): array
 {
     $links = [
         ['href' => url('/pages/resources/index.php'), 'label' => 'All resources'],
-        ['href' => url('/pages/resources/index.php') . '#batch-a', 'label' => 'Batch A — days 1–5'],
-        ['href' => url('/pages/resources/index.php') . '#batch-b', 'label' => 'Batch B — days 6–14'],
-        ['href' => url('/pages/resources/index.php') . '#batch-c', 'label' => 'Batch C — SEO hubs'],
+        ['href' => url('/pages/resources/index.php') . '#batch-a', 'label' => 'Landlord guides'],
+        ['href' => url('/pages/resources/index.php') . '#batch-b', 'label' => 'Fire and commercial guides'],
+        ['href' => url('/pages/resources/index.php') . '#batch-c', 'label' => 'Service hubs'],
     ];
     $landers = [
         '/pages/landlord-certificates' => 'Landlord certificates',

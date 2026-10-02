@@ -6,9 +6,9 @@ require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/share.php';
 require_once SITE_ROOT . '/includes/nav-ia.php';
 
-$pageTitle = 'Site Map | Icomply Property Services';
-$metaDesc = 'Browse the Icomply site map — fire safety, professional and construction services, popular North West areas, manufacturers, keyword guides and XML sitemaps.';
-$metaKeywords = 'Icomply site map, fire risk assessment, kitchen fitting, property compliance, North West areas, EICR guides';
+$pageTitle = 'Site Map | iComply Property Services';
+$metaDesc = 'Browse the iComply site map — fire safety, professional and construction services, popular North West areas, manufacturers, keyword guides and XML sitemaps.';
+$metaKeywords = 'iComply site map, fire risk assessment, kitchen fitting, property compliance, North West areas, EICR guides';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/site-map.php');
 
@@ -84,9 +84,9 @@ $resourceLinks = [
     ['href' => url('/pages/fire-risk-assessment'), 'label' => 'Fire risk assessment', 'blurb' => 'Written FRA and action plan'],
     ['href' => url('/pages/electrical-safety-landlords'), 'label' => 'Electrical safety for landlords', 'blurb' => 'EICR and remedials'],
     ['href' => url('/pages/commercial-fire-safety'), 'label' => 'Commercial fire safety', 'blurb' => 'Alarms, lighting, doors, FRA'],
-    ['href' => url('/pages/resources/index.php') . '#batch-a', 'label' => 'Batch A — days 1–5', 'blurb' => 'Gas, FRA, smoke/CO, PAT, EPC'],
-    ['href' => url('/pages/resources/index.php') . '#batch-b', 'label' => 'Batch B — days 6–14', 'blurb' => 'Fire, commercial, care, booking, GM'],
-    ['href' => url('/pages/resources/index.php') . '#batch-c', 'label' => 'Batch C — SEO hubs', 'blurb' => 'Twelve quality hubs (not HMO packages)'],
+    ['href' => url('/pages/resources/index.php') . '#batch-a', 'label' => 'Landlord guides', 'blurb' => 'Gas, FRA, smoke/CO, PAT, EPC'],
+    ['href' => url('/pages/resources/index.php') . '#batch-b', 'label' => 'Fire and commercial guides', 'blurb' => 'Fire, commercial, care, booking, GM'],
+    ['href' => url('/pages/resources/index.php') . '#batch-c', 'label' => 'Service hubs', 'blurb' => 'Twelve quality hubs (not HMO packages)'],
     ['href' => url('/pages/services/legionella-risk-assessment.php'), 'label' => 'Legionella risk assessment', 'blurb' => 'Water hygiene / Legionnaires — POA'],
     ['href' => url('/pages/services/asbestos-survey.php'), 'label' => 'Asbestos survey', 'blurb' => 'Management & refurbishment surveys — POA'],
     ['href' => url('/pages/resources/legionella-risk-assessment.php'), 'label' => 'Legionella guide', 'blurb' => 'L8 / HSG274 plain English'],
@@ -263,8 +263,8 @@ require SITE_ROOT . '/includes/header.php';
         </div>
         <?php endforeach; ?>
         <p class="text-sm text-zinc-500">
-            Full machine-readable list (<?= number_format(count($services) * count($areas) + count(getMajorKeywords()) * count($areas) + count($services) + count(getMajorKeywords()) + count($areas)) ?>+ URLs):
-            <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/sitemap.xml') ?>">XML sitemap index</a>.
+            Machine-readable list of the working pages (not service×town or keyword×town doorways):
+            <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/sitemap.xml') ?>">XML sitemap</a>.
         </p>
     </div>
 </section>

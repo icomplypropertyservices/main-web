@@ -1,8 +1,8 @@
 <?php
 /**
  * Package / AOV public URL + price rules (Jack / CoS).
- * Kits/products: show £. AOV service package seed (aov-air-handling-package): POA + kit ladder.
- * Install/labour = POA. Non-AOV package £ kept; dead Shopify handles retarget to service hubs.
+ * Kits/products: show POA. AOV service package seed (aov-air-handling-package): POA + kit ladder.
+ * Install/labour = POA. Non-AOV package POA kept; dead Shopify handles retarget to service hubs.
  */
 declare(strict_types=1);
 
@@ -42,7 +42,7 @@ function icomplyPackagePublicOverride(array $product): array
             'price' => 'POA',
             'cta' => 'Get a quote',
             'is_aov_package' => true,
-            'blurb' => 'AOV equipment kits: AOV-SENSOR £60, AOV-MOTOR/ACT £275, heavy £950, AOV-CTRL £400, AOV-KIT-1M2 stairwell £2,450 (ex VAT). Installation and labour POA — not a draft "From £349" package.',
+            'blurb' => 'AOV equipment kits: AOV-SENSOR POA AOV-MOTOR/ACT POA heavy POA AOV-CTRL POA AOV-KIT-1M2 stairwell POA (ex VAT). Installation and labour POA — not a draft "From POA" package.',
         ];
     }
 

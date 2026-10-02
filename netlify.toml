@@ -28,6 +28,11 @@
   command = "php website/bin/static-export.php && php website/bin/check-static-export.php"
   publish = "dist"
 
+# Re-apply the curated sitemap after other build plugins. A file-crawl plugin
+# (live /sitemaps/sitemap-1.xml … sitemap-6.xml) must not be the last writer.
+[[plugins]]
+  package = "./netlify/plugins/lock-sitemap"
+
 [[redirects]]
   from = "https://www.icomplypropertyservices.co.uk/*"
   to = "https://icomplypropertyservices.co.uk/:splat"
@@ -461,6 +466,40 @@
   from = "/sitemap-*.xml"
   to = "/sitemap.xml"
   status = 301
+  force = true
+
+# Live index used /sitemaps/sitemap-1.xml … sitemap-6.xml plus nested
+# /products/sitemap.xml and /shop/sitemap.xml. Those files 404. Send them
+# at the one sitemap this site publishes. Do not touch /shop or /products hubs.
+[[redirects]]
+  from = "/sitemaps/*"
+  to = "/sitemap.xml"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/products/sitemap.xml"
+  to = "/sitemap.xml"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/products/sitemap"
+  to = "/sitemap.xml"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/sitemap.xml"
+  to = "/sitemap.xml"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/sitemap"
+  to = "/sitemap.xml"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/assets/images/services/*-photo.jpg"
@@ -595,6 +634,10 @@
   to = "/pages/keywords/:slug.php"
   status = 200
   force = true
+
+
+# BEGIN legacy-matrix-redirects
+# END legacy-matrix-redirects
 
 [[redirects]]
   from = "/pages/electrical/:town"

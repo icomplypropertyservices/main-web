@@ -205,7 +205,7 @@ $schema = [
     '@graph' => [
         [
             '@type' => 'FAQPage',
-            'name' => 'Property Compliance FAQ — Icomply Property Services',
+            'name' => 'Property Compliance FAQ — iComply Property Services',
             'description' => $metaDesc,
             'url' => url('/pages/faq.php'),
             'mainEntity' => $faqEntities,
@@ -269,7 +269,7 @@ require SITE_ROOT . '/includes/header.php';
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#faqs" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Browse FAQs</a>
                 <a href="<?= url('/contact.php') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">Free quote</a>
-                <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20Icomply%2C%20I%20have%20a%20question"
+                <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20iComply%2C%20I%20have%20a%20question"
                    target="_blank" rel="noopener"
                    class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
             </div>
@@ -412,7 +412,7 @@ require SITE_ROOT . '/includes/header.php';
             <p class="mt-3 text-white/75">Tell us your postcode and the job. Written quotes from Stockport — call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>. Some visits are priced only after a survey.</p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="<?= url('/contact.php') ?>" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold">Request a quote</a>
-                <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20Icomply%2C%20I%20have%20a%20compliance%20question"
+                <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20iComply%2C%20I%20have%20a%20compliance%20question"
                    target="_blank" rel="noopener"
                    class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>
                 <a href="tel:<?= htmlspecialchars(preg_replace('/\s+/', '', PHONE), ENT_QUOTES, 'UTF-8') ?>"

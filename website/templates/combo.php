@@ -7,12 +7,12 @@
  * MANUFACTURER_TAGS, MANUFACTURER_IMAGES, KEYWORD_IMAGE_1/2/3
  */
 $poaCombo = function_exists('isPoaService') && isPoaService($SERVICE_SLUG);
-$pageTitle = $SERVICE_NAME . ' in ' . $AREA . ' | Icomply Property Services';
+$pageTitle = $SERVICE_NAME . ' in ' . $AREA . ' | iComply Property Services';
 $metaDesc = $poaCombo
     ? ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Price on application after scope. Local North West team from Stockport.')
     : ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing & certification. Local engineers. Written quote after scope.');
 $metaKeywords = $SEO_KEYWORDS;
-$ogImage = url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
+$ogImage = serviceImageUrl($SERVICE_SLUG);
 
 $allServices = getServices();
 $allAreas = getAreas();
@@ -58,6 +58,9 @@ if (empty($_SESSION['csrf'])) {
 
 require_once SITE_ROOT . '/includes/share.php';
 $canonicalUrl = url('/pages/' . $SERVICE_SLUG . '/' . $AREA_SLUG . '.php');
+if (function_exists('icomplyRobotsMetaForPath')) {
+    $metaRobots = icomplyRobotsMetaForPath('/pages/' . $SERVICE_SLUG . '/' . $AREA_SLUG);
+}
 require SITE_ROOT . '/includes/header.php';
 
 $schema = [
@@ -70,7 +73,7 @@ $schema = [
             'alternateName' => $serviceName . ' installation and maintenance in ' . $areaName,
             'description' => $metaDesc,
             'url' => $canonicalUrl,
-            'image' => $ogImage ?? url('/assets/images/services/' . $serviceSlug . '.jpg'),
+            'image' => $ogImage ?? serviceImageUrl($serviceSlug),
             'serviceType' => $serviceName,
             'category' => $serviceName,
             'provider' => [
@@ -119,12 +122,12 @@ $schema = [
             'url' => $canonicalUrl,
             'telephone' => PHONE,
             'email' => EMAIL,
-            'image' => $ogImage ?? url('/assets/images/services/' . $serviceSlug . '.jpg'),
+            'image' => $ogImage ?? serviceImageUrl($serviceSlug),
             'areaServed' => [
                 '@type' => 'City',
                 'name' => $areaName,
             ],
-            'priceRange' => '££',
+            'priceRange' => 'POA',
             'parentOrganization' => [
                 '@type' => 'LocalBusiness',
                 '@id' => rtrim(SITE_URL, '/') . '/#business',
@@ -173,8 +176,8 @@ $schema = [
                 <p class="mt-6 text-sm text-white/60"><?= htmlspecialchars($standards, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
-                <img src="<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>"
-                     alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation and servicing in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> by Icomply Property Services"
+                <img src="<?= htmlspecialchars(serviceImageUrl($SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>"
+                     alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation and servicing in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> by iComply Property Services"
                      width="1200" height="800"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
                      loading="eager"
@@ -203,7 +206,7 @@ $schema = [
                 ['Local to ' . $areaName, 'Stockport-based engineers covering ' . $areaName . ' and surrounding postcodes'],
                 ['Standards-led', $standards],
                 ['Full certification', 'Documentation for landlords, insurers and fire officers'],
-                ['Fixed-price quotes', 'Clear scope, same-week appointments where capacity allows'],
+                ['Fixed-price quotes', 'Clear scope, appointments booked when the diary allows'],
             ];
         foreach ($trust as [$t, $d]): ?>
             <div class="flex gap-3 items-start">
@@ -234,10 +237,10 @@ $schema = [
                 <?php endforeach; ?>
             <?php else: ?>
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
-                Icomply Property Services provides complete <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong>
+                iComply Property Services provides complete <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong>
                 design, installation, commissioning, maintenance and certification across
                 <strong><?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></strong> and the wider North West.
-                Our qualified engineers deliver fixed-price quotes, same-week appointments and full compliance documentation on every job.
+                Our qualified engineers deliver fixed-price quotes, appointments booked when the diary allows, and full compliance documentation on every job.
             </p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
                 Whether you need a new system, an upgrade, periodic testing or emergency repairs, we support commercial,
@@ -255,11 +258,11 @@ $schema = [
         <div class="lg:col-span-2 space-y-4">
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
                 <img src="<?= url('/assets/images/keywords/' . $KEYWORD_IMAGE_1 . '.jpg') ?>"
-                     alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> panel and equipment used by Icomply in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
+                     alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> panel and equipment used by iComply in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
                      width="800" height="600"
                      class="w-full h-44 object-cover"
                      loading="lazy"
-                     onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
+                     onerror="this.src='<?= htmlspecialchars(serviceImageUrl($SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>'">
                 <p class="text-xs text-zinc-500 px-3 py-2"><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> control equipment &amp; panels</p>
             </div>
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
@@ -268,7 +271,7 @@ $schema = [
                      width="800" height="600"
                      class="w-full h-44 object-cover"
                      loading="lazy"
-                     onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
+                     onerror="this.src='<?= htmlspecialchars(serviceImageUrl($SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>'">
                 <p class="text-xs text-zinc-500 px-3 py-2">Installation, testing &amp; certification in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
         </div>
@@ -302,7 +305,7 @@ $schema = [
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Manufacturers</div>
                 <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Brands we install &amp; service in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></h2>
-                <p class="mt-2 text-zinc-600 max-w-2xl">Looking for your exact panel brand? We support major <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturers so customers searching for their equipment in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> find Icomply.</p>
+                <p class="mt-2 text-zinc-600 max-w-2xl">Looking for your exact panel brand? We support major <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturers so customers searching for their equipment in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> find iComply.</p>
             </div>
             <a href="<?= url('/shop/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Browse trade shop →</a>
         </div>
@@ -314,11 +317,11 @@ $schema = [
         </div>
         <div class="mt-10 rounded-3xl overflow-hidden border bg-white">
             <img src="<?= url('/assets/images/keywords/' . $KEYWORD_IMAGE_3 . '.jpg') ?>"
-                 alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturer panels and equipment — Icomply <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
+                 alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturer panels and equipment — iComply <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
                  width="1200" height="700"
                  class="w-full h-64 md:h-80 object-cover"
                  loading="lazy"
-                 onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
+                 onerror="this.src='<?= htmlspecialchars(serviceImageUrl($SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>'">
             <p class="text-xs text-zinc-500 px-4 py-3">Manufacturer panels &amp; systems commonly installed and serviced in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></p>
         </div>
     </div>
@@ -343,7 +346,7 @@ $schema = [
             if ($slug === $serviceSlug) continue;
             $rBlurb = getServiceBlurb($slug);
         ?>
-        <a href="<?= url('/pages/' . $slug . '/' . $AREA_SLUG . '.php') ?>"
+        <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
            class="group bg-white border rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
             <div class="h-32 bg-zinc-100 overflow-hidden">
                 <img src="<?= htmlspecialchars(serviceImageUrl($slug), ENT_QUOTES, 'UTF-8') ?>"
@@ -419,7 +422,7 @@ $schema = [
             <h2 class="text-3xl font-semibold tracking-tight">Need <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>?</h2>
             <p class="mt-3 text-white/75"><?= $poaCombo
                 ? 'Price on application after we confirm the property in ' . htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') . '. No invented fee list — call, WhatsApp or send the form.'
-                : 'Written quotes after scope. Same-week appointments where capacity allows. Full certification on every job. Tell us your panel brand or system type.' ?></p>
+                : 'Written quotes after scope. Appointments booked when the diary allows where capacity allows. Full certification on every job. Tell us your panel brand or system type.' ?></p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="#quote" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold">Request quote</a>
                 <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Quote for ' . $serviceName . ' in ' . $areaName) ?>"
@@ -438,7 +441,7 @@ $schema = [
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Based in Stockport — covering <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> &amp; the North West</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Installation, servicing and certification</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Multi-service packages for landlords &amp; FM teams</li>
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Response aim: within 2 hours on business days</li>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Quotes are POA</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Manufacturer brands supported — see tags above</li>
         </ul>
     </div>
@@ -458,10 +461,10 @@ $schema = [
             </h2>
             <p class="mt-3 text-zinc-600">
                 Service and area are pre-filled below. Add your postcode, property type and any panel brand —
-                we aim to respond within 2 hours on business days.
+                we will reply with a quote.
             </p>
         </div>
-        <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
+        <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input type="text" name="name" placeholder="Full name" required maxlength="120" class="w-full border px-5 py-3.5 rounded-2xl">

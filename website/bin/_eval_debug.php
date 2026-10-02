@@ -14,7 +14,7 @@ require SITE_ROOT . '/includes/header.php';
       "@type": "Service",
       "name": "Fire Alarms in Stockport",
       "description": "BS 5839 fire alarm installation, servicing and certification in Stockport. Kentec, Advanced, C-Tec, Morley, Hochiki, Apollo systems.",
-      "provider": {"@type": "LocalBusiness", "name": "Icomply Property Services", "url": "<?= SITE_URL ?>" },
+      "provider": {"@type": "LocalBusiness", "name": "iComply Property Services", "url": "<?= SITE_URL ?>" },
       "areaServed": "Stockport",
       "serviceType": "Fire Alarm Systems",
       "offers": {"@type": "Offer", "availability": "https://schema.org/InStock"}
@@ -38,7 +38,7 @@ require SITE_ROOT . '/includes/header.php';
     <!-- IMAGE 1: Hero service image -->
     <div class="mt-8">
         <img src="<?= url('/assets/images/services/fire-alarms.jpg') ?>"
-             alt="Fire Alarms installation and servicing in Stockport by Icomply Property Services"
+             alt="Fire Alarms installation and servicing in Stockport by iComply Property Services"
              width="1200" height="800"
              class="w-full h-72 md:h-96 object-cover rounded-3xl border"
              loading="eager">
@@ -47,7 +47,7 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 1 -->
     <p class="mt-8 text-lg text-black max-w-3xl leading-relaxed">
-        Icomply Property Services designs, installs, commissions and maintains <strong>BS 5839 fire alarm systems</strong> across <strong>Stockport</strong> and the wider North West. From addressable multi-loop panels in commercial buildings to conventional and wireless systems for landlords and smaller premises, our engineers deliver fixed-price quotes, same-week appointments and full certification on every job.
+        iComply Property Services designs, installs, commissions and maintains <strong>BS 5839 fire alarm systems</strong> across <strong>Stockport</strong> and the wider North West. From addressable multi-loop panels in commercial buildings to conventional and wireless systems for landlords and smaller premises, our engineers deliver fixed-price quotes, same-week appointments and full certification on every job.
     </p>
 
     <!-- PARAGRAPH 2 -->
@@ -59,7 +59,7 @@ require SITE_ROOT . '/includes/header.php';
     <div class="mt-10 grid md:grid-cols-2 gap-6">
         <div>
             <img src="<?= url('/assets/images/keywords/fire-alarm-panel.jpg') ?>"
-                 alt="Fire alarm panel and control equipment used by Icomply in Stockport"
+                 alt="Fire alarm panel and control equipment used by iComply in Stockport"
                  width="800" height="600"
                  class="w-full h-56 object-cover rounded-2xl border"
                  loading="lazy"
@@ -68,7 +68,7 @@ require SITE_ROOT . '/includes/header.php';
         </div>
         <div>
             <img src="<?= url('/assets/images/keywords/kentec-fire-alarm-panel.jpg') ?>"
-                 alt="Kentec Advanced C-Tec Morley Hochiki Apollo fire alarm panels installed and serviced by Icomply in Stockport"
+                 alt="Kentec Advanced C-Tec Morley Hochiki Apollo fire alarm panels installed and serviced by iComply in Stockport"
                  width="800" height="600"
                  class="w-full h-56 object-cover rounded-2xl border"
                  loading="lazy"

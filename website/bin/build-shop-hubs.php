@@ -660,6 +660,11 @@ function icomplyCopyShopStatic(string $src, string $dest): void
         if (!is_dir($targetDir) && !mkdir($targetDir, 0755, true) && !is_dir($targetDir)) {
             throw new RuntimeException('Cannot mkdir ' . $targetDir);
         }
-        copy($file->getPathname(), $target);
+        if ($ext === 'html' && function_exists('icomplyApplyGasLegalHtml')) {
+            $raw = (string)file_get_contents($file->getPathname());
+            file_put_contents($target, icomplyApplyGasLegalHtml($raw));
+        } else {
+            copy($file->getPathname(), $target);
+        }
     }
 }

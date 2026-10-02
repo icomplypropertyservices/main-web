@@ -1,6 +1,6 @@
 <?php
 /**
- * SEO helpers for Icomply Property Services
+ * SEO helpers for iComply Property Services
  * Rank-focused local content, FAQs, schema, breadcrumbs.
  */
 require_once __DIR__ . '/local-content.php';
@@ -24,7 +24,7 @@ function seo_title(string $title): string {
     // Keep SERP titles short (~50–60 chars). Brand only if room remains.
     $title = trim($title);
     if (mb_strlen($title) <= 55) {
-        $withBrand = $title . ' | Icomply';
+        $withBrand = $title . ' | iComply';
         if (mb_strlen($withBrand) <= 60) return $withBrand;
     }
     if (mb_strlen($title) > 60) {
@@ -36,12 +36,12 @@ function seo_title(string $title): string {
 /** Standards / compliance keywords per service for on-page SEO */
 function service_standards(string $slug): array {
     $map = [
-        'electrical' => ['BS 7671', 'EICR', 'PAT testing', 'Part P', 'NICEIC-aligned practice', 'EV charger install'],
+        'electrical' => ['BS 7671', 'EICR', 'PAT testing', 'electrical regulations', 'electrical testing', 'EV charger install'],
         'fire-alarms' => ['BS 5839', 'fire detection', 'L1–L5 categories', 'addressable systems', 'commissioning certificates'],
         'emergency-lighting' => ['BS 5266', 'maintained / non-maintained', 'exit signage', 'duration testing', 'self-test LED'],
         'aov-air-handling' => ['BS 9991 guidance', 'smoke ventilation', 'AOV controls', 'smoke shafts', 'fire strategy support'],
         'nurse-call' => ['HTM 08-03 aligned', 'care home systems', 'wireless / wired', 'panel upgrades', 'handset repair'],
-        'gas-systems' => ['Gas Safe', 'landlord gas safety', 'CP12 / CP44', 'boiler servicing', 'commercial gas'],
+        'gas-systems' => ['landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers', 'iComply does not issue CP12', 'no Gas Safe registration'],
         'intruder-alarm' => ['BS 4737 / PD 6662 practice', 'wired & wireless', 'PIR detection', 'app control', 'ARC-ready'],
         'cctv' => ['IP / HD CCTV', 'NVR recording', 'remote viewing', 'retail & warehouse', 'GDPR-aware install'],
         'access-control' => ['card / fob / biometric', 'multi-door control', 'audit trails', 'time zones', 'fire door release'],
@@ -55,12 +55,15 @@ function service_standards(string $slug): array {
 
 /** Long-form intro paragraph for service×area pages (unique enough via placeholders) */
 function seo_combo_intro(string $serviceName, string $slug, string $area): string {
+    if (function_exists('icomplyCopyIsGasTopic') && icomplyCopyIsGasTopic($slug, $serviceName) && function_exists('icomplyGasLegalSentence')) {
+        return icomplyGasLegalSentence() . ' ' . $serviceName . ' in ' . $area . ' is not carried out by iComply. Non-gas compliance in ' . $area . ' is quoted POA.';
+    }
     $standards = implode(', ', array_slice(service_standards($slug), 0, 3));
-    return "Looking for professional {$serviceName} in {$area}? Icomply Property Services provides design, installation, "
+    return "Looking for professional {$serviceName} in {$area}? iComply Property Services provides design, installation, "
         . "maintenance and certification for landlords, managing agents, facilities teams and businesses across {$area} "
         . "and the wider North West. Our engineers work to UK best practice including {$standards}, with clear paperwork "
         . "you can show insurers, freeholders and local authorities. Based in Stockport (SK2), we cover {$area} with "
-        . "same-week appointments where diary capacity allows and "
+        . "appointments booked when the diary allows and "
         . ((function_exists('isPoaService') && isPoaService($slug))
             ? "a price-on-application quote once scope is clear."
             : "fixed-price quotes whenever the scope is clear.");
@@ -91,7 +94,7 @@ function service_faqs(string $slug, string $serviceName, string $area = ''): arr
     $base = [
         'electrical' => [
             ['q' => "How often do I need an EICR{$loc}?", 'a' => "Most rented homes need an EICR at least every 5 years (or on change of tenancy). Commercial intervals depend on risk and insurer requirements — we advise based on the property type{$loc}."],
-            ['q' => "Do you offer same-week electrical work{$loc}?", 'a' => "Yes where diary capacity allows. Emergency fault-finding and consumer unit issues are prioritised for {$area} and surrounding postcodes."],
+            ['q' => "How is electrical work booked{$loc}?", 'a' => "Appointments are booked when an engineer is available. Emergency fault-finding and consumer unit issues are prioritised for {$area} and surrounding postcodes."],
             ['q' => "Are quotes fixed-price?", 'a' => "Where the scope is clear after survey or photos, we issue fixed-price quotes for EICR, PAT, installs and upgrades."],
         ],
         'fire-alarms' => [
@@ -115,9 +118,9 @@ function service_faqs(string $slug, string $serviceName, string $area = ''): arr
             ['q' => "Do you offer maintenance contracts?", 'a' => "Yes. Planned visits keep systems reliable and create an audit trail for CQC and internal compliance teams."],
         ],
         'gas-systems' => [
-            ['q' => "Do you issue landlord gas safety certificates{$loc}?", 'a' => "Yes. Gas safety checks and certification for rented properties{$loc}, with clear records for landlords and agents."],
-            ['q' => "Can you service commercial boilers?", 'a' => "We handle domestic and many commercial gas servicing needs — tell us plant type and access for an accurate quote."],
-            ['q' => "How quickly can you attend{$loc}?", 'a' => "Routine services are diary-booked; urgent unsafe situations are prioritised. Call us with the postcode for the next slot."],
+            ['q' => "Does iComply issue landlord gas safety certificates{$loc}?", 'a' => "No. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out gas work or issue CP12 or gas safety certificates."],
+            ['q' => "Can iComply service boilers{$loc}?", 'a' => "No. Boiler installation, servicing and repair are gas work. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply is not Gas Safe registered."],
+            ['q' => "What can iComply quote{$loc}?", 'a' => "Electrical, fire, water hygiene and asbestos work is quoted POA. Gas work stays with a Gas Safe registered engineer."],
         ],
         'intruder-alarm' => [
             ['q' => "Do you install wireless alarms{$loc}?", 'a' => "Yes — wireless and hybrid systems for homes and businesses{$loc}, including app control options."],
@@ -156,7 +159,7 @@ function service_faqs(string $slug, string $serviceName, string $area = ''): arr
         ],
     ];
     $faqs = $base[$slug] ?? [
-        ['q' => "Do you provide {$serviceName}{$loc}?", 'a' => "Yes. Icomply installs, services and certificates {$serviceName}{$loc} for residential and commercial clients."],
+        ['q' => "Do you provide {$serviceName}{$loc}?", 'a' => "Yes. iComply installs, services and certificates {$serviceName}{$loc} for residential and commercial clients."],
         ['q' => "How do I get a quote?", 'a' => "Call, WhatsApp or use our online form with the postcode and property type for a fast fixed-price style quote."],
         ['q' => "What areas do you cover?", 'a' => "Greater Manchester and 150+ North West towns from our Stockport base."],
     ];
