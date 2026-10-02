@@ -26,7 +26,7 @@ function wave1FortnightGuides(): array
             'lede' => 'A landlord gas safety record is the document agents and tenants ask for when gas appliances or flues are present — not a boiler service by another name.',
             'formService' => 'Gas — landlord safety record',
             'formHeading' => 'Request a gas safety quote',
-            'formIntro' => 'Tell us the postcode, number of appliances and whether the property is occupied. Quote after scope — no published catalogue price.',
+            'formIntro' => 'The CP12 list price is £85 for a typical North West 6-bed HMO. Send the postcode, appliance count and whether the property is occupied so we can confirm the visit.',
             'formPlaceholder' => 'Postcode, appliance count, flue type, occupied or void…',
             'sections' => [
                 [
@@ -57,14 +57,14 @@ function wave1FortnightGuides(): array
                 [
                     'h2' => 'How to book from Stockport',
                     'p' => [
-                        'We work from Offerton SK2 and quote after we know the appliance count, access and whether the house is occupied. Send the address via [contact](/contact) or call — there is no honest fixed web price that covers every layout.',
-                        'Related reading: [landlord compliance checklist](/pages/resources/landlord-compliance-checklist) and [gas systems](/pages/services/gas-systems).',
+                        'We work from Offerton SK2. The list price is **£85** for a typical North West 6-bed HMO landlord gas safety record. Send the address via the [gas safety job lane](/pages/jobs/gas-safety) or [contact](/contact) so we can confirm it before booking.',
+                        'Related reading: [CP12 booking page](/pages/jobs/gas-safety-cp12), [landlords](/pages/landlords), [landlord compliance checklist](/pages/resources/landlord-compliance-checklist) and [gas systems](/pages/services/gas-systems).',
                     ],
                 ],
             ],
             'faqs' => [
                 ['q' => 'Is a boiler service the same as a landlord gas safety record?', 'a' => 'No. A service is maintenance. The landlord record is the safety check and written outcome for the tenancy file. Many landlords book both on the same visit when the appliance is due.'],
-                ['q' => 'Do you publish a CP12 price list?', 'a' => 'No. Appliance count, flues and access change the job. Ask for a written quote after you send the property details.'],
+                ['q' => 'Do you publish a CP12 price?', 'a' => 'Yes. £85 is the list price for a typical North West 6-bed HMO landlord gas safety record. It is all-in and VAT is not added. Remedials, parts, boiler servicing and commercial plant rooms are confirmed separately. Book it on the gas safety job lane.'],
             ],
         ],
         'fire-risk-assessment-guide' => [

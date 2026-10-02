@@ -23,8 +23,9 @@ $landlordServices = [
     ],
     'gas-systems' => [
         'title' => 'Gas CP12 / CP44',
-        'blurb' => 'Annual landlord gas safety certificates (CP12/CP44), appliance checks, boilers and full Gas Safe documentation for tenancies.',
-        'badge' => 'Annual',
+        'blurb' => 'Landlord gas safety records at £85 for a typical North West property, with Gas Safe documentation for the tenancy file.',
+        'badge' => '£85',
+        'href' => '/pages/jobs/gas-safety',
     ],
     'fire-risk-assessments' => [
         'title' => 'Fire risk assessments',
@@ -144,7 +145,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             <?php foreach ($landlordServices as $slug => $card):
                 $img = url('/assets/images/services/' . $slug . '.jpg');
             ?>
-            <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
+            <a href="<?= url($card['href'] ?? ('/pages/services/' . $slug . '.php')) ?>"
                class="group relative rounded-3xl overflow-hidden border border-white/10 min-h-[140px] bg-white/5 hover:border-[#ff6b00] transition">
                 <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($card['title'], ENT_QUOTES, 'UTF-8') ?> for landlords — Icomply Property Services" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-55 transition" loading="lazy"
                      onerror="this.style.display='none'">
@@ -189,7 +190,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             $img = url('/assets/images/services/' . $slug . '.jpg');
             $svcName = $services[$slug] ?? $card['title'];
         ?>
-        <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
+        <a href="<?= url($card['href'] ?? ('/pages/services/' . $slug . '.php')) ?>"
            class="service-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
             <div class="h-36 bg-zinc-100 overflow-hidden">
                 <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($svcName, ENT_QUOTES, 'UTF-8') ?>"
@@ -306,6 +307,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 <h3 class="font-semibold text-black">Related landlord guides</h3>
                 <ul class="mt-4 space-y-2 text-sm">
                     <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/keywords/landlord-electrical-certificate.php') ?>">Landlord electrical certificate (EICR)</a></li>
+                    <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/jobs/gas-safety') ?>">Gas safety / CP12 job lane · £85</a></li>
                     <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/keywords/landlord-gas-safety-certificate.php') ?>">Landlord gas safety certificate</a></li>
                     <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/keywords/landlord-fire-alarm.php') ?>">Landlord fire alarms</a></li>
                     <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/keywords/landlord-emergency-lighting.php') ?>">Landlord emergency lighting</a></li>

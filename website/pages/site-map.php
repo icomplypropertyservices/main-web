@@ -50,6 +50,7 @@ $mainPages = [
     ['href' => url('/pages/packages.php'), 'label' => 'Packages'],
     ['href' => url('/pages/pricing.php'), 'label' => 'Pricing guide'],
     ['href' => url('/pages/landlords.php'), 'label' => 'Landlords'],
+    ['href' => url('/pages/jobs/gas-safety'), 'label' => 'Gas safety / CP12 job lane (£85)'],
     ['href' => url('/pages/commercial.php'), 'label' => 'Commercial / FM'],
     ['href' => url('/pages/care-homes.php'), 'label' => 'Care homes'],
     ['href' => url('/pages/ev-chargers.php'), 'label' => 'EV chargers'],

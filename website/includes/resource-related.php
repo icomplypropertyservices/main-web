@@ -29,8 +29,11 @@ function resourceRelatedLinks(string $slug): array {
             ['href' => url('/pages/landlords'), 'label' => 'Landlord services'],
         ],
         'gas-safety-certificate-landlords' => [
+            ['href' => url('/pages/jobs/gas-safety-cp12'), 'label' => 'Book a CP12 — £85'],
+            ['href' => url('/pages/jobs/gas-safety'), 'label' => 'Gas safety job lane'],
             ['href' => url('/pages/gas-safety-certificate'), 'label' => 'Gas safety certificate hub'],
             ['href' => url('/pages/services/gas-systems'), 'label' => 'Gas systems'],
+            ['href' => url('/pages/landlords'), 'label' => 'Landlords'],
         ],
         'fire-risk-assessment-guide' => [
             ['href' => url('/pages/fire-risk-assessment'), 'label' => 'Fire risk assessment hub'],

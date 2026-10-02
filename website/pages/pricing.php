@@ -80,13 +80,15 @@ $categories = [
         'name' => 'Gas safety',
         'icon' => '🔥',
         'service_slug' => 'gas-systems',
-        'intro' => 'Gas Safe landlord certificates and appliance checks. Appliance count and flue type affect price.',
+        'intro' => 'Gas Safe landlord certificates and appliance checks. The CP12 list price is £85 for a typical North West 6-bed HMO. Book it on the gas safety job lane.',
+        'lane_href' => '/pages/jobs/gas-safety',
+        'lane_label' => 'Gas safety job lane · £85',
         'items' => [
             [
-                'name' => 'Landlord gas safety (CP12) — 1 appliance',
-                'from' => '£69',
-                'typical' => 'Typical single boiler / gas fire landlord check in the North West.',
-                'includes' => 'Gas Safe record, safety checks, tenant-ready certificate',
+                'name' => 'Landlord gas safety (CP12)',
+                'from' => '£85',
+                'typical' => 'List price for a typical North West 6-bed HMO. All-in. Not VAT registered. Confirm on the gas safety job lane before booking.',
+                'includes' => 'Gas Safe landlord record. Remedials and parts quoted after the visit',
             ],
             [
                 'name' => 'Landlord gas safety — extra appliance',
@@ -368,10 +370,17 @@ require SITE_ROOT . '/includes/header.php';
                 <p class="mt-1 text-zinc-600 max-w-2xl"><?= htmlspecialchars($cat['intro'], ENT_QUOTES, 'UTF-8') ?></p>
             </div>
             <?php if (!empty($cat['service_slug']) && isset($services[$cat['service_slug']])): ?>
-                <a href="<?= url('/pages/services/' . rawurlencode($cat['service_slug']) . '.php') ?>"
-                   class="text-sm font-semibold text-[#ff6b00] shrink-0">
-                    <?= htmlspecialchars($services[$cat['service_slug']], ENT_QUOTES, 'UTF-8') ?> hub →
-                </a>
+                <div class="flex flex-wrap gap-4 shrink-0">
+                    <a href="<?= url('/pages/services/' . rawurlencode($cat['service_slug']) . '.php') ?>"
+                       class="text-sm font-semibold text-[#ff6b00]">
+                        <?= htmlspecialchars($services[$cat['service_slug']], ENT_QUOTES, 'UTF-8') ?> hub →
+                    </a>
+                    <?php if (!empty($cat['lane_href'])): ?>
+                        <a href="<?= url((string)$cat['lane_href']) ?>" class="text-sm font-semibold text-[#ff6b00]">
+                            <?= htmlspecialchars((string)($cat['lane_label'] ?? 'Job lane'), ENT_QUOTES, 'UTF-8') ?> →
+                        </a>
+                    <?php endif; ?>
+                </div>
             <?php elseif ($cat['id'] === 'packages'): ?>
                 <a href="<?= url('/pages/packages.php') ?>" class="text-sm font-semibold text-[#ff6b00] shrink-0">View packages →</a>
             <?php endif; ?>
