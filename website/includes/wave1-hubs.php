@@ -1,6 +1,6 @@
 <?php
 /**
- * Twelve quality SEO hubs (Batch C). Not doorway spam, not HMO package landings.
+ * Twelve quality SEO hubs (Guides). Not doorway spam, not HMO package landings.
  */
 declare(strict_types=1);
 
@@ -13,7 +13,7 @@ function wave1QualityHubs(): array
         'landlord-certificates' => [
             'navLabel' => 'Landlord certificates',
             'pageTitle' => 'Landlord Certificates | EICR, Gas, FRA & Alarms',
-            'metaDesc' => 'Landlord certificates from a Stockport SK2 contractor — EICR, gas safety records, fire risk assessments, smoke/CO and EPCs. Scoped quotes only; no published price list.',
+            'metaDesc' => 'Landlord certificates from a Stockport SK2 contractor — EICR, fire risk assessments, smoke/CO and EPCs. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue them.',
             'metaKeywords' => 'landlord certificates, landlord compliance pack, EICR gas FRA landlords North West, Stockport landlord certificates',
             'ogImage' => '/assets/images/services/landlord-compliance.jpg',
             'kicker' => 'Quality hub · Landlords',
@@ -24,12 +24,12 @@ function wave1QualityHubs(): array
             'honest' => 'We issue records for the inspections and installs we complete. We do not grant licences, give legal advice, or publish invented package prices.',
             'coverTitle' => 'The certificates a let file usually holds',
             'cover' => [
-                'Most single lets in England revolve around a current [EICR](/pages/services/electrical), a [gas safety record](/pages/services/gas-systems) where gas is present, working [smoke and CO alarms](/pages/services/smoke-co-alarms), and a valid [EPC](/pages/services/epc) if you are marketing the property.',
+                'Most single lets in England revolve around a current [EICR](/pages/services/electrical), a gas safety record where gas is present, working [smoke and CO alarms](/pages/services/smoke-co-alarms), and a valid [EPC](/pages/services/epc) if you are marketing the property. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue that record.',
                 'Shared houses and blocks add [fire risk assessment](/pages/services/fire-risk-assessments) and often alarms, lighting or doors. Those extras belong on the FRA and the licence conditions — not on a one-size web bundle.',
             ],
             'work' => [
                 'Electrical installation condition reports and agreed remedials',
-                'Landlord gas safety records and optional boiler service on the same visit',
+                'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers — not by iComply',
                 'Smoke / CO alarm supply, siting and day-of-let testing notes',
                 'Domestic EPCs for marketing a let',
                 'FRA and follow-on fire work when the house is shared or has common parts',
@@ -52,25 +52,25 @@ function wave1QualityHubs(): array
         ],
         'gas-safety-certificate' => [
             'navLabel' => 'Gas safety certificate',
-            'pageTitle' => 'Gas Safety Certificate | Landlord CP12 North West',
-            'metaDesc' => 'Landlord gas safety certificates (CP12 / gas safety records) across Greater Manchester from Stockport SK2. Gas Safe engineers, written records, quote after appliance count.',
+            'pageTitle' => 'Gas safety certificate | Landlord CP12 North West',
+            'metaDesc' => 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out gas work or issue CP12 certificates.',
             'metaKeywords' => 'gas safety certificate, CP12 Stockport, landlord gas safety Greater Manchester, CP44 gas record',
             'ogImage' => '/assets/images/services/gas-systems.jpg',
             'kicker' => 'Quality hub · Gas',
             'crumb' => 'Gas safety certificate',
             'h1' => 'Gas safety certificate',
             'h1Accent' => 'landlord records, written straight',
-            'lede' => 'A Gas Safe visit, a record that matches the appliances on site, and a quote that waits until we know how many there are.',
-            'honest' => 'Engineers are Gas Safe registered for the work we accept. Unsafe appliances stay unsafe on the record. No published per-appliance web price.',
+            'lede' => 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out that visit or issue the record.',
+            'honest' => 'iComply does not hold a Gas Safe registration and does not issue CP12 or gas safety certificates. Unsafe appliances are a matter for a Gas Safe registered engineer. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. No published per-appliance web price, because iComply does not sell that visit.',
             'coverTitle' => 'The landlord gas record, not a service sticker',
             'cover' => [
                 'Private landlords with gas appliances or flues generally need a periodic safety check and a written record for the tenancy. People still call it a CP12. The file needs the current record, not a verbal “it was fine last year”.',
                 'Read the fortnight guide: [gas safety certificate for landlords](/pages/resources/gas-safety-certificate-landlords). Service page: [gas systems](/pages/services/gas-systems).',
             ],
             'work' => [
-                'Landlord gas safety records for houses, flats and shared lets',
-                'Optional boiler service on the same attendance when you ask for it',
-                'Clear outcome if an appliance fails — isolation and next-step quote, not a rewritten pass',
+                'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers',
+                'iComply does not install, service, or repair boilers',
+                'iComply does not issue CP12 or gas safety certificates and shows no Gas Safe registration number',
             ],
             'whoTitle' => 'Typical bookings',
             'who' => [
@@ -84,7 +84,7 @@ function wave1QualityHubs(): array
             'formIntro' => 'Appliance count and access decide the visit. Send those first.',
             'formPlaceholder' => 'Postcode, appliances, occupied or void…',
             'faqs' => [
-                ['q' => 'CP12 or CP44?', 'a' => 'You will hear both. What matters is a current landlord gas safety record that lists the appliances we checked.'],
+                ['q' => 'CP12 or CP44?', 'a' => 'You will hear both. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not check the appliances or issue the record.'],
                 ['q' => 'Do you cover Manchester as well as Stockport?', 'a' => 'Yes, when we can resource the diary. The yard is Offerton SK2.'],
             ],
         ],

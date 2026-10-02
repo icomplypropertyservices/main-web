@@ -58,5 +58,11 @@
     "smoke-co-alarms": "Smoke & CO Alarms",
     "pat-testing": "PAT Testing",
     "legionella-risk-assessment": "Legionella Risk Assessment",
-    "asbestos-survey": "Asbestos Survey"
+    "asbestos-survey": "Asbestos Survey",
+    "solar-pv": "Solar PV",
+    "solar-thermal": "Solar Thermal",
+    "air-source-heat-pumps": "Air Source Heat Pumps",
+    "ground-source-heat-pumps": "Ground Source Heat Pumps",
+    "battery-storage": "Battery Storage",
+    "ev-charging": "EV Charging"
 }

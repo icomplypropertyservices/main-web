@@ -37,6 +37,7 @@ $legacyAliases = [
     '/cookie-policy' => '/privacy',
     '/blog' => '/pages/resources',
     '/news' => '/pages/resources',
+    '/group' => '/',
 ];
 if (isset($legacyAliases[$aliasPath])) {
     header('Location: ' . $legacyAliases[$aliasPath], true, 301);
@@ -113,6 +114,19 @@ if (preg_match('#^/sitemap(-[0-9]+)?\.xml$#i', $uri)) {
 // Serve real files as-is (including manifest.json, images, xml)
 if ($uri !== '/' && is_file($file)) {
     return false;
+}
+
+// Trade shop hubs: static HTML, not shop/index.php (that file 500s without Shopify helpers).
+$shopHtml = '';
+if ($uri === '/shop' || $uri === '/shop/') {
+    $shopHtml = __DIR__ . '/shop/index.html';
+} elseif (preg_match('#^/shop/(fire|electrical|security|gas)/?$#', $uri, $shopHub)) {
+    $shopHtml = __DIR__ . '/shop/' . $shopHub[1] . '/index.html';
+}
+if ($shopHtml !== '' && is_file($shopHtml)) {
+    header('Content-Type: text/html; charset=utf-8');
+    readfile($shopHtml);
+    return true;
 }
 
 // Support extensionless routes such as /contact or /pages/services/gas-systems

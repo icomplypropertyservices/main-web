@@ -151,7 +151,7 @@ function downloadImage(string $url, string $dest): bool {
         'http' => [
             'timeout' => 50,
             'follow_location' => 1,
-            'header' => "User-Agent: IcomplyRelevantImageBot/2.0 (property compliance site; free stock)\r\nAccept: image/*\r\n",
+            'header' => "User-Agent: iComplyRelevantImageBot/2.0 (property compliance site; free stock)\r\nAccept: image/*\r\n",
         ],
         'ssl' => ['verify_peer' => true, 'verify_peer_name' => true],
     ]);

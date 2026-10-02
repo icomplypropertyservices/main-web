@@ -29,7 +29,7 @@ $say(str_contains($redirects, '/privacy-policy') && str_contains($redirects, '/p
 $say(str_contains($redirects, '/terms-and-conditions') && str_contains($redirects, '/terms'), 'terms-and-conditions 301 in _redirects');
 $say(str_contains($header, 'function gtag') && str_contains($header, 'googletagmanager.com'), 'gtag snippet in header');
 $say(str_contains($header, 'icomply_cookie_consent'), 'analytics cookie-gated');
-$say(str_contains($header, 'Icomply Property Services logo'), 'nav logo has meaningful alt');
+$say(str_contains($header, 'iComply Property Services logo'), 'nav logo has meaningful alt');
 $say(str_contains($footer, 'cookie-banner') || is_file(SITE_ROOT . '/includes/cookie-banner.php'), 'cookie banner include');
 $say(str_contains($footer, 'mobile-sticky-cta'), 'sticky mobile CTA');
 
