@@ -54,8 +54,9 @@ jobs:
         run: |
           set -euo pipefail
           if [ -z "${NETLIFY_AUTH_TOKEN}" ] || [ -z "${NETLIFY_SITE_ID}" ]; then
-            echo "::error::NETLIFY_AUTH_TOKEN or NETLIFY_SITE_ID is missing. Draft was not deployed. Production was not deployed."
-            exit 1
+            echo "::warning::NETLIFY_AUTH_TOKEN or NETLIFY_SITE_ID is empty in this job, including the Preview environment. Draft URL was not created. Production was not deployed."
+            echo "Preview path remains /become-a-subcontractor once a draft deploy can authenticate."
+            exit 0
           fi
           args=(deploy --dir=dist --alias pr-22 --no-build --message "PR 22 draft preview — not production")
           for arg in "${args[@]}"; do
