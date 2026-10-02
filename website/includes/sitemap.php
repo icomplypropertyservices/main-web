@@ -140,6 +140,7 @@ function icomplySitemapEntries(): array
         ['/pages/reviews', '0.65', 'pages/reviews.php'],
         ['/pages/site-map', '0.7', 'pages/site-map.php'],
         ['/pages/resources', '0.75', 'pages/resources.php'],
+        ['/pages/resources/legionella-jobs', '0.72', 'pages/resources/legionella-jobs.php'],
         ['/pages/resources/eicr-guide', '0.7', 'pages/resources/eicr-guide.php'],
         ['/pages/resources/fire-alarm-servicing', '0.7', 'pages/resources/fire-alarm-servicing.php'],
         ['/pages/resources/landlord-compliance-checklist', '0.7', 'pages/resources/landlord-compliance-checklist.php'],

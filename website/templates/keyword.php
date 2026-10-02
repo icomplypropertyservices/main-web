@@ -211,7 +211,12 @@ require SITE_ROOT . '/includes/header.php';
 <section id="quote" class="bg-[#061828] text-white">
     <div class="max-w-3xl mx-auto px-6 py-14">
         <h2 class="text-3xl font-bold text-center">Quote for <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></h2>
-        <p class="mt-2 text-center text-white/90">Fixed-price after scope is agreed. Stockport engineers · North West coverage.</p>
+        <?php
+        $quoteLine = (function_exists('isPoaService') && isPoaService((string)$serviceSlug))
+            ? 'Price on application after scope. Stockport engineers · North West coverage.'
+            : 'Fixed-price after scope is agreed. Stockport engineers · North West coverage.';
+        ?>
+        <p class="mt-2 text-center text-white/90"><?= htmlspecialchars($quoteLine, ENT_QUOTES, 'UTF-8') ?></p>
         <form action="<?= url('/contact.php') ?>" method="POST" class="mt-8 bg-white text-zinc-900 border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4 shadow-xl">
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid md:grid-cols-2 gap-4">

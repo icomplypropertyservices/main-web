@@ -336,6 +336,9 @@ function getMajorKeywords(): array {
         }
         $normalized[$slug] = $row;
     }
+    if (function_exists('legionellaJobsApplyOverlay')) {
+        $normalized = legionellaJobsApplyOverlay($normalized);
+    }
     return $normalized;
 }
 
@@ -711,6 +714,10 @@ function icomplyTradeProductsUrl(): string
 $waFile = __DIR__ . '/includes/water-asbestos.php';
 if (is_file($waFile)) {
     require_once $waFile;
+}
+$legionellaLaneFile = __DIR__ . '/includes/job-types-legionella.php';
+if (is_file($legionellaLaneFile)) {
+    require_once $legionellaLaneFile;
 }
 
 // Back-compat globals used by some templates/includes

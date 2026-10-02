@@ -358,6 +358,13 @@ $schema = [
                     Every guide below has a dedicated page for each town we cover
                     (e.g. <strong>EICR report in Stockport</strong>). Click a topic, then pick your area.
                 </p>
+                <?php if ($serviceSlug === 'legionella-risk-assessment' && function_exists('legionellaJobsIndexUrl')): ?>
+                <p class="mt-3 text-sm text-zinc-700 max-w-2xl">
+                    Water hygiene work is price on application. The
+                    <a class="font-semibold text-[#ff6b00]" href="<?= htmlspecialchars(legionellaJobsIndexUrl(), ENT_QUOTES, 'UTF-8') ?>">Legionella job lane</a>
+                    lists assessments, tanks, temperatures, flushing, sampling and premises visits. Sampling and tank cleaning are quoted only when the system needs them.
+                </p>
+                <?php endif; ?>
             </div>
             <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All keyword guides →</a>
         </div>

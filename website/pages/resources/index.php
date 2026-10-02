@@ -88,6 +88,12 @@ $hubLinks = [
         'cta' => 'Browse guides →',
     ],
     [
+        'href' => url('/pages/resources/legionella-jobs.php'),
+        'title' => 'Legionella job lane',
+        'blurb' => 'Water-hygiene assessments, tanks, temperatures, flushing and premises visits. Price on application.',
+        'cta' => 'Open the lane →',
+    ],
+    [
         'href' => url('/faq.php'),
         'title' => 'FAQ',
         'blurb' => 'Answers to common questions about testing intervals, certification and appointments.',

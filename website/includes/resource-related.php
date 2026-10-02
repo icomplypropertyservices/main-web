@@ -87,6 +87,7 @@ function resourceRelatedLinks(string $slug): array {
         'legionella-risk-assessment' => [
             ['href' => url('/pages/services/legionella-risk-assessment'), 'label' => 'Legionella service'],
             ['href' => url('/pages/legionella-landlords'), 'label' => 'Landlord Legionella hub'],
+            ['href' => url('/pages/resources/legionella-jobs'), 'label' => 'Legionella job lane'],
             ['href' => url('/pages/keywords/legionella-risk-assessment'), 'label' => 'Legionella keyword hub'],
             ['href' => url('/pages/keywords/landlord-legionella-risk-assessment'), 'label' => 'Landlord RA keyword'],
         ],
