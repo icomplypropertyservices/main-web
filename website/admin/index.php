@@ -24,11 +24,11 @@ if (isset($_GET['logout'])) {
 }
 
 if (empty($_SESSION['admin'])): ?>
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Admin Login • Icomply</title>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Admin Login • iComply</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css"></head>
 <body class="bg-zinc-900 text-white flex items-center justify-center min-h-screen">
 <div class="w-full max-w-sm">
-    <h1 class="text-center text-3xl mb-8 tracking-tight">Icomply Admin</h1>
+    <h1 class="text-center text-3xl mb-8 tracking-tight">iComply Admin</h1>
     <?php if (!empty($error)): ?><div class="bg-red-600 text-white p-3 rounded mb-4 text-sm"><?= htmlspecialchars($error, ENT_QUOTES, 'UTF-8') ?></div><?php endif; ?>
     <form method="POST" class="bg-zinc-800 p-8 rounded-3xl space-y-4" autocomplete="off">
         <input type="text" name="user" placeholder="Username" class="w-full bg-zinc-900 px-5 py-3 rounded-xl text-sm" required>
@@ -86,7 +86,7 @@ $truncateLead = static function (string $text, int $max = 80): string {
 };
 ?>
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><title>Admin • Icomply Property Services</title>
+<html lang="en"><head><meta charset="UTF-8"><title>Admin • iComply Property Services</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css">
 <style>
   .badge-ok { background:#d1fae5; color:#065f46; }

@@ -19,6 +19,15 @@ Every push to `main` exports `website/` → `dist/` then deploys via GitHub Acti
 
 Full steps, manual deploy, and Netlify UI checks: **[DEPLOY.md](DEPLOY.md)**.
 
+## Powered by Netlify badge
+
+Netlify injects `/.netlify/scripts/hud` on the edge for the public “Powered by Netlify” badge (and the pre-launch toolbar on private projects). The project toggle is **Project configuration → General → Powered by Netlify badge** and should stay **off**. It is not stored in git, so this repo also blocks the script on every deploy:
+
+- `netlify.toml`, `website/_headers`, and the `_headers` written by `website/bin/static-export.php` set `Content-Security-Policy: script-src` to inline scripts plus `/assets/` only. There is no `'self'`, so `/.netlify/scripts/hud` cannot run.
+- `website/includes/netlify-badge.php` removes that tag, Netlify Identity chrome, and “Powered by Netlify” nodes if they still appear in the DOM. The main footer, keyword matrix pages, and shop hubs include it.
+
+Leave that `script-src` path-scoped to `/assets/`. A `'self'` source would allow the badge script again.
+
 ## Local
 
 ```bash

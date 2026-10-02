@@ -324,6 +324,26 @@ button { font: inherit; }
   .product-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+.wa-float {
+  display: flex;
+  position: fixed;
+  z-index: 50;
+  right: max(0.85rem, env(safe-area-inset-right));
+  bottom: max(1.25rem, env(safe-area-inset-bottom));
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 999px;
+  background: #16a34a;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.4rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+.wa-float:hover { transform: scale(1.05); }
+.wa-float:focus-visible { outline: 2px solid #0B1F3A; outline-offset: 3px; }
+
 @media (max-width: 760px) {
   .menu-toggle { display: inline-flex; }
   .nav {

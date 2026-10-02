@@ -2,7 +2,7 @@
     "electrical": {
         "blurb": "EICR, rewires, consumer units, EV chargers, PAT and commercial electrical installs to BS 7671.",
         "short": "EICR, rewires, EV chargers, PAT & commercial installs",
-        "standards": "BS 7671 (18th Edition) · EICR · Part P · EV charger regs"
+        "standards": "BS 7671 (18th Edition) · EICR · electrical regulations · EV charger regs"
     },
     "fire-alarms": {
         "blurb": "BS 5839 design, install, service and certification for addressable, conventional and wireless systems.",
@@ -15,9 +15,14 @@
         "standards": "BS 5266 · BS EN 1838 · monthly & annual tests"
     },
     "aov-air-handling": {
-        "blurb": "Smoke vents, AOV panels, smoke control and AHU-related life-safety systems.",
-        "short": "Smoke vents, AOV panels & smoke control",
-        "standards": "BS 9991 · EN 12101 · smoke control guidance"
+        "blurb": "Smoke vents, AOV panels, smoke control and AHU-related life-safety systems. Every brand we install or service is listed on the page.",
+        "short": "Smoke vents, AOV panels and smoke control",
+        "standards": "BS 9991 · BS EN 12101 · Approved Document B · installation quoted after survey"
+    },
+    "barriers": {
+        "blurb": "CAME partner supply for vehicle barriers, plus service of existing booms from the brands listed on the page.",
+        "short": "CAME barrier packs and existing-barrier service",
+        "standards": "BS EN 12453 safety rules for power-operated barriers · installation quoted after survey"
     },
     "nurse-call": {
         "blurb": "Care home and hospital nurse call design, install, upgrades and planned maintenance.",
@@ -27,7 +32,7 @@
     "gas-systems": {
         "blurb": "CP12 / CP44 landlord certificates, boilers, commercial gas and safety checks.",
         "short": "CP12/CP44 landlord certs, boilers & commercial gas",
-        "standards": "Gas Safe · CP12 / CP44 · manufacturer servicing"
+        "standards": "CP12 / CP44 landlord gas record · manufacturer servicing"
     },
     "intruder-alarm": {
         "blurb": "PD 6662 / BS EN 50131 wired and wireless intruder systems with monitoring options.",
@@ -39,10 +44,21 @@
         "short": "IP / HD CCTV design, install & monitoring",
         "standards": "BS EN 62676 · GDPR / DPA camera siting"
     },
+    "barriers": {
+        "blurb": "Vehicle barriers and gate operators. CAME is our barriers partner. Published 5m supply packs are priced on the products hub. Installation is POA after survey.",
+        "short": "CAME partner barriers and gate operators",
+        "standards": "CAME partner supply · safety edges and loops · install POA"
+    },
     "access-control": {
         "blurb": "Paxton, HID, Salto door access, credentials and fire-override integration.",
         "short": "Paxton, HID, Salto door access",
         "standards": "BS EN 50133 · EN 60839 · fire-release integration"
+    },
+    "barriers": {
+        "blurb": "CAME partner rising-arm barriers for private lanes, plus service and replacement of other barrier manufacturers. A page for every UK town over 10,000. Price on application.",
+        "short": "CAME partner barriers, UK towns over 10,000",
+        "standards": "Manufacturer instructions · site risk assessment · Supply of Machinery (Safety) Regulations. BS EN 12453 applies to powered gates, not automatically to rising-arm barriers.",
+        "pricing": "POA"
     },
     "door-entry": {
         "blurb": "Video and audio door entry for flats, multi-tenant and commercial sites.",
@@ -157,7 +173,7 @@
     "bathrooms": {
         "blurb": "Full bathroom and wet-room fitting — sanitaryware, tiling coordination, ventilation and waterproofing.",
         "short": "Bathroom & wet-room fitting",
-        "standards": "Part P · Part F · waterproofing best practice"
+        "standards": "electrical regulations · Part F · waterproofing best practice"
     },
     "renovation": {
         "blurb": "End-to-end property renovation and void refurbs for landlords, investors and homeowners.",
@@ -197,12 +213,12 @@
     "plumbing": {
         "blurb": "Domestic and light commercial plumbing — bathrooms, kitchens, leaks, radiators and pipework.",
         "short": "Domestic & light commercial plumbing",
-        "standards": "Water Regs · WRAS fittings · Gas Safe where required"
+        "standards": "Water Regs · WRAS fittings · gas safety certificates (CP12) where required"
     },
     "heating": {
         "blurb": "Boiler installs, radiator upgrades, system flushes and heating controls for homes and small commercial.",
         "short": "Boilers, radiators & heating controls",
-        "standards": "Gas Safe · manufacturer instructions · Building Regs"
+        "standards": "gas safety certificates (CP12) · manufacturer instructions · Building Regs"
     },
     "roofing": {
         "blurb": "Roof repairs, re-roofing, flat roofs, guttering and chimney works for residential properties.",
@@ -262,7 +278,7 @@
     "electrics-first-fix": {
         "blurb": "First-fix electrical for new builds, renovations and conversions before plaster and second fix.",
         "short": "First-fix electrics for renovations",
-        "standards": "BS 7671 · Part P notification where required"
+        "standards": "BS 7671 · building-regulations notification where required"
     },
     "commercial-fit-out": {
         "blurb": "Office and light commercial fit-out — partitions, services coordination, finishes and compliance.",
@@ -282,5 +298,20 @@
         "standards": "Control of Asbestos Regulations 2012 · duty to manage",
         "pricing": "POA",
         "hero_accent": "Surveyed, sampled if needed, POA."
+    },
+    "pat-testing": {
+        "blurb": "In-service inspection and testing of portable appliances, with a written asset list and fail items marked for repair or removal.",
+        "short": "PAT inspection, testing and asset lists",
+        "standards": "IET Code of Practice for In-service Inspection and Testing"
+    },
+    "epc": {
+        "blurb": "Energy performance certificates for dwellings and non-dwellings, produced after the floor area, heating and insulation are recorded.",
+        "short": "Domestic and non-domestic EPCs",
+        "standards": "Energy Performance of Buildings Regulations · RdSAP / SBEM as applicable"
+    },
+    "smoke-co-alarms": {
+        "blurb": "Mains and sealed smoke and carbon monoxide alarms for rented homes, with positions checked against the storey and the fuel-burning appliances.",
+        "short": "Smoke and CO alarms for rented homes",
+        "standards": "BS 5839-6 · Smoke and Carbon Monoxide Alarm Regulations"
     }
 }

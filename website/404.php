@@ -7,12 +7,12 @@ require_once __DIR__ . '/config.php';
 
 http_response_code(404);
 
-$pageTitle = 'Page Not Found | Icomply Property Services';
-$metaDesc = 'Sorry — that page could not be found on Icomply Property Services. Browse our services, areas, manufacturers, resources or contact us for a free quote.';
+$pageTitle = 'Page Not Found | iComply Property Services';
+$metaDesc = 'Sorry — that page could not be found on iComply Property Services. Browse our services, areas, manufacturers, resources or contact us for a free quote.';
 $metaRobots = 'noindex, follow';
 $canonicalUrl = url('/404');
 $ogImage = url('/assets/images/og-image.jpg');
-$ogImageAlt = 'Icomply Property Services — page not found. Fire, electrical and construction compliance, Stockport SK2.';
+$ogImageAlt = 'iComply Property Services — page not found. Fire, electrical and construction compliance, Stockport SK2.';
 
 $homeUrl = rtrim(SITE_URL, '/') . '/';
 $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
@@ -63,7 +63,7 @@ require SITE_ROOT . '/includes/header.php';
                class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">
                 Contact / free quote
             </a>
-            <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20Icomply%2C%20I%20need%20help%20finding%20a%20page"
+            <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20iComply%2C%20I%20need%20help%20finding%20a%20page"
                target="_blank" rel="noopener"
                class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">
                 WhatsApp

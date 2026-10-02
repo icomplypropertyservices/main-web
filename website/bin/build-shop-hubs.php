@@ -13,6 +13,8 @@
  */
 declare(strict_types=1);
 
+require_once dirname(__DIR__) . '/includes/netlify-badge.php';
+
 if (PHP_SAPI === 'cli' && realpath($_SERVER['SCRIPT_FILENAME'] ?? '') === __FILE__) {
     $opts = getopt('', ['out::', 'help']);
     if (isset($opts['help'])) {
@@ -615,6 +617,8 @@ function icomplyShopPage(string $current, array $hero, string $main, array $ctx)
         . '<script>'
         . 'document.querySelector(".menu-toggle")?.addEventListener("click",function(){var n=document.getElementById("shop-nav");var open=n.classList.toggle("is-open");this.setAttribute("aria-expanded",open?"true":"false");});'
         . '</script>'
+        . icomplyWhatsappFloatHtml('447517806082')
+        . icomplyNetlifyBadgeStripHtml()
         . '</body></html>' . "\n";
 }
 
@@ -686,6 +690,11 @@ function icomplyCopyShopStatic(string $src, string $dest): void
         if (!is_dir($targetDir) && !mkdir($targetDir, 0755, true) && !is_dir($targetDir)) {
             throw new RuntimeException('Cannot mkdir ' . $targetDir);
         }
-        copy($file->getPathname(), $target);
+        if ($ext === 'html' && function_exists('icomplyApplyGasLegalHtml')) {
+            $raw = (string)file_get_contents($file->getPathname());
+            file_put_contents($target, icomplyApplyGasLegalHtml($raw));
+        } else {
+            copy($file->getPathname(), $target);
+        }
     }
 }
