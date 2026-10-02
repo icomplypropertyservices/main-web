@@ -533,6 +533,17 @@ $contactSchema = [
 
 <script>
 (function () {
+    var params = new URLSearchParams(window.location.search);
+    var service = params.get('service');
+    var sel = document.getElementById('contact-service');
+    if (service && sel) {
+        for (var i = 0; i < sel.options.length; i++) {
+            if (sel.options[i].value === service) {
+                sel.value = service;
+                break;
+            }
+        }
+    }
     var form = document.querySelector('form[action*="contact"]');
     var btn = document.getElementById('contact-submit');
     var label = document.getElementById('contact-submit-label');

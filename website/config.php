@@ -135,6 +135,18 @@ if (!in_array((string)($siteDefaults['INDEX_MODE'] ?? 'tiered'), ['tiered', 'all
     $siteDefaults['INDEX_MODE'] = 'tiered';
 }
 
+// php -S on loopback: quote links must stay on this server, not http://localhost/icomply.
+$loopHost = (string)($_SERVER['HTTP_HOST'] ?? '');
+$exporting = (string)(getenv('ICOMPLY_STATIC_EXPORT') ?: ($_ENV['ICOMPLY_STATIC_EXPORT'] ?? '')) !== '';
+if (
+    !$exporting
+    && PHP_SAPI !== 'cli'
+    && preg_match('/^(localhost|127\.0\.0\.1)(:\d+)?$/i', $loopHost)
+) {
+    $https = !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off';
+    $siteDefaults['SITE_URL'] = ($https ? 'https://' : 'http://') . $loopHost;
+}
+
 foreach ($siteDefaults as $key => $value) {
     if (!defined($key)) {
         define($key, $value);

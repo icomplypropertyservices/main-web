@@ -37,7 +37,6 @@ $legacyAliases = [
     '/cookie-policy' => '/privacy',
     '/blog' => '/pages/resources',
     '/news' => '/pages/resources',
-    '/group' => '/',
 ];
 if (isset($legacyAliases[$aliasPath])) {
     header('Location: ' . $legacyAliases[$aliasPath], true, 301);
@@ -116,16 +115,12 @@ if ($uri !== '/' && is_file($file)) {
     return false;
 }
 
-// Trade shop hubs: static HTML, not shop/index.php (that file 500s without Shopify helpers).
-$shopHtml = '';
-if ($uri === '/shop' || $uri === '/shop/') {
-    $shopHtml = __DIR__ . '/shop/index.html';
-} elseif (preg_match('#^/shop/(fire|electrical|security|gas)/?$#', $uri, $shopHub)) {
-    $shopHtml = __DIR__ . '/shop/' . $shopHub[1] . '/index.html';
-}
-if ($shopHtml !== '' && is_file($shopHtml)) {
-    header('Content-Type: text/html; charset=utf-8');
-    readfile($shopHtml);
+// Trade shop hubs are static index.html. Netlify rewrites the same paths.
+$shopIndex = rtrim($file, '/') . '/index.html';
+$shopPath = rtrim($uri, '/') ?: '/';
+if ($shopPath !== '/' && is_file($shopIndex) && ($shopPath === '/shop' || str_starts_with($shopPath, '/shop/'))) {
+    header('Content-Type: text/html; charset=UTF-8');
+    readfile($shopIndex);
     return true;
 }
 
