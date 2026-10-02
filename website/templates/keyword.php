@@ -6,8 +6,10 @@
  * KEYWORD_INTRO, KEYWORD_BODY, KEYWORD_META, KEYWORD_FOCUS_HTML, KEYWORD_FAQ_HTML,
  * KEYWORD_IMAGE, SERVICE_IMAGE
  */
-$pageTitle = $KEYWORD_NAME . ' | North West';
+$pageTitle = !empty($KEYWORD_SEO_TITLE) ? $KEYWORD_SEO_TITLE : ($KEYWORD_NAME . ' | North West');
 $metaDesc = $KEYWORD_META;
+$keywordH1 = !empty($KEYWORD_H1) ? $KEYWORD_H1 : $KEYWORD_NAME;
+$quoteNote = !empty($KEYWORD_QUOTE_NOTE) ? $KEYWORD_QUOTE_NOTE : 'Fixed-price after scope is agreed. Stockport engineers · North West coverage.';
 $metaKeywords = $SEO_KEYWORDS;
 $ogImage = $KEYWORD_IMAGE;
 $canonicalUrl = url('/pages/keywords/' . $KEYWORD_SLUG . '.php');
@@ -58,6 +60,9 @@ require SITE_ROOT . '/includes/header.php';
         ],
     ],
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
+<?php if (!empty($KEYWORD_FAQ_JSON)): ?>
+<script type="application/ld+json"><?= $KEYWORD_FAQ_JSON ?></script>
+<?php endif; ?>
 
 <!-- HERO: solid navy + image with dark overlay for readable text -->
 <section class="relative overflow-hidden bg-[#061828] text-white">
@@ -76,7 +81,7 @@ require SITE_ROOT . '/includes/header.php';
             <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> guide
         </div>
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white max-w-3xl leading-[1.08] drop-shadow-lg">
-            <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?>
+            <?= htmlspecialchars($keywordH1, ENT_QUOTES, 'UTF-8') ?>
         </h1>
         <p class="mt-5 text-lg md:text-xl text-white max-w-2xl leading-relaxed font-medium drop-shadow">
             <?= htmlspecialchars($KEYWORD_INTRO, ENT_QUOTES, 'UTF-8') ?>
@@ -124,6 +129,7 @@ require SITE_ROOT . '/includes/header.php';
                     <p class="mt-4 text-base md:text-lg text-zinc-900 leading-relaxed font-medium"><?= htmlspecialchars($KEYWORD_INTRO, ENT_QUOTES, 'UTF-8') ?></p>
                     <p class="mt-4 text-base md:text-lg text-zinc-900 leading-relaxed"><?= htmlspecialchars($KEYWORD_BODY, ENT_QUOTES, 'UTF-8') ?></p>
                     <ul class="mt-6 space-y-3"><?= $KEYWORD_FOCUS_HTML ?></ul>
+                    <?= $KEYWORD_HUB_HTML ?? '' ?>
                     <p class="mt-6 text-sm text-zinc-800">
                         Part of our
                         <a href="<?= url('/pages/services/' . $SERVICE_SLUG . '.php') ?>" class="font-bold text-[#ff6b00] hover:underline"><?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?></a>
@@ -211,7 +217,7 @@ require SITE_ROOT . '/includes/header.php';
 <section id="quote" class="bg-[#061828] text-white">
     <div class="max-w-3xl mx-auto px-6 py-14">
         <h2 class="text-3xl font-bold text-center">Quote for <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></h2>
-        <p class="mt-2 text-center text-white/90">Fixed-price after scope is agreed. Stockport engineers · North West coverage.</p>
+        <p class="mt-2 text-center text-white/90"><?= htmlspecialchars($quoteNote, ENT_QUOTES, 'UTF-8') ?></p>
         <form action="<?= url('/contact.php') ?>" method="POST" class="mt-8 bg-white text-zinc-900 border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4 shadow-xl">
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid md:grid-cols-2 gap-4">

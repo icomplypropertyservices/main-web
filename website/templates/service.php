@@ -346,7 +346,7 @@ $schema = [
 <?php endif; ?>
 
 <!-- KEYWORD GUIDES (every topic for this service → each has pages for all areas) -->
-<section class="bg-white border-y">
+<section class="bg-white border-y" <?= $serviceSlug === 'plumbing' ? 'id="plumbing-job-types"' : '' ?>>
     <div class="max-w-7xl mx-auto px-6 py-16">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
             <div>
@@ -355,8 +355,13 @@ $schema = [
                     <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> keywords &amp; local pages
                 </h2>
                 <p class="mt-2 text-zinc-600 max-w-2xl">
-                    Every guide below has a dedicated page for each town we cover
-                    (e.g. <strong>EICR report in Stockport</strong>). Click a topic, then pick your area.
+                    <?php if ($serviceSlug === 'plumbing'): ?>
+                        Every plumbing job type has its own guide, with links back to this hub and to the area hubs.
+                        Example: <strong>burst pipe repair in Stockport</strong>. Price on application after scope.
+                    <?php else: ?>
+                        Every guide below has a dedicated page for each town we cover
+                        (e.g. <strong>EICR report in Stockport</strong>). Click a topic, then pick your area.
+                    <?php endif; ?>
                 </p>
             </div>
             <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All keyword guides →</a>
@@ -372,7 +377,7 @@ $schema = [
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <?php
             $shown = 0;
-            $cardLimit = in_array($serviceSlug, getElectricalGasFamilyServices(), true) ? 0 : 18;
+            $cardLimit = in_array($serviceSlug, getElectricalGasFamilyServices(), true) || $serviceSlug === 'plumbing' ? 0 : 18;
             foreach ($svcKeywords as $kwSlug => $kwMeta):
                 if ($cardLimit > 0 && $shown >= $cardLimit) {
                     break;

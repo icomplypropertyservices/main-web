@@ -310,6 +310,10 @@ function keywordDisplayName($slugOrName): string {
 }
 
 function getMajorKeywords(): array {
+    static $cached = null;
+    if ($cached !== null) {
+        return $cached;
+    }
     $kw = loadJsonData('keywords', []);
     $normalized = [];
     foreach ($kw as $slug => $meta) {
@@ -336,7 +340,10 @@ function getMajorKeywords(): array {
         }
         $normalized[$slug] = $row;
     }
-    return $normalized;
+    if (function_exists('jobTypesApplyPlumbing')) {
+        $normalized = jobTypesApplyPlumbing($normalized);
+    }
+    return $cached = $normalized;
 }
 
 /**
@@ -452,6 +459,8 @@ function getPopularKeywordSlugs(): array {
         'nurse-call-system', 'landlord-compliance',
         'legionella-risk-assessment', 'legionella-testing', 'water-hygiene-testing',
         'asbestos-survey', 'asbestos-testing', 'asbestos-management-survey',
+        'plumbing-services', 'emergency-plumber', 'landlord-plumbing-repairs',
+        'burst-pipe-repair', 'leak-detection-support',
     ];
     $all = getMajorKeywords();
     $out = [];
@@ -711,6 +720,11 @@ function icomplyTradeProductsUrl(): string
 $waFile = __DIR__ . '/includes/water-asbestos.php';
 if (is_file($waFile)) {
     require_once $waFile;
+}
+
+$plumbingJobsFile = __DIR__ . '/includes/job-types-plumbing.php';
+if (is_file($plumbingJobsFile)) {
+    require_once $plumbingJobsFile;
 }
 
 // Back-compat globals used by some templates/includes

@@ -151,6 +151,26 @@ foreach ($categories as $catKey => $cat):
             </div>
         </div>
         <?php endif; ?>
+        <?php if ($catKey === 'construction' && function_exists('jobTypesPlumbingJobs')): ?>
+        <div class="mt-8 p-6 bg-white border border-zinc-200 rounded-3xl">
+            <h3 class="font-semibold text-black">Plumbing job-type guides</h3>
+            <p class="text-sm text-zinc-600 mt-1">
+                <?= count(jobTypesPlumbingJobs()) ?> plumbing visits, each with its own page.
+                <a class="font-semibold text-[#ff6b00]" href="<?= url('/pages/services/plumbing.php') ?>#plumbing-job-types">Open the plumbing hub</a>
+                or jump to a job. Price on application after scope.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-2">
+                <?php foreach (jobTypesPlumbingJobs() as $plumbJob):
+                    if (!is_array($plumbJob)) { continue; }
+                    $plumbSlug = (string)($plumbJob['slug'] ?? '');
+                    if ($plumbSlug === '') { continue; }
+                ?>
+                    <a href="<?= url('/pages/keywords/' . rawurlencode($plumbSlug) . '.php') ?>"
+                       class="px-3 py-1.5 bg-zinc-50 border rounded-full text-sm hover:border-[#ff6b00]"><?= htmlspecialchars((string)($plumbJob['name'] ?? $plumbSlug), ENT_QUOTES, 'UTF-8') ?></a>
+                <?php endforeach; ?>
+            </div>
+        </div>
+        <?php endif; ?>
     </div>
 </section>
 <?php endforeach; ?>

@@ -178,6 +178,37 @@ function keywordTemplatePlaceholders(
     $svcImg = url('/assets/images/services/' . $serviceSlug . '.jpg');
     // Prefer keyword image path; template onerror falls back to service
 
+    $faqJson = '';
+    $hubHtml = '';
+    $quoteNote = 'Fixed-price after scope is agreed. Stockport engineers · North West coverage.';
+    if (!empty($meta['plumbing_lane'])) {
+        $quoteNote = 'Price on application after the scope is agreed. No catalogue price on this page.';
+        if (function_exists('jobTypesPlumbingPageHubHtml')) {
+            $hubHtml = jobTypesPlumbingPageHubHtml($slug, $meta);
+        }
+        $entities = [];
+        foreach ($faqs as $faq) {
+            if (!is_array($faq) || count($faq) < 2) {
+                continue;
+            }
+            $entities[] = [
+                '@type' => 'Question',
+                'name' => (string)$faq[0],
+                'acceptedAnswer' => [
+                    '@type' => 'Answer',
+                    'text' => (string)$faq[1],
+                ],
+            ];
+        }
+        if ($entities) {
+            $faqJson = (string)json_encode([
+                '@context' => 'https://schema.org',
+                '@type' => 'FAQPage',
+                'mainEntity' => $entities,
+            ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        }
+    }
+
     return [
         'KEYWORD_NAME' => $name,
         'KEYWORD_SLUG' => $slug,
@@ -194,6 +225,11 @@ function keywordTemplatePlaceholders(
         'KEYWORD_FAQ_HTML' => $faqHtml,
         'KEYWORD_IMAGE' => $kwImg,
         'SERVICE_IMAGE' => $svcImg,
+        'KEYWORD_SEO_TITLE' => (string)($meta['seo_title'] ?? ''),
+        'KEYWORD_H1' => (string)($meta['h1'] ?? ''),
+        'KEYWORD_FAQ_JSON' => $faqJson,
+        'KEYWORD_HUB_HTML' => $hubHtml,
+        'KEYWORD_QUOTE_NOTE' => $quoteNote,
     ];
 }
 
