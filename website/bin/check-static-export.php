@@ -275,13 +275,20 @@ if ($kwHubFiles >= 1200) {
     echo "[FAIL] keyword hubs exported={$kwHubFiles} (need >= 1200 sitemap slugs)\n";
 }
 $areaCount = function_exists('getAreas') ? count(getAreas()) : 168;
-$expectTowns = $kwHubFiles * $areaCount;
-if ($kwTownFiles >= max(12, (int)floor($expectTowns * 0.95))) {
+$expectAllTowns = $kwHubFiles * $areaCount;
+// Production default is --keyword-towns=priority (~hubs×popular, with full
+// matrices for priority + electrical/gas family keywords), not hubs×all areas.
+$popularN = 13;
+$expectPriorityFloor = max(12000, (int)floor($kwHubFiles * $popularN * 0.85));
+$isFullMatrix = $kwTownFiles >= max(12, (int)floor($expectAllTowns * 0.95));
+$isPriorityMatrix = $kwTownFiles >= $expectPriorityFloor && $kwTownFiles < (int)floor($expectAllTowns * 0.95);
+if ($isFullMatrix || $isPriorityMatrix) {
     $pass++;
-    echo "[PASS] keyword×town exported={$kwTownFiles} (hubs={$kwHubFiles} areas={$areaCount})\n";
+    $mode = $isFullMatrix ? 'all' : 'priority';
+    echo "[PASS] keyword×town exported={$kwTownFiles} (mode={$mode}; hubs={$kwHubFiles} areas={$areaCount})\n";
 } else {
     $fail++;
-    echo "[FAIL] keyword×town exported={$kwTownFiles} (need ~{$expectTowns} = hubs×all areas)\n";
+    echo "[FAIL] keyword×town exported={$kwTownFiles} (need priority>={$expectPriorityFloor} or all>~{$expectAllTowns})\n";
 }
 
 $elecGasSlugs = function_exists('getElectricalGasMatrixKeywordSlugs') ? getElectricalGasMatrixKeywordSlugs() : [];
