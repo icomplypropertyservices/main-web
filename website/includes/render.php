@@ -7,6 +7,7 @@
  * Templates must only be controlled site files — never user-supplied content.
  */
 require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/manufacturer-hub.php';
 
 /**
  * Apply {{KEY}} replacements (values must already be safe for their context).
@@ -318,15 +319,22 @@ function renderManufacturerPage(string $mfrSlug): void {
             . htmlspecialchars($sName, ENT_QUOTES, 'UTF-8') . '</a>';
     }
 
-    // Product cards (Shopify-ready via shared card helper)
+    // Real catalogue / products-hub kit deep links. Template "From £" rows stay in JSON and are not rendered.
     require_once SITE_ROOT . '/includes/shopify.php';
+    require_once SITE_ROOT . '/includes/manufacturer-kits.php';
+    $kits = manufacturerPageKits($entry['slug'], 8);
     $productsHtml = '';
-    $products = $entry['products'] ?? [];
-    if (!$products) {
-        $productsHtml = '<p class="text-zinc-600 col-span-full">Contact us for ' . htmlspecialchars($entry['name'], ENT_QUOTES, 'UTF-8') . ' pricing and availability, or <a class="text-[#ff6b00] font-semibold" href="' . htmlspecialchars(url('/shop/index.php'), ENT_QUOTES, 'UTF-8') . '">browse the shop</a>.</p>';
+    if ($kits === []) {
+        $name = htmlspecialchars($entry['name'], ENT_QUOTES, 'UTF-8');
+        $quote = htmlspecialchars(url('/pages/manufacturers/' . $entry['slug'] . '.php') . '#quote', ENT_QUOTES, 'UTF-8');
+        $shop = htmlspecialchars(url('/shop/index.php'), ENT_QUOTES, 'UTF-8');
+        $productsHtml = '<p class="text-zinc-600 col-span-full">Trade kits for ' . $name
+            . ' are quoted to order — we do not list a placeholder price. '
+            . '<a class="text-[#ff6b00] font-semibold" href="' . $quote . '">Request a quote</a>'
+            . ' or <a class="text-[#ff6b00] font-semibold" href="' . $shop . '">browse the shop</a>.</p>';
     } else {
-        foreach ($products as $p) {
-            $productsHtml .= shopifyCardFromManufacturerProduct($p, $entry['slug'], $entry['name']);
+        foreach ($kits as $p) {
+            $productsHtml .= shopifyProductCardHtml($p, false);
         }
     }
 
@@ -359,6 +367,7 @@ function renderManufacturerPage(string $mfrSlug): void {
         'MFR_SEO_KEYWORDS' => $entry['seo_keywords'] ?? $entry['name'],
         'MFR_SERVICES_HTML' => $servicesHtml,
         'MFR_PRODUCTS_HTML' => $productsHtml,
+        'MFR_KIT_COUNT' => count($kits),
         'MFR_RELATED_HTML' => $relatedHtml,
         'SERVICE_NAME' => $services[$primary] ?? 'Compliance',
     ]);

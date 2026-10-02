@@ -67,7 +67,7 @@ function icomplyAovKitImageUrl(string $sku): string {
   <?php if (function_exists('icomplyAovKitPriceStripHtml')): ?>
   <div class="mt-8 bg-white border border-zinc-200 rounded-3xl p-6 md:p-8"><?= icomplyAovKitPriceStripHtml() ?></div>
   <?php endif; ?>
-  <div class="mt-8 bg-white border border-zinc-200 rounded-3xl p-6 md:p-8">
+  <div id="aov-kits" class="mt-8 bg-white border border-zinc-200 rounded-3xl p-6 md:p-8">
     <h3 class="text-lg font-semibold mb-2">AOV equipment kits (ex VAT)</h3>
     <p class="text-sm text-zinc-600 mb-3">Install / labour POA. Photos from Marketing CDN Rev C.</p>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -88,7 +88,7 @@ function icomplyAovKitImageUrl(string $sku): string {
   </div>
 </section>
 
-<section class="max-w-7xl mx-auto px-6 pb-12">
+<section id="barrier-packs" class="max-w-7xl mx-auto px-6 pb-12">
   <h2 class="text-2xl font-semibold text-black mb-2">Barrier packs (5m)</h2>
   <p class="text-sm text-zinc-600 mb-6">SoT supply prices. Install POA. Images from Marketing CAME GARD CDN map.</p>
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">

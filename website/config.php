@@ -347,9 +347,15 @@ function getKeywordsForService(string $serviceSlug): array {
     $serviceSlug = areaSlug($serviceSlug);
     $out = [];
     foreach (getMajorKeywords() as $slug => $meta) {
-        if (($meta['service'] ?? '') === $serviceSlug) {
-            $out[$slug] = $meta;
+        if (($meta['service'] ?? '') !== $serviceSlug) {
+            continue;
         }
+        $name = (string)($meta['name'] ?? '');
+        if (str_contains(strtolower((string)$slug . ' ' . $name), 'tunstall')
+            || str_contains(strtolower((string)$slug . ' ' . $name), 'tubstall')) {
+            continue;
+        }
+        $out[$slug] = $meta;
     }
     uasort($out, static function ($a, $b) {
         return strcasecmp((string)($a['name'] ?? ''), (string)($b['name'] ?? ''));
@@ -492,9 +498,26 @@ function getServiceStandards(string $slug): string {
     return (string)(getServiceMeta($slug)['standards'] ?? '');
 }
 
+/** Slugs that must never appear on the manufacturers hub. */
+function icomplyDeniedManufacturerSlugs(): array {
+    return ['tunstall' => true, 'tubstall' => true];
+}
+
+function icomplyManufacturerIsDenied(string $slug, string $name = ''): bool {
+    $slug = areaSlug($slug);
+    if (isset(icomplyDeniedManufacturerSlugs()[$slug])) {
+        return true;
+    }
+    $name = strtolower(trim($name));
+    return $name === 'tunstall' || $name === 'tubstall';
+}
+
 function getManufacturers(string $serviceSlug): array {
     $mfr = loadJsonData('manufacturers', []);
-    return $mfr['by_service'][$serviceSlug] ?? ['Industry Standard Equipment'];
+    $names = $mfr['by_service'][$serviceSlug] ?? ['Industry Standard Equipment'];
+    return array_values(array_filter($names, static function ($name): bool {
+        return !icomplyManufacturerIsDenied(areaSlug((string)$name), (string)$name);
+    }));
 }
 
 /** Full manufacturer catalog keyed by slug */
@@ -502,6 +525,12 @@ function getManufacturerCatalog(): array {
     $mfr = loadJsonData('manufacturers', []);
     $catalog = $mfr['catalog'] ?? [];
     if ($catalog) {
+        foreach (array_keys($catalog) as $slug) {
+            $name = (string)($catalog[$slug]['name'] ?? '');
+            if (icomplyManufacturerIsDenied((string)$slug, $name)) {
+                unset($catalog[$slug]);
+            }
+        }
         return $catalog;
     }
     // Fallback: build minimal catalog from by_service names
@@ -509,6 +538,9 @@ function getManufacturerCatalog(): array {
     foreach ($mfr['by_service'] ?? [] as $service => $names) {
         foreach ($names as $name) {
             $slug = areaSlug((string)$name);
+            if (icomplyManufacturerIsDenied($slug, (string)$name)) {
+                continue;
+            }
             if (!isset($built[$slug])) {
                 $built[$slug] = [
                     'name' => $name,

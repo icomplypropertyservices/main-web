@@ -4,20 +4,26 @@
  * Pure PHP vars via executeTemplateVars() (no {{}} / eval).
  * MFR_PRODUCTS_HTML, MFR_RELATED_HTML, SERVICE_NAME (primary)
  */
-$pageTitle = $MFR_NAME . ' Products & Service';
-$metaDesc = $MFR_BLURB;
-$metaKeywords = $MFR_SEO_KEYWORDS;
-$canonicalUrl = url('/pages/manufacturers/' . $MFR_SLUG . '.php');
-
 require_once SITE_ROOT . '/includes/share.php';
 require_once SITE_ROOT . '/includes/shopify.php';
+require_once SITE_ROOT . '/includes/manufacturer-kits.php';
+require_once SITE_ROOT . '/includes/manufacturer-hub.php';
 
 $mfrSlug = $MFR_SLUG;
 $mfrName = $MFR_NAME;
 $entry = getManufacturerBySlug($mfrSlug) ?? [];
 $services = getServices();
 $mfrServices = $entry['services'] ?? [];
-$products = $entry['products'] ?? [];
+$kitCount = isset($MFR_KIT_COUNT) ? (int)$MFR_KIT_COUNT : 0;
+$products = manufacturerPageKits($mfrSlug, 8);
+$pageTitle = trim((string)($entry['seo_title'] ?? '')) !== ''
+    ? (string)$entry['seo_title']
+    : ($mfrName . ' Products & Service');
+$metaDesc = trim((string)($entry['seo_desc'] ?? '')) !== ''
+    ? (string)$entry['seo_desc']
+    : $MFR_BLURB;
+$metaKeywords = $MFR_SEO_KEYWORDS;
+$canonicalUrl = url('/pages/manufacturers/' . $mfrSlug . '.php');
 $primaryService = $mfrServices[0] ?? 'fire-alarms';
 $primaryServiceName = $services[$primaryService] ?? 'Compliance';
 $ogImage = manufacturerImageUrl($mfrSlug, $primaryService);
@@ -56,14 +62,19 @@ $schema = [
         ],
         [
             '@type' => 'ItemList',
-            'name' => $mfrName . ' products',
+            'name' => $mfrName . ' trade kits',
             'itemListElement' => array_values(array_map(function ($p, $i) use ($mfrName) {
-                return [
+                $item = [
                     '@type' => 'ListItem',
                     'position' => $i + 1,
-                    'name' => $p['title'] ?? ($mfrName . ' product'),
+                    'name' => $p['title'] ?? ($mfrName . ' kit'),
                     'description' => $p['blurb'] ?? '',
                 ];
+                $href = function_exists('shopifyProductUrl') ? shopifyProductUrl($p) : '';
+                if ($href !== '') {
+                    $item['url'] = $href;
+                }
+                return $item;
             }, $products, array_keys($products))),
         ],
         [
@@ -90,7 +101,9 @@ $schema = [
                     'name' => 'Can I buy ' . $mfrName . ' parts and kits from you?',
                     'acceptedAnswer' => [
                         '@type' => 'Answer',
-                        'text' => 'We supply trade kits and accessories for ' . $mfrName . ' via our shop (Shopify when live) and can quote project-specific equipment for install jobs.',
+                        'text' => $products === []
+                            ? 'Catalogue kits for ' . $mfrName . ' are quoted to order. Tell us the model and quantity and we will price supply. Installation is POA.'
+                            : 'Yes. This page links the ' . $mfrName . ' trade kits we list, with supply prices where the catalogue has them. Installation is POA.',
                     ],
                 ],
                 [
@@ -105,6 +118,12 @@ $schema = [
         ],
     ],
 ];
+if ($products === []) {
+    $schema['@graph'] = array_values(array_filter(
+        $schema['@graph'],
+        static fn(array $node): bool => ($node['@type'] ?? '') !== 'ItemList'
+    ));
+}
 ?>
 <script type="application/ld+json"><?= json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
 
@@ -201,11 +220,15 @@ $schema = [
     <div class="max-w-7xl mx-auto px-6 py-16">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
             <div>
-                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Shop</div>
+                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Trade kits</div>
                 <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">
-                    <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> products &amp; kits
+                    <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> kits
                 </h2>
-                <p class="mt-2 text-zinc-600">Trade-oriented kits ready for Shopify Buy Buttons when credentials are configured.</p>
+                <?php if ($kitCount > 0): ?>
+                <p class="mt-2 text-zinc-600"><?= (int)$kitCount ?> catalogue deep link<?= $kitCount === 1 ? '' : 's' ?>. Supply £ where listed. Installation is POA.</p>
+                <?php else: ?>
+                <p class="mt-2 text-zinc-600">No catalogue SKU is listed for this brand yet. Supply is quoted to order. Installation is POA.</p>
+                <?php endif; ?>
             </div>
             <a href="<?= url('/shop/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All shop products →</a>
         </div>
@@ -223,24 +246,30 @@ $schema = [
     </div>
 </section>
 
+<!-- PRODUCT LINES -->
+<section class="max-w-7xl mx-auto px-6 py-12">
+    <div class="flex items-center gap-4 mb-4">
+        <?= manufacturerLogoHtml($mfrName, $mfrSlug, 'w-12 h-12') ?>
+        <div>
+            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Product lines</div>
+            <h2 class="text-2xl font-semibold tracking-tight text-black"><?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> range</h2>
+        </div>
+    </div>
+    <div class="flex flex-wrap gap-2"><?= manufacturerProductLinesHtml($entry, 8) ?></div>
+</section>
+
 <!-- LOCAL AREAS -->
-<section class="max-w-7xl mx-auto px-6 py-16">
-    <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local install</div>
+<section id="areas" class="max-w-7xl mx-auto px-6 py-16">
+    <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold"><?= !empty($entry['nationwide']) || !empty($entry['barrier']) ? 'Nationwide' : 'Every area' ?></div>
     <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">
-        <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> near you
+        <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> in every town
     </h2>
-    <p class="mt-2 text-zinc-600 mb-6">Open a local <?= htmlspecialchars($primaryServiceName, ENT_QUOTES, 'UTF-8') ?> page for dedicated SEO and quotes.</p>
+    <p class="mt-2 text-zinc-600 mb-6"><?= count(getAreas()) ?> area pages are routed for this brand<?= !empty($entry['barrier']) ? ' — barriers are a nationwide priority' : '' ?>. Installation is POA.</p>
     <div class="flex flex-wrap gap-2">
-        <?php
-        $towns = array_values(array_filter(
-            ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
-            fn($t) => in_array($t, getAreas(), true)
-        ));
-        foreach ($towns as $t):
-        ?>
-            <a href="<?= url('/pages/' . htmlspecialchars($primaryService, ENT_QUOTES, 'UTF-8') . '/' . areaSlug($t) . '.php') ?>"
-               class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">
-                <?= htmlspecialchars($primaryServiceName . ' in ' . $t, ENT_QUOTES, 'UTF-8') ?>
+        <?php foreach (getAreas() as $t): ?>
+            <a href="<?= url('/pages/manufacturers/' . $mfrSlug . '/' . areaSlug($t)) ?>"
+               class="px-3 py-1.5 bg-white border rounded-full text-xs hover:border-[#ff6b00]">
+                <?= htmlspecialchars($mfrName . ' in ' . $t, ENT_QUOTES, 'UTF-8') ?>
             </a>
         <?php endforeach; ?>
     </div>
@@ -275,7 +304,7 @@ $schema = [
             </details>
             <details class="bg-white border rounded-2xl p-5">
                 <summary class="font-semibold cursor-pointer">Can I buy <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> parts online?</summary>
-                <p class="mt-3 text-sm text-zinc-600">Browse kits above or our shop. Shopify checkout activates when store credentials are set in config.</p>
+                <p class="mt-3 text-sm text-zinc-600"><?php if ($kitCount > 0): ?>Open a kit above for the catalogue page. Installation stays POA.<?php else: ?>Ask for a supply quote with the model and quantity. We do not publish a placeholder price.<?php endif; ?></p>
             </details>
             <details class="bg-white border rounded-2xl p-5">
                 <summary class="font-semibold cursor-pointer">Do you maintain existing <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> systems?</summary>
