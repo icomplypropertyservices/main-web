@@ -15,7 +15,7 @@ $canonicalUrl = url('/pages/areas');
 $categories = getServiceCategories();
 
 $featured = array_values(array_filter(
-    ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
+    ['Manchester', 'Burnley', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
     function ($t) use ($areas) {
         return in_array($t, $areas, true);
     }
@@ -120,7 +120,7 @@ require SITE_ROOT . '/includes/header.php';
         <div>
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Featured</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Major towns</h2>
-            <p class="mt-2 text-zinc-600">High-demand coverage areas with full service menus.</p>
+            <p class="mt-2 text-zinc-600">High-demand coverage areas with full service menus. Manchester and Burnley are complete indexes — every service is listed, and their fire links open UK-wide hubs.</p>
         </div>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">

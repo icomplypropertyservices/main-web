@@ -148,6 +148,8 @@ function icomplySitemapEntries(): array
         ['/pages/resources/access-control-guide', '0.7', 'pages/resources/access-control-guide.php'],
         ['/pages/services', '0.95', 'pages/services.php'],
         ['/pages/areas', '0.9', 'pages/areas.php'],
+        ['/pages/areas/manchester', '0.8', 'pages/areas/manchester.php'],
+        ['/pages/areas/burnley', '0.8', 'pages/areas/burnley.php'],
         ['/pages/manufacturers', '0.9', 'pages/manufacturers.php'],
         ['/pages/keywords', '0.9', 'pages/keywords.php'],
         ['/shop', '0.8', 'shop/index.html'],

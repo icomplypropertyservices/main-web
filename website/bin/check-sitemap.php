@@ -56,6 +56,8 @@ if (function_exists('getServices')) {
 $required = [
     'https://icomplypropertyservices.co.uk/</loc>',
     '/pages/areas</loc>',
+    '/pages/areas/manchester</loc>',
+    '/pages/areas/burnley</loc>',
     '/pages/manufacturers</loc>',
     '/pages/resources</loc>',
     '/pages/resources/eicr-guide</loc>',

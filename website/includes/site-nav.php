@@ -90,7 +90,7 @@ function icomplyNavCatalog(): array
         'areasByLetter' => $areasByLetter,
         'featuredKw' => $featuredKw,
         'popularAreas' => array_values(array_filter(
-            ['Manchester', 'Stockport', 'Salford', 'Bolton', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
+            ['Manchester', 'Burnley', 'Stockport', 'Salford', 'Bolton', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
             static fn($a) => in_array($a, $areas, true)
         )),
         'resources' => icomplyNavResourceLinks(),

@@ -409,11 +409,79 @@ function isCostStyleKeyword(string $slug, string $name = ''): bool {
 }
 
 /**
+ * Towns with a full service-index hub (every service listed).
+ *
+ * @return list<string>
+ */
+function getFeaturedAreaIndexHubs(): array {
+    return ['Manchester', 'Burnley'];
+}
+
+function isFeaturedAreaIndexHub(string $area): bool {
+    $slug = areaSlug($area);
+    foreach (getFeaturedAreaIndexHubs() as $name) {
+        if (areaSlug($name) === $slug) {
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
+ * Fire-safety catalogue slugs (detection, FRA, doors, suppression, smoke/CO).
+ *
+ * @return list<string>
+ */
+function getFireSafetyServiceSlugs(): array {
+    $all = getServices();
+    $slugs = getServiceCategories()['fire-safety']['services'] ?? [];
+    $out = [];
+    foreach ($slugs as $slug) {
+        $slug = areaSlug((string)$slug);
+        if ($slug !== '' && isset($all[$slug])) {
+            $out[] = $slug;
+        }
+    }
+    return $out;
+}
+
+function isFireSafetyService(string $slug): bool {
+    static $set = null;
+    if ($set === null) {
+        $set = array_fill_keys(getFireSafetyServiceSlugs(), true);
+    }
+    return isset($set[areaSlug($slug)]);
+}
+
+/**
+ * Nationwide fire URL.
+ *
+ * Town-locked paths such as /pages/fire-alarms/{town} only exist for the
+ * North West areas list and 404 for the rest of the UK. This always returns
+ * the live national service hub. An optional place (London, Birmingham, …)
+ * is a fragment only, so the link still resolves.
+ */
+function fireNationwideServiceUrl(string $serviceSlug, string $place = ''): string {
+    $url = url('/pages/services/' . areaSlug($serviceSlug));
+    $place = trim($place);
+    if ($place !== '') {
+        $url .= '#uk-' . areaSlug($place);
+    }
+    return $url;
+}
+
+/** National keyword hub — not keyword×town. */
+function fireNationwideKeywordUrl(string $keywordSlug): string {
+    return url('/pages/keywords/' . keywordSlug($keywordSlug));
+}
+
+/**
  * Local URL that returns 200 on the default Netlify export.
  * /pages/{service}/{town} is --full only and 404s on draft/prod static.
  *
- * Electrical + gas → featured keyword×town. Other services → area hub
- * (from a service page) or the service hub (from an area page).
+ * Electrical + gas → featured keyword×town.
+ * Fire from an area page → national service hub (UK-wide, not town-locked).
+ * Other services → area hub (from a service page) or the service hub (from an area page).
  */
 function exportedServiceLocalUrl(string $serviceSlug, string $area, string $from = 'service'): string {
     $serviceSlug = areaSlug($serviceSlug);
@@ -428,6 +496,9 @@ function exportedServiceLocalUrl(string $serviceSlug, string $area, string $from
     }
     if ($pick && isset($kw[keywordSlug((string)$pick)])) {
         return url('/pages/keywords/' . keywordSlug((string)$pick) . '/' . $town . '.php');
+    }
+    if ($from === 'area' && isFireSafetyService($serviceSlug)) {
+        return fireNationwideServiceUrl($serviceSlug);
     }
     if ($from === 'area') {
         return url('/pages/services/' . $serviceSlug . '.php');
