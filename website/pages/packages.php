@@ -157,6 +157,19 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
+<section class="max-w-7xl mx-auto px-6 pt-10">
+    <div class="panel-light rounded-3xl border p-6 md:p-8">
+        <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">FRA job lane</div>
+        <h2 class="text-2xl font-semibold mt-2 text-black">Typical 6-bed HMO list</h2>
+        <p class="mt-3 max-w-3xl">Fire risk assessment <strong>£350</strong>. Landlord pack (FRA + EICR + gas) <strong>£650</strong> — the pack replaces those three lines and is not added on top of £350. Other buildings stay POA. VAT is not added.</p>
+        <div class="mt-5 flex flex-wrap gap-3">
+            <a class="px-5 py-3 rounded-2xl bg-[#ff6b00] font-semibold text-white" href="<?= url('/pages/jobs/fra') ?>">FRA job hub</a>
+            <a class="px-5 py-3 rounded-2xl border font-semibold text-black" href="<?= url('/pages/jobs/fire-risk-assessment') ?>">FRA £350</a>
+            <a class="px-5 py-3 rounded-2xl border font-semibold text-black" href="<?= url('/pages/jobs/landlord-bundle') ?>">Pack £650</a>
+        </div>
+    </div>
+</section>
+
 <?= sectionTrustStrip([
     ['Honest pricing', 'One published pack price — everything else is From / POA after scope'],
     ['One visit plan', 'Combine services where practical to cut access days'],

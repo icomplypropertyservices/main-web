@@ -91,24 +91,32 @@ function wave1QualityHubs(): array
         'fire-risk-assessment' => [
             'navLabel' => 'Fire risk assessment',
             'pageTitle' => 'Fire Risk Assessment | Landlords & Workplaces',
-            'metaDesc' => 'Fire risk assessments for rented, shared and commercial buildings in the North West. Written FRA and action plan from Stockport SK2. Quote after we know the premises.',
+            'metaDesc' => 'Fire risk assessments for rented, shared and commercial buildings in the North West. Typical 6-bed HMO list £350. Landlord pack with EICR and gas £650. Other premises priced after scope.',
             'metaKeywords' => 'fire risk assessment, FRA Stockport, commercial FRA Manchester, landlord fire risk assessment',
             'ogImage' => '/assets/images/services/fire-risk-assessments.jpg',
             'kicker' => 'Quality hub · Fire',
             'crumb' => 'Fire risk assessment',
             'h1' => 'Fire risk assessment',
             'h1Accent' => 'written for this building',
-            'lede' => 'A suitable and sufficient FRA describes your premises and the people in them — then a prioritised action list you can actually schedule.',
-            'honest' => 'An FRA is not a licence, not legal advice, and not a guarantee of enforcement outcomes. Follow-on fire work is quoted separately unless you asked us to include it.',
+            'lede' => 'A suitable and sufficient FRA describes your premises and the people in them — then a prioritised action list you can actually schedule. A typical North West 6-bed HMO is listed at £350.',
+            'honest' => 'An FRA is not a licence, not legal advice, and not a guarantee of enforcement outcomes. £350 is the list for that typical 6-bed HMO only. Follow-on fire work is quoted separately unless you book the £650 pack.',
             'coverTitle' => 'Assessment first, kit second',
             'cover' => [
                 'We walk the building, record hazards and existing precautions, and write the assessment. If detection, lighting or doors are short, you get an action list — and a separate quote if you want us to do that work.',
+                'List price for a typical North West 6-bed HMO is **£350** (all-in; VAT is not added). Other buildings are priced after scope. Job lane: [FRA jobs](/pages/jobs/fra) and the [£350 job page](/pages/jobs/fire-risk-assessment).',
+                'The [landlord pack](/pages/jobs/landlord-bundle) is **£650** for FRA, EICR and gas on that same typical 6-bed HMO. The pack replaces the three separate lines. It is not added on top of £350.',
                 'Guide: [fire risk assessments explained](/pages/resources/fire-risk-assessment-guide). Service: [fire risk assessments](/pages/services/fire-risk-assessments).',
             ],
             'work' => [
                 'Written FRA for lets with common parts, shared houses, offices and other workplaces',
                 'Action plans that distinguish management tasks from physical upgrades',
+                '£350 list for a typical North West 6-bed HMO — [job page](/pages/jobs/fire-risk-assessment)',
                 'Optional follow-on quotes for alarms, emergency lighting, doors and extinguishers',
+            ],
+            'steps' => [
+                ['title' => 'Send the property', 'text' => 'Address, storeys, use, and whether it is a typical 6-bed HMO.'],
+                ['title' => 'Match the list or scope', 'text' => 'A typical North West 6-bed HMO is £350. Anything else is confirmed after scope. The [£650 pack](/pages/jobs/landlord-bundle) covers FRA, EICR and gas together.'],
+                ['title' => 'Attend and file the actions', 'text' => 'You receive the assessment and an action list. Remedials stay a separate quote.'],
             ],
             'whoTitle' => 'Who commissions an FRA here',
             'who' => [
@@ -124,6 +132,7 @@ function wave1QualityHubs(): array
             'faqs' => [
                 ['q' => 'Do you grant HMO licences?', 'a' => 'No. Licensing is the local authority. We produce practical fire documentation and related trade work.'],
                 ['q' => 'Will you copy last year’s FRA and change the date?', 'a' => 'No. If the building has not changed we still review it; we do not sell a re-dated PDF.'],
+                ['q' => 'Is every FRA £350?', 'a' => 'No. £350 is the list for a typical North West 6-bed HMO. Other premises are priced after scope. The landlord pack (FRA, EICR and gas) for that same 6-bed HMO is £650, and it replaces the separate FRA line.'],
             ],
         ],
         'electrical-safety-landlords' => [
@@ -178,7 +187,7 @@ function wave1QualityHubs(): array
             'honest' => 'We maintain and install the systems we quote. We do not sell a fake accreditation wall or a one-line national retainers price.',
             'coverTitle' => 'A workplace fire programme, not a gadget list',
             'cover' => [
-                'Start with the [FRA](/pages/fire-risk-assessment), then book the systems it names. Most offices and industrial units live on [fire alarm servicing](/pages/resources/fire-alarm-servicing) and [emergency lighting testing](/pages/resources/emergency-lighting-testing). Where the building has a stair vent, shaft or smoke fan, [AOV and smoke control](/pages/services/aov-air-handling) is part of that fire-protection set and is quoted across the UK from Stockport. Travel outside a short North West run is on the quote.',
+                'Start with the [FRA hub](/pages/fire-risk-assessment). A typical North West 6-bed HMO is listed at £350 on the [FRA job page](/pages/jobs/fire-risk-assessment); the [landlord pack](/pages/jobs/landlord-bundle) is £650 for FRA, EICR and gas together. Then book the systems the assessment names. Most offices and industrial units live on [fire alarm servicing](/pages/resources/fire-alarm-servicing) and [emergency lighting testing](/pages/resources/emergency-lighting-testing). Where the building has a stair vent, shaft or smoke fan, [AOV and smoke control](/pages/services/aov-air-handling) is part of that fire-protection set and is quoted across the UK from Stockport. Travel outside a short North West run is on the quote.',
                 'Audience page: [commercial / FM](/pages/commercial). Guide: [commercial fire safety basics](/pages/resources/commercial-fire-safety-basics).',
             ],
             'work' => [

@@ -36,6 +36,8 @@ require SITE_ROOT . '/includes/header.php';
     <a class="px-4 py-2 border rounded-full text-sm" href="<?= url('/pages/services/fire-alarms.php') ?>">Fire alarms</a>
     <a class="px-4 py-2 border rounded-full text-sm" href="<?= url('/pages/services/emergency-lighting.php') ?>">Emergency lighting</a>
     <a class="px-4 py-2 border rounded-full text-sm" href="<?= url('/pages/services/fire-risk-assessments.php') ?>">FRA</a>
+    <a class="px-4 py-2 border rounded-full text-sm" href="<?= url('/pages/jobs/fire-risk-assessment') ?>">FRA £350</a>
+    <a class="px-4 py-2 border rounded-full text-sm" href="<?= url('/pages/jobs/landlord-bundle') ?>">Pack £650</a>
     <a class="px-4 py-2 border rounded-full text-sm" href="<?= url('/pages/services/smoke-co-alarms.php') ?>">Smoke &amp; CO</a>
   </div>
 </section>

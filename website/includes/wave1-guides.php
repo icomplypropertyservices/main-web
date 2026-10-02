@@ -110,7 +110,10 @@ function wave1FortnightGuides(): array
                 ],
                 [
                     'h2' => 'Book from the North West',
-                    'p' => ['Send the address and use via [contact](/contact). Related: [FRA service](/pages/services/fire-risk-assessments) and the [landlord checklist](/pages/resources/landlord-compliance-checklist).'],
+                    'p' => [
+                        'Send the address and use via [contact](/contact). Related: [FRA service](/pages/services/fire-risk-assessments) and the [landlord checklist](/pages/resources/landlord-compliance-checklist).',
+                        'A typical North West 6-bed HMO is listed at **£350** on the [FRA job page](/pages/jobs/fire-risk-assessment). The [landlord pack](/pages/jobs/landlord-bundle) is **£650** for that FRA plus EICR and gas — not £350 on top. Other buildings are priced after scope. Lane hub: [FRA jobs](/pages/jobs/fra).',
+                    ],
                 ],
             ],
             'faqs' => [
