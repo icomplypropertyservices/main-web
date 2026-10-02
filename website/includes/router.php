@@ -111,8 +111,11 @@ function routerDispatchVirtual(string $path): bool {
         renderManufacturerPage($m[1]);
         return true;
     }
-    // /pages/areas/{slug}
+    // /pages/areas/{slug} — owned file (Manchester) wins over the generic hub.
     if (preg_match('#^/pages/areas/([a-z0-9\-]+)$#', $path, $m)) {
+        if (routerTryFile('/pages/areas/' . $m[1])) {
+            return true;
+        }
         $area = areaFromSlug($m[1]);
         if ($area === null) {
             foreach (getAreas() as $a) {

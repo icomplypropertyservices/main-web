@@ -32,6 +32,7 @@ website/pages/keywords/*.php
 !website/pages/keywords/index.php
 website/pages/areas/*.php
 !website/pages/areas/index.php
+!website/pages/areas/manchester.php
 website/pages/manufacturers/*.php
 !website/pages/manufacturers/index.php
 # Service HUB stubs under pages/services/*.php are tracked (router + reliability)

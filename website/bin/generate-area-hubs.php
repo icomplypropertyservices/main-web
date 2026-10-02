@@ -13,12 +13,16 @@ if (!is_dir($dir)) {
 $n = 0;
 foreach (getAreas() as $area) {
     $safe = areaSlug($area);
+    $dest = "{$dir}/{$safe}.php";
+    if (is_file($dest) && str_contains((string)file_get_contents($dest), 'OWNED AREA HUB')) {
+        continue;
+    }
     $areaExport = var_export($area, true);
     $stub = "<?php\n"
         . "/** AUTO-GENERATED stub — php bin/generate-area-hubs.php */\n"
         . "require_once __DIR__ . '/../../includes/render.php';\n"
         . "renderAreaHubPage({$areaExport});\n";
-    file_put_contents("{$dir}/{$safe}.php", $stub);
+    file_put_contents($dest, $stub);
     $n++;
 }
 

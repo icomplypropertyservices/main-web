@@ -643,6 +643,10 @@ function icomplyPrettyUrlRedirects(): string
 /pages/about/            /pages/about.php             200!
 /pages/areas             /pages/areas.php             200!
 /pages/areas/            /pages/areas.php             200!
+# Owned Manchester hub has child service landings. Force so the hub
+# does not 301 to /pages/areas/manchester/ when those files exist.
+/pages/areas/manchester  /pages/areas/manchester.php  200!
+/pages/areas/manchester/ /pages/areas/manchester.php  200!
 /pages/services          /pages/services.php          200!
 /pages/services/         /pages/services.php          200!
 /pages/manufacturers     /pages/manufacturers.php     200!

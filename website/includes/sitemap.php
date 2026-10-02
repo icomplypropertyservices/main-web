@@ -206,7 +206,19 @@ function icomplySitemapEntries(): array
         if ($base === 'index') {
             continue;
         }
-        $add('/pages/areas/' . $base, '0.6');
+        $add('/pages/areas/' . $base, $base === 'manchester' ? '0.82' : '0.6');
+    }
+    // Owned Manchester service landings (not /pages/{service}/{town} doorways).
+    $manchesterLandings = array_merge(
+        glob($publish . '/pages/areas/manchester/*.php') ?: [],
+        glob(SITE_ROOT . '/pages/areas/manchester/*.php') ?: []
+    );
+    foreach ($manchesterLandings as $mFile) {
+        $base = basename($mFile, '.php');
+        if ($base === 'index') {
+            continue;
+        }
+        $add('/pages/areas/manchester/' . $base, '0.72');
     }
     foreach (glob($publish . '/pages/keywords/*.php') ?: [] as $kwFile) {
         $base = basename($kwFile, '.php');

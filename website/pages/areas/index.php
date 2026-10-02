@@ -15,7 +15,7 @@ $canonicalUrl = url('/pages/areas');
 $categories = getServiceCategories();
 
 $featured = array_values(array_filter(
-    ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
+    ['Manchester', 'Burnley', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
     function ($t) use ($areas) {
         return in_array($t, $areas, true);
     }
@@ -87,6 +87,12 @@ require SITE_ROOT . '/includes/header.php';
                     <?php endforeach; ?>
                 </div>
                 <p class="mt-6 text-sm text-white/50">Plus <?= max(0, count($areas) - count($featured)) ?> more towns in the full directory below.</p>
+                <p class="mt-4 text-sm text-white/70">
+                    <a class="underline hover:text-white" href="<?= url('/pages/areas/manchester.php') ?>">Manchester</a>
+                    lists UK-mainland fire protection and local city services.
+                    <a class="underline hover:text-white" href="<?= url('/pages/areas/burnley.php') ?>">Burnley</a>
+                    keeps its own hub for East Lancashire.
+                </p>
             </div>
         </div>
     </div>
