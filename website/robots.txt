@@ -8,3 +8,4 @@ Disallow: /bin/
 Disallow: /data/
 Disallow: /config.php
 Disallow: /config.local.php
+Disallow: /pages/barriers/

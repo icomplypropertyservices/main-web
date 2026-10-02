@@ -91,6 +91,10 @@ function icomplySitemapEntries(): array
         if (isset($seen[$path]) || isset($banned[$path])) {
             return;
         }
+        // Draft barrier town pages are non-prod and must not enter the sitemap.
+        if ($path === '/pages/barriers' || str_starts_with($path, '/pages/barriers/')) {
+            return;
+        }
         if (preg_match('#^/shop/[^/]+/.+#', $path) || preg_match('#^/products/.+#', $path)) {
             return;
         }
@@ -348,7 +352,8 @@ function icomplyWriteSitemapFiles(string $baseUrl): array
         . "Disallow: /bin/\n"
         . "Disallow: /data/\n"
         . "Disallow: /config.php\n"
-        . "Disallow: /config.local.php\n";
+        . "Disallow: /config.local.php\n"
+        . "Disallow: /pages/barriers/\n";
     file_put_contents(SITE_ROOT . '/robots.txt', $robots);
 
     return ['urls' => substr_count($xml, '<url>'), 'file' => $file];

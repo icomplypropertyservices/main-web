@@ -315,6 +315,10 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         if (isset($parts[0]) && in_array($parts[0], $skipDirs, true)) {
             continue;
         }
+        // Draft CAME barrier pages stay off the Netlify export (non-prod).
+        if (($parts[1] ?? '') === 'barriers') {
+            continue;
+        }
         $path = preg_replace('#\.php$#i', '', $rel) ?? $rel;
         $path = preg_replace('#/index$#i', '', $path) ?? $path;
         if ($path === '' || $path === '/') {
@@ -340,6 +344,11 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
     foreach (icomplyCollectKeywordRoutes($keywordTowns) as $path) {
         $routes[] = $path;
     }
+
+    $routes = array_values(array_filter(
+        $routes,
+        static fn(string $path): bool => !str_starts_with($path, '/pages/barriers')
+    ));
 
     // Jack: every service has every area landing (not only --full).
     foreach (array_keys(getServices()) as $sSlug) {

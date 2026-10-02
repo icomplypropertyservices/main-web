@@ -111,6 +111,17 @@ function routerDispatchVirtual(string $path): bool {
         renderManufacturerPage($m[1]);
         return true;
     }
+    // Draft CAME barrier town pages. Non-prod: static export skips them.
+    if ($path === '/pages/barriers') {
+        require_once __DIR__ . '/barriers-pages.php';
+        renderBarriersIndexPage();
+        return true;
+    }
+    if (preg_match('#^/pages/barriers/([a-z0-9\-]+)$#', $path, $m) && $m[1] !== 'index') {
+        require_once __DIR__ . '/barriers-pages.php';
+        renderBarriersTownPage($m[1]);
+        return true;
+    }
     // /pages/areas/{slug}
     if (preg_match('#^/pages/areas/([a-z0-9\-]+)$#', $path, $m)) {
         $area = areaFromSlug($m[1]);
@@ -132,7 +143,7 @@ function routerDispatchVirtual(string $path): bool {
     if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         $serviceSlug = $m[1];
         $areaSlugVal = $m[2];
-        $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources'];
+        $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'barriers'];
         if (in_array($serviceSlug, $reserved, true)) {
             return false;
         }

@@ -108,7 +108,8 @@ $robotsWant = "User-agent: *\nAllow: /\n\n"
     . "Disallow: /bin/\n"
     . "Disallow: /data/\n"
     . "Disallow: /config.php\n"
-    . "Disallow: /config.local.php\n";
+    . "Disallow: /config.local.php\n"
+    . "Disallow: /pages/barriers/\n";
 $curRobots = is_file($robotsPath) ? (string)file_get_contents($robotsPath) : '';
 if (!str_contains($curRobots, $base . '/sitemap.xml') || str_contains($curRobots, 'localhost')) {
     file_put_contents($robotsPath, $robotsWant);
