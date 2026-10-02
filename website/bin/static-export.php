@@ -467,6 +467,13 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         $routes[] = '/pages/aov/' . $slug;
     }
 
+    // FRA only: every UK mainland town, including places outside the North West list.
+    if (function_exists('getMainlandAreaRecords')) {
+        foreach (getMainlandAreaRecords() as $row) {
+            $routes[] = '/pages/fire-risk-assessments/' . $row['slug'];
+        }
+    }
+
     return $routes;
 }
 

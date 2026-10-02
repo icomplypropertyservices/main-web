@@ -1019,6 +1019,12 @@ function areaFromSlug(string $slug): ?string {
             return $area;
         }
     }
+    if (function_exists('mainlandAreaName')) {
+        $mainland = mainlandAreaName($slug);
+        if ($mainland !== null) {
+            return $mainland;
+        }
+    }
     return null;
 }
 
@@ -1065,6 +1071,8 @@ $elJobTypesFile = __DIR__ . '/includes/emergency-lighting-job-types.php';
 if (is_file($elJobTypesFile)) {
     require_once $elJobTypesFile;
 }
+
+    require_once $fraFile;
 
     require_once $fireAlarmsLaneFile;
 
