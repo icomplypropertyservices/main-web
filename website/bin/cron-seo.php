@@ -62,7 +62,7 @@ $httpGet = static function (string $url, int $timeout = 25): array {
         'http' => [
             'method' => 'GET',
             'timeout' => $timeout,
-            'header' => "User-Agent: IcomplySeoMonitor/1.0\r\nAccept: */*\r\n",
+            'header' => "User-Agent: iComplySeoMonitor/1.0\r\nAccept: */*\r\n",
             'follow_location' => 1,
             'ignore_errors' => true,
         ],

@@ -24,7 +24,7 @@ $manufacturers = [
         'fire-alarms' => ['Kentec','Advanced Electronics','C-Tec','Morley','Hochiki','Apollo','Gent','Notifier','Honeywell','Ziton'],
         'emergency-lighting' => ['Emergi-Lite','Mackwell','Cooper Lighting','Legrand','Ansell','Thorlux','Fagerhult','Eaton','ABB','Zumtobel'],
         'aov-air-handling' => ['SE Controls','Nuaire','Brooks','Ventilux','Geze','D+H Mechatronic','TROX','Colt','Smoke Control','Assa Abloy'],
-        'nurse-call' => ['Courtney Thorne','Static Systems Group','Intercall','Aid Call','Tunstall','Ascom','Schrack Seconet','Zettler','Ackermann','Rauland'],
+        'nurse-call' => ['Courtney Thorne','Static Systems Group','Intercall','Aid Call','Ascom','Schrack Seconet','Zettler','Ackermann','Rauland'],
         'gas-systems' => ['Worcester Bosch','Vaillant','Ideal','Baxi','Glow-worm','Potterton','Intergas','Remeha','Alpha','Ferroli'],
         'intruder-alarm' => ['Texecom','Honeywell','Pyronix','DSC','Visonic','Risco','Scantronic','Ajax','Paradox','GJD'],
         'cctv' => ['Hikvision','Axis Communications','Dahua','Bosch','Hanwha Vision','Avigilon','Vivotek','Uniview','Milesight','Wisenet'],
@@ -60,7 +60,7 @@ $manufacturers = [
         'intercoms' => ['video-intercom','aiphone-intercom','intercom-system'],
     ],
     'seo_keywords' => [
-        'electrical' => 'electrical installation, EICR, PAT testing, certified electrician, commercial electrician, EV charger installation, electrical compliance',
+        'electrical' => 'electrical installation, EICR, PAT testing, electrical testing, commercial electrician, EV charger installation, electrical compliance',
         'fire-alarms' => 'fire alarm installation, fire alarm servicing, BS 5839, fire detection system, fire alarm certification, commercial fire alarm',
         'emergency-lighting' => 'emergency lighting installation, BS 5266, emergency lighting testing, emergency lighting certification, landlord emergency lighting',
         'aov-air-handling' => 'AOV installation, AOV maintenance, smoke vent system, BS 9991, automatic opening vent',

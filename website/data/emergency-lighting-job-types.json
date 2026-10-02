@@ -1,0 +1,503 @@
+{
+    "count": 62,
+    "category": "Emergency Lighting",
+    "note": "Service emergency-lighting keywords, excluding near-me doorway slugs. Enquire / POA only.",
+    "jobs": [
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "automatic-emergency-lighting-test",
+            "status": "live",
+            "name": "Automatic Emergency Lighting Test",
+            "related": "self-testing-emergency-lighting"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "bs-5266",
+            "status": "live",
+            "name": "BS 5266",
+            "related": "emergency-lighting-compliance"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "bs-5266-compliance-certificate",
+            "status": "live",
+            "name": "BS 5266 Compliance Certificate",
+            "related": "emergency-lighting-certificate"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "bs-5266-emergency-lighting",
+            "status": "live",
+            "name": "BS 5266 Emergency Lighting",
+            "related": "bs-5266"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "car-park-lighting-installation",
+            "status": "live",
+            "name": "Car Park Lighting Installation",
+            "related": "external-security-lighting"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "care-home-emergency-lighting",
+            "status": "live",
+            "name": "Care Home Emergency Lighting",
+            "related": "emergency-lighting-installation"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "central-battery-emergency-lighting",
+            "status": "live",
+            "name": "Central Battery Emergency Lighting",
+            "related": "emergency-lighting-inverter"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "commercial-emergency-lighting",
+            "status": "live",
+            "name": "Commercial Emergency Lighting",
+            "related": "industrial-emergency-lighting"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "commercial-security-lighting",
+            "status": "live",
+            "name": "Commercial Security Lighting",
+            "related": "external-security-lighting"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-bulkhead-lights",
+            "status": "live",
+            "name": "Emergency Bulkhead Lights",
+            "related": "emergency-lighting-installation"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-exit-lighting",
+            "status": "live",
+            "name": "Emergency Exit Lighting",
+            "related": "escape-route-lighting"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-light-battery-replacement",
+            "status": "live",
+            "name": "Emergency Light Battery Replacement",
+            "related": "emergency-lighting-maintenance"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-light-fitting",
+            "status": "live",
+            "name": "Emergency Light Fitting",
+            "related": "emergency-exit-lighting"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-annual-test",
+            "status": "live",
+            "name": "Emergency Lighting Annual Test",
+            "related": "emergency-lighting-certificate"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-battery-replacement",
+            "status": "live",
+            "name": "Emergency Lighting Battery Replacement",
+            "related": "emergency-lighting-servicing"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-certificate",
+            "status": "live",
+            "name": "Emergency Lighting Certificate",
+            "related": "emergency-lighting-certification"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-certification",
+            "status": "live",
+            "name": "Emergency Lighting Certification",
+            "related": "emergency-lighting-certificate"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-commissioning",
+            "status": "live",
+            "name": "Emergency Lighting Commissioning",
+            "related": "emergency-lighting-installation"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-compliance",
+            "status": "live",
+            "name": "Emergency Lighting Compliance",
+            "related": "bs-5266"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-design",
+            "status": "live",
+            "name": "Emergency Lighting Design",
+            "related": "emergency-lighting-installation"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-duration-test",
+            "status": "live",
+            "name": "Emergency Lighting Duration Test",
+            "related": "emergency-lighting-testing"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-engineer",
+            "status": "live",
+            "name": "Emergency Lighting Engineer",
+            "related": "emergency-lighting-testing"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-engineers",
+            "status": "live",
+            "name": "Emergency Lighting Engineers",
+            "related": "emergency-lighting-installation"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-for-landlords",
+            "status": "live",
+            "name": "Emergency Lighting for Landlords",
+            "related": "landlord-emergency-lighting"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-inspection",
+            "status": "live",
+            "name": "Emergency Lighting Inspection",
+            "related": "emergency-lighting-testing"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-installation",
+            "status": "live",
+            "name": "Emergency Lighting Installation",
+            "related": "emergency-lighting-system"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-inverter",
+            "status": "live",
+            "name": "Emergency Lighting Inverter",
+            "related": "central-battery-emergency-lighting"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-logbook",
+            "status": "live",
+            "name": "Emergency Lighting Logbook",
+            "related": "emergency-lighting-certificate"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-maintenance",
+            "status": "live",
+            "name": "Emergency Lighting Maintenance",
+            "related": "emergency-lighting-servicing"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-monthly-test",
+            "status": "live",
+            "name": "Emergency Lighting Monthly Test",
+            "related": "emergency-lighting-testing"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-panel",
+            "status": "live",
+            "name": "Emergency Lighting Panel",
+            "related": "central-battery-emergency-lighting"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-remedials",
+            "status": "live",
+            "name": "Emergency Lighting Remedials",
+            "related": "emergency-lighting-certificate"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-repair",
+            "status": "live",
+            "name": "Emergency Lighting Repair",
+            "related": "emergency-light-battery-replacement"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-service-contract",
+            "status": "live",
+            "name": "Emergency Lighting Service Contract",
+            "related": "emergency-lighting-maintenance"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-servicing",
+            "status": "live",
+            "name": "Emergency Lighting Servicing",
+            "related": "emergency-lighting-testing"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-survey",
+            "status": "live",
+            "name": "Emergency Lighting Survey",
+            "related": "emergency-lighting-testing"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-system",
+            "status": "live",
+            "name": "Emergency Lighting System",
+            "related": "led-emergency-lighting"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-test",
+            "status": "live",
+            "name": "Emergency Lighting Test",
+            "related": "emergency-lighting-certificate"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-testing",
+            "status": "live",
+            "name": "Emergency Lighting Testing",
+            "related": "periodic-emergency-lighting-test"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-lighting-upgrade",
+            "status": "live",
+            "name": "Emergency Lighting Upgrade",
+            "related": "led-emergency-lighting"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "emergency-twin-spot-lights",
+            "status": "live",
+            "name": "Emergency Twin Spot Lights",
+            "related": "emergency-lighting-installation"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "escape-route-lighting",
+            "status": "live",
+            "name": "Escape Route Lighting",
+            "related": "emergency-exit-lighting"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "exit-sign-installation",
+            "status": "live",
+            "name": "Exit Sign Installation",
+            "related": "emergency-exit-lighting"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "external-security-lighting",
+            "status": "live",
+            "name": "External Security Lighting",
+            "related": "emergency-lighting-installation"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "fire-alarm-and-emergency-lighting",
+            "status": "live",
+            "name": "Fire Alarm and Emergency Lighting",
+            "related": "emergency-lighting-system"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "high-risk-task-area-lighting",
+            "status": "live",
+            "name": "High Risk Task Area Lighting",
+            "related": "emergency-lighting-design"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "industrial-emergency-lighting",
+            "status": "live",
+            "name": "Industrial Emergency Lighting",
+            "related": "commercial-emergency-lighting"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "landlord-emergency-lighting",
+            "status": "live",
+            "name": "Landlord Emergency Lighting",
+            "related": "emergency-lighting-certificate"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "led-emergency-lighting",
+            "status": "live",
+            "name": "LED Emergency Lighting",
+            "related": "emergency-lighting-system"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "led-emergency-lighting-conversion",
+            "status": "live",
+            "name": "LED Emergency Lighting Conversion",
+            "related": "led-emergency-lighting"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "maintained-emergency-lighting",
+            "status": "live",
+            "name": "Maintained Emergency Lighting",
+            "related": "non-maintained-emergency-lighting"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "multi-site-emergency-lighting-contract",
+            "status": "live",
+            "name": "Multi Site Emergency Lighting Contract",
+            "related": "emergency-lighting-maintenance"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "non-maintained-emergency-lighting",
+            "status": "live",
+            "name": "Non Maintained Emergency Lighting",
+            "related": "maintained-emergency-lighting"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "office-emergency-lighting",
+            "status": "live",
+            "name": "Office Emergency Lighting",
+            "related": "emergency-lighting-installation"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "open-area-emergency-lighting",
+            "status": "live",
+            "name": "Open Area Emergency Lighting",
+            "related": "emergency-lighting-system"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "periodic-emergency-lighting-test",
+            "status": "live",
+            "name": "Periodic Emergency Lighting Test",
+            "related": "emergency-lighting-testing"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "pir-security-lighting",
+            "status": "live",
+            "name": "PIR Security Lighting",
+            "related": "external-security-lighting"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "running-man-exit-signs",
+            "status": "live",
+            "name": "Running Man Exit Signs",
+            "related": "emergency-exit-lighting"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "security-lighting-installation",
+            "status": "live",
+            "name": "Security Lighting Installation",
+            "related": "emergency-lighting-installation"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "self-test-emergency-lighting",
+            "status": "live",
+            "name": "Self Test Emergency Lighting",
+            "related": "emergency-lighting-testing"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "self-testing-emergency-lighting",
+            "status": "live",
+            "name": "Self Testing Emergency Lighting",
+            "related": "automatic-emergency-lighting-test"
+        },
+        {
+            "category": "Emergency Lighting",
+            "service_type": "emergency-lighting",
+            "slug": "warehouse-emergency-lighting",
+            "status": "live",
+            "name": "Warehouse Emergency Lighting",
+            "related": "emergency-lighting-installation"
+        }
+    ]
+}

@@ -34,6 +34,9 @@ function resourceRelatedLinks(string $slug): array {
         ],
         'fire-risk-assessment-guide' => [
             ['href' => url('/pages/fire-risk-assessment'), 'label' => 'Fire risk assessment hub'],
+            ['href' => url('/pages/jobs/fra'), 'label' => 'FRA job lane'],
+            ['href' => url('/pages/jobs/fire-risk-assessment'), 'label' => 'FRA £350 — 6-bed HMO'],
+            ['href' => url('/pages/jobs/landlord-bundle'), 'label' => 'Landlord pack £650'],
             ['href' => url('/pages/services/fire-risk-assessments'), 'label' => 'FRA service'],
         ],
         'smoke-and-co-alarms' => [

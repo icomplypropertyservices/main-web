@@ -93,29 +93,52 @@ $ok(in_array('boiler', $featured['gas'] ?? [], true), 'featured gas includes boi
 
 require_once SITE_ROOT . '/includes/sitemap.php';
 $sitemapXml = icomplyBuildSitemapXml('https://icomplypropertyservices.co.uk');
-$ok(!preg_match('#/pages/gas-systems/[a-z0-9\-]+</loc>#', $sitemapXml), 'sitemap has zero /pages/gas-systems/{town}');
-$ok(!preg_match('#/pages/electrical/[a-z0-9\-]+</loc>#', $sitemapXml), 'sitemap has zero /pages/electrical/{town}');
-$ok(!str_contains($sitemapXml, '/pages/epc/stockport'), 'sitemap has no /pages/epc/stockport');
-$ok(!str_contains($sitemapXml, '/pages/emergency-lighting/stockport'), 'sitemap has no /pages/emergency-lighting/stockport');
+$ok(str_contains($sitemapXml, '/pages/gas-systems/stockport</loc>'), 'sitemap lists bespoke gas-systems/stockport');
+$ok(str_contains($sitemapXml, '/pages/electrical/stockport</loc>'), 'sitemap lists bespoke electrical/stockport');
+$ok(str_contains($sitemapXml, '/pages/emergency-lighting/stockport</loc>'), 'sitemap lists bespoke emergency-lighting/stockport');
+$ok(!str_contains($sitemapXml, '/pages/electrical/preston</loc>'), 'sitemap omits electrical/preston');
+$ok(!str_contains($sitemapXml, '/pages/epc/stockport'), 'sitemap has no thin /pages/epc/stockport');
 $ok(str_contains($sitemapXml, '/pages/services/gas-systems</loc>'), 'sitemap still lists gas-systems service hub');
 $ok(str_contains($sitemapXml, '/pages/keywords/boiler</loc>'), 'sitemap still lists boiler keyword hub');
 $ok(is_file(SITE_ROOT . '/data/seo-matrix-electrical.md') && is_file(SITE_ROOT . '/data/seo-matrix-gas.md'), 'Marketing seo-matrix md files present');
 $sitemapSrc = (string)file_get_contents(SITE_ROOT . '/includes/sitemap.php');
-$ok(str_contains($sitemapSrc, 'Hard reject /pages/{service}/{town}'), 'sitemap $add hard-rejects service×town (merge-safe vs PR #7)');
+$ok(str_contains($sitemapSrc, 'icomplyPathIsIndexable'), 'sitemap omits noindex town templates');
 $ok(is_file(SITE_ROOT . '/data/seo-matrix-rollout-notes.md'), 'seo-matrix-rollout-notes.md present');
 
+$areaSet = [];
+foreach ($areas as $areaName) {
+    $areaSet[areaSlug((string)$areaName)] = true;
+}
+$assertTownLinks = static function (string $html, string $service) use ($ok, $areaSet): void {
+    preg_match_all('#/pages/' . preg_quote($service, '#') . '/([a-z0-9\-]+)#', $html, $m);
+    $towns = array_values(array_unique($m[1] ?? []));
+    $unknown = array_values(array_filter($towns, static fn (string $t): bool => !isset($areaSet[$t])));
+    $ok($unknown === [] && in_array('stockport', $towns, true), $service . ' hub town links are real areas' . ($unknown ? ' unknown=' . implode(',', $unknown) : ''));
+};
 ob_start();
 renderServiceHubPage('gas-systems');
 $gasHub = (string)ob_get_clean();
-$ok(!preg_match('#/pages/gas-systems/[a-z0-9\-]+#', $gasHub), 'gas-systems hub HTML has no /pages/gas-systems/{town} 404s');
+$assertTownLinks($gasHub, 'gas-systems');
 ob_start();
 renderServiceHubPage('electrical');
 $elecHub = (string)ob_get_clean();
-$ok(!preg_match('#/pages/electrical/[a-z0-9\-]+#', $elecHub), 'electrical hub HTML has no /pages/electrical/{town} 404s');
+$assertTownLinks($elecHub, 'electrical');
 ob_start();
 renderAreaHubPage('Stockport');
 $areaHub = (string)ob_get_clean();
-$ok(!preg_match('#/pages/(gas-systems|electrical|fire-alarms)/[a-z0-9\-]+#', $areaHub), 'area hub HTML has no service×area 404s');
+preg_match_all('#/pages/([a-z0-9\-]+)/([a-z0-9\-]+)#', $areaHub, $am);
+$badAreaLinks = [];
+$services = getServices();
+foreach ($am[1] as $i => $first) {
+    if (!isset($services[$first])) {
+        continue;
+    }
+    $town = $am[2][$i];
+    if (!isset($areaSet[$town])) {
+        $badAreaLinks[] = $first . '/' . $town;
+    }
+}
+$ok($badAreaLinks === [] && str_contains($areaHub, 'noindex'), 'area hub links real towns and is noindex' . ($badAreaLinks ? ' bad=' . implode(',', array_slice($badAreaLinks, 0, 4)) : ''));
 
 echo str_repeat('=', 56) . "\n";
 echo "PASS={$pass} FAIL={$fail}\n";

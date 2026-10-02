@@ -1,4 +1,4 @@
-﻿# Icomply — clean extensionless URLs (XAMPP subfolder /icomply)
+﻿# iComply — clean extensionless URLs (XAMPP subfolder /icomply)
 DirectoryIndex index.php index.html
 Options -Indexes
 
