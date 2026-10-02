@@ -41,8 +41,7 @@ $featuredSlugs = array_slice(array_keys($services), 0, 6, true);
 require SITE_ROOT . '/includes/header.php';
 ?>
 <!-- HERO CONFIRMATION -->
-<section class="relative overflow-hidden bg-[#0a2540] text-white">
-    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 20% 20%,#ff6b00,transparent 40%),radial-gradient(circle at 80% 0%,#22c55e,transparent 35%);"></div>
+<section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="relative max-w-3xl mx-auto px-6 py-16 md:py-20 text-center">
         <div class="inline-flex items-center justify-center w-16 h-16 rounded-3xl bg-emerald-500/20 border border-emerald-400/40 text-3xl mb-6" aria-hidden="true">✓</div>
         <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold mb-3">Request received</div>
@@ -90,7 +89,7 @@ require SITE_ROOT . '/includes/header.php';
             ];
             foreach ($steps as [$n, $t, $d]): ?>
             <div class="bg-zinc-50 border rounded-3xl p-6 text-center">
-                <div class="w-12 h-12 mx-auto rounded-2xl bg-[#0a2540] text-white font-bold flex items-center justify-center text-lg"><?= $n ?></div>
+                <div class="w-12 h-12 mx-auto rounded-2xl bg-[#0B1F3A] text-white font-bold flex items-center justify-center text-lg"><?= $n ?></div>
                 <h3 class="mt-4 font-semibold text-lg text-black"><?= htmlspecialchars($t, ENT_QUOTES, 'UTF-8') ?></h3>
                 <p class="mt-2 text-sm text-zinc-600"><?= htmlspecialchars($d, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
@@ -171,7 +170,7 @@ require SITE_ROOT . '/includes/header.php';
 </section>
 
 <!-- FINAL CTA STRIP -->
-<section class="bg-[#0a2540] text-white">
+<section class="bg-[#0B1F3A] text-white">
     <div class="max-w-3xl mx-auto px-6 py-12 text-center">
         <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">Questions before we call you back?</h2>
         <p class="mt-3 text-white/75">WhatsApp is usually quickest — or call us direct.</p>

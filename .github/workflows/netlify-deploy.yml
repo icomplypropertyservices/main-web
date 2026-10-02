@@ -1,0 +1,101 @@
+# Deploy iComply main-web to Netlify on every push to main.
+# Official CLI action: https://github.com/netlify/actions
+#
+# Jack must add these GitHub Actions secrets once (never commit them):
+#   NETLIFY_AUTH_TOKEN  — Netlify personal access token
+#   NETLIFY_SITE_ID     — Project ID for site icomply-main-web
+# See DEPLOY.md.
+#
+# PHP does not run at request time on Netlify. This workflow pre-renders
+# website/ → dist/ then publishes dist/ (pretty URLs + HTML, not PHP source).
+
+name: Deploy to Netlify
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: netlify-production
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Production deploy (main)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check required secrets
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          missing=0
+          if [ -z "$NETLIFY_AUTH_TOKEN" ]; then
+            echo "::error::NETLIFY_AUTH_TOKEN is not set. Add it in GitHub → Settings → Secrets and variables → Actions. See DEPLOY.md."
+            missing=1
+          fi
+          if [ -z "$NETLIFY_SITE_ID" ]; then
+            echo "::error::NETLIFY_SITE_ID is not set. Add it in GitHub → Settings → Secrets and variables → Actions. See DEPLOY.md."
+            missing=1
+          fi
+          exit "$missing"
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          coverage: none
+
+      - name: Verify source tree (website/)
+        run: |
+          set -e
+          test -f website/manifest.json
+          test -f website/pages/areas.php
+          test -f website/pages/services.php
+          test -f website/pages/resources.php
+          test -d website/assets
+          test -f website/bin/static-export.php
+          echo "website/ OK — will pre-render to dist/"
+
+      - name: Static export (PHP → HTML in dist/)
+        env:
+          SITE_URL: https://icomplypropertyservices.co.uk
+        run: php website/bin/static-export.php
+        timeout-minutes: 90
+
+      - name: Verify dist/ pretty URLs
+        run: php website/bin/check-static-export.php
+
+      # Official Netlify CLI action. --dir matches netlify.toml publish = dist.
+      - name: Deploy dist/ to Netlify production
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --dir=dist --prod --message "github.com/${{ github.repository }}@${{ github.sha }}"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      # Queue a Netlify-side build of main as well. Does not rely on the
+      # GitHub↔Netlify webhook (the path that missed PR #1). That build
+      # also runs php website/bin/static-export.php (see netlify.toml).
+      - name: Queue Netlify production rebuild of main
+        continue-on-error: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          curl -fsS -X POST \
+            "https://api.netlify.com/api/v1/sites/${NETLIFY_SITE_ID}/builds" \
+            -H "Authorization: Bearer ${NETLIFY_AUTH_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -d '{"clear_cache":true}'
+          echo
+          echo "Queued Netlify build for site"

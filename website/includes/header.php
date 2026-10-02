@@ -2,10 +2,8 @@
 if (!defined('SITE_URL')) {
     require_once __DIR__ . '/../config.php';
 }
-require_once __DIR__ . '/nav-ia.php';
 $services = getServices();
 $areas = getAreas();
-$packageHubs = function_exists('getPackageHubs') ? getPackageHubs() : [];
 $rawPageTitle = trim((string)($pageTitle ?? SITE_NAME));
 if ($rawPageTitle === '') {
     $rawPageTitle = SITE_NAME;
@@ -16,12 +14,12 @@ $documentTitle = $hasBrandInTitle ? $rawPageTitle : ($rawPageTitle . ' | Icomply
 $pageTitleSafe = htmlspecialchars($documentTitle, ENT_QUOTES, 'UTF-8');
 $ogTitleSafe = htmlspecialchars($rawPageTitle, ENT_QUOTES, 'UTF-8');
 $metaDescSafe = htmlspecialchars(
-    $metaDesc ?? 'Icomply Property Services — fire, electrical, gas, security and construction compliance across Greater Manchester and the North West. Based in Offerton, Stockport SK2 5DE.',
+    $metaDesc ?? 'Icomply Property Services — property maintenance and compliance across Greater Manchester and the North West: EICR, gas, fire, kitchens, renovations, CCTV, Legionella and asbestos. Offerton, Stockport SK2 5DE.',
     ENT_QUOTES,
     'UTF-8'
 );
 $metaKeywordsSafe = htmlspecialchars(
-    $metaKeywords ?? 'property compliance, EICR, fire alarms, emergency lighting, gas safety, Manchester electrician',
+    $metaKeywords ?? 'property maintenance, landlord compliance, EICR, gas safety, fire risk assessment, kitchens, renovations, CCTV, legionella, asbestos, Stockport, Manchester',
     ENT_QUOTES,
     'UTF-8'
 );
@@ -33,7 +31,7 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0a2540">
+    <meta name="theme-color" content="#0B1F3A">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <?php if (defined('GOOGLE_SITE_VERIFICATION') && GOOGLE_SITE_VERIFICATION !== ''): ?>
@@ -102,83 +100,24 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     <meta name="twitter:site" content="<?= htmlspecialchars($twitterSite, ENT_QUOTES, 'UTF-8') ?>">
     <?php endif; ?>
     <link rel="canonical" href="<?= htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8') ?>">
-    <link rel="icon" href="<?= htmlspecialchars(url('/favicon.ico'), ENT_QUOTES, 'UTF-8') ?>" sizes="any">
-    <link rel="icon" href="<?= htmlspecialchars(url('/assets/images/favicon.ico'), ENT_QUOTES, 'UTF-8') ?>" sizes="any">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?= htmlspecialchars(url('/assets/images/favicon-32.png'), ENT_QUOTES, 'UTF-8') ?>">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?= htmlspecialchars(url('/assets/images/favicon-16.png'), ENT_QUOTES, 'UTF-8') ?>">
-    <link rel="icon" href="<?= htmlspecialchars(url('/assets/images/favicon.svg'), ENT_QUOTES, 'UTF-8') ?>" type="image/svg+xml">
-    <link rel="apple-touch-icon" sizes="180x180" href="<?= htmlspecialchars(url('/assets/images/apple-touch-icon.png'), ENT_QUOTES, 'UTF-8') ?>">
-    <link rel="manifest" href="<?= htmlspecialchars(url('/manifest.json'), ENT_QUOTES, 'UTF-8') ?>">
-    <meta name="msapplication-TileColor" content="#0a2540">
-    <meta name="msapplication-TileImage" content="<?= htmlspecialchars(url('/assets/images/favicon-192.png'), ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="icon" href="<?= htmlspecialchars(assetUrl('/favicon.ico'), ENT_QUOTES, 'UTF-8') ?>" sizes="any">
+    <link rel="icon" href="<?= htmlspecialchars(assetUrl('/assets/images/favicon.ico'), ENT_QUOTES, 'UTF-8') ?>" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="<?= htmlspecialchars(assetUrl('/assets/images/favicon.svg'), ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= htmlspecialchars(assetUrl('/assets/images/favicon-16.png'), ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= htmlspecialchars(assetUrl('/assets/images/favicon-32.png'), ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="icon" type="image/png" sizes="192x192" href="<?= htmlspecialchars(assetUrl('/assets/images/android-chrome-192.png'), ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="icon" type="image/png" sizes="512x512" href="<?= htmlspecialchars(assetUrl('/assets/images/android-chrome-512.png'), ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= htmlspecialchars(assetUrl('/assets/images/apple-touch-icon.png'), ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="manifest" href="<?= htmlspecialchars(assetUrl('/manifest.webmanifest'), ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="manifest" href="<?= htmlspecialchars(assetUrl('/site.webmanifest'), ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="manifest" href="<?= htmlspecialchars(assetUrl('/manifest.json'), ENT_QUOTES, 'UTF-8') ?>">
+    <meta name="msapplication-TileColor" content="#0B1F3A">
+    <meta name="msapplication-TileImage" content="<?= htmlspecialchars(assetUrl('/assets/images/android-chrome-192.png'), ENT_QUOTES, 'UTF-8') ?>">
     <meta name="author" content="<?= htmlspecialchars(SITE_NAME, ENT_QUOTES, 'UTF-8') ?>">
     <meta name="geo.region" content="GB-MAN">
     <meta name="geo.placename" content="Stockport">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css">
-    <style>
-        :root { --brand: #0a2540; --accent: #ff6b00; }
-        body { color: #000; }
-        .nav-link { transition: color 0.15s ease; color: #111; }
-        .nav-link:hover { color: #ff6b00; }
-        .service-card { transition: transform 0.2s, box-shadow 0.2s; }
-        .service-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
-        .modern-btn { background: #0a2540; transition: all 0.2s; }
-        .modern-btn:hover { background: #ff6b00; transform: translateY(-1px); }
-        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-        [aria-invalid="true"] { border-color: #dc2626 !important; box-shadow: 0 0 0 3px rgba(220,38,38,.15); }
-        .nav-drop { position: relative; }
-        .nav-drop > .nav-panel {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            padding-top: 0.5rem;
-            z-index: 60;
-        }
-        .nav-drop:hover > .nav-panel,
-        .nav-drop:focus-within > .nav-panel,
-        .nav-drop.is-open > .nav-panel { display: block; }
-        .nav-panel-inner {
-            background: #fff;
-            border: 1px solid #e4e4e7;
-            border-radius: 1rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,.12);
-            overflow: hidden;
-        }
-        #mobile-nav { display: none; }
-        #mobile-nav.is-open { display: block; }
-        @media (max-width: 1023px) {
-            .desktop-nav { display: none !important; }
-            .desktop-phone { display: none !important; }
-        }
-        @media (min-width: 1024px) {
-            .mobile-toggle { display: none !important; }
-            #mobile-nav { display: none !important; }
-        }
-        @media print {
-            body { background: #fff !important; color: #000 !important; font-size: 11pt; line-height: 1.45; }
-            .skip-to-content, nav .desktop-nav, nav .desktop-phone, nav .mobile-toggle, nav #mobile-nav,
-            footer, #cookie-banner, .share-bar, a.fixed.bottom-6.right-6, a[aria-label="WhatsApp"].fixed { display: none !important; }
-            nav {
-                position: static !important; top: auto !important; border: none !important;
-                border-bottom: 2px solid #0a2540 !important; background: #fff !important;
-                box-shadow: none !important; margin-bottom: 1rem; padding: 0 0 0.75rem !important;
-            }
-            nav > div { padding: 0 !important; max-width: none !important; }
-            nav a.font-semibold.shrink-0, nav a.font-semibold.text-lg {
-                display: inline-block !important; font-size: 16pt !important; font-weight: 700 !important;
-                color: #0a2540 !important; letter-spacing: -0.02em; text-decoration: none !important;
-            }
-            #main-content { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
-            a { color: #000 !important; text-decoration: none !important; }
-            a[href^="http"]::after, a[href^="tel:"]::after, a[href^="mailto:"]::after { content: none !important; }
-            .shadow-xl, .shadow-lg, .shadow-md, .shadow { box-shadow: none !important; }
-            img { max-width: 100% !important; page-break-inside: avoid; }
-            h1, h2, h3 { color: #0a2540 !important; page-break-after: avoid; }
-            section, article, .rounded-3xl, .rounded-2xl { break-inside: avoid; }
-            @page { margin: 1.5cm; }
-        }
-    </style>
+    <link rel="stylesheet" href="<?= htmlspecialchars(assetUrl('/assets/css/site.css'), ENT_QUOTES, 'UTF-8') ?>">
     <?php
     $gaId = defined('GA_MEASUREMENT_ID') ? trim((string)GA_MEASUREMENT_ID) : '';
     $awId = defined('AW_CONVERSION_ID') ? trim((string)AW_CONVERSION_ID) : '';
@@ -258,236 +197,10 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     }
     </script>
 </head>
-<body class="bg-zinc-50 text-black">
+<body class="theme-dark bg-zinc-50 text-black">
 <a href="#main-content" class="skip-to-content">Skip to main content</a>
-<style>
-    .skip-to-content {
-        position: absolute; left: -9999px; top: 0.5rem; z-index: 100;
-        padding: 0.5rem 1rem; background: #fff; color: #000; font-weight: 600;
-        font-size: 0.875rem; border-radius: 0.5rem; box-shadow: 0 10px 25px rgba(0,0,0,.15);
-        text-decoration: none;
-    }
-    .skip-to-content:focus {
-        left: 0.5rem; outline: 2px solid #ff6b00; outline-offset: 2px;
-    }
-</style>
-<nav class="bg-white border-b sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 lg:py-4 flex items-center justify-between gap-4">
-        <a href="<?= htmlspecialchars($homeUrl, ENT_QUOTES, 'UTF-8') ?>" class="flex items-center gap-2 font-semibold text-lg sm:text-2xl tracking-tight text-black shrink-0">
-            <img src="<?= htmlspecialchars(url('/assets/images/favicon-32.png'), ENT_QUOTES, 'UTF-8') ?>"
-                 width="32" height="32" alt="Icomply Property Services logo"
-                 class="w-8 h-8 rounded-lg shrink-0">
-            <?= htmlspecialchars(SITE_NAME, ENT_QUOTES, 'UTF-8') ?>
-        </a>
-
-        <div class="desktop-nav flex items-center gap-5 xl:gap-7 text-sm font-medium">
-            <a href="<?= htmlspecialchars($homeUrl, ENT_QUOTES, 'UTF-8') ?>" class="nav-link">Home</a>
-
-            <div class="nav-drop">
-                <a href="<?= url('/pages/services/index.php') ?>" class="nav-link flex items-center gap-1">
-                    Services <span class="text-xs opacity-60">▼</span>
-                </a>
-                <div class="nav-panel">
-                    <div class="nav-panel-inner w-[22rem] max-h-[28rem] overflow-auto py-2">
-                        <a href="<?= url('/pages/services/index.php') ?>" class="block px-5 py-2.5 font-semibold text-[#ff6b00] hover:bg-zinc-50 border-b">View all <?= count($services) ?> services →</a>
-                        <?php
-                        $navCats = function_exists('getServiceCategories') ? getServiceCategories() : [];
-                        if ($navCats):
-                            foreach ($navCats as $catKey => $cat):
-                                $catServices = function_exists('getServicesInCategory') ? getServicesInCategory($catKey) : [];
-                                if (!$catServices) { continue; }
-                                ?>
-                                <div class="px-5 pt-3 pb-1 text-[10px] uppercase tracking-wider text-zinc-400 font-semibold"><?= htmlspecialchars($cat['label'] ?? $catKey, ENT_QUOTES, 'UTF-8') ?></div>
-                                <?php foreach ($catServices as $slug => $name): ?>
-                                    <a href="<?= url('/pages/services/' . rawurlencode($slug) . '.php') ?>" class="block px-5 py-1.5 hover:bg-zinc-50 text-sm text-black"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></a>
-                                <?php endforeach;
-                            endforeach;
-                        else:
-                            foreach ($services as $slug => $name): ?>
-                                <a href="<?= url('/pages/services/' . rawurlencode($slug) . '.php') ?>" class="block px-5 py-2.5 hover:bg-zinc-50 text-black"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></a>
-                            <?php endforeach;
-                        endif; ?>
-                    </div>
-                </div>
-            </div>
-
-            <div class="nav-drop">
-                <a href="<?= url('/pages/areas/index.php') ?>" class="nav-link flex items-center gap-1">
-                    Areas <span class="text-xs opacity-60">▼</span>
-                </a>
-                <div class="nav-panel">
-                    <div class="nav-panel-inner w-80 max-h-96 overflow-auto py-2">
-                        <a href="<?= url('/pages/areas/index.php') ?>" class="block px-5 py-2.5 font-semibold text-[#ff6b00] hover:bg-zinc-50 border-b">All areas we cover →</a>
-                        <?php foreach (array_slice($areas, 0, 50) as $area): ?>
-                            <a href="<?= url('/pages/areas/' . areaSlug($area) . '.php') ?>" class="block px-5 py-1.5 hover:bg-zinc-50 text-sm text-black"><?= htmlspecialchars($area, ENT_QUOTES, 'UTF-8') ?></a>
-                        <?php endforeach; ?>
-                        <?php if (count($areas) > 50): ?>
-                            <a href="<?= url('/pages/areas/index.php') ?>" class="block px-5 py-2 text-xs text-zinc-500 border-t hover:bg-zinc-50">+ <?= count($areas) - 50 ?> more areas — view full list</a>
-                        <?php endif; ?>
-                    </div>
-                </div>
-            </div>
-
-            <div class="nav-drop">
-                <a href="<?= url('/pages/manufacturers/index.php') ?>" class="nav-link flex items-center gap-1">
-                    Brands <span class="text-xs opacity-60">▼</span>
-                </a>
-                <div class="nav-panel">
-                    <div class="nav-panel-inner w-80 max-h-96 overflow-auto py-2">
-                        <a href="<?= url('/pages/manufacturers/index.php') ?>" class="block px-5 py-2.5 font-semibold text-[#ff6b00] hover:bg-zinc-50 border-b">All manufacturers →</a>
-                        <?php
-                        $navMfr = array_filter(getManufacturerCatalog(), fn($c) => !empty($c['featured']));
-                        if (!$navMfr) { $navMfr = array_slice(getManufacturerCatalog(), 0, 16, true); }
-                        foreach (array_slice($navMfr, 0, 16, true) as $mSlug => $mEntry):
-                        ?>
-                            <a href="<?= url('/pages/manufacturers/' . rawurlencode($mSlug) . '.php') ?>" class="block px-5 py-1.5 hover:bg-zinc-50 text-sm text-black"><?= htmlspecialchars($mEntry['name'], ENT_QUOTES, 'UTF-8') ?></a>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-            </div>
-
-            <div class="nav-drop">
-                <a href="<?= url('/pages/packages.php') ?>" class="nav-link font-semibold text-[#ff6b00] flex items-center gap-1">
-                    Packages <span class="text-xs opacity-60">▼</span>
-                </a>
-                <div class="nav-panel">
-                    <div class="nav-panel-inner w-80 py-2">
-                        <a href="<?= url('/pages/packages.php') ?>" class="block px-5 py-2.5 font-semibold text-[#ff6b00] hover:bg-zinc-50 border-b">All packages →</a>
-                        <a href="<?= url('/pages/packages/hmo') ?>" class="block px-5 py-2.5 hover:bg-zinc-50 text-black font-semibold">HMO Packages</a>
-                        <a href="<?= url('/pages/packages/hmo-compliance') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-zinc-700 text-sm">HMO Compliance (EICR + gas + FRA)</a>
-                        <a href="<?= url('/pages/packages/hmo-fire-safety') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-zinc-700 text-sm">HMO Fire Safety Pack</a>
-                        <a href="<?= url('/pages/packages/hmo-occupancy') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-zinc-700 text-sm">HMO Occupancy Pack</a>
-                        <a href="<?= url('/pages/hmo-landlords') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-zinc-700 text-sm">HMO landlords</a>
-                        <?php foreach ($packageHubs as $pkgSlug => $pkg):
-                            if (in_array($pkgSlug, ['hmo', 'hmo-compliance', 'hmo-fire-safety', 'hmo-occupancy'], true)) {
-                                continue;
-                            }
-                            ?>
-                            <a href="<?= url('/pages/packages/' . rawurlencode($pkgSlug)) ?>" class="block px-5 py-2 hover:bg-zinc-50 text-sm text-black">
-                                <?= htmlspecialchars($pkg['name'], ENT_QUOTES, 'UTF-8') ?>
-                            </a>
-                        <?php endforeach; ?>
-                        <a href="<?= url('/pages/landlords.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-sm text-black border-t">Landlords</a>
-                        <a href="<?= url('/pages/resources/hmo-licence-compliance-checklist') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-sm text-black">HMO licence checklist</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="nav-drop">
-                <a href="<?= url('/pages/site-map.php') ?>" class="nav-link flex items-center gap-1" aria-haspopup="true">
-                    More <span class="text-xs opacity-60">▼</span>
-                </a>
-                <div class="nav-panel">
-                    <div class="nav-panel-inner w-64 max-h-96 overflow-auto py-2">
-                        <a href="<?= url('/pages/about.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">About</a>
-                        <a href="<?= url('/pages/packages.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Packages</a>
-                        <a href="<?= url('/pages/packages/hmo') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">HMO packages</a>
-                        <a href="<?= url('/pages/hmo-landlords') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">HMO landlords</a>
-                        <a href="<?= url('/pages/pricing.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Pricing guide</a>
-                        <a href="<?= url('/pages/landlords.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Landlords</a>
-                        <a href="<?= url('/pages/commercial.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Commercial / FM</a>
-                        <a href="<?= url('/pages/care-homes.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Care homes</a>
-                        <a href="<?= url('/pages/ev-chargers.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">EV chargers</a>
-                        <a href="<?= url('/pages/maintenance.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Maintenance contracts</a>
-                        <a href="<?= url('/pages/emergency.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Emergency call-out</a>
-                        <a href="<?= url('/pages/resources/index.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black border-t">Resources</a>
-                        <a href="<?= url('/pages/keywords/index.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Keyword guides</a>
-                        <a href="<?= url('/pages/faq.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">FAQ</a>
-                        <a href="<?= url('/pages/reviews.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Reviews</a>
-                        <a href="<?= url('/privacy.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black border-t">Privacy</a>
-                        <a href="<?= url('/terms.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-black">Terms</a>
-                        <a href="<?= url('/pages/site-map.php') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-[#ff6b00] font-semibold border-t">Full site map →</a>
-                        <a href="<?= url('/sitemap.xml') ?>" class="block px-5 py-2 hover:bg-zinc-50 text-zinc-500 text-xs">XML sitemap (all URLs)</a>
-                    </div>
-                </div>
-            </div>
-
-            <a href="<?= url('/contact.php') ?>" class="nav-link">Contact</a>
-            <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener"
-               class="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-full text-xs font-semibold whitespace-nowrap">
-                WhatsApp
-            </a>
-        </div>
-
-        <div class="desktop-phone text-right text-xs shrink-0">
-            <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="font-semibold text-black hover:text-[#ff6b00] block"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
-            <div class="text-zinc-500 max-w-[11rem] truncate" title="<?= htmlspecialchars(ADDRESS, ENT_QUOTES, 'UTF-8') ?>">Stockport SK2 5DE</div>
-        </div>
-
-        <button type="button" id="nav-toggle" class="mobile-toggle p-2 rounded-xl border border-zinc-200 text-black" aria-label="Open menu" aria-expanded="false">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
-    </div>
-
-    <div id="mobile-nav" class="border-t bg-white">
-        <div class="max-w-7xl mx-auto px-4 py-4 space-y-1 text-sm font-medium">
-            <a href="<?= htmlspecialchars($homeUrl, ENT_QUOTES, 'UTF-8') ?>" class="block px-3 py-3 rounded-xl hover:bg-zinc-50">Home</a>
-            <a href="<?= url('/pages/services/index.php') ?>" class="block px-3 py-3 rounded-xl hover:bg-zinc-50 font-semibold">All Services (<?= count($services) ?>)</a>
-            <?php
-            $mobCats = function_exists('getServiceCategories') ? getServiceCategories() : [];
-            if ($mobCats):
-                foreach ($mobCats as $catKey => $cat):
-                    $catServices = function_exists('getServicesInCategory') ? getServicesInCategory($catKey) : [];
-                    if (!$catServices) { continue; }
-                    ?>
-                    <div class="px-3 pt-2 pb-1 text-[10px] uppercase tracking-wider text-zinc-400 font-semibold"><?= htmlspecialchars($cat['label'] ?? $catKey, ENT_QUOTES, 'UTF-8') ?></div>
-                    <?php foreach ($catServices as $slug => $name): ?>
-                        <a href="<?= url('/pages/services/' . rawurlencode($slug) . '.php') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></a>
-                    <?php endforeach;
-                endforeach;
-            else:
-                foreach ($services as $slug => $name): ?>
-                    <a href="<?= url('/pages/services/' . rawurlencode($slug) . '.php') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></a>
-                <?php endforeach;
-            endif; ?>
-            <a href="<?= url('/pages/areas/index.php') ?>" class="block px-3 py-3 rounded-xl hover:bg-zinc-50 font-semibold mt-2">Areas We Cover</a>
-            <?php foreach (array_slice($areas, 0, 12) as $area): ?>
-                <a href="<?= url('/pages/areas/' . areaSlug($area) . '.php') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50"><?= htmlspecialchars($area, ENT_QUOTES, 'UTF-8') ?></a>
-            <?php endforeach; ?>
-            <a href="<?= url('/pages/areas/index.php') ?>" class="block px-6 py-2 text-[#ff6b00] text-xs">View all <?= count($areas) ?> areas →</a>
-            <a href="<?= url('/pages/manufacturers/index.php') ?>" class="block px-3 py-3 rounded-xl hover:bg-zinc-50 font-semibold">Manufacturers / Brands</a>
-            <a href="<?= url('/pages/packages.php') ?>" class="block px-3 py-3 rounded-xl hover:bg-zinc-50 font-semibold text-[#ff6b00]">Packages</a>
-            <a href="<?= url('/pages/packages/hmo') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50">HMO Packages</a>
-            <a href="<?= url('/pages/packages/hmo-compliance') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50">HMO Compliance</a>
-            <a href="<?= url('/pages/packages/hmo-fire-safety') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50">HMO Fire Safety</a>
-            <a href="<?= url('/pages/packages/hmo-occupancy') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50">HMO Occupancy</a>
-            <a href="<?= url('/pages/hmo-landlords') ?>" class="block px-6 py-2 text-zinc-700 hover:bg-zinc-50">HMO landlords</a>
-            <div class="px-3 pt-3 pb-1 text-xs uppercase tracking-wider text-zinc-400 font-semibold">Explore</div>
-            <a href="<?= url('/pages/about.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">About</a>
-            <a href="<?= url('/pages/packages.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">Packages</a>
-            <a href="<?= url('/pages/packages/hmo') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">HMO packages</a>
-            <a href="<?= url('/pages/pricing.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">Pricing guide</a>
-            <a href="<?= url('/pages/landlords.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">Landlords</a>
-            <a href="<?= url('/pages/commercial.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">Commercial / FM</a>
-            <a href="<?= url('/pages/care-homes.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">Care homes</a>
-            <a href="<?= url('/pages/ev-chargers.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">EV chargers</a>
-            <a href="<?= url('/pages/maintenance.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">Maintenance contracts</a>
-            <a href="<?= url('/pages/emergency.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">Emergency call-out</a>
-            <a href="<?= url('/pages/resources/index.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">Resources</a>
-            <a href="<?= url('/pages/keywords/index.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">Keyword guides</a>
-            <a href="<?= url('/pages/faq.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">FAQ</a>
-            <a href="<?= url('/pages/reviews.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50">Reviews</a>
-            <a href="<?= url('/pages/site-map.php') ?>" class="block px-3 py-2.5 rounded-xl hover:bg-zinc-50 font-semibold text-[#ff6b00]">Full site map</a>
-            <a href="<?= url('/sitemap.xml') ?>" class="block px-3 py-2 text-zinc-500 text-xs">XML sitemap (all URLs)</a>
-            <a href="<?= url('/contact.php') ?>" class="block px-3 py-3 rounded-xl hover:bg-zinc-50 font-semibold mt-1">Contact</a>
-            <a href="<?= url('/privacy.php') ?>" class="block px-3 py-2 text-zinc-500 text-xs">Privacy</a>
-            <a href="<?= url('/terms.php') ?>" class="block px-3 py-2 text-zinc-500 text-xs">Terms</a>
-            <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="block px-3 py-3 rounded-xl hover:bg-zinc-50"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
-            <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener"
-               class="block text-center mt-2 px-4 py-3 bg-green-600 text-white rounded-2xl font-semibold">WhatsApp Us</a>
-        </div>
-    </div>
-</nav>
-<script>
-(function () {
-    var btn = document.getElementById('nav-toggle');
-    var panel = document.getElementById('mobile-nav');
-    if (!btn || !panel) return;
-    btn.addEventListener('click', function () {
-        var open = panel.classList.toggle('is-open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    });
-})();
-</script>
+<?php
+require_once __DIR__ . '/site-nav.php';
+echo icomplyMegaHeaderHtml();
+?>
 <div id="main-content" tabindex="-1">

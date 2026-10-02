@@ -4,8 +4,8 @@
         "blurb": "Detection, suppression, doors, FRA and life-safety compliance across the North West.",
         "services": [
             "fire-alarms",
-            "emergency-lighting",
             "aov-air-handling",
+            "emergency-lighting",
             "fire-risk-assessments",
             "fire-extinguishers",
             "fire-doors",
@@ -22,7 +22,7 @@
     },
     "electrical-gas": {
         "label": "Electrical & Gas",
-        "blurb": "EICR, rewires, EV, gas safety, PAT, EPC and landlord certificates.",
+        "blurb": "EICR, rewires, consumer units, emergency electrician, boilers, CP12, gas safety, PAT, EPC and landlord certificates — each with a full North West town matrix.",
         "services": [
             "electrical",
             "gas-systems",
@@ -45,7 +45,7 @@
     },
     "professional": {
         "label": "Professional Services",
-        "blurb": "Landlord packages, FM support, surveys, CDM and compliance consultancy.",
+        "blurb": "Landlord packages, FM support, surveys, CDM, water hygiene, asbestos surveys and compliance consultancy.",
         "services": [
             "landlord-compliance",
             "facilities-management",
@@ -54,7 +54,9 @@
             "building-surveys",
             "cdm-support",
             "property-refurbishment-pm",
-            "compliance-consultancy"
+            "compliance-consultancy",
+            "legionella-risk-assessment",
+            "asbestos-survey"
         ]
     },
     "construction": {

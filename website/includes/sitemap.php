@@ -1,8 +1,9 @@
 <?php
 /**
- * Compact, accurate sitemap — core pages + hubs + resources + services +
- * areas + manufacturers + keyword hubs + service×area landings.
- * Never includes keyword×area (the 200k+ junk that made live generate 470 parts / 500).
+ * Compact, accurate sitemap — core pages + shop/products + service hubs +
+ * areas + manufacturers + keyword hubs + featured electrical/gas keyword×town.
+ * Never lists /pages/{service}/{town} (those 404 as sitemap locs).
+ * Never dumps the full keyword×area matrix (that 500'd live).
  */
 declare(strict_types=1);
 
@@ -18,10 +19,50 @@ function icomplySitemapBannedPaths(): array
         '/privacy-policy/' => true,
         '/terms-and-conditions' => true,
         '/terms-and-conditions/' => true,
-        '/shop' => true,
-        '/products' => true,
         '/thank-you' => true,
     ];
+}
+
+/** Prefer dist/ (what Netlify publishes) when a build is present. */
+function icomplySitemapPublishRoot(): string
+{
+    $dist = dirname(SITE_ROOT) . DIRECTORY_SEPARATOR . 'dist';
+    if (is_dir($dist) && is_file($dist . DIRECTORY_SEPARATOR . 'index.html')) {
+        return $dist;
+    }
+    return SITE_ROOT;
+}
+
+/** True when the pretty URL has a built file on the publish root. */
+function icomplySitemapUrlHasFile(string $urlPath): bool
+{
+    $urlPath = '/' . ltrim(str_replace('\\', '/', $urlPath), '/');
+    $urlPath = preg_replace('#\.php$#i', '', $urlPath) ?? $urlPath;
+    $urlPath = preg_replace('#/index$#i', '', $urlPath) ?? $urlPath;
+    if ($urlPath === '') {
+        $urlPath = '/';
+    }
+    $root = icomplySitemapPublishRoot();
+    if ($urlPath === '/') {
+        return is_file($root . DIRECTORY_SEPARATOR . 'index.html')
+            || is_file($root . DIRECTORY_SEPARATOR . 'index.php');
+    }
+    $rel = ltrim($urlPath, '/');
+    $candidates = [
+        $rel . '.php',
+        $rel . '.html',
+        $rel . DIRECTORY_SEPARATOR . 'index.php',
+        $rel . DIRECTORY_SEPARATOR . 'index.html',
+        $rel,
+        'pages/' . $rel . '.php',
+        'pages/' . $rel . DIRECTORY_SEPARATOR . 'index.php',
+    ];
+    foreach ($candidates as $c) {
+        if (is_file($root . DIRECTORY_SEPARATOR . $c)) {
+            return true;
+        }
+    }
+    return false;
 }
 
 /**
@@ -32,8 +73,15 @@ function icomplySitemapEntries(): array
     $banned = icomplySitemapBannedPaths();
     $entries = [];
     $seen = [];
+    $serviceSlugs = function_exists('getServices') ? getServices() : [];
+    $areaSlugSet = [];
+    if (function_exists('getAreas') && function_exists('areaSlug')) {
+        foreach (getAreas() as $area) {
+            $areaSlugSet[areaSlug((string)$area)] = true;
+        }
+    }
 
-    $add = static function (string $path, string $priority = '0.5') use (&$entries, &$seen, $banned): void {
+    $add = static function (string $path, string $priority = '0.5') use (&$entries, &$seen, $banned, $serviceSlugs, $areaSlugSet): void {
         $path = '/' . ltrim(str_replace('\\', '/', $path), '/');
         $path = preg_replace('#\.php$#i', '', $path) ?? $path;
         $path = preg_replace('#/index$#i', '', $path) ?? $path;
@@ -43,19 +91,39 @@ function icomplySitemapEntries(): array
         if (isset($seen[$path]) || isset($banned[$path])) {
             return;
         }
-        if (str_starts_with($path, '/shop') || str_starts_with($path, '/products')) {
+        if (preg_match('#^/shop/[^/]+/.+#', $path) || preg_match('#^/products/.+#', $path)) {
             return;
         }
         if (preg_match('#-photo\.(jpe?g|png)$#i', $path)) {
+            return;
+        }
+        // Hard reject /pages/{service}/{town} even if a leftover matrix file
+        // sits in dist/. Keep hub prefixes plus the real HMO town landings
+        // (EICR / FRA / gas in Stockport and Manchester only).
+        if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+            $okPrefix = [
+                'services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages',
+                'hmo-eicr', 'hmo-fra', 'hmo-gas-safety',
+            ];
+            if (!in_array($m[1], $okPrefix, true)) {
+                return;
+            }
+        }
+        // Keyword hubs + featured keyword×town are generated at export time.
+        // Do not require a source PHP file for those catalogue locs.
+        $isKeywordLoc = (bool)preg_match('#^/pages/keywords(/[a-z0-9\-]+){1,2}$#', $path);
+        if (!$isKeywordLoc && !icomplySitemapUrlHasFile($path)) {
             return;
         }
         $seen[$path] = true;
         $entries[] = ['path' => $path, 'priority' => $priority];
     };
 
-    $exists = static function (string $relPath): bool {
+    $publish = icomplySitemapPublishRoot();
+    $exists = static function (string $relPath) use ($publish): bool {
         $relPath = ltrim(str_replace(['/', '\\'], DIRECTORY_SEPARATOR, $relPath), DIRECTORY_SEPARATOR);
-        return is_file(SITE_ROOT . DIRECTORY_SEPARATOR . $relPath);
+        return is_file($publish . DIRECTORY_SEPARATOR . $relPath)
+            || is_file(SITE_ROOT . DIRECTORY_SEPARATOR . $relPath);
     };
 
     $static = [
@@ -107,6 +175,12 @@ function icomplySitemapEntries(): array
         ['/pages/areas', '0.9', 'pages/areas.php'],
         ['/pages/manufacturers', '0.9', 'pages/manufacturers.php'],
         ['/pages/keywords', '0.9', 'pages/keywords.php'],
+        ['/shop', '0.8', 'shop/index.html'],
+        ['/shop/fire', '0.75', 'shop/fire/index.html'],
+        ['/shop/electrical', '0.75', 'shop/electrical/index.html'],
+        ['/shop/security', '0.75', 'shop/security/index.html'],
+        ['/shop/gas', '0.75', 'shop/gas/index.html'],
+        ['/products', '0.8', 'pages/products.php'],
     ];
     foreach ($static as [$path, $pri, $file]) {
         if ($path === '/' || $exists($file) || $exists(preg_replace('#\.php$#', '/index.php', $file) ?? $file)) {
@@ -114,33 +188,91 @@ function icomplySitemapEntries(): array
         }
     }
 
-    if (function_exists('getServices')) {
-        foreach (array_keys(getServices()) as $slug) {
-            $add('/pages/services/' . $slug, '0.85');
+    // Resource articles that exist on the publish root (not source-only).
+    foreach (glob($publish . '/pages/resources/*.php') ?: [] as $resFile) {
+        $base = basename($resFile, '.php');
+        if ($base === 'index') {
+            continue;
+        }
+        $add('/pages/resources/' . $base, '0.7');
+    }
+
+    // Quality SEO hubs (wave 1). HMO package landings are listed in $static above.
+    if (!function_exists('wave1SitemapEntries')) {
+        $wave1 = SITE_ROOT . '/includes/wave1.php';
+        if (is_file($wave1)) {
+            require_once $wave1;
         }
     }
-    if (function_exists('getManufacturerCatalog')) {
-        foreach (array_keys(getManufacturerCatalog()) as $slug) {
-            $add('/pages/manufacturers/' . $slug, '0.72');
+    if (function_exists('wave1SitemapEntries')) {
+        foreach (wave1SitemapEntries() as $w) {
+            $add($w['path'], $w['priority']);
         }
     }
-    if (function_exists('getAreas') && function_exists('areaSlug')) {
-        foreach (getAreas() as $area) {
-            $add('/pages/areas/' . areaSlug($area), '0.6');
+
+    // Service / manufacturer / area / keyword hubs: only files that exist
+    // on the publish root. Do not emit the full catalogue (Quality 404).
+    foreach (glob($publish . '/pages/services/*.php') ?: [] as $svcFile) {
+        $base = basename($svcFile, '.php');
+        if ($base === 'index') {
+            continue;
         }
+        $add('/pages/services/' . $base, '0.85');
     }
-    // Keyword hubs only — not keyword × area (that explosion 500'd live sitemap.xml).
-    // Skip at request time: keywords.json is 3MB+ and is what OOMs the live 500.
+    foreach (glob($publish . '/pages/manufacturers/*.php') ?: [] as $mFile) {
+        $base = basename($mFile, '.php');
+        if ($base === 'index') {
+            continue;
+        }
+        $add('/pages/manufacturers/' . $base, '0.72');
+    }
+    foreach (glob($publish . '/pages/areas/*.php') ?: [] as $aFile) {
+        $base = basename($aFile, '.php');
+        if ($base === 'index') {
+            continue;
+        }
+        $add('/pages/areas/' . $base, '0.6');
+    }
+    foreach (glob($publish . '/pages/keywords/*.php') ?: [] as $kwFile) {
+        $base = basename($kwFile, '.php');
+        if ($base === 'index') {
+            continue;
+        }
+        $add('/pages/keywords/' . $base, '0.68');
+    }
+    // Keyword hubs from the catalogue (generated at export) plus a small
+    // featured electrical/gas × town sample. Skip at request time so
+    // keywords.json cannot OOM the live sitemap.
     $requestSafe = !empty($GLOBALS['ICOMPLY_SITEMAP_REQUEST_SAFE']);
     if (!$requestSafe && function_exists('getMajorKeywords') && function_exists('keywordSlug')) {
-        foreach (array_keys(getMajorKeywords()) as $kw) {
-            $add('/pages/keywords/' . keywordSlug($kw), '0.68');
+        $family = [];
+        if (function_exists('getElectricalGasMatrixKeywordSlugs')) {
+            foreach (getElectricalGasMatrixKeywordSlugs() as $fs) {
+                $family[keywordSlug($fs)] = true;
+            }
         }
-    }
-    if (!$requestSafe && function_exists('getServices') && function_exists('getAreas') && function_exists('areaSlug')) {
-        foreach (array_keys(getServices()) as $sSlug) {
-            foreach (getAreas() as $area) {
-                $add('/pages/' . $sSlug . '/' . areaSlug($area), '0.55');
+        foreach (array_keys(getMajorKeywords()) as $kw) {
+            $slug = keywordSlug($kw);
+            $add('/pages/keywords/' . $slug, isset($family[$slug]) ? '0.78' : '0.68');
+        }
+        if (function_exists('getElectricalGasFeaturedKeywordSlugs') && function_exists('getAreas') && function_exists('areaSlug')) {
+            $areasFlip = array_flip(getAreas());
+            $sampleTowns = ['Stockport', 'Manchester', 'Bolton', 'Liverpool', 'Preston', 'Warrington'];
+            $featured = getElectricalGasFeaturedKeywordSlugs();
+            $allKw = getMajorKeywords();
+            foreach (['electrical', 'gas'] as $fam) {
+                foreach ($featured[$fam] ?? [] as $kwSlug) {
+                    $kwSlug = keywordSlug((string)$kwSlug);
+                    if ($kwSlug === '' || !isset($allKw[$kwSlug])) {
+                        continue;
+                    }
+                    foreach ($sampleTowns as $town) {
+                        if (!isset($areasFlip[$town])) {
+                            continue;
+                        }
+                        $add('/pages/keywords/' . $kwSlug . '/' . areaSlug($town), '0.62');
+                    }
+                }
             }
         }
     }
@@ -226,6 +358,10 @@ function icomplyWriteSitemapFiles(string $baseUrl): array
     $xml = icomplyBuildSitemapXml($baseUrl);
     $file = SITE_ROOT . '/sitemap.xml';
     file_put_contents($file, $xml);
+    $distMap = dirname(SITE_ROOT) . DIRECTORY_SEPARATOR . 'dist' . DIRECTORY_SEPARATOR . 'sitemap.xml';
+    if (is_dir(dirname($distMap))) {
+        file_put_contents($distMap, $xml);
+    }
 
     $base = rtrim($baseUrl, '/');
     if (str_contains($base, 'localhost') || str_contains($base, '127.0.0.1')) {

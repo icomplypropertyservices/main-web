@@ -3,6 +3,12 @@
  * Unique local content engine — reduces doorway/template risk.
  * Deterministic per (service, area) so pages stay stable across regenerations.
  */
+if (!function_exists('service_standards')) {
+    $seoFile = __DIR__ . '/seo.php';
+    if (is_file($seoFile)) {
+        require_once $seoFile;
+    }
+}
 
 function area_seed(string $area, string $extra = ''): int {
     return abs(crc32(mb_strtolower($area) . '|' . $extra));
@@ -161,6 +167,18 @@ function service_local_angle(string $slug, string $serviceName, string $area): s
             "Multi-tenant intercom design must match the building directory structure in {$area}.",
             "Integration with door release keeps {$area} visitor journeys simple for residents and staff.",
         ],
+        'legionella-risk-assessment' => [
+            "Rented stock in {$area} often needs a Legionella risk record when stored water or little-used showers exist.",
+            "Commercial and multi-let buildings around {$area} are quoted POA once plant and outlets are known.",
+            "Simple combi-fed houses in {$area} are usually lower risk than tanked systems — we still write that down.",
+            "Travel to {$area} is from our Stockport SK2 base; sampling is only added when the assessment supports it.",
+        ],
+        'asbestos-survey' => [
+            "Older {$area} commercial and common-parts stock is a typical reason to book an asbestos management survey.",
+            "Refurbishment in {$area} needs a more intrusive survey than a manage-in-place visit — we scope that honestly.",
+            "Quotes for {$area} are POA after age, access and planned opening-up are clear.",
+            "Licensed removal, if the {$area} survey finds it necessary, is by others — not this page.",
+        ],
     ];
     $pool = $angles[$slug] ?? ["Professional {$serviceName} is available across {$area} and nearby postcodes."];
     return pick_seeded($pool, $seed, 0);
@@ -177,8 +195,12 @@ function seo_unique_intro(string $serviceName, string $slug, string $area): stri
         "{$area} sites — from {$p['stock']} — need {$serviceName} that matches UK standards and real building use.",
         "Searching for {$serviceName} near {$area}? Our Stockport team covers {$p['districts']} with documented install and service work.",
     ];
-    $mid = "We design, install, maintain and certificate {$serviceName} with attention to {$standards}. {$angle}";
-    $close = "Travel to {$area} is {$p['travel']}. Typical focus in this area: {$p['focus']}. Quotes are free; fixed pricing is used whenever the scope is clear after survey or photos.";
+    $mid = (function_exists('isPoaService') && isPoaService($slug))
+        ? "We scope {$serviceName} against {$standards} for the system or building you actually have — written notes for the file, not a catalogue install. {$angle}"
+        : "We design, install, maintain and certificate {$serviceName} with attention to {$standards}. {$angle}";
+    $close = (function_exists('isPoaService') && isPoaService($slug))
+        ? "Travel to {$area} is {$p['travel']}. Typical focus in this area: {$p['focus']}. Quotes are price on application after we confirm scope — no invented fee on this page."
+        : "Travel to {$area} is {$p['travel']}. Typical focus in this area: {$p['focus']}. Quotes are free; fixed pricing is used whenever the scope is clear after survey or photos.";
     return pick_seeded($openers, $seed, 0) . ' ' . $mid . ' ' . $close;
 }
 

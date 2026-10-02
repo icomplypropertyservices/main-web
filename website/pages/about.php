@@ -110,8 +110,7 @@ $aboutSchema = [
 <script type="application/ld+json"><?= json_encode($aboutSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
 
 <!-- HERO -->
-<section class="relative overflow-hidden bg-[#0a2540] text-white">
-    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 20% 20%,#ff6b00,transparent 40%),radial-gradient(circle at 80% 0%,#3b82f6,transparent 35%);"></div>
+<section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
         <nav class="text-xs text-white/50 mb-6 flex flex-wrap gap-2 items-center">
             <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a>
@@ -135,7 +134,7 @@ $aboutSchema = [
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get free quote</a>
-                    <a href="<?= url('/pages/services/index.php') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">All services</a>
+                    <a href="<?= url('/pages/services/index.php') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">All services</a>
                     <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
                 </div>
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
@@ -176,7 +175,7 @@ $aboutSchema = [
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <?php foreach ($trust as $t): ?>
             <div class="flex gap-3 items-start">
-                <div class="w-10 h-10 rounded-2xl bg-[#0a2540]/10 flex items-center justify-center text-[#0a2540] font-bold shrink-0">✓</div>
+                <div class="w-10 h-10 rounded-2xl bg-[#0B1F3A]/10 flex items-center justify-center text-[#0B1F3A] font-bold shrink-0">✓</div>
                 <div>
                     <div class="font-semibold text-black"><?= htmlspecialchars($t['title'], ENT_QUOTES, 'UTF-8') ?></div>
                     <div class="text-sm text-zinc-600 mt-0.5"><?= htmlspecialchars($t['text'], ENT_QUOTES, 'UTF-8') ?></div>
@@ -209,21 +208,21 @@ $aboutSchema = [
         </div>
         <div class="grid sm:grid-cols-2 gap-4">
             <div class="bg-zinc-50 border rounded-3xl p-6">
-                <div class="text-3xl font-semibold text-[#0a2540]"><?= count($services) ?></div>
+                <div class="text-3xl font-semibold text-[#0B1F3A]"><?= count($services) ?></div>
                 <div class="mt-1 font-semibold text-black">Services</div>
                 <p class="mt-2 text-sm text-zinc-600">Fire safety, electrical, security, professional &amp; construction.</p>
             </div>
             <div class="bg-zinc-50 border rounded-3xl p-6">
-                <div class="text-3xl font-semibold text-[#0a2540]"><?= count($areas) ?>+</div>
+                <div class="text-3xl font-semibold text-[#0B1F3A]"><?= count($areas) ?>+</div>
                 <div class="mt-1 font-semibold text-black">Towns covered</div>
                 <p class="mt-2 text-sm text-zinc-600">Greater Manchester, Lancashire, Cheshire, Merseyside &amp; Cumbria.</p>
             </div>
             <div class="bg-zinc-50 border rounded-3xl p-6">
-                <div class="text-3xl font-semibold text-[#0a2540]">SK2</div>
+                <div class="text-3xl font-semibold text-[#0B1F3A]">SK2</div>
                 <div class="mt-1 font-semibold text-black">Stockport base</div>
                 <p class="mt-2 text-sm text-zinc-600">17 Woodlands Park Road, Offerton, Stockport SK2 5DE.</p>
             </div>
-            <div class="bg-[#0a2540] text-white rounded-3xl p-6">
+            <div class="bg-[#0B1F3A] text-white rounded-3xl p-6">
                 <div class="text-3xl font-semibold text-[#ff6b00]">2 hrs</div>
                 <div class="mt-1 font-semibold">Typical response*</div>
                 <p class="mt-2 text-sm text-white/75">We aim to reply to quote requests within 2 hours on business days.</p>
@@ -285,7 +284,7 @@ $aboutSchema = [
             </div>
             <a href="<?= url('/pages/areas/index.php') ?>" class="inline-block mt-6 text-sm font-semibold text-[#ff6b00]">View all areas →</a>
         </div>
-        <div class="bg-[#0a2540] text-white rounded-3xl p-8 md:p-10">
+        <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
             <h3 class="text-2xl font-semibold tracking-tight">Need a compliance package?</h3>
             <p class="mt-3 text-white/80">Combine EICR, fire alarms, emergency lighting and gas safety into one visit schedule for landlords and facilities teams.</p>
             <ul class="mt-6 space-y-3 text-sm text-white/90">
@@ -314,13 +313,13 @@ $aboutSchema = [
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             <?php foreach ($standards as $s): ?>
             <div class="border border-zinc-200 rounded-3xl p-6 hover:border-[#ff6b00] transition bg-zinc-50">
-                <div class="text-xl font-semibold text-[#0a2540] tracking-tight"><?= htmlspecialchars($s['code'], ENT_QUOTES, 'UTF-8') ?></div>
+                <div class="text-xl font-semibold text-[#0B1F3A] tracking-tight"><?= htmlspecialchars($s['code'], ENT_QUOTES, 'UTF-8') ?></div>
                 <div class="mt-2 text-sm text-zinc-600"><?= htmlspecialchars($s['label'], ENT_QUOTES, 'UTF-8') ?></div>
             </div>
             <?php endforeach; ?>
         </div>
         <div class="mt-10 text-center">
-            <a href="<?= url('/pages/services/index.php') ?>" class="inline-flex px-6 py-3 rounded-2xl bg-[#0a2540] text-white font-semibold hover:bg-[#ff6b00] transition">Browse services by standard →</a>
+            <a href="<?= url('/pages/services/index.php') ?>" class="inline-flex px-6 py-3 rounded-2xl bg-[#0B1F3A] text-white font-semibold hover:bg-[#ff6b00] transition">Browse services by standard →</a>
         </div>
     </div>
 </section>
@@ -334,7 +333,7 @@ $aboutSchema = [
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Trade kits &amp; install parts</h2>
                 <p class="mt-2 text-zinc-600 max-w-xl">Fire, electrical, security and emergency lighting gear — Shopify-ready for direct checkout when connected.</p>
             </div>
-            <a href="<?= url('/shop/index.php') ?>" class="inline-flex px-5 py-2.5 rounded-full bg-[#0a2540] text-white text-sm font-semibold hover:bg-[#ff6b00] transition">Visit shop</a>
+            <a href="<?= url('/shop/index.php') ?>" class="inline-flex px-5 py-2.5 rounded-full bg-[#0B1F3A] text-white text-sm font-semibold hover:bg-[#ff6b00] transition">Visit shop</a>
         </div>
         <?php if ($featuredProducts): ?>
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -377,7 +376,7 @@ $aboutSchema = [
             ];
             foreach ($steps as [$n, $t, $d]): ?>
             <div class="text-center px-4">
-                <div class="w-12 h-12 mx-auto rounded-2xl bg-[#0a2540] text-white font-bold flex items-center justify-center text-lg"><?= $n ?></div>
+                <div class="w-12 h-12 mx-auto rounded-2xl bg-[#0B1F3A] text-white font-bold flex items-center justify-center text-lg"><?= $n ?></div>
                 <h3 class="mt-4 font-semibold text-xl text-black"><?= htmlspecialchars($t, ENT_QUOTES, 'UTF-8') ?></h3>
                 <p class="mt-2 text-sm text-zinc-600"><?= htmlspecialchars($d, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
@@ -395,7 +394,7 @@ $aboutSchema = [
             <p class="mt-3 text-zinc-600">Call <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="text-[#ff6b00] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>,
                 WhatsApp, or send the form — we aim to respond within 2 hours on business days.</p>
             <div class="mt-6 flex flex-wrap justify-center gap-3">
-                <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="px-6 py-3 rounded-2xl bg-[#0a2540] text-white font-semibold hover:bg-[#ff6b00] transition">Call now</a>
+                <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="px-6 py-3 rounded-2xl bg-[#0B1F3A] text-white font-semibold hover:bg-[#ff6b00] transition">Call now</a>
                 <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener"
                    class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 text-white font-semibold">WhatsApp</a>
                 <a href="<?= url('/contact.php') ?>" class="px-6 py-3 rounded-2xl border border-zinc-300 font-semibold text-black hover:border-[#ff6b00]">Contact page</a>

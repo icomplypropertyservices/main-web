@@ -1,0 +1,102 @@
+# Pre-rendered HTML is stored with a .php filename so splat rewrites work.
+# Copied into dist/ by static-export.php as well.
+# Headers match the *request* path (pretty URL), not only the .php destination.
+/*.php
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/privacy
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/terms
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/contact
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/fire
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/fire/
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/electrical
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/electrical/
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/security
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/security/
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/gas
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/gas/
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/assets/*.css
+  Content-Type: text/css; charset=utf-8
+
+/shop/assets/*.svg
+  Content-Type: image/svg+xml
+
+/products
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/thank-you
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/pages/services
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/pages/*
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/robots.txt
+  Cache-Control: public, max-age=3600
+
+/assets/css/*
+  Content-Type: text/css; charset=utf-8
+
+/manifest.json
+  Content-Type: application/manifest+json; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/manifest.webmanifest
+  Content-Type: application/manifest+json; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/site.webmanifest
+  Content-Type: application/manifest+json; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/sitemap*.xml
+  Content-Type: application/xml; charset=utf-8
+  Cache-Control: public, max-age=3600

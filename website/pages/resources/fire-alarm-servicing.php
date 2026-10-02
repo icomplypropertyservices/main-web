@@ -25,8 +25,7 @@ require SITE_ROOT . '/includes/header.php';
 ?>
 
 <!-- HERO -->
-<section class="relative overflow-hidden bg-[#0a2540] text-white">
-    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 20% 20%,#ff6b00,transparent 40%),radial-gradient(circle at 80% 0%,#3b82f6,transparent 35%);"></div>
+<section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="relative max-w-7xl mx-auto px-6 py-12 md:py-16">
         <nav class="text-xs text-white/50 mb-6 flex flex-wrap gap-2 items-center" aria-label="Breadcrumb">
             <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a>
@@ -138,7 +137,7 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 
     <!-- CTA -->
-    <div class="mt-14 bg-[#0a2540] text-white p-8 md:p-10 rounded-3xl text-center">
+    <div class="mt-14 bg-[#0B1F3A] text-white p-8 md:p-10 rounded-3xl text-center">
         <h2 class="text-2xl md:text-3xl font-semibold mb-3">Book fire alarm servicing</h2>
         <p class="text-white/85 max-w-md mx-auto mb-6">Share panel brand, site type and last service date — we quote maintenance visits and multi-site contracts across the North West.</p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">

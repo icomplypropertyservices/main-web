@@ -33,8 +33,7 @@ require SITE_ROOT . '/includes/header.php';
 ?>
 
 <!-- HERO -->
-<section class="relative overflow-hidden bg-[#0a2540] text-white">
-    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 20% 20%,#ff6b00,transparent 40%),radial-gradient(circle at 80% 0%,#3b82f6,transparent 35%);"></div>
+<section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
         <nav class="text-xs text-white/50 mb-6 flex flex-wrap gap-2 items-center">
             <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a>
@@ -57,7 +56,7 @@ require SITE_ROOT . '/includes/header.php';
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#fire-safety" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Fire safety</a>
-                <a href="#professional" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">Professional</a>
+                <a href="#professional" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">Professional</a>
                 <a href="#construction" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Construction</a>
                 <a href="<?= url('/pages/areas/index.php') ?>" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Areas</a>
             </div>
@@ -77,7 +76,7 @@ require SITE_ROOT . '/includes/header.php';
         ];
         foreach ($trust as [$t, $d]): ?>
             <div class="flex gap-3 items-start">
-                <div class="w-10 h-10 rounded-2xl bg-[#0a2540]/10 flex items-center justify-center text-[#0a2540] font-bold shrink-0">✓</div>
+                <div class="w-10 h-10 rounded-2xl bg-[#0B1F3A]/10 flex items-center justify-center text-[#0B1F3A] font-bold shrink-0">✓</div>
                 <div>
                     <div class="font-semibold text-black"><?= htmlspecialchars($t, ENT_QUOTES, 'UTF-8') ?></div>
                     <div class="text-sm text-zinc-600 mt-0.5"><?= htmlspecialchars($d, ENT_QUOTES, 'UTF-8') ?></div>
@@ -135,6 +134,23 @@ foreach ($categories as $catKey => $cat):
             </a>
             <?php endforeach; ?>
         </div>
+        <?php if ($catKey === 'electrical-gas' && function_exists('getElectricalGasFeaturedKeywordSlugs')):
+            $svcEg = getElectricalGasFeaturedKeywordSlugs();
+            $svcKw = getMajorKeywords();
+        ?>
+        <div class="mt-8 p-6 bg-white border border-zinc-200 rounded-3xl">
+            <h3 class="font-semibold text-black">Electrical &amp; gas keyword guides</h3>
+            <p class="text-sm text-zinc-600 mt-1">Each topic has a hub plus a page for every town we cover. Cost and price searches are POA only.</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+                <?php foreach (array_merge($svcEg['electrical'] ?? [], $svcEg['gas'] ?? []) as $egSlug):
+                    if (!isset($svcKw[$egSlug])) { continue; }
+                ?>
+                    <a href="<?= url('/pages/keywords/' . rawurlencode($egSlug) . '.php') ?>"
+                       class="px-3 py-1.5 bg-zinc-50 border rounded-full text-sm hover:border-[#ff6b00]"><?= htmlspecialchars((string)($svcKw[$egSlug]['name'] ?? $egSlug), ENT_QUOTES, 'UTF-8') ?></a>
+                <?php endforeach; ?>
+            </div>
+        </div>
+        <?php endif; ?>
     </div>
 </section>
 <?php endforeach; ?>
@@ -145,20 +161,28 @@ foreach ($categories as $catKey => $cat):
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local pages</div>
-                <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Popular service × area pages</h2>
-                <p class="mt-2 text-zinc-600">Jump straight to a town-specific landing page.</p>
+                <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Popular local pages</h2>
+                <p class="mt-2 text-zinc-600">Town hubs and electrical / gas keyword landings that exist on the static site — not thin service×area doorways.</p>
             </div>
             <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All areas →</a>
         </div>
         <div class="flex flex-wrap gap-2">
             <?php
-            $showcaseServices = array_slice($services, 0, 5, true);
             foreach ($popularTowns as $town):
-                foreach ($showcaseServices as $sSlug => $sName):
             ?>
-                <a href="<?= url('/pages/' . $sSlug . '/' . areaSlug($town) . '.php') ?>"
+                <a href="<?= url('/pages/areas/' . areaSlug($town) . '.php') ?>"
                    class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00] transition">
-                    <?= htmlspecialchars($sName . ' in ' . $town, ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?>
+                </a>
+            <?php endforeach;
+            $comboKw = getMajorKeywords();
+            foreach (['rewire' => 'Rewire', 'emergency-electrician' => 'Emergency electrician', 'boiler' => 'Boiler', 'cp12' => 'CP12'] as $cSlug => $cName):
+                if (!isset($comboKw[$cSlug])) { continue; }
+                foreach (array_slice($popularTowns, 0, 3) as $town):
+            ?>
+                <a href="<?= url('/pages/keywords/' . rawurlencode($cSlug) . '/' . areaSlug($town) . '.php') ?>"
+                   class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00] transition">
+                    <?= htmlspecialchars($cName . ' in ' . $town, ENT_QUOTES, 'UTF-8') ?>
                 </a>
             <?php endforeach; endforeach; ?>
         </div>
@@ -181,12 +205,12 @@ foreach ($categories as $catKey => $cat):
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Maintenance contracts available</li>
             </ul>
         </div>
-        <div class="bg-[#0a2540] text-white rounded-3xl p-8 md:p-10">
+        <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
             <h3 class="text-2xl font-semibold">Talk to us today</h3>
             <p class="mt-3 text-white/80">Call, WhatsApp or use the quote form — we aim to respond within 2 hours on business days.</p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>"
-                   class="px-6 py-3 rounded-2xl bg-white text-[#0a2540] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                   class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
                 <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>"
                    target="_blank" rel="noopener"
                    class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>

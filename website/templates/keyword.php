@@ -171,7 +171,7 @@ require SITE_ROOT . '/includes/header.php';
                 </a>
             <?php endforeach; ?>
         </div>
-        <div class="mt-4 flex flex-wrap gap-2 max-h-72 overflow-y-auto pr-1">
+        <div class="mt-4 flex flex-wrap gap-2">
             <?php foreach ($allAreas as $a):
                 if (in_array($a, $popularTowns, true)) continue;
             ?>
@@ -192,7 +192,7 @@ require SITE_ROOT . '/includes/header.php';
         <div class="mt-6">
             <?php
             require_once SITE_ROOT . '/includes/related.php';
-            echo siblingKeywordsHtml($KEYWORD_SLUG, $SERVICE_SLUG, 24);
+            echo siblingKeywordsHtml($KEYWORD_SLUG, $SERVICE_SLUG, 0);
             ?>
         </div>
     </div>

@@ -25,8 +25,7 @@ require SITE_ROOT . '/includes/header.php';
 ?>
 
 <!-- HERO -->
-<section class="relative overflow-hidden bg-[#0a2540] text-white">
-    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 20% 20%,#ff6b00,transparent 40%),radial-gradient(circle at 80% 0%,#3b82f6,transparent 35%);"></div>
+<section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="relative max-w-7xl mx-auto px-6 py-12 md:py-16">
         <nav class="text-xs text-white/50 mb-6 flex flex-wrap gap-2 items-center" aria-label="Breadcrumb">
             <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a>
@@ -114,15 +113,15 @@ require SITE_ROOT . '/includes/header.php';
             <h2 class="text-2xl font-semibold tracking-tight mb-3">Maintained, non-maintained and self-test</h2>
             <div class="grid sm:grid-cols-3 gap-4">
                 <div class="bg-white border rounded-2xl p-5">
-                    <div class="font-semibold text-[#0a2540]">Maintained</div>
+                    <div class="font-semibold text-[#0B1F3A]">Maintained</div>
                     <p class="text-sm text-zinc-600 mt-1">Luminaires lit in normal use and on emergency supply — common for exit signs and some open areas.</p>
                 </div>
                 <div class="bg-white border rounded-2xl p-5">
-                    <div class="font-semibold text-[#0a2540]">Non-maintained</div>
+                    <div class="font-semibold text-[#0B1F3A]">Non-maintained</div>
                     <p class="text-sm text-zinc-600 mt-1">Illuminates only when the normal supply fails — frequent on escape routes and plant areas.</p>
                 </div>
                 <div class="bg-white border rounded-2xl p-5">
-                    <div class="font-semibold text-[#0a2540]">Self-test / automatic</div>
+                    <div class="font-semibold text-[#0B1F3A]">Self-test / automatic</div>
                     <p class="text-sm text-zinc-600 mt-1">On-board or networked testing reduces manual work, but faults still need investigation and records.</p>
                 </div>
             </div>
@@ -161,7 +160,7 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 
     <!-- CTA -->
-    <div class="mt-14 bg-[#0a2540] text-white p-8 md:p-10 rounded-3xl text-center">
+    <div class="mt-14 bg-[#0B1F3A] text-white p-8 md:p-10 rounded-3xl text-center">
         <h2 class="text-2xl md:text-3xl font-semibold mb-3">Book emergency lighting testing</h2>
         <p class="text-white/85 max-w-md mx-auto mb-6">Share the postcode, number of fittings and last test date — we quote annual tests, battery replacements and multi-site contracts across the North West.</p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">

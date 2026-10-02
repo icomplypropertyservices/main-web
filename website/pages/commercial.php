@@ -108,8 +108,7 @@ require SITE_ROOT . '/includes/header.php';
 ?>
 
 <!-- HERO -->
-<section class="relative overflow-hidden bg-[#0a2540] text-white">
-    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 20% 20%,#ff6b00,transparent 40%),radial-gradient(circle at 80% 0%,#3b82f6,transparent 35%);"></div>
+<section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
         <nav class="text-xs text-white/50 mb-6 flex flex-wrap gap-2 items-center">
             <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a>
@@ -132,7 +131,7 @@ require SITE_ROOT . '/includes/header.php';
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get FM quote</a>
-                    <a href="<?= url('/pages/services/index.php') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">All services</a>
+                    <a href="<?= url('/pages/services/index.php') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">All services</a>
                     <a href="#contracts" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Maintenance contracts</a>
                 </div>
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
@@ -169,7 +168,7 @@ require SITE_ROOT . '/includes/header.php';
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <?php foreach ($trust as $t): ?>
             <div class="flex gap-3 items-start">
-                <div class="w-10 h-10 rounded-2xl bg-[#0a2540]/10 flex items-center justify-center text-[#0a2540] font-bold shrink-0">✓</div>
+                <div class="w-10 h-10 rounded-2xl bg-[#0B1F3A]/10 flex items-center justify-center text-[#0B1F3A] font-bold shrink-0">✓</div>
                 <div>
                     <div class="font-semibold text-black"><?= htmlspecialchars($t['title'], ENT_QUOTES, 'UTF-8') ?></div>
                     <div class="text-sm text-zinc-600 mt-0.5"><?= htmlspecialchars($t['text'], ENT_QUOTES, 'UTF-8') ?></div>
@@ -197,12 +196,12 @@ require SITE_ROOT . '/includes/header.php';
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Manufacturer-backed parts via our trade shop</li>
             </ul>
             <div class="mt-8 flex flex-wrap gap-3">
-                <a href="<?= url('/pages/services/index.php') ?>" class="px-6 py-3 rounded-2xl bg-[#0a2540] text-white text-sm font-semibold hover:bg-[#ff6b00] transition">Browse services</a>
+                <a href="<?= url('/pages/services/index.php') ?>" class="px-6 py-3 rounded-2xl bg-[#0B1F3A] text-white text-sm font-semibold hover:bg-[#ff6b00] transition">Browse services</a>
                 <a href="<?= url('/pages/manufacturers/index.php') ?>" class="px-6 py-3 rounded-2xl border border-zinc-300 text-sm font-semibold hover:border-[#ff6b00] transition">Manufacturers</a>
                 <a href="<?= url('/shop/index.php') ?>" class="px-6 py-3 rounded-2xl border border-zinc-300 text-sm font-semibold hover:border-[#ff6b00] transition">Trade shop</a>
             </div>
         </div>
-        <div class="bg-[#0a2540] text-white rounded-3xl p-8 md:p-10">
+        <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
             <h3 class="text-2xl font-semibold tracking-tight">Ideal for</h3>
             <ul class="mt-6 space-y-4 text-sm text-white/90">
                 <li class="flex gap-3"><span class="text-[#ff6b00]">●</span> Facilities management companies managing multi-site portfolios</li>
@@ -293,7 +292,7 @@ require SITE_ROOT . '/includes/header.php';
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <?php foreach ($contractFeatures as $f): ?>
             <div class="bg-white border border-zinc-200 rounded-3xl p-6">
-                <div class="w-10 h-10 rounded-2xl bg-[#0a2540]/10 flex items-center justify-center text-[#0a2540] font-bold mb-4">✓</div>
+                <div class="w-10 h-10 rounded-2xl bg-[#0B1F3A]/10 flex items-center justify-center text-[#0B1F3A] font-bold mb-4">✓</div>
                 <h3 class="font-semibold text-lg text-black"><?= htmlspecialchars($f['title'], ENT_QUOTES, 'UTF-8') ?></h3>
                 <p class="text-sm text-zinc-600 mt-2"><?= htmlspecialchars($f['text'], ENT_QUOTES, 'UTF-8') ?></p>
             </div>
@@ -354,7 +353,7 @@ require SITE_ROOT . '/includes/header.php';
                     Shopify-ready checkout when live. Ideal for engineers and FM stores stocking common spares.
                 </p>
                 <a href="<?= url('/shop/index.php') ?>"
-                   class="inline-flex mt-6 px-6 py-3 rounded-2xl bg-[#0a2540] text-white text-sm font-semibold hover:bg-[#ff6b00] transition">
+                   class="inline-flex mt-6 px-6 py-3 rounded-2xl bg-[#0B1F3A] text-white text-sm font-semibold hover:bg-[#ff6b00] transition">
                     Visit shop →
                 </a>
             </div>
@@ -391,7 +390,7 @@ require SITE_ROOT . '/includes/header.php';
         <div class="grid md:grid-cols-3 gap-8">
             <?php foreach ($howItWorks as [$n, $t, $d]): ?>
             <div class="text-center px-4">
-                <div class="w-12 h-12 mx-auto rounded-2xl bg-[#0a2540] text-white font-bold flex items-center justify-center text-lg"><?= $n ?></div>
+                <div class="w-12 h-12 mx-auto rounded-2xl bg-[#0B1F3A] text-white font-bold flex items-center justify-center text-lg"><?= $n ?></div>
                 <h3 class="mt-4 font-semibold text-xl text-black"><?= htmlspecialchars($t, ENT_QUOTES, 'UTF-8') ?></h3>
                 <p class="mt-2 text-sm text-zinc-600"><?= htmlspecialchars($d, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
@@ -417,12 +416,12 @@ require SITE_ROOT . '/includes/header.php';
                 <a href="<?= url('/shop/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Shop →</a>
             </div>
         </div>
-        <div class="bg-[#0a2540] text-white rounded-3xl p-8 md:p-10">
+        <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
             <h3 class="text-2xl font-semibold">Talk to the commercial team</h3>
             <p class="mt-3 text-white/80">Call, WhatsApp or use the quote form — we aim to respond within 2 hours on business days.</p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>"
-                   class="px-6 py-3 rounded-2xl bg-white text-[#0a2540] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                   class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
                 <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>"
                    target="_blank" rel="noopener"
                    class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>

@@ -145,8 +145,7 @@ require SITE_ROOT . '/includes/header.php';
 ?>
 
 <!-- HERO -->
-<section class="relative overflow-hidden bg-[#0a2540] text-white">
-    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 20% 20%,#ff6b00,transparent 40%),radial-gradient(circle at 80% 0%,#3b82f6,transparent 35%);"></div>
+<section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
         <nav class="text-xs text-white/50 mb-6 flex flex-wrap gap-2 items-center">
             <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a>
@@ -171,7 +170,7 @@ require SITE_ROOT . '/includes/header.php';
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#packages" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">View packages</a>
-                <a href="#quote" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">Free quote</a>
+                <a href="#quote" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">Free quote</a>
                 <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi Icomply, I need a multi-service compliance package quote') ?>"
                    target="_blank" rel="noopener"
                    class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
@@ -226,7 +225,7 @@ require SITE_ROOT . '/includes/header.php';
                         <?php if ($pkg['price_label'] !== ''): ?>
                             <div class="text-xs uppercase tracking-wider text-zinc-500"><?= htmlspecialchars($pkg['price_label'], ENT_QUOTES, 'UTF-8') ?></div>
                         <?php endif; ?>
-                        <div class="text-2xl font-semibold text-[#0a2540]"><?= htmlspecialchars($pkg['price'], ENT_QUOTES, 'UTF-8') ?></div>
+                        <div class="text-2xl font-semibold text-[#0B1F3A]"><?= htmlspecialchars($pkg['price'], ENT_QUOTES, 'UTF-8') ?></div>
                     </div>
                 </div>
 
@@ -265,7 +264,7 @@ require SITE_ROOT . '/includes/header.php';
                 <div class="mt-8 flex flex-wrap gap-3">
                     <?php if (!empty($pkg['landing'])): ?>
                     <a href="<?= htmlspecialchars(url($pkg['landing']), ENT_QUOTES, 'UTF-8') ?>"
-                       class="px-6 py-3 rounded-2xl bg-[#0a2540] hover:bg-[#ff6b00] text-white font-semibold text-sm">
+                       class="px-6 py-3 rounded-2xl bg-[#0B1F3A] hover:bg-[#ff6b00] text-white font-semibold text-sm">
                         Package page
                     </a>
                     <?php endif; ?>
@@ -280,7 +279,7 @@ require SITE_ROOT . '/includes/header.php';
                         WhatsApp
                     </a>
                     <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
-                       class="px-6 py-3 rounded-2xl border border-zinc-200 hover:border-[#0a2540] font-semibold text-sm text-black">
+                       class="px-6 py-3 rounded-2xl border border-zinc-200 hover:border-[#0B1F3A] font-semibold text-sm text-black">
                         Call
                     </a>
                 </div>
@@ -307,7 +306,7 @@ require SITE_ROOT . '/includes/header.php';
             ];
             foreach ($steps as [$n, $t, $d]): ?>
             <div class="text-center px-4">
-                <div class="w-12 h-12 mx-auto rounded-2xl bg-[#0a2540] text-white font-bold flex items-center justify-center text-lg"><?= $n ?></div>
+                <div class="w-12 h-12 mx-auto rounded-2xl bg-[#0B1F3A] text-white font-bold flex items-center justify-center text-lg"><?= $n ?></div>
                 <h3 class="mt-4 font-semibold text-xl text-black"><?= htmlspecialchars($t, ENT_QUOTES, 'UTF-8') ?></h3>
                 <p class="mt-2 text-sm text-zinc-600"><?= htmlspecialchars($d, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
@@ -335,12 +334,12 @@ require SITE_ROOT . '/includes/header.php';
             </div>
             <a href="<?= url('/pages/services/index.php') ?>" class="inline-block mt-6 text-sm font-semibold text-[#ff6b00]">All services →</a>
         </div>
-        <div class="bg-[#0a2540] text-white rounded-3xl p-8 md:p-10">
+        <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
             <h3 class="text-2xl font-semibold">Talk packages today</h3>
             <p class="mt-3 text-white/80">Call, WhatsApp or use the quote form — we aim to respond within 2 hours on business days.</p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
-                   class="px-6 py-3 rounded-2xl bg-white text-[#0a2540] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                   class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
                 <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi Icomply, I need a compliance package quote') ?>"
                    target="_blank" rel="noopener"
                    class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>
@@ -371,7 +370,10 @@ require SITE_ROOT . '/includes/header.php';
                 <select name="service" id="package-service" required class="w-full border px-5 py-3.5 rounded-2xl bg-white">
                     <option value="">Select package…</option>
                     <option value="Landlord Essentials package">Landlord Essentials</option>
+                    <option value="HMO Packages">HMO Packages</option>
                     <option value="HMO Compliance Package">HMO Compliance</option>
+                    <option value="HMO Fire Safety Pack">HMO Fire Safety</option>
+                    <option value="HMO Occupancy Pack">HMO Occupancy</option>
                     <option value="Fire Package">Fire Package</option>
                     <option value="Security Package">Security Package</option>
                     <option value="Full FM package">Full FM</option>
@@ -397,7 +399,7 @@ require SITE_ROOT . '/includes/header.php';
                target="_blank" rel="noopener"
                class="px-5 py-2.5 rounded-2xl bg-green-600 hover:bg-green-500 text-white font-semibold">WhatsApp us instead</a>
             <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
-               class="px-5 py-2.5 rounded-2xl border border-zinc-300 font-semibold text-black hover:border-[#0a2540]"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+               class="px-5 py-2.5 rounded-2xl border border-zinc-300 font-semibold text-black hover:border-[#0B1F3A]"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
         </div>
     </div>
 </section>
@@ -417,7 +419,10 @@ require SITE_ROOT . '/includes/header.php';
             if (!name) return;
             var map = {
                 'Landlord Essentials': 'Landlord Essentials package',
+                'HMO Packages': 'HMO Packages',
                 'HMO Compliance': 'HMO Compliance Package',
+                'HMO Fire Safety Pack': 'HMO Fire Safety Pack',
+                'HMO Occupancy Pack': 'HMO Occupancy Pack',
                 'Fire Package': 'Fire Package',
                 'Security Package': 'Security Package',
                 'Full FM': 'Full FM package'

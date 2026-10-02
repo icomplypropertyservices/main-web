@@ -30,7 +30,7 @@ $siteDefaults = [
     // Shopify Storefront / Buy Button (set in config.local.php)
     // Domain example: your-store.myshopify.com  |  Store URL: https://your-store.myshopify.com
     'SHOPIFY_DOMAIN' => '',
-    'SHOPIFY_STORE_URL' => '',
+    'SHOPIFY_STORE_URL' => 'https://shop.icomplypropertyservices.co.uk',
     'SHOPIFY_STOREFRONT_TOKEN' => '',
     'SHOPIFY_COLLECTION_ID' => '',
     'SHOPIFY_ENABLED' => false,
@@ -72,11 +72,13 @@ foreach ($envMap as $const => $envName) {
     }
 }
 
-// On Vercel / production hosts, prefer public HTTPS origin (never localhost canonicals)
+// On Vercel / Netlify / production hosts, prefer public HTTPS origin (never localhost canonicals)
 $isVercel = (string)(getenv('VERCEL') ?: ($_ENV['VERCEL'] ?? '')) !== '';
+$isNetlify = (string)(getenv('NETLIFY') ?: ($_ENV['NETLIFY'] ?? '')) !== ''
+    || (string)(getenv('ICOMPLY_STATIC_EXPORT') ?: ($_ENV['ICOMPLY_STATIC_EXPORT'] ?? '')) !== '';
 $host = (string)($_SERVER['HTTP_HOST'] ?? '');
 $host = preg_replace('/:\d+$/', '', $host);
-if ($isVercel || preg_match('/icomplypropertyservices\.co\.uk$/i', $host)) {
+if ($isVercel || $isNetlify || preg_match('/icomplypropertyservices\.co\.uk$/i', $host)) {
     if ($host === '' || str_contains($host, 'localhost')) {
         $host = 'icomplypropertyservices.co.uk';
     }
@@ -97,10 +99,12 @@ if (is_file($localFile)) {
     }
 }
 
-// Production/Vercel: never keep localhost SITE_URL after local overrides
+// Production / Netlify / Vercel: never keep localhost SITE_URL after local overrides
 $isVercelFinal = (string)(getenv('VERCEL') ?: ($_ENV['VERCEL'] ?? '')) !== '';
+$isNetlifyFinal = (string)(getenv('NETLIFY') ?: ($_ENV['NETLIFY'] ?? '')) !== ''
+    || (string)(getenv('ICOMPLY_STATIC_EXPORT') ?: ($_ENV['ICOMPLY_STATIC_EXPORT'] ?? '')) !== '';
 $hostFinal = preg_replace('/:\d+$/', '', (string)($_SERVER['HTTP_HOST'] ?? ''));
-if ($isVercelFinal || preg_match('/icomplypropertyservices\.co\.uk$/i', (string)$hostFinal)) {
+if ($isVercelFinal || $isNetlifyFinal || preg_match('/icomplypropertyservices\.co\.uk$/i', (string)$hostFinal)) {
     if ($hostFinal === '' || str_contains($hostFinal, 'localhost')) {
         $hostFinal = 'icomplypropertyservices.co.uk';
     }
@@ -121,6 +125,19 @@ foreach ($siteDefaults as $key => $value) {
     if (!defined($key)) {
         define($key, $value);
     }
+}
+
+/** During static export, do not kill the CLI process on page-level exit(). */
+function icomplyRequestExit(): void
+{
+    $flag = getenv('ICOMPLY_STATIC_EXPORT');
+    if ($flag === false || $flag === '') {
+        $flag = $_ENV['ICOMPLY_STATIC_EXPORT'] ?? $_SERVER['ICOMPLY_STATIC_EXPORT'] ?? '';
+    }
+    if ((string)$flag !== '') {
+        return;
+    }
+    exit;
 }
 
 /** @return array decoded JSON file or $default */
@@ -154,8 +171,33 @@ function saveJsonData(string $name, $data): void {
 }
 
 /**
- * Public absolute URL — extensionless (no .php).
- * Accepts paths with or without .php; always emits clean URLs.
+ * Root-relative static file URL. Never prefixes SITE_URL — draft deploys
+ * 404 if CSS/JS/favicons point at the production domain.
+ */
+function assetUrl(string $path = '/'): string
+{
+    $path = '/' . ltrim(str_replace('\\', '/', $path), '/');
+    $query = '';
+    if (str_contains($path, '?')) {
+        [$path, $q] = explode('?', $path, 2);
+        $query = '?' . $q;
+    }
+    return $path . $query;
+}
+
+function icomplyIsStaticAssetPath(string $path): bool
+{
+    return (bool) preg_match(
+        '#^/(assets/|favicon\.ico$|manifest\.json$|manifest\.webmanifest$|site\.webmanifest$|robots\.txt$)#',
+        $path
+    );
+}
+
+/**
+ * Public URL — extensionless (no .php).
+ * Static assets (/assets, favicons, manifests) are always root-relative
+ * so Netlify drafts load CSS from the same origin.
+ * Page URLs stay absolute via SITE_URL (canonicals / sitemap / OG).
  */
 function url(string $path = '/'): string {
     $path = '/' . ltrim(str_replace('\\', '/', $path), '/');
@@ -168,6 +210,9 @@ function url(string $path = '/'): string {
     $path = preg_replace('#\.php$#i', '', $path) ?? $path;
     // /foo/index → /foo
     $path = preg_replace('#/index$#i', '', $path) ?? $path;
+    if (icomplyIsStaticAssetPath($path)) {
+        return $path . $query;
+    }
     if ($path === '' || $path === '/') {
         return rtrim(SITE_URL, '/') . $query;
     }
@@ -313,18 +358,100 @@ function getKeywordsForService(string $serviceSlug): array {
 }
 
 /**
+ * Service slugs whose keyword×area matrix is fully exported on Netlify.
+ *
+ * @return list<string>
+ */
+function getElectricalGasFamilyServices(): array {
+    return ['electrical', 'gas-systems'];
+}
+
+/**
+ * All electrical + gas keyword slugs (for full-town static export).
+ *
+ * @return list<string>
+ */
+function getElectricalGasMatrixKeywordSlugs(): array {
+    $out = [];
+    foreach (getElectricalGasFamilyServices() as $svc) {
+        foreach (array_keys(getKeywordsForService($svc)) as $slug) {
+            $slug = keywordSlug((string)$slug);
+            if ($slug !== '') {
+                $out[$slug] = true;
+            }
+        }
+    }
+    return array_keys($out);
+}
+
+/**
+ * Featured electrical / gas keyword slugs for nav, HTML site map and sitemap samples.
+ *
+ * @return array{electrical: list<string>, gas: list<string>}
+ */
+function getElectricalGasFeaturedKeywordSlugs(): array {
+    return [
+        'electrical' => [
+            'rewire', 'domestic-rewire', 'house-rewire', 'partial-rewire',
+            'consumer-unit', 'fuse-board', 'eicr', 'emergency-electrician',
+            'price-of-rewire', 'electrician',
+        ],
+        'gas' => [
+            'boiler', 'boiler-install', 'boiler-repair', 'cp12', 'gas-safety',
+            'emergency-gas-engineer', 'landlord-gas', 'gas-safety-certificate',
+            'boiler-cost', 'landlord-cp12',
+        ],
+    ];
+}
+
+function isCostStyleKeyword(string $slug, string $name = ''): bool {
+    return (bool)preg_match('/\b(cost|price|quote|how-much|how much)\b/i', $slug . ' ' . $name);
+}
+
+/**
+ * Local URL that returns 200 on the default Netlify export.
+ * /pages/{service}/{town} is --full only and 404s on draft/prod static.
+ *
+ * Electrical + gas → featured keyword×town. Other services → area hub
+ * (from a service page) or the service hub (from an area page).
+ */
+function exportedServiceLocalUrl(string $serviceSlug, string $area, string $from = 'service'): string {
+    $serviceSlug = areaSlug($serviceSlug);
+    $town = areaSlug($area);
+    $featured = getElectricalGasFeaturedKeywordSlugs();
+    $kw = getMajorKeywords();
+    $pick = null;
+    if ($serviceSlug === 'electrical') {
+        $pick = $featured['electrical'][0] ?? 'rewire';
+    } elseif ($serviceSlug === 'gas-systems') {
+        $pick = $featured['gas'][0] ?? 'boiler';
+    }
+    if ($pick && isset($kw[keywordSlug((string)$pick)])) {
+        return url('/pages/keywords/' . keywordSlug((string)$pick) . '/' . $town . '.php');
+    }
+    if ($from === 'area') {
+        return url('/pages/services/' . $serviceSlug . '.php');
+    }
+    return url('/pages/areas/' . $town . '.php');
+}
+
+/**
  * Priority keyword slugs for homepage / area hubs (only those present in data).
  * @return list<string>
  */
 function getPopularKeywordSlugs(): array {
     $priority = [
         'eicr', 'eicr-report', 'eicr-certificate', 'eicr-cost', 'landlord-eicr', 'commercial-eicr',
-        'pat-testing', 'consumer-unit-upgrade', 'rewire', 'domestic-eicr', 'eicr-near-me',
+        'pat-testing', 'consumer-unit-upgrade', 'rewire', 'domestic-rewire', 'domestic-eicr',
+        'eicr-near-me', 'emergency-electrician', 'consumer-unit', 'fuse-board', 'price-of-rewire',
         'fire-risk-assessment', 'fire-alarm-service', 'addressable-fire-alarm', 'fire-alarm-installation',
         'emergency-lighting-test', 'emergency-lighting-certificate',
-        'gas-safety-certificate', 'cp12', 'landlord-gas-safety',
+        'gas-safety-certificate', 'cp12', 'landlord-gas-safety', 'boiler', 'boiler-install',
+        'boiler-repair', 'gas-safety', 'emergency-gas-engineer', 'landlord-gas',
         'cctv-installation', 'access-control-system', 'door-entry-system',
         'nurse-call-system', 'landlord-compliance',
+        'legionella-risk-assessment', 'legionella-testing', 'water-hygiene-testing',
+        'asbestos-survey', 'asbestos-testing', 'asbestos-management-survey',
     ];
     $all = getMajorKeywords();
     $out = [];
@@ -448,7 +575,7 @@ function manufacturerTagsHtml(string $serviceSlug): string {
     }
     // Always offer full directory
     $allHref = htmlspecialchars(url('/pages/manufacturers/index.php'), ENT_QUOTES, 'UTF-8');
-    $html .= '<a href="' . $allHref . '" class="inline-flex items-center gap-1.5 px-4 py-2.5 bg-[#0a2540] text-white rounded-full text-sm font-semibold hover:bg-[#ff6b00] transition">All brands →</a>';
+    $html .= '<a href="' . $allHref . '" class="inline-flex items-center gap-1.5 px-4 py-2.5 bg-[#0B1F3A] text-white rounded-full text-sm font-semibold hover:bg-[#ff6b00] transition">All brands →</a>';
     return $html;
 }
 
@@ -558,6 +685,32 @@ function areaFromSlug(string $slug): ?string {
         }
     }
     return null;
+}
+
+/** Live Shopify storefront — never 301 /shop to packages. */
+function icomplyTradeShopUrl(): string
+{
+    if (function_exists('shopifyStoreUrl')) {
+        $u = shopifyStoreUrl();
+        if ($u !== '') {
+            return $u;
+        }
+    }
+    if (defined('SHOPIFY_STORE_URL') && SHOPIFY_STORE_URL !== '') {
+        return rtrim((string)SHOPIFY_STORE_URL, '/');
+    }
+    return 'https://shop.icomplypropertyservices.co.uk';
+}
+
+/** Products / trade materials. products.* is not live — use the Shopify shop host. */
+function icomplyTradeProductsUrl(): string
+{
+    return icomplyTradeShopUrl();
+}
+
+$waFile = __DIR__ . '/includes/water-asbestos.php';
+if (is_file($waFile)) {
+    require_once $waFile;
 }
 
 // Back-compat globals used by some templates/includes

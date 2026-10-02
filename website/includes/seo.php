@@ -47,6 +47,8 @@ function service_standards(string $slug): array {
         'access-control' => ['card / fob / biometric', 'multi-door control', 'audit trails', 'time zones', 'fire door release'],
         'door-entry' => ['video door entry', 'audio door entry', 'apartment blocks', 'riser upgrades', 'handset replacement'],
         'intercoms' => ['video intercom', 'audio intercom', 'multi-tenant', 'office systems', 'fault finding'],
+        'legionella-risk-assessment' => ['HSE L8', 'HSG274', 'water hygiene', 'Legionella risk assessment', 'POA'],
+        'asbestos-survey' => ['CAR 2012', 'duty to manage', 'management survey', 'refurbishment survey', 'POA'],
     ];
     return $map[$slug] ?? ['UK installation', 'servicing', 'certification'];
 }
@@ -58,7 +60,10 @@ function seo_combo_intro(string $serviceName, string $slug, string $area): strin
         . "maintenance and certification for landlords, managing agents, facilities teams and businesses across {$area} "
         . "and the wider North West. Our engineers work to UK best practice including {$standards}, with clear paperwork "
         . "you can show insurers, freeholders and local authorities. Based in Stockport (SK2), we cover {$area} with "
-        . "same-week appointments where diary capacity allows and fixed-price quotes whenever the scope is clear.";
+        . "same-week appointments where diary capacity allows and "
+        . ((function_exists('isPoaService') && isPoaService($slug))
+            ? "a price-on-application quote once scope is clear."
+            : "fixed-price quotes whenever the scope is clear.");
 }
 
 function seo_combo_why(string $serviceName, string $area): array {
@@ -138,6 +143,16 @@ function service_faqs(string $slug, string $serviceName, string $area = ''): arr
             ['q' => "Do you install video intercoms{$loc}?", 'a' => "Yes — video and audio intercoms for flats, offices and mixed-use buildings{$loc}."],
             ['q' => "Can you repair a single handset?", 'a' => "Often yes. We diagnose whether the fault is handset, wiring or door station before replacing parts."],
             ['q' => "Do intercoms work with access control?", 'a' => "They frequently integrate with door release and access control for a single visitor journey."],
+        ],
+        'legionella-risk-assessment' => [
+            ['q' => "Do you offer Legionella risk assessments{$loc}?", 'a' => "Yes. We scope a written assessment of the water system{$loc}. Sampling is only added when it helps. Price on application."],
+            ['q' => "Are quotes fixed on a price list?", 'a' => "No. Legionella and water hygiene work is POA after we know stored water, outlets and access."],
+            ['q' => "Do you claim a named lab accreditation here?", 'a' => "No. We do not invent laboratory or training badges on this page. Method is confirmed at quote stage."],
+        ],
+        'asbestos-survey' => [
+            ['q' => "Do you carry out asbestos surveys{$loc}?", 'a' => "Yes — management or refurbishment surveys scoped to the building and planned works{$loc}. POA."],
+            ['q' => "Do you remove asbestos?", 'a' => "Licensed removal is not this service. If the survey says removal is needed, that work is appointed separately."],
+            ['q' => "Do you list a starting price?", 'a' => "No. Surveys are POA. Size, access and how intrusive the visit must be all change the figure."],
         ],
     ];
     $faqs = $base[$slug] ?? [

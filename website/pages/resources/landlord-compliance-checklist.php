@@ -76,8 +76,7 @@ require SITE_ROOT . '/includes/header.php';
 ?>
 
 <!-- HERO -->
-<section class="relative overflow-hidden bg-[#0a2540] text-white">
-    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 20% 20%,#ff6b00,transparent 40%),radial-gradient(circle at 80% 0%,#3b82f6,transparent 35%);"></div>
+<section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="relative max-w-7xl mx-auto px-6 py-12 md:py-16">
         <nav class="text-xs text-white/50 mb-6 flex flex-wrap gap-2 items-center" aria-label="Breadcrumb">
             <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a>
@@ -123,7 +122,7 @@ require SITE_ROOT . '/includes/header.php';
         <?php foreach ($checklist as $i => $item): ?>
         <div class="bg-white border border-zinc-200 rounded-3xl p-6 md:p-7">
             <div class="flex gap-4 items-start">
-                <div class="w-10 h-10 rounded-2xl bg-[#0a2540] text-white font-bold flex items-center justify-center shrink-0"><?= $i + 1 ?></div>
+                <div class="w-10 h-10 rounded-2xl bg-[#0B1F3A] text-white font-bold flex items-center justify-center shrink-0"><?= $i + 1 ?></div>
                 <div>
                     <h2 class="text-xl font-semibold tracking-tight text-black"><?= htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8') ?></h2>
                     <p class="text-zinc-700 mt-2"><?= htmlspecialchars($item['body'], ENT_QUOTES, 'UTF-8') ?></p>
@@ -164,7 +163,7 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 
     <!-- CTA -->
-    <div class="mt-14 bg-[#0a2540] text-white p-8 md:p-10 rounded-3xl text-center">
+    <div class="mt-14 bg-[#0B1F3A] text-white p-8 md:p-10 rounded-3xl text-center">
         <h2 class="text-2xl md:text-3xl font-semibold mb-3">Need a landlord compliance package?</h2>
         <p class="text-white/85 max-w-md mx-auto mb-6">Tell us how many properties and which certificates are due — we quote fixed-price visits across Greater Manchester and the North West.</p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">

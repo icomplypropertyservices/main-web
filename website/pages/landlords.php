@@ -106,8 +106,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
 ?>
 
 <!-- HERO -->
-<section class="relative overflow-hidden bg-[#0a2540] text-white">
-    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 20% 20%,#ff6b00,transparent 40%),radial-gradient(circle at 80% 0%,#3b82f6,transparent 35%);"></div>
+<section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="relative max-w-7xl mx-auto px-6 py-16 md:py-24 grid lg:grid-cols-2 gap-12 items-center">
         <div>
             <nav class="text-xs text-white/50 mb-5 flex flex-wrap gap-2 items-center" aria-label="Breadcrumb">
@@ -129,7 +128,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get portfolio quote</a>
-                <a href="#packages" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">View packages</a>
+                <a href="#packages" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">View packages</a>
                 <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20Icomply%2C%20I%20need%20a%20landlord%20compliance%20quote"
                    target="_blank" rel="noopener"
                    class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
@@ -165,7 +164,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <?php foreach ($trust as $t): ?>
             <div class="flex gap-3 items-start">
-                <div class="w-10 h-10 rounded-2xl bg-[#0a2540]/10 flex items-center justify-center text-[#0a2540] font-bold shrink-0">✓</div>
+                <div class="w-10 h-10 rounded-2xl bg-[#0B1F3A]/10 flex items-center justify-center text-[#0B1F3A] font-bold shrink-0">✓</div>
                 <div>
                     <div class="font-semibold text-black"><?= htmlspecialchars($t['title'], ENT_QUOTES, 'UTF-8') ?></div>
                     <div class="text-sm text-zinc-600 mt-0.5"><?= htmlspecialchars($t['text'], ENT_QUOTES, 'UTF-8') ?></div>
@@ -234,7 +233,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Multi-property packages</h2>
                 <p class="mt-2 text-zinc-600 max-w-xl">Combine EICR, gas safety, fire alarms and emergency lighting into one visit schedule — or book a dedicated <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/packages/hmo') ?>">HMO package</a> (compliance, fire safety or occupancy).</p>
             </div>
-            <a href="#quote" class="inline-flex px-5 py-2.5 rounded-full bg-[#0a2540] text-white text-sm font-semibold hover:bg-[#ff6b00] transition">Request package quote</a>
+            <a href="#quote" class="inline-flex px-5 py-2.5 rounded-full bg-[#0B1F3A] text-white text-sm font-semibold hover:bg-[#ff6b00] transition">Request package quote</a>
         </div>
         <div class="grid md:grid-cols-3 gap-5">
             <?php foreach ($packages as $pkg): ?>
@@ -249,7 +248,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             </div>
             <?php endforeach; ?>
         </div>
-        <div class="mt-10 bg-[#0a2540] text-white rounded-3xl p-8 md:p-10 grid lg:grid-cols-2 gap-8 items-center">
+        <div class="mt-10 bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10 grid lg:grid-cols-2 gap-8 items-center">
             <div>
                 <h3 class="text-2xl font-semibold tracking-tight">Built for letting agents &amp; portfolio landlords</h3>
                 <p class="mt-3 text-white/80">Send a property list or spreadsheet — we’ll map due dates for EICR, CP12/CP44, fire alarm service and emergency lighting, then quote a single multi-property package.</p>
@@ -336,7 +335,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             ];
             foreach ($steps as [$n, $t, $d]): ?>
             <div class="text-center px-4">
-                <div class="w-12 h-12 mx-auto rounded-2xl bg-[#0a2540] text-white font-bold flex items-center justify-center text-lg"><?= $n ?></div>
+                <div class="w-12 h-12 mx-auto rounded-2xl bg-[#0B1F3A] text-white font-bold flex items-center justify-center text-lg"><?= $n ?></div>
                 <h3 class="mt-4 font-semibold text-xl text-black"><?= htmlspecialchars($t, ENT_QUOTES, 'UTF-8') ?></h3>
                 <p class="mt-2 text-sm text-zinc-600"><?= htmlspecialchars($d, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
@@ -392,9 +391,9 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
         </form>
 
         <div class="mt-8 flex flex-wrap justify-center gap-4 text-sm">
-            <a href="tel:<?= htmlspecialchars(preg_replace('/\s+/', '', PHONE), ENT_QUOTES, 'UTF-8') ?>" class="font-semibold text-[#0a2540] hover:text-[#ff6b00]"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+            <a href="tel:<?= htmlspecialchars(preg_replace('/\s+/', '', PHONE), ENT_QUOTES, 'UTF-8') ?>" class="font-semibold text-[#0B1F3A] hover:text-[#ff6b00]"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
             <span class="text-zinc-300">|</span>
-            <a href="mailto:<?= htmlspecialchars(EMAIL, ENT_QUOTES, 'UTF-8') ?>" class="font-semibold text-[#0a2540] hover:text-[#ff6b00]"><?= htmlspecialchars(EMAIL, ENT_QUOTES, 'UTF-8') ?></a>
+            <a href="mailto:<?= htmlspecialchars(EMAIL, ENT_QUOTES, 'UTF-8') ?>" class="font-semibold text-[#0B1F3A] hover:text-[#ff6b00]"><?= htmlspecialchars(EMAIL, ENT_QUOTES, 'UTF-8') ?></a>
             <span class="text-zinc-300">|</span>
             <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener" class="font-semibold text-green-700 hover:text-green-600">WhatsApp</a>
         </div>

@@ -47,7 +47,7 @@ echo hmoBreadcrumbJsonLd($crumbs);
 echo hmoFaqJsonLd($p['faqs']);
 ?>
 
-<section class="relative overflow-hidden bg-[#0a2540] text-white">
+<section class="relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 20% 20%,#ff6b00,transparent 40%),radial-gradient(circle at 80% 0%,#3b82f6,transparent 35%);"></div>
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
         <?= hmoHeroBreadcrumbs($crumbs) ?>
@@ -63,7 +63,7 @@ echo hmoFaqJsonLd($p['faqs']);
             <p class="mt-6 text-lg md:text-xl text-white/80 max-w-2xl"><?= htmlspecialchars($p['intro'], ENT_QUOTES, 'UTF-8') ?></p>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Request quote</a>
-                <a href="<?= htmlspecialchars(url('/pages/packages/hmo-compliance'), ENT_QUOTES, 'UTF-8') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">HMO package</a>
+                <a href="<?= htmlspecialchars(url('/pages/packages/hmo-compliance'), ENT_QUOTES, 'UTF-8') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">HMO package</a>
                 <a href="<?= htmlspecialchars($wa, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
             </div>
             <p class="mt-5 text-sm text-white/60">Price: <strong class="text-white">POA</strong> — fixed quote after we agree scope. Not a licence decision or legal advice.</p>
@@ -125,7 +125,7 @@ echo sectionTrustStrip([
             </div>
         </div>
         <aside class="space-y-6">
-            <div class="bg-[#0a2540] text-white rounded-3xl p-7">
+            <div class="bg-[#0B1F3A] text-white rounded-3xl p-7">
                 <h2 class="text-xl font-semibold">Talk to Stockport</h2>
                 <p class="mt-2 text-white/80 text-sm">17 Woodlands Park Road, Offerton, Stockport SK2 5DE</p>
                 <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="block mt-4 font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>

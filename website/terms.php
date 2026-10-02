@@ -15,8 +15,7 @@ require SITE_ROOT . '/includes/header.php';
 ?>
 
 <!-- HERO -->
-<section class="relative overflow-hidden bg-[#0a2540] text-white">
-    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 20% 20%,#ff6b00,transparent 40%),radial-gradient(circle at 80% 0%,#3b82f6,transparent 35%);"></div>
+<section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-18">
         <nav class="text-xs text-white/50 mb-6 flex flex-wrap gap-2 items-center" aria-label="Breadcrumb">
             <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a>
@@ -225,7 +224,7 @@ require SITE_ROOT . '/includes/header.php';
             </div>
         </div>
 
-        <div class="p-6 md:p-8 bg-[#0a2540] text-white rounded-3xl">
+        <div class="p-6 md:p-8 bg-[#0B1F3A] text-white rounded-3xl">
             <div class="text-xs uppercase tracking-[2px] text-[#ff6b00] font-semibold mb-2">Explore Icomply</div>
             <h2 class="text-xl font-semibold tracking-tight mb-3">Ready to work with us?</h2>
             <p class="text-white/75 text-sm mb-5 max-w-xl">
@@ -233,7 +232,7 @@ require SITE_ROOT . '/includes/header.php';
             </p>
             <div class="flex flex-wrap gap-3">
                 <a href="<?= url('/contact.php') ?>" class="px-5 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white text-sm">Contact us</a>
-                <a href="<?= url('/shop/index.php') ?>" class="px-5 py-3 rounded-2xl bg-white text-[#0a2540] font-semibold text-sm hover:bg-zinc-100">Shop products</a>
+                <a href="<?= url('/shop/index.php') ?>" class="px-5 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold text-sm hover:bg-zinc-100">Shop products</a>
                 <a href="<?= url('/pages/manufacturers/index.php') ?>" class="px-5 py-3 rounded-2xl border border-white/40 font-semibold text-sm hover:bg-white/10">Manufacturers</a>
                 <a href="<?= url('/pages/services/index.php') ?>" class="px-5 py-3 rounded-2xl border border-white/40 font-semibold text-sm hover:bg-white/10">Services</a>
             </div>

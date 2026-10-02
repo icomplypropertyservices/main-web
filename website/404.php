@@ -35,8 +35,7 @@ $quickLinks = [
 
 require SITE_ROOT . '/includes/header.php';
 ?>
-<section class="relative overflow-hidden bg-[#0a2540] text-white">
-    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 20% 20%,#ff6b00,transparent 40%),radial-gradient(circle at 80% 0%,#3b82f6,transparent 35%);"></div>
+<section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="relative max-w-4xl mx-auto px-6 py-16 md:py-24 text-center">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs tracking-widest uppercase mb-6">
             <span class="w-2 h-2 rounded-full bg-[#ff6b00]"></span>
@@ -61,7 +60,7 @@ require SITE_ROOT . '/includes/header.php';
                 Go to homepage
             </a>
             <a href="<?= url('/contact.php') ?>"
-               class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">
+               class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">
                 Contact / free quote
             </a>
             <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20Icomply%2C%20I%20need%20help%20finding%20a%20page"

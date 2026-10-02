@@ -84,7 +84,7 @@ function testimonialsSectionHtml(): string
         $html .= '                <div class="text-[#ff6b00] text-sm tracking-wide mb-3" aria-label="' . $rating . ' out of 5 stars">' . $stars($rating) . '</div>' . "\n";
         $html .= '                <p class="text-sm text-zinc-700 leading-relaxed flex-1">“' . $quote . '”</p>' . "\n";
         $html .= '                <footer class="mt-6 pt-4 border-t border-zinc-200 flex items-center gap-3">' . "\n";
-        $html .= '                    <div class="w-10 h-10 rounded-2xl bg-[#0a2540] text-white font-semibold flex items-center justify-center shrink-0" aria-hidden="true">' . $initial . '</div>' . "\n";
+        $html .= '                    <div class="w-10 h-10 rounded-2xl bg-[#0B1F3A] text-white font-semibold flex items-center justify-center shrink-0" aria-hidden="true">' . $initial . '</div>' . "\n";
         $html .= '                    <div>' . "\n";
         $html .= '                        <cite class="not-italic font-semibold text-black text-sm">' . $name . '</cite>' . "\n";
         $html .= '                        <div class="text-xs text-zinc-500 mt-0.5">' . $role . '</div>' . "\n";

@@ -1,6 +1,6 @@
 <?php
 /**
- * Reusable landing-page section partials (navy #0a2540 / orange #ff6b00).
+ * Reusable landing-page section partials (navy #0B1F3A / orange #ff6b00).
  *
  * Usage:
  *   require_once SITE_ROOT . '/includes/partials.php';
@@ -44,7 +44,7 @@ function sectionTrustStrip(array $items): string
             }
             ?>
             <div class="flex gap-3 items-start">
-                <div class="w-10 h-10 rounded-2xl bg-[#0a2540]/10 flex items-center justify-center text-[#0a2540] font-bold shrink-0">✓</div>
+                <div class="w-10 h-10 rounded-2xl bg-[#0B1F3A]/10 flex items-center justify-center text-[#0B1F3A] font-bold shrink-0">✓</div>
                 <div>
                     <div class="font-semibold text-black"><?= htmlspecialchars($title, ENT_QUOTES, 'UTF-8') ?></div>
                     <div class="text-sm text-zinc-600 mt-0.5"><?= htmlspecialchars($text, ENT_QUOTES, 'UTF-8') ?></div>

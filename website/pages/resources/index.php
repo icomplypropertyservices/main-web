@@ -4,6 +4,7 @@
  */
 require_once __DIR__ . '/../../config.php';
 require_once SITE_ROOT . '/includes/share.php';
+require_once SITE_ROOT . '/includes/wave1.php';
 
 $pageTitle = 'Resources & Guides | Property Compliance North West';
 $metaDesc = 'Free property compliance guides for landlords, facilities managers and commercial sites — EICR, fire alarm servicing, emergency lighting testing, CCTV, access control, landlord checklists and keyword guides across the North West.';
@@ -70,6 +71,20 @@ $featuredGuides = [
         'tag' => 'Access control',
         'img' => '/assets/images/services/access-control.jpg',
     ],
+    [
+        'slug' => 'legionella-risk-assessment',
+        'title' => 'Legionella risk assessment & water hygiene',
+        'blurb' => 'HSE L8 / HSG274-style assessment, when sampling helps, POA only — no invented prices.',
+        'tag' => 'Water hygiene',
+        'img' => '/assets/images/services/plumbing.jpg',
+    ],
+    [
+        'slug' => 'asbestos-survey',
+        'title' => 'Asbestos survey & testing',
+        'blurb' => 'Management vs refurbishment surveys. Licensed removal is by others. POA.',
+        'tag' => 'Asbestos',
+        'img' => '/assets/images/services/building-surveys.jpg',
+    ],
 ];
 
 $hubLinks = [
@@ -121,8 +136,7 @@ require SITE_ROOT . '/includes/header.php';
 ?>
 
 <!-- HERO -->
-<section class="relative overflow-hidden bg-[#0a2540] text-white">
-    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 20% 20%,#ff6b00,transparent 40%),radial-gradient(circle at 80% 0%,#3b82f6,transparent 35%);"></div>
+<section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
         <nav class="text-xs text-white/50 mb-6 flex flex-wrap gap-2 items-center" aria-label="Breadcrumb">
             <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a>
@@ -143,9 +157,9 @@ require SITE_ROOT . '/includes/header.php';
                 and the North West — plus links to packages, services and detailed keyword guides.
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
-                <a href="#articles" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Featured articles</a>
-                <a href="#explore" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">Explore hub</a>
-                <a href="#quote" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Free quote</a>
+                <a href="#batch-a" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Batch A guides</a>
+                <a href="#batch-c" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">Batch C hubs</a>
+                <a href="<?= url('/contact.php') ?>" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Contact / quote</a>
             </div>
         </div>
     </div>
@@ -191,6 +205,65 @@ require SITE_ROOT . '/includes/header.php';
             </div>
         </a>
         <?php endforeach; ?>
+    </div>
+</section>
+
+<?php
+$queue = wave1PublishQueue();
+foreach (['A', 'B'] as $batchKey):
+    $batch = $queue[$batchKey];
+    $sectionBg = $batchKey === 'A' ? 'bg-white border-t' : 'bg-zinc-50 border-y';
+    $cardBg = $batchKey === 'A' ? 'bg-zinc-50' : 'bg-white';
+?>
+<section id="<?= htmlspecialchars($batch['id'], ENT_QUOTES, 'UTF-8') ?>" class="<?= $sectionBg ?>">
+    <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+            <div>
+                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold"><?= htmlspecialchars($batch['label'], ENT_QUOTES, 'UTF-8') ?></div>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2"><?= $batchKey === 'A' ? 'First five guides' : 'Days 6–14' ?></h2>
+                <p class="mt-2 text-zinc-600 max-w-2xl"><?= htmlspecialchars($batch['blurb'], ENT_QUOTES, 'UTF-8') ?> Quotes go to <a href="<?= url('/contact.php') ?>" class="text-[#ff6b00] font-semibold hover:underline">contact</a>.</p>
+            </div>
+            <?php if ($batchKey === 'A'): ?>
+            <a href="#batch-b" class="text-sm font-semibold text-[#ff6b00]">Next: Batch B →</a>
+            <?php else: ?>
+            <a href="#batch-c" class="text-sm font-semibold text-[#ff6b00]">Next: Batch C hubs →</a>
+            <?php endif; ?>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <?php foreach ($batch['guides'] as $slug => $g): ?>
+            <a href="<?= url('/pages/resources/' . $slug . '.php') ?>"
+               class="service-card group <?= $cardBg ?> border border-zinc-200 rounded-3xl p-6 hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
+                <div class="text-xs uppercase tracking-[2px] text-[#ff6b00] font-semibold">Day <?= (int)$g['day'] ?> · <?= htmlspecialchars($g['tag'], ENT_QUOTES, 'UTF-8') ?></div>
+                <h2 class="font-semibold text-xl text-black tracking-tight mt-2"><?= htmlspecialchars($g['cardTitle'], ENT_QUOTES, 'UTF-8') ?></h2>
+                <p class="text-sm text-zinc-600 mt-2 flex-1"><?= htmlspecialchars($g['blurb'], ENT_QUOTES, 'UTF-8') ?></p>
+                <span class="mt-5 text-sm font-semibold text-[#ff6b00]">Read article →</span>
+            </a>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+<?php endforeach;
+$batchC = $queue['C'];
+?>
+
+<!-- BATCH C QUALITY HUBS -->
+<section id="batch-c" class="bg-white border-t">
+    <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div class="mb-10">
+            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold"><?= htmlspecialchars($batchC['label'], ENT_QUOTES, 'UTF-8') ?></div>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">High-intent landings</h2>
+            <p class="mt-2 text-zinc-600 max-w-2xl"><?= htmlspecialchars($batchC['blurb'], ENT_QUOTES, 'UTF-8') ?> CTA remains <a href="<?= url('/contact.php') ?>" class="text-[#ff6b00] font-semibold hover:underline">/contact</a>.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <?php foreach ($batchC['hubs'] as $slug => $h): ?>
+            <a href="<?= url('/pages/' . $slug) ?>"
+               class="bg-zinc-50 border border-zinc-200 rounded-3xl p-7 hover:border-[#ff6b00] hover:shadow-lg transition group">
+                <h3 class="font-semibold text-xl text-black tracking-tight group-hover:text-[#ff6b00] transition"><?= htmlspecialchars($h['navLabel'], ENT_QUOTES, 'UTF-8') ?></h3>
+                <p class="text-sm text-zinc-600 mt-2"><?= htmlspecialchars($h['lede'], ENT_QUOTES, 'UTF-8') ?></p>
+                <span class="inline-block mt-5 text-sm font-semibold text-[#ff6b00]">Open hub →</span>
+            </a>
+            <?php endforeach; ?>
+        </div>
     </div>
 </section>
 
@@ -271,12 +344,12 @@ require SITE_ROOT . '/includes/header.php';
                 </div>
                 <a href="<?= url('/pages/services/index.php') ?>" class="inline-block mt-6 text-sm font-semibold text-[#ff6b00]">All services →</a>
             </div>
-            <div class="bg-[#0a2540] text-white rounded-3xl p-8 md:p-10">
+            <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
                 <h3 class="text-2xl font-semibold">Talk to a local engineer</h3>
                 <p class="mt-3 text-white/80">Fixed-price quotes, clear documentation and same-week appointments where capacity allows.</p>
                 <div class="mt-6 flex flex-wrap gap-3">
                     <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>"
-                       class="px-6 py-3 rounded-2xl bg-white text-[#0a2540] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                       class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
                     <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>"
                        target="_blank" rel="noopener"
                        class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>

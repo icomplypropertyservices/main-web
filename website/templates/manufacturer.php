@@ -109,8 +109,7 @@ $schema = [
 <script type="application/ld+json"><?= json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
 
 <!-- HERO -->
-<section class="relative overflow-hidden bg-[#0a2540] text-white">
-    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 15% 30%,#ff6b00,transparent 42%),radial-gradient(circle at 85% 10%,#3b82f6,transparent 38%);"></div>
+<section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
         <nav class="text-xs text-white/50 mb-6 flex flex-wrap gap-2 items-center" aria-label="Breadcrumb">
             <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a>
@@ -132,7 +131,7 @@ $schema = [
                 <p class="mt-6 text-lg text-white/80 max-w-xl"><?= htmlspecialchars($MFR_BLURB, ENT_QUOTES, 'UTF-8') ?></p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#products" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Shop products</a>
-                    <a href="#quote" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">Install quote</a>
+                    <a href="#quote" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">Install quote</a>
                     <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode($mfrName . ' enquiry') ?>"
                        target="_blank" rel="noopener"
                        class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
@@ -144,7 +143,7 @@ $schema = [
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
                      loading="eager"
                      onerror="this.src='<?= htmlspecialchars(serviceImageUrl($primaryService), ENT_QUOTES, 'UTF-8') ?>'">
-                <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0a2540]/90 via-transparent to-transparent">
+                <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-transparent to-transparent">
                     <div class="text-sm text-white/70">Authorised install &amp; trade supply</div>
                     <div class="text-2xl font-semibold mt-1"><?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> · North West</div>
                 </div>
@@ -185,10 +184,10 @@ $schema = [
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Multi-site &amp; landlord packages</li>
             </ul>
         </div>
-        <div class="lg:col-span-2 bg-[#0a2540] text-white rounded-3xl p-8">
+        <div class="lg:col-span-2 bg-[#0B1F3A] text-white rounded-3xl p-8">
             <h3 class="text-xl font-semibold">Need <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> support?</h3>
             <p class="mt-3 text-white/75 text-sm">Tell us your panel model, postcode and whether you need install, service or parts.</p>
-            <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="block mt-6 px-5 py-3 bg-white text-[#0a2540] rounded-2xl font-semibold text-center"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+            <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="block mt-6 px-5 py-3 bg-white text-[#0B1F3A] rounded-2xl font-semibold text-center"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
             <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode($mfrName . ' quote') ?>"
                target="_blank" rel="noopener"
                class="block mt-3 px-5 py-3 bg-green-600 rounded-2xl font-semibold text-center">WhatsApp</a>
@@ -288,7 +287,7 @@ $schema = [
 </section>
 
 <!-- CTA BAND -->
-<section class="bg-[#0a2540] text-white">
+<section class="bg-[#0B1F3A] text-white">
     <div class="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-2 gap-10 items-center">
         <div>
             <h2 class="text-3xl font-semibold tracking-tight">Need <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?>?</h2>

@@ -255,8 +255,7 @@ require SITE_ROOT . '/includes/header.php';
 ?>
 
 <!-- HERO -->
-<section class="relative overflow-hidden bg-[#0a2540] text-white">
-    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 20% 20%,#ff6b00,transparent 40%),radial-gradient(circle at 80% 0%,#3b82f6,transparent 35%);"></div>
+<section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
         <nav class="text-xs text-white/50 mb-6 flex flex-wrap gap-2 items-center" aria-label="Breadcrumb">
             <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a>
@@ -287,7 +286,7 @@ require SITE_ROOT . '/includes/header.php';
             </div>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#guide" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">View guide prices</a>
-                <a href="#quote" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">Get a fixed quote</a>
+                <a href="#quote" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">Get a fixed quote</a>
                 <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi Icomply, I saw the pricing guide and need a fixed quote') ?>"
                    target="_blank" rel="noopener"
                    class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
@@ -308,7 +307,7 @@ require SITE_ROOT . '/includes/header.php';
         ];
         foreach ($trust as [$t, $d]): ?>
             <div class="flex gap-3 items-start">
-                <div class="w-10 h-10 rounded-2xl bg-[#0a2540]/10 flex items-center justify-center text-[#0a2540] font-bold shrink-0">✓</div>
+                <div class="w-10 h-10 rounded-2xl bg-[#0B1F3A]/10 flex items-center justify-center text-[#0B1F3A] font-bold shrink-0">✓</div>
                 <div>
                     <div class="font-semibold text-black"><?= htmlspecialchars($t, ENT_QUOTES, 'UTF-8') ?></div>
                     <div class="text-sm text-zinc-600 mt-0.5"><?= htmlspecialchars($d, ENT_QUOTES, 'UTF-8') ?></div>
@@ -342,7 +341,7 @@ require SITE_ROOT . '/includes/header.php';
                 <?= htmlspecialchars($cat['name'], ENT_QUOTES, 'UTF-8') ?>
             </a>
         <?php endforeach; ?>
-        <a href="#factors" class="px-4 py-2 bg-zinc-50 border border-zinc-200 rounded-full text-sm font-medium text-zinc-700 hover:border-[#0a2540] transition">What affects price</a>
+        <a href="#factors" class="px-4 py-2 bg-zinc-50 border border-zinc-200 rounded-full text-sm font-medium text-zinc-700 hover:border-[#0B1F3A] transition">What affects price</a>
         <a href="#quote" class="px-4 py-2 bg-[#ff6b00] text-white rounded-full text-sm font-semibold hover:bg-orange-600 transition">Free quote</a>
     </div>
 </section>
@@ -394,17 +393,17 @@ require SITE_ROOT . '/includes/header.php';
                         <div class="font-semibold text-black"><?= htmlspecialchars($item['name'], ENT_QUOTES, 'UTF-8') ?></div>
                         <div class="md:hidden mt-2 flex items-baseline gap-2">
                             <span class="text-xs uppercase tracking-wider text-zinc-500">From</span>
-                            <span class="text-xl font-semibold text-[#0a2540]"><?= htmlspecialchars($item['from'], ENT_QUOTES, 'UTF-8') ?></span>
+                            <span class="text-xl font-semibold text-[#0B1F3A]"><?= htmlspecialchars($item['from'], ENT_QUOTES, 'UTF-8') ?></span>
                             <span class="text-xs text-amber-700 font-medium">guide only</span>
                         </div>
                     </div>
                     <div class="hidden md:block md:col-span-2">
                         <?php if ($isPoa): ?>
-                            <div class="text-lg font-semibold text-[#0a2540]">POA</div>
+                            <div class="text-lg font-semibold text-[#0B1F3A]">POA</div>
                             <div class="text-xs text-zinc-500">Survey required</div>
                         <?php else: ?>
                             <div class="text-xs uppercase tracking-wider text-zinc-500">From</div>
-                            <div class="text-xl font-semibold text-[#0a2540]"><?= htmlspecialchars($item['from'], ENT_QUOTES, 'UTF-8') ?></div>
+                            <div class="text-xl font-semibold text-[#0B1F3A]"><?= htmlspecialchars($item['from'], ENT_QUOTES, 'UTF-8') ?></div>
                             <div class="text-xs text-amber-700 font-medium">guide only · not a quote</div>
                         <?php endif; ?>
                     </div>
@@ -419,7 +418,7 @@ require SITE_ROOT . '/includes/header.php';
             </ul>
             <div class="px-5 md:px-6 py-4 bg-zinc-50 border-t flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <p class="text-xs text-zinc-500">All amounts are guide estimates for straightforward North West jobs. Fixed quote on request.</p>
-                <a href="#quote" class="inline-flex justify-center px-5 py-2.5 rounded-2xl bg-[#0a2540] hover:bg-[#ff6b00] text-white text-sm font-semibold transition"
+                <a href="#quote" class="inline-flex justify-center px-5 py-2.5 rounded-2xl bg-[#0B1F3A] hover:bg-[#ff6b00] text-white text-sm font-semibold transition"
                    data-service="<?= htmlspecialchars($cat['name'], ENT_QUOTES, 'UTF-8') ?>">
                     Quote this category
                 </a>
@@ -466,7 +465,7 @@ require SITE_ROOT . '/includes/header.php';
         ];
         foreach ($steps as [$n, $t, $d]): ?>
         <div class="text-center px-4">
-            <div class="w-12 h-12 mx-auto rounded-2xl bg-[#0a2540] text-white font-bold flex items-center justify-center text-lg"><?= $n ?></div>
+            <div class="w-12 h-12 mx-auto rounded-2xl bg-[#0B1F3A] text-white font-bold flex items-center justify-center text-lg"><?= $n ?></div>
             <h3 class="mt-4 font-semibold text-xl text-black"><?= htmlspecialchars($t, ENT_QUOTES, 'UTF-8') ?></h3>
             <p class="mt-2 text-sm text-zinc-600"><?= htmlspecialchars($d, ENT_QUOTES, 'UTF-8') ?></p>
         </div>
@@ -476,7 +475,7 @@ require SITE_ROOT . '/includes/header.php';
 
 <!-- CTA BAND -->
 <section class="max-w-7xl mx-auto px-6 pb-6">
-    <div class="bg-[#0a2540] text-white rounded-3xl p-8 md:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+    <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
         <div class="max-w-xl">
             <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">Ready for a real number?</h2>
             <p class="mt-3 text-white/80">
@@ -487,7 +486,7 @@ require SITE_ROOT . '/includes/header.php';
         <div class="flex flex-wrap gap-3 shrink-0">
             <a href="#quote" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold">Request free quote</a>
             <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
-               class="px-6 py-3 rounded-2xl bg-white text-[#0a2540] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+               class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
             <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi Icomply, I need a fixed price quote (saw the pricing guide)') ?>"
                target="_blank" rel="noopener"
                class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>
@@ -506,7 +505,7 @@ require SITE_ROOT . '/includes/header.php';
                 Or open a service hub for local pages and manufacturer options.
             </p>
             <div class="mt-6 flex flex-wrap gap-2">
-                <a href="<?= url('/pages/packages.php') ?>" class="px-4 py-2 bg-[#0a2540] text-white rounded-full text-sm font-semibold hover:bg-[#ff6b00] transition">Compliance packages</a>
+                <a href="<?= url('/pages/packages.php') ?>" class="px-4 py-2 bg-[#0B1F3A] text-white rounded-full text-sm font-semibold hover:bg-[#ff6b00] transition">Compliance packages</a>
                 <a href="<?= url('/pages/landlords.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00] transition">Landlords</a>
                 <a href="<?= url('/pages/commercial.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00] transition">Commercial / FM</a>
                 <?php foreach ($services as $slug => $name): ?>
@@ -585,7 +584,7 @@ require SITE_ROOT . '/includes/header.php';
                target="_blank" rel="noopener"
                class="px-5 py-2.5 rounded-2xl bg-green-600 hover:bg-green-500 text-white font-semibold">WhatsApp us instead</a>
             <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
-               class="px-5 py-2.5 rounded-2xl border border-zinc-300 font-semibold text-black hover:border-[#0a2540]"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+               class="px-5 py-2.5 rounded-2xl border border-zinc-300 font-semibold text-black hover:border-[#0B1F3A]"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
         </div>
     </div>
 </section>

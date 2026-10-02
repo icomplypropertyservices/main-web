@@ -9,11 +9,11 @@ if (!function_exists('getNavAudienceServices')) {
     function getNavAudienceServices(): array {
         $all = function_exists('getServices') ? getServices() : [];
         $domestic = [
-            'electrical', 'pat-testing', 'gas-systems', 'smoke-co-alarms', 'epc',
+            'electrical', 'pat-testing', 'gas-systems', 'smoke-co-alarms', 'aov-air-handling', 'epc',
             'landlord-compliance', 'kitchens', 'bathrooms', 'heating', 'renovation',
         ];
         $commercial = [
-            'fire-alarms', 'emergency-lighting', 'fire-risk-assessments', 'fire-doors',
+            'fire-alarms', 'aov-air-handling', 'emergency-lighting', 'fire-risk-assessments', 'fire-doors',
             'epc', 'pat-testing', 'facilities-management', 'cctv', 'access-control',
             'commercial-fit-out', 'nurse-call', 'compliance-consultancy',
         ];

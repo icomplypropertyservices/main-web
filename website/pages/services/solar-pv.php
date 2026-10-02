@@ -36,7 +36,7 @@ $crumbs = [
         <p class="mt-4 max-w-2xl text-lg text-white/90">Expert Solar PV installation, servicing, maintenance and certification for landlords, agents and businesses across Manchester, Stockport, Bolton, Liverpool, Preston and 140+ North West towns.</p>
         <div class="mt-8 flex flex-wrap gap-3">
             <a href="/contact" class="accent-btn px-8 py-3 rounded-2xl font-semibold">Free quote</a>
-            <a href="tel:<?= PHONE ?>" class="px-8 py-3 rounded-2xl bg-white text-[#0a2540] font-semibold"><?= PHONE ?></a>
+            <a href="tel:<?= PHONE ?>" class="px-8 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= PHONE ?></a>
             <a href="#areas" class="px-8 py-3 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Areas covered</a>
         </div>
     </div>
@@ -50,7 +50,7 @@ $crumbs = [
 
     <div class="mt-6 flex flex-wrap gap-2">
         <?php foreach ($standards as $s): ?>
-            <span class="px-3 py-1.5 rounded-full bg-[#0a2540]/5 text-[#0a2540] text-xs font-semibold border"><?= htmlspecialchars($s) ?></span>
+            <span class="px-3 py-1.5 rounded-full bg-[#0B1F3A]/5 text-[#0B1F3A] text-xs font-semibold border"><?= htmlspecialchars($s) ?></span>
         <?php endforeach; ?>
     </div>
 

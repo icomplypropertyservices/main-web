@@ -78,7 +78,7 @@ echo hmoBreadcrumbJsonLd($crumbs);
 echo hmoFaqJsonLd($faqs);
 ?>
 
-<section class="relative overflow-hidden bg-[#0a2540] text-white">
+<section class="relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 20% 20%,#ff6b00,transparent 40%),radial-gradient(circle at 80% 0%,#3b82f6,transparent 35%);"></div>
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
         <?= hmoHeroBreadcrumbs($crumbs) ?>
@@ -97,7 +97,7 @@ echo hmoFaqJsonLd($faqs);
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#variants" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Compare packs</a>
-                <a href="#quote" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">Free quote</a>
+                <a href="#quote" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">Free quote</a>
                 <a href="<?= htmlspecialchars($wa, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
             </div>
             <p class="mt-5 text-sm text-white/60">Pricing is <strong class="text-white">POA</strong>. We do not publish invented catalogue prices. Not legal advice.</p>
@@ -128,7 +128,7 @@ echo hmoFaqJsonLd($faqs);
                     <span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full <?= !empty($variant['highlight']) ? 'bg-[#ff6b00] text-white' : 'bg-zinc-100 text-zinc-700' ?>"><?= htmlspecialchars($variant['badge'], ENT_QUOTES, 'UTF-8') ?></span>
                     <div class="text-right shrink-0">
                         <div class="text-xs uppercase tracking-wider text-zinc-500">From</div>
-                        <div class="text-xl font-semibold text-[#0a2540]"><?= htmlspecialchars($variant['price'], ENT_QUOTES, 'UTF-8') ?></div>
+                        <div class="text-xl font-semibold text-[#0B1F3A]"><?= htmlspecialchars($variant['price'], ENT_QUOTES, 'UTF-8') ?></div>
                     </div>
                 </div>
                 <h3 class="text-2xl font-semibold tracking-tight text-black mt-4"><?= htmlspecialchars($variant['name'], ENT_QUOTES, 'UTF-8') ?></h3>
@@ -139,8 +139,8 @@ echo hmoFaqJsonLd($faqs);
                     <?php endforeach; ?>
                 </ul>
                 <div class="mt-6 flex flex-wrap gap-2">
-                    <a href="<?= htmlspecialchars(url($variant['path']), ENT_QUOTES, 'UTF-8') ?>" class="px-5 py-2.5 rounded-2xl <?= !empty($variant['highlight']) ? 'bg-[#ff6b00] hover:bg-orange-600 text-white' : 'border border-zinc-200 text-black hover:border-[#0a2540]' ?> font-semibold text-sm">Package details</a>
-                    <a href="#quote" class="px-5 py-2.5 rounded-2xl border border-zinc-200 font-semibold text-sm text-black hover:border-[#0a2540]">Quote</a>
+                    <a href="<?= htmlspecialchars(url($variant['path']), ENT_QUOTES, 'UTF-8') ?>" class="px-5 py-2.5 rounded-2xl <?= !empty($variant['highlight']) ? 'bg-[#ff6b00] hover:bg-orange-600 text-white' : 'border border-zinc-200 text-black hover:border-[#0B1F3A]' ?> font-semibold text-sm">Package details</a>
+                    <a href="#quote" class="px-5 py-2.5 rounded-2xl border border-zinc-200 font-semibold text-sm text-black hover:border-[#0B1F3A]">Quote</a>
                 </div>
             </article>
         <?php endforeach; ?>

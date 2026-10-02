@@ -319,9 +319,14 @@ function hmoLinkChipsHtml(array $links = []): string
     }
     $html = '<div class="flex flex-wrap gap-2">';
     foreach ($links as $link) {
-        $html .= '<a href="' . htmlspecialchars($link['href'], ENT_QUOTES, 'UTF-8') . '"'
+        $label = trim((string)($link['label'] ?? $link['name'] ?? ''));
+        $href = trim((string)($link['href'] ?? ''));
+        if ($label === '' || $href === '') {
+            continue;
+        }
+        $html .= '<a href="' . htmlspecialchars($href, ENT_QUOTES, 'UTF-8') . '"'
             . ' class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00] transition">'
-            . htmlspecialchars($link['label'], ENT_QUOTES, 'UTF-8') . '</a>';
+            . htmlspecialchars($label, ENT_QUOTES, 'UTF-8') . '</a>';
     }
     $html .= '</div>';
     return $html;
@@ -389,8 +394,8 @@ function hmoQuoteFormHtml(string $csrf, string $defaultService, string $placehol
         </form>
         <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm">
             <a href="<?= htmlspecialchars($wa, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-2xl bg-green-600 hover:bg-green-500 text-white font-semibold">WhatsApp</a>
-            <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="px-5 py-2.5 rounded-2xl border border-zinc-300 font-semibold text-black hover:border-[#0a2540]"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
-            <a href="<?= htmlspecialchars(url('/contact'), ENT_QUOTES, 'UTF-8') ?>" class="px-5 py-2.5 rounded-2xl border border-zinc-300 font-semibold text-black hover:border-[#0a2540]">Contact</a>
+            <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="px-5 py-2.5 rounded-2xl border border-zinc-300 font-semibold text-black hover:border-[#0B1F3A]"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+            <a href="<?= htmlspecialchars(url('/contact'), ENT_QUOTES, 'UTF-8') ?>" class="px-5 py-2.5 rounded-2xl border border-zinc-300 font-semibold text-black hover:border-[#0B1F3A]">Contact</a>
         </div>
     </div>
 </section>

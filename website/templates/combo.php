@@ -6,8 +6,11 @@
  * Vars: SERVICE_NAME, SERVICE_SLUG, AREA, AREA_SLUG, SEO_KEYWORDS,
  * MANUFACTURER_TAGS, MANUFACTURER_IMAGES, KEYWORD_IMAGE_1/2/3
  */
+$poaCombo = function_exists('isPoaService') && isPoaService($SERVICE_SLUG);
 $pageTitle = $SERVICE_NAME . ' in ' . $AREA . ' | Icomply Property Services';
-$metaDesc = 'Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing & certification. Local engineers. Free fixed-price quote.';
+$metaDesc = $poaCombo
+    ? ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Price on application after scope. Local North West team from Stockport.')
+    : ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing & certification. Local engineers. Written quote after scope.');
 $metaKeywords = $SEO_KEYWORDS;
 $ogImage = url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
 
@@ -21,6 +24,8 @@ $areaSlugVal = $AREA_SLUG;
 // Use getServiceBlurb / getServiceStandards (config.php ← data/service-meta.json). Do not hardcode $serviceBlurbs.
 $blurb = getServiceBlurb($serviceSlug);
 $standards = getServiceStandards($serviceSlug);
+$svcCopy = function_exists('waterAsbestosServiceCopy') ? waterAsbestosServiceCopy($serviceSlug) : null;
+$areaExtra = function_exists('waterAsbestosAreaIntro') ? waterAsbestosAreaIntro($serviceSlug, $areaName) : '';
 
 // Nearby towns for “popular nearby” note (same service, other areas)
 $nearby = [];
@@ -96,8 +101,10 @@ $schema = [
             ],
             'offers' => [
                 '@type' => 'Offer',
-                'name' => 'Free fixed-price quote — ' . $serviceName . ' in ' . $areaName,
-                'description' => 'Request a free fixed-price quote for ' . $serviceName . ' in ' . $areaName . '.',
+                'name' => ($poaCombo ? 'Price on application — ' : 'Written quote — ') . $serviceName . ' in ' . $areaName,
+                'description' => $poaCombo
+                    ? ('Request a scoped POA quote for ' . $serviceName . ' in ' . $areaName . '. No published fee list.')
+                    : ('Request a written quote for ' . $serviceName . ' in ' . $areaName . '.'),
                 'availability' => 'https://schema.org/InStock',
                 'priceCurrency' => 'GBP',
                 'url' => url('/contact.php'),
@@ -149,8 +156,7 @@ $schema = [
 <script type="application/ld+json"><?= json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
 
 <!-- HERO -->
-<section class="relative overflow-hidden bg-[#0a2540] text-white">
-    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 15% 30%,#ff6b00,transparent 42%),radial-gradient(circle at 85% 10%,#3b82f6,transparent 38%);"></div>
+<section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
         <nav class="text-xs text-white/50 mb-6 flex flex-wrap gap-2 items-center" aria-label="Breadcrumb">
             <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a>
@@ -181,7 +187,7 @@ $schema = [
                        target="_blank" rel="noopener"
                        class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
                     <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>"
-                       class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                       class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
                 </div>
                 <p class="mt-6 text-sm text-white/60"><?= htmlspecialchars($standards, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
@@ -192,7 +198,7 @@ $schema = [
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
                      loading="eager"
                      onerror="this.style.display='none'">
-                <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0a2540]/90 via-[#0a2540]/20 to-transparent">
+                <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-[#0B1F3A]/20 to-transparent">
                     <div class="text-sm text-white/70">Serving <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> &amp; the North West</div>
                     <div class="text-2xl font-semibold mt-1">Local engineers · Fixed-price quotes</div>
                 </div>
@@ -205,15 +211,22 @@ $schema = [
 <section class="bg-white border-b">
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <?php
-        $trust = [
-            ['Local to ' . $areaName, 'Stockport-based engineers covering ' . $areaName . ' and surrounding postcodes'],
-            ['Standards-led', $standards],
-            ['Full certification', 'Documentation for landlords, insurers and fire officers'],
-            ['Fixed-price quotes', 'Clear scope, same-week appointments where capacity allows'],
-        ];
+        $trust = $poaCombo
+            ? [
+                ['Local to ' . $areaName, 'Stockport-based team covering ' . $areaName . ' and surrounding postcodes'],
+                ['Standards-led', $standards],
+                ['File-ready notes', 'Written assessment or survey notes for landlords, agents and dutyholders'],
+                ['POA quotes', 'No invented prices — scoped after we know the property'],
+            ]
+            : [
+                ['Local to ' . $areaName, 'Stockport-based engineers covering ' . $areaName . ' and surrounding postcodes'],
+                ['Standards-led', $standards],
+                ['Full certification', 'Documentation for landlords, insurers and fire officers'],
+                ['Fixed-price quotes', 'Clear scope, same-week appointments where capacity allows'],
+            ];
         foreach ($trust as [$t, $d]): ?>
             <div class="flex gap-3 items-start">
-                <div class="w-10 h-10 rounded-2xl bg-[#0a2540]/10 flex items-center justify-center text-[#0a2540] font-bold shrink-0">✓</div>
+                <div class="w-10 h-10 rounded-2xl bg-[#0B1F3A]/10 flex items-center justify-center text-[#0B1F3A] font-bold shrink-0">✓</div>
                 <div>
                     <div class="font-semibold text-black"><?= htmlspecialchars($t, ENT_QUOTES, 'UTF-8') ?></div>
                     <div class="text-sm text-zinc-600 mt-0.5"><?= htmlspecialchars($d, ENT_QUOTES, 'UTF-8') ?></div>
@@ -231,6 +244,14 @@ $schema = [
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">
                 Expert <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>
             </h2>
+            <?php if ($areaExtra !== ''): ?>
+            <p class="mt-5 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars($areaExtra, ENT_QUOTES, 'UTF-8') ?></p>
+            <?php endif; ?>
+            <?php if (!empty($svcCopy['intro']) && is_array($svcCopy['intro'])): ?>
+                <?php foreach (array_slice($svcCopy['intro'], 0, 2) as $para): ?>
+            <p class="mt-4 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars((string)$para, ENT_QUOTES, 'UTF-8') ?></p>
+                <?php endforeach; ?>
+            <?php else: ?>
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
                 Icomply Property Services provides complete <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong>
                 design, installation, commissioning, maintenance and certification across
@@ -248,6 +269,7 @@ $schema = [
                 If you already have a panel on site in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>,
                 we can inspect, maintain or upgrade it and supply matching certificates.
             </p>
+            <?php endif; ?>
         </div>
         <div class="lg:col-span-2 space-y-4">
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
@@ -273,24 +295,25 @@ $schema = [
 
     <!-- Pillars -->
     <div class="mt-14 grid md:grid-cols-3 gap-6">
+        <?php
+        $comboPillars = !empty($svcCopy['pillars']) && is_array($svcCopy['pillars']) ? $svcCopy['pillars'] : [
+            ['title' => 'Installation & design', 'text' => 'Full design, supply and install of new ' . $serviceName . ' systems to current British Standards for properties in ' . $areaName . '.'],
+            ['title' => 'Maintenance & servicing', 'text' => 'Planned contracts, reactive repairs, battery replacements and panel upgrades for systems already on site in ' . $areaName . '.'],
+            ['title' => 'Testing & certification', 'text' => 'Statutory tests with logbooks, certificates and documentation ready for audits, insurers and landlords.'],
+        ];
+        $cpi = 1;
+        foreach ($comboPillars as $pillar):
+        ?>
         <div class="p-8 bg-white rounded-3xl border hover:border-[#ff6b00] transition">
-            <div class="w-10 h-10 rounded-2xl bg-[#0a2540] text-white flex items-center justify-center font-bold mb-4">1</div>
-            <h3 class="font-semibold text-xl text-black mb-2">Installation &amp; design</h3>
-            <p class="text-sm text-zinc-600">Full design, supply and install of new <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> systems to current British Standards for properties in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>.</p>
+            <div class="w-10 h-10 rounded-2xl bg-[#0B1F3A] text-white flex items-center justify-center font-bold mb-4"><?= $cpi++ ?></div>
+            <h3 class="font-semibold text-xl text-black mb-2"><?= htmlspecialchars((string)$pillar['title'], ENT_QUOTES, 'UTF-8') ?></h3>
+            <p class="text-sm text-zinc-600"><?= htmlspecialchars((string)$pillar['text'], ENT_QUOTES, 'UTF-8') ?></p>
         </div>
-        <div class="p-8 bg-white rounded-3xl border hover:border-[#ff6b00] transition">
-            <div class="w-10 h-10 rounded-2xl bg-[#0a2540] text-white flex items-center justify-center font-bold mb-4">2</div>
-            <h3 class="font-semibold text-xl text-black mb-2">Maintenance &amp; servicing</h3>
-            <p class="text-sm text-zinc-600">Planned contracts, reactive repairs, battery replacements and panel upgrades for systems already on site in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>.</p>
-        </div>
-        <div class="p-8 bg-white rounded-3xl border hover:border-[#ff6b00] transition">
-            <div class="w-10 h-10 rounded-2xl bg-[#0a2540] text-white flex items-center justify-center font-bold mb-4">3</div>
-            <h3 class="font-semibold text-xl text-black mb-2">Testing &amp; certification</h3>
-            <p class="text-sm text-zinc-600">Statutory tests with logbooks, certificates and documentation ready for audits, insurers and landlords.</p>
-        </div>
+        <?php endforeach; ?>
     </div>
 </section>
 
+<?php if (!$poaCombo): ?>
 <!-- MANUFACTURERS -->
 <section class="bg-zinc-50 border-y">
     <div class="max-w-7xl mx-auto px-6 py-16">
@@ -319,6 +342,7 @@ $schema = [
         </div>
     </div>
 </section>
+<?php endif; ?>
 
 <!-- RELATED SERVICES -->
 <section class="max-w-7xl mx-auto px-6 py-16">
@@ -408,11 +432,13 @@ $schema = [
 <?php endif; ?>
 
 <!-- CTA BAND -->
-<section class="bg-[#0a2540] text-white">
+<section class="bg-[#0B1F3A] text-white">
     <div class="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-2 gap-10 items-center">
         <div>
             <h2 class="text-3xl font-semibold tracking-tight">Need <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>?</h2>
-            <p class="mt-3 text-white/75">Free fixed-price quotes. Same-week appointments where capacity allows. Full certification on every job. Tell us your panel brand or system type — we quote fast and book local engineers.</p>
+            <p class="mt-3 text-white/75"><?= $poaCombo
+                ? 'Price on application after we confirm the property in ' . htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') . '. No invented fee list — call, WhatsApp or send the form.'
+                : 'Written quotes after scope. Same-week appointments where capacity allows. Full certification on every job. Tell us your panel brand or system type.' ?></p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="#quote" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold">Request quote</a>
                 <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Quote for ' . $serviceName . ' in ' . $areaName) ?>"
@@ -421,7 +447,7 @@ $schema = [
                 <a href="<?= url('/contact.php?service=' . rawurlencode($serviceName) . '&area=' . rawurlencode($areaName)) ?>"
                    class="px-6 py-3 rounded-2xl bg-white/10 border border-white/20 font-semibold hover:bg-white/15">Contact form</a>
                 <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>"
-                   class="px-6 py-3 rounded-2xl bg-white text-[#0a2540] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                   class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
                 <a href="<?= url('/shop/index.php') ?>" class="px-6 py-3 rounded-2xl bg-white/10 border border-white/20 font-semibold hover:bg-white/15">Trade shop</a>
                 <a href="<?= url('/pages/packages.php') ?>" class="px-6 py-3 rounded-2xl bg-white/10 border border-white/20 font-semibold hover:bg-white/15">Packages</a>
                 <a href="<?= url('/pages/landlords.php') ?>" class="px-6 py-3 rounded-2xl bg-white/10 border border-white/20 font-semibold hover:bg-white/15">Landlords</a>

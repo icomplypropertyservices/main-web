@@ -49,7 +49,7 @@ echo hmoBreadcrumbJsonLd($crumbs);
 echo hmoFaqJsonLd($faqs);
 ?>
 
-<section class="relative overflow-hidden bg-[#0a2540] text-white">
+<section class="relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 20% 20%,#ff6b00,transparent 40%),radial-gradient(circle at 80% 0%,#3b82f6,transparent 35%);"></div>
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
         <?= hmoHeroBreadcrumbs($crumbs) ?>
@@ -65,7 +65,7 @@ echo hmoFaqJsonLd($faqs);
             <p class="mt-6 text-lg md:text-xl text-white/80 max-w-2xl"><?= htmlspecialchars($v['intro'], ENT_QUOTES, 'UTF-8') ?></p>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Request package quote</a>
-                <a href="<?= htmlspecialchars($wa, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener" class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">WhatsApp</a>
+                <a href="<?= htmlspecialchars($wa, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">WhatsApp</a>
                 <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
             </div>
             <p class="mt-5 text-sm text-white/60">From <strong class="text-white">POA</strong> — fixed quote after scope. We do not sell licences.</p>
@@ -140,7 +140,7 @@ echo hmoFaqJsonLd($faqs);
         <div class="grid md:grid-cols-3 gap-8">
             <?php foreach ($steps as [$n, $t, $d]): ?>
                 <div class="text-center px-4">
-                    <div class="w-12 h-12 mx-auto rounded-2xl bg-[#0a2540] text-white font-bold flex items-center justify-center text-lg"><?= htmlspecialchars($n, ENT_QUOTES, 'UTF-8') ?></div>
+                    <div class="w-12 h-12 mx-auto rounded-2xl bg-[#0B1F3A] text-white font-bold flex items-center justify-center text-lg"><?= htmlspecialchars($n, ENT_QUOTES, 'UTF-8') ?></div>
                     <h3 class="mt-4 font-semibold text-xl text-black"><?= htmlspecialchars($t, ENT_QUOTES, 'UTF-8') ?></h3>
                     <p class="mt-2 text-sm text-zinc-600"><?= htmlspecialchars($d, ENT_QUOTES, 'UTF-8') ?></p>
                 </div>

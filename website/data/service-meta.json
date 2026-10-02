@@ -268,5 +268,19 @@
         "blurb": "Office and light commercial fit-out — partitions, services coordination, finishes and compliance.",
         "short": "Office & light commercial fit-out",
         "standards": "Building Regs · fire strategy coordination"
+    },
+    "legionella-risk-assessment": {
+        "blurb": "Legionella risk assessment and water hygiene testing for rented, commercial and multi-occupied water systems. POA after scope.",
+        "short": "Legionella RA & water hygiene — POA",
+        "standards": "HSE ACOP L8 · HSG274 · COSHH / HSWA dutyholder duties",
+        "pricing": "POA",
+        "hero_accent": "Assessed, sampled only if needed, POA."
+    },
+    "asbestos-survey": {
+        "blurb": "Asbestos management and refurbishment surveys with sampling where the scope needs it. POA. Licensed removal is by others.",
+        "short": "Asbestos survey & testing — POA",
+        "standards": "Control of Asbestos Regulations 2012 · duty to manage",
+        "pricing": "POA",
+        "hero_accent": "Surveyed, sampled if needed, POA."
     }
 }

@@ -1,18 +1,32 @@
-# Netlify scaffold for iComply main-web
+# iComply main-web — Netlify (PHP pre-render → static HTML)
 #
-# IMPORTANT (scaffold only):
-# Publishing raw `website/` does NOT execute PHP at request time.
-# Netlify serves static files only. Dynamic PHP pages will not run until
-# a build-time static exporter ships (P1+) and publish points at `dist`.
-# This file enables smoke deploys of existing static assets under website/.
+# Netlify does NOT execute PHP at request time. Publishing raw `website/`
+# served `.php` as source and 404'd extensionless pretty URLs.
+#
+# Build runs `php website/bin/static-export.php`, which renders public
+# routes (including the sitemap keyword matrix) to HTML under `dist/`
+# (also written as `.php` filenames so splat rewrites match the pretty-URL
+# contract). See docs/NETLIFY-MIGRATE.md.
+#
+# Production branch is `main`. GitHub Actions
+# (`.github/workflows/netlify-deploy.yml`) must deploy `--dir=dist`
+# after the same export. See DEPLOY.md.
+#
+# `ignore = "false"` means never skip a build — empty-diff heuristics
+# must not block production after a merge.
 
 [build]
-  command = "# P0: placeholder until static exporter ships; publish existing website static assets for smoke deploy"
-  publish = "website"
-  # Real build will become: php bin/static-export.php && publish = dist
+  command = "php website/bin/static-export.php && php website/bin/check-static-export.php"
+  publish = "dist"
+  ignore = "false"
 
 [build.environment]
   PHP_VERSION = "8.3"
+  SITE_URL = "https://icomplypropertyservices.co.uk"
+
+[context.production]
+  command = "php website/bin/static-export.php && php website/bin/check-static-export.php"
+  publish = "dist"
 
 [[redirects]]
   from = "https://www.icomplypropertyservices.co.uk/*"
@@ -20,24 +34,172 @@
   status = 301
   force = true
 
+# Never expose PHP source / internals if a publish dir is mis-set
 [[redirects]]
-  from = "/shop"
-  to = "/pages/packages"
-  status = 301
+  from = "/config.php"
+  to = "/404.html"
+  status = 404
 
 [[redirects]]
-  from = "/shop/*"
-  to = "/pages/packages"
-  status = 301
+  from = "/config.local.php"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/includes/*"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/bin/*"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/data/*"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/templates/*"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/shop"
+  to = "/shop/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/"
+  to = "/shop/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/fire"
+  to = "/shop/fire/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/fire/"
+  to = "/shop/fire/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/electrical"
+  to = "/shop/electrical/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/electrical/"
+  to = "/shop/electrical/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/security"
+  to = "/shop/security/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/security/"
+  to = "/shop/security/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/gas"
+  to = "/shop/gas/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/gas/"
+  to = "/shop/gas/index.html"
+  status = 200
+  force = true
 
 [[redirects]]
   from = "/products"
+  to = "/products.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/products/"
+  to = "/products.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/about"
+  to = "/pages/about"
+  status = 301
+
+[[redirects]]
+  from = "/about/"
+  to = "/pages/about"
+  status = 301
+
+[[redirects]]
+  from = "/faq"
+  to = "/pages/faq"
+  status = 301
+
+[[redirects]]
+  from = "/faq/"
+  to = "/pages/faq"
+  status = 301
+
+[[redirects]]
+  from = "/packages"
   to = "/pages/packages"
   status = 301
 
 [[redirects]]
-  from = "/products/*"
+  from = "/packages/"
   to = "/pages/packages"
+  status = 301
+
+[[redirects]]
+  from = "/landlords"
+  to = "/pages/landlords"
+  status = 301
+
+[[redirects]]
+  from = "/landlords/"
+  to = "/pages/landlords"
+  status = 301
+
+[[redirects]]
+  from = "/commercial"
+  to = "/pages/commercial"
+  status = 301
+
+[[redirects]]
+  from = "/commercial/"
+  to = "/pages/commercial"
+  status = 301
+
+[[redirects]]
+  from = "/care-homes"
+  to = "/pages/care-homes"
+  status = 301
+
+[[redirects]]
+  from = "/care-homes/"
+  to = "/pages/care-homes"
   status = 301
 
 [[redirects]]
@@ -111,6 +273,30 @@
   status = 301
 
 [[redirects]]
+  from = "/manifest.webmanifest"
+  to = "/manifest.webmanifest"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/site.webmanifest"
+  to = "/site.webmanifest"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/manifest.json"
+  to = "/manifest.json"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/assets/css/site.css"
+  to = "/assets/css/site.css"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/sitemap-*.xml"
   to = "/sitemap.xml"
   status = 301
@@ -125,13 +311,271 @@
   to = "/assets/images/services/fire-alarms.jpg"
   status = 200
 
+# Pretty URLs → pre-rendered HTML (stored as .php).
+# force=true on these hubs so a child-file directory (pages/areas/*)
+# cannot 301 /pages/areas → /pages/areas/. Splat has no force: /assets wins.
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/privacy/"
+  to = "/privacy.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/terms"
+  to = "/terms.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/terms/"
+  to = "/terms.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/contact/"
+  to = "/contact.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/about"
+  to = "/pages/about.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/about/"
+  to = "/pages/about.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/areas"
+  to = "/pages/areas.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/areas/"
+  to = "/pages/areas.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/services"
+  to = "/pages/services.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/services/"
+  to = "/pages/services.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/manufacturers"
+  to = "/pages/manufacturers.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/manufacturers/"
+  to = "/pages/manufacturers.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/resources"
+  to = "/pages/resources.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/resources/"
+  to = "/pages/resources.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords"
+  to = "/pages/keywords.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/"
+  to = "/pages/keywords.php"
+  status = 200
+  force = true
+
+# Child town files must not 301 /pages/keywords/{slug} → trailing slash.
+[[redirects]]
+  from = "/pages/keywords/:slug"
+  to = "/pages/keywords/:slug.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/:slug/"
+  to = "/pages/keywords/:slug.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/:splat.php"
+  status = 200
+
+[[headers]]
+  for = "/*.php"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/privacy"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/terms"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/contact"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/fire"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/fire/"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/electrical"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/electrical/"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/security"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/security/"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/gas"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/gas/"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/assets/*.css"
+  [headers.values]
+    Content-Type = "text/css; charset=utf-8"
+
+[[headers]]
+  for = "/shop/assets/*.svg"
+  [headers.values]
+    Content-Type = "image/svg+xml"
+
+[[headers]]
+  for = "/products"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/thank-you"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/pages/*"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
 [[headers]]
   for = "/robots.txt"
   [headers.values]
     Cache-Control = "public, max-age=3600"
 
 [[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Content-Type = "text/css; charset=utf-8"
+
+[[headers]]
   for = "/manifest.json"
+  [headers.values]
+    Content-Type = "application/manifest+json; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/manifest.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/site.webmanifest"
   [headers.values]
     Content-Type = "application/manifest+json; charset=utf-8"
     Cache-Control = "public, max-age=3600"

@@ -99,7 +99,7 @@ echo hmoBreadcrumbJsonLd($crumbs);
 echo hmoFaqJsonLd($faqs);
 ?>
 
-<section class="relative overflow-hidden bg-[#0a2540] text-white">
+<section class="relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 20% 20%,#ff6b00,transparent 40%),radial-gradient(circle at 80% 0%,#3b82f6,transparent 35%);"></div>
     <div class="relative max-w-7xl mx-auto px-6 py-12 md:py-16">
         <?= hmoHeroBreadcrumbs($crumbs) ?>
@@ -139,7 +139,7 @@ echo hmoFaqJsonLd($faqs);
         <?php foreach ($checklist as $i => $item): ?>
         <div class="bg-white border border-zinc-200 rounded-3xl p-6 md:p-7">
             <div class="flex gap-4 items-start">
-                <div class="w-10 h-10 rounded-2xl bg-[#0a2540] text-white font-bold flex items-center justify-center shrink-0"><?= $i + 1 ?></div>
+                <div class="w-10 h-10 rounded-2xl bg-[#0B1F3A] text-white font-bold flex items-center justify-center shrink-0"><?= $i + 1 ?></div>
                 <div>
                     <h2 class="text-xl font-semibold tracking-tight text-black"><?= htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8') ?></h2>
                     <p class="text-zinc-700 mt-2"><?= htmlspecialchars($item['body'], ENT_QUOTES, 'UTF-8') ?></p>
@@ -166,7 +166,7 @@ echo hmoFaqJsonLd($faqs);
 
     <?= resourceRelatedHtml('hmo-licence-compliance-checklist') ?>
 
-    <div class="mt-10 bg-[#0a2540] text-white p-8 md:p-10 rounded-3xl text-center">
+    <div class="mt-10 bg-[#0B1F3A] text-white p-8 md:p-10 rounded-3xl text-center">
         <h2 class="text-2xl md:text-3xl font-semibold mb-3">Need the certificates behind the checklist?</h2>
         <p class="text-white/85 max-w-md mx-auto mb-6">Tell us the postcode, storeys and which documents are due. Quotes are POA until scope is agreed.</p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">

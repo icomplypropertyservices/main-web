@@ -75,6 +75,7 @@ function routerDispatchVirtual(string $path): bool {
         '/pages/areas' => ['/pages/areas', '/pages/areas/index'],
         '/pages/resources' => ['/pages/resources', '/pages/resources/index'],
         '/shop' => ['/shop/index'],
+        '/products' => ['/pages/products', '/products'],
     ];
     if (isset($indexes[$path])) {
         foreach ($indexes[$path] as $candidate) {
@@ -159,9 +160,28 @@ function routerDispatchVirtual(string $path): bool {
         $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages', 'hmo-eicr', 'hmo-fra', 'hmo-gas-safety', 'hmo-fire-alarms', 'hmo-emergency-lighting', 'hmo-fire-doors', 'hmo-landlords'];
         if (!in_array($slug, $reserved, true) && isset(getServices()[$slug])) {
             header('Location: ' . url('/pages/services/' . $slug), true, 301);
-            exit;
+            icomplyRequestExit();
+            return true;
         }
     }
+
+    // Trade PDPs (Netlify also rewrites these in _redirects before splat)
+    if (preg_match('#^/products/product/([a-z0-9\-]+)$#', $path, $m)) {
+        $_GET['handle'] = $m[1];
+        return routerTryFile('/products/product');
+    }
+    if (preg_match('#^/shop/products/([a-z0-9\-]+)$#', $path, $m)) {
+        $_GET['handle'] = $m[1];
+        return routerTryFile('/shop/products');
+    }
+    // Product sitemaps
+    if ($path === '/products/sitemap') {
+        return routerTryFile('/products/sitemap');
+    }
+    if ($path === '/shop/sitemap') {
+        return routerTryFile('/shop/sitemap');
+    }
+
     return false;
 }
 
@@ -183,7 +203,8 @@ function routerHandleRequest(): void {
     ];
     if (isset($legacyAliases[$path])) {
         header('Location: ' . url($legacyAliases[$path]), true, 301);
-        exit;
+        icomplyRequestExit();
+        return;
     }
 
     // Home

@@ -239,9 +239,8 @@ $contactSchema = [
 ?>
 <script type="application/ld+json"><?= json_encode($contactSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
 
-<!-- HERO -->
-<section class="relative overflow-hidden bg-[#0a2540] text-white">
-    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 20% 20%,#ff6b00,transparent 40%),radial-gradient(circle at 80% 0%,#3b82f6,transparent 35%);"></div>
+<!-- HERO — solid navy; never white-on-peach -->
+<section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
         <nav class="text-xs text-white/50 mb-6 flex flex-wrap gap-2 items-center" aria-label="Breadcrumb">
             <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a>
@@ -264,7 +263,7 @@ $contactSchema = [
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#quote-form" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Send a message</a>
                     <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
-                       class="px-8 py-4 rounded-2xl bg-white text-[#0a2540] font-semibold hover:bg-zinc-100">
+                       class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">
                         Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>
                     </a>
                     <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener"
@@ -329,7 +328,7 @@ $contactSchema = [
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <?php foreach ($trust as $t): ?>
             <div class="flex gap-3 items-start">
-                <div class="w-10 h-10 rounded-2xl bg-[#0a2540]/10 flex items-center justify-center text-[#0a2540] font-bold shrink-0">✓</div>
+                <div class="w-10 h-10 rounded-2xl bg-[#0B1F3A]/10 flex items-center justify-center text-[#0B1F3A] font-bold shrink-0">✓</div>
                 <div>
                     <div class="font-semibold text-black"><?= htmlspecialchars($t['title'], ENT_QUOTES, 'UTF-8') ?></div>
                     <div class="text-sm text-zinc-600 mt-0.5"><?= htmlspecialchars($t['text'], ENT_QUOTES, 'UTF-8') ?></div>
@@ -429,7 +428,7 @@ $contactSchema = [
 
             <!-- Sidebar CTAs -->
             <div class="lg:col-span-2 space-y-5">
-                <div class="bg-[#0a2540] text-white rounded-3xl p-6 md:p-8">
+                <div class="bg-[#0B1F3A] text-white rounded-3xl p-6 md:p-8">
                     <h3 class="text-xl font-semibold tracking-tight">Prefer to talk?</h3>
                     <p class="mt-2 text-white/75 text-sm">Same-week appointments often available. Phone or WhatsApp for the fastest route.</p>
                     <div class="mt-6 space-y-3">
@@ -451,10 +450,10 @@ $contactSchema = [
                     <h3 class="text-lg font-semibold text-black mt-2">Services &amp; brands</h3>
                     <p class="mt-2 text-sm text-zinc-600">Not sure what you need? Browse services or manufacturer pages first.</p>
                     <div class="mt-5 flex flex-col gap-2">
-                        <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#0a2540] hover:text-[#ff6b00] transition">All services →</a>
-                        <a href="<?= url('/pages/manufacturers/index.php') ?>" class="text-sm font-semibold text-[#0a2540] hover:text-[#ff6b00] transition">Manufacturers we install →</a>
-                        <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#0a2540] hover:text-[#ff6b00] transition">Areas we cover →</a>
-                        <a href="<?= url('/shop/index.php') ?>" class="text-sm font-semibold text-[#0a2540] hover:text-[#ff6b00] transition">Trade shop →</a>
+                        <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#0B1F3A] hover:text-[#ff6b00] transition">All services →</a>
+                        <a href="<?= url('/pages/manufacturers/index.php') ?>" class="text-sm font-semibold text-[#0B1F3A] hover:text-[#ff6b00] transition">Manufacturers we install →</a>
+                        <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#0B1F3A] hover:text-[#ff6b00] transition">Areas we cover →</a>
+                        <a href="/shop/" class="text-sm font-semibold text-[#0B1F3A] hover:text-[#ff6b00] transition">Trade shop →</a>
                     </div>
                 </div>
 

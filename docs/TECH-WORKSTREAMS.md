@@ -4,7 +4,8 @@
 
 ## Stream 1 — Website upgrade (P0 after apex claim)
 - [ ] Apex/www verified (Jack TXT / release old account)
-- [ ] Netlify site connected to `main-web`; P0 smoke publish = `website` (no PHP at request time)
+- [ ] Netlify site connected to `main-web`; P1 publish = `dist` from `php website/bin/static-export.php` (pretty URLs; no PHP at request time)
+- [ ] GitHub Actions production deploy on every `main` push (`NETLIFY_AUTH_TOKEN` + `NETLIFY_SITE_ID` — see `DEPLOY.md`)
 - [ ] `SITE_URL=https://icomplypropertyservices.co.uk` on Netlify (not Vercel) for production
 - [ ] Confirm robots/sitemap on apex; clear accidental noindex on production host
 - [ ] Sticky Call + WhatsApp (partially present in header; harden mobile sticky)
@@ -34,5 +35,5 @@ Separate repo `engineers-portal` (seeds frozen). Scaffold after Cursor SCM conne
 ## Blockers
 - Domain claim TXT with Jack
 - Netlify domain attach + account access (Jack)
-- Static exporter (P1) before real Netlify production publish
+- Confirm pretty URLs on Netlify preview (`/privacy`, `/pages/about`, `/`) before merging HMO PR #3
 - Cursor GitHub SCM connect required for cloud coding agents
