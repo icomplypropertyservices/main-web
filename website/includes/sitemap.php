@@ -2,7 +2,8 @@
 /**
  * Compact, accurate sitemap — core pages + shop/products + service hubs +
  * areas + manufacturers + keyword hubs + featured electrical/gas keyword×town.
- * Never lists /pages/{service}/{town} (those 404 as sitemap locs).
+ * AOV service×town pages for UK mainland towns over 10,000 people are listed
+ * because those files exist. Other /pages/{service}/{town} URLs stay out.
  * Never dumps the full keyword×area matrix (that 500'd live).
  */
 declare(strict_types=1);
@@ -98,17 +99,19 @@ function icomplySitemapEntries(): array
             return;
         }
         // Hard reject /pages/{service}/{town} even if a leftover matrix file
-        // sits in dist/. Keep only real hub prefixes.
+        // sits in dist/. AOV town pages are the exception: each mainland town
+        // over 10,000 people has a real page. Keep hub prefixes as well.
+        $isAovTownLoc = (bool)preg_match('#^/pages/aov-air-handling/[a-z0-9\-]+$#', $path);
         if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
             $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages'];
-            if (!in_array($m[1], $okPrefix, true)) {
+            if (!in_array($m[1], $okPrefix, true) && !$isAovTownLoc) {
                 return;
             }
         }
         // Keyword hubs + featured keyword×town are generated at export time.
-        // Do not require a source PHP file for those catalogue locs.
+        // AOV town locs are catalogue pages. Do not require a source PHP file.
         $isKeywordLoc = (bool)preg_match('#^/pages/keywords(/[a-z0-9\-]+){1,2}$#', $path);
-        if (!$isKeywordLoc && !icomplySitemapUrlHasFile($path)) {
+        if (!$isKeywordLoc && !$isAovTownLoc && !icomplySitemapUrlHasFile($path)) {
             return;
         }
         $seen[$path] = true;
@@ -255,6 +258,18 @@ function icomplySitemapEntries(): array
                         $add('/pages/keywords/' . $kwSlug . '/' . areaSlug($town), '0.62');
                     }
                 }
+            }
+        }
+        if (function_exists('getAovNationwideAreaRecords') && function_exists('areaSlug')) {
+            foreach (getAovNationwideAreaRecords() as $row) {
+                $slug = trim((string)($row['slug'] ?? ''));
+                if ($slug === '') {
+                    $slug = areaSlug((string)($row['name'] ?? ''));
+                }
+                if ($slug === '') {
+                    continue;
+                }
+                $add('/pages/aov-air-handling/' . $slug, '0.64');
             }
         }
     }

@@ -1,6 +1,6 @@
 {
   "threshold": 10000,
-  "rule": "Census 2021 usual resident population greater than 10000",
+  "rule": "UK mainland towns and cities with usual resident population greater than 10000. England and Wales use Census 2021 built-up areas. Scotland uses Census 2022 localities.",
   "sources": [
     {
       "id": "ons-bua-census-2021",
@@ -9,9 +9,13 @@
     {
       "id": "ons-ts001-census-2021-london-borough",
       "note": "ONS Census 2021 TS001 usual residents (household plus communal establishment) for London boroughs. ONS does not identify individual London settlements in the built-up area tables."
+    },
+    {
+      "id": "nrs-census-2022-locality",
+      "note": "NRS Census 2022 locality usual residents (popcount). Localities are the named towns and cities. A wider settlement that only passes 10,000 by joining neighbouring villages is not added on its own."
     }
   ],
-  "not_in_this_slice": "Scotland and Northern Ireland are not in these England and Wales sources, so they are not in this first nationwide slice.",
+  "not_in_this_slice": "Northern Ireland is not on the UK mainland, so it is not included.",
   "towns": [
     {
       "name": "Abbots Langley and Kings Langley",
@@ -33,6 +37,17 @@
       "code": "W45000431",
       "source": "ons-bua-census-2021",
       "bua_name": "Aberdare",
+      "aliases": []
+    },
+    {
+      "name": "Aberdeen",
+      "slug": "aberdeen",
+      "population": 192956,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000002",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Aberdeen",
       "aliases": []
     },
     {
@@ -113,6 +128,17 @@
       "aliases": []
     },
     {
+      "name": "Airdrie",
+      "slug": "airdrie",
+      "population": 35846,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000011",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Airdrie",
+      "aliases": []
+    },
+    {
       "name": "Aldershot",
       "slug": "aldershot",
       "population": 39825,
@@ -132,6 +158,17 @@
       "code": "E63002681",
       "source": "ons-bua-census-2021",
       "bua_name": "Aldridge",
+      "aliases": []
+    },
+    {
+      "name": "Alloa",
+      "slug": "alloa",
+      "population": 14705,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000016",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Alloa",
       "aliases": []
     },
     {
@@ -198,6 +235,39 @@
       "code": "E63005681",
       "source": "ons-bua-census-2021",
       "bua_name": "Andover",
+      "aliases": []
+    },
+    {
+      "name": "Arbroath",
+      "slug": "arbroath",
+      "population": 23481,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000024",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Arbroath",
+      "aliases": []
+    },
+    {
+      "name": "Ardrossan",
+      "slug": "ardrossan",
+      "population": 10332,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000027",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Ardrossan",
+      "aliases": []
+    },
+    {
+      "name": "Armadale",
+      "slug": "armadale",
+      "population": 12568,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000028",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Armadale",
       "aliases": []
     },
     {
@@ -366,6 +436,17 @@
       "aliases": []
     },
     {
+      "name": "Ayr",
+      "slug": "ayr",
+      "population": 46182,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000039",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Ayr",
+      "aliases": []
+    },
+    {
       "name": "Bacup",
       "slug": "bacup",
       "population": 13560,
@@ -520,6 +601,17 @@
       "aliases": []
     },
     {
+      "name": "Barrhead",
+      "slug": "barrhead",
+      "population": 17586,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000059",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Barrhead",
+      "aliases": []
+    },
+    {
       "name": "Barrow-in-Furness",
       "slug": "barrow-in-furness",
       "population": 55255,
@@ -586,6 +678,17 @@
       "aliases": []
     },
     {
+      "name": "Bathgate",
+      "slug": "bathgate",
+      "population": 22222,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000060",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Bathgate",
+      "aliases": []
+    },
+    {
       "name": "Batley",
       "slug": "batley",
       "population": 44500,
@@ -605,6 +708,17 @@
       "code": "E63004769",
       "source": "ons-bua-census-2021",
       "bua_name": "Beaconsfield",
+      "aliases": []
+    },
+    {
+      "name": "Bearsden",
+      "slug": "bearsden",
+      "population": 28486,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000061",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Bearsden",
       "aliases": []
     },
     {
@@ -660,6 +774,17 @@
       "code": "E63002057",
       "source": "ons-bua-census-2021",
       "bua_name": "Beeston (Broxtowe)",
+      "aliases": []
+    },
+    {
+      "name": "Bellshill",
+      "slug": "bellshill",
+      "population": 19500,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000065",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Bellshill",
       "aliases": []
     },
     {
@@ -916,6 +1041,28 @@
       "aliases": []
     },
     {
+      "name": "Bishopbriggs",
+      "slug": "bishopbriggs",
+      "population": 23753,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000069",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Bishopbriggs",
+      "aliases": []
+    },
+    {
+      "name": "Bishopton",
+      "slug": "bishopton",
+      "population": 10043,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000070",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Bishopton",
+      "aliases": []
+    },
+    {
       "name": "Blaby and Whetstone",
       "slug": "blaby-and-whetstone",
       "population": 14080,
@@ -971,6 +1118,17 @@
       "aliases": []
     },
     {
+      "name": "Blantyre",
+      "slug": "blantyre",
+      "population": 16538,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000078",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Blantyre",
+      "aliases": []
+    },
+    {
       "name": "Blaydon",
       "slug": "blaydon",
       "population": 14240,
@@ -1015,6 +1173,17 @@
       "aliases": []
     },
     {
+      "name": "Bo'ness",
+      "slug": "bo-ness",
+      "population": 14885,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000079",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Bo'ness",
+      "aliases": []
+    },
+    {
       "name": "Bodmin",
       "slug": "bodmin",
       "population": 16910,
@@ -1056,6 +1225,17 @@
       "code": "E63001109",
       "source": "ons-bua-census-2021",
       "bua_name": "Bolton (Bolton)",
+      "aliases": []
+    },
+    {
+      "name": "Bonnyrigg",
+      "slug": "bonnyrigg",
+      "population": 18094,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000083",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Bonnyrigg",
       "aliases": []
     },
     {
@@ -1422,6 +1602,17 @@
       "aliases": []
     },
     {
+      "name": "Broxburn",
+      "slug": "broxburn",
+      "population": 15418,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000100",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Broxburn",
+      "aliases": []
+    },
+    {
       "name": "Buckhurst Hill",
       "slug": "buckhurst-hill",
       "population": 11750,
@@ -1642,6 +1833,17 @@
       "aliases": []
     },
     {
+      "name": "Cambuslang",
+      "slug": "cambuslang",
+      "population": 33252,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000114",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Cambuslang",
+      "aliases": []
+    },
+    {
       "name": "Camden",
       "slug": "camden",
       "population": 210136,
@@ -1719,6 +1921,17 @@
       "aliases": []
     },
     {
+      "name": "Carluke",
+      "slug": "carluke",
+      "population": 14105,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000122",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Carluke",
+      "aliases": []
+    },
+    {
       "name": "Carmarthen",
       "slug": "carmarthen",
       "population": 16455,
@@ -1727,6 +1940,17 @@
       "code": "W45000308",
       "source": "ons-bua-census-2021",
       "bua_name": "Carmarthen",
+      "aliases": []
+    },
+    {
+      "name": "Carnoustie",
+      "slug": "carnoustie",
+      "population": 11359,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000125",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Carnoustie",
       "aliases": []
     },
     {
@@ -2216,6 +2440,17 @@
       "aliases": []
     },
     {
+      "name": "Clydebank",
+      "slug": "clydebank",
+      "population": 26221,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000143",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Clydebank",
+      "aliases": []
+    },
+    {
       "name": "Coalville",
       "slug": "coalville",
       "population": 21980,
@@ -2224,6 +2459,17 @@
       "code": "E63002408",
       "source": "ons-bua-census-2021",
       "bua_name": "Coalville",
+      "aliases": []
+    },
+    {
+      "name": "Coatbridge",
+      "slug": "coatbridge",
+      "population": 42264,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000148",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Coatbridge",
       "aliases": []
     },
     {
@@ -2403,6 +2649,17 @@
       "aliases": []
     },
     {
+      "name": "Cowdenbeath and Lumphinnans",
+      "slug": "cowdenbeath-and-lumphinnans",
+      "population": 11969,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000159",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Cowdenbeath and Lumphinnans",
+      "aliases": []
+    },
+    {
       "name": "Cowes",
       "slug": "cowes",
       "population": 14365,
@@ -2524,6 +2781,17 @@
       "aliases": []
     },
     {
+      "name": "Cumbernauld",
+      "slug": "cumbernauld",
+      "population": 50498,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000176",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Cumbernauld",
+      "aliases": []
+    },
+    {
       "name": "Cwmbrân",
       "slug": "cwmbr-n",
       "population": 47090,
@@ -2532,6 +2800,17 @@
       "code": "W45000502",
       "source": "ons-bua-census-2021",
       "bua_name": "Cwmbrân",
+      "aliases": []
+    },
+    {
+      "name": "Dalkeith",
+      "slug": "dalkeith",
+      "population": 15146,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000183",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Dalkeith",
       "aliases": []
     },
     {
@@ -2843,6 +3122,61 @@
       "aliases": []
     },
     {
+      "name": "Dumbarton",
+      "slug": "dumbarton",
+      "population": 21036,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000205",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Dumbarton",
+      "aliases": []
+    },
+    {
+      "name": "Dumfries",
+      "slug": "dumfries",
+      "population": 33676,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000206",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Dumfries",
+      "aliases": []
+    },
+    {
+      "name": "Dunbar",
+      "slug": "dunbar",
+      "population": 10777,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000207",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Dunbar",
+      "aliases": []
+    },
+    {
+      "name": "Dundee",
+      "slug": "dundee",
+      "population": 147345,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000210",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Dundee",
+      "aliases": []
+    },
+    {
+      "name": "Dunfermline",
+      "slug": "dunfermline",
+      "population": 56027,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000212",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Dunfermline",
+      "aliases": []
+    },
+    {
       "name": "Dunscroft and Hatfield",
       "slug": "dunscroft-and-hatfield",
       "population": 14000,
@@ -2920,6 +3254,17 @@
       "aliases": []
     },
     {
+      "name": "East Kilbride",
+      "slug": "east-kilbride",
+      "population": 76607,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000226",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "East Kilbride",
+      "aliases": []
+    },
+    {
       "name": "Eastbourne",
       "slug": "eastbourne",
       "population": 99180,
@@ -2975,6 +3320,17 @@
       "aliases": []
     },
     {
+      "name": "Edinburgh",
+      "slug": "edinburgh",
+      "population": 493736,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000233",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Edinburgh",
+      "aliases": []
+    },
+    {
       "name": "Egglescliffe",
       "slug": "egglescliffe",
       "population": 10250,
@@ -2997,6 +3353,17 @@
       "aliases": []
     },
     {
+      "name": "Elgin",
+      "slug": "elgin",
+      "population": 24640,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000236",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Elgin",
+      "aliases": []
+    },
+    {
       "name": "Elland",
       "slug": "elland",
       "population": 15785,
@@ -3016,6 +3383,17 @@
       "code": "E63001554",
       "source": "ons-bua-census-2021",
       "bua_name": "Ellesmere Port",
+      "aliases": []
+    },
+    {
+      "name": "Ellon",
+      "slug": "ellon",
+      "population": 10126,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000238",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Ellon",
       "aliases": []
     },
     {
@@ -3082,6 +3460,17 @@
       "code": "E63005334",
       "source": "ons-bua-census-2021",
       "bua_name": "Epsom",
+      "aliases": []
+    },
+    {
+      "name": "Erskine",
+      "slug": "erskine",
+      "population": 14880,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000241",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Erskine",
       "aliases": []
     },
     {
@@ -3159,6 +3548,17 @@
       "code": "E63001254",
       "source": "ons-bua-census-2021",
       "bua_name": "Failsworth",
+      "aliases": []
+    },
+    {
+      "name": "Falkirk",
+      "slug": "falkirk",
+      "population": 34627,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000246",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Falkirk",
       "aliases": []
     },
     {
@@ -3360,6 +3760,17 @@
       "aliases": []
     },
     {
+      "name": "Forfar",
+      "slug": "forfar",
+      "population": 13801,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000256",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Forfar",
+      "aliases": []
+    },
+    {
       "name": "Formby",
       "slug": "formby",
       "population": 22890,
@@ -3379,6 +3790,17 @@
       "code": "E63004911",
       "source": "ons-bua-census-2021",
       "bua_name": "Frampton Cotterell and Winterbourne",
+      "aliases": []
+    },
+    {
+      "name": "Fraserburgh",
+      "slug": "fraserburgh",
+      "population": 12921,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000263",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Fraserburgh",
       "aliases": []
     },
     {
@@ -3426,6 +3848,17 @@
       "aliases": []
     },
     {
+      "name": "Galashiels",
+      "slug": "galashiels",
+      "population": 10075,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000267",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Galashiels",
+      "aliases": []
+    },
+    {
       "name": "Garforth",
       "slug": "garforth",
       "population": 15155,
@@ -3448,6 +3881,17 @@
       "aliases": []
     },
     {
+      "name": "Giffnock",
+      "slug": "giffnock",
+      "population": 11964,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000277",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Giffnock",
+      "aliases": []
+    },
+    {
       "name": "Gillingham (Dorset)",
       "slug": "gillingham-dorset",
       "population": 11010,
@@ -3467,6 +3911,28 @@
       "code": "E63005204",
       "source": "ons-bua-census-2021",
       "bua_name": "Gillingham (Medway)",
+      "aliases": []
+    },
+    {
+      "name": "Glasgow",
+      "slug": "glasgow",
+      "population": 617794,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000280",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Glasgow",
+      "aliases": []
+    },
+    {
+      "name": "Glenrothes",
+      "slug": "glenrothes",
+      "population": 37468,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000287",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Glenrothes",
       "aliases": []
     },
     {
@@ -3569,6 +4035,28 @@
       "aliases": []
     },
     {
+      "name": "Gourock",
+      "slug": "gourock",
+      "population": 10077,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000291",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Gourock",
+      "aliases": []
+    },
+    {
+      "name": "Grangemouth",
+      "slug": "grangemouth",
+      "population": 16016,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000293",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Grangemouth",
+      "aliases": []
+    },
+    {
       "name": "Grantham",
       "slug": "grantham",
       "population": 44905,
@@ -3668,6 +4156,17 @@
       "aliases": []
     },
     {
+      "name": "Greenock",
+      "slug": "greenock",
+      "population": 42866,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000298",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Greenock",
+      "aliases": []
+    },
+    {
       "name": "Greenwich",
       "slug": "greenwich",
       "population": 289068,
@@ -3734,6 +4233,17 @@
       "aliases": []
     },
     {
+      "name": "Haddington",
+      "slug": "haddington",
+      "population": 11354,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000302",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Haddington",
+      "aliases": []
+    },
+    {
       "name": "Hadfield",
       "slug": "hadfield",
       "population": 16275,
@@ -3797,6 +4307,17 @@
       "code": "E63004016",
       "source": "ons-bua-census-2021",
       "bua_name": "Halstead (Braintree)",
+      "aliases": []
+    },
+    {
+      "name": "Hamilton",
+      "slug": "hamilton",
+      "population": 55157,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000306",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Hamilton",
       "aliases": []
     },
     {
@@ -3998,6 +4519,17 @@
       "aliases": []
     },
     {
+      "name": "Hawick",
+      "slug": "hawick",
+      "population": 10728,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000309",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Hawick",
+      "aliases": []
+    },
+    {
       "name": "Haxby",
       "slug": "haxby",
       "population": 10180,
@@ -4094,6 +4626,17 @@
       "code": "E63006386",
       "source": "ons-bua-census-2021",
       "bua_name": "Hedge End",
+      "aliases": []
+    },
+    {
+      "name": "Helensburgh",
+      "slug": "helensburgh",
+      "population": 14127,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000311",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Helensburgh",
       "aliases": []
     },
     {
@@ -4581,6 +5124,28 @@
       "aliases": []
     },
     {
+      "name": "Inverness",
+      "slug": "inverness",
+      "population": 48248,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000334",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Inverness",
+      "aliases": []
+    },
+    {
+      "name": "Inverurie",
+      "slug": "inverurie",
+      "population": 15106,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000335",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Inverurie",
+      "aliases": []
+    },
+    {
       "name": "Ipswich",
       "slug": "ipswich",
       "population": 151565,
@@ -4600,6 +5165,17 @@
       "code": "E63001334",
       "source": "ons-bua-census-2021",
       "bua_name": "Irlam",
+      "aliases": []
+    },
+    {
+      "name": "Irvine",
+      "slug": "irvine",
+      "population": 33998,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000336",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Irvine",
       "aliases": []
     },
     {
@@ -4633,6 +5209,17 @@
       "code": "E63000094",
       "source": "ons-bua-census-2021",
       "bua_name": "Jarrow",
+      "aliases": []
+    },
+    {
+      "name": "Johnstone",
+      "slug": "johnstone",
+      "population": 16491,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000339",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Johnstone",
       "aliases": []
     },
     {
@@ -4779,6 +5366,39 @@
       "aliases": []
     },
     {
+      "name": "Kilmarnock",
+      "slug": "kilmarnock",
+      "population": 47064,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000351",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Kilmarnock",
+      "aliases": []
+    },
+    {
+      "name": "Kilsyth",
+      "slug": "kilsyth",
+      "population": 10952,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000353",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Kilsyth",
+      "aliases": []
+    },
+    {
+      "name": "Kilwinning",
+      "slug": "kilwinning",
+      "population": 16211,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000354",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Kilwinning",
+      "aliases": []
+    },
+    {
       "name": "King's Lynn",
       "slug": "king-s-lynn",
       "population": 47615,
@@ -4889,6 +5509,28 @@
       "aliases": []
     },
     {
+      "name": "Kirkcaldy and Dysart",
+      "slug": "kirkcaldy-and-dysart",
+      "population": 51117,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000369",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Kirkcaldy and Dysart",
+      "aliases": []
+    },
+    {
+      "name": "Kirkintilloch",
+      "slug": "kirkintilloch",
+      "population": 22037,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000374",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Kirkintilloch",
+      "aliases": []
+    },
+    {
       "name": "Knaresborough",
       "slug": "knaresborough",
       "population": 15785,
@@ -4955,6 +5597,28 @@
       "aliases": []
     },
     {
+      "name": "Larbert",
+      "slug": "larbert",
+      "population": 12682,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000387",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Larbert",
+      "aliases": []
+    },
+    {
+      "name": "Largs",
+      "slug": "largs",
+      "population": 10917,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000388",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Largs",
+      "aliases": []
+    },
+    {
       "name": "Larkfield",
       "slug": "larkfield",
       "population": 26150,
@@ -4963,6 +5627,17 @@
       "code": "E63005388",
       "source": "ons-bua-census-2021",
       "bua_name": "Larkfield",
+      "aliases": []
+    },
+    {
+      "name": "Larkhall",
+      "slug": "larkhall",
+      "population": 15308,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000389",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Larkhall",
       "aliases": []
     },
     {
@@ -5087,6 +5762,17 @@
       "aliases": []
     },
     {
+      "name": "Leven",
+      "slug": "leven",
+      "population": 10087,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000401",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Leven",
+      "aliases": []
+    },
+    {
       "name": "Lewes",
       "slug": "lewes",
       "population": 16060,
@@ -5139,6 +5825,17 @@
       "code": "E63001650",
       "source": "ons-bua-census-2021",
       "bua_name": "Lincoln",
+      "aliases": []
+    },
+    {
+      "name": "Linlithgow",
+      "slug": "linlithgow",
+      "population": 12517,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000405",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Linlithgow",
       "aliases": []
     },
     {
@@ -5227,6 +5924,17 @@
       "code": "E63000932",
       "source": "ons-bua-census-2021",
       "bua_name": "Liversedge",
+      "aliases": []
+    },
+    {
+      "name": "Livingston",
+      "slug": "livingston",
+      "population": 55836,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000407",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Livingston",
       "aliases": []
     },
     {
@@ -5604,6 +6312,17 @@
       "aliases": []
     },
     {
+      "name": "Mayfield",
+      "slug": "mayfield",
+      "population": 14276,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000437",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Mayfield",
+      "aliases": []
+    },
+    {
       "name": "Melksham",
       "slug": "melksham",
       "population": 18280,
@@ -5645,6 +6364,17 @@
       "code": "E09000024",
       "source": "ons-ts001-census-2021-london-borough",
       "bua_name": "Merton",
+      "aliases": []
+    },
+    {
+      "name": "Methil",
+      "slug": "methil",
+      "population": 10703,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000440",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Methil",
       "aliases": []
     },
     {
@@ -5714,6 +6444,17 @@
       "aliases": []
     },
     {
+      "name": "Milngavie",
+      "slug": "milngavie",
+      "population": 12765,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000448",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Milngavie",
+      "aliases": []
+    },
+    {
       "name": "Milton Keynes",
       "slug": "milton-keynes",
       "population": 197340,
@@ -5769,6 +6510,17 @@
       "aliases": []
     },
     {
+      "name": "Montrose",
+      "slug": "montrose",
+      "population": 11251,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000457",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Montrose",
+      "aliases": []
+    },
+    {
       "name": "Morecambe",
       "slug": "morecambe",
       "population": 32750,
@@ -5813,6 +6565,17 @@
       "aliases": []
     },
     {
+      "name": "Motherwell",
+      "slug": "motherwell",
+      "population": 33031,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000462",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Motherwell",
+      "aliases": []
+    },
+    {
       "name": "Mountain Ash",
       "slug": "mountain-ash",
       "population": 13000,
@@ -5832,6 +6595,17 @@
       "code": "E63002415",
       "source": "ons-bua-census-2021",
       "bua_name": "Mountsorrel",
+      "aliases": []
+    },
+    {
+      "name": "Musselburgh",
+      "slug": "musselburgh",
+      "population": 21479,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000468",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Musselburgh",
       "aliases": []
     },
     {
@@ -6085,6 +6859,17 @@
       "code": "E63000283",
       "source": "ons-bua-census-2021",
       "bua_name": "Newton Aycliffe",
+      "aliases": []
+    },
+    {
+      "name": "Newton Mearns",
+      "slug": "newton-mearns",
+      "population": 28456,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000489",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Newton Mearns",
       "aliases": []
     },
     {
@@ -6385,6 +7170,17 @@
       "aliases": []
     },
     {
+      "name": "Paisley",
+      "slug": "paisley",
+      "population": 79369,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000504",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Paisley",
+      "aliases": []
+    },
+    {
       "name": "Patchway",
       "slug": "patchway",
       "population": 16520,
@@ -6426,6 +7222,17 @@
       "code": "W45000609",
       "source": "ons-bua-census-2021",
       "bua_name": "Penarth",
+      "aliases": []
+    },
+    {
+      "name": "Penicuik",
+      "slug": "penicuik",
+      "population": 16409,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000509",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Penicuik",
       "aliases": []
     },
     {
@@ -6473,6 +7280,17 @@
       "aliases": []
     },
     {
+      "name": "Perth",
+      "slug": "perth",
+      "population": 47893,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000510",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Perth",
+      "aliases": []
+    },
+    {
       "name": "Peterborough",
       "slug": "peterborough",
       "population": 190605,
@@ -6481,6 +7299,17 @@
       "code": "E63002720",
       "source": "ons-bua-census-2021",
       "bua_name": "Peterborough",
+      "aliases": []
+    },
+    {
+      "name": "Peterhead",
+      "slug": "peterhead",
+      "population": 19791,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000512",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Peterhead",
       "aliases": []
     },
     {
@@ -6605,6 +7434,17 @@
       "aliases": []
     },
     {
+      "name": "Port Glasgow",
+      "slug": "port-glasgow",
+      "population": 14288,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000522",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Port Glasgow",
+      "aliases": []
+    },
+    {
       "name": "Port Talbot",
       "slug": "port-talbot",
       "population": 31555,
@@ -6726,6 +7566,17 @@
       "aliases": []
     },
     {
+      "name": "Prestonpans",
+      "slug": "prestonpans",
+      "population": 10620,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000529",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Prestonpans",
+      "aliases": []
+    },
+    {
       "name": "Prestwich",
       "slug": "prestwich",
       "population": 31495,
@@ -6734,6 +7585,17 @@
       "code": "E63001210",
       "source": "ons-bua-census-2021",
       "bua_name": "Prestwich",
+      "aliases": []
+    },
+    {
+      "name": "Prestwick",
+      "slug": "prestwick",
+      "population": 14570,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000530",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Prestwick",
       "aliases": []
     },
     {
@@ -6946,6 +7808,17 @@
       "aliases": []
     },
     {
+      "name": "Renfrew",
+      "slug": "renfrew",
+      "population": 23809,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000536",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Renfrew",
+      "aliases": []
+    },
+    {
       "name": "Retford",
       "slug": "retford",
       "population": 23740,
@@ -7119,6 +7992,17 @@
       "code": "E63004125",
       "source": "ons-bua-census-2021",
       "bua_name": "Ross-on-Wye",
+      "aliases": []
+    },
+    {
+      "name": "Rosyth",
+      "slug": "rosyth",
+      "population": 13303,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000545",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Rosyth",
       "aliases": []
     },
     {
@@ -7298,6 +8182,17 @@
       "aliases": []
     },
     {
+      "name": "Rutherglen",
+      "slug": "rutherglen",
+      "population": 31195,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000550",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Rutherglen",
+      "aliases": []
+    },
+    {
       "name": "Ryde",
       "slug": "ryde",
       "population": 24105,
@@ -7361,6 +8256,17 @@
       "code": "E63006918",
       "source": "ons-bua-census-2021",
       "bua_name": "Saltash",
+      "aliases": []
+    },
+    {
+      "name": "Saltcoats",
+      "slug": "saltcoats",
+      "population": 12165,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000553",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Saltcoats",
       "aliases": []
     },
     {
@@ -7815,6 +8721,17 @@
       "aliases": []
     },
     {
+      "name": "South Queensferry",
+      "slug": "south-queensferry",
+      "population": 10216,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000569",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "South Queensferry",
+      "aliases": []
+    },
+    {
       "name": "South Shields",
       "slug": "south-shields",
       "population": 73345,
@@ -7933,6 +8850,17 @@
       "code": "E63004441",
       "source": "ons-bua-census-2021",
       "bua_name": "St Albans",
+      "aliases": []
+    },
+    {
+      "name": "St Andrews",
+      "slug": "st-andrews",
+      "population": 16460,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000573",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "St Andrews",
       "aliases": []
     },
     {
@@ -8101,6 +9029,17 @@
       "aliases": []
     },
     {
+      "name": "Stirling",
+      "slug": "stirling",
+      "population": 38587,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000587",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Stirling",
+      "aliases": []
+    },
+    {
       "name": "Stockport",
       "slug": "stockport",
       "population": 117935,
@@ -8153,6 +9092,17 @@
       "code": "E63002109",
       "source": "ons-bua-census-2021",
       "bua_name": "Stone (Stafford)",
+      "aliases": []
+    },
+    {
+      "name": "Stonehaven",
+      "slug": "stonehaven",
+      "population": 11177,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000588",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Stonehaven",
       "aliases": []
     },
     {
@@ -8741,6 +9691,17 @@
       "aliases": []
     },
     {
+      "name": "Tranent",
+      "slug": "tranent",
+      "population": 12237,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000622",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Tranent",
+      "aliases": []
+    },
+    {
       "name": "Tredegar",
       "slug": "tredegar",
       "population": 14530,
@@ -8760,6 +9721,17 @@
       "code": "E63004371",
       "source": "ons-bua-census-2021",
       "bua_name": "Tring",
+      "aliases": []
+    },
+    {
+      "name": "Troon",
+      "slug": "troon",
+      "population": 15261,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000623",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Troon",
       "aliases": []
     },
     {
@@ -8870,6 +9842,17 @@
       "code": "E63006482",
       "source": "ons-bua-census-2021",
       "bua_name": "Verwood",
+      "aliases": []
+    },
+    {
+      "name": "Viewpark",
+      "slug": "viewpark",
+      "population": 15831,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000631",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Viewpark",
       "aliases": []
     },
     {
@@ -9236,6 +10219,17 @@
       "aliases": []
     },
     {
+      "name": "Westhill (Aberdeenshire)",
+      "slug": "westhill-aberdeenshire",
+      "population": 11750,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000642",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Westhill (Aberdeenshire)",
+      "aliases": []
+    },
+    {
       "name": "Westhoughton",
       "slug": "westhoughton",
       "population": 21960,
@@ -9321,6 +10315,17 @@
       "code": "E63000106",
       "source": "ons-bua-census-2021",
       "bua_name": "Whickham",
+      "aliases": []
+    },
+    {
+      "name": "Whitburn",
+      "slug": "whitburn",
+      "population": 11775,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000645",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Whitburn",
       "aliases": []
     },
     {
@@ -9552,6 +10557,17 @@
       "code": "E63002509",
       "source": "ons-bua-census-2021",
       "bua_name": "Wisbech",
+      "aliases": []
+    },
+    {
+      "name": "Wishaw",
+      "slug": "wishaw",
+      "population": 30211,
+      "country": "Scotland",
+      "region": "Scotland",
+      "code": "S52000655",
+      "source": "nrs-census-2022-locality",
+      "bua_name": "Wishaw",
       "aliases": []
     },
     {

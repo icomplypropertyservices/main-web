@@ -30,8 +30,6 @@ $bannedNeedles = [
     '/pages/epc/stockport</loc>',
     '/pages/emergency-lighting/stockport</loc>',
     '/pages/fire-alarms/liverpool</loc>',
-    '/pages/aov-air-handling/stockport</loc>',
-    '/pages/aov-air-handling/manchester</loc>',
 ];
 foreach ($bannedNeedles as $n) {
     if (str_contains($xml, $n)) {
@@ -76,6 +74,8 @@ $required = [
     '/pages/services/gas-systems</loc>',
     '/pages/keywords/rewire</loc>',
     '/pages/keywords/boiler</loc>',
+    '/pages/aov-air-handling/glasgow</loc>',
+    '/pages/aov-air-handling/birmingham</loc>',
     '/pages/keywords/rewire/stockport</loc>',
     '/privacy</loc>',
     '/terms</loc>',
@@ -137,7 +137,7 @@ foreach ($locHits[1] ?? [] as $path) {
     }
     $first = $m[1];
     $second = $m[2];
-    if (in_array($first, ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages'], true)) {
+    if (in_array($first, ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages', 'aov-air-handling'], true)) {
         continue;
     }
     if (isset($services[$first]) && isset($areaSlugs[$second])) {

@@ -9,7 +9,7 @@ $pageTitle = $aovNationwideHub
     ? ($SERVICE_NAME . ' | Towns over 10,000')
     : ($SERVICE_NAME . ' Services | North West');
 $metaDesc = $aovNationwideHub
-    ? ('AOV and smoke control for every England and Wales town or city with more than 10,000 people, including London boroughs. Price on application after survey. No invented fees.')
+    ? ('AOV and smoke control for every UK mainland town or city with more than 10,000 people, including Scotland and London boroughs. Price on application after survey. No invented fees.')
     : ($poaService
     ? ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Price on application after scope. Local team from Stockport. No invented fees.')
     : ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Installation, maintenance, testing & certification. Written quotes after scope. Local engineers from Stockport.'));
@@ -432,7 +432,7 @@ $schema = [
                 <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> near you
             </h2>
             <?php if (isAovNationwideService($serviceSlug)): ?>
-            <p class="mt-2 text-zinc-600">A local AOV and smoke-control page for every town and city with more than 10,000 people in England and Wales (Census 2021), including London boroughs. Fire alarms, emergency lighting, fire doors and fire risk assessments stay on their service hubs. Quotes are price on application after survey.</p>
+            <p class="mt-2 text-zinc-600">A local AOV and smoke-control page for every UK mainland town and city with more than 10,000 people: England and Wales built-up areas, London boroughs, and Scottish localities. Fire alarms, emergency lighting, fire doors and fire risk assessments stay on their service hubs. Quotes are price on application after survey.</p>
             <?php else: ?>
             <p class="mt-2 text-zinc-600">Town hubs we cover — electrical and gas also open a real keyword×town page. We do not publish thin service×area doorways.</p>
             <?php endif; ?>

@@ -2,7 +2,7 @@
 <?php
 /**
  * AOV × nationwide areas: full town matrix, POA copy, fire-protection
- * adjacent hubs, and no /pages/aov-air-handling/{town} in the sitemap.
+ * adjacent hubs, and every pop>10k mainland town in the sitemap.
  *
  * Usage: php website/bin/test-aov-nationwide.php
  */
@@ -34,15 +34,18 @@ $ok = static function (bool $cond, string $msg) use (&$pass, &$fail): void {
 };
 
 $areas = getAovNationwideAreas();
+$townCount = count($areas);
 $records = getAovNationwideAreaRecords();
 $aovKw = getKeywordsForService('aov-air-handling');
 $matrix = getAovMatrixKeywordSlugs();
 $featured = getAovFeaturedKeywordSlugs();
 $adjacent = getFireProtectionAdjacentServices();
 
-$ok(count($areas) >= 850, 'pop>10k towns=' . count($areas));
+$ok($townCount === 983, 'pop>10k mainland towns=' . $townCount);
 $under = [];
 $birmingham = null;
+$glasgow = null;
+$byCountry = [];
 foreach ($records as $row) {
     $pop = (int)($row['population'] ?? 0);
     if ($pop <= 10000) {
@@ -51,11 +54,20 @@ foreach ($records as $row) {
     if (($row['name'] ?? '') === 'Birmingham') {
         $birmingham = $pop;
     }
+    if (($row['name'] ?? '') === 'Glasgow') {
+        $glasgow = $pop;
+    }
+    $country = (string)($row['country'] ?? '');
+    $byCountry[$country] = ($byCountry[$country] ?? 0) + 1;
 }
 $ok($under === [], 'every listed town is over 10000');
 $ok($birmingham === 1121375, 'Birmingham population is the Census 2021 figure');
+$ok($glasgow === 617794, 'Glasgow population is the Census 2022 locality figure');
+$ok(($byCountry['Scotland'] ?? 0) === 92, 'Scottish localities over 10k=' . ($byCountry['Scotland'] ?? 0));
 $ok(in_array('Cardiff', $areas, true) && in_array('Westminster', $areas, true), 'Wales and London boroughs are included');
+$ok(in_array('Edinburgh', $areas, true) && in_array('Paisley', $areas, true) && in_array('Aberdeen', $areas, true), 'Scottish cities and towns are included');
 $ok(!in_array('Whalley', $areas, true) && !in_array('Holmes Chapel', $areas, true) && !in_array('City of London', $areas, true), 'sub-10k places stay out');
+$ok(!in_array('Belfast', $areas, true) && !in_array('Fort William', $areas, true), 'Northern Ireland and sub-10k Scottish localities stay out');
 $ok(aovNationwideCanonicalName('Cheadle') === 'Cheadle (Stockport)', 'Cheadle alias resolves to the Stockport built-up area');
 $ok(count($aovKw) >= 60, 'aov keywords=' . count($aovKw));
 $ok(count($matrix) === count($aovKw), 'matrix slugs match keyword catalogue');
@@ -73,8 +85,8 @@ foreach ($adjacent as $slug) {
     $ok(isset($services[$slug]), "fire-adjacent hub {$slug}");
 }
 
-$expectServiceArea = count(getAovNationwideServices()) * count($areas);
-$expectKeywordArea = count($matrix) * count($areas);
+$expectServiceArea = count(getAovNationwideServices()) * $townCount;
+$expectKeywordArea = count($matrix) * $townCount;
 $ok($expectServiceArea >= 150, "service×area count={$expectServiceArea}");
 $ok($expectKeywordArea >= 60 * count($areas), "keyword×area count={$expectKeywordArea}");
 
@@ -99,7 +111,7 @@ $_SERVER['ICOMPLY_STATIC_EXPORT'] = '1';
 $matrixHtml = icomplyRenderServiceAreaHtml('aov-air-handling', 'Birmingham');
 $ok(stripos($matrixHtml, 'Birmingham') !== false, 'matrix service×area names Birmingham');
 $ok(str_contains($matrixHtml, '10,000'), 'matrix copy states the 10,000 population threshold');
-$ok(substr_count($matrixHtml, 'area-chip') >= 850, 'matrix lists the full pop>10k town set');
+$ok(substr_count($matrixHtml, 'area-chip') >= 980, 'matrix lists the full pop>10k town set');
 $ok(stripos($matrixHtml, 'Price on application') !== false, 'matrix service×area is POA');
 $ok(stripos($matrixHtml, 'Fire Alarms') !== false && stripos($matrixHtml, '/pages/services/fire-alarms') !== false, 'matrix links fire alarms hub');
 $ok(stripos($matrixHtml, 'Emergency Lighting') !== false, 'matrix links emergency lighting');
@@ -124,7 +136,12 @@ $ok(str_contains($hub, '/pages/aov-air-handling/stockport'), 'AOV hub links a to
 $ok(substr_count($hub, 'aov-installation') >= 1, 'AOV hub lists keyword guides');
 
 $xml = icomplyBuildSitemapXml('https://icomplypropertyservices.co.uk');
-$ok(!preg_match('#/pages/aov-air-handling/[a-z0-9\-]+</loc>#', $xml), 'sitemap has zero /pages/aov-air-handling/{town}');
+$aovTownLocs = preg_match_all('#/pages/aov-air-handling/[a-z0-9\-]+</loc>#', $xml);
+$ok($aovTownLocs === $townCount, 'sitemap lists every AOV town page (' . $aovTownLocs . ')');
+$ok(str_contains($xml, '/pages/aov-air-handling/glasgow</loc>'), 'sitemap lists Glasgow');
+$ok(str_contains($xml, '/pages/aov-air-handling/birmingham</loc>'), 'sitemap lists Birmingham');
+$ok(!str_contains($xml, '/pages/aov-air-handling/whalley</loc>'), 'sitemap omits Whalley');
+$ok(!str_contains($xml, '/pages/aov-air-handling/belfast</loc>'), 'sitemap omits Belfast');
 $ok(str_contains($xml, '/pages/services/aov-air-handling</loc>'), 'sitemap still lists the AOV service hub');
 $ok(str_contains($xml, '/pages/keywords/aov-installation/stockport</loc>'), 'sitemap lists featured AOV keyword×Stockport');
 $kwTown = preg_match_all('#/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+</loc>#', $xml);

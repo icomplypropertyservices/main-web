@@ -11,8 +11,9 @@ Sources (downloaded at run time, not committed):
   (household + communal). ONS does not publish London settlements
   the same way as other built-up areas.
 
-Scotland and Northern Ireland are not in these England and Wales tables,
-so they are not included in this first slice.
+Scotland uses NRS Census 2022 localities (the named towns and cities),
+usual resident popcount greater than 10,000.
+Northern Ireland is not on the UK mainland, so it is not included.
 
 Usage:
   python3 website/bin/build-aov-pop10k-areas.py
@@ -40,6 +41,12 @@ BUA_XLSX_URL = (
     "2021/townsandcitiescharacteristicsofbuiltupareasenglandandwalescensus2021.xlsx"
 )
 TS001_URL = "https://static.ons.gov.uk/datasets/TS001-2021-3.csv"
+LOCALITY_URL = (
+    "https://maps.gov.scot/server/rest/services/NRS/Census2022/MapServer/6/query"
+    "?where=popcount%3E10000&outFields=code%2Cname%2Cpopcount"
+    "&returnGeometry=false&orderByFields=name&resultRecordCount=1000"
+    "&resultOffset={offset}&f=pjson"
+)
 NS = "{http://schemas.openxmlformats.org/spreadsheetml/2006/main}"
 
 
@@ -148,6 +155,46 @@ def display_names(records: list[dict], area_spellings: dict[str, str]) -> None:
                 record["name"] = spelling
 
 
+def scotland_localities() -> list[dict]:
+    """NRS Census 2022 localities. These are the named towns inside settlements."""
+    rows: list[dict] = []
+    offset = 0
+    while True:
+        dest = CACHE / f"scotland-localities-{offset}.json"
+        download(LOCALITY_URL.format(offset=offset), dest)
+        payload = json.loads(dest.read_text(encoding="utf-8"))
+        features = payload.get("features") or []
+        for feature in features:
+            attrs = feature.get("attributes") or {}
+            name = str(attrs.get("name") or "").strip()
+            try:
+                population = int(attrs.get("popcount") or 0)
+            except (TypeError, ValueError):
+                continue
+            code = str(attrs.get("code") or "").strip()
+            if not name or population <= THRESHOLD:
+                continue
+            rows.append(
+                {
+                    "bua_name": name,
+                    "name": name,
+                    "code": code,
+                    "region": "Scotland",
+                    "country": "Scotland",
+                    "population": population,
+                    "source": "nrs-census-2022-locality",
+                    "short": name,
+                    "qualifier": None,
+                }
+            )
+        if not payload.get("exceededTransferLimit"):
+            break
+        offset += len(features)
+        if not features:
+            break
+    return rows
+
+
 def london_boroughs() -> list[dict]:
     totals: dict[str, dict] = {}
     with (CACHE / "ts001.csv").open(newline="") as handle:
@@ -188,6 +235,7 @@ def main() -> None:
         records += bua_records(book, strings, "xl/worksheets/sheet7.xml", "Wales")
     display_names(records, area_spellings)
     records.extend(london_boroughs())
+    records.extend(scotland_localities())
 
     slugs: dict[str, str] = {}
     for record in records:
@@ -232,7 +280,7 @@ def main() -> None:
         )
     payload = {
         "threshold": THRESHOLD,
-        "rule": "Census 2021 usual resident population greater than 10000",
+        "rule": "UK mainland towns and cities with usual resident population greater than 10000. England and Wales use Census 2021 built-up areas. Scotland uses Census 2022 localities.",
         "sources": [
             {
                 "id": "ons-bua-census-2021",
@@ -242,8 +290,12 @@ def main() -> None:
                 "id": "ons-ts001-census-2021-london-borough",
                 "note": "ONS Census 2021 TS001 usual residents (household plus communal establishment) for London boroughs. ONS does not identify individual London settlements in the built-up area tables.",
             },
+            {
+                "id": "nrs-census-2022-locality",
+                "note": "NRS Census 2022 locality usual residents (popcount). Localities are the named towns and cities. A wider settlement that only passes 10,000 by joining neighbouring villages is not added on its own.",
+            },
         ],
-        "not_in_this_slice": "Scotland and Northern Ireland are not in these England and Wales sources, so they are not in this first nationwide slice.",
+        "not_in_this_slice": "Northern Ireland is not on the UK mainland, so it is not included.",
         "towns": towns,
     }
     OUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n")

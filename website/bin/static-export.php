@@ -26,8 +26,8 @@
  *   (eicr, eicr-report, FRA, gas, CCTV, …).
  * Electrical, gas and AOV keyword families always get the FULL areas list
  * (keyword × every town) so the Netlify static export includes that matrix.
- * AOV service×area and AOV keyword×area use Census 2021 towns over 10,000
- * people (England and Wales built-up areas, plus London boroughs).
+ * AOV service×area and AOV keyword×area use UK mainland towns over 10,000
+ * people (England and Wales built-up areas, London boroughs, Scottish localities).
  * --keyword-towns=all renders every keyword×area (~200k HTML files).
  * Service×area landings for the full catalogue are written on every export.
  */
@@ -260,7 +260,7 @@ function icomplyCollectKeywordRoutes(string $townMode): array
     foreach ($keywords as $kw) {
         $slug = keywordSlug($kw);
         if (isset($aovKw[$slug]) && $townMode !== 'none') {
-            // Complete AOV coverage for Census 2021 towns over 10,000 people.
+            // Complete AOV coverage for UK mainland towns over 10,000 people.
             $towns = $aovTowns;
         } elseif ($townMode === 'all'
             || isset($familyKw[$slug])

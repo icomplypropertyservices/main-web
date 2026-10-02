@@ -38,7 +38,7 @@ website/pages/manufacturers/*.php
 # Service × area landings live under website/pages/{slug}/ and stay ignored below
 # Service × area stubs (pages/{service-slug}/{area}.php)
 website/pages/access-control/
-website/pages/aov-air-handling/
+# AOV mainland town stubs (pop>10k) are tracked. See website/data/aov-nationwide-areas.json
 website/pages/cctv/
 website/pages/door-entry/
 website/pages/electrical/

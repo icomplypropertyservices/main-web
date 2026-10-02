@@ -359,7 +359,7 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         . '</article>';
 
     $townLabel = (function_exists('isAovNationwideService') && isAovNationwideService($serviceSlug))
-        ? 'towns and cities with more than 10,000 people (Census 2021, England and Wales, including London boroughs)'
+        ? 'UK mainland towns and cities with more than 10,000 people (England, Wales and Scotland)'
         : 'towns';
     $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($svcName) . ' in every area</h2>'
         . '<p class="text-sm text-zinc-600 mb-4">' . count($areaPairs) . ' ' . icomplyMatrixH($townLabel) . '.</p>'

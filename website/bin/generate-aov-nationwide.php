@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 /**
- * AOV × towns with Census 2021 population over 10,000 (non-prod).
+ * AOV × UK mainland towns with population over 10,000 (non-prod).
  *
  * Calls the existing generators for that town list only:
  *   php bin/generate-site.php --service=aov-air-handling --areas-json=data/aov-nationwide-areas.json
@@ -88,12 +88,18 @@ foreach ($keywords as $slug) {
 echo "Pruned {$removed} stubs outside the pop>10k list\n";
 
 $sample = SITE_ROOT . '/pages/aov-air-handling/birmingham.php';
+$glasgow = SITE_ROOT . '/pages/aov-air-handling/glasgow.php';
+$paisley = SITE_ROOT . '/pages/keywords/aov-installation/paisley.php';
 $kwSample = SITE_ROOT . '/pages/keywords/aov-installation/cardiff.php';
 $small = SITE_ROOT . '/pages/aov-air-handling/whalley.php';
+$belfast = SITE_ROOT . '/pages/aov-air-handling/belfast.php';
 echo is_file($sample) ? "OK stub {$sample}\n" : "MISSING stub {$sample}\n";
+echo is_file($glasgow) ? "OK stub {$glasgow}\n" : "MISSING stub {$glasgow}\n";
+echo is_file($paisley) ? "OK stub {$paisley}\n" : "MISSING stub {$paisley}\n";
 echo is_file($kwSample) ? "OK stub {$kwSample}\n" : "MISSING stub {$kwSample}\n";
 echo is_file($small) ? "UNEXPECTED stub {$small}\n" : "OK no stub for Whalley\n";
-if (!is_file($sample) || !is_file($kwSample) || is_file($small)) {
+echo is_file($belfast) ? "UNEXPECTED stub {$belfast}\n" : "OK no stub for Belfast\n";
+if (!is_file($sample) || !is_file($glasgow) || !is_file($paisley) || !is_file($kwSample) || is_file($small) || is_file($belfast)) {
     $fail++;
 }
 

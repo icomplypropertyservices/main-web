@@ -76,11 +76,11 @@ Official rules for the electrical + gas keyword expansion.
 
 ## AOV nationwide (fire-protection adjacent)
 
-- First slice is towns and cities with Census 2021 usual resident population **greater than 10,000** (England and Wales built-up areas, plus London boroughs). Scotland and Northern Ireland are not in that source, so they are not in this slice.
+- Coverage is every UK mainland town or city with usual resident population **greater than 10,000**: England and Wales Census 2021 built-up areas, London boroughs, and Scottish Census 2022 localities. Northern Ireland is not on the mainland, so it is not included.
 - **Each** AOV keyword gets a hub and a keyword×area page for **every** town in `aov-nationwide-areas.json`.
 - AOV **service×area** pages (`/pages/aov-air-handling/{town}`) are generated with `php website/bin/generate-aov-nationwide.php`, which calls `generate-site.php` and `generate-keyword-area-pages.php` with `--areas-json`.
 - Places at or under 10,000 people do not get an AOV town page.
-- Sitemap must **not** list `/pages/aov-air-handling/{town}`. Featured AOV keyword×town samples only.
+- Sitemap lists every `/pages/aov-air-handling/{town}` page. Keyword×town stays featured-only. Other services still keep `/pages/{service}/{town}` out of the sitemap.
 - Fire-protection adjacent hubs (fire alarms, emergency lighting, fire doors, fire risk assessments) are linked from AOV area pages. Service quotes are **POA**. Never invent a £ figure.
 - Non-prod only. No live promote. No `--prod`.
 

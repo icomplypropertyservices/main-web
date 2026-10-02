@@ -462,9 +462,9 @@ function getAovFeaturedKeywordSlugs(): array {
 }
 
 /**
- * Census 2021 towns and cities with usual resident population over 10,000.
- * England and Wales built-up areas, plus London boroughs. Scotland and
- * Northern Ireland are not in this first slice.
+ * UK mainland towns and cities with usual resident population over 10,000.
+ * England and Wales built-up areas, London boroughs, and Scottish localities.
+ * Northern Ireland is not on the mainland, so it is not included.
  *
  * @return list<array<string, mixed>>
  */
@@ -602,9 +602,10 @@ function isCostStyleKeyword(string $slug, string $name = ''): bool {
  * Local URL that returns 200 on the default Netlify export.
  *
  * Electrical + gas → featured keyword×town.
- * AOV → /pages/aov-air-handling/{town} only when that town has Census 2021
- * population over 10,000. Smaller places stay on the AOV service hub.
- * Those service×town URLs stay out of sitemap.xml.
+ * AOV → /pages/aov-air-handling/{town} only when that town has usual resident
+ * population over 10,000 on the UK mainland. Smaller places stay on the AOV
+ * service hub. Those AOV town URLs are listed in sitemap.xml. Other services
+ * still keep /pages/{service}/{town} out of the sitemap.
  * Other services → area hub (from a service page) or the service hub (from an area page).
  */
 function exportedServiceLocalUrl(string $serviceSlug, string $area, string $from = 'service'): string {
