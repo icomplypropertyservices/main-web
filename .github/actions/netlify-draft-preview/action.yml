@@ -1,0 +1,203 @@
+name: Netlify draft preview
+description: Pre-render one pull request and upload dist/ to non-production Netlify draft aliases.
+
+inputs:
+  pr_number:
+    description: Pull request number
+    required: true
+  netlify_auth_token:
+    description: Netlify personal access token
+    required: true
+  netlify_site_id:
+    description: Netlify project id. Empty uses the public project id.
+    required: false
+    default: ""
+  github_token:
+    description: Token used to comment on the pull request
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Guard the draft path
+      shell: bash
+      run: bash "$GITHUB_WORKSPACE/website/bin/test-netlify-draft-deploy.sh"
+
+    - name: Check Netlify token
+      shell: bash
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ inputs.netlify_auth_token }}
+        NETLIFY_SITE_ID: ${{ inputs.netlify_site_id }}
+      run: bash "$GITHUB_WORKSPACE/website/bin/netlify-draft-deploy.sh" check-auth
+
+    - name: Checkout pull request head
+      uses: actions/checkout@v4
+      with:
+        ref: refs/pull/${{ inputs.pr_number }}/head
+        path: preview-src
+        fetch-depth: 1
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: "8.3"
+        coverage: none
+
+    - name: Static export (PHP to HTML in dist/)
+      shell: bash
+      working-directory: preview-src
+      timeout-minutes: 90
+      env:
+        SITE_URL: https://icomplypropertyservices.co.uk
+      run: php website/bin/static-export.php
+
+    - name: Verify dist/ pretty URLs
+      shell: bash
+      working-directory: preview-src
+      run: php website/bin/check-static-export.php
+
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: "22"
+
+    - name: Deploy dist/ to Netlify draft aliases
+      id: deploy
+      shell: bash
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ inputs.netlify_auth_token }}
+        NETLIFY_SITE_ID: ${{ inputs.netlify_site_id }}
+        NETLIFY_CONFIG: ${{ github.workspace }}/preview-src/netlify.toml
+        PR_NUMBER: ${{ inputs.pr_number }}
+      run: |
+        set -euo pipefail
+        urls="$(mktemp)"
+        bash "$GITHUB_WORKSPACE/website/bin/netlify-draft-deploy.sh" \
+          "$GITHUB_WORKSPACE/preview-src/dist" \
+          "$PR_NUMBER" \
+          "$urls"
+        {
+          echo "urls<<EOF"
+          cat "$urls"
+          echo "EOF"
+        } >> "$GITHUB_OUTPUT"
+
+    - name: Require the draft hostnames to answer
+      shell: bash
+      env:
+        URLS: ${{ steps.deploy.outputs.urls }}
+        PR_NUMBER: ${{ inputs.pr_number }}
+      run: |
+        python3 - << 'PY'
+        import os, time, urllib.error, urllib.request
+        from urllib.parse import urlparse
+
+        pr = os.environ["PR_NUMBER"]
+        urls = [line.strip() for line in os.environ["URLS"].splitlines() if line.strip()]
+        required = f"https://pr-{pr}--"
+        if not any(url.startswith(required) for url in urls):
+            raise SystemExit(f"missing stable draft URL {required}<site>.netlify.app")
+        production_hosts = {
+            "icomply-main-web.netlify.app",
+            "icomplypropertyservices.co.uk",
+            "www.icomplypropertyservices.co.uk",
+        }
+        pending = set(urls)
+        last = {}
+        for _ in range(36):
+            still = set()
+            for url in list(pending):
+                code = 0
+                body = b""
+                final = url
+                try:
+                    req = urllib.request.Request(url + "/", headers={"User-Agent": "icomply-draft-preview"})
+                    with urllib.request.urlopen(req, timeout=30) as resp:
+                        code = resp.status
+                        body = resp.read(200)
+                        final = resp.geturl()
+                except urllib.error.HTTPError as exc:
+                    code = exc.code
+                    body = exc.read(200)
+                except Exception as exc:
+                    body = str(exc).encode()
+                host = urlparse(final).hostname or ""
+                if host in production_hosts:
+                    raise SystemExit(f"draft URL resolved to production host {host}")
+                platform_miss = body.startswith(b"Not Found")
+                live = code == 200 and not platform_miss and (b"<" in body)
+                last[url] = (code, final, body[:60])
+                if live:
+                    print(f"live {code} {url}")
+                else:
+                    print(f"waiting {code} {url}")
+                    still.add(url)
+            pending = still
+            if not pending:
+                break
+            time.sleep(10)
+        if pending:
+            for url in pending:
+                print(f"FAIL {last.get(url)} {url}")
+            raise SystemExit("draft alias did not return the site HTML")
+        summary = os.environ.get("GITHUB_STEP_SUMMARY")
+        if summary:
+            with open(summary, "a", encoding="utf-8") as handle:
+                handle.write("Draft preview (production workflow was not run):\n\n")
+                for url in urls:
+                    handle.write(f"- {url}\n")
+        PY
+
+    - name: Post or update draft URL comment
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.github_token }}
+        URLS: ${{ steps.deploy.outputs.urls }}
+        PR_NUMBER: ${{ inputs.pr_number }}
+      run: |
+        python3 - << 'PY'
+        import json, os, urllib.request
+
+        urls = [line.strip() for line in os.environ["URLS"].splitlines() if line.strip()]
+        pr = os.environ["PR_NUMBER"]
+        marker = "<!-- netlify-draft-preview -->"
+        lines = "\n".join(f"- {url}" for url in urls)
+        body = (
+            f"{marker}\n"
+            f"**Netlify draft preview** (production workflow was not run)\n\n"
+            f"{lines}\n\n"
+            f"Draft aliases for PR #{pr}.\n"
+        )
+        token = os.environ["GH_TOKEN"]
+        repo = os.environ["GITHUB_REPOSITORY"]
+
+        def api(method, path, payload=None):
+            data = None if payload is None else json.dumps(payload).encode()
+            req = urllib.request.Request(
+                f"https://api.github.com{path}",
+                data=data,
+                method=method,
+                headers={
+                    "Authorization": f"Bearer {token}",
+                    "Accept": "application/vnd.github+json",
+                    "X-GitHub-Api-Version": "2022-11-28",
+                    "Content-Type": "application/json",
+                },
+            )
+            with urllib.request.urlopen(req) as resp:
+                raw = resp.read().decode()
+                return json.loads(raw) if raw else None
+
+        existing = None
+        for page in range(1, 6):
+            comments = api("GET", f"/repos/{repo}/issues/{pr}/comments?per_page=100&page={page}") or []
+            existing = next((item for item in comments if marker in (item.get("body") or "")), None)
+            if existing or len(comments) < 100:
+                break
+        if existing:
+            api("PATCH", f"/repos/{repo}/issues/comments/{existing['id']}", {"body": body})
+            print(f"Updated comment {existing['id']}")
+        else:
+            created = api("POST", f"/repos/{repo}/issues/{pr}/comments", {"body": body})
+            print(f"Created comment {created['id']}")
+        PY

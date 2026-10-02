@@ -1,0 +1,265 @@
+# Non-production Netlify draft URLs for pull requests.
+#
+#   https://pr-<N>--icomply-main-web.netlify.app
+#   https://deploy-preview-<N>--icomply-main-web.netlify.app
+#
+# The token comes from repository Actions secrets, or from the GitHub
+# Environment "Preview – icomply-main-web". This workflow never selects a
+# Production environment. The production workflow (netlify-deploy.yml) is
+# unchanged.
+
+name: Netlify draft preview
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      pr_numbers:
+        description: "Comma-separated pull request numbers, or open for every open PR to main"
+        required: false
+        default: "open"
+        type: string
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  targets:
+    name: Pull requests to preview
+    runs-on: ubuntu-latest
+    outputs:
+      prs: ${{ steps.set.outputs.prs }}
+    steps:
+      - name: Resolve pull request numbers
+        id: set
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT_NAME: ${{ github.event_name }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          HEAD_REPO: ${{ github.event.pull_request.head.repo.full_name }}
+          PR_INPUT: ${{ github.event.inputs.pr_numbers }}
+        run: |
+          python3 - << 'PY'
+          import json, os, urllib.request
+
+          event = os.environ["EVENT_NAME"]
+          repo = os.environ["GITHUB_REPOSITORY"]
+
+          def emit(prs):
+              line = "prs=" + json.dumps(prs)
+              with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as handle:
+                  handle.write(line + "\n")
+              print(line)
+
+          if event == "pull_request":
+              head = os.environ.get("HEAD_REPO") or ""
+              if head != repo:
+                  print(f"Fork pull request from {head}. Draft upload skipped.")
+                  emit([])
+              else:
+                  emit([int(os.environ["PR_NUMBER"])])
+              raise SystemExit(0)
+
+          raw = (os.environ.get("PR_INPUT") or "open").strip()
+          if raw == "" or raw.lower() == "open":
+              token = os.environ["GH_TOKEN"]
+              pulls = []
+              page = 1
+              while page <= 5:
+                  req = urllib.request.Request(
+                      f"https://api.github.com/repos/{repo}/pulls?state=open&base=main&per_page=100&page={page}",
+                      headers={
+                          "Authorization": f"Bearer {token}",
+                          "Accept": "application/vnd.github+json",
+                          "X-GitHub-Api-Version": "2022-11-28",
+                      },
+                  )
+                  with urllib.request.urlopen(req) as resp:
+                      batch = json.load(resp)
+                  if not batch:
+                      break
+                  pulls.extend(batch)
+                  if len(batch) < 100:
+                      break
+                  page += 1
+              prs = []
+              for pull in pulls:
+                  head_repo = ((pull.get("head") or {}).get("repo") or {}).get("full_name") or ""
+                  number = pull.get("number")
+                  if head_repo != repo:
+                      print(f"skip fork PR #{number}")
+                      continue
+                  prs.append(int(number))
+              if not prs:
+                  raise SystemExit("No open same-repository pull requests target main")
+              emit(prs)
+              raise SystemExit(0)
+
+          prs = []
+          for part in raw.split(","):
+              part = part.strip()
+              if not part:
+                  continue
+              if not part.isdigit():
+                  raise SystemExit(f"Not a pull request number: {part}")
+              prs.append(int(part))
+          if not prs:
+              raise SystemExit("No pull request numbers")
+          emit(prs)
+          PY
+
+  auth-repository:
+    name: Repository Actions secrets
+    needs: targets
+    if: needs.targets.outputs.prs != '[]'
+    runs-on: ubuntu-latest
+    outputs:
+      available: ${{ steps.probe.outputs.available }}
+    steps:
+      - name: Probe Netlify token
+        id: probe
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          if [ -n "$NETLIFY_AUTH_TOKEN" ]; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+            echo "NETLIFY_AUTH_TOKEN is set (length ${#NETLIFY_AUTH_TOKEN})"
+          else
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            echo "NETLIFY_AUTH_TOKEN is empty in repository Actions secrets"
+          fi
+          if [ -n "$NETLIFY_SITE_ID" ]; then
+            echo "NETLIFY_SITE_ID is set (length ${#NETLIFY_SITE_ID})"
+          else
+            echo "NETLIFY_SITE_ID is empty; draft upload can use the public project id"
+          fi
+
+  auth-preview:
+    name: Preview environment secrets
+    needs: targets
+    if: needs.targets.outputs.prs != '[]'
+    runs-on: ubuntu-latest
+    environment: "Preview – icomply-main-web"
+    outputs:
+      available: ${{ steps.probe.outputs.available }}
+    steps:
+      - name: Probe Netlify token
+        id: probe
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          if [ -n "$NETLIFY_AUTH_TOKEN" ]; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+            echo "NETLIFY_AUTH_TOKEN is set (length ${#NETLIFY_AUTH_TOKEN})"
+          else
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            echo "NETLIFY_AUTH_TOKEN is empty in Preview – icomply-main-web"
+          fi
+          if [ -n "$NETLIFY_SITE_ID" ]; then
+            echo "NETLIFY_SITE_ID is set (length ${#NETLIFY_SITE_ID})"
+          else
+            echo "NETLIFY_SITE_ID is empty; draft upload can use the public project id"
+          fi
+
+  choose:
+    name: Choose draft secret source
+    needs: [targets, auth-repository, auth-preview]
+    if: always() && !cancelled() && needs.targets.result == 'success'
+    runs-on: ubuntu-latest
+    outputs:
+      source: ${{ steps.pick.outputs.source }}
+      environment_name: ${{ steps.pick.outputs.environment_name }}
+    steps:
+      - name: Pick repository secrets or the Preview environment
+        id: pick
+        env:
+          PRS: ${{ needs.targets.outputs.prs }}
+          REPO_RESULT: ${{ needs.auth-repository.result }}
+          PREVIEW_RESULT: ${{ needs.auth-preview.result }}
+          REPO_OK: ${{ needs.auth-repository.outputs.available }}
+          PREVIEW_OK: ${{ needs.auth-preview.outputs.available }}
+        run: |
+          set -euo pipefail
+          echo "environment_name=Preview – icomply-main-web" >> "$GITHUB_OUTPUT"
+          if [ "$PRS" = "[]" ]; then
+            echo "source=none" >> "$GITHUB_OUTPUT"
+            echo "No same-repository pull requests to preview."
+            exit 0
+          fi
+          if [ "$REPO_RESULT" != "success" ] || [ "$PREVIEW_RESULT" != "success" ]; then
+            echo "::error::Netlify token probe did not succeed. Draft aliases were not published. The production workflow was not run."
+            exit 1
+          fi
+          # Preview environment wins when it has a token. A job for that
+          # environment also sees repository secrets, so this covers both.
+          if [ "$PREVIEW_OK" = "true" ]; then
+            echo "source=environment" >> "$GITHUB_OUTPUT"
+            echo "Using the Preview environment for the draft upload."
+            exit 0
+          fi
+          if [ "$REPO_OK" = "true" ]; then
+            echo "source=repository" >> "$GITHUB_OUTPUT"
+            echo "Using repository Actions secrets for the draft upload."
+            exit 0
+          fi
+          echo "::error::NETLIFY_AUTH_TOKEN is empty in the Preview environment and in repository Actions secrets. Draft aliases were not published. Add the token there, then re-run Netlify draft preview. The production workflow was not run."
+          exit 1
+
+  draft-repository:
+    name: Draft preview PR #${{ matrix.pr }}
+    needs: [targets, choose]
+    if: needs.choose.outputs.source == 'repository'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    concurrency:
+      group: netlify-draft-${{ matrix.pr }}
+      cancel-in-progress: true
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        pr: ${{ fromJson(needs.targets.outputs.prs) }}
+    steps:
+      - name: Checkout draft workflow
+        uses: actions/checkout@v4
+
+      - name: Publish draft aliases
+        uses: ./.github/actions/netlify-draft-preview
+        with:
+          pr_number: ${{ matrix.pr }}
+          netlify_auth_token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          netlify_site_id: ${{ secrets.NETLIFY_SITE_ID }}
+          github_token: ${{ github.token }}
+
+  draft-preview:
+    name: Draft preview PR #${{ matrix.pr }}
+    needs: [targets, choose]
+    if: needs.choose.outputs.source == 'environment'
+    runs-on: ubuntu-latest
+    environment: ${{ needs.choose.outputs.environment_name }}
+    timeout-minutes: 120
+    concurrency:
+      group: netlify-draft-${{ matrix.pr }}
+      cancel-in-progress: true
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        pr: ${{ fromJson(needs.targets.outputs.prs) }}
+    steps:
+      - name: Checkout draft workflow
+        uses: actions/checkout@v4
+
+      - name: Publish draft aliases
+        uses: ./.github/actions/netlify-draft-preview
+        with:
+          pr_number: ${{ matrix.pr }}
+          netlify_auth_token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          netlify_site_id: ${{ secrets.NETLIFY_SITE_ID }}
+          github_token: ${{ github.token }}

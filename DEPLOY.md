@@ -46,6 +46,21 @@ After both secrets exist, re-run the workflow (or push to `main`). Until they ar
 
 If Jack resets his Netlify password, the PAT is invalidated — generate a new token and update `NETLIFY_AUTH_TOKEN`.
 
+## Draft URLs for pull requests
+
+Workflow [`.github/workflows/netlify-draft-preview.yml`](.github/workflows/netlify-draft-preview.yml) publishes a draft for each pull request targeting `main`. It reads `NETLIFY_AUTH_TOKEN` from the GitHub Environment `Preview – icomply-main-web` when that environment has the token, and otherwise from repository Actions secrets. It leaves [`.github/workflows/netlify-deploy.yml`](.github/workflows/netlify-deploy.yml) unchanged.
+
+| Alias | URL |
+|-------|-----|
+| `pr-<N>` | `https://pr-<N>--icomply-main-web.netlify.app` |
+| `deploy-preview-<N>` | `https://deploy-preview-<N>--icomply-main-web.netlify.app` |
+
+The workflow pre-renders that pull request with PHP, then uploads `dist/` with `netlify deploy --dir=dist --no-build --alias …`. `NETLIFY_SITE_ID` can be empty; the upload then uses the public project id `545c5016-825a-498c-923d-f5a177875b31`. The uploaded draft replaces `robots.txt` with `Disallow: /` and sets `X-Robots-Tag: noindex` so the preview host is a review copy.
+
+Actions → **Netlify draft preview** → **Run workflow**, with `pr_numbers` left as `open`, publishes drafts for the open pull requests to `main` without a new commit on those branches.
+
+A platform `Not Found` on those hostnames means that upload has not succeeded. Add a current personal access token as `NETLIFY_AUTH_TOKEN` on the Preview environment (repository Actions secrets also work), then re-run **Netlify draft preview**.
+
 ## Manual deploy
 
 Any one of these publishes current `main` to production:
