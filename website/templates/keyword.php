@@ -24,6 +24,9 @@ $relatedName = $RELATED_NAME;
 $allAreas = getAreas();
 $allServices = getServices();
 
+$poaEnquire = !empty($KEYWORD_POA_ENQUIRE);
+$siblingLimit = isset($KEYWORD_SIBLING_LIMIT) ? (int)$KEYWORD_SIBLING_LIMIT : 0;
+
 $popularTowns = array_values(array_filter(
     ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
     fn($t) => in_array($t, $allAreas, true)
@@ -70,7 +73,7 @@ require SITE_ROOT . '/includes/header.php';
 <section class="relative overflow-hidden bg-[#061828] text-white">
     <div class="absolute inset-0">
         <img src="<?= htmlspecialchars($KEYWORD_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($KEYWORD_NAME ?? 'Property compliance', ENT_QUOTES, 'UTF-8') ?> — Icomply Property Services" class="w-full h-full object-cover opacity-35" loading="eager"
-             onerror="this.src=$SERVICE_IMAGE">
+             onerror="this.onerror=null;this.src='<?= htmlspecialchars($SERVICE_IMAGE, ENT_QUOTES, 'UTF-8') ?>'">
         <div class="absolute inset-0 bg-gradient-to-r from-[#061828] via-[#061828]/95 to-[#061828]/75"></div>
     </div>
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
@@ -90,8 +93,8 @@ require SITE_ROOT . '/includes/header.php';
             <?= htmlspecialchars($KEYWORD_INTRO, ENT_QUOTES, 'UTF-8') ?>
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
-            <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-bold text-white shadow-lg">Get free quote</a>
-            <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode($keywordName . ' quote') ?>"
+            <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-bold text-white shadow-lg"><?= $poaEnquire ? 'Enquire for POA' : 'Get free quote' ?></a>
+            <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode($keywordName . ($poaEnquire ? ' enquiry' : ' quote')) ?>"
                target="_blank" rel="noopener" class="px-8 py-4 rounded-2xl bg-green-600 hover:bg-green-500 font-bold text-white shadow-lg">WhatsApp</a>
             <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="px-8 py-4 rounded-2xl bg-white text-[#061828] font-bold shadow-lg"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
         </div>
@@ -105,7 +108,9 @@ require SITE_ROOT . '/includes/header.php';
         $trust = [
             ['Local engineers', 'Stockport base — 150+ North West towns'],
             ['Standards-led', 'British Standards & manufacturer guidance'],
-            ['Fixed quotes', 'Clear scope before work starts'],
+            $poaEnquire
+                ? ['Written POA', 'Scope agreed before any figure']
+                : ['Fixed quotes', 'Clear scope before work starts'],
             ['Full paperwork', 'Certificates & logbooks for compliance'],
         ];
         foreach ($trust as [$t, $d]): ?>
@@ -151,7 +156,7 @@ require SITE_ROOT . '/includes/header.php';
                 <div class="rounded-3xl overflow-hidden border-2 border-zinc-300 shadow-md bg-zinc-200">
                     <img src="<?= htmlspecialchars($KEYWORD_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> — Icomply Property Services"
                          class="w-full h-52 object-cover" loading="lazy"
-                         onerror="this.src=$SERVICE_IMAGE">
+                         onerror="this.onerror=null;this.src='<?= htmlspecialchars($SERVICE_IMAGE, ENT_QUOTES, 'UTF-8') ?>'">
                     <div class="p-3 bg-[#061828] text-white text-sm font-semibold text-center"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></div>
                 </div>
                 <div class="rounded-3xl overflow-hidden border-2 border-zinc-300 shadow-md bg-zinc-200">
@@ -211,11 +216,13 @@ require SITE_ROOT . '/includes/header.php';
 <section class="bg-white border-y-2 border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-14">
         <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">Related <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> guides</h2>
-        <p class="mt-2 text-zinc-800">More topics under the same service — each also has pages for every North West town.</p>
+        <p class="mt-2 text-zinc-800"><?= $poaEnquire
+            ? 'A short list under the same service. Each has its own page.'
+            : 'More topics under the same service — each also has pages for every North West town.' ?></p>
         <div class="mt-6">
             <?php
             require_once SITE_ROOT . '/includes/related.php';
-            echo siblingKeywordsHtml($KEYWORD_SLUG, $SERVICE_SLUG, 0);
+            echo siblingKeywordsHtml($KEYWORD_SLUG, $SERVICE_SLUG, $siblingLimit);
             ?>
         </div>
     </div>
@@ -233,8 +240,10 @@ require SITE_ROOT . '/includes/header.php';
 <!-- QUOTE -->
 <section id="quote" class="bg-[#061828] text-white">
     <div class="max-w-3xl mx-auto px-6 py-14">
-        <h2 class="text-3xl font-bold text-center">Quote for <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></h2>
-        <p class="mt-2 text-center text-white/90">Fixed-price after scope is agreed. Stockport engineers · North West coverage.</p>
+        <h2 class="text-3xl font-bold text-center"><?= $poaEnquire ? 'Enquire for' : 'Quote for' ?> <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></h2>
+        <p class="mt-2 text-center text-white/90"><?= $poaEnquire
+            ? 'Price on application after we confirm the scope. Stockport engineers · North West coverage.'
+            : 'Fixed-price after scope is agreed. Stockport engineers · North West coverage.' ?></p>
         <form action="<?= url('/contact.php') ?>" method="POST" class="mt-8 bg-white text-zinc-900 border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4 shadow-xl">
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid md:grid-cols-2 gap-4">

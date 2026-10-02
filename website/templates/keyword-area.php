@@ -63,12 +63,15 @@ $h = static function ($s): string {
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-[1.08] drop-shadow-lg">
             <?= $h($KEYWORD_NAME) ?><br><span class="text-[#ff6b00]">in <?= $h($AREA) ?></span>
         </h1>
+        <?php $poaEnquire = !empty($KEYWORD_POA_ENQUIRE); ?>
         <p class="mt-5 text-lg text-white font-medium max-w-2xl leading-relaxed drop-shadow">
             Local engineers for <strong><?= $h($KEYWORD_NAME) ?></strong> in <strong><?= $h($AREA) ?></strong> and nearby postcodes.
-            Fixed-price quotes · Stockport-based team covering the North West.
+            <?= $poaEnquire
+                ? 'Price on application · Stockport-based team covering the North West.'
+                : 'Fixed-price quotes · Stockport-based team covering the North West.' ?>
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
-            <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-bold text-white shadow-lg">Get free quote</a>
+            <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-bold text-white shadow-lg"><?= $poaEnquire ? 'Enquire for POA' : 'Get free quote' ?></a>
             <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode($keywordName . ' in ' . $areaName) ?>"
                target="_blank" rel="noopener" class="px-8 py-4 rounded-2xl bg-green-600 font-bold text-white shadow-lg">WhatsApp</a>
             <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="px-8 py-4 rounded-2xl bg-white text-[#061828] font-bold shadow-lg"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
@@ -86,7 +89,10 @@ $h = static function ($s): string {
                     Serving <strong class="text-[#061828]"><?= $h($AREA) ?></strong>: <?= $h($KEYWORD_BODY) ?>
                 </p>
                 <p class="mt-4 text-base text-zinc-900 leading-relaxed">
-                    Searching for <strong><?= $h($KEYWORD_NAME) ?> near <?= $h($AREA) ?></strong>? Book Icomply for install, service, testing or certification.
+                    Searching for <strong><?= $h($KEYWORD_NAME) ?> near <?= $h($AREA) ?></strong>?
+                    <?= !empty($KEYWORD_POA_ENQUIRE)
+                        ? 'Tell us the postcode and what is on site. The figure is POA after we confirm the scope.'
+                        : 'Book Icomply for install, service, testing or certification.' ?>
                     Also see
                     <a class="font-bold text-[#ff6b00] hover:underline" href="<?= url('/pages/keywords/' . rawurlencode($RELATED_SLUG) . '/' . rawurlencode($AREA_SLUG) . '.php') ?>"><?= $h($RELATED_NAME) ?> in <?= $h($AREA) ?></a>
                     and

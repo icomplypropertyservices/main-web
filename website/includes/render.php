@@ -239,6 +239,8 @@ function keywordTemplatePlaceholders(
         'KEYWORD_FAQ_HTML' => $faqHtml,
         'KEYWORD_IMAGE' => $kwImg,
         'SERVICE_IMAGE' => $svcImg,
+        'KEYWORD_POA_ENQUIRE' => !empty($meta['sec_water_plumb']),
+        'KEYWORD_SIBLING_LIMIT' => !empty($meta['sec_water_plumb']) ? 8 : 0,
     ];
 }
 

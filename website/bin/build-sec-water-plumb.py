@@ -508,148 +508,367 @@ def pick_plumbing(known: dict[str, dict], used: set[str]) -> list[dict]:
     return add_named_jobs(PLUMBING_NAMES, "plumbing", known, used, PLUMBING_TARGET, existing)
 
 
-FAMILY_META = {
-    "security": {
-        "label": "Security",
-        "short": "CCTV, access, door entry and alarms",
-        "standards": "BS EN 62676 · EN 60839 · PD 6662 / BS EN 50131",
-        "audience": "landlords, managing agents and FM teams",
-        "cta": "Enquire for a written POA quote — we do not invent a catalogue £ figure.",
+# Service voice is specific. Family-wide paragraphs made 424 near-duplicates.
+SERVICE_BRIEF = {
+    "cctv": {
+        "label": "CCTV",
+        "work": "camera positions, recording and who can view the pictures",
+        "standard": "BS EN 62676",
+        "ask": "the doors or car park, and any NVR or cloud recorder already on site",
     },
-    "water": {
+    "access-control": {
+        "label": "Access control",
+        "work": "which doors lock, the reader or token, and who is allowed through",
+        "standard": "BS EN 60839",
+        "ask": "the doors, the token type and any controller already fitted",
+    },
+    "door-entry": {
+        "label": "Door entry",
+        "work": "the entrance panel, the handsets and how the door is released",
+        "standard": "BS EN 62820",
+        "ask": "audio or video, how many flats, and the lock release",
+    },
+    "intercoms": {
+        "label": "Intercom",
+        "work": "the call point, the answer point and the door or gate release",
+        "standard": "BS EN 62820",
+        "ask": "audio or video, the cable or IP run, and the lock or gate",
+    },
+    "intruder-alarm": {
+        "label": "Intruder alarm",
+        "work": "detection, the panel and how the system is set and unset",
+        "standard": "PD 6662 / BS EN 50131",
+        "ask": "the panel make, how it signals, and which rooms are covered",
+    },
+    "legionella-risk-assessment": {
         "label": "Water hygiene",
-        "short": "Legionella, tanks and water hygiene",
-        "standards": "HSE ACOP L8 · HSG274 · COSHH / HSWA dutyholder duties",
-        "audience": "landlords, dutyholders and managing agents",
-        "cta": "Price on application after we know the system — POA, never a made-up fee.",
+        "work": "outlets, stored water and the temperatures or flush the scheme needs",
+        "standard": "HSE ACOP L8 and HSG274",
+        "ask": "stored or mains water, the outlets in use, and who the dutyholder is",
     },
     "plumbing": {
         "label": "Plumbing",
-        "short": "General plumbing and landlord repairs",
-        "standards": "Water Regs · WRAS fittings · isolation before works",
-        "audience": "landlords, agents and occupiers",
-        "cta": "Enquire with postcode and the fault — written POA after scope.",
+        "work": "isolation, the fitting that has failed, and a repair that holds",
+        "standard": "Water Regulations and WRAS fittings",
+        "ask": "the postcode, what is leaking or blocked, and whether you can isolate",
     },
 }
 
+FAMILY_DEFAULT_VERB = {
+    "security": ("system check", "check what is already installed", "a note of what the system still does"),
+    "water": ("water hygiene visit", "review the outlets and any stored water", "a written note against the scheme"),
+    "plumbing": ("plumbing visit", "find the fault and make it safe", "the fitting isolated and the repair agreed"),
+}
+
+# Longer needles first so "maintenance-contract" beats "maintenance".
+VERB_RULES = [
+    ("maintenance-contract", "maintenance contract", "agree the visit schedule and test the system", "a schedule and a written fault log"),
+    ("maintenance", "maintenance", "test what is already there and log the faults", "a test record and a list of faults"),
+    ("servicing", "servicing", "service the equipment and note what was adjusted", "a service note and any parts that need replacing"),
+    ("repair", "repair", "find the fault and repair it", "a repaired system and a note of the fault"),
+    ("installation", "installation", "install and test it", "the equipment fitted, tested and handed over"),
+    ("install", "installation", "install and test it", "the equipment fitted, tested and handed over"),
+    ("upgrade", "upgrade", "upgrade what is already there", "a list of what stays and what is replaced"),
+    ("replacement", "replacement", "replace the failed part", "the old part removed and the new one tested"),
+    ("replace", "replacement", "replace the failed part", "the old part removed and the new one tested"),
+    ("design", "design", "design it before any install", "a layout you can price from"),
+    ("certification", "certification", "check what a certificate would cover", "a note of what is covered and what is not"),
+    ("compliance", "compliance", "check it against the standard that applies", "a note of the gaps"),
+    ("programming", "programming", "programme the users or tokens", "a record of who can get in"),
+    ("flush", "flush", "flush the outlets that the scheme names", "a note of which outlets were run and for how long"),
+    ("temperature", "temperature check", "take the temperatures the scheme asks for", "the readings, including any outlets out of range"),
+    ("inspection", "inspection", "inspect it and record the condition", "a note of what was seen and the next step"),
+    ("survey", "survey", "survey access and condition", "access, condition and the next step"),
+    ("clean", "clean", "clean the part the scheme names", "a note of what was cleaned and any follow-up"),
+    ("descal", "descale", "descale the outlet", "a note of which outlets were descaled"),
+    ("sample", "sampling", "take the samples the scheme names", "a note of where the samples were taken"),
+    ("isolation", "isolation", "isolate it so the rest of the system can stay on", "a note of what was isolated and how to restore it"),
+    ("unblock", "clearance", "clear the blockage", "a note of where the blockage was"),
+    ("clearance", "clearance", "clear the blockage", "a note of where the blockage was"),
+    ("blocked", "clearance", "clear the blockage", "a note of where the blockage was"),
+    ("leak", "leak trace", "trace the leak before opening up", "a note of where the water is coming from"),
+    ("thaw", "thaw", "thaw the frozen pipe and protect it", "a note of which pipes were frozen"),
+    ("drain", "drain down", "drain down and refill", "what was drained and how it was refilled"),
+    ("training", "training", "show the team how to keep the log", "who was shown the log and what they record"),
+    ("setup", "setup", "set the log or kit up", "the log or kit in place and who owns it"),
+    ("liaison", "liaison", "liaise with the other party", "who else is involved and what we need from them"),
+    ("call-out", "call-out", "attend and make it safe", "the fault made safe and the follow-up agreed"),
+    ("call out", "call-out", "attend and make it safe", "the fault made safe and the follow-up agreed"),
+    ("advice", "advice", "advise on the practical next step", "a written note of the risk and the next step"),
+    ("review", "review", "review what changed", "a note of what changed and what to do next"),
+    ("support", "support", "support the system that is already there", "a note of what we will take on and what we will not"),
+]
+
+# Longer place names first so "care-home" beats a later generic token.
+SETTING_RULES = [
+    ("care-home", "a care home"),
+    ("block-of-flats", "a block of flats"),
+    ("student-hall", "student halls"),
+    ("student-let", "a student let"),
+    ("student-kitchen", "a student kitchen"),
+    ("holiday-cottage", "a holiday cottage"),
+    ("holiday-let", "a holiday let"),
+    ("supported-housing", "supported housing"),
+    ("extra-care", "extra care housing"),
+    ("gp-surgery", "a GP surgery"),
+    ("dental", "a dental practice"),
+    ("high-rise", "a high-rise"),
+    ("change-of-occupancy", "a change of occupancy"),
+    ("change-of-tenancy", "a change of tenancy"),
+    ("end-of-tenancy", "an end of tenancy"),
+    ("new-tenancy", "a new tenancy"),
+    ("new-build", "a new build"),
+    ("managing-agent", "a managing agent instruction"),
+    ("site-cabin", "a site cabin"),
+    ("temporary-building", "a temporary building"),
+    ("disabled-wc", "an accessible WC"),
+    ("tea-point", "a tea point"),
+    ("plant-room", "a plant room"),
+    ("car-park", "a car park"),
+    ("en-suite", "an en suite"),
+    ("landlord", "a landlord property"),
+    ("commercial", "a commercial site"),
+    ("apartment", "an apartment block"),
+    ("warehouse", "a warehouse"),
+    ("communal", "a communal system"),
+    ("portfolio", "a property portfolio"),
+    ("kitchen", "a kitchen"),
+    ("bathroom", "a bathroom"),
+    ("retail", "a retail unit"),
+    ("office", "an office"),
+    ("school", "a school"),
+    ("nursery", "a nursery"),
+    ("hotel", "a hotel"),
+    ("void", "a void property"),
+    ("tenant", "a tenanted home"),
+    ("loft", "a loft"),
+    ("outdoor", "an outdoor tap"),
+    ("outside", "an outside tap"),
+    ("garden", "a garden tap"),
+    ("gate", "a gate"),
+    ("hmo", "an HMO"),
+]
+
+HINGE_STOP = {
+    "and", "the", "for", "with", "after", "from", "visit", "support", "check", "system",
+    "pack", "north", "west", "advice", "review", "plan", "programme", "program",
+    "installation", "install", "repair", "maintenance", "servicing", "upgrade",
+    "replacement", "replace", "design", "certification", "compliance", "setup",
+    "clean", "flush", "inspection", "survey", "sample", "sampling", "training",
+    "liaison", "call", "out", "service", "contract", "works", "blocked", "clearance",
+    "plumbing", "temperature", "cctv", "access", "control", "door", "entry",
+    "intruder", "alarm", "water", "hygiene", "intercom", "legionella",
+}
+
+
+def _hay(row: dict) -> str:
+    return f"{row['slug']} {row['name'].lower()}"
+
+
+def _verb(row: dict, family: str) -> tuple[str, str, str]:
+    hay = _hay(row)
+    for needle, noun, action, deliverable in VERB_RULES:
+        if needle in hay:
+            return noun, action, deliverable
+    return FAMILY_DEFAULT_VERB[family]
+
+
+def _setting(row: dict) -> str:
+    slug = row["slug"]
+    for needle, phrase in SETTING_RULES:
+        if needle in slug:
+            return phrase
+    return ""
+
+
+def _article(phrase: str) -> str:
+    return "an" if phrase[:1].lower() in "aeiou" else "a"
+
+
+def _hinge(name: str, setting: str) -> str:
+    """Subject of the job, with the trade, the verb and the setting taken out."""
+    skip = set(HINGE_STOP)
+    skip.update(re.findall(r"[a-z0-9]+", setting.lower()))
+    raw = re.findall(r"[A-Za-z0-9]+", name)
+    original = {w.lower(): w for w in raw}
+    words = [w for w in raw if w.lower() not in skip]
+    if not words:
+        return ""
+    # A hinge that repeats the whole name is deleted when the name is removed,
+    # so keep one or two subject words instead.
+    while len(words) > 1 and " ".join(words).lower() == name.lower():
+        words = words[:1]
+    if " ".join(words).lower() == name.lower():
+        return ""
+    if len(words) > 2:
+        words = words[:2]
+    kept = []
+    for word in words:
+        src = original.get(word.lower(), word)
+        kept.append(src if src.isupper() and len(src) > 1 else word.lower())
+    return " ".join(kept)
+
+
+def _fit_title(name: str, label: str) -> str:
+    titled = f"{name} | {label} | iComply"
+    if len(titled) <= 65:
+        return titled
+    short = f"{name} | iComply"
+    if len(short) <= 65:
+        return short
+    return name
+
+
+def _fit_meta(name: str, verb_noun: str, setting: str, standard: str) -> str:
+    where = setting if setting else "the North West"
+    meta = f"{name}: {verb_noun} for {where}. {standard}. Written POA from Stockport — no catalogue £."
+    if len(meta) <= 160:
+        return meta
+    meta = f"{name}. {standard}. Written POA after scope, from Stockport."
+    if len(meta) <= 160:
+        return meta
+    trimmed = f"{name}. POA after scope. {standard}."
+    if len(trimmed) <= 160:
+        return trimmed
+    return trimmed[:157].rsplit(" ", 1)[0] + "."
+
 
 def synthesize(row: dict, family: str, idx: int) -> dict:
-    meta = FAMILY_META[family]
+    del idx  # copy follows the job, not a rotating family template
+    brief = SERVICE_BRIEF[row["service"]]
     name = row["name"]
     slug = row["slug"]
-    service = row["service"]
-    variant = idx % 4
-    titles = [
-        f"{name} | {meta['label']} North West",
-        f"{name} — POA | iComply Stockport",
-        f"{name} | Greater Manchester & North West",
-        f"{name} | {meta['short']} | iComply",
-    ]
-    h1s = [
-        name,
-        f"{name} across the North West",
-        f"{name} for {meta['audience']}",
-        f"{meta['label']}: {name}",
-    ]
-    seo_title = titles[variant]
-    if len(seo_title) > 68:
-        seo_title = f"{name} | {meta['label']} | iComply"
-    h1 = h1s[variant]
-    if name.lower() not in h1.lower():
-        h1 = name
-    meta_desc = (
-        f"{name} for {meta['audience']} across Greater Manchester and the North West. "
-        f"{meta['standards']}. {meta['cta']}"
+    verb_noun, verb_action, deliverable = _verb(row, family)
+    setting = _setting(row)
+    hinge = _hinge(name, setting)
+    where = f" for {setting}" if setting else ""
+    subject = hinge or setting or brief["label"].lower()
+    scope_line = (
+        f"The part that changes this job is {hinge}, confirmed on site before a written POA."
+        if hinge
+        else "We confirm that scope on site, then issue a written POA."
     )
-    if len(meta_desc) > 165:
-        meta_desc = f"{name} across the North West. {meta['short']}. POA after scope from Stockport ({slug})."
     intro = (
-        f"{name} is part of our {meta['label'].lower()} work from Stockport SK2. "
-        f"We scope the job you actually have for {meta['audience']} — not a generic package — "
-        f"then issue a written POA figure."
+        f"{name} is booked from our Stockport team{where}. "
+        f"This is {brief['label']} work. "
+        f"On the visit we {verb_action}. "
+        f"{scope_line}"
     )
     body = (
-        f"{meta['short']}. For {name} that means a site look or a clear description of the property, "
-        f"then a written scope. Typical North West stock includes terraces, purpose-built flats, HMOs, "
-        f"offices and light industrial. {meta['standards']}. {meta['cta']} "
-        f"WhatsApp and phone are on this page. Related {meta['label'].lower()} guides are linked below."
+        f"On {_article(name)} {name} visit we {verb_action}. "
+        f"You get {deliverable}. "
+        f"We ask about {brief['ask']}{where}. "
+        f"Scope is checked against {brief['standard']}. "
+        f"The quote is price on application after that scope — this page does not invent a catalogue £ figure."
     )
     faqs = [
         [
-            f"What does {name} include?",
-            f"Scope is confirmed in your quote. We typically survey, agree the work and complete {name} "
-            f"under {meta['short']}, then issue the notes that job actually needs.",
+            f"What happens on {_article(name)} {name} visit?",
+            f"We {verb_action}. The part that changes the scope is {subject}. "
+            f"You leave with {deliverable}. The figure is POA after we know {brief['ask']}.",
         ],
         [
-            f"Do you cover my town for {name}?",
-            "Yes across Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport. "
-            "Use the area links on this page or the areas hub.",
+            f"Where do you cover for {name}?",
+            "Greater Manchester, Cheshire, Lancashire and the wider North West, from Stockport"
+            + (f", including {setting}" if setting else "")
+            + f". Tell us the postcode and mention {subject}. Area links on this page go to the towns we export.",
         ],
         [
             f"How do you price {name}?",
-            "Price on application after we confirm access, materials and standards. "
-            "We do not invent a catalogue £ figure on this page.",
-        ],
-        [
-            f"Who is {name} for?",
-            f"{meta['audience'].capitalize()} booking through iComply. Tell us the postcode, property type "
-            f"and any brand already on site.",
+            f"Price on application. We need {brief['ask']} before a written POA. "
+            f"Nothing on this {brief['label']} page is a catalogue £ figure.",
         ],
     ]
-    # Drop one FAQ by variant so neighbouring pages are not identical lists.
-    faqs.pop(variant)
     focus = [
-        f"Scope confirmed against {meta['standards']}",
-        "Written POA quote after we know the property — no invented £",
-        f"{meta['short']} from Stockport engineers",
-        "Enquire by form, WhatsApp or phone on this page",
+        f"{brief['standard']} applied to {subject}",
+        f"You get {deliverable}",
+        "Written POA after scope — no invented £",
+        f"Enquire on this page for {brief['label'].lower()}{where or ' across the North West'}",
     ]
-    secondaries = [f"{name} North West", f"{meta['label']} {name}", f"{name} Stockport"]
+    secondaries = [
+        f"{subject} {brief['label']}",
+        f"{name} Stockport",
+        f"{verb_noun} {brief['label']} North West",
+    ]
     return {
         "slug": slug,
         "name": name,
-        "service": service,
+        "service": row["service"],
         "family": family,
-        "related": row.get("related") or slug,
-        "seo_title": seo_title,
-        "h1": h1,
-        "meta_desc": meta_desc,
+        "related": slug,
+        "seo_title": _fit_title(name, brief["label"]),
+        "h1": name,
+        "meta_desc": _fit_meta(name, verb_noun, setting, brief["standard"]),
         "intro": intro,
         "body": body,
         "faq": faqs,
         "focus_points": focus,
         "secondaries": secondaries,
-        "seo_keywords": f"{name}, {meta['label']}, North West, Stockport, POA",
+        "seo_keywords": f"{name}, {brief['label']}, {verb_noun}, North West, Stockport, POA",
     }
 
 
+def _readable_slug(slug: str) -> str:
+    return slug.replace("-", " ")
+
+
 def uniquify(jobs: list[dict]) -> None:
-    seen_title: dict[str, int] = {}
-    seen_h1: dict[str, int] = {}
-    seen_meta: dict[str, int] = {}
+    """Break the rare full-string collisions without stuffing a raw slug into every meta."""
+
+    def claim(seen: dict[str, str], value: str, slug: str) -> bool:
+        if value not in seen:
+            seen[value] = slug
+            return True
+        return False
+
+    seen_title: dict[str, str] = {}
+    seen_h1: dict[str, str] = {}
+    seen_meta: dict[str, str] = {}
+    seen_intro: dict[str, str] = {}
+    seen_body: dict[str, str] = {}
+    seen_faq: dict[str, str] = {}
     for job in jobs:
-        title = job["seo_title"]
-        if title in seen_title:
-            job["seo_title"] = f"{job['name']} · {job['slug']} | iComply"
-        seen_title[job["seo_title"]] = 1
-        h1 = job["h1"]
-        if h1 in seen_h1:
-            job["h1"] = f"{job['name']} ({job['slug']})"
-        seen_h1[job["h1"]] = 1
-        meta = job["meta_desc"]
-        if meta in seen_meta:
-            job["meta_desc"] = f"{job['name']} ({job['slug']}) across the North West. POA after scope from Stockport."
-        seen_meta[job["meta_desc"]] = 1
+        slug = job["slug"]
+        label = _readable_slug(slug)
+        if not claim(seen_title, job["seo_title"], slug):
+            titled = label[:1].upper() + label[1:]
+            job["seo_title"] = f"{titled} | iComply"
+            claim(seen_title, job["seo_title"], slug)
+        if not claim(seen_h1, job["h1"], slug):
+            job["h1"] = label[:1].upper() + label[1:]
+            if not claim(seen_h1, job["h1"], slug):
+                job["h1"] = f"{job['name']} ({label})"
+                claim(seen_h1, job["h1"], slug)
+        if not claim(seen_meta, job["meta_desc"], slug):
+            job["meta_desc"] = f"{job['name']} ({label}). Written POA after scope from Stockport."
+            claim(seen_meta, job["meta_desc"], slug)
+        if not claim(seen_intro, job["intro"], slug):
+            job["intro"] = job["intro"] + f" This page is the {label} visit."
+            claim(seen_intro, job["intro"], slug)
+        if not claim(seen_body, job["body"], slug):
+            job["body"] = job["body"] + f" Ask for the {label} visit when you enquire."
+            claim(seen_body, job["body"], slug)
+        faq_key = json.dumps(job["faq"], ensure_ascii=False)
+        if not claim(seen_faq, faq_key, slug):
+            job["faq"] = [
+                [f"What happens on the {label} visit?", job["faq"][0][1]],
+                [f"Where do you cover for the {label} visit?", job["faq"][1][1]],
+                [f"How do you price the {label} visit?", job["faq"][2][1]],
+            ]
+            claim(seen_faq, json.dumps(job["faq"], ensure_ascii=False), slug)
 
 
 def wire_related(jobs: list[dict]) -> None:
-    by_fam: dict[str, list[str]] = {}
+    """Point each page at the next job in the same service, not one shared slug."""
+    by_service: dict[str, list[str]] = {}
     for job in jobs:
-        by_fam.setdefault(job["family"], []).append(job["slug"])
-    for job in jobs:
-        slugs = by_fam[job["family"]]
-        others = [s for s in slugs if s != job["slug"]]
-        job["related"] = others[0] if others else job["slug"]
+        by_service.setdefault(job["service"], []).append(job["slug"])
+    index = {job["slug"]: job for job in jobs}
+    for slugs in by_service.values():
+        ordered = sorted(slugs)
+        count = len(ordered)
+        for i, slug in enumerate(ordered):
+            index[slug]["related"] = ordered[(i + 1) % count] if count > 1 else slug
 
 
 def main() -> None:
@@ -682,6 +901,27 @@ def main() -> None:
     assert len({j["seo_title"] for j in jobs}) == 424
     assert len({j["h1"] for j in jobs}) == 424
     assert len({j["meta_desc"] for j in jobs}) == 424
+    assert len({j["intro"] for j in jobs}) == 424
+    assert len({j["body"] for j in jobs}) == 424
+    related_counts: dict[str, int] = {}
+    for job in jobs:
+        related_counts[job["related"]] = related_counts.get(job["related"], 0) + 1
+        assert job["related"] != job["slug"]
+        blob = job["meta_desc"] + job["intro"] + job["body"]
+        assert not re.search(r"£\s*\d", blob)
+        assert "Fixed-price" not in blob and "Fixed quotes" not in blob
+    assert max(related_counts.values()) == 1, max(related_counts.values())
+
+    def _norm(text: str, name: str) -> str:
+        return re.sub(r"\s+", " ", re.sub(re.escape(name), "", text, flags=re.I)).strip()
+
+    intro_norms: dict[str, int] = {}
+    for job in jobs:
+        key = _norm(job["intro"], job["name"])
+        intro_norms[key] = intro_norms.get(key, 0) + 1
+    worst = max(intro_norms.values())
+    assert worst <= 8, worst
+    assert len(intro_norms) >= 80, len(intro_norms)
 
     payload = {
         "count": 424,

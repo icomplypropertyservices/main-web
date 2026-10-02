@@ -147,6 +147,40 @@ if ($dupM) {
     $ok('unique meta descriptions for 424 jobs');
 }
 
+$relatedCounts = [];
+$introNorms = [];
+$slugSet = array_fill_keys($unique, true);
+foreach ($jobs as $job) {
+    $slug = keywordSlug((string)($job['slug'] ?? ''));
+    $related = keywordSlug((string)($job['related'] ?? ''));
+    $name = (string)($job['name'] ?? '');
+    if ($related === '' || $related === $slug || !isset($slugSet[$related])) {
+        $bad('related link is not another family job on ' . $slug);
+    }
+    $relatedCounts[$related] = ($relatedCounts[$related] ?? 0) + 1;
+    $intro = (string)($job['intro'] ?? '');
+    $norm = trim((string)preg_replace('/\s+/', ' ', str_ireplace($name, '', $intro)));
+    $introNorms[$norm] = ($introNorms[$norm] ?? 0) + 1;
+    foreach (['intro', 'body', 'meta_desc', 'h1', 'seo_title'] as $field) {
+        $text = (string)($job[$field] ?? '');
+        if (preg_match('/£\s*\d/', $text) || str_contains($text, 'Fixed-price') || str_contains($text, 'Fixed quotes')) {
+            $bad("{$field} still sells a fixed price on {$slug}");
+        }
+    }
+}
+$relatedMax = $relatedCounts ? max($relatedCounts) : 0;
+if ($relatedMax > 1) {
+    $bad('related slug reused (max ' . $relatedMax . ')');
+} else {
+    $ok('each related slug is used once');
+}
+$introWorst = $introNorms ? max($introNorms) : 0;
+if ($introWorst > 8 || count($introNorms) < 80) {
+    $bad('intro copy still collapses (worst ' . $introWorst . ', patterns ' . count($introNorms) . ')');
+} else {
+    $ok('intro copy has ' . count($introNorms) . ' patterns (worst repeat ' . $introWorst . ')');
+}
+
 $rendered = 0;
 $seoFail = [];
 if (!$skipRender && !$missingKw && !$missingFiles) {
@@ -166,6 +200,8 @@ if (!$skipRender && !$missingKw && !$missingFiles) {
             '#0B1F3A',
             '#ff6b00',
             'Submit request',
+            'Enquire for POA',
+            'Price on application',
         ];
         $missing = [];
         foreach ($needles as $n) {
@@ -179,6 +215,12 @@ if (!$skipRender && !$missingKw && !$missingFiles) {
         if (preg_match('/£\s*\d/', $html)) {
             $missing[] = 'invented-£';
         }
+        if (str_contains($html, 'Fixed quotes') || str_contains($html, 'Fixed-price')) {
+            $missing[] = 'fixed-price-copy';
+        }
+        if (substr_count(strtolower($html), '<h1') !== 1) {
+            $missing[] = 'h1-count';
+        }
         if (strlen($html) < 1800) {
             $missing[] = 'short-html';
         }
@@ -190,6 +232,26 @@ if (!$skipRender && !$missingKw && !$missingFiles) {
         $bad('SEO tags missing on ' . count($seoFail) . ' pages (sample ' . implode('; ', array_slice($seoFail, 0, 5)) . ')');
     } else {
         $ok("required SEO + brand + POA CTA present on {$rendered} pages");
+    }
+    foreach (['anpr-cctv-system', 'calorifier-temperature-check', 'blocked-toilet-clearance'] as $sample) {
+        ob_start();
+        renderKeywordAreaPage($sample, 'Stockport');
+        $townHtml = (string)ob_get_clean();
+        $townBad = [];
+        if (!str_contains($townHtml, 'Enquire for POA') || !str_contains($townHtml, 'Price on application')) {
+            $townBad[] = 'missing-poa';
+        }
+        if (str_contains($townHtml, 'Fixed-price') || str_contains($townHtml, 'Fixed quotes')) {
+            $townBad[] = 'fixed-price-copy';
+        }
+        if (preg_match('/£\s*\d/', $townHtml)) {
+            $townBad[] = 'invented-£';
+        }
+        if ($townBad) {
+            $bad('Stockport town page ' . $sample . ' (' . implode('|', $townBad) . ')');
+        } else {
+            $ok('Stockport town page is POA for ' . $sample);
+        }
     }
 } elseif ($skipRender) {
     echo "SKIP render checks (--skip-render)\n";
