@@ -167,6 +167,18 @@ if (!$skipRender) {
         if (strlen($html) < 1800) {
             $missing[] = 'short-html';
         }
+        if (strlen($html) > 250000) {
+            $missing[] = 'oversized-html';
+        }
+        if (str_contains($html, 'this.src=$SERVICE_IMAGE')) {
+            $missing[] = 'broken-image-fallback';
+        }
+        if (str_contains($html, 'industry-standard-equipment')) {
+            $missing[] = 'placeholder-mfr-link';
+        }
+        if (str_contains($html, '>Fixed quotes<') || str_contains($html, 'Fixed-price after scope')) {
+            $missing[] = 'fixed-price-chrome';
+        }
         if ($missing) {
             $seoFail[] = $slug . '(' . implode('|', $missing) . ')';
         }

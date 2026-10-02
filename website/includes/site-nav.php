@@ -358,6 +358,26 @@ function icomplyMobileDrawerHtml(array $n): string
 HTML;
 }
 
+/**
+ * Footer keyword inventory is a sample of featured hubs, not the full catalogue.
+ * Every slug still has a page; the index lists them.
+ *
+ * @param array<string,mixed> $n
+ */
+function icomplyFooterKeywordSampleHtml(array $n): string
+{
+    $html = '<div class="foot-links">';
+    foreach ($n['featuredKw'] ?? [] as $slug => $name) {
+        $html .= icomplyNavLink(
+            url('/pages/keywords/' . rawurlencode((string)$slug) . '.php'),
+            (string)$name
+        );
+    }
+    $html .= icomplyNavLink(url('/pages/keywords/index.php'), 'Full keyword index →');
+    $html .= '</div>';
+    return $html;
+}
+
 function icomplyFooterHtml(): string
 {
     $n = icomplyNavCatalog();
@@ -390,21 +410,7 @@ function icomplyFooterHtml(): string
         $areaDrop .= '</div></details>';
     }
 
-    $kwDrop = '';
-    foreach ($n['cats'] as $cat) {
-        if (empty($cat['keywords'])) {
-            continue;
-        }
-        $kwDrop .= '<details class="foot-sub"><summary>' . icomplyNavH($cat['label']) . '</summary>';
-        foreach ($cat['keywords'] as $svcSlug => $block) {
-            $kwDrop .= '<details class="foot-sub"><summary>' . icomplyNavH($block['name']) . '</summary><div class="foot-links">';
-            foreach ($block['keywords'] as $kSlug => $meta) {
-                $kwDrop .= icomplyNavLink(url('/pages/keywords/' . rawurlencode((string)$kSlug) . '.php'), (string)($meta['name'] ?? $kSlug));
-            }
-            $kwDrop .= '</div></details>';
-        }
-        $kwDrop .= '</details>';
-    }
+    $kwDrop = icomplyFooterKeywordSampleHtml($n);
 
     $matrixDrop = '<p class="foot-note">Every keyword hub has a page for every town (' . $kwCount . ' × ' . $areaCount . '). Open a hub, then pick the town — we do not dump 200,000 links here.</p>';
     $matrixDrop .= '<details class="foot-sub"><summary>Open a keyword hub (then pick a town)</summary><div class="foot-links">';

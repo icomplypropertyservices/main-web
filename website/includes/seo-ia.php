@@ -364,8 +364,15 @@ function seoIaManufacturerTagsHtml(string $serviceSlug, array $jobSlugs = [], ar
         }
         $seen[$slug] = true;
         $entry = getManufacturerBySlug($slug);
+        if (!$entry) {
+            $label = htmlspecialchars(keywordDisplayName($slug), ENT_QUOTES, 'UTF-8');
+            $html .= '<span class="inline-flex items-center gap-1.5 px-4 py-2.5 bg-zinc-50 border-2 border-dashed border-zinc-300 rounded-full text-sm text-zinc-700 font-semibold" title="Brand we install — no separate manufacturer page">'
+                . $label . '</span>';
+            continue;
+        }
+        $pageSlug = areaSlug((string)($entry['slug'] ?? $slug));
         $label = htmlspecialchars((string)($entry['name'] ?? keywordDisplayName($slug)), ENT_QUOTES, 'UTF-8');
-        $href = htmlspecialchars(url('/pages/manufacturers/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
+        $href = htmlspecialchars(url('/pages/manufacturers/' . $pageSlug . '.php'), ENT_QUOTES, 'UTF-8');
         $html .= '<a href="' . $href . '" '
             . 'class="inline-flex items-center gap-1.5 px-4 py-2.5 bg-white border-2 border-zinc-200 rounded-full text-sm text-black font-semibold hover:border-[#ff6b00] hover:text-[#ff6b00] hover:shadow-sm transition" '
             . 'title="View ' . $label . ' products and service page">'

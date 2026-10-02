@@ -174,7 +174,7 @@ function keywordTemplatePlaceholders(
         $q = htmlspecialchars((string)$faq[0], ENT_QUOTES, 'UTF-8');
         $a = htmlspecialchars((string)$faq[1], ENT_QUOTES, 'UTF-8');
         $faqHtml .= '<details class="bg-white border-2 border-zinc-300 rounded-2xl p-5 group">'
-            . '<summary class="font-bold text-[#061828] cursor-pointer list-none flex justify-between gap-3">'
+            . '<summary class="font-bold text-[#0B1F3A] cursor-pointer list-none flex justify-between gap-3">'
             . $q . '<span class="text-[#ff6b00] text-xl leading-none">+</span></summary>'
             . '<p class="mt-3 text-sm text-zinc-900 leading-relaxed font-medium">' . $a . '</p></details>';
     }
@@ -201,7 +201,7 @@ function keywordTemplatePlaceholders(
     $secondaryHtml = '';
     if (is_array($secondaries) && $secondaries) {
         $secondaryHtml .= '<div class="mt-8">';
-        $secondaryHtml .= '<h2 class="text-2xl md:text-3xl font-bold text-[#061828] tracking-tight">Also searched as</h2>';
+        $secondaryHtml .= '<h2 class="text-2xl md:text-3xl font-bold text-[#0B1F3A] tracking-tight">Also searched as</h2>';
         $secondaryHtml .= '<p class="mt-3 text-base text-zinc-900 leading-relaxed">People looking for '
             . htmlspecialchars($h1, ENT_QUOTES, 'UTF-8')
             . ' also ask about ';
