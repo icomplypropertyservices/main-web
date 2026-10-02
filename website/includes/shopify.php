@@ -125,15 +125,9 @@ function shopifyCollectionUrl(array $collection): string {
     return url('/shop/index.php') . '#collection-' . rawurlencode($collection['id'] ?? '');
 }
 
-/**
- * Keep real CDN URLs. Local paths must exist or fall back to a service photo.
- */
 function shopifyImageSrc(string $path, string $hint = ''): string {
     $path = trim($path);
-    if (preg_match('#^https?://#i', $path)) {
-        return $path;
-    }
-    if ($path !== '') {
+    if ($path !== '' && !preg_match('#^https?://#i', $path)) {
         $rel = '/' . ltrim(str_replace('\\', '/', $path), '/');
         if (is_file(SITE_ROOT . $rel)) {
             return url($rel);
@@ -161,9 +155,6 @@ function shopifyImageSrc(string $path, string $hint = ''): string {
         'hochiki' => 'fire-alarms',
         'paxton' => 'access-control',
         'hikvision' => 'cctv',
-        'worcester' => 'gas-systems',
-        'vaillant' => 'gas-systems',
-        'baxi' => 'gas-systems',
     ];
     foreach ($aliases as $needle => $slug) {
         if (str_contains($hay, $needle)) {
@@ -180,9 +171,6 @@ function shopifyImageSrc(string $path, string $hint = ''): string {
     return url('/assets/images/services/fire-alarms.jpg');
 }
 
-/**
- * Build a shop product card from a manufacturer catalog product entry.
- */
 function shopifyCardFromManufacturerProduct(array $p, string $mfrSlug, string $mfrName): string {
     $product = [
         'id' => $p['id'] ?? ($mfrSlug . '-product'),
@@ -193,16 +181,40 @@ function shopifyCardFromManufacturerProduct(array $p, string $mfrSlug, string $m
         'handle' => $p['handle'] ?? '',
         'shopify_product_id' => $p['shopify_product_id'] ?? '',
         'badge' => $p['badge'] ?? '',
-        'public_href' => $p['public_href'] ?? '',
     ];
+    // Placeholder brand cards are not Shopify PDPs. Land on the brand page
+    // anchor, which the static export actually publishes.
+    $anchorId = (string)($p['id'] ?? ($mfrSlug . '-product'));
+    $product['public_href'] = url('/pages/manufacturers/' . rawurlencode($mfrSlug) . '.php')
+        . '#' . rawurlencode($anchorId);
     return shopifyProductCardHtml($product, false);
 }
 
 function shopifyProductCardHtml(array $product, bool $compact = false): string {
-    $id = htmlspecialchars((string)($product['id'] ?? ''), ENT_QUOTES, 'UTF-8');
-    $title = htmlspecialchars((string)($product['title'] ?? 'Product'), ENT_QUOTES, 'UTF-8');
-    $blurb = htmlspecialchars((string)($product['blurb'] ?? ''), ENT_QUOTES, 'UTF-8');
-    $price = htmlspecialchars((string)($product['price'] ?? ''), ENT_QUOTES, 'UTF-8');
+    $over = icomplyPackagePublicOverride($product);
+    if ($over['price'] !== null) {
+        $product['price'] = $over['price'];
+    }
+    if ($over['href'] !== null) {
+        $product['public_href'] = $over['href'];
+    }
+    if ($over['is_aov_package']) {
+        $product['badge'] = 'POA';
+    }
+    if (!empty($over['blurb'])) {
+        $product['blurb'] = $over['blurb'];
+    }
+
+    $id = htmlspecialchars($product['id'] ?? '', ENT_QUOTES, 'UTF-8');
+    $title = htmlspecialchars($product['title'] ?? 'Product', ENT_QUOTES, 'UTF-8');
+    $blurb = htmlspecialchars($product['blurb'] ?? '', ENT_QUOTES, 'UTF-8');
+    $priceRaw = (string)($product['price'] ?? '');
+    $reqPath = (string)(parse_url((string)($_SERVER['REQUEST_URI'] ?? ''), PHP_URL_PATH) ?: '');
+    $onShopSurface = (bool)preg_match('#^/(shop|products)(/|$)#', $reqPath);
+    if (!$onShopSurface && str_contains($priceRaw, '£')) {
+        $priceRaw = 'POA';
+    }
+    $price = htmlspecialchars($priceRaw, ENT_QUOTES, 'UTF-8');
     $badge = trim((string)($product['badge'] ?? ''));
     $img = htmlspecialchars(shopifyImageSrc(
         (string)($product['image'] ?? ''),
@@ -211,21 +223,24 @@ function shopifyProductCardHtml(array $product, bool $compact = false): string {
     $fallback = htmlspecialchars(url('/assets/images/services/fire-alarms.jpg'), ENT_QUOTES, 'UTF-8');
     $href = htmlspecialchars(shopifyProductUrl($product), ENT_QUOTES, 'UTF-8');
     $shopifyId = preg_replace('/\D+/', '', (string)($product['shopify_product_id'] ?? ''));
-    $mountId = 'shopify-buy-' . preg_replace('/[^a-z0-9\-]/i', '', (string)($product['id'] ?? 'p'));
+    $mountId = 'shopify-buy-' . preg_replace('/[^a-z0-9\-]/i', '', $product['id'] ?? uniqid('p'));
+    $ctaLabel = htmlspecialchars((string)($product['public_cta'] ?? $over['cta'] ?? 'View in shop'), ENT_QUOTES, 'UTF-8');
 
     $badgeHtml = $badge !== ''
         ? '<span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide bg-[#ff6b00] text-white">' . htmlspecialchars($badge, ENT_QUOTES, 'UTF-8') . '</span>'
         : '';
 
     $imgH = $compact ? 'h-36' : 'h-44';
-    $liveWidget = ($shopifyId !== '' && shopifyEnabled())
+    // Never mount Buy Button on retargeted / AOV-POA package cards
+    $useLive = ($shopifyId !== '' && shopifyEnabled() && empty($product['public_href']) && !$over['is_aov_package']);
+    $liveWidget = $useLive
         ? '<div id="' . $mountId . '" class="shopify-buy-mount mt-3" data-product-id="' . htmlspecialchars($shopifyId, ENT_QUOTES, 'UTF-8') . '"></div>'
-        : '<a href="' . $href . '" class="mt-4 inline-flex items-center justify-center w-full py-3 rounded-xl bg-[#0B1F3A] hover:bg-[#ff6b00] text-white text-sm font-semibold transition">View in shop</a>';
+        : '<a href="' . $href . '" class="mt-4 inline-flex items-center justify-center w-full py-3 rounded-xl bg-[#0B1F3A] hover:bg-[#ff6b00] text-white text-sm font-semibold transition">' . $ctaLabel . '</a>';
 
     return '<article id="' . $id . '" class="shop-product-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">'
         . '<a href="' . $href . '" class="relative block bg-zinc-100 overflow-hidden">'
         . $badgeHtml
-        . '<img src="' . $img . '" alt="' . $title . '" class="w-full ' . $imgH . ' object-cover group-hover:scale-105 transition duration-300" loading="lazy" onerror="this.src=\'' . $fallback . '\'">'
+        . '<img src="' . $img . '" alt="' . $title . '" width="640" height="360" class="w-full ' . $imgH . ' object-cover group-hover:scale-105 transition duration-300" loading="lazy" onerror="this.src=\'' . $fallback . '\'">'
         . '</a>'
         . '<div class="p-5 flex flex-col flex-1">'
         . '<div class="text-xs font-semibold text-[#ff6b00] mb-1">' . $price . '</div>'
@@ -236,30 +251,35 @@ function shopifyProductCardHtml(array $product, bool $compact = false): string {
 }
 
 function shopifyCollectionCardHtml(array $collection): string {
-    $title = htmlspecialchars((string)($collection['title'] ?? 'Collection'), ENT_QUOTES, 'UTF-8');
-    $blurb = htmlspecialchars((string)($collection['blurb'] ?? ''), ENT_QUOTES, 'UTF-8');
+    $title = htmlspecialchars($collection['title'] ?? 'Collection', ENT_QUOTES, 'UTF-8');
+    $blurb = htmlspecialchars($collection['blurb'] ?? '', ENT_QUOTES, 'UTF-8');
     $img = htmlspecialchars(shopifyImageSrc(
         (string)($collection['image'] ?? ''),
         (string)(($collection['id'] ?? '') . ' ' . ($collection['handle'] ?? '') . ' ' . ($collection['title'] ?? ''))
     ), ENT_QUOTES, 'UTF-8');
     $href = htmlspecialchars(shopifyCollectionUrl($collection), ENT_QUOTES, 'UTF-8');
-    $id = htmlspecialchars((string)($collection['id'] ?? ''), ENT_QUOTES, 'UTF-8');
+    $id = htmlspecialchars($collection['id'] ?? '', ENT_QUOTES, 'UTF-8');
     $collId = preg_replace('/\D+/', '', (string)($collection['shopify_collection_id'] ?? ''));
-    $mountId = 'shopify-coll-' . preg_replace('/[^a-z0-9\-]/i', '', (string)($collection['id'] ?? 'c'));
+    $mountId = 'shopify-coll-' . preg_replace('/[^a-z0-9\-]/i', '', $collection['id'] ?? uniqid('c'));
 
     $extra = ($collId !== '' && shopifyEnabled())
         ? '<div id="' . $mountId . '" class="shopify-collection-mount mt-3" data-collection-id="' . htmlspecialchars($collId, ENT_QUOTES, 'UTF-8') . '"></div>'
         : '<span class="inline-block mt-4 text-sm font-semibold text-[#ff6b00]">Shop collection →</span>';
     $fallback = htmlspecialchars(url('/assets/images/services/fire-alarms.jpg'), ENT_QUOTES, 'UTF-8');
 
-    return '<a id="collection-' . $id . '" href="' . $href . '" class="shop-collection-card group block bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition">'
-        . '<div class="relative h-40 overflow-hidden bg-zinc-100">'
-        . '<img src="' . $img . '" alt="' . $title . ' — Icomply Property Services" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" onerror="this.src=\'' . $fallback . '\'">'
-        . '<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>'
-        . '<div class="absolute bottom-3 left-4 right-4 text-white font-semibold text-lg">' . $title . '</div>'
-        . '</div>'
-        . '<div class="p-5"><p class="text-sm text-zinc-600">' . $blurb . '</p>' . $extra . '</div>'
-        . '</a>';
+    return <<<HTML
+<a id="collection-{$id}" href="{$href}" class="shop-collection-card group block bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition">
+  <div class="relative h-40 overflow-hidden bg-zinc-100">
+    <img src="{$img}" alt="{$title} — iComply Property Services" width="640" height="360" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" onerror="this.src='{$fallback}'">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+    <div class="absolute bottom-3 left-4 right-4 text-white font-semibold text-lg">{$title}</div>
+  </div>
+  <div class="p-5">
+    <p class="text-sm text-zinc-600">{$blurb}</p>
+    {$extra}
+  </div>
+</a>
+HTML;
 }
 
 function shopifyBuyButtonScript(): string {
@@ -296,7 +316,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 'font-weight': '600'
               }
             },
-            contents: { img: false, title: false, price: true, description: false },
+            contents: { img: false, title: false, price: false, description: false },
             text: { button: 'Add to cart' }
           },
           cart: {
@@ -304,6 +324,23 @@ document.addEventListener('DOMContentLoaded', function () {
               button: { 'background-color': '#0B1F3A', ':hover': { 'background-color': '#ff6b00' }, 'border-radius': '12px' }
             },
             text: { total: 'Subtotal', button: 'Checkout' }
+          }
+        }
+      });
+    });
+    document.querySelectorAll('.shopify-collection-mount[data-collection-id]').forEach(function (el) {
+      var cid = el.getAttribute('data-collection-id');
+      if (!cid) return;
+      ui.createComponent('collection', {
+        id: cid,
+        node: el,
+        moneyFormat: '%C2%A3%7B%7Bamount%7D%7D',
+        options: {
+          product: {
+            styles: {
+              button: { 'background-color': '#0B1F3A', ':hover': { 'background-color': '#ff6b00' }, 'border-radius': '12px' }
+            },
+            text: { button: 'Add to cart' }
           }
         }
       });

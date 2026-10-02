@@ -16,7 +16,7 @@ function wave1ContactPath(): string
 
 /**
  * Official publish sequence from Marketing follow-up / PUBLISH-QUEUE.md
- * (file was not on disk; order is Batch A days 1–5, B days 6–14, C hubs).
+ * (file was not on disk; order is Guides landlord topics, B fire and commercial topics, C hubs).
  * HMO package landings and keyword-matrix URLs are excluded.
  *
  * @return array{A:array,B:array,C:array}
@@ -39,19 +39,19 @@ function wave1PublishQueue(): array
     return [
         'A' => [
             'id' => 'batch-a',
-            'label' => 'Batch A — Days 1–5',
+            'label' => 'Landlord guides',
             'blurb' => 'Core landlord certificates first: gas, FRA, smoke/CO, PAT and EPC.',
             'guides' => $a,
         ],
         'B' => [
             'id' => 'batch-b',
-            'label' => 'Batch B — Days 6–14',
-            'blurb' => 'Fire, commercial, care, process and Greater Manchester — after Batch A.',
+            'label' => 'Fire and commercial guides',
+            'blurb' => 'Fire, commercial, care, process and Greater Manchester — after the landlord guides.',
             'guides' => $b,
         ],
         'C' => [
             'id' => 'batch-c',
-            'label' => 'Batch C — SEO hubs',
+            'label' => 'Service hubs',
             'blurb' => 'Quality hubs including landlord Legionella and asbestos. Not doorway spam, not HMO package landings, not keyword-matrix URLs.',
             'hubs' => wave1QualityHubs(),
         ],
@@ -226,7 +226,6 @@ function wave1QuoteFormHtml(string $defaultService, string $heading, string $int
         $_SESSION['csrf'] = bin2hex(random_bytes(16));
     }
     $csrf = htmlspecialchars((string)$_SESSION['csrf'], ENT_QUOTES, 'UTF-8');
-    $action = htmlspecialchars(url('/contact.php'), ENT_QUOTES, 'UTF-8');
     $privacy = htmlspecialchars(url('/privacy.php'), ENT_QUOTES, 'UTF-8');
     $terms = htmlspecialchars(url('/terms.php'), ENT_QUOTES, 'UTF-8');
     $html = '<section id="quote" class="bg-zinc-50 border-t">';
@@ -236,7 +235,7 @@ function wave1QuoteFormHtml(string $defaultService, string $heading, string $int
     $html .= '<h2 class="text-3xl font-semibold tracking-tight text-black mt-2">' . htmlspecialchars($heading, ENT_QUOTES, 'UTF-8') . '</h2>';
     $html .= '<p class="mt-3 text-zinc-600">' . htmlspecialchars($intro, ENT_QUOTES, 'UTF-8') . '</p>';
     $html .= '</div>';
-    $html .= '<form action="' . $action . '" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">';
+    $html .= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm');
     $html .= '<input type="hidden" name="csrf" value="' . $csrf . '">';
     $html .= '<div class="grid grid-cols-1 md:grid-cols-2 gap-4">';
     $html .= '<input type="text" name="name" placeholder="Full name" required maxlength="120" class="w-full border px-5 py-3.5 rounded-2xl">';

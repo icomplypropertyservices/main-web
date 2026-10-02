@@ -1,0 +1,91 @@
+# Draft Netlify URL for the subcontractor page. Never production.
+# `netlify deploy` without `--prod` publishes a draft alias only.
+# Do not add `--prod`, and do not POST /sites/{id}/builds (that queues production).
+
+name: Draft preview (not production)
+
+on:
+  push:
+    branches:
+      - cursor/subcontractor-page
+
+permissions:
+  contents: read
+
+jobs:
+  draft:
+    name: Netlify draft deploy
+    runs-on: ubuntu-latest
+    # Preview environment only. Do not use Production — that would be a production deploy context.
+    environment: "Preview – icomply-main-web"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          coverage: none
+
+      - name: Render preview pages
+        env:
+          SITE_URL: https://icomplypropertyservices.co.uk
+        run: php website/bin/static-export.php --only=/,/become-a-subcontractor,/thank-you,/contact
+
+      - name: Confirm /become-a-subcontractor is in dist
+        run: |
+          set -euo pipefail
+          test -f dist/become-a-subcontractor.php
+          test -f dist/index.html
+          test -f dist/thank-you.php
+          test -f dist/subcontractor-onboarding-form.html
+          test -f dist/_redirects
+          grep -q 'name="subcontractor-onboarding"' dist/become-a-subcontractor.php
+          grep -q 'href="/become-a-subcontractor"' dist/index.html
+          grep -q '/become-a-subcontractor' dist/_redirects
+          echo "preview pages OK"
+
+      - name: Deploy draft (never production)
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          CI: "true"
+        run: |
+          set -euo pipefail
+          if [ -z "${NETLIFY_AUTH_TOKEN}" ] || [ -z "${NETLIFY_SITE_ID}" ]; then
+            echo "::warning::NETLIFY_AUTH_TOKEN or NETLIFY_SITE_ID is empty in this job, including the Preview environment. Draft URL was not created. Production was not deployed."
+            echo "Preview path remains /become-a-subcontractor once a draft deploy can authenticate."
+            exit 0
+          fi
+          args=(deploy --dir=dist --alias pr-22 --no-build --message "PR 22 draft preview — not production")
+          for arg in "${args[@]}"; do
+            if [ "$arg" = "--prod" ]; then
+              echo "::error::Refusing to pass --prod"
+              exit 1
+            fi
+          done
+          npx --yes netlify-cli "${args[@]}" --json > /tmp/netlify-draft.json
+          python3 - << 'PY'
+          import json
+          data = json.load(open("/tmp/netlify-draft.json"))
+          context = str(data.get("context") or "")
+          if context == "production":
+              raise SystemExit("Deploy context is production. Stop.")
+          deploy_url = data.get("deploy_ssl_url") or data.get("deploy_url") or ""
+          alias_url = data.get("url") or ""
+          print("context=" + context)
+          print("deploy_ssl_url=" + str(data.get("deploy_ssl_url") or ""))
+          print("deploy_url=" + str(data.get("deploy_url") or ""))
+          print("url=" + str(alias_url))
+          if "icomplypropertyservices.co.uk" in deploy_url:
+              raise SystemExit("Draft deploy URL is the production domain. Stop.")
+          open("/tmp/draft-url.txt", "w", encoding="utf-8").write(deploy_url + "\n" + alias_url + "\n")
+          summary = __import__("os").environ.get("GITHUB_STEP_SUMMARY")
+          if summary:
+              with open(summary, "a", encoding="utf-8") as fh:
+                  fh.write("Draft deploy (not production)\n\n")
+                  fh.write(f"- deploy: {deploy_url}\n")
+                  fh.write(f"- url field: {alias_url}\n")
+                  fh.write("- path: /become-a-subcontractor\n")
+          PY

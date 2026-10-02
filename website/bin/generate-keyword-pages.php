@@ -40,7 +40,7 @@ if (!is_dir($outDir)) {
     mkdir($outDir, 0755, true);
 }
 
-echo "Icomply Keyword Page Generator (thin stubs)\n";
+echo "iComply Keyword Page Generator (thin stubs)\n";
 echo "==========================================\n";
 echo "Keywords: " . count($keywords) . "\n\n";
 
@@ -68,7 +68,7 @@ foreach ($keywords as $slug => $meta) {
 $indexPhp = "<?php\n"
     . "/** AUTO-GENERATED — php bin/generate-keyword-pages.php */\n"
     . "require_once __DIR__ . '/../../config.php';\n"
-    . "\$pageTitle = 'Keyword Guides | Icomply Property Services';\n"
+    . "\$pageTitle = 'Keyword Guides | iComply Property Services';\n"
     . "\$metaDesc = 'Browse compliance keyword guides for fire alarms, EICR, CCTV, access control and more.';\n"
     . "require SITE_ROOT . '/includes/header.php';\n"
     . "\$keywords = getMajorKeywords();\n"
