@@ -16,7 +16,7 @@
 # must not block production after a merge.
 
 [build]
-  command = "php website/bin/static-export.php && php website/bin/check-static-export.php"
+  command = "php website/bin/static-export.php --keyword-towns=priority && php website/bin/check-static-export.php"
   publish = "dist"
   ignore = "false"
 
@@ -25,7 +25,7 @@
   SITE_URL = "https://icomplypropertyservices.co.uk"
 
 [context.production]
-  command = "php website/bin/static-export.php && php website/bin/check-static-export.php"
+  command = "php website/bin/static-export.php --keyword-towns=priority && php website/bin/check-static-export.php"
   publish = "dist"
 
 # Re-apply the curated sitemap after other build plugins. A file-crawl plugin

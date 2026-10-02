@@ -53,7 +53,7 @@ if ($dist[0] !== '/') {
     $dist = $repoRoot . '/' . ltrim($dist, '/');
 }
 $full = isset($options['full']);
-$keywordTowns = strtolower(trim((string)($options['keyword-towns'] ?? 'all')));
+$keywordTowns = strtolower(trim((string)($options['keyword-towns'] ?? 'priority')));
 if (!in_array($keywordTowns, ['priority', 'popular', 'all', 'none'], true)) {
     fwrite(STDERR, "Invalid --keyword-towns={$keywordTowns} (use priority|popular|all|none)\n");
     exit(1);

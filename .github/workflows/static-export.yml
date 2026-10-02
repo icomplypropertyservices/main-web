@@ -32,8 +32,8 @@ jobs:
       - name: Static export
         env:
           SITE_URL: https://icomplypropertyservices.co.uk
-        run: php website/bin/static-export.php
-        timeout-minutes: 90
+        run: php website/bin/static-export.php --keyword-towns=priority
+        timeout-minutes: 180
 
       - name: Check pretty-URL HTML
         run: php website/bin/check-static-export.php
