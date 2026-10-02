@@ -96,7 +96,6 @@
             "Static Systems Group",
             "Intercall",
             "Aid Call",
-            "Tunstall",
             "Ascom",
             "Schrack Seconet",
             "Zettler",
@@ -5805,40 +5804,6 @@
             ],
             "featured": false
         },
-        "tunstall": {
-            "name": "Tunstall",
-            "slug": "tunstall",
-            "services": [
-                "nurse-call"
-            ],
-            "blurb": "Icomply installs, services and upgrades Tunstall nurse call and telecare systems for care homes, extra-care schemes and supported living across the North West. We follow HTM 08-03 guidance, provide staff training handover, and keep call points, pear leads and panels certified under planned maintenance. Care operators and FM teams can buy genuine-fit Tunstall trade spares from our North West shop with rapid engineer support.",
-            "seo_title": "Tunstall Installation, Service & Products | North West",
-            "seo_desc": "Tunstall nurse call installation, HTM-aligned service & trade spares from Icomply across Manchester & the North West.",
-            "seo_keywords": "Tunstall, Tunstall nurse call, Tunstall installation, Tunstall service, Tunstall telecare, Tunstall call point, Tunstall pear lead, Tunstall spares, Tunstall trade, Tunstall North West, Tunstall Manchester, Tunstall Stockport, HTM 08-03",
-            "products": [
-                {
-                    "id": "tunstall-call-point-pack",
-                    "title": "Tunstall Call Point & Pear Lead Pack",
-                    "blurb": "Replacement call points, pear leads and pull-cord kits for Tunstall nurse call bedrooms and bathrooms.",
-                    "price": "From £44",
-                    "handle": "tunstall-call-point-pack",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/tunstall.jpg",
-                    "badge": "Trade"
-                },
-                {
-                    "id": "tunstall-panel-battery-kit",
-                    "title": "Tunstall Panel Battery & PSU Kit",
-                    "blurb": "Backup batteries and power-supply consumables to keep Tunstall nurse call panels online during service visits.",
-                    "price": "From £41",
-                    "handle": "tunstall-panel-battery-kit",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/tunstall.jpg",
-                    "badge": "Popular"
-                }
-            ],
-            "featured": false
-        },
         "uniview": {
             "name": "Uniview",
             "slug": "uniview",
@@ -6808,7 +6773,6 @@
             "static-systems-group",
             "intercall",
             "aid-call",
-            "tunstall",
             "ascom",
             "schrack-seconet",
             "zettler",
