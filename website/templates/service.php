@@ -37,6 +37,11 @@ $serviceFaqs = [
         ['Do you always take water samples?', 'No. Assessment comes first. Sampling is only recommended when the system and occupancy justify it, and it is quoted POA.'],
         ['What does it cost?', 'Price on application. We do not publish a made-up fee. Tell us property type, stored water and access.'],
     ],
+    'water-wras' => [
+        ['Is this a Legionella test?', 'No. Legionella risk assessment is a separate service. This lane is water fittings, backflow protection and drinking-water points.'],
+        ['Do you approve fittings for the water undertaker?', 'No. Where Regulation 5 notification applies we help describe the work. The undertaker decides what they accept. We do not claim a WRAS scheme membership on this page.'],
+        ['What does it cost?', 'Price on application after we know the fitting, the supply and access. No catalogue fee.'],
+    ],
     'asbestos-survey' => [
         ['What survey do I need?', 'A management survey is for normal occupation. A refurbishment or demolition survey is for intrusive works. We scope the type to the building and the planned job.'],
         ['Do you remove asbestos?', 'Licensed removal is not this service. If the survey says removal is required, that work is appointed separately.'],
@@ -357,6 +362,10 @@ $schema = [
                 <p class="mt-2 text-zinc-600 max-w-2xl">
                     Every guide below has a dedicated page for each town we cover
                     (e.g. <strong>EICR report in Stockport</strong>). Click a topic, then pick your area.
+                    <?php if ($serviceSlug === 'water-wras'): ?>
+                        The full Water / WRAS / drinking water list is grouped on the
+                        <a class="font-semibold text-[#ff6b00]" href="<?= url('/pages/water-wras.php') ?>">job lane page</a>.
+                    <?php endif; ?>
                 </p>
             </div>
             <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All keyword guides →</a>
@@ -367,7 +376,7 @@ $schema = [
             $kwPreviewTowns = array_slice($popularTowns, 0, 6);
         ?>
         <div class="mb-8">
-            <?= relatedKeywordsHtml($serviceSlug, 0) ?>
+            <?= relatedKeywordsHtml($serviceSlug, $serviceSlug === 'water-wras' ? 24 : 0) ?>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <?php

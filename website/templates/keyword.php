@@ -6,7 +6,13 @@
  * KEYWORD_INTRO, KEYWORD_BODY, KEYWORD_META, KEYWORD_FOCUS_HTML, KEYWORD_FAQ_HTML,
  * KEYWORD_IMAGE, SERVICE_IMAGE
  */
-$pageTitle = $KEYWORD_NAME . ' | North West';
+$pageTitle = (isset($KEYWORD_SEO_TITLE) && $KEYWORD_SEO_TITLE !== '')
+    ? $KEYWORD_SEO_TITLE
+    : ($KEYWORD_NAME . ' | North West');
+$keywordH1 = (isset($KEYWORD_H1) && $KEYWORD_H1 !== '') ? $KEYWORD_H1 : $KEYWORD_NAME;
+$quoteNote = (isset($KEYWORD_QUOTE_NOTE) && $KEYWORD_QUOTE_NOTE !== '')
+    ? $KEYWORD_QUOTE_NOTE
+    : 'Fixed-price after scope is agreed. Stockport engineers · North West coverage.';
 $metaDesc = $KEYWORD_META;
 $metaKeywords = $SEO_KEYWORDS;
 $ogImage = $KEYWORD_IMAGE;
@@ -76,7 +82,7 @@ require SITE_ROOT . '/includes/header.php';
             <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> guide
         </div>
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white max-w-3xl leading-[1.08] drop-shadow-lg">
-            <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?>
+            <?= htmlspecialchars($keywordH1, ENT_QUOTES, 'UTF-8') ?>
         </h1>
         <p class="mt-5 text-lg md:text-xl text-white max-w-2xl leading-relaxed font-medium drop-shadow">
             <?= htmlspecialchars($KEYWORD_INTRO, ENT_QUOTES, 'UTF-8') ?>
@@ -94,12 +100,20 @@ require SITE_ROOT . '/includes/header.php';
 <section class="bg-white border-b border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <?php
-        $trust = [
-            ['Local engineers', 'Stockport base — 150+ North West towns'],
-            ['Standards-led', 'British Standards & manufacturer guidance'],
-            ['Fixed quotes', 'Clear scope before work starts'],
-            ['Full paperwork', 'Certificates & logbooks for compliance'],
-        ];
+        $poaLane = isset($KEYWORD_QUOTE_NOTE) && $KEYWORD_QUOTE_NOTE !== '';
+        $trust = $poaLane
+            ? [
+                ['Local engineers', 'Stockport base — North West coverage'],
+                ['Water fittings', '1999 fittings regulations and wholesome outlets'],
+                ['POA quotes', 'No catalogue fee on this page'],
+                ['Written note', 'What we saw — not a scheme approval'],
+            ]
+            : [
+                ['Local engineers', 'Stockport base — 150+ North West towns'],
+                ['Standards-led', 'British Standards & manufacturer guidance'],
+                ['Fixed quotes', 'Clear scope before work starts'],
+                ['Full paperwork', 'Certificates & logbooks for compliance'],
+            ];
         foreach ($trust as [$t, $d]): ?>
         <div class="flex gap-3">
             <div class="w-10 h-10 rounded-xl bg-[#061828] text-white flex items-center justify-center font-bold shrink-0">✓</div>
@@ -192,7 +206,14 @@ require SITE_ROOT . '/includes/header.php';
         <div class="mt-6">
             <?php
             require_once SITE_ROOT . '/includes/related.php';
-            echo siblingKeywordsHtml($KEYWORD_SLUG, $SERVICE_SLUG, 0);
+            if ($SERVICE_SLUG === 'water-wras' && function_exists('waterJobRelatedHtml')) {
+                echo waterJobRelatedHtml($KEYWORD_SLUG, 8);
+                echo '<p class="mt-4 text-sm font-semibold"><a class="text-[#ff6b00] hover:underline" href="'
+                    . htmlspecialchars(url('/pages/water-wras.php'), ENT_QUOTES, 'UTF-8')
+                    . '">All Water, WRAS and drinking water jobs</a></p>';
+            } else {
+                echo siblingKeywordsHtml($KEYWORD_SLUG, $SERVICE_SLUG, 0);
+            }
             ?>
         </div>
     </div>
@@ -211,7 +232,7 @@ require SITE_ROOT . '/includes/header.php';
 <section id="quote" class="bg-[#061828] text-white">
     <div class="max-w-3xl mx-auto px-6 py-14">
         <h2 class="text-3xl font-bold text-center">Quote for <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></h2>
-        <p class="mt-2 text-center text-white/90">Fixed-price after scope is agreed. Stockport engineers · North West coverage.</p>
+        <p class="mt-2 text-center text-white/90"><?= htmlspecialchars($quoteNote, ENT_QUOTES, 'UTF-8') ?></p>
         <form action="<?= url('/contact.php') ?>" method="POST" class="mt-8 bg-white text-zinc-900 border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4 shadow-xl">
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid md:grid-cols-2 gap-4">

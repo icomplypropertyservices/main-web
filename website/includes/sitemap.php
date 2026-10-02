@@ -137,6 +137,7 @@ function icomplySitemapEntries(): array
         ['/pages/ev-chargers', '0.75', 'pages/ev-chargers.php'],
         ['/pages/maintenance', '0.75', 'pages/maintenance.php'],
         ['/pages/emergency', '0.75', 'pages/emergency.php'],
+        ['/pages/water-wras', '0.8', 'pages/water-wras.php'],
         ['/pages/reviews', '0.65', 'pages/reviews.php'],
         ['/pages/site-map', '0.7', 'pages/site-map.php'],
         ['/pages/resources', '0.75', 'pages/resources.php'],

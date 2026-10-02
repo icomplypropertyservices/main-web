@@ -65,7 +65,9 @@ $h = static function ($s): string {
         </h1>
         <p class="mt-5 text-lg text-white font-medium max-w-2xl leading-relaxed drop-shadow">
             Local engineers for <strong><?= $h($KEYWORD_NAME) ?></strong> in <strong><?= $h($AREA) ?></strong> and nearby postcodes.
-            Fixed-price quotes · Stockport-based team covering the North West.
+            <?= (isset($KEYWORD_QUOTE_NOTE) && $KEYWORD_QUOTE_NOTE !== '')
+                ? 'Price on application after scope · Stockport-based team covering the North West.'
+                : 'Fixed-price quotes · Stockport-based team covering the North West.' ?>
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
             <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-bold text-white shadow-lg">Get free quote</a>

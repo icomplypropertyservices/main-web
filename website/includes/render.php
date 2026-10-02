@@ -178,9 +178,16 @@ function keywordTemplatePlaceholders(
     $svcImg = url('/assets/images/services/' . $serviceSlug . '.jpg');
     // Prefer keyword image path; template onerror falls back to service
 
+    $seoTitle = trim((string)($meta['seo_title'] ?? ''));
+    $h1 = trim((string)($meta['h1'] ?? ''));
+    $quoteNote = trim((string)($meta['quote_note'] ?? ''));
+
     return [
         'KEYWORD_NAME' => $name,
         'KEYWORD_SLUG' => $slug,
+        'KEYWORD_SEO_TITLE' => $seoTitle,
+        'KEYWORD_H1' => $h1 !== '' ? $h1 : $name,
+        'KEYWORD_QUOTE_NOTE' => $quoteNote,
         'SERVICE_NAME' => $serviceName,
         'SERVICE_SLUG' => $serviceSlug,
         'RELATED_SLUG' => $relatedSlug,

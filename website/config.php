@@ -300,6 +300,7 @@ function keywordDisplayName($slugOrName): string {
         'Cctv' => 'CCTV', 'Ip' => 'IP', 'Hd' => 'HD', 'Bs' => 'BS', 'Htm' => 'HTM',
         'Niceic' => 'NICEIC', 'Lpg' => 'LPG', 'Ptz' => 'PTZ', 'Cp44' => 'CP44',
         'Cp12' => 'CP12', 'Fra' => 'FRA', 'Cdm' => 'CDM', 'Hmo' => 'HMO', 'Epc' => 'EPC',
+        'Wras' => 'WRAS', 'Rpz' => 'RPZ', 'Tmv' => 'TMV', 'Wc' => 'WC', 'Dwi' => 'DWI',
         'Fd30' => 'FD30', 'Fd60' => 'FD60', 'Anpr' => 'ANPR', 'Nvr' => 'NVR', 'Dvr' => 'DVR',
         'Ppm' => 'PPM', 'Gsm' => 'GSM', 'Epdm' => 'EPDM', 'Pir' => 'PIR',
     ];
@@ -335,6 +336,9 @@ function getMajorKeywords(): array {
             $row['faq'] = $meta['faq'];
         }
         $normalized[$slug] = $row;
+    }
+    if (function_exists('waterJobsApplyOverlay')) {
+        $normalized = waterJobsApplyOverlay($normalized);
     }
     return $normalized;
 }
@@ -711,6 +715,10 @@ function icomplyTradeProductsUrl(): string
 $waFile = __DIR__ . '/includes/water-asbestos.php';
 if (is_file($waFile)) {
     require_once $waFile;
+}
+$waterLaneFile = __DIR__ . '/includes/job-types-water.php';
+if (is_file($waterLaneFile)) {
+    require_once $waterLaneFile;
 }
 
 // Back-compat globals used by some templates/includes

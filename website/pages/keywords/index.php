@@ -56,6 +56,8 @@ require SITE_ROOT . '/includes/header.php';
                     Fire risk assessments, fire systems, electrical, security, professional compliance,
                     kitchens, bathrooms, renovation and construction trades —
                     each guide links to local pages across <?= count($areas) ?>+ North West towns.
+                    <a class="text-white underline font-semibold" href="<?= url('/pages/water-wras.php') ?>">Water, WRAS and drinking water jobs</a>
+                    are grouped on their own lane.
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#directory" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Browse guides</a>

@@ -269,6 +269,13 @@
         "short": "Office & light commercial fit-out",
         "standards": "Building Regs · fire strategy coordination"
     },
+    "water-wras": {
+        "blurb": "Water fittings, WRAS-style backflow protection and drinking-water points for homes and light commercial sites. Notification support where the water undertaker requires it. POA after scope. Not a laboratory suite and not a Legionella sampling product.",
+        "short": "WRAS fittings, backflow and drinking water — POA",
+        "standards": "Water Supply (Water Fittings) Regulations 1999 · backflow and fluid categories · wholesome water",
+        "pricing": "POA",
+        "hero_accent": "Scoped fittings, notified where required, POA."
+    },
     "legionella-risk-assessment": {
         "blurb": "Legionella risk assessment and water hygiene testing for rented, commercial and multi-occupied water systems. POA after scope.",
         "short": "Legionella RA & water hygiene — POA",
