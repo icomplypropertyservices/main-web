@@ -233,15 +233,24 @@ $schema = [
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Services in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></div>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Everything we do locally</h2>
+                <?php if (function_exists('icomplyIsExpansionOnlyArea') && icomplyIsExpansionOnlyArea($AREA)): ?>
+                <p class="mt-2 text-zinc-600 max-w-xl">Every core service has a local page for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. These pages are draft coverage and are not in the XML sitemap.</p>
+                <?php else: ?>
                 <p class="mt-2 text-zinc-600 max-w-xl">Open a live service hub — or, for electrical and gas, a keyword page for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Thin service×area doorways are not published.</p>
+                <?php endif; ?>
             </div>
             <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All service hubs →</a>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            <?php foreach ($allServices as $slug => $name):
+            <?php
+            $expansionLocal = function_exists('icomplyIsExpansionOnlyArea') && icomplyIsExpansionOnlyArea($AREA);
+            foreach ($allServices as $slug => $name):
                 $blurb = getServiceBlurb($slug, true);
+                $cardHref = $expansionLocal
+                    ? url('/pages/' . $slug . '/' . areaSlug($AREA) . '.php')
+                    : exportedServiceLocalUrl($slug, $AREA, 'area');
             ?>
-            <a href="<?= htmlspecialchars(exportedServiceLocalUrl($slug, $AREA, 'area'), ENT_QUOTES, 'UTF-8') ?>"
+            <a href="<?= htmlspecialchars($cardHref, ENT_QUOTES, 'UTF-8') ?>"
                class="group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="h-36 bg-zinc-100 overflow-hidden">
                     <img src="<?= htmlspecialchars(serviceImageUrl($slug), ENT_QUOTES, 'UTF-8') ?>"

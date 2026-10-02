@@ -1,0 +1,802 @@
+{
+  "beech": {
+    "name": "Beech",
+    "districts": "ST4",
+    "region": "Staffordshire, Swynnerton parish near Newcastle-under-Lyme",
+    "stock": "hamlet cottages, farmhouses and a few roadside homes along the A519",
+    "travel": "typically 50–70 minutes from our Stockport SK2 base",
+    "focus": "rural houses that need landlord checks, rewires and fire detection"
+  },
+  "beech-hill": {
+    "name": "Beech Hill",
+    "districts": "WN6",
+    "region": "Wigan",
+    "stock": "suburban semis, terraces and local shops on the west side of Wigan",
+    "travel": "typically 50–70 minutes from our Stockport SK2 base",
+    "focus": "landlord portfolios and small retail units"
+  },
+  "beeley": {
+    "name": "Beeley",
+    "districts": "DE4",
+    "region": "Derbyshire, Chatsworth estate villages",
+    "stock": "estate cottages, stone houses and a handful of visitor-facing buildings",
+    "travel": "typically 40–55 minutes from our Stockport SK2 base",
+    "focus": "period stone houses and small hospitality sites"
+  },
+  "belmont": {
+    "name": "Belmont",
+    "districts": "BL7",
+    "region": "Lancashire, West Pennine Moors north of Bolton",
+    "stock": "village stone houses, moorland cottages and a few workshop units",
+    "travel": "typically 40–55 minutes from our Stockport SK2 base",
+    "focus": "village homes and moor-edge properties"
+  },
+  "belmont-village": {
+    "name": "Belmont Village",
+    "districts": "BL7",
+    "region": "Lancashire, Belmont village centre",
+    "stock": "the village-centre cottages, chapel-side houses and short terraces rather than the wider moor",
+    "travel": "typically 40–55 minutes from our Stockport SK2 base",
+    "focus": "village-centre homes and the small community buildings"
+  },
+  "bentham": {
+    "name": "Bentham",
+    "districts": "LA2",
+    "region": "North Yorkshire border, High and Low Bentham",
+    "stock": "market-town stone terraces, shops and small industrial units",
+    "travel": "typically 70–90 minutes from our Stockport SK2 base",
+    "focus": "town-centre shops and rented stone terraces"
+  },
+  "beswick": {
+    "name": "Beswick",
+    "districts": "M11",
+    "region": "East Manchester",
+    "stock": "terraced streets, newer housing and light-industrial units near the Etihad campus",
+    "travel": "typically 25–40 minutes from our Stockport SK2 base",
+    "focus": "terraced rentals and small commercial units"
+  },
+  "bewsey": {
+    "name": "Bewsey",
+    "districts": "WA5",
+    "region": "Warrington",
+    "stock": "estate housing, older cottages and business-park units beside the Sankey valley",
+    "travel": "typically 40–55 minutes from our Stockport SK2 base",
+    "focus": "estate housing and nearby business units"
+  },
+  "bickershaw": {
+    "name": "Bickershaw",
+    "districts": "WN2",
+    "region": "Wigan, between Leigh and Abram",
+    "stock": "former mining-village housing, semis and local workshops",
+    "travel": "typically 45–65 minutes from our Stockport SK2 base",
+    "focus": "village housing and small workshops"
+  },
+  "bickerstaffe": {
+    "name": "Bickerstaffe",
+    "districts": "L39",
+    "region": "West Lancashire, between Ormskirk and Rainford",
+    "stock": "farms, cottages and a scatter of rural homes along the A570",
+    "travel": "typically 50–70 minutes from our Stockport SK2 base",
+    "focus": "farms, cottages and rural lets"
+  },
+  "biddulph": {
+    "name": "Biddulph",
+    "districts": "ST8",
+    "region": "Staffordshire Moorlands",
+    "stock": "town terraces, newer estates and small industrial units",
+    "travel": "typically 35–50 minutes from our Stockport SK2 base",
+    "focus": "town housing and SME units"
+  },
+  "biddulph-moor": {
+    "name": "Biddulph Moor",
+    "districts": "ST8",
+    "region": "Staffordshire Moorlands, above Biddulph",
+    "stock": "moor-edge cottages, farmhouses and a compact village centre",
+    "travel": "typically 40–55 minutes from our Stockport SK2 base",
+    "focus": "village and farm properties"
+  },
+  "billinge": {
+    "name": "Billinge",
+    "districts": "WN5",
+    "region": "St Helens",
+    "stock": "village stone and brick houses, local shops and a few small commercial sites",
+    "travel": "typically 45–60 minutes from our Stockport SK2 base",
+    "focus": "village homes and high-street units"
+  },
+  "billinge-higher-end": {
+    "name": "Billinge Higher End",
+    "districts": "WN5",
+    "region": "St Helens, Higher End of Billinge",
+    "stock": "the higher-end hamlet houses and lanes rather than Billinge village centre",
+    "travel": "typically 45–60 minutes from our Stockport SK2 base",
+    "focus": "hamlet houses and lane-side homes"
+  },
+  "billington": {
+    "name": "Billington",
+    "districts": "BB7",
+    "region": "Ribble Valley, between Whalley and Langho",
+    "stock": "village houses, farms and a few converted barns",
+    "travel": "typically 50–70 minutes from our Stockport SK2 base",
+    "focus": "village and farm lets"
+  },
+  "billington-village": {
+    "name": "Billington Village",
+    "districts": "BB7",
+    "region": "Ribble Valley, Billington village core",
+    "stock": "the village-core houses, school-side streets and short rows rather than outlying farms",
+    "travel": "typically 50–70 minutes from our Stockport SK2 base",
+    "focus": "village-core homes"
+  },
+  "billington-village-lancs": {
+    "name": "Billington Village Lancs",
+    "districts": "BB7",
+    "region": "Lancashire Ribble Valley, Billington",
+    "stock": "Lancashire village housing around Billington, distinct in our list from any other Billington",
+    "travel": "typically 50–70 minutes from our Stockport SK2 base",
+    "focus": "Ribble Valley rented houses"
+  },
+  "bingley": {
+    "name": "Bingley",
+    "districts": "BD16",
+    "region": "West Yorkshire, Aire valley",
+    "stock": "mill-town terraces, town shops and canal-side commercial buildings",
+    "travel": "typically 55–75 minutes from our Stockport SK2 base",
+    "focus": "terraces, shops and small mills"
+  },
+  "birch-vale": {
+    "name": "Birch Vale",
+    "districts": "SK22",
+    "region": "High Peak, between New Mills and Hayfield",
+    "stock": "stone terraces, cottages and a few workshop buildings in the Sett valley",
+    "travel": "typically 30–45 minutes from our Stockport SK2 base",
+    "focus": "stone terraces and small workshops"
+  },
+  "birchover": {
+    "name": "Birchover",
+    "districts": "DE4",
+    "region": "Derbyshire Peak, Stanton Moor fringe",
+    "stock": "gritstone cottages, inns and a compact village of holiday and owner-occupied houses",
+    "travel": "typically 45–60 minutes from our Stockport SK2 base",
+    "focus": "stone cottages and small hospitality buildings"
+  },
+  "birchwood": {
+    "name": "Birchwood",
+    "districts": "WA3",
+    "region": "Warrington",
+    "stock": "new-town housing, business-park offices and light-industrial units",
+    "travel": "typically 35–50 minutes from our Stockport SK2 base",
+    "focus": "offices, warehouses and estate housing"
+  },
+  "birkdale": {
+    "name": "Birkdale",
+    "districts": "PR8",
+    "region": "Southport",
+    "stock": "Victorian and Edwardian houses, flats and village-centre shops",
+    "travel": "typically 60–80 minutes from our Stockport SK2 base",
+    "focus": "period houses, flats and village retail"
+  },
+  "birkenhead": {
+    "name": "Birkenhead",
+    "districts": "CH41–CH42",
+    "region": "Wirral",
+    "stock": "terraced housing, dockside commercial buildings and town-centre retail",
+    "travel": "typically 55–75 minutes from our Stockport SK2 base",
+    "focus": "residential streets and commercial units"
+  },
+  "bispham": {
+    "name": "Bispham",
+    "districts": "FY2",
+    "region": "Blackpool north shore",
+    "stock": "interwar and post-war housing, guest houses and local shops",
+    "travel": "typically 70–90 minutes from our Stockport SK2 base",
+    "focus": "guest houses and seaside housing"
+  },
+  "blackburn": {
+    "name": "Blackburn",
+    "districts": "BB1–BB2",
+    "region": "East Lancashire",
+    "stock": "terraced streets, mill conversions and retail parks",
+    "travel": "typically 50–70 minutes from our Stockport SK2 base",
+    "focus": "landlord terraces and commercial sites"
+  },
+  "blackley": {
+    "name": "Blackley",
+    "districts": "M9",
+    "region": "North Manchester",
+    "stock": "estate housing, terraces and local retail parades",
+    "travel": "typically 30–45 minutes from our Stockport SK2 base",
+    "focus": "estate and terrace rentals"
+  },
+  "blackpool": {
+    "name": "Blackpool",
+    "districts": "FY1–FY4",
+    "region": "Lancashire coast",
+    "stock": "guest houses, HMOs, seafront retail and flats",
+    "travel": "typically 70–90 minutes from our Stockport SK2 base",
+    "focus": "hospitality and multi-let housing"
+  },
+  "blackrod": {
+    "name": "Blackrod",
+    "districts": "BL6",
+    "region": "Bolton",
+    "stock": "village housing, newer estates and a few small employment sites by the station",
+    "travel": "typically 40–55 minutes from our Stockport SK2 base",
+    "focus": "village and estate homes"
+  },
+  "blackrod-village": {
+    "name": "Blackrod Village",
+    "districts": "BL6",
+    "region": "Bolton, Blackrod village centre",
+    "stock": "the older village centre around the church and high street, not the newer estate edges",
+    "travel": "typically 40–55 minutes from our Stockport SK2 base",
+    "focus": "village-centre houses and shops"
+  },
+  "blacon": {
+    "name": "Blacon",
+    "districts": "CH1",
+    "region": "Chester",
+    "stock": "large housing estate, local shops and a few community buildings",
+    "travel": "typically 50–70 minutes from our Stockport SK2 base",
+    "focus": "estate housing and neighbourhood retail"
+  },
+  "bold": {
+    "name": "Bold",
+    "districts": "WA9",
+    "region": "St Helens",
+    "stock": "village and estate housing with nearby industrial land toward Clock Face",
+    "travel": "typically 40–55 minutes from our Stockport SK2 base",
+    "focus": "housing and light industry"
+  },
+  "bollington": {
+    "name": "Bollington",
+    "districts": "SK10",
+    "region": "Cheshire East, east of Macclesfield",
+    "stock": "mill-town terraces, stone cottages and small canal-side businesses",
+    "travel": "typically 25–40 minutes from our Stockport SK2 base",
+    "focus": "terraces, cottages and small businesses"
+  },
+  "bolton": {
+    "name": "Bolton",
+    "districts": "BL1–BL7",
+    "region": "Greater Manchester",
+    "stock": "terraced housing, converted mills and retail parks",
+    "travel": "typically 35–50 minutes from our Stockport SK2 base",
+    "focus": "landlord and light-industrial sites"
+  },
+  "bolton-by-bowland": {
+    "name": "Bolton-by-Bowland",
+    "districts": "BB7",
+    "region": "Ribble Valley",
+    "stock": "estate village stone houses, farms and a small village centre",
+    "travel": "typically 55–75 minutes from our Stockport SK2 base",
+    "focus": "estate cottages and farms"
+  },
+  "bonds": {
+    "name": "Bonds",
+    "districts": "PR3",
+    "region": "Wyre, immediately south of Garstang",
+    "stock": "village houses beside the Wyre bridge, plus the parish farms of Barnacre-with-Bonds",
+    "travel": "typically 55–75 minutes from our Stockport SK2 base",
+    "focus": "village houses and nearby farms"
+  },
+  "bonsall": {
+    "name": "Bonsall",
+    "districts": "DE4",
+    "region": "Derbyshire, above Cromford",
+    "stock": "limestone village cottages, farms and a few holiday lets",
+    "travel": "typically 45–65 minutes from our Stockport SK2 base",
+    "focus": "stone cottages and holiday lets"
+  },
+  "bonsall-moor": {
+    "name": "Bonsall Moor",
+    "districts": "DE4",
+    "region": "Derbyshire, the moor lanes above Bonsall",
+    "stock": "scattered farmhouses and cottages on the moor rather than Bonsall village centre",
+    "travel": "typically 45–65 minutes from our Stockport SK2 base",
+    "focus": "farmhouses and moor cottages"
+  },
+  "boothstown": {
+    "name": "Boothstown",
+    "districts": "M28",
+    "region": "Salford, west of Worsley",
+    "stock": "suburban housing, a village centre and a few small commercial units",
+    "travel": "typically 35–50 minutes from our Stockport SK2 base",
+    "focus": "suburban homes and village shops"
+  },
+  "bootle": {
+    "name": "Bootle",
+    "districts": "L20",
+    "region": "Merseyside",
+    "stock": "terraced housing, dock-related commercial buildings and town retail",
+    "travel": "typically 50–70 minutes from our Stockport SK2 base",
+    "focus": "terraces and commercial premises"
+  },
+  "bosley": {
+    "name": "Bosley",
+    "districts": "SK11",
+    "region": "Cheshire East, between Macclesfield and Congleton",
+    "stock": "canal-side village houses, farms and a few workshop buildings",
+    "travel": "typically 30–45 minutes from our Stockport SK2 base",
+    "focus": "village houses and farms"
+  },
+  "bostock": {
+    "name": "Bostock",
+    "districts": "CW10",
+    "region": "Cheshire West, south of Northwich",
+    "stock": "hall-estate cottages, farms and a small rural settlement",
+    "travel": "typically 35–50 minutes from our Stockport SK2 base",
+    "focus": "estate cottages and farms"
+  },
+  "bottom-o-th-moor": {
+    "name": "Bottom o' th' Moor",
+    "districts": "OL4",
+    "region": "Oldham, toward the moor edge",
+    "stock": "moor-edge terraces and cottages on the Oldham side of Saddleworth",
+    "travel": "typically 35–50 minutes from our Stockport SK2 base",
+    "focus": "terrace and cottage housing"
+  },
+  "boughton": {
+    "name": "Boughton",
+    "districts": "CH3",
+    "region": "Chester",
+    "stock": "inner-suburb terraces, flats and local shops just east of the city walls",
+    "travel": "typically 50–70 minutes from our Stockport SK2 base",
+    "focus": "flats, terraces and local retail"
+  },
+  "bowdon": {
+    "name": "Bowdon",
+    "districts": "WA14",
+    "region": "Trafford, beside Altrincham",
+    "stock": "large period houses, apartments and a few professional offices",
+    "travel": "typically 25–40 minutes from our Stockport SK2 base",
+    "focus": "period houses and small offices"
+  },
+  "bowness": {
+    "name": "Bowness",
+    "districts": "LA23",
+    "region": "Cumbria, Bowness-on-Windermere",
+    "stock": "guest houses, holiday lets, shops and lakeside houses at Bowness-on-Windermere",
+    "travel": "typically 85–105 minutes from our Stockport SK2 base",
+    "focus": "holiday lets and hospitality buildings"
+  },
+  "bracewell": {
+    "name": "Bracewell",
+    "districts": "BB18",
+    "region": "Pendle, near Barnoldswick",
+    "stock": "hamlet houses, farms and estate cottages",
+    "travel": "typically 55–75 minutes from our Stockport SK2 base",
+    "focus": "hamlet and farm properties"
+  },
+  "bradford": {
+    "name": "Bradford",
+    "districts": "BD1–BD18",
+    "region": "West Yorkshire",
+    "stock": "mill terraces, city commercial buildings and suburban housing",
+    "travel": "typically 50–70 minutes from our Stockport SK2 base",
+    "focus": "terraces, commercial buildings and HMOs"
+  },
+  "bradley-fold": {
+    "name": "Bradley Fold",
+    "districts": "BL2",
+    "region": "Bolton, toward Radcliffe",
+    "stock": "suburban housing and a few commercial sites along the Radcliffe road",
+    "travel": "typically 35–50 minutes from our Stockport SK2 base",
+    "focus": "suburban housing"
+  },
+  "bradshaw": {
+    "name": "Bradshaw",
+    "districts": "BL2",
+    "region": "Bolton, Bradshaw Brook valley",
+    "stock": "village and suburban houses, chapels and a few local shops",
+    "travel": "typically 35–50 minutes from our Stockport SK2 base",
+    "focus": "village and suburban homes"
+  },
+  "bradwell": {
+    "name": "Bradwell",
+    "districts": "S33",
+    "region": "Hope Valley, Derbyshire",
+    "stock": "limestone village houses, small shops and a few industrial sheds toward the cement works",
+    "travel": "typically 40–55 minutes from our Stockport SK2 base",
+    "focus": "village houses and small commercial sites"
+  },
+  "bramhall": {
+    "name": "Bramhall",
+    "districts": "SK7",
+    "region": "Stockport",
+    "stock": "suburban family housing, village shops and small offices",
+    "travel": "typically 15–25 minutes from our Stockport SK2 base",
+    "focus": "family homes and village commercial units"
+  },
+  "brampton": {
+    "name": "Brampton",
+    "districts": "CA8",
+    "region": "Cumbria, north-east of Carlisle",
+    "stock": "market-town stone houses, shops and small commercial premises",
+    "travel": "typically 110–140 minutes from our Stockport SK2 base",
+    "focus": "town houses and shops"
+  },
+  "bredbury": {
+    "name": "Bredbury",
+    "districts": "SK6",
+    "region": "Stockport",
+    "stock": "suburban housing, retail and industrial estates along the Tame valley",
+    "travel": "typically 15–25 minutes from our Stockport SK2 base",
+    "focus": "housing and industrial units"
+  },
+  "breightmet": {
+    "name": "Breightmet",
+    "districts": "BL2",
+    "region": "Bolton",
+    "stock": "estate housing, older rows and local shops on the east side of Bolton",
+    "travel": "typically 35–50 minutes from our Stockport SK2 base",
+    "focus": "estate and terrace housing"
+  },
+  "breightmet-fold": {
+    "name": "Breightmet Fold",
+    "districts": "BL2",
+    "region": "Bolton, the Fold within Breightmet",
+    "stock": "the older fold of houses rather than the wider Breightmet estate",
+    "travel": "typically 35–50 minutes from our Stockport SK2 base",
+    "focus": "older fold housing"
+  },
+  "breightmet-village": {
+    "name": "Breightmet Village",
+    "districts": "BL2",
+    "region": "Bolton, Breightmet village streets",
+    "stock": "the village-street houses and local shops, not the outer estate",
+    "travel": "typically 35–50 minutes from our Stockport SK2 base",
+    "focus": "village-street homes and shops"
+  },
+  "brereton": {
+    "name": "Brereton",
+    "districts": "CW11",
+    "region": "Cheshire, Brereton and Brereton Green near Holmes Chapel",
+    "stock": "rural houses, farms and the small green-side settlement",
+    "travel": "typically 30–45 minutes from our Stockport SK2 base",
+    "focus": "rural houses and farms"
+  },
+  "bretherton": {
+    "name": "Bretherton",
+    "districts": "PR26",
+    "region": "South Ribble, between Chorley and Preston",
+    "stock": "village houses, farms and a few converted agricultural buildings",
+    "travel": "typically 45–60 minutes from our Stockport SK2 base",
+    "focus": "village houses and farms"
+  },
+  "bridge": {
+    "name": "Bridge",
+    "districts": "confirm the postcode before we attend",
+    "region": "North West coverage list",
+    "stock": "housing and small commercial buildings once the Bridge locality is identified — several places use this name",
+    "travel": "typically 40–80 minutes from our Stockport SK2 base",
+    "focus": "the confirmed site address, not a guessed Bridge"
+  },
+  "briercliffe": {
+    "name": "Briercliffe",
+    "districts": "BB10",
+    "region": "Burnley",
+    "stock": "moor-edge village houses, farms and a few local shops",
+    "travel": "typically 55–75 minutes from our Stockport SK2 base",
+    "focus": "village houses and farms"
+  },
+  "briercliffe-village": {
+    "name": "Briercliffe Village",
+    "districts": "BB10",
+    "region": "Burnley, Briercliffe village centre",
+    "stock": "the village-centre rows and lanes rather than the wider Briercliffe parish",
+    "travel": "typically 55–75 minutes from our Stockport SK2 base",
+    "focus": "village-centre homes"
+  },
+  "brierfield": {
+    "name": "Brierfield",
+    "districts": "BB9",
+    "region": "Pendle",
+    "stock": "mill-town terraces, local shops and small industrial units",
+    "travel": "typically 50–70 minutes from our Stockport SK2 base",
+    "focus": "terraces and small industrial units"
+  },
+  "brierfield-village": {
+    "name": "Brierfield Village",
+    "districts": "BB9",
+    "region": "Pendle, Brierfield town centre",
+    "stock": "the town-centre streets and shops rather than the outer housing",
+    "travel": "typically 50–70 minutes from our Stockport SK2 base",
+    "focus": "town-centre buildings"
+  },
+  "brighouse": {
+    "name": "Brighouse",
+    "districts": "HD6",
+    "region": "Calderdale, West Yorkshire",
+    "stock": "mill-town terraces, town shops and canal-side commercial units",
+    "travel": "typically 45–65 minutes from our Stockport SK2 base",
+    "focus": "terraces, shops and small mills"
+  },
+  "brindle": {
+    "name": "Brindle",
+    "districts": "PR6",
+    "region": "Chorley",
+    "stock": "village houses, farms and a rural parish between Chorley and Blackburn",
+    "travel": "typically 40–55 minutes from our Stockport SK2 base",
+    "focus": "village and farm properties"
+  },
+  "brindle-village": {
+    "name": "Brindle Village",
+    "districts": "PR6",
+    "region": "Chorley, Brindle village centre",
+    "stock": "the village-centre houses around the church and school, not the outlying farms",
+    "travel": "typically 40–55 minutes from our Stockport SK2 base",
+    "focus": "village-centre homes"
+  },
+  "brindley-ford": {
+    "name": "Brindley Ford",
+    "districts": "ST8",
+    "region": "Staffordshire, between Biddulph and Tunstall",
+    "stock": "village housing and a few small commercial buildings on the Staffordshire side of the moor",
+    "travel": "typically 40–55 minutes from our Stockport SK2 base",
+    "focus": "village housing"
+  },
+  "brinscall": {
+    "name": "Brinscall",
+    "districts": "PR6",
+    "region": "Chorley, West Pennine Moors",
+    "stock": "stone village houses, a small works history and moor-edge homes",
+    "travel": "typically 40–55 minutes from our Stockport SK2 base",
+    "focus": "stone village houses"
+  },
+  "brinscall-village": {
+    "name": "Brinscall Village",
+    "districts": "PR6",
+    "region": "Chorley, Brinscall village centre",
+    "stock": "the village-centre stone rows rather than the lanes out toward Withnell",
+    "travel": "typically 40–55 minutes from our Stockport SK2 base",
+    "focus": "village-centre stone houses"
+  },
+  "broadbottom": {
+    "name": "Broadbottom",
+    "districts": "SK14",
+    "region": "Tameside, Etherow valley",
+    "stock": "mill-village stone terraces, cottages and a few small businesses",
+    "travel": "typically 20–35 minutes from our Stockport SK2 base",
+    "focus": "stone terraces and cottages"
+  },
+  "broadgate": {
+    "name": "Broadgate",
+    "districts": "PR1",
+    "region": "Preston",
+    "stock": "inner-suburb terraces and local shops on the north-east side of Preston",
+    "travel": "typically 50–70 minutes from our Stockport SK2 base",
+    "focus": "terraces and neighbourhood shops"
+  },
+  "broadheath": {
+    "name": "Broadheath",
+    "districts": "WA14",
+    "region": "Altrincham",
+    "stock": "suburban housing, retail and the older industrial estate along the Bridgewater",
+    "travel": "typically 25–40 minutes from our Stockport SK2 base",
+    "focus": "housing and industrial units"
+  },
+  "broken": {
+    "name": "Broken",
+    "districts": "confirm the postcode before we attend",
+    "region": "North West coverage list",
+    "stock": "local houses and small buildings once the address is confirmed — this is not the Broken Cross page",
+    "travel": "typically 25–45 minutes from our Stockport SK2 base",
+    "focus": "the confirmed address, kept separate from Broken Cross in Macclesfield"
+  },
+  "broken-cross": {
+    "name": "Broken Cross",
+    "districts": "SK11",
+    "region": "Macclesfield",
+    "stock": "suburban housing and local shops on the west side of Macclesfield",
+    "travel": "typically 25–40 minutes from our Stockport SK2 base",
+    "focus": "suburban homes and local shops"
+  },
+  "bromborough": {
+    "name": "Bromborough",
+    "districts": "CH62",
+    "region": "Wirral",
+    "stock": "suburban housing, retail parks and industrial units",
+    "travel": "typically 50–70 minutes from our Stockport SK2 base",
+    "focus": "housing, retail and industrial sites"
+  },
+  "bromley-cross": {
+    "name": "Bromley Cross",
+    "districts": "BL7",
+    "region": "Bolton",
+    "stock": "suburban village housing and local shops north of Bolton",
+    "travel": "typically 40–55 minutes from our Stockport SK2 base",
+    "focus": "suburban homes and local shops"
+  },
+  "bromley-cross-village": {
+    "name": "Bromley Cross Village",
+    "districts": "BL7",
+    "region": "Bolton, Bromley Cross centre",
+    "stock": "the village-centre streets around the station rather than the outer lanes",
+    "travel": "typically 40–55 minutes from our Stockport SK2 base",
+    "focus": "village-centre homes"
+  },
+  "brooklands": {
+    "name": "Brooklands",
+    "districts": "M33",
+    "region": "Sale, Trafford",
+    "stock": "interwar and later suburban housing with local shops",
+    "travel": "typically 25–40 minutes from our Stockport SK2 base",
+    "focus": "suburban family housing"
+  },
+  "broomedge": {
+    "name": "Broomedge",
+    "districts": "WA13",
+    "region": "Lymm, Cheshire",
+    "stock": "hamlet houses and farms between Lymm and Heatley",
+    "travel": "typically 30–45 minutes from our Stockport SK2 base",
+    "focus": "hamlet houses and farms"
+  },
+  "brough": {
+    "name": "Brough",
+    "districts": "CA17",
+    "region": "Cumbria, Eden valley",
+    "stock": "village houses, a small high street and farms beneath the fells",
+    "travel": "typically 90–120 minutes from our Stockport SK2 base",
+    "focus": "village houses and farms"
+  },
+  "brough-derbyshire": {
+    "name": "Brough Derbyshire",
+    "districts": "S33",
+    "region": "Hope Valley, Derbyshire — not Brough in Cumbria",
+    "stock": "the small Hope Valley settlement at the Navio roman site, with nearby farms and cottages",
+    "travel": "typically 40–55 minutes from our Stockport SK2 base",
+    "focus": "farms and cottages in the Hope Valley"
+  },
+  "broughton": {
+    "name": "Broughton",
+    "districts": "PR3",
+    "region": "Preston",
+    "stock": "village and newer housing north of Preston, separate from Broughton-in-Furness",
+    "travel": "typically 50–70 minutes from our Stockport SK2 base",
+    "focus": "village and estate housing"
+  },
+  "broughton-in-furness": {
+    "name": "Broughton-in-Furness",
+    "districts": "LA20",
+    "region": "Cumbria, Furness",
+    "stock": "market-square stone houses, shops and nearby farms",
+    "travel": "typically 90–120 minutes from our Stockport SK2 base",
+    "focus": "stone town houses and small shops"
+  },
+  "brown-lees": {
+    "name": "Brown Lees",
+    "districts": "ST8",
+    "region": "Staffordshire, south of Biddulph",
+    "stock": "village housing on the edge of Biddulph",
+    "travel": "typically 35–50 minutes from our Stockport SK2 base",
+    "focus": "village housing"
+  },
+  "brownlow": {
+    "name": "Brownlow",
+    "districts": "CW12",
+    "region": "Cheshire, south-west of Congleton",
+    "stock": "a small village and Brownlow Heath lanes of houses and farms",
+    "travel": "typically 30–45 minutes from our Stockport SK2 base",
+    "focus": "village houses and farms"
+  },
+  "bruche": {
+    "name": "Bruche",
+    "districts": "WA1",
+    "region": "Warrington, east of the town centre",
+    "stock": "housing and a few commercial sites beside the Manchester Ship Canal corridor",
+    "travel": "typically 40–55 minutes from our Stockport SK2 base",
+    "focus": "housing and nearby commercial sites"
+  },
+  "brunshaw": {
+    "name": "Brunshaw",
+    "districts": "BB10",
+    "region": "Burnley",
+    "stock": "hillside terraces and estate housing on the east side of Burnley",
+    "travel": "typically 55–75 minutes from our Stockport SK2 base",
+    "focus": "terraces and estate housing"
+  },
+  "bryn": {
+    "name": "Bryn",
+    "districts": "WN4",
+    "region": "Wigan, between Ashton-in-Makerfield and Bryn",
+    "stock": "village housing, local shops and a few small employment sites",
+    "travel": "typically 45–60 minutes from our Stockport SK2 base",
+    "focus": "village homes and shops"
+  },
+  "bubnell": {
+    "name": "Bubnell",
+    "districts": "DE45",
+    "region": "Derbyshire, across the Derwent from Baslow",
+    "stock": "a handful of stone houses and farms opposite Baslow",
+    "travel": "typically 40–55 minutes from our Stockport SK2 base",
+    "focus": "stone houses and farms"
+  },
+  "buckley": {
+    "name": "Buckley",
+    "districts": "CH7",
+    "region": "Flintshire",
+    "stock": "town housing, local shops and small industrial units near the Cheshire border",
+    "travel": "typically 55–75 minutes from our Stockport SK2 base",
+    "focus": "town housing and small industrial units"
+  },
+  "buckshaw": {
+    "name": "Buckshaw",
+    "districts": "PR7",
+    "region": "Chorley and South Ribble, the Buckshaw area",
+    "stock": "the wider Buckshaw employment and housing area on the former ordnance site",
+    "travel": "typically 40–55 minutes from our Stockport SK2 base",
+    "focus": "new housing and employment units"
+  },
+  "buckshaw-village": {
+    "name": "Buckshaw Village",
+    "districts": "PR7",
+    "region": "Chorley, the residential village",
+    "stock": "the residential village streets and local centre, rather than the wider employment land",
+    "travel": "typically 40–55 minutes from our Stockport SK2 base",
+    "focus": "new-build village homes"
+  },
+  "buglawton": {
+    "name": "Buglawton",
+    "districts": "CW12",
+    "region": "Congleton",
+    "stock": "the northern suburb of Congleton: older houses, newer estates and local shops",
+    "travel": "typically 30–45 minutes from our Stockport SK2 base",
+    "focus": "suburban housing"
+  },
+  "burnden": {
+    "name": "Burnden",
+    "districts": "BL3",
+    "region": "Bolton",
+    "stock": "inner-south Bolton housing and commercial streets around the old Burnden ground",
+    "travel": "typically 35–50 minutes from our Stockport SK2 base",
+    "focus": "inner-urban housing and small commercial sites"
+  },
+  "burnden-village": {
+    "name": "Burnden Village",
+    "districts": "BL3",
+    "region": "Bolton, Burnden streets",
+    "stock": "the older Burnden street grid rather than the wider BL3 area",
+    "travel": "typically 35–50 minutes from our Stockport SK2 base",
+    "focus": "street housing"
+  },
+  "burneside": {
+    "name": "Burneside",
+    "districts": "LA9",
+    "region": "Cumbria, north of Kendal",
+    "stock": "mill-village houses, the paper-mill site and nearby farms",
+    "travel": "typically 80–100 minutes from our Stockport SK2 base",
+    "focus": "village houses and the mill site"
+  },
+  "burnley": {
+    "name": "Burnley",
+    "districts": "BB10–BB12",
+    "region": "East Lancashire",
+    "stock": "terraced housing and industrial estates",
+    "travel": "typically 55–75 minutes from our Stockport SK2 base",
+    "focus": "landlord portfolios and factories"
+  },
+  "burnley-wood": {
+    "name": "Burnley Wood",
+    "districts": "BB11",
+    "region": "Burnley",
+    "stock": "dense terraces immediately south of Burnley town centre",
+    "travel": "typically 55–75 minutes from our Stockport SK2 base",
+    "focus": "terraced landlord stock"
+  },
+  "burscough": {
+    "name": "Burscough",
+    "districts": "L40",
+    "region": "West Lancashire",
+    "stock": "village housing, industrial units and canal-side commercial buildings",
+    "travel": "typically 50–70 minutes from our Stockport SK2 base",
+    "focus": "village housing and industrial units"
+  },
+  "burton": {
+    "name": "Burton",
+    "districts": "CH64",
+    "region": "Wirral, south of Neston — not Burtonwood",
+    "stock": "a conservation village of timber and brick houses, a hall and a few local buildings above the Dee",
+    "travel": "typically 55–75 minutes from our Stockport SK2 base",
+    "focus": "conservation-village houses and the hall estate"
+  }
+}

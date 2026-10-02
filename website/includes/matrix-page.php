@@ -326,15 +326,37 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         . '<p class="mt-4 text-sm text-white/60">' . icomplyMatrixH($standards) . ' · ' . icomplyMatrixH($priceLine) . '</p>'
         . '</div></section>';
 
+    $bullets = function_exists('seo_unique_local_block')
+        ? seo_unique_local_block($svcName, $serviceSlug, $areaName)
+        : [];
     $html .= '<main class="matrix-wrap py-10 space-y-10">'
         . '<article class="matrix-card space-y-4">'
         . '<h2 class="text-2xl font-semibold">What we do in ' . icomplyMatrixH($areaName) . '</h2>'
-        . '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($blurb) . '</p>'
-        . '<p class="text-sm">Service hub: <a class="text-[#ff6b00] font-semibold" href="'
+        . '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($blurb) . '</p>';
+    if ($bullets) {
+        $html .= '<ul class="space-y-2 text-zinc-700">';
+        foreach ($bullets as $b) {
+            $html .= '<li><span class="text-[#ff6b00]">●</span> ' . icomplyMatrixH((string)$b) . '</li>';
+        }
+        $html .= '</ul>';
+    }
+    $html .= '<p class="text-sm">Service hub: <a class="text-[#ff6b00] font-semibold" href="'
         . icomplyMatrixH(url('/pages/services/' . $serviceSlug)) . '">' . icomplyMatrixH($svcName) . '</a>'
         . ' · Town: <a class="text-[#ff6b00] font-semibold" href="'
         . icomplyMatrixH(url('/pages/areas/' . $areaSlugVal)) . '">' . icomplyMatrixH($areaName) . '</a></p>'
         . '</article>';
+    if (function_exists('icomplyAreaExpansionRecords')) {
+        $bucketRows = icomplyAreaExpansionRecords();
+        if (isset($bucketRows[areaSlug($areaName)])) {
+            $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($svcName) . ' across this local batch</h2>'
+                . '<p class="text-sm text-zinc-600 mb-4">Beech through Burton — every place in this batch has the same service page. Not listed in the XML sitemap.</p><div class="chip-cloud">';
+            foreach ($bucketRows as $bSlug => $bRow) {
+                $html .= '<a class="area-chip" href="' . icomplyMatrixH(url('/pages/' . $serviceSlug . '/' . $bSlug)) . '">'
+                    . icomplyMatrixH((string)$bRow['name']) . '</a>';
+            }
+            $html .= '</div></section>';
+        }
+    }
 
     $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($svcName) . ' in every area</h2>'
         . '<p class="text-sm text-zinc-600 mb-4">' . count($s['areas']) . ' towns.</p>'

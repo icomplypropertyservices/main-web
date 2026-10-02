@@ -676,13 +676,19 @@ function getKeywordImages(string $serviceSlug): array {
     return $mfr['keyword_images'][$serviceSlug] ?? [$serviceSlug, $serviceSlug, $serviceSlug];
 }
 
-/** Resolve area display name from slug (or return title-cased slug). */
+require_once __DIR__ . '/includes/area-expansion.php';
+
+/** Resolve area display name from slug (core towns, then expansion buckets). */
 function areaFromSlug(string $slug): ?string {
     $slug = areaSlug($slug);
     foreach (getAreas() as $area) {
         if (areaSlug($area) === $slug) {
             return $area;
         }
+    }
+    $expansion = icomplyAreaExpansionRecords();
+    if (isset($expansion[$slug])) {
+        return $expansion[$slug]['name'];
     }
     return null;
 }

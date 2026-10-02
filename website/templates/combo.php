@@ -200,7 +200,7 @@ $schema = [
                      onerror="this.style.display='none'">
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-[#0B1F3A]/20 to-transparent">
                     <div class="text-sm text-white/70">Serving <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> &amp; the North West</div>
-                    <div class="text-2xl font-semibold mt-1">Local engineers · Fixed-price quotes</div>
+                    <div class="text-2xl font-semibold mt-1"><?= $poaCombo ? 'Local engineers · Price on application' : 'Local engineers · Written quote after scope' ?></div>
                 </div>
             </div>
         </div>
@@ -244,6 +244,22 @@ $schema = [
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">
                 Expert <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>
             </h2>
+            <?php
+            if (!function_exists('seo_unique_intro')) {
+                require_once SITE_ROOT . '/includes/local-content.php';
+            }
+            $localIntro = function_exists('seo_unique_intro') ? seo_unique_intro($serviceName, $serviceSlug, $areaName) : '';
+            $localBullets = function_exists('seo_unique_local_block') ? seo_unique_local_block($serviceName, $serviceSlug, $areaName) : [];
+            if ($localIntro !== ''): ?>
+            <p class="mt-5 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars($localIntro, ENT_QUOTES, 'UTF-8') ?></p>
+            <?php endif; ?>
+            <?php if ($localBullets): ?>
+            <ul class="mt-4 space-y-2 text-zinc-800">
+                <?php foreach ($localBullets as $localBullet): ?>
+                <li><span class="text-[#ff6b00]">●</span> <?= htmlspecialchars((string)$localBullet, ENT_QUOTES, 'UTF-8') ?></li>
+                <?php endforeach; ?>
+            </ul>
+            <?php endif; ?>
             <?php if ($areaExtra !== ''): ?>
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars($areaExtra, ENT_QUOTES, 'UTF-8') ?></p>
             <?php endif; ?>

@@ -201,9 +201,14 @@ function icomplySitemapEntries(): array
         }
         $add('/pages/manufacturers/' . $base, '0.72');
     }
+    $expansionOnly = function_exists('icomplyExpansionOnlyRecords') ? icomplyExpansionOnlyRecords() : [];
     foreach (glob($publish . '/pages/areas/*.php') ?: [] as $aFile) {
         $base = basename($aFile, '.php');
         if ($base === 'index') {
+            continue;
+        }
+        // Bucket localities stay out of the XML sitemap until they join areas.json.
+        if (isset($expansionOnly[$base])) {
             continue;
         }
         $add('/pages/areas/' . $base, '0.6');

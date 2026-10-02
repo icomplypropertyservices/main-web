@@ -21,6 +21,30 @@ function pick_seeded(array $pool, int $seed, int $offset = 0) {
 
 /** Approximate postcode districts + region flavour for NW towns */
 function area_profile(string $area): array {
+    if (function_exists('icomplyAreaExpansionRecords')) {
+        $slug = function_exists('areaSlug') ? areaSlug($area) : strtolower($area);
+        $expansion = icomplyAreaExpansionRecords();
+        $row = $expansion[$slug] ?? null;
+        if ($row === null) {
+            foreach ($expansion as $candidate) {
+                if (strcasecmp($candidate['name'], $area) === 0) {
+                    $row = $candidate;
+                    break;
+                }
+            }
+        }
+        if (is_array($row)) {
+            return [
+                'name' => $row['name'],
+                'districts' => $row['districts'],
+                'region' => $row['region'],
+                'stock' => $row['stock'],
+                'travel' => $row['travel'],
+                'focus' => $row['focus'],
+            ];
+        }
+    }
+
     static $map = null;
     if ($map === null) {
         $map = [
@@ -180,8 +204,71 @@ function service_local_angle(string $slug, string $serviceName, string $area): s
             "Licensed removal, if the {$area} survey finds it necessary, is by others — not this page.",
         ],
     ];
-    $pool = $angles[$slug] ?? ["Professional {$serviceName} is available across {$area} and nearby postcodes."];
+    $pool = $angles[$slug] ?? null;
+    if ($pool === null) {
+        $brief = icomplyServiceLocalBrief($slug);
+        $pool = [
+            "In {$area}, {$serviceName} is scoped around {$brief}.",
+            "{$area} landlords and businesses book {$serviceName} when {$brief} has to be current for an insurer, agent or the next inspection.",
+            "We attend {$area} for {$serviceName} and leave {$brief} in writing after the visit.",
+            "A {$area} quote for {$serviceName} starts from the building you have, so {$brief} matches the access and use on site.",
+        ];
+    }
     return pick_seeded($pool, $seed, 0);
+}
+
+/** One factual clause per core service that has no hand-written local angle. */
+function icomplyServiceLocalBrief(string $slug): string
+{
+    $briefs = [
+        'fire-risk-assessments' => 'a written fire risk assessment with findings and a prioritised action list for the responsible person',
+        'fire-extinguishers' => 'the right extinguisher types, commissioning and a service record for the premises',
+        'fire-doors' => 'fire door inspection or repair so closers, seals and gaps match the door’s job',
+        'fire-stopping' => 'fire-stopping at service penetrations, recorded against the compartments on the drawing',
+        'fire-suppression' => 'the suppression system that is actually installed, serviced against its design',
+        'sprinkler-systems' => 'sprinkler servicing, flow tests and defect notes for the installed system',
+        'dry-risers' => 'dry or wet riser checks, outlet condition and a written test record',
+        'fire-signage' => 'fire exit and mandatory signs placed for the routes people actually use',
+        'evacuation-alerts' => 'evacuation alert equipment checked against the building’s stay-put or simultaneous strategy',
+        'kitchen-fire-suppression' => 'commercial kitchen suppression linked to the canopy and the fuel-shutoff it protects',
+        'fire-compartmentation' => 'compartment lines, doors and breaches reviewed against the fire strategy',
+        'landlord-compliance' => 'the certificates and remedial items a landlord or agent needs on file for that property',
+        'facilities-management' => 'planned visits and a clear defect list for the sites the FM team looks after',
+        'building-maintenance' => 'the repair that was reported, with access and making-good agreed before we start',
+        'project-management' => 'a scoped programme, trades in the right order, and notes the client can file',
+        'building-surveys' => 'a survey of the defects you asked about, written so a buyer or owner can act on it',
+        'cdm-support' => 'CDM duty-holder paperwork for the construction work you are actually running',
+        'property-refurbishment-pm' => 'refurbishment sequencing so compliance trades are not left until the end',
+        'compliance-consultancy' => 'a plain-English review of which certificates and actions apply to that building',
+        'kitchens' => 'kitchen fitting scoped to the room, services and the units you have chosen',
+        'bathrooms' => 'bathroom fitting scoped to the room, drainage and the suite you have chosen',
+        'renovation' => 'renovation works agreed room by room, including what is opened up',
+        'plastering' => 'plaster or skim to the walls and ceilings that are in the quote',
+        'tiling' => 'wall or floor tiling to the areas and products agreed after measure',
+        'painting-decorating' => 'decoration to the rooms and surfaces listed in the quote',
+        'joinery' => 'purpose-made or fitted joinery measured on site before it is made',
+        'carpentry' => 'first- or second-fix carpentry to the drawings or the agreed schedule',
+        'flooring' => 'flooring laid to the subfloor we find, after moisture and levels are checked',
+        'plumbing' => 'plumbing repairs or installs to the pipework and fittings in the quote',
+        'heating' => 'heating installation or repair to the system already in the property',
+        'roofing' => 'roof repairs scoped after we have seen the covering, flashings and access',
+        'brickwork' => 'brickwork or masonry repairs to the elevation and mortar that are failing',
+        'dry-lining' => 'dry lining to the walls or ceilings in the agreed rooms',
+        'loft-conversions' => 'a loft conversion scoped to head height, structure and the stairs that will fit',
+        'extensions' => 'an extension scoped to foundations, structure and how it ties into the existing house',
+        'insulation' => 'insulation to the loft, walls or floors that were surveyed, not a generic pack',
+        'damp-proofing' => 'damp treatment matched to the cause we find, not a single product for every wall',
+        'windows-doors' => 'replacement windows or doors measured to the openings and the fire escape routes',
+        'rendering' => 'render specified for the substrate and exposure on that elevation',
+        'groundworks' => 'groundworks for the drainage, base or driveway that was set out on site',
+        'landscaping' => 'landscaping to the areas, levels and surfaces agreed after the site visit',
+        'electrics-first-fix' => 'first-fix wiring routes, back boxes and containment before plasterboard goes on',
+        'commercial-fit-out' => 'fit-out works coordinated with the fire, electrical and partition strategy',
+        'epc' => 'an energy performance certificate from a site visit, with the rating explained in plain English',
+        'smoke-co-alarms' => 'smoke and carbon monoxide alarms sited for the storeys and the fuel-burning appliances present',
+        'pat-testing' => 'PAT of the appliances you listed, with a schedule and failed-item notes',
+    ];
+    return $briefs[$slug] ?? 'the agreed scope for this trade, written up after the visit';
 }
 
 function seo_unique_intro(string $serviceName, string $slug, string $area): string {

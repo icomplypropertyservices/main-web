@@ -348,6 +348,14 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         }
     }
 
+    // Expansion buckets (Beech–Burton and later) add service×area + area hubs
+    // only. They are not folded into getAreas(), so keyword×town stays put.
+    if (function_exists('icomplyExpansionExportPaths')) {
+        foreach (icomplyExpansionExportPaths() as $path) {
+            $routes[] = $path;
+        }
+    }
+
     return $routes;
 }
 
