@@ -6,9 +6,8 @@
 require_once __DIR__ . '/config.php';
 require_once SITE_ROOT . '/includes/share.php';
 
-$seoFamily = 'static';
 $pageTitle = 'Contact Us | Free Quote — Fire, Professional & Construction';
-$metaDesc = 'Contact Icomply Property Services for a written quote. Office at Stockport SK2 5DE. Call 07517806082.';
+$metaDesc = 'Contact Icomply for a free quote on fire safety, FRAs, electrical, security, landlord compliance, kitchens, bathrooms or construction works. Stockport SK2 5DE — North West coverage.';
 $metaKeywords = 'contact Icomply, free quote Stockport, fire risk assessment quote, kitchen fitting quote, electrician Stockport, fire alarm quote Manchester';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/contact.php');
@@ -36,24 +35,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $phone = trim((string)($_POST['phone'] ?? ''));
         $service = trim((string)($_POST['service'] ?? ''));
         $message = trim((string)($_POST['message'] ?? ''));
-        foreach (['town' => 'Town', 'brand' => 'Brand', 'job_type' => 'Job', 'site_type' => 'Site', 'detail' => 'Detail'] as $specKey => $specLabel) {
-            $specVal = trim((string)($_POST[$specKey] ?? ''));
-            if ($specVal !== '') {
-                $message .= "\n" . $specLabel . ': ' . mb_substr($specVal, 0, 160);
-            }
-        }
-        $message = trim($message);
         $gclid = trim((string)($_POST['gclid'] ?? ''));
         $fbclid = trim((string)($_POST['fbclid'] ?? ''));
-        $urgency = trim((string)($_POST['urgency'] ?? ''));
-        $lane = trim((string)($_POST['lane'] ?? ''));
-        $urgency = str_replace(["\r", "\n"], ' ', $urgency);
-        $lane = str_replace(["\r", "\n"], ' ', $lane);
-        if (strlen($urgency) > 80) {
-            $urgency = substr($urgency, 0, 80);
-        }
-        if (strlen($lane) > 40) {
-            $lane = substr($lane, 0, 40);
+        $source = trim((string)($_POST['source'] ?? 'contact-page'));
+        $bot = trim((string)($_POST['bot-field'] ?? ''));
+
+        if ($bot !== '') {
+            header('Location: ' . url('/thank-you.php?ref=contact'), true, 303);
+            exit;
         }
 
         if ($name === '' || strlen($name) > 120) {
@@ -79,10 +68,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'phone' => $phone,
                 'service' => $service,
                 'message' => $message,
-                'urgency' => $urgency,
-                'lane' => $lane,
                 'gclid' => $gclid,
                 'fbclid' => $fbclid,
+                'source' => $source,
                 'ip' => $_SERVER['REMOTE_ADDR'] ?? '',
                 'timestamp' => date('c'),
             ];
@@ -103,8 +91,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 . "Email: {$email}\n"
                 . "Phone: {$phone}\n"
                 . "Service: {$service}\n"
-                . ($lane !== '' ? "Lane: {$lane}\n" : '')
-                . ($urgency !== '' ? "Attendance window: {$urgency}\n" : '')
                 . "Message:\n{$message}\n\n"
                 . "gclid: {$gclid}\n"
                 . "fbclid: {$fbclid}\n"
@@ -130,16 +116,16 @@ $fbclidPrefill = htmlspecialchars($_GET['fbclid'] ?? $_POST['fbclid'] ?? '', ENT
 $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
 
 $trust = [
-    ['title' => 'Fast response', 'text' => 'We reply with a quote'],
-    ['title' => 'Local engineers', 'text' => 'Based in Stockport SK2 — covering 150+ towns'],
-    ['title' => 'Fixed-price quotes', 'text' => 'Clear scope, documentation and certification'],
-    ['title' => 'Standards-led', 'text' => 'BS 5839, BS 5266, BS 7671, gas safety & more'],
+    ['title' => 'Call ' . PHONE, 'text' => 'Phone or WhatsApp for the fastest reply', 'href' => $phoneHref],
+    ['title' => 'AOV & barriers', 'text' => 'Smoke control and 5m barrier packs quoted first'],
+    ['title' => 'Fast response', 'text' => 'We aim to reply within 2 hours on business days'],
+    ['title' => 'Standards-led', 'text' => 'BS 5839, BS 5266, BS 7671, EN 12101 and gas safety'],
 ];
 
 $faqs = [
     [
         'q' => 'How quickly will you respond?',
-        'a' => 'We reply to quote requests with a quote. For urgent call-outs, phone or WhatsApp us directly.',
+        'a' => 'We aim to respond to quote requests within 2 hours on business days. For urgent call-outs, phone or WhatsApp us directly.',
     ],
     [
         'q' => 'Do you cover my area?',
@@ -217,7 +203,7 @@ $contactSchema = [
                 'Merseyside',
                 'Cumbria',
             ],
-            'priceRange' => 'POA',
+            'priceRange' => '££',
             'contactPoint' => [
                 [
                     '@type' => 'ContactPoint',
@@ -241,7 +227,6 @@ $contactSchema = [
                 defined('SOCIAL_LINKEDIN') ? SOCIAL_LINKEDIN : '',
                 defined('SOCIAL_TWITTER') ? SOCIAL_TWITTER : '',
                 defined('SOCIAL_GOOGLE') ? SOCIAL_GOOGLE : '',
-                defined('SOCIAL_YOUTUBE') ? SOCIAL_YOUTUBE : '',
                 'https://wa.me/' . WHATSAPP,
             ])),
         ],
@@ -353,7 +338,7 @@ $contactSchema = [
             <div class="flex gap-3 items-start">
                 <div class="w-10 h-10 rounded-2xl bg-[#0B1F3A]/10 flex items-center justify-center text-[#0B1F3A] font-bold shrink-0">✓</div>
                 <div>
-                    <div class="font-semibold text-black"><?= htmlspecialchars($t['title'], ENT_QUOTES, 'UTF-8') ?></div>
+                    <div class="font-semibold text-black"><?php if (!empty($t['href'])): ?><a href="<?= htmlspecialchars($t['href'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($t['title'], ENT_QUOTES, 'UTF-8') ?></a><?php else: ?><?= htmlspecialchars($t['title'], ENT_QUOTES, 'UTF-8') ?><?php endif; ?></div>
                     <div class="text-sm text-zinc-600 mt-0.5"><?= htmlspecialchars($t['text'], ENT_QUOTES, 'UTF-8') ?></div>
                 </div>
             </div>
@@ -378,7 +363,10 @@ $contactSchema = [
                         <?= htmlspecialchars(implode(' ', $errors), ENT_QUOTES, 'UTF-8') ?>
                     </div>
                 <?php endif; ?>
-                <?= icomplyQuoteFormOpen('bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
+                <form name="contact" method="POST" action="/contact" data-netlify="true" data-contact-form="contact" netlify-honeypot="bot-field" class="bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
+                    <input type="hidden" name="form-name" value="contact">
+                    <input type="hidden" name="source" value="contact-page">
+                    <p class="sr-only" aria-hidden="true"><label>Leave blank<input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
                     <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
                     <input type="hidden" name="gclid" value="<?= $gclidPrefill ?>">
                     <input type="hidden" name="fbclid" value="<?= $fbclidPrefill ?>">
@@ -410,13 +398,20 @@ $contactSchema = [
                             <select id="contact-service" name="service" required
                                     class="w-full border border-zinc-200 px-5 py-3.5 rounded-2xl bg-white focus:outline-none focus:border-[#ff6b00] focus:ring-1 focus:ring-[#ff6b00]">
                                 <option value="">Select service…</option>
-                                <?php foreach ($services as $slug => $s): ?>
+                                <?php if (isset($services['aov-air-handling'])): ?>
+                                    <option value="<?= htmlspecialchars($services['aov-air-handling'], ENT_QUOTES, 'UTF-8') ?>" <?= (($_POST['service'] ?? '') === $services['aov-air-handling']) ? 'selected' : '' ?>><?= htmlspecialchars($services['aov-air-handling'], ENT_QUOTES, 'UTF-8') ?></option>
+                                <?php endif; ?>
+                                <option value="Barriers" <?= (($_POST['service'] ?? '') === 'Barriers') ? 'selected' : '' ?>>Barriers</option>
+                                <?php foreach ($services as $slug => $s):
+                                    if ($slug === 'aov-air-handling') {
+                                        continue;
+                                    }
+                                ?>
                                     <option value="<?= htmlspecialchars($s, ENT_QUOTES, 'UTF-8') ?>" <?= (($_POST['service'] ?? '') === $s) ? 'selected' : '' ?>>
                                         <?= htmlspecialchars($s, ENT_QUOTES, 'UTF-8') ?>
                                     </option>
                                 <?php endforeach; ?>
                                 <option value="Shop / products" <?= (($_POST['service'] ?? '') === 'Shop / products') ? 'selected' : '' ?>>Shop / products</option>
-                                <option value="Vehicle barriers (CAME)" <?= (($_POST['service'] ?? '') === 'Vehicle barriers (CAME)') ? 'selected' : '' ?>>Vehicle barriers (CAME)</option>
                                 <option value="Multi-service package" <?= (($_POST['service'] ?? '') === 'Multi-service package') ? 'selected' : '' ?>>Multi-service package</option>
                                 <option value="Other / not sure" <?= (($_POST['service'] ?? '') === 'Other / not sure') ? 'selected' : '' ?>>Other / not sure</option>
                             </select>
@@ -431,8 +426,8 @@ $contactSchema = [
                     </div>
 
                     <button type="submit" id="contact-submit" class="w-full modern-btn text-white py-4 text-lg font-semibold rounded-2xl">
-                        <span id="contact-submit-label">Submit request</span>
-                        <span id="contact-submit-loading" class="hidden">Sending…</span>
+                        <span id="contact-submit-label" data-submit-label>Submit request</span>
+                        <span id="contact-submit-loading" data-submit-loading class="hidden">Sending…</span>
                     </button>
                     <p class="text-center text-xs text-zinc-500">
                         By submitting you agree to our
@@ -454,7 +449,7 @@ $contactSchema = [
             <div class="lg:col-span-2 space-y-5">
                 <div class="bg-[#0B1F3A] text-white rounded-3xl p-6 md:p-8">
                     <h3 class="text-xl font-semibold tracking-tight">Prefer to talk?</h3>
-                    <p class="mt-2 text-white/75 text-sm">Appointments booked when the diary allows often available. Phone or WhatsApp for the fastest route.</p>
+                    <p class="mt-2 text-white/75 text-sm">Same-week appointments often available. Phone or WhatsApp for the fastest route.</p>
                     <div class="mt-6 space-y-3">
                         <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
                            class="flex items-center justify-between gap-3 w-full px-5 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold transition">
@@ -474,6 +469,8 @@ $contactSchema = [
                     <h3 class="text-lg font-semibold text-black mt-2">Services &amp; brands</h3>
                     <p class="mt-2 text-sm text-zinc-600">Not sure what you need? Browse services or manufacturer pages first.</p>
                     <div class="mt-5 flex flex-col gap-2">
+                        <a href="<?= url('/pages/services/aov-air-handling.php') ?>" class="text-sm font-semibold text-[#ff6b00] hover:underline">AOV &amp; smoke control →</a>
+                        <a href="<?= htmlspecialchars(url('/products.php') . '#barriers', ENT_QUOTES, 'UTF-8') ?>" class="text-sm font-semibold text-[#ff6b00] hover:underline">Barriers →</a>
                         <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#0B1F3A] hover:text-[#ff6b00] transition">All services →</a>
                         <a href="<?= url('/pages/manufacturers/index.php') ?>" class="text-sm font-semibold text-[#0B1F3A] hover:text-[#ff6b00] transition">Manufacturers we install →</a>
                         <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#0B1F3A] hover:text-[#ff6b00] transition">Areas we cover →</a>
@@ -531,30 +528,5 @@ $contactSchema = [
     <?= shareButtonsHtml($pageTitle, $metaDesc) ?>
 </section>
 
-<script>
-(function () {
-    var params = new URLSearchParams(window.location.search);
-    var service = params.get('service');
-    var sel = document.getElementById('contact-service');
-    if (service && sel) {
-        for (var i = 0; i < sel.options.length; i++) {
-            if (sel.options[i].value === service) {
-                sel.value = service;
-                break;
-            }
-        }
-    }
-    var form = document.querySelector('form[action*="contact"]');
-    var btn = document.getElementById('contact-submit');
-    var label = document.getElementById('contact-submit-label');
-    var loading = document.getElementById('contact-submit-loading');
-    if (!form || !btn) return;
-    form.addEventListener('submit', function () {
-        if (!form.checkValidity()) return;
-        btn.disabled = true;
-        if (label) label.classList.add('hidden');
-        if (loading) loading.classList.remove('hidden');
-    });
-})();
-</script>
+<script src="<?= htmlspecialchars(assetUrl('/assets/js/contact-form.js'), ENT_QUOTES, 'UTF-8') ?>" defer></script>
 <?php require SITE_ROOT . '/includes/footer.php'; ?>

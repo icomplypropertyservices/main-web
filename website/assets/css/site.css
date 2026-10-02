@@ -426,10 +426,18 @@ h1, h2, h3 { letter-spacing: -0.03em; }
 }
 .mega-note { color: #c5ced8; font-size: 0.75rem; margin: 0.4rem 0 0; }
 .mega-tools { margin-left: auto; display: flex; align-items: center; gap: 0.5rem; }
-.mega-phone { color: #fff; font-weight: 700; text-decoration: none; font-size: 0.875rem; }
+.mega-phone {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: #fff; color: #0B1F3A !important; font-weight: 800;
+  text-decoration: none; font-size: 0.8rem; line-height: 1;
+  padding: 0.5rem 0.75rem; border-radius: 999px; white-space: nowrap;
+}
+.mega-phone:hover { background: #ffe8d6; }
+.mega-phone-short, .mega-quote-short { display: none; }
 .mega-quote, .mega-wa {
   background: var(--accent); color: #fff !important; font-weight: 700;
   padding: 0.5rem 0.85rem; border-radius: 999px; text-decoration: none; font-size: 0.8rem;
+  white-space: nowrap;
 }
 .mega-wa { background: #16a34a; }
 .mega-burger {
@@ -459,6 +467,7 @@ h1, h2, h3 { letter-spacing: -0.03em; }
   display: block; margin-top: 0.55rem; text-align: center; text-decoration: none;
   padding: 0.8rem; border-radius: 0.85rem; background: #17314a; color: #fff !important; font-weight: 700;
 }
+.drawer-cta--call { background: #fff; color: #0B1F3A !important; }
 .drawer-cta--wa { background: #16a34a; }
 .drawer-cta--quote { background: var(--accent); }
 .mega-suite { display: none !important; }
@@ -478,8 +487,17 @@ h1, h2, h3 { letter-spacing: -0.03em; }
 .mega-suite a:hover { color: #fff; border-color: var(--accent); }
 @media (max-width: 1023px) {
   .mega-desktop { display: none !important; }
-  .mega-phone { display: none; }
+  .mega-phone { display: inline-flex; }
   .mega-suite { display: none !important; }
+  .mega-bar { gap: 0.45rem; }
+  .mega-tools { gap: 0.35rem; }
+}
+@media (max-width: 640px) {
+  .mega-wordmark small { display: none; }
+  .mega-phone-full, .mega-quote-full { display: none; }
+  .mega-phone-short, .mega-quote-short { display: inline; }
+  .mega-phone, .mega-quote { padding: 0.48rem 0.65rem; font-size: 0.75rem; }
+  .mega-burger { min-width: 2.75rem; padding: 0.42rem 0.55rem; }
 }
 @media (min-width: 1024px) {
   .mega-desktop { display: flex; }
@@ -684,6 +702,14 @@ section.relative.overflow-hidden.text-white > .absolute[style*="radial-gradient"
   background: transparent; color: #f8fafc !important;
   border: 1px solid rgba(255,255,255,0.45);
 }
+.btn-hero-wa { background: #16a34a; color: #fff !important; }
+.btn-hero-wa:hover { background: #15803d; }
+.home-hero-links {
+  display: flex; flex-wrap: wrap; gap: 0.85rem 1.1rem;
+  margin-top: 0.95rem; font-size: 0.875rem; font-weight: 700;
+}
+.home-hero-links a { color: #ffb27a !important; text-decoration: none; }
+.home-hero-links a:hover { color: #fff !important; }
 .home-hero-stats {
   display: flex; flex-wrap: wrap; gap: 1.5rem;
   margin-top: 1.75rem; color: #d6dde6; font-size: 0.875rem;
@@ -705,8 +731,35 @@ section.relative.overflow-hidden.text-white > .absolute[style*="radial-gradient"
   text-decoration: none;
 }
 .home-hero-card:hover { border-color: #FF6B00; }
+.home-hero-card--priority {
+  border-color: #FF6B00;
+  background: #1a3148;
+  box-shadow: 0 0 0 1px rgba(255, 107, 0, 0.35);
+}
 .home-hero-card strong { display: block; font-size: 1rem; line-height: 1.2; }
 .home-hero-card span { display: block; margin-top: 0.3rem; color: #d6dde6; font-size: 0.75rem; }
+.home-hero-card .priority-tag {
+  display: block; margin: 0 0 0.35rem; color: #FF6B00;
+  font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800;
+}
+.mega-featured {
+  margin: 0 0 0.85rem; padding: 0.75rem 0.85rem;
+  border: 1px solid rgba(255, 107, 0, 0.45); border-radius: 0.85rem;
+  background: rgba(255, 107, 0, 0.08);
+}
+.mega-featured-title {
+  margin: 0 0 0.35rem; font-size: 0.68rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: #ffb27a; font-weight: 800;
+}
+.mega-featured-link {
+  display: block; color: #fff; font-weight: 800; text-decoration: none; padding: 0.2rem 0;
+}
+.mega-featured-link:hover { color: var(--accent); }
+.drawer-featured {
+  display: block; margin: 0.35rem 0; padding: 0.65rem 0.75rem; border-radius: 0.75rem;
+  background: rgba(255, 107, 0, 0.16); color: #fff !important; font-weight: 800; text-decoration: none;
+}
+.drawer-note { color: #c5ced8; font-size: 0.75rem; margin: 0.2rem 0 0.6rem; }
 
 .mega-header {
   background: var(--brand);
