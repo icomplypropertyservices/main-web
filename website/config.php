@@ -336,6 +336,9 @@ function getMajorKeywords(): array {
         }
         $normalized[$slug] = $row;
     }
+    if (function_exists('emergencyLightingJobsApplyOverlay')) {
+        $normalized = emergencyLightingJobsApplyOverlay($normalized);
+    }
     return $normalized;
 }
 
@@ -711,6 +714,11 @@ function icomplyTradeProductsUrl(): string
 $waFile = __DIR__ . '/includes/water-asbestos.php';
 if (is_file($waFile)) {
     require_once $waFile;
+}
+
+$elJobTypesFile = __DIR__ . '/includes/emergency-lighting-job-types.php';
+if (is_file($elJobTypesFile)) {
+    require_once $elJobTypesFile;
 }
 
 // Back-compat globals used by some templates/includes
