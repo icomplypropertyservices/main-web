@@ -140,6 +140,11 @@ function routerDispatchVirtual(string $path): bool {
         renderServiceHubPage($m[1]);
         return true;
     }
+    // /pages/manufacturers/{slug}/{area}
+    if (preg_match('#^/pages/manufacturers/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        renderManufacturerAreaPage($m[1], $m[2]);
+        return true;
+    }
     // /pages/manufacturers/{slug}
     if (preg_match('#^/pages/manufacturers/([a-z0-9\-]+)$#', $path, $m)) {
         renderManufacturerPage($m[1]);

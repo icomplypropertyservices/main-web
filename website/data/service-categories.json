@@ -37,6 +37,7 @@
         "services": [
             "cctv",
             "access-control",
+            "barriers",
             "door-entry",
             "intercoms",
             "intruder-alarm",

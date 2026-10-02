@@ -13,7 +13,7 @@ if (!function_exists('getNavAudienceServices')) {
             'landlord-compliance', 'kitchens', 'bathrooms', 'heating', 'renovation',
         ];
         $commercial = [
-            'fire-alarms', 'aov-air-handling', 'emergency-lighting', 'fire-risk-assessments', 'fire-doors',
+            'fire-alarms', 'aov-air-handling', 'barriers', 'emergency-lighting', 'fire-risk-assessments', 'fire-doors',
             'epc', 'pat-testing', 'facilities-management', 'cctv', 'access-control',
             'commercial-fit-out', 'nurse-call', 'compliance-consultancy',
         ];

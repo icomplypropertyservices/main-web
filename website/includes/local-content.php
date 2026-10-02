@@ -233,6 +233,12 @@ function service_local_angle(string $slug, string $serviceName, string $area): s
             "BS 5266 duration testing programmes keep {$area} logbooks ready for inspections.",
             "Industrial and warehouse sites around {$area} often need IP-rated emergency fittings.",
         ],
+        'barriers' => [
+            "Car parks and yards around {$area} need a barrier survey before anyone names a boom length or safety edge.",
+            "{$area} sites often want the same fob on the barrier and the pedestrian door — that is scoped, not assumed.",
+            "CAME Gard equipment is the barriers range we partner on. Other operators are quoted only when they are already on site.",
+            "Gate leaves and barrier arms in {$area} are checked for loops, photocells and manual release before a quote.",
+        ],
         'aov-air-handling' => [
             "Smoke ventilation and AOV reliability is vital for multi-storey residential stock in and around {$area}.",
             "{$area} apartment blocks often need actuator, panel and interface health checks against the fire strategy.",

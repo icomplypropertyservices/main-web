@@ -465,6 +465,9 @@ function getMajorKeywords(): array {
         if (!empty($meta['faq']) && is_array($meta['faq'])) {
             $row['faq'] = $meta['faq'];
         }
+        if ($slug === 'tunstall-nurse-call') {
+            continue;
+        }
         $normalized[$slug] = $row;
     }
     return $normalized;
@@ -617,7 +620,13 @@ function getServiceStandards(string $slug): string {
 
 function getManufacturers(string $serviceSlug): array {
     $mfr = loadJsonData('manufacturers', []);
-    return $mfr['by_service'][$serviceSlug] ?? ['Industry Standard Equipment'];
+    $names = $mfr['by_service'][$serviceSlug] ?? ['Industry Standard Equipment'];
+    if (!function_exists('manufacturerIsExcluded')) {
+        return $names;
+    }
+    return array_values(array_filter($names, static function ($name) {
+        return !manufacturerIsExcluded(manufacturerSlugFromName((string)$name));
+    }));
 }
 
 /** Full manufacturer catalog keyed by slug */
@@ -625,6 +634,11 @@ function getManufacturerCatalog(): array {
     $mfr = loadJsonData('manufacturers', []);
     $catalog = $mfr['catalog'] ?? [];
     if ($catalog) {
+        foreach (array_keys($catalog) as $slug) {
+            if (function_exists('manufacturerIsExcluded') && manufacturerIsExcluded((string)$slug)) {
+                unset($catalog[$slug]);
+            }
+        }
         return $catalog;
     }
     // Fallback: build minimal catalog from by_service names
@@ -857,6 +871,10 @@ if (is_file($gasLegalFile)) {
 $waFile = __DIR__ . '/includes/water-asbestos.php';
 if (is_file($waFile)) {
     require_once $waFile;
+}
+$mfrAreaFile = __DIR__ . '/includes/manufacturer-areas.php';
+if (is_file($mfrAreaFile)) {
+    require_once $mfrAreaFile;
 }
 
 // Back-compat globals used by some templates/includes

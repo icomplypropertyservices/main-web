@@ -42,6 +42,11 @@ $serviceFaqs = [
         ['Do you remove asbestos?', 'Licensed removal is not this service. If the survey says removal is required, that work is appointed separately.'],
         ['What does it cost?', 'Price on application. Size, access and how intrusive the survey must be all change the quote. No invented starting price.'],
     ],
+    'barriers' => [
+        ['Is CAME your barriers partner?', 'Yes. CAME is our barriers partner for vehicle barriers and gate operators. Gard ranges are named on the manufacturer pages.'],
+        ['Where are the 5m pack prices?', 'Published supply prices stay on the products hub. This service page does not redraw those cards. Installation is POA.'],
+        ['Do you cover barriers outside Manchester?', 'Barriers manufacturer pages run for every town on the published area list. Installation is still quoted from the Stockport diary.'],
+    ],
     'default' => [
         ['What areas do you cover for ' . $SERVICE_NAME . '?', 'We cover every town in our published areas list across Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria from our Stockport base.'],
         ['How do you price the work?', $poaService ? 'Price on application after we confirm scope, standards and access. No catalogue prices on this page.' : 'After we confirm scope, standards and access we issue a written quote. We do not invent a fee here.'],
