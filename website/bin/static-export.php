@@ -348,6 +348,13 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         }
     }
 
+    if (!function_exists('icomplyUkTownRoutes')) {
+        require_once SITE_ROOT . '/includes/uk-towns.php';
+    }
+    foreach (icomplyUkTownRoutes() as $townPath) {
+        $routes[] = $townPath;
+    }
+
     return $routes;
 }
 

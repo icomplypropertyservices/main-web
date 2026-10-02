@@ -35,6 +35,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $phone = trim((string)($_POST['phone'] ?? ''));
         $service = trim((string)($_POST['service'] ?? ''));
         $message = trim((string)($_POST['message'] ?? ''));
+        foreach (['town' => 'Town', 'brand' => 'Brand', 'job_type' => 'Job', 'site_type' => 'Site', 'detail' => 'Detail'] as $specKey => $specLabel) {
+            $specVal = trim((string)($_POST[$specKey] ?? ''));
+            if ($specVal !== '') {
+                $message .= "\n" . $specLabel . ': ' . mb_substr($specVal, 0, 160);
+            }
+        }
+        $message = trim($message);
         $gclid = trim((string)($_POST['gclid'] ?? ''));
         $fbclid = trim((string)($_POST['fbclid'] ?? ''));
 
@@ -393,6 +400,7 @@ $contactSchema = [
                                     </option>
                                 <?php endforeach; ?>
                                 <option value="Shop / products" <?= (($_POST['service'] ?? '') === 'Shop / products') ? 'selected' : '' ?>>Shop / products</option>
+                                <option value="Vehicle barriers (CAME)" <?= (($_POST['service'] ?? '') === 'Vehicle barriers (CAME)') ? 'selected' : '' ?>>Vehicle barriers (CAME)</option>
                                 <option value="Multi-service package" <?= (($_POST['service'] ?? '') === 'Multi-service package') ? 'selected' : '' ?>>Multi-service package</option>
                                 <option value="Other / not sure" <?= (($_POST['service'] ?? '') === 'Other / not sure') ? 'selected' : '' ?>>Other / not sure</option>
                             </select>

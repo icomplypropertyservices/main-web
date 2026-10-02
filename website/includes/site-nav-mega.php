@@ -22,10 +22,14 @@ function icomplyMegaHeaderHtml(): string
     $hubGas = '/shop/gas/';
     $shopLive = icomplyNavH(function_exists('icomplyTradeShopUrl') ? icomplyTradeShopUrl() : 'https://shop.icomplypropertyservices.co.uk');
     $aovHub = icomplyNavH(url('/pages/services/aov-air-handling.php'));
+    $aovTowns = icomplyNavH(url('/pages/aov'));
+    $barTowns = icomplyNavH(url('/pages/barriers'));
     $aovFeatured = '<div class="mega-featured mega-featured--aov">'
-        . '<p class="mega-featured-title">Priority — AOV &amp; smoke control</p>'
+        . '<p class="mega-featured-title">Priority — AOV &amp; barriers</p>'
         . '<a class="mega-featured-link" href="' . $aovHub . '">AOV &amp; Smoke Control</a>'
-        . '<p class="mega-note">Smoke vents, AOV panels, EN 12101 / BS 9991. Quotes POA after scope.</p>'
+        . '<a class="mega-featured-link" href="' . $aovTowns . '">AOV towns</a>'
+        . '<a class="mega-featured-link" href="' . $barTowns . '">Barriers towns (CAME)</a>'
+        . '<p class="mega-note">Smoke vents and CAME vehicle barriers for mainland towns over 10,000. Quotes POA.</p>'
         . '</div>';
 
     $svcCols = '';
@@ -114,6 +118,7 @@ function icomplyMegaHeaderHtml(): string
       <a class="nav-link" href="{$contact}">Contact</a>
     </nav>
     <div class="mega-tools">
+      <a class="mega-phone" href="{$phoneHref}">{$phone}</a>
       <a class="mega-quote" href="{$contact}">Get a quote</a>
       <button type="button" class="mega-burger" id="nav-toggle" aria-expanded="false" aria-controls="mega-drawer">Menu</button>
     </div>
@@ -135,8 +140,12 @@ function icomplyMobileDrawerHtml(array $n): string
     $siteMap = icomplyNavH(url('/pages/site-map.php'));
 
     $aovHubDrawer = icomplyNavH(url('/pages/services/aov-air-handling.php'));
+    $aovTownsDrawer = icomplyNavH(url('/pages/aov'));
+    $barTownsDrawer = icomplyNavH(url('/pages/barriers'));
     $svc = '<a class="drawer-featured" href="' . $aovHubDrawer . '">AOV &amp; Smoke Control</a>';
-    $svc .= '<p class="drawer-note">Priority — smoke vents, AOV panels, EN 12101 / BS 9991. POA after scope.</p>';
+    $svc .= '<a class="drawer-featured" href="' . $aovTownsDrawer . '">AOV towns</a>';
+    $svc .= '<a class="drawer-featured" href="' . $barTownsDrawer . '">Barriers towns (CAME)</a>';
+    $svc .= '<p class="drawer-note">Priority — AOV and CAME barriers. Mainland towns over 10,000. POA after scope.</p>';
     foreach ($n['cats'] as $cat) {
         $svc .= '<details class="drawer-acc"><summary>' . icomplyNavH($cat['label']) . '</summary><div>';
         foreach ($cat['services'] as $slug => $name) {
@@ -171,6 +180,7 @@ function icomplyMobileDrawerHtml(array $n): string
       <a href="/shop/">All supplies</a>
     </div></details>
     <a href="{$productsD}">Products</a>
+    <a class="drawer-cta" href="{$phoneHref}">Call {$phone}</a>
     <a class="drawer-cta drawer-cta--quote" href="{$contactDrawer}">Get a quote</a>
   </nav>
 </div>

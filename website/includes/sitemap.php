@@ -100,7 +100,7 @@ function icomplySitemapEntries(): array
         // Hard reject /pages/{service}/{town} even if a leftover matrix file
         // sits in dist/. Keep only real hub prefixes.
         if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
-            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages'];
+            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'aov', 'barriers'];
             if (!in_array($m[1], $okPrefix, true)) {
                 return;
             }
@@ -108,7 +108,8 @@ function icomplySitemapEntries(): array
         // Keyword hubs + featured keyword×town are generated at export time.
         // Do not require a source PHP file for those catalogue locs.
         $isKeywordLoc = (bool)preg_match('#^/pages/keywords(/[a-z0-9\-]+){1,2}$#', $path);
-        if (!$isKeywordLoc && !icomplySitemapUrlHasFile($path)) {
+        $isTownLoc = (bool)preg_match('#^/pages/(aov|barriers)(/[a-z0-9\-]+)?$#', $path);
+        if (!$isKeywordLoc && !$isTownLoc && !icomplySitemapUrlHasFile($path)) {
             return;
         }
         $seen[$path] = true;
@@ -249,6 +250,19 @@ function icomplySitemapEntries(): array
                     }
                 }
             }
+        }
+    }
+
+    if (!function_exists('icomplyUkTownRoutes')) {
+        $townFile = SITE_ROOT . '/includes/uk-towns.php';
+        if (is_file($townFile)) {
+            require_once $townFile;
+        }
+    }
+    if (function_exists('icomplyUkTownRoutes')) {
+        foreach (icomplyUkTownRoutes() as $townPath) {
+            $depth = substr_count(trim((string)$townPath, '/'), '/');
+            $add((string)$townPath, $depth > 1 ? '0.64' : '0.86');
         }
     }
 
