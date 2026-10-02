@@ -181,7 +181,8 @@
             "dormakaba",
             "Allegion",
             "LenelS2",
-            "Software House"
+            "Software House",
+            "CAME"
         ],
         "barriers": [
             "CAME"
@@ -1374,42 +1375,6 @@
                 }
             ],
             "featured": false
-        },
-        "came": {
-            "name": "CAME",
-            "slug": "came",
-            "services": [
-                "barriers"
-            ],
-            "partner": true,
-            "partner_note": "CAME is our barriers partner for vehicle barriers and gate operators.",
-            "blurb": "CAME is our barriers partner. Icomply surveys, supplies and maintains Gard barriers and CAME gate operators for car parks, yards and gated sites. Published 5m supply packs are priced on the products hub. Installation, safety devices and access-control links are POA after survey. Coverage follows the full published town list, with engineers based in Stockport.",
-            "seo_title": "CAME Barriers Partner | Gard & Gate Operators",
-            "seo_desc": "CAME barriers partner for Gard barriers and gate operators. Supply packs on the products hub. Installation POA. Stockport engineers.",
-            "seo_keywords": "CAME, CAME barriers, CAME Gard, CAME partner, Gard GT, Gard 4, BXV, gate operators, vehicle barriers, North West",
-            "products": [
-                {
-                    "id": "came-gard-barrier",
-                    "title": "CAME Gard barrier",
-                    "blurb": "Gard GT and Gard 4 barriers. Supply options for 5m packs are on the products hub. Installation is POA.",
-                    "price": "POA",
-                    "handle": "came-gard-barrier",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/came.jpg",
-                    "badge": "Partner"
-                },
-                {
-                    "id": "came-gate-operators",
-                    "title": "CAME gate operators",
-                    "blurb": "BXV, Krono, Frog and Fast operators, quoted once the leaf, safety edges and access control are known.",
-                    "price": "POA",
-                    "handle": "came-gate-operators",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/came.jpg",
-                    "badge": "Partner"
-                }
-            ],
-            "featured": true
         },
         "caretech": {
             "name": "Caretech",
@@ -6658,7 +6623,7 @@
                     "price": "POA",
                     "handle": "came-gard-4-8",
                     "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/came.jpg",
+                    "image": "/assets/images/brand-logos/came.svg",
                     "badge": "Partner"
                 },
                 {
@@ -6668,7 +6633,7 @@
                     "price": "POA",
                     "handle": "came-gard-pt-px",
                     "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/came.jpg",
+                    "image": "/assets/images/brand-logos/came.svg",
                     "badge": "Partner"
                 }
             ],

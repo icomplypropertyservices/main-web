@@ -263,6 +263,11 @@ echo icomplyComplianceBundleCrossSellHtml($serviceSlug);
         </div>
         <div class="flex flex-wrap gap-3 mb-8"><?= $MANUFACTURER_TAGS ?></div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4"><?= $MANUFACTURER_IMAGES ?></div>
+        <?php
+        if (function_exists('manufacturerProductLinesHtmlFor') && function_exists('manufacturerProductLineGroupsForPage')) {
+            echo manufacturerProductLinesHtmlFor(manufacturerProductLineGroupsForPage($serviceSlug));
+        }
+        ?>
         <div class="mt-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold mb-3">Related brands</div>
             <h3 class="text-xl font-semibold tracking-tight text-black mb-5">More manufacturers for this service</h3>

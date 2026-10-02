@@ -962,6 +962,10 @@ $waFile = __DIR__ . '/includes/water-asbestos.php';
 if (is_file($waFile)) {
     require_once $waFile;
 }
+$productLinesFile = __DIR__ . '/includes/manufacturer-product-lines.php';
+if (is_file($productLinesFile)) {
+    require_once $productLinesFile;
+}
 $mfrBoardFile = __DIR__ . '/includes/mfr-showcase.php';
 if (is_file($mfrBoardFile)) {
     require_once $mfrBoardFile;

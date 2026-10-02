@@ -57,6 +57,13 @@ function icomplyAovKitImageUrl(string $sku): string {
   </div>
 </section>
 
+<?php if (function_exists('manufacturerProductLinesHtml')): ?>
+<section class="max-w-7xl mx-auto px-6 pt-10">
+  <?= manufacturerProductLinesHtml('aov') ?>
+  <?= manufacturerProductLinesHtml('barrier') ?>
+</section>
+<?php endif; ?>
+
 <section class="max-w-7xl mx-auto px-6 py-10">
   <a href="<?= htmlspecialchars($aovService, ENT_QUOTES, 'UTF-8') ?>" class="block p-8 md:p-10 bg-white border-2 border-[#FF6B00] rounded-3xl hover:shadow-lg transition">
     <span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-[#FF6B00] text-white mb-3">Priority · AOV</span>

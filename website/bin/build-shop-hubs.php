@@ -352,6 +352,31 @@ function icomplyRenderShopCategory(string $slug, array $products, array $ctx): s
         'meta' => $countLabel . ' from the Shopify catalogue.',
     ];
 
+    $lineKey = $slug === 'fire' ? 'aov' : ($slug === 'security' ? 'barrier' : '');
+    $lineHtml = '';
+    if ($lineKey !== '') {
+        $linesFile = dirname(__DIR__) . '/includes/manufacturer-product-lines.php';
+        if (!function_exists('manufacturerProductLinesShopHtml') && is_file($linesFile)) {
+            if (!defined('SITE_ROOT')) {
+                require_once dirname(__DIR__) . '/config.php';
+            } else {
+                require_once $linesFile;
+            }
+        }
+        if (function_exists('manufacturerProductLinesShopHtml')) {
+            $lineHtml = manufacturerProductLinesShopHtml($lineKey);
+            $origin = 'https://icomplypropertyservices.co.uk';
+            if (defined('SITE_URL') && !str_contains((string) SITE_URL, 'localhost')) {
+                $origin = rtrim((string) SITE_URL, '/');
+            }
+            $lineHtml = str_replace(
+                ['http://localhost/icomply', 'https://localhost/icomply'],
+                $origin,
+                $lineHtml
+            );
+        }
+    }
+
     $grid = '';
     if ($products === []) {
         $grid = '<div class="empty-card">'
@@ -370,6 +395,7 @@ function icomplyRenderShopCategory(string $slug, array $products, array $ctx): s
     }
 
     $main = '<section class="section"><div class="wrap">'
+        . $lineHtml
         . $grid
         . icomplyShopSourceNote($ctx)
         . '</div></section>';
