@@ -649,6 +649,7 @@ function icomplyCopyStaticAssets(string $websiteRoot, string $repoRoot, string $
         'site.webmanifest',
         'favicon.ico',
         'lead-popup-form.html',
+        'subcontractor-onboarding-form.html',
     ];
     foreach ($copyFiles as $name) {
         $src = $websiteRoot . '/' . $name;
