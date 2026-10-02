@@ -1,0 +1,200 @@
+{
+  "barriers": [
+    {
+      "name": "CAME",
+      "slug": "came",
+      "partner": true,
+      "group": "Barrier automation",
+      "note": "Partner for new vehicle barriers. CAME GARD booms, controls, loops and safety edges. Five-metre packs are on the products hub; installation is POA after survey."
+    },
+    {
+      "name": "BFT",
+      "slug": "bft",
+      "partner": false,
+      "group": "Barrier automation",
+      "note": "Existing BFT barriers and gate operators. New lanes are normally specified on the CAME partner range unless the survey supports keeping BFT."
+    },
+    {
+      "name": "FAAC",
+      "slug": "faac",
+      "partner": false,
+      "group": "Barrier automation",
+      "note": "FAAC barrier and operator servicing, including safety-device checks. New installs default to CAME unless the incumbent system should stay."
+    },
+    {
+      "name": "Nice",
+      "slug": "nice",
+      "partner": false,
+      "group": "Barrier automation",
+      "note": "Nice barrier and gate automation. We identify the control board on site before quoting spares or a takeover."
+    },
+    {
+      "name": "Beninca",
+      "slug": "beninca",
+      "partner": false,
+      "group": "Barrier automation",
+      "note": "Beninca booms and operators. Service and fault work, with CAME specified when a lane is being replaced."
+    },
+    {
+      "name": "Magnetic Autocontrol",
+      "slug": "magnetic-autocontrol",
+      "partner": false,
+      "group": "Barrier automation",
+      "note": "Magnetic Autocontrol barriers on car parks and staff entrances. We test loops, photocells and the boom before any control change."
+    },
+    {
+      "name": "Hormann",
+      "slug": "hormann",
+      "partner": false,
+      "group": "Barrier automation",
+      "note": "Hormann barriers and related door operators where they control a vehicle lane."
+    },
+    {
+      "name": "DEA",
+      "slug": "dea",
+      "partner": false,
+      "group": "Barrier automation",
+      "note": "DEA System barrier and gate controls. Board and safety-edge checks before a quote."
+    },
+    {
+      "name": "Roger Technology",
+      "slug": "roger-technology",
+      "partner": false,
+      "group": "Barrier automation",
+      "note": "Roger Technology barriers and 24V operators. Useful where a brushless incumbent is still supportable."
+    },
+    {
+      "name": "Ditec",
+      "slug": "ditec",
+      "partner": false,
+      "group": "Barrier automation",
+      "note": "Ditec barriers and automation. Service of the existing lane, or a CAME replacement when the cabinet is no longer viable."
+    },
+    {
+      "name": "Tau",
+      "slug": "tau",
+      "partner": false,
+      "group": "Barrier automation",
+      "note": "Tau barrier and gate gear. We confirm the model on the rating plate rather than guessing from the boom colour."
+    },
+    {
+      "name": "Cardin",
+      "slug": "cardin",
+      "partner": false,
+      "group": "Barrier automation",
+      "note": "Cardin operators on barriers and gates. Radio and loop faults are quoted separately from a full lane replacement."
+    },
+    {
+      "name": "Gibidi",
+      "slug": "gibidi",
+      "partner": false,
+      "group": "Barrier automation",
+      "note": "Gibidi barrier motors and controls. Existing plant is serviced; new booms are CAME unless the site standard says otherwise."
+    },
+    {
+      "name": "Automatic Systems",
+      "slug": "automatic-systems",
+      "partner": false,
+      "group": "Barrier automation",
+      "note": "Automatic Systems lanes used on busier car parks and controlled entrances."
+    },
+    {
+      "name": "Centurion",
+      "slug": "centurion",
+      "partner": false,
+      "group": "Barrier automation",
+      "note": "Centurion barrier and gate operators. We check torque and safety devices before adjusting force."
+    },
+    {
+      "name": "Elka",
+      "slug": "elka",
+      "partner": false,
+      "group": "Barrier automation",
+      "note": "ELKA barriers. Cabinet, spring and loop checks on service visits."
+    },
+    {
+      "name": "Aprimatic",
+      "slug": "aprimatic",
+      "partner": false,
+      "group": "Barrier automation",
+      "note": "Aprimatic operators where they still run a barrier or sliding gate."
+    },
+    {
+      "name": "SEA",
+      "slug": "sea",
+      "partner": false,
+      "group": "Barrier automation",
+      "note": "SEA barrier and gate controls. Model and board revision are recorded on the survey sheet."
+    },
+    {
+      "name": "Fadini",
+      "slug": "fadini",
+      "partner": false,
+      "group": "Barrier automation",
+      "note": "Fadini hydraulics and electromechanical barriers. Oil leaks and valve settings are part of the service, not an afterthought."
+    },
+    {
+      "name": "Key Automation",
+      "slug": "key-automation",
+      "partner": false,
+      "group": "Barrier automation",
+      "note": "Key Automation boards and operators on barriers and gates."
+    },
+    {
+      "name": "LiftMaster",
+      "slug": "liftmaster",
+      "partner": false,
+      "group": "Barrier automation",
+      "note": "LiftMaster operators where a site already uses them on a vehicle entrance."
+    },
+    {
+      "name": "Genius",
+      "slug": "genius",
+      "partner": false,
+      "group": "Barrier automation",
+      "note": "Genius barrier and gate operators, including older FAAC-group plant that is still in service."
+    },
+    {
+      "name": "Frontier Pitts",
+      "slug": "frontier-pitts",
+      "partner": false,
+      "group": "Barrier automation",
+      "note": "Frontier Pitts vehicle barriers and high-security lanes. We service the incumbent and specify CAME where a standard car-park boom is the right replacement."
+    },
+    {
+      "name": "Paxton",
+      "slug": "paxton",
+      "partner": false,
+      "group": "Access integration",
+      "note": "Paxton Net2 and related readers releasing a barrier. The barrier manufacturer and the access manufacturer are specified separately."
+    },
+    {
+      "name": "Videx",
+      "slug": "videx",
+      "partner": false,
+      "group": "Access integration",
+      "note": "Videx panels and GSM modules used at a barrier or gate. Common on the 5m packs listed with CAME hardware."
+    },
+    {
+      "name": "HID Global",
+      "slug": "hid-global",
+      "partner": false,
+      "group": "Access integration",
+      "note": "HID readers and credentials where a staff barrier must share the building access cards."
+    },
+    {
+      "name": "Comelit",
+      "slug": "comelit",
+      "partner": false,
+      "group": "Access integration",
+      "note": "Comelit video and audio entry when the barrier lane also needs a speech panel."
+    },
+    {
+      "name": "BPT",
+      "slug": "bpt",
+      "partner": false,
+      "group": "Access integration",
+      "note": "BPT entry panels tied to a vehicle gate or barrier release."
+    }
+  ]
+}

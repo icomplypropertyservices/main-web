@@ -48,6 +48,8 @@ $mainPages = [
     ['href' => '/shop/gas/', 'label' => 'Shop — Gas'],
     ['href' => '/products', 'label' => 'Products'],
     ['href' => url('/pages/packages.php'), 'label' => 'Packages'],
+    ['href' => url('/pages/jobs/hmo.php'), 'label' => 'HMO landlord packages'],
+    ['href' => url('/pages/jobs/hmo-compliance.php'), 'label' => 'HMO compliance bundle (£650)'],
     ['href' => url('/pages/pricing.php'), 'label' => 'Pricing guide'],
     ['href' => url('/pages/landlords.php'), 'label' => 'Landlords'],
     ['href' => url('/pages/commercial.php'), 'label' => 'Commercial / FM'],
@@ -91,6 +93,8 @@ $resourceLinks = [
     ['href' => url('/pages/manufacturers/index.php'), 'label' => "Manufacturers ({$mfrCount})", 'blurb' => 'Brand pages and trade kits'],
     ['href' => url('/pages/faq.php'), 'label' => 'FAQ', 'blurb' => 'Common compliance questions answered'],
     ['href' => url('/pages/packages.php'), 'label' => 'Packages', 'blurb' => 'Multi-service landlord & FM packages'],
+    ['href' => url('/pages/jobs/hmo.php'), 'label' => 'HMO landlord packages', 'blurb' => 'Compliance, fire and occupancy — £650 bundle where it applies'],
+    ['href' => url('/pages/jobs/hmo-compliance.php'), 'label' => 'HMO compliance bundle', 'blurb' => 'FRA + EICR + gas, £650 typical 6-bed North West'],
     ['href' => url('/pages/landlords.php'), 'label' => 'Landlords', 'blurb' => 'EICR, gas, fire and emergency lighting'],
     ['href' => url('/pages/commercial.php'), 'label' => 'Commercial', 'blurb' => 'Fire, electrical and security for sites'],
 ];

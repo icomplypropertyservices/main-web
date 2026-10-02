@@ -10,14 +10,24 @@ if ($rawPageTitle === '') {
 }
 $hasBrandInTitle = (stripos($rawPageTitle, 'Icomply') !== false)
     || (stripos($rawPageTitle, (string)SITE_NAME) !== false);
-$documentTitle = $hasBrandInTitle ? $rawPageTitle : ($rawPageTitle . ' | Icomply Property Services');
+if (!empty($metaTitleExact)) {
+    $documentTitle = $rawPageTitle;
+} else {
+    $documentTitle = $hasBrandInTitle ? $rawPageTitle : ($rawPageTitle . ' | Icomply Property Services');
+}
 $pageTitleSafe = htmlspecialchars($documentTitle, ENT_QUOTES, 'UTF-8');
-$ogTitleSafe = htmlspecialchars($rawPageTitle, ENT_QUOTES, 'UTF-8');
-$metaDescSafe = htmlspecialchars(
-    $metaDesc ?? 'Icomply Property Services — property maintenance and compliance across Greater Manchester and the North West: EICR, gas, fire, kitchens, renovations, CCTV, Legionella and asbestos. Offerton, Stockport SK2 5DE.',
-    ENT_QUOTES,
-    'UTF-8'
-);
+$ogTitleRaw = trim((string)($ogTitle ?? ''));
+if ($ogTitleRaw === '') {
+    $ogTitleRaw = $rawPageTitle;
+}
+$ogTitleSafe = htmlspecialchars($ogTitleRaw, ENT_QUOTES, 'UTF-8');
+$metaDescRaw = $metaDesc ?? 'Icomply Property Services — property maintenance and compliance across Greater Manchester and the North West: EICR, gas, fire, kitchens, renovations, CCTV, Legionella and asbestos. Offerton, Stockport SK2 5DE.';
+$metaDescSafe = htmlspecialchars($metaDescRaw, ENT_QUOTES, 'UTF-8');
+$ogDescRaw = trim((string)($ogDescription ?? ''));
+if ($ogDescRaw === '') {
+    $ogDescRaw = $metaDescRaw;
+}
+$ogDescSafe = htmlspecialchars($ogDescRaw, ENT_QUOTES, 'UTF-8');
 $metaKeywordsSafe = htmlspecialchars(
     $metaKeywords ?? 'property maintenance, landlord compliance, EICR, gas safety, fire risk assessment, kitchens, renovations, CCTV, legionella, asbestos, Stockport, Manchester',
     ENT_QUOTES,
@@ -60,7 +70,7 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     <meta property="og:locale:alternate" content="en_US">
     <meta property="og:site_name" content="<?= htmlspecialchars(SITE_NAME, ENT_QUOTES, 'UTF-8') ?>">
     <meta property="og:title" content="<?= $ogTitleSafe ?>">
-    <meta property="og:description" content="<?= $metaDescSafe ?>">
+    <meta property="og:description" content="<?= $ogDescSafe ?>">
     <meta property="og:url" content="<?= htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8') ?>">
     <?php
     // Default OG image when page does not set $ogImage
@@ -85,7 +95,7 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     <meta property="og:image:alt" content="<?= $ogAltSafe ?>">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<?= $ogTitleSafe ?>">
-    <meta name="twitter:description" content="<?= $metaDescSafe ?>">
+    <meta name="twitter:description" content="<?= $ogDescSafe ?>">
     <meta name="twitter:image" content="<?= $ogImageSafe ?>">
     <meta name="twitter:image:alt" content="<?= $ogAltSafe ?>">
     <?php if (defined('SOCIAL_TWITTER') && SOCIAL_TWITTER !== ''): ?>
@@ -184,7 +194,9 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
         "opens": "08:00",
         "closes": "18:00"
       },
+<?php if (empty($omitPriceRange)): ?>
       "priceRange": "££",
+<?php endif; ?>
       "sameAs": <?= json_encode(array_values(array_filter([
           defined('SOCIAL_FACEBOOK') ? SOCIAL_FACEBOOK : '',
           defined('SOCIAL_INSTAGRAM') ? SOCIAL_INSTAGRAM : '',

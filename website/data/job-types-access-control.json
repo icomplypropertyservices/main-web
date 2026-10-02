@@ -1,0 +1,2229 @@
+{
+    "lane": "access-control",
+    "non_prod": true,
+    "promote": false,
+    "status": "draft",
+    "towns": [
+        "Manchester",
+        "Burnley"
+    ],
+    "counts": {
+        "barriers": 102,
+        "maglock": 33,
+        "door-entry": 54,
+        "access-control": 56
+    },
+    "town_pages": {
+        "manchester": 20,
+        "burnley": 20
+    },
+    "generated": "2026-10-02T17:08:15+00:00",
+    "jobs": [
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "access-control-card-programming",
+            "status": "draft",
+            "name": "Access Control Card Programming",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "access-control-certification",
+            "status": "draft",
+            "name": "Access Control Certification",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "access-control-engineers",
+            "status": "draft",
+            "name": "Access Control Engineers",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "access-control-installation",
+            "status": "draft",
+            "name": "Access Control Installation",
+            "related": "paxton-access"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "access-control-maintenance",
+            "status": "draft",
+            "name": "Access Control Maintenance",
+            "related": "access-control-servicing"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "access-control-near-me",
+            "status": "draft",
+            "name": "Access Control Near Me",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "access-control-panel",
+            "status": "draft",
+            "name": "Access Control Panel",
+            "related": "paxton-access"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "access-control-repair",
+            "status": "draft",
+            "name": "Access Control Repair",
+            "related": "access-control-servicing"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "access-control-servicing",
+            "status": "draft",
+            "name": "Access Control Servicing",
+            "related": "access-control-maintenance"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "access-control-system",
+            "status": "draft",
+            "name": "Access Control System",
+            "related": "door-access-control"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "access-control-system-design",
+            "status": "draft",
+            "name": "Access Control System Design",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "access-control-upgrade",
+            "status": "draft",
+            "name": "Access Control Upgrade",
+            "related": "fire-release-access-control"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "aiphone-door-entry",
+            "status": "draft",
+            "name": "Aiphone Door Entry",
+            "related": "door-entry-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "apartment-access-control",
+            "status": "draft",
+            "name": "Apartment Access Control",
+            "related": "office-access-control"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "apartment-door-entry",
+            "status": "draft",
+            "name": "Apartment Door Entry",
+            "related": "multi-tenant-door-entry"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "apartment-door-entry-system",
+            "status": "draft",
+            "name": "Apartment Door Entry System",
+            "related": "apartment-door-entry"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "assa-abloy-access-control",
+            "status": "draft",
+            "name": "ASSA ABLOY Access Control",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "audio-door-entry",
+            "status": "draft",
+            "name": "Audio Door Entry",
+            "related": "video-door-entry"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "biometric-access-control",
+            "status": "draft",
+            "name": "Biometric Access Control",
+            "related": "access-control-system"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "block-door-entry-upgrade",
+            "status": "draft",
+            "name": "Block Door Entry Upgrade",
+            "related": "door-entry-repair"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "block-of-flats-door-entry",
+            "status": "draft",
+            "name": "Block of Flats Door Entry",
+            "related": "apartment-door-entry"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "bpt-door-entry",
+            "status": "draft",
+            "name": "BPT Door Entry",
+            "related": "door-entry-system"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "building-access-system",
+            "status": "draft",
+            "name": "Building Access System",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "car-park-barrier-access",
+            "status": "draft",
+            "name": "Car Park Barrier Access",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "card-access-system",
+            "status": "draft",
+            "name": "Card Access System",
+            "related": "paxton-net2-install"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "cloud-access-control",
+            "status": "draft",
+            "name": "Cloud Access Control",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "colour-video-door-entry",
+            "status": "draft",
+            "name": "Colour Video Door Entry",
+            "related": "video-door-entry"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "comelit-door-entry",
+            "status": "draft",
+            "name": "Comelit Door Entry",
+            "related": "door-entry-system"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "commercial-access-control",
+            "status": "draft",
+            "name": "Commercial Access Control",
+            "related": "office-access-control-system"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "commercial-door-entry",
+            "status": "draft",
+            "name": "Commercial Door Entry",
+            "related": "door-entry-system"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "communal-door-entry-system",
+            "status": "draft",
+            "name": "Communal Door Entry System",
+            "related": "apartment-door-entry"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "door-access-control",
+            "status": "draft",
+            "name": "Door Access Control",
+            "related": "electric-door-release"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "door-access-control-system",
+            "status": "draft",
+            "name": "Door Access Control System",
+            "related": "door-access-control"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "door-controller-installation",
+            "status": "draft",
+            "name": "Door Controller Installation",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "door-entry-access-integration",
+            "status": "draft",
+            "name": "Door Entry Access Integration",
+            "related": "door-entry-system"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "door-entry-cabling",
+            "status": "draft",
+            "name": "Door Entry Cabling",
+            "related": "door-entry-system"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "door-entry-certification",
+            "status": "draft",
+            "name": "Door Entry Certification",
+            "related": "door-entry-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "door-entry-engineer",
+            "status": "draft",
+            "name": "Door Entry Engineer",
+            "related": "door-entry-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "door-entry-engineers-near-me",
+            "status": "draft",
+            "name": "Door Entry Engineers Near Me",
+            "related": "door-entry-system"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "door-entry-handset-replacement",
+            "status": "draft",
+            "name": "Door Entry Handset Replacement",
+            "related": "door-entry-system"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "door-entry-installation",
+            "status": "draft",
+            "name": "Door Entry Installation",
+            "related": "video-door-entry"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "door-entry-maintenance",
+            "status": "draft",
+            "name": "Door Entry Maintenance",
+            "related": "door-entry-servicing"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "door-entry-maintenance-contract",
+            "status": "draft",
+            "name": "Door Entry Maintenance Contract",
+            "related": "video-door-entry-flats"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "door-entry-panel-replacement",
+            "status": "draft",
+            "name": "Door Entry Panel Replacement",
+            "related": "door-entry-system"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "door-entry-repair",
+            "status": "draft",
+            "name": "Door Entry Repair",
+            "related": "door-entry-engineer"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "door-entry-servicing",
+            "status": "draft",
+            "name": "Door Entry Servicing",
+            "related": "door-entry-repair"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "door-entry-system",
+            "status": "draft",
+            "name": "Door Entry System",
+            "related": "apartment-door-entry"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "door-entry-system-installation",
+            "status": "draft",
+            "name": "Door Entry System Installation",
+            "related": "door-entry-system"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "door-entry-system-upgrade",
+            "status": "draft",
+            "name": "Door Entry System Upgrade",
+            "related": "door-entry-system"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "electric-door-release",
+            "status": "draft",
+            "name": "Electric Door Release",
+            "related": "door-access-control"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "electric-strike-installation",
+            "status": "draft",
+            "name": "Electric Strike Installation",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "fermax-door-entry",
+            "status": "draft",
+            "name": "Fermax Door Entry",
+            "related": "door-entry-system"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "fingerprint-access-control",
+            "status": "draft",
+            "name": "Fingerprint Access Control",
+            "related": "biometric-access-control"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "fire-door-access-control-integration",
+            "status": "draft",
+            "name": "Fire Door Access Control Integration",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "fire-release-access-control",
+            "status": "draft",
+            "name": "Fire Release Access Control",
+            "related": "apartment-access-control"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "fob-access-control",
+            "status": "draft",
+            "name": "Fob Access Control",
+            "related": "proximity-card-reader"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "gate-access-control",
+            "status": "draft",
+            "name": "Gate Access Control",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "gsm-door-entry",
+            "status": "draft",
+            "name": "GSM Door Entry",
+            "related": "block-door-entry-upgrade"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "gsm-door-entry-system",
+            "status": "draft",
+            "name": "GSM Door Entry System",
+            "related": "video-door-entry"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "hid-access-control",
+            "status": "draft",
+            "name": "HID Access Control",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "intercom-access",
+            "status": "draft",
+            "name": "Intercom Access",
+            "related": "door-access-control"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "ip-door-entry-system",
+            "status": "draft",
+            "name": "IP Door Entry System",
+            "related": "video-door-entry"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "keypad-access-control",
+            "status": "draft",
+            "name": "Keypad Access Control",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "landlord-door-entry",
+            "status": "draft",
+            "name": "Landlord Door Entry",
+            "related": "ip-door-entry-system"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "lift-access-control",
+            "status": "draft",
+            "name": "Lift Access Control",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "magnetic-lock-installation",
+            "status": "draft",
+            "name": "Magnetic Lock Installation",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "multi-door-access-control",
+            "status": "draft",
+            "name": "Multi Door Access Control",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "multi-site-access-control",
+            "status": "draft",
+            "name": "Multi Site Access Control",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "multi-tenant-door-entry",
+            "status": "draft",
+            "name": "Multi Tenant Door Entry",
+            "related": "apartment-door-entry"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "office-access-control",
+            "status": "draft",
+            "name": "Office Access Control",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "office-access-control-system",
+            "status": "draft",
+            "name": "Office Access Control System",
+            "related": "commercial-access-control"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "panel-replacement-door-entry",
+            "status": "draft",
+            "name": "Panel Replacement Door Entry",
+            "related": "door-entry-handset-replacement"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "paxton-access",
+            "status": "draft",
+            "name": "Paxton Access",
+            "related": "proximity-card-reader",
+            "name_lock": true
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "paxton-access-control",
+            "status": "draft",
+            "name": "Paxton Access Control",
+            "related": "paxton-access"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "paxton-net2-install",
+            "status": "draft",
+            "name": "Paxton Net2 Install",
+            "related": "paxton-access"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "paxton-net2-maintenance",
+            "status": "draft",
+            "name": "Paxton Net2 Maintenance",
+            "related": "paxton-net2-install"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "proximity-card-reader",
+            "status": "draft",
+            "name": "Proximity Card Reader",
+            "related": "paxton-access"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "proximity-card-reader-installation",
+            "status": "draft",
+            "name": "Proximity Card Reader Installation",
+            "related": "proximity-card-reader"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "proximity-reader-installation",
+            "status": "draft",
+            "name": "Proximity Reader Installation",
+            "related": "access-control-upgrade"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "residential-door-entry",
+            "status": "draft",
+            "name": "Residential Door Entry",
+            "related": "apartment-door-entry"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "salto-access-control",
+            "status": "draft",
+            "name": "Salto Access Control",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "salto-access-system-support",
+            "status": "draft",
+            "name": "Salto Access System Support",
+            "related": "hid-access-control"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "access-control",
+            "slug": "secure-door-entry-access",
+            "status": "draft",
+            "name": "Secure Door Entry Access",
+            "related": "door-access-control"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "smartphone-door-entry",
+            "status": "draft",
+            "name": "Smartphone Door Entry",
+            "related": "video-door-entry"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "time-attendance-access-control",
+            "status": "draft",
+            "name": "Time Attendance Access Control",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "trade-button-door-entry",
+            "status": "draft",
+            "name": "Trade Button Door Entry",
+            "related": "door-entry-system"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "urmet-door-entry",
+            "status": "draft",
+            "name": "Urmet Door Entry",
+            "related": "door-entry-system"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "video-door-entry",
+            "status": "draft",
+            "name": "Video Door Entry",
+            "related": "door-entry-system"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "video-door-entry-flats",
+            "status": "draft",
+            "name": "Video Door Entry Flats",
+            "related": "multi-tenant-door-entry"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "video-door-phone-installation",
+            "status": "draft",
+            "name": "Video Door Phone Installation",
+            "related": "video-door-entry"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "video-intercom-door-entry",
+            "status": "draft",
+            "name": "Video Intercom Door Entry",
+            "related": "video-door-entry"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "videx-door-entry",
+            "status": "draft",
+            "name": "Videx Door Entry",
+            "related": "video-door-entry"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "visitor-access-management",
+            "status": "draft",
+            "name": "Visitor Access Management",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "wireless-access-control",
+            "status": "draft",
+            "name": "Wireless Access Control",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "car-park-barrier",
+            "status": "draft",
+            "name": "Car Park Barrier",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "car-park-barrier-installation",
+            "status": "draft",
+            "name": "Car Park Barrier Installation",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "car-park-barrier-repair",
+            "status": "draft",
+            "name": "Car Park Barrier Repair",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "car-park-barrier-maintenance",
+            "status": "draft",
+            "name": "Car Park Barrier Maintenance",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "car-park-barrier-servicing",
+            "status": "draft",
+            "name": "Car Park Barrier Servicing",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "automatic-barrier",
+            "status": "draft",
+            "name": "Automatic Barrier",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "automatic-barrier-installation",
+            "status": "draft",
+            "name": "Automatic Barrier Installation",
+            "related": "automatic-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "automatic-barrier-repair",
+            "status": "draft",
+            "name": "Automatic Barrier Repair",
+            "related": "automatic-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "automatic-barrier-maintenance",
+            "status": "draft",
+            "name": "Automatic Barrier Maintenance",
+            "related": "automatic-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "rising-arm-barrier",
+            "status": "draft",
+            "name": "Rising Arm Barrier",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "rising-arm-barrier-installation",
+            "status": "draft",
+            "name": "Rising Arm Barrier Installation",
+            "related": "rising-arm-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "rising-arm-barrier-repair",
+            "status": "draft",
+            "name": "Rising Arm Barrier Repair",
+            "related": "rising-arm-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "vehicle-barrier",
+            "status": "draft",
+            "name": "Vehicle Barrier",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "vehicle-barrier-installation",
+            "status": "draft",
+            "name": "Vehicle Barrier Installation",
+            "related": "vehicle-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "vehicle-barrier-repair",
+            "status": "draft",
+            "name": "Vehicle Barrier Repair",
+            "related": "vehicle-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-installation",
+            "status": "draft",
+            "name": "Barrier Installation",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-repair",
+            "status": "draft",
+            "name": "Barrier Repair",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-arm-replacement",
+            "status": "draft",
+            "name": "Barrier Arm Replacement",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-boom-replacement",
+            "status": "draft",
+            "name": "Barrier Boom Replacement",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-spring-replacement",
+            "status": "draft",
+            "name": "Barrier Spring Replacement",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-motor-replacement",
+            "status": "draft",
+            "name": "Barrier Motor Replacement",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-gearbox-repair",
+            "status": "draft",
+            "name": "Barrier Gearbox Repair",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-control-cabinet",
+            "status": "draft",
+            "name": "Barrier Control Cabinet",
+            "related": "came-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-limit-switch",
+            "status": "draft",
+            "name": "Barrier Limit Switch",
+            "related": "barrier-repair"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-manual-release",
+            "status": "draft",
+            "name": "Barrier Manual Release",
+            "related": "barrier-repair"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-loop-detector",
+            "status": "draft",
+            "name": "Barrier Loop Detector",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-safety-loop",
+            "status": "draft",
+            "name": "Barrier Safety Loop",
+            "related": "barrier-loop-detector"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-photocell",
+            "status": "draft",
+            "name": "Barrier Photocell",
+            "related": "barrier-safety-devices"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-safety-edge",
+            "status": "draft",
+            "name": "Barrier Safety Edge",
+            "related": "barrier-safety-devices"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-safety-devices",
+            "status": "draft",
+            "name": "Barrier Safety Devices",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "anti-trap-barrier",
+            "status": "draft",
+            "name": "Anti-Trap Barrier",
+            "related": "barrier-safety-devices"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-ups-battery",
+            "status": "draft",
+            "name": "Barrier UPS Battery",
+            "related": "barrier-control-cabinet"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-foundation",
+            "status": "draft",
+            "name": "Barrier Foundation",
+            "related": "barrier-civil-works"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-island",
+            "status": "draft",
+            "name": "Barrier Island",
+            "related": "barrier-civil-works"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-civil-works",
+            "status": "draft",
+            "name": "Barrier Civil Works",
+            "related": "barrier-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "entry-exit-barrier",
+            "status": "draft",
+            "name": "Entry and Exit Barrier Pair",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "twin-lane-barrier",
+            "status": "draft",
+            "name": "Twin Lane Barrier",
+            "related": "entry-exit-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "staff-car-park-barrier",
+            "status": "draft",
+            "name": "Staff Car Park Barrier",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "visitor-car-park-barrier",
+            "status": "draft",
+            "name": "Visitor Car Park Barrier",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "residential-car-park-barrier",
+            "status": "draft",
+            "name": "Residential Car Park Barrier",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "apartment-car-park-barrier",
+            "status": "draft",
+            "name": "Apartment Car Park Barrier",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "commercial-car-park-barrier",
+            "status": "draft",
+            "name": "Commercial Car Park Barrier",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "industrial-yard-barrier",
+            "status": "draft",
+            "name": "Industrial Yard Barrier",
+            "related": "vehicle-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "warehouse-yard-barrier",
+            "status": "draft",
+            "name": "Warehouse Yard Barrier",
+            "related": "vehicle-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "office-car-park-barrier",
+            "status": "draft",
+            "name": "Office Car Park Barrier",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "retail-park-barrier",
+            "status": "draft",
+            "name": "Retail Park Barrier",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-access-integration",
+            "status": "draft",
+            "name": "Barrier Access Control Integration",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-fob-reader",
+            "status": "draft",
+            "name": "Barrier Fob Reader",
+            "related": "barrier-access-integration"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-keypad",
+            "status": "draft",
+            "name": "Barrier Keypad",
+            "related": "barrier-access-integration"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-gsm-entry",
+            "status": "draft",
+            "name": "Barrier GSM Entry",
+            "related": "barrier-access-integration"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-intercom",
+            "status": "draft",
+            "name": "Barrier Intercom",
+            "related": "barrier-access-integration"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-anpr",
+            "status": "draft",
+            "name": "Barrier ANPR Integration",
+            "related": "barrier-access-integration"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-credential-interface",
+            "status": "draft",
+            "name": "Barrier Credential Interface",
+            "related": "barrier-access-integration"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "came-barrier",
+            "status": "draft",
+            "name": "CAME Barrier",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "came-gard-barrier",
+            "status": "draft",
+            "name": "CAME Gard Barrier",
+            "related": "came-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "came-gard-gt4",
+            "status": "draft",
+            "name": "CAME Gard GT4 Barrier",
+            "related": "came-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "came-gard-gt8",
+            "status": "draft",
+            "name": "CAME Gard GT8 Barrier",
+            "related": "came-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "came-barrier-installation",
+            "status": "draft",
+            "name": "CAME Barrier Installation",
+            "related": "came-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "came-barrier-repair",
+            "status": "draft",
+            "name": "CAME Barrier Repair",
+            "related": "came-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "came-barrier-maintenance",
+            "status": "draft",
+            "name": "CAME Barrier Maintenance",
+            "related": "came-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "five-metre-barrier",
+            "status": "draft",
+            "name": "5 Metre Barrier Arm",
+            "related": "came-gard-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-commissioning",
+            "status": "draft",
+            "name": "Barrier Commissioning",
+            "related": "barrier-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-maintenance-contract",
+            "status": "draft",
+            "name": "Barrier Maintenance Contract",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-engineer",
+            "status": "draft",
+            "name": "Barrier Engineer",
+            "related": "barrier-repair"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-fault-finding",
+            "status": "draft",
+            "name": "Barrier Fault Finding",
+            "related": "barrier-repair"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-stuck-down",
+            "status": "draft",
+            "name": "Barrier Stuck Down",
+            "related": "barrier-repair"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-stuck-up",
+            "status": "draft",
+            "name": "Barrier Stuck Up",
+            "related": "barrier-repair"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-fails-to-close",
+            "status": "draft",
+            "name": "Barrier Fails to Close",
+            "related": "barrier-repair"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-fails-to-open",
+            "status": "draft",
+            "name": "Barrier Fails to Open",
+            "related": "barrier-repair"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-after-vehicle-strike",
+            "status": "draft",
+            "name": "Barrier After Vehicle Strike",
+            "related": "barrier-repair"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-emergency-access",
+            "status": "draft",
+            "name": "Barrier Emergency Access",
+            "related": "barrier-manual-release"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "pedestrian-gate-with-barrier",
+            "status": "draft",
+            "name": "Pedestrian Gate with Barrier",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "swing-gate-with-barrier",
+            "status": "draft",
+            "name": "Swing Gate with Barrier",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "car-park-barrier-manchester",
+            "status": "draft",
+            "name": "Car Park Barrier in Manchester",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "car-park-barrier-burnley",
+            "status": "draft",
+            "name": "Car Park Barrier in Burnley",
+            "related": "car-park-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "car-park-barrier-installation-manchester",
+            "status": "draft",
+            "name": "Car Park Barrier Installation in Manchester",
+            "related": "car-park-barrier-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "car-park-barrier-installation-burnley",
+            "status": "draft",
+            "name": "Car Park Barrier Installation in Burnley",
+            "related": "car-park-barrier-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "car-park-barrier-repair-manchester",
+            "status": "draft",
+            "name": "Car Park Barrier Repair in Manchester",
+            "related": "car-park-barrier-repair"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "car-park-barrier-repair-burnley",
+            "status": "draft",
+            "name": "Car Park Barrier Repair in Burnley",
+            "related": "car-park-barrier-repair"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "automatic-barrier-manchester",
+            "status": "draft",
+            "name": "Automatic Barrier in Manchester",
+            "related": "automatic-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "automatic-barrier-burnley",
+            "status": "draft",
+            "name": "Automatic Barrier in Burnley",
+            "related": "automatic-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "came-barrier-manchester",
+            "status": "draft",
+            "name": "CAME Barrier in Manchester",
+            "related": "came-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "came-barrier-burnley",
+            "status": "draft",
+            "name": "CAME Barrier in Burnley",
+            "related": "came-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "came-gard-gt4-manchester",
+            "status": "draft",
+            "name": "CAME Gard GT4 Barrier in Manchester",
+            "related": "came-gard-gt4"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "came-gard-gt4-burnley",
+            "status": "draft",
+            "name": "CAME Gard GT4 Barrier in Burnley",
+            "related": "came-gard-gt4"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "rising-arm-barrier-manchester",
+            "status": "draft",
+            "name": "Rising Arm Barrier in Manchester",
+            "related": "rising-arm-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "rising-arm-barrier-burnley",
+            "status": "draft",
+            "name": "Rising Arm Barrier in Burnley",
+            "related": "rising-arm-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "vehicle-barrier-manchester",
+            "status": "draft",
+            "name": "Vehicle Barrier in Manchester",
+            "related": "vehicle-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "vehicle-barrier-burnley",
+            "status": "draft",
+            "name": "Vehicle Barrier in Burnley",
+            "related": "vehicle-barrier"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-loop-detector-manchester",
+            "status": "draft",
+            "name": "Barrier Loop Detector in Manchester",
+            "related": "barrier-loop-detector"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-loop-detector-burnley",
+            "status": "draft",
+            "name": "Barrier Loop Detector in Burnley",
+            "related": "barrier-loop-detector"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-stuck-down-manchester",
+            "status": "draft",
+            "name": "Barrier Stuck Down in Manchester",
+            "related": "barrier-stuck-down"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-stuck-down-burnley",
+            "status": "draft",
+            "name": "Barrier Stuck Down in Burnley",
+            "related": "barrier-stuck-down"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-after-vehicle-strike-manchester",
+            "status": "draft",
+            "name": "Barrier After Vehicle Strike in Manchester",
+            "related": "barrier-after-vehicle-strike"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-after-vehicle-strike-burnley",
+            "status": "draft",
+            "name": "Barrier After Vehicle Strike in Burnley",
+            "related": "barrier-after-vehicle-strike"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-installation-manchester",
+            "status": "draft",
+            "name": "Barrier Installation in Manchester",
+            "related": "barrier-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-installation-burnley",
+            "status": "draft",
+            "name": "Barrier Installation in Burnley",
+            "related": "barrier-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-repair-manchester",
+            "status": "draft",
+            "name": "Barrier Repair in Manchester",
+            "related": "barrier-repair"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-repair-burnley",
+            "status": "draft",
+            "name": "Barrier Repair in Burnley",
+            "related": "barrier-repair"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-maintenance-contract-manchester",
+            "status": "draft",
+            "name": "Barrier Maintenance Contract in Manchester",
+            "related": "barrier-maintenance-contract"
+        },
+        {
+            "category": "Access Control",
+            "family": "barriers",
+            "service": "access-control",
+            "slug": "barrier-maintenance-contract-burnley",
+            "status": "draft",
+            "name": "Barrier Maintenance Contract in Burnley",
+            "related": "barrier-maintenance-contract"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "maglock-installation",
+            "status": "draft",
+            "name": "Maglock Installation",
+            "related": "magnetic-lock-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "maglock-repair",
+            "status": "draft",
+            "name": "Maglock Repair",
+            "related": "maglock-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "maglock-replacement",
+            "status": "draft",
+            "name": "Maglock Replacement",
+            "related": "maglock-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "maglock-maintenance",
+            "status": "draft",
+            "name": "Maglock Maintenance",
+            "related": "maglock-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "maglock-servicing",
+            "status": "draft",
+            "name": "Maglock Servicing",
+            "related": "maglock-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "fail-safe-maglock",
+            "status": "draft",
+            "name": "Fail Safe Maglock",
+            "related": "maglock-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "fail-secure-maglock",
+            "status": "draft",
+            "name": "Fail Secure Maglock",
+            "related": "maglock-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "monitored-maglock",
+            "status": "draft",
+            "name": "Monitored Maglock",
+            "related": "maglock-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "double-door-maglock",
+            "status": "draft",
+            "name": "Double Door Maglock",
+            "related": "maglock-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "shear-maglock",
+            "status": "draft",
+            "name": "Shear Maglock",
+            "related": "maglock-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "maglock-power-supply",
+            "status": "draft",
+            "name": "Maglock Power Supply",
+            "related": "maglock-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "maglock-fire-release",
+            "status": "draft",
+            "name": "Maglock Fire Release",
+            "related": "maglock-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "maglock-holding-force",
+            "status": "draft",
+            "name": "Maglock Holding Force Check",
+            "related": "maglock-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "maglock-bracket",
+            "status": "draft",
+            "name": "Maglock Bracket Kit",
+            "related": "maglock-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "maglock-door-loop",
+            "status": "draft",
+            "name": "Maglock Door Loop",
+            "related": "maglock-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "glass-door-maglock",
+            "status": "draft",
+            "name": "Glass Door Maglock",
+            "related": "maglock-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "communal-entrance-maglock",
+            "status": "draft",
+            "name": "Communal Entrance Maglock",
+            "related": "maglock-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "maglock-battery-backup",
+            "status": "draft",
+            "name": "Maglock Battery Backup",
+            "related": "maglock-power-supply"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "maglock-armature-plate",
+            "status": "draft",
+            "name": "Maglock Armature Plate",
+            "related": "maglock-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "maglock-alignment",
+            "status": "draft",
+            "name": "Maglock Alignment",
+            "related": "maglock-repair"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "maglock-after-door-change",
+            "status": "draft",
+            "name": "Maglock After Door Change",
+            "related": "maglock-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "electric-drop-bolt",
+            "status": "draft",
+            "name": "Electric Drop Bolt",
+            "related": "electric-strike-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "maglock-survey",
+            "status": "draft",
+            "name": "Maglock Survey",
+            "related": "maglock-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "maglock-manchester",
+            "status": "draft",
+            "name": "Maglocks in Manchester",
+            "related": "maglock-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "maglock-burnley",
+            "status": "draft",
+            "name": "Maglocks in Burnley",
+            "related": "maglock-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "maglock-installation-manchester",
+            "status": "draft",
+            "name": "Maglock Installation in Manchester",
+            "related": "maglock-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "maglock-installation-burnley",
+            "status": "draft",
+            "name": "Maglock Installation in Burnley",
+            "related": "maglock-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "maglock-repair-manchester",
+            "status": "draft",
+            "name": "Maglock Repair in Manchester",
+            "related": "maglock-repair"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "maglock-repair-burnley",
+            "status": "draft",
+            "name": "Maglock Repair in Burnley",
+            "related": "maglock-repair"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "door-entry-manchester",
+            "status": "draft",
+            "name": "Door Entry in Manchester",
+            "related": "door-entry-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "door-entry-burnley",
+            "status": "draft",
+            "name": "Door Entry in Burnley",
+            "related": "door-entry-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "video-door-entry-manchester",
+            "status": "draft",
+            "name": "Video Door Entry in Manchester",
+            "related": "video-door-entry"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "video-door-entry-burnley",
+            "status": "draft",
+            "name": "Video Door Entry in Burnley",
+            "related": "video-door-entry"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "bell-system-panel-service",
+            "status": "draft",
+            "name": "Bell System Door Panel Service",
+            "related": "door-entry-panel-replacement"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "door-entry-after-water-ingress",
+            "status": "draft",
+            "name": "Door Entry After Water Ingress",
+            "related": "door-entry-repair"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "door-entry-backup-battery",
+            "status": "draft",
+            "name": "Door Entry Backup Battery",
+            "related": "door-entry-maintenance"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "door-entry-camera-module",
+            "status": "draft",
+            "name": "Door Entry Camera Module",
+            "related": "video-door-entry"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "door-entry-fire-override-check",
+            "status": "draft",
+            "name": "Door Entry Fire Override Check",
+            "related": "door-entry-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "gsm-sim-door-entry",
+            "status": "draft",
+            "name": "GSM SIM Door Entry",
+            "related": "gsm-door-entry"
+        },
+        {
+            "category": "Access Control",
+            "family": "door-entry",
+            "service": "door-entry",
+            "slug": "landlord-handset-swap-programme",
+            "status": "draft",
+            "name": "Landlord Handset Swap Programme",
+            "related": "door-entry-handset-replacement"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "access-control-manchester",
+            "status": "draft",
+            "name": "Access Control in Manchester",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "access-control-burnley",
+            "status": "draft",
+            "name": "Access Control in Burnley",
+            "related": "access-control-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "access-control-after-staff-change",
+            "status": "draft",
+            "name": "Access Control After Staff Change",
+            "related": "access-control-card-programming"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "access-control-fire-interface-test",
+            "status": "draft",
+            "name": "Access Control Fire Interface Test",
+            "related": "fire-release-access-control"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "access-level-holiday-calendar",
+            "status": "draft",
+            "name": "Access Level Holiday Calendar",
+            "related": "access-control-card-programming"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "broken-fob-emergency-visit",
+            "status": "draft",
+            "name": "Broken Fob Emergency Visit",
+            "related": "fob-access-control"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "controller-battery-replace",
+            "status": "draft",
+            "name": "Access Controller Battery Replace",
+            "related": "access-control-maintenance"
+        },
+        {
+            "category": "Access Control",
+            "family": "maglock",
+            "service": "access-control",
+            "slug": "fail-secure-lock-assessment",
+            "status": "draft",
+            "name": "Fail Secure Lock Assessment",
+            "related": "maglock-installation"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "gate-access-control-liaison",
+            "status": "draft",
+            "name": "Gate Access Control Liaison",
+            "related": "gate-access-control"
+        },
+        {
+            "category": "Access Control",
+            "family": "access-control",
+            "service": "access-control",
+            "slug": "lift-floor-access-integration-advice",
+            "status": "draft",
+            "name": "Lift Floor Access Integration Advice",
+            "related": "lift-access-control"
+        }
+    ]
+}

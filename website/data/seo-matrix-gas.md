@@ -6,15 +6,15 @@ Each slug **must** have:
 - a hub at `/pages/keywords/{slug}`
 - a keyword×area page at `/pages/keywords/{slug}/{town}` for **every** town in `areas.json` (static export)
 
-Cost / price / quote slugs are **POA only**. Never invent a £ figure.
+Cost / price / quote slugs are **POA only**. Never invent a POA figure.
 
 Sitemap must **not** list the full keyword×area matrix (P090 / anti-junk).
 See `seo-matrix-rollout-notes.md`.
 
-## Keywords (105)
+## Keywords (104)
 
 - `annual-boiler-service` — Annual Boiler Service
-- `annual-gas-safety-certificate` — Annual Gas Safety Certificate
+- `annual-gas-safety-certificate` — Annual Gas safety Certificate
 - `boiler` — Boiler
 - `boiler-breakdown` — Boiler Breakdown
 - `boiler-breakdown-repair` — Boiler Breakdown Repair
@@ -38,15 +38,15 @@ See `seo-matrix-rollout-notes.md`.
 - `commercial-gas` — Commercial Gas
 - `commercial-gas-engineer` — Commercial Gas Engineer
 - `commercial-gas-installation` — Commercial Gas Installation
-- `commercial-gas-safety-certificate` — Commercial Gas Safety Certificate
-- `commercial-kitchen-gas-safety` — Commercial Kitchen Gas Safety
+- `commercial-gas-safety-certificate` — Commercial Gas safety Certificate
+- `commercial-kitchen-gas-safety` — Commercial Kitchen Gas safety
 - `commercial-kitchen-gas-works` — Commercial Kitchen Gas Works
 - `condensing-boiler-installation` — Condensing Boiler Installation
-- `cp12` — CP12 Gas Safety Certificate
+- `cp12` — CP12 Gas safety Certificate
 - `cp12-cost` — CP12 Cost — POA
 - `cp12-gas-certificate` — CP12 Gas Certificate
 - `cp44-gas-certificate` — CP44 Gas Certificate
-- `cp44-gas-safety` — CP44 Gas Safety
+- `cp44-gas-safety` — CP44 Gas safety
 - `emergency-gas-engineer` — Emergency Gas Engineer
 - `emergency-gas-engineer-cost` — Emergency Gas Engineer Cost — POA
 - `flue-installation` — Flue Installation
@@ -73,38 +73,37 @@ See `seo-matrix-rollout-notes.md`.
 - `gas-meter-relocation-support` — Gas Meter Relocation Support
 - `gas-meter-works` — Gas Meter Works
 - `gas-repair` — Gas Repair
-- `gas-safe-engineer` — Gas Safe Engineer
-- `gas-safe-engineer-stockport` — Gas Safe Engineer Stockport
-- `gas-safe-register-engineer` — Gas Safe Register Engineer
-- `gas-safety` — Gas Safety
-- `gas-safety-certificate` — Gas Safety Certificate
-- `gas-safety-certificate-cost` — Gas Safety Certificate Cost — POA
-- `gas-safety-check` — Gas Safety Check
-- `gas-safety-for-landlords-north-west` — Gas Safety for Landlords North West
-- `gas-safety-inspection` — Gas Safety Inspection
-- `gas-safety-near-me` — Gas Safety Near Me
-- `gas-safety-record` — Gas Safety Record
+- `gas-safe-engineer-stockport` — gas safety certificates (CP12) Engineer Stockport
+- `gas-safe-register-engineer` — gas safety certificates (CP12) Engineer
+- `gas-safety` — Gas safety
+- `gas-safety-certificate` — Gas safety Certificate
+- `gas-safety-certificate-cost` — Gas safety Certificate Cost — POA
+- `gas-safety-check` — Gas safety Check
+- `gas-safety-for-landlords-north-west` — Gas safety for Landlords North West
+- `gas-safety-inspection` — Gas safety Inspection
+- `gas-safety-near-me` — Gas safety Near Me
+- `gas-safety-record` — Gas safety Record
 - `gas-servicing` — Gas Servicing
 - `gas-system-upgrade` — Gas System Upgrade
 - `gas-tightness-test` — Gas Tightness Test
 - `gas-valve-replacement` — Gas Valve Replacement
 - `heating-engineer` — Heating Engineer
 - `heating-system-service` — Heating System Service
-- `hmo-gas-safety` — HMO Gas Safety
-- `hmo-gas-safety-certificate` — HMO Gas Safety Certificate
+- `hmo-gas-safety` — HMO Gas safety
+- `hmo-gas-safety-certificate` — HMO Gas safety Certificate
 - `hydrogen-ready-boiler` — Hydrogen Ready Boiler
 - `industrial-gas-system` — Industrial Gas System
 - `landlord-boiler-service` — Landlord Boiler Service
 - `landlord-cp12` — Landlord CP12
 - `landlord-gas` — Landlord Gas
 - `landlord-gas-certificate` — Landlord Gas Certificate
-- `landlord-gas-safety` — Landlord Gas Safety
-- `landlord-gas-safety-certificate` — Landlord Gas Safety Certificate
-- `landlord-gas-safety-inspection` — Landlord Gas Safety Inspection
-- `landlord-gas-safety-north-west` — Landlord Gas Safety North West
+- `landlord-gas-safety` — Landlord Gas safety
+- `landlord-gas-safety-certificate` — Landlord Gas safety Certificate
+- `landlord-gas-safety-inspection` — Landlord Gas safety Inspection
+- `landlord-gas-safety-north-west` — Landlord Gas safety North West
 - `lettings-gas-certificate` — Lettings Gas Certificate
 - `lgsr-certificate` — LGSR Certificate
-- `lpg-gas-safety` — LPG Gas Safety
+- `lpg-gas-safety` — LPG Gas safety
 - `multi-property-gas-certificates` — Multi Property Gas Certificates
 - `new-boiler-cost` — New Boiler Cost — POA
 - `new-boiler-quote` — New Boiler Quote — POA

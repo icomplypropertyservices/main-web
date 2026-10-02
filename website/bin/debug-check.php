@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 /**
- * Full debug / health check suite for Icomply.
+ * Full debug / health check suite for iComply.
  * Exit 0 only if all critical checks pass.
  */
 require_once __DIR__ . '/../includes/build-status.php';
@@ -25,7 +25,7 @@ function check(string $name, bool $ok, string $detail = '', bool $critical = tru
     }
 }
 
-echo "Icomply DEBUG CHECK\n";
+echo "iComply DEBUG CHECK\n";
 echo str_repeat('=', 50) . "\n\n";
 
 // --- Config ---
