@@ -74,26 +74,7 @@ $schema = [
             'serviceType' => $serviceName,
             'category' => $serviceName,
             'provider' => [
-                '@type' => 'LocalBusiness',
                 '@id' => rtrim(SITE_URL, '/') . '/#business',
-                'name' => SITE_NAME,
-                'url' => SITE_URL,
-                'telephone' => PHONE,
-                'email' => EMAIL,
-                'address' => [
-                    '@type' => 'PostalAddress',
-                    'streetAddress' => '17 Woodlands Park Road',
-                    'addressLocality' => 'Offerton, Stockport',
-                    'addressRegion' => 'Greater Manchester',
-                    'postalCode' => 'SK2 5DE',
-                    'addressCountry' => 'GB',
-                ],
-                'geo' => [
-                    '@type' => 'GeoCoordinates',
-                    'latitude' => '53.3904',
-                    'longitude' => '-2.1219',
-                ],
-                'priceRange' => '££',
             ],
             'areaServed' => [
                 '@type' => 'City',

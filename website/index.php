@@ -4,17 +4,21 @@
  */
 require_once __DIR__ . '/config.php';
 require_once SITE_ROOT . '/includes/shopify.php';
+require_once SITE_ROOT . '/includes/seo.php';
 
-$pageTitle = 'Property Maintenance & Compliance | Icomply Property Services';
-$metaDesc = 'iComply Property Services — landlord compliance (EICR, CP12/gas, FRA), electrical, gas, fire safety, kitchens, bathrooms, renovations, CCTV, Legionella, asbestos surveys and trade shop across Greater Manchester and the North West. Stockport SK2 5DE.';
-$canonicalUrl = url('/');
+$pageTitle = 'Property Maintenance Stockport | Icomply';
+$metaDesc = 'Stockport property maintenance and compliance. EICR, gas safety, fire risk assessments, kitchens, CCTV and asbestos surveys across Greater Manchester.';
+$canonicalUrl = icomply_home_url();
 $metaKeywords = 'landlord compliance Stockport, EICR Manchester, gas safety CP12, fire risk assessment, kitchen fitting, renovation, CCTV, legionella, asbestos survey, North West';
-$ogImage = url('/assets/images/android-chrome-512.png');
+$ogImage = icomply_absolute_url('/assets/images/brand/icomply-logo.svg');
 
 $services = getServices();
+$pageJsonLd = icomply_home_jsonld($pageTitle, $metaDesc, $services);
 $areas = getAreas();
 $categories = getServiceCategories();
-$catalog = getShopCatalog();
+$catalog = function_exists('getShopCatalog')
+    ? getShopCatalog()
+    : ['products' => [], 'collections' => []];
 $featuredProducts = array_slice($catalog['products'], 0, 4);
 $shopCollections = array_slice($catalog['collections'], 0, 4);
 
@@ -435,5 +439,5 @@ echo testimonialsSectionHtml();
     <?= shareButtonsHtml($pageTitle, $metaDesc) ?>
 </section>
 
-<?= shopifyBuyButtonScript() ?>
+<?= function_exists('shopifyBuyButtonScript') ? shopifyBuyButtonScript() : '' ?>
 <?php require SITE_ROOT . '/includes/footer.php'; ?>

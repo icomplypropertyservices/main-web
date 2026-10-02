@@ -273,16 +273,17 @@ function howto_schema(string $serviceName, string $area): array {
 }
 
 function organization_schema(): array {
+    $biz = function_exists('icomply_local_business') ? icomply_local_business() : [];
     return [
         '@context' => 'https://schema.org',
         '@type' => 'Organization',
-        '@id' => site_url() . '#organization',
+        '@id' => function_exists('icomply_business_id') ? icomply_business_id() : (site_url() . '#business'),
         'name' => SITE_NAME,
-        'url' => site_url(),
-        'logo' => site_url('assets/images/og-image.jpg'),
+        'url' => function_exists('icomply_home_url') ? icomply_home_url() : site_url(),
+        'logo' => $biz['logo'] ?? site_url('assets/images/brand/icomply-logo.svg'),
         'email' => EMAIL,
-        'telephone' => PHONE,
-        'address' => [
+        'telephone' => $biz['telephone'] ?? PHONE,
+        'address' => $biz['address'] ?? [
             '@type' => 'PostalAddress',
             'streetAddress' => '17 Woodlands Park Road, Offerton',
             'addressLocality' => 'Stockport',
@@ -290,20 +291,20 @@ function organization_schema(): array {
             'postalCode' => 'SK2 5DE',
             'addressCountry' => 'GB',
         ],
-        'sameAs' => [
-            'https://wa.me/' . WHATSAPP,
-        ],
+        'sameAs' => $biz['sameAs'] ?? ['https://wa.me/' . WHATSAPP],
     ];
 }
 
 function website_schema(): array {
+    $home = function_exists('icomply_home_url') ? icomply_home_url() : site_url();
+    $businessId = function_exists('icomply_business_id') ? icomply_business_id() : (rtrim((string)SITE_URL, '/') . '/#business');
     return [
         '@context' => 'https://schema.org',
         '@type' => 'WebSite',
-        '@id' => site_url() . '#website',
-        'url' => site_url(),
+        '@id' => $home . '#website',
+        'url' => $home,
         'name' => SITE_NAME,
-        'publisher' => ['@id' => site_url() . '#organization'],
+        'publisher' => ['@id' => $businessId],
         'inLanguage' => 'en-GB',
         'potentialAction' => [
             '@type' => 'CommunicateAction',
