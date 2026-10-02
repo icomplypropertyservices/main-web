@@ -4,17 +4,22 @@
  */
 require_once __DIR__ . '/config.php';
 require_once SITE_ROOT . '/includes/shopify.php';
+require_once SITE_ROOT . '/includes/seo.php';
 
+$seoFamily = 'home';
 $pageTitle = 'Property Maintenance & Compliance | Icomply Property Services';
-$metaDesc = 'iComply Property Services — landlord compliance (EICR, CP12/gas, FRA), electrical, gas, fire safety, kitchens, bathrooms, renovations, CCTV, Legionella, asbestos surveys and trade shop across Greater Manchester and the North West. Stockport SK2 5DE.';
+$metaDesc = 'Icomply Property Services in Stockport SK2. Fire, electrical and landlord compliance quotes are written after scope. Call 07517806082.';
 $canonicalUrl = url('/');
 $metaKeywords = 'landlord compliance Stockport, EICR Manchester, gas safety CP12, fire risk assessment, kitchen fitting, renovation, CCTV, legionella, asbestos survey, North West';
-$ogImage = url('/assets/images/android-chrome-512.png');
+$ogImage = icomply_absolute_url('/assets/images/brand/icomply-logo.svg');
 
 $services = getServices();
+$pageJsonLd = icomply_home_jsonld($pageTitle, $metaDesc, $services);
 $areas = getAreas();
 $categories = getServiceCategories();
-$catalog = getShopCatalog();
+$catalog = function_exists('getShopCatalog')
+    ? getShopCatalog()
+    : ['products' => [], 'collections' => []];
 $featuredProducts = array_slice($catalog['products'], 0, 4);
 $shopCollections = array_slice($catalog['collections'], 0, 4);
 
@@ -51,10 +56,11 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             <p class="home-hero-kicker"><i></i> Greater Manchester &amp; North West</p>
             <h1>Property maintenance<br><span>&amp; compliance</span></h1>
             <p class="hero-lede">
-                Landlord certificates (EICR, CP12 / gas, FRA), electrical, gas, fire safety,
-                kitchens and bathrooms, renovations, CCTV and security, Legionella, asbestos
-                surveys, HMO / landlord packages and a trade shop — one Stockport team covering
-                Greater Manchester and the North West.
+                Landlord electrical certificates (EICR), fire risk assessments, fire safety,
+                kitchens and bathrooms, renovations, CCTV and security, Legionella and asbestos
+                surveys — one Stockport team covering Greater Manchester and the North West.
+                Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.
+                iComply does not carry out gas work or issue those certificates.
             </p>
             <div class="home-hero-cta">
                 <a class="btn-hero-accent" href="#quote">Get a quote</a>
@@ -73,7 +79,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             <?php
             $heroPref = [
                 'electrical' => 'EICR / electrical',
-                'gas-systems' => 'Gas safety (CP12)',
+                'gas-systems' => 'CP12 info',
                 'fire-risk-assessments' => 'Fire risk assessments',
                 'landlord-compliance' => 'Landlord compliance',
                 'kitchens' => 'Kitchens &amp; bathrooms',
@@ -108,6 +114,21 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
     </div>
 </section>
 
+<section class="bg-[#0B1F3A] text-white border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-10 flex flex-col lg:flex-row lg:items-center gap-6 justify-between">
+        <div class="max-w-2xl">
+            <p class="text-xs uppercase tracking-[3px] text-[#ffb080] font-semibold">Fire protection · nationwide</p>
+            <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mt-2">AOV and smoke vents</h2>
+            <p class="mt-3 text-white/80">Automatic opening vents sit with fire protection, so we quote them across the UK from the Stockport yard (SK2 5DE). Travel outside a short North West run is on the quote. Supply kit prices are listed. Installation, testing and commissioning are POA. We do not claim BAFE, FIRAS or approved-installer status.</p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+            <a class="px-5 py-3 rounded-2xl bg-[#ff6b00] font-semibold" href="<?= url('/pages/services/aov-air-handling.php') ?>">AOV service</a>
+            <a class="px-5 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold" href="<?= url('/pages/aov') ?>">UK town pages</a>
+            <a class="px-5 py-3 rounded-2xl border border-white/40 font-semibold" href="tel:<?= htmlspecialchars(preg_replace('/\s+/', '', (string)PHONE), ENT_QUOTES, 'UTF-8') ?>">Call <?= htmlspecialchars((string)PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+        </div>
+    </div>
+</section>
+
 <!-- TRUST STRIP -->
 <section class="bg-white border-b">
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -129,11 +150,13 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
         <div>
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Services</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2"><?= count($services) ?> services · <?= count($areas) ?>+ towns</h2>
-            <p class="mt-2 text-zinc-600 max-w-xl">Landlord compliance, electrical, gas, fire safety, water hygiene, asbestos, security, kitchens, bathrooms and building trades — each with local area pages.</p>
+            <p class="mt-2 text-zinc-600 max-w-xl">Landlord compliance, electrical, fire safety, water hygiene, asbestos, security, kitchens, bathrooms and building trades — each with local area pages. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue them.</p>
         </div>
         <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Full catalogue →</a>
     </div>
-    <?php foreach ($categories as $catKey => $cat):
+    <?php
+    $homeImgEager = true;
+    foreach ($categories as $catKey => $cat):
         $catServices = getServicesInCategory($catKey);
         if (!$catServices) {
             continue;
@@ -159,8 +182,9 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                class="service-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="h-36 bg-zinc-100 overflow-hidden">
-                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> in Greater Manchester and the North West — Icomply Property Services"
-                         class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy"
+                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" width="640" height="360" alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> in Greater Manchester and the North West — Icomply Property Services"
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="<?= $homeImgEager ? 'eager' : 'lazy' ?>"
+                         <?php $homeImgEager = false; ?>
                          onerror="this.src='<?= htmlspecialchars(url('/assets/images/services/fire-alarms.jpg'), ENT_QUOTES, 'UTF-8') ?>'">
                 </div>
                 <div class="p-5 flex-1 flex flex-col">
@@ -181,7 +205,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local SEO guides</div>
-                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">EICR, gas, fire, Legionella, asbestos &amp; more by town</h2>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">EICR, fire, Legionella, asbestos &amp; more by town</h2>
                 <p class="mt-2 text-zinc-600 max-w-2xl">
                     Every guide has a dedicated page for each North West area — e.g.
                     <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/keywords/eicr-report/stockport.php') ?>">EICR report in Stockport</a>,
@@ -247,7 +271,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                class="group bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="w-12 h-12 rounded-2xl bg-[#0B1F3A]/10 text-[#0B1F3A] font-bold flex items-center justify-center text-lg group-hover:bg-[#ff6b00] group-hover:text-white transition">L</div>
                 <h3 class="mt-5 font-semibold text-xl text-black tracking-tight">Landlords &amp; agents</h3>
-                <p class="mt-2 text-sm text-zinc-600 flex-1">EICR, CP12 / gas, FRA, Legionella, asbestos, voids, kitchens and bathrooms for portfolios. HMO work is quoted through existing landlord packages — not a separate invented product.</p>
+                <p class="mt-2 text-sm text-zinc-600 flex-1">EICR, FRA, Legionella, asbestos, voids, kitchens and bathrooms for portfolios. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue them. HMO work is quoted through existing landlord packages.</p>
                 <span class="mt-5 text-sm font-semibold text-[#ff6b00]">Landlord compliance →</span>
             </a>
             <a href="<?= url('/pages/commercial.php') ?>"
@@ -337,7 +361,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
         </div>
         <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
             <h3 class="text-2xl font-semibold tracking-tight">Need a compliance package?</h3>
-            <p class="mt-3 text-white/80">Combine EICR, gas, FRA, water hygiene, asbestos surveys, security and refurb works into one visit schedule for landlords and facilities teams.</p>
+            <p class="mt-3 text-white/80">Combine EICR, FRA, water hygiene, asbestos surveys, security and refurb works into one visit schedule for landlords and facilities teams. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.</p>
             <ul class="mt-6 space-y-3 text-sm text-white/90">
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Fixed-price multi-service quotes</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Full documentation for audits &amp; insurers</li>
@@ -381,10 +405,10 @@ echo testimonialsSectionHtml();
         <div class="text-center mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request your free quote</h2>
-            <p class="mt-3 text-zinc-600">We aim to respond within 2 hours on business days. All quotes are fixed-price after scope is agreed.</p>
+            <p class="mt-3 text-zinc-600">Send the property details and we will reply with a quote. The price is POA until the scope is agreed.</p>
         </div>
 
-        <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm" aria-label="Free quote form">
+        <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm', 'aria-label="Free quote form"') ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <input type="hidden" name="gclid" value="<?= htmlspecialchars($_GET['gclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
             <input type="hidden" name="fbclid" value="<?= htmlspecialchars($_GET['fbclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
@@ -435,5 +459,5 @@ echo testimonialsSectionHtml();
     <?= shareButtonsHtml($pageTitle, $metaDesc) ?>
 </section>
 
-<?= shopifyBuyButtonScript() ?>
+<?= function_exists('shopifyBuyButtonScript') ? shopifyBuyButtonScript() : '' ?>
 <?php require SITE_ROOT . '/includes/footer.php'; ?>

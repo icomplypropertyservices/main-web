@@ -1,5 +1,5 @@
 @echo off
-echo Starting Icomply Property Services...
+echo Starting iComply Property Services...
 echo.
 echo Open your browser at: http://localhost:8000
 echo.
