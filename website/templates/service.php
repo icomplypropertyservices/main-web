@@ -42,6 +42,16 @@ $serviceFaqs = [
         ['Do you remove asbestos?', 'Licensed removal is not this service. If the survey says removal is required, that work is appointed separately.'],
         ['What does it cost?', 'Price on application. Size, access and how intrusive the survey must be all change the quote. No invented starting price.'],
     ],
+    'access-control' => [
+        ['Why are car park barriers the hardest access job?', 'A rising arm needs the boom, induction loops, safety devices and the credential that opens the lane. A door maglock does not cover that work. Manchester and Burnley have their own barrier pages.'],
+        ['Do you install maglocks as well as barriers?', 'Yes. Maglocks, strikes and fire release are scoped for the pedestrian door. The barrier lane is quoted separately, POA after survey.'],
+        ['How do you price access control?', 'Price on application after we confirm doors, any barrier lane, brand and access. No catalogue price on this page.'],
+    ],
+    'door-entry' => [
+        ['Can door entry open a car park barrier?', 'Sometimes, when the panel has a clean release into the barrier controller. Barriers stay the hardest job and are surveyed on their own, including for Manchester and Burnley.'],
+        ['Do you replace flat handsets and panels?', 'Yes. We survey the panel, cabling and the lock it releases, then quote POA. Maglocks on that door are included in the survey when they are part of the release.'],
+        ['How do you price door entry?', 'Price on application after panel condition, handset count and cabling are known. No catalogue price on this page.'],
+    ],
     'default' => [
         ['What areas do you cover for ' . $SERVICE_NAME . '?', 'We cover every town in our published areas list across Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria from our Stockport base.'],
         ['How do you price the work?', $poaService ? 'Price on application after we confirm scope, standards and access. No catalogue prices on this page.' : 'After we confirm scope, standards and access we issue a written quote. We do not invent a fee here.'],
@@ -204,6 +214,9 @@ $schema = [
                        class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
                 </div>
                 <p class="mt-6 text-sm text-white/60"><?= htmlspecialchars($standards, ENT_QUOTES, 'UTF-8') ?></p>
+                <?php if ($serviceSlug === 'access-control'): ?>
+                    <p class="mt-4 text-sm"><a class="font-semibold text-[#ff6b00] hover:underline" href="<?= url('/pages/access-control-systems') ?>">Access control systems across the UK, with city notes and manufacturer links</a></p>
+                <?php endif; ?>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
                 <img src="<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>"
@@ -338,6 +351,13 @@ $schema = [
     <?php endif; ?>
 </section>
 
+<?php
+require_once SITE_ROOT . '/includes/access-control-jobs.php';
+if (function_exists('accessControlLaneHubSection')) {
+    echo accessControlLaneHubSection($serviceSlug);
+}
+?>
+
 <?php if (!$poaService): ?>
 <!-- MANUFACTURERS -->
 <section class="bg-zinc-50 border-y">
@@ -379,6 +399,9 @@ $schema = [
         </div>
         <?php
         $svcKeywords = getKeywordsForService($serviceSlug);
+        if (function_exists('accessControlLaneSortKeywordMap') && in_array($serviceSlug, ['access-control', 'door-entry'], true)) {
+            $svcKeywords = accessControlLaneSortKeywordMap($svcKeywords);
+        }
         if ($svcKeywords):
             $kwPreviewTowns = array_slice($popularTowns, 0, 6);
         ?>
@@ -389,6 +412,9 @@ $schema = [
             <?php
             $shown = 0;
             $cardLimit = in_array($serviceSlug, getElectricalGasFamilyServices(), true) ? 0 : 18;
+            if ($serviceSlug === 'access-control') {
+                $cardLimit = 24;
+            }
             foreach ($svcKeywords as $kwSlug => $kwMeta):
                 if ($cardLimit > 0 && $shown >= $cardLimit) {
                     break;

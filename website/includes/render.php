@@ -7,6 +7,25 @@
  * Templates must only be controlled site files — never user-supplied content.
  */
 require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/access-control-nationwide.php';
+
+if (!function_exists('shopifyCardFromManufacturerProduct')) {
+    /**
+     * Used when includes/shopify.php is still the placeholder and has no card helper.
+     * No prices are invented.
+     */
+    function shopifyCardFromManufacturerProduct(array $product, string $brandSlug, string $brandName): string
+    {
+        $title = htmlspecialchars((string)($product['title'] ?? $brandName), ENT_QUOTES, 'UTF-8');
+        $blurb = htmlspecialchars((string)($product['blurb'] ?? ''), ENT_QUOTES, 'UTF-8');
+        $href = htmlspecialchars(url('/contact'), ENT_QUOTES, 'UTF-8');
+        $brand = htmlspecialchars($brandName, ENT_QUOTES, 'UTF-8');
+        return '<article class="bg-white border rounded-2xl p-5"><h3 class="font-semibold text-black">'
+            . $title . '</h3><p class="mt-2 text-sm text-zinc-700">' . $blurb
+            . '</p><p class="mt-3 text-sm text-zinc-800">Price on application. <a class="text-[#ff6b00] font-semibold" href="'
+            . $href . '">Ask about this ' . $brand . ' kit</a></p></article>';
+    }
+}
 
 /**
  * Apply {{KEY}} replacements (values must already be safe for their context).
@@ -137,6 +156,14 @@ function keywordTemplatePlaceholders(
     string $areaName = ''
 ): array {
     $name = $meta['name'] ?? keywordDisplayName($slug);
+    $h1 = trim((string)($meta['h1'] ?? ''));
+    if ($h1 === '') {
+        $h1 = $name;
+    }
+    $seoTitle = trim((string)($meta['seo_title'] ?? ''));
+    if ($seoTitle === '') {
+        $seoTitle = $name . ' | North West';
+    }
     $intro = (string)($meta['intro'] ?? "Professional {$name} from Icomply Property Services across the North West.");
     $body = (string)($meta['body'] ?? "We install, service and certify {$name} as part of our {$serviceName} range for landlords, FM teams and commercial sites.");
     $metaDesc = (string)($meta['meta_desc'] ?? "{$name} across Greater Manchester & the North West. Fixed-price quotes. Local engineers.");
@@ -174,13 +201,38 @@ function keywordTemplatePlaceholders(
             . '<p class="mt-3 text-sm text-zinc-900 leading-relaxed font-medium">' . $a . '</p></details>';
     }
 
+    $faqEntities = [];
+    foreach ($faqs as $faq) {
+        if (!is_array($faq) || count($faq) < 2) {
+            continue;
+        }
+        $faqEntities[] = [
+            '@type' => 'Question',
+            'name' => (string)$faq[0],
+            'acceptedAnswer' => [
+                '@type' => 'Answer',
+                'text' => (string)$faq[1],
+            ],
+        ];
+    }
+    $faqJson = $faqEntities === []
+        ? ''
+        : (string)json_encode([
+            '@context' => 'https://schema.org',
+            '@type' => 'FAQPage',
+            'mainEntity' => $faqEntities,
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+
     $kwImg = url('/assets/images/keywords/' . $slug . '.jpg');
     $svcImg = url('/assets/images/services/' . $serviceSlug . '.jpg');
     // Prefer keyword image path; template onerror falls back to service
 
     return [
         'KEYWORD_NAME' => $name,
+        'KEYWORD_H1' => $h1,
+        'KEYWORD_SEO_TITLE' => $seoTitle,
         'KEYWORD_SLUG' => $slug,
+        'KEYWORD_FAQ_JSON' => $faqJson,
         'SERVICE_NAME' => $serviceName,
         'SERVICE_SLUG' => $serviceSlug,
         'RELATED_SLUG' => $relatedSlug,
@@ -257,12 +309,21 @@ function renderKeywordAreaPage(string $keywordSlug, string $area): void {
 function renderAreaHubPage(string $area): void {
     $GLOBALS['services'] = getServices();
     $GLOBALS['areas'] = getAreas();
-    $areaSlug = areaSlug($area);
+    $resolved = $area;
+    foreach (getAreas() as $name) {
+        if (strcasecmp((string)$name, $area) === 0 || areaSlug((string)$name) === areaSlug($area)) {
+            $resolved = (string)$name;
+            break;
+        }
+    }
+    $tpl = isFeaturedAreaIndexHub($resolved)
+        ? SITE_ROOT . '/templates/area-index.php'
+        : SITE_ROOT . '/templates/area.php';
 
-    executeTemplateVars(SITE_ROOT . '/templates/area.php', [
-        'AREA' => $area,
-        'AREA_SLUG' => $areaSlug,
-        'AREA_URL' => rawurlencode($area),
+    executeTemplateVars($tpl, [
+        'AREA' => $resolved,
+        'AREA_SLUG' => areaSlug($resolved),
+        'AREA_URL' => rawurlencode($resolved),
         'SERVICE_NAME' => 'Compliance',
     ]);
 }

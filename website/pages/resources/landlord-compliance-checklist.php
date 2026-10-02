@@ -24,7 +24,7 @@ if (empty($_SESSION['csrf'])) {
 $checklist = [
     [
         'title' => 'Gas safety (CP12 / landlord gas safety record)',
-        'body' => 'Where gas appliances or flues are present, private landlords in Great Britain generally need an annual gas safety check by a Gas Safe registered engineer, with a record issued to tenants. Keep copies for your portfolio records.',
+        'body' => 'Where gas appliances or flues are present, private landlords in Great Britain generally need an annual gas safety check by a engineer, with a record issued to tenants. Keep copies for your portfolio records.',
         'link' => url('/pages/keywords/landlord-gas-safety-certificate.php'),
         'linkLabel' => 'Landlord gas safety certificate',
     ],
@@ -104,7 +104,7 @@ require SITE_ROOT . '/includes/header.php';
     <div class="space-y-6 text-black leading-relaxed">
         <p class="text-zinc-700 text-lg">
             Whether you manage one flat or a multi-site portfolio, a simple schedule of certificates keeps tenants safer and reduces last-minute scrambles at tenancy changeover.
-            Icomply helps North West landlords combine
+            iComply helps North West landlords combine
             <a href="<?= url('/pages/services/electrical.php') ?>" class="text-[#ff6b00] hover:underline">electrical</a>,
             <a href="<?= url('/pages/services/gas-systems.php') ?>" class="text-[#ff6b00] hover:underline">gas</a>,
             <a href="<?= url('/pages/services/fire-alarms.php') ?>" class="text-[#ff6b00] hover:underline">fire</a>
@@ -189,7 +189,7 @@ require SITE_ROOT . '/includes/header.php';
             <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Request your landlord quote</h2>
             <p class="mt-3 text-zinc-600">Single certificates or multi-property packages — fixed price after scope is agreed.</p>
         </div>
-        <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
+        <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input type="text" name="name" placeholder="Full name" required maxlength="120" class="w-full border px-5 py-3.5 rounded-2xl">

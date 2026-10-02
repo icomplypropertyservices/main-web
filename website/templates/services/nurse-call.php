@@ -38,7 +38,7 @@ require SITE_ROOT . '/includes/header.php';
           "postalCode": "SK2 5DE",
           "addressCountry": "GB"
         },
-        "priceRange": "££"
+        "priceRange": "POA"
       },
       "areaServed": {"@type": "City", "name": "{{AREA}}"},
       "offers": {
@@ -69,7 +69,7 @@ require SITE_ROOT . '/includes/header.php';
     <!-- IMAGE 1: Hero service image -->
     <div class="mt-8">
         <img src="<?= url('/assets/images/services/nurse-call.jpg') ?>"
-             alt="Nurse call system installation and servicing in {{AREA}} by Icomply Property Services"
+             alt="Nurse call system installation and servicing in {{AREA}} by iComply Property Services"
              width="1200" height="800"
              class="w-full h-72 md:h-96 object-cover rounded-3xl border"
              loading="eager">
@@ -78,7 +78,7 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 1 -->
     <p class="mt-8 text-lg text-black max-w-3xl leading-relaxed">
-        Icomply Property Services provides complete <strong>nurse call system</strong> design, installation, commissioning, maintenance and certification across <strong>{{AREA}}</strong> and the wider North West. Our engineers deliver fixed-price quotes, same-week appointments and full HTM 08-03 compliant documentation for care homes, hospitals and assisted living facilities.
+        iComply Property Services provides complete <strong>nurse call system</strong> design, installation, commissioning, maintenance and certification across <strong>{{AREA}}</strong> and the wider North West. Our engineers deliver fixed-price quotes, appointments booked when the diary allows, and full HTM 08-03 compliant documentation for care homes, hospitals and assisted living facilities.
     </p>
 
     <!-- PARAGRAPH 2 -->
@@ -90,7 +90,7 @@ require SITE_ROOT . '/includes/header.php';
     <div class="mt-10 grid md:grid-cols-2 gap-6">
         <div>
             <img src="<?= url('/assets/images/keywords/nurse-call-system.jpg') ?>"
-                 alt="Nurse call system panel and equipment used by Icomply in {{AREA}}"
+                 alt="Nurse call system panel and equipment used by iComply in {{AREA}}"
                  width="800" height="600"
                  class="w-full h-56 object-cover rounded-2xl border"
                  loading="lazy"

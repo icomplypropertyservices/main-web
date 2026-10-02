@@ -91,7 +91,7 @@
     },
     {
         "slug": "gas-safe-engineer",
-        "name": "Gas Safe Engineer",
+        "name": "gas safety certificates (CP12) Engineer",
         "service": "gas-systems"
     },
     {
@@ -106,12 +106,12 @@
     },
     {
         "slug": "gas-safety-check",
-        "name": "Gas Safety Check",
+        "name": "Gas safety Check",
         "service": "gas-systems"
     },
     {
         "slug": "annual-gas-safety-certificate",
-        "name": "Annual Gas Safety Certificate",
+        "name": "Annual Gas safety Certificate",
         "service": "gas-systems"
     },
     {
@@ -121,7 +121,7 @@
     },
     {
         "slug": "hmo-gas-safety-certificate",
-        "name": "HMO Gas Safety Certificate",
+        "name": "HMO Gas safety Certificate",
         "service": "gas-systems"
     },
     {
@@ -176,7 +176,7 @@
     },
     {
         "slug": "landlord-gas-safety-inspection",
-        "name": "Landlord Gas Safety Inspection",
+        "name": "Landlord Gas safety Inspection",
         "service": "gas-systems"
     },
     {
@@ -191,7 +191,7 @@
     },
     {
         "slug": "gas-safety-record",
-        "name": "Gas Safety Record",
+        "name": "Gas safety Record",
         "service": "gas-systems"
     },
     {

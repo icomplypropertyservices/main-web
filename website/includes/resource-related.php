@@ -21,6 +21,7 @@ function resourceRelatedLinks(string $slug): array {
             ['href' => url('/pages/services/cctv'), 'label' => 'CCTV services'],
         ],
         'access-control-guide' => [
+            ['href' => url('/pages/access-control-systems'), 'label' => 'Access control systems across the UK'],
             ['href' => url('/pages/keywords/access-control-system'), 'label' => 'Access control system guide'],
             ['href' => url('/pages/services/access-control'), 'label' => 'Access control services'],
         ],
@@ -34,6 +35,9 @@ function resourceRelatedLinks(string $slug): array {
         ],
         'fire-risk-assessment-guide' => [
             ['href' => url('/pages/fire-risk-assessment'), 'label' => 'Fire risk assessment hub'],
+            ['href' => url('/pages/jobs/fra'), 'label' => 'FRA job lane'],
+            ['href' => url('/pages/jobs/fire-risk-assessment'), 'label' => 'FRA £350 — 6-bed HMO'],
+            ['href' => url('/pages/jobs/landlord-bundle'), 'label' => 'Landlord pack £650'],
             ['href' => url('/pages/services/fire-risk-assessments'), 'label' => 'FRA service'],
         ],
         'smoke-and-co-alarms' => [
@@ -95,6 +99,7 @@ function resourceRelatedLinks(string $slug): array {
         ],
         'asbestos-survey' => [
             ['href' => url('/pages/services/asbestos-survey'), 'label' => 'Asbestos service'],
+            ['href' => url('/pages/asbestos-jobs'), 'label' => 'Survey and awareness jobs'],
             ['href' => url('/pages/asbestos-landlords'), 'label' => 'Landlord asbestos hub'],
             ['href' => url('/pages/keywords/asbestos-survey'), 'label' => 'Asbestos keyword hub'],
             ['href' => url('/pages/keywords/landlord-asbestos-survey'), 'label' => 'Landlord asbestos keyword'],

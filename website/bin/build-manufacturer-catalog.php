@@ -12,7 +12,7 @@ $byService = [
         'Schneider Electric', 'Hager', 'Wylex', 'MK Electric', 'Crabtree', 'Fusebox',
         'Rolec EV', 'Myenergi', 'GivEnergy', 'BG Electrical', 'Contactum', 'Lewden',
         'Timeguard', 'Greenbrook', 'Garo', 'Easee', 'Ohme', 'Wallbox', 'ABB',
-        'Siemens', 'Legrand', 'Eaton', 'MEM', 'Click Scolmore', 'NAPIT Approved Equipment',
+        'Siemens', 'Legrand', 'Eaton', 'MEM', 'Click Scolmore',
     ],
     'fire-alarms' => [
         'Kentec', 'Advanced Electronics', 'C-Tec', 'Morley', 'Hochiki', 'Apollo',
@@ -54,7 +54,10 @@ $byService = [
     'access-control' => [
         'Paxton', 'HID Global', 'Salto Systems', 'ASSA ABLOY', 'Honeywell',
         'Gallagher', 'Stanley Security', 'CDVI', 'TDSi', 'Kantech', 'Vanderbilt',
-        'Nedap', 'Suprema', 'dormakaba', 'Allegion', 'LenelS2', 'Software House',
+        'Nedap', 'Suprema', 'dormakaba', 'Allegion', 'LenelS2',         'Software House',
+    ],
+    'barriers' => [
+        'CAME',
     ],
     'door-entry' => [
         'Videx', 'Fermax', 'BPT', 'Comelit', 'Aiphone', 'Paxton', 'Urmet',
@@ -65,6 +68,16 @@ $byService = [
         'Aiphone', 'Commend', 'Zenitel', 'Barix', 'Stentofon', 'TOA', 'Siedle',
         'Clear-Com', 'Vingtor-Stentofon', 'Legrand', 'Algo', 'CyberData',
         'Axis Intercom', 'Akuvox',
+    ],
+    // Source list only. Do not run this script to refresh barriers: it rebuilds
+    // the whole catalogue and would wipe the CAME partner flag and POA blurbs.
+    // Use website/bin/apply-barriers-catalog.py instead.
+    'barriers' => [
+        'CAME', 'FAAC', 'BFT', 'Nice', 'Magnetic Autocontrol', 'Automatic Systems',
+        'Beninca', 'Roger Technology', 'DEA System', 'Gibidi', 'Cardin', 'Tau',
+        'King Gates', 'Hormann', 'ELKA', 'Ditec', 'Fadini', 'Centurion', 'Genius',
+        'SEA', 'V2', 'Aprimatic', 'Proteco', 'Life Home Integration', 'DoorHan',
+        'LiftMaster', 'DoorKing',
     ],
 ];
 
@@ -106,6 +119,10 @@ $productTemplates = [
         ['{brand} Reader / Token Pack', 'Readers or credentials for {brand} access systems.', 'From £69'],
         ['{brand} Door Controller Spares', 'PSU fuses, locks and exit devices for {brand}.', 'From £55'],
     ],
+    'barriers' => [
+        ['{brand} Barrier', 'Vehicle barrier from the {brand} range. Installation is POA.', 'POA'],
+        ['{brand} Gate Operator', 'Sliding or swing operator from the {brand} range. Installation is POA.', 'POA'],
+    ],
     'door-entry' => [
         ['{brand} Handset / Panel Spares', 'Replacement handsets and faceplates for {brand}.', 'From £52'],
         ['{brand} Entrance Panel Accessory', 'Rain hoods, flush boxes and modules for {brand}.', 'From £36'],
@@ -114,10 +131,14 @@ $productTemplates = [
         ['{brand} Master Station Accessory', 'Accessories for {brand} master stations.', 'From £48'],
         ['{brand} Door Station Spares', 'Weatherproof door stations and modules for {brand}.', 'From £62'],
     ],
+    'barriers' => [
+        ['{brand} barrier survey', 'Lane survey for {brand}. Price on application.', 'POA'],
+        ['{brand} barrier service', 'Service or replacement for {brand}. Price on application.', 'POA'],
+    ],
 ];
 
 $blurbs = [
-    'default' => 'Icomply Property Services installs, services and supplies {brand} equipment across Greater Manchester and the North West. We support new installs, upgrades and planned maintenance, and stock trade kits for engineers and facilities teams.',
+    'default' => 'We install and service {brand} equipment across Greater Manchester and the North West. Our qualified engineers support new installs, upgrades and planned maintenance, and stock trade kits for engineers and facilities teams.',
 ];
 
 $existing = loadJsonData('manufacturers', []);
@@ -150,7 +171,7 @@ foreach ($byService as $service => $brands) {
                 'services' => [$service],
                 'blurb' => str_replace('{brand}', $name, $blurbs['default']),
                 'seo_title' => $name . ' Products & Service | North West',
-                'seo_desc' => 'Buy and install ' . $name . ' systems with Icomply Property Services. Trade kits, installation, servicing and certification across Greater Manchester and the North West.',
+                'seo_desc' => 'Buy and install ' . $name . ' systems with iComply Property Services. Trade kits, installation and servicing across Greater Manchester and the North West.',
                 'seo_keywords' => $name . ', ' . $name . ' installation, ' . $name . ' service, ' . $name . ' spares, ' . $name . ' North West, trade ' . $name,
                 'products' => $products,
                 'featured' => in_array($name, [
@@ -158,7 +179,7 @@ foreach ($byService as $service => $brands) {
                     'Hikvision', 'Axis Communications', 'Paxton', 'Salto Systems',
                     'Schneider Electric', 'Hager', 'Myenergi', 'Rolec EV',
                     'Texecom', 'Worcester Bosch', 'Vaillant', 'Videx', 'Aiphone',
-                    'Emergi-Lite', 'SE Controls', 'Courtney Thorne', 'Honeywell',
+                    'Emergi-Lite', 'SE Controls', 'Courtney Thorne', 'Honeywell', 'CAME',
                 ], true),
             ];
             $nameToSlug[$name] = $slug;

@@ -96,9 +96,9 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 <strong>Asbestos surveys</strong>
                 <span>View service →</span>
             </a>
-            <a class="home-hero-card" href="<?= url('/pages/packages.php') ?>">
-                <strong>HMO / landlord packages</strong>
-                <span>Existing packages →</span>
+            <a class="home-hero-card" href="<?= url('/pages/jobs/hmo.php') ?>">
+                <strong>HMO landlord packages</strong>
+                <span>£650 bundle →</span>
             </a>
             <a class="home-hero-card" href="<?= url('/shop/index.php') ?>">
                 <strong>Trade shop</strong>
@@ -247,7 +247,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                class="group bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="w-12 h-12 rounded-2xl bg-[#0B1F3A]/10 text-[#0B1F3A] font-bold flex items-center justify-center text-lg group-hover:bg-[#ff6b00] group-hover:text-white transition">L</div>
                 <h3 class="mt-5 font-semibold text-xl text-black tracking-tight">Landlords &amp; agents</h3>
-                <p class="mt-2 text-sm text-zinc-600 flex-1">EICR, CP12 / gas, FRA, Legionella, asbestos, voids, kitchens and bathrooms for portfolios. HMO work is quoted through existing landlord packages — not a separate invented product.</p>
+                <p class="mt-2 text-sm text-zinc-600 flex-1">EICR, CP12 / gas, FRA, Legionella, asbestos, voids, kitchens and bathrooms for portfolios. HMO compliance (FRA + EICR + gas) is £650 for a typical 6-bed in the North West.</p>
                 <span class="mt-5 text-sm font-semibold text-[#ff6b00]">Landlord compliance →</span>
             </a>
             <a href="<?= url('/pages/commercial.php') ?>"

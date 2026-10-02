@@ -159,7 +159,7 @@ $mapped = count(array_filter($products, fn($p) => trim((string)($p['shopify_prod
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Shopify · Admin · Icomply</title>
+    <title>Shopify · Admin · iComply</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css">
 </head>
 <body class="bg-zinc-50 text-black">

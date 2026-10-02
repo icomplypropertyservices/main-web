@@ -146,7 +146,7 @@ $newByService = [
         ['CP12 Gas Certificate', 'cp12-gas-certificate'],
         ['CP44 Gas Certificate', 'cp12-gas-certificate'],
         ['Landlord Gas Certificate', 'landlord-gas-safety-certificate'],
-        ['Gas Safe Engineer', 'gas-safe-register-engineer'],
+        ['Gas engineer', 'gas-safe-register-engineer'],
         ['Boiler Service', 'gas-boiler-servicing'],
         ['Boiler Installation', 'gas-boiler-installation'],
         ['Commercial Gas Safety Certificate', 'commercial-gas-safety-certificate'],

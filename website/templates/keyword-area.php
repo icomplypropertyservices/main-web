@@ -15,6 +15,7 @@ $keywordName = $KEYWORD_NAME;
 $keywordSlug = $KEYWORD_SLUG;
 $serviceName = $SERVICE_NAME;
 $serviceSlug = $SERVICE_SLUG;
+$poaService = function_exists('isPoaService') && isPoaService((string)$serviceSlug);
 $areaName = $AREA;
 $areaSlugVal = $AREA_SLUG;
 $allServices = getServices();
@@ -29,6 +30,10 @@ if (empty($_SESSION['csrf'])) {
 
 require_once SITE_ROOT . '/includes/share.php';
 require SITE_ROOT . '/includes/header.php';
+require_once SITE_ROOT . '/includes/access-control-jobs.php';
+if (function_exists('accessControlLaneKeywordStrip')) {
+    echo accessControlLaneKeywordStrip($keywordSlug, $areaName);
+}
 
 $h = static function ($s): string {
     return htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8');
@@ -65,10 +70,10 @@ $h = static function ($s): string {
         </h1>
         <p class="mt-5 text-lg text-white font-medium max-w-2xl leading-relaxed drop-shadow">
             Local engineers for <strong><?= $h($KEYWORD_NAME) ?></strong> in <strong><?= $h($AREA) ?></strong> and nearby postcodes.
-            Fixed-price quotes · Stockport-based team covering the North West.
+            <?= $poaService ? 'POA after scope · no catalogue fee.' : 'Fixed-price quotes.' ?> Stockport-based team covering the North West.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
-            <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-bold text-white shadow-lg">Get free quote</a>
+            <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-bold text-white shadow-lg"><?= $poaService ? 'Enquire for POA' : 'Get free quote' ?></a>
             <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode($keywordName . ' in ' . $areaName) ?>"
                target="_blank" rel="noopener" class="px-8 py-4 rounded-2xl bg-green-600 font-bold text-white shadow-lg">WhatsApp</a>
             <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="px-8 py-4 rounded-2xl bg-white text-[#061828] font-bold shadow-lg"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
