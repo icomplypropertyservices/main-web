@@ -67,7 +67,7 @@ function icomplyAovKitImageUrl(string $sku): string {
   <?php if (function_exists('icomplyAovKitPriceStripHtml')): ?>
   <div class="mt-8 bg-white border border-zinc-200 rounded-3xl p-6 md:p-8"><?= icomplyAovKitPriceStripHtml() ?></div>
   <?php endif; ?>
-  <div id="aov-kits" class="mt-8 bg-white border border-zinc-200 rounded-3xl p-6 md:p-8">
+  <div class="mt-8 bg-white border border-zinc-200 rounded-3xl p-6 md:p-8">
     <h3 class="text-lg font-semibold mb-2">AOV equipment kits (ex VAT)</h3>
     <p class="text-sm text-zinc-600 mb-3">Install / labour POA. Photos from Marketing CDN Rev C.</p>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -78,15 +78,7 @@ function icomplyAovKitImageUrl(string $sku): string {
         $aovImg = icomplyAovKitImageUrl($sku);
       ?>
       <article class="p-4 border rounded-2xl">
-        <img src="<?= htmlspecialchars($aovImg, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($sku . ' — ' . [
-            'AOV-MOTOR' => 'smoke vent motor',
-            'AOV-MOTOR-HVY' => 'heavy smoke vent motor',
-            'AOV-ACT' => 'chain actuator',
-            'AOV-ACT-HVY' => 'heavy chain actuator',
-            'AOV-CTRL' => 'AOV control panel',
-            'AOV-SENSOR' => 'smoke sensor',
-            'AOV-KIT-1M2' => '1m2 stairwell AOV kit',
-        ][$sku] ?? 'AOV equipment', ENT_QUOTES, 'UTF-8') ?>" class="w-full h-28 object-contain mb-2" loading="lazy" width="240" height="112" onerror="this.style.display='none'">
+        <img src="<?= htmlspecialchars($aovImg, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($sku, ENT_QUOTES, 'UTF-8') ?>" class="w-full h-28 object-contain mb-2" loading="lazy" width="240" height="112" onerror="this.style.display='none'">
         <div class="text-xs font-semibold text-[#FF6B00]">AOV kit</div>
         <h4 class="font-semibold"><?= htmlspecialchars($sku, ENT_QUOTES, 'UTF-8') ?></h4>
         <div class="text-[#FF6B00] font-semibold"><?= htmlspecialchars($price, ENT_QUOTES, 'UTF-8') ?> <span class="text-xs text-zinc-500 font-normal">ex VAT · install POA</span></div>
@@ -96,7 +88,11 @@ function icomplyAovKitImageUrl(string $sku): string {
   </div>
 </section>
 
-<section id="barrier-packs" class="max-w-7xl mx-auto px-6 pb-12">
+<?php if (function_exists('camePartnerPanelHtml')): ?>
+<?= camePartnerPanelHtml('products') ?>
+<?php endif; ?>
+
+<section class="max-w-7xl mx-auto px-6 pb-12">
   <h2 class="text-2xl font-semibold text-black mb-2">Barrier packs (5m)</h2>
   <p class="text-sm text-zinc-600 mb-6">SoT supply prices. Install POA. Images from Marketing CAME GARD CDN map.</p>
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -114,7 +110,7 @@ function icomplyAovKitImageUrl(string $sku): string {
       if ($img === '') $img = '/assets/images/products/' . $bp['sku'] . '.jpg';
     ?>
     <article class="p-6 bg-white border border-zinc-200 rounded-3xl">
-      <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($bp['sku'] . ' — ' . $bp['blurb'], ENT_QUOTES, 'UTF-8') ?>" class="w-full h-40 object-contain mb-4" loading="lazy" width="320" height="160" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'w-full h-40 mb-4 rounded-2xl bg-zinc-100 flex items-center justify-center text-xs text-zinc-400',textContent:'Photo pending'}))">
+      <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($bp['sku'], ENT_QUOTES, 'UTF-8') ?>" class="w-full h-40 object-contain mb-4" loading="lazy" width="320" height="160" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'w-full h-40 mb-4 rounded-2xl bg-zinc-100 flex items-center justify-center text-xs text-zinc-400',textContent:'Photo pending'}))">
       <div class="text-xs font-semibold uppercase tracking-wider text-[#FF6B00]">Barrier</div>
       <h3 class="mt-2 font-semibold text-lg text-black"><?= htmlspecialchars($bp['sku'], ENT_QUOTES, 'UTF-8') ?></h3>
       <p class="mt-1 text-sm text-zinc-600"><?= htmlspecialchars($bp['blurb'], ENT_QUOTES, 'UTF-8') ?></p>

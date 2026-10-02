@@ -216,12 +216,9 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
     $svcName = $s['services'][$svcSlug] ?? keywordDisplayName($svcSlug);
     $areaSlugVal = areaSlug($areaName);
     $poa = function_exists('isPoaService') && isPoaService($svcSlug);
-    $isFraKw = function_exists('isFraService') && isFraService($svcSlug);
-    $priceLine = $isFraKw && function_exists('fraPriceNote')
-        ? fraPriceNote()
-        : ($poa
+    $priceLine = $poa
         ? 'Price on application after we confirm property type, access and scope. No catalogue fee.'
-        : 'Written quote after we confirm scope. We do not invent a price on this page.');
+        : 'Written quote after we confirm scope. We do not invent a price on this page.';
 
     $intro = function_exists('seo_unique_intro')
         ? seo_unique_intro($svcName, $svcSlug, $areaName)
@@ -299,12 +296,9 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     $svcName = $s['services'][$serviceSlug];
     $areaSlugVal = areaSlug($areaName);
     $poa = function_exists('isPoaService') && isPoaService($serviceSlug);
-    $isFra = function_exists('isFraService') && isFraService($serviceSlug);
-    $priceLine = $isFra && function_exists('fraPriceNote')
-        ? fraPriceNote()
-        : ($poa
+    $priceLine = $poa
         ? 'Price on application after scope. No invented catalogue price.'
-        : 'Written quote after scope is agreed.');
+        : 'Written quote after scope is agreed.';
     $intro = function_exists('seo_unique_intro')
         ? seo_unique_intro($svcName, $serviceSlug, $areaName)
         : $svcName . ' in ' . $areaName . '.';
@@ -322,7 +316,7 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
 
     $html = icomplyMatrixChromeStart($title, $desc, $canonical);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
-        . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($areaName) . ' · ' . ($isFra ? 'UK mainland' : 'North West') . '</p>'
+        . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($areaName) . ' · North West</p>'
         . '<h1>' . icomplyMatrixH($svcName) . ' <span class="accent">in ' . icomplyMatrixH($areaName) . '</span></h1>'
         . '<p class="mt-4 text-white/80 max-w-2xl">' . icomplyMatrixH($intro) . '</p>'
         . '<div class="mt-6 flex flex-wrap gap-3">'
@@ -342,24 +336,16 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         . icomplyMatrixH(url('/pages/areas/' . $areaSlugVal)) . '">' . icomplyMatrixH($areaName) . '</a></p>'
         . '</article>';
 
-    if ($isFra && function_exists('getMainlandAreaRecords')) {
-        $fraAreas = getMainlandAreaRecords();
-        $chips = '<div class="chip-cloud">';
-        foreach ($fraAreas as $a) {
-            $chips .= '<a class="area-chip" href="' . icomplyMatrixH(url('/pages/' . $serviceSlug . '/' . $a['slug'])) . '">'
-                . icomplyMatrixH($a['name']) . '</a>';
-        }
-        $chips .= '</div>';
-        $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($svcName) . ' across UK mainland</h2>'
-            . '<p class="text-sm text-zinc-600 mb-4">' . count($fraAreas) . ' towns. Guide price ' . icomplyMatrixH(fraGuidePrice()) . '.</p>'
-            . $chips
-            . '</section>';
-    } else {
-        $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($svcName) . ' in every area</h2>'
-            . '<p class="text-sm text-zinc-600 mb-4">' . count($s['areas']) . ' towns.</p>'
-            . icomplyMatrixAreaChips(url('/pages/' . $serviceSlug . '/'))
-            . '</section>';
+    if ($serviceSlug === 'barriers' && function_exists('barrierPagesBlockHtml')) {
+        $html .= barrierPagesBlockHtml('barriers', $areaName, false);
+    } elseif ($serviceSlug === 'access-control' && function_exists('camePartnerPanelHtml')) {
+        $html .= camePartnerPanelHtml('access-control');
     }
+
+    $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($svcName) . ' in every area</h2>'
+        . '<p class="text-sm text-zinc-600 mb-4">' . count($s['areas']) . ' towns.</p>'
+        . icomplyMatrixAreaChips(url('/pages/' . $serviceSlug . '/'))
+        . '</section>';
 
     $html .= '<section><h2 class="text-2xl font-semibold mb-3">All keywords for this service</h2>'
         . icomplyMatrixKeywordChips($serviceSlug)

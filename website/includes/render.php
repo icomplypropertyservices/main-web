@@ -394,7 +394,11 @@ function renderManufacturerPage(string $mfrSlug): void {
     }
 
     // Product cards (Shopify-ready via shared card helper)
-    require_once SITE_ROOT . '/includes/shopify.php';
+    if (function_exists('icomplyRequireShopify')) {
+        icomplyRequireShopify();
+    } else {
+        require_once SITE_ROOT . '/includes/shopify.php';
+    }
     $productsHtml = '';
     $products = $entry['products'] ?? [];
     if (!$products) {

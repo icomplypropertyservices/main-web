@@ -7,29 +7,24 @@
  * MANUFACTURER_TAGS, MANUFACTURER_IMAGES, KEYWORD_IMAGE_1/2/3
  */
 $poaCombo = function_exists('isPoaService') && isPoaService($SERVICE_SLUG);
-$isFraEarly = function_exists('isFraService') && isFraService($SERVICE_SLUG);
-$fraPriceEarly = $isFraEarly && function_exists('fraGuidePrice') ? fraGuidePrice() : '';
 $pageTitle = $SERVICE_NAME . ' in ' . $AREA . ' | Icomply Property Services';
-$metaDesc = $isFraEarly
-    ? ('Fire risk assessment in ' . $AREA . '. Guide price ' . $fraPriceEarly . ' for a standard FRA. UK mainland coverage from Stockport. Larger premises confirmed in writing.')
-    : ($poaCombo
+$metaDesc = $poaCombo
     ? ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Price on application after scope. Local North West team from Stockport.')
-    : ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing & certification. Local engineers. Written quote after scope.'));
+    : ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing & certification. Local engineers. Written quote after scope.');
 $metaKeywords = $SEO_KEYWORDS;
-$areaHeroRel = function_exists('icomplyAreaHero') ? icomplyAreaHero($SERVICE_SLUG, $AREA) : null;
-$ogImage = url($areaHeroRel ?: ('/assets/images/services/' . $SERVICE_SLUG . '.jpg'));
-$inlineHero1 = function_exists('icomplyAreaInline') ? icomplyAreaInline($SERVICE_SLUG, $AREA, 1) : null;
-$inlineHero2 = function_exists('icomplyAreaInline') ? icomplyAreaInline($SERVICE_SLUG, $AREA, 2) : null;
-$inlineHero3 = function_exists('icomplyAreaInline') ? icomplyAreaInline($SERVICE_SLUG, $AREA, 3) : null;
+$ogImage = function_exists('serviceImageUrl')
+    ? serviceImageUrl($SERVICE_SLUG)
+    : url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
+if ($SERVICE_SLUG === 'barriers' && function_exists('barrierManufacturerBySlug')) {
+    $cameOg = barrierManufacturerBySlug('came');
+    if (is_array($cameOg) && !empty($cameOg['partner_image'])) {
+        $ogImage = (string)$cameOg['partner_image'];
+    }
+}
 
 $allServices = getServices();
 $allAreas = getAreas();
 $serviceSlug = $SERVICE_SLUG;
-$isFraPage = function_exists('isFraService') && isFraService($serviceSlug);
-$fraPrice = $isFraPage && function_exists('fraGuidePrice') ? fraGuidePrice() : '';
-if ($isFraPage && function_exists('getMainlandAreaNames')) {
-    $allAreas = getMainlandAreaNames();
-}
 $serviceName = $SERVICE_NAME;
 $areaName = $AREA;
 $areaSlugVal = $AREA_SLUG;
@@ -114,18 +109,14 @@ $schema = [
             ],
             'offers' => [
                 '@type' => 'Offer',
-                'name' => $isFraPage
-                    ? ('Fire risk assessment in ' . $areaName . ' — ' . $fraPrice)
-                    : (($poaCombo ? 'Price on application — ' : 'Written quote — ') . $serviceName . ' in ' . $areaName),
-                'description' => $isFraPage
-                    ? fraPriceNote()
-                    : ($poaCombo
+                'name' => ($poaCombo ? 'Price on application — ' : 'Written quote — ') . $serviceName . ' in ' . $areaName,
+                'description' => $poaCombo
                     ? ('Request a scoped POA quote for ' . $serviceName . ' in ' . $areaName . '. No published fee list.')
-                    : ('Request a written quote for ' . $serviceName . ' in ' . $areaName . '.')),
+                    : ('Request a written quote for ' . $serviceName . ' in ' . $areaName . '.'),
                 'availability' => 'https://schema.org/InStock',
                 'priceCurrency' => 'GBP',
                 'url' => url('/contact.php'),
-            ] + ($isFraPage ? ['price' => fraGuidePriceGbp()] : []),
+            ],
             'brand' => [
                 '@type' => 'Brand',
                 'name' => SITE_NAME,
@@ -196,12 +187,7 @@ $schema = [
                 </h1>
                 <p class="mt-6 text-lg text-white/80 max-w-xl">
                     <?= htmlspecialchars($blurb, ENT_QUOTES, 'UTF-8') ?>
-                    <?php if ($isFraPage): ?>
-                    Suitable and sufficient fire risk assessment in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>.
-                    Guide price <?= htmlspecialchars($fraPrice, ENT_QUOTES, 'UTF-8') ?> for a standard FRA. UK mainland attendance from Stockport.
-                    <?php else: ?>
                     Local engineers covering <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> and nearby postcodes.
-                    <?php endif; ?>
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get free quote</a>
@@ -214,15 +200,15 @@ $schema = [
                 <p class="mt-6 text-sm text-white/60"><?= htmlspecialchars($standards, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
-                <img src="<?= htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8') ?>"
+                <img src="<?= htmlspecialchars(serviceImageUrl($serviceSlug), ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation and servicing in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> by Icomply Property Services"
                      width="1200" height="800"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
                      loading="eager"
                      onerror="this.style.display='none'">
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-[#0B1F3A]/20 to-transparent">
-                    <div class="text-sm text-white/70">Serving <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> · <?= $isFraPage ? 'UK mainland' : 'the North West' ?></div>
-                    <div class="text-2xl font-semibold mt-1"><?= $isFraPage ? ('Guide price ' . htmlspecialchars($fraPrice, ENT_QUOTES, 'UTF-8')) : 'Local engineers · Fixed-price quotes' ?></div>
+                    <div class="text-sm text-white/70">Serving <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> &amp; the North West</div>
+                    <div class="text-2xl font-semibold mt-1">Local engineers · Fixed-price quotes</div>
                 </div>
             </div>
         </div>
@@ -244,7 +230,7 @@ $schema = [
                 ['Local to ' . $areaName, 'Stockport-based engineers covering ' . $areaName . ' and surrounding postcodes'],
                 ['Standards-led', $standards],
                 ['Full certification', 'Documentation for landlords, insurers and fire officers'],
-                [$isFraPage ? ($fraPrice . ' guide') : 'Fixed-price quotes', $isFraPage ? fraPriceNote() : 'Clear scope, same-week appointments where capacity allows'],
+                ['Fixed-price quotes', 'Clear scope, same-week appointments where capacity allows'],
             ];
         foreach ($trust as [$t, $d]): ?>
             <div class="flex gap-3 items-start">
@@ -295,7 +281,7 @@ $schema = [
         </div>
         <div class="lg:col-span-2 space-y-4">
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
-                <img src="<?= htmlspecialchars(url($inlineHero1 ?: ('/assets/images/keywords/' . $KEYWORD_IMAGE_1 . '.jpg')), ENT_QUOTES, 'UTF-8') ?>"
+                <img src="<?= url('/assets/images/keywords/' . $KEYWORD_IMAGE_1 . '.jpg') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> panel and equipment used by Icomply in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
                      width="800" height="600"
                      class="w-full h-44 object-cover"
@@ -304,7 +290,7 @@ $schema = [
                 <p class="text-xs text-zinc-500 px-3 py-2"><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> control equipment &amp; panels</p>
             </div>
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
-                <img src="<?= htmlspecialchars(url($inlineHero2 ?: ('/assets/images/keywords/' . $KEYWORD_IMAGE_2 . '.jpg')), ENT_QUOTES, 'UTF-8') ?>"
+                <img src="<?= url('/assets/images/keywords/' . $KEYWORD_IMAGE_2 . '.jpg') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation work and testing in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
                      width="800" height="600"
                      class="w-full h-44 object-cover"
@@ -335,7 +321,12 @@ $schema = [
     </div>
 </section>
 
-<?php if (!$poaCombo): ?>
+<?php if ($serviceSlug === 'barriers' && function_exists('barrierPagesBlockHtml')): ?>
+<?= barrierPagesBlockHtml('barriers', $areaName, false) ?>
+<?php elseif ($serviceSlug === 'access-control' && function_exists('camePartnerPanelHtml')): ?>
+<?= camePartnerPanelHtml('access-control') ?>
+<?php endif; ?>
+<?php if (!$poaCombo && $serviceSlug !== 'barriers'): ?>
 <!-- MANUFACTURERS -->
 <section class="bg-zinc-50 border-y">
     <div class="max-w-7xl mx-auto px-6 py-16">
@@ -354,7 +345,7 @@ $schema = [
             <?= $MANUFACTURER_IMAGES ?>
         </div>
         <div class="mt-10 rounded-3xl overflow-hidden border bg-white">
-            <img src="<?= htmlspecialchars(url($inlineHero3 ?: ('/assets/images/keywords/' . $KEYWORD_IMAGE_3 . '.jpg')), ENT_QUOTES, 'UTF-8') ?>"
+            <img src="<?= url('/assets/images/keywords/' . $KEYWORD_IMAGE_3 . '.jpg') ?>"
                  alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturer panels and equipment — Icomply <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
                  width="1200" height="700"
                  class="w-full h-64 md:h-80 object-cover"
@@ -446,7 +437,7 @@ $schema = [
                     <?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?>
                 </a>
             <?php endforeach; ?>
-            <a href="<?= $isFraPage ? url('/pages/services/fire-risk-assessments.php') : url('/pages/areas/index.php') ?>" class="px-3 py-1.5 text-xs font-semibold text-[#ff6b00]"><?= $isFraPage ? 'All mainland FRA towns' : '+ more towns' ?></a>
+            <a href="<?= url('/pages/areas/index.php') ?>" class="px-3 py-1.5 text-xs font-semibold text-[#ff6b00]">+ more towns</a>
         </div>
         <?php endif; ?>
     </div>

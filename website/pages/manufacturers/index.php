@@ -70,6 +70,13 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
+<?php if (function_exists('camePartnerPanelHtml')): ?>
+<?= camePartnerPanelHtml('manufacturers') ?>
+<?php endif; ?>
+<?php if (function_exists('barrierBrandGridHtml')): ?>
+<?= barrierBrandGridHtml() ?>
+<?php endif; ?>
+
 <section class="max-w-7xl mx-auto px-6 py-16">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
         <div>

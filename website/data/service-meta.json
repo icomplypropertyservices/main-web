@@ -44,6 +44,11 @@
         "short": "Paxton, HID, Salto and other door access",
         "standards": "BS EN 60839-11 · BS 7273-4 fire release · Equality Act access"
     },
+    "barriers": {
+        "blurb": "Rising-arm and parking barriers for car parks, yards and gated lanes. iComply is a CAME partner and also installs Nice, FAAC, BFT, Hörmann, Magnetic and the other UK trade barrier makers listed on this page.",
+        "short": "Rising-arm and parking barriers",
+        "standards": "BS EN 12453 · safety edges and loops · CAME partner"
+    },
     "door-entry": {
         "blurb": "Video and audio door entry for flats, multi-tenant and commercial sites.",
         "short": "Video & audio door entry",

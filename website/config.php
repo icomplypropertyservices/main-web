@@ -984,7 +984,7 @@ function linkManufacturerNamesInText(string $text): string {
 /** First existing service image (.jpg, .png, then -photo.jpg). */
 function serviceImageUrl(string $slug): string {
     $base = '/assets/images/services/' . $slug;
-    foreach ([$base . '.jpg', $base . '.png', $base . '-photo.jpg'] as $rel) {
+    foreach ([$base . '.jpg', $base . '.png', $base . '.svg', $base . '-photo.jpg'] as $rel) {
         if (is_file(SITE_ROOT . $rel)) {
             return url($rel);
         }
@@ -1113,6 +1113,11 @@ if (is_file($elJobTypesFile)) {
 $asbestosJobsFile = __DIR__ . '/includes/asbestos-jobs.php';
 if (is_file($asbestosJobsFile)) {
     require_once $asbestosJobsFile;
+}
+
+$barrierFile = __DIR__ . '/includes/barriers.php';
+if (is_file($barrierFile)) {
+    require_once $barrierFile;
 }
 
 // Back-compat globals used by some templates/includes

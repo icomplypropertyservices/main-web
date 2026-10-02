@@ -153,6 +153,12 @@ function service_local_angle(string $slug, string $serviceName, string $area): s
             "NVR upgrades and storage expansions keep evidence retention workable for {$area} managers.",
             "Multi-building {$area} estates benefit from unified viewing for facilities teams.",
         ],
+        'barriers' => [
+            "Car parks and yards around {$area} need a barrier matched to lane width, duty and the access method already on site.",
+            "CAME is the partner line we lead with for {$area} vehicle entrances. Other makers are installed when that is what the site already has.",
+            "Safety loops, photocells and boom length are confirmed on the {$area} survey before a supply price is fixed.",
+            "Staff car parks in {$area} often add fob or intercom release to an existing rising-arm cabinet.",
+        ],
         'access-control' => [
             "Car park barriers are the hardest access job around {$area}: loops, safety edges, boom length and the reader that opens the lane.",
             "Maglocks and electric strikes on {$area} pedestrian doors are scoped separately from any rising-arm barrier.",
