@@ -594,6 +594,7 @@ function icomplyPrettyUrlRedirects(): string
 /quote-builder           /get-a-quote 301
 /quote-builder/          /get-a-quote 301
 /get-a-quote/            /get-a-quote 301
+/get-a-quote             /get-a-quote.php             200!
 /cookie-policy           /privacy    301
 /cookie-policy/          /privacy    301
 /blog                    /pages/resources 301

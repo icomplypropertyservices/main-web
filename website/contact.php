@@ -25,12 +25,12 @@ if (empty($_SESSION['csrf'])) {
 
 $errors = [];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && trim((string)($_POST['source'] ?? '')) === 'quote-builder') {
+    require_once SITE_ROOT . '/includes/quote-builder.php';
     $token = $_POST['csrf'] ?? '';
-    if (!hash_equals($_SESSION['csrf'] ?? '', $token)) {
+    if (!hash_equals($_SESSION['csrf'] ?? '', (string)$token)) {
         $errors[] = 'Invalid form token. Please try again.';
-    } elseif (trim((string)($_POST['source'] ?? '')) === 'quote-builder') {
-        require_once SITE_ROOT . '/includes/quote-builder.php';
+    } else {
         $built = quoteBuilderLeadFromPost($_POST);
         $errors = $built['errors'];
         if (!$errors) {
@@ -53,6 +53,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header('Location: ' . url('/thank-you.php?ref=quote-builder'), true, 303);
             exit;
         }
+    }
+    quoteBuilderRememberForm($_POST, $errors);
+    header('Location: ' . url('/get-a-quote.php'), true, 303);
+    exit;
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $token = $_POST['csrf'] ?? '';
+    if (!hash_equals($_SESSION['csrf'] ?? '', $token)) {
+        $errors[] = 'Invalid form token. Please try again.';
     } else {
         $name = trim((string)($_POST['name'] ?? ''));
         $email = trim((string)($_POST['email'] ?? ''));

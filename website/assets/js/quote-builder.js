@@ -56,6 +56,39 @@
     return percent.toFixed(1).replace(/\.0$/, '') + '%';
   }
 
+  function nextTierLabel(catalog, properties) {
+    properties = clampProperties(properties);
+    var tiers = catalog.tiers || [];
+    var next = null;
+    for (var i = 0; i < tiers.length; i++) {
+      var tier = tiers[i];
+      var min = tier.min || 1;
+      if (min <= properties) continue;
+      if (!next || min < (next.min || 1)) next = tier;
+    }
+    if (!next) return '';
+    var more = (next.min || 1) - properties;
+    var pct = formatPercent(Number(next.percent || 0));
+    var noun = more === 1 ? 'property unlocks ' : 'properties unlock ';
+    return more + ' more ' + noun + pct + ' off certificates and inspections.';
+  }
+
+  function previewUnits(catalog, properties) {
+    properties = clampProperties(properties);
+    var hundredths = percentHundredths(Number(tierFor(catalog, properties).percent || 0));
+    var out = {};
+    (catalog.services || []).forEach(function (service) {
+      var unit = unitPence(service, hundredths);
+      out[service.id] = {
+        pence: unit,
+        label: unit == null ? 'POA' : formatPence(unit),
+        listLabel: service.pence == null ? 'POA' : formatPence(service.pence),
+        discounted: !!(service.discount && hundredths > 0 && unit != null && unit !== service.pence)
+      };
+    });
+    return out;
+  }
+
   function unitPence(service, hundredths) {
     if (service.poa || service.pence == null) return null;
     if (!service.discount) return service.pence;
@@ -82,6 +115,7 @@
     var supersedes = bundle && bundle.supersedes ? bundle.supersedes.slice() : [];
     var bundleExplicit = !!(bundle && active.bundle);
     var bundleAuto = false;
+    var calloutImplied = false;
     if (bundleExplicit) {
       supersedes.forEach(function (id) { delete active[id]; });
     } else if (bundle && supersedes.length) {
@@ -98,6 +132,11 @@
           bundleAuto = true;
         }
       }
+    }
+
+    if (active['callout-extra'] && !active['callout-first'] && byId['callout-first']) {
+      active['callout-first'] = 1;
+      calloutImplied = true;
     }
 
     var lines = [];
@@ -169,6 +208,15 @@
       bundleNote = 'The bundle includes FRA, EICR and gas on the same property. Those three are not added again.';
     }
 
+    var calloutNote = '';
+    lines.forEach(function (line) {
+      if (line.id === 'callout-extra') {
+        calloutNote = 'Additional hours include the £85 first-hour call-out.';
+      }
+    });
+    var nextTier = nextTierLabel(catalog, properties);
+    if (nextTier) announce += ' ' + nextTier;
+
     var vat = catalog.vatNote || '';
     var baseline = catalog.baselineNote || '';
     var summary = [
@@ -178,6 +226,7 @@
       vat
     ];
     if (bundleNote) summary.push(bundleNote);
+    if (calloutNote) summary.push(calloutNote);
     summary.push('');
     if (!lines.length) summary.push('No services selected.');
     lines.forEach(function (line) {
@@ -204,6 +253,9 @@
       bundleAuto: bundleAuto,
       bundleExplicit: bundleExplicit,
       bundleNote: bundleNote,
+      calloutImplied: calloutImplied,
+      calloutNote: calloutNote,
+      nextTierLabel: nextTier,
       announce: announce,
       summary: summary.join('\n').trim()
     };
@@ -223,6 +275,7 @@
 
   return {
     calculate: calculate,
+    previewUnits: previewUnits,
     formatPence: formatPence,
     clampProperties: clampProperties,
     normalisePostcode: normalisePostcode,
@@ -251,6 +304,10 @@
     var linesEl = document.getElementById('qb-lines');
     var savingEl = document.getElementById('qb-saving');
     var bundleEl = document.getElementById('qb-bundle-note');
+    var calloutEl = document.getElementById('qb-callout-note');
+    var nextEl = document.getElementById('qb-next-tier');
+    var decBtn = document.getElementById('qb-count-dec');
+    var incBtn = document.getElementById('qb-count-inc');
     var summaryEl = document.getElementById('qb-services-summary');
     var totalInput = document.getElementById('qb-quote-total');
     var tierInput = document.getElementById('qb-tier-value');
@@ -278,14 +335,63 @@
       return selected;
     }
 
-    function lockBundleParts() {
+    function lockBundleParts(result) {
       var bundle = form.querySelector('[data-svc="bundle"]');
       var on = !!(bundle && bundle.checked);
       form.querySelectorAll('[data-superseded]').forEach(function (input) {
         input.disabled = on;
         var card = input.closest('.qb-card');
-        if (card) card.classList.toggle('is-locked', on);
+        if (!card) return;
+        card.classList.toggle('is-locked', on);
+        card.classList.toggle('is-folded', !on && !!(result && result.bundleAuto));
       });
+      if (bundle) {
+        var bundleCard = bundle.closest('.qb-card');
+        if (bundleCard) {
+          bundleCard.classList.toggle('is-bundle-on', !!(result && (result.bundleAuto || result.bundleExplicit)));
+        }
+      }
+    }
+
+    function syncCallout() {
+      var hours = form.querySelector('[data-hours="callout-extra"]');
+      var first = form.querySelector('[data-svc="callout-first"]');
+      if (!hours || !first) return;
+      var qty = parseInt(hours.value, 10);
+      if (qty > 0 && !first.checked) first.checked = true;
+    }
+
+    function paintPrices(properties) {
+      var units = window.IcomplyQuote.previewUnits(catalog, properties);
+      form.querySelectorAll('[data-price-for]').forEach(function (figure) {
+        var id = figure.getAttribute('data-price-for');
+        var unit = units[id];
+        if (!unit || unit.pence == null) return;
+        figure.textContent = unit.label;
+        var was = form.querySelector('[data-was-for="' + id + '"]');
+        if (!was) return;
+        was.textContent = unit.listLabel;
+        was.hidden = !unit.discounted;
+      });
+    }
+
+    function paintTiers(result) {
+      form.querySelectorAll('[data-tier-id]').forEach(function (item) {
+        var on = item.getAttribute('data-tier-id') === result.tierId;
+        item.classList.toggle('is-current', on);
+        if (on) item.setAttribute('aria-current', 'step');
+        else item.removeAttribute('aria-current');
+      });
+      if (nextEl) {
+        nextEl.hidden = !result.nextTierLabel;
+        nextEl.textContent = result.nextTierLabel || '';
+      }
+      if (decBtn && countInput) {
+        decBtn.disabled = window.IcomplyQuote.clampProperties(countInput.value) <= 1;
+      }
+      if (incBtn && countInput) {
+        incBtn.disabled = window.IcomplyQuote.clampProperties(countInput.value) >= 999;
+      }
     }
 
     function paint(result) {
@@ -303,6 +409,12 @@
         bundleEl.hidden = !result.bundleNote;
         bundleEl.textContent = result.bundleNote;
       }
+      if (calloutEl) {
+        calloutEl.hidden = !result.calloutNote;
+        calloutEl.textContent = result.calloutNote;
+      }
+      paintPrices(result.properties);
+      paintTiers(result);
       if (!linesEl) return;
       linesEl.innerHTML = '';
       if (!result.lines.length) {
@@ -316,23 +428,33 @@
         var name = document.createElement('span');
         name.textContent = line.name + ' × ' + line.qty;
         var amount = document.createElement('span');
-        amount.textContent = line.lineLabel;
+        amount.className = 'qb-line-amt';
+        if (!line.poa && line.qty > 1) {
+          var each = document.createElement('span');
+          each.className = 'qb-line-unit';
+          each.textContent = line.unitLabel + ' each';
+          amount.appendChild(each);
+        }
+        amount.appendChild(document.createTextNode(line.lineLabel));
         li.appendChild(name);
         li.appendChild(amount);
         linesEl.appendChild(li);
       });
     }
 
+    function stepCount(delta) {
+      if (!countInput) return;
+      var next = window.IcomplyQuote.clampProperties(countInput.value) + delta;
+      countInput.value = String(window.IcomplyQuote.clampProperties(next));
+      refresh();
+    }
+
     function refresh() {
-      if (countInput) {
-        var clamped = window.IcomplyQuote.clampProperties(countInput.value);
-        if (String(clamped) !== String(parseInt(countInput.value, 10) || '')) {
-          /* keep what they are typing until blur */
-        }
-      }
       var properties = countInput ? countInput.value : 1;
-      lockBundleParts();
-      paint(window.IcomplyQuote.calculate(catalog, properties, selectedFromForm()));
+      syncCallout();
+      var result = window.IcomplyQuote.calculate(catalog, properties, selectedFromForm());
+      lockBundleParts(result);
+      paint(result);
     }
 
     form.addEventListener('change', refresh);
@@ -343,6 +465,8 @@
         refresh();
       });
     }
+    if (decBtn) decBtn.addEventListener('click', function () { stepCount(-1); });
+    if (incBtn) incBtn.addEventListener('click', function () { stepCount(1); });
 
     form.querySelectorAll('[data-svc][data-qty-mode="each"]').forEach(function (input) {
       input.addEventListener('change', function () {

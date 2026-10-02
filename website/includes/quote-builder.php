@@ -90,6 +90,47 @@ function quoteBuilderFormatPercent(float $percent): string
     return $s . '%';
 }
 
+/** @param array<string,mixed> $tier */
+function quoteBuilderTierRangeLabel(array $tier): string
+{
+    $min = (int)($tier['min'] ?? 1);
+    $max = $tier['max'] ?? null;
+    if ($max === null) {
+        return $min . '+ properties';
+    }
+    $maxN = (int)$max;
+    if ($min === $maxN) {
+        return $min === 1 ? '1 property' : ($min . ' properties');
+    }
+    return $min . '–' . $maxN . ' properties';
+}
+
+/** @param array<string,mixed> $catalog */
+function quoteBuilderNextTierLabel(array $catalog, int $properties): string
+{
+    $properties = quoteBuilderClampProperties($properties);
+    $next = null;
+    foreach ($catalog['tiers'] ?? [] as $tier) {
+        if (!is_array($tier)) {
+            continue;
+        }
+        $min = (int)($tier['min'] ?? 1);
+        if ($min <= $properties) {
+            continue;
+        }
+        if ($next === null || $min < (int)($next['min'] ?? 1)) {
+            $next = $tier;
+        }
+    }
+    if ($next === null) {
+        return '';
+    }
+    $more = (int)$next['min'] - $properties;
+    $pct = quoteBuilderFormatPercent((float)($next['percent'] ?? 0));
+    $noun = $more === 1 ? 'property unlocks ' : 'properties unlock ';
+    return $more . ' more ' . $noun . $pct . ' off certificates and inspections.';
+}
+
 /** @param array<string,mixed> $service */
 function quoteBuilderUnitPence(array $service, int $percentHundredths): ?int
 {
@@ -136,6 +177,7 @@ function quoteBuilderCalculate(int $properties, array $selected): array
         : [];
     $bundleExplicit = $bundle && !empty($active['bundle']);
     $bundleAuto = false;
+    $calloutImplied = false;
     if ($bundleExplicit) {
         foreach ($supersedes as $id) {
             unset($active[$id]);
@@ -163,6 +205,11 @@ function quoteBuilderCalculate(int $properties, array $selected): array
                 $bundleAuto = true;
             }
         }
+    }
+
+    if (!empty($active['callout-extra']) && empty($active['callout-first']) && isset($byId['callout-first'])) {
+        $active['callout-first'] = 1;
+        $calloutImplied = true;
     }
 
     $lines = [];
@@ -255,6 +302,18 @@ function quoteBuilderCalculate(int $properties, array $selected): array
         $bundleNote = 'The bundle includes FRA, EICR and gas on the same property. Those three are not added again.';
     }
 
+    $calloutNote = '';
+    foreach ($lines as $line) {
+        if (($line['id'] ?? '') === 'callout-extra') {
+            $calloutNote = 'Additional hours include the £85 first-hour call-out.';
+            break;
+        }
+    }
+    $nextTierLabel = quoteBuilderNextTierLabel($catalog, $properties);
+    if ($nextTierLabel !== '') {
+        $announce .= ' ' . $nextTierLabel;
+    }
+
     $summaryLines = [];
     $summaryLines[] = 'Properties: ' . $properties;
     $summaryLines[] = 'Tier: ' . $tierLabel;
@@ -262,6 +321,9 @@ function quoteBuilderCalculate(int $properties, array $selected): array
     $summaryLines[] = (string)($catalog['vatNote'] ?? '');
     if ($bundleNote !== '') {
         $summaryLines[] = $bundleNote;
+    }
+    if ($calloutNote !== '') {
+        $summaryLines[] = $calloutNote;
     }
     $summaryLines[] = '';
     if (!$lines) {
@@ -291,9 +353,72 @@ function quoteBuilderCalculate(int $properties, array $selected): array
         'bundleAuto' => $bundleAuto,
         'bundleExplicit' => (bool)$bundleExplicit,
         'bundleNote' => $bundleNote,
+        'calloutImplied' => $calloutImplied,
+        'calloutNote' => $calloutNote,
+        'nextTierLabel' => $nextTierLabel,
         'announce' => $announce,
         'summary' => trim(implode("\n", $summaryLines)),
     ];
+}
+
+/**
+ * Keep a failed quote-builder post so /get-a-quote can show it again.
+ *
+ * @param array<string,mixed> $post
+ * @param list<string> $errors
+ */
+function quoteBuilderRememberForm(array $post, array $errors): void
+{
+    if (session_status() !== PHP_SESSION_ACTIVE) {
+        session_start();
+    }
+    $saved = [];
+    foreach (['name', 'email', 'phone', 'postcode', 'property_count', 'notes', 'gclid', 'fbclid'] as $key) {
+        if (!isset($post[$key]) || is_array($post[$key])) {
+            continue;
+        }
+        $saved[$key] = substr((string)$post[$key], 0, 5000);
+    }
+    foreach ($post as $key => $value) {
+        if (!is_string($key) || is_array($value)) {
+            continue;
+        }
+        if (!preg_match('/^(svc_|qty_)[a-z0-9\-]{1,40}$/', $key)) {
+            continue;
+        }
+        $saved[$key] = substr((string)$value, 0, 200);
+    }
+    $_SESSION['quote_builder_flash'] = [
+        'errors' => array_values(array_map('strval', $errors)),
+        'post' => $saved,
+    ];
+}
+
+/** @return array{errors:list<string>,post:array<string,string>} */
+function quoteBuilderTakeFormFlash(): array
+{
+    if (session_status() !== PHP_SESSION_ACTIVE) {
+        return ['errors' => [], 'post' => []];
+    }
+    $flash = $_SESSION['quote_builder_flash'] ?? null;
+    unset($_SESSION['quote_builder_flash']);
+    $errors = [];
+    $saved = [];
+    if (is_array($flash)) {
+        if (is_array($flash['errors'] ?? null)) {
+            foreach ($flash['errors'] as $error) {
+                $errors[] = (string)$error;
+            }
+        }
+        if (is_array($flash['post'] ?? null)) {
+            foreach ($flash['post'] as $key => $value) {
+                if (is_string($key) && !is_array($value)) {
+                    $saved[$key] = (string)$value;
+                }
+            }
+        }
+    }
+    return ['errors' => $errors, 'post' => $saved];
 }
 
 function quoteBuilderNormalisePostcode(string $raw): string

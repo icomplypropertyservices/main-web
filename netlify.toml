@@ -356,6 +356,12 @@
   status = 301
 
 [[redirects]]
+  from = "/get-a-quote"
+  to = "/get-a-quote.php"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/quote-builder"
   to = "/get-a-quote"
   status = 301

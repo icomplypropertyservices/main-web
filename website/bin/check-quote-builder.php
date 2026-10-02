@@ -8,6 +8,10 @@ declare(strict_types=1);
 require_once dirname(__DIR__) . '/config.php';
 require_once SITE_ROOT . '/includes/quote-builder.php';
 
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
 $fail = 0;
 $pass = 0;
 
@@ -23,8 +27,25 @@ function qbSay(bool $ok, string $label, string $detail = ''): void
     echo "[FAIL] {$label}" . ($detail !== '' ? " — {$detail}" : '') . "\n";
 }
 
+$catalog = quoteBuilderCatalog();
+$byId = [];
+foreach ($catalog['services'] as $service) {
+    if (is_array($service) && isset($service['id'])) {
+        $byId[(string)$service['id']] = $service;
+    }
+}
+qbSay(($byId['eicr']['pence'] ?? 0) === 24900, 'approved EICR list is £249');
+qbSay(($byId['fra']['pence'] ?? 0) === 35000, 'approved FRA list is £350');
+qbSay(($byId['gas']['pence'] ?? 0) === 8500, 'approved gas safety list is £85');
+qbSay(($byId['bundle']['pence'] ?? 0) === 65000, 'approved bundle list is £650');
+
+$oneEach = quoteBuilderCalculate(1, ['eicr' => 1, 'fra' => 1, 'gas' => 1]);
+qbSay($oneEach['bundleAuto'] === true && $oneEach['totalPence'] === 65000, '1× FRA+EICR+gas is the £650 bundle', (string)$oneEach['totalLabel']);
+qbSay($oneEach['nextTierLabel'] === '1 more property unlocks 5% off certificates and inspections.', '1 property is one step from 5%', (string)$oneEach['nextTierLabel']);
+
 $eicr10 = quoteBuilderCalculate(10, ['eicr' => 1]);
 qbSay($eicr10['tierId'] === 'T2' && $eicr10['totalPence'] === 224000, '10× EICR is £224 × 10 = £2,240', (string)$eicr10['totalLabel']);
+qbSay($eicr10['nextTierLabel'] === '1 more property unlocks 12.5% off certificates and inspections.', '10 properties are one step from 12.5%', (string)$eicr10['nextTierLabel']);
 qbSay(($eicr10['lines'][0]['unitPence'] ?? 0) === 22400, 'EICR unit rounds £224.10 to £224');
 
 $bundle10 = quoteBuilderCalculate(10, ['bundle' => 1]);
@@ -79,6 +100,22 @@ foreach ($edges as $n => $id) {
 
 $bundle21 = quoteBuilderCalculate(21, ['bundle' => 1]);
 qbSay(($bundle21['lines'][0]['unitPence'] ?? 0) === 55300, '21× bundle at 15% rounds £552.50 to £553', (string)($bundle21['lines'][0]['unitLabel'] ?? ''));
+qbSay($bundle21['nextTierLabel'] === '', '21 properties have no further tier', (string)$bundle21['nextTierLabel']);
+
+$extraOnly = quoteBuilderCalculate(3, ['callout-extra' => 2]);
+qbSay($extraOnly['totalPence'] === 8500 + 11000 && $extraOnly['calloutImplied'] === true, 'extra hours include the £85 first hour and are not multiplied', (string)$extraOnly['totalLabel']);
+qbSay($extraOnly['calloutNote'] === 'Additional hours include the £85 first-hour call-out.', 'call-out note names the first hour');
+
+quoteBuilderRememberForm([
+    'name' => 'Alex Landlord',
+    'property_count' => '10',
+    'svc_eicr' => 'EICR — £249',
+    'notes' => 'Gate code',
+    'csrf' => 'should-not-stick',
+], ['Please enter a UK postcode.']);
+$flash = quoteBuilderTakeFormFlash();
+qbSay(($flash['errors'][0] ?? '') === 'Please enter a UK postcode.' && ($flash['post']['svc_eicr'] ?? '') === 'EICR — £249' && ($flash['post']['property_count'] ?? '') === '10', 'failed quote returns the selection');
+qbSay(!isset($flash['post']['csrf']) && quoteBuilderTakeFormFlash()['post'] === [], 'quote flash is one-shot and drops the token');
 
 $catalogRaw = (string)file_get_contents(SITE_ROOT . '/data/quote-builder.json');
 $pageRaw = (string)file_get_contents(SITE_ROOT . '/get-a-quote.php');

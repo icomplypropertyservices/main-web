@@ -10,7 +10,7 @@ import { dirname, join } from 'path';
 const require = createRequire(import.meta.url);
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, '..');
-const { calculate } = require(join(root, 'assets/js/quote-builder.js'));
+const { calculate, previewUnits } = require(join(root, 'assets/js/quote-builder.js'));
 const catalog = JSON.parse(readFileSync(join(root, 'data/quote-builder.json'), 'utf8'));
 
 let fail = 0;
@@ -25,8 +25,20 @@ function say(ok, label, detail) {
   }
 }
 
+const list = previewUnits(catalog, 1);
+say(list.eicr.label === '£249' && list.eicr.discounted === false, 'EICR card stays £249 at one property', list.eicr.label);
+say(list.fra.label === '£350' && list.gas.label === '£85' && list.bundle.label === '£650', 'FRA £350, gas £85, bundle £650', list.fra.label + ' ' + list.gas.label + ' ' + list.bundle.label);
+
+const oneEach = calculate(catalog, 1, { fra: 1, eicr: 1, gas: 1 });
+say(oneEach.bundleAuto === true && oneEach.totalPence === 65000, '1× FRA+EICR+gas is the £650 bundle', oneEach.totalLabel);
+say(oneEach.nextTierLabel === '1 more property unlocks 5% off certificates and inspections.', 'next tier from 1 property', oneEach.nextTierLabel);
+
 const eicr10 = calculate(catalog, 10, { eicr: 1 });
 say(eicr10.tierId === 'T2' && eicr10.totalPence === 224000, '10× EICR is £224 × 10 = £2,240', eicr10.totalLabel);
+say(eicr10.nextTierLabel === '1 more property unlocks 12.5% off certificates and inspections.', 'next tier from 10 properties', eicr10.nextTierLabel);
+const units10 = previewUnits(catalog, 10);
+say(units10.eicr.label === '£224' && units10.eicr.discounted === true, '10-property EICR card shows £224', units10.eicr.label);
+say(units10.gas.label === '£77', '10-property gas card rounds £76.50 to £77', units10.gas.label);
 say(eicr10.lines[0].unitPence === 22400, 'EICR unit rounds to £224');
 
 const bundle10 = calculate(catalog, 10, { bundle: 1 });
@@ -55,6 +67,10 @@ say(nurse.totalPence === 39998 && nurse.savingPence === 0, 'nurse-call stays £1
 
 const bundle21 = calculate(catalog, 21, { bundle: 1 });
 say(bundle21.lines[0].unitPence === 55300, '15% bundle rounds £552.50 to £553', bundle21.lines[0].unitLabel);
+say(bundle21.nextTierLabel === '', '21 properties have no further tier', bundle21.nextTierLabel);
+
+const extraOnly = calculate(catalog, 3, { 'callout-extra': 2 });
+say(extraOnly.totalPence === 8500 + 11000 && extraOnly.calloutImplied === true, 'extra hours include the £85 first hour', extraOnly.totalLabel);
 
 const poa = calculate(catalog, 3, { 'eicr-1bed': 1 });
 say(poa.totalLabel === 'POA' && poa.totalPence === 0, 'POA adds no pounds', poa.totalLabel);
