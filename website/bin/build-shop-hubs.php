@@ -13,6 +13,8 @@
  */
 declare(strict_types=1);
 
+require_once dirname(__DIR__) . '/includes/netlify-badge.php';
+
 if (PHP_SAPI === 'cli' && realpath($_SERVER['SCRIPT_FILENAME'] ?? '') === __FILE__) {
     $opts = getopt('', ['out::', 'help']);
     if (isset($opts['help'])) {
@@ -589,6 +591,8 @@ function icomplyShopPage(string $current, array $hero, string $main, array $ctx)
         . '<script>'
         . 'document.querySelector(".menu-toggle")?.addEventListener("click",function(){var n=document.getElementById("shop-nav");var open=n.classList.toggle("is-open");this.setAttribute("aria-expanded",open?"true":"false");});'
         . '</script>'
+        . icomplyWhatsappFloatHtml('447517806082')
+        . icomplyNetlifyBadgeStripHtml()
         . '</body></html>' . "\n";
 }
 

@@ -1369,3 +1369,13 @@
   [headers.values]
     Content-Type = "application/xml; charset=utf-8"
     Cache-Control = "public, max-age=3600"
+
+# Powered by Netlify badge: Netlify injects /.netlify/scripts/hud at the edge
+# (Project configuration → General → Powered by Netlify badge). That toggle
+# is not in git. This policy allows inline scripts and same-site /assets/
+# only, so the HUD script cannot execute on the next deploy.
+# Keep this path-scoped. Adding 'self' would allow the badge back.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "script-src 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.google.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://icomplypropertyservices.co.uk/assets/ https://www.icomplypropertyservices.co.uk/assets/ https://*.netlify.app/assets/"

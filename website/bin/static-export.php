@@ -840,6 +840,12 @@ function icomplyPrettyUrlHeaders(): string
     return <<<'TXT'
 # Pre-rendered HTML is stored with a .php filename so splat rewrites work.
 # Headers match the *request* path (pretty URL), not only the .php destination.
+#
+# Powered by Netlify is injected at the edge as /.netlify/scripts/hud.
+# script-src allows inline scripts and /assets/ only — no 'self' — so that
+# HUD script cannot run even if the Netlify UI badge toggle is on.
+/*
+  Content-Security-Policy: script-src 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.google.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://icomplypropertyservices.co.uk/assets/ https://www.icomplypropertyservices.co.uk/assets/ https://*.netlify.app/assets/
 /*.php
   Content-Type: text/html; charset=utf-8
   X-Content-Type-Options: nosniff
