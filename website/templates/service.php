@@ -214,6 +214,9 @@ $schema = [
                        class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
                 </div>
                 <p class="mt-6 text-sm text-white/60"><?= htmlspecialchars($standards, ENT_QUOTES, 'UTF-8') ?></p>
+                <?php if ($serviceSlug === 'access-control'): ?>
+                    <p class="mt-4 text-sm"><a class="font-semibold text-[#ff6b00] hover:underline" href="<?= url('/pages/access-control-systems') ?>">Access control systems across the UK, with city notes and manufacturer links</a></p>
+                <?php endif; ?>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
                 <img src="<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>"

@@ -208,6 +208,16 @@
   status = 301
 
 [[redirects]]
+  from = "/access-control-systems"
+  to = "/pages/access-control-systems"
+  status = 301
+
+[[redirects]]
+  from = "/access-control-systems/"
+  to = "/pages/access-control-systems"
+  status = 301
+
+[[redirects]]
   from = "/privacy-policy"
   to = "/privacy"
   status = 301

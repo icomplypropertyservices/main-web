@@ -895,7 +895,11 @@ function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
     // Prefer full by_service list so every mentioned brand has a card
     $fromNames = [];
     foreach (getManufacturers($serviceSlug) as $m) {
-        $fromNames[] = manufacturerSlugFromName($m);
+        $slugName = manufacturerSlugFromName($m);
+        if ($serviceSlug === 'access-control' && ($slugName === 'tunstall' || strcasecmp((string)$m, 'Tunstall') === 0)) {
+            continue;
+        }
+        $fromNames[] = $slugName;
     }
     if ($fromNames) {
         $slugs = $fromNames;
