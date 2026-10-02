@@ -38,7 +38,7 @@ require SITE_ROOT . '/includes/header.php';
           "postalCode": "SK2 5DE",
           "addressCountry": "GB"
         },
-        "priceRange": "££"
+        "priceRange": "POA"
       },
       "areaServed": {"@type": "City", "name": "{{AREA}}"},
       "offers": {
@@ -56,7 +56,7 @@ require SITE_ROOT . '/includes/header.php';
         {"@type": "Question", "name": "What is an EICR?", "acceptedAnswer": {"@type": "Answer", "text": "An Electrical Installation Condition Report (EICR) is a periodic inspection to check the safety of electrical systems."}},
         {"@type": "Question", "name": "How often should commercial properties have electrical testing?", "acceptedAnswer": {"@type": "Answer", "text": "Every 5 years or upon change of tenancy for most commercial premises."}},
         {"@type": "Question", "name": "Do you install EV chargers?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we provide full EV charger installation services with Rolec and Myenergi systems, compliant with current regulations."}},
-        {"@type": "Question", "name": "Are your electricians certified?", "acceptedAnswer": {"@type": "Answer", "text": "All our engineers are fully qualified, Part P registered and insured."}}
+        {"@type": "Question", "name": "Are your electricians qualified?", "acceptedAnswer": {"@type": "Answer", "text": "All our engineers are fully qualified and insured."}}
       ]
     }
   ]
@@ -69,7 +69,7 @@ require SITE_ROOT . '/includes/header.php';
     <!-- IMAGE 1: Hero service image -->
     <div class="mt-8">
         <img src="<?= url('/assets/images/services/electrical.jpg') ?>"
-             alt="Electrical installation and servicing in {{AREA}} by Icomply Property Services"
+             alt="Electrical installation and servicing in {{AREA}} by iComply Property Services"
              width="1200" height="800"
              class="w-full h-72 md:h-96 object-cover rounded-3xl border"
              loading="eager">
@@ -90,7 +90,7 @@ require SITE_ROOT . '/includes/header.php';
     <div class="mt-10 grid md:grid-cols-2 gap-6">
         <div>
             <img src="<?= url('/assets/images/keywords/electrical-installation.jpg') ?>"
-                 alt="Electrical installation panel and wiring equipment used by Icomply in {{AREA}}"
+                 alt="Electrical installation panel and wiring equipment used by iComply in {{AREA}}"
                  width="800" height="600"
                  class="w-full h-56 object-cover rounded-2xl border"
                  loading="lazy"
@@ -128,7 +128,7 @@ require SITE_ROOT . '/includes/header.php';
     <!-- IMAGE 3: Keyword focus -->
     <div class="mt-10">
         <img src="<?= url('/assets/images/keywords/ev-charger-installation.jpg') ?>"
-             alt="EV charger installation — Rolec and Myenergi systems by Icomply in {{AREA}}"
+             alt="EV charger installation — Rolec and Myenergi systems by iComply in {{AREA}}"
              width="1200" height="700"
              class="w-full h-64 md:h-80 object-cover rounded-3xl border"
              loading="lazy"

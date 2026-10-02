@@ -6,7 +6,7 @@ require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/shopify.php';
 
 $pageTitle = 'Shop | Fire Safety, Electrical & Security Products';
-$metaDesc = 'Shop fire safety, electrical, CCTV and emergency lighting products from Icomply. Trade kits and install accessories for North West engineers, landlords and contractors.';
+$metaDesc = 'Shop fire safety, electrical, CCTV and emergency lighting products from iComply. Trade kits and install accessories for North West engineers, landlords and contractors.';
 $metaKeywords = 'fire alarm parts, emergency lighting buy, CCTV kits, electrical trade supplies Stockport, fire safety equipment';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 
@@ -26,7 +26,7 @@ require SITE_ROOT . '/includes/header.php';
 <section class="page-hero bg-[#0B1F3A] text-white">
     <div class="max-w-7xl mx-auto px-6 py-14 md:py-20">
         <div class="max-w-2xl">
-            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold mb-3">Icomply shop</div>
+            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold mb-3">iComply shop</div>
             <h1 class="text-4xl md:text-5xl font-semibold tracking-tighter">Trade products &amp; install kits</h1>
             <p class="mt-4 text-lg text-white/80">Fire safety, electrical, security and emergency lighting gear — pair with our full service catalogue (install, FRA, construction) across the North West.</p>
             <?php if (shopifyEnabled()): ?>
@@ -165,7 +165,7 @@ require SITE_ROOT . '/includes/header.php';
             <a href="<?= url('/pages/manufacturers/' . $mfr['slug'] . '.php') ?>"
                class="group p-4 bg-white border rounded-2xl hover:border-[#ff6b00] transition text-center">
                 <img src="<?= htmlspecialchars(manufacturerImageUrl($mfr['slug'], 'fire-alarms'), ENT_QUOTES, 'UTF-8') ?>"
-                     alt="<?= htmlspecialchars($mfr['name'], ENT_QUOTES, 'UTF-8') ?> products — Icomply Property Services"
+                     alt="<?= htmlspecialchars($mfr['name'], ENT_QUOTES, 'UTF-8') ?> products — iComply Property Services"
                      class="h-12 w-auto mx-auto object-contain mb-3 group-hover:scale-105 transition"
                      loading="lazy" width="96" height="48">
                 <div class="text-sm font-semibold text-black"><?= htmlspecialchars($mfr['name'], ENT_QUOTES, 'UTF-8') ?></div>

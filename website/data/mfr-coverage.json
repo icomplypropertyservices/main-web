@@ -1,0 +1,227 @@
+{
+  "exclude": ["tunstall"],
+  "aov-air-handling": [
+    {
+      "name": "SE Controls",
+      "slug": "se-controls",
+      "lines": ["OS2 smoke-control panels", "Chain and linear actuators on stair and façade vents", "Fire-alarm interface on schemes we commission"],
+      "framing": "We install and service SE Controls smoke ventilation on residential stairs and commercial blocks. Equipment and labour are quoted after we see the fire strategy and the vents already fitted. There is no SE Controls price list on this page.",
+      "site": "https://www.secontrols.com/"
+    },
+    {
+      "name": "Nuaire",
+      "slug": "nuaire",
+      "lines": ["Smoke extract fans used with stair and lobby schemes", "Controls on existing Nuaire plant", "Filter and fan service on units already installed"],
+      "framing": "We commission and service Nuaire ventilation where it forms part of a smoke-control scheme. Supply and labour are POA after survey.",
+      "site": "https://www.nuaire.co.uk/"
+    },
+    {
+      "name": "Brooks",
+      "slug": "brooks",
+      "lines": ["Actuators on Brooks-labelled smoke vents", "Control panels on those schemes", "Planned tests of vents already fitted"],
+      "framing": "We service Brooks smoke-vent equipment that is already on site. We name the model only after we have seen it. If it cannot be repaired safely we say so before quoting a replacement. POA.",
+      "site": ""
+    },
+    {
+      "name": "Ventilux",
+      "slug": "ventilux",
+      "lines": ["Life-safety controls carrying the Ventilux name on stair schemes", "Power and interface checks on that equipment"],
+      "framing": "Ventilux appears on some life-safety schemes we maintain. We identify the panel before quoting parts or a change. No catalogue price.",
+      "site": ""
+    },
+    {
+      "name": "Geze",
+      "slug": "geze",
+      "lines": ["Slimchain and Powerchain window drives", "RWA control panels", "Door operators only where they sit on the smoke path we are asked to service"],
+      "framing": "We install and service Geze RWA drives and controls. Supply and labour are POA after survey.",
+      "site": "https://www.geze.com/"
+    },
+    {
+      "name": "D+H Mechatronic",
+      "slug": "d-h-mechatronic",
+      "lines": ["CDC chain drives", "Locking actuators on smoke vents", "SHEV control panels on existing D+H schemes"],
+      "framing": "We work on D+H smoke-vent drives and panels. Parts and installation are quoted after the survey.",
+      "site": "https://www.dh-partner.com/"
+    },
+    {
+      "name": "TROX",
+      "slug": "trox",
+      "lines": ["Smoke and fire dampers", "Smoke extract components specified with the air system"],
+      "framing": "We service TROX dampers and extract components that sit in the smoke path. Prices are POA.",
+      "site": "https://www.trox.com/"
+    },
+    {
+      "name": "Colt",
+      "slug": "colt",
+      "lines": ["Natural smoke ventilation already installed under Colt schemes", "Mechanical smoke extract on those schemes", "Roof and façade vents we are asked to test or replace"],
+      "framing": "We maintain and replace Colt smoke ventilation where it is the system on the building. New schemes follow the fire strategy. Supply and labour are POA.",
+      "site": "https://www.coltinfo.co.uk/"
+    },
+    {
+      "name": "Smoke Control",
+      "slug": "smoke-control",
+      "lines": ["Smoke-control panels listed under this name", "Actuators and vents on those installations"],
+      "framing": "Where the equipment is badged Smoke Control, we service the installed system. We confirm the panel before ordering parts. POA.",
+      "site": ""
+    },
+    {
+      "name": "ASSA ABLOY",
+      "slug": "assa-abloy",
+      "lines": ["Door closers on escape routes", "Operators that the smoke strategy relies on"],
+      "framing": "We service ASSA ABLOY door hardware that has to release or close as part of the smoke strategy. This is door hardware, not an AOV panel brand. Hardware and labour are POA.",
+      "site": "https://www.assaabloy.com/"
+    },
+    {
+      "name": "Group SCS",
+      "slug": "group-scs",
+      "lines": ["Smoke-control panels on Group SCS schemes", "Actuators supplied with those schemes"],
+      "framing": "We attend Group SCS smoke-control systems for fault-finding and planned tests. Parts and labour are POA after we identify the panel.",
+      "site": ""
+    },
+    {
+      "name": "WindowMaster",
+      "slug": "windowmaster",
+      "lines": ["MotorLink actuators", "Natural ventilation controls used for smoke and everyday opening"],
+      "framing": "We install and service WindowMaster actuators and controls on smoke-vent windows. Quotes are POA.",
+      "site": "https://www.windowmaster.com/"
+    },
+    {
+      "name": "Simon RWA",
+      "slug": "simon-rwa",
+      "lines": ["SHEV chain drives", "Compact control panels on existing Simon RWA vents"],
+      "framing": "We service Simon RWA drives and panels. Replacement supply is POA once the model is known.",
+      "site": "https://www.simon-rwa.de/"
+    },
+    {
+      "name": "Bilco",
+      "slug": "bilco",
+      "lines": ["Automatic smoke vents", "Roof hatches used as smoke outlets"],
+      "framing": "We service Bilco smoke vents and roof hatches. Replacement units and labour are POA.",
+      "site": "https://www.bilco.com/"
+    },
+    {
+      "name": "Cambric",
+      "slug": "cambric",
+      "lines": ["Smoke ventilation equipment on Cambric schemes already installed"],
+      "framing": "We maintain Cambric smoke ventilation that is already fitted. We do not publish a Cambric price list.",
+      "site": ""
+    },
+    {
+      "name": "Kingspan Air",
+      "slug": "kingspan-air",
+      "lines": ["Air-handling plant tied to smoke extract", "Fan and control checks on that plant"],
+      "framing": "We service Kingspan air-handling plant where it is part of the smoke strategy. Equipment and labour are POA.",
+      "site": "https://www.kingspan.com/"
+    },
+    {
+      "name": "FlaktGroup",
+      "slug": "flaktgroup",
+      "lines": ["Smoke extract fans", "Air-handling units on the same schemes"],
+      "framing": "We service FlaktGroup extract fans and air-handling plant used for smoke control. POA after survey.",
+      "site": "https://www.flaktgroup.com/"
+    },
+    {
+      "name": "Systemair",
+      "slug": "systemair",
+      "lines": ["Smoke extract fans", "Controls on existing Systemair plant"],
+      "framing": "We install and service Systemair smoke extract fans. Supply and labour are POA.",
+      "site": "https://www.systemair.com/"
+    }
+  ],
+  "barriers": [
+    {
+      "name": "CAME",
+      "slug": "came",
+      "partner": true,
+      "lines": ["Gard 5m barrier packs published on this site", "BAR-5M-STD, BAR-5M-VIDEX, BAR-5M-PAXTON, BAR-5M-GSM and BAR-5M-ALLIN", "Safety loops, beams and edges surveyed with the lane"],
+      "framing": "CAME is our barrier partner. The pack prices on this card are supply only, ex VAT, and match the figures already published for those SKUs. Installation, civils, power and safety commissioning are quoted after a site survey. We do not add a day-rate here.",
+      "site": "https://www.came.com/"
+    },
+    {
+      "name": "FAAC",
+      "slug": "faac",
+      "lines": ["Existing FAAC boom barriers", "Safety edges and loops on those lanes"],
+      "framing": "We fault-find and repair existing FAAC barriers when parts and the safety devices still allow a safe repair. New barrier supply on this site is CAME unless the survey shows the existing estate should be matched. FAAC equipment and labour are POA.",
+      "site": "https://www.faac.com/"
+    },
+    {
+      "name": "BFT",
+      "slug": "bft",
+      "lines": ["Existing BFT boom barriers", "Lane safety devices on those installs"],
+      "framing": "We service existing BFT barriers. New supply is through the CAME partnership unless the installed estate should stay on BFT. Parts and labour are POA.",
+      "site": "https://www.bft-automation.com/"
+    },
+    {
+      "name": "Nice",
+      "slug": "nice",
+      "lines": ["Existing Nice boom barriers", "Controls and safety devices on those lanes"],
+      "framing": "We attend existing Nice barriers for faults and like-for-like repairs. A new lane is specified as CAME unless there is a reason to match Nice. POA.",
+      "site": "https://www.niceforyou.com/"
+    },
+    {
+      "name": "Magnetic Autocontrol",
+      "slug": "magnetic-autocontrol",
+      "lines": ["Existing Magnetic boom barriers", "Lane safety devices fitted with them"],
+      "framing": "We service Magnetic Autocontrol barriers already on site. Replacement supply is POA. New installs are CAME unless the survey says otherwise.",
+      "site": "https://www.magnetic-access.com/"
+    },
+    {
+      "name": "Automatic Systems",
+      "slug": "automatic-systems",
+      "lines": ["Existing Automatic Systems parking barriers", "Safety devices on those lanes"],
+      "framing": "We fault-find Automatic Systems barriers where they are already installed. Parts and labour are POA. New partner supply is CAME.",
+      "site": "https://www.automatic-systems.com/"
+    },
+    {
+      "name": "Beninca",
+      "slug": "beninca",
+      "lines": ["Existing Beninca barrier operators", "Safety edges and loops on those lanes"],
+      "framing": "We repair existing Beninca barriers when a safe repair is realistic. We will say if it is not. New supply is CAME unless the estate should be matched. POA.",
+      "site": "https://www.beninca.com/"
+    },
+    {
+      "name": "Roger Technology",
+      "slug": "roger-technology",
+      "lines": ["Existing Roger Technology barrier operators", "Lane safety devices on those installs"],
+      "framing": "We service Roger Technology barriers already fitted. Equipment and labour are POA. New lanes are CAME unless the survey shows a match is the better repair.",
+      "site": "https://www.rogertechnology.com/"
+    },
+    {
+      "name": "Ditec",
+      "slug": "ditec",
+      "lines": ["Existing Ditec boom barriers", "Safety devices on those lanes"],
+      "framing": "We attend existing Ditec barriers. Parts and labour are POA. New barrier supply on this site is CAME unless an existing Ditec estate should be kept.",
+      "site": ""
+    },
+    {
+      "name": "Elka",
+      "slug": "elka",
+      "lines": ["Existing Elka parking barriers", "Booms and safety devices on those lanes"],
+      "framing": "We service Elka barriers that are already installed. We do not publish an Elka price. New supply is CAME unless the survey says to match Elka.",
+      "site": ""
+    },
+    {
+      "name": "SEA",
+      "slug": "sea",
+      "lines": ["Existing SEA barrier operators", "Safety devices on those lanes"],
+      "framing": "We fault-find existing SEA barriers. Parts and labour are POA. New partner supply is CAME.",
+      "site": ""
+    },
+    {
+      "name": "Paxton",
+      "slug": "paxton",
+      "pack_sku": "BAR-5M-PAXTON",
+      "lines": ["Readers used on a barrier lane", "The published BAR-5M-PAXTON pack: a CAME 5m barrier with Paxton"],
+      "framing": "Paxton is the access-control option on our CAME barrier packs. The figure shown is the combined pack already published on this site, not a standalone Paxton price. Installation is POA.",
+      "site": "https://www.paxton-access.com/"
+    },
+    {
+      "name": "Videx",
+      "slug": "videx",
+      "pack_sku": "BAR-5M-VIDEX",
+      "lines": ["Audio and video panels used at a barrier lane", "The published BAR-5M-VIDEX pack: a CAME 5m barrier with Videx"],
+      "framing": "Videx is the speech and video option on our CAME barrier packs. The figure shown is the combined pack already published on this site. Installation is POA.",
+      "site": "https://www.videx.it/"
+    }
+  ]
+}

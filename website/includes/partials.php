@@ -71,7 +71,6 @@ function sectionTrustStrip(array $items): string
  */
 function sectionQuoteForm(array $services, string $csrf, string $defaultService = ''): string
 {
-    $formAction = function_exists('url') ? url('/contact.php') : '/contact.php';
     $privacyUrl = function_exists('url') ? url('/privacy.php') : '/privacy.php';
     $termsUrl = function_exists('url') ? url('/terms.php') : '/terms.php';
 
@@ -91,10 +90,10 @@ function sectionQuoteForm(array $services, string $csrf, string $defaultService 
         <div class="text-center mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request your free quote</h2>
-            <p class="mt-3 text-zinc-600">We aim to respond within 2 hours on business days. All quotes are fixed-price after scope is agreed.</p>
+            <p class="mt-3 text-zinc-600">Send the property details and we will reply with a quote. The price is POA until the scope is agreed.</p>
         </div>
 
-        <form action="<?= htmlspecialchars($formAction, ENT_QUOTES, 'UTF-8') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm" aria-label="Free quote form">
+        <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm', 'aria-label="Free quote form"') ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($csrf, ENT_QUOTES, 'UTF-8') ?>">
             <input type="hidden" name="gclid" value="<?= htmlspecialchars($gclid, ENT_QUOTES, 'UTF-8') ?>">
             <input type="hidden" name="fbclid" value="<?= htmlspecialchars($fbclid, ENT_QUOTES, 'UTF-8') ?>">

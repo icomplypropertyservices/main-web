@@ -34,6 +34,9 @@ if (empty($_SESSION['csrf'])) {
 }
 
 require_once SITE_ROOT . '/includes/share.php';
+if (function_exists('icomplyRobotsMetaForPath')) {
+    $metaRobots = icomplyRobotsMetaForPath('/pages/keywords/' . $KEYWORD_SLUG . '/' . $AREA_SLUG);
+}
 require SITE_ROOT . '/includes/header.php';
 
 $h = static function ($s): string {

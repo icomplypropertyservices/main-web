@@ -37,6 +37,9 @@ if (empty($_SESSION['csrf'])) {
 
 require_once SITE_ROOT . '/includes/share.php';
 $canonicalUrl = url('/pages/areas/' . $areaSlugVal . '.php');
+$metaRobots = function_exists('icomplyRobotsMetaForPath')
+    ? icomplyRobotsMetaForPath('/pages/areas/' . $areaSlugVal)
+    : 'noindex, follow';
 require SITE_ROOT . '/includes/header.php';
 
 $schema = [
@@ -60,7 +63,7 @@ $schema = [
                 '@type' => 'City',
                 'name' => $areaName,
             ],
-            'priceRange' => '££',
+            'priceRange' => 'POA',
         ],
         [
             '@type' => 'BreadcrumbList',
@@ -113,8 +116,8 @@ $schema = [
                     <span class="text-[#ff6b00]"><?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></span>
                 </h1>
                 <p class="mt-6 text-lg text-white/80 max-w-xl">
-                    Electrical, fire alarms, gas safety, emergency lighting, CCTV and access control —
-                    installed, tested and certified for properties in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> and nearby postcodes.
+                    Electrical, fire alarms, emergency lighting, CCTV and access control for properties in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> and nearby postcodes.
+                    Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue them.
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get free quote</a>
@@ -126,7 +129,7 @@ $schema = [
                 </div>
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
                     <div><span class="text-white font-semibold text-xl block"><?= count($allServices) ?></span> core services</div>
-                    <div><span class="text-white font-semibold text-xl block">Same-week</span> appointments*</div>
+                    <div><span class="text-white font-semibold text-xl block">Diary</span> appointments*</div>
                     <div><span class="text-white font-semibold text-xl block">Fixed-price</span> quotes</div>
                 </div>
                 <p class="mt-3 text-[11px] text-white/40">*Subject to engineer capacity and site access.</p>
@@ -159,7 +162,7 @@ $schema = [
         <?php
         $trust = [
             ['Local to ' . $AREA, 'Engineers covering ' . $AREA . ' and surrounding postcodes from Stockport'],
-            ['Standards-led', 'BS 5839, BS 5266, BS 7671, gas safety & more'],
+            ['Standards-led', 'BS 5839, BS 5266, BS 7671. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers'],
             ['Full paperwork', 'Certificates and logbooks for landlords, insurers & FM'],
             ['One team', 'Multi-service packages in a single visit schedule'],
         ];
@@ -201,7 +204,7 @@ $schema = [
         </div>
         <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
             <h3 class="text-2xl font-semibold tracking-tight"><?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> compliance package</h3>
-            <p class="mt-3 text-white/80">Combine EICR, fire alarms, emergency lighting and gas safety into one visit schedule for landlords and FM teams in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>.</p>
+            <p class="mt-3 text-white/80">Combine EICR, fire alarms and emergency lighting into one visit schedule for landlords and FM teams in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.</p>
             <ul class="mt-6 space-y-3 text-sm text-white/90">
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Fixed-price multi-service quotes</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Full documentation for audits &amp; insurers</li>
@@ -223,7 +226,7 @@ $schema = [
             </h2>
             <p class="mt-2 text-zinc-600 max-w-2xl">
                 High-intent topics with a dedicated page for <strong><?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></strong>
-                — EICR report, fire risk assessment, gas safety and more.
+                — EICR report, fire risk assessment, and more. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.
             </p>
         </div>
         <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All guides →</a>
@@ -241,7 +244,7 @@ $schema = [
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Services in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></div>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Everything we do locally</h2>
-                <p class="mt-2 text-zinc-600 max-w-xl">Open a live service hub — or, for electrical and gas, a keyword page for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Thin service×area doorways are not published.</p>
+                <p class="mt-2 text-zinc-600 max-w-xl">Every service has a page for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Quotes are POA. Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
             </div>
             <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All service hubs →</a>
         </div>
@@ -319,7 +322,7 @@ $schema = [
     <div class="max-w-7xl mx-auto px-6 py-14 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
         <div>
             <h2 class="text-3xl font-semibold tracking-tight">Ready for a <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> quote?</h2>
-            <p class="mt-2 text-white/75">Chat on WhatsApp or call — we aim to respond within 2 hours on business days.</p>
+            <p class="mt-2 text-white/75">Chat on WhatsApp or call — we will reply with a quote.</p>
         </div>
         <div class="flex flex-wrap gap-3">
             <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Quote%20for%20<?= htmlspecialchars($AREA_URL, ENT_QUOTES, 'UTF-8') ?>"
@@ -350,7 +353,7 @@ echo testimonialsSectionHtml();
             </h2>
             <p class="mt-3 text-zinc-600">Include your <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> postcode, property type and any panel brands already on site.</p>
         </div>
-        <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
+        <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input type="text" name="name" placeholder="Full name" required maxlength="120" class="w-full border px-5 py-3.5 rounded-2xl">

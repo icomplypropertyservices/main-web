@@ -1,4 +1,4 @@
-Write-Host "Starting Icomply Property Services..." -ForegroundColor Cyan
+Write-Host "Starting iComply Property Services..." -ForegroundColor Cyan
 Write-Host ""
 Write-Host "Open your browser at: http://localhost:8000" -ForegroundColor Green
 Write-Host ""

@@ -7,7 +7,11 @@ function icomplyFooterHtml(): string
     $phone = icomplyNavH($n['phone']);
     $phoneHref = icomplyNavH($n['phoneHref']);
     $email = icomplyNavH($n['email']);
-    $wa = icomplyNavH($n['whatsapp']);
+    $waDigits = preg_replace('/\D+/', '', (string)($n['whatsapp'] ?? ''));
+    if ($waDigits === '') {
+        $waDigits = '447517806082';
+    }
+    $wa = icomplyNavH($waDigits);
     $brand = icomplyNavH($n['brand']);
     $year = date('Y');
     $contact = icomplyNavH(url('/contact.php'));
@@ -91,6 +95,17 @@ function icomplyFooterHtml(): string
     }
     $legalDrop .= '</div>';
 
+    $featuredCards = '<div class="foot-featured" aria-label="Priority services">';
+    foreach ($n['featured'] as $hub) {
+        $href = icomplyNavH(icomplyFeaturedPushHref($hub));
+        $featuredCards .= '<a href="' . $href . '"><span>Priority</span><strong>'
+            . icomplyNavH($hub['title']) . '</strong><em>' . icomplyNavH($hub['note']) . '</em></a>';
+    }
+    $barrierJob = $n['barrierJob'];
+    $featuredCards .= '<a href="' . icomplyNavH($barrierJob['href']) . '"><span>Barrier job</span><strong>'
+        . icomplyNavH($barrierJob['label']) . '</strong><em>Lane survey, then a written quote. Install POA.</em></a>';
+    $featuredCards .= '</div>';
+
     $social = function_exists('socialIconsHtml') ? socialIconsHtml('dark') : '';
     $svcHub = icomplyNavH(url('/pages/services/index.php'));
     $areaHub = icomplyNavH(url('/pages/areas/index.php'));
@@ -104,7 +119,7 @@ function icomplyFooterHtml(): string
   <div class="foot-wrap">
     <div class="foot-nap">
       <div class="foot-brand">{$brand}</div>
-      <p>Property compliance — electrical, fire, gas, water hygiene and asbestos surveys across Greater Manchester and the North West. Quotes are scoped; Legionella and asbestos are POA.</p>
+      <p>Property compliance — electrical, fire, water hygiene and asbestos surveys across Greater Manchester and the North West. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out gas work or issue those certificates. Quotes are POA until scope is confirmed. Call {$phone}.</p>
       <p><span class="foot-label">Phone</span> <a href="{$phoneHref}">{$phone}</a></p>
       <p><span class="foot-label">Email</span> <a href="mailto:{$email}">{$email}</a></p>
       <p><span class="foot-label">Address</span> 17 Woodlands Park Road, Offerton, Stockport SK2 5DE</p>
@@ -114,6 +129,7 @@ function icomplyFooterHtml(): string
         <a class="foot-cta foot-cta--quote" href="{$contact}">Request a quote</a>
       </div>
     </div>
+    {$featuredCards}
     <div class="foot-drops">
       <details class="foot-drop" open>
         <summary>Services <span>({$svcCount})</span></summary>
@@ -147,6 +163,7 @@ function icomplyFooterHtml(): string
           <a href="{$areaHub}">Areas</a>
           <a href="{$contact}">Contact</a>
           <a href="/shop/">Trade shop hubs</a>
+          <a href="/products#barriers">Barriers</a>
           <a href="/shop/electrical/">Electrical</a>
           <a href="/shop/fire/">Fire</a>
           <a href="/shop/security/">Security</a>
@@ -174,7 +191,7 @@ function icomplyFooterHtml(): string
     </div>
   </div>
 </footer>
-<a href="https://wa.me/{$wa}?text=Hi%20Icomply%2C%20I%20need%20a%20quote%20for%20compliance%20services" target="_blank" rel="noopener" aria-label="WhatsApp" class="wa-float">💬</a>
+<a href="https://wa.me/{$wa}?text=Hi%20iComply%2C%20I%20need%20a%20quote%20for%20compliance%20services" target="_blank" rel="noopener" aria-label="WhatsApp" class="wa-float">💬</a>
 <div id="mobile-sticky-cta" class="mobile-sticky-cta">
   <a href="{$phoneHref}">Call {$phone}</a>
   <a class="sticky-quote" href="{$contact}">Free quote</a>

@@ -15,7 +15,7 @@ $metaDesc = seo_fit_meta(
     . $comboProfile['stock'] . '. Written quote from Stockport SK2.'
 );
 $metaKeywords = $SEO_KEYWORDS;
-$ogImage = url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
+$ogImage = serviceImageUrl($SERVICE_SLUG);
 
 $allServices = getServices();
 $allAreas = getAreas();
@@ -29,6 +29,9 @@ $blurb = getServiceBlurb($serviceSlug);
 $standards = getServiceStandards($serviceSlug);
 $comboAngle = service_local_angle($serviceSlug, $serviceName, $areaName);
 $svcCopy = function_exists('waterAsbestosServiceCopy') ? waterAsbestosServiceCopy($serviceSlug) : null;
+if (!$svcCopy && function_exists('icomplyMfrServiceCopy')) {
+    $svcCopy = icomplyMfrServiceCopy($serviceSlug);
+}
 $areaExtra = function_exists('waterAsbestosAreaIntro') ? waterAsbestosAreaIntro($serviceSlug, $areaName) : '';
 
 // Nearby towns for “popular nearby” note (same service, other areas)
@@ -94,30 +97,11 @@ $schema = [
             'alternateName' => $serviceName . ' installation and maintenance in ' . $areaName,
             'description' => $metaDesc,
             'url' => $canonicalUrl,
-            'image' => $ogImage ?? url('/assets/images/services/' . $serviceSlug . '.jpg'),
+            'image' => $ogImage ?? serviceImageUrl($serviceSlug),
             'serviceType' => $serviceName,
             'category' => $serviceName,
             'provider' => [
-                '@type' => 'LocalBusiness',
                 '@id' => rtrim(SITE_URL, '/') . '/#business',
-                'name' => SITE_NAME,
-                'url' => SITE_URL,
-                'telephone' => PHONE,
-                'email' => EMAIL,
-                'address' => [
-                    '@type' => 'PostalAddress',
-                    'streetAddress' => '17 Woodlands Park Road',
-                    'addressLocality' => 'Offerton, Stockport',
-                    'addressRegion' => 'Greater Manchester',
-                    'postalCode' => 'SK2 5DE',
-                    'addressCountry' => 'GB',
-                ],
-                'geo' => [
-                    '@type' => 'GeoCoordinates',
-                    'latitude' => '53.3904',
-                    'longitude' => '-2.1219',
-                ],
-                'priceRange' => '££',
             ],
             'areaServed' => [
                 '@type' => 'City',
@@ -159,12 +143,12 @@ $schema = [
             'url' => $canonicalUrl,
             'telephone' => PHONE,
             'email' => EMAIL,
-            'image' => $ogImage ?? url('/assets/images/services/' . $serviceSlug . '.jpg'),
+            'image' => $ogImage ?? serviceImageUrl($serviceSlug),
             'areaServed' => [
                 '@type' => 'City',
                 'name' => $areaName,
             ],
-            'priceRange' => '££',
+            'priceRange' => 'POA',
             'parentOrganization' => [
                 '@type' => 'LocalBusiness',
                 '@id' => rtrim(SITE_URL, '/') . '/#business',
@@ -256,7 +240,7 @@ $schema['@graph'][] = [
                 ['Local to ' . $areaName, 'Stockport-based engineers covering ' . $areaName . ' and surrounding postcodes'],
                 ['Standards-led', $standards],
                 ['Full certification', 'Documentation for landlords, insurers and fire officers'],
-                ['Fixed-price quotes', 'Clear scope, same-week appointments where capacity allows'],
+                ['Fixed-price quotes', 'Clear scope, appointments booked when the diary allows'],
             ];
         foreach ($trust as [$t, $d]): ?>
             <div class="flex gap-3 items-start">
@@ -285,6 +269,11 @@ $schema['@graph'][] = [
                 <?php foreach (array_slice($svcCopy['intro'], 0, 2) as $para): ?>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars((string)$para, ENT_QUOTES, 'UTF-8') ?> Outward codes <?= htmlspecialchars($comboProfile['districts'], ENT_QUOTES, 'UTF-8') ?>. <?= htmlspecialchars($comboAngle, ENT_QUOTES, 'UTF-8') ?></p>
                 <?php endforeach; ?>
+                <?php if (function_exists('icomplyMfrLocalHtml') && icomplyMfrShowcaseApplies($serviceSlug)): ?>
+                <?= icomplyMfrLocalHtml($serviceSlug, $areaName) ?>
+                <?php endif; ?>
+            <?php elseif (function_exists('icomplyMfrLocalHtml') && icomplyMfrShowcaseApplies($serviceSlug)): ?>
+            <?= icomplyMfrLocalHtml($serviceSlug, $areaName) ?>
             <?php else: ?>
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars(seo_unique_intro($serviceName, $serviceSlug, $areaName), ENT_QUOTES, 'UTF-8') ?></p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
@@ -321,7 +310,7 @@ $schema['@graph'][] = [
                      width="800" height="600"
                      class="w-full h-44 object-cover"
                      loading="lazy"
-                     onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
+                     onerror="this.src='<?= htmlspecialchars(serviceImageUrl($SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>'">
                 <p class="text-xs text-zinc-500 px-3 py-2"><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> control equipment &amp; panels</p>
             </div>
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
@@ -330,7 +319,7 @@ $schema['@graph'][] = [
                      width="800" height="600"
                      class="w-full h-44 object-cover"
                      loading="lazy"
-                     onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
+                     onerror="this.src='<?= htmlspecialchars(serviceImageUrl($SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>'">
                 <p class="text-xs text-zinc-500 px-3 py-2">Installation, testing &amp; certification in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
         </div>
@@ -356,7 +345,9 @@ $schema['@graph'][] = [
     </div>
 </section>
 
-<?php if (!$poaCombo): ?>
+<?php if (function_exists('icomplyMfrShowcaseHtml') && icomplyMfrShowcaseApplies($serviceSlug)): ?>
+<?= icomplyMfrShowcaseHtml($serviceSlug, $areaName) ?>
+<?php elseif (!$poaCombo): ?>
 <!-- MANUFACTURERS -->
 <section class="bg-zinc-50 border-y">
     <div class="max-w-7xl mx-auto px-6 py-16">
@@ -364,7 +355,7 @@ $schema['@graph'][] = [
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Manufacturers</div>
                 <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Brands we install &amp; service in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></h2>
-                <p class="mt-2 text-zinc-600 max-w-2xl">Looking for your exact panel brand? We support major <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturers so customers searching for their equipment in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> find Icomply.</p>
+                <p class="mt-2 text-zinc-600 max-w-2xl">Looking for your exact panel brand? We support major <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturers so customers searching for their equipment in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> find iComply.</p>
             </div>
             <a href="<?= url('/shop/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Browse trade shop →</a>
         </div>
@@ -380,7 +371,7 @@ $schema['@graph'][] = [
                  width="1200" height="700"
                  class="w-full h-64 md:h-80 object-cover"
                  loading="lazy"
-                 onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
+                 onerror="this.src='<?= htmlspecialchars(serviceImageUrl($SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>'">
             <p class="text-xs text-zinc-500 px-4 py-3">Manufacturer panels &amp; systems commonly installed and serviced in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></p>
         </div>
     </div>
@@ -479,7 +470,7 @@ $schema['@graph'][] = [
             <h2 class="text-3xl font-semibold tracking-tight">Need <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>?</h2>
             <p class="mt-3 text-white/75"><?= $poaCombo
                 ? 'Price on application after we confirm the property in ' . htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') . '. No invented fee list — call, WhatsApp or send the form.'
-                : 'Written quotes after scope. Same-week appointments where capacity allows. Full certification on every job. Tell us your panel brand or system type.' ?></p>
+                : 'Written quotes after scope. Appointments booked when the diary allows where capacity allows. Full certification on every job. Tell us your panel brand or system type.' ?></p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="#quote" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold">Request quote</a>
                 <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Quote for ' . $serviceName . ' in ' . $areaName) ?>"
@@ -498,7 +489,7 @@ $schema['@graph'][] = [
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Based in Stockport — covering <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> &amp; the North West</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Installation, servicing and certification</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Multi-service packages for landlords &amp; FM teams</li>
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Response aim: within 2 hours on business days</li>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Quotes are POA</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Manufacturer brands supported — see tags above</li>
         </ul>
     </div>
@@ -530,10 +521,10 @@ $schema['@graph'][] = [
             </h2>
             <p class="mt-3 text-zinc-600">
                 Service and area are pre-filled below. Add your postcode, property type and any panel brand —
-                we aim to respond within 2 hours on business days.
+                we will reply with a quote.
             </p>
         </div>
-        <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
+        <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input type="text" name="name" placeholder="Full name" required maxlength="120" class="w-full border px-5 py-3.5 rounded-2xl">

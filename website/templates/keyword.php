@@ -22,6 +22,12 @@ $keywordName = $KEYWORD_NAME;
 $keywordSlug = $KEYWORD_SLUG;
 $serviceName = $SERVICE_NAME;
 $serviceSlug = $SERVICE_SLUG;
+$isAov = ($serviceSlug === 'aov-air-handling');
+$pageTitle = $KEYWORD_NAME . ($isAov ? ' | UK smoke control' : ' | North West');
+$metaDesc = $KEYWORD_META;
+$metaKeywords = $SEO_KEYWORDS;
+$ogImage = $KEYWORD_IMAGE;
+$canonicalUrl = url('/pages/keywords/' . $KEYWORD_SLUG . '.php');
 $relatedSlug = $RELATED_SLUG;
 $relatedName = $RELATED_NAME;
 $allAreas = getAreas();
@@ -50,7 +56,7 @@ require SITE_ROOT . '/includes/header.php';
             'name' => $keywordName,
             'description' => $metaDesc,
             'provider' => ['@type' => 'LocalBusiness', 'name' => SITE_NAME, 'telephone' => PHONE, 'url' => SITE_URL],
-            'areaServed' => 'North West England',
+            'areaServed' => $isAov ? 'United Kingdom' : 'North West England',
             'serviceType' => $serviceName,
             'url' => $canonicalUrl,
         ],
@@ -106,7 +112,12 @@ require SITE_ROOT . '/includes/header.php';
 <section class="bg-white border-b border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <?php
-        $trust = [
+        $trust = $isAov ? [
+            ['Stockport yard', '17 Woodlands Park Road, Offerton, SK2 5DE'],
+            ['Fire protection', 'Smoke vents quoted across the UK'],
+            ['Kit prices listed', 'Install, test and travel are POA'],
+            ['Call ' . PHONE, 'No BAFE, FIRAS or approved-partner claim'],
+        ] : [
             ['Local engineers', 'Stockport base — 150+ North West towns'],
             ['Standards-led', 'British Standards & manufacturer guidance'],
             ['Fixed quotes', 'Clear scope before work starts'],
@@ -136,11 +147,23 @@ require SITE_ROOT . '/includes/header.php';
                     <p class="mt-4 text-base md:text-lg text-zinc-900 leading-relaxed font-medium"><?= htmlspecialchars($KEYWORD_INTRO, ENT_QUOTES, 'UTF-8') ?></p>
                     <p class="mt-4 text-base md:text-lg text-zinc-900 leading-relaxed"><?= htmlspecialchars($KEYWORD_BODY, ENT_QUOTES, 'UTF-8') ?></p>
                     <ul class="mt-6 space-y-3"><?= $KEYWORD_FOCUS_HTML ?></ul>
+                    <?php if ($isAov):
+                        require_once SITE_ROOT . '/includes/aov.php';
+                        $aovNote = aovKeywordNote($keywordSlug);
+                        if (is_array($aovNote)):
+                    ?>
+                    <h3 class="mt-8 text-xl font-semibold text-[#061828]"><?= htmlspecialchars((string)$aovNote['heading'], ENT_QUOTES, 'UTF-8') ?></h3>
+                    <?php foreach ($aovNote['paragraphs'] as $para): ?>
+                        <p class="mt-3 text-base text-zinc-800 leading-relaxed"><?= htmlspecialchars((string)$para, ENT_QUOTES, 'UTF-8') ?></p>
+                    <?php endforeach; endif; endif; ?>
                     <p class="mt-6 text-sm text-zinc-800">
                         Part of our
                         <a href="<?= url('/pages/services/' . $SERVICE_SLUG . '.php') ?>" class="font-bold text-[#ff6b00] hover:underline"><?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?></a>
-                        service · Related:
+                        service · Areas hub:
+                        <a href="<?= url('/pages/areas/index.php') ?>" class="font-bold text-[#ff6b00] hover:underline">all towns</a>
+                        · Related:
                         <a href="<?= url('/pages/keywords/' . $RELATED_SLUG . '.php') ?>" class="font-bold text-[#ff6b00] hover:underline"><?= htmlspecialchars($RELATED_NAME, ENT_QUOTES, 'UTF-8') ?></a>
+                        · Quotes are POA. Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.
                     </p>
                 </div>
             </div>
@@ -161,11 +184,35 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
+<?php if ($isAov):
+    require_once SITE_ROOT . '/includes/aov-brands.php';
+?>
+<section class="bg-white border-y-2 border-zinc-200">
+    <div class="max-w-7xl mx-auto px-6 py-14">
+        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">AOV manufacturers</h2>
+        <p class="mt-2 text-zinc-800 max-w-3xl">Every brand on the smoke-vent list. The picture is an original wordmark, not the manufacturer’s artwork, and it is not an accreditation or a partnership badge.</p>
+        <div class="mt-6"><?= aovBrandGridHtml() ?></div>
+    </div>
+</section>
+<?= aovKitWizardHtml($keywordName) ?>
+<section class="bg-zinc-100">
+    <div class="max-w-7xl mx-auto px-6 py-14">
+        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">AOV by UK place</h2>
+        <p class="mt-2 text-zinc-800 max-w-3xl">Town pages are for places with a published population of 10,000 or more. This guide is not copied into every North West town. A page is not a depot. Travel outside a short North West run is on the quote.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+            <a class="px-5 py-3 bg-[#061828] text-white rounded-full text-sm font-semibold" href="<?= url('/pages/aov') ?>">All AOV town pages</a>
+            <a class="px-5 py-3 bg-white border-2 border-zinc-300 rounded-full text-sm font-semibold" href="<?= url('/pages/aov/manchester') ?>">Manchester</a>
+            <a class="px-5 py-3 bg-white border-2 border-zinc-300 rounded-full text-sm font-semibold" href="<?= url('/pages/aov/burnley') ?>">Burnley</a>
+            <a class="px-5 py-3 bg-white border-2 border-zinc-300 rounded-full text-sm font-semibold" href="<?= url('/pages/services/aov-air-handling.php') ?>">AOV service hub</a>
+        </div>
+    </div>
+</section>
+<?php else: ?>
 <!-- MANUFACTURERS -->
 <section class="bg-white border-y-2 border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-14">
-        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">Brands we install &amp; service</h2>
-        <p class="mt-2 text-zinc-800 max-w-2xl">Click a manufacturer for products, kits and install quotes related to <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> and <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?>.</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]"><?= $SERVICE_SLUG === 'gas-systems' ? 'Trade brands listed here' : 'Brands we install &amp; service' ?></h2>
+        <p class="mt-2 text-zinc-800 max-w-2xl"><?php if ($SERVICE_SLUG === 'gas-systems'): ?>Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not install these brands.<?php else: ?>Click a manufacturer for products, kits and install quotes related to <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> and <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?>.<?php endif; ?></p>
         <div class="mt-6 flex flex-wrap gap-2"><?= $MANUFACTURER_TAGS ?></div>
     </div>
 </section>
@@ -185,6 +232,7 @@ require SITE_ROOT . '/includes/header.php';
         </div>
     </div>
 </section>
+<?php endif; ?>
 
 <!-- RELATED KEYWORDS same service -->
 <section class="bg-white border-y-2 border-zinc-200">
@@ -213,8 +261,8 @@ require SITE_ROOT . '/includes/header.php';
 <section id="quote" class="bg-[#061828] text-white">
     <div class="max-w-3xl mx-auto px-6 py-14">
         <h2 class="text-3xl font-bold text-center">Quote for <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></h2>
-        <p class="mt-2 text-center text-white/90">Fixed-price after scope is agreed. Stockport engineers · North West coverage.</p>
-        <form action="<?= url('/contact.php') ?>" method="POST" class="mt-8 bg-white text-zinc-900 border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4 shadow-xl">
+        <p class="mt-2 text-center text-white/90"><?= $isAov ? 'Supply kit prices are listed. Installation, testing and travel are POA. Call ' . htmlspecialchars((string)PHONE, ENT_QUOTES, 'UTF-8') . '.' : 'Fixed-price after scope is agreed. Stockport engineers · North West coverage.' ?></p>
+        <?= icomplyQuoteFormOpen('mt-8 bg-white text-zinc-900 border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4 shadow-xl') ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid md:grid-cols-2 gap-4">
                 <input type="text" name="name" placeholder="Full name" required class="w-full border-2 border-zinc-300 px-4 py-3 rounded-xl font-medium">

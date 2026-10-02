@@ -76,14 +76,23 @@ foreach ($catalog as $slug => &$entry) {
         return $map[$s] ?? $s;
     }, $services));
 
-    $entry['blurb'] = "Icomply Property Services is your North West partner for {$name} — "
-        . "{$p['install']} to {$p['std']}, plus planned maintenance and reactive repairs. "
-        . "We supply trade {$p['buy']} for {$name} and support landlords, FM teams and contractors "
-        . "across Greater Manchester, Lancashire, Cheshire and Merseyside.";
+    if ($primary === 'gas-systems') {
+        $entry['blurb'] = "{$name} appears on this page as a trade-supply brand. "
+            . "Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. "
+            . "iComply does not carry out gas work, does not issue CP12 or gas safety certificates, and is not Gas Safe registered. "
+            . "iComply does not install, service, or repair {$name} boilers or gas appliances.";
+        $entry['seo_desc'] = "{$name} trade-supply listing. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. "
+            . "iComply does not install or service this brand.";
+    } else {
+        $entry['blurb'] = "We install and service {$name} equipment. "
+            . "Our qualified engineers carry out {$p['install']} to {$p['std']}, plus planned maintenance and reactive repairs. "
+            . "We supply trade {$p['buy']} for {$name} and support landlords, FM teams and contractors "
+            . "across Greater Manchester, Lancashire, Cheshire and Merseyside.";
+        $entry['seo_desc'] = "We install and service {$name} equipment. Trade kits and servicing "
+            . "across Stockport, Manchester and the North West.";
+    }
 
     $entry['seo_title'] = "{$name} Installation, Service & Products | North West";
-    $entry['seo_desc'] = "Buy and install {$name} systems with Icomply. {$p['install']}, certification and trade kits "
-        . "across Stockport, Manchester and the North West. Free quotes.";
     $entry['seo_keywords'] = implode(', ', [
         $name,
         "{$name} installation",
