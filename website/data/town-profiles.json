@@ -1,0 +1,429 @@
+{
+  "London": {
+    "districts": "E, EC, N, NW, SE, SW, W and WC",
+    "region": "Greater London",
+    "stock": "mansion blocks, purpose-built flats, offices, retail and licensed premises",
+    "travel": "scheduled from our Stockport SK2 base, about four hours by road",
+    "focus": "fire alarms, emergency lighting and fire risk assessments in multi-let buildings"
+  },
+  "Birmingham": {
+    "districts": "B1–B48",
+    "region": "West Midlands",
+    "stock": "city-centre offices, Victorian terraces, industrial estates and purpose-built flats",
+    "travel": "scheduled from our Stockport SK2 base, about two hours by road",
+    "focus": "commercial fire alarm servicing and landlord fire risk assessments"
+  },
+  "Leeds": {
+    "districts": "LS1–LS29",
+    "region": "West Yorkshire",
+    "stock": "converted mills, city offices, student flats and retail arcades",
+    "travel": "scheduled from our Stockport SK2 base, about an hour by road",
+    "focus": "fire detection in mixed-use blocks and emergency lighting on escape routes"
+  },
+  "Sheffield": {
+    "districts": "S1–S17 and S20",
+    "region": "South Yorkshire",
+    "stock": "industrial units, terraced housing, city flats and university buildings",
+    "travel": "scheduled from our Stockport SK2 base, about an hour by road",
+    "focus": "warehouse fire alarms, fire doors and compartmentation"
+  },
+  "Bristol": {
+    "districts": "BS1–BS16",
+    "region": "Bristol and the surrounding urban area",
+    "stock": "harbourside offices, period terraces, HMOs and retail",
+    "travel": "scheduled from our Stockport SK2 base, about three hours by road",
+    "focus": "fire risk assessments and fire alarm upgrades in multi-occupied buildings"
+  },
+  "Newcastle upon Tyne": {
+    "districts": "NE1–NE13",
+    "region": "Tyne and Wear",
+    "stock": "city flats, quayside commercial buildings, terraces and retail",
+    "travel": "scheduled from our Stockport SK2 base, about two and a half hours by road",
+    "focus": "fire alarms and emergency lighting in flats and commercial common parts"
+  },
+  "Nottingham": {
+    "districts": "NG1–NG16",
+    "region": "Nottinghamshire",
+    "stock": "student HMOs, lace-market commercial buildings, suburbs and retail",
+    "travel": "scheduled from our Stockport SK2 base, about an hour and three quarters by road",
+    "focus": "HMO fire alarms, fire doors and fire risk assessments"
+  },
+  "Leicester": {
+    "districts": "LE1–LE9",
+    "region": "Leicestershire",
+    "stock": "terraced streets, city retail, warehouses and converted commercial upper floors",
+    "travel": "scheduled from our Stockport SK2 base, about two hours by road",
+    "focus": "fire alarm servicing and extinguisher maintenance for shops and workshops"
+  },
+  "Coventry": {
+    "districts": "CV1–CV6",
+    "region": "West Midlands",
+    "stock": "post-war commercial stock, industrial estates, flats and campus buildings",
+    "travel": "scheduled from our Stockport SK2 base, about two hours by road",
+    "focus": "industrial fire alarms, sprinkler checks and emergency lighting"
+  },
+  "Stoke-on-Trent": {
+    "districts": "ST1–ST6",
+    "region": "Staffordshire",
+    "stock": "pottery-town terraces, factories, retail parks and local commercial units",
+    "travel": "scheduled from our Stockport SK2 base, about an hour by road",
+    "focus": "factory and retail fire alarms, fire stopping and dry risers where fitted"
+  },
+  "Wolverhampton": {
+    "districts": "WV1–WV11",
+    "region": "West Midlands",
+    "stock": "town-centre retail, industrial corridors, flats and suburban commercial",
+    "travel": "scheduled from our Stockport SK2 base, about an hour and a half by road",
+    "focus": "fire risk assessments and emergency lighting in commercial units"
+  },
+  "Derby": {
+    "districts": "DE1–DE24",
+    "region": "Derbyshire",
+    "stock": "rail and industrial estates, city housing, offices and retail",
+    "travel": "scheduled from our Stockport SK2 base, about an hour and a quarter by road",
+    "focus": "industrial fire detection and fire door inspections"
+  },
+  "Bradford": {
+    "districts": "BD1–BD12",
+    "region": "West Yorkshire",
+    "stock": "mill conversions, terraced housing, city retail and small industrial units",
+    "travel": "scheduled from our Stockport SK2 base, about an hour by road",
+    "focus": "mill and landlord fire alarms, compartmentation and fire risk assessments"
+  },
+  "Kingston upon Hull": {
+    "districts": "HU1–HU9",
+    "region": "East Yorkshire",
+    "stock": "docks-side commercial, city terraces, retail and light industrial",
+    "travel": "scheduled from our Stockport SK2 base, about two hours by road",
+    "focus": "commercial fire alarms and emergency lighting near the port and city centre"
+  },
+  "York": {
+    "districts": "YO1, YO10, YO23–YO24 and YO30–YO32",
+    "region": "North Yorkshire",
+    "stock": "historic commercial buildings, guesthouses, city flats and retail",
+    "travel": "scheduled from our Stockport SK2 base, about an hour and a half by road",
+    "focus": "fire risk assessments and fire detection in hospitality and mixed-use buildings"
+  },
+  "Middlesbrough": {
+    "districts": "TS1–TS8",
+    "region": "Teesside",
+    "stock": "industrial sites, town housing, retail parks and commercial units",
+    "travel": "scheduled from our Stockport SK2 base, about two and a quarter hours by road",
+    "focus": "industrial fire alarms, suppression interfaces and emergency lighting"
+  },
+  "Sunderland": {
+    "districts": "SR1–SR6",
+    "region": "Tyne and Wear",
+    "stock": "coastal housing, city retail, industrial estates and flats",
+    "travel": "scheduled from our Stockport SK2 base, about two and a half hours by road",
+    "focus": "fire alarms and fire risk assessments for flats and commercial sites"
+  },
+  "Southampton": {
+    "districts": "SO14–SO19",
+    "region": "Hampshire",
+    "stock": "port-related commercial, city flats, offices and retail",
+    "travel": "scheduled from our Stockport SK2 base, about four hours by road",
+    "focus": "commercial fire alarms and emergency lighting in multi-let buildings"
+  },
+  "Portsmouth": {
+    "districts": "PO1–PO6",
+    "region": "Hampshire",
+    "stock": "dense terraces, naval-city commercial buildings, flats and retail",
+    "travel": "scheduled from our Stockport SK2 base, about four hours by road",
+    "focus": "fire risk assessments, fire doors and fire alarms in flats and shops"
+  },
+  "Brighton and Hove": {
+    "districts": "BN1–BN3 and BN41",
+    "region": "East Sussex",
+    "stock": "Regency houses in multiple occupation, seafront commercial and offices",
+    "travel": "scheduled from our Stockport SK2 base, about four and a half hours by road",
+    "focus": "HMO fire alarms, fire doors and fire risk assessments"
+  },
+  "Bournemouth": {
+    "districts": "BH1–BH11",
+    "region": "Dorset",
+    "stock": "guest accommodation, flats, retail and suburban commercial",
+    "travel": "scheduled from our Stockport SK2 base, about four hours by road",
+    "focus": "hospitality fire risk assessments and fire alarm servicing"
+  },
+  "Plymouth": {
+    "districts": "PL1–PL9",
+    "region": "Devon",
+    "stock": "waterfront commercial, city housing, retail and light industrial",
+    "travel": "scheduled from our Stockport SK2 base, about five hours by road",
+    "focus": "fire alarms and emergency lighting for commercial and residential common parts"
+  },
+  "Exeter": {
+    "districts": "EX1–EX4",
+    "region": "Devon",
+    "stock": "city retail, offices, student housing and quayside commercial",
+    "travel": "scheduled from our Stockport SK2 base, about four and a half hours by road",
+    "focus": "fire risk assessments and fire detection in city commercial buildings"
+  },
+  "Reading": {
+    "districts": "RG1–RG6",
+    "region": "Berkshire",
+    "stock": "offices, new-build flats, retail and business parks",
+    "travel": "scheduled from our Stockport SK2 base, about three and a quarter hours by road",
+    "focus": "office fire alarms, emergency lighting and fire door checks"
+  },
+  "Milton Keynes": {
+    "districts": "MK1–MK15",
+    "region": "Buckinghamshire",
+    "stock": "grid-road commercial estates, offices, warehouses and new housing",
+    "travel": "scheduled from our Stockport SK2 base, about two and a quarter hours by road",
+    "focus": "warehouse fire alarms, sprinklers and emergency lighting"
+  },
+  "Oxford": {
+    "districts": "OX1–OX4",
+    "region": "Oxfordshire",
+    "stock": "collegiate and commercial buildings, HMOs, retail and offices",
+    "travel": "scheduled from our Stockport SK2 base, about two and three quarter hours by road",
+    "focus": "fire risk assessments and fire alarms in multi-occupied buildings"
+  },
+  "Cambridge": {
+    "districts": "CB1–CB5",
+    "region": "Cambridgeshire",
+    "stock": "laboratories, offices, student housing, retail and city flats",
+    "travel": "scheduled from our Stockport SK2 base, about three hours by road",
+    "focus": "commercial fire detection, emergency lighting and fire risk assessments"
+  },
+  "Norwich": {
+    "districts": "NR1–NR7",
+    "region": "Norfolk",
+    "stock": "historic commercial buildings, retail, flats and light industrial",
+    "travel": "scheduled from our Stockport SK2 base, about three and three quarter hours by road",
+    "focus": "fire risk assessments and fire alarm servicing in city commercial stock"
+  },
+  "Peterborough": {
+    "districts": "PE1–PE7",
+    "region": "Cambridgeshire",
+    "stock": "distribution warehouses, new housing, retail and city commercial",
+    "travel": "scheduled from our Stockport SK2 base, about two and a half hours by road",
+    "focus": "warehouse fire alarms, sprinkler inspections and emergency lighting"
+  },
+  "Swindon": {
+    "districts": "SN1–SN6 and SN25",
+    "region": "Wiltshire",
+    "stock": "rail-town housing, business parks, retail and industrial units",
+    "travel": "scheduled from our Stockport SK2 base, about three hours by road",
+    "focus": "commercial fire alarms and fire risk assessments on business parks"
+  },
+  "Gloucester": {
+    "districts": "GL1–GL4",
+    "region": "Gloucestershire",
+    "stock": "docks commercial, city retail, industrial estates and housing",
+    "travel": "scheduled from our Stockport SK2 base, about two and a half hours by road",
+    "focus": "fire alarms, fire doors and emergency lighting in commercial buildings"
+  },
+  "Cardiff": {
+    "districts": "CF3–CF24",
+    "region": "South Wales",
+    "stock": "bay commercial buildings, city flats, offices, retail and student housing",
+    "travel": "scheduled from our Stockport SK2 base, about three and a quarter hours by road",
+    "focus": "fire alarms and fire risk assessments in flats and offices"
+  },
+  "Swansea": {
+    "districts": "SA1–SA7",
+    "region": "South Wales",
+    "stock": "waterfront commercial, city housing, retail and industrial units",
+    "travel": "scheduled from our Stockport SK2 base, about four hours by road",
+    "focus": "commercial fire detection and emergency lighting"
+  },
+  "Newport": {
+    "districts": "NP19–NP20",
+    "region": "South Wales",
+    "stock": "riverfront commercial, city retail, industrial estates and housing",
+    "travel": "scheduled from our Stockport SK2 base, about three hours by road",
+    "focus": "fire alarms and fire risk assessments for commercial and multi-let buildings"
+  },
+  "Wrexham": {
+    "districts": "LL11–LL14",
+    "region": "North Wales",
+    "stock": "industrial estates, town retail, housing and edge-of-town commercial",
+    "travel": "scheduled from our Stockport SK2 base, about an hour and a quarter by road",
+    "focus": "industrial fire alarms, extinguishers and fire risk assessments"
+  },
+  "Edinburgh": {
+    "districts": "EH1–EH17",
+    "region": "mainland Scotland",
+    "stock": "tenements, New Town commercial buildings, offices and retail",
+    "travel": "scheduled from our Stockport SK2 base, about four hours by road",
+    "focus": "tenement and commercial fire risk assessments, fire alarms and fire doors"
+  },
+  "Glasgow": {
+    "districts": "G1–G5, G11–G15, G20–G23, G31–G34, G40–G46 and G51–G53",
+    "region": "mainland Scotland",
+    "stock": "tenements, city offices, industrial estates and retail",
+    "travel": "scheduled from our Stockport SK2 base, about three and three quarter hours by road",
+    "focus": "fire alarms, emergency lighting and fire risk assessments in tenements and offices"
+  },
+  "Aberdeen": {
+    "districts": "AB10–AB16",
+    "region": "mainland Scotland",
+    "stock": "granite city commercial buildings, offices, flats and industrial estates",
+    "travel": "scheduled from our Stockport SK2 base, about six hours by road",
+    "focus": "commercial fire alarms and fire risk assessments, booked ahead rather than as a local callout"
+  },
+  "Dundee": {
+    "districts": "DD1–DD5",
+    "region": "mainland Scotland",
+    "stock": "waterfront commercial, city flats, retail and industrial",
+    "travel": "scheduled from our Stockport SK2 base, about four and a half hours by road",
+    "focus": "fire detection and emergency lighting in commercial and multi-let buildings"
+  },
+  "Stirling": {
+    "districts": "FK7–FK9",
+    "region": "mainland Scotland",
+    "stock": "town commercial, campus buildings, retail and housing",
+    "travel": "scheduled from our Stockport SK2 base, about four hours by road",
+    "focus": "fire risk assessments and fire alarm servicing"
+  },
+  "Perth": {
+    "districts": "PH1–PH2",
+    "region": "mainland Scotland",
+    "stock": "town-centre retail, offices, housing and small commercial",
+    "travel": "scheduled from our Stockport SK2 base, about four and a quarter hours by road",
+    "focus": "town-centre fire alarms, extinguishers and fire risk assessments"
+  },
+  "Nelson": {
+    "districts": "BB9",
+    "region": "Pendle, Lancashire",
+    "stock": "mill terraces, local retail and small industrial units",
+    "travel": "typically 55–70 minutes from our Stockport SK2 base",
+    "focus": "landlord housing and town-centre commercial fire and compliance work"
+  },
+  "Colne": {
+    "districts": "BB8",
+    "region": "Pendle, Lancashire",
+    "stock": "hillside terraces, town retail and light industrial",
+    "travel": "typically 60–75 minutes from our Stockport SK2 base",
+    "focus": "landlord portfolios and small commercial sites"
+  },
+  "Padiham": {
+    "districts": "BB12",
+    "region": "Burnley fringe, Lancashire",
+    "stock": "terraced housing, local shops and small workshops",
+    "travel": "typically 50–65 minutes from our Stockport SK2 base",
+    "focus": "residential landlords and high-street commercial"
+  },
+  "Accrington": {
+    "districts": "BB5",
+    "region": "Hyndburn, Lancashire",
+    "stock": "mill town terraces, retail and industrial estates",
+    "travel": "typically 45–60 minutes from our Stockport SK2 base",
+    "focus": "landlord housing and light-industrial sites"
+  },
+  "Clitheroe": {
+    "districts": "BB7",
+    "region": "Ribble Valley, Lancashire",
+    "stock": "market-town retail, stone housing and small commercial",
+    "travel": "typically 55–70 minutes from our Stockport SK2 base",
+    "focus": "town retail, hospitality and residential"
+  },
+  "Darwen": {
+    "districts": "BB3",
+    "region": "Blackburn with Darwen",
+    "stock": "terraced streets, local retail and hillside housing",
+    "travel": "typically 40–55 minutes from our Stockport SK2 base",
+    "focus": "landlord terraces and small commercial units"
+  },
+  "Ashton-under-Lyne": {
+    "districts": "OL6–OL7",
+    "region": "Tameside, Greater Manchester",
+    "stock": "market-town retail, terraces, mills and the retail park",
+    "travel": "typically 25–40 minutes from our Stockport SK2 base",
+    "focus": "town-centre commercial and landlord housing"
+  },
+  "Hyde": {
+    "districts": "SK14",
+    "region": "Tameside, Greater Manchester",
+    "stock": "terraced housing, town retail and industrial estates",
+    "travel": "typically 20–35 minutes from our Stockport SK2 base",
+    "focus": "landlord housing and SME industrial units"
+  },
+  "Stretford": {
+    "districts": "M32",
+    "region": "Trafford, Greater Manchester",
+    "stock": "suburban housing, mall retail and commercial units",
+    "travel": "typically 25–40 minutes from our Stockport SK2 base",
+    "focus": "retail and residential portfolios"
+  },
+  "Urmston": {
+    "districts": "M41",
+    "region": "Trafford, Greater Manchester",
+    "stock": "suburban housing, local retail and small offices",
+    "travel": "typically 30–45 minutes from our Stockport SK2 base",
+    "focus": "landlords and town-centre commercial"
+  },
+  "Cheadle": {
+    "districts": "SK8",
+    "region": "Stockport",
+    "stock": "suburban housing, village retail and small offices",
+    "travel": "local coverage from our Stockport SK2 base, typically under 20 minutes",
+    "focus": "residential portfolios and village commercial"
+  },
+  "Cheadle Hulme": {
+    "districts": "SK8",
+    "region": "Stockport",
+    "stock": "suburban housing, district retail and schools-area commercial",
+    "travel": "local coverage from our Stockport SK2 base, typically under 20 minutes",
+    "focus": "landlord houses and local commercial"
+  },
+  "Bramhall": {
+    "districts": "SK7",
+    "region": "Stockport",
+    "stock": "detached and semi-detached housing, village retail and offices",
+    "travel": "local coverage from our Stockport SK2 base, typically under 25 minutes",
+    "focus": "residential and village commercial"
+  },
+  "Hazel Grove": {
+    "districts": "SK7",
+    "region": "Stockport",
+    "stock": "suburban housing, high-street retail and light commercial",
+    "travel": "local coverage from our Stockport SK2 base, typically under 20 minutes",
+    "focus": "landlord housing and high-street units"
+  },
+  "Denton": {
+    "districts": "M34",
+    "region": "Tameside, Greater Manchester",
+    "stock": "suburban housing, retail and industrial units",
+    "travel": "typically 20–30 minutes from our Stockport SK2 base",
+    "focus": "residential and light-industrial sites"
+  },
+  "Dukinfield": {
+    "districts": "SK16",
+    "region": "Tameside, Greater Manchester",
+    "stock": "terraced housing, local industry and town retail",
+    "travel": "typically 25–35 minutes from our Stockport SK2 base",
+    "focus": "landlord terraces and small factories"
+  },
+  "Stalybridge": {
+    "districts": "SK15",
+    "region": "Tameside, Greater Manchester",
+    "stock": "canal-side housing, mills and town-centre retail",
+    "travel": "typically 25–40 minutes from our Stockport SK2 base",
+    "focus": "mixed residential and small commercial"
+  },
+  "Marple": {
+    "districts": "SK6",
+    "region": "Stockport",
+    "stock": "village housing, local retail and canalside commercial",
+    "travel": "typically 15–25 minutes from our Stockport SK2 base",
+    "focus": "residential and village commercial"
+  },
+  "Romiley": {
+    "districts": "SK6",
+    "region": "Stockport",
+    "stock": "suburban housing and local retail",
+    "travel": "typically 15–25 minutes from our Stockport SK2 base",
+    "focus": "landlord housing and small shops"
+  },
+  "Droylsden": {
+    "districts": "M43",
+    "region": "Tameside, Greater Manchester",
+    "stock": "suburban housing, local retail and light industry",
+    "travel": "typically 25–40 minutes from our Stockport SK2 base",
+    "focus": "residential portfolios and small commercial"
+  }
+}

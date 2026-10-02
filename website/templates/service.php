@@ -4,10 +4,15 @@
  * MANUFACTURER_TAGS, MANUFACTURER_IMAGES
  */
 $poaService = function_exists('isPoaService') && isPoaService($SERVICE_SLUG);
-$pageTitle = $SERVICE_NAME . ' Services | North West';
-$metaDesc = $poaService
-    ? ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Price on application after scope. Local team from Stockport. No invented fees.')
-    : ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Installation, maintenance, testing & certification. Written quotes after scope. Local engineers from Stockport.');
+$isFireCoverage = function_exists('icomplyIsFireProtectionService') && icomplyIsFireProtectionService($SERVICE_SLUG);
+$pageTitle = $isFireCoverage
+    ? ($SERVICE_NAME . ' | UK mainland')
+    : ($SERVICE_NAME . ' Services | Manchester & Burnley');
+$metaDesc = $isFireCoverage
+    ? ('Fire protection: ' . $SERVICE_NAME . ' across UK mainland (England, Wales and mainland Scotland), scheduled from Stockport. Price on application. Not Northern Ireland or the Scottish Highlands and Islands.')
+    : ($poaService
+        ? ('Professional ' . $SERVICE_NAME . ' in Manchester and Burnley. Price on application after scope. Local team from Stockport. No invented fees.')
+        : ('Professional ' . $SERVICE_NAME . ' in Manchester and Burnley. Installation, maintenance, testing and certification. Written quotes after scope. Local engineers from Stockport.'));
 $metaKeywords = $SEO_KEYWORDS;
 $ogImage = url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
 
@@ -43,7 +48,7 @@ $serviceFaqs = [
         ['What does it cost?', 'Price on application. Size, access and how intrusive the survey must be all change the quote. No invented starting price.'],
     ],
     'default' => [
-        ['What areas do you cover for ' . $SERVICE_NAME . '?', 'We cover every town in our published areas list across Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria from our Stockport base.'],
+        ['What areas do you cover for ' . $SERVICE_NAME . '?', 'Published town pages for this service are Manchester and Burnley. Fire protection is the service group with UK mainland town pages. We are based in Stockport.'],
         ['How do you price the work?', $poaService ? 'Price on application after we confirm scope, standards and access. No catalogue prices on this page.' : 'After we confirm scope, standards and access we issue a written quote. We do not invent a fee here.'],
         ['Can you maintain systems already on site?', 'Where the service is about existing systems, we inspect, service and document. For survey-led work we record what is there and what should happen next.'],
     ],
@@ -355,16 +360,32 @@ $schema = [
                     <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> keywords &amp; local pages
                 </h2>
                 <p class="mt-2 text-zinc-600 max-w-2xl">
-                    Every guide below has a dedicated page for each town we cover
-                    (e.g. <strong>EICR report in Stockport</strong>). Click a topic, then pick your area.
+                    <?php if ($isFireCoverage): ?>
+                        Featured fire-protection guides have a UK mainland town page. Other guides on this service link Manchester, Burnley and the North West towns already on the area list.
+                    <?php else: ?>
+                        Town links on this page are Manchester and Burnley. Fire protection is covered separately across UK mainland.
+                    <?php endif; ?>
                 </p>
             </div>
             <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All keyword guides →</a>
         </div>
         <?php
         $svcKeywords = getKeywordsForService($serviceSlug);
+        $coverageTowns = function_exists('icomplyTownsForService') ? icomplyTownsForService($serviceSlug) : $popularTowns;
+        $keywordChipTowns = [];
+        foreach ($coverageTowns as $coverageTown) {
+            if (in_array($coverageTown, $allAreas, true)) {
+                $keywordChipTowns[] = $coverageTown;
+            }
+        }
+        if (!$keywordChipTowns) {
+            $keywordChipTowns = array_values(array_filter(
+                ['Manchester', 'Burnley'],
+                static fn(string $t): bool => in_array($t, $allAreas, true)
+            ));
+        }
         if ($svcKeywords):
-            $kwPreviewTowns = array_slice($popularTowns, 0, 6);
+            $kwPreviewTowns = array_slice($keywordChipTowns, 0, 6);
         ?>
         <div class="mb-8">
             <?= relatedKeywordsHtml($serviceSlug, 0) ?>
@@ -385,7 +406,7 @@ $schema = [
                     <?= htmlspecialchars($kwName, ENT_QUOTES, 'UTF-8') ?>
                 </a>
                 <div class="mt-3 flex flex-wrap gap-1.5">
-                    <?php foreach ($popularTowns as $town): ?>
+                    <?php foreach ($keywordChipTowns as $town): ?>
                         <a href="<?= url('/pages/keywords/' . rawurlencode($kwSlug) . '/' . areaSlug($town) . '.php') ?>"
                            class="text-[11px] px-2 py-1 bg-white border rounded-full text-zinc-700 hover:border-[#ff6b00] hover:text-[#ff6b00]">
                             <?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?>
@@ -406,7 +427,12 @@ $schema = [
             </p>
         <?php else: ?>
             <p class="mt-6 text-sm text-zinc-600">
-                All <?= count($svcKeywords) ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> keyword guides, each with every town we cover.
+                All <?= count($svcKeywords) ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> keyword guides.
+                <?php if ($isFireCoverage): ?>
+                    Mainland town pages are limited to the featured fire-protection guides.
+                <?php else: ?>
+                    Town links here are Manchester and Burnley.
+                <?php endif; ?>
             </p>
         <?php endif; ?>
         <?php else: ?>
@@ -423,25 +449,21 @@ $schema = [
             <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">
                 <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> near you
             </h2>
-            <p class="mt-2 text-zinc-600">Town hubs we cover — electrical and gas also open a real keyword×town page. We do not publish thin service×area doorways.</p>
+            <p class="mt-2 text-zinc-600">
+                <?php if ($isFireCoverage): ?>
+                    UK mainland towns for this fire-protection service. Each link is a real keyword page. We do not publish thin service×area doorways.
+                <?php else: ?>
+                    Manchester and Burnley only. Fire protection is the service with UK mainland town pages. We do not publish thin service×area doorways.
+                <?php endif; ?>
+            </p>
         </div>
         <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All areas →</a>
     </div>
     <div class="flex flex-wrap gap-2">
-        <?php foreach ($popularTowns as $a): ?>
-            <a href="<?= htmlspecialchars(exportedServiceLocalUrl($SERVICE_SLUG, $a, 'service'), ENT_QUOTES, 'UTF-8') ?>"
+        <?php foreach ($coverageTowns as $a): ?>
+            <a href="<?= htmlspecialchars(icomplyServiceTownPageUrl($SERVICE_SLUG, $a), ENT_QUOTES, 'UTF-8') ?>"
                class="px-5 py-2.5 bg-white border rounded-full text-sm font-medium text-black hover:border-[#ff6b00] hover:shadow-sm transition">
                 <?= htmlspecialchars($serviceName . ' in ' . $a, ENT_QUOTES, 'UTF-8') ?>
-            </a>
-        <?php endforeach; ?>
-    </div>
-    <div class="mt-6 flex flex-wrap gap-2">
-        <?php foreach ($allAreas as $a):
-            if (in_array($a, $popularTowns, true)) continue;
-        ?>
-            <a href="<?= htmlspecialchars(exportedServiceLocalUrl($SERVICE_SLUG, $a, 'service'), ENT_QUOTES, 'UTF-8') ?>"
-               class="px-3 py-1.5 bg-zinc-50 border rounded-full text-xs text-zinc-700 hover:border-[#ff6b00]">
-                <?= htmlspecialchars($a, ENT_QUOTES, 'UTF-8') ?>
             </a>
         <?php endforeach; ?>
         <a href="<?= url('/pages/areas/index.php') ?>" class="px-3 py-1.5 text-xs font-semibold text-[#ff6b00]">Areas hub →</a>

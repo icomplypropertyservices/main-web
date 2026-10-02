@@ -263,6 +263,21 @@ function icomplyCollectKeywordRoutes(string $townMode): array
         }
     }
 
+    // Fire protection featured keywords × UK mainland towns (including cities
+    // that are not on the North West areas.json list). Other services are not
+    // given those towns.
+    if (function_exists('getFireProtectionFeaturedKeywordSlugs') && function_exists('icomplyMainlandFireTowns')) {
+        foreach (getFireProtectionFeaturedKeywordSlugs() as $slug) {
+            $slug = keywordSlug((string)$slug);
+            if ($slug === '') {
+                continue;
+            }
+            foreach (icomplyMainlandFireTowns() as $town) {
+                $routes[] = '/pages/keywords/' . $slug . '/' . areaSlug((string)$town);
+            }
+        }
+    }
+
     return $routes;
 }
 

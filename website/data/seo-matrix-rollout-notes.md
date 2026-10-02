@@ -25,6 +25,13 @@ Official rules for the electrical + gas keyword expansion.
 - HMO **package** landings stay out (`/pages/packages/hmo`, `/pages/packages/hmo-compliance`, and the PR #3 stubs).
 - Keyword hubs such as `hmo-electrical-certificate` or `hmo-gas-safety` are ordinary guides, not package pages.
 
+## Town coverage (Jack, Oct 2026)
+
+- **Fire protection** (fire-safety services except AOV / smoke control) is UK mainland: England, Wales and mainland Scotland. Not Northern Ireland, the Scottish Highlands and Islands, the Isle of Man or the Channel Islands.
+- Mainland fire pages are featured keyword × town (`/pages/keywords/{slug}/{town}`), with a finished town profile. They are listed in `sitemap.xml`.
+- **Every other service** publishes town coverage for **Manchester and Burnley only**. Do not add those services to the mainland list.
+- Do not mass-generate `/pages/{service}/{town}` doorway pages. The electrical and gas keyword matrix for the existing North West `areas.json` list stays in `dist/` and stays out of the sitemap except Manchester and Burnley.
+
 ## Out of scope
 
 - Legionella / CSS stays on its own PR.

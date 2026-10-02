@@ -74,7 +74,11 @@ $required = [
     '/pages/services/gas-systems</loc>',
     '/pages/keywords/rewire</loc>',
     '/pages/keywords/boiler</loc>',
-    '/pages/keywords/rewire/stockport</loc>',
+    '/pages/keywords/rewire/manchester</loc>',
+    '/pages/keywords/rewire/burnley</loc>',
+    '/pages/keywords/fire-alarm-installation/birmingham</loc>',
+    '/pages/keywords/fire-alarm-installation/edinburgh</loc>',
+    '/pages/keywords/fire-risk-assessment/cardiff</loc>',
     '/privacy</loc>',
     '/terms</loc>',
 ];
@@ -107,11 +111,24 @@ if (preg_match_all('#<loc>https://icomplypropertyservices\.co\.uk(/pages/keyword
         }
     }
 }
-if ($kwTownCount < 1 || $kwTownCount > 180) {
-    echo "FAIL: sitemap keyword×town count {$kwTownCount} (want featured-only 1–180)\n";
+if ($kwTownCount < 1 || $kwTownCount > 1200) {
+    echo "FAIL: sitemap keyword×town count {$kwTownCount} (want featured electrical/gas in Manchester and Burnley, plus fire mainland, 1–1200)\n";
     $fail++;
 } else {
     echo "OK: sitemap keyword×town featured-only={$kwTownCount}\n";
+}
+foreach ([
+    '/pages/keywords/rewire/birmingham</loc>',
+    '/pages/keywords/rewire/london</loc>',
+    '/pages/keywords/boiler/cardiff</loc>',
+    '/pages/keywords/boiler/edinburgh</loc>',
+    '/pages/fire-alarms/birmingham</loc>',
+    '/pages/electrical/manchester</loc>',
+] as $bannedCoverage) {
+    if (str_contains($xml, $bannedCoverage)) {
+        echo "FAIL: coverage rule broken by sitemap loc {$bannedCoverage}\n";
+        $fail++;
+    }
 }
 
 $count = substr_count($xml, '<url>');

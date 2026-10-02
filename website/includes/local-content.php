@@ -19,6 +19,24 @@ function pick_seeded(array $pool, int $seed, int $offset = 0) {
     return $pool[($seed + $offset) % count($pool)];
 }
 
+/** Finished profiles for mainland fire towns and incomplete North West neighbours. */
+function icomplyExtraTownProfiles(): array
+{
+    static $map = null;
+    if ($map !== null) {
+        return $map;
+    }
+    $map = [];
+    $data = function_exists('loadJsonData') ? loadJsonData('town-profiles', []) : [];
+    foreach ($data as $name => $row) {
+        if (!is_array($row)) {
+            continue;
+        }
+        $map[(string)$name] = $row;
+    }
+    return $map;
+}
+
 /** Approximate postcode districts + region flavour for NW towns */
 function area_profile(string $area): array {
     static $map = null;
@@ -69,6 +87,11 @@ function area_profile(string $area): array {
 
     if (isset($map[$area])) {
         return $map[$area] + ['name' => $area];
+    }
+
+    $extra = icomplyExtraTownProfiles();
+    if (isset($extra[$area])) {
+        return $extra[$area] + ['name' => $area];
     }
 
     // Generic but still unique-ish profile for remaining towns

@@ -183,7 +183,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local SEO guides</div>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">EICR, gas, fire, Legionella, asbestos &amp; more by town</h2>
                 <p class="mt-2 text-zinc-600 max-w-2xl">
-                    Every guide has a dedicated page for each North West area — e.g.
+                    North West guides stay on the area list. Fire protection also has UK mainland town pages. Other services linked here are not a mainland rollout — e.g.
                     <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/keywords/eicr-report/stockport.php') ?>">EICR report in Stockport</a>,
                     <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/keywords/eicr/manchester.php') ?>">EICR in Manchester</a>.
                 </p>
@@ -227,6 +227,21 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 </a>
             <?php endforeach; ?>
             <a href="<?= url('/pages/areas/index.php') ?>" class="px-4 py-2 border border-zinc-300 rounded-full text-sm font-semibold text-[#ff6b00]">All <?= count($areas) ?> areas →</a>
+        </div>
+        <div class="mt-10">
+            <h3 class="text-xl font-semibold tracking-tight text-black">Fire protection across UK mainland</h3>
+            <p class="mt-2 text-zinc-600 max-w-3xl">
+                Fire protection is scheduled for England, Wales and mainland Scotland.
+                Electrical, gas and other services on this site are Manchester and Burnley.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-2">
+                <?php foreach (icomplyMainlandFireTowns() as $fireTown): ?>
+                    <a href="<?= url('/pages/keywords/fire-alarm-installation/' . areaSlug($fireTown) . '.php') ?>"
+                       class="px-3 py-1.5 bg-white border rounded-full text-xs text-zinc-800 hover:border-[#ff6b00]">
+                        <?= htmlspecialchars('Fire alarms in ' . $fireTown, ENT_QUOTES, 'UTF-8') ?>
+                    </a>
+                <?php endforeach; ?>
+            </div>
         </div>
     </div>
 </section>

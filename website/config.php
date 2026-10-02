@@ -288,6 +288,151 @@ function areaSlug(string $area): string {
     return trim((string)$s, '-');
 }
 
+/**
+ * Jack, Oct 2026: fire protection is UK mainland. Every other service's
+ * published town coverage is Manchester and Burnley only.
+ *
+ * @return array{non_fire:list<string>,fire_mainland:list<string>}
+ */
+function icomplyCoverageTownData(): array
+{
+    $data = loadJsonData('coverage-towns', []);
+    $nonFire = [];
+    $fire = [];
+    foreach ($data['non_fire'] ?? [] as $town) {
+        $town = trim((string)$town);
+        if ($town !== '') {
+            $nonFire[] = $town;
+        }
+    }
+    foreach ($data['fire_mainland'] ?? [] as $town) {
+        $town = trim((string)$town);
+        if ($town !== '') {
+            $fire[] = $town;
+        }
+    }
+    if (!$nonFire) {
+        $nonFire = ['Manchester', 'Burnley'];
+    }
+    return ['non_fire' => $nonFire, 'fire_mainland' => $fire];
+}
+
+/** @return list<string> */
+function icomplyNonFireCoverageTowns(): array
+{
+    return icomplyCoverageTownData()['non_fire'];
+}
+
+/** England, Wales and mainland Scotland. Not NI, Highlands & Islands, IoM or Channel Islands. @return list<string> */
+function icomplyMainlandFireTowns(): array
+{
+    return icomplyCoverageTownData()['fire_mainland'];
+}
+
+/** @return list<string> */
+function icomplyFireProtectionServiceSlugs(): array
+{
+    $slugs = getServiceCategories()['fire-safety']['services'] ?? [];
+    $out = [];
+    foreach ($slugs as $slug) {
+        $slug = (string)$slug;
+        if ($slug === '' || $slug === 'aov-air-handling') {
+            continue;
+        }
+        $out[] = $slug;
+    }
+    return $out;
+}
+
+function icomplyIsFireProtectionService(string $slug): bool
+{
+    return in_array(areaSlug($slug), icomplyFireProtectionServiceSlugs(), true);
+}
+
+/**
+ * One real keyword per fire-protection service. Smoke & CO uses the existing
+ * smoke-alarm guide (there is no separate smoke-co keyword family).
+ *
+ * @return array<string,string> service slug => keyword slug
+ */
+function icomplyFireTownKeywordMap(): array
+{
+    return [
+        'fire-alarms' => 'fire-alarm-installation',
+        'smoke-co-alarms' => 'smoke-alarm-installation',
+        'emergency-lighting' => 'emergency-lighting-test',
+        'fire-risk-assessments' => 'fire-risk-assessment',
+        'fire-extinguishers' => 'bs-5306-extinguisher-service',
+        'fire-doors' => 'fire-door-certification',
+        'fire-stopping' => 'fire-stopping-certificate',
+        'dry-risers' => 'dry-riser-testing',
+        'sprinkler-systems' => 'sprinkler-system-inspection',
+        'kitchen-fire-suppression' => 'kitchen-fire-suppression-system',
+        'fire-compartmentation' => 'fire-compartmentation-survey',
+        'evacuation-alerts' => 'evacuation-alert-system',
+        'fire-signage' => 'fire-action-notices',
+        'fire-suppression' => 'clean-agent-suppression',
+    ];
+}
+
+function icomplyFireTownKeywordForService(string $serviceSlug): ?string
+{
+    $map = icomplyFireTownKeywordMap();
+    $slug = $map[$serviceSlug] ?? null;
+    if ($slug === null || !function_exists('getMajorKeywords')) {
+        return $slug;
+    }
+    $all = getMajorKeywords();
+    return isset($all[$slug]) ? $slug : null;
+}
+
+/** @return list<string> */
+function getFireProtectionFeaturedKeywordSlugs(): array
+{
+    $all = function_exists('getMajorKeywords') ? getMajorKeywords() : [];
+    $out = [];
+    foreach (icomplyFireTownKeywordMap() as $kw) {
+        if ($all && !isset($all[$kw])) {
+            continue;
+        }
+        $out[$kw] = true;
+    }
+    return array_keys($out);
+}
+
+/** Towns to publish for a service. Fire = mainland list. Everything else = Manchester + Burnley. @return list<string> */
+function icomplyTownsForService(string $serviceSlug): array
+{
+    if (icomplyIsFireProtectionService($serviceSlug)) {
+        return icomplyMainlandFireTowns();
+    }
+    return icomplyNonFireCoverageTowns();
+}
+
+function icomplyAreaIsOnDirectory(string $area): bool
+{
+    static $known = null;
+    if ($known === null) {
+        $known = [];
+        foreach (getAreas() as $name) {
+            $known[areaSlug((string)$name)] = true;
+        }
+    }
+    return isset($known[areaSlug($area)]);
+}
+
+/** Keyword×town URL for fire mainland pages; other services use the existing local URL helper. */
+function icomplyServiceTownPageUrl(string $serviceSlug, string $town): string
+{
+    if (icomplyIsFireProtectionService($serviceSlug)) {
+        $kw = icomplyFireTownKeywordForService($serviceSlug);
+        if ($kw !== null && $kw !== '') {
+            return url('/pages/keywords/' . $kw . '/' . areaSlug($town) . '.php');
+        }
+    }
+    return exportedServiceLocalUrl($serviceSlug, $town, 'service');
+}
+
 function keywordSlug($phrase): string {
     return areaSlug((string)$phrase);
 }
@@ -682,6 +827,19 @@ function areaFromSlug(string $slug): ?string {
     foreach (getAreas() as $area) {
         if (areaSlug($area) === $slug) {
             return $area;
+        }
+    }
+    if (function_exists('icomplyMainlandFireTowns')) {
+        foreach (icomplyMainlandFireTowns() as $area) {
+            if (areaSlug($area) === $slug) {
+                return $area;
+            }
+        }
+    }
+    $profiles = loadJsonData('town-profiles', []);
+    foreach (array_keys($profiles) as $area) {
+        if (areaSlug((string)$area) === $slug) {
+            return (string)$area;
         }
     }
     return null;

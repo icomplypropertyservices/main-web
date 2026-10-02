@@ -173,12 +173,40 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
+<!-- FIRE PROTECTION — UK MAINLAND -->
+<section class="max-w-7xl mx-auto px-6 pb-4">
+    <div class="mb-6">
+        <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Fire protection</div>
+        <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">UK mainland fire protection</h2>
+        <p class="mt-2 text-zinc-600 max-w-3xl">
+            Fire alarms, emergency lighting, fire risk assessments and the other fire-protection services have a town page for England, Wales and mainland Scotland.
+            Electrical, gas and every other service stay Manchester and Burnley.
+            Northern Ireland, the Scottish Highlands and Islands, the Isle of Man and the Channel Islands are not listed.
+        </p>
+    </div>
+    <div class="flex flex-wrap gap-2">
+        <?php
+        $fireKw = 'fire-alarm-installation';
+        $fireKwOk = isset(getMajorKeywords()[$fireKw]);
+        foreach (icomplyMainlandFireTowns() as $fireTown):
+            $fireHref = $fireKwOk
+                ? url('/pages/keywords/' . $fireKw . '/' . areaSlug($fireTown) . '.php')
+                : url('/pages/services/fire-alarms.php');
+        ?>
+            <a href="<?= htmlspecialchars($fireHref, ENT_QUOTES, 'UTF-8') ?>"
+               class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00] transition">
+                <?= htmlspecialchars('Fire alarms in ' . $fireTown, ENT_QUOTES, 'UTF-8') ?>
+            </a>
+        <?php endforeach; ?>
+    </div>
+</section>
+
 <!-- FULL DIRECTORY A–Z -->
 <section id="directory" class="max-w-7xl mx-auto px-6 py-16 md:py-20">
     <div class="mb-10">
         <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Directory</div>
         <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">All <?= count($areas) ?> towns</h2>
-        <p class="mt-2 text-zinc-600">A–Z list of every area hub. Each page links all <?= count($services) ?> services — fire safety, professional and construction — for that town.</p>
+        <p class="mt-2 text-zinc-600">A–Z list of North West area hubs. Fire protection also has the UK mainland town pages above. Other services on those mainland pages are not published.</p>
     </div>
 
     <!-- Letter jump -->

@@ -177,11 +177,12 @@ function icomplyMatrixChromeEnd(): string
         . '</div></footer>' . $popup . '</body></html>';
 }
 
-function icomplyMatrixAreaChips(string $hrefPrefix): string
+function icomplyMatrixAreaChips(string $hrefPrefix, ?array $areas = null): string
 {
     $s = icomplyMatrixShared();
+    $list = $areas ?? $s['areas'];
     $html = '<div class="chip-cloud">';
-    foreach ($s['areas'] as $a) {
+    foreach ($list as $a) {
         $href = $hrefPrefix . $a['slug'];
         $html .= '<a class="area-chip" href="' . icomplyMatrixH($href) . '">' . icomplyMatrixH($a['name']) . '</a>';
     }
@@ -240,6 +241,12 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         $desc = substr($desc, 0, 157) . '…';
     }
     $canonical = url('/pages/keywords/' . $keywordSlug . '/' . $areaSlugVal);
+    $isFire = function_exists('icomplyIsFireProtectionService') && icomplyIsFireProtectionService($svcSlug);
+    $featuredFire = function_exists('getFireProtectionFeaturedKeywordSlugs')
+        ? array_flip(getFireProtectionFeaturedKeywordSlugs())
+        : [];
+    $isFeaturedFire = $isFire && isset($featuredFire[$keywordSlug]);
+    $onDirectory = function_exists('icomplyAreaIsOnDirectory') && icomplyAreaIsOnDirectory($areaName);
 
     $html = icomplyMatrixChromeStart($title, $desc, $canonical);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
@@ -267,18 +274,44 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
     $html .= '<p class="text-sm">Service hub: <a class="text-[#ff6b00] font-semibold" href="'
         . icomplyMatrixH(url('/pages/services/' . $svcSlug)) . '">' . icomplyMatrixH($svcName) . '</a>'
         . ' · Keyword hub: <a class="text-[#ff6b00] font-semibold" href="'
-        . icomplyMatrixH(url('/pages/keywords/' . $keywordSlug)) . '">' . icomplyMatrixH($kwName) . '</a>'
-        . ' · Town hub: <a class="text-[#ff6b00] font-semibold" href="'
-        . icomplyMatrixH(url('/pages/areas/' . $areaSlugVal)) . '">' . icomplyMatrixH($areaName) . '</a></p>'
-        . '</article>';
+        . icomplyMatrixH(url('/pages/keywords/' . $keywordSlug)) . '">' . icomplyMatrixH($kwName) . '</a>';
+    if ($onDirectory) {
+        $html .= ' · Town hub: <a class="text-[#ff6b00] font-semibold" href="'
+            . icomplyMatrixH(url('/pages/areas/' . $areaSlugVal)) . '">' . icomplyMatrixH($areaName) . '</a>';
+    }
+    $html .= '</p>';
+    if ($isFeaturedFire && !$onDirectory) {
+        $html .= '<p class="text-zinc-700 leading-relaxed">This ' . icomplyMatrixH($areaName)
+            . ' page is fire protection only. Electrical, gas and other services are published for Manchester and Burnley, not for '
+            . icomplyMatrixH($areaName) . '. Visits are scheduled from Stockport. Price on application.</p>';
+    }
+    $html .= '</article>';
 
-    $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($kwName) . ' in every area we cover</h2>'
-        . '<p class="text-sm text-zinc-600 mb-4">' . count($s['areas']) . ' towns — full list, not a short subset.</p>'
-        . icomplyMatrixAreaChips(url('/pages/keywords/' . $keywordSlug . '/') )
+    $chipAreas = $s['areas'];
+    $chipHeading = icomplyMatrixH($kwName) . ' in every area we cover';
+    $chipNote = count($s['areas']) . ' towns — full list, not a short subset.';
+    if ($isFeaturedFire && function_exists('icomplyMainlandFireTowns')) {
+        $chipAreas = [];
+        foreach (icomplyMainlandFireTowns() as $townName) {
+            $townSlug = areaSlug((string)$townName);
+            if ($townSlug === '') {
+                continue;
+            }
+            $chipAreas[] = ['name' => (string)$townName, 'slug' => $townSlug];
+        }
+        $chipHeading = 'Fire protection towns across UK mainland';
+        $chipNote = 'England, Wales and mainland Scotland. Northern Ireland, the Scottish Highlands and Islands, the Isle of Man and the Channel Islands are not on this list.';
+    }
+    $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . $chipHeading . '</h2>'
+        . '<p class="text-sm text-zinc-600 mb-4">' . icomplyMatrixH($chipNote) . '</p>'
+        . icomplyMatrixAreaChips(url('/pages/keywords/' . $keywordSlug . '/'), $chipAreas)
         . '</section>';
 
+    $kwNote = $isFeaturedFire
+        ? 'Keyword hubs for this service. Mainland town pages are published for the featured fire-protection guides, not for every keyword.'
+        : 'Every topic under this service, each with the same full town list.';
     $html .= '<section><h2 class="text-2xl font-semibold mb-3">All ' . icomplyMatrixH($svcName) . ' keyword guides</h2>'
-        . '<p class="text-sm text-zinc-600 mb-4">Every topic under this service, each with the same full town list.</p>'
+        . '<p class="text-sm text-zinc-600 mb-4">' . icomplyMatrixH($kwNote) . '</p>'
         . icomplyMatrixKeywordChips($svcSlug)
         . '</section></main>';
 
