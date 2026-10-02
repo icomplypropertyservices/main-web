@@ -441,6 +441,10 @@ function keywordDisplayName($slugOrName): string {
 }
 
 function getMajorKeywords(): array {
+    static $cached = null;
+    if ($cached !== null) {
+        return $cached;
+    }
     $kw = loadJsonData('keywords', []);
     $normalized = [];
     foreach ($kw as $slug => $meta) {
@@ -974,6 +978,11 @@ if (is_file($mfrBoardFile)) {
 $elJobTypesFile = __DIR__ . '/includes/emergency-lighting-job-types.php';
 if (is_file($elJobTypesFile)) {
     require_once $elJobTypesFile;
+}
+
+$asbestosJobsFile = __DIR__ . '/includes/asbestos-jobs.php';
+if (is_file($asbestosJobsFile)) {
+    require_once $asbestosJobsFile;
 }
 
 // Back-compat globals used by some templates/includes

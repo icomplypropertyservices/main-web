@@ -7,7 +7,6 @@
  * Templates must only be controlled site files — never user-supplied content.
  */
 require_once __DIR__ . '/../config.php';
-require_once __DIR__ . '/seo.php';
 
 /**
  * Apply {{KEY}} replacements (values must already be safe for their context).
@@ -71,18 +70,6 @@ function comboTemplatePath(string $serviceSlug = ''): string {
  * Service × area landing page.
  */
 function renderServiceAreaPage(string $serviceSlug, string $area): void {
-    if ($serviceSlug === 'aov-air-handling') {
-        require_once SITE_ROOT . '/includes/aov.php';
-        require_once SITE_ROOT . '/includes/aov-place.php';
-        $slug = areaSlug($area);
-        if (aovPlace($slug)) {
-            header('Location: ' . url('/pages/aov/' . $slug), true, 301);
-        } else {
-            header('Location: ' . url('/pages/services/aov-air-handling.php'), true, 301);
-        }
-        icomplyRequestExit();
-        return;
-    }
     $services = getServices();
     if (!isset($services[$serviceSlug])) {
         http_response_code(404);
@@ -127,19 +114,9 @@ function renderKeywordPage(string $slug): void {
     $meta = $keywords[$slug];
     $services = getServices();
     $serviceSlug = $meta['service'] ?? 'electrical';
-    if ($serviceSlug === 'barriers') {
-        require_once SITE_ROOT . '/includes/barriers.php';
-        renderBarriersKeywordPage($slug, $meta);
-        return;
-    }
     $relatedSlug = keywordSlug($meta['related'] ?? $slug);
     $relatedName = $keywords[$relatedSlug]['name'] ?? keywordDisplayName($relatedSlug);
     $serviceName = $services[$serviceSlug] ?? keywordDisplayName($serviceSlug);
-
-    if (!empty($meta['el_master']) && function_exists('emergencyLightingRenderJobPage')) {
-        emergencyLightingRenderJobPage($slug, $meta, $serviceSlug, $serviceName, $relatedSlug, $relatedName);
-        return;
-    }
 
     $GLOBALS['services'] = $services;
     $GLOBALS['areas'] = getAreas();
@@ -160,21 +137,29 @@ function keywordTemplatePlaceholders(
     string $areaName = ''
 ): array {
     $name = $meta['name'] ?? keywordDisplayName($slug);
-    $intro = scrub_unverified_accreditation((string)($meta['intro'] ?? "{$name} from Icomply Property Services, booked from Stockport SK2."));
-    $body = scrub_unverified_accreditation((string)($meta['body'] ?? "We install, service and document {$name} as part of our {$serviceName} range for landlords, FM teams and commercial sites."));
-    $metaDesc = scrub_unverified_accreditation((string)($meta['meta_desc'] ?? "{$name} across Greater Manchester and the North West. Written quote after scope. Stockport SK2."));
+    $h1 = trim((string)($meta['h1'] ?? ''));
+    if ($h1 === '') {
+        $h1 = $name;
+    }
+    $seoTitle = trim((string)($meta['seo_title'] ?? ''));
+    if ($seoTitle === '') {
+        $seoTitle = $name . ' | North West';
+    }
+    $intro = (string)($meta['intro'] ?? "Professional {$name} from Icomply Property Services across the North West.");
+    $body = (string)($meta['body'] ?? "We install, service and certify {$name} as part of our {$serviceName} range for landlords, FM teams and commercial sites.");
+    $metaDesc = (string)($meta['meta_desc'] ?? "{$name} across Greater Manchester & the North West. Fixed-price quotes. Local engineers.");
     $seoKw = (string)($meta['seo_keywords'] ?? getSeoKeywords($serviceSlug, $areaName));
 
     $focusHtml = '';
     $points = $meta['focus_points'] ?? [
-        "Survey and written quote for {$name}",
-        'Engineers booked from Stockport SK2',
-        'Testing notes and compliance paperwork',
+        "Survey and fixed-price quote for {$name}",
+        'Local North West engineers from Stockport',
+        'Testing and compliance documentation',
         "Manufacturer-aware {$serviceName} support",
     ];
     foreach ($points as $p) {
         $focusHtml .= '<li class="flex gap-2 text-zinc-900 font-medium"><span class="text-[#ff6b00] font-bold">●</span><span>'
-            . htmlspecialchars(scrub_unverified_accreditation((string)$p), ENT_QUOTES, 'UTF-8') . '</span></li>';
+            . htmlspecialchars((string)$p, ENT_QUOTES, 'UTF-8') . '</span></li>';
     }
 
     $faqHtml = '';
@@ -189,20 +174,46 @@ function keywordTemplatePlaceholders(
         if (!is_array($faq) || count($faq) < 2) {
             continue;
         }
-        $q = htmlspecialchars(scrub_unverified_accreditation((string)$faq[0]), ENT_QUOTES, 'UTF-8');
-        $a = htmlspecialchars(scrub_unverified_accreditation((string)$faq[1]), ENT_QUOTES, 'UTF-8');
+        $q = htmlspecialchars((string)$faq[0], ENT_QUOTES, 'UTF-8');
+        $a = htmlspecialchars((string)$faq[1], ENT_QUOTES, 'UTF-8');
         $faqHtml .= '<details class="bg-white border-2 border-zinc-300 rounded-2xl p-5 group">'
             . '<summary class="font-bold text-[#061828] cursor-pointer list-none flex justify-between gap-3">'
             . $q . '<span class="text-[#ff6b00] text-xl leading-none">+</span></summary>'
             . '<p class="mt-3 text-sm text-zinc-900 leading-relaxed font-medium">' . $a . '</p></details>';
     }
 
-    $kwImg = keywordImageUrl($slug, $serviceSlug);
-    $svcImg = serviceImageUrl($serviceSlug);
+    $faqEntities = [];
+    foreach ($faqs as $faq) {
+        if (!is_array($faq) || count($faq) < 2) {
+            continue;
+        }
+        $faqEntities[] = [
+            '@type' => 'Question',
+            'name' => (string)$faq[0],
+            'acceptedAnswer' => [
+                '@type' => 'Answer',
+                'text' => (string)$faq[1],
+            ],
+        ];
+    }
+    $faqJson = $faqEntities === []
+        ? ''
+        : (string)json_encode([
+            '@context' => 'https://schema.org',
+            '@type' => 'FAQPage',
+            'mainEntity' => $faqEntities,
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+
+    $kwImg = url('/assets/images/keywords/' . $slug . '.jpg');
+    $svcImg = url('/assets/images/services/' . $serviceSlug . '.jpg');
+    // Prefer keyword image path; template onerror falls back to service
 
     return [
         'KEYWORD_NAME' => $name,
+        'KEYWORD_H1' => $h1,
+        'KEYWORD_SEO_TITLE' => $seoTitle,
         'KEYWORD_SLUG' => $slug,
+        'KEYWORD_FAQ_JSON' => $faqJson,
         'SERVICE_NAME' => $serviceName,
         'SERVICE_SLUG' => $serviceSlug,
         'RELATED_SLUG' => $relatedSlug,
@@ -231,12 +242,6 @@ function renderKeywordAreaPage(string $keywordSlug, string $area): void {
         icomplyRequestExit();
         return;
     }
-    if (($keywords[$keywordSlug]['service'] ?? '') === 'barriers') {
-        http_response_code(404);
-        echo 'Keyword not found';
-        icomplyRequestExit();
-        return;
-    }
     $areas = getAreas();
     // Accept display name or slug for area
     $areaName = $area;
@@ -258,11 +263,6 @@ function renderKeywordAreaPage(string $keywordSlug, string $area): void {
     $meta = $keywords[$keywordSlug];
     $services = getServices();
     $serviceSlug = $meta['service'] ?? 'electrical';
-    if ($serviceSlug === 'aov-air-handling') {
-        header('Location: ' . url('/pages/keywords/' . $keywordSlug), true, 301);
-        icomplyRequestExit();
-        return;
-    }
     $serviceName = $services[$serviceSlug] ?? keywordDisplayName($serviceSlug);
     $relatedSlug = keywordSlug($meta['related'] ?? $keywordSlug);
     $relatedName = $keywords[$relatedSlug]['name'] ?? keywordDisplayName($relatedSlug);
@@ -274,41 +274,11 @@ function renderKeywordAreaPage(string $keywordSlug, string $area): void {
     $ph['AREA'] = $areaName;
     $ph['AREA_SLUG'] = $areaSlugVal;
     $ph['AREA_URL'] = rawurlencode($areaName);
-    $profile = area_profile($areaName);
-    $districts = (string)$profile['districts'];
-    $stock = (string)$profile['stock'];
-    $localLead = $areaName . ' (' . $districts . '): ' . $stock . '. ';
-    $ph['KEYWORD_BODY'] = $localLead . $ph['KEYWORD_BODY'];
-    $ph['KEYWORD_INTRO'] = $localLead . $ph['KEYWORD_INTRO'];
-    $suffix = ' Usual buildings in ' . $districts . ': ' . $stock . '.';
-    $faqs = $meta['faq'] ?? [];
-    if (!$faqs) {
-        $faqs = [
-            ["What does {$ph['KEYWORD_NAME']} include?", 'Scope is confirmed in the quote, including paperwork where the visit produces it.'],
-            ["Do you cover {$areaName} for {$ph['KEYWORD_NAME']}?", 'Yes when the outward code is ' . $districts . ' and the diary has a slot.'],
-        ];
-    }
-    $faqHtml = '';
-    foreach ($faqs as $faq) {
-        if (!is_array($faq) || count($faq) < 2) {
-            continue;
-        }
-        $q = htmlspecialchars(scrub_unverified_accreditation((string)$faq[0]), ENT_QUOTES, 'UTF-8');
-        $a = htmlspecialchars(scrub_unverified_accreditation((string)$faq[1]) . $suffix, ENT_QUOTES, 'UTF-8');
-        $faqHtml .= '<details class="bg-white border-2 border-zinc-300 rounded-2xl p-5 group">'
-            . '<summary class="font-bold text-[#061828] cursor-pointer list-none flex justify-between gap-3">'
-            . $q . '<span class="text-[#ff6b00] text-xl leading-none">+</span></summary>'
-            . '<p class="mt-3 text-sm text-zinc-900 leading-relaxed font-medium">' . $a . '</p></details>';
-    }
-    foreach (seo_town_faqs($serviceSlug, $serviceName, $areaName) as $faq) {
-        $q = htmlspecialchars((string)$faq['q'], ENT_QUOTES, 'UTF-8');
-        $a = htmlspecialchars((string)$faq['a'], ENT_QUOTES, 'UTF-8');
-        $faqHtml .= '<details class="bg-white border-2 border-zinc-300 rounded-2xl p-5 group">'
-            . '<summary class="font-bold text-[#061828] cursor-pointer list-none flex justify-between gap-3">'
-            . $q . '<span class="text-[#ff6b00] text-xl leading-none">+</span></summary>'
-            . '<p class="mt-3 text-sm text-zinc-900 leading-relaxed font-medium">' . $a . '</p></details>';
-    }
-    $ph['KEYWORD_FAQ_HTML'] = $faqHtml;
+    // Localise meta for area pages
+    $ph['KEYWORD_META'] = $meta['meta_desc'] ?? $ph['KEYWORD_META'];
+    $ph['KEYWORD_BODY'] = rtrim($ph['KEYWORD_BODY'], '.')
+        . '. Our engineers regularly attend jobs in ' . $areaName
+        . ' and surrounding postcodes for ' . ($meta['name'] ?? $keywordSlug) . '.';
 
     // Pure-PHP template (no {{}} / eval)
     executeTemplateVars(SITE_ROOT . '/templates/keyword-area.php', $ph);
@@ -334,21 +304,11 @@ function renderAreaHubPage(string $area): void {
  * Top-level service hub (pages/services/{slug}.php).
  */
 function renderServiceHubPage(string $serviceSlug): void {
-    if ($serviceSlug === 'aov-air-handling') {
-        require_once SITE_ROOT . '/includes/aov.php';
-        aovRenderHub();
-        return;
-    }
     $services = getServices();
     if (!isset($services[$serviceSlug])) {
         http_response_code(404);
         echo 'Service not found';
         icomplyRequestExit();
-        return;
-    }
-    if ($serviceSlug === 'barriers') {
-        require_once SITE_ROOT . '/includes/barriers.php';
-        renderBarriersHubPage();
         return;
     }
     $GLOBALS['services'] = $services;
@@ -380,7 +340,7 @@ function renderManufacturerPage(string $mfrSlug): void {
     $GLOBALS['areas'] = getAreas();
 
     $primary = $entry['services'][0] ?? 'fire-alarms';
-    $fallbackImg = htmlspecialchars(serviceImageUrl($primary), ENT_QUOTES, 'UTF-8');
+    $fallbackImg = htmlspecialchars(url('/assets/images/services/' . $primary . '.jpg'), ENT_QUOTES, 'UTF-8');
 
     // Services chips
     $servicesHtml = '';
@@ -434,32 +394,5 @@ function renderManufacturerPage(string $mfrSlug): void {
         'MFR_PRODUCTS_HTML' => $productsHtml,
         'MFR_RELATED_HTML' => $relatedHtml,
         'SERVICE_NAME' => $services[$primary] ?? 'Compliance',
-    ]);
-}
-
-/**
- * Manufacturer × area. 404 when the brand is excluded or the town is outside its coverage.
- */
-function renderManufacturerAreaPage(string $mfrSlug, string $areaSlugVal): void {
-    $entry = getManufacturerBySlug($mfrSlug);
-    if (!$entry || (function_exists('manufacturerIsExcluded') && manufacturerIsExcluded($mfrSlug))) {
-        http_response_code(404);
-        echo 'Manufacturer not found';
-        icomplyRequestExit();
-        return;
-    }
-    $area = areaFromSlug($areaSlugVal);
-    if ($area === null || !manufacturerAreaAllowed($entry, $area)) {
-        http_response_code(404);
-        echo 'Area not found';
-        icomplyRequestExit();
-        return;
-    }
-    $GLOBALS['services'] = getServices();
-    $GLOBALS['areas'] = getAreas();
-    executeTemplateVars(SITE_ROOT . '/templates/manufacturer-area.php', [
-        'MFR_SLUG' => $entry['slug'],
-        'AREA' => $area,
-        'AREA_SLUG' => areaSlug($area),
     ]);
 }

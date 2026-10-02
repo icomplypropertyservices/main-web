@@ -27,7 +27,7 @@ jobs:
       - name: SEO matrix + sitemap hygiene
         env:
           SITE_URL: https://icomplypropertyservices.co.uk
-        run: php website/bin/check-seo-matrix.php && php website/bin/check-sitemap.php && php website/bin/check-town-uniqueness.php && php website/bin/test-electrical-gas-matrix.php
+        run: php website/bin/check-seo-matrix.php && php website/bin/check-sitemap.php && php website/bin/test-electrical-gas-matrix.php && php website/bin/check-asbestos-pages.php
 
       - name: Static export
         env:

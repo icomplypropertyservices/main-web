@@ -95,6 +95,7 @@ function resourceRelatedLinks(string $slug): array {
         ],
         'asbestos-survey' => [
             ['href' => url('/pages/services/asbestos-survey'), 'label' => 'Asbestos service'],
+            ['href' => url('/pages/asbestos-jobs'), 'label' => 'Survey and awareness jobs'],
             ['href' => url('/pages/asbestos-landlords'), 'label' => 'Landlord asbestos hub'],
             ['href' => url('/pages/keywords/asbestos-survey'), 'label' => 'Asbestos keyword hub'],
             ['href' => url('/pages/keywords/landlord-asbestos-survey'), 'label' => 'Landlord asbestos keyword'],
