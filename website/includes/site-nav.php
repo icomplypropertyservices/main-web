@@ -181,6 +181,7 @@ function icomplyNavPackageLinks(): array
         ['href' => url('/pages/landlords.php'), 'label' => 'Landlords'],
         ['href' => url('/pages/commercial.php'), 'label' => 'Commercial / FM'],
         ['href' => url('/pages/care-homes.php'), 'label' => 'Care homes'],
+        ['href' => url('/pages/nurse-call-systems'), 'label' => 'Nurse call systems'],
         ['href' => url('/pages/pricing.php'), 'label' => 'Pricing guide (POA)'],
         ['href' => url('/pages/maintenance.php'), 'label' => 'Maintenance contracts'],
         ['href' => url('/pages/emergency.php'), 'label' => 'Emergency call-out'],

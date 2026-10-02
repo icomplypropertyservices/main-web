@@ -375,7 +375,6 @@ $newByService = [
         ['Courtney Thorne Nurse Call', 'courtney-thorne'],
         ['Static Systems Nurse Call', 'nurse-call-system'],
         ['Intercall Nurse Call', 'nurse-call-system'],
-        ['Tunstall Nurse Call', 'nurse-call-system'],
         ['Aid Call System', 'nurse-call-system'],
         ['Nurse Call Pear Lead Replacement', 'nurse-call-maintenance'],
         ['Nurse Call Point Installation', 'nurse-call-system'],

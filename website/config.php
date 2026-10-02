@@ -336,6 +336,26 @@ function getMajorKeywords(): array {
         }
         $normalized[$slug] = $row;
     }
+    unset($normalized['tunstall-nurse-call']);
+    $priorityFile = __DIR__ . '/includes/nurse-call-priority.php';
+    if (is_file($priorityFile)) {
+        require_once $priorityFile;
+        if (function_exists('nurseCallPriorityKeywordOverlay')) {
+            foreach (nurseCallPriorityKeywordOverlay() as $slug => $meta) {
+                if (!is_array($meta)) {
+                    continue;
+                }
+                $slug = keywordSlug((string)$slug);
+                $base = $normalized[$slug] ?? [
+                    'name' => $meta['name'] ?? keywordDisplayName($slug),
+                    'service' => 'nurse-call',
+                    'related' => 'nurse-call-system',
+                ];
+                $normalized[$slug] = array_merge($base, $meta);
+                $normalized[$slug]['service'] = 'nurse-call';
+            }
+        }
+    }
     return $normalized;
 }
 
@@ -449,7 +469,9 @@ function getPopularKeywordSlugs(): array {
         'gas-safety-certificate', 'cp12', 'landlord-gas-safety', 'boiler', 'boiler-install',
         'boiler-repair', 'gas-safety', 'emergency-gas-engineer', 'landlord-gas',
         'cctv-installation', 'access-control-system', 'door-entry-system',
-        'nurse-call-system', 'landlord-compliance',
+        'nurse-call-system', 'care-home-nurse-call', 'hospital-nurse-call-system',
+        'warden-call', 'nurse-call-maintenance', 'wireless-nurse-call-system', 'htm-08-03',
+        'landlord-compliance',
         'legionella-risk-assessment', 'legionella-testing', 'water-hygiene-testing',
         'asbestos-survey', 'asbestos-testing', 'asbestos-management-survey',
     ];

@@ -220,6 +220,22 @@ $schema = [
     </div>
 </section>
 
+<?php if ($serviceSlug === 'nurse-call'): ?>
+<section class="bg-white border-b">
+    <div class="max-w-7xl mx-auto px-6 py-10">
+        <h2 class="text-2xl font-semibold tracking-tight text-black">Care home, ward, or warden scheme</h2>
+        <p class="mt-3 text-zinc-700 max-w-3xl leading-relaxed">A bedroom pear lead, a ward staff station and a sheltered-scheme speech unit are three quotes. The specification is on the nurse call hub. Manchester and Burnley have their own pages. Fire and lighting for the same home are on the care homes page. Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
+        <div class="mt-5 flex flex-wrap gap-2">
+            <a href="<?= url('/pages/nurse-call-systems') ?>" class="px-4 py-2 rounded-full bg-[#0B1F3A] text-white text-sm font-semibold hover:bg-[#ff6b00]">Nurse call hub</a>
+            <a href="<?= url('/pages/nurse-call-manchester') ?>" class="px-4 py-2 rounded-full border border-zinc-300 text-sm font-semibold hover:border-[#ff6b00]">Manchester</a>
+            <a href="<?= url('/pages/nurse-call-burnley') ?>" class="px-4 py-2 rounded-full border border-zinc-300 text-sm font-semibold hover:border-[#ff6b00]">Burnley</a>
+            <a href="<?= url('/pages/care-homes') ?>" class="px-4 py-2 rounded-full border border-zinc-300 text-sm font-semibold hover:border-[#ff6b00]">Care homes</a>
+            <a href="<?= url('/pages/keywords/warden-call') ?>" class="px-4 py-2 rounded-full border border-zinc-300 text-sm font-semibold hover:border-[#ff6b00]">Warden call</a>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
 <!-- TRUST -->
 <section class="bg-white border-b">
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

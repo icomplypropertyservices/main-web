@@ -70,7 +70,10 @@ function resourceRelatedLinks(string $slug): array {
         ],
         'care-home-fire-and-nurse-call' => [
             ['href' => url('/pages/care-homes'), 'label' => 'Care homes'],
+            ['href' => url('/pages/nurse-call-systems'), 'label' => 'Nurse call hub'],
             ['href' => url('/pages/services/nurse-call'), 'label' => 'Nurse call'],
+            ['href' => url('/pages/nurse-call-manchester'), 'label' => 'Manchester nurse call'],
+            ['href' => url('/pages/nurse-call-burnley'), 'label' => 'Burnley nurse call'],
         ],
         'electrical-safety-rented-homes' => [
             ['href' => url('/pages/electrical-safety-landlords'), 'label' => 'Electrical safety hub'],

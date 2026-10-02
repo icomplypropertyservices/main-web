@@ -598,6 +598,12 @@ function icomplyPrettyUrlRedirects(): string
 /news                    /pages/resources 301
 /news/                   /pages/resources 301
 
+# Retired nurse-call brand URL — do not recommend Tunstall
+/pages/keywords/tunstall-nurse-call     /pages/nurse-call-systems  301
+/pages/keywords/tunstall-nurse-call/    /pages/nurse-call-systems  301
+/pages/manufacturers/tunstall           /pages/nurse-call-systems  301
+/pages/manufacturers/tunstall/          /pages/nurse-call-systems  301
+
 # Shop / products — trade hubs (never 301 to packages)
 /shop                    /shop/index.html              200!
 /shop/                   /shop/index.html              200!

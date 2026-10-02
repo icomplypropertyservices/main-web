@@ -37,6 +37,8 @@ $legacyAliases = [
     '/cookie-policy' => '/privacy',
     '/blog' => '/pages/resources',
     '/news' => '/pages/resources',
+    '/pages/keywords/tunstall-nurse-call' => '/pages/nurse-call-systems',
+    '/pages/manufacturers/tunstall' => '/pages/nurse-call-systems',
 ];
 if (isset($legacyAliases[$aliasPath])) {
     header('Location: ' . $legacyAliases[$aliasPath], true, 301);

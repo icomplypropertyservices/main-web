@@ -158,6 +158,27 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
+<?php if (($SERVICE_SLUG ?? '') === 'nurse-call'): ?>
+<section class="bg-zinc-100">
+    <div class="max-w-7xl mx-auto px-6 py-14">
+        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">Manchester, Burnley, and the hub</h2>
+        <p class="mt-2 text-zinc-800 max-w-3xl">Nurse call is written up properly for Manchester and Burnley. Other North West addresses are quoted from the postcode. Care, ward and warden scopes are split on the hub. Fire and lighting for the same operator sit on the care homes page.</p>
+        <div class="mt-6 flex flex-wrap gap-2">
+            <?php
+            $nurseCallLocals = [
+                ['/pages/nurse-call-systems', 'Nurse call systems'],
+                ['/pages/nurse-call-manchester', 'Nurse call in Manchester'],
+                ['/pages/nurse-call-burnley', 'Nurse call in Burnley'],
+                ['/pages/care-homes', 'Care homes'],
+                ['/pages/services/nurse-call', 'Nurse call service'],
+            ];
+            foreach ($nurseCallLocals as [$href, $label]): ?>
+                <a href="<?= url($href) ?>" class="px-4 py-2.5 bg-[#061828] text-white rounded-full text-sm font-semibold hover:bg-[#ff6b00] transition shadow"><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?></a>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+<?php else: ?>
 <!-- AREAS — every town linked (keyword × area pages) -->
 <section class="bg-zinc-100">
     <div class="max-w-7xl mx-auto px-6 py-14">
@@ -183,12 +204,17 @@ require SITE_ROOT . '/includes/header.php';
         </div>
     </div>
 </section>
+<?php endif; ?>
 
 <!-- RELATED KEYWORDS same service -->
 <section class="bg-white border-y-2 border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-14">
         <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">Related <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> guides</h2>
+        <?php if (($SERVICE_SLUG ?? '') === 'nurse-call'): ?>
+        <p class="mt-2 text-zinc-800">More nurse-call topics. Manchester and Burnley are the local pages. Other North West addresses are quoted from the postcode.</p>
+        <?php else: ?>
         <p class="mt-2 text-zinc-800">More topics under the same service — each also has pages for every North West town.</p>
+        <?php endif; ?>
         <div class="mt-6">
             <?php
             require_once SITE_ROOT . '/includes/related.php';

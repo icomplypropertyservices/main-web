@@ -4,8 +4,8 @@
  * 3 images · 3 paragraphs · manufacturers · SEO
  */
 $pageTitle = '{{SERVICE_NAME}} in {{AREA}} | Icomply Property Services';
-$metaDesc = 'Nurse call system installation, wireless and wired solutions, servicing in {{AREA}}. Courtney Thorne, Tunstall, Ascom, Zettler, Ackermann, Rauland for care homes and hospitals.';
-$metaKeywords = 'nurse call system {{AREA}}, care home nurse call {{AREA}}, hospital call system {{AREA}}, wireless nurse call, HTM 08-03, Courtney Thorne, Tunstall, Ascom, Zettler, Ackermann, Rauland';
+$metaDesc = 'Nurse call system installation, wireless and wired solutions, servicing in {{AREA}}. Courtney Thorne, Ascom, Zettler, Ackermann, Rauland for care homes and hospitals.';
+$metaKeywords = 'nurse call system {{AREA}}, care home nurse call {{AREA}}, hospital call system {{AREA}}, wireless nurse call, HTM 08-03, Courtney Thorne, Ascom, Zettler, Ackermann, Rauland';
 $ogImage = url('/assets/images/services/nurse-call.jpg');
 require SITE_ROOT . '/includes/header.php'; 
 ?>
@@ -18,7 +18,7 @@ require SITE_ROOT . '/includes/header.php';
       "@type": "Service",
       "@id": "<?= url('/pages/{{SERVICE_SLUG}}/{{AREA_SLUG}}.php') ?>#service",
       "name": "{{SERVICE_NAME}} in {{AREA}}",
-      "description": "HTM 08-03 nurse call system installation and maintenance in {{AREA}}. Courtney Thorne, Tunstall, Ascom, Zettler, Ackermann and Rauland systems.",
+      "description": "HTM 08-03 nurse call system installation and maintenance in {{AREA}}. Courtney Thorne, Ascom, Zettler, Ackermann and Rauland systems.",
       "url": "<?= url('/pages/{{SERVICE_SLUG}}/{{AREA_SLUG}}.php') ?>",
       "image": "<?= url('/assets/images/services/nurse-call.jpg') ?>",
       "serviceType": "Nurse Call Systems",
@@ -83,7 +83,7 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 2 -->
     <p class="mt-4 text-lg text-black max-w-3xl leading-relaxed">
-        Whether you need a new wired or wireless nurse call system, a panel upgrade, periodic testing or emergency repairs, we support healthcare, residential care and commercial properties in {{AREA}}. All work uses manufacturer-approved equipment from Courtney Thorne, Tunstall, Ascom, Zettler, Ackermann and Rauland.
+        Whether you need a new wired or wireless nurse call system, a panel upgrade, periodic testing or emergency repairs, we support healthcare, residential care and commercial properties in {{AREA}}. All work uses manufacturer-approved equipment from Courtney Thorne, Ascom, Zettler, Ackermann and Rauland.
     </p>
 
     <!-- IMAGE 2 + keyword visuals -->
@@ -110,7 +110,7 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 3 -->
     <p class="mt-8 text-lg text-black max-w-3xl leading-relaxed">
-        Searching for a specific nurse call manufacturer or panel brand? We install, service and replace major systems from Courtney Thorne, Tunstall, Ascom, Zettler, Ackermann and Rauland. If you already have a nurse call panel on site in {{AREA}}, we can inspect, maintain or upgrade it and supply matching certificates for CQC and HTM compliance.
+        Searching for a specific nurse call manufacturer or panel brand? We install, service and replace major systems from Courtney Thorne, Ascom, Zettler, Ackermann and Rauland. If you already have a nurse call panel on site in {{AREA}}, we can inspect, maintain or upgrade it and supply matching certificates for CQC and HTM compliance.
     </p>
 
     <!-- Manufacturers -->
@@ -128,7 +128,7 @@ require SITE_ROOT . '/includes/header.php';
     <!-- IMAGE 3 -->
     <div class="mt-10">
         <img src="<?= url('/assets/images/keywords/hospital-nurse-call-system.jpg') ?>"
-             alt="Hospital nurse call manufacturer panels — Courtney Thorne, Tunstall, Ascom, Zettler, Ackermann, Rauland — Icomply {{AREA}}"
+             alt="Hospital nurse call manufacturer panels — Courtney Thorne, Ascom, Zettler, Ackermann, Rauland — Icomply {{AREA}}"
              width="1200" height="700"
              class="w-full h-64 md:h-80 object-cover rounded-3xl border"
              loading="lazy"
@@ -143,7 +143,7 @@ require SITE_ROOT . '/includes/header.php';
         </div>
         <div class="p-8 bg-white rounded-3xl border">
             <h3 class="font-semibold text-black mb-2">Maintenance &amp; Servicing</h3>
-            <p class="text-sm text-black">Contracts, reactive repairs and battery backups for Courtney Thorne, Tunstall, Ascom, Zettler, Ackermann and Rauland.</p>
+            <p class="text-sm text-black">Contracts, reactive repairs and battery backups for Courtney Thorne, Ascom, Zettler, Ackermann and Rauland.</p>
         </div>
         <div class="p-8 bg-white rounded-3xl border">
             <h3 class="font-semibold text-black mb-2">Testing &amp; Certification</h3>
@@ -160,7 +160,7 @@ require SITE_ROOT . '/includes/header.php';
             </details>
             <details class="bg-white border rounded-2xl p-5">
                 <summary class="font-medium cursor-pointer text-black">Which nurse call manufacturers do you support?</summary>
-                <p class="mt-2 text-black">We install and service Courtney Thorne, Tunstall, Ascom, Zettler, Ackermann and Rauland systems.</p>
+                <p class="mt-2 text-black">We install and service Courtney Thorne, Ascom, Zettler, Ackermann and Rauland systems.</p>
             </details>
             <details class="bg-white border rounded-2xl p-5">
                 <summary class="font-medium cursor-pointer text-black">What maintenance is required for nurse call systems?</summary>
