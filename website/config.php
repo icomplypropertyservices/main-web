@@ -467,7 +467,15 @@ function getPopularKeywordSlugs(): array {
 function getSeoKeywords(string $service, string $area = ''): string {
     $mfr = loadJsonData('manufacturers', []);
     $base = $mfr['seo_keywords'][$service] ?? $service;
-    return $area !== '' ? "{$base} {$area}, {$area} electrician, {$area} fire safety" : $base;
+    if ($area === '') {
+        return $base;
+    }
+    // Do not tack electrician / fire-safety synonyms onto fire, AOV, barrier or nurse-call pages.
+    $focus = ['fire-alarms', 'aov-air-handling', 'nurse-call', 'access-control', 'fire-stopping', 'fire-compartmentation'];
+    if (in_array($service, $focus, true)) {
+        return $base;
+    }
+    return "{$base} {$area}, {$area} electrician, {$area} fire safety";
 }
 
 /** Canonical service blurbs / standards (data/service-meta.json) */

@@ -156,11 +156,8 @@ function keywordTemplatePlaceholders(
 
     $faqHtml = '';
     $faqs = $meta['faq'] ?? [];
-    if (!$faqs) {
-        $faqs = [
-            ["What does {$name} include?", "Scope is confirmed in your quote — typically labour, agreed materials, and certification where required."],
-            ["Do you cover the North West for {$name}?", 'Yes — 150+ towns from our Stockport base including Manchester, Bolton, Liverpool and Preston.'],
-        ];
+    if (!is_array($faqs)) {
+        $faqs = [];
     }
     foreach ($faqs as $faq) {
         if (!is_array($faq) || count($faq) < 2) {
@@ -241,11 +238,19 @@ function renderKeywordAreaPage(string $keywordSlug, string $area): void {
     $ph['AREA'] = $areaName;
     $ph['AREA_SLUG'] = $areaSlugVal;
     $ph['AREA_URL'] = rawurlencode($areaName);
-    // Localise meta for area pages
     $ph['KEYWORD_META'] = $meta['meta_desc'] ?? $ph['KEYWORD_META'];
-    $ph['KEYWORD_BODY'] = rtrim($ph['KEYWORD_BODY'], '.')
-        . '. Our engineers regularly attend jobs in ' . $areaName
-        . ' and surrounding postcodes for ' . ($meta['name'] ?? $keywordSlug) . '.';
+    $kwName = $meta['name'] ?? keywordDisplayName($keywordSlug);
+    if (!function_exists('focus_town_lead')) {
+        require_once SITE_ROOT . '/includes/local-content.php';
+    }
+    if (is_antislop_focus_service($serviceSlug)) {
+        $ph['KEYWORD_INTRO'] = focus_town_lead($serviceSlug, $serviceName, $areaName, $kwName);
+        $ph['KEYWORD_BODY'] = focus_town_detail($serviceSlug, $serviceName, $areaName, $kwName);
+    } else {
+        $ph['KEYWORD_BODY'] = rtrim($ph['KEYWORD_BODY'], '.')
+            . '. Our engineers regularly attend jobs in ' . $areaName
+            . ' and surrounding postcodes for ' . $kwName . '.';
+    }
 
     // Pure-PHP template (no {{}} / eval)
     executeTemplateVars(SITE_ROOT . '/templates/keyword-area.php', $ph);

@@ -154,39 +154,14 @@ foreach ($keywords as $slug => &$meta) {
         ];
     }
 
-    if (empty($meta['faq']) || !is_array($meta['faq'])) {
-        $meta['faq'] = [
-            [
-                'What is included in ' . $name . '?',
-                'Scope depends on the site, but typically covers assessment, labour, materials agreed in the quote, commissioning where required, and ' . $c['docs'] . ' when certification is part of the job.',
-            ],
-            [
-                'Do you offer ' . $name . ' near me in the North West?',
-                'Yes. From Stockport we cover 150+ towns including Manchester, Bolton, Liverpool, Preston and surrounding areas, with local engineers for ' . $name . '.',
-            ],
-            [
-                'How quickly can you attend for ' . $name . '?',
-                'We aim for same-week appointments where capacity and site access allow, and we prioritise reactive faults when engineers are available.',
-            ],
-            [
-                'How do I get a quote for ' . $name . '?',
-                'Use the form on this page, call, or WhatsApp with postcode, property type and any brand already on site. We aim to reply within 2 hours on business days.',
-            ],
-        ];
+    // Leave FAQ empty rather than stamp the same four questions onto every keyword.
+    if (!isset($meta['faq']) || !is_array($meta['faq'])) {
+        $meta['faq'] = [];
     }
 
     // SEO keywords string unique to keyword
     if (empty($meta['seo_keywords'])) {
-        $meta['seo_keywords'] = implode(', ', [
-            $name,
-            $name . ' North West',
-            $name . ' Manchester',
-            $name . ' Stockport',
-            $name . ' installation',
-            $name . ' cost',
-            $svcName,
-            'property compliance',
-        ]);
+        $meta['seo_keywords'] = $name . ', ' . $svcName;
     }
 
     $updated++;

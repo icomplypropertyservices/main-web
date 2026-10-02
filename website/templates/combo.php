@@ -24,6 +24,10 @@ $areaSlugVal = $AREA_SLUG;
 // Use getServiceBlurb / getServiceStandards (config.php ← data/service-meta.json). Do not hardcode $serviceBlurbs.
 $blurb = getServiceBlurb($serviceSlug);
 $standards = getServiceStandards($serviceSlug);
+if (!function_exists('is_antislop_focus_service')) {
+    require_once SITE_ROOT . '/includes/local-content.php';
+}
+$focusTown = is_antislop_focus_service($serviceSlug);
 $svcCopy = function_exists('waterAsbestosServiceCopy') ? waterAsbestosServiceCopy($serviceSlug) : null;
 $areaExtra = function_exists('waterAsbestosAreaIntro') ? waterAsbestosAreaIntro($serviceSlug, $areaName) : '';
 
@@ -178,8 +182,12 @@ $schema = [
                     <span class="text-[#ff6b00]"><?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></span>
                 </h1>
                 <p class="mt-6 text-lg text-white/80 max-w-xl">
+                    <?php if ($focusTown): ?>
+                    <?= htmlspecialchars(focus_town_lead($serviceSlug, $serviceName, $areaName), ENT_QUOTES, 'UTF-8') ?>
+                    <?php else: ?>
                     <?= htmlspecialchars($blurb, ENT_QUOTES, 'UTF-8') ?>
                     Local engineers covering <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> and nearby postcodes.
+                    <?php endif; ?>
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get free quote</a>
@@ -252,6 +260,9 @@ $schema = [
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars((string)$para, ENT_QUOTES, 'UTF-8') ?></p>
                 <?php endforeach; ?>
             <?php else: ?>
+            <?php if ($focusTown): ?>
+            <p class="mt-5 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars(focus_town_detail($serviceSlug, $serviceName, $areaName), ENT_QUOTES, 'UTF-8') ?></p>
+            <?php else: ?>
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
                 Icomply Property Services provides complete <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong>
                 design, installation, commissioning, maintenance and certification across
@@ -269,6 +280,7 @@ $schema = [
                 If you already have a panel on site in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>,
                 we can inspect, maintain or upgrade it and supply matching certificates.
             </p>
+            <?php endif; ?>
             <?php endif; ?>
         </div>
         <div class="lg:col-span-2 space-y-4">

@@ -604,11 +604,11 @@ function buildUniqueContent(string $name, string $serviceSlug, array $copy, int 
     $verb = $copy['verb'] ?? 'deliver';
 
     $openers = [
-        "Looking for expert {$name} across Greater Manchester and the North West?",
-        "Need reliable {$name} from a Stockport-based team with fixed-price quotes?",
-        "Searching for professional {$name} with clear scope and documentation?",
-        "Planning {$name} for a home, rental portfolio or commercial site?",
-        "Want {$name} delivered to current UK standards with local engineers?",
+        "{$name} is scoped to the building in front of us, then written up.",
+        "{$name}: we look at what is already fitted before naming a price.",
+        "For {$name}, the useful detail is the panel, the access and the postcode.",
+        "{$name} starts with a survey. The quote follows that, not a rate card.",
+        "Tell us the {$name} kit already on site. The visit is planned from that.",
     ];
     $middles = [
         "Icomply Property Services {$verb} {$name} as part of our {$svc} offering, working to {$std}.",
@@ -626,21 +626,17 @@ function buildUniqueContent(string $name, string $serviceSlug, array $copy, int 
     $m = $middles[($salt + 1) % count($middles)];
     $c = $closers[($salt + 2) % count($closers)];
     $intro = "{$o} {$m}";
-    $body = "{$m} {$c} Typical jobs include survey, agreed works, quality checks and paperwork suitable for landlords, insurers and facilities managers. Local engineers attend from Stockport with North West coverage including Manchester, Bolton, Liverpool, Preston, Chester and surrounding towns.";
+    $body = "{$m} {$c}";
     $meta = "{$name} across the North West. {$svc} from Icomply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.";
-    $seo = strtolower("{$name}, {$name} North West, {$name} Manchester, {$name} Stockport, {$svc}, property services Greater Manchester");
+    $seo = $name . ', ' . $svc;
     $focus = [
         "Survey and fixed-price quote for {$name}",
         "Local North West engineers from Stockport (SK2)",
         "Documentation aligned to {$std}",
         "Suitable for {$who}",
     ];
-    $faq = [
-        ["What does {$name} include?", "Scope is confirmed after survey — typically labour, agreed materials and documentation for {$name} under our {$svc} service."],
-        ["Do you cover my town for {$name}?", 'Yes — we cover 150+ towns across Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria from Stockport.'],
-        ["How quickly can you start {$name}?", 'Many jobs can be surveyed same week depending on capacity and access. Emergency and priority works are prioritised where possible.'],
-        ["Do you provide certificates for {$name}?", "Where the work type requires certification or a formal report, we issue the relevant paperwork with your job pack."],
-    ];
+    // No shared four-question block. Town pages carry the local detail; the hub stays specific or has no FAQ.
+    $faq = [];
     return compact('intro', 'body', 'meta', 'seo', 'focus', 'faq');
 }
 

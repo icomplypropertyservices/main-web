@@ -65,6 +65,17 @@ function area_profile(string $area): array {
             'Birkenhead' => ['districts' => 'CH41–CH42', 'region' => 'Wirral', 'stock' => 'terraced housing, docks and retail', 'travel' => 'typically 55–75 minutes from Stockport', 'focus' => 'residential and commercial'],
             'Wallasey' => ['districts' => 'CH44–CH45', 'region' => 'Wirral', 'stock' => 'coastal housing and local retail', 'travel' => 'typically 60–80 minutes from Stockport', 'focus' => 'residential portfolios'],
         ];
+        $extraFile = dirname(__DIR__) . '/data/area-local.json';
+        if (is_file($extraFile)) {
+            $extra = json_decode((string)file_get_contents($extraFile), true);
+            if (is_array($extra)) {
+                foreach ($extra as $town => $profile) {
+                    if (is_string($town) && is_array($profile) && !isset($map[$town])) {
+                        $map[$town] = $profile;
+                    }
+                }
+            }
+        }
     }
 
     if (isset($map[$area])) {
@@ -108,10 +119,10 @@ function service_local_angle(string $slug, string $serviceName, string $area): s
             "EV charger installs and rewires are increasingly requested on {$area} residential and commercial stock.",
         ],
         'fire-alarms' => [
-            "{$area} multi-let and commercial buildings often need BS 5839 category reviews after fire risk assessments.",
-            "Addressable upgrades are common in {$area} blocks where conventional systems no longer match the fire strategy.",
-            "Landlords and RTMs in {$area} book six-monthly servicing with full certificate packs for insurers.",
-            "Cause-and-effect testing is critical for {$area} sites with access control and door release interfaces.",
+            'Many panels still report by zone. That holds until the building is split and one zone covers more than one tenant.',
+            'The six-monthly visit is the engineer service. The weekly test stays with the site.',
+            'Where doors release on the alarm, that release is part of the test. A lamp on the panel is not enough.',
+            'Text on the panel that names the room saves more time than an extra detector in the wrong place.',
         ],
         'emergency-lighting' => [
             "Escape-route lighting failures are a frequent audit finding in {$area} commercial and HMO stock.",
@@ -120,16 +131,16 @@ function service_local_angle(string $slug, string $serviceName, string $area): s
             "Industrial and warehouse sites around {$area} often need IP-rated emergency fittings.",
         ],
         'aov-air-handling' => [
-            "Smoke ventilation and AOV reliability is vital for multi-storey residential stock in and around {$area}.",
-            "{$area} apartment blocks often need actuator, panel and interface health checks against the fire strategy.",
-            "Air handling and smoke shaft maintenance supports safe means of escape in taller {$area} buildings.",
-            "We coordinate AOV works with fire alarm cause-and-effect on {$area} mixed-use sites.",
+            'Stair vents fail the annual test when a chain actuator stalls or a rain sensor has been bridged out.',
+            'On an apartment core the vent, the panel and the fire-alarm interface have to be tested together.',
+            'A roof vent and a basement extract fan are different jobs, and they are priced separately.',
+            'A smoke-control price needs the shaft access and the panel location. A lobby photo is not enough.',
         ],
         'nurse-call' => [
-            "Care homes and supported living around {$area} need dependable nurse call with clear call logging.",
-            "HTM-aligned maintenance plans help {$area} care providers evidence system reliability.",
-            "Wireless expansions are useful where {$area} buildings cannot take new hard wiring easily.",
-            "Handset and panel upgrades restore coverage room-by-room without full rip-outs in {$area}.",
+            'Care buildings here mix converted houses and purpose-built wings, so cable routes and wireless coverage change room by room.',
+            'The fault is often a pear lead, a flat battery, or a call point reset without a log entry.',
+            'We work to HTM 08-03. We do not print a CQC badge on the paperwork.',
+            'Bathroom pull cords and staff-attack buttons are the items a generic nurse-call quote usually misses.',
         ],
         'gas-systems' => [
             "Landlord gas safety certificates remain a core compliance duty for rented stock in {$area}.",
@@ -150,10 +161,22 @@ function service_local_angle(string $slug, string $serviceName, string $area): s
             "Multi-building {$area} estates benefit from unified viewing for facilities teams.",
         ],
         'access-control' => [
-            "Card/fob access with audit trails suits multi-tenant offices and blocks across {$area}.",
-            "Time zones and user groups help {$area} landlords control cleaners, contractors and tenants.",
-            "Fire door release strategies must stay safe while securing {$area} entry points.",
-            "Biometric and mobile credentials are increasingly specified on newer {$area} fit-outs.",
+            'Car-park barriers and door readers are often two systems that should drop on a fire alarm and currently do not.',
+            'On older Paxton or Salto sites the job is the fob database: staff have left and the tokens were never deleted.',
+            'A vehicle barrier needs a working safety edge and loop. We will not hang a reader on an arm that fails that test.',
+            'Blocks often want one fob for the gate and the stair door. That only works if both controllers share the credential.',
+        ],
+        'fire-stopping' => [
+            'Risers opened for broadband and never closed are where we find missing cavity barriers and pipe collars.',
+            'The seal matches the hole that is there — cable basket, plastic pipe, or a linear gap — and we photograph it.',
+            'An open-state cavity barrier is a product for a ventilated façade, not a tube of mastic.',
+            'A price based only on the cupboard you can open will miss the riser. We say that before we quote.',
+        ],
+        'fire-compartmentation' => [
+            'Compartment lines usually fail above the suspended ceiling and inside the service riser.',
+            'A drawing that shows a fire barrier still has to be checked against holes cut for later services.',
+            'The remedial job is the barrier, the stopping around it, and a note of what we could not see.',
+            'We do not certificate a floor we have not opened. Hidden voids stay listed as not inspected.',
         ],
         'door-entry' => [
             "Video door entry upgrades are frequent on {$area} apartment risers and older audio panels.",
@@ -184,7 +207,56 @@ function service_local_angle(string $slug, string $serviceName, string $area): s
     return pick_seeded($pool, $seed, 0);
 }
 
+function is_antislop_focus_service(string $slug): bool {
+    return in_array($slug, [
+        'fire-alarms',
+        'aov-air-handling',
+        'nurse-call',
+        'access-control',
+        'fire-stopping',
+        'fire-compartmentation',
+    ], true);
+}
+
+/**
+ * Town lead for fire, AOV, barriers and nurse call.
+ * Sentence shape changes with the town so pages are not one template with the name swapped.
+ */
+function focus_town_lead(string $slug, string $serviceName, string $area, string $topic = ''): string {
+    $p = area_profile($area);
+    $seed = area_seed($area, $slug . '|lead|' . $topic);
+    $angle = service_local_angle($slug, $serviceName, $area);
+    $subject = $topic !== '' ? $topic : $serviceName;
+    $d = $p['districts'];
+    $frames = [
+        "{$area} ({$d}) is mostly {$p['stock']}. {$angle}",
+        "On {$area} jobs the postcodes are {$d}. {$angle} Travel is {$p['travel']}.",
+        "{$subject} in {$area} is scoped to the building. Stock: {$p['stock']}. Usual reason for the call: {$p['focus']}.",
+        "{$area} sits in {$p['region']} ({$d}). {$angle}",
+        "Getting to {$area}: {$p['travel']}. Buildings: {$p['stock']}. {$angle}",
+        "People ask for {$subject} in {$area} ({$d}) when they are dealing with {$p['focus']}. {$angle}",
+    ];
+    return $frames[$seed % count($frames)];
+}
+
+function focus_town_detail(string $slug, string $serviceName, string $area, string $topic = ''): string {
+    $p = area_profile($area);
+    $seed = area_seed($area, $slug . '|detail|' . $topic);
+    $subject = $topic !== '' ? $topic : $serviceName;
+    $lines = [
+        "{$subject} in {$area} is priced after we see access and what is already fitted. There is no fee on this page.",
+        "Send the {$area} postcode ({$p['districts']}), the floor count, and a photo of the panel or the product. That is enough to say if we can attend.",
+        "Travel is {$p['travel']}. If the {$area} visit needs a second person for a shaft, a riser or a barrier arm, we say so before the day.",
+        "The note we leave in {$area} is the test result and any defect, written so a managing agent can file it.",
+        "Say which street in {$area} and whether the building is occupied. The mix — {$p['stock']} — changes how we reach the panel.",
+    ];
+    return $lines[$seed % count($lines)];
+}
+
 function seo_unique_intro(string $serviceName, string $slug, string $area): string {
+    if (is_antislop_focus_service($slug)) {
+        return focus_town_lead($slug, $serviceName, $area);
+    }
     $p = area_profile($area);
     $angle = service_local_angle($slug, $serviceName, $area);
     $standards = implode(', ', array_slice(service_standards($slug), 0, 3));
@@ -242,6 +314,10 @@ function seo_unique_why(string $serviceName, string $area): array {
 }
 
 function seo_extra_faqs(string $slug, string $serviceName, string $area): array {
+    // Fire, AOV, barriers and nurse call do not share one FAQ block across towns.
+    if (is_antislop_focus_service($slug)) {
+        return [];
+    }
     $p = area_profile($area);
     $seed = area_seed($area, $slug . 'faq');
     $extras = [

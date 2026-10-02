@@ -85,6 +85,10 @@ $h = static function ($s): string {
                 <p class="mt-4 text-lg text-zinc-900 leading-relaxed">
                     Serving <strong class="text-[#061828]"><?= $h($AREA) ?></strong>: <?= $h($KEYWORD_BODY) ?>
                 </p>
+                <?php
+                $focusKwTown = in_array($serviceSlug, ['fire-alarms', 'aov-air-handling', 'nurse-call', 'access-control', 'fire-stopping', 'fire-compartmentation'], true);
+                ?>
+                <?php if (!$focusKwTown): ?>
                 <p class="mt-4 text-base text-zinc-900 leading-relaxed">
                     Searching for <strong><?= $h($KEYWORD_NAME) ?> near <?= $h($AREA) ?></strong>? Book Icomply for install, service, testing or certification.
                     Also see
@@ -92,6 +96,14 @@ $h = static function ($s): string {
                     and
                     <a class="font-bold text-[#ff6b00] hover:underline" href="<?= url('/pages/' . rawurlencode($SERVICE_SLUG) . '/' . rawurlencode($AREA_SLUG) . '.php') ?>"><?= $h($SERVICE_NAME) ?> in <?= $h($AREA) ?></a>.
                 </p>
+                <?php else: ?>
+                <p class="mt-4 text-base text-zinc-900 leading-relaxed">
+                    Related:
+                    <a class="font-bold text-[#ff6b00] hover:underline" href="<?= url('/pages/keywords/' . rawurlencode($RELATED_SLUG) . '/' . rawurlencode($AREA_SLUG) . '.php') ?>"><?= $h($RELATED_NAME) ?> in <?= $h($AREA) ?></a>
+                    and
+                    <a class="font-bold text-[#ff6b00] hover:underline" href="<?= url('/pages/' . rawurlencode($SERVICE_SLUG) . '/' . rawurlencode($AREA_SLUG) . '.php') ?>"><?= $h($SERVICE_NAME) ?> in <?= $h($AREA) ?></a>.
+                </p>
+                <?php endif; ?>
                 <ul class="mt-6 space-y-3"><?= $KEYWORD_FOCUS_HTML ?></ul>
             </div>
             <div class="mt-6 grid sm:grid-cols-3 gap-4">

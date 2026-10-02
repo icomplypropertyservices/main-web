@@ -1,0 +1,898 @@
+{
+  "Atherton": {
+    "districts": "WN7",
+    "region": "Wigan borough",
+    "stock": "mill terraces and small works off the A577",
+    "travel": "about 50 minutes from Stockport",
+    "focus": "landlord terraces and small factories"
+  },
+  "Tyldesley": {
+    "districts": "M29",
+    "region": "Wigan borough",
+    "stock": "terraces along the East Lancs Road and a few newer estates",
+    "travel": "about 45 minutes from Stockport",
+    "focus": "rented houses and small commercial units"
+  },
+  "Horwich": {
+    "districts": "BL6",
+    "region": "Bolton",
+    "stock": "Rivington-edge housing and the Middlebrook retail and office park",
+    "travel": "about 40 minutes from Stockport",
+    "focus": "offices at Middlebrook and suburban blocks"
+  },
+  "Westhoughton": {
+    "districts": "BL5",
+    "region": "Bolton",
+    "stock": "town terraces plus the Wingates industrial estate",
+    "travel": "about 40 minutes from Stockport",
+    "focus": "industrial units and rented terraces"
+  },
+  "Farnworth": {
+    "districts": "BL4",
+    "region": "Bolton",
+    "stock": "dense terraces and older mill buildings close to the town centre",
+    "travel": "about 35 minutes from Stockport",
+    "focus": "multi-let terraces and small shops"
+  },
+  "Kearsley": {
+    "districts": "BL4",
+    "region": "Bolton",
+    "stock": "stone terraces climbing off the A666",
+    "travel": "about 35 minutes from Stockport",
+    "focus": "landlord houses"
+  },
+  "Little Lever": {
+    "districts": "BL3",
+    "region": "Bolton",
+    "stock": "village terraces and a short high street",
+    "travel": "about 35 minutes from Stockport",
+    "focus": "small residential portfolios"
+  },
+  "Radcliffe": {
+    "districts": "M26",
+    "region": "Bury",
+    "stock": "mill conversions and town-centre flats around the canal",
+    "travel": "about 40 minutes from Stockport",
+    "focus": "converted mills and local shops"
+  },
+  "Whitefield": {
+    "districts": "M45",
+    "region": "Bury",
+    "stock": "suburban semis and the Park 66 retail strip",
+    "travel": "about 35 minutes from Stockport",
+    "focus": "suburban homes and retail units"
+  },
+  "Prestwich": {
+    "districts": "M25",
+    "region": "Bury",
+    "stock": "period houses, apartment blocks and the Longfield local centre",
+    "travel": "about 30 minutes from Stockport",
+    "focus": "flats and high-street units"
+  },
+  "Swinton": {
+    "districts": "M27",
+    "region": "Salford",
+    "stock": "civic buildings, shopping centre units and surrounding estates",
+    "travel": "about 30 minutes from Stockport",
+    "focus": "council and private flats"
+  },
+  "Walkden": {
+    "districts": "M28",
+    "region": "Salford",
+    "stock": "Ellesmere shopping centre and the housing around the A575",
+    "travel": "about 35 minutes from Stockport",
+    "focus": "retail units and estate housing"
+  },
+  "Worsley": {
+    "districts": "M28",
+    "region": "Salford",
+    "stock": "village housing, the Court House area and newer apartments by the motorway",
+    "travel": "about 30 minutes from Stockport",
+    "focus": "apartments and small offices"
+  },
+  "Pendlebury": {
+    "districts": "M27",
+    "region": "Salford",
+    "stock": "terraces and light industry along Bolton Road",
+    "travel": "about 30 minutes from Stockport",
+    "focus": "workshops and rented houses"
+  },
+  "Irlam": {
+    "districts": "M44",
+    "region": "Salford",
+    "stock": "new-build estates and the Northbank industrial sites",
+    "travel": "about 35 minutes from Stockport",
+    "focus": "new housing and distribution units"
+  },
+  "Cadishead": {
+    "districts": "M44",
+    "region": "Salford",
+    "stock": "older housing beside the ship canal",
+    "travel": "about 40 minutes from Stockport",
+    "focus": "rented houses"
+  },
+  "Stretford": {
+    "districts": "M32",
+    "region": "Trafford",
+    "stock": "Mall retail, the office blocks on Trafford Road and nearby flats",
+    "travel": "about 25 minutes from Stockport",
+    "focus": "retail and apartment blocks"
+  },
+  "Urmston": {
+    "districts": "M41",
+    "region": "Trafford",
+    "stock": "town-centre shops and suburban streets off the A56",
+    "travel": "about 30 minutes from Stockport",
+    "focus": "shops and family housing"
+  },
+  "Cheadle": {
+    "districts": "SK8",
+    "region": "Stockport",
+    "stock": "village shops and housing a few minutes from the SK2 workshop",
+    "travel": "local, under 15 minutes from SK2",
+    "focus": "local landlords and village retail"
+  },
+  "Cheadle Hulme": {
+    "districts": "SK8",
+    "region": "Stockport",
+    "stock": "suburban houses and the station-end shops",
+    "travel": "local, under 15 minutes from SK2",
+    "focus": "suburban houses and small offices"
+  },
+  "Bramhall": {
+    "districts": "SK7",
+    "region": "Stockport",
+    "stock": "larger houses and the village centre shops",
+    "travel": "about 15 minutes from SK2",
+    "focus": "larger homes and village retail"
+  },
+  "Hazel Grove": {
+    "districts": "SK7",
+    "region": "Stockport",
+    "stock": "A6 shops, housing estates and small industrial units",
+    "travel": "about 10 minutes from SK2",
+    "focus": "A6 retail and estate housing"
+  },
+  "Marple": {
+    "districts": "SK6",
+    "region": "Stockport",
+    "stock": "canal-side housing and a small town centre",
+    "travel": "about 15 minutes from SK2",
+    "focus": "town shops and houses"
+  },
+  "Romiley": {
+    "districts": "SK6",
+    "region": "Stockport",
+    "stock": "suburban streets off Compstall Road and the station shops",
+    "travel": "about 15 minutes from SK2",
+    "focus": "suburban houses"
+  },
+  "Hyde": {
+    "districts": "SK14",
+    "region": "Tameside",
+    "stock": "market-town centre, terraces and the Clarendon industrial area",
+    "travel": "about 20 minutes from Stockport",
+    "focus": "town retail and terraces"
+  },
+  "Stalybridge": {
+    "districts": "SK15",
+    "region": "Tameside",
+    "stock": "mill buildings along the canal and stone terraces up the valley",
+    "travel": "about 25 minutes from Stockport",
+    "focus": "mill conversions and terraces"
+  },
+  "Dukinfield": {
+    "districts": "SK16",
+    "region": "Tameside",
+    "stock": "tight terraces and small industrial streets off King Street",
+    "travel": "about 20 minutes from Stockport",
+    "focus": "terraces and small workshops"
+  },
+  "Ashton-under-Lyne": {
+    "districts": "OL6–OL7",
+    "region": "Tameside",
+    "stock": "market hall retail, civic offices and the Arcades shops",
+    "travel": "about 25 minutes from Stockport",
+    "focus": "town-centre retail and offices"
+  },
+  "Mossley": {
+    "districts": "OL5",
+    "region": "Tameside",
+    "stock": "hillside stone terraces above the canal",
+    "travel": "about 30 minutes from Stockport",
+    "focus": "stone terraces"
+  },
+  "Droylsden": {
+    "districts": "M43",
+    "region": "Tameside",
+    "stock": "estate housing and the town-centre shops on Market Street",
+    "travel": "about 25 minutes from Stockport",
+    "focus": "estate housing and shops"
+  },
+  "Denton": {
+    "districts": "M34",
+    "region": "Tameside",
+    "stock": "Crown Point retail and the older terraces off Stockport Road",
+    "travel": "about 15 minutes from Stockport",
+    "focus": "retail park units and terraces"
+  },
+  "Failsworth": {
+    "districts": "M35",
+    "region": "Oldham",
+    "stock": "A62 shops and the housing behind Oldham Road",
+    "travel": "about 25 minutes from Stockport",
+    "focus": "high-street shops and houses"
+  },
+  "Middleton": {
+    "districts": "M24",
+    "region": "Rochdale borough",
+    "stock": "town-centre retail, Arena shopping and surrounding estates",
+    "travel": "about 35 minutes from Stockport",
+    "focus": "shops and estate housing"
+  },
+  "Chadderton": {
+    "districts": "OL9",
+    "region": "Oldham",
+    "stock": "Broadway industrial units and suburban estates",
+    "travel": "about 30 minutes from Stockport",
+    "focus": "industrial units and houses"
+  },
+  "Heywood": {
+    "districts": "OL10",
+    "region": "Rochdale borough",
+    "stock": "mill-town centre and the industrial estates off Pilsworth",
+    "travel": "about 40 minutes from Stockport",
+    "focus": "mills and industrial estates"
+  },
+  "Milnrow": {
+    "districts": "OL16",
+    "region": "Rochdale borough",
+    "stock": "village centre and housing on the edge of the Pennines",
+    "travel": "about 40 minutes from Stockport",
+    "focus": "village shops and houses"
+  },
+  "Littleborough": {
+    "districts": "OL15",
+    "region": "Rochdale borough",
+    "stock": "stone houses and small shops on the Calder valley road",
+    "travel": "about 45 minutes from Stockport",
+    "focus": "stone housing and small shops"
+  },
+  "Shaw": {
+    "districts": "OL2",
+    "region": "Oldham",
+    "stock": "town-centre shops and terraces off the A663",
+    "travel": "about 35 minutes from Stockport",
+    "focus": "terraces and local shops"
+  },
+  "Royton": {
+    "districts": "OL2",
+    "region": "Oldham",
+    "stock": "high-street shops and the housing around the town hall",
+    "travel": "about 35 minutes from Stockport",
+    "focus": "high-street units and houses"
+  },
+  "Lees": {
+    "districts": "OL4",
+    "region": "Oldham",
+    "stock": "stone terraces on the road towards Saddleworth",
+    "travel": "about 35 minutes from Stockport",
+    "focus": "stone terraces"
+  },
+  "Uppermill": {
+    "districts": "OL3",
+    "region": "Saddleworth",
+    "stock": "village shops, pubs and stone cottages in the valley",
+    "travel": "about 35 minutes from Stockport",
+    "focus": "village hospitality and cottages"
+  },
+  "Saddleworth": {
+    "districts": "OL3",
+    "region": "Oldham borough",
+    "stock": "scattered stone villages rather than one town centre",
+    "travel": "about 40 minutes from Stockport",
+    "focus": "village properties spread across several hamlets"
+  },
+  "Bebington": {
+    "districts": "CH63",
+    "region": "Wirral",
+    "stock": "suburban housing and the Pyramids shopping centre",
+    "travel": "about an hour from Stockport",
+    "focus": "suburban homes and shopping-centre units"
+  },
+  "Heswall": {
+    "districts": "CH60",
+    "region": "Wirral",
+    "stock": "larger houses and a small town centre above the Dee",
+    "travel": "about 70 minutes from Stockport",
+    "focus": "larger homes and town shops"
+  },
+  "West Kirby": {
+    "districts": "CH48",
+    "region": "Wirral",
+    "stock": "seaside housing and the marine lake shops",
+    "travel": "about 75 minutes from Stockport",
+    "focus": "coastal houses and small retail"
+  },
+  "Hoylake": {
+    "districts": "CH47",
+    "region": "Wirral",
+    "stock": "seafront houses and a short high street",
+    "travel": "about 75 minutes from Stockport",
+    "focus": "seafront houses and shops"
+  },
+  "Bootle": {
+    "districts": "L20",
+    "region": "Sefton",
+    "stock": "docks-side industry, the Strand retail and dense terraces",
+    "travel": "about an hour from Stockport",
+    "focus": "docks industry and terraces"
+  },
+  "Crosby": {
+    "districts": "L23",
+    "region": "Sefton",
+    "stock": "suburban streets and the village shops near the shore",
+    "travel": "about 65 minutes from Stockport",
+    "focus": "suburban houses"
+  },
+  "Maghull": {
+    "districts": "L31",
+    "region": "Sefton",
+    "stock": "post-war estates and the central square shops",
+    "travel": "about an hour from Stockport",
+    "focus": "estate housing"
+  },
+  "Formby": {
+    "districts": "L37",
+    "region": "Sefton",
+    "stock": "pinewoods housing and village shops inland from the dunes",
+    "travel": "about 70 minutes from Stockport",
+    "focus": "village houses and shops"
+  },
+  "Ainsdale": {
+    "districts": "PR8",
+    "region": "Sefton",
+    "stock": "coastal housing between Formby and Southport",
+    "travel": "about 75 minutes from Stockport",
+    "focus": "coastal houses"
+  },
+  "Ormskirk": {
+    "districts": "L39",
+    "region": "West Lancashire",
+    "stock": "market-town centre and Edge Hill student housing",
+    "travel": "about an hour from Stockport",
+    "focus": "student lets and market-town shops"
+  },
+  "Burscough": {
+    "districts": "L40",
+    "region": "West Lancashire",
+    "stock": "canal-side industry and village housing",
+    "travel": "about an hour from Stockport",
+    "focus": "small industry and houses"
+  },
+  "Skelmersdale": {
+    "districts": "WN8",
+    "region": "West Lancashire",
+    "stock": "new-town estates and large industrial estates",
+    "travel": "about 55 minutes from Stockport",
+    "focus": "industrial estates and new-town housing"
+  },
+  "Rainford": {
+    "districts": "WA11",
+    "region": "St Helens",
+    "stock": "village housing on the road out of St Helens",
+    "travel": "about 55 minutes from Stockport",
+    "focus": "village houses"
+  },
+  "Prescot": {
+    "districts": "L34",
+    "region": "Knowsley",
+    "stock": "town-centre shops and the Cables retail park",
+    "travel": "about 50 minutes from Stockport",
+    "focus": "retail park and town shops"
+  },
+  "Whiston": {
+    "districts": "L35",
+    "region": "Knowsley",
+    "stock": "hospital campus and the housing estates around it",
+    "travel": "about 50 minutes from Stockport",
+    "focus": "hospital estate and nearby housing"
+  },
+  "Rainhill": {
+    "districts": "L35",
+    "region": "St Helens",
+    "stock": "village high street and suburban streets by the station",
+    "travel": "about 50 minutes from Stockport",
+    "focus": "village shops and houses"
+  },
+  "Haydock": {
+    "districts": "WA11",
+    "region": "St Helens",
+    "stock": "the industrial estate off the M6 and nearby housing",
+    "travel": "about 45 minutes from Stockport",
+    "focus": "distribution sheds"
+  },
+  "Newton-le-Willows": {
+    "districts": "WA12",
+    "region": "St Helens",
+    "stock": "station-town housing and small industrial streets",
+    "travel": "about 45 minutes from Stockport",
+    "focus": "station-town houses and workshops"
+  },
+  "Golborne": {
+    "districts": "WA3",
+    "region": "Wigan borough",
+    "stock": "town-centre shops and housing off the A580",
+    "travel": "about 45 minutes from Stockport",
+    "focus": "town shops and houses"
+  },
+  "Ashton-in-Makerfield": {
+    "districts": "WN4",
+    "region": "Wigan borough",
+    "stock": "high-street shops and the housing around Gerard Street",
+    "travel": "about 50 minutes from Stockport",
+    "focus": "high-street retail and houses"
+  },
+  "Hindley": {
+    "districts": "WN2",
+    "region": "Wigan borough",
+    "stock": "terraces and small shops along Market Street",
+    "travel": "about 50 minutes from Stockport",
+    "focus": "terraces and small shops"
+  },
+  "Ince": {
+    "districts": "WN2",
+    "region": "Wigan",
+    "stock": "older housing beside the Wigan industrial fringe",
+    "travel": "about 55 minutes from Stockport",
+    "focus": "older rented houses"
+  },
+  "Standish": {
+    "districts": "WN6",
+    "region": "Wigan borough",
+    "stock": "village centre and newer estates on the A49",
+    "travel": "about 55 minutes from Stockport",
+    "focus": "village shops and newer estates"
+  },
+  "Shevington": {
+    "districts": "WN6",
+    "region": "Wigan borough",
+    "stock": "village housing west of Standish",
+    "travel": "about 55 minutes from Stockport",
+    "focus": "village houses"
+  },
+  "Leyland": {
+    "districts": "PR25",
+    "region": "South Ribble",
+    "stock": "town centre, the Worden area and the industrial estates off the A49",
+    "travel": "about an hour from Stockport",
+    "focus": "industry and town-centre units"
+  },
+  "Bamber Bridge": {
+    "districts": "PR5",
+    "region": "South Ribble",
+    "stock": "station shops and housing along the A6",
+    "travel": "about 55 minutes from Stockport",
+    "focus": "A6 shops and houses"
+  },
+  "Penwortham": {
+    "districts": "PR1",
+    "region": "South Ribble",
+    "stock": "suburban streets on the south bank of the Ribble",
+    "travel": "about an hour from Stockport",
+    "focus": "suburban houses"
+  },
+  "Fulwood": {
+    "districts": "PR2",
+    "region": "Preston",
+    "stock": "suburban housing north of the city, including the hospital area",
+    "travel": "about an hour from Stockport",
+    "focus": "suburban houses and the hospital fringe"
+  },
+  "Longridge": {
+    "districts": "PR3",
+    "region": "Ribble Valley",
+    "stock": "market-town high street at the foot of the fell",
+    "travel": "about 70 minutes from Stockport",
+    "focus": "high-street shops and houses"
+  },
+  "Garstang": {
+    "districts": "PR3",
+    "region": "Wyre",
+    "stock": "market town on the A6 with a compact high street",
+    "travel": "about 75 minutes from Stockport",
+    "focus": "market-town shops"
+  },
+  "Kirkham": {
+    "districts": "PR4",
+    "region": "Fylde",
+    "stock": "market-town centre and the housing towards the industrial estate",
+    "travel": "about 80 minutes from Stockport",
+    "focus": "small-town shops and houses"
+  },
+  "Wesham": {
+    "districts": "PR4",
+    "region": "Fylde",
+    "stock": "the streets immediately north of Kirkham station",
+    "travel": "about 80 minutes from Stockport",
+    "focus": "station-side houses"
+  },
+  "Lytham St Annes": {
+    "districts": "FY8",
+    "region": "Fylde coast",
+    "stock": "Victorian seafront, squares and town-centre retail",
+    "travel": "about 85 minutes from Stockport",
+    "focus": "seafront hospitality and town retail"
+  },
+  "Fleetwood": {
+    "districts": "FY7",
+    "region": "Wyre coast",
+    "stock": "dock and the terraces behind the promenade",
+    "travel": "about 95 minutes from Stockport",
+    "focus": "dockside and seafront buildings"
+  },
+  "Thornton-Cleveleys": {
+    "districts": "FY5",
+    "region": "Wyre",
+    "stock": "suburban coast housing and the Victoria Road shops",
+    "travel": "about 90 minutes from Stockport",
+    "focus": "suburban coastal housing"
+  },
+  "Poulton-le-Fylde": {
+    "districts": "FY6",
+    "region": "Wyre",
+    "stock": "market square shops and the housing around the station",
+    "travel": "about 85 minutes from Stockport",
+    "focus": "market-square shops and houses"
+  },
+  "Carnforth": {
+    "districts": "LA5",
+    "region": "Lancaster district",
+    "stock": "station town and the industrial units off Scotland Road",
+    "travel": "about 90 minutes from Stockport",
+    "focus": "station-town shops and small industry"
+  },
+  "Heysham": {
+    "districts": "LA3",
+    "region": "Lancaster district",
+    "stock": "port, power-station fringe and the village housing",
+    "travel": "about 90 minutes from Stockport",
+    "focus": "port and village housing"
+  },
+  "Barrow-in-Furness": {
+    "districts": "LA14",
+    "region": "Furness",
+    "stock": "shipyard town: terraces, the town centre and the docks estate",
+    "travel": "about two hours from Stockport",
+    "focus": "shipyard-town housing and commercial units"
+  },
+  "Ulverston": {
+    "districts": "LA12",
+    "region": "Furness",
+    "stock": "market town with a compact centre and surrounding stone houses",
+    "travel": "about 1 hour 50 minutes from Stockport",
+    "focus": "market-town shops and houses"
+  },
+  "Dalton-in-Furness": {
+    "districts": "LA15",
+    "region": "Furness",
+    "stock": "small town centre on the road into Barrow",
+    "travel": "about two hours from Stockport",
+    "focus": "small-town houses"
+  },
+  "Millom": {
+    "districts": "LA18",
+    "region": "Copeland fringe",
+    "stock": "former iron-town terraces on the Duddon estuary",
+    "travel": "about 2 hours 15 minutes from Stockport",
+    "focus": "terraces in a small industrial town"
+  },
+  "Ambleside": {
+    "districts": "LA22",
+    "region": "Lake District",
+    "stock": "guest houses and shops packed into the valley floor",
+    "travel": "about 1 hour 45 minutes from Stockport",
+    "focus": "guest houses and holiday lets"
+  },
+  "Keswick": {
+    "districts": "CA12",
+    "region": "Allerdale",
+    "stock": "lakefront guest houses and the market-place shops",
+    "travel": "about two hours from Stockport",
+    "focus": "hotels and guest houses"
+  },
+  "Whitehaven": {
+    "districts": "CA28",
+    "region": "Copeland",
+    "stock": "harbour town: Georgian centre and the housing up the hill",
+    "travel": "about 2 hours 20 minutes from Stockport",
+    "focus": "harbour buildings and town housing"
+  },
+  "Workington": {
+    "districts": "CA14",
+    "region": "Allerdale",
+    "stock": "port and steel-town housing with a rebuilt town centre",
+    "travel": "about 2 hours 15 minutes from Stockport",
+    "focus": "town-centre retail and port-side units"
+  },
+  "Maryport": {
+    "districts": "CA15",
+    "region": "Allerdale",
+    "stock": "harbour and the terraces behind Senhouse Street",
+    "travel": "about 2 hours 20 minutes from Stockport",
+    "focus": "harbour-town houses and small shops"
+  },
+  "Cockermouth": {
+    "districts": "CA13",
+    "region": "Allerdale",
+    "stock": "Georgian main street and the housing off Kirkgate",
+    "travel": "about 2 hours 10 minutes from Stockport",
+    "focus": "town-centre shops and houses"
+  },
+  "Penrith": {
+    "districts": "CA11",
+    "region": "Eden",
+    "stock": "market town on the M6 with a castle-end retail core",
+    "travel": "about 1 hour 50 minutes from Stockport",
+    "focus": "market-town retail and housing"
+  },
+  "Ellesmere Port": {
+    "districts": "CH65",
+    "region": "Cheshire West",
+    "stock": "the boat museum waterfront, retail parks and new-town estates",
+    "travel": "about 50 minutes from Stockport",
+    "focus": "retail parks and estate housing"
+  },
+  "Neston": {
+    "districts": "CH64",
+    "region": "Wirral / Cheshire West",
+    "stock": "town centre and the housing towards Parkgate",
+    "travel": "about an hour from Stockport",
+    "focus": "town shops and houses"
+  },
+  "Frodsham": {
+    "districts": "WA6",
+    "region": "Cheshire West",
+    "stock": "high-street shops under the hill and housing off the A56",
+    "travel": "about 40 minutes from Stockport",
+    "focus": "high-street shops and houses"
+  },
+  "Helsby": {
+    "districts": "WA6",
+    "region": "Cheshire West",
+    "stock": "village housing beside the M56",
+    "travel": "about 40 minutes from Stockport",
+    "focus": "village houses"
+  },
+  "Tarvin": {
+    "districts": "CH3",
+    "region": "Cheshire West",
+    "stock": "village centre on the road into Chester",
+    "travel": "about 50 minutes from Stockport",
+    "focus": "village shops and houses"
+  },
+  "Tarporley": {
+    "districts": "CW6",
+    "region": "Cheshire West",
+    "stock": "high street of independent shops and surrounding houses",
+    "travel": "about 50 minutes from Stockport",
+    "focus": "high-street shops"
+  },
+  "Sandbach": {
+    "districts": "CW11",
+    "region": "Cheshire East",
+    "stock": "market square and the housing towards the M6 services",
+    "travel": "about 40 minutes from Stockport",
+    "focus": "market-town shops and houses"
+  },
+  "Middlewich": {
+    "districts": "CW10",
+    "region": "Cheshire East",
+    "stock": "canal-town centre and small industrial streets",
+    "travel": "about 40 minutes from Stockport",
+    "focus": "canal-side industry and houses"
+  },
+  "Winsford": {
+    "districts": "CW7",
+    "region": "Cheshire West",
+    "stock": "new-town estates and the industrial areas off the A54",
+    "travel": "about 45 minutes from Stockport",
+    "focus": "new-town housing and industry"
+  },
+  "Northwich": {
+    "districts": "CW8–CW9",
+    "region": "Cheshire West",
+    "stock": "town-centre retail rebuilt over old salt works, plus the suburbs",
+    "travel": "about 40 minutes from Stockport",
+    "focus": "town retail and suburban blocks"
+  },
+  "Handforth": {
+    "districts": "SK9",
+    "region": "Cheshire East",
+    "stock": "retail park and the housing between Wilmslow and Stockport",
+    "travel": "about 15 minutes from SK2",
+    "focus": "retail park units and houses"
+  },
+  "Poynton": {
+    "districts": "SK12",
+    "region": "Cheshire East",
+    "stock": "village centre and the housing off the A523",
+    "travel": "about 15 minutes from SK2",
+    "focus": "village shops and houses"
+  },
+  "Congleton": {
+    "districts": "CW12",
+    "region": "Cheshire East",
+    "stock": "mill-town centre and the industrial estates off the Macclesfield road",
+    "travel": "about 35 minutes from Stockport",
+    "focus": "mills and town-centre units"
+  },
+  "Holmes Chapel": {
+    "districts": "CW4",
+    "region": "Cheshire East",
+    "stock": "village shops and the housing around the station",
+    "travel": "about 30 minutes from Stockport",
+    "focus": "village houses and shops"
+  },
+  "Alsager": {
+    "districts": "ST7",
+    "region": "Cheshire East",
+    "stock": "town centre and the university-edge housing",
+    "travel": "about 40 minutes from Stockport",
+    "focus": "student and family housing"
+  },
+  "Halton": {
+    "districts": "WA7",
+    "region": "Halton village",
+    "stock": "the village beside Runcorn, not the whole borough",
+    "travel": "about 45 minutes from Stockport",
+    "focus": "village houses"
+  },
+  "Appleton": {
+    "districts": "WA4",
+    "region": "Warrington",
+    "stock": "suburban housing south of the ship canal",
+    "travel": "about 40 minutes from Stockport",
+    "focus": "suburban houses"
+  },
+  "Stockton Heath": {
+    "districts": "WA4",
+    "region": "Warrington",
+    "stock": "village shops and flats around London Road",
+    "travel": "about 40 minutes from Stockport",
+    "focus": "village retail and flats"
+  },
+  "Lymm": {
+    "districts": "WA13",
+    "region": "Warrington",
+    "stock": "village centre on the Bridgewater canal and larger houses",
+    "travel": "about 35 minutes from Stockport",
+    "focus": "village shops and larger houses"
+  },
+  "Culcheth": {
+    "districts": "WA3",
+    "region": "Warrington",
+    "stock": "village green shops and the surrounding estates",
+    "travel": "about 40 minutes from Stockport",
+    "focus": "village shops and estates"
+  },
+  "Risley": {
+    "districts": "WA3",
+    "region": "Warrington",
+    "stock": "housing and employment land beside the M62",
+    "travel": "about 40 minutes from Stockport",
+    "focus": "employment sites and houses"
+  },
+  "Birchwood": {
+    "districts": "WA3",
+    "region": "Warrington",
+    "stock": "business-park offices and the shopping centre",
+    "travel": "about 40 minutes from Stockport",
+    "focus": "business-park offices"
+  },
+  "Great Sankey": {
+    "districts": "WA5",
+    "region": "Warrington",
+    "stock": "suburban estates west of the town",
+    "travel": "about 45 minutes from Stockport",
+    "focus": "suburban estates"
+  },
+  "Penketh": {
+    "districts": "WA5",
+    "region": "Warrington",
+    "stock": "suburban housing towards the Sankey valley",
+    "travel": "about 45 minutes from Stockport",
+    "focus": "suburban houses"
+  },
+  "Darwen": {
+    "districts": "BB3",
+    "region": "Blackburn with Darwen",
+    "stock": "mill terraces climbing the hillside off the A666",
+    "travel": "about an hour from Stockport",
+    "focus": "mill terraces"
+  },
+  "Accrington": {
+    "districts": "BB5",
+    "region": "Hyndburn",
+    "stock": "market-town centre and the terraces around it",
+    "travel": "about an hour from Stockport",
+    "focus": "town-centre units and terraces"
+  },
+  "Nelson": {
+    "districts": "BB9",
+    "region": "Pendle",
+    "stock": "mill-town centre and terraces off the Leeds Road",
+    "travel": "about 70 minutes from Stockport",
+    "focus": "mills and terraces"
+  },
+  "Colne": {
+    "districts": "BB8",
+    "region": "Pendle",
+    "stock": "hill town with a market street and stone terraces",
+    "travel": "about 75 minutes from Stockport",
+    "focus": "stone terraces and market shops"
+  },
+  "Rawtenstall": {
+    "districts": "BB4",
+    "region": "Rossendale",
+    "stock": "valley-floor shops and the housing up the sides",
+    "travel": "about an hour from Stockport",
+    "focus": "valley shops and houses"
+  },
+  "Bacup": {
+    "districts": "OL13",
+    "region": "Rossendale",
+    "stock": "stone mill town at the head of the valley",
+    "travel": "about 70 minutes from Stockport",
+    "focus": "stone terraces and old mills"
+  },
+  "Rossendale": {
+    "districts": "BB4",
+    "region": "East Lancashire valleys",
+    "stock": "a string of valley towns rather than a single centre",
+    "travel": "about an hour from Stockport",
+    "focus": "valley mills and terraces"
+  },
+  "Clitheroe": {
+    "districts": "BB7",
+    "region": "Ribble Valley",
+    "stock": "market town and the castle-end shops",
+    "travel": "about 75 minutes from Stockport",
+    "focus": "market-town shops and houses"
+  },
+  "Whalley": {
+    "districts": "BB7",
+    "region": "Ribble Valley",
+    "stock": "village shops and housing beside the abbey",
+    "travel": "about 70 minutes from Stockport",
+    "focus": "village houses"
+  },
+  "Padiham": {
+    "districts": "BB12",
+    "region": "Burnley borough",
+    "stock": "town-centre shops and terraces west of Burnley",
+    "travel": "about 65 minutes from Stockport",
+    "focus": "terraces and small shops"
+  },
+  "Great Harwood": {
+    "districts": "BB6",
+    "region": "Hyndburn",
+    "stock": "town-centre shops and the terraces off the A680",
+    "travel": "about an hour from Stockport",
+    "focus": "town shops and terraces"
+  },
+  "Clayton-le-Moors": {
+    "districts": "BB5",
+    "region": "Hyndburn",
+    "stock": "housing and small industry between Accrington and Great Harwood",
+    "travel": "about an hour from Stockport",
+    "focus": "houses and small industry"
+  },
+  "Ramsbottom": {
+    "districts": "BL0",
+    "region": "Bury",
+    "stock": "market town in the Irwell valley, with mill buildings and a high street",
+    "travel": "about 45 minutes from Stockport",
+    "focus": "high-street shops and mill buildings"
+  }
+}

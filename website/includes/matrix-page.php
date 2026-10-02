@@ -220,19 +220,28 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         ? 'Price on application after we confirm property type, access and scope. No catalogue fee.'
         : 'Written quote after we confirm scope. We do not invent a price on this page.';
 
-    $intro = function_exists('seo_unique_intro')
-        ? seo_unique_intro($svcName, $svcSlug, $areaName)
-        : $kwName . ' in ' . $areaName . ' from iComply Property Services.';
-    if (function_exists('waterAsbestosAreaIntro')) {
-        $extra = waterAsbestosAreaIntro($svcSlug, $areaName);
-        if ($extra !== '') {
-            $intro .= ' ' . $extra;
+    $focusFamily = function_exists('is_antislop_focus_service') && is_antislop_focus_service($svcSlug);
+    if ($focusFamily && function_exists('focus_town_lead')) {
+        $intro = focus_town_lead($svcSlug, $svcName, $areaName, $kwName);
+        $body = function_exists('focus_town_detail')
+            ? focus_town_detail($svcSlug, $svcName, $areaName, $kwName)
+            : '';
+        $bullets = [];
+    } else {
+        $intro = function_exists('seo_unique_intro')
+            ? seo_unique_intro($svcName, $svcSlug, $areaName)
+            : $kwName . ' in ' . $areaName . ' from iComply Property Services.';
+        if (function_exists('waterAsbestosAreaIntro')) {
+            $extra = waterAsbestosAreaIntro($svcSlug, $areaName);
+            if ($extra !== '') {
+                $intro .= ' ' . $extra;
+            }
         }
+        $body = (string)($meta['body'] ?? '');
+        $bullets = function_exists('seo_unique_local_block')
+            ? seo_unique_local_block($svcName, $svcSlug, $areaName)
+            : [];
     }
-    $body = (string)($meta['body'] ?? '');
-    $bullets = function_exists('seo_unique_local_block')
-        ? seo_unique_local_block($svcName, $svcSlug, $areaName)
-        : [];
 
     $title = $kwName . ' in ' . $areaName . ' | ' . $s['brand'];
     $desc = $kwName . ' in ' . $areaName . '. ' . $priceLine;
@@ -253,9 +262,12 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         . '<p class="mt-4 text-sm text-white/60">' . icomplyMatrixH($priceLine) . '</p>'
         . '</div></section>';
 
+    $articleHeading = !empty($focusFamily)
+        ? ($kwName . ' — ' . $areaName)
+        : ('About this ' . $areaName . ' page');
     $html .= '<main class="matrix-wrap py-10 space-y-10">'
         . '<article class="matrix-card space-y-4">'
-        . '<h2 class="text-2xl font-semibold">About this ' . icomplyMatrixH($areaName) . ' page</h2>'
+        . '<h2 class="text-2xl font-semibold">' . icomplyMatrixH($articleHeading) . '</h2>'
         . '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($body) . '</p>';
     if ($bullets) {
         $html .= '<ul class="space-y-2 text-zinc-700">';
@@ -299,16 +311,24 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     $priceLine = $poa
         ? 'Price on application after scope. No invented catalogue price.'
         : 'Written quote after scope is agreed.';
-    $intro = function_exists('seo_unique_intro')
-        ? seo_unique_intro($svcName, $serviceSlug, $areaName)
-        : $svcName . ' in ' . $areaName . '.';
-    if (function_exists('waterAsbestosAreaIntro')) {
-        $extra = waterAsbestosAreaIntro($serviceSlug, $areaName);
-        if ($extra !== '') {
-            $intro .= ' ' . $extra;
+    $focusFamily = function_exists('is_antislop_focus_service') && is_antislop_focus_service($serviceSlug);
+    if ($focusFamily && function_exists('focus_town_lead')) {
+        $intro = focus_town_lead($serviceSlug, $svcName, $areaName);
+        $blurb = function_exists('focus_town_detail')
+            ? focus_town_detail($serviceSlug, $svcName, $areaName)
+            : getServiceBlurb($serviceSlug);
+    } else {
+        $intro = function_exists('seo_unique_intro')
+            ? seo_unique_intro($svcName, $serviceSlug, $areaName)
+            : $svcName . ' in ' . $areaName . '.';
+        if (function_exists('waterAsbestosAreaIntro')) {
+            $extra = waterAsbestosAreaIntro($serviceSlug, $areaName);
+            if ($extra !== '') {
+                $intro .= ' ' . $extra;
+            }
         }
+        $blurb = getServiceBlurb($serviceSlug);
     }
-    $blurb = getServiceBlurb($serviceSlug);
     $standards = getServiceStandards($serviceSlug);
     $title = $svcName . ' in ' . $areaName . ' | ' . $s['brand'];
     $desc = $svcName . ' in ' . $areaName . '. ' . $priceLine;
