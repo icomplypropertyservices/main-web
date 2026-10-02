@@ -14,7 +14,7 @@ if (!function_exists('getNavAudienceServices')) {
         ];
         $commercial = [
             'fire-alarms', 'aov-air-handling', 'emergency-lighting', 'fire-risk-assessments', 'fire-doors',
-            'epc', 'pat-testing', 'facilities-management', 'cctv', 'access-control',
+            'epc', 'pat-testing', 'facilities-management', 'cctv', 'barriers', 'access-control',
             'commercial-fit-out', 'nurse-call', 'compliance-consultancy',
         ];
         $pick = static function (array $slugs) use ($all): array {

@@ -45,6 +45,7 @@ function service_standards(string $slug): array {
         'intruder-alarm' => ['BS 4737 / PD 6662 practice', 'wired & wireless', 'PIR detection', 'app control', 'ARC-ready'],
         'cctv' => ['IP / HD CCTV', 'NVR recording', 'remote viewing', 'retail & warehouse', 'GDPR-aware install'],
         'access-control' => ['card / fob / biometric', 'multi-door control', 'audit trails', 'time zones', 'fire door release'],
+        'barriers' => ['Came GARD partner', 'rising arm barriers', 'parking barriers', 'safety edges and loops', 'UK-wide'],
         'door-entry' => ['video door entry', 'audio door entry', 'apartment blocks', 'riser upgrades', 'handset replacement'],
         'intercoms' => ['video intercom', 'audio intercom', 'multi-tenant', 'office systems', 'fault finding'],
         'legionella-risk-assessment' => ['HSE L8', 'HSG274', 'water hygiene', 'Legionella risk assessment', 'POA'],
@@ -130,9 +131,14 @@ function service_faqs(string $slug, string $serviceName, string $area = ''): arr
             ['q' => "Can you expand an existing system?", 'a' => "We add cameras, upgrade recorders and migrate storage while keeping as much existing cabling as practical."],
         ],
         'access-control' => [
-            ['q' => "What access control options do you offer?", 'a' => "Card, fob, PIN and biometric readers for single doors through to multi-door sites with audit trails and time zones."],
+            ['q' => "What access control options do you offer?", 'a' => "Card, fob, PIN and biometric readers for single doors through to multi-door sites with audit trails and time zones. Vehicle arms are on the barriers service."],
             ['q' => "Can access control integrate with fire alarms?", 'a' => "Yes — door release strategies are coordinated so escape routes remain safe while security is maintained."],
             ['q' => "Do you support multi-tenant buildings{$loc}?", 'a' => "Yes. We set user groups for tenants, cleaners and contractors across blocks{$loc}."],
+        ],
+        'barriers' => [
+            ['q' => 'Do you install vehicle barriers across the UK?', 'a' => 'Yes. The base is Stockport. Manchester and Burnley have local pages. Other UK sites are quoted with travel included. Came is the partner brand for new rising arms.'],
+            ['q' => 'Which barrier manufacturers do you cover?', 'a' => 'Came GARD first, then the full parking and vehicle list: FAAC, BFT, Nice, Magnetic, Automatic Systems, ELKA, Skidata, Frontier Pitts and the others named on the barriers hub.'],
+            ['q' => 'What does a barrier cost?', 'a' => 'Price on application after lane width, power and safety devices are confirmed. Phone 07517806082.'],
         ],
         'door-entry' => [
             ['q' => "Do you upgrade old door entry systems{$loc}?", 'a' => "Yes — full panel and handset upgrades for flats and offices{$loc}, including riser works where needed."],

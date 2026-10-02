@@ -74,6 +74,17 @@ function icomplySitemapEntries(): array
     $entries = [];
     $seen = [];
     $serviceSlugs = function_exists('getServices') ? getServices() : [];
+    // Barrier brands are rendered from the runtime catalogue (router), not
+    // from committed manufacturer stubs (those PHP files are gitignored).
+    $barrierMfrLocs = [];
+    if (function_exists('barrierManufacturerSeeds')) {
+        foreach (barrierManufacturerSeeds() as $row) {
+            $bSlug = (string)($row['slug'] ?? '');
+            if ($bSlug !== '') {
+                $barrierMfrLocs['/pages/manufacturers/' . $bSlug] = true;
+            }
+        }
+    }
     $areaSlugSet = [];
     if (function_exists('getAreas') && function_exists('areaSlug')) {
         foreach (getAreas() as $area) {
@@ -81,7 +92,7 @@ function icomplySitemapEntries(): array
         }
     }
 
-    $add = static function (string $path, string $priority = '0.5') use (&$entries, &$seen, $banned, $serviceSlugs, $areaSlugSet): void {
+    $add = static function (string $path, string $priority = '0.5') use (&$entries, &$seen, $banned, $serviceSlugs, $areaSlugSet, $barrierMfrLocs): void {
         $path = '/' . ltrim(str_replace('\\', '/', $path), '/');
         $path = preg_replace('#\.php$#i', '', $path) ?? $path;
         $path = preg_replace('#/index$#i', '', $path) ?? $path;
@@ -105,10 +116,12 @@ function icomplySitemapEntries(): array
                 return;
             }
         }
-        // Keyword hubs + featured keyword×town are generated at export time.
-        // Do not require a source PHP file for those catalogue locs.
+        // Keyword hubs + featured keyword×town, and barrier manufacturer
+        // hubs, are generated from the catalogue. Do not require a source
+        // PHP file for those locs (manufacturer stubs are gitignored).
         $isKeywordLoc = (bool)preg_match('#^/pages/keywords(/[a-z0-9\-]+){1,2}$#', $path);
-        if (!$isKeywordLoc && !icomplySitemapUrlHasFile($path)) {
+        $isBarrierMfrLoc = isset($barrierMfrLocs[$path]);
+        if (!$isKeywordLoc && !$isBarrierMfrLoc && !icomplySitemapUrlHasFile($path)) {
             return;
         }
         $seen[$path] = true;
@@ -192,14 +205,26 @@ function icomplySitemapEntries(): array
         if ($base === 'index') {
             continue;
         }
-        $add('/pages/services/' . $base, '0.85');
+        $svcPri = in_array($base, ['barriers', 'aov-air-handling'], true) ? '0.93' : '0.85';
+        $add('/pages/services/' . $base, $svcPri);
     }
     foreach (glob($publish . '/pages/manufacturers/*.php') ?: [] as $mFile) {
         $base = basename($mFile, '.php');
         if ($base === 'index') {
             continue;
         }
-        $add('/pages/manufacturers/' . $base, '0.72');
+        $mPri = $base === 'came' ? '0.84' : '0.72';
+        $add('/pages/manufacturers/' . $base, $mPri);
+    }
+    if (function_exists('barrierManufacturerSeeds')) {
+        foreach (barrierManufacturerSeeds() as $row) {
+            $bSlug = (string)($row['slug'] ?? '');
+            if ($bSlug === '') {
+                continue;
+            }
+            $mPri = !empty($row['partner']) ? '0.84' : '0.72';
+            $add('/pages/manufacturers/' . $bSlug, $mPri);
+        }
     }
     foreach (glob($publish . '/pages/areas/*.php') ?: [] as $aFile) {
         $base = basename($aFile, '.php');
@@ -226,13 +251,28 @@ function icomplySitemapEntries(): array
                 $family[keywordSlug($fs)] = true;
             }
         }
+        $barrierKw = function_exists('barriersKeywords') ? barriersKeywords() : [];
         foreach (array_keys(getMajorKeywords()) as $kw) {
             $slug = keywordSlug($kw);
-            $add('/pages/keywords/' . $slug, isset($family[$slug]) ? '0.78' : '0.68');
+            $pri = isset($family[$slug]) ? '0.78' : '0.68';
+            if (isset($barrierKw[$slug])) {
+                $pri = '0.82';
+            }
+            $add('/pages/keywords/' . $slug, $pri);
         }
         if (function_exists('getElectricalGasFeaturedKeywordSlugs') && function_exists('getAreas') && function_exists('areaSlug')) {
             $areasFlip = array_flip(getAreas());
-            $sampleTowns = ['Stockport', 'Manchester', 'Bolton', 'Liverpool', 'Preston', 'Warrington'];
+            $sampleTowns = ['Stockport', 'Manchester', 'Burnley', 'Bolton', 'Liverpool', 'Preston', 'Warrington'];
+            if (function_exists('barriersKeywords')) {
+                foreach (array_keys(barriersKeywords()) as $bSlug) {
+                    foreach (['Manchester', 'Burnley'] as $town) {
+                        if (!isset($areasFlip[$town])) {
+                            continue;
+                        }
+                        $add('/pages/keywords/' . keywordSlug((string)$bSlug) . '/' . areaSlug($town), '0.8');
+                    }
+                }
+            }
             $featured = getElectricalGasFeaturedKeywordSlugs();
             $allKw = getMajorKeywords();
             foreach (['electrical', 'gas'] as $fam) {

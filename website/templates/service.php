@@ -4,12 +4,19 @@
  * MANUFACTURER_TAGS, MANUFACTURER_IMAGES
  */
 $poaService = function_exists('isPoaService') && isPoaService($SERVICE_SLUG);
-$pageTitle = $SERVICE_NAME . ' Services | North West';
-$metaDesc = $poaService
+$nationwideService = ($SERVICE_SLUG === 'barriers');
+$pageTitle = $nationwideService
+    ? ($SERVICE_NAME . ' | UK-wide')
+    : ($SERVICE_NAME . ' Services | North West');
+$metaDesc = $nationwideService
+    ? ('Vehicle, rising-arm and parking barriers across the UK. Came partner. Other manufacturers covered. Price on application. Phone ' . PHONE . '.')
+    : ($poaService
     ? ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Price on application after scope. Local team from Stockport. No invented fees.')
-    : ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Installation, maintenance, testing & certification. Written quotes after scope. Local engineers from Stockport.');
+    : ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Installation, maintenance, testing & certification. Written quotes after scope. Local engineers from Stockport.'));
 $metaKeywords = $SEO_KEYWORDS;
-$ogImage = url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
+$ogImage = ($nationwideService && function_exists('barrierCameHeroImage'))
+    ? barrierCameHeroImage()
+    : url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
 
 $allServices = getServices();
 $allAreas = getAreas();
@@ -42,6 +49,11 @@ $serviceFaqs = [
         ['Do you remove asbestos?', 'Licensed removal is not this service. If the survey says removal is required, that work is appointed separately.'],
         ['What does it cost?', 'Price on application. Size, access and how intrusive the survey must be all change the quote. No invented starting price.'],
     ],
+    'barriers' => [
+        ['Are barriers only available in Manchester and Burnley?', 'No. Those cities have full local pages. The service is UK-wide from Stockport. Travel is part of the written quote.'],
+        ['Why Came?', 'Came is our barrier partner. New rising arms are specified as CAME GARD, including GT4 and GT8. Other manufacturers are serviced under their own name.'],
+        ['How are barriers priced?', 'Price on application after lane width, power, loops and safety devices are confirmed. Phone ' . PHONE . '.'],
+    ],
     'default' => [
         ['What areas do you cover for ' . $SERVICE_NAME . '?', 'We cover every town in our published areas list across Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria from our Stockport base.'],
         ['How do you price the work?', $poaService ? 'Price on application after we confirm scope, standards and access. No catalogue prices on this page.' : 'After we confirm scope, standards and access we issue a written quote. We do not invent a fee here.'],
@@ -53,6 +65,13 @@ $blurb = getServiceBlurb($serviceSlug);
 $standards = getServiceStandards($serviceSlug);
 $faqs = $serviceFaqs[$serviceSlug] ?? $serviceFaqs['default'];
 $svcCopy = function_exists('waterAsbestosServiceCopy') ? waterAsbestosServiceCopy($serviceSlug) : null;
+if (!$svcCopy && function_exists('barriersServiceCopy')) {
+    $svcCopy = barriersServiceCopy($serviceSlug);
+}
+$coverageRegions = $nationwideService
+    ? ['United Kingdom', 'England', 'Wales', 'Scotland', 'Northern Ireland', 'Greater Manchester', 'Burnley']
+    : ['Greater Manchester', 'Lancashire', 'Cheshire', 'Merseyside', 'Cumbria', 'North West England'];
+$coverageLabel = $nationwideService ? 'United Kingdom' : 'North West';
 
 $popularTowns = array_values(array_filter(
     ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool', 'Bury', 'Sale', 'Altrincham', 'Macclesfield', 'Burnley', 'Blackburn', 'Warrington', 'St Helens'],
@@ -127,7 +146,7 @@ $schema = [
             ],
             'areaServed' => array_map(static function ($region) {
                 return ['@type' => 'AdministrativeArea', 'name' => $region];
-            }, ['Greater Manchester', 'Lancashire', 'Cheshire', 'Merseyside', 'Cumbria', 'North West England']),
+            }, $coverageRegions),
             'offers' => [
                 '@type' => 'Offer',
                 'name' => ($poaService ? 'Price on application — ' : 'Written quote — ') . $serviceName,
@@ -188,7 +207,7 @@ $schema = [
             <div>
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs tracking-widest uppercase mb-5">
                     <span class="w-2 h-2 rounded-full bg-[#ff6b00]"></span>
-                    <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> · North West
+                    <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> · <?= htmlspecialchars($coverageLabel, ENT_QUOTES, 'UTF-8') ?>
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
                     <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?>.<br>
@@ -206,14 +225,14 @@ $schema = [
                 <p class="mt-6 text-sm text-white/60"><?= htmlspecialchars($standards, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
-                <img src="<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>"
+                <img src="<?= htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> by Icomply Property Services"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
                      loading="eager"
                      onerror="this.style.display='none'">
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-[#0B1F3A]/20 to-transparent">
-                    <div class="text-sm text-white/70">Serving <?= count($allAreas) ?>+ towns</div>
-                    <div class="text-2xl font-semibold mt-1"><?= $poaService ? 'Local team · Price on application' : 'Local engineers · Written quotes' ?></div>
+                    <div class="text-sm text-white/70"><?= $nationwideService ? 'UK-wide from Stockport' : ('Serving ' . count($allAreas) . '+ towns') ?></div>
+                    <div class="text-2xl font-semibold mt-1"><?= $nationwideService ? 'Came partner · Price on application' : ($poaService ? 'Local team · Price on application' : 'Local engineers · Written quotes') ?></div>
                 </div>
             </div>
         </div>
@@ -225,7 +244,7 @@ $schema = [
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <?php
         $trust = [
-            ['Local response', 'Stockport-based engineers across Greater Manchester & the North West'],
+            [$nationwideService ? 'UK-wide' : 'Local response', $nationwideService ? 'Stockport base. Manchester and Burnley featured. Travel elsewhere is in the quote.' : 'Stockport-based engineers across Greater Manchester & the North West'],
             ['Standards-led', $standards],
             ['Full documentation', 'Records for landlords, insurers, agents and dutyholders'],
             [$poaService ? 'POA quotes' : 'Written quotes', $poaService ? 'No invented prices — scoped after we see the job' : 'Clear scope before work starts'],
@@ -248,7 +267,7 @@ $schema = [
         <div class="lg:col-span-3">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Overview</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">
-                Expert <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> across the North West
+                Expert <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> <?= $nationwideService ? 'across the UK' : 'across the North West' ?>
             </h2>
             <?php if (!empty($svcCopy['intro']) && is_array($svcCopy['intro'])): ?>
                 <?php foreach ($svcCopy['intro'] as $para): ?>
@@ -278,14 +297,14 @@ $schema = [
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> equipment"
                      class="w-full h-44 object-cover"
                      loading="lazy"
-                     onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
+                     onerror="this.src='<?= htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8') ?>'">
             </div>
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
                 <img src="<?= url('/assets/images/keywords/' . htmlspecialchars($img3, ENT_QUOTES, 'UTF-8') . '.jpg') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation work"
                      class="w-full h-44 object-cover"
                      loading="lazy"
-                     onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
+                     onerror="this.src='<?= htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8') ?>'">
             </div>
         </div>
     </div>
@@ -308,6 +327,12 @@ $schema = [
         </div>
         <?php endforeach; ?>
     </div>
+    <?php if ($serviceSlug === 'barriers' && function_exists('barriersPartnerPanelHtml')): ?>
+        <?= barriersPartnerPanelHtml() ?>
+    <?php endif; ?>
+    <?php if (in_array($serviceSlug, ['barriers', 'access-control'], true) && function_exists('barriersDeepLinksHtml')): ?>
+        <?= barriersDeepLinksHtml($serviceSlug) ?>
+    <?php endif; ?>
     <?php if (!empty($svcCopy['sections']) && is_array($svcCopy['sections'])): ?>
     <div class="mt-14 space-y-10 max-w-3xl">
         <?php foreach ($svcCopy['sections'] as $sec): ?>
@@ -330,7 +355,7 @@ $schema = [
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Manufacturers</div>
                 <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Brands we install &amp; service</h2>
-                <p class="mt-2 text-zinc-600 max-w-2xl">Looking for your exact panel brand? We support major <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturers across the North West.</p>
+                <p class="mt-2 text-zinc-600 max-w-2xl"><?= $nationwideService ? 'Came is the partner. Every other barrier manufacturer we install or service is listed here.' : ('Looking for your exact panel brand? We support major ' . htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') . ' manufacturers across the North West.') ?></p>
             </div>
             <a href="<?= htmlspecialchars(function_exists('icomplyTradeShopUrl') ? icomplyTradeShopUrl() : url('/shop/index.php'), ENT_QUOTES, 'UTF-8') ?>" class="text-sm font-semibold text-[#ff6b00]">Browse trade shop →</a>
         </div>

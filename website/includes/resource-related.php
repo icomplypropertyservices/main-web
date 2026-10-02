@@ -21,8 +21,16 @@ function resourceRelatedLinks(string $slug): array {
             ['href' => url('/pages/services/cctv'), 'label' => 'CCTV services'],
         ],
         'access-control-guide' => [
+            ['href' => url('/pages/services/barriers'), 'label' => 'Vehicle and parking barriers'],
+            ['href' => url('/pages/manufacturers/came'), 'label' => 'Came partner'],
+            ['href' => url('/pages/keywords/vehicle-barriers'), 'label' => 'Vehicle barriers'],
+            ['href' => url('/pages/keywords/rising-arm-barrier'), 'label' => 'Rising arm barrier'],
+            ['href' => url('/pages/keywords/parking-barrier'), 'label' => 'Parking barrier'],
+            ['href' => url('/pages/keywords/vehicle-barriers/manchester'), 'label' => 'Barriers in Manchester'],
+            ['href' => url('/pages/keywords/vehicle-barriers/burnley'), 'label' => 'Barriers in Burnley'],
             ['href' => url('/pages/keywords/access-control-system'), 'label' => 'Access control system guide'],
             ['href' => url('/pages/services/access-control'), 'label' => 'Access control services'],
+            ['href' => url('/pages/services/aov-air-handling'), 'label' => 'AOV and smoke control'],
         ],
         'landlord-compliance-checklist' => [
             ['href' => url('/pages/services/landlord-compliance'), 'label' => 'Landlord compliance service'],

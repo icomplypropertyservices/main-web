@@ -44,6 +44,11 @@
         "short": "Paxton, HID, Salto door access",
         "standards": "BS EN 50133 · EN 60839 · fire-release integration"
     },
+    "barriers": {
+        "blurb": "UK-wide vehicle, rising-arm and parking barriers. Came is the partner brand. Other barrier manufacturers are installed and serviced in full. Price on application.",
+        "short": "Came partner · rising arms & parking barriers, UK-wide",
+        "standards": "Safety edges & loops · manual release · access and fire release · POA"
+    },
     "door-entry": {
         "blurb": "Video and audio door entry for flats, multi-tenant and commercial sites.",
         "short": "Video & audio door entry",

@@ -43,10 +43,15 @@ $commercialPillars = [
         'blurb' => 'IP / HD CCTV design, multi-site recording, remote viewing and NVR estates for facilities and security teams.',
         'keywords' => ['IP / HD', 'Remote viewing', 'Multi-site NVR'],
     ],
+    'barriers' => [
+        'title' => 'Vehicle & parking barriers',
+        'blurb' => 'UK-wide rising arms and parking barriers. Came is the partner brand. Every other barrier manufacturer we install or service is on the hub.',
+        'keywords' => ['Came partner', 'UK-wide', 'POA'],
+    ],
     'access-control' => [
         'title' => 'Access control',
-        'blurb' => 'Paxton, HID, Salto and door access with fire-override integration for offices, multi-tenant and commercial sites.',
-        'keywords' => ['Paxton / HID / Salto', 'Fire override', 'Credentials'],
+        'blurb' => 'Paxton, HID, Salto and door access with fire-override integration. Vehicle lanes link through to barriers.',
+        'keywords' => ['Paxton / HID / Salto', 'Fire override', 'Barriers'],
     ],
     'commercial-fit-out' => [
         'title' => 'Commercial fit-out',
@@ -142,10 +147,10 @@ require SITE_ROOT . '/includes/header.php';
             </div>
             <div class="grid grid-cols-2 gap-3">
                 <?php
-                $heroSlugs = ['fire-alarms', 'electrical', 'cctv', 'access-control'];
+                $heroSlugs = ['barriers', 'aov-air-handling', 'access-control', 'fire-alarms'];
                 foreach ($heroSlugs as $slug):
                     $name = $services[$slug] ?? ucwords(str_replace('-', ' ', $slug));
-                    $img = url('/assets/images/services/' . $slug . '.jpg');
+                    $img = function_exists('serviceImageUrl') ? serviceImageUrl($slug) : url('/assets/images/services/' . $slug . '.jpg');
                 ?>
                 <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                    class="group relative rounded-3xl overflow-hidden border border-white/10 min-h-[140px] bg-white/5 hover:border-[#ff6b00] transition">

@@ -246,6 +246,18 @@ function renderKeywordAreaPage(string $keywordSlug, string $area): void {
     $ph['KEYWORD_BODY'] = rtrim($ph['KEYWORD_BODY'], '.')
         . '. Our engineers regularly attend jobs in ' . $areaName
         . ' and surrounding postcodes for ' . ($meta['name'] ?? $keywordSlug) . '.';
+    $ph['BARRIER_LOCAL_HTML'] = '';
+    $ph['BARRIER_LINKS_HTML'] = '';
+    if ($serviceSlug === 'barriers' && function_exists('barrierLocationHtml')) {
+        $ph['BARRIER_LOCAL_HTML'] = barrierLocationHtml($areaName, (string)($meta['name'] ?? $keywordSlug));
+        $ph['BARRIER_LINKS_HTML'] = function_exists('barriersDeepLinksHtml') ? barriersDeepLinksHtml('keyword') : '';
+        if (function_exists('barrierNationwideIntro')) {
+            $ph['KEYWORD_INTRO'] = barrierNationwideIntro($serviceName, $areaName);
+        }
+    }
+    if ($serviceSlug === 'access-control' && function_exists('barriersDeepLinksHtml')) {
+        $ph['BARRIER_LINKS_HTML'] = barriersDeepLinksHtml('access-control');
+    }
 
     // Pure-PHP template (no {{}} / eval)
     executeTemplateVars(SITE_ROOT . '/templates/keyword-area.php', $ph);

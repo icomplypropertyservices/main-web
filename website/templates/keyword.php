@@ -6,7 +6,7 @@
  * KEYWORD_INTRO, KEYWORD_BODY, KEYWORD_META, KEYWORD_FOCUS_HTML, KEYWORD_FAQ_HTML,
  * KEYWORD_IMAGE, SERVICE_IMAGE
  */
-$pageTitle = $KEYWORD_NAME . ' | North West';
+$pageTitle = $KEYWORD_NAME . (($SERVICE_SLUG ?? '') === 'barriers' ? ' | UK-wide' : ' | North West');
 $metaDesc = $KEYWORD_META;
 $metaKeywords = $SEO_KEYWORDS;
 $ogImage = $KEYWORD_IMAGE;
@@ -22,7 +22,9 @@ $allAreas = getAreas();
 $allServices = getServices();
 
 $popularTowns = array_values(array_filter(
-    ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
+    ($serviceSlug === 'barriers')
+        ? ['Manchester', 'Burnley', 'Stockport', 'Bolton', 'Liverpool', 'Preston', 'Leeds', 'Birmingham', 'Chester', 'Warrington']
+        : ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
     fn($t) => in_array($t, $allAreas, true)
 ));
 
@@ -44,7 +46,7 @@ require SITE_ROOT . '/includes/header.php';
             'name' => $keywordName,
             'description' => $metaDesc,
             'provider' => ['@type' => 'LocalBusiness', 'name' => SITE_NAME, 'telephone' => PHONE, 'url' => SITE_URL],
-            'areaServed' => 'North West England',
+            'areaServed' => ($serviceSlug === 'barriers') ? 'United Kingdom' : 'North West England',
             'serviceType' => $serviceName,
             'url' => $canonicalUrl,
         ],
@@ -124,6 +126,9 @@ require SITE_ROOT . '/includes/header.php';
                     <p class="mt-4 text-base md:text-lg text-zinc-900 leading-relaxed font-medium"><?= htmlspecialchars($KEYWORD_INTRO, ENT_QUOTES, 'UTF-8') ?></p>
                     <p class="mt-4 text-base md:text-lg text-zinc-900 leading-relaxed"><?= htmlspecialchars($KEYWORD_BODY, ENT_QUOTES, 'UTF-8') ?></p>
                     <ul class="mt-6 space-y-3"><?= $KEYWORD_FOCUS_HTML ?></ul>
+                    <?php if (in_array($serviceSlug, ['barriers', 'access-control'], true) && function_exists('barriersDeepLinksHtml')): ?>
+                    <div class="mt-6"><?php /* links rendered full-width below */ ?></div>
+                    <?php endif; ?>
                     <p class="mt-6 text-sm text-zinc-800">
                         Part of our
                         <a href="<?= url('/pages/services/' . $SERVICE_SLUG . '.php') ?>" class="font-bold text-[#ff6b00] hover:underline"><?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?></a>
@@ -148,6 +153,13 @@ require SITE_ROOT . '/includes/header.php';
         </div>
     </div>
 </section>
+
+<?php if (in_array($serviceSlug, ['barriers', 'access-control'], true) && function_exists('barriersDeepLinksHtml')): ?>
+    <?= barriersDeepLinksHtml($serviceSlug === 'access-control' ? 'access-control' : 'keyword') ?>
+<?php endif; ?>
+<?php if ($serviceSlug === 'barriers' && function_exists('barriersPartnerPanelHtml') && in_array($keywordSlug, ['vehicle-barriers', 'rising-arm-barrier', 'car-park-barrier'], true)): ?>
+    <?= barriersPartnerPanelHtml() ?>
+<?php endif; ?>
 
 <!-- MANUFACTURERS -->
 <section class="bg-white border-y-2 border-zinc-200">
@@ -211,7 +223,7 @@ require SITE_ROOT . '/includes/header.php';
 <section id="quote" class="bg-[#061828] text-white">
     <div class="max-w-3xl mx-auto px-6 py-14">
         <h2 class="text-3xl font-bold text-center">Quote for <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></h2>
-        <p class="mt-2 text-center text-white/90">Fixed-price after scope is agreed. Stockport engineers · North West coverage.</p>
+        <p class="mt-2 text-center text-white/90"><?= $serviceSlug === 'barriers' ? 'UK-wide from Stockport. Came partner. Price on application. Phone ' . htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') . '.' : 'Fixed-price after scope is agreed. Stockport engineers · North West coverage.' ?></p>
         <form action="<?= url('/contact.php') ?>" method="POST" class="mt-8 bg-white text-zinc-900 border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4 shadow-xl">
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid md:grid-cols-2 gap-4">

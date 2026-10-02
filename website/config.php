@@ -336,6 +336,14 @@ function getMajorKeywords(): array {
         }
         $normalized[$slug] = $row;
     }
+    if (function_exists('barriersKeywords')) {
+        foreach (barriersKeywords() as $slug => $meta) {
+            $slug = keywordSlug($slug);
+            if (!isset($normalized[$slug])) {
+                $normalized[$slug] = $meta;
+            }
+        }
+    }
     return $normalized;
 }
 
@@ -426,6 +434,9 @@ function exportedServiceLocalUrl(string $serviceSlug, string $area, string $from
     } elseif ($serviceSlug === 'gas-systems') {
         $pick = $featured['gas'][0] ?? 'boiler';
     }
+    if ($serviceSlug === 'barriers') {
+        $pick = 'vehicle-barriers';
+    }
     if ($pick && isset($kw[keywordSlug((string)$pick)])) {
         return url('/pages/keywords/' . keywordSlug((string)$pick) . '/' . $town . '.php');
     }
@@ -448,6 +459,8 @@ function getPopularKeywordSlugs(): array {
         'emergency-lighting-test', 'emergency-lighting-certificate',
         'gas-safety-certificate', 'cp12', 'landlord-gas-safety', 'boiler', 'boiler-install',
         'boiler-repair', 'gas-safety', 'emergency-gas-engineer', 'landlord-gas',
+        'vehicle-barriers', 'rising-arm-barrier', 'parking-barrier', 'access-barrier',
+        'barrier-installation', 'car-park-barrier',
         'cctv-installation', 'access-control-system', 'door-entry-system',
         'nurse-call-system', 'landlord-compliance',
         'legionella-risk-assessment', 'legionella-testing', 'water-hygiene-testing',
@@ -465,6 +478,10 @@ function getPopularKeywordSlugs(): array {
 }
 
 function getSeoKeywords(string $service, string $area = ''): string {
+    if ($service === 'barriers') {
+        $base = 'vehicle barriers, rising arm barrier, parking barrier, access barrier, Came GARD, barrier installation, barrier maintenance, car park barrier';
+        return $area !== '' ? "{$base}, {$area} barriers, {$area} rising arm" : $base;
+    }
     $mfr = loadJsonData('manufacturers', []);
     $base = $mfr['seo_keywords'][$service] ?? $service;
     return $area !== '' ? "{$base} {$area}, {$area} electrician, {$area} fire safety" : $base;
@@ -493,6 +510,9 @@ function getServiceStandards(string $slug): string {
 }
 
 function getManufacturers(string $serviceSlug): array {
+    if ($serviceSlug === 'barriers' && function_exists('barrierManufacturerNames')) {
+        return barrierManufacturerNames();
+    }
     $mfr = loadJsonData('manufacturers', []);
     return $mfr['by_service'][$serviceSlug] ?? ['Industry Standard Equipment'];
 }
@@ -501,6 +521,24 @@ function getManufacturers(string $serviceSlug): array {
 function getManufacturerCatalog(): array {
     $mfr = loadJsonData('manufacturers', []);
     $catalog = $mfr['catalog'] ?? [];
+    if ($catalog && function_exists('barrierManufacturerCatalog')) {
+        foreach (barrierManufacturerCatalog() as $slug => $entry) {
+            if (!isset($catalog[$slug])) {
+                $catalog[$slug] = $entry;
+                continue;
+            }
+            $services = $catalog[$slug]['services'] ?? [];
+            if (!in_array('barriers', $services, true)) {
+                $services[] = 'barriers';
+                $catalog[$slug]['services'] = $services;
+            }
+            if (!empty($entry['partner'])) {
+                $catalog[$slug]['partner'] = true;
+                $catalog[$slug]['featured'] = true;
+            }
+        }
+        return $catalog;
+    }
     if ($catalog) {
         return $catalog;
     }
@@ -646,6 +684,9 @@ function linkManufacturerNamesInText(string $text): string {
 
 /** First existing service image (.jpg, .png, then -photo.jpg). */
 function serviceImageUrl(string $slug): string {
+    if ($slug === 'barriers' && function_exists('barrierCameHeroImage')) {
+        return barrierCameHeroImage();
+    }
     $base = '/assets/images/services/' . $slug;
     foreach ([$base . '.jpg', $base . '.png', $base . '-photo.jpg'] as $rel) {
         if (is_file(SITE_ROOT . $rel)) {
@@ -664,6 +705,9 @@ function servicePhotoUrl(string $slug): string {
 }
 
 function manufacturerImageUrl(string $slug, string $fallbackService = 'fire-alarms'): string {
+    if ($slug === 'came' && function_exists('barrierCameHeroImage')) {
+        return barrierCameHeroImage();
+    }
     $rel = '/assets/images/manufacturers/' . $slug . '.jpg';
     if (is_file(SITE_ROOT . $rel)) {
         return url($rel);
@@ -711,6 +755,10 @@ function icomplyTradeProductsUrl(): string
 $waFile = __DIR__ . '/includes/water-asbestos.php';
 if (is_file($waFile)) {
     require_once $waFile;
+}
+$barrierFile = __DIR__ . '/includes/barriers.php';
+if (is_file($barrierFile)) {
+    require_once $barrierFile;
 }
 
 // Back-compat globals used by some templates/includes

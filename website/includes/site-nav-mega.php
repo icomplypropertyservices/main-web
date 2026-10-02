@@ -22,10 +22,20 @@ function icomplyMegaHeaderHtml(): string
     $hubGas = '/shop/gas/';
     $shopLive = icomplyNavH(function_exists('icomplyTradeShopUrl') ? icomplyTradeShopUrl() : 'https://shop.icomplypropertyservices.co.uk');
     $aovHub = icomplyNavH(url('/pages/services/aov-air-handling.php'));
-    $aovFeatured = '<div class="mega-featured mega-featured--aov">'
+    $barrierHub = icomplyNavH(url('/pages/services/barriers.php'));
+    $cameHub = icomplyNavH(url('/pages/manufacturers/came.php'));
+    $aovFeatured = '<div class="mega-priority">'
+        . '<div class="mega-featured mega-featured--aov">'
         . '<p class="mega-featured-title">Priority — AOV &amp; smoke control</p>'
         . '<a class="mega-featured-link" href="' . $aovHub . '">AOV &amp; Smoke Control</a>'
         . '<p class="mega-note">Smoke vents, AOV panels, EN 12101 / BS 9991. Quotes POA after scope.</p>'
+        . '</div>'
+        . '<div class="mega-featured mega-featured--barriers">'
+        . '<p class="mega-featured-title">Priority — Barriers · UK-wide</p>'
+        . '<a class="mega-featured-link" href="' . $barrierHub . '">Vehicle &amp; parking barriers</a>'
+        . '<a class="mega-featured-link" href="' . $cameHub . '">Came partner</a>'
+        . '<p class="mega-note">Rising arms and parking barriers. Came GARD first. Full manufacturer list. POA.</p>'
+        . '</div>'
         . '</div>';
 
     $svcCols = '';
@@ -96,6 +106,8 @@ function icomplyMegaHeaderHtml(): string
                 <p class="mega-col-title">Fire</p>
                 <a href="{$hubFire}">Fire supplies hub</a>
                 <a href="{$aovHub}">AOV &amp; smoke control (service)</a>
+                <a href="{$barrierHub}">Barriers (service)</a>
+                <a href="{$cameHub}">Came partner</a>
               </div>
               <div class="mega-col">
                 <p class="mega-col-title">Category hubs</p>
@@ -135,8 +147,12 @@ function icomplyMobileDrawerHtml(array $n): string
     $siteMap = icomplyNavH(url('/pages/site-map.php'));
 
     $aovHubDrawer = icomplyNavH(url('/pages/services/aov-air-handling.php'));
+    $barrierHubDrawer = icomplyNavH(url('/pages/services/barriers.php'));
+    $cameHubDrawer = icomplyNavH(url('/pages/manufacturers/came.php'));
     $svc = '<a class="drawer-featured" href="' . $aovHubDrawer . '">AOV &amp; Smoke Control</a>';
-    $svc .= '<p class="drawer-note">Priority — smoke vents, AOV panels, EN 12101 / BS 9991. POA after scope.</p>';
+    $svc .= '<a class="drawer-featured" href="' . $barrierHubDrawer . '">Vehicle &amp; parking barriers</a>';
+    $svc .= '<a class="drawer-featured" href="' . $cameHubDrawer . '">Came partner</a>';
+    $svc .= '<p class="drawer-note">Priority — AOV, and UK-wide barriers with Came as the partner brand. POA after scope.</p>';
     foreach ($n['cats'] as $cat) {
         $svc .= '<details class="drawer-acc"><summary>' . icomplyNavH($cat['label']) . '</summary><div>';
         foreach ($cat['services'] as $slug => $name) {
@@ -165,6 +181,8 @@ function icomplyMobileDrawerHtml(array $n): string
     <details class="drawer-acc"><summary>Shop</summary><div>
       <a href="{$hubFireD}">Fire</a>
       <a href="{$aovHubDrawer}">AOV &amp; smoke control (service)</a>
+      <a href="{$barrierHubDrawer}">Barriers (service)</a>
+      <a href="{$cameHubDrawer}">Came partner</a>
       <a href="{$hubElectricalD}">Electrical</a>
       <a href="{$hubSecurityD}">Security</a>
       <a href="{$hubGasD}">Gas</a>

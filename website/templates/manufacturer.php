@@ -20,6 +20,8 @@ $mfrServices = $entry['services'] ?? [];
 $products = $entry['products'] ?? [];
 $primaryService = $mfrServices[0] ?? 'fire-alarms';
 $primaryServiceName = $services[$primaryService] ?? 'Compliance';
+$isBarrierBrand = in_array('barriers', $mfrServices, true);
+$isPartner = !empty($entry['partner']);
 $ogImage = manufacturerImageUrl($mfrSlug, $primaryService);
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
@@ -122,11 +124,11 @@ $schema = [
             <div>
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs tracking-widest uppercase mb-5">
                     <span class="w-2 h-2 rounded-full bg-[#ff6b00]"></span>
-                    Brand · Trade shop · Install &amp; service
+                    <?= $isPartner ? 'Came partner · UK-wide barriers' : ($isBarrierBrand ? 'Barrier manufacturer · UK-wide' : 'Brand · Trade shop · Install &amp; service') ?>
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
                     <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?><br>
-                    <span class="text-[#ff6b00]">products &amp; service</span>
+                    <span class="text-[#ff6b00]"><?= $isPartner ? 'barrier partner' : 'products &amp; service' ?></span>
                 </h1>
                 <p class="mt-6 text-lg text-white/80 max-w-xl"><?= htmlspecialchars($MFR_BLURB, ENT_QUOTES, 'UTF-8') ?></p>
                 <div class="mt-8 flex flex-wrap gap-3">
@@ -144,8 +146,8 @@ $schema = [
                      loading="eager"
                      onerror="this.src='<?= htmlspecialchars(serviceImageUrl($primaryService), ENT_QUOTES, 'UTF-8') ?>'">
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-transparent to-transparent">
-                    <div class="text-sm text-white/70">Authorised install &amp; trade supply</div>
-                    <div class="text-2xl font-semibold mt-1"><?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> · North West</div>
+                    <div class="text-sm text-white/70"><?= $isPartner ? 'Partner brand for new rising arms' : ($isBarrierBrand ? 'Install, service and spares · POA' : 'Install &amp; trade supply') ?></div>
+                    <div class="text-2xl font-semibold mt-1"><?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> · <?= $isBarrierBrand ? 'UK-wide' : 'North West' ?></div>
                 </div>
             </div>
         </div>
@@ -233,7 +235,9 @@ $schema = [
     <div class="flex flex-wrap gap-2">
         <?php
         $towns = array_values(array_filter(
-            ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
+            $isBarrierBrand
+                ? ['Manchester', 'Burnley', 'Stockport', 'Bolton', 'Liverpool', 'Preston']
+                : ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
             fn($t) => in_array($t, getAreas(), true)
         ));
         foreach ($towns as $t):
@@ -271,7 +275,9 @@ $schema = [
         <div class="space-y-4">
             <details class="bg-white border rounded-2xl p-5">
                 <summary class="font-semibold cursor-pointer">Do you install <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?>?</summary>
-                <p class="mt-3 text-sm text-zinc-600">Yes — design, supply, install, commission and certificate across the North West.</p>
+                <p class="mt-3 text-sm text-zinc-600"><?= $isBarrierBrand
+                    ? 'Yes. New rising arms lead with the Came partner range. This brand is installed or serviced UK-wide from Stockport. Price on application.'
+                    : 'Yes — design, supply, install and service across the North West.' ?></p>
             </details>
             <details class="bg-white border rounded-2xl p-5">
                 <summary class="font-semibold cursor-pointer">Can I buy <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> parts online?</summary>

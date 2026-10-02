@@ -271,6 +271,21 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         . ' · Town hub: <a class="text-[#ff6b00] font-semibold" href="'
         . icomplyMatrixH(url('/pages/areas/' . $areaSlugVal)) . '">' . icomplyMatrixH($areaName) . '</a></p>'
         . '</article>';
+    if ($svcSlug === 'barriers' && function_exists('barrierLocationEssay')) {
+        $essay = barrierLocationEssay($areaName, $kwName);
+        if ($essay !== '') {
+            $html .= '<article class="matrix-card space-y-4"><h2 class="text-2xl font-semibold">'
+                . icomplyMatrixH($kwName . ' in ' . $areaName) . '</h2><p class="text-zinc-700 leading-relaxed">'
+                . icomplyMatrixH($essay) . '</p>'
+                . '<p class="text-sm"><a class="text-[#ff6b00] font-semibold" href="'
+                . icomplyMatrixH(url('/pages/manufacturers/came')) . '">Came partner</a>'
+                . ' · <a class="text-[#ff6b00] font-semibold" href="'
+                . icomplyMatrixH(url('/pages/services/barriers')) . '">UK-wide barriers</a></p></article>';
+        }
+    }
+    if (in_array($svcSlug, ['barriers', 'access-control'], true) && function_exists('barriersDeepLinksHtml')) {
+        $html .= barriersDeepLinksHtml($svcSlug === 'access-control' ? 'access-control' : 'keyword');
+    }
 
     $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($kwName) . ' in every area we cover</h2>'
         . '<p class="text-sm text-zinc-600 mb-4">' . count($s['areas']) . ' towns — full list, not a short subset.</p>'
@@ -316,7 +331,7 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
 
     $html = icomplyMatrixChromeStart($title, $desc, $canonical);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
-        . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($areaName) . ' · North West</p>'
+        . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($areaName) . ' · ' . ($serviceSlug === 'barriers' ? 'UK-wide' : 'North West') . '</p>'
         . '<h1>' . icomplyMatrixH($svcName) . ' <span class="accent">in ' . icomplyMatrixH($areaName) . '</span></h1>'
         . '<p class="mt-4 text-white/80 max-w-2xl">' . icomplyMatrixH($intro) . '</p>'
         . '<div class="mt-6 flex flex-wrap gap-3">'
