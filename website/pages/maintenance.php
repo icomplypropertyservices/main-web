@@ -373,7 +373,8 @@ require SITE_ROOT . '/includes/header.php';
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Extend cover beyond the core four</h2>
             <p class="mt-4 text-zinc-600 text-lg">
                 Many contracts also include electrical programmes, AOV / smoke control, access control, door entry
-                and intruder alarms. Ask us to map the full estate.
+                and intruder alarms. AOV is fire protection, so a smoke-vent contract can be quoted outside the North West.
+                Travel sits on that quote. Ask us to map the full estate.
             </p>
             <div class="mt-6 flex flex-wrap gap-2">
                 <?php

@@ -25,7 +25,7 @@ function icomplyMegaHeaderHtml(): string
     $aovFeatured = '<div class="mega-featured mega-featured--aov">'
         . '<p class="mega-featured-title">Priority — AOV &amp; smoke control</p>'
         . '<a class="mega-featured-link" href="' . $aovHub . '">AOV &amp; Smoke Control</a>'
-        . '<p class="mega-note">Smoke vents, AOV panels, EN 12101 / BS 9991. Quotes POA after scope.</p>'
+        . '<p class="mega-note">Smoke vents quoted across the UK from Stockport. Travel outside a short North West run is on the quote. Kit prices listed; install POA.</p>'
         . '</div>';
 
     $svcCols = '';
@@ -136,7 +136,7 @@ function icomplyMobileDrawerHtml(array $n): string
 
     $aovHubDrawer = icomplyNavH(url('/pages/services/aov-air-handling.php'));
     $svc = '<a class="drawer-featured" href="' . $aovHubDrawer . '">AOV &amp; Smoke Control</a>';
-    $svc .= '<p class="drawer-note">Priority — smoke vents, AOV panels, EN 12101 / BS 9991. POA after scope.</p>';
+    $svc .= '<p class="drawer-note">Priority — smoke vents quoted UK-wide from Stockport. Travel outside a short North West run is on the quote.</p>';
     foreach ($n['cats'] as $cat) {
         $svc .= '<details class="drawer-acc"><summary>' . icomplyNavH($cat['label']) . '</summary><div>';
         foreach ($cat['services'] as $slug => $name) {

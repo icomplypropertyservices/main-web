@@ -47,7 +47,7 @@ $extraReactive = [
     'cctv' => 'Camera outages, recorder faults, remote viewing down or hard-drive / storage failures.',
     'access-control' => 'Readers offline, maglocks stuck, fire-override concerns or credential system faults.',
     'door-entry' => 'Handsets dead, door not releasing, video entry black screens or trade-button failures.',
-    'aov-air-handling' => 'AOV panel faults, vents stuck open/closed or smoke-control system warnings.',
+    'aov-air-handling' => 'AOV panel faults, vents stuck open or closed, or smoke-control warnings. Quoted across the UK from Stockport when capacity allows. Travel outside a short North West run is on the quote. Not a 24/7 guarantee.',
     'nurse-call' => 'Care-home nurse call panels, handsets or zone faults needing reactive attendance.',
 ];
 

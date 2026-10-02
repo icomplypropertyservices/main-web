@@ -67,7 +67,7 @@ function icomplyAovKitImageUrl(string $sku): string {
   <?php if (function_exists('icomplyAovKitPriceStripHtml')): ?>
   <div class="mt-8 bg-white border border-zinc-200 rounded-3xl p-6 md:p-8"><?= icomplyAovKitPriceStripHtml() ?></div>
   <?php endif; ?>
-  <div class="mt-8 bg-white border border-zinc-200 rounded-3xl p-6 md:p-8">
+  <div id="aov-kits" class="mt-8 bg-white border border-zinc-200 rounded-3xl p-6 md:p-8">
     <h3 class="text-lg font-semibold mb-2">AOV equipment kits (ex VAT)</h3>
     <p class="text-sm text-zinc-600 mb-3">Install / labour POA. Photos from Marketing CDN Rev C.</p>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">

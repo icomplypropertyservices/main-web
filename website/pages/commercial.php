@@ -35,7 +35,7 @@ $commercialPillars = [
     ],
     'aov-air-handling' => [
         'title' => 'AOV & smoke control',
-        'blurb' => 'Smoke vents, AOV panels and smoke-control maintenance for high-rise and commercial blocks.',
+        'blurb' => 'Smoke vents and AOV panels for blocks and workplaces. Quoted across the UK from Stockport. Travel outside a short North West run is on the quote. Install and testing are POA.',
         'keywords' => ['Smoke control', 'AOV panels', 'EN 12101'],
     ],
     'cctv' => [

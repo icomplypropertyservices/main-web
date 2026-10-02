@@ -100,7 +100,7 @@ function icomplySitemapEntries(): array
         // Hard reject /pages/{service}/{town} even if a leftover matrix file
         // sits in dist/. Keep only real hub prefixes.
         if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
-            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages'];
+            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'aov'];
             if (!in_array($m[1], $okPrefix, true)) {
                 return;
             }
@@ -108,7 +108,8 @@ function icomplySitemapEntries(): array
         // Keyword hubs + featured keyword×town are generated at export time.
         // Do not require a source PHP file for those catalogue locs.
         $isKeywordLoc = (bool)preg_match('#^/pages/keywords(/[a-z0-9\-]+){1,2}$#', $path);
-        if (!$isKeywordLoc && !icomplySitemapUrlHasFile($path)) {
+        $isAovLoc = (bool)preg_match('#^/pages/aov(/[a-z0-9\-]+)?$#', $path);
+        if (!$isKeywordLoc && !$isAovLoc && !icomplySitemapUrlHasFile($path)) {
             return;
         }
         $seen[$path] = true;
@@ -150,6 +151,7 @@ function icomplySitemapEntries(): array
         ['/pages/areas', '0.9', 'pages/areas.php'],
         ['/pages/manufacturers', '0.9', 'pages/manufacturers.php'],
         ['/pages/keywords', '0.9', 'pages/keywords.php'],
+        ['/pages/aov', '0.85', 'pages/aov/index.php'],
         ['/shop', '0.8', 'shop/index.html'],
         ['/shop/fire', '0.75', 'shop/fire/index.html'],
         ['/shop/electrical', '0.75', 'shop/electrical/index.html'],
@@ -249,6 +251,19 @@ function icomplySitemapEntries(): array
                     }
                 }
             }
+        }
+    }
+
+    if (!function_exists('aovPlaces')) {
+        $aovPlaceFile = SITE_ROOT . '/includes/aov-place.php';
+        if (is_file($aovPlaceFile)) {
+            require_once $aovPlaceFile;
+        }
+    }
+    if (function_exists('aovPlaces')) {
+        $add('/pages/aov', '0.85');
+        foreach (array_keys(aovPlaces()) as $slug) {
+            $add('/pages/aov/' . $slug, '0.64');
         }
     }
 
