@@ -28,7 +28,7 @@ $landlordServices = [
     ],
     'fire-risk-assessments' => [
         'title' => 'Fire risk assessments',
-        'blurb' => 'Suitable and sufficient FRAs for HMOs, blocks and multi-occupied stock with prioritised action plans.',
+        'blurb' => 'Suitable and sufficient FRAs. A typical North West 6-bed HMO is listed at £350. The FRA + EICR + gas pack for that same house is £650.',
         'badge' => 'FSO / PAS 79',
     ],
     'fire-alarms' => [
@@ -205,6 +205,12 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
         </a>
         <?php endforeach; ?>
     </div>
+    <p class="mt-6 text-sm text-white">
+        FRA job lane: <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/jobs/fra') ?>">hub</a>,
+        <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/jobs/fire-risk-assessment') ?>">£350 for a typical 6-bed HMO</a>,
+        <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/jobs/landlord-bundle') ?>">£650 pack</a>
+        (FRA, EICR and gas — not added on top).
+    </p>
 
     <div class="mt-10">
         <h3 class="font-semibold text-black mb-3">Also available for rental &amp; block stock</h3>
