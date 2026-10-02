@@ -37,6 +37,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $message = trim((string)($_POST['message'] ?? ''));
         $gclid = trim((string)($_POST['gclid'] ?? ''));
         $fbclid = trim((string)($_POST['fbclid'] ?? ''));
+        $urgency = trim((string)($_POST['urgency'] ?? ''));
+        $lane = trim((string)($_POST['lane'] ?? ''));
+        $urgency = str_replace(["\r", "\n"], ' ', $urgency);
+        $lane = str_replace(["\r", "\n"], ' ', $lane);
+        if (strlen($urgency) > 80) {
+            $urgency = substr($urgency, 0, 80);
+        }
+        if (strlen($lane) > 40) {
+            $lane = substr($lane, 0, 40);
+        }
 
         if ($name === '' || strlen($name) > 120) {
             $errors[] = 'Please enter your name.';
@@ -61,6 +71,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'phone' => $phone,
                 'service' => $service,
                 'message' => $message,
+                'urgency' => $urgency,
+                'lane' => $lane,
                 'gclid' => $gclid,
                 'fbclid' => $fbclid,
                 'ip' => $_SERVER['REMOTE_ADDR'] ?? '',
@@ -83,6 +95,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 . "Email: {$email}\n"
                 . "Phone: {$phone}\n"
                 . "Service: {$service}\n"
+                . ($lane !== '' ? "Lane: {$lane}\n" : '')
+                . ($urgency !== '' ? "Attendance window: {$urgency}\n" : '')
                 . "Message:\n{$message}\n\n"
                 . "gclid: {$gclid}\n"
                 . "fbclid: {$fbclid}\n"
