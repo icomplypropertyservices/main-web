@@ -1,0 +1,185 @@
+{
+  "exclude": ["Tunstall"],
+  "service": "barriers",
+  "brands": [
+    {
+      "slug": "came",
+      "name": "CAME",
+      "partner": true,
+      "partner_label": "CAME partner",
+      "partner_image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/nav-came-line.jpg",
+      "accent": "#9f1239",
+      "blurb": "iComply is a CAME partner. We supply, install and service CAME rising-arm barriers — including Gard lane packs — for car parks, yards and gated sites across the North West. We state that partnership in plain language and do not publish a partner or accreditation number.",
+      "lines": [
+        {"name": "Gard GT4", "summary": "Rising-arm barrier for shorter car-park and staff lanes.", "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/came-gard-gt4.jpg?v=1788884803"},
+        {"name": "Gard GT8", "summary": "Rising-arm barrier for longer lanes and wider openings.", "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/gard-gt8.jpg?v=1789114153"},
+        {"name": "Gard PX", "summary": "Intensive-use parking barrier for busier vehicle entrances.", "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/came-Gard_4.jpg?v=1788905749"},
+        {"name": "Gard PT", "summary": "Brushless Gard parking barrier for frequent open-close cycles.", "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/came-gard-gt4.jpg?v=1788884803"}
+      ]
+    },
+    {
+      "slug": "nice",
+      "name": "Nice",
+      "accent": "#0369a1",
+      "blurb": "Nice rising-arm and parking barriers for car parks, residential gates and commercial yards. iComply surveys the lane, safety devices and access control, then installs and maintains the Nice barrier that fits the opening.",
+      "lines": [
+        {"name": "M-Bar", "summary": "Compact rising-arm barrier for controlled vehicle entrances."},
+        {"name": "Wide M", "summary": "Wider-lane Nice barrier for broader car-park openings."},
+        {"name": "X-Bar", "summary": "Nice barrier family used on intensive parking lanes."},
+        {"name": "L-Bar", "summary": "Nice rising-arm option for longer boom lengths."}
+      ]
+    },
+    {
+      "slug": "faac",
+      "name": "FAAC",
+      "accent": "#b45309",
+      "blurb": "FAAC vehicle barriers for car parks, logistics yards and shared entrances. We install and service the established 615, 620, B614 and B680H families, including loops, photocells and access-control inputs.",
+      "lines": [
+        {"name": "615", "summary": "FAAC rising-arm barrier for standard vehicle lanes."},
+        {"name": "620", "summary": "FAAC barrier used where a faster lane cycle is needed."},
+        {"name": "B614", "summary": "Hybrid FAAC parking barrier for mixed-duty entrances."},
+        {"name": "B680H", "summary": "FAAC hydraulic barrier for intensive parking use."}
+      ]
+    },
+    {
+      "slug": "bft",
+      "name": "BFT",
+      "accent": "#0f766e",
+      "blurb": "BFT rising-arm barriers, including Moovi, Giotto and Michelangelo, for UK car parks and commercial gates. iComply fits the cabinet, boom and safety devices, then ties the lane into fobs, readers or intercoms where the site needs them.",
+      "lines": [
+        {"name": "Moovi", "summary": "BFT rising-arm barrier for car parks and private entrances."},
+        {"name": "Giotto", "summary": "BFT barrier for automatic vehicle lanes."},
+        {"name": "Michelangelo", "summary": "BFT parking barrier for higher-duty openings."}
+      ]
+    },
+    {
+      "slug": "hormann",
+      "name": "Hörmann",
+      "accent": "#1e3a8a",
+      "blurb": "Hörmann SH parking barriers for staff car parks, commercial sites and controlled vehicle entrances. We install and service the SH range and interface it with access control already on site.",
+      "lines": [
+        {"name": "SH 50", "summary": "Hörmann parking barrier for shorter controlled lanes."},
+        {"name": "SH 100", "summary": "Hörmann rising-arm barrier for standard car-park widths."},
+        {"name": "SH 300", "summary": "Hörmann barrier for wider vehicle entrances."},
+        {"name": "SH 600", "summary": "Hörmann barrier for the longest lanes in the SH range."}
+      ]
+    },
+    {
+      "slug": "magnetic",
+      "name": "Magnetic",
+      "accent": "#4338ca",
+      "blurb": "Magnetic vehicle barriers — Access, Parking and Toll lines from Magnetic Autocontrol — for car parks, campuses and higher-throughput lanes. This is the barrier manufacturer, not a door maglock.",
+      "lines": [
+        {"name": "Access Pro", "summary": "Magnetic rising-arm barrier for controlled access lanes."},
+        {"name": "Parking Pro", "summary": "Magnetic parking barrier for staff and public car parks."},
+        {"name": "Toll", "summary": "Magnetic barrier for toll and high-cycle vehicle lanes."}
+      ]
+    },
+    {
+      "slug": "elka",
+      "name": "Elka",
+      "accent": "#9a3412",
+      "blurb": "Elka P-series rising-arm barriers are a standard UK car-park choice. iComply installs and maintains the P2500, P3000, P4000 and P5000 families, matched to lane width and duty.",
+      "lines": [
+        {"name": "P2500", "summary": "Elka rising-arm barrier for shorter lanes."},
+        {"name": "P3000", "summary": "Elka barrier for typical car-park openings."},
+        {"name": "P4000", "summary": "Elka barrier for wider vehicle lanes."},
+        {"name": "P5000", "summary": "Elka barrier for the longest P-series openings."}
+      ]
+    },
+    {
+      "slug": "automatic-systems",
+      "name": "Automatic Systems",
+      "accent": "#155e75",
+      "blurb": "Automatic Systems parking and access barriers, including the BL and ParkPlus ranges, for busier vehicle entrances. We survey duty cycle, lane width and pedestrian separation before specifying the cabinet.",
+      "lines": [
+        {"name": "BL 229", "summary": "Automatic Systems rising-arm barrier for secure vehicle lanes."},
+        {"name": "ParkPlus", "summary": "Automatic Systems parking barrier for car-park entrances."}
+      ]
+    },
+    {
+      "slug": "apt-controls",
+      "name": "APT Controls",
+      "accent": "#3f6212",
+      "blurb": "APT Controls rising-arm barriers are a long-standing UK parking product. We install and service APT 600 and APT 950 lanes, including loops, booms and access-control connections.",
+      "lines": [
+        {"name": "APT 600", "summary": "APT rising-arm barrier for standard UK car-park lanes."},
+        {"name": "APT 950", "summary": "APT barrier for wider or heavier-duty vehicle entrances."}
+      ]
+    },
+    {
+      "slug": "beninca",
+      "name": "Beninca",
+      "accent": "#7c2d12",
+      "blurb": "Beninca rising-arm barriers, including the EVA and VE ranges, for commercial and residential vehicle entrances. iComply commissions the safety devices and the open-close inputs the site already uses.",
+      "lines": [
+        {"name": "EVA", "summary": "Beninca EVA rising-arm barrier range."},
+        {"name": "VE.650", "summary": "Beninca VE barrier for longer vehicle lanes."}
+      ]
+    },
+    {
+      "slug": "roger-technology",
+      "name": "Roger Technology",
+      "accent": "#0e7490",
+      "blurb": "Roger Technology Bionik barriers for car parks and automated entrances. We supply, fit and maintain the Bionik rising-arm range and connect it to readers, GSM or intercom where required.",
+      "lines": [
+        {"name": "Bionik", "summary": "Roger Technology brushless rising-arm barrier range."}
+      ]
+    },
+    {
+      "slug": "ditec",
+      "name": "Ditec",
+      "accent": "#1d4ed8",
+      "blurb": "Ditec Qik rising-arm barriers for parking and perimeter control. iComply installs the Qik range and keeps safety edges, loops and photocells in the maintenance plan.",
+      "lines": [
+        {"name": "Qik", "summary": "Ditec Qik rising-arm barrier for vehicle lanes."}
+      ]
+    },
+    {
+      "slug": "centurion",
+      "name": "Centurion",
+      "accent": "#b91c1c",
+      "blurb": "Centurion SECTOR barriers for commercial and residential vehicle lanes. We install and service the SECTOR rising-arm range and document the handover for facilities teams.",
+      "lines": [
+        {"name": "SECTOR", "summary": "Centurion SECTOR rising-arm barrier."}
+      ]
+    },
+    {
+      "slug": "doorhan",
+      "name": "DoorHan",
+      "accent": "#c2410c",
+      "blurb": "DoorHan rising-arm barriers for yards, compounds and car parks. iComply fits the Barrier range and ties the lane into the access method the site already uses.",
+      "lines": [
+        {"name": "Barrier", "summary": "DoorHan rising-arm barrier for standard lanes."},
+        {"name": "Barrier-PRO", "summary": "DoorHan barrier for heavier-duty vehicle entrances."}
+      ]
+    },
+    {
+      "slug": "gibidi",
+      "name": "Gibidi",
+      "accent": "#065f46",
+      "blurb": "Gibidi BARRI rising-arm barriers for automatic vehicle entrances. We install and service the BARRI range, including boom, spring and safety-device checks.",
+      "lines": [
+        {"name": "BARRI", "summary": "Gibidi BARRI rising-arm barrier range."}
+      ]
+    },
+    {
+      "slug": "sea",
+      "name": "SEA",
+      "accent": "#6d28d9",
+      "blurb": "SEA SPRING rising-arm barriers for parking and perimeter lanes. iComply supplies, installs and maintains the SPRING barrier and its safety devices.",
+      "lines": [
+        {"name": "SPRING", "summary": "SEA SPRING rising-arm barrier."}
+      ]
+    },
+    {
+      "slug": "genius",
+      "name": "Genius",
+      "accent": "#9d174d",
+      "blurb": "Genius Rainbow rising-arm barriers, from the FAAC group range sold in the UK trade. We install and service Rainbow lanes and connect them to access control on request.",
+      "lines": [
+        {"name": "Rainbow", "summary": "Genius Rainbow rising-arm barrier."}
+      ]
+    }
+  ]
+}

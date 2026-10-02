@@ -3,7 +3,11 @@
  * Trade products hub — self-canonical /products. Body in products-hub-body.php.
  */
 require_once __DIR__ . '/../config.php';
-require_once SITE_ROOT . '/includes/shopify.php';
+if (function_exists('icomplyRequireShopify')) {
+    icomplyRequireShopify();
+} elseif (is_file(SITE_ROOT . '/includes/shopify.php')) {
+    require_once SITE_ROOT . '/includes/shopify.php';
+}
 if (is_file(SITE_ROOT . '/includes/aov-kit-prices.php')) {
     require_once SITE_ROOT . '/includes/aov-kit-prices.php';
 }

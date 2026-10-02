@@ -40,9 +40,14 @@
         "standards": "BS EN 62676 · GDPR / DPA camera siting"
     },
     "access-control": {
-        "blurb": "Paxton, HID, Salto door access, credentials and fire-override integration.",
-        "short": "Paxton, HID, Salto door access",
-        "standards": "BS EN 50133 · EN 60839 · fire-release integration"
+        "blurb": "Paxton, HID, Salto and other door access platforms, credentials and fire-alarm release. Tunstall is not an access-control brand we list here.",
+        "short": "Paxton, HID, Salto and other door access",
+        "standards": "BS EN 60839-11 · BS 7273-4 fire release · Equality Act access"
+    },
+    "barriers": {
+        "blurb": "Rising-arm and parking barriers for car parks, yards and gated lanes. iComply is a CAME partner and also installs Nice, FAAC, BFT, Hörmann, Magnetic and the other UK trade barrier makers listed on this page.",
+        "short": "Rising-arm and parking barriers",
+        "standards": "BS EN 12453 · safety edges and loops · CAME partner"
     },
     "barriers": {
         "blurb": "UK-wide vehicle, rising-arm and parking barriers. Came is the partner brand. Other barrier manufacturers are installed and serviced in full. Price on application.",
@@ -60,9 +65,12 @@
         "standards": "Commercial intercom best practice"
     },
     "fire-risk-assessments": {
-        "blurb": "Suitable and sufficient fire risk assessments for landlords, commercial sites, HMOs and multi-occupied buildings.",
+        "blurb": "Suitable and sufficient fire risk assessments for landlords, commercial sites, HMOs and multi-occupied buildings across UK mainland.",
         "short": "FRA for landlords, HMO & commercial sites",
-        "standards": "Regulatory Reform (Fire Safety) Order 2005 · Fire Safety Act · PAS 79 guidance"
+        "standards": "Regulatory Reform (Fire Safety) Order 2005 · Fire Safety Act · PAS 79 guidance",
+        "guide_price_gbp": 350,
+        "guide_price_label": "£350",
+        "coverage": "uk-mainland"
     },
     "fire-extinguishers": {
         "blurb": "Supply, install, service and certificate portable fire extinguishers to BS 5306.",

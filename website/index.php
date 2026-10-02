@@ -6,9 +6,9 @@ require_once __DIR__ . '/config.php';
 require_once SITE_ROOT . '/includes/shopify.php';
 
 $pageTitle = 'Property Maintenance & Compliance | Icomply Property Services';
-$metaDesc = 'iComply Property Services — landlord compliance (EICR, CP12/gas, FRA), electrical, gas, fire safety, kitchens, bathrooms, renovations, CCTV, Legionella, asbestos surveys and trade shop across Greater Manchester and the North West. Stockport SK2 5DE.';
+$metaDesc = 'iComply Property Services — AOV and smoke control, vehicle barriers, landlord compliance (EICR, CP12/gas, FRA), electrical, gas and fire safety across Greater Manchester and the North West. Call 07517806082. Stockport SK2 5DE.';
 $canonicalUrl = url('/');
-$metaKeywords = 'landlord compliance Stockport, EICR Manchester, gas safety CP12, fire risk assessment, kitchen fitting, renovation, CCTV, legionella, asbestos survey, North West';
+$metaKeywords = 'AOV smoke control, vehicle barriers, landlord compliance Stockport, EICR Manchester, gas safety CP12, fire risk assessment, North West';
 $ogImage = url('/assets/images/android-chrome-512.png');
 
 $services = getServices();
@@ -19,11 +19,16 @@ $featuredProducts = array_slice($catalog['products'], 0, 4);
 $shopCollections = array_slice($catalog['collections'], 0, 4);
 
 $kwCount = count(getMajorKeywords());
+$phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
+$waHref = 'https://wa.me/' . WHATSAPP . '?text=' . rawurlencode('Hi iComply, I need a quote');
+$aovUrl = url('/pages/services/aov-air-handling.php');
+$barriersUrl = url('/products.php') . '#barriers';
+$contactUrl = url('/contact.php');
 $trust = [
-    ['title' => 'Local team', 'text' => 'Stockport SK2 base — ' . count($areas) . '+ North West towns'],
-    ['title' => 'Full catalogue', 'text' => count($services) . ' services · maintenance, compliance and trades'],
-    ['title' => 'Scoped quotes', 'text' => 'Written figure after we confirm the job — POA where listed'],
-    ['title' => 'Local guides', 'text' => number_format($kwCount) . '+ topic pages across the area set'],
+    ['title' => 'Call ' . PHONE, 'text' => 'Phone or WhatsApp — same Stockport team', 'href' => $phoneHref],
+    ['title' => 'AOV & barriers first', 'text' => 'Smoke control and 5m barrier packs are the priority quotes'],
+    ['title' => 'Reply aim: 2 hours', 'text' => 'Business days, subject to capacity'],
+    ['title' => 'Scoped quotes', 'text' => 'Written figure after scope — AOV install and barrier install are POA'],
 ];
 
 $popularTowns = array_values(array_filter(
@@ -51,59 +56,59 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             <p class="home-hero-kicker"><i></i> Greater Manchester &amp; North West</p>
             <h1>Property maintenance<br><span>&amp; compliance</span></h1>
             <p class="hero-lede">
-                Landlord certificates (EICR, CP12 / gas, FRA), electrical, gas, fire safety,
-                kitchens and bathrooms, renovations, CCTV and security, Legionella, asbestos
-                surveys, HMO / landlord packages and a trade shop — one Stockport team covering
-                Greater Manchester and the North West.
+                AOV and smoke control, plus vehicle barriers, lead the work — then landlord
+                certificates (EICR, CP12 / gas, FRA), electrical, gas and fire safety. One
+                Stockport team covering Greater Manchester and the North West.
             </p>
             <div class="home-hero-cta">
-                <a class="btn-hero-accent" href="#quote">Get a quote</a>
-                <a class="btn-hero-light" href="<?= url('/pages/services/index.php') ?>">All services</a>
-                <a class="btn-hero-ghost" href="<?= url('/pages/landlords.php') ?>">Landlords</a>
-                <a class="btn-hero-ghost" href="<?= url('/pages/packages.php') ?>">Packages</a>
+                <a class="btn-hero-accent" href="<?= htmlspecialchars($aovUrl, ENT_QUOTES, 'UTF-8') ?>">AOV &amp; smoke control</a>
+                <a class="btn-hero-light" href="<?= htmlspecialchars($barriersUrl, ENT_QUOTES, 'UTF-8') ?>">Barriers</a>
+                <a class="btn-hero-light" href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>">Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                <a class="btn-hero-wa" href="<?= htmlspecialchars($waHref, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener">WhatsApp</a>
+                <a class="btn-hero-ghost" href="#quote">Get a quote</a>
+                <a class="btn-hero-ghost" href="<?= htmlspecialchars($contactUrl, ENT_QUOTES, 'UTF-8') ?>">Contact form</a>
             </div>
+            <p class="home-hero-links">
+                <a href="<?= url('/pages/services/index.php') ?>">All services</a>
+                <a href="<?= url('/pages/landlords.php') ?>">Landlords</a>
+                <a href="<?= url('/pages/packages.php') ?>">Packages</a>
+            </p>
             <div class="home-hero-stats">
                 <div><strong><?= count($services) ?></strong> services</div>
                 <div><strong><?= count($areas) ?>+</strong> towns</div>
                 <div><strong><?= number_format($kwCount) ?>+</strong> guides</div>
             </div>
-            <p class="home-hero-fine">Stockport SK2 5DE · Scoped quotes · Legionella and asbestos are POA</p>
+            <p class="home-hero-fine">Stockport SK2 5DE · Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?> · AOV and barrier install are POA</p>
         </div>
         <div class="home-hero-cards">
+            <a class="home-hero-card home-hero-card--priority" href="<?= htmlspecialchars($aovUrl, ENT_QUOTES, 'UTF-8') ?>">
+                <span class="priority-tag">Priority</span>
+                <strong>AOV &amp; smoke control</strong>
+                <span>Vents, panels, EN 12101 / BS 9991 →</span>
+            </a>
+            <a class="home-hero-card home-hero-card--priority" href="<?= htmlspecialchars($barriersUrl, ENT_QUOTES, 'UTF-8') ?>">
+                <span class="priority-tag">Priority</span>
+                <strong>Barriers</strong>
+                <span>5m packs · install POA →</span>
+            </a>
             <?php
             $heroPref = [
+                'fire-alarms' => 'Fire alarms',
                 'electrical' => 'EICR / electrical',
                 'gas-systems' => 'Gas safety (CP12)',
                 'fire-risk-assessments' => 'Fire risk assessments',
-                'landlord-compliance' => 'Landlord compliance',
-                'kitchens' => 'Kitchens &amp; bathrooms',
-                'renovation' => 'Renovations',
-                'cctv' => 'CCTV / security',
-                'legionella-risk-assessment' => 'Legionella',
             ];
             foreach ($heroPref as $slug => $label):
-                if (!isset($services[$slug]) && $slug !== 'legionella-risk-assessment') {
+                if (!isset($services[$slug])) {
                     continue;
                 }
                 $href = url('/pages/services/' . $slug . '.php');
             ?>
             <a class="home-hero-card" href="<?= htmlspecialchars($href, ENT_QUOTES, 'UTF-8') ?>">
-                <strong><?= $label ?></strong>
+                <strong><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?></strong>
                 <span>View service →</span>
             </a>
             <?php endforeach; ?>
-            <a class="home-hero-card" href="<?= url('/pages/services/asbestos-survey.php') ?>">
-                <strong>Asbestos surveys</strong>
-                <span>View service →</span>
-            </a>
-            <a class="home-hero-card" href="<?= url('/pages/packages.php') ?>">
-                <strong>HMO / landlord packages</strong>
-                <span>Existing packages →</span>
-            </a>
-            <a class="home-hero-card" href="<?= url('/shop/index.php') ?>">
-                <strong>Trade shop</strong>
-                <span>Kits and parts →</span>
-            </a>
         </div>
     </div>
 </section>
@@ -131,11 +136,32 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             <div class="flex gap-3 items-start">
                 <div class="w-10 h-10 rounded-2xl bg-[#0B1F3A]/10 flex items-center justify-center text-[#0B1F3A] font-bold shrink-0">✓</div>
                 <div>
-                    <div class="font-semibold text-black"><?= htmlspecialchars($t['title'], ENT_QUOTES, 'UTF-8') ?></div>
+                    <div class="font-semibold text-black"><?php if (!empty($t['href'])): ?><a href="<?= htmlspecialchars($t['href'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($t['title'], ENT_QUOTES, 'UTF-8') ?></a><?php else: ?><?= htmlspecialchars($t['title'], ENT_QUOTES, 'UTF-8') ?><?php endif; ?></div>
                     <div class="text-sm text-zinc-600 mt-0.5"><?= htmlspecialchars($t['text'], ENT_QUOTES, 'UTF-8') ?></div>
                 </div>
             </div>
         <?php endforeach; ?>
+    </div>
+</section>
+
+<!-- PRIORITY SERVICES — AOV and barriers above the wider catalogue -->
+<section id="featured" class="max-w-7xl mx-auto px-6 pt-16 md:pt-20">
+    <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Featured services</div>
+    <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">AOV and barriers</h2>
+    <p class="mt-2 text-zinc-600 max-w-2xl">Smoke control and vehicle barriers are the priority quotes. Install is priced after scope. The wider catalogue follows below.</p>
+    <div class="grid md:grid-cols-2 gap-5 mt-8">
+        <a href="<?= htmlspecialchars($aovUrl, ENT_QUOTES, 'UTF-8') ?>" class="group bg-white border-2 border-[#ff6b00] rounded-3xl p-6 md:p-8 hover:shadow-lg transition flex flex-col">
+            <span class="inline-flex w-max text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-[#ff6b00] text-white">Priority · AOV</span>
+            <h3 class="mt-4 text-2xl font-semibold text-black">AOV &amp; smoke control</h3>
+            <p class="mt-2 text-sm text-zinc-600 flex-1">Smoke vents, AOV panels and smoke control to EN 12101 / BS 9991. Equipment kits are listed on the products hub; installation is POA.</p>
+            <span class="mt-5 text-sm font-semibold text-[#ff6b00]">View AOV service →</span>
+        </a>
+        <a href="<?= htmlspecialchars($barriersUrl, ENT_QUOTES, 'UTF-8') ?>" class="group bg-white border-2 border-[#ff6b00] rounded-3xl p-6 md:p-8 hover:shadow-lg transition flex flex-col">
+            <span class="inline-flex w-max text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-[#ff6b00] text-white">Priority · Barriers</span>
+            <h3 class="mt-4 text-2xl font-semibold text-black">Barriers</h3>
+            <p class="mt-2 text-sm text-zinc-600 flex-1">5m barrier packs — standard, Videx, Paxton, GSM and all-in. Supply prices are on the products hub. Installation is POA.</p>
+            <span class="mt-5 text-sm font-semibold text-[#ff6b00]">View barrier packs →</span>
+        </a>
     </div>
 </section>
 
@@ -400,7 +426,10 @@ echo testimonialsSectionHtml();
             <p class="mt-3 text-zinc-600">We aim to respond within 2 hours on business days. All quotes are fixed-price after scope is agreed.</p>
         </div>
 
-        <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm" aria-label="Free quote form">
+        <form name="contact" method="POST" action="/contact" data-netlify="true" data-contact-form="home" netlify-honeypot="bot-field" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm" aria-label="Free quote form">
+            <input type="hidden" name="form-name" value="contact">
+            <input type="hidden" name="source" value="home-quote">
+            <p class="sr-only" aria-hidden="true"><label>Leave blank<input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <input type="hidden" name="gclid" value="<?= htmlspecialchars($_GET['gclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
             <input type="hidden" name="fbclid" value="<?= htmlspecialchars($_GET['fbclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
@@ -423,7 +452,15 @@ echo testimonialsSectionHtml();
                     <label for="quote-service" class="sr-only">Service</label>
                     <select id="quote-service" name="service" required aria-required="true" class="w-full border px-5 py-3.5 rounded-2xl bg-white">
                         <option value="">Select service…</option>
-                        <?php foreach ($services as $slug => $name): ?>
+                        <?php if (isset($services['aov-air-handling'])): ?>
+                            <option value="<?= htmlspecialchars($services['aov-air-handling'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($services['aov-air-handling'], ENT_QUOTES, 'UTF-8') ?></option>
+                        <?php endif; ?>
+                        <option value="Barriers">Barriers</option>
+                        <?php foreach ($services as $slug => $name):
+                            if ($slug === 'aov-air-handling') {
+                                continue;
+                            }
+                        ?>
                             <option value="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></option>
                         <?php endforeach; ?>
                         <option value="Shop / products">Shop / products</option>
@@ -452,4 +489,5 @@ echo testimonialsSectionHtml();
 </section>
 
 <?= shopifyBuyButtonScript() ?>
+<script src="<?= htmlspecialchars(assetUrl('/assets/js/contact-form.js'), ENT_QUOTES, 'UTF-8') ?>" defer></script>
 <?php require SITE_ROOT . '/includes/footer.php'; ?>

@@ -1,4 +1,4 @@
-# Download free stock images (LoremFlickr / Picsum) for Icomply services + keywords
+# Download free stock images (LoremFlickr / Picsum) for iComply services + keywords
 # Free-use stock-style images for development/SEO placeholders.
 # Replace with licensed commercial stock before production if required.
 
@@ -22,7 +22,7 @@ function Download-Image([string]$url, [string]$outFile) {
     }
     try {
         $wc = New-Object System.Net.WebClient
-        $wc.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) IcomplyImageBot/1.0")
+        $wc.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) iComplyImageBot/1.0")
         $wc.DownloadFile($url, $outFile)
         $len = (Get-Item $outFile).Length
         if ($len -lt 2000) {

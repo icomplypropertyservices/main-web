@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Vehicle barriers">
+  <rect width="1200" height="675" fill="#0B1F3A"/>
+  <rect x="0" y="470" width="1200" height="205" fill="#12263f"/>
+  <rect x="80" y="520" width="1040" height="8" fill="#ff6b00" opacity="0.35"/>
+  <rect x="860" y="250" width="70" height="280" rx="6" fill="#f4f4f5"/>
+  <rect x="872" y="270" width="46" height="18" fill="#0B1F3A"/>
+  <rect x="120" y="300" width="760" height="16" fill="#ff6b00"/>
+  <circle cx="180" cy="560" r="36" fill="#18181b"/>
+  <circle cx="320" cy="560" r="36" fill="#18181b"/>
+  <rect x="150" y="500" width="200" height="40" rx="8" fill="#e4e4e7"/>
+  <text x="80" y="160" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="700">Vehicle barriers</text>
+  <text x="80" y="220" fill="#ff6b00" font-family="Arial, Helvetica, sans-serif" font-size="28">CAME partner · rising-arm and parking lanes</text>
+</svg>

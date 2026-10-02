@@ -81,14 +81,14 @@ $packages = [
 $trust = [
     ['title' => 'Care-home ready', 'text' => 'Nurse call, fire, lighting, access & CCTV under one partner'],
     ['title' => 'HTM & BS standards', 'text' => 'HTM 08-03, BS 5839, BS 5266 and fire-override access'],
-    ['title' => 'Manufacturer brands', 'text' => 'Courtney Thorne, Static Systems, Intercall, Tunstall & more'],
+    ['title' => 'Manufacturer brands', 'text' => 'Courtney Thorne, Static Systems, Intercall & more'],
     ['title' => 'Fixed-price quotes', 'text' => 'Clear scope, certification and multi-home options'],
 ];
 
 // Nurse-call manufacturers from featured list + catalog (Courtney Thorne first)
 $nurseCallSlugs = $mfrData['featured_by_service']['nurse-call']
     ?? $mfrData['images_by_service']['nurse-call']
-    ?? ['courtney-thorne', 'static-systems-group', 'intercall', 'aid-call', 'tunstall', 'ascom'];
+    ?? ['courtney-thorne', 'static-systems-group', 'intercall', 'aid-call', 'ascom'];
 
 // Prefer preferred order if present in catalog
 $preferredNurseOrder = [
@@ -96,7 +96,6 @@ $preferredNurseOrder = [
     'static-systems-group',
     'intercall',
     'aid-call',
-    'tunstall',
     'ascom',
     'caretech',
     'quantec',

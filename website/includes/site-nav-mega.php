@@ -21,22 +21,42 @@ function icomplyMegaHeaderHtml(): string
     $hubSecurity = '/shop/security/';
     $hubGas = '/shop/gas/';
     $shopLive = icomplyNavH(function_exists('icomplyTradeShopUrl') ? icomplyTradeShopUrl() : 'https://shop.icomplypropertyservices.co.uk');
-    $aovHub = icomplyNavH(url('/pages/services/aov-air-handling.php'));
-    $barrierHub = icomplyNavH(url('/pages/services/barriers.php'));
-    $cameHub = icomplyNavH(url('/pages/manufacturers/came.php'));
-    $aovFeatured = '<div class="mega-priority">'
-        . '<div class="mega-featured mega-featured--aov">'
-        . '<p class="mega-featured-title">Priority — AOV &amp; smoke control</p>'
-        . '<a class="mega-featured-link" href="' . $aovHub . '">AOV &amp; Smoke Control</a>'
-        . '<p class="mega-note">Smoke vents, AOV panels, EN 12101 / BS 9991. Quotes POA after scope.</p>'
-        . '</div>'
-        . '<div class="mega-featured mega-featured--barriers">'
-        . '<p class="mega-featured-title">Priority — Barriers · UK-wide</p>'
-        . '<a class="mega-featured-link" href="' . $barrierHub . '">Vehicle &amp; parking barriers</a>'
-        . '<a class="mega-featured-link" href="' . $cameHub . '">Came partner</a>'
-        . '<p class="mega-note">Rising arms and parking barriers. Came GARD first. Full manufacturer list. POA.</p>'
-        . '</div>'
-        . '</div>';
+    $priorityPills = '';
+    $priorityCards = '<div class="mega-featured-row">';
+    foreach ($n['featured'] as $hub) {
+        $href = icomplyNavH(icomplyFeaturedPushHref($hub));
+        $priorityPills .= '<a class="nav-link nav-link--featured" href="' . $href . '">' . icomplyNavH($hub['label']) . '</a>';
+        $priorityCards .= '<a class="mega-featured-card" href="' . $href . '">'
+            . '<span>Priority</span>'
+            . '<strong>' . icomplyNavH($hub['title']) . '</strong>'
+            . '<em>' . icomplyNavH($hub['note']) . '</em>'
+            . '</a>';
+    }
+    $barrierJob = $n['barrierJob'];
+    $priorityCards .= '<a class="mega-featured-card mega-featured-card--job" href="' . icomplyNavH($barrierJob['href']) . '">'
+        . '<span>Barrier job</span>'
+        . '<strong>' . icomplyNavH($barrierJob['label']) . '</strong>'
+        . '<em>Install and access integration. Quote after a lane survey.</em>'
+        . '</a></div>';
+
+    $hubCols = '<div class="mega-col"><p class="mega-col-title">Packages</p>';
+    foreach (icomplyNavPackageLinks() as $hub) {
+        $hubCols .= icomplyNavLink($hub['href'], $hub['label']);
+    }
+    $hubCols .= '</div><div class="mega-col"><p class="mega-col-title">Job hubs</p>';
+    foreach ($n['qualityHubs'] as $hub) {
+        $hubCols .= icomplyNavLink($hub['href'], $hub['label']);
+    }
+    $hubCols .= icomplyNavLink(url('/pages/keywords/index.php'), 'All keyword guides →', 'mega-more');
+    $hubCols .= icomplyNavLink(url('/pages/site-map.php'), 'HTML site map →', 'mega-more');
+    $hubCols .= '</div>';
+
+    $priorityCards = str_replace(
+        '</div>',
+        '<a class="mega-featured-card" href="' . icomplyNavH(url('/pages/aov')) . '"><span>AOV towns</span><strong>Smoke vents</strong><em>Mainland towns over 10,000. Kit prices listed, install POA.</em></a>'
+        . '<a class="mega-featured-card" href="' . icomplyNavH(url('/pages/barriers')) . '"><span>Barrier towns</span><strong>CAME partner</strong><em>5m pack prices, install POA.</em></a></div>',
+        $priorityCards
+    );
 
     $svcCols = '';
     foreach ($n['cats'] as $catKey => $cat) {
@@ -75,6 +95,7 @@ function icomplyMegaHeaderHtml(): string
     </a>
     <nav class="mega-desktop" aria-label="Primary">
       <a class="nav-link" href="{$home}">Home</a>
+      {$priorityPills}
       <div class="mega-item" data-mega>
         <button type="button" class="mega-trigger" aria-expanded="false" aria-controls="mega-services" aria-haspopup="true">Services</button>
         <div id="mega-services" class="mega-panel" hidden>
@@ -82,8 +103,8 @@ function icomplyMegaHeaderHtml(): string
             <div class="mega-panel-head">
               <a href="{$svcHub}">All {$svcCount} services →</a>
             </div>
-            {$aovFeatured}
-            <div class="mega-grid">{$svcCols}</div>
+            {$priorityCards}
+            <div class="mega-grid">{$svcCols}{$hubCols}</div>
           </div>
         </div>
       </div>
@@ -101,13 +122,11 @@ function icomplyMegaHeaderHtml(): string
         <div id="mega-shop" class="mega-panel mega-panel--shop" hidden>
           <div class="mega-panel-inner">
             <div class="mega-panel-head"><a href="{$shopAll}">Trade supplies →</a></div>
+            {$priorityCards}
             <div class="mega-grid mega-grid--shop">
               <div class="mega-col">
                 <p class="mega-col-title">Fire</p>
                 <a href="{$hubFire}">Fire supplies hub</a>
-                <a href="{$aovHub}">AOV &amp; smoke control (service)</a>
-                <a href="{$barrierHub}">Barriers (service)</a>
-                <a href="{$cameHub}">Came partner</a>
               </div>
               <div class="mega-col">
                 <p class="mega-col-title">Category hubs</p>
@@ -126,6 +145,7 @@ function icomplyMegaHeaderHtml(): string
       <a class="nav-link" href="{$contact}">Contact</a>
     </nav>
     <div class="mega-tools">
+      <a class="mega-phone" href="{$phoneHref}">{$phone}</a>
       <a class="mega-quote" href="{$contact}">Get a quote</a>
       <button type="button" class="mega-burger" id="nav-toggle" aria-expanded="false" aria-controls="mega-drawer">Menu</button>
     </div>
@@ -146,13 +166,16 @@ function icomplyMobileDrawerHtml(array $n): string
     $contactDrawer = icomplyNavH(url('/contact.php'));
     $siteMap = icomplyNavH(url('/pages/site-map.php'));
 
-    $aovHubDrawer = icomplyNavH(url('/pages/services/aov-air-handling.php'));
-    $barrierHubDrawer = icomplyNavH(url('/pages/services/barriers.php'));
-    $cameHubDrawer = icomplyNavH(url('/pages/manufacturers/came.php'));
-    $svc = '<a class="drawer-featured" href="' . $aovHubDrawer . '">AOV &amp; Smoke Control</a>';
-    $svc .= '<a class="drawer-featured" href="' . $barrierHubDrawer . '">Vehicle &amp; parking barriers</a>';
-    $svc .= '<a class="drawer-featured" href="' . $cameHubDrawer . '">Came partner</a>';
-    $svc .= '<p class="drawer-note">Priority — AOV, and UK-wide barriers with Came as the partner brand. POA after scope.</p>';
+    $priorityDrawer = '';
+    foreach ($n['featured'] as $hub) {
+        $priorityDrawer .= '<a class="drawer-priority" href="' . icomplyNavH(icomplyFeaturedPushHref($hub)) . '">'
+            . icomplyNavH($hub['label']) . '</a>';
+    }
+    $barrierJob = $n['barrierJob'];
+    $svc = '<a class="drawer-featured" href="' . icomplyNavH($barrierJob['href']) . '">' . icomplyNavH($barrierJob['label']) . '</a>';
+    $svc = '<a class="drawer-featured" href="' . icomplyNavH(url('/pages/aov')) . '">AOV towns</a>'
+        . '<a class="drawer-featured" href="' . icomplyNavH(url('/pages/barriers')) . '">Barriers towns (CAME)</a>'
+        . $svc;
     foreach ($n['cats'] as $cat) {
         $svc .= '<details class="drawer-acc"><summary>' . icomplyNavH($cat['label']) . '</summary><div>';
         foreach ($cat['services'] as $slug => $name) {
@@ -160,6 +183,16 @@ function icomplyMobileDrawerHtml(array $n): string
         }
         $svc .= '</div></details>';
     }
+    $svc .= '<details class="drawer-acc"><summary>Packages</summary><div>';
+    foreach (icomplyNavPackageLinks() as $hub) {
+        $svc .= icomplyNavLink($hub['href'], $hub['label']);
+    }
+    $svc .= '</div></details><details class="drawer-acc"><summary>Job hubs</summary><div>';
+    foreach ($n['qualityHubs'] as $hub) {
+        $svc .= icomplyNavLink($hub['href'], $hub['label']);
+    }
+    $svc .= icomplyNavLink(url('/pages/keywords/index.php'), 'All keyword guides');
+    $svc .= '</div></details>';
 
     $areas = '<a class="drawer-all" href="' . icomplyNavH(url('/pages/areas/index.php')) . '">All ' . count($n['areas']) . ' areas →</a>';
     foreach ($n['popularAreas'] as $area) {
@@ -176,19 +209,19 @@ function icomplyMobileDrawerHtml(array $n): string
 <div id="mega-drawer" class="mega-drawer" hidden>
   <nav class="mega-drawer-inner" aria-label="Mobile">
     <a href="{$home}">Home</a>
+    {$priorityDrawer}
     <details class="drawer-acc" open><summary>Services</summary><div>{$svc}</div></details>
     <details class="drawer-acc"><summary>Areas</summary><div>{$areas}</div></details>
     <details class="drawer-acc"><summary>Shop</summary><div>
       <a href="{$hubFireD}">Fire</a>
-      <a href="{$aovHubDrawer}">AOV &amp; smoke control (service)</a>
-      <a href="{$barrierHubDrawer}">Barriers (service)</a>
-      <a href="{$cameHubDrawer}">Came partner</a>
       <a href="{$hubElectricalD}">Electrical</a>
       <a href="{$hubSecurityD}">Security</a>
       <a href="{$hubGasD}">Gas</a>
       <a href="/shop/">All supplies</a>
     </div></details>
     <a href="{$productsD}">Products</a>
+    <a class="drawer-cta" href="{$phoneHref}">Call {$phone}</a>
+    <a href="{$siteMap}">Site map</a>
     <a class="drawer-cta drawer-cta--quote" href="{$contactDrawer}">Get a quote</a>
   </nav>
 </div>
