@@ -3,11 +3,13 @@
  * SERVICES_INDEX — conversion-focused hub listing all core services.
  */
 require_once __DIR__ . '/../../config.php';
+require_once SITE_ROOT . '/includes/seo.php';
 
-$pageTitle = 'All Services | Fire Safety, Professional & Construction | North West';
-$metaDesc = 'Browse Icomply services: fire safety systems and fire risk assessments, electrical, gas, security, professional services, kitchens, bathrooms, renovation and construction across the North West.';
+$pageTitle = 'Property Services in the North West | Icomply';
+$metaDesc = 'Fire, electrical, gas, security, kitchens and building services from a Stockport team covering Greater Manchester and the North West.';
 $metaKeywords = 'fire risk assessment, fire safety systems, kitchen fitting, bathroom renovation, plastering, landlord compliance, EICR, CCTV, Manchester, Stockport, North West';
-$ogImage = url('/assets/images/services/fire-alarms.jpg');
+$canonicalUrl = url('/pages/services/index.php');
+$ogImage = icomply_absolute_url('/assets/images/services/fire-alarms.jpg');
 
 $services = getServices();
 $areas = getAreas();
