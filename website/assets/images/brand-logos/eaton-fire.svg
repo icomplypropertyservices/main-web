@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 355 96" role="img" aria-labelledby="t-eaton-fire">
+  <title id="t-eaton-fire">Eaton Fire</title>
+  <rect width="355" height="96" rx="18" fill="#F4F6F9"/>
+  <rect x="16" y="16" width="64" height="64" rx="16" fill="#0E6B4F"/>
+  <text x="48" y="49" text-anchor="middle" dominant-baseline="central" font-family="ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" letter-spacing="0">EF</text>
+  <text x="96" y="50" dominant-baseline="central" font-family="ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif" font-size="36" font-weight="700" fill="#0B1F3A" letter-spacing="-0.03em">Eaton Fire</text>
+</svg>

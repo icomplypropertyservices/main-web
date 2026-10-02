@@ -7,7 +7,11 @@ function icomplyFooterHtml(): string
     $phone = icomplyNavH($n['phone']);
     $phoneHref = icomplyNavH($n['phoneHref']);
     $email = icomplyNavH($n['email']);
-    $wa = icomplyNavH($n['whatsapp']);
+    $waDigits = preg_replace('/\D+/', '', (string)($n['whatsapp'] ?? ''));
+    if ($waDigits === '') {
+        $waDigits = '447517806082';
+    }
+    $wa = icomplyNavH($waDigits);
     $brand = icomplyNavH($n['brand']);
     $year = date('Y');
     $contact = icomplyNavH(url('/contact.php'));
@@ -42,7 +46,11 @@ function icomplyFooterHtml(): string
         foreach ($cat['keywords'] as $svcSlug => $block) {
             $kwDrop .= '<details class="foot-sub"><summary>' . icomplyNavH($block['name']) . '</summary><div class="foot-links">';
             foreach ($block['keywords'] as $kSlug => $meta) {
-                $kwDrop .= icomplyNavLink(url('/pages/keywords/' . rawurlencode((string)$kSlug) . '.php'), (string)($meta['name'] ?? $kSlug));
+                $kwName = (string)($meta['name'] ?? $kSlug);
+                if (function_exists('seo_unverified_badge_label') && seo_unverified_badge_label($kwName)) {
+                    continue;
+                }
+                $kwDrop .= icomplyNavLink(url('/pages/keywords/' . rawurlencode((string)$kSlug) . '.php'), $kwName);
             }
             $kwDrop .= '</div></details>';
         }
@@ -52,6 +60,9 @@ function icomplyFooterHtml(): string
     $matrixDrop = '<p class="foot-note">Every keyword hub has a page for every town (' . $kwCount . ' × ' . $areaCount . '). Open a hub, then pick the town — we do not dump 200,000 links here.</p>';
     $matrixDrop .= '<details class="foot-sub"><summary>Open a keyword hub (then pick a town)</summary><div class="foot-links">';
     foreach ($n['featuredKw'] as $slug => $name) {
+        if (function_exists('seo_unverified_badge_label') && seo_unverified_badge_label((string)$name)) {
+            continue;
+        }
         $matrixDrop .= icomplyNavLink(url('/pages/keywords/' . rawurlencode((string)$slug) . '.php'), (string)$name);
     }
     $matrixDrop .= icomplyNavLink(url('/pages/keywords/index.php'), 'Full keyword index →');
@@ -77,6 +88,7 @@ function icomplyFooterHtml(): string
 
     $legalDrop = '<div class="foot-links">';
     $legalDrop .= icomplyNavLink(url('/contact.php'), 'Contact / quote');
+    $legalDrop .= icomplyNavLink('/become-a-subcontractor', 'Work with us');
     $legalDrop .= icomplyNavLink($n['phoneHref'], 'Call ' . $n['phone']);
     $legalDrop .= '<a href="mailto:' . $email . '">' . $email . '</a>';
     foreach ($n['legal'] as $row) {
@@ -84,10 +96,22 @@ function icomplyFooterHtml(): string
     }
     $legalDrop .= '</div>';
 
+    $featuredCards = '<div class="foot-featured" aria-label="Priority services">';
+    foreach ($n['featured'] as $hub) {
+        $href = icomplyNavH(icomplyFeaturedPushHref($hub));
+        $featuredCards .= '<a href="' . $href . '"><span>Priority</span><strong>'
+            . icomplyNavH($hub['title']) . '</strong><em>' . icomplyNavH($hub['note']) . '</em></a>';
+    }
+    $barrierJob = $n['barrierJob'];
+    $featuredCards .= '<a href="' . icomplyNavH($barrierJob['href']) . '"><span>Barrier job</span><strong>'
+        . icomplyNavH($barrierJob['label']) . '</strong><em>Lane survey, then a written quote. Install POA.</em></a>';
+    $featuredCards .= '</div>';
+
     $social = function_exists('socialIconsHtml') ? socialIconsHtml('dark') : '';
     $svcHub = icomplyNavH(url('/pages/services/index.php'));
     $areaHub = icomplyNavH(url('/pages/areas/index.php'));
     $kwHub = icomplyNavH(url('/pages/keywords/index.php'));
+    $subcontract = icomplyNavH('/become-a-subcontractor');
     $privacy = icomplyNavH($n['legal'][0]['href']);
     $terms = icomplyNavH($n['legal'][1]['href']);
     $siteMap = icomplyNavH($n['legal'][2]['href']);
@@ -97,7 +121,7 @@ function icomplyFooterHtml(): string
   <div class="foot-wrap">
     <div class="foot-nap">
       <div class="foot-brand">{$brand}</div>
-      <p>Property compliance — electrical, fire, gas, water hygiene and asbestos surveys across Greater Manchester and the North West. Quotes are scoped; Legionella and asbestos are POA.</p>
+      <p>Property compliance — electrical, fire, water hygiene and asbestos surveys across Greater Manchester and the North West. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out gas work or issue those certificates. Quotes are POA until scope is confirmed. Call {$phone}.</p>
       <p><span class="foot-label">Phone</span> <a href="{$phoneHref}">{$phone}</a></p>
       <p><span class="foot-label">Email</span> <a href="mailto:{$email}">{$email}</a></p>
       <p><span class="foot-label">Address</span> 17 Woodlands Park Road, Offerton, Stockport SK2 5DE</p>
@@ -107,6 +131,7 @@ function icomplyFooterHtml(): string
         <a class="foot-cta foot-cta--quote" href="{$contact}">Request a quote</a>
       </div>
     </div>
+    {$featuredCards}
     <div class="foot-drops">
       <details class="foot-drop" open>
         <summary>Services <span>({$svcCount})</span></summary>
@@ -140,6 +165,7 @@ function icomplyFooterHtml(): string
           <a href="{$areaHub}">Areas</a>
           <a href="{$contact}">Contact</a>
           <a href="/shop/">Trade shop hubs</a>
+          <a href="/products#barriers">Barriers</a>
           <a href="/shop/electrical/">Electrical</a>
           <a href="/shop/fire/">Fire</a>
           <a href="/shop/security/">Security</a>
@@ -160,6 +186,7 @@ function icomplyFooterHtml(): string
       <div>© {$year} {$brand}. All rights reserved.</div>
       <div class="foot-base-links">
         <a href="{$contact}">Contact</a>
+        <a href="{$subcontract}">Work with us</a>
         <a href="{$privacy}">Privacy</a>
         <a href="{$terms}">Terms</a>
         <a href="{$siteMap}">Site map</a>
@@ -167,7 +194,7 @@ function icomplyFooterHtml(): string
     </div>
   </div>
 </footer>
-<a href="https://wa.me/{$wa}?text=Hi%20Icomply%2C%20I%20need%20a%20quote%20for%20compliance%20services" target="_blank" rel="noopener" aria-label="WhatsApp" class="wa-float">💬</a>
+<a href="https://wa.me/{$wa}?text=Hi%20iComply%2C%20I%20need%20a%20quote%20for%20compliance%20services" target="_blank" rel="noopener" aria-label="WhatsApp" class="wa-float">💬</a>
 <div id="mobile-sticky-cta" class="mobile-sticky-cta">
   <a href="{$phoneHref}">Call {$phone}</a>
   <a class="sticky-quote" href="{$contact}">Free quote</a>

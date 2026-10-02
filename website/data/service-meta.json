@@ -40,9 +40,9 @@
         "standards": "BS EN 62676 · GDPR / DPA camera siting"
     },
     "access-control": {
-        "blurb": "Paxton, HID, Salto door access, credentials and fire-override integration.",
-        "short": "Paxton, HID, Salto door access",
-        "standards": "BS EN 50133 · EN 60839 · fire-release integration"
+        "blurb": "Paxton, HID, Salto and other door access platforms, credentials and fire-alarm release. Tunstall is not an access-control brand we list here.",
+        "short": "Paxton, HID, Salto and other door access",
+        "standards": "BS EN 60839-11 · BS 7273-4 fire release · Equality Act access"
     },
     "door-entry": {
         "blurb": "Video and audio door entry for flats, multi-tenant and commercial sites.",

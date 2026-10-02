@@ -2,7 +2,7 @@
 /**
  * Intercoms — 3 images · 3 paragraphs · manufacturers · SEO brand alts
  */
-$pageTitle = '{{SERVICE_NAME}} in {{AREA}} | Icomply Property Services';
+$pageTitle = '{{SERVICE_NAME}} in {{AREA}} | iComply Property Services';
 $metaDesc = 'Intercom system installation in {{AREA}}. Aiphone, Commend and Zenitel industrial and commercial panels — IP, video and PA.';
 $metaKeywords = 'intercom installation {{AREA}}, Aiphone intercom {{AREA}}, Commend intercom {{AREA}}, Zenitel Stentofon {{AREA}}, industrial intercom {{AREA}}, IP intercom {{AREA}}';
 $ogImage = url('/assets/images/services/intercoms.jpg');
@@ -37,7 +37,7 @@ require SITE_ROOT . '/includes/header.php';
           "postalCode": "SK2 5DE",
           "addressCountry": "GB"
         },
-        "priceRange": "££"
+        "priceRange": "POA"
       },
       "areaServed": {"@type": "City", "name": "{{AREA}}"},
       "offers": {
@@ -68,7 +68,7 @@ require SITE_ROOT . '/includes/header.php';
     <!-- IMAGE 1: Hero -->
     <div class="mt-8">
         <img src="<?= url('/assets/images/services/intercoms.jpg') ?>"
-             alt="Aiphone Commend Zenitel intercom master station and door panel installation in {{AREA}} by Icomply Property Services"
+             alt="Aiphone Commend Zenitel intercom master station and door panel installation in {{AREA}} by iComply Property Services"
              width="1200" height="800"
              class="w-full h-72 md:h-96 object-cover rounded-3xl border"
              loading="eager">
@@ -77,7 +77,7 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 1 -->
     <p class="mt-8 text-lg text-black max-w-3xl leading-relaxed">
-        Icomply Property Services specialises in audio, video and IP <strong>{{SERVICE_NAME}}</strong> for offices, factories, healthcare, schools and commercial premises across <strong>{{AREA}}</strong> and the wider North West. We install and maintain <strong>Aiphone</strong>, <strong>Commend</strong> and <strong>Zenitel</strong> master stations, substations and weatherproof door units with crystal-clear duplex speech.
+        iComply Property Services specialises in audio, video and IP <strong>{{SERVICE_NAME}}</strong> for offices, factories, healthcare, schools and commercial premises across <strong>{{AREA}}</strong> and the wider North West. We install and maintain <strong>Aiphone</strong>, <strong>Commend</strong> and <strong>Zenitel</strong> master stations, substations and weatherproof door units with crystal-clear duplex speech.
     </p>
 
     <!-- PARAGRAPH 2 -->
@@ -89,7 +89,7 @@ require SITE_ROOT . '/includes/header.php';
     <div class="mt-10 grid md:grid-cols-2 gap-6">
         <div>
             <img src="<?= url('/assets/images/keywords/aiphone-intercom.jpg') ?>"
-                 alt="Aiphone video intercom master station and door station panel installed by Icomply in {{AREA}}"
+                 alt="Aiphone video intercom master station and door station panel installed by iComply in {{AREA}}"
                  width="800" height="600"
                  class="w-full h-56 object-cover rounded-2xl border"
                  loading="lazy"
@@ -127,7 +127,7 @@ require SITE_ROOT . '/includes/header.php';
     <!-- IMAGE 3: Brand focus -->
     <div class="mt-10">
         <img src="<?= url('/assets/images/keywords/intercom-system.jpg') ?>"
-             alt="Aiphone Commend Zenitel intercom panels master stations and industrial call points — Icomply {{AREA}}"
+             alt="Aiphone Commend Zenitel intercom panels master stations and industrial call points — iComply {{AREA}}"
              width="1200" height="700"
              class="w-full h-64 md:h-80 object-cover rounded-3xl border"
              loading="lazy"

@@ -91,6 +91,8 @@
 /terms/    /terms.php    200!
 /contact    /contact.php    200!
 /contact/    /contact.php    200!
+/become-a-subcontractor    /become-a-subcontractor.php    200!
+/become-a-subcontractor/    /become-a-subcontractor.php    200!
 /pages/about    /pages/about.php    200!
 /pages/about/    /pages/about.php    200!
 /pages/areas    /pages/areas.php    200!
@@ -105,6 +107,12 @@
 /pages/keywords/    /pages/keywords.php    200!
 /pages/keywords/:slug    /pages/keywords/:slug.php    200!
 /pages/keywords/:slug/    /pages/keywords/:slug.php    200!
+
+
+# BEGIN legacy-matrix-redirects
+# keyword_rules=0 service_rules=0
+# Real matrix pages are 200. No town-pattern 301s.
+# END legacy-matrix-redirects
 
 # Splat pretty URLs. No force — /assets and real files win.
 /*    /:splat.php    200

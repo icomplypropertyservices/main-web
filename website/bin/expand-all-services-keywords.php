@@ -300,7 +300,7 @@ $kwSeed = [
         'Gas Safety Check', 'Commercial Gas Installation', 'Gas Cooker Installation', 'Gas Leak Investigation',
         'Boiler Installation', 'Gas Meter Relocation Support', 'HMO Gas Safety', 'Portfolio Gas Certificates',
         'Gas Appliance Service', 'Landlord Gas Safety North West', 'Annual Gas Safety Certificate',
-        'Gas Safe Engineer Stockport', 'Commercial Kitchen Gas Works', 'Gas Valve Replacement',
+        'Gas engineer Stockport', 'Commercial Kitchen Gas Works', 'Gas Valve Replacement',
     ],
     'nurse-call' => [
         'Nurse Call System Installation', 'Nurse Call System Maintenance', 'Care Home Nurse Call',
@@ -578,7 +578,7 @@ $openers = [
     'Want {kw} delivered to current UK standards with local engineers?',
 ];
 $middles = [
-    'Icomply Property Services {verb} {kw} as part of our {svc} offering, working to {std}.',
+    'iComply Property Services {verb} {kw} as part of our {svc} offering, working to {std}.',
     'Our team {verb} {kw} for {who}, with {docs} on completion where applicable.',
     'From first survey to handover, we {verb} {kw} with transparent pricing after scope is agreed.',
     'We handle {kw} alongside related {svc} works so one contractor can reduce site disruption.',
@@ -611,7 +611,7 @@ function buildUniqueContent(string $name, string $serviceSlug, array $copy, int 
         "Want {$name} delivered to current UK standards with local engineers?",
     ];
     $middles = [
-        "Icomply Property Services {$verb} {$name} as part of our {$svc} offering, working to {$std}.",
+        "iComply Property Services {$verb} {$name} as part of our {$svc} offering, working to {$std}.",
         "Our team {$verb} {$name} for {$who}, with {$docs} on completion where applicable.",
         "From first survey to handover, we {$verb} {$name} with transparent pricing after scope is agreed.",
         "We handle {$name} alongside related {$svc} works so one contractor can reduce site disruption.",
@@ -627,7 +627,7 @@ function buildUniqueContent(string $name, string $serviceSlug, array $copy, int 
     $c = $closers[($salt + 2) % count($closers)];
     $intro = "{$o} {$m}";
     $body = "{$m} {$c} Typical jobs include survey, agreed works, quality checks and paperwork suitable for landlords, insurers and facilities managers. Local engineers attend from Stockport with North West coverage including Manchester, Bolton, Liverpool, Preston, Chester and surrounding towns.";
-    $meta = "{$name} across the North West. {$svc} from Icomply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.";
+    $meta = "{$name} across the North West. {$svc} from iComply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.";
     $seo = strtolower("{$name}, {$name} North West, {$name} Manchester, {$name} Stockport, {$svc}, property services Greater Manchester");
     $focus = [
         "Survey and fixed-price quote for {$name}",

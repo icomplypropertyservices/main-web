@@ -11,13 +11,14 @@ Official rules for the electrical + gas keyword expansion.
 ## Sitemap (P090 — priority over new volume)
 
 - `sitemap.xml` must **only** list URLs that return HTTP **200**.
-- **Never** list `/pages/{service}/{town}` (gas-systems, electrical, fire-alarms, …). Those landings are `--full` only and 404 on the default export. Do **not** mass-generate thin service×area doorway pages for all 168 towns.
-- Do **not** mass-include thin keyword×area doorways in the sitemap. Featured electrical/gas × a handful of towns is allowed because those files exist and return 200.
-- The full ~36k keyword×town matrix stays in `dist/` for Jack; it stays **out** of `sitemap.xml`.
+- Service×town URLs are listed only for the ten Tier-1 towns, and only when that pair has a bespoke article in `includes/tier1-copy.php`. Electrical, gas, fire alarms and emergency lighting are the current set. Other trades stay live and `noindex`.
+- Do **not** put a town name into a shared paragraph. `check-town-uniqueness.php` rejects any repeated 6-word run across those articles.
+- Area town hubs (`/pages/areas/{town}`) are one template. They stay on the site for visitors and stay **out** of the sitemap.
+- Do **not** list keyword×town doorways in the sitemap. The HTML may stay in `dist/` for direct visits.
 
 ## Copy / POA
 
-- Cost, price, quote and “how much” keywords always say **POA**. Never invent a £ figure.
+- Cost, price, quote and “how much” keywords always say **POA**. Never invent a POA figure.
 - UK English, Stockport / North West. No fake accreditations, reviews or prices.
 
 ## HMO packages
