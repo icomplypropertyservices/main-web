@@ -336,6 +336,17 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
     foreach (array_keys(getManufacturerCatalog()) as $slug) {
         $routes[] = '/pages/manufacturers/' . $slug;
     }
+    if (function_exists('barrierManufacturerRecords')) {
+        foreach (barrierManufacturerRecords() as $brand) {
+            $bSlug = (string)($brand['slug'] ?? '');
+            if ($bSlug === '') {
+                continue;
+            }
+            foreach (getAreas() as $area) {
+                $routes[] = '/pages/manufacturers/' . $bSlug . '/' . areaSlug((string)$area);
+            }
+        }
+    }
 
     foreach (icomplyCollectKeywordRoutes($keywordTowns) as $path) {
         $routes[] = $path;
@@ -358,6 +369,16 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
  */
 function icomplyRenderExportRoute(string $path): array
 {
+    if (preg_match('#^/pages/manufacturers/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)
+        && function_exists('barrierManufacturerAreaExportHtml')) {
+        $area = function_exists('areaFromSlug') ? areaFromSlug($m[2]) : null;
+        if ($area !== null) {
+            $html = barrierManufacturerAreaExportHtml($m[1], $area);
+            if ($html !== '' && icomplyLooksLikeHtml($html)) {
+                return ['html' => $html, 'status' => 200];
+            }
+        }
+    }
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         $area = function_exists('areaFromSlug') ? areaFromSlug($m[2]) : $m[2];
         $html = icomplyRenderKeywordTownHtml($m[1], (string)($area ?: $m[2]));

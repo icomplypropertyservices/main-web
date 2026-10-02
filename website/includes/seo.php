@@ -45,6 +45,7 @@ function service_standards(string $slug): array {
         'intruder-alarm' => ['BS 4737 / PD 6662 practice', 'wired & wireless', 'PIR detection', 'app control', 'ARC-ready'],
         'cctv' => ['IP / HD CCTV', 'NVR recording', 'remote viewing', 'retail & warehouse', 'GDPR-aware install'],
         'access-control' => ['card / fob / biometric', 'multi-door control', 'audit trails', 'time zones', 'fire door release'],
+        'barriers' => ['rising-arm barriers', 'parking barriers', 'BS EN 12453', 'CAME partner', 'safety loops'],
         'door-entry' => ['video door entry', 'audio door entry', 'apartment blocks', 'riser upgrades', 'handset replacement'],
         'intercoms' => ['video intercom', 'audio intercom', 'multi-tenant', 'office systems', 'fault finding'],
         'legionella-risk-assessment' => ['HSE L8', 'HSG274', 'water hygiene', 'Legionella risk assessment', 'POA'],
@@ -128,6 +129,11 @@ function service_faqs(string $slug, string $serviceName, string $area = ''): arr
             ['q' => "Do you install IP CCTV{$loc}?", 'a' => "Yes — IP/HD camera systems with NVR recording and secure remote viewing for managers{$loc}."],
             ['q' => "Is CCTV GDPR compliant?", 'a' => "We design camera views to avoid unnecessary private intrusion and advise on signage and data retention best practice."],
             ['q' => "Can you expand an existing system?", 'a' => "We add cameras, upgrade recorders and migrate storage while keeping as much existing cabling as practical."],
+        ],
+        'barriers' => [
+            ['q' => "Which barrier manufacturers do you install{$loc}?", 'a' => "CAME, Nice, FAAC, BFT, Hörmann, Magnetic, Elka, Automatic Systems, APT Controls, Beninca, Roger Technology, Ditec, Centurion, DoorHan, Gibidi, SEA and Genius. Every brand is linked from the barriers page. Tunstall is not a barrier manufacturer."],
+            ['q' => "Are you a CAME partner?", 'a' => "Yes. iComply is a CAME partner for the rising-arm barriers we supply and install. We do not publish a partner or accreditation number."],
+            ['q' => "Do you publish barrier prices?", 'a' => "Only the published CAME 5m supply packs. Other lengths and other manufacturers are quoted after survey. Installation is POA."],
         ],
         'access-control' => [
             ['q' => "What access control options do you offer?", 'a' => "Card, fob, PIN and biometric readers for single doors through to multi-door sites with audit trails and time zones."],

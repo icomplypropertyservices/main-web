@@ -9,7 +9,15 @@ $metaDesc = $poaService
     ? ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Price on application after scope. Local team from Stockport. No invented fees.')
     : ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Installation, maintenance, testing & certification. Written quotes after scope. Local engineers from Stockport.');
 $metaKeywords = $SEO_KEYWORDS;
-$ogImage = url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
+$ogImage = function_exists('serviceImageUrl')
+    ? serviceImageUrl($SERVICE_SLUG)
+    : url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
+if ($SERVICE_SLUG === 'barriers' && function_exists('barrierManufacturerBySlug')) {
+    $cameOg = barrierManufacturerBySlug('came');
+    if (is_array($cameOg) && !empty($cameOg['partner_image'])) {
+        $ogImage = (string)$cameOg['partner_image'];
+    }
+}
 
 $allServices = getServices();
 $allAreas = getAreas();
@@ -41,6 +49,11 @@ $serviceFaqs = [
         ['What survey do I need?', 'A management survey is for normal occupation. A refurbishment or demolition survey is for intrusive works. We scope the type to the building and the planned job.'],
         ['Do you remove asbestos?', 'Licensed removal is not this service. If the survey says removal is required, that work is appointed separately.'],
         ['What does it cost?', 'Price on application. Size, access and how intrusive the survey must be all change the quote. No invented starting price.'],
+    ],
+    'barriers' => [
+        ['Which barrier manufacturers do you install?', 'CAME, Nice, FAAC, BFT, Hörmann, Magnetic, Elka, Automatic Systems, APT Controls, Beninca, Roger Technology, Ditec, Centurion, DoorHan, Gibidi, SEA and Genius. Each brand has a logo, product lines and a manufacturer page. Tunstall is not a barrier manufacturer.'],
+        ['Are you a CAME partner?', 'Yes. iComply is a CAME partner for the rising-arm barriers we supply and install. The partnership is stated in plain language. We do not publish a partner or accreditation number.'],
+        ['What does a barrier cost?', 'Published supply prices are only the existing CAME 5m packs. Other lengths and other manufacturers are quoted after survey. Installation is always price on application.'],
     ],
     'default' => [
         ['What areas do you cover for ' . $SERVICE_NAME . '?', 'We cover every town in our published areas list across Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria from our Stockport base.'],
@@ -206,7 +219,7 @@ $schema = [
                 <p class="mt-6 text-sm text-white/60"><?= htmlspecialchars($standards, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
-                <img src="<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>"
+                <img src="<?= htmlspecialchars(serviceImageUrl($serviceSlug), ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> by Icomply Property Services"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
                      loading="eager"
@@ -322,7 +335,12 @@ $schema = [
     <?php endif; ?>
 </section>
 
-<?php if (!$poaService): ?>
+<?php if ($serviceSlug === 'barriers' && function_exists('barrierPagesBlockHtml')): ?>
+<?= barrierPagesBlockHtml('barriers', '', true) ?>
+<?php elseif ($serviceSlug === 'access-control' && function_exists('camePartnerPanelHtml')): ?>
+<?= camePartnerPanelHtml('access-control') ?>
+<?php endif; ?>
+<?php if (!$poaService && $serviceSlug !== 'barriers'): ?>
 <!-- MANUFACTURERS -->
 <section class="bg-zinc-50 border-y">
     <div class="max-w-7xl mx-auto px-6 py-16">

@@ -10,7 +10,11 @@ $metaKeywords = $MFR_SEO_KEYWORDS;
 $canonicalUrl = url('/pages/manufacturers/' . $MFR_SLUG . '.php');
 
 require_once SITE_ROOT . '/includes/share.php';
-require_once SITE_ROOT . '/includes/shopify.php';
+if (function_exists('icomplyRequireShopify')) {
+    icomplyRequireShopify();
+} elseif (is_file(SITE_ROOT . '/includes/shopify.php')) {
+    require_once SITE_ROOT . '/includes/shopify.php';
+}
 
 $mfrSlug = $MFR_SLUG;
 $mfrName = $MFR_NAME;
@@ -140,11 +144,11 @@ $schema = [
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
                 <img src="<?= htmlspecialchars(manufacturerImageUrl($mfrSlug, $primaryService), ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> equipment — Icomply Property Services"
-                     class="absolute inset-0 w-full h-full object-cover opacity-70"
+                     class="absolute inset-0 w-full h-full <?= !empty($entry['partner']) ? 'object-contain bg-white p-6' : 'object-cover opacity-70' ?>"
                      loading="eager"
                      onerror="this.src='<?= htmlspecialchars(serviceImageUrl($primaryService), ENT_QUOTES, 'UTF-8') ?>'">
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-transparent to-transparent">
-                    <div class="text-sm text-white/70">Authorised install &amp; trade supply</div>
+                    <div class="text-sm text-white/70"><?= !empty($entry['partner']) ? barrierH((string)($entry['partner_label'] ?? 'CAME partner')) : 'Install, service and trade supply' ?></div>
                     <div class="text-2xl font-semibold mt-1"><?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> · North West</div>
                 </div>
             </div>
@@ -196,6 +200,37 @@ $schema = [
     </div>
 </section>
 
+<?php if (!empty($entry['partner'])): ?>
+<?= camePartnerPanelHtml('manufacturers') ?>
+<?= cameLaneWizardHtml() ?>
+<?php endif; ?>
+<?php
+$productLines = $entry['product_lines'] ?? [];
+if (is_array($productLines) && $productLines && function_exists('barrierManufacturerBySlug')):
+    $lineBrand = barrierManufacturerBySlug($mfrSlug) ?? ['slug' => $mfrSlug, 'name' => $mfrName, 'lines' => $productLines];
+?>
+<section class="max-w-7xl mx-auto px-6 py-16" id="product-lines">
+    <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Product lines</div>
+    <h2 class="text-3xl font-semibold tracking-tight text-black mt-2"><?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> range</h2>
+    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <?php foreach ($productLines as $line):
+            if (!is_array($line)) continue;
+            $lineImg = function_exists('barrierLineImage') ? barrierLineImage($lineBrand, $line) : '';
+        ?>
+        <article class="bg-white border rounded-3xl overflow-hidden">
+            <?php if ($lineImg !== ''): ?>
+            <img src="<?= htmlspecialchars($lineImg, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($mfrName . ' ' . (string)($line['name'] ?? ''), ENT_QUOTES, 'UTF-8') ?>" class="w-full h-40 object-cover bg-zinc-50" loading="lazy" width="480" height="160">
+            <?php endif; ?>
+            <div class="p-5">
+                <h3 class="font-semibold text-lg"><?= htmlspecialchars((string)($line['name'] ?? ''), ENT_QUOTES, 'UTF-8') ?></h3>
+                <p class="mt-2 text-sm text-zinc-600"><?= htmlspecialchars((string)($line['summary'] ?? ''), ENT_QUOTES, 'UTF-8') ?></p>
+                <p class="mt-3 text-sm font-semibold">Supply quoted after survey · install POA</p>
+            </div>
+        </article>
+        <?php endforeach; ?>
+    </div>
+</section>
+<?php endif; ?>
 <!-- PRODUCTS -->
 <section id="products" class="bg-zinc-50 border-y">
     <div class="max-w-7xl mx-auto px-6 py-16">
@@ -232,15 +267,20 @@ $schema = [
     <p class="mt-2 text-zinc-600 mb-6">Open a local <?= htmlspecialchars($primaryServiceName, ENT_QUOTES, 'UTF-8') ?> page for dedicated SEO and quotes.</p>
     <div class="flex flex-wrap gap-2">
         <?php
-        $towns = array_values(array_filter(
+        $isBarrierBrand = function_exists('isBarrierManufacturerSlug') && isBarrierManufacturerSlug($mfrSlug);
+        $towns = $isBarrierBrand ? getAreas() : array_values(array_filter(
             ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
             fn($t) => in_array($t, getAreas(), true)
         ));
         foreach ($towns as $t):
+            $townHref = $isBarrierBrand
+                ? url('/pages/manufacturers/' . $mfrSlug . '/' . areaSlug($t))
+                : url('/pages/' . $primaryService . '/' . areaSlug($t) . '.php');
+            $townLabel = $isBarrierBrand ? ($mfrName . ' in ' . $t) : ($primaryServiceName . ' in ' . $t);
         ?>
-            <a href="<?= url('/pages/' . htmlspecialchars($primaryService, ENT_QUOTES, 'UTF-8') . '/' . areaSlug($t) . '.php') ?>"
+            <a href="<?= htmlspecialchars($townHref, ENT_QUOTES, 'UTF-8') ?>"
                class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">
-                <?= htmlspecialchars($primaryServiceName . ' in ' . $t, ENT_QUOTES, 'UTF-8') ?>
+                <?= htmlspecialchars($townLabel, ENT_QUOTES, 'UTF-8') ?>
             </a>
         <?php endforeach; ?>
     </div>

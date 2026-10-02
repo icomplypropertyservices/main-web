@@ -465,8 +465,12 @@ function getPopularKeywordSlugs(): array {
 }
 
 function getSeoKeywords(string $service, string $area = ''): string {
-    $mfr = loadJsonData('manufacturers', []);
-    $base = $mfr['seo_keywords'][$service] ?? $service;
+    if ($service === 'barriers') {
+        $base = 'vehicle barriers, rising arm barrier, parking barrier, CAME partner, Nice, FAAC, BFT, Hormann, Magnetic';
+    } else {
+        $mfr = loadJsonData('manufacturers', []);
+        $base = $mfr['seo_keywords'][$service] ?? $service;
+    }
     return $area !== '' ? "{$base} {$area}, {$area} electrician, {$area} fire safety" : $base;
 }
 
@@ -493,6 +497,12 @@ function getServiceStandards(string $slug): string {
 }
 
 function getManufacturers(string $serviceSlug): array {
+    if ($serviceSlug === 'barriers' && function_exists('barrierManufacturerNames')) {
+        $names = barrierManufacturerNames();
+        if ($names) {
+            return $names;
+        }
+    }
     $mfr = loadJsonData('manufacturers', []);
     return $mfr['by_service'][$serviceSlug] ?? ['Industry Standard Equipment'];
 }
@@ -502,7 +512,7 @@ function getManufacturerCatalog(): array {
     $mfr = loadJsonData('manufacturers', []);
     $catalog = $mfr['catalog'] ?? [];
     if ($catalog) {
-        return $catalog;
+        return barrierMergeManufacturerCatalog($catalog);
     }
     // Fallback: build minimal catalog from by_service names
     $built = [];
@@ -526,7 +536,7 @@ function getManufacturerCatalog(): array {
             }
         }
     }
-    return $built;
+    return barrierMergeManufacturerCatalog($built);
 }
 
 function getManufacturerBySlug(string $slug): ?array {
@@ -564,7 +574,7 @@ function getManufacturerImageSlugs(string $serviceSlug): array {
 function manufacturerTagsHtml(string $serviceSlug): string {
     $html = '';
     foreach (getManufacturers($serviceSlug) as $m) {
-        $slug = manufacturerSlugFromName($m);
+        $slug = function_exists('manufacturerSlugForLabel') ? manufacturerSlugForLabel($m) : manufacturerSlugFromName($m);
         $href = htmlspecialchars(url('/pages/manufacturers/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
         $label = htmlspecialchars($m, ENT_QUOTES, 'UTF-8');
         $html .= '<a href="' . $href . '" '
@@ -588,7 +598,7 @@ function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
     // Prefer full by_service list so every mentioned brand has a card
     $fromNames = [];
     foreach (getManufacturers($serviceSlug) as $m) {
-        $fromNames[] = manufacturerSlugFromName($m);
+        $fromNames[] = function_exists('manufacturerSlugForLabel') ? manufacturerSlugForLabel($m) : manufacturerSlugFromName($m);
     }
     if ($fromNames) {
         $slugs = $fromNames;
@@ -647,7 +657,7 @@ function linkManufacturerNamesInText(string $text): string {
 /** First existing service image (.jpg, .png, then -photo.jpg). */
 function serviceImageUrl(string $slug): string {
     $base = '/assets/images/services/' . $slug;
-    foreach ([$base . '.jpg', $base . '.png', $base . '-photo.jpg'] as $rel) {
+    foreach ([$base . '.jpg', $base . '.png', $base . '.svg', $base . '-photo.jpg'] as $rel) {
         if (is_file(SITE_ROOT . $rel)) {
             return url($rel);
         }
@@ -664,9 +674,28 @@ function servicePhotoUrl(string $slug): string {
 }
 
 function manufacturerImageUrl(string $slug, string $fallbackService = 'fire-alarms'): string {
-    $rel = '/assets/images/manufacturers/' . $slug . '.jpg';
-    if (is_file(SITE_ROOT . $rel)) {
-        return url($rel);
+    if (function_exists('barrierManufacturerBySlug')) {
+        $brand = barrierManufacturerBySlug($slug);
+        if ($brand && !empty($brand['partner']) && !empty($brand['partner_image'])) {
+            return (string)$brand['partner_image'];
+        }
+    }
+    foreach ([
+        '/assets/images/manufacturers/' . $slug . '.jpg',
+        '/assets/images/manufacturers/' . $slug . '.png',
+        '/assets/images/manufacturers/' . $slug . '.svg',
+        '/assets/images/manufacturers/' . $slug . '-logo.svg',
+        '/assets/images/manufacturers/' . $slug . '-barrier.svg',
+    ] as $rel) {
+        if (is_file(SITE_ROOT . $rel)) {
+            return url($rel);
+        }
+    }
+    if (function_exists('barrierManufacturerBySlug')) {
+        $brand = barrierManufacturerBySlug($slug);
+        if ($brand && !empty($brand['partner_image'])) {
+            return (string)$brand['partner_image'];
+        }
     }
     return serviceImageUrl($fallbackService);
 }
@@ -711,6 +740,11 @@ function icomplyTradeProductsUrl(): string
 $waFile = __DIR__ . '/includes/water-asbestos.php';
 if (is_file($waFile)) {
     require_once $waFile;
+}
+
+$barrierFile = __DIR__ . '/includes/barriers.php';
+if (is_file($barrierFile)) {
+    require_once $barrierFile;
 }
 
 // Back-compat globals used by some templates/includes

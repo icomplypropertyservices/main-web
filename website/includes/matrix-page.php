@@ -336,6 +336,12 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         . icomplyMatrixH(url('/pages/areas/' . $areaSlugVal)) . '">' . icomplyMatrixH($areaName) . '</a></p>'
         . '</article>';
 
+    if ($serviceSlug === 'barriers' && function_exists('barrierPagesBlockHtml')) {
+        $html .= barrierPagesBlockHtml('barriers', $areaName, false);
+    } elseif ($serviceSlug === 'access-control' && function_exists('camePartnerPanelHtml')) {
+        $html .= camePartnerPanelHtml('access-control');
+    }
+
     $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($svcName) . ' in every area</h2>'
         . '<p class="text-sm text-zinc-600 mb-4">' . count($s['areas']) . ' towns.</p>'
         . icomplyMatrixAreaChips(url('/pages/' . $serviceSlug . '/'))
