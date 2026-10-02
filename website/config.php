@@ -288,6 +288,138 @@ function areaSlug(string $area): string {
     return trim((string)$s, '-');
 }
 
+/**
+ * UK places outside areas.json. Nurse call only — do not merge into getAreas().
+ *
+ * @return list<array{name:string,nation:string,region:string,slug:string}>
+ */
+function getNationwideAreaRows(): array {
+    static $rows = null;
+    if ($rows !== null) {
+        return $rows;
+    }
+    $nw = [];
+    foreach (getAreas() as $area) {
+        $nw[areaSlug((string)$area)] = true;
+    }
+    $rows = [];
+    $seen = [];
+    foreach (loadJsonData('nationwide-areas', []) as $row) {
+        if (!is_array($row)) {
+            continue;
+        }
+        $name = trim((string)($row['name'] ?? ''));
+        $nation = trim((string)($row['nation'] ?? ''));
+        $region = trim((string)($row['region'] ?? ''));
+        if ($name === '' || $nation === '' || $region === '') {
+            continue;
+        }
+        $slug = areaSlug($name);
+        if ($slug === '' || isset($nw[$slug]) || isset($seen[$slug])) {
+            continue;
+        }
+        $seen[$slug] = true;
+        $rows[] = [
+            'name' => $name,
+            'nation' => $nation,
+            'region' => $region,
+            'slug' => $slug,
+        ];
+    }
+    return $rows;
+}
+
+/** @return array{name:string,nation:string,region:string,slug:string}|null */
+function nationwideAreaRow(string $nameOrSlug): ?array {
+    $slug = areaSlug($nameOrSlug);
+    foreach (getNationwideAreaRows() as $row) {
+        if ($row['slug'] === $slug || strcasecmp($row['name'], $nameOrSlug) === 0) {
+            return $row;
+        }
+    }
+    return null;
+}
+
+/**
+ * Other nationwide places in the same region (for in-page links).
+ *
+ * @return list<array{name:string,nation:string,region:string,slug:string}>
+ */
+function nationwideAreaSiblings(string $region, string $exceptSlug, int $limit = 24): array {
+    $out = [];
+    foreach (getNationwideAreaRows() as $row) {
+        if ($row['region'] !== $region || $row['slug'] === $exceptSlug) {
+            continue;
+        }
+        $out[] = $row;
+        if (count($out) >= $limit) {
+            break;
+        }
+    }
+    return $out;
+}
+
+/**
+ * Nurse-call keyword slugs. Full × nationwide export uses this list.
+ *
+ * @return list<string>
+ */
+function getNurseCallKeywordSlugs(): array {
+    static $slugs = null;
+    if ($slugs !== null) {
+        return $slugs;
+    }
+    $slugs = [];
+    foreach (getMajorKeywords() as $slug => $meta) {
+        if (($meta['service'] ?? '') === 'nurse-call') {
+            $slug = keywordSlug((string)$slug);
+            if ($slug !== '') {
+                $slugs[$slug] = true;
+            }
+        }
+    }
+    $slugs = array_keys($slugs);
+    sort($slugs);
+    return $slugs;
+}
+
+/**
+ * Sitemap samples only. The full nationwide matrix is exported, not listed.
+ *
+ * @return list<string>
+ */
+function getNurseCallFeaturedKeywordSlugs(): array {
+    return [
+        'nurse-call-system',
+        'care-home-nurse-call',
+        'hospital-nurse-call-system',
+        'nurse-call-maintenance',
+    ];
+}
+
+/** @return list<string> */
+function getNurseCallFeaturedNationwideTowns(): array {
+    return ['Birmingham', 'Leeds', 'London', 'Edinburgh', 'Cardiff', 'Belfast'];
+}
+
+/**
+ * Static-export paths for nurse call × nationwide places.
+ * North West towns stay on getAreas() and are not repeated here.
+ *
+ * @return list<string>
+ */
+function nurseCallNationwideExportPaths(): array {
+    $paths = [];
+    $keywords = getNurseCallKeywordSlugs();
+    foreach (getNationwideAreaRows() as $row) {
+        $paths[] = '/pages/nurse-call/' . $row['slug'];
+        foreach ($keywords as $kw) {
+            $paths[] = '/pages/keywords/' . $kw . '/' . $row['slug'];
+        }
+    }
+    return $paths;
+}
+
 function keywordSlug($phrase): string {
     return areaSlug((string)$phrase);
 }

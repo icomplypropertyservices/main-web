@@ -71,6 +71,20 @@ function area_profile(string $area): array {
         return $map[$area] + ['name' => $area];
     }
 
+    if (function_exists('nationwideAreaRow')) {
+        $nationwide = nationwideAreaRow($area);
+        if ($nationwide !== null) {
+            return [
+                'name' => $nationwide['name'],
+                'districts' => 'postcodes in and around ' . $nationwide['name'],
+                'region' => $nationwide['region'] . ', ' . $nationwide['nation'],
+                'stock' => 'care homes, nursing homes, clinics, hospitals and supported living',
+                'travel' => 'quoted from our Stockport SK2 base after you send the postcode — not a same-day local promise',
+                'focus' => 'nurse call install, repair and planned maintenance',
+            ];
+        }
+    }
+
     // Generic but still unique-ish profile for remaining towns
     $seed = area_seed($area);
     $regions = ['Greater Manchester fringe', 'Lancashire', 'Cheshire', 'Merseyside fringe', 'North West England'];

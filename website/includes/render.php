@@ -222,12 +222,20 @@ function renderKeywordAreaPage(string $keywordSlug, string $area): void {
             break;
         }
     }
+    $meta = $keywords[$keywordSlug];
+    if (!$found && (($meta['service'] ?? '') === 'nurse-call') && function_exists('nationwideAreaRow')) {
+        $row = nationwideAreaRow($areaSlugVal);
+        if ($row !== null) {
+            $areaName = $row['name'];
+            $areaSlugVal = $row['slug'];
+            $found = true;
+        }
+    }
     if (!$found) {
         // Still allow if slug-like string
         $areaName = keywordDisplayName($areaSlugVal);
     }
 
-    $meta = $keywords[$keywordSlug];
     $services = getServices();
     $serviceSlug = $meta['service'] ?? 'electrical';
     $serviceName = $services[$serviceSlug] ?? keywordDisplayName($serviceSlug);
@@ -243,9 +251,33 @@ function renderKeywordAreaPage(string $keywordSlug, string $area): void {
     $ph['AREA_URL'] = rawurlencode($areaName);
     // Localise meta for area pages
     $ph['KEYWORD_META'] = $meta['meta_desc'] ?? $ph['KEYWORD_META'];
-    $ph['KEYWORD_BODY'] = rtrim($ph['KEYWORD_BODY'], '.')
-        . '. Our engineers regularly attend jobs in ' . $areaName
-        . ' and surrounding postcodes for ' . ($meta['name'] ?? $keywordSlug) . '.';
+    $ncNationwide = ($serviceSlug === 'nurse-call' && function_exists('nationwideAreaRow'))
+        ? nationwideAreaRow($areaName)
+        : null;
+    if ($ncNationwide !== null) {
+        $ph['KEYWORD_INTRO'] = ($meta['name'] ?? $keywordSlug) . ' in ' . $areaName
+            . ' (' . $ncNationwide['region'] . ', ' . $ncNationwide['nation'] . '). '
+            . 'iComply is based in Stockport SK2. A visit is confirmed after the postcode. The quote is POA after scope.';
+        $ph['KEYWORD_BODY'] = $ph['KEYWORD_INTRO'];
+        $ph['KEYWORD_FOCUS_HTML'] = '';
+        foreach ([
+            'Nurse call for care settings in ' . $areaName,
+            'Stockport SK2 base — visit confirmed after the postcode',
+            'Quote after scope (POA). No catalogue price',
+            'Install, repair and planned maintenance',
+        ] as $p) {
+            $ph['KEYWORD_FOCUS_HTML'] .= '<li class="flex gap-2 text-zinc-900 font-medium"><span class="text-[#ff6b00] font-bold">●</span><span>'
+                . htmlspecialchars($p, ENT_QUOTES, 'UTF-8') . '</span></li>';
+        }
+        $ph['KEYWORD_META'] = ($meta['name'] ?? $keywordSlug) . ' in ' . $areaName
+            . '. Quote after scope (POA). Visit confirmed after the postcode.';
+        $ph['NATIONWIDE_NURSE_CALL'] = '1';
+    } else {
+        $ph['KEYWORD_BODY'] = rtrim($ph['KEYWORD_BODY'], '.')
+            . '. Our engineers regularly attend jobs in ' . $areaName
+            . ' and surrounding postcodes for ' . ($meta['name'] ?? $keywordSlug) . '.';
+        $ph['NATIONWIDE_NURSE_CALL'] = '';
+    }
 
     // Pure-PHP template (no {{}} / eval)
     executeTemplateVars(SITE_ROOT . '/templates/keyword-area.php', $ph);

@@ -64,8 +64,13 @@ $h = static function ($s): string {
             <?= $h($KEYWORD_NAME) ?><br><span class="text-[#ff6b00]">in <?= $h($AREA) ?></span>
         </h1>
         <p class="mt-5 text-lg text-white font-medium max-w-2xl leading-relaxed drop-shadow">
+            <?php if (!empty($NATIONWIDE_NURSE_CALL)): ?>
+            <strong><?= $h($KEYWORD_NAME) ?></strong> in <strong><?= $h($AREA) ?></strong>.
+            Stockport base. Visit confirmed after the postcode. Quote after scope (POA).
+            <?php else: ?>
             Local engineers for <strong><?= $h($KEYWORD_NAME) ?></strong> in <strong><?= $h($AREA) ?></strong> and nearby postcodes.
             Fixed-price quotes · Stockport-based team covering the North West.
+            <?php endif; ?>
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
             <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-bold text-white shadow-lg">Get free quote</a>
@@ -111,7 +116,7 @@ $h = static function ($s): string {
             </div>
             <div class="bg-[#061828] text-white rounded-3xl p-6 shadow-lg">
                 <h3 class="text-xl font-bold">Quote — <?= $h($AREA) ?></h3>
-                <p class="mt-2 text-white/95 text-sm font-medium">Same-week visits where capacity allows. Include postcode &amp; brand.</p>
+                <p class="mt-2 text-white/95 text-sm font-medium"><?php if (!empty($NATIONWIDE_NURSE_CALL)): ?>Quote after scope (POA). A visit is confirmed after the postcode.<?php else: ?>Same-week visits where capacity allows. Include postcode &amp; brand.<?php endif; ?></p>
                 <a href="#quote" class="inline-block mt-4 px-5 py-3 bg-[#ff6b00] rounded-xl font-bold">Request quote</a>
                 <a href="<?= url('/pages/areas/' . rawurlencode($AREA_SLUG) . '.php') ?>" class="block mt-3 text-sm font-semibold text-[#ff6b00] hover:underline">All services in <?= $h($AREA) ?> →</a>
             </div>

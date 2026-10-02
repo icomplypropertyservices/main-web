@@ -215,24 +215,49 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
     $svcSlug = (string)($meta['service'] ?? 'electrical');
     $svcName = $s['services'][$svcSlug] ?? keywordDisplayName($svcSlug);
     $areaSlugVal = areaSlug($areaName);
-    $poa = function_exists('isPoaService') && isPoaService($svcSlug);
+    $nationwide = ($svcSlug === 'nurse-call' && function_exists('nationwideAreaRow'))
+        ? nationwideAreaRow($areaName)
+        : null;
+    $poa = $nationwide !== null || (function_exists('isPoaService') && isPoaService($svcSlug));
     $priceLine = $poa
         ? 'Price on application after we confirm property type, access and scope. No catalogue fee.'
         : 'Written quote after we confirm scope. We do not invent a price on this page.';
 
-    $intro = function_exists('seo_unique_intro')
-        ? seo_unique_intro($svcName, $svcSlug, $areaName)
-        : $kwName . ' in ' . $areaName . ' from iComply Property Services.';
+    if ($nationwide !== null) {
+        $intro = $kwName . ' in ' . $areaName . ' (' . $nationwide['region'] . ', ' . $nationwide['nation'] . '). '
+            . 'iComply Property Services is based in Stockport SK2. Care homes, nursing homes, clinics and supported living can ask for install, repair or planned maintenance. '
+            . 'A visit is confirmed after you send the postcode. The quote is POA after scope — there is no catalogue price on this page.';
+    } else {
+        $intro = function_exists('seo_unique_intro')
+            ? seo_unique_intro($svcName, $svcSlug, $areaName)
+            : $kwName . ' in ' . $areaName . ' from iComply Property Services.';
+    }
     if (function_exists('waterAsbestosAreaIntro')) {
         $extra = waterAsbestosAreaIntro($svcSlug, $areaName);
         if ($extra !== '') {
             $intro .= ' ' . $extra;
         }
     }
-    $body = (string)($meta['body'] ?? '');
-    $bullets = function_exists('seo_unique_local_block')
-        ? seo_unique_local_block($svcName, $svcSlug, $areaName)
-        : [];
+    if ($nationwide !== null) {
+        $body = 'This ' . $areaName . ' page is for nurse call. iComply Property Services is based in Stockport SK2. '
+            . 'Whether a visit to ' . $areaName . ' (' . $nationwide['region'] . ') goes ahead is confirmed after the postcode. '
+            . 'Install, repair and planned maintenance are quoted POA after scope. '
+            . 'North West towns stay on the areas hub and are not restated as local ' . $areaName . ' coverage.';
+    } else {
+        $body = (string)($meta['body'] ?? '');
+    }
+    if ($nationwide !== null) {
+        $bullets = [
+            'Base: Stockport SK2. This page is ' . $areaName . ' in ' . $nationwide['region'] . ', ' . $nationwide['nation'] . '.',
+            'Visit confirmed after the postcode. No promised travel time on this page.',
+            'Care homes, nursing homes, clinics and supported living.',
+            'Quote is POA after scope. No catalogue price.',
+        ];
+    } else {
+        $bullets = function_exists('seo_unique_local_block')
+            ? seo_unique_local_block($svcName, $svcSlug, $areaName)
+            : [];
+    }
 
     $title = $kwName . ' in ' . $areaName . ' | ' . $s['brand'];
     $desc = $kwName . ' in ' . $areaName . '. ' . $priceLine;
@@ -267,11 +292,26 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
     $html .= '<p class="text-sm">Service hub: <a class="text-[#ff6b00] font-semibold" href="'
         . icomplyMatrixH(url('/pages/services/' . $svcSlug)) . '">' . icomplyMatrixH($svcName) . '</a>'
         . ' · Keyword hub: <a class="text-[#ff6b00] font-semibold" href="'
-        . icomplyMatrixH(url('/pages/keywords/' . $keywordSlug)) . '">' . icomplyMatrixH($kwName) . '</a>'
-        . ' · Town hub: <a class="text-[#ff6b00] font-semibold" href="'
-        . icomplyMatrixH(url('/pages/areas/' . $areaSlugVal)) . '">' . icomplyMatrixH($areaName) . '</a></p>'
-        . '</article>';
+        . icomplyMatrixH(url('/pages/keywords/' . $keywordSlug)) . '">' . icomplyMatrixH($kwName) . '</a>';
+    if ($nationwide !== null) {
+        $html .= ' · Nurse call in ' . icomplyMatrixH($areaName) . ': <a class="text-[#ff6b00] font-semibold" href="'
+            . icomplyMatrixH(url('/pages/nurse-call/' . $areaSlugVal)) . '">' . icomplyMatrixH($areaName) . '</a>';
+    } else {
+        $html .= ' · Town hub: <a class="text-[#ff6b00] font-semibold" href="'
+            . icomplyMatrixH(url('/pages/areas/' . $areaSlugVal)) . '">' . icomplyMatrixH($areaName) . '</a>';
+    }
+    $html .= '</p></article>';
 
+    if ($nationwide !== null && function_exists('nationwideAreaSiblings')) {
+        $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($kwName) . ' nearby in ' . icomplyMatrixH($nationwide['region']) . '</h2>'
+            . '<p class="text-sm text-zinc-600 mb-4">Same region only. The full UK list is on the nurse call service page. North West towns stay on the areas hub.</p><div class="chip-cloud">';
+        foreach (nationwideAreaSiblings($nationwide['region'], $areaSlugVal) as $sib) {
+            $html .= '<a class="area-chip" href="' . icomplyMatrixH(url('/pages/keywords/' . $keywordSlug . '/' . $sib['slug'])) . '">'
+                . icomplyMatrixH($sib['name']) . '</a>';
+        }
+        $html .= '<a class="area-chip" href="' . icomplyMatrixH(url('/pages/services/nurse-call') . '#nurse-call-uk') . '">All UK nurse call areas</a>';
+        $html .= '</div></section>';
+    }
     $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($kwName) . ' in every area we cover</h2>'
         . '<p class="text-sm text-zinc-600 mb-4">' . count($s['areas']) . ' towns — full list, not a short subset.</p>'
         . icomplyMatrixAreaChips(url('/pages/keywords/' . $keywordSlug . '/') )
@@ -295,13 +335,22 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     }
     $svcName = $s['services'][$serviceSlug];
     $areaSlugVal = areaSlug($areaName);
-    $poa = function_exists('isPoaService') && isPoaService($serviceSlug);
+    $nationwide = ($serviceSlug === 'nurse-call' && function_exists('nationwideAreaRow'))
+        ? nationwideAreaRow($areaName)
+        : null;
+    $poa = $nationwide !== null || (function_exists('isPoaService') && isPoaService($serviceSlug));
     $priceLine = $poa
         ? 'Price on application after scope. No invented catalogue price.'
         : 'Written quote after scope is agreed.';
-    $intro = function_exists('seo_unique_intro')
-        ? seo_unique_intro($svcName, $serviceSlug, $areaName)
-        : $svcName . ' in ' . $areaName . '.';
+    if ($nationwide !== null) {
+        $intro = $svcName . ' in ' . $areaName . ' (' . $nationwide['region'] . ', ' . $nationwide['nation'] . '). '
+            . 'iComply Property Services is based in Stockport SK2. A nurse call visit is confirmed after you send the postcode. '
+            . 'The quote is POA after scope — there is no catalogue price on this page.';
+    } else {
+        $intro = function_exists('seo_unique_intro')
+            ? seo_unique_intro($svcName, $serviceSlug, $areaName)
+            : $svcName . ' in ' . $areaName . '.';
+    }
     if (function_exists('waterAsbestosAreaIntro')) {
         $extra = waterAsbestosAreaIntro($serviceSlug, $areaName);
         if ($extra !== '') {
@@ -316,7 +365,8 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
 
     $html = icomplyMatrixChromeStart($title, $desc, $canonical);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
-        . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($areaName) . ' · North West</p>'
+        . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($areaName) . ' · '
+        . icomplyMatrixH($nationwide !== null ? ($nationwide['region'] . ' · ' . $nationwide['nation']) : 'North West') . '</p>'
         . '<h1>' . icomplyMatrixH($svcName) . ' <span class="accent">in ' . icomplyMatrixH($areaName) . '</span></h1>'
         . '<p class="mt-4 text-white/80 max-w-2xl">' . icomplyMatrixH($intro) . '</p>'
         . '<div class="mt-6 flex flex-wrap gap-3">'
@@ -331,10 +381,25 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         . '<h2 class="text-2xl font-semibold">What we do in ' . icomplyMatrixH($areaName) . '</h2>'
         . '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($blurb) . '</p>'
         . '<p class="text-sm">Service hub: <a class="text-[#ff6b00] font-semibold" href="'
-        . icomplyMatrixH(url('/pages/services/' . $serviceSlug)) . '">' . icomplyMatrixH($svcName) . '</a>'
-        . ' · Town: <a class="text-[#ff6b00] font-semibold" href="'
-        . icomplyMatrixH(url('/pages/areas/' . $areaSlugVal)) . '">' . icomplyMatrixH($areaName) . '</a></p>'
-        . '</article>';
+        . icomplyMatrixH(url('/pages/services/' . $serviceSlug)) . '">' . icomplyMatrixH($svcName) . '</a>';
+    if ($nationwide !== null) {
+        $html .= ' · <a class="text-[#ff6b00] font-semibold" href="'
+            . icomplyMatrixH(url('/pages/services/nurse-call') . '#nurse-call-uk') . '">All UK nurse call areas</a>';
+    } else {
+        $html .= ' · Town: <a class="text-[#ff6b00] font-semibold" href="'
+            . icomplyMatrixH(url('/pages/areas/' . $areaSlugVal)) . '">' . icomplyMatrixH($areaName) . '</a>';
+    }
+    $html .= '</p></article>';
+
+    if ($nationwide !== null && function_exists('nationwideAreaSiblings')) {
+        $html .= '<section><h2 class="text-2xl font-semibold mb-3">Nurse call nearby in ' . icomplyMatrixH($nationwide['region']) . '</h2>'
+            . '<p class="text-sm text-zinc-600 mb-4">Same region. Other UK places are listed on the nurse call service page.</p><div class="chip-cloud">';
+        foreach (nationwideAreaSiblings($nationwide['region'], $areaSlugVal) as $sib) {
+            $html .= '<a class="area-chip" href="' . icomplyMatrixH(url('/pages/nurse-call/' . $sib['slug'])) . '">'
+                . icomplyMatrixH($sib['name']) . '</a>';
+        }
+        $html .= '</div></section>';
+    }
 
     $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($svcName) . ' in every area</h2>'
         . '<p class="text-sm text-zinc-600 mb-4">' . count($s['areas']) . ' towns.</p>'

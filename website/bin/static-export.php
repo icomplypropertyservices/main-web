@@ -28,6 +28,9 @@
  * (keyword × every town) so the Netlify static export includes that matrix.
  * --keyword-towns=all renders every keyword×area (~200k HTML files).
  * --full also renders service×area landings.
+ * Nurse call also renders /pages/nurse-call/{place} and every nurse-call
+ * keyword × nationwide place (website/data/nationwide-areas.json).
+ * Those places are not added to areas.json.
  */
 declare(strict_types=1);
 
@@ -341,6 +344,12 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         $routes[] = $path;
     }
 
+    if (function_exists('nurseCallNationwideExportPaths')) {
+        foreach (nurseCallNationwideExportPaths() as $path) {
+            $routes[] = $path;
+        }
+    }
+
     // Jack: every service has every area landing (not only --full).
     foreach (array_keys(getServices()) as $sSlug) {
         foreach (getAreas() as $area) {
@@ -360,6 +369,12 @@ function icomplyRenderExportRoute(string $path): array
 {
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         $area = function_exists('areaFromSlug') ? areaFromSlug($m[2]) : $m[2];
+        if (($area === null || $area === '') && function_exists('nationwideAreaRow')) {
+            $row = nationwideAreaRow($m[2]);
+            if ($row !== null) {
+                $area = $row['name'];
+            }
+        }
         $html = icomplyRenderKeywordTownHtml($m[1], (string)($area ?: $m[2]));
         if ($html !== '' && icomplyLooksLikeHtml($html)) {
             return ['html' => $html, 'status' => 200];
@@ -369,6 +384,12 @@ function icomplyRenderExportRoute(string $path): array
         && function_exists('getServices')
         && isset(getServices()[$m[1]])) {
         $area = function_exists('areaFromSlug') ? areaFromSlug($m[2]) : $m[2];
+        if (($area === null || $area === '') && $m[1] === 'nurse-call' && function_exists('nationwideAreaRow')) {
+            $row = nationwideAreaRow($m[2]);
+            if ($row !== null) {
+                $area = $row['name'];
+            }
+        }
         $html = icomplyRenderServiceAreaHtml($m[1], (string)($area ?: $m[2]));
         if ($html !== '' && icomplyLooksLikeHtml($html)) {
             return ['html' => $html, 'status' => 200];

@@ -250,6 +250,25 @@ function icomplySitemapEntries(): array
                 }
             }
         }
+        if (function_exists('getNurseCallFeaturedKeywordSlugs')
+            && function_exists('getNurseCallFeaturedNationwideTowns')
+            && function_exists('nationwideAreaRow')) {
+            foreach (getNurseCallFeaturedKeywordSlugs() as $kwSlug) {
+                $kwSlug = keywordSlug((string)$kwSlug);
+                if ($kwSlug === '' || !isset($allKw[$kwSlug])) {
+                    continue;
+                }
+                if (($allKw[$kwSlug]['service'] ?? '') !== 'nurse-call') {
+                    continue;
+                }
+                foreach (getNurseCallFeaturedNationwideTowns() as $town) {
+                    if (nationwideAreaRow($town) === null) {
+                        continue;
+                    }
+                    $add('/pages/keywords/' . $kwSlug . '/' . areaSlug($town), '0.55');
+                }
+            }
+        }
     }
 
     return $entries;

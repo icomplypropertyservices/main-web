@@ -147,6 +147,12 @@ function routerDispatchVirtual(string $path): bool {
                 break;
             }
         }
+        if ($area === null && $serviceSlug === 'nurse-call' && function_exists('nationwideAreaRow')) {
+            $row = nationwideAreaRow($areaSlugVal);
+            if ($row !== null) {
+                $area = $row['name'];
+            }
+        }
         if ($area === null) {
             // allow loose slug
             $area = areaFromSlug($areaSlugVal) ?? keywordDisplayName($areaSlugVal);

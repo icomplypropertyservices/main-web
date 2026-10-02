@@ -20,6 +20,16 @@ $serviceSlug = $SERVICE_SLUG;
 $serviceName = $SERVICE_NAME;
 $areaName = $AREA;
 $areaSlugVal = $AREA_SLUG;
+$ncNationwide = ($serviceSlug === 'nurse-call' && function_exists('nationwideAreaRow'))
+    ? nationwideAreaRow($areaName)
+    : null;
+if ($ncNationwide) {
+    $metaDesc = $serviceName . ' in ' . $areaName . ' (' . $ncNationwide['region'] . ', ' . $ncNationwide['nation']
+        . '). Quote after scope (POA). Stockport base — visit confirmed after the postcode.';
+    if (strlen($metaDesc) > 165) {
+        $metaDesc = $serviceName . ' in ' . $areaName . '. Quote after scope (POA). Visit confirmed after the postcode.';
+    }
+}
 
 // Use getServiceBlurb / getServiceStandards (config.php ← data/service-meta.json). Do not hardcode $serviceBlurbs.
 $blurb = getServiceBlurb($serviceSlug);
@@ -199,8 +209,8 @@ $schema = [
                      loading="eager"
                      onerror="this.style.display='none'">
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-[#0B1F3A]/20 to-transparent">
-                    <div class="text-sm text-white/70">Serving <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> &amp; the North West</div>
-                    <div class="text-2xl font-semibold mt-1">Local engineers · Fixed-price quotes</div>
+                    <div class="text-sm text-white/70"><?php if ($ncNationwide): ?>Nurse call in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> · <?= htmlspecialchars($ncNationwide['region'] . ', ' . $ncNationwide['nation'], ENT_QUOTES, 'UTF-8') ?><?php else: ?>Serving <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> &amp; the North West<?php endif; ?></div>
+                    <div class="text-2xl font-semibold mt-1"><?= $ncNationwide ? 'Stockport base · quote after scope' : 'Local engineers · Fixed-price quotes' ?></div>
                 </div>
             </div>
         </div>
@@ -211,7 +221,14 @@ $schema = [
 <section class="bg-white border-b">
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <?php
-        $trust = $poaCombo
+        $trust = $ncNationwide
+            ? [
+                ['Stockport base', 'Visits to ' . $areaName . ' are confirmed after the postcode'],
+                ['Standards-led', $standards],
+                ['Care settings', 'Care homes, nursing homes, clinics and supported living'],
+                ['POA quotes', 'No catalogue price — scoped after we know the system'],
+            ]
+            : ($poaCombo
             ? [
                 ['Local to ' . $areaName, 'Stockport-based team covering ' . $areaName . ' and surrounding postcodes'],
                 ['Standards-led', $standards],
@@ -223,7 +240,7 @@ $schema = [
                 ['Standards-led', $standards],
                 ['Full certification', 'Documentation for landlords, insurers and fire officers'],
                 ['Fixed-price quotes', 'Clear scope, same-week appointments where capacity allows'],
-            ];
+            ]);
         foreach ($trust as [$t, $d]): ?>
             <div class="flex gap-3 items-start">
                 <div class="w-10 h-10 rounded-2xl bg-[#0B1F3A]/10 flex items-center justify-center text-[#0B1F3A] font-bold shrink-0">✓</div>
@@ -252,6 +269,15 @@ $schema = [
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars((string)$para, ENT_QUOTES, 'UTF-8') ?></p>
                 <?php endforeach; ?>
             <?php else: ?>
+            <?php if ($ncNationwide): ?>
+            <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
+                iComply Property Services provides <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong>
+                for care homes, nursing homes, clinics and supported living in
+                <strong><?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></strong>
+                (<?= htmlspecialchars($ncNationwide['region'] . ', ' . $ncNationwide['nation'], ENT_QUOTES, 'UTF-8') ?>).
+                We are based in Stockport SK2. A visit is confirmed after you send the postcode. The quote is POA after scope.
+            </p>
+            <?php else: ?>
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
                 Icomply Property Services provides complete <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong>
                 design, installation, commissioning, maintenance and certification across
@@ -269,6 +295,7 @@ $schema = [
                 If you already have a panel on site in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>,
                 we can inspect, maintain or upgrade it and supply matching certificates.
             </p>
+            <?php endif; ?>
             <?php endif; ?>
         </div>
         <div class="lg:col-span-2 space-y-4">
@@ -436,9 +463,11 @@ $schema = [
     <div class="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-2 gap-10 items-center">
         <div>
             <h2 class="text-3xl font-semibold tracking-tight">Need <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>?</h2>
-            <p class="mt-3 text-white/75"><?= $poaCombo
+            <p class="mt-3 text-white/75"><?= $ncNationwide
+                ? 'Quote after scope (POA) for ' . htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') . '. Send the postcode so we can confirm a visit. No catalogue price.'
+                : ($poaCombo
                 ? 'Price on application after we confirm the property in ' . htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') . '. No invented fee list — call, WhatsApp or send the form.'
-                : 'Written quotes after scope. Same-week appointments where capacity allows. Full certification on every job. Tell us your panel brand or system type.' ?></p>
+                : 'Written quotes after scope. Same-week appointments where capacity allows. Full certification on every job. Tell us your panel brand or system type.') ?></p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="#quote" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold">Request quote</a>
                 <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Quote for ' . $serviceName . ' in ' . $areaName) ?>"
@@ -454,10 +483,16 @@ $schema = [
             </div>
         </div>
         <ul class="space-y-3 text-sm text-white/90">
+            <?php if ($ncNationwide): ?>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Based in Stockport SK2. <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> visits are confirmed after the postcode.</li>
+            <?php else: ?>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Based in Stockport — covering <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> &amp; the North West</li>
+            <?php endif; ?>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Installation, servicing and certification</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Multi-service packages for landlords &amp; FM teams</li>
+            <?php if (!$ncNationwide): ?>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Response aim: within 2 hours on business days</li>
+            <?php endif; ?>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Manufacturer brands supported — see tags above</li>
         </ul>
     </div>
@@ -476,8 +511,12 @@ $schema = [
                 Request <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> quote in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>
             </h2>
             <p class="mt-3 text-zinc-600">
+                <?php if ($ncNationwide): ?>
+                Service and area are pre-filled. Add the postcode and the nurse call system on site. The quote is POA after scope. A visit is confirmed after the postcode.
+                <?php else: ?>
                 Service and area are pre-filled below. Add your postcode, property type and any panel brand —
                 we aim to respond within 2 hours on business days.
+                <?php endif; ?>
             </p>
         </div>
         <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
