@@ -1066,6 +1066,8 @@ if (is_file($elJobTypesFile)) {
     require_once $elJobTypesFile;
 }
 
+    require_once $fireAlarmsLaneFile;
+
         require_once $priorityFile;
 
         require_once $lane;

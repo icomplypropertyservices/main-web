@@ -182,6 +182,7 @@ function keywordTemplatePlaceholders(
     }
 
     $faqHtml = '';
+    $faqEntities = [];
     $faqs = $meta['faq'] ?? [];
     if (!$faqs) {
         $faqs = [
@@ -193,6 +194,14 @@ function keywordTemplatePlaceholders(
         if (!is_array($faq) || count($faq) < 2) {
             continue;
         }
+        $faqEntities[] = [
+            '@type' => 'Question',
+            'name' => (string)$faq[0],
+            'acceptedAnswer' => [
+                '@type' => 'Answer',
+                'text' => (string)$faq[1],
+            ],
+        ];
         $q = htmlspecialchars((string)$faq[0], ENT_QUOTES, 'UTF-8');
         $a = htmlspecialchars((string)$faq[1], ENT_QUOTES, 'UTF-8');
         $faqHtml .= '<details class="bg-white border-2 border-zinc-300 rounded-2xl p-5 group">'
@@ -244,6 +253,11 @@ function keywordTemplatePlaceholders(
         'KEYWORD_META' => $metaDesc,
         'KEYWORD_FOCUS_HTML' => $focusHtml,
         'KEYWORD_FAQ_HTML' => $faqHtml,
+        'KEYWORD_FAQ_JSON' => json_encode([
+            '@context' => 'https://schema.org',
+            '@type' => 'FAQPage',
+            'mainEntity' => $faqEntities,
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT),
         'KEYWORD_IMAGE' => $kwImg,
         'SERVICE_IMAGE' => $svcImg,
     ];
