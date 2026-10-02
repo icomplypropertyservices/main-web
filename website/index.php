@@ -48,7 +48,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
 <section class="home-hero">
     <div class="home-hero-inner">
         <div>
-            <p class="home-hero-kicker"><i></i> Greater Manchester &amp; North West</p>
+            <p class="home-hero-kicker"><i aria-hidden="true"></i> Greater Manchester &amp; North West</p>
             <h1>Property maintenance<br><span>&amp; compliance</span></h1>
             <p class="hero-lede">
                 Landlord certificates (EICR, CP12 / gas, FRA), electrical, gas, fire safety,
@@ -210,11 +210,11 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 <div class="mt-3 flex flex-wrap gap-1.5">
                     <?php foreach ($homeTowns as $town): ?>
                         <a href="<?= url('/pages/keywords/' . rawurlencode($kwSlug) . '/' . areaSlug($town) . '.php') ?>"
-                           class="text-[11px] px-2 py-1 bg-white border rounded-full text-zinc-700 hover:border-[#ff6b00]">
+                           class="tap-chip bg-white border rounded-full text-zinc-700 hover:border-[#ff6b00]">
                             <?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?>
                         </a>
                     <?php endforeach; ?>
-                    <a href="<?= url('/pages/keywords/' . rawurlencode($kwSlug) . '.php') ?>" class="text-[11px] px-2 py-1 font-semibold text-[#ff6b00]">All towns →</a>
+                    <a href="<?= url('/pages/keywords/' . rawurlencode($kwSlug) . '.php') ?>" class="tap-chip font-semibold text-[#ff6b00]">All towns →</a>
                 </div>
             </div>
             <?php endforeach; ?>
@@ -222,11 +222,11 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
         <div class="flex flex-wrap gap-2">
             <?php foreach ($popularTowns as $town): ?>
                 <a href="<?= url('/pages/areas/' . areaSlug($town) . '.php') ?>"
-                   class="px-4 py-2 bg-[#0B1F3A] text-white rounded-full text-sm font-medium hover:bg-[#ff6b00] transition">
+                   class="tap-chip bg-[#0B1F3A] text-white rounded-full font-medium hover:bg-[#ff6b00] transition">
                     All services in <?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?>
                 </a>
             <?php endforeach; ?>
-            <a href="<?= url('/pages/areas/index.php') ?>" class="px-4 py-2 border border-zinc-300 rounded-full text-sm font-semibold text-[#ff6b00]">All <?= count($areas) ?> areas →</a>
+            <a href="<?= url('/pages/areas/index.php') ?>" class="tap-chip border border-zinc-300 rounded-full font-semibold text-[#ff6b00]">All <?= count($areas) ?> areas →</a>
         </div>
     </div>
 </section>
@@ -287,7 +287,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
         foreach (array_slice($homeMfr, 0, 20, true) as $mSlug => $mEntry):
         ?>
             <a href="<?= url('/pages/manufacturers/' . rawurlencode($mSlug) . '.php') ?>"
-               class="px-4 py-2 bg-white border rounded-full text-sm font-medium hover:border-[#ff6b00] transition">
+               class="tap-chip bg-white border rounded-full font-medium hover:border-[#ff6b00] transition">
                 <?= htmlspecialchars($mEntry['name'], ENT_QUOTES, 'UTF-8') ?>
             </a>
         <?php endforeach; ?>
@@ -303,7 +303,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Products &amp; trade kits</h2>
                 <p class="mt-2 text-zinc-600 max-w-xl">Shopify-ready cards and Buy Button mounts — shop fire, electrical, security and emergency lighting gear.</p>
             </div>
-            <a href="<?= url('/shop/index.php') ?>" class="inline-flex px-5 py-2.5 rounded-full bg-[#0B1F3A] text-white text-sm font-semibold hover:bg-[#ff6b00] transition">Visit shop</a>
+            <a href="<?= url('/shop/index.php') ?>" class="tap-chip rounded-full bg-[#0B1F3A] text-white font-semibold hover:bg-[#ff6b00] transition">Visit shop</a>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
@@ -330,7 +330,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             <div class="mt-6 flex flex-wrap gap-2">
                 <?php foreach ($popularTowns as $town): ?>
                     <a href="<?= url('/pages/areas/' . areaSlug($town) . '.php') ?>"
-                       class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]"><?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?></a>
+                       class="tap-chip bg-white border rounded-full hover:border-[#ff6b00]"><?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?></a>
                 <?php endforeach; ?>
             </div>
             <a href="<?= url('/pages/areas/index.php') ?>" class="inline-block mt-6 text-sm font-semibold text-[#ff6b00]">View all areas →</a>
@@ -380,53 +380,15 @@ echo testimonialsSectionHtml();
     <div class="max-w-3xl mx-auto px-6 py-16 md:py-20">
         <div class="text-center mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request your free quote</h2>
+            <h2 id="quote-heading" class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request your free quote</h2>
             <p class="mt-3 text-zinc-600">We aim to respond within 2 hours on business days. All quotes are fixed-price after scope is agreed.</p>
         </div>
-
-        <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm" aria-label="Free quote form">
-            <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
-            <input type="hidden" name="gclid" value="<?= htmlspecialchars($_GET['gclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
-            <input type="hidden" name="fbclid" value="<?= htmlspecialchars($_GET['fbclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                    <label for="quote-name" class="sr-only">Full name</label>
-                    <input id="quote-name" type="text" name="name" placeholder="Full name" required aria-required="true" maxlength="120" class="w-full border px-5 py-3.5 rounded-2xl" autocomplete="name">
-                </div>
-                <div>
-                    <label for="quote-email" class="sr-only">Email</label>
-                    <input id="quote-email" type="email" name="email" placeholder="Email" required aria-required="true" class="w-full border px-5 py-3.5 rounded-2xl" autocomplete="email">
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                    <label for="quote-phone" class="sr-only">Phone</label>
-                    <input id="quote-phone" type="tel" name="phone" placeholder="Phone" required aria-required="true" maxlength="40" class="w-full border px-5 py-3.5 rounded-2xl" autocomplete="tel">
-                </div>
-                <div>
-                    <label for="quote-service" class="sr-only">Service</label>
-                    <select id="quote-service" name="service" required aria-required="true" class="w-full border px-5 py-3.5 rounded-2xl bg-white">
-                        <option value="">Select service…</option>
-                        <?php foreach ($services as $slug => $name): ?>
-                            <option value="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></option>
-                        <?php endforeach; ?>
-                        <option value="Shop / products">Shop / products</option>
-                        <option value="Multi-service package">Multi-service package</option>
-                    </select>
-                </div>
-            </div>
-            <div>
-                <label for="quote-message" class="sr-only">Message</label>
-                <textarea id="quote-message" name="message" rows="4" required aria-required="true" maxlength="5000" placeholder="Postcode, property type, panel brand / system details…" class="w-full border px-5 py-3.5 rounded-2xl"></textarea>
-            </div>
-            <button type="submit" class="w-full modern-btn text-white py-4 text-lg font-semibold rounded-2xl">Submit request</button>
-            <p class="text-center text-xs text-zinc-500">
-                By submitting you agree to our
-                <a href="<?= url('/privacy.php') ?>" class="underline hover:text-black">Privacy Policy</a>
-                and
-                <a href="<?= url('/terms.php') ?>" class="underline hover:text-black">Terms</a>.
-            </p>
-        </form>
+        <?php
+        $showHeading = false;
+        $formLabelledBy = 'quote-heading';
+        $formAction = url('/contact.php');
+        require SITE_ROOT . '/includes/quote-form.php';
+        ?>
     </div>
 </section>
 

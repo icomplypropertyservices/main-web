@@ -37,12 +37,18 @@ body {
 [class*="bg-[#0B1F3A]"],
 [class*="bg-[#061828]"] { background-color: #0B1F3A !important; }
 [class*="bg-[#ff6b00]"],
-[class*="bg-[#FF6B00]"] { background-color: #FF6B00 !important; color: #fff !important; }
+[class*="bg-[#FF6B00]"] { background-color: #C2410C !important; color: #fff !important; }
 [class*="text-[#0B1F3A]"] { color: #0B1F3A !important; }
+/* Navy utility text sits on dark cards. Keep navy only on solid white controls. */
+body.theme-dark [class*="text-[#0B1F3A]"] { color: #f8fafc !important; }
 [class*="text-[#ff6b00]"],
 [class*="text-[#FF6B00]"] { color: #FF6B00 !important; }
 [class*="border-[#ff6b00]"] { border-color: #ff6b00 !important; }
-[class*="hover:bg-orange-600"]:hover { background-color: #ea580c !important; }
+[class*="hover:bg-orange-600"]:hover { background-color: #9A3412 !important; color: #fff !important; }
+[class*="bg-green-600"],
+[class*="bg-green-500"] { background-color: #15803D !important; color: #fff !important; }
+[class*="hover:bg-green-500"]:hover,
+[class*="hover:bg-green-600"]:hover { background-color: #166534 !important; color: #fff !important; }
 [class*="hover:text-[#ff6b00]"]:hover { color: #ff6b00 !important; }
 
 /* Dark surfaces — kill light zinc/white page slabs (not solid white CTA pills). */
@@ -639,3 +645,233 @@ section.relative.overflow-hidden.text-white > .absolute[style*="radial-gradient"
 .theme-light .mega-wordmark b { color: #0B1F3A; }
 .logo-on-light .mega-wordmark small,
 .theme-light .mega-wordmark small { color: #5B6472; }
+
+/* Accessibility + small-screen pass.
+   Action orange #C2410C is white-text safe (~5:1). Brand orange #FF6B00 stays
+   for accents on navy, where it already clears 4.5:1. */
+:root {
+  --accent-action: #C2410C;
+  --accent-action-hover: #9A3412;
+  --wa-action: #15803D;
+  --wa-action-hover: #166534;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: clip;
+}
+
+#quote,
+#quote-form,
+#onboarding-form,
+#main-content {
+  scroll-margin-top: 5.5rem;
+}
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible,
+[role="alert"]:focus {
+  outline: 3px solid #fff !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 5px #C2410C !important;
+}
+
+.btn-hero-accent,
+.modern-btn,
+.btn-primary,
+.btn-accent,
+.mega-quote,
+.drawer-cta--quote,
+.foot-cta--quote,
+.mobile-sticky-cta .sticky-quote,
+.matrix-cta-accent,
+.lead-popup .lead-book,
+.lead-popup button[type="submit"] {
+  background: var(--accent-action);
+  color: #fff !important;
+}
+.btn-hero-accent:hover,
+.modern-btn:hover,
+.btn-primary:hover,
+.btn-accent:hover,
+.mega-quote:hover,
+.drawer-cta--quote:hover,
+.foot-cta--quote:hover,
+.mobile-sticky-cta .sticky-quote:hover,
+.matrix-cta-accent:hover,
+.lead-popup .lead-book:hover,
+.lead-popup button[type="submit"]:hover {
+  background: var(--accent-action-hover);
+}
+
+.wa-float,
+.mega-wa,
+.foot-cta--wa,
+.drawer-cta--wa,
+.lead-popup .lead-wa {
+  background: var(--wa-action);
+  color: #fff !important;
+}
+.wa-float:hover,
+.mega-wa:hover,
+.foot-cta--wa:hover,
+.drawer-cta--wa:hover,
+.lead-popup .lead-wa:hover {
+  background: var(--wa-action-hover);
+}
+
+.mega-bar {
+  padding-top: calc(0.7rem + env(safe-area-inset-top, 0px));
+  padding-left: max(1rem, env(safe-area-inset-left, 0px));
+  padding-right: max(1rem, env(safe-area-inset-right, 0px));
+}
+.mega-burger,
+.mega-quote,
+.mega-wa {
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.mega-col a,
+.mega-letters a,
+.drawer-acc a,
+.mega-drawer-inner > a,
+.drawer-acc > summary,
+.foot-links a,
+.foot-drop > summary,
+.foot-sub > summary {
+  min-height: 2.75rem;
+}
+.mega-col a,
+.drawer-acc a,
+.foot-links a {
+  display: flex;
+  align-items: center;
+}
+.mega-letters a {
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+.home-hero-cta a,
+.hero-actions a,
+.mobile-sticky-cta a,
+.foot-cta,
+.drawer-cta,
+button[type="submit"],
+.modern-btn {
+  min-height: 3rem;
+}
+.home-hero-card:focus-visible,
+.service-card:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px #C2410C;
+}
+
+.tap-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.95rem;
+  font-size: 0.875rem;
+  line-height: 1.2;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
+select,
+textarea {
+  font-size: 1rem;
+  min-height: 3rem;
+}
+textarea { min-height: 8rem; }
+input[type="checkbox"],
+input[type="radio"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  min-height: 1.25rem;
+  accent-color: #C2410C;
+}
+.choice {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 2.75rem;
+  padding: 0.2rem 0.1rem;
+}
+.form-errors {
+  background: #3f1d1d;
+  color: #fecaca;
+  border: 1px solid #fecaca;
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+}
+.form-errors[hidden],
+.form-errors.hidden { display: none !important; }
+.form-legal {
+  color: #ffb27a;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+.form-legal:hover { color: #fff; }
+.hero-note { color: #d6dde6 !important; }
+.crumbs,
+.crumbs a { color: #e8eef6 !important; }
+.crumbs a { text-decoration: underline; text-underline-offset: 0.15em; }
+.contact-links a,
+.sub-links a {
+  display: flex;
+  align-items: center;
+  min-height: 2.75rem;
+}
+.share-bar a,
+.share-bar button {
+  min-height: 2.75rem;
+  padding: 0.55rem 0.95rem;
+  font-size: 0.875rem;
+}
+[aria-label="Social media"] a {
+  width: 2.75rem;
+  height: 2.75rem;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+}
+[aria-label="Social media"] a:hover {
+  background: #C2410C;
+  color: #fff;
+}
+summary { min-height: 2.75rem; }
+
+.page-hero,
+.home-hero {
+  overflow-wrap: break-word;
+}
+.page-hero a[href^="mailto:"] { overflow-wrap: anywhere; }
+
+.mobile-sticky-cta {
+  padding-bottom: calc(0.55rem + env(safe-area-inset-bottom, 0px));
+}
+@media (max-width: 767px) {
+  body { padding-bottom: calc(5.25rem + env(safe-area-inset-bottom, 0px)); }
+}
+@media (max-width: 640px) {
+  .home-hero-cta a,
+  .hero-actions a { flex: 1 1 100%; }
+  .home-hero-cards { grid-template-columns: 1fr; }
+  .home-hero-inner { padding-left: max(1.25rem, env(safe-area-inset-left, 0px)); padding-right: max(1.25rem, env(safe-area-inset-right, 0px)); }
+}
+@media (max-width: 380px) {
+  .mega-wordmark small { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .service-card,
+  .modern-btn,
+  .btn-primary,
+  .btn-accent { transition: none; }
+}

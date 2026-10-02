@@ -34,11 +34,15 @@
 
   function setDrawer(open) {
     if (!drawer || !burger) return;
+    var wasOpen = !drawer.hidden;
     drawer.hidden = !open;
     drawer.classList.toggle('is-open', open);
     burger.setAttribute('aria-expanded', open ? 'true' : 'false');
     burger.textContent = open ? 'Close' : 'Menu';
     document.body.classList.toggle('mega-drawer-open', open);
+    if (wasOpen && !open && drawer.contains(document.activeElement)) {
+      burger.focus();
+    }
   }
 
   items.forEach(function (item) {
@@ -64,8 +68,10 @@
 
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
+    var drawerWasOpen = drawer && !drawer.hidden;
     closePanels();
     setDrawer(false);
+    if (drawerWasOpen && burger) burger.focus();
   });
 
   document.addEventListener('click', function (e) {

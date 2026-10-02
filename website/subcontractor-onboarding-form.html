@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <title>Onboarding form (Netlify registration)</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://icomplypropertyservices.co.uk/subcontractor-onboarding-form.html">
+</head>
+<body>
+  <!-- Netlify parses .html at deploy. Pages are published as .php, so this file registers the form. -->
+  <form name="subcontractor-onboarding" method="POST" action="/thank-you" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="subcontractor-onboarding">
+    <input name="bot-field">
+    <input name="name">
+    <input type="radio" name="business_type" value="company">
+    <input type="radio" name="business_type" value="sole_trader">
+    <input name="company_name">
+    <input type="checkbox" name="trades" value="Electrical / EICR">
+    <input type="checkbox" name="trades" value="Fire alarms">
+    <input type="checkbox" name="trades" value="Emergency lighting">
+    <input type="checkbox" name="trades" value="AOV smoke vents">
+    <input type="checkbox" name="trades" value="CCTV / access control">
+    <input type="checkbox" name="trades" value="Nurse call">
+    <input type="checkbox" name="trades" value="General maintenance">
+    <textarea name="qualifications"></textarea>
+    <input type="radio" name="insured" value="yes">
+    <input type="radio" name="insured" value="no">
+    <input name="insurance_expiry" type="date">
+    <input name="coverage_postcodes">
+    <input name="travel_radius" type="number">
+    <input name="phone" type="tel">
+    <input name="email" type="email">
+    <textarea name="availability"></textarea>
+    <input name="documents" type="file">
+    <input type="checkbox" name="gdpr_consent" value="yes">
+  </form>
+</body>
+</html>

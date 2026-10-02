@@ -100,6 +100,7 @@ function icomplyNavCatalog(): array
             ['href' => url('/terms.php'), 'label' => 'Terms & conditions'],
             ['href' => url('/pages/site-map.php'), 'label' => 'HTML site map'],
             ['href' => url('/sitemap.xml'), 'label' => 'XML sitemap'],
+            ['href' => url('/become-a-subcontractor.php'), 'label' => 'Become a subcontractor'],
         ],
         'home' => rtrim(SITE_URL, '/') . '/',
         'phone' => defined('PHONE') ? PHONE : '',

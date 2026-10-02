@@ -24,6 +24,13 @@ if (empty($_SESSION['csrf'])) {
 }
 
 $errors = [];
+$invalid = [
+    'name' => false,
+    'email' => false,
+    'phone' => false,
+    'service' => false,
+    'message' => false,
+];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $token = $_POST['csrf'] ?? '';
@@ -40,18 +47,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($name === '' || strlen($name) > 120) {
             $errors[] = 'Please enter your name.';
+            $invalid['name'] = true;
         }
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errors[] = 'Please enter a valid email.';
+            $invalid['email'] = true;
         }
         if ($phone === '' || strlen($phone) > 40) {
             $errors[] = 'Please enter a phone number.';
+            $invalid['phone'] = true;
         }
         if ($service === '') {
             $errors[] = 'Please select a service.';
+            $invalid['service'] = true;
         }
         if ($message === '' || strlen($message) > 5000) {
             $errors[] = 'Please enter a short message.';
+            $invalid['message'] = true;
         }
 
         if (!$errors) {
@@ -242,10 +254,10 @@ $contactSchema = [
 <!-- HERO — solid navy; never white-on-peach -->
 <section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
-        <nav class="text-xs text-white/50 mb-6 flex flex-wrap gap-2 items-center" aria-label="Breadcrumb">
-            <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a>
-            <span>/</span>
-            <span class="text-white/80">Contact</span>
+        <nav class="crumbs text-sm mb-6 flex flex-wrap gap-2 items-center" aria-label="Breadcrumb">
+            <a href="<?= rtrim(SITE_URL, '/') ?>/">Home</a>
+            <span aria-hidden="true">/</span>
+            <span>Contact</span>
         </nav>
         <div class="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -260,7 +272,7 @@ $contactSchema = [
                 <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl">
                     Call, WhatsApp or send a message — electrical, fire, gas, emergency lighting, CCTV and access control across the North West.
                 </p>
-                <div class="mt-8 flex flex-wrap gap-3">
+                <div class="hero-actions mt-8 flex flex-wrap gap-3">
                     <a href="#quote-form" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Send a message</a>
                     <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
                        class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">
@@ -274,7 +286,7 @@ $contactSchema = [
                     <div><span class="text-white font-semibold text-xl block">2 hrs</span> typical reply*</div>
                     <div><span class="text-white font-semibold text-xl block">SK2</span> local base</div>
                 </div>
-                <p class="mt-3 text-[11px] text-white/40">*Business days, subject to capacity.</p>
+                <p class="hero-note mt-3 text-sm">*Business days, subject to capacity.</p>
             </div>
             <div class="bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8 backdrop-blur-sm">
                 <h2 class="text-xl font-semibold mb-5">Direct contact</h2>
@@ -346,16 +358,18 @@ $contactSchema = [
             <div class="lg:col-span-3">
                 <div class="mb-8">
                     <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
-                    <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Send us a message</h2>
+                    <h2 id="contact-form-heading" class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Send us a message</h2>
                     <p class="mt-3 text-zinc-600">Tell us the service, postcode and any system details — we will come back with a clear next step.</p>
                 </div>
 
                 <?php if ($errors): ?>
-                    <div class="mb-5 p-4 bg-red-50 border border-red-200 rounded-2xl text-sm text-red-800" role="alert">
-                        <?= htmlspecialchars(implode(' ', $errors), ENT_QUOTES, 'UTF-8') ?>
+                    <div id="contact-errors" class="form-errors mb-5" role="alert" tabindex="-1">
+                        <?php foreach ($errors as $error): ?>
+                            <p><?= htmlspecialchars($error, ENT_QUOTES, 'UTF-8') ?></p>
+                        <?php endforeach; ?>
                     </div>
                 <?php endif; ?>
-                <form method="POST" action="<?= url('/contact.php') ?>" class="bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
+                <form method="POST" action="<?= url('/contact.php') ?>" class="bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 space-y-5 shadow-sm" aria-labelledby="contact-form-heading"<?= $errors ? ' aria-describedby="contact-errors"' : '' ?>>
                     <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
                     <input type="hidden" name="gclid" value="<?= $gclidPrefill ?>">
                     <input type="hidden" name="fbclid" value="<?= $fbclidPrefill ?>">
@@ -363,14 +377,16 @@ $contactSchema = [
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label for="contact-name" class="block text-xs font-semibold uppercase tracking-wider text-zinc-500 mb-1.5">Name</label>
-                            <input id="contact-name" type="text" name="name" placeholder="Full name" required maxlength="120"
-                                   class="w-full border border-zinc-200 px-5 py-3.5 rounded-2xl focus:outline-none focus:border-[#ff6b00] focus:ring-1 focus:ring-[#ff6b00]"
+                            <input id="contact-name" type="text" name="name" autocomplete="name" required maxlength="120"
+                                   class="w-full border border-zinc-200 px-5 py-3.5 rounded-2xl"
+                                   <?= $invalid['name'] ? 'aria-invalid="true" aria-describedby="contact-errors"' : '' ?>
                                    value="<?= htmlspecialchars($_POST['name'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
                         </div>
                         <div>
                             <label for="contact-email" class="block text-xs font-semibold uppercase tracking-wider text-zinc-500 mb-1.5">Email</label>
-                            <input id="contact-email" type="email" name="email" placeholder="you@example.com" required
-                                   class="w-full border border-zinc-200 px-5 py-3.5 rounded-2xl focus:outline-none focus:border-[#ff6b00] focus:ring-1 focus:ring-[#ff6b00]"
+                            <input id="contact-email" type="email" name="email" autocomplete="email" inputmode="email" required
+                                   class="w-full border border-zinc-200 px-5 py-3.5 rounded-2xl"
+                                   <?= $invalid['email'] ? 'aria-invalid="true" aria-describedby="contact-errors"' : '' ?>
                                    value="<?= htmlspecialchars($_POST['email'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
                         </div>
                     </div>
@@ -378,14 +394,16 @@ $contactSchema = [
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label for="contact-phone" class="block text-xs font-semibold uppercase tracking-wider text-zinc-500 mb-1.5">Phone</label>
-                            <input id="contact-phone" type="tel" name="phone" placeholder="Mobile or landline" required maxlength="40"
-                                   class="w-full border border-zinc-200 px-5 py-3.5 rounded-2xl focus:outline-none focus:border-[#ff6b00] focus:ring-1 focus:ring-[#ff6b00]"
+                            <input id="contact-phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" required maxlength="40"
+                                   class="w-full border border-zinc-200 px-5 py-3.5 rounded-2xl"
+                                   <?= $invalid['phone'] ? 'aria-invalid="true" aria-describedby="contact-errors"' : '' ?>
                                    value="<?= htmlspecialchars($_POST['phone'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
                         </div>
                         <div>
                             <label for="contact-service" class="block text-xs font-semibold uppercase tracking-wider text-zinc-500 mb-1.5">Service</label>
                             <select id="contact-service" name="service" required
-                                    class="w-full border border-zinc-200 px-5 py-3.5 rounded-2xl bg-white focus:outline-none focus:border-[#ff6b00] focus:ring-1 focus:ring-[#ff6b00]">
+                                    class="w-full border border-zinc-200 px-5 py-3.5 rounded-2xl bg-white"
+                                    <?= $invalid['service'] ? 'aria-invalid="true" aria-describedby="contact-errors"' : '' ?>>
                                 <option value="">Select service…</option>
                                 <?php foreach ($services as $slug => $s): ?>
                                     <option value="<?= htmlspecialchars($s, ENT_QUOTES, 'UTF-8') ?>" <?= (($_POST['service'] ?? '') === $s) ? 'selected' : '' ?>>
@@ -402,8 +420,9 @@ $contactSchema = [
                     <div>
                         <label for="contact-message" class="block text-xs font-semibold uppercase tracking-wider text-zinc-500 mb-1.5">Message</label>
                         <textarea id="contact-message" name="message" rows="5" required maxlength="5000"
-                                  placeholder="Postcode, property type, panel brand / system details…"
-                                  class="w-full border border-zinc-200 px-5 py-3.5 rounded-2xl focus:outline-none focus:border-[#ff6b00] focus:ring-1 focus:ring-[#ff6b00]"><?= htmlspecialchars($_POST['message'] ?? '', ENT_QUOTES, 'UTF-8') ?></textarea>
+                                  placeholder="Postcode, property type, panel brand or system details"
+                                  class="w-full border border-zinc-200 px-5 py-3.5 rounded-2xl"
+                                  <?= $invalid['message'] ? 'aria-invalid="true" aria-describedby="contact-errors"' : '' ?>><?= htmlspecialchars($_POST['message'] ?? '', ENT_QUOTES, 'UTF-8') ?></textarea>
                     </div>
 
                     <button type="submit" id="contact-submit" class="w-full modern-btn text-white py-4 text-lg font-semibold rounded-2xl">
@@ -412,9 +431,9 @@ $contactSchema = [
                     </button>
                     <p class="text-center text-xs text-zinc-500">
                         By submitting you agree to our
-                        <a href="<?= url('/privacy.php') ?>" class="underline hover:text-black">Privacy Policy</a>
+                        <a href="<?= url('/privacy.php') ?>" class="form-legal">Privacy Policy</a>
                         and
-                        <a href="<?= url('/terms.php') ?>" class="underline hover:text-black">Terms</a>.
+                        <a href="<?= url('/terms.php') ?>" class="form-legal">Terms</a>.
                         After send you will be taken to a confirmation page.
                     </p>
                 </form>
@@ -449,11 +468,12 @@ $contactSchema = [
                     <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Explore</div>
                     <h3 class="text-lg font-semibold text-black mt-2">Services &amp; brands</h3>
                     <p class="mt-2 text-sm text-zinc-600">Not sure what you need? Browse services or manufacturer pages first.</p>
-                    <div class="mt-5 flex flex-col gap-2">
-                        <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#0B1F3A] hover:text-[#ff6b00] transition">All services →</a>
-                        <a href="<?= url('/pages/manufacturers/index.php') ?>" class="text-sm font-semibold text-[#0B1F3A] hover:text-[#ff6b00] transition">Manufacturers we install →</a>
-                        <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#0B1F3A] hover:text-[#ff6b00] transition">Areas we cover →</a>
-                        <a href="/shop/" class="text-sm font-semibold text-[#0B1F3A] hover:text-[#ff6b00] transition">Trade shop →</a>
+                    <div class="contact-links mt-5 flex flex-col">
+                        <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold hover:text-[#ff6b00] transition">All services →</a>
+                        <a href="<?= url('/pages/manufacturers/index.php') ?>" class="text-sm font-semibold hover:text-[#ff6b00] transition">Manufacturers we install →</a>
+                        <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold hover:text-[#ff6b00] transition">Areas we cover →</a>
+                        <a href="/shop/" class="text-sm font-semibold hover:text-[#ff6b00] transition">Trade shop →</a>
+                        <a href="<?= url('/become-a-subcontractor.php') ?>" class="text-sm font-semibold hover:text-[#ff6b00] transition">Become a subcontractor →</a>
                     </div>
                 </div>
 
@@ -513,10 +533,13 @@ $contactSchema = [
     var btn = document.getElementById('contact-submit');
     var label = document.getElementById('contact-submit-label');
     var loading = document.getElementById('contact-submit-loading');
+    var errors = document.getElementById('contact-errors');
+    if (errors) errors.focus();
     if (!form || !btn) return;
     form.addEventListener('submit', function () {
         if (!form.checkValidity()) return;
         btn.disabled = true;
+        btn.setAttribute('aria-busy', 'true');
         if (label) label.classList.add('hidden');
         if (loading) loading.classList.remove('hidden');
     });

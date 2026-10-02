@@ -151,6 +151,7 @@ function icomplyMobileDrawerHtml(array $n): string
     }
 
     $productsD = icomplyNavH(url('/products.php'));
+    $subcontractD = icomplyNavH(url('/become-a-subcontractor.php'));
     $hubElectricalD = '/shop/electrical/';
     $hubFireD = '/shop/fire/';
     $hubSecurityD = '/shop/security/';
@@ -171,6 +172,8 @@ function icomplyMobileDrawerHtml(array $n): string
       <a href="/shop/">All supplies</a>
     </div></details>
     <a href="{$productsD}">Products</a>
+    <a href="{$contactDrawer}">Contact</a>
+    <a href="{$subcontractD}">Become a subcontractor</a>
     <a class="drawer-cta drawer-cta--quote" href="{$contactDrawer}">Get a quote</a>
   </nav>
 </div>
