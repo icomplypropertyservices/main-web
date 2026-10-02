@@ -128,14 +128,14 @@ function icomplySitemapEntries(): array
         // Hard reject /pages/{service}/{town} even if a leftover matrix file
         // sits in dist/. Keep only real hub prefixes.
         if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
-            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'aov', 'aov-air-handling', 'barriers'];
+            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'jobs', 'commercial', 'nurse-call', 'aov', 'aov-air-handling', 'barriers'];
             if (!in_array($m[1], $okPrefix, true)) {
                 return;
             }
         }
         // Keyword hubs and AOV/barrier town pages are generated at export time.
         $isKeywordLoc = (bool)preg_match('#^/pages/keywords(/[a-z0-9\-]+){1,2}$#', $path);
-        $isTownLoc = (bool)preg_match('#^/pages/(aov|barriers)(/[a-z0-9\-]+)?$#', $path);
+        $isTownLoc = (bool)preg_match('#^/pages/(aov|barriers|nurse-call)(/[a-z0-9\-]+)?$#', $path);
         $isMfrTown = (bool)preg_match('#^/pages/(aov-air-handling|barriers)/([a-z0-9\-]+)$#', $path);
         $isBarrierBrandLoc = false;
         if (preg_match('#^/pages/manufacturers/([a-z0-9\-]+)$#', $path, $brandMatch) && function_exists('getManufacturerBySlug')) {
@@ -213,6 +213,23 @@ function icomplySitemapEntries(): array
     $add('/pages/keywords/car-park-barrier-access', '0.8');
 
     // Resource articles that exist on the publish root (not source-only).
+    foreach (glob($publish . '/pages/jobs/*.php') ?: [] as $jobFile) {
+        $base = basename($jobFile, '.php');
+        if ($base === 'index') {
+            continue;
+        }
+        $add('/pages/jobs/' . $base, '0.8');
+    }
+    foreach (glob($publish . '/pages/commercial/*.php') ?: [] as $jobFile) {
+        $base = basename($jobFile, '.php');
+        if ($base === 'index') {
+            continue;
+        }
+        $add('/pages/commercial/' . $base, '0.7');
+    }
+    if (is_file($publish . '/pages/water-wras.php')) {
+        $add('/pages/water-wras', '0.8');
+    }
     foreach (glob($publish . '/pages/resources/*.php') ?: [] as $resFile) {
         $base = basename($resFile, '.php');
         if ($base === 'index') {
@@ -325,6 +342,14 @@ function icomplySitemapEntries(): array
                 continue;
             }
             $add('/pages/manufacturers/' . $mSlug, !empty($mEntry['partner']) ? '0.8' : '0.7');
+        }
+    }
+    if (!$requestSafe && function_exists('getNationwideAreaRows')) {
+        foreach (getNationwideAreaRows() as $row) {
+            $slug = (string)($row['slug'] ?? '');
+            if ($slug !== '') {
+                $add('/pages/nurse-call/' . $slug, '0.62');
+            }
         }
     }
     if (function_exists('getAreas') && function_exists('areaSlug')) {

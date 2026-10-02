@@ -1,5 +1,6 @@
 {
     "electrical": "Electrical",
+    "ev-chargers": "EV Chargers",
     "gas-systems": "Gas Systems",
     "nurse-call": "Nurse Call Systems",
     "fire-alarms": "Fire Alarms",
@@ -40,6 +41,7 @@
     "carpentry": "Carpentry",
     "flooring": "Flooring",
     "plumbing": "Plumbing",
+    "water-wras": "Water, WRAS & Drinking Water",
     "heating": "Heating Installation",
     "roofing": "Roofing",
     "brickwork": "Brickwork & Masonry",

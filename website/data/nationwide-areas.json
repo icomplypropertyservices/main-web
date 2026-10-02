@@ -1,0 +1,1302 @@
+[
+  {
+    "name": "Leeds",
+    "nation": "England",
+    "region": "West Yorkshire"
+  },
+  {
+    "name": "Bradford",
+    "nation": "England",
+    "region": "West Yorkshire"
+  },
+  {
+    "name": "Wakefield",
+    "nation": "England",
+    "region": "West Yorkshire"
+  },
+  {
+    "name": "Huddersfield",
+    "nation": "England",
+    "region": "West Yorkshire"
+  },
+  {
+    "name": "Halifax",
+    "nation": "England",
+    "region": "West Yorkshire"
+  },
+  {
+    "name": "Dewsbury",
+    "nation": "England",
+    "region": "West Yorkshire"
+  },
+  {
+    "name": "Keighley",
+    "nation": "England",
+    "region": "West Yorkshire"
+  },
+  {
+    "name": "Pontefract",
+    "nation": "England",
+    "region": "West Yorkshire"
+  },
+  {
+    "name": "Castleford",
+    "nation": "England",
+    "region": "West Yorkshire"
+  },
+  {
+    "name": "Skipton",
+    "nation": "England",
+    "region": "North Yorkshire"
+  },
+  {
+    "name": "Harrogate",
+    "nation": "England",
+    "region": "North Yorkshire"
+  },
+  {
+    "name": "York",
+    "nation": "England",
+    "region": "North Yorkshire"
+  },
+  {
+    "name": "Scarborough",
+    "nation": "England",
+    "region": "North Yorkshire"
+  },
+  {
+    "name": "Selby",
+    "nation": "England",
+    "region": "North Yorkshire"
+  },
+  {
+    "name": "Bridlington",
+    "nation": "England",
+    "region": "East Riding of Yorkshire"
+  },
+  {
+    "name": "Hull",
+    "nation": "England",
+    "region": "East Riding of Yorkshire"
+  },
+  {
+    "name": "Beverley",
+    "nation": "England",
+    "region": "East Riding of Yorkshire"
+  },
+  {
+    "name": "Goole",
+    "nation": "England",
+    "region": "East Riding of Yorkshire"
+  },
+  {
+    "name": "Doncaster",
+    "nation": "England",
+    "region": "South Yorkshire"
+  },
+  {
+    "name": "Rotherham",
+    "nation": "England",
+    "region": "South Yorkshire"
+  },
+  {
+    "name": "Sheffield",
+    "nation": "England",
+    "region": "South Yorkshire"
+  },
+  {
+    "name": "Barnsley",
+    "nation": "England",
+    "region": "South Yorkshire"
+  },
+  {
+    "name": "Grimsby",
+    "nation": "England",
+    "region": "North East Lincolnshire"
+  },
+  {
+    "name": "Scunthorpe",
+    "nation": "England",
+    "region": "North Lincolnshire"
+  },
+  {
+    "name": "Newcastle upon Tyne",
+    "nation": "England",
+    "region": "Tyne and Wear"
+  },
+  {
+    "name": "Gateshead",
+    "nation": "England",
+    "region": "Tyne and Wear"
+  },
+  {
+    "name": "Sunderland",
+    "nation": "England",
+    "region": "Tyne and Wear"
+  },
+  {
+    "name": "South Shields",
+    "nation": "England",
+    "region": "Tyne and Wear"
+  },
+  {
+    "name": "Washington",
+    "nation": "England",
+    "region": "Tyne and Wear"
+  },
+  {
+    "name": "Durham",
+    "nation": "England",
+    "region": "County Durham"
+  },
+  {
+    "name": "Chester-le-Street",
+    "nation": "England",
+    "region": "County Durham"
+  },
+  {
+    "name": "Bishop Auckland",
+    "nation": "England",
+    "region": "County Durham"
+  },
+  {
+    "name": "Consett",
+    "nation": "England",
+    "region": "County Durham"
+  },
+  {
+    "name": "Darlington",
+    "nation": "England",
+    "region": "Darlington"
+  },
+  {
+    "name": "Middlesbrough",
+    "nation": "England",
+    "region": "Teesside"
+  },
+  {
+    "name": "Stockton-on-Tees",
+    "nation": "England",
+    "region": "Teesside"
+  },
+  {
+    "name": "Hartlepool",
+    "nation": "England",
+    "region": "Teesside"
+  },
+  {
+    "name": "Redcar",
+    "nation": "England",
+    "region": "Teesside"
+  },
+  {
+    "name": "Billingham",
+    "nation": "England",
+    "region": "Teesside"
+  },
+  {
+    "name": "Blyth",
+    "nation": "England",
+    "region": "Northumberland"
+  },
+  {
+    "name": "Cramlington",
+    "nation": "England",
+    "region": "Northumberland"
+  },
+  {
+    "name": "Ashington",
+    "nation": "England",
+    "region": "Northumberland"
+  },
+  {
+    "name": "Hexham",
+    "nation": "England",
+    "region": "Northumberland"
+  },
+  {
+    "name": "Berwick-upon-Tweed",
+    "nation": "England",
+    "region": "Northumberland"
+  },
+  {
+    "name": "Nottingham",
+    "nation": "England",
+    "region": "Nottinghamshire"
+  },
+  {
+    "name": "Mansfield",
+    "nation": "England",
+    "region": "Nottinghamshire"
+  },
+  {
+    "name": "Newark-on-Trent",
+    "nation": "England",
+    "region": "Nottinghamshire"
+  },
+  {
+    "name": "Lincoln",
+    "nation": "England",
+    "region": "Lincolnshire"
+  },
+  {
+    "name": "Grantham",
+    "nation": "England",
+    "region": "Lincolnshire"
+  },
+  {
+    "name": "Boston",
+    "nation": "England",
+    "region": "Lincolnshire"
+  },
+  {
+    "name": "Derby",
+    "nation": "England",
+    "region": "Derbyshire"
+  },
+  {
+    "name": "Chesterfield",
+    "nation": "England",
+    "region": "Derbyshire"
+  },
+  {
+    "name": "Buxton",
+    "nation": "England",
+    "region": "Derbyshire"
+  },
+  {
+    "name": "Matlock",
+    "nation": "England",
+    "region": "Derbyshire"
+  },
+  {
+    "name": "Ilkeston",
+    "nation": "England",
+    "region": "Derbyshire"
+  },
+  {
+    "name": "Leicester",
+    "nation": "England",
+    "region": "Leicestershire"
+  },
+  {
+    "name": "Loughborough",
+    "nation": "England",
+    "region": "Leicestershire"
+  },
+  {
+    "name": "Hinckley",
+    "nation": "England",
+    "region": "Leicestershire"
+  },
+  {
+    "name": "Coalville",
+    "nation": "England",
+    "region": "Leicestershire"
+  },
+  {
+    "name": "Melton Mowbray",
+    "nation": "England",
+    "region": "Leicestershire"
+  },
+  {
+    "name": "Northampton",
+    "nation": "England",
+    "region": "Northamptonshire"
+  },
+  {
+    "name": "Kettering",
+    "nation": "England",
+    "region": "Northamptonshire"
+  },
+  {
+    "name": "Corby",
+    "nation": "England",
+    "region": "Northamptonshire"
+  },
+  {
+    "name": "Wellingborough",
+    "nation": "England",
+    "region": "Northamptonshire"
+  },
+  {
+    "name": "Birmingham",
+    "nation": "England",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Solihull",
+    "nation": "England",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Sutton Coldfield",
+    "nation": "England",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Wolverhampton",
+    "nation": "England",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Walsall",
+    "nation": "England",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Dudley",
+    "nation": "England",
+    "region": "West Midlands"
+  },
+  {
+    "name": "West Bromwich",
+    "nation": "England",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Stourbridge",
+    "nation": "England",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Halesowen",
+    "nation": "England",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Coventry",
+    "nation": "England",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Nuneaton",
+    "nation": "England",
+    "region": "Warwickshire"
+  },
+  {
+    "name": "Rugby",
+    "nation": "England",
+    "region": "Warwickshire"
+  },
+  {
+    "name": "Leamington Spa",
+    "nation": "England",
+    "region": "Warwickshire"
+  },
+  {
+    "name": "Warwick",
+    "nation": "England",
+    "region": "Warwickshire"
+  },
+  {
+    "name": "Stratford-upon-Avon",
+    "nation": "England",
+    "region": "Warwickshire"
+  },
+  {
+    "name": "Worcester",
+    "nation": "England",
+    "region": "Worcestershire"
+  },
+  {
+    "name": "Redditch",
+    "nation": "England",
+    "region": "Worcestershire"
+  },
+  {
+    "name": "Bromsgrove",
+    "nation": "England",
+    "region": "Worcestershire"
+  },
+  {
+    "name": "Kidderminster",
+    "nation": "England",
+    "region": "Worcestershire"
+  },
+  {
+    "name": "Hereford",
+    "nation": "England",
+    "region": "Herefordshire"
+  },
+  {
+    "name": "Shrewsbury",
+    "nation": "England",
+    "region": "Shropshire"
+  },
+  {
+    "name": "Telford",
+    "nation": "England",
+    "region": "Shropshire"
+  },
+  {
+    "name": "Stafford",
+    "nation": "England",
+    "region": "Staffordshire"
+  },
+  {
+    "name": "Stoke-on-Trent",
+    "nation": "England",
+    "region": "Staffordshire"
+  },
+  {
+    "name": "Newcastle-under-Lyme",
+    "nation": "England",
+    "region": "Staffordshire"
+  },
+  {
+    "name": "Cannock",
+    "nation": "England",
+    "region": "Staffordshire"
+  },
+  {
+    "name": "Lichfield",
+    "nation": "England",
+    "region": "Staffordshire"
+  },
+  {
+    "name": "Tamworth",
+    "nation": "England",
+    "region": "Staffordshire"
+  },
+  {
+    "name": "Burton upon Trent",
+    "nation": "England",
+    "region": "Staffordshire"
+  },
+  {
+    "name": "Peterborough",
+    "nation": "England",
+    "region": "Cambridgeshire"
+  },
+  {
+    "name": "Cambridge",
+    "nation": "England",
+    "region": "Cambridgeshire"
+  },
+  {
+    "name": "Ely",
+    "nation": "England",
+    "region": "Cambridgeshire"
+  },
+  {
+    "name": "Huntingdon",
+    "nation": "England",
+    "region": "Cambridgeshire"
+  },
+  {
+    "name": "Wisbech",
+    "nation": "England",
+    "region": "Cambridgeshire"
+  },
+  {
+    "name": "Norwich",
+    "nation": "England",
+    "region": "Norfolk"
+  },
+  {
+    "name": "King's Lynn",
+    "nation": "England",
+    "region": "Norfolk"
+  },
+  {
+    "name": "Great Yarmouth",
+    "nation": "England",
+    "region": "Norfolk"
+  },
+  {
+    "name": "Ipswich",
+    "nation": "England",
+    "region": "Suffolk"
+  },
+  {
+    "name": "Bury St Edmunds",
+    "nation": "England",
+    "region": "Suffolk"
+  },
+  {
+    "name": "Lowestoft",
+    "nation": "England",
+    "region": "Suffolk"
+  },
+  {
+    "name": "Colchester",
+    "nation": "England",
+    "region": "Essex"
+  },
+  {
+    "name": "Chelmsford",
+    "nation": "England",
+    "region": "Essex"
+  },
+  {
+    "name": "Southend-on-Sea",
+    "nation": "England",
+    "region": "Essex"
+  },
+  {
+    "name": "Basildon",
+    "nation": "England",
+    "region": "Essex"
+  },
+  {
+    "name": "Harlow",
+    "nation": "England",
+    "region": "Essex"
+  },
+  {
+    "name": "Bishop's Stortford",
+    "nation": "England",
+    "region": "Hertfordshire"
+  },
+  {
+    "name": "Stevenage",
+    "nation": "England",
+    "region": "Hertfordshire"
+  },
+  {
+    "name": "St Albans",
+    "nation": "England",
+    "region": "Hertfordshire"
+  },
+  {
+    "name": "Watford",
+    "nation": "England",
+    "region": "Hertfordshire"
+  },
+  {
+    "name": "Hemel Hempstead",
+    "nation": "England",
+    "region": "Hertfordshire"
+  },
+  {
+    "name": "Luton",
+    "nation": "England",
+    "region": "Bedfordshire"
+  },
+  {
+    "name": "Bedford",
+    "nation": "England",
+    "region": "Bedfordshire"
+  },
+  {
+    "name": "London",
+    "nation": "England",
+    "region": "London"
+  },
+  {
+    "name": "Oxford",
+    "nation": "England",
+    "region": "Oxfordshire"
+  },
+  {
+    "name": "Banbury",
+    "nation": "England",
+    "region": "Oxfordshire"
+  },
+  {
+    "name": "Milton Keynes",
+    "nation": "England",
+    "region": "Buckinghamshire"
+  },
+  {
+    "name": "Aylesbury",
+    "nation": "England",
+    "region": "Buckinghamshire"
+  },
+  {
+    "name": "High Wycombe",
+    "nation": "England",
+    "region": "Buckinghamshire"
+  },
+  {
+    "name": "Reading",
+    "nation": "England",
+    "region": "Berkshire"
+  },
+  {
+    "name": "Slough",
+    "nation": "England",
+    "region": "Berkshire"
+  },
+  {
+    "name": "Maidenhead",
+    "nation": "England",
+    "region": "Berkshire"
+  },
+  {
+    "name": "Windsor",
+    "nation": "England",
+    "region": "Berkshire"
+  },
+  {
+    "name": "Bracknell",
+    "nation": "England",
+    "region": "Berkshire"
+  },
+  {
+    "name": "Newbury",
+    "nation": "England",
+    "region": "Berkshire"
+  },
+  {
+    "name": "Basingstoke",
+    "nation": "England",
+    "region": "Hampshire"
+  },
+  {
+    "name": "Winchester",
+    "nation": "England",
+    "region": "Hampshire"
+  },
+  {
+    "name": "Andover",
+    "nation": "England",
+    "region": "Hampshire"
+  },
+  {
+    "name": "Southampton",
+    "nation": "England",
+    "region": "Hampshire"
+  },
+  {
+    "name": "Eastleigh",
+    "nation": "England",
+    "region": "Hampshire"
+  },
+  {
+    "name": "Portsmouth",
+    "nation": "England",
+    "region": "Hampshire"
+  },
+  {
+    "name": "Fareham",
+    "nation": "England",
+    "region": "Hampshire"
+  },
+  {
+    "name": "Gosport",
+    "nation": "England",
+    "region": "Hampshire"
+  },
+  {
+    "name": "Aldershot",
+    "nation": "England",
+    "region": "Hampshire"
+  },
+  {
+    "name": "Farnborough",
+    "nation": "England",
+    "region": "Hampshire"
+  },
+  {
+    "name": "Chichester",
+    "nation": "England",
+    "region": "West Sussex"
+  },
+  {
+    "name": "Bognor Regis",
+    "nation": "England",
+    "region": "West Sussex"
+  },
+  {
+    "name": "Worthing",
+    "nation": "England",
+    "region": "West Sussex"
+  },
+  {
+    "name": "Crawley",
+    "nation": "England",
+    "region": "West Sussex"
+  },
+  {
+    "name": "Horsham",
+    "nation": "England",
+    "region": "West Sussex"
+  },
+  {
+    "name": "Haywards Heath",
+    "nation": "England",
+    "region": "West Sussex"
+  },
+  {
+    "name": "Brighton",
+    "nation": "England",
+    "region": "East Sussex"
+  },
+  {
+    "name": "Hove",
+    "nation": "England",
+    "region": "East Sussex"
+  },
+  {
+    "name": "Eastbourne",
+    "nation": "England",
+    "region": "East Sussex"
+  },
+  {
+    "name": "Hastings",
+    "nation": "England",
+    "region": "East Sussex"
+  },
+  {
+    "name": "Guildford",
+    "nation": "England",
+    "region": "Surrey"
+  },
+  {
+    "name": "Woking",
+    "nation": "England",
+    "region": "Surrey"
+  },
+  {
+    "name": "Camberley",
+    "nation": "England",
+    "region": "Surrey"
+  },
+  {
+    "name": "Staines",
+    "nation": "England",
+    "region": "Surrey"
+  },
+  {
+    "name": "Epsom",
+    "nation": "England",
+    "region": "Surrey"
+  },
+  {
+    "name": "Redhill",
+    "nation": "England",
+    "region": "Surrey"
+  },
+  {
+    "name": "Reigate",
+    "nation": "England",
+    "region": "Surrey"
+  },
+  {
+    "name": "Sevenoaks",
+    "nation": "England",
+    "region": "Kent"
+  },
+  {
+    "name": "Tunbridge Wells",
+    "nation": "England",
+    "region": "Kent"
+  },
+  {
+    "name": "Maidstone",
+    "nation": "England",
+    "region": "Kent"
+  },
+  {
+    "name": "Ashford",
+    "nation": "England",
+    "region": "Kent"
+  },
+  {
+    "name": "Canterbury",
+    "nation": "England",
+    "region": "Kent"
+  },
+  {
+    "name": "Dover",
+    "nation": "England",
+    "region": "Kent"
+  },
+  {
+    "name": "Folkestone",
+    "nation": "England",
+    "region": "Kent"
+  },
+  {
+    "name": "Margate",
+    "nation": "England",
+    "region": "Kent"
+  },
+  {
+    "name": "Dartford",
+    "nation": "England",
+    "region": "Kent"
+  },
+  {
+    "name": "Gravesend",
+    "nation": "England",
+    "region": "Kent"
+  },
+  {
+    "name": "Gillingham",
+    "nation": "England",
+    "region": "Kent"
+  },
+  {
+    "name": "Bristol",
+    "nation": "England",
+    "region": "Bristol"
+  },
+  {
+    "name": "Bath",
+    "nation": "England",
+    "region": "Somerset"
+  },
+  {
+    "name": "Taunton",
+    "nation": "England",
+    "region": "Somerset"
+  },
+  {
+    "name": "Bridgwater",
+    "nation": "England",
+    "region": "Somerset"
+  },
+  {
+    "name": "Yeovil",
+    "nation": "England",
+    "region": "Somerset"
+  },
+  {
+    "name": "Weston-super-Mare",
+    "nation": "England",
+    "region": "Somerset"
+  },
+  {
+    "name": "Gloucester",
+    "nation": "England",
+    "region": "Gloucestershire"
+  },
+  {
+    "name": "Cheltenham",
+    "nation": "England",
+    "region": "Gloucestershire"
+  },
+  {
+    "name": "Stroud",
+    "nation": "England",
+    "region": "Gloucestershire"
+  },
+  {
+    "name": "Cirencester",
+    "nation": "England",
+    "region": "Gloucestershire"
+  },
+  {
+    "name": "Swindon",
+    "nation": "England",
+    "region": "Wiltshire"
+  },
+  {
+    "name": "Chippenham",
+    "nation": "England",
+    "region": "Wiltshire"
+  },
+  {
+    "name": "Trowbridge",
+    "nation": "England",
+    "region": "Wiltshire"
+  },
+  {
+    "name": "Salisbury",
+    "nation": "England",
+    "region": "Wiltshire"
+  },
+  {
+    "name": "Bournemouth",
+    "nation": "England",
+    "region": "Dorset"
+  },
+  {
+    "name": "Poole",
+    "nation": "England",
+    "region": "Dorset"
+  },
+  {
+    "name": "Christchurch",
+    "nation": "England",
+    "region": "Dorset"
+  },
+  {
+    "name": "Weymouth",
+    "nation": "England",
+    "region": "Dorset"
+  },
+  {
+    "name": "Dorchester",
+    "nation": "England",
+    "region": "Dorset"
+  },
+  {
+    "name": "Exeter",
+    "nation": "England",
+    "region": "Devon"
+  },
+  {
+    "name": "Torquay",
+    "nation": "England",
+    "region": "Devon"
+  },
+  {
+    "name": "Paignton",
+    "nation": "England",
+    "region": "Devon"
+  },
+  {
+    "name": "Newton Abbot",
+    "nation": "England",
+    "region": "Devon"
+  },
+  {
+    "name": "Plymouth",
+    "nation": "England",
+    "region": "Devon"
+  },
+  {
+    "name": "Barnstaple",
+    "nation": "England",
+    "region": "Devon"
+  },
+  {
+    "name": "Truro",
+    "nation": "England",
+    "region": "Cornwall"
+  },
+  {
+    "name": "Falmouth",
+    "nation": "England",
+    "region": "Cornwall"
+  },
+  {
+    "name": "Penzance",
+    "nation": "England",
+    "region": "Cornwall"
+  },
+  {
+    "name": "Newquay",
+    "nation": "England",
+    "region": "Cornwall"
+  },
+  {
+    "name": "Cardiff",
+    "nation": "Wales",
+    "region": "South Wales"
+  },
+  {
+    "name": "Swansea",
+    "nation": "Wales",
+    "region": "South Wales"
+  },
+  {
+    "name": "Newport",
+    "nation": "Wales",
+    "region": "South Wales"
+  },
+  {
+    "name": "Bridgend",
+    "nation": "Wales",
+    "region": "South Wales"
+  },
+  {
+    "name": "Neath",
+    "nation": "Wales",
+    "region": "South Wales"
+  },
+  {
+    "name": "Port Talbot",
+    "nation": "Wales",
+    "region": "South Wales"
+  },
+  {
+    "name": "Barry",
+    "nation": "Wales",
+    "region": "South Wales"
+  },
+  {
+    "name": "Pontypridd",
+    "nation": "Wales",
+    "region": "South Wales"
+  },
+  {
+    "name": "Caerphilly",
+    "nation": "Wales",
+    "region": "South Wales"
+  },
+  {
+    "name": "Merthyr Tydfil",
+    "nation": "Wales",
+    "region": "South Wales"
+  },
+  {
+    "name": "Cwmbran",
+    "nation": "Wales",
+    "region": "South Wales"
+  },
+  {
+    "name": "Carmarthen",
+    "nation": "Wales",
+    "region": "West Wales"
+  },
+  {
+    "name": "Llanelli",
+    "nation": "Wales",
+    "region": "West Wales"
+  },
+  {
+    "name": "Haverfordwest",
+    "nation": "Wales",
+    "region": "West Wales"
+  },
+  {
+    "name": "Aberystwyth",
+    "nation": "Wales",
+    "region": "Mid Wales"
+  },
+  {
+    "name": "Wrexham",
+    "nation": "Wales",
+    "region": "North Wales"
+  },
+  {
+    "name": "Rhyl",
+    "nation": "Wales",
+    "region": "North Wales"
+  },
+  {
+    "name": "Colwyn Bay",
+    "nation": "Wales",
+    "region": "North Wales"
+  },
+  {
+    "name": "Llandudno",
+    "nation": "Wales",
+    "region": "North Wales"
+  },
+  {
+    "name": "Bangor",
+    "nation": "Wales",
+    "region": "North Wales"
+  },
+  {
+    "name": "Caernarfon",
+    "nation": "Wales",
+    "region": "North Wales"
+  },
+  {
+    "name": "Flint",
+    "nation": "Wales",
+    "region": "North Wales"
+  },
+  {
+    "name": "Mold",
+    "nation": "Wales",
+    "region": "North Wales"
+  },
+  {
+    "name": "Edinburgh",
+    "nation": "Scotland",
+    "region": "Lothian"
+  },
+  {
+    "name": "Livingston",
+    "nation": "Scotland",
+    "region": "Lothian"
+  },
+  {
+    "name": "Glasgow",
+    "nation": "Scotland",
+    "region": "Greater Glasgow"
+  },
+  {
+    "name": "Paisley",
+    "nation": "Scotland",
+    "region": "Greater Glasgow"
+  },
+  {
+    "name": "East Kilbride",
+    "nation": "Scotland",
+    "region": "Greater Glasgow"
+  },
+  {
+    "name": "Hamilton",
+    "nation": "Scotland",
+    "region": "Greater Glasgow"
+  },
+  {
+    "name": "Motherwell",
+    "nation": "Scotland",
+    "region": "Greater Glasgow"
+  },
+  {
+    "name": "Greenock",
+    "nation": "Scotland",
+    "region": "Greater Glasgow"
+  },
+  {
+    "name": "Airdrie",
+    "nation": "Scotland",
+    "region": "Greater Glasgow"
+  },
+  {
+    "name": "Coatbridge",
+    "nation": "Scotland",
+    "region": "Greater Glasgow"
+  },
+  {
+    "name": "Cumbernauld",
+    "nation": "Scotland",
+    "region": "Greater Glasgow"
+  },
+  {
+    "name": "Aberdeen",
+    "nation": "Scotland",
+    "region": "Aberdeenshire"
+  },
+  {
+    "name": "Dundee",
+    "nation": "Scotland",
+    "region": "Tayside"
+  },
+  {
+    "name": "Perth",
+    "nation": "Scotland",
+    "region": "Tayside"
+  },
+  {
+    "name": "Inverness",
+    "nation": "Scotland",
+    "region": "Highland"
+  },
+  {
+    "name": "Stirling",
+    "nation": "Scotland",
+    "region": "Central Scotland"
+  },
+  {
+    "name": "Falkirk",
+    "nation": "Scotland",
+    "region": "Central Scotland"
+  },
+  {
+    "name": "Dunfermline",
+    "nation": "Scotland",
+    "region": "Fife"
+  },
+  {
+    "name": "Kirkcaldy",
+    "nation": "Scotland",
+    "region": "Fife"
+  },
+  {
+    "name": "Glenrothes",
+    "nation": "Scotland",
+    "region": "Fife"
+  },
+  {
+    "name": "St Andrews",
+    "nation": "Scotland",
+    "region": "Fife"
+  },
+  {
+    "name": "Ayr",
+    "nation": "Scotland",
+    "region": "Ayrshire"
+  },
+  {
+    "name": "Kilmarnock",
+    "nation": "Scotland",
+    "region": "Ayrshire"
+  },
+  {
+    "name": "Dumfries",
+    "nation": "Scotland",
+    "region": "Dumfries and Galloway"
+  },
+  {
+    "name": "Elgin",
+    "nation": "Scotland",
+    "region": "Moray"
+  },
+  {
+    "name": "Oban",
+    "nation": "Scotland",
+    "region": "Argyll"
+  },
+  {
+    "name": "Belfast",
+    "nation": "Northern Ireland",
+    "region": "County Antrim"
+  },
+  {
+    "name": "Lisburn",
+    "nation": "Northern Ireland",
+    "region": "County Antrim"
+  },
+  {
+    "name": "Newtownabbey",
+    "nation": "Northern Ireland",
+    "region": "County Antrim"
+  },
+  {
+    "name": "Antrim",
+    "nation": "Northern Ireland",
+    "region": "County Antrim"
+  },
+  {
+    "name": "Ballymena",
+    "nation": "Northern Ireland",
+    "region": "County Antrim"
+  },
+  {
+    "name": "Larne",
+    "nation": "Northern Ireland",
+    "region": "County Antrim"
+  },
+  {
+    "name": "Carrickfergus",
+    "nation": "Northern Ireland",
+    "region": "County Antrim"
+  },
+  {
+    "name": "Bangor, County Down",
+    "nation": "Northern Ireland",
+    "region": "County Down"
+  },
+  {
+    "name": "Downpatrick",
+    "nation": "Northern Ireland",
+    "region": "County Down"
+  },
+  {
+    "name": "Newry",
+    "nation": "Northern Ireland",
+    "region": "County Armagh"
+  },
+  {
+    "name": "Armagh",
+    "nation": "Northern Ireland",
+    "region": "County Armagh"
+  },
+  {
+    "name": "Craigavon",
+    "nation": "Northern Ireland",
+    "region": "County Armagh"
+  },
+  {
+    "name": "Derry",
+    "nation": "Northern Ireland",
+    "region": "County Londonderry"
+  },
+  {
+    "name": "Coleraine",
+    "nation": "Northern Ireland",
+    "region": "County Londonderry"
+  },
+  {
+    "name": "Omagh",
+    "nation": "Northern Ireland",
+    "region": "County Tyrone"
+  },
+  {
+    "name": "Enniskillen",
+    "nation": "Northern Ireland",
+    "region": "County Fermanagh"
+  }
+]

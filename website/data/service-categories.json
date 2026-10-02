@@ -25,6 +25,7 @@
         "blurb": "EICR, rewires, consumer units, emergency electrician, boilers, CP12, gas safety, PAT, EPC and landlord certificates — each with a full North West town matrix.",
         "services": [
             "electrical",
+            "ev-chargers",
             "gas-systems",
             "electrics-first-fix",
             "pat-testing",
@@ -57,6 +58,7 @@
             "property-refurbishment-pm",
             "compliance-consultancy",
             "legionella-risk-assessment",
+            "water-wras",
             "asbestos-survey"
         ]
     },

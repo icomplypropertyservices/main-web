@@ -465,6 +465,88 @@ function getAreasForService(string $serviceSlug): array {
 }
 
 /**
+ * UK places outside areas.json. Nurse call only — do not merge into getAreas().
+ *
+ * @return list<array{name:string,nation:string,region:string,slug:string}>
+ */
+function getNationwideAreaRows(): array {
+    static $rows = null;
+    if ($rows !== null) {
+        return $rows;
+    }
+    $nw = [];
+    foreach (getAreas() as $area) {
+        $nw[areaSlug((string)$area)] = true;
+    }
+    $rows = [];
+    $seen = [];
+    foreach (loadJsonData('nationwide-areas', []) as $row) {
+        if (!is_array($row)) {
+            continue;
+        }
+        $name = trim((string)($row['name'] ?? ''));
+        $nation = trim((string)($row['nation'] ?? ''));
+        $region = trim((string)($row['region'] ?? ''));
+        if ($name === '' || $nation === '' || $region === '') {
+            continue;
+        }
+        $slug = areaSlug($name);
+        if ($slug === '' || isset($nw[$slug]) || isset($seen[$slug])) {
+            continue;
+        }
+        $seen[$slug] = true;
+        $rows[] = [
+            'name' => $name,
+            'nation' => $nation,
+            'region' => $region,
+            'slug' => $slug,
+        ];
+    }
+    return $rows;
+}
+
+/** @return array{name:string,nation:string,region:string,slug:string}|null */
+function nationwideAreaRow(string $nameOrSlug): ?array {
+    $slug = areaSlug($nameOrSlug);
+    foreach (getNationwideAreaRows() as $row) {
+        if ($row['slug'] === $slug || strcasecmp($row['name'], $nameOrSlug) === 0) {
+            return $row;
+        }
+    }
+    return null;
+}
+
+/** @return list<string> */
+function getNurseCallKeywordSlugs(): array {
+    static $slugs = null;
+    if ($slugs !== null) {
+        return $slugs;
+    }
+    $slugs = [];
+    foreach (getMajorKeywords() as $slug => $meta) {
+        if (($meta['service'] ?? '') === 'nurse-call') {
+            $slug = keywordSlug((string)$slug);
+            if ($slug !== '') {
+                $slugs[$slug] = true;
+            }
+        }
+    }
+    $slugs = array_keys($slugs);
+    sort($slugs);
+    return $slugs;
+}
+
+/** @return list<string> */
+function getNurseCallFeaturedKeywordSlugs(): array {
+    return [
+        'nurse-call-system',
+        'care-home-nurse-call',
+        'hospital-nurse-call-system',
+        'nurse-call-maintenance',
+    ];
+}
+
+/**
  * Canonical slug: lowercase, non-alnum → hyphen, collapse hyphens.
  * "Ashton-under-Lyne" → ashton-under-lyne
  * "Cheadle Hulme" → cheadle-hulme
@@ -586,6 +668,31 @@ function getMajorKeywords(): array {
                 continue;
             }
             $normalized[$slug] = $meta;
+        }
+    }
+    if (function_exists('evChargersJobsApply')) {
+        $normalized = evChargersJobsApply($normalized);
+    }
+    if (function_exists('cctvJobsApply')) {
+        $normalized = cctvJobsApply($normalized);
+    }
+    if (function_exists('waterJobsApplyOverlay')) {
+        $normalized = waterJobsApplyOverlay($normalized);
+    }
+    if (function_exists('legionellaJobsApplyOverlay')) {
+        $normalized = legionellaJobsApplyOverlay($normalized);
+    }
+    if (function_exists('jobTypesApplyPlumbing')) {
+        $normalized = jobTypesApplyPlumbing($normalized);
+    }
+    if (function_exists('securitySystemsApplyOverlay')) {
+        $normalized = securitySystemsApplyOverlay($normalized);
+    }
+    if (function_exists('eicrLaneOverlayKeyword')) {
+        foreach ($normalized as $slug => $row) {
+            if (is_array($row)) {
+                $normalized[$slug] = eicrLaneOverlayKeyword((string)$slug, $row);
+            }
         }
     }
     return $normalized;
@@ -1215,6 +1322,38 @@ if (is_file($asbestosJobsFile)) {
 $nurseCallPriorityFile = __DIR__ . '/includes/nurse-call-priority.php';
 if (is_file($nurseCallPriorityFile)) {
     require_once $nurseCallPriorityFile;
+}
+$evChargersFile = __DIR__ . '/includes/ev-chargers-jobs.php';
+if (is_file($evChargersFile)) {
+    require_once $evChargersFile;
+}
+$cctvJobsFile = __DIR__ . '/includes/cctv-jobs.php';
+if (is_file($cctvJobsFile)) {
+    require_once $cctvJobsFile;
+}
+$waterLaneFile = __DIR__ . '/includes/job-types-water.php';
+if (is_file($waterLaneFile)) {
+    require_once $waterLaneFile;
+}
+$legionellaLaneFile = __DIR__ . '/includes/job-types-legionella.php';
+if (is_file($legionellaLaneFile)) {
+    require_once $legionellaLaneFile;
+}
+$plumbingLaneFile = __DIR__ . '/includes/job-types-plumbing.php';
+if (is_file($plumbingLaneFile)) {
+    require_once $plumbingLaneFile;
+}
+$securitySystemsFile = __DIR__ . '/includes/security-systems-jobs.php';
+if (is_file($securitySystemsFile)) {
+    require_once $securitySystemsFile;
+}
+$eicrLaneFile = __DIR__ . '/includes/eicr-lane.php';
+if (is_file($eicrLaneFile)) {
+    require_once $eicrLaneFile;
+}
+$hubVisualsFile = __DIR__ . '/includes/hub-visuals.php';
+if (is_file($hubVisualsFile)) {
+    require_once $hubVisualsFile;
 }
 
 $barrierFile = __DIR__ . '/includes/barriers.php';

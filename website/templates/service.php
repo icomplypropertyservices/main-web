@@ -551,6 +551,37 @@ if (function_exists('accessControlLaneHubSection')) {
     </div>
 </section>
 
+<?php if ($serviceSlug === 'nurse-call' && function_exists('getNationwideAreaRows')):
+    $ncByNation = [];
+    foreach (getNationwideAreaRows() as $ncRow) {
+        $ncByNation[$ncRow['nation']][] = $ncRow;
+    }
+?>
+<section id="nurse-call-uk" class="max-w-7xl mx-auto px-6 pb-16 scroll-mt-24">
+    <div class="mb-8">
+        <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Nurse call outside the North West</div>
+        <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Nurse call across the UK</h2>
+        <p class="mt-2 text-zinc-600 max-w-3xl">
+            <?= count(getNationwideAreaRows()) ?> places outside the North West town list.
+            These pages are nurse call only. iComply is based in Stockport SK2.
+            A visit is confirmed after you send the postcode. Quotes are POA after scope.
+            Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.
+        </p>
+    </div>
+    <?php foreach ($ncByNation as $nationName => $nationRows): ?>
+    <h3 class="text-lg font-semibold text-black mt-8 mb-3"><?= htmlspecialchars((string)$nationName, ENT_QUOTES, 'UTF-8') ?></h3>
+    <div class="flex flex-wrap gap-2">
+        <?php foreach ($nationRows as $ncRow): ?>
+            <a href="<?= url('/pages/nurse-call/' . $ncRow['slug']) ?>"
+               class="px-3 py-1.5 bg-white border rounded-full text-xs text-zinc-800 hover:border-[#ff6b00]">
+                <?= htmlspecialchars($ncRow['name'], ENT_QUOTES, 'UTF-8') ?>
+            </a>
+        <?php endforeach; ?>
+    </div>
+    <?php endforeach; ?>
+</section>
+<?php endif; ?>
+
 <!-- RELATED SERVICES -->
 <section class="bg-white border-t">
     <div class="max-w-7xl mx-auto px-6 py-16">

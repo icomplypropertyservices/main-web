@@ -482,6 +482,15 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
             }
         }
     }
+    // Nurse call only: places outside the North West list. Other services stay local.
+    if (function_exists('getNationwideAreaRows')) {
+        foreach (getNationwideAreaRows() as $row) {
+            $slug = (string)($row['slug'] ?? '');
+            if ($slug !== '') {
+                $routes[] = '/pages/nurse-call/' . $slug;
+            }
+        }
+    }
 
     // Manufacturer × every area is routed now. --full adds the matrix to the export.
     if ($full && function_exists('manufacturerAreaRoutes')) {
