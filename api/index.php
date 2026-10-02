@@ -70,7 +70,7 @@ function seoCompactSitemap(string $baseUrl): string {
         . '</urlset>' . "\n";
 }
 
-/** Drop shop/products locs from served sitemaps (they 301 to packages). */
+/** Drop shop/products locs from served sitemaps (trade hubs stay on /shop and /products). */
 function seoStripShopProductUrls(string $xml): string {
     $xml = preg_replace(
         '#<url>\s*<loc>[^<]*/(?:shop|products)(?:/[^<]*)?</loc>.*?</url>\s*#is',
@@ -106,6 +106,7 @@ $legacyAliases = [
     '/cookie-policy' => '/privacy',
     '/blog' => '/pages/resources',
     '/news' => '/pages/resources',
+    '/group' => '/',
 ];
 if (isset($legacyAliases[$aliasPath])) {
     header('Location: ' . $base_url . $legacyAliases[$aliasPath], true, 301);

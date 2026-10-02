@@ -1,4 +1,4 @@
-# Google monitoring & SEO automation (Icomply)
+# Google monitoring & SEO automation (iComply)
 
 ## Live site checks
 

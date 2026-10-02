@@ -25,7 +25,7 @@ unset($list);
 
 ksort($by);
 
-echo "Icomply keyword inventory\n";
+echo "iComply keyword inventory\n";
 echo str_repeat('=', 50) . "\n";
 echo "TOTAL KEYWORD PAGES: " . count($keywords) . "\n\n";
 

@@ -76,13 +76,13 @@ foreach ($catalog as $slug => &$entry) {
         return $map[$s] ?? $s;
     }, $services));
 
-    $entry['blurb'] = "Icomply Property Services is your North West partner for {$name} — "
+    $entry['blurb'] = "iComply Property Services sends our qualified engineers for {$name} — "
         . "{$p['install']} to {$p['std']}, plus planned maintenance and reactive repairs. "
         . "We supply trade {$p['buy']} for {$name} and support landlords, FM teams and contractors "
         . "across Greater Manchester, Lancashire, Cheshire and Merseyside.";
 
     $entry['seo_title'] = "{$name} Installation, Service & Products | North West";
-    $entry['seo_desc'] = "Buy and install {$name} systems with Icomply. {$p['install']}, certification and trade kits "
+    $entry['seo_desc'] = "Buy and install {$name} systems with iComply. {$p['install']}, certification and trade kits "
         . "across Stockport, Manchester and the North West. Free quotes.";
     $entry['seo_keywords'] = implode(', ', [
         $name,

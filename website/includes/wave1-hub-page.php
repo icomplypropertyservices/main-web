@@ -65,6 +65,9 @@ require SITE_ROOT . '/includes/header.php';
                 <span class="text-[#ff6b00]"><?= htmlspecialchars($hub['h1Accent'], ENT_QUOTES, 'UTF-8') ?></span>
             </h1>
             <p class="mt-6 text-lg md:text-xl text-white/80 max-w-2xl"><?= htmlspecialchars($hub['lede'], ENT_QUOTES, 'UTF-8') ?></p>
+            <?php if (!empty($hub['price'])): ?>
+            <p class="mt-4 text-sm text-white/80">Guide price <strong class="text-white"><?= htmlspecialchars((string)$hub['price'], ENT_QUOTES, 'UTF-8') ?></strong><?php if (!empty($hub['priceNote'])): ?> — <?= htmlspecialchars((string)$hub['priceNote'], ENT_QUOTES, 'UTF-8') ?><?php endif; ?></p>
+            <?php endif; ?>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="<?= url('/contact.php') ?>" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Request a quote</a>
                 <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener" class="px-8 py-4 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>
@@ -160,6 +163,22 @@ require SITE_ROOT . '/includes/header.php';
             </a>
             <?php endforeach; ?>
         </div>
+    </div>
+</section>
+<?php endif; ?>
+
+<?php if (!empty($hub['mainlandService']) && function_exists('getMainlandAreaRecords')): ?>
+<section class="max-w-7xl mx-auto px-6 py-16">
+    <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">UK mainland</div>
+    <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Fire risk assessment in every mainland town</h2>
+    <p class="mt-3 text-zinc-600 max-w-3xl">Each town opens its own FRA page. Guide price <?= htmlspecialchars((string)($hub['price'] ?? '£350'), ENT_QUOTES, 'UTF-8') ?> for a standard assessment.</p>
+    <div class="mt-8 flex flex-wrap gap-2">
+        <?php foreach (getMainlandAreaRecords() as $row): ?>
+        <a href="<?= htmlspecialchars(url('/pages/' . $hub['mainlandService'] . '/' . $row['slug'] . '.php'), ENT_QUOTES, 'UTF-8') ?>"
+           class="px-3 py-1.5 bg-zinc-50 border rounded-full text-xs text-zinc-700 hover:border-[#ff6b00]">
+            <?= htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8') ?>
+        </a>
+        <?php endforeach; ?>
     </div>
 </section>
 <?php endif; ?>

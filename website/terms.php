@@ -6,10 +6,10 @@ require_once __DIR__ . '/config.php';
 require_once SITE_ROOT . '/includes/share.php';
 
 $pageTitle = 'Terms & Conditions | Website, Services & Shop';
-$metaDesc = 'Terms and conditions for Icomply Property Services (Stockport): website use, compliance service quotes, installations and Shopify product purchases across Greater Manchester and the North West.';
-$metaKeywords = 'Icomply terms and conditions, property compliance terms, Shopify shop terms, Stockport electrician terms';
+$metaDesc = 'Terms and conditions for iComply Property Services (Stockport): website use, compliance service quotes, installations and Shopify product purchases across Greater Manchester and the North West.';
+$metaKeywords = 'iComply terms and conditions, property compliance terms, Shopify shop terms, Stockport electrician terms';
 $canonicalUrl = url('/terms.php');
-$updated = '12 July 2026';
+$updated = '28 September 2026';
 
 require SITE_ROOT . '/includes/header.php';
 ?>
@@ -126,6 +126,7 @@ require SITE_ROOT . '/includes/header.php';
                 <li>Work proceeds under a written or emailed quotation / order confirmation accepted by you.</li>
                 <li>You must provide safe access, accurate information and any required permissions or keys.</li>
                 <li>Documentation or certification is issued for the work we complete, to the standards and scope agreed in the quote (for example electrical, fire or gas work where applicable). We do not claim certifications we have not issued for your specific job.</li>
+                <li>Works may be carried out by our own engineers or by approved, suitably qualified and registered specialists on our behalf, including Gas Safe registered engineers for gas work. iComply Property Services remains responsible for your booking.</li>
                 <li>Payment terms are stated on the quote or invoice; late payment may attract interest and suspension of non-critical works.</li>
                 <li>Request a free quote via our <a class="text-[#ff6b00] font-medium" href="<?= url('/contact.php') ?>">contact page</a>, phone or WhatsApp.</li>
             </ul>
@@ -141,7 +142,7 @@ require SITE_ROOT . '/includes/header.php';
                 <li>Distance-selling cancellation rights for consumers may apply to goods, subject to statutory exceptions (for example sealed goods opened for hygiene or safety reasons).</li>
             </ul>
             <p class="mt-3 text-sm text-zinc-500">
-                Visit the <a class="text-[#ff6b00] font-medium" href="<?= url('/shop/index.php') ?>">Icomply shop</a>
+                Visit the <a class="text-[#ff6b00] font-medium" href="<?= url('/shop/index.php') ?>">iComply shop</a>
                 for trade products and install kits.
             </p>
         </article>
@@ -161,7 +162,7 @@ require SITE_ROOT . '/includes/header.php';
                 Nothing in these terms limits liability for death or personal injury caused by negligence, fraud,
                 or any other liability that cannot be limited by law. Subject to that, we are not liable for
                 indirect or consequential loss, and our total liability for any claim relating to website use is
-                limited to £100, and for services or goods to the price paid for the relevant service or goods.
+                limited to POA and for services or goods to the price paid for the relevant service or goods.
             </p>
         </article>
 
@@ -225,7 +226,7 @@ require SITE_ROOT . '/includes/header.php';
         </div>
 
         <div class="p-6 md:p-8 bg-[#0B1F3A] text-white rounded-3xl">
-            <div class="text-xs uppercase tracking-[2px] text-[#ff6b00] font-semibold mb-2">Explore Icomply</div>
+            <div class="text-xs uppercase tracking-[2px] text-[#ff6b00] font-semibold mb-2">Explore iComply</div>
             <h2 class="text-xl font-semibold tracking-tight mb-3">Ready to work with us?</h2>
             <p class="text-white/75 text-sm mb-5 max-w-xl">
                 Compliance services, trade kits and manufacturer support across Greater Manchester and the North West.
