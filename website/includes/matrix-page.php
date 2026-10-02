@@ -91,6 +91,9 @@ function icomplyMatrixShared(): array
 
     $kwByService = [];
     foreach (getMajorKeywords() as $slug => $meta) {
+        if (!is_array($meta) || !empty($meta['hub_only'])) {
+            continue;
+        }
         $svc = (string)($meta['service'] ?? '');
         if ($svc === '') {
             continue;

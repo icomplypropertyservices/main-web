@@ -18,6 +18,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Free runner disk
+        run: |
+          df -h
+          sudo rm -rf \
+            /usr/local/lib/android \
+            /usr/share/dotnet \
+            /usr/local/share/powershell \
+            /usr/share/swift \
+            /opt/ghc \
+            /usr/local/.ghcup \
+            /usr/local/share/chromium \
+            /usr/local/share/boost \
+            /opt/hostedtoolcache/CodeQL \
+            /usr/local/lib/node_modules \
+            /opt/microsoft \
+            /usr/share/miniconda \
+            /usr/local/share/vcpkg \
+            || true
+          docker system prune -af >/dev/null 2>&1 || true
+          df -h
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
