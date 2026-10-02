@@ -78,12 +78,26 @@ function renderServiceAreaPage(string $serviceSlug, string $area): void {
         return;
     }
     $serviceName = $services[$serviceSlug];
+    if (function_exists('resolveServiceAreaName')) {
+        $resolved = resolveServiceAreaName($serviceSlug, $area);
+        if ($resolved === null && isNationwideMainlandService($serviceSlug)) {
+            http_response_code(404);
+            echo 'Area not found';
+            icomplyRequestExit();
+            return;
+        }
+        if ($resolved !== null) {
+            $area = $resolved;
+        }
+    }
     $areaSlug = areaSlug($area);
     $imgs = getKeywordImages($serviceSlug);
 
     // Ensure globals templates may still read
     $GLOBALS['services'] = $services;
-    $GLOBALS['areas'] = getAreas();
+    $GLOBALS['areas'] = function_exists('getAreasForService')
+        ? getAreasForService($serviceSlug)
+        : getAreas();
 
     executeTemplateVars(comboTemplatePath($serviceSlug), [
         'SERVICE_NAME' => $serviceName,
@@ -279,7 +293,9 @@ function renderServiceHubPage(string $serviceSlug): void {
         return;
     }
     $GLOBALS['services'] = $services;
-    $GLOBALS['areas'] = getAreas();
+    $GLOBALS['areas'] = function_exists('getAreasForService')
+        ? getAreasForService($serviceSlug)
+        : getAreas();
 
     $tpl = SITE_ROOT . '/templates/service.php';
     executeTemplateVars($tpl, [

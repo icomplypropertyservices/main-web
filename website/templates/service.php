@@ -4,17 +4,24 @@
  * MANUFACTURER_TAGS, MANUFACTURER_IMAGES
  */
 $poaService = function_exists('isPoaService') && isPoaService($SERVICE_SLUG);
-$pageTitle = $SERVICE_NAME . ' Services | North West';
+$nationwideEl = function_exists('isNationwideMainlandService') && isNationwideMainlandService($SERVICE_SLUG);
+$pageTitle = $nationwideEl
+    ? ($SERVICE_NAME . ' | UK Mainland')
+    : ($SERVICE_NAME . ' Services | North West');
 $metaDesc = $poaService
     ? ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Price on application after scope. Local team from Stockport. No invented fees.')
-    : ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Installation, maintenance, testing & certification. Written quotes after scope. Local engineers from Stockport.');
+    : ($nationwideEl
+        ? ('BS 5266 emergency lighting across mainland England, Wales and mainland Scotland. Written quote after scope. Stockport base. No invented prices.')
+        : ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Installation, maintenance, testing & certification. Written quotes after scope. Local engineers from Stockport.'));
 $metaKeywords = $SEO_KEYWORDS;
 $ogImage = url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
 
 $allServices = getServices();
-$allAreas = getAreas();
 $serviceSlug = $SERVICE_SLUG;
 $serviceName = $SERVICE_NAME;
+$allAreas = ($nationwideEl && function_exists('getAreasForService'))
+    ? getAreasForService($serviceSlug)
+    : getAreas();
 
 $serviceFaqs = [
     'electrical' => [
@@ -31,6 +38,7 @@ $serviceFaqs = [
         ['How often should emergency lighting be tested?', 'Monthly functional tests and annual full-duration tests are required under BS 5266, with records kept for compliance.'],
         ['Can you convert fluorescent emergency fittings to LED?', 'Yes. We supply and fit LED conversions and full system upgrades while maintaining correct coverage and certification.'],
         ['Do you issue emergency lighting certificates?', 'Every planned test and install includes documentation suitable for landlords, facilities managers and insurers.'],
+        ['Where do you cover emergency lighting?', 'Mainland England, Wales and mainland Scotland. Scottish Highlands and islands, Northern Ireland, the Isle of Man and the Channel Islands are outside this set and quoted separately. Travel is confirmed on the quote.'],
     ],
     'legionella-risk-assessment' => [
         ['What is a Legionella risk assessment?', 'A written look at how the water system could allow Legionella to grow, and what controls are proportionate. UK dutyholders use HSE L8 and HSG274 as the usual reference.'],
@@ -54,8 +62,11 @@ $standards = getServiceStandards($serviceSlug);
 $faqs = $serviceFaqs[$serviceSlug] ?? $serviceFaqs['default'];
 $svcCopy = function_exists('waterAsbestosServiceCopy') ? waterAsbestosServiceCopy($serviceSlug) : null;
 
+$popularCandidates = $nationwideEl
+    ? ['London', 'Birmingham', 'Manchester', 'Stockport', 'Leeds', 'Liverpool', 'Bristol', 'Cardiff', 'Glasgow', 'Edinburgh', 'Aberdeen', 'Newcastle upon Tyne', 'Sheffield', 'Nottingham', 'Leicester', 'Southampton', 'Plymouth', 'Norwich', 'Oxford', 'Cambridge']
+    : ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool', 'Bury', 'Sale', 'Altrincham', 'Macclesfield', 'Burnley', 'Blackburn', 'Warrington', 'St Helens'];
 $popularTowns = array_values(array_filter(
-    ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool', 'Bury', 'Sale', 'Altrincham', 'Macclesfield', 'Burnley', 'Blackburn', 'Warrington', 'St Helens'],
+    $popularCandidates,
     function ($t) use ($allAreas) {
         return in_array($t, $allAreas, true);
     }
@@ -213,7 +224,7 @@ $schema = [
                      onerror="this.style.display='none'">
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-[#0B1F3A]/20 to-transparent">
                     <div class="text-sm text-white/70">Serving <?= count($allAreas) ?>+ towns</div>
-                    <div class="text-2xl font-semibold mt-1"><?= $poaService ? 'Local team · Price on application' : 'Local engineers · Written quotes' ?></div>
+                    <div class="text-2xl font-semibold mt-1"><?= $nationwideEl ? 'UK mainland · Written quotes' : ($poaService ? 'Local team · Price on application' : 'Local engineers · Written quotes') ?></div>
                 </div>
             </div>
         </div>
@@ -225,7 +236,9 @@ $schema = [
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <?php
         $trust = [
-            ['Local response', 'Stockport-based engineers across Greater Manchester & the North West'],
+            ['Local response', $nationwideEl
+                ? 'Emergency lighting across mainland England, Wales and mainland Scotland. Highlands and islands, Northern Ireland, the Isle of Man and the Channel Islands are quoted separately.'
+                : 'Stockport-based engineers across Greater Manchester & the North West'],
             ['Standards-led', $standards],
             ['Full documentation', 'Records for landlords, insurers, agents and dutyholders'],
             [$poaService ? 'POA quotes' : 'Written quotes', $poaService ? 'No invented prices — scoped after we see the job' : 'Clear scope before work starts'],
@@ -385,7 +398,14 @@ $schema = [
                     <?= htmlspecialchars($kwName, ENT_QUOTES, 'UTF-8') ?>
                 </a>
                 <div class="mt-3 flex flex-wrap gap-1.5">
-                    <?php foreach ($popularTowns as $town): ?>
+                    <?php
+                    $keywordTowns = array_values(array_filter(
+                        $popularTowns,
+                        static function ($t) {
+                            return in_array($t, getAreas(), true);
+                        }
+                    ));
+                    foreach ($keywordTowns as $town): ?>
                         <a href="<?= url('/pages/keywords/' . rawurlencode($kwSlug) . '/' . areaSlug($town) . '.php') ?>"
                            class="text-[11px] px-2 py-1 bg-white border rounded-full text-zinc-700 hover:border-[#ff6b00] hover:text-[#ff6b00]">
                             <?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?>
@@ -393,7 +413,7 @@ $schema = [
                     <?php endforeach; ?>
                     <a href="<?= url('/pages/keywords/' . rawurlencode($kwSlug) . '.php') ?>"
                        class="text-[11px] px-2 py-1 font-semibold text-[#ff6b00]">
-                        All <?= count($allAreas) ?> towns →
+                        All <?= count(getAreas()) ?> towns →
                     </a>
                 </div>
             </div>
@@ -406,7 +426,9 @@ $schema = [
             </p>
         <?php else: ?>
             <p class="mt-6 text-sm text-zinc-600">
-                All <?= count($svcKeywords) ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> keyword guides, each with every town we cover.
+                All <?= count($svcKeywords) ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> keyword guides<?= $nationwideEl
+                    ? ', with North West town pages. Mainland coverage for this service is the town list below.'
+                    : ', each with every town we cover.' ?>
             </p>
         <?php endif; ?>
         <?php else: ?>
@@ -423,7 +445,9 @@ $schema = [
             <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">
                 <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> near you
             </h2>
-            <p class="mt-2 text-zinc-600">Town hubs we cover — electrical and gas also open a real keyword×town page. We do not publish thin service×area doorways.</p>
+            <p class="mt-2 text-zinc-600"><?= $nationwideEl
+                ? 'Every UK mainland town for emergency lighting. These service pages are owned here. They stay off the sitemap. Other services stay on the North West list.'
+                : 'Town hubs we cover — electrical and gas also open a real keyword×town page. We do not publish thin service×area doorways.' ?></p>
         </div>
         <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All areas →</a>
     </div>

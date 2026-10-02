@@ -348,6 +348,14 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         }
     }
 
+    // Fire protection: emergency lighting also owns every UK mainland area.
+    // Other services stay on the North West list above.
+    if (function_exists('getAreasForService') && function_exists('areaSlug')) {
+        foreach (getAreasForService('emergency-lighting') as $area) {
+            $routes[] = '/pages/emergency-lighting/' . areaSlug((string)$area);
+        }
+    }
+
     return $routes;
 }
 
@@ -368,7 +376,16 @@ function icomplyRenderExportRoute(string $path): array
     if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)
         && function_exists('getServices')
         && isset(getServices()[$m[1]])) {
-        $area = function_exists('areaFromSlug') ? areaFromSlug($m[2]) : $m[2];
+        $area = null;
+        if (function_exists('resolveServiceAreaName')) {
+            $area = resolveServiceAreaName($m[1], $m[2]);
+        }
+        if ($area === null && function_exists('areaFromSlug')) {
+            $area = areaFromSlug($m[2]);
+        }
+        if ($m[1] === 'emergency-lighting' && ($area === null || $area === '')) {
+            return ['html' => '', 'status' => 404];
+        }
         $html = icomplyRenderServiceAreaHtml($m[1], (string)($area ?: $m[2]));
         if ($html !== '' && icomplyLooksLikeHtml($html)) {
             return ['html' => $html, 'status' => 200];

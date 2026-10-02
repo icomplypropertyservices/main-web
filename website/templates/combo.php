@@ -7,19 +7,25 @@
  * MANUFACTURER_TAGS, MANUFACTURER_IMAGES, KEYWORD_IMAGE_1/2/3
  */
 $poaCombo = function_exists('isPoaService') && isPoaService($SERVICE_SLUG);
+$nationwideEl = function_exists('isNationwideMainlandService') && isNationwideMainlandService($SERVICE_SLUG);
 $pageTitle = $SERVICE_NAME . ' in ' . $AREA . ' | Icomply Property Services';
 $metaDesc = $poaCombo
     ? ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Price on application after scope. Local North West team from Stockport.')
-    : ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing & certification. Local engineers. Written quote after scope.');
+    : ($nationwideEl
+        ? ('BS 5266 emergency lighting in ' . $AREA . '. UK mainland coverage from Stockport. Written quote after scope — no invented price.')
+        : ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing & certification. Local engineers. Written quote after scope.'));
 $metaKeywords = $SEO_KEYWORDS;
 $ogImage = url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
 
 $allServices = getServices();
-$allAreas = getAreas();
 $serviceSlug = $SERVICE_SLUG;
 $serviceName = $SERVICE_NAME;
 $areaName = $AREA;
 $areaSlugVal = $AREA_SLUG;
+$allAreas = ($nationwideEl && function_exists('getAreasForService'))
+    ? getAreasForService($serviceSlug)
+    : getAreas();
+$coveragePhrase = $nationwideEl ? 'the UK mainland' : 'the North West';
 
 // Use getServiceBlurb / getServiceStandards (config.php ← data/service-meta.json). Do not hardcode $serviceBlurbs.
 $blurb = getServiceBlurb($serviceSlug);
@@ -199,7 +205,7 @@ $schema = [
                      loading="eager"
                      onerror="this.style.display='none'">
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-[#0B1F3A]/20 to-transparent">
-                    <div class="text-sm text-white/70">Serving <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> &amp; the North West</div>
+                    <div class="text-sm text-white/70">Serving <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> &amp; <?= htmlspecialchars($coveragePhrase, ENT_QUOTES, 'UTF-8') ?></div>
                     <div class="text-2xl font-semibold mt-1">Local engineers · Fixed-price quotes</div>
                 </div>
             </div>
@@ -219,7 +225,9 @@ $schema = [
                 ['POA quotes', 'No invented prices — scoped after we know the property'],
             ]
             : [
-                ['Local to ' . $areaName, 'Stockport-based engineers covering ' . $areaName . ' and surrounding postcodes'],
+                ['Local to ' . $areaName, $nationwideEl
+                    ? 'Stockport-based engineers. UK mainland emergency lighting, including ' . $areaName . '. Travel is confirmed on the quote.'
+                    : 'Stockport-based engineers covering ' . $areaName . ' and surrounding postcodes'],
                 ['Standards-led', $standards],
                 ['Full certification', 'Documentation for landlords, insurers and fire officers'],
                 ['Fixed-price quotes', 'Clear scope, same-week appointments where capacity allows'],
@@ -255,8 +263,10 @@ $schema = [
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
                 Icomply Property Services provides complete <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong>
                 design, installation, commissioning, maintenance and certification across
-                <strong><?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></strong> and the wider North West.
-                Our qualified engineers deliver fixed-price quotes, same-week appointments and full compliance documentation on every job.
+                <strong><?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></strong> and <?= htmlspecialchars($coveragePhrase, ENT_QUOTES, 'UTF-8') ?>.
+                <?= $nationwideEl
+                    ? 'Quotes are written after scope. We do not publish a price on this page, and we do not promise a same-day North West call-out for mainland towns.'
+                    : 'Our qualified engineers deliver fixed-price quotes, same-week appointments and full compliance documentation on every job.' ?>
             </p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
                 Whether you need a new system, an upgrade, periodic testing or emergency repairs, we support commercial,
@@ -454,10 +464,14 @@ $schema = [
             </div>
         </div>
         <ul class="space-y-3 text-sm text-white/90">
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Based in Stockport — covering <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> &amp; the North West</li>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> <?= $nationwideEl
+                ? 'Based in Stockport — UK mainland emergency lighting, including ' . htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') . '. Travel is confirmed on the quote.'
+                : 'Based in Stockport — covering ' . htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') . ' &amp; the North West' ?></li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Installation, servicing and certification</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Multi-service packages for landlords &amp; FM teams</li>
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Response aim: within 2 hours on business days</li>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> <?= $nationwideEl
+                ? 'Visit timing is confirmed on the quote. Two-hour attendance is not offered outside the North West.'
+                : 'Response aim: within 2 hours on business days' ?></li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Manufacturer brands supported — see tags above</li>
         </ul>
     </div>

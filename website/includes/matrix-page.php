@@ -177,11 +177,12 @@ function icomplyMatrixChromeEnd(): string
         . '</div></footer>' . $popup . '</body></html>';
 }
 
-function icomplyMatrixAreaChips(string $hrefPrefix): string
+function icomplyMatrixAreaChips(string $hrefPrefix, ?array $areas = null): string
 {
     $s = icomplyMatrixShared();
+    $list = $areas ?? $s['areas'];
     $html = '<div class="chip-cloud">';
-    foreach ($s['areas'] as $a) {
+    foreach ($list as $a) {
         $href = $hrefPrefix . $a['slug'];
         $html .= '<a class="area-chip" href="' . icomplyMatrixH($href) . '">' . icomplyMatrixH($a['name']) . '</a>';
     }
@@ -294,7 +295,18 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         return '';
     }
     $svcName = $s['services'][$serviceSlug];
+    if (function_exists('resolveServiceAreaName')) {
+        $resolvedArea = resolveServiceAreaName($serviceSlug, $areaName);
+        if ($serviceSlug === 'emergency-lighting' && $resolvedArea === null) {
+            return '';
+        }
+        if ($resolvedArea !== null) {
+            $areaName = $resolvedArea;
+        }
+    }
     $areaSlugVal = areaSlug($areaName);
+    $nationwide = function_exists('isNationwideMainlandService') && isNationwideMainlandService($serviceSlug);
+    $regionLabel = $nationwide ? 'UK mainland' : 'North West';
     $poa = function_exists('isPoaService') && isPoaService($serviceSlug);
     $priceLine = $poa
         ? 'Price on application after scope. No invented catalogue price.'
@@ -316,7 +328,7 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
 
     $html = icomplyMatrixChromeStart($title, $desc, $canonical);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
-        . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($areaName) . ' · North West</p>'
+        . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($areaName) . ' · ' . icomplyMatrixH($regionLabel) . '</p>'
         . '<h1>' . icomplyMatrixH($svcName) . ' <span class="accent">in ' . icomplyMatrixH($areaName) . '</span></h1>'
         . '<p class="mt-4 text-white/80 max-w-2xl">' . icomplyMatrixH($intro) . '</p>'
         . '<div class="mt-6 flex flex-wrap gap-3">'
@@ -331,14 +343,29 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         . '<h2 class="text-2xl font-semibold">What we do in ' . icomplyMatrixH($areaName) . '</h2>'
         . '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($blurb) . '</p>'
         . '<p class="text-sm">Service hub: <a class="text-[#ff6b00] font-semibold" href="'
-        . icomplyMatrixH(url('/pages/services/' . $serviceSlug)) . '">' . icomplyMatrixH($svcName) . '</a>'
-        . ' · Town: <a class="text-[#ff6b00] font-semibold" href="'
-        . icomplyMatrixH(url('/pages/areas/' . $areaSlugVal)) . '">' . icomplyMatrixH($areaName) . '</a></p>'
-        . '</article>';
+        . icomplyMatrixH(url('/pages/services/' . $serviceSlug)) . '">' . icomplyMatrixH($svcName) . '</a>';
+    if (function_exists('getAreas') && in_array($areaName, getAreas(), true)) {
+        $html .= ' · Town: <a class="text-[#ff6b00] font-semibold" href="'
+            . icomplyMatrixH(url('/pages/areas/' . $areaSlugVal)) . '">' . icomplyMatrixH($areaName) . '</a>';
+    }
+    $html .= '</p>';
+    if ($nationwide) {
+        $html .= '<p class="text-zinc-700 leading-relaxed">Emergency lighting for this town is part of the UK mainland set: England, Wales and mainland Scotland, scheduled from Stockport. Scottish Highlands and islands, Northern Ireland, the Isle of Man and the Channel Islands are outside this set and quoted separately. Written quote after scope — no invented price.</p>';
+    }
+    $html .= '</article>';
 
+    $chipAreas = $s['areas'];
+    $chipCount = count($s['areas']);
+    if ($nationwide && function_exists('getMainlandAreas')) {
+        $chipAreas = [];
+        foreach (getMainlandAreas() as $mainlandName) {
+            $chipAreas[] = ['name' => (string)$mainlandName, 'slug' => areaSlug((string)$mainlandName)];
+        }
+        $chipCount = count($chipAreas);
+    }
     $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($svcName) . ' in every area</h2>'
-        . '<p class="text-sm text-zinc-600 mb-4">' . count($s['areas']) . ' towns.</p>'
-        . icomplyMatrixAreaChips(url('/pages/' . $serviceSlug . '/'))
+        . '<p class="text-sm text-zinc-600 mb-4">' . $chipCount . ' towns.</p>'
+        . icomplyMatrixAreaChips(url('/pages/' . $serviceSlug . '/'), $chipAreas)
         . '</section>';
 
     $html .= '<section><h2 class="text-2xl font-semibold mb-3">All keywords for this service</h2>'

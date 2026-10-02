@@ -71,6 +71,24 @@ function area_profile(string $area): array {
         return $map[$area] + ['name' => $area];
     }
 
+    // Emergency-lighting towns outside the North West list: do not invent a
+    // Stockport drive time or a North West region.
+    if (function_exists('mainlandAreaRecord') && !in_array($area, getAreas(), true)) {
+        $rec = mainlandAreaRecord($area);
+        if ($rec !== null) {
+            $place = $rec['county'] !== '' ? $rec['county'] : $rec['country'];
+            $region = trim($rec['country'] . ($place !== '' && $place !== $rec['country'] ? ' · ' . $place : ''));
+            return [
+                'name' => $area,
+                'districts' => $area . ' and nearby mainland postcodes',
+                'region' => $region !== '' ? $region : 'UK mainland',
+                'stock' => 'commercial buildings, landlord stock and multi-occupied premises',
+                'travel' => 'arranged from our Stockport base and confirmed on the quote — not a North West same-day call-out',
+                'focus' => 'BS 5266 emergency lighting on escape routes, open areas and exit signs',
+            ];
+        }
+    }
+
     // Generic but still unique-ish profile for remaining towns
     $seed = area_seed($area);
     $regions = ['Greater Manchester fringe', 'Lancashire', 'Cheshire', 'Merseyside fringe', 'North West England'];

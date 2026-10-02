@@ -429,6 +429,11 @@ function exportedServiceLocalUrl(string $serviceSlug, string $area, string $from
     if ($pick && isset($kw[keywordSlug((string)$pick)])) {
         return url('/pages/keywords/' . keywordSlug((string)$pick) . '/' . $town . '.php');
     }
+    // Emergency lighting owns a real service×area page for every mainland town.
+    if ($serviceSlug === 'emergency-lighting' && function_exists('resolveServiceAreaName')
+        && resolveServiceAreaName($serviceSlug, $area) !== null) {
+        return url('/pages/emergency-lighting/' . $town . '.php');
+    }
     if ($from === 'area') {
         return url('/pages/services/' . $serviceSlug . '.php');
     }
@@ -711,6 +716,11 @@ function icomplyTradeProductsUrl(): string
 $waFile = __DIR__ . '/includes/water-asbestos.php';
 if (is_file($waFile)) {
     require_once $waFile;
+}
+
+$mainlandFile = __DIR__ . '/includes/mainland-areas.php';
+if (is_file($mainlandFile)) {
+    require_once $mainlandFile;
 }
 
 // Back-compat globals used by some templates/includes

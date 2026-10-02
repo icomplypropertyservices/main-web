@@ -121,12 +121,6 @@ if ($count < 30 || $count > 20000) {
 }
 
 $services = function_exists('getServices') ? getServices() : [];
-$areaSlugs = [];
-if (function_exists('getAreas') && function_exists('areaSlug')) {
-    foreach (getAreas() as $area) {
-        $areaSlugs[areaSlug((string)$area)] = true;
-    }
-}
 preg_match_all('#<loc>https://icomplypropertyservices\.co\.uk(/pages/[^<]+)</loc>#', $xml, $locHits);
 $serviceAreaHits = [];
 foreach ($locHits[1] ?? [] as $path) {
@@ -138,7 +132,7 @@ foreach ($locHits[1] ?? [] as $path) {
     if (in_array($first, ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages'], true)) {
         continue;
     }
-    if (isset($services[$first]) && isset($areaSlugs[$second])) {
+    if (isset($services[$first])) {
         $serviceAreaHits[] = $path;
     }
 }

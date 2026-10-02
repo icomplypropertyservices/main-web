@@ -10,8 +10,8 @@
         "standards": "BS 5839-1 · BS 5839-6 · BS EN 54 · Fire Safety Order"
     },
     "emergency-lighting": {
-        "blurb": "BS 5266 testing, upgrades, LED conversions and monthly/annual certification.",
-        "short": "BS 5266 testing, upgrades & LED conversions",
+        "blurb": "BS 5266 testing, upgrades, LED conversions and monthly/annual certification across mainland England, Wales and mainland Scotland.",
+        "short": "BS 5266 testing and LED upgrades — UK mainland",
         "standards": "BS 5266 · BS EN 1838 · monthly & annual tests"
     },
     "aov-air-handling": {

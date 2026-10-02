@@ -140,16 +140,23 @@ function routerDispatchVirtual(string $path): bool {
         if (!isset($services[$serviceSlug])) {
             return false;
         }
-        $area = null;
-        foreach (getAreas() as $a) {
-            if (areaSlug($a) === $areaSlugVal) {
-                $area = $a;
-                break;
+        $area = function_exists('resolveServiceAreaName')
+            ? resolveServiceAreaName($serviceSlug, $areaSlugVal)
+            : null;
+        if ($area === null && $serviceSlug !== 'emergency-lighting') {
+            foreach (getAreas() as $a) {
+                if (areaSlug($a) === $areaSlugVal) {
+                    $area = $a;
+                    break;
+                }
+            }
+            if ($area === null) {
+                // allow loose slug for services that are not on the mainland list
+                $area = areaFromSlug($areaSlugVal) ?? keywordDisplayName($areaSlugVal);
             }
         }
         if ($area === null) {
-            // allow loose slug
-            $area = areaFromSlug($areaSlugVal) ?? keywordDisplayName($areaSlugVal);
+            return false;
         }
         renderServiceAreaPage($serviceSlug, $area);
         return true;
