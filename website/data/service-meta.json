@@ -17,7 +17,8 @@
     "aov-air-handling": {
         "blurb": "Smoke vents, AOV panels, smoke control and AHU-related life-safety systems.",
         "short": "Smoke vents, AOV panels & smoke control",
-        "standards": "BS 9991 · EN 12101 · smoke control guidance"
+        "standards": "BS 9991 · EN 12101 · smoke control guidance",
+        "pricing": "POA"
     },
     "nurse-call": {
         "blurb": "Care home and hospital nurse call design, install, upgrades and planned maintenance.",

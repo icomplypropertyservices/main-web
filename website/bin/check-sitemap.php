@@ -30,6 +30,8 @@ $bannedNeedles = [
     '/pages/epc/stockport</loc>',
     '/pages/emergency-lighting/stockport</loc>',
     '/pages/fire-alarms/liverpool</loc>',
+    '/pages/aov-air-handling/stockport</loc>',
+    '/pages/aov-air-handling/manchester</loc>',
 ];
 foreach ($bannedNeedles as $n) {
     if (str_contains($xml, $n)) {

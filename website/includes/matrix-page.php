@@ -343,7 +343,22 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
 
     $html .= '<section><h2 class="text-2xl font-semibold mb-3">All keywords for this service</h2>'
         . icomplyMatrixKeywordChips($serviceSlug)
-        . '</section></main>';
+        . '</section>';
+
+    if (function_exists('isAovNationwideService') && isAovNationwideService($serviceSlug)
+        && function_exists('getFireProtectionAdjacentServices')) {
+        $html .= '<section><h2 class="text-2xl font-semibold mb-3">Fire protection alongside AOV</h2>'
+            . '<p class="text-sm text-zinc-600 mb-4">Smoke control sits next to fire alarms, emergency lighting, fire doors and fire risk assessments. Open those service hubs for ' . icomplyMatrixH($areaName) . '.</p>'
+            . '<div class="chip-cloud">';
+        foreach (getFireProtectionAdjacentServices() as $adj) {
+            $adjName = $s['services'][$adj] ?? $adj;
+            $html .= '<a class="kw-chip" href="' . icomplyMatrixH(url('/pages/services/' . $adj)) . '">'
+                . icomplyMatrixH((string)$adjName) . '</a>';
+        }
+        $html .= '</div></section>';
+    }
+
+    $html .= '</main>';
 
     $html .= icomplyMatrixChromeEnd();
     return $html;

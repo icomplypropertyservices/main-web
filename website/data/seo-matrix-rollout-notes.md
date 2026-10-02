@@ -25,6 +25,14 @@ Official rules for the electrical + gas keyword expansion.
 - HMO **package** landings stay out (`/pages/packages/hmo`, `/pages/packages/hmo-compliance`, and the PR #3 stubs).
 - Keyword hubs such as `hmo-electrical-certificate` or `hmo-gas-safety` are ordinary guides, not package pages.
 
+## AOV nationwide (fire-protection adjacent)
+
+- **Each** AOV keyword gets a hub and a keyword×area page for the site’s **full** areas list (same export path as electrical and gas).
+- AOV **service×area** pages (`/pages/aov-air-handling/{town}`) are generated with `php website/bin/generate-aov-nationwide.php`, which calls `generate-site.php --service=aov-air-handling` and `generate-keyword-area-pages.php`.
+- Sitemap must **not** list `/pages/aov-air-handling/{town}`. Featured AOV keyword×town samples only.
+- Fire-protection adjacent hubs (fire alarms, emergency lighting, fire doors, fire risk assessments) are linked from AOV area pages. Service quotes are **POA**. Never invent a £ figure.
+- Non-prod only. No live promote. No `--prod`.
+
 ## Out of scope
 
 - Legionella / CSS stays on its own PR.

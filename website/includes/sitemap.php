@@ -234,9 +234,16 @@ function icomplySitemapEntries(): array
             $areasFlip = array_flip(getAreas());
             $sampleTowns = ['Stockport', 'Manchester', 'Bolton', 'Liverpool', 'Preston', 'Warrington'];
             $featured = getElectricalGasFeaturedKeywordSlugs();
+            $featuredFamilies = [
+                'electrical' => $featured['electrical'] ?? [],
+                'gas' => $featured['gas'] ?? [],
+            ];
+            if (function_exists('getAovFeaturedKeywordSlugs')) {
+                $featuredFamilies['aov'] = getAovFeaturedKeywordSlugs();
+            }
             $allKw = getMajorKeywords();
-            foreach (['electrical', 'gas'] as $fam) {
-                foreach ($featured[$fam] ?? [] as $kwSlug) {
+            foreach ($featuredFamilies as $kwList) {
+                foreach ($kwList as $kwSlug) {
                     $kwSlug = keywordSlug((string)$kwSlug);
                     if ($kwSlug === '' || !isset($allKw[$kwSlug])) {
                         continue;

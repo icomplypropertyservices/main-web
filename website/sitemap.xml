@@ -128,6 +128,20 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/sprinkler-systems</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/tiling</loc><priority>0.85</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/services/windows-doors</loc><priority>0.85</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/asbestos-inspection</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/asbestos-management-survey</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/asbestos-refurbishment-survey</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/asbestos-sample-testing</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/asbestos-testing</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-asbestos-survey</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-legionella-risk-assessment</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/landlord-asbestos-survey</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/landlord-legionella-risk-assessment</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/legionella-testing</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/legionella-water-testing</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/legionnaires-disease-risk-assessment</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/water-hygiene-testing</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/water-risk-assessment</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/4k-cctv-system</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/24-hour-emergency-electrician</loc><priority>0.78</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/access-control-card-programming</loc><priority>0.68</priority></url>
@@ -221,12 +235,7 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/architrave-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/archive-room-suppression</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/artex-cover-up-plastering</loc><priority>0.68</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/asbestos-inspection</loc><priority>0.68</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/asbestos-management-survey</loc><priority>0.68</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/asbestos-refurbishment-survey</loc><priority>0.68</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/asbestos-sample-testing</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/asbestos-survey</loc><priority>0.68</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/asbestos-testing</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/ascom-nurse-call</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aspirating-smoke-detection</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/assa-abloy-access-control</loc><priority>0.68</priority></url>
@@ -400,7 +409,6 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commend-intercom</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-access-control</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-ahu-maintenance</loc><priority>0.68</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-asbestos-survey</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-boiler-service</loc><priority>0.78</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-building-maintenance</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-cctv-package</loc><priority>0.68</priority></url>
@@ -434,7 +442,6 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-kitchen-fire-system</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-kitchen-gas-safety</loc><priority>0.78</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-kitchen-gas-works</loc><priority>0.78</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-legionella-risk-assessment</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-painting</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-plastering</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-ppm-package</loc><priority>0.68</priority></url>
@@ -976,7 +983,6 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/l3-fire-alarm-system</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/laminate-flooring-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/landing-valve-replacement</loc><priority>0.68</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/landlord-asbestos-survey</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/landlord-audit-pack</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/landlord-bathroom-upgrade</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/landlord-boiler-service</loc><priority>0.78</priority></url>
@@ -1016,7 +1022,6 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/landlord-insulation-upgrade</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/landlord-joinery-repairs</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/landlord-kitchen-upgrade</loc><priority>0.68</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/landlord-legionella-risk-assessment</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/landlord-painting-package</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/landlord-plastering-repairs</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/landlord-plumbing-repairs</loc><priority>0.68</priority></url>
@@ -1034,9 +1039,6 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/led-emergency-lighting</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/led-emergency-lighting-conversion</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/legionella-risk-assessment</loc><priority>0.68</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/legionella-testing</loc><priority>0.68</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/legionella-water-testing</loc><priority>0.68</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/legionnaires-disease-risk-assessment</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/letting-compliance-check</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/lettings-gas-certificate</loc><priority>0.78</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/lgsr-certificate</loc><priority>0.78</priority></url>
@@ -1438,8 +1440,6 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/warehouse-office-fit-out</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/warehouse-sprinkler-maintenance</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/water-fire-extinguisher</loc><priority>0.68</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/water-hygiene-testing</loc><priority>0.68</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/water-risk-assessment</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/water-softener-installation-support</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/weatherproof-coatings</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/wet-chemical-extinguisher</loc><priority>0.68</priority></url>
@@ -1591,4 +1591,40 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/landlord-cp12/liverpool</loc><priority>0.62</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/landlord-cp12/preston</loc><priority>0.62</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/landlord-cp12/warrington</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-installation/stockport</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-installation/manchester</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-installation/bolton</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-installation/liverpool</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-installation/preston</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-installation/warrington</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-maintenance/stockport</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-maintenance/manchester</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-maintenance/bolton</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-maintenance/liverpool</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-maintenance/preston</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-maintenance/warrington</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/automatic-opening-vent/stockport</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/automatic-opening-vent/manchester</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/automatic-opening-vent/bolton</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/automatic-opening-vent/liverpool</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/automatic-opening-vent/preston</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/automatic-opening-vent/warrington</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/smoke-vent-system/stockport</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/smoke-vent-system/manchester</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/smoke-vent-system/bolton</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/smoke-vent-system/liverpool</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/smoke-vent-system/preston</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/smoke-vent-system/warrington</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-testing/stockport</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-testing/manchester</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-testing/bolton</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-testing/liverpool</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-testing/preston</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-testing/warrington</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/stairwell-smoke-vent/stockport</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/stairwell-smoke-vent/manchester</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/stairwell-smoke-vent/bolton</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/stairwell-smoke-vent/liverpool</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/stairwell-smoke-vent/preston</loc><priority>0.62</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/stairwell-smoke-vent/warrington</loc><priority>0.62</priority></url>
 </urlset>

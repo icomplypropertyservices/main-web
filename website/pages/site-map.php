@@ -223,13 +223,15 @@ require SITE_ROOT . '/includes/header.php';
         <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local landings</div>
         <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Service hubs &amp; keyword towns</h2>
         <p class="mt-2 text-zinc-600 max-w-2xl">
-            Browse a service hub, then open a keyword guide for your town. We do not publish thin
-            service×area doorway pages for all 168 towns.
+            Browse a service hub, then open a keyword guide for your town. AOV and smoke control
+            also has a local page for every town we cover. Those
+            <code>/pages/aov-air-handling/{town}</code> URLs are generated for the static export
+            and stay out of the XML sitemap. Other services stay on hubs plus keyword×town pages.
         </p>
     </div>
     <div class="flex flex-wrap gap-2">
         <?php
-        foreach (['electrical' => 'Electrical', 'gas-systems' => 'Gas Systems', 'fire-alarms' => 'Fire Alarms', 'cctv' => 'CCTV'] as $sSlug => $sName):
+        foreach (['electrical' => 'Electrical', 'gas-systems' => 'Gas Systems', 'aov-air-handling' => 'AOV & Smoke Control', 'fire-alarms' => 'Fire Alarms', 'cctv' => 'CCTV'] as $sSlug => $sName):
             if (!isset($services[$sSlug])) { continue; }
             ?>
             <a href="<?= url('/pages/services/' . rawurlencode($sSlug) . '.php') ?>"
@@ -247,6 +249,28 @@ require SITE_ROOT . '/includes/header.php';
                 <a href="<?= url('/pages/keywords/' . rawurlencode($egSlug) . '/' . areaSlug($town) . '.php') ?>"
                    class="px-3 py-1.5 bg-white border rounded-full text-xs sm:text-sm text-black hover:border-[#ff6b00] transition">
                     <?= htmlspecialchars($egName . ' in ' . $town, ENT_QUOTES, 'UTF-8') ?>
+                </a>
+            <?php endforeach;
+        endforeach;
+        foreach (getAovNationwideServices() as $aovSlug):
+            if (!isset($services[$aovSlug])) { continue; }
+            $aovName = $services[$aovSlug];
+            foreach ($egTowns as $town):
+                ?>
+                <a href="<?= url('/pages/' . rawurlencode($aovSlug) . '/' . areaSlug($town) . '.php') ?>"
+                   class="px-3 py-1.5 bg-white border rounded-full text-xs sm:text-sm text-black hover:border-[#ff6b00] transition">
+                    <?= htmlspecialchars($aovName . ' in ' . $town, ENT_QUOTES, 'UTF-8') ?>
+                </a>
+            <?php endforeach;
+        endforeach;
+        foreach (getAovFeaturedKeywordSlugs() as $aovKw):
+            if (!isset($egKwMap[$aovKw])) { continue; }
+            $aovKwName = $egKwMap[$aovKw]['name'] ?? $aovKw;
+            foreach ($egTowns as $town):
+                ?>
+                <a href="<?= url('/pages/keywords/' . rawurlencode($aovKw) . '/' . areaSlug($town) . '.php') ?>"
+                   class="px-3 py-1.5 bg-white border rounded-full text-xs sm:text-sm text-black hover:border-[#ff6b00] transition">
+                    <?= htmlspecialchars($aovKwName . ' in ' . $town, ENT_QUOTES, 'UTF-8') ?>
                 </a>
             <?php endforeach;
         endforeach; ?>

@@ -404,20 +404,80 @@ function getElectricalGasFeaturedKeywordSlugs(): array {
     ];
 }
 
+/**
+ * AOV & smoke control — nationwide service×area and keyword×area matrix.
+ * Fire-protection adjacent (alarms, emergency lighting, doors, FRA) stays on hubs.
+ *
+ * @return list<string>
+ */
+function getAovNationwideServices(): array {
+    return ['aov-air-handling'];
+}
+
+function isAovNationwideService(string $slug): bool {
+    return in_array(areaSlug($slug), getAovNationwideServices(), true);
+}
+
+/**
+ * Fire-protection services linked from AOV area pages (hubs, not a new thin matrix).
+ *
+ * @return list<string>
+ */
+function getFireProtectionAdjacentServices(): array {
+    return ['fire-alarms', 'emergency-lighting', 'fire-risk-assessments', 'fire-doors'];
+}
+
+/**
+ * All AOV keyword slugs (full-town static export, same rule as electrical + gas).
+ *
+ * @return list<string>
+ */
+function getAovMatrixKeywordSlugs(): array {
+    $out = [];
+    foreach (getAovNationwideServices() as $svc) {
+        foreach (array_keys(getKeywordsForService($svc)) as $slug) {
+            $slug = keywordSlug((string)$slug);
+            if ($slug !== '') {
+                $out[$slug] = true;
+            }
+        }
+    }
+    return array_keys($out);
+}
+
+/**
+ * Featured AOV keyword slugs for the HTML site map and a small sitemap sample.
+ *
+ * @return list<string>
+ */
+function getAovFeaturedKeywordSlugs(): array {
+    return [
+        'aov-installation',
+        'aov-maintenance',
+        'automatic-opening-vent',
+        'smoke-vent-system',
+        'aov-testing',
+        'stairwell-smoke-vent',
+    ];
+}
+
 function isCostStyleKeyword(string $slug, string $name = ''): bool {
     return (bool)preg_match('/\b(cost|price|quote|how-much|how much)\b/i', $slug . ' ' . $name);
 }
 
 /**
  * Local URL that returns 200 on the default Netlify export.
- * /pages/{service}/{town} is --full only and 404s on draft/prod static.
  *
- * Electrical + gas → featured keyword×town. Other services → area hub
- * (from a service page) or the service hub (from an area page).
+ * Electrical + gas → featured keyword×town.
+ * AOV → /pages/aov-air-handling/{town} (generated nationwide; kept out of sitemap.xml).
+ * Other services → area hub (from a service page) or the service hub (from an area page).
  */
 function exportedServiceLocalUrl(string $serviceSlug, string $area, string $from = 'service'): string {
     $serviceSlug = areaSlug($serviceSlug);
     $town = areaSlug($area);
+    if (isAovNationwideService($serviceSlug)) {
+        return url('/pages/' . $serviceSlug . '/' . $town . '.php');
+    }
     $featured = getElectricalGasFeaturedKeywordSlugs();
     $kw = getMajorKeywords();
     $pick = null;

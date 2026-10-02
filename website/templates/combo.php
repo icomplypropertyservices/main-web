@@ -431,6 +431,30 @@ $schema = [
 </section>
 <?php endif; ?>
 
+<?php if (function_exists('isAovNationwideService') && isAovNationwideService($serviceSlug)): ?>
+<section class="bg-white border-t">
+    <div class="max-w-7xl mx-auto px-6 py-16">
+        <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Fire protection</div>
+        <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Alongside AOV in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></h2>
+        <p class="mt-2 text-zinc-600 max-w-2xl">Smoke vents and AOV panels sit next to fire alarms, emergency lighting, fire doors and fire risk assessments. Quotes for AOV works are price on application after survey.</p>
+        <div class="mt-6 flex flex-wrap gap-2">
+            <?php
+            $adjacent = function_exists('getFireProtectionAdjacentServices') ? getFireProtectionAdjacentServices() : [];
+            foreach ($adjacent as $adjSlug):
+                if (!isset($allServices[$adjSlug])) {
+                    continue;
+                }
+            ?>
+                <a href="<?= url('/pages/services/' . rawurlencode($adjSlug) . '.php') ?>"
+                   class="px-4 py-2 bg-zinc-50 border rounded-full text-sm font-medium hover:border-[#ff6b00]">
+                    <?= htmlspecialchars($allServices[$adjSlug], ENT_QUOTES, 'UTF-8') ?>
+                </a>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
 <!-- CTA BAND -->
 <section class="bg-[#0B1F3A] text-white">
     <div class="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-2 gap-10 items-center">

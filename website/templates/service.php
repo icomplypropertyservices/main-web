@@ -372,7 +372,8 @@ $schema = [
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <?php
             $shown = 0;
-            $cardLimit = in_array($serviceSlug, getElectricalGasFamilyServices(), true) ? 0 : 18;
+            $unlimitedCards = array_merge(getElectricalGasFamilyServices(), getAovNationwideServices());
+            $cardLimit = in_array($serviceSlug, $unlimitedCards, true) ? 0 : 18;
             foreach ($svcKeywords as $kwSlug => $kwMeta):
                 if ($cardLimit > 0 && $shown >= $cardLimit) {
                     break;
@@ -423,7 +424,11 @@ $schema = [
             <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">
                 <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> near you
             </h2>
+            <?php if (isAovNationwideService($serviceSlug)): ?>
+            <p class="mt-2 text-zinc-600">A local AOV and smoke-control page for every town we cover, next to fire alarms, emergency lighting, fire doors and fire risk assessments. Quotes are price on application after survey.</p>
+            <?php else: ?>
             <p class="mt-2 text-zinc-600">Town hubs we cover — electrical and gas also open a real keyword×town page. We do not publish thin service×area doorways.</p>
+            <?php endif; ?>
         </div>
         <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All areas →</a>
     </div>

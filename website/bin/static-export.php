@@ -24,10 +24,11 @@
  * plus town combos that the previous PHP router served from chrome:
  *   popular towns × all keywords, and all towns × priority keywords
  *   (eicr, eicr-report, FRA, gas, CCTV, …).
- * Electrical and gas keyword families always get the FULL areas list
+ * Electrical, gas and AOV keyword families always get the FULL areas list
  * (keyword × every town) so the Netlify static export includes that matrix.
+ * AOV service×area (/pages/aov-air-handling/{town}) is always included.
  * --keyword-towns=all renders every keyword×area (~200k HTML files).
- * --full also renders service×area landings.
+ * Service×area landings for the full catalogue are written on every export.
  */
 declare(strict_types=1);
 
@@ -247,6 +248,11 @@ function icomplyCollectKeywordRoutes(string $townMode): array
             $familyKw[keywordSlug($slug)] = true;
         }
     }
+    if (function_exists('getAovMatrixKeywordSlugs')) {
+        foreach (getAovMatrixKeywordSlugs() as $slug) {
+            $familyKw[keywordSlug($slug)] = true;
+        }
+    }
 
     foreach ($keywords as $kw) {
         $slug = keywordSlug($kw);
@@ -345,6 +351,14 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
     foreach (array_keys(getServices()) as $sSlug) {
         foreach (getAreas() as $area) {
             $routes[] = '/pages/' . $sSlug . '/' . areaSlug((string)$area);
+        }
+    }
+    // AOV nationwide stays on the default export even if the loop above is later gated.
+    if (function_exists('getAovNationwideServices')) {
+        foreach (getAovNationwideServices() as $sSlug) {
+            foreach (getAreas() as $area) {
+                $routes[] = '/pages/' . $sSlug . '/' . areaSlug((string)$area);
+            }
         }
     }
 
