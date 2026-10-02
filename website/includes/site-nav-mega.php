@@ -51,6 +51,13 @@ function icomplyMegaHeaderHtml(): string
     $hubCols .= icomplyNavLink(url('/pages/site-map.php'), 'HTML site map →', 'mega-more');
     $hubCols .= '</div>';
 
+    $priorityCards = str_replace(
+        '</div>',
+        '<a class="mega-featured-card" href="' . icomplyNavH(url('/pages/aov')) . '"><span>AOV towns</span><strong>Smoke vents</strong><em>Mainland towns over 10,000. Kit prices listed, install POA.</em></a>'
+        . '<a class="mega-featured-card" href="' . icomplyNavH(url('/pages/barriers')) . '"><span>Barrier towns</span><strong>CAME partner</strong><em>5m pack prices, install POA.</em></a></div>',
+        $priorityCards
+    );
+
     $svcCols = '';
     foreach ($n['cats'] as $catKey => $cat) {
         $svcCols .= '<div class="mega-col">';
@@ -138,6 +145,7 @@ function icomplyMegaHeaderHtml(): string
       <a class="nav-link" href="{$contact}">Contact</a>
     </nav>
     <div class="mega-tools">
+      <a class="mega-phone" href="{$phoneHref}">{$phone}</a>
       <a class="mega-quote" href="{$contact}">Get a quote</a>
       <button type="button" class="mega-burger" id="nav-toggle" aria-expanded="false" aria-controls="mega-drawer">Menu</button>
     </div>
@@ -165,6 +173,9 @@ function icomplyMobileDrawerHtml(array $n): string
     }
     $barrierJob = $n['barrierJob'];
     $svc = '<a class="drawer-featured" href="' . icomplyNavH($barrierJob['href']) . '">' . icomplyNavH($barrierJob['label']) . '</a>';
+    $svc = '<a class="drawer-featured" href="' . icomplyNavH(url('/pages/aov')) . '">AOV towns</a>'
+        . '<a class="drawer-featured" href="' . icomplyNavH(url('/pages/barriers')) . '">Barriers towns (CAME)</a>'
+        . $svc;
     foreach ($n['cats'] as $cat) {
         $svc .= '<details class="drawer-acc"><summary>' . icomplyNavH($cat['label']) . '</summary><div>';
         foreach ($cat['services'] as $slug => $name) {
@@ -209,6 +220,7 @@ function icomplyMobileDrawerHtml(array $n): string
       <a href="/shop/">All supplies</a>
     </div></details>
     <a href="{$productsD}">Products</a>
+    <a class="drawer-cta" href="{$phoneHref}">Call {$phone}</a>
     <a href="{$siteMap}">Site map</a>
     <a class="drawer-cta drawer-cta--quote" href="{$contactDrawer}">Get a quote</a>
   </nav>

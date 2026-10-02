@@ -120,6 +120,13 @@ function routerDispatchVirtual(string $path): bool {
         return false;
     }
 
+    if (!function_exists('icomplyDispatchTownPath')) {
+        require_once __DIR__ . '/town-service-pages.php';
+    }
+    if (icomplyDispatchTownPath($path)) {
+        return true;
+    }
+
     // Resource guides: /pages/resources/{slug} → pages/resources/{slug}.php
     if (preg_match('#^/pages/resources/([a-z0-9\-]+)$#', $path, $m) && $m[1] !== 'index') {
         return routerTryFile('/pages/resources/' . $m[1]);

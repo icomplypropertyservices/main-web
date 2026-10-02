@@ -127,7 +127,7 @@ function icomplySitemapEntries(): array
         // Hard reject /pages/{service}/{town} even if a leftover matrix file
         // sits in dist/. Keep only real hub prefixes.
         if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
-            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'aov-air-handling', 'barriers'];
+            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'aov', 'aov-air-handling', 'barriers'];
             if (!in_array($m[1], $okPrefix, true)) {
                 return;
             }
@@ -135,8 +135,9 @@ function icomplySitemapEntries(): array
         // Keyword hubs + featured keyword×town are generated at export time.
         // AOV and barrier town pages are virtual (rendered at export) for pop>10k.
         $isKeywordLoc = (bool)preg_match('#^/pages/keywords(/[a-z0-9\-]+){1,2}$#', $path);
+        $isTownLoc = (bool)preg_match('#^/pages/(aov|barriers)(/[a-z0-9\-]+)?$#', $path);
         $isMfrTown = (bool)preg_match('#^/pages/(aov-air-handling|barriers)/([a-z0-9\-]+)$#', $path);
-        if (!$isKeywordLoc && !$isMfrTown && !icomplySitemapUrlHasFile($path)) {
+        if (!$isKeywordLoc && !$isTownLoc && !$isMfrTown && !icomplySitemapUrlHasFile($path)) {
             return;
         }
         $seen[$path] = true;
@@ -345,6 +346,19 @@ function icomplySitemapEntries(): array
             foreach (icomplyMfrIndexableTowns() as $town) {
                 $add('/pages/' . $svc . '/' . areaSlug($town), '0.64');
             }
+        }
+    }
+
+    if (!function_exists('icomplyUkTownRoutes')) {
+        $townFile = SITE_ROOT . '/includes/uk-towns.php';
+        if (is_file($townFile)) {
+            require_once $townFile;
+        }
+    }
+    if (function_exists('icomplyUkTownRoutes')) {
+        foreach (icomplyUkTownRoutes() as $townPath) {
+            $depth = substr_count(trim((string)$townPath, '/'), '/');
+            $add((string)$townPath, $depth > 1 ? '0.64' : '0.86');
         }
     }
 

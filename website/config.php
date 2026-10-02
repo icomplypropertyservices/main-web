@@ -643,9 +643,10 @@ function getManufacturerCatalog(): array {
     $mfr = loadJsonData('manufacturers', []);
     $catalog = $mfr['catalog'] ?? [];
     if ($catalog) {
-        return function_exists('icomplyApplyMfrCoverageCatalog')
+        $catalog = function_exists('icomplyApplyMfrCoverageCatalog')
             ? icomplyApplyMfrCoverageCatalog($catalog)
             : $catalog;
+        return icomplyMergeBarrierManufacturers($catalog);
     }
     // Fallback: build minimal catalog from by_service names
     $built = [];
@@ -669,9 +670,46 @@ function getManufacturerCatalog(): array {
             }
         }
     }
-    return function_exists('icomplyApplyMfrCoverageCatalog')
+    $built = function_exists('icomplyApplyMfrCoverageCatalog')
         ? icomplyApplyMfrCoverageCatalog($built)
         : $built;
+    return icomplyMergeBarrierManufacturers($built);
+}
+
+/** Barrier brands that are not already in the main catalogue. CAME is the partner. Never Tunstall. */
+function icomplyMergeBarrierManufacturers(array $catalog): array
+{
+    $extra = loadJsonData('town-manufacturers', []);
+    foreach ($extra['barriers'] ?? [] as $row) {
+        if (!is_array($row)) {
+            continue;
+        }
+        $name = trim((string)($row['name'] ?? ''));
+        $slug = areaSlug((string)($row['slug'] ?? $name));
+        if ($name === '' || $slug === '' || isset($catalog[$slug])) {
+            continue;
+        }
+        if (stripos($name, 'tunstall') !== false) {
+            continue;
+        }
+        $partner = !empty($row['partner']);
+        $catalog[$slug] = [
+            'name' => $name,
+            'slug' => $slug,
+            'services' => ['access-control'],
+            'blurb' => $partner
+                ? 'CAME is the vehicle-barrier partner for Icomply Property Services. New lanes are specified on the CAME GARD range. Existing CAME booms, loops and safety edges are serviced from our Stockport workshop. Installation is POA. Call 07517806082.'
+                : "Icomply services existing {$name} vehicle barriers and gate automation. New barrier lanes are normally specified on our CAME partner range unless the survey supports keeping {$name}. Quotes are POA from Stockport. Call 07517806082.",
+            'seo_title' => $partner ? 'CAME Barrier Partner | Vehicle Barriers' : "{$name} Barrier Service | Icomply",
+            'seo_desc' => $partner
+                ? 'CAME vehicle barrier partner. GARD booms, servicing and POA installation. Call 07517806082.'
+                : "{$name} barrier servicing. CAME is the partner for new lanes. POA after survey. Call 07517806082.",
+            'seo_keywords' => $name . ', vehicle barrier, CAME, car park barrier',
+            'products' => [],
+            'featured' => $partner,
+        ];
+    }
+    return $catalog;
 }
 
 function getManufacturerBySlug(string $slug): ?array {
@@ -832,6 +870,10 @@ function manufacturerImageUrl(string $slug, string $fallbackService = 'fire-alar
         if (is_file(SITE_ROOT . $rel)) {
             return url($rel);
         }
+    }
+    $svg = '/assets/images/manufacturers/nameplates/' . $slug . '.svg';
+    if (is_file(SITE_ROOT . $svg)) {
+        return url($svg);
     }
     return serviceImageUrl($fallbackService);
 }

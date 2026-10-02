@@ -722,6 +722,8 @@ section.relative.overflow-hidden.text-white > .absolute[style*="radial-gradient"
 .theme-light .mega-wordmark b { color: #0B1F3A; }
 .logo-on-light .mega-wordmark small,
 .theme-light .mega-wordmark small { color: #5B6472; }
+.mfr-nameplate { background: #0B1F3A; object-fit: cover; }
+#town-spec-wizard select, #town-spec-wizard input, #town-spec-wizard textarea { background: #fff; }
 
 .mfr-board { max-width: 80rem; margin: 0 auto; padding: 3.5rem 1.5rem; }
 .mfr-kicker { color: #FF6B00; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; }

@@ -436,6 +436,12 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         }
     }
 
+    if (!function_exists('icomplyUkTownRoutes')) {
+        require_once SITE_ROOT . '/includes/uk-towns.php';
+    }
+    foreach (icomplyUkTownRoutes() as $townPath) {
+        $routes[] = $townPath;
+    }
     require_once SITE_ROOT . '/includes/aov-place.php';
     $routes[] = '/pages/aov';
     foreach (array_keys(aovPlaces()) as $slug) {
