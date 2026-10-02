@@ -25,7 +25,7 @@ function icomplyPackagePublicOverride(array $product): array
         'emergency-lighting-package' => '/pages/services/emergency-lighting.php',
         'nurse-call-systems-package' => '/pages/services/nurse-call.php',
         'gas-safety-package' => '/pages/services/gas-systems.php',
-        'intruder-alarm-package' => '/pages/services/intruder-alarms.php',
+        'intruder-alarm-package' => '/pages/services/intruder-alarm.php',
         'cctv-systems-package' => '/pages/services/cctv.php',
         'access-control-package' => '/pages/services/access-control.php',
         'door-entry-package' => '/pages/services/door-entry.php',
