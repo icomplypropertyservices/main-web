@@ -5,6 +5,8 @@
  */
 declare(strict_types=1);
 
+require_once __DIR__ . '/nav-ia.php';
+
 function icomplyNavH(string $s): string
 {
     return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
@@ -95,6 +97,9 @@ function icomplyNavCatalog(): array
         )),
         'resources' => icomplyNavResourceLinks(),
         'packages' => icomplyNavPackageLinks(),
+        'featured' => icomplyFeaturedPushHubs(),
+        'qualityHubs' => icomplyQualityHubLinks(),
+        'barrierJob' => icomplyBarrierJobHub(),
         'legal' => [
             ['href' => url('/privacy.php'), 'label' => 'Privacy policy'],
             ['href' => url('/terms.php'), 'label' => 'Terms & conditions'],
@@ -141,6 +146,11 @@ function icomplyNavResourceLinks(): array
     foreach ($landers as $path => $label) {
         $links[] = ['href' => url($path), 'label' => $label];
     }
+    foreach (icomplyQualityHubLinks() as $hub) {
+        $links[] = ['href' => $hub['href'], 'label' => $hub['label']];
+    }
+    $barrierJob = icomplyBarrierJobHub();
+    $links[] = ['href' => $barrierJob['href'], 'label' => $barrierJob['label']];
 
     $dir = (defined('SITE_ROOT') ? SITE_ROOT : dirname(__DIR__)) . '/pages/resources';
     if (is_dir($dir)) {

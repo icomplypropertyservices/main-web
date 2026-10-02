@@ -146,6 +146,10 @@ function icomplySitemapEntries(): array
         ['/pages/resources/emergency-lighting-testing', '0.7', 'pages/resources/emergency-lighting-testing.php'],
         ['/pages/resources/cctv-for-business', '0.7', 'pages/resources/cctv-for-business.php'],
         ['/pages/resources/access-control-guide', '0.7', 'pages/resources/access-control-guide.php'],
+        ['/pages/services/aov-air-handling', '0.96', 'pages/services/aov-air-handling.php'],
+        ['/pages/packages/let-ready', '0.78', 'pages/packages/let-ready.php'],
+        ['/pages/packages/workplace-essentials', '0.78', 'pages/packages/workplace-essentials.php'],
+        ['/pages/packages/fire-ready', '0.78', 'pages/packages/fire-ready.php'],
         ['/pages/services', '0.95', 'pages/services.php'],
         ['/pages/areas', '0.9', 'pages/areas.php'],
         ['/pages/manufacturers', '0.9', 'pages/manufacturers.php'],
@@ -155,13 +159,15 @@ function icomplySitemapEntries(): array
         ['/shop/electrical', '0.75', 'shop/electrical/index.html'],
         ['/shop/security', '0.75', 'shop/security/index.html'],
         ['/shop/gas', '0.75', 'shop/gas/index.html'],
-        ['/products', '0.8', 'pages/products.php'],
+        ['/products', '0.9', 'pages/products.php'],
     ];
     foreach ($static as [$path, $pri, $file]) {
         if ($path === '/' || $exists($file) || $exists(preg_replace('#\.php$#', '/index.php', $file) ?? $file)) {
             $add($path, $pri);
         }
     }
+    // Barriers job hub is routed from the keyword catalogue (no stub file).
+    $add('/pages/keywords/car-park-barrier-access', '0.8');
 
     // Resource articles that exist on the publish root (not source-only).
     foreach (glob($publish . '/pages/resources/*.php') ?: [] as $resFile) {
