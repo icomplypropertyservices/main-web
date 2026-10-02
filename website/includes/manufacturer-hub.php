@@ -67,6 +67,7 @@ function manufacturerLogoHtml(string $name, string $slug, string $class = 'w-10 
     return '<span class="' . $class . ' inline-flex items-center justify-center rounded-xl bg-white text-[#0B1F3A] border text-[10px] font-bold tracking-wide shrink-0" role="img" aria-label="' . $safeName . ' logo">' . htmlspecialchars($letters, ENT_QUOTES, 'UTF-8') . '</span>';
 }
 
+if (!function_exists('manufacturerProductLines')) {
 /**
  * Named product lines for a brand. Prices are not part of a line.
  *
@@ -123,8 +124,10 @@ function manufacturerProductLines(array $entry): array
     }
     return $lines;
 }
+} // function_exists manufacturerProductLines
 
-function manufacturerProductLinesHtml(array $entry, int $limit = 4): string
+if (!function_exists('manufacturerHubProductLinesHtml')) {
+function manufacturerHubProductLinesHtml(array $entry, int $limit = 4): string
 {
     $html = '';
     $n = 0;
@@ -142,6 +145,7 @@ function manufacturerProductLinesHtml(array $entry, int $limit = 4): string
     }
     return $html;
 }
+} // function_exists manufacturerHubProductLinesHtml
 
 /**
  * @return list<string> paths /pages/manufacturers/{brand}/{area}
