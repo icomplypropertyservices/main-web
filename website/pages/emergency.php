@@ -205,7 +205,8 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
 <style>
 @media (max-width: 767px) {
     #mobile-sticky-cta { display: none !important; }
-    #emergency-lane-sticky.mobile-sticky-cta { display: flex !important; }
+    #emergency-lane-sticky.mobile-sticky-cta { display: flex; }
+    #emergency-lane-sticky.is-hidden { display: none !important; }
 }
 </style>
 
@@ -615,9 +616,23 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
     <?= shareButtonsHtml($pageTitle, $metaDesc) ?>
 </section>
 
-<div id="emergency-lane-sticky" class="mobile-sticky-cta" role="region" aria-label="Emergency contact">
+<div id="emergency-lane-sticky" class="mobile-sticky-cta is-hidden" role="region" aria-label="Emergency contact">
     <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>">Call now</a>
     <a class="sticky-quote" style="background:#16a34a" href="<?= htmlspecialchars($waUrl, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener">WhatsApp</a>
 </div>
 
+<script>
+(function () {
+    var bar = document.getElementById('emergency-lane-sticky');
+    var hero = document.querySelector('[data-job-lane]');
+    if (!bar || !hero || !('IntersectionObserver' in window)) {
+        if (bar) bar.classList.remove('is-hidden');
+        return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+        bar.classList.toggle('is-hidden', entries[0].isIntersecting);
+    }, { threshold: 0.2 });
+    io.observe(hero);
+})();
+</script>
 <?php require SITE_ROOT . '/includes/footer.php'; ?>
