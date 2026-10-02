@@ -30,9 +30,9 @@
         "standards": "HTM 08-03 · care home & hospital specifications"
     },
     "gas-systems": {
-        "blurb": "Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out gas work or issue CP12 or gas safety certificates.",
-        "short": "Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue them.",
-        "standards": "Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue CP12 or gas safety certificates."
+        "blurb": "CP12 / CP44 landlord certificates, boilers, commercial gas and safety checks.",
+        "short": "CP12/CP44 landlord certs, boilers & commercial gas",
+        "standards": "CP12 / CP44 landlord gas record · manufacturer servicing"
     },
     "intruder-alarm": {
         "blurb": "PD 6662 / BS EN 50131 wired and wireless intruder systems with monitoring options.",
@@ -292,5 +292,20 @@
         "standards": "Control of Asbestos Regulations 2012 · duty to manage",
         "pricing": "POA",
         "hero_accent": "Surveyed, sampled if needed, POA."
+    },
+    "pat-testing": {
+        "blurb": "In-service inspection and testing of portable appliances, with a written asset list and fail items marked for repair or removal.",
+        "short": "PAT inspection, testing and asset lists",
+        "standards": "IET Code of Practice for In-service Inspection and Testing"
+    },
+    "epc": {
+        "blurb": "Energy performance certificates for dwellings and non-dwellings, produced after the floor area, heating and insulation are recorded.",
+        "short": "Domestic and non-domestic EPCs",
+        "standards": "Energy Performance of Buildings Regulations · RdSAP / SBEM as applicable"
+    },
+    "smoke-co-alarms": {
+        "blurb": "Mains and sealed smoke and carbon monoxide alarms for rented homes, with positions checked against the storey and the fuel-burning appliances.",
+        "short": "Smoke and CO alarms for rented homes",
+        "standards": "BS 5839-6 · Smoke and Carbon Monoxide Alarm Regulations"
     }
 }

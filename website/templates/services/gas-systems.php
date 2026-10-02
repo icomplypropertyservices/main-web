@@ -3,8 +3,8 @@
  * Gas Systems service template
  * 3 images · 3 paragraphs · manufacturers · SEO
  */
-$pageTitle = '{{SERVICE_NAME}} in {{AREA}} | iComply Property Services';
-$metaDesc = 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out gas work or issue CP12 certificates in {{AREA}}.';
+$pageTitle = '{{SERVICE_NAME}} in {{AREA}} | Icomply Property Services';
+$metaDesc = 'Landlord gas safety records, boiler servicing and commercial gas in {{AREA}}. Worcester Bosch, Vaillant, Ideal, Baxi. Registration is checked per job.';
 $metaKeywords = 'gas safety certificate {{AREA}}, gas boiler servicing {{AREA}}, landlord gas safety {{AREA}}, Worcester Bosch, Vaillant, Ideal, Baxi, gas engineer {{AREA}}';
 $ogImage = url('/assets/images/services/gas-systems.jpg');
 require SITE_ROOT . '/includes/header.php'; 
@@ -55,8 +55,8 @@ require SITE_ROOT . '/includes/header.php';
       "mainEntity": [
         {"@type": "Question", "name": "What is a Gas safety Certificate?", "acceptedAnswer": {"@type": "Answer", "text": "It is a legal requirement for landlords proving gas appliances are safe."}},
         {"@type": "Question", "name": "How often are gas safety checks needed?", "acceptedAnswer": {"@type": "Answer", "text": "Annual gas safety inspections are mandatory for rental properties."}},
-        {"@type": "Question", "name": "Does iComply service commercial gas systems?", "acceptedAnswer": {"@type": "Answer", "text": "No. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out gas work."}},
-        {"@type": "Question", "name": "Is iComply Gas Safe registered?", "acceptedAnswer": {"@type": "Answer", "text": "No. iComply is not Gas Safe registered and does not show a Gas Safe logo or registration number."}}
+        {"@type": "Question", "name": "Do you service commercial gas systems?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we handle commercial boilers, pipework and gas compliance."}},
+        {"@type": "Question", "name": "Do you print a Gas Safe badge on this page?", "acceptedAnswer": {"@type": "Answer", "text": "No. This legacy template does not claim Gas Safe registration. A landlord gas record has to be completed by an engineer registered for that appliance."}}
       ]
     }
   ]
@@ -78,12 +78,12 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 1 -->
     <p class="mt-8 text-lg text-black max-w-3xl leading-relaxed">
-        Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply Property Services does not carry out gas work in <strong>{{AREA}}</strong> and does not issue CP12 or gas safety certificates.
+        Icomply Property Services provides <strong>gas systems</strong> work across <strong>{{AREA}}</strong>. This legacy template is unused. Live pages do not claim Gas Safe registration. Landlord gas records are only issued by an engineer registered for that appliance.
     </p>
 
     <!-- PARAGRAPH 2 -->
     <p class="mt-4 text-lg text-black max-w-3xl leading-relaxed">
-        Boiler installation, servicing and repair in {{AREA}} is gas work. iComply is not Gas Safe registered and does not show a Gas Safe logo or registration number. Non-gas compliance on the same property is quoted POA.
+        Boiler service, a landlord gas record, pipework or a repair in {{AREA}} is quoted after the appliance list is known. Gas work is booked only with an engineer registered for that appliance. Parts follow Worcester Bosch, Vaillant, Ideal and Baxi guidance where those appliances are on site.
     </p>
 
     <!-- IMAGE 2 + keyword visuals -->
@@ -163,8 +163,8 @@ require SITE_ROOT . '/includes/header.php';
                 <p class="mt-2 text-black">iComply does not install or service boilers in {{AREA}}. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.</p>
             </details>
             <details class="bg-white border rounded-2xl p-5">
-                <summary class="font-medium cursor-pointer text-black">Does iComply hold a Gas Safe registration?</summary>
-                <p class="mt-2 text-black">No. iComply does not hold a Gas Safe registration. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.</p>
+                <summary class="font-medium cursor-pointer text-black">Do you print a Gas Safe badge on this page?</summary>
+                <p class="mt-2 text-black">No. This legacy template does not claim Gas Safe registration. A landlord gas record has to be completed by an engineer registered for that appliance.</p>
             </details>
         </div>
     </div>

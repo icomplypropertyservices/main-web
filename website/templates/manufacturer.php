@@ -4,8 +4,10 @@
  * Pure PHP vars via executeTemplateVars() (no {{}} / eval).
  * MFR_PRODUCTS_HTML, MFR_RELATED_HTML, SERVICE_NAME (primary)
  */
-$pageTitle = $MFR_NAME . ' Products & Service';
-$metaDesc = $MFR_BLURB;
+require_once SITE_ROOT . '/includes/seo.php';
+$seoFamily = 'manufacturer';
+$pageTitle = $MFR_NAME . ' products and service';
+$metaDesc = seo_fit_meta($MFR_BLURB . ' Serviced from Stockport SK2 by Icomply. Call 07517806082.');
 $metaKeywords = $MFR_SEO_KEYWORDS;
 $canonicalUrl = url('/pages/manufacturers/' . $MFR_SLUG . '.php');
 
@@ -151,7 +153,8 @@ $schema = [
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
                 <img src="<?= htmlspecialchars(manufacturerImageUrl($mfrSlug, $primaryService), ENT_QUOTES, 'UTF-8') ?>"
-                     alt="<?= htmlspecialchars($gasBrand && function_exists('icomplyGasLegalSentence') ? icomplyGasLegalSentence() : ($mfrName . ' equipment — iComply Property Services'), ENT_QUOTES, 'UTF-8') ?>"
+                     alt="<?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> equipment — Icomply Property Services"
+                     width="1200" height="800"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
                      loading="eager"
                      onerror="this.src='<?= htmlspecialchars(serviceImageUrl($primaryService), ENT_QUOTES, 'UTF-8') ?>'">
@@ -302,7 +305,7 @@ $schema = [
 </section>
 
 <!-- FAQ -->
-<section class="bg-zinc-50 border-t">
+<section class="bg-zinc-50 border-t" data-seo-faq="1">
     <div class="max-w-3xl mx-auto px-6 py-16">
         <h2 class="text-3xl font-semibold tracking-tight text-black text-center mb-10">
             <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> FAQ

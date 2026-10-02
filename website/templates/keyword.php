@@ -6,6 +6,18 @@
  * KEYWORD_INTRO, KEYWORD_BODY, KEYWORD_META, KEYWORD_FOCUS_HTML, KEYWORD_FAQ_HTML,
  * KEYWORD_IMAGE, SERVICE_IMAGE
  */
+require_once SITE_ROOT . '/includes/seo.php';
+$seoFamily = 'keyword-hub';
+$pageTitle = $KEYWORD_NAME . ' guide';
+$metaDesc = seo_fit_meta($KEYWORD_META . ' ' . $KEYWORD_NAME . ' from Stockport SK2.');
+$linkedAreas = array_values(array_filter(
+    getAreas(),
+    static fn($town) => seo_local_landing_indexable($SERVICE_SLUG, $town)
+));
+$metaKeywords = $SEO_KEYWORDS;
+$ogImage = $KEYWORD_IMAGE;
+$canonicalUrl = url('/pages/keywords/' . $KEYWORD_SLUG . '.php');
+
 $keywordName = $KEYWORD_NAME;
 $keywordSlug = $KEYWORD_SLUG;
 $serviceName = $SERVICE_NAME;
@@ -62,7 +74,7 @@ require SITE_ROOT . '/includes/header.php';
 <!-- HERO: solid navy + image with dark overlay for readable text -->
 <section class="relative overflow-hidden bg-[#061828] text-white">
     <div class="absolute inset-0">
-        <img src="<?= htmlspecialchars($KEYWORD_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($KEYWORD_NAME ?? 'Property compliance', ENT_QUOTES, 'UTF-8') ?> — iComply Property Services" class="w-full h-full object-cover opacity-35" loading="eager"
+        <img src="<?= htmlspecialchars($KEYWORD_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($KEYWORD_NAME ?? 'Property compliance', ENT_QUOTES, 'UTF-8') ?> — Icomply Property Services" width="1200" height="800" class="w-full h-full object-cover opacity-35" loading="eager"
              onerror="this.src=$SERVICE_IMAGE">
         <div class="absolute inset-0 bg-gradient-to-r from-[#061828] via-[#061828]/95 to-[#061828]/75"></div>
     </div>
@@ -76,7 +88,13 @@ require SITE_ROOT . '/includes/header.php';
             <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> guide
         </div>
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white max-w-3xl leading-[1.08] drop-shadow-lg">
-            <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?>
+            <?php
+            $keywordH1 = $KEYWORD_NAME;
+            if (mb_strlen($keywordH1) < 12) {
+                $keywordH1 .= ' from Stockport';
+            }
+            echo htmlspecialchars($keywordH1, ENT_QUOTES, 'UTF-8');
+            ?>
         </h1>
         <p class="mt-5 text-lg md:text-xl text-white max-w-2xl leading-relaxed font-medium drop-shadow">
             <?= htmlspecialchars($KEYWORD_INTRO, ENT_QUOTES, 'UTF-8') ?>
@@ -151,14 +169,14 @@ require SITE_ROOT . '/includes/header.php';
             </div>
             <div class="lg:col-span-2 space-y-5">
                 <div class="rounded-3xl overflow-hidden border-2 border-zinc-300 shadow-md bg-zinc-200">
-                    <img src="<?= htmlspecialchars($KEYWORD_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars(($SERVICE_SLUG === 'gas-systems' && function_exists('icomplyGasLegalSentence')) ? icomplyGasLegalSentence() : ($KEYWORD_NAME . ' — iComply Property Services'), ENT_QUOTES, 'UTF-8') ?>"
-                         class="w-full h-52 object-cover" loading="lazy"
+                    <img src="<?= htmlspecialchars($KEYWORD_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> — Icomply Property Services"
+                         width="800" height="450" class="w-full h-52 object-cover" loading="lazy"
                          onerror="this.src=$SERVICE_IMAGE">
                     <div class="p-3 bg-[#061828] text-white text-sm font-semibold text-center"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></div>
                 </div>
                 <div class="rounded-3xl overflow-hidden border-2 border-zinc-300 shadow-md bg-zinc-200">
-                    <img src="<?= htmlspecialchars($SERVICE_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars(($SERVICE_SLUG === 'gas-systems' && function_exists('icomplyGasLegalSentence')) ? icomplyGasLegalSentence() : ($SERVICE_NAME . ' by iComply'), ENT_QUOTES, 'UTF-8') ?>"
-                         class="w-full h-40 object-cover" loading="lazy">
+                    <img src="<?= htmlspecialchars($SERVICE_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> by Icomply"
+                         width="800" height="450" class="w-full h-40 object-cover" loading="lazy">
                     <div class="p-3 bg-white text-[#061828] text-sm font-semibold text-center border-t-2 border-zinc-200"><?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> service</div>
                 </div>
             </div>
@@ -203,22 +221,12 @@ require SITE_ROOT . '/includes/header.php';
 <section class="bg-zinc-100">
     <div class="max-w-7xl mx-auto px-6 py-14">
         <h2 class="text-2xl md:text-3xl font-bold text-[#061828]"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> by area</h2>
-        <p class="mt-2 text-zinc-800">Local landing pages for every town we cover (<?= count($allAreas) ?> areas) — e.g. <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> in Stockport.</p>
+        <p class="mt-2 text-zinc-800">Local pages where this topic is in the coverage list (<?= count($linkedAreas) ?> areas), for example <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> in <?= htmlspecialchars($linkedAreas[0] ?? 'Stockport', ENT_QUOTES, 'UTF-8') ?>.</p>
         <div class="mt-6 flex flex-wrap gap-2">
-            <?php foreach ($popularTowns as $a): ?>
+            <?php foreach ($linkedAreas as $a): ?>
                 <a href="<?= url('/pages/keywords/' . $KEYWORD_SLUG . '/' . areaSlug($a) . '.php') ?>"
                    class="px-4 py-2.5 bg-[#061828] text-white rounded-full text-sm font-semibold hover:bg-[#ff6b00] transition shadow">
                     <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> in <?= htmlspecialchars($a, ENT_QUOTES, 'UTF-8') ?>
-                </a>
-            <?php endforeach; ?>
-        </div>
-        <div class="mt-4 flex flex-wrap gap-2">
-            <?php foreach ($allAreas as $a):
-                if (in_array($a, $popularTowns, true)) continue;
-            ?>
-                <a href="<?= url('/pages/keywords/' . $KEYWORD_SLUG . '/' . areaSlug($a) . '.php') ?>"
-                   class="px-3 py-1.5 bg-white border-2 border-zinc-300 text-zinc-900 rounded-full text-xs font-medium hover:border-[#ff6b00] hover:text-[#ff6b00]">
-                    <?= htmlspecialchars($KEYWORD_NAME . ' · ' . $a, ENT_QUOTES, 'UTF-8') ?>
                 </a>
             <?php endforeach; ?>
         </div>
@@ -230,7 +238,7 @@ require SITE_ROOT . '/includes/header.php';
 <section class="bg-white border-y-2 border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-14">
         <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">Related <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> guides</h2>
-        <p class="mt-2 text-zinc-800"><?= $isAov ? 'More smoke-vent topics. Place pages are on the AOV directory, not a copy of this guide for every town.' : 'More topics under the same service — each also has pages for every North West town.' ?></p>
+        <p class="mt-2 text-zinc-800">More <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> topics. Town pages exist only where that service is on the coverage list.</p>
         <div class="mt-6">
             <?php
             require_once SITE_ROOT . '/includes/related.php';
@@ -244,7 +252,7 @@ require SITE_ROOT . '/includes/header.php';
 <section class="bg-white border-t-2 border-zinc-200">
     <div class="max-w-3xl mx-auto px-6 py-14">
         <h2 class="text-2xl md:text-3xl font-bold text-[#061828] text-center mb-8"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> FAQ</h2>
-        <div class="space-y-3"><?= $KEYWORD_FAQ_HTML ?></div>
+        <div class="space-y-3" data-seo-faq="1"><?= $KEYWORD_FAQ_HTML ?></div>
         <div class="mt-10"><?= shareButtonsHtml($keywordName, $metaDesc) ?></div>
     </div>
 </section>

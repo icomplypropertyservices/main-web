@@ -8,8 +8,9 @@ if (is_file($shopifyLib) && str_starts_with(ltrim((string)file_get_contents($sho
     require_once $shopifyLib;
 }
 
+$seoFamily = 'static';
 $pageTitle = 'About Us | Fire Safety, Professional & Construction | Stockport';
-$metaDesc = 'About Icomply Property Services — Stockport SK2 5DE. Fire risk assessments, fire safety systems, electrical, gas, security, professional support, kitchens, bathrooms and construction across the North West. Call 07517806082. No scheme badges we cannot verify.';
+$metaDesc = 'About Icomply Property Services at Stockport SK2 5DE. Fire, electrical and landlord work is quoted after we see the building. Call 07517806082.';
 $metaKeywords = 'about Icomply, fire risk assessment Stockport, kitchen fitting North West, property compliance Stockport, construction services Greater Manchester';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/about.php');
@@ -34,12 +35,12 @@ $trust = [
 
 // References for the work — not scheme memberships. Do not add NICEIC, BAFE, CHAS or a company Gas Safe number here.
 $standards = [
-    ['code' => 'BS 7671', 'label' => 'Electrical wiring and EICR practice'],
-    ['code' => 'BS 5839', 'label' => 'Fire detection and alarm practice'],
-    ['code' => 'BS 5266', 'label' => 'Emergency lighting practice'],
-    ['code' => 'Fire Safety Order', 'label' => 'Fire risk assessments for premises we survey'],
-    ['code' => 'Gas work', 'label' => 'Landlord gas records only with an engineer you can check on the Gas Safe Register'],
-    ['code' => 'Building Regulations', 'label' => 'Construction and fit-out for the work agreed'],
+    ['code' => 'BS 7671', 'label' => 'Electrical wiring & EICR'],
+    ['code' => 'BS 5839', 'label' => 'Fire detection & alarms'],
+    ['code' => 'BS 5266', 'label' => 'Emergency lighting'],
+    ['code' => 'FSO / PAS 79', 'label' => 'Fire risk assessments'],
+    ['code' => 'CP12 record', 'label' => 'Landlord gas safety — registration checked per job'],
+    ['code' => 'Building Regs', 'label' => 'Construction & fit-out works'],
 ];
 
 $popularTowns = array_values(array_filter(
@@ -253,30 +254,18 @@ $aboutSchema = [
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             <?php
-            // Card lines for this page only. Shared catalogue blurbs still say "certification" in places; do not repeat scheme claims here.
-            $aboutBlurbs = [
-                'fire-alarms' => 'BS 5839 design, install and service',
-                'gas-systems' => 'Landlord gas records and boilers — engineer checked on the Gas Safe Register',
-                'cctv' => 'IP and HD CCTV design and install',
-                'fire-extinguishers' => 'Extinguisher supply and service to BS 5306 practice',
-                'fire-doors' => 'Fire door survey, install and repair',
-                'landlord-compliance' => 'Landlord visits grouped into one written quote',
-                'building-surveys' => 'Condition and snagging notes — not a RICS valuation',
-                'compliance-consultancy' => 'Compliance advice and action plans for portfolios',
-                'heating' => 'Boilers, radiators and heating controls, gas only with a registered engineer',
-                'epc' => 'Energy performance certificates via an accredited assessor — no number printed here',
-                'pat-testing' => 'In-service inspection and testing of portable appliances',
-                'smoke-co-alarms' => 'Smoke and carbon monoxide alarms for rented homes',
-            ];
+            $aboutImgEager = true;
             foreach ($services as $slug => $name):
-                $blurb = $aboutBlurbs[$slug] ?? getServiceBlurb($slug, true);
+                $blurb = getServiceBlurb($slug, true);
                 $img = url('/assets/images/services/' . $slug . '.jpg');
             ?>
             <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                class="service-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="h-36 bg-zinc-100 overflow-hidden">
                     <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>"
-                         class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy"
+                         width="640" height="360"
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="<?= $aboutImgEager ? 'eager' : 'lazy' ?>"
+                         <?php $aboutImgEager = false; ?>
                          onerror="this.parentElement.style.display='none'">
                 </div>
                 <div class="p-5 flex-1 flex flex-col">

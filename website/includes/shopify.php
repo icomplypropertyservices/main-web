@@ -240,7 +240,7 @@ function shopifyProductCardHtml(array $product, bool $compact = false): string {
     return '<article id="' . $id . '" class="shop-product-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">'
         . '<a href="' . $href . '" class="relative block bg-zinc-100 overflow-hidden">'
         . $badgeHtml
-        . '<img src="' . $img . '" alt="' . $title . '" class="w-full ' . $imgH . ' object-cover group-hover:scale-105 transition duration-300" loading="lazy" onerror="this.src=\'' . $fallback . '\'">'
+        . '<img src="' . $img . '" alt="' . $title . '" width="640" height="360" class="w-full ' . $imgH . ' object-cover group-hover:scale-105 transition duration-300" loading="lazy" onerror="this.src=\'' . $fallback . '\'">'
         . '</a>'
         . '<div class="p-5 flex flex-col flex-1">'
         . '<div class="text-xs font-semibold text-[#ff6b00] mb-1">' . $price . '</div>'
@@ -270,7 +270,7 @@ function shopifyCollectionCardHtml(array $collection): string {
     return <<<HTML
 <a id="collection-{$id}" href="{$href}" class="shop-collection-card group block bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition">
   <div class="relative h-40 overflow-hidden bg-zinc-100">
-    <img src="{$img}" alt="{$title} — iComply Property Services" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" onerror="this.src='{$fallback}'">
+    <img src="{$img}" alt="{$title} — iComply Property Services" width="640" height="360" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" onerror="this.src='{$fallback}'">
     <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
     <div class="absolute bottom-3 left-4 right-4 text-white font-semibold text-lg">{$title}</div>
   </div>

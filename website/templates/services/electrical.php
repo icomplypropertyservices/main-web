@@ -3,9 +3,9 @@
  * Electrical service template
  * 3 images · 3 paragraphs · manufacturers · SEO
  */
-$pageTitle = '{{SERVICE_NAME}} in {{AREA}} | iComply Property Services';
-$metaDesc = 'Electrical installation, EICR, PAT testing, EV charger installation and commercial electrician services in {{AREA}}. Schneider, Hager, Wylex, Rolec, Myenergi.';
-$metaKeywords = 'electrician {{AREA}}, EICR {{AREA}}, electrical installation {{AREA}}, EV charger {{AREA}}, electrical testing {{AREA}}, commercial electrician {{AREA}}, PAT testing {{AREA}}, Schneider, Hager, Wylex, Rolec, Myenergi';
+$pageTitle = '{{SERVICE_NAME}} in {{AREA}} | Icomply Property Services';
+$metaDesc = 'BS 7671 electrical installation, EICR, PAT testing and EV charger installation in {{AREA}}. Schneider, Hager, Wylex, Rolec, Myenergi.';
+$metaKeywords = 'electrician {{AREA}}, EICR {{AREA}}, electrical installation {{AREA}}, EV charger {{AREA}}, certified electrician {{AREA}}, commercial electrician {{AREA}}, PAT testing {{AREA}}, Schneider, Hager, Wylex, Rolec, Myenergi';
 $ogImage = url('/assets/images/services/electrical.jpg');
 require SITE_ROOT . '/includes/header.php'; 
 ?>
@@ -78,7 +78,7 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 1 -->
     <p class="mt-8 text-lg text-black max-w-3xl leading-relaxed">
-        iComply Property Services provides complete <strong>electrical</strong> design, installation, commissioning, testing and certification across <strong>{{AREA}}</strong> and the wider North West. Our electricians deliver fixed-price quotes, appointments booked when the diary allows, and full BS 7671 compliance documentation on every job — from domestic rewires to commercial distribution boards.
+        Icomply Property Services provides <strong>electrical</strong> design, installation, testing and certification across <strong>{{AREA}}</strong>. This legacy template is unused. Live pages do not claim NICEIC registration. Work follows BS 7671 and is quoted after scope.
     </p>
 
     <!-- PARAGRAPH 2 -->

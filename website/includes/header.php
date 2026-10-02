@@ -2,22 +2,22 @@
 if (!defined('SITE_URL')) {
     require_once __DIR__ . '/../config.php';
 }
+require_once __DIR__ . '/seo.php';
 $services = getServices();
 $areas = getAreas();
 $rawPageTitle = trim((string)($pageTitle ?? SITE_NAME));
 if ($rawPageTitle === '') {
     $rawPageTitle = SITE_NAME;
 }
-$hasBrandInTitle = (stripos($rawPageTitle, 'iComply') !== false)
-    || (stripos($rawPageTitle, (string)SITE_NAME) !== false);
-$documentTitle = $hasBrandInTitle ? $rawPageTitle : ($rawPageTitle . ' | iComply Property Services');
+$documentTitle = function_exists('seo_document_title')
+    ? seo_document_title($rawPageTitle)
+    : $rawPageTitle;
 $pageTitleSafe = htmlspecialchars($documentTitle, ENT_QUOTES, 'UTF-8');
 $ogTitleSafe = htmlspecialchars($rawPageTitle, ENT_QUOTES, 'UTF-8');
-$metaDescSafe = htmlspecialchars(
-    $metaDesc ?? 'iComply Property Services — property maintenance and compliance across Greater Manchester and the North West: EICR, fire, kitchens, renovations, CCTV, Legionella and asbestos. Offerton, Stockport SK2 5DE.',
-    ENT_QUOTES,
-    'UTF-8'
-);
+$metaDescRaw = function_exists('seo_fit_meta')
+    ? seo_fit_meta($metaDesc ?? 'Property compliance from Icomply in Stockport SK2, covering fire, nurse call, barriers and local trades.')
+    : (string)($metaDesc ?? '');
+$metaDescSafe = htmlspecialchars($metaDescRaw, ENT_QUOTES, 'UTF-8');
 $metaKeywordsSafe = htmlspecialchars(
     $metaKeywords ?? 'property maintenance, landlord compliance, EICR, gas safety, fire risk assessment, kitchens, renovations, CCTV, legionella, asbestos, Stockport, Manchester',
     ENT_QUOTES,
@@ -54,7 +54,6 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     <link rel="sitemap" type="application/xml" title="Sitemap" href="<?= htmlspecialchars(url('/sitemap.xml'), ENT_QUOTES, 'UTF-8') ?>">
     <title><?= $pageTitleSafe ?></title>
     <meta name="description" content="<?= $metaDescSafe ?>">
-    <meta name="keywords" content="<?= $metaKeywordsSafe ?>">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_GB">
     <meta property="og:locale:alternate" content="en_US">
@@ -140,6 +139,7 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     $gtmId = defined('GTM_CONTAINER_ID') ? trim((string)GTM_CONTAINER_ID) : '';
     ?>
     <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <!-- Google tag (gtag.js) / Google Tag Manager — cookie-gated via #cookie-banner -->
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -185,7 +185,7 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     }
     ?>
 </head>
-<body class="theme-dark bg-zinc-50 text-black">
+<body class="theme-dark bg-zinc-50 text-black" data-seo-family="<?= htmlspecialchars((string)($seoFamily ?? 'page'), ENT_QUOTES, 'UTF-8') ?>">
 <a href="#main-content" class="skip-to-content">Skip to main content</a>
 <?php
 require_once __DIR__ . '/site-nav.php';
