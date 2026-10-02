@@ -23,7 +23,7 @@ if (!$featuredMfr) {
 }
 
 $popularAreas = array_values(array_unique(array_merge(
-    ['Manchester', 'Stockport', 'Bolton', 'Oldham', 'Rochdale', 'Wigan', 'Salford', 'Liverpool', 'Preston', 'Blackpool', 'Chester', 'Warrington'],
+    ['Manchester', 'Burnley', 'Stockport', 'Bolton', 'Oldham', 'Rochdale', 'Wigan', 'Salford', 'Liverpool', 'Preston', 'Blackpool', 'Chester', 'Warrington'],
     array_slice($areas, 0, 12)
 )));
 $areaSet = array_flip($areas);

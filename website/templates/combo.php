@@ -207,6 +207,11 @@ $schema = [
     </div>
 </section>
 
+<?php
+require_once SITE_ROOT . '/includes/owned-nonfire.php';
+echo ownedNonFireLandingSectionHtml($serviceSlug, $areaName);
+?>
+
 <!-- TRUST -->
 <section class="bg-white border-b">
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -362,7 +367,7 @@ $schema = [
             if ($slug === $serviceSlug) continue;
             $rBlurb = getServiceBlurb($slug);
         ?>
-        <a href="<?= url('/pages/' . $slug . '/' . $AREA_SLUG . '.php') ?>"
+        <a href="<?= htmlspecialchars(function_exists('ownedLocalServiceHref') ? ownedLocalServiceHref($slug, $areaName) : url('/pages/' . $slug . '/' . $AREA_SLUG . '.php'), ENT_QUOTES, 'UTF-8') ?>"
            class="group bg-white border rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
             <div class="h-32 bg-zinc-100 overflow-hidden">
                 <img src="<?= htmlspecialchars(serviceImageUrl($slug), ENT_QUOTES, 'UTF-8') ?>"

@@ -90,7 +90,7 @@ function icomplyNavCatalog(): array
         'areasByLetter' => $areasByLetter,
         'featuredKw' => $featuredKw,
         'popularAreas' => array_values(array_filter(
-            ['Manchester', 'Stockport', 'Salford', 'Bolton', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
+            ['Manchester', 'Burnley', 'Stockport', 'Salford', 'Bolton', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
             static fn($a) => in_array($a, $areas, true)
         )),
         'resources' => icomplyNavResourceLinks(),
@@ -132,6 +132,7 @@ function icomplyNavResourceLinks(): array
         '/pages/commercial-fire-safety' => 'Commercial fire safety',
         '/pages/stockport-property-compliance' => 'Stockport property compliance',
         '/pages/manchester-property-compliance' => 'Manchester property compliance',
+        '/pages/burnley-property-compliance' => 'Burnley property compliance',
         '/pages/portable-appliance-testing' => 'PAT testing',
         '/pages/smoke-carbon-monoxide-alarms' => 'Smoke & CO alarms',
         '/pages/energy-performance-certificates' => 'Energy performance certificates',
