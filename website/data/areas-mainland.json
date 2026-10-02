@@ -1,0 +1,3768 @@
+[
+  {
+    "name": "Manchester",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Salford",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Bolton",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Bury",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Oldham",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Rochdale",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Stockport",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Wigan",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Leigh",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Atherton",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Tyldesley",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Horwich",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Westhoughton",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Farnworth",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Kearsley",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Little Lever",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Radcliffe",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Whitefield",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Prestwich",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Swinton",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Eccles",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Walkden",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Worsley",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Pendlebury",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Irlam",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Cadishead",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Altrincham",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Sale",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Stretford",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Urmston",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Chorlton",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Didsbury",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Withington",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Wythenshawe",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Cheadle",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Cheadle Hulme",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Bramhall",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Hazel Grove",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Marple",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Romiley",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Hyde",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Stalybridge",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Dukinfield",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Ashton-under-Lyne",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Mossley",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Droylsden",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Denton",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Failsworth",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Middleton",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Chadderton",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Heywood",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Milnrow",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Littleborough",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Shaw",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Royton",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Lees",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Uppermill",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Saddleworth",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Liverpool",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Birkenhead",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Wallasey",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Bebington",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Heswall",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "West Kirby",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Hoylake",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Bootle",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Crosby",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Maghull",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Formby",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Ainsdale",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Southport",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Ormskirk",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Burscough",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Skelmersdale",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Rainford",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Prescot",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Whiston",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Rainhill",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "St Helens",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Haydock",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Newton-le-Willows",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Golborne",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Ashton-in-Makerfield",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Hindley",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Ince",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Standish",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Shevington",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Preston",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Leyland",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Chorley",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Bamber Bridge",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Penwortham",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Fulwood",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Longridge",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Garstang",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Kirkham",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Wesham",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Lytham St Annes",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Blackpool",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Fleetwood",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Thornton-Cleveleys",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Poulton-le-Fylde",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Lancaster",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Morecambe",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Carnforth",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Heysham",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Barrow-in-Furness",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Ulverston",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Dalton-in-Furness",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Millom",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Kendal",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Windermere",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Ambleside",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Keswick",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Whitehaven",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Workington",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Maryport",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Cockermouth",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Penrith",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Carlisle",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Chester",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Ellesmere Port",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Neston",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Frodsham",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Helsby",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Tarvin",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Tarporley",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Nantwich",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Crewe",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Sandbach",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Middlewich",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Winsford",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Northwich",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Knutsford",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Wilmslow",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Handforth",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Poynton",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Macclesfield",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Congleton",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Holmes Chapel",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Alsager",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Warrington",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Runcorn",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Widnes",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Halton",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Appleton",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Stockton Heath",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Lymm",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Culcheth",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Risley",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Birchwood",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Great Sankey",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Penketh",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Blackburn",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Darwen",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Accrington",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Burnley",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Nelson",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Colne",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Rawtenstall",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Bacup",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Rossendale",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Clitheroe",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Whalley",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Padiham",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Great Harwood",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Clayton-le-Moors",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Ramsbottom",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "London",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "Greater London postcodes"
+  },
+  {
+    "name": "Westminster",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "SW1, W1, WC2"
+  },
+  {
+    "name": "Camden",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "NW1, WC1"
+  },
+  {
+    "name": "Islington",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "N1"
+  },
+  {
+    "name": "Hackney",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "E8, E9"
+  },
+  {
+    "name": "Tower Hamlets",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "E1, E14"
+  },
+  {
+    "name": "Greenwich",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "SE10"
+  },
+  {
+    "name": "Lewisham",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "SE13"
+  },
+  {
+    "name": "Southwark",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "SE1"
+  },
+  {
+    "name": "Lambeth",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "SW2, SW4, SW8"
+  },
+  {
+    "name": "Wandsworth",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "SW11, SW18"
+  },
+  {
+    "name": "Hammersmith",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "W6"
+  },
+  {
+    "name": "Fulham",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "SW6"
+  },
+  {
+    "name": "Kensington",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "W8"
+  },
+  {
+    "name": "Chelsea",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "SW3"
+  },
+  {
+    "name": "Croydon",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "CR0"
+  },
+  {
+    "name": "Bromley",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "BR1"
+  },
+  {
+    "name": "Barnet",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "EN4, EN5"
+  },
+  {
+    "name": "Ealing",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "W5"
+  },
+  {
+    "name": "Hounslow",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "TW3"
+  },
+  {
+    "name": "Hillingdon",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "UB8"
+  },
+  {
+    "name": "Harrow",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "HA1"
+  },
+  {
+    "name": "Brent",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "NW10"
+  },
+  {
+    "name": "Enfield",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "EN1"
+  },
+  {
+    "name": "Walthamstow",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "E17"
+  },
+  {
+    "name": "Ilford",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "IG1"
+  },
+  {
+    "name": "Stratford",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "E15"
+  },
+  {
+    "name": "Barking",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "IG11"
+  },
+  {
+    "name": "Dagenham",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "RM9, RM10"
+  },
+  {
+    "name": "Romford",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "RM1"
+  },
+  {
+    "name": "Bexleyheath",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "DA6"
+  },
+  {
+    "name": "Sutton",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "SM1"
+  },
+  {
+    "name": "Wimbledon",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "SW19"
+  },
+  {
+    "name": "Kingston upon Thames",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "KT1"
+  },
+  {
+    "name": "Richmond",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "TW9"
+  },
+  {
+    "name": "Twickenham",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "TW1"
+  },
+  {
+    "name": "Tottenham",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "N15, N17"
+  },
+  {
+    "name": "Wood Green",
+    "nation": "England",
+    "region": "Greater London",
+    "local": false,
+    "districts": "N22"
+  },
+  {
+    "name": "Brighton",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "BN1–BN3"
+  },
+  {
+    "name": "Hove",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "BN3"
+  },
+  {
+    "name": "Worthing",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "BN11–BN14"
+  },
+  {
+    "name": "Eastbourne",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "BN20–BN23"
+  },
+  {
+    "name": "Hastings",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "TN34"
+  },
+  {
+    "name": "Crawley",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "RH10"
+  },
+  {
+    "name": "Horsham",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "RH12"
+  },
+  {
+    "name": "Guildford",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "GU1"
+  },
+  {
+    "name": "Woking",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "GU21"
+  },
+  {
+    "name": "Reading",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "RG1"
+  },
+  {
+    "name": "Slough",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "SL1"
+  },
+  {
+    "name": "Windsor",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "SL4"
+  },
+  {
+    "name": "Maidenhead",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "SL6"
+  },
+  {
+    "name": "Bracknell",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "RG12"
+  },
+  {
+    "name": "Basingstoke",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "RG21"
+  },
+  {
+    "name": "Winchester",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "SO22"
+  },
+  {
+    "name": "Southampton",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "SO14"
+  },
+  {
+    "name": "Portsmouth",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "PO1"
+  },
+  {
+    "name": "Havant",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "PO9"
+  },
+  {
+    "name": "Fareham",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "PO16"
+  },
+  {
+    "name": "Gosport",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "PO12"
+  },
+  {
+    "name": "Chichester",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "PO19"
+  },
+  {
+    "name": "Bognor Regis",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "PO21"
+  },
+  {
+    "name": "Haywards Heath",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "RH16"
+  },
+  {
+    "name": "East Grinstead",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "RH19"
+  },
+  {
+    "name": "Tunbridge Wells",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "TN1"
+  },
+  {
+    "name": "Tonbridge",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "TN9"
+  },
+  {
+    "name": "Maidstone",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "ME14"
+  },
+  {
+    "name": "Canterbury",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "CT1"
+  },
+  {
+    "name": "Ashford",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "TN23"
+  },
+  {
+    "name": "Folkestone",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "CT19"
+  },
+  {
+    "name": "Dover",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "CT16"
+  },
+  {
+    "name": "Margate",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "CT9"
+  },
+  {
+    "name": "Ramsgate",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "CT11"
+  },
+  {
+    "name": "Sittingbourne",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "ME10"
+  },
+  {
+    "name": "Gillingham",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "ME7"
+  },
+  {
+    "name": "Chatham",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "ME4"
+  },
+  {
+    "name": "Rochester",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "ME1"
+  },
+  {
+    "name": "Dartford",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "DA1"
+  },
+  {
+    "name": "Gravesend",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "DA11"
+  },
+  {
+    "name": "Sevenoaks",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "TN13"
+  },
+  {
+    "name": "Reigate",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "RH2"
+  },
+  {
+    "name": "Redhill",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "RH1"
+  },
+  {
+    "name": "Epsom",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "KT17"
+  },
+  {
+    "name": "Staines",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "TW18"
+  },
+  {
+    "name": "High Wycombe",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "HP11"
+  },
+  {
+    "name": "Aylesbury",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "HP20"
+  },
+  {
+    "name": "Milton Keynes",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "MK9"
+  },
+  {
+    "name": "Luton",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "LU1"
+  },
+  {
+    "name": "Bedford",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "MK40"
+  },
+  {
+    "name": "Oxford",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "OX1"
+  },
+  {
+    "name": "Banbury",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "OX16"
+  },
+  {
+    "name": "Abingdon",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "OX14"
+  },
+  {
+    "name": "Didcot",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "OX11"
+  },
+  {
+    "name": "Newbury",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "RG14"
+  },
+  {
+    "name": "Andover",
+    "nation": "England",
+    "region": "South East",
+    "local": false,
+    "districts": "SP10"
+  },
+  {
+    "name": "Salisbury",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "SP1"
+  },
+  {
+    "name": "Bournemouth",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "BH1"
+  },
+  {
+    "name": "Poole",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "BH15"
+  },
+  {
+    "name": "Christchurch",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "BH23"
+  },
+  {
+    "name": "Weymouth",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "DT4"
+  },
+  {
+    "name": "Dorchester",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "DT1"
+  },
+  {
+    "name": "Yeovil",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "BA20"
+  },
+  {
+    "name": "Cambridge",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "CB1"
+  },
+  {
+    "name": "Peterborough",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "PE1"
+  },
+  {
+    "name": "Norwich",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "NR1"
+  },
+  {
+    "name": "Ipswich",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "IP1"
+  },
+  {
+    "name": "Colchester",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "CO1"
+  },
+  {
+    "name": "Chelmsford",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "CM1"
+  },
+  {
+    "name": "Southend-on-Sea",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "SS1"
+  },
+  {
+    "name": "Basildon",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "SS14"
+  },
+  {
+    "name": "Harlow",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "CM20"
+  },
+  {
+    "name": "Stevenage",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "SG1"
+  },
+  {
+    "name": "Watford",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "WD17"
+  },
+  {
+    "name": "St Albans",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "AL1"
+  },
+  {
+    "name": "Hemel Hempstead",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "HP1"
+  },
+  {
+    "name": "Welwyn Garden City",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "AL8"
+  },
+  {
+    "name": "Hitchin",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "SG5"
+  },
+  {
+    "name": "Letchworth",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "SG6"
+  },
+  {
+    "name": "King's Lynn",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "PE30"
+  },
+  {
+    "name": "Great Yarmouth",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "NR30"
+  },
+  {
+    "name": "Lowestoft",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "NR32"
+  },
+  {
+    "name": "Bury St Edmunds",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "IP33"
+  },
+  {
+    "name": "Braintree",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "CM7"
+  },
+  {
+    "name": "Clacton-on-Sea",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "CO15"
+  },
+  {
+    "name": "Harwich",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "CO12"
+  },
+  {
+    "name": "Felixstowe",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "IP11"
+  },
+  {
+    "name": "Thetford",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "IP24"
+  },
+  {
+    "name": "Huntingdon",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "PE29"
+  },
+  {
+    "name": "St Neots",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "PE19"
+  },
+  {
+    "name": "Ely",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "CB7"
+  },
+  {
+    "name": "Wisbech",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "PE13"
+  },
+  {
+    "name": "March",
+    "nation": "England",
+    "region": "East of England",
+    "local": false,
+    "districts": "PE15"
+  },
+  {
+    "name": "Nottingham",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "NG1"
+  },
+  {
+    "name": "Derby",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "DE1"
+  },
+  {
+    "name": "Leicester",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "LE1"
+  },
+  {
+    "name": "Lincoln",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "LN1"
+  },
+  {
+    "name": "Northampton",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "NN1"
+  },
+  {
+    "name": "Corby",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "NN17"
+  },
+  {
+    "name": "Kettering",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "NN16"
+  },
+  {
+    "name": "Wellingborough",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "NN8"
+  },
+  {
+    "name": "Mansfield",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "NG18"
+  },
+  {
+    "name": "Chesterfield",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "S40"
+  },
+  {
+    "name": "Loughborough",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "LE11"
+  },
+  {
+    "name": "Grantham",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "NG31"
+  },
+  {
+    "name": "Boston",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "PE21"
+  },
+  {
+    "name": "Skegness",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "PE25"
+  },
+  {
+    "name": "Newark",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "NG24"
+  },
+  {
+    "name": "Worksop",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "S80"
+  },
+  {
+    "name": "Ilkeston",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "DE7"
+  },
+  {
+    "name": "Long Eaton",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "NG10"
+  },
+  {
+    "name": "Hinckley",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "LE10"
+  },
+  {
+    "name": "Melton Mowbray",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "LE13"
+  },
+  {
+    "name": "Market Harborough",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "LE16"
+  },
+  {
+    "name": "Stamford",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "PE9"
+  },
+  {
+    "name": "Spalding",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "PE11"
+  },
+  {
+    "name": "Coalville",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "LE67"
+  },
+  {
+    "name": "Buxton",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "SK17"
+  },
+  {
+    "name": "Matlock",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "DE4"
+  },
+  {
+    "name": "Birmingham",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "B1–B48"
+  },
+  {
+    "name": "Coventry",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "CV1"
+  },
+  {
+    "name": "Wolverhampton",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "WV1"
+  },
+  {
+    "name": "Dudley",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "DY1"
+  },
+  {
+    "name": "Walsall",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "WS1"
+  },
+  {
+    "name": "West Bromwich",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "B70"
+  },
+  {
+    "name": "Solihull",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "B91"
+  },
+  {
+    "name": "Sutton Coldfield",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "B72"
+  },
+  {
+    "name": "Stoke-on-Trent",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "ST1"
+  },
+  {
+    "name": "Newcastle-under-Lyme",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "ST5"
+  },
+  {
+    "name": "Stafford",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "ST16"
+  },
+  {
+    "name": "Cannock",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "WS11"
+  },
+  {
+    "name": "Lichfield",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "WS13"
+  },
+  {
+    "name": "Tamworth",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "B77"
+  },
+  {
+    "name": "Nuneaton",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "CV11"
+  },
+  {
+    "name": "Rugby",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "CV21"
+  },
+  {
+    "name": "Leamington Spa",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "CV32"
+  },
+  {
+    "name": "Warwick",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "CV34"
+  },
+  {
+    "name": "Stratford-upon-Avon",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "CV37"
+  },
+  {
+    "name": "Worcester",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "WR1"
+  },
+  {
+    "name": "Redditch",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "B98"
+  },
+  {
+    "name": "Kidderminster",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "DY10"
+  },
+  {
+    "name": "Bromsgrove",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "B61"
+  },
+  {
+    "name": "Hereford",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "HR1"
+  },
+  {
+    "name": "Shrewsbury",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "SY1"
+  },
+  {
+    "name": "Telford",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "TF1"
+  },
+  {
+    "name": "Oswestry",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "SY11"
+  },
+  {
+    "name": "Ludlow",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "SY8"
+  },
+  {
+    "name": "Burton upon Trent",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "DE14"
+  },
+  {
+    "name": "Leek",
+    "nation": "England",
+    "region": "West Midlands",
+    "local": false,
+    "districts": "ST13"
+  },
+  {
+    "name": "Leeds",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "LS1"
+  },
+  {
+    "name": "Sheffield",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "S1"
+  },
+  {
+    "name": "Bradford",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "BD1"
+  },
+  {
+    "name": "Hull",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "HU1"
+  },
+  {
+    "name": "York",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "YO1"
+  },
+  {
+    "name": "Wakefield",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "WF1"
+  },
+  {
+    "name": "Doncaster",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "DN1"
+  },
+  {
+    "name": "Rotherham",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "S60"
+  },
+  {
+    "name": "Barnsley",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "S70"
+  },
+  {
+    "name": "Huddersfield",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "HD1"
+  },
+  {
+    "name": "Halifax",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "HX1"
+  },
+  {
+    "name": "Dewsbury",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "WF13"
+  },
+  {
+    "name": "Harrogate",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "HG1"
+  },
+  {
+    "name": "Scarborough",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "YO11"
+  },
+  {
+    "name": "Bridlington",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "YO15"
+  },
+  {
+    "name": "Grimsby",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "DN31"
+  },
+  {
+    "name": "Scunthorpe",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "DN15"
+  },
+  {
+    "name": "Beverley",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "HU17"
+  },
+  {
+    "name": "Selby",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "YO8"
+  },
+  {
+    "name": "Pontefract",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "WF8"
+  },
+  {
+    "name": "Castleford",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "WF10"
+  },
+  {
+    "name": "Skipton",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "BD23"
+  },
+  {
+    "name": "Keighley",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "BD21"
+  },
+  {
+    "name": "Ilkley",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "LS29"
+  },
+  {
+    "name": "Ripon",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "HG4"
+  },
+  {
+    "name": "Goole",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "DN14"
+  },
+  {
+    "name": "Batley",
+    "nation": "England",
+    "region": "Yorkshire and the Humber",
+    "local": false,
+    "districts": "WF17"
+  },
+  {
+    "name": "Newcastle upon Tyne",
+    "nation": "England",
+    "region": "North East",
+    "local": false,
+    "districts": "NE1"
+  },
+  {
+    "name": "Sunderland",
+    "nation": "England",
+    "region": "North East",
+    "local": false,
+    "districts": "SR1"
+  },
+  {
+    "name": "Durham",
+    "nation": "England",
+    "region": "North East",
+    "local": false,
+    "districts": "DH1"
+  },
+  {
+    "name": "Middlesbrough",
+    "nation": "England",
+    "region": "North East",
+    "local": false,
+    "districts": "TS1"
+  },
+  {
+    "name": "Stockton-on-Tees",
+    "nation": "England",
+    "region": "North East",
+    "local": false,
+    "districts": "TS18"
+  },
+  {
+    "name": "Darlington",
+    "nation": "England",
+    "region": "North East",
+    "local": false,
+    "districts": "DL1"
+  },
+  {
+    "name": "Hartlepool",
+    "nation": "England",
+    "region": "North East",
+    "local": false,
+    "districts": "TS24"
+  },
+  {
+    "name": "Gateshead",
+    "nation": "England",
+    "region": "North East",
+    "local": false,
+    "districts": "NE8"
+  },
+  {
+    "name": "South Shields",
+    "nation": "England",
+    "region": "North East",
+    "local": false,
+    "districts": "NE33"
+  },
+  {
+    "name": "North Shields",
+    "nation": "England",
+    "region": "North East",
+    "local": false,
+    "districts": "NE30"
+  },
+  {
+    "name": "Tynemouth",
+    "nation": "England",
+    "region": "North East",
+    "local": false,
+    "districts": "NE30"
+  },
+  {
+    "name": "Whitley Bay",
+    "nation": "England",
+    "region": "North East",
+    "local": false,
+    "districts": "NE26"
+  },
+  {
+    "name": "Washington",
+    "nation": "England",
+    "region": "North East",
+    "local": false,
+    "districts": "NE37"
+  },
+  {
+    "name": "Chester-le-Street",
+    "nation": "England",
+    "region": "North East",
+    "local": false,
+    "districts": "DH3"
+  },
+  {
+    "name": "Bishop Auckland",
+    "nation": "England",
+    "region": "North East",
+    "local": false,
+    "districts": "DL14"
+  },
+  {
+    "name": "Hexham",
+    "nation": "England",
+    "region": "North East",
+    "local": false,
+    "districts": "NE46"
+  },
+  {
+    "name": "Berwick-upon-Tweed",
+    "nation": "England",
+    "region": "North East",
+    "local": false,
+    "districts": "TD15"
+  },
+  {
+    "name": "Blyth",
+    "nation": "England",
+    "region": "North East",
+    "local": false,
+    "districts": "NE24"
+  },
+  {
+    "name": "Cramlington",
+    "nation": "England",
+    "region": "North East",
+    "local": false,
+    "districts": "NE23"
+  },
+  {
+    "name": "Ashington",
+    "nation": "England",
+    "region": "North East",
+    "local": false,
+    "districts": "NE63"
+  },
+  {
+    "name": "Morpeth",
+    "nation": "England",
+    "region": "North East",
+    "local": false,
+    "districts": "NE61"
+  },
+  {
+    "name": "Consett",
+    "nation": "England",
+    "region": "North East",
+    "local": false,
+    "districts": "DH8"
+  },
+  {
+    "name": "Bristol",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "BS1"
+  },
+  {
+    "name": "Bath",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "BA1"
+  },
+  {
+    "name": "Exeter",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "EX1"
+  },
+  {
+    "name": "Plymouth",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "PL1"
+  },
+  {
+    "name": "Truro",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "TR1"
+  },
+  {
+    "name": "Gloucester",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "GL1"
+  },
+  {
+    "name": "Cheltenham",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "GL50"
+  },
+  {
+    "name": "Swindon",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "SN1"
+  },
+  {
+    "name": "Taunton",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "TA1"
+  },
+  {
+    "name": "Weston-super-Mare",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "BS23"
+  },
+  {
+    "name": "Bridgwater",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "TA6"
+  },
+  {
+    "name": "Barnstaple",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "EX31"
+  },
+  {
+    "name": "Torquay",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "TQ1"
+  },
+  {
+    "name": "Paignton",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "TQ3"
+  },
+  {
+    "name": "Newton Abbot",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "TQ12"
+  },
+  {
+    "name": "Exmouth",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "EX8"
+  },
+  {
+    "name": "Falmouth",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "TR11"
+  },
+  {
+    "name": "Penzance",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "TR18"
+  },
+  {
+    "name": "St Austell",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "PL25"
+  },
+  {
+    "name": "Newquay",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "TR7"
+  },
+  {
+    "name": "Bodmin",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "PL31"
+  },
+  {
+    "name": "Camborne",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "TR14"
+  },
+  {
+    "name": "Redruth",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "TR15"
+  },
+  {
+    "name": "St Ives",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "TR26"
+  },
+  {
+    "name": "Bideford",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "EX39"
+  },
+  {
+    "name": "Tiverton",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "EX16"
+  },
+  {
+    "name": "Cirencester",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "GL7"
+  },
+  {
+    "name": "Stroud",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "GL5"
+  },
+  {
+    "name": "Tewkesbury",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "GL20"
+  },
+  {
+    "name": "Chippenham",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "SN15"
+  },
+  {
+    "name": "Trowbridge",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "BA14"
+  },
+  {
+    "name": "Frome",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "BA11"
+  },
+  {
+    "name": "Wells",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "BA5"
+  },
+  {
+    "name": "Glastonbury",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "BA6"
+  },
+  {
+    "name": "Bridport",
+    "nation": "England",
+    "region": "South West",
+    "local": false,
+    "districts": "DT6"
+  },
+  {
+    "name": "Cardiff",
+    "nation": "Wales",
+    "region": "South Wales",
+    "local": false,
+    "districts": "CF10"
+  },
+  {
+    "name": "Swansea",
+    "nation": "Wales",
+    "region": "South Wales",
+    "local": false,
+    "districts": "SA1"
+  },
+  {
+    "name": "Newport",
+    "nation": "Wales",
+    "region": "South Wales",
+    "local": false,
+    "districts": "NP20"
+  },
+  {
+    "name": "Wrexham",
+    "nation": "Wales",
+    "region": "North Wales",
+    "local": false,
+    "districts": "LL11"
+  },
+  {
+    "name": "Barry",
+    "nation": "Wales",
+    "region": "South Wales",
+    "local": false,
+    "districts": "CF62"
+  },
+  {
+    "name": "Bridgend",
+    "nation": "Wales",
+    "region": "South Wales",
+    "local": false,
+    "districts": "CF31"
+  },
+  {
+    "name": "Merthyr Tydfil",
+    "nation": "Wales",
+    "region": "South Wales",
+    "local": false,
+    "districts": "CF47"
+  },
+  {
+    "name": "Pontypridd",
+    "nation": "Wales",
+    "region": "South Wales",
+    "local": false,
+    "districts": "CF37"
+  },
+  {
+    "name": "Caerphilly",
+    "nation": "Wales",
+    "region": "South Wales",
+    "local": false,
+    "districts": "CF83"
+  },
+  {
+    "name": "Cwmbran",
+    "nation": "Wales",
+    "region": "South Wales",
+    "local": false,
+    "districts": "NP44"
+  },
+  {
+    "name": "Pontypool",
+    "nation": "Wales",
+    "region": "South Wales",
+    "local": false,
+    "districts": "NP4"
+  },
+  {
+    "name": "Neath",
+    "nation": "Wales",
+    "region": "South Wales",
+    "local": false,
+    "districts": "SA11"
+  },
+  {
+    "name": "Port Talbot",
+    "nation": "Wales",
+    "region": "South Wales",
+    "local": false,
+    "districts": "SA13"
+  },
+  {
+    "name": "Llanelli",
+    "nation": "Wales",
+    "region": "South West Wales",
+    "local": false,
+    "districts": "SA15"
+  },
+  {
+    "name": "Carmarthen",
+    "nation": "Wales",
+    "region": "South West Wales",
+    "local": false,
+    "districts": "SA31"
+  },
+  {
+    "name": "Haverfordwest",
+    "nation": "Wales",
+    "region": "South West Wales",
+    "local": false,
+    "districts": "SA61"
+  },
+  {
+    "name": "Pembroke",
+    "nation": "Wales",
+    "region": "South West Wales",
+    "local": false,
+    "districts": "SA71"
+  },
+  {
+    "name": "Milford Haven",
+    "nation": "Wales",
+    "region": "South West Wales",
+    "local": false,
+    "districts": "SA73"
+  },
+  {
+    "name": "Aberystwyth",
+    "nation": "Wales",
+    "region": "Mid Wales",
+    "local": false,
+    "districts": "SY23"
+  },
+  {
+    "name": "Bangor",
+    "nation": "Wales",
+    "region": "North Wales",
+    "local": false,
+    "districts": "LL57"
+  },
+  {
+    "name": "Caernarfon",
+    "nation": "Wales",
+    "region": "North Wales",
+    "local": false,
+    "districts": "LL55"
+  },
+  {
+    "name": "Llandudno",
+    "nation": "Wales",
+    "region": "North Wales",
+    "local": false,
+    "districts": "LL30"
+  },
+  {
+    "name": "Colwyn Bay",
+    "nation": "Wales",
+    "region": "North Wales",
+    "local": false,
+    "districts": "LL29"
+  },
+  {
+    "name": "Rhyl",
+    "nation": "Wales",
+    "region": "North Wales",
+    "local": false,
+    "districts": "LL18"
+  },
+  {
+    "name": "Prestatyn",
+    "nation": "Wales",
+    "region": "North Wales",
+    "local": false,
+    "districts": "LL19"
+  },
+  {
+    "name": "Flint",
+    "nation": "Wales",
+    "region": "North Wales",
+    "local": false,
+    "districts": "CH6"
+  },
+  {
+    "name": "Mold",
+    "nation": "Wales",
+    "region": "North Wales",
+    "local": false,
+    "districts": "CH7"
+  },
+  {
+    "name": "Conwy",
+    "nation": "Wales",
+    "region": "North Wales",
+    "local": false,
+    "districts": "LL32"
+  },
+  {
+    "name": "Llangollen",
+    "nation": "Wales",
+    "region": "North Wales",
+    "local": false,
+    "districts": "LL20"
+  },
+  {
+    "name": "Ruthin",
+    "nation": "Wales",
+    "region": "North Wales",
+    "local": false,
+    "districts": "LL15"
+  },
+  {
+    "name": "Welshpool",
+    "nation": "Wales",
+    "region": "Mid Wales",
+    "local": false,
+    "districts": "SY21"
+  },
+  {
+    "name": "Newtown",
+    "nation": "Wales",
+    "region": "Mid Wales",
+    "local": false,
+    "districts": "SY16"
+  },
+  {
+    "name": "Brecon",
+    "nation": "Wales",
+    "region": "Mid Wales",
+    "local": false,
+    "districts": "LD3"
+  },
+  {
+    "name": "Abergavenny",
+    "nation": "Wales",
+    "region": "South Wales",
+    "local": false,
+    "districts": "NP7"
+  },
+  {
+    "name": "Monmouth",
+    "nation": "Wales",
+    "region": "South Wales",
+    "local": false,
+    "districts": "NP25"
+  },
+  {
+    "name": "Chepstow",
+    "nation": "Wales",
+    "region": "South Wales",
+    "local": false,
+    "districts": "NP16"
+  },
+  {
+    "name": "Penarth",
+    "nation": "Wales",
+    "region": "South Wales",
+    "local": false,
+    "districts": "CF64"
+  },
+  {
+    "name": "Porthcawl",
+    "nation": "Wales",
+    "region": "South Wales",
+    "local": false,
+    "districts": "CF36"
+  },
+  {
+    "name": "Maesteg",
+    "nation": "Wales",
+    "region": "South Wales",
+    "local": false,
+    "districts": "CF34"
+  },
+  {
+    "name": "Ebbw Vale",
+    "nation": "Wales",
+    "region": "South Wales",
+    "local": false,
+    "districts": "NP23"
+  },
+  {
+    "name": "Blackwood",
+    "nation": "Wales",
+    "region": "South Wales",
+    "local": false,
+    "districts": "NP12"
+  },
+  {
+    "name": "Aberdare",
+    "nation": "Wales",
+    "region": "South Wales",
+    "local": false,
+    "districts": "CF44"
+  },
+  {
+    "name": "Tonypandy",
+    "nation": "Wales",
+    "region": "South Wales",
+    "local": false,
+    "districts": "CF40"
+  },
+  {
+    "name": "Porth",
+    "nation": "Wales",
+    "region": "South Wales",
+    "local": false,
+    "districts": "CF39"
+  },
+  {
+    "name": "Ammanford",
+    "nation": "Wales",
+    "region": "South West Wales",
+    "local": false,
+    "districts": "SA18"
+  },
+  {
+    "name": "Cardigan",
+    "nation": "Wales",
+    "region": "South West Wales",
+    "local": false,
+    "districts": "SA43"
+  },
+  {
+    "name": "Pwllheli",
+    "nation": "Wales",
+    "region": "North Wales",
+    "local": false,
+    "districts": "LL53"
+  },
+  {
+    "name": "Porthmadog",
+    "nation": "Wales",
+    "region": "North Wales",
+    "local": false,
+    "districts": "LL49"
+  },
+  {
+    "name": "Dolgellau",
+    "nation": "Wales",
+    "region": "North Wales",
+    "local": false,
+    "districts": "LL40"
+  },
+  {
+    "name": "Edinburgh",
+    "nation": "Scotland",
+    "region": "Edinburgh and Lothians",
+    "local": false,
+    "districts": "EH1"
+  },
+  {
+    "name": "Glasgow",
+    "nation": "Scotland",
+    "region": "Greater Glasgow",
+    "local": false,
+    "districts": "G1"
+  },
+  {
+    "name": "Aberdeen",
+    "nation": "Scotland",
+    "region": "North East Scotland",
+    "local": false,
+    "districts": "AB10"
+  },
+  {
+    "name": "Dundee",
+    "nation": "Scotland",
+    "region": "Tayside",
+    "local": false,
+    "districts": "DD1"
+  },
+  {
+    "name": "Stirling",
+    "nation": "Scotland",
+    "region": "Central Scotland",
+    "local": false,
+    "districts": "FK8"
+  },
+  {
+    "name": "Perth",
+    "nation": "Scotland",
+    "region": "Tayside",
+    "local": false,
+    "districts": "PH1"
+  },
+  {
+    "name": "Dunfermline",
+    "nation": "Scotland",
+    "region": "Fife",
+    "local": false,
+    "districts": "KY12"
+  },
+  {
+    "name": "Kirkcaldy",
+    "nation": "Scotland",
+    "region": "Fife",
+    "local": false,
+    "districts": "KY1"
+  },
+  {
+    "name": "Glenrothes",
+    "nation": "Scotland",
+    "region": "Fife",
+    "local": false,
+    "districts": "KY7"
+  },
+  {
+    "name": "St Andrews",
+    "nation": "Scotland",
+    "region": "Fife",
+    "local": false,
+    "districts": "KY16"
+  },
+  {
+    "name": "Cupar",
+    "nation": "Scotland",
+    "region": "Fife",
+    "local": false,
+    "districts": "KY15"
+  },
+  {
+    "name": "Leven",
+    "nation": "Scotland",
+    "region": "Fife",
+    "local": false,
+    "districts": "KY8"
+  },
+  {
+    "name": "Falkirk",
+    "nation": "Scotland",
+    "region": "Central Scotland",
+    "local": false,
+    "districts": "FK1"
+  },
+  {
+    "name": "Livingston",
+    "nation": "Scotland",
+    "region": "Lothians",
+    "local": false,
+    "districts": "EH54"
+  },
+  {
+    "name": "Bathgate",
+    "nation": "Scotland",
+    "region": "Lothians",
+    "local": false,
+    "districts": "EH48"
+  },
+  {
+    "name": "Motherwell",
+    "nation": "Scotland",
+    "region": "Lanarkshire",
+    "local": false,
+    "districts": "ML1"
+  },
+  {
+    "name": "Hamilton",
+    "nation": "Scotland",
+    "region": "Lanarkshire",
+    "local": false,
+    "districts": "ML3"
+  },
+  {
+    "name": "East Kilbride",
+    "nation": "Scotland",
+    "region": "Lanarkshire",
+    "local": false,
+    "districts": "G74"
+  },
+  {
+    "name": "Paisley",
+    "nation": "Scotland",
+    "region": "Greater Glasgow",
+    "local": false,
+    "districts": "PA1"
+  },
+  {
+    "name": "Greenock",
+    "nation": "Scotland",
+    "region": "Inverclyde",
+    "local": false,
+    "districts": "PA15"
+  },
+  {
+    "name": "Ayr",
+    "nation": "Scotland",
+    "region": "Ayrshire",
+    "local": false,
+    "districts": "KA7"
+  },
+  {
+    "name": "Kilmarnock",
+    "nation": "Scotland",
+    "region": "Ayrshire",
+    "local": false,
+    "districts": "KA1"
+  },
+  {
+    "name": "Irvine",
+    "nation": "Scotland",
+    "region": "Ayrshire",
+    "local": false,
+    "districts": "KA12"
+  },
+  {
+    "name": "Troon",
+    "nation": "Scotland",
+    "region": "Ayrshire",
+    "local": false,
+    "districts": "KA10"
+  },
+  {
+    "name": "Dumfries",
+    "nation": "Scotland",
+    "region": "Dumfries and Galloway",
+    "local": false,
+    "districts": "DG1"
+  },
+  {
+    "name": "Stranraer",
+    "nation": "Scotland",
+    "region": "Dumfries and Galloway",
+    "local": false,
+    "districts": "DG9"
+  },
+  {
+    "name": "Galashiels",
+    "nation": "Scotland",
+    "region": "Scottish Borders",
+    "local": false,
+    "districts": "TD1"
+  },
+  {
+    "name": "Hawick",
+    "nation": "Scotland",
+    "region": "Scottish Borders",
+    "local": false,
+    "districts": "TD9"
+  },
+  {
+    "name": "Kelso",
+    "nation": "Scotland",
+    "region": "Scottish Borders",
+    "local": false,
+    "districts": "TD5"
+  },
+  {
+    "name": "Peebles",
+    "nation": "Scotland",
+    "region": "Scottish Borders",
+    "local": false,
+    "districts": "EH45"
+  },
+  {
+    "name": "Melrose",
+    "nation": "Scotland",
+    "region": "Scottish Borders",
+    "local": false,
+    "districts": "TD6"
+  },
+  {
+    "name": "Selkirk",
+    "nation": "Scotland",
+    "region": "Scottish Borders",
+    "local": false,
+    "districts": "TD7"
+  },
+  {
+    "name": "Jedburgh",
+    "nation": "Scotland",
+    "region": "Scottish Borders",
+    "local": false,
+    "districts": "TD8"
+  },
+  {
+    "name": "Dunbar",
+    "nation": "Scotland",
+    "region": "Lothians",
+    "local": false,
+    "districts": "EH42"
+  },
+  {
+    "name": "Haddington",
+    "nation": "Scotland",
+    "region": "Lothians",
+    "local": false,
+    "districts": "EH41"
+  },
+  {
+    "name": "Musselburgh",
+    "nation": "Scotland",
+    "region": "Lothians",
+    "local": false,
+    "districts": "EH21"
+  },
+  {
+    "name": "Dalkeith",
+    "nation": "Scotland",
+    "region": "Lothians",
+    "local": false,
+    "districts": "EH22"
+  },
+  {
+    "name": "Penicuik",
+    "nation": "Scotland",
+    "region": "Lothians",
+    "local": false,
+    "districts": "EH26"
+  },
+  {
+    "name": "Cumbernauld",
+    "nation": "Scotland",
+    "region": "North Lanarkshire",
+    "local": false,
+    "districts": "G67"
+  },
+  {
+    "name": "Coatbridge",
+    "nation": "Scotland",
+    "region": "North Lanarkshire",
+    "local": false,
+    "districts": "ML5"
+  },
+  {
+    "name": "Airdrie",
+    "nation": "Scotland",
+    "region": "North Lanarkshire",
+    "local": false,
+    "districts": "ML6"
+  },
+  {
+    "name": "Wishaw",
+    "nation": "Scotland",
+    "region": "North Lanarkshire",
+    "local": false,
+    "districts": "ML2"
+  },
+  {
+    "name": "Bellshill",
+    "nation": "Scotland",
+    "region": "North Lanarkshire",
+    "local": false,
+    "districts": "ML4"
+  },
+  {
+    "name": "Kilwinning",
+    "nation": "Scotland",
+    "region": "Ayrshire",
+    "local": false,
+    "districts": "KA13"
+  },
+  {
+    "name": "Ardrossan",
+    "nation": "Scotland",
+    "region": "Ayrshire",
+    "local": false,
+    "districts": "KA22"
+  },
+  {
+    "name": "Saltcoats",
+    "nation": "Scotland",
+    "region": "Ayrshire",
+    "local": false,
+    "districts": "KA21"
+  },
+  {
+    "name": "Largs",
+    "nation": "Scotland",
+    "region": "Ayrshire",
+    "local": false,
+    "districts": "KA30"
+  },
+  {
+    "name": "Helensburgh",
+    "nation": "Scotland",
+    "region": "Argyll and Bute mainland",
+    "local": false,
+    "districts": "G84"
+  },
+  {
+    "name": "Dumbarton",
+    "nation": "Scotland",
+    "region": "West Dunbartonshire",
+    "local": false,
+    "districts": "G82"
+  },
+  {
+    "name": "Clydebank",
+    "nation": "Scotland",
+    "region": "West Dunbartonshire",
+    "local": false,
+    "districts": "G81"
+  },
+  {
+    "name": "Kirkintilloch",
+    "nation": "Scotland",
+    "region": "East Dunbartonshire",
+    "local": false,
+    "districts": "G66"
+  },
+  {
+    "name": "Alloa",
+    "nation": "Scotland",
+    "region": "Clackmannanshire",
+    "local": false,
+    "districts": "FK10"
+  },
+  {
+    "name": "Montrose",
+    "nation": "Scotland",
+    "region": "Angus",
+    "local": false,
+    "districts": "DD10"
+  },
+  {
+    "name": "Arbroath",
+    "nation": "Scotland",
+    "region": "Angus",
+    "local": false,
+    "districts": "DD11"
+  },
+  {
+    "name": "Forfar",
+    "nation": "Scotland",
+    "region": "Angus",
+    "local": false,
+    "districts": "DD8"
+  },
+  {
+    "name": "Brechin",
+    "nation": "Scotland",
+    "region": "Angus",
+    "local": false,
+    "districts": "DD9"
+  },
+  {
+    "name": "Stonehaven",
+    "nation": "Scotland",
+    "region": "Aberdeenshire",
+    "local": false,
+    "districts": "AB39"
+  },
+  {
+    "name": "Inverurie",
+    "nation": "Scotland",
+    "region": "Aberdeenshire",
+    "local": false,
+    "districts": "AB51"
+  },
+  {
+    "name": "Lanark",
+    "nation": "Scotland",
+    "region": "South Lanarkshire",
+    "local": false,
+    "districts": "ML11"
+  },
+  {
+    "name": "Strathaven",
+    "nation": "Scotland",
+    "region": "South Lanarkshire",
+    "local": false,
+    "districts": "ML10"
+  },
+  {
+    "name": "Cumnock",
+    "nation": "Scotland",
+    "region": "Ayrshire",
+    "local": false,
+    "districts": "KA18"
+  },
+  {
+    "name": "Girvan",
+    "nation": "Scotland",
+    "region": "Ayrshire",
+    "local": false,
+    "districts": "KA26"
+  },
+  {
+    "name": "Annan",
+    "nation": "Scotland",
+    "region": "Dumfries and Galloway",
+    "local": false,
+    "districts": "DG12"
+  },
+  {
+    "name": "Lockerbie",
+    "nation": "Scotland",
+    "region": "Dumfries and Galloway",
+    "local": false,
+    "districts": "DG11"
+  },
+  {
+    "name": "Moffat",
+    "nation": "Scotland",
+    "region": "Dumfries and Galloway",
+    "local": false,
+    "districts": "DG10"
+  },
+  {
+    "name": "Newton Stewart",
+    "nation": "Scotland",
+    "region": "Dumfries and Galloway",
+    "local": false,
+    "districts": "DG8"
+  },
+  {
+    "name": "Castle Douglas",
+    "nation": "Scotland",
+    "region": "Dumfries and Galloway",
+    "local": false,
+    "districts": "DG7"
+  },
+  {
+    "name": "Eyemouth",
+    "nation": "Scotland",
+    "region": "Scottish Borders",
+    "local": false,
+    "districts": "TD14"
+  },
+  {
+    "name": "Cowdenbeath",
+    "nation": "Scotland",
+    "region": "Fife",
+    "local": false,
+    "districts": "KY4"
+  },
+  {
+    "name": "Grangemouth",
+    "nation": "Scotland",
+    "region": "Falkirk",
+    "local": false,
+    "districts": "FK3"
+  },
+  {
+    "name": "Bo'ness",
+    "nation": "Scotland",
+    "region": "Falkirk",
+    "local": false,
+    "districts": "EH51"
+  },
+  {
+    "name": "Linlithgow",
+    "nation": "Scotland",
+    "region": "West Lothian",
+    "local": false,
+    "districts": "EH49"
+  },
+  {
+    "name": "Broxburn",
+    "nation": "Scotland",
+    "region": "West Lothian",
+    "local": false,
+    "districts": "EH52"
+  },
+  {
+    "name": "Kirkcudbright",
+    "nation": "Scotland",
+    "region": "Dumfries and Galloway",
+    "local": false,
+    "districts": "DG6"
+  }
+]

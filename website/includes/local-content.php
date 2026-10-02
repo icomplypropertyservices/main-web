@@ -71,7 +71,34 @@ function area_profile(string $area): array {
         return $map[$area] + ['name' => $area];
     }
 
-    // Generic but still unique-ish profile for remaining towns
+    $mainland = function_exists('mainlandAreaRecord') ? mainlandAreaRecord($area) : null;
+    if (is_array($mainland) && empty($mainland['local'])) {
+        $seed = area_seed($area);
+        $stocks = [
+            'commercial buildings, landlord blocks and mixed-use high streets',
+            'offices, warehouses and multi-let residential stock',
+            'town-centre retail, schools and managed residential blocks',
+        ];
+        $focus = [
+            'BS 5839 fire alarm install, service and certification',
+            'landlord and commercial fire detection',
+            'panel upgrades and false-alarm reduction',
+        ];
+        $districts = trim((string)($mainland['districts'] ?? ''));
+        if ($districts === '') {
+            $districts = 'local postcodes around ' . $area;
+        }
+        return [
+            'name' => $area,
+            'districts' => $districts,
+            'region' => (string)($mainland['region'] ?? $mainland['nation'] ?? 'UK mainland'),
+            'stock' => pick_seeded($stocks, $seed, 1),
+            'travel' => 'scheduled UK mainland attendance from our Stockport SK2 base, with travel confirmed on the quote',
+            'focus' => pick_seeded($focus, $seed, 2),
+        ];
+    }
+
+    // Generic but still unique-ish profile for remaining North West towns
     $seed = area_seed($area);
     $regions = ['Greater Manchester fringe', 'Lancashire', 'Cheshire', 'Merseyside fringe', 'North West England'];
     $stocks = [

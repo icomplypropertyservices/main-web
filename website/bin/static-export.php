@@ -341,9 +341,11 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         $routes[] = $path;
     }
 
-    // Jack: every service has every area landing (not only --full).
+    // Every service has a North West area landing. Fire alarms also own
+    // every UK mainland area (England, Wales, mainland Scotland).
     foreach (array_keys(getServices()) as $sSlug) {
-        foreach (getAreas() as $area) {
+        $serviceAreas = function_exists('getAreasForService') ? getAreasForService($sSlug) : getAreas();
+        foreach ($serviceAreas as $area) {
             $routes[] = '/pages/' . $sSlug . '/' . areaSlug((string)$area);
         }
     }
@@ -368,8 +370,12 @@ function icomplyRenderExportRoute(string $path): array
     if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)
         && function_exists('getServices')
         && isset(getServices()[$m[1]])) {
-        $area = function_exists('areaFromSlug') ? areaFromSlug($m[2]) : $m[2];
-        $html = icomplyRenderServiceAreaHtml($m[1], (string)($area ?: $m[2]));
+        $area = function_exists('areaFromSlug') ? areaFromSlug($m[2]) : null;
+        $allowed = function_exists('getAreasForService') ? getAreasForService($m[1]) : (function_exists('getAreas') ? getAreas() : []);
+        if (!is_string($area) || $area === '' || !in_array($area, $allowed, true)) {
+            return ['html' => '', 'status' => 404];
+        }
+        $html = icomplyRenderServiceAreaHtml($m[1], $area);
         if ($html !== '' && icomplyLooksLikeHtml($html)) {
             return ['html' => $html, 'status' => 200];
         }

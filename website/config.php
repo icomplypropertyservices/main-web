@@ -278,6 +278,58 @@ function getAreas(): array {
 }
 
 /**
+ * UK mainland places for fire-alarm coverage.
+ * England, Wales and mainland Scotland. Not Northern Ireland, the Scottish
+ * Highlands & Islands, the Isle of Man or the Channel Islands.
+ *
+ * @return list<array{name:string,nation:string,region:string,local:bool,districts?:string}>
+ */
+function getMainlandAreaRecords(): array {
+    $rows = loadJsonData('areas-mainland', []);
+    $out = [];
+    foreach ($rows as $row) {
+        if (!is_array($row) || empty($row['name']) || !is_string($row['name'])) {
+            continue;
+        }
+        $out[] = $row;
+    }
+    return $out;
+}
+
+/** @return list<string> */
+function getMainlandAreas(): array {
+    $names = [];
+    foreach (getMainlandAreaRecords() as $row) {
+        $names[] = (string)$row['name'];
+    }
+    return $names;
+}
+
+function mainlandAreaRecord(string $name): ?array {
+    static $map = null;
+    if ($map === null) {
+        $map = [];
+        foreach (getMainlandAreaRecords() as $row) {
+            $map[(string)$row['name']] = $row;
+        }
+    }
+    return $map[$name] ?? null;
+}
+
+/** Fire alarms own every mainland area. Other services stay on the North West list. */
+function serviceOwnsMainlandAreas(string $serviceSlug): bool {
+    return areaSlug($serviceSlug) === 'fire-alarms';
+}
+
+/** @return list<string> */
+function getAreasForService(string $serviceSlug): array {
+    if (serviceOwnsMainlandAreas($serviceSlug)) {
+        return getMainlandAreas();
+    }
+    return getAreas();
+}
+
+/**
  * Canonical slug: lowercase, non-alnum → hyphen, collapse hyphens.
  * "Ashton-under-Lyne" → ashton-under-lyne
  * "Cheadle Hulme" → cheadle-hulme
@@ -412,8 +464,8 @@ function isCostStyleKeyword(string $slug, string $name = ''): bool {
  * Local URL that returns 200 on the default Netlify export.
  * /pages/{service}/{town} is --full only and 404s on draft/prod static.
  *
- * Electrical + gas → featured keyword×town. Other services → area hub
- * (from a service page) or the service hub (from an area page).
+ * Electrical + gas → featured keyword×town. Fire alarms → /pages/fire-alarms/{town}.
+ * Other services → area hub (from a service page) or the service hub (from an area page).
  */
 function exportedServiceLocalUrl(string $serviceSlug, string $area, string $from = 'service'): string {
     $serviceSlug = areaSlug($serviceSlug);
@@ -428,6 +480,13 @@ function exportedServiceLocalUrl(string $serviceSlug, string $area, string $from
     }
     if ($pick && isset($kw[keywordSlug((string)$pick)])) {
         return url('/pages/keywords/' . keywordSlug((string)$pick) . '/' . $town . '.php');
+    }
+    if (serviceOwnsMainlandAreas($serviceSlug)) {
+        foreach (getMainlandAreas() as $name) {
+            if (areaSlug($name) === $town) {
+                return url('/pages/fire-alarms/' . $town . '.php');
+            }
+        }
     }
     if ($from === 'area') {
         return url('/pages/services/' . $serviceSlug . '.php');
@@ -680,6 +739,11 @@ function getKeywordImages(string $serviceSlug): array {
 function areaFromSlug(string $slug): ?string {
     $slug = areaSlug($slug);
     foreach (getAreas() as $area) {
+        if (areaSlug($area) === $slug) {
+            return $area;
+        }
+    }
+    foreach (getMainlandAreas() as $area) {
         if (areaSlug($area) === $slug) {
             return $area;
         }
