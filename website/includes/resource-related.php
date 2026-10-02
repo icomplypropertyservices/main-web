@@ -21,6 +21,7 @@ function resourceRelatedLinks(string $slug): array {
             ['href' => url('/pages/services/cctv'), 'label' => 'CCTV services'],
         ],
         'access-control-guide' => [
+            ['href' => url('/pages/access-control-systems'), 'label' => 'Access control systems across the UK'],
             ['href' => url('/pages/keywords/access-control-system'), 'label' => 'Access control system guide'],
             ['href' => url('/pages/services/access-control'), 'label' => 'Access control services'],
         ],

@@ -341,6 +341,12 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         $routes[] = $path;
     }
 
+    if (function_exists('acnRoutes')) {
+        foreach (acnRoutes() as $path) {
+            $routes[] = $path;
+        }
+    }
+
     // Jack: every service has every area landing (not only --full).
     foreach (array_keys(getServices()) as $sSlug) {
         foreach (getAreas() as $area) {
@@ -581,6 +587,8 @@ function icomplyPrettyUrlRedirects(): string
 /commercial/             /pages/commercial 301
 /care-homes              /pages/care-homes 301
 /care-homes/             /pages/care-homes 301
+/access-control-systems  /pages/access-control-systems 301
+/access-control-systems/ /pages/access-control-systems 301
 
 # Legacy legal aliases
 /privacy-policy          /privacy    301

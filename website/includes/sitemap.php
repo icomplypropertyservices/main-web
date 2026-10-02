@@ -10,6 +10,7 @@ declare(strict_types=1);
 if (!defined('SITE_ROOT')) {
     require_once dirname(__DIR__) . '/config.php';
 }
+require_once __DIR__ . '/access-control-nationwide.php';
 
 /** Paths that 404 or 301 — never list these. */
 function icomplySitemapBannedPaths(): array
@@ -100,7 +101,7 @@ function icomplySitemapEntries(): array
         // Hard reject /pages/{service}/{town} even if a leftover matrix file
         // sits in dist/. Keep only real hub prefixes.
         if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
-            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages'];
+            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'access-control-systems'];
             if (!in_array($m[1], $okPrefix, true)) {
                 return;
             }
@@ -108,7 +109,8 @@ function icomplySitemapEntries(): array
         // Keyword hubs + featured keyword×town are generated at export time.
         // Do not require a source PHP file for those catalogue locs.
         $isKeywordLoc = (bool)preg_match('#^/pages/keywords(/[a-z0-9\-]+){1,2}$#', $path);
-        if (!$isKeywordLoc && !icomplySitemapUrlHasFile($path)) {
+        $isAccessNationwide = (bool)preg_match('#^/pages/access-control-systems(/[a-z0-9\-]+)?$#', $path);
+        if (!$isKeywordLoc && !$isAccessNationwide && !icomplySitemapUrlHasFile($path)) {
             return;
         }
         $seen[$path] = true;
@@ -134,6 +136,7 @@ function icomplySitemapEntries(): array
         ['/pages/packages', '0.8', 'pages/packages.php'],
         ['/pages/pricing', '0.75', 'pages/pricing.php'],
         ['/pages/care-homes', '0.75', 'pages/care-homes.php'],
+        ['/pages/access-control-systems', '0.8', 'pages/access-control-systems.php'],
         ['/pages/ev-chargers', '0.75', 'pages/ev-chargers.php'],
         ['/pages/maintenance', '0.75', 'pages/maintenance.php'],
         ['/pages/emergency', '0.75', 'pages/emergency.php'],
@@ -249,6 +252,12 @@ function icomplySitemapEntries(): array
                     }
                 }
             }
+        }
+    }
+
+    if (function_exists('acnRoutes')) {
+        foreach (acnRoutes() as $acnPath) {
+            $add($acnPath, $acnPath === '/pages/access-control-systems' ? '0.8' : '0.66');
         }
     }
 

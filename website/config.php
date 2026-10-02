@@ -336,6 +336,35 @@ function getMajorKeywords(): array {
         }
         $normalized[$slug] = $row;
     }
+    $extra = loadJsonData('access-control-keywords', []);
+    if (is_array($extra)) {
+        foreach ($extra as $slug => $meta) {
+            if (!is_array($meta)) {
+                continue;
+            }
+            $slug = keywordSlug((string)$slug);
+            if ($slug === '' || isset($normalized[$slug])) {
+                continue;
+            }
+            $row = [
+                'name' => $meta['name'] ?? keywordDisplayName($slug),
+                'service' => $meta['service'] ?? 'access-control',
+                'related' => keywordSlug($meta['related'] ?? $slug),
+            ];
+            foreach (['intro', 'body', 'meta_desc', 'seo_keywords'] as $field) {
+                if (!empty($meta[$field]) && is_string($meta[$field])) {
+                    $row[$field] = $meta[$field];
+                }
+            }
+            if (!empty($meta['focus_points']) && is_array($meta['focus_points'])) {
+                $row['focus_points'] = $meta['focus_points'];
+            }
+            if (!empty($meta['faq']) && is_array($meta['faq'])) {
+                $row['faq'] = $meta['faq'];
+            }
+            $normalized[$slug] = $row;
+        }
+    }
     return $normalized;
 }
 
@@ -565,6 +594,9 @@ function manufacturerTagsHtml(string $serviceSlug): string {
     $html = '';
     foreach (getManufacturers($serviceSlug) as $m) {
         $slug = manufacturerSlugFromName($m);
+        if ($serviceSlug === 'access-control' && ($slug === 'tunstall' || strcasecmp((string)$m, 'Tunstall') === 0)) {
+            continue;
+        }
         $href = htmlspecialchars(url('/pages/manufacturers/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
         $label = htmlspecialchars($m, ENT_QUOTES, 'UTF-8');
         $html .= '<a href="' . $href . '" '
@@ -588,7 +620,11 @@ function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
     // Prefer full by_service list so every mentioned brand has a card
     $fromNames = [];
     foreach (getManufacturers($serviceSlug) as $m) {
-        $fromNames[] = manufacturerSlugFromName($m);
+        $slugName = manufacturerSlugFromName($m);
+        if ($serviceSlug === 'access-control' && ($slugName === 'tunstall' || strcasecmp((string)$m, 'Tunstall') === 0)) {
+            continue;
+        }
+        $fromNames[] = $slugName;
     }
     if ($fromNames) {
         $slugs = $fromNames;

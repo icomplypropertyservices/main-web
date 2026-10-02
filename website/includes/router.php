@@ -5,6 +5,7 @@
  */
 require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/render.php';
+require_once __DIR__ . '/access-control-nationwide.php';
 
 /**
  * Normalize request path relative to site root (no leading SITE path prefix).
@@ -104,6 +105,15 @@ function routerDispatchVirtual(string $path): bool {
     // /pages/services/{slug}
     if (preg_match('#^/pages/services/([a-z0-9\-]+)$#', $path, $m)) {
         renderServiceHubPage($m[1]);
+        return true;
+    }
+    // Nationwide access-control city notes (curated; unknown slugs 404).
+    if (preg_match('#^/pages/access-control-systems/([a-z0-9\-]+)$#', $path, $m)) {
+        $city = acnCity($m[1]);
+        if ($city === null) {
+            return false;
+        }
+        acnRenderCity($city);
         return true;
     }
     // /pages/manufacturers/{slug}
