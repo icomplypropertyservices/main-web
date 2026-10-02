@@ -137,10 +137,27 @@ function keywordTemplatePlaceholders(
     string $areaName = ''
 ): array {
     $name = $meta['name'] ?? keywordDisplayName($slug);
+    $lane = (string)($meta['lane'] ?? '');
+    $isSecurityLane = $lane === 'security-systems';
+    $h1 = trim((string)($meta['h1'] ?? ''));
+    if ($h1 === '') {
+        $h1 = $name;
+    }
+    $seoTitle = trim((string)($meta['seo_title'] ?? ''));
     $intro = (string)($meta['intro'] ?? "Professional {$name} from Icomply Property Services across the North West.");
     $body = (string)($meta['body'] ?? "We install, service and certify {$name} as part of our {$serviceName} range for landlords, FM teams and commercial sites.");
-    $metaDesc = (string)($meta['meta_desc'] ?? "{$name} across Greater Manchester & the North West. Fixed-price quotes. Local engineers.");
+    $metaDesc = (string)($meta['meta_desc'] ?? "{$name} across Greater Manchester & the North West. Quotes on application. Local engineers.");
     $seoKw = (string)($meta['seo_keywords'] ?? getSeoKeywords($serviceSlug, $areaName));
+    $categoryLabel = $isSecurityLane ? (string)($meta['category'] ?? 'Security systems') : '';
+    $categoryKey = $isSecurityLane ? 'security-care' : '';
+    $laneNote = $isSecurityLane
+        ? 'Security systems lane — intruder and alarm work. CCTV, access control, door entry and intercoms are quoted as separate services. Price on application.'
+        : '';
+    $quoteNote = $isSecurityLane
+        ? 'Price on application after we confirm the panel, grade and signalling. Stockport engineers · North West coverage.'
+        : '';
+    $quoteTrust = $isSecurityLane ? 'POA quotes' : '';
+    $quoteTrustDetail = $isSecurityLane ? 'Price on application after survey' : '';
 
     $focusHtml = '';
     $points = $meta['focus_points'] ?? [
@@ -177,10 +194,22 @@ function keywordTemplatePlaceholders(
     $kwImg = url('/assets/images/keywords/' . $slug . '.jpg');
     $svcImg = url('/assets/images/services/' . $serviceSlug . '.jpg');
     // Prefer keyword image path; template onerror falls back to service
+    $faqJson = ($isSecurityLane && function_exists('securitySystemsFaqJsonLd'))
+        ? securitySystemsFaqJsonLd($faqs)
+        : '';
 
     return [
         'KEYWORD_NAME' => $name,
+        'KEYWORD_H1' => $isSecurityLane ? $h1 : '',
+        'KEYWORD_SEO_TITLE' => $isSecurityLane ? $seoTitle : '',
         'KEYWORD_SLUG' => $slug,
+        'CATEGORY_LABEL' => $categoryLabel,
+        'CATEGORY_KEY' => $categoryKey,
+        'KEYWORD_LANE_NOTE' => $laneNote,
+        'KEYWORD_QUOTE_NOTE' => $quoteNote,
+        'KEYWORD_QUOTE_TRUST' => $quoteTrust,
+        'KEYWORD_QUOTE_TRUST_DETAIL' => $quoteTrustDetail,
+        'KEYWORD_FAQ_JSON' => $faqJson,
         'SERVICE_NAME' => $serviceName,
         'SERVICE_SLUG' => $serviceSlug,
         'RELATED_SLUG' => $relatedSlug,

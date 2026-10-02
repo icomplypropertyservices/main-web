@@ -1,0 +1,867 @@
+{
+    "count": 62,
+    "category": "Security systems",
+    "lane": "security-systems",
+    "service_type": "intruder-alarm",
+    "scope": "Intruder and alarm systems only. Excludes CCTV, access control, door entry and intercoms.",
+    "excluded_services": [
+        "cctv",
+        "access-control",
+        "door-entry",
+        "intercoms",
+        "nurse-call"
+    ],
+    "generated": "security-systems-lane",
+    "jobs": [
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "ajax-alarm-installation",
+            "status": "live",
+            "name": "Ajax Alarm Installation",
+            "related": "intruder-alarm-installation",
+            "h1": "Ajax Alarm Installation",
+            "seo_title": "Ajax Alarm Installation | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "alarm-after-false-trip-visit",
+            "status": "live",
+            "name": "Alarm After False Trip Visit",
+            "related": "intruder-alarm-repair",
+            "h1": "Alarm After False Trip Visit",
+            "seo_title": "Alarm After False Trip Visit | Security systems | North West",
+            "intro": "An alarm after false trip visit finds why a panel keeps setting off when the building is empty or when staff are still inside. Icomply engineers from Stockport check detectors, door contacts, pets, heaters and user habits, then leave the system stable enough to set with confidence.",
+            "body": "We read the event log, walk the zones that tripped, and test contacts and PIRs in the conditions that caused the activation. Loose contacts, spiders in sensors, door sag and keypad codes left unset are common. The visit is intruder-alarm work: we do not add CCTV cameras or door-entry handsets on this call. Price on application after a survey. We do not publish a pound figure for this visit.",
+            "meta_desc": "Alarm after false trip visit across Greater Manchester and the North West. Log check, zone walk and reset. Price on application.",
+            "seo_keywords": "alarm false alarm visit, intruder alarm false trip, alarm keeps going off, burglar alarm reset North West, Stockport alarm engineer",
+            "focus_points": [
+                "Event log and zone walk after a false trip",
+                "Contacts, PIRs and user setting checked on site",
+                "Intruder system only — CCTV and access control quoted separately",
+                "Price on application once the cause is known"
+            ],
+            "faq": [
+                [
+                    "Why does my alarm keep going off when the shop is closed?",
+                    "Often a door contact, a heater under a PIR, or a zone left open. We read the log and test the zone that tripped rather than swapping the whole panel first."
+                ],
+                [
+                    "Will you change the monitoring on this visit?",
+                    "Only if the signalling path is part of the fault. A straight false-trip visit is diagnosis and a practical fix, with monitoring changes quoted separately if needed."
+                ],
+                [
+                    "Is this a CCTV call-out?",
+                    "No. This lane is intruder and alarm systems. Camera or access-control faults are separate services."
+                ]
+            ]
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "alarm-app-user-setup",
+            "status": "live",
+            "name": "Alarm App User Setup",
+            "related": "smart-home-alarm-installation",
+            "h1": "Alarm App User Setup",
+            "seo_title": "Alarm App User Setup | Security systems | North West",
+            "intro": "Alarm app user setup puts the right people on the panel app with the right permissions — set, unset, and alerts — without handing everyone engineer-level access. Icomply programmes apps for homes, shops and small offices across the North West after the panel is already online.",
+            "body": "We confirm the panel supports the manufacturer app, create users, and show keyholders how to set part areas and what a tamper alert means. Wi-Fi or dual-path signalling has to be healthy first; if the communicator is old we say so before creating accounts. This is alarm user setup, not a CCTV remote-viewing install. Price on application after a survey. We do not publish a pound figure for this visit.",
+            "meta_desc": "Alarm app user setup for intruder panels. Keyholder permissions and handover across Manchester, Stockport and the North West. Price on application.",
+            "seo_keywords": "alarm app setup, intruder alarm app users, burglar alarm smartphone, panel app programming, North West alarm app",
+            "focus_points": [
+                "App users created with the right set and unset rights",
+                "Part-set and alert meanings explained at handover",
+                "Communicator checked before accounts are issued",
+                "Price on application — no app-store price list"
+            ],
+            "faq": [
+                [
+                    "Can every staff member have the alarm app?",
+                    "Yes, with limits. We give managers fuller control and staff a set/unset user so engineer menus stay locked."
+                ],
+                [
+                    "Does the app replace the keypad?",
+                    "Usually no. The keypad stays as the local fallback if the phone or broadband drops."
+                ],
+                [
+                    "Do you set up CCTV apps on the same visit?",
+                    "Not as part of this job. Camera viewing is a CCTV service. This visit is the intruder panel app only."
+                ]
+            ]
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "alarm-battery-replacement",
+            "status": "live",
+            "name": "Alarm Battery Replacement",
+            "related": "intruder-alarm-servicing",
+            "h1": "Alarm Battery Replacement",
+            "seo_title": "Alarm Battery Replacement | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "alarm-communicator-upgrade",
+            "status": "live",
+            "name": "Alarm Communicator Upgrade",
+            "related": "alarm-monitoring-setup",
+            "h1": "Alarm Communicator Upgrade",
+            "seo_title": "Alarm Communicator Upgrade | Security systems | North West",
+            "intro": "An alarm communicator upgrade replaces a tired digital dialler or single-path device with signalling that still reaches an alarm receiving centre when the phone line or broadband fails. Icomply surveys the existing panel and paths, then fits a suitable communicator for homes and commercial sites in the North West.",
+            "body": "Many older panels still rely on a PSTN path that networks have withdrawn. We identify the panel, the current path, and whether dual-path (radio plus IP) is what the insurer or ARC expects. The upgrade is signalling for the intruder system. It is not an access-control network or a CCTV NVR. Price on application after a survey. We do not publish a pound figure for this visit.",
+            "meta_desc": "Alarm communicator upgrade for intruder panels. Dual-path and ARC signalling across the North West. Price on application after survey.",
+            "seo_keywords": "alarm communicator upgrade, dual path alarm signalling, PSTN alarm replacement, intruder alarm ARC, digi modem upgrade Stockport",
+            "focus_points": [
+                "Panel and existing signalling path identified first",
+                "PSTN replacements and dual-path options explained",
+                "ARC polling checked where monitoring is already in place",
+                "Price on application after the survey"
+            ],
+            "faq": [
+                [
+                    "My phone line is being withdrawn. Will the alarm still signal?",
+                    "Not if it only uses that line. We survey the panel and quote a communicator that matches the monitoring you need."
+                ],
+                [
+                    "Do you move the monitoring contract?",
+                    "We fit and test the path. The monitoring contract stays with your ARC unless you ask us to help introduce a new one."
+                ],
+                [
+                    "Is this the same as adding cameras?",
+                    "No. A communicator sends alarm events. Cameras are CCTV and are quoted as a different service."
+                ]
+            ]
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "alarm-keyfob-programming",
+            "status": "live",
+            "name": "Alarm Keyfob Programming",
+            "related": "alarm-keypad-installation",
+            "h1": "Alarm Keyfob Programming",
+            "seo_title": "Alarm Keyfob Programming | Security systems | North West",
+            "intro": "Alarm keyfob programming adds, replaces or deletes radio fobs so only current keyholders can set and unset the intruder system. Icomply attends homes, HMOs and small commercial sites across Greater Manchester when fobs are lost, staff change, or a new fob will not learn.",
+            "body": "We identify the panel and receiver, delete lost fobs so they cannot unset the system, and teach replacements. If the radio receiver is full or the fob is the wrong family, we say so before ordering parts. Programming is intruder-user work. It is not access-control fob enrolment for door readers. Price on application after a survey. We do not publish a pound figure for this visit.",
+            "meta_desc": "Alarm keyfob programming and lost-fob deletion for intruder panels. North West engineers. Price on application.",
+            "seo_keywords": "alarm keyfob programming, burglar alarm fob, lost alarm fob delete, intruder fob replacement, Stockport alarm fob",
+            "focus_points": [
+                "Lost fobs deleted so they cannot unset the system",
+                "Replacement fobs learned to the correct user",
+                "Panel family confirmed before parts are ordered",
+                "Price on application — alarm fobs, not door-access tokens"
+            ],
+            "faq": [
+                [
+                    "A member of staff left with the alarm fob. What should we do?",
+                    "Delete that fob from the panel before you rely on the system. We can do that on site and add a replacement for the new keyholder."
+                ],
+                [
+                    "Will a door-access fob work on the alarm?",
+                    "No. Alarm fobs talk to the intruder receiver. Door tokens are access control and need a separate enrolment."
+                ],
+                [
+                    "Can you programme fobs without the engineer code?",
+                    "We need the engineer or master access that the panel requires. If those codes are lost, the visit may include a panel reset, quoted once we see the equipment."
+                ]
+            ]
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "alarm-keypad-installation",
+            "status": "live",
+            "name": "Alarm Keypad Installation",
+            "related": "intruder-alarm-panel",
+            "h1": "Alarm Keypad Installation",
+            "seo_title": "Alarm Keypad Installation | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "alarm-keypad-replacement",
+            "status": "live",
+            "name": "Alarm Keypad Replacement",
+            "related": "grade-3-intruder-alarm",
+            "h1": "Alarm Keypad Replacement",
+            "seo_title": "Alarm Keypad Replacement | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "alarm-maintenance-contract",
+            "status": "live",
+            "name": "Alarm Maintenance Contract",
+            "related": "home-intruder-alarm",
+            "h1": "Alarm Maintenance Contract",
+            "seo_title": "Alarm Maintenance Contract | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "alarm-monitoring-setup",
+            "status": "live",
+            "name": "Alarm Monitoring Setup",
+            "related": "intruder-alarm-installation",
+            "h1": "Alarm Monitoring Setup",
+            "seo_title": "Alarm Monitoring Setup | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "alarm-panel-upgrade",
+            "status": "live",
+            "name": "Alarm Panel Upgrade",
+            "related": "burglar-alarm-service",
+            "h1": "Alarm Panel Upgrade",
+            "seo_title": "Alarm Panel Upgrade | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "alarm-system-design",
+            "status": "live",
+            "name": "Alarm System Design",
+            "related": "intruder-alarm-installation",
+            "h1": "Alarm System Design",
+            "seo_title": "Alarm System Design | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "alarm-system-upgrade",
+            "status": "live",
+            "name": "Alarm System Upgrade",
+            "related": "intruder-alarm-installation",
+            "h1": "Alarm System Upgrade",
+            "seo_title": "Alarm System Upgrade | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "bs-4737",
+            "status": "live",
+            "name": "BS 4737",
+            "related": "intruder-alarm-certification",
+            "h1": "BS 4737",
+            "seo_title": "BS 4737 | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "burglar-alarm-installation",
+            "status": "live",
+            "name": "Burglar Alarm Installation",
+            "related": "burglar-alarm-system",
+            "h1": "Burglar Alarm Installation",
+            "seo_title": "Burglar Alarm Installation | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "burglar-alarm-service",
+            "status": "live",
+            "name": "Burglar Alarm Service",
+            "related": "wired-intruder-alarm",
+            "h1": "Burglar Alarm Service",
+            "seo_title": "Burglar Alarm Service | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "burglar-alarm-system",
+            "status": "live",
+            "name": "Burglar Alarm System",
+            "related": "intruder-alarm-panel",
+            "h1": "Burglar Alarm System",
+            "seo_title": "Burglar Alarm System | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "business-premises-alarm",
+            "status": "live",
+            "name": "Business Premises Alarm",
+            "related": "commercial-intruder-alarm",
+            "h1": "Business Premises Alarm",
+            "seo_title": "Business Premises Alarm | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "commercial-intruder-alarm",
+            "status": "live",
+            "name": "Commercial Intruder Alarm",
+            "related": "intruder-alarm-installation",
+            "h1": "Commercial Intruder Alarm",
+            "seo_title": "Commercial Intruder Alarm | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "domestic-burglar-alarm",
+            "status": "live",
+            "name": "Domestic Burglar Alarm",
+            "related": "burglar-alarm-system",
+            "h1": "Domestic Burglar Alarm",
+            "seo_title": "Domestic Burglar Alarm | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "door-contact-alarm-installation",
+            "status": "live",
+            "name": "Door Contact Alarm Installation",
+            "related": "intruder-alarm-installation",
+            "h1": "Door Contact Alarm Installation",
+            "seo_title": "Door Contact Alarm Installation | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "external-siren-replace",
+            "status": "live",
+            "name": "External Siren Replace",
+            "related": "intruder-alarm-repair",
+            "h1": "External Siren Replace",
+            "seo_title": "External Siren Replace | Security systems | North West",
+            "intro": "External siren replace swaps a failed, faded or constantly tampered bell box so the intruder system can still warn outside the building. Icomply fits a siren matched to the panel, with a working tamper and strobe, for homes and commercial frontages across the North West.",
+            "body": "We check why the old box failed — battery, tamper switch, cable, or water in the cover — before fitting a replacement. The strobe and sounder are proved from a test activation, not left assumed. This is the alarm bell box, not a CCTV speaker or an access-control door buzzer. Price on application after a survey. We do not publish a pound figure for this visit.",
+            "meta_desc": "External siren and bell-box replacement for intruder alarms. Tamper and strobe proved on site. North West. Price on application.",
+            "seo_keywords": "external siren replacement, alarm bell box replace, intruder sounder, bell box tamper, burglar alarm siren Stockport",
+            "focus_points": [
+                "Cause of the failed bell box checked before parts",
+                "Tamper and strobe proved from a test activation",
+                "Siren matched to the existing intruder panel",
+                "Price on application after we see the mounting and cable"
+            ],
+            "faq": [
+                [
+                    "The bell box is silent but the keypad still beeps. Do I need a new panel?",
+                    "Not always. A dead external siren, flat bell battery or open tamper is common. We test the output before condemning the panel."
+                ],
+                [
+                    "Will a new siren stop false alarms?",
+                    "It restores the external warning. If the system is tripping falsely, that is a separate zone fault and we will say so on the visit."
+                ],
+                [
+                    "Can you hide the siren for aesthetics?",
+                    "The box still needs a sound path and a tamper. We agree a practical position on the elevation rather than burying it where it cannot be heard."
+                ]
+            ]
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "grade-2-intruder-alarm",
+            "status": "live",
+            "name": "Grade 2 Intruder Alarm",
+            "related": "intruder-alarm-installation",
+            "h1": "Grade 2 Intruder Alarm",
+            "seo_title": "Grade 2 Intruder Alarm | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "grade-3-intruder-alarm",
+            "status": "live",
+            "name": "Grade 3 Intruder Alarm",
+            "related": "intruder-alarm-installation",
+            "h1": "Grade 3 Intruder Alarm",
+            "seo_title": "Grade 3 Intruder Alarm | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "grade-shift-survey",
+            "status": "live",
+            "name": "Grade Shift Survey",
+            "related": "grade-2-intruder-alarm",
+            "h1": "Grade Shift Survey",
+            "seo_title": "Grade Shift Survey | Security systems | North West",
+            "intro": "A grade shift survey checks whether an intruder system should move up or down a grade — typically toward Grade 2 or Grade 3 — after an insurer letter, a change of stock, or a refit. Icomply surveys detection, tamper and signalling against PD 6662 and BS EN 50131 practice and writes what would have to change.",
+            "body": "We walk the risk points, note the current panel grade claim, and list gaps: missing contacts, single-path signalling, or detection that no longer matches how the building is used. The survey is advice and a scope for later works. It is not a CCTV design and not an access-control schedule. Price on application after a survey. We do not publish a pound figure for this visit.",
+            "meta_desc": "Intruder alarm grade shift survey to PD 6662 / BS EN 50131. Written scope for Grade 2 or Grade 3. Price on application.",
+            "seo_keywords": "alarm grade survey, Grade 2 upgrade survey, PD 6662 grade shift, BS EN 50131 survey, intruder grade North West",
+            "focus_points": [
+                "Current grade claim compared with how the building is used",
+                "Detection, tamper and signalling gaps listed in writing",
+                "PD 6662 / BS EN 50131 used as the reference",
+                "Price on application — survey first, upgrade quoted separately"
+            ],
+            "faq": [
+                [
+                    "Our insurer asked for Grade 2. Is the survey the upgrade?",
+                    "The survey says what is already compliant and what would have to change. The upgrade is a separate install once you accept the scope."
+                ],
+                [
+                    "Can you confirm Grade 3 on paper without a visit?",
+                    "No. Grade depends on the devices, the panel and the signalling we can see on site."
+                ],
+                [
+                    "Does the survey include cameras?",
+                    "No. This is an intruder grade survey. CCTV coverage is a different design service."
+                ]
+            ]
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "home-intruder-alarm",
+            "status": "live",
+            "name": "Home Intruder Alarm",
+            "related": "commercial-intruder-alarm",
+            "h1": "Home Intruder Alarm",
+            "seo_title": "Home Intruder Alarm | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "honeywell-intruder-alarm",
+            "status": "live",
+            "name": "Honeywell Intruder Alarm",
+            "related": "intruder-alarm-installation",
+            "h1": "Honeywell Intruder Alarm",
+            "seo_title": "Honeywell Intruder Alarm | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "intruder-alarm-certification",
+            "status": "live",
+            "name": "Intruder Alarm Certification",
+            "related": "bs-4737",
+            "h1": "Intruder Alarm Certification",
+            "seo_title": "Intruder Alarm Certification | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "intruder-alarm-engineer",
+            "status": "live",
+            "name": "Intruder Alarm Engineer",
+            "related": "intruder-alarm-near-me",
+            "h1": "Intruder Alarm Engineer",
+            "seo_title": "Intruder Alarm Engineer | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "intruder-alarm-engineers",
+            "status": "live",
+            "name": "Intruder Alarm Engineers",
+            "related": "intruder-alarm-installation",
+            "h1": "Intruder Alarm Engineers",
+            "seo_title": "Intruder Alarm Engineers | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "intruder-alarm-installation",
+            "status": "live",
+            "name": "Intruder Alarm Installation",
+            "related": "burglar-alarm-system",
+            "h1": "Intruder Alarm Installation",
+            "seo_title": "Intruder Alarm Installation | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "intruder-alarm-maintenance",
+            "status": "live",
+            "name": "Intruder Alarm Maintenance",
+            "related": "intruder-alarm-servicing",
+            "h1": "Intruder Alarm Maintenance",
+            "seo_title": "Intruder Alarm Maintenance | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "intruder-alarm-maintenance-contract",
+            "status": "live",
+            "name": "Intruder Alarm Maintenance Contract",
+            "related": "intruder-alarm-maintenance",
+            "h1": "Intruder Alarm Maintenance Contract",
+            "seo_title": "Intruder Alarm Maintenance Contract | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "intruder-alarm-monitoring",
+            "status": "live",
+            "name": "Intruder Alarm Monitoring",
+            "related": "intruder-alarm-installation",
+            "h1": "Intruder Alarm Monitoring",
+            "seo_title": "Intruder Alarm Monitoring | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "intruder-alarm-near-me",
+            "status": "live",
+            "name": "Intruder Alarm Near Me",
+            "related": "intruder-alarm-engineer",
+            "h1": "Intruder Alarm Near Me",
+            "seo_title": "Intruder Alarm Near Me | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "intruder-alarm-panel",
+            "status": "live",
+            "name": "Intruder Alarm Panel",
+            "related": "burglar-alarm-system",
+            "h1": "Intruder Alarm Panel",
+            "seo_title": "Intruder Alarm Panel | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "intruder-alarm-panel-replacement",
+            "status": "live",
+            "name": "Intruder Alarm Panel Replacement",
+            "related": "intruder-alarm-panel",
+            "h1": "Intruder Alarm Panel Replacement",
+            "seo_title": "Intruder Alarm Panel Replacement | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "intruder-alarm-repair",
+            "status": "live",
+            "name": "Intruder Alarm Repair",
+            "related": "intruder-alarm-engineer",
+            "h1": "Intruder Alarm Repair",
+            "seo_title": "Intruder Alarm Repair | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "intruder-alarm-servicing",
+            "status": "live",
+            "name": "Intruder Alarm Servicing",
+            "related": "intruder-alarm-testing",
+            "h1": "Intruder Alarm Servicing",
+            "seo_title": "Intruder Alarm Servicing | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "intruder-alarm-testing",
+            "status": "live",
+            "name": "Intruder Alarm Testing",
+            "related": "intruder-alarm-servicing",
+            "h1": "Intruder Alarm Testing",
+            "seo_title": "Intruder Alarm Testing | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "landlord-void-alarm-set",
+            "status": "live",
+            "name": "Landlord Void Alarm Set",
+            "related": "intruder-alarm-maintenance",
+            "h1": "Landlord Void Alarm Set",
+            "seo_title": "Landlord Void Alarm Set | Security systems | North West",
+            "intro": "A landlord void alarm set makes an empty rental ready to leave secure between tenancies: panel healthy, codes changed, and a named person able to set and unset. Icomply attends voids across Greater Manchester so agents are not relying on a previous tenant’s fob or a panel showing a fault.",
+            "body": "We change user codes, remove old fobs, test setting, and note any zone that will not set because a contact or PIR has failed. If the system is beyond a void tidy-up we quote repair separately. The visit is the intruder alarm in the void, not cameras in the communal stair or a door-entry handset. Price on application after a survey. We do not publish a pound figure for this visit.",
+            "meta_desc": "Landlord void alarm set: codes changed, old fobs removed, system proved. North West rentals. Price on application.",
+            "seo_keywords": "landlord void alarm, alarm code change tenancy, empty property intruder alarm, rental alarm set, Stockport landlord alarm",
+            "focus_points": [
+                "Previous tenant codes and fobs removed",
+                "Set and unset proved before the property is left empty",
+                "Faults that block setting reported before we leave",
+                "Price on application for the void visit"
+            ],
+            "faq": [
+                [
+                    "The last tenant still has the alarm code. Can you change it?",
+                    "Yes. We change user codes and delete their fobs so the void is not left on the old credentials."
+                ],
+                [
+                    "The alarm will not set. Is that included?",
+                    "We find the zone that is stopping the set. A failed detector or contact is quoted as a repair if it is more than the void tidy-up."
+                ],
+                [
+                    "Do you install CCTV in the void as well?",
+                    "Not on this job. Ask for CCTV separately if the brief includes cameras."
+                ]
+            ]
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "monitored-intruder-alarm",
+            "status": "live",
+            "name": "Monitored Intruder Alarm",
+            "related": "intruder-alarm-installation",
+            "h1": "Monitored Intruder Alarm",
+            "seo_title": "Monitored Intruder Alarm | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "multi-site-alarm-maintenance",
+            "status": "live",
+            "name": "Multi Site Alarm Maintenance",
+            "related": "intruder-alarm-servicing",
+            "h1": "Multi Site Alarm Maintenance",
+            "seo_title": "Multi Site Alarm Maintenance | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "office-alarm-installation",
+            "status": "live",
+            "name": "Office Alarm Installation",
+            "related": "commercial-intruder-alarm",
+            "h1": "Office Alarm Installation",
+            "seo_title": "Office Alarm Installation | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "pd-6662-alarm-system",
+            "status": "live",
+            "name": "PD 6662 Alarm System",
+            "related": "pd6662-alarm-system",
+            "h1": "PD 6662 Alarm System",
+            "seo_title": "PD 6662 Alarm System | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "pd6662-alarm-system",
+            "status": "live",
+            "name": "PD6662 Alarm System",
+            "related": "bs-4737",
+            "h1": "PD6662 Alarm System",
+            "seo_title": "PD6662 Alarm System | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "pir-sensor-installation",
+            "status": "live",
+            "name": "PIR Sensor Installation",
+            "related": "intruder-alarm-installation",
+            "h1": "PIR Sensor Installation",
+            "seo_title": "PIR Sensor Installation | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "police-response-alarm",
+            "status": "live",
+            "name": "Police Response Alarm",
+            "related": "intruder-alarm-installation",
+            "h1": "Police Response Alarm",
+            "seo_title": "Police Response Alarm | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "pyronix-alarm-installation",
+            "status": "live",
+            "name": "Pyronix Alarm Installation",
+            "related": "intruder-alarm-installation",
+            "h1": "Pyronix Alarm Installation",
+            "seo_title": "Pyronix Alarm Installation | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "residential-intruder-alarm",
+            "status": "live",
+            "name": "Residential Intruder Alarm",
+            "related": "wireless-intruder-alarm",
+            "h1": "Residential Intruder Alarm",
+            "seo_title": "Residential Intruder Alarm | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "risco-alarm-installation",
+            "status": "live",
+            "name": "Risco Alarm Installation",
+            "related": "intruder-alarm-installation",
+            "h1": "Risco Alarm Installation",
+            "seo_title": "Risco Alarm Installation | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "security-alarm-installation",
+            "status": "live",
+            "name": "Security Alarm Installation",
+            "related": "burglar-alarm-system",
+            "h1": "Security Alarm Installation",
+            "seo_title": "Security Alarm Installation | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "shock-sensor-installation",
+            "status": "live",
+            "name": "Shock Sensor Installation",
+            "related": "intruder-alarm-installation",
+            "h1": "Shock Sensor Installation",
+            "seo_title": "Shock Sensor Installation | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "shop-alarm-installation",
+            "status": "live",
+            "name": "Shop Alarm Installation",
+            "related": "commercial-intruder-alarm",
+            "h1": "Shop Alarm Installation",
+            "seo_title": "Shop Alarm Installation | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "smart-home-alarm-installation",
+            "status": "live",
+            "name": "Smart Home Alarm Installation",
+            "related": "wireless-intruder-alarm",
+            "h1": "Smart Home Alarm Installation",
+            "seo_title": "Smart Home Alarm Installation | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "texecom-alarm-installation",
+            "status": "live",
+            "name": "Texecom Alarm Installation",
+            "related": "intruder-alarm-installation",
+            "h1": "Texecom Alarm Installation",
+            "seo_title": "Texecom Alarm Installation | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "texecom-intruder-alarm",
+            "status": "live",
+            "name": "Texecom Intruder Alarm",
+            "related": "intruder-alarm-panel",
+            "h1": "Texecom Intruder Alarm",
+            "seo_title": "Texecom Intruder Alarm | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "warehouse-alarm-system",
+            "status": "live",
+            "name": "Warehouse Alarm System",
+            "related": "commercial-intruder-alarm",
+            "h1": "Warehouse Alarm System",
+            "seo_title": "Warehouse Alarm System | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "warehouse-intruder-alarm",
+            "status": "live",
+            "name": "Warehouse Intruder Alarm",
+            "related": "shop-alarm-installation",
+            "h1": "Warehouse Intruder Alarm",
+            "seo_title": "Warehouse Intruder Alarm | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "wired-intruder-alarm",
+            "status": "live",
+            "name": "Wired Intruder Alarm",
+            "related": "wireless-intruder-alarm",
+            "h1": "Wired Intruder Alarm",
+            "seo_title": "Wired Intruder Alarm | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "wired-intruder-alarm-system",
+            "status": "live",
+            "name": "Wired Intruder Alarm System",
+            "related": "intruder-alarm-installation",
+            "h1": "Wired Intruder Alarm System",
+            "seo_title": "Wired Intruder Alarm System | Security systems | North West"
+        },
+        {
+            "category": "Security systems",
+            "lane": "security-systems",
+            "service_type": "intruder-alarm",
+            "slug": "wireless-intruder-alarm",
+            "status": "live",
+            "name": "Wireless Intruder Alarm",
+            "related": "wired-intruder-alarm",
+            "h1": "Wireless Intruder Alarm",
+            "seo_title": "Wireless Intruder Alarm | Security systems | North West"
+        }
+    ]
+}
