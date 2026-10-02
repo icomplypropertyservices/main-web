@@ -1,0 +1,36 @@
+{
+    "live_sitemap": "website/sitemap.xml",
+    "live_tier": "0",
+    "robots": "Tier fragments are not linked from robots.txt. website/data/ is disallowed.",
+    "deploy": "Do not copy these files over sitemap.xml. Do not run netlify deploy --prod.",
+    "tiers": [
+        {
+            "id": "0",
+            "name": "live-compact",
+            "file": "website/sitemap.xml",
+            "includes_coverage_matrix": false,
+            "written_by": "website/bin/generate-sitemap.php"
+        },
+        {
+            "id": "1",
+            "name": "service-hubs",
+            "file": "website/data/coverage/sitemaps/tier-1-hubs.xml",
+            "urls": 71,
+            "rule": "Canonical hub URL for every coverage service. Planning fragment only."
+        },
+        {
+            "id": "2",
+            "name": "area-hubs",
+            "file": "website/data/coverage/sitemaps/tier-2-areas.xml",
+            "urls": 1131,
+            "rule": "One /pages/coverage/areas/{slug} URL per mainland area. Not in the live sitemap."
+        },
+        {
+            "id": "3",
+            "name": "service-area",
+            "file": "website/data/coverage/sitemaps/tier-3-service-area.xml",
+            "urls": 0,
+            "rule": "One /pages/coverage/{service}/{area} URL per cell whose content status is ready. Empty until sibling agents fill a bucket."
+        }
+    ]
+}

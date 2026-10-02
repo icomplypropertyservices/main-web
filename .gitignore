@@ -102,6 +102,10 @@ website/pages/commercial-fit-out/
 website/sitemap-*.xml
 !website/sitemap.xml
 
+# Coverage matrix stubs (virtual routes). Committing them would pull the
+# mainland matrix into the default static export on the next main deploy.
+/website/pages/coverage/
+
 # Netlify static export (generated at build by website/bin/static-export.php)
 /dist/
 

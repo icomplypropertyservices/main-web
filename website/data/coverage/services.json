@@ -1,0 +1,575 @@
+{
+    "generated_by": "website/bin/generate-coverage.php",
+    "note": "Snapshot of coverageCatalogue(). Edit coverageRequiredDefinitions() and re-run the generator. Do not hand-edit prices here — prices live in pricing.json.",
+    "count": 71,
+    "services": [
+        {
+            "slug": "electrical",
+            "label": "Electrical (EICR)",
+            "hub": "/pages/services/electrical",
+            "canonical_service": "electrical",
+            "price_key": "eicr",
+            "group": "core"
+        },
+        {
+            "slug": "gas-safety",
+            "label": "Gas safety",
+            "hub": "/pages/gas-safety-certificate",
+            "canonical_service": "gas-systems",
+            "price_key": "gas",
+            "group": "core"
+        },
+        {
+            "slug": "fire-risk-assessments",
+            "label": "Fire risk assessments (FRA)",
+            "hub": "/pages/services/fire-risk-assessments",
+            "canonical_service": "fire-risk-assessments",
+            "price_key": "fra",
+            "group": "core"
+        },
+        {
+            "slug": "fire-alarms",
+            "label": "Fire alarms",
+            "hub": "/pages/services/fire-alarms",
+            "canonical_service": "fire-alarms",
+            "price_key": null,
+            "group": "core"
+        },
+        {
+            "slug": "emergency-lighting",
+            "label": "Emergency lighting",
+            "hub": "/pages/services/emergency-lighting",
+            "canonical_service": "emergency-lighting",
+            "price_key": null,
+            "group": "core"
+        },
+        {
+            "slug": "cctv",
+            "label": "CCTV",
+            "hub": "/pages/services/cctv",
+            "canonical_service": "cctv",
+            "price_key": null,
+            "group": "core"
+        },
+        {
+            "slug": "access-control",
+            "label": "Access control",
+            "hub": "/pages/services/access-control",
+            "canonical_service": "access-control",
+            "price_key": null,
+            "group": "core"
+        },
+        {
+            "slug": "legionella",
+            "label": "Legionella",
+            "hub": "/pages/services/legionella-risk-assessment",
+            "canonical_service": "legionella-risk-assessment",
+            "price_key": null,
+            "group": "core"
+        },
+        {
+            "slug": "asbestos",
+            "label": "Asbestos",
+            "hub": "/pages/services/asbestos-survey",
+            "canonical_service": "asbestos-survey",
+            "price_key": null,
+            "group": "core"
+        },
+        {
+            "slug": "ev-chargers",
+            "label": "EV chargers",
+            "hub": "/pages/ev-chargers",
+            "canonical_service": "ev-charging",
+            "price_key": null,
+            "group": "hub"
+        },
+        {
+            "slug": "plumbing",
+            "label": "Plumbing",
+            "hub": "/pages/services/plumbing",
+            "canonical_service": "plumbing",
+            "price_key": null,
+            "group": "hub"
+        },
+        {
+            "slug": "water",
+            "label": "Water hygiene",
+            "hub": "/pages/keywords/water-hygiene-testing",
+            "canonical_service": null,
+            "price_key": null,
+            "group": "hub"
+        },
+        {
+            "slug": "security",
+            "label": "Security",
+            "hub": "/shop/security",
+            "canonical_service": null,
+            "price_key": null,
+            "group": "hub"
+        },
+        {
+            "slug": "building",
+            "label": "Building maintenance",
+            "hub": "/pages/services/building-maintenance",
+            "canonical_service": "building-maintenance",
+            "price_key": null,
+            "group": "hub"
+        },
+        {
+            "slug": "emergency",
+            "label": "Emergency",
+            "hub": "/pages/emergency",
+            "canonical_service": null,
+            "price_key": null,
+            "group": "hub"
+        },
+        {
+            "slug": "commercial",
+            "label": "Commercial",
+            "hub": "/pages/commercial",
+            "canonical_service": null,
+            "price_key": null,
+            "group": "hub"
+        },
+        {
+            "slug": "care-homes",
+            "label": "Care homes",
+            "hub": "/pages/care-homes",
+            "canonical_service": null,
+            "price_key": null,
+            "group": "hub"
+        },
+        {
+            "slug": "hmo-compliance-pack",
+            "label": "HMO compliance pack",
+            "hub": "/pages/packages",
+            "canonical_service": null,
+            "price_key": "bundle",
+            "group": "hub"
+        },
+        {
+            "slug": "air-source-heat-pumps",
+            "label": "Air Source Heat Pumps",
+            "hub": "/pages/services/air-source-heat-pumps",
+            "canonical_service": "air-source-heat-pumps",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "aov-air-handling",
+            "label": "AOV & Smoke Control",
+            "hub": "/pages/services/aov-air-handling",
+            "canonical_service": "aov-air-handling",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "bathrooms",
+            "label": "Bathroom Fitting",
+            "hub": "/pages/services/bathrooms",
+            "canonical_service": "bathrooms",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "battery-storage",
+            "label": "Battery Storage",
+            "hub": "/pages/services/battery-storage",
+            "canonical_service": "battery-storage",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "brickwork",
+            "label": "Brickwork & Masonry",
+            "hub": "/pages/services/brickwork",
+            "canonical_service": "brickwork",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "building-surveys",
+            "label": "Building Surveys",
+            "hub": "/pages/services/building-surveys",
+            "canonical_service": "building-surveys",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "carpentry",
+            "label": "Carpentry",
+            "hub": "/pages/services/carpentry",
+            "canonical_service": "carpentry",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "cdm-support",
+            "label": "CDM Support",
+            "hub": "/pages/services/cdm-support",
+            "canonical_service": "cdm-support",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "commercial-fit-out",
+            "label": "Commercial Fit-Out",
+            "hub": "/pages/services/commercial-fit-out",
+            "canonical_service": "commercial-fit-out",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "compliance-consultancy",
+            "label": "Compliance Consultancy",
+            "hub": "/pages/services/compliance-consultancy",
+            "canonical_service": "compliance-consultancy",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "damp-proofing",
+            "label": "Damp Proofing",
+            "hub": "/pages/services/damp-proofing",
+            "canonical_service": "damp-proofing",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "door-entry",
+            "label": "Door Entry Systems",
+            "hub": "/pages/services/door-entry",
+            "canonical_service": "door-entry",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "dry-lining",
+            "label": "Dry Lining",
+            "hub": "/pages/services/dry-lining",
+            "canonical_service": "dry-lining",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "dry-risers",
+            "label": "Dry & Wet Risers",
+            "hub": "/pages/services/dry-risers",
+            "canonical_service": "dry-risers",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "electrics-first-fix",
+            "label": "First Fix Electrical",
+            "hub": "/pages/services/electrics-first-fix",
+            "canonical_service": "electrics-first-fix",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "epc",
+            "label": "Energy Performance Certificates",
+            "hub": "/pages/services/epc",
+            "canonical_service": "epc",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "evacuation-alerts",
+            "label": "Evacuation Alert Systems",
+            "hub": "/pages/services/evacuation-alerts",
+            "canonical_service": "evacuation-alerts",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "extensions",
+            "label": "Home Extensions",
+            "hub": "/pages/services/extensions",
+            "canonical_service": "extensions",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "facilities-management",
+            "label": "Facilities Management Support",
+            "hub": "/pages/services/facilities-management",
+            "canonical_service": "facilities-management",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "fire-compartmentation",
+            "label": "Fire Compartmentation",
+            "hub": "/pages/services/fire-compartmentation",
+            "canonical_service": "fire-compartmentation",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "fire-doors",
+            "label": "Fire Doors",
+            "hub": "/pages/services/fire-doors",
+            "canonical_service": "fire-doors",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "fire-extinguishers",
+            "label": "Fire Extinguishers",
+            "hub": "/pages/services/fire-extinguishers",
+            "canonical_service": "fire-extinguishers",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "fire-signage",
+            "label": "Fire Safety Signage",
+            "hub": "/pages/services/fire-signage",
+            "canonical_service": "fire-signage",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "fire-stopping",
+            "label": "Fire Stopping",
+            "hub": "/pages/services/fire-stopping",
+            "canonical_service": "fire-stopping",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "fire-suppression",
+            "label": "Fire Suppression",
+            "hub": "/pages/services/fire-suppression",
+            "canonical_service": "fire-suppression",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "flooring",
+            "label": "Flooring",
+            "hub": "/pages/services/flooring",
+            "canonical_service": "flooring",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "ground-source-heat-pumps",
+            "label": "Ground Source Heat Pumps",
+            "hub": "/pages/services/ground-source-heat-pumps",
+            "canonical_service": "ground-source-heat-pumps",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "groundworks",
+            "label": "Groundworks",
+            "hub": "/pages/services/groundworks",
+            "canonical_service": "groundworks",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "heating",
+            "label": "Heating Installation",
+            "hub": "/pages/services/heating",
+            "canonical_service": "heating",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "insulation",
+            "label": "Insulation",
+            "hub": "/pages/services/insulation",
+            "canonical_service": "insulation",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "intercoms",
+            "label": "Intercoms",
+            "hub": "/pages/services/intercoms",
+            "canonical_service": "intercoms",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "intruder-alarm",
+            "label": "Intruder Alarms",
+            "hub": "/pages/services/intruder-alarm",
+            "canonical_service": "intruder-alarm",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "joinery",
+            "label": "Joinery",
+            "hub": "/pages/services/joinery",
+            "canonical_service": "joinery",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "kitchen-fire-suppression",
+            "label": "Kitchen Fire Suppression",
+            "hub": "/pages/services/kitchen-fire-suppression",
+            "canonical_service": "kitchen-fire-suppression",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "kitchens",
+            "label": "Kitchen Fitting",
+            "hub": "/pages/services/kitchens",
+            "canonical_service": "kitchens",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "landlord-compliance",
+            "label": "Landlord Compliance",
+            "hub": "/pages/services/landlord-compliance",
+            "canonical_service": "landlord-compliance",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "landscaping",
+            "label": "Landscaping",
+            "hub": "/pages/services/landscaping",
+            "canonical_service": "landscaping",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "loft-conversions",
+            "label": "Loft Conversions",
+            "hub": "/pages/services/loft-conversions",
+            "canonical_service": "loft-conversions",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "nurse-call",
+            "label": "Nurse Call Systems",
+            "hub": "/pages/services/nurse-call",
+            "canonical_service": "nurse-call",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "painting-decorating",
+            "label": "Painting & Decorating",
+            "hub": "/pages/services/painting-decorating",
+            "canonical_service": "painting-decorating",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "pat-testing",
+            "label": "PAT Testing",
+            "hub": "/pages/services/pat-testing",
+            "canonical_service": "pat-testing",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "plastering",
+            "label": "Plastering",
+            "hub": "/pages/services/plastering",
+            "canonical_service": "plastering",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "project-management",
+            "label": "Project Management",
+            "hub": "/pages/services/project-management",
+            "canonical_service": "project-management",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "property-refurbishment-pm",
+            "label": "Refurbishment Project Support",
+            "hub": "/pages/services/property-refurbishment-pm",
+            "canonical_service": "property-refurbishment-pm",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "rendering",
+            "label": "Rendering",
+            "hub": "/pages/services/rendering",
+            "canonical_service": "rendering",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "renovation",
+            "label": "Property Renovation",
+            "hub": "/pages/services/renovation",
+            "canonical_service": "renovation",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "roofing",
+            "label": "Roofing",
+            "hub": "/pages/services/roofing",
+            "canonical_service": "roofing",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "smoke-co-alarms",
+            "label": "Smoke & CO Alarms",
+            "hub": "/pages/services/smoke-co-alarms",
+            "canonical_service": "smoke-co-alarms",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "solar-pv",
+            "label": "Solar Pv",
+            "hub": "/pages/services/solar-pv",
+            "canonical_service": "solar-pv",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "solar-thermal",
+            "label": "Solar Thermal",
+            "hub": "/pages/services/solar-thermal",
+            "canonical_service": "solar-thermal",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "sprinkler-systems",
+            "label": "Sprinkler Systems",
+            "hub": "/pages/services/sprinkler-systems",
+            "canonical_service": "sprinkler-systems",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "tiling",
+            "label": "Tiling",
+            "hub": "/pages/services/tiling",
+            "canonical_service": "tiling",
+            "price_key": null,
+            "group": "catalogue"
+        },
+        {
+            "slug": "windows-doors",
+            "label": "Windows & Doors",
+            "hub": "/pages/services/windows-doors",
+            "canonical_service": "windows-doors",
+            "price_key": null,
+            "group": "catalogue"
+        }
+    ]
+}

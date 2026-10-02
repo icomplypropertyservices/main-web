@@ -2,6 +2,10 @@
 /**
  * Build a single compact sitemap.xml (Google-safe, no keyword×area junk).
  *
+ * Mainland coverage tiers are NOT written here. They live under
+ * website/data/coverage/sitemaps/ and are produced by generate-coverage.php.
+ * Do not point robots.txt at those fragments.
+ *
  * Usage: php bin/generate-sitemap.php
  */
 require_once __DIR__ . '/../config.php';

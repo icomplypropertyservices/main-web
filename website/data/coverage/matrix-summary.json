@@ -1,0 +1,257 @@
+{
+    "generated_by": "website/bin/generate-coverage.php",
+    "non_prod": true,
+    "live_sitemap": "website/sitemap.xml",
+    "live_sitemap_includes_coverage": false,
+    "areas": 1131,
+    "services": 71,
+    "cells": 80301,
+    "buckets": 29,
+    "bucket_size": 40,
+    "content_ready_cells": 0,
+    "pricing": {
+        "eicr": "£249",
+        "gas": "£85",
+        "fra": "£350",
+        "bundle": "£650"
+    },
+    "url_patterns": {
+        "area_hub": "/pages/coverage/areas/{area}",
+        "service_area": "/pages/coverage/{service}/{area}",
+        "index": "/pages/coverage"
+    },
+    "buckets_index": [
+        {
+            "id": "b001",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "abbey-village",
+            "last_area": "antrobus"
+        },
+        {
+            "id": "b002",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "antrobus-village",
+            "last_area": "banks"
+        },
+        {
+            "id": "b003",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "barber-booth",
+            "last_area": "birchover"
+        },
+        {
+            "id": "b004",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "birchwood",
+            "last_area": "briercliffe"
+        },
+        {
+            "id": "b005",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "briercliffe-village",
+            "last_area": "burton"
+        },
+        {
+            "id": "b006",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "burtonwood",
+            "last_area": "cheetham-hill"
+        },
+        {
+            "id": "b007",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "chelford",
+            "last_area": "compstall"
+        },
+        {
+            "id": "b008",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "compstall-village",
+            "last_area": "davenham-village"
+        },
+        {
+            "id": "b009",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "davyhulme",
+            "last_area": "edge"
+        },
+        {
+            "id": "b010",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "edgeley",
+            "last_area": "four-gates"
+        },
+        {
+            "id": "b011",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "four-gates-village",
+            "last_area": "greasby"
+        },
+        {
+            "id": "b012",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "great",
+            "last_area": "harriseahead"
+        },
+        {
+            "id": "b013",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "hart-common",
+            "last_area": "heysham"
+        },
+        {
+            "id": "b014",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "heywood",
+            "last_area": "hoylake"
+        },
+        {
+            "id": "b015",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "huddersfield",
+            "last_area": "kirkby"
+        },
+        {
+            "id": "b016",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "kirkby-lonsdale",
+            "last_area": "little-leigh"
+        },
+        {
+            "id": "b017",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "little-lever",
+            "last_area": "marple-bridge-village"
+        },
+        {
+            "id": "b018",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "marsden",
+            "last_area": "mitton"
+        },
+        {
+            "id": "b019",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "mobberley",
+            "last_area": "newton-le-willows"
+        },
+        {
+            "id": "b020",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "newtown",
+            "last_area": "padiham-village"
+        },
+        {
+            "id": "b021",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "parbold",
+            "last_area": "prestbury"
+        },
+        {
+            "id": "b022",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "prestolee",
+            "last_area": "rostherne-village"
+        },
+        {
+            "id": "b023",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "rowland",
+            "last_area": "seedfield"
+        },
+        {
+            "id": "b024",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "sefton",
+            "last_area": "st-helens"
+        },
+        {
+            "id": "b025",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "stacksteads",
+            "last_area": "thornton-cleveleys"
+        },
+        {
+            "id": "b026",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "thurstaston",
+            "last_area": "walton-le-dale"
+        },
+        {
+            "id": "b027",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "warburton",
+            "last_area": "whittle-village"
+        },
+        {
+            "id": "b028",
+            "status": "open",
+            "agent": null,
+            "area_count": 40,
+            "first_area": "whitworth",
+            "last_area": "wormhill"
+        },
+        {
+            "id": "b029",
+            "status": "open",
+            "agent": null,
+            "area_count": 11,
+            "first_area": "worsley",
+            "last_area": "youlgreave"
+        }
+    ]
+}

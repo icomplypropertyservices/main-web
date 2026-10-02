@@ -1,0 +1,26 @@
+{
+  "eicr": {
+    "label": "EICR",
+    "amount": 249,
+    "display": "£249",
+    "service": "electrical"
+  },
+  "gas": {
+    "label": "Gas safety",
+    "amount": 85,
+    "display": "£85",
+    "service": "gas-safety"
+  },
+  "fra": {
+    "label": "Fire risk assessment",
+    "amount": 350,
+    "display": "£350",
+    "service": "fire-risk-assessments"
+  },
+  "bundle": {
+    "label": "Compliance bundle",
+    "amount": 650,
+    "display": "£650",
+    "service": "hmo-compliance-pack"
+  }
+}

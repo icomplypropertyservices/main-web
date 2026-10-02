@@ -9,6 +9,11 @@ require_once __DIR__ . '/../includes/sitemap.php';
 $xml = icomplyBuildSitemapXml('https://icomplypropertyservices.co.uk');
 $fail = 0;
 
+if (icomplySitemapPathAllowed('/pages/coverage/electrical/abbey-village')) {
+    echo "FAIL: coverage matrix path must stay off the live sitemap\n";
+    $fail++;
+}
+
 if (!str_contains($xml, '<urlset')) {
     echo "FAIL: not a urlset\n";
     $fail++;
@@ -30,6 +35,7 @@ $bannedNeedles = [
     '/pages/epc/stockport</loc>',
     '/pages/emergency-lighting/stockport</loc>',
     '/pages/fire-alarms/liverpool</loc>',
+    '/pages/coverage/',
 ];
 foreach ($bannedNeedles as $n) {
     if (str_contains($xml, $n)) {

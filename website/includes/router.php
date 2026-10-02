@@ -5,6 +5,7 @@
  */
 require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/render.php';
+require_once __DIR__ . '/coverage.php';
 
 /**
  * Normalize request path relative to site root (no leading SITE path prefix).
@@ -89,6 +90,20 @@ function routerDispatchVirtual(string $path): bool {
     // Resource guides: /pages/resources/{slug} → pages/resources/{slug}.php
     if (preg_match('#^/pages/resources/([a-z0-9\-]+)$#', $path, $m) && $m[1] !== 'index') {
         return routerTryFile('/pages/resources/' . $m[1]);
+    }
+
+    // Mainland coverage matrix (no stub files required).
+    if ($path === '/pages/coverage') {
+        renderCoverageIndex();
+        return true;
+    }
+    if (preg_match('#^/pages/coverage/areas/([a-z0-9\-]+)$#', $path, $m)) {
+        renderCoverageAreaHub($m[1]);
+        return true;
+    }
+    if (preg_match('#^/pages/coverage/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m) && $m[1] !== 'areas') {
+        renderCoverageServiceArea($m[1], $m[2]);
+        return true;
     }
 
     // /pages/keywords/{kw}/{area}

@@ -4,11 +4,25 @@
  * areas + manufacturers + keyword hubs + featured electrical/gas keyword×town.
  * Never lists /pages/{service}/{town} (those 404 as sitemap locs).
  * Never dumps the full keyword×area matrix (that 500'd live).
+ * Never lists /pages/coverage/ (mainland matrix tiers live under data/coverage/sitemaps).
  */
 declare(strict_types=1);
 
 if (!defined('SITE_ROOT')) {
     require_once dirname(__DIR__) . '/config.php';
+}
+
+/**
+ * Mainland coverage URLs are tier fragments, not the live sitemap.
+ * They stay unpublished until a bucket's copy is ready.
+ */
+function icomplySitemapPathAllowed(string $path): bool
+{
+    $path = '/' . ltrim(str_replace('\\', '/', $path), '/');
+    if (str_starts_with($path, '/pages/coverage')) {
+        return false;
+    }
+    return true;
 }
 
 /** Paths that 404 or 301 — never list these. */
@@ -87,6 +101,9 @@ function icomplySitemapEntries(): array
         $path = preg_replace('#/index$#i', '', $path) ?? $path;
         if ($path === '') {
             $path = '/';
+        }
+        if (!icomplySitemapPathAllowed($path)) {
+            return;
         }
         if (isset($seen[$path]) || isset($banned[$path])) {
             return;

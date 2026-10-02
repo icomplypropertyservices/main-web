@@ -320,6 +320,10 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         if ($path === '' || $path === '/') {
             continue;
         }
+        // Coverage matrix is opt-in. Default export must not publish it.
+        if (str_starts_with($path, '/pages/coverage') && getenv('ICOMPLY_EXPORT_COVERAGE') !== '1') {
+            continue;
+        }
         if (preg_match('#^/pages/services/([a-z0-9\-]+)$#', $path, $m)
             && !isset(getServices()[$m[1]])) {
             continue;
