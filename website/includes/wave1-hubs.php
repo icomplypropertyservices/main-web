@@ -136,7 +136,7 @@ function wave1QualityHubs(): array
             'crumb' => 'Electrical safety',
             'h1' => 'Electrical safety',
             'h1Accent' => 'for landlords',
-            'lede' => 'A satisfactory EICR is the document the tenancy file wants. Remedials are quoted as found — not buried in a surprise invoice.',
+            'lede' => 'A satisfactory EICR is the document the tenancy file wants. The published list is £249 for a typical North West 6-bed HMO. Other sizes are quoted after we know the boards. Remedials are quoted as found.',
             'honest' => 'The report describes condition on the inspection day. We do not guarantee five quiet years, and we do not sell a pass without the visit.',
             'coverTitle' => 'Fixed installation, coded report',
             'cover' => [
@@ -161,7 +161,7 @@ function wave1QualityHubs(): array
             'formPlaceholder' => 'House / flat / HMO, consumer units, last EICR date…',
             'faqs' => [
                 ['q' => 'Is this the same as PAT?', 'a' => 'No. PAT is appliances. The EICR is the fixed wiring and accessories.'],
-                ['q' => 'Do you publish EICR fees?', 'a' => 'No. Circuit count and access change the job.'],
+                ['q' => 'Do you publish EICR fees?', 'a' => 'One list price: £249 for a typical 6-bed HMO in the North West, all-in, remedials extra. A 1-bed and every commercial EICR are price on application. We confirm the visit before you are booked.'],
             ],
         ],
         'commercial-fire-safety' => [

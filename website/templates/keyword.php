@@ -149,6 +149,14 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
+<?php if (function_exists('eicrLaneIsSlug') && eicrLaneIsSlug($keywordSlug)): ?>
+<section class="bg-zinc-100">
+    <div class="max-w-7xl mx-auto px-6 pb-14">
+        <?= eicrLanePanelHtml('keyword-' . $keywordSlug) ?>
+    </div>
+</section>
+<?php endif; ?>
+
 <!-- MANUFACTURERS -->
 <section class="bg-white border-y-2 border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-14">

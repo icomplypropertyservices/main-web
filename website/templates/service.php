@@ -18,9 +18,9 @@ $serviceName = $SERVICE_NAME;
 
 $serviceFaqs = [
     'electrical' => [
-        ['How often is an EICR required?', 'Landlords typically need an EICR every 5 years (or on change of tenancy). Commercial premises often follow a risk-based schedule of 1–5 years.'],
-        ['Do you offer same-week electrical appointments?', 'Where engineer capacity and site access allow, yes — especially for landlord certificates and urgent remedial work across the North West.'],
-        ['Can you upgrade consumer units and install EV chargers?', 'Yes. We design and install consumer unit upgrades, rewires, EV chargers and commercial electrical works to current regulations with full certification.'],
+        ['How often is an EICR required?', 'In England, private landlords commonly need a satisfactory EICR at least every 5 years, and at a change of tenancy if the existing report has run out. Commercial intervals follow risk and the previous report. This is general guidance, not legal advice.'],
+        ['What is the EICR list price?', '£249 for a typical 6-bed HMO in the North West, all-in. iComply is not VAT registered, so VAT is not added. Remedials are extra. A 1-bed and every commercial EICR are price on application.'],
+        ['Is an EICR the same as PAT or a new-work certificate?', 'No. PAT covers portable appliances. An Electrical Installation Certificate covers new or altered circuits. The EICR reports the condition of the fixed installation already in place.'],
     ],
     'fire-alarms' => [
         ['What is BS 5839 compliance?', 'BS 5839 is the British Standard covering design, installation, commissioning and maintenance of fire detection and alarm systems in buildings.'],
@@ -53,6 +53,9 @@ $blurb = getServiceBlurb($serviceSlug);
 $standards = getServiceStandards($serviceSlug);
 $faqs = $serviceFaqs[$serviceSlug] ?? $serviceFaqs['default'];
 $svcCopy = function_exists('waterAsbestosServiceCopy') ? waterAsbestosServiceCopy($serviceSlug) : null;
+if ($serviceSlug === 'electrical' && function_exists('eicrLaneServiceCopy')) {
+    $svcCopy = eicrLaneServiceCopy();
+}
 
 $popularTowns = array_values(array_filter(
     ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool', 'Bury', 'Sale', 'Altrincham', 'Macclesfield', 'Burnley', 'Blackburn', 'Warrington', 'St Helens'],
@@ -171,6 +174,9 @@ $schema = [
         ],
     ],
 ];
+if ($serviceSlug === 'electrical' && function_exists('eicrLaneOfferSchema')) {
+    $schema['@graph'][] = eicrLaneOfferSchema();
+}
 ?>
 <script type="application/ld+json"><?= json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
 
@@ -308,6 +314,9 @@ $schema = [
         </div>
         <?php endforeach; ?>
     </div>
+    <?php if ($serviceSlug === 'electrical' && function_exists('eicrLanePanelHtml')): ?>
+        <?= eicrLanePanelHtml('electrical-hub') ?>
+    <?php endif; ?>
     <?php if (!empty($svcCopy['sections']) && is_array($svcCopy['sections'])): ?>
     <div class="mt-14 space-y-10 max-w-3xl">
         <?php foreach ($svcCopy['sections'] as $sec): ?>
@@ -512,9 +521,15 @@ $schema = [
     <div class="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-2 gap-10 items-center">
         <div>
             <h2 class="text-3xl font-semibold tracking-tight">Need <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?>?</h2>
-            <p class="mt-3 text-white/75"><?= $poaService
-                ? 'Price on application after we confirm the property and access. Call, WhatsApp or send the form — no invented fee list.'
-                : 'Written quotes after scope. Same-week appointments where capacity allows. Full certification on every job.' ?></p>
+            <p class="mt-3 text-white/75"><?php
+                if (!empty($svcCopy['band'])) {
+                    echo htmlspecialchars((string)$svcCopy['band'], ENT_QUOTES, 'UTF-8');
+                } elseif ($poaService) {
+                    echo 'Price on application after we confirm the property and access. Call, WhatsApp or send the form — no invented fee list.';
+                } else {
+                    echo 'Written quotes after scope. Same-week appointments where capacity allows. Full certification on every job.';
+                }
+            ?></p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Quote for ' . $serviceName) ?>"
                    target="_blank" rel="noopener"

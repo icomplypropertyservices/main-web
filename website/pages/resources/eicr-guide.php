@@ -118,6 +118,13 @@ require SITE_ROOT . '/includes/header.php';
         </div>
 
         <div>
+            <h2 class="text-2xl font-semibold tracking-tight mb-3">What it costs</h2>
+            <?php if (function_exists('eicrLanePanelHtml')): ?>
+                <?= eicrLanePanelHtml('eicr-guide') ?>
+            <?php endif; ?>
+        </div>
+
+        <div>
             <h2 class="text-2xl font-semibold tracking-tight mb-3">Related Icomply services</h2>
             <div class="flex flex-wrap gap-2 not-prose">
                 <a href="<?= url('/pages/services/electrical.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Electrical services</a>

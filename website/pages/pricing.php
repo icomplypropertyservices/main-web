@@ -35,43 +35,43 @@ $categories = [
         'name' => 'Electrical & EICR',
         'icon' => '⚡',
         'service_slug' => 'electrical',
-        'intro' => 'BS 7671 inspection, testing and certification. Circuit count, age of installation and access drive the final price.',
+        'intro' => 'One published EICR list price: £249 for a typical North West 6-bed HMO. Other domestic sizes, commercial sites and remedials are price on application.',
         'items' => [
             [
-                'name' => 'EICR — 1-bed flat / small studio',
-                'from' => '£129',
-                'typical' => 'Guide for a compact flat with a standard consumer unit and straightforward access.',
-                'includes' => 'Visual inspection, circuit testing, BS 7671 report & certificate',
-            ],
-            [
-                'name' => 'EICR — 2–3 bed house',
-                'from' => '£159',
-                'typical' => 'Most common landlord / homeowner scope in Greater Manchester stock.',
-                'includes' => 'Full installation condition report, C1/C2/FI coding, digital certificate',
-            ],
-            [
-                'name' => 'EICR — 4+ bed / large house',
-                'from' => '£219',
-                'typical' => 'Larger domestic properties with more circuits or outbuildings.',
-                'includes' => 'Extended circuit schedule, report & recommendations',
-            ],
-            [
-                'name' => 'EICR — small commercial / multi-let',
+                'name' => 'EICR — typical 6-bed HMO, North West',
                 'from' => '£249',
-                'typical' => 'Shops, small offices, HMOs — often POA once board layout is known.',
-                'includes' => 'Commercial-grade report suitable for insurers & managing agents',
+                'typical' => 'Approved list for that scope (code ELEC-EICR-6BED-NW). All-in; we are not VAT registered. Confirmed before booking. Not a price for other property sizes.',
+                'includes' => 'Inspection, testing and the EICR. Remedials and parts are quoted after the report.',
+            ],
+            [
+                'name' => 'EICR — 1-bed / small dwelling',
+                'from' => 'POA',
+                'typical' => 'No list price. We confirm a figure after the property is known.',
+                'includes' => 'Inspection and report once scope is agreed',
+            ],
+            [
+                'name' => 'EICR — commercial',
+                'from' => 'POA',
+                'typical' => 'No list price. Boards, circuits and access are confirmed first.',
+                'includes' => 'Inspection and report for the agreed commercial scope',
+            ],
+            [
+                'name' => 'EICR remedials (C1, C2, FI)',
+                'from' => 'POA',
+                'typical' => 'Priced from the coded report. Not included in the £249 list.',
+                'includes' => 'Agreed repairs, then a retest of the affected circuits',
             ],
             [
                 'name' => 'PAT testing (portable appliances)',
-                'from' => '£49',
-                'typical' => 'Call-out / first batch guide; per-item rates apply on larger inventories.',
-                'includes' => 'Testing, labelling & schedule of results',
+                'from' => 'POA',
+                'typical' => 'Priced after an approximate item count. PAT is not an EICR.',
+                'includes' => 'Testing, labelling and a schedule of results',
             ],
             [
                 'name' => 'Consumer unit upgrade (domestic)',
-                'from' => '£450',
-                'typical' => 'Varies heavily with board type, RCD/RCBO layout and rewiring needed.',
-                'includes' => 'Supply, install, certification (parts & labour scoped on quote)',
+                'from' => 'POA',
+                'typical' => 'Board type and any rewiring are confirmed on survey. No published list price on this page.',
+                'includes' => 'Supply, install and the certificate for the agreed work',
             ],
         ],
     ],
@@ -221,10 +221,10 @@ $categories = [
         'intro' => 'Combining certificates and services on one visit often reduces total cost versus booking separately.',
         'items' => [
             [
-                'name' => 'Landlord essentials (EICR + gas safety)',
-                'from' => '£199',
-                'typical' => 'Guide where both can be coordinated on the same property access day.',
-                'includes' => 'EICR + CP12 scoped together — see Packages for full bundles',
+                'name' => 'EICR alongside other landlord certificates',
+                'from' => 'POA',
+                'typical' => 'The EICR list is £249 for a typical North West 6-bed HMO. A combined visit is confirmed in writing. This page does not publish a cheaper bundle.',
+                'includes' => 'Scope agreed before attendance',
             ],
             [
                 'name' => 'Fire + emergency lighting service visit',
@@ -416,6 +416,11 @@ require SITE_ROOT . '/includes/header.php';
                 </li>
                 <?php endforeach; ?>
             </ul>
+            <?php if ($cat['id'] === 'electrical' && function_exists('eicrLanePanelHtml')): ?>
+                <div class="px-5 md:px-6 py-6 border-t bg-white">
+                    <?= eicrLanePanelHtml('pricing') ?>
+                </div>
+            <?php endif; ?>
             <div class="px-5 md:px-6 py-4 bg-zinc-50 border-t flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <p class="text-xs text-zinc-500">All amounts are guide estimates for straightforward North West jobs. Fixed quote on request.</p>
                 <a href="#quote" class="inline-flex justify-center px-5 py-2.5 rounded-2xl bg-[#0B1F3A] hover:bg-[#ff6b00] text-white text-sm font-semibold transition"

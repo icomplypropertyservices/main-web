@@ -334,6 +334,9 @@ function getMajorKeywords(): array {
         if (!empty($meta['faq']) && is_array($meta['faq'])) {
             $row['faq'] = $meta['faq'];
         }
+        if (function_exists('eicrLaneOverlayKeyword')) {
+            $row = eicrLaneOverlayKeyword($slug, $row);
+        }
         $normalized[$slug] = $row;
     }
     return $normalized;
@@ -392,9 +395,8 @@ function getElectricalGasMatrixKeywordSlugs(): array {
 function getElectricalGasFeaturedKeywordSlugs(): array {
     return [
         'electrical' => [
-            'rewire', 'domestic-rewire', 'house-rewire', 'partial-rewire',
-            'consumer-unit', 'fuse-board', 'eicr', 'emergency-electrician',
-            'price-of-rewire', 'electrician',
+            'eicr', 'eicr-testing', 'landlord-eicr', 'domestic-eicr', 'commercial-eicr',
+            'eicr-report', 'eicr-certificate', 'eicr-cost', 'eicr-price', 'fixed-wire-testing',
         ],
         'gas' => [
             'boiler', 'boiler-install', 'boiler-repair', 'cp12', 'gas-safety',
@@ -711,6 +713,10 @@ function icomplyTradeProductsUrl(): string
 $waFile = __DIR__ . '/includes/water-asbestos.php';
 if (is_file($waFile)) {
     require_once $waFile;
+}
+$eicrLaneFile = __DIR__ . '/includes/eicr-lane.php';
+if (is_file($eicrLaneFile)) {
+    require_once $eicrLaneFile;
 }
 
 // Back-compat globals used by some templates/includes

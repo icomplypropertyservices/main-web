@@ -186,6 +186,8 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                     Every guide has a dedicated page for each North West area — e.g.
                     <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/keywords/eicr-report/stockport.php') ?>">EICR report in Stockport</a>,
                     <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/keywords/eicr/manchester.php') ?>">EICR in Manchester</a>.
+                    The published EICR list is <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/services/electrical.php') ?>#eicr-lane">£249 for a typical North West 6-bed HMO</a>
+                    — other sizes are price on application.
                 </p>
             </div>
             <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All <?= number_format($kwCount) ?>+ guides →</a>

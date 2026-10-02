@@ -18,6 +18,7 @@ Official rules for the electrical + gas keyword expansion.
 ## Copy / POA
 
 - Cost, price, quote and “how much” keywords always say **POA**. Never invent a £ figure.
+- Exception: EICR list price **£249** is approved for a typical North West 6-bed HMO only (`ELEC-EICR-6BED-NW`). 1-bed and commercial EICRs stay POA. No other invented electrical fees.
 - UK English, Stockport / North West. No fake accreditations, reviews or prices.
 
 ## HMO packages

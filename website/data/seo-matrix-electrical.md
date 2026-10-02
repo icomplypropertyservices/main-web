@@ -8,6 +8,8 @@ Each slug **must** have:
 
 Cost / price / quote slugs are **POA only**. Never invent a £ figure.
 
+Exception — EICR testing lane: the approved list price is **£249** for a typical North West 6-bed HMO only (code `ELEC-EICR-6BED-NW`), all-in, remedials extra. 1-bed and commercial EICRs stay POA. Do not publish any other EICR pound figure.
+
 Sitemap must **not** list the full keyword×area matrix (P090 / anti-junk).
 See `seo-matrix-rollout-notes.md`.
 

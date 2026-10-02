@@ -20,7 +20,14 @@ $faqs = [
     [
         'cat' => 'Electrical & EICR',
         'q' => 'What is an EICR and how often do I need one?',
-        'a' => 'An Electrical Installation Condition Report (EICR) is a formal inspection and test of the fixed wiring in a property against BS 7671. Landlords in England typically need a satisfactory EICR at least every 5 years (or sooner if the report recommends it), and when a new tenancy starts if the existing report has expired. Commercial and higher-risk premises may require more frequent testing. We issue clear certificates and remedial quotes where C1/C2/FI codes appear.',
+        'a' => 'An Electrical Installation Condition Report (EICR) is a formal inspection and test of the fixed wiring in a property against BS 7671. Landlords in England commonly need a satisfactory report at least every 5 years, and when a new tenancy starts if the existing report has expired. Commercial intervals follow risk and the last report. C1, C2 and FI items are quoted as remedials after the visit. This is general guidance, not legal advice.',
+        'link' => ['/pages/services/electrical.php', 'Electrical testing hub'],
+    ],
+    [
+        'cat' => 'Electrical & EICR',
+        'q' => 'How much is an EICR?',
+        'a' => 'The published list price is £249 for a typical 6-bed HMO in the North West (code ELEC-EICR-6BED-NW), per property, all-in. iComply is not VAT registered, so VAT is not added. Remedials and parts are extra. A 1-bed and every commercial EICR are price on application. We confirm the figure before you are booked.',
+        'link' => ['/pages/keywords/eicr-cost.php', 'EICR cost'],
     ],
     [
         'cat' => 'Electrical & EICR',

@@ -1,8 +1,8 @@
 {
     "electrical": {
-        "blurb": "EICR, rewires, consumer units, EV chargers, PAT and commercial electrical installs to BS 7671.",
-        "short": "EICR, rewires, EV chargers, PAT & commercial installs",
-        "standards": "BS 7671 (18th Edition) · EICR · Part P · EV charger regs"
+        "blurb": "EICR inspection and testing to BS 7671. List price £249 for a typical North West 6-bed HMO. Other sizes and commercial EICRs are price on application. Remedials are quoted after the report.",
+        "short": "EICR £249 for a typical 6-bed HMO",
+        "standards": "BS 7671 · EICR inspection and testing · remedials quoted separately"
     },
     "fire-alarms": {
         "blurb": "BS 5839 design, install, service and certification for addressable, conventional and wireless systems.",
