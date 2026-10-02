@@ -1,4 +1,11 @@
 {
+    "ev-chargers": {
+        "blurb": "Home, workplace and landlord EV charge points. Survey, BS 7671 Section 722 install, certification and load management. POA after we see the supply and the bay.",
+        "short": "EV charge points — survey, install, certify, POA",
+        "standards": "BS 7671 Section 722 · manufacturer instructions · DNO notice when required",
+        "pricing": "POA",
+        "hero_accent": "Surveyed, installed, certificated. POA."
+    },
     "electrical": {
         "blurb": "EICR, rewires, consumer units, EV chargers, PAT and commercial electrical installs to BS 7671.",
         "short": "EICR, rewires, EV chargers, PAT & commercial installs",

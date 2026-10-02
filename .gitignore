@@ -30,6 +30,8 @@ website/data/leads.json
 website/pages/keywords/*/
 website/pages/keywords/*.php
 !website/pages/keywords/index.php
+# EV chargers job lane hubs (slugs contain ev-charg). Town folders stay ignored.
+!website/pages/keywords/*ev-charg*.php
 website/pages/areas/*.php
 !website/pages/areas/index.php
 website/pages/manufacturers/*.php

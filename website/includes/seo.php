@@ -37,6 +37,7 @@ function seo_title(string $title): string {
 function service_standards(string $slug): array {
     $map = [
         'electrical' => ['BS 7671', 'EICR', 'PAT testing', 'Part P', 'NICEIC-aligned practice', 'EV charger install'],
+        'ev-chargers' => ['BS 7671 Section 722', 'load management', 'DNO notification', 'POA', 'home and workplace charge points'],
         'fire-alarms' => ['BS 5839', 'fire detection', 'L1–L5 categories', 'addressable systems', 'commissioning certificates'],
         'emergency-lighting' => ['BS 5266', 'maintained / non-maintained', 'exit signage', 'duration testing', 'self-test LED'],
         'aov-air-handling' => ['BS 9991 guidance', 'smoke ventilation', 'AOV controls', 'smoke shafts', 'fire strategy support'],
@@ -89,6 +90,11 @@ function seo_combo_process(string $serviceName, string $area): array {
 function service_faqs(string $slug, string $serviceName, string $area = ''): array {
     $loc = $area !== '' ? " in {$area}" : ' across the North West';
     $base = [
+        'ev-chargers' => [
+            ['q' => "Do you publish EV charger prices{$loc}?", 'a' => "No. Charge-point work is POA after a survey of supply, earthing and the bay. Enquire and we send a written figure."],
+            ['q' => "What does an EV charger install include{$loc}?", 'a' => "A dedicated circuit, protection to BS 7671 Section 722, the agreed charge point, testing and the electrical certificate for that work."],
+            ['q' => "Can you add workplace or landlord bays{$loc}?", 'a' => "Yes. Shared supplies use load management where the intake requires it. Apartment blocks need the freeholder or agent to instruct us."],
+        ],
         'electrical' => [
             ['q' => "How often do I need an EICR{$loc}?", 'a' => "Most rented homes need an EICR at least every 5 years (or on change of tenancy). Commercial intervals depend on risk and insurer requirements — we advise based on the property type{$loc}."],
             ['q' => "Do you offer same-week electrical work{$loc}?", 'a' => "Yes where diary capacity allows. Emergency fault-finding and consumer unit issues are prioritised for {$area} and surrounding postcodes."],

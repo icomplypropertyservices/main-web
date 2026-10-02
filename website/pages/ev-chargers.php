@@ -212,7 +212,8 @@ require SITE_ROOT . '/includes/header.php';
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Solar / generation integration advice (e.g. Myenergi)</li>
             </ul>
             <div class="mt-8 flex flex-wrap gap-3">
-                <a href="<?= url('/pages/services/electrical.php') ?>" class="px-6 py-3 rounded-2xl bg-[#0B1F3A] text-white text-sm font-semibold hover:bg-[#ff6b00] transition">Electrical services</a>
+                <a href="<?= url('/pages/services/ev-chargers.php') ?>" class="px-6 py-3 rounded-2xl bg-[#0B1F3A] text-white text-sm font-semibold hover:bg-[#ff6b00] transition">EV chargers service</a>
+                <a href="<?= url('/pages/services/electrical.php') ?>" class="px-6 py-3 rounded-2xl border border-zinc-300 text-sm font-semibold hover:border-[#ff6b00] transition">Electrical services</a>
                 <a href="<?= url('/pages/keywords/ev-charger-installation.php') ?>" class="px-6 py-3 rounded-2xl border border-zinc-300 text-sm font-semibold hover:border-[#ff6b00] transition">EV install guide</a>
                 <a href="<?= url('/pages/manufacturers/index.php') ?>" class="px-6 py-3 rounded-2xl border border-zinc-300 text-sm font-semibold hover:border-[#ff6b00] transition">All manufacturers</a>
             </div>

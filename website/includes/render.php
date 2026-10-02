@@ -178,6 +178,31 @@ function keywordTemplatePlaceholders(
     $svcImg = url('/assets/images/services/' . $serviceSlug . '.jpg');
     // Prefer keyword image path; template onerror falls back to service
 
+    $faqLd = '';
+    if ($serviceSlug === 'ev-chargers' && !empty($meta['faq']) && is_array($meta['faq'])) {
+        $entities = [];
+        foreach ($meta['faq'] as $faq) {
+            if (!is_array($faq) || count($faq) < 2) {
+                continue;
+            }
+            $entities[] = [
+                '@type' => 'Question',
+                'name' => (string)$faq[0],
+                'acceptedAnswer' => [
+                    '@type' => 'Answer',
+                    'text' => (string)$faq[1],
+                ],
+            ];
+        }
+        if ($entities) {
+            $faqLd = (string)json_encode([
+                '@context' => 'https://schema.org',
+                '@type' => 'FAQPage',
+                'mainEntity' => $entities,
+            ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        }
+    }
+
     return [
         'KEYWORD_NAME' => $name,
         'KEYWORD_SLUG' => $slug,
@@ -194,6 +219,9 @@ function keywordTemplatePlaceholders(
         'KEYWORD_FAQ_HTML' => $faqHtml,
         'KEYWORD_IMAGE' => $kwImg,
         'SERVICE_IMAGE' => $svcImg,
+        'KEYWORD_SEO_TITLE' => (string)($meta['seo_title'] ?? ''),
+        'KEYWORD_H1' => (string)($meta['h1'] ?? ''),
+        'KEYWORD_FAQ_LDJSON' => $faqLd,
     ];
 }
 

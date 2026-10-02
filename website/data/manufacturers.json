@@ -27,6 +27,14 @@
             "Click Scolmore",
             "NAPIT Approved Equipment"
         ],
+        "ev-chargers": [
+            "Rolec EV",
+            "Myenergi",
+            "Easee",
+            "Ohme",
+            "Wallbox",
+            "Garo"
+        ],
         "fire-alarms": [
             "Kentec",
             "Advanced Electronics",
@@ -6847,6 +6855,11 @@
             "electrical-installation",
             "eicr",
             "ev-charger-installation"
+        ],
+        "ev-chargers": [
+            "ev-charger-installation",
+            "home-ev-charger",
+            "commercial-ev-charging"
         ],
         "fire-alarms": [
             "fire-alarm-panel",

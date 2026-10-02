@@ -24,6 +24,9 @@ jobs:
           php-version: "8.3"
           coverage: none
 
+      - name: EV chargers job lane
+        run: php website/bin/check-ev-chargers-pages.php
+
       - name: SEO matrix + sitemap hygiene
         env:
           SITE_URL: https://icomplypropertyservices.co.uk

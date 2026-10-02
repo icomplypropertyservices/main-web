@@ -336,6 +336,9 @@ function getMajorKeywords(): array {
         }
         $normalized[$slug] = $row;
     }
+    if (function_exists('evChargersJobsApply')) {
+        $normalized = evChargersJobsApply($normalized);
+    }
     return $normalized;
 }
 
@@ -452,6 +455,7 @@ function getPopularKeywordSlugs(): array {
         'nurse-call-system', 'landlord-compliance',
         'legionella-risk-assessment', 'legionella-testing', 'water-hygiene-testing',
         'asbestos-survey', 'asbestos-testing', 'asbestos-management-survey',
+        'ev-charger-installation', 'home-ev-charger', 'commercial-ev-charging',
     ];
     $all = getMajorKeywords();
     $out = [];
@@ -711,6 +715,10 @@ function icomplyTradeProductsUrl(): string
 $waFile = __DIR__ . '/includes/water-asbestos.php';
 if (is_file($waFile)) {
     require_once $waFile;
+}
+$evChargersFile = __DIR__ . '/includes/ev-chargers-jobs.php';
+if (is_file($evChargersFile)) {
+    require_once $evChargersFile;
 }
 
 // Back-compat globals used by some templates/includes

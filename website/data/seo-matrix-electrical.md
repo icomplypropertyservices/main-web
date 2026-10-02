@@ -11,7 +11,9 @@ Cost / price / quote slugs are **POA only**. Never invent a £ figure.
 Sitemap must **not** list the full keyword×area matrix (P090 / anti-junk).
 See `seo-matrix-rollout-notes.md`.
 
-## Keywords (113)
+EV charger keywords are owned by the EV chargers job lane (`service=ev-chargers`): commercial EV charging, EV charger installation, and home EV charger. They are not part of this electrical list.
+
+## Keywords (110)
 
 - `24-hour-emergency-electrician` — 24 Hour Emergency Electrician
 - `additional-socket` — Additional Socket
@@ -25,7 +27,6 @@ See `seo-matrix-rollout-notes.md`.
 - `commercial-eicr` — Commercial EICR
 - `commercial-electrical-maintenance` — Commercial Electrical Maintenance
 - `commercial-electrician` — Commercial Electrician
-- `commercial-ev-charging` — Commercial EV Charging
 - `consumer-unit` — Consumer Unit
 - `consumer-unit-cost` — Consumer Unit Cost — POA
 - `consumer-unit-replacement` — Consumer Unit Replacement
@@ -72,7 +73,6 @@ See `seo-matrix-rollout-notes.md`.
 - `emergency-electrician-cost` — Emergency Electrician Cost — POA
 - `emergency-lighting-electrical-works` — Emergency Lighting Electrical Works
 - `energy-efficient-lighting` — Energy Efficient Lighting
-- `ev-charger-installation` — EV Charger Installation
 - `fixed-wire-testing` — Fixed Wire Testing
 - `full-house-rewire` — Full House Rewire
 - `fuse-board` — Fuse Board
@@ -82,7 +82,6 @@ See `seo-matrix-rollout-notes.md`.
 - `generator-installation` — Generator Installation
 - `hmo-electrical-certificate` — HMO Electrical Certificate
 - `home-electrical-upgrade` — Home Electrical Upgrade
-- `home-ev-charger` — Home EV Charger
 - `house-rewire` — House Rewire
 - `industrial-electrical-maintenance` — Industrial Electrical Maintenance
 - `industrial-electrical-services` — Industrial Electrical Services
