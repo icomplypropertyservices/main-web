@@ -233,7 +233,7 @@ $schema = [
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Services in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></div>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Everything we do locally</h2>
-                <p class="mt-2 text-zinc-600 max-w-xl">Open a live service hub — electrical and gas open a keyword page, and AOV opens a local smoke-control page for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>.</p>
+                <p class="mt-2 text-zinc-600 max-w-xl">Open a live service hub — electrical and gas open a keyword page. AOV opens a local smoke-control page when <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> has more than 10,000 people.</p>
             </div>
             <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All service hubs →</a>
         </div>

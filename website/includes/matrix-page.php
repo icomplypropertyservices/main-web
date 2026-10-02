@@ -177,11 +177,24 @@ function icomplyMatrixChromeEnd(): string
         . '</div></footer>' . $popup . '</body></html>';
 }
 
-function icomplyMatrixAreaChips(string $hrefPrefix): string
+function icomplyAovAreaPairs(): array
+{
+    $pairs = [];
+    if (!function_exists('getAovNationwideAreas')) {
+        return $pairs;
+    }
+    foreach (getAovNationwideAreas() as $area) {
+        $pairs[] = ['name' => (string)$area, 'slug' => areaSlug((string)$area)];
+    }
+    return $pairs;
+}
+
+function icomplyMatrixAreaChips(string $hrefPrefix, ?array $areaPairs = null): string
 {
     $s = icomplyMatrixShared();
+    $areas = $areaPairs ?? $s['areas'];
     $html = '<div class="chip-cloud">';
-    foreach ($s['areas'] as $a) {
+    foreach ($areas as $a) {
         $href = $hrefPrefix . $a['slug'];
         $html .= '<a class="area-chip" href="' . icomplyMatrixH($href) . '">' . icomplyMatrixH($a['name']) . '</a>';
     }
@@ -215,6 +228,9 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
     $svcSlug = (string)($meta['service'] ?? 'electrical');
     $svcName = $s['services'][$svcSlug] ?? keywordDisplayName($svcSlug);
     $areaSlugVal = areaSlug($areaName);
+    $areaPairs = (function_exists('isAovNationwideService') && isAovNationwideService($svcSlug))
+        ? icomplyAovAreaPairs()
+        : $s['areas'];
     $poa = function_exists('isPoaService') && isPoaService($svcSlug);
     $priceLine = $poa
         ? 'Price on application after we confirm property type, access and scope. No catalogue fee.'
@@ -272,9 +288,12 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         . icomplyMatrixH(url('/pages/areas/' . $areaSlugVal)) . '">' . icomplyMatrixH($areaName) . '</a></p>'
         . '</article>';
 
+    $townLabel = (function_exists('isAovNationwideService') && isAovNationwideService($svcSlug))
+        ? 'towns and cities with more than 10,000 people'
+        : 'towns — full list, not a short subset';
     $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($kwName) . ' in every area we cover</h2>'
-        . '<p class="text-sm text-zinc-600 mb-4">' . count($s['areas']) . ' towns — full list, not a short subset.</p>'
-        . icomplyMatrixAreaChips(url('/pages/keywords/' . $keywordSlug . '/') )
+        . '<p class="text-sm text-zinc-600 mb-4">' . count($areaPairs) . ' ' . icomplyMatrixH($townLabel) . '.</p>'
+        . icomplyMatrixAreaChips(url('/pages/keywords/' . $keywordSlug . '/'), $areaPairs)
         . '</section>';
 
     $html .= '<section><h2 class="text-2xl font-semibold mb-3">All ' . icomplyMatrixH($svcName) . ' keyword guides</h2>'
@@ -295,6 +314,9 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     }
     $svcName = $s['services'][$serviceSlug];
     $areaSlugVal = areaSlug($areaName);
+    $areaPairs = (function_exists('isAovNationwideService') && isAovNationwideService($serviceSlug))
+        ? icomplyAovAreaPairs()
+        : $s['areas'];
     $poa = function_exists('isPoaService') && isPoaService($serviceSlug);
     $priceLine = $poa
         ? 'Price on application after scope. No invented catalogue price.'
@@ -336,9 +358,12 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         . icomplyMatrixH(url('/pages/areas/' . $areaSlugVal)) . '">' . icomplyMatrixH($areaName) . '</a></p>'
         . '</article>';
 
+    $townLabel = (function_exists('isAovNationwideService') && isAovNationwideService($serviceSlug))
+        ? 'towns and cities with more than 10,000 people (Census 2021, England and Wales, including London boroughs)'
+        : 'towns';
     $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($svcName) . ' in every area</h2>'
-        . '<p class="text-sm text-zinc-600 mb-4">' . count($s['areas']) . ' towns.</p>'
-        . icomplyMatrixAreaChips(url('/pages/' . $serviceSlug . '/'))
+        . '<p class="text-sm text-zinc-600 mb-4">' . count($areaPairs) . ' ' . icomplyMatrixH($townLabel) . '.</p>'
+        . icomplyMatrixAreaChips(url('/pages/' . $serviceSlug . '/'), $areaPairs)
         . '</section>';
 
     $html .= '<section><h2 class="text-2xl font-semibold mb-3">All keywords for this service</h2>'

@@ -6,10 +6,11 @@
  *   php bin/generate-keyword-area-pages.php
  *   php bin/generate-keyword-area-pages.php --only=eicr,eicr-report
  *   php bin/generate-keyword-area-pages.php --limit-keywords=10
+ *   php bin/generate-keyword-area-pages.php --only=aov-installation --areas-json=data/aov-nationwide-areas.json
  */
 require_once __DIR__ . '/../config.php';
 
-$options = getopt('', ['only::', 'limit-keywords::']);
+$options = getopt('', ['only::', 'limit-keywords::', 'areas-json::']);
 $only = [];
 if (!empty($options['only'])) {
     $only = array_filter(array_map('keywordSlug', explode(',', $options['only'])));
@@ -30,7 +31,9 @@ if ($limitKw > 0) {
     $keywords = array_slice($keywords, 0, $limitKw, true);
 }
 
-$areas = getAreas();
+$areas = !empty($options['areas-json'])
+    ? areaNamesFromJsonFile((string)$options['areas-json'])
+    : getAreas();
 $baseDir = SITE_ROOT . '/pages/keywords';
 if (!is_dir($baseDir)) {
     mkdir($baseDir, 0755, true);

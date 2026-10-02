@@ -209,27 +209,41 @@ function renderKeywordAreaPage(string $keywordSlug, string $area): void {
         icomplyRequestExit();
         return;
     }
-    $areas = getAreas();
+    $meta = $keywords[$keywordSlug];
+    $services = getServices();
+    $serviceSlug = $meta['service'] ?? 'electrical';
+    $aovTown = function_exists('isAovNationwideService') && isAovNationwideService($serviceSlug);
+    $areas = $aovTown && function_exists('getAovNationwideAreas') ? getAovNationwideAreas() : getAreas();
     // Accept display name or slug for area
     $areaName = $area;
     $areaSlugVal = areaSlug($area);
     $found = false;
-    foreach ($areas as $a) {
-        if (areaSlug($a) === $areaSlugVal || strcasecmp($a, $area) === 0) {
-            $areaName = $a;
-            $areaSlugVal = areaSlug($a);
-            $found = true;
-            break;
+    if ($aovTown && function_exists('aovNationwideCanonicalName')) {
+        $canonical = aovNationwideCanonicalName($area);
+        if ($canonical === null) {
+            http_response_code(404);
+            echo 'Area not found';
+            icomplyRequestExit();
+            return;
+        }
+        $areaName = $canonical;
+        $areaSlugVal = areaSlug($canonical);
+        $found = true;
+    }
+    if (!$found) {
+        foreach ($areas as $a) {
+            if (areaSlug($a) === $areaSlugVal || strcasecmp($a, $area) === 0) {
+                $areaName = $a;
+                $areaSlugVal = areaSlug($a);
+                $found = true;
+                break;
+            }
         }
     }
     if (!$found) {
         // Still allow if slug-like string
         $areaName = keywordDisplayName($areaSlugVal);
     }
-
-    $meta = $keywords[$keywordSlug];
-    $services = getServices();
-    $serviceSlug = $meta['service'] ?? 'electrical';
     $serviceName = $services[$serviceSlug] ?? keywordDisplayName($serviceSlug);
     $relatedSlug = keywordSlug($meta['related'] ?? $keywordSlug);
     $relatedName = $keywords[$relatedSlug]['name'] ?? keywordDisplayName($relatedSlug);

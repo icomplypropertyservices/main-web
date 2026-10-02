@@ -33,13 +33,30 @@ $ok = static function (bool $cond, string $msg) use (&$pass, &$fail): void {
     }
 };
 
-$areas = getAreas();
+$areas = getAovNationwideAreas();
+$records = getAovNationwideAreaRecords();
 $aovKw = getKeywordsForService('aov-air-handling');
 $matrix = getAovMatrixKeywordSlugs();
 $featured = getAovFeaturedKeywordSlugs();
 $adjacent = getFireProtectionAdjacentServices();
 
-$ok(count($areas) >= 150, 'areas=' . count($areas));
+$ok(count($areas) >= 850, 'pop>10k towns=' . count($areas));
+$under = [];
+$birmingham = null;
+foreach ($records as $row) {
+    $pop = (int)($row['population'] ?? 0);
+    if ($pop <= 10000) {
+        $under[] = (string)($row['name'] ?? '');
+    }
+    if (($row['name'] ?? '') === 'Birmingham') {
+        $birmingham = $pop;
+    }
+}
+$ok($under === [], 'every listed town is over 10000');
+$ok($birmingham === 1121375, 'Birmingham population is the Census 2021 figure');
+$ok(in_array('Cardiff', $areas, true) && in_array('Westminster', $areas, true), 'Wales and London boroughs are included');
+$ok(!in_array('Whalley', $areas, true) && !in_array('Holmes Chapel', $areas, true) && !in_array('City of London', $areas, true), 'sub-10k places stay out');
+$ok(aovNationwideCanonicalName('Cheadle') === 'Cheadle (Stockport)', 'Cheadle alias resolves to the Stockport built-up area');
 $ok(count($aovKw) >= 60, 'aov keywords=' . count($aovKw));
 $ok(count($matrix) === count($aovKw), 'matrix slugs match keyword catalogue');
 $ok(isAovNationwideService('aov-air-handling'), 'aov-air-handling is the nationwide service');
@@ -62,19 +79,27 @@ $ok($expectServiceArea >= 150, "service×area count={$expectServiceArea}");
 $ok($expectKeywordArea >= 60 * count($areas), "keyword×area count={$expectKeywordArea}");
 
 $exportSrc = (string)file_get_contents(__DIR__ . '/static-export.php');
-$ok(str_contains($exportSrc, 'getAovMatrixKeywordSlugs'), 'static-export wires AOV keyword×all areas');
+$ok(str_contains($exportSrc, 'getAovNationwideAreas'), 'static-export uses the pop>10k town list');
 $ok(str_contains($exportSrc, 'getAovNationwideServices'), 'static-export wires AOV service×area');
 
 $local = exportedServiceLocalUrl('aov-air-handling', 'Stockport', 'area');
 $ok(str_contains($local, '/pages/aov-air-handling/stockport'), 'area chrome links AOV service×town');
+$birminghamUrl = exportedServiceLocalUrl('aov-air-handling', 'Birmingham', 'service');
+$ok(str_contains($birminghamUrl, '/pages/aov-air-handling/birmingham'), 'Birmingham has an AOV service page');
+$smallUrl = exportedServiceLocalUrl('aov-air-handling', 'Whalley', 'area');
+$ok(!str_contains($smallUrl, '/whalley'), 'Whalley does not get an AOV town page');
+$cheadleUrl = exportedServiceLocalUrl('aov-air-handling', 'Cheadle', 'area');
+$ok(str_contains($cheadleUrl, '/pages/aov-air-handling/cheadle-stockport'), 'Cheadle links to the Stockport built-up area page');
 $elec = exportedServiceLocalUrl('electrical', 'Stockport', 'area');
 $ok(!str_contains($elec, '/pages/electrical/stockport'), 'electrical still avoids thin service×town');
 
 putenv('ICOMPLY_STATIC_EXPORT=1');
 $_ENV['ICOMPLY_STATIC_EXPORT'] = '1';
 $_SERVER['ICOMPLY_STATIC_EXPORT'] = '1';
-$matrixHtml = icomplyRenderServiceAreaHtml('aov-air-handling', 'Ramsbottom');
-$ok(stripos($matrixHtml, 'Ramsbottom') !== false, 'matrix service×area names Ramsbottom');
+$matrixHtml = icomplyRenderServiceAreaHtml('aov-air-handling', 'Birmingham');
+$ok(stripos($matrixHtml, 'Birmingham') !== false, 'matrix service×area names Birmingham');
+$ok(str_contains($matrixHtml, '10,000'), 'matrix copy states the 10,000 population threshold');
+$ok(substr_count($matrixHtml, 'area-chip') >= 850, 'matrix lists the full pop>10k town set');
 $ok(stripos($matrixHtml, 'Price on application') !== false, 'matrix service×area is POA');
 $ok(stripos($matrixHtml, 'Fire Alarms') !== false && stripos($matrixHtml, '/pages/services/fire-alarms') !== false, 'matrix links fire alarms hub');
 $ok(stripos($matrixHtml, 'Emergency Lighting') !== false, 'matrix links emergency lighting');

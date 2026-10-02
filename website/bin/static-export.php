@@ -26,7 +26,8 @@
  *   (eicr, eicr-report, FRA, gas, CCTV, …).
  * Electrical, gas and AOV keyword families always get the FULL areas list
  * (keyword × every town) so the Netlify static export includes that matrix.
- * AOV service×area (/pages/aov-air-handling/{town}) is always included.
+ * AOV service×area and AOV keyword×area use Census 2021 towns over 10,000
+ * people (England and Wales built-up areas, plus London boroughs).
  * --keyword-towns=all renders every keyword×area (~200k HTML files).
  * Service×area landings for the full catalogue are written on every export.
  */
@@ -248,18 +249,22 @@ function icomplyCollectKeywordRoutes(string $townMode): array
             $familyKw[keywordSlug($slug)] = true;
         }
     }
+    $aovKw = [];
     if (function_exists('getAovMatrixKeywordSlugs')) {
         foreach (getAovMatrixKeywordSlugs() as $slug) {
-            $familyKw[keywordSlug($slug)] = true;
+            $aovKw[keywordSlug($slug)] = true;
         }
     }
+    $aovTowns = function_exists('getAovNationwideAreas') ? getAovNationwideAreas() : [];
 
     foreach ($keywords as $kw) {
         $slug = keywordSlug($kw);
-        $fullTowns = $townMode === 'all'
+        if (isset($aovKw[$slug]) && $townMode !== 'none') {
+            // Complete AOV coverage for Census 2021 towns over 10,000 people.
+            $towns = $aovTowns;
+        } elseif ($townMode === 'all'
             || isset($familyKw[$slug])
-            || ($townMode === 'priority' && isset($priorityKw[$slug]));
-        if ($fullTowns) {
+            || ($townMode === 'priority' && isset($priorityKw[$slug]))) {
             $towns = $areas;
         } else {
             $towns = $popularTowns;
@@ -348,15 +353,18 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
     }
 
     // Jack: every service has every area landing (not only --full).
+    // AOV is the pop>10k nationwide set, not the smaller North West places.
     foreach (array_keys(getServices()) as $sSlug) {
+        if (function_exists('isAovNationwideService') && isAovNationwideService($sSlug)) {
+            continue;
+        }
         foreach (getAreas() as $area) {
             $routes[] = '/pages/' . $sSlug . '/' . areaSlug((string)$area);
         }
     }
-    // AOV nationwide stays on the default export even if the loop above is later gated.
-    if (function_exists('getAovNationwideServices')) {
+    if (function_exists('getAovNationwideServices') && function_exists('getAovNationwideAreas')) {
         foreach (getAovNationwideServices() as $sSlug) {
-            foreach (getAreas() as $area) {
+            foreach (getAovNationwideAreas() as $area) {
                 $routes[] = '/pages/' . $sSlug . '/' . areaSlug((string)$area);
             }
         }
@@ -373,7 +381,10 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
 function icomplyRenderExportRoute(string $path): array
 {
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
-        $area = function_exists('areaFromSlug') ? areaFromSlug($m[2]) : $m[2];
+        $area = function_exists('aovNationwideCanonicalName') ? aovNationwideCanonicalName($m[2]) : null;
+        if ($area === null && function_exists('areaFromSlug')) {
+            $area = areaFromSlug($m[2]);
+        }
         $html = icomplyRenderKeywordTownHtml($m[1], (string)($area ?: $m[2]));
         if ($html !== '' && icomplyLooksLikeHtml($html)) {
             return ['html' => $html, 'status' => 200];
@@ -382,8 +393,16 @@ function icomplyRenderExportRoute(string $path): array
     if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)
         && function_exists('getServices')
         && isset(getServices()[$m[1]])) {
-        $area = function_exists('areaFromSlug') ? areaFromSlug($m[2]) : $m[2];
-        $html = icomplyRenderServiceAreaHtml($m[1], (string)($area ?: $m[2]));
+        $area = null;
+        if (function_exists('isAovNationwideService') && isAovNationwideService($m[1])) {
+            $area = function_exists('aovNationwideCanonicalName') ? aovNationwideCanonicalName($m[2]) : null;
+        } elseif (function_exists('areaFromSlug')) {
+            $area = areaFromSlug($m[2]);
+        }
+        if ($area === null && !(function_exists('isAovNationwideService') && isAovNationwideService($m[1]))) {
+            $area = $m[2];
+        }
+        $html = icomplyRenderServiceAreaHtml($m[1], (string)($area ?: ''));
         if ($html !== '' && icomplyLooksLikeHtml($html)) {
             return ['html' => $html, 'status' => 200];
         }

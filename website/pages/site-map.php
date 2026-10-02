@@ -224,9 +224,10 @@ require SITE_ROOT . '/includes/header.php';
         <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Service hubs &amp; keyword towns</h2>
         <p class="mt-2 text-zinc-600 max-w-2xl">
             Browse a service hub, then open a keyword guide for your town. AOV and smoke control
-            also has a local page for every town we cover. Those
-            <code>/pages/aov-air-handling/{town}</code> URLs are generated for the static export
-            and stay out of the XML sitemap. Other services stay on hubs plus keyword×town pages.
+            has a local page for every England and Wales town or city with more than 10,000 people
+            (Census 2021), including London boroughs. Those
+            <code>/pages/aov-air-handling/{town}</code> URLs stay out of the XML sitemap.
+            Smaller places are not in this first slice. Other services stay on hubs plus keyword×town pages.
         </p>
     </div>
     <div class="flex flex-wrap gap-2">

@@ -8,15 +8,19 @@
  *   php bin/generate-site.php
  *   php bin/generate-site.php --limit=150
  *   php bin/generate-site.php --service=fire-alarms
+ *   php bin/generate-site.php --service=aov-air-handling --areas-json=data/aov-nationwide-areas.json
  */
 require_once __DIR__ . '/../config.php';
 
-$options = getopt('', ['limit::', 'service::']);
+$options = getopt('', ['limit::', 'service::', 'areas-json::']);
 $limit = isset($options['limit']) ? (int)$options['limit'] : 0;
 $onlyService = $options['service'] ?? null;
 
 $allServices = getServices();
 $areasToUse = getAreas();
+if (!empty($options['areas-json'])) {
+    $areasToUse = areaNamesFromJsonFile((string)$options['areas-json']);
+}
 if ($limit > 0) {
     $areasToUse = array_slice($areasToUse, 0, $limit);
 }

@@ -15,7 +15,9 @@ $metaKeywords = $SEO_KEYWORDS;
 $ogImage = url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
 
 $allServices = getServices();
-$allAreas = getAreas();
+$allAreas = (function_exists('isAovNationwideService') && isAovNationwideService($SERVICE_SLUG) && function_exists('getAovNationwideAreas'))
+    ? getAovNationwideAreas()
+    : getAreas();
 $serviceSlug = $SERVICE_SLUG;
 $serviceName = $SERVICE_NAME;
 $areaName = $AREA;
@@ -436,7 +438,7 @@ $schema = [
     <div class="max-w-7xl mx-auto px-6 py-16">
         <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Fire protection</div>
         <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Alongside AOV in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></h2>
-        <p class="mt-2 text-zinc-600 max-w-2xl">Smoke vents and AOV panels sit next to fire alarms, emergency lighting, fire doors and fire risk assessments. Quotes for AOV works are price on application after survey.</p>
+        <p class="mt-2 text-zinc-600 max-w-2xl">Smoke vents and AOV panels sit next to fire alarms, emergency lighting, fire doors and fire risk assessments. This <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> page is part of the set of towns and cities with more than 10,000 people. Quotes for AOV works are price on application after survey.</p>
         <div class="mt-6 flex flex-wrap gap-2">
             <?php
             $adjacent = function_exists('getFireProtectionAdjacentServices') ? getFireProtectionAdjacentServices() : [];

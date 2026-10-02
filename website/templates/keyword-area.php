@@ -18,7 +18,9 @@ $serviceSlug = $SERVICE_SLUG;
 $areaName = $AREA;
 $areaSlugVal = $AREA_SLUG;
 $allServices = getServices();
-$allAreas = getAreas();
+$allAreas = (function_exists('isAovNationwideService') && isAovNationwideService($serviceSlug) && function_exists('getAovNationwideAreas'))
+    ? getAovNationwideAreas()
+    : getAreas();
 
 if (session_status() === PHP_SESSION_NONE) {
     @session_start();

@@ -140,6 +140,14 @@ function routerDispatchVirtual(string $path): bool {
         if (!isset($services[$serviceSlug])) {
             return false;
         }
+        if (function_exists('isAovNationwideService') && isAovNationwideService($serviceSlug)) {
+            $area = function_exists('aovNationwideCanonicalName') ? aovNationwideCanonicalName($areaSlugVal) : null;
+            if ($area === null) {
+                return false;
+            }
+            renderServiceAreaPage($serviceSlug, $area);
+            return true;
+        }
         $area = null;
         foreach (getAreas() as $a) {
             if (areaSlug($a) === $areaSlugVal) {

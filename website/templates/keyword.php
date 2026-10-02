@@ -18,7 +18,9 @@ $serviceName = $SERVICE_NAME;
 $serviceSlug = $SERVICE_SLUG;
 $relatedSlug = $RELATED_SLUG;
 $relatedName = $RELATED_NAME;
-$allAreas = getAreas();
+$allAreas = (function_exists('isAovNationwideService') && isAovNationwideService($serviceSlug) && function_exists('getAovNationwideAreas'))
+    ? getAovNationwideAreas()
+    : getAreas();
 $allServices = getServices();
 
 $popularTowns = array_values(array_filter(

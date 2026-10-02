@@ -461,6 +461,139 @@ function getAovFeaturedKeywordSlugs(): array {
     ];
 }
 
+/**
+ * Census 2021 towns and cities with usual resident population over 10,000.
+ * England and Wales built-up areas, plus London boroughs. Scotland and
+ * Northern Ireland are not in this first slice.
+ *
+ * @return list<array<string, mixed>>
+ */
+function getAovNationwideAreaRecords(): array {
+    static $rows = null;
+    if ($rows !== null) {
+        return $rows;
+    }
+    $data = loadJsonData('aov-nationwide-areas', []);
+    $towns = is_array($data['towns'] ?? null) ? $data['towns'] : [];
+    $rows = [];
+    foreach ($towns as $row) {
+        if (!is_array($row)) {
+            continue;
+        }
+        $name = trim((string)($row['name'] ?? ''));
+        $population = (int)($row['population'] ?? 0);
+        if ($name === '' || $population <= 10000) {
+            continue;
+        }
+        $rows[] = $row;
+    }
+    return $rows;
+}
+
+/**
+ * Display names for the AOV pop>10k matrix, alphabetical as stored.
+ *
+ * @return list<string>
+ */
+function getAovNationwideAreas(): array {
+    $names = [];
+    foreach (getAovNationwideAreaRecords() as $row) {
+        $names[] = (string)$row['name'];
+    }
+    return $names;
+}
+
+/**
+ * Map a requested label or slug onto the canonical pop>10k town name.
+ */
+function aovNationwideCanonicalName(string $area): ?string {
+    static $index = null;
+    if ($index === null) {
+        $index = ['name' => [], 'slug' => []];
+        foreach (getAovNationwideAreaRecords() as $row) {
+            $name = (string)$row['name'];
+            $index['name'][$name] = $name;
+            $index['slug'][areaSlug($name)] = $name;
+            $aliases = is_array($row['aliases'] ?? null) ? $row['aliases'] : [];
+            foreach ($aliases as $alias) {
+                $alias = trim((string)$alias);
+                if ($alias === '') {
+                    continue;
+                }
+                $index['name'][$alias] = $name;
+                $aliasSlug = areaSlug($alias);
+                if (!isset($index['slug'][$aliasSlug])) {
+                    $index['slug'][$aliasSlug] = $name;
+                }
+            }
+        }
+    }
+    $area = trim($area);
+    if ($area === '') {
+        return null;
+    }
+    if (isset($index['name'][$area])) {
+        return $index['name'][$area];
+    }
+    $slug = areaSlug($area);
+    return $index['slug'][$slug] ?? null;
+}
+
+function isAovNationwideArea(string $area): bool {
+    return aovNationwideCanonicalName($area) !== null;
+}
+
+/**
+ * Area names from a JSON list or from data/aov-nationwide-areas.json shape.
+ * Rows at or under 10,000 people are dropped.
+ *
+ * @return list<string>
+ */
+function areaNamesFromJsonFile(string $path): array {
+    $path = trim($path);
+    if ($path !== '' && $path[0] !== '/') {
+        $candidates = [];
+        if (defined('SITE_ROOT')) {
+            $candidates[] = SITE_ROOT . '/' . ltrim($path, '/');
+            $candidates[] = dirname(SITE_ROOT) . '/' . ltrim($path, '/');
+        }
+        foreach ($candidates as $candidate) {
+            if (is_file($candidate)) {
+                $path = $candidate;
+                break;
+            }
+        }
+    }
+    if (!is_file($path)) {
+        fwrite(STDERR, "areas json missing: {$path}\n");
+        return [];
+    }
+    $raw = json_decode((string)file_get_contents($path), true);
+    $rows = [];
+    if (is_array($raw) && isset($raw['towns']) && is_array($raw['towns'])) {
+        $rows = $raw['towns'];
+    } elseif (is_array($raw)) {
+        $rows = $raw;
+    }
+    $names = [];
+    foreach ($rows as $row) {
+        if (is_string($row)) {
+            $names[] = $row;
+            continue;
+        }
+        if (!is_array($row)) {
+            continue;
+        }
+        $name = trim((string)($row['name'] ?? ''));
+        $population = (int)($row['population'] ?? 0);
+        if ($name === '' || ($population > 0 && $population <= 10000)) {
+            continue;
+        }
+        $names[] = $name;
+    }
+    return $names;
+}
+
 function isCostStyleKeyword(string $slug, string $name = ''): bool {
     return (bool)preg_match('/\b(cost|price|quote|how-much|how much)\b/i', $slug . ' ' . $name);
 }
@@ -469,14 +602,20 @@ function isCostStyleKeyword(string $slug, string $name = ''): bool {
  * Local URL that returns 200 on the default Netlify export.
  *
  * Electrical + gas → featured keyword×town.
- * AOV → /pages/aov-air-handling/{town} (generated nationwide; kept out of sitemap.xml).
+ * AOV → /pages/aov-air-handling/{town} only when that town has Census 2021
+ * population over 10,000. Smaller places stay on the AOV service hub.
+ * Those service×town URLs stay out of sitemap.xml.
  * Other services → area hub (from a service page) or the service hub (from an area page).
  */
 function exportedServiceLocalUrl(string $serviceSlug, string $area, string $from = 'service'): string {
     $serviceSlug = areaSlug($serviceSlug);
     $town = areaSlug($area);
     if (isAovNationwideService($serviceSlug)) {
-        return url('/pages/' . $serviceSlug . '/' . $town . '.php');
+        $canonical = aovNationwideCanonicalName($area);
+        if ($canonical === null) {
+            return url('/pages/services/' . $serviceSlug . '.php');
+        }
+        return url('/pages/' . $serviceSlug . '/' . areaSlug($canonical) . '.php');
     }
     $featured = getElectricalGasFeaturedKeywordSlugs();
     $kw = getMajorKeywords();
@@ -736,7 +875,7 @@ function getKeywordImages(string $serviceSlug): array {
     return $mfr['keyword_images'][$serviceSlug] ?? [$serviceSlug, $serviceSlug, $serviceSlug];
 }
 
-/** Resolve area display name from slug (or return title-cased slug). */
+/** Resolve area display name from slug (area hubs only — the North West list). */
 function areaFromSlug(string $slug): ?string {
     $slug = areaSlug($slug);
     foreach (getAreas() as $area) {
@@ -745,6 +884,22 @@ function areaFromSlug(string $slug): ?string {
         }
     }
     return null;
+}
+
+/**
+ * Area hub name, or an AOV pop>10k town when the slug is not on the area list.
+ */
+function resolveAreaName(string $slugOrName): ?string {
+    $fromHub = areaFromSlug($slugOrName);
+    if ($fromHub !== null) {
+        return $fromHub;
+    }
+    foreach (getAreas() as $area) {
+        if (strcasecmp($area, $slugOrName) === 0) {
+            return $area;
+        }
+    }
+    return aovNationwideCanonicalName($slugOrName);
 }
 
 /** Live Shopify storefront — never 301 /shop to packages. */
