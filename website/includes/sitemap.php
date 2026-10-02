@@ -91,7 +91,11 @@ function icomplySitemapEntries(): array
         if (isset($seen[$path]) || isset($banned[$path])) {
             return;
         }
-        if (preg_match('#^/shop/[^/]+/.+#', $path) || preg_match('#^/products/.+#', $path)) {
+        $shopBrowseOk = (bool)preg_match(
+            '#^/shop/(?:browse(?:/(?:categories|manufacturers|product-types|product-lines))?|collections|products)$#',
+            $path
+        );
+        if (!$shopBrowseOk && (preg_match('#^/shop/[^/]+/.+#', $path) || preg_match('#^/products/.+#', $path))) {
             return;
         }
         if (preg_match('#-photo\.(jpe?g|png)$#i', $path)) {
@@ -155,6 +159,13 @@ function icomplySitemapEntries(): array
         ['/shop/electrical', '0.75', 'shop/electrical/index.html'],
         ['/shop/security', '0.75', 'shop/security/index.html'],
         ['/shop/gas', '0.75', 'shop/gas/index.html'],
+        ['/shop/browse', '0.7', 'shop/browse/index.html'],
+        ['/shop/browse/categories', '0.6', 'shop/browse/categories/index.html'],
+        ['/shop/browse/manufacturers', '0.6', 'shop/browse/manufacturers/index.html'],
+        ['/shop/browse/product-types', '0.6', 'shop/browse/product-types/index.html'],
+        ['/shop/browse/product-lines', '0.6', 'shop/browse/product-lines/index.html'],
+        ['/shop/collections', '0.6', 'shop/collections/index.html'],
+        ['/shop/products', '0.7', 'shop/products/index.html'],
         ['/products', '0.8', 'pages/products.php'],
     ];
     foreach ($static as [$path, $pri, $file]) {

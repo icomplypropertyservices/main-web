@@ -140,6 +140,8 @@ function icomplyFooterHtml(): string
           <a href="{$areaHub}">Areas</a>
           <a href="{$contact}">Contact</a>
           <a href="/shop/">Trade shop hubs</a>
+          <a href="/shop/browse/">Browse catalogue</a>
+          <a href="/shop/products/">All products</a>
           <a href="/shop/electrical/">Electrical</a>
           <a href="/shop/fire/">Fire</a>
           <a href="/shop/security/">Security</a>

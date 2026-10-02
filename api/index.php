@@ -70,16 +70,6 @@ function seoCompactSitemap(string $baseUrl): string {
         . '</urlset>' . "\n";
 }
 
-/** Drop shop/products locs from served sitemaps (they 301 to packages). */
-function seoStripShopProductUrls(string $xml): string {
-    $xml = preg_replace(
-        '#<url>\s*<loc>[^<]*/(?:shop|products)(?:/[^<]*)?</loc>.*?</url>\s*#is',
-        '',
-        $xml
-    ) ?? $xml;
-    return $xml;
-}
-
 // Block internals (admin allowed)
 if (preg_match('#^/(bin|templates|data|includes)(/|$)#i', $uri)) {
     if (preg_match('#^/admin#i', $uri)) {

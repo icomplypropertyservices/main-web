@@ -609,8 +609,32 @@ function icomplyPrettyUrlRedirects(): string
 /shop/security/          /shop/security/index.html     200!
 /shop/gas                /shop/gas/index.html          200!
 /shop/gas/               /shop/gas/index.html          200!
+/shop/index              /shop/index.html              200!
+/shop/index.php          /shop/index.html              200!
+/shop/browse             /shop/browse/index.html       200!
+/shop/browse/            /shop/browse/index.html       200!
+/shop/browse/:group/:slug  /shop/browse/:group/:slug/index.html  200
+/shop/browse/:group/:slug/ /shop/browse/:group/:slug/index.html  200
+/shop/browse/:page       /shop/browse/:page/index.html 200
+/shop/browse/:page/      /shop/browse/:page/index.html 200
+/shop/collections        /shop/collections/index.html  200!
+/shop/collections/       /shop/collections/index.html  200!
+/shop/collections/:slug  /shop/collections/:slug/index.html  200
+/shop/collections/:slug/ /shop/collections/:slug/index.html  200
+/shop/products           /shop/products/index.html     200!
+/shop/products/          /shop/products/index.html     200!
+/shop/products/:handle   /shop/products/:handle/index.html  200
+/shop/products/:handle/  /shop/products/:handle/index.html  200
+/shop/sitemap            /shop/sitemap.xml             200
+/shop/sitemap/           /shop/sitemap.xml             200
 /products                /products.php                 200!
 /products/               /products.php                 200!
+/products/sitemap        /shop/sitemap.xml             301
+/products/sitemap/       /shop/sitemap.xml             301
+/products/product/:handle  /shop/products/:handle/index.html  200
+/products/product/:handle/ /shop/products/:handle/index.html  200
+/pages/products          /products.php                 301
+/pages/products/         /products.php                 301
 
 # PWA manifest aliases (Ellie live 404 on /manifest.webmanifest)
 /manifest.webmanifest    /manifest.webmanifest    200!
@@ -722,6 +746,36 @@ function icomplyPrettyUrlHeaders(): string
 /shop/gas/
   Content-Type: text/html; charset=utf-8
   X-Content-Type-Options: nosniff
+
+/shop/browse
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/browse/*
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/collections
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/collections/*
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/products
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/products/*
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/shop/sitemap
+  Content-Type: application/xml; charset=utf-8
+
+/shop/sitemap.xml
+  Content-Type: application/xml; charset=utf-8
 
 /shop/assets/*.css
   Content-Type: text/css; charset=utf-8

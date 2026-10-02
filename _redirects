@@ -49,8 +49,32 @@
 /shop/security/    /shop/security/index.html    200!
 /shop/gas    /shop/gas/index.html    200!
 /shop/gas/    /shop/gas/index.html    200!
+/shop/index    /shop/index.html    200!
+/shop/index.php    /shop/index.html    200!
+/shop/browse    /shop/browse/index.html    200!
+/shop/browse/    /shop/browse/index.html    200!
+/shop/browse/:group/:slug    /shop/browse/:group/:slug/index.html    200
+/shop/browse/:group/:slug/    /shop/browse/:group/:slug/index.html    200
+/shop/browse/:page    /shop/browse/:page/index.html    200
+/shop/browse/:page/    /shop/browse/:page/index.html    200
+/shop/collections    /shop/collections/index.html    200!
+/shop/collections/    /shop/collections/index.html    200!
+/shop/collections/:slug    /shop/collections/:slug/index.html    200
+/shop/collections/:slug/    /shop/collections/:slug/index.html    200
+/shop/products    /shop/products/index.html    200!
+/shop/products/    /shop/products/index.html    200!
+/shop/products/:handle    /shop/products/:handle/index.html    200
+/shop/products/:handle/    /shop/products/:handle/index.html    200
+/shop/sitemap    /shop/sitemap.xml    200
+/shop/sitemap/    /shop/sitemap.xml    200
 /products    /products.php    200!
 /products/    /products.php    200!
+/products/sitemap    /shop/sitemap.xml    301
+/products/sitemap/    /shop/sitemap.xml    301
+/products/product/:handle    /shop/products/:handle/index.html    200
+/products/product/:handle/    /shop/products/:handle/index.html    200
+/pages/products    /products.php    301
+/pages/products/    /products.php    301
 
 # Old 470-part sitemap index → single compact urlset
 /sitemap-*.xml    /sitemap.xml    301

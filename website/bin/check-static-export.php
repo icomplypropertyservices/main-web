@@ -49,7 +49,9 @@ $needHtml = [
     '/pages/keywords/asbestos-survey/manchester' => ['pages/keywords/asbestos-survey/manchester.php', ['Asbestos', 'Manchester', '<!DOCTYPE']],
     '/pages/legionella-risk-assessment/stockport' => ['pages/legionella-risk-assessment/stockport.php', ['Legionella', 'Stockport', '<!DOCTYPE']],
     '/pages/asbestos-survey/manchester' => ['pages/asbestos-survey/manchester.php', ['Asbestos', 'Manchester', '<!DOCTYPE']],
-    '/shop' => ['shop/index.html', ['Fire', 'Electrical', 'Security', 'Gas', 'shop.icomplypropertyservices.co.uk', '<!DOCTYPE']],
+    '/shop' => ['shop/index.html', ['Fire', 'Electrical', 'Security', 'Gas', '/shop/browse/', 'shop.icomplypropertyservices.co.uk', '<!DOCTYPE']],
+    '/shop/browse' => ['shop/browse/index.html', ['Browse', 'Manufacturers', 'Coming soon', '<!DOCTYPE']],
+    '/shop/products' => ['shop/products/index.html', ['All products', '<!DOCTYPE']],
     '/shop/fire' => ['shop/fire/index.html', ['Fire', '<!DOCTYPE']],
     '/shop/electrical' => ['shop/electrical/index.html', ['Electrical', '<!DOCTYPE']],
     '/shop/security' => ['shop/security/index.html', ['Security', '<!DOCTYPE']],
@@ -131,6 +133,15 @@ $mustExist = [
     'shop/electrical/index.html',
     'shop/security/index.html',
     'shop/gas/index.html',
+    'shop/browse/index.html',
+    'shop/browse/categories/index.html',
+    'shop/browse/manufacturers/index.html',
+    'shop/browse/product-types/index.html',
+    'shop/browse/product-lines/index.html',
+    'shop/collections/index.html',
+    'shop/collections/service-packages/index.html',
+    'shop/products/index.html',
+    'shop/sitemap.xml',
     'shop/assets/shop.css',
     'shop/assets/logo.svg',
 ];
@@ -268,7 +279,7 @@ foreach (['rewire', 'domestic-rewire', 'emergency-electrician', 'boiler'] as $ne
     }
 }
 
-$redirectNeedles = ['/*', '/:splat.php', '/privacy', '/pages/about', '/assets/', '/pages/keywords', '/pages/keywords/:slug', '/shop/index.html', '/shop/fire/index.html', '/products.php'];
+$redirectNeedles = ['/*', '/:splat.php', '/privacy', '/pages/about', '/assets/', '/pages/keywords', '/pages/keywords/:slug', '/shop/index.html', '/shop/fire/index.html', '/shop/browse/index.html', '/shop/products/index.html', '/pages/products', '/products.php'];
 foreach ($redirectNeedles as $n) {
     if (!str_contains($redirects, $n)) {
         $fail++;
@@ -284,6 +295,14 @@ if (preg_match('#^/shop\\s+/pages/packages#m', $redirects)) {
 } else {
     $pass++;
     echo "[PASS] _redirects does not send /shop to packages\n";
+}
+$fireHub = is_file($dist . '/shop/fire/index.html') ? (string)file_get_contents($dist . '/shop/fire/index.html') : '';
+if ($fireHub !== '' && !str_contains($fireHub, 'href="/shop/products/<') && preg_match('#href="/shop/products/[a-z0-9\-]+/"#', $fireHub)) {
+    $pass++;
+    echo "[PASS] shop product links are real handles\n";
+} else {
+    $fail++;
+    echo "[FAIL] shop product links are missing or broken HTML\n";
 }
 $sitemapDist = is_file($dist . '/sitemap.xml') ? (string)file_get_contents($dist . '/sitemap.xml') : '';
 if (preg_match('#/pages/gas-systems/[a-z0-9\-]+</loc>#', $sitemapDist) || preg_match('#/pages/electrical/[a-z0-9\-]+</loc>#', $sitemapDist)) {

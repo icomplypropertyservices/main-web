@@ -34,6 +34,58 @@ function routerRequestPath(): string {
 }
 
 /**
+ * Serve committed shop HTML/XML (browse, collections, product pages, hubs).
+ * Prefer these over shop/index.php so broken Buy Button chrome stays unused.
+ */
+function routerTryShopStatic(string $path): bool
+{
+    if (!preg_match('#^/shop(?:/|$)#', $path)) {
+        return false;
+    }
+    $rel = $path;
+    if ($rel === '/shop') {
+        $rel = '/shop/index.html';
+    } elseif ($rel === '/shop/sitemap') {
+        $rel = '/shop/sitemap.xml';
+    }
+    $candidates = [];
+    if (preg_match('#\.(html|xml|css|svg)$#i', $rel)) {
+        $candidates[] = SITE_ROOT . $rel;
+    } else {
+        $candidates[] = SITE_ROOT . $rel . '/index.html';
+        $candidates[] = SITE_ROOT . $rel . '.html';
+    }
+    $rootReal = realpath(SITE_ROOT . '/shop');
+    if ($rootReal === false) {
+        return false;
+    }
+    $types = [
+        'html' => 'text/html; charset=utf-8',
+        'xml' => 'application/xml; charset=utf-8',
+        'css' => 'text/css; charset=utf-8',
+        'svg' => 'image/svg+xml',
+    ];
+    foreach ($candidates as $file) {
+        $real = realpath($file);
+        if ($real === false || !is_file($real)) {
+            continue;
+        }
+        if ($real !== $rootReal && !str_starts_with($real, $rootReal . DIRECTORY_SEPARATOR)) {
+            continue;
+        }
+        $ext = strtolower(pathinfo($real, PATHINFO_EXTENSION));
+        if (!isset($types[$ext])) {
+            continue;
+        }
+        header('Content-Type: ' . $types[$ext]);
+        header('X-Content-Type-Options: nosniff');
+        readfile($real);
+        return true;
+    }
+    return false;
+}
+
+/**
  * Try to serve a physical PHP file for a clean path.
  */
 function routerTryFile(string $relPath): bool {
@@ -65,6 +117,20 @@ function routerTryFile(string $relPath): bool {
  * Virtual routes that do not need per-URL stub files.
  */
 function routerDispatchVirtual(string $path): bool {
+    if ($path === '/pages/products' || $path === '/products/product') {
+        header('Location: ' . url('/products'), true, 301);
+        icomplyRequestExit();
+        return true;
+    }
+    if ($path === '/products/sitemap') {
+        header('Location: ' . url('/shop/sitemap.xml'), true, 301);
+        icomplyRequestExit();
+        return true;
+    }
+    if (str_starts_with($path, '/shop') && routerTryShopStatic($path)) {
+        return true;
+    }
+
     // Directory indexes (url() strips /index)
     // keywords-hub lives outside pages/keywords/** so it survives vercelignore of stubs.
     $indexes = [

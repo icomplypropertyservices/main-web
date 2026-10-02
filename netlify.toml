@@ -131,6 +131,112 @@
   force = true
 
 [[redirects]]
+  from = "/shop/browse"
+  to = "/shop/browse/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/browse/"
+  to = "/shop/browse/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/browse/:group/:slug"
+  to = "/shop/browse/:group/:slug/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/shop/browse/:group/:slug/"
+  to = "/shop/browse/:group/:slug/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/shop/browse/:page"
+  to = "/shop/browse/:page/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/shop/browse/:page/"
+  to = "/shop/browse/:page/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/shop/collections"
+  to = "/shop/collections/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/collections/"
+  to = "/shop/collections/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/collections/:slug"
+  to = "/shop/collections/:slug/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/shop/collections/:slug/"
+  to = "/shop/collections/:slug/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/shop/products"
+  to = "/shop/products/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/products/"
+  to = "/shop/products/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/products/:handle"
+  to = "/shop/products/:handle/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/shop/products/:handle/"
+  to = "/shop/products/:handle/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/shop/sitemap"
+  to = "/shop/sitemap.xml"
+  status = 200
+
+[[redirects]]
+  from = "/shop/sitemap/"
+  to = "/shop/sitemap.xml"
+  status = 200
+
+[[redirects]]
+  from = "/pages/products"
+  to = "/products.php"
+  status = 301
+
+[[redirects]]
+  from = "/pages/products/"
+  to = "/products.php"
+  status = 301
+
+[[redirects]]
+  from = "/products/sitemap"
+  to = "/shop/sitemap.xml"
+  status = 301
+
+[[redirects]]
+  from = "/products/product/:handle"
+  to = "/shop/products/:handle/index.html"
+  status = 200
+
+[[redirects]]
   from = "/products"
   to = "/products.php"
   status = 200
