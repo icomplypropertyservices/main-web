@@ -142,6 +142,41 @@ $categories = [
         ],
     ],
     [
+        'id' => 'fra',
+        'name' => 'Fire risk assessment',
+        'icon' => '📋',
+        'service_slug' => 'fire-risk-assessments',
+        'hub_href' => '/pages/jobs/fra',
+        'hub_label' => 'FRA job lane →',
+        'intro' => 'Approved list for a typical North West 6-bed HMO. All-in. VAT is not added. Other premises are priced after scope.',
+        'footer' => '£350 and £650 are approved list prices for a typical North West 6-bed HMO. The pack replaces FRA, EICR and gas — it is not added on top of £350. Other FRA premises stay POA. Remedials are extra.',
+        'items' => [
+            [
+                'name' => 'FRA — typical 6-bed HMO',
+                'from' => '£350',
+                'price_kind' => 'list',
+                'href' => '/pages/jobs/fire-risk-assessment',
+                'typical' => 'List per property (FIRE-FRA-6BED-NW). Remedials are quoted after the assessment.',
+                'includes' => 'Written FRA and action plan',
+            ],
+            [
+                'name' => 'FRA — other premises',
+                'from' => 'POA',
+                'href' => '/pages/jobs/fra-other',
+                'typical' => 'Offices, shops, blocks and anything that is not a typical 6-bed HMO.',
+                'includes' => 'Figure confirmed after scope',
+            ],
+            [
+                'name' => 'Landlord pack: FRA + EICR + gas',
+                'from' => '£650',
+                'price_kind' => 'list',
+                'href' => '/pages/jobs/landlord-bundle',
+                'typical' => 'Same typical 6-bed HMO. £650 replaces the three separate lines.',
+                'includes' => 'FRA, EICR and landlord gas safety record',
+            ],
+        ],
+    ],
+    [
         'id' => 'emergency-lighting',
         'name' => 'Emergency lighting',
         'icon' => '💡',
@@ -224,7 +259,7 @@ $categories = [
                 'name' => 'Landlord essentials (EICR + gas safety)',
                 'from' => 'POA',
                 'typical' => 'Guide where both can be coordinated on the same property access day.',
-                'includes' => 'EICR + CP12 scoped together — see Packages for full bundles',
+                'includes' => 'EICR + CP12 guide only — separate from the published Compliance Bundle',
             ],
             [
                 'name' => 'Fire + emergency lighting service visit',
@@ -332,6 +367,11 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
+<?php
+require_once SITE_ROOT . '/includes/compliance-bundle.php';
+echo icomplyComplianceBundleCrossSellHtml('pricing');
+?>
+
 <!-- JUMP LINKS -->
 <section class="max-w-7xl mx-auto px-6 pt-10">
     <div class="flex flex-wrap gap-2">
@@ -367,7 +407,12 @@ require SITE_ROOT . '/includes/header.php';
                 </h3>
                 <p class="mt-1 text-zinc-600 max-w-2xl"><?= htmlspecialchars($cat['intro'], ENT_QUOTES, 'UTF-8') ?></p>
             </div>
-            <?php if (!empty($cat['service_slug']) && isset($services[$cat['service_slug']])): ?>
+            <?php if (!empty($cat['hub_href'])): ?>
+                <a href="<?= htmlspecialchars(url($cat['hub_href']), ENT_QUOTES, 'UTF-8') ?>"
+                   class="text-sm font-semibold text-[#ff6b00] shrink-0">
+                    <?= htmlspecialchars($cat['hub_label'] ?? 'Job lane →', ENT_QUOTES, 'UTF-8') ?>
+                </a>
+            <?php elseif (!empty($cat['service_slug']) && isset($services[$cat['service_slug']])): ?>
                 <a href="<?= url('/pages/services/' . rawurlencode($cat['service_slug']) . '.php') ?>"
                    class="text-sm font-semibold text-[#ff6b00] shrink-0">
                     <?= htmlspecialchars($services[$cat['service_slug']], ENT_QUOTES, 'UTF-8') ?> hub →
@@ -380,7 +425,7 @@ require SITE_ROOT . '/includes/header.php';
         <div class="bg-white border border-zinc-200 rounded-3xl overflow-hidden shadow-sm">
             <div class="hidden md:grid md:grid-cols-12 gap-4 px-6 py-3 bg-zinc-50 border-b text-xs uppercase tracking-wider text-zinc-500 font-semibold">
                 <div class="md:col-span-4">Service</div>
-                <div class="md:col-span-2">Guide from</div>
+                <div class="md:col-span-2"><?= $cat['id'] === 'fra' ? 'List' : 'Guide from' ?></div>
                 <div class="md:col-span-3">Typical scope</div>
                 <div class="md:col-span-3">Usually includes</div>
             </div>
@@ -389,22 +434,33 @@ require SITE_ROOT . '/includes/header.php';
                     $isPoa = strtoupper(ltrim($item['from'], 'POA')) === 'POA' || stripos($item['from'], 'POA') !== false;
                 ?>
                 <li class="px-5 md:px-6 py-5 md:grid md:grid-cols-12 md:gap-4 md:items-start hover:bg-zinc-50/80 transition">
+                    <?php
+                        $isList = (($item['price_kind'] ?? '') === 'list');
+                        $priceLabel = $isList ? 'List' : 'From';
+                        $priceNote = $isList ? 'approved list' : 'guide only';
+                    ?>
                     <div class="md:col-span-4">
-                        <div class="font-semibold text-black"><?= htmlspecialchars($item['name'], ENT_QUOTES, 'UTF-8') ?></div>
+                        <div class="font-semibold text-black">
+                            <?php if (!empty($item['href'])): ?>
+                                <a class="hover:text-[#ff6b00]" href="<?= htmlspecialchars(url($item['href']), ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($item['name'], ENT_QUOTES, 'UTF-8') ?></a>
+                            <?php else: ?>
+                                <?= htmlspecialchars($item['name'], ENT_QUOTES, 'UTF-8') ?>
+                            <?php endif; ?>
+                        </div>
                         <div class="md:hidden mt-2 flex items-baseline gap-2">
-                            <span class="text-xs uppercase tracking-wider text-zinc-500">From</span>
-                            <span class="text-xl font-semibold text-[#0B1F3A]"><?= htmlspecialchars($item['from'], ENT_QUOTES, 'UTF-8') ?></span>
-                            <span class="text-xs text-amber-700 font-medium">guide only</span>
+                            <span class="text-xs uppercase tracking-wider text-zinc-500"><?= $isPoa ? 'Price' : $priceLabel ?></span>
+                            <span class="text-xl font-semibold text-white"><?= htmlspecialchars($item['from'], ENT_QUOTES, 'UTF-8') ?></span>
+                            <?php if (!$isPoa): ?><span class="text-xs text-amber-700 font-medium"><?= htmlspecialchars($priceNote, ENT_QUOTES, 'UTF-8') ?></span><?php endif; ?>
                         </div>
                     </div>
                     <div class="hidden md:block md:col-span-2">
                         <?php if ($isPoa): ?>
-                            <div class="text-lg font-semibold text-[#0B1F3A]">POA</div>
+                            <div class="text-lg font-semibold text-white">POA</div>
                             <div class="text-xs text-zinc-500">Survey required</div>
                         <?php else: ?>
-                            <div class="text-xs uppercase tracking-wider text-zinc-500">From</div>
-                            <div class="text-xl font-semibold text-[#0B1F3A]"><?= htmlspecialchars($item['from'], ENT_QUOTES, 'UTF-8') ?></div>
-                            <div class="text-xs text-amber-700 font-medium">guide only · not a quote</div>
+                            <div class="text-xs uppercase tracking-wider text-zinc-500"><?= htmlspecialchars($priceLabel, ENT_QUOTES, 'UTF-8') ?></div>
+                            <div class="text-xl font-semibold text-white"><?= htmlspecialchars($item['from'], ENT_QUOTES, 'UTF-8') ?></div>
+                            <div class="text-xs text-amber-700 font-medium"><?= $isList ? 'approved list' : 'guide only · not a quote' ?></div>
                         <?php endif; ?>
                     </div>
                     <div class="md:col-span-3 mt-2 md:mt-0 text-sm text-zinc-600">
@@ -417,7 +473,7 @@ require SITE_ROOT . '/includes/header.php';
                 <?php endforeach; ?>
             </ul>
             <div class="px-5 md:px-6 py-4 bg-zinc-50 border-t flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-                <p class="text-xs text-zinc-500">All amounts are guide estimates for straightforward North West jobs. Fixed quote on request.</p>
+                <p class="text-xs text-zinc-500"><?= htmlspecialchars($cat['footer'] ?? 'All amounts are guide estimates for straightforward North West jobs. Fixed quote on request.', ENT_QUOTES, 'UTF-8') ?></p>
                 <a href="#quote" class="inline-flex justify-center px-5 py-2.5 rounded-2xl bg-[#0B1F3A] hover:bg-[#ff6b00] text-white text-sm font-semibold transition"
                    data-service="<?= htmlspecialchars($cat['name'], ENT_QUOTES, 'UTF-8') ?>">
                     Quote this category

@@ -56,7 +56,7 @@ $extraCareServices = [
     'intercoms' => 'Staff and multi-area intercom systems',
     'intruder-alarm' => 'Wired & wireless intruder systems with monitoring options',
     'electrical' => 'EICR programmes, consumer units and electrical remedials',
-    'gas-systems' => 'Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not issue them.',
+    'gas-systems' => 'Gas safety checks and commercial / landlord certs',
     'aov-air-handling' => 'Smoke vents, AOV panels & air-handling controls',
 ];
 
@@ -81,14 +81,14 @@ $packages = [
 $trust = [
     ['title' => 'Care-home ready', 'text' => 'Nurse call, fire, lighting, access and CCTV with our qualified engineers'],
     ['title' => 'HTM & BS standards', 'text' => 'HTM 08-03, BS 5839, BS 5266 and fire-override access'],
-    ['title' => 'Manufacturer brands', 'text' => 'Courtney Thorne, Static Systems, Intercall, Tunstall & more'],
+    ['title' => 'Manufacturer brands', 'text' => 'Courtney Thorne, Static Systems, Intercall, Aidcall, Quantec'],
     ['title' => 'Fixed-price quotes', 'text' => 'Clear scope, certification and multi-home options'],
 ];
 
 // Nurse-call manufacturers from featured list + catalog (Courtney Thorne first)
 $nurseCallSlugs = $mfrData['featured_by_service']['nurse-call']
     ?? $mfrData['images_by_service']['nurse-call']
-    ?? ['courtney-thorne', 'static-systems-group', 'intercall', 'aid-call', 'tunstall', 'ascom'];
+    ?? ['courtney-thorne', 'static-systems-group', 'intercall', 'aid-call', 'ascom'];
 
 // Prefer preferred order if present in catalog
 $preferredNurseOrder = [
@@ -96,7 +96,6 @@ $preferredNurseOrder = [
     'static-systems-group',
     'intercall',
     'aid-call',
-    'tunstall',
     'ascom',
     'caretech',
     'quantec',
@@ -135,7 +134,7 @@ foreach ($supportMfrSlugs as $slug) {
 }
 
 $popularTowns = array_values(array_filter(
-    ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
+    ['Manchester', 'Burnley', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
     function ($t) use ($areas) {
         return in_array($t, $areas, true);
     }
@@ -176,7 +175,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get care home quote</a>
                 <a href="<?= url('/pages/services/nurse-call.php') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">Nurse call service</a>
-                <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20iComply%2C%20I%20need%20a%20care%20home%20compliance%20quote"
+                <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20Icomply%2C%20I%20need%20a%20care%20home%20compliance%20quote"
                    target="_blank" rel="noopener"
                    class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
             </div>
@@ -193,11 +192,11 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 $card = $careServices[$slug] ?? null;
                 $name = $card['title'] ?? ($services[$slug] ?? ucwords(str_replace('-', ' ', $slug)));
                 $badge = $card['badge'] ?? '';
-                $img = serviceImageUrl($slug);
+                $img = url('/assets/images/services/' . $slug . '.jpg');
             ?>
             <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                class="group relative rounded-3xl overflow-hidden border border-white/10 min-h-[140px] bg-white/5 hover:border-[#ff6b00] transition">
-                <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> for care homes — iComply Property Services" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-55 transition" loading="lazy"
+                <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> for care homes — Icomply Property Services" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-55 transition" loading="lazy"
                      onerror="this.style.display='none'">
                 <div class="relative p-5 h-full flex flex-col justify-end">
                     <?php if ($badge !== ''): ?>
@@ -243,7 +242,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         <?php foreach ($careServices as $slug => $card):
-            $img = serviceImageUrl($slug);
+            $img = url('/assets/images/services/' . $slug . '.jpg');
             $svcName = $services[$slug] ?? $card['title'];
         ?>
         <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
@@ -410,10 +409,10 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
     <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
         <div class="grid lg:grid-cols-2 gap-12 items-start">
             <div>
-                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Why iComply</div>
+                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Why Icomply</div>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Stockport engineers, North West care coverage</h2>
                 <p class="mt-4 text-zinc-600 leading-relaxed">
-                    Based in Offerton, Stockport, iComply Property Services supports care homes, nursing homes and
+                    Based in Offerton, Stockport, Icomply Property Services supports care homes, nursing homes and
                     supported living across Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria.
                     We focus on clear scope, fixed-price quotes and documentation that stands up to CQC visits,
                     fire risk assessments and insurer audits.
@@ -439,8 +438,15 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Popular areas</h2>
                 <p class="mt-3 text-zinc-600">Pick a town for local service links — or request a multi-home quote covering your full care map.</p>
                 <div class="mt-6 flex flex-wrap gap-2">
-                    <?php foreach ($popularTowns as $town): ?>
-                        <a href="<?= url('/pages/areas/' . areaSlug($town) . '.php') ?>"
+                    <?php foreach ($popularTowns as $town):
+                        $townHref = url('/pages/areas/' . areaSlug($town) . '.php');
+                        if ($town === 'Manchester') {
+                            $townHref = url('/pages/nurse-call-manchester');
+                        } elseif ($town === 'Burnley') {
+                            $townHref = url('/pages/nurse-call-burnley');
+                        }
+                    ?>
+                        <a href="<?= $townHref ?>"
                            class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]"><?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?></a>
                     <?php endforeach; ?>
                 </div>
@@ -449,9 +455,13 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 <div class="mt-10 bg-white border rounded-3xl p-6">
                     <h3 class="font-semibold text-black">Related care home guides</h3>
                     <ul class="mt-4 space-y-2 text-sm">
-                        <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/services/nurse-call.php') ?>">Nurse call systems</a></li>
+                        <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/nurse-call-systems') ?>">Nurse call hub</a> — care homes, wards and warden call</li>
+                        <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/services/nurse-call.php') ?>">Nurse call service</a></li>
+                        <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/nurse-call-manchester') ?>">Nurse call in Manchester</a></li>
+                        <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/nurse-call-burnley') ?>">Nurse call in Burnley</a></li>
                         <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/keywords/care-home-nurse-call.php') ?>">Care home nurse call</a></li>
                         <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/keywords/hospital-nurse-call-system.php') ?>">Hospital nurse call systems</a></li>
+                        <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/keywords/warden-call') ?>">Warden call</a></li>
                         <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/services/fire-alarms.php') ?>">Fire alarm installation &amp; servicing</a></li>
                         <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/services/emergency-lighting.php') ?>">Emergency lighting</a></li>
                         <li><a class="text-[#ff6b00] font-medium hover:underline" href="<?= url('/pages/manufacturers/courtney-thorne.php') ?>">Courtney Thorne nurse call</a></li>
@@ -490,10 +500,10 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
         <div class="text-center mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Care home quote request</h2>
-            <p class="mt-3 text-zinc-600">Tell us about the home(s), systems and brands on site. Send the details and we will reply with a quote.</p>
+            <p class="mt-3 text-zinc-600">Tell us about the home(s), systems and brands on site. We aim to respond within 2 hours on business days.</p>
         </div>
 
-        <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
+        <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <input type="hidden" name="gclid" value="<?= htmlspecialchars($_GET['gclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
             <input type="hidden" name="fbclid" value="<?= htmlspecialchars($_GET['fbclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">

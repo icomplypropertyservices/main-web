@@ -5,9 +5,9 @@
 require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/share.php';
 
-$pageTitle = 'Site Map | iComply Property Services';
-$metaDesc = 'Browse the iComply site map — fire safety, professional and construction services, popular North West areas, manufacturers, keyword guides and XML sitemaps.';
-$metaKeywords = 'iComply site map, fire risk assessment, kitchen fitting, property compliance, North West areas, EICR guides';
+$pageTitle = 'Site Map | Icomply Property Services';
+$metaDesc = 'Browse the Icomply site map — fire safety, professional and construction services, popular North West areas, manufacturers, keyword guides and XML sitemaps.';
+$metaKeywords = 'Icomply site map, fire risk assessment, kitchen fitting, property compliance, North West areas, EICR guides';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/site-map.php');
 
@@ -48,6 +48,8 @@ $mainPages = [
     ['href' => '/shop/gas/', 'label' => 'Shop — Gas'],
     ['href' => '/products', 'label' => 'Products'],
     ['href' => url('/pages/packages.php'), 'label' => 'Packages'],
+    ['href' => url('/pages/jobs/hmo.php'), 'label' => 'HMO landlord packages'],
+    ['href' => url('/pages/jobs/hmo-compliance.php'), 'label' => 'HMO compliance bundle (£650)'],
     ['href' => url('/pages/pricing.php'), 'label' => 'Pricing guide'],
     ['href' => url('/pages/landlords.php'), 'label' => 'Landlords'],
     ['href' => url('/pages/commercial.php'), 'label' => 'Commercial / FM'],
@@ -81,9 +83,9 @@ $resourceLinks = [
     ['href' => url('/pages/fire-risk-assessment'), 'label' => 'Fire risk assessment', 'blurb' => 'Written FRA and action plan'],
     ['href' => url('/pages/electrical-safety-landlords'), 'label' => 'Electrical safety for landlords', 'blurb' => 'EICR and remedials'],
     ['href' => url('/pages/commercial-fire-safety'), 'label' => 'Commercial fire safety', 'blurb' => 'Alarms, lighting, doors, FRA'],
-    ['href' => url('/pages/resources/index.php') . '#batch-a', 'label' => 'Landlord guides', 'blurb' => 'Gas, FRA, smoke/CO, PAT, EPC'],
-    ['href' => url('/pages/resources/index.php') . '#batch-b', 'label' => 'Fire and commercial guides', 'blurb' => 'Fire, commercial, care, booking, GM'],
-    ['href' => url('/pages/resources/index.php') . '#batch-c', 'label' => 'Service hubs', 'blurb' => 'Twelve quality hubs (not HMO packages)'],
+    ['href' => url('/pages/resources/index.php') . '#batch-a', 'label' => 'Batch A — days 1–5', 'blurb' => 'Gas, FRA, smoke/CO, PAT, EPC'],
+    ['href' => url('/pages/resources/index.php') . '#batch-b', 'label' => 'Batch B — days 6–14', 'blurb' => 'Fire, commercial, care, booking, GM'],
+    ['href' => url('/pages/resources/index.php') . '#batch-c', 'label' => 'Batch C — SEO hubs', 'blurb' => 'Twelve quality hubs (not HMO packages)'],
     ['href' => url('/pages/services/legionella-risk-assessment.php'), 'label' => 'Legionella risk assessment', 'blurb' => 'Water hygiene / Legionnaires — POA'],
     ['href' => url('/pages/services/asbestos-survey.php'), 'label' => 'Asbestos survey', 'blurb' => 'Management & refurbishment surveys — POA'],
     ['href' => url('/pages/resources/legionella-risk-assessment.php'), 'label' => 'Legionella guide', 'blurb' => 'L8 / HSG274 plain English'],
@@ -92,6 +94,8 @@ $resourceLinks = [
     ['href' => url('/pages/manufacturers/index.php'), 'label' => "Manufacturers ({$mfrCount})", 'blurb' => 'Brand pages and trade kits'],
     ['href' => url('/pages/faq.php'), 'label' => 'FAQ', 'blurb' => 'Common compliance questions answered'],
     ['href' => url('/pages/packages.php'), 'label' => 'Packages', 'blurb' => 'Multi-service landlord & FM packages'],
+    ['href' => url('/pages/jobs/hmo.php'), 'label' => 'HMO landlord packages', 'blurb' => 'Compliance, fire and occupancy — £650 bundle where it applies'],
+    ['href' => url('/pages/jobs/hmo-compliance.php'), 'label' => 'HMO compliance bundle', 'blurb' => 'FRA + EICR + gas, £650 typical 6-bed North West'],
     ['href' => url('/pages/landlords.php'), 'label' => 'Landlords', 'blurb' => 'EICR, gas, fire and emergency lighting'],
     ['href' => url('/pages/commercial.php'), 'label' => 'Commercial', 'blurb' => 'Fire, electrical and security for sites'],
 ];
@@ -212,8 +216,8 @@ require SITE_ROOT . '/includes/header.php';
         </div>
         <?php endforeach; ?>
         <p class="text-sm text-zinc-500">
-            Machine-readable list of the working pages (not service×town or keyword×town doorways):
-            <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/sitemap.xml') ?>">XML sitemap</a>.
+            Full machine-readable list (<?= number_format(count($services) * count($areas) + count(getMajorKeywords()) * count($areas) + count($services) + count(getMajorKeywords()) + count($areas)) ?>+ URLs):
+            <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/sitemap.xml') ?>">XML sitemap index</a>.
         </p>
     </div>
 </section>
@@ -237,6 +241,12 @@ require SITE_ROOT . '/includes/header.php';
                class="px-3 py-1.5 bg-white border rounded-full text-xs sm:text-sm text-black hover:border-[#ff6b00] transition">
                 <?= htmlspecialchars($sName, ENT_QUOTES, 'UTF-8') ?> hub
             </a>
+            <?php if ($sSlug === 'fire-alarms'): ?>
+            <a href="<?= url('/pages/jobs/fire-alarms.php') ?>"
+               class="px-3 py-1.5 bg-white border rounded-full text-xs sm:text-sm text-black hover:border-[#ff6b00] transition">
+                Fire alarm install, maintain and service
+            </a>
+            <?php endif; ?>
         <?php endforeach;
         $egKwMap = getMajorKeywords();
         $egTowns = array_values(array_intersect($popularAreas, ['Stockport', 'Manchester', 'Bolton']));

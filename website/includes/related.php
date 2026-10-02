@@ -36,7 +36,7 @@ function relatedServicesHtml(string $currentSlug, int $limit = 6): string {
         $blurb = htmlspecialchars(getServiceBlurb($slug, true), ENT_QUOTES, 'UTF-8');
         $html .= '<a href="' . $href . '" class="group bg-white border rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">'
             . '<div class="h-28 bg-zinc-100 overflow-hidden">'
-            . '<img src="' . $img . '" alt="' . $label . ' in the North West — iComply Property Services" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" onerror="this.parentElement.style.display=\'none\'">'
+            . '<img src="' . $img . '" alt="' . $label . ' in the North West — Icomply Property Services" width="640" height="360" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" onerror="this.parentElement.style.display=\'none\'">'
             . '</div>'
             . '<div class="p-5 flex-1 flex flex-col">'
             . '<h3 class="font-semibold text-black">' . $label . '</h3>'
@@ -150,7 +150,7 @@ function relatedManufacturersHtml(string $serviceSlug = '', int $limit = 8): str
         $label = htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8');
         $html .= '<a href="' . $href . '" class="group bg-white border rounded-2xl overflow-hidden hover:border-[#ff6b00] hover:shadow-md transition block">'
             . '<div class="h-24 bg-zinc-100 overflow-hidden">'
-            . '<img src="' . $src . '" alt="' . $label . ' products and service" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" onerror="this.src=\'' . $fallbackImg . '\'">'
+            . '<img src="' . $src . '" alt="' . $label . ' products and service" width="640" height="360" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" onerror="this.src=\'' . $fallbackImg . '\'">'
             . '</div>'
             . '<div class="p-3 text-center">'
             . '<div class="text-sm font-semibold text-black">' . $label . '</div>'
@@ -188,8 +188,12 @@ function relatedKeywordsHtml(string $serviceSlug, int $limit = 0): string {
 
     $html = '<div class="flex flex-wrap gap-2">';
     foreach ($keywords as $slug => $meta) {
+        $name = (string)($meta['name'] ?? keywordDisplayName($slug));
+        if (function_exists('seo_unverified_badge_label') && seo_unverified_badge_label($name)) {
+            continue;
+        }
         $href = htmlspecialchars(url('/pages/keywords/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
-        $label = htmlspecialchars((string)($meta['name'] ?? keywordDisplayName($slug)), ENT_QUOTES, 'UTF-8');
+        $label = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
         $html .= '<a href="' . $href . '" class="px-3 py-1.5 bg-white border border-zinc-200 rounded-full text-xs font-medium text-zinc-800 hover:border-[#ff6b00] hover:text-[#ff6b00] transition">'
             . $label . '</a>';
     }
@@ -238,7 +242,14 @@ function keywordAreaLinksHtml(string $area, ?array $extraSlugs = null, int $limi
         if (!isset($all[$slug])) {
             continue;
         }
+        $kwService = (string)($all[$slug]['service'] ?? '');
+        if ($kwService !== '' && function_exists('seo_local_landing_indexable') && !seo_local_landing_indexable($kwService, $area)) {
+            continue;
+        }
         $name = (string)($all[$slug]['name'] ?? keywordDisplayName($slug));
+        if (function_exists('seo_unverified_badge_label') && seo_unverified_badge_label($name)) {
+            continue;
+        }
         $href = htmlspecialchars(url('/pages/keywords/' . $slug . '/' . $areaSlug . '.php'), ENT_QUOTES, 'UTF-8');
         $label = htmlspecialchars($name . ' in ' . $area, ENT_QUOTES, 'UTF-8');
         $html .= '<a href="' . $href . '" class="px-3 py-1.5 bg-white border border-zinc-200 rounded-full text-xs font-medium text-zinc-800 hover:border-[#ff6b00] hover:text-[#ff6b00] transition">'
@@ -263,8 +274,12 @@ function siblingKeywordsHtml(string $keywordSlug, string $serviceSlug, int $limi
     }
     $html = '<div class="flex flex-wrap gap-2">';
     foreach ($keywords as $slug => $meta) {
+        $name = (string)($meta['name'] ?? keywordDisplayName($slug));
+        if (function_exists('seo_unverified_badge_label') && seo_unverified_badge_label($name)) {
+            continue;
+        }
         $href = htmlspecialchars(url('/pages/keywords/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
-        $label = htmlspecialchars((string)($meta['name'] ?? keywordDisplayName($slug)), ENT_QUOTES, 'UTF-8');
+        $label = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
         $html .= '<a href="' . $href . '" class="px-3 py-1.5 bg-white border-2 border-zinc-300 rounded-full text-xs font-semibold text-zinc-900 hover:border-[#ff6b00] hover:text-[#ff6b00]">'
             . $label . '</a>';
     }

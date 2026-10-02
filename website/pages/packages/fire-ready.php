@@ -14,7 +14,7 @@ require SITE_ROOT . '/includes/header.php';
     <nav class="text-xs text-white/50 mb-6"><a href="<?= rtrim(SITE_URL,'/') ?>/" class="hover:text-white">Home</a> / <a href="<?= url('/pages/packages.php') ?>" class="hover:text-white">Packages</a> / Fire Ready</nav>
     <p class="text-xs uppercase tracking-widest text-white/60 mb-3">Commercial · Wave 1</p>
     <h1 class="text-4xl sm:text-5xl font-semibold tracking-tighter">Fire Ready <span class="text-[#ff6b00]">package</span></h1>
-    <p class="mt-4 text-white/80 max-w-2xl">Life-safety systems pack including AOV &amp; smoke control where fitted. Price: <strong>POA</strong> after scope. Copy via Marketing/CoS.</p>
+    <p class="mt-4 text-white/80 max-w-2xl">Life-safety systems pack including AOV and smoke control where fitted. AOV is fire protection, so smoke-vent checks can be quoted outside the North West. Travel sits on that quote. Price: <strong>POA</strong> after scope. England, Wales, Scotland and Northern Ireland do not share one building-reg text. Call <?= htmlspecialchars((string)PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
     <a href="#quote" class="inline-block mt-8 px-8 py-4 rounded-2xl bg-[#ff6b00] font-semibold">Request quote</a>
   </div>
 </section>
@@ -31,9 +31,13 @@ require SITE_ROOT . '/includes/header.php';
   </ul>
   <div class="mt-8 flex flex-wrap gap-2">
     <a class="px-4 py-2 border rounded-full text-sm" href="<?= url('/pages/services/aov-air-handling.php') ?>">AOV &amp; Smoke Control</a>
+    <a class="px-4 py-2 border rounded-full text-sm" href="<?= url('/pages/aov') ?>">AOV by UK town</a>
+    <a class="px-4 py-2 border rounded-full text-sm" href="<?= url('/products.php') ?>#aov-kits">AOV kit prices</a>
     <a class="px-4 py-2 border rounded-full text-sm" href="<?= url('/pages/services/fire-alarms.php') ?>">Fire alarms</a>
     <a class="px-4 py-2 border rounded-full text-sm" href="<?= url('/pages/services/emergency-lighting.php') ?>">Emergency lighting</a>
     <a class="px-4 py-2 border rounded-full text-sm" href="<?= url('/pages/services/fire-risk-assessments.php') ?>">FRA</a>
+    <a class="px-4 py-2 border rounded-full text-sm" href="<?= url('/pages/jobs/fire-risk-assessment') ?>">FRA £350</a>
+    <a class="px-4 py-2 border rounded-full text-sm" href="<?= url('/pages/jobs/landlord-bundle') ?>">Pack £650</a>
     <a class="px-4 py-2 border rounded-full text-sm" href="<?= url('/pages/services/smoke-co-alarms.php') ?>">Smoke &amp; CO</a>
   </div>
 </section>

@@ -35,7 +35,7 @@ $commercialPillars = [
     ],
     'aov-air-handling' => [
         'title' => 'AOV & smoke control',
-        'blurb' => 'Smoke vents, AOV panels and smoke-control maintenance for high-rise and commercial blocks.',
+        'blurb' => 'Smoke vents and AOV panels for blocks and workplaces. Quoted across the UK from Stockport. Travel outside a short North West run is on the quote. Install and testing are POA.',
         'keywords' => ['Smoke control', 'AOV panels', 'EN 12101'],
     ],
     'cctv' => [
@@ -68,7 +68,7 @@ $extraServices = [
     'intruder-alarm' => 'PD 6662 / BS EN 50131 wired and wireless systems with monitoring options.',
     'door-entry' => 'Video and audio door entry for multi-tenant commercial blocks.',
     'intercoms' => 'Master/substation and commercial intercom systems.',
-    'gas-systems' => 'Landlord gas safety certificates (CP12), carried out by a Gas Safe registered engineer. iComply does not issue them.',
+    'gas-systems' => 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue them.',
 ];
 
 $contractFeatures = [

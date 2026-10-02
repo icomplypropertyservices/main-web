@@ -15,6 +15,7 @@ $keywordName = $KEYWORD_NAME;
 $keywordSlug = $KEYWORD_SLUG;
 $serviceName = $SERVICE_NAME;
 $serviceSlug = $SERVICE_SLUG;
+$poaService = function_exists('isPoaService') && isPoaService((string)$serviceSlug);
 $areaName = $AREA;
 $areaSlugVal = $AREA_SLUG;
 $allServices = getServices();
@@ -28,10 +29,11 @@ if (empty($_SESSION['csrf'])) {
 }
 
 require_once SITE_ROOT . '/includes/share.php';
-if (function_exists('icomplyRobotsMetaForPath')) {
-    $metaRobots = icomplyRobotsMetaForPath('/pages/keywords/' . $KEYWORD_SLUG . '/' . $AREA_SLUG);
-}
 require SITE_ROOT . '/includes/header.php';
+require_once SITE_ROOT . '/includes/access-control-jobs.php';
+if (function_exists('accessControlLaneKeywordStrip')) {
+    echo accessControlLaneKeywordStrip($keywordSlug, $areaName);
+}
 
 $h = static function ($s): string {
     return htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8');
@@ -68,10 +70,10 @@ $h = static function ($s): string {
         </h1>
         <p class="mt-5 text-lg text-white font-medium max-w-2xl leading-relaxed drop-shadow">
             Local engineers for <strong><?= $h($KEYWORD_NAME) ?></strong> in <strong><?= $h($AREA) ?></strong> and nearby postcodes.
-            Fixed-price quotes · Stockport-based team covering the North West.
+            <?= $poaService ? 'POA after scope · no catalogue fee.' : 'Fixed-price quotes.' ?> Stockport-based team covering the North West.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
-            <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-bold text-white shadow-lg">Get free quote</a>
+            <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-bold text-white shadow-lg"><?= $poaService ? 'Enquire for POA' : 'Get free quote' ?></a>
             <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode($keywordName . ' in ' . $areaName) ?>"
                target="_blank" rel="noopener" class="px-8 py-4 rounded-2xl bg-green-600 font-bold text-white shadow-lg">WhatsApp</a>
             <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="px-8 py-4 rounded-2xl bg-white text-[#061828] font-bold shadow-lg"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
@@ -89,11 +91,11 @@ $h = static function ($s): string {
                     Serving <strong class="text-[#061828]"><?= $h($AREA) ?></strong>: <?= $h($KEYWORD_BODY) ?>
                 </p>
                 <p class="mt-4 text-base text-zinc-900 leading-relaxed">
-                    Searching for <strong><?= $h($KEYWORD_NAME) ?> near <?= $h($AREA) ?></strong>? Book iComply for install, service, testing or certification.
+                    Searching for <strong><?= $h($KEYWORD_NAME) ?> near <?= $h($AREA) ?></strong>? Book Icomply for install, service, testing or certification.
                     Also see
                     <a class="font-bold text-[#ff6b00] hover:underline" href="<?= url('/pages/keywords/' . rawurlencode($RELATED_SLUG) . '/' . rawurlencode($AREA_SLUG) . '.php') ?>"><?= $h($RELATED_NAME) ?> in <?= $h($AREA) ?></a>
                     and
-                    <a class="font-bold text-[#ff6b00] hover:underline" href="<?= url('/pages/services/' . rawurlencode($SERVICE_SLUG) . '.php') ?>"><?= $h($SERVICE_NAME) ?></a>.
+                    <a class="font-bold text-[#ff6b00] hover:underline" href="<?= url('/pages/' . rawurlencode($SERVICE_SLUG) . '/' . rawurlencode($AREA_SLUG) . '.php') ?>"><?= $h($SERVICE_NAME) ?> in <?= $h($AREA) ?></a>.
                 </p>
                 <ul class="mt-6 space-y-3"><?= $KEYWORD_FOCUS_HTML ?></ul>
             </div>
@@ -151,7 +153,7 @@ $h = static function ($s): string {
 <section id="quote" class="bg-zinc-100 border-t-2 border-zinc-300">
     <div class="max-w-3xl mx-auto px-6 py-14">
         <h2 class="text-3xl font-bold text-[#061828] text-center"><?= $h($KEYWORD_NAME) ?> in <?= $h($AREA) ?></h2>
-        <?= icomplyQuoteFormOpen('mt-8 bg-white border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4 shadow-md') ?>
+        <form action="<?= url('/contact.php') ?>" method="POST" class="mt-8 bg-white border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4 shadow-md">
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid md:grid-cols-2 gap-4">
                 <input type="text" name="name" placeholder="Full name" required class="w-full border-2 border-zinc-300 px-4 py-3 rounded-xl font-medium text-zinc-900">

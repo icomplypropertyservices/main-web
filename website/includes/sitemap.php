@@ -1,9 +1,9 @@
 <?php
 /**
- * Compact, accurate sitemap — core pages + shop/products hubs + service hubs +
- * area hubs + manufacturer hubs + keyword hubs.
- * Lists service×town and keyword×town pages for every North West town in config.
- * Those pages render real content. Broken or unknown URLs stay out.
+ * Compact sitemap — hubs plus Tier-1 service×town pages that have a bespoke
+ * article. AOV and barrier town pages for places over 10,000 stay in.
+ * Keyword×town, non-Tier-1 towns, area-town templates, and services
+ * without their own town copy stay out. Broken or unknown URLs stay out.
  * Never lists /shop/sitemap.xml or /products/sitemap.xml (separate sites; 404 here).
  */
 declare(strict_types=1);
@@ -125,14 +125,24 @@ function icomplySitemapEntries(): array
         if (preg_match('#-photo\.(jpe?g|png)$#i', $path)) {
             return;
         }
-        // noindex URLs never appear in the sitemap (tiered keyword×area and non-Tier-1 service×area).
-        if (function_exists('icomplyPathIsIndexable') && !icomplyPathIsIndexable($path)) {
-            return;
+        // Hard reject /pages/{service}/{town} even if a leftover matrix file
+        // sits in dist/. Keep only real hub prefixes.
+        if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+            $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'aov', 'aov-air-handling', 'barriers'];
+            if (!in_array($m[1], $okPrefix, true)) {
+                return;
+            }
         }
-        // Hubs are rendered at export time from the catalogue, so they do not
-        // need a committed PHP stub. Town combinations never qualify.
-        $generatedHub = (bool)preg_match('#^/pages/(keywords|areas|manufacturers|services)/[a-z0-9\-]+$#', $path);
-        if (!$generatedHub && !icomplySitemapUrlHasFile($path)) {
+        // Keyword hubs and AOV/barrier town pages are generated at export time.
+        $isKeywordLoc = (bool)preg_match('#^/pages/keywords(/[a-z0-9\-]+){1,2}$#', $path);
+        $isTownLoc = (bool)preg_match('#^/pages/(aov|barriers)(/[a-z0-9\-]+)?$#', $path);
+        $isMfrTown = (bool)preg_match('#^/pages/(aov-air-handling|barriers)/([a-z0-9\-]+)$#', $path);
+        $isBarrierBrandLoc = false;
+        if (preg_match('#^/pages/manufacturers/([a-z0-9\-]+)$#', $path, $brandMatch) && function_exists('getManufacturerBySlug')) {
+            $brandEntry = getManufacturerBySlug($brandMatch[1]);
+            $isBarrierBrandLoc = is_array($brandEntry) && in_array('barriers', $brandEntry['services'] ?? [], true);
+        }
+        if (!$isKeywordLoc && !$isTownLoc && !$isMfrTown && !$isBarrierBrandLoc && !icomplySitemapUrlHasFile($path)) {
             return;
         }
         $seen[$path] = true;
@@ -157,6 +167,8 @@ function icomplySitemapEntries(): array
         ['/pages/landlords', '0.8', 'pages/landlords.php'],
         ['/pages/commercial', '0.8', 'pages/commercial.php'],
         ['/pages/packages', '0.8', 'pages/packages.php'],
+        ['/pages/packages/compliance-bundle', '0.85', 'pages/packages/compliance-bundle.php'],
+        ['/pages/packages/landlord-pack', '0.8', 'pages/packages/landlord-pack.php'],
         ['/pages/pricing', '0.75', 'pages/pricing.php'],
         ['/pages/care-homes', '0.75', 'pages/care-homes.php'],
         ['/pages/ev-chargers', '0.75', 'pages/ev-chargers.php'],
@@ -164,17 +176,26 @@ function icomplySitemapEntries(): array
         ['/pages/emergency', '0.75', 'pages/emergency.php'],
         ['/pages/reviews', '0.65', 'pages/reviews.php'],
         ['/pages/site-map', '0.7', 'pages/site-map.php'],
+        ['/pages/asbestos-jobs', '0.8', 'pages/asbestos-jobs.php'],
         ['/pages/resources', '0.75', 'pages/resources.php'],
         ['/pages/resources/eicr-guide', '0.7', 'pages/resources/eicr-guide.php'],
         ['/pages/resources/fire-alarm-servicing', '0.7', 'pages/resources/fire-alarm-servicing.php'],
         ['/pages/resources/landlord-compliance-checklist', '0.7', 'pages/resources/landlord-compliance-checklist.php'],
         ['/pages/resources/emergency-lighting-testing', '0.7', 'pages/resources/emergency-lighting-testing.php'],
+        ['/pages/emergency-lighting-jobs', '0.8', 'pages/emergency-lighting-jobs.php'],
         ['/pages/resources/cctv-for-business', '0.7', 'pages/resources/cctv-for-business.php'],
         ['/pages/resources/access-control-guide', '0.7', 'pages/resources/access-control-guide.php'],
+        ['/pages/services/aov-air-handling', '0.96', 'pages/services/aov-air-handling.php'],
+        ['/pages/packages/let-ready', '0.78', 'pages/packages/let-ready.php'],
+        ['/pages/packages/workplace-essentials', '0.78', 'pages/packages/workplace-essentials.php'],
+        ['/pages/packages/fire-ready', '0.78', 'pages/packages/fire-ready.php'],
         ['/pages/services', '0.95', 'pages/services.php'],
         ['/pages/areas', '0.9', 'pages/areas.php'],
+        ['/pages/areas/manchester', '0.8', 'pages/areas/manchester.php'],
+        ['/pages/areas/burnley', '0.8', 'pages/areas/burnley.php'],
         ['/pages/manufacturers', '0.9', 'pages/manufacturers.php'],
         ['/pages/keywords', '0.9', 'pages/keywords.php'],
+        ['/pages/aov', '0.85', 'pages/aov/index.php'],
         // Trailing slash is the canonical (live /shop 301s to /shop/).
         ['/shop/', '0.8', 'shop/index.html'],
         ['/shop/fire/', '0.75', 'shop/fire/index.html'],
@@ -188,6 +209,8 @@ function icomplySitemapEntries(): array
             $add($path, $pri);
         }
     }
+    // Barriers job hub is routed from the keyword catalogue (no stub file).
+    $add('/pages/keywords/car-park-barrier-access', '0.8');
 
     // Resource articles that exist on the publish root (not source-only).
     foreach (glob($publish . '/pages/resources/*.php') ?: [] as $resFile) {
@@ -248,6 +271,18 @@ function icomplySitemapEntries(): array
     // Keyword hubs and keyword×town pages from the catalogue.
     // Skip the catalogue at request time so keywords.json cannot OOM a live PHP sitemap.
     $requestSafe = !empty($GLOBALS['ICOMPLY_SITEMAP_REQUEST_SAFE']);
+    // AOV and barriers manufacturer×area pages only. Other brand×town URLs
+    // are exported but omitted here, same rule as the full keyword×town matrix.
+    if (!$requestSafe && function_exists('getManufacturerCatalog') && function_exists('manufacturerWizardFamily')) {
+        foreach (getManufacturerCatalog() as $mSlug => $mEntry) {
+            if (!is_array($mEntry) || manufacturerWizardFamily($mEntry) === null) {
+                continue;
+            }
+            foreach (manufacturerAreasFor($mEntry) as $town) {
+                $add('/pages/manufacturers/' . $mSlug . '/' . areaSlug((string)$town), '0.64');
+            }
+        }
+    }
     if (!$requestSafe && function_exists('getMajorKeywords') && function_exists('keywordSlug')) {
         $family = [];
         if (function_exists('getElectricalGasMatrixKeywordSlugs')) {
@@ -270,6 +305,26 @@ function icomplySitemapEntries(): array
                 }
                 $add('/pages/keywords/' . $slug . '/' . $town, '0.55');
             }
+        }
+    }
+    $barriersInc = SITE_ROOT . '/includes/barriers.php';
+    if (is_file($barriersInc)) {
+        require_once $barriersInc;
+        if (function_exists('barriersPlaces')) {
+            foreach (barriersPlaces() as $place) {
+                $slug = (string)($place['slug'] ?? '');
+                if ($slug !== '') {
+                    $add('/pages/barriers/' . $slug, '0.55');
+                }
+            }
+        }
+    }
+    if (function_exists('getManufacturerCatalog')) {
+        foreach (getManufacturerCatalog() as $mSlug => $mEntry) {
+            if (!is_array($mEntry) || !in_array('barriers', $mEntry['services'] ?? [], true)) {
+                continue;
+            }
+            $add('/pages/manufacturers/' . $mSlug, !empty($mEntry['partner']) ? '0.8' : '0.7');
         }
     }
     if (function_exists('getAreas') && function_exists('areaSlug')) {
@@ -302,6 +357,40 @@ function icomplySitemapEntries(): array
             foreach ($townSlugs as $town) {
                 $add('/pages/' . $slug . '/' . $town, '0.5');
             }
+        }
+    }
+
+    if (!function_exists('aovPlaces')) {
+        $aovPlaceFile = SITE_ROOT . '/includes/aov-place.php';
+        if (is_file($aovPlaceFile)) {
+            require_once $aovPlaceFile;
+        }
+    }
+    if (function_exists('aovPlaces')) {
+        $add('/pages/aov', '0.85');
+        foreach (array_keys(aovPlaces()) as $slug) {
+            $add('/pages/aov/' . $slug, '0.64');
+        }
+    }
+
+    if (!$requestSafe && function_exists('icomplyMfrIndexableTowns') && function_exists('areaSlug')) {
+        foreach (['aov-air-handling', 'barriers'] as $svc) {
+            foreach (icomplyMfrIndexableTowns() as $town) {
+                $add('/pages/' . $svc . '/' . areaSlug($town), '0.64');
+            }
+        }
+    }
+
+    if (!function_exists('icomplyUkTownRoutes')) {
+        $townFile = SITE_ROOT . '/includes/uk-towns.php';
+        if (is_file($townFile)) {
+            require_once $townFile;
+        }
+    }
+    if (function_exists('icomplyUkTownRoutes')) {
+        foreach (icomplyUkTownRoutes() as $townPath) {
+            $depth = substr_count(trim((string)$townPath, '/'), '/');
+            $add((string)$townPath, $depth > 1 ? '0.64' : '0.86');
         }
     }
 

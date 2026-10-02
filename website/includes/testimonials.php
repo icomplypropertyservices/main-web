@@ -61,7 +61,7 @@ function testimonialsSectionHtml(): string
     };
 
     $html = "\n<!-- TESTIMONIALS -->\n";
-    $html .= '<section class="bg-white border-t" aria-labelledby="testimonials-heading">' . "\n";
+    $html .= '<section class="bg-white border-t" data-seo-shared="1" aria-labelledby="testimonials-heading">' . "\n";
     $html .= '    <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">' . "\n";
     $html .= '        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">' . "\n";
     $html .= '            <div>' . "\n";

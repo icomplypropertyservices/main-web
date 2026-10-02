@@ -3,35 +3,43 @@
  * About — conversion-focused company page: who we are, services, coverage, standards, shop, CTAs.
  */
 require_once __DIR__ . '/../config.php';
-require_once SITE_ROOT . '/includes/shopify.php';
+$shopifyLib = SITE_ROOT . '/includes/shopify.php';
+if (is_file($shopifyLib) && str_starts_with(ltrim((string)file_get_contents($shopifyLib)), '<?php')) {
+    require_once $shopifyLib;
+}
 
+$seoFamily = 'static';
 $pageTitle = 'About Us | Fire Safety, Professional & Construction | Stockport';
-$metaDesc = 'About iComply Property Services — Stockport SK2 5DE. Fire risk assessments and fire safety systems, electrical, gas, security, professional compliance, kitchens, bathrooms and construction across the North West.';
-$metaKeywords = 'about iComply, fire risk assessment Stockport, kitchen fitting North West, property compliance Stockport, construction services Greater Manchester';
+$metaDesc = 'About Icomply Property Services at Stockport SK2 5DE. Fire, electrical and landlord work is quoted after we see the building. Call 07517806082.';
+$metaKeywords = 'about Icomply, fire risk assessment Stockport, kitchen fitting North West, property compliance Stockport, construction services Greater Manchester';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/about.php');
 
 $services = getServices();
 $areas = getAreas();
 $categories = getServiceCategories();
-$catalog = getShopCatalog();
-$featuredProducts = array_slice($catalog['products'], 0, 4);
+$featuredProducts = [];
+if (function_exists('getShopCatalog')) {
+    $catalog = getShopCatalog();
+    $featuredProducts = array_slice($catalog['products'] ?? [], 0, 4);
+}
 
 // Short blurbs via getServiceBlurb($slug, true) — see includes/content.php / config.php
 
 $trust = [
-    ['title' => 'Stockport based', 'text' => 'SK2 5DE HQ — local team, North West coverage'],
-    ['title' => count($services) . ' services', 'text' => 'Fire safety, professional & construction catalogue'],
-    ['title' => 'Fixed-price quotes', 'text' => 'Clear scope, documentation and certification'],
-    ['title' => count($areas) . '+ towns', 'text' => 'Local pages for every service we deliver'],
+    ['title' => 'Stockport based', 'text' => 'SK2 5DE — local team, North West coverage'],
+    ['title' => count($services) . ' services', 'text' => 'Fire safety, professional and construction catalogue'],
+    ['title' => 'Written quotes', 'text' => 'Scope first. Some jobs are priced only after a survey'],
+    ['title' => count($areas) . '+ towns', 'text' => 'Towns on our published areas list'],
 ];
 
+// References for the work — not scheme memberships. Do not add NICEIC, BAFE, CHAS or a company Gas Safe number here.
 $standards = [
     ['code' => 'BS 7671', 'label' => 'Electrical wiring & EICR'],
     ['code' => 'BS 5839', 'label' => 'Fire detection & alarms'],
     ['code' => 'BS 5266', 'label' => 'Emergency lighting'],
     ['code' => 'FSO / PAS 79', 'label' => 'Fire risk assessments'],
-    ['code' => 'gas safety certificates (CP12)', 'label' => 'Landlord & commercial gas'],
+    ['code' => 'CP12 record', 'label' => 'Landlord gas safety — registration checked per job'],
     ['code' => 'Building Regs', 'label' => 'Construction & fit-out works'],
 ];
 
@@ -73,7 +81,7 @@ $aboutSchema = [
             'telephone' => PHONE,
             'email' => EMAIL,
             'image' => $ogImage,
-            'description' => 'Fire safety, professional compliance and construction services — FRAs, fire systems, electrical, gas, security, kitchens, bathrooms and renovation across Greater Manchester and the North West.',
+            'description' => 'Stockport contractor for fire risk assessments, fire systems, electrical, gas, security, professional support, kitchens, bathrooms and renovation across Greater Manchester and the North West. Telephone 07517806082. Standards cited are job references, not scheme memberships.',
             'address' => [
                 '@type' => 'PostalAddress',
                 'streetAddress' => '17 Woodlands Park Road',
@@ -129,9 +137,9 @@ $aboutSchema = [
                     <span class="text-[#ff6b00]">iComply Property Services</span>
                 </h1>
                 <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl">
-                    Fire risk assessments and full fire safety systems, electrical &amp; gas, security,
-                    professional compliance support, kitchens, bathrooms, renovation and construction —
-                    plus a trade shop for kits and parts.
+                    Fire risk assessments and fire safety systems, electrical and gas, security,
+                    professional support, kitchens, bathrooms, renovation and construction —
+                    plus a trade shop for kits and parts. Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get free quote</a>
@@ -197,14 +205,14 @@ $aboutSchema = [
                 facilities managers, care providers, homeowners and commercial clients keep buildings safe, compliant and well-finished.
             </p>
             <p class="mt-4 text-zinc-600 leading-relaxed">
-                From fire risk assessments and BS 5839 systems to EICRs, landlord packages, kitchens, bathrooms and full renovations —
-                we deliver survey-led quotes, clear documentation and local North West coverage.
+                From fire risk assessments and BS 5839 systems to EICRs, landlord visits, kitchens, bathrooms and renovations —
+                quotes follow the scope, and paperwork is for the work we complete. Coverage is the North West towns on our areas list.
             </p>
             <ul class="mt-6 space-y-3 text-sm text-zinc-700">
-                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> <?= count($services) ?> services across <?= count($categories) ?> categories</li>
-                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Local response across <?= count($areas) ?>+ North West towns</li>
-                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Manufacturer-aware fire &amp; security installs</li>
-                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Construction &amp; void works for landlords and investors</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> <?= count($services) ?> services across <?= count($categories) ?> categories in the published catalogue</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Local response across <?= count($areas) ?>+ North West towns on that list</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Fire and security installs using the equipment specified for the site — brand names are not approved-installer badges</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Construction and void works for landlords and investors, scoped per job</li>
             </ul>
         </div>
         <div class="grid sm:grid-cols-2 gap-4">
@@ -240,20 +248,24 @@ $aboutSchema = [
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Services</div>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">What we deliver</h2>
-                <p class="mt-2 text-zinc-600 max-w-xl">Install, maintain, test and certify — open any service for local pages, manufacturers and a free quote.</p>
+                <p class="mt-2 text-zinc-600 max-w-xl">Install, maintain and test. Open a service for its page and a quote. The lines on the cards describe the work — they are not scheme memberships.</p>
             </div>
             <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All services →</a>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            <?php foreach ($services as $slug => $name):
+            <?php
+            $aboutImgEager = true;
+            foreach ($services as $slug => $name):
                 $blurb = getServiceBlurb($slug, true);
-                $img = serviceImageUrl($slug);
+                $img = url('/assets/images/services/' . $slug . '.jpg');
             ?>
             <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                class="service-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="h-36 bg-zinc-100 overflow-hidden">
                     <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>"
-                         class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy"
+                         width="640" height="360"
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="<?= $aboutImgEager ? 'eager' : 'lazy' ?>"
+                         <?php $aboutImgEager = false; ?>
                          onerror="this.parentElement.style.display='none'">
                 </div>
                 <div class="p-5 flex-1 flex flex-col">
@@ -264,6 +276,12 @@ $aboutSchema = [
             </a>
             <?php endforeach; ?>
         </div>
+        <p class="mt-8 text-sm text-zinc-600 max-w-3xl leading-relaxed">
+            This page does not display NICEIC, BAFE, CHAS, SafeContractor, UKAS, BOHS or a company Gas Safe registration number.
+            Gas appliances are only booked when the attending engineer is on the Gas Safe Register for that work — ask for the ID card and check it before the visit.
+            Legionella and asbestos visits are priced after scope. We do not claim a laboratory accreditation, and licensed asbestos removal is by others.
+            Call <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="text-[#ff6b00] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>.
+        </p>
     </div>
 </section>
 
@@ -274,7 +292,7 @@ $aboutSchema = [
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Coverage</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Serving <?= count($areas) ?>+ towns across the North West</h2>
             <p class="mt-3 text-zinc-600">
-                Based in Offerton, Stockport, we cover Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria.
+                Based in Offerton, Stockport, we cover Greater Manchester, Lancashire, Cheshire, Merseyside and the Cumbria towns on our areas list.
                 Pick a town for service links and a local quote.
             </p>
             <div class="mt-6 flex flex-wrap gap-2">
@@ -286,12 +304,12 @@ $aboutSchema = [
             <a href="<?= url('/pages/areas/index.php') ?>" class="inline-block mt-6 text-sm font-semibold text-[#ff6b00]">View all areas →</a>
         </div>
         <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
-            <h3 class="text-2xl font-semibold tracking-tight">Need a compliance package?</h3>
-            <p class="mt-3 text-white/80">Combine EICR, fire alarms, emergency lighting and gas safety into one visit schedule for landlords and facilities teams.</p>
+            <h3 class="text-2xl font-semibold tracking-tight">Need several visits on one schedule?</h3>
+            <p class="mt-3 text-white/80">Ask for EICR, fire alarms, emergency lighting and gas safety together where the diary and the right engineer cover each part. Gas still needs a Gas Safe registered engineer for the appliances on site.</p>
             <ul class="mt-6 space-y-3 text-sm text-white/90">
-                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Fixed-price multi-service quotes</li>
-                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Full documentation for audits &amp; insurers</li>
-                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Maintenance contracts available</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Written quotes after we know the buildings</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Records for the visits we complete</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Planned maintenance only where we agree a contract</li>
             </ul>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#quote" class="px-6 py-3 bg-[#ff6b00] rounded-2xl font-semibold">Start your quote</a>
@@ -308,8 +326,8 @@ $aboutSchema = [
     <div class="max-w-7xl mx-auto px-6 py-16">
         <div class="text-center max-w-2xl mx-auto mb-12">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Standards</div>
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Built around the codes that matter</h2>
-            <p class="mt-3 text-zinc-600">We design, install and certify against the British Standards and industry schemes your insurers, auditors and tenants expect.</p>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">References we use on the job</h2>
+            <p class="mt-3 text-zinc-600">These are the codes and duties that apply when we take the work. Listing one here is not a scheme membership, a licence, or a guarantee of an enforcement outcome. If a job needs a named accreditation we do not hold, we say so before you book.</p>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             <?php foreach ($standards as $s): ?>
@@ -372,8 +390,8 @@ $aboutSchema = [
             <?php
             $steps = [
                 ['1', 'Tell us the job', 'Service, postcode, panel brand or system type — via form, phone or WhatsApp.'],
-                ['2', 'Get a fixed quote', 'We confirm scope, standards and timeline. No jargon, clear price.'],
-                ['3', 'We deliver & certify', 'Engineers attend, complete the work and issue documentation.'],
+                ['2', 'Get a written quote', 'We confirm scope and which standards apply. If the fee depends on a survey, we say so before you book.'],
+                ['3', 'We do the agreed work', 'Engineers attend the scope in the quote and issue the paperwork for that visit.'],
             ];
             foreach ($steps as [$n, $t, $d]): ?>
             <div class="text-center px-4">
@@ -393,7 +411,7 @@ $aboutSchema = [
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Work with iComply</h2>
             <p class="mt-3 text-zinc-600">Call <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="text-[#ff6b00] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>,
-                WhatsApp, or send the form — we will reply with a quote.</p>
+                WhatsApp the same mobile, or send the form. We aim to reply within 2 hours on business days — that is a target, not a guaranteed call-out.</p>
             <div class="mt-6 flex flex-wrap justify-center gap-3">
                 <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="px-6 py-3 rounded-2xl bg-[#0B1F3A] text-white font-semibold hover:bg-[#ff6b00] transition">Call now</a>
                 <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener"
@@ -438,5 +456,5 @@ $aboutSchema = [
     <?= shareButtonsHtml($pageTitle, $metaDesc) ?>
 </section>
 
-<?= shopifyBuyButtonScript() ?>
+<?php if (function_exists('shopifyBuyButtonScript')) { echo shopifyBuyButtonScript(); } ?>
 <?php require SITE_ROOT . '/includes/footer.php'; ?>

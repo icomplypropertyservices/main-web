@@ -3,7 +3,7 @@
 Add 3 high-quality images here with descriptive filenames and alt text for SEO:
 
 1. electrical-installation-manchester.jpg
-   Alt: "electrical testing certified electrician installing EV charger in Manchester commercial property"
+   Alt: "electrical testing and EV charger installation in a Manchester commercial property"
 
 2. fire-alarm-system-stockport.jpg  
    Alt: "BS 5839 fire alarm panel installation and commissioning in Stockport office"

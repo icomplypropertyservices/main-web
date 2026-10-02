@@ -72,8 +72,8 @@ function icomplyAovKitImageUrl(string $sku): string {
     <p class="text-sm text-zinc-600 mb-3">Install / labour POA. Photos from Marketing CDN Rev C.</p>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
       <?php foreach ([
-        ['AOV-MOTOR','POA'],['AOV-MOTOR-HVY','POA'],['AOV-ACT','POA'],['AOV-ACT-HVY','POA'],
-        ['AOV-CTRL','POA'],['AOV-SENSOR','POA'],['AOV-KIT-1M2','POA']
+        ['AOV-MOTOR','£275'],['AOV-MOTOR-HVY','£950'],['AOV-ACT','£275'],['AOV-ACT-HVY','£950'],
+        ['AOV-CTRL','£400'],['AOV-SENSOR','£60'],['AOV-KIT-1M2','£2,450']
       ] as [$sku,$price]):
         $aovImg = icomplyAovKitImageUrl($sku);
       ?>
@@ -88,18 +88,19 @@ function icomplyAovKitImageUrl(string $sku): string {
   </div>
 </section>
 
-<section class="max-w-7xl mx-auto px-6 pb-12">
+<section id="barriers" class="max-w-7xl mx-auto px-6 pb-12">
+  <span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-[#FF6B00] text-white mb-3">Priority · Barriers</span>
   <h2 class="text-2xl font-semibold text-black mb-2">Barrier packs (5m)</h2>
   <p class="text-sm text-zinc-600 mb-6">SoT supply prices. Install POA. Images from Marketing CAME GARD CDN map.</p>
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
     <?php
     $barCame = icomplyBar5mCameGardImageMap();
     $barPacks = [
-      ['sku'=>'BAR-5M-STD','handle'=>'bar-5m-std','price'=>'POA','blurb'=>'Standard 5m barrier pack'],
-      ['sku'=>'BAR-5M-VIDEX','handle'=>'bar-5m-videx','price'=>'POA','blurb'=>'5m barrier + Videx'],
-      ['sku'=>'BAR-5M-PAXTON','handle'=>'bar-5m-paxton','price'=>'POA','blurb'=>'5m barrier + Paxton'],
-      ['sku'=>'BAR-5M-GSM','handle'=>'bar-5m-gsm','price'=>'POA','blurb'=>'5m barrier + GSM'],
-      ['sku'=>'BAR-5M-ALLIN','handle'=>'bar-5m-allin','price'=>'POA','blurb'=>'5m barrier all-in (Jack-confirmed)'],
+      ['sku'=>'BAR-5M-STD','handle'=>'bar-5m-std','price'=>'£5,850.00','blurb'=>'Standard 5m barrier pack'],
+      ['sku'=>'BAR-5M-VIDEX','handle'=>'bar-5m-videx','price'=>'£7,441.83','blurb'=>'5m barrier + Videx'],
+      ['sku'=>'BAR-5M-PAXTON','handle'=>'bar-5m-paxton','price'=>'£8,375.45','blurb'=>'5m barrier + Paxton'],
+      ['sku'=>'BAR-5M-GSM','handle'=>'bar-5m-gsm','price'=>'£7,393.18','blurb'=>'5m barrier + GSM'],
+      ['sku'=>'BAR-5M-ALLIN','handle'=>'bar-5m-allin','price'=>'£5,199.99','blurb'=>'5m barrier all-in (Jack-confirmed)'],
     ];
     foreach ($barPacks as $bp):
       $img = $barCame[$bp['handle']] ?? $barCame[strtolower($bp['sku'])] ?? '';
@@ -124,7 +125,7 @@ function icomplyAovKitImageUrl(string $sku): string {
     <div class="text-xs font-semibold uppercase tracking-wider text-[#FF6B00]">Nurse call</div>
     <h3 class="mt-2 font-semibold text-lg text-black">NC-ANN</h3>
     <p class="mt-1 text-sm text-zinc-600">Nurse call annunciator / annual service SKU (SoT).</p>
-    <div class="mt-4 text-[#FF6B00] font-semibold">POA <span class="text-xs text-zinc-500 font-normal">ex VAT · install POA</span></div>
+    <div class="mt-4 text-[#FF6B00] font-semibold">£199.99 <span class="text-xs text-zinc-500 font-normal">ex VAT · install POA</span></div>
     <a class="mt-4 inline-flex text-sm font-semibold text-[#0B1F3A]" href="<?= url('/contact.php') ?>">Enquire →</a>
   </article>
 </section>
