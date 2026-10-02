@@ -48,7 +48,7 @@ $packages = [
             'Coordinated visit planning to minimise access days',
         ],
         'service_slugs' => ['electrical', 'gas-systems', 'emergency-lighting', 'fire-alarms'],
-        'wa_text' => 'Hi iComply, I need a quote for the Landlord Essentials package',
+        'wa_text' => 'Hi Icomply, I need a quote for the Landlord Essentials package',
     ],
     [
         'id' => 'fire',
@@ -69,7 +69,7 @@ $packages = [
             'Optional design / upgrade quote if systems fail',
         ],
         'service_slugs' => ['fire-alarms', 'emergency-lighting', 'aov-air-handling'],
-        'wa_text' => 'Hi iComply, I need a quote for the Fire Package',
+        'wa_text' => 'Hi Icomply, I need a quote for the Fire Package',
     ],
     [
         'id' => 'security',
@@ -89,8 +89,8 @@ $packages = [
             'Remote viewing / user setup guidance',
             'One point of contact for all security trades',
         ],
-        'service_slugs' => ['cctv', 'access-control', 'door-entry', 'intercoms', 'intruder-alarm'],
-        'wa_text' => 'Hi iComply, I need a quote for the Security Package',
+        'service_slugs' => ['barriers', 'cctv', 'access-control', 'door-entry', 'intercoms', 'intruder-alarm'],
+        'wa_text' => 'Hi Icomply, I need a quote for the Security Package',
     ],
     [
         'id' => 'full-fm',
@@ -112,10 +112,10 @@ $packages = [
         ],
         'service_slugs' => [
             'electrical', 'fire-alarms', 'emergency-lighting', 'gas-systems',
-            'aov-air-handling', 'nurse-call', 'cctv', 'access-control',
+            'aov-air-handling', 'barriers', 'nurse-call', 'cctv', 'access-control',
             'door-entry', 'intercoms', 'intruder-alarm',
         ],
-        'wa_text' => 'Hi iComply, I need a quote for the Full FM compliance package',
+        'wa_text' => 'Hi Icomply, I need a quote for the Full FM compliance package',
     ],
 ];
 
@@ -149,7 +149,7 @@ require SITE_ROOT . '/includes/header.php';
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#packages" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">View packages</a>
                 <a href="#quote" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">Free quote</a>
-                <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi iComply, I need a multi-service compliance package quote') ?>"
+                <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi Icomply, I need a multi-service compliance package quote') ?>"
                    target="_blank" rel="noopener"
                    class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
             </div>
@@ -157,30 +157,12 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
-<section class="max-w-7xl mx-auto px-6 pt-10">
-    <div class="panel-light rounded-3xl border p-6 md:p-8">
-        <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">FRA job lane</div>
-        <h2 class="text-2xl font-semibold mt-2 text-black">Typical 6-bed HMO list</h2>
-        <p class="mt-3 max-w-3xl">Fire risk assessment <strong>£350</strong>. Landlord pack (FRA + EICR + gas) <strong>£650</strong> — the pack replaces those three lines and is not added on top of £350. Other buildings stay POA. VAT is not added.</p>
-        <div class="mt-5 flex flex-wrap gap-3">
-            <a class="px-5 py-3 rounded-2xl bg-[#ff6b00] font-semibold text-white" href="<?= url('/pages/jobs/fra') ?>">FRA job hub</a>
-            <a class="px-5 py-3 rounded-2xl border font-semibold text-black" href="<?= url('/pages/jobs/fire-risk-assessment') ?>">FRA £350</a>
-            <a class="px-5 py-3 rounded-2xl border font-semibold text-black" href="<?= url('/pages/jobs/landlord-bundle') ?>">Pack £650</a>
-        </div>
-    </div>
-</section>
-
 <?= sectionTrustStrip([
-    ['Honest pricing', 'One published pack price — everything else is From / POA after scope'],
+    ['Honest pricing', 'Shown as From / POA — fixed quote after we agree scope'],
     ['One visit plan', 'Combine services where practical to cut access days'],
     ['Audit-ready packs', 'Certificates & reports in one place for insurers'],
     ['Local engineers', 'Stockport-based team covering Greater Manchester & NW'],
 ]) ?>
-
-<?php
-require_once SITE_ROOT . '/includes/compliance-bundle.php';
-echo icomplyComplianceBundleCrossSellHtml('packages');
-?>
 
 <!-- PACKAGES GRID -->
 <section id="packages" class="max-w-7xl mx-auto px-6 py-16 md:py-20">
@@ -190,12 +172,10 @@ echo icomplyComplianceBundleCrossSellHtml('packages');
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Four ways to stay compliant</h2>
             <p class="mt-2 text-zinc-600 max-w-2xl">
                 Packages are starting points — we tailor scope to your buildings, system brands and renewals.
-                Most prices are <strong class="text-black">from / POA</strong>. The HMO compliance bundle is a published list:
-                <a href="<?= url('/pages/jobs/hmo-compliance.php') ?>" class="font-semibold text-[#ff6b00]">£650</a>
-                for FRA, EICR and gas on a typical 6-bed HMO in the North West.
+                Prices are <strong class="text-black">from / POA</strong> only; you always get a fixed quote before work starts.
             </p>
         </div>
-            <a href="<?= url('/pages/jobs/hmo.php') ?>" class="text-sm font-semibold text-[#ff6b00]">HMO landlord packages →</a>
+        <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Browse single services →</a>
     </div>
 
     <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
@@ -286,10 +266,8 @@ echo icomplyComplianceBundleCrossSellHtml('packages');
     <div class="max-w-7xl mx-auto px-6 py-16">
         <h2 class="text-3xl font-semibold tracking-tight text-black text-center mb-4">How package quoting works</h2>
         <p class="text-center text-zinc-600 max-w-2xl mx-auto mb-12">
-            Landlord, fire, security and FM packages stay from / POA until scope is agreed.
-            The HMO compliance bundle is the published exception:
-            <a href="<?= url('/pages/jobs/hmo-compliance.php') ?>" class="font-semibold text-[#ff6b00]">£650</a>
-            for a typical 6-bed in the North West.
+            We never publish fake fixed prices online — every building is different.
+            You get a clear, fixed-price quote once scope is agreed.
         </p>
         <div class="grid md:grid-cols-3 gap-8">
             <?php
@@ -330,11 +308,11 @@ echo icomplyComplianceBundleCrossSellHtml('packages');
         </div>
         <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
             <h3 class="text-2xl font-semibold">Talk packages today</h3>
-            <p class="mt-3 text-white/80">Call, WhatsApp or use the quote form — we will reply with a quote.</p>
+            <p class="mt-3 text-white/80">Call, WhatsApp or use the quote form — we aim to respond within 2 hours on business days.</p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
                    class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
-                <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi iComply, I need a compliance package quote') ?>"
+                <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi Icomply, I need a compliance package quote') ?>"
                    target="_blank" rel="noopener"
                    class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>
                 <a href="#quote" class="px-6 py-3 rounded-2xl border border-white/30 font-semibold hover:bg-white/10">Quote form</a>
@@ -351,7 +329,7 @@ echo icomplyComplianceBundleCrossSellHtml('packages');
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request a package quote</h2>
             <p class="mt-3 text-zinc-600">Tell us which package and your postcode — we’ll return a fixed-price proposal after scope is agreed. No obligation.</p>
         </div>
-        <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
+        <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <input type="hidden" name="gclid" value="<?= htmlspecialchars($_GET['gclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
             <input type="hidden" name="fbclid" value="<?= htmlspecialchars($_GET['fbclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
@@ -363,9 +341,6 @@ echo icomplyComplianceBundleCrossSellHtml('packages');
                 <input type="tel" name="phone" placeholder="Phone" required maxlength="40" class="w-full border px-5 py-3.5 rounded-2xl">
                 <select name="service" id="package-service" required class="w-full border px-5 py-3.5 rounded-2xl bg-white">
                     <option value="">Select package…</option>
-                    <option value="HMO compliance bundle (£650)">HMO compliance bundle (£650)</option>
-                    <option value="HMO fire safety pack">HMO fire safety pack</option>
-                    <option value="HMO occupancy pack">HMO occupancy pack</option>
                     <option value="Landlord Essentials package">Landlord Essentials</option>
                     <option value="Fire Package">Fire Package</option>
                     <option value="Security Package">Security Package</option>
@@ -388,7 +363,7 @@ echo icomplyComplianceBundleCrossSellHtml('packages');
             </p>
         </form>
         <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm">
-            <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi iComply, I need a compliance package quote') ?>"
+            <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi Icomply, I need a compliance package quote') ?>"
                target="_blank" rel="noopener"
                class="px-5 py-2.5 rounded-2xl bg-green-600 hover:bg-green-500 text-white font-semibold">WhatsApp us instead</a>
             <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"

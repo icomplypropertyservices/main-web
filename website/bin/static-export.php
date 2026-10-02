@@ -280,7 +280,7 @@ function icomplyPopularTownNames(): array
 {
     $areas = function_exists('getAreas') ? getAreas() : [];
     $popular = [
-        'Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale',
+        'Manchester', 'Burnley', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale',
         'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool',
     ];
     return array_values(array_filter(

@@ -693,6 +693,8 @@ function getPopularKeywordSlugs(): array {
         'emergency-lighting-test', 'emergency-lighting-certificate',
         'gas-safety-certificate', 'cp12', 'landlord-gas-safety', 'boiler', 'boiler-install',
         'boiler-repair', 'gas-safety', 'emergency-gas-engineer', 'landlord-gas',
+        'vehicle-barriers', 'rising-arm-barrier', 'parking-barrier', 'access-barrier',
+        'barrier-installation', 'car-park-barrier',
         'cctv-installation', 'access-control-system', 'door-entry-system',
         'car-park-barrier', 'car-park-barrier-manchester', 'car-park-barrier-burnley',
         'came-barrier', 'maglock-installation',
@@ -712,6 +714,10 @@ function getPopularKeywordSlugs(): array {
 }
 
 function getSeoKeywords(string $service, string $area = ''): string {
+    if ($service === 'barriers') {
+        $base = 'vehicle barriers, rising arm barrier, parking barrier, access barrier, Came GARD, barrier installation, barrier maintenance, car park barrier';
+        return $area !== '' ? "{$base}, {$area} barriers, {$area} rising arm" : $base;
+    }
     $mfr = loadJsonData('manufacturers', []);
     $base = $mfr['seo_keywords'][$service] ?? $service;
     if ($service === 'barriers') {
@@ -783,6 +789,24 @@ function getManufacturers(string $serviceSlug): array {
 function getManufacturerCatalog(): array {
     $mfr = loadJsonData('manufacturers', []);
     $catalog = $mfr['catalog'] ?? [];
+    if ($catalog && function_exists('barrierManufacturerCatalog')) {
+        foreach (barrierManufacturerCatalog() as $slug => $entry) {
+            if (!isset($catalog[$slug])) {
+                $catalog[$slug] = $entry;
+                continue;
+            }
+            $services = $catalog[$slug]['services'] ?? [];
+            if (!in_array('barriers', $services, true)) {
+                $services[] = 'barriers';
+                $catalog[$slug]['services'] = $services;
+            }
+            if (!empty($entry['partner'])) {
+                $catalog[$slug]['partner'] = true;
+                $catalog[$slug]['featured'] = true;
+            }
+        }
+        return $catalog;
+    }
     if ($catalog) {
         $catalog = function_exists('icomplyApplyMfrCoverageCatalog')
             ? icomplyApplyMfrCoverageCatalog($catalog)
@@ -983,6 +1007,9 @@ function linkManufacturerNamesInText(string $text): string {
 
 /** First existing service image (.jpg, .png, then -photo.jpg). */
 function serviceImageUrl(string $slug): string {
+    if ($slug === 'barriers' && function_exists('barrierCameHeroImage')) {
+        return barrierCameHeroImage();
+    }
     $base = '/assets/images/services/' . $slug;
     foreach ([$base . '.jpg', $base . '.png', $base . '.svg', $base . '-photo.jpg'] as $rel) {
         if (is_file(SITE_ROOT . $rel)) {

@@ -99,10 +99,6 @@ function area_profile(string $area): array {
 }
 
 function service_local_angle(string $slug, string $serviceName, string $area): string {
-    if (in_array($area, ['Manchester', 'Burnley'], true) && in_array($slug, ['access-control', 'door-entry'], true)) {
-        $place = $area === 'Manchester' ? 'Manchester (MCR)' : 'Burnley';
-        return "In {$place}, car park barriers are the hardest access job: rising arms, induction loops, safety edges and CAME Gard cabinets are surveyed before a POA quote. Maglocks and door entry are scoped on the same visit when the lane and the pedestrian door share a site.";
-    }
     $seed = area_seed($area, $slug);
     $angles = [
         'electrical' => [
@@ -153,22 +149,22 @@ function service_local_angle(string $slug, string $serviceName, string $area): s
             "NVR upgrades and storage expansions keep evidence retention workable for {$area} managers.",
             "Multi-building {$area} estates benefit from unified viewing for facilities teams.",
         ],
-        'barriers' => [
-            "Car parks and yards around {$area} need a barrier matched to lane width, duty and the access method already on site.",
-            "CAME is the partner line we lead with for {$area} vehicle entrances. Other makers are installed when that is what the site already has.",
-            "Safety loops, photocells and boom length are confirmed on the {$area} survey before a supply price is fixed.",
-            "Staff car parks in {$area} often add fob or intercom release to an existing rising-arm cabinet.",
-        ],
         'access-control' => [
-            "Car park barriers are the hardest access job around {$area}: loops, safety edges, boom length and the reader that opens the lane.",
-            "Maglocks and electric strikes on {$area} pedestrian doors are scoped separately from any rising-arm barrier.",
+            "Card/fob access with audit trails suits multi-tenant offices and blocks across {$area}.",
             "Time zones and user groups help {$area} landlords control cleaners, contractors and tenants.",
             "Fire door release strategies must stay safe while securing {$area} entry points.",
+            "Vehicle lanes in {$area} are specified on the barriers service, with Came as the partner arm.",
+        ],
+        'barriers' => [
+            "Vehicle and parking barriers in {$area} are part of a UK-wide service, not a Manchester-only offer.",
+            "New rising arms in {$area} are specified as Came GARD unless the existing cabinet must stay.",
+            "Loops, safety edges and access release are surveyed before any {$area} barrier quote.",
+            "Other manufacturers already on {$area} islands are serviced under their own name.",
         ],
         'door-entry' => [
             "Video door entry upgrades are frequent on {$area} apartment risers and older audio panels.",
-            "Where {$area} sites have a car park barrier, the pedestrian door entry is quoted beside that lane, not instead of it.",
             "Block handset replacements restore service without full building downtime in {$area}.",
+            "Gated developments around {$area} often combine door entry with access control.",
             "We survey panel condition, cabling and power before quoting {$area} block upgrades.",
         ],
         'intercoms' => [
@@ -195,6 +191,9 @@ function service_local_angle(string $slug, string $serviceName, string $area): s
 }
 
 function seo_unique_intro(string $serviceName, string $slug, string $area): string {
+    if ($slug === 'barriers' && function_exists('barrierNationwideIntro')) {
+        return barrierNationwideIntro($serviceName, $area);
+    }
     $p = area_profile($area);
     $angle = service_local_angle($slug, $serviceName, $area);
     $standards = implode(', ', array_slice(service_standards($slug), 0, 3));

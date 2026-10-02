@@ -1,6 +1,6 @@
 <?php
 /**
- * SEO helpers for iComply Property Services
+ * SEO helpers for Icomply Property Services
  * Rank-focused local content, FAQs, schema, breadcrumbs.
  */
 require_once __DIR__ . '/local-content.php';
@@ -24,7 +24,7 @@ function seo_title(string $title): string {
     // Keep SERP titles short (~50–60 chars). Brand only if room remains.
     $title = trim($title);
     if (mb_strlen($title) <= 55) {
-        $withBrand = $title . ' | iComply';
+        $withBrand = $title . ' | Icomply';
         if (mb_strlen($withBrand) <= 60) return $withBrand;
     }
     if (mb_strlen($title) > 60) {
@@ -36,17 +36,16 @@ function seo_title(string $title): string {
 /** Standards / compliance keywords per service for on-page SEO */
 function service_standards(string $slug): array {
     $map = [
-        'electrical' => ['BS 7671', 'EICR', 'PAT testing', 'Part P', 'EV charger install'],
+        'electrical' => ['BS 7671', 'EICR', 'PAT testing', 'Part P', 'NICEIC-aligned practice', 'EV charger install'],
         'fire-alarms' => ['BS 5839', 'fire detection', 'L1–L5 categories', 'addressable systems', 'commissioning certificates'],
         'emergency-lighting' => ['BS 5266', 'maintained / non-maintained', 'exit signage', 'duration testing', 'self-test LED'],
         'aov-air-handling' => ['BS 9991 guidance', 'smoke ventilation', 'AOV controls', 'smoke shafts', 'fire strategy support'],
-        'barriers' => ['CAME barriers partner', 'vehicle barriers', 'gate operators', 'safety edges and loops', 'install POA'],
         'nurse-call' => ['HTM 08-03 aligned', 'care home systems', 'wireless / wired', 'panel upgrades', 'handset repair'],
-        'gas-systems' => ['landlord gas safety record', 'CP12 / CP44', 'boiler servicing', 'commercial gas'],
+        'gas-systems' => ['Gas Safe', 'landlord gas safety', 'CP12 / CP44', 'boiler servicing', 'commercial gas'],
         'intruder-alarm' => ['BS 4737 / PD 6662 practice', 'wired & wireless', 'PIR detection', 'app control', 'ARC-ready'],
         'cctv' => ['IP / HD CCTV', 'NVR recording', 'remote viewing', 'retail & warehouse', 'GDPR-aware install'],
         'access-control' => ['card / fob / biometric', 'multi-door control', 'audit trails', 'time zones', 'fire door release'],
-        'barriers' => ['rising-arm barriers', 'parking barriers', 'BS EN 12453', 'CAME partner', 'safety loops'],
+        'barriers' => ['Came GARD partner', 'rising arm barriers', 'parking barriers', 'safety edges and loops', 'UK-wide'],
         'door-entry' => ['video door entry', 'audio door entry', 'apartment blocks', 'riser upgrades', 'handset replacement'],
         'intercoms' => ['video intercom', 'audio intercom', 'multi-tenant', 'office systems', 'fault finding'],
         'legionella-risk-assessment' => ['HSE L8', 'HSG274', 'water hygiene', 'Legionella risk assessment', 'POA'],
@@ -57,15 +56,12 @@ function service_standards(string $slug): array {
 
 /** Long-form intro paragraph for service×area pages (unique enough via placeholders) */
 function seo_combo_intro(string $serviceName, string $slug, string $area): string {
-    if (function_exists('icomplyCopyIsGasTopic') && icomplyCopyIsGasTopic($slug, $serviceName) && function_exists('icomplyGasLegalSentence')) {
-        return icomplyGasLegalSentence() . ' ' . $serviceName . ' in ' . $area . ' is not carried out by iComply. Non-gas compliance in ' . $area . ' is quoted POA.';
-    }
     $standards = implode(', ', array_slice(service_standards($slug), 0, 3));
-    return "Looking for professional {$serviceName} in {$area}? iComply Property Services provides design, installation, "
+    return "Looking for professional {$serviceName} in {$area}? Icomply Property Services provides design, installation, "
         . "maintenance and certification for landlords, managing agents, facilities teams and businesses across {$area} "
         . "and the wider North West. Our engineers work to UK best practice including {$standards}, with clear paperwork "
         . "you can show insurers, freeholders and local authorities. Based in Stockport (SK2), we cover {$area} with "
-        . "appointments booked when the diary allows and "
+        . "same-week appointments where diary capacity allows and "
         . ((function_exists('isPoaService') && isPoaService($slug))
             ? "a price-on-application quote once scope is clear."
             : "fixed-price quotes whenever the scope is clear.");
@@ -96,7 +92,7 @@ function service_faqs(string $slug, string $serviceName, string $area = ''): arr
     $base = [
         'electrical' => [
             ['q' => "How often do I need an EICR{$loc}?", 'a' => "Most rented homes need an EICR at least every 5 years (or on change of tenancy). Commercial intervals depend on risk and insurer requirements — we advise based on the property type{$loc}."],
-            ['q' => "How is electrical work booked{$loc}?", 'a' => "Appointments are booked when an engineer is available. Emergency fault-finding and consumer unit issues are prioritised for {$area} and surrounding postcodes."],
+            ['q' => "Do you offer same-week electrical work{$loc}?", 'a' => "Yes where diary capacity allows. Emergency fault-finding and consumer unit issues are prioritised for {$area} and surrounding postcodes."],
             ['q' => "Are quotes fixed-price?", 'a' => "Where the scope is clear after survey or photos, we issue fixed-price quotes for EICR, PAT, installs and upgrades."],
         ],
         'fire-alarms' => [
@@ -109,11 +105,6 @@ function service_faqs(string $slug, string $serviceName, string $area = ''): arr
             ['q' => "How often should emergency lights be tested?", 'a' => "Monthly function tests and annual full-duration tests are common. We can run testing programmes and keep logbooks for your {$area} properties."],
             ['q' => "Do you supply self-test LED fittings?", 'a' => "Yes — self-test bulkheads and exit signs reduce labour while keeping compliance evidence for landlords and FM teams."],
         ],
-        'barriers' => [
-            ['q' => "Who is the barriers partner{$loc}?", 'a' => "CAME is our barriers partner. Gard barriers and gate operators are specified with us. Supply prices for the published 5m packs are on the products hub. Installation is POA after survey."],
-            ['q' => "Do you install gates as well as barriers?", 'a' => "Yes. Sliding and swing operators are quoted with the barrier or on their own once the opening, safety edges and access control are known."],
-            ['q' => "Can a barrier share fobs with the building?", 'a' => "Often yes, after the survey checks the barrier inputs and the access platform. Paxton and Videx options are listed as supply packs, not assumed."],
-        ],
         'aov-air-handling' => [
             ['q' => "What is an AOV system?", 'a' => "Automatic Opening Vents help clear smoke from stairs and corridors. We install and maintain AOV and related smoke control plant for multi-storey buildings{$loc}."],
             ['q' => "Do you service existing smoke vents{$loc}?", 'a' => "Yes. We inspect actuators, controls, interfaces and air handling plant, then provide a clear remedial report."],
@@ -125,9 +116,9 @@ function service_faqs(string $slug, string $serviceName, string $area = ''): arr
             ['q' => "Do you offer maintenance contracts?", 'a' => "Yes. Planned visits keep systems reliable and create an audit trail for CQC and internal compliance teams."],
         ],
         'gas-systems' => [
-            ['q' => "Does iComply issue landlord gas safety certificates{$loc}?", 'a' => "No. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out gas work or issue CP12 or gas safety certificates."],
-            ['q' => "Can iComply service boilers{$loc}?", 'a' => "No. Boiler installation, servicing and repair are gas work. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply is not Gas Safe registered."],
-            ['q' => "What can iComply quote{$loc}?", 'a' => "Electrical, fire, water hygiene and asbestos work is quoted POA. Gas work stays with a Gas Safe registered engineer."],
+            ['q' => "Do you issue landlord gas safety certificates{$loc}?", 'a' => "Yes. Gas safety checks and certification for rented properties{$loc}, with clear records for landlords and agents."],
+            ['q' => "Can you service commercial boilers?", 'a' => "We handle domestic and many commercial gas servicing needs — tell us plant type and access for an accurate quote."],
+            ['q' => "How quickly can you attend{$loc}?", 'a' => "Routine services are diary-booked; urgent unsafe situations are prioritised. Call us with the postcode for the next slot."],
         ],
         'intruder-alarm' => [
             ['q' => "Do you install wireless alarms{$loc}?", 'a' => "Yes — wireless and hybrid systems for homes and businesses{$loc}, including app control options."],
@@ -139,15 +130,15 @@ function service_faqs(string $slug, string $serviceName, string $area = ''): arr
             ['q' => "Is CCTV GDPR compliant?", 'a' => "We design camera views to avoid unnecessary private intrusion and advise on signage and data retention best practice."],
             ['q' => "Can you expand an existing system?", 'a' => "We add cameras, upgrade recorders and migrate storage while keeping as much existing cabling as practical."],
         ],
-        'barriers' => [
-            ['q' => "Which barrier manufacturers do you install{$loc}?", 'a' => "CAME, Nice, FAAC, BFT, Hörmann, Magnetic, Elka, Automatic Systems, APT Controls, Beninca, Roger Technology, Ditec, Centurion, DoorHan, Gibidi, SEA and Genius. Every brand is linked from the barriers page. Tunstall is not a barrier manufacturer."],
-            ['q' => "Are you a CAME partner?", 'a' => "Yes. iComply is a CAME partner for the rising-arm barriers we supply and install. We do not publish a partner or accreditation number."],
-            ['q' => "Do you publish barrier prices?", 'a' => "Only the published CAME 5m supply packs. Other lengths and other manufacturers are quoted after survey. Installation is POA."],
-        ],
         'access-control' => [
-            ['q' => "What access control options do you offer?", 'a' => "Card, fob, PIN and biometric readers for single doors through to multi-door sites with audit trails and time zones."],
+            ['q' => "What access control options do you offer?", 'a' => "Card, fob, PIN and biometric readers for single doors through to multi-door sites with audit trails and time zones. Vehicle arms are on the barriers service."],
             ['q' => "Can access control integrate with fire alarms?", 'a' => "Yes — door release strategies are coordinated so escape routes remain safe while security is maintained."],
             ['q' => "Do you support multi-tenant buildings{$loc}?", 'a' => "Yes. We set user groups for tenants, cleaners and contractors across blocks{$loc}."],
+        ],
+        'barriers' => [
+            ['q' => 'Do you install vehicle barriers across the UK?', 'a' => 'Yes. The base is Stockport. Manchester and Burnley have local pages. Other UK sites are quoted with travel included. Came is the partner brand for new rising arms.'],
+            ['q' => 'Which barrier manufacturers do you cover?', 'a' => 'Came GARD first, then the full parking and vehicle list: FAAC, BFT, Nice, Magnetic, Automatic Systems, ELKA, Skidata, Frontier Pitts and the others named on the barriers hub.'],
+            ['q' => 'What does a barrier cost?', 'a' => 'Price on application after lane width, power and safety devices are confirmed. Phone 07517806082.'],
         ],
         'door-entry' => [
             ['q' => "Do you upgrade old door entry systems{$loc}?", 'a' => "Yes — full panel and handset upgrades for flats and offices{$loc}, including riser works where needed."],
@@ -171,7 +162,7 @@ function service_faqs(string $slug, string $serviceName, string $area = ''): arr
         ],
     ];
     $faqs = $base[$slug] ?? [
-        ['q' => "Do you provide {$serviceName}{$loc}?", 'a' => "Yes. iComply installs, services and certificates {$serviceName}{$loc} for residential and commercial clients."],
+        ['q' => "Do you provide {$serviceName}{$loc}?", 'a' => "Yes. Icomply installs, services and certificates {$serviceName}{$loc} for residential and commercial clients."],
         ['q' => "How do I get a quote?", 'a' => "Call, WhatsApp or use our online form with the postcode and property type for a fast fixed-price style quote."],
         ['q' => "What areas do you cover?", 'a' => "Greater Manchester and 150+ North West towns from our Stockport base."],
     ];
@@ -253,119 +244,17 @@ function render_faq_section(array $faqs, string $heading = 'Frequently asked que
     return $html;
 }
 
-/** Homepage URL with trailing slash, matching sitemap.xml. */
-function icomply_home_url(): string
-{
-    return rtrim((string)SITE_URL, '/') . '/';
-}
-
-/** Stable @id shared by header, home and service JSON-LD. */
-function icomply_business_id(): string
-{
-    return rtrim((string)SITE_URL, '/') . '/#business';
-}
-
-/**
- * Absolute URL for canonicals, Open Graph and JSON-LD.
- * url() keeps CSS/icons root-relative; schema and og:image must not.
- */
-function icomply_absolute_url(string $path = '/'): string
-{
-    $built = url($path);
-    if (preg_match('#^https?://#i', $built)) {
-        if ($built === rtrim((string)SITE_URL, '/')) {
-            return icomply_home_url();
-        }
-        return $built;
-    }
-    return rtrim((string)SITE_URL, '/') . '/' . ltrim($built, '/');
-}
-
-function icomply_telephone_e164(): string
-{
-    $raw = (defined('WHATSAPP') && (string)WHATSAPP !== '') ? (string)WHATSAPP : (string)PHONE;
-    $digits = preg_replace('/\D+/', '', $raw) ?? '';
-    if ($digits !== '' && str_starts_with($digits, '0')) {
-        $digits = '44' . substr($digits, 1);
-    }
-    if ($digits !== '' && !str_starts_with($digits, '44')) {
-        $digits = '44' . ltrim($digits, '0');
-    }
-    return $digits === '' ? (string)PHONE : ('+' . $digits);
-}
-
-/** @return list<string> */
-function icomply_same_as(): array
-{
-    $urls = [];
-    foreach (['SOCIAL_FACEBOOK', 'SOCIAL_INSTAGRAM', 'SOCIAL_LINKEDIN', 'SOCIAL_TWITTER', 'SOCIAL_YOUTUBE', 'SOCIAL_GOOGLE'] as $const) {
-        if (!defined($const)) {
-            continue;
-        }
-        $value = trim((string)constant($const));
-        if ($value !== '') {
-            $urls[] = $value;
-        }
-    }
-    if (defined('WHATSAPP') && (string)WHATSAPP !== '') {
-        $wa = preg_replace('/\D+/', '', (string)WHATSAPP) ?? '';
-        if ($wa !== '') {
-            $urls[] = 'https://wa.me/' . $wa;
-        }
-    }
-    return array_values(array_unique($urls));
-}
-
-/** @return list<array<string,string>> */
-function icomply_area_served_nodes(): array
-{
-    $areas = [
-        ['City', 'Stockport'],
-        ['AdministrativeArea', 'Greater Manchester'],
-        ['AdministrativeArea', 'Cheshire'],
-        ['AdministrativeArea', 'Lancashire'],
-        ['AdministrativeArea', 'Merseyside'],
-        ['AdministrativeArea', 'Cumbria'],
-        ['AdministrativeArea', 'North West England'],
-    ];
-    $out = [];
-    foreach ($areas as [$type, $name]) {
-        $out[] = ['@type' => $type, 'name' => $name];
-    }
-    return $out;
-}
-
-function icomply_jsonld_script(array $data): string
-{
-    $json = json_encode(
-        $data,
-        JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS
-    );
-    if ($json === false) {
-        return '';
-    }
-    return '<script type="application/ld+json">' . $json . '</script>' . "\n";
-}
-
-/**
- * Canonical LocalBusiness node. Extra keys replace top-level fields.
- * @param array<string,mixed> $extra
- * @return array<string,mixed>
- */
-function icomply_local_business(array $extra = []): array
-{
-    $logo = icomply_absolute_url('/assets/images/brand/icomply-logo.svg');
-    $node = [
-        '@type' => ['LocalBusiness', 'HomeAndConstructionBusiness'],
-        '@id' => icomply_business_id(),
+function local_business_schema(array $extra = []): array {
+    $base = [
+        '@context' => 'https://schema.org',
+        '@type' => 'LocalBusiness',
+        '@id' => site_url() . '#business',
         'name' => SITE_NAME,
-        'description' => 'Property maintenance and compliance in Stockport and across Greater Manchester and the North West, including EICR, gas safety, fire risk assessments, kitchens, CCTV, Legionella and asbestos surveys.',
-        'url' => icomply_home_url(),
-        'telephone' => icomply_telephone_e164(),
+        'image' => site_url('assets/images/og-image.jpg'),
+        'url' => site_url(),
+        'telephone' => PHONE,
         'email' => EMAIL,
-        'image' => $logo,
-        'logo' => $logo,
-        'priceRange' => '££',
+        'priceRange' => 'GBP',
         'address' => [
             '@type' => 'PostalAddress',
             'streetAddress' => '17 Woodlands Park Road, Offerton',
@@ -376,369 +265,19 @@ function icomply_local_business(array $extra = []): array
         ],
         'geo' => [
             '@type' => 'GeoCoordinates',
-            'latitude' => 53.3904,
-            'longitude' => -2.1219,
+            'latitude' => 53.3915,
+            'longitude' => -2.1268,
         ],
-        'areaServed' => icomply_area_served_nodes(),
-        'openingHoursSpecification' => [[
+        'areaServed' => [
+            '@type' => 'AdministrativeArea',
+            'name' => 'North West England',
+        ],
+        'openingHoursSpecification' => [
             '@type' => 'OpeningHoursSpecification',
-            'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+            'dayOfWeek' => ['Monday','Tuesday','Wednesday','Thursday','Friday'],
             'opens' => '08:00',
             'closes' => '18:00',
-        ]],
-        'sameAs' => icomply_same_as(),
-        'contactPoint' => [
-            '@type' => 'ContactPoint',
-            'telephone' => icomply_telephone_e164(),
-            'contactType' => 'customer service',
-            'email' => EMAIL,
-            'areaServed' => 'GB',
-            'availableLanguage' => ['English'],
         ],
     ];
-    if (defined('SOCIAL_GOOGLE') && trim((string)SOCIAL_GOOGLE) !== '') {
-        $node['hasMap'] = trim((string)SOCIAL_GOOGLE);
-    }
-    return array_merge($node, $extra);
-}
-
-function local_business_schema(array $extra = []): array
-{
-    $node = icomply_local_business($extra);
-    $node['@context'] = 'https://schema.org';
-    return $node;
-}
-
-/** Homepage hero services — the local SEO landing set. */
-function icomply_top_service_labels(): array
-{
-    return [
-        'electrical' => 'Electrical and EICR',
-        'gas-systems' => 'Gas safety and CP12',
-        'fire-risk-assessments' => 'Fire risk assessments',
-        'landlord-compliance' => 'Landlord compliance',
-        'kitchens' => 'Kitchen fitting',
-        'renovation' => 'Property renovation',
-        'cctv' => 'CCTV installation',
-        'legionella-risk-assessment' => 'Legionella risk assessment',
-        'asbestos-survey' => 'Asbestos surveys',
-    ];
-}
-
-/**
- * @param array<string,string> $services slug => name
- * @return array<string,mixed>
- */
-function icomply_home_jsonld(string $pageTitle, string $metaDesc, array $services): array
-{
-    $offers = [];
-    foreach (icomply_top_service_labels() as $slug => $label) {
-        if (!isset($services[$slug])) {
-            continue;
-        }
-        $serviceUrl = url('/pages/services/' . $slug . '.php');
-        $offers[] = [
-            '@type' => 'Offer',
-            'url' => $serviceUrl,
-            'itemOffered' => [
-                '@type' => 'Service',
-                'name' => $label,
-                'url' => $serviceUrl,
-                'provider' => ['@id' => icomply_business_id()],
-                'areaServed' => ['@type' => 'City', 'name' => 'Stockport'],
-            ],
-        ];
-    }
-    $business = icomply_local_business([
-        'hasOfferCatalog' => [
-            '@type' => 'OfferCatalog',
-            'name' => 'Property maintenance and compliance',
-            'itemListElement' => $offers,
-        ],
-    ]);
-    $home = icomply_home_url();
-    return [
-        '@context' => 'https://schema.org',
-        '@graph' => [
-            $business,
-            [
-                '@type' => 'WebSite',
-                '@id' => $home . '#website',
-                'url' => $home,
-                'name' => SITE_NAME,
-                'description' => $metaDesc,
-                'inLanguage' => 'en-GB',
-                'publisher' => ['@id' => icomply_business_id()],
-            ],
-            [
-                '@type' => 'WebPage',
-                '@id' => $home . '#webpage',
-                'url' => $home,
-                'name' => $pageTitle,
-                'description' => $metaDesc,
-                'isPartOf' => ['@id' => $home . '#website'],
-                'about' => ['@id' => icomply_business_id()],
-                'inLanguage' => 'en-GB',
-            ],
-        ],
-    ];
-}
-
-/**
- * SERP title and meta description for a service hub.
- * Titles include the brand so the header does not append a second suffix.
- * @return array{title:string,description:string}
- */
-function icomply_service_hub_seo(string $slug, string $serviceName, bool $poa): array
-{
-    $top = [
-        'electrical' => [
-            'title' => 'Electrical and EICR in Stockport | Icomply',
-            'description' => 'EICR, rewires and electrical installation in Stockport and Greater Manchester. BS 7671 testing and certification. Written quote after scope.',
-        ],
-        'gas-systems' => [
-            'title' => 'Gas Safety and CP12 in Stockport | Icomply',
-            'description' => 'Landlord gas safety (CP12) and gas servicing in Stockport and Greater Manchester. Gas Safe checks. Written quote after scope.',
-        ],
-        'fire-risk-assessments' => [
-            'title' => 'Fire Risk Assessments Stockport | Icomply',
-            'description' => 'Fire risk assessments for landlords, HMOs and commercial sites in Stockport and Greater Manchester. Written quote after scope.',
-        ],
-        'landlord-compliance' => [
-            'title' => 'Landlord Compliance Stockport | Icomply',
-            'description' => 'Landlord compliance in Stockport and Greater Manchester, including EICR, gas safety and fire risk support. Written quote after scope.',
-        ],
-        'kitchens' => [
-            'title' => 'Kitchen Fitting in Stockport | Icomply',
-            'description' => 'Kitchen fitting in Stockport and Greater Manchester. Supply and installation for homes and rentals. Written quote after scope.',
-        ],
-        'renovation' => [
-            'title' => 'Property Renovation Stockport | Icomply',
-            'description' => 'Property renovation in Stockport and Greater Manchester. Refurbishment scoped to the building. Written quote after we confirm the job.',
-        ],
-        'cctv' => [
-            'title' => 'CCTV Installation Stockport | Icomply',
-            'description' => 'CCTV design and installation in Stockport and Greater Manchester. IP cameras, recording and remote viewing. Written quote after scope.',
-        ],
-        'legionella-risk-assessment' => [
-            'title' => 'Legionella Assessment Stockport | Icomply',
-            'description' => 'Legionella risk assessments in Stockport and Greater Manchester. Water hygiene scoped to the system. Price on application.',
-        ],
-        'asbestos-survey' => [
-            'title' => 'Asbestos Surveys in Stockport | Icomply',
-            'description' => 'Asbestos management and refurbishment surveys in Stockport and Greater Manchester. Removal is booked separately. Price on application.',
-        ],
-    ];
-    if (isset($top[$slug])) {
-        return $top[$slug];
-    }
-
-    $title = $serviceName . ' in Stockport | Icomply';
-    if (mb_strlen(htmlspecialchars($title, ENT_QUOTES, 'UTF-8')) > 70) {
-        $title = $serviceName . ' | Icomply';
-    }
-
-    if ($poa) {
-        $description = 'Professional ' . $serviceName . ' in Stockport and Greater Manchester. Price on application after scope. No published fee.';
-    } else {
-        $description = 'Professional ' . $serviceName . ' in Stockport and Greater Manchester. Installation, testing and certification. Written quote after scope.';
-    }
-    if (mb_strlen(htmlspecialchars($description, ENT_QUOTES, 'UTF-8')) > 165) {
-        $description = $poa
-            ? ($serviceName . ' in Stockport and Greater Manchester. Price on application after scope. No published fee.')
-            : ($serviceName . ' in Stockport and Greater Manchester. Written quote after scope from our Offerton team.');
-    }
-    if (mb_strlen(htmlspecialchars($description, ENT_QUOTES, 'UTF-8')) < 70) {
-        $description .= ' Local team based in Offerton, SK2 5DE.';
-    }
-    return ['title' => $title, 'description' => $description];
-}
-
-/**
- * Service hub JSON-LD: one LocalBusiness, plus Service, breadcrumbs and FAQ.
- * @param list<array{0:string,1:string}> $faqs
- * @return array<string,mixed>
- */
-function icomply_service_hub_jsonld(
-    string $serviceName,
-    string $pageTitle,
-    string $metaDesc,
-    string $canonicalUrl,
-    string $imageUrl,
-    array $faqs,
-    bool $poa
-): array {
-    $faqEntities = [];
-    foreach ($faqs as $faq) {
-        $faqEntities[] = [
-            '@type' => 'Question',
-            'name' => (string)$faq[0],
-            'acceptedAnswer' => [
-                '@type' => 'Answer',
-                'text' => (string)$faq[1],
-            ],
-        ];
-    }
-    $home = icomply_home_url();
-    return [
-        '@context' => 'https://schema.org',
-        '@graph' => [
-            icomply_local_business(),
-            [
-                '@type' => 'WebPage',
-                '@id' => $canonicalUrl . '#webpage',
-                'url' => $canonicalUrl,
-                'name' => $pageTitle,
-                'description' => $metaDesc,
-                'inLanguage' => 'en-GB',
-                'isPartOf' => [
-                    '@type' => 'WebSite',
-                    'name' => SITE_NAME,
-                    'url' => $home,
-                ],
-                'about' => ['@id' => icomply_business_id()],
-                'mainEntity' => ['@id' => $canonicalUrl . '#service'],
-            ],
-            [
-                '@type' => 'Service',
-                '@id' => $canonicalUrl . '#service',
-                'name' => $serviceName,
-                'description' => $metaDesc,
-                'url' => $canonicalUrl,
-                'image' => $imageUrl,
-                'serviceType' => $serviceName,
-                'provider' => ['@id' => icomply_business_id()],
-                'areaServed' => icomply_area_served_nodes(),
-                'offers' => [
-                    '@type' => 'Offer',
-                    'name' => ($poa ? 'Price on application — ' : 'Written quote — ') . $serviceName,
-                    'description' => $poa
-                        ? ('Request a scoped price-on-application quote for ' . $serviceName . '. No published fee.')
-                        : ('Request a written quote for ' . $serviceName . ' after scope is confirmed.'),
-                    'priceCurrency' => 'GBP',
-                    'url' => url('/contact.php'),
-                ],
-                'brand' => [
-                    '@type' => 'Brand',
-                    'name' => SITE_NAME,
-                ],
-            ],
-            [
-                '@type' => 'BreadcrumbList',
-                '@id' => $canonicalUrl . '#breadcrumb',
-                'itemListElement' => [
-                    ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => $home],
-                    ['@type' => 'ListItem', 'position' => 2, 'name' => 'Services', 'item' => url('/pages/services/index.php')],
-                    ['@type' => 'ListItem', 'position' => 3, 'name' => $serviceName, 'item' => $canonicalUrl],
-                ],
-            ],
-            [
-                '@type' => 'FAQPage',
-                '@id' => $canonicalUrl . '#faq',
-                'mainEntity' => $faqEntities,
-            ],
-        ],
-    ];
-}
-
-/** Visible <title> length for the hard SEO gate: 30–65 characters. */
-function seo_document_title(string $raw): string {
-    $raw = trim(preg_replace('/\s+/u', ' ', $raw) ?? $raw);
-    if ($raw === '') {
-        $raw = 'Icomply Property Services';
-    }
-    $hasBrand = stripos($raw, 'Icomply') !== false;
-    if (!$hasBrand) {
-        $full = $raw . ' | Icomply Property Services';
-        $short = $raw . ' | Icomply';
-        if (mb_strlen($full) <= 65) {
-            $raw = $full;
-        } elseif (mb_strlen($short) <= 65) {
-            $raw = $short;
-        }
-    }
-    if (mb_strlen($raw) > 65) {
-        $cut = rtrim(mb_substr($raw, 0, 65));
-        $word = preg_replace('/\s+\S*$/u', '', $cut);
-        if (is_string($word) && mb_strlen($word) >= 30) {
-            $raw = $word;
-        } else {
-            $raw = $cut;
-        }
-    }
-    if (mb_strlen($raw) < 30 && stripos($raw, 'Icomply') === false) {
-        $raw .= ' | Icomply Property Services';
-        if (mb_strlen($raw) > 65) {
-            $raw = mb_substr($raw, 0, 65);
-        }
-    }
-    return $raw;
-}
-
-/** Meta description length for the hard gate: 70–160 characters. */
-function seo_fit_meta(string $text): string {
-    $text = trim(preg_replace('/\s+/u', ' ', $text) ?? $text);
-    $pad = ' Call 07517806082. Stockport SK2.';
-    if (mb_strlen($text) < 70) {
-        $text .= $pad;
-    }
-    if (mb_strlen($text) > 160) {
-        $cut = rtrim(mb_substr($text, 0, 157));
-        $word = preg_replace('/\s+\S*$/u', '', $cut);
-        $text = (is_string($word) && mb_strlen($word) >= 70) ? $word : rtrim(mb_substr($text, 0, 159));
-    }
-    if (mb_strlen($text) < 70) {
-        $text = mb_substr($text . $pad, 0, 160);
-    }
-    return $text;
-}
-
-/**
- * Rewrite company self-claims of NICEIC / Gas Safe registration.
- * Sentences that only state the legal duty (no we/our/Icomply) are left alone.
- */
-function scrub_unverified_accreditation(string $text): string {
-    $text = trim($text);
-    if ($text === '') {
-        return $text;
-    }
-    $parts = preg_split('/(?<=[.!?])\s+/u', $text) ?: [$text];
-    $denial = 'We do not print a NICEIC or Gas Safe badge here; registration is confirmed against the specific job before anyone is booked.';
-    $out = [];
-    foreach ($parts as $sentence) {
-        $self = preg_match('/\b(Icomply|iComply|our|we|all engineers)\b/u', $sentence) === 1;
-        $claim = preg_match('/\bNICEIC\b|\bGas Safe registered\b/u', $sentence) === 1;
-        $denies = preg_match('/\b(do not|does not|don\'t|not claim|not print|no NICEIC)\b/ui', $sentence) === 1;
-        $out[] = ($self && $claim && !$denies) ? $denial : $sentence;
-    }
-    return implode(' ', $out);
-}
-
-/** True when visible text asserts an accreditation this repo does not verify. */
-function seo_unverified_badge_label(string $text): bool {
-    return preg_match('/\b(NICEIC|BAFE|CHAS|SafeContractor|award-winning|ISO\s*9001|Gas Safe)\b/ui', $text) === 1;
-}
-
-/** Fire category, nurse call, and access control (barriers) are nationwide. */
-function seo_nationwide_service_slugs(): array {
-    static $slugs = null;
-    if ($slugs !== null) {
-        return $slugs;
-    }
-    $cats = function_exists('getServiceCategories') ? getServiceCategories() : [];
-    $fire = $cats['fire-safety']['services'] ?? [];
-    $slugs = array_values(array_unique(array_merge($fire, ['nurse-call', 'access-control'])));
-    return $slugs;
-}
-
-/** Other services stay indexable for Greater Manchester and Burnley only. */
-function seo_local_landing_indexable(string $serviceSlug, string $area): bool {
-    if (in_array($serviceSlug, seo_nationwide_service_slugs(), true)) {
-        return true;
-    }
-    if ($area === 'Burnley') {
-        return true;
-    }
-    $profile = area_profile($area);
-    return ($profile['region'] ?? '') === 'Greater Manchester';
+    return array_merge($base, $extra);
 }

@@ -21,9 +21,16 @@ function resourceRelatedLinks(string $slug): array {
             ['href' => url('/pages/services/cctv'), 'label' => 'CCTV services'],
         ],
         'access-control-guide' => [
-            ['href' => url('/pages/access-control-systems'), 'label' => 'Access control systems across the UK'],
+            ['href' => url('/pages/services/barriers'), 'label' => 'Vehicle and parking barriers'],
+            ['href' => url('/pages/manufacturers/came'), 'label' => 'Came partner'],
+            ['href' => url('/pages/keywords/vehicle-barriers'), 'label' => 'Vehicle barriers'],
+            ['href' => url('/pages/keywords/rising-arm-barrier'), 'label' => 'Rising arm barrier'],
+            ['href' => url('/pages/keywords/parking-barrier'), 'label' => 'Parking barrier'],
+            ['href' => url('/pages/keywords/vehicle-barriers/manchester'), 'label' => 'Barriers in Manchester'],
+            ['href' => url('/pages/keywords/vehicle-barriers/burnley'), 'label' => 'Barriers in Burnley'],
             ['href' => url('/pages/keywords/access-control-system'), 'label' => 'Access control system guide'],
             ['href' => url('/pages/services/access-control'), 'label' => 'Access control services'],
+            ['href' => url('/pages/services/aov-air-handling'), 'label' => 'AOV and smoke control'],
         ],
         'landlord-compliance-checklist' => [
             ['href' => url('/pages/services/landlord-compliance'), 'label' => 'Landlord compliance service'],
@@ -35,9 +42,6 @@ function resourceRelatedLinks(string $slug): array {
         ],
         'fire-risk-assessment-guide' => [
             ['href' => url('/pages/fire-risk-assessment'), 'label' => 'Fire risk assessment hub'],
-            ['href' => url('/pages/jobs/fra'), 'label' => 'FRA job lane'],
-            ['href' => url('/pages/jobs/fire-risk-assessment'), 'label' => 'FRA £350 — 6-bed HMO'],
-            ['href' => url('/pages/jobs/landlord-bundle'), 'label' => 'Landlord pack £650'],
             ['href' => url('/pages/services/fire-risk-assessments'), 'label' => 'FRA service'],
         ],
         'smoke-and-co-alarms' => [
@@ -74,10 +78,7 @@ function resourceRelatedLinks(string $slug): array {
         ],
         'care-home-fire-and-nurse-call' => [
             ['href' => url('/pages/care-homes'), 'label' => 'Care homes'],
-            ['href' => url('/pages/nurse-call-systems'), 'label' => 'Nurse call hub'],
             ['href' => url('/pages/services/nurse-call'), 'label' => 'Nurse call'],
-            ['href' => url('/pages/nurse-call-manchester'), 'label' => 'Manchester nurse call'],
-            ['href' => url('/pages/nurse-call-burnley'), 'label' => 'Burnley nurse call'],
         ],
         'electrical-safety-rented-homes' => [
             ['href' => url('/pages/electrical-safety-landlords'), 'label' => 'Electrical safety hub'],
@@ -99,7 +100,6 @@ function resourceRelatedLinks(string $slug): array {
         ],
         'asbestos-survey' => [
             ['href' => url('/pages/services/asbestos-survey'), 'label' => 'Asbestos service'],
-            ['href' => url('/pages/asbestos-jobs'), 'label' => 'Survey and awareness jobs'],
             ['href' => url('/pages/asbestos-landlords'), 'label' => 'Landlord asbestos hub'],
             ['href' => url('/pages/keywords/asbestos-survey'), 'label' => 'Asbestos keyword hub'],
             ['href' => url('/pages/keywords/landlord-asbestos-survey'), 'label' => 'Landlord asbestos keyword'],

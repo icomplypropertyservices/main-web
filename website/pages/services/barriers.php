@@ -1,4 +1,4 @@
 <?php
-/** Barriers hub — manufacturers, CAME partner panel, lane builder. */
+/** Barriers service hub — nationwide, Came partner. */
 require_once __DIR__ . '/../../includes/render.php';
 renderServiceHubPage('barriers');
