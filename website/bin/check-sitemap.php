@@ -72,6 +72,8 @@ $required = [
     '/shop/security/</loc>',
     '/shop/gas/</loc>',
     '/products</loc>',
+    '/pages/jobs/hmo</loc>',
+    '/pages/jobs/hmo-compliance</loc>',
     '/pages/services/fire-risk-assessments</loc>',
     '/pages/services/electrical</loc>',
     '/pages/services/gas-systems</loc>',

@@ -190,10 +190,12 @@ echo icomplyComplianceBundleCrossSellHtml('packages');
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Four ways to stay compliant</h2>
             <p class="mt-2 text-zinc-600 max-w-2xl">
                 Packages are starting points — we tailor scope to your buildings, system brands and renewals.
-                Prices are <strong class="text-black">from / POA</strong> only; you always get a fixed quote before work starts.
+                Most prices are <strong class="text-black">from / POA</strong>. The HMO compliance bundle is a published list:
+                <a href="<?= url('/pages/jobs/hmo-compliance.php') ?>" class="font-semibold text-[#ff6b00]">£650</a>
+                for FRA, EICR and gas on a typical 6-bed HMO in the North West.
             </p>
         </div>
-        <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Browse single services →</a>
+            <a href="<?= url('/pages/jobs/hmo.php') ?>" class="text-sm font-semibold text-[#ff6b00]">HMO landlord packages →</a>
     </div>
 
     <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
@@ -284,8 +286,10 @@ echo icomplyComplianceBundleCrossSellHtml('packages');
     <div class="max-w-7xl mx-auto px-6 py-16">
         <h2 class="text-3xl font-semibold tracking-tight text-black text-center mb-4">How package quoting works</h2>
         <p class="text-center text-zinc-600 max-w-2xl mx-auto mb-12">
-            We never publish fake fixed prices online — every building is different.
-            You get a clear, fixed-price quote once scope is agreed.
+            Landlord, fire, security and FM packages stay from / POA until scope is agreed.
+            The HMO compliance bundle is the published exception:
+            <a href="<?= url('/pages/jobs/hmo-compliance.php') ?>" class="font-semibold text-[#ff6b00]">£650</a>
+            for a typical 6-bed in the North West.
         </p>
         <div class="grid md:grid-cols-3 gap-8">
             <?php
@@ -359,6 +363,9 @@ echo icomplyComplianceBundleCrossSellHtml('packages');
                 <input type="tel" name="phone" placeholder="Phone" required maxlength="40" class="w-full border px-5 py-3.5 rounded-2xl">
                 <select name="service" id="package-service" required class="w-full border px-5 py-3.5 rounded-2xl bg-white">
                     <option value="">Select package…</option>
+                    <option value="HMO compliance bundle (£650)">HMO compliance bundle (£650)</option>
+                    <option value="HMO fire safety pack">HMO fire safety pack</option>
+                    <option value="HMO occupancy pack">HMO occupancy pack</option>
                     <option value="Landlord Essentials package">Landlord Essentials</option>
                     <option value="Fire Package">Fire Package</option>
                     <option value="Security Package">Security Package</option>

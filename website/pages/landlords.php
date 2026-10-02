@@ -161,6 +161,20 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
     </div>
 </section>
 
+<section class="bg-[#0B1F3A] text-white border-b">
+    <div class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div>
+            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">HMO landlords</div>
+            <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mt-2">FRA + EICR + gas · £650</h2>
+            <p class="mt-2 text-white/80 max-w-2xl">Typical 6-bed HMO in the North West. The three certificates are one bundle, not three bills. Fire-only and re-let packs sit beside it. Not a licence.</p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+            <a href="<?= url('/pages/jobs/hmo-compliance.php') ?>" class="px-6 py-3 rounded-2xl bg-[#ff6b00] font-semibold text-white">View the £650 bundle</a>
+            <a href="<?= url('/pages/jobs/hmo.php') ?>" class="px-6 py-3 rounded-2xl border border-white font-semibold">All HMO packages</a>
+        </div>
+    </div>
+</section>
+
 <!-- TRUST STRIP -->
 <section class="bg-white border-b">
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
