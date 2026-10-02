@@ -220,6 +220,26 @@ $schema = [
     </div>
 </section>
 
+<?php if ($serviceSlug === 'fire-alarms' && function_exists('fireAlarmsLaneCounts')):
+    $fireLaneCounts = fireAlarmsLaneCounts();
+?>
+<section class="bg-[#0B1F3A] text-white border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Job lane</div>
+            <h2 class="mt-1 text-2xl font-semibold">Install, maintain and service</h2>
+            <p class="mt-1 text-sm text-white/75">
+                <?= (int)$fireLaneCounts['install'] ?> install guides,
+                <?= (int)$fireLaneCounts['maintain'] ?> maintenance guides,
+                <?= (int)$fireLaneCounts['service'] ?> service guides.
+                Price on application.
+            </p>
+        </div>
+        <a href="<?= url('/pages/jobs/fire-alarms.php') ?>" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white text-center">Open the fire alarm job lane</a>
+    </div>
+</section>
+<?php endif; ?>
+
 <!-- TRUST -->
 <section class="bg-white border-b">
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -74,6 +74,7 @@ $required = [
     '/pages/services/gas-systems</loc>',
     '/pages/keywords/rewire</loc>',
     '/pages/keywords/boiler</loc>',
+    '/pages/jobs/fire-alarms</loc>',
     '/pages/keywords/rewire/stockport</loc>',
     '/privacy</loc>',
     '/terms</loc>',
@@ -135,7 +136,7 @@ foreach ($locHits[1] ?? [] as $path) {
     }
     $first = $m[1];
     $second = $m[2];
-    if (in_array($first, ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages'], true)) {
+    if (in_array($first, ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages', 'jobs'], true)) {
         continue;
     }
     if (isset($services[$first]) && isset($areaSlugs[$second])) {

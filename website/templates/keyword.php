@@ -16,6 +16,9 @@ $keywordName = $KEYWORD_NAME;
 $keywordSlug = $KEYWORD_SLUG;
 $serviceName = $SERVICE_NAME;
 $serviceSlug = $SERVICE_SLUG;
+$fireLane = function_exists('fireAlarmsLaneForSlug') ? fireAlarmsLaneForSlug((string)$keywordSlug) : null;
+$fireLaneLabel = $fireLane ? fireAlarmsLaneLabel($fireLane) : '';
+$fireLaneHub = url('/pages/jobs/fire-alarms.php');
 $relatedSlug = $RELATED_SLUG;
 $relatedName = $RELATED_NAME;
 $allAreas = getAreas();
@@ -50,14 +53,24 @@ require SITE_ROOT . '/includes/header.php';
         ],
         [
             '@type' => 'BreadcrumbList',
-            'itemListElement' => [
-                ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => rtrim(SITE_URL, '/') . '/'],
-                ['@type' => 'ListItem', 'position' => 2, 'name' => 'Guides', 'item' => url('/pages/keywords/index.php')],
-                ['@type' => 'ListItem', 'position' => 3, 'name' => $keywordName, 'item' => $canonicalUrl],
-            ],
+            'itemListElement' => $fireLane
+                ? [
+                    ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => rtrim(SITE_URL, '/') . '/'],
+                    ['@type' => 'ListItem', 'position' => 2, 'name' => 'Fire alarm jobs', 'item' => $fireLaneHub],
+                    ['@type' => 'ListItem', 'position' => 3, 'name' => $fireLaneLabel, 'item' => $fireLaneHub . '#' . $fireLane],
+                    ['@type' => 'ListItem', 'position' => 4, 'name' => $keywordName, 'item' => $canonicalUrl],
+                ]
+                : [
+                    ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => rtrim(SITE_URL, '/') . '/'],
+                    ['@type' => 'ListItem', 'position' => 2, 'name' => 'Guides', 'item' => url('/pages/keywords/index.php')],
+                    ['@type' => 'ListItem', 'position' => 3, 'name' => $keywordName, 'item' => $canonicalUrl],
+                ],
         ],
     ],
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
+<?php if (!empty($KEYWORD_FAQ_JSON)): ?>
+<script type="application/ld+json"><?= $KEYWORD_FAQ_JSON ?></script>
+<?php endif; ?>
 
 <!-- HERO: solid navy + image with dark overlay for readable text -->
 <section class="relative overflow-hidden bg-[#061828] text-white">
@@ -69,7 +82,12 @@ require SITE_ROOT . '/includes/header.php';
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
         <nav class="text-xs text-white/70 mb-5 flex flex-wrap gap-2" aria-label="Breadcrumb">
             <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a><span class="text-white/40">/</span>
+            <?php if ($fireLane): ?>
+            <a href="<?= htmlspecialchars($fireLaneHub, ENT_QUOTES, 'UTF-8') ?>" class="hover:text-white">Fire alarm jobs</a><span class="text-white/40">/</span>
+            <a href="<?= htmlspecialchars($fireLaneHub . '#' . $fireLane, ENT_QUOTES, 'UTF-8') ?>" class="hover:text-white"><?= htmlspecialchars($fireLaneLabel, ENT_QUOTES, 'UTF-8') ?></a><span class="text-white/40">/</span>
+            <?php else: ?>
             <a href="<?= url('/pages/keywords/index.php') ?>" class="hover:text-white">Guides</a><span class="text-white/40">/</span>
+            <?php endif; ?>
             <span class="text-white font-medium"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></span>
         </nav>
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ff6b00] text-white text-xs font-bold tracking-widest uppercase mb-5">
@@ -129,6 +147,10 @@ require SITE_ROOT . '/includes/header.php';
                         <a href="<?= url('/pages/services/' . $SERVICE_SLUG . '.php') ?>" class="font-bold text-[#ff6b00] hover:underline"><?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?></a>
                         service · Related:
                         <a href="<?= url('/pages/keywords/' . $RELATED_SLUG . '.php') ?>" class="font-bold text-[#ff6b00] hover:underline"><?= htmlspecialchars($RELATED_NAME, ENT_QUOTES, 'UTF-8') ?></a>
+                        <?php if ($fireLane): ?>
+                        · Lane:
+                        <a href="<?= htmlspecialchars($fireLaneHub . '#' . $fireLane, ENT_QUOTES, 'UTF-8') ?>" class="font-bold text-[#ff6b00] hover:underline">Fire alarms <?= htmlspecialchars($fireLaneLabel, ENT_QUOTES, 'UTF-8') ?></a>
+                        <?php endif; ?>
                     </p>
                 </div>
             </div>

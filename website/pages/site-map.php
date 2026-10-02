@@ -236,6 +236,12 @@ require SITE_ROOT . '/includes/header.php';
                class="px-3 py-1.5 bg-white border rounded-full text-xs sm:text-sm text-black hover:border-[#ff6b00] transition">
                 <?= htmlspecialchars($sName, ENT_QUOTES, 'UTF-8') ?> hub
             </a>
+            <?php if ($sSlug === 'fire-alarms'): ?>
+            <a href="<?= url('/pages/jobs/fire-alarms.php') ?>"
+               class="px-3 py-1.5 bg-white border rounded-full text-xs sm:text-sm text-black hover:border-[#ff6b00] transition">
+                Fire alarm install, maintain and service
+            </a>
+            <?php endif; ?>
         <?php endforeach;
         $egKwMap = getMajorKeywords();
         $egTowns = array_values(array_intersect($popularAreas, ['Stockport', 'Manchester', 'Bolton']));

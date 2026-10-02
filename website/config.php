@@ -336,6 +336,9 @@ function getMajorKeywords(): array {
         }
         $normalized[$slug] = $row;
     }
+    if (function_exists('fireAlarmsLaneApplyOverlay')) {
+        $normalized = fireAlarmsLaneApplyOverlay($normalized);
+    }
     return $normalized;
 }
 
@@ -711,6 +714,10 @@ function icomplyTradeProductsUrl(): string
 $waFile = __DIR__ . '/includes/water-asbestos.php';
 if (is_file($waFile)) {
     require_once $waFile;
+}
+$fireAlarmsLaneFile = __DIR__ . '/includes/fire-alarms-lane.php';
+if (is_file($fireAlarmsLaneFile)) {
+    require_once $fireAlarmsLaneFile;
 }
 
 // Back-compat globals used by some templates/includes
