@@ -370,7 +370,77 @@
   to = "/pages/services/intercoms"
   status = 301
 
+# AOV and Barriers × town (pop > 10k) are real exports stored as .php.
+# 200, no force. These must never 301. An exported file at the path wins;
+# otherwise the .php sibling is served:
+#   /pages/aov/{town}
+#   /pages/barriers/{town}
+#   /pages/services/aov/{town}
+#   /pages/services/aov-air-handling/{town}
+#   /pages/services/barriers/{town}
+#   /pages/aov-air-handling/{town}
+[[redirects]]
+  from = "/pages/aov/:town"
+  to = "/pages/aov/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/aov/:town/"
+  to = "/pages/aov/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/barriers/:town"
+  to = "/pages/barriers/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/barriers/:town/"
+  to = "/pages/barriers/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/aov-air-handling/:town"
+  to = "/pages/aov-air-handling/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/aov-air-handling/:town/"
+  to = "/pages/aov-air-handling/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/services/aov/:town"
+  to = "/pages/services/aov/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/services/aov/:town/"
+  to = "/pages/services/aov/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/services/aov-air-handling/:town"
+  to = "/pages/services/aov-air-handling/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/services/aov-air-handling/:town/"
+  to = "/pages/services/aov-air-handling/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/services/barriers/:town"
+  to = "/pages/services/barriers/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/services/barriers/:town/"
+  to = "/pages/services/barriers/:town.php"
+  status = 200
+
 # Linked keyword×town and service×town URLs 404 when the matrix is not published.
+# aov, barriers, and aov-* slugs are not in the service×town 301 list.
 [[redirects]]
   from = "/pages/keywords/:slug/:town"
   to = "/pages/keywords/:slug"
@@ -574,16 +644,6 @@
 [[redirects]]
   from = "/pages/emergency-lighting/:town/"
   to = "/pages/services/emergency-lighting"
-  status = 301
-
-[[redirects]]
-  from = "/pages/aov-air-handling/:town"
-  to = "/pages/services/aov-air-handling"
-  status = 301
-
-[[redirects]]
-  from = "/pages/aov-air-handling/:town/"
-  to = "/pages/services/aov-air-handling"
   status = 301
 
 [[redirects]]

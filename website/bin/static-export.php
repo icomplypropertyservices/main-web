@@ -116,6 +116,47 @@ if (isset($options['print-redirects'])) {
         fwrite(STDERR, "redirects still send /shop or /products to /pages/packages\n");
         exit(1);
     }
+    // AOV / Barriers town exports are .php siblings. A 301 (even without !)
+    // matches before the splat and would hide /pages/aov/{town}.php.
+    $protected = [
+        '/pages/aov/:town',
+        '/pages/aov/:town/',
+        '/pages/barriers/:town',
+        '/pages/barriers/:town/',
+        '/pages/aov-air-handling/:town',
+        '/pages/aov-air-handling/:town/',
+        '/pages/services/aov/:town',
+        '/pages/services/aov/:town/',
+        '/pages/services/aov-air-handling/:town',
+        '/pages/services/aov-air-handling/:town/',
+        '/pages/services/barriers/:town',
+        '/pages/services/barriers/:town/',
+    ];
+    $seen = [];
+    foreach (preg_split("/\\r?\\n/", $txt) as $line) {
+        if ($line === '' || str_starts_with($line, '#')) {
+            continue;
+        }
+        $parts = preg_split('/\\s+/', trim($line));
+        if (count($parts) < 3) {
+            continue;
+        }
+        [$from, $to, $status] = [$parts[0], $parts[1], $parts[2]];
+        if (!in_array($from, $protected, true)) {
+            continue;
+        }
+        $seen[$from] = true;
+        if ($status !== '200' || !str_ends_with($to, '.php')) {
+            fwrite(STDERR, "AOV/Barriers town rule must be an unforced 200 to the exported .php file: {$line}\n");
+            exit(1);
+        }
+    }
+    foreach ($protected as $from) {
+        if (!isset($seen[$from])) {
+            fwrite(STDERR, "missing unforced 200 for {$from}\n");
+            exit(1);
+        }
+    }
     echo $txt;
     exit(0);
 }
@@ -724,15 +765,48 @@ TXT;
 }
 
 /**
+ * True for AOV and Barriers town exports. Those pages are real files
+ * (towns with population over 10k), stored as /pages/.../{town}.php.
+ * They must never be 301'd. A non-force 301 still wins over a .php sibling
+ * because Netlify only skips an unforced rule when a file exists at the
+ * request path itself.
+ */
+function icomplyTownExportMustNotRedirect(string $slug): bool
+{
+    return $slug === 'aov'
+        || $slug === 'barriers'
+        || str_starts_with($slug, 'aov-')
+        || str_starts_with($slug, 'barriers');
+}
+
+/**
  * Keyword×town and service×town URLs are linked from hubs but are not in the
  * published file set (live 404). Send them to the hub that does exist.
- * No force: an exported HTML file still wins; a missing file 301s instead of 404.
+ * AOV and Barriers town paths are excluded and rewritten 200 to their .php file.
  */
 function icomplyUnpublishedMatrixRedirects(): string
 {
     $lines = [
+        '# AOV and Barriers × town (pop > 10k) are real exports. Never 301 them.',
+        '# 200 with no ! serves /pages/aov/{town}.php, /pages/barriers/{town}.php,',
+        '# /pages/services/aov/{town}.php and /pages/services/aov-air-handling/{town}.php.',
+        '# An exported file at the request path still wins. A 301 is not used.',
+        '/pages/aov/:town                              /pages/aov/:town.php                              200',
+        '/pages/aov/:town/                             /pages/aov/:town.php                              200',
+        '/pages/barriers/:town                         /pages/barriers/:town.php                         200',
+        '/pages/barriers/:town/                        /pages/barriers/:town.php                         200',
+        '/pages/aov-air-handling/:town                 /pages/aov-air-handling/:town.php                 200',
+        '/pages/aov-air-handling/:town/                /pages/aov-air-handling/:town.php                 200',
+        '/pages/services/aov/:town                     /pages/services/aov/:town.php                     200',
+        '/pages/services/aov/:town/                    /pages/services/aov/:town.php                     200',
+        '/pages/services/aov-air-handling/:town        /pages/services/aov-air-handling/:town.php        200',
+        '/pages/services/aov-air-handling/:town/       /pages/services/aov-air-handling/:town.php        200',
+        '/pages/services/barriers/:town                /pages/services/barriers/:town.php                200',
+        '/pages/services/barriers/:town/               /pages/services/barriers/:town.php                200',
+        '',
         '# Unpublished matrix URLs (linked from nav/hubs, 404 on the static site).',
         '# Keyword×town → that keyword hub. Service×town → that service hub.',
+        '# aov, barriers, and aov-* / barriers* slugs are not in this list.',
         '/pages/keywords/:slug/:town     /pages/keywords/:slug    301',
         '/pages/keywords/:slug/:town/    /pages/keywords/:slug    301',
         '',
@@ -741,6 +815,9 @@ function icomplyUnpublishedMatrixRedirects(): string
     foreach (array_keys(getServices()) as $slug) {
         $slug = (string)$slug;
         if (!preg_match('/^[a-z0-9\-]+$/', $slug) || in_array($slug, $reserved, true)) {
+            continue;
+        }
+        if (icomplyTownExportMustNotRedirect($slug)) {
             continue;
         }
         $lines[] = "/pages/{$slug}/:town     /pages/services/{$slug}    301";
