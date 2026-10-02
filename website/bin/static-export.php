@@ -323,8 +323,12 @@ function icomplyCollectKeywordRoutes(string $townMode): array
         }
     }
 
+    $keywordMeta = function_exists('getMajorKeywords') ? getMajorKeywords() : [];
     foreach ($keywords as $kw) {
         $slug = keywordSlug($kw);
+        if (($keywordMeta[$slug]['service'] ?? '') === 'aov-air-handling') {
+            continue;
+        }
         $fullTowns = $townMode === 'all'
             || isset($familyKw[$slug])
             || ($townMode === 'priority' && isset($priorityKw[$slug]));
@@ -422,10 +426,20 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
     }
 
     // Jack: every service has every area landing (not only --full).
+    // AOV town pages are /pages/aov/{slug}, not the North West matrix.
     foreach (array_keys(getServices()) as $sSlug) {
+        if ($sSlug === 'aov-air-handling') {
+            continue;
+        }
         foreach (getAreas() as $area) {
             $routes[] = '/pages/' . $sSlug . '/' . areaSlug((string)$area);
         }
+    }
+
+    require_once SITE_ROOT . '/includes/aov-place.php';
+    $routes[] = '/pages/aov';
+    foreach (array_keys(aovPlaces()) as $slug) {
+        $routes[] = '/pages/aov/' . $slug;
     }
 
     return $routes;
@@ -765,6 +779,13 @@ __MATRIX_REDIRECTS__
 /pages/keywords/:slug    /pages/keywords/:slug.php    200!
 /pages/keywords/:slug/   /pages/keywords/:slug.php    200!
 
+# /pages/aov/{town}.php makes /pages/aov a directory. Force the directory index.
+/pages/aov               /pages/aov.php               200!
+/pages/aov/              /pages/aov.php               200!
+
+TXT;
+    return $txt . icomplyAovLegacyRedirectLines() . <<<'TXT'
+
 # Splat pretty URLs. No force — /assets and real files win.
 /*                       /:splat.php                  200
 TXT;
@@ -833,6 +854,40 @@ function icomplyUnpublishedMatrixRedirects(): string
     }
     $lines[] = '';
     return implode("\n", $lines);
+}
+
+function icomplyAovLegacyRedirectLines(): string
+{
+    $lines = [
+        '# AOV doorway URLs: old service×town and keyword×town',
+    ];
+    if (!function_exists('aovPlaces')) {
+        require_once SITE_ROOT . '/includes/aov-place.php';
+    }
+    $places = aovPlaces();
+    if (function_exists('getAreas') && function_exists('areaSlug')) {
+        foreach (getAreas() as $area) {
+            $slug = areaSlug((string)$area);
+            $dest = isset($places[$slug])
+                ? '/pages/aov/' . $slug
+                : '/pages/services/aov-air-handling';
+            $lines[] = '/pages/aov-air-handling/' . $slug . '   ' . $dest . '  301';
+            $lines[] = '/pages/aov-air-handling/' . $slug . '/  ' . $dest . '  301';
+        }
+    }
+    if (function_exists('getMajorKeywords') && function_exists('keywordSlug')) {
+        foreach (getMajorKeywords() as $slug => $meta) {
+            if (($meta['service'] ?? '') !== 'aov-air-handling') {
+                continue;
+            }
+            $slug = keywordSlug((string)$slug);
+            if ($slug === '') {
+                continue;
+            }
+            $lines[] = '/pages/keywords/' . $slug . '/*  /pages/keywords/' . $slug . '  301';
+        }
+    }
+    return implode("\n", $lines) . "\n";
 }
 
 function icomplyPrettyUrlHeaders(): string

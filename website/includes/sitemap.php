@@ -124,25 +124,24 @@ function icomplySitemapEntries(): array
         if (preg_match('#-photo\.(jpe?g|png)$#i', $path)) {
             return;
         }
-        // noindex URLs never appear in the sitemap (thin town templates, keyword×area, non-Tier-1).
-        if (function_exists('icomplyPathIsIndexable') && !icomplyPathIsIndexable($path)) {
+        // /pages/aov and /pages/aov/{slug} are the nationwide AOV set. Always list them.
+        // /pages/aov-air-handling/{town} stays a virtual service×town route.
+        $isAovLoc = (bool)preg_match('#^/pages/aov(/[a-z0-9\-]+)?$#', $path);
+        if (!$isAovLoc && function_exists('icomplyPathIsIndexable') && !icomplyPathIsIndexable($path)) {
             return;
         }
-        // Hubs are rendered at export time from the catalogue, so they do not
-        // need a committed PHP stub. Indexable service×town pages are virtual
-        // routes the exporter always writes; the dist publisher still drops
-        // any loc whose HTML file is missing.
-        $generatedHub = (bool)preg_match('#^/pages/(keywords|areas|manufacturers|services)/[a-z0-9\-]+$#', $path);
+        $generatedHub = $path === '/pages/aov'
+            || (bool)preg_match('#^/pages/(keywords|areas|manufacturers|services|aov)/[a-z0-9\-]+$#', $path);
         $virtualServiceTown = false;
         if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $stm)) {
-            $reservedHubs = ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages', 'jobs'];
+            $reservedHubs = ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages', 'jobs', 'aov'];
             if (!in_array($stm[1], $reservedHubs, true)
                 && isset($serviceSlugs[$stm[1]])
                 && isset($areaSlugSet[$stm[2]])) {
                 $virtualServiceTown = true;
             }
         }
-        if (!$generatedHub && !$virtualServiceTown && !icomplySitemapUrlHasFile($path)) {
+        if (!$generatedHub && !$virtualServiceTown && !$isAovLoc && !icomplySitemapUrlHasFile($path)) {
             return;
         }
         $seen[$path] = true;
@@ -188,6 +187,7 @@ function icomplySitemapEntries(): array
         ['/pages/areas', '0.9', 'pages/areas.php'],
         ['/pages/manufacturers', '0.9', 'pages/manufacturers.php'],
         ['/pages/keywords', '0.9', 'pages/keywords.php'],
+        ['/pages/aov', '0.85', 'pages/aov/index.php'],
         // Trailing slash is the canonical (live /shop 301s to /shop/).
         ['/shop/', '0.8', 'shop/index.html'],
         ['/shop/fire/', '0.75', 'shop/fire/index.html'],
@@ -329,6 +329,19 @@ function icomplySitemapEntries(): array
             foreach ($townSlugs as $town) {
                 $add('/pages/' . $slug . '/' . $town, '0.5');
             }
+        }
+    }
+
+    if (!function_exists('aovPlaces')) {
+        $aovPlaceFile = SITE_ROOT . '/includes/aov-place.php';
+        if (is_file($aovPlaceFile)) {
+            require_once $aovPlaceFile;
+        }
+    }
+    if (function_exists('aovPlaces')) {
+        $add('/pages/aov', '0.85');
+        foreach (array_keys(aovPlaces()) as $slug) {
+            $add('/pages/aov/' . $slug, '0.64');
         }
     }
 

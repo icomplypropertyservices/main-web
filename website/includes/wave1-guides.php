@@ -494,6 +494,7 @@ function wave1FortnightGuides(): array
                         '[Emergency lighting tests](/pages/resources/emergency-lighting-testing) — monthly function, annual duration',
                         '[Fire door](/pages/resources/fire-door-inspection) condition on escape routes',
                         '[Extinguishers](/pages/resources/fire-extinguisher-servicing) if the FRA still wants them',
+                        '[AOV and smoke vents](/pages/services/aov-air-handling) where the stair, shaft or car park uses them. Quoted across the UK from Stockport. Travel outside a short North West run is on the quote. England, Wales, Scotland and Northern Ireland do not share one building-reg text.',
                     ],
                 ],
                 [

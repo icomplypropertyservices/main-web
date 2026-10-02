@@ -70,6 +70,18 @@ function comboTemplatePath(string $serviceSlug = ''): string {
  * Service × area landing page.
  */
 function renderServiceAreaPage(string $serviceSlug, string $area): void {
+    if ($serviceSlug === 'aov-air-handling') {
+        require_once SITE_ROOT . '/includes/aov.php';
+        require_once SITE_ROOT . '/includes/aov-place.php';
+        $slug = areaSlug($area);
+        if (aovPlace($slug)) {
+            header('Location: ' . url('/pages/aov/' . $slug), true, 301);
+        } else {
+            header('Location: ' . url('/pages/services/aov-air-handling.php'), true, 301);
+        }
+        icomplyRequestExit();
+        return;
+    }
     $services = getServices();
     if (!isset($services[$serviceSlug])) {
         http_response_code(404);
@@ -238,6 +250,11 @@ function renderKeywordAreaPage(string $keywordSlug, string $area): void {
     $meta = $keywords[$keywordSlug];
     $services = getServices();
     $serviceSlug = $meta['service'] ?? 'electrical';
+    if ($serviceSlug === 'aov-air-handling') {
+        header('Location: ' . url('/pages/keywords/' . $keywordSlug), true, 301);
+        icomplyRequestExit();
+        return;
+    }
     $serviceName = $services[$serviceSlug] ?? keywordDisplayName($serviceSlug);
     $relatedSlug = keywordSlug($meta['related'] ?? $keywordSlug);
     $relatedName = $keywords[$relatedSlug]['name'] ?? keywordDisplayName($relatedSlug);
@@ -282,6 +299,11 @@ function renderAreaHubPage(string $area): void {
  * Top-level service hub (pages/services/{slug}.php).
  */
 function renderServiceHubPage(string $serviceSlug): void {
+    if ($serviceSlug === 'aov-air-handling') {
+        require_once SITE_ROOT . '/includes/aov.php';
+        aovRenderHub();
+        return;
+    }
     $services = getServices();
     if (!isset($services[$serviceSlug])) {
         http_response_code(404);

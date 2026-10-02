@@ -178,7 +178,7 @@ function wave1QualityHubs(): array
             'honest' => 'We maintain and install the systems we quote. We do not sell a fake accreditation wall or a one-line national retainers price.',
             'coverTitle' => 'A workplace fire programme, not a gadget list',
             'cover' => [
-                'Start with the [FRA](/pages/fire-risk-assessment), then book the systems it names. Most offices and industrial units live on [fire alarm servicing](/pages/resources/fire-alarm-servicing) and [emergency lighting testing](/pages/resources/emergency-lighting-testing).',
+                'Start with the [FRA](/pages/fire-risk-assessment), then book the systems it names. Most offices and industrial units live on [fire alarm servicing](/pages/resources/fire-alarm-servicing) and [emergency lighting testing](/pages/resources/emergency-lighting-testing). Where the building has a stair vent, shaft or smoke fan, [AOV and smoke control](/pages/services/aov-air-handling) is part of that fire-protection set and is quoted across the UK from Stockport. Travel outside a short North West run is on the quote.',
                 'Audience page: [commercial / FM](/pages/commercial). Guide: [commercial fire safety basics](/pages/resources/commercial-fire-safety-basics).',
             ],
             'work' => [

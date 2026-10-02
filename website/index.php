@@ -113,6 +113,21 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
     </div>
 </section>
 
+<section class="bg-[#0B1F3A] text-white border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-10 flex flex-col lg:flex-row lg:items-center gap-6 justify-between">
+        <div class="max-w-2xl">
+            <p class="text-xs uppercase tracking-[3px] text-[#ffb080] font-semibold">Fire protection · nationwide</p>
+            <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mt-2">AOV and smoke vents</h2>
+            <p class="mt-3 text-white/80">Automatic opening vents sit with fire protection, so we quote them across the UK from the Stockport yard (SK2 5DE). Travel outside a short North West run is on the quote. Supply kit prices are listed. Installation, testing and commissioning are POA. We do not claim BAFE, FIRAS or approved-installer status.</p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+            <a class="px-5 py-3 rounded-2xl bg-[#ff6b00] font-semibold" href="<?= url('/pages/services/aov-air-handling.php') ?>">AOV service</a>
+            <a class="px-5 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold" href="<?= url('/pages/aov') ?>">UK town pages</a>
+            <a class="px-5 py-3 rounded-2xl border border-white/40 font-semibold" href="tel:<?= htmlspecialchars(preg_replace('/\s+/', '', (string)PHONE), ENT_QUOTES, 'UTF-8') ?>">Call <?= htmlspecialchars((string)PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+        </div>
+    </div>
+</section>
+
 <!-- TRUST STRIP -->
 <section class="bg-white border-b">
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

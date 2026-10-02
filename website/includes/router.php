@@ -125,6 +125,19 @@ function routerDispatchVirtual(string $path): bool {
         return routerTryFile('/pages/resources/' . $m[1]);
     }
 
+    // Nationwide AOV town pages (not the North West service×area matrix).
+    if ($path === '/pages/aov') {
+        require_once SITE_ROOT . '/includes/aov.php';
+        require_once SITE_ROOT . '/includes/aov-place.php';
+        aovRenderDirectory();
+        return true;
+    }
+    if (preg_match('#^/pages/aov/([a-z0-9\-]+)$#', $path, $m)) {
+        require_once SITE_ROOT . '/includes/aov.php';
+        aovRenderTown($m[1]);
+        return true;
+    }
+
     // /pages/keywords/{kw}/{area}
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         renderKeywordAreaPage($m[1], $m[2]);

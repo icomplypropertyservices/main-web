@@ -819,9 +819,11 @@ function servicePhotoUrl(string $slug): string {
 }
 
 function manufacturerImageUrl(string $slug, string $fallbackService = 'fire-alarms'): string {
-    $rel = '/assets/images/manufacturers/' . $slug . '.jpg';
-    if (is_file(SITE_ROOT . $rel)) {
-        return url($rel);
+    foreach (['svg', 'jpg', 'png', 'webp'] as $ext) {
+        $rel = '/assets/images/manufacturers/' . $slug . '.' . $ext;
+        if (is_file(SITE_ROOT . $rel)) {
+            return url($rel);
+        }
     }
     return serviceImageUrl($fallbackService);
 }
