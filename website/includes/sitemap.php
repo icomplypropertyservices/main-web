@@ -190,6 +190,8 @@ function icomplySitemapEntries(): array
         ['/pages/packages/fire-ready', '0.78', 'pages/packages/fire-ready.php'],
         ['/pages/services', '0.95', 'pages/services.php'],
         ['/pages/areas', '0.9', 'pages/areas.php'],
+        ['/pages/areas/manchester', '0.8', 'pages/areas/manchester.php'],
+        ['/pages/areas/burnley', '0.8', 'pages/areas/burnley.php'],
         ['/pages/manufacturers', '0.9', 'pages/manufacturers.php'],
         ['/pages/keywords', '0.9', 'pages/keywords.php'],
         ['/pages/aov', '0.85', 'pages/aov/index.php'],

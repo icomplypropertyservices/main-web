@@ -290,12 +290,21 @@ function renderKeywordAreaPage(string $keywordSlug, string $area): void {
 function renderAreaHubPage(string $area): void {
     $GLOBALS['services'] = getServices();
     $GLOBALS['areas'] = getAreas();
-    $areaSlug = areaSlug($area);
+    $resolved = $area;
+    foreach (getAreas() as $name) {
+        if (strcasecmp((string)$name, $area) === 0 || areaSlug((string)$name) === areaSlug($area)) {
+            $resolved = (string)$name;
+            break;
+        }
+    }
+    $tpl = isFeaturedAreaIndexHub($resolved)
+        ? SITE_ROOT . '/templates/area-index.php'
+        : SITE_ROOT . '/templates/area.php';
 
-    executeTemplateVars(SITE_ROOT . '/templates/area.php', [
-        'AREA' => $area,
-        'AREA_SLUG' => $areaSlug,
-        'AREA_URL' => rawurlencode($area),
+    executeTemplateVars($tpl, [
+        'AREA' => $resolved,
+        'AREA_SLUG' => areaSlug($resolved),
+        'AREA_URL' => rawurlencode($resolved),
         'SERVICE_NAME' => 'Compliance',
     ]);
 }
