@@ -220,6 +220,24 @@ $schema = [
     </div>
 </section>
 
+<?php if ($SERVICE_SLUG === 'access-control'): ?>
+<section class="bg-white border-b">
+    <div class="max-w-7xl mx-auto px-6 py-8">
+        <div class="p-6 md:p-8 rounded-3xl border-2 border-[#ff6b00] bg-orange-50">
+            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-bold">Priority cross-sell</div>
+            <h2 class="mt-2 text-2xl font-semibold text-black">Vehicle barriers on mainland Britain</h2>
+            <p class="mt-2 text-zinc-800 max-w-3xl">CAME barrier packs are supplied with Paxton, Videx or GSM so the lane uses the same access control as the doors. Manchester and Burnley are the priority examples. Every other mainland England, Wales and Scotland area we publish has its own page. Install stays POA.</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+                <a class="px-4 py-2 rounded-full bg-[#0B1F3A] text-white text-sm font-semibold" href="<?= url('/pages/barriers') ?>">All mainland barrier areas</a>
+                <a class="px-4 py-2 rounded-full bg-white border text-sm font-semibold" href="<?= url('/pages/barriers/manchester') ?>">Barriers in Manchester</a>
+                <a class="px-4 py-2 rounded-full bg-white border text-sm font-semibold" href="<?= url('/pages/barriers/burnley') ?>">Barriers in Burnley</a>
+                <a class="px-4 py-2 rounded-full bg-white border text-sm font-semibold" href="<?= url('/products') ?>#barrier-packs">5m CAME kits</a>
+            </div>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
 <!-- TRUST -->
 <section class="bg-white border-b">
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

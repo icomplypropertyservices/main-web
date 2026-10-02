@@ -144,6 +144,9 @@ require SITE_ROOT . '/includes/header.php';
         <div>
             <h2 class="text-2xl font-semibold tracking-tight mb-3">Related Icomply services</h2>
             <div class="flex flex-wrap gap-2">
+                <a href="<?= url('/pages/barriers') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Vehicle barriers · mainland</a>
+                <a href="<?= url('/pages/barriers/manchester') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Barriers in Manchester</a>
+                <a href="<?= url('/pages/barriers/burnley') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Barriers in Burnley</a>
                 <a href="<?= url('/pages/services/access-control.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Access control services</a>
                 <a href="<?= url('/pages/keywords/access-control-installation.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Access control installation</a>
                 <a href="<?= url('/pages/keywords/commercial-access-control.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Commercial access control</a>

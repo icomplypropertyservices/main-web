@@ -88,9 +88,9 @@ function icomplyAovKitImageUrl(string $sku): string {
   </div>
 </section>
 
-<section class="max-w-7xl mx-auto px-6 pb-12">
+<section class="max-w-7xl mx-auto px-6 pb-12" id="barrier-packs">
   <h2 class="text-2xl font-semibold text-black mb-2">Barrier packs (5m)</h2>
-  <p class="text-sm text-zinc-600 mb-6">SoT supply prices. Install POA. Images from Marketing CAME GARD CDN map.</p>
+  <p class="text-sm text-zinc-600 mb-6">SoT supply prices. Install POA. Images from Marketing CAME GARD CDN map. Mainland coverage, with Manchester and Burnley as the priority examples, is on <a class="font-semibold text-[#FF6B00]" href="<?= url('/pages/barriers') ?>">vehicle barriers</a>. Pair the lane with <a class="font-semibold text-[#FF6B00]" href="<?= url('/pages/services/access-control') ?>">access control</a> so door fobs can open the barrier.</p>
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
     <?php
     $barCame = icomplyBar5mCameGardImageMap();

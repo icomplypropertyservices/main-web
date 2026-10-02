@@ -229,14 +229,27 @@ require SITE_ROOT . '/includes/header.php';
     </div>
     <div class="flex flex-wrap gap-2">
         <?php
-        foreach (['electrical' => 'Electrical', 'gas-systems' => 'Gas Systems', 'fire-alarms' => 'Fire Alarms', 'cctv' => 'CCTV'] as $sSlug => $sName):
+        foreach (['electrical' => 'Electrical', 'gas-systems' => 'Gas Systems', 'fire-alarms' => 'Fire Alarms', 'cctv' => 'CCTV', 'access-control' => 'Access control'] as $sSlug => $sName):
             if (!isset($services[$sSlug])) { continue; }
             ?>
             <a href="<?= url('/pages/services/' . rawurlencode($sSlug) . '.php') ?>"
                class="px-3 py-1.5 bg-white border rounded-full text-xs sm:text-sm text-black hover:border-[#ff6b00] transition">
                 <?= htmlspecialchars($sName, ENT_QUOTES, 'UTF-8') ?> hub
             </a>
-        <?php endforeach;
+        <?php endforeach; ?>
+            <a href="<?= url('/pages/barriers') ?>"
+               class="px-3 py-1.5 bg-white border rounded-full text-xs sm:text-sm text-black hover:border-[#ff6b00] transition">
+                Vehicle barriers · mainland
+            </a>
+            <a href="<?= url('/pages/barriers/manchester') ?>"
+               class="px-3 py-1.5 bg-white border rounded-full text-xs sm:text-sm text-black hover:border-[#ff6b00] transition">
+                Barriers in Manchester
+            </a>
+            <a href="<?= url('/pages/barriers/burnley') ?>"
+               class="px-3 py-1.5 bg-white border rounded-full text-xs sm:text-sm text-black hover:border-[#ff6b00] transition">
+                Barriers in Burnley
+            </a>
+        <?php
         $egKwMap = getMajorKeywords();
         $egTowns = array_values(array_intersect($popularAreas, ['Stockport', 'Manchester', 'Bolton']));
         foreach (['rewire', 'emergency-electrician', 'boiler', 'cp12'] as $egSlug):

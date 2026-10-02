@@ -1,0 +1,2272 @@
+[
+  {
+    "name": "Aldershot",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Alnwick",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Andover",
+    "nation": "England",
+    "note": "town and business-park parking"
+  },
+  {
+    "name": "Appleby-in-Westmorland",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Ashbourne",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Ashford",
+    "nation": "England",
+    "note": "town and international-station commercial parking"
+  },
+  {
+    "name": "Ashington",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Aylesbury",
+    "nation": "England",
+    "note": "town and business-park parking"
+  },
+  {
+    "name": "Bakewell",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Banbury",
+    "nation": "England",
+    "note": "town and M40 logistics parking"
+  },
+  {
+    "name": "Barnsley",
+    "nation": "England",
+    "note": "town commercial and retail parking"
+  },
+  {
+    "name": "Barnstaple",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Basildon",
+    "nation": "England",
+    "note": "new-town retail and industrial parking"
+  },
+  {
+    "name": "Basingstoke",
+    "nation": "England",
+    "note": "town and business-park parking"
+  },
+  {
+    "name": "Bath",
+    "nation": "England",
+    "note": "historic-centre commercial parking and managed blocks"
+  },
+  {
+    "name": "Batley",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Bedford",
+    "nation": "England",
+    "note": "town and business-park parking"
+  },
+  {
+    "name": "Bentham",
+    "nation": "England",
+    "note": "dales-edge town parking"
+  },
+  {
+    "name": "Berwick-upon-Tweed",
+    "nation": "England",
+    "note": "border-town commercial parking"
+  },
+  {
+    "name": "Beverley",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Billingham",
+    "nation": "England",
+    "note": "town and chemical-park edge parking"
+  },
+  {
+    "name": "Bingley",
+    "nation": "England",
+    "note": "Aire Valley town parking"
+  },
+  {
+    "name": "Birmingham",
+    "nation": "England",
+    "note": "city car parks, industrial estates and multi-let offices"
+  },
+  {
+    "name": "Bishop Auckland",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Bishop's Stortford",
+    "nation": "England",
+    "note": "town and Stansted-corridor parking"
+  },
+  {
+    "name": "Blyth",
+    "nation": "England",
+    "note": "port and town commercial parking"
+  },
+  {
+    "name": "Bognor Regis",
+    "nation": "England",
+    "note": "seafront and town commercial parking"
+  },
+  {
+    "name": "Boston",
+    "nation": "England",
+    "note": "town and port-edge commercial parking"
+  },
+  {
+    "name": "Bourne",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Bournemouth",
+    "nation": "England",
+    "note": "town-centre and seafront commercial parking"
+  },
+  {
+    "name": "Bracknell",
+    "nation": "England",
+    "note": "new-town business-park parking"
+  },
+  {
+    "name": "Bradford",
+    "nation": "England",
+    "note": "city lets, mills conversions and commercial yards"
+  },
+  {
+    "name": "Braintree",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Brampton",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Brentwood",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Bridgnorth",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Bridgwater",
+    "nation": "England",
+    "note": "town and Hinkley-corridor commercial parking"
+  },
+  {
+    "name": "Bridlington",
+    "nation": "England",
+    "note": "seafront and town commercial parking"
+  },
+  {
+    "name": "Brighton",
+    "nation": "England",
+    "note": "city-centre and seafront managed parking"
+  },
+  {
+    "name": "Bristol",
+    "nation": "England",
+    "note": "harbourside offices, residential blocks and retail parks"
+  },
+  {
+    "name": "Bromsgrove",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Burton upon Trent",
+    "nation": "England",
+    "note": "town and brewery-edge industrial parking"
+  },
+  {
+    "name": "Buxton",
+    "nation": "England",
+    "note": "spa-town and quarry-edge commercial parking"
+  },
+  {
+    "name": "Camberley",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Cambridge",
+    "nation": "England",
+    "note": "city, science parks and college-edge commercial parking"
+  },
+  {
+    "name": "Cannock",
+    "nation": "England",
+    "note": "town and retail-park parking"
+  },
+  {
+    "name": "Canterbury",
+    "nation": "England",
+    "note": "city-centre commercial parking"
+  },
+  {
+    "name": "Castleford",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Catterick",
+    "nation": "England",
+    "note": "garrison-edge commercial parking"
+  },
+  {
+    "name": "Chatham",
+    "nation": "England",
+    "note": "Medway commercial and dockyard-edge parking"
+  },
+  {
+    "name": "Chelmsford",
+    "nation": "England",
+    "note": "city and retail-park parking"
+  },
+  {
+    "name": "Cheltenham",
+    "nation": "England",
+    "note": "town-centre and retail parking"
+  },
+  {
+    "name": "Chesterfield",
+    "nation": "England",
+    "note": "town and retail-park parking"
+  },
+  {
+    "name": "Chichester",
+    "nation": "England",
+    "note": "city commercial parking"
+  },
+  {
+    "name": "Chippenham",
+    "nation": "England",
+    "note": "town and edge commercial parking"
+  },
+  {
+    "name": "Cinderford",
+    "nation": "England",
+    "note": "Forest of Dean town parking"
+  },
+  {
+    "name": "Cirencester",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Clacton-on-Sea",
+    "nation": "England",
+    "note": "seafront and town commercial parking"
+  },
+  {
+    "name": "Cleator Moor",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Cleethorpes",
+    "nation": "England",
+    "note": "seafront commercial parking"
+  },
+  {
+    "name": "Coalville",
+    "nation": "England",
+    "note": "town and industrial parking"
+  },
+  {
+    "name": "Colchester",
+    "nation": "England",
+    "note": "town and garrison-edge commercial parking"
+  },
+  {
+    "name": "Consett",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Corby",
+    "nation": "England",
+    "note": "town and industrial-estate parking"
+  },
+  {
+    "name": "Coventry",
+    "nation": "England",
+    "note": "city and business-park parking with managed blocks"
+  },
+  {
+    "name": "Cramlington",
+    "nation": "England",
+    "note": "new-town commercial parking"
+  },
+  {
+    "name": "Crawley",
+    "nation": "England",
+    "note": "town and Gatwick-corridor commercial parking"
+  },
+  {
+    "name": "Croydon",
+    "nation": "England",
+    "note": "town-centre offices and multi-storey parking"
+  },
+  {
+    "name": "Darlington",
+    "nation": "England",
+    "note": "town and edge commercial parking"
+  },
+  {
+    "name": "Dartford",
+    "nation": "England",
+    "note": "town and crossing-corridor commercial parking"
+  },
+  {
+    "name": "Derby",
+    "nation": "England",
+    "note": "city offices, Rolls-Royce corridor industry and retail parks"
+  },
+  {
+    "name": "Dewsbury",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Doncaster",
+    "nation": "England",
+    "note": "town and logistics-corridor parking"
+  },
+  {
+    "name": "Dover",
+    "nation": "England",
+    "note": "port and town commercial parking"
+  },
+  {
+    "name": "Driffield",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Droitwich",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Dudley",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Durham",
+    "nation": "England",
+    "note": "city and university-edge parking"
+  },
+  {
+    "name": "East Grinstead",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Eastbourne",
+    "nation": "England",
+    "note": "seafront and town commercial parking"
+  },
+  {
+    "name": "Eastleigh",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Egremont",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Epsom",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Evesham",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Exeter",
+    "nation": "England",
+    "note": "city and motorway-edge commercial parking"
+  },
+  {
+    "name": "Fareham",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Farnborough",
+    "nation": "England",
+    "note": "town and business-park parking"
+  },
+  {
+    "name": "Faversham",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Felixstowe",
+    "nation": "England",
+    "note": "port logistics yards"
+  },
+  {
+    "name": "Folkestone",
+    "nation": "England",
+    "note": "port and town commercial parking"
+  },
+  {
+    "name": "Frome",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Gainsborough",
+    "nation": "England",
+    "note": "town and riverside commercial parking"
+  },
+  {
+    "name": "Gateshead",
+    "nation": "England",
+    "note": "quayside and town commercial parking"
+  },
+  {
+    "name": "Gillingham",
+    "nation": "England",
+    "note": "Medway town commercial parking"
+  },
+  {
+    "name": "Glossop",
+    "nation": "England",
+    "note": "High Peak edge commercial and mill conversions"
+  },
+  {
+    "name": "Gloucester",
+    "nation": "England",
+    "note": "city and docks commercial parking"
+  },
+  {
+    "name": "Goole",
+    "nation": "England",
+    "note": "port and town commercial parking"
+  },
+  {
+    "name": "Gosport",
+    "nation": "England",
+    "note": "town and harbour commercial parking"
+  },
+  {
+    "name": "Grange-over-Sands",
+    "nation": "England",
+    "note": "cartmel-peninsula town parking"
+  },
+  {
+    "name": "Grantham",
+    "nation": "England",
+    "note": "town and A1 logistics parking"
+  },
+  {
+    "name": "Gravesend",
+    "nation": "England",
+    "note": "town and riverside commercial parking"
+  },
+  {
+    "name": "Great Yarmouth",
+    "nation": "England",
+    "note": "seafront and town commercial parking"
+  },
+  {
+    "name": "Grimsby",
+    "nation": "England",
+    "note": "port and town commercial parking"
+  },
+  {
+    "name": "Guildford",
+    "nation": "England",
+    "note": "town-centre and business-park parking"
+  },
+  {
+    "name": "Halesowen",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Halifax",
+    "nation": "England",
+    "note": "town commercial and hillside industrial parking"
+  },
+  {
+    "name": "Harlow",
+    "nation": "England",
+    "note": "new-town commercial and industrial parking"
+  },
+  {
+    "name": "Harrogate",
+    "nation": "England",
+    "note": "spa-town commercial and hotel-edge parking"
+  },
+  {
+    "name": "Hartlepool",
+    "nation": "England",
+    "note": "marina and town commercial parking"
+  },
+  {
+    "name": "Harwich",
+    "nation": "England",
+    "note": "port commercial parking"
+  },
+  {
+    "name": "Hastings",
+    "nation": "England",
+    "note": "seafront and town commercial parking"
+  },
+  {
+    "name": "Havant",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Hawes",
+    "nation": "England",
+    "note": "dales-town commercial parking"
+  },
+  {
+    "name": "Haywards Heath",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Hemel Hempstead",
+    "nation": "England",
+    "note": "new-town retail and industrial parking"
+  },
+  {
+    "name": "Hereford",
+    "nation": "England",
+    "note": "city commercial parking"
+  },
+  {
+    "name": "Herne Bay",
+    "nation": "England",
+    "note": "seafront and town commercial parking"
+  },
+  {
+    "name": "Hexham",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "High Wycombe",
+    "nation": "England",
+    "note": "town and furniture-trade industrial parking"
+  },
+  {
+    "name": "Hinckley",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Horsham",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Huddersfield",
+    "nation": "England",
+    "note": "town commercial and mill-edge yards"
+  },
+  {
+    "name": "Ilkeston",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Ilkley",
+    "nation": "England",
+    "note": "Wharfedale town parking"
+  },
+  {
+    "name": "Ingleton",
+    "nation": "England",
+    "note": "dales village commercial parking"
+  },
+  {
+    "name": "Ipswich",
+    "nation": "England",
+    "note": "port and town commercial parking"
+  },
+  {
+    "name": "Jarrow",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Keighley",
+    "nation": "England",
+    "note": "Aire Valley mills and town parking"
+  },
+  {
+    "name": "Kettering",
+    "nation": "England",
+    "note": "town and logistics-edge parking"
+  },
+  {
+    "name": "Kidderminster",
+    "nation": "England",
+    "note": "town and carpet-trade industrial parking"
+  },
+  {
+    "name": "Kings Lynn",
+    "nation": "England",
+    "note": "town and port commercial parking"
+  },
+  {
+    "name": "Kingston upon Hull",
+    "nation": "England",
+    "note": "docks-side commercial, city parking and residential blocks"
+  },
+  {
+    "name": "Kirkby Lonsdale",
+    "nation": "England",
+    "note": "lune-valley town parking"
+  },
+  {
+    "name": "Leamington Spa",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Ledbury",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Leeds",
+    "nation": "England",
+    "note": "city lets, offices and edge-of-town retail parks"
+  },
+  {
+    "name": "Leek",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Leicester",
+    "nation": "England",
+    "note": "city commercial, logistics edges and residential blocks"
+  },
+  {
+    "name": "Lewes",
+    "nation": "England",
+    "note": "county-town commercial parking"
+  },
+  {
+    "name": "Leyburn",
+    "nation": "England",
+    "note": "dales-town commercial parking"
+  },
+  {
+    "name": "Lichfield",
+    "nation": "England",
+    "note": "city commercial parking"
+  },
+  {
+    "name": "Lincoln",
+    "nation": "England",
+    "note": "city and uphill commercial parking"
+  },
+  {
+    "name": "Littlehampton",
+    "nation": "England",
+    "note": "harbour and town commercial parking"
+  },
+  {
+    "name": "London",
+    "nation": "England",
+    "note": "city-centre car parks, offices, residential blocks and managed yards"
+  },
+  {
+    "name": "Long Eaton",
+    "nation": "England",
+    "note": "town and retail parking"
+  },
+  {
+    "name": "Loughborough",
+    "nation": "England",
+    "note": "town and university-edge parking"
+  },
+  {
+    "name": "Lowestoft",
+    "nation": "England",
+    "note": "port and town commercial parking"
+  },
+  {
+    "name": "Ludlow",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Luton",
+    "nation": "England",
+    "note": "airport-corridor commercial and town parking"
+  },
+  {
+    "name": "Maidenhead",
+    "nation": "England",
+    "note": "town and Thames Valley office parking"
+  },
+  {
+    "name": "Maidstone",
+    "nation": "England",
+    "note": "town and retail-park parking"
+  },
+  {
+    "name": "Malvern",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Mansfield",
+    "nation": "England",
+    "note": "town commercial and industrial parking"
+  },
+  {
+    "name": "Margate",
+    "nation": "England",
+    "note": "seafront and town commercial parking"
+  },
+  {
+    "name": "Market Drayton",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Matlock",
+    "nation": "England",
+    "note": "town and riverside commercial parking"
+  },
+  {
+    "name": "Melton Mowbray",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Middlesbrough",
+    "nation": "England",
+    "note": "town and Tees industrial parking"
+  },
+  {
+    "name": "Milton Keynes",
+    "nation": "England",
+    "note": "grid-road business parks and retail parking"
+  },
+  {
+    "name": "Morley",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Morpeth",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Newark",
+    "nation": "England",
+    "note": "town and riverside commercial parking"
+  },
+  {
+    "name": "Newbury",
+    "nation": "England",
+    "note": "town and business-park parking"
+  },
+  {
+    "name": "Newcastle upon Tyne",
+    "nation": "England",
+    "note": "city-centre parking, quayside commercial and suburban blocks"
+  },
+  {
+    "name": "Newcastle-under-Lyme",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "North Shields",
+    "nation": "England",
+    "note": "fish-quay and town commercial parking"
+  },
+  {
+    "name": "Northallerton",
+    "nation": "England",
+    "note": "county-town commercial parking"
+  },
+  {
+    "name": "Northampton",
+    "nation": "England",
+    "note": "logistics parks, offices and town-centre parking"
+  },
+  {
+    "name": "Norwich",
+    "nation": "England",
+    "note": "city commercial and retail-park parking"
+  },
+  {
+    "name": "Nottingham",
+    "nation": "England",
+    "note": "city offices, retail parks and residential schemes"
+  },
+  {
+    "name": "Nuneaton",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Oakham",
+    "nation": "England",
+    "note": "county-town commercial parking"
+  },
+  {
+    "name": "Ossett",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Oswestry",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Otley",
+    "nation": "England",
+    "note": "Wharfedale town parking"
+  },
+  {
+    "name": "Oxford",
+    "nation": "England",
+    "note": "city and science-park parking with tight historic access"
+  },
+  {
+    "name": "Peterborough",
+    "nation": "England",
+    "note": "city commercial and distribution-park yards"
+  },
+  {
+    "name": "Peterlee",
+    "nation": "England",
+    "note": "new-town commercial parking"
+  },
+  {
+    "name": "Plymouth",
+    "nation": "England",
+    "note": "city and waterfront commercial parking"
+  },
+  {
+    "name": "Pontefract",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Poole",
+    "nation": "England",
+    "note": "harbour commercial and retail parking"
+  },
+  {
+    "name": "Portsmouth",
+    "nation": "England",
+    "note": "harbour commercial, city parking and residential blocks"
+  },
+  {
+    "name": "Pudsey",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Ramsgate",
+    "nation": "England",
+    "note": "harbour and town commercial parking"
+  },
+  {
+    "name": "Reading",
+    "nation": "England",
+    "note": "Thames Valley offices, retail and residential parking"
+  },
+  {
+    "name": "Redcar",
+    "nation": "England",
+    "note": "coastal town commercial parking"
+  },
+  {
+    "name": "Redditch",
+    "nation": "England",
+    "note": "new-town commercial and industrial parking"
+  },
+  {
+    "name": "Redhill",
+    "nation": "England",
+    "note": "town and retail parking"
+  },
+  {
+    "name": "Reigate",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Retford",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Richmond",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Ripon",
+    "nation": "England",
+    "note": "city commercial parking"
+  },
+  {
+    "name": "Rochester",
+    "nation": "England",
+    "note": "Medway historic-centre commercial parking"
+  },
+  {
+    "name": "Romsey",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Ross-on-Wye",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Rotherham",
+    "nation": "England",
+    "note": "town and industrial-estate parking"
+  },
+  {
+    "name": "Rugby",
+    "nation": "England",
+    "note": "town and logistics-edge parking"
+  },
+  {
+    "name": "Salisbury",
+    "nation": "England",
+    "note": "city commercial parking"
+  },
+  {
+    "name": "Scarborough",
+    "nation": "England",
+    "note": "seafront and town commercial parking"
+  },
+  {
+    "name": "Scunthorpe",
+    "nation": "England",
+    "note": "town and steelworks-edge industrial parking"
+  },
+  {
+    "name": "Sedbergh",
+    "nation": "England",
+    "note": "howgill town parking"
+  },
+  {
+    "name": "Selby",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Settle",
+    "nation": "England",
+    "note": "dales-town commercial parking"
+  },
+  {
+    "name": "Sevenoaks",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Sheffield",
+    "nation": "England",
+    "note": "city and valley commercial sites, student blocks and yards"
+  },
+  {
+    "name": "Shipley",
+    "nation": "England",
+    "note": "Aire Valley town parking"
+  },
+  {
+    "name": "Shoreham-by-Sea",
+    "nation": "England",
+    "note": "port and town commercial parking"
+  },
+  {
+    "name": "Shrewsbury",
+    "nation": "England",
+    "note": "town-centre and edge commercial parking"
+  },
+  {
+    "name": "Sittingbourne",
+    "nation": "England",
+    "note": "town and distribution-edge parking"
+  },
+  {
+    "name": "Skipton",
+    "nation": "England",
+    "note": "gateway-town commercial and retail parking"
+  },
+  {
+    "name": "Sleaford",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Slough",
+    "nation": "England",
+    "note": "trading-estate and town parking"
+  },
+  {
+    "name": "Solihull",
+    "nation": "England",
+    "note": "town and business-park parking"
+  },
+  {
+    "name": "South Shields",
+    "nation": "England",
+    "note": "coastal town commercial parking"
+  },
+  {
+    "name": "Southampton",
+    "nation": "England",
+    "note": "port-side commercial, city parking and residential blocks"
+  },
+  {
+    "name": "Southend-on-Sea",
+    "nation": "England",
+    "note": "town-centre and seafront commercial parking"
+  },
+  {
+    "name": "Spalding",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "St Albans",
+    "nation": "England",
+    "note": "town-centre commercial parking"
+  },
+  {
+    "name": "Stafford",
+    "nation": "England",
+    "note": "town and business-park parking"
+  },
+  {
+    "name": "Stamford",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Stevenage",
+    "nation": "England",
+    "note": "new-town commercial and industrial parking"
+  },
+  {
+    "name": "Stockton-on-Tees",
+    "nation": "England",
+    "note": "town commercial and retail parking"
+  },
+  {
+    "name": "Stoke-on-Trent",
+    "nation": "England",
+    "note": "industrial estates, retail parks and town-centre parking"
+  },
+  {
+    "name": "Stone",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Stourbridge",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Stratford-upon-Avon",
+    "nation": "England",
+    "note": "town commercial and visitor parking"
+  },
+  {
+    "name": "Stroud",
+    "nation": "England",
+    "note": "town and mill-edge parking"
+  },
+  {
+    "name": "Sunderland",
+    "nation": "England",
+    "note": "city and coastal commercial parking"
+  },
+  {
+    "name": "Sutton Coldfield",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Swadlincote",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Swindon",
+    "nation": "England",
+    "note": "town-centre and Great Western industrial parking"
+  },
+  {
+    "name": "Tamworth",
+    "nation": "England",
+    "note": "town and retail-park parking"
+  },
+  {
+    "name": "Taunton",
+    "nation": "England",
+    "note": "town and retail-park parking"
+  },
+  {
+    "name": "Telford",
+    "nation": "England",
+    "note": "new-town commercial and industrial parking"
+  },
+  {
+    "name": "Tewkesbury",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Thirsk",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Tonbridge",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Torquay",
+    "nation": "England",
+    "note": "seafront and town commercial parking"
+  },
+  {
+    "name": "Trowbridge",
+    "nation": "England",
+    "note": "county-town commercial parking"
+  },
+  {
+    "name": "Truro",
+    "nation": "England",
+    "note": "city commercial parking"
+  },
+  {
+    "name": "Tunbridge Wells",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Tynemouth",
+    "nation": "England",
+    "note": "seafront commercial parking"
+  },
+  {
+    "name": "Uttoxeter",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Wakefield",
+    "nation": "England",
+    "note": "city commercial and retail parking"
+  },
+  {
+    "name": "Walsall",
+    "nation": "England",
+    "note": "town and industrial parking"
+  },
+  {
+    "name": "Warwick",
+    "nation": "England",
+    "note": "town-centre commercial parking"
+  },
+  {
+    "name": "Washington",
+    "nation": "England",
+    "note": "new-town commercial and industrial parking"
+  },
+  {
+    "name": "Watford",
+    "nation": "England",
+    "note": "town-centre and retail parking"
+  },
+  {
+    "name": "Wells",
+    "nation": "England",
+    "note": "city commercial parking"
+  },
+  {
+    "name": "West Bromwich",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Weston-super-Mare",
+    "nation": "England",
+    "note": "seafront and town commercial parking"
+  },
+  {
+    "name": "Wetherby",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Whitby",
+    "nation": "England",
+    "note": "harbour and town commercial parking"
+  },
+  {
+    "name": "Whitchurch",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Whitley Bay",
+    "nation": "England",
+    "note": "seafront and town commercial parking"
+  },
+  {
+    "name": "Whitstable",
+    "nation": "England",
+    "note": "harbour and town commercial parking"
+  },
+  {
+    "name": "Wigton",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Winchester",
+    "nation": "England",
+    "note": "city commercial parking"
+  },
+  {
+    "name": "Windsor",
+    "nation": "England",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Woking",
+    "nation": "England",
+    "note": "town and commuter commercial parking"
+  },
+  {
+    "name": "Wolverhampton",
+    "nation": "England",
+    "note": "city commercial and edge industrial yards"
+  },
+  {
+    "name": "Worcester",
+    "nation": "England",
+    "note": "city commercial and retail parking"
+  },
+  {
+    "name": "Worksop",
+    "nation": "England",
+    "note": "town and industrial parking"
+  },
+  {
+    "name": "Worthing",
+    "nation": "England",
+    "note": "town-centre and seafront commercial parking"
+  },
+  {
+    "name": "Yeovil",
+    "nation": "England",
+    "note": "town and industrial parking"
+  },
+  {
+    "name": "York",
+    "nation": "England",
+    "note": "walled-city commercial and edge retail parking"
+  },
+  {
+    "name": "Aberdeen",
+    "nation": "Scotland",
+    "note": "city and energy-corridor commercial parking"
+  },
+  {
+    "name": "Airdrie",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Alloa",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Annan",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Arbroath",
+    "nation": "Scotland",
+    "note": "harbour-town commercial parking"
+  },
+  {
+    "name": "Ardrossan",
+    "nation": "Scotland",
+    "note": "port-town commercial parking"
+  },
+  {
+    "name": "Auchterarder",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Aviemore",
+    "nation": "Scotland",
+    "note": "highland-town commercial parking"
+  },
+  {
+    "name": "Ayr",
+    "nation": "Scotland",
+    "note": "town and seafront commercial parking"
+  },
+  {
+    "name": "Banchory",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Banff",
+    "nation": "Scotland",
+    "note": "harbour-town commercial parking"
+  },
+  {
+    "name": "Barrhead",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Bathgate",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Bearsden",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Beith",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Blairgowrie",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Bonnyrigg",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Brechin",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Buckhaven",
+    "nation": "Scotland",
+    "note": "coastal-town commercial parking"
+  },
+  {
+    "name": "Burntisland",
+    "nation": "Scotland",
+    "note": "coastal-town commercial parking"
+  },
+  {
+    "name": "Campbeltown",
+    "nation": "Scotland",
+    "note": "Kintyre mainland town commercial parking"
+  },
+  {
+    "name": "Carnoustie",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Castle Douglas",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Clydebank",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Coatbridge",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Cowdenbeath",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Crieff",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Cumbernauld",
+    "nation": "Scotland",
+    "note": "new-town commercial parking"
+  },
+  {
+    "name": "Cumnock",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Cupar",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Dalgety Bay",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Dalkeith",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Dumbarton",
+    "nation": "Scotland",
+    "note": "town and riverside commercial parking"
+  },
+  {
+    "name": "Dumfries",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Dunbar",
+    "nation": "Scotland",
+    "note": "coastal-town commercial parking"
+  },
+  {
+    "name": "Dunblane",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Dundee",
+    "nation": "Scotland",
+    "note": "waterfront city commercial parking"
+  },
+  {
+    "name": "Dunfermline",
+    "nation": "Scotland",
+    "note": "city commercial parking"
+  },
+  {
+    "name": "Dunoon",
+    "nation": "Scotland",
+    "note": "Cowal mainland town commercial parking"
+  },
+  {
+    "name": "East Kilbride",
+    "nation": "Scotland",
+    "note": "new-town commercial and retail parking"
+  },
+  {
+    "name": "Edinburgh",
+    "nation": "Scotland",
+    "note": "capital city offices, residential blocks and managed parking"
+  },
+  {
+    "name": "Elgin",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Ellon",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Eyemouth",
+    "nation": "Scotland",
+    "note": "harbour-town commercial parking"
+  },
+  {
+    "name": "Falkirk",
+    "nation": "Scotland",
+    "note": "town and industrial parking"
+  },
+  {
+    "name": "Forfar",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Forres",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Fort Augustus",
+    "nation": "Scotland",
+    "note": "highland-town commercial parking"
+  },
+  {
+    "name": "Fort William",
+    "nation": "Scotland",
+    "note": "highland-town commercial parking"
+  },
+  {
+    "name": "Fraserburgh",
+    "nation": "Scotland",
+    "note": "port-town commercial parking"
+  },
+  {
+    "name": "Galashiels",
+    "nation": "Scotland",
+    "note": "border-town commercial parking"
+  },
+  {
+    "name": "Girvan",
+    "nation": "Scotland",
+    "note": "harbour-town commercial parking"
+  },
+  {
+    "name": "Glasgow",
+    "nation": "Scotland",
+    "note": "city offices, retail and residential parking"
+  },
+  {
+    "name": "Glenrothes",
+    "nation": "Scotland",
+    "note": "new-town commercial parking"
+  },
+  {
+    "name": "Grangemouth",
+    "nation": "Scotland",
+    "note": "port and industrial parking"
+  },
+  {
+    "name": "Grantown-on-Spey",
+    "nation": "Scotland",
+    "note": "highland-town commercial parking"
+  },
+  {
+    "name": "Greenock",
+    "nation": "Scotland",
+    "note": "waterfront town commercial parking"
+  },
+  {
+    "name": "Gretna",
+    "nation": "Scotland",
+    "note": "border-town commercial parking"
+  },
+  {
+    "name": "Haddington",
+    "nation": "Scotland",
+    "note": "county-town commercial parking"
+  },
+  {
+    "name": "Hamilton",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Hawick",
+    "nation": "Scotland",
+    "note": "border-town commercial parking"
+  },
+  {
+    "name": "Helensburgh",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Huntly",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Inverkeithing",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Inverness",
+    "nation": "Scotland",
+    "note": "highland city commercial parking"
+  },
+  {
+    "name": "Inverurie",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Irvine",
+    "nation": "Scotland",
+    "note": "new-town commercial parking"
+  },
+  {
+    "name": "Jedburgh",
+    "nation": "Scotland",
+    "note": "border-town commercial parking"
+  },
+  {
+    "name": "Johnstone",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Kelso",
+    "nation": "Scotland",
+    "note": "border-town commercial parking"
+  },
+  {
+    "name": "Kilbirnie",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Kilmarnock",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Kilwinning",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Kingussie",
+    "nation": "Scotland",
+    "note": "highland-town commercial parking"
+  },
+  {
+    "name": "Kinross",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Kirkcaldy",
+    "nation": "Scotland",
+    "note": "town and waterfront commercial parking"
+  },
+  {
+    "name": "Kirkintilloch",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Lanark",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Langholm",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Largs",
+    "nation": "Scotland",
+    "note": "coastal-town commercial parking"
+  },
+  {
+    "name": "Leven",
+    "nation": "Scotland",
+    "note": "coastal-town commercial parking"
+  },
+  {
+    "name": "Linlithgow",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Livingston",
+    "nation": "Scotland",
+    "note": "new-town retail and commercial parking"
+  },
+  {
+    "name": "Loanhead",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Lochgelly",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Lochgilphead",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Lockerbie",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Lossiemouth",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Maybole",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Melrose",
+    "nation": "Scotland",
+    "note": "border-town commercial parking"
+  },
+  {
+    "name": "Moffat",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Monifieth",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Montrose",
+    "nation": "Scotland",
+    "note": "harbour-town commercial parking"
+  },
+  {
+    "name": "Motherwell",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Musselburgh",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Nairn",
+    "nation": "Scotland",
+    "note": "town and seafront commercial parking"
+  },
+  {
+    "name": "Newton Stewart",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "North Berwick",
+    "nation": "Scotland",
+    "note": "coastal-town commercial parking"
+  },
+  {
+    "name": "Oban",
+    "nation": "Scotland",
+    "note": "harbour-town commercial parking on the mainland"
+  },
+  {
+    "name": "Paisley",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Peebles",
+    "nation": "Scotland",
+    "note": "border-town commercial parking"
+  },
+  {
+    "name": "Penicuik",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Perth",
+    "nation": "Scotland",
+    "note": "city commercial parking"
+  },
+  {
+    "name": "Peterhead",
+    "nation": "Scotland",
+    "note": "port-town commercial parking"
+  },
+  {
+    "name": "Pitlochry",
+    "nation": "Scotland",
+    "note": "highland-town commercial parking"
+  },
+  {
+    "name": "Prestonpans",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Prestwick",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Renfrew",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Saltcoats",
+    "nation": "Scotland",
+    "note": "coastal-town commercial parking"
+  },
+  {
+    "name": "Sanquhar",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Selkirk",
+    "nation": "Scotland",
+    "note": "border-town commercial parking"
+  },
+  {
+    "name": "St Andrews",
+    "nation": "Scotland",
+    "note": "university-town commercial parking"
+  },
+  {
+    "name": "Stewarton",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Stirling",
+    "nation": "Scotland",
+    "note": "city commercial parking"
+  },
+  {
+    "name": "Stonehaven",
+    "nation": "Scotland",
+    "note": "harbour-town commercial parking"
+  },
+  {
+    "name": "Stranraer",
+    "nation": "Scotland",
+    "note": "port-town commercial parking"
+  },
+  {
+    "name": "Strathaven",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Thornhill",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Tillicoultry",
+    "nation": "Scotland",
+    "note": "hillfoot-town commercial parking"
+  },
+  {
+    "name": "Tranent",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Troon",
+    "nation": "Scotland",
+    "note": "harbour-town commercial parking"
+  },
+  {
+    "name": "Westhill",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Wishaw",
+    "nation": "Scotland",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Aberaeron",
+    "nation": "Wales",
+    "note": "harbour-town commercial parking"
+  },
+  {
+    "name": "Aberdare",
+    "nation": "Wales",
+    "note": "valley-town commercial parking"
+  },
+  {
+    "name": "Abergavenny",
+    "nation": "Wales",
+    "note": "market-town commercial parking"
+  },
+  {
+    "name": "Aberystwyth",
+    "nation": "Wales",
+    "note": "university and seafront commercial parking"
+  },
+  {
+    "name": "Ammanford",
+    "nation": "Wales",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Bala",
+    "nation": "Wales",
+    "note": "lakeside-town commercial parking"
+  },
+  {
+    "name": "Bangor",
+    "nation": "Wales",
+    "note": "university and city commercial parking in Gwynedd"
+  },
+  {
+    "name": "Barry",
+    "nation": "Wales",
+    "note": "town and docks-edge commercial parking"
+  },
+  {
+    "name": "Betws-y-Coed",
+    "nation": "Wales",
+    "note": "visitor-town commercial parking"
+  },
+  {
+    "name": "Blackwood",
+    "nation": "Wales",
+    "note": "valley-town commercial parking"
+  },
+  {
+    "name": "Brecon",
+    "nation": "Wales",
+    "note": "market-town commercial parking"
+  },
+  {
+    "name": "Bridgend",
+    "nation": "Wales",
+    "note": "town and retail-park parking"
+  },
+  {
+    "name": "Buckley",
+    "nation": "Wales",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Caernarfon",
+    "nation": "Wales",
+    "note": "castle-town commercial parking"
+  },
+  {
+    "name": "Caerphilly",
+    "nation": "Wales",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Cardiff",
+    "nation": "Wales",
+    "note": "capital city offices, bay commercial and residential parking"
+  },
+  {
+    "name": "Cardigan",
+    "nation": "Wales",
+    "note": "estuary-town commercial parking"
+  },
+  {
+    "name": "Carmarthen",
+    "nation": "Wales",
+    "note": "county-town commercial parking"
+  },
+  {
+    "name": "Chepstow",
+    "nation": "Wales",
+    "note": "border-town commercial parking"
+  },
+  {
+    "name": "Colwyn Bay",
+    "nation": "Wales",
+    "note": "seafront and town commercial parking"
+  },
+  {
+    "name": "Conwy",
+    "nation": "Wales",
+    "note": "walled-town commercial parking"
+  },
+  {
+    "name": "Cowbridge",
+    "nation": "Wales",
+    "note": "market-town commercial parking"
+  },
+  {
+    "name": "Cwmbran",
+    "nation": "Wales",
+    "note": "new-town commercial and retail parking"
+  },
+  {
+    "name": "Denbigh",
+    "nation": "Wales",
+    "note": "market-town commercial parking"
+  },
+  {
+    "name": "Dolgellau",
+    "nation": "Wales",
+    "note": "market-town commercial parking"
+  },
+  {
+    "name": "Ebbw Vale",
+    "nation": "Wales",
+    "note": "valley-town commercial parking"
+  },
+  {
+    "name": "Fishguard",
+    "nation": "Wales",
+    "note": "port-town commercial parking"
+  },
+  {
+    "name": "Flint",
+    "nation": "Wales",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Haverfordwest",
+    "nation": "Wales",
+    "note": "county-town commercial parking"
+  },
+  {
+    "name": "Holywell",
+    "nation": "Wales",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Lampeter",
+    "nation": "Wales",
+    "note": "university-town commercial parking"
+  },
+  {
+    "name": "Llandeilo",
+    "nation": "Wales",
+    "note": "market-town commercial parking"
+  },
+  {
+    "name": "Llandudno",
+    "nation": "Wales",
+    "note": "seafront and town commercial parking"
+  },
+  {
+    "name": "Llanelli",
+    "nation": "Wales",
+    "note": "town and coastal commercial parking"
+  },
+  {
+    "name": "Llangollen",
+    "nation": "Wales",
+    "note": "Dee-valley town commercial parking"
+  },
+  {
+    "name": "Llanrwst",
+    "nation": "Wales",
+    "note": "Conwy-valley town commercial parking"
+  },
+  {
+    "name": "Llantrisant",
+    "nation": "Wales",
+    "note": "town and retail-park parking"
+  },
+  {
+    "name": "Machynlleth",
+    "nation": "Wales",
+    "note": "market-town commercial parking"
+  },
+  {
+    "name": "Merthyr Tydfil",
+    "nation": "Wales",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Mold",
+    "nation": "Wales",
+    "note": "county-town commercial parking"
+  },
+  {
+    "name": "Monmouth",
+    "nation": "Wales",
+    "note": "market-town commercial parking"
+  },
+  {
+    "name": "Mountain Ash",
+    "nation": "Wales",
+    "note": "valley-town commercial parking"
+  },
+  {
+    "name": "Neath",
+    "nation": "Wales",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Newport",
+    "nation": "Wales",
+    "note": "city commercial and retail parking"
+  },
+  {
+    "name": "Newtown",
+    "nation": "Wales",
+    "note": "market-town commercial parking"
+  },
+  {
+    "name": "Pembroke",
+    "nation": "Wales",
+    "note": "town commercial parking"
+  },
+  {
+    "name": "Penarth",
+    "nation": "Wales",
+    "note": "town and marina commercial parking"
+  },
+  {
+    "name": "Pontypool",
+    "nation": "Wales",
+    "note": "valley-town commercial parking"
+  },
+  {
+    "name": "Pontypridd",
+    "nation": "Wales",
+    "note": "valley-town commercial parking"
+  },
+  {
+    "name": "Port Talbot",
+    "nation": "Wales",
+    "note": "steelworks-edge and town parking"
+  },
+  {
+    "name": "Porth",
+    "nation": "Wales",
+    "note": "valley-town commercial parking"
+  },
+  {
+    "name": "Porthmadog",
+    "nation": "Wales",
+    "note": "harbour-town commercial parking"
+  },
+  {
+    "name": "Prestatyn",
+    "nation": "Wales",
+    "note": "seafront and town commercial parking"
+  },
+  {
+    "name": "Pwllheli",
+    "nation": "Wales",
+    "note": "harbour-town commercial parking"
+  },
+  {
+    "name": "Queensferry",
+    "nation": "Wales",
+    "note": "Dee-crossing commercial parking"
+  },
+  {
+    "name": "Rhyl",
+    "nation": "Wales",
+    "note": "seafront and town commercial parking"
+  },
+  {
+    "name": "Ruthin",
+    "nation": "Wales",
+    "note": "market-town commercial parking"
+  },
+  {
+    "name": "Shotton",
+    "nation": "Wales",
+    "note": "Dee-side town commercial parking"
+  },
+  {
+    "name": "Swansea",
+    "nation": "Wales",
+    "note": "city and marina commercial parking"
+  },
+  {
+    "name": "Tenby",
+    "nation": "Wales",
+    "note": "walled-town visitor and commercial parking"
+  },
+  {
+    "name": "Tonypandy",
+    "nation": "Wales",
+    "note": "valley-town commercial parking"
+  },
+  {
+    "name": "Tredegar",
+    "nation": "Wales",
+    "note": "valley-town commercial parking"
+  },
+  {
+    "name": "Welshpool",
+    "nation": "Wales",
+    "note": "market-town commercial parking"
+  },
+  {
+    "name": "Wrexham",
+    "nation": "Wales",
+    "note": "town commercial and industrial parking"
+  },
+  {
+    "name": "Ystradgynlais",
+    "nation": "Wales",
+    "note": "valley-town commercial parking"
+  }
+]

@@ -341,6 +341,16 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         $routes[] = $path;
     }
 
+    $barrierSupport = SITE_ROOT . '/includes/barriers-support.php';
+    if (is_file($barrierSupport)) {
+        require_once $barrierSupport;
+        if (function_exists('barriersExportRoutes')) {
+            foreach (barriersExportRoutes() as $path) {
+                $routes[] = $path;
+            }
+        }
+    }
+
     // Jack: every service has every area landing (not only --full).
     foreach (array_keys(getServices()) as $sSlug) {
         foreach (getAreas() as $area) {
