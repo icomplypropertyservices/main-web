@@ -200,6 +200,29 @@ if ($smMiss) {
     $ok('sitemap lists all slice job + service hubs');
 }
 
+ob_start();
+require SITE_ROOT . '/pages/keywords.php';
+$hubHtml = (string)ob_get_clean();
+$hubNeed = ['id="money-compliance"', 'Core money jobs', 'Compliance packs', 'Request POA quote', 'id="quote"', 'Submit request', '#0B1F3A', '#ff6b00'];
+$hubMiss = [];
+foreach ($hubNeed as $n) {
+    if (!str_contains($hubHtml, $n)) {
+        $hubMiss[] = $n;
+    }
+}
+$hubLinkMiss = [];
+foreach (array_merge($core, $packs) as $slug) {
+    $slug = keywordSlug((string)$slug);
+    if (!str_contains($hubHtml, '/pages/keywords/' . $slug)) {
+        $hubLinkMiss[] = $slug;
+    }
+}
+if ($hubMiss || $hubLinkMiss) {
+    $bad('keywords hub featured slice missing: ' . implode('|', $hubMiss) . ' links ' . implode(',', array_slice($hubLinkMiss, 0, 8)));
+} else {
+    $ok('live /pages/keywords shows ' . count($core) . ' money + ' . count($packs) . ' pack cards and POA quote CTA');
+}
+
 echo PHP_EOL . "jobs=" . count($jobSlugs) . " rendered={$rendered} services=" . count($liveSvc) . PHP_EOL;
 echo ($fail === 0 ? "PASS ({$pass})" : "FAIL ({$fail}) PASS ({$pass})") . PHP_EOL;
 exit($fail === 0 ? 0 : 1);

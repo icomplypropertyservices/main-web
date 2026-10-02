@@ -58,9 +58,9 @@ require SITE_ROOT . '/includes/header.php';
                     each guide links to local pages across <?= count($areas) ?>+ North West towns.
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
-                    <a href="#directory" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Browse guides</a>
-                    <a href="<?= url('/pages/services/index.php') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">All services</a>
-                    <a href="#quote" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Free quote</a>
+                    <a href="#money-compliance" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Core money jobs</a>
+                    <a href="#directory" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">Browse guides</a>
+                    <a href="#quote" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Request POA quote</a>
                 </div>
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
                     <div><span class="text-white font-semibold text-xl block"><?= count($keywords) ?></span> keyword guides</div>
@@ -125,7 +125,7 @@ require SITE_ROOT . '/includes/header.php';
             ['Full catalogue', 'Fire safety, professional & construction topics'],
             ['Service-linked', 'Every guide maps to one of ' . count($services) . ' services'],
             ['Local coverage', count($areas) . '+ North West towns on related pages'],
-            ['Fixed-price quotes', 'Clear scope before work starts'],
+            ['Written POA quotes', 'Clear scope before work starts — no invented £'],
         ];
         foreach ($trust as [$t, $d]): ?>
             <div class="flex gap-3 items-start">
@@ -138,6 +138,17 @@ require SITE_ROOT . '/includes/header.php';
         <?php endforeach; ?>
     </div>
 </section>
+
+<?php if (function_exists('coreComplianceLiveFeaturedHtml')): ?>
+<section id="money-compliance" class="bg-white border-b">
+    <div class="max-w-7xl mx-auto px-6 py-16">
+        <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">129-row slice</div>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Core money jobs and compliance packs</h2>
+        <p class="mt-2 text-zinc-600 max-w-2xl">EICR, CP12, FRA, fire, PAT, Legionella, asbestos, fire doors, EPC, and landlord or HMO certificate sets. Each card opens a job page. Quotes are written POA after scope.</p>
+        <?= coreComplianceLiveFeaturedHtml() ?>
+    </div>
+</section>
+<?php endif; ?>
 
 <!-- DIRECTORY + FILTERS -->
 <section id="directory" class="max-w-7xl mx-auto px-6 py-16 md:py-20">
@@ -224,7 +235,7 @@ require SITE_ROOT . '/includes/header.php';
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Need the work done?</h2>
             <p class="mt-4 text-zinc-600 text-lg">
                 Guides explain the topic â€” our engineers install, test and certify across Greater Manchester and the North West.
-                Request a fixed-price quote or browse services and areas.
+                Request a written POA quote or browse services and areas.
             </p>
             <ul class="mt-6 space-y-3 text-sm text-zinc-700">
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">âœ“</span> Standards-led install &amp; certification</li>
@@ -255,9 +266,9 @@ require SITE_ROOT . '/includes/header.php';
 <section id="quote" class="bg-zinc-50 border-t">
     <div class="max-w-3xl mx-auto px-6 py-16 md:py-20">
         <div class="text-center mb-10">
-            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request your free quote</h2>
-            <p class="mt-3 text-zinc-600">All quotes are fixed-price after scope is agreed.</p>
+            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">POA quote</div>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request a written POA quote</h2>
+            <p class="mt-3 text-zinc-600">Price on application after we know the property. No invented £ prices.</p>
         </div>
         <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">

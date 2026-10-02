@@ -314,6 +314,11 @@ h1, h2, h3 { letter-spacing: -0.03em; }
   top: 0;
   z-index: 50;
 }
+/* Hash CTAs (Request POA quote → #quote) clear the sticky bar. */
+#quote,
+#money-compliance {
+  scroll-margin-top: 5.5rem;
+}
 .mega-bar {
   max-width: 80rem;
   margin: 0 auto;
@@ -501,6 +506,10 @@ h1, h2, h3 { letter-spacing: -0.03em; }
   background: #fff; color: #0B1F3A !important; font-weight: 700; text-decoration: none; font-size: 0.8125rem;
 }
 .mobile-sticky-cta .sticky-quote { background: var(--accent); color: #fff !important; }
+@media (max-width: 767px) {
+  html { scroll-padding-bottom: 5.25rem; }
+  body { padding-bottom: 4.75rem; }
+}
 @media (min-width: 768px) {
   .wa-float { display: flex; }
   .mobile-sticky-cta { display: none; }
