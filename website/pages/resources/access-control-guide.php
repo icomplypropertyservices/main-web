@@ -72,6 +72,19 @@ require SITE_ROOT . '/includes/header.php';
                 <a href="<?= url('/pages/resources/cctv-for-business.php') ?>" class="text-[#ff6b00] hover:underline">CCTV</a>
                 at main entrances for visual verification.
             </p>
+            <p class="text-zinc-700 mt-3">
+                Vehicle lanes are a different job from a door reader. Rising-arm and parking barriers are specified on the
+                <a href="<?= url('/pages/services/barriers.php') ?>" class="text-[#ff6b00] hover:underline">UK-wide barriers service</a>,
+                with <a href="<?= url('/pages/manufacturers/came.php') ?>" class="text-[#ff6b00] hover:underline">Came</a> as the partner brand
+                and the other barrier manufacturers listed in full.
+                Start with <a href="<?= url('/pages/keywords/vehicle-barriers.php') ?>" class="text-[#ff6b00] hover:underline">vehicle barriers</a>,
+                <a href="<?= url('/pages/keywords/rising-arm-barrier.php') ?>" class="text-[#ff6b00] hover:underline">rising arm barriers</a>,
+                <a href="<?= url('/pages/keywords/parking-barrier.php') ?>" class="text-[#ff6b00] hover:underline">parking barriers</a>
+                or <a href="<?= url('/pages/keywords/access-barrier.php') ?>" class="text-[#ff6b00] hover:underline">access barriers</a>.
+                Local pages: <a href="<?= url('/pages/keywords/vehicle-barriers/manchester.php') ?>" class="text-[#ff6b00] hover:underline">Manchester</a>
+                and <a href="<?= url('/pages/keywords/vehicle-barriers/burnley.php') ?>" class="text-[#ff6b00] hover:underline">Burnley</a>.
+                Phone <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.
+            </p>
         </div>
 
         <div>
@@ -133,7 +146,7 @@ require SITE_ROOT . '/includes/header.php';
         <div>
             <h2 class="text-2xl font-semibold tracking-tight mb-3">Day-to-day management tips</h2>
             <ul class="space-y-2 text-zinc-700">
-                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold shrink-0">✓</span> Disable leavers the same day — do not wait for a monthly tidy-up.</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold shrink-0">✓</span> Disable leavers after the visit — do not wait for a monthly tidy-up.</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold shrink-0">✓</span> Use named credentials, not shared “contractor” fobs that never expire.</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold shrink-0">✓</span> Review event logs after incidents; keep admin passwords under dual control.</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold shrink-0">✓</span> Book periodic service for door closers, locks, batteries and controller health.</li>
@@ -142,8 +155,12 @@ require SITE_ROOT . '/includes/header.php';
         </div>
 
         <div>
-            <h2 class="text-2xl font-semibold tracking-tight mb-3">Related Icomply services</h2>
+            <h2 class="text-2xl font-semibold tracking-tight mb-3">Related iComply services</h2>
             <div class="flex flex-wrap gap-2">
+                <a href="<?= url('/pages/services/barriers.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Vehicle &amp; parking barriers</a>
+                <a href="<?= url('/pages/manufacturers/came.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Came partner</a>
+                <a href="<?= url('/pages/keywords/vehicle-barriers/manchester.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Barriers in Manchester</a>
+                <a href="<?= url('/pages/keywords/vehicle-barriers/burnley.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Barriers in Burnley</a>
                 <a href="<?= url('/pages/services/access-control.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Access control services</a>
                 <a href="<?= url('/pages/keywords/access-control-installation.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Access control installation</a>
                 <a href="<?= url('/pages/keywords/commercial-access-control.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Commercial access control</a>
@@ -193,7 +210,7 @@ require SITE_ROOT . '/includes/header.php';
             <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Request an access control quote</h2>
             <p class="mt-3 text-zinc-600">Single doors, multi-door networks or service contracts — fixed price after survey.</p>
         </div>
-        <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
+        <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input type="text" name="name" placeholder="Full name" required maxlength="120" class="w-full border px-5 py-3.5 rounded-2xl">

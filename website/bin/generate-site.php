@@ -21,7 +21,7 @@ if ($limit > 0) {
     $areasToUse = array_slice($areasToUse, 0, $limit);
 }
 
-echo "Icomply Site Generator (thin stubs → runtime render)\n";
+echo "iComply Site Generator (thin stubs → runtime render)\n";
 echo "====================================================\n\n";
 
 $total = 0;

@@ -5859,8 +5859,8 @@
     "car-park-barrier-access": {
         "name": "Car Park Barrier Access",
         "service": "access-control",
-        "related": "access-control-installation",
-        "intro": "Car park barrier access controls who enters parking decks, staff car parks and private bays using tokens, ANPR-ready workflows, cards or remote validation. Icomply design, install and maintain car park barrier access across the North West, integrating barriers with access control credentials and clear processes for residents, staff and visitors.",
+        "related": "car-park-barrier",
+        "intro": "Car park barrier access controls who enters parking decks, staff car parks and private bays using tokens, ANPR-ready workflows, cards or remote validation. Icomply design, install and maintain car park barrier access across the UK, integrating barriers with access control credentials. The arm itself is specified on the vehicle and parking barriers service, with Came as the partner brand.",
         "body": "We survey barrier condition, induction loops, safety devices and mounting for readers or ticketless credentials, then quote fixed-scope works. From Stockport we support offices, residential blocks, retail parks and multi-site estates that need fewer lost remote controls and better audit trails. Related work includes pedestrian gate access, CCTV at entry lanes and visitor management for temporary parking rights.",
         "meta_desc": "Car park barrier access across Greater Manchester & the North West. Icomply integrate barriers with credentials, readers & managed entry processes.",
         "focus_points": [

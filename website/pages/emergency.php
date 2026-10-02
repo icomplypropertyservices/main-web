@@ -48,6 +48,7 @@ $extraReactive = [
     'access-control' => 'Readers offline, maglocks stuck, fire-override concerns or credential system faults.',
     'door-entry' => 'Handsets dead, door not releasing, video entry black screens or trade-button failures.',
     'aov-air-handling' => 'AOV panel faults, vents stuck open/closed or smoke-control system warnings.',
+    'barriers' => 'Rising arm stuck up or down, loop faults, safety-edge trips, or a Came or other barrier cabinet in fault. UK-wide where we can attend.',
     'nurse-call' => 'Care-home nurse call panels, handsets or zone faults needing reactive attendance.',
 ];
 

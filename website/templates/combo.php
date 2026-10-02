@@ -14,7 +14,15 @@ $metaDesc = $poaCombo
     ? ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Price on application after scope. Local North West team from Stockport.')
     : ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing and certification. ' . ($ownsMainland ? 'UK mainland fire protection, scheduled from Stockport.' : 'Local engineers.') . ' Written quote after scope.');
 $metaKeywords = $SEO_KEYWORDS;
-$ogImage = url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
+$ogImage = function_exists('serviceImageUrl')
+    ? serviceImageUrl($SERVICE_SLUG)
+    : url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
+if ($SERVICE_SLUG === 'barriers' && function_exists('barrierManufacturerBySlug')) {
+    $cameOg = barrierManufacturerBySlug('came');
+    if (is_array($cameOg) && !empty($cameOg['partner_image'])) {
+        $ogImage = (string)$cameOg['partner_image'];
+    }
+}
 
 $allServices = getServices();
 $allAreas = function_exists('getAreasForService') ? getAreasForService($SERVICE_SLUG) : getAreas();
@@ -211,7 +219,7 @@ $schema = [
                 <p class="mt-6 text-sm text-white/60"><?= htmlspecialchars($standards, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
-                <img src="<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>"
+                <img src="<?= htmlspecialchars(serviceImageUrl($serviceSlug), ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation and servicing in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> by Icomply Property Services"
                      width="1200" height="800"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
@@ -332,7 +340,12 @@ $schema = [
     </div>
 </section>
 
-<?php if (!$poaCombo): ?>
+<?php if ($serviceSlug === 'barriers' && function_exists('barrierPagesBlockHtml')): ?>
+<?= barrierPagesBlockHtml('barriers', $areaName, false) ?>
+<?php elseif ($serviceSlug === 'access-control' && function_exists('camePartnerPanelHtml')): ?>
+<?= camePartnerPanelHtml('access-control') ?>
+<?php endif; ?>
+<?php if (!$poaCombo && $serviceSlug !== 'barriers'): ?>
 <!-- MANUFACTURERS -->
 <section class="bg-zinc-50 border-y">
     <div class="max-w-7xl mx-auto px-6 py-16">

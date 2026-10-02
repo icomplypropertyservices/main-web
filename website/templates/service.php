@@ -14,7 +14,10 @@ $metaDesc = $ownsMainland
         ? ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Price on application after scope. Local team from Stockport. No invented fees.')
         : ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Installation, maintenance, testing & certification. Written quotes after scope. Local engineers from Stockport.'));
 $metaKeywords = $SEO_KEYWORDS;
-$ogImage = url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
+$hubHeroRel = function_exists('icomplyHubHero') ? icomplyHubHero($SERVICE_SLUG) : null;
+$hubInline1 = function_exists('icomplyHubInline') ? icomplyHubInline($SERVICE_SLUG, 1) : null;
+$hubInline2 = function_exists('icomplyHubInline') ? icomplyHubInline($SERVICE_SLUG, 2) : null;
+$ogImage = url($hubHeroRel ?: ('/assets/images/services/' . $SERVICE_SLUG . '.jpg'));
 
 $allServices = getServices();
 $allAreas = $ownsMainland && function_exists('getMainlandAreas') ? getMainlandAreas() : getAreas();
@@ -51,6 +54,16 @@ $serviceFaqs = [
         ['What survey do I need?', 'A management survey is for normal occupation. A refurbishment or demolition survey is for intrusive works. We scope the type to the building and the planned job.'],
         ['Do you remove asbestos?', 'Licensed removal is not this service. If the survey says removal is required, that work is appointed separately.'],
         ['What does it cost?', 'Price on application. Size, access and how intrusive the survey must be all change the quote. No invented starting price.'],
+    ],
+    'access-control' => [
+        ['Why are car park barriers the hardest access job?', 'A rising arm needs the boom, induction loops, safety devices and the credential that opens the lane. A door maglock does not cover that work. Manchester and Burnley have their own barrier pages.'],
+        ['Do you install maglocks as well as barriers?', 'Yes. Maglocks, strikes and fire release are scoped for the pedestrian door. The barrier lane is quoted separately, POA after survey.'],
+        ['How do you price access control?', 'Price on application after we confirm doors, any barrier lane, brand and access. No catalogue price on this page.'],
+    ],
+    'door-entry' => [
+        ['Can door entry open a car park barrier?', 'Sometimes, when the panel has a clean release into the barrier controller. Barriers stay the hardest job and are surveyed on their own, including for Manchester and Burnley.'],
+        ['Do you replace flat handsets and panels?', 'Yes. We survey the panel, cabling and the lock it releases, then quote POA. Maglocks on that door are included in the survey when they are part of the release.'],
+        ['How do you price door entry?', 'Price on application after panel condition, handset count and cabling are known. No catalogue price on this page.'],
     ],
     'default' => [
         ['What areas do you cover for ' . $SERVICE_NAME . '?', 'We cover every town in our published areas list across Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria from our Stockport base.'],
@@ -224,9 +237,12 @@ $schema = [
                        class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
                 </div>
                 <p class="mt-6 text-sm text-white/60"><?= htmlspecialchars($standards, ENT_QUOTES, 'UTF-8') ?></p>
+                <?php if ($serviceSlug === 'access-control'): ?>
+                    <p class="mt-4 text-sm"><a class="font-semibold text-[#ff6b00] hover:underline" href="<?= url('/pages/access-control-systems') ?>">Access control systems across the UK, with city notes and manufacturer links</a></p>
+                <?php endif; ?>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
-                <img src="<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>"
+                <img src="<?= htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> by Icomply Property Services"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
                      loading="eager"
@@ -239,6 +255,42 @@ $schema = [
         </div>
     </div>
 </section>
+
+<?php if ($serviceSlug === 'nurse-call'): ?>
+<section class="bg-white border-b">
+    <div class="max-w-7xl mx-auto px-6 py-10">
+        <h2 class="text-2xl font-semibold tracking-tight text-black">Care home, ward, or warden scheme</h2>
+        <p class="mt-3 text-zinc-700 max-w-3xl leading-relaxed">A bedroom pear lead, a ward staff station and a sheltered-scheme speech unit are three quotes. The specification is on the nurse call hub. Manchester and Burnley have their own pages. Fire and lighting for the same home are on the care homes page. Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
+        <div class="mt-5 flex flex-wrap gap-2">
+            <a href="<?= url('/pages/nurse-call-systems') ?>" class="px-4 py-2 rounded-full bg-[#0B1F3A] text-white text-sm font-semibold hover:bg-[#ff6b00]">Nurse call hub</a>
+            <a href="<?= url('/pages/nurse-call-manchester') ?>" class="px-4 py-2 rounded-full border border-zinc-300 text-sm font-semibold hover:border-[#ff6b00]">Manchester</a>
+            <a href="<?= url('/pages/nurse-call-burnley') ?>" class="px-4 py-2 rounded-full border border-zinc-300 text-sm font-semibold hover:border-[#ff6b00]">Burnley</a>
+            <a href="<?= url('/pages/care-homes') ?>" class="px-4 py-2 rounded-full border border-zinc-300 text-sm font-semibold hover:border-[#ff6b00]">Care homes</a>
+            <a href="<?= url('/pages/keywords/warden-call') ?>" class="px-4 py-2 rounded-full border border-zinc-300 text-sm font-semibold hover:border-[#ff6b00]">Warden call</a>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
+<?php if ($serviceSlug === 'fire-alarms' && function_exists('fireAlarmsLaneCounts')):
+    $fireLaneCounts = fireAlarmsLaneCounts();
+?>
+<section class="bg-[#0B1F3A] text-white border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Job lane</div>
+            <h2 class="mt-1 text-2xl font-semibold">Install, maintain and service</h2>
+            <p class="mt-1 text-sm text-white/75">
+                <?= (int)$fireLaneCounts['install'] ?> install guides,
+                <?= (int)$fireLaneCounts['maintain'] ?> maintenance guides,
+                <?= (int)$fireLaneCounts['service'] ?> service guides.
+                Price on application.
+            </p>
+        </div>
+        <a href="<?= url('/pages/jobs/fire-alarms.php') ?>" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white text-center">Open the fire alarm job lane</a>
+    </div>
+</section>
+<?php endif; ?>
 
 <!-- TRUST -->
 <section class="bg-white border-b">
@@ -306,14 +358,14 @@ $schema = [
         </div>
         <div class="lg:col-span-2 space-y-4">
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
-                <img src="<?= url('/assets/images/keywords/' . htmlspecialchars($img2, ENT_QUOTES, 'UTF-8') . '.jpg') ?>"
+                <img src="<?= htmlspecialchars(url($hubInline1 ?: ('/assets/images/keywords/' . $img2 . '.jpg')), ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> equipment"
                      class="w-full h-44 object-cover"
                      loading="lazy"
                      onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
             </div>
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
-                <img src="<?= url('/assets/images/keywords/' . htmlspecialchars($img3, ENT_QUOTES, 'UTF-8') . '.jpg') ?>"
+                <img src="<?= htmlspecialchars(url($hubInline2 ?: ('/assets/images/keywords/' . $img3 . '.jpg')), ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation work"
                      class="w-full h-44 object-cover"
                      loading="lazy"
@@ -353,6 +405,13 @@ $schema = [
     </div>
     <?php endif; ?>
 </section>
+
+<?php
+require_once SITE_ROOT . '/includes/access-control-jobs.php';
+if (function_exists('accessControlLaneHubSection')) {
+    echo accessControlLaneHubSection($serviceSlug);
+}
+?>
 
 <?php if (!$poaService): ?>
 <!-- MANUFACTURERS -->
@@ -399,6 +458,9 @@ $schema = [
         </div>
         <?php
         $svcKeywords = getKeywordsForService($serviceSlug);
+        if (function_exists('accessControlLaneSortKeywordMap') && in_array($serviceSlug, ['access-control', 'door-entry'], true)) {
+            $svcKeywords = accessControlLaneSortKeywordMap($svcKeywords);
+        }
         if ($svcKeywords):
             $kwPreviewTowns = array_slice($keywordTowns, 0, 6);
         ?>
@@ -409,6 +471,9 @@ $schema = [
             <?php
             $shown = 0;
             $cardLimit = in_array($serviceSlug, getElectricalGasFamilyServices(), true) ? 0 : 18;
+            if ($serviceSlug === 'access-control') {
+                $cardLimit = 24;
+            }
             foreach ($svcKeywords as $kwSlug => $kwMeta):
                 if ($cardLimit > 0 && $shown >= $cardLimit) {
                     break;

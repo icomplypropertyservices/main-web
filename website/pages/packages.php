@@ -89,7 +89,7 @@ $packages = [
             'Remote viewing / user setup guidance',
             'One point of contact for all security trades',
         ],
-        'service_slugs' => ['cctv', 'access-control', 'door-entry', 'intercoms', 'intruder-alarm'],
+        'service_slugs' => ['barriers', 'cctv', 'access-control', 'door-entry', 'intercoms', 'intruder-alarm'],
         'wa_text' => 'Hi Icomply, I need a quote for the Security Package',
     ],
     [
@@ -112,7 +112,7 @@ $packages = [
         ],
         'service_slugs' => [
             'electrical', 'fire-alarms', 'emergency-lighting', 'gas-systems',
-            'aov-air-handling', 'nurse-call', 'cctv', 'access-control',
+            'aov-air-handling', 'barriers', 'nurse-call', 'cctv', 'access-control',
             'door-entry', 'intercoms', 'intruder-alarm',
         ],
         'wa_text' => 'Hi Icomply, I need a quote for the Full FM compliance package',

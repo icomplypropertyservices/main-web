@@ -1,0 +1,162 @@
+{
+  "access-control-after-staff-change": {
+    "name": "Access Control After Staff Change",
+    "service": "access-control",
+    "related": "access-control-card-programming",
+    "intro": "When someone leaves, a shared door code or a fob still in a drawer is a live key. Access control after a staff change means deleting the leaver, checking who else was copied onto the same token, and confirming the door still releases on the fire input.",
+    "body": "We do this on Paxton, HID, Salto and the other controllers listed on the brand pages — not on Tunstall, which is a nurse-call system and is outside this work. Bring the leaver’s name, the last day on site, and whether the token was returned. If the software login is with a former manager, that is part of the visit, not a reason to leave the door on a keypad code. North West sites are on the Stockport diary. Other UK sites are attended by arrangement. The visit is POA. We do not quote a per-leaver price online.",
+    "meta_desc": "Remove leavers from door access after a staff change. Token deletion and fire-release check. POA from Stockport. 07517806082.",
+    "focus_points": [
+      "Leaver deleted from the controller, not just the card collected",
+      "Shared codes and copied tokens reviewed",
+      "Fire-alarm release left intact after the user change",
+      "POA — no per-person price on this page"
+    ],
+    "faq": [
+      ["Do you need the old fob back?", "It helps, but the important step is deleting the user in software. A token in a drawer still opens the door until it is removed."],
+      ["Can a new starter use the leaver’s fob?", "Only if you want that person to inherit the old permissions. We would rather enrol a new token and archive the old user."],
+      ["Is this a same-day job?", "In the North West it often is, when an engineer is free. Elsewhere in the UK it is booked. It is not a contracted 24-hour desk."]
+    ],
+    "seo_keywords": "access control after staff leave, delete fob user, revoke door token, leaver access control, Paxton user delete"
+  },
+  "access-control-fire-interface-test": {
+    "name": "Access Control Fire Interface Test",
+    "service": "access-control",
+    "related": "fire-release-access-control",
+    "intro": "A fire interface test checks that the signal from the fire alarm actually lets people through the secured doors. The test is the drop of the lock, not a tick in someone else’s log that the panel ‘went into fire’.",
+    "body": "BS 7273-4 is the usual UK reference for how release mechanisms are actuated. We confirm which doors are on the interface, whether they are fail-safe or fail-secure, and that the break-glass or request-to-exit still works when the interface is reset. If the fire alarm itself needs a service visit, that is booked as fire-alarm work, not assumed from this test. We record what released and what did not. The test is POA after we know the door count. Call 07517806082.",
+    "meta_desc": "Test access-control doors on a fire-alarm interface to BS 7273-4. Lock release recorded. POA. Stockport engineers. 07517806082.",
+    "focus_points": [
+      "Each door on the interface watched while the alarm is triggered",
+      "Fail-safe and fail-secure behaviour written down per door",
+      "Reset checked so doors re-secure only when they should",
+      "Fire-panel servicing quoted separately when it is in scope"
+    ],
+    "faq": [
+      ["Will you set the fire alarm into fire?", "Only with the responsible person, and only in the way their panel allows. We do not trip a monitored system without that agreement."],
+      ["Is BS 7273-4 a product we sell?", "No. It is the code of practice we read the release arrangement against."],
+      ["What if one door stays locked?", "We leave it flagged, make it safe if we can do so without breaking the fire strategy, and quote the remedial separately. POA."]
+    ],
+    "seo_keywords": "access control fire interface test, maglock fire release test, BS 7273-4 door release, fire alarm door release test"
+  },
+  "access-level-holiday-calendar": {
+    "name": "Access Level Holiday Calendar",
+    "service": "access-control",
+    "related": "access-control-card-programming",
+    "intro": "An access level holiday calendar stops weekday door rules running on bank holidays, shutdown days and site-specific closures. Without it, a cleaners’ token can open a door on Christmas Day because the controller still thinks it is a Thursday.",
+    "body": "We programme the calendar inside the platform you already have — Paxton Net2, Salto, HID-based systems and the other brands on the access-control list. We need the real closure list from you. We will not invent your bank-holiday policy. After the change we test one door in each time zone, including a door that must stay open for a public route. The work is POA. It is usually a programming visit, not a new lock.",
+    "meta_desc": "Programme access-control holiday calendars so bank holidays do not follow weekday door rules. POA. 07517806082.",
+    "focus_points": [
+      "Your closure list, not a generic UK calendar pasted in",
+      "One test per time zone after the calendar is saved",
+      "Public and escape doors left on the correct rule",
+      "POA programming visit"
+    ],
+    "faq": [
+      ["Do bank holidays load automatically?", "Some platforms ship a default calendar. We still check it against your sites, because a warehouse and a clinic do not close on the same days."],
+      ["Can each site have its own holidays?", "Usually yes. Multi-site systems can share a calendar or keep a local one. We say which you already have after we log in."],
+      ["What does it cost?", "POA. Door count and whether we already hold the software login change the visit."]
+    ],
+    "seo_keywords": "access control holiday calendar, bank holiday door schedule, time zone access levels, Net2 holiday programming"
+  },
+  "broken-fob-emergency-visit": {
+    "name": "Broken Fob Emergency Visit",
+    "service": "access-control",
+    "related": "fob-access-control",
+    "intro": "A broken fob visit is for a token that no longer opens a door people need today — a cracked fob, a dead mobile credential, or a reader that beeps and does nothing. It is not a promise that an engineer is waiting at night.",
+    "body": "From Stockport we can often attend North West sites the same day when the diary has a gap. London, Scotland, Wales and Northern Ireland are scheduled, not ‘a van around the corner’. If the door is on a keypad code because the fob failed, say so: shared codes are the risk we remove when the new token is enrolled. We do not publish a call-out fee. The visit is POA. For a fire, a person stuck, or a door that will not release on an escape route, use 999 first. Call 07517806082 for the access fault once people are safe.",
+    "meta_desc": "Broken door fob and dead token visits. Same-day in the North West when the diary allows. UK sites by arrangement. POA. 07517806082.",
+    "focus_points": [
+      "Token or reader fault confirmed before parts are changed",
+      "New credential enrolled and the old one deleted",
+      "No published call-out fee",
+      "Not a 24-hour contracted desk"
+    ],
+    "faq": [
+      ["Do you come out at night?", "Only if we have agreed that attendance and an engineer is available. This page is not a 24/7 SLA."],
+      ["Can you copy a fob without the software?", "Sometimes a like-for-like token can be issued, and sometimes the controller must enrol it. We say which after we see the system."],
+      ["What if the reader is dead, not the fob?", "Then a new fob will not help. We test the reader, lock and power supply before we sell a token."]
+    ],
+    "seo_keywords": "broken fob access control, door token not working, emergency fob replacement, access control call out POA"
+  },
+  "controller-battery-replace": {
+    "name": "Controller Battery Replace",
+    "service": "access-control",
+    "related": "access-control-maintenance",
+    "intro": "Controller batteries are the standby packs in the access-control power supply, not the coin cell in a fob. When they fail, doors can release, stay locked, or drop offline in a power cut depending on how the lock was specified.",
+    "body": "We read the date code, measure the pack under the load the panel expects, and replace it when it is due or already swollen. We do not guess a remaining life from the label colour. The fire-release relay is checked after the swap so a battery change does not leave a maglock held on. Battery type follows the PSU, so we do not advertise a universal price. The visit is POA. Brands include Paxton, TDSi, CDVI, Vanderbilt and the rest of the access-control list. Tunstall nurse-call batteries are a different job.",
+    "meta_desc": "Replace access-control controller and PSU standby batteries, then recheck fire release. POA. 07517806082.",
+    "focus_points": [
+      "Date code and a load check, not a cosmetic swap",
+      "Fire-release relay confirmed after the change",
+      "Correct pack for that PSU",
+      "POA — no battery price list"
+    ],
+    "faq": [
+      ["How often are standby batteries changed?", "Many packs are dated for a four-year service life. We change earlier if the test says the pack will not hold the doors."],
+      ["Will the doors unlock while you work?", "We plan the isolation. Escape doors are not left unusable. The sequence is agreed before the PSU is opened."],
+      ["Do you stock every brand of battery?", "We carry common 12 V packs and order the odd PSU-specific pack. The quote says which."]
+    ],
+    "seo_keywords": "access control battery replacement, door controller PSU battery, maglock backup battery, access control power supply battery"
+  },
+  "fail-secure-lock-assessment": {
+    "name": "Fail Secure Lock Assessment",
+    "service": "access-control",
+    "related": "electric-door-release",
+    "intro": "A fail-secure lock stays locked when power is lost. A fail-safe lock unlocks. The assessment decides which behaviour belongs on each door, using the fire strategy and how people actually leave the building.",
+    "body": "Escape routes are usually fail-safe, with a release on fire alarm and a manual device people can see. A store, a drug cupboard or a plant cage is sometimes fail-secure, and that decision sits with the responsible person, not with a default in the lock catalogue. We survey the door, the hinge side, the existing maglock or strike, and what the fire interface does today. We write the recommendation. We do not sign your fire risk assessment for you. The survey is POA. Call 07517806082.",
+    "meta_desc": "Fail-secure or fail-safe lock assessment for each door, read against the fire strategy. Survey is POA. 07517806082.",
+    "focus_points": [
+      "Each door recorded as fail-safe or fail-secure, with the reason",
+      "Escape routes not left on a lock that holds in a power cut",
+      "Fire interface and manual release included in the note",
+      "POA survey — the responsible person keeps the fire strategy"
+    ],
+    "faq": [
+      ["Is fail-secure more secure?", "It holds the door in a power cut. On an escape route that can be the wrong outcome. Security and exit are specified per door."],
+      ["Can you change a maglock to a fail-secure strike?", "Often, if the frame and the fire door will accept it. We do not cut a fire door to suit a lock without that being in the scope."],
+      ["Who signs the decision?", "You do, as the responsible person. We give a written recommendation you can put with the fire strategy."]
+    ],
+    "seo_keywords": "fail secure lock, fail safe maglock assessment, door lock power cut behaviour, BS 7273-4 lock choice"
+  },
+  "gate-access-control-liaison": {
+    "name": "Gate Access Control Liaison",
+    "service": "access-control",
+    "related": "gate-access-control",
+    "intro": "Gate access control liaison is the join between our readers and the company that owns the gate motor, safety edges and force limits. We put credentials on the gate. We do not take over the mechanical safety case.",
+    "body": "Vehicle gates are covered by their own standards, commonly the BS EN 12453 family for safety. The gate installer keeps that duty. We agree a volt-free input, an intercom or reader position drivers can reach, and what happens when the fire service needs the gate open. If the motor board has no spare input, we stop and say so rather than hanging a reader off a safety circuit. Sites in the North West are diary work from Stockport. Other UK gates are POA once the gate company is named.",
+    "meta_desc": "Reader and intercom liaison for vehicle gates. Gate safety stays with the gate installer. Access side is POA. 07517806082.",
+    "focus_points": [
+      "Volt-free open signal agreed with the gate company",
+      "Reader or keypad placed where a driver can use it without leaving the vehicle in the road",
+      "Fire and hold-open behaviour written down",
+      "No claim that we certify gate force or safety edges"
+    ],
+    "faq": [
+      ["Will you service the gate motor?", "No. Motors, edges and force tests stay with the gate specialist. We work on the access-control side of the interface."],
+      ["Can a fob open the gate and the lobby door?", "Yes when both systems can share a credential, or when we enrol the same user twice. We check compatibility before we promise one token."],
+      ["What if there is no gate company?", "We will not invent a safety sign-off. You appoint a gate engineer, or we limit our quote to the pedestrian doors."]
+    ],
+    "seo_keywords": "gate access control, vehicle gate fob, gate reader liaison, intercom gate access, BS EN 12453 interface"
+  },
+  "lift-floor-access-integration-advice": {
+    "name": "Lift Floor Access Integration Advice",
+    "service": "access-control",
+    "related": "lift-access-control",
+    "intro": "Lift floor access advice is about which floors a credential may select. It is not a lift repair, and it is not a change to the safety circuit inside the lift controller.",
+    "body": "The lift contractor remains responsible for the lift. We advise on the reader, the relay or the destination-control interface their panel will accept, and we programme the floors you actually want restricted. A residential block in Manchester and a hospital lift in another city do not get the same floor map. We will not bridge out a safety contact to make a reader ‘work’. If the lift company will not provide a drawing, the advice stops at a written question list. The note is POA. Call 07517806082 to book it.",
+    "meta_desc": "Advice on restricting lift floors with access control. Lift safety stays with the lift contractor. POA. 07517806082.",
+    "focus_points": [
+      "Floor list agreed before any relay is wired",
+      "Interface taken from the lift company’s drawing",
+      "Safety circuits left to the lift contractor",
+      "POA written advice, install only when the interface is clear"
+    ],
+    "faq": [
+      ["Can you stop a resident reaching the plant floor?", "Usually, if the lift panel has a floor-inhibit input and the lift company will use it. We do not guess across the terminals."],
+      ["Do you maintain lifts?", "No. Lift maintenance stays with the lift contractor."],
+      ["Will one fob do the door and the lift?", "That is the usual aim. It depends on the reader technology the lift interface will accept."]
+    ],
+    "seo_keywords": "lift access control, floor restriction fob, lift reader integration, destination control access advice"
+  }
+}

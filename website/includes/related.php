@@ -140,17 +140,18 @@ function relatedManufacturersHtml(string $serviceSlug = '', int $limit = 8): str
         return '';
     }
 
-    $fallbackImg = htmlspecialchars(url('/assets/images/services/' . ($serviceSlug !== '' ? $serviceSlug : 'fire-alarms') . '.jpg'), ENT_QUOTES, 'UTF-8');
-
     $html = '<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">';
     foreach ($picked as $row) {
         $slug = preg_replace('/[^a-z0-9\-]/', '', (string)$row['slug']);
         $href = htmlspecialchars(url('/pages/manufacturers/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
-        $src = htmlspecialchars(manufacturerImageUrl($slug, $serviceSlug !== '' ? $serviceSlug : 'fire-alarms'), ENT_QUOTES, 'UTF-8');
+        $src = manufacturerImageUrl($slug, $serviceSlug !== '' ? $serviceSlug : 'fire-alarms');
         $label = htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8');
+        $thumb = $src !== ''
+            ? '<img src="' . htmlspecialchars($src, ENT_QUOTES, 'UTF-8') . '" alt="' . $label . ' products and service" class="w-full h-full object-contain bg-white group-hover:scale-105 transition duration-300" loading="lazy">'
+            : '<div class="w-full h-full flex items-center justify-center text-xs font-semibold text-zinc-500 px-2 text-center">' . $label . '</div>';
         $html .= '<a href="' . $href . '" class="group bg-white border rounded-2xl overflow-hidden hover:border-[#ff6b00] hover:shadow-md transition block">'
             . '<div class="h-24 bg-zinc-100 overflow-hidden">'
-            . '<img src="' . $src . '" alt="' . $label . ' products and service" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" onerror="this.src=\'' . $fallbackImg . '\'">'
+            . $thumb
             . '</div>'
             . '<div class="p-3 text-center">'
             . '<div class="text-sm font-semibold text-black">' . $label . '</div>'
