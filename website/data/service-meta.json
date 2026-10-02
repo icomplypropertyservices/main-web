@@ -15,8 +15,8 @@
         "standards": "BS 5266 · BS EN 1838 · monthly & annual tests"
     },
     "aov-air-handling": {
-        "blurb": "Smoke vents, AOV panels, smoke control and AHU-related life-safety systems.",
-        "short": "Smoke vents, AOV panels & smoke control",
+        "blurb": "Priority fire-protection service: smoke vents, AOV panels, stair and shaft smoke control, actuators and fire-alarm interfaces.",
+        "short": "AOV, smoke vents and smoke-control panels",
         "standards": "BS 9991 · EN 12101 · smoke control guidance"
     },
     "nurse-call": {
@@ -40,8 +40,8 @@
         "standards": "BS EN 62676 · GDPR / DPA camera siting"
     },
     "access-control": {
-        "blurb": "Paxton, HID, Salto door access, credentials and fire-override integration.",
-        "short": "Paxton, HID, Salto door access",
+        "blurb": "Paxton, HID, Salto door access, credentials, fire-override and vehicle barrier integration.",
+        "short": "Door access and vehicle barriers",
         "standards": "BS EN 50133 · EN 60839 · fire-release integration"
     },
     "door-entry": {
@@ -55,8 +55,8 @@
         "standards": "Commercial intercom best practice"
     },
     "fire-risk-assessments": {
-        "blurb": "Suitable and sufficient fire risk assessments for landlords, commercial sites, HMOs and multi-occupied buildings.",
-        "short": "FRA for landlords, HMO & commercial sites",
+        "blurb": "Suitable and sufficient fire risk assessments for landlords, commercial sites, HMOs and multi-occupied buildings. Standard written FRA £350.",
+        "short": "Written FRA £350",
         "standards": "Regulatory Reform (Fire Safety) Order 2005 · Fire Safety Act · PAS 79 guidance"
     },
     "fire-extinguishers": {

@@ -15,6 +15,16 @@ $allServices = getServices();
 $allAreas = getAreas();
 $serviceSlug = $SERVICE_SLUG;
 $serviceName = $SERVICE_NAME;
+$fireHub = function_exists('isFireProtectionService') && isFireProtectionService($serviceSlug);
+if ($serviceSlug === 'fire-risk-assessments' && function_exists('fraPublishedPriceLabel')) {
+    $pageTitle = 'Fire Risk Assessment | ' . fraPublishedPriceLabel();
+    $metaDesc = 'Standard written fire risk assessment ' . fraPublishedPriceLabel() . ' with a prioritised action plan. Published for every town in our UK mainland area list.';
+} elseif ($serviceSlug === 'aov-air-handling') {
+    $pageTitle = 'AOV & Smoke Control | UK Mainland';
+    $metaDesc = 'AOV and smoke control — vents, actuators, panels and fire-alarm interfaces — for every town in our UK mainland area list. Installation quoted after survey.';
+} elseif ($serviceSlug === 'access-control') {
+    $metaDesc = 'Access control and vehicle barriers (Paxton, HID, Salto, barrier packs). Local pages for Manchester and Burnley. Install quoted after survey.';
+}
 
 $serviceFaqs = [
     'electrical' => [
@@ -31,6 +41,21 @@ $serviceFaqs = [
         ['How often should emergency lighting be tested?', 'Monthly functional tests and annual full-duration tests are required under BS 5266, with records kept for compliance.'],
         ['Can you convert fluorescent emergency fittings to LED?', 'Yes. We supply and fit LED conversions and full system upgrades while maintaining correct coverage and certification.'],
         ['Do you issue emergency lighting certificates?', 'Every planned test and install includes documentation suitable for landlords, facilities managers and insurers.'],
+    ],
+    'aov-air-handling' => [
+        ['What is an AOV?', 'An automatic opening vent clears smoke from stairs, lobbies or shafts when the fire alarm operates. It is life-safety equipment, not a comfort window.'],
+        ['Do you cover every town on the area list?', 'Yes. AOV sits in fire protection, so there is a local page for every area slug we publish. Other trades are Manchester and Burnley only.'],
+        ['Is installation a fixed kit price?', 'Equipment kits have published prices. Installation, causeway cabling and remedial actuator or panel work are quoted after survey.'],
+    ],
+    'fire-risk-assessments' => [
+        ['How much is a fire risk assessment?', 'A standard written FRA is £350, including a prioritised action plan. Very large or multi-building sites are confirmed before we book.'],
+        ['Does the £350 include fixing the alarm or the AOV?', 'No. Follow-on alarms, emergency lighting, doors and smoke control are quoted separately.'],
+        ['Will you re-date last year’s PDF?', 'No. We review the building. An unchanged building is still reviewed; we do not sell a re-dated document.'],
+    ],
+    'access-control' => [
+        ['Do vehicle barriers sit with access control?', 'Yes. Barrier arms, readers, GSM and Paxton or Videx pedestals are access control. AOV smoke vents are fire protection and are not barrier jobs.'],
+        ['Which towns have an access-control page?', 'Manchester and Burnley. The products page lists the 5m barrier pack prices. Installation is quoted after we see the lane.'],
+        ['Can the barrier open on a fire alarm?', 'Where the fire strategy needs the lane to fail open or release, we interface it. That is specified on the quote, not assumed.'],
     ],
     'legionella-risk-assessment' => [
         ['What is a Legionella risk assessment?', 'A written look at how the water system could allow Legionella to grow, and what controls are proportionate. UK dutyholders use HSE L8 and HSG274 as the usual reference.'],
@@ -54,12 +79,23 @@ $standards = getServiceStandards($serviceSlug);
 $faqs = $serviceFaqs[$serviceSlug] ?? $serviceFaqs['default'];
 $svcCopy = function_exists('waterAsbestosServiceCopy') ? waterAsbestosServiceCopy($serviceSlug) : null;
 
+$linkTowns = $allAreas;
+if ($fireHub && function_exists('areasForService')) {
+    $linkTowns = areasForService($serviceSlug);
+} elseif (function_exists('getElectricalGasFamilyServices') && in_array($serviceSlug, getElectricalGasFamilyServices(), true)) {
+    $linkTowns = $allAreas;
+} elseif (function_exists('areasForService')) {
+    $linkTowns = areasForService($serviceSlug);
+}
 $popularTowns = array_values(array_filter(
-    ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool', 'Bury', 'Sale', 'Altrincham', 'Macclesfield', 'Burnley', 'Blackburn', 'Warrington', 'St Helens'],
-    function ($t) use ($allAreas) {
-        return in_array($t, $allAreas, true);
+    ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool', 'Bury', 'Sale', 'Altrincham', 'Macclesfield', 'Burnley', 'Blackburn', 'St Helens'],
+    function ($t) use ($linkTowns) {
+        return in_array($t, $linkTowns, true);
     }
 ));
+if ($popularTowns === []) {
+    $popularTowns = $linkTowns;
+}
 $popularTowns = array_values(array_unique($popularTowns));
 
 $keywordImages = getKeywordImages($serviceSlug);
@@ -130,10 +166,14 @@ $schema = [
             }, ['Greater Manchester', 'Lancashire', 'Cheshire', 'Merseyside', 'Cumbria', 'North West England']),
             'offers' => [
                 '@type' => 'Offer',
-                'name' => ($poaService ? 'Price on application — ' : 'Written quote — ') . $serviceName,
-                'description' => $poaService
-                    ? ('Request a scoped POA quote for ' . $serviceName . '. No published fee list.')
-                    : ('Request a written quote for ' . $serviceName . ' installation, servicing and certification.'),
+                'name' => $serviceSlug === 'fire-risk-assessments'
+                    ? ('Standard fire risk assessment ' . fraPublishedPriceLabel())
+                    : (($poaService ? 'Price on application — ' : 'Written quote — ') . $serviceName),
+                'description' => $serviceSlug === 'fire-risk-assessments'
+                    ? fraPriceSentence()
+                    : ($poaService
+                        ? ('Request a scoped POA quote for ' . $serviceName . '. No published fee list.')
+                        : ('Request a written quote for ' . $serviceName . ' installation, servicing and certification.')),
                 'availability' => 'https://schema.org/InStock',
                 'priceCurrency' => 'GBP',
                 'url' => url('/contact.php'),
@@ -171,6 +211,9 @@ $schema = [
         ],
     ],
 ];
+if ($serviceSlug === 'fire-risk-assessments' && function_exists('fraPublishedPriceAmount')) {
+    $schema['@graph'][0]['offers']['price'] = fraPublishedPriceAmount();
+}
 ?>
 <script type="application/ld+json"><?= json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
 
@@ -415,6 +458,8 @@ $schema = [
     </div>
 </section>
 
+<?php if (function_exists('fireHubExtraHtml')) { echo fireHubExtraHtml($serviceSlug); } ?>
+
 <!-- AREAS -->
 <section class="max-w-7xl mx-auto px-6 py-16">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
@@ -423,7 +468,13 @@ $schema = [
             <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">
                 <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> near you
             </h2>
-            <p class="mt-2 text-zinc-600">Town hubs we cover — electrical and gas also open a real keyword×town page. We do not publish thin service×area doorways.</p>
+            <p class="mt-2 text-zinc-600"><?php if ($fireHub): ?>
+                A fire-protection page for every town in the area list, including AOV. We do not add thin fire keyword×town copies on top.
+            <?php elseif (in_array($serviceSlug, function_exists('getElectricalGasFamilyServices') ? getElectricalGasFamilyServices() : [], true)): ?>
+                Electrical and gas open a keyword page for each town. Service×area doorways are not published for this family.
+            <?php else: ?>
+                Local service pages for Manchester and Burnley. Other towns use the area hub.
+            <?php endif; ?></p>
         </div>
         <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All areas →</a>
     </div>
@@ -436,7 +487,7 @@ $schema = [
         <?php endforeach; ?>
     </div>
     <div class="mt-6 flex flex-wrap gap-2">
-        <?php foreach ($allAreas as $a):
+        <?php foreach ($linkTowns as $a):
             if (in_array($a, $popularTowns, true)) continue;
         ?>
             <a href="<?= htmlspecialchars(exportedServiceLocalUrl($SERVICE_SLUG, $a, 'service'), ENT_QUOTES, 'UTF-8') ?>"

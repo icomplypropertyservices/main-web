@@ -7,10 +7,20 @@
  * MANUFACTURER_TAGS, MANUFACTURER_IMAGES, KEYWORD_IMAGE_1/2/3
  */
 $poaCombo = function_exists('isPoaService') && isPoaService($SERVICE_SLUG);
+$fireArea = function_exists('isFireProtectionService') && isFireProtectionService($SERVICE_SLUG);
 $pageTitle = $SERVICE_NAME . ' in ' . $AREA . ' | Icomply Property Services';
-$metaDesc = $poaCombo
-    ? ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Price on application after scope. Local North West team from Stockport.')
-    : ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing & certification. Local engineers. Written quote after scope.');
+if ($SERVICE_SLUG === 'fire-risk-assessments' && function_exists('fraPublishedPriceLabel')) {
+    $pageTitle = 'Fire Risk Assessment in ' . $AREA . ' | ' . fraPublishedPriceLabel();
+    $metaDesc = 'Fire risk assessment in ' . $AREA . '. Standard written FRA ' . fraPublishedPriceLabel() . '. Follow-on fire works quoted separately.';
+    $poaCombo = false;
+} elseif ($SERVICE_SLUG === 'aov-air-handling') {
+    $pageTitle = 'AOV & Smoke Control in ' . $AREA;
+    $metaDesc = 'AOV and smoke control in ' . $AREA . '. Vents, actuators and fire-alarm interfaces. Installation quoted after survey.';
+} else {
+    $metaDesc = $poaCombo
+        ? ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Price on application after scope. Local North West team from Stockport.')
+        : ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing & certification. Local engineers. Written quote after scope.');
+}
 $metaKeywords = $SEO_KEYWORDS;
 $ogImage = url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
 
@@ -26,6 +36,7 @@ $blurb = getServiceBlurb($serviceSlug);
 $standards = getServiceStandards($serviceSlug);
 $svcCopy = function_exists('waterAsbestosServiceCopy') ? waterAsbestosServiceCopy($serviceSlug) : null;
 $areaExtra = function_exists('waterAsbestosAreaIntro') ? waterAsbestosAreaIntro($serviceSlug, $areaName) : '';
+$coveredTowns = function_exists('areasForService') ? areasForService($serviceSlug) : $allAreas;
 
 // Nearby towns for “popular nearby” note (same service, other areas)
 $nearby = [];
@@ -35,16 +46,16 @@ if ($idx === false) {
 } else {
     $start = max(0, $idx - 6);
     $nearby = array_slice($allAreas, $start, 14);
-    $nearby = array_values(array_filter($nearby, function ($a) use ($areaName) {
-        return $a !== $areaName;
+    $nearby = array_values(array_filter($nearby, function ($a) use ($areaName, $coveredTowns) {
+        return $a !== $areaName && in_array($a, $coveredTowns, true);
     }));
     $nearby = array_slice($nearby, 0, 12);
 }
 
 $popularTowns = array_values(array_filter(
-    ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool', 'Bury', 'Sale', 'Altrincham', 'Macclesfield'],
-    function ($t) use ($allAreas, $areaName) {
-        return $t !== $areaName && in_array($t, $allAreas, true);
+    ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool', 'Bury', 'Sale', 'Altrincham', 'Macclesfield', 'Burnley'],
+    function ($t) use ($coveredTowns, $areaName) {
+        return $t !== $areaName && in_array($t, $coveredTowns, true);
     }
 ));
 $popularTowns = array_slice(array_values(array_unique($popularTowns)), 0, 12);
@@ -312,6 +323,7 @@ $schema = [
         <?php endforeach; ?>
     </div>
 </section>
+<?php if (function_exists('fireAreaExtraHtml')) { echo fireAreaExtraHtml($serviceSlug, $areaName); } ?>
 
 <?php if (!$poaCombo): ?>
 <!-- MANUFACTURERS -->
@@ -362,7 +374,7 @@ $schema = [
             if ($slug === $serviceSlug) continue;
             $rBlurb = getServiceBlurb($slug);
         ?>
-        <a href="<?= url('/pages/' . $slug . '/' . $AREA_SLUG . '.php') ?>"
+        <a href="<?= htmlspecialchars(exportedServiceLocalUrl($slug, $areaName, 'area'), ENT_QUOTES, 'UTF-8') ?>"
            class="group bg-white border rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
             <div class="h-32 bg-zinc-100 overflow-hidden">
                 <img src="<?= htmlspecialchars(serviceImageUrl($slug), ENT_QUOTES, 'UTF-8') ?>"

@@ -58,7 +58,7 @@ function icomplyAovKitImageUrl(string $sku): string {
 </section>
 
 <section class="max-w-7xl mx-auto px-6 py-10">
-  <a href="<?= htmlspecialchars($aovService, ENT_QUOTES, 'UTF-8') ?>" class="block p-8 md:p-10 bg-white border-2 border-[#FF6B00] rounded-3xl hover:shadow-lg transition">
+  <a id="aov" href="<?= htmlspecialchars($aovService, ENT_QUOTES, 'UTF-8') ?>" class="block p-8 md:p-10 bg-white border-2 border-[#FF6B00] rounded-3xl hover:shadow-lg transition">
     <span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-[#FF6B00] text-white mb-3">Priority · AOV</span>
     <h2 class="text-2xl md:text-3xl font-semibold text-black">AOV &amp; Smoke Control</h2>
     <p class="mt-2 text-zinc-600 max-w-2xl">Equipment kits show SoT list prices; <strong>installation is POA</strong>.</p>
@@ -89,8 +89,8 @@ function icomplyAovKitImageUrl(string $sku): string {
 </section>
 
 <section class="max-w-7xl mx-auto px-6 pb-12">
-  <h2 class="text-2xl font-semibold text-black mb-2">Barrier packs (5m)</h2>
-  <p class="text-sm text-zinc-600 mb-6">SoT supply prices. Install POA. Images from Marketing CAME GARD CDN map.</p>
+  <h2 id="barriers" class="text-2xl font-semibold text-black mb-2">Barrier packs (5m)</h2>
+  <p class="text-sm text-zinc-600 mb-6">Supply prices. Install POA. Vehicle barriers are access control — <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/services/access-control.php') ?>">open the access control hub</a> (Manchester and Burnley local pages). AOV smoke control is a separate fire-protection service.</p>
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
     <?php
     $barCame = icomplyBar5mCameGardImageMap();

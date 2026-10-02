@@ -78,8 +78,9 @@ foreach (['rewire', 'domestic-rewire', 'emergency-electrician', 'boiler'] as $sl
 }
 
 $exportSrc = (string)file_get_contents(__DIR__ . '/static-export.php');
-$ok(str_contains($exportSrc, 'getElectricalGasMatrixKeywordSlugs'), 'static-export wires electrical+gas full-town matrix');
-$ok(str_contains($exportSrc, 'isset($familyKw[$slug])'), 'static-export familyKw uses all areas');
+$ok(str_contains($exportSrc, 'areasForKeyword'), 'static-export wires electrical+gas full-town matrix');
+$ok(count(areasForKeyword('rewire')) === count(getAreas()) && count(areasForKeyword('boiler')) === count(getAreas()), 'static-export familyKw uses all areas');
+$ok(areasForKeyword('aov-system') === [], 'AOV keywords are hubs only, not town spam');
 
 $family = array_fill_keys(getElectricalGasMatrixKeywordSlugs(), true);
 $ok(isset($family['rewire']) && isset($family['domestic-rewire']) && isset($family['boiler']), 'matrix slug list includes rewire/domestic-rewire/boiler');
@@ -96,7 +97,9 @@ $sitemapXml = icomplyBuildSitemapXml('https://icomplypropertyservices.co.uk');
 $ok(!preg_match('#/pages/gas-systems/[a-z0-9\-]+</loc>#', $sitemapXml), 'sitemap has zero /pages/gas-systems/{town}');
 $ok(!preg_match('#/pages/electrical/[a-z0-9\-]+</loc>#', $sitemapXml), 'sitemap has zero /pages/electrical/{town}');
 $ok(!str_contains($sitemapXml, '/pages/epc/stockport'), 'sitemap has no /pages/epc/stockport');
-$ok(!str_contains($sitemapXml, '/pages/emergency-lighting/stockport'), 'sitemap has no /pages/emergency-lighting/stockport');
+$ok(str_contains($sitemapXml, '/pages/emergency-lighting/stockport'), 'sitemap lists emergency-lighting/stockport');
+$ok(str_contains($sitemapXml, '/pages/aov-air-handling/manchester'), 'sitemap lists aov/manchester');
+$ok(!str_contains($sitemapXml, '/pages/electrical/manchester'), 'sitemap has no electrical/manchester service×area');
 $ok(str_contains($sitemapXml, '/pages/services/gas-systems</loc>'), 'sitemap still lists gas-systems service hub');
 $ok(str_contains($sitemapXml, '/pages/keywords/boiler</loc>'), 'sitemap still lists boiler keyword hub');
 $ok(is_file(SITE_ROOT . '/data/seo-matrix-electrical.md') && is_file(SITE_ROOT . '/data/seo-matrix-gas.md'), 'Marketing seo-matrix md files present');
@@ -115,7 +118,9 @@ $ok(!preg_match('#/pages/electrical/[a-z0-9\-]+#', $elecHub), 'electrical hub HT
 ob_start();
 renderAreaHubPage('Stockport');
 $areaHub = (string)ob_get_clean();
-$ok(!preg_match('#/pages/(gas-systems|electrical|fire-alarms)/[a-z0-9\-]+#', $areaHub), 'area hub HTML has no service×area 404s');
+$ok(!preg_match('#/pages/(gas-systems|electrical)/[a-z0-9\-]+#', $areaHub), 'area hub HTML has no electrical/gas service×area links');
+$ok(str_contains($areaHub, '/pages/fire-alarms/stockport'), 'area hub links fire-alarms/stockport');
+$ok(str_contains($areaHub, '/pages/aov-air-handling/stockport'), 'area hub links aov/stockport');
 
 echo str_repeat('=', 56) . "\n";
 echo "PASS={$pass} FAIL={$fail}\n";

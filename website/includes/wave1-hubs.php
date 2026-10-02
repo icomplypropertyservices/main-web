@@ -91,7 +91,7 @@ function wave1QualityHubs(): array
         'fire-risk-assessment' => [
             'navLabel' => 'Fire risk assessment',
             'pageTitle' => 'Fire Risk Assessment | Landlords & Workplaces',
-            'metaDesc' => 'Fire risk assessments for rented, shared and commercial buildings in the North West. Written FRA and action plan from Stockport SK2. Quote after we know the premises.',
+            'metaDesc' => 'Fire risk assessments for rented, shared and commercial buildings. Standard written FRA £350 and an action plan. Very large sites confirmed before booking.',
             'metaKeywords' => 'fire risk assessment, FRA Stockport, commercial FRA Manchester, landlord fire risk assessment',
             'ogImage' => '/assets/images/services/fire-risk-assessments.jpg',
             'kicker' => 'Quality hub · Fire',
@@ -99,7 +99,7 @@ function wave1QualityHubs(): array
             'h1' => 'Fire risk assessment',
             'h1Accent' => 'written for this building',
             'lede' => 'A suitable and sufficient FRA describes your premises and the people in them — then a prioritised action list you can actually schedule.',
-            'honest' => 'An FRA is not a licence, not legal advice, and not a guarantee of enforcement outcomes. Follow-on fire work is quoted separately unless you asked us to include it.',
+            'honest' => 'A standard written FRA is £350. It is not a licence, not legal advice, and not a guarantee of enforcement outcomes. Very large or multi-building sites are confirmed before we book. Follow-on fire work, including AOV, is quoted separately.',
             'coverTitle' => 'Assessment first, kit second',
             'cover' => [
                 'We walk the building, record hazards and existing precautions, and write the assessment. If detection, lighting or doors are short, you get an action list — and a separate quote if you want us to do that work.',
@@ -119,7 +119,7 @@ function wave1QualityHubs(): array
             'relatedGuides' => ['fire-risk-assessment-guide', 'commercial-fire-safety-basics', 'fire-door-inspection'],
             'formService' => 'Fire risk assessment',
             'formHeading' => 'Request an FRA quote',
-            'formIntro' => 'Storeys, use and sleeping risk first. Then a written figure.',
+            'formIntro' => 'Standard written FRA is £350. Tell us storeys, use and sleeping risk so we can say if the premises is outside that fee.',
             'formPlaceholder' => 'Address, use, storeys, last FRA date…',
             'faqs' => [
                 ['q' => 'Do you grant HMO licences?', 'a' => 'No. Licensing is the local authority. We produce practical fire documentation and related trade work.'],

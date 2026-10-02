@@ -140,16 +140,9 @@ function routerDispatchVirtual(string $path): bool {
         if (!isset($services[$serviceSlug])) {
             return false;
         }
-        $area = null;
-        foreach (getAreas() as $a) {
-            if (areaSlug($a) === $areaSlugVal) {
-                $area = $a;
-                break;
-            }
-        }
-        if ($area === null) {
-            // allow loose slug
-            $area = areaFromSlug($areaSlugVal) ?? keywordDisplayName($areaSlugVal);
+        $area = areaFromSlug($areaSlugVal);
+        if ($area === null || (function_exists('serviceCoversArea') && !serviceCoversArea($serviceSlug, $area))) {
+            return false;
         }
         renderServiceAreaPage($serviceSlug, $area);
         return true;

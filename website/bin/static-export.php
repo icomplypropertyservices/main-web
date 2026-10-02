@@ -26,8 +26,9 @@
  *   (eicr, eicr-report, FRA, gas, CCTV, …).
  * Electrical and gas keyword families always get the FULL areas list
  * (keyword × every town) so the Netlify static export includes that matrix.
- * --keyword-towns=all renders every keyword×area (~200k HTML files).
- * --full also renders service×area landings.
+ * Fire-protection service×area (including AOV) uses every town in areas.json.
+ * Other service×area landings are Manchester and Burnley only.
+ * Fire keyword×town pages are not exported — AOV quality lives on the service×area pages.
  */
 declare(strict_types=1);
 
@@ -233,30 +234,18 @@ function icomplyCollectKeywordRoutes(string $townMode): array
         return $routes;
     }
 
-    $areas = getAreas();
     $popularTowns = icomplyPopularTownNames();
-    $priorityKw = [];
-    if (function_exists('getPopularKeywordSlugs')) {
-        foreach (getPopularKeywordSlugs() as $slug) {
-            $priorityKw[keywordSlug($slug)] = true;
-        }
-    }
-    $familyKw = [];
-    if (function_exists('getElectricalGasMatrixKeywordSlugs')) {
-        foreach (getElectricalGasMatrixKeywordSlugs() as $slug) {
-            $familyKw[keywordSlug($slug)] = true;
-        }
-    }
 
     foreach ($keywords as $kw) {
         $slug = keywordSlug($kw);
-        $fullTowns = $townMode === 'all'
-            || isset($familyKw[$slug])
-            || ($townMode === 'priority' && isset($priorityKw[$slug]));
-        if ($fullTowns) {
-            $towns = $areas;
-        } else {
-            $towns = $popularTowns;
+        $towns = function_exists('areasForKeyword') ? areasForKeyword($slug) : getAreas();
+        if ($townMode === 'popular' && $towns !== []) {
+            $meta = getMajorKeywords()[$slug] ?? [];
+            $svc = (string)($meta['service'] ?? '');
+            $elecGas = function_exists('getElectricalGasFamilyServices') ? getElectricalGasFamilyServices() : [];
+            if (!in_array($svc, $elecGas, true)) {
+                $towns = array_values(array_intersect($towns, $popularTowns));
+            }
         }
         foreach ($towns as $area) {
             $routes[] = '/pages/keywords/' . $slug . '/' . areaSlug((string)$area);
@@ -341,12 +330,22 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         $routes[] = $path;
     }
 
-    // Jack: every service has every area landing (not only --full).
+    // Fire protection (AOV included): every area slug. Other services: Manchester + Burnley.
+    $fireAreaRoutes = 0;
+    $localAreaRoutes = 0;
     foreach (array_keys(getServices()) as $sSlug) {
-        foreach (getAreas() as $area) {
+        $towns = function_exists('areasForService') ? areasForService($sSlug) : getAreas();
+        $isFire = function_exists('isFireProtectionService') && isFireProtectionService($sSlug);
+        foreach ($towns as $area) {
             $routes[] = '/pages/' . $sSlug . '/' . areaSlug((string)$area);
+            if ($isFire) {
+                $fireAreaRoutes++;
+            } else {
+                $localAreaRoutes++;
+            }
         }
     }
+    fwrite(STDERR, "service×area fire={$fireAreaRoutes} local_manchester_burnley={$localAreaRoutes}\n");
 
     return $routes;
 }

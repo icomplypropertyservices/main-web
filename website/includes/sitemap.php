@@ -2,7 +2,8 @@
 /**
  * Compact, accurate sitemap — core pages + shop/products + service hubs +
  * areas + manufacturers + keyword hubs + featured electrical/gas keyword×town.
- * Never lists /pages/{service}/{town} (those 404 as sitemap locs).
+ * Lists fire-protection /pages/{service}/{town} for every area slug.
+ * Hard reject /pages/{service}/{town} for non-fire services (those stay off the sitemap).
  * Never dumps the full keyword×area matrix (that 500'd live).
  */
 declare(strict_types=1);
@@ -97,18 +98,19 @@ function icomplySitemapEntries(): array
         if (preg_match('#-photo\.(jpe?g|png)$#i', $path)) {
             return;
         }
-        // Hard reject /pages/{service}/{town} even if a leftover matrix file
-        // sits in dist/. Keep only real hub prefixes.
+        // Hard reject /pages/{service}/{town} except fire-protection nationwide
+        // (AOV, alarms, FRA, emergency lighting and the rest of the fire category).
+        $isFireAreaLoc = function_exists('icomplySitemapIsFireAreaPath') && icomplySitemapIsFireAreaPath($path);
         if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
             $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages'];
-            if (!in_array($m[1], $okPrefix, true)) {
+            if (!in_array($m[1], $okPrefix, true) && !$isFireAreaLoc) {
                 return;
             }
         }
-        // Keyword hubs + featured keyword×town are generated at export time.
-        // Do not require a source PHP file for those catalogue locs.
+        // Keyword hubs + featured keyword×town, and fire×area landings, are
+        // generated at export time. Do not require a source PHP file.
         $isKeywordLoc = (bool)preg_match('#^/pages/keywords(/[a-z0-9\-]+){1,2}$#', $path);
-        if (!$isKeywordLoc && !icomplySitemapUrlHasFile($path)) {
+        if (!$isKeywordLoc && !$isFireAreaLoc && !icomplySitemapUrlHasFile($path)) {
             return;
         }
         $seen[$path] = true;
@@ -248,6 +250,16 @@ function icomplySitemapEntries(): array
                         $add('/pages/keywords/' . $kwSlug . '/' . areaSlug($town), '0.62');
                     }
                 }
+            }
+        }
+    }
+
+    // Fire protection × every area slug. AOV is first-class in this set.
+    // Non-fire service×area stays out (Manchester + Burnley pages are not sitemap locs).
+    if (!$requestSafe && function_exists('getFireProtectionServices') && function_exists('areasForService') && function_exists('fireAreaPriority')) {
+        foreach (getFireProtectionServices() as $slug => $_name) {
+            foreach (areasForService($slug) as $area) {
+                $add('/pages/' . $slug . '/' . areaSlug((string)$area), fireAreaPriority($slug));
             }
         }
     }

@@ -16,10 +16,6 @@ $limit = isset($options['limit']) ? (int)$options['limit'] : 0;
 $onlyService = $options['service'] ?? null;
 
 $allServices = getServices();
-$areasToUse = getAreas();
-if ($limit > 0) {
-    $areasToUse = array_slice($areasToUse, 0, $limit);
-}
 
 echo "Icomply Site Generator (thin stubs → runtime render)\n";
 echo "====================================================\n\n";
@@ -35,7 +31,11 @@ foreach ($allServices as $sSlug => $sName) {
         mkdir($dir, 0755, true);
     }
 
-    // Remove obsolete files for areas no longer in the list (optional: keep for safety)
+    $areasToUse = function_exists('areasForService') ? areasForService($sSlug) : getAreas();
+    if ($limit > 0) {
+        $areasToUse = array_slice($areasToUse, 0, $limit);
+    }
+
     foreach ($areasToUse as $area) {
         $aSlug = areaSlug($area);
         $file = "{$dir}/{$aSlug}.php";

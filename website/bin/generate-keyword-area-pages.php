@@ -30,7 +30,6 @@ if ($limitKw > 0) {
     $keywords = array_slice($keywords, 0, $limitKw, true);
 }
 
-$areas = getAreas();
 $baseDir = SITE_ROOT . '/pages/keywords';
 if (!is_dir($baseDir)) {
     mkdir($baseDir, 0755, true);
@@ -41,11 +40,15 @@ $kwCount = 0;
 $t0 = microtime(true);
 
 echo "Keyword × Area generator\n";
-echo "Keywords: " . count($keywords) . " × Areas: " . count($areas) . " = " . (count($keywords) * count($areas)) . " pages\n";
+echo "Keywords: " . count($keywords) . " (fire keywords skipped — AOV quality is on service×area pages)\n";
 echo str_repeat('=', 50) . "\n";
 
 foreach ($keywords as $kwSlug => $meta) {
     $kwSlug = keywordSlug($kwSlug);
+    $areas = function_exists('areasForKeyword') ? areasForKeyword($kwSlug) : getAreas();
+    if ($areas === []) {
+        continue;
+    }
     $dir = $baseDir . '/' . $kwSlug;
     if (!is_dir($dir)) {
         mkdir($dir, 0755, true);

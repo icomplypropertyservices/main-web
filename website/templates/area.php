@@ -233,7 +233,7 @@ $schema = [
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Services in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></div>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Everything we do locally</h2>
-                <p class="mt-2 text-zinc-600 max-w-xl">Open a live service hub — or, for electrical and gas, a keyword page for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Thin service×area doorways are not published.</p>
+                <p class="mt-2 text-zinc-600 max-w-xl">Fire protection — AOV and smoke control, fire alarms, fire risk assessments (<?= function_exists('fraPublishedPriceLabel') ? htmlspecialchars(fraPublishedPriceLabel(), ENT_QUOTES, 'UTF-8') : '£350' ?>) and emergency lighting — has a page for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Other services open the service hub, except Manchester and Burnley. Electrical and gas open a keyword page.</p>
             </div>
             <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All service hubs →</a>
         </div>

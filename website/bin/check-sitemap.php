@@ -28,8 +28,9 @@ $bannedNeedles = [
     '/pages/electrical/stockport</loc>',
     '/pages/electrical/manchester</loc>',
     '/pages/epc/stockport</loc>',
-    '/pages/emergency-lighting/stockport</loc>',
-    '/pages/fire-alarms/liverpool</loc>',
+    '/pages/electrical/liverpool</loc>',
+    '/pages/cctv/stockport</loc>',
+    '/pages/access-control/liverpool</loc>',
 ];
 foreach ($bannedNeedles as $n) {
     if (str_contains($xml, $n)) {
@@ -46,6 +47,9 @@ if (function_exists('getServices')) {
             $rel = 'pages/' . $sSlug . '/' . $town . '.php';
             $needle = '/pages/' . $sSlug . '/' . $town . '</loc>';
             if (str_contains($xml, $needle) && !is_file(SITE_ROOT . '/' . $rel)) {
+                if (function_exists('isFireProtectionService') && isFireProtectionService($sSlug)) {
+                    continue;
+                }
                 echo "FAIL: dead service×town in sitemap (no PHP file): {$needle}\n";
                 $fail++;
             }
@@ -70,6 +74,11 @@ $required = [
     '/shop</loc>',
     '/products</loc>',
     '/pages/services/fire-risk-assessments</loc>',
+    '/pages/aov-air-handling/manchester</loc>',
+    '/pages/aov-air-handling/burnley</loc>',
+    '/pages/fire-alarms/liverpool</loc>',
+    '/pages/fire-risk-assessments/stockport</loc>',
+    '/pages/emergency-lighting/stockport</loc>',
     '/pages/services/electrical</loc>',
     '/pages/services/gas-systems</loc>',
     '/pages/keywords/rewire</loc>',
@@ -142,11 +151,29 @@ foreach ($locHits[1] ?? [] as $path) {
         $serviceAreaHits[] = $path;
     }
 }
-if ($serviceAreaHits) {
+$fireServices = function_exists('getFireProtectionServices') ? getFireProtectionServices() : [];
+$expectedFire = 0;
+foreach ($fireServices as $slug => $_name) {
+    $expectedFire += count(function_exists('areasForService') ? areasForService($slug) : []);
+}
+$nonFireHits = [];
+$fireHits = 0;
+foreach ($serviceAreaHits as $path) {
+    if (preg_match('#^/pages/([a-z0-9\-]+)/#', $path, $m) && isset($fireServices[$m[1]])) {
+        $fireHits++;
+    } else {
+        $nonFireHits[] = $path;
+    }
+}
+if ($nonFireHits) {
     $fail++;
-    echo 'FAIL: sitemap lists service×area 404s (sample): ' . implode(', ', array_slice($serviceAreaHits, 0, 8)) . "\n";
+    echo 'FAIL: sitemap lists non-fire service×area (sample): ' . implode(', ', array_slice($nonFireHits, 0, 8)) . "\n";
+}
+if ($expectedFire > 0 && $fireHits !== $expectedFire) {
+    $fail++;
+    echo "FAIL: fire×area sitemap count {$fireHits} (expected {$expectedFire})\n";
 } else {
-    echo "OK: no /pages/{service}/{town} service×area locs\n";
+    echo "OK: fire-protection×area locs={$fireHits}\n";
 }
 
 echo "URLs={$count} bytes=" . strlen($xml) . PHP_EOL;

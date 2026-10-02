@@ -59,13 +59,16 @@ Official rules for the electrical + gas keyword expansion.
 ## Sitemap (P090 — priority over new volume)
 
 - `sitemap.xml` must **only** list URLs that return HTTP **200**.
-- **Never** list `/pages/{service}/{town}` (gas-systems, electrical, fire-alarms, …). Those landings are `--full` only and 404 on the default export. Do **not** mass-generate thin service×area doorway pages for all 168 towns.
+- **Fire protection** (`fire-safety` category, AOV included) has a service×area page for **every** area slug, and those URLs **are** in `sitemap.xml`. AOV is the quality page. Do **not** mass-generate thin fire keyword×town copies.
+- **Non-fire** service×area is Manchester and Burnley only, and those URLs stay **out** of `sitemap.xml`.
+- **Never** list `/pages/electrical/{town}` or `/pages/gas-systems/{town}`. Electrical and gas stay on keyword×town pages.
 - Do **not** mass-include thin keyword×area doorways in the sitemap. Featured electrical/gas × a handful of towns is allowed because those files exist and return 200.
 - The full ~36k keyword×town matrix stays in `dist/` for Jack; it stays **out** of `sitemap.xml`.
 
 ## Copy / POA
 
 - Cost, price, quote and “how much” keywords always say **POA**. Never invent a £ figure.
+- Exception Jack set: a standard written fire risk assessment is **£350**. Do not copy that fee onto other services.
 - UK English, Stockport / North West. No fake accreditations, reviews or prices.
 
 ## HMO packages

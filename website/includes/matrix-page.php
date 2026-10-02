@@ -177,11 +177,21 @@ function icomplyMatrixChromeEnd(): string
         . '</div></footer>' . $popup . '</body></html>';
 }
 
-function icomplyMatrixAreaChips(string $hrefPrefix): string
+function icomplyMatrixAreaChips(string $hrefPrefix, ?array $onlyNames = null): string
 {
     $s = icomplyMatrixShared();
     $html = '<div class="chip-cloud">';
+    $allow = null;
+    if ($onlyNames !== null) {
+        $allow = [];
+        foreach ($onlyNames as $name) {
+            $allow[areaSlug((string)$name)] = true;
+        }
+    }
     foreach ($s['areas'] as $a) {
+        if ($allow !== null && !isset($allow[$a['slug']])) {
+            continue;
+        }
         $href = $hrefPrefix . $a['slug'];
         $html .= '<a class="area-chip" href="' . icomplyMatrixH($href) . '">' . icomplyMatrixH($a['name']) . '</a>';
     }
@@ -296,9 +306,16 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     $svcName = $s['services'][$serviceSlug];
     $areaSlugVal = areaSlug($areaName);
     $poa = function_exists('isPoaService') && isPoaService($serviceSlug);
-    $priceLine = $poa
-        ? 'Price on application after scope. No invented catalogue price.'
-        : 'Written quote after scope is agreed.';
+    $isFire = function_exists('isFireProtectionService') && isFireProtectionService($serviceSlug);
+    if ($serviceSlug === 'fire-risk-assessments' && function_exists('fraPriceSentence')) {
+        $priceLine = fraPriceSentence();
+    } elseif ($serviceSlug === 'aov-air-handling') {
+        $priceLine = 'AOV installation and remedial work are quoted after survey. Equipment kit prices are not a labour figure.';
+    } elseif ($poa) {
+        $priceLine = 'Price on application after scope. No invented catalogue price.';
+    } else {
+        $priceLine = 'Written quote after scope is agreed.';
+    }
     $intro = function_exists('seo_unique_intro')
         ? seo_unique_intro($svcName, $serviceSlug, $areaName)
         : $svcName . ' in ' . $areaName . '.';
@@ -311,12 +328,22 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     $blurb = getServiceBlurb($serviceSlug);
     $standards = getServiceStandards($serviceSlug);
     $title = $svcName . ' in ' . $areaName . ' | ' . $s['brand'];
-    $desc = $svcName . ' in ' . $areaName . '. ' . $priceLine;
+    if ($serviceSlug === 'fire-risk-assessments' && function_exists('fraPublishedPriceLabel')) {
+        $desc = 'Fire risk assessment in ' . $areaName . '. Standard written FRA ' . fraPublishedPriceLabel() . '.';
+    } elseif ($serviceSlug === 'aov-air-handling') {
+        $desc = 'AOV and smoke control in ' . $areaName . '. Vents, actuators and fire-alarm interfaces. Install quoted after survey.';
+    } else {
+        $desc = $svcName . ' in ' . $areaName . '. ' . $priceLine;
+    }
+    if (strlen($desc) > 160) {
+        $desc = substr($desc, 0, 157) . '…';
+    }
     $canonical = url('/pages/' . $serviceSlug . '/' . $areaSlugVal);
 
+    $kicker = $isFire ? 'Fire protection · UK mainland area list' : 'Manchester & Burnley';
     $html = icomplyMatrixChromeStart($title, $desc, $canonical);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
-        . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($areaName) . ' · North West</p>'
+        . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($areaName) . ' · ' . icomplyMatrixH($kicker) . '</p>'
         . '<h1>' . icomplyMatrixH($svcName) . ' <span class="accent">in ' . icomplyMatrixH($areaName) . '</span></h1>'
         . '<p class="mt-4 text-white/80 max-w-2xl">' . icomplyMatrixH($intro) . '</p>'
         . '<div class="mt-6 flex flex-wrap gap-3">'
@@ -336,14 +363,24 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         . icomplyMatrixH(url('/pages/areas/' . $areaSlugVal)) . '">' . icomplyMatrixH($areaName) . '</a></p>'
         . '</article>';
 
-    $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($svcName) . ' in every area</h2>'
-        . '<p class="text-sm text-zinc-600 mb-4">' . count($s['areas']) . ' towns.</p>'
-        . icomplyMatrixAreaChips(url('/pages/' . $serviceSlug . '/'))
+    if (function_exists('fireAreaExtraHtml')) {
+        $html .= fireAreaExtraHtml($serviceSlug, $areaName);
+    }
+
+    $covered = function_exists('areasForService') ? areasForService($serviceSlug) : array_column($s['areas'], 'name');
+    $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($svcName) . ' areas</h2>'
+        . '<p class="text-sm text-zinc-600 mb-4">' . count($covered) . ' towns'
+        . ($isFire ? ' — full fire-protection list, with AOV included.' : ' — Manchester and Burnley only.')
+        . '</p>'
+        . icomplyMatrixAreaChips(url('/pages/' . $serviceSlug . '/'), $covered)
         . '</section>';
 
-    $html .= '<section><h2 class="text-2xl font-semibold mb-3">All keywords for this service</h2>'
-        . icomplyMatrixKeywordChips($serviceSlug)
-        . '</section></main>';
+    if (!$isFire) {
+        $html .= '<section><h2 class="text-2xl font-semibold mb-3">Keyword guides for this service</h2>'
+            . icomplyMatrixKeywordChips($serviceSlug)
+            . '</section>';
+    }
+    $html .= '</main>';
 
     $html .= icomplyMatrixChromeEnd();
     return $html;

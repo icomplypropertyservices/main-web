@@ -429,6 +429,12 @@ function exportedServiceLocalUrl(string $serviceSlug, string $area, string $from
     if ($pick && isset($kw[keywordSlug((string)$pick)])) {
         return url('/pages/keywords/' . keywordSlug((string)$pick) . '/' . $town . '.php');
     }
+    if (function_exists('isFireProtectionService') && isFireProtectionService($serviceSlug) && serviceCoversArea($serviceSlug, $area)) {
+        return url('/pages/' . $serviceSlug . '/' . $town . '.php');
+    }
+    if (function_exists('serviceCoversArea') && serviceCoversArea($serviceSlug, $area)) {
+        return url('/pages/' . $serviceSlug . '/' . $town . '.php');
+    }
     if ($from === 'area') {
         return url('/pages/services/' . $serviceSlug . '.php');
     }
@@ -706,6 +712,11 @@ function icomplyTradeShopUrl(): string
 function icomplyTradeProductsUrl(): string
 {
     return icomplyTradeShopUrl();
+}
+
+$fireCoverageFile = __DIR__ . '/includes/fire-coverage.php';
+if (is_file($fireCoverageFile)) {
+    require_once $fireCoverageFile;
 }
 
 $waFile = __DIR__ . '/includes/water-asbestos.php';

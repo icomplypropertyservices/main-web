@@ -223,8 +223,8 @@ require SITE_ROOT . '/includes/header.php';
         <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local landings</div>
         <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Service hubs &amp; keyword towns</h2>
         <p class="mt-2 text-zinc-600 max-w-2xl">
-            Browse a service hub, then open a keyword guide for your town. We do not publish thin
-            service×area doorway pages for all 168 towns.
+            Fire protection, including AOV, has a service page for every town in the area list.
+            Other services are Manchester and Burnley. Electrical and gas keep keyword×town pages.
         </p>
     </div>
     <div class="flex flex-wrap gap-2">
