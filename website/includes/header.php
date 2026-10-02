@@ -170,6 +170,16 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
         } catch (e) {}
     </script>
     <script type="application/ld+json">
+    <?php if (($pageSchemaType ?? '') === 'WebPage'): ?>
+    <?= json_encode([
+        '@context' => 'https://schema.org',
+        '@type' => 'WebPage',
+        'name' => $documentTitle,
+        'description' => (string)($metaDesc ?? ''),
+        'url' => (string)$canonicalUrl,
+        'inLanguage' => 'en-GB',
+    ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) ?>
+    <?php else: ?>
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
@@ -207,6 +217,7 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
           'https://wa.me/' . WHATSAPP,
       ]))) ?>
     }
+    <?php endif; ?>
     </script>
 </head>
 <body class="theme-dark bg-zinc-50 text-black">

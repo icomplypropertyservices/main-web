@@ -9,7 +9,7 @@ $pageTitle = 'Terms & Conditions | Website, Services & Shop';
 $metaDesc = 'Terms and conditions for iComply Property Services (Stockport): website use, compliance service quotes, installations and Shopify product purchases across Greater Manchester and the North West.';
 $metaKeywords = 'iComply terms and conditions, property compliance terms, Shopify shop terms, Stockport electrician terms';
 $canonicalUrl = url('/terms.php');
-$updated = '12 July 2026';
+$updated = '28 September 2026';
 
 require SITE_ROOT . '/includes/header.php';
 ?>
@@ -126,6 +126,7 @@ require SITE_ROOT . '/includes/header.php';
                 <li>Work proceeds under a written or emailed quotation / order confirmation accepted by you.</li>
                 <li>You must provide safe access, accurate information and any required permissions or keys.</li>
                 <li>Documentation or certification is issued for the work we complete, to the standards and scope agreed in the quote (for example electrical, fire or gas work where applicable). We do not claim certifications we have not issued for your specific job.</li>
+                <li>Works may be carried out by our own engineers or by approved, suitably qualified and registered specialists on our behalf, including Gas Safe registered engineers for gas work. iComply Property Services remains responsible for your booking.</li>
                 <li>Payment terms are stated on the quote or invoice; late payment may attract interest and suspension of non-critical works.</li>
                 <li>Request a free quote via our <a class="text-[#ff6b00] font-medium" href="<?= url('/contact.php') ?>">contact page</a>, phone or WhatsApp.</li>
             </ul>

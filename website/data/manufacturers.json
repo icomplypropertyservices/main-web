@@ -24,7 +24,8 @@
             "Legrand",
             "Eaton",
             "MEM",
-            "Click Scolmore"
+            "Click Scolmore",
+            "NAPIT Approved Equipment"
         ],
         "fire-alarms": [
             "Kentec",
@@ -95,6 +96,7 @@
             "Static Systems Group",
             "Intercall",
             "Aid Call",
+            "Tunstall",
             "Ascom",
             "Schrack Seconet",
             "Zettler",
@@ -181,11 +183,7 @@
             "dormakaba",
             "Allegion",
             "LenelS2",
-            "Software House",
-            "CAME"
-        ],
-        "barriers": [
-            "CAME"
+            "Software House"
         ],
         "door-entry": [
             "Videx",
@@ -219,35 +217,6 @@
             "CyberData",
             "Axis Intercom",
             "Akuvox"
-        ],
-        "barriers": [
-            "CAME",
-            "FAAC",
-            "BFT",
-            "Nice",
-            "Magnetic Autocontrol",
-            "Automatic Systems",
-            "Beninca",
-            "Roger Technology",
-            "DEA System",
-            "Gibidi",
-            "Cardin",
-            "Tau",
-            "King Gates",
-            "Hormann",
-            "ELKA",
-            "Ditec",
-            "Fadini",
-            "Centurion",
-            "Genius",
-            "SEA",
-            "V2",
-            "Aprimatic",
-            "Proteco",
-            "Life Home Integration",
-            "DoorHan",
-            "LiftMaster",
-            "DoorKing"
         ]
     },
     "catalog": {
@@ -394,7 +363,7 @@
             "services": [
                 "nurse-call"
             ],
-            "blurb": "We install and service Aid Call equipment. We supply and fit call points, pear leads and panel batteries as trade kits, and provide certification-ready documentation for care and housing providers. Our Stockport team supports estates teams who need our qualified engineers for Aid Call products and on-site work.",
+            "blurb": "Keep Aid Call nurse call systems dependable with iComply installation, planned service and reactive repairs across Greater Manchester and the North West. We supply and fit call points, pear leads and panel batteries as trade kits, and provide certification-ready documentation for care and housing providers. Our Stockport team supports estates teams who need a single team for Aid Call products and on-site work.",
             "seo_title": "Aid Call Installation, Service & Products | North West",
             "seo_desc": "Aid Call nurse call install, service & trade kits. Stockport, Greater Manchester & North West. Free quotes.",
             "seo_keywords": "Aid Call, Aid Call install, Aid Call installation, Aid Call service, Aid Call nurse call, Aid Call North West, Aid Call Manchester, Aid Call Stockport, nurse call trade kits",
@@ -497,7 +466,7 @@
             "services": [
                 "intercoms"
             ],
-            "blurb": "We install and service Akuvox equipment. Our engineers handle door station and master station fit-out, ongoing service and certification-ready commissioning, while our trade shop stocks the modules and accessories sites need. Covering Stockport and Greater Manchester, we support landlords and contractors who want our qualified engineers for Akuvox products and on-site work.",
+            "blurb": "iComply supply and install Akuvox IP intercoms for residential blocks, offices and managed estates across the North West. Our engineers handle door station and master station fit-out, ongoing service and certification-ready commissioning, while our trade shop stocks the modules and accessories sites need. Covering Stockport and Greater Manchester, we support landlords and contractors who want one team for Akuvox products and on-site work.",
             "seo_title": "Akuvox Installation, Service & Products | North West",
             "seo_desc": "Akuvox IP intercom install, service & trade kits. Stockport, Greater Manchester & North West. Free quotes.",
             "seo_keywords": "Akuvox, Akuvox install, Akuvox installation, Akuvox service, Akuvox intercom, Akuvox North West, Akuvox Manchester, Akuvox Stockport, IP door entry trade kits",
@@ -701,7 +670,7 @@
             "services": [
                 "gas-systems"
             ],
-            "blurb": "Ariston appears on this page as a trade-supply brand. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out gas work, does not issue CP12 or gas safety certificates, and is not Gas Safe registered. iComply does not install, service, or repair Ariston boilers or gas appliances.",
+            "blurb": "iComply Property Services is a trusted North West team for Ariston boiler installation, gas safety certificates (CP12) servicing and heating certification. We support homeowners, housing providers and commercial clients from Stockport through Greater Manchester with new installs, upgrades and reactive repairs. Trade service kits, flue parts and install accessories for Ariston systems are available for engineers and facilities teams.",
             "seo_title": "Ariston Installation, Service & Products | North West",
             "seo_desc": "Ariston boiler install, gas safety certificates (CP12) service & certification across Stockport & Greater Manchester. Trade kits from iComply NW.",
             "seo_keywords": "Ariston, Ariston install, Ariston service, Ariston boiler North West, Ariston Stockport, Ariston Greater Manchester, gas safety certificates (CP12) Ariston, Ariston trade kits",
@@ -1212,7 +1181,7 @@
             "services": [
                 "door-entry"
             ],
-            "blurb": "We install and service BPT equipment. We handle new video and audio installs, handset replacements, panel upgrades and planned maintenance so residents and staff keep reliable door release day and night. Trade kits cover handsets, entrance modules and weatherproof accessories for contractors and block managers working across Greater Manchester, Lancashire, Cheshire and Merseyside.",
+            "blurb": "iComply Property Services is a trusted North West installer and service team for BPT door entry systems in apartments, student housing and commercial receptions. We handle new video and audio installs, handset replacements, panel upgrades and planned maintenance so residents and staff keep reliable door release day and night. Trade kits cover handsets, entrance modules and weatherproof accessories for contractors and block managers working across Greater Manchester, Lancashire, Cheshire and Merseyside.",
             "seo_title": "BPT Installation, Service & Products | North West",
             "seo_desc": "BPT door entry install, handset repair and trade kits with iComply. Audio and video systems across Stockport, Manchester and the North West.",
             "seo_keywords": "BPT, BPT installation, BPT service, BPT maintenance, BPT spares, BPT trade, BPT North West, BPT Manchester, BPT Stockport, Door Entry Systems, BPT handsets, video door entry",
@@ -1348,7 +1317,7 @@
             "services": [
                 "aov-air-handling"
             ],
-            "blurb": "We install and service Cambric equipment. We commission new systems, complete scheduled maintenance and rectify faults to BS 9991 / EN 12101 with documented certification. Contractors and facilities managers can source Cambric actuator parts, interface modules and panel consumables from our trade shop in Stockport.",
+            "blurb": "iComply is a North West installer and service team for Cambric smoke ventilation and AOV controls used in residential cores and mixed-use schemes. We commission new systems, complete scheduled maintenance and rectify faults to BS 9991 / EN 12101 with documented certification. Contractors and facilities managers can source Cambric actuator parts, interface modules and panel consumables from our trade shop in Stockport.",
             "seo_title": "Cambric Installation, Service & Products | North West",
             "seo_desc": "Cambric AOV install, maintenance & EN 12101 certification in the North West. Trade actuators & panel parts from iComply Stockport.",
             "seo_keywords": "Cambric, Cambric AOV, Cambric smoke ventilation, Cambric installation North West, Cambric service Manchester, Cambric actuator spares, Cambric certification, Cambric trade shop, smoke control Greater Manchester",
@@ -1690,7 +1659,7 @@
             ],
             "blurb": "iComply supplies and installs Contactum consumer units and circuit protection for landlords, refurbs and commercial fit-outs across the North West. Our electricians work to BS 7671 with full certification, EICRs and board upgrades completed to a tidy trade standard. Stock Contactum breakers, RCDs and board spares from our Stockport shop for diary-dependent engineer call-outs around Manchester.",
             "seo_title": "Contactum Installation, Service & Products | North West",
-            "seo_desc": "Contactum consumer units, board upgrades & trade spares with iComply. BS 7671 electrical work across Stockport, Manchester & North West.",
+            "seo_desc": "Contactum consumer units, board upgrades & trade spares with iComply. BS 7671 certified electrical work across Stockport, Manchester & North West.",
             "seo_keywords": "Contactum, Contactum consumer unit, Contactum installation, Contactum service, Contactum breakers, Contactum trade, Contactum North West, Contactum Manchester, Contactum Stockport, electrical boards, BS 7671",
             "products": [
                 {
@@ -1724,7 +1693,7 @@
             ],
             "blurb": "Cooper Fire detection systems need disciplined install and BS 5839 servicing — iComply covers both for commercial and residential sites across the North West. We commission panels, devices and interfaces, then run planned maintenance with full certification for landlords and duty holders. Panel service kits, detectors and call points are held as trade stock from our Stockport base for Manchester and Cheshire engineers.",
             "seo_title": "Cooper Fire Installation, Service & Products | North West",
-            "seo_desc": "Cooper Fire alarms installed and serviced by iComply. BS 5839 maintenance and trade kits across Stockport, Manchester & the North West.",
+            "seo_desc": "Cooper Fire alarms installed, serviced & certified by iComply. BS 5839 maintenance and trade kits across Stockport, Manchester & the North West.",
             "seo_keywords": "Cooper Fire, Cooper Fire alarm, Cooper Fire installation, Cooper Fire service, Cooper Fire panels, Cooper Fire trade, Cooper Fire North West, Cooper Fire Manchester, Cooper Fire Stockport, fire detection, BS 5839",
             "products": [
                 {
@@ -1826,7 +1795,7 @@
             ],
             "blurb": "Crabtree switchgear remains a staple on UK residential and light-commercial jobs — iComply installs and upgrades Crabtree boards to BS 7671 across Stockport, Manchester and the wider North West. Expect tidy consumer-unit changeovers, full certification and practical advice for landlords and contractors. Our trade counter stocks Crabtree breakers, blanks and accessories for diary-dependent engineer support.",
             "seo_title": "Crabtree Installation, Service & Products | North West",
-            "seo_desc": "Crabtree consumer units, board upgrades & trade spares via iComply. BS 7671 electrical work across Stockport, Manchester & the North West.",
+            "seo_desc": "Crabtree consumer units, board upgrades & trade spares via iComply. BS 7671 certified electrical work across Stockport, Manchester & the North West.",
             "seo_keywords": "Crabtree, Crabtree consumer unit, Crabtree installation, Crabtree service, Crabtree breakers, Crabtree trade, Crabtree North West, Crabtree Manchester, Crabtree Stockport, electrical boards, BS 7671",
             "products": [
                 {
@@ -1858,9 +1827,9 @@
             "services": [
                 "intruder-alarm"
             ],
-            "blurb": "iComply designs and installs Crow Electronics intruder alarms for shops, offices and residential portfolios across the North West. Systems are set out to PD 6662 / BS EN 50131, with programmed keypads, zone expansion and maintenance visits for insurers and landlords. PIRs, contacts and panel kits are available trade from Stockport for Manchester and Cheshire security installers.",
+            "blurb": "iComply designs and installs Crow Electronics intruder alarms for shops, offices and residential portfolios across the North West. Systems are set out to PD 6662 / BS EN 50131, with programmed keypads, zone expansion and certified maintenance visits for insurers and landlords. PIRs, contacts and panel kits are available trade from Stockport for Manchester and Cheshire security installers.",
             "seo_title": "Crow Electronics Installation, Service & Products | North West",
-            "seo_desc": "Crow Electronics intruder alarms installed and serviced by iComply. Trade sensors & kits across Stockport, Manchester & the North West.",
+            "seo_desc": "Crow Electronics intruder alarms installed, serviced & certified by iComply. Trade sensors & kits across Stockport, Manchester & the North West.",
             "seo_keywords": "Crow Electronics, Crow alarm, Crow Electronics installation, Crow Electronics service, Crow PIR, Crow trade, Crow Electronics North West, Crow Electronics Manchester, Crow Electronics Stockport, intruder alarm, PD 6662",
             "products": [
                 {
@@ -1894,7 +1863,7 @@
             ],
             "blurb": "CyberData SIP intercoms and IP endpoints suit modern VoIP estates — iComply installs and supports them across North West commercial and education sites. We integrate door stations with existing PBX platforms, commission paging endpoints and provide ongoing service when devices drop offline. Trade mounts, power accessories and station spares are stocked for contractors working out of Stockport and Greater Manchester.",
             "seo_title": "CyberData Installation, Service & Products | North West",
-            "seo_desc": "CyberData SIP intercom install, service & trade accessories with iComply. IP endpoints installed across Stockport, Manchester & the North West.",
+            "seo_desc": "CyberData SIP intercom install, service & trade accessories with iComply. IP endpoints certified across Stockport, Manchester & the North West.",
             "seo_keywords": "CyberData, CyberData intercom, CyberData SIP, CyberData installation, CyberData service, CyberData trade, CyberData North West, CyberData Manchester, CyberData Stockport, IP intercom, VoIP door station",
             "products": [
                 {
@@ -2060,8 +2029,7 @@
             "name": "DoorKing",
             "slug": "doorking",
             "services": [
-                "door-entry",
-                "barriers"
+                "door-entry"
             ],
             "blurb": "iComply supplies and installs DoorKing door entry and gate control for apartments, estates and commercial sites across the North West. Our engineers programme panels, handsets and access modules, then provide planned servicing and reactive call-outs for landlords and managing agents. Stock DoorKing spares, rain hoods and entrance accessories via our Stockport trade shop for fast turnaround.",
             "seo_title": "DoorKing Installation, Service & Products | North West",
@@ -2087,26 +2055,6 @@
                     "shopify_product_id": "",
                     "image": "/assets/images/manufacturers/doorking.jpg",
                     "badge": ""
-                },
-                {
-                    "id": "doorking-vehicle-gate-service",
-                    "title": "DoorKing vehicle gate service",
-                    "blurb": "Service visit for a DoorKing vehicle gate operator already on a private site. Not a rising-arm barrier. Price on application.",
-                    "price": "POA",
-                    "handle": "doorking-vehicle-gate-service",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/doorking.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "doorking-gate-safety-check",
-                    "title": "DoorKing gate safety device check",
-                    "blurb": "Safety-device check on a DoorKing gate, scoped separately from door-entry handsets. Price on application.",
-                    "price": "POA",
-                    "handle": "doorking-gate-safety-check",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/doorking.jpg",
-                    "badge": ""
                 }
             ],
             "featured": false
@@ -2117,7 +2065,7 @@
             "services": [
                 "access-control"
             ],
-            "blurb": "We install and service dormakaba equipment. We design, commission and certificate systems to BS EN 50133, with ongoing maintenance contracts from our Stockport base. Trade buyers can order dormakaba readers, tokens, PSU fuses and door hardware through our online shop.",
+            "blurb": "iComply is a North West installer and service team for dormakaba access control — readers, controllers, locks and credentials for offices, healthcare and multi-occupancy buildings. We design, commission and certificate systems to BS EN 50133, with ongoing maintenance contracts from our Stockport base. Trade buyers can order dormakaba readers, tokens, PSU fuses and door hardware through our online shop.",
             "seo_title": "dormakaba Installation, Service & Products | North West",
             "seo_desc": "dormakaba access control install, service & certification. Readers, locks & trade spares — Stockport, Manchester & North West.",
             "seo_keywords": "dormakaba, dormakaba access control, dormakaba installation, dormakaba readers, dormakaba locks, dormakaba service, dormakaba trade, dormakaba North West, dormakaba Manchester, dormakaba Stockport, BS EN 50133",
@@ -2322,7 +2270,7 @@
             "services": [
                 "emergency-lighting"
             ],
-            "blurb": "We install and service Emergi-Lite equipment. Our engineers handle new Emergi-Lite schemes, self-test upgrades, battery changes and failure rectification for FM contractors. Buy Emergi-Lite LED fittings, exit signs and replacement packs from our trade shop with local Stockport support.",
+            "blurb": "iComply is a trusted North West team for Emergi-Lite emergency lighting — design, install, BS 5266 testing and full certification for commercial and multi-residential sites. Our engineers handle new Emergi-Lite schemes, self-test upgrades, battery changes and failure rectification for FM contractors. Buy Emergi-Lite LED fittings, exit signs and replacement packs from our trade shop with local Stockport support.",
             "seo_title": "Emergi-Lite Installation, Service & Products | North West",
             "seo_desc": "Emergi-Lite emergency lighting install, BS 5266 testing & certs. Trade LED fittings & batteries — Manchester & North West.",
             "seo_keywords": "Emergi-Lite, Emergi-Lite emergency lighting, Emergi-Lite installation, Emergi-Lite testing, Emergi-Lite BS 5266, Emergi-Lite batteries, Emergi-Lite trade, Emergi-Lite North West, Emergi-Lite Manchester, Emergi-Lite Stockport, exit signage",
@@ -2458,7 +2406,7 @@
             "services": [
                 "gas-systems"
             ],
-            "blurb": "Ferroli appears on this page as a trade-supply brand. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out gas work, does not issue CP12 or gas safety certificates, and is not Gas Safe registered. iComply does not install, service, or repair Ferroli boilers or gas appliances.",
+            "blurb": "iComply is a gas safety certificates (CP12) team for Ferroli boiler installation, servicing and repairs across Greater Manchester, Cheshire and Lancashire. From first-fix commissioning and flue certification to annual landlord services and reactive fault-finding, our engineers carry common Ferroli spares so downtime stays short for homes and small commercial plant. Trade service kits, electrodes, gaskets and flue accessories are sold through our North West shop for heating contractors who need dependable stock mid-job.",
             "seo_title": "Ferroli Installation, Service & Products | North West",
             "seo_desc": "Ferroli boiler install, gas safety certificates (CP12) service & trade kits from iComply. Stockport, Manchester & North West. Free quotes.",
             "seo_keywords": "Ferroli, Ferroli boiler installation, Ferroli service, Ferroli gas safety certificates (CP12), Ferroli spares, Ferroli flue, boiler maintenance, Ferroli trade, Ferroli North West, Ferroli Manchester, Ferroli Stockport, gas systems",
@@ -2526,7 +2474,7 @@
             "services": [
                 "gas-systems"
             ],
-            "blurb": "iComply installs and services Firebird oil and heating boilers for homes, rural properties and light commercial sites across Greater Manchester, Cheshire and Lancashire. gas safety certificates (CP12) and OFTEC-aware engineers handle commissioning, flue checks, annual servicing and reactive repairs so Firebird plant stays maintained for landlords and owner-occupiers. Trade service consumables, nozzles, filters and flue fittings are stocked in our North West trade shop for heating engineers who need fast local supply.",
+            "blurb": "iComply installs and services Firebird oil and heating boilers for homes, rural properties and light commercial sites across Greater Manchester, Cheshire and Lancashire. gas safety certificates (CP12) and OFTEC-aware engineers handle commissioning, flue checks, annual servicing and reactive repairs so Firebird plant stays efficient and certified for landlords and owner-occupiers. Trade service consumables, nozzles, filters and flue fittings are stocked in our North West trade shop for heating engineers who need fast local supply.",
             "seo_title": "Firebird Installation, Service & Products | North West",
             "seo_desc": "Firebird boiler install, service & trade kits from iComply. gas safety certificates (CP12) cover — Stockport, Manchester & North West.",
             "seo_keywords": "Firebird, Firebird boiler installation, Firebird service, Firebird oil boiler, Firebird gas safety certificates (CP12), Firebird spares, Firebird flue, Firebird trade, Firebird North West, Firebird Manchester, Firebird Stockport, heating maintenance",
@@ -2560,7 +2508,7 @@
             "services": [
                 "fire-alarms"
             ],
-            "blurb": "We install and service FireClass equipment. We deliver BS 5839 design, installation, commissioning and planned maintenance with clear certification packs for insurers, building control and facilities managers. Trade panel batteries, loop devices, call points and engineer service kits are available through our Stockport-based trade shop so contractors and FM teams can keep FireClass systems online without waiting on national warehouses.",
+            "blurb": "iComply is your North West installer and service team for FireClass fire detection systems in offices, retail, healthcare and residential blocks. We deliver BS 5839 design, installation, commissioning and planned maintenance with clear certification packs for insurers, building control and facilities managers. Trade panel batteries, loop devices, call points and engineer service kits are available through our Stockport-based trade shop so contractors and FM teams can keep FireClass systems online without waiting on national warehouses.",
             "seo_title": "FireClass Installation, Service & Products | North West",
             "seo_desc": "FireClass fire alarm install, BS 5839 service & trade spares. iComply — Stockport, Manchester & North West.",
             "seo_keywords": "FireClass, FireClass fire alarm, FireClass installation, FireClass service, FireClass maintenance, BS 5839, FireClass detectors, FireClass panel, FireClass trade, FireClass North West, FireClass Manchester, FireClass Stockport",
@@ -2732,7 +2680,7 @@
             ],
             "blurb": "iComply is a North West electrical contractor for Garo consumer units, EV charge points and distribution boards — BS 7671 installation, EICR support and planned maintenance for homes, landlords and commercial sites. From Stockport and Manchester to Cheshire and Lancashire, we commission Garo equipment with full certification and keep trade-ready breakers, enclosures and EV accessories on the shelf for engineers on the road.",
             "seo_title": "Garo Installation, Service & Products | North West",
-            "seo_desc": "Garo electrical install, EV charging & board service with iComply. BS 7671 electrical work across Stockport, Manchester & the North West.",
+            "seo_desc": "Garo electrical install, EV charging & board service with iComply. BS 7671 certified work across Stockport, Manchester & the North West.",
             "seo_keywords": "Garo, Garo consumer unit, Garo EV charger, Garo installation, Garo service, Garo maintenance, Garo spares, Garo trade, Garo North West, Garo Manchester, Garo Stockport, electrical",
             "products": [
                 {
@@ -2800,7 +2748,7 @@
             ],
             "blurb": "iComply supplies and installs Geze AOV and smoke-control actuators for stairwells, atria and commercial façades throughout Stockport, Manchester and the North West. Our team programmes control panels to BS 9991 / EN 12101, carries out periodic service visits and provides certificate evidence for building control and insurers. Trade customers can order Geze actuator spares, brackets and control-panel consumables direct from our shop.",
             "seo_title": "Geze AOV Installation, Service & Products | North West",
-            "seo_desc": "Geze AOV & smoke-control install, service & spares with iComply. EN 12101 smoke-control work across Stockport, Manchester & the North West.",
+            "seo_desc": "Geze AOV & smoke-control install, service & spares with iComply. EN 12101 certified work across Stockport, Manchester & the North West.",
             "seo_keywords": "Geze, Geze AOV, Geze smoke control, Geze installation, Geze service, Geze maintenance, Geze spares, Geze trade, Geze North West, Geze Manchester, Geze Stockport, air handling",
             "products": [
                 {
@@ -2834,7 +2782,7 @@
             ],
             "blurb": "iComply installs GivEnergy battery storage and hybrid inverter systems for homes and light commercial sites across the North West — full design, BS 7671 electrical integration and commissioning with clear handover packs. From Stockport to Manchester and into Cheshire, we service existing GivEnergy setups, diagnose inverter faults and stock trade cables, CT clamps and battery accessories so installers can keep projects moving.",
             "seo_title": "GivEnergy Installation, Service & Products | North West",
-            "seo_desc": "GivEnergy battery & inverter install, service & trade accessories with iComply. North West electrical engineers. Free quotes.",
+            "seo_desc": "GivEnergy battery & inverter install, service & trade accessories with iComply. North West certified electrical engineers. Free quotes.",
             "seo_keywords": "GivEnergy, GivEnergy battery, GivEnergy inverter, GivEnergy installation, GivEnergy service, GivEnergy maintenance, GivEnergy spares, GivEnergy trade, GivEnergy North West, GivEnergy Manchester, GivEnergy Stockport, electrical storage",
             "products": [
                 {
@@ -2868,7 +2816,7 @@
             ],
             "blurb": "iComply fits and maintains GJD external detectors and perimeter alarm devices for commercial yards, depots and residential sites across Greater Manchester and the North West. Our intruder-alarm engineers programme GJD PIRs and beam sets to PD 6662 / BS EN 50131 standards, issue certification and respond to fault call-outs. The trade shop carries GJD detector heads, brackets and power modules for contractors who need reliable outdoor detection spares.",
             "seo_title": "GJD Installation, Service & Products | North West",
-            "seo_desc": "GJD external detector install, service & trade spares with iComply. PD 6662 alarm work across Stockport, Manchester & the North West.",
+            "seo_desc": "GJD external detector install, service & trade spares with iComply. PD 6662 certified work across Stockport, Manchester & the North West.",
             "seo_keywords": "GJD, GJD detector, GJD PIR, GJD installation, GJD service, GJD maintenance, GJD spares, GJD trade, GJD North West, GJD Manchester, GJD Stockport, intruder alarm, perimeter detection",
             "products": [
                 {
@@ -2936,7 +2884,7 @@
             ],
             "blurb": "iComply installs and services Golmar door entry and video intercom systems for apartments, offices and gated developments across the North West. Our engineers programme multi-tenant panels, replace handsets and issue commissioning certificates that satisfy freeholders and managing agents. Trade customers across Stockport, Manchester and Cheshire can buy Golmar handsets, entrance modules and rain covers from our shop for reactive repairs and new builds.",
             "seo_title": "Golmar Door Entry Installation, Service & Products | North West",
-            "seo_desc": "Golmar door entry install, service & trade handsets with iComply. Multi-tenant door-entry work across Stockport, Manchester & the North West.",
+            "seo_desc": "Golmar door entry install, service & trade handsets with iComply. Multi-tenant certified work across Stockport, Manchester & the North West.",
             "seo_keywords": "Golmar, Golmar door entry, Golmar intercom, Golmar installation, Golmar service, Golmar maintenance, Golmar spares, Golmar trade, Golmar North West, Golmar Manchester, Golmar Stockport, video door entry",
             "products": [
                 {
@@ -3070,7 +3018,7 @@
             "services": [
                 "fire-alarms"
             ],
-            "blurb": "We install and service Haes Systems equipment. We support conventional and addressable Haes kits for offices, industrial units and multi-site portfolios, with full certification and log-book updates. Trade engineers can also pick up panel batteries, zone cards and device packs through our Stockport trade shop.",
+            "blurb": "iComply is a North West installer and service team for Haes Systems fire detection panels, covering new BS 5839 installs, upgrades and reactive call-outs. We support conventional and addressable Haes kits for offices, industrial units and multi-site portfolios, with full certification and log-book updates. Trade engineers can also pick up panel batteries, zone cards and device packs through our Stockport trade shop.",
             "seo_title": "Haes Systems Installation, Service & Products | North West",
             "seo_desc": "Haes Systems fire alarm install, service & BS 5839 certs. Trade kits & spares from iComply across Manchester & the North West.",
             "seo_keywords": "Haes Systems, Haes fire alarm, Haes Systems installation, Haes Systems service, Haes panel spares, BS 5839 certification, fire alarm trade shop North West, Haes Manchester, Haes Stockport, Fire Alarms",
@@ -3412,7 +3360,7 @@
             "services": [
                 "intruder-alarm"
             ],
-            "blurb": "We install and service Innerrange equipment. From Concept and Integriti-style controller work to PIR zoning and keypad replacements, we keep commercial alarms performing for FM teams and contractors. Trade sensors, expansions and panel spares ship from our Stockport-area trade shop across Greater Manchester, Lancashire, Cheshire and Merseyside.",
+            "blurb": "iComply is a North West team for Innerrange (Inner Range) intruder and integrated security platforms, covering new installs, expansions and certified maintenance to PD 6662 / BS EN 50131. From Concept and Integriti-style controller work to PIR zoning and keypad replacements, we keep commercial alarms performing for FM teams and contractors. Trade sensors, expansions and panel spares ship from our Stockport-area trade shop across Greater Manchester, Lancashire, Cheshire and Merseyside.",
             "seo_title": "Innerrange Installation, Service & Products | North West",
             "seo_desc": "Innerrange alarm install, service & certs with iComply. Trade PIRs & expansions across Manchester, Stockport & the North West.",
             "seo_keywords": "Innerrange, Inner Range, Innerrange installation, Innerrange service, Innerrange maintenance, Concept, Integriti, Innerrange trade, Innerrange North West, Innerrange Manchester, Innerrange Stockport, Intruder Alarms",
@@ -3754,7 +3702,7 @@
             "services": [
                 "access-control"
             ],
-            "blurb": "iComply delivers LenelS2 access control installation and lifecycle support for commercial sites across Greater Manchester, Lancashire and Cheshire. We design card and reader layouts, commission controllers to site policy and keep systems maintained under planned maintenance. Trade readers, credentials and controller spares are available from our North West shop for contractors and in-house estates teams.",
+            "blurb": "iComply delivers LenelS2 access control installation and lifecycle support for commercial sites across Greater Manchester, Lancashire and Cheshire. We design card and reader layouts, commission controllers to site policy and keep systems certified under planned maintenance. Trade readers, credentials and controller spares are available from our North West shop for contractors and in-house estates teams.",
             "seo_title": "LenelS2 Installation, Service & Products | North West",
             "seo_desc": "LenelS2 access control install, service & certification by iComply. Trade readers & controllers across Manchester & the North West.",
             "seo_keywords": "LenelS2, LenelS2 installation, LenelS2 access control, LenelS2 service North West, LenelS2 readers, access control Manchester, LenelS2 trade spares, LenelS2 Stockport, BS EN 50133 access, iComply LenelS2",
@@ -3924,7 +3872,7 @@
             "services": [
                 "electrical"
             ],
-            "blurb": "iComply supports MEM electrical distribution gear with BS 7671 installation, board changes and testing across the North West. Whether you need a full consumer unit upgrade or reactive breaker replacements, our electricians document every job for landlords and FM teams. Source MEM breakers, enclosures and trade spares from our Stockport-based shop for Manchester and regional projects.",
+            "blurb": "iComply supports MEM electrical distribution gear with BS 7671 installation, board changes and certified testing across the North West. Whether you need a full consumer unit upgrade or reactive breaker replacements, our electricians document every job for landlords and FM teams. Source MEM breakers, enclosures and trade spares from our Stockport-based shop for Manchester and regional projects.",
             "seo_title": "MEM Installation, Service & Products | North West",
             "seo_desc": "MEM electrical install, BS 7671 certification & trade breakers from iComply. Service across Stockport, Manchester & North West.",
             "seo_keywords": "MEM, MEM consumer unit, MEM installation, MEM MCB, electrical certification North West, MEM trade spares, BS 7671 Manchester, MEM board upgrade Stockport, MEM breakers, iComply MEM",
@@ -4026,7 +3974,7 @@
             "services": [
                 "electrical"
             ],
-            "blurb": "iComply installs and maintains MK Electric wiring accessories and distribution solutions to BS 7671 standards across the North West. From commercial fit-outs to landlord remedial programmes, we provide installation, testing and planned electrical maintenance. Buy MK sockets, switches, grid modules and trade spares from our shop for projects in Stockport, Manchester, Cheshire and Lancashire.",
+            "blurb": "iComply installs and maintains MK Electric wiring accessories and distribution solutions to BS 7671 standards across the North West. From commercial fit-outs to landlord remedial programmes, we provide certified installation, testing and planned electrical maintenance. Buy MK sockets, switches, grid modules and trade spares from our shop for projects in Stockport, Manchester, Cheshire and Lancashire.",
             "seo_title": "MK Electric Installation, Service & Products | North West",
             "seo_desc": "MK Electric install, BS 7671 certs & trade accessories from iComply. Sockets, switches & boards across Manchester & North West.",
             "seo_keywords": "MK Electric, MK Electric installation, MK sockets, MK switches, electrical service North West, MK trade, BS 7671 Manchester, MK Electric Stockport, wiring accessories, iComply MK Electric",
@@ -4155,6 +4103,40 @@
                 }
             ],
             "featured": true
+        },
+        "napit-approved-equipment": {
+            "name": "NAPIT Approved Equipment",
+            "slug": "napit-approved-equipment",
+            "services": [
+                "electrical"
+            ],
+            "blurb": "iComply supplies and installs NAPIT Approved Equipment for electrical testing, inspection and compliance work across Greater Manchester and the wider North West. Our electricians use approved test gear on BS 7671 EICRs, consumer-unit upgrades and certification visits for landlords and FM teams. Buy NAPIT-ready leads, adaptors and engineer spares from our Stockport trade counter for diary-dependent jobs.",
+            "seo_title": "NAPIT Approved Equipment Supply & Install | North West",
+            "seo_desc": "NAPIT Approved Equipment for testing, install & certification with iComply. Trade leads & kits — Stockport, Manchester & NW.",
+            "seo_keywords": "NAPIT Approved Equipment, NAPIT test equipment, NAPIT installation, NAPIT service, electrical testing, EICR equipment, NAPIT trade, NAPIT North West, NAPIT Manchester, NAPIT Stockport, BS 7671",
+            "products": [
+                {
+                    "id": "napit-approved-equipment-test-lead-pack",
+                    "title": "NAPIT Approved Test Lead Pack",
+                    "blurb": "Engineer-ready test leads and adaptors for NAPIT-compliant inspection work.",
+                    "price": "From POA",
+                    "handle": "napit-approved-equipment-test-lead-pack",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/napit-approved-equipment.jpg",
+                    "badge": "Trade"
+                },
+                {
+                    "id": "napit-approved-equipment-engineer-spares",
+                    "title": "NAPIT Approved Engineer Spares Kit",
+                    "blurb": "Consumables and accessories for NAPIT Approved Equipment on site visits.",
+                    "price": "From POA",
+                    "handle": "napit-approved-equipment-engineer-spares",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/napit-approved-equipment.jpg",
+                    "badge": ""
+                }
+            ],
+            "featured": false
         },
         "navien": {
             "name": "Navien",
@@ -4400,7 +4382,7 @@
             "services": [
                 "intruder-alarm"
             ],
-            "blurb": "iComply designs, installs and services Orisec intruder alarms for commercial and multi-site clients across Greater Manchester, Cheshire and the North West. Systems are engineered to PD 6662 / BS EN 50131 with keypad programming, zone expansions and a documented handover on every project. Stock Orisec PIRs, contacts and panel modules from our Stockport trade counter for reactive repairs and planned upgrades.",
+            "blurb": "iComply designs, installs and services Orisec intruder alarms for commercial and multi-site clients across Greater Manchester, Cheshire and the North West. Systems are engineered to PD 6662 / BS EN 50131 with keypad programming, zone expansions and certified handover on every project. Stock Orisec PIRs, contacts and panel modules from our Stockport trade counter for reactive repairs and planned upgrades.",
             "seo_title": "Orisec Installation, Service & Products | North West",
             "seo_desc": "Orisec alarm install, service & PD 6662 certification with iComply. Trade PIRs & kits — Stockport, Manchester & NW.",
             "seo_keywords": "Orisec, Orisec alarms, Orisec installation, Orisec service, Orisec maintenance, Orisec PIR, Orisec trade, Orisec North West, Orisec Manchester, Orisec Stockport, intruder alarms, PD 6662",
@@ -4537,7 +4519,7 @@
                 "access-control",
                 "door-entry"
             ],
-            "blurb": "iComply designs, installs and services Paxton access control and door entry — including Net2 and PaxLock ranges — for workplaces, residential blocks and multi-site estates across the North West. From reader placement and controller commissioning to token enrolment and BS 7671-aligned power checks, we deliver documented systems with clear documentation. Trade Paxton readers, fobs, controllers and door furniture ship from our Stockport trade counter for FM teams and security contractors.",
+            "blurb": "iComply designs, installs and services Paxton access control and door entry — including Net2 and PaxLock ranges — for workplaces, residential blocks and multi-site estates across the North West. From reader placement and controller commissioning to token enrolment and BS 7671-aligned power checks, we deliver certified systems with clear documentation. Trade Paxton readers, fobs, controllers and door furniture ship from our Stockport trade counter for FM teams and security contractors.",
             "seo_title": "Paxton Installation, Service & Products | North West",
             "seo_desc": "Paxton Net2 access control & door entry install, service & certs. Trade readers & fobs — Stockport, Manchester & NW.",
             "seo_keywords": "Paxton, Paxton Net2, Paxton PaxLock, Paxton access control, Paxton door entry, Paxton installation, Paxton service, Paxton trade, Paxton North West, Paxton Manchester, Paxton Stockport, access control systems",
@@ -5149,7 +5131,7 @@
             "services": [
                 "aov-air-handling"
             ],
-            "blurb": "We install and service Simon RWA equipment. We commission AOVs, roof vents and control equipment to EN 12101 and BS 9991, then schedule planned maintenance with clear certification records for freeholders and managing agents. Trade actuator and panel kits from our shop keep Simon RWA sites compliant between full service visits.",
+            "blurb": "iComply is a North West installer and service team for Simon RWA smoke and heat exhaust ventilation systems on residential towers, care settings and commercial blocks. We commission AOVs, roof vents and control equipment to EN 12101 and BS 9991, then schedule planned maintenance with clear certification records for freeholders and managing agents. Trade actuator and panel kits from our shop keep Simon RWA sites compliant between full service visits.",
             "seo_title": "Simon RWA Installation, Service & Products | North West",
             "seo_desc": "Simon RWA AOV install, service & EN 12101 certification by iComply. Trade spares for Stockport, Manchester & North West sites.",
             "seo_keywords": "Simon RWA, Simon RWA AOV, Simon RWA installation, Simon RWA service, Simon RWA maintenance, Simon RWA certification, Simon RWA spares, Simon RWA trade, Simon RWA North West, Simon RWA Manchester, smoke control, EN 12101, SHEV",
@@ -5455,7 +5437,7 @@
             "services": [
                 "fire-alarms"
             ],
-            "blurb": "iComply specifies and installs System Sensor detection devices on BS 5839 fire alarm systems throughout the North West. Smoke, heat and multi-sensor heads are fitted and tested with clear zone schedules for insurers and building control. Our trade shop supplies System Sensor bases, detectors and call-point packs for engineers and facilities teams in Manchester, Stockport and beyond.",
+            "blurb": "iComply specifies and installs System Sensor detection devices on BS 5839 fire alarm systems throughout the North West. Smoke, heat and multi-sensor heads are fitted, tested and certified with clear zone schedules for insurers and building control. Our trade shop supplies System Sensor bases, detectors and call-point packs for engineers and facilities teams in Manchester, Stockport and beyond.",
             "seo_title": "System Sensor Installation, Service & Products | North West",
             "seo_desc": "System Sensor detectors, BS 5839 fire install & trade packs from iComply across Manchester, Stockport & the North West.",
             "seo_keywords": "System Sensor, System Sensor detectors, System Sensor fire alarms, System Sensor installation, System Sensor service, System Sensor bases, System Sensor multi-sensor, System Sensor trade, System Sensor North West, System Sensor Manchester, System Sensor Stockport, BS 5839",
@@ -5523,7 +5505,7 @@
             "services": [
                 "access-control"
             ],
-            "blurb": "We install and service TDSi equipment. We programme controllers, issue credentials and provide reactive support so doors stay secure and compliant. Trade readers, fobs and controller spares are available through our Stockport-based shop for engineers and FM teams.",
+            "blurb": "iComply is a North West team for TDSi access control — designing, installing and servicing MICROgarde and related systems for offices, education and multi-tenant sites. We programme controllers, issue credentials and provide reactive support so doors stay secure and compliant. Trade readers, fobs and controller spares are available through our Stockport-based shop for engineers and FM teams.",
             "seo_title": "TDSi Installation, Service & Products | North West",
             "seo_desc": "TDSi access control install, MICROgarde service & trade readers from iComply across Manchester & the North West.",
             "seo_keywords": "TDSi, TDSi access control, TDSi MICROgarde, TDSi installation, TDSi service, TDSi readers, TDSi fobs, TDSi controller, TDSi trade, TDSi North West, TDSi Manchester, TDSi Stockport, door access systems",
@@ -5823,6 +5805,40 @@
             ],
             "featured": false
         },
+        "tunstall": {
+            "name": "Tunstall",
+            "slug": "tunstall",
+            "services": [
+                "nurse-call"
+            ],
+            "blurb": "iComply installs, services and upgrades Tunstall nurse call and telecare systems for care homes, extra-care schemes and supported living across the North West. We follow HTM 08-03 guidance, provide staff training handover, and keep call points, pear leads and panels certified under planned maintenance. Care operators and FM teams can buy genuine-fit Tunstall trade spares from our North West shop with rapid engineer support.",
+            "seo_title": "Tunstall Installation, Service & Products | North West",
+            "seo_desc": "Tunstall nurse call installation, HTM-aligned service & trade spares from iComply across Manchester & the North West.",
+            "seo_keywords": "Tunstall, Tunstall nurse call, Tunstall installation, Tunstall service, Tunstall telecare, Tunstall call point, Tunstall pear lead, Tunstall spares, Tunstall trade, Tunstall North West, Tunstall Manchester, Tunstall Stockport, HTM 08-03",
+            "products": [
+                {
+                    "id": "tunstall-call-point-pack",
+                    "title": "Tunstall Call Point & Pear Lead Pack",
+                    "blurb": "Replacement call points, pear leads and pull-cord kits for Tunstall nurse call bedrooms and bathrooms.",
+                    "price": "From POA",
+                    "handle": "tunstall-call-point-pack",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/tunstall.jpg",
+                    "badge": "Trade"
+                },
+                {
+                    "id": "tunstall-panel-battery-kit",
+                    "title": "Tunstall Panel Battery & PSU Kit",
+                    "blurb": "Backup batteries and power-supply consumables to keep Tunstall nurse call panels online during service visits.",
+                    "price": "From POA",
+                    "handle": "tunstall-panel-battery-kit",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/manufacturers/tunstall.jpg",
+                    "badge": "Popular"
+                }
+            ],
+            "featured": false
+        },
         "uniview": {
             "name": "Uniview",
             "slug": "uniview",
@@ -5933,7 +5949,7 @@
             ],
             "blurb": "iComply installs and maintains Vanderbilt access control for offices, logistics hubs, education campuses and multi-site estates across the North West. Readers, controllers and credentials are commissioned to BS EN 50133 practice with audit-ready user databases and certification handover. We support planned maintenance, door force testing and trade supply of Vanderbilt readers, tokens and PSU spares through our Stockport trade shop.",
             "seo_title": "Vanderbilt Installation, Service & Products | North West",
-            "seo_desc": "Vanderbilt access control install, service and trade readers from iComply across Manchester & the North West.",
+            "seo_desc": "Vanderbilt access control install, certified service & trade readers from iComply across Manchester & the North West.",
             "seo_keywords": "Vanderbilt, Vanderbilt access control, Vanderbilt installation, Vanderbilt service, Vanderbilt reader, Vanderbilt controller, Vanderbilt tokens, Vanderbilt spares, Vanderbilt trade, Vanderbilt North West, Vanderbilt Manchester, Vanderbilt Stockport, BS EN 50133",
             "products": [
                 {
@@ -5999,7 +6015,7 @@
             "services": [
                 "door-entry"
             ],
-            "blurb": "We install and service Videx equipment. We programme handsets, set up trade-friendly wiring standards and certify systems for managing agents and freeholders. Ongoing service contracts plus our trade shop for Videx handsets, panels and entrance accessories keep residents connected and doors secure.",
+            "blurb": "iComply is a trusted North West team for Videx door entry — installing audio, video and GSM systems on apartment blocks, HMOs and commercial entrances from Stockport to Liverpool. We programme handsets, set up trade-friendly wiring standards and certify systems for managing agents and freeholders. Ongoing service contracts plus our trade shop for Videx handsets, panels and entrance accessories keep residents connected and doors secure.",
             "seo_title": "Videx Installation, Service & Products | North West",
             "seo_desc": "Videx door entry installation, service & trade handsets from iComply. Certified systems across Manchester & the North West.",
             "seo_keywords": "Videx, Videx door entry, Videx installation, Videx service, Videx video entry, Videx GSM, Videx handset, Videx panel, Videx spares, Videx trade, Videx North West, Videx Manchester, Videx Stockport, multi-tenant door entry",
@@ -6169,7 +6185,7 @@
             "services": [
                 "gas-systems"
             ],
-            "blurb": "Vokera appears on this page as a trade-supply brand. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out gas work, does not issue CP12 or gas safety certificates, and is not Gas Safe registered. iComply does not install, service, or repair Vokera boilers or gas appliances.",
+            "blurb": "iComply is a gas safety certificates (CP12) installer and service team for Vokera boilers across Greater Manchester, Cheshire and Lancashire. Whether you need a Linea or Unica replacement, landlord CP12-style certification after service, or a diary-dependent fault-find, our engineers carry common Vokera spares on the van. Trade service kits, diverter valves and flue components are sold through our North West shop to keep heating contractors productive on site.",
             "seo_title": "Vokera Installation, Service & Products | North West",
             "seo_desc": "Vokera boiler install, gas safety certificates (CP12) service & trade kits from iComply. Stockport, Manchester & North West coverage.",
             "seo_keywords": "Vokera, Vokera boiler installation, Vokera service, Vokera gas safety certificates (CP12), Vokera Linea, Vokera Unica, Vokera spares, Vokera trade, Vokera North West, Vokera Manchester, Vokera Stockport, gas boiler maintenance",
@@ -6305,7 +6321,7 @@
             "services": [
                 "cctv"
             ],
-            "blurb": "We install and service Wisenet equipment. We install for logistics yards, education and multi-let commercial stock across Stockport, Manchester and surrounding boroughs, with documentation that supports BS EN 62676 practice. Trade mounts, junction boxes and HDD upgrades are available from our trade shop for installers already specifying Wisenet on site.",
+            "blurb": "iComply is your North West team for Wisenet (Hanwha Vision) CCTV — from Q and X series camera design through to NVR deployment, remote monitoring setup and annual service. We install for logistics yards, education and multi-let commercial stock across Stockport, Manchester and surrounding boroughs, with documentation that supports BS EN 62676 practice. Trade mounts, junction boxes and HDD upgrades are available from our trade shop for installers already specifying Wisenet on site.",
             "seo_title": "Wisenet Installation, Service & Products | North West",
             "seo_desc": "Wisenet CCTV install, service & trade accessories from iComply. Hanwha Vision — Stockport, Manchester, North West.",
             "seo_keywords": "Wisenet, Hanwha Vision, Wisenet CCTV, Wisenet installation, Wisenet NVR, Wisenet service, IP camera North West, CCTV Manchester, Wisenet Stockport, BS EN 62676, trade CCTV mounts, Wisenet X series",
@@ -6604,891 +6620,6 @@
                 }
             ],
             "featured": false
-        },
-        "came": {
-            "name": "CAME",
-            "slug": "came",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "iComply Property Services is a CAME partner. New rising-arm barriers are specified from the CAME Gard range: Gard 4 and Gard 8 for straight booms, Gard PT and Gard PX where the arm must fold under a soffit. We survey the private lane, set the safety devices the CAME manual requires, and commission the logic. Other names on the barriers hub are brands we service or replace. They are not partnerships. Quotes are on application after the lane is seen. Attendance is planned from Stockport SK2.",
-            "seo_title": "CAME Vehicle Barriers | Service & Quote",
-            "seo_desc": "CAME partner for Gard rising-arm barriers. Private lanes, UK towns over 10,000. Price on application.",
-            "seo_keywords": "CAME partner, CAME Gard barrier, Gard 4, Gard 8, Gard PT, rising arm barrier",
-            "products": [
-                {
-                    "id": "came-gard-4-8",
-                    "title": "CAME Gard 4 and Gard 8 rising arm",
-                    "blurb": "Straight-arm CAME Gard cabinets. Boom length and duty decide Gard 4 or Gard 8. Quoted on application after the lane survey.",
-                    "price": "POA",
-                    "handle": "came-gard-4-8",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/brand-logos/came.svg",
-                    "badge": "Partner"
-                },
-                {
-                    "id": "came-gard-pt-px",
-                    "title": "CAME Gard PT and Gard PX articulated boom",
-                    "blurb": "Folding CAME boom for a low soffit. Specified only when a straight arm does not clear the structure. Price on application.",
-                    "price": "POA",
-                    "handle": "came-gard-pt-px",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/brand-logos/came.svg",
-                    "badge": "Partner"
-                }
-            ],
-            "featured": true,
-            "partner": true
-        },
-        "faac": {
-            "name": "FAAC",
-            "slug": "faac",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "FAAC barriers we meet in the UK are usually the 615, the 620 or the B680H hybrid. iComply services and replaces them. We are not a FAAC partner. The barrier partnership on this site is CAME. A 620 spare is not a B680H spare. If the lane suits a CAME Gard better than another FAAC cabinet, both options are priced on application.",
-            "seo_title": "FAAC Vehicle Barriers | Service & Quote",
-            "seo_desc": "FAAC 615, 620 and B680H barrier service and replacement. Not a FAAC partnership. Price on application.",
-            "seo_keywords": "FAAC barrier, FAAC 620, FAAC 615, FAAC B680H",
-            "products": [
-                {
-                    "id": "faac-615-620",
-                    "title": "FAAC 615 and 620 barrier",
-                    "blurb": "Electromechanical FAAC cabinets. Parts are identified from the model plate before anything is ordered. Price on application.",
-                    "price": "POA",
-                    "handle": "faac-615-620",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/faac.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "faac-b680h",
-                    "title": "FAAC B680H hybrid barrier",
-                    "blurb": "Hybrid FAAC cabinet with its own spare path, separate from a 620. Price on application.",
-                    "price": "POA",
-                    "handle": "faac-b680h",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/faac.jpg",
-                    "badge": ""
-                }
-            ],
-            "featured": false
-        },
-        "bft": {
-            "name": "BFT",
-            "slug": "bft",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "BFT Moovi barriers are serviced as Moovi 30, 50 or 60. The number tracks boom length. iComply repairs and replaces them and does not claim a BFT partnership. Spring balance and limit settings are checked against the real horizontal stop. Price on application.",
-            "seo_title": "BFT Vehicle Barriers | Service & Quote",
-            "seo_desc": "BFT Moovi 30, 50 and 60 barrier repair and replacement. Price on application.",
-            "seo_keywords": "BFT Moovi barrier, Moovi 30, Moovi 50, Moovi 60",
-            "products": [
-                {
-                    "id": "bft-moovi-30",
-                    "title": "BFT Moovi 30 barrier",
-                    "blurb": "Shorter Moovi arm. Boom, spring and limits matched to that model. Price on application.",
-                    "price": "POA",
-                    "handle": "bft-moovi-30",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/bft.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "bft-moovi-50-60",
-                    "title": "BFT Moovi 50 and Moovi 60 barrier",
-                    "blurb": "Longer Moovi arms. Wind exposure and spring balance are part of the survey. Price on application.",
-                    "price": "POA",
-                    "handle": "bft-moovi-50-60",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/bft.jpg",
-                    "badge": ""
-                }
-            ],
-            "featured": false
-        },
-        "nice": {
-            "name": "Nice",
-            "slug": "nice",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "Nice Wide M and Wide L are the rising arms we identify under the Nice badge. iComply services them. We are not a Nice partner. A Wide L is not a Wide M with a longer sticker. Replacement onto CAME Gard is offered when that is the cleaner supported route. Price on application.",
-            "seo_title": "Nice Vehicle Barriers | Service & Quote",
-            "seo_desc": "Nice Wide M and Wide L barrier service. Not a Nice partnership. Price on application.",
-            "seo_keywords": "Nice Wide barrier, Nice Wide M, Nice Wide L",
-            "products": [
-                {
-                    "id": "nice-wide-m",
-                    "title": "Nice Wide M barrier",
-                    "blurb": "Nice Wide M cabinet and boom, identified before parts are ordered. Price on application.",
-                    "price": "POA",
-                    "handle": "nice-wide-m",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/nice.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "nice-wide-l",
-                    "title": "Nice Wide L barrier",
-                    "blurb": "Longer Nice Wide L lane. Not quoted as a Wide M. Price on application.",
-                    "price": "POA",
-                    "handle": "nice-wide-l",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/nice.jpg",
-                    "badge": ""
-                }
-            ],
-            "featured": false
-        },
-        "magnetic-autocontrol": {
-            "name": "Magnetic Autocontrol",
-            "slug": "magnetic-autocontrol",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "Magnetic Autocontrol Access and Parking barriers are higher-duty arms, often on wider lanes. Magnetic sits in the wider FAAC group, but the hardware is not interchangeable with a FAAC 620. iComply services the badge on the cabinet and does not claim a Magnetic partnership. Price on application.",
-            "seo_title": "Magnetic Autocontrol Vehicle Barriers | Service & Quote",
-            "seo_desc": "Magnetic Autocontrol Access and Parking barrier service. Not a FAAC 620 spare. Price on application.",
-            "seo_keywords": "Magnetic Autocontrol barrier, Magnetic Access, Magnetic Parking barrier",
-            "products": [
-                {
-                    "id": "magnetic-autocontrol-access",
-                    "title": "Magnetic Autocontrol Access barrier",
-                    "blurb": "Access-range cabinet, boom and spring pack identified separately from Parking. Price on application.",
-                    "price": "POA",
-                    "handle": "magnetic-autocontrol-access",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/magnetic-autocontrol.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "magnetic-autocontrol-parking",
-                    "title": "Magnetic Autocontrol Parking barrier",
-                    "blurb": "Parking-range arm for higher duty. Loop geometry is surveyed for the vehicles that actually use the lane. Price on application.",
-                    "price": "POA",
-                    "handle": "magnetic-autocontrol-parking",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/magnetic-autocontrol.jpg",
-                    "badge": ""
-                }
-            ],
-            "featured": false
-        },
-        "automatic-systems": {
-            "name": "Automatic Systems",
-            "slug": "automatic-systems",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "Automatic Systems BL barriers are serviced as the boom mechanism. A pay station or ticketing head on the same lane is a different contract and is not absorbed into a barrier call-out. iComply is not an Automatic Systems partner. Where a full replacement is the better route, CAME is the partnership we specify. Price on application.",
-            "seo_title": "Automatic Systems Vehicle Barriers | Service & Quote",
-            "seo_desc": "Automatic Systems BL barrier repair, separate from pay stations. Price on application.",
-            "seo_keywords": "Automatic Systems barrier, BL barrier, BL229",
-            "products": [
-                {
-                    "id": "automatic-systems-bl",
-                    "title": "Automatic Systems BL barrier",
-                    "blurb": "BL boom, safety devices and open/close command. The pay station is out of scope. Price on application.",
-                    "price": "POA",
-                    "handle": "automatic-systems-bl",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/automatic-systems.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "automatic-systems-bl229",
-                    "title": "Automatic Systems BL229 barrier",
-                    "blurb": "BL229 identified from the cabinet label before parts. Price on application.",
-                    "price": "POA",
-                    "handle": "automatic-systems-bl229",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/automatic-systems.jpg",
-                    "badge": ""
-                }
-            ],
-            "featured": false
-        },
-        "beninca": {
-            "name": "Beninca",
-            "slug": "beninca",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "Beninca EVA.5 and EVA.7 barriers are repaired when the board revision is known. iComply is not a Beninca partner. Water-damaged cabinets are quoted as replacement, with a CAME Gard as the partner alternative. Price on application.",
-            "seo_title": "Beninca Vehicle Barriers | Service & Quote",
-            "seo_desc": "Beninca EVA.5 and EVA.7 barrier repair. Price on application.",
-            "seo_keywords": "Beninca EVA barrier, EVA.5, EVA.7",
-            "products": [
-                {
-                    "id": "beninca-eva5",
-                    "title": "Beninca EVA.5 barrier",
-                    "blurb": "EVA.5 boom, spring or board, matched to that revision. Price on application.",
-                    "price": "POA",
-                    "handle": "beninca-eva5",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/beninca.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "beninca-eva7",
-                    "title": "Beninca EVA.7 barrier",
-                    "blurb": "EVA.7 lane. Not ordered as an EVA.5. Price on application.",
-                    "price": "POA",
-                    "handle": "beninca-eva7",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/beninca.jpg",
-                    "badge": ""
-                }
-            ],
-            "featured": false
-        },
-        "roger-technology": {
-            "name": "Roger Technology",
-            "slug": "roger-technology",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "Roger Technology Bionik barriers use a brushless motor and a digital controller. iComply connects with the Roger programmer rather than forcing a generic remote. We are not a Roger partner. A dead controller can be priced beside a CAME Gard. Price on application.",
-            "seo_title": "Roger Technology Vehicle Barriers | Service & Quote",
-            "seo_desc": "Roger Technology Bionik brushless barrier service. Price on application.",
-            "seo_keywords": "Roger Technology barrier, Bionik barrier, BI series barrier",
-            "products": [
-                {
-                    "id": "roger-technology-bionik",
-                    "title": "Roger Technology Bionik barrier",
-                    "blurb": "Brushless Bionik cabinet. Spares follow the BI series on the label. Price on application.",
-                    "price": "POA",
-                    "handle": "roger-technology-bionik",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/roger-technology.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "roger-technology-programmer",
-                    "title": "Roger Technology barrier programmer session",
-                    "blurb": "On-site programming with the Roger tool for that controller. Price on application.",
-                    "price": "POA",
-                    "handle": "roger-technology-programmer",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/roger-technology.jpg",
-                    "badge": ""
-                }
-            ],
-            "featured": false
-        },
-        "dea-system": {
-            "name": "DEA System",
-            "slug": "dea-system",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "DEA STOP and PASS barriers are serviced as separate model families. Board generations do not share one programming lead. iComply is not a DEA partner. A CAME Gard is the comparison we can specify when the cabinet is finished. Price on application.",
-            "seo_title": "DEA System Vehicle Barriers | Service & Quote",
-            "seo_desc": "DEA STOP and PASS barrier repair or replacement. Price on application.",
-            "seo_keywords": "DEA barrier, DEA STOP, DEA PASS",
-            "products": [
-                {
-                    "id": "dea-system-stop",
-                    "title": "DEA STOP barrier",
-                    "blurb": "DEA STOP cabinet identified from the plate before parts. Price on application.",
-                    "price": "POA",
-                    "handle": "dea-system-stop",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/dea-system.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "dea-system-pass",
-                    "title": "DEA PASS barrier",
-                    "blurb": "DEA PASS lane. Not quoted as a STOP. Price on application.",
-                    "price": "POA",
-                    "handle": "dea-system-pass",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/dea-system.jpg",
-                    "badge": ""
-                }
-            ],
-            "featured": false
-        },
-        "gibidi": {
-            "name": "Gibidi",
-            "slug": "gibidi",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "Gibidi PASS barriers are identified before parts are ordered. iComply does not claim a Gibidi partnership and does not pretend every boom is on the van. A CAME replacement is a separate price on application when the spare lead time is the problem.",
-            "seo_title": "Gibidi Vehicle Barriers | Service & Quote",
-            "seo_desc": "Gibidi PASS barrier identification and repair. Price on application.",
-            "seo_keywords": "Gibidi PASS barrier, Gibidi barrier repair",
-            "products": [
-                {
-                    "id": "gibidi-pass",
-                    "title": "Gibidi PASS barrier",
-                    "blurb": "PASS model, boom section and limit type confirmed first. Price on application.",
-                    "price": "POA",
-                    "handle": "gibidi-pass",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/gibidi.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "gibidi-boom",
-                    "title": "Gibidi PASS boom",
-                    "blurb": "Replacement boom only when the section matches the cabinet. Price on application.",
-                    "price": "POA",
-                    "handle": "gibidi-boom",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/gibidi.jpg",
-                    "badge": ""
-                }
-            ],
-            "featured": false
-        },
-        "cardin": {
-            "name": "Cardin",
-            "slug": "cardin",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "Cardin 24-volt barriers are serviced on smaller private car parks. Radio faults are separated from motor faults before a cabinet is condemned. iComply is not a Cardin partner. An obsolete board is priced against a CAME Gard. Price on application.",
-            "seo_title": "Cardin Vehicle Barriers | Service & Quote",
-            "seo_desc": "Cardin 24V barrier repair and radio faults. Price on application.",
-            "seo_keywords": "Cardin barrier, Cardin 24V barrier",
-            "products": [
-                {
-                    "id": "cardin-barrier",
-                    "title": "Cardin 24V barrier",
-                    "blurb": "Board generation checked before a like-for-like repair. Price on application.",
-                    "price": "POA",
-                    "handle": "cardin-barrier",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/cardin.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "cardin-receiver",
-                    "title": "Cardin radio receiver",
-                    "blurb": "Receiver and fob fault-finding when the loop still opens the lane. Price on application.",
-                    "price": "POA",
-                    "handle": "cardin-receiver",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/cardin.jpg",
-                    "badge": ""
-                }
-            ],
-            "featured": false
-        },
-        "tau": {
-            "name": "Tau",
-            "slug": "tau",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "Tau barriers, including RBLO-style arms, are programmed from the Tau board sticker. A CAME sequence is not written onto a Tau controller. iComply is not a Tau partner. Gearbox failure is compared with a CAME Gard replacement. Price on application.",
-            "seo_title": "Tau Vehicle Barriers | Service & Quote",
-            "seo_desc": "Tau barrier service. Not programmed as a CAME. Price on application.",
-            "seo_keywords": "Tau barrier, Tau RBLO, Tau barrier repair",
-            "products": [
-                {
-                    "id": "tau-barrier",
-                    "title": "Tau barrier cabinet",
-                    "blurb": "Model taken from the board sticker before programming or parts. Price on application.",
-                    "price": "POA",
-                    "handle": "tau-barrier",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/tau.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "tau-boom",
-                    "title": "Tau barrier boom",
-                    "blurb": "Boom matched to the Tau socket. Not a casual swap with a CAME arm. Price on application.",
-                    "price": "POA",
-                    "handle": "tau-boom",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/tau.jpg",
-                    "badge": ""
-                }
-            ],
-            "featured": false
-        },
-        "king-gates": {
-            "name": "King Gates",
-            "slug": "king-gates",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "King Gates is often a gate motor and sometimes a short-lane barrier. Powered gates are assessed against BS EN 12453. A rising arm follows the barrier manufacturer's instructions and the site risk assessment. iComply does not claim a King Gates partnership. A true rising arm is specified as CAME. Price on application.",
-            "seo_title": "King Gates Vehicle Barriers | Service & Quote",
-            "seo_desc": "King Gates barriers and gate motors, scoped separately. Price on application.",
-            "seo_keywords": "King Gates barrier, King Gates gate motor, BS EN 12453",
-            "products": [
-                {
-                    "id": "king-gates-barrier",
-                    "title": "King Gates barrier",
-                    "blurb": "Rising-arm scope only, kept separate from a swinging-gate test. Price on application.",
-                    "price": "POA",
-                    "handle": "king-gates-barrier",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/king-gates.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "king-gates-gate-motor",
-                    "title": "King Gates gate motor",
-                    "blurb": "Powered-gate motor service under gate safety practice, not a barrier checklist. Price on application.",
-                    "price": "POA",
-                    "handle": "king-gates-gate-motor",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/king-gates.jpg",
-                    "badge": ""
-                }
-            ],
-            "featured": false
-        },
-        "hormann": {
-            "name": "Hörmann",
-            "slug": "hormann",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "Hörmann SH barriers are industrial rising arms. They are not Hörmann dock levellers or sectional doors, and the spares are not shared. iComply is not a Hörmann partner. A CAME Gard swap is only offered when the measured lane fits that arm. Price on application.",
-            "seo_title": "Hörmann Vehicle Barriers | Service & Quote",
-            "seo_desc": "Hörmann SH barrier service, distinct from Hörmann doors. Price on application.",
-            "seo_keywords": "Hormann barrier, Hörmann SH barrier, industrial barrier",
-            "products": [
-                {
-                    "id": "hormann-sh",
-                    "title": "Hörmann SH barrier",
-                    "blurb": "SH barrier cabinet, boom and safety devices. Dock equipment is a different visit. Price on application.",
-                    "price": "POA",
-                    "handle": "hormann-sh",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/hormann.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "hormann-boom",
-                    "title": "Hörmann SH boom",
-                    "blurb": "Replacement boom for the SH model on the label. Price on application.",
-                    "price": "POA",
-                    "handle": "hormann-boom",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/hormann.jpg",
-                    "badge": ""
-                }
-            ],
-            "featured": false
-        },
-        "elka": {
-            "name": "ELKA",
-            "slug": "elka",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "ELKA ES barriers are specified by boom length, including long ES arms for wide lanes. A short-lane spring is not fitted to a long arm. iComply is not an ELKA partner. A CAME Gard is not forced onto a lane that is too wide for it. Price on application.",
-            "seo_title": "ELKA Vehicle Barriers | Service & Quote",
-            "seo_desc": "ELKA ES barrier service by boom length. Price on application.",
-            "seo_keywords": "ELKA barrier, ELKA ES, ELKA ES 80",
-            "products": [
-                {
-                    "id": "elka-es",
-                    "title": "ELKA ES barrier",
-                    "blurb": "ES model matched to the measured boom length and footing. Price on application.",
-                    "price": "POA",
-                    "handle": "elka-es",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/elka.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "elka-es-long",
-                    "title": "ELKA long-lane ES barrier",
-                    "blurb": "Longer ES arm, spring pack and loop for the whole vehicle. Price on application.",
-                    "price": "POA",
-                    "handle": "elka-es-long",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/elka.jpg",
-                    "badge": ""
-                }
-            ],
-            "featured": false
-        },
-        "ditec": {
-            "name": "Ditec",
-            "slug": "ditec",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "Ditec Qik barriers are serviced from the Ditec label. Being in the ASSA ABLOY automation family does not make the barrier a door-lock job, and it is not the CAME partnership. iComply can repair the Qik or replace it with a CAME Gard when asked to standardise. Both prices are on application.",
-            "seo_title": "Ditec Vehicle Barriers | Service & Quote",
-            "seo_desc": "Ditec Qik barrier repair. Not an ASSA door partnership. Price on application.",
-            "seo_keywords": "Ditec Qik barrier, Ditec barrier repair",
-            "products": [
-                {
-                    "id": "ditec-qik",
-                    "title": "Ditec Qik barrier",
-                    "blurb": "Qik cabinet and board from the Ditec label. Price on application.",
-                    "price": "POA",
-                    "handle": "ditec-qik",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/ditec.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "ditec-boom",
-                    "title": "Ditec Qik boom",
-                    "blurb": "Boom for that Qik model. Not an ASSA door part. Price on application.",
-                    "price": "POA",
-                    "handle": "ditec-boom",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/ditec.jpg",
-                    "badge": ""
-                }
-            ],
-            "featured": false
-        },
-        "fadini": {
-            "name": "Fadini",
-            "slug": "fadini",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "Fadini Bayt 980 barriers are older Italian arms. Parts are confirmed for that socket before a boom is promised. A non-matching arm is refused. iComply is not a Fadini partner. The supportable replacement is a CAME Gard. Price on application.",
-            "seo_title": "Fadini Vehicle Barriers | Service & Quote",
-            "seo_desc": "Fadini Bayt 980 barrier repair where parts exist. Price on application.",
-            "seo_keywords": "Fadini Bayt barrier, Bayt 980",
-            "products": [
-                {
-                    "id": "fadini-bayt-980",
-                    "title": "Fadini Bayt 980 barrier",
-                    "blurb": "Bayt 980 identification and repair when the part still exists. Price on application.",
-                    "price": "POA",
-                    "handle": "fadini-bayt-980",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/fadini.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "fadini-boom",
-                    "title": "Fadini Bayt boom",
-                    "blurb": "Boom only when the socket matches. Price on application.",
-                    "price": "POA",
-                    "handle": "fadini-boom",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/fadini.jpg",
-                    "badge": ""
-                }
-            ],
-            "featured": false
-        },
-        "centurion": {
-            "name": "Centurion",
-            "slug": "centurion",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "Centurion SECTOR barriers use battery-backed low-voltage logic. A flat battery can look like a dead motor, so both are tested. iComply is not a Centurion partner. Spares lead time is part of the quote. A CAME Gard is priced when one supported range is the goal. Price on application.",
-            "seo_title": "Centurion Vehicle Barriers | Service & Quote",
-            "seo_desc": "Centurion SECTOR barrier battery and motor diagnosis. Price on application.",
-            "seo_keywords": "Centurion SECTOR barrier, Centurion barrier",
-            "products": [
-                {
-                    "id": "centurion-sector",
-                    "title": "Centurion SECTOR barrier",
-                    "blurb": "SECTOR cabinet, battery and motor tested separately. Price on application.",
-                    "price": "POA",
-                    "handle": "centurion-sector",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/centurion.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "centurion-battery",
-                    "title": "Centurion SECTOR battery",
-                    "blurb": "Battery and charging check before the gearbox is condemned. Price on application.",
-                    "price": "POA",
-                    "handle": "centurion-battery",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/centurion.jpg",
-                    "badge": ""
-                }
-            ],
-            "featured": false
-        },
-        "genius": {
-            "name": "Genius",
-            "slug": "genius",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "Genius Rainbow barriers are in the FAAC group and are still not a FAAC 620. Boards, booms and receivers stay with the Genius label. iComply is not a Genius partner. When support for that revision has ended, a CAME Gard is the partner replacement. Price on application.",
-            "seo_title": "Genius Vehicle Barriers | Service & Quote",
-            "seo_desc": "Genius Rainbow barrier service. Not a FAAC 620. Price on application.",
-            "seo_keywords": "Genius Rainbow barrier, Genius barrier repair",
-            "products": [
-                {
-                    "id": "genius-rainbow",
-                    "title": "Genius Rainbow barrier",
-                    "blurb": "Rainbow cabinet identified from the board, not from the FAAC group name. Price on application.",
-                    "price": "POA",
-                    "handle": "genius-rainbow",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/genius.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "genius-receiver",
-                    "title": "Genius Rainbow receiver",
-                    "blurb": "Receiver and boom for that Rainbow revision. Price on application.",
-                    "price": "POA",
-                    "handle": "genius-receiver",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/genius.jpg",
-                    "badge": ""
-                }
-            ],
-            "featured": false
-        },
-        "sea": {
-            "name": "SEA",
-            "slug": "sea",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "SEA Sprint and SEA Storm are different duties. Storm is the heavier of the two. iComply records which model is installed before changing loops or readers. A Sprint is not sped up to do an HGV job. We are not an SEA partner. Price on application.",
-            "seo_title": "SEA Vehicle Barriers | Service & Quote",
-            "seo_desc": "SEA Sprint and Storm barrier service. Price on application.",
-            "seo_keywords": "SEA barrier, SEA Sprint, SEA Storm",
-            "products": [
-                {
-                    "id": "sea-sprint",
-                    "title": "SEA Sprint barrier",
-                    "blurb": "Sprint cabinet for the duty it was built for. Price on application.",
-                    "price": "POA",
-                    "handle": "sea-sprint",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/sea.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "sea-storm",
-                    "title": "SEA Storm barrier",
-                    "blurb": "Heavier Storm lane. Not quoted as a Sprint. Price on application.",
-                    "price": "POA",
-                    "handle": "sea-storm",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/sea.jpg",
-                    "badge": ""
-                }
-            ],
-            "featured": false
-        },
-        "v2": {
-            "name": "V2",
-            "slug": "v2",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "V2 ZARISS barriers are identified from the label and the board before parts are ordered. iComply does not fold V2 into CAME or FAAC. If the label is missing, we photograph the board rather than guess. A CAME Gard is the partner alternative when identification fails. Price on application.",
-            "seo_title": "V2 Vehicle Barriers | Service & Quote",
-            "seo_desc": "V2 ZARISS barrier identification and service. Price on application.",
-            "seo_keywords": "V2 barrier, V2 ZARISS",
-            "products": [
-                {
-                    "id": "v2-zariss",
-                    "title": "V2 ZARISS barrier",
-                    "blurb": "ZARISS label and controller confirmed before parts. Price on application.",
-                    "price": "POA",
-                    "handle": "v2-zariss",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/v2.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "v2-board",
-                    "title": "V2 ZARISS board identification",
-                    "blurb": "Board photograph and identification when the label is missing. Price on application.",
-                    "price": "POA",
-                    "handle": "v2-board",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/v2.jpg",
-                    "badge": ""
-                }
-            ],
-            "featured": false
-        },
-        "aprimatic": {
-            "name": "Aprimatic",
-            "slug": "aprimatic",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "Aprimatic ZT barriers differ by boom length and board. iComply is not an Aprimatic dealer. Handset faults are tested against the safety inputs before another remote is added. A CAME replacement is a separate quote. Price on application.",
-            "seo_title": "Aprimatic Vehicle Barriers | Service & Quote",
-            "seo_desc": "Aprimatic ZT barrier repair. Price on application.",
-            "seo_keywords": "Aprimatic barrier, Aprimatic ZT",
-            "products": [
-                {
-                    "id": "aprimatic-zt",
-                    "title": "Aprimatic ZT barrier",
-                    "blurb": "ZT length and board matched before a parts visit. Price on application.",
-                    "price": "POA",
-                    "handle": "aprimatic-zt",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/aprimatic.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "aprimatic-handset",
-                    "title": "Aprimatic ZT handset",
-                    "blurb": "Handset or receiver work only when the receiver still learns. Price on application.",
-                    "price": "POA",
-                    "handle": "aprimatic-handset",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/aprimatic.jpg",
-                    "badge": ""
-                }
-            ],
-            "featured": false
-        },
-        "proteco": {
-            "name": "Proteco",
-            "slug": "proteco",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "Proteco Strike barriers are quoted from the model on the cabinet, not from a catalogue price. iComply is not a Proteco partner. An unsupported Strike board is not patched forever. The next service cycle can be a CAME Gard. Price on application for either path.",
-            "seo_title": "Proteco Vehicle Barriers | Service & Quote",
-            "seo_desc": "Proteco Strike barrier repair. Price on application.",
-            "seo_keywords": "Proteco Strike barrier, Proteco barrier",
-            "products": [
-                {
-                    "id": "proteco-strike",
-                    "title": "Proteco Strike barrier",
-                    "blurb": "Strike model repair when the board is still supported. Price on application.",
-                    "price": "POA",
-                    "handle": "proteco-strike",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/proteco.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "proteco-boom",
-                    "title": "Proteco Strike boom",
-                    "blurb": "Boom for that Strike model. Price on application.",
-                    "price": "POA",
-                    "handle": "proteco-boom",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/proteco.jpg",
-                    "badge": ""
-                }
-            ],
-            "featured": false
-        },
-        "life-home-integration": {
-            "name": "Life Home Integration",
-            "slug": "life-home-integration",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "Life Supra is a vehicle rising-arm barrier. It is not a fire-alarm, AOV or life-safety product, and the similar name causes the wrong trade to be booked. iComply reads the Life label and orders Life parts. We are not a Life partner. A new rising arm is specified as CAME when replacement is the instruction. Price on application.",
-            "seo_title": "Life Home Integration Vehicle Barriers | Service & Quote",
-            "seo_desc": "Life Supra vehicle barrier. Not a fire or AOV product. Price on application.",
-            "seo_keywords": "Life Supra barrier, Life barrier, vehicle barrier",
-            "products": [
-                {
-                    "id": "life-home-integration-supra",
-                    "title": "Life Supra barrier",
-                    "blurb": "Life Supra vehicle barrier, booked separately from fire systems. Price on application.",
-                    "price": "POA",
-                    "handle": "life-home-integration-supra",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/life-home-integration.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "life-home-integration-boom",
-                    "title": "Life Supra boom",
-                    "blurb": "Supra boom ordered as a Life part. Price on application.",
-                    "price": "POA",
-                    "handle": "life-home-integration-boom",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/life-home-integration.jpg",
-                    "badge": ""
-                }
-            ],
-            "featured": false
-        },
-        "doorhan": {
-            "name": "DoorHan",
-            "slug": "doorhan",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "DoorHan Barrier PRO is serviced as a barrier, not as a DoorHan sectional door. The springs are different parts. iComply is not a DoorHan partner. Footings and loops on older imports are checked rather than trusted. CAME Gard is the partner range when one supported cabinet is wanted. Price on application.",
-            "seo_title": "DoorHan Vehicle Barriers | Service & Quote",
-            "seo_desc": "DoorHan Barrier PRO service, separate from DoorHan doors. Price on application.",
-            "seo_keywords": "DoorHan barrier, Barrier PRO",
-            "products": [
-                {
-                    "id": "doorhan-barrier-pro",
-                    "title": "DoorHan Barrier PRO",
-                    "blurb": "Barrier PRO cabinet, not the door range. Price on application.",
-                    "price": "POA",
-                    "handle": "doorhan-barrier-pro",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/doorhan.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "doorhan-boom",
-                    "title": "DoorHan Barrier PRO boom",
-                    "blurb": "Boom and spring for the barrier, not a door torsion spring. Price on application.",
-                    "price": "POA",
-                    "handle": "doorhan-boom",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/doorhan.jpg",
-                    "badge": ""
-                }
-            ],
-            "featured": false
-        },
-        "liftmaster": {
-            "name": "LiftMaster",
-            "slug": "liftmaster",
-            "services": [
-                "barriers"
-            ],
-            "blurb": "LiftMaster on a UK site is often a gate or garage operator, not a rising-arm barrier. iComply confirms which machine is installed before quoting. We are not a LiftMaster partner. New rising arms are specified as CAME unless you instruct otherwise. Parts lead time is stated rather than guessed. Price on application.",
-            "seo_title": "LiftMaster Vehicle Barriers | Service & Quote",
-            "seo_desc": "LiftMaster barrier or gate operator identification. Price on application.",
-            "seo_keywords": "LiftMaster barrier, LiftMaster gate operator",
-            "products": [
-                {
-                    "id": "liftmaster-barrier",
-                    "title": "LiftMaster barrier operator",
-                    "blurb": "Confirmed barrier operator, with parts lead time in the quote. Price on application.",
-                    "price": "POA",
-                    "handle": "liftmaster-barrier",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/liftmaster.jpg",
-                    "badge": ""
-                },
-                {
-                    "id": "liftmaster-gate",
-                    "title": "LiftMaster gate operator",
-                    "blurb": "Gate operator scope, kept separate from a rising-arm specification. Price on application.",
-                    "price": "POA",
-                    "handle": "liftmaster-gate",
-                    "shopify_product_id": "",
-                    "image": "/assets/images/manufacturers/liftmaster.jpg",
-                    "badge": ""
-                }
-            ],
-            "featured": false
         }
     },
     "images_by_service": {
@@ -7538,7 +6669,8 @@
             "legrand",
             "eaton",
             "mem",
-            "click-scolmore"
+            "click-scolmore",
+            "napit-approved-equipment"
         ],
         "cctv": [
             "hikvision",
@@ -7577,9 +6709,6 @@
             "allegion",
             "lenels2",
             "software-house"
-        ],
-        "barriers": [
-            "came"
         ],
         "door-entry": [
             "videx",
@@ -7679,6 +6808,7 @@
             "static-systems-group",
             "intercall",
             "aid-call",
+            "tunstall",
             "ascom",
             "schrack-seconet",
             "zettler",
@@ -7710,35 +6840,6 @@
             "kingspan-air",
             "flaktgroup",
             "systemair"
-        ],
-        "barriers": [
-            "came",
-            "faac",
-            "bft",
-            "nice",
-            "magnetic-autocontrol",
-            "automatic-systems",
-            "beninca",
-            "roger-technology",
-            "dea-system",
-            "gibidi",
-            "cardin",
-            "tau",
-            "king-gates",
-            "hormann",
-            "elka",
-            "ditec",
-            "fadini",
-            "centurion",
-            "genius",
-            "sea",
-            "v2",
-            "aprimatic",
-            "proteco",
-            "life-home-integration",
-            "doorhan",
-            "liftmaster",
-            "doorking"
         ]
     },
     "keyword_images": {
@@ -7787,11 +6888,6 @@
             "biometric-access-control",
             "proximity-card-reader"
         ],
-        "barriers": [
-            "car-park-barrier-access",
-            "access-control-system",
-            "video-door-entry"
-        ],
         "door-entry": [
             "video-door-entry",
             "door-entry-system",
@@ -7804,7 +6900,7 @@
         ]
     },
     "seo_keywords": {
-        "electrical": "electrical installation, EICR, PAT testing, electrical testing, commercial electrician, EV charger installation, electrical compliance",
+        "electrical": "electrical installation, EICR, PAT testing, certified electrician, commercial electrician, EV charger installation, electrical compliance",
         "fire-alarms": "fire alarm installation, fire alarm servicing, BS 5839, fire detection system, fire alarm certification, commercial fire alarm",
         "emergency-lighting": "emergency lighting installation, BS 5266, emergency lighting testing, emergency lighting certification, landlord emergency lighting",
         "aov-air-handling": "AOV installation, AOV maintenance, smoke vent system, BS 9991, automatic opening vent",
@@ -7815,9 +6911,7 @@
         "access-control": "access control installation, biometric access control, door access control",
         "door-entry": "door entry installation, video door entry, audio door entry, apartment door entry",
         "intercoms": "intercom installation, video intercom, audio intercom, multi tenant intercom",
-        "barriers": "CAME barriers, Gard barrier, gate operators, vehicle barrier installation, barriers partner, install POA",
         "legionella-risk-assessment": "legionella risk assessment, legionella testing, water hygiene, Legionnaires disease, Stockport, Manchester, North West, POA",
-        "asbestos-survey": "asbestos survey, asbestos testing, asbestos management survey, asbestos refurbishment survey, Stockport, Manchester, North West, POA",
-        "barriers": "vehicle barrier, rising arm barrier, CAME partner, CAME Gard, barrier servicing, private car park barrier, UK towns over 10000, price on application"
+        "asbestos-survey": "asbestos survey, asbestos testing, asbestos management survey, asbestos refurbishment survey, Stockport, Manchester, North West, POA"
     }
 }

@@ -80,6 +80,33 @@
             }
         ]
     },
+    "tunstall": {
+        "blurb": "iComply installs, services and upgrades Tunstall nurse call and telecare systems for care homes, extra-care schemes and supported living across the North West. We follow HTM 08-03 guidance, provide staff training handover, and keep call points, pear leads and panels certified under planned maintenance. Care operators and FM teams can buy genuine-fit Tunstall trade spares from our North West shop with rapid engineer support.",
+        "seo_desc": "Tunstall nurse call installation, HTM-aligned service & trade spares from iComply across Manchester & the North West.",
+        "seo_keywords": "Tunstall, Tunstall nurse call, Tunstall installation, Tunstall service, Tunstall telecare, Tunstall call point, Tunstall pear lead, Tunstall spares, Tunstall trade, Tunstall North West, Tunstall Manchester, Tunstall Stockport, HTM 08-03",
+        "products": [
+            {
+                "id": "tunstall-call-point-pack",
+                "title": "Tunstall Call Point & Pear Lead Pack",
+                "blurb": "Replacement call points, pear leads and pull-cord kits for Tunstall nurse call bedrooms and bathrooms.",
+                "price": "From POA",
+                "handle": "tunstall-call-point-pack",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/tunstall.jpg",
+                "badge": "Trade"
+            },
+            {
+                "id": "tunstall-panel-battery-kit",
+                "title": "Tunstall Panel Battery & PSU Kit",
+                "blurb": "Backup batteries and power-supply consumables to keep Tunstall nurse call panels online during service visits.",
+                "price": "From POA",
+                "handle": "tunstall-panel-battery-kit",
+                "shopify_product_id": "",
+                "image": "/assets/images/manufacturers/tunstall.jpg",
+                "badge": "Popular"
+            }
+        ]
+    },
     "uniview": {
         "blurb": "iComply designs and installs Uniview IP CCTV for retail parks, warehouses, housing schemes and commercial sites across Stockport, Manchester and the wider North West. Cameras and NVRs are commissioned to BS EN 62676 with remote viewing handover, and we provide reactive fault-finding plus planned camera cleans and firmware reviews. Trade Uniview mounts, PoE accessories and storage kits are available from our engineer shop for contractors on tight turnarounds.",
         "seo_desc": "Uniview CCTV installation, BS EN 62676 service & trade camera kits from iComply across Manchester & the North West.",
@@ -216,7 +243,7 @@
         ]
     },
     "videx": {
-        "blurb": "We install and service Videx equipment. We programme handsets, set up trade-friendly wiring standards and certify systems for managing agents and freeholders. Ongoing service contracts plus our trade shop for Videx handsets, panels and entrance accessories keep residents connected and doors secure.",
+        "blurb": "iComply is a trusted North West team for Videx door entry — installing audio, video and GSM systems on apartment blocks, HMOs and commercial entrances from Stockport to Liverpool. We programme handsets, set up trade-friendly wiring standards and certify systems for managing agents and freeholders. Ongoing service contracts plus our trade shop for Videx handsets, panels and entrance accessories keep residents connected and doors secure.",
         "seo_desc": "Videx door entry installation, service & trade handsets from iComply. Certified systems across Manchester & the North West.",
         "seo_keywords": "Videx, Videx door entry, Videx installation, Videx service, Videx video entry, Videx GSM, Videx handset, Videx panel, Videx spares, Videx trade, Videx North West, Videx Manchester, Videx Stockport, multi-tenant door entry",
         "products": [

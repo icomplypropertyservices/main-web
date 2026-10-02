@@ -88,6 +88,7 @@ function icomplyFooterHtml(): string
 
     $legalDrop = '<div class="foot-links">';
     $legalDrop .= icomplyNavLink(url('/contact.php'), 'Contact / quote');
+    $legalDrop .= icomplyNavLink('/become-a-subcontractor', 'Work with us');
     $legalDrop .= icomplyNavLink($n['phoneHref'], 'Call ' . $n['phone']);
     $legalDrop .= '<a href="mailto:' . $email . '">' . $email . '</a>';
     foreach ($n['legal'] as $row) {
@@ -110,6 +111,7 @@ function icomplyFooterHtml(): string
     $svcHub = icomplyNavH(url('/pages/services/index.php'));
     $areaHub = icomplyNavH(url('/pages/areas/index.php'));
     $kwHub = icomplyNavH(url('/pages/keywords/index.php'));
+    $subcontract = icomplyNavH('/become-a-subcontractor');
     $privacy = icomplyNavH($n['legal'][0]['href']);
     $terms = icomplyNavH($n['legal'][1]['href']);
     $siteMap = icomplyNavH($n['legal'][2]['href']);
@@ -184,6 +186,7 @@ function icomplyFooterHtml(): string
       <div>© {$year} {$brand}. All rights reserved.</div>
       <div class="foot-base-links">
         <a href="{$contact}">Contact</a>
+        <a href="{$subcontract}">Work with us</a>
         <a href="{$privacy}">Privacy</a>
         <a href="{$terms}">Terms</a>
         <a href="{$siteMap}">Site map</a>

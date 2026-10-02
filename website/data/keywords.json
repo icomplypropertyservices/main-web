@@ -2098,19 +2098,19 @@
         "name": "AOV Near Me",
         "service": "aov-air-handling",
         "related": "aov-engineer",
-        "intro": "Looking for an AOV engineer near you? The yard is 17 Woodlands Park Road, Offerton, Stockport, SK2 5DE. Manchester is the short run. Smoke vents are fire-protection work, so we quote the rest of the UK as well — travel and nights sit on that quote. Town pages list places of 10,000 or more residents. They are not local depots.",
-        "body": "Searchers wanting nearby AOV help often need same-week fault response or a trustworthy maintenance partner for a single block. We offer both: reactive repairs and planned contracts. Share your postcode and a photo of the control panel to start. The AOV town directory covers published UK places of 10,000 or more. A page is a job fact sheet, not a claim we have a van based there. Supply kit prices are listed. Installation, testing and travel are POA.",
-        "meta_desc": "AOV near me? Local smoke-vent engineers across Greater Manchester & the North West. Install, repair & maintain — Icomply Stockport.",
+        "intro": "Looking for AOV near me in the North West? iComply provide local automatic opening vent installation, maintenance, repair and testing from Stockport across 150+ towns in Greater Manchester, Cheshire, Lancashire, Merseyside and beyond. Local engineers mean practical attendance for seized roof vents, panel faults and landlord smoke-control compliance.",
+        "body": "Searchers wanting nearby AOV help often need scheduled fault response or a trustworthy maintenance team for a single block. We offer both: reactive repairs and planned contracts with transparent pricing. Share your postcode and a photo of the control panel to start. Area pages and multi-site packages support agents with buildings spread across the region. Life-safety systems deserve a local specialist, not a distant call centre.",
+        "meta_desc": "AOV near me? Local smoke-vent engineers across Greater Manchester & the North West. Install, repair & maintain — iComply Stockport.",
         "focus_points": [
             "Local North West AOV engineers from Stockport",
             "Reactive repair and planned maintenance nearby",
-            "Town pages for UK places of 10,000 or more — not a depot in each town",
+            "Coverage across 150+ towns and multi-site estates",
             "Fast quote turnaround from photos and postcode"
         ],
         "faq": [
             [
                 "Which towns do you cover for AOV work?",
-                "The yard is in Offerton, Stockport. Manchester is the short run. Other UK places are quoted, and travel sits on that quote. The town directory is the list of published places of 10,000 or more."
+                "Greater Manchester and surrounding counties including many towns in Cheshire, Lancashire and Merseyside — ask with your postcode if unsure."
             ],
             [
                 "How quickly can you get to my building?",
@@ -7468,7 +7468,37 @@
                 "Where the work type requires certification or a formal report, we issue the relevant paperwork with your job pack."
             ]
         ]
-    },    "change-of-use-fire-risk-assessment": {
+    },
+    "certified-electrician": {
+        "name": "Electrical testing",
+        "service": "electrical",
+        "related": "eicr",
+        "intro": "Electrical testing checks fixed wiring, protective devices and the condition of an installation before you rely on it. iComply carries out EICR inspections and electrical testing across Greater Manchester and the North West, then issues the report for the work that was actually tested.",
+        "body": "A visit starts with the board, the earthing and the circuits you need checked. We record what was tested, what was accessible, and what needs remedial work. Quotes are POA once the property and the scope are clear. We do not publish a registration badge on this page.",
+        "meta_desc": "Electrical testing and EICR inspections across Manchester and the North West. POA after the scope is clear. iComply, Stockport.",
+        "focus_points": [
+            "EICR inspections and electrical testing",
+            "Safe isolation and methodical fault diagnosis",
+            "Reports for the circuits that were tested",
+            "POA quotes after the scope is agreed"
+        ],
+        "faq": [
+            [
+                "What does the visit include?",
+                "Inspection and testing of the agreed circuits, with a written outcome. Remedial work is quoted separately."
+            ],
+            [
+                "Will I always get a certificate?",
+                "New circuits, rewires and many alterations need formal certificates. A diagnostic visit may produce a report if no installation work is carried out."
+            ],
+            [
+                "Can you certificate someone else’s work?",
+                "Only after inspection and testing of that work. We certificate installations we have properly verified."
+            ]
+        ],
+        "seo_keywords": "electrical testing, EICR, electrician North West, electrical inspection Stockport"
+    },
+    "change-of-use-fire-risk-assessment": {
         "name": "Change of Use Fire Risk Assessment",
         "service": "fire-risk-assessments",
         "related": "new-premises-fire-risk-assessment",
@@ -8396,7 +8426,7 @@
         "related": "commercial-electrical-maintenance",
         "intro": "A commercial electrician understands three-phase supplies, distribution in risers, emergency lighting and the pressure of trading while works continue. iComply provides commercial electrician services for offices, retail, hospitality and light industrial clients.",
         "body": "We plan isolations with your managers, protect public areas and document changes for facilities files. From socket additions on a shop floor to board replacements in plant rooms, the same discipline applies to safety and paperwork. Ask for a commercial account setup if you manage multiple units.",
-        "meta_desc": "Commercial electrician services across Manchester and the North West. Live-site aware and tested.",
+        "meta_desc": "Commercial electrician services across Manchester and the North West. Live-site aware, tested and certified.",
         "focus_points": [
             "Three-phase and single-phase commercial works",
             "Out-of-hours options for trading premises",
@@ -8547,7 +8577,7 @@
         "name": "Commercial Fire Alarm Service",
         "service": "fire-alarms",
         "related": "fire-alarm-panel",
-        "intro": "Commercial fire alarm service keeps business-critical detection and warning systems inspected and tested under BS 5839. iComply deliver planned maintenance, remedials and reactive support for offices, retail, industrial and leisure premises across the North West. From our Stockport base we provide fixed-scope service visits, multi-site options and engineer reports that facilities and compliance managers can file with confidence.",
+        "intro": "Commercial fire alarm service keeps business-critical detection and warning systems inspected, tested and certified under BS 5839. iComply deliver planned maintenance, remedials and reactive support for offices, retail, industrial and leisure premises across the North West. From our Stockport base we provide fixed-scope service visits, multi-site options and engineer reports that facilities and compliance managers can file with confidence.",
         "body": "Each visit covers control equipment, batteries, field devices on a sampling or full basis as agreed, sounders, interfaces and logbook review. We track outstanding defects to closure and help reduce false alarms through device and environmental advice. Whether you need a single shop unit or a regional estate, commercial service is scheduled around trading hours wherever practical.",
         "meta_desc": "Commercial fire alarm service to BS 5839. Offices, retail & industrial — North West maintenance by iComply.",
         "focus_points": [
@@ -16155,7 +16185,7 @@
         "name": "Fire Alarm Commissioning",
         "service": "fire-alarms",
         "related": "fire-alarm-installation",
-        "intro": "Fire alarm commissioning is the structured proving stage that turns a wired system into a tested, working life-safety installation. iComply commissions new and upgraded systems across Stockport and the wider North West.",
+        "intro": "Fire alarm commissioning is the structured proving stage that turns a wired system into a certified, working life-safety installation. iComply commissions new and upgraded systems across Stockport and the wider North West.",
         "body": "Engineers verify device addresses, zone integrity, sounder levels, battery autonomy and every agreed cause-and-effect action. Snags are closed before certificates are issued, not left as vague ‘client to monitor’ notes. Responsible persons receive a walkthrough so weekly tests start correctly from day one.",
         "meta_desc": "Fire alarm commissioning to BS 5839 across Stockport, Greater Manchester & the North West. Full proving, certs & handover by iComply.",
         "focus_points": [
@@ -20705,7 +20735,37 @@
             ]
         ],
         "seo_keywords": "gas repair, gas boiler repair, gas safety certificates (CP12) repair, emergency gas engineer, gas appliance repair Manchester, gas repair Stockport, North West gas engineer"
-    },    "gas-safe-engineer-stockport": {
+    },
+    "gas-safe-engineer": {
+        "name": "Gas engineer",
+        "service": "gas-systems",
+        "related": "gas-safe-register-engineer",
+        "intro": "Need a gas engineer for a landlord gas safety certificate (CP12), a boiler service or a commercial gas check? iComply inspects appliances and flues across Greater Manchester and the North West and issues the record after the visit. Quotes are POA.",
+        "body": "Whether you need a one-off visit from an engineer or a planned maintenance contract, our team delivers clear quotes, professional workmanship and full Gas Systems documentation. Services include annual landlord checks, boiler servicing, tightness testing, leak investigation, appliance installation and commercial gas support. We explain findings in plain English, leave isolation notices when required, and coordinate multi-property diaries for agents. Coverage spans Manchester, Bolton, Liverpool, Preston and 150+ surrounding towns with appointments booked when the diary allows where capacity and access allow.",
+        "meta_desc": "Gas engineer visits for gas safety certificates (CP12) across the North West. POA after the appliance count. iComply, Stockport.",
+        "focus_points": [
+            "engineers for domestic and light commercial work",
+            "Landlord certificates, servicing, installs and fault finding",
+            "CP12/CP44 and service records after qualifying jobs",
+            "Multi-property scheduling for agents and portfolio landlords"
+        ],
+        "faq": [
+            [
+                "How do I confirm an engineer is gas safety certificates (CP12)?",
+                "Ask what the visit will check and which record you will receive. We issue gas safety certificates (CP12) after the inspection."
+            ],
+            [
+                "Do you cover emergency gas leaks?",
+                "If you smell gas, contact the National Gas Emergency Service immediately. We can attend for investigation and repairs once the situation is safe to work on."
+            ],
+            [
+                "Can one engineer handle certificate and boiler service together?",
+                "Often yes—combining the annual safety check with a manufacturer-style service is efficient when booked in advance."
+            ]
+        ],
+        "seo_keywords": "gas engineer, gas safety certificate CP12, landlord gas check North West, boiler service Stockport"
+    },
+    "gas-safe-engineer-stockport": {
         "name": "Gas engineer Stockport",
         "service": "gas-systems",
         "related": "annual-gas-safety-certificate",
@@ -22370,7 +22430,7 @@
         "related": "panel-upgrade",
         "intro": "Home electrical upgrades modernise boards, circuits and accessories without always needing a full rewire. iComply helps North West households improve capacity, safety devices and lighting layouts with clear, fixed-scope proposals.",
         "body": "Popular upgrades include dual-RCD or RCBO consumer units, additional socket circuits, outdoor supplies and EV-ready isolation. We test existing circuits, highlight any underlying defects, and only recommend what the installation actually needs. Certification and labelled boards make future maintenance straightforward.",
-        "meta_desc": "Home electrical upgrades in Stockport & Greater Manchester — consumer units, circuits & safety devices. BS 7671 electrical work by iComply.",
+        "meta_desc": "Home electrical upgrades in Stockport & Greater Manchester — consumer units, circuits & safety devices. BS 7671 certified work by iComply.",
         "focus_points": [
             "Consumer unit upgrades with modern RCD/RCBO protection",
             "Extra circuits for kitchens, offices and outdoor power",
@@ -22399,7 +22459,7 @@
         "related": "ev-charger-installation",
         "intro": "A home EV charger turns a driveway or garage into a reliable overnight charging bay with safer, faster top-ups than a three-pin trickle lead. iComply designs and installs domestic EV charge points across Stockport, Greater Manchester and the North West, matching charger rating to your supply capacity, earthing arrangement and parking layout. We handle isolation, protective devices, cable routes and certification so your installation is tidy, compliant and ready for daily use.",
         "body": "Survey matters: not every fuse board or PME earthing arrangement suits every charger without additional protection measures. We assess load, discuss tethered versus socket units, smart app features and future-proof cable sizing if a second vehicle is likely. Install day includes mounting, supply circuit, labelling and demonstration. After testing you receive the electrical certification for the new circuit. Whether you drive a pure EV or a plug-in hybrid, we aim for a fixed quote after survey with minimal surprise extras.",
-        "meta_desc": "Home EV charger installation across Greater Manchester & the North West. Domestic charge points from iComply Stockport.",
+        "meta_desc": "Home EV charger installation across Greater Manchester & the North West. Safe, certified domestic charge points from iComply Stockport.",
         "focus_points": [
             "Domestic EV charger survey including supply and earthing checks",
             "Wall-mounted install with dedicated circuit and protection",
@@ -29627,7 +29687,7 @@
     "niceic-certified": {
         "name": "Electrical testing",
         "service": "electrical",
-        "related": "eicr",
+        "related": "certified-electrician",
         "intro": "Electrical testing checks fixed wiring, protective devices and the condition of an installation before you rely on it. iComply carries out EICR inspections and electrical testing across Greater Manchester and the North West, then issues the report for the work that was actually tested.",
         "body": "A visit starts with the board, the earthing and the circuits you need checked. We record what was tested, what was accessible, and what needs remedial work. Quotes are POA once the property and the scope are clear. We do not publish a registration badge on this page.",
         "meta_desc": "Electrical testing and EICR inspections across Manchester and the North West. POA after the scope is clear. iComply, Stockport.",
@@ -31494,7 +31554,7 @@
     "part-p-certified": {
         "name": "Electrical testing",
         "service": "electrical",
-        "related": "eicr",
+        "related": "certified-electrician",
         "intro": "Electrical work in dwellings has to be designed and installed so it is safe to use. iComply carries out electrical testing and EICR inspections for homeowners and landlords across the North West and explains which jobs need a building-regulations notification before we start.",
         "body": "New circuits, consumer unit changes and work in bathrooms are the jobs people most often ask about. We confirm the scope on site, test the work we complete, and issue the paperwork for that work. The quote is POA. This page does not claim a scheme registration.",
         "meta_desc": "Electrical testing for dwellings in the North West. EICR inspections and installation paperwork. POA. iComply, Stockport.",
@@ -35181,7 +35241,7 @@
         "name": "Running Man Exit Signs",
         "service": "emergency-lighting",
         "related": "emergency-exit-lighting",
-        "intro": "Searching for running man exit signs installed and tested to modern escape-route standards? iComply supply and fit pictogram running-man legends with correct arrows for corridors, stairs, final exits and alternative routes across the North West. We install, test and convert as part of our emergency lighting service under BS 5266, leaving monthly/annual test records and duration certificates that satisfy landlords, insurers and auditors.",
+        "intro": "Searching for running man exit signs installed and certified to modern escape-route standards? iComply supply and fit pictogram running-man legends with correct arrows for corridors, stairs, final exits and alternative routes across the North West. We install, test, convert and certify as part of our emergency lighting service under BS 5266, leaving monthly/annual test records and duration certificates that satisfy landlords, insurers and auditors.",
         "body": "Based in Stockport (SK2), we cover Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria. Running-man signage has largely replaced worded EXIT legends; we replace faded, incorrectly arrowed or non-compliant signs and align mounting height and viewing distance with best practice. Options include bulkhead-style, blade, recessed and edge-lit LED units in maintained or non-maintained formats. Whether you manage a care home, warehouse, shop or multi-let office, we quote after survey, complete duration tests where required, and can combine signage works with wider emergency lighting remedials so one visit closes multiple FRA actions.",
         "meta_desc": "Running man exit signs supply & install across Greater Manchester & the North West. BS 5266 LED pictograms, testing & certs from iComply.",
         "focus_points": [
@@ -38474,6 +38534,35 @@
                 "Where the work type requires certification or a formal report, we issue the relevant paperwork with your job pack."
             ]
         ]
+    },
+    "tunstall-nurse-call": {
+        "name": "Tunstall Nurse Call",
+        "service": "nurse-call",
+        "related": "nurse-call-system",
+        "intro": "Tunstall is a major player in telecare and nurse call-related solutions used across social care and supported living. iComply support Tunstall nurse call and call-system installation, maintenance and device replacement across the North West, helping providers keep vulnerable residents connected to staff response.",
+        "body": "We work with care and housing providers on on-site call systems, point devices and related peripherals, coordinating with existing telecare arrangements where they exist. PPM, battery attention and fault-finding reduce silent failures. Stockport engineers document visits for landlord and care governance. Where platforms differ between buildings, we help standardise maintenance even if hardware varies.",
+        "meta_desc": "Tunstall nurse call & care call system support — install, maintain and repair across Greater Manchester & the North West.",
+        "focus_points": [
+            "Tunstall-related call system install and remedial support",
+            "Device and consumable replacements on living estates",
+            "PPM aligned with social care and housing providers",
+            "Clear visit records for compliance evidence"
+        ],
+        "faq": [
+            [
+                "Do you handle dispersed telecare and hardwired nurse call?",
+                "We focus on premises call systems and related devices; dispersed telecare contracts vary. Tell us what is installed and we will confirm scope."
+            ],
+            [
+                "Can you maintain Tunstall equipment in sheltered schemes?",
+                "Yes — subject to access arrangements and system type. Surveys establish what is on site before quoting."
+            ],
+            [
+                "How fast can you attend a failed system?",
+                "We aim for scheduled visits and prioritise life-safety faults when engineer capacity allows."
+            ]
+        ],
+        "seo_keywords": "Tunstall nurse call, Tunstall call system, Tunstall maintenance North West, Tunstall care home, Tunstall engineer Manchester, supported living call system"
     },
     "turf-laying": {
         "name": "Turf Laying",

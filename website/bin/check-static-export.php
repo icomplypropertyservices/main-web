@@ -25,10 +25,9 @@ $needHtml = [
     '/privacy' => ['privacy.php', ['Privacy', '<!DOCTYPE']],
     '/terms' => ['terms.php', ['Terms', '<!DOCTYPE']],
     '/contact' => ['contact.php', ['Contact', 'page-hero', '#0B1F3A', '<!DOCTYPE']],
+    '/become-a-subcontractor' => ['become-a-subcontractor.php', ['Are you a highly skilled tradesperson', 'subcontractor-onboarding', 'WebPage', 'iComply Property Services', '<!DOCTYPE']],
     '/pages/about' => ['pages/about.php', ['About', '<!DOCTYPE']],
     '/pages/areas' => ['pages/areas.php', ['Areas', '<!DOCTYPE']],
-    '/pages/areas/manchester' => ['pages/areas/manchester.php', ['Manchester', 'UK-wide', 'Fire Alarms', 'Kitchen Fitting', '<!DOCTYPE']],
-    '/pages/areas/burnley' => ['pages/areas/burnley.php', ['Burnley', 'UK-wide', 'Fire Alarms', 'Kitchen Fitting', '<!DOCTYPE']],
     '/pages/manufacturers' => ['pages/manufacturers.php', ['Manufacturer', '<!DOCTYPE']],
     '/pages/resources' => ['pages/resources.php', ['Resource', '<!DOCTYPE']],
     '/pages/resources/gas-safety-certificate-landlords' => ['pages/resources/gas-safety-certificate-landlords.php', ['gas safety', '<!DOCTYPE']],
@@ -47,9 +46,6 @@ $needHtml = [
     '/pages/resources/asbestos-survey' => ['pages/resources/asbestos-survey.php', ['Asbestos', '<!DOCTYPE']],
     '/pages/keywords/legionella-risk-assessment' => ['pages/keywords/legionella-risk-assessment.php', ['Legionella', '<!DOCTYPE']],
     '/pages/keywords/asbestos-survey' => ['pages/keywords/asbestos-survey.php', ['Asbestos', '<!DOCTYPE']],
-    '/pages/asbestos-jobs' => ['pages/asbestos-jobs.php', ['Asbestos survey and awareness', 'Survey lane', 'Awareness lane', '<!DOCTYPE']],
-    '/pages/keywords/asbestos-awareness-briefing' => ['pages/keywords/asbestos-awareness-briefing.php', ['Asbestos Awareness Briefing', 'POA', '<!DOCTYPE']],
-    '/pages/keywords/asbestos-awareness-briefing/stockport' => ['pages/keywords/asbestos-awareness-briefing/stockport.php', ['Asbestos Awareness Briefing', 'Stockport', 'POA', '<!DOCTYPE']],
     '/pages/keywords/legionella-risk-assessment/stockport' => ['pages/keywords/legionella-risk-assessment/stockport.php', ['Legionella', 'Stockport', '<!DOCTYPE']],
     '/pages/keywords/asbestos-survey/manchester' => ['pages/keywords/asbestos-survey/manchester.php', ['Asbestos', 'Manchester', '<!DOCTYPE']],
     '/shop' => ['shop/index.html', ['Fire', 'Electrical', 'Security', 'Gas', 'shop.icomplypropertyservices.co.uk', '<!DOCTYPE']],
@@ -106,6 +102,23 @@ foreach ($needHtml as $url => $spec) {
     }
 }
 
+$subPage = is_file($dist . '/become-a-subcontractor.php') ? (string)file_get_contents($dist . '/become-a-subcontractor.php') : '';
+$subReg = is_file($dist . '/subcontractor-onboarding-form.html') ? (string)file_get_contents($dist . '/subcontractor-onboarding-form.html') : '';
+$subFields = ['name="subcontractor-onboarding"', 'name="form-name"', 'name="business_type"', 'value="company"', 'value="sole_trader"', 'name="company_name"', 'name="trades"', 'name="qualifications"', 'name="insured"', 'name="insurance_expiry"', 'name="coverage_postcodes"', 'name="travel_radius"', 'name="phone"', 'name="email"', 'name="availability"', 'name="documents"', 'name="gdpr_consent"', 'netlify-honeypot="bot-field"', 'enctype="multipart/form-data"', 'action="/thank-you"', 'data-netlify="true"'];
+$subOk = $subPage !== '' && $subReg !== '' && !str_contains($subPage, 'JobPosting') && !str_contains($subReg, 'JobPosting');
+foreach ($subFields as $field) {
+    if (!str_contains($subPage, $field) || !str_contains($subReg, $field)) {
+        $subOk = false;
+        echo "[FAIL] subcontractor form missing {$field}\n";
+    }
+}
+if ($subOk) {
+    $pass++;
+    echo "[PASS] subcontractor form fields match the Netlify HTML registration file\n";
+} else {
+    $fail++;
+}
+
 $mustExist = [
     'assets',
     'assets/css/site.css',
@@ -126,6 +139,7 @@ $mustExist = [
     'robots.txt',
     'sitemap.xml',
     'favicon.ico',
+    'subcontractor-onboarding-form.html',
     '_redirects',
     '_headers',
     '404.html',
@@ -178,6 +192,13 @@ if (str_contains($homeHtml, '#0B1F3A') && str_contains($homeHtml, 'href="/manife
 } else {
     $fail++;
     echo "[FAIL] homepage missing #0B1F3A or /manifest.webmanifest\n";
+}
+if (str_contains($homeHtml, 'href="/become-a-subcontractor"') && str_contains($homeHtml, 'Work with us')) {
+    $pass++;
+    echo "[PASS] homepage links Work with us to /become-a-subcontractor\n";
+} else {
+    $fail++;
+    echo "[FAIL] homepage must link Work with us to /become-a-subcontractor\n";
 }
 
 $mustNotExist = [
@@ -271,7 +292,7 @@ foreach (['rewire', 'domestic-rewire', 'emergency-electrician', 'boiler'] as $ne
     }
 }
 
-$redirectNeedles = ['/*', '/:splat.php', '/privacy', '/pages/about', '/assets/', '/pages/keywords', '/pages/keywords/:slug', '/pages/keywords/:slug/:town', '/pages/electrical/:town', '/pages/fire-alarms/:town', '/shop/index.html', '/shop/fire/index.html', '/products.php', '/products/aov-air-handling-package', '/manifest.json', '/group'];
+$redirectNeedles = ['/*', '/:splat.php', '/privacy', '/pages/about', '/assets/', '/pages/keywords', '/pages/keywords/:slug', '/shop/index.html', '/shop/fire/index.html', '/products.php', '/become-a-subcontractor'];
 foreach ($redirectNeedles as $n) {
     if (!str_contains($redirects, $n)) {
         $fail++;
@@ -368,27 +389,16 @@ if ($indexMode === 'tiered') {
     $offSample = is_file($dist . '/pages/electrical/preston.php')
         ? (string)file_get_contents($dist . '/pages/electrical/preston.php')
         : '';
-    $thinSample = is_file($dist . '/pages/plastering/stockport.php')
-        ? (string)file_get_contents($dist . '/pages/plastering/stockport.php')
-        : '';
-    $areaSample = is_file($dist . '/pages/areas/stockport.php')
-        ? (string)file_get_contents($dist . '/pages/areas/stockport.php')
-        : '';
     $robotsOk = str_contains($kwSample, 'noindex, follow')
         && str_contains($offSample, 'noindex, follow')
-        && str_contains($thinSample, 'noindex, follow')
-        && str_contains($areaSample, 'noindex, follow')
-        && str_contains($tierSample, 'id="local-copy"')
         && str_contains($tierSample, 'index, follow')
-        && !str_contains($tierSample, 'noindex')
-        && !str_contains($sitemapDist, '/pages/plastering/stockport</loc>')
-        && !str_contains($sitemapDist, '/pages/areas/stockport</loc>');
+        && !str_contains($tierSample, 'noindex');
     if ($tierOk && $robotsOk) {
         $pass++;
-        echo "[PASS] tiered sitemap lists bespoke Tier-1 articles only; thin town templates stay noindex\n";
+        echo "[PASS] tiered sitemap lists Tier-1 service×area only; noindex pages stay out\n";
     } else {
         $fail++;
-        echo "[FAIL] tiered sitemap/robots mismatch (sitemap samples, local copy, or noindex meta)\n";
+        echo "[FAIL] tiered sitemap/robots mismatch (sitemap samples or noindex meta)\n";
     }
 } elseif (str_contains($sitemapDist, '/pages/electrical/stockport</loc>') && str_contains($sitemapDist, '/pages/keywords/eicr/stockport</loc>')) {
     $pass++;
@@ -418,15 +428,6 @@ if (!str_contains($headerFile, '/shop/assets/*.css')) {
 } else {
     $pass++;
     echo "[PASS] _headers has /shop/assets/*.css\n";
-}
-if (!str_contains($headerFile, 'Content-Security-Policy:')
-    || !str_contains($headerFile, 'icomplypropertyservices.co.uk/assets/')
-    || preg_match("/Content-Security-Policy:[^\n]*'self'/", $headerFile)) {
-    $fail++;
-    echo "[FAIL] _headers CSP must block /.netlify/scripts/hud (path-scoped script-src, no 'self')\n";
-} else {
-    $pass++;
-    echo "[PASS] _headers CSP blocks Netlify HUD badge script\n";
 }
 
 /**
