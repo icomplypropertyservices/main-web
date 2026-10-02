@@ -4,6 +4,7 @@
  */
 require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/share.php';
+require_once SITE_ROOT . '/includes/nav-ia.php';
 
 $pageTitle = 'Site Map | Icomply Property Services';
 $metaDesc = 'Browse the Icomply site map — fire safety, professional and construction services, popular North West areas, manufacturers, keyword guides and XML sitemaps.';
@@ -48,6 +49,9 @@ $mainPages = [
     ['href' => '/shop/gas/', 'label' => 'Shop — Gas'],
     ['href' => '/products', 'label' => 'Products'],
     ['href' => url('/pages/packages.php'), 'label' => 'Packages'],
+    ['href' => url('/pages/packages/let-ready.php'), 'label' => 'Let Ready package'],
+    ['href' => url('/pages/packages/workplace-essentials.php'), 'label' => 'Workplace Essentials package'],
+    ['href' => url('/pages/packages/fire-ready.php'), 'label' => 'Fire Ready package'],
     ['href' => url('/pages/pricing.php'), 'label' => 'Pricing guide'],
     ['href' => url('/pages/landlords.php'), 'label' => 'Landlords'],
     ['href' => url('/pages/commercial.php'), 'label' => 'Commercial / FM'],
@@ -94,6 +98,28 @@ $resourceLinks = [
     ['href' => url('/pages/landlords.php'), 'label' => 'Landlords', 'blurb' => 'EICR, gas, fire and emergency lighting'],
     ['href' => url('/pages/commercial.php'), 'label' => 'Commercial', 'blurb' => 'Fire, electrical and security for sites'],
 ];
+foreach (icomplyQualityHubLinks() as $hub) {
+    $resourceLinks[] = [
+        'href' => $hub['href'],
+        'label' => $hub['label'],
+        'blurb' => 'Quality job hub',
+    ];
+}
+$barrierJob = icomplyBarrierJobHub();
+$resourceLinks[] = [
+    'href' => $barrierJob['href'],
+    'label' => $barrierJob['label'],
+    'blurb' => 'Barrier lane survey and access integration',
+];
+$seenResource = [];
+$resourceLinks = array_values(array_filter($resourceLinks, static function ($link) use (&$seenResource) {
+    $key = (string)($link['href'] ?? '');
+    if ($key === '' || isset($seenResource[$key])) {
+        return false;
+    }
+    $seenResource[$key] = true;
+    return true;
+}));
 
 require SITE_ROOT . '/includes/header.php';
 ?>
@@ -137,6 +163,7 @@ require SITE_ROOT . '/includes/header.php';
         <nav class="flex flex-wrap gap-2" aria-label="Site map sections">
             <?php
             $toc = [
+                'priority' => 'AOV & Barriers',
                 'main-pages' => 'Main pages',
                 'services' => 'Services',
                 'service-areas' => 'Service × area',
@@ -156,6 +183,31 @@ require SITE_ROOT . '/includes/header.php';
                 XML sitemap
             </a>
         </nav>
+    </div>
+</section>
+
+<!-- PRIORITY — Jack is pushing AOV and Barriers -->
+<section id="priority" class="max-w-7xl mx-auto px-6 py-16 md:py-20 scroll-mt-24">
+    <div class="mb-8">
+        <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Priority</div>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">AOV and Barriers</h2>
+        <p class="mt-2 text-zinc-600 max-w-xl">The two lines in the primary nav and footer. Install quotes stay POA after scope.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <?php foreach (icomplyFeaturedPushHubs() as $hub): ?>
+            <a href="<?= htmlspecialchars(icomplyFeaturedPushHref($hub), ENT_QUOTES, 'UTF-8') ?>"
+               class="bg-[#0B1F3A] text-white rounded-3xl p-7 hover:bg-[#ff6b00] transition">
+                <div class="text-xs uppercase tracking-[2px] text-white/70 font-semibold">Priority</div>
+                <h3 class="mt-2 text-2xl font-semibold"><?= htmlspecialchars($hub['title'], ENT_QUOTES, 'UTF-8') ?></h3>
+                <p class="mt-2 text-sm text-white/80"><?= htmlspecialchars($hub['note'], ENT_QUOTES, 'UTF-8') ?></p>
+            </a>
+        <?php endforeach; ?>
+        <a href="<?= htmlspecialchars($barrierJob['href'], ENT_QUOTES, 'UTF-8') ?>"
+           class="bg-white border border-zinc-200 rounded-3xl p-7 hover:border-[#ff6b00] transition">
+            <div class="text-xs uppercase tracking-[2px] text-[#ff6b00] font-semibold">Barrier job</div>
+            <h3 class="mt-2 text-2xl font-semibold text-black"><?= htmlspecialchars($barrierJob['label'], ENT_QUOTES, 'UTF-8') ?></h3>
+            <p class="mt-2 text-sm text-zinc-600">Keyword hub for car-park barrier access.</p>
+        </a>
     </div>
 </section>
 

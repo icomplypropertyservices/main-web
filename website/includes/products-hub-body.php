@@ -88,9 +88,11 @@ function icomplyAovKitImageUrl(string $sku): string {
   </div>
 </section>
 
-<section class="max-w-7xl mx-auto px-6 pb-12">
-  <h2 class="text-2xl font-semibold text-black mb-2">Barrier packs (5m)</h2>
-  <p class="text-sm text-zinc-600 mb-6">SoT supply prices. Install POA. Images from Marketing CAME GARD CDN map.</p>
+<section id="barriers" class="max-w-7xl mx-auto px-6 pb-12 scroll-mt-24">
+  <h2 class="text-2xl font-semibold text-black mb-2">Barriers</h2>
+  <p class="text-sm text-zinc-600 mb-6">5m barrier packs. SoT supply prices. Install POA. Images from Marketing CAME GARD CDN map.
+    <a class="font-semibold text-[#FF6B00]" href="<?= url('/pages/keywords/car-park-barrier-access.php') ?>">Car park barrier access job →</a>
+  </p>
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
     <?php
     $barCame = icomplyBar5mCameGardImageMap();

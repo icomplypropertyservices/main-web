@@ -84,6 +84,17 @@ function icomplyFooterHtml(): string
     }
     $legalDrop .= '</div>';
 
+    $featuredCards = '<div class="foot-featured" aria-label="Priority services">';
+    foreach ($n['featured'] as $hub) {
+        $href = icomplyNavH(icomplyFeaturedPushHref($hub));
+        $featuredCards .= '<a href="' . $href . '"><span>Priority</span><strong>'
+            . icomplyNavH($hub['title']) . '</strong><em>' . icomplyNavH($hub['note']) . '</em></a>';
+    }
+    $barrierJob = $n['barrierJob'];
+    $featuredCards .= '<a href="' . icomplyNavH($barrierJob['href']) . '"><span>Barrier job</span><strong>'
+        . icomplyNavH($barrierJob['label']) . '</strong><em>Lane survey, then a written quote. Install POA.</em></a>';
+    $featuredCards .= '</div>';
+
     $social = function_exists('socialIconsHtml') ? socialIconsHtml('dark') : '';
     $svcHub = icomplyNavH(url('/pages/services/index.php'));
     $areaHub = icomplyNavH(url('/pages/areas/index.php'));
@@ -107,6 +118,7 @@ function icomplyFooterHtml(): string
         <a class="foot-cta foot-cta--quote" href="{$contact}">Request a quote</a>
       </div>
     </div>
+    {$featuredCards}
     <div class="foot-drops">
       <details class="foot-drop" open>
         <summary>Services <span>({$svcCount})</span></summary>
@@ -140,6 +152,7 @@ function icomplyFooterHtml(): string
           <a href="{$areaHub}">Areas</a>
           <a href="{$contact}">Contact</a>
           <a href="/shop/">Trade shop hubs</a>
+          <a href="/products#barriers">Barriers</a>
           <a href="/shop/electrical/">Electrical</a>
           <a href="/shop/fire/">Fire</a>
           <a href="/shop/security/">Security</a>

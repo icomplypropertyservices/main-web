@@ -3,8 +3,8 @@
         "label": "Fire Safety Systems",
         "blurb": "Detection, suppression, doors, FRA and life-safety compliance across the North West.",
         "services": [
-            "fire-alarms",
             "aov-air-handling",
+            "fire-alarms",
             "emergency-lighting",
             "fire-risk-assessments",
             "fire-extinguishers",
@@ -86,6 +86,18 @@
             "groundworks",
             "landscaping",
             "commercial-fit-out"
+        ]
+    },
+    "renewables": {
+        "label": "Renewables",
+        "blurb": "Solar, heat pumps, battery storage and EV charging — survey first, quotes POA after scope.",
+        "services": [
+            "solar-pv",
+            "solar-thermal",
+            "air-source-heat-pumps",
+            "ground-source-heat-pumps",
+            "battery-storage",
+            "ev-charging"
         ]
     }
 }
