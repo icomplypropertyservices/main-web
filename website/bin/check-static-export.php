@@ -231,17 +231,35 @@ if ($kwHubFiles >= 1200) {
     echo "[FAIL] keyword hubs exported={$kwHubFiles} (need >= 1200 sitemap slugs)\n";
 }
 $areaCount = function_exists('getAreas') ? count(getAreas()) : 168;
-$expectTowns = $kwHubFiles * $areaCount;
+$expectTowns = 0;
+if (function_exists('jobTypeExportedAreaNames')) {
+    foreach (glob($kwDir . '/*.php') ?: [] as $file) {
+        $slug = basename($file, '.php');
+        if ($slug === 'index') {
+            continue;
+        }
+        $expectTowns += count(jobTypeExportedAreaNames($slug));
+    }
+} else {
+    $expectTowns = $kwHubFiles * $areaCount;
+}
 if ($kwTownFiles >= max(12, (int)floor($expectTowns * 0.95))) {
     $pass++;
-    echo "[PASS] keyword×town exported={$kwTownFiles} (hubs={$kwHubFiles} areas={$areaCount})\n";
+    echo "[PASS] keyword×town exported={$kwTownFiles} (expect ~{$expectTowns} priority/radius rules, hubs={$kwHubFiles} areas={$areaCount})\n";
 } else {
     $fail++;
-    echo "[FAIL] keyword×town exported={$kwTownFiles} (need ~{$expectTowns} = hubs×all areas)\n";
+    echo "[FAIL] keyword×town exported={$kwTownFiles} (need ~{$expectTowns} for default --keyword-towns=priority)\n";
 }
 
 $elecGasSlugs = function_exists('getElectricalGasMatrixKeywordSlugs') ? getElectricalGasMatrixKeywordSlugs() : [];
-$matrixExpect = count($elecGasSlugs) * $areaCount;
+$matrixExpect = 0;
+if (function_exists('jobTypeExportedAreaNames')) {
+    foreach ($elecGasSlugs as $slug) {
+        $matrixExpect += count(jobTypeExportedAreaNames((string)$slug));
+    }
+} else {
+    $matrixExpect = count($elecGasSlugs) * $areaCount;
+}
 $matrixHave = 0;
 foreach ($elecGasSlugs as $slug) {
     $dir = $kwDir . '/' . $slug;

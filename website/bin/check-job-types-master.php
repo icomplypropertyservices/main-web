@@ -214,9 +214,35 @@ function jobTypesKnownInternalPaths(): array
         '/pages/manufacturers/index' => true,
         '/pages/resources' => true,
         '/shop' => true,
+        '/shop/fire' => true,
+        '/shop/electrical' => true,
+        '/shop/security' => true,
+        '/shop/gas' => true,
         '/products' => true,
         '/sitemap.xml' => true,
+        '/manifest.webmanifest' => true,
+        '/site.webmanifest' => true,
+        '/manifest.json' => true,
+        '/browserconfig.xml' => true,
+        '/robots.txt' => true,
+        '/pages/landlords' => true,
+        '/pages/pricing' => true,
+        '/pages/packages' => true,
+        '/pages/products' => true,
+        '/pages/quote' => true,
+        '/pages/site-map' => true,
+        '/pages/keywords-hub' => true,
     ];
+    foreach (glob(SITE_ROOT . '/pages/*.php') ?: [] as $pageFile) {
+        $base = basename((string)$pageFile, '.php');
+        if ($base !== 'index') {
+            $known['/pages/' . $base] = true;
+        }
+    }
+    foreach (glob(SITE_ROOT . '/pages/*', GLOB_ONLYDIR) ?: [] as $dir) {
+        $known['/pages/' . basename((string)$dir)] = true;
+        $known['/pages/' . basename((string)$dir) . '/index'] = true;
+    }
     foreach (array_keys(getServices()) as $slug) {
         $known['/pages/services/' . $slug] = true;
     }
@@ -260,6 +286,11 @@ function jobTypesHrefError(string $href, string $fromSlug, array $known): ?strin
         $path = $href;
     }
     $path = preg_replace('/[?#].*$/', '', $path) ?? $path;
+    $basePath = (string)(parse_url(SITE_URL, PHP_URL_PATH) ?? '');
+    $basePath = rtrim($basePath, '/');
+    if ($basePath !== '' && ($path === $basePath || str_starts_with($path, $basePath . '/'))) {
+        $path = substr($path, strlen($basePath)) ?: '/';
+    }
     if (str_starts_with($path, '/assets/') || str_starts_with($path, '/favicon')) {
         return null;
     }
@@ -275,6 +306,12 @@ function jobTypesHrefError(string $href, string $fromSlug, array $known): ?strin
         return $pretty . ' (keyword×area not exported)';
     }
     if (preg_match('#^/pages/(resources|packages)/#', $pretty)) {
+        return null;
+    }
+    if (preg_match('#^/shop(/|$)#', $pretty) || preg_match('#^/(manifest|site)\.(webmanifest|json)$#', $pretty)) {
+        return null;
+    }
+    if (is_file(SITE_ROOT . $path) || is_file(SITE_ROOT . $pretty) || is_file(dirname(SITE_ROOT) . $path)) {
         return null;
     }
     return $pretty;

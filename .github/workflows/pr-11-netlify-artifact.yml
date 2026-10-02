@@ -1,0 +1,78 @@
+# Fast hubs-only dist tarball for Ellie to draft-deploy alias pr-11.
+# Does not deploy. Never --prod.
+name: PR11 Netlify dist artifact
+
+on:
+  push:
+    branches:
+      - cursor/seo-ia-wave1-15bf
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  artifact:
+    name: Pack pr-11-netlify-dist.tar.gz
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          coverage: none
+
+      - name: Job-type coverage 1753/1753
+        env:
+          SITE_URL: https://icomplypropertyservices.co.uk
+        run: php website/bin/check-job-types-master.php
+
+      - name: Hubs-only static export
+        env:
+          SITE_URL: https://icomplypropertyservices.co.uk
+        run: php website/bin/static-export.php --keyword-towns=none --out=dist
+        timeout-minutes: 45
+
+      - name: Pack tarball
+        run: |
+          tar -czf pr-11-netlify-dist.tar.gz dist
+          sha256sum pr-11-netlify-dist.tar.gz | tee pr-11-netlify-dist.tar.gz.sha256
+          echo "keyword hubs: $(tar -tzf pr-11-netlify-dist.tar.gz | grep -E 'pages/keywords/[^/]+\.php$' | wc -l)"
+
+      - name: Upload pr-11-netlify-dist artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr-11-netlify-dist
+          path: |
+            pr-11-netlify-dist.tar.gz
+            pr-11-netlify-dist.tar.gz.sha256
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 0
+
+      - name: Publish downloadable prerelease (not production)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release delete pr-11-netlify-draft --yes --cleanup-tag || true
+          gh release create pr-11-netlify-draft \
+            pr-11-netlify-dist.tar.gz \
+            pr-11-netlify-dist.tar.gz.sha256 \
+            --prerelease \
+            --latest=false \
+            --title "PR #11 Netlify dist (draft alias pr-11 — not production)" \
+            --notes "Hubs-only static export (1,753 job-type keyword pages) for Ellie.
+
+          Download: https://github.com/icomplypropertyservices/main-web/releases/download/pr-11-netlify-draft/pr-11-netlify-dist.tar.gz
+
+          Then:
+          tar -xzf pr-11-netlify-dist.tar.gz
+          netlify link --id 545c5016-825a-498c-923d-f5a177875b31
+          netlify deploy --dir=dist --alias pr-11 --message \"PR11 1753 jobs draft for Quality\"
+
+          Never --prod. Do not merge from this artifact."

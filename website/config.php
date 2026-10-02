@@ -600,11 +600,20 @@ function manufacturerTagsHtml(string $serviceSlug): string {
     $html = '';
     foreach (getManufacturers($serviceSlug) as $m) {
         $slug = manufacturerSlugFromName($m);
-        $href = htmlspecialchars(url('/pages/manufacturers/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
         $label = htmlspecialchars($m, ENT_QUOTES, 'UTF-8');
-        $html .= '<a href="' . $href . '" '
-            . 'class="inline-flex items-center gap-1.5 px-4 py-2.5 bg-white border-2 border-zinc-200 rounded-full text-sm text-black font-semibold hover:border-[#ff6b00] hover:text-[#ff6b00] hover:shadow-sm transition" '
-            . 'title="View ' . $label . ' products and service page">'
+        $entry = function_exists('getManufacturerBySlug') ? getManufacturerBySlug($slug) : null;
+        if ($entry) {
+            $href = htmlspecialchars(url('/pages/manufacturers/' . ($entry['slug'] ?? $slug) . '.php'), ENT_QUOTES, 'UTF-8');
+            $html .= '<a href="' . $href . '" '
+                . 'class="inline-flex items-center gap-1.5 px-4 py-2.5 bg-white border-2 border-zinc-200 rounded-full text-sm text-black font-semibold hover:border-[#ff6b00] hover:text-[#ff6b00] hover:shadow-sm transition" '
+                . 'title="View ' . $label . ' products and service page">'
+                . $label
+                . '<span class="text-[#ff6b00]" aria-hidden="true">→</span></a>';
+            continue;
+        }
+        $html .= '<a href="' . htmlspecialchars(url('/pages/manufacturers/index.php'), ENT_QUOTES, 'UTF-8') . '" '
+            . 'class="inline-flex items-center gap-1.5 px-4 py-2.5 bg-zinc-50 border-2 border-dashed border-zinc-300 rounded-full text-sm text-zinc-700 font-semibold hover:border-[#ff6b00] hover:text-[#ff6b00] transition" '
+            . 'title="Brand directory — no dedicated page for ' . $label . '">'
             . $label
             . '<span class="text-[#ff6b00]" aria-hidden="true">→</span></a>';
     }

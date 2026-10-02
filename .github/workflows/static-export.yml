@@ -35,5 +35,24 @@ jobs:
         run: php website/bin/static-export.php
         timeout-minutes: 90
 
+      - name: Pack Netlify dist for Ellie (PR #11 draft alias)
+        if: always() && hashFiles('dist/index.html') != ''
+        run: |
+          tar -czf pr-11-netlify-dist.tar.gz dist
+          sha256sum pr-11-netlify-dist.tar.gz | tee pr-11-netlify-dist.tar.gz.sha256
+          echo "keyword hubs: $(tar -tzf pr-11-netlify-dist.tar.gz | grep -E 'pages/keywords/[^/]+\.php$' | wc -l)"
+
+      - name: Upload pr-11-netlify-dist artifact
+        if: always() && hashFiles('pr-11-netlify-dist.tar.gz') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr-11-netlify-dist
+          path: |
+            pr-11-netlify-dist.tar.gz
+            pr-11-netlify-dist.tar.gz.sha256
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 0
+
       - name: Check pretty-URL HTML
         run: php website/bin/check-static-export.php && php website/bin/check-job-types-master.php --dist=dist --require-dist --skip-render

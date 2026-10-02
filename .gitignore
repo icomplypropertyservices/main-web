@@ -104,6 +104,10 @@ website/sitemap-*.xml
 
 # Netlify static export (generated at build by website/bin/static-export.php)
 /dist/
+/pr-11-netlify-dist.tar.gz
+/pr-11-netlify-dist.tar.gz.sha256
+/pr-11-keywords-only.tar.gz
+/pr-11-keywords-only.tar.gz.sha256
 
 # Local server / temp
 *.tmp
