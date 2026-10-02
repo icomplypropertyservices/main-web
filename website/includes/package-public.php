@@ -7,6 +7,9 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/aov-kit-prices.php';
+if (is_file(__DIR__ . '/service-prices.php')) {
+    require_once __DIR__ . '/service-prices.php';
+}
 
 /**
  * @param array<string,mixed> $product
@@ -58,12 +61,21 @@ function icomplyPackagePublicOverride(array $product): array
     }
 
     if (isset($serviceMap[$handle])) {
+        $priceId = [
+            'electrical-compliance-package' => 'eicr',
+            'gas-safety-package' => 'gas-safety',
+        ][$handle] ?? null;
+        $published = ($priceId !== null && function_exists('icomplyServicePriceById'))
+            ? icomplyServicePriceById($priceId)
+            : null;
         return [
             'href' => function_exists('url') ? url($serviceMap[$handle]) : $serviceMap[$handle],
-            'price' => 'POA',
+            'price' => $published['display'] ?? 'POA',
             'cta' => 'Get a quote',
             'is_aov_package' => false,
-            'blurb' => 'Equipment kits may show list prices; installation and labour are POA.',
+            'blurb' => $published
+                ? ($published['label'] . ' ' . $published['display'] . '. Other work on this package is quoted after scope.')
+                : 'Equipment kits may show list prices; installation and labour are POA.',
         ];
     }
 

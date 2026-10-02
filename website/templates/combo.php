@@ -7,10 +7,14 @@
  * MANUFACTURER_TAGS, MANUFACTURER_IMAGES, KEYWORD_IMAGE_1/2/3
  */
 $poaCombo = function_exists('isPoaService') && isPoaService($SERVICE_SLUG);
+$servicePrice = function_exists('icomplyVisibleServicePrice') ? icomplyVisibleServicePrice($SERVICE_SLUG) : null;
 $pageTitle = $SERVICE_NAME . ' in ' . $AREA . ' | Icomply Property Services';
 $metaDesc = $poaCombo
     ? ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Price on application after scope. Local North West team from Stockport.')
     : ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing & certification. Local engineers. Written quote after scope.');
+if ($servicePrice) {
+    $metaDesc = $servicePrice['label'] . ' ' . $servicePrice['display'] . ' in ' . $AREA . '. ' . $metaDesc;
+}
 $metaKeywords = $SEO_KEYWORDS;
 $ogImage = url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
 
@@ -99,16 +103,23 @@ $schema = [
                 '@type' => 'City',
                 'name' => $areaName,
             ],
-            'offers' => [
+            'offers' => array_filter([
                 '@type' => 'Offer',
-                'name' => ($poaCombo ? 'Price on application — ' : 'Written quote — ') . $serviceName . ' in ' . $areaName,
-                'description' => $poaCombo
-                    ? ('Request a scoped POA quote for ' . $serviceName . ' in ' . $areaName . '. No published fee list.')
-                    : ('Request a written quote for ' . $serviceName . ' in ' . $areaName . '.'),
+                'name' => $servicePrice
+                    ? ($servicePrice['label'] . ' — ' . $servicePrice['display'] . ' in ' . $areaName)
+                    : (($poaCombo ? 'Price on application — ' : 'Written quote — ') . $serviceName . ' in ' . $areaName),
+                'description' => $servicePrice
+                    ? icomplyServicePriceSentence($servicePrice)
+                    : ($poaCombo
+                        ? ('Request a scoped POA quote for ' . $serviceName . ' in ' . $areaName . '. No published fee list.')
+                        : ('Request a written quote for ' . $serviceName . ' in ' . $areaName . '.')),
                 'availability' => 'https://schema.org/InStock',
                 'priceCurrency' => 'GBP',
+                'price' => $servicePrice ? (string)$servicePrice['amount'] : null,
                 'url' => url('/contact.php'),
-            ],
+            ], static function ($v) {
+                return $v !== null;
+            }),
             'brand' => [
                 '@type' => 'Brand',
                 'name' => SITE_NAME,
@@ -190,6 +201,7 @@ $schema = [
                        class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
                 </div>
                 <p class="mt-6 text-sm text-white/60"><?= htmlspecialchars($standards, ENT_QUOTES, 'UTF-8') ?></p>
+                <?= icomplyServicePriceNoteHtml($servicePrice ?? null, 'on-dark') ?>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
                 <img src="<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>"

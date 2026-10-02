@@ -213,18 +213,18 @@ function icomplyElectricalGasNewKeywords(): array
         'EICR Price',
         $e,
         'eicr-cost',
-        'EICR price for a flat, house, HMO or commercial unit is POA. Circuit count, access and number of boards decide the inspection time — we do not invent a pound price here.',
-        'Landlords searching “EICR price” want a clear, written figure before we attend. We ask for bedrooms or floor area, then confirm POA once we know boards and limitations. Reports are coded to BS 7671. Remedial works are priced separately after the findings, also POA. Stockport engineers cover the North West.',
-        'EICR price across Greater Manchester and the North West is POA after we know the installation. No invented £ fees.',
+        'EICR price is £249. That is the published inspection price. Circuit count, access and extra boards can change the visit — anything outside that published price is POA. We do not invent other pound prices.',
+        'Landlords searching “EICR price” get the published figure of £249 for the standard EICR. Reports are coded to BS 7671. Remedial works are priced separately after the findings and stay POA. Stockport engineers cover the North West.',
+        'EICR price is £249. Larger or unusual installations across Greater Manchester and the North West are POA. No other invented £ fees.',
         [
-            'POA inspection fee once boards and access are known',
-            'Remedials quoted separately after coding',
-            'Domestic, landlord and commercial options',
-            'No invented pound prices',
+            'Published EICR price £249',
+            'Remedials quoted separately after coding (POA)',
+            'Domestic, landlord and commercial options outside that price stay POA',
+            'No other invented pound prices',
         ],
         [
-            ['Is EICR price the same as EICR cost?', 'Same intent — both are POA. We use whichever phrase you searched.'],
-            ['Do you publish a from-£ EICR list?', 'No. Property size and access vary too much for an honest invented figure.'],
+            ['Is EICR price the same as EICR cost?', 'Same published price — £249 — unless scope takes the job outside that figure, which is then POA.'],
+            ['Do you publish a from-£ EICR list?', 'The published EICR price is £249. We do not invent a ladder of other starting prices.'],
         ],
         'EICR price, EICR cost POA, electrical certificate price Stockport, landlord EICR price'
     );
@@ -764,18 +764,18 @@ function icomplyElectricalGasNewKeywords(): array
         'Gas Safety Certificate Cost',
         $g,
         'gas-safety-certificate',
-        'Gas safety certificate cost (CP12 / landlord gas safety record) is POA. Appliance count, flues and access decide the visit — we do not invent a pound certificate fee.',
-        'A studio with one combi is not the same as an HMO with several appliances. We confirm the count, then issue a POA figure for the record. Failed appliances are isolated and explained; remedials are extra and also POA. Stockport engineers cover the North West.',
-        'Gas safety certificate cost in Stockport and the North West is POA. No invented £ CP12 fees.',
+        'Gas safety certificate cost (CP12 / landlord gas safety record) is £85. Extra appliances and commercial plant are POA — we do not invent other pound fees.',
+        'The published gas safety price is £85. A studio with one combi is not the same visit as an HMO with several appliances; extra appliances are POA. Failed appliances are isolated and explained; remedials are extra and also POA. Stockport engineers cover the North West.',
+        'Gas safety certificate cost is £85. Extra appliances in Stockport and the North West are POA. No other invented £ fees.',
         [
-            'POA once appliance count is known',
+            'Published gas safety price £85',
+            'Extra appliances and commercial plant are POA',
             'Landlord record issued after a satisfactory check',
-            'Portfolio bookings for agents',
-            'No invented pound prices',
+            'No other invented pound prices',
         ],
         [
-            ['Is the certificate included in the visit?', 'Yes — the agreed gas safety certificate cost includes the record for the appliances we were asked to check.'],
-            ['Do you charge per appliance?', 'Sometimes the quote is structured that way. Either way it is POA, not an invented website £.'],
+            ['Is the certificate included in the visit?', 'Yes — the published £85 gas safety price includes the record for the agreed appliance scope.'],
+            ['Do you charge per appliance?', 'The published gas safety price is £85. Additional appliances are POA, not an invented website £.'],
         ],
         'gas safety certificate cost, CP12 cost, landlord gas certificate price POA'
     );
@@ -786,18 +786,18 @@ function icomplyElectricalGasNewKeywords(): array
         'CP12 Cost',
         $g,
         'cp12',
-        'CP12 cost is POA. The landlord gas safety record depends on how many appliances and flues we must check — we will not invent a pound CP12 fee.',
-        'Agents searching CP12 cost want a bookable figure for one let or a portfolio. We confirm addresses and appliance counts, then write POA terms. Same-day CP12 is capacity-dependent, still POA. See gas safety certificate cost for the same rule in longer wording.',
-        'CP12 cost across Greater Manchester and the North West is POA. No invented £ landlord gas fees.',
+        'CP12 cost is £85 for the published landlord gas safety record. Extra appliances are POA. We do not invent other pound fees.',
+        'The published CP12 price is the same gas safety price: £85. Agents booking several lets or extra appliances get a written POA figure for that extra scope. Same-day CP12 is capacity-dependent and still POA when it sits outside the published price.',
+        'CP12 cost is £85. Extra appliances across Greater Manchester and the North West are POA. No other invented £ fees.',
         [
-            'POA after appliance count is confirmed',
+            'Published CP12 / gas safety price £85',
+            'Extra appliances are POA',
             'Single lets and portfolios',
-            'Digital record after the visit',
-            'No invented pound prices',
+            'No other invented pound prices',
         ],
         [
-            ['Is CP12 cost the same as a boiler service price?', 'No. CP12 is the legal landlord safety record. A service is extra maintenance — also POA if you want both.'],
-            ['Can you do several CP12s in one town?', 'Yes. Batching can reduce travel time. The commercial figure stays POA.'],
+            ['Is CP12 cost the same as a boiler service price?', 'No. The published gas safety / CP12 price is £85. A boiler service is extra maintenance and is POA.'],
+            ['Can you do several CP12s in one town?', 'Yes. The published price is £85 each for the standard record. Batching extra scope stays POA.'],
         ],
         'CP12 cost, CP12 price, landlord gas safety cost POA, CP12 Stockport'
     );
@@ -1540,6 +1540,29 @@ foreach ($existing as $slug => $meta) {
         continue;
     }
     $blob = (string)($meta['intro'] ?? '') . ' ' . (string)($meta['body'] ?? '') . ' ' . (string)($meta['meta_desc'] ?? '');
+    $published = function_exists('icomplyVisibleServicePrice') ? icomplyVisibleServicePrice(null, (string)$slug) : null;
+    if ($published !== null) {
+        $display = (string)$published['display'];
+        $amount = (string)$published['amount'];
+        $otherPounds = false;
+        if (preg_match_all('/£\s*([0-9][0-9,]*)/', $blob, $found)) {
+            foreach ($found[1] as $raw) {
+                if ((int)str_replace(',', '', $raw) !== (int)$amount) {
+                    $otherPounds = true;
+                }
+            }
+        }
+        if (!str_contains($blob, $display) || $otherPounds || !preg_match('/\bPOA\b/i', $blob)) {
+            $meta['intro'] = rtrim((string)($meta['intro'] ?? ''), '.')
+                . '. Published price: ' . $published['label'] . ' ' . $display
+                . '. Other scopes stay POA — no other invented prices.';
+            $meta['meta_desc'] = $published['label'] . ' ' . $display
+                . '. Other scopes in the North West are POA. No other invented £ prices from Icomply, Stockport.';
+            $existing[$slug] = $meta;
+            $patchedPoa++;
+        }
+        continue;
+    }
     $needsPoa = !preg_match('/\bPOA\b/i', $blob);
     $hasInvented = (bool)preg_match('/£\s*\d/', $blob);
     if (!$needsPoa && !$hasInvented) {

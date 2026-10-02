@@ -4,10 +4,14 @@
  * MANUFACTURER_TAGS, MANUFACTURER_IMAGES
  */
 $poaService = function_exists('isPoaService') && isPoaService($SERVICE_SLUG);
+$servicePrice = function_exists('icomplyVisibleServicePrice') ? icomplyVisibleServicePrice($SERVICE_SLUG) : null;
 $pageTitle = $SERVICE_NAME . ' Services | North West';
 $metaDesc = $poaService
     ? ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Price on application after scope. Local team from Stockport. No invented fees.')
     : ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Installation, maintenance, testing & certification. Written quotes after scope. Local engineers from Stockport.');
+if ($servicePrice) {
+    $metaDesc = $servicePrice['label'] . ' ' . $servicePrice['display'] . '. ' . $metaDesc;
+}
 $metaKeywords = $SEO_KEYWORDS;
 $ogImage = url('/assets/images/services/' . $SERVICE_SLUG . '.jpg');
 
@@ -128,16 +132,23 @@ $schema = [
             'areaServed' => array_map(static function ($region) {
                 return ['@type' => 'AdministrativeArea', 'name' => $region];
             }, ['Greater Manchester', 'Lancashire', 'Cheshire', 'Merseyside', 'Cumbria', 'North West England']),
-            'offers' => [
+            'offers' => array_filter([
                 '@type' => 'Offer',
-                'name' => ($poaService ? 'Price on application — ' : 'Written quote — ') . $serviceName,
-                'description' => $poaService
-                    ? ('Request a scoped POA quote for ' . $serviceName . '. No published fee list.')
-                    : ('Request a written quote for ' . $serviceName . ' installation, servicing and certification.'),
+                'name' => $servicePrice
+                    ? ($servicePrice['label'] . ' — ' . $servicePrice['display'])
+                    : (($poaService ? 'Price on application — ' : 'Written quote — ') . $serviceName),
+                'description' => $servicePrice
+                    ? icomplyServicePriceSentence($servicePrice)
+                    : ($poaService
+                        ? ('Request a scoped POA quote for ' . $serviceName . '. No published fee list.')
+                        : ('Request a written quote for ' . $serviceName . ' installation, servicing and certification.')),
                 'availability' => 'https://schema.org/InStock',
                 'priceCurrency' => 'GBP',
+                'price' => $servicePrice ? (string)$servicePrice['amount'] : null,
                 'url' => url('/contact.php'),
-            ],
+            ], static function ($v) {
+                return $v !== null;
+            }),
             'brand' => [
                 '@type' => 'Brand',
                 'name' => SITE_NAME,
@@ -195,6 +206,7 @@ $schema = [
                     <span class="text-[#ff6b00]"><?= htmlspecialchars($svcCopy['hero_accent'] ?? ($poaService ? 'Surveyed, documented, POA.' : 'Installed, tested, certified.'), ENT_QUOTES, 'UTF-8') ?></span>
                 </h1>
                 <p class="mt-6 text-lg text-white/80 max-w-xl"><?= htmlspecialchars($blurb, ENT_QUOTES, 'UTF-8') ?></p>
+                <?= icomplyServicePriceNoteHtml($servicePrice, 'on-dark') ?>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white"><?= $poaService ? 'Request POA quote' : 'Get free quote' ?></a>
                     <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Quote for ' . $serviceName) ?>"

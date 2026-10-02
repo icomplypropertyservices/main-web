@@ -10285,23 +10285,23 @@
         "name": "CP12 Cost",
         "service": "gas-systems",
         "related": "cp12",
-        "intro": "CP12 cost is POA. The landlord gas safety record depends on how many appliances and flues we must check — we will not invent a pound CP12 fee.",
-        "body": "Agents searching CP12 cost want a bookable figure for one let or a portfolio. We confirm addresses and appliance counts, then write POA terms. Same-day CP12 is capacity-dependent, still POA. See gas safety certificate cost for the same rule in longer wording.",
-        "meta_desc": "CP12 cost across Greater Manchester and the North West is POA. No invented £ landlord gas fees.",
+        "intro": "CP12 cost is £85 for the published landlord gas safety record. Extra appliances are POA. We do not invent other pound fees.",
+        "body": "The published CP12 price is the same gas safety price: £85. Agents booking several lets or extra appliances get a written POA figure for that extra scope. Same-day CP12 is capacity-dependent and still POA when it sits outside the published price.",
+        "meta_desc": "CP12 cost is £85. Extra appliances across Greater Manchester and the North West are POA. No other invented £ fees.",
         "focus_points": [
-            "POA after appliance count is confirmed",
+            "Published CP12 / gas safety price £85",
+            "Extra appliances are POA",
             "Single lets and portfolios",
-            "Digital record after the visit",
-            "No invented pound prices"
+            "No other invented pound prices"
         ],
         "faq": [
             [
                 "Is CP12 cost the same as a boiler service price?",
-                "No. CP12 is the legal landlord safety record. A service is extra maintenance — also POA if you want both."
+                "No. The published gas safety / CP12 price is £85. A boiler service is extra maintenance and is POA."
             ],
             [
                 "Can you do several CP12s in one town?",
-                "Yes. Batching can reduce travel time. The commercial figure stays POA."
+                "Yes. The published price is £85 each for the standard record. Batching extra scope stays POA."
             ]
         ],
         "seo_keywords": "CP12 cost, CP12 price, landlord gas safety cost POA, CP12 Stockport"
@@ -12481,27 +12481,27 @@
         "name": "EICR Cost",
         "service": "electrical",
         "related": "eicr",
-        "intro": "EICR cost depends on property size, number of circuits, access and whether the installation is domestic, HMO or commercial. Icomply gives straightforward EICR pricing guidance and fixed quotes after we know bedrooms, consumer unit layout or floor area—so landlords and businesses across Greater Manchester and the North West can budget without open-ended day rates. From Stockport we keep fees competitive while still allowing proper testing time; rushed cheap tests often miss faults that cost more later. Pricing for this search is POA after we confirm scope — Icomply does not invent pound prices.",
-        "body": "A one-bedroom flat with a modern board costs less than a large HMO or a multi-board commercial unit. Factors that influence EICR cost include storeys, outbuildings, difficulty of isolation, and how much remedial work might be expected. We quote the inspection clearly, then price remedials separately against coded findings so you are not paying for repairs you may not need. Ask about portfolio rates if you manage several rentals—batching visits reduces travel and admin cost per address Cost and price enquiries are answered with a written POA quote, never a guessed £ figure.",
-        "meta_desc": "EICR Cost in the North West is POA after scope. No invented £ prices from Icomply, Stockport.",
+        "intro": "EICR cost is £249. That published inspection price is what we show for a standard EICR. Property size, circuit count and access can move a job outside it — those visits are POA. Icomply does not invent other pound prices.",
+        "body": "A one-bedroom flat with a modern board is not the same visit as a large HMO or a multi-board commercial unit. The published EICR price is £249. We quote remedials separately against coded findings, and those remedials are POA. Portfolio visits are also POA. Cost and price enquiries outside the published EICR price are answered with a written POA quote, never a guessed £ figure.",
+        "meta_desc": "EICR cost is £249. Other EICR scopes in the North West are POA. No other invented £ prices from Icomply, Stockport.",
         "focus_points": [
-            "Transparent EICR pricing by property type and circuit count",
-            "Fixed quotes once access and size are confirmed",
+            "Published EICR price £249",
+            "POA once the installation is outside that scope",
             "Remedials priced separately against report codes",
-            "Portfolio discounts for multi-property landlords and agents"
+            "No other invented pound prices"
         ],
         "faq": [
             [
                 "Why do EICR prices vary so much online?",
-                "Ultra-low prices may limit testing time or exclude larger properties. A proper EICR needs safe isolation, full circuit tests and a thorough report—we price for that standard."
+                "The published EICR price is £249. Ultra-low advertised prices may limit testing time. Work outside that published price is POA."
             ],
             [
                 "Is the certificate included in the EICR cost?",
-                "Yes. Our quoted inspection fee includes the formal Electrical Installation Condition Report for the agreed scope."
+                "Yes. The published £249 inspection price includes the formal Electrical Installation Condition Report for the agreed scope."
             ],
             [
                 "Do you charge extra for evenings or weekends?",
-                "Out-of-hours commercial testing can attract a premium when isolation must happen outside normal hours—we confirm any uplift before booking."
+                "Out-of-hours testing can be POA when isolation must happen outside normal hours — we confirm that before booking. We do not invent another pound fee here."
             ]
         ],
         "seo_keywords": "EICR cost, EICR price, how much is an EICR, landlord EICR cost Manchester, electrical certificate cost Stockport, commercial EICR price North West"
@@ -12535,23 +12535,23 @@
         "name": "EICR Price",
         "service": "electrical",
         "related": "eicr-cost",
-        "intro": "EICR price for a flat, house, HMO or commercial unit is POA. Circuit count, access and number of boards decide the inspection time — we do not invent a pound price here.",
-        "body": "Landlords searching “EICR price” want a clear, written figure before we attend. We ask for bedrooms or floor area, then confirm POA once we know boards and limitations. Reports are coded to BS 7671. Remedial works are priced separately after the findings, also POA. Stockport engineers cover the North West.",
-        "meta_desc": "EICR price across Greater Manchester and the North West is POA after we know the installation. No invented £ fees.",
+        "intro": "EICR price is £249. That is the published inspection price. Circuit count, access and extra boards can change the visit — anything outside that published price is POA. We do not invent other pound prices.",
+        "body": "Landlords searching “EICR price” get the published figure of £249 for the standard EICR. Reports are coded to BS 7671. Remedial works are priced separately after the findings and stay POA. Stockport engineers cover the North West.",
+        "meta_desc": "EICR price is £249. Larger or unusual installations across Greater Manchester and the North West are POA. No other invented £ fees.",
         "focus_points": [
-            "POA inspection fee once boards and access are known",
-            "Remedials quoted separately after coding",
-            "Domestic, landlord and commercial options",
-            "No invented pound prices"
+            "Published EICR price £249",
+            "Remedials quoted separately after coding (POA)",
+            "Domestic, landlord and commercial options outside that price stay POA",
+            "No other invented pound prices"
         ],
         "faq": [
             [
                 "Is EICR price the same as EICR cost?",
-                "Same intent — both are POA. We use whichever phrase you searched."
+                "Same published price — £249 — unless scope takes the job outside that figure, which is then POA."
             ],
             [
                 "Do you publish a from-£ EICR list?",
-                "No. Property size and access vary too much for an honest invented figure."
+                "The published EICR price is £249. We do not invent a ladder of other starting prices."
             ]
         ],
         "seo_keywords": "EICR price, EICR cost POA, electrical certificate price Stockport, landlord EICR price"
@@ -20885,23 +20885,23 @@
         "name": "Gas Safety Certificate Cost",
         "service": "gas-systems",
         "related": "gas-safety-certificate",
-        "intro": "Gas safety certificate cost (CP12 / landlord gas safety record) is POA. Appliance count, flues and access decide the visit — we do not invent a pound certificate fee.",
-        "body": "A studio with one combi is not the same as an HMO with several appliances. We confirm the count, then issue a POA figure for the record. Failed appliances are isolated and explained; remedials are extra and also POA. Stockport engineers cover the North West.",
-        "meta_desc": "Gas safety certificate cost in Stockport and the North West is POA. No invented £ CP12 fees.",
+        "intro": "Gas safety certificate cost (CP12 / landlord gas safety record) is £85. Extra appliances and commercial plant are POA — we do not invent other pound fees.",
+        "body": "The published gas safety price is £85. A studio with one combi is not the same visit as an HMO with several appliances; extra appliances are POA. Failed appliances are isolated and explained; remedials are extra and also POA. Stockport engineers cover the North West.",
+        "meta_desc": "Gas safety certificate cost is £85. Extra appliances in Stockport and the North West are POA. No other invented £ fees.",
         "focus_points": [
-            "POA once appliance count is known",
+            "Published gas safety price £85",
+            "Extra appliances and commercial plant are POA",
             "Landlord record issued after a satisfactory check",
-            "Portfolio bookings for agents",
-            "No invented pound prices"
+            "No other invented pound prices"
         ],
         "faq": [
             [
                 "Is the certificate included in the visit?",
-                "Yes — the agreed gas safety certificate cost includes the record for the appliances we were asked to check."
+                "Yes — the published £85 gas safety price includes the record for the agreed appliance scope."
             ],
             [
                 "Do you charge per appliance?",
-                "Sometimes the quote is structured that way. Either way it is POA, not an invented website £."
+                "The published gas safety price is £85. Additional appliances are POA, not an invented website £."
             ]
         ],
         "seo_keywords": "gas safety certificate cost, CP12 cost, landlord gas certificate price POA"

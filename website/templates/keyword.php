@@ -16,6 +16,7 @@ $keywordName = $KEYWORD_NAME;
 $keywordSlug = $KEYWORD_SLUG;
 $serviceName = $SERVICE_NAME;
 $serviceSlug = $SERVICE_SLUG;
+$servicePrice = function_exists('icomplyVisibleServicePrice') ? icomplyVisibleServicePrice(null, $keywordSlug) : null;
 $relatedSlug = $RELATED_SLUG;
 $relatedName = $RELATED_NAME;
 $allAreas = getAreas();
@@ -35,19 +36,30 @@ if (empty($_SESSION['csrf'])) {
 
 require_once SITE_ROOT . '/includes/share.php';
 require SITE_ROOT . '/includes/header.php';
+$keywordServiceSchema = [
+    '@type' => 'Service',
+    'name' => $keywordName,
+    'description' => $metaDesc,
+    'provider' => ['@type' => 'LocalBusiness', 'name' => SITE_NAME, 'telephone' => PHONE, 'url' => SITE_URL],
+    'areaServed' => 'North West England',
+    'serviceType' => $serviceName,
+    'url' => $canonicalUrl,
+];
+if ($servicePrice) {
+    $keywordServiceSchema['offers'] = [
+        '@type' => 'Offer',
+        'name' => $servicePrice['label'],
+        'price' => (string)$servicePrice['amount'],
+        'priceCurrency' => 'GBP',
+        'description' => icomplyServicePriceSentence($servicePrice),
+        'url' => url('/contact.php'),
+    ];
+}
 ?>
 <script type="application/ld+json"><?= json_encode([
     '@context' => 'https://schema.org',
     '@graph' => [
-        [
-            '@type' => 'Service',
-            'name' => $keywordName,
-            'description' => $metaDesc,
-            'provider' => ['@type' => 'LocalBusiness', 'name' => SITE_NAME, 'telephone' => PHONE, 'url' => SITE_URL],
-            'areaServed' => 'North West England',
-            'serviceType' => $serviceName,
-            'url' => $canonicalUrl,
-        ],
+        $keywordServiceSchema,
         [
             '@type' => 'BreadcrumbList',
             'itemListElement' => [
@@ -81,6 +93,7 @@ require SITE_ROOT . '/includes/header.php';
         <p class="mt-5 text-lg md:text-xl text-white max-w-2xl leading-relaxed font-medium drop-shadow">
             <?= htmlspecialchars($KEYWORD_INTRO, ENT_QUOTES, 'UTF-8') ?>
         </p>
+        <?= icomplyServicePriceNoteHtml($servicePrice, 'on-dark') ?>
         <div class="mt-8 flex flex-wrap gap-3">
             <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-bold text-white shadow-lg">Get free quote</a>
             <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode($keywordName . ' quote') ?>"

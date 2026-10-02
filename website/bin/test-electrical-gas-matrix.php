@@ -56,8 +56,15 @@ foreach (array_merge($elec, $gas) as $slug => $meta) {
         (string)($meta['meta_desc'] ?? ''),
         json_encode($meta['faq'] ?? []),
     ]);
-    if (preg_match('/£\s*\d/', $blob)) {
-        $poundHits[] = $slug;
+    $published = function_exists('icomplyVisibleServicePrice') ? icomplyVisibleServicePrice(null, (string)$slug) : null;
+    $allowedAmount = $published['amount'] ?? null;
+    if (preg_match_all('/£\s*([0-9][0-9,]*)/', $blob, $found)) {
+        foreach ($found[1] as $raw) {
+            $amount = (int)str_replace(',', '', $raw);
+            if ($allowedAmount === null || $amount !== (int)$allowedAmount) {
+                $poundHits[] = $slug . ':' . $raw;
+            }
+        }
     }
     if (isCostStyleKeyword((string)$slug, $name) && !preg_match('/\bPOA\b/i', $blob)) {
         $costMissingPoa[] = $slug;

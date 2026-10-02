@@ -216,9 +216,14 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
     $svcName = $s['services'][$svcSlug] ?? keywordDisplayName($svcSlug);
     $areaSlugVal = areaSlug($areaName);
     $poa = function_exists('isPoaService') && isPoaService($svcSlug);
-    $priceLine = $poa
-        ? 'Price on application after we confirm property type, access and scope. No catalogue fee.'
-        : 'Written quote after we confirm scope. We do not invent a price on this page.';
+    $visiblePrice = function_exists('icomplyVisibleServicePrice')
+        ? icomplyVisibleServicePrice(null, $keywordSlug)
+        : null;
+    $priceLine = $visiblePrice
+        ? icomplyServicePriceSentence($visiblePrice)
+        : ($poa
+            ? 'Price on application after we confirm property type, access and scope. No catalogue fee.'
+            : 'Written quote after we confirm scope. We do not invent a price on this page.');
 
     $intro = function_exists('seo_unique_intro')
         ? seo_unique_intro($svcName, $svcSlug, $areaName)
@@ -296,9 +301,14 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     $svcName = $s['services'][$serviceSlug];
     $areaSlugVal = areaSlug($areaName);
     $poa = function_exists('isPoaService') && isPoaService($serviceSlug);
-    $priceLine = $poa
-        ? 'Price on application after scope. No invented catalogue price.'
-        : 'Written quote after scope is agreed.';
+    $visiblePrice = function_exists('icomplyVisibleServicePrice')
+        ? icomplyVisibleServicePrice($serviceSlug)
+        : null;
+    $priceLine = $visiblePrice
+        ? icomplyServicePriceSentence($visiblePrice)
+        : ($poa
+            ? 'Price on application after scope. No invented catalogue price.'
+            : 'Written quote after scope is agreed.');
     $intro = function_exists('seo_unique_intro')
         ? seo_unique_intro($svcName, $serviceSlug, $areaName)
         : $svcName . ' in ' . $areaName . '.';

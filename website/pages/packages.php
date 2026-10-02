@@ -1,7 +1,7 @@
 <?php
 /**
  * Multi-service compliance packages — Landlord, Fire, Security, Full FM.
- * Pricing shown as "from" / POA only (no fabricated fixed prices).
+ * The compliance bundle uses the service-price catalogue. Other packages stay POA.
  */
 require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/partials.php';
@@ -28,13 +28,33 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
  * Packages: honest "from" / POA only — no invented catalogue prices.
  * Related service slugs link to existing hub pages.
  */
+$bundlePrice = function_exists('icomplyServicePriceById') ? icomplyServicePriceById('compliance-bundle') : null;
 $packages = [
+    [
+        'id' => 'compliance-bundle',
+        'name' => 'Compliance bundle',
+        'tagline' => 'Published multi-certificate bundle',
+        'badge' => 'Published price',
+        'highlight' => true,
+        'price_label' => '',
+        'price' => $bundlePrice['display'] ?? 'POA',
+        'price_note' => 'Published bundle price. Work outside the bundle is quoted after scope.',
+        'ideal' => 'Landlords and agents who want one scoped compliance visit',
+        'includes' => [
+            'EICR',
+            'Gas safety',
+            'FRA',
+            'Single documentation pack for the agreed scope',
+        ],
+        'service_slugs' => ['electrical', 'gas-systems', 'fire-risk-assessments', 'landlord-compliance'],
+        'wa_text' => 'Hi Icomply, I need a quote for the compliance bundle',
+    ],
     [
         'id' => 'landlord',
         'name' => 'Landlord Essentials',
         'tagline' => 'Core certificates for rented residential stock',
         'badge' => 'Most popular',
-        'highlight' => true,
+        'highlight' => false,
         'price_label' => 'From',
         'price' => 'POA',
         'price_note' => 'Scoped per property / portfolio — fixed quote after survey',
@@ -158,7 +178,7 @@ require SITE_ROOT . '/includes/header.php';
 </section>
 
 <?= sectionTrustStrip([
-    ['Honest pricing', 'Shown as From / POA — fixed quote after we agree scope'],
+    ['Honest pricing', 'Compliance bundle uses the published price — other packages are POA'],
     ['One visit plan', 'Combine services where practical to cut access days'],
     ['Audit-ready packs', 'Certificates & reports in one place for insurers'],
     ['Local engineers', 'Stockport-based team covering Greater Manchester & NW'],
@@ -169,10 +189,9 @@ require SITE_ROOT . '/includes/header.php';
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
         <div>
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Choose a package</div>
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Four ways to stay compliant</h2>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Ways to stay compliant</h2>
             <p class="mt-2 text-zinc-600 max-w-2xl">
-                Packages are starting points — we tailor scope to your buildings, system brands and renewals.
-                Prices are <strong class="text-black">from / POA</strong> only; you always get a fixed quote before work starts.
+                The compliance bundle has a published price. Other packages stay POA until scope is agreed.
             </p>
         </div>
         <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Browse single services →</a>

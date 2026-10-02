@@ -6,8 +6,8 @@
 require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/share.php';
 
-$pageTitle = 'Pricing Guide | From £X Estimates North West';
-$metaDesc = 'Transparent property compliance pricing guide for Greater Manchester and the North West. EICR, gas safety, fire alarm service, emergency lighting tests, CCTV and more — From £X estimates clearly labelled as guide only, not a quote. Free fixed-price quotes.';
+$pageTitle = 'Pricing Guide | Published Service Prices North West';
+$metaDesc = 'Published service prices for Greater Manchester and the North West: EICR, FRA, gas safety and the compliance bundle. Every other service is POA after scope.';
 $metaKeywords = 'EICR cost North West, gas safety certificate price, fire alarm service cost, emergency lighting test price, CCTV camera install cost, property compliance pricing Manchester, Stockport';
 $ogImage = url('/assets/images/services/electrical.jpg');
 $canonicalUrl = url('/pages/pricing.php');
@@ -39,37 +39,37 @@ $categories = [
         'items' => [
             [
                 'name' => 'EICR — 1-bed flat / small studio',
-                'from' => '£129',
+                'from' => 'POA',
                 'typical' => 'Guide for a compact flat with a standard consumer unit and straightforward access.',
                 'includes' => 'Visual inspection, circuit testing, BS 7671 report & certificate',
             ],
             [
                 'name' => 'EICR — 2–3 bed house',
-                'from' => '£159',
+                'from' => 'POA',
                 'typical' => 'Most common landlord / homeowner scope in Greater Manchester stock.',
                 'includes' => 'Full installation condition report, C1/C2/FI coding, digital certificate',
             ],
             [
                 'name' => 'EICR — 4+ bed / large house',
-                'from' => '£219',
+                'from' => 'POA',
                 'typical' => 'Larger domestic properties with more circuits or outbuildings.',
                 'includes' => 'Extended circuit schedule, report & recommendations',
             ],
             [
-                'name' => 'EICR — small commercial / multi-let',
-                'from' => '£249',
-                'typical' => 'Shops, small offices, HMOs — often POA once board layout is known.',
-                'includes' => 'Commercial-grade report suitable for insurers & managing agents',
+                'name' => 'EICR',
+                'from' => 'POA',
+                'typical' => 'Published EICR price. Larger boards, HMOs and commercial installations are quoted after scope.',
+                'includes' => 'Visual inspection, circuit testing, BS 7671 report and certificate for the agreed scope',
             ],
             [
                 'name' => 'PAT testing (portable appliances)',
-                'from' => '£49',
+                'from' => 'POA',
                 'typical' => 'Call-out / first batch guide; per-item rates apply on larger inventories.',
                 'includes' => 'Testing, labelling & schedule of results',
             ],
             [
                 'name' => 'Consumer unit upgrade (domestic)',
-                'from' => '£450',
+                'from' => 'POA',
                 'typical' => 'Varies heavily with board type, RCD/RCBO layout and rewiring needed.',
                 'includes' => 'Supply, install, certification (parts & labour scoped on quote)',
             ],
@@ -83,20 +83,20 @@ $categories = [
         'intro' => 'Gas Safe landlord certificates and appliance checks. Appliance count and flue type affect price.',
         'items' => [
             [
-                'name' => 'Landlord gas safety (CP12) — 1 appliance',
-                'from' => '£69',
+                'name' => 'Landlord gas safety (CP12)',
+                'from' => 'POA',
                 'typical' => 'Typical single boiler / gas fire landlord check in the North West.',
                 'includes' => 'Gas Safe record, safety checks, tenant-ready certificate',
             ],
             [
                 'name' => 'Landlord gas safety — extra appliance',
-                'from' => '£25',
+                'from' => 'POA',
                 'typical' => 'Per additional appliance on the same visit (e.g. second fire / hob).',
                 'includes' => 'Added to same CP12 visit where practical',
             ],
             [
                 'name' => 'Boiler service (domestic)',
-                'from' => '£79',
+                'from' => 'POA',
                 'typical' => 'Annual service guide; manufacturer-specific work may differ.',
                 'includes' => 'Service, safety checks & basic report',
             ],
@@ -116,20 +116,26 @@ $categories = [
         'intro' => 'Service, inspection and certification. Point count, panel type (conventional vs addressable) and building layout set the real figure.',
         'items' => [
             [
+                'name' => 'FRA (fire risk assessment)',
+                'from' => 'POA',
+                'typical' => 'Published price for a standard fire risk assessment. Complex or multi-occupied buildings are quoted after scope.',
+                'includes' => 'Suitable and sufficient FRA and a prioritised action plan for the agreed premises',
+            ],
+            [
                 'name' => 'Fire alarm service — small conventional',
-                'from' => '£129',
-                'typical' => 'Guide for a compact system (e.g. small shop / office) with limited devices.',
+                'from' => 'POA',
+                'typical' => 'Quoted after we know the panel and device count. No separate published price.',
                 'includes' => 'Service visit, function checks, certificate / logbook update',
             ],
             [
                 'name' => 'Fire alarm service — addressable (small–medium)',
-                'from' => '£189',
+                'from' => 'POA',
                 'typical' => 'Typical multi-let or medium commercial panel with moderate device count.',
                 'includes' => 'BS 5839 inspection, battery check, defect notes',
             ],
             [
                 'name' => 'Fire alarm service — larger multi-zone / multi-panel',
-                'from' => '£279',
+                'from' => 'POA',
                 'typical' => 'Larger sites often move to planned contracts — ask for a package quote.',
                 'includes' => 'Extended service, prioritised defect report',
             ],
@@ -150,13 +156,13 @@ $categories = [
         'items' => [
             [
                 'name' => 'Emergency lighting annual duration test — small site',
-                'from' => '£99',
+                'from' => 'POA',
                 'typical' => 'Guide for a limited number of self-contained fittings on one visit.',
                 'includes' => 'Duration / discharge test, results record, certificate',
             ],
             [
                 'name' => 'Emergency lighting test — medium commercial',
-                'from' => '£159',
+                'from' => 'POA',
                 'typical' => 'Multi-floor offices, retail or residential blocks with more luminaires.',
                 'includes' => 'BS 5266 testing programme entry & defect list',
             ],
@@ -168,7 +174,7 @@ $categories = [
             ],
             [
                 'name' => 'LED emergency conversion / new fittings',
-                'from' => '£85',
+                'from' => 'POA',
                 'typical' => 'Per fitting guide where access is straightforward; bulk rates available.',
                 'includes' => 'Supply & install scoped on site survey',
             ],
@@ -183,31 +189,31 @@ $categories = [
         'items' => [
             [
                 'name' => 'CCTV — single camera add-on (existing system)',
-                'from' => '£149',
+                'from' => 'POA',
                 'typical' => 'Guide where spare NVR channel, power and nearby cable route exist.',
                 'includes' => 'Camera, labour for straightforward add-on, basic config',
             ],
             [
                 'name' => 'CCTV — single camera + basic recorder kit',
-                'from' => '£349',
+                'from' => 'POA',
                 'typical' => 'Entry-level 1-camera system with local recording (parts grade varies).',
                 'includes' => 'Camera, NVR/DVR option, install & app setup where required',
             ],
             [
                 'name' => 'CCTV — 4-camera domestic / small commercial',
-                'from' => '£799',
+                'from' => 'POA',
                 'typical' => 'Popular package size; final price depends on cable runs and brand.',
                 'includes' => 'Multi-camera design, install, recording & remote viewing setup',
             ],
             [
                 'name' => 'Intruder alarm service / health-check',
-                'from' => '£89',
+                'from' => 'POA',
                 'typical' => 'Service visit for an existing wired or wireless system.',
                 'includes' => 'Function test, battery check, basic report',
             ],
             [
                 'name' => 'Access control — single door',
-                'from' => '£449',
+                'from' => 'POA',
                 'typical' => 'Reader, lock hardware and controller complexity vary by brand (e.g. Paxton).',
                 'includes' => 'Survey-led install quote; fire-release integration optional',
             ],
@@ -221,14 +227,20 @@ $categories = [
         'intro' => 'Combining certificates and services on one visit often reduces total cost versus booking separately.',
         'items' => [
             [
+                'name' => 'Compliance bundle',
+                'from' => 'POA',
+                'typical' => 'Published bundle price. Remedials and work outside the bundle are quoted after scope.',
+                'includes' => 'Combined compliance visit for the agreed bundle scope',
+            ],
+            [
                 'name' => 'Landlord essentials (EICR + gas safety)',
-                'from' => '£199',
+                'from' => 'POA',
                 'typical' => 'Guide where both can be coordinated on the same property access day.',
                 'includes' => 'EICR + CP12 scoped together — see Packages for full bundles',
             ],
             [
                 'name' => 'Fire + emergency lighting service visit',
-                'from' => '£229',
+                'from' => 'POA',
                 'typical' => 'Combined life-safety service where systems are on the same site.',
                 'includes' => 'Coordinated BS 5839 & BS 5266 testing where practical',
             ],
@@ -241,6 +253,8 @@ $categories = [
         ],
     ],
 ];
+
+$categories = icomplySyncGuidePriceCategories($categories);
 
 $factors = [
     ['title' => 'Property size & complexity', 'text' => 'More circuits, devices, floors or outbuildings means more engineer time.'],
@@ -274,9 +288,15 @@ require SITE_ROOT . '/includes/header.php';
                 <span class="text-[#ff6b00]">pricing guide</span>
             </h1>
             <p class="mt-6 text-lg md:text-xl text-white/80 max-w-2xl">
-                Honest <strong class="text-white">From £X</strong> ballparks for EICR, gas safety, fire service,
-                emergency lighting, CCTV and more across Greater Manchester and the North West —
-                so you can budget before you book.
+                Published prices:
+                <?php
+                $publishedBits = [];
+                foreach (icomplyServicePriceCatalog() as $publishedPrice) {
+                    $publishedBits[] = htmlspecialchars($publishedPrice['label'] . ' ' . $publishedPrice['display'], ENT_QUOTES, 'UTF-8');
+                }
+                echo implode(', ', $publishedBits);
+                ?>.
+                Every other service on this page is <strong class="text-white">POA</strong> after scope.
             </p>
             <div class="mt-6 p-4 rounded-2xl bg-amber-500/15 border border-amber-400/30 text-sm text-amber-50/95 max-w-2xl">
                 <strong class="text-amber-100">Important:</strong> Every figure on this page is a
@@ -300,7 +320,7 @@ require SITE_ROOT . '/includes/header.php';
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <?php
         $trust = [
-            ['From £X guides', 'Ballpark ranges for budgeting — clearly not a quote'],
+            ['Published prices only', 'EICR, FRA, gas safety and the compliance bundle — nothing else is priced here'],
             ['Fixed quote after scope', 'Agreed price in writing before engineers attend'],
             ['North West focused', 'Stockport-based team · ' . count($areas) . '+ towns covered'],
             ['No hidden labour tricks', 'Remedials and parts quoted separately when needed'],
@@ -352,8 +372,8 @@ require SITE_ROOT . '/includes/header.php';
         <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">North West ballparks</div>
         <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Service pricing guide</h2>
         <p class="mt-3 text-zinc-600">
-            Each row shows a typical <strong class="text-black">From £X</strong> starting point for straightforward jobs.
-            Use these to plan budgets, then convert to a real quote with postcode and site details below.
+            Rows with a pound figure use the published service-price list.
+            Everything else is POA — we do not publish other prices.
         </p>
     </div>
 
@@ -392,9 +412,9 @@ require SITE_ROOT . '/includes/header.php';
                     <div class="md:col-span-4">
                         <div class="font-semibold text-black"><?= htmlspecialchars($item['name'], ENT_QUOTES, 'UTF-8') ?></div>
                         <div class="md:hidden mt-2 flex items-baseline gap-2">
-                            <span class="text-xs uppercase tracking-wider text-zinc-500">From</span>
+                            <span class="text-xs uppercase tracking-wider text-zinc-500">Price</span>
                             <span class="text-xl font-semibold text-[#0B1F3A]"><?= htmlspecialchars($item['from'], ENT_QUOTES, 'UTF-8') ?></span>
-                            <span class="text-xs text-amber-700 font-medium">guide only</span>
+                            <span class="text-xs text-amber-700 font-medium">published</span>
                         </div>
                     </div>
                     <div class="hidden md:block md:col-span-2">
@@ -402,9 +422,9 @@ require SITE_ROOT . '/includes/header.php';
                             <div class="text-lg font-semibold text-[#0B1F3A]">POA</div>
                             <div class="text-xs text-zinc-500">Survey required</div>
                         <?php else: ?>
-                            <div class="text-xs uppercase tracking-wider text-zinc-500">From</div>
+                            <div class="text-xs uppercase tracking-wider text-zinc-500">Price</div>
                             <div class="text-xl font-semibold text-[#0B1F3A]"><?= htmlspecialchars($item['from'], ENT_QUOTES, 'UTF-8') ?></div>
-                            <div class="text-xs text-amber-700 font-medium">guide only · not a quote</div>
+                            <div class="text-xs text-amber-700 font-medium">published · other work quoted</div>
                         <?php endif; ?>
                     </div>
                     <div class="md:col-span-3 mt-2 md:mt-0 text-sm text-zinc-600">
@@ -435,8 +455,8 @@ require SITE_ROOT . '/includes/header.php';
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Why quotes vary</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">What affects the final price</h2>
             <p class="mt-3 text-zinc-600">
-                Online “From £X” figures cannot see your consumer unit, fire panel or cable runs.
-                These factors are why we confirm a fixed price after scope — never guess on the day.
+                A published price covers the named service only.
+                These factors are why anything else is confirmed after scope.
             </p>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -459,7 +479,7 @@ require SITE_ROOT . '/includes/header.php';
     <div class="grid md:grid-cols-3 gap-8">
         <?php
         $steps = [
-            ['1', 'Check the guide', 'Find the closest From £X row for your service — treat it as a ballpark only.'],
+            ['1', 'Check the guide', 'Use a published price where one is listed. Every other row is POA.'],
             ['2', 'Send site details', 'Postcode, property type, system brand, photos and access notes make quotes accurate.'],
             ['3', 'Receive a fixed quote', 'We confirm scope and price in writing before any chargeable work begins.'],
         ];

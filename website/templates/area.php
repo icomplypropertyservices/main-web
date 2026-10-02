@@ -194,6 +194,17 @@ $schema = [
         <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
             <h3 class="text-2xl font-semibold tracking-tight"><?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> compliance package</h3>
             <p class="mt-3 text-white/80">Combine EICR, fire alarms, emergency lighting and gas safety into one visit schedule for landlords and FM teams in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>.</p>
+            <?php if (function_exists('icomplyServicePriceCatalog')): ?>
+            <ul class="mt-5 space-y-2 text-sm text-white/90">
+                <?php foreach (icomplyServicePriceCatalog() as $publishedPrice): ?>
+                <li class="flex justify-between gap-4 border-b border-white/10 pb-2">
+                    <span><?= htmlspecialchars($publishedPrice['label'], ENT_QUOTES, 'UTF-8') ?></span>
+                    <span class="font-semibold text-[#ff6b00]"><?= htmlspecialchars($publishedPrice['display'], ENT_QUOTES, 'UTF-8') ?></span>
+                </li>
+                <?php endforeach; ?>
+            </ul>
+            <p class="mt-3 text-xs text-white/50">Published prices only. Other services are quoted after scope.</p>
+            <?php endif; ?>
             <ul class="mt-6 space-y-3 text-sm text-white/90">
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Fixed-price multi-service quotes</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Full documentation for audits &amp; insurers</li>

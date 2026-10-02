@@ -15,6 +15,7 @@ $keywordName = $KEYWORD_NAME;
 $keywordSlug = $KEYWORD_SLUG;
 $serviceName = $SERVICE_NAME;
 $serviceSlug = $SERVICE_SLUG;
+$servicePrice = function_exists('icomplyVisibleServicePrice') ? icomplyVisibleServicePrice(null, $keywordSlug) : null;
 $areaName = $AREA;
 $areaSlugVal = $AREA_SLUG;
 $allServices = getServices();
@@ -34,7 +35,8 @@ $h = static function ($s): string {
     return htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8');
 };
 ?>
-<script type="application/ld+json"><?= json_encode([
+<?php
+$keywordAreaSchema = [
     '@context' => 'https://schema.org',
     '@type' => 'Service',
     'name' => $keywordName . ' in ' . $areaName,
@@ -42,7 +44,19 @@ $h = static function ($s): string {
     'provider' => ['@type' => 'LocalBusiness', 'name' => SITE_NAME, 'telephone' => PHONE, 'url' => SITE_URL],
     'areaServed' => ['@type' => 'City', 'name' => $areaName],
     'url' => $canonicalUrl,
-], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
+];
+if ($servicePrice) {
+    $keywordAreaSchema['offers'] = [
+        '@type' => 'Offer',
+        'name' => $servicePrice['label'] . ' in ' . $areaName,
+        'price' => (string)$servicePrice['amount'],
+        'priceCurrency' => 'GBP',
+        'description' => icomplyServicePriceSentence($servicePrice),
+        'url' => url('/contact.php'),
+    ];
+}
+?>
+<script type="application/ld+json"><?= json_encode($keywordAreaSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
 
 <section class="relative overflow-hidden bg-[#061828] text-white">
     <div class="absolute inset-0">
@@ -67,6 +81,7 @@ $h = static function ($s): string {
             Local engineers for <strong><?= $h($KEYWORD_NAME) ?></strong> in <strong><?= $h($AREA) ?></strong> and nearby postcodes.
             Fixed-price quotes · Stockport-based team covering the North West.
         </p>
+        <?= icomplyServicePriceNoteHtml($servicePrice, 'on-dark') ?>
         <div class="mt-8 flex flex-wrap gap-3">
             <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-bold text-white shadow-lg">Get free quote</a>
             <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode($keywordName . ' in ' . $areaName) ?>"

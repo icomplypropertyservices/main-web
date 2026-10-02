@@ -65,6 +65,7 @@ require SITE_ROOT . '/includes/header.php';
 <section class="max-w-6xl mx-auto px-6 py-16">
     <div class="text-sm uppercase tracking-[3px] text-[#ff6b00] mb-2">COMPLIANCE SERVICES • {{AREA}}</div>
     <h1 class="text-5xl md:text-6xl font-semibold tracking-tighter text-black">{{SERVICE_NAME}} in {{AREA}}</h1>
+    <?= function_exists('icomplyServicePriceNoteHtml') ? icomplyServicePriceNoteHtml(icomplyVisibleServicePrice('electrical'), 'on-light') : '' ?>
 
     <!-- IMAGE 1: Hero service image -->
     <div class="mt-8">
