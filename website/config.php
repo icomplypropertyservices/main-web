@@ -688,6 +688,8 @@ function getPopularKeywordSlugs(): array {
         'gas-safety-certificate', 'cp12', 'landlord-gas-safety', 'boiler', 'boiler-install',
         'boiler-repair', 'gas-safety', 'emergency-gas-engineer', 'landlord-gas',
         'cctv-installation', 'access-control-system', 'door-entry-system',
+        'car-park-barrier', 'car-park-barrier-manchester', 'car-park-barrier-burnley',
+        'came-barrier', 'maglock-installation',
         'nurse-call-system', 'landlord-compliance',
         'legionella-risk-assessment', 'legionella-testing', 'water-hygiene-testing',
         'asbestos-survey', 'asbestos-testing', 'asbestos-management-survey',
@@ -1059,6 +1061,8 @@ $elJobTypesFile = __DIR__ . '/includes/emergency-lighting-job-types.php';
 if (is_file($elJobTypesFile)) {
     require_once $elJobTypesFile;
 }
+
+        require_once $lane;
 
 $asbestosJobsFile = __DIR__ . '/includes/asbestos-jobs.php';
 if (is_file($asbestosJobsFile)) {

@@ -95,6 +95,13 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
+<?php
+require_once SITE_ROOT . '/includes/access-control-jobs.php';
+if (function_exists('accessControlLaneKeywordStrip')) {
+    echo accessControlLaneKeywordStrip($keywordSlug);
+}
+?>
+
 <!-- TRUST: high contrast white on zinc -->
 <section class="bg-white border-b border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

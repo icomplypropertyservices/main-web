@@ -140,6 +140,13 @@ require SITE_ROOT . '/includes/header.php';
 </section>
 
 <!-- DIRECTORY + FILTERS -->
+<?php
+require_once SITE_ROOT . '/includes/access-control-jobs.php';
+if (function_exists('accessControlLaneHubSection')) {
+    echo accessControlLaneHubSection('keywords');
+}
+?>
+
 <section id="directory" class="max-w-7xl mx-auto px-6 py-16 md:py-20">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
         <div>
