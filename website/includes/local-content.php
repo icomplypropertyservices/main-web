@@ -99,6 +99,10 @@ function area_profile(string $area): array {
 }
 
 function service_local_angle(string $slug, string $serviceName, string $area): string {
+    if (in_array($area, ['Manchester', 'Burnley'], true) && in_array($slug, ['access-control', 'door-entry'], true)) {
+        $place = $area === 'Manchester' ? 'Manchester (MCR)' : 'Burnley';
+        return "In {$place}, car park barriers are the hardest access job: rising arms, induction loops, safety edges and CAME Gard cabinets are surveyed before a POA quote. Maglocks and door entry are scoped on the same visit when the lane and the pedestrian door share a site.";
+    }
     $seed = area_seed($area, $slug);
     $angles = [
         'electrical' => [
@@ -150,15 +154,15 @@ function service_local_angle(string $slug, string $serviceName, string $area): s
             "Multi-building {$area} estates benefit from unified viewing for facilities teams.",
         ],
         'access-control' => [
-            "Card/fob access with audit trails suits multi-tenant offices and blocks across {$area}.",
+            "Car park barriers are the hardest access job around {$area}: loops, safety edges, boom length and the reader that opens the lane.",
+            "Maglocks and electric strikes on {$area} pedestrian doors are scoped separately from any rising-arm barrier.",
             "Time zones and user groups help {$area} landlords control cleaners, contractors and tenants.",
             "Fire door release strategies must stay safe while securing {$area} entry points.",
-            "Biometric and mobile credentials are increasingly specified on newer {$area} fit-outs.",
         ],
         'door-entry' => [
             "Video door entry upgrades are frequent on {$area} apartment risers and older audio panels.",
+            "Where {$area} sites have a car park barrier, the pedestrian door entry is quoted beside that lane, not instead of it.",
             "Block handset replacements restore service without full building downtime in {$area}.",
-            "Gated developments around {$area} often combine door entry with access control.",
             "We survey panel condition, cabling and power before quoting {$area} block upgrades.",
         ],
         'intercoms' => [

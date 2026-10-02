@@ -60,6 +60,7 @@ require SITE_ROOT . '/includes/header.php';
         </div>
     </div>
     <div class="flex flex-wrap gap-2">
+        <a class="px-4 py-2 bg-white border rounded-full text-sm" href="<?= url('/pages/asbestos-jobs') ?>">Survey and awareness jobs</a>
         <a class="px-4 py-2 bg-white border rounded-full text-sm" href="<?= url('/pages/services/asbestos-survey') ?>">Service page</a>
         <a class="px-4 py-2 bg-white border rounded-full text-sm" href="<?= url('/pages/asbestos-landlords') ?>">Landlord hub</a>
         <a class="px-4 py-2 bg-white border rounded-full text-sm" href="<?= url('/pages/keywords/asbestos-survey') ?>">Keyword hub</a>

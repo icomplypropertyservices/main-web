@@ -13,6 +13,8 @@
  */
 declare(strict_types=1);
 
+require_once dirname(__DIR__) . '/includes/netlify-badge.php';
+
 if (PHP_SAPI === 'cli' && realpath($_SERVER['SCRIPT_FILENAME'] ?? '') === __FILE__) {
     $opts = getopt('', ['out::', 'help']);
     if (isset($opts['help'])) {
@@ -350,6 +352,31 @@ function icomplyRenderShopCategory(string $slug, array $products, array $ctx): s
         'meta' => $countLabel . ' from the Shopify catalogue.',
     ];
 
+    $lineKey = $slug === 'fire' ? 'aov' : ($slug === 'security' ? 'barrier' : '');
+    $lineHtml = '';
+    if ($lineKey !== '') {
+        $linesFile = dirname(__DIR__) . '/includes/manufacturer-product-lines.php';
+        if (!function_exists('manufacturerProductLinesShopHtml') && is_file($linesFile)) {
+            if (!defined('SITE_ROOT')) {
+                require_once dirname(__DIR__) . '/config.php';
+            } else {
+                require_once $linesFile;
+            }
+        }
+        if (function_exists('manufacturerProductLinesShopHtml')) {
+            $lineHtml = manufacturerProductLinesShopHtml($lineKey);
+            $origin = 'https://icomplypropertyservices.co.uk';
+            if (defined('SITE_URL') && !str_contains((string) SITE_URL, 'localhost')) {
+                $origin = rtrim((string) SITE_URL, '/');
+            }
+            $lineHtml = str_replace(
+                ['http://localhost/icomply', 'https://localhost/icomply'],
+                $origin,
+                $lineHtml
+            );
+        }
+    }
+
     $grid = '';
     if ($products === []) {
         $grid = '<div class="empty-card">'
@@ -368,6 +395,7 @@ function icomplyRenderShopCategory(string $slug, array $products, array $ctx): s
     }
 
     $main = '<section class="section"><div class="wrap">'
+        . $lineHtml
         . $grid
         . icomplyShopSourceNote($ctx)
         . '</div></section>';
@@ -589,6 +617,8 @@ function icomplyShopPage(string $current, array $hero, string $main, array $ctx)
         . '<script>'
         . 'document.querySelector(".menu-toggle")?.addEventListener("click",function(){var n=document.getElementById("shop-nav");var open=n.classList.toggle("is-open");this.setAttribute("aria-expanded",open?"true":"false");});'
         . '</script>'
+        . icomplyWhatsappFloatHtml('447517806082')
+        . icomplyNetlifyBadgeStripHtml()
         . '</body></html>' . "\n";
 }
 
@@ -660,6 +690,11 @@ function icomplyCopyShopStatic(string $src, string $dest): void
         if (!is_dir($targetDir) && !mkdir($targetDir, 0755, true) && !is_dir($targetDir)) {
             throw new RuntimeException('Cannot mkdir ' . $targetDir);
         }
-        copy($file->getPathname(), $target);
+        if ($ext === 'html' && function_exists('icomplyApplyGasLegalHtml')) {
+            $raw = (string)file_get_contents($file->getPathname());
+            file_put_contents($target, icomplyApplyGasLegalHtml($raw));
+        } else {
+            copy($file->getPathname(), $target);
+        }
     }
 }

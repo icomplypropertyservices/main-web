@@ -1,6 +1,6 @@
 <?php
 /**
- * Twelve quality SEO hubs (Batch C). Not doorway spam, not HMO package landings.
+ * Twelve quality SEO hubs (Guides). Not doorway spam, not HMO package landings.
  */
 declare(strict_types=1);
 
@@ -9,11 +9,11 @@ declare(strict_types=1);
  */
 function wave1QualityHubs(): array
 {
-    return [
+    $hubs = [
         'landlord-certificates' => [
             'navLabel' => 'Landlord certificates',
             'pageTitle' => 'Landlord Certificates | EICR, Gas, FRA & Alarms',
-            'metaDesc' => 'Landlord certificates from a Stockport SK2 contractor — EICR, gas safety records, fire risk assessments, smoke/CO and EPCs. Scoped quotes only; no published price list.',
+            'metaDesc' => 'Landlord certificates from a Stockport SK2 contractor — EICR, fire risk assessments, smoke/CO and EPCs. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue them.',
             'metaKeywords' => 'landlord certificates, landlord compliance pack, EICR gas FRA landlords North West, Stockport landlord certificates',
             'ogImage' => '/assets/images/services/landlord-compliance.jpg',
             'kicker' => 'Quality hub · Landlords',
@@ -24,12 +24,12 @@ function wave1QualityHubs(): array
             'honest' => 'We issue records for the inspections and installs we complete. We do not grant licences, give legal advice, or publish invented package prices.',
             'coverTitle' => 'The certificates a let file usually holds',
             'cover' => [
-                'Most single lets in England revolve around a current [EICR](/pages/services/electrical), a [gas safety record](/pages/services/gas-systems) where gas is present, working [smoke and CO alarms](/pages/services/smoke-co-alarms), and a valid [EPC](/pages/services/epc) if you are marketing the property.',
+                'Most single lets in England revolve around a current [EICR](/pages/services/electrical), a gas safety record where gas is present, working [smoke and CO alarms](/pages/services/smoke-co-alarms), and a valid [EPC](/pages/services/epc) if you are marketing the property. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue that record.',
                 'Shared houses and blocks add [fire risk assessment](/pages/services/fire-risk-assessments) and often alarms, lighting or doors. Those extras belong on the FRA and the licence conditions — not on a one-size web bundle.',
             ],
             'work' => [
                 'Electrical installation condition reports and agreed remedials',
-                'Landlord gas safety records and optional boiler service on the same visit',
+                'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers — not by iComply',
                 'Smoke / CO alarm supply, siting and day-of-let testing notes',
                 'Domestic EPCs for marketing a let',
                 'FRA and follow-on fire work when the house is shared or has common parts',
@@ -46,31 +46,31 @@ function wave1QualityHubs(): array
             'formIntro' => 'List the certificates you already have. We only quote what is due.',
             'formPlaceholder' => 'Address, tenure, last EICR / gas / EPC / FRA dates…',
             'faqs' => [
-                ['q' => 'Do you sell a fixed “landlord pack” price?', 'a' => 'No. Houses differ. Ask for a written quote. Existing Let Ready and workplace packages stay on their own pages — we are not duplicating HMO package landings here.'],
+                ['q' => 'Do you sell a fixed “landlord pack” price?', 'a' => 'One published pack does: the [Compliance Bundle](/pages/packages/compliance-bundle), also called the landlord pack, for one residential property inside the scope on that page. The price is only stated there. Houses outside that scope, and every certificate on its own, are still a written quote. Let Ready and workplace packages stay on their own pages.'],
                 ['q' => 'Is this legal advice?', 'a' => 'No. It is practical inspection and documentation for your file.'],
             ],
         ],
         'gas-safety-certificate' => [
             'navLabel' => 'Gas safety certificate',
-            'pageTitle' => 'Gas Safety Certificate | Landlord CP12 North West',
-            'metaDesc' => 'Landlord gas safety certificates (CP12 / gas safety records) across Greater Manchester from Stockport SK2. Gas Safe engineers, written records, quote after appliance count.',
+            'pageTitle' => 'Gas safety certificate | Landlord CP12 North West',
+            'metaDesc' => 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out gas work or issue CP12 certificates.',
             'metaKeywords' => 'gas safety certificate, CP12 Stockport, landlord gas safety Greater Manchester, CP44 gas record',
             'ogImage' => '/assets/images/services/gas-systems.jpg',
             'kicker' => 'Quality hub · Gas',
             'crumb' => 'Gas safety certificate',
             'h1' => 'Gas safety certificate',
             'h1Accent' => 'landlord records, written straight',
-            'lede' => 'A Gas Safe visit, a record that matches the appliances on site, and a quote that waits until we know how many there are.',
-            'honest' => 'Engineers are Gas Safe registered for the work we accept. Unsafe appliances stay unsafe on the record. No published per-appliance web price.',
+            'lede' => 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out that visit or issue the record.',
+            'honest' => 'iComply does not hold a Gas Safe registration and does not issue CP12 or gas safety certificates. Unsafe appliances are a matter for a Gas Safe registered engineer. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. No published per-appliance web price, because iComply does not sell that visit.',
             'coverTitle' => 'The landlord gas record, not a service sticker',
             'cover' => [
                 'Private landlords with gas appliances or flues generally need a periodic safety check and a written record for the tenancy. People still call it a CP12. The file needs the current record, not a verbal “it was fine last year”.',
                 'Read the fortnight guide: [gas safety certificate for landlords](/pages/resources/gas-safety-certificate-landlords). Service page: [gas systems](/pages/services/gas-systems).',
             ],
             'work' => [
-                'Landlord gas safety records for houses, flats and shared lets',
-                'Optional boiler service on the same attendance when you ask for it',
-                'Clear outcome if an appliance fails — isolation and next-step quote, not a rewritten pass',
+                'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers',
+                'iComply does not install, service, or repair boilers',
+                'iComply does not issue CP12 or gas safety certificates and shows no Gas Safe registration number',
             ],
             'whoTitle' => 'Typical bookings',
             'who' => [
@@ -84,31 +84,39 @@ function wave1QualityHubs(): array
             'formIntro' => 'Appliance count and access decide the visit. Send those first.',
             'formPlaceholder' => 'Postcode, appliances, occupied or void…',
             'faqs' => [
-                ['q' => 'CP12 or CP44?', 'a' => 'You will hear both. What matters is a current landlord gas safety record that lists the appliances we checked.'],
+                ['q' => 'CP12 or CP44?', 'a' => 'You will hear both. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not check the appliances or issue the record.'],
                 ['q' => 'Do you cover Manchester as well as Stockport?', 'a' => 'Yes, when we can resource the diary. The yard is Offerton SK2.'],
             ],
         ],
         'fire-risk-assessment' => [
             'navLabel' => 'Fire risk assessment',
             'pageTitle' => 'Fire Risk Assessment | Landlords & Workplaces',
-            'metaDesc' => 'Fire risk assessments for rented, shared and commercial buildings in the North West. Written FRA and action plan from Stockport SK2. Quote after we know the premises.',
+            'metaDesc' => 'Fire risk assessments for rented, shared and commercial buildings in the North West. Typical 6-bed HMO list £350. Landlord pack with EICR and gas £650. Other premises priced after scope.',
             'metaKeywords' => 'fire risk assessment, FRA Stockport, commercial FRA Manchester, landlord fire risk assessment',
             'ogImage' => '/assets/images/services/fire-risk-assessments.jpg',
             'kicker' => 'Quality hub · Fire',
             'crumb' => 'Fire risk assessment',
             'h1' => 'Fire risk assessment',
             'h1Accent' => 'written for this building',
-            'lede' => 'A suitable and sufficient FRA describes your premises and the people in them — then a prioritised action list you can actually schedule.',
-            'honest' => 'An FRA is not a licence, not legal advice, and not a guarantee of enforcement outcomes. Follow-on fire work is quoted separately unless you asked us to include it.',
+            'lede' => 'A suitable and sufficient FRA describes your premises and the people in them — then a prioritised action list you can actually schedule. A typical North West 6-bed HMO is listed at £350.',
+            'honest' => 'An FRA is not a licence, not legal advice, and not a guarantee of enforcement outcomes. £350 is the list for that typical 6-bed HMO only. Follow-on fire work is quoted separately unless you book the £650 pack.',
             'coverTitle' => 'Assessment first, kit second',
             'cover' => [
                 'We walk the building, record hazards and existing precautions, and write the assessment. If detection, lighting or doors are short, you get an action list — and a separate quote if you want us to do that work.',
+                'List price for a typical North West 6-bed HMO is **£350** (all-in; VAT is not added). Other buildings are priced after scope. Job lane: [FRA jobs](/pages/jobs/fra) and the [£350 job page](/pages/jobs/fire-risk-assessment).',
+                'The [landlord pack](/pages/jobs/landlord-bundle) is **£650** for FRA, EICR and gas on that same typical 6-bed HMO. The pack replaces the three separate lines. It is not added on top of £350.',
                 'Guide: [fire risk assessments explained](/pages/resources/fire-risk-assessment-guide). Service: [fire risk assessments](/pages/services/fire-risk-assessments).',
             ],
             'work' => [
                 'Written FRA for lets with common parts, shared houses, offices and other workplaces',
                 'Action plans that distinguish management tasks from physical upgrades',
+                '£350 list for a typical North West 6-bed HMO — [job page](/pages/jobs/fire-risk-assessment)',
                 'Optional follow-on quotes for alarms, emergency lighting, doors and extinguishers',
+            ],
+            'steps' => [
+                ['title' => 'Send the property', 'text' => 'Address, storeys, use, and whether it is a typical 6-bed HMO.'],
+                ['title' => 'Match the list or scope', 'text' => 'A typical North West 6-bed HMO is £350. Anything else is confirmed after scope. The [£650 pack](/pages/jobs/landlord-bundle) covers FRA, EICR and gas together.'],
+                ['title' => 'Attend and file the actions', 'text' => 'You receive the assessment and an action list. Remedials stay a separate quote.'],
             ],
             'whoTitle' => 'Who commissions an FRA here',
             'who' => [
@@ -124,6 +132,7 @@ function wave1QualityHubs(): array
             'faqs' => [
                 ['q' => 'Do you grant HMO licences?', 'a' => 'No. Licensing is the local authority. We produce practical fire documentation and related trade work.'],
                 ['q' => 'Will you copy last year’s FRA and change the date?', 'a' => 'No. If the building has not changed we still review it; we do not sell a re-dated PDF.'],
+                ['q' => 'Is every FRA £350?', 'a' => 'No. £350 is the list for a typical North West 6-bed HMO. Other premises are priced after scope. The landlord pack (FRA, EICR and gas) for that same 6-bed HMO is £650, and it replaces the separate FRA line.'],
             ],
         ],
         'electrical-safety-landlords' => [
@@ -178,7 +187,7 @@ function wave1QualityHubs(): array
             'honest' => 'We maintain and install the systems we quote. We do not sell a fake accreditation wall or a one-line national retainers price.',
             'coverTitle' => 'A workplace fire programme, not a gadget list',
             'cover' => [
-                'Start with the [FRA](/pages/fire-risk-assessment), then book the systems it names. Most offices and industrial units live on [fire alarm servicing](/pages/resources/fire-alarm-servicing) and [emergency lighting testing](/pages/resources/emergency-lighting-testing).',
+                'Start with the [FRA hub](/pages/fire-risk-assessment). A typical North West 6-bed HMO is listed at £350 on the [FRA job page](/pages/jobs/fire-risk-assessment); the [landlord pack](/pages/jobs/landlord-bundle) is £650 for FRA, EICR and gas together. Then book the systems the assessment names. Most offices and industrial units live on [fire alarm servicing](/pages/resources/fire-alarm-servicing) and [emergency lighting testing](/pages/resources/emergency-lighting-testing). Where the building has a stair vent, shaft or smoke fan, [AOV and smoke control](/pages/services/aov-air-handling) is part of that fire-protection set and is quoted across the UK from Stockport. Travel outside a short North West run is on the quote.',
                 'Audience page: [commercial / FM](/pages/commercial). Guide: [commercial fire safety basics](/pages/resources/commercial-fire-safety-basics).',
             ],
             'work' => [
@@ -549,4 +558,14 @@ function wave1QualityHubs(): array
             ],
         ],
     ];
+    $extra = __DIR__ . '/nurse-call-priority.php';
+    if (is_file($extra)) {
+        require_once $extra;
+        if (function_exists('nurseCallPriorityHubs')) {
+            foreach (nurseCallPriorityHubs() as $slug => $hub) {
+                $hubs[$slug] = $hub;
+            }
+        }
+    }
+    return $hubs;
 }

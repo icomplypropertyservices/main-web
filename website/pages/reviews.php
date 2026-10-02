@@ -6,20 +6,15 @@ require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/testimonials.php';
 require_once SITE_ROOT . '/includes/share.php';
 
-$pageTitle = 'Reviews & Testimonials | Icomply Property Services';
-$metaDesc = 'Read client reviews of Icomply Property Services — landlords, agents and facilities teams on EICR, fire alarms, gas safety, CCTV and compliance work across Greater Manchester and the North West. Leave a Google review.';
-$metaKeywords = 'Icomply reviews, property compliance testimonials, EICR reviews Stockport, fire alarm engineer reviews Manchester, Google review Icomply, landlord compliance feedback North West';
+$pageTitle = 'Reviews & Testimonials | iComply Property Services';
+$metaDesc = 'Read client reviews of iComply Property Services — landlords, agents and facilities teams on EICR, fire alarms, gas safety, CCTV and compliance work across Greater Manchester and the North West.';
+$metaKeywords = 'iComply reviews, property compliance testimonials, EICR reviews Stockport, fire alarm engineer reviews Manchester, landlord compliance feedback North West';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/reviews.php');
 
 $services = getServices();
 $areas = getAreas();
 $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
-
-// Google Business profile — config SOCIAL_GOOGLE, with safe placeholder fallback
-$googleReviewUrl = (defined('SOCIAL_GOOGLE') && SOCIAL_GOOGLE !== '')
-    ? (string) SOCIAL_GOOGLE
-    : 'https://g.page/icomply-property-services';
 
 /**
  * Extra reviews beyond includes/testimonials.php (same shape: quote, name, role, rating).
@@ -34,7 +29,7 @@ $extraTestimonials = [
         'rating' => 5,
     ],
     [
-        'quote' => 'Portfolio of 12 HMOs needed EICRs and smoke alarm checks before renewals. Icomply scheduled two days of visits, kept our agent portal updated and chased nothing — the paperwork just arrived.',
+        'quote' => 'Portfolio of 12 HMOs needed EICRs and smoke alarm checks before renewals. iComply scheduled two days of visits, kept our agent portal updated and chased nothing — the paperwork just arrived.',
         'name' => 'David',
         'role' => 'Portfolio landlord, Oldham',
         'rating' => 5,
@@ -174,7 +169,8 @@ $schema = [
                 defined('SOCIAL_INSTAGRAM') ? SOCIAL_INSTAGRAM : '',
                 defined('SOCIAL_LINKEDIN') ? SOCIAL_LINKEDIN : '',
                 defined('SOCIAL_TWITTER') ? SOCIAL_TWITTER : '',
-                $googleReviewUrl,
+                defined('SOCIAL_GOOGLE') ? SOCIAL_GOOGLE : '',
+                defined('SOCIAL_YOUTUBE') ? SOCIAL_YOUTUBE : '',
             ])),
         ],
         [
@@ -220,8 +216,6 @@ require SITE_ROOT . '/includes/header.php';
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#testimonials" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Read reviews</a>
-                    <a href="<?= htmlspecialchars($googleReviewUrl, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener noreferrer"
-                       class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">Leave a Google review</a>
                     <a href="<?= url('/contact.php') ?>" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Free quote</a>
                 </div>
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
@@ -243,7 +237,7 @@ require SITE_ROOT . '/includes/header.php';
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold mb-3">Google reviews</div>
                 <h2 class="text-2xl font-semibold tracking-tight">Happy with our work?</h2>
                 <p class="mt-3 text-white/75 text-sm leading-relaxed">
-                    A short Google review helps other landlords and facilities managers find a reliable compliance partner —
+                    A short Google review helps other landlords and facilities managers find our qualified engineers —
                     and helps our Stockport team keep improving.
                 </p>
                 <ul class="mt-6 space-y-3 text-sm text-white/90">
@@ -251,13 +245,6 @@ require SITE_ROOT . '/includes/header.php';
                     <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Mention the service and town if you can</li>
                     <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Or call / WhatsApp if something wasn’t right — we’ll put it right</li>
                 </ul>
-                <a href="<?= htmlspecialchars($googleReviewUrl, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener noreferrer"
-                   class="inline-block mt-8 px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">
-                    Leave a Google review →
-                </a>
-                <p class="mt-4 text-[11px] text-white/40 break-all">
-                    <?= htmlspecialchars($googleReviewUrl, ENT_QUOTES, 'UTF-8') ?>
-                </p>
             </div>
         </div>
     </div>
@@ -363,16 +350,7 @@ require SITE_ROOT . '/includes/header.php';
                     If we’ve completed an EICR, fire alarm service, gas certificate, CCTV install or any other job for you,
                     a Google review is the best way to share that experience.
                 </p>
-                <ol class="mt-6 space-y-3 text-sm text-zinc-700 list-decimal list-inside">
-                    <li>Open our Google Business profile using the button</li>
-                    <li>Tap <strong>Write a review</strong> and choose a star rating</li>
-                    <li>A sentence or two about the service and town is plenty</li>
-                </ol>
                 <div class="mt-8 flex flex-wrap gap-3">
-                    <a href="<?= htmlspecialchars($googleReviewUrl, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener noreferrer"
-                       class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">
-                        Open Google reviews →
-                    </a>
                     <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
                        class="px-8 py-4 rounded-2xl bg-[#0B1F3A] text-white font-semibold hover:bg-[#ff6b00] transition">
                         <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>
@@ -406,15 +384,6 @@ require SITE_ROOT . '/includes/header.php';
                         <dd class="mt-1">
                             <a href="mailto:<?= htmlspecialchars(EMAIL, ENT_QUOTES, 'UTF-8') ?>" class="text-white hover:text-[#ff6b00] break-all">
                                 <?= htmlspecialchars(EMAIL, ENT_QUOTES, 'UTF-8') ?>
-                            </a>
-                        </dd>
-                    </div>
-                    <div>
-                        <dt class="text-white/50 text-xs uppercase tracking-wider">Google profile</dt>
-                        <dd class="mt-1">
-                            <a href="<?= htmlspecialchars($googleReviewUrl, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener noreferrer"
-                               class="text-white hover:text-[#ff6b00] break-all text-sm">
-                                <?= htmlspecialchars($googleReviewUrl, ENT_QUOTES, 'UTF-8') ?>
                             </a>
                         </dd>
                     </div>
@@ -452,11 +421,11 @@ require SITE_ROOT . '/includes/header.php';
         <div>
             <h2 class="text-3xl font-semibold tracking-tight">Ready for the same standard of service?</h2>
             <p class="mt-3 text-white/75">
-                Free fixed-price quotes from Stockport-based engineers — we aim to respond within 2 hours on business days.
+                Free fixed-price quotes from Stockport-based engineers — we will reply with a quote.
             </p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="<?= url('/contact.php') ?>" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold">Request a quote</a>
-                <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20Icomply%2C%20I%20need%20a%20quote"
+                <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20iComply%2C%20I%20need%20a%20quote"
                    target="_blank" rel="noopener"
                    class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>
                 <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
@@ -467,11 +436,6 @@ require SITE_ROOT . '/includes/header.php';
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> BS 5839 · BS 5266 · BS 7671 · gas safety</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Installation, servicing and certification</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> <?= count($areas) ?>+ towns across the North West</li>
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span>
-                <a href="<?= htmlspecialchars($googleReviewUrl, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener noreferrer" class="hover:text-[#ff6b00] underline-offset-2 hover:underline">
-                    Leave a Google review
-                </a>
-            </li>
         </ul>
     </div>
 </section>

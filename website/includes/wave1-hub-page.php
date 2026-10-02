@@ -82,6 +82,11 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
+<?php
+require_once SITE_ROOT . '/includes/compliance-bundle.php';
+echo icomplyComplianceBundleCrossSellHtml($slug);
+?>
+
 <section class="max-w-7xl mx-auto px-6 py-16 md:py-20">
     <div class="grid lg:grid-cols-2 gap-12">
         <div>
@@ -160,6 +165,25 @@ require SITE_ROOT . '/includes/header.php';
             </a>
             <?php endforeach; ?>
         </div>
+    </div>
+</section>
+<?php endif; ?>
+
+<?php if (!empty($hub['also'])): ?>
+<section class="bg-white border-t">
+    <div class="max-w-7xl mx-auto px-6 py-16">
+        <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Go to the right page</div>
+        <h2 class="text-3xl font-semibold tracking-tight text-black mt-2"><?= htmlspecialchars($hub['alsoTitle'] ?? 'Related pages', ENT_QUOTES, 'UTF-8') ?></h2>
+        <ul class="mt-8 grid md:grid-cols-2 gap-4">
+            <?php foreach ($hub['also'] as $link): ?>
+            <li class="border border-zinc-200 rounded-2xl p-5">
+                <a href="<?= htmlspecialchars(url($link['href']), ENT_QUOTES, 'UTF-8') ?>" class="font-semibold text-[#ff6b00] hover:underline"><?= htmlspecialchars($link['label'], ENT_QUOTES, 'UTF-8') ?></a>
+                <?php if (!empty($link['note'])): ?>
+                <p class="text-sm text-zinc-600 mt-2"><?= htmlspecialchars($link['note'], ENT_QUOTES, 'UTF-8') ?></p>
+                <?php endif; ?>
+            </li>
+            <?php endforeach; ?>
+        </ul>
     </div>
 </section>
 <?php endif; ?>

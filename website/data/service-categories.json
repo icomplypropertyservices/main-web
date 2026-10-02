@@ -1,7 +1,7 @@
 {
     "fire-safety": {
         "label": "Fire Safety Systems",
-        "blurb": "Detection, suppression, doors, FRA and life-safety compliance across the North West.",
+        "blurb": "Detection, suppression, doors, FRA and life-safety compliance. AOV and smoke vents are quoted UK-wide from Stockport; other fire work stays on the North West area set.",
         "services": [
             "aov-air-handling",
             "fire-alarms",
@@ -33,12 +33,14 @@
     },
     "security-care": {
         "label": "Security & Care Systems",
-        "blurb": "CCTV, access, door entry, intercoms, nurse call and intruder alarms.",
+        "blurb": "CCTV, access, door entry, intercoms, vehicle barriers, nurse call and intruder alarms.",
         "services": [
             "cctv",
             "access-control",
+            "barriers",
             "door-entry",
             "intercoms",
+            "barriers",
             "intruder-alarm",
             "nurse-call"
         ]
@@ -86,6 +88,18 @@
             "groundworks",
             "landscaping",
             "commercial-fit-out"
+        ]
+    },
+    "renewables": {
+        "label": "Renewables",
+        "blurb": "Solar, heat pumps, battery storage and EV charging — survey first, quotes POA after scope.",
+        "services": [
+            "solar-pv",
+            "solar-thermal",
+            "air-source-heat-pumps",
+            "ground-source-heat-pumps",
+            "battery-storage",
+            "ev-charging"
         ]
     }
 }
