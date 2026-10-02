@@ -113,7 +113,8 @@ function evChargersJobsApply(array $keywords): array
                 $merged[$field] = $incoming;
             }
         }
-        $merged['service'] = 'ev-chargers';
+        $existingService = trim((string)($base['service'] ?? ''));
+        $merged['service'] = $existingService !== '' ? $existingService : 'ev-chargers';
         $merged['ev_chargers_lane'] = true;
         if (trim((string)($merged['name'] ?? '')) === '') {
             $merged['name'] = keywordDisplayName($slug);

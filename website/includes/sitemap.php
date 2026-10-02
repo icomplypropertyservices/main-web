@@ -126,23 +126,34 @@ function icomplySitemapEntries(): array
             return;
         }
         // Hard reject /pages/{service}/{town} even if a leftover matrix file
-        // sits in dist/. Keep only real hub prefixes.
+        // sits in dist/. Keep hub prefixes, plus Tier-1 service×town pages
+        // that have a bespoke article (electrical/stockport, gas/warrington).
+        $tier1ServiceTown = false;
         if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
             $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'jobs', 'commercial', 'nurse-call', 'aov', 'aov-air-handling', 'barriers'];
-            if (!in_array($m[1], $okPrefix, true)) {
+            $tier1ServiceTown = !in_array($m[1], $okPrefix, true)
+                && function_exists('icomplyPathIsIndexable')
+                && icomplyPathIsIndexable($path);
+            if (!in_array($m[1], $okPrefix, true) && !$tier1ServiceTown) {
                 return;
             }
         }
         // Keyword hubs and AOV/barrier town pages are generated at export time.
         $isKeywordLoc = (bool)preg_match('#^/pages/keywords(/[a-z0-9\-]+){1,2}$#', $path);
-        $isTownLoc = (bool)preg_match('#^/pages/(aov|barriers|nurse-call)(/[a-z0-9\-]+)?$#', $path);
+        $isTownLoc = (bool)preg_match('#^/pages/(aov|barriers)(/[a-z0-9\-]+)?$#', $path);
         $isMfrTown = (bool)preg_match('#^/pages/(aov-air-handling|barriers)/([a-z0-9\-]+)$#', $path);
+        $isNurseNationwide = false;
+        if (preg_match('#^/pages/nurse-call/([a-z0-9\-]+)$#', $path, $ncMatch) && function_exists('nationwideAreaRow')) {
+            $isNurseNationwide = nationwideAreaRow($ncMatch[1]) !== null;
+        }
+        $isManufacturerHub = false;
         $isBarrierBrandLoc = false;
         if (preg_match('#^/pages/manufacturers/([a-z0-9\-]+)$#', $path, $brandMatch) && function_exists('getManufacturerBySlug')) {
             $brandEntry = getManufacturerBySlug($brandMatch[1]);
-            $isBarrierBrandLoc = is_array($brandEntry) && in_array('barriers', $brandEntry['services'] ?? [], true);
+            $isManufacturerHub = is_array($brandEntry);
+            $isBarrierBrandLoc = $isManufacturerHub && in_array('barriers', $brandEntry['services'] ?? [], true);
         }
-        if (!$isKeywordLoc && !$isTownLoc && !$isMfrTown && !$isBarrierBrandLoc && !icomplySitemapUrlHasFile($path)) {
+        if (!$isKeywordLoc && !$isTownLoc && !$isMfrTown && !$isBarrierBrandLoc && !$isManufacturerHub && !$tier1ServiceTown && !$isNurseNationwide && !icomplySitemapUrlHasFile($path)) {
             return;
         }
         $seen[$path] = true;
@@ -316,6 +327,9 @@ function icomplySitemapEntries(): array
         foreach (array_keys(getMajorKeywords()) as $kw) {
             $slug = keywordSlug($kw);
             $add('/pages/keywords/' . $slug, isset($family[$slug]) ? '0.78' : '0.68');
+            if (function_exists('icomplyIndexMode') && icomplyIndexMode() === 'tiered') {
+                continue;
+            }
             foreach ($areaSlugs as $town) {
                 if ($town === '') {
                     continue;

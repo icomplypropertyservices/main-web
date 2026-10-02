@@ -688,13 +688,6 @@ function getMajorKeywords(): array {
     if (function_exists('securitySystemsApplyOverlay')) {
         $normalized = securitySystemsApplyOverlay($normalized);
     }
-    if (function_exists('eicrLaneOverlayKeyword')) {
-        foreach ($normalized as $slug => $row) {
-            if (is_array($row)) {
-                $normalized[$slug] = eicrLaneOverlayKeyword((string)$slug, $row);
-            }
-        }
-    }
     return $normalized;
 }
 

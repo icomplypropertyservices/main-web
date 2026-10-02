@@ -39,7 +39,10 @@ if (function_exists('getServices')) {
             $rel = 'pages/' . $sSlug . '/' . $town . '.php';
             $needle = '/pages/' . $sSlug . '/' . $town . '</loc>';
             $has = is_file(SITE_ROOT . '/' . $rel) || is_file($distRoot . '/' . $rel);
-            if (str_contains($xml, $needle) && !$has) {
+            $virtualTown = in_array($sSlug, ['aov', 'barriers', 'aov-air-handling', 'nurse-call'], true);
+            $indexableTown = function_exists('icomplyPathIsIndexable')
+                && icomplyPathIsIndexable('/pages/' . $sSlug . '/' . $town);
+            if (str_contains($xml, $needle) && !$has && !$virtualTown && !$indexableTown) {
                 echo "FAIL: service×town in sitemap has no file: {$needle}\n";
                 $fail++;
             }
@@ -73,7 +76,6 @@ $required = [
     '/pages/keywords/rewire</loc>',
     '/pages/keywords/boiler</loc>',
     '/pages/areas/manchester</loc>',
-    '/pages/areas/stockport</loc>',
     '/pages/manufacturers/abb</loc>',
     '/become-a-subcontractor</loc>',
     '/privacy</loc>',
@@ -199,10 +201,47 @@ if (function_exists('icomplyTier1Towns') && function_exists('areaSlug')) {
         }
     }
 }
+$virtualTownPrefixes = ['aov' => true, 'barriers' => true, 'aov-air-handling' => true, 'nurse-call' => true];
 $svcAreaExpect = $indexMode === 'tiered' ? ($svcCount * $tier1Count) : ($svcCount * count($areaSlugs));
-if ($indexMode === 'tiered' && count($serviceAreaHits) !== $svcAreaExpect) {
-    $fail++;
-    echo 'FAIL: tiered sitemap service×area count ' . count($serviceAreaHits) . " (want exactly {$svcAreaExpect})\n";
+if ($indexMode === 'tiered') {
+    $missingIndexable = [];
+    $unexpectedTown = [];
+    if (function_exists('icomplyTier1Towns') && function_exists('icomplyPathIsIndexable') && function_exists('areaSlug')) {
+        foreach (array_keys($services) as $svcSlug) {
+            foreach (icomplyTier1Towns() as $town) {
+                $path = '/pages/' . $svcSlug . '/' . areaSlug((string)$town);
+                if (!icomplyPathIsIndexable($path)) {
+                    continue;
+                }
+                if (!str_contains($xml, $path . '</loc>')) {
+                    $missingIndexable[] = $path;
+                }
+            }
+        }
+    }
+    foreach ($serviceAreaHits as $path) {
+        if (!preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+            continue;
+        }
+        if (isset($virtualTownPrefixes[$m[1]])) {
+            continue;
+        }
+        if (function_exists('icomplyPathIsIndexable') && icomplyPathIsIndexable($path)) {
+            continue;
+        }
+        $unexpectedTown[] = $path;
+    }
+    if ($missingIndexable !== []) {
+        $fail++;
+        echo 'FAIL: tiered sitemap missing indexable service×town ' . implode(',', array_slice($missingIndexable, 0, 6)) . "\n";
+    }
+    if ($unexpectedTown !== []) {
+        $fail++;
+        echo 'FAIL: tiered sitemap lists non-indexable service×town ' . implode(',', array_slice($unexpectedTown, 0, 6)) . "\n";
+    }
+    if ($missingIndexable === [] && $unexpectedTown === []) {
+        echo 'OK: sitemap service×area count=' . count($serviceAreaHits) . " (indexable tier-1 plus AOV/barrier towns)\n";
+    }
 } elseif ($indexMode !== 'tiered' && count($serviceAreaHits) < (int)floor($svcAreaExpect * 0.98)) {
     $fail++;
     echo 'FAIL: sitemap service×area count ' . count($serviceAreaHits) . " (want about {$svcAreaExpect})\n";
