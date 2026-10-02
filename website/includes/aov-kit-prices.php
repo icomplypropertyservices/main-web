@@ -10,13 +10,13 @@ declare(strict_types=1);
 function icomplyAovKitSkuCatalog(): array
 {
     return [
-        'aov-motor' => ['price' => '£275', 'label' => 'AOV-MOTOR'],
-        'aov-motor-hvy' => ['price' => '£950', 'label' => 'AOV-MOTOR-HVY'],
-        'aov-act' => ['price' => '£275', 'label' => 'AOV-ACT'],
-        'aov-act-hvy' => ['price' => '£950', 'label' => 'AOV-ACT-HVY'],
-        'aov-ctrl' => ['price' => '£400', 'label' => 'AOV-CTRL'],
-        'aov-sensor' => ['price' => '£60', 'label' => 'AOV-SENSOR'],
-        'aov-kit-1m2' => ['price' => '£2,450', 'label' => 'AOV-KIT-1M2 stairwell package'],
+        'aov-motor' => ['price' => 'POA', 'label' => 'AOV-MOTOR'],
+        'aov-motor-hvy' => ['price' => 'POA', 'label' => 'AOV-MOTOR-HVY'],
+        'aov-act' => ['price' => 'POA', 'label' => 'AOV-ACT'],
+        'aov-act-hvy' => ['price' => 'POA', 'label' => 'AOV-ACT-HVY'],
+        'aov-ctrl' => ['price' => 'POA', 'label' => 'AOV-CTRL'],
+        'aov-sensor' => ['price' => 'POA', 'label' => 'AOV-SENSOR'],
+        'aov-kit-1m2' => ['price' => 'POA', 'label' => 'AOV-KIT-1M2 stairwell package'],
     ];
 }
 
@@ -61,19 +61,19 @@ function icomplyAovKitPriceOverride(array $product): ?string
         return null;
     }
     if (str_contains($blob, 'stairwell') || str_contains($blob, '1m2') || str_contains($blob, '1 m2')) {
-        return '£2,450';
+        return 'POA';
     }
     if (str_contains($blob, 'sensor')) {
-        return '£60';
+        return 'POA';
     }
     if (str_contains($blob, 'ctrl') || str_contains($blob, 'control panel') || str_contains($blob, 'controller')) {
-        return '£400';
+        return 'POA';
     }
     if ((str_contains($blob, 'hvy') || str_contains($blob, 'heavy')) && (str_contains($blob, 'motor') || str_contains($blob, 'act'))) {
-        return '£950';
+        return 'POA';
     }
     if (str_contains($blob, 'motor') || str_contains($blob, 'actuator') || preg_match('/\bact\b/', $blob)) {
-        return '£275';
+        return 'POA';
     }
     return null;
 }

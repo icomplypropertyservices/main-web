@@ -51,7 +51,7 @@
     },
     {
         "slug": "gas-safety-certificate",
-        "name": "Gas Safety Certificate",
+        "name": "Gas safety Certificate",
         "service": "gas-systems"
     },
     {
@@ -71,12 +71,12 @@
     },
     {
         "slug": "landlord-gas-safety-certificate",
-        "name": "Landlord Gas Safety Certificate",
+        "name": "Landlord Gas safety Certificate",
         "service": "gas-systems"
     },
     {
         "slug": "cp44-gas-safety",
-        "name": "CP44 Gas Safety",
+        "name": "CP44 Gas safety",
         "service": "gas-systems"
     },
     {
@@ -91,7 +91,7 @@
     },
     {
         "slug": "gas-safety-near-me",
-        "name": "Gas Safety Near Me",
+        "name": "Gas safety Near Me",
         "service": "gas-systems"
     },
     {

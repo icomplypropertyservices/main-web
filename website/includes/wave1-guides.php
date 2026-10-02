@@ -1,6 +1,6 @@
 <?php
 /**
- * Fourteen fortnight resource drafts (Batch A days 1–5, Batch B days 6–14).
+ * Fourteen fortnight resource drafts (Guides landlord topics, Guides fire and commercial topics).
  * Educational guides — not HMO package landings, not keyword-matrix pages.
  */
 declare(strict_types=1);
@@ -14,25 +14,25 @@ function wave1FortnightGuides(): array
         'gas-safety-certificate-landlords' => [
             'day' => 1, 'batch' => 'A', 'tag' => 'Gas',
             'cardTitle' => 'Gas safety certificate for landlords',
-            'blurb' => 'What a CP12 / landlord gas safety record covers, typical annual timing, and how to book a visit in the North West.',
-            'pageTitle' => 'Landlord Gas Safety Certificate (CP12) | North West',
-            'metaDesc' => 'Plain-English guide to landlord gas safety records (often called CP12) in England — what is checked, typical annual timing, and how to request a quote from Stockport.',
+            'blurb' => 'What a CP12 / landlord gas safety record covers. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue them.',
+            'pageTitle' => 'Landlord gas safety certificate (CP12) | North West',
+            'metaDesc' => 'Plain-English guide to landlord gas safety records (often called CP12). Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue them.',
             'metaKeywords' => 'landlord gas safety certificate, CP12, CP44, gas safety record landlords North West, Stockport gas safety',
             'ogImage' => '/assets/images/services/gas-systems.jpg',
             'kicker' => 'Day 1 · Gas · Resource guide',
             'crumb' => 'Gas safety certificate',
             'h1' => 'Landlord gas safety certificate',
             'h1Accent' => 'what the record actually is',
-            'lede' => 'A landlord gas safety record is the document agents and tenants ask for when gas appliances or flues are present — not a boiler service by another name.',
-            'formService' => 'Gas — landlord safety record',
-            'formHeading' => 'Request a gas safety quote',
-            'formIntro' => 'Tell us the postcode, number of appliances and whether the property is occupied. Quote after scope — no published catalogue price.',
+            'lede' => 'A landlord gas safety record is the document agents and tenants ask for when gas appliances or flues are present. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue that record.',
+            'formService' => 'Non-gas compliance',
+            'formHeading' => 'Request a non-gas compliance quote',
+            'formIntro' => 'iComply does not quote gas work or CP12 visits. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. Non-gas compliance is POA.',
             'formPlaceholder' => 'Postcode, appliance count, flue type, occupied or void…',
             'sections' => [
                 [
                     'h2' => 'What the record is for',
                     'p' => [
-                        'Where gas appliances or flues are present, private landlords in Great Britain generally need a gas safety check by a **Gas Safe** registered engineer and a written record for the tenancy file. People still say **CP12**; the important part is a current record that matches the appliances on site.',
+                        'Where gas appliances or flues are present, private landlords in Great Britain generally need a gas safety check by an engineer, with a **gas safety certificate (CP12)** and a written record for the tenancy file. People still say **CP12**; the important part is a current record that matches the appliances on site.',
                         'It is not the same as a repair invoice or a manufacturer warranty stamp. The engineer records the appliances, the checks completed, and whether each appliance was safe to use at the time of the visit.',
                     ],
                 ],
@@ -45,7 +45,7 @@ function wave1FortnightGuides(): array
                         'Visible pipework and tightness / operating checks the engineer records on the day',
                         'A written record issued for the landlord or agent file',
                     ],
-                    'note' => 'If an appliance is unsafe, the record should say so. We do not rewrite outcomes to “help a let through”.',
+                    'note' => 'If an appliance is unsafe, the record should say so. iComply does not carry out the check and does not rewrite outcomes. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.',
                 ],
                 [
                     'h2' => 'Timing landlords actually use',
@@ -57,7 +57,7 @@ function wave1FortnightGuides(): array
                 [
                     'h2' => 'How to book from Stockport',
                     'p' => [
-                        'We work from Offerton SK2 and quote after we know the appliance count, access and whether the house is occupied. Send the address via [contact](/contact) or call — there is no honest fixed web price that covers every layout.',
+                        'iComply works from Offerton SK2 on non-gas compliance only. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not attend to issue a CP12. Send non-gas enquiries via [contact](/contact).',
                         'Related reading: [landlord compliance checklist](/pages/resources/landlord-compliance-checklist) and [gas systems](/pages/services/gas-systems).',
                     ],
                 ],
@@ -110,7 +110,10 @@ function wave1FortnightGuides(): array
                 ],
                 [
                     'h2' => 'Book from the North West',
-                    'p' => ['Send the address and use via [contact](/contact). Related: [FRA service](/pages/services/fire-risk-assessments) and the [landlord checklist](/pages/resources/landlord-compliance-checklist).'],
+                    'p' => [
+                        'Send the address and use via [contact](/contact). Related: [FRA service](/pages/services/fire-risk-assessments) and the [landlord checklist](/pages/resources/landlord-compliance-checklist).',
+                        'A typical North West 6-bed HMO is listed at **£350** on the [FRA job page](/pages/jobs/fire-risk-assessment). The [landlord pack](/pages/jobs/landlord-bundle) is **£650** for that FRA plus EICR and gas — not £350 on top. Other buildings are priced after scope. Lane hub: [FRA jobs](/pages/jobs/fra).',
+                    ],
                 ],
             ],
             'faqs' => [
@@ -494,6 +497,7 @@ function wave1FortnightGuides(): array
                         '[Emergency lighting tests](/pages/resources/emergency-lighting-testing) — monthly function, annual duration',
                         '[Fire door](/pages/resources/fire-door-inspection) condition on escape routes',
                         '[Extinguishers](/pages/resources/fire-extinguisher-servicing) if the FRA still wants them',
+                        '[AOV and smoke vents](/pages/services/aov-air-handling) where the stair, shaft or car park uses them. Quoted across the UK from Stockport. Travel outside a short North West run is on the quote. England, Wales, Scotland and Northern Ireland do not share one building-reg text.',
                     ],
                 ],
                 [

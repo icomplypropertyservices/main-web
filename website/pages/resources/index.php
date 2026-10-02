@@ -144,8 +144,8 @@ require SITE_ROOT . '/includes/header.php';
                 and the North West — plus links to packages, services and detailed keyword guides.
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
-                <a href="#batch-a" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Batch A guides</a>
-                <a href="#batch-c" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">Batch C hubs</a>
+                <a href="#batch-a" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Landlord guides</a>
+                <a href="#batch-c" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">Service hubs</a>
                 <a href="<?= url('/contact.php') ?>" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Contact / quote</a>
             </div>
         </div>
@@ -207,13 +207,13 @@ foreach (['A', 'B'] as $batchKey):
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold"><?= htmlspecialchars($batch['label'], ENT_QUOTES, 'UTF-8') ?></div>
-                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2"><?= $batchKey === 'A' ? 'First five guides' : 'Days 6–14' ?></h2>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2"><?= $batchKey === 'A' ? 'First five guides' : 'Fire and commercial guides' ?></h2>
                 <p class="mt-2 text-zinc-600 max-w-2xl"><?= htmlspecialchars($batch['blurb'], ENT_QUOTES, 'UTF-8') ?> Quotes go to <a href="<?= url('/contact.php') ?>" class="text-[#ff6b00] font-semibold hover:underline">contact</a>.</p>
             </div>
             <?php if ($batchKey === 'A'): ?>
-            <a href="#batch-b" class="text-sm font-semibold text-[#ff6b00]">Next: Batch B →</a>
+            <a href="#batch-b" class="text-sm font-semibold text-[#ff6b00]">Next: fire and commercial guides →</a>
             <?php else: ?>
-            <a href="#batch-c" class="text-sm font-semibold text-[#ff6b00]">Next: Batch C hubs →</a>
+            <a href="#batch-c" class="text-sm font-semibold text-[#ff6b00]">Next: Service hubs →</a>
             <?php endif; ?>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -259,7 +259,7 @@ $batchC = $queue['C'];
     <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
         <div class="mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Explore</div>
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">More from Icomply</h2>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">More from iComply</h2>
             <p class="mt-2 text-zinc-600 max-w-2xl">Jump to keyword guides, FAQ, packages and dedicated landlord or commercial pages — or browse the full service list.</p>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -333,7 +333,7 @@ $batchC = $queue['C'];
             </div>
             <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
                 <h3 class="text-2xl font-semibold">Talk to a local engineer</h3>
-                <p class="mt-3 text-white/80">Fixed-price quotes, clear documentation and same-week appointments where capacity allows.</p>
+                <p class="mt-3 text-white/80">Fixed-price quotes, clear documentation and appointments booked when the diary allows.</p>
                 <div class="mt-6 flex flex-wrap gap-3">
                     <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>"
                        class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
@@ -355,7 +355,7 @@ $batchC = $queue['C'];
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request your free quote</h2>
             <p class="mt-3 text-zinc-600">Tell us the property type, postcode and what needs testing or installing.</p>
         </div>
-        <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
+        <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input type="text" name="name" placeholder="Full name" required maxlength="120" class="w-full border px-5 py-3.5 rounded-2xl">

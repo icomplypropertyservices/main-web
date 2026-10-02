@@ -6,7 +6,7 @@ require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/share.php';
 
 $pageTitle = 'FAQ | Property Compliance Questions Answered';
-$metaDesc = 'Frequently asked questions about EICR, BS 5839 fire alarms, emergency lighting, gas safety, CCTV, access control, response times, coverage areas, free quotes and the Icomply shop.';
+$metaDesc = 'FAQ for Icomply Property Services, Stockport. EICR, fire alarms, emergency lighting, gas safety, CCTV, access, construction, quotes and coverage. Call 07517806082. No scheme badges we cannot verify.';
 $metaKeywords = 'property compliance FAQ, EICR questions, BS 5839 fire alarm, emergency lighting testing, gas safety certificate, CCTV installation, access control, North West';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/faq.php');
@@ -20,60 +20,60 @@ $faqs = [
     [
         'cat' => 'Electrical & EICR',
         'q' => 'What is an EICR and how often do I need one?',
-        'a' => 'An Electrical Installation Condition Report (EICR) is a formal inspection and test of the fixed wiring in a property against BS 7671. Landlords in England typically need a satisfactory EICR at least every 5 years (or sooner if the report recommends it), and when a new tenancy starts if the existing report has expired. Commercial and higher-risk premises may require more frequent testing. We issue clear certificates and remedial quotes where C1/C2/FI codes appear.',
+        'a' => 'An Electrical Installation Condition Report (EICR) is an inspection and test of the fixed wiring against BS 7671. For private rented homes in England, the usual rule is a satisfactory report at intervals of no more than 5 years, given to the tenant, and a new one before a tenancy if the current report has run out. The inspector can recommend a shorter interval. Commercial premises follow risk, insurer and client requirements. This is not legal advice. We issue the report for the inspection we carry out and quote remedials where C1, C2 or FI codes appear. We do not name a competent-person scheme on this page.',
     ],
     [
         'cat' => 'Electrical & EICR',
         'q' => 'Do you carry out rewires, consumer unit upgrades and EV charger installs?',
-        'a' => 'Yes. Alongside EICR and PAT testing we install and upgrade consumer units, full and partial rewires, commercial electrical works and EV charge points (including popular brands such as myenergi and Rolec). All work is to BS 7671 with appropriate certification. See our Electrical service hub for local pages and a free quote.',
+        'a' => 'Yes. The electrical catalogue covers EICR, PAT testing, consumer-unit upgrades, full and partial rewires, commercial electrical work and EV charge points (including equipment from brands such as myenergi and Rolec, subject to what is suitable and available). Work is carried out with BS 7671 in mind. You get the electrical certificate that matches the completed job — an Electrical Installation Certificate or a Minor Electrical Installation Works Certificate where that is the right form. Naming a brand is not an approved-installer badge, and we do not claim NICEIC or another scheme membership here.',
         'link' => ['/pages/services/electrical.php', 'Electrical services'],
     ],
     // Fire alarms
     [
         'cat' => 'Fire alarms (BS 5839)',
         'q' => 'What is BS 5839 and why does my fire alarm need to comply?',
-        'a' => 'BS 5839 is the British Standard for fire detection and fire alarm systems in buildings. Part 1 covers non-domestic premises; Part 6 covers dwellings. Insurers, fire officers, landlords and responsible persons rely on BS 5839 design, installation, commissioning and maintenance so systems detect fire early and alert occupants reliably. We design, install, service and certify systems to the relevant parts of BS 5839 and manufacturer guidance.',
+        'a' => 'BS 5839 is the British Standard for fire detection and fire alarm systems. Part 1 is the usual reference for non-domestic premises; Part 6 covers dwellings. Responsible persons, insurers and fire officers use it as the reference for design, installation, commissioning and maintenance. We design, install and service systems with the relevant part of BS 5839 and the manufacturer’s instructions in mind, and we issue the records for the work agreed. We do not claim BAFE or another named fire-scheme membership on this page.',
     ],
     [
         'cat' => 'Fire alarms (BS 5839)',
         'q' => 'How often should a commercial fire alarm be serviced?',
-        'a' => 'Under BS 5839, fire alarm systems should be inspected and serviced by a competent person at least every 6 months (typically two visits per year), with weekly user tests and a maintained logbook. We offer planned maintenance contracts, reactive call-outs, battery replacements and full certification for addressable, conventional and wireless systems from brands such as Kentec, Advanced, C-Tec, Morley, Hochiki and Apollo.',
+        'a' => 'BS 5839-1 expects a competent person to inspect and service many non-domestic systems at least every 6 months, alongside weekly tests by the user and a logbook. That is a standard, not a promise that every building has the same legal timetable. Where we agree a contract we can plan those visits, attend faults and replace batteries on addressable, conventional and wireless systems. Equipment we work on includes Kentec, Advanced, C-TEC, Morley, Hochiki and Apollo where it is already on site or specified for the job. Listing a brand is not a manufacturer partnership or a scheme badge.',
         'link' => ['/pages/services/fire-alarms.php', 'Fire alarm services'],
     ],
     [
         'cat' => 'Fire alarms (BS 5839)',
         'q' => 'Can you maintain or upgrade my existing fire panel?',
-        'a' => 'Yes. We survey existing loops and devices, diagnose faults, replace batteries and devices, and recommend compliant upgrades or panel replacements where systems are obsolete or non-compliant. Work is commissioned with certificates and logbook updates suitable for insurers and fire risk assessments.',
+        'a' => 'Yes, after a survey of the loops and devices. We diagnose faults, replace batteries and devices, and recommend an upgrade or panel change where the system is obsolete or does not match the fire risk assessment. Commissioning notes and logbook updates cover the work we did. They are not a BAFE certificate and they do not replace the fire risk assessment.',
     ],
     // Emergency lighting
     [
         'cat' => 'Emergency lighting',
         'q' => 'How often does emergency lighting need testing?',
-        'a' => 'BS 5266 expects regular function tests (often monthly) and a full duration test at least annually, with records kept for the responsible person. We provide monthly/annual testing programmes, LED conversions, new installations and certification for escape routes, open areas and high-risk task lighting.',
+        'a' => 'BS 5266 is the usual UK reference. The responsible person normally keeps a monthly function test and a full-duration test at least once a year. We can quote a testing programme, LED conversions and new installations for escape routes, open areas and high-risk task areas, and we leave the test records for those visits. We do not invent a legal monthly visit for a home that has no emergency lighting system.',
         'link' => ['/pages/services/emergency-lighting.php', 'Emergency lighting services'],
     ],
     [
         'cat' => 'Emergency lighting',
         'q' => 'Do you convert old fluorescent emergency fittings to LED?',
-        'a' => 'Yes. We upgrade tired fluorescent emergency luminaires to efficient LED self-contained or central-battery solutions, improving reliability and reducing maintenance while meeting BS 5266 performance requirements.',
+        'a' => 'Yes, where the existing fittings are due for replacement. We quote LED self-contained or central-battery luminaires and check the result against the BS 5266 design for that building. A lamp swap on its own is not a design certificate.',
     ],
     // Gas safety
     [
         'cat' => 'Gas safety',
         'q' => 'What is a landlord gas safety certificate (CP12)?',
-        'a' => 'A landlord gas safety record (often called a CP12) confirms that gas appliances, flues and pipework in a rented property have been checked by a Gas Safe registered engineer. Landlords must have checks at least every 12 months and issue the record to tenants. We provide CP12 / CP44 landlord certificates, boiler servicing and commercial gas safety work.',
+        'a' => 'A landlord gas safety record — people still say CP12 — is the written check of gas appliances, flues and pipework in a rented property. Where those are present, private landlords in Great Britain generally need that check at least every 12 months and must give the record to tenants. Only a Gas Safe registered engineer can do the gas work. This page does not print a company Gas Safe registration number. If we take the job, ask for the attending engineer’s ID and check it on the Gas Safe Register before the visit. CP44 is a name you may hear for some non-domestic records; the document has to match the appliances on site. This is not legal advice.',
         'link' => ['/pages/services/gas-systems.php', 'Gas systems services'],
     ],
     [
         'cat' => 'Gas safety',
         'q' => 'Do you service commercial gas plant as well as domestic boilers?',
-        'a' => 'Yes. We cover domestic landlord certificates and commercial gas systems where within our competence and registration, including safety checks and planned servicing. Tell us the appliance type and site postcode on the quote form for an accurate scope.',
+        'a' => 'Domestic landlord records and boiler servicing are in the gas catalogue. Commercial plant is quoted only when the attending engineer’s Gas Safe registration covers that appliance type. If it does not, we say so rather than stretch the job. Tell us the appliance and postcode so the scope is honest.',
     ],
     // CCTV
     [
         'cat' => 'CCTV',
         'q' => 'What CCTV systems do you install?',
-        'a' => 'We design and install IP and HD CCTV for residential, multi-let, retail, industrial and commercial sites — including NVR/DVR recording, remote viewing, and cameras from manufacturers such as Hikvision, Dahua and Axis (subject to site suitability and current product availability). Systems are surveyed for coverage, lighting and network requirements.',
+        'a' => 'We design and install IP and HD CCTV for homes, multi-lets, retail, industrial and commercial sites, including NVR or DVR recording and remote viewing. Cameras may be Hikvision, Dahua, Axis or another brand that suits the site and is available. That list is equipment, not a manufacturer accreditation. Camera positions should respect privacy; we are not a data-protection certification body.',
         'link' => ['/pages/services/cctv.php', 'CCTV services'],
     ],
     [
@@ -85,25 +85,25 @@ $faqs = [
     [
         'cat' => 'Access control & door entry',
         'q' => 'Which access control brands do you work with?',
-        'a' => 'We install and maintain door access systems including Paxton, Salto, HID and other leading platforms, with credentials (fobs, cards, mobile), time schedules, fire-override integration and multi-door networks for flats, offices and sites.',
+        'a' => 'We install and maintain door access using equipment such as Paxton, Salto and HID, plus other platforms already on site, with fobs, cards or mobile credentials, time schedules and fire-release integration for flats, offices and multi-door sites. Naming those brands is not an approved-partner badge.',
         'link' => ['/pages/services/access-control.php', 'Access control services'],
     ],
     [
         'cat' => 'Access control & door entry',
         'q' => 'Do you install video door entry and intercoms for apartment blocks?',
-        'a' => 'Yes. We supply and install audio and video door entry plus multi-tenant intercoms (including brands such as Aiphone, Fermax and Videx where suitable), wired for flats, HMOs and commercial receptions. Fire release and access control can be integrated on the same project.',
+        'a' => 'Yes. Audio and video door entry and multi-tenant intercoms are in the catalogue, including equipment such as Aiphone, Fermax and Videx where it suits the riser and is available. Flats, HMOs and commercial receptions are typical jobs. Fire door release and access control can be included when the quote says so. Brand names are not scheme memberships.',
         'link' => ['/pages/services/door-entry.php', 'Door entry services'],
     ],
     // Response times
     [
         'cat' => 'Response times & appointments',
         'q' => 'How quickly do you respond to enquiries and emergencies?',
-        'a' => 'On business days we aim to respond to quote and contact requests within 2 hours during opening hours (typically Monday–Friday 08:00–18:00). Same-week appointments are often available subject to engineer capacity and site access. Urgent fault call-outs for fire, life-safety and security systems are prioritised where capacity allows — call or WhatsApp for the fastest response.',
+        'a' => 'On business days we aim to reply to quote and contact messages within 2 hours during typical hours (Monday–Friday 08:00–18:00). That is a target, not a service-level agreement and not a 24-hour emergency contract. Same-week appointments depend on engineer capacity and access. Urgent faults on fire, life-safety and security systems are prioritised when someone is free. Call ' . PHONE . ' or WhatsApp the same mobile.',
     ],
     [
         'cat' => 'Response times & appointments',
         'q' => 'Do you offer planned maintenance contracts?',
-        'a' => 'Yes. Many landlords and facilities managers use planned maintenance for fire alarms, emergency lighting, nurse call, AOV and other systems so visits, logbooks and certificates stay on schedule. Ask for a multi-service package if you need several compliance streams under one provider.',
+        'a' => 'Yes, where we agree a contract. Landlords and facilities managers book planned visits for fire alarms, emergency lighting, nurse call, AOV and other systems we already look after, so the logbook matches the visits. Ask if you want more than one service on the same schedule. We do not sell a one-line national retainer or a badge that covers every trade.',
     ],
     // Areas
     [
@@ -120,8 +120,8 @@ $faqs = [
     // Quotes
     [
         'cat' => 'Quotes & pricing',
-        'q' => 'Are quotes free and fixed-price?',
-        'a' => 'Yes — initial compliance quotes are free. We provide clear fixed-price scopes based on the information you supply (and a site survey where needed). Quotes may be revised if site conditions, access or system condition differ from what was described. Certification is included for the work agreed in the quote.',
+        'q' => 'Are quotes free, and are they always a fixed price?',
+        'a' => 'Asking for a quote does not cost a fee. Where the scope is clear from what you send, we confirm a written price. Legionella, asbestos surveys and any job that depends on access or plant condition are priced after that scope is known — we do not invent a catalogue fee. A quote can change if the site differs from the description. Paperwork covers the work in the quote, not a scheme membership.',
         'link' => ['/contact.php', 'Request a free quote'],
     ],
     [
@@ -133,7 +133,7 @@ $faqs = [
     [
         'cat' => 'Shop & products',
         'q' => 'What can I buy in the Icomply shop?',
-        'a' => 'Our trade shop offers compliance-related kits, parts and products via Shopify checkout when the store is live. Product pages show descriptions and pricing; stock and shipping are handled at checkout.',
+        'a' => 'The trade shop lists kits, parts and products. Checkout is the Shopify store when it is connected. Prices and stock on a product page are the store’s, not figures we invent on this FAQ. If checkout is not connected, ask us and we will say so.',
         'link' => ['/shop/index.php', 'Visit the shop'],
     ],
     [
@@ -146,20 +146,44 @@ $faqs = [
     [
         'cat' => 'Manufacturers & other services',
         'q' => 'Which manufacturers do you support?',
-        'a' => 'We work with a wide range of industry brands across fire, electrical, gas, CCTV and access — including Apollo, Hochiki, Kentec, Advanced, C-Tec, Paxton, Salto, Hikvision, Dahua, Axis, Hager, Schneider, Worcester Bosch and more. Browse manufacturer pages for brand-specific guidance and related services.',
+        'a' => 'We install and maintain equipment from brands that include Apollo, Hochiki, Kentec, Advanced, C-TEC, Paxton, Salto, Hikvision, Dahua, Axis, Hager, Schneider and Worcester Bosch, among others in the manufacturer index. A brand page is a guide to that equipment. It is not an approved-installer accreditation, a manufacturer partnership, or proof we stock every part.',
         'link' => ['/pages/manufacturers/index.php', 'All manufacturers'],
     ],
     [
         'cat' => 'Manufacturers & other services',
         'q' => 'Do you also handle AOV, nurse call and intruder alarms?',
-        'a' => 'Yes. In addition to electrical, fire, emergency lighting, gas, CCTV and access control we provide AOV & air handling, nurse call systems, intruder alarms and intercoms — installation, maintenance and certification as appropriate. Start from the services index to open each hub.',
+        'a' => 'Yes. The catalogue also includes AOV and smoke control, nurse call, intruder alarms and intercoms, plus fire risk assessments, extinguishers, fire doors, smoke and CO alarms, PAT testing, EPC, landlord support, kitchens, bathrooms and construction trades. Each service page states the work. Installation or maintenance is what the quote says. We issue records for the visit we complete; we do not add a scheme logo to make the list longer.',
         'link' => ['/pages/services/index.php', 'All services'],
     ],
     [
         'cat' => 'Manufacturers & other services',
         'q' => 'How do I get started?',
-        'a' => 'Call ' . PHONE . ', message us on WhatsApp, email ' . EMAIL . ', or use the free quote form on the contact page. Include your postcode and the service you need — we will confirm scope, price and the soonest suitable appointment.',
+        'a' => 'Call ' . PHONE . ', WhatsApp the same mobile, email ' . EMAIL . ', or use the quote form on the contact page. Include your postcode and the service. We confirm scope before we talk about a date.',
         'link' => ['/contact.php', 'Contact Icomply'],
+    ],
+    [
+        'cat' => 'Fire risk assessments',
+        'q' => 'Do you carry out fire risk assessments?',
+        'a' => 'Yes. We survey the premises and write a fire risk assessment with an action list for landlords, shared houses, offices and other workplaces in the catalogue. An assessment is not a licence, not legal advice, and not a guarantee of what an enforcing authority will decide. Follow-on alarm, lighting or door work is a separate quote unless you asked for it in the same scope.',
+        'link' => ['/pages/services/fire-risk-assessments.php', 'Fire risk assessments'],
+    ],
+    [
+        'cat' => 'Construction & fit-out',
+        'q' => 'Do you fit kitchens, bathrooms and other building work?',
+        'a' => 'Yes. The construction catalogue includes kitchen and bathroom fitting, renovation, plastering, joinery, roofing, extensions, loft conversions and related trades. Each job is scoped and quoted. Building Regulations apply where the work needs them. We do not claim a construction-scheme membership, an NHBC registration, or a “fully certified builder” badge on this page.',
+        'link' => ['/pages/services/kitchens.php', 'Kitchen fitting'],
+    ],
+    [
+        'cat' => 'Water, asbestos & surveys',
+        'q' => 'Do you do Legionella risk assessments and asbestos surveys?',
+        'a' => 'Yes, as price-on-application visits. Legionella work follows HSE L8 and HSG274 as guidance: a written assessment of the water system, with sampling only if it helps. Asbestos surveys are management or refurbishment surveys under the Control of Asbestos Regulations 2012, scoped to the building and the planned works. We do not claim UKAS, BOHS or an HSE licence. Licensed asbestos removal is by others.',
+        'link' => ['/pages/services/legionella-risk-assessment.php', 'Legionella risk assessment'],
+    ],
+    [
+        'cat' => 'Accreditations',
+        'q' => 'Are you NICEIC, BAFE or Gas Safe registered as a company?',
+        'a' => 'This page does not claim NICEIC, BAFE, CHAS, SafeContractor, UKAS, a company Gas Safe registration number, or an EPC assessor accreditation number. Gas work is only booked when the engineer who attends is on the Gas Safe Register for that appliance — ask for the ID and check the register. An energy performance certificate has to be produced by an accredited assessor; we do not print that number here. Electrical, fire and emergency-lighting paperwork is for the visit we complete. If you need a named scheme member and we cannot show that registration, we will say so before you book. Call ' . PHONE . '.',
+        'link' => ['/pages/about.php', 'About Icomply'],
     ],
 ];
 
@@ -181,7 +205,7 @@ $schema = [
     '@graph' => [
         [
             '@type' => 'FAQPage',
-            'name' => 'Property Compliance FAQ — Icomply Property Services',
+            'name' => 'Property Compliance FAQ — iComply Property Services',
             'description' => $metaDesc,
             'url' => url('/pages/faq.php'),
             'mainEntity' => $faqEntities,
@@ -239,12 +263,13 @@ require SITE_ROOT . '/includes/header.php';
             </h1>
             <p class="mt-6 text-lg md:text-xl text-white/80 max-w-2xl">
                 Straight answers on EICR, BS&nbsp;5839 fire alarms, emergency lighting, gas safety, CCTV, access control,
-                response times, coverage, quotes and the trade shop.
+                fire risk assessments, construction, quotes and coverage. Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.
+                We do not list scheme badges we cannot verify.
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#faqs" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Browse FAQs</a>
                 <a href="<?= url('/contact.php') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">Free quote</a>
-                <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20Icomply%2C%20I%20have%20a%20question"
+                <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20iComply%2C%20I%20have%20a%20question"
                    target="_blank" rel="noopener"
                    class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
             </div>
@@ -270,6 +295,10 @@ require SITE_ROOT . '/includes/header.php';
                 'Quotes & pricing' => 'quotes-pricing',
                 'Shop & products' => 'shop-products',
                 'Manufacturers & other services' => 'manufacturers-other-services',
+                'Fire risk assessments' => 'fire-risk-assessments',
+                'Construction & fit-out' => 'construction-fit-out',
+                'Water, asbestos & surveys' => 'water-asbestos-surveys',
+                'Accreditations' => 'accreditations',
             ];
             foreach ($anchors as $label => $id): ?>
                 <a href="#<?= htmlspecialchars($id, ENT_QUOTES, 'UTF-8') ?>"
@@ -297,6 +326,10 @@ require SITE_ROOT . '/includes/header.php';
             'Quotes & pricing' => 'quotes-pricing',
             'Shop & products' => 'shop-products',
             'Manufacturers & other services' => 'manufacturers-other-services',
+            'Fire risk assessments' => 'fire-risk-assessments',
+            'Construction & fit-out' => 'construction-fit-out',
+            'Water, asbestos & surveys' => 'water-asbestos-surveys',
+            'Accreditations' => 'accreditations',
         ];
         return $map[$cat] ?? strtolower(preg_replace('/[^a-z0-9]+/i', '-', $cat));
     };
@@ -355,7 +388,7 @@ require SITE_ROOT . '/includes/header.php';
             <a href="<?= url('/contact.php') ?>" class="service-card bg-zinc-50 border rounded-3xl p-6 hover:border-[#ff6b00] transition">
                 <div class="text-2xl mb-3">✉️</div>
                 <div class="font-semibold text-black text-lg">Contact / free quote</div>
-                <p class="mt-2 text-sm text-zinc-600">Call, WhatsApp or form — aim to reply within 2 hours on business days.</p>
+                <p class="mt-2 text-sm text-zinc-600">Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>, WhatsApp or the form. Reply aim: 2 hours on business days.</p>
                 <div class="mt-4 text-sm font-semibold text-[#ff6b00]">Get a quote →</div>
             </a>
         </div>
@@ -376,10 +409,10 @@ require SITE_ROOT . '/includes/header.php';
     <div class="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-2 gap-10 items-center">
         <div>
             <h2 class="text-3xl font-semibold tracking-tight">Still have a question?</h2>
-            <p class="mt-3 text-white/75">Tell us your postcode and the system or certificate you need — free fixed-price quotes from Stockport-based engineers.</p>
+            <p class="mt-3 text-white/75">Tell us your postcode and the job. Written quotes from Stockport — call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>. Some visits are priced only after a survey.</p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="<?= url('/contact.php') ?>" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold">Request a quote</a>
-                <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20Icomply%2C%20I%20have%20a%20compliance%20question"
+                <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20iComply%2C%20I%20have%20a%20compliance%20question"
                    target="_blank" rel="noopener"
                    class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>
                 <a href="tel:<?= htmlspecialchars(preg_replace('/\s+/', '', PHONE), ENT_QUOTES, 'UTF-8') ?>"
@@ -387,10 +420,10 @@ require SITE_ROOT . '/includes/header.php';
             </div>
         </div>
         <ul class="space-y-3 text-sm text-white/90">
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> BS 5839 · BS 5266 · BS 7671 · gas safety</li>
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Installation, servicing and certification</li>
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> <?= (int)$areaCount ?>+ towns across the North West</li>
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Response aim: within 2 hours on business days</li>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> BS 5839, BS 5266 and BS 7671 as job references — not scheme memberships</li>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Installation, servicing and records for the work agreed</li>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> <?= (int)$areaCount ?>+ towns on our North West list</li>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Reply aim: within 2 hours on business days. Phone <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></li>
         </ul>
     </div>
 </section>
