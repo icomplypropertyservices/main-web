@@ -158,11 +158,16 @@ require SITE_ROOT . '/includes/header.php';
 </section>
 
 <?= sectionTrustStrip([
-    ['Honest pricing', 'Shown as From / POA — fixed quote after we agree scope'],
+    ['Honest pricing', 'One published pack price — everything else is From / POA after scope'],
     ['One visit plan', 'Combine services where practical to cut access days'],
     ['Audit-ready packs', 'Certificates & reports in one place for insurers'],
     ['Local engineers', 'Stockport-based team covering Greater Manchester & NW'],
 ]) ?>
+
+<?php
+require_once SITE_ROOT . '/includes/compliance-bundle.php';
+echo icomplyComplianceBundleCrossSellHtml('packages');
+?>
 
 <!-- PACKAGES GRID -->
 <section id="packages" class="max-w-7xl mx-auto px-6 py-16 md:py-20">

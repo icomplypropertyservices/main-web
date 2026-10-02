@@ -137,7 +137,22 @@ if (!function_exists('icomplyBarrierJobHub')) {
 if (!function_exists('getPackageHubs')) {
     /** Wave 1 package hubs under /pages/packages/* */
     function getPackageHubs(): array {
-        return [
+        if (!function_exists('icomplyComplianceBundle')) {
+            $ssot = __DIR__ . '/compliance-bundle.php';
+            if (is_file($ssot)) {
+                require_once $ssot;
+            }
+        }
+        $bundle = function_exists('icomplyComplianceBundle') ? icomplyComplianceBundle() : null;
+        $hubs = [];
+        if ($bundle) {
+            $hubs['compliance-bundle'] = [
+                'name' => $bundle['name'],
+                'tagline' => $bundle['alias'] . ' · ' . $bundle['price_label'],
+                'audience' => 'Domestic',
+            ];
+        }
+        return $hubs + [
             'let-ready' => [
                 'name' => 'Let Ready',
                 'tagline' => 'Landlord / void compliance pack',

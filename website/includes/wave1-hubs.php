@@ -46,7 +46,7 @@ function wave1QualityHubs(): array
             'formIntro' => 'List the certificates you already have. We only quote what is due.',
             'formPlaceholder' => 'Address, tenure, last EICR / gas / EPC / FRA dates…',
             'faqs' => [
-                ['q' => 'Do you sell a fixed “landlord pack” price?', 'a' => 'No. Houses differ. Ask for a written quote. Existing Let Ready and workplace packages stay on their own pages — we are not duplicating HMO package landings here.'],
+                ['q' => 'Do you sell a fixed “landlord pack” price?', 'a' => 'One published pack does: the [Compliance Bundle](/pages/packages/compliance-bundle), also called the landlord pack, for one residential property inside the scope on that page. The price is only stated there. Houses outside that scope, and every certificate on its own, are still a written quote. Let Ready and workplace packages stay on their own pages.'],
                 ['q' => 'Is this legal advice?', 'a' => 'No. It is practical inspection and documentation for your file.'],
             ],
         ],
