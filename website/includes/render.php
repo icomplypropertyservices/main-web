@@ -174,6 +174,26 @@ function keywordTemplatePlaceholders(
             . '<p class="mt-3 text-sm text-zinc-900 leading-relaxed font-medium">' . $a . '</p></details>';
     }
 
+    $faqEntities = [];
+    foreach ($faqs as $faq) {
+        if (!is_array($faq) || count($faq) < 2) {
+            continue;
+        }
+        $faqEntities[] = [
+            '@type' => 'Question',
+            'name' => (string)$faq[0],
+            'acceptedAnswer' => [
+                '@type' => 'Answer',
+                'text' => (string)$faq[1],
+            ],
+        ];
+    }
+    $faqSchema = json_encode([
+        '@context' => 'https://schema.org',
+        '@type' => 'FAQPage',
+        'mainEntity' => $faqEntities,
+    ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP);
+
     $kwImg = url('/assets/images/keywords/' . $slug . '.jpg');
     $svcImg = url('/assets/images/services/' . $serviceSlug . '.jpg');
     // Prefer keyword image path; template onerror falls back to service
@@ -192,6 +212,7 @@ function keywordTemplatePlaceholders(
         'KEYWORD_META' => $metaDesc,
         'KEYWORD_FOCUS_HTML' => $focusHtml,
         'KEYWORD_FAQ_HTML' => $faqHtml,
+        'KEYWORD_FAQ_SCHEMA' => $faqSchema !== false ? $faqSchema : '{}',
         'KEYWORD_IMAGE' => $kwImg,
         'SERVICE_IMAGE' => $svcImg,
     ];

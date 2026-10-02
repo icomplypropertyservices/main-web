@@ -712,6 +712,10 @@ $waFile = __DIR__ . '/includes/water-asbestos.php';
 if (is_file($waFile)) {
     require_once $waFile;
 }
+$cctvJobsFile = __DIR__ . '/includes/cctv-jobs.php';
+if (is_file($cctvJobsFile)) {
+    require_once $cctvJobsFile;
+}
 
 // Back-compat globals used by some templates/includes
 $services = getServices();

@@ -58,6 +58,7 @@ require SITE_ROOT . '/includes/header.php';
         ],
     ],
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
+<script type="application/ld+json"><?= $KEYWORD_FAQ_SCHEMA ?></script>
 
 <!-- HERO: solid navy + image with dark overlay for readable text -->
 <section class="relative overflow-hidden bg-[#061828] text-white">

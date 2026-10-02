@@ -42,6 +42,12 @@ $serviceFaqs = [
         ['Do you remove asbestos?', 'Licensed removal is not this service. If the survey says removal is required, that work is appointed separately.'],
         ['What does it cost?', 'Price on application. Size, access and how intrusive the survey must be all change the quote. No invented starting price.'],
     ],
+    'cctv' => [
+        ['What does a CCTV quote include?', 'A written figure after we confirm camera count, recorder, cabling, retention and access. This page does not list a catalogue price.'],
+        ['Do you install IP CCTV and ANPR?', 'Yes. IP and HD systems with NVR recording, plus ANPR as its own lane view when the survey shows a plate camera is required.'],
+        ['How do you handle GDPR and neighbouring property?', 'We review camera aims, recommend privacy masks or a resite, and advise on signage. We do not issue a certificate that calls a system GDPR approved.'],
+        ['Can you take over an existing recorder?', 'Often yes, after a health check of channels, disks, passwords and the PoE switch. Remote viewing and incident export are part of that lane.'],
+    ],
     'default' => [
         ['What areas do you cover for ' . $SERVICE_NAME . '?', 'We cover every town in our published areas list across Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria from our Stockport base.'],
         ['How do you price the work?', $poaService ? 'Price on application after we confirm scope, standards and access. No catalogue prices on this page.' : 'After we confirm scope, standards and access we issue a written quote. We do not invent a fee here.'],
@@ -53,6 +59,9 @@ $blurb = getServiceBlurb($serviceSlug);
 $standards = getServiceStandards($serviceSlug);
 $faqs = $serviceFaqs[$serviceSlug] ?? $serviceFaqs['default'];
 $svcCopy = function_exists('waterAsbestosServiceCopy') ? waterAsbestosServiceCopy($serviceSlug) : null;
+if ($svcCopy === null && function_exists('cctvServiceCopy')) {
+    $svcCopy = cctvServiceCopy($serviceSlug);
+}
 
 $popularTowns = array_values(array_filter(
     ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool', 'Bury', 'Sale', 'Altrincham', 'Macclesfield', 'Burnley', 'Blackburn', 'Warrington', 'St Helens'],
@@ -358,6 +367,9 @@ $schema = [
                     Every guide below has a dedicated page for each town we cover
                     (e.g. <strong>EICR report in Stockport</strong>). Click a topic, then pick your area.
                 </p>
+                <?php if ($serviceSlug === 'cctv'): ?>
+                <p class="mt-2 text-zinc-600 max-w-2xl">CCTV job lane: install, NVR and DVR, ANPR, remote viewing, GDPR siting and maintenance guides are all listed on this service page.</p>
+                <?php endif; ?>
             </div>
             <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All keyword guides →</a>
         </div>
@@ -372,7 +384,7 @@ $schema = [
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <?php
             $shown = 0;
-            $cardLimit = in_array($serviceSlug, getElectricalGasFamilyServices(), true) ? 0 : 18;
+            $cardLimit = (in_array($serviceSlug, getElectricalGasFamilyServices(), true) || $serviceSlug === 'cctv') ? 0 : 18;
             foreach ($svcKeywords as $kwSlug => $kwMeta):
                 if ($cardLimit > 0 && $shown >= $cardLimit) {
                     break;
