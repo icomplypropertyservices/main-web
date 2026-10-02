@@ -17,7 +17,7 @@ $services = getServices();
 $areas = getAreas();
 
 $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
-$waText = rawurlencode('Hi Icomply, I need a priority reactive call-out. Fault type / postcode: ');
+$waText = rawurlencode('Hi iComply, I need a priority reactive call-out. Fault type / postcode: ');
 $waUrl = 'https://wa.me/' . WHATSAPP . '?text=' . $waText;
 
 // Primary reactive scenarios
@@ -229,7 +229,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
 
     <div class="grid md:grid-cols-3 gap-6">
         <?php foreach ($scenarios as $slug => $card):
-            $img = url('/assets/images/services/' . $slug . '.jpg');
+            $img = serviceImageUrl($slug);
             $svcName = $services[$slug] ?? $card['title'];
         ?>
         <div class="service-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
@@ -374,11 +374,11 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 'cctv' => 'Security systems',
             ];
             foreach ($prevSlugs as $slug => $label):
-                $img = url('/assets/images/services/' . $slug . '.jpg');
+                $img = serviceImageUrl($slug);
             ?>
             <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                class="relative rounded-3xl overflow-hidden min-h-[130px] border border-zinc-200 group">
-                <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?> — Icomply Property Services"
+                <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?> — iComply Property Services"
                      class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-90 transition" loading="lazy"
                      onerror="this.style.display='none'">
                 <div class="relative p-4 h-full flex items-end bg-gradient-to-t from-black/55 to-transparent">
@@ -470,7 +470,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             </a>
         </div>
 
-        <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
+        <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <input type="hidden" name="gclid" value="<?= htmlspecialchars($_GET['gclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
             <input type="hidden" name="fbclid" value="<?= htmlspecialchars($_GET['fbclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">

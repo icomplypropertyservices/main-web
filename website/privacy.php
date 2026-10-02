@@ -6,8 +6,8 @@ require_once __DIR__ . '/config.php';
 require_once SITE_ROOT . '/includes/share.php';
 
 $pageTitle = 'Privacy Policy | How We Use Your Data';
-$metaDesc = 'Privacy policy for Icomply Property Services (Stockport). How we collect, use and protect personal data from enquiries, quotes, compliance work and Shopify shop orders. UK GDPR rights explained.';
-$metaKeywords = 'Icomply privacy policy, data protection, UK GDPR, Stockport property compliance, Shopify privacy';
+$metaDesc = 'Privacy policy for iComply Property Services (Stockport). How we collect, use and protect personal data from enquiries, quotes, compliance work and Shopify shop orders. UK GDPR rights explained.';
+$metaKeywords = 'iComply privacy policy, data protection, UK GDPR, Stockport property compliance, Shopify privacy';
 $canonicalUrl = url('/privacy.php');
 $updated = '12 July 2026';
 
@@ -220,7 +220,7 @@ require SITE_ROOT . '/includes/header.php';
         </div>
 
         <div class="p-6 md:p-8 bg-[#0B1F3A] text-white rounded-3xl">
-            <div class="text-xs uppercase tracking-[2px] text-[#ff6b00] font-semibold mb-2">Explore Icomply</div>
+            <div class="text-xs uppercase tracking-[2px] text-[#ff6b00] font-semibold mb-2">Explore iComply</div>
             <h2 class="text-xl font-semibold tracking-tight mb-3">Services, shop &amp; brands</h2>
             <p class="text-white/75 text-sm mb-5 max-w-xl">
                 Looking for compliance work, trade products or manufacturer support across the North West?

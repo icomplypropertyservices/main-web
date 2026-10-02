@@ -37,7 +37,7 @@ require SITE_ROOT . '/includes/header.php';
 </section>
 <section id="quote" class="bg-zinc-50 border-t"><div class="max-w-3xl mx-auto px-6 py-16">
   <h2 class="text-3xl font-semibold text-center">Quote Workplace Essentials</h2>
-  <form action="<?= url('/contact.php') ?>" method="POST" class="mt-8 bg-white border rounded-3xl p-6 space-y-4">
+  <?= icomplyQuoteFormOpen('mt-8 bg-white border rounded-3xl p-6 space-y-4') ?>
     <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
     <input type="text" name="name" placeholder="Full name" required class="w-full border px-5 py-3.5 rounded-2xl">
     <input type="email" name="email" placeholder="Email" required class="w-full border px-5 py-3.5 rounded-2xl">

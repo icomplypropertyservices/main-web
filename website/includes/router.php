@@ -65,6 +65,40 @@ function routerTryFile(string $relPath): bool {
  * Virtual routes that do not need per-URL stub files.
  */
 function routerDispatchVirtual(string $path): bool {
+    // Trade shop hubs are static HTML. Prefer them over shop/index.php,
+    // which needs Shopify helpers and 500s when that file is unavailable.
+    if (preg_match('#^/shop(?:/(fire|electrical|security|gas))?$#', $path, $shopMatch)) {
+        $rel = '/shop' . (isset($shopMatch[1]) ? '/' . $shopMatch[1] : '') . '/index.html';
+        $html = SITE_ROOT . $rel;
+        if (is_file($html)) {
+            header('Content-Type: text/html; charset=utf-8');
+            readfile($html);
+            return true;
+        }
+    }
+
+    // Dead package handles and the retired group path (also in _redirects).
+    $packageHubs = [
+        '/products/aov-air-handling-package' => '/pages/services/aov-air-handling',
+        '/products/electrical-compliance-package' => '/pages/services/electrical',
+        '/products/emergency-lighting-package' => '/pages/services/emergency-lighting',
+        '/products/fire-alarm-service-package' => '/pages/services/fire-alarms',
+        '/products/nurse-call-systems-package' => '/pages/services/nurse-call',
+        '/products/gas-safety-package' => '/pages/services/gas-systems',
+        '/products/intruder-alarm-package' => '/pages/services/intruder-alarm',
+        '/products/cctv-systems-package' => '/pages/services/cctv',
+        '/products/access-control-package' => '/pages/services/access-control',
+        '/products/door-entry-package' => '/pages/services/door-entry',
+        '/products/intercoms-package' => '/pages/services/intercoms',
+        '/pages/products' => '/products',
+        '/group' => '/',
+    ];
+    if (isset($packageHubs[$path])) {
+        header('Location: ' . url($packageHubs[$path]), true, 301);
+        icomplyRequestExit();
+        return true;
+    }
+
     // Directory indexes (url() strips /index)
     // keywords-hub lives outside pages/keywords/** so it survives vercelignore of stubs.
     $indexes = [
@@ -117,6 +151,11 @@ function routerDispatchVirtual(string $path): bool {
     // /pages/services/{slug}
     if (preg_match('#^/pages/services/([a-z0-9\-]+)$#', $path, $m)) {
         renderServiceHubPage($m[1]);
+        return true;
+    }
+    // /pages/manufacturers/{slug}/{area}
+    if (preg_match('#^/pages/manufacturers/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        renderManufacturerAreaPage($m[1], $m[2]);
         return true;
     }
     // /pages/manufacturers/{slug}

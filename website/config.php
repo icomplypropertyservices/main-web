@@ -1,13 +1,13 @@
 <?php
 /**
- * Icomply Property Services — site config + helpers.
+ * iComply Property Services — site config + helpers.
  * Data lives in data/*.json; optional overrides in config.local.php.
  */
 define('SITE_ROOT', __DIR__);
 
 // Defaults (overridable via config.local.php / env / Vercel)
 $siteDefaults = [
-    'SITE_NAME' => 'Icomply Property Services',
+    'SITE_NAME' => 'iComply Property Services',
     'SITE_URL' => 'http://localhost/icomply',
     'PHONE' => '07517806082',
     'EMAIL' => 'info@icomplypropertyservices.co.uk',
@@ -34,14 +34,18 @@ $siteDefaults = [
     'SHOPIFY_STOREFRONT_TOKEN' => '',
     'SHOPIFY_COLLECTION_ID' => '',
     'SHOPIFY_ENABLED' => false,
-    // Social profiles (leave empty to hide; WhatsApp always available via WHATSAPP)
-    'SOCIAL_FACEBOOK' => 'https://www.facebook.com/icomplypropertyservices',
-    'SOCIAL_INSTAGRAM' => 'https://www.instagram.com/icomplypropertyservices',
-    'SOCIAL_LINKEDIN' => 'https://www.linkedin.com/company/icomply-property-services',
-    'SOCIAL_TWITTER' => 'https://twitter.com/icomplyps',
-    'SOCIAL_YOUTUBE' => '',
+    // Social profiles (leave empty to hide; WhatsApp always available via WHATSAPP).
+    // Facebook, Instagram, X, and LinkedIn are not live — do not publish placeholder URLs.
+    'SOCIAL_FACEBOOK' => '',
+    'SOCIAL_INSTAGRAM' => '',
+    'SOCIAL_LINKEDIN' => '',
+    'SOCIAL_TWITTER' => '',
+    'SOCIAL_YOUTUBE' => 'https://www.youtube.com/@icomplypropertyservices',
     'SOCIAL_TIKTOK' => '',
-    'SOCIAL_GOOGLE' => 'https://g.page/icomply-property-services',
+    'SOCIAL_GOOGLE' => 'https://www.google.com/maps/place/iComply+Property+Services/@53.4722454,-2.2234628,12z/data=!3m1!4b1!4m6!3m5!1s0x23f1a3169673630b:0xf80a415364a6510a!8m2!3d53.4722454!4d-2.2234628!16s%2Fg%2F11nr2vwl8z',
+    // tiered: only hubs, core pages, and Tier-1 service×area URLs are indexable.
+    // all: every generated combination is indexable and listed in the sitemap.
+    'INDEX_MODE' => 'tiered',
 ];
 
 // Environment overrides (Vercel Project → Settings → Environment Variables)
@@ -82,7 +86,7 @@ if ($isVercel || $isNetlify || preg_match('/icomplypropertyservices\.co\.uk$/i',
     if ($host === '' || str_contains($host, 'localhost')) {
         $host = 'icomplypropertyservices.co.uk';
     }
-    // Canonical host: apex (www → apex redirect in vercel.json)
+    // Canonical host: apex (www → apex redirect in netlify.toml)
     if (strcasecmp($host, 'www.icomplypropertyservices.co.uk') === 0) {
         $host = 'icomplypropertyservices.co.uk';
     }
@@ -119,6 +123,16 @@ if ($isVercelFinal || $isNetlifyFinal || preg_match('/icomplypropertyservices\.c
 $forcedSite = getenv('SITE_URL');
 if (is_string($forcedSite) && $forcedSite !== '' && !str_contains($forcedSite, 'localhost')) {
     $siteDefaults['SITE_URL'] = rtrim($forcedSite, '/');
+}
+$forcedIndex = getenv('INDEX_MODE');
+if (!is_string($forcedIndex) || $forcedIndex === '') {
+    $forcedIndex = $_ENV['INDEX_MODE'] ?? $_SERVER['INDEX_MODE'] ?? '';
+}
+if (is_string($forcedIndex) && $forcedIndex !== '') {
+    $siteDefaults['INDEX_MODE'] = strtolower($forcedIndex);
+}
+if (!in_array((string)($siteDefaults['INDEX_MODE'] ?? 'tiered'), ['tiered', 'all'], true)) {
+    $siteDefaults['INDEX_MODE'] = 'tiered';
 }
 
 foreach ($siteDefaults as $key => $value) {
@@ -224,6 +238,25 @@ function site_url(string $path = ''): string {
     return url('/' . ltrim($path, '/'));
 }
 
+/**
+ * Public quote form for static Netlify (no PHP).
+ * Customer fields stay in the caller. Posts to /thank-you, which is a 200 rewrite.
+ * $extra is raw attributes already safe to print (aria-label, novalidate).
+ */
+function icomplyQuoteFormOpen(string $class = '', string $extra = ''): string
+{
+    $attrs = 'name="quote" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field"';
+    if ($class !== '') {
+        $attrs .= ' class="' . htmlspecialchars($class, ENT_QUOTES, 'UTF-8') . '"';
+    }
+    if ($extra !== '') {
+        $attrs .= ' ' . $extra;
+    }
+    return '<form ' . $attrs . '>'
+        . '<input type="hidden" name="form-name" value="quote">'
+        . '<p hidden><label>Leave this field blank <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>';
+}
+
 /** Core services (data/services.json) + any admin-added customs */
 function getServices(): array {
     $base = loadJsonData('services', []);
@@ -277,6 +310,96 @@ function getAreas(): array {
     return loadJsonData('areas', []);
 }
 
+/** Indexing switch: `tiered` (default) or `all`. */
+function icomplyIndexMode(): string
+{
+    $mode = defined('INDEX_MODE') ? strtolower((string)INDEX_MODE) : 'tiered';
+    return $mode === 'all' ? 'all' : 'tiered';
+}
+
+/**
+ * Towns whose service×area pages stay indexable in tiered mode.
+ *
+ * @return list<string>
+ */
+function icomplyTier1Towns(): array
+{
+    return [
+        'Stockport',
+        'Manchester',
+        'Salford',
+        'Trafford',
+        'Tameside',
+        'Oldham',
+        'Bolton',
+        'Wigan',
+        'Liverpool',
+        'Warrington',
+    ];
+}
+
+function icomplyIsTier1Area(string $areaOrSlug): bool
+{
+    static $keys = null;
+    if ($keys === null) {
+        $keys = [];
+        foreach (icomplyTier1Towns() as $town) {
+            $keys[areaSlug($town)] = true;
+            $keys[mb_strtolower($town)] = true;
+        }
+    }
+    $slug = areaSlug($areaOrSlug);
+    return isset($keys[$slug]) || isset($keys[mb_strtolower($areaOrSlug)]);
+}
+
+/**
+ * In tiered mode, keyword×area pages, area-town hubs, and service×town pages
+ * without a bespoke article stay live (200) but are not indexable. A service×town
+ * URL is indexable only for a Tier-1 town that has its own written article.
+ * Spun "same page, town name swapped" copies stay out of the sitemap.
+ */
+function icomplyPathIsIndexable(string $path): bool
+{
+    if (icomplyIndexMode() === 'all') {
+        return true;
+    }
+    $path = '/' . ltrim(str_replace('\\', '/', $path), '/');
+    $path = preg_replace('#\.php$#i', '', $path) ?? $path;
+    $path = preg_replace('#/index$#i', '', $path) ?? $path;
+    if ($path === '') {
+        $path = '/';
+    }
+    if (preg_match('#^/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+$#', $path)) {
+        return false;
+    }
+    // Area town hubs share one template. They are navigation, not sitemap URLs.
+    if (preg_match('#^/pages/areas/[a-z0-9\-]+$#', $path)) {
+        return false;
+    }
+    if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        $reserved = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'jobs'];
+        if (!in_array($m[1], $reserved, true) && function_exists('getServices') && isset(getServices()[$m[1]])) {
+            if (!icomplyIsTier1Area($m[2])) {
+                return false;
+            }
+            if (!function_exists('icomplyTier1ServiceArticle')) {
+                $copy = __DIR__ . '/includes/tier1-copy.php';
+                if (is_file($copy)) {
+                    require_once $copy;
+                }
+            }
+            return function_exists('icomplyTier1ServiceArticle')
+                && icomplyTier1ServiceArticle($m[1], $m[2]) !== '';
+        }
+    }
+    return true;
+}
+
+function icomplyRobotsMetaForPath(string $path): string
+{
+    return icomplyPathIsIndexable($path) ? 'index, follow' : 'noindex, follow';
+}
+
 /**
  * Canonical slug: lowercase, non-alnum → hyphen, collapse hyphens.
  * "Ashton-under-Lyne" → ashton-under-lyne
@@ -298,7 +421,7 @@ function keywordDisplayName($slugOrName): string {
     $acronyms = [
         'Eicr' => 'EICR', 'Pat' => 'PAT', 'Ev' => 'EV', 'Aov' => 'AOV', 'Ahu' => 'AHU',
         'Cctv' => 'CCTV', 'Ip' => 'IP', 'Hd' => 'HD', 'Bs' => 'BS', 'Htm' => 'HTM',
-        'Niceic' => 'NICEIC', 'Lpg' => 'LPG', 'Ptz' => 'PTZ', 'Cp44' => 'CP44',
+        'Lpg' => 'LPG', 'Ptz' => 'PTZ', 'Cp44' => 'CP44',
         'Cp12' => 'CP12', 'Fra' => 'FRA', 'Cdm' => 'CDM', 'Hmo' => 'HMO', 'Epc' => 'EPC',
         'Fd30' => 'FD30', 'Fd60' => 'FD60', 'Anpr' => 'ANPR', 'Nvr' => 'NVR', 'Dvr' => 'DVR',
         'Ppm' => 'PPM', 'Gsm' => 'GSM', 'Epdm' => 'EPDM', 'Pir' => 'PIR',
@@ -306,7 +429,15 @@ function keywordDisplayName($slugOrName): string {
     foreach ($acronyms as $from => $to) {
         $name = preg_replace('/\b' . preg_quote($from, '/') . '\b/', $to, $name);
     }
-    return $name;
+    $banned = [
+        'Certified Electrician' => 'Electrical testing',
+        'Part P' => 'Electrical testing',
+        'NICEIC' => 'Electrical testing',
+        'Niceic' => 'Electrical testing',
+        'Gas Safety' => 'Gas safety',
+        'Gas Safe' => 'Gas safety certificates (CP12)',
+    ];
+    return str_replace(array_keys($banned), array_values($banned), $name);
 }
 
 function getMajorKeywords(): array {
@@ -333,6 +464,9 @@ function getMajorKeywords(): array {
         }
         if (!empty($meta['faq']) && is_array($meta['faq'])) {
             $row['faq'] = $meta['faq'];
+        }
+        if ($slug === 'tunstall-nurse-call') {
+            continue;
         }
         $normalized[$slug] = $row;
     }
@@ -418,21 +552,7 @@ function isCostStyleKeyword(string $slug, string $name = ''): bool {
 function exportedServiceLocalUrl(string $serviceSlug, string $area, string $from = 'service'): string {
     $serviceSlug = areaSlug($serviceSlug);
     $town = areaSlug($area);
-    $featured = getElectricalGasFeaturedKeywordSlugs();
-    $kw = getMajorKeywords();
-    $pick = null;
-    if ($serviceSlug === 'electrical') {
-        $pick = $featured['electrical'][0] ?? 'rewire';
-    } elseif ($serviceSlug === 'gas-systems') {
-        $pick = $featured['gas'][0] ?? 'boiler';
-    }
-    if ($pick && isset($kw[keywordSlug((string)$pick)])) {
-        return url('/pages/keywords/' . keywordSlug((string)$pick) . '/' . $town . '.php');
-    }
-    if ($from === 'area') {
-        return url('/pages/services/' . $serviceSlug . '.php');
-    }
-    return url('/pages/areas/' . $town . '.php');
+    return url('/pages/' . $serviceSlug . '/' . $town . '.php');
 }
 
 /**
@@ -484,17 +604,29 @@ function getServiceMeta(string $slug = ''): array {
 }
 
 function getServiceBlurb(string $slug, bool $short = false): string {
+    if ($slug === 'gas-systems' && function_exists('icomplyGasServiceBlurb')) {
+        return icomplyGasServiceBlurb($short);
+    }
     $m = getServiceMeta($slug);
     return $short ? (string)($m['short'] ?? $m['blurb'] ?? '') : (string)($m['blurb'] ?? '');
 }
 
 function getServiceStandards(string $slug): string {
+    if ($slug === 'gas-systems' && function_exists('icomplyGasServiceStandards')) {
+        return icomplyGasServiceStandards();
+    }
     return (string)(getServiceMeta($slug)['standards'] ?? '');
 }
 
 function getManufacturers(string $serviceSlug): array {
     $mfr = loadJsonData('manufacturers', []);
-    return $mfr['by_service'][$serviceSlug] ?? ['Industry Standard Equipment'];
+    $names = $mfr['by_service'][$serviceSlug] ?? ['Industry Standard Equipment'];
+    if (!function_exists('manufacturerIsExcluded')) {
+        return $names;
+    }
+    return array_values(array_filter($names, static function ($name) {
+        return !manufacturerIsExcluded(manufacturerSlugFromName((string)$name));
+    }));
 }
 
 /** Full manufacturer catalog keyed by slug */
@@ -502,6 +634,11 @@ function getManufacturerCatalog(): array {
     $mfr = loadJsonData('manufacturers', []);
     $catalog = $mfr['catalog'] ?? [];
     if ($catalog) {
+        foreach (array_keys($catalog) as $slug) {
+            if (function_exists('manufacturerIsExcluded') && manufacturerIsExcluded((string)$slug)) {
+                unset($catalog[$slug]);
+            }
+        }
         return $catalog;
     }
     // Fallback: build minimal catalog from by_service names
@@ -514,9 +651,9 @@ function getManufacturerCatalog(): array {
                     'name' => $name,
                     'slug' => $slug,
                     'services' => [$service],
-                    'blurb' => "Icomply installs and services {$name} equipment across the North West.",
+                    'blurb' => "iComply installs and services {$name} equipment across the North West.",
                     'seo_title' => "{$name} Products & Service",
-                    'seo_desc' => "{$name} installation, servicing and trade products from Icomply Property Services.",
+                    'seo_desc' => "{$name} installation, servicing and trade products from iComply Property Services.",
                     'seo_keywords' => $name,
                     'products' => [],
                     'featured' => false,
@@ -565,7 +702,10 @@ function manufacturerTagsHtml(string $serviceSlug): string {
     $html = '';
     foreach (getManufacturers($serviceSlug) as $m) {
         $slug = manufacturerSlugFromName($m);
-        $href = htmlspecialchars(url('/pages/manufacturers/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
+        $brandHref = getManufacturerBySlug($slug)
+            ? url('/pages/manufacturers/' . $slug . '.php')
+            : url('/pages/manufacturers/index.php');
+        $href = htmlspecialchars($brandHref, ENT_QUOTES, 'UTF-8');
         $label = htmlspecialchars($m, ENT_QUOTES, 'UTF-8');
         $html .= '<a href="' . $href . '" '
             . 'class="inline-flex items-center gap-1.5 px-4 py-2.5 bg-white border-2 border-zinc-200 rounded-full text-sm text-black font-semibold hover:border-[#ff6b00] hover:text-[#ff6b00] hover:shadow-sm transition" '
@@ -598,7 +738,7 @@ function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
     }
     $catalog = getManufacturerCatalog();
     $html = '';
-    $fallback = htmlspecialchars(url('/assets/images/services/' . $serviceSlug . '.jpg'), ENT_QUOTES, 'UTF-8');
+    $fallback = htmlspecialchars(serviceImageUrl($serviceSlug), ENT_QUOTES, 'UTF-8');
     foreach ($slugs as $slug) {
         $slug = preg_replace('/[^a-z0-9\-]/', '', (string)$slug);
         if ($slug === '') {
@@ -606,10 +746,13 @@ function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
         }
         $entry = $catalog[$slug] ?? null;
         $label = htmlspecialchars($entry['name'] ?? ucwords(str_replace('-', ' ', $slug)), ENT_QUOTES, 'UTF-8');
-        $href = htmlspecialchars(url('/pages/manufacturers/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
+        $brandHref = $entry
+            ? url('/pages/manufacturers/' . $slug . '.php')
+            : url('/pages/manufacturers/index.php');
+        $href = htmlspecialchars($brandHref, ENT_QUOTES, 'UTF-8');
         $src = htmlspecialchars(manufacturerImageUrl($slug, $serviceSlug !== '' ? $serviceSlug : 'fire-alarms'), ENT_QUOTES, 'UTF-8');
         $html .= '<a href="' . $href . '" class="bg-white border-2 border-zinc-200 rounded-2xl overflow-hidden hover:border-[#ff6b00] hover:shadow-md transition block group">'
-            . '<img src="' . $src . '" alt="' . $label . ' products and service — Icomply" '
+            . '<img src="' . $src . '" alt="' . $label . ' products and service — iComply" '
             . 'class="w-full h-28 object-cover group-hover:scale-105 transition duration-300" loading="lazy" '
             . 'onerror="this.src=\'' . $fallback . '\'">'
             . '<div class="p-3 text-sm text-black text-center font-semibold">' . $label
@@ -653,6 +796,18 @@ function serviceImageUrl(string $slug): string {
         }
     }
     return url('/assets/images/services/fire-alarms.jpg');
+}
+
+/**
+ * Keyword hero that is actually on disk. Missing keyword JPGs fall back to
+ * the parent service image (then the shared fire-alarms photo).
+ */
+function keywordImageUrl(string $slug, string $serviceSlug = ''): string {
+    $rel = '/assets/images/keywords/' . $slug . '.jpg';
+    if ($slug !== '' && is_file(SITE_ROOT . $rel)) {
+        return url($rel);
+    }
+    return serviceImageUrl($serviceSlug !== '' ? $serviceSlug : 'fire-alarms');
 }
 
 /**
@@ -710,9 +865,18 @@ function icomplyTradeProductsUrl(): string
     return icomplyTradeShopUrl();
 }
 
+$gasLegalFile = __DIR__ . '/includes/gas-legal.php';
+if (is_file($gasLegalFile)) {
+    require_once $gasLegalFile;
+}
+
 $waFile = __DIR__ . '/includes/water-asbestos.php';
 if (is_file($waFile)) {
     require_once $waFile;
+}
+$mfrAreaFile = __DIR__ . '/includes/manufacturer-areas.php';
+if (is_file($mfrAreaFile)) {
+    require_once $mfrAreaFile;
 }
 
 // Back-compat globals used by some templates/includes

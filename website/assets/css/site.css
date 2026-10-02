@@ -339,12 +339,63 @@ h1, h2, h3 { letter-spacing: -0.03em; }
 .mega-trigger:hover,
 .mega-desktop > .nav-link:hover,
 .mega-trigger[aria-expanded="true"] { color: var(--accent); background: rgba(255,107,0,0.1); }
+.mega-desktop > a.nav-link--featured {
+  color: #fff;
+  background: var(--accent);
+  border-radius: 999px;
+  font-weight: 800;
+  padding: 0.4rem 0.8rem;
+  margin: 0 0.12rem;
+}
+.mega-desktop > a.nav-link--featured:hover {
+  color: #fff;
+  background: #ff8533;
+}
+.mega-featured-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 0.6rem;
+  margin: 0 0 0.9rem;
+}
+.mega-featured-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: 0.85rem;
+  background: var(--accent);
+  color: #fff !important;
+  text-decoration: none;
+}
+.mega-featured-card span {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.mega-featured-card strong { font-size: 0.95rem; line-height: 1.2; }
+.mega-featured-card em {
+  font-style: normal;
+  font-size: 0.72rem;
+  line-height: 1.35;
+  color: rgba(255,255,255,0.9);
+}
+.mega-featured-card--job { background: #12263a; border: 1px solid rgba(255,107,0,0.45); }
+.drawer-priority {
+  display: block;
+  margin: 0.35rem 0;
+  padding: 0.8rem 0.95rem !important;
+  border-radius: 0.85rem;
+  background: var(--accent);
+  color: #fff !important;
+  font-weight: 800;
+  border-bottom: 0 !important;
+}
 .mega-panel {
   position: absolute; top: calc(100% + 0.35rem); left: 0; z-index: 70;
   min-width: 22rem;
 }
-.mega-item:nth-child(2) .mega-panel,
-.mega-item:nth-child(4) .mega-panel { left: auto; right: 0; }
+.mega-panel--shop { left: auto; right: 0; }
 .mega-panel-inner {
   background: var(--brand-card);
   border: 1px solid rgba(255,107,0,0.28);
@@ -455,6 +506,31 @@ h1, h2, h3 { letter-spacing: -0.03em; }
 }
 .foot-cta--wa { background: #16a34a; }
 .foot-cta--quote { background: var(--accent); }
+.foot-featured {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0.75rem;
+  margin: 0 0 1.25rem;
+}
+.foot-featured a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1rem 1.1rem;
+  border-radius: 1rem;
+  background: var(--accent);
+  color: #fff !important;
+  text-decoration: none;
+}
+.foot-featured a:last-child { background: #12263a; border: 1px solid rgba(255,107,0,0.45); }
+.foot-featured span {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.foot-featured strong { font-size: 1.15rem; line-height: 1.2; }
+.foot-featured em { font-style: normal; font-size: 0.8rem; line-height: 1.4; color: rgba(255,255,255,0.9); }
 .foot-drops { display: grid; gap: 0.55rem; }
 .foot-drop, .foot-sub {
   background: var(--brand-card);
@@ -639,3 +715,36 @@ section.relative.overflow-hidden.text-white > .absolute[style*="radial-gradient"
 .theme-light .mega-wordmark b { color: #0B1F3A; }
 .logo-on-light .mega-wordmark small,
 .theme-light .mega-wordmark small { color: #5B6472; }
+
+/* Manufacturer product lines and AOV/barriers wizards.
+   Deliberately not .product-card, .hub-card or .aov-kit-prices. */
+.mfr-kicker { font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: #ff6b00; font-weight: 700; }
+.mfr-line-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.mfr-line-card { background: #fff; border: 1px solid #e4e4e7; border-radius: 1.25rem; padding: 1rem; }
+.mfr-line-card h3 { margin: 0.75rem 0 0.35rem; font-size: 1rem; font-weight: 700; color: #0B1F3A; }
+.mfr-line-card p { margin: 0; color: #3f3f46; font-size: 0.875rem; line-height: 1.45; }
+.mfr-line-logo { width: 100%; height: auto; border-radius: 0.75rem; background: #0B1F3A; display: block; }
+.mfr-wizard { max-width: 72rem; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+.mfr-wizard-head h2 { font-size: 1.75rem; font-weight: 700; color: #0B1F3A; margin-top: 0.35rem; }
+.mfr-wizard-lead, .mfr-wizard-linkout { color: #3f3f46; margin-top: 0.75rem; }
+.mfr-partner-banner { background: #fff7ed; color: #0B1F3A; border-left: 4px solid #ff6b00; padding: 0.85rem 1rem; border-radius: 0.75rem; font-weight: 600; }
+.mfr-wizard-progress { display: flex; gap: 0.5rem; list-style: none; padding: 0; margin: 1.25rem 0; }
+.mfr-wizard-progress li { padding: 0.35rem 0.7rem; border-radius: 999px; background: #f4f4f5; font-size: 0.8rem; font-weight: 700; }
+.mfr-wizard-progress li[data-current="true"] { background: #0B1F3A; color: #fff; }
+.mfr-wizard-step { border: 1px solid #e4e4e7; border-radius: 1.25rem; padding: 1rem; margin: 0 0 1rem; background: #fff; }
+.mfr-wizard-step legend { font-weight: 700; padding: 0 0.35rem; }
+.mfr-wizard-options { display: grid; gap: 0.6rem; }
+.mfr-wizard-option { display: flex; gap: 0.75rem; align-items: center; border: 1px solid #e4e4e7; border-radius: 0.9rem; padding: 0.7rem 0.8rem; cursor: pointer; }
+.mfr-wizard-option img { width: 72px; height: 40px; object-fit: cover; flex: 0 0 auto; }
+.mfr-wizard-option small { display: block; color: #52525b; font-weight: 500; }
+.mfr-wizard-nav { display: flex; gap: 0.6rem; }
+.mfr-wizard-back, .mfr-wizard-next { border: 0; border-radius: 0.9rem; padding: 0.75rem 1.1rem; font-weight: 700; cursor: pointer; }
+.mfr-wizard-next { background: #ff6b00; color: #fff; }
+.mfr-wizard-back { background: #e4e4e7; color: #0B1F3A; }
+.mfr-link-panel { max-width: 72rem; margin: 0 auto; padding: 2rem 1.5rem; }
+.mfr-link-row { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; padding: 0; margin: 1rem 0 0; }
+.mfr-text-link { display: inline-flex; padding: 0.45rem 0.8rem; border: 1px solid #e4e4e7; border-radius: 999px; background: #fff; color: #0B1F3A; text-decoration: none; font-weight: 600; font-size: 0.875rem; }
+.mfr-text-link:hover { border-color: #ff6b00; color: #ff6b00; }
+.mfr-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.8rem; margin-top: 1.25rem; }
+.mfr-gallery-item { margin: 0; background: #fff; border: 1px solid #e4e4e7; border-radius: 1rem; overflow: hidden; }
+.mfr-gallery-item img { width: 100%; height: 160px; object-fit: cover; display: block; }
