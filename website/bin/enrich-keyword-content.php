@@ -83,7 +83,7 @@ $openers = [
 ];
 
 $middles = [
-    'Icomply Property Services {verb} {kw} as part of our {svc} range, working to {std}.',
+    'iComply Property Services {verb} {kw} as part of our {svc} range, working to {std}.',
     'Our engineers {verb} {kw} for {who}, with documentation that stands up to audits and insurers.',
     'From first survey to final paperwork, we {verb} {kw} with transparent scope and fixed pricing after agreement.',
     'We specialise in {kw} alongside related {svc} works, so one team can cover install, service and certification.',
@@ -138,7 +138,7 @@ foreach ($keywords as $slug => &$meta) {
 
     if (empty($meta['meta_desc']) || strlen((string)$meta['meta_desc']) < 80) {
         $meta['meta_desc'] = substr(
-            $name . ' across Greater Manchester & the North West. Icomply ' . $c['verb']
+            $name . ' across Greater Manchester & the North West. iComply ' . $c['verb']
             . ' with fixed-price quotes, ' . $c['std'] . ' focus and local engineers from Stockport.',
             0,
             158

@@ -19,13 +19,13 @@ function getTestimonials(): array
 {
     return [
         [
-            'quote' => 'Needed EICR certificates across a small rental portfolio before a new tenancy. The engineer was on time, explained the remedial work clearly and the paperwork arrived the same day. Exactly what a landlord needs.',
+            'quote' => 'Needed EICR certificates across a small rental portfolio before a new tenancy. The engineer was on time, explained the remedial work clearly and the paperwork arrived after the visit. Exactly what a landlord needs.',
             'name' => 'Sarah',
             'role' => 'Landlord in Stockport',
             'rating' => 5,
         ],
         [
-            'quote' => 'We had a BS 5839 fire alarm service due on a multi-let block in Manchester. Icomply booked us in within the week, flagged a few panel issues early and left us with clean certification for the freeholder.',
+            'quote' => 'We had a BS 5839 fire alarm service due on a multi-let block in Manchester. iComply booked us in within the week, flagged a few panel issues early and left us with clean certification for the freeholder.',
             'name' => 'James',
             'role' => 'Facilities manager, Greater Manchester',
             'rating' => 5,
@@ -61,7 +61,7 @@ function testimonialsSectionHtml(): string
     };
 
     $html = "\n<!-- TESTIMONIALS -->\n";
-    $html .= '<section class="bg-white border-t" aria-labelledby="testimonials-heading">' . "\n";
+    $html .= '<section class="bg-white border-t" data-seo-shared="1" aria-labelledby="testimonials-heading">' . "\n";
     $html .= '    <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">' . "\n";
     $html .= '        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">' . "\n";
     $html .= '            <div>' . "\n";

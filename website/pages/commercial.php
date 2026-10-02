@@ -35,7 +35,7 @@ $commercialPillars = [
     ],
     'aov-air-handling' => [
         'title' => 'AOV & smoke control',
-        'blurb' => 'Smoke vents, AOV panels and smoke-control maintenance for high-rise and commercial blocks.',
+        'blurb' => 'Smoke vents and AOV panels for blocks and workplaces. Quoted across the UK from Stockport. Travel outside a short North West run is on the quote. Install and testing are POA.',
         'keywords' => ['Smoke control', 'AOV panels', 'EN 12101'],
     ],
     'cctv' => [
@@ -68,7 +68,7 @@ $extraServices = [
     'intruder-alarm' => 'PD 6662 / BS EN 50131 wired and wireless systems with monitoring options.',
     'door-entry' => 'Video and audio door entry for multi-tenant commercial blocks.',
     'intercoms' => 'Master/substation and commercial intercom systems.',
-    'gas-systems' => 'Commercial gas, landlord certs and safety checks for mixed portfolios.',
+    'gas-systems' => 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue them.',
 ];
 
 $contractFeatures = [
@@ -137,7 +137,7 @@ require SITE_ROOT . '/includes/header.php';
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
                     <div><span class="text-white font-semibold text-xl block"><?= count($services) ?></span> core services</div>
                     <div><span class="text-white font-semibold text-xl block"><?= count($areas) ?>+</span> towns covered</div>
-                    <div><span class="text-white font-semibold text-xl block">One</span> compliance partner</div>
+                    <div><span class="text-white font-semibold text-xl block">Our</span> qualified engineers</div>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-3">
@@ -145,11 +145,11 @@ require SITE_ROOT . '/includes/header.php';
                 $heroSlugs = ['fire-alarms', 'electrical', 'cctv', 'access-control'];
                 foreach ($heroSlugs as $slug):
                     $name = $services[$slug] ?? ucwords(str_replace('-', ' ', $slug));
-                    $img = url('/assets/images/services/' . $slug . '.jpg');
+                    $img = serviceImageUrl($slug);
                 ?>
                 <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                    class="group relative rounded-3xl overflow-hidden border border-white/10 min-h-[140px] bg-white/5 hover:border-[#ff6b00] transition">
-                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> for commercial sites — Icomply Property Services"
+                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> for commercial sites — iComply Property Services"
                          class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-55 transition" loading="lazy"
                          onerror="this.style.display='none'">
                     <div class="relative p-5 h-full flex flex-col justify-end">
@@ -229,7 +229,7 @@ require SITE_ROOT . '/includes/header.php';
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <?php foreach ($commercialPillars as $slug => $pillar):
                 $name = $services[$slug] ?? $pillar['title'];
-                $img = url('/assets/images/services/' . $slug . '.jpg');
+                $img = serviceImageUrl($slug);
             ?>
             <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                class="service-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
@@ -366,11 +366,11 @@ require SITE_ROOT . '/includes/header.php';
                     ['access-control', 'Access control'],
                 ];
                 foreach ($shopTeasers as [$slug, $label]):
-                    $img = url('/assets/images/services/' . $slug . '.jpg');
+                    $img = serviceImageUrl($slug);
                 ?>
                 <a href="<?= url('/shop/index.php') ?>"
                    class="relative rounded-3xl overflow-hidden min-h-[120px] border border-zinc-200 group">
-                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?> products and kits — Icomply Property Services"
+                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?> products and kits — iComply Property Services"
                          class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-90 transition" loading="lazy"
                          onerror="this.style.display='none'">
                     <div class="relative p-4 h-full flex items-end bg-gradient-to-t from-black/50 to-transparent">
@@ -418,7 +418,7 @@ require SITE_ROOT . '/includes/header.php';
         </div>
         <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
             <h3 class="text-2xl font-semibold">Talk to the commercial team</h3>
-            <p class="mt-3 text-white/80">Call, WhatsApp or use the quote form — we aim to respond within 2 hours on business days.</p>
+            <p class="mt-3 text-white/80">Call, WhatsApp or use the quote form — we will reply with a quote.</p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>"
                    class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
@@ -443,7 +443,7 @@ require SITE_ROOT . '/includes/header.php';
             </p>
         </div>
 
-        <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
+        <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <input type="hidden" name="gclid" value="<?= htmlspecialchars($_GET['gclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
             <input type="hidden" name="fbclid" value="<?= htmlspecialchars($_GET['fbclid'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
