@@ -1,0 +1,1125 @@
+{
+  "groups": {
+    "aov": {
+      "title": "AOV product lines",
+      "kicker": "Smoke control",
+      "intro": "Ranges we install and service. Open a brand for the full page, or the AOV kit builder when it is published on this site.",
+      "wizard": "aov",
+      "service": "aov-air-handling",
+      "category": "AOV",
+      "brands": [
+        {
+          "slug": "se-controls",
+          "name": "SE Controls",
+          "lines": [
+            {
+              "id": "os2",
+              "name": "OS2",
+              "blurb": "Addressable smoke-control panels for stairs, lobbies and smoke shafts."
+            },
+            {
+              "id": "shev",
+              "name": "SHEV",
+              "blurb": "Natural smoke and heat exhaust ventilation for residential cores."
+            },
+            {
+              "id": "actuators",
+              "name": "Chain and linear actuators",
+              "blurb": "Window, louvre and vent drives commissioned with the panel."
+            }
+          ]
+        },
+        {
+          "slug": "nuaire",
+          "name": "Nuaire",
+          "lines": [
+            {
+              "id": "ecosmart",
+              "name": "Ecosmart",
+              "blurb": "Demand-controlled extract and supply fans used on smoke and air paths."
+            },
+            {
+              "id": "smoke-extract",
+              "name": "Smoke extract fans",
+              "blurb": "Mechanical extract selected to the fire strategy and duty."
+            }
+          ]
+        },
+        {
+          "slug": "brooks",
+          "name": "Brooks",
+          "lines": [
+            {
+              "id": "vents",
+              "name": "Smoke vents",
+              "blurb": "Roof and façade vents inspected, serviced and replaced on survey."
+            },
+            {
+              "id": "controls",
+              "name": "Control equipment",
+              "blurb": "Panels, batteries and interfaces maintained with the vent set."
+            }
+          ]
+        },
+        {
+          "slug": "ventilux",
+          "name": "Ventilux",
+          "lines": [
+            {
+              "id": "controls",
+              "name": "Smoke-vent controls",
+              "blurb": "Control panels and power supplies for natural smoke ventilation."
+            },
+            {
+              "id": "actuators",
+              "name": "Actuators",
+              "blurb": "Vent and window drives serviced with the control panel."
+            }
+          ]
+        },
+        {
+          "slug": "geze",
+          "name": "Geze",
+          "lines": [
+            {
+              "id": "rwa",
+              "name": "RWA",
+              "blurb": "Smoke and heat extraction drives for windows and louvres."
+            },
+            {
+              "id": "slimchain",
+              "name": "Slimchain",
+              "blurb": "Chain drives for façade and roof vents."
+            },
+            {
+              "id": "powerchain",
+              "name": "Powerchain",
+              "blurb": "Higher-force chain drives for larger vents."
+            }
+          ]
+        },
+        {
+          "slug": "d-h-mechatronic",
+          "name": "D+H Mechatronic",
+          "lines": [
+            {
+              "id": "cdc",
+              "name": "CDC",
+              "blurb": "Chain drives for smoke and daily ventilation windows."
+            },
+            {
+              "id": "rzn",
+              "name": "RZN",
+              "blurb": "SHEV control panels with battery standby."
+            },
+            {
+              "id": "dxd",
+              "name": "DXD",
+              "blurb": "Locking and tandem drives used with CDC actuators."
+            }
+          ]
+        },
+        {
+          "slug": "trox",
+          "name": "TROX",
+          "lines": [
+            {
+              "id": "ek",
+              "name": "EK smoke dampers",
+              "blurb": "Fire and smoke dampers on extract and supply ducts."
+            },
+            {
+              "id": "controls",
+              "name": "Damper controls",
+              "blurb": "Actuators and interfaces proved on cause-and-effect tests."
+            }
+          ]
+        },
+        {
+          "slug": "colt",
+          "name": "Colt",
+          "lines": [
+            {
+              "id": "seefire",
+              "name": "Seefire",
+              "blurb": "Natural smoke ventilators for industrial and commercial roofs."
+            },
+            {
+              "id": "louvre",
+              "name": "Louvre ventilators",
+              "blurb": "Weather louvres used as automatic opening vents."
+            }
+          ]
+        },
+        {
+          "slug": "smoke-control",
+          "name": "Smoke Control",
+          "lines": [
+            {
+              "id": "shafts",
+              "name": "Smoke shafts",
+              "blurb": "Stair and lobby shaft systems serviced to the fire strategy."
+            },
+            {
+              "id": "mechanical",
+              "name": "Mechanical extract",
+              "blurb": "Fans, dampers and panels maintained as one system."
+            }
+          ]
+        },
+        {
+          "slug": "assa-abloy",
+          "name": "ASSA ABLOY",
+          "lines": [
+            {
+              "id": "doors",
+              "name": "Smoke-control doors",
+              "blurb": "Door hardware that must release or close with the AOV cause and effect."
+            },
+            {
+              "id": "operators",
+              "name": "Door operators",
+              "blurb": "Automatic doors interfaced to the smoke-control panel."
+            }
+          ]
+        },
+        {
+          "slug": "group-scs",
+          "name": "Group SCS",
+          "lines": [
+            {
+              "id": "shafts",
+              "name": "Smoke shafts",
+              "blurb": "Residential stair and corridor smoke-shaft packages."
+            },
+            {
+              "id": "pressurisation",
+              "name": "Pressurisation",
+              "blurb": "Stair pressure systems tested with the fire alarm interface."
+            }
+          ]
+        },
+        {
+          "slug": "windowmaster",
+          "name": "WindowMaster",
+          "lines": [
+            {
+              "id": "wmx",
+              "name": "WMX",
+              "blurb": "Compact smoke and natural ventilation controllers."
+            },
+            {
+              "id": "motorlink",
+              "name": "MotorLink",
+              "blurb": "Networked actuators for windows and louvres."
+            }
+          ]
+        },
+        {
+          "slug": "simon-rwa",
+          "name": "Simon RWA",
+          "lines": [
+            {
+              "id": "shev",
+              "name": "SHEV actuators",
+              "blurb": "Chain and spindle drives for smoke vents."
+            },
+            {
+              "id": "panels",
+              "name": "Control panels",
+              "blurb": "SHEV panels, batteries and fireman switches."
+            }
+          ]
+        },
+        {
+          "slug": "bilco",
+          "name": "Bilco",
+          "lines": [
+            {
+              "id": "roof",
+              "name": "Roof smoke vents",
+              "blurb": "Automatic roof hatches used as smoke outlets."
+            },
+            {
+              "id": "access",
+              "name": "Roof access hatches",
+              "blurb": "Hatches that also form part of the smoke path."
+            }
+          ]
+        },
+        {
+          "slug": "cambric",
+          "name": "Cambric",
+          "lines": [
+            {
+              "id": "actuators",
+              "name": "Actuators",
+              "blurb": "Vent drives and brackets serviced on residential cores."
+            },
+            {
+              "id": "panels",
+              "name": "Control panels",
+              "blurb": "Smoke-control panels, batteries and interfaces."
+            }
+          ]
+        },
+        {
+          "slug": "kingspan-air",
+          "name": "Kingspan Air",
+          "lines": [
+            {
+              "id": "duct",
+              "name": "Smoke extract duct",
+              "blurb": "Fire-rated duct on mechanical smoke paths."
+            },
+            {
+              "id": "fans",
+              "name": "Extract fans",
+              "blurb": "Fans selected to the smoke extract duty."
+            }
+          ]
+        },
+        {
+          "slug": "flaktgroup",
+          "name": "FlaktGroup",
+          "lines": [
+            {
+              "id": "axial",
+              "name": "Axial smoke fans",
+              "blurb": "High-temperature extract fans for smoke shafts and plant."
+            },
+            {
+              "id": "controls",
+              "name": "Fan controls",
+              "blurb": "Inverters, panels and fire-alarm interfaces."
+            }
+          ]
+        },
+        {
+          "slug": "systemair",
+          "name": "Systemair",
+          "lines": [
+            {
+              "id": "smoke-fans",
+              "name": "Smoke extract fans",
+              "blurb": "Certified smoke fans for shafts and car parks."
+            },
+            {
+              "id": "controls",
+              "name": "Controls",
+              "blurb": "Panels and dampers proved with the fan set."
+            }
+          ]
+        },
+        {
+          "slug": "ventlux",
+          "name": "Ventlux",
+          "lines": [
+            {
+              "id": "svm",
+              "name": "SVM / SVL",
+              "blurb": "Single-zone and multi-zone AOV controllers from the live shop."
+            },
+            {
+              "id": "hcv",
+              "name": "HCV",
+              "blurb": "Chain drives and door drives for windows and vents."
+            },
+            {
+              "id": "vsk",
+              "name": "VSK call points",
+              "blurb": "Orange smoke-vent call points and fireman’s switches."
+            },
+            {
+              "id": "sa",
+              "name": "SA Drive / SA Power",
+              "blurb": "Roof-vent actuators and cradles."
+            }
+          ],
+          "shop_href": "/shop/fire/#ventlux"
+        },
+        {
+          "slug": "kac",
+          "name": "KAC",
+          "lines": [
+            {
+              "id": "mcp-aov",
+              "name": "MCP1A-A-AOV",
+              "blurb": "Orange smoke-vent manual call point used on AOV circuits."
+            }
+          ],
+          "shop_href": "/shop/fire/#kac"
+        }
+      ]
+    },
+    "barrier": {
+      "title": "Barrier product lines",
+      "kicker": "Vehicle access",
+      "intro": "CAME GARD boom barriers from the live shop. Open the CAME page, or the barriers kit builder when it is published on this site.",
+      "wizard": "barriers",
+      "service": "",
+      "category": "Barriers",
+      "brands": [
+        {
+          "slug": "came",
+          "name": "CAME",
+          "lines": [
+            {
+              "id": "gard-gt4",
+              "name": "GARD GT4",
+              "blurb": "Boom barrier for openings up to about 4–6 m."
+            },
+            {
+              "id": "gard-gt8",
+              "name": "GARD GT8",
+              "blurb": "Longer GARD boom for wider vehicle lanes."
+            },
+            {
+              "id": "gard-4",
+              "name": "GARD 4",
+              "blurb": "Compact GARD barrier for shorter lanes."
+            },
+            {
+              "id": "gard-8",
+              "name": "GARD 8",
+              "blurb": "GARD 8 for longer booms, confirmed on survey."
+            },
+            {
+              "id": "gard-px",
+              "name": "GARD PX",
+              "blurb": "GARD PX intensive-use barrier."
+            },
+            {
+              "id": "gard-lt",
+              "name": "GARD LT",
+              "blurb": "GARD LT barrier kit from the live shop."
+            }
+          ],
+          "shop_href": "/shop/security/#came-gard"
+        }
+      ]
+    },
+    "fire": {
+      "title": "Fire product lines",
+      "kicker": "Fire detection",
+      "intro": "Panel and device ranges we install and service. Each logo opens the manufacturer page.",
+      "wizard": "",
+      "service": "fire-alarms",
+      "category": "Fire",
+      "brands": [
+        {
+          "slug": "kentec",
+          "name": "Kentec",
+          "lines": [
+            {
+              "id": "syncro",
+              "name": "Syncro AS",
+              "blurb": "Addressable loop panels and network cards."
+            },
+            {
+              "id": "sigma",
+              "name": "Sigma CP",
+              "blurb": "Conventional, two-wire and AlarmSense panels."
+            }
+          ]
+        },
+        {
+          "slug": "advanced-electronics",
+          "name": "Advanced Electronics",
+          "lines": [
+            {
+              "id": "mxpro",
+              "name": "MxPro 5",
+              "blurb": "Addressable panels, loop cards and network cards."
+            },
+            {
+              "id": "evacgo",
+              "name": "EvacGo",
+              "blurb": "BS 8629 evacuation alert panels."
+            }
+          ]
+        },
+        {
+          "slug": "c-tec",
+          "name": "C-Tec",
+          "lines": [
+            {
+              "id": "cfp",
+              "name": "CFP",
+              "blurb": "Conventional and AlarmSense panels and repeaters."
+            },
+            {
+              "id": "cast",
+              "name": "CAST",
+              "blurb": "Addressable protocol devices and lockdown panels."
+            },
+            {
+              "id": "xfp",
+              "name": "XFP",
+              "blurb": "Addressable panels and zone repeaters."
+            },
+            {
+              "id": "evac-alert",
+              "name": "EVAC-ALERT",
+              "blurb": "BS 8629 flat interfaces and sounders."
+            }
+          ]
+        },
+        {
+          "slug": "morley",
+          "name": "Morley",
+          "lines": [
+            {
+              "id": "zx",
+              "name": "ZX",
+              "blurb": "Addressable panels for commercial sites."
+            },
+            {
+              "id": "dxc",
+              "name": "DXc",
+              "blurb": "Compact addressable panels."
+            }
+          ]
+        },
+        {
+          "slug": "hochiki",
+          "name": "Hochiki",
+          "lines": [
+            {
+              "id": "esp",
+              "name": "ESP",
+              "blurb": "Addressable sensors, sounders, call points and bases."
+            }
+          ]
+        },
+        {
+          "slug": "apollo",
+          "name": "Apollo",
+          "lines": [
+            {
+              "id": "xp95",
+              "name": "XP95",
+              "blurb": "Addressable detectors, call points and interfaces."
+            },
+            {
+              "id": "discovery",
+              "name": "Discovery",
+              "blurb": "Multi-sensor and sounder devices."
+            },
+            {
+              "id": "alarmsense",
+              "name": "AlarmSense",
+              "blurb": "Two-wire conventional range."
+            },
+            {
+              "id": "reach",
+              "name": "REACH",
+              "blurb": "Wireless detectors, sounders and modules."
+            },
+            {
+              "id": "series-65",
+              "name": "Series 65",
+              "blurb": "Conventional detectors and bases."
+            }
+          ]
+        },
+        {
+          "slug": "gent",
+          "name": "Gent",
+          "lines": [
+            {
+              "id": "vigilon",
+              "name": "Vigilon",
+              "blurb": "Addressable panels and devices."
+            }
+          ]
+        },
+        {
+          "slug": "notifier",
+          "name": "Notifier",
+          "lines": [
+            {
+              "id": "pearl",
+              "name": "Pearl",
+              "blurb": "Addressable panels used on commercial sites."
+            }
+          ]
+        },
+        {
+          "slug": "honeywell",
+          "name": "Honeywell",
+          "lines": [
+            {
+              "id": "panels",
+              "name": "Fire panels",
+              "blurb": "Honeywell fire panels serviced alongside the devices on site."
+            },
+            {
+              "id": "devices",
+              "name": "Detection devices",
+              "blurb": "Detectors, call points and interfaces for those panels."
+            }
+          ]
+        },
+        {
+          "slug": "ziton",
+          "name": "Ziton",
+          "lines": [
+            {
+              "id": "zp3",
+              "name": "ZP3",
+              "blurb": "Addressable protocol panels and devices."
+            }
+          ]
+        },
+        {
+          "slug": "haes-systems",
+          "name": "Haes Systems",
+          "lines": [
+            {
+              "id": "esento",
+              "name": "Esento",
+              "blurb": "Conventional and twin-wire panels."
+            }
+          ]
+        },
+        {
+          "slug": "ems",
+          "name": "EMS",
+          "lines": [
+            {
+              "id": "firecell",
+              "name": "FireCell",
+              "blurb": "Wireless fire devices and translators."
+            },
+            {
+              "id": "smartcell",
+              "name": "SmartCell",
+              "blurb": "Wireless panels, detectors and sounders."
+            }
+          ]
+        },
+        {
+          "slug": "fike",
+          "name": "Fike",
+          "lines": [
+            {
+              "id": "twinflex",
+              "name": "Twinflex",
+              "blurb": "Two-wire panels, detectors and call points."
+            }
+          ]
+        },
+        {
+          "slug": "system-sensor",
+          "name": "System Sensor",
+          "lines": [
+            {
+              "id": "detectors",
+              "name": "Detectors",
+              "blurb": "Conventional and addressable smoke and heat detectors."
+            }
+          ]
+        },
+        {
+          "slug": "nittan",
+          "name": "Nittan",
+          "lines": [
+            {
+              "id": "evolution",
+              "name": "Evolution",
+              "blurb": "Addressable sensors and bases."
+            }
+          ]
+        },
+        {
+          "slug": "xtralis-vesda",
+          "name": "Xtralis VESDA",
+          "lines": [
+            {
+              "id": "vesda-e",
+              "name": "VESDA-E",
+              "blurb": "VEP, VEU, VES and VEA aspirating detectors."
+            },
+            {
+              "id": "vlf",
+              "name": "VLF / VLI",
+              "blurb": "LaserFOCUS and industrial aspirating detectors."
+            }
+          ]
+        },
+        {
+          "slug": "fireclass",
+          "name": "FireClass",
+          "lines": [
+            {
+              "id": "fc",
+              "name": "FC500 / FC700",
+              "blurb": "Addressable panels and devices."
+            }
+          ]
+        },
+        {
+          "slug": "sterling-safety",
+          "name": "Sterling Safety",
+          "lines": [
+            {
+              "id": "devices",
+              "name": "Detection devices",
+              "blurb": "Detectors and call points supplied for the panel on site."
+            }
+          ]
+        },
+        {
+          "slug": "eaton-fire",
+          "name": "Eaton Fire",
+          "lines": [
+            {
+              "id": "biwire",
+              "name": "BiWire",
+              "blurb": "Two-wire fire panels and devices."
+            },
+            {
+              "id": "cf",
+              "name": "CF",
+              "blurb": "Addressable panels."
+            }
+          ]
+        },
+        {
+          "slug": "cooper-fire",
+          "name": "Cooper Fire",
+          "lines": [
+            {
+              "id": "biwire",
+              "name": "BiWire",
+              "blurb": "Two-wire fire panels and devices."
+            },
+            {
+              "id": "cf3000",
+              "name": "CF3000",
+              "blurb": "Addressable panels."
+            }
+          ]
+        }
+      ]
+    },
+    "access-control": {
+      "title": "Access-control product lines",
+      "kicker": "Doors and readers",
+      "intro": "Reader, lock and controller ranges we install and service. Each logo opens the manufacturer page.",
+      "wizard": "",
+      "service": "access-control",
+      "category": "Access",
+      "brands": [
+        {
+          "slug": "paxton",
+          "name": "Paxton",
+          "lines": [
+            {
+              "id": "net2",
+              "name": "Net2",
+              "blurb": "Networked door controllers, readers and tokens."
+            },
+            {
+              "id": "paxlock",
+              "name": "PaxLock",
+              "blurb": "Wireless locks managed in Net2."
+            },
+            {
+              "id": "entry",
+              "name": "Paxton Entry",
+              "blurb": "Door-entry monitors and panels."
+            }
+          ]
+        },
+        {
+          "slug": "hid-global",
+          "name": "HID Global",
+          "lines": [
+            {
+              "id": "iclass",
+              "name": "iCLASS SE",
+              "blurb": "Readers and credentials."
+            },
+            {
+              "id": "signo",
+              "name": "Signo",
+              "blurb": "Multi-technology readers."
+            }
+          ]
+        },
+        {
+          "slug": "salto-systems",
+          "name": "Salto Systems",
+          "lines": [
+            {
+              "id": "xs4",
+              "name": "XS4",
+              "blurb": "Electronic locks and escutcheons."
+            },
+            {
+              "id": "ks",
+              "name": "KS",
+              "blurb": "Keypad and wall readers."
+            }
+          ]
+        },
+        {
+          "slug": "assa-abloy",
+          "name": "ASSA ABLOY",
+          "lines": [
+            {
+              "id": "aperio",
+              "name": "Aperio",
+              "blurb": "Wireless locks joined to an online access platform."
+            }
+          ]
+        },
+        {
+          "slug": "honeywell",
+          "name": "Honeywell",
+          "lines": [
+            {
+              "id": "winpak",
+              "name": "WIN-PAK",
+              "blurb": "Access software and controllers."
+            },
+            {
+              "id": "prowatch",
+              "name": "Pro-Watch",
+              "blurb": "Enterprise access platform."
+            }
+          ]
+        },
+        {
+          "slug": "gallagher",
+          "name": "Gallagher",
+          "lines": [
+            {
+              "id": "command-centre",
+              "name": "Command Centre",
+              "blurb": "Site access software, readers and controllers."
+            }
+          ]
+        },
+        {
+          "slug": "stanley-security",
+          "name": "Stanley Security",
+          "lines": [
+            {
+              "id": "readers",
+              "name": "Readers",
+              "blurb": "Door readers commissioned to the controller on site."
+            },
+            {
+              "id": "controllers",
+              "name": "Controllers",
+              "blurb": "Door controllers and power supplies."
+            }
+          ]
+        },
+        {
+          "slug": "cdvi",
+          "name": "CDVI",
+          "lines": [
+            {
+              "id": "atrium",
+              "name": "ATRIUM",
+              "blurb": "Web-managed controllers and readers."
+            }
+          ]
+        },
+        {
+          "slug": "tdsi",
+          "name": "TDSi",
+          "lines": [
+            {
+              "id": "gardis",
+              "name": "GARDiS",
+              "blurb": "IP door controllers."
+            },
+            {
+              "id": "exgarde",
+              "name": "EXgarde",
+              "blurb": "Access management software."
+            }
+          ]
+        },
+        {
+          "slug": "kantech",
+          "name": "Kantech",
+          "lines": [
+            {
+              "id": "entrapass",
+              "name": "EntraPass",
+              "blurb": "Access software and door controllers."
+            }
+          ]
+        },
+        {
+          "slug": "vanderbilt",
+          "name": "Vanderbilt",
+          "lines": [
+            {
+              "id": "act365",
+              "name": "ACT365",
+              "blurb": "Cloud and on-site door controllers."
+            }
+          ]
+        },
+        {
+          "slug": "nedap",
+          "name": "Nedap",
+          "lines": [
+            {
+              "id": "aeos",
+              "name": "AEOS",
+              "blurb": "Access platform, readers and controllers."
+            }
+          ]
+        },
+        {
+          "slug": "suprema",
+          "name": "Suprema",
+          "lines": [
+            {
+              "id": "biostar",
+              "name": "BioStar",
+              "blurb": "Biometric readers and door modules."
+            }
+          ]
+        },
+        {
+          "slug": "dormakaba",
+          "name": "dormakaba",
+          "lines": [
+            {
+              "id": "exivo",
+              "name": "exivo",
+              "blurb": "Cloud access for doors."
+            },
+            {
+              "id": "evolo",
+              "name": "evolo",
+              "blurb": "Electronic cylinders and locks."
+            }
+          ]
+        },
+        {
+          "slug": "allegion",
+          "name": "Allegion",
+          "lines": [
+            {
+              "id": "schlage",
+              "name": "Schlage",
+              "blurb": "Electronic locks and readers."
+            }
+          ]
+        },
+        {
+          "slug": "lenels2",
+          "name": "LenelS2",
+          "lines": [
+            {
+              "id": "onguard",
+              "name": "OnGuard",
+              "blurb": "Access software and interface modules."
+            }
+          ]
+        },
+        {
+          "slug": "software-house",
+          "name": "Software House",
+          "lines": [
+            {
+              "id": "ccure",
+              "name": "C•CURE 9000",
+              "blurb": "Enterprise access platform."
+            }
+          ]
+        }
+      ]
+    },
+    "nurse-call": {
+      "title": "Nurse-call product lines",
+      "kicker": "Care call",
+      "intro": "Call ranges we install and service. Each logo opens the manufacturer page.",
+      "wizard": "",
+      "service": "nurse-call",
+      "category": "Nurse call",
+      "brands": [
+        {
+          "slug": "courtney-thorne",
+          "name": "Courtney Thorne",
+          "lines": [
+            {
+              "id": "altra",
+              "name": "Altra",
+              "blurb": "Addressable nurse call, room units and overdoor lights."
+            }
+          ]
+        },
+        {
+          "slug": "static-systems-group",
+          "name": "Static Systems Group",
+          "lines": [
+            {
+              "id": "ultima",
+              "name": "Ultima",
+              "blurb": "Nurse call panels and room devices."
+            }
+          ]
+        },
+        {
+          "slug": "intercall",
+          "name": "Intercall",
+          "lines": [
+            {
+              "id": "600",
+              "name": "Intercall 600",
+              "blurb": "Nurse call systems for care settings."
+            },
+            {
+              "id": "700",
+              "name": "Intercall 700",
+              "blurb": "Addressable call points and displays."
+            }
+          ]
+        },
+        {
+          "slug": "aid-call",
+          "name": "Aid Call",
+          "lines": [
+            {
+              "id": "touchsafe",
+              "name": "Touchsafe",
+              "blurb": "Dispersed alarm and nurse call."
+            }
+          ]
+        },
+        {
+          "slug": "ascom",
+          "name": "Ascom",
+          "lines": [
+            {
+              "id": "telligence",
+              "name": "Telligence",
+              "blurb": "IP nurse call and staff stations."
+            }
+          ]
+        },
+        {
+          "slug": "schrack-seconet",
+          "name": "Schrack Seconet",
+          "lines": [
+            {
+              "id": "visocall",
+              "name": "Visocall",
+              "blurb": "Nurse call panels and room units."
+            }
+          ]
+        },
+        {
+          "slug": "zettler",
+          "name": "Zettler",
+          "lines": [
+            {
+              "id": "panels",
+              "name": "Nurse call panels",
+              "blurb": "Call panels and room devices serviced on site."
+            }
+          ]
+        },
+        {
+          "slug": "ackermann",
+          "name": "Ackermann",
+          "lines": [
+            {
+              "id": "clino",
+              "name": "Clino",
+              "blurb": "Nurse call room units and displays."
+            }
+          ]
+        },
+        {
+          "slug": "rauland",
+          "name": "Rauland",
+          "lines": [
+            {
+              "id": "responder",
+              "name": "Responder",
+              "blurb": "Nurse call and staff communication."
+            }
+          ]
+        },
+        {
+          "slug": "jeron",
+          "name": "Jeron",
+          "lines": [
+            {
+              "id": "provider",
+              "name": "Provider",
+              "blurb": "Nurse call panels and room stations."
+            }
+          ]
+        },
+        {
+          "slug": "austco",
+          "name": "Austco",
+          "lines": [
+            {
+              "id": "tacera",
+              "name": "Tacera",
+              "blurb": "IP nurse call."
+            }
+          ]
+        },
+        {
+          "slug": "tektone",
+          "name": "TekTone",
+          "lines": [
+            {
+              "id": "tek-care",
+              "name": "Tek-CARE",
+              "blurb": "Nurse call and room devices."
+            }
+          ]
+        },
+        {
+          "slug": "caretech",
+          "name": "Caretech",
+          "lines": [
+            {
+              "id": "icare",
+              "name": "iCare",
+              "blurb": "Dispersed alarms and call units."
+            }
+          ]
+        },
+        {
+          "slug": "wandsworth",
+          "name": "Wandsworth",
+          "lines": [
+            {
+              "id": "call",
+              "name": "Nurse call",
+              "blurb": "Call points, pear leads and panels."
+            }
+          ]
+        },
+        {
+          "slug": "quantec",
+          "name": "Quantec",
+          "lines": [
+            {
+              "id": "addressable",
+              "name": "Quantec addressable",
+              "blurb": "Addressable call points and displays."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

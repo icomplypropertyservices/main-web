@@ -155,6 +155,11 @@ require SITE_ROOT . '/includes/header.php';
         <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">Brands we install &amp; service</h2>
         <p class="mt-2 text-zinc-800 max-w-2xl">Click a manufacturer for products, kits and install quotes related to <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> and <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?>.</p>
         <div class="mt-6 flex flex-wrap gap-2"><?= $MANUFACTURER_TAGS ?></div>
+        <?php
+        if (function_exists('manufacturerProductLinesHtmlFor') && function_exists('manufacturerProductLineGroupsForPage')) {
+            echo manufacturerProductLinesHtmlFor(manufacturerProductLineGroupsForPage($SERVICE_SLUG, $KEYWORD_SLUG));
+        }
+        ?>
     </div>
 </section>
 

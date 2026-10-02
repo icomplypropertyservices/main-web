@@ -115,9 +115,15 @@ require SITE_ROOT . '/includes/header.php';
         <p class="text-black mb-6">We work with every major AOV and air handling manufacturer so customers searching for their exact control panel, actuator or smoke vent brand can find local support in {{AREA}}.</p>
         <div class="flex flex-wrap gap-3">
             <?= manufacturerTagsHtml('aov-air-handling') ?>
+        </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
             <?= manufacturerImagesHtml('aov-air-handling') ?>
         </div>
+        <?php
+        if (function_exists('manufacturerProductLinesHtml')) {
+            echo manufacturerProductLinesHtml('aov');
+        }
+        ?>
         </div>
         <div class="mt-6 grid md:grid-cols-2 gap-6">
             <div>

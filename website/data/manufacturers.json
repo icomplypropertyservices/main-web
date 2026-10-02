@@ -183,7 +183,8 @@
             "dormakaba",
             "Allegion",
             "LenelS2",
-            "Software House"
+            "Software House",
+            "CAME"
         ],
         "door-entry": [
             "Videx",
@@ -1341,6 +1342,40 @@
                     "shopify_product_id": "",
                     "image": "/assets/images/manufacturers/cambric.jpg",
                     "badge": ""
+                }
+            ],
+            "featured": false
+        },
+        "came": {
+            "name": "CAME",
+            "slug": "came",
+            "services": [
+                "access-control"
+            ],
+            "blurb": "Icomply supplies and installs CAME GARD vehicle barriers for car parks, yards and site entrances across Stockport, Greater Manchester and the North West. We survey boom length, loops and safety devices, then commission the barrier with the access method the site already uses. Trade GARD barriers, photocells and controls are ordered from the live shop. Installation is quoted after survey.",
+            "seo_title": "CAME GARD Barriers | Install, Service & Products | North West",
+            "seo_desc": "CAME GARD barrier supply and install across Stockport and the North West. Boom length confirmed on survey. Installation POA.",
+            "seo_keywords": "CAME, CAME GARD, GARD GT4, GARD GT8, vehicle barrier, car park barrier, CAME North West, CAME Manchester, CAME Stockport",
+            "products": [
+                {
+                    "id": "came-gard-gt4",
+                    "title": "CAME GARD GT4",
+                    "blurb": "GARD GT4 boom barrier for lanes up to about 4–6 m. Price on the shop. Installation POA.",
+                    "price": "POA",
+                    "handle": "came-gard-gt4",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/brand-logos/came.svg",
+                    "badge": "Barrier"
+                },
+                {
+                    "id": "came-gard-gt8",
+                    "title": "CAME GARD GT8",
+                    "blurb": "GARD GT8 for longer booms. Confirm the opening on survey. Installation POA.",
+                    "price": "POA",
+                    "handle": "came-gard-gt8",
+                    "shopify_product_id": "",
+                    "image": "/assets/images/brand-logos/came.svg",
+                    "badge": "Barrier"
                 }
             ],
             "featured": false

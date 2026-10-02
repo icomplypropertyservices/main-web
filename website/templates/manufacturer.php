@@ -196,6 +196,15 @@ $schema = [
     </div>
 </section>
 
+<?php
+if (function_exists('manufacturerProductLinesForBrandHtml')) {
+    $brandLines = manufacturerProductLinesForBrandHtml($mfrSlug);
+    if ($brandLines !== '') {
+        echo '<section class="max-w-7xl mx-auto px-6 pb-4">' . $brandLines . '</section>';
+    }
+}
+?>
+
 <!-- PRODUCTS -->
 <section id="products" class="bg-zinc-50 border-y">
     <div class="max-w-7xl mx-auto px-6 py-16">

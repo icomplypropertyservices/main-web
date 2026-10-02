@@ -331,6 +331,11 @@ $schema = [
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <?= $MANUFACTURER_IMAGES ?>
         </div>
+        <?php
+        if (function_exists('manufacturerProductLinesHtmlFor') && function_exists('manufacturerProductLineGroupsForPage')) {
+            echo manufacturerProductLinesHtmlFor(manufacturerProductLineGroupsForPage($serviceSlug));
+        }
+        ?>
         <div class="mt-10 rounded-3xl overflow-hidden border bg-white">
             <img src="<?= url('/assets/images/keywords/' . $KEYWORD_IMAGE_3 . '.jpg') ?>"
                  alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturer panels and equipment — Icomply <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"

@@ -123,6 +123,15 @@ $h = static function ($s): string {
     </div>
 </section>
 
+<?php
+if (function_exists('manufacturerProductLinesHtmlFor') && function_exists('manufacturerProductLineGroupsForPage')) {
+    $lineHtml = manufacturerProductLinesHtmlFor(manufacturerProductLineGroupsForPage($SERVICE_SLUG, $KEYWORD_SLUG), 'compact');
+    if ($lineHtml !== '') {
+        echo '<section class="bg-zinc-50 border-y"><div class="max-w-7xl mx-auto px-6 py-12">' . $lineHtml . '</div></section>';
+    }
+}
+?>
+
 <section class="bg-white border-y-2 border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-12">
         <h2 class="text-xl font-bold text-[#061828]"><?= $h($KEYWORD_NAME) ?> nearby</h2>
