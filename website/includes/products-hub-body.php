@@ -1,4 +1,5 @@
 <?php
+if (!function_exists('icomplyBar5mCameGardImageMap')) {
 function icomplyBar5mCameGardImageMap(): array {
     static $map = null;
     if ($map !== null) return $map;
@@ -38,6 +39,7 @@ function icomplyAovKitImageUrl(string $sku): string {
     if (isset($map[$key])) return $map[$key];
     // SKU AOV-MOTOR-HVY → aov-motor-hvy
     return $map[$key] ?? ('/assets/images/products/' . $sku . '.jpg');
+}
 }
 ?>
 <section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
