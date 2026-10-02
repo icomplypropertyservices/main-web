@@ -30,9 +30,9 @@ foreach ($byService as $service => $names) {
                 'name' => $name,
                 'slug' => $slug,
                 'services' => [$service],
-                'blurb' => "Icomply Property Services installs, services and supplies {$name} equipment across Greater Manchester and the North West. Trade kits, planned maintenance and fixed-price install quotes from our Stockport base.",
+                'blurb' => "iComply Property Services installs, services and supplies {$name} equipment across Greater Manchester and the North West. Trade kits, planned maintenance and fixed-price install quotes from our Stockport base.",
                 'seo_title' => "{$name} Installation, Service & Products | North West",
-                'seo_desc' => "Buy and install {$name} systems with Icomply. Installation, servicing, certification and trade products across the North West.",
+                'seo_desc' => "Buy and install {$name} systems with iComply. Installation, servicing, certification and trade products across the North West.",
                 'seo_keywords' => "{$name}, {$name} installation, {$name} service, {$name} spares, {$name} North West, {$name} Stockport",
                 'products' => [
                     [

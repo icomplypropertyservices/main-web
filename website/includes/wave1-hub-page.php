@@ -82,6 +82,11 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
+<?php
+require_once SITE_ROOT . '/includes/compliance-bundle.php';
+echo icomplyComplianceBundleCrossSellHtml($slug);
+?>
+
 <section class="max-w-7xl mx-auto px-6 py-16 md:py-20">
     <div class="grid lg:grid-cols-2 gap-12">
         <div>
