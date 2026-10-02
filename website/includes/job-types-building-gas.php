@@ -104,7 +104,12 @@ function jobTypesApplyBuildingGas(array $keywords): array
         if (empty($merged['service'])) {
             $merged['service'] = (string)($job['service'] ?? 'electrical');
         }
-        if (empty($merged['related'])) {
+        if (!$keepWave1 && !empty($job['related'])) {
+            $rel = keywordSlug((string)$job['related']);
+            if ($rel !== '') {
+                $merged['related'] = $rel;
+            }
+        } elseif (empty($merged['related'])) {
             $merged['related'] = (string)($job['related'] ?? $slug);
         }
         $merged['family'] = (string)($job['family'] ?? ($merged['family'] ?? ''));

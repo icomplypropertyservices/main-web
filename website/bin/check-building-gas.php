@@ -59,21 +59,9 @@ foreach (array_keys($slugs) as $slug) {
 $ok($missingKw === [], 'all 470 slugs present in getMajorKeywords()' . ($missingKw ? ' missing=' . implode(',', array_slice($missingKw, 0, 8)) : ''));
 
 $outDir = SITE_ROOT . '/pages/keywords';
-if (!is_dir($outDir)) {
-    mkdir($outDir, 0755, true);
-}
 $missingFiles = [];
 foreach (array_keys($slugs) as $slug) {
     $path = $outDir . '/' . $slug . '.php';
-    if (!is_file($path)) {
-        $slugExport = var_export($slug, true);
-        file_put_contents(
-            $path,
-            "<?php\n/** AUTO-GENERATED stub — php bin/generate-building-gas-pages.php */\n"
-            . "require_once __DIR__ . '/../../includes/render.php';\n"
-            . "renderKeywordPage({$slugExport});\n"
-        );
-    }
     if (!is_file($path)) {
         $missingFiles[] = $slug;
     }
@@ -128,6 +116,65 @@ foreach ($gas as $job) {
     }
 }
 $ok($gasWrong === [], 'all gas jobs service=gas-systems');
+
+$protected = ['window-sealing', 'smell-of-gas', 'suspected-gas-leak', 'repairing-a-boiler', 'void-gas-safety-certificate'];
+$missingProtected = array_values(array_filter($protected, static fn(string $slug): bool => !isset($slugs[$slug])));
+$ok($missingProtected === [], 'safety and verb forms kept' . ($missingProtected ? ' missing=' . implode(',', $missingProtected) : ''));
+
+$dropped = [
+    'boiler-install-stockport', 'cp12-north-west', 'gas-engineer-manchester',
+    'gas-safety-certificate-stockport', 'gas-safety-greater-manchester', 'landlord-gas-stockport',
+    'carbon-monoxide-alarm-for-landlords', 'co-alarm-near-boiler', 'bonding-gas-pipe',
+];
+$stillThere = array_values(array_filter($dropped, static fn(string $slug): bool => isset($slugs[$slug])));
+$ok($stillThere === [], 'town doorway and wrong-trade pages are not in this pack' . ($stillThere ? ' still=' . implode(',', $stillThere) : ''));
+
+$copyFail = [];
+foreach ($slugs as $slug => $job) {
+    $blob = (string)($job['seo_title'] ?? '')
+        . ' ' . (string)($job['intro'] ?? '')
+        . ' ' . (string)($job['body'] ?? '')
+        . ' ' . (string)($job['meta_desc'] ?? '')
+        . ' ' . json_encode($job['faq'] ?? [])
+        . ' ' . json_encode($job['focus_points'] ?? []);
+    if (str_contains((string)($job['seo_title'] ?? ''), 'Building & Gas')) {
+        $copyFail[] = $slug . ':building-and-gas-title';
+    }
+    if (str_contains($blob, 'panel, boiler or door brand')) {
+        $copyFail[] = $slug . ':boilerplate-brand-ask';
+    }
+    if (str_contains($blob, 'BS 5628')) {
+        $copyFail[] = $slug . ':bs5628';
+    }
+    if (str_contains($blob, 'CP44') && !preg_match('/commercial|catering|plant|cp44/', $slug)) {
+        $copyFail[] = $slug . ':cp44';
+    }
+    if (str_contains($slug, 'cp44') && !str_contains($blob, 'not a domestic CP12')) {
+        $copyFail[] = $slug . ':cp44-called-domestic';
+    }
+    $name = (string)($job['name'] ?? '');
+    if ($name !== '' && str_starts_with((string)($job['intro'] ?? ''), $name . ' sits under')) {
+        $copyFail[] = $slug . ':name-sits';
+    }
+    $rel = keywordSlug((string)($job['related'] ?? ''));
+    $relService = (string)($slugs[$rel]['service'] ?? '');
+    if ($rel === '' || $relService !== (string)($job['service'] ?? '')) {
+        $copyFail[] = $slug . ':related-other-service';
+    }
+    if (preg_match('/gas-leak|suspected-gas|smell-of-gas/', $slug) && !str_contains($blob, '0800 111 999')) {
+        $copyFail[] = $slug . ':no-gas-emergency-number';
+    }
+    if ($slug === 'commercial-cp12' && !str_contains($blob, 'domestic CP12')) {
+        $copyFail[] = $slug . ':commercial-cp12';
+    }
+    if (preg_match('/tenant/', $slug) && !str_contains(strtolower($blob), 'landlord')) {
+        $copyFail[] = $slug . ':tenant-no-landlord';
+    }
+    if (preg_match('/24-hour|same-day|weekend/', $slug) && !str_contains($slug, 'gas-leak') && !str_contains(strtolower($blob), 'guarantee')) {
+        $copyFail[] = $slug . ':availability-claim';
+    }
+}
+$ok($copyFail === [], 'trade-specific copy' . ($copyFail ? ' sample=' . implode(';', array_slice($copyFail, 0, 6)) : ''));
 
 echo PHP_EOL . "building_count={$building_count} gas_count={$gas_count} total={$total}\n";
 echo ($fail === 0 ? "PASS ({$pass})" : "FAIL ({$fail}) PASS ({$pass})") . PHP_EOL;
