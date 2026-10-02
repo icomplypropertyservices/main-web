@@ -48,6 +48,8 @@ $mainPages = [
     ['href' => '/shop/gas/', 'label' => 'Shop — Gas'],
     ['href' => '/products', 'label' => 'Products'],
     ['href' => url('/pages/packages.php'), 'label' => 'Packages'],
+    ['href' => url('/pages/jobs/hmo.php'), 'label' => 'HMO landlord packages'],
+    ['href' => url('/pages/jobs/hmo-compliance.php'), 'label' => 'HMO compliance bundle (£650)'],
     ['href' => url('/pages/pricing.php'), 'label' => 'Pricing guide'],
     ['href' => url('/pages/landlords.php'), 'label' => 'Landlords'],
     ['href' => url('/pages/commercial.php'), 'label' => 'Commercial / FM'],
@@ -59,6 +61,7 @@ $mainPages = [
     ['href' => url('/pages/resources/index.php'), 'label' => 'Resources hub'],
     ['href' => url('/pages/faq.php'), 'label' => 'FAQ'],
     ['href' => url('/contact.php'), 'label' => 'Contact / free quote'],
+    ['href' => '/become-a-subcontractor', 'label' => 'Work with us'],
     ['href' => url('/privacy.php'), 'label' => 'Privacy policy'],
     ['href' => url('/terms.php'), 'label' => 'Terms & conditions'],
     ['href' => url('/sitemap.xml'), 'label' => 'XML sitemap'],
@@ -91,6 +94,8 @@ $resourceLinks = [
     ['href' => url('/pages/manufacturers/index.php'), 'label' => "Manufacturers ({$mfrCount})", 'blurb' => 'Brand pages and trade kits'],
     ['href' => url('/pages/faq.php'), 'label' => 'FAQ', 'blurb' => 'Common compliance questions answered'],
     ['href' => url('/pages/packages.php'), 'label' => 'Packages', 'blurb' => 'Multi-service landlord & FM packages'],
+    ['href' => url('/pages/jobs/hmo.php'), 'label' => 'HMO landlord packages', 'blurb' => 'Compliance, fire and occupancy — £650 bundle where it applies'],
+    ['href' => url('/pages/jobs/hmo-compliance.php'), 'label' => 'HMO compliance bundle', 'blurb' => 'FRA + EICR + gas, £650 typical 6-bed North West'],
     ['href' => url('/pages/landlords.php'), 'label' => 'Landlords', 'blurb' => 'EICR, gas, fire and emergency lighting'],
     ['href' => url('/pages/commercial.php'), 'label' => 'Commercial', 'blurb' => 'Fire, electrical and security for sites'],
 ];
@@ -236,6 +241,12 @@ require SITE_ROOT . '/includes/header.php';
                class="px-3 py-1.5 bg-white border rounded-full text-xs sm:text-sm text-black hover:border-[#ff6b00] transition">
                 <?= htmlspecialchars($sName, ENT_QUOTES, 'UTF-8') ?> hub
             </a>
+            <?php if ($sSlug === 'fire-alarms'): ?>
+            <a href="<?= url('/pages/jobs/fire-alarms.php') ?>"
+               class="px-3 py-1.5 bg-white border rounded-full text-xs sm:text-sm text-black hover:border-[#ff6b00] transition">
+                Fire alarm install, maintain and service
+            </a>
+            <?php endif; ?>
         <?php endforeach;
         $egKwMap = getMajorKeywords();
         $egTowns = array_values(array_intersect($popularAreas, ['Stockport', 'Manchester', 'Bolton']));

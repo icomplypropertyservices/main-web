@@ -41,7 +41,7 @@
     },
     {
         "slug": "certified-electrician",
-        "name": "Certified Electrician",
+        "name": "Electrical testing",
         "service": "electrical"
     },
     {
@@ -141,12 +141,12 @@
     },
     {
         "slug": "niceic-certified",
-        "name": "NICEIC Certified",
+        "name": "electrical testing Certified",
         "service": "electrical"
     },
     {
         "slug": "part-p-certified",
-        "name": "Part P Certified",
+        "name": "Electrical testing",
         "service": "electrical"
     },
     {

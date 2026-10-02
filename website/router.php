@@ -37,6 +37,8 @@ $legacyAliases = [
     '/cookie-policy' => '/privacy',
     '/blog' => '/pages/resources',
     '/news' => '/pages/resources',
+    '/pages/keywords/tunstall-nurse-call' => '/pages/nurse-call-systems',
+    '/pages/manufacturers/tunstall' => '/pages/nurse-call-systems',
 ];
 if (isset($legacyAliases[$aliasPath])) {
     header('Location: ' . $legacyAliases[$aliasPath], true, 301);
@@ -113,6 +115,15 @@ if (preg_match('#^/sitemap(-[0-9]+)?\.xml$#i', $uri)) {
 // Serve real files as-is (including manifest.json, images, xml)
 if ($uri !== '/' && is_file($file)) {
     return false;
+}
+
+// Trade shop hubs are static index.html. Netlify rewrites the same paths.
+$shopIndex = rtrim($file, '/') . '/index.html';
+$shopPath = rtrim($uri, '/') ?: '/';
+if ($shopPath !== '/' && is_file($shopIndex) && ($shopPath === '/shop' || str_starts_with($shopPath, '/shop/'))) {
+    header('Content-Type: text/html; charset=UTF-8');
+    readfile($shopIndex);
+    return true;
 }
 
 // Support extensionless routes such as /contact or /pages/services/gas-systems

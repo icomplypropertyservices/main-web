@@ -6,12 +6,12 @@ Each slug **must** have:
 - a hub at `/pages/keywords/{slug}`
 - a keyword×area page at `/pages/keywords/{slug}/{town}` for **every** town in `areas.json` (static export)
 
-Cost / price / quote slugs are **POA only**. Never invent a £ figure.
+Cost / price / quote slugs are **POA only**. Never invent a POA figure.
 
 Sitemap must **not** list the full keyword×area matrix (P090 / anti-junk).
 See `seo-matrix-rollout-notes.md`.
 
-## Keywords (113)
+## Keywords (112)
 
 - `24-hour-emergency-electrician` — 24 Hour Emergency Electrician
 - `additional-socket` — Additional Socket
@@ -20,7 +20,6 @@ See `seo-matrix-rollout-notes.md`.
 - `battery-storage-electrical` — Battery Storage Electrical
 - `bs-7671` — BS 7671
 - `bs-7671-inspection` — BS 7671 Inspection
-- `certified-electrician` — Certified Electrician
 - `circuit-breaker-repair` — Circuit Breaker Repair
 - `commercial-eicr` — Commercial EICR
 - `commercial-electrical-maintenance` — Commercial Electrical Maintenance
@@ -100,12 +99,12 @@ See `seo-matrix-rollout-notes.md`.
 - `new-build-electrical` — New Build Electrical
 - `new-build-electrical-installation` — New Build Electrical Installation
 - `new-electrical-installation` — New Electrical Installation
-- `niceic-certified` — NICEIC Certified
+- `niceic-certified` — electrical testing Certified
 - `office-electrical-testing` — Office Electrical Testing
 - `out-of-hours-electrician` — Out of Hours Electrician
 - `outside-socket-installation` — Outside Socket Installation
 - `panel-upgrade` — Panel Upgrade
-- `part-p-certified` — Part P Certified
+- `part-p-certified` — Electrical testing
 - `partial-rewire` — Partial Rewire
 - `pat-testing` — PAT Testing
 - `periodic-electrical-inspection` — Periodic Electrical Inspection
