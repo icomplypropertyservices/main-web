@@ -71,7 +71,7 @@ foreach ($paths as $path) {
             'follow_location' => 1,
             'max_redirects' => 5,
             'ignore_errors' => true,
-            'header' => "User-Agent: Icomply-Nav-Check/1.0\r\n",
+            'header' => "User-Agent: iComply-Nav-Check/1.0\r\n",
         ],
     ]);
     $body = @file_get_contents($url, false, $ctx);

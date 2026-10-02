@@ -1,13 +1,13 @@
 <?php
 /**
- * Icomply Property Services — site config + helpers.
+ * iComply Property Services — site config + helpers.
  * Data lives in data/*.json; optional overrides in config.local.php.
  */
 define('SITE_ROOT', __DIR__);
 
 // Defaults (overridable via config.local.php / env / Vercel)
 $siteDefaults = [
-    'SITE_NAME' => 'Icomply Property Services',
+    'SITE_NAME' => 'iComply Property Services',
     'SITE_URL' => 'http://localhost/icomply',
     'PHONE' => '07517806082',
     'EMAIL' => 'info@icomplypropertyservices.co.uk',
@@ -34,14 +34,18 @@ $siteDefaults = [
     'SHOPIFY_STOREFRONT_TOKEN' => '',
     'SHOPIFY_COLLECTION_ID' => '',
     'SHOPIFY_ENABLED' => false,
-    // Social profiles (leave empty to hide; WhatsApp always available via WHATSAPP)
-    'SOCIAL_FACEBOOK' => 'https://www.facebook.com/icomplypropertyservices',
-    'SOCIAL_INSTAGRAM' => 'https://www.instagram.com/icomplypropertyservices',
-    'SOCIAL_LINKEDIN' => 'https://www.linkedin.com/company/icomply-property-services',
-    'SOCIAL_TWITTER' => 'https://twitter.com/icomplyps',
-    'SOCIAL_YOUTUBE' => '',
+    // Social profiles (leave empty to hide; WhatsApp always available via WHATSAPP).
+    // Facebook, Instagram, X, and LinkedIn are not live — do not publish placeholder URLs.
+    'SOCIAL_FACEBOOK' => '',
+    'SOCIAL_INSTAGRAM' => '',
+    'SOCIAL_LINKEDIN' => '',
+    'SOCIAL_TWITTER' => '',
+    'SOCIAL_YOUTUBE' => 'https://www.youtube.com/@icomplypropertyservices',
     'SOCIAL_TIKTOK' => '',
-    'SOCIAL_GOOGLE' => 'https://g.page/icomply-property-services',
+    'SOCIAL_GOOGLE' => 'https://www.google.com/maps/place/iComply+Property+Services/@53.4722454,-2.2234628,12z/data=!3m1!4b1!4m6!3m5!1s0x23f1a3169673630b:0xf80a415364a6510a!8m2!3d53.4722454!4d-2.2234628!16s%2Fg%2F11nr2vwl8z',
+    // tiered: only hubs, core pages, and Tier-1 service×area URLs are indexable.
+    // all: every generated combination is indexable and listed in the sitemap.
+    'INDEX_MODE' => 'tiered',
 ];
 
 // Environment overrides (Vercel Project → Settings → Environment Variables)
@@ -82,7 +86,7 @@ if ($isVercel || $isNetlify || preg_match('/icomplypropertyservices\.co\.uk$/i',
     if ($host === '' || str_contains($host, 'localhost')) {
         $host = 'icomplypropertyservices.co.uk';
     }
-    // Canonical host: apex (www → apex redirect in vercel.json)
+    // Canonical host: apex (www → apex redirect in netlify.toml)
     if (strcasecmp($host, 'www.icomplypropertyservices.co.uk') === 0) {
         $host = 'icomplypropertyservices.co.uk';
     }
@@ -119,6 +123,28 @@ if ($isVercelFinal || $isNetlifyFinal || preg_match('/icomplypropertyservices\.c
 $forcedSite = getenv('SITE_URL');
 if (is_string($forcedSite) && $forcedSite !== '' && !str_contains($forcedSite, 'localhost')) {
     $siteDefaults['SITE_URL'] = rtrim($forcedSite, '/');
+}
+$forcedIndex = getenv('INDEX_MODE');
+if (!is_string($forcedIndex) || $forcedIndex === '') {
+    $forcedIndex = $_ENV['INDEX_MODE'] ?? $_SERVER['INDEX_MODE'] ?? '';
+}
+if (is_string($forcedIndex) && $forcedIndex !== '') {
+    $siteDefaults['INDEX_MODE'] = strtolower($forcedIndex);
+}
+if (!in_array((string)($siteDefaults['INDEX_MODE'] ?? 'tiered'), ['tiered', 'all'], true)) {
+    $siteDefaults['INDEX_MODE'] = 'tiered';
+}
+
+// php -S on loopback: quote links must stay on this server, not http://localhost/icomply.
+$loopHost = (string)($_SERVER['HTTP_HOST'] ?? '');
+$exporting = (string)(getenv('ICOMPLY_STATIC_EXPORT') ?: ($_ENV['ICOMPLY_STATIC_EXPORT'] ?? '')) !== '';
+if (
+    !$exporting
+    && PHP_SAPI !== 'cli'
+    && preg_match('/^(localhost|127\.0\.0\.1)(:\d+)?$/i', $loopHost)
+) {
+    $https = !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off';
+    $siteDefaults['SITE_URL'] = ($https ? 'https://' : 'http://') . $loopHost;
 }
 
 foreach ($siteDefaults as $key => $value) {
@@ -224,6 +250,25 @@ function site_url(string $path = ''): string {
     return url('/' . ltrim($path, '/'));
 }
 
+/**
+ * Public quote form for static Netlify (no PHP).
+ * Customer fields stay in the caller. Posts to /thank-you, which is a 200 rewrite.
+ * $extra is raw attributes already safe to print (aria-label, novalidate).
+ */
+function icomplyQuoteFormOpen(string $class = '', string $extra = ''): string
+{
+    $attrs = 'name="quote" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field"';
+    if ($class !== '') {
+        $attrs .= ' class="' . htmlspecialchars($class, ENT_QUOTES, 'UTF-8') . '"';
+    }
+    if ($extra !== '') {
+        $attrs .= ' ' . $extra;
+    }
+    return '<form ' . $attrs . '>'
+        . '<input type="hidden" name="form-name" value="quote">'
+        . '<p hidden><label>Leave this field blank <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>';
+}
+
 /** Core services (data/services.json) + any admin-added customs */
 function getServices(): array {
     $base = loadJsonData('services', []);
@@ -277,6 +322,96 @@ function getAreas(): array {
     return loadJsonData('areas', []);
 }
 
+/** Indexing switch: `tiered` (default) or `all`. */
+function icomplyIndexMode(): string
+{
+    $mode = defined('INDEX_MODE') ? strtolower((string)INDEX_MODE) : 'tiered';
+    return $mode === 'all' ? 'all' : 'tiered';
+}
+
+/**
+ * Towns whose service×area pages stay indexable in tiered mode.
+ *
+ * @return list<string>
+ */
+function icomplyTier1Towns(): array
+{
+    return [
+        'Stockport',
+        'Manchester',
+        'Salford',
+        'Trafford',
+        'Tameside',
+        'Oldham',
+        'Bolton',
+        'Wigan',
+        'Liverpool',
+        'Warrington',
+    ];
+}
+
+function icomplyIsTier1Area(string $areaOrSlug): bool
+{
+    static $keys = null;
+    if ($keys === null) {
+        $keys = [];
+        foreach (icomplyTier1Towns() as $town) {
+            $keys[areaSlug($town)] = true;
+            $keys[mb_strtolower($town)] = true;
+        }
+    }
+    $slug = areaSlug($areaOrSlug);
+    return isset($keys[$slug]) || isset($keys[mb_strtolower($areaOrSlug)]);
+}
+
+/**
+ * In tiered mode, keyword×area pages, area-town hubs, and service×town pages
+ * without a bespoke article stay live (200) but are not indexable. A service×town
+ * URL is indexable only for a Tier-1 town that has its own written article.
+ * Spun "same page, town name swapped" copies stay out of the sitemap.
+ */
+function icomplyPathIsIndexable(string $path): bool
+{
+    if (icomplyIndexMode() === 'all') {
+        return true;
+    }
+    $path = '/' . ltrim(str_replace('\\', '/', $path), '/');
+    $path = preg_replace('#\.php$#i', '', $path) ?? $path;
+    $path = preg_replace('#/index$#i', '', $path) ?? $path;
+    if ($path === '') {
+        $path = '/';
+    }
+    if (preg_match('#^/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+$#', $path)) {
+        return false;
+    }
+    // Area town hubs share one template. They are navigation, not sitemap URLs.
+    if (preg_match('#^/pages/areas/[a-z0-9\-]+$#', $path)) {
+        return false;
+    }
+    if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        $reserved = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'jobs'];
+        if (!in_array($m[1], $reserved, true) && function_exists('getServices') && isset(getServices()[$m[1]])) {
+            if (!icomplyIsTier1Area($m[2])) {
+                return false;
+            }
+            if (!function_exists('icomplyTier1ServiceArticle')) {
+                $copy = __DIR__ . '/includes/tier1-copy.php';
+                if (is_file($copy)) {
+                    require_once $copy;
+                }
+            }
+            return function_exists('icomplyTier1ServiceArticle')
+                && icomplyTier1ServiceArticle($m[1], $m[2]) !== '';
+        }
+    }
+    return true;
+}
+
+function icomplyRobotsMetaForPath(string $path): string
+{
+    return icomplyPathIsIndexable($path) ? 'index, follow' : 'noindex, follow';
+}
+
 /**
  * Canonical slug: lowercase, non-alnum → hyphen, collapse hyphens.
  * "Ashton-under-Lyne" → ashton-under-lyne
@@ -298,7 +433,7 @@ function keywordDisplayName($slugOrName): string {
     $acronyms = [
         'Eicr' => 'EICR', 'Pat' => 'PAT', 'Ev' => 'EV', 'Aov' => 'AOV', 'Ahu' => 'AHU',
         'Cctv' => 'CCTV', 'Ip' => 'IP', 'Hd' => 'HD', 'Bs' => 'BS', 'Htm' => 'HTM',
-        'Niceic' => 'NICEIC', 'Lpg' => 'LPG', 'Ptz' => 'PTZ', 'Cp44' => 'CP44',
+        'Lpg' => 'LPG', 'Ptz' => 'PTZ', 'Cp44' => 'CP44',
         'Cp12' => 'CP12', 'Fra' => 'FRA', 'Cdm' => 'CDM', 'Hmo' => 'HMO', 'Epc' => 'EPC',
         'Fd30' => 'FD30', 'Fd60' => 'FD60', 'Anpr' => 'ANPR', 'Nvr' => 'NVR', 'Dvr' => 'DVR',
         'Ppm' => 'PPM', 'Gsm' => 'GSM', 'Epdm' => 'EPDM', 'Pir' => 'PIR',
@@ -306,10 +441,22 @@ function keywordDisplayName($slugOrName): string {
     foreach ($acronyms as $from => $to) {
         $name = preg_replace('/\b' . preg_quote($from, '/') . '\b/', $to, $name);
     }
-    return $name;
+    $banned = [
+        'Certified Electrician' => 'Electrical testing',
+        'Part P' => 'Electrical testing',
+        'NICEIC' => 'Electrical testing',
+        'Niceic' => 'Electrical testing',
+        'Gas Safety' => 'Gas safety',
+        'Gas Safe' => 'Gas safety certificates (CP12)',
+    ];
+    return str_replace(array_keys($banned), array_values($banned), $name);
 }
 
 function getMajorKeywords(): array {
+    static $cached = null;
+    if ($cached !== null) {
+        return $cached;
+    }
     $kw = loadJsonData('keywords', []);
     $normalized = [];
     foreach ($kw as $slug => $meta) {
@@ -334,7 +481,45 @@ function getMajorKeywords(): array {
         if (!empty($meta['faq']) && is_array($meta['faq'])) {
             $row['faq'] = $meta['faq'];
         }
+        if ($slug === 'tunstall-nurse-call') {
+            continue;
+        }
         $normalized[$slug] = $row;
+    }
+    $barrierKwFile = SITE_ROOT . '/data/barriers-keywords.json';
+    if (is_file($barrierKwFile)) {
+        $extra = json_decode((string)file_get_contents($barrierKwFile), true);
+        if (is_array($extra)) {
+            foreach ($extra as $slug => $meta) {
+                if (!is_array($meta)) {
+                    continue;
+                }
+                $slug = keywordSlug((string)$slug);
+                if ($slug === '' || isset($normalized[$slug])) {
+                    continue;
+                }
+                $row = [
+                    'name' => $meta['name'] ?? keywordDisplayName($slug),
+                    'service' => $meta['service'] ?? 'barriers',
+                    'related' => keywordSlug($meta['related'] ?? $slug),
+                ];
+                foreach (['intro', 'body', 'meta_desc', 'seo_keywords'] as $field) {
+                    if (!empty($meta[$field]) && is_string($meta[$field])) {
+                        $row[$field] = $meta[$field];
+                    }
+                }
+                if (!empty($meta['focus_points']) && is_array($meta['focus_points'])) {
+                    $row['focus_points'] = $meta['focus_points'];
+                }
+                if (!empty($meta['faq']) && is_array($meta['faq'])) {
+                    $row['faq'] = $meta['faq'];
+                }
+                $normalized[$slug] = $row;
+            }
+        }
+    }
+    if (function_exists('emergencyLightingJobsApplyOverlay')) {
+        $normalized = emergencyLightingJobsApplyOverlay($normalized);
     }
     return $normalized;
 }
@@ -409,30 +594,84 @@ function isCostStyleKeyword(string $slug, string $name = ''): bool {
 }
 
 /**
+ * Towns with a full service-index hub (every service listed).
+ *
+ * @return list<string>
+ */
+function getFeaturedAreaIndexHubs(): array {
+    return ['Manchester', 'Burnley'];
+}
+
+function isFeaturedAreaIndexHub(string $area): bool {
+    $slug = areaSlug($area);
+    foreach (getFeaturedAreaIndexHubs() as $name) {
+        if (areaSlug($name) === $slug) {
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
+ * Fire-safety catalogue slugs (detection, FRA, doors, suppression, smoke/CO).
+ *
+ * @return list<string>
+ */
+function getFireSafetyServiceSlugs(): array {
+    $all = getServices();
+    $slugs = getServiceCategories()['fire-safety']['services'] ?? [];
+    $out = [];
+    foreach ($slugs as $slug) {
+        $slug = areaSlug((string)$slug);
+        if ($slug !== '' && isset($all[$slug])) {
+            $out[] = $slug;
+        }
+    }
+    return $out;
+}
+
+function isFireSafetyService(string $slug): bool {
+    static $set = null;
+    if ($set === null) {
+        $set = array_fill_keys(getFireSafetyServiceSlugs(), true);
+    }
+    return isset($set[areaSlug($slug)]);
+}
+
+/**
+ * Nationwide fire URL.
+ *
+ * Town-locked paths such as /pages/fire-alarms/{town} only exist for the
+ * North West areas list and 404 for the rest of the UK. This always returns
+ * the live national service hub. An optional place (London, Birmingham, …)
+ * is a fragment only, so the link still resolves.
+ */
+function fireNationwideServiceUrl(string $serviceSlug, string $place = ''): string {
+    $url = url('/pages/services/' . areaSlug($serviceSlug));
+    $place = trim($place);
+    if ($place !== '') {
+        $url .= '#uk-' . areaSlug($place);
+    }
+    return $url;
+}
+
+/** National keyword hub — not keyword×town. */
+function fireNationwideKeywordUrl(string $keywordSlug): string {
+    return url('/pages/keywords/' . keywordSlug($keywordSlug));
+}
+
+/**
  * Local URL that returns 200 on the default Netlify export.
  * /pages/{service}/{town} is --full only and 404s on draft/prod static.
  *
- * Electrical + gas → featured keyword×town. Other services → area hub
- * (from a service page) or the service hub (from an area page).
+ * Electrical + gas → featured keyword×town.
+ * Fire from an area page → national service hub (UK-wide, not town-locked).
+ * Other services → area hub (from a service page) or the service hub (from an area page).
  */
 function exportedServiceLocalUrl(string $serviceSlug, string $area, string $from = 'service'): string {
     $serviceSlug = areaSlug($serviceSlug);
     $town = areaSlug($area);
-    $featured = getElectricalGasFeaturedKeywordSlugs();
-    $kw = getMajorKeywords();
-    $pick = null;
-    if ($serviceSlug === 'electrical') {
-        $pick = $featured['electrical'][0] ?? 'rewire';
-    } elseif ($serviceSlug === 'gas-systems') {
-        $pick = $featured['gas'][0] ?? 'boiler';
-    }
-    if ($pick && isset($kw[keywordSlug((string)$pick)])) {
-        return url('/pages/keywords/' . keywordSlug((string)$pick) . '/' . $town . '.php');
-    }
-    if ($from === 'area') {
-        return url('/pages/services/' . $serviceSlug . '.php');
-    }
-    return url('/pages/areas/' . $town . '.php');
+    return url('/pages/' . $serviceSlug . '/' . $town . '.php');
 }
 
 /**
@@ -449,6 +688,8 @@ function getPopularKeywordSlugs(): array {
         'gas-safety-certificate', 'cp12', 'landlord-gas-safety', 'boiler', 'boiler-install',
         'boiler-repair', 'gas-safety', 'emergency-gas-engineer', 'landlord-gas',
         'cctv-installation', 'access-control-system', 'door-entry-system',
+        'car-park-barrier', 'car-park-barrier-manchester', 'car-park-barrier-burnley',
+        'came-barrier', 'maglock-installation',
         'nurse-call-system', 'landlord-compliance',
         'legionella-risk-assessment', 'legionella-testing', 'water-hygiene-testing',
         'asbestos-survey', 'asbestos-testing', 'asbestos-management-survey',
@@ -467,6 +708,9 @@ function getPopularKeywordSlugs(): array {
 function getSeoKeywords(string $service, string $area = ''): string {
     $mfr = loadJsonData('manufacturers', []);
     $base = $mfr['seo_keywords'][$service] ?? $service;
+    if ($service === 'barriers') {
+        $base = 'vehicle barriers, CAME barriers, car park barrier, boom barrier, barrier installation, barrier servicing';
+    }
     return $area !== '' ? "{$base} {$area}, {$area} electrician, {$area} fire safety" : $base;
 }
 
@@ -484,17 +728,35 @@ function getServiceMeta(string $slug = ''): array {
 }
 
 function getServiceBlurb(string $slug, bool $short = false): string {
+    if ($slug === 'gas-systems' && function_exists('icomplyGasServiceBlurb')) {
+        return icomplyGasServiceBlurb($short);
+    }
     $m = getServiceMeta($slug);
     return $short ? (string)($m['short'] ?? $m['blurb'] ?? '') : (string)($m['blurb'] ?? '');
 }
 
 function getServiceStandards(string $slug): string {
+    if ($slug === 'gas-systems' && function_exists('icomplyGasServiceStandards')) {
+        return icomplyGasServiceStandards();
+    }
     return (string)(getServiceMeta($slug)['standards'] ?? '');
 }
 
 function getManufacturers(string $serviceSlug): array {
+    if (function_exists('icomplyCoverageManufacturerNames')) {
+        $covered = icomplyCoverageManufacturerNames($serviceSlug);
+        if ($covered) {
+            return $covered;
+        }
+    }
     $mfr = loadJsonData('manufacturers', []);
-    return $mfr['by_service'][$serviceSlug] ?? ['Industry Standard Equipment'];
+    $names = $mfr['by_service'][$serviceSlug] ?? ['Industry Standard Equipment'];
+    if (!function_exists('manufacturerIsExcluded')) {
+        return $names;
+    }
+    return array_values(array_filter($names, static function ($name) {
+        return !manufacturerIsExcluded(manufacturerSlugFromName((string)$name));
+    }));
 }
 
 /** Full manufacturer catalog keyed by slug */
@@ -502,7 +764,10 @@ function getManufacturerCatalog(): array {
     $mfr = loadJsonData('manufacturers', []);
     $catalog = $mfr['catalog'] ?? [];
     if ($catalog) {
-        return $catalog;
+        $catalog = function_exists('icomplyApplyMfrCoverageCatalog')
+            ? icomplyApplyMfrCoverageCatalog($catalog)
+            : $catalog;
+        return icomplyMergeBarrierManufacturers($catalog);
     }
     // Fallback: build minimal catalog from by_service names
     $built = [];
@@ -514,9 +779,9 @@ function getManufacturerCatalog(): array {
                     'name' => $name,
                     'slug' => $slug,
                     'services' => [$service],
-                    'blurb' => "Icomply installs and services {$name} equipment across the North West.",
+                    'blurb' => "iComply installs and services {$name} equipment across the North West.",
                     'seo_title' => "{$name} Products & Service",
-                    'seo_desc' => "{$name} installation, servicing and trade products from Icomply Property Services.",
+                    'seo_desc' => "{$name} installation, servicing and trade products from iComply Property Services.",
                     'seo_keywords' => $name,
                     'products' => [],
                     'featured' => false,
@@ -526,7 +791,46 @@ function getManufacturerCatalog(): array {
             }
         }
     }
-    return $built;
+    $built = function_exists('icomplyApplyMfrCoverageCatalog')
+        ? icomplyApplyMfrCoverageCatalog($built)
+        : $built;
+    return icomplyMergeBarrierManufacturers($built);
+}
+
+/** Barrier brands that are not already in the main catalogue. CAME is the partner. Never Tunstall. */
+function icomplyMergeBarrierManufacturers(array $catalog): array
+{
+    $extra = loadJsonData('town-manufacturers', []);
+    foreach ($extra['barriers'] ?? [] as $row) {
+        if (!is_array($row)) {
+            continue;
+        }
+        $name = trim((string)($row['name'] ?? ''));
+        $slug = areaSlug((string)($row['slug'] ?? $name));
+        if ($name === '' || $slug === '' || isset($catalog[$slug])) {
+            continue;
+        }
+        if (stripos($name, 'tunstall') !== false) {
+            continue;
+        }
+        $partner = !empty($row['partner']);
+        $catalog[$slug] = [
+            'name' => $name,
+            'slug' => $slug,
+            'services' => ['access-control'],
+            'blurb' => $partner
+                ? 'CAME is the vehicle-barrier partner for Icomply Property Services. New lanes are specified on the CAME GARD range. Existing CAME booms, loops and safety edges are serviced from our Stockport workshop. Installation is POA. Call 07517806082.'
+                : "Icomply services existing {$name} vehicle barriers and gate automation. New barrier lanes are normally specified on our CAME partner range unless the survey supports keeping {$name}. Quotes are POA from Stockport. Call 07517806082.",
+            'seo_title' => $partner ? 'CAME Barrier Partner | Vehicle Barriers' : "{$name} Barrier Service | Icomply",
+            'seo_desc' => $partner
+                ? 'CAME vehicle barrier partner. GARD booms, servicing and POA installation. Call 07517806082.'
+                : "{$name} barrier servicing. CAME is the partner for new lanes. POA after survey. Call 07517806082.",
+            'seo_keywords' => $name . ', vehicle barrier, CAME, car park barrier',
+            'products' => [],
+            'featured' => $partner,
+        ];
+    }
+    return $catalog;
 }
 
 function getManufacturerBySlug(string $slug): ?array {
@@ -565,7 +869,10 @@ function manufacturerTagsHtml(string $serviceSlug): string {
     $html = '';
     foreach (getManufacturers($serviceSlug) as $m) {
         $slug = manufacturerSlugFromName($m);
-        $href = htmlspecialchars(url('/pages/manufacturers/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
+        $brandHref = getManufacturerBySlug($slug)
+            ? url('/pages/manufacturers/' . $slug . '.php')
+            : url('/pages/manufacturers/index.php');
+        $href = htmlspecialchars($brandHref, ENT_QUOTES, 'UTF-8');
         $label = htmlspecialchars($m, ENT_QUOTES, 'UTF-8');
         $html .= '<a href="' . $href . '" '
             . 'class="inline-flex items-center gap-1.5 px-4 py-2.5 bg-white border-2 border-zinc-200 rounded-full text-sm text-black font-semibold hover:border-[#ff6b00] hover:text-[#ff6b00] hover:shadow-sm transition" '
@@ -588,7 +895,11 @@ function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
     // Prefer full by_service list so every mentioned brand has a card
     $fromNames = [];
     foreach (getManufacturers($serviceSlug) as $m) {
-        $fromNames[] = manufacturerSlugFromName($m);
+        $slugName = manufacturerSlugFromName($m);
+        if ($serviceSlug === 'access-control' && ($slugName === 'tunstall' || strcasecmp((string)$m, 'Tunstall') === 0)) {
+            continue;
+        }
+        $fromNames[] = $slugName;
     }
     if ($fromNames) {
         $slugs = $fromNames;
@@ -598,7 +909,7 @@ function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
     }
     $catalog = getManufacturerCatalog();
     $html = '';
-    $fallback = htmlspecialchars(url('/assets/images/services/' . $serviceSlug . '.jpg'), ENT_QUOTES, 'UTF-8');
+    $fallback = htmlspecialchars(serviceImageUrl($serviceSlug), ENT_QUOTES, 'UTF-8');
     foreach ($slugs as $slug) {
         $slug = preg_replace('/[^a-z0-9\-]/', '', (string)$slug);
         if ($slug === '') {
@@ -606,10 +917,13 @@ function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
         }
         $entry = $catalog[$slug] ?? null;
         $label = htmlspecialchars($entry['name'] ?? ucwords(str_replace('-', ' ', $slug)), ENT_QUOTES, 'UTF-8');
-        $href = htmlspecialchars(url('/pages/manufacturers/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
+        $brandHref = $entry
+            ? url('/pages/manufacturers/' . $slug . '.php')
+            : url('/pages/manufacturers/index.php');
+        $href = htmlspecialchars($brandHref, ENT_QUOTES, 'UTF-8');
         $src = htmlspecialchars(manufacturerImageUrl($slug, $serviceSlug !== '' ? $serviceSlug : 'fire-alarms'), ENT_QUOTES, 'UTF-8');
         $html .= '<a href="' . $href . '" class="bg-white border-2 border-zinc-200 rounded-2xl overflow-hidden hover:border-[#ff6b00] hover:shadow-md transition block group">'
-            . '<img src="' . $src . '" alt="' . $label . ' products and service — Icomply" '
+            . '<img src="' . $src . '" alt="' . $label . ' products and service — Icomply" width="640" height="360" '
             . 'class="w-full h-28 object-cover group-hover:scale-105 transition duration-300" loading="lazy" '
             . 'onerror="this.src=\'' . $fallback . '\'">'
             . '<div class="p-3 text-sm text-black text-center font-semibold">' . $label
@@ -656,6 +970,18 @@ function serviceImageUrl(string $slug): string {
 }
 
 /**
+ * Keyword hero that is actually on disk. Missing keyword JPGs fall back to
+ * the parent service image (then the shared fire-alarms photo).
+ */
+function keywordImageUrl(string $slug, string $serviceSlug = ''): string {
+    $rel = '/assets/images/keywords/' . $slug . '.jpg';
+    if ($slug !== '' && is_file(SITE_ROOT . $rel)) {
+        return url($rel);
+    }
+    return serviceImageUrl($serviceSlug !== '' ? $serviceSlug : 'fire-alarms');
+}
+
+/**
  * Working service photo only — never emit *-photo.jpg in HTML.
  * Live 404'd those names even when the twin without `-photo` was 200.
  */
@@ -664,15 +990,24 @@ function servicePhotoUrl(string $slug): string {
 }
 
 function manufacturerImageUrl(string $slug, string $fallbackService = 'fire-alarms'): string {
-    $rel = '/assets/images/manufacturers/' . $slug . '.jpg';
-    if (is_file(SITE_ROOT . $rel)) {
-        return url($rel);
+    foreach (['svg', 'jpg', 'png', 'webp'] as $ext) {
+        $rel = '/assets/images/manufacturers/' . $slug . '.' . $ext;
+        if (is_file(SITE_ROOT . $rel)) {
+            return url($rel);
+        }
+    }
+    $svg = '/assets/images/manufacturers/nameplates/' . $slug . '.svg';
+    if (is_file(SITE_ROOT . $svg)) {
+        return url($svg);
     }
     return serviceImageUrl($fallbackService);
 }
 
 function getKeywordImages(string $serviceSlug): array {
     $mfr = loadJsonData('manufacturers', []);
+    if ($serviceSlug === 'barriers' && empty($mfr['keyword_images'][$serviceSlug])) {
+        return $mfr['keyword_images']['access-control'] ?? ['access-control-system', 'proximity-card-reader', 'access-control-system'];
+    }
     return $mfr['keyword_images'][$serviceSlug] ?? [$serviceSlug, $serviceSlug, $serviceSlug];
 }
 
@@ -708,9 +1043,34 @@ function icomplyTradeProductsUrl(): string
     return icomplyTradeShopUrl();
 }
 
+$gasLegalFile = __DIR__ . '/includes/gas-legal.php';
+if (is_file($gasLegalFile)) {
+    require_once $gasLegalFile;
+}
+
 $waFile = __DIR__ . '/includes/water-asbestos.php';
 if (is_file($waFile)) {
     require_once $waFile;
+}
+$productLinesFile = __DIR__ . '/includes/manufacturer-product-lines.php';
+if (is_file($productLinesFile)) {
+    require_once $productLinesFile;
+}
+$mfrBoardFile = __DIR__ . '/includes/mfr-showcase.php';
+if (is_file($mfrBoardFile)) {
+    require_once $mfrBoardFile;
+}
+
+$elJobTypesFile = __DIR__ . '/includes/emergency-lighting-job-types.php';
+if (is_file($elJobTypesFile)) {
+    require_once $elJobTypesFile;
+}
+
+        require_once $lane;
+
+$asbestosJobsFile = __DIR__ . '/includes/asbestos-jobs.php';
+if (is_file($asbestosJobsFile)) {
+    require_once $asbestosJobsFile;
 }
 
 // Back-compat globals used by some templates/includes

@@ -170,11 +170,6 @@
         "service": "nurse-call"
     },
     {
-        "slug": "tunstall-nurse-call",
-        "name": "Tunstall Nurse Call",
-        "service": "nurse-call"
-    },
-    {
         "slug": "aid-call-system",
         "name": "Aid Call System",
         "service": "nurse-call"

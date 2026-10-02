@@ -5,6 +5,8 @@
  */
 declare(strict_types=1);
 
+require_once __DIR__ . '/nav-ia.php';
+
 function icomplyNavH(string $s): string
 {
     return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
@@ -34,6 +36,9 @@ function icomplyNavCatalog(): array
         foreach ($list as $slug => $name) {
             $used[$slug] = true;
             $kws = function_exists('getKeywordsForService') ? getKeywordsForService((string)$slug) : [];
+            foreach (['niceic-certified', 'part-p-certified', 'gas-certificate-same-day', 'certified-electrician', 'gas-safe-engineer'] as $hideSlug) {
+                unset($kws[$hideSlug]);
+            }
             if ($kws) {
                 $kwForCat[$slug] = [
                     'name' => (string)$name,
@@ -90,11 +95,14 @@ function icomplyNavCatalog(): array
         'areasByLetter' => $areasByLetter,
         'featuredKw' => $featuredKw,
         'popularAreas' => array_values(array_filter(
-            ['Manchester', 'Stockport', 'Salford', 'Bolton', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
+            ['Manchester', 'Burnley', 'Stockport', 'Salford', 'Bolton', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
             static fn($a) => in_array($a, $areas, true)
         )),
         'resources' => icomplyNavResourceLinks(),
         'packages' => icomplyNavPackageLinks(),
+        'featured' => icomplyFeaturedPushHubs(),
+        'qualityHubs' => icomplyQualityHubLinks(),
+        'barrierJob' => icomplyBarrierJobHub(),
         'legal' => [
             ['href' => url('/privacy.php'), 'label' => 'Privacy policy'],
             ['href' => url('/terms.php'), 'label' => 'Terms & conditions'],
@@ -106,7 +114,7 @@ function icomplyNavCatalog(): array
         'phoneHref' => 'tel:' . preg_replace('/\s+/', '', defined('PHONE') ? PHONE : ''),
         'whatsapp' => defined('WHATSAPP') ? WHATSAPP : '',
         'email' => defined('EMAIL') ? EMAIL : '',
-        'brand' => defined('SITE_NAME') ? SITE_NAME : 'Icomply Property Services',
+        'brand' => defined('SITE_NAME') ? SITE_NAME : 'iComply Property Services',
         'js' => assetUrl('/assets/js/site-nav.js'),
         'logo' => assetUrl('/assets/images/brand/icomply-mark.svg'),
         'logoLight' => assetUrl('/assets/images/brand/icomply-logo.svg'),
@@ -120,9 +128,9 @@ function icomplyNavResourceLinks(): array
 {
     $links = [
         ['href' => url('/pages/resources/index.php'), 'label' => 'All resources'],
-        ['href' => url('/pages/resources/index.php') . '#batch-a', 'label' => 'Batch A — days 1–5'],
-        ['href' => url('/pages/resources/index.php') . '#batch-b', 'label' => 'Batch B — days 6–14'],
-        ['href' => url('/pages/resources/index.php') . '#batch-c', 'label' => 'Batch C — SEO hubs'],
+        ['href' => url('/pages/resources/index.php') . '#batch-a', 'label' => 'Landlord guides'],
+        ['href' => url('/pages/resources/index.php') . '#batch-b', 'label' => 'Fire and commercial guides'],
+        ['href' => url('/pages/resources/index.php') . '#batch-c', 'label' => 'Service hubs'],
     ];
     $landers = [
         '/pages/landlord-certificates' => 'Landlord certificates',
@@ -141,6 +149,11 @@ function icomplyNavResourceLinks(): array
     foreach ($landers as $path => $label) {
         $links[] = ['href' => url($path), 'label' => $label];
     }
+    foreach (icomplyQualityHubLinks() as $hub) {
+        $links[] = ['href' => $hub['href'], 'label' => $hub['label']];
+    }
+    $barrierJob = icomplyBarrierJobHub();
+    $links[] = ['href' => $barrierJob['href'], 'label' => $barrierJob['label']];
 
     $dir = (defined('SITE_ROOT') ? SITE_ROOT : dirname(__DIR__)) . '/pages/resources';
     if (is_dir($dir)) {
@@ -173,16 +186,28 @@ function icomplyNavResourceLinks(): array
 /** @return list<array{href:string,label:string}> */
 function icomplyNavPackageLinks(): array
 {
-    return [
+    if (!function_exists('icomplyComplianceBundle')) {
+        $ssot = __DIR__ . '/compliance-bundle.php';
+        if (is_file($ssot)) {
+            require_once $ssot;
+        }
+    }
+    $bundle = function_exists('icomplyComplianceBundle') ? icomplyComplianceBundle() : null;
+    $links = [
         ['href' => url('/pages/packages.php'), 'label' => 'All packages'],
-        ['href' => url('/pages/jobs/hmo.php'), 'label' => 'HMO landlord packages'],
-        ['href' => url('/pages/jobs/hmo-compliance.php'), 'label' => 'HMO bundle £650'],
+    ];
+    if ($bundle) {
+        $links[] = ['href' => url($bundle['canonical_path']), 'label' => $bundle['nav_label']];
+        $links[] = ['href' => url($bundle['alias_path']), 'label' => $bundle['alias']];
+    }
+    return array_merge($links, [
         ['href' => url('/pages/packages/let-ready.php'), 'label' => 'Let-ready package'],
         ['href' => url('/pages/packages/fire-ready.php'), 'label' => 'Fire-ready package'],
         ['href' => url('/pages/packages/workplace-essentials.php'), 'label' => 'Workplace essentials'],
         ['href' => url('/pages/landlords.php'), 'label' => 'Landlords'],
         ['href' => url('/pages/commercial.php'), 'label' => 'Commercial / FM'],
         ['href' => url('/pages/care-homes.php'), 'label' => 'Care homes'],
+        ['href' => url('/pages/access-control-systems'), 'label' => 'Access control systems (UK)'],
         ['href' => url('/pages/pricing.php'), 'label' => 'Pricing guide (POA)'],
         ['href' => url('/pages/maintenance.php'), 'label' => 'Maintenance contracts'],
         ['href' => url('/pages/emergency.php'), 'label' => 'Emergency call-out'],
@@ -190,7 +215,7 @@ function icomplyNavPackageLinks(): array
         ['href' => url('/pages/about.php'), 'label' => 'About'],
         ['href' => url('/pages/faq.php'), 'label' => 'FAQ'],
         ['href' => url('/pages/reviews.php'), 'label' => 'Reviews'],
-    ];
+    ]);
 }
 
 function icomplyNavLink(string $href, string $label, string $class = ''): string
