@@ -5,7 +5,12 @@
 $pageTitle = $AREA . ' Property Compliance Services';
 $metaDesc = $AREA . ' compliance for EICR, fire alarms, emergency lighting, CCTV and access control. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue them. POA quotes from Stockport.';
 $metaKeywords = $AREA . ' electrician, ' . $AREA . ' fire alarm installation, ' . $AREA . ' EICR, ' . $AREA . ' gas safety certificate, property compliance ' . $AREA . ', emergency lighting ' . $AREA;
-$ogImage = url('/assets/images/services/fire-alarms.jpg');
+require_once SITE_ROOT . '/includes/hub-visuals.php';
+$areaVisuals = hubPageVisuals('areas', $AREA, 6, 4, 'Property compliance in ' . $AREA);
+$areaHero = $areaVisuals['primary'];
+if ($areaHero) {
+    $ogImage = $areaHero['src'];
+}
 
 $allServices = getServices();
 $allAreas = getAreas();
@@ -131,16 +136,30 @@ $schema = [
                 </div>
                 <p class="mt-3 text-[11px] text-white/40">*Subject to engineer capacity and site access.</p>
             </div>
-            <div class="grid grid-cols-2 gap-3">
+            <div class="space-y-3">
+                <?php if ($areaHero): ?>
+                <figure class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[180px] bg-white/5">
+                    <img src="<?= htmlspecialchars($areaHero['src'], ENT_QUOTES, 'UTF-8') ?>"
+                         alt="<?= htmlspecialchars($areaHero['alt'], ENT_QUOTES, 'UTF-8') ?>"
+                         class="w-full h-48 <?= ($areaHero['fit'] ?? 'cover') === 'contain' ? 'object-contain bg-white' : 'object-cover' ?>"
+                         width="960" height="540"
+                         loading="eager">
+                </figure>
+                <?php endif; ?>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 <?php
-                $heroCards = array_slice($allServices, 0, 4, true);
+                $heroCards = array_slice($allServices, 0, 6, true);
                 foreach ($heroCards as $slug => $name):
+                    $tile = hubServicePrimary($slug, $name . ' in ' . $areaName);
                 ?>
                 <a href="<?= htmlspecialchars(exportedServiceLocalUrl($slug, $AREA, 'area'), ENT_QUOTES, 'UTF-8') ?>"
                    class="group relative rounded-3xl overflow-hidden border border-white/10 min-h-[130px] bg-white/5 hover:border-[#ff6b00] transition">
-                    <img src="<?= htmlspecialchars(function_exists('serviceImageUrl') ? serviceImageUrl($slug) : url('/assets/images/services/' . $slug . '.jpg'), ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars(($services[$slug] ?? $slug) . ' in ' . ($areaName ?? $AREA ?? 'the North West'), ENT_QUOTES, 'UTF-8') ?>"
-                         class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-55 transition"
-                         loading="lazy" onerror="this.style.display='none'">
+                    <?php if ($tile): ?>
+                    <img src="<?= htmlspecialchars($tile['src'], ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($name . ' in ' . $areaName, ENT_QUOTES, 'UTF-8') ?>"
+                         class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition"
+                         width="640" height="420"
+                         loading="lazy">
+                    <?php endif; ?>
                     <div class="relative p-4 h-full flex flex-col justify-end min-h-[130px]">
                         <div class="font-semibold text-white leading-tight"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></div>
                         <div class="text-xs text-white/70 mt-1">in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> →</div>
@@ -208,6 +227,21 @@ $schema = [
         </div>
     </div>
 </section>
+
+<?php
+echo hubGallerySectionHtml(
+    'Gallery',
+    'Work and equipment around ' . $areaName,
+    'Photos from our service library and the trade catalogue. Each file is a real asset, not a placeholder.',
+    $areaVisuals['gallery']
+);
+echo hubProductSectionHtml(
+    'Trade shop',
+    'Equipment we supply',
+    'Catalogue photos for ' . $areaName . ' jobs. Supply price shown; installation is quoted separately.',
+    $areaVisuals['cards']
+);
+?>
 
 <!-- POPULAR KEYWORD × THIS AREA (EICR report, FRA, gas cert, etc.) -->
 <section class="max-w-7xl mx-auto px-6 py-16">

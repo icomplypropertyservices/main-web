@@ -724,7 +724,6 @@ function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
     }
     $catalog = getManufacturerCatalog();
     $html = '';
-    $fallback = htmlspecialchars(serviceImageUrl($serviceSlug), ENT_QUOTES, 'UTF-8');
     foreach ($slugs as $slug) {
         $slug = preg_replace('/[^a-z0-9\-]/', '', (string)$slug);
         if ($slug === '') {
@@ -736,11 +735,15 @@ function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
             ? url('/pages/manufacturers/' . $slug . '.php')
             : url('/pages/manufacturers/index.php');
         $href = htmlspecialchars($brandHref, ENT_QUOTES, 'UTF-8');
-        $src = htmlspecialchars(manufacturerImageUrl($slug, $serviceSlug !== '' ? $serviceSlug : 'fire-alarms'), ENT_QUOTES, 'UTF-8');
+        $imgHtml = '';
+        $brandSrc = manufacturerImageUrl($slug);
+        if ($brandSrc !== '') {
+            $src = htmlspecialchars($brandSrc, ENT_QUOTES, 'UTF-8');
+            $imgHtml = '<img src="' . $src . '" alt="' . $label . ' products and service — iComply" '
+                . 'class="w-full h-28 object-contain bg-white group-hover:scale-105 transition duration-300" loading="lazy">';
+        }
         $html .= '<a href="' . $href . '" class="bg-white border-2 border-zinc-200 rounded-2xl overflow-hidden hover:border-[#ff6b00] hover:shadow-md transition block group">'
-            . '<img src="' . $src . '" alt="' . $label . ' products and service — iComply" '
-            . 'class="w-full h-28 object-cover group-hover:scale-105 transition duration-300" loading="lazy" '
-            . 'onerror="this.src=\'' . $fallback . '\'">'
+            . $imgHtml
             . '<div class="p-3 text-sm text-black text-center font-semibold">' . $label
             . ' <span class="text-[#ff6b00]">→</span></div>'
             . '</a>';
@@ -775,6 +778,16 @@ function linkManufacturerNamesInText(string $text): string {
 
 /** First existing service image (.jpg, .png, then -photo.jpg). */
 function serviceImageUrl(string $slug): string {
+    $visuals = SITE_ROOT . '/includes/hub-visuals.php';
+    if (is_file($visuals)) {
+        require_once $visuals;
+        if (function_exists('hubServicePrimary')) {
+            $primary = hubServicePrimary($slug, $slug);
+            if (is_array($primary) && ($primary['src'] ?? '') !== '') {
+                return (string) $primary['src'];
+            }
+        }
+    }
     $base = '/assets/images/services/' . $slug;
     foreach ([$base . '.jpg', $base . '.png', $base . '-photo.jpg'] as $rel) {
         if (is_file(SITE_ROOT . $rel)) {
@@ -805,11 +818,16 @@ function servicePhotoUrl(string $slug): string {
 }
 
 function manufacturerImageUrl(string $slug, string $fallbackService = 'fire-alarms'): string {
+    unset($fallbackService);
+    $slug = preg_replace('/[^a-z0-9\-]/', '', $slug) ?? '';
+    if ($slug === '') {
+        return '';
+    }
     $rel = '/assets/images/manufacturers/' . $slug . '.jpg';
     if (is_file(SITE_ROOT . $rel)) {
         return url($rel);
     }
-    return serviceImageUrl($fallbackService);
+    return '';
 }
 
 function getKeywordImages(string $serviceSlug): array {

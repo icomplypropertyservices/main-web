@@ -8,6 +8,18 @@
 $pageTitle = $KEYWORD_NAME . ' in ' . $AREA;
 $metaDesc = $KEYWORD_NAME . ' in ' . $AREA . '. ' . $KEYWORD_META;
 $metaKeywords = $KEYWORD_NAME . ' ' . $AREA . ', ' . $SERVICE_NAME . ' ' . $AREA . ', ' . $SEO_KEYWORDS;
+require_once SITE_ROOT . '/includes/hub-visuals.php';
+$keywordTownVisuals = hubPageVisuals(
+    hubFamilyForService((string) $SERVICE_SLUG),
+    (string) $AREA,
+    0,
+    0,
+    $KEYWORD_NAME . ' in ' . $AREA,
+    3
+);
+if (!empty($keywordTownVisuals['primary']['src'])) {
+    $KEYWORD_IMAGE = $keywordTownVisuals['primary']['src'];
+}
 $ogImage = $KEYWORD_IMAGE;
 $canonicalUrl = url('/pages/keywords/' . $KEYWORD_SLUG . '/' . $AREA_SLUG . '.php');
 
@@ -49,8 +61,7 @@ $h = static function ($s): string {
 
 <section class="relative overflow-hidden bg-[#061828] text-white">
     <div class="absolute inset-0">
-        <img src="<?= $h($KEYWORD_IMAGE) ?>" alt="<?= $h(($KEYWORD_NAME ?? 'Compliance') . ' in ' . ($AREA ?? 'the North West')) ?>" class="w-full h-full object-cover opacity-30" loading="eager"
-             onerror="this.src='<?= $h($SERVICE_IMAGE) ?>'">
+        <img src="<?= $h($KEYWORD_IMAGE) ?>" alt="<?= $h(($KEYWORD_NAME ?? 'Compliance') . ' in ' . ($AREA ?? 'the North West')) ?>" class="w-full h-full object-cover opacity-30" loading="eager">
         <div class="absolute inset-0 bg-gradient-to-r from-[#061828] via-[#061828]/95 to-[#061828]/80"></div>
     </div>
     <div class="relative max-w-7xl mx-auto px-6 py-12 md:py-16">
@@ -108,8 +119,7 @@ $h = static function ($s): string {
         </div>
         <div class="lg:col-span-2 space-y-4">
             <div class="rounded-3xl overflow-hidden border-2 border-zinc-400 shadow-md">
-                <img src="<?= $h($KEYWORD_IMAGE) ?>" alt="<?= $h($KEYWORD_NAME . ' in ' . $AREA) ?>" class="w-full h-48 object-cover" loading="eager"
-                     onerror="this.src='<?= $h($SERVICE_IMAGE) ?>'">
+                <img src="<?= $h($KEYWORD_IMAGE) ?>" alt="<?= $h($KEYWORD_NAME . ' in ' . $AREA) ?>" class="w-full h-48 object-cover" loading="eager">
                 <div class="bg-[#061828] text-white p-3 text-center font-bold text-sm"><?= $h($KEYWORD_NAME) ?> · <?= $h($AREA) ?></div>
             </div>
             <div class="bg-[#061828] text-white rounded-3xl p-6 shadow-lg">

@@ -150,11 +150,13 @@ $schema = [
                 </div>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
-                <img src="<?= htmlspecialchars(manufacturerImageUrl($mfrSlug, $primaryService), ENT_QUOTES, 'UTF-8') ?>"
+                <?php $brandImg = manufacturerImageUrl($mfrSlug, $primaryService); ?>
+                <?php if ($brandImg !== ''): ?>
+                <img src="<?= htmlspecialchars($brandImg, ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($gasBrand && function_exists('icomplyGasLegalSentence') ? icomplyGasLegalSentence() : ($mfrName . ' equipment — iComply Property Services'), ENT_QUOTES, 'UTF-8') ?>"
-                     class="absolute inset-0 w-full h-full object-cover opacity-70"
-                     loading="eager"
-                     onerror="this.src='<?= htmlspecialchars(serviceImageUrl($primaryService), ENT_QUOTES, 'UTF-8') ?>'">
+                     class="absolute inset-0 w-full h-full object-contain bg-white opacity-90"
+                     loading="eager">
+                <?php endif; ?>
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-transparent to-transparent">
                     <div class="text-sm text-white/70"><?= $gasBrand ? 'Trade supply only. iComply is not Gas Safe registered.' : 'Install, service and trade supply' ?></div>
                     <div class="text-2xl font-semibold mt-1"><?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> · North West</div>

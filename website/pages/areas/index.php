@@ -3,6 +3,7 @@
  * Areas directory — lists every town hub with conversion-focused layout.
  */
 require_once __DIR__ . '/../../config.php';
+require_once SITE_ROOT . '/includes/hub-visuals.php';
 
 $areas = getAreas();
 $services = getServices();
@@ -125,14 +126,20 @@ require SITE_ROOT . '/includes/header.php';
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         <?php foreach (array_slice($featured, 0, 8) as $town): ?>
+            <?php $townShot = hubPrimaryForArea('areas', $town, $town . ' property services'); ?>
             <a href="<?= url('/pages/areas/' . areaSlug($town) . '.php') ?>"
-               class="group bg-white border rounded-3xl p-6 hover:border-[#ff6b00] hover:shadow-lg transition">
-                <div class="w-10 h-10 rounded-2xl bg-[#0B1F3A] text-white flex items-center justify-center font-bold text-sm mb-4">
-                    <?= htmlspecialchars(strtoupper(substr($town, 0, 1)), ENT_QUOTES, 'UTF-8') ?>
-                </div>
+               class="group bg-white border rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition">
+                <?php if ($townShot): ?>
+                <img src="<?= htmlspecialchars($townShot['src'], ENT_QUOTES, 'UTF-8') ?>"
+                     alt="<?= htmlspecialchars($townShot['alt'], ENT_QUOTES, 'UTF-8') ?>"
+                     class="w-full h-36 <?= ($townShot['fit'] ?? 'cover') === 'contain' ? 'object-contain bg-white' : 'object-cover' ?>"
+                     loading="lazy" width="640" height="360">
+                <?php endif; ?>
+                <div class="p-6">
                 <h3 class="font-semibold text-xl text-black"><?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?></h3>
                 <p class="text-sm text-zinc-600 mt-2"><?= count($services) ?> services · local engineers</p>
                 <span class="mt-4 inline-block text-sm font-semibold text-[#ff6b00] group-hover:underline">View <?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?> →</span>
+                </div>
             </a>
         <?php endforeach; ?>
     </div>

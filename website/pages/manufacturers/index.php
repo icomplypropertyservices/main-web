@@ -83,12 +83,15 @@ require SITE_ROOT . '/includes/header.php';
         ?>
         <a href="<?= url('/pages/manufacturers/' . $slug . '.php') ?>"
            class="group bg-white border rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
-            <div class="h-32 bg-zinc-100 overflow-hidden">
-                <img src="<?= htmlspecialchars(manufacturerImageUrl($slug, $primary), ENT_QUOTES, 'UTF-8') ?>"
+            <?php $brandImg = manufacturerImageUrl($slug, $primary); ?>
+            <?php if ($brandImg !== ''): ?>
+            <div class="h-32 bg-white overflow-hidden">
+                <img src="<?= htmlspecialchars($brandImg, ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($entry['name'], ENT_QUOTES, 'UTF-8') ?> equipment — iComply Property Services"
-                     class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                     class="w-full h-full object-contain group-hover:scale-105 transition duration-300"
                      loading="lazy">
             </div>
+            <?php endif; ?>
             <div class="p-5 flex-1 flex flex-col">
                 <h3 class="font-semibold text-lg text-black"><?= htmlspecialchars($entry['name'], ENT_QUOTES, 'UTF-8') ?></h3>
                 <p class="text-sm text-zinc-600 mt-2 line-clamp-2 flex-1"><?= htmlspecialchars($entry['blurb'] ?? '', ENT_QUOTES, 'UTF-8') ?></p>

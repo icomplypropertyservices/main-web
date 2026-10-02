@@ -1,0 +1,2427 @@
+{
+  "source": "Shopify CDN product photos from shop HTML and data JSON, plus unique local service JPEGs",
+  "service_family": {
+    "electrical": "electrical",
+    "gas-systems": "gas",
+    "nurse-call": "nurse-call",
+    "fire-alarms": "fire",
+    "emergency-lighting": "fire",
+    "aov-air-handling": "aov",
+    "fire-risk-assessments": "fire",
+    "fire-extinguishers": "fire",
+    "fire-doors": "fire",
+    "fire-stopping": "fire",
+    "fire-suppression": "fire",
+    "sprinkler-systems": "fire",
+    "dry-risers": "fire",
+    "fire-signage": "fire",
+    "evacuation-alerts": "fire",
+    "kitchen-fire-suppression": "fire",
+    "fire-compartmentation": "fire",
+    "intruder-alarm": "security",
+    "cctv": "security",
+    "access-control": "security",
+    "door-entry": "security",
+    "intercoms": "security",
+    "landlord-compliance": "electrical",
+    "facilities-management": "works",
+    "building-maintenance": "works",
+    "project-management": "works",
+    "building-surveys": "works",
+    "cdm-support": "works",
+    "property-refurbishment-pm": "works",
+    "compliance-consultancy": "works",
+    "kitchens": "works",
+    "bathrooms": "works",
+    "renovation": "works",
+    "plastering": "works",
+    "tiling": "works",
+    "painting-decorating": "works",
+    "joinery": "works",
+    "carpentry": "works",
+    "flooring": "works",
+    "plumbing": "gas",
+    "heating": "gas",
+    "roofing": "works",
+    "brickwork": "works",
+    "dry-lining": "works",
+    "loft-conversions": "works",
+    "extensions": "works",
+    "insulation": "works",
+    "damp-proofing": "works",
+    "windows-doors": "works",
+    "rendering": "works",
+    "groundworks": "works",
+    "landscaping": "works",
+    "electrics-first-fix": "electrical",
+    "commercial-fit-out": "works",
+    "epc": "electrical",
+    "smoke-co-alarms": "fire",
+    "pat-testing": "electrical",
+    "legionella-risk-assessment": "works",
+    "asbestos-survey": "works"
+  },
+  "products": {
+    "fire": [
+      {
+        "title": "Advanced EvacGo BS 8629 evacuation panel",
+        "alt": "Advanced EvacGo BS 8629 evacuation panel",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/evacgo-1-4-loop-eacie-panel.jpg?v=1788982332",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/advanced-evacgo",
+        "price": "From £3,354.90"
+      },
+      {
+        "title": "Advanced MxPro 5 addressable panel",
+        "alt": "Advanced MxPro 5 addressable panel",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/advanced-mxpro.jpg?v=1788896194",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/advanced-mxpro5",
+        "price": "From £823.19"
+      },
+      {
+        "title": "Advanced MxPro 5 loop driver card",
+        "alt": "Advanced MxPro 5 loop driver card",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/advanced-mxpro-5-loop-driver-card.jpg?v=1788980260",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/advanced-mxpro5-loop-card",
+        "price": "£150.31"
+      },
+      {
+        "title": "Advanced MxPro 5 network card",
+        "alt": "Advanced MxPro 5 network card",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/network-card-for-advanced-mxpro-5.jpg?v=1788980265",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/advanced-mxpro5-network-card",
+        "price": "From £183.58"
+      },
+      {
+        "title": "Advanced MxPro 5 zone LED card",
+        "alt": "Advanced MxPro 5 zone LED card",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/advanced-mxpro-5-zone-led-indicator-card.jpg?v=1788980272",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/advanced-mxpro5-zone-led",
+        "price": "From £152.79"
+      },
+      {
+        "title": "Apollo AlarmSense alarm relay 55000-835APO",
+        "alt": "Apollo AlarmSense alarm relay 55000-835APO",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-as-relay.jpg?v=1788905337",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-alarmsense-relay",
+        "price": "£18.50"
+      },
+      {
+        "title": "Apollo AlarmSense base 45681-244APO",
+        "alt": "Apollo AlarmSense base 45681-244APO",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-as-base.jpg?v=1788895960",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-alarmsense-base",
+        "price": "£4.50"
+      },
+      {
+        "title": "Apollo AlarmSense base cover 45681-294",
+        "alt": "Apollo AlarmSense base cover 45681-294",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-as-cap.jpg?v=1788905344",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-alarmsense-base-cover",
+        "price": "£2.40"
+      },
+      {
+        "title": "Apollo AlarmSense detector 55000-390APO / 55000-190APO",
+        "alt": "Apollo AlarmSense detector 55000-390APO / 55000-190APO",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-as-optical-official.jpg?v=1788979781",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-alarmsense-detector",
+        "price": "From £12.15"
+      },
+      {
+        "title": "Apollo AlarmSense MCP 55100-894APO",
+        "alt": "Apollo AlarmSense MCP 55100-894APO",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-mcp-alarmsense.jpg?v=1788895957",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-alarmsense-mcp",
+        "price": "£14.80"
+      },
+      {
+        "title": "Apollo AlarmSense open-area sounder 55000-018APO",
+        "alt": "Apollo AlarmSense open-area sounder 55000-018APO",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-as-open-sounder.jpg?v=1788895972",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-alarmsense-open-sounder",
+        "price": "£28.50"
+      },
+      {
+        "title": "Apollo AlarmSense open-area sounder VID 55000-017APO",
+        "alt": "Apollo AlarmSense open-area sounder VID 55000-017APO",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-as-open-vid.jpg?v=1788905340",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-alarmsense-open-vid",
+        "price": "£34.00"
+      },
+      {
+        "title": "Apollo AlarmSense sounder base 45681-510APO",
+        "alt": "Apollo AlarmSense sounder base 45681-510APO",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-as-sounder.jpg?v=1788895959",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-alarmsense-sounder-base",
+        "price": "£59.88"
+      },
+      {
+        "title": "Apollo AlarmSense sounder VID base 45681-509APO",
+        "alt": "Apollo AlarmSense sounder VID base 45681-509APO",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-as-vid-base.jpg?v=1788905334",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-alarmsense-sounder-vid-base",
+        "price": "£68.00"
+      },
+      {
+        "title": "Apollo conventional MCP SC2900-001APO",
+        "alt": "Apollo conventional MCP SC2900-001APO",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-mcp-conv.jpg?v=1788895966",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-conventional-mcp",
+        "price": "£8.29"
+      },
+      {
+        "title": "Apollo Discovery detector 58000-600APO / 58000-400APO / 58000-700APO",
+        "alt": "Apollo Discovery detector 58000-600APO / 58000-400APO / 58000-700APO",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-discovery-optical-official.jpg?v=1788979793",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-discovery-detector",
+        "price": "From £22.50"
+      },
+      {
+        "title": "Apollo Discovery MCP 58100-910APO",
+        "alt": "Apollo Discovery MCP 58100-910APO",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-mcp-discovery.jpg?v=1788895969",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-discovery-mcp",
+        "price": "£36.00"
+      },
+      {
+        "title": "Apollo Discovery open-area sounder VID 58000-005APO",
+        "alt": "Apollo Discovery open-area sounder VID 58000-005APO",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/E0002117_0001.jpg?v=1788977442",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-discovery-open-vid",
+        "price": "£42.00"
+      },
+      {
+        "title": "Apollo intelligent input/output unit",
+        "alt": "Apollo intelligent input/output unit",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-intelligent-single-or-twin-input-output.jpg?v=1788981979",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-io",
+        "price": "From £45.05"
+      },
+      {
+        "title": "Apollo REACH loop interface",
+        "alt": "Apollo REACH loop interface",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-reach-loop-interface-module.jpg?v=1788981847",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-reach-loop-interface",
+        "price": "£218.49"
+      },
+      {
+        "title": "Apollo REACH wireless detector",
+        "alt": "Apollo REACH wireless detector",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-reach-optical-smoke-detector.jpg?v=1788981821",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-reach-detector",
+        "price": "From £136.18"
+      },
+      {
+        "title": "Apollo REACH wireless input and output module",
+        "alt": "Apollo REACH wireless input and output module",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-reach-input-module.jpg?v=1788981851",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-reach-io",
+        "price": "From £184.48"
+      },
+      {
+        "title": "Apollo REACH wireless manual call point",
+        "alt": "Apollo REACH wireless manual call point",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-reach-manual-call-point.jpg?v=1788981827",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-reach-mcp",
+        "price": "£135.15"
+      },
+      {
+        "title": "Apollo REACH wireless sounder base",
+        "alt": "Apollo REACH wireless sounder base",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-reach-sounder-base.jpg?v=1788981832",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-reach-sounder-base",
+        "price": "From £150.19"
+      },
+      {
+        "title": "Apollo REACH wireless sounder VAD base",
+        "alt": "Apollo REACH wireless sounder VAD base",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-reach-sounder-038-white-vad-base.jpg?v=1788981837",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-reach-sounder-vad",
+        "price": "From £227.06"
+      },
+      {
+        "title": "Apollo REACH wireless wall sounder",
+        "alt": "Apollo REACH wireless wall sounder",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-reach-open-area-wall-sounder.jpg?v=1788981842",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-reach-wall-sounder",
+        "price": "£170.99"
+      },
+      {
+        "title": "Apollo SA7100 beam accessories 29600-526 to 29600-530",
+        "alt": "Apollo SA7100 beam accessories 29600-526 to 29600-530",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-29600-526b.jpg?v=1788986024",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-beam-accessories",
+        "price": "From £72.20"
+      },
+      {
+        "title": "Apollo SA7100-100APO intelligent auto-aligning beam",
+        "alt": "Apollo SA7100-100APO intelligent auto-aligning beam",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-sa7100.jpg?v=1788986022",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-sa7100-beam",
+        "price": "From £565.00"
+      },
+      {
+        "title": "Apollo Series 65 base 45681-200APO / 45681-201APO",
+        "alt": "Apollo Series 65 base 45681-200APO / 45681-201APO",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-s65-base.jpg?v=1788895961",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-series-65-base",
+        "price": "From £2.80"
+      },
+      {
+        "title": "Apollo Series 65 detector 55000-317APO / 55000-122APO",
+        "alt": "Apollo Series 65 detector 55000-317APO / 55000-122APO",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-s65-optical-official.jpg?v=1788979797",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-series-65-detector",
+        "price": "From £13.50"
+      },
+      {
+        "title": "Apollo XP95 / Discovery isolator base 45681-211APO",
+        "alt": "Apollo XP95 / Discovery isolator base 45681-211APO",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-isolator-base.jpg?v=1788896187",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-isolator-base",
+        "price": "£8.90"
+      },
+      {
+        "title": "Apollo XP95 detector 55000-600APO / 55000-400APO",
+        "alt": "Apollo XP95 detector 55000-600APO / 55000-400APO",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-xp95-optical-official.jpg?v=1788979787",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-xp95-detector",
+        "price": "From £16.80"
+      },
+      {
+        "title": "Apollo XP95 MCP 55100-905APO",
+        "alt": "Apollo XP95 MCP 55100-905APO",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-mcp-xp95.jpg?v=1788895958",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-xp95-mcp",
+        "price": "£32.50"
+      },
+      {
+        "title": "Apollo XP95 zone monitor with isolator",
+        "alt": "Apollo XP95 zone monitor with isolator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-xp95-zone-monitor-unit-with-isolator.jpg?v=1788981990",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-xp95-zone-monitor",
+        "price": "£46.80"
+      },
+      {
+        "title": "Apollo XPERT 7 base 45681-210APO",
+        "alt": "Apollo XPERT 7 base 45681-210APO",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-xpert7-base.jpg?v=1788895962",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-xpert7-base",
+        "price": "£4.20"
+      },
+      {
+        "title": "C-TEC ActiV conventional wall sounder",
+        "alt": "C-TEC ActiV conventional wall sounder",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/c-tec-bf430c-cc-dr-65-conventional-wall-s.jpg?v=1788982726",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-bf430-sounder",
+        "price": "£15.95"
+      },
+      {
+        "title": "C-TEC CAST invacuation wall voice sounder",
+        "alt": "C-TEC CAST invacuation wall voice sounder",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/c-tec-cast-invacuation-wall-voice-sounder-mul.jpg?v=1788982353",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-voice-sounder",
+        "price": "£54.09"
+      },
+      {
+        "title": "C-TEC CFP 4-wire panel CFP702-4 CFP704-4 CFP708-4",
+        "alt": "C-TEC CFP 4-wire panel CFP702-4 CFP704-4 CFP708-4",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/ctec-cfp-panel.jpg?v=1788882289",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-cfp-4-wire",
+        "price": "From £176.21"
+      },
+      {
+        "title": "C-TEC CFP AlarmSense panel CFP702-2 CFP704-2 CFP708-2",
+        "alt": "C-TEC CFP AlarmSense panel CFP702-2 CFP704-2 CFP708-2",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/ctec-cfp-panel_6341af41-3b8e-4bde-b5b0-f63b9c1b3c96.jpg?v=1788882292",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-cfp-alarmsense",
+        "price": "From £247.11"
+      },
+      {
+        "title": "C-TEC CFP cards CFP761 CFP762 CFP763 CFP765 CFP766",
+        "alt": "C-TEC CFP cards CFP761 CFP762 CFP763 CFP765 CFP766",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/ctec-cfp-open.jpg?v=1788882842",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-cfp-cards",
+        "price": "From £44.31"
+      },
+      {
+        "title": "C-TEC CFP760 8 zone repeater",
+        "alt": "C-TEC CFP760 8 zone repeater",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/ctec-cfp-panel_88439382-d71e-49c8-a678-ce417c45a7ae.jpg?v=1788882294",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-cfp760",
+        "price": "£249.66"
+      },
+      {
+        "title": "C-TEC EVAC-ALERT BS 8629 evacuation panel",
+        "alt": "C-TEC EVAC-ALERT BS 8629 evacuation panel",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/evac-alert-bs-8629-evacuation-alert-panel.jpg?v=1788982304",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-evac-alert-panel",
+        "price": "£2,817.24"
+      },
+      {
+        "title": "C-TEC EVAC-ALERT flat interface",
+        "alt": "C-TEC EVAC-ALERT flat interface",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/evac-alert-single-way-flat-interface.jpg?v=1788982315",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-evac-alert-interface",
+        "price": "From £69.73"
+      },
+      {
+        "title": "C-TEC EVAC-ALERT self-testing sounder",
+        "alt": "C-TEC EVAC-ALERT self-testing sounder",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/evac-alert-self-testing-100db-evacuation-aler.jpg?v=1788982321",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-evac-alert-sounder",
+        "price": "From £52.24"
+      },
+      {
+        "title": "C-TEC LAP2 CAST multi-message lockdown panel",
+        "alt": "C-TEC LAP2 CAST multi-message lockdown panel",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/c-tec-lap-2-multi-message-lockdown-038-invacu.jpg?v=1788982343",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-lap2",
+        "price": "£1,257.37"
+      },
+      {
+        "title": "C-TEC LAP501 CAST lockdown alert panel",
+        "alt": "C-TEC LAP501 CAST lockdown alert panel",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/c-tec-lap501-ca-single-message-lockdown-alert.jpg?v=1788982338",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-lap501",
+        "price": "£448.75"
+      },
+      {
+        "title": "C-TEC S-KEY spare panel key",
+        "alt": "C-TEC S-KEY spare panel key",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/ctec-s-key.jpg?v=1788896183",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-s-key",
+        "price": "£2.25"
+      },
+      {
+        "title": "C-TEC XFP 16-zone repeater XFP510-16",
+        "alt": "C-TEC XFP 16-zone repeater XFP510-16",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/ctec-xfp-panel_c71d47c3-1801-4486-a96d-b287858557bb.jpg?v=1788977420",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-xfp510",
+        "price": "£238.19"
+      },
+      {
+        "title": "C-TEC XFP panel XFP501E/X XFP501E/H XFP501/X XFP502/X",
+        "alt": "C-TEC XFP panel XFP501E/X XFP501E/H XFP501/X XFP502/X",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/ctec-xfp-panel.jpg?v=1788882600",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-xfp-panel",
+        "price": "From £412.86"
+      },
+      {
+        "title": "EMS SmartCell wireless control panel",
+        "alt": "EMS SmartCell wireless control panel",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/sc-panel.jpg?v=1788981925",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/smartcell-panel",
+        "price": "£421.56"
+      },
+      {
+        "title": "EMS SmartCell wireless detector",
+        "alt": "EMS SmartCell wireless detector",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/sc-detector.jpg?v=1788981932",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/smartcell-detector",
+        "price": "From £103.66"
+      },
+      {
+        "title": "EMS SmartCell wireless manual call point",
+        "alt": "EMS SmartCell wireless manual call point",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/sc-mcp.jpg?v=1788981937",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/smartcell-mcp",
+        "price": "£103.66"
+      },
+      {
+        "title": "EMS SmartCell wireless sounder",
+        "alt": "EMS SmartCell wireless sounder",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/sc-sounder.jpg?v=1788981941",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/smartcell-sounder",
+        "price": "£110.55"
+      },
+      {
+        "title": "FFE Fireray 3-prism long-range kit",
+        "alt": "FFE Fireray 3-prism long-range kit",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/3-prism-long-range-kit-for-fireray-reflectiv.jpg?v=1788981333",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/fireray-prism-kit",
+        "price": "£92.50"
+      },
+      {
+        "title": "FFE Fireray 3000 end-to-end beam detector",
+        "alt": "FFE Fireray 3000 end-to-end beam detector",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/fireray-3000-end-to-end-infrared-optical-bea.jpg?v=1788981328",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/fireray-3000",
+        "price": "From £712.50"
+      },
+      {
+        "title": "FFE Fireray Hub reflective beam detector",
+        "alt": "FFE Fireray Hub reflective beam detector",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/fireray-hub-reflective-beam-detector.jpg?v=1788981318",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/fireray-hub",
+        "price": "From £531.25"
+      },
+      {
+        "title": "FFE Fireray One auto-aligning beam detector",
+        "alt": "FFE Fireray One auto-aligning beam detector",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/fireray-one-auto-aligning-beam-detector.jpg?v=1788981312",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/fireray-one",
+        "price": "£456.25"
+      },
+      {
+        "title": "Fike Twinflex MCP 402-0006",
+        "alt": "Fike Twinflex MCP 402-0006",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/fike-mcp.jpg?v=1788979210",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/fike-twinflex-mcp",
+        "price": "£28.50"
+      },
+      {
+        "title": "Fike Twinflex Multipoint ASD detector",
+        "alt": "Fike Twinflex Multipoint ASD detector",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/fike-twinflex-multipoint-detector-with-o.jpg?v=1788979206",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/fike-twinflex-multipoint",
+        "price": "From £29.80"
+      },
+      {
+        "title": "Fike Twinflex Pro2 conventional expansion card",
+        "alt": "Fike Twinflex Pro2 conventional expansion card",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/twinflexpro2-505-0007-conventional-expan.jpg?v=1788980292",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/fike-twinflex-expansion",
+        "price": "£124.39"
+      },
+      {
+        "title": "Fike Twinflex Pro2 repeater 505-0010",
+        "alt": "Fike Twinflex Pro2 repeater 505-0010",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/fike-twinflex-pro2-repeater-panel.jpg?v=1788979201",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/fike-twinflex-repeater",
+        "price": "£172.25"
+      },
+      {
+        "title": "Fike Twinflex Pro2 two-wire panel",
+        "alt": "Fike Twinflex Pro2 two-wire panel",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/fike-twinflex-pro2.jpg?v=1788979196",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/fike-twinflex-pro2",
+        "price": "From £216.25"
+      },
+      {
+        "title": "FireBeam anti-fog kit COND-KIT and spares",
+        "alt": "FireBeam anti-fog kit COND-KIT and spares",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/firebeam-cond-kit_a4132cd2-b2b9-47c8-b20c-e823f186e2dc.jpg?v=1788986015",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/firebeam-anti-fog",
+        "price": "From £29.90"
+      },
+      {
+        "title": "FireBeam EN54 24 V 1.5 A power supply PSUFB24",
+        "alt": "FireBeam EN54 24 V 1.5 A power supply PSUFB24",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/firebeam-psu.jpg?v=1788986019",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/firebeam-psu",
+        "price": "£176.50"
+      },
+      {
+        "title": "FireBeam mounting, reflector and short-range mask",
+        "alt": "FireBeam mounting, reflector and short-range mask",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/firebeam-bracket.jpg?v=1788986017",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/firebeam-mounting",
+        "price": "From £6.50"
+      },
+      {
+        "title": "FireBeam range extension kit 70KIT140 / 140KIT160",
+        "alt": "FireBeam range extension kit 70KIT140 / 140KIT160",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/firebeam-range-kit.jpg?v=1788986014",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/firebeam-range-kit",
+        "price": "From £52.50"
+      },
+      {
+        "title": "FireBeam Xtra / BLUE reflective beam detector",
+        "alt": "FireBeam Xtra / BLUE reflective beam detector",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/firebeam-xtra.jpg?v=1788986013",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/firebeam-xtra",
+        "price": "From £249.00"
+      },
+      {
+        "title": "FireBeam Xtra replacement low-level controller REP-CONT",
+        "alt": "FireBeam Xtra replacement low-level controller REP-CONT",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/firebeam-controller.jpg?v=1788986021",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/firebeam-controller",
+        "price": "£90.50"
+      },
+      {
+        "title": "Haes Esento Excel conventional / Twin Wire panel",
+        "alt": "Haes Esento Excel conventional / Twin Wire panel",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/haes-xlen.jpg?v=1788979219",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/haes-esento-excel",
+        "price": "From £244.38"
+      },
+      {
+        "title": "Hochiki ACC-EN ESP multi-sensor",
+        "alt": "Hochiki ACC-EN ESP multi-sensor",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/hochiki-acc-en.jpg?v=1788883978",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/hochiki-acc-en",
+        "price": "£27.76"
+      },
+      {
+        "title": "Hochiki ALN-EN ESP optical smoke sensor",
+        "alt": "Hochiki ALN-EN ESP optical smoke sensor",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/hochiki-aln-en.jpg?v=1788883972",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/hochiki-aln-en",
+        "price": "£24.90"
+      },
+      {
+        "title": "Hochiki ATJ-EN ESP heat sensor",
+        "alt": "Hochiki ATJ-EN ESP heat sensor",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/hochiki-atj-en.jpg?v=1788883975",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/hochiki-atj-en",
+        "price": "£24.90"
+      },
+      {
+        "title": "Hochiki CHQ-WS2 ESP wall sounder",
+        "alt": "Hochiki CHQ-WS2 ESP wall sounder",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/hochiki-chq-ws2.jpg?v=1788977439",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/hochiki-chq-ws2",
+        "price": "£28.50"
+      },
+      {
+        "title": "Hochiki CHQ-WSB2 ESP wall sounder-beacon",
+        "alt": "Hochiki CHQ-WSB2 ESP wall sounder-beacon",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/hochiki-chq-wsb2-esp-addressable-wall-so.jpg?v=1788979225",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/hochiki-chq-wsb2",
+        "price": "From £51.58"
+      },
+      {
+        "title": "Hochiki ESP dual input module",
+        "alt": "Hochiki ESP dual input module",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/hochiki-esp-analogue-dual-input-module-with-din.jpg?v=1788981953",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/hochiki-chq-dim2",
+        "price": "From £42.05"
+      },
+      {
+        "title": "Hochiki ESP dual sounder controller",
+        "alt": "Hochiki ESP dual sounder controller",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/hochiki-chq-dsc2.jpg?v=1788981960",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/hochiki-chq-dsc2",
+        "price": "From £75.73"
+      },
+      {
+        "title": "Hochiki ESP FIREbeam Xtra loop-powered beam",
+        "alt": "Hochiki ESP FIREbeam Xtra loop-powered beam",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/hochiki-esp-firebeam.jpg?v=1788986025",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/hochiki-esp-firebeam",
+        "price": "£398.00"
+      },
+      {
+        "title": "Hochiki ESP mini input and powered output",
+        "alt": "Hochiki ESP mini input and powered output",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/hochiki-esp-single-input-module.jpg?v=1788981966",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/hochiki-mini-io",
+        "price": "From £26.10"
+      },
+      {
+        "title": "Hochiki HCP-E ESP call point",
+        "alt": "Hochiki HCP-E ESP call point",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/hochiki-hcp-e.png?v=1788895959",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/hochiki-hcp-e",
+        "price": "£18.90"
+      },
+      {
+        "title": "Hochiki YBN-R/3 ESP sensor base",
+        "alt": "Hochiki YBN-R/3 ESP sensor base",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/hochiki-ybn-r3.jpg?v=1788883981",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/hochiki-ybn-r-3",
+        "price": "£1.59"
+      },
+      {
+        "title": "Hyfire wireless detector",
+        "alt": "Hyfire wireless detector",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/hyfire-hfw-pa-05-wireless-dual-optical-smoke-de.jpg?v=1788981802",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/hyfire-detector",
+        "price": "From £204.62"
+      },
+      {
+        "title": "Hyfire wireless sounder base",
+        "alt": "Hyfire wireless sounder base",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/hyfire-static-wireless-sounder-base.jpg?v=1788981810",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/hyfire-sounder-base",
+        "price": "From £246.28"
+      },
+      {
+        "title": "Hyfire wireless translator and expander",
+        "alt": "Hyfire wireless translator and expander",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/hyfire-hfw-w2w-01-wireless-translator-module.jpg?v=1788981814",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/hyfire-translator",
+        "price": "£286.84"
+      },
+      {
+        "title": "KAC MCP1A-A-AOV orange smoke-vent call point",
+        "alt": "KAC MCP1A-A-AOV orange smoke-vent call point",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/kac-smoke-vent-orange-manual-call-point.jpg?v=1788979230",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/kac-mcp-aov",
+        "price": "£42.00"
+      },
+      {
+        "title": "Kentec Sigma CP ancillary PCB",
+        "alt": "Kentec Sigma CP ancillary PCB",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/kentec-sigma-cp-ancillary-pcb.jpg?v=1788980287",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/kentec-sigma-ancillary",
+        "price": "£131.01"
+      },
+      {
+        "title": "Kentec Sigma CP conventional panel",
+        "alt": "Kentec Sigma CP conventional panel",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/kentec-sigma.jpg?v=1788896199",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/kentec-sigma-cp",
+        "price": "From £254.41"
+      },
+      {
+        "title": "Kentec Sigma CP two-wire panel",
+        "alt": "Kentec Sigma CP two-wire panel",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/kentec-sigma_b1e7e58e-6a54-4370-9526-50f9a440b8d8.jpg?v=1788977355",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/kentec-sigma-cp-t",
+        "price": "From £278.63"
+      },
+      {
+        "title": "Kentec Sigma CP-A AlarmSense panel",
+        "alt": "Kentec Sigma CP-A AlarmSense panel",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/kentec-sigma_a7534281-ebe0-4afa-a2be-2cbfee0e85bd.jpg?v=1788977360",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/kentec-sigma-cpa",
+        "price": "From £261.26"
+      },
+      {
+        "title": "Kentec Syncro AS addressable panel",
+        "alt": "Kentec Syncro AS addressable panel",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/kentec-syncro.jpg?v=1788896205",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/kentec-syncro-as",
+        "price": "From £595.69"
+      },
+      {
+        "title": "Kentec Syncro AS loop 2 expansion card",
+        "alt": "Kentec Syncro AS loop 2 expansion card",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/kentec-syncro-as-loop-2-expansion-card.jpg?v=1788980277",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/kentec-syncro-loop-card",
+        "price": "£284.80"
+      },
+      {
+        "title": "Kentec Syncro fault-tolerant network card",
+        "alt": "Kentec Syncro fault-tolerant network card",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/kentec-syncro-fault-tolerant-network-in.jpg?v=1788980282",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/kentec-syncro-network-card",
+        "price": "£241.00"
+      },
+      {
+        "title": "Ventlux Actulux BVT AOV call point 511790",
+        "alt": "Ventlux Actulux BVT AOV call point 511790",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/511790.jpg?v=1788977966",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-bvt-511790",
+        "price": "£87.87"
+      },
+      {
+        "title": "Ventlux Actulux rain sensor 111960",
+        "alt": "Ventlux Actulux rain sensor 111960",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/111960.jpg?v=1788978061",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-rain-111960",
+        "price": "£253.10"
+      },
+      {
+        "title": "Ventlux anti-tamper thermostat A/TS/AT",
+        "alt": "Ventlux anti-tamper thermostat A/TS/AT",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/A_TS_AT.jpg?v=1788978070",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-thermostat",
+        "price": "£26.27"
+      },
+      {
+        "title": "Ventlux AOV conventional smoke detector A/SD/CON/DB",
+        "alt": "Ventlux AOV conventional smoke detector A/SD/CON/DB",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/A_SD_CON_DB.jpg?v=1788978073",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-aov-smoke-detector",
+        "price": "£21.42"
+      },
+      {
+        "title": "Ventlux AOV roof hatch 1050 x 1050 mm VSK285",
+        "alt": "Ventlux AOV roof hatch 1050 x 1050 mm VSK285",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/AOV_Roof_Hatch_inter.jpg?v=1788977928",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-vsk285-hatch",
+        "price": "£2,495.00"
+      },
+      {
+        "title": "Ventlux BM03w damper module",
+        "alt": "Ventlux BM03w damper module",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/bm03w.jpg?v=1788978053",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-bm03w",
+        "price": "£13.62"
+      },
+      {
+        "title": "Ventlux call-point glass pack of 5 111629",
+        "alt": "Ventlux call-point glass pack of 5 111629",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/111629.jpg?v=1788978043",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-glass-111629",
+        "price": "£18.15"
+      },
+      {
+        "title": "Ventlux FB2 anti-tamper call-point enclosure",
+        "alt": "Ventlux FB2 anti-tamper call-point enclosure",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/A_FB2_BOX_Orange.jpg?v=1788978028",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-fb2",
+        "price": "£81.55"
+      },
+      {
+        "title": "Ventlux FR01W SVM auto-reset module",
+        "alt": "Ventlux FR01W SVM auto-reset module",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/A_ARM.jpg?v=1788978048",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-fr01w",
+        "price": "£38.10"
+      },
+      {
+        "title": "Ventlux HCV 500 chain-drive actuator",
+        "alt": "Ventlux HCV 500 chain-drive actuator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/hcv-chain.jpg?v=1788977801",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-hcv-chain",
+        "price": "From £297.03"
+      },
+      {
+        "title": "Ventlux HCV 500/600 door drive 318061",
+        "alt": "Ventlux HCV 500/600 door drive 318061",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/318061.jpg?v=1788977805",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-hcv-door-drive",
+        "price": "£559.13"
+      },
+      {
+        "title": "Ventlux HCV door-drive bracket set",
+        "alt": "Ventlux HCV door-drive bracket set",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/390061.jpg?v=1788977815",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-door-brackets",
+        "price": "From £54.44"
+      },
+      {
+        "title": "Ventlux HCV window bracket set",
+        "alt": "Ventlux HCV window bracket set",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/33010000.jpg?v=1788977810",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-hcv-brackets",
+        "price": "From £24.84"
+      },
+      {
+        "title": "Ventlux iFPS fireman’s priority 511940",
+        "alt": "Ventlux iFPS fireman’s priority 511940",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/511940.jpg?v=1788977962",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-ifps-511940",
+        "price": "£119.09"
+      },
+      {
+        "title": "Ventlux iMCP fireman’s switch 511890",
+        "alt": "Ventlux iMCP fireman’s switch 511890",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/511890.jpg?v=1788977956",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-imcp-511890",
+        "price": "£108.89"
+      },
+      {
+        "title": "Ventlux LIP intelligent overload unit",
+        "alt": "Ventlux LIP intelligent overload unit",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/lip.jpg?v=1788977840",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-lip",
+        "price": "From £91.69"
+      },
+      {
+        "title": "Ventlux MCP plastic keys pack of 10",
+        "alt": "Ventlux MCP plastic keys pack of 10",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/A_KEY_MCP_PK10.jpg?v=1788978035",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-mcp-keys",
+        "price": "£25.50"
+      },
+      {
+        "title": "Ventlux RV/S6A smoke-vent roof-window kit",
+        "alt": "Ventlux RV/S6A smoke-vent roof-window kit",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/rvs6a.jpg?v=1788977925",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-rvs6a-kit",
+        "price": "£1,252.50"
+      },
+      {
+        "title": "Ventlux SA Drive fixing kit 213100",
+        "alt": "Ventlux SA Drive fixing kit 213100",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/213100.jpg?v=1788977828",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-sa-fixing",
+        "price": "£16.78"
+      },
+      {
+        "title": "Ventlux SA Drive roof-vent actuator",
+        "alt": "Ventlux SA Drive roof-vent actuator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/sa-drive.jpg?v=1788977823",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-sa-drive",
+        "price": "£301.87"
+      },
+      {
+        "title": "Ventlux SA Power Mini roof-vent cradle 221100",
+        "alt": "Ventlux SA Power Mini roof-vent cradle 221100",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/221100.jpg?v=1788977916",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-sa-cradle-mini",
+        "price": "£591.60"
+      },
+      {
+        "title": "Ventlux SA Power Single 1200 mm cradle 110803",
+        "alt": "Ventlux SA Power Single 1200 mm cradle 110803",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/110803.jpg?v=1788977920",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-sa-cradle-single",
+        "price": "£633.42"
+      },
+      {
+        "title": "Ventlux SVL group card 22801001",
+        "alt": "Ventlux SVL group card 22801001",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/22801001.jpg?v=1788977793",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-svl-group-card",
+        "price": "£135.62"
+      },
+      {
+        "title": "Ventlux SVL multi-zone AOV controller 22800220",
+        "alt": "Ventlux SVL multi-zone AOV controller 22800220",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/22800220.jpg?v=1788977789",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-svl-controller",
+        "price": "£1,390.62"
+      },
+      {
+        "title": "Ventlux SVM single-zone AOV controller",
+        "alt": "Ventlux SVM single-zone AOV controller",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/svm-panel.jpg?v=1788977786",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-svm-controller",
+        "price": "From £365.00"
+      },
+      {
+        "title": "Ventlux VSK320 6-wire smoke-vent call point",
+        "alt": "Ventlux VSK320 6-wire smoke-vent call point",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/VSK320.jpg?v=1788977938",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-vsk320",
+        "price": "£69.95"
+      },
+      {
+        "title": "Ventlux VSK321 AOV call point",
+        "alt": "Ventlux VSK321 AOV call point",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/VSK321B.jpg?v=1788977933",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-vsk321",
+        "price": "From £61.15"
+      },
+      {
+        "title": "Ventlux VSK323 3–6 wire AOV call point",
+        "alt": "Ventlux VSK323 3–6 wire AOV call point",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/VSK323B.jpg?v=1788977945",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-vsk323",
+        "price": "From £76.95"
+      },
+      {
+        "title": "Ventlux VSK324FO fireman’s priority switch",
+        "alt": "Ventlux VSK324FO fireman’s priority switch",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/VSK324FO.jpg?v=1788977952",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-vsk324fo",
+        "price": "£66.15"
+      },
+      {
+        "title": "Ventlux wind and rain sensor 121329",
+        "alt": "Ventlux wind and rain sensor 121329",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/121329.jpg?v=1788978065",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-wind-rain-121329",
+        "price": "£375.35"
+      },
+      {
+        "title": "VESDA 25mm ASD sampling pipe",
+        "alt": "VESDA 25mm ASD sampling pipe",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/vesda-pip-001-2-4-asd-sampling-pipe-25mm.jpg?v=1788981402",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/vesda-pipe",
+        "price": "£78.40"
+      },
+      {
+        "title": "VESDA VLF filter cartridge",
+        "alt": "VESDA VLF filter cartridge",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/vesda-filter-cartridge.jpg?v=1788981391",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/vesda-vlf-filter",
+        "price": "From £72.25"
+      },
+      {
+        "title": "VESDA VLF LaserFOCUS aspirating detector",
+        "alt": "VESDA VLF LaserFOCUS aspirating detector",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/vesda-vlf-laserfocus-aspirating-smoke-detect.jpg?v=1788981366",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/vesda-vlf",
+        "price": "From £1,169.10"
+      },
+      {
+        "title": "VESDA VLI industrial aspirating detector",
+        "alt": "VESDA VLI industrial aspirating detector",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/vesda-vli-industrial-aspirating-smoke-det.jpg?v=1788981374",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/vesda-vli",
+        "price": "From £5,770.27"
+      },
+      {
+        "title": "VESDA-E mounting bracket",
+        "alt": "VESDA-E mounting bracket",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/mounting-bracket-for-vesda-e-aspiration-dete.jpg?v=1788981395",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/vesda-e-bracket",
+        "price": "£54.10"
+      },
+      {
+        "title": "VESDA-E VEA addressable aspirating detector",
+        "alt": "VESDA-E VEA addressable aspirating detector",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/vesda-e-vea-addressable-aspirating-smoke-det.jpg?v=1788981361",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/vesda-e-vea",
+        "price": "From £6,978.74"
+      },
+      {
+        "title": "VESDA-E VEP aspirating smoke detector",
+        "alt": "VESDA-E VEP aspirating smoke detector",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/vesda-e-vep-aspirating-smoke-detector.jpg?v=1788981337",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/vesda-e-vep",
+        "price": "From £1,866.54"
+      },
+      {
+        "title": "VESDA-E VEP/VEU/VES filter cartridge",
+        "alt": "VESDA-E VEP/VEU/VES filter cartridge",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/vesda-e-vep-veu-ves-filter-cartridge.jpg?v=1788981384",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/vesda-e-filter",
+        "price": "From £77.68"
+      },
+      {
+        "title": "VESDA-E VES sector-addressable aspirating detector",
+        "alt": "VESDA-E VES sector-addressable aspirating detector",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/vesda-e-ves-aspirating-smoke-detector.jpg?v=1788981350",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/vesda-e-ves",
+        "price": "From £4,626.94"
+      },
+      {
+        "title": "VESDA-E VEU highest-sensitivity aspirating detector",
+        "alt": "VESDA-E VEU highest-sensitivity aspirating detector",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/vesda-e-veu-highest-sensitivity-aspirating-s.jpg?v=1788981342",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/vesda-e-veu",
+        "price": "From £3,629.08"
+      }
+    ],
+    "electrical": [
+      {
+        "title": "Apollo MiniDisc remote indicator",
+        "alt": "Apollo MiniDisc remote indicator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-minidisc-remote-indicator.jpg?v=1788981983",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-minidisc",
+        "price": "£4.80"
+      },
+      {
+        "title": "Apollo REACH wireless remote indicator",
+        "alt": "Apollo REACH wireless remote indicator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-reach-remote-indicator.jpg?v=1788981856",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-reach-indicator",
+        "price": "£127.51"
+      },
+      {
+        "title": "C-TEC BF318 remote LED indicator",
+        "alt": "C-TEC BF318 remote LED indicator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/c-tec-bf318-remote-led-indicator.jpg?v=1788982358",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-bf318",
+        "price": "£3.17"
+      },
+      {
+        "title": "C-TEC SigTEL 224-line desk controller",
+        "alt": "C-TEC SigTEL 224-line desk controller",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/sigtel-224-line-desk-controller.jpg?v=1788982279",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-sigtel-desk",
+        "price": "£768.37"
+      },
+      {
+        "title": "C-TEC SigTEL 8-line controller no handset",
+        "alt": "C-TEC SigTEL 8-line controller no handset",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/sigtel-8-line-master-controller-no-handset.jpg?v=1788982274",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-sigtel-ecu8nt",
+        "price": "£914.84"
+      },
+      {
+        "title": "C-TEC SigTEL disabled refuge master controller",
+        "alt": "C-TEC SigTEL disabled refuge master controller",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/sigtel-4-16-line-master-controller.jpg?v=1788982267",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-sigtel-controller",
+        "price": "From £854.52"
+      },
+      {
+        "title": "C-TEC SigTEL Type A fire telephone outstation",
+        "alt": "C-TEC SigTEL Type A fire telephone outstation",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/sigtel-type-a-fire-telephone-outstation.jpg?v=1788982283",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-sigtel-type-a",
+        "price": "From £162.85"
+      },
+      {
+        "title": "C-TEC SigTEL Type B green disabled refuge outstation",
+        "alt": "C-TEC SigTEL Type B green disabled refuge outstation",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/sigtel-type-b-green-refuge-outstation.jpg?v=1788982297",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-sigtel-type-b-green",
+        "price": "From £143.32"
+      },
+      {
+        "title": "C-TEC SigTEL Type B stainless disabled refuge outstation",
+        "alt": "C-TEC SigTEL Type B stainless disabled refuge outstation",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/sigtel-type-b-stainless-steel-refuge-outstati.jpg?v=1788982290",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-sigtel-type-b-ss",
+        "price": "From £159.24"
+      },
+      {
+        "title": "EMS SmartCell wireless remote LED indicator",
+        "alt": "EMS SmartCell wireless remote LED indicator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/smartcell-wireless-remote-led-indicator.jpg?v=1788981949",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/smartcell-indicator",
+        "price": "£94.30"
+      },
+      {
+        "title": "Hochiki CHQ-ARI addressable remote indicator",
+        "alt": "Hochiki CHQ-ARI addressable remote indicator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/hochiki-chq-ari-addressable-remote-indicator.jpg?v=1788981971",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/hochiki-chq-ari",
+        "price": "£28.23"
+      },
+      {
+        "title": "Linian fire cable clips pack of 100",
+        "alt": "Linian fire cable clips pack of 100",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/linian-fire-cable-clips-8211-pack-of-100.jpg?v=1788982722",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/linian-fire-clips",
+        "price": "£18.91"
+      },
+      {
+        "title": "Prysmian FP200 Gold 2-core 1.5mm fire cable",
+        "alt": "Prysmian FP200 Gold 2-core 1.5mm fire cable",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/prysmian-1-5mm-fp200-gold-fire-resistant.jpg?v=1788982717",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/fp200-gold-2c",
+        "price": "£146.67"
+      },
+      {
+        "title": "Yuasa 12 V VRLA fire-panel battery",
+        "alt": "Yuasa 12 V VRLA fire-panel battery",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/yuasa-np7.jpg?v=1788977433",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/yuasa-12v-vrla",
+        "price": "From £14.80"
+      }
+    ],
+    "security": [
+      {
+        "title": "Bell System 203 lock release",
+        "alt": "Bell System 203 lock release",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/bell-de203.jpg?v=1788980959",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/bell-203-lock",
+        "price": "£22.00"
+      },
+      {
+        "title": "Bell System 61 speech unit",
+        "alt": "Bell System 61 speech unit",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/bell-de61.jpg?v=1788980954",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/bell-61-speech",
+        "price": "£36.65"
+      },
+      {
+        "title": "Bell System 801 replacement handset",
+        "alt": "Bell System 801 replacement handset",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/bell-de801.jpg?v=1788980944",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/bell-801-handset",
+        "price": "From £16.34"
+      },
+      {
+        "title": "Bell System 900 series audio kit",
+        "alt": "Bell System 900 series audio kit",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/bell-de901.jpg?v=1788980919",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/bell-900-audio-kit",
+        "price": "From £75.40"
+      },
+      {
+        "title": "Bell System Bellini audio kit",
+        "alt": "Bell System Bellini audio kit",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/bell-debl1.jpg?v=1788980931",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/bell-bellini-audio-kit",
+        "price": "From £86.90"
+      },
+      {
+        "title": "Bell System Bellissimo video kit",
+        "alt": "Bell System Bellissimo video kit",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/bell-debsxa_f8235a18-8b39-4499-84a3-8c78f4c22c16.jpg?v=1788980976",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/bell-bellissimo-kit",
+        "price": "From £450.61"
+      },
+      {
+        "title": "Bell System Bellissimo video telephone",
+        "alt": "Bell System Bellissimo video telephone",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/bell-debsxa.jpg?v=1788980969",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/bell-bellissimo-phone",
+        "price": "£165.88"
+      },
+      {
+        "title": "Bell System CS106 audio + keypad kit",
+        "alt": "Bell System CS106 audio + keypad kit",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/bell-decs1061.jpg?v=1788980937",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/bell-cs106-audio-kit",
+        "price": "From £220.00"
+      },
+      {
+        "title": "Bell System PS4 PSU",
+        "alt": "Bell System PS4 PSU",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/bell-deps4.jpg?v=1788980963",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/bell-ps4-psu",
+        "price": "£42.00"
+      },
+      {
+        "title": "Bell System VRK vandal-resistant audio kit",
+        "alt": "Bell System VRK vandal-resistant audio kit",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/bell-devrk1.jpg?v=1788980925",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/bell-vrk-audio-kit",
+        "price": "From £155.00"
+      },
+      {
+        "title": "CAME AF43S radio cards and antennas",
+        "alt": "CAME AF43S radio cards and antennas",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/top.jpg?v=1789114174",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-radio-cards",
+        "price": "From £22.00"
+      },
+      {
+        "title": "CAME AMICO swing gate operator",
+        "alt": "CAME AMICO swing gate operator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/amico.jpg?v=1789114145",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-amico",
+        "price": "From £220.00"
+      },
+      {
+        "title": "CAME ATI swing gate operator",
+        "alt": "CAME ATI swing gate operator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/came-ati.jpg?v=1788884798",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-ati-swing",
+        "price": "From £265.00"
+      },
+      {
+        "title": "CAME ATS ram operator",
+        "alt": "CAME ATS ram operator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/came-ats.jpg?v=1788905691",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-ats",
+        "price": "From £210.00"
+      },
+      {
+        "title": "CAME AXI ram operator",
+        "alt": "CAME AXI ram operator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/came-axi.jpg?v=1788905684",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-axi",
+        "price": "From £229.00"
+      },
+      {
+        "title": "CAME AXL ram operator",
+        "alt": "CAME AXL ram operator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/came-axl.jpg?v=1788905687",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-axl",
+        "price": "£209.00"
+      },
+      {
+        "title": "CAME AXO ram operator",
+        "alt": "CAME AXO ram operator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/came-axo.jpg?v=1788905663",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-axo",
+        "price": "From £255.00"
+      },
+      {
+        "title": "CAME BKS industrial sliding operator",
+        "alt": "CAME BKS industrial sliding operator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/bk.jpg?v=1789114132",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-bks-sliding",
+        "price": "From £520.00"
+      },
+      {
+        "title": "CAME BKV industrial sliding operator",
+        "alt": "CAME BKV industrial sliding operator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/came-bkv.jpg?v=1788905627",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-bkv-sliding",
+        "price": "From £800.00"
+      },
+      {
+        "title": "CAME BKX brushless sliding operator",
+        "alt": "CAME BKX brushless sliding operator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/bkx.jpg?v=1789114135",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-bkx-sliding",
+        "price": "£680.00"
+      },
+      {
+        "title": "CAME BPT AGT Agata Perla Opale",
+        "alt": "CAME BPT AGT Agata Perla Opale",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/agt.jpg?v=1789114207",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-agt-handsets",
+        "price": "From £55.00"
+      },
+      {
+        "title": "CAME BPT MTM entry panels and kits",
+        "alt": "CAME BPT MTM entry panels and kits",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/mtm.jpg?v=1789114210",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-mtm-entry",
+        "price": "From £55.00"
+      },
+      {
+        "title": "CAME BPT PLX video monitors",
+        "alt": "CAME BPT PLX video monitors",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/plx.jpg?v=1789114202",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-plx-monitors",
+        "price": "From £256.00"
+      },
+      {
+        "title": "CAME BPT X1 one-family video kit",
+        "alt": "CAME BPT X1 one-family video kit",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/lhs.jpg?v=1789114211",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-x1-kit",
+        "price": "£340.00"
+      },
+      {
+        "title": "CAME BPT XTS video monitors",
+        "alt": "CAME BPT XTS video monitors",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/xts.jpg?v=1789114201",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-xts-monitors",
+        "price": "From £409.00"
+      },
+      {
+        "title": "CAME BPT XVP IP360 entry panels",
+        "alt": "CAME BPT XVP IP360 entry panels",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/xvp.jpg?v=1789114204",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-xvp-panels",
+        "price": "From £1,938.00"
+      },
+      {
+        "title": "CAME BX sliding gate operator",
+        "alt": "CAME BX sliding gate operator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/bx.jpg?v=1789114130",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-bx-sliding",
+        "price": "From £400.00"
+      },
+      {
+        "title": "CAME BXL sliding operator",
+        "alt": "CAME BXL sliding operator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/came-bxl.jpg?v=1788905632",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-bxl-sliding",
+        "price": "From £289.00"
+      },
+      {
+        "title": "CAME BXV sliding gate kits",
+        "alt": "CAME BXV sliding gate kits",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/bxv-kit.jpg?v=1789114124",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-bxv-kits",
+        "price": "From £429.00"
+      },
+      {
+        "title": "CAME BXV sliding gate operator",
+        "alt": "CAME BXV sliding gate operator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/came-bxv.jpg?v=1788884792",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-bxv-sliding",
+        "price": "From £341.93"
+      },
+      {
+        "title": "CAME BY-3500T industrial sliding operator",
+        "alt": "CAME BY-3500T industrial sliding operator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/by3500.jpg?v=1789114136",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-by3500",
+        "price": "£1,450.00"
+      },
+      {
+        "title": "CAME C-BX industrial door operator",
+        "alt": "CAME C-BX industrial door operator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/bx_a0c871e6-3dd0-406d-8231-ae218a02c2cf.jpg?v=1789114167",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-c-bx",
+        "price": "£597.00"
+      },
+      {
+        "title": "CAME CGZ nylon rack",
+        "alt": "CAME CGZ nylon rack",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/bxv.jpg?v=1789114296",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-cgz-rack",
+        "price": "From £8.50"
+      },
+      {
+        "title": "CAME Connect gateways",
+        "alt": "CAME Connect gateways",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/connect.jpg?v=1789114190",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-connect",
+        "price": "From £23.00"
+      },
+      {
+        "title": "CAME DF safety edges",
+        "alt": "CAME DF safety edges",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/dlx_44d80142-7c58-4943-9a7f-f33cad66041d.jpg?v=1789114198",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-df-edges",
+        "price": "From £22.00"
+      },
+      {
+        "title": "CAME DIR photocells",
+        "alt": "CAME DIR photocells",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/came-dir.jpg?v=1788884805",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-dir-photocells",
+        "price": "From £20.00"
+      },
+      {
+        "title": "CAME DLX photocells",
+        "alt": "CAME DLX photocells",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/dlx.jpg?v=1789114180",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-dlx-photocells",
+        "price": "From £53.00"
+      },
+      {
+        "title": "CAME DXR photocells",
+        "alt": "CAME DXR photocells",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/dxr.jpg?v=1789114178",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-dxr-photocells",
+        "price": "From £78.00"
+      },
+      {
+        "title": "CAME electric locks and battery boards",
+        "alt": "CAME electric locks and battery boards",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/kiaro.jpg?v=1789114195",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-locks",
+        "price": "From £40.00"
+      },
+      {
+        "title": "CAME FAST 70 articulated operator",
+        "alt": "CAME FAST 70 articulated operator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/came-fast70.jpg?v=1788905645",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-fast70",
+        "price": "From £295.00"
+      },
+      {
+        "title": "CAME FERNI ram operator",
+        "alt": "CAME FERNI ram operator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/came-ferni.jpg?v=1788905667",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-ferni",
+        "price": "From £406.50"
+      },
+      {
+        "title": "CAME FROG underground operator",
+        "alt": "CAME FROG underground operator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/came-frog.jpg?v=1788905635",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-frog",
+        "price": "From £214.00"
+      },
+      {
+        "title": "CAME FROG-PLUS underground operator",
+        "alt": "CAME FROG-PLUS underground operator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/frog.jpg?v=1789114151",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-frog-plus",
+        "price": "From £890.00"
+      },
+      {
+        "title": "CAME FROG-X brushless underground operator",
+        "alt": "CAME FROG-X brushless underground operator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/came-frog-x.jpg?v=1788905639",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-frog-x",
+        "price": "From £85.00"
+      },
+      {
+        "title": "CAME FTL / FTX swing gate operator",
+        "alt": "CAME FTL / FTX swing gate operator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/ftl.jpg?v=1789114147",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-ftl-ftx",
+        "price": "From £170.00"
+      },
+      {
+        "title": "CAME GARD 4 barrier",
+        "alt": "CAME GARD 4 barrier",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/gard-4.jpg?v=1789114157",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-gard-4",
+        "price": "From £140.00"
+      },
+      {
+        "title": "CAME GARD 8 barrier",
+        "alt": "CAME GARD 8 barrier",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/gard-8.jpg?v=1789114159",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-gard-8",
+        "price": "From £180.00"
+      },
+      {
+        "title": "CAME GARD GT4 barrier",
+        "alt": "CAME GARD GT4 barrier",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/came-gard-gt4.jpg?v=1788884803",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-gard-gt4",
+        "price": "From £177.00"
+      },
+      {
+        "title": "CAME GARD GT8 barrier",
+        "alt": "CAME GARD GT8 barrier",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/gard-gt8.jpg?v=1789114153",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-gard-gt8",
+        "price": "From £250.00"
+      },
+      {
+        "title": "CAME GARD LT barrier kit",
+        "alt": "CAME GARD LT barrier kit",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/gard_82deb211-01c2-41da-9878-6a42c0550d06.jpg?v=1789114163",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-gard-lt",
+        "price": "From £1,523.00"
+      },
+      {
+        "title": "CAME GARD PX barrier",
+        "alt": "CAME GARD PX barrier",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/gard.jpg?v=1789114161",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-gard-px",
+        "price": "From £160.00"
+      },
+      {
+        "title": "CAME KEY 806SA-0110",
+        "alt": "CAME KEY 806SA-0110",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/connect_1299a5e9-9ab2-44b2-9c1b-4ce349ecc873.jpg?v=1789114192",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-key-806sa",
+        "price": "£85.00"
+      },
+      {
+        "title": "CAME KRONO ram operator",
+        "alt": "CAME KRONO ram operator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/came-krono.jpg?v=1788905675",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-krono",
+        "price": "From £178.00"
+      },
+      {
+        "title": "CAME KRX KIARO flashing lamp",
+        "alt": "CAME KRX KIARO flashing lamp",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/krx.jpg?v=1789114183",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-krx-lamp",
+        "price": "From £8.00"
+      },
+      {
+        "title": "CAME RIO 2.0 wireless safety",
+        "alt": "CAME RIO 2.0 wireless safety",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/dxr_cc28440d-f2f3-4a11-8ee6-c08314c5e7b5.jpg?v=1789114181",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-rio",
+        "price": "£55.00"
+      },
+      {
+        "title": "CAME SEL key and digital selectors",
+        "alt": "CAME SEL key and digital selectors",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/sel-digital.jpg?v=1789114188",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-sel",
+        "price": "From £42.00"
+      },
+      {
+        "title": "CAME SMA loop detectors",
+        "alt": "CAME SMA loop detectors",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/dxr_c484faf2-4e7a-4c76-8c77-136b380b8e94.jpg?v=1789114196",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-loop-detectors",
+        "price": "From £153.00"
+      },
+      {
+        "title": "CAME STYLO underground operator",
+        "alt": "CAME STYLO underground operator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/came-stylo.jpg?v=1788905678",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-stylo",
+        "price": "From £45.00"
+      },
+      {
+        "title": "CAME swing control boards ZA3P ZM3E ZL65",
+        "alt": "CAME swing control boards ZA3P ZM3E ZL65",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/zlx230.jpg?v=1789114187",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-control-boards",
+        "price": "From £85.00"
+      },
+      {
+        "title": "CAME swing gate pair kits",
+        "alt": "CAME swing gate pair kits",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/amico_72b75a0c-140a-4bdb-9e9e-c0a70661c796.jpg?v=1789114149",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-swing-kits",
+        "price": "From £430.00"
+      },
+      {
+        "title": "CAME TOP radio remotes",
+        "alt": "CAME TOP radio remotes",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/came-top.jpg?v=1788905695",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-top-remotes",
+        "price": "From £17.00"
+      },
+      {
+        "title": "CAME TTS radio remotes",
+        "alt": "CAME TTS radio remotes",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/tts.jpg?v=1789114172",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-tts-remotes",
+        "price": "£28.00"
+      },
+      {
+        "title": "CAME VER garage door operator",
+        "alt": "CAME VER garage door operator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/ver.jpg?v=1789114166",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-ver",
+        "price": "From £204.00"
+      },
+      {
+        "title": "CAME ZLX230 swing control panel",
+        "alt": "CAME ZLX230 swing control panel",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/came-zlx230.jpg?v=1788905700",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/came-zlx230",
+        "price": "From £141.75"
+      },
+      {
+        "title": "Videx 8000 button module",
+        "alt": "Videx 8000 button module",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/videx-8845.jpg?v=1788980537",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/videx-8000-buttons",
+        "price": "From £32.00"
+      },
+      {
+        "title": "Videx 8000 camera module 8830",
+        "alt": "Videx 8000 camera module 8830",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/videx-camera-8830.jpg?v=1788980525",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/videx-8000-camera",
+        "price": "£180.00"
+      },
+      {
+        "title": "Videx 8000 codelock module",
+        "alt": "Videx 8000 codelock module",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/videx-8800bl.jpg?v=1788980530",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/videx-8000-codelock",
+        "price": "From £95.00"
+      },
+      {
+        "title": "Videx 8000 series audio kit",
+        "alt": "Videx 8000 series audio kit",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/videx-8k-audio.jpg?v=1788980487",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/videx-8000-audio-kit",
+        "price": "From £110.00"
+      },
+      {
+        "title": "Videx 8000 series videokit",
+        "alt": "Videx 8000 series videokit",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/videx-cvk8k.jpg?v=1788980494",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/videx-8000-videokit",
+        "price": "From £554.00"
+      },
+      {
+        "title": "Videx 8000 speaker module",
+        "alt": "Videx 8000 speaker module",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/videx-speaker-8837.jpg?v=1788980517",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/videx-8000-speaker",
+        "price": "From £65.00"
+      },
+      {
+        "title": "Videx GSM4K 4G SIM intercom",
+        "alt": "Videx GSM4K 4G SIM intercom",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/videx-gsm4k.jpg?v=1788980501",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/videx-gsm4k-sim",
+        "price": "From £580.00"
+      },
+      {
+        "title": "Videx GSMVRK vandal-resistant 4G SIM intercom",
+        "alt": "Videx GSMVRK vandal-resistant 4G SIM intercom",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/videx-gsmvrk.jpg?v=1788980511",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/videx-gsmvrk-sim",
+        "price": "From £695.00"
+      },
+      {
+        "title": "Videx IPure IP videokit",
+        "alt": "Videx IPure IP videokit",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/videx-ipvk-1s.jpg?v=1788983726",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/videx-ipure-ipvk",
+        "price": "From £1,029.88"
+      },
+      {
+        "title": "CAME GARD 5m barrier with Videx",
+        "alt": "CAME GARD 5m barrier with Videx",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/came-Gard_4.jpg?v=1788905749",
+        "href": "https://shop.icomplypropertyservices.co.uk",
+        "price": "POA"
+      }
+    ],
+    "gas": [
+      {
+        "title": "F-Gas Leak Check & TM44 Air Conditioning Inspection UK",
+        "alt": "F-Gas Leak Check & TM44 Air Conditioning Inspection UK",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/aircon-systems_5aa06435-0a92-4ebf-a70e-5e326bef4f47.jpg?v=1789578309",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/svc-ac-fgas-tm44",
+        "price": "£320"
+      },
+      {
+        "title": "Commercial Air Conditioning Maintenance Contract | Quarterly UK",
+        "alt": "Commercial Air Conditioning Maintenance Contract | Quarterly UK",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/aircon-systems_77d24958-5149-42c6-bbbc-d6c51784c3ea.jpg?v=1789578298",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/svc-ac-commercial-quarterly",
+        "price": "POA"
+      },
+      {
+        "title": "Domestic Air Conditioning Service | Annual F-Gas Health Check UK",
+        "alt": "Domestic Air Conditioning Service | Annual F-Gas Health Check UK",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/aircon-systems_9b93564b-415b-43e9-9b6d-125000f2fec0.jpg?v=1789578296",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/svc-ac-domestic-annual",
+        "price": "POA"
+      },
+      {
+        "title": "Fire Alarm + Emergency Lighting Combined Annual Contract | Quarterly",
+        "alt": "Fire Alarm + Emergency Lighting Combined Annual Contract | Quarterly",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/fire-alarm_2d671eb8-4fdc-491b-99f5-6e9d85b28b6f.jpg?v=1789597458",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/svc-fire-eml-contract-combo",
+        "price": "£720"
+      },
+      {
+        "title": "Industrial Air Handling System | Large AHU Install UK",
+        "alt": "Industrial Air Handling System | Large AHU Install UK",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/air-handling_c14d9aeb-19ad-4842-9d38-25677bee4cb0.jpg?v=1789578281",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/pkg-ahu-industrial-install",
+        "price": "POA"
+      },
+      {
+        "title": "Domestic Split Air Conditioning Install | Wall Mounted Supply & Fit UK",
+        "alt": "Domestic Split Air Conditioning Install | Wall Mounted Supply & Fit UK",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/aircon-systems.jpg?v=1789578264",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/pkg-ac-domestic-split-install",
+        "price": "POA"
+      },
+      {
+        "title": "Fulleon FL/SV/RL/R/D Flashni Combined Sounder Beacon Red Deep Base | Model FL/SV/RL/R/D",
+        "alt": "Fulleon FL/SV/RL/R/D Flashni Combined Sounder Beacon Red Deep Base | Model FL/SV/RL/R/D",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/flashni_sounder_beacon.jpg?v=1789513722",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/fulleon-fl-sv-rl-r-d",
+        "price": "£42.99"
+      },
+      {
+        "title": "Worcester Bosch Condensfit II Vertical Flue 60/100",
+        "alt": "Worcester Bosch Condensfit II Vertical Flue 60/100",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/73895_P.jpg?v=1789506660",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/worcester-condensfit-ii-vertical-60-100",
+        "price": "£72"
+      },
+      {
+        "title": "Worcester Bosch Condensfit II Horizontal Flue 60/100",
+        "alt": "Worcester Bosch Condensfit II Horizontal Flue 60/100",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/7716191171.jpg?v=1789506655",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/worcester-condensfit-ii-horizontal-60-100",
+        "price": "£48"
+      },
+      {
+        "title": "Glow-worm Ultimate3 System",
+        "alt": "Glow-worm Ultimate3 System",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/glow-system.jpg?v=1789507495",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/glow-worm-ultimate3-system",
+        "price": "£820"
+      },
+      {
+        "title": "Ideal Halo Combi Wi-Fi",
+        "alt": "Ideal Halo Combi Wi-Fi",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/HALO-Combi-Wi-Fi-PRT-Angled-View.png?v=1789506098",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ideal-halo-combi-wifi",
+        "price": "£165"
+      },
+      {
+        "title": "Vaillant sensoCOMFORT",
+        "alt": "Vaillant sensoCOMFORT",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/control23-912563-01.png_image_1280w_960h.png?v=1789506092",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/vaillant-sensocomfort",
+        "price": "£210"
+      },
+      {
+        "title": "Worcester Bosch EasyControl",
+        "alt": "Worcester Bosch EasyControl",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/easycontrols-white.png?v=1789506086",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/worcester-bosch-easycontrol",
+        "price": "£185"
+      },
+      {
+        "title": "Baxi Easy-Flue Internal Fit",
+        "alt": "Baxi Easy-Flue Internal Fit",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/baxi-internal-fit-flue.png?v=1789506080",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/baxi-easy-flue-internal-fit",
+        "price": "£145"
+      },
+      {
+        "title": "Glow-worm Ultimate3 Combi",
+        "alt": "Glow-worm Ultimate3 Combi",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/glow-combi.jpg?v=1789507493",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/glow-worm-ultimate3-combi",
+        "price": "£890"
+      },
+      {
+        "title": "Baxi 600 System 2",
+        "alt": "Baxi 600 System 2",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/baxi-600-system-2-1-thumb.png?v=1789506069",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/baxi-600-system-2",
+        "price": "£880"
+      },
+      {
+        "title": "Baxi 800 Combi 2",
+        "alt": "Baxi 800 Combi 2",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/baxi-800-combi-2-1-thumb.png?v=1789506063",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/baxi-800-combi-2",
+        "price": "£1,120"
+      },
+      {
+        "title": "Baxi 600 Combi 2",
+        "alt": "Baxi 600 Combi 2",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/baxi-600-combi-2-1-thumb.png?v=1789506057",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/baxi-600-combi-2",
+        "price": "£920"
+      },
+      {
+        "title": "Ideal Vogue MAX System",
+        "alt": "Ideal Vogue MAX System",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/Vogue_MAX_System_FO.png?v=1789506050",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ideal-vogue-max-system",
+        "price": "£1,280"
+      },
+      {
+        "title": "Ideal Vogue MAX Combi",
+        "alt": "Ideal Vogue MAX Combi",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/Vogue_MAX_Combi_FO.png?v=1789506042",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ideal-vogue-max-combi",
+        "price": "£1,450"
+      },
+      {
+        "title": "Ideal Logic MAX System",
+        "alt": "Ideal Logic MAX System",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/Logic2_MAX_System_FO_400x500_990310af-92e7-4900-8d95-b95c086a5905.png?v=1789506036",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ideal-logic-max-system",
+        "price": "£980"
+      },
+      {
+        "title": "Ideal Logic MAX Combi",
+        "alt": "Ideal Logic MAX Combi",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/Logic_MAX_Combi2_FO.png?v=1789506030",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ideal-logic-max-combi",
+        "price": "£1,100"
+      },
+      {
+        "title": "Vaillant ecoTEC plus System",
+        "alt": "Vaillant ecoTEC plus System",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/whbc21-311292-01_image_1280w_548h.jpg?v=1789506022",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/vaillant-ecotec-plus-system",
+        "price": "£1,180"
+      },
+      {
+        "title": "Vaillant ecoTEC plus Combi",
+        "alt": "Vaillant ecoTEC plus Combi",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/whbc21-311261-01_image_1280w_548h.jpg?v=1789506016",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/vaillant-ecotec-plus-combi",
+        "price": "£1,320"
+      },
+      {
+        "title": "Worcester Bosch Greenstar CDi Compact Combi",
+        "alt": "Worcester Bosch Greenstar CDi Compact Combi",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/Greenstar_CDi_compact_inside.png?v=1789506011",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/worcester-greenstar-cdi-compact-combi",
+        "price": "£980"
+      },
+      {
+        "title": "Worcester Bosch Greenstar 8000+ Combi",
+        "alt": "Worcester Bosch Greenstar 8000+ Combi",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/8000_Inside_Story_584x550_copy.webp?v=1789506004",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/worcester-greenstar-8000-plus-combi",
+        "price": "£1,650"
+      },
+      {
+        "title": "Worcester Bosch Greenstar 4000 System",
+        "alt": "Worcester Bosch Greenstar 4000 System",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/Greenstar_4000_System_inside.png?v=1789505999",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/worcester-greenstar-4000-system",
+        "price": "£1,180"
+      },
+      {
+        "title": "Worcester Bosch Greenstar 4000 Combi",
+        "alt": "Worcester Bosch Greenstar 4000 Combi",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/4000_combi_584x550_copy.webp?v=1789505993",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/worcester-greenstar-4000-combi",
+        "price": "£1,250"
+      },
+      {
+        "title": "Worcester Bosch Greenstar 2000 Combi",
+        "alt": "Worcester Bosch Greenstar 2000 Combi",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/Greenstar_2000_inside.png?v=1789505989",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/worcester-greenstar-2000-combi",
+        "price": "£980"
+      },
+      {
+        "title": "Firehawk CO7B-10Y Carbon Monoxide Alarm",
+        "alt": "Firehawk CO7B-10Y Carbon Monoxide Alarm",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/co7b-10yapp-n1.jpg?v=1789502579",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/firehawk-co7b-10y-co-alarm",
+        "price": "£24.95"
+      },
+      {
+        "title": "Aico Ei261ENRC Mains Carbon Monoxide Alarm",
+        "alt": "Aico Ei261ENRC Mains Carbon Monoxide Alarm",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/Ei261ENRC-4-op.png?v=1789502579",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/aico-ei261enrc-co-alarm",
+        "price": "£48.50"
+      },
+      {
+        "title": "Aico Ei208WRF RadioLINK+ Battery Carbon Monoxide Alarm",
+        "alt": "Aico Ei208WRF RadioLINK+ Battery Carbon Monoxide Alarm",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/EI208WRF_MAIN-scaled.jpg?v=1789502579",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/aico-ei208wrf-co-alarm",
+        "price": "£54.95"
+      },
+      {
+        "title": "Aico Ei208 Battery Carbon Monoxide Alarm",
+        "alt": "Aico Ei208 Battery Carbon Monoxide Alarm",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/EI208_MAIN-scaled.jpg?v=1789502578",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/aico-ei208-co-alarm",
+        "price": "£29.95"
+      },
+      {
+        "title": "Kidde K7DCO Carbon Monoxide Alarm (digital display)",
+        "alt": "Kidde K7DCO Carbon Monoxide Alarm (digital display)",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/700x700.webp?v=1789502577",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/kidde-k7dco-co-alarm",
+        "price": "£34.50"
+      },
+      {
+        "title": "Kidde 2030-DCR Carbon Monoxide Alarm",
+        "alt": "Kidde 2030-DCR Carbon Monoxide Alarm",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/700x700_ea8ff367-344b-456b-9850-a0eb6c35fc1e.webp?v=1789502579",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/kidde-2030-dcr-co-alarm",
+        "price": "£19.95"
+      },
+      {
+        "title": "Honeywell Home R200C-1 Carbon Monoxide Alarm",
+        "alt": "Honeywell Home R200C-1 Carbon Monoxide Alarm",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/R200C-1_1.jpg?v=1789502577",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/honeywell-home-r200c-1-co-alarm",
+        "price": "£26.50"
+      },
+      {
+        "title": "FireAngel FA3820 Carbon Monoxide Alarm (10-year sealed)",
+        "alt": "FireAngel FA3820 Carbon Monoxide Alarm (10-year sealed)",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/Image-Feature-1-FA3820-EUX10-UK.jpg?v=1789502576",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/fireangel-fa3820-co-alarm",
+        "price": "£28.95"
+      },
+      {
+        "title": "FireAngel FA3313 Carbon Monoxide Alarm (replaceable AA)",
+        "alt": "FireAngel FA3313 Carbon Monoxide Alarm (replaceable AA)",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/Image-Hero-FA3313-EUX10.png?v=1789502575",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/fireangel-fa3313-co-alarm",
+        "price": "£22.50"
+      },
+      {
+        "title": "Espire ES1RF / ES1RF2 RF-Link Modules",
+        "alt": "Espire ES1RF / ES1RF2 RF-Link Modules",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/ES1RF.png?v=1789502574",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/espire-es1rf-rf-link-modules",
+        "price": "£14.50"
+      },
+      {
+        "title": "Espire ES1CHLV CO and Heat Multi-Sensor Alarm (mains)",
+        "alt": "Espire ES1CHLV CO and Heat Multi-Sensor Alarm (mains)",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/ES1CHLV.png?v=1789502574",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/espire-es1chlv-co-heat-alarm",
+        "price": "£32.95"
+      },
+      {
+        "title": "Espire ES1CLV Carbon Monoxide Alarm (mains + sealed backup)",
+        "alt": "Espire ES1CLV Carbon Monoxide Alarm (mains + sealed backup)",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/ES1CLV.png?v=1789502574",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/espire-es1clv-co-alarm",
+        "price": "£24.50"
+      },
+      {
+        "title": "Espire ES1CL Carbon Monoxide Alarm (battery, 10-year sealed)",
+        "alt": "Espire ES1CL Carbon Monoxide Alarm (battery, 10-year sealed)",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/ES1CL.png?v=1789502573",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/espire-es1cl-co-alarm",
+        "price": "£18.95"
+      }
+    ],
+    "aov": [
+      {
+        "title": "AOV control panel",
+        "alt": "AOV control panel",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/svm-panel.jpg?v=1788977786",
+        "href": "https://shop.icomplypropertyservices.co.uk",
+        "price": "POA"
+      },
+      {
+        "title": "AOV smoke detector",
+        "alt": "AOV smoke detector",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/A_SD_CON_DB.jpg?v=1788978073",
+        "href": "https://shop.icomplypropertyservices.co.uk",
+        "price": "POA"
+      },
+      {
+        "title": "AOV chain actuator",
+        "alt": "AOV chain actuator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/aov-act_a8eabc59-8beb-44e4-964d-8562aaa344d6.jpg?v=1789513551",
+        "href": "https://shop.icomplypropertyservices.co.uk",
+        "price": "POA"
+      },
+      {
+        "title": "Heavy-duty AOV chain actuator",
+        "alt": "Heavy-duty AOV chain actuator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/hcv-chain.jpg?v=1788977801",
+        "href": "https://shop.icomplypropertyservices.co.uk",
+        "price": "POA"
+      },
+      {
+        "title": "AOV roof hatch",
+        "alt": "AOV roof hatch",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/AOV_Roof_Hatch_inter.jpg?v=1788977928",
+        "href": "https://shop.icomplypropertyservices.co.uk",
+        "price": "POA"
+      },
+      {
+        "title": "KAC MCP1A-A-AOV orange smoke-vent call point",
+        "alt": "KAC MCP1A-A-AOV orange smoke-vent call point",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/kac-smoke-vent-orange-manual-call-point.jpg?v=1788979230",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/kac-mcp-aov",
+        "price": "£42.00"
+      },
+      {
+        "title": "Ventlux Actulux BVT AOV call point 511790",
+        "alt": "Ventlux Actulux BVT AOV call point 511790",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/511790.jpg?v=1788977966",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-bvt-511790",
+        "price": "£87.87"
+      },
+      {
+        "title": "Ventlux SA Drive roof-vent actuator",
+        "alt": "Ventlux SA Drive roof-vent actuator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/sa-drive.jpg?v=1788977823",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-sa-drive",
+        "price": "£301.87"
+      },
+      {
+        "title": "Ventlux SVL multi-zone AOV controller 22800220",
+        "alt": "Ventlux SVL multi-zone AOV controller 22800220",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/22800220.jpg?v=1788977789",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-svl-controller",
+        "price": "£1,390.62"
+      },
+      {
+        "title": "Ventlux VSK321 AOV call point",
+        "alt": "Ventlux VSK321 AOV call point",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/VSK321B.jpg?v=1788977933",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-vsk321",
+        "price": "From £61.15"
+      },
+      {
+        "title": "Ventlux VSK323 3–6 wire AOV call point",
+        "alt": "Ventlux VSK323 3–6 wire AOV call point",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/VSK323B.jpg?v=1788977945",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-vsk323",
+        "price": "From £76.95"
+      }
+    ],
+    "nurse-call": [
+      {
+        "title": "Courtney Thorne Altra nurse-call room unit",
+        "alt": "Nurse call room unit",
+        "image": "https://cdn11.bigcommerce.com/s-sj1h3u/products/275/images/2012/CT_altra_room_unit__21104.1789637267.386.513.jpg",
+        "href": "https://shop.icomplypropertyservices.co.uk",
+        "price": "POA"
+      }
+    ],
+    "featured": [
+      {
+        "title": "Advanced EvacGo BS 8629 evacuation panel",
+        "alt": "Advanced EvacGo BS 8629 evacuation panel",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/evacgo-1-4-loop-eacie-panel.jpg?v=1788982332",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/advanced-evacgo",
+        "price": "From £3,354.90"
+      },
+      {
+        "title": "Apollo MiniDisc remote indicator",
+        "alt": "Apollo MiniDisc remote indicator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-minidisc-remote-indicator.jpg?v=1788981983",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-minidisc",
+        "price": "£4.80"
+      },
+      {
+        "title": "Bell System 203 lock release",
+        "alt": "Bell System 203 lock release",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/bell-de203.jpg?v=1788980959",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/bell-203-lock",
+        "price": "£22.00"
+      },
+      {
+        "title": "F-Gas Leak Check & TM44 Air Conditioning Inspection UK",
+        "alt": "F-Gas Leak Check & TM44 Air Conditioning Inspection UK",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/aircon-systems_5aa06435-0a92-4ebf-a70e-5e326bef4f47.jpg?v=1789578309",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/svc-ac-fgas-tm44",
+        "price": "£320"
+      },
+      {
+        "title": "AOV control panel",
+        "alt": "AOV control panel",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/svm-panel.jpg?v=1788977786",
+        "href": "https://shop.icomplypropertyservices.co.uk",
+        "price": "POA"
+      },
+      {
+        "title": "Advanced MxPro 5 addressable panel",
+        "alt": "Advanced MxPro 5 addressable panel",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/advanced-mxpro.jpg?v=1788896194",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/advanced-mxpro5",
+        "price": "From £823.19"
+      },
+      {
+        "title": "Apollo REACH wireless remote indicator",
+        "alt": "Apollo REACH wireless remote indicator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-reach-remote-indicator.jpg?v=1788981856",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-reach-indicator",
+        "price": "£127.51"
+      },
+      {
+        "title": "Bell System 61 speech unit",
+        "alt": "Bell System 61 speech unit",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/bell-de61.jpg?v=1788980954",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/bell-61-speech",
+        "price": "£36.65"
+      },
+      {
+        "title": "Commercial Air Conditioning Maintenance Contract | Quarterly UK",
+        "alt": "Commercial Air Conditioning Maintenance Contract | Quarterly UK",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/aircon-systems_77d24958-5149-42c6-bbbc-d6c51784c3ea.jpg?v=1789578298",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/svc-ac-commercial-quarterly",
+        "price": "POA"
+      },
+      {
+        "title": "AOV smoke detector",
+        "alt": "AOV smoke detector",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/A_SD_CON_DB.jpg?v=1788978073",
+        "href": "https://shop.icomplypropertyservices.co.uk",
+        "price": "POA"
+      },
+      {
+        "title": "Advanced MxPro 5 loop driver card",
+        "alt": "Advanced MxPro 5 loop driver card",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/advanced-mxpro-5-loop-driver-card.jpg?v=1788980260",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/advanced-mxpro5-loop-card",
+        "price": "£150.31"
+      },
+      {
+        "title": "C-TEC BF318 remote LED indicator",
+        "alt": "C-TEC BF318 remote LED indicator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/c-tec-bf318-remote-led-indicator.jpg?v=1788982358",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-bf318",
+        "price": "£3.17"
+      },
+      {
+        "title": "Bell System 801 replacement handset",
+        "alt": "Bell System 801 replacement handset",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/bell-de801.jpg?v=1788980944",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/bell-801-handset",
+        "price": "From £16.34"
+      },
+      {
+        "title": "Domestic Air Conditioning Service | Annual F-Gas Health Check UK",
+        "alt": "Domestic Air Conditioning Service | Annual F-Gas Health Check UK",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/aircon-systems_9b93564b-415b-43e9-9b6d-125000f2fec0.jpg?v=1789578296",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/svc-ac-domestic-annual",
+        "price": "POA"
+      },
+      {
+        "title": "AOV chain actuator",
+        "alt": "AOV chain actuator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/aov-act_a8eabc59-8beb-44e4-964d-8562aaa344d6.jpg?v=1789513551",
+        "href": "https://shop.icomplypropertyservices.co.uk",
+        "price": "POA"
+      },
+      {
+        "title": "Advanced MxPro 5 network card",
+        "alt": "Advanced MxPro 5 network card",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/network-card-for-advanced-mxpro-5.jpg?v=1788980265",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/advanced-mxpro5-network-card",
+        "price": "From £183.58"
+      },
+      {
+        "title": "C-TEC SigTEL 224-line desk controller",
+        "alt": "C-TEC SigTEL 224-line desk controller",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/sigtel-224-line-desk-controller.jpg?v=1788982279",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-sigtel-desk",
+        "price": "£768.37"
+      },
+      {
+        "title": "Bell System 900 series audio kit",
+        "alt": "Bell System 900 series audio kit",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/bell-de901.jpg?v=1788980919",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/bell-900-audio-kit",
+        "price": "From £75.40"
+      },
+      {
+        "title": "Fire Alarm + Emergency Lighting Combined Annual Contract | Quarterly",
+        "alt": "Fire Alarm + Emergency Lighting Combined Annual Contract | Quarterly",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/fire-alarm_2d671eb8-4fdc-491b-99f5-6e9d85b28b6f.jpg?v=1789597458",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/svc-fire-eml-contract-combo",
+        "price": "£720"
+      },
+      {
+        "title": "Heavy-duty AOV chain actuator",
+        "alt": "Heavy-duty AOV chain actuator",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/hcv-chain.jpg?v=1788977801",
+        "href": "https://shop.icomplypropertyservices.co.uk",
+        "price": "POA"
+      },
+      {
+        "title": "Advanced MxPro 5 zone LED card",
+        "alt": "Advanced MxPro 5 zone LED card",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/advanced-mxpro-5-zone-led-indicator-card.jpg?v=1788980272",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/advanced-mxpro5-zone-led",
+        "price": "From £152.79"
+      },
+      {
+        "title": "C-TEC SigTEL 8-line controller no handset",
+        "alt": "C-TEC SigTEL 8-line controller no handset",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/sigtel-8-line-master-controller-no-handset.jpg?v=1788982274",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-sigtel-ecu8nt",
+        "price": "£914.84"
+      },
+      {
+        "title": "Bell System Bellini audio kit",
+        "alt": "Bell System Bellini audio kit",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/bell-debl1.jpg?v=1788980931",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/bell-bellini-audio-kit",
+        "price": "From £86.90"
+      },
+      {
+        "title": "Industrial Air Handling System | Large AHU Install UK",
+        "alt": "Industrial Air Handling System | Large AHU Install UK",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/air-handling_c14d9aeb-19ad-4842-9d38-25677bee4cb0.jpg?v=1789578281",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/pkg-ahu-industrial-install",
+        "price": "POA"
+      },
+      {
+        "title": "AOV roof hatch",
+        "alt": "AOV roof hatch",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/AOV_Roof_Hatch_inter.jpg?v=1788977928",
+        "href": "https://shop.icomplypropertyservices.co.uk",
+        "price": "POA"
+      },
+      {
+        "title": "Apollo AlarmSense alarm relay 55000-835APO",
+        "alt": "Apollo AlarmSense alarm relay 55000-835APO",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-as-relay.jpg?v=1788905337",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-alarmsense-relay",
+        "price": "£18.50"
+      },
+      {
+        "title": "C-TEC SigTEL disabled refuge master controller",
+        "alt": "C-TEC SigTEL disabled refuge master controller",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/sigtel-4-16-line-master-controller.jpg?v=1788982267",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-sigtel-controller",
+        "price": "From £854.52"
+      },
+      {
+        "title": "Bell System Bellissimo video kit",
+        "alt": "Bell System Bellissimo video kit",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/bell-debsxa_f8235a18-8b39-4499-84a3-8c78f4c22c16.jpg?v=1788980976",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/bell-bellissimo-kit",
+        "price": "From £450.61"
+      },
+      {
+        "title": "Domestic Split Air Conditioning Install | Wall Mounted Supply & Fit UK",
+        "alt": "Domestic Split Air Conditioning Install | Wall Mounted Supply & Fit UK",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/aircon-systems.jpg?v=1789578264",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/pkg-ac-domestic-split-install",
+        "price": "POA"
+      },
+      {
+        "title": "KAC MCP1A-A-AOV orange smoke-vent call point",
+        "alt": "KAC MCP1A-A-AOV orange smoke-vent call point",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/kac-smoke-vent-orange-manual-call-point.jpg?v=1788979230",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/kac-mcp-aov",
+        "price": "£42.00"
+      },
+      {
+        "title": "Apollo AlarmSense base 45681-244APO",
+        "alt": "Apollo AlarmSense base 45681-244APO",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-as-base.jpg?v=1788895960",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-alarmsense-base",
+        "price": "£4.50"
+      },
+      {
+        "title": "C-TEC SigTEL Type A fire telephone outstation",
+        "alt": "C-TEC SigTEL Type A fire telephone outstation",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/sigtel-type-a-fire-telephone-outstation.jpg?v=1788982283",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ctec-sigtel-type-a",
+        "price": "From £162.85"
+      },
+      {
+        "title": "Bell System Bellissimo video telephone",
+        "alt": "Bell System Bellissimo video telephone",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/bell-debsxa.jpg?v=1788980969",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/bell-bellissimo-phone",
+        "price": "£165.88"
+      },
+      {
+        "title": "Fulleon FL/SV/RL/R/D Flashni Combined Sounder Beacon Red Deep Base | Model FL/SV/RL/R/D",
+        "alt": "Fulleon FL/SV/RL/R/D Flashni Combined Sounder Beacon Red Deep Base | Model FL/SV/RL/R/D",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/flashni_sounder_beacon.jpg?v=1789513722",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/fulleon-fl-sv-rl-r-d",
+        "price": "£42.99"
+      },
+      {
+        "title": "Ventlux Actulux BVT AOV call point 511790",
+        "alt": "Ventlux Actulux BVT AOV call point 511790",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/511790.jpg?v=1788977966",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/ventlux-bvt-511790",
+        "price": "£87.87"
+      },
+      {
+        "title": "Apollo AlarmSense base cover 45681-294",
+        "alt": "Apollo AlarmSense base cover 45681-294",
+        "image": "https://cdn.shopify.com/s/files/1/1073/5550/4972/files/apollo-as-cap.jpg?v=1788905344",
+        "href": "https://shop.icomplypropertyservices.co.uk/products/apollo-alarmsense-base-cover",
+        "price": "£2.40"
+      }
+    ]
+  },
+  "local_unique": [
+    {
+      "src": "/assets/images/services/electrical.jpg",
+      "alt": "Electrical — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/gas-systems.jpg",
+      "alt": "Gas Systems — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/nurse-call.jpg",
+      "alt": "Nurse Call Systems — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/fire-alarms.jpg",
+      "alt": "Fire Alarms — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/emergency-lighting.jpg",
+      "alt": "Emergency Lighting — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/aov-air-handling.jpg",
+      "alt": "AOV & Smoke Control — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/fire-risk-assessments.jpg",
+      "alt": "Fire Risk Assessments — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/fire-extinguishers.jpg",
+      "alt": "Fire Extinguishers — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/fire-doors.jpg",
+      "alt": "Fire Doors — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/fire-stopping.jpg",
+      "alt": "Fire Stopping — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/fire-suppression.jpg",
+      "alt": "Fire Suppression — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/sprinkler-systems.jpg",
+      "alt": "Sprinkler Systems — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/dry-risers.jpg",
+      "alt": "Dry & Wet Risers — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/fire-signage.jpg",
+      "alt": "Fire Safety Signage — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/evacuation-alerts.jpg",
+      "alt": "Evacuation Alert Systems — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/kitchen-fire-suppression.jpg",
+      "alt": "Kitchen Fire Suppression — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/intruder-alarm.jpg",
+      "alt": "Intruder Alarms — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/cctv.jpg",
+      "alt": "CCTV Systems — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/access-control.jpg",
+      "alt": "Access Control — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/door-entry.jpg",
+      "alt": "Door Entry Systems — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/intercoms.jpg",
+      "alt": "Intercoms — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/landlord-compliance.jpg",
+      "alt": "Landlord Compliance — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/facilities-management.jpg",
+      "alt": "Facilities Management Support — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/building-maintenance.jpg",
+      "alt": "Building Maintenance — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/cdm-support.jpg",
+      "alt": "CDM Support — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/compliance-consultancy.jpg",
+      "alt": "Compliance Consultancy — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/bathrooms.jpg",
+      "alt": "Bathroom Fitting — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/tiling.jpg",
+      "alt": "Tiling — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/painting-decorating.jpg",
+      "alt": "Painting & Decorating — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/joinery.jpg",
+      "alt": "Joinery — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/carpentry.jpg",
+      "alt": "Carpentry — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/flooring.jpg",
+      "alt": "Flooring — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/plumbing.jpg",
+      "alt": "Plumbing — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/roofing.jpg",
+      "alt": "Roofing — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/insulation.jpg",
+      "alt": "Insulation — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/windows-doors.jpg",
+      "alt": "Windows & Doors — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/landscaping.jpg",
+      "alt": "Landscaping — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/electrics-first-fix.jpg",
+      "alt": "First Fix Electrical — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/legionella-risk-assessment.jpg",
+      "alt": "Legionella Risk Assessment — Icomply Property Services"
+    },
+    {
+      "src": "/assets/images/services/asbestos-survey.jpg",
+      "alt": "Asbestos Survey — Icomply Property Services"
+    }
+  ],
+  "heroes": [
+    {
+      "src": "/assets/images/heroes/manchester.jpg",
+      "alt": "Manchester and Greater Manchester property work"
+    },
+    {
+      "src": "/assets/images/heroes/home-hero.jpg",
+      "alt": "North West property compliance work"
+    },
+    {
+      "src": "/assets/images/heroes/uk-engineer.jpg",
+      "alt": "Engineer on a UK property job"
+    },
+    {
+      "src": "/assets/images/heroes/contact-hero.jpg",
+      "alt": "Icomply property services team"
+    },
+    {
+      "src": "/assets/images/heroes/about-team.jpg",
+      "alt": "Icomply engineers"
+    }
+  ]
+}

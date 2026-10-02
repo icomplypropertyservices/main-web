@@ -162,9 +162,10 @@ require SITE_ROOT . '/includes/header.php';
                 ?>
                 <a href="<?= url('/pages/manufacturers/' . rawurlencode($brand['slug']) . '.php') ?>"
                    class="group relative rounded-3xl overflow-hidden border border-white/10 min-h-[140px] bg-white/5 hover:border-[#ff6b00] transition">
+                    <?php if ($img !== ''): ?>
                     <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($brand['name'], ENT_QUOTES, 'UTF-8') ?> EV charging — iComply Property Services"
-                         class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-55 transition" loading="lazy"
-                         onerror="this.style.display='none'">
+                         class="absolute inset-0 w-full h-full object-contain opacity-80 group-hover:opacity-100 transition" loading="lazy">
+                    <?php endif; ?>
                     <div class="relative p-5 h-full flex flex-col justify-end">
                         <div class="text-[10px] uppercase tracking-wider text-[#ff6b00] font-semibold mb-1"><?= htmlspecialchars($brand['badge'], ENT_QUOTES, 'UTF-8') ?></div>
                         <div class="font-semibold text-white text-lg leading-tight"><?= htmlspecialchars($brand['name'], ENT_QUOTES, 'UTF-8') ?></div>
@@ -253,13 +254,14 @@ require SITE_ROOT . '/includes/header.php';
             ?>
             <a href="<?= url('/pages/manufacturers/' . rawurlencode($brand['slug']) . '.php') ?>"
                class="service-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
-                <div class="h-40 bg-zinc-100 overflow-hidden">
+                <?php if ($img !== ''): ?>
+                <div class="h-40 bg-white overflow-hidden">
                     <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>"
                          alt="<?= htmlspecialchars($brand['name'], ENT_QUOTES, 'UTF-8') ?> EV charger installation by iComply"
-                         class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                         loading="lazy"
-                         onerror="this.src='<?= htmlspecialchars(url('/assets/images/services/electrical.jpg'), ENT_QUOTES, 'UTF-8') ?>'">
+                         class="w-full h-full object-contain group-hover:scale-105 transition duration-300"
+                         loading="lazy">
                 </div>
+                <?php endif; ?>
                 <div class="p-6 flex-1 flex flex-col">
                     <div class="text-[10px] uppercase tracking-wider text-[#ff6b00] font-semibold"><?= htmlspecialchars($brand['badge'], ENT_QUOTES, 'UTF-8') ?></div>
                     <h3 class="font-semibold text-xl text-black tracking-tight mt-1"><?= htmlspecialchars($brand['name'], ENT_QUOTES, 'UTF-8') ?></h3>

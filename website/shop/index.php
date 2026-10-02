@@ -164,10 +164,18 @@ require SITE_ROOT . '/includes/header.php';
         ?>
             <a href="<?= url('/pages/manufacturers/' . $mfr['slug'] . '.php') ?>"
                class="group p-4 bg-white border rounded-2xl hover:border-[#ff6b00] transition text-center">
-                <img src="<?= htmlspecialchars(manufacturerImageUrl($mfr['slug'], 'fire-alarms'), ENT_QUOTES, 'UTF-8') ?>"
+                <?php
+                $brandImg = manufacturerImageUrl($mfr['slug'], 'fire-alarms');
+                if ($brandImg === '' && is_file(SITE_ROOT . '/assets/images/manufacturers/' . $mfr['img'])) {
+                    $brandImg = url('/assets/images/manufacturers/' . $mfr['img']);
+                }
+                if ($brandImg !== ''):
+                ?>
+                <img src="<?= htmlspecialchars($brandImg, ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($mfr['name'], ENT_QUOTES, 'UTF-8') ?> products — iComply Property Services"
                      class="h-12 w-auto mx-auto object-contain mb-3 group-hover:scale-105 transition"
                      loading="lazy" width="96" height="48">
+                <?php endif; ?>
                 <div class="text-sm font-semibold text-black"><?= htmlspecialchars($mfr['name'], ENT_QUOTES, 'UTF-8') ?></div>
             </a>
         <?php endforeach; ?>

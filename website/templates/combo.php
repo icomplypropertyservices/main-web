@@ -12,7 +12,16 @@ $metaDesc = $poaCombo
     ? ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Price on application after scope. Local North West team from Stockport.')
     : ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing & certification. Local engineers. Written quote after scope.');
 $metaKeywords = $SEO_KEYWORDS;
-$ogImage = serviceImageUrl($SERVICE_SLUG);
+require_once SITE_ROOT . '/includes/hub-visuals.php';
+$comboVisuals = hubPageVisuals(
+    hubFamilyForService($SERVICE_SLUG),
+    $AREA,
+    4,
+    4,
+    $SERVICE_NAME . ' in ' . $AREA
+);
+$comboHero = $comboVisuals['primary'];
+$ogImage = $comboHero['src'] ?? serviceImageUrl($SERVICE_SLUG);
 
 $allServices = getServices();
 $allAreas = getAreas();
@@ -176,12 +185,15 @@ $schema = [
                 <p class="mt-6 text-sm text-white/60"><?= htmlspecialchars($standards, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
-                <img src="<?= htmlspecialchars(serviceImageUrl($SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>"
+                <?php if ($comboHero):
+                    $comboHeroFit = (($comboHero['fit'] ?? 'cover') === 'contain') ? 'object-contain bg-white' : 'object-cover';
+                ?>
+                <img src="<?= htmlspecialchars($comboHero['src'], ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation and servicing in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> by iComply Property Services"
                      width="1200" height="800"
-                     class="absolute inset-0 w-full h-full object-cover opacity-70"
-                     loading="eager"
-                     onerror="this.style.display='none'">
+                     class="absolute inset-0 w-full h-full <?= $comboHeroFit ?> opacity-70"
+                     loading="eager">
+                <?php endif; ?>
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-[#0B1F3A]/20 to-transparent">
                     <div class="text-sm text-white/70">Serving <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> &amp; the North West</div>
                     <div class="text-2xl font-semibold mt-1">Local engineers · Fixed-price quotes</div>
@@ -255,25 +267,18 @@ $schema = [
             </p>
             <?php endif; ?>
         </div>
-        <div class="lg:col-span-2 space-y-4">
-            <div class="rounded-3xl overflow-hidden border bg-zinc-100">
-                <img src="<?= url('/assets/images/keywords/' . $KEYWORD_IMAGE_1 . '.jpg') ?>"
-                     alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> panel and equipment used by iComply in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
-                     width="800" height="600"
-                     class="w-full h-44 object-cover"
-                     loading="lazy"
-                     onerror="this.src='<?= htmlspecialchars(serviceImageUrl($SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>'">
-                <p class="text-xs text-zinc-500 px-3 py-2"><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> control equipment &amp; panels</p>
-            </div>
-            <div class="rounded-3xl overflow-hidden border bg-zinc-100">
-                <img src="<?= url('/assets/images/keywords/' . $KEYWORD_IMAGE_2 . '.jpg') ?>"
-                     alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation work and testing in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
-                     width="800" height="600"
-                     class="w-full h-44 object-cover"
-                     loading="lazy"
-                     onerror="this.src='<?= htmlspecialchars(serviceImageUrl($SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>'">
-                <p class="text-xs text-zinc-500 px-3 py-2">Installation, testing &amp; certification in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></p>
-            </div>
+        <div class="lg:col-span-2 grid grid-cols-2 gap-3">
+            <?php foreach ($comboVisuals['gallery'] as $shot):
+                $fit = (($shot['fit'] ?? 'cover') === 'contain') ? 'object-contain bg-white' : 'object-cover';
+            ?>
+            <figure class="rounded-3xl overflow-hidden border bg-zinc-100">
+                <img src="<?= htmlspecialchars($shot['src'], ENT_QUOTES, 'UTF-8') ?>"
+                     alt="<?= htmlspecialchars($serviceName . ' in ' . $areaName . ' — ' . $shot['alt'], ENT_QUOTES, 'UTF-8') ?>"
+                     width="640" height="420"
+                     class="w-full h-36 md:h-40 <?= $fit ?>"
+                     loading="lazy">
+            </figure>
+            <?php endforeach; ?>
         </div>
     </div>
 
@@ -315,15 +320,14 @@ $schema = [
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <?= $MANUFACTURER_IMAGES ?>
         </div>
-        <div class="mt-10 rounded-3xl overflow-hidden border bg-white">
-            <img src="<?= url('/assets/images/keywords/' . $KEYWORD_IMAGE_3 . '.jpg') ?>"
-                 alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturer panels and equipment — iComply <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
-                 width="1200" height="700"
-                 class="w-full h-64 md:h-80 object-cover"
-                 loading="lazy"
-                 onerror="this.src='<?= htmlspecialchars(serviceImageUrl($SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>'">
-            <p class="text-xs text-zinc-500 px-4 py-3">Manufacturer panels &amp; systems commonly installed and serviced in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></p>
-        </div>
+        <?php
+        echo hubProductSectionHtml(
+            'Trade shop',
+            $serviceName . ' equipment for ' . $areaName,
+            'Catalogue photos from the trade shop. Supply price shown; installation in ' . $areaName . ' is quoted separately.',
+            $comboVisuals['cards']
+        );
+        ?>
     </div>
 </section>
 <?php endif; ?>

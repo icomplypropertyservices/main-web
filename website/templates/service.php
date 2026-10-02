@@ -71,9 +71,23 @@ $popularTowns = array_values(array_filter(
 ));
 $popularTowns = array_values(array_unique($popularTowns));
 
-$keywordImages = getKeywordImages($serviceSlug);
-$img2 = $keywordImages[0] ?? $serviceSlug;
-$img3 = $keywordImages[1] ?? $serviceSlug;
+require_once SITE_ROOT . '/includes/hub-visuals.php';
+$hubHero = hubServicePrimary($serviceSlug, $serviceName . ' by iComply Property Services');
+$hubVisuals = hubVisualSplit($serviceSlug, 4, 4, $serviceSlug);
+if ($hubHero) {
+    $heroKey = hubImageKey($hubHero['src']);
+    $hubVisuals['gallery'] = array_values(array_filter(
+        $hubVisuals['gallery'],
+        static fn(array $shot): bool => hubImageKey((string) ($shot['src'] ?? '')) !== $heroKey
+    ));
+    $hubVisuals['cards'] = array_values(array_filter(
+        $hubVisuals['cards'],
+        static fn(array $card): bool => hubImageKey((string) ($card['image'] ?? '')) !== $heroKey
+    ));
+}
+if ($hubHero) {
+    $ogImage = $hubHero['src'];
+}
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
@@ -129,11 +143,18 @@ require SITE_ROOT . '/includes/header.php';
                 <p class="mt-6 text-sm text-white/60"><?= htmlspecialchars($standards, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
-                <img src="<?= htmlspecialchars(serviceImageUrl($SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>"
-                     alt="<?= htmlspecialchars($serviceSlug === 'gas-systems' && function_exists('icomplyGasLegalSentence') ? icomplyGasLegalSentence() : ($serviceName . ' by iComply Property Services'), ENT_QUOTES, 'UTF-8') ?>"
-                     class="absolute inset-0 w-full h-full object-cover opacity-70"
-                     loading="eager"
-                     onerror="this.style.display='none'">
+                <?php if ($hubHero):
+                    $hubHeroFit = (($hubHero['fit'] ?? 'cover') === 'contain') ? 'object-contain bg-white' : 'object-cover';
+                    $hubHeroAlt = $serviceSlug === 'gas-systems' && function_exists('icomplyGasLegalSentence')
+                        ? icomplyGasLegalSentence()
+                        : (string) ($hubHero['alt'] ?? ($serviceName . ' by iComply Property Services'));
+                ?>
+                <img src="<?= htmlspecialchars($hubHero['src'], ENT_QUOTES, 'UTF-8') ?>"
+                     alt="<?= htmlspecialchars($hubHeroAlt, ENT_QUOTES, 'UTF-8') ?>"
+                     class="absolute inset-0 w-full h-full <?= $hubHeroFit ?> opacity-70"
+                     width="1200" height="800"
+                     loading="eager">
+                <?php endif; ?>
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-[#0B1F3A]/20 to-transparent">
                     <div class="text-sm text-white/70">Serving <?= count($allAreas) ?>+ towns</div>
                     <div class="text-2xl font-semibold mt-1"><?= $poaService ? 'Local team · Price on application' : 'Local engineers · Written quotes' ?></div>
@@ -195,21 +216,18 @@ require SITE_ROOT . '/includes/header.php';
             </p>
             <?php endif; ?>
         </div>
-        <div class="lg:col-span-2 space-y-4">
-            <div class="rounded-3xl overflow-hidden border bg-zinc-100">
-                <img src="<?= htmlspecialchars(keywordImageUrl($img2, $SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>"
-                     alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> equipment"
-                     class="w-full h-44 object-cover"
-                     loading="lazy"
-                     onerror="this.src='<?= htmlspecialchars(serviceImageUrl($SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>'">
-            </div>
-            <div class="rounded-3xl overflow-hidden border bg-zinc-100">
-                <img src="<?= htmlspecialchars(keywordImageUrl($img3, $SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>"
-                     alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation work"
-                     class="w-full h-44 object-cover"
-                     loading="lazy"
-                     onerror="this.src='<?= htmlspecialchars(serviceImageUrl($SERVICE_SLUG), ENT_QUOTES, 'UTF-8') ?>'">
-            </div>
+        <div class="lg:col-span-2 grid grid-cols-2 gap-3">
+            <?php foreach ($hubVisuals['gallery'] as $shot):
+                $fit = (($shot['fit'] ?? 'cover') === 'contain') ? 'object-contain bg-white' : 'object-cover';
+            ?>
+            <figure class="rounded-3xl overflow-hidden border bg-zinc-100">
+                <img src="<?= htmlspecialchars($shot['src'], ENT_QUOTES, 'UTF-8') ?>"
+                     alt="<?= htmlspecialchars($shot['alt'], ENT_QUOTES, 'UTF-8') ?>"
+                     class="w-full h-36 md:h-40 <?= $fit ?>"
+                     width="640" height="420"
+                     loading="lazy">
+            </figure>
+            <?php endforeach; ?>
         </div>
     </div>
 
@@ -370,6 +388,15 @@ require SITE_ROOT . '/includes/header.php';
         <a href="<?= url('/pages/areas/index.php') ?>" class="px-3 py-1.5 text-xs font-semibold text-[#ff6b00]">Areas hub →</a>
     </div>
 </section>
+
+<?php
+echo hubProductSectionHtml(
+    'Trade shop',
+    $serviceName . ' equipment',
+    'Catalogue photos from the trade shop. Supply price shown; installation is quoted separately.',
+    $hubVisuals['cards']
+);
+?>
 
 <!-- RELATED SERVICES -->
 <section class="bg-white border-t">
