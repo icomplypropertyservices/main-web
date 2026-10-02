@@ -1,59 +1,21 @@
 <?php
 /**
- * Trade products hub — links out to Shopify shop.* plus Electrical / Fire / Security / Gas.
- * Must not 301 to /pages/packages.
+ * Trade products hub — self-canonical /products. Body in products-hub-body.php.
  */
 require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/shopify.php';
-
+if (is_file(SITE_ROOT . '/includes/aov-kit-prices.php')) {
+    require_once SITE_ROOT . '/includes/aov-kit-prices.php';
+}
 $pageTitle = 'Trade Products | Electrical, Fire, Security & Gas';
-$metaDesc = 'iComply trade products and materials — Electrical, Fire, Security and Gas. Shop at shop.icomplypropertyservices.co.uk or enquire from Stockport SK2.';
-$metaKeywords = 'icomply shop, trade electrical, fire safety products, security products, gas enquire';
+$metaDesc = 'iComply trade products — Electrical, Fire, Security and Gas. AOV install POA.';
+$metaKeywords = 'icomply shop, trade electrical, fire, security, gas, AOV, barrier';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
-$canonicalUrl = url('/pages/products.php');
-$shop = icomplyTradeShopUrl();
-
+$canonicalUrl = url('/products.php');
+$shop = function_exists('shopifyStoreUrl') ? shopifyStoreUrl() : 'https://shop.icomplypropertyservices.co.uk';
+$aovService = url('/pages/services/aov-air-handling.php');
 if (session_status() !== PHP_SESSION_ACTIVE) { session_start(); }
 if (empty($_SESSION['csrf'])) { $_SESSION['csrf'] = bin2hex(random_bytes(16)); }
 require SITE_ROOT . '/includes/header.php';
-?>
-<section class="page-hero relative overflow-hidden bg-[#0B1F3A] text-white">
-    <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
-        <nav class="text-xs text-white/50 mb-6" aria-label="Breadcrumb">
-            <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a> / <span class="text-white/80">Products</span>
-        </nav>
-        <h1 class="text-4xl sm:text-5xl font-semibold tracking-tighter">Trade products<br><span class="text-[#FF6B00]">&amp; materials</span></h1>
-        <p class="mt-5 text-lg text-white/80 max-w-2xl">Electrical, Fire, Security and Gas — buy on the Shopify store or pair with an install from the Stockport team. This hub does not redirect to packages.</p>
-        <div class="mt-8 flex flex-wrap gap-3">
-            <a href="<?= htmlspecialchars($shop, ENT_QUOTES, 'UTF-8') ?>" class="px-8 py-4 rounded-2xl bg-[#FF6B00] font-semibold" target="_blank" rel="noopener">Open shop.icomplypropertyservices.co.uk</a>
-            <a href="<?= url('/shop/index.php') ?>" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold">On-site trade shop</a>
-            <a href="<?= url('/contact.php') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold">Enquire</a>
-        </div>
-    </div>
-</section>
-<section class="max-w-7xl mx-auto px-6 py-16">
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <a class="p-8 bg-white border rounded-3xl hover:border-[#FF6B00] transition" href="/shop/electrical/">
-            <div class="text-xs uppercase tracking-[3px] text-[#FF6B00] font-semibold">Electrical</div>
-            <h2 class="text-xl font-semibold mt-2 text-black">Electrical</h2>
-            <p class="mt-2 text-sm text-zinc-600">Live electrical SKUs on the trade hub. Checkout stays on shop.*</p>
-        </a>
-        <a class="p-8 bg-white border rounded-3xl hover:border-[#FF6B00] transition" href="/shop/fire/">
-            <div class="text-xs uppercase tracking-[3px] text-[#FF6B00] font-semibold">Fire</div>
-            <h2 class="text-xl font-semibold mt-2 text-black">Fire</h2>
-            <p class="mt-2 text-sm text-zinc-600">Panels, detectors and the live fire catalogue.</p>
-        </a>
-        <a class="p-8 bg-white border rounded-3xl hover:border-[#FF6B00] transition" href="/shop/security/">
-            <div class="text-xs uppercase tracking-[3px] text-[#FF6B00] font-semibold">Security</div>
-            <h2 class="text-xl font-semibold mt-2 text-black">Security</h2>
-            <p class="mt-2 text-sm text-zinc-600">Gates, intercoms and automation from the live dump.</p>
-        </a>
-        <a class="p-8 bg-white border rounded-3xl hover:border-[#FF6B00] transition" href="/shop/gas/">
-            <div class="text-xs uppercase tracking-[3px] text-[#FF6B00] font-semibold">Gas</div>
-            <h2 class="text-xl font-semibold mt-2 text-black">Gas</h2>
-            <p class="mt-2 text-sm text-zinc-600">Enquire / POA hub until a live gas SKU exists.</p>
-        </a>
-    </div>
-    <?php /* Marketing subdomain optional until DNS live: https://marketing.icomplypropertyservices.co.uk */ ?>
-</section>
-<?php require SITE_ROOT . '/includes/footer.php'; ?>
+require SITE_ROOT . '/includes/products-hub-body.php';
+require SITE_ROOT . '/includes/footer.php';

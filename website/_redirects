@@ -38,7 +38,21 @@
 /news    /pages/resources    301
 /news/    /pages/resources    301
 
+# Catalogue PDPs + product sitemaps (BEFORE splat — Netlify rewrite)
+/products/product/*    /products/product.php?handle=:splat   200
+/shop/products/*       /shop/products.php?handle=:splat      200
+/products/sitemap.xml  /products/sitemap.php                 200
+/shop/sitemap.xml      /shop/sitemap.php                     200
+
+# Package URLs → service/shop hubs
+/products/aov-air-handling-package       /pages/services/aov-air-handling.php  301
+/products/electrical-compliance-package  /shop/electrical/                     301
+/products/emergency-lighting-package     /shop/electrical/                     301
+/products/fire-alarm-service-package     /shop/fire/                           301
+
 # Shop / products are trade hubs (never 301 to packages)
+# Pretty /products is canonical; .php alias 301s away
+/products.php    /products    301
 /shop    /shop/index.html    200!
 /shop/    /shop/index.html    200!
 /shop/fire    /shop/fire/index.html    200!
@@ -49,8 +63,8 @@
 /shop/security/    /shop/security/index.html    200!
 /shop/gas    /shop/gas/index.html    200!
 /shop/gas/    /shop/gas/index.html    200!
-/products    /products.php    200!
-/products/    /products.php    200!
+/products    /pages/products.php    200!
+/products/    /pages/products.php    200!
 
 # PWA manifest aliases (Ellie live 404 on /manifest.webmanifest)
 /manifest.webmanifest    /manifest.webmanifest    200!

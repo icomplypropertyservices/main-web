@@ -165,6 +165,24 @@ function routerDispatchVirtual(string $path): bool {
             return true;
         }
     }
+
+    // Trade PDPs (Netlify also rewrites these in _redirects before splat)
+    if (preg_match('#^/products/product/([a-z0-9\-]+)$#', $path, $m)) {
+        $_GET['handle'] = $m[1];
+        return routerTryFile('/products/product');
+    }
+    if (preg_match('#^/shop/products/([a-z0-9\-]+)$#', $path, $m)) {
+        $_GET['handle'] = $m[1];
+        return routerTryFile('/shop/products');
+    }
+    // Product sitemaps
+    if ($path === '/products/sitemap') {
+        return routerTryFile('/products/sitemap');
+    }
+    if ($path === '/shop/sitemap') {
+        return routerTryFile('/shop/sitemap');
+    }
+
     return false;
 }
 
