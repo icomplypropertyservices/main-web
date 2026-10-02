@@ -11,6 +11,7 @@ $allServices = getServices();
 $allAreas = getAreas();
 $areaName = $AREA;
 $areaSlugVal = $AREA_SLUG;
+$coverageOnlyArea = function_exists('isCoverageOnlyArea') && isCoverageOnlyArea($AREA);
 
 $nearby = [];
 $idx = array_search($areaName, $allAreas, true);
@@ -78,7 +79,7 @@ $schema = [
                         '@type' => 'ListItem',
                         'position' => ++$i,
                         'name' => $name . ' in ' . $areaName,
-                        'url' => exportedServiceLocalUrl($slug, $areaName, 'area'),
+                        'url' => coverageServiceLocalUrl($slug, $areaName),
                     ];
                 }
                 return $items;
@@ -133,7 +134,7 @@ $schema = [
                 $heroCards = array_slice($allServices, 0, 4, true);
                 foreach ($heroCards as $slug => $name):
                 ?>
-                <a href="<?= htmlspecialchars(exportedServiceLocalUrl($slug, $AREA, 'area'), ENT_QUOTES, 'UTF-8') ?>"
+                <a href="<?= htmlspecialchars(coverageServiceLocalUrl($slug, $AREA), ENT_QUOTES, 'UTF-8') ?>"
                    class="group relative rounded-3xl overflow-hidden border border-white/10 min-h-[130px] bg-white/5 hover:border-[#ff6b00] transition">
                     <img src="<?= htmlspecialchars(function_exists('serviceImageUrl') ? serviceImageUrl($slug) : url('/assets/images/services/' . $slug . '.jpg'), ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars(($services[$slug] ?? $slug) . ' in ' . ($areaName ?? $AREA ?? 'the North West'), ENT_QUOTES, 'UTF-8') ?>"
                          class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-55 transition"
@@ -205,6 +206,7 @@ $schema = [
     </div>
 </section>
 
+<?php if (!$coverageOnlyArea): ?>
 <!-- POPULAR KEYWORD × THIS AREA (EICR report, FRA, gas cert, etc.) -->
 <section class="max-w-7xl mx-auto px-6 py-16">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
@@ -225,6 +227,7 @@ $schema = [
     echo keywordAreaLinksHtml($AREA, null, 0);
     ?>
 </section>
+<?php endif; ?>
 
 <!-- ALL SERVICES -->
 <section class="bg-zinc-50 border-y">
@@ -233,7 +236,7 @@ $schema = [
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Services in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></div>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Everything we do locally</h2>
-                <p class="mt-2 text-zinc-600 max-w-xl">Open a live service hub — or, for electrical and gas, a keyword page for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Thin service×area doorways are not published.</p>
+                <p class="mt-2 text-zinc-600 max-w-xl"><?php if ($coverageOnlyArea): ?>Every core service has a local page for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>.<?php else: ?>Open a live service hub — or, for electrical and gas, a keyword page for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Thin service×area doorways are not published.<?php endif; ?></p>
             </div>
             <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All service hubs →</a>
         </div>
@@ -241,7 +244,7 @@ $schema = [
             <?php foreach ($allServices as $slug => $name):
                 $blurb = getServiceBlurb($slug, true);
             ?>
-            <a href="<?= htmlspecialchars(exportedServiceLocalUrl($slug, $AREA, 'area'), ENT_QUOTES, 'UTF-8') ?>"
+            <a href="<?= htmlspecialchars(coverageServiceLocalUrl($slug, $AREA), ENT_QUOTES, 'UTF-8') ?>"
                class="group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="h-36 bg-zinc-100 overflow-hidden">
                     <img src="<?= htmlspecialchars(serviceImageUrl($slug), ENT_QUOTES, 'UTF-8') ?>"

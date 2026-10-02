@@ -343,7 +343,21 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
 
     $html .= '<section><h2 class="text-2xl font-semibold mb-3">All keywords for this service</h2>'
         . icomplyMatrixKeywordChips($serviceSlug)
-        . '</section></main>';
+        . '</section>';
+
+    if (function_exists('isCoverageOnlyArea') && isCoverageOnlyArea($areaSlugVal)) {
+        $html .= '<section><h2 class="text-2xl font-semibold mb-3">Every core service in ' . icomplyMatrixH($areaName) . '</h2>'
+            . '<p class="text-sm text-zinc-600 mb-4">' . count($s['services']) . ' core services each have a local page for this place. Quotes stay POA until scope is agreed.</p>'
+            . '<div class="flex flex-wrap gap-2">';
+        foreach ($s['services'] as $otherSlug => $otherName) {
+            $html .= '<a class="px-3 py-1.5 bg-white border border-zinc-200 rounded-full text-xs font-medium hover:border-[#ff6b00]" href="'
+                . icomplyMatrixH(url('/pages/' . $otherSlug . '/' . $areaSlugVal)) . '">'
+                . icomplyMatrixH($otherName) . '</a>';
+        }
+        $html .= '</div></section>';
+    }
+
+    $html .= '</main>';
 
     $html .= icomplyMatrixChromeEnd();
     return $html;

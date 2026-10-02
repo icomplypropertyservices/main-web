@@ -213,6 +213,31 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
+<?php
+$coveragePlaces = function_exists('coverageOnlyAreas') ? coverageOnlyAreas() : [];
+if ($coveragePlaces):
+?>
+<section id="further-places" class="bg-zinc-50 border-t">
+    <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div class="mb-8">
+            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Burtonwood to Crosby</div>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Further places</h2>
+            <p class="mt-2 text-zinc-600 max-w-2xl">
+                <?= count($coveragePlaces) ?> more places. Each hub links all <?= count($services) ?> core services.
+            </p>
+        </div>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+            <?php foreach ($coveragePlaces as $place): ?>
+                <a href="<?= url('/pages/areas/' . $place['slug'] . '.php') ?>"
+                   class="px-4 py-3 bg-white border rounded-2xl text-sm font-medium text-black hover:border-[#ff6b00] hover:shadow-sm transition">
+                    <?= htmlspecialchars($place['name'], ENT_QUOTES, 'UTF-8') ?>
+                </a>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
 <!-- CTA -->
 <section class="bg-[#0B1F3A] text-white">
     <div class="max-w-7xl mx-auto px-6 py-14 flex flex-col md:flex-row md:items-center md:justify-between gap-8">

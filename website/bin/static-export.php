@@ -36,9 +36,9 @@ if (PHP_SAPI !== 'cli') {
     exit(1);
 }
 
-$options = getopt('', ['full', 'out::', 'help', 'keyword-towns::']);
+$options = getopt('', ['full', 'out::', 'help', 'keyword-towns::', 'list-only', 'coverage-only::']);
 if (isset($options['help'])) {
-    echo "Usage: php website/bin/static-export.php [--full] [--keyword-towns=priority|popular|all|none] [--out=dist]\n";
+    echo "Usage: php website/bin/static-export.php [--full] [--keyword-towns=priority|popular|all|none] [--out=dist] [--list-only] [--coverage-only=batch-id]\n";
     exit(0);
 }
 
@@ -53,6 +53,8 @@ if ($dist[0] !== '/') {
     $dist = $repoRoot . '/' . ltrim($dist, '/');
 }
 $full = isset($options['full']);
+$listOnly = isset($options['list-only']);
+$coverageOnly = isset($options['coverage-only']) ? trim((string)$options['coverage-only']) : '';
 $keywordTowns = strtolower(trim((string)($options['keyword-towns'] ?? 'all')));
 if (!in_array($keywordTowns, ['priority', 'popular', 'all', 'none'], true)) {
     fwrite(STDERR, "Invalid --keyword-towns={$keywordTowns} (use priority|popular|all|none)\n");
@@ -100,11 +102,71 @@ $log($full ? "mode=full (core + hubs + keywords + service×area)\n" : "mode=defa
 $log("keyword-towns={$keywordTowns}\n");
 $log(str_repeat('=', 56) . "\n");
 
+if ($listOnly) {
+    $listed = icomplyCollectExportRoutes($full, $keywordTowns);
+    $listed = array_values(array_unique($listed));
+    $coveragePaths = function_exists('coverageServiceAreaPaths') ? coverageServiceAreaPaths() : [];
+    $missing = 0;
+    $have = array_fill_keys($listed, true);
+    foreach ($coveragePaths as $path) {
+        if (!isset($have[$path])) {
+            $missing++;
+        }
+    }
+    $kwHits = 0;
+    if (function_exists('coverageOnlyAreas')) {
+        $onlySlugs = [];
+        foreach (coverageOnlyAreas() as $row) {
+            $onlySlugs[$row['slug']] = true;
+        }
+        foreach ($listed as $path) {
+            if (preg_match('#^/pages/keywords/[a-z0-9\-]+/([a-z0-9\-]+)$#', $path, $m) && isset($onlySlugs[$m[1]])) {
+                $kwHits++;
+            }
+        }
+    }
+    $log('routes=' . count($listed) . ' coverage_service_area=' . count($coveragePaths) . " missing={$missing} coverage_only_keyword_towns={$kwHits}\n");
+    if ($missing > 0 || $kwHits > 0) {
+        fwrite(STDERR, "list-only: coverage service×area paths must be present and keyword×town must stay on areas.json\n");
+        exit(1);
+    }
+    exit(0);
+}
+
 icomplyResetDist($dist);
 // Copy CSS/JS/favicons first so a long export still has /assets even if interrupted.
 icomplyCopyStaticAssets($websiteRoot, $repoRoot, $dist);
 
 $routes = icomplyCollectExportRoutes($full, $keywordTowns);
+if ($coverageOnly !== '') {
+    $wanted = [];
+    foreach (coverageAreaBatches() as $batch) {
+        $id = (string)($batch['id'] ?? '');
+        if ($id !== $coverageOnly && !str_starts_with($id, $coverageOnly)) {
+            continue;
+        }
+        foreach ($batch['areas'] as $row) {
+            if (!is_array($row)) {
+                continue;
+            }
+            $slug = areaSlug((string)($row['slug'] ?? ''));
+            if ($slug === '') {
+                continue;
+            }
+            foreach (array_keys(getServices()) as $serviceSlug) {
+                $wanted[] = '/pages/' . $serviceSlug . '/' . $slug;
+            }
+            if (isCoverageOnlyArea($slug)) {
+                $wanted[] = '/pages/areas/' . $slug;
+            }
+        }
+    }
+    if (!$wanted) {
+        fwrite(STDERR, "Unknown --coverage-only={$coverageOnly}\n");
+        exit(1);
+    }
+    $routes = $wanted;
+}
 sort($routes);
 $routes = array_values(array_unique($routes));
 $kwHubs = 0;
@@ -178,12 +240,14 @@ icomplyWriteDistHeaders($dist);
 $log(str_repeat('=', 56) . "\n");
 $log("OK={$ok} SKIP={$skip} FAIL={$fail} routes=" . count($routes) . "\n");
 
-foreach ($required as $need) {
-    $php = $need === '/' ? $dist . '/index.html' : $dist . $need . '.php';
-    $dir = $need === '/' ? $dist . '/index.html' : $dist . $need . '/index.html';
-    if (!is_file($php) && !is_file($dir)) {
-        fwrite(STDERR, "Missing required pretty-URL output: {$need}\n");
-        $fail++;
+if ($coverageOnly === '') {
+    foreach ($required as $need) {
+        $php = $need === '/' ? $dist . '/index.html' : $dist . $need . '.php';
+        $dir = $need === '/' ? $dist . '/index.html' : $dist . $need . '/index.html';
+        if (!is_file($php) && !is_file($dir)) {
+            fwrite(STDERR, "Missing required pretty-URL output: {$need}\n");
+            $fail++;
+        }
     }
 }
 
@@ -345,6 +409,17 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
     foreach (array_keys(getServices()) as $sSlug) {
         foreach (getAreas() as $area) {
             $routes[] = '/pages/' . $sSlug . '/' . areaSlug((string)$area);
+        }
+    }
+    // Coverage batches (Burtonwood–Crosby and later) stay off the keyword matrix.
+    if (function_exists('coverageServiceAreaPaths')) {
+        foreach (coverageServiceAreaPaths() as $path) {
+            $routes[] = $path;
+        }
+    }
+    if (function_exists('coverageOnlyAreaHubPaths')) {
+        foreach (coverageOnlyAreaHubPaths() as $path) {
+            $routes[] = $path;
         }
     }
 

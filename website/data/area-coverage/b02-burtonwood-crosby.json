@@ -1,0 +1,990 @@
+{
+  "id": "b02-burtonwood-crosby",
+  "label": "Burtonwood through Crosby",
+  "first": "burtonwood",
+  "last": "crosby",
+  "note": "Service×area pages for every core service. Keyword×town matrix stays on areas.json. These URLs stay out of sitemap.xml.",
+  "areas": [
+    {
+      "slug": "burtonwood",
+      "name": "Burtonwood",
+      "profile": {
+        "districts": "WA5",
+        "region": "Warrington",
+        "stock": "village housing and industrial units beside the M62",
+        "travel": "typically 35–50 minutes from our Stockport SK2 base",
+        "focus": "landlord and light-industrial compliance"
+      }
+    },
+    {
+      "slug": "bury",
+      "name": "Bury"
+    },
+    {
+      "slug": "butt-lane",
+      "name": "Butt Lane",
+      "profile": {
+        "districts": "ST7",
+        "region": "Kidsgrove / Staffordshire border",
+        "stock": "terraced housing and local retail",
+        "travel": "typically 45–60 minutes from our Stockport SK2 base",
+        "focus": "residential portfolios"
+      }
+    },
+    {
+      "slug": "buxton",
+      "name": "Buxton",
+      "profile": {
+        "districts": "SK17",
+        "region": "High Peak",
+        "stock": "spa-town stone housing, guest accommodation and town retail",
+        "travel": "typically 40–55 minutes from our Stockport SK2 base",
+        "focus": "hospitality and residential compliance"
+      }
+    },
+    {
+      "slug": "buxton-chapel-en-le-frith-glossop-hadfield",
+      "name": "Buxton Chapel-en-le-Frith Glossop Hadfield",
+      "profile": {
+        "districts": "SK17, SK13 and SK23",
+        "region": "High Peak",
+        "stock": "market-town and village housing across Buxton, Chapel-en-le-Frith, Glossop and Hadfield",
+        "travel": "typically 30–55 minutes from our Stockport SK2 base",
+        "focus": "residential and town-centre commercial"
+      }
+    },
+    {
+      "slug": "buxworth",
+      "name": "Buxworth",
+      "profile": {
+        "districts": "SK23",
+        "region": "High Peak",
+        "stock": "canal-side village housing near Chinley",
+        "travel": "typically 35–50 minutes from our Stockport SK2 base",
+        "focus": "residential and small commercial"
+      }
+    },
+    {
+      "slug": "byley",
+      "name": "Byley",
+      "profile": {
+        "districts": "CW10",
+        "region": "Cheshire",
+        "stock": "village housing near Middlewich",
+        "travel": "typically 40–55 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "cadishead",
+      "name": "Cadishead"
+    },
+    {
+      "slug": "cadishead-village",
+      "name": "Cadishead Village",
+      "profile": {
+        "districts": "M44",
+        "region": "Salford",
+        "stock": "village housing in Cadishead",
+        "travel": "typically 30–45 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "cadley",
+      "name": "Cadley",
+      "profile": {
+        "districts": "PR2",
+        "region": "Preston",
+        "stock": "suburban housing",
+        "travel": "typically 55–70 minutes from our Stockport SK2 base",
+        "focus": "residential portfolios"
+      }
+    },
+    {
+      "slug": "calder-vale",
+      "name": "Calder Vale",
+      "profile": {
+        "districts": "PR3",
+        "region": "Wyre",
+        "stock": "mill-village housing near Garstang",
+        "travel": "typically 55–75 minutes from our Stockport SK2 base",
+        "focus": "residential and holiday lets"
+      }
+    },
+    {
+      "slug": "calderstones",
+      "name": "Calderstones",
+      "profile": {
+        "districts": "L18",
+        "region": "South Liverpool",
+        "stock": "suburban houses and apartments",
+        "travel": "typically 50–70 minutes from our Stockport SK2 base",
+        "focus": "residential portfolios"
+      }
+    },
+    {
+      "slug": "caldy",
+      "name": "Caldy",
+      "profile": {
+        "districts": "CH48",
+        "region": "Wirral",
+        "stock": "village housing",
+        "travel": "typically 60–80 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "callands",
+      "name": "Callands",
+      "profile": {
+        "districts": "WA5",
+        "region": "Warrington",
+        "stock": "new-town housing",
+        "travel": "typically 35–50 minutes from our Stockport SK2 base",
+        "focus": "residential and light commercial"
+      }
+    },
+    {
+      "slug": "calver",
+      "name": "Calver",
+      "profile": {
+        "districts": "S32",
+        "region": "Derbyshire Peak District",
+        "stock": "village housing and guest accommodation near Baslow",
+        "travel": "typically 35–50 minutes from our Stockport SK2 base",
+        "focus": "hospitality and residential"
+      }
+    },
+    {
+      "slug": "cark",
+      "name": "Cark",
+      "profile": {
+        "districts": "LA11",
+        "region": "Cumbria",
+        "stock": "village housing and guest accommodation at Cark-in-Cartmel",
+        "travel": "typically 80–100 minutes from our Stockport SK2 base",
+        "focus": "hospitality and residential"
+      }
+    },
+    {
+      "slug": "carlisle",
+      "name": "Carlisle"
+    },
+    {
+      "slug": "carnforth",
+      "name": "Carnforth"
+    },
+    {
+      "slug": "carrbrook",
+      "name": "Carrbrook",
+      "profile": {
+        "districts": "SK15",
+        "region": "Stalybridge fringe",
+        "stock": "housing on the Mossley side of Stalybridge",
+        "travel": "typically 25–40 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "carrington",
+      "name": "Carrington",
+      "profile": {
+        "districts": "M31",
+        "region": "Trafford",
+        "stock": "village housing and a large industrial estate",
+        "travel": "typically 25–40 minutes from our Stockport SK2 base",
+        "focus": "industrial and residential"
+      }
+    },
+    {
+      "slug": "carrington-village",
+      "name": "Carrington Village",
+      "profile": {
+        "districts": "M31",
+        "region": "Trafford",
+        "stock": "village housing at Carrington",
+        "travel": "typically 25–40 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "cartmel",
+      "name": "Cartmel",
+      "profile": {
+        "districts": "LA11",
+        "region": "Cumbria",
+        "stock": "stone cottages and guest houses",
+        "travel": "typically 80–100 minutes from our Stockport SK2 base",
+        "focus": "hospitality compliance"
+      }
+    },
+    {
+      "slug": "castle-northwich",
+      "name": "Castle Northwich",
+      "profile": {
+        "districts": "CW8",
+        "region": "Northwich",
+        "stock": "town-centre housing and retail around the castle quarter",
+        "travel": "typically 40–55 minutes from our Stockport SK2 base",
+        "focus": "town retail and residential"
+      }
+    },
+    {
+      "slug": "castleton",
+      "name": "Castleton",
+      "profile": {
+        "districts": "S33",
+        "region": "Hope Valley",
+        "stock": "guest houses and stone village housing",
+        "travel": "typically 40–55 minutes from our Stockport SK2 base",
+        "focus": "hospitality compliance"
+      }
+    },
+    {
+      "slug": "castleton-village",
+      "name": "Castleton Village",
+      "profile": {
+        "districts": "S33",
+        "region": "Hope Valley",
+        "stock": "village guest houses and stone cottages in Castleton",
+        "travel": "typically 40–55 minutes from our Stockport SK2 base",
+        "focus": "hospitality compliance"
+      }
+    },
+    {
+      "slug": "caton",
+      "name": "Caton",
+      "profile": {
+        "districts": "LA2",
+        "region": "Lune valley",
+        "stock": "village housing near Lancaster",
+        "travel": "typically 70–90 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "catterall",
+      "name": "Catterall",
+      "profile": {
+        "districts": "PR3",
+        "region": "Wyre",
+        "stock": "village housing on the A6 near Garstang",
+        "travel": "typically 50–70 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "chadderton",
+      "name": "Chadderton"
+    },
+    {
+      "slug": "chapel",
+      "name": "Chapel",
+      "profile": {
+        "districts": "confirmed from the postcode on the quote",
+        "region": "North West",
+        "stock": "local housing and small commercial buildings — the quote uses the postcode so the right Chapel is booked",
+        "travel": "travel is confirmed from the postcode against our Stockport SK2 base",
+        "focus": "landlord and SME compliance"
+      }
+    },
+    {
+      "slug": "chapel-en-le-frith",
+      "name": "Chapel-en-le-Frith",
+      "profile": {
+        "districts": "SK23",
+        "region": "High Peak",
+        "stock": "market-town housing and high-street retail",
+        "travel": "typically 30–45 minutes from our Stockport SK2 base",
+        "focus": "town retail and residential"
+      }
+    },
+    {
+      "slug": "chapel-en-le-frith-dove-holes-peak",
+      "name": "Chapel-en-le-Frith Dove Holes Peak",
+      "profile": {
+        "districts": "SK23",
+        "region": "High Peak",
+        "stock": "village and market-town housing around Chapel-en-le-Frith, Dove Holes and the Peak fringe",
+        "travel": "typically 30–45 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "chapel-milton",
+      "name": "Chapel Milton",
+      "profile": {
+        "districts": "SK23",
+        "region": "High Peak",
+        "stock": "hamlet housing beside Chapel-en-le-Frith",
+        "travel": "typically 30–45 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "chapeltown",
+      "name": "Chapeltown",
+      "profile": {
+        "districts": "confirmed from the postcode on the quote",
+        "region": "North West",
+        "stock": "local housing and small commercial buildings — the quote uses the postcode so the right Chapeltown is booked",
+        "travel": "travel is confirmed from the postcode against our Stockport SK2 base",
+        "focus": "landlord and SME compliance"
+      }
+    },
+    {
+      "slug": "charlesworth",
+      "name": "Charlesworth",
+      "profile": {
+        "districts": "SK13",
+        "region": "Glossop fringe",
+        "stock": "village housing",
+        "travel": "typically 30–45 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "chatburn",
+      "name": "Chatburn",
+      "profile": {
+        "districts": "BB7",
+        "region": "Ribble Valley",
+        "stock": "village housing near Clitheroe",
+        "travel": "typically 50–70 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "chatsworth",
+      "name": "Chatsworth",
+      "profile": {
+        "districts": "DE45",
+        "region": "Derbyshire",
+        "stock": "estate village housing and guest accommodation",
+        "travel": "typically 40–60 minutes from our Stockport SK2 base",
+        "focus": "estate and hospitality sites"
+      }
+    },
+    {
+      "slug": "cheadle",
+      "name": "Cheadle"
+    },
+    {
+      "slug": "cheadle-hulme",
+      "name": "Cheadle Hulme"
+    },
+    {
+      "slug": "cheetham",
+      "name": "Cheetham",
+      "profile": {
+        "districts": "M8",
+        "region": "Manchester",
+        "stock": "terraced housing and local commercial",
+        "travel": "typically 30–45 minutes from our Stockport SK2 base",
+        "focus": "residential and commercial"
+      }
+    },
+    {
+      "slug": "cheetham-hill",
+      "name": "Cheetham Hill",
+      "profile": {
+        "districts": "M8",
+        "region": "Manchester",
+        "stock": "high-street retail and terraced housing",
+        "travel": "typically 30–45 minutes from our Stockport SK2 base",
+        "focus": "retail and residential"
+      }
+    },
+    {
+      "slug": "chelford",
+      "name": "Chelford",
+      "profile": {
+        "districts": "SK11",
+        "region": "Cheshire",
+        "stock": "village housing near Alderley and Knutsford",
+        "travel": "typically 25–40 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "chequerbent",
+      "name": "Chequerbent",
+      "profile": {
+        "districts": "BL5",
+        "region": "Westhoughton",
+        "stock": "housing along the A6 corridor",
+        "travel": "typically 35–50 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "chequerbent-village",
+      "name": "Chequerbent Village",
+      "profile": {
+        "districts": "BL5",
+        "region": "Westhoughton",
+        "stock": "village housing at Chequerbent",
+        "travel": "typically 35–50 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "chesham-bury",
+      "name": "Chesham, Bury",
+      "profile": {
+        "districts": "BL9",
+        "region": "Bury",
+        "stock": "district housing",
+        "travel": "typically 40–55 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "chester",
+      "name": "Chester"
+    },
+    {
+      "slug": "chew-moor",
+      "name": "Chew Moor",
+      "profile": {
+        "districts": "BL6",
+        "region": "Lostock / Bolton",
+        "stock": "village housing",
+        "travel": "typically 35–50 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "chew-moor-village",
+      "name": "Chew Moor Village",
+      "profile": {
+        "districts": "BL6",
+        "region": "Lostock / Bolton",
+        "stock": "village housing at Chew Moor",
+        "travel": "typically 35–50 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "childwall",
+      "name": "Childwall",
+      "profile": {
+        "districts": "L16",
+        "region": "Liverpool",
+        "stock": "suburban housing",
+        "travel": "typically 50–70 minutes from our Stockport SK2 base",
+        "focus": "residential portfolios"
+      }
+    },
+    {
+      "slug": "chinley",
+      "name": "Chinley",
+      "profile": {
+        "districts": "SK23",
+        "region": "High Peak",
+        "stock": "village housing and local retail",
+        "travel": "typically 30–45 minutes from our Stockport SK2 base",
+        "focus": "residential and small commercial"
+      }
+    },
+    {
+      "slug": "chinley-village",
+      "name": "Chinley Village",
+      "profile": {
+        "districts": "SK23",
+        "region": "High Peak",
+        "stock": "village housing in Chinley",
+        "travel": "typically 30–45 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "chipping",
+      "name": "Chipping",
+      "profile": {
+        "districts": "PR3",
+        "region": "Ribble Valley",
+        "stock": "village housing and guest accommodation",
+        "travel": "typically 55–75 minutes from our Stockport SK2 base",
+        "focus": "residential and hospitality"
+      }
+    },
+    {
+      "slug": "chipping-village",
+      "name": "Chipping Village",
+      "profile": {
+        "districts": "PR3",
+        "region": "Ribble Valley",
+        "stock": "village housing in Chipping",
+        "travel": "typically 55–75 minutes from our Stockport SK2 base",
+        "focus": "residential and hospitality"
+      }
+    },
+    {
+      "slug": "chorley",
+      "name": "Chorley"
+    },
+    {
+      "slug": "chorlton",
+      "name": "Chorlton"
+    },
+    {
+      "slug": "church",
+      "name": "Church",
+      "profile": {
+        "districts": "BB5",
+        "region": "Hyndburn",
+        "stock": "terraced housing between Accrington and Oswaldtwistle",
+        "travel": "typically 45–65 minutes from our Stockport SK2 base",
+        "focus": "landlord portfolios"
+      }
+    },
+    {
+      "slug": "churchtown",
+      "name": "Churchtown",
+      "profile": {
+        "districts": "confirmed from the postcode on the quote",
+        "region": "North West",
+        "stock": "local housing and small commercial buildings — the quote uses the postcode so the right Churchtown is booked",
+        "travel": "travel is confirmed from the postcode against our Stockport SK2 base",
+        "focus": "landlord and SME compliance"
+      }
+    },
+    {
+      "slug": "city-centre",
+      "name": "City Centre",
+      "profile": {
+        "districts": "confirmed from the postcode on the quote",
+        "region": "North West",
+        "stock": "local housing and small commercial buildings — the quote uses the postcode so the right City Centre is booked",
+        "travel": "travel is confirmed from the postcode against our Stockport SK2 base",
+        "focus": "landlord and SME compliance"
+      }
+    },
+    {
+      "slug": "clapham",
+      "name": "Clapham",
+      "profile": {
+        "districts": "confirmed from the postcode on the quote",
+        "region": "North West",
+        "stock": "local housing and small commercial buildings — the quote uses the postcode so the right Clapham is booked",
+        "travel": "travel is confirmed from the postcode against our Stockport SK2 base",
+        "focus": "landlord and SME compliance"
+      }
+    },
+    {
+      "slug": "claughton",
+      "name": "Claughton",
+      "profile": {
+        "districts": "confirmed from the postcode on the quote",
+        "region": "North West",
+        "stock": "local housing and small commercial buildings — the quote uses the postcode so the right Claughton is booked",
+        "travel": "travel is confirmed from the postcode against our Stockport SK2 base",
+        "focus": "landlord and SME compliance"
+      }
+    },
+    {
+      "slug": "clayton",
+      "name": "Clayton",
+      "profile": {
+        "districts": "confirmed from the postcode on the quote",
+        "region": "North West",
+        "stock": "local housing and small commercial buildings — the quote uses the postcode so the right Clayton is booked",
+        "travel": "travel is confirmed from the postcode against our Stockport SK2 base",
+        "focus": "landlord and SME compliance"
+      }
+    },
+    {
+      "slug": "clayton-le-dale",
+      "name": "Clayton-le-Dale",
+      "profile": {
+        "districts": "BB1",
+        "region": "Ribble Valley",
+        "stock": "village housing near Blackburn",
+        "travel": "typically 45–65 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "clayton-le-dale-village",
+      "name": "Clayton-le-Dale Village",
+      "profile": {
+        "districts": "BB1",
+        "region": "Ribble Valley",
+        "stock": "village housing at Clayton-le-Dale",
+        "travel": "typically 45–65 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "clayton-le-moors",
+      "name": "Clayton-le-Moors"
+    },
+    {
+      "slug": "clayton-le-woods",
+      "name": "Clayton-le-Woods",
+      "profile": {
+        "districts": "PR6",
+        "region": "Chorley / South Ribble",
+        "stock": "suburban and village housing",
+        "travel": "typically 45–60 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "clayton-village",
+      "name": "Clayton Village",
+      "profile": {
+        "districts": "confirmed from the postcode on the quote",
+        "region": "North West",
+        "stock": "local housing and small commercial buildings — the quote uses the postcode so the right Clayton Village is booked",
+        "travel": "travel is confirmed from the postcode against our Stockport SK2 base",
+        "focus": "landlord and SME compliance"
+      }
+    },
+    {
+      "slug": "cleveleys",
+      "name": "Cleveleys",
+      "profile": {
+        "districts": "FY5",
+        "region": "Lancashire coast",
+        "stock": "seafront housing, flats and local retail",
+        "travel": "typically 70–90 minutes from our Stockport SK2 base",
+        "focus": "residential and hospitality"
+      }
+    },
+    {
+      "slug": "clifton",
+      "name": "Clifton",
+      "profile": {
+        "districts": "confirmed from the postcode on the quote",
+        "region": "North West",
+        "stock": "local housing and small commercial buildings — the quote uses the postcode so the right Clifton is booked",
+        "travel": "travel is confirmed from the postcode against our Stockport SK2 base",
+        "focus": "landlord and SME compliance"
+      }
+    },
+    {
+      "slug": "clitheroe",
+      "name": "Clitheroe"
+    },
+    {
+      "slug": "cloud-side",
+      "name": "Cloud Side",
+      "profile": {
+        "districts": "SK11",
+        "region": "Congleton",
+        "stock": "hamlet housing by The Cloud",
+        "travel": "typically 30–45 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "clowbridge",
+      "name": "Clowbridge",
+      "profile": {
+        "districts": "BB4",
+        "region": "Rossendale",
+        "stock": "reservoir-side hamlet housing near Loveclough",
+        "travel": "typically 45–65 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "cockermouth",
+      "name": "Cockermouth"
+    },
+    {
+      "slug": "collins-green",
+      "name": "Collins Green",
+      "profile": {
+        "districts": "WA5",
+        "region": "Warrington",
+        "stock": "housing between Burtonwood and Newton-le-Willows",
+        "travel": "typically 35–50 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "colne",
+      "name": "Colne"
+    },
+    {
+      "slug": "colne-road",
+      "name": "Colne Road",
+      "profile": {
+        "districts": "BB8",
+        "region": "Colne",
+        "stock": "housing and local commercial along Colne Road",
+        "travel": "typically 55–75 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "colne-village",
+      "name": "Colne Village",
+      "profile": {
+        "districts": "BB8",
+        "region": "Colne",
+        "stock": "village and edge-of-town housing at Colne",
+        "travel": "typically 55–75 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "colwyn",
+      "name": "Colwyn",
+      "profile": {
+        "districts": "LL29",
+        "region": "North Wales coast",
+        "stock": "coastal housing near Colwyn Bay",
+        "travel": "typically 90–120 minutes from our Stockport SK2 base",
+        "focus": "residential and hospitality"
+      }
+    },
+    {
+      "slug": "colwyn-bay",
+      "name": "Colwyn Bay",
+      "profile": {
+        "districts": "LL29",
+        "region": "North Wales coast",
+        "stock": "seafront guest accommodation, flats and town retail",
+        "travel": "typically 90–120 minutes from our Stockport SK2 base",
+        "focus": "hospitality and residential"
+      }
+    },
+    {
+      "slug": "comberbach",
+      "name": "Comberbach",
+      "profile": {
+        "districts": "CW9",
+        "region": "Cheshire",
+        "stock": "village housing near Northwich",
+        "travel": "typically 35–50 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "comberbach-village",
+      "name": "Comberbach Village",
+      "profile": {
+        "districts": "CW9",
+        "region": "Cheshire",
+        "stock": "village housing in Comberbach",
+        "travel": "typically 35–50 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "compstall",
+      "name": "Compstall",
+      "profile": {
+        "districts": "SK6",
+        "region": "Stockport",
+        "stock": "village housing and local mills stock",
+        "travel": "local Stockport fringe, typically 15–25 minutes from SK2",
+        "focus": "residential and small commercial"
+      }
+    },
+    {
+      "slug": "compstall-village",
+      "name": "Compstall Village",
+      "profile": {
+        "districts": "SK6",
+        "region": "Stockport",
+        "stock": "village housing in Compstall",
+        "travel": "local Stockport fringe, typically 15–25 minutes from SK2",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "congleton",
+      "name": "Congleton"
+    },
+    {
+      "slug": "congleton-edge",
+      "name": "Congleton Edge",
+      "profile": {
+        "districts": "CW12",
+        "region": "Congleton",
+        "stock": "edge-of-town housing south of Congleton",
+        "travel": "typically 30–45 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "coniston",
+      "name": "Coniston",
+      "profile": {
+        "districts": "LA21",
+        "region": "Lake District",
+        "stock": "guest houses, holiday lets and stone cottages",
+        "travel": "typically 90–110 minutes from our Stockport SK2 base",
+        "focus": "hospitality compliance"
+      }
+    },
+    {
+      "slug": "connah-s-quay",
+      "name": "Connah's Quay",
+      "profile": {
+        "districts": "CH5",
+        "region": "Deeside",
+        "stock": "housing and industrial units",
+        "travel": "typically 55–75 minutes from our Stockport SK2 base",
+        "focus": "industrial and residential"
+      }
+    },
+    {
+      "slug": "connahs-quay",
+      "name": "Connahs Quay",
+      "profile": {
+        "districts": "CH5",
+        "region": "Deeside",
+        "stock": "housing and industrial units",
+        "travel": "typically 55–75 minutes from our Stockport SK2 base",
+        "focus": "industrial and residential"
+      }
+    },
+    {
+      "slug": "cop",
+      "name": "Cop",
+      "profile": {
+        "districts": "confirmed from the postcode on the quote",
+        "region": "North West",
+        "stock": "local housing and small commercial buildings — the quote uses the postcode so the right Cop is booked",
+        "travel": "travel is confirmed from the postcode against our Stockport SK2 base",
+        "focus": "landlord and SME compliance"
+      }
+    },
+    {
+      "slug": "copley",
+      "name": "Copley",
+      "profile": {
+        "districts": "confirmed from the postcode on the quote",
+        "region": "North West",
+        "stock": "local housing and small commercial buildings — the quote uses the postcode so the right Copley is booked",
+        "travel": "travel is confirmed from the postcode against our Stockport SK2 base",
+        "focus": "landlord and SME compliance"
+      }
+    },
+    {
+      "slug": "coppull",
+      "name": "Coppull",
+      "profile": {
+        "districts": "PR7",
+        "region": "Chorley",
+        "stock": "village housing south of Chorley",
+        "travel": "typically 45–60 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "coppull-village",
+      "name": "Coppull Village",
+      "profile": {
+        "districts": "PR7",
+        "region": "Chorley",
+        "stock": "village housing in Coppull",
+        "travel": "typically 45–60 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "cottam",
+      "name": "Cottam",
+      "profile": {
+        "districts": "PR4",
+        "region": "Preston",
+        "stock": "suburban housing",
+        "travel": "typically 55–70 minutes from our Stockport SK2 base",
+        "focus": "residential portfolios"
+      }
+    },
+    {
+      "slug": "cotton-tree",
+      "name": "Cotton Tree",
+      "profile": {
+        "districts": "BB8",
+        "region": "Colne fringe",
+        "stock": "housing on the Trawden side of Colne",
+        "travel": "typically 55–75 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "crawshawbooth",
+      "name": "Crawshawbooth",
+      "profile": {
+        "districts": "BB4",
+        "region": "Rossendale",
+        "stock": "valley housing and local retail",
+        "travel": "typically 45–65 minutes from our Stockport SK2 base",
+        "focus": "residential and small commercial"
+      }
+    },
+    {
+      "slug": "cressbrook",
+      "name": "Cressbrook",
+      "profile": {
+        "districts": "SK17",
+        "region": "Peak District",
+        "stock": "mill-village housing",
+        "travel": "typically 35–50 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "crewe",
+      "name": "Crewe"
+    },
+    {
+      "slug": "croft",
+      "name": "Croft",
+      "profile": {
+        "districts": "WA3",
+        "region": "Warrington",
+        "stock": "village housing",
+        "travel": "typically 35–50 minutes from our Stockport SK2 base",
+        "focus": "residential compliance"
+      }
+    },
+    {
+      "slug": "croft-newton-le-willows-golborne-ashton-in-makerfield",
+      "name": "Croft Newton-le-Willows Golborne Ashton-in-Makerfield",
+      "profile": {
+        "districts": "WA3, WA12 and WN4",
+        "region": "Warrington / Wigan border",
+        "stock": "village and town housing across Croft, Newton-le-Willows, Golborne and Ashton-in-Makerfield",
+        "travel": "typically 35–55 minutes from our Stockport SK2 base",
+        "focus": "landlord portfolios and small commercial"
+      }
+    },
+    {
+      "slug": "cromford",
+      "name": "Cromford",
+      "profile": {
+        "districts": "DE4",
+        "region": "Derbyshire",
+        "stock": "mill-village housing and guest accommodation",
+        "travel": "typically 45–65 minutes from our Stockport SK2 base",
+        "focus": "hospitality and residential"
+      }
+    },
+    {
+      "slug": "crompton",
+      "name": "Crompton",
+      "profile": {
+        "districts": "OL2",
+        "region": "Shaw and Crompton",
+        "stock": "town housing and local retail",
+        "travel": "typically 35–50 minutes from our Stockport SK2 base",
+        "focus": "residential and small commercial"
+      }
+    },
+    {
+      "slug": "crosby",
+      "name": "Crosby"
+    }
+  ]
+}

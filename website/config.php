@@ -684,6 +684,12 @@ function areaFromSlug(string $slug): ?string {
             return $area;
         }
     }
+    if (function_exists('coverageAreaName')) {
+        $name = coverageAreaName($slug);
+        if ($name !== null) {
+            return $name;
+        }
+    }
     return null;
 }
 
@@ -711,6 +717,10 @@ function icomplyTradeProductsUrl(): string
 $waFile = __DIR__ . '/includes/water-asbestos.php';
 if (is_file($waFile)) {
     require_once $waFile;
+}
+$coverageFile = __DIR__ . '/includes/area-coverage.php';
+if (is_file($coverageFile)) {
+    require_once $coverageFile;
 }
 
 // Back-compat globals used by some templates/includes

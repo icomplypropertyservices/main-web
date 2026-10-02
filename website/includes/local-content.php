@@ -71,6 +71,13 @@ function area_profile(string $area): array {
         return $map[$area] + ['name' => $area];
     }
 
+    if (function_exists('coverageAreaProfile')) {
+        $extra = coverageAreaProfile($area);
+        if (count($extra) === 5) {
+            return $extra + ['name' => $area];
+        }
+    }
+
     // Generic but still unique-ish profile for remaining towns
     $seed = area_seed($area);
     $regions = ['Greater Manchester fringe', 'Lancashire', 'Cheshire', 'Merseyside fringe', 'North West England'];
