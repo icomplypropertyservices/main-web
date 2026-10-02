@@ -9,6 +9,14 @@ $pageTitle = $AREA . ' property compliance';
 $metaDesc = seo_fit_meta($AREA . ' (' . $areaProfile['districts'] . ') property compliance. ' . $areaProfile['stock'] . '. Fire, AOV, nurse call and barriers; other trades where the town is on the local list.');
 $metaKeywords = $AREA . ' electrician, ' . $AREA . ' fire alarm installation, ' . $AREA . ' EICR, ' . $AREA . ' gas safety certificate, property compliance ' . $AREA . ', emergency lighting ' . $AREA;
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
+$areaHero = null;
+if (function_exists('hubPageVisuals')) {
+    $areaVisuals = hubPageVisuals('areas', $AREA, 1, 0, 'Property compliance in ' . $AREA);
+    if (is_array($areaVisuals['primary'] ?? null) && !empty($areaVisuals['primary']['src'])) {
+        $areaHero = $areaVisuals['primary'];
+        $ogImage = (string)$areaHero['src'];
+    }
+}
 
 $allServices = getServices();
 $allAreas = getAreas();
@@ -134,6 +142,16 @@ $schema = [
                 </div>
                 <p class="mt-3 text-[11px] text-white/40">*Subject to engineer capacity and site access.</p>
             </div>
+            <div class="space-y-3">
+                <?php if (is_array($areaHero)): ?>
+                <figure class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[180px] bg-white/5">
+                    <img src="<?= htmlspecialchars((string)$areaHero['src'], ENT_QUOTES, 'UTF-8') ?>"
+                         alt="<?= htmlspecialchars((string)($areaHero['alt'] ?? ('Property compliance in ' . $AREA)), ENT_QUOTES, 'UTF-8') ?>"
+                         class="w-full h-48 <?= (($areaHero['fit'] ?? 'cover') === 'contain') ? 'object-contain bg-white' : 'object-cover' ?>"
+                         width="960" height="540"
+                         loading="eager">
+                </figure>
+                <?php endif; ?>
             <div class="grid grid-cols-2 gap-3">
                 <?php
                 $heroCards = array_slice($allServices, 0, 4, true);
@@ -151,6 +169,7 @@ $schema = [
                     </div>
                 </a>
                 <?php endforeach; ?>
+            </div>
             </div>
         </div>
     </div>

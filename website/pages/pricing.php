@@ -38,6 +38,14 @@ $categories = [
         'intro' => 'BS 7671 inspection, testing and certification. Circuit count, age of installation and access drive the final price.',
         'items' => [
             [
+                'name' => 'EICR — typical 6-bed HMO, North West',
+                'from' => '£249',
+                'price_kind' => 'list',
+                'href' => '/pages/jobs/eicr',
+                'typical' => 'List per property (ELEC-EICR-6BED-NW). All-in. 1-bed, other domestic sizes and commercial EICRs stay POA. Remedials are extra.',
+                'includes' => 'Inspection, testing and the Electrical Installation Condition Report',
+            ],
+            [
                 'name' => 'EICR — 1-bed flat / small studio',
                 'from' => 'POA',
                 'typical' => 'Guide for a compact flat with a standard consumer unit and straightforward access.',
@@ -82,6 +90,14 @@ $categories = [
         'service_slug' => 'gas-systems',
         'intro' => 'gas safety certificates (CP12) landlord certificates and appliance checks. Appliance count and flue type affect price.',
         'items' => [
+            [
+                'name' => 'Landlord gas safety record (CP12) — typical 6-bed HMO',
+                'from' => '£85',
+                'price_kind' => 'list',
+                'href' => '/pages/jobs/gas-safety',
+                'typical' => 'List per property. All-in. iComply is not VAT registered, so VAT is not added. Remedials, parts and commercial plant rooms are not this price.',
+                'includes' => 'Landlord gas safety record for a typical North West 6-bed HMO',
+            ],
             [
                 'name' => 'Landlord gas safety (CP12) — 1 appliance',
                 'from' => 'POA',

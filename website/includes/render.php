@@ -96,6 +96,12 @@ function renderServiceAreaPage(string $serviceSlug, string $area): void {
         icomplyRequestExit();
         return;
     }
+    if ($serviceSlug === 'nurse-call' && function_exists('nationwideAreaRow')) {
+        $nationwide = nationwideAreaRow($area);
+        if ($nationwide !== null) {
+            $area = $nationwide['name'];
+        }
+    }
     $serviceName = $services[$serviceSlug];
     $areaSlug = areaSlug($area);
     $imgs = getKeywordImages($serviceSlug);

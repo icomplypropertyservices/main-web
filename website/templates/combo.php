@@ -30,6 +30,16 @@ $serviceSlug = $SERVICE_SLUG;
 $serviceName = $SERVICE_NAME;
 $areaName = $AREA;
 $areaSlugVal = $AREA_SLUG;
+$ncNationwide = ($serviceSlug === 'nurse-call' && function_exists('nationwideAreaRow'))
+    ? nationwideAreaRow($areaName)
+    : null;
+if (is_array($ncNationwide)) {
+    $metaDesc = $serviceName . ' in ' . $areaName . ' (' . $ncNationwide['region'] . ', ' . $ncNationwide['nation']
+        . '). Quote after scope (POA). Stockport base — visit confirmed after the postcode.';
+    if (strlen($metaDesc) > 165) {
+        $metaDesc = $serviceName . ' in ' . $areaName . '. Quote after scope (POA). Visit confirmed after the postcode.';
+    }
+}
 
 // Use getServiceBlurb / getServiceStandards (config.php ← data/service-meta.json). Do not hardcode $serviceBlurbs.
 $blurb = getServiceBlurb($serviceSlug);
@@ -206,7 +216,11 @@ $schema = [
                 </h1>
                 <p class="mt-6 text-lg text-white/80 max-w-xl">
                     <?= htmlspecialchars($blurb, ENT_QUOTES, 'UTF-8') ?>
+                    <?php if (is_array($ncNationwide)): ?>
+                    Care homes, clinics and supported living in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>. Quote after scope (POA). A visit is confirmed after the postcode.
+                    <?php else: ?>
                     Local engineers covering <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> and nearby postcodes.
+                    <?php endif; ?>
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get free quote</a>
@@ -226,7 +240,7 @@ $schema = [
                      loading="eager"
                      onerror="this.style.display='none'">
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-[#0B1F3A]/20 to-transparent">
-                    <div class="text-sm text-white/70">Serving <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> &amp; <?= htmlspecialchars($coveragePhrase, ENT_QUOTES, 'UTF-8') ?></div>
+                    <div class="text-sm text-white/70"><?php if (is_array($ncNationwide)): ?>Nurse call in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> · <?= htmlspecialchars($ncNationwide['region'] . ', ' . $ncNationwide['nation'], ENT_QUOTES, 'UTF-8') ?><?php else: ?>Serving <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> &amp; <?= htmlspecialchars($coveragePhrase, ENT_QUOTES, 'UTF-8') ?><?php endif; ?></div>
                     <div class="text-2xl font-semibold mt-1">Local engineers · Fixed-price quotes</div>
                 </div>
             </div>

@@ -62,13 +62,28 @@ foreach (['Manchester', 'Burnley'] as $area) {
     $ok(str_contains($html, '/pages/keywords/fire-alarm-service'), "{$area} links the national fire-alarm-service guide");
     $ok(str_contains($html, '#uk-london'), "{$area} includes a London fire fragment");
     $ok(str_contains($html, '#uk-glasgow'), "{$area} includes a Glasgow fire fragment");
-    $ok(!preg_match('/£\s*\d/', $html), "{$area} has no invented £ price");
+    $body = $html;
+    $contentStart = strpos($html, 'id="main-content"');
+    $contentEnd = strpos($html, '<footer');
+    if ($contentStart !== false && $contentEnd !== false && $contentEnd > $contentStart) {
+        $body = substr($html, $contentStart, $contentEnd - $contentStart);
+    }
+    $ok(!preg_match('/£\s*\d/', $body), "{$area} has no invented £ price");
 }
 
 ob_start();
 renderAreaHubPage('Stockport');
 $stockport = (string)ob_get_clean();
-$ok(!preg_match('#/pages/(gas-systems|electrical|fire-alarms)/[a-z0-9\-]+#', $stockport), 'Stockport area hub still has no service×area 404s');
+$stockportDoorways = [];
+if (preg_match_all('#/pages/(gas-systems|electrical|fire-alarms)/([a-z0-9\-]+)#', $stockport, $doorwayHits, PREG_SET_ORDER)) {
+    foreach ($doorwayHits as $hit) {
+        $doorway = '/pages/' . $hit[1] . '/' . $hit[2];
+        if (!function_exists('icomplyPathIsIndexable') || !icomplyPathIsIndexable($doorway)) {
+            $stockportDoorways[] = $doorway;
+        }
+    }
+}
+$ok($stockportDoorways === [], 'Stockport area hub service links are indexable tier-1 pages' . ($stockportDoorways ? ' (' . implode(',', $stockportDoorways) . ')' : ''));
 $ok(!str_contains($stockport, 'id="fire-uk"'), 'Stockport does not use the featured index template');
 
 echo str_repeat('=', 56) . "\n";

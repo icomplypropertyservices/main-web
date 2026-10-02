@@ -295,5 +295,19 @@
         "standards": "Control of Asbestos Regulations 2012 · duty to manage",
         "pricing": "POA",
         "hero_accent": "Surveyed, sampled if needed, POA."
+    },
+    "ev-chargers": {
+        "blurb": "Home, workplace and landlord EV charge points. Survey, BS 7671 Section 722 install, certification and load management. POA after we see the supply and the bay.",
+        "short": "EV charge points — survey, install, certify, POA",
+        "standards": "BS 7671 Section 722 · manufacturer instructions · DNO notice when required",
+        "pricing": "POA",
+        "hero_accent": "Surveyed, installed, certificated. POA."
+    },
+    "water-wras": {
+        "blurb": "Water fittings, WRAS-style backflow protection and drinking-water points for homes and light commercial sites. Notification support where the water undertaker requires it. POA after scope. Not a laboratory suite and not a Legionella sampling product.",
+        "short": "WRAS fittings, backflow and drinking water — POA",
+        "standards": "Water Supply (Water Fittings) Regulations 1999 · backflow and fluid categories · wholesome water",
+        "pricing": "POA",
+        "hero_accent": "Scoped fittings, notified where required, POA."
     }
 }
