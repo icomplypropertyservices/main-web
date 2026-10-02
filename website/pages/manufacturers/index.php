@@ -70,6 +70,23 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
+<?php if (function_exists('getManufacturerBySlug') && ($came = getManufacturerBySlug('came'))): ?>
+<section class="max-w-7xl mx-auto px-6 pt-12">
+    <div class="rounded-3xl border-2 border-[#ff6b00] bg-[#0B1F3A] text-white p-8 md:p-10 grid md:grid-cols-2 gap-8 items-center">
+        <div>
+            <p class="text-xs uppercase tracking-[3px] text-[#ffb27a] font-semibold">Barrier partner</p>
+            <h2 class="text-3xl font-semibold tracking-tight mt-2">Came</h2>
+            <p class="mt-3 text-white/80">CAME GARD is the rising-arm range we specify first for vehicle and parking barriers. The rest of the barrier manufacturers are listed under the barriers service. Coverage is UK-wide. Price on application. Phone <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
+            <div class="mt-6 flex flex-wrap gap-2">
+                <a class="px-4 py-2 rounded-full bg-[#ff6b00] font-semibold" href="<?= url('/pages/manufacturers/came.php') ?>">Came page</a>
+                <a class="px-4 py-2 rounded-full bg-white text-[#0B1F3A] font-semibold" href="<?= url('/pages/services/barriers.php') ?>">All barrier brands</a>
+            </div>
+        </div>
+        <img src="<?= htmlspecialchars(barrierCameHeroImage(), ENT_QUOTES, 'UTF-8') ?>" alt="CAME GARD barrier — Icomply partner range" class="w-full h-56 object-cover rounded-2xl" loading="lazy">
+    </div>
+</section>
+<?php endif; ?>
+
 <section class="max-w-7xl mx-auto px-6 py-16">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
         <div>

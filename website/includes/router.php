@@ -65,6 +65,40 @@ function routerTryFile(string $relPath): bool {
  * Virtual routes that do not need per-URL stub files.
  */
 function routerDispatchVirtual(string $path): bool {
+    // Trade shop hubs are static HTML. Prefer them over shop/index.php,
+    // which needs Shopify helpers and 500s when that file is unavailable.
+    if (preg_match('#^/shop(?:/(fire|electrical|security|gas))?$#', $path, $shopMatch)) {
+        $rel = '/shop' . (isset($shopMatch[1]) ? '/' . $shopMatch[1] : '') . '/index.html';
+        $html = SITE_ROOT . $rel;
+        if (is_file($html)) {
+            header('Content-Type: text/html; charset=utf-8');
+            readfile($html);
+            return true;
+        }
+    }
+
+    // Dead package handles and the retired group path (also in _redirects).
+    $packageHubs = [
+        '/products/aov-air-handling-package' => '/pages/services/aov-air-handling',
+        '/products/electrical-compliance-package' => '/pages/services/electrical',
+        '/products/emergency-lighting-package' => '/pages/services/emergency-lighting',
+        '/products/fire-alarm-service-package' => '/pages/services/fire-alarms',
+        '/products/nurse-call-systems-package' => '/pages/services/nurse-call',
+        '/products/gas-safety-package' => '/pages/services/gas-systems',
+        '/products/intruder-alarm-package' => '/pages/services/intruder-alarm',
+        '/products/cctv-systems-package' => '/pages/services/cctv',
+        '/products/access-control-package' => '/pages/services/access-control',
+        '/products/door-entry-package' => '/pages/services/door-entry',
+        '/products/intercoms-package' => '/pages/services/intercoms',
+        '/pages/products' => '/products',
+        '/group' => '/',
+    ];
+    if (isset($packageHubs[$path])) {
+        header('Location: ' . url($packageHubs[$path]), true, 301);
+        icomplyRequestExit();
+        return true;
+    }
+
     // Directory indexes (url() strips /index)
     // keywords-hub lives outside pages/keywords/** so it survives vercelignore of stubs.
     $indexes = [
@@ -86,9 +120,29 @@ function routerDispatchVirtual(string $path): bool {
         return false;
     }
 
+    if (!function_exists('icomplyDispatchTownPath')) {
+        require_once __DIR__ . '/town-service-pages.php';
+    }
+    if (icomplyDispatchTownPath($path)) {
+        return true;
+    }
+
     // Resource guides: /pages/resources/{slug} → pages/resources/{slug}.php
     if (preg_match('#^/pages/resources/([a-z0-9\-]+)$#', $path, $m) && $m[1] !== 'index') {
         return routerTryFile('/pages/resources/' . $m[1]);
+    }
+
+    // Nationwide AOV town pages (not the North West service×area matrix).
+    if ($path === '/pages/aov') {
+        require_once SITE_ROOT . '/includes/aov.php';
+        require_once SITE_ROOT . '/includes/aov-place.php';
+        aovRenderDirectory();
+        return true;
+    }
+    if (preg_match('#^/pages/aov/([a-z0-9\-]+)$#', $path, $m)) {
+        require_once SITE_ROOT . '/includes/aov.php';
+        aovRenderTown($m[1]);
+        return true;
     }
 
     // /pages/keywords/{kw}/{area}
@@ -104,6 +158,17 @@ function routerDispatchVirtual(string $path): bool {
     // /pages/services/{slug}
     if (preg_match('#^/pages/services/([a-z0-9\-]+)$#', $path, $m)) {
         renderServiceHubPage($m[1]);
+        return true;
+    }
+    // /pages/barriers/{town} — census places only. Unknown slugs 404.
+    if (preg_match('#^/pages/barriers/([a-z0-9\-]+)$#', $path, $m)) {
+        require_once SITE_ROOT . '/includes/barriers.php';
+        renderBarriersPlacePage($m[1]);
+        return true;
+    }
+    // /pages/manufacturers/{slug}/{area}
+    if (preg_match('#^/pages/manufacturers/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        renderManufacturerAreaPage($m[1], $m[2]);
         return true;
     }
     // /pages/manufacturers/{slug}
@@ -132,7 +197,7 @@ function routerDispatchVirtual(string $path): bool {
     if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         $serviceSlug = $m[1];
         $areaSlugVal = $m[2];
-        $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources'];
+        $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages', 'jobs'];
         if (in_array($serviceSlug, $reserved, true)) {
             return false;
         }
@@ -140,16 +205,16 @@ function routerDispatchVirtual(string $path): bool {
         if (!isset($services[$serviceSlug])) {
             return false;
         }
+        $allowed = function_exists('getAreasForService') ? getAreasForService($serviceSlug) : getAreas();
         $area = null;
-        foreach (getAreas() as $a) {
-            if (areaSlug($a) === $areaSlugVal) {
-                $area = $a;
+        foreach ($allowed as $a) {
+            if (areaSlug((string)$a) === $areaSlugVal) {
+                $area = (string)$a;
                 break;
             }
         }
         if ($area === null) {
-            // allow loose slug
-            $area = areaFromSlug($areaSlugVal) ?? keywordDisplayName($areaSlugVal);
+            return false;
         }
         renderServiceAreaPage($serviceSlug, $area);
         return true;
@@ -157,7 +222,7 @@ function routerDispatchVirtual(string $path): bool {
     // /pages/{service-slug} → canonical /pages/services/{slug}
     if (preg_match('#^/pages/([a-z0-9\-]+)$#', $path, $m)) {
         $slug = $m[1];
-        $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources'];
+        $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages', 'jobs'];
         if (!in_array($slug, $reserved, true) && isset(getServices()[$slug])) {
             header('Location: ' . url('/pages/services/' . $slug), true, 301);
             icomplyRequestExit();
@@ -200,6 +265,8 @@ function routerHandleRequest(): void {
         '/cookie-policy' => '/privacy',
         '/blog' => '/pages/resources',
         '/news' => '/pages/resources',
+        '/pages/keywords/tunstall-nurse-call' => '/pages/nurse-call-systems',
+        '/pages/manufacturers/tunstall' => '/pages/nurse-call-systems',
     ];
     if (isset($legacyAliases[$path])) {
         header('Location: ' . url($legacyAliases[$path]), true, 301);

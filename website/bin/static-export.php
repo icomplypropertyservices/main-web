@@ -36,9 +36,9 @@ if (PHP_SAPI !== 'cli') {
     exit(1);
 }
 
-$options = getopt('', ['full', 'out::', 'help', 'keyword-towns::']);
+$options = getopt('', ['full', 'out::', 'help', 'keyword-towns::', 'print-redirects']);
 if (isset($options['help'])) {
-    echo "Usage: php website/bin/static-export.php [--full] [--keyword-towns=priority|popular|all|none] [--out=dist]\n";
+    echo "Usage: php website/bin/static-export.php [--full] [--keyword-towns=priority|popular|all|none] [--out=dist] [--print-redirects]\n";
     exit(0);
 }
 
@@ -78,7 +78,11 @@ $_SERVER['SERVER_PORT'] = '443';
 $_SERVER['REQUEST_SCHEME'] = 'https';
 
 require_once $websiteRoot . '/config.php';
+require_once $websiteRoot . '/includes/manufacturer-hub.php';
 require_once $websiteRoot . '/includes/router.php';
+if (function_exists('manufacturerWriteLineLogos')) {
+    manufacturerWriteLineLogos();
+}
 require_once $websiteRoot . '/includes/matrix-page.php';
 require_once $websiteRoot . '/bin/build-shop-hubs.php';
 
@@ -87,6 +91,78 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 }
 if (empty($_SESSION['csrf'])) {
     $_SESSION['csrf'] = bin2hex(random_bytes(16));
+}
+
+if (isset($options['print-redirects'])) {
+    $txt = icomplyPrettyUrlRedirects();
+    $needles = [
+        '/pages/keywords/:slug/:town',
+        '/pages/electrical/:town',
+        '/pages/fire-alarms/:town',
+        '/pages/gas-systems/:town',
+        '/pages/nurse-call/:town',
+        '/pages/emergency-lighting/:town',
+        '/products/aov-air-handling-package',
+        '/products/intruder-alarm-package',
+        '/manifest.webmanifest',
+        '/manifest.json',
+        '/group',
+        '/pages/products',
+        '/shop/fire/index.html',
+    ];
+    foreach ($needles as $n) {
+        if (!str_contains($txt, $n)) {
+            fwrite(STDERR, "redirects missing {$n}\n");
+            exit(1);
+        }
+    }
+    if (preg_match('#^/shop\\s+/pages/packages#m', $txt) || preg_match('#^/products\\s+/pages/packages#m', $txt)) {
+        fwrite(STDERR, "redirects still send /shop or /products to /pages/packages\n");
+        exit(1);
+    }
+    // AOV / Barriers town exports are .php siblings. A 301 (even without !)
+    // matches before the splat and would hide /pages/aov/{town}.php.
+    $protected = [
+        '/pages/aov/:town',
+        '/pages/aov/:town/',
+        '/pages/barriers/:town',
+        '/pages/barriers/:town/',
+        '/pages/aov-air-handling/:town',
+        '/pages/aov-air-handling/:town/',
+        '/pages/services/aov/:town',
+        '/pages/services/aov/:town/',
+        '/pages/services/aov-air-handling/:town',
+        '/pages/services/aov-air-handling/:town/',
+        '/pages/services/barriers/:town',
+        '/pages/services/barriers/:town/',
+    ];
+    $seen = [];
+    foreach (preg_split("/\\r?\\n/", $txt) as $line) {
+        if ($line === '' || str_starts_with($line, '#')) {
+            continue;
+        }
+        $parts = preg_split('/\\s+/', trim($line));
+        if (count($parts) < 3) {
+            continue;
+        }
+        [$from, $to, $status] = [$parts[0], $parts[1], $parts[2]];
+        if (!in_array($from, $protected, true)) {
+            continue;
+        }
+        $seen[$from] = true;
+        if ($status !== '200' || !str_ends_with($to, '.php')) {
+            fwrite(STDERR, "AOV/Barriers town rule must be an unforced 200 to the exported .php file: {$line}\n");
+            exit(1);
+        }
+    }
+    foreach ($protected as $from) {
+        if (!isset($seen[$from])) {
+            fwrite(STDERR, "missing unforced 200 for {$from}\n");
+            exit(1);
+        }
+    }
+    echo $txt;
+    exit(0);
 }
 
 $log = static function (string $msg): void {
@@ -207,7 +283,7 @@ function icomplyPopularTownNames(): array
 {
     $areas = function_exists('getAreas') ? getAreas() : [];
     $popular = [
-        'Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale',
+        'Manchester', 'Burnley', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale',
         'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool',
     ];
     return array_values(array_filter(
@@ -251,8 +327,13 @@ function icomplyCollectKeywordRoutes(string $townMode): array
         }
     }
 
+    $keywordMeta = function_exists('getMajorKeywords') ? getMajorKeywords() : [];
     foreach ($keywords as $kw) {
         $slug = keywordSlug($kw);
+        $kwService = $keywordMeta[$slug]['service'] ?? '';
+        if ($kwService === 'barriers' || $kwService === 'aov-air-handling') {
+            continue;
+        }
         $fullTowns = $townMode === 'all'
             || isset($familyKw[$slug])
             || ($townMode === 'priority' && isset($priorityKw[$slug]));
@@ -336,18 +417,71 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
     foreach (getAreas() as $area) {
         $routes[] = '/pages/areas/' . areaSlug((string)$area);
     }
-    foreach (array_keys(getManufacturerCatalog()) as $slug) {
+    foreach (getManufacturerCatalog() as $slug => $entry) {
         $routes[] = '/pages/manufacturers/' . $slug;
+        if (is_array($entry) && function_exists('manufacturerAreasFor')) {
+            foreach (manufacturerAreasFor($entry) as $area) {
+                $routes[] = '/pages/manufacturers/' . $slug . '/' . areaSlug((string)$area);
+            }
+        }
     }
 
     foreach (icomplyCollectKeywordRoutes($keywordTowns) as $path) {
         $routes[] = $path;
     }
 
+    if (function_exists('acnRoutes')) {
+        foreach (acnRoutes() as $path) {
+            $routes[] = $path;
+        }
+    }
+
     // Jack: every service has every area landing (not only --full).
+    // AOV and barriers use their own town lists, not the North West matrix.
     foreach (array_keys(getServices()) as $sSlug) {
+        if ($sSlug === 'barriers' || $sSlug === 'aov-air-handling') {
+            continue;
+        }
         foreach (getAreas() as $area) {
             $routes[] = '/pages/' . $sSlug . '/' . areaSlug((string)$area);
+        }
+    }
+    $barriersInc = SITE_ROOT . '/includes/barriers.php';
+    if (is_file($barriersInc)) {
+        require_once $barriersInc;
+        if (function_exists('barriersPlaces')) {
+            foreach (barriersPlaces() as $place) {
+                $slug = (string)($place['slug'] ?? '');
+                if ($slug !== '') {
+                    $routes[] = '/pages/barriers/' . $slug;
+                }
+            }
+        }
+    }
+
+    if (!function_exists('icomplyUkTownRoutes')) {
+        require_once SITE_ROOT . '/includes/uk-towns.php';
+    }
+    foreach (icomplyUkTownRoutes() as $townPath) {
+        $routes[] = $townPath;
+    }
+    require_once SITE_ROOT . '/includes/aov-place.php';
+    $routes[] = '/pages/aov';
+    foreach (array_keys(aovPlaces()) as $slug) {
+        $routes[] = '/pages/aov/' . $slug;
+    }
+
+    // FRA only: every UK mainland town, including places outside the North West list.
+    if (function_exists('getMainlandAreaRecords')) {
+        foreach (getMainlandAreaRecords() as $row) {
+            $routes[] = '/pages/fire-risk-assessments/' . $row['slug'];
+        }
+    }
+
+    // Manufacturer × every area is routed now. --full adds the matrix to the export.
+    if ($full && function_exists('manufacturerAreaRoutes')) {
+        foreach (manufacturerAreaRoutes() as $path) {
+            $routes[] = $path;
         }
     }
 
@@ -361,7 +495,14 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
  */
 function icomplyRenderExportRoute(string $path): array
 {
+    if (preg_match('#^/pages/barriers/([a-z0-9\-]+)$#', $path)) {
+        return icomplyRenderRoute($path);
+    }
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        $kwMeta = function_exists('getMajorKeywords') ? (getMajorKeywords()[function_exists('keywordSlug') ? keywordSlug($m[1]) : $m[1]] ?? null) : null;
+        if (is_array($kwMeta) && ($kwMeta['service'] ?? '') === 'barriers') {
+            return icomplyRenderRoute($path);
+        }
         $area = function_exists('areaFromSlug') ? areaFromSlug($m[2]) : $m[2];
         $html = icomplyRenderKeywordTownHtml($m[1], (string)($area ?: $m[2]));
         if ($html !== '' && icomplyLooksLikeHtml($html)) {
@@ -369,6 +510,7 @@ function icomplyRenderExportRoute(string $path): array
         }
     }
     if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)
+        && $m[1] !== 'barriers'
         && function_exists('getServices')
         && isset(getServices()[$m[1]])) {
         $area = function_exists('areaFromSlug') ? areaFromSlug($m[2]) : $m[2];
@@ -557,7 +699,7 @@ function icomplyWriteDistHeaders(string $dist): void
 
 function icomplyPrettyUrlRedirects(): string
 {
-    return <<<'TXT'
+    $base = <<<'TXT'
 # Generated by website/bin/static-export.php — do not publish raw website/.
 # Existing files win (no force) so /assets/* is never rewritten.
 
@@ -584,6 +726,8 @@ function icomplyPrettyUrlRedirects(): string
 /commercial/             /pages/commercial 301
 /care-homes              /pages/care-homes 301
 /care-homes/             /pages/care-homes 301
+/access-control-systems  /pages/access-control-systems 301
+/access-control-systems/ /pages/access-control-systems 301
 
 # Legacy legal aliases
 /privacy-policy          /privacy    301
@@ -601,6 +745,30 @@ function icomplyPrettyUrlRedirects(): string
 /news                    /pages/resources 301
 /news/                   /pages/resources 301
 
+# Retired group host paths
+/group                   /            301
+/group/                  /            301
+/group/*                 /            301
+
+# Dead Shopify package handles → the live service hub (before /products rules)
+/products/aov-air-handling-package       /pages/services/aov-air-handling     301
+/products/electrical-compliance-package  /pages/services/electrical           301
+/products/emergency-lighting-package     /pages/services/emergency-lighting   301
+/products/fire-alarm-service-package     /pages/services/fire-alarms          301
+/products/nurse-call-systems-package     /pages/services/nurse-call           301
+/products/gas-safety-package             /pages/services/gas-systems          301
+/products/intruder-alarm-package         /pages/services/intruder-alarm       301
+/products/cctv-systems-package           /pages/services/cctv                 301
+/products/access-control-package         /pages/services/access-control       301
+/products/door-entry-package             /pages/services/door-entry           301
+/products/intercoms-package              /pages/services/intercoms            301
+
+# Catalogue PDPs (before the products hub rewrite)
+/products/product/*      /products/product.php?handle=:splat   200
+/shop/products/*         /shop/products.php?handle=:splat      200
+/products/sitemap.xml    /products/sitemap.php                 200
+/shop/sitemap.xml        /shop/sitemap.php                     200
+
 # Shop / products — trade hubs (never 301 to packages)
 /shop                    /shop/index.html              200!
 /shop/                   /shop/index.html              200!
@@ -614,11 +782,14 @@ function icomplyPrettyUrlRedirects(): string
 /shop/gas/               /shop/gas/index.html          200!
 /products                /products.php                 200!
 /products/               /products.php                 200!
+/pages/products          /products                     301
+/pages/products/         /products                     301
 
-# PWA manifest aliases (Ellie live 404 on /manifest.webmanifest)
-/manifest.webmanifest    /manifest.webmanifest    200!
-/site.webmanifest        /site.webmanifest        200!
-/manifest.json           /manifest.json           200!
+# PWA manifests. Non-force: a real file wins. Missing .webmanifest
+# (live 404) falls through to manifest.json, which is published.
+/manifest.webmanifest    /manifest.json               200
+/site.webmanifest        /manifest.json               200
+/manifest.json           /manifest.json               200!
 
 # Brand CSS must never be splat-rewritten to .php
 /assets/css/site.css     /assets/css/site.css     200!
@@ -655,14 +826,127 @@ function icomplyPrettyUrlRedirects(): string
 /pages/keywords          /pages/keywords.php          200!
 /pages/keywords/         /pages/keywords.php          200!
 
+__MATRIX_REDIRECTS__
 # Keyword hubs have child town files (pages/keywords/{slug}/*.php).
 # force so /pages/keywords/eicr does not 301 to /pages/keywords/eicr/.
 /pages/keywords/:slug    /pages/keywords/:slug.php    200!
 /pages/keywords/:slug/   /pages/keywords/:slug.php    200!
 
+# Barrier town pages are files under /pages/barriers/. Force the hub redirect
+# and the town pretty URL so a directory does not 301 the leaf.
+/pages/barriers          /pages/services/barriers.php  301
+/pages/barriers/         /pages/services/barriers.php  301
+/pages/barriers/:slug    /pages/barriers/:slug.php     200!
+/pages/barriers/:slug/   /pages/barriers/:slug.php     200!
+
+# /pages/aov/{town}.php makes /pages/aov a directory. Force the directory index.
+/pages/aov               /pages/aov.php               200!
+/pages/aov/              /pages/aov.php               200!
+
+TXT;
+    $txt = str_replace("__MATRIX_REDIRECTS__\n", icomplyUnpublishedMatrixRedirects(), $base);
+    return rtrim($txt, "\r\n") . "\n" . icomplyAovLegacyRedirectLines() . <<<'TXT'
+
 # Splat pretty URLs. No force — /assets and real files win.
 /*                       /:splat.php                  200
 TXT;
+}
+
+/**
+ * True for AOV and Barriers town exports. Those pages are real files
+ * (towns with population over 10k), stored as /pages/.../{town}.php.
+ * They must never be 301'd. A non-force 301 still wins over a .php sibling
+ * because Netlify only skips an unforced rule when a file exists at the
+ * request path itself.
+ */
+function icomplyTownExportMustNotRedirect(string $slug): bool
+{
+    return $slug === 'aov'
+        || $slug === 'barriers'
+        || str_starts_with($slug, 'aov-')
+        || str_starts_with($slug, 'barriers');
+}
+
+/**
+ * Keyword×town and service×town URLs are linked from hubs but are not in the
+ * published file set (live 404). Send them to the hub that does exist.
+ * AOV and Barriers town paths are excluded and rewritten 200 to their .php file.
+ */
+function icomplyUnpublishedMatrixRedirects(): string
+{
+    $lines = [
+        '# AOV and Barriers × town (pop > 10k) are real exports. Never 301 them.',
+        '# 200 with no ! serves /pages/aov/{town}.php, /pages/barriers/{town}.php,',
+        '# /pages/services/aov/{town}.php and /pages/services/aov-air-handling/{town}.php.',
+        '# An exported file at the request path still wins. A 301 is not used.',
+        '/pages/aov/:town                              /pages/aov/:town.php                              200',
+        '/pages/aov/:town/                             /pages/aov/:town.php                              200',
+        '/pages/barriers/:town                         /pages/barriers/:town.php                         200',
+        '/pages/barriers/:town/                        /pages/barriers/:town.php                         200',
+        '/pages/aov-air-handling/:town                 /pages/aov-air-handling/:town.php                 200',
+        '/pages/aov-air-handling/:town/                /pages/aov-air-handling/:town.php                 200',
+        '/pages/services/aov/:town                     /pages/services/aov/:town.php                     200',
+        '/pages/services/aov/:town/                    /pages/services/aov/:town.php                     200',
+        '/pages/services/aov-air-handling/:town        /pages/services/aov-air-handling/:town.php        200',
+        '/pages/services/aov-air-handling/:town/       /pages/services/aov-air-handling/:town.php        200',
+        '/pages/services/barriers/:town                /pages/services/barriers/:town.php                200',
+        '/pages/services/barriers/:town/               /pages/services/barriers/:town.php                200',
+        '',
+        '# Unpublished matrix URLs (linked from nav/hubs, 404 on the static site).',
+        '# Keyword×town → that keyword hub. Service×town → that service hub.',
+        '# aov, barriers, and aov-* / barriers* slugs are not in this list.',
+        '/pages/keywords/:slug/:town     /pages/keywords/:slug    301',
+        '/pages/keywords/:slug/:town/    /pages/keywords/:slug    301',
+        '',
+    ];
+    $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages'];
+    foreach (array_keys(getServices()) as $slug) {
+        $slug = (string)$slug;
+        if (!preg_match('/^[a-z0-9\-]+$/', $slug) || in_array($slug, $reserved, true)) {
+            continue;
+        }
+        if (icomplyTownExportMustNotRedirect($slug)) {
+            continue;
+        }
+        $lines[] = "/pages/{$slug}/:town     /pages/services/{$slug}    301";
+        $lines[] = "/pages/{$slug}/:town/    /pages/services/{$slug}    301";
+    }
+    $lines[] = '';
+    return implode("\n", $lines);
+}
+
+function icomplyAovLegacyRedirectLines(): string
+{
+    $lines = [
+        '# AOV doorway URLs: old service×town and keyword×town',
+    ];
+    if (!function_exists('aovPlaces')) {
+        require_once SITE_ROOT . '/includes/aov-place.php';
+    }
+    $places = aovPlaces();
+    if (function_exists('getAreas') && function_exists('areaSlug')) {
+        foreach (getAreas() as $area) {
+            $slug = areaSlug((string)$area);
+            $dest = isset($places[$slug])
+                ? '/pages/aov/' . $slug
+                : '/pages/services/aov-air-handling';
+            $lines[] = '/pages/aov-air-handling/' . $slug . '   ' . $dest . '  301';
+            $lines[] = '/pages/aov-air-handling/' . $slug . '/  ' . $dest . '  301';
+        }
+    }
+    if (function_exists('getMajorKeywords') && function_exists('keywordSlug')) {
+        foreach (getMajorKeywords() as $slug => $meta) {
+            if (($meta['service'] ?? '') !== 'aov-air-handling') {
+                continue;
+            }
+            $slug = keywordSlug((string)$slug);
+            if ($slug === '') {
+                continue;
+            }
+            $lines[] = '/pages/keywords/' . $slug . '/*  /pages/keywords/' . $slug . '  301';
+        }
+    }
+    return implode("\n", $lines) . "\n";
 }
 
 function icomplyPrettyUrlHeaders(): string
@@ -670,6 +954,12 @@ function icomplyPrettyUrlHeaders(): string
     return <<<'TXT'
 # Pre-rendered HTML is stored with a .php filename so splat rewrites work.
 # Headers match the *request* path (pretty URL), not only the .php destination.
+#
+# Powered by Netlify is injected at the edge as /.netlify/scripts/hud.
+# script-src allows inline scripts and /assets/ only — no 'self' — so that
+# HUD script cannot run even if the Netlify UI badge toggle is on.
+/*
+  Content-Security-Policy: script-src 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.google.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://icomplypropertyservices.co.uk/assets/ https://www.icomplypropertyservices.co.uk/assets/ https://*.netlify.app/assets/
 /*.php
   Content-Type: text/html; charset=utf-8
   X-Content-Type-Options: nosniff

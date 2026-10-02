@@ -158,14 +158,18 @@ function icomplyMatrixChromeStart(string $title, string $desc, string $canonical
         . '</nav></div></header>';
 }
 
-function icomplyMatrixChromeEnd(): string
+function icomplyMatrixChromeEnd(string $footNote = ''): string
 {
     $s = icomplyMatrixShared();
     $popup = icomplyMatrixLeadPopupHtml();
+    $note = $footNote !== ''
+        ? '<p>' . icomplyMatrixH($footNote) . '</p>'
+        : '';
     return '<footer class="bg-[#0B1F3A] text-white mt-12">'
         . '<div class="matrix-wrap py-10 text-sm text-white/80 space-y-2">'
         . '<div class="font-semibold text-white">' . icomplyMatrixH($s['brand']) . '</div>'
         . '<p>Stockport SK2 5DE · Greater Manchester and the North West.</p>'
+        . $note
         . '<div class="flex flex-wrap gap-4">'
         . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH($s['svcHub']) . '">All services</a>'
         . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH($s['areasHub']) . '">All areas</a>'
@@ -177,11 +181,13 @@ function icomplyMatrixChromeEnd(): string
         . '</div></footer>' . $popup . '</body></html>';
 }
 
-function icomplyMatrixAreaChips(string $hrefPrefix): string
+function icomplyMatrixAreaChips(string $hrefPrefix, ?array $areas = null): string
 {
-    $s = icomplyMatrixShared();
+    if ($areas === null) {
+        $areas = icomplyMatrixShared()['areas'];
+    }
     $html = '<div class="chip-cloud">';
-    foreach ($s['areas'] as $a) {
+    foreach ($areas as $a) {
         $href = $hrefPrefix . $a['slug'];
         $html .= '<a class="area-chip" href="' . icomplyMatrixH($href) . '">' . icomplyMatrixH($a['name']) . '</a>';
     }
@@ -294,6 +300,10 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         return '';
     }
     $svcName = $s['services'][$serviceSlug];
+    $allowed = function_exists('getAreasForService') ? getAreasForService($serviceSlug) : getAreas();
+    if (!in_array($areaName, $allowed, true)) {
+        return '';
+    }
     $areaSlugVal = areaSlug($areaName);
     $poa = function_exists('isPoaService') && isPoaService($serviceSlug);
     $priceLine = $poa
@@ -313,10 +323,22 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     $title = $svcName . ' in ' . $areaName . ' | ' . $s['brand'];
     $desc = $svcName . ' in ' . $areaName . '. ' . $priceLine;
     $canonical = url('/pages/' . $serviceSlug . '/' . $areaSlugVal);
+    $ownsMainland = function_exists('serviceOwnsMainlandAreas') && serviceOwnsMainlandAreas($serviceSlug);
+    $coverageLabel = $ownsMainland ? 'UK mainland' : 'North West';
+    $areaPairs = $s['areas'];
+    if ($ownsMainland && function_exists('getMainlandAreas')) {
+        $areaPairs = [];
+        foreach (getMainlandAreas() as $area) {
+            $areaPairs[] = ['name' => (string)$area, 'slug' => areaSlug((string)$area)];
+        }
+    }
+    $townHub = in_array($areaName, getAreas(), true)
+        ? url('/pages/areas/' . $areaSlugVal)
+        : $canonical;
 
     $html = icomplyMatrixChromeStart($title, $desc, $canonical);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
-        . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($areaName) . ' · North West</p>'
+        . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($areaName) . ' · ' . icomplyMatrixH($coverageLabel) . '</p>'
         . '<h1>' . icomplyMatrixH($svcName) . ' <span class="accent">in ' . icomplyMatrixH($areaName) . '</span></h1>'
         . '<p class="mt-4 text-white/80 max-w-2xl">' . icomplyMatrixH($intro) . '</p>'
         . '<div class="mt-6 flex flex-wrap gap-3">'
@@ -333,18 +355,24 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         . '<p class="text-sm">Service hub: <a class="text-[#ff6b00] font-semibold" href="'
         . icomplyMatrixH(url('/pages/services/' . $serviceSlug)) . '">' . icomplyMatrixH($svcName) . '</a>'
         . ' · Town: <a class="text-[#ff6b00] font-semibold" href="'
-        . icomplyMatrixH(url('/pages/areas/' . $areaSlugVal)) . '">' . icomplyMatrixH($areaName) . '</a></p>'
+        . icomplyMatrixH($townHub) . '">' . icomplyMatrixH($areaName) . '</a></p>'
+        . ($ownsMainland
+            ? '<p class="text-zinc-700 leading-relaxed">Fire protection on this page is UK mainland only: England, Wales and mainland Scotland. Northern Ireland, the Scottish Highlands and Islands, the Isle of Man and the Channel Islands are not listed.</p>'
+            : '')
         . '</article>';
 
     $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($svcName) . ' in every area</h2>'
-        . '<p class="text-sm text-zinc-600 mb-4">' . count($s['areas']) . ' towns.</p>'
-        . icomplyMatrixAreaChips(url('/pages/' . $serviceSlug . '/'))
+        . '<p class="text-sm text-zinc-600 mb-4">' . count($areaPairs) . ' towns.</p>'
+        . icomplyMatrixAreaChips(url('/pages/' . $serviceSlug . '/'), $areaPairs)
         . '</section>';
 
     $html .= '<section><h2 class="text-2xl font-semibold mb-3">All keywords for this service</h2>'
         . icomplyMatrixKeywordChips($serviceSlug)
         . '</section></main>';
 
-    $html .= icomplyMatrixChromeEnd();
+    $foot = $ownsMainland
+        ? 'Fire alarms: UK mainland (England, Wales and mainland Scotland), scheduled from Stockport.'
+        : '';
+    $html .= icomplyMatrixChromeEnd($foot);
     return $html;
 }

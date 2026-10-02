@@ -33,8 +33,9 @@
     },
     "security-care": {
         "label": "Security & Care Systems",
-        "blurb": "CCTV, access, door entry, intercoms, nurse call and intruder alarms.",
+        "blurb": "Barriers, CCTV, access, door entry, intercoms, nurse call and intruder alarms. Vehicle barriers are UK-wide.",
         "services": [
+            "barriers",
             "cctv",
             "access-control",
             "door-entry",

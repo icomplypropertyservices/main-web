@@ -21,10 +21,11 @@ $fail = 0;
 $pass = 0;
 
 $needHtml = [
-    '/' => ['index.html', ['Icomply', '<!DOCTYPE', 'mega-header', 'foot-drop', 'Keyword × town']],
+    '/' => ['index.html', ['iComply', '<!DOCTYPE', 'mega-header', 'foot-drop', 'Keyword × town']],
     '/privacy' => ['privacy.php', ['Privacy', '<!DOCTYPE']],
     '/terms' => ['terms.php', ['Terms', '<!DOCTYPE']],
     '/contact' => ['contact.php', ['Contact', 'page-hero', '#0B1F3A', '<!DOCTYPE']],
+    '/become-a-subcontractor' => ['become-a-subcontractor.php', ['Are you a highly skilled tradesperson', 'subcontractor-onboarding', 'WebPage', 'iComply Property Services', '<!DOCTYPE']],
     '/pages/about' => ['pages/about.php', ['About', '<!DOCTYPE']],
     '/pages/areas' => ['pages/areas.php', ['Areas', '<!DOCTYPE']],
     '/pages/manufacturers' => ['pages/manufacturers.php', ['Manufacturer', '<!DOCTYPE']],
@@ -47,8 +48,6 @@ $needHtml = [
     '/pages/keywords/asbestos-survey' => ['pages/keywords/asbestos-survey.php', ['Asbestos', '<!DOCTYPE']],
     '/pages/keywords/legionella-risk-assessment/stockport' => ['pages/keywords/legionella-risk-assessment/stockport.php', ['Legionella', 'Stockport', '<!DOCTYPE']],
     '/pages/keywords/asbestos-survey/manchester' => ['pages/keywords/asbestos-survey/manchester.php', ['Asbestos', 'Manchester', '<!DOCTYPE']],
-    '/pages/legionella-risk-assessment/stockport' => ['pages/legionella-risk-assessment/stockport.php', ['Legionella', 'Stockport', '<!DOCTYPE']],
-    '/pages/asbestos-survey/manchester' => ['pages/asbestos-survey/manchester.php', ['Asbestos', 'Manchester', '<!DOCTYPE']],
     '/shop' => ['shop/index.html', ['Fire', 'Electrical', 'Security', 'Gas', 'shop.icomplypropertyservices.co.uk', '<!DOCTYPE']],
     '/shop/fire' => ['shop/fire/index.html', ['Fire', '<!DOCTYPE']],
     '/shop/electrical' => ['shop/electrical/index.html', ['Electrical', '<!DOCTYPE']],
@@ -65,7 +64,7 @@ $needHtml = [
     '/pages/keywords/price-of-rewire' => ['pages/keywords/price-of-rewire.php', ['POA', '<!DOCTYPE']],
 ];
 
-echo "Icomply static-export check  dist={$dist}\n";
+echo "iComply static-export check  dist={$dist}\n";
 echo str_repeat('=', 56) . "\n";
 
 if (!is_dir($dist)) {
@@ -103,6 +102,23 @@ foreach ($needHtml as $url => $spec) {
     }
 }
 
+$subPage = is_file($dist . '/become-a-subcontractor.php') ? (string)file_get_contents($dist . '/become-a-subcontractor.php') : '';
+$subReg = is_file($dist . '/subcontractor-onboarding-form.html') ? (string)file_get_contents($dist . '/subcontractor-onboarding-form.html') : '';
+$subFields = ['name="subcontractor-onboarding"', 'name="form-name"', 'name="business_type"', 'value="company"', 'value="sole_trader"', 'name="company_name"', 'name="trades"', 'name="qualifications"', 'name="insured"', 'name="insurance_expiry"', 'name="coverage_postcodes"', 'name="travel_radius"', 'name="phone"', 'name="email"', 'name="availability"', 'name="documents"', 'name="gdpr_consent"', 'netlify-honeypot="bot-field"', 'enctype="multipart/form-data"', 'action="/thank-you"', 'data-netlify="true"'];
+$subOk = $subPage !== '' && $subReg !== '' && !str_contains($subPage, 'JobPosting') && !str_contains($subReg, 'JobPosting');
+foreach ($subFields as $field) {
+    if (!str_contains($subPage, $field) || !str_contains($subReg, $field)) {
+        $subOk = false;
+        echo "[FAIL] subcontractor form missing {$field}\n";
+    }
+}
+if ($subOk) {
+    $pass++;
+    echo "[PASS] subcontractor form fields match the Netlify HTML registration file\n";
+} else {
+    $fail++;
+}
+
 $mustExist = [
     'assets',
     'assets/css/site.css',
@@ -123,6 +139,7 @@ $mustExist = [
     'robots.txt',
     'sitemap.xml',
     'favicon.ico',
+    'subcontractor-onboarding-form.html',
     '_redirects',
     '_headers',
     '404.html',
@@ -197,6 +214,13 @@ if (str_contains($homeHtml, '#0B1F3A') && str_contains($homeHtml, 'href="/manife
 } else {
     $fail++;
     echo "[FAIL] homepage missing #0B1F3A or /manifest.webmanifest\n";
+}
+if (str_contains($homeHtml, 'href="/become-a-subcontractor"') && str_contains($homeHtml, 'Work with us')) {
+    $pass++;
+    echo "[PASS] homepage links Work with us to /become-a-subcontractor\n";
+} else {
+    $fail++;
+    echo "[FAIL] homepage must link Work with us to /become-a-subcontractor\n";
 }
 
 $mustNotExist = [
@@ -290,7 +314,7 @@ foreach (['rewire', 'domestic-rewire', 'emergency-electrician', 'boiler'] as $ne
     }
 }
 
-$redirectNeedles = ['/*', '/:splat.php', '/privacy', '/pages/about', '/assets/', '/pages/keywords', '/pages/keywords/:slug', '/shop/index.html', '/shop/fire/index.html', '/products.php'];
+$redirectNeedles = ['/*', '/:splat.php', '/privacy', '/pages/about', '/assets/', '/pages/keywords', '/pages/keywords/:slug', '/shop/index.html', '/shop/fire/index.html', '/products.php', '/become-a-subcontractor'];
 foreach ($redirectNeedles as $n) {
     if (!str_contains($redirects, $n)) {
         $fail++;
@@ -307,13 +331,103 @@ if (preg_match('#^/shop\\s+/pages/packages#m', $redirects)) {
     $pass++;
     echo "[PASS] _redirects does not send /shop to packages\n";
 }
-$sitemapDist = is_file($dist . '/sitemap.xml') ? (string)file_get_contents($dist . '/sitemap.xml') : '';
-if (preg_match('#/pages/gas-systems/[a-z0-9\-]+</loc>#', $sitemapDist) || preg_match('#/pages/electrical/[a-z0-9\-]+</loc>#', $sitemapDist)) {
+foreach ([
+    '/pages/keywords/eicr/:town',
+    '/pages/electrical/:town',
+    '/pages/asbestos-survey/:town',
+    '/pages/legionella-risk-assessment/:town',
+] as $from) {
+    if (preg_match('#^' . preg_quote($from, '#') . '\\s+\\S+\\s+301!#m', $redirects)) {
+        $fail++;
+        echo "[FAIL] matrix page still 301s {$from}\n";
+    } else {
+        $pass++;
+        echo "[PASS] {$from} is not a 301\n";
+    }
+}
+$svcAreaFiles = 0;
+$svcCount = function_exists('getServices') ? count(getServices()) : 0;
+foreach (array_keys(function_exists('getServices') ? getServices() : []) as $svcSlug) {
+    $dir = $dist . '/pages/' . $svcSlug;
+    if (!is_dir($dir)) {
+        continue;
+    }
+    foreach (glob($dir . '/*.php') ?: [] as $file) {
+        $svcAreaFiles++;
+    }
+}
+$svcAreaExpect = $svcCount * $areaCount;
+if ($svcAreaFiles >= (int)floor($svcAreaExpect * 0.98)) {
+    $pass++;
+    echo "[PASS] service×area exported={$svcAreaFiles} (expect ~{$svcAreaExpect})\n";
+} else {
     $fail++;
-    echo "[FAIL] dist/sitemap.xml still lists /pages/{service}/{town} 404s\n";
+    echo "[FAIL] service×area exported={$svcAreaFiles} (expect ~{$svcAreaExpect})\n";
+}
+if (preg_match('#^/\\*\\s+/\\s+301#m', $redirects) || preg_match('#^/\\s+/\\s+301#m', $redirects)) {
+    $fail++;
+    echo "[FAIL] _redirects soft-404s to the homepage\n";
 } else {
     $pass++;
-    echo "[PASS] dist/sitemap.xml has no service×area 404 locs\n";
+    echo "[PASS] _redirects has no homepage soft-404\n";
+}
+$sitemapDist = is_file($dist . '/sitemap.xml') ? (string)file_get_contents($dist . '/sitemap.xml') : '';
+$productsCanonical = 'https://icomplypropertyservices.co.uk/products';
+foreach ([
+    '/products' => 'products.php',
+    '/pages/products' => 'pages/products.php',
+] as $productsUrl => $productsRel) {
+    $productsBody = is_file($dist . '/' . $productsRel) ? (string)file_get_contents($dist . '/' . $productsRel) : '';
+    $productsCanon = $productsBody !== ''
+        && !str_contains($productsBody, '<?php')
+        && str_contains($productsBody, 'rel="canonical" href="' . $productsCanonical . '"');
+    if ($productsCanon) {
+        $pass++;
+        echo "[PASS] {$productsUrl} is HTML and canonical {$productsCanonical}\n";
+    } else {
+        $fail++;
+        echo "[FAIL] {$productsUrl} must be a direct HTML page with canonical {$productsCanonical}\n";
+    }
+}
+if (str_contains($sitemapDist, '/pages/products</loc>') || substr_count($sitemapDist, '/products</loc>') !== 1) {
+    $fail++;
+    echo "[FAIL] sitemap must list /products once and omit /pages/products\n";
+} else {
+    $pass++;
+    echo "[PASS] sitemap lists /products only\n";
+}
+$indexMode = function_exists('icomplyIndexMode') ? icomplyIndexMode() : 'tiered';
+if ($indexMode === 'tiered') {
+    $tierOk = str_contains($sitemapDist, '/pages/electrical/stockport</loc>')
+        && str_contains($sitemapDist, '/pages/electrical/trafford</loc>')
+        && !str_contains($sitemapDist, '/pages/keywords/eicr/stockport</loc>')
+        && !str_contains($sitemapDist, '/pages/electrical/preston</loc>');
+    $kwSample = is_file($dist . '/pages/keywords/eicr/stockport.php')
+        ? (string)file_get_contents($dist . '/pages/keywords/eicr/stockport.php')
+        : '';
+    $tierSample = is_file($dist . '/pages/electrical/stockport.php')
+        ? (string)file_get_contents($dist . '/pages/electrical/stockport.php')
+        : '';
+    $offSample = is_file($dist . '/pages/electrical/preston.php')
+        ? (string)file_get_contents($dist . '/pages/electrical/preston.php')
+        : '';
+    $robotsOk = str_contains($kwSample, 'noindex, follow')
+        && str_contains($offSample, 'noindex, follow')
+        && str_contains($tierSample, 'index, follow')
+        && !str_contains($tierSample, 'noindex');
+    if ($tierOk && $robotsOk) {
+        $pass++;
+        echo "[PASS] tiered sitemap lists Tier-1 service×area only; noindex pages stay out\n";
+    } else {
+        $fail++;
+        echo "[FAIL] tiered sitemap/robots mismatch (sitemap samples or noindex meta)\n";
+    }
+} elseif (str_contains($sitemapDist, '/pages/electrical/stockport</loc>') && str_contains($sitemapDist, '/pages/keywords/eicr/stockport</loc>')) {
+    $pass++;
+    echo "[PASS] dist/sitemap.xml lists service×area and keyword×area samples\n";
+} else {
+    $fail++;
+    echo "[FAIL] dist/sitemap.xml is missing service×area or keyword×area samples\n";
 }
 
 if (!str_contains($headerFile, 'text/html')) {
@@ -336,6 +450,81 @@ if (!str_contains($headerFile, '/shop/assets/*.css')) {
 } else {
     $pass++;
     echo "[PASS] _headers has /shop/assets/*.css\n";
+}
+
+/**
+ * Every HTML page canonical must be that page. /pages/products may point at /products.
+ */
+$canonBad = 0;
+$canonSeen = 0;
+$canonIter = new RecursiveIteratorIterator(
+    new RecursiveDirectoryIterator($dist, FilesystemIterator::SKIP_DOTS)
+);
+foreach ($canonIter as $canonFile) {
+    if (!$canonFile->isFile()) {
+        continue;
+    }
+    $ext = strtolower($canonFile->getExtension());
+    if (!in_array($ext, ['php', 'html', 'htm'], true)) {
+        continue;
+    }
+    $rel = str_replace('\\', '/', substr($canonFile->getPathname(), strlen($dist) + 1));
+    if (str_starts_with($rel, 'assets/')) {
+        continue;
+    }
+    $page = '/' . $rel;
+    if ($rel === 'index.html' || $rel === 'index.php') {
+        $page = '/';
+    } elseif (str_ends_with($rel, '/index.html') || str_ends_with($rel, '/index.php')) {
+        $page = '/' . substr($rel, 0, (int)strrpos($rel, '/index.'));
+        if (str_starts_with($page, '/shop') && !str_ends_with($page, '/')) {
+            $page .= '/';
+        }
+    } elseif ($rel === '404.html') {
+        $page = '/404';
+    } elseif (str_ends_with($rel, '.php')) {
+        $page = '/' . substr($rel, 0, -4);
+    }
+    $head = (string)file_get_contents($canonFile->getPathname(), false, null, 0, 12000);
+    if (!preg_match('/<link[^>]+rel=["\']canonical["\'][^>]*>/i', $head, $tag)) {
+        $canonBad++;
+        if ($canonBad <= 8) {
+            echo "[FAIL] missing canonical on {$page}\n";
+        }
+        continue;
+    }
+    if (!preg_match('/href=["\']([^"\']+)["\']/', $tag[0], $href)) {
+        $canonBad++;
+        if ($canonBad <= 8) {
+            echo "[FAIL] canonical without href on {$page}\n";
+        }
+        continue;
+    }
+    $canonPath = (string)(parse_url($href[1], PHP_URL_PATH) ?: '/');
+    if (str_ends_with($canonPath, '.php')) {
+        $canonPath = substr($canonPath, 0, -4) ?: '/';
+    }
+    if (str_ends_with($canonPath, '/index')) {
+        $canonPath = substr($canonPath, 0, -6) ?: '/';
+    }
+    if ($canonPath !== '/' && str_ends_with($canonPath, '/') && !str_starts_with($canonPath, '/shop')) {
+        $canonPath = rtrim($canonPath, '/');
+    }
+    $canonSeen++;
+    $allowed = $page === $canonPath || ($page === '/pages/products' && $canonPath === '/products');
+    if (!$allowed) {
+        $canonBad++;
+        if ($canonBad <= 8) {
+            echo "[FAIL] canonical {$canonPath} is not {$page}\n";
+        }
+    }
+}
+if ($canonBad === 0 && $canonSeen > 1000) {
+    $pass++;
+    echo "[PASS] canonicals are self-referencing ({$canonSeen} pages; /pages/products → /products only)\n";
+} else {
+    $fail++;
+    echo "[FAIL] canonical mismatches={$canonBad} checked={$canonSeen}\n";
 }
 
 echo str_repeat('=', 56) . "\n";

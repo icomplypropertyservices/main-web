@@ -8,14 +8,14 @@ $areas = getAreas();
 $services = getServices();
 
 $pageTitle = 'Areas We Cover | ' . count($areas) . '+ North West Towns';
-$metaDesc = 'Icomply covers ' . count($areas) . '+ towns across Greater Manchester and the North West. Every town hub links fire safety, electrical, professional services, kitchens, bathrooms and construction trades.';
+$metaDesc = 'iComply covers ' . count($areas) . '+ towns across Greater Manchester and the North West. Every town hub links fire safety, electrical, professional services, kitchens, bathrooms and construction trades.';
 $metaKeywords = 'fire risk assessment Manchester, kitchen fitting Stockport, EICR Bolton, fire alarms Liverpool, property services North West towns';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/areas');
 $categories = getServiceCategories();
 
 $featured = array_values(array_filter(
-    ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
+    ['Manchester', 'Burnley', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
     function ($t) use ($areas) {
         return in_array($t, $areas, true);
     }
@@ -64,6 +64,10 @@ require SITE_ROOT . '/includes/header.php';
                     Local team serving <strong class="text-white"><?= count($areas) ?> towns</strong> —
                     fire safety (including FRAs), electrical &amp; gas, security, professional support,
                     kitchens, bathrooms, renovation and construction trades in every hub.
+                </p>
+                <p class="mt-4 text-sm text-white/70 max-w-xl">
+                    Fire alarms also cover the rest of UK mainland — England, Wales and mainland Scotland.
+                    <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/services/fire-alarms.php') ?>">Fire alarm areas</a>
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#directory" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Browse towns</a>
@@ -120,7 +124,7 @@ require SITE_ROOT . '/includes/header.php';
         <div>
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Featured</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Major towns</h2>
-            <p class="mt-2 text-zinc-600">High-demand coverage areas with full service menus.</p>
+            <p class="mt-2 text-zinc-600">High-demand coverage areas with full service menus. Manchester and Burnley are complete indexes — every service is listed, and their fire links open UK-wide hubs.</p>
         </div>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
@@ -238,7 +242,7 @@ require SITE_ROOT . '/includes/header.php';
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request your free quote</h2>
             <p class="mt-3 text-zinc-600">Include your town or postcode so we can book the nearest engineer.</p>
         </div>
-        <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
+        <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input type="text" name="name" placeholder="Full name" required maxlength="120" class="w-full border px-5 py-3.5 rounded-2xl">

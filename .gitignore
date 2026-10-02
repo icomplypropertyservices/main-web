@@ -32,6 +32,8 @@ website/pages/keywords/*.php
 !website/pages/keywords/index.php
 website/pages/areas/*.php
 !website/pages/areas/index.php
+!website/pages/areas/manchester.php
+!website/pages/areas/burnley.php
 website/pages/manufacturers/*.php
 !website/pages/manufacturers/index.php
 # Service HUB stubs under pages/services/*.php are tracked (router + reliability)
@@ -112,7 +114,7 @@ website/_gen_areas.php
 .vercel
 website/api/.phpunit*
 
-# Icomply local / PII
+# iComply local / PII
 website/config.local.php
 website/data/leads.jsonl
 website/data/leads.json

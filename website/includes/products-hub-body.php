@@ -88,6 +88,10 @@ function icomplyAovKitImageUrl(string $sku): string {
   </div>
 </section>
 
+<?php if (function_exists('camePartnerPanelHtml')): ?>
+<?= camePartnerPanelHtml('products') ?>
+<?php endif; ?>
+
 <section class="max-w-7xl mx-auto px-6 pb-12">
   <h2 class="text-2xl font-semibold text-black mb-2">Barrier packs (5m)</h2>
   <p class="text-sm text-zinc-600 mb-6">SoT supply prices. Install POA. Images from Marketing CAME GARD CDN map.</p>

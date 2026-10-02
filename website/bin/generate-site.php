@@ -21,7 +21,7 @@ if ($limit > 0) {
     $areasToUse = array_slice($areasToUse, 0, $limit);
 }
 
-echo "Icomply Site Generator (thin stubs → runtime render)\n";
+echo "iComply Site Generator (thin stubs → runtime render)\n";
 echo "====================================================\n\n";
 
 $total = 0;
@@ -35,8 +35,12 @@ foreach ($allServices as $sSlug => $sName) {
         mkdir($dir, 0755, true);
     }
 
+    $serviceAreas = $areasToUse;
+    if ($limit === 0 && function_exists('getAreasForService')) {
+        $serviceAreas = getAreasForService($sSlug);
+    }
     // Remove obsolete files for areas no longer in the list (optional: keep for safety)
-    foreach ($areasToUse as $area) {
+    foreach ($serviceAreas as $area) {
         $aSlug = areaSlug($area);
         $file = "{$dir}/{$aSlug}.php";
         $areaExport = var_export($area, true);
@@ -50,7 +54,7 @@ foreach ($allServices as $sSlug => $sName) {
     }
 
     $tpl = is_file(SITE_ROOT . "/templates/services/{$sSlug}.php") ? "services/{$sSlug}.php" : 'combo.php';
-    echo "  [{$sSlug}] {$sName} → " . count($areasToUse) . " stubs | template: {$tpl}\n";
+    echo "  [{$sSlug}] {$sName} → " . count($serviceAreas) . " stubs | template: {$tpl}\n";
 }
 
 echo "\nGenerated {$total} service×area stubs.\n";

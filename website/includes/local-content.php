@@ -71,7 +71,34 @@ function area_profile(string $area): array {
         return $map[$area] + ['name' => $area];
     }
 
-    // Generic but still unique-ish profile for remaining towns
+    $mainland = function_exists('mainlandAreaRecord') ? mainlandAreaRecord($area) : null;
+    if (is_array($mainland) && empty($mainland['local'])) {
+        $seed = area_seed($area);
+        $stocks = [
+            'commercial buildings, landlord blocks and mixed-use high streets',
+            'offices, warehouses and multi-let residential stock',
+            'town-centre retail, schools and managed residential blocks',
+        ];
+        $focus = [
+            'BS 5839 fire alarm install, service and certification',
+            'landlord and commercial fire detection',
+            'panel upgrades and false-alarm reduction',
+        ];
+        $districts = trim((string)($mainland['districts'] ?? ''));
+        if ($districts === '') {
+            $districts = 'local postcodes around ' . $area;
+        }
+        return [
+            'name' => $area,
+            'districts' => $districts,
+            'region' => (string)($mainland['region'] ?? $mainland['nation'] ?? 'UK mainland'),
+            'stock' => pick_seeded($stocks, $seed, 1),
+            'travel' => 'scheduled UK mainland attendance from our Stockport SK2 base, with travel confirmed on the quote',
+            'focus' => pick_seeded($focus, $seed, 2),
+        ];
+    }
+
+    // Generic but still unique-ish profile for remaining North West towns
     $seed = area_seed($area);
     $regions = ['Greater Manchester fringe', 'Lancashire', 'Cheshire', 'Merseyside fringe', 'North West England'];
     $stocks = [
@@ -153,7 +180,13 @@ function service_local_angle(string $slug, string $serviceName, string $area): s
             "Card/fob access with audit trails suits multi-tenant offices and blocks across {$area}.",
             "Time zones and user groups help {$area} landlords control cleaners, contractors and tenants.",
             "Fire door release strategies must stay safe while securing {$area} entry points.",
-            "Biometric and mobile credentials are increasingly specified on newer {$area} fit-outs.",
+            "Vehicle lanes in {$area} are specified on the barriers service, with Came as the partner arm.",
+        ],
+        'barriers' => [
+            "Vehicle and parking barriers in {$area} are part of a UK-wide service, not a Manchester-only offer.",
+            "New rising arms in {$area} are specified as Came GARD unless the existing cabinet must stay.",
+            "Loops, safety edges and access release are surveyed before any {$area} barrier quote.",
+            "Other manufacturers already on {$area} islands are serviced under their own name.",
         ],
         'door-entry' => [
             "Video door entry upgrades are frequent on {$area} apartment risers and older audio panels.",
@@ -185,6 +218,9 @@ function service_local_angle(string $slug, string $serviceName, string $area): s
 }
 
 function seo_unique_intro(string $serviceName, string $slug, string $area): string {
+    if ($slug === 'barriers' && function_exists('barrierNationwideIntro')) {
+        return barrierNationwideIntro($serviceName, $area);
+    }
     $p = area_profile($area);
     $angle = service_local_angle($slug, $serviceName, $area);
     $standards = implode(', ', array_slice(service_standards($slug), 0, 3));

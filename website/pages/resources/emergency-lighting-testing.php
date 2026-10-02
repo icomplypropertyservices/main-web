@@ -144,7 +144,7 @@ require SITE_ROOT . '/includes/header.php';
         </div>
 
         <div>
-            <h2 class="text-2xl font-semibold tracking-tight mb-3">Related Icomply services</h2>
+            <h2 class="text-2xl font-semibold tracking-tight mb-3">Related iComply services</h2>
             <div class="flex flex-wrap gap-2">
                 <a href="<?= url('/pages/services/emergency-lighting.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Emergency lighting services</a>
                 <a href="<?= url('/pages/keywords/emergency-lighting-testing.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Emergency lighting testing keyword</a>
@@ -194,7 +194,7 @@ require SITE_ROOT . '/includes/header.php';
             <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Request an emergency lighting quote</h2>
             <p class="mt-3 text-zinc-600">Annual full tests, remedial works or planned maintenance with full documentation.</p>
         </div>
-        <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
+        <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input type="text" name="name" placeholder="Full name" required maxlength="120" class="w-full border px-5 py-3.5 rounded-2xl">

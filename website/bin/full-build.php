@@ -21,7 +21,7 @@ $jobs = [
     'sitemap' => 'generate-sitemap.php',
 ];
 
-echo "Icomply FULL BUILD\n";
+echo "iComply FULL BUILD\n";
 echo str_repeat('=', 40) . "\n";
 
 $results = [];

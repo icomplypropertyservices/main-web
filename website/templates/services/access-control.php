@@ -2,7 +2,7 @@
 /**
  * Access Control — 3 images · 3 paragraphs · manufacturers · SEO brand alts
  */
-$pageTitle = '{{SERVICE_NAME}} in {{AREA}} | Icomply Property Services';
+$pageTitle = '{{SERVICE_NAME}} in {{AREA}} | iComply Property Services';
 $metaDesc = 'BS EN 50133 access control in {{AREA}}. Paxton, HID and Salto panels, readers and locks — install, program and maintain.';
 $metaKeywords = 'access control installation {{AREA}}, Paxton Net2 {{AREA}}, HID reader {{AREA}}, Salto lock {{AREA}}, BS EN 50133 {{AREA}}, biometric access control {{AREA}}';
 $ogImage = url('/assets/images/services/access-control.jpg');
@@ -37,7 +37,7 @@ require SITE_ROOT . '/includes/header.php';
           "postalCode": "SK2 5DE",
           "addressCountry": "GB"
         },
-        "priceRange": "££"
+        "priceRange": "POA"
       },
       "areaServed": {"@type": "City", "name": "{{AREA}}"},
       "offers": {
@@ -68,7 +68,7 @@ require SITE_ROOT . '/includes/header.php';
     <!-- IMAGE 1: Hero -->
     <div class="mt-8">
         <img src="<?= url('/assets/images/services/access-control.jpg') ?>"
-             alt="Paxton HID Salto access control panel reader and door lock installation in {{AREA}} by Icomply Property Services"
+             alt="Paxton HID Salto access control panel reader and door lock installation in {{AREA}} by iComply Property Services"
              width="1200" height="800"
              class="w-full h-72 md:h-96 object-cover rounded-3xl border"
              loading="eager">
@@ -77,7 +77,7 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 1 -->
     <p class="mt-8 text-lg text-black max-w-3xl leading-relaxed">
-        Icomply Property Services designs, installs and maintains <strong>BS EN 50133</strong> and <strong>EN 60839</strong> compliant <strong>{{SERVICE_NAME}}</strong> across <strong>{{AREA}}</strong> and the wider North West. From single-door Paxton kits to multi-site HID and Salto platforms, our engineers deliver secure credential management, fire override release and full user training.
+        iComply Property Services designs, installs and maintains <strong>BS EN 50133</strong> and <strong>EN 60839</strong> compliant <strong>{{SERVICE_NAME}}</strong> across <strong>{{AREA}}</strong> and the wider North West. From single-door Paxton kits to multi-site HID and Salto platforms, our engineers deliver secure credential management, fire override release and full user training.
     </p>
 
     <!-- PARAGRAPH 2 -->
@@ -89,7 +89,7 @@ require SITE_ROOT . '/includes/header.php';
     <div class="mt-10 grid md:grid-cols-2 gap-6">
         <div>
             <img src="<?= url('/assets/images/keywords/access-control-system.jpg') ?>"
-                 alt="Paxton Net2 access control panel and HID proximity card reader installed by Icomply in {{AREA}}"
+                 alt="Paxton Net2 access control panel and HID proximity card reader installed by iComply in {{AREA}}"
                  width="800" height="600"
                  class="w-full h-56 object-cover rounded-2xl border"
                  loading="lazy"
@@ -127,7 +127,7 @@ require SITE_ROOT . '/includes/header.php';
     <!-- IMAGE 3: Brand focus -->
     <div class="mt-10">
         <img src="<?= url('/assets/images/keywords/proximity-card-reader.jpg') ?>"
-             alt="Paxton HID Salto proximity card readers controllers and door access panels — Icomply {{AREA}}"
+             alt="Paxton HID Salto proximity card readers controllers and door access panels — iComply {{AREA}}"
              width="1200" height="700"
              class="w-full h-64 md:h-80 object-cover rounded-3xl border"
              loading="lazy"
@@ -158,6 +158,13 @@ require SITE_ROOT . '/includes/header.php';
     <div class="mt-12">
         <h2 class="text-2xl font-semibold text-black mb-4">Related Services in {{AREA}}</h2>
         <div class="flex flex-wrap gap-2">
+            <a href="<?= url('/pages/services/barriers.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]">Vehicle &amp; Parking Barriers</a>
+            <a href="<?= url('/pages/manufacturers/came.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]">Came partner</a>
+            <a href="<?= url('/pages/keywords/vehicle-barriers.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]">Vehicle barriers</a>
+            <a href="<?= url('/pages/keywords/rising-arm-barrier.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]">Rising arm barrier</a>
+            <a href="<?= url('/pages/keywords/parking-barrier.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]">Parking barrier</a>
+            <a href="<?= url('/pages/keywords/vehicle-barriers/manchester.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]">Manchester</a>
+            <a href="<?= url('/pages/keywords/vehicle-barriers/burnley.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]">Burnley</a>
             <a href="<?= url('/pages/services/intruder-alarm.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]">Intruder Alarms</a>
             <a href="<?= url('/pages/services/cctv.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]">CCTV Systems</a>
             <a href="<?= url('/pages/services/intercoms.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]">Intercoms</a>

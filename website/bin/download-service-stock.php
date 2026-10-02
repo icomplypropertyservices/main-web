@@ -72,7 +72,7 @@ function downloadTo(string $url, string $file): bool {
     $ctx = stream_context_create([
         'http' => [
             'timeout' => 45,
-            'header' => "User-Agent: IcomplyStockBot/1.0\r\n",
+            'header' => "User-Agent: iComplyStockBot/1.0\r\n",
             'follow_location' => 1,
         ],
         'ssl' => ['verify_peer' => true, 'verify_peer_name' => true],
