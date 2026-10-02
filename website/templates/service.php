@@ -75,6 +75,8 @@ if (empty($_SESSION['csrf'])) {
 
 require_once SITE_ROOT . '/includes/share.php';
 require_once SITE_ROOT . '/includes/related.php';
+require_once SITE_ROOT . '/includes/kit-wizard.php';
+$kitEmbedSlugs = kitWizardSlugsForService($serviceSlug);
 $canonicalUrl = url('/pages/services/' . $serviceSlug . '.php');
 require SITE_ROOT . '/includes/header.php';
 
@@ -321,6 +323,10 @@ $schema = [
     </div>
     <?php endif; ?>
 </section>
+
+<?php if ($kitEmbedSlugs): ?>
+<?php kitWizardEmbedList($kitEmbedSlugs); ?>
+<?php endif; ?>
 
 <?php if (!$poaService): ?>
 <!-- MANUFACTURERS -->

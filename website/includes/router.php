@@ -129,6 +129,11 @@ function routerDispatchVirtual(string $path): bool {
         }
         return false;
     }
+    // Kit builders live as physical pages. Do not treat /pages/kits/{slug} as a service×area landing.
+    if (preg_match('#^/pages/kits/([a-z0-9\-]+)$#', $path, $m) && $m[1] !== 'index') {
+        return routerTryFile('/pages/kits/' . $m[1]);
+    }
+
     // /pages/{service}/{area}
     if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         $serviceSlug = $m[1];

@@ -6,6 +6,8 @@
  */
 declare(strict_types=1);
 
+if (!function_exists('kitWizardCatalog')) {
+
 function kitCdn(string $file): string
 {
     return 'https://cdn.shopify.com/s/files/1/1073/5550/4972/files/' . ltrim($file, '/');
@@ -57,6 +59,20 @@ function kitPoaOpt(array $p): array
     ], $p);
 }
 
+/** Question step — not a sellable line, so no Enquire/POA badge and no cart SKU. */
+function kitChoiceOpt(array $p): array
+{
+    return array_merge([
+        'cta' => 'choose',
+        'sell_price' => '',
+        'sku' => '',
+        'handle' => '',
+        'variant_id' => '',
+        'screwfix_ref' => '',
+        'screwfix_inc' => '',
+    ], $p);
+}
+
 /** Jack lock — Screwfix is a price reference, never a brand we list. */
 function kitBrandPolicy(): string
 {
@@ -75,6 +91,7 @@ function kitBannedBrandKeys(): array
         'bg',
         'bg electrical',
         'unbranded',
+        'tunstall',
         'white-label',
         'white label',
         'own-brand',
@@ -85,7 +102,18 @@ function kitBannedBrandKeys(): array
 function kitBrandIsBanned(string $brand): bool
 {
     $key = strtolower(trim($brand));
-    return $key !== '' && in_array($key, kitBannedBrandKeys(), true);
+    if ($key === '') {
+        return false;
+    }
+    if (str_contains($key, 'screwfix')) {
+        return true;
+    }
+    foreach (kitBannedBrandKeys() as $banned) {
+        if ($key === $banned || str_starts_with($key, $banned . ' ')) {
+            return true;
+        }
+    }
+    return false;
 }
 
 function kitWithPolicy(array $w): array
@@ -110,9 +138,16 @@ function kitAssertCatalogBrands(array $wizards): void
                 if ($brand !== '' && kitBrandIsBanned($brand)) {
                     throw new RuntimeException('Banned brand in kit ' . ($w['slug'] ?? '?') . ': ' . $brand);
                 }
-                if ((string)($opt['sell_price'] ?? '') !== '') {
-                    if ($brand !== 'Wylex' || (string)($opt['screwfix_ref'] ?? '') === '') {
+                $sell = (string)($opt['sell_price'] ?? '');
+                if ($sell !== '') {
+                    $ref = (string)($opt['screwfix_ref'] ?? '');
+                    $inc = (string)($opt['screwfix_inc'] ?? '');
+                    if ($brand !== 'Wylex' || $ref === '' || $inc === '') {
                         throw new RuntimeException('Invented sell price without a branded Wylex Screwfix ref in kit ' . ($w['slug'] ?? '?'));
+                    }
+                    $expected = number_format(round((float)$inc * 1.15, 2), 2, '.', '');
+                    if ($expected !== $sell) {
+                        throw new RuntimeException('Sell £' . $sell . ' is not Screwfix inc VAT ' . $inc . ' + 15% (£' . $expected . ') for ' . $ref);
                     }
                 }
             }
@@ -154,6 +189,7 @@ function kitWylexBoards(): array
             'logo' => $logo,
             'sku' => $r['ref'],
             'screwfix_ref' => $r['ref'],
+            'screwfix_inc' => $r['sf'],
             'sell_price' => $r['sell'],
             'cta' => 'enquire',
             'show_if' => ['step' => 'cu-style', 'values' => [$r['style']]],
@@ -182,10 +218,10 @@ function kitRewireWizard(): array
                 'short' => 'Property',
                 'blurb' => 'Tells us how we size the board and circuits.',
                 'options' => [
-                    kitPoaOpt(['id' => 'house', 'label' => 'House', 'brand' => 'Wylex', 'image' => $elec, 'cover' => true, 'blurb' => 'Typical domestic rewire / CU change.']),
-                    kitPoaOpt(['id' => 'flat', 'label' => 'Flat / apartment', 'brand' => 'Wylex', 'image' => $elec, 'cover' => true, 'blurb' => 'Often a compact CU and landlord access.']),
-                    kitPoaOpt(['id' => 'hmo', 'label' => 'HMO', 'brand' => 'Wylex', 'image' => $elec, 'cover' => true, 'blurb' => 'More circuits and detection — quoted after survey.']),
-                    kitPoaOpt(['id' => 'commercial', 'label' => 'Commercial / landlord block', 'brand' => 'Schneider', 'logo' => kitLogo('Schneider'), 'image' => kitAsset('manufacturers/schneider-electrical.jpg'), 'blurb' => 'Distribution beyond a domestic CU is enquire / POA.']),
+                    kitChoiceOpt(['id' => 'house', 'label' => 'House', 'brand' => 'Wylex', 'image' => $elec, 'cover' => true, 'blurb' => 'Typical domestic rewire / CU change.']),
+                    kitChoiceOpt(['id' => 'flat', 'label' => 'Flat / apartment', 'brand' => 'Wylex', 'image' => $elec, 'cover' => true, 'blurb' => 'Often a compact CU and landlord access.']),
+                    kitChoiceOpt(['id' => 'hmo', 'label' => 'HMO', 'brand' => 'Wylex', 'image' => $elec, 'cover' => true, 'blurb' => 'More circuits and detection — quoted after survey.']),
+                    kitChoiceOpt(['id' => 'commercial', 'label' => 'Commercial / landlord block', 'brand' => 'Schneider', 'logo' => kitLogo('Schneider'), 'image' => kitAsset('manufacturers/schneider-electrical.jpg'), 'blurb' => 'Distribution beyond a domestic CU is enquire / POA.']),
                 ],
             ],
             [
@@ -194,9 +230,9 @@ function kitRewireWizard(): array
                 'short' => 'Scope',
                 'blurb' => 'Full rewires and CU changes use the same branded Wylex / Click path.',
                 'options' => [
-                    kitPoaOpt(['id' => 'cu-only', 'label' => 'Consumer-unit change', 'brand' => 'Wylex', 'image' => $elec, 'cover' => true, 'blurb' => 'Replace the board, keep existing circuits where safe.']),
-                    kitPoaOpt(['id' => 'partial', 'label' => 'Partial rewire', 'brand' => 'Wylex', 'image' => $elec, 'cover' => true, 'blurb' => 'Kitchen, extension or failed circuits.']),
-                    kitPoaOpt(['id' => 'full', 'label' => 'Full rewire', 'brand' => 'Wylex', 'image' => $elec, 'cover' => true, 'blurb' => 'New circuits, Click accessories, Aico detection.']),
+                    kitChoiceOpt(['id' => 'cu-only', 'label' => 'Consumer-unit change', 'brand' => 'Wylex', 'image' => $elec, 'cover' => true, 'blurb' => 'Replace the board, keep existing circuits where safe.']),
+                    kitChoiceOpt(['id' => 'partial', 'label' => 'Partial rewire', 'brand' => 'Wylex', 'image' => $elec, 'cover' => true, 'blurb' => 'Kitchen, extension or failed circuits.']),
+                    kitChoiceOpt(['id' => 'full', 'label' => 'Full rewire', 'brand' => 'Wylex', 'image' => $elec, 'cover' => true, 'blurb' => 'New circuits, Click accessories, Aico detection.']),
                 ],
             ],
             [
@@ -206,13 +242,13 @@ function kitRewireWizard(): array
                 'blurb' => 'Wylex for priced boards. Hager, MK and Schneider are allowed branded protection — enquire / POA until we hold a real branded SKU and a matching Screwfix (or trade-list) price. No BG / British General boards.',
                 'note' => 'If Screwfix does not stock that branded SKU, we do not invent a price. Own-brand / LAP / SFX boards are never listed.',
                 'options' => [
-                    kitPoaOpt(['id' => 'populated-dual-rcd', 'label' => 'Populated dual RCD', 'brand' => 'Wylex', 'image' => $elec, 'cover' => true, 'blurb' => '10- or 12-way populated Wylex dual-RCD boards.']),
-                    kitPoaOpt(['id' => 'hi-spd', 'label' => 'High integrity + SPD', 'brand' => 'Wylex', 'image' => $elec, 'cover' => true, 'blurb' => 'HI boards with surge protection.']),
-                    kitPoaOpt(['id' => 'part-pop', 'label' => 'Part-populated main switch', 'brand' => 'Wylex', 'image' => $elec, 'cover' => true, 'blurb' => 'Add branded RCBOs / MCBs to suit the job.']),
-                    kitPoaOpt(['id' => 'special', 'label' => 'Garage / shower unit', 'brand' => 'Wylex', 'image' => $elec, 'cover' => true, 'blurb' => 'Small dedicated Wylex units.']),
-                    kitPoaOpt(['id' => 'hager-poa', 'label' => 'Hager (enquire / POA)', 'brand' => 'Hager', 'logo' => kitLogo('Hager'), 'image' => kitAsset('manufacturers/hager-consumer-unit.jpg'), 'blurb' => 'Allowed branded protection. No Screwfix price attached to a Hager SKU here.']),
-                    kitPoaOpt(['id' => 'mk-poa', 'label' => 'MK (enquire / POA)', 'brand' => 'MK', 'image' => $elec, 'cover' => true, 'blurb' => 'Allowed branded protection. No invented £.']),
-                    kitPoaOpt(['id' => 'schneider-poa', 'label' => 'Schneider (enquire / POA)', 'brand' => 'Schneider', 'logo' => kitLogo('Schneider'), 'image' => kitAsset('manufacturers/schneider-electrical.jpg'), 'blurb' => 'Allowed branded protection. Enquire / POA.']),
+                    kitChoiceOpt(['id' => 'populated-dual-rcd', 'label' => 'Populated dual RCD', 'brand' => 'Wylex', 'image' => $elec, 'cover' => true, 'blurb' => '10- or 12-way populated Wylex dual-RCD boards.']),
+                    kitChoiceOpt(['id' => 'hi-spd', 'label' => 'High integrity + SPD', 'brand' => 'Wylex', 'image' => $elec, 'cover' => true, 'blurb' => 'HI boards with surge protection.']),
+                    kitChoiceOpt(['id' => 'part-pop', 'label' => 'Part-populated main switch', 'brand' => 'Wylex', 'image' => $elec, 'cover' => true, 'blurb' => 'Add branded RCBOs / MCBs to suit the job.']),
+                    kitChoiceOpt(['id' => 'special', 'label' => 'Garage / shower unit', 'brand' => 'Wylex', 'image' => $elec, 'cover' => true, 'blurb' => 'Small dedicated Wylex units.']),
+                    kitChoiceOpt(['id' => 'hager-poa', 'label' => 'Hager (enquire / POA)', 'brand' => 'Hager', 'logo' => kitLogo('Hager'), 'image' => kitAsset('manufacturers/hager-consumer-unit.jpg'), 'blurb' => 'Allowed branded protection. No Screwfix price attached to a Hager SKU here.']),
+                    kitChoiceOpt(['id' => 'mk-poa', 'label' => 'MK (enquire / POA)', 'brand' => 'MK', 'image' => $elec, 'cover' => true, 'blurb' => 'Allowed branded protection. No invented £.']),
+                    kitChoiceOpt(['id' => 'schneider-poa', 'label' => 'Schneider (enquire / POA)', 'brand' => 'Schneider', 'logo' => kitLogo('Schneider'), 'image' => kitAsset('manufacturers/schneider-electrical.jpg'), 'blurb' => 'Allowed branded protection. Enquire / POA.']),
                 ],
             ],
             [
@@ -315,9 +351,9 @@ function kitHeatingWizard(): array
                 'short' => 'System',
                 'blurb' => 'Combi, system or heat-only.',
                 'options' => [
-                    kitPoaOpt(['id' => 'combi', 'label' => 'Combi boiler', 'brand' => 'Worcester Bosch', 'logo' => kitLogo('Worcester Bosch'), 'image' => $wb, 'blurb' => 'Most flats and smaller houses.']),
-                    kitPoaOpt(['id' => 'system', 'label' => 'System boiler', 'brand' => 'Worcester Bosch', 'logo' => kitLogo('Worcester Bosch'), 'image' => $wb]),
-                    kitPoaOpt(['id' => 'heat-only', 'label' => 'Heat-only / conventional', 'brand' => 'Worcester Bosch', 'logo' => kitLogo('Worcester Bosch'), 'image' => $wb]),
+                    kitChoiceOpt(['id' => 'combi', 'label' => 'Combi boiler', 'image' => $heat, 'cover' => true, 'blurb' => 'Most flats and smaller houses. Brand is the next step.']),
+                    kitChoiceOpt(['id' => 'system', 'label' => 'System boiler', 'image' => $heat, 'cover' => true, 'blurb' => 'Brand is the next step.']),
+                    kitChoiceOpt(['id' => 'heat-only', 'label' => 'Heat-only / conventional', 'image' => $heat, 'cover' => true, 'blurb' => 'Brand is the next step.']),
                 ],
             ],
             [
@@ -371,8 +407,8 @@ function kitFireWizard(): array
                 'short' => 'Type',
                 'blurb' => 'Conventional or addressable.',
                 'options' => [
-                    kitPoaOpt(['id' => 'conventional', 'label' => 'Conventional', 'brand' => 'C-TEC', 'logo' => kitLogo('C-TEC'), 'image' => kitCdn('ctec-cfp-panel.jpg?v=1788882289'), 'blurb' => 'C-TEC CFP / Kentec Sigma class.']),
-                    kitPoaOpt(['id' => 'addressable', 'label' => 'Addressable', 'brand' => 'Advanced', 'logo' => kitLogo('Advanced'), 'image' => kitCdn('advanced-mxpro.jpg?v=1788896194'), 'blurb' => 'Advanced MxPro 5 / C-TEC XFP / Kentec Syncro.']),
+                    kitChoiceOpt(['id' => 'conventional', 'label' => 'Conventional', 'brand' => 'C-TEC', 'logo' => kitLogo('C-TEC'), 'image' => kitCdn('ctec-cfp-panel.jpg?v=1788882289'), 'blurb' => 'C-TEC CFP / Kentec Sigma class.']),
+                    kitChoiceOpt(['id' => 'addressable', 'label' => 'Addressable', 'brand' => 'Advanced', 'logo' => kitLogo('Advanced'), 'image' => kitCdn('advanced-mxpro.jpg?v=1788896194'), 'blurb' => 'Advanced MxPro 5 / C-TEC XFP / Kentec Syncro.']),
                 ],
             ],
             [
@@ -438,8 +474,8 @@ function kitElWizard(): array
                 'title' => 'Building',
                 'short' => 'Building',
                 'options' => [
-                    kitPoaOpt(['id' => 'small', 'label' => 'Small commercial / landlord', 'brand' => 'Espire', 'image' => $el, 'cover' => true]),
-                    kitPoaOpt(['id' => 'multi', 'label' => 'Multi-storey / care', 'brand' => 'Eaton', 'image' => $el, 'cover' => true]),
+                    kitChoiceOpt(['id' => 'small', 'label' => 'Small commercial / landlord', 'brand' => 'Espire', 'image' => $el, 'cover' => true]),
+                    kitChoiceOpt(['id' => 'multi', 'label' => 'Multi-storey / care', 'brand' => 'Eaton', 'image' => $el, 'cover' => true]),
                 ],
             ],
             [
@@ -466,8 +502,8 @@ function kitAovWizard(): array
         'slug' => 'aov',
         'title' => 'AOV / smoke ventilation kit builder',
         'short' => 'AOV',
-        'kicker' => 'Ventlux',
-        'blurb' => 'Ventlux controllers, vents and orange AOV call points from the live Shopify catalogue. Branded Ventlux / KAC only — never Screwfix own-brand vents.',
+        'kicker' => 'Ventlux / KAC',
+        'blurb' => 'Built-in AOV kit: Ventlux controllers, vents and KAC orange call points from the live Shopify catalogue. Never Screwfix own-brand vents.',
         'service' => 'aov-air-handling',
         'hero_image' => $aov,
         'summary_blurb' => 'Known branded Ventlux / KAC SKUs open on Shopify. Cause-and-effect remains enquire / POA. Screwfix is a price reference only.',
@@ -524,10 +560,10 @@ function kitIntercomWizard(): array
                 'title' => 'System type',
                 'short' => 'Type',
                 'options' => [
-                    kitPoaOpt(['id' => 'audio', 'label' => 'Audio', 'brand' => 'Videx', 'image' => kitCdn('videx-8k-audio.jpg?v=1788980487')]),
-                    kitPoaOpt(['id' => 'video', 'label' => 'Video', 'brand' => 'Videx', 'image' => kitCdn('videx-cvk8k.jpg?v=1788980494')]),
-                    kitPoaOpt(['id' => 'gsm', 'label' => 'GSM / 4G', 'brand' => 'Videx', 'image' => kitCdn('videx-gsm4k.jpg?v=1788980501')]),
-                    kitPoaOpt(['id' => 'ip', 'label' => 'IP', 'brand' => 'Videx', 'image' => kitCdn('videx-ipvk-1s.jpg?v=1788983726')]),
+                    kitChoiceOpt(['id' => 'audio', 'label' => 'Audio', 'brand' => 'Videx', 'image' => kitCdn('videx-8k-audio.jpg?v=1788980487')]),
+                    kitChoiceOpt(['id' => 'video', 'label' => 'Video', 'brand' => 'Videx', 'image' => kitCdn('videx-cvk8k.jpg?v=1788980494')]),
+                    kitChoiceOpt(['id' => 'gsm', 'label' => 'GSM / 4G', 'brand' => 'Videx', 'image' => kitCdn('videx-gsm4k.jpg?v=1788980501')]),
+                    kitChoiceOpt(['id' => 'ip', 'label' => 'IP', 'brand' => 'Videx', 'image' => kitCdn('videx-ipvk-1s.jpg?v=1788983726')]),
                 ],
             ],
             [
@@ -577,8 +613,8 @@ function kitAccessWizard(): array
                 'title' => 'Use',
                 'short' => 'Use',
                 'options' => [
-                    kitPoaOpt(['id' => 'door', 'label' => 'Door access (Paxton)', 'brand' => 'Paxton', 'logo' => kitLogo('Paxton'), 'image' => kitAsset('manufacturers/paxton.jpg')]),
-                    kitPoaOpt(['id' => 'gate', 'label' => 'Gate / barrier access (CAME)', 'brand' => 'CAME', 'logo' => kitLogo('CAME'), 'image' => kitCdn('sel-digital.jpg?v=1789114188')]),
+                    kitChoiceOpt(['id' => 'door', 'label' => 'Door access (Paxton)', 'brand' => 'Paxton', 'logo' => kitLogo('Paxton'), 'image' => kitAsset('manufacturers/paxton.jpg')]),
+                    kitChoiceOpt(['id' => 'gate', 'label' => 'Gate / barrier access (CAME)', 'brand' => 'CAME', 'logo' => kitLogo('CAME'), 'image' => kitCdn('sel-digital.jpg?v=1789114188')]),
                 ],
             ],
             [
@@ -627,9 +663,9 @@ function kitGatesWizard(): array
                 'title' => 'Gate type',
                 'short' => 'Type',
                 'options' => [
-                    kitShopOpt(['id' => 'sliding', 'label' => 'Sliding', 'brand' => 'CAME', 'logo' => $logo, 'image' => kitCdn('came-bxv.jpg?v=1788884792'), 'handle' => 'came-bxv-sliding', 'sku' => '801MS-0150', 'variant_id' => '58737140433228', 'blurb' => 'BXV / BXL / BKV families.']),
-                    kitShopOpt(['id' => 'swing', 'label' => 'Swing', 'brand' => 'CAME', 'logo' => $logo, 'image' => kitCdn('came-ati.jpg?v=1788884798'), 'handle' => 'came-ati-swing', 'sku' => '801MP-0190', 'variant_id' => '58737142038860', 'blurb' => 'ATI / AXO / FERNI / KRONO / AXI.']),
-                    kitShopOpt(['id' => 'underground', 'label' => 'Underground', 'brand' => 'CAME', 'logo' => $logo, 'image' => kitCdn('came-frog.jpg?v=1788905635'), 'handle' => 'came-frog', 'sku' => '001FROG-A', 'variant_id' => '58741816820044', 'blurb' => 'FROG / FROG-X / STYLO.']),
+                    kitChoiceOpt(['id' => 'sliding', 'label' => 'Sliding', 'brand' => 'CAME', 'logo' => $logo, 'image' => kitCdn('came-bxv.jpg?v=1788884792'), 'blurb' => 'BXV / BXL / BKV families — pick the operator next.']),
+                    kitChoiceOpt(['id' => 'swing', 'label' => 'Swing', 'brand' => 'CAME', 'logo' => $logo, 'image' => kitCdn('came-ati.jpg?v=1788884798'), 'blurb' => 'ATI / AXO / FERNI / KRONO / AXI — pick the operator next.']),
+                    kitChoiceOpt(['id' => 'underground', 'label' => 'Underground', 'brand' => 'CAME', 'logo' => $logo, 'image' => kitCdn('came-frog.jpg?v=1788905635'), 'blurb' => 'FROG / FROG-X / STYLO — pick the operator next.']),
                 ],
             ],
             [
@@ -638,13 +674,13 @@ function kitGatesWizard(): array
                 'short' => 'Size',
                 'blurb' => 'Guides the operator family. Final selection is surveyed.',
                 'options' => [
-                    kitPoaOpt(['id' => 'light', 'label' => 'Light domestic (to ~400 kg / 3 m)', 'brand' => 'CAME', 'logo' => $logo, 'image' => $hero, 'cover' => true, 'show_if' => ['step' => 'type', 'values' => ['sliding']]]),
-                    kitPoaOpt(['id' => 'mid', 'label' => 'Mid (400–1000 kg)', 'brand' => 'CAME', 'logo' => $logo, 'image' => $hero, 'cover' => true, 'show_if' => ['step' => 'type', 'values' => ['sliding']]]),
-                    kitPoaOpt(['id' => 'industrial', 'label' => 'Industrial (1000 kg+)', 'brand' => 'CAME', 'logo' => $logo, 'image' => $hero, 'cover' => true, 'show_if' => ['step' => 'type', 'values' => ['sliding']]]),
-                    kitPoaOpt(['id' => 'swing-3', 'label' => 'Swing leaves to 3 m', 'brand' => 'CAME', 'logo' => $logo, 'image' => $hero, 'cover' => true, 'show_if' => ['step' => 'type', 'values' => ['swing']]]),
-                    kitPoaOpt(['id' => 'swing-5', 'label' => 'Swing leaves 3–5 m+', 'brand' => 'CAME', 'logo' => $logo, 'image' => $hero, 'cover' => true, 'show_if' => ['step' => 'type', 'values' => ['swing']]]),
-                    kitPoaOpt(['id' => 'ug-std', 'label' => 'Underground standard leaf', 'brand' => 'CAME', 'logo' => $logo, 'image' => $hero, 'cover' => true, 'show_if' => ['step' => 'type', 'values' => ['underground']]]),
-                    kitPoaOpt(['id' => 'ug-heavy', 'label' => 'Underground heavy / plus', 'brand' => 'CAME', 'logo' => $logo, 'image' => $hero, 'cover' => true, 'show_if' => ['step' => 'type', 'values' => ['underground']]]),
+                    kitChoiceOpt(['id' => 'light', 'label' => 'Light domestic (to ~400 kg / 3 m)', 'brand' => 'CAME', 'logo' => $logo, 'image' => $hero, 'cover' => true, 'show_if' => ['step' => 'type', 'values' => ['sliding']]]),
+                    kitChoiceOpt(['id' => 'mid', 'label' => 'Mid (400–1000 kg)', 'brand' => 'CAME', 'logo' => $logo, 'image' => $hero, 'cover' => true, 'show_if' => ['step' => 'type', 'values' => ['sliding']]]),
+                    kitChoiceOpt(['id' => 'industrial', 'label' => 'Industrial (1000 kg+)', 'brand' => 'CAME', 'logo' => $logo, 'image' => $hero, 'cover' => true, 'show_if' => ['step' => 'type', 'values' => ['sliding']]]),
+                    kitChoiceOpt(['id' => 'swing-3', 'label' => 'Swing leaves to 3 m', 'brand' => 'CAME', 'logo' => $logo, 'image' => $hero, 'cover' => true, 'show_if' => ['step' => 'type', 'values' => ['swing']]]),
+                    kitChoiceOpt(['id' => 'swing-5', 'label' => 'Swing leaves 3–5 m+', 'brand' => 'CAME', 'logo' => $logo, 'image' => $hero, 'cover' => true, 'show_if' => ['step' => 'type', 'values' => ['swing']]]),
+                    kitChoiceOpt(['id' => 'ug-std', 'label' => 'Underground standard leaf', 'brand' => 'CAME', 'logo' => $logo, 'image' => $hero, 'cover' => true, 'show_if' => ['step' => 'type', 'values' => ['underground']]]),
+                    kitChoiceOpt(['id' => 'ug-heavy', 'label' => 'Underground heavy / plus', 'brand' => 'CAME', 'logo' => $logo, 'image' => $hero, 'cover' => true, 'show_if' => ['step' => 'type', 'values' => ['underground']]]),
                 ],
             ],
             [
@@ -703,8 +739,8 @@ function kitBarriersWizard(): array
         'slug' => 'barriers',
         'title' => 'Barriers kit builder',
         'short' => 'Barriers',
-        'kicker' => 'CAME GARD',
-        'blurb' => 'CAME GARD boom barriers with DIR photocells, TOP remotes and ZLX / site controls. CAME only — never Screwfix own-brand barriers.',
+        'kicker' => 'CAME partner',
+        'blurb' => 'CAME is our barrier partner. GARD boom barriers with DIR photocells, TOP remotes and ZLX controls. CAME only — never Screwfix own-brand barriers.',
         'service' => 'access-control',
         'hero_image' => $hero,
         'summary_blurb' => 'Boom length is confirmed on site. Live branded CAME SKUs open on Shopify. Screwfix is a price reference only.',
@@ -724,9 +760,9 @@ function kitBarriersWizard(): array
                 'title' => 'Boom length',
                 'short' => 'Boom',
                 'options' => [
-                    kitPoaOpt(['id' => 'b4', 'label' => 'Up to 4 m', 'brand' => 'CAME', 'logo' => $logo, 'image' => $hero]),
-                    kitPoaOpt(['id' => 'b6', 'label' => 'Up to 6 m', 'brand' => 'CAME', 'logo' => $logo, 'image' => $hero]),
-                    kitPoaOpt(['id' => 'b8', 'label' => '6–8 m (survey)', 'brand' => 'CAME', 'logo' => $logo, 'image' => kitCdn('gard-gt8.jpg?v=1789114153')]),
+                    kitChoiceOpt(['id' => 'b4', 'label' => 'Up to 4 m', 'brand' => 'CAME', 'logo' => $logo, 'image' => $hero]),
+                    kitChoiceOpt(['id' => 'b6', 'label' => 'Up to 6 m', 'brand' => 'CAME', 'logo' => $logo, 'image' => $hero]),
+                    kitChoiceOpt(['id' => 'b8', 'label' => '6–8 m (survey)', 'brand' => 'CAME', 'logo' => $logo, 'image' => kitCdn('gard-gt8.jpg?v=1789114153')]),
                 ],
             ],
             [
@@ -759,15 +795,15 @@ function kitBarriersWizard(): array
 function kitWizardCatalog(): array
 {
     $list = [
+        kitBarriersWizard(),
+        kitAovWizard(),
+        kitGatesWizard(),
         kitRewireWizard(),
         kitHeatingWizard(),
         kitFireWizard(),
         kitElWizard(),
-        kitAovWizard(),
         kitIntercomWizard(),
         kitAccessWizard(),
-        kitGatesWizard(),
-        kitBarriersWizard(),
     ];
     $out = [];
     foreach ($list as $w) {
@@ -776,4 +812,5 @@ function kitWizardCatalog(): array
     }
     kitAssertCatalogBrands($out);
     return $out;
+}
 }

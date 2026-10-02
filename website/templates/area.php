@@ -33,6 +33,7 @@ if (empty($_SESSION['csrf'])) {
 }
 
 require_once SITE_ROOT . '/includes/share.php';
+require_once SITE_ROOT . '/includes/kit-wizard.php';
 $canonicalUrl = url('/pages/areas/' . $areaSlugVal . '.php');
 require SITE_ROOT . '/includes/header.php';
 
@@ -170,6 +171,8 @@ $schema = [
         <?php endforeach; ?>
     </div>
 </section>
+
+<?php kitWizardEmbedList(kitWizardSlugsForTown(), $areaName); ?>
 
 <!-- INTRO -->
 <section class="max-w-7xl mx-auto px-6 py-16">

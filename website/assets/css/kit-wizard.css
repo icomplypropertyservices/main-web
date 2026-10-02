@@ -1,14 +1,32 @@
 /* Kit builders — navy #0B1F3A + orange #FF6B00. Light cards on navy pages. */
 .kit-wrap { --kit-navy: #0B1F3A; --kit-orange: #FF6B00; --kit-ink: #0F172A; --kit-muted: #5B6472; }
 
+.kit-stage { background: #f4f6f9; color: var(--kit-ink); }
 .kit-progress { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 1.25rem 0 0; }
 .kit-progress button {
   appearance: none; border: 1px solid rgba(255,255,255,.2); background: transparent;
   color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
   padding: .35rem .65rem; border-radius: 999px; cursor: pointer;
 }
-.kit-progress button[aria-current="step"] { background: var(--kit-orange); border-color: var(--kit-orange); }
+.kit-progress--stage button {
+  border-color: #cfd6e0; background: #fff; color: var(--kit-navy);
+}
+.kit-progress button[aria-current="step"],
+.kit-progress--stage button[aria-current="step"] { background: var(--kit-orange); border-color: var(--kit-orange); color: #fff; }
 .kit-progress button.is-done { border-color: rgba(255,255,255,.45); }
+.kit-progress--stage button.is-done { border-color: var(--kit-navy); }
+
+.kit-panel h2,
+.page-hero .kit-panel h2,
+.kit-stage .kit-panel h2 {
+  color: var(--kit-navy) !important;
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+.kit-panel h3,
+.page-hero .kit-panel h3 { color: var(--kit-navy) !important; }
 
 .kit-panel { background: #fff; color: var(--kit-ink); border-radius: 1.5rem; padding: 1.25rem 1.25rem 1.5rem; }
 body.theme-dark .kit-panel,

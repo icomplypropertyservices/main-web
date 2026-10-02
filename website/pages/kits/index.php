@@ -25,7 +25,7 @@ $wizards = kitWizardCatalog();
         <p class="text-xs uppercase tracking-[3px] text-[#FF6B00] font-semibold">Icomply trade kits</p>
         <h1 class="text-4xl md:text-5xl font-semibold tracking-tighter mt-3">Kit builders</h1>
         <p class="mt-4 text-lg text-white/80 max-w-2xl">
-            Step through a job, pick branded manufacturers, then enquire / POA or open a live Shopify SKU.
+            Barriers (CAME partner) and AOV (Ventlux / KAC) come first — those builders are also built into the matching service and town pages. Then step through a job, pick branded manufacturers, and enquire / POA or open a live Shopify SKU.
             Screwfix is a price reference for the same branded SKU only (sell = that inc-VAT figure + 15%).
             We never list Screwfix own-make / own-brand, LAP, Time (SFX cable), SFX accessories, British General / BG boards, or unbranded white-label sockets.
         </p>

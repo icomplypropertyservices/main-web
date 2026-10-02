@@ -91,6 +91,7 @@ function icomplyFooterHtml(): string
     $privacy = icomplyNavH($n['legal'][0]['href']);
     $terms = icomplyNavH($n['legal'][1]['href']);
     $siteMap = icomplyNavH($n['legal'][2]['href']);
+    $kitsHub = icomplyNavH(url('/pages/kits'));
 
     return <<<HTML
 <footer class="site-footer" data-site-footer>
@@ -144,6 +145,7 @@ function icomplyFooterHtml(): string
           <a href="/shop/fire/">Fire</a>
           <a href="/shop/security/">Security</a>
           <a href="/shop/gas/">Gas</a>
+          <a href="{$kitsHub}">Kit builders</a>
           <!-- Marketing https://marketing.icomplypropertyservices.co.uk — optional until DNS live -->
         </div>
       </details>

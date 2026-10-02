@@ -21,6 +21,7 @@ function icomplyMegaHeaderHtml(): string
     $hubSecurity = '/shop/security/';
     $hubGas = '/shop/gas/';
     $shopLive = icomplyNavH(function_exists('icomplyTradeShopUrl') ? icomplyTradeShopUrl() : 'https://shop.icomplypropertyservices.co.uk');
+    $kitsHub = icomplyNavH(url('/pages/kits'));
     $aovHub = icomplyNavH(url('/pages/services/aov-air-handling.php'));
     $aovFeatured = '<div class="mega-featured mega-featured--aov">'
         . '<p class="mega-featured-title">Priority — AOV &amp; smoke control</p>'
@@ -103,6 +104,7 @@ function icomplyMegaHeaderHtml(): string
                 <a href="{$hubElectrical}">Electrical</a>
                 <a href="{$hubSecurity}">Security</a>
                 <a href="{$hubGas}">Gas</a>
+                <a href="{$kitsHub}">Kit builders</a>
                 <a href="{$shopAll}" class="mega-more">All supplies →</a>
                 <a href="{$shopLive}" class="mega-more" target="_blank" rel="noopener">Shopify checkout →</a>
               </div>
@@ -155,6 +157,7 @@ function icomplyMobileDrawerHtml(array $n): string
     $hubFireD = '/shop/fire/';
     $hubSecurityD = '/shop/security/';
     $hubGasD = '/shop/gas/';
+    $kitsHub = icomplyNavH(url('/pages/kits'));
 
     return <<<HTML
 <div id="mega-drawer" class="mega-drawer" hidden>
@@ -168,6 +171,7 @@ function icomplyMobileDrawerHtml(array $n): string
       <a href="{$hubElectricalD}">Electrical</a>
       <a href="{$hubSecurityD}">Security</a>
       <a href="{$hubGasD}">Gas</a>
+      <a href="{$kitsHub}">Kit builders</a>
       <a href="/shop/">All supplies</a>
     </div></details>
     <a href="{$productsD}">Products</a>

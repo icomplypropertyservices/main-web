@@ -1,6 +1,7 @@
 (function () {
-  var root = document.getElementById('kit-wizard');
-  if (!root) return;
+  document.querySelectorAll('[data-kit-wizard]').forEach(function (root) {
+  if (root.getAttribute('data-kit-booted') === '1') return;
+  root.setAttribute('data-kit-booted', '1');
 
   var data;
   try {
@@ -12,6 +13,7 @@
   var steps = data.steps || [];
   var state = {};
   var idx = 0;
+  var areaName = (root.getAttribute('data-area') || '').trim();
   var shopHost = data.shop_host || 'https://shop.icomplypropertyservices.co.uk';
   var wa = root.getAttribute('data-wa') || '';
   var contact = root.getAttribute('data-contact') || '/contact';
@@ -65,7 +67,7 @@
       btn.addEventListener('click', function () {
         if (i <= firstIncomplete() || i <= idx) {
           idx = i;
-          render();
+          render(true);
         }
       });
       progress.appendChild(btn);
@@ -104,14 +106,17 @@
       if (pos === -1) cur.push(id);
       else cur.splice(pos, 1);
       state[step.id] = cur;
-    } else {
-      state[step.id] = id;
+      clearDownstream(step);
+      return;
     }
+    if (state[step.id] === id) return;
+    state[step.id] = id;
     clearDownstream(step);
   }
 
   function collectLines() {
     var lines = [data.title || 'Kit builder'];
+    if (areaName) lines.push('Town: ' + areaName);
     var shopItems = [];
     steps.forEach(function (step) {
       selectedIds(step).forEach(function (id) {
@@ -119,9 +124,9 @@
         if (!opt) return;
         var bit = step.title + ': ' + opt.label;
         if (opt.sku) bit += ' (SKU ' + opt.sku + ')';
-        if (opt.screwfix_ref) bit += ' [price ref Screwfix ' + opt.screwfix_ref + ' for branded ' + (opt.brand || 'SKU') + ']';
+        if (opt.screwfix_ref) bit += ' [price ref Screwfix ' + opt.screwfix_ref + (opt.screwfix_inc ? ' £' + opt.screwfix_inc + ' inc VAT' : '') + ' for branded ' + (opt.brand || 'SKU') + ']';
         if (opt.sell_price) bit += ' — sell £' + opt.sell_price;
-        if (opt.cta === 'poa') bit += ' — enquire/POA';
+        if (opt.cta === 'poa' || opt.cta === 'enquire') bit += ' — enquire/POA';
         lines.push(bit);
         if (opt.handle && opt.cta === 'shop') {
           shopItems.push(opt);
@@ -134,6 +139,7 @@
   function renderSummary() {
     var picked = collectLines();
     var html = '<h2>' + escapeHtml(data.summary_title || 'Your kit') + '</h2>';
+    if (areaName) html += '<p class="kit-note">Town: ' + escapeHtml(areaName) + '</p>';
     html += '<p class="kit-muted">' + escapeHtml(data.summary_blurb || data.brand_policy || 'No invented catalogue prices. Branded manufacturers only.') + '</p>';
     if (data.brand_policy && data.summary_blurb && data.brand_policy !== data.summary_blurb) {
       html += '<p class="kit-note">' + escapeHtml(data.brand_policy) + '</p>';
@@ -154,7 +160,9 @@
         if (opt.sell_price) {
           html += '<div class="kit-price">Sell £' + escapeHtml(opt.sell_price) + '</div>';
           if (opt.screwfix_ref) {
-            html += '<span class="kit-ref">Price reference (Screwfix) ' + escapeHtml(opt.screwfix_ref) + ' for this branded ' + escapeHtml(opt.brand || 'SKU') + '</span>';
+            html += '<span class="kit-ref">Price reference (Screwfix) ' + escapeHtml(opt.screwfix_ref);
+            if (opt.screwfix_inc) html += ' · £' + escapeHtml(opt.screwfix_inc) + ' inc VAT';
+            html += ' for this branded ' + escapeHtml(opt.brand || 'SKU') + ' + 15%</span>';
           }
         } else if (opt.cta === 'poa' || opt.cta === 'enquire') {
           html += '<div class="kit-price">Enquire / POA</div>';
@@ -206,7 +214,7 @@
       } else if (opt.brand) {
         html += '<span class="kit-logo-fallback">' + escapeHtml(opt.brand) + '</span>';
       }
-      if (opt.cta === 'poa' || opt.cta === 'enquire') {
+      if (!opt.sell_price && (opt.cta === 'poa' || opt.cta === 'enquire')) {
         html += '<span class="kit-badge">Enquire / POA</span>';
       } else if (opt.cta === 'shop') {
         html += '<span class="kit-badge">Shop SKU</span>';
@@ -216,7 +224,9 @@
       if (opt.sell_price) {
         html += '<div class="kit-price">Sell £' + escapeHtml(opt.sell_price) + '</div>';
         if (opt.screwfix_ref) {
-          html += '<span class="kit-ref">Price reference (Screwfix) ' + escapeHtml(opt.screwfix_ref) + ' · branded ' + escapeHtml(opt.brand || 'SKU') + '</span>';
+          html += '<span class="kit-ref">Price reference (Screwfix) ' + escapeHtml(opt.screwfix_ref);
+          if (opt.screwfix_inc) html += ' · £' + escapeHtml(opt.screwfix_inc) + ' inc VAT';
+          html += ' · branded ' + escapeHtml(opt.brand || 'SKU') + ' + 15%</span>';
         }
       } else if (opt.sku && opt.cta === 'shop') {
         html += '<span class="kit-ref">SKU ' + escapeHtml(opt.sku) + '</span>';
@@ -225,16 +235,22 @@
     });
     html += '</div>';
     if (step.note) html += '<p class="kit-note">' + escapeHtml(step.note) + '</p>';
+    var needsPick = !step.optional && !selectedIds(step).length;
+    var atEnd = nextVisibleIdx(idx) >= steps.length;
     html += '<div class="kit-nav">';
     if (idx > 0) html += '<button type="button" class="kit-btn kit-btn-ghost" data-kit-back>Back</button>';
-    html += '<button type="button" class="kit-btn kit-btn-orange" data-kit-next>' + (idx === steps.length - 1 ? 'Review kit' : 'Continue') + '</button>';
+    html += '<button type="button" class="kit-btn kit-btn-orange" data-kit-next' + (needsPick ? ' disabled' : '') + '>' + (atEnd ? 'Review kit' : 'Continue') + '</button>';
     html += '</div>';
+    if (needsPick) html += '<p class="kit-note">Choose an option to continue.</p>';
     panel.innerHTML = html;
 
     panel.querySelectorAll('[data-kit-opt]').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        toggle(step, btn.getAttribute('data-kit-opt'));
-        render();
+        var id = btn.getAttribute('data-kit-opt');
+        toggle(step, id);
+        render(false);
+        var again = panel.querySelector('[data-kit-opt="' + (window.CSS && CSS.escape ? CSS.escape(id) : id) + '"]');
+        if (again) again.focus({ preventScroll: true });
       });
     });
     bindNav();
@@ -247,12 +263,8 @@
       next.addEventListener('click', function () {
         var step = steps[idx];
         if (step && !step.optional && !selectedIds(step).length) return;
-        if (idx >= steps.length - 1) {
-          idx = steps.length;
-        } else {
-          idx = nextVisibleIdx(idx);
-        }
-        render();
+        idx = nextVisibleIdx(idx);
+        render(true);
       });
     }
     if (back) {
@@ -262,7 +274,7 @@
         } else {
           idx = prevVisibleIdx(idx);
         }
-        render();
+        render(true);
       });
     }
   }
@@ -274,15 +286,18 @@
   }
   function escapeAttr(s) { return escapeHtml(s); }
 
-  function render() {
+  function render(scroll) {
     if (idx < steps.length && !stepVisible(idx)) {
       idx = nextVisibleIdx(idx - 1);
     }
     renderProgress();
     if (idx >= steps.length) renderSummary();
     else renderStep();
-    root.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    if (scroll) {
+      root.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    }
   }
 
-  render();
+  render(false);
+  });
 })();

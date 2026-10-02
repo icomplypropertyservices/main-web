@@ -24,6 +24,9 @@ jobs:
           php-version: "8.3"
           coverage: none
 
+      - name: Kit brand lock
+        run: php website/bin/check-kit-brands.php
+
       - name: SEO matrix + sitemap hygiene
         env:
           SITE_URL: https://icomplypropertyservices.co.uk

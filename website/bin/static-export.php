@@ -366,6 +366,7 @@ function icomplyRenderExportRoute(string $path): array
         }
     }
     if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)
+        && $m[1] !== 'kits'
         && function_exists('getServices')
         && isset(getServices()[$m[1]])) {
         $area = function_exists('areaFromSlug') ? areaFromSlug($m[2]) : $m[2];
