@@ -336,6 +336,9 @@ function getMajorKeywords(): array {
         }
         $normalized[$slug] = $row;
     }
+    if (function_exists('securitySystemsApplyOverlay')) {
+        $normalized = securitySystemsApplyOverlay($normalized);
+    }
     return $normalized;
 }
 
@@ -449,6 +452,7 @@ function getPopularKeywordSlugs(): array {
         'gas-safety-certificate', 'cp12', 'landlord-gas-safety', 'boiler', 'boiler-install',
         'boiler-repair', 'gas-safety', 'emergency-gas-engineer', 'landlord-gas',
         'cctv-installation', 'access-control-system', 'door-entry-system',
+        'intruder-alarm-installation', 'grade-2-intruder-alarm', 'monitored-intruder-alarm',
         'nurse-call-system', 'landlord-compliance',
         'legionella-risk-assessment', 'legionella-testing', 'water-hygiene-testing',
         'asbestos-survey', 'asbestos-testing', 'asbestos-management-survey',
@@ -711,6 +715,11 @@ function icomplyTradeProductsUrl(): string
 $waFile = __DIR__ . '/includes/water-asbestos.php';
 if (is_file($waFile)) {
     require_once $waFile;
+}
+
+$securitySystemsFile = __DIR__ . '/includes/security-systems-jobs.php';
+if (is_file($securitySystemsFile)) {
+    require_once $securitySystemsFile;
 }
 
 // Back-compat globals used by some templates/includes

@@ -6,11 +6,18 @@
  * KEYWORD_INTRO, KEYWORD_BODY, KEYWORD_META, KEYWORD_FOCUS_HTML, KEYWORD_FAQ_HTML,
  * KEYWORD_IMAGE, SERVICE_IMAGE
  */
-$pageTitle = $KEYWORD_NAME . ' | North West';
+$pageTitle = !empty($KEYWORD_SEO_TITLE) ? $KEYWORD_SEO_TITLE : ($KEYWORD_NAME . ' | North West');
 $metaDesc = $KEYWORD_META;
 $metaKeywords = $SEO_KEYWORDS;
 $ogImage = $KEYWORD_IMAGE;
 $canonicalUrl = url('/pages/keywords/' . $KEYWORD_SLUG . '.php');
+$keywordH1 = !empty($KEYWORD_H1) ? $KEYWORD_H1 : $KEYWORD_NAME;
+$categoryLabel = $CATEGORY_LABEL ?? '';
+$categoryKey = $CATEGORY_KEY ?? '';
+$laneNote = $KEYWORD_LANE_NOTE ?? '';
+$quoteNote = $KEYWORD_QUOTE_NOTE ?? '';
+$quoteTrust = !empty($KEYWORD_QUOTE_TRUST) ? $KEYWORD_QUOTE_TRUST : 'Fixed quotes';
+$quoteTrustDetail = !empty($KEYWORD_QUOTE_TRUST_DETAIL) ? $KEYWORD_QUOTE_TRUST_DETAIL : 'Clear scope before work starts';
 
 $keywordName = $KEYWORD_NAME;
 $keywordSlug = $KEYWORD_SLUG;
@@ -50,14 +57,24 @@ require SITE_ROOT . '/includes/header.php';
         ],
         [
             '@type' => 'BreadcrumbList',
-            'itemListElement' => [
-                ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => rtrim(SITE_URL, '/') . '/'],
-                ['@type' => 'ListItem', 'position' => 2, 'name' => 'Guides', 'item' => url('/pages/keywords/index.php')],
-                ['@type' => 'ListItem', 'position' => 3, 'name' => $keywordName, 'item' => $canonicalUrl],
-            ],
+            'itemListElement' => $categoryLabel !== ''
+                ? [
+                    ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => rtrim(SITE_URL, '/') . '/'],
+                    ['@type' => 'ListItem', 'position' => 2, 'name' => $categoryLabel, 'item' => url('/pages/services/index.php') . '#' . $categoryKey],
+                    ['@type' => 'ListItem', 'position' => 3, 'name' => $serviceName, 'item' => url('/pages/services/' . $serviceSlug . '.php')],
+                    ['@type' => 'ListItem', 'position' => 4, 'name' => $keywordH1, 'item' => $canonicalUrl],
+                ]
+                : [
+                    ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => rtrim(SITE_URL, '/') . '/'],
+                    ['@type' => 'ListItem', 'position' => 2, 'name' => 'Guides', 'item' => url('/pages/keywords/index.php')],
+                    ['@type' => 'ListItem', 'position' => 3, 'name' => $keywordName, 'item' => $canonicalUrl],
+                ],
         ],
     ],
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
+<?php if (!empty($KEYWORD_FAQ_JSON)): ?>
+<script type="application/ld+json"><?= $KEYWORD_FAQ_JSON ?></script>
+<?php endif; ?>
 
 <!-- HERO: solid navy + image with dark overlay for readable text -->
 <section class="relative overflow-hidden bg-[#061828] text-white">
@@ -69,18 +86,26 @@ require SITE_ROOT . '/includes/header.php';
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
         <nav class="text-xs text-white/70 mb-5 flex flex-wrap gap-2" aria-label="Breadcrumb">
             <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a><span class="text-white/40">/</span>
+            <?php if ($categoryLabel !== ''): ?>
+            <a href="<?= url('/pages/services/index.php') ?>#<?= htmlspecialchars($categoryKey, ENT_QUOTES, 'UTF-8') ?>" class="hover:text-white"><?= htmlspecialchars($categoryLabel, ENT_QUOTES, 'UTF-8') ?></a><span class="text-white/40">/</span>
+            <a href="<?= url('/pages/services/' . $serviceSlug . '.php') ?>" class="hover:text-white"><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></a><span class="text-white/40">/</span>
+            <?php else: ?>
             <a href="<?= url('/pages/keywords/index.php') ?>" class="hover:text-white">Guides</a><span class="text-white/40">/</span>
-            <span class="text-white font-medium"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></span>
+            <?php endif; ?>
+            <span class="text-white font-medium"><?= htmlspecialchars($keywordH1, ENT_QUOTES, 'UTF-8') ?></span>
         </nav>
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ff6b00] text-white text-xs font-bold tracking-widest uppercase mb-5">
             <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> guide
         </div>
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white max-w-3xl leading-[1.08] drop-shadow-lg">
-            <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?>
+            <?= htmlspecialchars($keywordH1, ENT_QUOTES, 'UTF-8') ?>
         </h1>
         <p class="mt-5 text-lg md:text-xl text-white max-w-2xl leading-relaxed font-medium drop-shadow">
             <?= htmlspecialchars($KEYWORD_INTRO, ENT_QUOTES, 'UTF-8') ?>
         </p>
+        <?php if ($laneNote !== ''): ?>
+        <p class="mt-4 text-sm md:text-base text-white/90 max-w-2xl leading-relaxed"><?= htmlspecialchars($laneNote, ENT_QUOTES, 'UTF-8') ?></p>
+        <?php endif; ?>
         <div class="mt-8 flex flex-wrap gap-3">
             <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-bold text-white shadow-lg">Get free quote</a>
             <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode($keywordName . ' quote') ?>"
@@ -97,7 +122,7 @@ require SITE_ROOT . '/includes/header.php';
         $trust = [
             ['Local engineers', 'Stockport base — 150+ North West towns'],
             ['Standards-led', 'British Standards & manufacturer guidance'],
-            ['Fixed quotes', 'Clear scope before work starts'],
+            [$quoteTrust, $quoteTrustDetail],
             ['Full paperwork', 'Certificates & logbooks for compliance'],
         ];
         foreach ($trust as [$t, $d]): ?>
@@ -211,7 +236,7 @@ require SITE_ROOT . '/includes/header.php';
 <section id="quote" class="bg-[#061828] text-white">
     <div class="max-w-3xl mx-auto px-6 py-14">
         <h2 class="text-3xl font-bold text-center">Quote for <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></h2>
-        <p class="mt-2 text-center text-white/90">Fixed-price after scope is agreed. Stockport engineers · North West coverage.</p>
+        <p class="mt-2 text-center text-white/90"><?= htmlspecialchars($quoteNote !== '' ? $quoteNote : 'Fixed-price after scope is agreed. Stockport engineers · North West coverage.', ENT_QUOTES, 'UTF-8') ?></p>
         <form action="<?= url('/contact.php') ?>" method="POST" class="mt-8 bg-white text-zinc-900 border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4 shadow-xl">
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid md:grid-cols-2 gap-4">
