@@ -70,6 +70,18 @@ function comboTemplatePath(string $serviceSlug = ''): string {
  * Service × area landing page.
  */
 function renderServiceAreaPage(string $serviceSlug, string $area): void {
+    if ($serviceSlug === 'aov-air-handling') {
+        require_once SITE_ROOT . '/includes/aov.php';
+        require_once SITE_ROOT . '/includes/aov-place.php';
+        $slug = areaSlug($area);
+        if (aovPlace($slug)) {
+            header('Location: ' . url('/pages/aov/' . $slug), true, 301);
+        } else {
+            header('Location: ' . url('/pages/services/aov-air-handling.php'), true, 301);
+        }
+        icomplyRequestExit();
+        return;
+    }
     $services = getServices();
     if (!isset($services[$serviceSlug])) {
         http_response_code(404);
@@ -137,9 +149,18 @@ function keywordTemplatePlaceholders(
     string $areaName = ''
 ): array {
     $name = $meta['name'] ?? keywordDisplayName($slug);
-    $intro = (string)($meta['intro'] ?? "Professional {$name} from Icomply Property Services across the North West.");
-    $body = (string)($meta['body'] ?? "We install, service and certify {$name} as part of our {$serviceName} range for landlords, FM teams and commercial sites.");
-    $metaDesc = (string)($meta['meta_desc'] ?? "{$name} across Greater Manchester & the North West. Fixed-price quotes. Local engineers.");
+    $gasTopic = function_exists('icomplyKeywordRecordIsGas') && icomplyKeywordRecordIsGas($meta, $slug);
+    if ($gasTopic && function_exists('icomplyGasKeywordIntro')) {
+        $intro = icomplyGasKeywordIntro($name, $areaName);
+        $body = icomplyGasKeywordBody($name, $areaName);
+        $metaDesc = icomplyGasMetaDesc($name, $areaName);
+        $meta['focus_points'] = icomplyGasKeywordPoints();
+        $meta['faq'] = icomplyGasKeywordFaqs($name);
+    } else {
+        $intro = (string)($meta['intro'] ?? "Professional {$name} from iComply Property Services across the North West.");
+        $body = (string)($meta['body'] ?? "We install, service and certify {$name} as part of our {$serviceName} range for landlords, FM teams and commercial sites.");
+        $metaDesc = (string)($meta['meta_desc'] ?? "{$name} across Greater Manchester & the North West. Fixed-price quotes. Local engineers.");
+    }
     $seoKw = (string)($meta['seo_keywords'] ?? getSeoKeywords($serviceSlug, $areaName));
 
     $focusHtml = '';
@@ -174,9 +195,8 @@ function keywordTemplatePlaceholders(
             . '<p class="mt-3 text-sm text-zinc-900 leading-relaxed font-medium">' . $a . '</p></details>';
     }
 
-    $kwImg = url('/assets/images/keywords/' . $slug . '.jpg');
-    $svcImg = url('/assets/images/services/' . $serviceSlug . '.jpg');
-    // Prefer keyword image path; template onerror falls back to service
+    $kwImg = keywordImageUrl($slug, $serviceSlug);
+    $svcImg = serviceImageUrl($serviceSlug);
 
     return [
         'KEYWORD_NAME' => $name,
@@ -230,6 +250,11 @@ function renderKeywordAreaPage(string $keywordSlug, string $area): void {
     $meta = $keywords[$keywordSlug];
     $services = getServices();
     $serviceSlug = $meta['service'] ?? 'electrical';
+    if ($serviceSlug === 'aov-air-handling') {
+        header('Location: ' . url('/pages/keywords/' . $keywordSlug), true, 301);
+        icomplyRequestExit();
+        return;
+    }
     $serviceName = $services[$serviceSlug] ?? keywordDisplayName($serviceSlug);
     $relatedSlug = keywordSlug($meta['related'] ?? $keywordSlug);
     $relatedName = $keywords[$relatedSlug]['name'] ?? keywordDisplayName($relatedSlug);
@@ -242,10 +267,13 @@ function renderKeywordAreaPage(string $keywordSlug, string $area): void {
     $ph['AREA_SLUG'] = $areaSlugVal;
     $ph['AREA_URL'] = rawurlencode($areaName);
     // Localise meta for area pages
-    $ph['KEYWORD_META'] = $meta['meta_desc'] ?? $ph['KEYWORD_META'];
-    $ph['KEYWORD_BODY'] = rtrim($ph['KEYWORD_BODY'], '.')
-        . '. Our engineers regularly attend jobs in ' . $areaName
-        . ' and surrounding postcodes for ' . ($meta['name'] ?? $keywordSlug) . '.';
+    $gasTopic = function_exists('icomplyKeywordRecordIsGas') && icomplyKeywordRecordIsGas($meta, $keywordSlug);
+    if (!$gasTopic) {
+        $ph['KEYWORD_META'] = $meta['meta_desc'] ?? $ph['KEYWORD_META'];
+        $ph['KEYWORD_BODY'] = rtrim($ph['KEYWORD_BODY'], '.')
+            . '. Our engineers regularly attend jobs in ' . $areaName
+            . ' and surrounding postcodes for ' . ($meta['name'] ?? $keywordSlug) . '.';
+    }
 
     // Pure-PHP template (no {{}} / eval)
     executeTemplateVars(SITE_ROOT . '/templates/keyword-area.php', $ph);
@@ -271,6 +299,11 @@ function renderAreaHubPage(string $area): void {
  * Top-level service hub (pages/services/{slug}.php).
  */
 function renderServiceHubPage(string $serviceSlug): void {
+    if ($serviceSlug === 'aov-air-handling') {
+        require_once SITE_ROOT . '/includes/aov.php';
+        aovRenderHub();
+        return;
+    }
     $services = getServices();
     if (!isset($services[$serviceSlug])) {
         http_response_code(404);
@@ -307,7 +340,7 @@ function renderManufacturerPage(string $mfrSlug): void {
     $GLOBALS['areas'] = getAreas();
 
     $primary = $entry['services'][0] ?? 'fire-alarms';
-    $fallbackImg = htmlspecialchars(url('/assets/images/services/' . $primary . '.jpg'), ENT_QUOTES, 'UTF-8');
+    $fallbackImg = htmlspecialchars(serviceImageUrl($primary), ENT_QUOTES, 'UTF-8');
 
     // Services chips
     $servicesHtml = '';
@@ -361,5 +394,32 @@ function renderManufacturerPage(string $mfrSlug): void {
         'MFR_PRODUCTS_HTML' => $productsHtml,
         'MFR_RELATED_HTML' => $relatedHtml,
         'SERVICE_NAME' => $services[$primary] ?? 'Compliance',
+    ]);
+}
+
+/**
+ * Manufacturer × area. 404 when the brand is excluded or the town is outside its coverage.
+ */
+function renderManufacturerAreaPage(string $mfrSlug, string $areaSlugVal): void {
+    $entry = getManufacturerBySlug($mfrSlug);
+    if (!$entry || (function_exists('manufacturerIsExcluded') && manufacturerIsExcluded($mfrSlug))) {
+        http_response_code(404);
+        echo 'Manufacturer not found';
+        icomplyRequestExit();
+        return;
+    }
+    $area = areaFromSlug($areaSlugVal);
+    if ($area === null || !manufacturerAreaAllowed($entry, $area)) {
+        http_response_code(404);
+        echo 'Area not found';
+        icomplyRequestExit();
+        return;
+    }
+    $GLOBALS['services'] = getServices();
+    $GLOBALS['areas'] = getAreas();
+    executeTemplateVars(SITE_ROOT . '/templates/manufacturer-area.php', [
+        'MFR_SLUG' => $entry['slug'],
+        'AREA' => $area,
+        'AREA_SLUG' => areaSlug($area),
     ]);
 }

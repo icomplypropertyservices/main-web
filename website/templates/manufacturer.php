@@ -20,6 +20,16 @@ $mfrServices = $entry['services'] ?? [];
 $products = $entry['products'] ?? [];
 $primaryService = $mfrServices[0] ?? 'fire-alarms';
 $primaryServiceName = $services[$primaryService] ?? 'Compliance';
+if (function_exists('icomplyStripTimingFragment')) {
+    $MFR_BLURB = icomplyStripTimingFragment($MFR_BLURB);
+}
+$gasBrand = function_exists('icomplyManufacturerEntryIsGas') && icomplyManufacturerEntryIsGas($entry);
+if ($gasBrand && function_exists('icomplyGasBrandBlurb')) {
+    $MFR_BLURB = icomplyGasBrandBlurb($mfrName);
+    $metaDesc = $MFR_BLURB;
+} else {
+    $metaDesc = $MFR_BLURB;
+}
 $ogImage = manufacturerImageUrl($mfrSlug, $primaryService);
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
@@ -79,10 +89,12 @@ $schema = [
             'mainEntity' => [
                 [
                     '@type' => 'Question',
-                    'name' => 'Do you install and service ' . $mfrName . ' systems?',
+                    'name' => $gasBrand ? ('Does iComply install or service ' . $mfrName . ' gas appliances?') : ('Do you install and service ' . $mfrName . ' systems?'),
                     'acceptedAnswer' => [
                         '@type' => 'Answer',
-                        'text' => 'Yes. Icomply Property Services installs, commissions, maintains and certifies ' . $mfrName . ' equipment across Greater Manchester and the North West.',
+                        'text' => $gasBrand
+                            ? ('No. ' . icomplyGasLegalSentence() . ' iComply does not install, service, or repair ' . $mfrName . ' boilers or gas appliances.')
+                            : ('Yes. We install and service ' . $mfrName . ' equipment across Greater Manchester and the North West.'),
                     ],
                 ],
                 [
@@ -122,16 +134,16 @@ $schema = [
             <div>
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs tracking-widest uppercase mb-5">
                     <span class="w-2 h-2 rounded-full bg-[#ff6b00]"></span>
-                    Brand · Trade shop · Install &amp; service
+                    <?= $gasBrand ? 'Brand · Trade supply · Gas work is not carried out by iComply' : 'Brand · Trade shop · Install &amp; service' ?>
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
                     <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?><br>
-                    <span class="text-[#ff6b00]">products &amp; service</span>
+                    <span class="text-[#ff6b00]"><?= $gasBrand ? 'trade supply only' : 'products &amp; service' ?></span>
                 </h1>
                 <p class="mt-6 text-lg text-white/80 max-w-xl"><?= htmlspecialchars($MFR_BLURB, ENT_QUOTES, 'UTF-8') ?></p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#products" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Shop products</a>
-                    <a href="#quote" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">Install quote</a>
+                    <a href="#quote" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100"><?= $gasBrand ? 'Non-gas quote' : 'Install quote' ?></a>
                     <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode($mfrName . ' enquiry') ?>"
                        target="_blank" rel="noopener"
                        class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
@@ -139,12 +151,12 @@ $schema = [
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
                 <img src="<?= htmlspecialchars(manufacturerImageUrl($mfrSlug, $primaryService), ENT_QUOTES, 'UTF-8') ?>"
-                     alt="<?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> equipment — Icomply Property Services"
+                     alt="<?= htmlspecialchars($gasBrand && function_exists('icomplyGasLegalSentence') ? icomplyGasLegalSentence() : ($mfrName . ' equipment — iComply Property Services'), ENT_QUOTES, 'UTF-8') ?>"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
                      loading="eager"
                      onerror="this.src='<?= htmlspecialchars(serviceImageUrl($primaryService), ENT_QUOTES, 'UTF-8') ?>'">
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-transparent to-transparent">
-                    <div class="text-sm text-white/70">Authorised install &amp; trade supply</div>
+                    <div class="text-sm text-white/70"><?= $gasBrand ? 'Trade supply only. iComply is not Gas Safe registered.' : 'Install, service and trade supply' ?></div>
                     <div class="text-2xl font-semibold mt-1"><?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> · North West</div>
                 </div>
             </div>
@@ -162,15 +174,36 @@ $schema = [
     </div>
 </section>
 
+<?php if (function_exists('manufacturerProductLines') && function_exists('manufacturerLineCardsHtml')): ?>
+<section class="max-w-7xl mx-auto px-6 py-12">
+    <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Product lines</div>
+    <h2 class="text-3xl font-semibold tracking-tight text-black mt-2"><?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> ranges</h2>
+    <p class="mt-2 text-zinc-600 max-w-3xl">Each range has its own mark. Area pages repeat these lines with a local introduction.</p>
+    <?= manufacturerLineCardsHtml($entry) ?>
+    <?php if (function_exists('manufacturerWizardFamily') && manufacturerWizardFamily($entry)): ?>
+        <p class="mt-4 text-sm text-zinc-600">AOV and barriers pages include a quote wizard. Kit list prices stay on the <a class="text-[#ff6b00] font-semibold" href="<?= url('/products') ?>#<?= manufacturerWizardFamily($entry) === 'barriers' ? 'barrier-packs' : 'aov-kits' ?>">products hub</a>.</p>
+    <?php endif; ?>
+</section>
+<?php endif; ?>
+
 <!-- INTRO -->
 <section class="max-w-7xl mx-auto px-6 py-16">
     <div class="grid lg:grid-cols-5 gap-12">
         <div class="lg:col-span-3">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">About <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?></div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">
-                Install, service &amp; buy <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?>
+                <?= $gasBrand ? 'Supply listing for' : 'Install, service &amp; buy' ?> <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?>
             </h2>
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars($MFR_BLURB, ENT_QUOTES, 'UTF-8') ?></p>
+            <?php if ($gasBrand): ?>
+            <p class="mt-4 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars(icomplyGasLegalSentence(), ENT_QUOTES, 'UTF-8') ?> Trade kits for <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?>, where listed, are supplies only.</p>
+            <ul class="mt-6 space-y-2 text-sm text-zinc-700">
+                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> iComply does not install, service, or repair this brand</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> No Gas Safe logo, badge, or registration number</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Non-gas compliance is quoted POA</li>
+            </ul>
+            <?php else: ?>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
                 Whether you need a new <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> system designed and commissioned,
                 planned maintenance on existing equipment, or trade kits and spares, our Stockport-based engineers
@@ -183,10 +216,11 @@ $schema = [
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Trade products &amp; engineer kits (Shopify-ready)</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Multi-site &amp; landlord packages</li>
             </ul>
+            <?php endif; ?>
         </div>
         <div class="lg:col-span-2 bg-[#0B1F3A] text-white rounded-3xl p-8">
             <h3 class="text-xl font-semibold">Need <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> support?</h3>
-            <p class="mt-3 text-white/75 text-sm">Tell us your panel model, postcode and whether you need install, service or parts.</p>
+            <p class="mt-3 text-white/75 text-sm"><?= $gasBrand ? 'iComply does not install or service this gas brand. Ask for a non-gas compliance quote, or about listed trade supplies.' : 'Tell us your panel model, postcode and whether you need install, service or parts.' ?></p>
             <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="block mt-6 px-5 py-3 bg-white text-[#0B1F3A] rounded-2xl font-semibold text-center"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
             <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode($mfrName . ' quote') ?>"
                target="_blank" rel="noopener"
@@ -229,16 +263,21 @@ $schema = [
     <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">
         <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> near you
     </h2>
-    <p class="mt-2 text-zinc-600 mb-6">Open a local <?= htmlspecialchars($primaryServiceName, ENT_QUOTES, 'UTF-8') ?> page for dedicated SEO and quotes.</p>
+    <p class="mt-2 text-zinc-600 mb-6"><?= function_exists('manufacturerCoverageLabel') ? htmlspecialchars(manufacturerCoverageLabel($entry), ENT_QUOTES, 'UTF-8') : 'Local pages' ?> — each town has its own <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> introduction.</p>
+    <?php if (function_exists('manufacturerAreaChipsHtml')): ?>
+        <?= manufacturerAreaChipsHtml($entry) ?>
+    <?php endif; ?>
+    <p class="mt-6 text-sm text-zinc-600">Service pages for context:</p>
     <div class="flex flex-wrap gap-2">
         <?php
+        $scoped = function_exists('manufacturerAreasFor') ? manufacturerAreasFor($entry) : getAreas();
         $towns = array_values(array_filter(
-            ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
-            fn($t) => in_array($t, getAreas(), true)
+            ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool', 'Burnley'],
+            fn($t) => in_array($t, $scoped, true)
         ));
         foreach ($towns as $t):
         ?>
-            <a href="<?= url('/pages/' . htmlspecialchars($primaryService, ENT_QUOTES, 'UTF-8') . '/' . areaSlug($t) . '.php') ?>"
+            <a href="<?= url('/pages/areas/' . areaSlug($t) . '.php') ?>"
                class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">
                 <?= htmlspecialchars($primaryServiceName . ' in ' . $t, ENT_QUOTES, 'UTF-8') ?>
             </a>
@@ -303,7 +342,7 @@ $schema = [
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Based in Stockport — North West coverage</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Install, service &amp; certification for <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?></li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Multi-service packages for landlords &amp; FM teams</li>
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Response aim: within 2 hours on business days</li>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Quotes are POA</li>
         </ul>
     </div>
 </section>
@@ -317,7 +356,7 @@ $schema = [
                 <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> enquiry
             </h2>
         </div>
-        <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
+        <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input type="text" name="name" placeholder="Full name" required maxlength="120" class="w-full border px-5 py-3.5 rounded-2xl">

@@ -20,7 +20,7 @@ $fetch = static function (string $url, bool $follow = true): array {
             'timeout' => 25,
             'ignore_errors' => true,
             'follow_location' => $follow ? 1 : 0,
-            'header' => "User-Agent: IcomplySitemapHttp/1.0\r\n",
+            'header' => "User-Agent: iComplySitemapHttp/1.0\r\n",
         ],
     ]);
     $body = @file_get_contents($url, false, $ctx);
