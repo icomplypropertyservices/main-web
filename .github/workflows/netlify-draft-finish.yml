@@ -56,12 +56,38 @@ jobs:
       - name: Verify dist/ pretty URLs
         run: php website/bin/check-static-export.php
 
-      # Same official CLI action as production (.github/workflows/netlify-deploy.yml).
-      # Args must not include --prod. This does not POST /sites/{id}/builds.
-      - name: Deploy draft (never production)
-        uses: netlify/actions/cli@master
+      # Same Netlify CLI as production (netlify deploy --dir=dist), without --prod
+      # and without POST /sites/{id}/builds. The GitHub Action wrapper ignores the
+      # CLI exit code, so this step runs the CLI directly and requires a draft URL.
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          args: deploy --dir=dist --alias finish-property-site --no-build --message "finish-property-site draft, not production"
+          node-version: "22"
+
+      - name: Deploy draft (never production)
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          CI: "true"
+        run: |
+          set -euo pipefail
+          args=(deploy --dir=dist --alias finish-property-site --no-build --message "finish-property-site draft, not production")
+          for arg in "${args[@]}"; do
+            if [ "$arg" = "--prod" ]; then
+              echo "::error::Refusing to pass --prod"
+              exit 1
+            fi
+          done
+          npx --yes netlify-cli "${args[@]}" | tee /tmp/netlify-draft.txt
+          if grep -q "Deploy aborted" /tmp/netlify-draft.txt; then
+            echo "::error::Netlify aborted the draft deploy. Production was not published."
+            exit 1
+          fi
+          if ! grep -E "Draft URL:|Website Draft URL:|draft URL" /tmp/netlify-draft.txt; then
+            echo "::error::No draft URL in the Netlify output. Production was not published."
+            exit 1
+          fi
+          if grep -E "icomplypropertyservices.co.uk" /tmp/netlify-draft.txt | grep -v netlify.app | grep -q "Production URL"; then
+            echo "::error::Output includes a production URL. Stop."
+            exit 1
+          fi
