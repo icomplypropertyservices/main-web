@@ -404,7 +404,7 @@ function accessControlLaneSynthesize(array $job): array
         ];
         $faqs = [
             ['Can door entry open a car park barrier?', 'Sometimes, when the panel has a clean release into the barrier controller. That interface is surveyed. It is not assumed.'],
-            ['Do you cover ' . $place . '?', 'Yes, from our Stockport base. Manchester (MCR) and Burnley have their own pages on this lane.'],
+            ['Do you cover ' . $place . '?', 'Yes, from our Stockport base. Manchester and Burnley are on the same job pages as the rest of the North West.'],
             ['How is ' . $name . ' priced?', 'Price on application after panel condition, handset count and cabling are known.'],
         ];
     } else {
@@ -421,7 +421,7 @@ function accessControlLaneSynthesize(array $job): array
             'POA quote — no invented access-control price',
         ];
         $faqs = [
-            ['Do you install barriers as well as door access?', 'Yes. Barriers are the hardest part of this lane and have their own pages, including Manchester and Burnley.'],
+            ['Do you install barriers as well as door access?', 'Yes. Car park barriers and the CAME Gard GT4 have their own job pages. Manchester and Burnley are attended from Stockport on those pages.'],
             ['Which towns are named on this lane?', 'Manchester (MCR) and Burnley, plus the wider North West from Stockport.'],
             ['How is ' . $name . ' priced?', 'Price on application after door count, brand and any barrier lane are confirmed.'],
         ];
@@ -429,9 +429,9 @@ function accessControlLaneSynthesize(array $job): array
 
     $body = $bits[$variant] . ' ' . $bits[($variant + 1) % 3];
     if ($town !== '') {
-        $body .= ' This page is the ' . $place . ' job, not a generic North West doorway.';
+        $body .= ' Manchester and Burnley are attended from Stockport on the same job. This is not a separate town price.';
     } else {
-        $body .= ' See the Manchester (MCR) and Burnley pages when the site is in those towns.';
+        $body .= ' Manchester and Burnley are covered from Stockport. There is no separate town page for this job.';
     }
 
     $meta = $name . ' in ' . $place . '. Surveyed POA quote from Stockport. No catalogue price.';
@@ -481,33 +481,15 @@ function accessControlLaneHubSection(string $context): string
         return '';
     }
 
-    $groups = [
-        'Manchester (MCR)' => [
-            'car-park-barrier-manchester' => 'Car park barriers',
-            'barrier-installation-manchester' => 'Barrier installation',
-            'barrier-repair-manchester' => 'Barrier repair',
-            'came-barrier-manchester' => 'CAME barriers',
-            'came-gard-gt4-manchester' => 'CAME Gard GT4',
-            'rising-arm-barrier-manchester' => 'Rising-arm barriers',
-            'barrier-loop-detector-manchester' => 'Loop detectors',
-            'barrier-after-vehicle-strike-manchester' => 'After a vehicle strike',
-            'barrier-stuck-down-manchester' => 'Barrier stuck down',
-            'maglock-manchester' => 'Maglocks',
-            'door-entry-manchester' => 'Door entry',
-        ],
-        'Burnley' => [
-            'car-park-barrier-burnley' => 'Car park barriers',
-            'barrier-installation-burnley' => 'Barrier installation',
-            'barrier-repair-burnley' => 'Barrier repair',
-            'came-barrier-burnley' => 'CAME barriers',
-            'came-gard-gt4-burnley' => 'CAME Gard GT4',
-            'rising-arm-barrier-burnley' => 'Rising-arm barriers',
-            'barrier-loop-detector-burnley' => 'Loop detectors',
-            'barrier-after-vehicle-strike-burnley' => 'After a vehicle strike',
-            'barrier-stuck-down-burnley' => 'Barrier stuck down',
-            'maglock-burnley' => 'Maglocks',
-            'door-entry-burnley' => 'Door entry',
-        ],
+    $townNotes = [
+        'Manchester (MCR)' => 'Manchester sites are attended from Stockport. The job pages below are the barrier, the CAME cabinet and the door — not a separate page per town.',
+        'Burnley' => 'Burnley uses the same job pages. A town name does not change the survey or create a second price.',
+    ];
+    $published = [
+        '/pages/jobs/car-park-barrier' => 'Car park barriers',
+        '/pages/jobs/came-gard-gt4' => 'CAME Gard GT4',
+        '/pages/jobs/maglock-installation' => 'Maglock installation',
+        '/pages/services/door-entry' => 'Door entry',
     ];
 
     $h = static function (string $s): string {
@@ -521,25 +503,20 @@ function accessControlLaneHubSection(string $context): string
     }
 
     $cards = '';
-    foreach ($groups as $townLabel => $links) {
-        $items = '';
-        foreach ($links as $slug => $label) {
-            $href = htmlspecialchars(url('/pages/keywords/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
-            $items .= '<a href="' . $href . '" class="block px-3 py-2 rounded-xl bg-white/10 hover:bg-[#ff6b00] text-sm font-semibold">'
-                . $h($label) . '</a>';
-        }
+    $items = '';
+    foreach ($published as $href => $label) {
+        $items .= '<a href="' . $h(url($href)) . '" class="block px-3 py-2 rounded-xl bg-white/10 hover:bg-[#ff6b00] text-sm font-semibold">'
+            . $h($label) . '</a>';
+    }
+    foreach ($townNotes as $townLabel => $note) {
         $cards .= '<div class="p-6 rounded-3xl bg-white/5 border border-white/10">'
             . '<h3 class="text-2xl font-semibold">' . $h($townLabel) . '</h3>'
-            . '<p class="mt-2 text-sm text-white/75">Named town on the barrier lane. Each link is a real job page, quoted POA after survey.</p>'
+            . '<p class="mt-2 text-sm text-white/75">' . $h($note) . '</p>'
             . '<div class="mt-4 grid grid-cols-2 gap-2">' . $items . '</div>'
             . '</div>';
     }
 
-    $counts = accessControlLaneData()['counts'] ?? [];
-    $barrierCount = (int)($counts['barriers'] ?? 0);
-    $countLine = $barrierCount > 0
-        ? $barrierCount . ' barrier job pages on this lane, ahead of maglocks and door entry.'
-        : 'Barrier job pages lead this lane, ahead of maglocks and door entry.';
+    $countLine = 'Car park barriers lead this lane. Maglocks and door entry are scoped beside them, each on its own quote.';
 
     return '<section id="barriers" data-lane="access-control" class="bg-[#0B1F3A] text-white">'
         . '<div class="max-w-7xl mx-auto px-6 py-16">'
@@ -549,13 +526,13 @@ function accessControlLaneHubSection(string $context): string
         . '<div class="mt-8 grid lg:grid-cols-5 gap-8 items-start">'
         . '<div class="lg:col-span-2 space-y-4">' . $imgHtml
         . '<p class="text-sm text-white/70">CAME Gard GT4 and GT8 cabinets and 5 metre arms, where the lane needs them. Installation, repair and maintenance are POA — no catalogue price.</p>'
-        . '<a href="' . $h(url('/pages/keywords/came-gard-gt4.php')) . '" class="inline-flex px-5 py-3 rounded-2xl bg-[#ff6b00] font-semibold">CAME Gard GT4</a>'
+        . '<a href="' . $h(url('/pages/jobs/came-gard-gt4')) . '" class="inline-flex px-5 py-3 rounded-2xl bg-[#ff6b00] font-semibold">CAME Gard GT4</a>'
         . '</div>'
         . '<div class="lg:col-span-3 grid md:grid-cols-2 gap-4">' . $cards . '</div>'
         . '</div>'
         . '<div class="mt-8 flex flex-wrap gap-3 text-sm">'
-        . '<a class="px-4 py-2 rounded-full bg-white text-[#0B1F3A] font-semibold" href="' . $h(url('/pages/keywords/car-park-barrier.php')) . '">All-areas car park barrier</a>'
-        . '<a class="px-4 py-2 rounded-full border border-white/30 font-semibold" href="' . $h(url('/pages/keywords/maglock-installation.php')) . '">Maglock installation</a>'
+        . '<a class="px-4 py-2 rounded-full bg-white text-[#0B1F3A] font-semibold" href="' . $h(url('/pages/jobs/car-park-barrier')) . '">Car park barriers</a>'
+        . '<a class="px-4 py-2 rounded-full border border-white/30 font-semibold" href="' . $h(url('/pages/jobs/maglock-installation')) . '">Maglock installation</a>'
         . '<a class="px-4 py-2 rounded-full border border-white/30 font-semibold" href="' . $h(url('/pages/services/door-entry.php')) . '">Door entry</a>'
         . '<a class="px-4 py-2 rounded-full border border-white/30 font-semibold" href="#quote">POA quote</a>'
         . '</div>'
@@ -583,19 +560,19 @@ function accessControlLaneKeywordStrip(string $slug, string $area = ''): string
         : 'Barriers are the hardest job on this lane. This page sits beside that work.';
 
     $links = [
-        'car-park-barrier-manchester' => 'Barriers in Manchester',
-        'car-park-barrier-burnley' => 'Barriers in Burnley',
-        'came-gard-gt4' => 'CAME Gard GT4',
-        'maglock-installation' => 'Maglocks',
-        'door-entry-installation' => 'Door entry',
+        '/pages/jobs/car-park-barrier' => 'Car park barriers',
+        '/pages/jobs/came-gard-gt4' => 'CAME Gard GT4',
+        '/pages/jobs/maglock-installation' => 'Maglocks',
+        '/pages/services/door-entry' => 'Door entry',
     ];
     $linkHtml = '';
-    foreach ($links as $linkSlug => $label) {
-        if ($linkSlug === $slug) {
+    $self = '/pages/jobs/' . $slug;
+    foreach ($links as $href => $label) {
+        if ($href === $self) {
             continue;
         }
         $linkHtml .= '<a class="px-3 py-1.5 rounded-full bg-white border border-zinc-300 text-sm font-semibold text-[#061828] hover:border-[#ff6b00]" href="'
-            . $h(url('/pages/keywords/' . $linkSlug . '.php')) . '">' . $h($label) . '</a>';
+            . $h(url($href)) . '">' . $h($label) . '</a>';
     }
 
     return '<section data-lane="access-control" data-family="' . $h($family) . '" class="bg-white border-b border-zinc-200">'

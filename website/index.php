@@ -118,14 +118,13 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
     <div class="max-w-7xl mx-auto px-6 py-10">
         <p class="text-xs uppercase tracking-[3px] text-[#ffb27a] font-semibold">Priority services</p>
         <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mt-2">Barriers and AOV</h2>
-        <p class="mt-3 text-white/80 max-w-3xl">Vehicle and parking barriers are UK-wide, with Came as the partner brand and a full manufacturer list. AOV and smoke control stays the paired life-safety priority. Manchester and Burnley have barrier pages. Quotes are on application. Phone <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
+        <p class="mt-3 text-white/80 max-w-3xl">Vehicle and parking barriers are UK-wide, with Came as the partner brand and a full manufacturer list. AOV and smoke control stays the paired life-safety priority. Manchester and Burnley are covered from Stockport on the car park barrier job. Quotes are on application. Phone <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
         <div class="mt-6 flex flex-wrap gap-2">
             <a class="px-4 py-2 rounded-full bg-[#ff6b00] font-semibold" href="<?= url('/pages/services/barriers.php') ?>">Barriers hub</a>
             <a class="px-4 py-2 rounded-full bg-white text-[#0B1F3A] font-semibold" href="<?= url('/pages/services/aov-air-handling.php') ?>">AOV &amp; smoke control</a>
             <a class="px-4 py-2 rounded-full border border-white/30 font-semibold" href="<?= url('/pages/manufacturers/came.php') ?>">Came partner</a>
-            <a class="px-4 py-2 rounded-full border border-white/30 font-semibold" href="<?= url('/pages/keywords/vehicle-barriers.php') ?>">Vehicle barriers</a>
-            <a class="px-4 py-2 rounded-full border border-white/30 font-semibold" href="<?= url('/pages/keywords/vehicle-barriers/manchester.php') ?>">Manchester</a>
-            <a class="px-4 py-2 rounded-full border border-white/30 font-semibold" href="<?= url('/pages/keywords/vehicle-barriers/burnley.php') ?>">Burnley</a>
+            <a class="px-4 py-2 rounded-full border border-white/30 font-semibold" href="<?= url('/pages/jobs/car-park-barrier') ?>">Car park barriers</a>
+            <a class="px-4 py-2 rounded-full border border-white/30 font-semibold" href="<?= url('/pages/jobs/came-gard-gt4') ?>">CAME Gard GT4</a>
         </div>
     </div>
 </section>
