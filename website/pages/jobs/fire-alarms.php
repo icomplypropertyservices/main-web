@@ -4,6 +4,7 @@
  */
 require_once __DIR__ . '/../../config.php';
 require_once SITE_ROOT . '/includes/share.php';
+require_once SITE_ROOT . '/includes/job-article.php';
 
 $grouped = fireAlarmsLaneGrouped();
 $counts = fireAlarmsLaneCounts();
@@ -11,13 +12,15 @@ $total = array_sum($counts);
 $services = getServices();
 $serviceName = $services['fire-alarms'] ?? 'Fire Alarms';
 
-$pageTitle = 'Fire Alarm Installation, Maintenance & Servicing';
+$pageTitle = 'Fire alarm jobs | install, maintenance and servicing | Stockport & North West';
+$metaTitleExact = true;
 $metaDesc = 'Fire alarm install, maintenance and servicing to BS 5839 across Stockport, Greater Manchester and the North West. '
     . $counts['install'] . ' install guides, ' . $counts['maintain'] . ' maintenance guides and ' . $counts['service']
     . ' service guides. Written quotes after scope. No published fees.';
 $metaKeywords = 'fire alarm installation, fire alarm maintenance, fire alarm servicing, BS 5839, Stockport, Manchester, North West, Icomply';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
-$canonicalUrl = url('/pages/jobs/fire-alarms.php');
+$canonicalUrl = url('/pages/jobs/fire-alarms');
+$omitPriceRange = true;
 
 $laneCopy = [
     'install' => [
@@ -156,8 +159,12 @@ require SITE_ROOT . '/includes/header.php';
             <?php foreach ($grouped[$lane] as $job):
                 $slug = (string)$job['slug'];
                 $name = (string)($job['name'] ?? keywordDisplayName($slug));
+                $jobPath = fireLanePublicPath($slug);
+                if ($jobPath === null) {
+                    continue;
+                }
                 ?>
-                <a href="<?= url('/pages/keywords/' . rawurlencode($slug) . '.php') ?>"
+                <a href="<?= url($jobPath) ?>"
                    class="px-4 py-3 bg-white border border-zinc-200 rounded-2xl text-sm font-semibold text-[#0B1F3A] hover:border-[#ff6b00] hover:text-[#ff6b00]">
                     <?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>
                 </a>

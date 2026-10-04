@@ -77,12 +77,10 @@ require SITE_ROOT . '/includes/header.php';
                 <a href="<?= url('/pages/services/barriers.php') ?>" class="text-[#ff6b00] hover:underline">UK-wide barriers service</a>,
                 with <a href="<?= url('/pages/manufacturers/came.php') ?>" class="text-[#ff6b00] hover:underline">Came</a> as the partner brand
                 and the other barrier manufacturers listed in full.
-                Start with <a href="<?= url('/pages/keywords/vehicle-barriers.php') ?>" class="text-[#ff6b00] hover:underline">vehicle barriers</a>,
-                <a href="<?= url('/pages/keywords/rising-arm-barrier.php') ?>" class="text-[#ff6b00] hover:underline">rising arm barriers</a>,
-                <a href="<?= url('/pages/keywords/parking-barrier.php') ?>" class="text-[#ff6b00] hover:underline">parking barriers</a>
-                or <a href="<?= url('/pages/keywords/access-barrier.php') ?>" class="text-[#ff6b00] hover:underline">access barriers</a>.
-                Local pages: <a href="<?= url('/pages/keywords/vehicle-barriers/manchester.php') ?>" class="text-[#ff6b00] hover:underline">Manchester</a>
-                and <a href="<?= url('/pages/keywords/vehicle-barriers/burnley.php') ?>" class="text-[#ff6b00] hover:underline">Burnley</a>.
+                Start with the <a href="<?= url('/pages/jobs/car-park-barrier') ?>" class="text-[#ff6b00] hover:underline">car park barrier job</a>,
+                <a href="<?= url('/pages/keywords/rising-arm-barrier.php') ?>" class="text-[#ff6b00] hover:underline">rising arm barriers</a>
+                or the <a href="<?= url('/pages/jobs/came-gard-gt4') ?>" class="text-[#ff6b00] hover:underline">CAME Gard GT4</a> page.
+                Manchester and Burnley are covered from Stockport on that job.
                 Phone <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.
             </p>
         </div>
@@ -159,8 +157,8 @@ require SITE_ROOT . '/includes/header.php';
             <div class="flex flex-wrap gap-2">
                 <a href="<?= url('/pages/services/barriers.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Vehicle &amp; parking barriers</a>
                 <a href="<?= url('/pages/manufacturers/came.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Came partner</a>
-                <a href="<?= url('/pages/keywords/vehicle-barriers/manchester.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Barriers in Manchester</a>
-                <a href="<?= url('/pages/keywords/vehicle-barriers/burnley.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Barriers in Burnley</a>
+                <a href="<?= url('/pages/jobs/car-park-barrier') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Car park barriers</a>
+                <a href="<?= url('/pages/jobs/came-gard-gt4') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">CAME Gard GT4</a>
                 <a href="<?= url('/pages/services/access-control.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Access control services</a>
                 <a href="<?= url('/pages/keywords/access-control-installation.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Access control installation</a>
                 <a href="<?= url('/pages/keywords/commercial-access-control.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Commercial access control</a>

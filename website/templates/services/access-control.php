@@ -160,11 +160,10 @@ require SITE_ROOT . '/includes/header.php';
         <div class="flex flex-wrap gap-2">
             <a href="<?= url('/pages/services/barriers.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]">Vehicle &amp; Parking Barriers</a>
             <a href="<?= url('/pages/manufacturers/came.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]">Came partner</a>
-            <a href="<?= url('/pages/keywords/vehicle-barriers.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]">Vehicle barriers</a>
+            <a href="<?= url('/pages/jobs/car-park-barrier') ?>" class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]">Car park barriers</a>
             <a href="<?= url('/pages/keywords/rising-arm-barrier.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]">Rising arm barrier</a>
-            <a href="<?= url('/pages/keywords/parking-barrier.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]">Parking barrier</a>
-            <a href="<?= url('/pages/keywords/vehicle-barriers/manchester.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]">Manchester</a>
-            <a href="<?= url('/pages/keywords/vehicle-barriers/burnley.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]">Burnley</a>
+            <a href="<?= url('/pages/jobs/came-gard-gt4') ?>" class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]">CAME Gard GT4</a>
+            <a href="<?= url('/pages/jobs/maglock-installation') ?>" class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]">Maglock installation</a>
             <a href="<?= url('/pages/services/intruder-alarm.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]">Intruder Alarms</a>
             <a href="<?= url('/pages/services/cctv.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]">CCTV Systems</a>
             <a href="<?= url('/pages/services/intercoms.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]">Intercoms</a>
