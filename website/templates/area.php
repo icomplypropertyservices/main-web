@@ -125,7 +125,7 @@ $schema = [
                 </h1>
                 <p class="mt-6 text-lg text-white/80 max-w-xl">
                     Electrical, fire alarms, emergency lighting, CCTV and access control for properties in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> and nearby postcodes.
-                    Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue them.
+                    Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get free quote</a>

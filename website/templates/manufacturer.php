@@ -100,7 +100,7 @@ $schema = [
                     'acceptedAnswer' => [
                         '@type' => 'Answer',
                         'text' => $gasBrand
-                            ? ('No. ' . icomplyGasLegalSentence() . ' iComply does not install, service, or repair ' . $mfrName . ' boilers or gas appliances.')
+                            ? (icomplyGasLegalSentence() . ' Quotes for ' . $mfrName . ' appliances are price on application.')
                             : ($isPartner
                                 ? 'Yes. iComply Property Services is a CAME partner. Gard rising-arm barriers are the range we specify. Other barrier brands are serviced or replaced and are not partnerships.'
                                 : ($isBarrierBrand
@@ -149,7 +149,7 @@ $schema = [
             <div>
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs tracking-widest uppercase mb-5">
                     <span class="w-2 h-2 rounded-full bg-[#ff6b00]"></span>
-                    <?= $gasBrand ? 'Brand · Trade supply · Gas work is not carried out by iComply' : 'Brand · Trade shop · Install &amp; service' ?>
+                    <?= $gasBrand ? 'Brand · Gas Safe registered engineers · iComply is not Gas Safe registered' : 'Brand · Trade shop · Install &amp; service' ?>
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
                     <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?><br>
@@ -217,7 +217,7 @@ $schema = [
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars(icomplyGasLegalSentence(), ENT_QUOTES, 'UTF-8') ?> Trade kits for <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?>, where listed, are supplies only.</p>
             <ul class="mt-6 space-y-2 text-sm text-zinc-700">
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers</li>
-                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> iComply does not install, service, or repair this brand</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> iComply is not Gas Safe registered</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> No Gas Safe logo, badge, or registration number</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Non-gas compliance is quoted POA</li>
             </ul>
@@ -264,7 +264,7 @@ $schema = [
         </div>
         <div class="lg:col-span-2 bg-[#0B1F3A] text-white rounded-3xl p-8">
             <h3 class="text-xl font-semibold">Need <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> support?</h3>
-            <p class="mt-3 text-white/75 text-sm"><?= $gasBrand ? 'iComply does not install or service this gas brand. Ask for a non-gas compliance quote, or about listed trade supplies.' : 'Tell us your panel model, postcode and whether you need install, service or parts.' ?></p>
+            <p class="mt-3 text-white/75 text-sm"><?= $gasBrand ? 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered. Quotes are price on application.' : 'Tell us your panel model, postcode and whether you need install, service or parts.' ?></p>
             <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="block mt-6 px-5 py-3 bg-white text-[#0B1F3A] rounded-2xl font-semibold text-center"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
             <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode($mfrName . ' quote') ?>"
                target="_blank" rel="noopener"

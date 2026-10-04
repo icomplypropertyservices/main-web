@@ -1,0 +1,115 @@
+# Draft Netlify URL for the combined finish branch. Never production.
+# Same export and CLI as Deploy to Netlify, without --prod and without
+# POST /sites/{id}/builds (that queues a production build).
+
+name: Draft preview (finish branch)
+
+on:
+  push:
+    branches:
+      - cursor/finish-property-site-5e45
+  workflow_dispatch:
+
+concurrency:
+  group: netlify-draft-finish
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  draft:
+    name: Netlify draft deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check required secrets
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          missing=0
+          if [ -z "$NETLIFY_AUTH_TOKEN" ]; then
+            echo "::error::NETLIFY_AUTH_TOKEN is not set. Draft was not created. Production was not deployed."
+            missing=1
+          fi
+          if [ -z "$NETLIFY_SITE_ID" ]; then
+            echo "::error::NETLIFY_SITE_ID is not set. Draft was not created. Production was not deployed."
+            missing=1
+          fi
+          exit "$missing"
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Free runner disk
+        run: |
+          df -h
+          sudo rm -rf \
+            /usr/local/lib/android \
+            /usr/share/dotnet \
+            /usr/local/share/powershell \
+            /usr/share/swift \
+            /opt/ghc \
+            /usr/local/.ghcup \
+            /usr/local/share/chromium \
+            /usr/local/share/boost \
+            /opt/hostedtoolcache/CodeQL \
+            /usr/local/lib/node_modules \
+            /opt/microsoft \
+            /usr/share/miniconda \
+            /usr/local/share/vcpkg \
+            || true
+          docker system prune -af >/dev/null 2>&1 || true
+          df -h
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          coverage: none
+
+      - name: Static export (PHP → HTML in dist/)
+        env:
+          SITE_URL: https://icomplypropertyservices.co.uk
+        run: php website/bin/static-export.php --keyword-towns=priority
+        timeout-minutes: 180
+
+      - name: Verify dist/ pretty URLs
+        run: php website/bin/check-static-export.php
+
+      - name: Deploy draft (never production)
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          CI: "true"
+        run: |
+          set -euo pipefail
+          args=(deploy --dir=dist --alias finish-property-site --no-build --message "finish-property-site draft — not production")
+          for arg in "${args[@]}"; do
+            if [ "$arg" = "--prod" ]; then
+              echo "::error::Refusing to pass --prod"
+              exit 1
+            fi
+          done
+          npx --yes netlify-cli "${args[@]}" --json > /tmp/netlify-draft.json
+          python3 - << 'PY'
+          import json
+          data = json.load(open("/tmp/netlify-draft.json"))
+          context = str(data.get("context") or "")
+          if context == "production":
+              raise SystemExit("Deploy context is production. Stop.")
+          deploy_url = data.get("deploy_ssl_url") or data.get("deploy_url") or ""
+          alias_url = data.get("url") or ""
+          print("context=" + context)
+          print("deploy_ssl_url=" + str(data.get("deploy_ssl_url") or ""))
+          print("deploy_url=" + str(data.get("deploy_url") or ""))
+          print("url=" + str(alias_url))
+          if "icomplypropertyservices.co.uk" in deploy_url and "netlify.app" not in deploy_url:
+              raise SystemExit("Draft deploy URL is the production domain. Stop.")
+          summary = __import__("os").environ.get("GITHUB_STEP_SUMMARY")
+          if summary:
+              with open(summary, "a", encoding="utf-8") as fh:
+                  fh.write("Draft deploy (not production)\n\n")
+                  fh.write(f"- deploy: {deploy_url}\n")
+                  fh.write(f"- url field: {alias_url}\n")
+          PY

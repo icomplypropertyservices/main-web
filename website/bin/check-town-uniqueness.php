@@ -86,7 +86,23 @@ foreach (icomplyTier1Towns() as $town) {
         $ok(str_contains($html, 'index, follow') && !str_contains($html, 'noindex'), "{$path} robots index, follow");
         $ok(!str_contains($html, 'Looking for professional') && !str_contains($html, 'If you manage property'), "{$path} HTML omits spun openers");
         if ($svc === 'gas-systems') {
-            $ok(str_contains($html, 'Gas Safe registered engineers') && str_contains($html, 'does not'), "{$path} keeps the gas-work refusal");
+            $ok(str_contains($html, 'Gas Safe registered engineers'), "{$path} names Gas Safe registered engineers");
+            $denied = [];
+            foreach ([
+                'does not carry out gas',
+                'does not issue CP12',
+                'does not issue them',
+                'does not issue gas',
+                'does not issue landlord',
+                'does not issue the',
+                'does not issue that',
+            ] as $needle) {
+                if (stripos($html, $needle) !== false) {
+                    $denied[] = $needle;
+                }
+            }
+            $ok($denied === [], "{$path} does not deny gas work or CP12" . ($denied ? ' (' . implode(', ', $denied) . ')' : ''));
+            $ok(!preg_match('/\biComply (?:itself )?(?:is|are) Gas Safe registered\b/i', $html), "{$path} does not claim iComply is Gas Safe registered");
         }
     }
 }

@@ -58,7 +58,7 @@ function service_standards(string $slug): array {
 /** Long-form intro paragraph for service×area pages (unique enough via placeholders) */
 function seo_combo_intro(string $serviceName, string $slug, string $area): string {
     if (function_exists('icomplyCopyIsGasTopic') && icomplyCopyIsGasTopic($slug, $serviceName) && function_exists('icomplyGasLegalSentence')) {
-        return icomplyGasLegalSentence() . ' ' . $serviceName . ' in ' . $area . ' is not carried out by iComply. Non-gas compliance in ' . $area . ' is quoted POA.';
+        return icomplyGasLegalSentence() . ' ' . $serviceName . ' in ' . $area . ' is quoted price on application from Stockport SK2.';
     }
     $standards = implode(', ', array_slice(service_standards($slug), 0, 3));
     return "Looking for professional {$serviceName} in {$area}? iComply Property Services provides design, installation, "
@@ -125,8 +125,8 @@ function service_faqs(string $slug, string $serviceName, string $area = ''): arr
             ['q' => "Do you offer maintenance contracts?", 'a' => "Yes. Planned visits keep systems reliable and create an audit trail for CQC and internal compliance teams."],
         ],
         'gas-systems' => [
-            ['q' => "Does iComply issue landlord gas safety certificates{$loc}?", 'a' => "No. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out gas work or issue CP12 or gas safety certificates."],
-            ['q' => "Can iComply service boilers{$loc}?", 'a' => "No. Boiler installation, servicing and repair are gas work. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply is not Gas Safe registered."],
+            ['q' => "Who carries out landlord gas safety certificates{$loc}?", 'a' => "Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered."],
+            ['q' => "Who services boilers{$loc}?", 'a' => "Boiler installation, servicing and landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered."],
             ['q' => "What can iComply quote{$loc}?", 'a' => "Electrical, fire, water hygiene and asbestos work is quoted POA. Gas work stays with a Gas Safe registered engineer."],
         ],
         'intruder-alarm' => [

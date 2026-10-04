@@ -6,7 +6,7 @@
 require_once __DIR__ . '/../config.php';
 
 $pageTitle = 'Landlord & Letting Agent Services | Compliance, Fire & Voids | North West';
-$metaDesc = 'Landlord packages for Stockport and the North West — EICR, fire risk assessments, fire alarms, emergency lighting, fire doors, voids, kitchens and bathrooms. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue them.';
+$metaDesc = 'Landlord packages for Stockport and the North West — EICR, fire risk assessments, fire alarms, emergency lighting, fire doors, voids, kitchens and bathrooms. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.';
 $metaKeywords = 'landlord compliance North West, fire risk assessment landlords, EICR Stockport, landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers, fire doors HMO, void kitchen bathroom, multi-property package';
 $ogImage = url('/assets/images/services/electrical.jpg');
 $canonicalUrl = url('/pages/landlords.php');
@@ -23,7 +23,7 @@ $landlordServices = [
     ],
     'gas-systems' => [
         'title' => 'Gas safety records',
-        'blurb' => 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out gas work and does not issue landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.',
+        'blurb' => 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.',
         'badge' => 'Annual',
     ],
     'fire-risk-assessments' => [
@@ -64,7 +64,7 @@ $extraLandlordServices = [
 $packages = [
     [
         'name' => 'Single property',
-        'text' => 'One-off EICR, fire alarm service or emergency lighting test with certificates ready for your tenancy file. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue them.',
+        'text' => 'One-off EICR, fire alarm service or emergency lighting test with certificates ready for your tenancy file. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.',
         'points' => ['Fixed-price quote', 'Digital certificates', 'Remedial advice included'],
     ],
     [
@@ -126,7 +126,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 EICR, fire alarms and emergency lighting for private landlords and letting agents —
                 plus multi-property packages with one schedule and full documentation.
                 Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.
-                iComply does not issue landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.
+                Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get portfolio quote</a>
@@ -278,7 +278,7 @@ echo icomplyComplianceBundleCrossSellHtml('landlords');
         <div class="mt-10 bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10 grid lg:grid-cols-2 gap-8 items-center">
             <div>
                 <h3 class="text-2xl font-semibold tracking-tight">Built for letting agents &amp; portfolio landlords</h3>
-                <p class="mt-3 text-white/80">Send a property list or spreadsheet — we’ll map due dates for EICR, fire alarm service and emergency lighting, then quote a single multi-property package. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue them.</p>
+                <p class="mt-3 text-white/80">Send a property list or spreadsheet — we’ll map due dates for EICR, fire alarm service and emergency lighting, then quote a single multi-property package. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.</p>
             </div>
             <ul class="space-y-3 text-sm text-white/90">
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Certificates emailed and ready for your agent portal</li>
@@ -305,7 +305,7 @@ echo icomplyComplianceBundleCrossSellHtml('landlords');
                 <?php
                 $why = [
                     ['EICR', 'Condition reports and remedial electrical works for rental stock'],
-                    ['Gas safety records', 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue them.'],
+                    ['Gas safety records', 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.'],
                     ['Fire alarms', 'Install, service and certify to BS 5839'],
                     ['Emergency lighting', 'Function & duration tests with logbooks'],
                 ];
@@ -352,7 +352,7 @@ echo icomplyComplianceBundleCrossSellHtml('landlords');
             $steps = [
                 ['1', 'Send property details', 'Addresses, tenancy dates, certificate types due, and access notes — form, phone or WhatsApp.'],
                 ['2', 'Fixed multi-unit quote', 'We confirm scope (EICR, fire, emergency lighting) and a clear price per property or package. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.'],
-                ['3', 'Attend and file', 'Engineers complete the electrical and fire work and issue those certificates for tenants and agents. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue them.'],
+                ['3', 'Attend and file', 'Engineers complete the electrical and fire work and issue those certificates for tenants and agents. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.'],
             ];
             foreach ($steps as [$n, $t, $d]): ?>
             <div class="text-center px-4">

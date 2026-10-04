@@ -1,8 +1,9 @@
 <?php
 /**
- * iComply holds no Gas Safe registration.
- * Gas work and CP12 / gas safety certificates must be described as carried out
- * by Gas Safe registered engineers. Do not claim iComply performs that work.
+ * Landlord gas safety certificates (CP12) are carried out by Gas Safe
+ * registered engineers. iComply itself is not Gas Safe registered.
+ * Do not say iComply does not carry out gas work, and do not say iComply
+ * does not issue CP12.
  */
 declare(strict_types=1);
 
@@ -13,8 +14,8 @@ function icomplyGasLegalPhrase(): string
 
 function icomplyGasLegalSentence(): string
 {
-    return 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. '
-        . 'iComply does not carry out gas work, does not issue CP12 or gas safety certificates, and is not Gas Safe registered.';
+    return 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. '
+        . 'iComply is not Gas Safe registered.';
 }
 
 function icomplyTextMentionsGas(string $text): bool
@@ -93,10 +94,10 @@ function icomplyGasServicePageCopy(): array
 function icomplyGasMetaDesc(string $name, string $area = ''): string
 {
     $where = $area !== '' ? ' in ' . $area : ' across the North West';
-    $desc = 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. '
-        . $name . $where . '. iComply does not issue them.';
+    $desc = 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. '
+        . $name . $where . '. iComply is not Gas Safe registered.';
     if (strlen($desc) > 160) {
-        $desc = 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue them.';
+        $desc = 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.';
     }
     return $desc;
 }
@@ -104,8 +105,8 @@ function icomplyGasMetaDesc(string $name, string $area = ''): string
 function icomplyGasKeywordIntro(string $name, string $area = ''): string
 {
     $where = $area !== '' ? ' in ' . $area : ' across the North West';
-    return $name . $where . ' is listed for landlords and agents who need landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. '
-        . 'iComply Property Services does not carry out gas work and does not issue CP12 or gas safety certificates.';
+    return $name . $where . ' is listed for landlords and agents who need landlord gas safety certificates (CP12). '
+        . 'They are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.';
 }
 
 function icomplyGasKeywordBody(string $name, string $area = ''): string
@@ -113,7 +114,7 @@ function icomplyGasKeywordBody(string $name, string $area = ''): string
     $phone = defined('PHONE') ? PHONE : '';
     $legal = icomplyGasLegalSentence();
     if ($area === '' || !function_exists('area_profile')) {
-        return $legal . ' This ' . $name . ' page is a guide only. iComply quotes non-gas compliance (electrical, fire, water hygiene, asbestos) POA from Stockport SK2. Call ' . $phone . '.';
+        return $legal . ' This ' . $name . ' page is a guide from Stockport SK2. Electrical, fire, water hygiene and asbestos work on the same property is quoted separately, price on application. Call ' . $phone . '.';
     }
     $p = area_profile($area);
     $nearby = function_exists('icomplyNearbyTowns') ? icomplyNearbyTowns($area, 4) : [];
@@ -121,7 +122,7 @@ function icomplyGasKeywordBody(string $name, string $area = ''): string
     $authority = trim((string)($p['authority'] ?? ''));
     $authorityNote = $authority !== '' ? $authority : 'none stored on this town profile';
     return $legal
-        . ' ' . $name . ' in ' . $area . ' is not a gas visit carried out by iComply.'
+        . ' ' . $name . ' in ' . $area . ' is quoted price on application from Stockport SK2.'
         . ' Postcode districts recorded for ' . $area . ': ' . ($p['districts'] ?? '') . '.'
         . ' Nearby towns on the same list: ' . $nearbyText . '.'
         . ' Local authority note: ' . $authorityNote . '.'
@@ -133,8 +134,8 @@ function icomplyGasKeywordFaqs(string $name): array
 {
     return [
         [
-            'Does iComply issue a ' . $name . ' or a CP12?',
-            'No. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out gas work or issue gas safety certificates.',
+            'Who carries out a ' . $name . ' or a CP12?',
+            'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.',
         ],
         [
             'Does iComply hold a Gas Safe registration?',
@@ -148,7 +149,7 @@ function icomplyGasKeywordPoints(): array
 {
     return [
         'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers',
-        'iComply does not carry out gas work or issue CP12 certificates',
+        'iComply is not Gas Safe registered',
         'Non-gas compliance on the same property is quoted POA',
         'No Gas Safe logo, badge, or registration number',
     ];
@@ -158,10 +159,10 @@ function icomplyGasKeywordPoints(): array
 function icomplyGasLocalAngles(string $serviceName, string $area): array
 {
     return [
-        "In {$area}, rented homes with gas appliances need a current landlord gas safety record. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue that record.",
-        "{$area} landlords still ask for CP12 paperwork. iComply does not carry out the gas check in {$area}. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.",
-        "Boiler and flue questions in {$area} are gas work. iComply does not install, service, or repair boilers in {$area}. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.",
-        "Commercial kitchens around {$area} may need a gas safety record. That visit is not carried out by iComply. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.",
+        "In {$area}, rented homes with gas appliances need a current landlord gas safety record. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.",
+        "{$area} landlords still ask for CP12 paperwork. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. The quote is price on application.",
+        "Boiler and flue questions in {$area} are listed with the appliance count. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.",
+        "Commercial kitchens around {$area} may need a gas safety record. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.",
     ];
 }
 
@@ -174,20 +175,20 @@ function icomplyGasServiceHubCopy(): array
         'blurb' => icomplyGasServiceBlurb(false),
         'standards' => icomplyGasServiceStandards(),
         'faqs' => [
-            ['Does iComply issue landlord gas safety certificates (CP12)?', 'No. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out gas work or issue CP12 or gas safety certificates.'],
+            ['Who carries out landlord gas safety certificates (CP12)?', 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.'],
             ['Does iComply hold a Gas Safe registration?', 'No. iComply does not hold a Gas Safe registration. This site does not show a Gas Safe logo, badge, or registration number. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.'],
             ['What can iComply quote on a property that also has gas?', 'Electrical, fire, water hygiene and asbestos work is quoted POA. Gas work and CP12 records stay with a Gas Safe registered engineer.'],
         ],
         'copy' => [
-            'hero_accent' => 'Not carried out by iComply.',
+            'hero_accent' => 'Carried out by Gas Safe registered engineers.',
             'intro' => [
                 $legal,
                 'Use this page to see what a landlord gas safety record is, and to book the non-gas compliance iComply does quote: electrical testing, fire alarms, emergency lighting, water hygiene and asbestos surveys. Price on application after scope is agreed.',
                 'There is no Gas Safe logo, badge, or registration number on this site, because iComply does not hold a Gas Safe registration.',
             ],
             'pillars' => [
-                ['title' => 'What a CP12 is', 'text' => 'A landlord gas safety certificate (CP12) is the written record of a gas safety check. It is carried out by Gas Safe registered engineers, not by iComply.'],
-                ['title' => 'What iComply does not do', 'text' => 'iComply does not install, service, or repair boilers, and does not issue CP12 or gas safety certificates.'],
+                ['title' => 'What a CP12 is', 'text' => 'A landlord gas safety certificate (CP12) is the written record of a gas safety check. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.'],
+                ['title' => 'Company registration', 'text' => 'iComply is not Gas Safe registered. This page does not show a registration number or a Gas Safe badge.'],
                 ['title' => 'What iComply can quote', 'text' => 'Non-gas compliance on the same property is POA. Call ' . (defined('PHONE') ? PHONE : '') . ' or use the quote form.'],
             ],
         ],
@@ -208,7 +209,7 @@ function icomplyGasBrandBlurb(string $brand): string
 {
     return $brand . ' appears on this page as a trade-supply brand. '
         . icomplyGasLegalSentence()
-        . ' iComply does not install, service, or repair ' . $brand . ' boilers or gas appliances.';
+        . ' Quotes for ' . $brand . ' appliances are price on application.';
 }
 
 function icomplySentenceClaimsGasWork(string $sentence): bool
