@@ -22764,7 +22764,7 @@
         ]
     },
     "house-rewire": {
-        "name": "House Rewire",
+        "name": "House Rewire Quote",
         "service": "electrical",
         "related": "rewire",
         "intro": "A house rewire replaces dated or unsafe fixed wiring throughout a dwelling and usually includes a new consumer unit. Icomply plans house rewires for owner-occupiers and landlords from Stockport across Greater Manchester and the North West.",
@@ -22786,7 +22786,9 @@
                 "POA after survey. We will not publish an invented pound price."
             ]
         ],
-        "seo_keywords": "house rewire, full house rewire, house rewire Stockport, house rewire Manchester, price of rewire POA"
+        "seo_keywords": "house rewire, full house rewire, house rewire Stockport, house rewire Manchester, price of rewire POA",
+        "seo_title": "House Rewire Quote | POA after Survey | Stockport",
+        "h1": "House rewire quote"
     },
     "htm-08-03": {
         "name": "HTM 08-03",
@@ -29685,33 +29687,35 @@
         ]
     },
     "niceic-certified": {
-        "name": "NICEIC Certified",
+        "name": "Electrical Work Without an NICEIC Claim",
         "service": "electrical",
-        "related": "certified-electrician",
-        "intro": "NICEIC certified status signals that an electrical business meets assessed competence and quality standards recognised across the industry. iComply’s NICEIC certified approach gives clients confidence that design, install and test processes are audited rather than informal.",
-        "body": "Scheme membership supports Building Control notification routes for many domestic jobs and reassures commercial clients during vendor approval. You still receive full test results and certificates specific to your property. Ask for scheme details at tender stage if your procurement checklist requires them.",
-        "meta_desc": "NICEIC certified electrical work across Manchester and the North West. Assessed competence you can verify.",
+        "related": "eicr",
+        "seo_title": "Electrical Work | No NICEIC Claim | Stockport",
+        "h1": "Electrical work without an NICEIC claim",
+        "intro": "This page does not say iComply is NICEIC registered. NICEIC is a scheme some electrical businesses join. We do not put that badge on our work.",
+        "body": "What we do state is BS 7671 for fixed wiring, an EICR when the job is an inspection, and certificates for the installation we actually test. Building Regulations notification for domestic work is explained in the quote when the job is notifiable. We will not invent a scheme number for a procurement form. If your tender needs a named registration we do not hold, we say so before you appoint us. Engineers are based in Stockport and cover the North West. Call 07517806082. Price is on application after the job is described.",
+        "meta_desc": "Electrical work from Stockport to BS 7671. This page does not claim NICEIC registration. POA. 07517806082.",
+        "seo_keywords": "electrical contractor Stockport, BS 7671, EICR, no NICEIC claim, North West electrician",
         "focus_points": [
-            "Scheme-assessed working practices",
-            "Notification pathways for qualifying domestic work",
-            "Consistent testing and documentation standards",
-            "Suitable evidence for procurement questionnaires"
+            "No NICEIC membership claimed on this page",
+            "BS 7671 for the fixed wiring we install or inspect",
+            "Notification discussed in the quote when the work needs it",
+            "POA — no scheme badge used as a price"
         ],
         "faq": [
             [
-                "How can I check NICEIC certification?",
-                "Scheme websites allow searches by business name. We can also provide membership details on request for your compliance file."
+                "Are you NICEIC registered?",
+                "We do not claim NICEIC registration. If a form asks for a scheme number we do not hold, we decline that line rather than invent one."
             ],
             [
-                "Does NICEIC certified mean a guarantee on all work?",
-                "Scheme rules and warranties depend on membership type and job category. Contractual warranties for your project are stated in our paperwork."
+                "Can you still certify an installation?",
+                "We test the work we do and issue the certificate that matches that test. An EICR is a separate inspection."
             ],
             [
-                "Is NICEIC mandatory for every electrical job?",
-                "Not every task legally requires scheme membership, but many clients and Building Control routes expect a registered competent person."
+                "How is the work priced?",
+                "Price on application after we know the property. There is no NICEIC surcharge because we are not claiming the scheme."
             ]
-        ],
-        "seo_keywords": "NICEIC certified, NICEIC electrician, NICEIC registered, NICEIC contractor, NICEIC certified North West"
+        ]
     },
     "no-heating-engineer": {
         "name": "No Heating Engineer",
@@ -31552,33 +31556,35 @@
         "seo_keywords": "panel upgrade, consumer unit upgrade, fuse board replacement, distribution board upgrade, panel upgrade North West"
     },
     "part-p-certified": {
-        "name": "Part P Certified",
+        "name": "Part P Building Regulations, Not a Scheme Badge",
         "service": "electrical",
-        "related": "certified-electrician",
-        "intro": "Part P certified electricians understand the Building Regulations requirements that apply to electrical work in dwellings in England. iComply undertakes Part P relevant works with self-certification routes where scheme membership allows, reducing hassle for homeowners and landlords.",
-        "body": "Not all electrical tasks are notifiable, but new circuits, consumer unit changes and work in bathrooms often are. We advise which jobs need notification and complete the process as part of the package. Describe your planned kitchen or bathroom project and we will map Part P duties before work starts.",
-        "meta_desc": "Part P certified electrical works for dwellings in the North West. Notifiable jobs handled with correct certs.",
+        "related": "consumer-unit",
+        "seo_title": "Part P Electrical Work | No Scheme Badge | Stockport",
+        "h1": "Part P of the Building Regulations",
+        "intro": "Part P is the part of the Building Regulations that covers electrical safety in dwellings in England. This page explains notification. It does not claim a Part P competent-person scheme.",
+        "body": "New circuits, consumer-unit changes and work in a bathroom or kitchen are often notifiable. Like-for-like replacements often are not. We say which applies before we start, and the quote says who will notify building control if notification is required. We do not describe ourselves as Part P certified and we do not claim a self-certification scheme on this page. The installation itself is still tested to BS 7671. Stockport base, North West cover. Call 07517806082. The figure is POA.",
+        "meta_desc": "Part P explained for dwellings in the North West. No competent-person scheme claimed. BS 7671 testing. POA.",
+        "seo_keywords": "Part P Building Regulations, notifiable electrical work, consumer unit notification, BS 7671, Stockport",
         "focus_points": [
-            "Domestic notifiable work guidance",
-            "Consumer unit and new circuit compliance",
-            "Bathroom and kitchen special locations",
-            "Self-certification where scheme rules allow"
+            "Part P described as Building Regulations, not a badge",
+            "Notifiable and non-notifiable work separated before the start",
+            "No self-certification scheme claimed",
+            "POA after the rooms and the board are known"
         ],
         "faq": [
             [
-                "What is Part P in simple terms?",
-                "Part P is the Building Regulations part covering electrical safety in dwellings. It aims to ensure work is designed and installed to avoid danger."
+                "Are you Part P certified?",
+                "We do not use that phrase. Part P is a regulation. A scheme membership is a separate claim, and we do not make it here."
             ],
             [
-                "Do like-for-like socket swaps need Part P notification?",
-                "Many minor like-for-like replacements are non-notifiable, but condition and earthing still matter. We confirm classification per job."
+                "Does a socket swap need notification?",
+                "Many like-for-like replacements do not. New circuits and consumer-unit changes often do. We confirm it for the job in front of us."
             ],
             [
-                "What if a DIY relative already started the wiring?",
-                "We can inspect and test, but we only certify work that meets standards. Rework may be required before certification is possible."
+                "What if someone else started the wiring?",
+                "We test what is there. We only certify work that meets BS 7671. Rework is quoted separately, POA."
             ]
-        ],
-        "seo_keywords": "Part P certified, Part P electrician, Building Regulations electrical, notifiable electrical work, Part P certified North West"
+        ]
     },
     "partial-rewire": {
         "name": "Partial Rewire",
@@ -31936,7 +31942,7 @@
         ]
     },
     "paxton-access": {
-        "name": "Paxton Access Control",
+        "name": "Paxton Access Control Installation",
         "service": "access-control",
         "related": "proximity-card-reader",
         "intro": "Paxton access control keeps doors, gates and lift lobbies under named credentials instead of shared keys. iComply specifies and installs Paxton Net2 and related hardware for offices, blocks of flats and mixed-use buildings that need auditable entry.",
@@ -31962,10 +31968,12 @@
                 "Where required by the fire strategy, we wire fail-safe release or interface modules so escape routes remain available during an alarm."
             ]
         ],
-        "seo_keywords": "Paxton access control, Paxton Net2 install, Paxton door entry, access control Stockport, Paxton fobs North West"
+        "seo_keywords": "Paxton access control, Paxton Net2 install, Paxton door entry, access control Stockport, Paxton fobs North West",
+        "seo_title": "Paxton Access Control Installation | Net2 | North West",
+        "h1": "Paxton access control installation"
     },
     "paxton-access-control": {
-        "name": "Paxton Access Control",
+        "name": "Paxton Net2 Access Control",
         "service": "access-control",
         "related": "paxton-access",
         "intro": "Paxton access control is a proven choice for UK offices, blocks and commercial estates that need reliable proximity, Net2 or Paxton10-style management. Icomply design, install, program and maintain Paxton access control as part of our Access Control range, working to BS EN 50133 and fire-release best practice, with commissioning sheets and user training notes for facilities teams and landlords.",
@@ -31991,7 +31999,9 @@
                 "Send postcode, number of doors, existing brand if any, and property type via form, call or WhatsApp — we aim to reply within two hours on business days."
             ]
         ],
-        "seo_keywords": "Paxton access control, Paxton Net2 install, Paxton access control Manchester, Paxton engineers Stockport, Paxton reader installation, Paxton multi-door, Paxton access North West, access control programming"
+        "seo_keywords": "Paxton access control, Paxton Net2 install, Paxton access control Manchester, Paxton engineers Stockport, Paxton reader installation, Paxton multi-door, Paxton access North West, access control programming",
+        "seo_title": "Paxton Net2 Access Control | Stockport & North West",
+        "h1": "Paxton Net2 access control"
     },
     "paxton-net2-install": {
         "name": "Paxton Net2 Install",
@@ -34892,7 +34902,9 @@
                 "Do you certify after a rewire?",
                 "Yes — electrical installation certificates and schedules are issued on completion."
             ]
-        ]
+        ],
+        "seo_title": "House Rewire | Electricians in Stockport & the North West",
+        "h1": "House rewire"
     },
     "rewire-cost": {
         "name": "Rewire Cost",
@@ -40918,5 +40930,1157 @@
             ]
         ],
         "seo_keywords": "Zettler nurse call, Zettler nurse call installation, Zettler nurse call service, Zettler care home call system, nurse call Stockport, nurse call Manchester, HTM 08-03, nurse call North West, Zettler PPM"
+    },
+    "access-control-after-staff-change": {
+        "name": "Access Control After Staff Change",
+        "service": "access-control",
+        "related": "access-control-card-programming",
+        "intro": "When someone leaves, a shared door code or a fob still in a drawer is a live key. Access control after a staff change means deleting the leaver, checking who else was copied onto the same token, and confirming the door still releases on the fire input.",
+        "body": "We do this on Paxton, HID, Salto and the other controllers listed on the brand pages — not on Tunstall, which is a nurse-call system and is outside this work. Bring the leaver’s name, the last day on site, and whether the token was returned. If the software login is with a former manager, that is part of the visit, not a reason to leave the door on a keypad code. North West sites are on the Stockport diary. Other UK sites are attended by arrangement. The visit is POA. We do not quote a per-leaver price online.",
+        "meta_desc": "Remove leavers from door access after a staff change. Token deletion and fire-release check. POA from Stockport. 07517806082.",
+        "focus_points": [
+            "Leaver deleted from the controller, not just the card collected",
+            "Shared codes and copied tokens reviewed",
+            "Fire-alarm release left intact after the user change",
+            "POA — no per-person price on this page"
+        ],
+        "faq": [
+            [
+                "Do you need the old fob back?",
+                "It helps, but the important step is deleting the user in software. A token in a drawer still opens the door until it is removed."
+            ],
+            [
+                "Can a new starter use the leaver’s fob?",
+                "Only if you want that person to inherit the old permissions. We would rather enrol a new token and archive the old user."
+            ],
+            [
+                "Is this a same-day job?",
+                "In the North West it often is, when an engineer is free. Elsewhere in the UK it is booked. It is not a contracted 24-hour desk."
+            ]
+        ],
+        "seo_keywords": "access control after staff leave, delete fob user, revoke door token, leaver access control, Paxton user delete",
+        "seo_title": "Access Control After Staff Leave | Stockport",
+        "h1": "Access control after a staff change",
+        "hub_only": true
+    },
+    "access-control-fire-interface-test": {
+        "name": "Access Control Fire Interface Test",
+        "service": "access-control",
+        "related": "fire-release-access-control",
+        "intro": "A fire interface test checks that the signal from the fire alarm actually lets people through the secured doors. The test is the drop of the lock, not a tick in someone else’s log that the panel ‘went into fire’.",
+        "body": "BS 7273-4 is the usual UK reference for how release mechanisms are actuated. We confirm which doors are on the interface, whether they are fail-safe or fail-secure, and that the break-glass or request-to-exit still works when the interface is reset. If the fire alarm itself needs a service visit, that is booked as fire-alarm work, not assumed from this test. We record what released and what did not. The test is POA after we know the door count. Call 07517806082.",
+        "meta_desc": "Test access-control doors on a fire-alarm interface to BS 7273-4. Lock release recorded. POA. Stockport engineers. 07517806082.",
+        "focus_points": [
+            "Each door on the interface watched while the alarm is triggered",
+            "Fail-safe and fail-secure behaviour written down per door",
+            "Reset checked so doors re-secure only when they should",
+            "Fire-panel servicing quoted separately when it is in scope"
+        ],
+        "faq": [
+            [
+                "Will you set the fire alarm into fire?",
+                "Only with the responsible person, and only in the way their panel allows. We do not trip a monitored system without that agreement."
+            ],
+            [
+                "Is BS 7273-4 a product we sell?",
+                "No. It is the code of practice we read the release arrangement against."
+            ],
+            [
+                "What if one door stays locked?",
+                "We leave it flagged, make it safe if we can do so without breaking the fire strategy, and quote the remedial separately. POA."
+            ]
+        ],
+        "seo_keywords": "access control fire interface test, maglock fire release test, BS 7273-4 door release, fire alarm door release test",
+        "seo_title": "Access Control Fire Interface Test | BS 7273-4",
+        "h1": "Access control fire interface test",
+        "hub_only": true
+    },
+    "access-level-holiday-calendar": {
+        "name": "Access Level Holiday Calendar",
+        "service": "access-control",
+        "related": "access-control-card-programming",
+        "intro": "An access level holiday calendar stops weekday door rules running on bank holidays, shutdown days and site-specific closures. Without it, a cleaners’ token can open a door on Christmas Day because the controller still thinks it is a Thursday.",
+        "body": "We programme the calendar inside the platform you already have — Paxton Net2, Salto, HID-based systems and the other brands on the access-control list. We need the real closure list from you. We will not invent your bank-holiday policy. After the change we test one door in each time zone, including a door that must stay open for a public route. The work is POA. It is usually a programming visit, not a new lock.",
+        "meta_desc": "Programme access-control holiday calendars so bank holidays do not follow weekday door rules. POA. 07517806082.",
+        "focus_points": [
+            "Your closure list, not a generic UK calendar pasted in",
+            "One test per time zone after the calendar is saved",
+            "Public and escape doors left on the correct rule",
+            "POA programming visit"
+        ],
+        "faq": [
+            [
+                "Do bank holidays load automatically?",
+                "Some platforms ship a default calendar. We still check it against your sites, because a warehouse and a clinic do not close on the same days."
+            ],
+            [
+                "Can each site have its own holidays?",
+                "Usually yes. Multi-site systems can share a calendar or keep a local one. We say which you already have after we log in."
+            ],
+            [
+                "What does it cost?",
+                "POA. Door count and whether we already hold the software login change the visit."
+            ]
+        ],
+        "seo_keywords": "access control holiday calendar, bank holiday door schedule, time zone access levels, Net2 holiday programming",
+        "seo_title": "Access Control Holiday Calendar | Door Schedules",
+        "h1": "Access level holiday calendar",
+        "hub_only": true
+    },
+    "broken-fob-emergency-visit": {
+        "name": "Broken Fob Emergency Visit",
+        "service": "access-control",
+        "related": "fob-access-control",
+        "intro": "A broken fob visit is for a token that no longer opens a door people need today — a cracked fob, a dead mobile credential, or a reader that beeps and does nothing. It is not a promise that an engineer is waiting at night.",
+        "body": "From Stockport we can often attend North West sites the same day when the diary has a gap. London, Scotland, Wales and Northern Ireland are scheduled, not ‘a van around the corner’. If the door is on a keypad code because the fob failed, say so: shared codes are the risk we remove when the new token is enrolled. We do not publish a call-out fee. The visit is POA. For a fire, a person stuck, or a door that will not release on an escape route, use 999 first. Call 07517806082 for the access fault once people are safe.",
+        "meta_desc": "Broken door fob and dead token visits. Same-day in the North West when the diary allows. UK sites by arrangement. POA. 07517806082.",
+        "focus_points": [
+            "Token or reader fault confirmed before parts are changed",
+            "New credential enrolled and the old one deleted",
+            "No published call-out fee",
+            "Not a 24-hour contracted desk"
+        ],
+        "faq": [
+            [
+                "Do you come out at night?",
+                "Only if we have agreed that attendance and an engineer is available. This page is not a 24/7 SLA."
+            ],
+            [
+                "Can you copy a fob without the software?",
+                "Sometimes a like-for-like token can be issued, and sometimes the controller must enrol it. We say which after we see the system."
+            ],
+            [
+                "What if the reader is dead, not the fob?",
+                "Then a new fob will not help. We test the reader, lock and power supply before we sell a token."
+            ]
+        ],
+        "seo_keywords": "broken fob access control, door token not working, emergency fob replacement, access control call out POA",
+        "seo_title": "Broken Door Fob Visit | North West | POA",
+        "h1": "Broken fob visit",
+        "hub_only": true
+    },
+    "controller-battery-replace": {
+        "name": "Controller Battery Replace",
+        "service": "access-control",
+        "related": "access-control-maintenance",
+        "intro": "Controller batteries are the standby packs in the access-control power supply, not the coin cell in a fob. When they fail, doors can release, stay locked, or drop offline in a power cut depending on how the lock was specified.",
+        "body": "We read the date code, measure the pack under the load the panel expects, and replace it when it is due or already swollen. We do not guess a remaining life from the label colour. The fire-release relay is checked after the swap so a battery change does not leave a maglock held on. Battery type follows the PSU, so we do not advertise a universal price. The visit is POA. Brands include Paxton, TDSi, CDVI, Vanderbilt and the rest of the access-control list. Tunstall nurse-call batteries are a different job.",
+        "meta_desc": "Replace access-control controller and PSU standby batteries, then recheck fire release. POA. 07517806082.",
+        "focus_points": [
+            "Date code and a load check, not a cosmetic swap",
+            "Fire-release relay confirmed after the change",
+            "Correct pack for that PSU",
+            "POA — no battery price list"
+        ],
+        "faq": [
+            [
+                "How often are standby batteries changed?",
+                "Many packs are dated for a four-year service life. We change earlier if the test says the pack will not hold the doors."
+            ],
+            [
+                "Will the doors unlock while you work?",
+                "We plan the isolation. Escape doors are not left unusable. The sequence is agreed before the PSU is opened."
+            ],
+            [
+                "Do you stock every brand of battery?",
+                "We carry common 12 V packs and order the odd PSU-specific pack. The quote says which."
+            ]
+        ],
+        "seo_keywords": "access control battery replacement, door controller PSU battery, maglock backup battery, access control power supply battery",
+        "seo_title": "Access Control Battery Replacement | POA",
+        "h1": "Controller battery replacement",
+        "hub_only": true
+    },
+    "fail-secure-lock-assessment": {
+        "name": "Fail Secure Lock Assessment",
+        "service": "access-control",
+        "related": "electric-door-release",
+        "intro": "A fail-secure lock stays locked when power is lost. A fail-safe lock unlocks. The assessment decides which behaviour belongs on each door, using the fire strategy and how people actually leave the building.",
+        "body": "Escape routes are usually fail-safe, with a release on fire alarm and a manual device people can see. A store, a drug cupboard or a plant cage is sometimes fail-secure, and that decision sits with the responsible person, not with a default in the lock catalogue. We survey the door, the hinge side, the existing maglock or strike, and what the fire interface does today. We write the recommendation. We do not sign your fire risk assessment for you. The survey is POA. Call 07517806082.",
+        "meta_desc": "Fail-secure or fail-safe lock assessment for each door, read against the fire strategy. Survey is POA. 07517806082.",
+        "focus_points": [
+            "Each door recorded as fail-safe or fail-secure, with the reason",
+            "Escape routes not left on a lock that holds in a power cut",
+            "Fire interface and manual release included in the note",
+            "POA survey — the responsible person keeps the fire strategy"
+        ],
+        "faq": [
+            [
+                "Is fail-secure more secure?",
+                "It holds the door in a power cut. On an escape route that can be the wrong outcome. Security and exit are specified per door."
+            ],
+            [
+                "Can you change a maglock to a fail-secure strike?",
+                "Often, if the frame and the fire door will accept it. We do not cut a fire door to suit a lock without that being in the scope."
+            ],
+            [
+                "Who signs the decision?",
+                "You do, as the responsible person. We give a written recommendation you can put with the fire strategy."
+            ]
+        ],
+        "seo_keywords": "fail secure lock, fail safe maglock assessment, door lock power cut behaviour, BS 7273-4 lock choice",
+        "seo_title": "Fail-Secure Lock Assessment | Fire Strategy",
+        "h1": "Fail-secure lock assessment",
+        "hub_only": true
+    },
+    "gate-access-control-liaison": {
+        "name": "Gate Access Control Liaison",
+        "service": "access-control",
+        "related": "gate-access-control",
+        "intro": "Gate access control liaison is the join between our readers and the company that owns the gate motor, safety edges and force limits. We put credentials on the gate. We do not take over the mechanical safety case.",
+        "body": "Vehicle gates are covered by their own standards, commonly the BS EN 12453 family for safety. The gate installer keeps that duty. We agree a volt-free input, an intercom or reader position drivers can reach, and what happens when the fire service needs the gate open. If the motor board has no spare input, we stop and say so rather than hanging a reader off a safety circuit. Sites in the North West are diary work from Stockport. Other UK gates are POA once the gate company is named.",
+        "meta_desc": "Reader and intercom liaison for vehicle gates. Gate safety stays with the gate installer. Access side is POA. 07517806082.",
+        "focus_points": [
+            "Volt-free open signal agreed with the gate company",
+            "Reader or keypad placed where a driver can use it without leaving the vehicle in the road",
+            "Fire and hold-open behaviour written down",
+            "No claim that we certify gate force or safety edges"
+        ],
+        "faq": [
+            [
+                "Will you service the gate motor?",
+                "No. Motors, edges and force tests stay with the gate specialist. We work on the access-control side of the interface."
+            ],
+            [
+                "Can a fob open the gate and the lobby door?",
+                "Yes when both systems can share a credential, or when we enrol the same user twice. We check compatibility before we promise one token."
+            ],
+            [
+                "What if there is no gate company?",
+                "We will not invent a safety sign-off. You appoint a gate engineer, or we limit our quote to the pedestrian doors."
+            ]
+        ],
+        "seo_keywords": "gate access control, vehicle gate fob, gate reader liaison, intercom gate access, BS EN 12453 interface",
+        "seo_title": "Gate Access Control Liaison | Reader Side Only",
+        "h1": "Gate access control liaison",
+        "hub_only": true
+    },
+    "lift-floor-access-integration-advice": {
+        "name": "Lift Floor Access Integration Advice",
+        "service": "access-control",
+        "related": "lift-access-control",
+        "intro": "Lift floor access advice is about which floors a credential may select. It is not a lift repair, and it is not a change to the safety circuit inside the lift controller.",
+        "body": "The lift contractor remains responsible for the lift. We advise on the reader, the relay or the destination-control interface their panel will accept, and we programme the floors you actually want restricted. A residential block in Manchester and a hospital lift in another city do not get the same floor map. We will not bridge out a safety contact to make a reader ‘work’. If the lift company will not provide a drawing, the advice stops at a written question list. The note is POA. Call 07517806082 to book it.",
+        "meta_desc": "Advice on restricting lift floors with access control. Lift safety stays with the lift contractor. POA. 07517806082.",
+        "focus_points": [
+            "Floor list agreed before any relay is wired",
+            "Interface taken from the lift company’s drawing",
+            "Safety circuits left to the lift contractor",
+            "POA written advice, install only when the interface is clear"
+        ],
+        "faq": [
+            [
+                "Can you stop a resident reaching the plant floor?",
+                "Usually, if the lift panel has a floor-inhibit input and the lift company will use it. We do not guess across the terminals."
+            ],
+            [
+                "Do you maintain lifts?",
+                "No. Lift maintenance stays with the lift contractor."
+            ],
+            [
+                "Will one fob do the door and the lift?",
+                "That is the usual aim. It depends on the reader technology the lift interface will accept."
+            ]
+        ],
+        "seo_keywords": "lift access control, floor restriction fob, lift reader integration, destination control access advice",
+        "seo_title": "Lift Floor Access Advice | Not a Lift Repair",
+        "h1": "Lift floor access integration advice",
+        "hub_only": true
+    },
+    "vehicle-barriers": {
+        "name": "Vehicle Barriers",
+        "service": "barriers",
+        "related": "rising-arm-barrier",
+        "seo_title": "Vehicle Barriers | Private Lanes from Stockport",
+        "h1": "Vehicle barriers",
+        "intro": "Vehicle barriers control one private lane with a rising arm. They are not a swinging gate, a public-highway product, or a turnstile with a boom drawn on the brochure.",
+        "body": "iComply is a CAME partner, so a new arm on a private car park, yard or residential deck is specified as CAME Gard unless the survey shows a different machine already in the cabinet. Other brands on the barriers hub are serviced when parts exist. We are not a partner for those brands. The visit measures lane width, the queue before the arm, headroom, and what must happen when the power fails or the fire service needs the lane open. Installation stays on land the client controls. We do not barrier a public road. Price is on application after the lane is seen. Call 07517806082 from Stockport.",
+        "meta_desc": "Vehicle barriers for private lanes in the North West. CAME partner for new rising arms. Price on application.",
+        "seo_keywords": "vehicle barriers, rising arm barrier, private lane barrier, CAME Gard, car park barrier North West, Stockport",
+        "focus_points": [
+            "Private land only — not the public highway",
+            "CAME Gard specified for a new rising arm",
+            "Other listed brands serviced when parts exist",
+            "POA after lane width, duty and safety devices are known"
+        ],
+        "faq": [
+            [
+                "Do you publish a vehicle-barrier price?",
+                "No. The quote is on application after the lane, the duty cycle and the safety devices are known."
+            ],
+            [
+                "Are you a partner for every barrier brand?",
+                "No. The partnership we state is CAME. Other brands are equipment we can service or replace when the parts are real."
+            ],
+            [
+                "Can you barrier a public road?",
+                "No."
+            ]
+        ],
+        "hub_only": true
+    },
+    "parking-barrier": {
+        "name": "Parking Barrier",
+        "service": "barriers",
+        "related": "private-car-park-barrier",
+        "seo_title": "Parking Barrier | Private Car Parks | North West",
+        "h1": "Parking barriers",
+        "intro": "A parking barrier is the boom on a private car park: staff bays, a residential podium, a retail yard or a hospital estate the client actually controls.",
+        "body": "The job is the arm, the loop or other presence device, the safety photocells and the way credentials open the lane. It is not a pay-on-foot machine and not a council on-street bay. From our Stockport base we survey North West car parks and quote POA. A Manchester multi-storey with a tight spiral is a different arm and a different loop from a Burnley industrial yard with HGV overhang. Say which when you call 07517806082. New arms are CAME Gard where we specify the machine. An existing cabinet of another brand is serviced against the model plate.",
+        "meta_desc": "Parking barriers for private car parks across the North West. Not on-street bays. Price on application from Stockport.",
+        "seo_keywords": "parking barrier, private car park barrier, boom barrier, parking barrier Stockport, parking barrier Manchester",
+        "focus_points": [
+            "Private car park lanes, not public on-street bays",
+            "Arm, presence device and photocells scoped together",
+            "Manchester decks and East Lancashire yards quoted separately",
+            "POA — no catalogue fee for a boom"
+        ],
+        "faq": [
+            [
+                "Is a parking barrier the same as a pay station?",
+                "No. We work on the arm, the safety devices and the credential that opens the lane. Pay machines are a different contractor unless a written instruction says otherwise."
+            ],
+            [
+                "Do you cover Burnley and Manchester?",
+                "Yes, from Stockport. Manchester decks and Burnley yards are different surveys, not one copied paragraph."
+            ],
+            [
+                "What does it cost?",
+                "Price on application after we see the lane."
+            ]
+        ],
+        "hub_only": true
+    },
+    "access-barrier": {
+        "name": "Access Barrier",
+        "service": "barriers",
+        "related": "car-park-barrier-access",
+        "seo_title": "Access Barrier | Fobs, Readers and a Boom",
+        "h1": "Access barriers",
+        "intro": "An access barrier is a rising arm whose lane opens from a credential: a fob, a reader, an intercom release or a timed validation. The arm without the credential is only a parking barrier.",
+        "body": "We join the reader or intercom to a volt-free input the barrier controller will accept, and we leave the safety devices in circuit. A shared keypad code left on the pedestal because the fobs failed is the fault we remove, not the design we recommend. Pedestrian doors beside the lane are access-control work and are quoted with the door survey, not assumed from the boom. North West sites are diary work from Stockport SK2. The figure is POA. Call 07517806082 and say whether the cabinet is already CAME or another plate.",
+        "meta_desc": "Access barriers: a private-lane boom opened by fob, reader or intercom. Safety devices left in circuit. POA.",
+        "seo_keywords": "access barrier, barrier fob reader, car park access barrier, intercom barrier release, Stockport",
+        "focus_points": [
+            "Credential and boom specified as one lane",
+            "Safety photocells and loops left in circuit",
+            "Shared keypad codes treated as a fault, not a design",
+            "POA from Stockport"
+        ],
+        "faq": [
+            [
+                "Can one fob open the barrier and the lobby door?",
+                "Often, when both systems can share a token. We check that before we promise a single credential."
+            ],
+            [
+                "Will you bypass the photocell to stop nuisance trips?",
+                "No. We find the cause. Bypassing a safety device is refused."
+            ],
+            [
+                "Is there a price list?",
+                "No. Price on application after the cabinet and the reader are seen."
+            ]
+        ],
+        "hub_only": true
+    },
+    "car-park-barrier": {
+        "name": "Car Park Barrier",
+        "service": "barriers",
+        "related": "vehicle-barriers",
+        "seo_title": "Car Park Barrier | Private Decks and Yards",
+        "h1": "Car park barriers",
+        "intro": "A car park barrier holds a private vehicle lane. The useful questions are arm length, what detects the vehicle, and who is allowed to open it.",
+        "body": "We survey the island, the queue, the slope and the place a driver can reach a reader without stopping in the public road. CAME Gard is the new rising-arm range we specify as a CAME partner. Manchester podiums, Burnley mill yards and a Stockport office court are all in range, and they do not share a copied scope. Repair of a struck arm is a different visit from a first install. Price on application. Call 07517806082. We do not fit barriers on the public highway.",
+        "meta_desc": "Car park barriers for private decks and yards. CAME partner for new arms. POA after a lane survey. 07517806082.",
+        "seo_keywords": "car park barrier, private car park boom, CAME car park barrier, barrier survey Stockport",
+        "focus_points": [
+            "Lane survey before an arm length is chosen",
+            "CAME Gard where a new machine is specified",
+            "Install and strike repair quoted as different visits",
+            "POA, private land only"
+        ],
+        "faq": [
+            [
+                "Do Manchester and Burnley use the same page?",
+                "No. Each has its own guide. This page is the national hub for the job."
+            ],
+            [
+                "Can you take over a barrier another company installed?",
+                "Yes, after we read the model plate and confirm parts. The partnership we state for new arms is CAME."
+            ],
+            [
+                "How is it priced?",
+                "On application. There is no catalogue boom price."
+            ]
+        ],
+        "hub_only": true
+    },
+    "came-gard-gt4": {
+        "name": "CAME Gard GT4",
+        "service": "barriers",
+        "related": "came-gard-barrier",
+        "seo_title": "CAME Gard GT4 | Rising Arm | CAME Partner",
+        "h1": "CAME Gard GT4",
+        "intro": "CAME Gard GT4 is the Gard 4 rising-arm cabinet we specify for a typical private car-park lane. Gard 8 is the heavier duty alternative. The choice is boom length, cycles and the footing, not a slogan.",
+        "body": "iComply is a CAME partner. A GT4 survey checks the island, the arm path, the safety devices that model requires, and the manual release. We do not fit an unrated tube and call it a Gard arm. Where the lane is too long or too busy for Gard 4, we say so and look at Gard 8. Other manufacturers remain on the barriers hub as equipment we service. They are not the partnership. Price on application after the lane is measured. Call 07517806082. Manchester and Burnley each have a local GT4 note because those diaries are real.",
+        "meta_desc": "CAME Gard GT4 rising-arm barriers from a CAME partner. Private lanes. Price on application. 07517806082.",
+        "seo_keywords": "CAME Gard GT4, Gard 4 barrier, CAME partner, rising arm cabinet, GT4 car park barrier",
+        "focus_points": [
+            "Gard 4 cabinet for a typical private lane",
+            "Gard 8 named when duty or length needs it",
+            "Safety devices and manual release in the survey",
+            "POA — no brochure price"
+        ],
+        "faq": [
+            [
+                "Is GT4 the same family as Gard 4?",
+                "Yes. On this site GT4 means the Gard 4 rising-arm cabinet, not a different brand."
+            ],
+            [
+                "Are you a CAME partner?",
+                "Yes. That is the barrier partnership we state."
+            ],
+            [
+                "Do you publish a GT4 price?",
+                "No. The quote follows the lane."
+            ]
+        ],
+        "hub_only": true
+    },
+    "maglock-installation": {
+        "name": "Maglock Installation",
+        "service": "access-control",
+        "related": "fail-secure-lock-assessment",
+        "seo_title": "Maglock Installation | Fire Release Checked | POA",
+        "h1": "Maglock installation",
+        "intro": "A maglock installation is a magnetic lock on a door, with a release people can see and a fire interface that actually drops the lock. It is not a car park barrier.",
+        "body": "Escape doors are usually fail-safe: power off, lock off. A store or a plant cage may be fail-secure, and that decision sits with the responsible person. We survey the leaf, the header, the request-to-exit and what the fire alarm does today. We do not sign the fire risk assessment. We write what the lock will do in a power cut. Brands follow the ironmongery already on the door. The visit is POA. North West doors are booked from Stockport. Call 07517806082. Manchester lobbies and Burnley block entrances are separate guides.",
+        "meta_desc": "Maglock installation with fire release and a power-cut note. Not a barrier. Survey is POA. 07517806082.",
+        "seo_keywords": "maglock installation, magnetic door lock, fire release maglock, fail safe lock, Stockport access control",
+        "focus_points": [
+            "Escape routes not left holding in a power cut",
+            "Request-to-exit and fire interface in the same visit",
+            "Fail-secure only where the responsible person has decided it",
+            "POA — no lock price list"
+        ],
+        "faq": [
+            [
+                "Is a maglock fail-safe?",
+                "A standard maglock releases when power is removed. Whether that is the right behaviour is decided per door, against the fire strategy."
+            ],
+            [
+                "Do you install maglocks on fire doors?",
+                "Only when the door, the closer and the release arrangement can still do their job. We do not pack a lock onto a door that will not latch."
+            ],
+            [
+                "What does it cost?",
+                "Price on application after the door count and the fire interface are known."
+            ]
+        ],
+        "hub_only": true
+    },
+    "car-park-barrier-manchester": {
+        "name": "Car park barriers in Manchester",
+        "service": "barriers",
+        "related": "car-park-barrier",
+        "seo_title": "Car park barriers in Manchester | POA from Stockport",
+        "h1": "Car park barriers in Manchester",
+        "intro": "A car park barrier in Manchester is a private lane we can walk, not a slogan with the town name swapped on.",
+        "body": "Manchester is a Stockport diary run: city-centre basements, Spinningfields and Salford Quays offices, Ancoats yards, Oxford Road blocks and airport hotels off the M56. We measure the island, the queue and the slope before we name an arm. New rising arms are CAME Gard. An existing cabinet is repaired against its own plate. The public highway is out. Price on application. Call 07517806082. City-centre basements often have a low soffit and a short queue. A Quays office deck usually has a longer approach and a reader the driver must reach without blocking the public road.",
+        "meta_desc": "Car park barriers in Manchester. Private lanes surveyed from Stockport. CAME partner for new arms. POA.",
+        "seo_keywords": "car park barriers Manchester, car park barrier manchester, Stockport engineers, POA",
+        "focus_points": [
+            "Lane walked in Manchester before the arm is chosen",
+            "CAME Gard for a new machine",
+            "Existing brands repaired from the model plate",
+            "POA"
+        ],
+        "faq": [
+            [
+                "Do you charge a set fee for car park barriers in Manchester?",
+                "No. The visit is price on application after we know the lane or the door."
+            ],
+            [
+                "Are you based in Manchester?",
+                "Engineers are based in Offerton, Stockport, SK2. Manchester is on the diary from there. Call 07517806082."
+            ],
+            [
+                "Will you work on the public highway?",
+                "No. Private land only."
+            ]
+        ],
+        "hub_only": true
+    },
+    "barrier-installation-manchester": {
+        "name": "Barrier installation in Manchester",
+        "service": "barriers",
+        "related": "car-park-barrier",
+        "seo_title": "Barrier installation in Manchester | POA from Stockport",
+        "h1": "Barrier installation in Manchester",
+        "intro": "Barrier installation in Manchester is a new cabinet, a footing and the safety devices, not a boom bolted to yesterday's plinth.",
+        "body": "Manchester is a Stockport diary run: city-centre basements, Spinningfields and Salford Quays offices, Ancoats yards, Oxford Road blocks and airport hotels off the M56. We mark the duct, the loop slot and the arm path, including anything the arm would hit. If the civils are not ours, we still will not commission a lane with the photocell missing. Price on application after the ground is seen. Call 07517806082. Manchester basements rarely have a clean island. We mark the duct against the ramp, not against a drawing that ignored the column.",
+        "meta_desc": "Barrier installation in Manchester. Footing, loop and safety devices scoped before the cabinet is ordered. POA.",
+        "seo_keywords": "barrier installation Manchester, barrier installation manchester, Stockport engineers, POA",
+        "focus_points": [
+            "Footing and ducts agreed before the cabinet is ordered",
+            "Photocells commissioned, not left in the box",
+            "Private land in Manchester only",
+            "POA"
+        ],
+        "faq": [
+            [
+                "Do you charge a set fee for barrier installation in Manchester?",
+                "No. The visit is price on application after we know the lane or the door."
+            ],
+            [
+                "Are you based in Manchester?",
+                "Engineers are based in Offerton, Stockport, SK2. Manchester is on the diary from there. Call 07517806082."
+            ],
+            [
+                "Will you work on the public highway?",
+                "No. Private land only."
+            ]
+        ],
+        "hub_only": true
+    },
+    "barrier-repair-manchester": {
+        "name": "Barrier repair in Manchester",
+        "service": "barriers",
+        "related": "car-park-barrier",
+        "seo_title": "Barrier repair in Manchester | POA from Stockport",
+        "h1": "Barrier repair in Manchester",
+        "intro": "Barrier repair in Manchester starts from the fault the lane is showing today: a dead motor, a barrier that closes on a car, or a controller that has forgotten its limits.",
+        "body": "Manchester is a Stockport diary run: city-centre basements, Spinningfields and Salford Quays offices, Ancoats yards, Oxford Road blocks and airport hotels off the M56. We do not sell a service contract as the repair. Parts follow the plate in the cabinet. If the arm was struck, that is the strike visit, not a motor swap by habit. Price on application. Call 07517806082 with a photo of the open cabinet. A Spinningfields or Oxford Road lane that fails at 08:30 is a diary priority when an engineer is already on the Manchester run. It is not a promise of a night contract.",
+        "meta_desc": "Barrier repair in Manchester. Fault-first, parts against the cabinet plate. Not a generic service sticker. POA.",
+        "seo_keywords": "barrier repair Manchester, barrier repair manchester, Stockport engineers, POA",
+        "focus_points": [
+            "Fault named before parts are changed",
+            "Limits and safety devices rechecked after the repair",
+            "Strike damage quoted separately",
+            "POA"
+        ],
+        "faq": [
+            [
+                "Do you charge a set fee for barrier repair in Manchester?",
+                "No. The visit is price on application after we know the lane or the door."
+            ],
+            [
+                "Are you based in Manchester?",
+                "Engineers are based in Offerton, Stockport, SK2. Manchester is on the diary from there. Call 07517806082."
+            ],
+            [
+                "Will you work on the public highway?",
+                "No. Private land only."
+            ]
+        ],
+        "hub_only": true
+    },
+    "came-barrier-manchester": {
+        "name": "CAME barriers in Manchester",
+        "service": "barriers",
+        "related": "came-gard-barrier",
+        "seo_title": "CAME barriers in Manchester | POA from Stockport",
+        "h1": "CAME barriers in Manchester",
+        "intro": "CAME barriers in Manchester are the machines we specify as a CAME partner. The visit is still the lane you have, not a national brochure.",
+        "body": "Manchester is a Stockport diary run: city-centre basements, Spinningfields and Salford Quays offices, Ancoats yards, Oxford Road blocks and airport hotels off the M56. Gard is the usual new rising arm. A CAME cabinet already on site is serviced as CAME, including the safety devices that model asks for. We do not rebadge another manufacturer's boom as CAME. Price on application. Call 07517806082. Where a Manchester site already has CAME, we stay on that cabinet. We do not rip it out for a different badge.",
+        "meta_desc": "CAME barriers in Manchester from a CAME partner. Gard rising arms and existing CAME cabinets. POA.",
+        "seo_keywords": "came barriers Manchester, came barrier manchester, Stockport engineers, POA",
+        "focus_points": [
+            "CAME partnership stated for CAME equipment only",
+            "Existing CAME cabinets serviced as CAME",
+            "Other brands not rebadged",
+            "POA"
+        ],
+        "faq": [
+            [
+                "Do you charge a set fee for came barriers in Manchester?",
+                "No. The visit is price on application after we know the lane or the door."
+            ],
+            [
+                "Are you based in Manchester?",
+                "Engineers are based in Offerton, Stockport, SK2. Manchester is on the diary from there. Call 07517806082."
+            ],
+            [
+                "Will you work on the public highway?",
+                "No. Private land only."
+            ]
+        ],
+        "hub_only": true
+    },
+    "came-gard-gt4-manchester": {
+        "name": "CAME Gard GT4 in Manchester",
+        "service": "barriers",
+        "related": "came-gard-gt4",
+        "seo_title": "CAME Gard GT4 in Manchester | POA from Stockport",
+        "h1": "CAME Gard GT4 in Manchester",
+        "intro": "CAME Gard GT4 in Manchester means the Gard 4 cabinet on a private lane in that town. It is not an automatic choice for every width.",
+        "body": "Manchester is a Stockport diary run: city-centre basements, Spinningfields and Salford Quays offices, Ancoats yards, Oxford Road blocks and airport hotels off the M56. We compare arm length and duty with Gard 8 before we order. The footing, the manual release and the photocells are part of the GT4 visit. Price on application after measurement. Call 07517806082. GT4 on a Manchester podium is often a folding or shorter arm. We measure the soffit before we order the straight boom.",
+        "meta_desc": "CAME Gard GT4 in Manchester. Gard 4 cabinet, checked against Gard 8 when the lane is longer or busier. POA.",
+        "seo_keywords": "came gard gt4 Manchester, came gard gt4 manchester, Stockport engineers, POA",
+        "focus_points": [
+            "GT4 treated as the Gard 4 cabinet",
+            "Gard 8 considered when duty needs it",
+            "Manual release and photocells included",
+            "POA"
+        ],
+        "faq": [
+            [
+                "Do you charge a set fee for came gard gt4 in Manchester?",
+                "No. The visit is price on application after we know the lane or the door."
+            ],
+            [
+                "Are you based in Manchester?",
+                "Engineers are based in Offerton, Stockport, SK2. Manchester is on the diary from there. Call 07517806082."
+            ],
+            [
+                "Will you work on the public highway?",
+                "No. Private land only."
+            ]
+        ],
+        "hub_only": true
+    },
+    "rising-arm-barrier-manchester": {
+        "name": "Rising-arm barriers in Manchester",
+        "service": "barriers",
+        "related": "rising-arm-barrier",
+        "seo_title": "Rising-arm barriers in Manchester | POA from Stockport",
+        "h1": "Rising-arm barriers in Manchester",
+        "intro": "A rising-arm barrier in Manchester lifts a boom across one private vehicle lane. It is not a gate and not a fire curtain.",
+        "body": "Manchester is a Stockport diary run: city-centre basements, Spinningfields and Salford Quays offices, Ancoats yards, Oxford Road blocks and airport hotels off the M56. Headroom under a soffit or a loading canopy decides the arm, including whether it must fold. We record what the lane does on power loss. New arms are CAME Gard. Price on application. Call 07517806082. Manchester headroom fails in basement entries more often than in open yards. The survey starts with a tape, not a catalogue length.",
+        "meta_desc": "Rising-arm barriers in Manchester. One private lane, one boom, headroom checked. CAME Gard for new arms. POA.",
+        "seo_keywords": "rising-arm barriers Manchester, rising arm barrier manchester, Stockport engineers, POA",
+        "focus_points": [
+            "One lane and one boom",
+            "Headroom and folding arms checked on site",
+            "Power-loss behaviour written down",
+            "POA"
+        ],
+        "faq": [
+            [
+                "Do you charge a set fee for rising-arm barriers in Manchester?",
+                "No. The visit is price on application after we know the lane or the door."
+            ],
+            [
+                "Are you based in Manchester?",
+                "Engineers are based in Offerton, Stockport, SK2. Manchester is on the diary from there. Call 07517806082."
+            ],
+            [
+                "Will you work on the public highway?",
+                "No. Private land only."
+            ]
+        ],
+        "hub_only": true
+    },
+    "barrier-loop-detector-manchester": {
+        "name": "Barrier loop detectors in Manchester",
+        "service": "barriers",
+        "related": "barrier-induction-loop",
+        "seo_title": "Barrier loop detectors in Manchester | POA from Stockport",
+        "h1": "Barrier loop detectors in Manchester",
+        "intro": "A barrier loop detector in Manchester is the coil in the private surface that tells the arm a vehicle is there. A photocell is not automatically a substitute.",
+        "body": "Manchester is a Stockport diary run: city-centre basements, Spinningfields and Salford Quays offices, Ancoats yards, Oxford Road blocks and airport hotels off the M56. We test inductance and the detector's tuning. A loop that misses a motorcycle or holds for an HGV is a geometry fault. We do not cut loops into a highway we do not control. Resin and slot depth matter on a worn deck. Price on application. Call 07517806082. Manchester multi-storey decks crack at the ramp joint. A loop cut across that joint is a repeat fault. We say so before we resin it.",
+        "meta_desc": "Barrier loop detectors in Manchester. Inductance tested on private surfaces only. Not a public-highway cut. POA.",
+        "seo_keywords": "barrier loop detectors Manchester, barrier loop detector manchester, Stockport engineers, POA",
+        "focus_points": [
+            "Inductance tested, not guessed",
+            "Motorcycle and HGV edge cases noted",
+            "Private surface only",
+            "POA"
+        ],
+        "faq": [
+            [
+                "Do you charge a set fee for barrier loop detectors in Manchester?",
+                "No. The visit is price on application after we know the lane or the door."
+            ],
+            [
+                "Are you based in Manchester?",
+                "Engineers are based in Offerton, Stockport, SK2. Manchester is on the diary from there. Call 07517806082."
+            ],
+            [
+                "Will you work on the public highway?",
+                "No. Private land only."
+            ]
+        ],
+        "hub_only": true
+    },
+    "barrier-after-vehicle-strike-manchester": {
+        "name": "Barrier after a vehicle strike in Manchester",
+        "service": "barriers",
+        "related": "barrier-boom-replacement",
+        "seo_title": "Barrier after a vehicle strike in Manchester | POA from Stockport",
+        "h1": "Barrier after a vehicle strike in Manchester",
+        "intro": "After a vehicle strike in Manchester the arm, the spring and often the cabinet footing have moved. Straightening the tube and walking away is not the repair.",
+        "body": "Manchester is a Stockport diary run: city-centre basements, Spinningfields and Salford Quays offices, Ancoats yards, Oxford Road blocks and airport hotels off the M56. We look at the end rest, the balance, the loop if the vehicle cut it, and whether the safety devices still see the lane. A longer replacement arm needs a spring change. CAME Gard booms are partner parts. Other plates are ordered against the model. Price on application. Call 07517806082 with a photo of the bent arm. Tight Manchester entries get struck on the tip more than the middle. The end rest and the spring are checked even when the arm looks almost straight.",
+        "meta_desc": "Barrier repair after a vehicle strike in Manchester. Arm, spring and footing checked. Not a straightened tube. POA.",
+        "seo_keywords": "barrier after a vehicle strike Manchester, barrier after vehicle strike manchester, Stockport engineers, POA",
+        "focus_points": [
+            "Arm, spring and footing checked together",
+            "Loop damage included when the slab is cut",
+            "Unrated arms refused",
+            "POA"
+        ],
+        "faq": [
+            [
+                "Do you charge a set fee for barrier after a vehicle strike in Manchester?",
+                "No. The visit is price on application after we know the lane or the door."
+            ],
+            [
+                "Are you based in Manchester?",
+                "Engineers are based in Offerton, Stockport, SK2. Manchester is on the diary from there. Call 07517806082."
+            ],
+            [
+                "Will you work on the public highway?",
+                "No. Private land only."
+            ]
+        ],
+        "hub_only": true
+    },
+    "barrier-stuck-down-manchester": {
+        "name": "Barrier stuck down in Manchester",
+        "service": "barriers",
+        "related": "car-park-barrier",
+        "seo_title": "Barrier stuck down in Manchester | POA from Stockport",
+        "h1": "Barrier stuck down in Manchester",
+        "intro": "A barrier stuck down in Manchester is a closed lane. The first job is a safe way through, then the fault, not a guess at the motor.",
+        "body": "Manchester is a Stockport diary run: city-centre basements, Spinningfields and Salford Quays offices, Ancoats yards, Oxford Road blocks and airport hotels off the M56. Manual release follows that cabinet's own instructions. We do not force an arm that is mechanically bound. If people are trapped or the lane blocks an emergency route, say so when you ring. This is not a contracted 24-hour desk. North West attendance is from the Stockport diary when an engineer is free. Price on application. Call 07517806082. A stuck arm at a Manchester basement traps the queue on the street. We ask whether the public road is already blocked before we talk about parts.",
+        "meta_desc": "Barrier stuck down in Manchester. Make the lane safe, then find the fault. Manual release only as that cabinet allows. POA.",
+        "seo_keywords": "barrier stuck down Manchester, barrier stuck down manchester, Stockport engineers, POA",
+        "focus_points": [
+            "Manual release only as the manual describes",
+            "Bound arms not forced",
+            "Not sold as a 24-hour contract",
+            "POA"
+        ],
+        "faq": [
+            [
+                "Do you charge a set fee for barrier stuck down in Manchester?",
+                "No. The visit is price on application after we know the lane or the door."
+            ],
+            [
+                "Are you based in Manchester?",
+                "Engineers are based in Offerton, Stockport, SK2. Manchester is on the diary from there. Call 07517806082."
+            ],
+            [
+                "Will you work on the public highway?",
+                "No. Private land only."
+            ]
+        ],
+        "hub_only": true
+    },
+    "maglock-manchester": {
+        "name": "Maglocks in Manchester",
+        "service": "access-control",
+        "related": "maglock-installation",
+        "seo_title": "Maglocks in Manchester | POA from Stockport",
+        "h1": "Maglocks in Manchester",
+        "intro": "Maglocks in Manchester are door locks, usually on a lobby, a stair or a plant room. They are not the boom on the car park.",
+        "body": "Manchester is a Stockport diary run: city-centre basements, Spinningfields and Salford Quays offices, Ancoats yards, Oxford Road blocks and airport hotels off the M56. We check the header, the request-to-exit, the break-glass and whether the fire alarm drops the lock. Escape routes stay fail-safe unless the responsible person has a written reason otherwise. We do not sign the fire strategy. The survey is POA. Call 07517806082. Manchester mansion blocks and new cores often share one break-glass for two leaves. We test both leaves, not the one nearest the panel.",
+        "meta_desc": "Maglocks in Manchester. Door locks with fire release checked. Escape routes stay fail-safe unless decided otherwise. POA.",
+        "seo_keywords": "maglocks Manchester, maglock manchester, Stockport engineers, POA",
+        "focus_points": [
+            "Fire release watched, not assumed",
+            "Request-to-exit and break-glass included",
+            "Separate from the car park barrier",
+            "POA"
+        ],
+        "faq": [
+            [
+                "Do you charge a set fee for maglocks in Manchester?",
+                "No. The visit is price on application after we know the lane or the door."
+            ],
+            [
+                "Are you based in Manchester?",
+                "Engineers are based in Offerton, Stockport, SK2. Manchester is on the diary from there. Call 07517806082."
+            ],
+            [
+                "Does this include the car park barrier?",
+                "No. Maglocks are the door. The boom is quoted on the car park barrier page."
+            ]
+        ],
+        "hub_only": true
+    },
+    "door-entry-manchester": {
+        "name": "Door entry in Manchester",
+        "service": "door-entry",
+        "related": "door-entry-system",
+        "seo_title": "Door entry in Manchester | POA from Stockport",
+        "h1": "Door entry in Manchester",
+        "intro": "Door entry in Manchester is the panel at the street door and the handset or monitor in the flat or office. It is not warden call and not a hospital nurse-call system.",
+        "body": "Manchester is a Stockport diary run: city-centre basements, Spinningfields and Salford Quays offices, Ancoats yards, Oxford Road blocks and airport hotels off the M56. We look at the cable, the lock release and whether residents can still hear the panel. A video panel that nobody can grant from the top floor is a wiring or a network fault, not a new brochure. Tunstall kit is nurse call and is outside this work. Price on application. Call 07517806082. Manchester cores with a GSM or IP panel still need the lock release to work when the broadband does not. We test the release on its own pair.",
+        "meta_desc": "Door entry in Manchester. Street panel, handset and lock release. Not warden call. POA from Stockport.",
+        "seo_keywords": "door entry Manchester, door entry manchester, Stockport engineers, POA",
+        "focus_points": [
+            "Panel, handset and lock release tested as one path",
+            "Not warden call and not Tunstall nurse call",
+            "Existing cable checked before a new panel is sold",
+            "POA"
+        ],
+        "faq": [
+            [
+                "Do you charge a set fee for door entry in Manchester?",
+                "No. The visit is price on application after we know the lane or the door."
+            ],
+            [
+                "Are you based in Manchester?",
+                "Engineers are based in Offerton, Stockport, SK2. Manchester is on the diary from there. Call 07517806082."
+            ],
+            [
+                "Is this warden call or Tunstall?",
+                "No. Warden call is a speech system in sheltered housing. Tunstall is nurse call and is not part of this door-entry visit."
+            ]
+        ],
+        "hub_only": true
+    },
+    "car-park-barrier-burnley": {
+        "name": "Car park barriers in Burnley",
+        "service": "barriers",
+        "related": "car-park-barrier",
+        "seo_title": "Car park barriers in Burnley | POA from Stockport",
+        "h1": "Car park barriers in Burnley",
+        "intro": "A car park barrier in Burnley is a private lane we can walk, not a slogan with the town name swapped on.",
+        "body": "Burnley is its own day from Stockport, often paired with Nelson, Colne or Accrington: mill conversions, Heasandford and Network 65 yards, and housing-association blocks towards Padiham. We measure the island, the queue and the slope before we name an arm. New rising arms are CAME Gard. An existing cabinet is repaired against its own plate. The public highway is out. Price on application. Call 07517806082. Burnley yards often take a longer arm and an HGV that should not be using a car lane. We write that down rather than selling the arm that fitted the last Manchester basement.",
+        "meta_desc": "Car park barriers in Burnley. Private lanes surveyed from Stockport. CAME partner for new arms. POA.",
+        "seo_keywords": "car park barriers Burnley, car park barrier burnley, Stockport engineers, POA",
+        "focus_points": [
+            "Lane walked in Burnley before the arm is chosen",
+            "CAME Gard for a new machine",
+            "Existing brands repaired from the model plate",
+            "POA"
+        ],
+        "faq": [
+            [
+                "Do you charge a set fee for car park barriers in Burnley?",
+                "No. The visit is price on application after we know the lane or the door."
+            ],
+            [
+                "Are you based in Burnley?",
+                "Engineers are based in Offerton, Stockport, SK2. Burnley is on the diary from there. Call 07517806082."
+            ],
+            [
+                "Will you work on the public highway?",
+                "No. Private land only."
+            ]
+        ],
+        "hub_only": true
+    },
+    "barrier-installation-burnley": {
+        "name": "Barrier installation in Burnley",
+        "service": "barriers",
+        "related": "car-park-barrier",
+        "seo_title": "Barrier installation in Burnley | POA from Stockport",
+        "h1": "Barrier installation in Burnley",
+        "intro": "Barrier installation in Burnley is a new cabinet, a footing and the safety devices, not a boom bolted to yesterday's plinth.",
+        "body": "Burnley is its own day from Stockport, often paired with Nelson, Colne or Accrington: mill conversions, Heasandford and Network 65 yards, and housing-association blocks towards Padiham. We mark the duct, the loop slot and the arm path, including anything the arm would hit. If the civils are not ours, we still will not commission a lane with the photocell missing. Price on application after the ground is seen. Call 07517806082. Mill conversions in Burnley hide the duct in a floor that was not poured for a barrier. We open that question before the cabinet is on the van.",
+        "meta_desc": "Barrier installation in Burnley. Footing, loop and safety devices scoped before the cabinet is ordered. POA.",
+        "seo_keywords": "barrier installation Burnley, barrier installation burnley, Stockport engineers, POA",
+        "focus_points": [
+            "Footing and ducts agreed before the cabinet is ordered",
+            "Photocells commissioned, not left in the box",
+            "Private land in Burnley only",
+            "POA"
+        ],
+        "faq": [
+            [
+                "Do you charge a set fee for barrier installation in Burnley?",
+                "No. The visit is price on application after we know the lane or the door."
+            ],
+            [
+                "Are you based in Burnley?",
+                "Engineers are based in Offerton, Stockport, SK2. Burnley is on the diary from there. Call 07517806082."
+            ],
+            [
+                "Will you work on the public highway?",
+                "No. Private land only."
+            ]
+        ],
+        "hub_only": true
+    },
+    "barrier-repair-burnley": {
+        "name": "Barrier repair in Burnley",
+        "service": "barriers",
+        "related": "car-park-barrier",
+        "seo_title": "Barrier repair in Burnley | POA from Stockport",
+        "h1": "Barrier repair in Burnley",
+        "intro": "Barrier repair in Burnley starts from the fault the lane is showing today: a dead motor, a barrier that closes on a car, or a controller that has forgotten its limits.",
+        "body": "Burnley is its own day from Stockport, often paired with Nelson, Colne or Accrington: mill conversions, Heasandford and Network 65 yards, and housing-association blocks towards Padiham. We do not sell a service contract as the repair. Parts follow the plate in the cabinet. If the arm was struck, that is the strike visit, not a motor swap by habit. Price on application. Call 07517806082 with a photo of the open cabinet. A Burnley industrial lane may only be visited on the East Lancashire day. Tell us if the yard is shut on a Friday.",
+        "meta_desc": "Barrier repair in Burnley. Fault-first, parts against the cabinet plate. Not a generic service sticker. POA.",
+        "seo_keywords": "barrier repair Burnley, barrier repair burnley, Stockport engineers, POA",
+        "focus_points": [
+            "Fault named before parts are changed",
+            "Limits and safety devices rechecked after the repair",
+            "Strike damage quoted separately",
+            "POA"
+        ],
+        "faq": [
+            [
+                "Do you charge a set fee for barrier repair in Burnley?",
+                "No. The visit is price on application after we know the lane or the door."
+            ],
+            [
+                "Are you based in Burnley?",
+                "Engineers are based in Offerton, Stockport, SK2. Burnley is on the diary from there. Call 07517806082."
+            ],
+            [
+                "Will you work on the public highway?",
+                "No. Private land only."
+            ]
+        ],
+        "hub_only": true
+    },
+    "came-barrier-burnley": {
+        "name": "CAME barriers in Burnley",
+        "service": "barriers",
+        "related": "came-gard-barrier",
+        "seo_title": "CAME barriers in Burnley | POA from Stockport",
+        "h1": "CAME barriers in Burnley",
+        "intro": "CAME barriers in Burnley are the machines we specify as a CAME partner. The visit is still the lane you have, not a national brochure.",
+        "body": "Burnley is its own day from Stockport, often paired with Nelson, Colne or Accrington: mill conversions, Heasandford and Network 65 yards, and housing-association blocks towards Padiham. Gard is the usual new rising arm. A CAME cabinet already on site is serviced as CAME, including the safety devices that model asks for. We do not rebadge another manufacturer's boom as CAME. Price on application. Call 07517806082. A CAME cabinet on a Burnley estate is serviced as CAME. We do not pretend a neighbouring FAAC or BFT is covered by the same partnership.",
+        "meta_desc": "CAME barriers in Burnley from a CAME partner. Gard rising arms and existing CAME cabinets. POA.",
+        "seo_keywords": "came barriers Burnley, came barrier burnley, Stockport engineers, POA",
+        "focus_points": [
+            "CAME partnership stated for CAME equipment only",
+            "Existing CAME cabinets serviced as CAME",
+            "Other brands not rebadged",
+            "POA"
+        ],
+        "faq": [
+            [
+                "Do you charge a set fee for came barriers in Burnley?",
+                "No. The visit is price on application after we know the lane or the door."
+            ],
+            [
+                "Are you based in Burnley?",
+                "Engineers are based in Offerton, Stockport, SK2. Burnley is on the diary from there. Call 07517806082."
+            ],
+            [
+                "Will you work on the public highway?",
+                "No. Private land only."
+            ]
+        ],
+        "hub_only": true
+    },
+    "came-gard-gt4-burnley": {
+        "name": "CAME Gard GT4 in Burnley",
+        "service": "barriers",
+        "related": "came-gard-gt4",
+        "seo_title": "CAME Gard GT4 in Burnley | POA from Stockport",
+        "h1": "CAME Gard GT4 in Burnley",
+        "intro": "CAME Gard GT4 in Burnley means the Gard 4 cabinet on a private lane in that town. It is not an automatic choice for every width.",
+        "body": "Burnley is its own day from Stockport, often paired with Nelson, Colne or Accrington: mill conversions, Heasandford and Network 65 yards, and housing-association blocks towards Padiham. We compare arm length and duty with Gard 8 before we order. The footing, the manual release and the photocells are part of the GT4 visit. Price on application after measurement. Call 07517806082. GT4 in Burnley is often an open-air lane with wind on the arm. Duty and the spring matter as much as the brochure length.",
+        "meta_desc": "CAME Gard GT4 in Burnley. Gard 4 cabinet, checked against Gard 8 when the lane is longer or busier. POA.",
+        "seo_keywords": "came gard gt4 Burnley, came gard gt4 burnley, Stockport engineers, POA",
+        "focus_points": [
+            "GT4 treated as the Gard 4 cabinet",
+            "Gard 8 considered when duty needs it",
+            "Manual release and photocells included",
+            "POA"
+        ],
+        "faq": [
+            [
+                "Do you charge a set fee for came gard gt4 in Burnley?",
+                "No. The visit is price on application after we know the lane or the door."
+            ],
+            [
+                "Are you based in Burnley?",
+                "Engineers are based in Offerton, Stockport, SK2. Burnley is on the diary from there. Call 07517806082."
+            ],
+            [
+                "Will you work on the public highway?",
+                "No. Private land only."
+            ]
+        ],
+        "hub_only": true
+    },
+    "rising-arm-barrier-burnley": {
+        "name": "Rising-arm barriers in Burnley",
+        "service": "barriers",
+        "related": "rising-arm-barrier",
+        "seo_title": "Rising-arm barriers in Burnley | POA from Stockport",
+        "h1": "Rising-arm barriers in Burnley",
+        "intro": "A rising-arm barrier in Burnley lifts a boom across one private vehicle lane. It is not a gate and not a fire curtain.",
+        "body": "Burnley is its own day from Stockport, often paired with Nelson, Colne or Accrington: mill conversions, Heasandford and Network 65 yards, and housing-association blocks towards Padiham. Headroom under a soffit or a loading canopy decides the arm, including whether it must fold. We record what the lane does on power loss. New arms are CAME Gard. Price on application. Call 07517806082. Burnley loading canopies catch a rising arm that looked clear from the office window. We stand in the lane and watch the full travel.",
+        "meta_desc": "Rising-arm barriers in Burnley. One private lane, one boom, headroom checked. CAME Gard for new arms. POA.",
+        "seo_keywords": "rising-arm barriers Burnley, rising arm barrier burnley, Stockport engineers, POA",
+        "focus_points": [
+            "One lane and one boom",
+            "Headroom and folding arms checked on site",
+            "Power-loss behaviour written down",
+            "POA"
+        ],
+        "faq": [
+            [
+                "Do you charge a set fee for rising-arm barriers in Burnley?",
+                "No. The visit is price on application after we know the lane or the door."
+            ],
+            [
+                "Are you based in Burnley?",
+                "Engineers are based in Offerton, Stockport, SK2. Burnley is on the diary from there. Call 07517806082."
+            ],
+            [
+                "Will you work on the public highway?",
+                "No. Private land only."
+            ]
+        ],
+        "hub_only": true
+    },
+    "barrier-loop-detector-burnley": {
+        "name": "Barrier loop detectors in Burnley",
+        "service": "barriers",
+        "related": "barrier-induction-loop",
+        "seo_title": "Barrier loop detectors in Burnley | POA from Stockport",
+        "h1": "Barrier loop detectors in Burnley",
+        "intro": "A barrier loop detector in Burnley is the coil in the private surface that tells the arm a vehicle is there. A photocell is not automatically a substitute.",
+        "body": "Burnley is its own day from Stockport, often paired with Nelson, Colne or Accrington: mill conversions, Heasandford and Network 65 yards, and housing-association blocks towards Padiham. We test inductance and the detector's tuning. A loop that misses a motorcycle or holds for an HGV is a geometry fault. We do not cut loops into a highway we do not control. Resin and slot depth matter on a worn deck. Price on application. Call 07517806082. Block paving in a Burnley yard moves. A loop that tested well in June can be open-circuit by winter. We measure it, we do not blame the motor.",
+        "meta_desc": "Barrier loop detectors in Burnley. Inductance tested on private surfaces only. Not a public-highway cut. POA.",
+        "seo_keywords": "barrier loop detectors Burnley, barrier loop detector burnley, Stockport engineers, POA",
+        "focus_points": [
+            "Inductance tested, not guessed",
+            "Motorcycle and HGV edge cases noted",
+            "Private surface only",
+            "POA"
+        ],
+        "faq": [
+            [
+                "Do you charge a set fee for barrier loop detectors in Burnley?",
+                "No. The visit is price on application after we know the lane or the door."
+            ],
+            [
+                "Are you based in Burnley?",
+                "Engineers are based in Offerton, Stockport, SK2. Burnley is on the diary from there. Call 07517806082."
+            ],
+            [
+                "Will you work on the public highway?",
+                "No. Private land only."
+            ]
+        ],
+        "hub_only": true
+    },
+    "barrier-after-vehicle-strike-burnley": {
+        "name": "Barrier after a vehicle strike in Burnley",
+        "service": "barriers",
+        "related": "barrier-boom-replacement",
+        "seo_title": "Barrier after a vehicle strike in Burnley | POA from Stockport",
+        "h1": "Barrier after a vehicle strike in Burnley",
+        "intro": "After a vehicle strike in Burnley the arm, the spring and often the cabinet footing have moved. Straightening the tube and walking away is not the repair.",
+        "body": "Burnley is its own day from Stockport, often paired with Nelson, Colne or Accrington: mill conversions, Heasandford and Network 65 yards, and housing-association blocks towards Padiham. We look at the end rest, the balance, the loop if the vehicle cut it, and whether the safety devices still see the lane. A longer replacement arm needs a spring change. CAME Gard booms are partner parts. Other plates are ordered against the model. Price on application. Call 07517806082 with a photo of the bent arm. Yard strikes in Burnley are often a wagon, not a car. The cabinet footing and the loop are inspected even if the arm is the only bent part you can see.",
+        "meta_desc": "Barrier repair after a vehicle strike in Burnley. Arm, spring and footing checked. Not a straightened tube. POA.",
+        "seo_keywords": "barrier after a vehicle strike Burnley, barrier after vehicle strike burnley, Stockport engineers, POA",
+        "focus_points": [
+            "Arm, spring and footing checked together",
+            "Loop damage included when the slab is cut",
+            "Unrated arms refused",
+            "POA"
+        ],
+        "faq": [
+            [
+                "Do you charge a set fee for barrier after a vehicle strike in Burnley?",
+                "No. The visit is price on application after we know the lane or the door."
+            ],
+            [
+                "Are you based in Burnley?",
+                "Engineers are based in Offerton, Stockport, SK2. Burnley is on the diary from there. Call 07517806082."
+            ],
+            [
+                "Will you work on the public highway?",
+                "No. Private land only."
+            ]
+        ],
+        "hub_only": true
+    },
+    "barrier-stuck-down-burnley": {
+        "name": "Barrier stuck down in Burnley",
+        "service": "barriers",
+        "related": "car-park-barrier",
+        "seo_title": "Barrier stuck down in Burnley | POA from Stockport",
+        "h1": "Barrier stuck down in Burnley",
+        "intro": "A barrier stuck down in Burnley is a closed lane. The first job is a safe way through, then the fault, not a guess at the motor.",
+        "body": "Burnley is its own day from Stockport, often paired with Nelson, Colne or Accrington: mill conversions, Heasandford and Network 65 yards, and housing-association blocks towards Padiham. Manual release follows that cabinet's own instructions. We do not force an arm that is mechanically bound. If people are trapped or the lane blocks an emergency route, say so when you ring. This is not a contracted 24-hour desk. North West attendance is from the Stockport diary when an engineer is free. Price on application. Call 07517806082. A stuck barrier on a Burnley estate can block the only way the refuse wagon enters. Say if that is this morning's problem.",
+        "meta_desc": "Barrier stuck down in Burnley. Make the lane safe, then find the fault. Manual release only as that cabinet allows. POA.",
+        "seo_keywords": "barrier stuck down Burnley, barrier stuck down burnley, Stockport engineers, POA",
+        "focus_points": [
+            "Manual release only as the manual describes",
+            "Bound arms not forced",
+            "Not sold as a 24-hour contract",
+            "POA"
+        ],
+        "faq": [
+            [
+                "Do you charge a set fee for barrier stuck down in Burnley?",
+                "No. The visit is price on application after we know the lane or the door."
+            ],
+            [
+                "Are you based in Burnley?",
+                "Engineers are based in Offerton, Stockport, SK2. Burnley is on the diary from there. Call 07517806082."
+            ],
+            [
+                "Will you work on the public highway?",
+                "No. Private land only."
+            ]
+        ],
+        "hub_only": true
+    },
+    "maglock-burnley": {
+        "name": "Maglocks in Burnley",
+        "service": "access-control",
+        "related": "maglock-installation",
+        "seo_title": "Maglocks in Burnley | POA from Stockport",
+        "h1": "Maglocks in Burnley",
+        "intro": "Maglocks in Burnley are door locks, usually on a lobby, a stair or a plant room. They are not the boom on the car park.",
+        "body": "Burnley is its own day from Stockport, often paired with Nelson, Colne or Accrington: mill conversions, Heasandford and Network 65 yards, and housing-association blocks towards Padiham. We check the header, the request-to-exit, the break-glass and whether the fire alarm drops the lock. Escape routes stay fail-safe unless the responsible person has a written reason otherwise. We do not sign the fire strategy. The survey is POA. Call 07517806082. Extra-care and rented blocks around Burnley need the lobby maglock to release on the fire alarm without becoming a permanently open door. We test both states.",
+        "meta_desc": "Maglocks in Burnley. Door locks with fire release checked. Escape routes stay fail-safe unless decided otherwise. POA.",
+        "seo_keywords": "maglocks Burnley, maglock burnley, Stockport engineers, POA",
+        "focus_points": [
+            "Fire release watched, not assumed",
+            "Request-to-exit and break-glass included",
+            "Separate from the car park barrier",
+            "POA"
+        ],
+        "faq": [
+            [
+                "Do you charge a set fee for maglocks in Burnley?",
+                "No. The visit is price on application after we know the lane or the door."
+            ],
+            [
+                "Are you based in Burnley?",
+                "Engineers are based in Offerton, Stockport, SK2. Burnley is on the diary from there. Call 07517806082."
+            ],
+            [
+                "Does this include the car park barrier?",
+                "No. Maglocks are the door. The boom is quoted on the car park barrier page."
+            ]
+        ],
+        "hub_only": true
+    },
+    "door-entry-burnley": {
+        "name": "Door entry in Burnley",
+        "service": "door-entry",
+        "related": "door-entry-system",
+        "seo_title": "Door entry in Burnley | POA from Stockport",
+        "h1": "Door entry in Burnley",
+        "intro": "Door entry in Burnley is the panel at the street door and the handset or monitor in the flat or office. It is not warden call and not a hospital nurse-call system.",
+        "body": "Burnley is its own day from Stockport, often paired with Nelson, Colne or Accrington: mill conversions, Heasandford and Network 65 yards, and housing-association blocks towards Padiham. We look at the cable, the lock release and whether residents can still hear the panel. A video panel that nobody can grant from the top floor is a wiring or a network fault, not a new brochure. Tunstall kit is nurse call and is outside this work. Price on application. Call 07517806082. Stone walls in Burnley flats punish wireless door entry. We try the existing cable before we sell a radio panel.",
+        "meta_desc": "Door entry in Burnley. Street panel, handset and lock release. Not warden call. POA from Stockport.",
+        "seo_keywords": "door entry Burnley, door entry burnley, Stockport engineers, POA",
+        "focus_points": [
+            "Panel, handset and lock release tested as one path",
+            "Not warden call and not Tunstall nurse call",
+            "Existing cable checked before a new panel is sold",
+            "POA"
+        ],
+        "faq": [
+            [
+                "Do you charge a set fee for door entry in Burnley?",
+                "No. The visit is price on application after we know the lane or the door."
+            ],
+            [
+                "Are you based in Burnley?",
+                "Engineers are based in Offerton, Stockport, SK2. Burnley is on the diary from there. Call 07517806082."
+            ],
+            [
+                "Is this warden call or Tunstall?",
+                "No. Warden call is a speech system in sheltered housing. Tunstall is nurse call and is not part of this door-entry visit."
+            ]
+        ],
+        "hub_only": true
     }
 }
