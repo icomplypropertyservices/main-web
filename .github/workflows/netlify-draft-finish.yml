@@ -41,27 +41,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Free runner disk
-        run: |
-          df -h
-          sudo rm -rf \
-            /usr/local/lib/android \
-            /usr/share/dotnet \
-            /usr/local/share/powershell \
-            /usr/share/swift \
-            /opt/ghc \
-            /usr/local/.ghcup \
-            /usr/local/share/chromium \
-            /usr/local/share/boost \
-            /opt/hostedtoolcache/CodeQL \
-            /usr/local/lib/node_modules \
-            /opt/microsoft \
-            /usr/share/miniconda \
-            /usr/local/share/vcpkg \
-            || true
-          docker system prune -af >/dev/null 2>&1 || true
-          df -h
-
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -77,39 +56,12 @@ jobs:
       - name: Verify dist/ pretty URLs
         run: php website/bin/check-static-export.php
 
+      # Same official CLI action as production (.github/workflows/netlify-deploy.yml).
+      # Args must not include --prod. This does not POST /sites/{id}/builds.
       - name: Deploy draft (never production)
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --dir=dist --alias finish-property-site --no-build --message "finish-property-site draft, not production"
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          CI: "true"
-        run: |
-          set -euo pipefail
-          args=(deploy --dir=dist --alias finish-property-site --no-build --message "finish-property-site draft — not production")
-          for arg in "${args[@]}"; do
-            if [ "$arg" = "--prod" ]; then
-              echo "::error::Refusing to pass --prod"
-              exit 1
-            fi
-          done
-          npx --yes netlify-cli "${args[@]}" --json > /tmp/netlify-draft.json
-          python3 - << 'PY'
-          import json
-          data = json.load(open("/tmp/netlify-draft.json"))
-          context = str(data.get("context") or "")
-          if context == "production":
-              raise SystemExit("Deploy context is production. Stop.")
-          deploy_url = data.get("deploy_ssl_url") or data.get("deploy_url") or ""
-          alias_url = data.get("url") or ""
-          print("context=" + context)
-          print("deploy_ssl_url=" + str(data.get("deploy_ssl_url") or ""))
-          print("deploy_url=" + str(data.get("deploy_url") or ""))
-          print("url=" + str(alias_url))
-          if "icomplypropertyservices.co.uk" in deploy_url and "netlify.app" not in deploy_url:
-              raise SystemExit("Draft deploy URL is the production domain. Stop.")
-          summary = __import__("os").environ.get("GITHUB_STEP_SUMMARY")
-          if summary:
-              with open(summary, "a", encoding="utf-8") as fh:
-                  fh.write("Draft deploy (not production)\n\n")
-                  fh.write(f"- deploy: {deploy_url}\n")
-                  fh.write(f"- url field: {alias_url}\n")
-          PY
