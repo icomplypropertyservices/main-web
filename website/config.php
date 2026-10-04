@@ -610,7 +610,7 @@ function getMajorKeywords(): array {
             'related' => keywordSlug($meta['related'] ?? $slug),
         ];
         // Unique SEO content (from enrich / agent merge)
-        foreach (['intro', 'body', 'meta_desc', 'seo_keywords'] as $field) {
+        foreach (['intro', 'body', 'meta_desc', 'seo_keywords', 'seo_title', 'h1'] as $field) {
             if (!empty($meta[$field]) && is_string($meta[$field])) {
                 $row[$field] = $meta[$field];
             }
@@ -620,6 +620,9 @@ function getMajorKeywords(): array {
         }
         if (!empty($meta['faq']) && is_array($meta['faq'])) {
             $row['faq'] = $meta['faq'];
+        }
+        if (!empty($meta['hub_only'])) {
+            $row['hub_only'] = true;
         }
         if ($slug === 'tunstall-nurse-call') {
             continue;
@@ -643,7 +646,7 @@ function getMajorKeywords(): array {
                     'service' => $meta['service'] ?? 'barriers',
                     'related' => keywordSlug($meta['related'] ?? $slug),
                 ];
-                foreach (['intro', 'body', 'meta_desc', 'seo_keywords'] as $field) {
+                foreach (['intro', 'body', 'meta_desc', 'seo_keywords', 'seo_title', 'h1'] as $field) {
                     if (!empty($meta[$field]) && is_string($meta[$field])) {
                         $row[$field] = $meta[$field];
                     }
@@ -653,6 +656,9 @@ function getMajorKeywords(): array {
                 }
                 if (!empty($meta['faq']) && is_array($meta['faq'])) {
                     $row['faq'] = $meta['faq'];
+                }
+                if (!empty($meta['hub_only'])) {
+                    $row['hub_only'] = true;
                 }
                 $normalized[$slug] = $row;
             }
