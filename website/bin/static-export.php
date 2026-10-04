@@ -1005,18 +1005,9 @@ function icomplyAovLegacyRedirectLines(): string
             $lines[] = '/pages/aov-air-handling/' . $slug . '/  ' . $dest . '  301';
         }
     }
-    if (function_exists('getMajorKeywords') && function_exists('keywordSlug')) {
-        foreach (getMajorKeywords() as $slug => $meta) {
-            if (($meta['service'] ?? '') !== 'aov-air-handling') {
-                continue;
-            }
-            $slug = keywordSlug((string)$slug);
-            if ($slug === '') {
-                continue;
-            }
-            $lines[] = '/pages/keywords/' . $slug . '/*  /pages/keywords/' . $slug . '  301';
-        }
-    }
+    // Keyword×town already 301s via /pages/keywords/:slug/:town.
+    // A per-slug "/pages/keywords/{slug}/*" rule is more specific than the
+    // hub rewrite and Netlify answers the hub itself with 404.
     return implode("\n", $lines) . "\n";
 }
 

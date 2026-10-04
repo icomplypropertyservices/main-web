@@ -137,6 +137,10 @@ function icomplySitemapEntries(): array
         if (preg_match('#^/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+$#', $path)) {
             return;
         }
+        // /pages/barriers 301s to the barriers service hub. Town files stay.
+        if ($path === '/pages/barriers') {
+            return;
+        }
         if (preg_match('#^/pages/nurse-call/[a-z0-9\-]+$#', $path)) {
             return;
         }
