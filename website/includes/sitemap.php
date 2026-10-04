@@ -1,9 +1,10 @@
 <?php
 /**
- * Compact sitemap — hubs plus Tier-1 service×town pages that have a bespoke
- * article. AOV and barrier town pages for places over 10,000 stay in.
- * Keyword×town, non-Tier-1 towns, area-town templates, and services
- * without their own town copy stay out. Broken or unknown URLs stay out.
+ * Compact sitemap — hubs, featured area indexes (Manchester, Burnley), and
+ * AOV/barrier town pages for places over 10,000. Keyword×town and other
+ * service×town pretty URLs 301 to the hub because they are not published, so
+ * they stay out. Shared area-town templates are noindex and stay out.
+ * Broken or unknown URLs stay out.
  * Never lists /shop/sitemap.xml or /products/sitemap.xml (separate sites; 404 here).
  */
 declare(strict_types=1);
@@ -29,6 +30,12 @@ function icomplySitemapBannedPaths(): array
         '/shop/sitemap/' => true,
         '/products/sitemap' => true,
         '/products/sitemap/' => true,
+        // Live 404s. Tunstall is not in the catalogue. EV chargers are served
+        // from /pages/services/ev-chargers; /pages/ev-chargers is unpublished.
+        '/pages/ev-chargers' => true,
+        '/pages/ev-chargers/' => true,
+        '/pages/manufacturers/tunstall' => true,
+        '/pages/manufacturers/tunstall/' => true,
     ];
 }
 
@@ -125,27 +132,35 @@ function icomplySitemapEntries(): array
         if (preg_match('#-photo\.(jpe?g|png)$#i', $path)) {
             return;
         }
+        // Static _redirects send these pretty URLs to the hub (301) because
+        // the town page is not what the request serves. Never list them.
+        if (preg_match('#^/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+$#', $path)) {
+            return;
+        }
+        if (preg_match('#^/pages/nurse-call/[a-z0-9\-]+$#', $path)) {
+            return;
+        }
+        // Shared area templates are noindex. Featured indexes (Manchester, Burnley) stay.
+        if (preg_match('#^/pages/areas/[a-z0-9\-]+$#', $path)) {
+            if (!function_exists('icomplyPathIsIndexable') || !icomplyPathIsIndexable($path)) {
+                return;
+            }
+        }
         // Hard reject /pages/{service}/{town} even if a leftover matrix file
-        // sits in dist/. Keep hub prefixes, plus Tier-1 service×town pages
-        // that have a bespoke article (electrical/stockport, gas/warrington).
-        $tier1ServiceTown = false;
+        // sits in dist/. Those pretty URLs 301 to the service hub. Keep hub
+        // prefixes and AOV/barrier town files, which are published as 200.
         if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
             $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'jobs', 'commercial', 'nurse-call', 'aov', 'aov-air-handling', 'barriers'];
-            $tier1ServiceTown = !in_array($m[1], $okPrefix, true)
-                && function_exists('icomplyPathIsIndexable')
-                && icomplyPathIsIndexable($path);
-            if (!in_array($m[1], $okPrefix, true) && !$tier1ServiceTown) {
+            if (!in_array($m[1], $okPrefix, true)) {
                 return;
             }
         }
         // Keyword hubs and AOV/barrier town pages are generated at export time.
         $isKeywordLoc = (bool)preg_match('#^/pages/keywords(/[a-z0-9\-]+){1,2}$#', $path);
         $isTownLoc = (bool)preg_match('#^/pages/(aov|barriers)(/[a-z0-9\-]+)?$#', $path);
-        $isMfrTown = (bool)preg_match('#^/pages/(aov-air-handling|barriers)/([a-z0-9\-]+)$#', $path);
-        $isNurseNationwide = false;
-        if (preg_match('#^/pages/nurse-call/([a-z0-9\-]+)$#', $path, $ncMatch) && function_exists('nationwideAreaRow')) {
-            $isNurseNationwide = nationwideAreaRow($ncMatch[1]) !== null;
-        }
+        // Barriers town files are published (200). aov-air-handling/{town} 404s
+        // unless that file was actually exported, so it cannot skip the file check.
+        $isMfrTown = (bool)preg_match('#^/pages/barriers/([a-z0-9\-]+)$#', $path);
         $isManufacturerHub = false;
         $isBarrierBrandLoc = false;
         if (preg_match('#^/pages/manufacturers/([a-z0-9\-]+)$#', $path, $brandMatch) && function_exists('getManufacturerBySlug')) {
@@ -153,7 +168,7 @@ function icomplySitemapEntries(): array
             $isManufacturerHub = is_array($brandEntry);
             $isBarrierBrandLoc = $isManufacturerHub && in_array('barriers', $brandEntry['services'] ?? [], true);
         }
-        if (!$isKeywordLoc && !$isTownLoc && !$isMfrTown && !$isBarrierBrandLoc && !$isManufacturerHub && !$tier1ServiceTown && !$isNurseNationwide && !icomplySitemapUrlHasFile($path)) {
+        if (!$isKeywordLoc && !$isTownLoc && !$isMfrTown && !$isBarrierBrandLoc && !$isManufacturerHub && !icomplySitemapUrlHasFile($path)) {
             return;
         }
         $seen[$path] = true;
@@ -182,7 +197,6 @@ function icomplySitemapEntries(): array
         ['/pages/packages/landlord-pack', '0.8', 'pages/packages/landlord-pack.php'],
         ['/pages/pricing', '0.75', 'pages/pricing.php'],
         ['/pages/care-homes', '0.75', 'pages/care-homes.php'],
-        ['/pages/ev-chargers', '0.75', 'pages/ev-chargers.php'],
         ['/pages/maintenance', '0.75', 'pages/maintenance.php'],
         ['/pages/emergency', '0.75', 'pages/emergency.php'],
         ['/pages/reviews', '0.65', 'pages/reviews.php'],

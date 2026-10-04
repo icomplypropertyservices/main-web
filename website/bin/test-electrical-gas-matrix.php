@@ -93,10 +93,11 @@ $ok(in_array('boiler', $featured['gas'] ?? [], true), 'featured gas includes boi
 
 require_once SITE_ROOT . '/includes/sitemap.php';
 $sitemapXml = icomplyBuildSitemapXml('https://icomplypropertyservices.co.uk');
-$ok(str_contains($sitemapXml, '/pages/gas-systems/stockport</loc>'), 'sitemap lists bespoke gas-systems/stockport');
-$ok(str_contains($sitemapXml, '/pages/electrical/stockport</loc>'), 'sitemap lists bespoke electrical/stockport');
-$ok(str_contains($sitemapXml, '/pages/emergency-lighting/stockport</loc>'), 'sitemap lists bespoke emergency-lighting/stockport');
+$ok(!str_contains($sitemapXml, '/pages/gas-systems/stockport</loc>'), 'sitemap omits unpublished gas-systems/stockport');
+$ok(!str_contains($sitemapXml, '/pages/electrical/stockport</loc>'), 'sitemap omits unpublished electrical/stockport');
+$ok(!str_contains($sitemapXml, '/pages/emergency-lighting/stockport</loc>'), 'sitemap omits unpublished emergency-lighting/stockport');
 $ok(!str_contains($sitemapXml, '/pages/electrical/preston</loc>'), 'sitemap omits electrical/preston');
+$ok(str_contains($sitemapXml, '/pages/areas/manchester</loc>') && str_contains($sitemapXml, '/pages/areas/burnley</loc>'), 'sitemap lists Manchester and Burnley area hubs');
 $ok(!str_contains($sitemapXml, '/pages/epc/stockport'), 'sitemap has no thin /pages/epc/stockport');
 $ok(str_contains($sitemapXml, '/pages/services/gas-systems</loc>'), 'sitemap still lists gas-systems service hub');
 $ok(str_contains($sitemapXml, '/pages/keywords/boiler</loc>'), 'sitemap still lists boiler keyword hub');

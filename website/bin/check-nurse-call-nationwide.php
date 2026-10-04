@@ -4,7 +4,7 @@
  * Nurse call × nationwide areas.
  * Places live in data/nationwide-areas.json and are not merged into areas.json.
  * Static export emits /pages/nurse-call/{place} and every nurse-call keyword × place.
- * Sitemap lists a featured keyword sample only — never /pages/nurse-call/{place}.
+ * Sitemap lists neither /pages/nurse-call/{place} nor keyword×town URLs (both 301).
  *
  * Usage: php website/bin/check-nurse-call-nationwide.php
  */
@@ -144,10 +144,10 @@ $ok(substr_count($hub, '/pages/nurse-call/') >= $expectedAreas, 'hub links every
 
 $xml = icomplyBuildSitemapXml('https://icomplypropertyservices.co.uk');
 $ok(!preg_match('#/pages/nurse-call/[a-z0-9\-]+</loc>#', $xml), 'sitemap has zero /pages/nurse-call/{place}');
-$ok(str_contains($xml, '/pages/keywords/nurse-call-system/birmingham</loc>'), 'sitemap samples nurse-call-system/birmingham');
-$ok(str_contains($xml, '/pages/keywords/care-home-nurse-call/belfast</loc>'), 'sitemap samples care-home-nurse-call/belfast');
+$ok(!str_contains($xml, '/pages/keywords/nurse-call-system/birmingham</loc>'), 'sitemap omits nurse-call-system/birmingham (301)');
+$ok(!str_contains($xml, '/pages/keywords/care-home-nurse-call/belfast</loc>'), 'sitemap omits care-home-nurse-call/belfast (301)');
 $kwTown = preg_match_all('#/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+</loc>#', $xml);
-$ok($kwTown > 0 && $kwTown <= 180, 'sitemap keyword×town stays featured-only (' . $kwTown . ')');
+$ok($kwTown === 0, 'sitemap keyword×town count is 0 (' . $kwTown . ')');
 
 echo str_repeat('=', 56) . "\n";
 echo "nationwide_areas={$expectedAreas} nurse_call_keywords=" . count($keywords)

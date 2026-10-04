@@ -93,13 +93,15 @@ foreach (icomplyTier1Towns() as $town) {
 
 $ok(!icomplyPathIsIndexable('/pages/electrical/preston'), 'preston electrical is noindex');
 $ok(!icomplyPathIsIndexable('/pages/plastering/stockport'), 'plastering stockport has no bespoke article');
-$ok(!icomplyPathIsIndexable('/pages/areas/stockport'), 'area town hubs stay noindex');
+$ok(!icomplyPathIsIndexable('/pages/areas/stockport'), 'templated area towns stay noindex');
+$ok(icomplyPathIsIndexable('/pages/areas/manchester'), 'Manchester area hub is indexable');
+$ok(icomplyPathIsIndexable('/pages/areas/burnley'), 'Burnley area hub is indexable');
 $ok(!icomplyPathIsIndexable('/pages/keywords/eicr/stockport'), 'keyword×town stays noindex');
 $ok(icomplyPathIsIndexable('/pages/areas'), 'areas index stays indexable');
 
 $xml = icomplyBuildSitemapXml('https://icomplypropertyservices.co.uk');
 foreach ($articles as $path => $row) {
-    $ok(str_contains($xml, $path . '</loc>'), "sitemap lists {$path}");
+    $ok(!str_contains($xml, $path . '</loc>'), "sitemap omits unpublished {$path}");
 }
 $ok(!str_contains($xml, '/pages/electrical/preston</loc>'), 'sitemap omits preston');
 $ok(!str_contains($xml, '/pages/plastering/stockport</loc>'), 'sitemap omits thin plastering town page');

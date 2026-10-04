@@ -415,11 +415,14 @@ if (str_contains($sitemapDist, '/pages/products</loc>') || substr_count($sitemap
 }
 $indexMode = function_exists('icomplyIndexMode') ? icomplyIndexMode() : 'tiered';
 if ($indexMode === 'tiered') {
-    // Priority keyword×town exports may appear in the sitemap; keep Tier-1
-    // service×area samples and keep non-tier towns (preston) out.
-    $tierOk = str_contains($sitemapDist, '/pages/electrical/stockport</loc>')
-        && str_contains($sitemapDist, '/pages/electrical/trafford</loc>')
-        && !str_contains($sitemapDist, '/pages/electrical/preston</loc>');
+    // Unpublished service×town and keyword×town pretty URLs 301. Indexable
+    // area hubs stay in. Shared area templates and non-tier towns stay out.
+    $tierOk = str_contains($sitemapDist, '/pages/areas/manchester</loc>')
+        && str_contains($sitemapDist, '/pages/areas/burnley</loc>')
+        && !str_contains($sitemapDist, '/pages/areas/stockport</loc>')
+        && !str_contains($sitemapDist, '/pages/electrical/stockport</loc>')
+        && !str_contains($sitemapDist, '/pages/electrical/preston</loc>')
+        && !str_contains($sitemapDist, '/pages/keywords/eicr/stockport</loc>');
     $kwSample = is_file($dist . '/pages/keywords/eicr/stockport.php')
         ? (string)file_get_contents($dist . '/pages/keywords/eicr/stockport.php')
         : '';
@@ -434,7 +437,7 @@ if ($indexMode === 'tiered') {
         && !str_contains($tierSample, 'noindex');
     if ($tierOk && $robotsOk) {
         $pass++;
-        echo "[PASS] tiered sitemap lists Tier-1 service×area only; noindex pages stay out\n";
+        echo "[PASS] tiered sitemap lists indexable area hubs; unpublished town URLs stay out\n";
     } else {
         $fail++;
         echo "[FAIL] tiered sitemap/robots mismatch (sitemap samples or noindex meta)\n";

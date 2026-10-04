@@ -365,10 +365,12 @@ function icomplyIsTier1Area(string $areaOrSlug): bool
 }
 
 /**
- * In tiered mode, keyword×area pages, area-town hubs, and service×town pages
- * without a bespoke article stay live (200) but are not indexable. A service×town
- * URL is indexable only for a Tier-1 town that has its own written article.
- * Spun "same page, town name swapped" copies stay out of the sitemap.
+ * In tiered mode, keyword×area pages, shared area-town templates, and service×town
+ * pages without a bespoke article stay live (200) but are not indexable. Manchester
+ * and Burnley use the featured area index and stay indexable. A service×town URL is
+ * indexable only for a Tier-1 town that has its own written article. Those pretty
+ * URLs still 301 on the static site until they are published, so the sitemap omits
+ * them. Spun "same page, town name swapped" copies stay out of the sitemap.
  */
 function icomplyPathIsIndexable(string $path): bool
 {
@@ -384,9 +386,9 @@ function icomplyPathIsIndexable(string $path): bool
     if (preg_match('#^/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+$#', $path)) {
         return false;
     }
-    // Area town hubs share one template. They are navigation, not sitemap URLs.
-    if (preg_match('#^/pages/areas/[a-z0-9\-]+$#', $path)) {
-        return false;
+    // Shared area templates are noindex. Featured service indexes stay indexable.
+    if (preg_match('#^/pages/areas/([a-z0-9\-]+)$#', $path, $areaMatch)) {
+        return function_exists('isFeaturedAreaIndexHub') && isFeaturedAreaIndexHub($areaMatch[1]);
     }
     if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         $reserved = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'jobs'];

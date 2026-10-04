@@ -125,8 +125,10 @@ foreach ($hmoPackages as $rel) {
 $ok($hmoPresent === [], 'HMO package pages stay out');
 
 $xml = icomplyBuildSitemapXml('https://icomplypropertyservices.co.uk');
-$ok(str_contains($xml, '/pages/electrical/stockport</loc>') && str_contains($xml, '/pages/gas-systems/warrington</loc>'), 'sitemap lists bespoke Tier-1 electrical and gas town pages');
+$ok(!str_contains($xml, '/pages/electrical/stockport</loc>') && !str_contains($xml, '/pages/gas-systems/warrington</loc>'), 'sitemap omits unpublished electrical and gas town pages');
 $ok(!str_contains($xml, '/pages/electrical/preston</loc>') && !str_contains($xml, '/pages/gas-systems/bury</loc>'), 'sitemap omits non-Tier-1 electrical and gas town pages');
+$ok(str_contains($xml, '/pages/areas/manchester</loc>') && str_contains($xml, '/pages/areas/burnley</loc>'), 'sitemap lists Manchester and Burnley area hubs');
+$ok(!str_contains($xml, '/pages/areas/stockport</loc>'), 'sitemap omits noindex area towns');
 $ok(!str_contains($xml, '/pages/packages/hmo'), 'sitemap has no HMO package locs');
 $kwTown = preg_match_all('#/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+</loc>#', $xml);
 $ok($kwTown === 0, 'sitemap keyword×town count is 0 (' . $kwTown . ')');

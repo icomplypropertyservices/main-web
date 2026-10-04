@@ -10,11 +10,11 @@ Official rules for the electrical + gas keyword expansion.
 
 ## Sitemap (P090 — priority over new volume)
 
-- `sitemap.xml` must **only** list URLs that return HTTP **200**.
-- Service×town URLs are listed only for the ten Tier-1 towns, and only when that pair has a bespoke article in `includes/tier1-copy.php`. Electrical, gas, fire alarms and emergency lighting are the current set. Other trades stay live and `noindex`.
+- `sitemap.xml` must **only** list URLs that return HTTP **200** and do not redirect.
+- Service×town pretty URLs (`/pages/electrical/{town}` and the same for gas, fire alarms and emergency lighting) 301 to the service hub because those pages are not published. They stay **out** of the sitemap even when a bespoke article exists. Other trades stay live and `noindex`.
 - Do **not** put a town name into a shared paragraph. `check-town-uniqueness.php` rejects any repeated 6-word run across those articles.
-- Area town hubs (`/pages/areas/{town}`) are one template. They stay on the site for visitors and stay **out** of the sitemap.
-- Do **not** list keyword×town doorways in the sitemap. The HTML may stay in `dist/` for direct visits.
+- Shared area-town templates (`/pages/areas/{town}`) stay on the site and stay **out** of the sitemap (`noindex`). Manchester and Burnley use the featured area index (`index, follow`) and are listed.
+- Do **not** list keyword×town doorways in the sitemap. Those pretty URLs 301 to the keyword hub. The HTML may stay in `dist/` for direct visits.
 
 ## Copy / POA
 

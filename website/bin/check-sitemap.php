@@ -76,6 +76,7 @@ $required = [
     '/pages/keywords/rewire</loc>',
     '/pages/keywords/boiler</loc>',
     '/pages/areas/manchester</loc>',
+    '/pages/areas/burnley</loc>',
     '/pages/manufacturers/abb</loc>',
     '/become-a-subcontractor</loc>',
     '/privacy</loc>',
@@ -204,21 +205,9 @@ if (function_exists('icomplyTier1Towns') && function_exists('areaSlug')) {
 $virtualTownPrefixes = ['aov' => true, 'barriers' => true, 'aov-air-handling' => true, 'nurse-call' => true];
 $svcAreaExpect = $indexMode === 'tiered' ? ($svcCount * $tier1Count) : ($svcCount * count($areaSlugs));
 if ($indexMode === 'tiered') {
-    $missingIndexable = [];
+    $redirectTown = [];
     $unexpectedTown = [];
-    if (function_exists('icomplyTier1Towns') && function_exists('icomplyPathIsIndexable') && function_exists('areaSlug')) {
-        foreach (array_keys($services) as $svcSlug) {
-            foreach (icomplyTier1Towns() as $town) {
-                $path = '/pages/' . $svcSlug . '/' . areaSlug((string)$town);
-                if (!icomplyPathIsIndexable($path)) {
-                    continue;
-                }
-                if (!str_contains($xml, $path . '</loc>')) {
-                    $missingIndexable[] = $path;
-                }
-            }
-        }
-    }
+    $redirectServices = ['electrical' => true, 'gas-systems' => true, 'fire-alarms' => true, 'emergency-lighting' => true];
     foreach ($serviceAreaHits as $path) {
         if (!preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
             continue;
@@ -226,21 +215,22 @@ if ($indexMode === 'tiered') {
         if (isset($virtualTownPrefixes[$m[1]])) {
             continue;
         }
-        if (function_exists('icomplyPathIsIndexable') && icomplyPathIsIndexable($path)) {
+        if (isset($redirectServices[$m[1]])) {
+            $redirectTown[] = $path;
             continue;
         }
         $unexpectedTown[] = $path;
     }
-    if ($missingIndexable !== []) {
+    if ($redirectTown !== []) {
         $fail++;
-        echo 'FAIL: tiered sitemap missing indexable service×town ' . implode(',', array_slice($missingIndexable, 0, 6)) . "\n";
+        echo 'FAIL: tiered sitemap lists unpublished service×town ' . implode(',', array_slice($redirectTown, 0, 6)) . "\n";
     }
     if ($unexpectedTown !== []) {
         $fail++;
-        echo 'FAIL: tiered sitemap lists non-indexable service×town ' . implode(',', array_slice($unexpectedTown, 0, 6)) . "\n";
+        echo 'FAIL: tiered sitemap lists a service×town that 301s ' . implode(',', array_slice($unexpectedTown, 0, 6)) . "\n";
     }
-    if ($missingIndexable === [] && $unexpectedTown === []) {
-        echo 'OK: sitemap service×area count=' . count($serviceAreaHits) . " (indexable tier-1 plus AOV/barrier towns)\n";
+    if ($redirectTown === [] && $unexpectedTown === []) {
+        echo 'OK: sitemap service×area count=' . count($serviceAreaHits) . " (AOV/barrier towns only; unpublished service×town omitted)\n";
     }
 } elseif ($indexMode !== 'tiered' && count($serviceAreaHits) < (int)floor($svcAreaExpect * 0.98)) {
     $fail++;
@@ -249,13 +239,45 @@ if ($indexMode === 'tiered') {
     echo 'OK: sitemap service×area count=' . count($serviceAreaHits) . "\n";
 }
 if ($indexMode === 'tiered') {
-    if (str_contains($xml, '/pages/keywords/eicr/stockport</loc>') || str_contains($xml, '/pages/electrical/preston</loc>')) {
+    if (str_contains($xml, '/pages/keywords/eicr/stockport</loc>') || str_contains($xml, '/pages/electrical/stockport</loc>') || str_contains($xml, '/pages/electrical/preston</loc>')) {
         $fail++;
-        echo "FAIL: tiered sitemap lists a noindex combination\n";
+        echo "FAIL: tiered sitemap lists a redirecting town URL\n";
     }
-    if (!str_contains($xml, '/pages/electrical/stockport</loc>') || !str_contains($xml, '/pages/electrical/trafford</loc>')) {
+    if (str_contains($xml, '/pages/ev-chargers</loc>') || str_contains($xml, '/pages/manufacturers/tunstall</loc>')) {
         $fail++;
-        echo "FAIL: tiered sitemap missing a Tier-1 service×area loc\n";
+        echo "FAIL: tiered sitemap lists a 404\n";
+    }
+    if (str_contains($xml, '/pages/areas/stockport</loc>')) {
+        $fail++;
+        echo "FAIL: tiered sitemap lists a noindex area town\n";
+    }
+    if (!str_contains($xml, '/pages/areas/manchester</loc>') || !str_contains($xml, '/pages/areas/burnley</loc>')) {
+        $fail++;
+        echo "FAIL: tiered sitemap missing an indexable area hub\n";
+    }
+}
+
+$committed = is_file(SITE_ROOT . '/sitemap.xml') ? (string)file_get_contents(SITE_ROOT . '/sitemap.xml') : '';
+foreach ([
+    '/pages/areas/manchester</loc>',
+    '/pages/areas/burnley</loc>',
+    '/pages/areas</loc>',
+] as $need) {
+    if (!str_contains($committed, $need)) {
+        $fail++;
+        echo "FAIL: committed sitemap missing {$need}\n";
+    }
+}
+foreach ([
+    '/pages/ev-chargers</loc>',
+    '/pages/manufacturers/tunstall</loc>',
+    '/pages/areas/stockport</loc>',
+    '/pages/electrical/stockport</loc>',
+    '/pages/keywords/rewire/stockport</loc>',
+] as $ban) {
+    if (str_contains($committed, $ban)) {
+        $fail++;
+        echo "FAIL: committed sitemap lists {$ban}\n";
     }
 }
 

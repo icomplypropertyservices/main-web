@@ -36,8 +36,11 @@ $say($code === 200, 'GET /sitemap.xml HTTP 200', (string)$code);
 $say($xml !== '' && str_contains($xml, '<urlset'), 'body is <urlset> not a 470-part index');
 $say(!str_contains($xml, '<sitemapindex'), 'not a sitemapindex');
 $say(!str_contains($xml, '/privacy-policy'), 'no /privacy-policy');
-$say(!str_contains($xml, '/pages/gas-systems/stockport'), 'no /pages/gas-systems/{town} (404 on default export)');
-$say(!str_contains($xml, '/pages/electrical/manchester'), 'no /pages/electrical/{town} (404 on default export)');
+$say(!str_contains($xml, '/pages/gas-systems/stockport'), 'no /pages/gas-systems/{town} (301 to the service hub)');
+$say(!str_contains($xml, '/pages/electrical/manchester'), 'no /pages/electrical/{town} (301 to the service hub)');
+$say(!str_contains($xml, '/pages/ev-chargers</loc>'), 'no /pages/ev-chargers (404)');
+$say(!str_contains($xml, '/pages/manufacturers/tunstall'), 'no /pages/manufacturers/tunstall (404)');
+$say(!str_contains($xml, '/pages/areas/stockport'), 'noindex area towns stay out');
 $say(str_contains($xml, '/pages/areas') && str_contains($xml, '/pages/resources/eicr-guide'), 'includes hubs + resource guide');
 
 $samples = [
@@ -52,7 +55,8 @@ $samples = [
     '/pages/resources/access-control-guide',
     '/pages/resources/landlord-compliance-checklist',
     '/pages/services/fire-risk-assessments',
-    '/pages/areas/stockport',
+    '/pages/areas/manchester',
+    '/pages/areas/burnley',
     '/privacy',
     '/terms',
 ];
