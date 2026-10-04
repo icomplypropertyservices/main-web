@@ -35,11 +35,11 @@
         "seo_desc": "Nurse call for care homes, wards and warden schemes across the North West, with Manchester and Burnley pages. Specification first. Price on application."
     },
     "gas-systems": {
-        "blurb": "Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out gas work, does not issue CP12 or gas safety certificates, and is not Gas Safe registered.",
-        "short": "CP12 records carried out by Gas Safe registered engineers. iComply does not issue them.",
+        "blurb": "Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.",
+        "short": "CP12 records are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.",
         "standards": "Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.",
         "seo_title": "Landlord gas records | iComply",
-        "seo_desc": "Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue them and is not Gas Safe registered. Quote is POA.",
+        "seo_desc": "Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered. Quote is POA.",
         "pricing": "POA"
     },
     "intruder-alarm": {
@@ -169,7 +169,7 @@
         "short": "Bundled landlord certificates & packs",
         "standards": "Homes Act · Fire Safety Act · landlord regs",
         "seo_title": "Landlord compliance packs | iComply",
-        "seo_desc": "Landlord paperwork coordination for EICR, fire and alarms. Gas records are carried out by Gas Safe registered engineers; iComply does not issue them. POA."
+        "seo_desc": "Landlord paperwork for EICR, fire and alarms. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered. POA."
     },
     "facilities-management": {
         "blurb": "Planned maintenance, multi-site compliance scheduling and FM engineer call-outs.",
@@ -291,11 +291,11 @@
         "seo_desc": "Leaks, bathrooms, wastes and pipework for homes and light commercial sites. Water fittings rules apply. North West. Quote after the fault is known."
     },
     "heating": {
-        "blurb": "Radiators, heating controls and system flushes. Boiler installation and landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply does not issue them.",
-        "short": "Radiators and controls. Gas records are not issued by iComply.",
+        "blurb": "Radiators, heating controls and system flushes. Boiler installation and landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.",
+        "short": "Radiators and controls. iComply is not Gas Safe registered.",
         "standards": "Heating controls and radiators. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.",
         "seo_title": "Heating controls and radiators | iComply",
-        "seo_desc": "Radiators, controls and system flushes. Boilers and CP12 records are carried out by Gas Safe registered engineers. iComply does not issue them. POA."
+        "seo_desc": "Radiators, controls and system flushes. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered. POA."
     },
     "roofing": {
         "blurb": "Roof repairs, re-roofing, flat roofs, guttering and chimney works for residential properties.",

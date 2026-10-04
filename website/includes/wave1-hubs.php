@@ -53,7 +53,7 @@ function wave1QualityHubs(): array
         'gas-safety-certificate' => [
             'navLabel' => 'Gas safety certificate',
             'pageTitle' => 'Gas Safety Certificate | Landlord CP12 North West',
-            'metaDesc' => 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. Greater Manchester, from Stockport SK2. iComply does not issue them. POA.',
+            'metaDesc' => 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. Greater Manchester, from Stockport SK2. iComply is not Gas Safe registered. POA.',
             'metaKeywords' => 'gas safety certificate, CP12 Stockport, landlord gas safety Greater Manchester, CP44 gas record',
             'ogImage' => '/assets/images/services/gas-systems.jpg',
             'kicker' => 'Quality hub · Gas',
@@ -61,11 +61,11 @@ function wave1QualityHubs(): array
             'h1' => 'Gas safety certificate',
             'h1Accent' => 'the record, not our registration',
             'lede' => 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. The record has to match the appliances on site. The quote waits for an appliance count.',
-            'honest' => 'iComply does not carry out gas work, does not issue CP12 or gas safety certificates, and is not Gas Safe registered. Unsafe appliances stay unsafe on the record.',
+            'honest' => 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered. Unsafe appliances stay unsafe on the record.',
             'coverTitle' => 'The landlord gas record',
             'cover' => [
                 'Private landlords with gas appliances or flues generally need a periodic safety check and a written record for the tenancy. People still call it a CP12. The file needs the current record, not a verbal “it was fine last year”.',
-                'The check is carried out by Gas Safe registered engineers. iComply does not issue it. Read the fortnight guide: [gas safety certificate for landlords](/pages/resources/gas-safety-certificate-landlords). Service page: [gas systems](/pages/services/gas-systems).',
+                'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered. Read the fortnight guide: [gas safety certificate for landlords](/pages/resources/gas-safety-certificate-landlords). Service page: [gas systems](/pages/services/gas-systems).',
             ],
             'work' => [
                 'What a landlord gas safety record is, and what it is not',
@@ -84,7 +84,7 @@ function wave1QualityHubs(): array
             'formIntro' => 'Appliance count and access decide the visit. Send those first.',
             'formPlaceholder' => 'Postcode, appliances, occupied or void…',
             'faqs' => [
-                ['q' => 'CP12 or CP44?', 'a' => 'You will hear both. What matters is a current landlord gas safety record. It is carried out by Gas Safe registered engineers. iComply does not issue it.'],
+                ['q' => 'CP12 or CP44?', 'a' => 'You will hear both. What matters is a current landlord gas safety record. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.'],
                 ['q' => 'Is iComply Gas Safe registered?', 'a' => 'No. iComply is not Gas Safe registered and does not show a registration number on this page.'],
                 ['q' => 'Do you cover Manchester as well as Stockport?', 'a' => 'Yes, when we can resource the diary. The yard is Offerton SK2.'],
             ],

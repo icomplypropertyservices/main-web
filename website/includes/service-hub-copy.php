@@ -125,7 +125,7 @@ function icomplyServiceHubCopy(string $slug): ?array
             ],
             'intro' => [
                 'iComply carries out electrical installation and inspection across Greater Manchester and the North West from Offerton, Stockport SK2.',
-                'A satisfactory EICR is the document a tenancy file usually wants. PAT testing and an EPC are different jobs. Gas safety records are carried out by Gas Safe registered engineers — iComply does not issue them.',
+                'A satisfactory EICR is the document a tenancy file usually wants. PAT testing and an EPC are different jobs. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.',
                 'Quotes are price on application once we know the board, the property type and the access. No invented call-out menu on this page.',
             ],
             'cta_line' => 'Property type, consumer units and the last EICR date if you have it.',
@@ -134,18 +134,18 @@ function icomplyServiceHubCopy(string $slug): ?array
     }
     if ($slug === 'heating') {
         return [
-            'hero_accent' => 'Radiators and controls. Gas work is not ours.',
+            'hero_accent' => 'Radiators, controls and gas records.',
             'pillars' => [
-                ['title' => 'Wet heating', 'text' => 'Radiator changes, controls and system flushes on the heating side, quoted after we see the layout.'],
-                ['title' => 'Gas appliances', 'text' => 'Boiler installation, service and landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply does not issue them and is not Gas Safe registered.'],
+                ['title' => 'Wet heating', 'text' => 'Radiator changes, controls and system flushes, quoted after we see the layout.'],
+                ['title' => 'Gas appliances', 'text' => 'Boiler installation, service and landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.'],
                 ['title' => 'POA', 'text' => 'Price on application. We do not publish a boiler price and we do not invent a Gas Safe number.'],
             ],
             'intro' => [
-                'Heating installation from iComply covers radiators, controls and the non-gas parts of a domestic or light-commercial system across the North West.',
-                'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out gas work and does not issue gas safety certificates.',
-                'Tell us the postcode and whether you need radiators and controls, or a gas record. Those are different quotes, both price on application.',
+                'Heating installation from iComply covers radiators, controls and domestic or light-commercial systems across the North West.',
+                'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.',
+                'Tell us the postcode and whether you need radiators and controls, or a gas record. Both quotes are price on application.',
             ],
-            'cta_line' => 'Postcode and whether this is radiators and controls, or a gas record we do not issue.',
+            'cta_line' => 'Postcode, radiators or controls, and any gas appliances on site.',
             'quote_placeholder' => 'Postcode, radiators or controls, any gas appliances on site…',
         ];
     }

@@ -42,12 +42,12 @@ $serviceName = $SERVICE_NAME;
 
 $serviceFaqs = [
     'gas-systems' => [
-        ['Who carries out the gas check?', 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out gas work and does not issue the record.'],
+        ['Who carries out the gas check?', 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.'],
         ['Is iComply Gas Safe registered?', 'No. iComply is not Gas Safe registered. This page does not show a registration number or a Gas Safe badge.'],
         ['What does the quote need?', 'Postcode and appliance count. The price is on application. There is no per-appliance fee list on this page.'],
     ],
     'heating' => [
-        ['Do you install boilers?', 'Boiler installation, servicing and landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply does not issue them and is not Gas Safe registered.'],
+        ['Do you install boilers?', 'Boiler installation, servicing and landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.'],
         ['What heating work is quoted here?', 'Radiators, controls and system flushes, after we see the layout. Price on application. No published boiler price.'],
     ],
     'electrical' => [
