@@ -428,6 +428,9 @@ function getMainlandAreaRecords(): array {
         if (!is_array($row) || empty($row['name']) || !is_string($row['name'])) {
             continue;
         }
+        if (empty($row['slug']) || !is_string($row['slug'])) {
+            $row['slug'] = areaSlug($row['name']);
+        }
         $out[] = $row;
     }
     return $out;
@@ -453,9 +456,10 @@ function mainlandAreaRecord(string $name): ?array {
     return $map[$name] ?? null;
 }
 
-/** Fire alarms own every mainland area. Other services stay on the North West list. */
+/** Fire alarms and fire risk assessments own every mainland area. Other services stay on the North West list. */
 function serviceOwnsMainlandAreas(string $serviceSlug): bool {
-    return areaSlug($serviceSlug) === 'fire-alarms';
+    $slug = areaSlug($serviceSlug);
+    return $slug === 'fire-alarms' || $slug === 'fire-risk-assessments';
 }
 
 /** @return list<string> */
@@ -868,6 +872,19 @@ function fireNationwideKeywordUrl(string $keywordSlug): string {
 function exportedServiceLocalUrl(string $serviceSlug, string $area, string $from = 'service'): string {
     $serviceSlug = areaSlug($serviceSlug);
     $town = areaSlug($area);
+    $keepTownPath = $from === 'area'
+        || in_array($serviceSlug, ['fire-alarms', 'fire-risk-assessments', 'barriers', 'nurse-call'], true);
+    if (!$keepTownPath && in_array($serviceSlug, getElectricalGasFamilyServices(), true)) {
+        $featured = getElectricalGasFeaturedKeywordSlugs();
+        $bucket = $serviceSlug === 'gas-systems' ? 'gas' : 'electrical';
+        $keywords = getMajorKeywords();
+        foreach ($featured[$bucket] ?? [] as $kw) {
+            $kw = keywordSlug((string)$kw);
+            if ($kw !== '' && isset($keywords[$kw])) {
+                return url('/pages/keywords/' . $kw . '/' . $town . '.php');
+            }
+        }
+    }
     return url('/pages/' . $serviceSlug . '/' . $town . '.php');
 }
 
@@ -1386,6 +1403,15 @@ if (is_file($barrierPanelFile)) {
     require_once $barrierPanelFile;
 }
 
+
+$fraNationwideFile = __DIR__ . '/includes/fra-nationwide.php';
+if (is_file($fraNationwideFile)) {
+    require_once $fraNationwideFile;
+}
+$serviceHubCopyFile = __DIR__ . '/includes/service-hub-copy.php';
+if (is_file($serviceHubCopyFile)) {
+    require_once $serviceHubCopyFile;
+}
 
 // Back-compat globals used by some templates/includes
 $services = getServices();

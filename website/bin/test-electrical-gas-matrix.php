@@ -111,6 +111,16 @@ foreach ($areas as $areaName) {
     $areaSet[areaSlug((string)$areaName)] = true;
 }
 $assertTownLinks = static function (string $html, string $service) use ($ok, $areaSet): void {
+    if (in_array($service, getElectricalGasFamilyServices(), true)) {
+        preg_match_all('#/pages/keywords/[a-z0-9\-]+/([a-z0-9\-]+)#', $html, $m);
+        $towns = array_values(array_unique($m[1] ?? []));
+        $unknown = array_values(array_filter($towns, static fn (string $t): bool => !isset($areaSet[$t])));
+        $ok(
+            $unknown === [] && in_array('stockport', $towns, true) && !str_contains($html, '/pages/' . $service . '/stockport'),
+            $service . ' hub uses keyword×town links' . ($unknown ? ' unknown=' . implode(',', $unknown) : '')
+        );
+        return;
+    }
     preg_match_all('#/pages/' . preg_quote($service, '#') . '/([a-z0-9\-]+)#', $html, $m);
     $towns = array_values(array_unique($m[1] ?? []));
     $unknown = array_values(array_filter($towns, static fn (string $t): bool => !isset($areaSet[$t])));

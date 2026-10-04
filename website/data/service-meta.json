@@ -2,67 +2,87 @@
     "electrical": {
         "blurb": "EICR, rewires, consumer units, EV chargers, PAT and commercial electrical installs to BS 7671.",
         "short": "EICR, rewires, EV chargers, PAT & commercial installs",
-        "standards": "BS 7671 (18th Edition) · EICR · Part P · EV charger regs"
+        "standards": "BS 7671 (18th Edition) · EICR · Part P · EV charger regs",
+        "seo_title": "EICR and rewires | iComply North West",
+        "seo_desc": "EICR, consumer units and rewires across Greater Manchester from Stockport SK2. BS 7671 practice. Price on application after the board and access are known."
     },
     "fire-alarms": {
         "blurb": "BS 5839 design, install, service and certification for addressable, conventional and wireless systems.",
         "short": "BS 5839 design, install, service & certification",
-        "standards": "BS 5839-1 · BS 5839-6 · BS EN 54 · Fire Safety Order"
+        "standards": "BS 5839-1 · BS 5839-6 · BS EN 54 · Fire Safety Order",
+        "seo_title": "Fire Alarms | UK mainland fire protection | iComply",
+        "seo_desc": "Fire alarm design, servicing and certification across England, Wales and mainland Scotland. Scheduled from Stockport. Written quote after scope. No catalogue fee."
     },
     "emergency-lighting": {
         "blurb": "BS 5266 testing, upgrades, LED conversions and monthly/annual certification.",
         "short": "BS 5266 testing, upgrades & LED conversions",
-        "standards": "BS 5266 · BS EN 1838 · monthly & annual tests"
+        "standards": "BS 5266 · BS EN 1838 · monthly & annual tests",
+        "seo_title": "Emergency lighting tests | iComply Stockport",
+        "seo_desc": "Emergency lighting tests and upgrades for shared stairs and workplaces. BS 5266 logbooks. North West, from Stockport. Price on application after a walk."
     },
     "aov-air-handling": {
         "blurb": "Smoke vents, AOV panels, smoke control and AHU-related life-safety systems.",
         "short": "Smoke vents, AOV panels & smoke control",
-        "standards": "BS 9991 · EN 12101 · smoke control guidance"
+        "standards": "BS 9991 · EN 12101 · smoke control guidance",
+        "seo_title": "AOV and smoke control | iComply",
+        "seo_desc": "Automatic opening vents and smoke-control panels for stairs and corridors. Survey before any quote. North West coverage from Stockport. Price on application."
     },
     "nurse-call": {
         "blurb": "Care home and hospital nurse call design, install, upgrades and planned maintenance.",
         "short": "Care home & hospital nurse call systems",
-        "standards": "HTM 08-03 · care home & hospital specifications"
+        "standards": "HTM 08-03 · care home & hospital specifications",
+        "seo_title": "Nurse call systems | iComply North West",
+        "seo_desc": "Nurse call for care homes, wards and warden schemes across the North West, with Manchester and Burnley pages. Specification first. Price on application."
     },
     "gas-systems": {
-        "blurb": "CP12 / CP44 landlord certificates, boilers, commercial gas and safety checks.",
-        "short": "CP12/CP44 landlord certs, boilers & commercial gas",
-        "standards": "Gas Safe · CP12 / CP44 · manufacturer servicing"
+        "blurb": "Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.",
+        "short": "CP12 records are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.",
+        "standards": "Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.",
+        "seo_title": "Landlord gas records | iComply",
+        "seo_desc": "Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered. Quote is POA.",
+        "pricing": "POA"
     },
     "intruder-alarm": {
         "blurb": "PD 6662 / BS EN 50131 wired and wireless intruder systems with monitoring options.",
         "short": "Wired & wireless intruder systems",
-        "standards": "PD 6662 · BS EN 50131"
+        "standards": "PD 6662 · BS EN 50131",
+        "seo_title": "Intruder alarms | iComply North West",
+        "seo_desc": "Wired and wireless intruder alarms for homes, shops and small commercial sites. PD 6662 practice. North West. Written quote after a survey."
     },
     "cctv": {
         "blurb": "IP and HD CCTV design, install, remote viewing and NVR/DVR recording.",
         "short": "IP / HD CCTV design, install & monitoring",
-        "standards": "BS EN 62676 · GDPR / DPA camera siting"
+        "standards": "BS EN 62676 · GDPR / DPA camera siting",
+        "seo_title": "CCTV installation | iComply Stockport",
+        "seo_desc": "IP CCTV design, install and recorder setup for homes and commercial sites. Camera positions follow the brief. North West. Price on application."
     },
     "access-control": {
         "blurb": "Paxton, HID, Salto and other door access platforms, credentials and fire-alarm release. Tunstall is not an access-control brand we list here.",
         "short": "Paxton, HID, Salto and other door access",
-        "standards": "BS EN 60839-11 · BS 7273-4 fire release · Equality Act access"
-    },
-    "barriers": {
-        "blurb": "Rising-arm and parking barriers for car parks, yards and gated lanes. iComply is a CAME partner and also installs Nice, FAAC, BFT, Hörmann, Magnetic and the other UK trade barrier makers listed on this page.",
-        "short": "Rising-arm and parking barriers",
-        "standards": "BS EN 12453 · safety edges and loops · CAME partner"
+        "standards": "BS EN 60839-11 · BS 7273-4 fire release · Equality Act access",
+        "seo_title": "Access control and maglocks | iComply",
+        "seo_desc": "Door access, maglocks and fire release, quoted separately from any car-park barrier. North West. Price on application after the door count."
     },
     "barriers": {
         "blurb": "UK-wide vehicle, rising-arm and parking barriers. Came is the partner brand. Other barrier manufacturers are installed and serviced in full. Price on application.",
         "short": "Came partner · rising arms & parking barriers, UK-wide",
-        "standards": "Safety edges & loops · manual release · access and fire release · POA"
+        "standards": "Safety edges & loops · manual release · access and fire release · POA",
+        "seo_title": "Vehicle barriers | iComply UK",
+        "seo_desc": "Rising-arm and parking barriers across the UK, including CAME as the partner brand. Survey the lane first. Price on application. No boom price list."
     },
     "door-entry": {
         "blurb": "Video and audio door entry for flats, multi-tenant and commercial sites.",
         "short": "Video & audio door entry",
-        "standards": "BS EN 60839 · multi-tenant residential standards"
+        "standards": "BS EN 60839 · multi-tenant residential standards",
+        "seo_title": "Door entry systems | iComply North West",
+        "seo_desc": "Video and audio door entry for flats and multi-tenant buildings, including the lock the panel releases. North West. Price on application."
     },
     "intercoms": {
         "blurb": "Multi-tenant and commercial intercom systems with master/substation setups.",
         "short": "Multi-tenant & commercial intercoms",
-        "standards": "Commercial intercom best practice"
+        "standards": "Commercial intercom best practice",
+        "seo_title": "Commercial intercoms | iComply",
+        "seo_desc": "Master and substation intercoms for commercial and multi-tenant buildings. Cabling is surveyed first. North West. Price on application."
     },
     "fire-risk-assessments": {
         "blurb": "Suitable and sufficient fire risk assessments for landlords, commercial sites, HMOs and multi-occupied buildings across UK mainland.",
@@ -70,244 +90,362 @@
         "standards": "Regulatory Reform (Fire Safety) Order 2005 · Fire Safety Act · PAS 79 guidance",
         "guide_price_gbp": 350,
         "guide_price_label": "£350",
-        "coverage": "uk-mainland"
+        "coverage": "uk-mainland",
+        "seo_title": "Fire risk assessment £350 | iComply",
+        "seo_desc": "Fire risk assessments across UK mainland. Guide price £350 for a standard FRA. Larger or higher-risk buildings are confirmed in writing. Not a licence."
     },
     "fire-extinguishers": {
         "blurb": "Supply, install, service and certificate portable fire extinguishers to BS 5306.",
         "short": "Extinguisher supply, service & BS 5306 certs",
-        "standards": "BS 5306 · manufacturer servicing schedules"
+        "standards": "BS 5306 · manufacturer servicing schedules",
+        "seo_title": "Fire extinguisher servicing | iComply",
+        "seo_desc": "Portable extinguisher supply, siting and service to BS 5306 for blocks and workplaces. North West. Written quote after the floor count. No invented pack price."
     },
     "fire-doors": {
         "blurb": "Fire door surveys, installation, repairs, seals, closers and certification for blocks and commercial buildings.",
         "short": "Fire door survey, install, repair & certify",
-        "standards": "BS 476 / EN 1634 · BS 8214 · Fire Safety Act"
+        "standards": "BS 476 / EN 1634 · BS 8214 · Fire Safety Act",
+        "seo_title": "Fire door surveys | iComply North West",
+        "seo_desc": "Fire door surveys, closers, seals and repairs for blocks and commercial stairs. North West from Stockport. Price on application after the door count."
     },
     "fire-stopping": {
         "blurb": "Passive fire protection — penetration seals, cavity barriers and compartmentation reinstatement.",
         "short": "Penetration seals & compartmentation works",
-        "standards": "BS 476 · manufacturer tested systems · Building Regs B"
+        "standards": "BS 476 · manufacturer tested systems · Building Regs B",
+        "seo_title": "Fire stopping and seals | iComply",
+        "seo_desc": "Penetration seals and cavity barriers where compartmentation has been broken. Survey first. North West. Price on application. No catalogue seal price."
     },
     "fire-suppression": {
         "blurb": "Specialist suppression systems for plant rooms, server rooms and high-risk spaces.",
         "short": "Specialist suppression for high-risk spaces",
-        "standards": "BS EN 15004 · manufacturer design standards"
+        "standards": "BS EN 15004 · manufacturer design standards",
+        "seo_title": "Fire suppression systems | iComply",
+        "seo_desc": "Specialist suppression for plant rooms and other high-risk spaces. Design is confirmed before a quote. North West. Price on application."
     },
     "sprinkler-systems": {
         "blurb": "Sprinkler design support, installation liaison, inspection and maintenance for commercial sites.",
         "short": "Sprinkler inspection & maintenance support",
-        "standards": "BS EN 12845 · LPC rules · insurer requirements"
+        "standards": "BS EN 12845 · LPC rules · insurer requirements",
+        "seo_title": "Sprinkler inspection support | iComply",
+        "seo_desc": "Sprinkler inspection and maintenance liaison for commercial sites. No invented insurer badge. North West. Price on application after the system type."
     },
     "dry-risers": {
         "blurb": "Dry and wet riser inspection, testing, maintenance and remedial works for multi-storey buildings.",
         "short": "Dry/wet riser test & maintenance",
-        "standards": "BS 9990 · BS 5041 · fire service access"
+        "standards": "BS 9990 · BS 5041 · fire service access",
+        "seo_title": "Dry and wet risers | iComply",
+        "seo_desc": "Dry and wet riser inspection, testing and remedial work for multi-storey buildings. BS 9990 practice. North West. Price on application."
     },
     "fire-signage": {
         "blurb": "Fire exit, escape route, extinguisher and mandatory safety signage design and installation.",
         "short": "Fire exit & safety signage packages",
-        "standards": "BS ISO 7010 · BS 5499 · escape route guidance"
+        "standards": "BS ISO 7010 · BS 5499 · escape route guidance",
+        "seo_title": "Fire safety signage | iComply",
+        "seo_desc": "Fire exit, extinguisher and mandatory safety signs, sited to the escape plan you actually have. North West from Stockport. Price on application."
     },
     "evacuation-alerts": {
         "blurb": "Evacuation alert systems, deaf alerters and PEEP-friendly life-safety notifications.",
         "short": "Evacuation alerts & deaf alerters",
-        "standards": "BS 8629 · BS 5839-9 · inclusive evacuation"
+        "standards": "BS 8629 · BS 5839-9 · inclusive evacuation",
+        "seo_title": "Evacuation alert systems | iComply",
+        "seo_desc": "Evacuation alert systems and deaf alerters for residential blocks that need them. Survey before any kit. North West. Price on application."
     },
     "kitchen-fire-suppression": {
         "blurb": "Commercial kitchen canopy and cooking-range suppression install and service.",
         "short": "Commercial kitchen suppression systems",
-        "standards": "LPS 1223 · manufacturer kitchen systems"
+        "standards": "LPS 1223 · manufacturer kitchen systems",
+        "seo_title": "Kitchen canopy suppression | iComply",
+        "seo_desc": "Canopy and range suppression for commercial kitchens. The hood and fuel type decide the quote. North West. Price on application."
     },
     "fire-compartmentation": {
         "blurb": "Compartmentation surveys, drawings support and remedial fire-separating construction.",
         "short": "Compartmentation surveys & remedial works",
-        "standards": "Building Regs B · BS 9991 / BS 9999 guidance"
+        "standards": "Building Regs B · BS 9991 / BS 9999 guidance",
+        "seo_title": "Fire compartmentation surveys | iComply",
+        "seo_desc": "Compartmentation surveys and remedial separating work where the fire strategy needs a record. North West. Price on application after the building is seen."
     },
     "landlord-compliance": {
         "blurb": "Bundled landlord compliance — EICR, gas, fire, emergency lighting and documentation packs.",
         "short": "Bundled landlord certificates & packs",
-        "standards": "Homes Act · Fire Safety Act · landlord regs"
+        "standards": "Homes Act · Fire Safety Act · landlord regs",
+        "seo_title": "Landlord compliance packs | iComply",
+        "seo_desc": "Landlord paperwork for EICR, fire and alarms. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered. POA."
     },
     "facilities-management": {
         "blurb": "Planned maintenance, multi-site compliance scheduling and FM engineer call-outs.",
         "short": "PPM, multi-site compliance & call-outs",
-        "standards": "SFG20-style PPM · site-specific specs"
+        "standards": "SFG20-style PPM · site-specific specs",
+        "seo_title": "Facilities maintenance support | iComply",
+        "seo_desc": "Planned maintenance scheduling and engineer call-outs for multi-site blocks and small commercial estates. North West. Price on application."
     },
     "building-maintenance": {
         "blurb": "Reactive and planned building maintenance for residential blocks and commercial estates.",
         "short": "Reactive & planned building maintenance",
-        "standards": "Site RAMS · landlord & commercial SLAs"
+        "standards": "Site RAMS · landlord & commercial SLAs",
+        "seo_title": "Building maintenance | iComply Stockport",
+        "seo_desc": "Reactive and planned fabric repairs for residential blocks and commercial estates. Stockport base. Written quote after the defect is seen."
     },
     "project-management": {
         "blurb": "On-site coordination for multi-trade compliance and refurbishment programmes.",
         "short": "Multi-trade programme coordination",
-        "standards": "CDM 2015 awareness · programme control"
+        "standards": "CDM 2015 awareness · programme control",
+        "seo_title": "Multi-trade project coordination | iComply",
+        "seo_desc": "On-site coordination when several trades share one refurbishment or compliance programme. North West. Price on application after the programme."
     },
     "building-surveys": {
         "blurb": "Condition surveys, snagging and pre-works surveys to scope compliance and fabric repairs.",
         "short": "Condition, snagging & pre-works surveys",
-        "standards": "RICS-style condition reporting practice"
+        "standards": "RICS-style condition reporting practice",
+        "seo_title": "Condition and snagging surveys | iComply",
+        "seo_desc": "Condition, snagging and pre-works surveys that describe the building as found. Not a valuation. North West. Price on application."
     },
     "cdm-support": {
         "blurb": "Practical CDM support for smaller works — pre-construction info, RAMS coordination and handover.",
         "short": "CDM paperwork & site coordination support",
-        "standards": "CDM 2015 · HSE guidance"
+        "standards": "CDM 2015 · HSE guidance",
+        "seo_title": "CDM support for smaller works | iComply",
+        "seo_desc": "Practical CDM support for smaller projects: pre-construction information, RAMS coordination and handover notes. North West. Price on application."
     },
     "property-refurbishment-pm": {
         "blurb": "Refurbishment sequencing for kitchens, bathrooms and multi-room upgrades with compliance in mind.",
         "short": "Refurb sequencing with compliance built-in",
-        "standards": "Building Regs · landlord void standards"
+        "standards": "Building Regs · landlord void standards",
+        "seo_title": "Refurbishment sequencing | iComply",
+        "seo_desc": "Sequencing kitchens, bathrooms and multi-room voids so compliance visits fit the programme. North West. Price on application."
     },
     "compliance-consultancy": {
         "blurb": "Independent compliance advice for portfolios — prioritised action plans and audit readiness.",
         "short": "Portfolio compliance advice & action plans",
-        "standards": "Fire Safety Order · BS standards suite"
+        "standards": "Fire Safety Order · BS standards suite",
+        "seo_title": "Compliance action plans | iComply",
+        "seo_desc": "Prioritised compliance action plans for portfolios. Advice for your file, not a substitute for a statutory certificate. North West. POA."
     },
     "kitchens": {
         "blurb": "Supply and fit kitchens for homes, HMOs and light commercial — units, worktops, sinks and first/second fix coordination.",
         "short": "Kitchen supply & fit for homes and HMOs",
-        "standards": "Building Regs · gas/electric safe isolation"
+        "standards": "Building Regs · gas/electric safe isolation",
+        "seo_title": "Kitchen supply and fit | iComply North West",
+        "seo_desc": "Kitchen supply and fit for homes, HMOs and light commercial units, including worktops and sink coordination. North West. Quote after measure."
     },
     "bathrooms": {
         "blurb": "Full bathroom and wet-room fitting — sanitaryware, tiling coordination, ventilation and waterproofing.",
         "short": "Bathroom & wet-room fitting",
-        "standards": "Part P · Part F · waterproofing best practice"
+        "standards": "Part P · Part F · waterproofing best practice",
+        "seo_title": "Bathroom and wet-room fitting | iComply",
+        "seo_desc": "Bathroom and wet-room fitting, including sanitaryware, ventilation and waterproofing. North West from Stockport. Quote after the room is measured."
     },
     "renovation": {
         "blurb": "End-to-end property renovation and void refurbs for landlords, investors and homeowners.",
         "short": "Full property & void renovations",
-        "standards": "Building Regs · landlord letting standards"
+        "standards": "Building Regs · landlord letting standards",
+        "seo_title": "Void and home renovation | iComply",
+        "seo_desc": "Void and occupied-home renovation for landlords and owners, sequenced around the certificates the let needs. North West. Quote after survey."
     },
     "plastering": {
         "blurb": "Skim, board finish, patch repairs and full-room plastering for residential and commercial interiors.",
         "short": "Skim, board finish & patch plastering",
-        "standards": "BS EN 13914 · trade finish standards"
+        "standards": "BS EN 13914 · trade finish standards",
+        "seo_title": "Plastering and skimming | iComply",
+        "seo_desc": "Skim, board finish and patch plastering for rooms, voids and small commercial interiors. North West. Quote after the area is seen."
     },
     "tiling": {
         "blurb": "Wall and floor tiling for kitchens, bathrooms and commercial wet areas with correct adhesives and tanking.",
         "short": "Wall & floor tiling with tanking",
-        "standards": "BS 5385 · manufacturer adhesive systems"
+        "standards": "BS 5385 · manufacturer adhesive systems",
+        "seo_title": "Wall and floor tiling | iComply",
+        "seo_desc": "Wall and floor tiling for kitchens, bathrooms and wet areas, with tanking where the substrate needs it. North West. Quote after measure."
     },
     "painting-decorating": {
         "blurb": "Interior and exterior painting, decorating and redecoration packages for voids and occupied homes.",
         "short": "Interior & exterior redecoration",
-        "standards": "Trade prep standards · low-VOC options"
+        "standards": "Trade prep standards · low-VOC options",
+        "seo_title": "Painting and decorating | iComply",
+        "seo_desc": "Interior and exterior redecoration for voids and occupied homes, including preparation. North West. Quote after the rooms are listed."
     },
     "joinery": {
         "blurb": "Custom joinery — doors, frames, cupboards, boxing and built-in storage.",
         "short": "Doors, frames, cupboards & built-ins",
-        "standards": "BS 4787 doors · site joinery practice"
+        "standards": "BS 4787 doors · site joinery practice",
+        "seo_title": "Bespoke joinery | iComply North West",
+        "seo_desc": "Doors, frames, cupboards and built-in storage, made and fitted to the opening. North West from Stockport. Quote after a site measure."
     },
     "carpentry": {
         "blurb": "First and second fix carpentry, stud walls, skirting, architraves and site carpentry packages.",
         "short": "1st/2nd fix carpentry packages",
-        "standards": "NHBC-style detailing · site practice"
+        "standards": "NHBC-style detailing · site practice",
+        "seo_title": "First and second fix carpentry | iComply",
+        "seo_desc": "First and second fix carpentry: studs, skirting, architrave and site packages. North West. Quote after the drawings or the void are seen."
     },
     "flooring": {
         "blurb": "Laminate, vinyl, engineered wood and commercial flooring supply and installation.",
         "short": "Laminate, vinyl & engineered flooring",
-        "standards": "Manufacturer install warranties · subfloor prep"
+        "standards": "Manufacturer install warranties · subfloor prep",
+        "seo_title": "Flooring supply and fit | iComply",
+        "seo_desc": "Laminate, vinyl and engineered wood supply and fit, including subfloor preparation. North West. Quote after the room sizes are known."
     },
     "plumbing": {
         "blurb": "Domestic and light commercial plumbing — bathrooms, kitchens, leaks, radiators and pipework.",
         "short": "Domestic & light commercial plumbing",
-        "standards": "Water Regs · WRAS fittings · Gas Safe where required"
+        "standards": "Water Supply (Water Fittings) Regulations 1999 · wholesome water · notification where required",
+        "seo_title": "Plumbing repairs and installs | iComply",
+        "seo_desc": "Leaks, bathrooms, wastes and pipework for homes and light commercial sites. Water fittings rules apply. North West. Quote after the fault is known."
     },
     "heating": {
-        "blurb": "Boiler installs, radiator upgrades, system flushes and heating controls for homes and small commercial.",
-        "short": "Boilers, radiators & heating controls",
-        "standards": "Gas Safe · manufacturer instructions · Building Regs"
+        "blurb": "Radiators, heating controls and system flushes. Boiler installation and landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.",
+        "short": "Radiators and controls. iComply is not Gas Safe registered.",
+        "standards": "Heating controls and radiators. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.",
+        "seo_title": "Heating controls and radiators | iComply",
+        "seo_desc": "Radiators, controls and system flushes. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered. POA."
     },
     "roofing": {
         "blurb": "Roof repairs, re-roofing, flat roofs, guttering and chimney works for residential properties.",
         "short": "Roof repairs, flat roofs & gutters",
-        "standards": "BS 5534 · manufacturer roofing systems"
+        "standards": "BS 5534 · manufacturer roofing systems",
+        "seo_title": "Roof repairs and gutters | iComply",
+        "seo_desc": "Roof repairs, flat roofs, guttering and chimney works for houses. North West. Quote after the roof is seen. No invented per-tile price."
     },
     "brickwork": {
         "blurb": "Brickwork repairs, repointing, openings and small masonry builds.",
         "short": "Repointing, repairs & small masonry",
-        "standards": "BS 5628 / EN 1996 practice"
+        "standards": "BS 5628 / EN 1996 practice",
+        "seo_title": "Brickwork and repointing | iComply",
+        "seo_desc": "Repointing, crack repairs, openings and small masonry builds. North West from Stockport. Quote after the elevation is inspected."
     },
     "dry-lining": {
         "blurb": "Metal stud, plasterboard partitions, acoustic linings and fire-rated boarding.",
         "short": "Partitions, acoustic & fire-rated board",
-        "standards": "BS 8212 · fire-rated board systems"
+        "standards": "BS 8212 · fire-rated board systems",
+        "seo_title": "Dry lining and partitions | iComply",
+        "seo_desc": "Metal stud partitions, plasterboard and fire-rated boarding for renovations and fit-outs. North West. Quote after the layout is agreed."
     },
     "loft-conversions": {
         "blurb": "Loft conversion building works with insulation, stairs, fire doors and building control support.",
         "short": "Loft conversion building packages",
-        "standards": "Building Regs Parts B/L/K · Party Wall awareness"
+        "standards": "Building Regs Parts B/L/K · Party Wall awareness",
+        "seo_title": "Loft conversion building | iComply",
+        "seo_desc": "Loft conversion building work, including insulation, stairs and fire-door coordination with building control. North West. Quote after survey."
     },
     "extensions": {
         "blurb": "Single-storey and small extension building packages — structure, envelope and first-fix readiness.",
         "short": "Single-storey & small extensions",
-        "standards": "Building Regs · structural design input"
+        "standards": "Building Regs · structural design input",
+        "seo_title": "Home extensions | iComply North West",
+        "seo_desc": "Single-storey and small extension packages through structure and first-fix readiness. North West. Quote after drawings and ground conditions."
     },
     "insulation": {
         "blurb": "Loft, cavity liaison, internal wall and floor insulation upgrades for comfort and EPC gains.",
         "short": "Loft, IWI and floor insulation upgrades",
-        "standards": "Part L · PAS 2035 awareness where relevant"
+        "standards": "Part L · PAS 2035 awareness where relevant",
+        "seo_title": "Loft and wall insulation | iComply",
+        "seo_desc": "Loft, internal wall and floor insulation upgrades. Not a guaranteed EPC band. North West. Price on application after the areas are measured."
     },
     "damp-proofing": {
         "blurb": "Rising damp, penetrating damp diagnosis support, tanking and remedial damp treatments.",
         "short": "Damp diagnosis, tanking & treatments",
-        "standards": "BS 6576 · manufacturer damp systems"
+        "standards": "BS 6576 · manufacturer damp systems",
+        "seo_title": "Damp diagnosis and tanking | iComply",
+        "seo_desc": "Rising and penetrating damp diagnosis support, tanking and remedial treatments. North West. Quote after the moisture source is checked."
     },
     "windows-doors": {
         "blurb": "uPVC and composite window and door replacement, fire door sets and ironmongery upgrades.",
         "short": "Windows, doors & fire door sets",
-        "standards": "Part L · Part Q · fire door certification"
+        "standards": "Part L · Part Q · fire door certification",
+        "seo_title": "Windows and door replacement | iComply",
+        "seo_desc": "Window and door replacement, including fire door sets where the opening needs them. North West. Quote after a site measure."
     },
     "rendering": {
         "blurb": "External rendering, repairs and weatherproof coatings for houses and small blocks.",
         "short": "External render & weatherproof coatings",
-        "standards": "BS EN 13914 · manufacturer render systems"
+        "standards": "BS EN 13914 · manufacturer render systems",
+        "seo_title": "External rendering | iComply",
+        "seo_desc": "External render repairs and weatherproof coatings for houses and small blocks. North West. Quote after the elevation is seen."
     },
     "groundworks": {
         "blurb": "Foundations for small builds, drainage, hardstanding and site preparation.",
         "short": "Foundations, drainage & hardstanding",
-        "standards": "Building Regs · NHBC-style groundworks practice"
+        "standards": "Building Regs · NHBC-style groundworks practice",
+        "seo_title": "Groundworks and drainage | iComply",
+        "seo_desc": "Foundations for small builds, drainage and hardstanding. North West. Quote after a site visit. No catalogue excavation rate."
     },
     "landscaping": {
         "blurb": "Hard landscaping, fencing, patios and external works for residential plots.",
         "short": "Patios, fencing & external works",
-        "standards": "Good practice drainage · boundary awareness"
+        "standards": "Good practice drainage · boundary awareness",
+        "seo_title": "Patios, fencing and hard landscaping | iComply",
+        "seo_desc": "Patios, fencing and hard landscaping for residential plots, with drainage considered. North West. Quote after the plot is measured."
     },
     "electrics-first-fix": {
         "blurb": "First-fix electrical for new builds, renovations and conversions before plaster and second fix.",
         "short": "First-fix electrics for renovations",
-        "standards": "BS 7671 · Part P notification where required"
+        "standards": "BS 7671 · Part P notification where required",
+        "seo_title": "First-fix electrical | iComply",
+        "seo_desc": "First-fix electrical for renovations and conversions, before plaster and second fix. BS 7671. North West. Quote after the drawings."
     },
     "commercial-fit-out": {
         "blurb": "Office and light commercial fit-out — partitions, services coordination, finishes and compliance.",
         "short": "Office & light commercial fit-out",
-        "standards": "Building Regs · fire strategy coordination"
+        "standards": "Building Regs · fire strategy coordination",
+        "seo_title": "Commercial fit-out | iComply",
+        "seo_desc": "Office and light commercial fit-out: partitions, services coordination and finishes. The fire strategy stays in scope. North West. POA."
     },
     "legionella-risk-assessment": {
         "blurb": "Legionella risk assessment and water hygiene testing for rented, commercial and multi-occupied water systems. POA after scope.",
         "short": "Legionella RA & water hygiene — POA",
         "standards": "HSE ACOP L8 · HSG274 · COSHH / HSWA dutyholder duties",
         "pricing": "POA",
-        "hero_accent": "Assessed, sampled only if needed, POA."
+        "hero_accent": "Assessed, sampled only if needed, POA.",
+        "seo_title": "Legionella risk assessment | iComply",
+        "seo_desc": "Legionella risk assessments for rented and commercial water systems. Sampling only if the assessment supports it. North West. Price on application."
     },
     "asbestos-survey": {
         "blurb": "Asbestos management and refurbishment surveys with sampling where the scope needs it. POA. Licensed removal is by others.",
         "short": "Asbestos survey & testing — POA",
         "standards": "Control of Asbestos Regulations 2012 · duty to manage",
         "pricing": "POA",
-        "hero_accent": "Surveyed, sampled if needed, POA."
+        "hero_accent": "Surveyed, sampled if needed, POA.",
+        "seo_title": "Asbestos surveys | iComply North West",
+        "seo_desc": "Management and refurbishment asbestos surveys. Licensed removal is by others. North West from Stockport. Price on application. No invented lab badge."
     },
     "ev-chargers": {
         "blurb": "Home, workplace and landlord EV charge points. Survey, BS 7671 Section 722 install, certification and load management. POA after we see the supply and the bay.",
         "short": "EV charge points — survey, install, certify, POA",
         "standards": "BS 7671 Section 722 · manufacturer instructions · DNO notice when required",
         "pricing": "POA",
-        "hero_accent": "Surveyed, installed, certificated. POA."
+        "hero_accent": "Surveyed, installed, certificated. POA.",
+        "seo_title": "EV charge points | iComply North West",
+        "seo_desc": "Home and workplace EV charge points, surveyed against the supply and the bay. BS 7671 Section 722. Price on application. No catalogue wallbox price."
     },
     "water-wras": {
         "blurb": "Water fittings, WRAS-style backflow protection and drinking-water points for homes and light commercial sites. Notification support where the water undertaker requires it. POA after scope. Not a laboratory suite and not a Legionella sampling product.",
         "short": "WRAS fittings, backflow and drinking water — POA",
         "standards": "Water Supply (Water Fittings) Regulations 1999 · backflow and fluid categories · wholesome water",
         "pricing": "POA",
-        "hero_accent": "Scoped fittings, notified where required, POA."
+        "hero_accent": "Scoped fittings, notified where required, POA.",
+        "seo_title": "Water fittings and backflow | iComply",
+        "seo_desc": "Backflow protection and drinking-water fittings, with undertaker notification when the rules require it. Not a lab test. North West. POA."
+    },
+    "epc": {
+        "seo_title": "Energy performance certificates | iComply",
+        "seo_desc": "Domestic and non-domestic Energy Performance Certificates for lets and commercial units. Not a safety certificate. North West. Price on application.",
+        "blurb": "Domestic and non-domestic Energy Performance Certificates for private lets and commercial units. Not a gas or electrical safety certificate. Price on application.",
+        "short": "Domestic and non-domestic EPCs — POA",
+        "standards": "Energy Performance of Buildings regulations · domestic and non-domestic methodologies",
+        "pricing": "POA"
+    },
+    "smoke-co-alarms": {
+        "seo_title": "Smoke and CO alarms | iComply",
+        "seo_desc": "Smoke and carbon monoxide alarms for rented homes, sited and tested. A shared house may need a fire alarm system instead. North West. POA.",
+        "blurb": "Smoke and carbon monoxide alarms for rented homes, sited and tested. A designed fire alarm system is a separate quote when the building needs one. Price on application.",
+        "short": "Smoke and CO alarms for rented homes — POA",
+        "standards": "Smoke and carbon monoxide alarm rules for private rented homes · BS 5839 when a system is required",
+        "pricing": "POA"
+    },
+    "pat-testing": {
+        "seo_title": "PAT testing for landlords | iComply",
+        "seo_desc": "In-service inspection and testing of portable appliances for lets and workplaces. Not an EICR. North West. Price on application after an item count.",
+        "blurb": "In-service inspection and testing of portable appliances for furnished lets and workplaces. Not an EICR. Price on application after an item count.",
+        "short": "PAT of portable appliances — not an EICR",
+        "standards": "IET in-service inspection guidance · risk-based frequency",
+        "pricing": "POA"
     }
 }

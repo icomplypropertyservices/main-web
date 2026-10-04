@@ -315,6 +315,9 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     $priceLine = $poa
         ? 'Price on application after scope. No invented catalogue price.'
         : 'Written quote after scope is agreed.';
+    if ($serviceSlug === 'fire-risk-assessments' && function_exists('fraGuidePrice')) {
+        $priceLine = 'Guide price ' . fraGuidePrice() . ' for a standard assessment on UK mainland. Larger premises confirmed in writing.';
+    }
     $intro = function_exists('seo_unique_intro')
         ? seo_unique_intro($svcName, $serviceSlug, $areaName)
         : $svcName . ' in ' . $areaName . '.';

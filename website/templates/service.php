@@ -5,14 +5,26 @@
  */
 $poaService = function_exists('isPoaService') && isPoaService($SERVICE_SLUG);
 $ownsMainland = function_exists('serviceOwnsMainlandAreas') && serviceOwnsMainlandAreas($SERVICE_SLUG);
-$pageTitle = $ownsMainland
-    ? ($SERVICE_NAME . ' | UK mainland fire protection')
-    : ($SERVICE_NAME . ' Services | North West');
-$metaDesc = $ownsMainland
-    ? ('Fire alarm design, installation, servicing and certification across UK mainland — England, Wales and mainland Scotland. Scheduled from Stockport. Written quote after scope.')
-    : ($poaService
-        ? ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Price on application after scope. Local team from Stockport. No invented fees.')
-        : ('Professional ' . $SERVICE_NAME . ' across Greater Manchester and the North West. Installation, maintenance, testing & certification. Written quotes after scope. Local engineers from Stockport.'));
+$metaRow = function_exists('getServiceMeta') ? getServiceMeta($SERVICE_SLUG) : [];
+$mainlandJobPlural = $SERVICE_SLUG === 'fire-risk-assessments' ? 'fire risk assessments' : 'fire alarms';
+$seoTitle = trim((string)($metaRow['seo_title'] ?? ''));
+$seoDesc = trim((string)($metaRow['seo_desc'] ?? ''));
+if ($seoTitle !== '') {
+    $pageTitle = $seoTitle;
+} elseif ($ownsMainland && $SERVICE_SLUG === 'fire-alarms') {
+    $pageTitle = $SERVICE_NAME . ' | UK mainland fire protection | iComply';
+} else {
+    $pageTitle = $SERVICE_NAME . ' | iComply ' . ($ownsMainland ? 'UK mainland' : 'North West');
+}
+if ($seoDesc !== '') {
+    $metaDesc = $seoDesc;
+} elseif ($ownsMainland && $SERVICE_SLUG === 'fire-alarms') {
+    $metaDesc = 'Fire alarm design, installation, servicing and certification across UK mainland — England, Wales and mainland Scotland. Scheduled from Stockport. Written quote after scope.';
+} elseif ($poaService) {
+    $metaDesc = $SERVICE_NAME . ' across the North West, priced on application after scope. Local team from Stockport. No invented fees.';
+} else {
+    $metaDesc = $SERVICE_NAME . ' across Greater Manchester and the North West. Written quotes after scope. Local team from Stockport.';
+}
 $metaKeywords = $SEO_KEYWORDS;
 $hubHeroRel = function_exists('icomplyHubHero') ? icomplyHubHero($SERVICE_SLUG) : null;
 $hubInline1 = function_exists('icomplyHubInline') ? icomplyHubInline($SERVICE_SLUG, 1) : null;
@@ -29,6 +41,15 @@ $serviceSlug = $SERVICE_SLUG;
 $serviceName = $SERVICE_NAME;
 
 $serviceFaqs = [
+    'gas-systems' => [
+        ['Who carries out the gas check?', 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.'],
+        ['Is iComply Gas Safe registered?', 'No. iComply is not Gas Safe registered. This page does not show a registration number or a Gas Safe badge.'],
+        ['What does the quote need?', 'Postcode and appliance count. The price is on application. There is no per-appliance fee list on this page.'],
+    ],
+    'heating' => [
+        ['Do you install boilers?', 'Boiler installation, servicing and landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.'],
+        ['What heating work is quoted here?', 'Radiators, controls and system flushes, after we see the layout. Price on application. No published boiler price.'],
+    ],
     'electrical' => [
         ['How often is an EICR required?', 'Landlords typically need an EICR every 5 years (or on change of tenancy). Commercial premises often follow a risk-based schedule of 1–5 years.'],
         ['Do you offer same-week electrical appointments?', 'Where engineer capacity and site access allow, yes — especially for landlord certificates and urgent remedial work across the North West.'],
@@ -75,7 +96,8 @@ $serviceFaqs = [
 $blurb = getServiceBlurb($serviceSlug);
 $standards = getServiceStandards($serviceSlug);
 $faqs = $serviceFaqs[$serviceSlug] ?? $serviceFaqs['default'];
-$svcCopy = function_exists('waterAsbestosServiceCopy') ? waterAsbestosServiceCopy($serviceSlug) : null;
+$svcCopy = function_exists('icomplyServiceHubCopy') ? icomplyServiceHubCopy($serviceSlug) : null;
+$hubLinks = function_exists('icomplyServiceHubLinks') ? icomplyServiceHubLinks($serviceSlug) : [];
 
 $nwAreas = getAreas();
 $keywordTowns = array_values(array_filter(
@@ -129,7 +151,9 @@ $schema = [
             '@type' => 'Service',
             '@id' => $canonicalUrl . '#service',
             'name' => $serviceName . ' Services',
-            'alternateName' => $serviceName . ' installation, maintenance and certification',
+            'alternateName' => $serviceSlug === 'gas-systems'
+                ? 'Landlord gas safety records, carried out by Gas Safe registered engineers'
+                : ($serviceName . ' installation, maintenance and certification'),
             'description' => $metaDesc,
             'url' => $canonicalUrl,
             'image' => $ogImage,
@@ -228,6 +252,9 @@ $schema = [
                     <span class="text-[#ff6b00]"><?= htmlspecialchars($svcCopy['hero_accent'] ?? ($poaService ? 'Surveyed, documented, POA.' : 'Installed, tested, certified.'), ENT_QUOTES, 'UTF-8') ?></span>
                 </h1>
                 <p class="mt-6 text-lg text-white/80 max-w-xl"><?= htmlspecialchars($blurb, ENT_QUOTES, 'UTF-8') ?></p>
+                <?php if ($serviceSlug === 'fire-risk-assessments' && !empty($metaRow['guide_price_label'])): ?>
+                <p class="mt-4 text-sm text-white/80 max-w-xl">Guide price <?= htmlspecialchars((string)$metaRow['guide_price_label'], ENT_QUOTES, 'UTF-8') ?> for a standard fire risk assessment on UK mainland. Larger or higher-risk premises are confirmed in writing.</p>
+                <?php endif; ?>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white"><?= $poaService ? 'Request POA quote' : 'Get free quote' ?></a>
                     <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Quote for ' . $serviceName) ?>"
@@ -298,7 +325,7 @@ $schema = [
         <?php
         $trust = [
             ['Local response', $ownsMainland
-                ? 'Stockport base — fire alarms scheduled across UK mainland'
+                ? ('Stockport base — ' . $mainlandJobPlural . ' scheduled across UK mainland')
                 : 'Stockport-based engineers across Greater Manchester & the North West'],
             ['Standards-led', $standards],
             ['Full documentation', 'Records for landlords, insurers, agents and dutyholders'],
@@ -341,7 +368,9 @@ $schema = [
             </p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
                 <?php if ($ownsMainland): ?>
-                Fire protection on these pages is UK mainland. Each place below has its own fire alarm page.
+                <?= $serviceSlug === 'fire-risk-assessments'
+                    ? 'These assessments are listed for UK mainland. Each place below has its own fire risk assessment page.'
+                    : 'Fire protection on these pages is UK mainland. Each place below has its own fire alarm page.' ?>
                 Northern Ireland, the Scottish Highlands and Islands, the Isle of Man and the Channel Islands are not listed.
                 Attendance outside the North West is scheduled from our Stockport (SK2) base and confirmed on the quote.
                 <?php else: ?>
@@ -447,7 +476,7 @@ if (function_exists('accessControlLaneHubSection')) {
                 </h2>
                 <p class="mt-2 text-zinc-600 max-w-2xl">
                     <?php if ($ownsMainland): ?>
-                    Topic guides stay on the North West town set. The area list further down is every UK mainland fire alarm page.
+                    Topic guides stay on the North West town set. The area list further down is every UK mainland <?= htmlspecialchars($mainlandJobPlural, ENT_QUOTES, 'UTF-8') ?> page.
                     <?php else: ?>
                     Every guide below has a dedicated page for each town we cover
                     (e.g. <strong>EICR report in Stockport</strong>). Click a topic, then pick your area.
@@ -525,8 +554,8 @@ if (function_exists('accessControlLaneHubSection')) {
                 <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> near you
             </h2>
             <p class="mt-2 text-zinc-600"><?= $ownsMainland
-                ? 'Every UK mainland place we own for fire alarms. Each link is that place’s fire alarm page.'
-                : 'Town hubs we cover — electrical and gas also open a real keyword×town page. We do not publish thin service×area doorways.' ?></p>
+                ? ('Every UK mainland place we list for ' . $mainlandJobPlural . '. Each link is that place’s page.')
+                : 'Town hubs we cover. Electrical and gas open a real keyword page for the town. Other services link their own area page where one is published.' ?></p>
         </div>
         <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All areas →</a>
     </div>
@@ -579,6 +608,27 @@ if (function_exists('accessControlLaneHubSection')) {
         <?php endforeach; ?>
     </div>
     <?php endforeach; ?>
+</section>
+<?php endif; ?>
+
+<?php if ($hubLinks): ?>
+<section class="bg-zinc-50 border-t">
+    <div class="max-w-7xl mx-auto px-6 py-12">
+        <h2 class="text-2xl font-semibold tracking-tight text-black">Also see</h2>
+        <ul class="mt-4 flex flex-wrap gap-2">
+            <?php foreach ($hubLinks as $hubLink):
+                $hubHref = (string)($hubLink[0] ?? '');
+                $hubLabel = (string)($hubLink[1] ?? '');
+                if ($hubHref === '' || $hubLabel === '') {
+                    continue;
+                }
+            ?>
+            <li>
+                <a href="<?= htmlspecialchars(url($hubHref), ENT_QUOTES, 'UTF-8') ?>" class="inline-block px-4 py-2 rounded-full bg-white border text-sm font-semibold text-black hover:border-[#ff6b00]"><?= htmlspecialchars($hubLabel, ENT_QUOTES, 'UTF-8') ?></a>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
 </section>
 <?php endif; ?>
 
@@ -658,7 +708,7 @@ if (function_exists('accessControlLaneHubSection')) {
             </div>
         </div>
         <ul class="space-y-3 text-sm text-white/90">
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Based in Stockport — <?= $ownsMainland ? 'UK mainland fire alarms' : 'North West coverage' ?></li>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Based in Stockport — <?= $ownsMainland ? ('UK mainland ' . htmlspecialchars($mainlandJobPlural, ENT_QUOTES, 'UTF-8')) : 'North West coverage' ?></li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> <?= $poaService ? 'Written assessment or survey notes for your file' : 'Installation, servicing and certification' ?></li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> <?= $poaService ? 'POA only — no invented prices, certs or reviews' : 'Multi-service packages for landlords & FM teams' ?></li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Response aim: within 2 hours on business days</li>

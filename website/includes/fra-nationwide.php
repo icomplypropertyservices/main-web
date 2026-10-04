@@ -48,6 +48,7 @@ function fraPriceNote(): string
 /**
  * @return list<array{slug:string,name:string}>
  */
+if (!function_exists('getMainlandAreaRecords')) {
 function getMainlandAreaRecords(): array
 {
     static $cache = null;
@@ -94,6 +95,7 @@ function getMainlandAreaRecords(): array
     }
     $cache = $out;
     return $cache;
+}
 }
 
 /** @return list<string> */
