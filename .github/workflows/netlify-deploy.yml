@@ -74,14 +74,38 @@ jobs:
       - name: Verify dist/ pretty URLs
         run: php website/bin/check-static-export.php
 
-      # Official Netlify CLI action. --dir matches netlify.toml publish = dist.
-      - name: Deploy dist/ to Netlify production
-        uses: netlify/actions/cli@master
+      # Do not use netlify/actions/cli (node:22-alpine). Edge bundling downloads
+      # a glibc Deno binary, Alpine cannot run it, and the action ignores the
+      # CLI exit code, so a green job can mean the upload never happened.
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          args: deploy --dir=dist --prod --message "github.com/${{ github.repository }}@${{ github.sha }}"
+          node-version: "22"
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      - name: Install Netlify CLI
+        run: npm install --prefix "$RUNNER_TEMP/netlify" netlify-cli@27.10.2
+
+      - name: Deploy dist/ to Netlify production
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          CI: "true"
+        run: |
+          set -euo pipefail
+          "${RUNNER_TEMP}/netlify/node_modules/.bin/netlify" deploy --dir=dist --prod --no-build --message "github.com/${{ github.repository }}@${{ github.sha }}" | tee /tmp/netlify-prod.txt
+          if grep -q "Deploy aborted" /tmp/netlify-prod.txt; then
+            echo "::error::Netlify aborted the production deploy."
+            exit 1
+          fi
+          if ! grep -q "Production URL:" /tmp/netlify-prod.txt; then
+            echo "::error::No production URL in the Netlify output."
+            exit 1
+          fi
 
       # Queue a Netlify-side build of main as well. Does not rely on the
       # GitHub↔Netlify webhook (the path that missed PR #1). That build

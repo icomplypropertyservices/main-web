@@ -56,13 +56,61 @@ jobs:
       - name: Verify dist/ pretty URLs
         run: php website/bin/check-static-export.php
 
-      # Same Netlify CLI as production (netlify deploy --dir=dist), without --prod
-      # and without POST /sites/{id}/builds. The GitHub Action wrapper ignores the
-      # CLI exit code, so this step runs the CLI directly and requires a draft URL.
+      # netlify/actions/cli@master is node:22-alpine. With --no-build the CLI
+      # bundles netlify/edge-functions before upload. @netlify/edge-bundler
+      # downloads Deno as x86_64-unknown-linux-gnu, which Alpine cannot execute,
+      # then the CLI prints only "Deploy aborted due to error while bundling
+      # edge functions" and the action still exits 0. Run the CLI on this
+      # ubuntu-latest runner (glibc) and require a draft URL in the log.
+      # Never --prod, and never POST /sites/{id}/builds (that publishes).
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "22"
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      - name: Install Netlify CLI
+        run: npm install --prefix "$RUNNER_TEMP/netlify" netlify-cli@27.10.2
+
+      - name: Bundle edge functions before upload
+        env:
+          NF_ROOT: ${{ runner.temp }}/netlify
+        run: |
+          set -euo pipefail
+          deno --version
+          node --input-type=module <<'JS'
+          import { mkdtemp, rm } from 'node:fs/promises';
+          import { tmpdir } from 'node:os';
+          import { join } from 'node:path';
+          const root = process.env.NF_ROOT;
+          const { bundle } = await import(join(root, 'node_modules/@netlify/edge-bundler/dist/node/index.js'));
+          const dist = await mkdtemp(join(tmpdir(), 'edge-'));
+          try {
+            const result = await bundle(['netlify/edge-functions'], dist, [], {
+              basePath: process.cwd(),
+              debug: true,
+              featureFlags: {},
+              systemLogger: (...args) => console.log('[edge]', ...args),
+              userLogger: (...args) => console.log('[edge]', ...args),
+            });
+            const routes = result?.manifest?.routes ?? [];
+            console.log('Edge bundle ok. Routes:', JSON.stringify(routes));
+            if (!routes.some((route) => route.path === '/robots.txt')) {
+              console.error('Edge bundle did not route /robots.txt');
+              process.exit(1);
+            }
+          } catch (error) {
+            console.error('Edge function bundle failed');
+            console.error(error);
+            process.exit(1);
+          } finally {
+            await rm(dist, { recursive: true, force: true });
+          }
+          JS
 
       - name: Deploy draft (never production)
         env:
@@ -71,6 +119,7 @@ jobs:
           CI: "true"
         run: |
           set -euo pipefail
+          netlify="${RUNNER_TEMP}/netlify/node_modules/.bin/netlify"
           args=(deploy --dir=dist --alias finish-property-site --no-build --message "finish-property-site draft, not production")
           for arg in "${args[@]}"; do
             if [ "$arg" = "--prod" ]; then
@@ -78,7 +127,7 @@ jobs:
               exit 1
             fi
           done
-          npx --yes netlify-cli "${args[@]}" | tee /tmp/netlify-draft.txt
+          "$netlify" "${args[@]}" | tee /tmp/netlify-draft.txt
           if grep -q "Deploy aborted" /tmp/netlify-draft.txt; then
             echo "::error::Netlify aborted the draft deploy. Production was not published."
             exit 1
