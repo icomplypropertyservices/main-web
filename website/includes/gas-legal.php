@@ -56,6 +56,39 @@ function icomplyGasServiceStandards(): string
     return 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not issue CP12 or gas safety certificates.';
 }
 
+/**
+ * Body copy for the gas service hub. iComply is not Gas Safe registered.
+ *
+ * @return array<string,mixed>
+ */
+function icomplyGasServicePageCopy(): array
+{
+    return [
+        'hero_accent' => 'Carried out by Gas Safe registered engineers.',
+        'pillars' => [
+            ['title' => 'The landlord record', 'text' => 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply does not carry out gas work and does not issue the record.'],
+            ['title' => 'Not a company registration', 'text' => 'iComply is not Gas Safe registered. This page does not show a registration number or a Gas Safe badge.'],
+            ['title' => 'POA only', 'text' => 'Postcode and appliance count first. The quote is price on application. There is no per-appliance price list on this page.'],
+        ],
+        'intro' => [
+            'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. iComply Property Services does not carry out gas work, does not issue CP12 or gas safety certificates, and is not Gas Safe registered.',
+            'Landlords and agents in Greater Manchester still ask what the record is, and what else can be booked on the same address. Electrical, fire, water hygiene and asbestos work can be quoted separately. Each of those stays price on application.',
+            'If an appliance is unsafe, that stays on the record. iComply will not turn a fail into a pass, and will not put a company Gas Safe logo on the paperwork.',
+        ],
+        'sections' => [
+            [
+                'h2' => 'What landlords are asking for',
+                'p' => [
+                    'People still say CP12. The document that matters is a current landlord gas safety record listing the appliances and flues that were checked. CP44 is a name you may hear for some non-domestic records. The record has to match the site.',
+                    'iComply is based at 17 Woodlands Park Road, Offerton, Stockport, SK2 5DE. The gas check itself is carried out by Gas Safe registered engineers. iComply does not issue it.',
+                ],
+            ],
+        ],
+        'cta_line' => 'Postcode and appliance count. No catalogue gas fee. iComply does not issue the record.',
+        'quote_placeholder' => 'Postcode, appliances, occupied or void. Gas work is carried out by Gas Safe registered engineers.',
+    ];
+}
+
 function icomplyGasMetaDesc(string $name, string $area = ''): string
 {
     $where = $area !== '' ? ' in ' . $area : ' across the North West';

@@ -157,6 +157,19 @@ function routerDispatchVirtual(string $path): bool {
     }
     // /pages/services/{slug}
     if (preg_match('#^/pages/services/([a-z0-9\-]+)$#', $path, $m)) {
+        $retiredServicePages = [
+            'ev-charging' => '/pages/services/ev-chargers',
+            'solar-pv' => '/pages/services',
+            'battery-storage' => '/pages/services',
+            'air-source-heat-pumps' => '/pages/services',
+            'ground-source-heat-pumps' => '/pages/services',
+            'solar-thermal' => '/pages/services',
+        ];
+        if (isset($retiredServicePages[$m[1]])) {
+            header('Location: ' . url($retiredServicePages[$m[1]]), true, 301);
+            icomplyRequestExit();
+            return true;
+        }
         renderServiceHubPage($m[1]);
         return true;
     }
