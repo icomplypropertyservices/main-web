@@ -291,7 +291,7 @@ if (!empty($landing['gmTowns']) && is_array($landing['gmTowns'])) {
             · <a class="underline" href="<?= htmlspecialchars($callHref, ENT_QUOTES, 'UTF-8') ?>">07517806082</a>
             · <a class="underline" href="mailto:info@icomplypropertyservices.co.uk">info@icomplypropertyservices.co.uk</a>
         </p>
-        <p class="mt-3 text-sm text-white"><?php if ($guide): ?>Guide from <?= htmlspecialchars($guideMoney, ENT_QUOTES, 'UTF-8') ?>. <?php endif; ?>You get a fixed quote after scope, before any work. No obligation until you accept that price. We aim to respond within 2 hours on business days — an aim, not a contractual SLA.</p>
+        <p class="mt-3 text-sm text-white"><?php if ($guide): ?>Guide from <?= htmlspecialchars($guideMoney, ENT_QUOTES, 'UTF-8') ?>. <?php endif; ?>You get a fixed quote after scope, before any work. No obligation until you accept that price. Phone, WhatsApp or the form — send the postcode to start a quote.</p>
     </div>
 </section>
 <?php require SITE_ROOT . '/includes/footer.php'; ?>

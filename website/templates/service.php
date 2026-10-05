@@ -52,7 +52,7 @@ $serviceFaqs = [
     ],
     'electrical' => [
         ['How often is an EICR required?', 'Landlords typically need an EICR every 5 years (or on change of tenancy). Commercial premises often follow a risk-based schedule of 1–5 years.'],
-        ['Do you offer same-week electrical appointments?', 'Where engineer capacity and site access allow, yes — especially for landlord certificates and urgent remedial work across the North West.'],
+        ['How are electrical appointments booked?', 'Against engineer capacity and site access once scope is agreed — landlord certificates and urgent remedial work across the North West are flagged when you ask.'],
         ['Can you upgrade consumer units and install EV chargers?', 'Yes. We design and install consumer unit upgrades, rewires, EV chargers and commercial electrical works to current regulations with full certification.'],
     ],
     'fire-alarms' => [
@@ -726,7 +726,7 @@ $gmBoroughs = function_exists('icomplyGreaterManchesterBoroughs') ? icomplyGreat
             <h2 class="text-3xl font-semibold tracking-tight">Need <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?>?</h2>
             <p class="mt-3 text-white/75"><?= $poaService
                 ? 'Price on application after we confirm the property and access. Call, WhatsApp or send the form — no invented fee list.'
-                : 'Written quotes after scope. Same-week appointments where capacity allows. Full certification on every job.' ?></p>
+                : 'Written quotes after scope. Visit dates follow the diary. Full certification on every job.' ?></p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Quote for ' . $serviceName) ?>"
                    target="_blank" rel="noopener"
@@ -739,7 +739,7 @@ $gmBoroughs = function_exists('icomplyGreaterManchesterBoroughs') ? icomplyGreat
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Based in Stockport — <?= $ownsMainland ? ('UK mainland ' . htmlspecialchars($mainlandJobPlural, ENT_QUOTES, 'UTF-8')) : 'North West coverage' ?></li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> <?= $poaService ? 'Written assessment or survey notes for your file' : 'Installation, servicing and certification' ?></li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> <?= $poaService ? 'POA only — no invented prices, certs or reviews' : 'Multi-service packages for landlords & FM teams' ?></li>
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Response aim: within 2 hours on business days</li>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Phone, WhatsApp or form — send the postcode to start a quote</li>
         </ul>
     </div>
 </section>
@@ -761,7 +761,7 @@ echo testimonialsSectionHtml();
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">
                 Request <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> quote
             </h2>
-            <p class="mt-3 text-zinc-600"><?= htmlspecialchars((string)($svcCopy['cta_line'] ?? 'Tell us the postcode, property type and any panel brand — we aim to respond within 2 hours on business days.'), ENT_QUOTES, 'UTF-8') ?></p>
+            <p class="mt-3 text-zinc-600"><?= htmlspecialchars((string)($svcCopy['cta_line'] ?? 'Tell us the postcode, property type and any panel brand to start a quote.'), ENT_QUOTES, 'UTF-8') ?></p>
         </div>
         <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">

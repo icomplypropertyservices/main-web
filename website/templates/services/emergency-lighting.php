@@ -149,7 +149,7 @@ require SITE_ROOT . '/includes/header.php';
         </div>
         <div class="p-8 bg-white rounded-3xl border">
             <h3 class="font-semibold text-black mb-2">24/7 Monitoring &amp; Maintenance</h3>
-            <p class="text-sm text-black">Central monitoring solutions, rapid response repairs and seamless integration with fire alarm and electrical systems.</p>
+            <p class="text-sm text-black">Central monitoring solutions, fault repairs and seamless integration with fire alarm and electrical systems.</p>
         </div>
     </div>
 

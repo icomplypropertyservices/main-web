@@ -267,7 +267,7 @@ function seo_unique_why(string $serviceName, string $area): array {
         "{$serviceName} plus related fire/electrical/security trades under one contractor",
         "Clear scope — fixed-price quotes when survey/photos define the works",
         "Experience with {$p['stock']} typical of {$area}",
-        "Same-week slots often available depending on {$area} diary load",
+        "Visit dates in {$area} follow the diary and site access",
         "Remedial advice prioritised so {$area} sites pass the next inspection first time where practical",
     ];
     $out = [];

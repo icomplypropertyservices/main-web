@@ -28,8 +28,8 @@ $windows = [
         'text' => 'Phone or WhatsApp. We triage the site, postcode and what is happening, then confirm whether an engineer can attend and on what terms — before anyone travels.',
     ],
     [
-        'kicker' => '24h',
-        'title' => 'Within 24 hours',
+        'kicker' => 'Priority',
+        'title' => 'Make-safe first',
         'text' => 'Priority make-safe where capacity, travel and the diary allow. Night and weekend visits focus on isolation and making safe. Permanent repairs may wait for parts or daylight.',
     ],
     [
@@ -119,7 +119,7 @@ $faqs = [
     ],
     [
         'q' => 'Will you finish a full repair in the middle of the night?',
-        'a' => 'Make-safe is the priority. Permanent repairs go ahead when parts, access and safe working conditions allow — often the next day. You will know that before we despatch.',
+        'a' => 'Make-safe is the priority. Permanent repairs go ahead when parts, access and safe working conditions allow. You will know that before we despatch.',
     ],
     [
         'q' => 'Do you publish a call-out price?',
@@ -231,7 +231,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl">
                     Fire panel faults, power loss, gas and heating breakdowns, and security failures
                     across Stockport, Greater Manchester and the North West.
-                    We aim to attend <strong class="text-white font-semibold">within 24 hours where capacity allows</strong>
+                    We attend <strong class="text-white font-semibold">when engineer capacity, travel and the diary allow</strong>
                     — make-safe first, then a planned repair.
                 </p>
 
@@ -266,7 +266,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             </div>
 
             <div class="bg-white/5 border border-white/15 rounded-3xl p-7 md:p-9 backdrop-blur-sm">
-                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold mb-3">Fastest response</div>
+                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold mb-3">Phone or WhatsApp</div>
                 <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">Need an engineer on site?</h2>
                 <p class="mt-3 text-white/75 text-sm leading-relaxed">
                     Phone or WhatsApp with postcode, fault and whether you need someone now or within 24 hours.
@@ -414,7 +414,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
         <div class="flex flex-col md:flex-row gap-6 md:items-center">
             <div class="w-12 h-12 rounded-2xl bg-amber-500/20 flex items-center justify-center text-amber-700 font-bold text-xl shrink-0" aria-hidden="true">!</div>
             <div class="flex-1">
-                <h2 class="text-xl md:text-2xl font-semibold text-black tracking-tight">Within 24 hours where capacity allows</h2>
+                <h2 class="text-xl md:text-2xl font-semibold text-black tracking-tight">Attendance depends on capacity</h2>
                 <p class="mt-2 text-zinc-700 text-sm md:text-base max-w-3xl">
                     Response depends on engineer availability, location and existing booked work.
                     Safety-critical fire and power faults are triaged first. Out-of-hours attendance is POA and explained before despatch.

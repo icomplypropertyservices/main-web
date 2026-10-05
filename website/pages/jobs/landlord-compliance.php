@@ -68,7 +68,7 @@ $landing = [
         ],
         [
             'title' => 'Fixed quote after scope',
-            'text' => 'We confirm what is included and what is quoted separately. The pack guide is **' . $packFrom . '**. We aim to respond within 2 hours on business days once we have postcodes and property types. That is an aim, not a contractual SLA.',
+            'text' => 'We confirm what is included and what is quoted separately. The pack guide is **' . $packFrom . '**. Send the postcodes and property types to start a quote.',
         ],
         [
             'title' => 'Deliver and file the pack',

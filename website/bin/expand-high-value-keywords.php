@@ -38,7 +38,7 @@ $new = [
         'seo_keywords' => 'EICR near me, local EICR, electrical certificate near me, EICR engineer near me',
         'focus_points' => [
             'Local North West coverage',
-            'Same-week slots where capacity allows',
+            'Visit dates follow the diary',
             'Fixed-price before we attend',
             'Digital certificate turnaround',
         ],
