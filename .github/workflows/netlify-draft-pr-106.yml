@@ -1,0 +1,201 @@
+# Draft Netlify preview for PR 106. Never production.
+# `netlify deploy` is invoked without `--prod`. This workflow must not
+# POST /sites/{id}/builds (that queues a production build).
+
+name: Draft preview PR 106
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: netlify-draft-pr-106
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  draft:
+    name: Netlify draft deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Draft branch only
+        run: |
+          set -euo pipefail
+          if [ "${GITHUB_REF}" != "refs/heads/cursor/fix-live-404s-1df0" ]; then
+            echo "::error::Refusing to draft-deploy ${GITHUB_REF}. Expected cursor/fix-live-404s-1df0."
+            exit 1
+          fi
+
+      - name: Check required secrets
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          set -euo pipefail
+          missing=0
+          if [ -z "${NETLIFY_AUTH_TOKEN}" ]; then
+            echo "::error::NETLIFY_AUTH_TOKEN is not set. Draft was not created. Production was not deployed."
+            missing=1
+          fi
+          if [ -z "${NETLIFY_SITE_ID}" ]; then
+            echo "::error::NETLIFY_SITE_ID is not set. Draft was not created. Production was not deployed."
+            missing=1
+          fi
+          exit "${missing}"
+
+      - name: Free runner disk
+        run: |
+          df -h
+          sudo rm -rf \
+            /usr/local/lib/android \
+            /usr/share/dotnet \
+            /usr/local/share/powershell \
+            /usr/share/swift \
+            /opt/ghc \
+            /usr/local/.ghcup \
+            /usr/local/share/chromium \
+            /usr/local/share/boost \
+            /opt/hostedtoolcache/CodeQL \
+            /usr/local/lib/node_modules \
+            /opt/microsoft \
+            /usr/share/miniconda \
+            /usr/local/share/vcpkg \
+            || true
+          docker system prune -af >/dev/null 2>&1 || true
+          df -h
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          coverage: none
+
+      - name: Static export (PHP → HTML in dist/)
+        env:
+          SITE_URL: https://icomplypropertyservices.co.uk
+        run: php website/bin/static-export.php --keyword-towns=none
+        timeout-minutes: 60
+
+      - name: Verify dist/ pretty URLs
+        run: php website/bin/check-static-export.php
+
+      # netlify deploy --no-build still bundles netlify/edge-functions.
+      # The CLI needs glibc (this ubuntu runner) and Deno on PATH.
+      # Never --prod, and never POST /sites/{id}/builds.
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      - name: Install Netlify CLI
+        run: npm install --prefix "$RUNNER_TEMP/netlify" netlify-cli@27.10.2
+
+      - name: Deploy draft (never production)
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          CI: "true"
+        run: |
+          set -euo pipefail
+          netlify="${RUNNER_TEMP}/netlify/node_modules/.bin/netlify"
+          args=(deploy --dir=dist --alias pr-106 --no-build --message "PR 106 draft — not production")
+          for arg in "${args[@]}"; do
+            if [ "$arg" = "--prod" ]; then
+              echo "::error::Refusing to pass --prod"
+              exit 1
+            fi
+          done
+          "$netlify" "${args[@]}" | tee /tmp/netlify-draft.txt
+          python3 - << 'PY'
+          import json, os, re, urllib.request
+          from urllib.parse import urlparse
+
+          log = open("/tmp/netlify-draft.txt", encoding="utf-8", errors="replace").read()
+          if "Deploy aborted" in log:
+              raise SystemExit("Netlify aborted the draft deploy. Production was not published.")
+          if re.search(r"Production URL\s*:", log):
+              raise SystemExit("Output includes a production URL. Stop.")
+
+          production_hosts = {"icomplypropertyservices.co.uk", "www.icomplypropertyservices.co.uk"}
+
+          def host_of(url):
+              try:
+                  return (urlparse(url).hostname or "").lower()
+              except Exception:
+                  return ""
+
+          labeled = {}
+          for line in log.splitlines():
+              match = re.search(r"(Draft URL|Website Draft URL|Website URL|Unique Deploy URL|Unique deploy URL)\s*:\s*(https://\S+)", line)
+              if match:
+                  labeled[match.group(1)] = match.group(2).rstrip(").,")
+
+          deploy_id = ""
+          id_match = re.search(r"/deploys/([0-9a-f]{24})", log)
+          if id_match:
+              deploy_id = id_match.group(1)
+          if not deploy_id:
+              uniq = labeled.get("Unique Deploy URL") or labeled.get("Unique deploy URL") or ""
+              sub = host_of(uniq).split("--", 1)[0]
+              if re.fullmatch(r"[0-9a-f]{24}", sub):
+                  deploy_id = sub
+
+          draft_url = labeled.get("Draft URL") or labeled.get("Website Draft URL") or labeled.get("Website URL") or ""
+          if "pr-106--" not in draft_url:
+              for url in labeled.values():
+                  if "pr-106--" in url:
+                      draft_url = url
+                      break
+          unique_url = labeled.get("Unique Deploy URL") or labeled.get("Unique deploy URL") or ""
+
+          if not draft_url or not deploy_id:
+              print(log)
+              raise SystemExit("Could not read the draft URL and deploy id from the Netlify output.")
+
+          for url in (draft_url, unique_url):
+              if url and host_of(url) in production_hosts:
+                  raise SystemExit("Draft deploy URL is the production domain. Stop.")
+          if not draft_url.endswith(".netlify.app") and ".netlify.app/" not in draft_url:
+              raise SystemExit("Draft URL is not a netlify.app draft. Stop.")
+
+          token = os.environ["NETLIFY_AUTH_TOKEN"]
+          request = urllib.request.Request(
+              f"https://api.netlify.com/api/v1/deploys/{deploy_id}",
+              headers={"Authorization": f"Bearer {token}", "User-Agent": "icomply-draft-pr-106"},
+          )
+          with urllib.request.urlopen(request, timeout=60) as response:
+              data = json.load(response)
+          context = str(data.get("context") or "")
+          print("context=" + context)
+          if context == "production":
+              raise SystemExit("Deploy context is production. Stop.")
+          for key in ("ssl_url", "deploy_ssl_url", "url"):
+              value = str(data.get(key) or "")
+              if host_of(value) in production_hosts:
+                  raise SystemExit(f"Deploy {key} is the production domain. Stop.")
+
+          print("Draft URL: " + draft_url)
+          print("deploy_id: " + deploy_id)
+          if unique_url:
+              print("Unique deploy URL: " + unique_url)
+
+          summary = os.environ.get("GITHUB_STEP_SUMMARY")
+          if summary:
+              with open(summary, "a", encoding="utf-8") as handle:
+                  handle.write("## Netlify draft (not production)\n\n")
+                  handle.write(f"- Draft URL: {draft_url}\n")
+                  handle.write(f"- deploy_id: `{deploy_id}`\n")
+                  if unique_url:
+                      handle.write(f"- Unique deploy URL: {unique_url}\n")
+                  handle.write(f"- context: {context}\n")
+          PY
