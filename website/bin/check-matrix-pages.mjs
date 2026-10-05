@@ -68,6 +68,7 @@ const catalogue = {
       "painting-decorating": "Painting and decorating",
       "windows-doors": "Windows and doors",
       "water-wras": "Water fittings",
+      kitchens: "Kitchens",
       "fire-doors": "Fire doors",
       barriers: "Vehicle barriers",
       "ev-chargers": "EV chargers",
@@ -190,18 +191,18 @@ ok(scored.every((row) => row.score === 100), `sample scores ${scored.map((row) =
 
 const water = renderTownPage({ kind: "service", service: "water-wras", town: "stockport", catalogue });
 ok(water && water.status === 200 && water.robots === "index, follow", "water-wras town page is indexable");
-ok(water && water.html.includes("/assets/images/services/plumbing.jpg"), "water-wras uses the plumbing image");
+ok(water && water.html.includes("/assets/images/services/water-wras.jpg"), "water-wras uses its own service image");
 ok(scoreHtml(water.html, { local: ["stockport"] }).score === 100, "water-wras score 100");
 
 const aberdeenFire = renderTownPage({ kind: "keyword", keyword: "fire-door-survey", town: "aberdeen", catalogue });
 const aberdeenEicr = renderTownPage({ kind: "keyword", keyword: "eicr", town: "aberdeen", catalogue });
-ok(aberdeenFire && aberdeenFire.robots === "index, follow", "fire keyword in Aberdeen is indexable");
+ok(aberdeenFire && aberdeenFire.robots === "noindex, follow", "fire keyword outside the catalogue stays noindex");
 ok(aberdeenEicr && aberdeenEicr.robots === "noindex, follow", "electrical keyword in Aberdeen stays noindex");
 
 const came = renderTownPage({ kind: "manufacturer", brand: "came", town: "aberdeen", catalogue });
 const rolec = renderTownPage({ kind: "manufacturer", brand: "rolec-ev", town: "aberdeen", catalogue });
 const rolecLocal = renderTownPage({ kind: "manufacturer", brand: "rolec-ev", town: "stockport", catalogue });
-ok(came && came.robots === "index, follow" && came.path === "/pages/manufacturers/came/aberdeen", "nationwide manufacturer town");
+ok(came && came.robots === "noindex, follow" && came.path === "/pages/manufacturers/came/aberdeen", "manufacturer outside the catalogue stays noindex");
 ok(rolec && rolec.robots === "noindex, follow", "local manufacturer stays noindex outside the core list");
 ok(rolecLocal && rolecLocal.robots === "index, follow", "local manufacturer town in the core list");
 ok(renderTownPage({ kind: "manufacturer", brand: "tunstall", town: "stockport", catalogue }) === null, "tunstall is not published");
@@ -212,9 +213,15 @@ const jobFire = renderTownPage({ kind: "job", job: "fire-alarms", town: "aberdee
 const jobGas = renderTownPage({ kind: "job", job: "gas-safety-cp12", town: "stockport", catalogue });
 ok(jobLocal && jobLocal.robots === "index, follow", "EICR job town page");
 ok(jobFar && jobFar.robots === "noindex, follow", "EICR job is not nationwide");
-ok(jobFire && jobFire.robots === "index, follow", "fire alarm job is nationwide");
+ok(jobFire && jobFire.robots === "noindex, follow", "fire alarm job outside the catalogue stays noindex");
 ok(jobGas && jobGas.html.includes("iComply is not Gas Safe registered."), "gas job keeps the legal sentence");
 ok([came, rolecLocal, jobLocal, jobFire, aberdeenFire].every((page) => scoreHtml(page.html, { local: ["aberdeen", "stockport"] }).score === 100), "new page types score 100");
+
+const kitchen = renderTownPage({ kind: "service", service: "kitchens", town: "stockport", catalogue });
+ok(kitchen && kitchen.status === 200 && kitchen.robots === "index, follow", "kitchen town page in Stockport is indexable");
+ok(kitchen && kitchen.html.toLowerCase().includes("price on application"), "kitchen town page is POA");
+ok(kitchen && !kitchen.html.includes("£"), "kitchen town page has no price");
+ok(kitchen && scoreHtml(kitchen.html, { local: ["stockport"] }).score === 100, "kitchen town score 100");
 
 console.log(fail === 0 ? "PASS" : `FAIL ${fail}`);
 process.exit(fail === 0 ? 0 : 1);

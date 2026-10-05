@@ -21,5 +21,10 @@ if (!is_dir($dist) || !is_file($dist . '/index.html')) {
 }
 
 $result = icomplyWriteSitemapForDist($dist, $base);
+if (!empty($result['kept_matrix'])) {
+    echo "Kept matrix sitemap index at {$result['file']}\n";
+    echo "Removed file-crawl chunks under dist/sitemaps if a plugin wrote them\n";
+    exit(0);
+}
 echo "Published sitemap {$result['urls']} URLs → {$result['file']}\n";
 echo "Removed dist/sitemaps chunks if a file-crawl plugin wrote them\n";

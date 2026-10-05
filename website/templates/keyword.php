@@ -27,7 +27,7 @@ $allAreas = getAreas();
 $allServices = getServices();
 
 $popularTowns = array_values(array_filter(
-    ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
+    ['Manchester', 'Salford', 'Bolton', 'Bury', 'Oldham', 'Rochdale', 'Stockport', 'Tameside', 'Trafford', 'Wigan', 'Altrincham', 'Sale', 'Ashton-under-Lyne', 'Liverpool', 'Preston', 'Chester'],
     fn($t) => in_array($t, $allAreas, true)
 ));
 

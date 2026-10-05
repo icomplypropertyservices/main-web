@@ -1,10 +1,11 @@
 /**
  * Unique town × keyword, town × service, manufacturer × town and job × town HTML.
  * Catalogue JSON is written by website/includes/matrix-catalogue.php.
- * A known record with any well-formed town slug returns HTTP 200.
- * Towns in the published catalogue are index,follow. Fire, barriers and AOV
- * also index the nationwide gazetteer. Other towns are noindex.
+ * Keyword variants ({service}--{stem}--…) and /matrix-sitemap/{n}.xml are
+ * decoded from assets/matrix/variants.json. Greater Manchester towns are
+ * index,follow. Other places, including the nationwide gazetteer, stay noindex.
  */
+import { renderVariantPage, renderVariantSitemap } from "../lib/variant-matrix.js";
 
 const RESERVED = new Set([
   "keywords", "services", "areas", "manufacturers", "resources", "packages",
@@ -18,9 +19,7 @@ const FAMILY = new Set([
   "dry-risers", "emergency-lighting", "barriers", "aov-air-handling",
 ]);
 
-const IMAGE_SLUG = {
-  "water-wras": "plumbing",
-};
+const IMAGE_SLUG = {};
 
 const AUDIENCES = [
   "landlords",
@@ -232,9 +231,7 @@ export function renderTownPage(input) {
   const resolved = resolvePlace(townSlug, catalogue);
   const place = resolved.place;
   const tier = resolved.tier;
-  const indexable = keywordKnown && !keyword.synthetic && (
-    tier === "core" || (tier === "nationwide" && nationwideFlag)
-  );
+  const indexable = keywordKnown && !keyword.synthetic && tier === "core";
   const robots = indexable ? "index, follow" : "noindex, follow";
   const seed = hashStr(`${kind}|${subject}|${serviceSlug}|${townSlug}`);
   const audience = pick(AUDIENCES, seed);
@@ -451,6 +448,31 @@ ${faqHtml}
 }
 
 let cataloguePromise = null;
+let variantPromise = null;
+
+async function loadVariants(origin) {
+  if (!variantPromise) {
+    variantPromise = fetch(`${origin}/assets/matrix/variants.json`).then((response) => {
+      if (!response.ok) throw new Error("variants");
+      return response.json();
+    }).catch((error) => {
+      variantPromise = null;
+      throw error;
+    });
+  }
+  return variantPromise;
+}
+
+function variantResponse(rendered) {
+  return new Response(rendered.html, {
+    status: 200,
+    headers: {
+      "content-type": "text/html; charset=utf-8",
+      "cache-control": "public, max-age=3600",
+      "x-robots-tag": rendered.robots,
+    },
+  });
+}
 
 async function loadCatalogue(origin) {
   if (!cataloguePromise) {
@@ -478,6 +500,46 @@ async function loadCatalogue(origin) {
 export default async (request, context) => {
   const url = new URL(request.url);
   const path = url.pathname.replace(/\/+$/, "") || "/";
+  const sitemapMatch = path.match(/^\/matrix-sitemap\/(\d+)(?:\.xml)?$/);
+  if (sitemapMatch) {
+    try {
+      const spec = await loadVariants(url.origin);
+      const xml = renderVariantSitemap(spec, Number(sitemapMatch[1]));
+      if (!xml) {
+        return new Response("Not found", { status: 404, headers: { "content-type": "text/plain; charset=utf-8" } });
+      }
+      return new Response(xml, {
+        status: 200,
+        headers: {
+          "content-type": "application/xml; charset=utf-8",
+          "cache-control": "public, max-age=86400",
+        },
+      });
+    } catch {
+      return new Response("Variant sitemap unavailable", {
+        status: 503,
+        headers: { "content-type": "text/plain; charset=utf-8" },
+      });
+    }
+  }
+  const variantTown = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
+  const variantHub = path.match(/^\/pages\/keywords\/([a-z0-9-]+)$/);
+  const variantSlug = variantTown?.[1] || variantHub?.[1] || "";
+  if (variantSlug.includes("--")) {
+    try {
+      const spec = await loadVariants(url.origin);
+      return variantResponse(renderVariantPage({
+        spec,
+        keyword: variantSlug,
+        town: variantTown ? variantTown[2] : "",
+      }));
+    } catch {
+      return new Response("Variant page unavailable", {
+        status: 503,
+        headers: { "content-type": "text/plain; charset=utf-8" },
+      });
+    }
+  }
   const manufacturerMatch = path.match(/^\/pages\/manufacturers\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   const jobMatch = path.match(/^\/pages\/jobs\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   const keywordMatch = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
@@ -534,6 +596,8 @@ export default async (request, context) => {
 
 export const config = {
   path: [
+    "/pages/keywords/:keyword",
+    "/pages/keywords/:keyword/",
     "/pages/keywords/:keyword/:town",
     "/pages/keywords/:keyword/:town/",
     "/pages/manufacturers/:brand/:town",
@@ -542,5 +606,6 @@ export const config = {
     "/pages/jobs/:job/:town/",
     "/pages/:service/:town",
     "/pages/:service/:town/",
+    "/matrix-sitemap/:part",
   ],
 };

@@ -97,6 +97,9 @@ $blurb = getServiceBlurb($serviceSlug);
 $standards = getServiceStandards($serviceSlug);
 $faqs = $serviceFaqs[$serviceSlug] ?? $serviceFaqs['default'];
 $svcCopy = function_exists('icomplyServiceHubCopy') ? icomplyServiceHubCopy($serviceSlug) : null;
+if (!empty($svcCopy['faq']) && is_array($svcCopy['faq'])) {
+    $faqs = $svcCopy['faq'];
+}
 $hubLinks = function_exists('icomplyServiceHubLinks') ? icomplyServiceHubLinks($serviceSlug) : [];
 
 $nwAreas = getAreas();
@@ -563,21 +566,24 @@ if (function_exists('accessControlLaneHubSection')) {
 </section>
 
 <!-- AREAS -->
-<section class="max-w-7xl mx-auto px-6 py-16">
+<?php
+$gmTowns = function_exists('icomplyGreaterManchesterTownNames') ? icomplyGreaterManchesterTownNames() : [];
+$gmBoroughs = function_exists('icomplyGreaterManchesterBoroughs') ? icomplyGreaterManchesterBoroughs() : [];
+$gmSet = array_fill_keys($gmTowns, true);
+?>
+<section class="max-w-7xl mx-auto px-6 py-16" id="greater-manchester">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
         <div>
-            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local pages</div>
+            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Greater Manchester</div>
             <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">
-                <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> near you
+                <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> in Greater Manchester
             </h2>
-            <p class="mt-2 text-zinc-600"><?= $ownsMainland
-                ? ('Every UK mainland place we list for ' . $mainlandJobPlural . '. Each link is that place’s page.')
-                : 'Town hubs we cover. Electrical and gas open a real keyword page for the town. Other services link their own area page where one is published.' ?></p>
+            <p class="mt-2 text-zinc-600 max-w-3xl"><?= htmlspecialchars((string)($svcCopy['areas_note'] ?? 'The ten boroughs, then the Greater Manchester towns already published on the site. Each link is this service in that place. Quotes are price on application.'), ENT_QUOTES, 'UTF-8') ?></p>
         </div>
         <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All areas →</a>
     </div>
     <div class="flex flex-wrap gap-2">
-        <?php foreach ($popularTowns as $a): ?>
+        <?php foreach ($gmBoroughs as $a): ?>
             <a href="<?= htmlspecialchars(exportedServiceLocalUrl($SERVICE_SLUG, $a, 'service'), ENT_QUOTES, 'UTF-8') ?>"
                class="px-5 py-2.5 bg-white border rounded-full text-sm font-medium text-black hover:border-[#ff6b00] hover:shadow-sm transition">
                 <?= htmlspecialchars($serviceName . ' in ' . $a, ENT_QUOTES, 'UTF-8') ?>
@@ -585,8 +591,31 @@ if (function_exists('accessControlLaneHubSection')) {
         <?php endforeach; ?>
     </div>
     <div class="mt-6 flex flex-wrap gap-2">
+        <?php foreach ($gmTowns as $a):
+            if (in_array($a, $gmBoroughs, true)) continue;
+        ?>
+            <a href="<?= htmlspecialchars(exportedServiceLocalUrl($SERVICE_SLUG, $a, 'service'), ENT_QUOTES, 'UTF-8') ?>"
+               class="px-3 py-1.5 bg-zinc-50 border rounded-full text-xs text-zinc-700 hover:border-[#ff6b00]">
+                <?= htmlspecialchars($serviceName . ' in ' . $a, ENT_QUOTES, 'UTF-8') ?>
+            </a>
+        <?php endforeach; ?>
+    </div>
+    <?php if ($ownsMainland): ?>
+    <h3 class="mt-10 text-lg font-semibold text-black">UK mainland places</h3>
+    <p class="mt-2 text-zinc-600">Every UK mainland place we list for <?= htmlspecialchars($mainlandJobPlural, ENT_QUOTES, 'UTF-8') ?>. Each link is that place’s page.</p>
+    <div class="mt-4 flex flex-wrap gap-2">
+        <?php foreach ($popularTowns as $a): ?>
+            <a href="<?= htmlspecialchars(exportedServiceLocalUrl($SERVICE_SLUG, $a, 'service'), ENT_QUOTES, 'UTF-8') ?>"
+               class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]">
+                <?= htmlspecialchars($serviceName . ' in ' . $a, ENT_QUOTES, 'UTF-8') ?>
+            </a>
+        <?php endforeach; ?>
+    </div>
+    <?php endif; ?>
+    <h3 class="mt-10 text-lg font-semibold text-black">Other published towns</h3>
+    <div class="mt-4 flex flex-wrap gap-2">
         <?php foreach ($allAreas as $a):
-            if (in_array($a, $popularTowns, true)) continue;
+            if (isset($gmSet[$a])) continue;
         ?>
             <a href="<?= htmlspecialchars(exportedServiceLocalUrl($SERVICE_SLUG, $a, 'service'), ENT_QUOTES, 'UTF-8') ?>"
                class="px-3 py-1.5 bg-zinc-50 border rounded-full text-xs text-zinc-700 hover:border-[#ff6b00]">

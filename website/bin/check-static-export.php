@@ -453,6 +453,19 @@ if (preg_match('#^/\\*\\s+/\\s+301#m', $redirects) || preg_match('#^/\\s+/\\s+30
     echo "[PASS] _redirects has no homepage soft-404\n";
 }
 $sitemapDist = is_file($dist . '/sitemap.xml') ? (string)file_get_contents($dist . '/sitemap.xml') : '';
+if ($edgeMatrix) {
+    $variantUrls = (int)($matrixStats['variant_urls'] ?? 0);
+    $variantReady = $variantUrls >= 10000000
+        && is_file($dist . '/assets/matrix/variants.json')
+        && str_contains($sitemapDist, '/matrix-sitemap/0.xml');
+    if ($variantReady) {
+        $pass++;
+        echo "[PASS] variant matrix urls={$variantUrls} per_service=" . (int)($matrixStats['variant_keywords_per_service'] ?? 0) . "\n";
+    } else {
+        $fail++;
+        echo "[FAIL] variant matrix missing from sitemap index or under 10 million URLs ({$variantUrls})\n";
+    }
+}
 $sitemapHub = is_file($dist . '/sitemap0.xml') ? (string)file_get_contents($dist . '/sitemap0.xml') : $sitemapDist;
 if (str_contains($sitemapDist, '<sitemapindex')) {
     $pass++;
