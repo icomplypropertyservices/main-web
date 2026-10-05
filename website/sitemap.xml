@@ -26,7 +26,67 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/services</loc><priority>0.95</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/areas</loc><priority>0.9</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/areas/manchester</loc><priority>0.8</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/burnley</loc><priority>0.8</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/altrincham</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/ashton-under-lyne</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/atherton</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/bolton</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/bramhall</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/bury</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/cadishead</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/chadderton</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/cheadle</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/cheadle-hulme</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/chorlton</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/denton</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/didsbury</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/droylsden</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/dukinfield</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/eccles</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/failsworth</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/farnworth</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/hazel-grove</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/heywood</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/horwich</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/hyde</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/irlam</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/kearsley</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/lees</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/leigh</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/little-lever</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/littleborough</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/marple</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/middleton</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/milnrow</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/mossley</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/oldham</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/pendlebury</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/prestwich</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/radcliffe</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/rochdale</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/romiley</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/royton</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/saddleworth</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/sale</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/salford</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/shaw</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/stalybridge</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/stockport</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/stretford</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/swinton</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/tameside</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/trafford</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/tyldesley</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/uppermill</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/urmston</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/walkden</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/westhoughton</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/whitefield</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/wigan</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/withington</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/worsley</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/areas/wythenshawe</loc><priority>0.6</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/jobs</loc><priority>0.85</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/directories</loc><priority>0.45</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/manufacturers</loc><priority>0.9</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords</loc><priority>0.9</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/shop/</loc><priority>0.8</priority></url>
@@ -1976,7 +2036,6 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/barriers/bramhall</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/barriers/bredbury-and-woodley</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/barriers/brierfield</loc><priority>0.55</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/barriers/burnley</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/barriers/bury-bury</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/barriers/carlisle</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/barriers/chadderton</loc><priority>0.55</priority></url>

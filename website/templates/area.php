@@ -23,17 +23,22 @@ $allAreas = getAreas();
 $areaName = $AREA;
 $areaSlugVal = $AREA_SLUG;
 
-$nearby = [];
-$idx = array_search($areaName, $allAreas, true);
-if ($idx === false) {
-    $nearby = array_slice($allAreas, 0, 12);
-} else {
-    $start = max(0, $idx - 6);
-    $nearby = array_slice($allAreas, $start, 14);
-    $nearby = array_values(array_filter($nearby, function ($a) use ($areaName) {
-        return $a !== $areaName;
-    }));
-    $nearby = array_slice($nearby, 0, 12);
+if (!function_exists('icomplyGmAdjacentTownNames')) {
+    require_once SITE_ROOT . '/includes/building-hub-copy.php';
+}
+$nearby = icomplyGmAdjacentTownNames($areaName, 12);
+if (!$nearby) {
+    $idx = array_search($areaName, $allAreas, true);
+    if ($idx === false) {
+        $nearby = array_slice($allAreas, 0, 12);
+    } else {
+        $start = max(0, $idx - 6);
+        $nearby = array_slice($allAreas, $start, 14);
+        $nearby = array_values(array_filter($nearby, function ($a) use ($areaName) {
+            return $a !== $areaName;
+        }));
+        $nearby = array_slice($nearby, 0, 12);
+    }
 }
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
@@ -232,7 +237,7 @@ $schema = [
                 The buildings we usually see are <?= htmlspecialchars($areaProfile['stock'], ENT_QUOTES, 'UTF-8') ?>.
                 Local priority on this page: <?= htmlspecialchars($areaProfile['focus'], ENT_QUOTES, 'UTF-8') ?>.
                 Fire alarms, AOV and smoke control, nurse call, and vehicle barriers are covered here.
-                Other trades are indexed when the town is Greater Manchester or Burnley.
+                Other trades are indexed when the town is in Greater Manchester.
             </p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
                 The office is 17 Woodlands Park Road, Offerton, Stockport SK2 5DE. Visits in
@@ -256,7 +261,7 @@ $schema = [
 </section>
 
 <!-- POPULAR KEYWORD × THIS AREA (EICR report, FRA, gas cert, etc.) -->
-<section class="max-w-7xl mx-auto px-6 py-16">
+<section class="related-links max-w-7xl mx-auto px-6 py-16">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
         <div>
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local keyword pages</div>
