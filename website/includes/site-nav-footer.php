@@ -115,6 +115,14 @@ function icomplyFooterHtml(): string
     $privacy = icomplyNavH($n['legal'][0]['href']);
     $terms = icomplyNavH($n['legal'][1]['href']);
     $siteMap = icomplyNavH($n['legal'][2]['href']);
+    $jobsHub = icomplyNavH(url('/pages/jobs'));
+    $mfrHub = icomplyNavH(url('/pages/manufacturers/index.php'));
+    $directories = icomplyNavH(url('/directories'));
+    $products = icomplyNavH(url('/products'));
+    $commercial = icomplyNavH(url('/pages/commercial'));
+    $packages = icomplyNavH(url('/pages/packages'));
+    $resources = icomplyNavH(url('/pages/resources'));
+    $shopHub = icomplyNavH('/shop/');
 
     return <<<HTML
 <footer class="site-footer" data-site-footer>
@@ -124,7 +132,7 @@ function icomplyFooterHtml(): string
       <p>Property compliance — electrical, fire, water hygiene and asbestos surveys across Greater Manchester and the North West. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered. Quotes are POA until scope is confirmed. Call {$phone}.</p>
       <p><span class="foot-label">Phone</span> <a href="{$phoneHref}">{$phone}</a></p>
       <p><span class="foot-label">Email</span> <a href="mailto:{$email}">{$email}</a></p>
-      <p><span class="foot-label">Address</span> 17 Woodlands Park Road, Offerton, Stockport SK2 5DE</p>
+      <p><span class="foot-label">Address</span> 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE</p>
       {$social}
       <div class="foot-cta-row">
         <a class="foot-cta foot-cta--wa" href="https://wa.me/{$wa}?text=Hi%20iComply%2C%20I%20need%20a%20quote" target="_blank" rel="noopener">WhatsApp</a>
@@ -132,6 +140,22 @@ function icomplyFooterHtml(): string
       </div>
     </div>
     {$featuredCards}
+    <nav class="foot-families" aria-label="Page families">
+      <a href="{$svcHub}">Services</a>
+      <a href="{$areaHub}">Areas</a>
+      <a href="{$kwHub}">Keywords</a>
+      <a href="{$jobsHub}">Jobs</a>
+      <a href="{$mfrHub}">Manufacturers</a>
+      <a href="{$commercial}">Commercial</a>
+      <a href="{$packages}">Packages</a>
+      <a href="{$resources}">Resources</a>
+      <a href="{$shopHub}">Shop</a>
+      <a href="{$products}">Products</a>
+      <a href="{$directories}">Directories</a>
+      <a href="{$contact}">Contact</a>
+      <a href="{$privacy}">Privacy</a>
+      <a href="{$terms}">Terms</a>
+    </nav>
     <div class="foot-drops">
       <details class="foot-drop" open>
         <summary>Services <span>({$svcCount})</span></summary>
@@ -189,6 +213,10 @@ function icomplyFooterHtml(): string
         <a href="{$subcontract}">Work with us</a>
         <a href="{$privacy}">Privacy</a>
         <a href="{$terms}">Terms</a>
+        <a href="{$jobsHub}">Jobs</a>
+        <a href="{$mfrHub}">Manufacturers</a>
+        <a href="{$directories}">Directories</a>
+        <a href="{$products}">Products</a>
         <a href="{$siteMap}">Site map</a>
       </div>
     </div>

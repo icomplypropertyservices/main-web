@@ -6,6 +6,7 @@
  * index,follow. Other places, including the nationwide gazetteer, stay noindex.
  */
 import { renderVariantPage, renderVariantSitemap } from "../lib/variant-matrix.js";
+import { breadcrumbHtml, isGmTown, matrixRelatedHtml } from "../lib/link-blocks.js";
 
 const RESERVED = new Set([
   "keywords", "services", "areas", "manufacturers", "resources", "packages",
@@ -42,7 +43,7 @@ const VISIT_STYLES = [
   "a survey followed by a return visit for the agreed scope",
 ];
 
-const GAS_SENTENCE = "Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.";
+const GAS_SENTENCE = "Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.";
 const SUBCONTRACT_SENTENCE = "The work is carried out by relevant qualified people. Where a visit needs a specialist ticket, iComply uses approved subcontractors.";
 
 function hashStr(value) {
@@ -308,23 +309,6 @@ export function renderTownPage(input) {
     `Ask for ${subject} in ${place.name} by phone on 07517806082 or through the contact form. Say which building, whether it is occupied, and whether you need ${visit}. The reply quotes the work as POA and names the ${serviceName.toLowerCase()} scope before a date is fixed.`,
   ].filter(Boolean);
 
-  const relatedKeywords = (serviceKeywords[serviceSlug] || []).slice(0, 3);
-  const keywordLinks = relatedKeywords
-    .filter((slug) => keywords[slug])
-    .map((slug) => `<li><a href="/pages/keywords/${slug}/${townSlug}">${escapeHtml(keywords[slug].name)} in ${escapeHtml(place.name)}</a></li>`)
-    .join("");
-  const neighbourLinks = neighbours.slice(0, 3).map((name) => {
-    const slug = name.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-    if (!slug || slug === townSlug) return "";
-    const href = kind === "keyword"
-      ? `/pages/keywords/${input.keyword}/${slug}`
-      : kind === "job"
-        ? `/pages/jobs/${input.job}/${slug}`
-        : kind === "manufacturer"
-          ? `/pages/manufacturers/${input.brand}/${slug}`
-          : `/pages/${serviceSlug}/${slug}`;
-    return `<li><a href="${href}">${escapeHtml(subject)} in ${escapeHtml(name)}</a></li>`;
-  }).join("");
   const hubHref = kind === "keyword"
     ? `/pages/keywords/${input.keyword}`
     : kind === "job"
@@ -332,6 +316,27 @@ export function renderTownPage(input) {
       : kind === "manufacturer"
         ? `/pages/manufacturers/${input.brand}`
         : `/pages/services/${serviceSlug}`;
+  const relatedHtml = matrixRelatedHtml(catalogue, {
+    kind,
+    subject,
+    serviceSlug,
+    serviceName,
+    townSlug,
+    townName: place.name,
+    keyword: input.keyword || "",
+    job: input.job || "",
+    brand: input.brand || "",
+    selfPath: path,
+  });
+  const crumbItems = [
+    { href: "/", label: "Home" },
+    { href: hubHref, label: subject },
+  ];
+  if (isGmTown(townSlug)) {
+    crumbItems.push({ href: `/pages/areas/${townSlug}`, label: place.name });
+  }
+  crumbItems.push({ label: `${subject} in ${place.name}` });
+  const crumbs = breadcrumbHtml(crumbItems);
 
   const faqs = [
     [
@@ -402,9 +407,10 @@ export function renderTownPage(input) {
 </head>
 <body>
 <header>
-<p><a href="/">iComply Property Services</a> · <a href="/pages/services">Services</a> · <a href="/pages/keywords">Keywords</a> · <a href="/contact">Contact</a></p>
+<p><a href="/">iComply Property Services</a> · <a href="/pages/services">Services</a> · <a href="/pages/jobs">Jobs</a> · <a href="/pages/keywords">Keywords</a> · <a href="/pages/areas">Areas</a> · <a href="/pages/manufacturers">Manufacturers</a> · <a href="/directories">Directories</a> · <a href="/contact">Contact</a></p>
 </header>
 <main>
+${crumbs}
 <h1>${escapeHtml(h1)}</h1>
 <figure>
 <img src="${imageSrc}" alt="${escapeHtml(imageAlt)}" width="1200" height="630">
@@ -418,14 +424,7 @@ ${bodyHtml}
 <ul>${focusHtml}</ul>
 <h2>Quote</h2>
 <p>The quote is price on application (POA). Published list prices on other iComply pages are not a price for this ${escapeHtml(place.name)} visit.</p>
-<h2>Nearby ${escapeHtml(subject)}</h2>
-<ul>
-<li><a href="${hubHref}">${escapeHtml(subject)} hub</a></li>
-<li><a href="/pages/services/${serviceSlug}">${escapeHtml(serviceName)}</a></li>
-<li><a href="/pages/areas">Areas covered from Stockport</a></li>
-${keywordLinks}
-${neighbourLinks}
-</ul>
+${relatedHtml}
 <h2>Questions about ${escapeHtml(place.name)}</h2>
 ${faqHtml}
 </article>

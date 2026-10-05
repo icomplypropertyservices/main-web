@@ -474,13 +474,15 @@ $contactSchema = [
                         <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#0B1F3A] hover:text-[#ff6b00] transition">All services →</a>
                         <a href="<?= url('/pages/manufacturers/index.php') ?>" class="text-sm font-semibold text-[#0B1F3A] hover:text-[#ff6b00] transition">Manufacturers we install →</a>
                         <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#0B1F3A] hover:text-[#ff6b00] transition">Areas we cover →</a>
+                        <a href="<?= url('/pages/jobs') ?>" class="text-sm font-semibold text-[#0B1F3A] hover:text-[#ff6b00] transition">Job types →</a>
+                        <a href="<?= url('/directories') ?>" class="text-sm font-semibold text-[#0B1F3A] hover:text-[#ff6b00] transition">Listings and directories →</a>
                         <a href="/shop/" class="text-sm font-semibold text-[#0B1F3A] hover:text-[#ff6b00] transition">Trade shop →</a>
                     </div>
                 </div>
 
                 <div class="bg-white border border-zinc-200 rounded-3xl p-6 md:p-8">
                     <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Base</div>
-                    <h3 class="text-lg font-semibold text-black mt-2">Stockport SK2 5DE</h3>
+                    <h3 class="text-lg font-semibold text-black mt-2">Stockport, Cheshire SK2 5DE</h3>
                     <p class="mt-2 text-sm text-zinc-600 leading-relaxed">
                         <?= htmlspecialchars(ADDRESS, ENT_QUOTES, 'UTF-8') ?>. Local engineers serving Greater Manchester and the wider North West.
                     </p>

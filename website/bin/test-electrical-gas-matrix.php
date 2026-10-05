@@ -149,7 +149,7 @@ foreach ($am[1] as $i => $first) {
         $badAreaLinks[] = $first . '/' . $town;
     }
 }
-$ok($badAreaLinks === [] && str_contains($areaHub, 'noindex'), 'area hub links real towns and is noindex' . ($badAreaLinks ? ' bad=' . implode(',', array_slice($badAreaLinks, 0, 4)) : ''));
+$ok($badAreaLinks === [] && str_contains($areaHub, 'index, follow') && !str_contains($areaHub, 'noindex'), 'Stockport area hub links real towns and is indexable' . ($badAreaLinks ? ' bad=' . implode(',', array_slice($badAreaLinks, 0, 4)) : ''));
 
 echo str_repeat('=', 56) . "\n";
 echo "PASS={$pass} FAIL={$fail}\n";

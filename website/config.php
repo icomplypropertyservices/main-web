@@ -13,7 +13,7 @@ $siteDefaults = [
     'EMAIL' => 'info@icomplypropertyservices.co.uk',
     // Lead form notify address (empty = use EMAIL)
     'LEADS_NOTIFY_EMAIL' => '',
-    'ADDRESS' => '17 Woodlands Park Road, Offerton, Stockport, SK2 5DE',
+    'ADDRESS' => '17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE',
     'WHATSAPP' => '447517806082',
     'ADMIN_USER' => 'admin',
     // Never commit real passwords — set ADMIN_PASS in config.local.php
@@ -365,6 +365,28 @@ function icomplyIsTier1Area(string $areaOrSlug): bool
 }
 
 /**
+ * Greater Manchester area slug (borough or town on the published GM list).
+ */
+function icomplyIsGreaterManchesterAreaSlug(string $areaOrSlug): bool
+{
+    static $set = null;
+    if ($set === null) {
+        $set = [];
+        $file = __DIR__ . '/includes/building-hub-copy.php';
+        if (!function_exists('icomplyGreaterManchesterTownNames') && is_file($file)) {
+            require_once $file;
+        }
+        if (function_exists('icomplyGreaterManchesterTownNames')) {
+            foreach (icomplyGreaterManchesterTownNames() as $name) {
+                $set[areaSlug((string)$name)] = true;
+            }
+        }
+    }
+    $slug = areaSlug($areaOrSlug);
+    return $slug !== '' && isset($set[$slug]);
+}
+
+/**
  * In tiered mode, keyword×area pages, shared area-town templates, and service×town
  * pages without a bespoke article stay live (200) but are not indexable. Manchester
  * and Burnley use the featured area index and stay indexable. A service×town URL is
@@ -386,9 +408,13 @@ function icomplyPathIsIndexable(string $path): bool
     if (preg_match('#^/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+$#', $path)) {
         return false;
     }
-    // Shared area templates are noindex. Featured service indexes stay indexable.
+    // Greater Manchester area hubs are indexable. Other shared area templates stay noindex.
+    // Manchester and Burnley remain indexable as featured hubs (Burnley is outside GM).
     if (preg_match('#^/pages/areas/([a-z0-9\-]+)$#', $path, $areaMatch)) {
-        return function_exists('isFeaturedAreaIndexHub') && isFeaturedAreaIndexHub($areaMatch[1]);
+        if (function_exists('isFeaturedAreaIndexHub') && isFeaturedAreaIndexHub($areaMatch[1])) {
+            return true;
+        }
+        return icomplyIsGreaterManchesterAreaSlug($areaMatch[1]);
     }
     if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         $reserved = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'jobs'];

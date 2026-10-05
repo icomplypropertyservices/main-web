@@ -77,6 +77,10 @@ $required = [
     '/pages/keywords/boiler</loc>',
     '/pages/areas/manchester</loc>',
     '/pages/areas/burnley</loc>',
+    '/pages/areas/stockport</loc>',
+    '/pages/areas/wigan</loc>',
+    '/pages/jobs</loc>',
+    '/directories</loc>',
     '/pages/manufacturers/abb</loc>',
     '/become-a-subcontractor</loc>',
     '/privacy</loc>',
@@ -247,9 +251,13 @@ if ($indexMode === 'tiered') {
         $fail++;
         echo "FAIL: tiered sitemap lists a 404\n";
     }
-    if (str_contains($xml, '/pages/areas/stockport</loc>')) {
+    if (!str_contains($xml, '/pages/areas/stockport</loc>') || !str_contains($xml, '/pages/areas/wigan</loc>') || !str_contains($xml, '/pages/areas/altrincham</loc>')) {
         $fail++;
-        echo "FAIL: tiered sitemap lists a noindex area town\n";
+        echo "FAIL: tiered sitemap missing a Greater Manchester area hub\n";
+    }
+    if (str_contains($xml, '/pages/areas/liverpool</loc>')) {
+        $fail++;
+        echo "FAIL: tiered sitemap lists a non-GM area hub\n";
     }
     if (!str_contains($xml, '/pages/areas/manchester</loc>') || !str_contains($xml, '/pages/areas/burnley</loc>')) {
         $fail++;
@@ -261,6 +269,10 @@ $committed = is_file(SITE_ROOT . '/sitemap.xml') ? (string)file_get_contents(SIT
 foreach ([
     '/pages/areas/manchester</loc>',
     '/pages/areas/burnley</loc>',
+    '/pages/areas/stockport</loc>',
+    '/pages/areas/wigan</loc>',
+    '/pages/jobs</loc>',
+    '/directories</loc>',
     '/pages/areas</loc>',
 ] as $need) {
     if (!str_contains($committed, $need)) {
@@ -271,7 +283,7 @@ foreach ([
 foreach ([
     '/pages/ev-chargers</loc>',
     '/pages/manufacturers/tunstall</loc>',
-    '/pages/areas/stockport</loc>',
+    '/pages/areas/liverpool</loc>',
     '/pages/electrical/stockport</loc>',
     '/pages/keywords/rewire/stockport</loc>',
 ] as $ban) {

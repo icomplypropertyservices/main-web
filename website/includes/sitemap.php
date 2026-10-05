@@ -144,11 +144,14 @@ function icomplySitemapEntries(): array
         if (preg_match('#^/pages/nurse-call/[a-z0-9\-]+$#', $path)) {
             return;
         }
-        // Shared area templates are noindex. Featured indexes (Manchester, Burnley) stay.
+        // Greater Manchester area hubs are indexable and served by the router
+        // (only Manchester and Burnley have stub files). Other area templates stay out.
+        $isPublishedAreaHub = false;
         if (preg_match('#^/pages/areas/[a-z0-9\-]+$#', $path)) {
             if (!function_exists('icomplyPathIsIndexable') || !icomplyPathIsIndexable($path)) {
                 return;
             }
+            $isPublishedAreaHub = true;
         }
         // Hard reject /pages/{service}/{town} even if a leftover matrix file
         // sits in dist/. Those pretty URLs 301 to the service hub. Keep hub
@@ -172,7 +175,7 @@ function icomplySitemapEntries(): array
             $isManufacturerHub = is_array($brandEntry);
             $isBarrierBrandLoc = $isManufacturerHub && in_array('barriers', $brandEntry['services'] ?? [], true);
         }
-        if (!$isKeywordLoc && !$isTownLoc && !$isMfrTown && !$isBarrierBrandLoc && !$isManufacturerHub && !icomplySitemapUrlHasFile($path)) {
+        if (!$isKeywordLoc && !$isTownLoc && !$isMfrTown && !$isBarrierBrandLoc && !$isManufacturerHub && !$isPublishedAreaHub && !icomplySitemapUrlHasFile($path)) {
             return;
         }
         $seen[$path] = true;
@@ -220,6 +223,8 @@ function icomplySitemapEntries(): array
         ['/pages/packages/fire-ready', '0.78', 'pages/packages/fire-ready.php'],
         ['/pages/services', '0.95', 'pages/services.php'],
         ['/pages/areas', '0.9', 'pages/areas.php'],
+        ['/pages/jobs', '0.85', 'pages/jobs/index.php'],
+        ['/directories', '0.45', 'directories.php'],
         ['/pages/areas/manchester', '0.8', 'pages/areas/manchester.php'],
         ['/pages/areas/burnley', '0.8', 'pages/areas/burnley.php'],
         ['/pages/manufacturers', '0.9', 'pages/manufacturers.php'],
