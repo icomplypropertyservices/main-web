@@ -349,7 +349,7 @@ foreach (['generated' => $xml, 'committed' => $committed] as $label => $blob) {
 }
 
 $redirectCases = [
-    '/pages/keywords/access-control-near-me/burnley' => '/pages/keywords/access-control-near-me',
+    '/pages/keywords/eicr/burnley' => '/pages/keywords/eicr',
     '/pages/keywords/rewire/liverpool' => '/pages/keywords/rewire',
     '/pages/access-control/burnley' => '/pages/services/access-control',
     '/pages/areas/liverpool' => '/pages/areas',
@@ -382,6 +382,8 @@ $stayCases = [
     '/pages/aov-air-handling/blackpool',
     '/pages/areas/stockport',
     '/pages/keywords/eicr/stockport',
+    '/pages/keywords/access-control-near-me/burnley',
+    '/pages/jobs/cctv-installation/burnley',
     '/pages/electrical/stockport',
     '/pages/nurse-call/manchester',
     '/pages/services/electrical',

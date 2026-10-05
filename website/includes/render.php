@@ -128,8 +128,19 @@ function renderServiceAreaPage(string $serviceSlug, string $area): void {
  * Keyword guide page.
  */
 function renderKeywordPage(string $slug): void {
-    $keywords = getMajorKeywords();
     $slug = keywordSlug($slug);
+    if (!function_exists('securityDualRingIntent')) {
+        $security = SITE_ROOT . '/includes/security-dual-ring.php';
+        if (is_file($security)) {
+            require_once $security;
+        }
+    }
+    if (function_exists('securityDualRingSurfaceOk') && securityDualRingSurfaceOk('keyword', $slug)) {
+        securityDualRingRender('keyword', $slug, '');
+        icomplyRequestExit();
+        return;
+    }
+    $keywords = getMajorKeywords();
     if (!isset($keywords[$slug])) {
         http_response_code(404);
         echo 'Keyword not found';
@@ -273,8 +284,21 @@ function keywordTemplatePlaceholders(
  * Keyword × area landing page (e.g. EICR Report in Stockport).
  */
 function renderKeywordAreaPage(string $keywordSlug, string $area): void {
-    $keywords = getMajorKeywords();
     $keywordSlug = keywordSlug($keywordSlug);
+    $areaSlugVal = function_exists('areaSlug') ? areaSlug($area) : strtolower($area);
+    if (!function_exists('securityDualRingHandlesPath')) {
+        $security = SITE_ROOT . '/includes/security-dual-ring.php';
+        if (is_file($security)) {
+            require_once $security;
+        }
+    }
+    if (function_exists('securityDualRingHandlesPath')
+        && securityDualRingHandlesPath('/pages/keywords/' . $keywordSlug . '/' . $areaSlugVal)) {
+        securityDualRingRender('keyword', $keywordSlug, $areaSlugVal);
+        icomplyRequestExit();
+        return;
+    }
+    $keywords = getMajorKeywords();
     if (!isset($keywords[$keywordSlug])) {
         http_response_code(404);
         echo 'Keyword not found';

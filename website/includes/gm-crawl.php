@@ -3,6 +3,7 @@
  * Greater Manchester crawl allowlist for local matrices.
  * Area hubs, keyword×town, local service×town, job×town and manufacturer×town
  * use these 60 towns. AOV, barriers and fire-family town pages stay UK-wide.
+ * Security P0 keyword×town and job×town stay on the dual 269 ring.
  */
 declare(strict_types=1);
 
@@ -57,6 +58,16 @@ function icomplyNonGmMatrixRedirect(string $path): ?string
     $path = preg_replace('#\.php$#i', '', $path) ?? $path;
     $path = preg_replace('#/index$#i', '', $path) ?? $path;
     $path = rtrim($path, '/') ?: '/';
+
+    if (!function_exists('securityDualRingHandlesPath')) {
+        $security = __DIR__ . '/security-dual-ring.php';
+        if (is_file($security)) {
+            require_once $security;
+        }
+    }
+    if (function_exists('securityDualRingHandlesPath') && securityDualRingHandlesPath($path)) {
+        return null;
+    }
 
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         return icomplyCrawlTownSlug($m[2]) ? null : '/pages/keywords/' . $m[1];
