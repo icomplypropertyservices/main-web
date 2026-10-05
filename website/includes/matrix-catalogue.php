@@ -24,7 +24,7 @@ function icomplyMatrixSlug(string $value): string
     return preg_match('/^[a-z0-9]+(?:-[a-z0-9]+)*$/', $slug) ? $slug : '';
 }
 
-/** Fire, barriers and AOV use the nationwide gazetteer as well as the core towns. */
+/** Named here so older catalogue files still load. Sitemap area pages stay on the published town list, which includes Greater Manchester. */
 function icomplyMatrixFamilyServiceSlugs(): array
 {
     return [
@@ -181,6 +181,25 @@ function icomplyMatrixSelectPlaces(int $wanted): array
                 'neighbours' => [],
                 'source' => 'mainland-areas',
             ], 20);
+        }
+    }
+
+    $gmCopy = SITE_ROOT . '/includes/building-hub-copy.php';
+    if (!function_exists('icomplyGreaterManchesterTownNames') && is_file($gmCopy)) {
+        require_once $gmCopy;
+    }
+    if (function_exists('icomplyGreaterManchesterTownNames')) {
+        $gmSlugs = [];
+        foreach (icomplyGreaterManchesterTownNames() as $gmName) {
+            $gmSlug = icomplyMatrixSlug((string)$gmName);
+            if ($gmSlug !== '') {
+                $gmSlugs[$gmSlug] = true;
+            }
+        }
+        foreach ($bySlug as $slug => $row) {
+            if (isset($gmSlugs[$slug])) {
+                $bySlug[$slug]['tier'] = 0;
+            }
         }
     }
 
@@ -563,6 +582,13 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
         'excluded' => icomplyMatrixExcludedServiceSlugs(),
         'family' => $family,
     ]));
+    if (!function_exists('icomplyKeywordVariantCatalogue')) {
+        require_once __DIR__ . '/keyword-variants.php';
+    }
+    $variantCatalogue = icomplyKeywordVariantCatalogue();
+    $variantMeta = icomplyKeywordVariantCounts($variantCatalogue);
+    file_put_contents($assetDir . '/variants.json', icomplyMatrixJson($variantCatalogue));
+    file_put_contents($dist . '/variant-stats.json', json_encode($variantMeta, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . "\n");
 
     $hubXml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
     $hubXml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
@@ -626,43 +652,18 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
     }
 
     $coreKeys = array_keys($places);
-    $nationKeys = array_keys($nationwide);
-    $extraTowns = array_values(array_diff($nationKeys, $coreKeys));
-    $familySet = array_fill_keys($family, true);
     $familyKeywordTown = 0;
-    foreach ($keywords as $keywordSlug => $meta) {
-        $serviceSlug = (string)($meta['service'] ?? '');
-        if (!isset($familySet[$serviceSlug])) {
-            continue;
-        }
-        foreach ($extraTowns as $placeSlug) {
-            $writeLoc('/pages/keywords/' . $keywordSlug . '/' . $placeSlug);
-            $familyKeywordTown++;
-        }
-    }
     $familyServiceTown = 0;
-    foreach (array_keys($services) as $serviceSlug) {
-        if (!isset($familySet[$serviceSlug])) {
-            continue;
-        }
-        foreach ($extraTowns as $placeSlug) {
-            $writeLoc('/pages/' . $serviceSlug . '/' . $placeSlug);
-            $familyServiceTown++;
-        }
-    }
-    $familyTowns = array_values(array_unique(array_merge($coreKeys, $nationKeys)));
     $manufacturerTown = 0;
-    foreach ($manufacturers as $brandSlug => $meta) {
-        $towns = !empty($meta['nationwide']) ? $familyTowns : $coreKeys;
-        foreach ($towns as $placeSlug) {
+    foreach (array_keys($manufacturers) as $brandSlug) {
+        foreach ($coreKeys as $placeSlug) {
             $writeLoc('/pages/manufacturers/' . $brandSlug . '/' . $placeSlug);
             $manufacturerTown++;
         }
     }
     $jobTown = 0;
-    foreach ($jobs as $jobSlug => $meta) {
-        $towns = !empty($meta['nationwide']) ? $familyTowns : $coreKeys;
-        foreach ($towns as $placeSlug) {
+    foreach (array_keys($jobs) as $jobSlug) {
+        foreach ($coreKeys as $placeSlug) {
             $writeLoc('/pages/jobs/' . $jobSlug . '/' . $placeSlug);
             $jobTown++;
         }
@@ -678,6 +679,10 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
     $index .= '  <sitemap><loc>' . $base . '/sitemap0.xml</loc></sitemap>' . "\n";
     foreach ($chunkPaths as $name) {
         $index .= '  <sitemap><loc>' . $base . '/' . $name . '</loc></sitemap>' . "\n";
+    }
+    $variantPartCount = (int)($variantMeta['sitemap_parts'] ?? 0);
+    for ($variantPart = 0; $variantPart < $variantPartCount; $variantPart++) {
+        $index .= '  <sitemap><loc>' . $base . '/matrix-sitemap/' . $variantPart . '.xml</loc></sitemap>' . "\n";
     }
     $index .= '</sitemapindex>' . "\n";
     file_put_contents($dist . '/sitemap.xml', $index);
@@ -743,6 +748,14 @@ JS);
         'manufacturer_town_urls' => $manufacturerTown,
         'job_town_urls' => $jobTown,
         'sitemap_urls' => $sitemapUrls,
+        'variant_services' => $variantMeta['services'] ?? 0,
+        'variant_towns' => $variantMeta['towns'] ?? 0,
+        'variant_keywords_per_service' => $variantMeta['keywords_per_service'] ?? 0,
+        'variant_hubs' => $variantMeta['hubs'] ?? 0,
+        'variant_area_pages' => $variantMeta['area_pages'] ?? 0,
+        'variant_urls' => $variantMeta['urls'] ?? 0,
+        'variant_sitemap_parts' => $variantMeta['sitemap_parts'] ?? 0,
+        'variant_per_service' => $variantMeta['per_service'] ?? [],
         'sitemap_parts' => array_merge(['sitemap.xml', 'sitemap0.xml'], $chunkPaths),
         'url_list' => '/sitemap-urls.txt',
         'blocker' => $sitemapUrls >= ICOMPLY_MATRIX_URL_TARGET
@@ -762,6 +775,7 @@ JS);
         . ' family_service×town=' . $familyServiceTown
         . ' manufacturer×town=' . $manufacturerTown
         . ' job×town=' . $jobTown
-        . ' sitemap_urls=' . $sitemapUrls . "\n");
+        . ' sitemap_urls=' . $sitemapUrls
+        . ' variant_urls=' . ($variantMeta['urls'] ?? 0) . "\n");
     return $stats;
 }

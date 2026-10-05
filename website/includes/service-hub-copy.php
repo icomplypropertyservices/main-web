@@ -5,6 +5,11 @@
  */
 declare(strict_types=1);
 
+$buildingHubCopy = __DIR__ . '/building-hub-copy.php';
+if (is_file($buildingHubCopy)) {
+    require_once $buildingHubCopy;
+}
+
 /**
  * @return array<string,mixed>|null
  */
@@ -149,6 +154,12 @@ function icomplyServiceHubCopy(string $slug): ?array
             'quote_placeholder' => 'Postcode, radiators or controls, any gas appliances on site…',
         ];
     }
+    if (function_exists('icomplyBuildingHubCopy')) {
+        $building = icomplyBuildingHubCopy($slug);
+        if ($building) {
+            return $building;
+        }
+    }
     return null;
 }
 
@@ -160,6 +171,12 @@ function icomplyServiceHubCopy(string $slug): ?array
 function icomplyServiceHubLinks(string $slug): array
 {
     $slug = areaSlug($slug);
+    if (function_exists('icomplyBuildingHubLinks')) {
+        $buildingLinks = icomplyBuildingHubLinks($slug);
+        if ($buildingLinks) {
+            return $buildingLinks;
+        }
+    }
     $curated = [
         'electrical' => [
             ['/pages/electrical-safety-landlords', 'Landlord electrical safety'],

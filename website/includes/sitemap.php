@@ -710,8 +710,27 @@ function icomplyWriteSitemapFiles(string $baseUrl): array
  * Publish only allowlisted locs whose HTML was actually written into dist.
  * @return array{urls:int,file:string}
  */
+function icomplyDistMatrixSitemapIsPublished(string $dist): bool
+{
+    $index = $dist . '/sitemap.xml';
+    $stats = $dist . '/matrix-stats.json';
+    if (!is_file($index) || !is_file($stats)) {
+        return false;
+    }
+    $head = (string)file_get_contents($index, false, null, 0, 500);
+    return str_contains($head, '<sitemapindex');
+}
+
 function icomplyWriteSitemapForDist(string $dist, string $baseUrl): array
 {
+    if (icomplyDistMatrixSitemapIsPublished($dist)) {
+        icomplyDeleteSitemapChunks($dist);
+        return [
+            'urls' => 0,
+            'file' => $dist . '/sitemap.xml',
+            'kept_matrix' => true,
+        ];
+    }
     $entries = [];
     foreach (icomplySitemapEntries() as $entry) {
         if (icomplyDistHasPage($dist, $entry['path'])) {
