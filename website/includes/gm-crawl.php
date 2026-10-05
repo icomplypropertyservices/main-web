@@ -9,6 +9,8 @@
  */
 declare(strict_types=1);
 
+require_once __DIR__ . '/fire-alarm-installer.php';
+
 /** @return list<array{slug:string,name:string,bucket:string}> */
 function icomplyDualRingTownRows(): array
 {
@@ -132,6 +134,9 @@ function icomplyNonGmMatrixRedirect(string $path): ?string
     $path = rtrim($path, '/') ?: '/';
 
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        if (icomplyFireAlarmInstallerNationwidePath($path)) {
+            return null;
+        }
         return icomplyLocalTownSlug($m[2]) ? null : '/pages/keywords/' . $m[1];
     }
     if (preg_match('#^/pages/manufacturers/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {

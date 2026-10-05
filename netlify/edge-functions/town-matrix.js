@@ -9,6 +9,46 @@
 import { renderVariantPage, renderVariantSitemap } from "../lib/variant-matrix.js";
 import { breadcrumbHtml, isGmTown, isLocalTown, matrixRelatedHtml } from "../lib/link-blocks.js";
 import { gmTownBlurb } from "../lib/gm-blurbs.js";
+import fireAlarmFamily from "../../website/data/fire-alarm-installer-family.json" with { type: "json" };
+import mainlandTownDoc from "../../website/data/uk-mainland-towns-10k.json" with { type: "json" };
+
+const FIRE_P0 = new Set(fireAlarmFamily.p0 || []);
+const FIRE_HUBS = new Set(fireAlarmFamily.hubs || []);
+const MAINLAND_TOWNS = (mainlandTownDoc.towns || []).filter((town) => town && town.slug && Number(town.population) > 10000);
+const MAINLAND = new Map(MAINLAND_TOWNS.map((town) => [town.slug, town]));
+const NEAREST_MAINLAND = new Map();
+
+function haversineMiles(a, b) {
+  const earth = 3958.8;
+  const dLat = ((b.lat - a.lat) * Math.PI) / 180;
+  const dLon = ((b.lng - a.lng) * Math.PI) / 180;
+  const lat1 = (a.lat * Math.PI) / 180;
+  const lat2 = (b.lat * Math.PI) / 180;
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLon / 2) ** 2;
+  return earth * (2 * Math.atan2(Math.sqrt(h), Math.sqrt(Math.max(0, 1 - h))));
+}
+
+function nearestMainland(slug, limit = 12) {
+  const key = `${slug}:${limit}`;
+  if (NEAREST_MAINLAND.has(key)) return NEAREST_MAINLAND.get(key);
+  const here = MAINLAND.get(slug);
+  if (!here) return [];
+  const ranked = MAINLAND_TOWNS
+    .filter((town) => town.slug !== slug)
+    .map((town) => ({ town, miles: haversineMiles(here, town) }))
+    .sort((a, b) => a.miles - b.miles)
+    .slice(0, limit)
+    .map((row) => row.town);
+  NEAREST_MAINLAND.set(key, ranked);
+  return ranked;
+}
+
+function fireInstallerNationwide(keyword, town) {
+  return FIRE_P0.has(keyword) && MAINLAND.has(town);
+}
+
+const FIRE_DUTY = "Design, installation and commissioning follow BS 5839. Competent fire alarm engineers carry out the visit. iComply does not claim BAFE or NSI badges.";
+const FIRE_NAP = "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE";
 
 const RESERVED = new Set([
   "keywords", "services", "areas", "manufacturers", "resources", "packages",
@@ -255,9 +295,19 @@ export function renderTownPage(input) {
   const townSlug = input.town;
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(townSlug || "")) return null;
   const resolved = resolvePlace(townSlug, catalogue);
-  const place = resolved.place;
+  const place = { ...resolved.place };
   const tier = resolved.tier;
-  const indexable = keywordKnown && !keyword.synthetic && tier === "core";
+  const fireTown = kind === "keyword" && fireInstallerNationwide(input.keyword, townSlug);
+  const fireFamily = kind === "keyword" && FIRE_HUBS.has(input.keyword);
+  const mainlandPlace = fireTown ? MAINLAND.get(townSlug) : null;
+  if (mainlandPlace) {
+    place.name = mainlandPlace.name || place.name;
+    place.region = mainlandPlace.region || place.region;
+    place.country = mainlandPlace.nation || place.country;
+    place.population = Number(mainlandPlace.population) || place.population;
+    place.county = mainlandPlace.county || "";
+  }
+  const indexable = keywordKnown && !keyword.synthetic && (tier === "core" || fireTown);
   const robots = indexable ? "index, follow" : "noindex, follow";
   const seed = hashStr(`${kind}|${subject}|${serviceSlug}|${townSlug}`);
   const audience = pick(AUDIENCES, seed);
@@ -299,7 +349,17 @@ export function renderTownPage(input) {
   const localOnly = [place.housing ? housing : "", place.industry ? industry : "", place.population ? pop : ""]
     .filter(Boolean)
     .join(" ");
-  const paragraphs = prose ? [] : (localOnly ? [localOnly] : []);
+  const paragraphs = prose ? [] : [localOnly, "The quote is price on application."].filter(Boolean);
+  if (!prose && gas) {
+    paragraphs.push(GAS_SENTENCE);
+  }
+  if (fireTown || fireFamily) {
+    const county = place.county ? `${place.county}, ` : "";
+    const population = place.population
+      ? `Published population is about ${Number(place.population).toLocaleString("en-GB")}. `
+      : "";
+    paragraphs.push(`${subject} in ${place.name} is arranged from ${FIRE_NAP}. ${place.name} is in ${county}${place.region}, ${place.country}. ${population}${FIRE_DUTY} The quote is price on application.`);
+  }
 
   const hubHref = kind === "keyword"
     ? `/pages/keywords/${input.keyword}`
@@ -338,10 +398,16 @@ export function renderTownPage(input) {
   if (bits[1]) {
     faqs.push([`What should the ${place.name} file show before a quote?`, bits[1]]);
   }
-  if (gas && prose) {
+  if (gas && (prose || paragraphs.some((paragraph) => paragraph === GAS_SENTENCE))) {
     faqs.push([`Who carries out gas work for this ${place.name} visit?`, `${GAS_SENTENCE} ${bits[bits.length - 1] || ""}`.trim()]);
   } else if (bits[2]) {
     faqs.push([`How is the ${place.name} price decided?`, bits[2]]);
+  }
+  if (fireTown) {
+    faqs.push([
+      `Do you cover ${place.name} for ${subject}?`,
+      `${subject} in ${place.name} is arranged from ${FIRE_NAP}. ${FIRE_DUTY} The quote is price on application.`,
+    ]);
   }
   const faqHtml = faqs.map(([q, a]) => (
     `<details><summary>${escapeHtml(q)}</summary><p>${escapeHtml(a)}</p></details>`
@@ -412,6 +478,7 @@ ${crumbs}
 </figure>
 <article id="local-copy">
 ${bodyHtml}
+${fireTown ? `<p>Parent: <a href="/pages/keywords/${escapeHtml(input.keyword)}">${escapeHtml(subject)} guide</a> · <a href="/pages/services/fire-alarms">Fire alarms</a> · <a href="/pages/keywords">Keyword guides</a>${isGmTown(townSlug) ? ` · <a href="/pages/areas/${escapeHtml(townSlug)}">Property services in ${escapeHtml(place.name)}</a>` : ` · <a href="/pages/areas/stockport">Stockport area hub</a>`}</p><h2>Nearby mainland towns</h2><ul>${nearestMainland(townSlug, 12).map((near) => `<li><a href="/pages/keywords/${escapeHtml(input.keyword)}/${escapeHtml(near.slug)}">${escapeHtml(subject)} in ${escapeHtml(near.name)}</a></li>`).join("")}</ul>` : ""}
 ${relatedHtml}
 <h2>Questions about ${escapeHtml(place.name)}</h2>
 ${faqHtml}
@@ -501,9 +568,12 @@ function placeAliasRedirect(path) {
   return `/pages/${family}/${dest}`;
 }
 
-function nonGmMatrixRedirect(path) {
+export function nonGmMatrixRedirect(path) {
   let m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
-  if (m) return isLocalTown(m[2]) ? null : `/pages/keywords/${m[1]}`;
+  if (m) {
+    if (fireInstallerNationwide(m[1], m[2])) return null;
+    return isLocalTown(m[2]) ? null : `/pages/keywords/${m[1]}`;
+  }
   m = path.match(/^\/pages\/manufacturers\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   if (m) return isGmTown(m[2]) ? null : `/pages/manufacturers/${m[1]}`;
   m = path.match(/^\/pages\/jobs\/([a-z0-9-]+)\/([a-z0-9-]+)$/);

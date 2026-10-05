@@ -754,6 +754,9 @@ if (is_file($urlList)) {
             if (function_exists('icomplyNationwideTownPath') && icomplyNationwideTownPath($urlPath)) {
                 continue;
             }
+            if (function_exists('icomplyFireAlarmInstallerNationwidePath') && icomplyFireAlarmInstallerNationwidePath($urlPath)) {
+                continue;
+            }
             if (preg_match('#/(?:birmingham|london|cardiff)(?:/|$)#', $urlPath)
                 || preg_match('#-(?:birmingham|london|cardiff)$#', $urlPath)) {
                 $outsideLeaks++;

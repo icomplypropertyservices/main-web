@@ -582,6 +582,14 @@ function icomplyRenderExportRoute(string $path): array
         return icomplyRenderRoute($path);
     }
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        if (function_exists('icomplyFireAlarmInstallerNationwidePath') && icomplyFireAlarmInstallerNationwidePath($path)) {
+            ob_start();
+            icomplyRenderFireAlarmInstallerTown($m[1], $m[2]);
+            $html = (string)ob_get_clean();
+            if ($html !== '' && icomplyLooksLikeHtml($html)) {
+                return ['html' => $html, 'status' => 200];
+            }
+        }
         if (!icomplyExportTownOk($m[2])) {
             return ['html' => '', 'status' => 301];
         }

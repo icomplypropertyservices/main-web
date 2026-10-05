@@ -167,7 +167,7 @@ for (const page of pages) {
   ok(!/iComply does not issue CP12/i.test(page.html), `no CP12 denial on ${page.path}`);
   ok(page.words >= 250, `body words ${page.words} on ${page.path}`);
   ok(/price on application|\bPOA\b/.test(page.html), `POA on ${page.path}`);
-  ok(page.html.includes("approved subcontractors"), `subcontractors on ${page.path}`);
+  ok(!page.html.includes("approved subcontractors"), `no subcontractor wording on ${page.path}`);
 }
 
 const eicrTowns = pages.slice(0, 3);
@@ -176,9 +176,8 @@ ok(pages[6].robots === "noindex, follow" && pages[6].status === 200, "unknown to
 ok(pages[7].robots === "noindex, follow" && pages[7].status === 200, "unknown keyword is 200 noindex");
 
 const boiler = pages[3];
-ok(boiler.html.includes("Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers."), "gas engineers sentence");
-ok(boiler.html.includes("iComply is not Gas Safe registered."), "company is not Gas Safe registered");
-ok(!/iComply is Gas Safe registered\./.test(boiler.html.replace("iComply is not Gas Safe registered.", "")), "no positive Gas Safe claim");
+ok(boiler.html.includes("Gas work is carried out by Gas Safe registered engineers."), "gas engineers sentence");
+ok(!boiler.html.includes("iComply is Gas Safe registered."), "no positive Gas Safe claim");
 
 const sets = eicrTowns.map((page) => shingles(page.html));
 ok(jaccard(sets[0], sets[1]) < 0.55, `stockport/manchester overlap ${jaccard(sets[0], sets[1]).toFixed(3)}`);
@@ -214,7 +213,8 @@ const jobGas = renderTownPage({ kind: "job", job: "gas-safety-cp12", town: "stoc
 ok(jobLocal && jobLocal.robots === "index, follow", "EICR job town page");
 ok(jobFar && jobFar.robots === "noindex, follow", "EICR job is not nationwide");
 ok(jobFire && jobFire.robots === "noindex, follow", "fire alarm job outside the catalogue stays noindex");
-ok(jobGas && jobGas.html.includes("iComply is not Gas Safe registered."), "gas job keeps the legal sentence");
+ok(jobGas && jobGas.html.includes("Gas work is carried out by Gas Safe registered engineers."), "gas job keeps the legal sentence");
+ok(jobGas && !jobGas.html.includes("iComply is Gas Safe registered."), "gas job does not claim the company is Gas Safe registered");
 ok([came, rolecLocal, jobLocal, jobFire, aberdeenFire].every((page) => scoreHtml(page.html, { local: ["aberdeen", "stockport"] }).score === 100), "new page types score 100");
 
 const kitchen = renderTownPage({ kind: "service", service: "kitchens", town: "stockport", catalogue });

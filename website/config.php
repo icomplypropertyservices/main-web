@@ -410,6 +410,10 @@ function icomplyPathIsIndexable(string $path): bool
         $path = '/';
     }
     if (preg_match('#^/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+$#', $path)) {
+        if (function_exists('icomplyFireAlarmInstallerNationwidePath')
+            && icomplyFireAlarmInstallerNationwidePath($path)) {
+            return true;
+        }
         return false;
     }
     // Area hubs are indexable for the dual-ring allowlist, including Burnley.

@@ -53,6 +53,11 @@ jobs:
       - name: Town matrix page uniqueness
         run: node website/bin/check-matrix-pages.mjs
 
+      - name: Fire alarm installer family
+        env:
+          SITE_URL: https://icomplypropertyservices.co.uk
+        run: php website/bin/check-fire-alarm-installer.php && node website/bin/check-fire-alarm-installer-xtown.mjs
+
       - name: Static export
         env:
           SITE_URL: https://icomplypropertyservices.co.uk

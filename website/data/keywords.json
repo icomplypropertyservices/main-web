@@ -11070,31 +11070,33 @@
     "domestic-fire-alarm-installation": {
         "name": "Domestic Fire Alarm Installation",
         "service": "fire-alarms",
-        "related": "landlord-fire-alarm",
-        "intro": "Domestic fire alarm installation protects houses, flats and small residential premises with correctly sited smoke and heat detection to BS 5839-6. Icomply install interlinked alarms and Grade-appropriate systems for homeowners, landlords and agents across Greater Manchester and the North West. Based in Stockport, we specify LD categories that match layout and risk, fit tidy mains-powered units with backup where required, and leave simple test instructions for the household.",
-        "body": "We avoid kitchen smoke-alarm pitfalls by using heat detection where appropriate, cover landings and habitable levels, and consider CO detection alongside fire where fuel appliances exist. Landlord jobs include documentation for compliance folders. Upgrades from ageing battery-only units reduce the risk of silent failure when it matters.",
-        "meta_desc": "Domestic fire alarm installation to BS 5839-6. Homes, flats & landlords — Manchester & North West. Icomply.",
+        "related": "domestic-fire-alarm-installer",
+        "h1": "Domestic fire alarm installation",
+        "seo_title": "Domestic Fire Alarm Installation | UK | iComply",
+        "intro": "Domestic fire alarm installation protects houses, flats and small residential buildings with the Grade and Category BS 5839-6 requires. iComply installs interlinked systems for homeowners, landlords and agents across the UK mainland. The layout decides the devices. The quote is price on application.",
+        "body": "Kitchens get heat detection where smoke alarms would false-alarm. Landings and habitable rooms follow the category. Mains units with a standby supply are used when the standard requires them. Landlord jobs include the paperwork for the property file. We test every alarm with the household present and leave the weekly-test instruction. A commercial panel is not forced into a small house.",
+        "meta_desc": "Domestic fire alarm installation to BS 5839-6 for UK mainland homes and flats. Interlinked alarms. Price on application.",
         "focus_points": [
-            "BS 5839-6 category advice for dwellings",
-            "Interlinked smoke and heat alarm install",
-            "Landlord documentation and tenant guidance",
-            "Replacement of life-expired domestic units"
+            "BS 5839-6 category for the actual layout",
+            "Interlinked smoke and heat alarms",
+            "Landlord file notes when the client is an agent",
+            "Weekly test shown before we leave"
         ],
         "faq": [
             [
-                "Do you install smart domestic alarms?",
-                "We can discuss connected options, but prioritise proven interlink performance and standard compliance over gadget features."
+                "Do you install in occupied homes?",
+                "Yes. Most domestic installs are a short visit. Furniture is protected and every unit is tested."
             ],
             [
-                "Can you install in occupied homes quickly?",
-                "Most domestic installs complete in a short visit with minimal mess. We protect décor and test every unit before leaving."
+                "Should a flat have a Grade A system?",
+                "Only when the building and the standard say so. The survey decides. It is not automatic."
             ],
             [
-                "Should flats use Grade A systems?",
-                "Some buildings require Grade A communal or dwelling systems under BS 5839-6 and the fire strategy. We survey before specifying."
+                "Is there a pack price for a three-bed house?",
+                "No. Device count and grade change the quote. It is price on application."
             ]
         ],
-        "seo_keywords": "domestic fire alarm installation, home smoke alarm install, BS 5839-6 domestic, landlord fire alarms, domestic fire alarm Manchester, domestic fire alarm Stockport, interlinked alarms, Icomply"
+        "seo_keywords": "domestic fire alarm installation, BS 5839-6, home fire alarm install UK, interlinked alarms"
     },
     "domestic-rewire": {
         "name": "Domestic Rewire",
@@ -15692,31 +15694,34 @@
     "factory-fire-alarm-system": {
         "name": "Factory Fire Alarm System",
         "service": "fire-alarms",
-        "related": "fire-alarm-panel",
-        "intro": "Factory fire alarm systems face harsh environments: dust, heat, high ceilings, process plant and shift working. Icomply design, install and maintain industrial fire detection to BS 5839 for manufacturing and warehouse-linked production sites across the North West. From Stockport our engineers specify robust devices—heat, beam, aspirating or multi-sensor—interface to plant shutdowns and deliver commissioning that production managers can trust.",
-        "body": "We survey mezzanines, racking and process lines for detector suitability, plan cable routes away from damage, and stage testing so production stoppages stay controlled. Cause-and-effect can include roller shutter release, extract isolation or process interlocks where the fire strategy requires it. Service contracts include industrial call-out options and spare device holding for critical lines.",
-        "meta_desc": "Factory fire alarm system design & install for industrial sites. BS 5839, North West coverage — Icomply Stockport.",
+        "related": "warehouse-fire-alarm-installation",
+        "hub_only": true,
+        "h1": "Factory fire alarm system",
+        "seo_title": "Factory Fire Alarm System | UK | iComply",
+        "intro": "A factory fire alarm system has to survive dust, heat, height and a process that cannot stop for a casual test. iComply designs, installs and maintains industrial detection to BS 5839 for UK mainland factories. Device choice follows the process. The quote is price on application.",
+        "body": "We survey mezzanines, racking and plant before naming heat, beam, aspirating or multi-sensor devices. Cable routes avoid damage from vehicles and process. Cause and effect can include shutter release or a plant signal when the fire strategy asks for it. Testing is staged so a production stop is planned, not accidental. Service after handover is a separate instruction.",
+        "meta_desc": "Factory fire alarm system design and install for UK mainland industry. BS 5839. Process-aware testing. Price on application.",
         "focus_points": [
-            "Industrial detection selection for heat, dust and height",
-            "Plant interface and cause-and-effect programming",
-            "Phased install around production schedules",
-            "Robust servicing and reactive engineering support"
+            "Detection chosen for dust, heat and ceiling height",
+            "Plant interfaces only when the strategy includes them",
+            "Testing staged around production",
+            "Service quoted separately from the install"
         ],
         "faq": [
             [
-                "Which detectors suit factory floors?",
-                "It depends on the process. Heat, beam or aspirating systems often outperform standard optical smoke in dusty or high-ceiling spaces. We recommend after site survey."
+                "Which detectors suit a factory floor?",
+                "Often heat, beam or aspirating, not a domestic optical head. The survey names them."
             ],
             [
-                "Can the fire system shut down machinery?",
-                "Interfaces can signal plant or BMS for controlled shutdown where specified in the fire strategy. We coordinate with your electrical and process teams."
+                "Can the system stop machinery?",
+                "Only via an interface the fire strategy already requires. We coordinate with your process team."
             ],
             [
-                "Do you cover multi-building industrial estates?",
-                "Yes. We design networked or zoned solutions and offer multi-building maintenance under one agreement."
+                "Do you cover more than one building on a site?",
+                "Yes. Each building is drawn. They are not assumed to be one panel."
             ]
         ],
-        "seo_keywords": "factory fire alarm system, industrial fire alarm installation, factory fire detection, BS 5839 industrial, factory fire alarm Manchester, factory fire alarm Stockport, North West industrial fire, Icomply"
+        "seo_keywords": "factory fire alarm system, industrial fire detection, BS 5839 factory UK"
     },
     "factory-intercom": {
         "name": "Factory Intercom",
@@ -16098,30 +16103,33 @@
         "name": "Fire Alarm Call Point Installation",
         "service": "fire-alarms",
         "related": "fire-alarm-installation",
-        "intro": "Manual call points let staff raise the alarm early when fire is seen before automatic detection. Icomply install, replace and reposition fire alarm call points to BS 5839 guidance—typically near exits and storey exits—across commercial and care premises in Greater Manchester and the North West. From Stockport we supply compatible MCPs, glass or resettable elements, protective covers where justified, and full testing into your panel.",
-        "body": "Poorly sited or damaged call points undermine evacuation strategy and fail inspections. We survey travel routes, fit surface or flush units, label correctly and update zone charts. For high false-alarm risk areas we discuss hinged covers only where risk assessment supports them. Service contracts include call-point operation checks on each visit.",
-        "meta_desc": "Fire alarm call point installation & replacement to BS 5839. North West engineers from Stockport — fixed quotes. Icomply.",
+        "hub_only": true,
+        "h1": "Fire alarm call point installation",
+        "seo_title": "Fire Alarm Call Point Installation | UK | iComply",
+        "intro": "Fire alarm call point installation puts manual call points where people can raise the alarm on the way out. iComply fits, replaces and repositions them to BS 5839 on UK mainland commercial and care premises. Height, travel distance and the exit the strategy names all matter. The quote is price on application.",
+        "body": "We survey the escape routes, fit surface or flush units, and test them into the correct zone or address. Resettable elements are used when the site wants to stop broken glass, and covers are fitted only when the risk assessment supports them. Zone charts and the logbook are updated for the points we changed. Adding points needs spare zone or loop capacity, which is checked first.",
+        "meta_desc": "Fire alarm call point installation to BS 5839 on UK mainland sites. Exit routes, testing and logbook updates. Price on application.",
         "focus_points": [
-            "Exit-route MCP positioning to BS 5839",
-            "New install, replacement and wiring repairs",
-            "Resettable elements and cover options where appropriate",
-            "Panel test, labels and logbook update"
+            "Call points on the exits the design names",
+            "Spare zone or loop capacity checked first",
+            "Resettable elements and covers only when justified",
+            "Zone chart updated for the points changed"
         ],
         "faq": [
             [
-                "Where should fire alarm call points be fitted?",
-                "Generally on escape routes at exits and storey exits, at heights and spacing consistent with BS 5839 and your fire risk assessment."
+                "Where should call points go?",
+                "On escape routes at storey exits and final exits, at the spacing BS 5839 and the fire risk assessment describe."
             ],
             [
-                "Glass or resettable call points?",
-                "Both are common. Resettable units reduce glass-spares issues; we match the type already on site unless you prefer a site-wide standard."
+                "Glass or resettable?",
+                "Either. We match the existing site standard unless you want them all changed."
             ],
             [
-                "Can you add call points to an existing system?",
-                "Yes. We confirm spare capacity on conventional zones or addressable loops and quote materials and labour as a fixed package after survey."
+                "Can you add points to an old system?",
+                "Yes, when the zone or loop has capacity. If it does not, the quote says so."
             ]
         ],
-        "seo_keywords": "fire alarm call point installation, MCP installation, manual call point BS 5839, call point replacement, fire call point Manchester, fire call point Stockport, North West fire alarms, Icomply"
+        "seo_keywords": "fire alarm call point installation, manual call point, MCP install BS 5839 UK"
     },
     "fire-alarm-certificate": {
         "name": "Fire Alarm Certificate",
@@ -16272,88 +16280,94 @@
         "name": "Fire Alarm Engineer",
         "service": "fire-alarms",
         "related": "fire-alarm-engineer-near-me",
-        "intro": "When you need a fire alarm engineer local to Stockport and Greater Manchester, Icomply provides competent, insurance-aware technicians for install, service and fault work. We support commercial, industrial and multi-residential estates across the North West.",
-        "body": "Engineers arrive with test gear, common spares and the documentation templates dutyholders expect after a visit. Brand familiarity across popular panels speeds diagnosis, while clear communication keeps FM teams updated. One team can cover related electrical interfaces such as door release and plant shutdown signals.",
-        "meta_desc": "Local fire alarm engineers in Stockport & the North West for install, service, repair & certification. Book Icomply for BS 5839 support.",
+        "h1": "Fire alarm engineer",
+        "seo_title": "Fire Alarm Engineer | UK | iComply",
+        "intro": "A fire alarm engineer installs, services and finds faults on detection systems. iComply arranges that engineer for UK mainland buildings from Stockport. The visit is tied to a written scope. The quote is price on application. We do not claim the engineer is on a retained 24-hour rota.",
+        "body": "The engineer brings test equipment and updates the logbook for the work done. Brand familiarity covers the common UK panels. An unfamiliar or obsolete panel is identified before parts are promised. Related interfaces such as door release are included only when they are in the fire alarm scope. Out-of-hours work is offered when someone is free, not as a contract slogan.",
+        "meta_desc": "Fire alarm engineer for install, service and faults on the UK mainland. BS 5839. Price on application. Stockport base.",
         "focus_points": [
-            "Competent engineers for install, service and reactive faults",
-            "Experience across major UK fire panel brands",
-            "On-site testing with certificate and logbook updates",
-            "Coverage across Greater Manchester and neighbouring counties"
+            "Install, service and fault visits",
+            "Logbook updated for the work done",
+            "Obsolete panels identified before parts are promised",
+            "Out-of-hours only when an engineer is free"
         ],
         "faq": [
             [
-                "Are Icomply fire alarm engineers available for emergency call-outs?",
-                "We prioritise systems that have lost protection where capacity allows, and we state expected attendance windows when you book."
+                "Can the engineer show staff the weekly test?",
+                "Yes. That demonstration is part of a handover and can be repeated on a service visit."
             ],
             [
-                "Can an engineer train our staff on weekly tests?",
-                "Yes — handover and user guidance form part of install and can be refreshed during service visits."
+                "Do you cover sites outside the North West?",
+                "Yes. Town pages for this guide use the UK mainland list over 10,000 people."
             ],
             [
-                "Do engineers work outside normal hours?",
-                "Where sites require out-of-hours access, we can arrange visits by agreement, especially for retail and healthcare environments."
+                "How is the engineer priced?",
+                "Price on application after the address, the panel and the reason for the visit are known."
             ]
         ],
-        "seo_keywords": "fire alarm engineer, fire alarm engineer Stockport, fire alarm technician Manchester, BS 5839 engineer North West, local fire alarm engineer, Icomply"
+        "seo_keywords": "fire alarm engineer, UK fire alarm engineer, BS 5839 engineer, fire alarm technician"
     },
     "fire-alarm-engineer-near-me": {
         "name": "Fire Alarm Engineer Near Me",
         "service": "fire-alarms",
         "related": "fire-alarm-engineer",
-        "intro": "Searching for a fire alarm engineer near you in the North West? Icomply’s local engineers attend from Stockport for installation, fault-finding, servicing and certification across Greater Manchester, Cheshire, Lancashire, Merseyside and Cumbria. We work to BS 5839, support common panel brands, and give fixed-price quotes once the scope is agreed—so landlords, agents and FM teams get a nearby specialist without long waits or vague call-out charges.",
-        "body": "“Near me” only helps if the engineer can actually diagnose the panel, loops and sounders on site. Our team carries diagnostic kit, common spares and manufacturer knowledge for Advanced, Kentec, C-TEC, Morley, Hochiki and Apollo systems among others. Same-week visits are prioritised where capacity and access allow, with reactive attendance for faults that leave a building unprotected. After works we update service certificates, logbooks and zone charts so your next audit is straightforward. Use the form with your postcode, panel make and fault description, or ask for a multi-site package if you manage several properties.",
-        "meta_desc": "Fire alarm engineer near me in Greater Manchester & the North West. Local Stockport team for install, faults, BS 5839 service & certificates. Fixed-price quotes.",
+        "h1": "Fire alarm engineer near me",
+        "seo_title": "Fire Alarm Engineer Near Me | UK | iComply",
+        "intro": "Fire alarm engineer near me is the local version of the engineer visit. iComply gives each UK mainland town over 10,000 people its own page so the place is named. The engineer still comes from the Stockport workshop. Near-me does not mean a different, cheaper product. The quote is price on application.",
+        "body": "Tell us the postcode, whether the system is in fault, and the panel make if you know it. Same-week attendance is offered when the diary allows, with unprotected buildings put first. After the visit the certificate or defect note names the town and the work. If your place is not on the mainland list, ask. A missing town page is not a refusal. It means the page was not published.",
+        "meta_desc": "Fire alarm engineer near me, with a UK mainland town page. Faults, service and installs. Price on application.",
         "focus_points": [
-            "Local North West attendance from our Stockport (SK2) base",
-            "Fault-finding, loop diagnostics and panel resets by trained engineers",
-            "BS 5839 servicing with certificates and logbook updates",
-            "Support for mainstream UK fire panel and detector brands"
+            "A page for each mainland town over 10,000 people",
+            "Postcode and fault text before the date",
+            "Unprotected systems put first when the diary is tight",
+            "Paperwork names the town"
         ],
         "faq": [
             [
-                "How far do your fire alarm engineers travel?",
-                "We routinely cover 150+ towns from Stockport, including Manchester, Bolton, Stockport boroughs, Cheshire towns, Liverpool city region and into Lancashire and Cumbria subject to diary and site access."
+                "How far will an engineer travel?",
+                "The published town list is England, Wales and mainland Scotland. Travel is inside the quote."
             ],
             [
-                "Can a fire alarm engineer attend the same week?",
-                "Where capacity and safe access allow, we aim for same-week appointments and prioritise systems showing faults, isolation issues or failed tests."
+                "Can the engineer attend this week?",
+                "When capacity allows. We do not promise same-week on the page itself."
             ],
             [
-                "What should I tell you when booking a fire alarm engineer?",
-                "Postcode, property type, panel brand if known, whether the system is in fault or isolation, and any recent building works help us send the right engineer with suitable spares."
+                "What if my town is small?",
+                "Places at or under 10,000 people are not in this town set. The visit can still be quoted."
             ]
         ],
-        "seo_keywords": "fire alarm engineer near me, fire alarm engineer Manchester, fire alarm engineer Stockport, local fire alarm engineer North West, fire alarm fault engineer, BS 5839 engineer, commercial fire alarm engineer, fire alarm call out"
+        "seo_keywords": "fire alarm engineer near me, local fire alarm engineer, fire alarm engineer UK town"
     },
     "fire-alarm-engineers-near-me": {
         "name": "Fire Alarm Engineers Near Me",
         "service": "fire-alarms",
-        "related": "fire-alarm-installation",
-        "intro": "Searching for fire alarm engineers near me in the North West? Icomply provide local, Stockport-based fire engineers for installation, servicing, fault finding and certification across Greater Manchester and surrounding counties. We combine rapid response with BS 5839 competence, fixed-price quotes after we understand the panel and site, and clear communication for landlords, FM teams and business owners who need someone reliable—not a remote call centre.",
-        "body": "Our coverage includes Manchester, Stockport, Bolton, Warrington, Chester, Preston, Liverpool approaches and many towns in between. Tell us your postcode, panel brand and fault message for faster triage. Whether you need a one-off repair or a standing maintenance agreement, local engineers mean realistic attendance times and knowledge of regional building stock.",
-        "meta_desc": "Fire alarm engineers near me in Greater Manchester & the North West. BS 5839 install & service — Icomply Stockport.",
+        "related": "fire-alarm-engineer-near-me",
+        "h1": "Fire alarm engineers near me",
+        "seo_title": "Fire Alarm Engineers Near Me | UK | iComply",
+        "intro": "Fire alarm engineers near me means you want people, not a call centre, in the town you named. iComply publishes those town pages across the UK mainland and sends the engineers from Stockport. More than one engineer is booked only when the building needs it. Pricing is price on application.",
+        "body": "Share the postcode, the panel brand and the fault message. A one-off repair and a maintenance plan are different instructions. Both can start from this search. The engineers carry diagnostic kit for conventional and addressable systems in common UK brands. They will not guess a panel type from a ceiling colour.",
+        "meta_desc": "Fire alarm engineers near me for UK mainland towns. Repairs and planned visits. BS 5839. Price on application.",
         "focus_points": [
-            "Local North West engineer coverage from Stockport",
-            "Install, service, faults and certification",
-            "Fast triage when you share panel details",
-            "Fixed-price quotes and maintenance agreements"
+            "Named town, engineers sent from Stockport",
+            "Repair and maintenance kept as separate instructions",
+            "Conventional and addressable diagnostic kit",
+            "Headcount decided by the building, not a default pair"
         ],
         "faq": [
             [
-                "Which towns do you cover?",
-                "We cover 150+ towns across Greater Manchester, Cheshire, Lancashire, Merseyside and into Cumbria. Check your town page or send a postcode."
+                "Which towns have a page?",
+                "Mainland towns with population over 10,000. The list is the same set used for AOV and barriers."
             ],
             [
-                "Are you available for emergency faults?",
-                "We prioritise impaired systems when engineers are available and aim for same-week or sooner attendance depending on demand."
+                "Are you only an install company?",
+                "No. Service, repair and install are all in scope, each with its own quote."
             ],
             [
-                "Do you only fit new systems?",
-                "No. Much of our work is servicing, repairs and upgrades on existing panels and devices."
+                "Can several sites share one visit day?",
+                "Yes, when they are close enough that one trip is honest. Each site is still written up."
             ]
         ],
-        "seo_keywords": "fire alarm engineers near me, local fire alarm engineer, fire alarm engineer Manchester, fire alarm engineer Stockport, BS 5839 engineer North West, fire alarm company near me, Icomply"
+        "seo_keywords": "fire alarm engineers near me, local fire alarm engineers, fire alarm company near me UK"
     },
     "fire-alarm-fault-finding": {
         "name": "Fire Alarm Fault Finding",
@@ -16416,60 +16430,65 @@
     "fire-alarm-installation": {
         "name": "Fire Alarm Installation",
         "service": "fire-alarms",
-        "related": "fire-alarm-panel",
-        "intro": "Professional fire alarm installation protects people, property and your legal duties under UK fire safety law. Icomply designs and installs BS 5839 systems for commercial, multi-residential and specialist sites across the North West.",
-        "body": "Every project starts with a risk-led design — detection category, device types, sounder coverage and cause-and-effect logic tailored to the building. Our Stockport engineers install, commission and hand over logbooks so dutyholders can maintain compliance from day one. Fixed-price quotes follow a proper survey rather than a phone guess.",
-        "meta_desc": "Fire alarm installation to BS 5839 across Stockport, Greater Manchester & the North West. Design, commission & certify with Icomply.",
+        "related": "fire-alarm-installer",
+        "h1": "Fire alarm installation",
+        "seo_title": "Fire Alarm Installation | UK | iComply",
+        "intro": "Fire alarm installation is design, fit and commissioning of a detection and alarm system. iComply does that for commercial, residential and specialist buildings across the UK mainland. The category comes from the building and BS 5839, not from a phone guess. The quote is price on application.",
+        "body": "Every project starts with the risk-led design: category, device types, sounder coverage and cause and effect. Engineers then install and commission, and they hand over the logbook. Conventional and addressable systems are both available. Commissioning of the agreed scope is inside the installation quote. A service contract after handover is optional and separate.",
+        "meta_desc": "Fire alarm installation to BS 5839 across the UK mainland. Design, commission and logbook. Price on application.",
         "focus_points": [
-            "Risk-based system design to the appropriate BS 5839 category",
-            "Supply and install of panels, detectors, call points and sounders",
-            "Full commissioning, zoning and cause-and-effect proving",
-            "Logbook, certificates and user training at handover"
+            "Category chosen from the building and BS 5839",
+            "Panels, detectors, call points and sounders",
+            "Commissioning and cause and effect proving",
+            "Logbook handed to the instructing client"
         ],
         "faq": [
             [
-                "What type of fire alarm system do I need?",
-                "It depends on building use, layout and risk assessment. We recommend L, M or P categories under BS 5839 after reviewing plans and walking the site."
+                "What system do I need?",
+                "The category follows building use, layout and the fire risk assessment. We recommend it after a survey, not from floor area alone."
             ],
             [
                 "Do you install addressable and conventional systems?",
-                "Yes. We fit both, choosing addressable panels where larger or more complex buildings need precise device identification."
+                "Yes. Addressable is used when the building needs to name the device. Conventional is used when zones are enough."
             ],
             [
-                "Is commissioning included in the installation price?",
-                "Yes — commissioning, certification and initial logbook entries form part of our standard install package once the quote is agreed."
+                "Is commissioning extra?",
+                "No. Commissioning of the agreed install is part of the quote."
             ]
         ],
-        "seo_keywords": "fire alarm installation, fire alarm install Stockport, BS 5839 installation North West, commercial fire alarm Manchester, new fire alarm system, Icomply fire alarms"
+        "seo_keywords": "fire alarm installation, BS 5839 installation, UK fire alarm system install"
     },
     "fire-alarm-installation-certificate": {
         "name": "Fire Alarm Installation Certificate",
         "service": "fire-alarms",
-        "related": "fire-alarm-certification",
-        "intro": "A fire alarm installation certificate records that a system has been installed and verified against the agreed design and BS 5839 expectations. Icomply issue clear installation and commissioning documentation after new installs and major modifications across Greater Manchester and the North West. From Stockport our engineers complete the practical tests first—then produce certificates and logbook starters landlords, insurers and building control can rely on.",
-        "body": "Certificates are only meaningful when the underlying work is complete: loop checks, battery autonomy, device addressing, sounder levels, interfaces and user training. We do not “paper over” unfinished systems. For extensions and panel changes we document what was new versus retained, update zone charts and leave the responsible person able to run weekly tests. If you inherited a building with missing paperwork, we can survey the installation, carry out verification testing where feasible, and advise on the closest compliant documentation path. Keep certificates with the fire logbook for the life of the system.",
-        "meta_desc": "Fire alarm installation certificates after BS 5839 installs & major mods across GM & the North West. Commissioning packs from Icomply Stockport. Free quotes.",
+        "related": "fire-alarm-installation",
+        "hub_only": true,
+        "h1": "Fire alarm installation certificate",
+        "seo_title": "Fire Alarm Installation Certificate | UK | iComply",
+        "intro": "A fire alarm installation certificate records that the system we installed or altered was commissioned against the agreed design and BS 5839. iComply issues that paperwork for UK mainland projects after the tests, not before them. It is not a service certificate and it is not a certificate for a system we have not seen.",
+        "body": "The tests cover the agreed loops or zones, batteries, device addresses or zone allocation, sounders and the interfaces in the scope. Extensions are documented as new work versus retained equipment. Zone charts are updated. If you inherited a building with no papers, we can survey and test, then issue documentation only for the extent we verified. The certificate lives with the logbook.",
+        "meta_desc": "Fire alarm installation certificate after BS 5839 commissioning. UK mainland. Only for work we have verified. Price on application.",
         "focus_points": [
-            "Installation and commissioning certificates for new systems",
-            "Documentation for major modifications and panel replacements",
-            "Updated zone charts, device lists and logbook setup",
-            "Verification surveys where historical certificates are missing"
+            "Certificate after tests, not before",
+            "New work distinguished from retained equipment",
+            "Zone charts updated with the certificate",
+            "Inherited systems certificated only for the verified extent"
         ],
         "faq": [
             [
-                "When is a fire alarm installation certificate issued?",
-                "After a new installation or significant modification has been commissioned and verified against the design scope agreed in the quotation."
+                "Is a service certificate the same thing?",
+                "No. A service certificate is periodic maintenance. An installation certificate is for new work or a major change."
             ],
             [
-                "Is a service certificate the same as an installation certificate?",
-                "No. Service certificates cover periodic maintenance. Installation certificates relate to new works or major changes; both belong in the fire logbook."
+                "Can you certificate another company's install?",
+                "Only the parts we inspect and test. The wording states that limit."
             ],
             [
-                "Can you certificate a system installed by someone else?",
-                "We can only certify work we have verified. Third-party systems may need inspection, testing and possible remedials before we issue documentation for the verified scope."
+                "Do you charge to reissue a lost certificate?",
+                "Reissue of our own certificate is quoted. We do not recreate a certificate for tests we did not do."
             ]
         ],
-        "seo_keywords": "fire alarm installation certificate, fire alarm commissioning certificate, BS 5839 certificate, fire alarm install paperwork, fire alarm certificate North West, fire alarm certificate Manchester, fire system handover Stockport"
+        "seo_keywords": "fire alarm installation certificate, fire alarm commissioning certificate, BS 5839 certificate UK"
     },
     "fire-alarm-logbook": {
         "name": "Fire Alarm Logbook",
@@ -16788,36 +16807,35 @@
     },
     "fire-alarm-strobe-installation": {
         "name": "Fire Alarm Strobe Installation",
-        "service": "evacuation-alerts",
-        "related": "visual-alarm-devices",
-        "intro": "Planning Fire Alarm Strobe Installation for a home, rental portfolio or commercial site? Our team design, install, service and certify Fire Alarm Strobe Installation for landlords, managing agents, commercial occupiers and facilities managers, with service certificates, assessment reports and compliance documentation on completion where applicable.",
-        "body": "Our team design, install, service and certify Fire Alarm Strobe Installation for landlords, managing agents, commercial occupiers and facilities managers, with service certificates, assessment reports and compliance documentation on completion where applicable. Ask about multi-property packages if you manage several sites or a void programme. Typical jobs include survey, agreed works, quality checks and paperwork suitable for landlords, insurers and facilities managers. Local engineers attend from Stockport with North West coverage including Manchester, Bolton, Liverpool, Preston, Chester and surrounding towns.",
-        "meta_desc": "Fire Alarm Strobe Installation across the North West. Evacuation Alert Systems from Icomply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.",
-        "seo_keywords": "fire alarm strobe installation, fire alarm strobe installation north west, fire alarm strobe installation manchester, fire alarm strobe installation stockport, evacuation alert systems, property services greater manchester",
+        "service": "fire-alarms",
+        "related": "care-home-fire-alarm-installation",
+        "hub_only": true,
+        "h1": "Fire alarm strobe installation",
+        "seo_title": "Fire Alarm Strobe Installation | UK | iComply",
+        "intro": "Fire alarm strobe installation adds visual alarm devices where sounders alone will not warn people. iComply fits strobes and other visual devices as part of a BS 5839 system on UK mainland sites: plant rooms, bedrooms, and workplaces where hearing protection or hearing loss makes sound insufficient. The quote is price on application.",
+        "body": "A strobe is not a decoration and it is not automatically required in every room. The fire strategy or the care plan has to say where vision is the warning. We match the device to the panel circuit, check it does not overload the sounder line, and record the locations on the device list. Standalone domestic plug-in strobes are declined when the building needs a monitored system.",
+        "meta_desc": "Fire alarm strobe and visual alarm device installation on UK mainland BS 5839 systems. Locations agreed first. Price on application.",
         "focus_points": [
-            "Survey and fixed-price quote for Fire Alarm Strobe Installation",
-            "Local North West engineers from Stockport (SK2)",
-            "Documentation aligned to BS 8629 · BS 5839-9 · inclusive evacuation",
-            "Suitable for landlords, managing agents, commercial occupiers and facilities managers"
+            "Visual devices only where the strategy needs them",
+            "Circuit loading checked before extra strobes",
+            "Locations added to the device list",
+            "Monitored systems, not plug-in gadgets, when the building requires monitoring"
         ],
         "faq": [
             [
-                "What does Fire Alarm Strobe Installation include?",
-                "Scope is confirmed after survey — typically labour, agreed materials and documentation for Fire Alarm Strobe Installation under our Evacuation Alert Systems service."
+                "Does every bedroom need a strobe?",
+                "No. The care plan or the fire strategy names the rooms. We do not scatter strobes to look thorough."
             ],
             [
-                "Do you cover my town for Fire Alarm Strobe Installation?",
-                "Yes — we cover 150+ towns across Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria from Stockport."
+                "Can strobes be added to an old panel?",
+                "When the circuit can carry them. If it cannot, the quote includes the interface or the sounder-circuit change."
             ],
             [
-                "How quickly can you start Fire Alarm Strobe Installation?",
-                "Many jobs can be surveyed same week depending on capacity and access. Emergency and priority works are prioritised where possible."
-            ],
-            [
-                "Do you provide certificates for Fire Alarm Strobe Installation?",
-                "Where the work type requires certification or a formal report, we issue the relevant paperwork with your job pack."
+                "Is this an evacuation alert system?",
+                "Visual devices on a fire alarm are not the same product as a BS 8629 evacuation alert system. We will say which one you asked for."
             ]
-        ]
+        ],
+        "seo_keywords": "fire alarm strobe installation, visual alarm device, VAD fire alarm UK"
     },
     "fire-alarm-system": {
         "name": "Fire Alarm System",
@@ -30967,31 +30985,34 @@
     "office-fire-alarm-installation": {
         "name": "Office Fire Alarm Installation",
         "service": "fire-alarms",
-        "related": "fire-alarm-panel",
-        "intro": "Office fire alarm installation protects staff, visitors and business continuity in open-plan floors, meeting suites and multi-tenant blocks. Icomply design and install office systems to BS 5839, from compact conventional kits to networked addressable panels, across Manchester, Stockport and the wider North West. Fixed-price proposals after survey cover detection, MCPs, sounders/VADs, interfaces and commissioning paperwork for landlords and occupiers.",
-        "body": "Modern offices often need multi-sensor detection, visual alarm devices for accessibility, and interfaces to access control or HVAC. We coordinate out-of-hours works for fit-outs and refurbishments, label devices clearly for facilities teams, and offer ongoing servicing so your office stays compliant after practical completion.",
-        "meta_desc": "Office fire alarm installation to BS 5839. Design, fit & commission across Greater Manchester & North West — Icomply.",
+        "related": "commercial-fire-alarm-installation",
+        "hub_only": true,
+        "h1": "Office fire alarm installation",
+        "seo_title": "Office Fire Alarm Installation | UK | iComply",
+        "intro": "Office fire alarm installation covers open-plan floors, cellular offices and multi-tenant buildings. iComply designs and installs those systems to BS 5839 across the UK mainland. Landlord base-build and tenant fit-out are kept distinct when they are different systems. The quote is price on application after the floor plate is known.",
+        "body": "Open plan often needs multi-sensor detection and a sound level that still works in meeting rooms with the door shut. Visual devices are added where the assessment says people may not hear the alarm. We programme works around occupation, including evenings when the fit-out requires it. Handover includes the zone chart the facilities team will actually use. Servicing after practical completion is offered separately.",
+        "meta_desc": "Office fire alarm installation to BS 5839 for UK mainland workplaces. Landlord and tenant systems kept clear. Price on application.",
         "focus_points": [
-            "Office category design for open-plan and cellular space",
-            "Sounder/VAD coverage for inclusive warning",
-            "Landlord and multi-tenant integration options",
-            "Commissioning packs and planned maintenance"
+            "Open-plan and cellular offices",
+            "Landlord and tenant systems identified separately",
+            "Sound levels considered with doors shut",
+            "Zone chart written for the facilities team"
         ],
         "faq": [
             [
-                "Do multi-tenant offices need a single system?",
-                "Strategies vary: landlord base-build with tenant interfaces is common. We design so each party understands responsibilities and isolation rules."
+                "Does a multi-tenant office need one system?",
+                "Sometimes a landlord system with tenant interfaces, sometimes separate systems. The lease and the strategy decide."
             ],
             [
                 "Can you install during a fit-out?",
-                "Yes. We programme with principal contractors, protect finished areas and complete cause-and-effect before handover."
+                "Yes. The programme is agreed with the principal contractor."
             ],
             [
-                "Are visual alarm devices required?",
-                "Where people may not hear sounders—or for accessibility—VADs may be needed. We assess against your FRA and relevant guidance."
+                "Are visual alarm devices standard in offices?",
+                "They are included where the assessment needs them. They are not sprinkled into every room by default."
             ]
         ],
-        "seo_keywords": "office fire alarm installation, office fire alarm system, commercial office fire detection, BS 5839 office, fire alarm Manchester offices, Stockport office fire alarm, North West, Icomply"
+        "seo_keywords": "office fire alarm installation, workplace fire alarm, BS 5839 office UK"
     },
     "office-fire-extinguishers": {
         "name": "Office Fire Extinguishers",
@@ -42260,33 +42281,36 @@
     "seo_title": "Emergency EICR | iComply"
   },
   "emergency-fire-alarm": {
-    "name": "Emergency fire alarm",
-    "service": "fire-alarms",
-    "related": "fire-alarm-repair",
-    "intro": "An emergency fire alarm request is a panel in fault, a zone that will not silence, or a system that did not sound when it should have. iComply attends from Stockport SK2.",
-    "body": "We identify the panel before parts are ordered. A silenced panel is not treated as a repair. The cause is written down. Call 07517806082. The quote is price on application from Stockport SK2.",
-    "meta_desc": "Emergency fire alarm faults across Greater Manchester. Attendance from Stockport SK2. Price on application. 07517806082.",
-    "focus_points": [
-      "Panel fault and zone faults",
-      "The cause is recorded",
-      "Stockport SK2 base",
-      "Price on application"
-    ],
-    "faq": [
-      [
-        "Will you just silence the panel?",
-        "No. Silencing without a cause is not the repair."
-      ],
-      [
-        "Do you cover Greater Manchester?",
-        "Yes, from the Stockport SK2 workshop, when the diary allows."
-      ]
-    ],
-    "seo_keywords": "Emergency fire alarm, Greater Manchester, Stockport, iComply",
-    "hub_only": true,
-    "h1": "Emergency fire alarm",
-    "seo_title": "Emergency fire alarm | iComply"
-  },
+        "name": "Emergency Fire Alarm",
+        "service": "fire-alarms",
+        "related": "emergency-fire-alarm-installation",
+        "h1": "Emergency fire alarm",
+        "seo_title": "Emergency Fire Alarm | UK | iComply",
+        "intro": "An emergency fire alarm call is a panel in fault, a zone that will not reset, or a system that did not sound when it should have. iComply takes those calls for UK mainland premises from the Stockport workshop. We do not sell a staffed night contract. If an engineer is free, the visit is quoted price on application.",
+        "body": "The panel is identified before parts are ordered. Silencing without a cause is not the repair. A photo of the display and the postcode let us bring the right tester. If the building is unprotected, that is said plainly and the next available window is offered. Islands and Northern Ireland are outside the town list.",
+        "meta_desc": "Emergency fire alarm faults on the UK mainland. Cause recorded, not only silenced. Attendance when an engineer is free. POA.",
+        "focus_points": [
+            "Panel faults, isolated zones and systems that did not sound",
+            "Cause written down before the panel is left silenced",
+            "Unprotected buildings given the next real window",
+            "No retained night desk"
+        ],
+        "faq": [
+            [
+                "Will you just silence the panel?",
+                "No. Silencing without a cause is not the repair."
+            ],
+            [
+                "Do you cover towns outside Greater Manchester?",
+                "Yes. Town pages for this guide are the UK mainland list over 10,000 people."
+            ],
+            [
+                "Is emergency attendance guaranteed?",
+                "No. It happens when an engineer is free. We will not invent a response-time promise."
+            ]
+        ],
+        "seo_keywords": "emergency fire alarm, fire alarm fault, fire panel emergency UK"
+    },
   "emergency-heating": {
     "name": "Emergency heating",
     "service": "heating",
@@ -42678,5 +42702,1051 @@
     "hub_only": true,
     "h1": "Plumber call-out",
     "seo_title": "Plumber call-out | iComply"
-  }
+  },
+    "24-hour-fire-alarm-engineer": {
+        "name": "24 Hour Fire Alarm Engineer",
+        "service": "fire-alarms",
+        "related": "emergency-fire-alarm",
+        "hub_only": true,
+        "h1": "24 hour fire alarm engineer",
+        "seo_title": "24 Hour Fire Alarm Engineer | UK | iComply",
+        "intro": "People search 24 hour fire alarm engineer when a panel fails at night. iComply does not sell a staffed night desk or a retained overnight contract on this page. If an engineer is available for a UK mainland site, we will say so and quote price on application. If nobody is free, we say that too.",
+        "body": "Night attendance is exceptional. It is for a system that has left people unprotected, not for a beeping device that can wait until morning. The call should include the postcode, the panel text and whether the building is occupied. We do not ask a watchman to silence the panel and forget the cause.",
+        "meta_desc": "24 hour fire alarm engineer searches answered honestly. No retained night contract. UK mainland attendance when someone is free. POA.",
+        "focus_points": [
+            "No staffed night desk and no retained night contract",
+            "Unprotected buildings considered when an engineer is free",
+            "Morning attendance offered when night attendance is not",
+            "Cause recorded, not only a silence"
+        ],
+        "faq": [
+            [
+                "Are you open 24 hours?",
+                "No. This page exists so the search is answered honestly."
+            ],
+            [
+                "What should I do if the panel is in fire?",
+                "Follow the building's evacuation plan and call the fire and rescue service if there is a fire. Then call us about the system."
+            ],
+            [
+                "Will a night visit cost a published premium?",
+                "No premium is published. Any visit is price on application."
+            ]
+        ],
+        "seo_keywords": "24 hour fire alarm engineer, night fire alarm call out, emergency fire alarm engineer UK"
+    },
+    "addressable-fire-alarm-installation": {
+        "name": "Addressable Fire Alarm Installation",
+        "service": "fire-alarms",
+        "related": "conventional-fire-alarm-installation",
+        "hub_only": true,
+        "h1": "Addressable fire alarm installation",
+        "seo_title": "Addressable Fire Alarm Installation | UK | iComply",
+        "intro": "Addressable fire alarm installation gives each device an identity so the panel can say which head or call point operated. iComply installs addressable systems where the building is too large or too mixed for a handful of conventional zones. UK mainland coverage. Price on application after the loop design.",
+        "body": "Loop length, isolators and device load are calculated, not guessed. We programme text that matches the room names the staff use. Cause and effect is proved device by device for the agreed sample, and in full where the specification demands it. A conventional system remains the right answer for a small single-storey unit. We will say so.",
+        "meta_desc": "Addressable fire alarm installation with loop design and commissioning. UK mainland. BS 5839. Price on application.",
+        "focus_points": [
+            "Loop load, length and isolators calculated",
+            "Device text that matches real room names",
+            "Cause and effect proved against the specification",
+            "Conventional recommended when addressable is unnecessary"
+        ],
+        "faq": [
+            [
+                "Is addressable always better?",
+                "No. A small building often only needs zones. We say which one the risk supports."
+            ],
+            [
+                "Can you add devices to an old addressable loop?",
+                "When the protocol and the spare capacity allow it. Obsolete protocols are quoted as a panel change."
+            ],
+            [
+                "Do you programme cause and effect?",
+                "Yes, for the interfaces in the scope. We do not programme plant we were not asked to touch."
+            ]
+        ],
+        "seo_keywords": "addressable fire alarm installation, addressable fire panel, loop fire alarm UK"
+    },
+    "bs-5839-fire-alarm-installer": {
+        "name": "BS 5839 Fire Alarm Installer",
+        "service": "fire-alarms",
+        "related": "fire-alarm-installation",
+        "hub_only": true,
+        "h1": "BS 5839 fire alarm installer",
+        "seo_title": "BS 5839 Fire Alarm Installer | UK | iComply",
+        "intro": "A BS 5839 fire alarm installer designs and commissions to that code of practice: Part 1 for non-domestic buildings and Part 6 for dwellings. iComply works to those parts across the UK mainland. The standard is the method. It is not a badge we print on the van. Quotes are price on application.",
+        "body": "We name the part and the category in the quote. Commissioning checks the things the design promised: device list, sounder levels where the scope includes them, battery calculation and cause and effect. If the building use has changed since the last design, we say the category may need to change. We do not stamp a certificate onto an untested loop.",
+        "meta_desc": "BS 5839 fire alarm installer for Part 1 and Part 6 systems. UK mainland. Design and commissioning. Price on application.",
+        "focus_points": [
+            "BS 5839-1 and BS 5839-6 named in the quote",
+            "Category written down, not implied",
+            "Commissioning of the design that was agreed",
+            "No certificate for an untested loop"
+        ],
+        "faq": [
+            [
+                "Are you third-party certificated to BAFE?",
+                "No. We do not claim BAFE, NSI or a similar scheme mark."
+            ],
+            [
+                "Which edition do you use?",
+                "The current edition that applies to the work, as the design states."
+            ],
+            [
+                "Can you certify someone else's install?",
+                "Only the parts we have inspected and tested. The certificate says that limit."
+            ]
+        ],
+        "seo_keywords": "BS 5839 fire alarm installer, BS 5839-1 installation, BS 5839-6 installer UK"
+    },
+    "care-home-fire-alarm-installation": {
+        "name": "Care Home Fire Alarm Installation",
+        "service": "fire-alarms",
+        "related": "fire-alarm-strobe-installation",
+        "hub_only": true,
+        "h1": "Care home fire alarm installation",
+        "seo_title": "Care Home Fire Alarm Installation | UK | iComply",
+        "intro": "Care home fire alarm installation has to work around residents who cannot simply walk out when a sounder starts. iComply designs and commissions these systems to BS 5839 and the home's fire strategy, including staff alarms and staged evacuation where that strategy requires them. UK mainland. Price on application.",
+        "body": "We survey bedrooms, lounges, kitchens and any plant that must shut down. Visual devices and vibrating pillows are included only when the care plan needs them. Testing is phased so the whole home is not in alarm without staff ready. The logbook is written for the manager who will run the weekly test, not only for the installing engineer.",
+        "meta_desc": "Care home fire alarm installation to the fire strategy and BS 5839. UK mainland homes. Phased testing. Price on application.",
+        "focus_points": [
+            "Staff alarm and staged evacuation only when the strategy says so",
+            "Bedrooms, lounges and kitchens surveyed",
+            "Testing phased so staff are ready",
+            "Logbook written for the weekly test the manager runs"
+        ],
+        "faq": [
+            [
+                "Do you install nurse call as well?",
+                "Nurse call is a different system. We can be instructed separately. It is not part of the fire alarm quote by default."
+            ],
+            [
+                "Can testing happen at night?",
+                "Only if the home asks for it and staffing is in place. Daytime phased tests are the usual plan."
+            ],
+            [
+                "Will the system link to the fire service automatically?",
+                "Only if monitoring is in the strategy and in the quote. It is not assumed."
+            ]
+        ],
+        "seo_keywords": "care home fire alarm installation, residential care fire detection, BS 5839 care home UK"
+    },
+    "commercial-fire-alarm-installation": {
+        "name": "Commercial Fire Alarm Installation",
+        "service": "fire-alarms",
+        "related": "commercial-fire-alarm-installer",
+        "h1": "Commercial fire alarm installation",
+        "seo_title": "Commercial Fire Alarm Installation | UK | iComply",
+        "intro": "Commercial fire alarm installation is the full job for a non-domestic building: category, devices, panel, cause and effect, and commissioning. iComply does that work across England, Wales and mainland Scotland. The commercial installation page is not a domestic alarm page. Pricing is price on application.",
+        "body": "We ask for plans, the fire risk assessment actions that mention detection, and whether the landlord or the tenant owns the panel. Those facts change the design. Handover includes the logbook and a demonstration of the weekly test. Maintenance afterwards is offered as its own instruction, not bundled as a hidden retainer.",
+        "meta_desc": "Commercial fire alarm installation to BS 5839-1 across the UK mainland. Commissioned handover. Price on application.",
+        "focus_points": [
+            "Non-domestic category and device schedule",
+            "Landlord and tenant panel ownership made clear",
+            "Weekly-test demonstration at handover",
+            "Maintenance quoted as its own instruction"
+        ],
+        "faq": [
+            [
+                "Do you follow L1, L2 or L3?",
+                "Whichever the fire strategy and BS 5839-1 category require. We do not pick a category from floor area alone."
+            ],
+            [
+                "Can installation include visual alarm devices?",
+                "Yes, where hearing the sounders is not enough. They are listed in the scope, not assumed."
+            ],
+            [
+                "Is commissioning included?",
+                "Commissioning of the agreed scope is part of the installation quote. It is not a surprise extra."
+            ]
+        ],
+        "seo_keywords": "commercial fire alarm installation, office fire alarm system, BS 5839 commercial install UK"
+    },
+    "commercial-fire-alarm-installer": {
+        "name": "Commercial Fire Alarm Installer",
+        "service": "fire-alarms",
+        "related": "commercial-fire-alarm-installation",
+        "h1": "Commercial fire alarm installer",
+        "seo_title": "Commercial Fire Alarm Installer | UK | iComply",
+        "intro": "A commercial fire alarm installer works to the fire strategy for shops, offices, warehouses and mixed-use buildings. iComply designs, installs and commissions those systems across the UK mainland. Domestic Grade D alarms are a different guide. Commercial quotes are price on application after the category is known.",
+        "body": "Commercial sites usually need a zoned or addressable panel, manual call points on escape routes, and sounders that can be heard where people work. Interfaces to door holders or plant are only included when the strategy asks for them. We coordinate with the principal contractor on fit-outs and we will not invent a BAFE or NSI claim.",
+        "meta_desc": "Commercial fire alarm installer for UK mainland businesses. BS 5839-1 design and commissioning. Price on application.",
+        "focus_points": [
+            "Shops, offices, warehouses and mixed-use buildings",
+            "Category taken from the fire strategy",
+            "Call points, sounders and agreed interfaces",
+            "No BAFE or NSI badge claimed"
+        ],
+        "faq": [
+            [
+                "Do you install in offices that stay open?",
+                "Yes, when noisy work and isolations are agreed around occupation."
+            ],
+            [
+                "Is a shop system the same as a warehouse system?",
+                "No. Ceiling height, racking and process risk change the devices. The survey records that."
+            ],
+            [
+                "Can one installer look after several branches?",
+                "Yes. Each branch is still scoped and commissioned on its own paperwork."
+            ]
+        ],
+        "seo_keywords": "commercial fire alarm installer, business fire alarm install, BS 5839-1 installer UK"
+    },
+    "commercial-fire-alarm-installers": {
+        "name": "Commercial Fire Alarm Installers",
+        "service": "fire-alarms",
+        "related": "commercial-fire-alarm-installer",
+        "hub_only": true,
+        "h1": "Commercial fire alarm installers",
+        "seo_title": "Commercial Fire Alarm Installers | UK | iComply",
+        "intro": "Commercial fire alarm installers are the crew for non-domestic systems: offices, retail, industrial units and landlord areas in mixed buildings. iComply fields that crew from Stockport for UK mainland sites. This page is the crew hub. Town-by-town pages for the core installer wording are published on the installer guides.",
+        "body": "A commercial crew needs ceiling access, a working hours plan and a person who can witness cause and effect. We write those into the instruction. Spare capacity on an existing loop is checked before anyone promises to add devices. If the panel cannot take the extension, replacement is quoted instead of a crowded loop.",
+        "meta_desc": "Commercial fire alarm installers for UK mainland non-domestic buildings. BS 5839-1. Price on application.",
+        "focus_points": [
+            "Non-domestic crews, not a domestic alarm swap",
+            "Access and witness plan written into the instruction",
+            "Loop capacity checked before devices are added",
+            "Panel replacement quoted when an extension will not fit"
+        ],
+        "faq": [
+            [
+                "Do you only install new panels?",
+                "No. Extensions are fine when the existing panel can carry them."
+            ],
+            [
+                "Can you work with our main contractor?",
+                "Yes. Programme and ceiling closures are agreed with the contractor before the start date."
+            ],
+            [
+                "Do you hold a third-party approval scheme mark?",
+                "No. We do not claim a scheme mark. The work is design, installation and commissioning to BS 5839."
+            ]
+        ],
+        "seo_keywords": "commercial fire alarm installers, business fire alarm engineers, non-domestic fire alarm UK"
+    },
+    "conventional-fire-alarm-installation": {
+        "name": "Conventional Fire Alarm Installation",
+        "service": "fire-alarms",
+        "related": "addressable-fire-alarm-installation",
+        "hub_only": true,
+        "h1": "Conventional fire alarm installation",
+        "seo_title": "Conventional Fire Alarm Installation | UK | iComply",
+        "intro": "Conventional fire alarm installation uses zones rather than a named device. It is the right system for many small commercial buildings. iComply designs and fits conventional panels across the UK mainland when the zone plan is enough. The quote is price on application. We do not push an addressable panel to inflate the job.",
+        "body": "Zones must match how people will search the building. A single zone for a whole multi-room site is a poor design even if the panel is cheap to buy. We draw the zones, fit call points at the exits the standard expects, and test each zone into the panel. End-of-line devices are recorded so the next service engineer can find them.",
+        "meta_desc": "Conventional fire alarm installation for smaller UK mainland buildings. Zoned BS 5839 systems. Price on application.",
+        "focus_points": [
+            "Zones drawn to match a search of the building",
+            "Call points at the exits the design names",
+            "End-of-line positions recorded",
+            "Addressable offered only when zones are not enough"
+        ],
+        "faq": [
+            [
+                "How many zones do I need?",
+                "Enough to find a fire without searching the whole building. The survey draws them."
+            ],
+            [
+                "Can a conventional panel take smoke and heat on one zone?",
+                "Yes, when the design allows that mix. The zone chart says what is fitted."
+            ],
+            [
+                "Will you convert conventional to addressable later?",
+                "Yes, as a new scope. It is not a free upgrade inside a conventional quote."
+            ]
+        ],
+        "seo_keywords": "conventional fire alarm installation, zoned fire alarm, conventional fire panel UK"
+    },
+    "domestic-fire-alarm-installer": {
+        "name": "Domestic Fire Alarm Installer",
+        "service": "fire-alarms",
+        "related": "domestic-fire-alarm-installation",
+        "h1": "Domestic fire alarm installer",
+        "seo_title": "Domestic Fire Alarm Installer | UK | iComply",
+        "intro": "A domestic fire alarm installer fits Grade and Category systems for houses, flats and small HMOs under BS 5839-6. iComply covers those homes across the UK mainland, with the visit arranged from Stockport. Landlord paperwork is included when the instruction asks for it. The quote is price on application.",
+        "body": "Kitchens usually need heat detection rather than a smoke alarm that false-alarms on toast. Landings and habitable rooms follow the category the layout needs. Mains alarms with a standby supply are specified when the standard requires them. We test every device before leaving and show the household the weekly test. We do not upsell a commercial panel into a two-bed flat.",
+        "meta_desc": "Domestic fire alarm installer for UK mainland homes and small HMOs. BS 5839-6. Price on application.",
+        "focus_points": [
+            "BS 5839-6 Grade and Category for dwellings",
+            "Heat detection in kitchens where smoke alarms false-alarm",
+            "Landlord paperwork when the instruction asks for it",
+            "No commercial panel forced into a small flat"
+        ],
+        "faq": [
+            [
+                "Do you install interlinked alarms?",
+                "Yes, when the category needs them. The quote names the grade."
+            ],
+            [
+                "Can you replace battery-only alarms?",
+                "Yes. The survey says whether mains interlink is required or a repair of the existing grade is enough."
+            ],
+            [
+                "Do you cover flats above shops?",
+                "Yes. The flat and the shop are separate scopes if the systems are separate."
+            ]
+        ],
+        "seo_keywords": "domestic fire alarm installer, home fire alarm installer, BS 5839-6 installer UK"
+    },
+    "emergency-fire-alarm-installation": {
+        "name": "Emergency Fire Alarm Installation",
+        "service": "fire-alarms",
+        "related": "emergency-fire-alarm-installer",
+        "h1": "Emergency fire alarm installation",
+        "seo_title": "Emergency Fire Alarm Installation | UK | iComply",
+        "intro": "Emergency fire alarm installation replaces or rebuilds detection after a failure, a flood, or a condemned panel. iComply schedules that work across UK mainland towns from Stockport. Speed does not remove the design step. The category is still agreed, and the quote is still price on application.",
+        "body": "We separate making the building safer tonight from handing over a commissioned system. The first visit may isolate damaged cable and restore a zone. The installation visit fits the agreed devices and proves cause and effect. Both visits are written down. Neither is given a catalogue fee.",
+        "meta_desc": "Emergency fire alarm installation on the UK mainland. Make-safe and commissioned replacement. BS 5839. Price on application.",
+        "focus_points": [
+            "Make-safe visit separated from the full installation",
+            "Damaged cable and condemned panels assessed first",
+            "Commissioning of the replacement scope",
+            "Both visits price on application"
+        ],
+        "faq": [
+            [
+                "Will insurers accept a same-day install?",
+                "We document what was verified. What an insurer accepts is their decision. We do not invent a certificate for work we did not test."
+            ],
+            [
+                "Can the old cable be reused?",
+                "Only when tests show it is sound. If it is not, replacement is in the quote."
+            ],
+            [
+                "Do you cover warehouses and houses under this heading?",
+                "Yes, with the right British Standard for that building. The survey names it."
+            ]
+        ],
+        "seo_keywords": "emergency fire alarm installation, urgent fire alarm system, replacement fire alarm UK"
+    },
+    "emergency-fire-alarm-installer": {
+        "name": "Emergency Fire Alarm Installer",
+        "service": "fire-alarms",
+        "related": "emergency-fire-alarm",
+        "h1": "Emergency fire alarm installer",
+        "seo_title": "Emergency Fire Alarm Installer | UK | iComply",
+        "intro": "An emergency fire alarm installer is asked for when a building has lost detection and cannot wait for a routine diary slot. iComply prioritises unprotected premises when an engineer is free, anywhere on the UK mainland town list. This is not a guaranteed one-hour contract. The quote is price on application.",
+        "body": "Tell us whether the panel is dead, a zone is isolated, or there is no system at all after a flood or a strip-out. Those are different emergencies. A temporary arrangement is only left in place when it is safe and agreed. The permanent install is still designed to BS 5839, not rushed in as unnamed devices.",
+        "meta_desc": "Emergency fire alarm installer for unprotected UK mainland buildings. Attendance when an engineer is free. Price on application.",
+        "focus_points": [
+            "Unprotected buildings prioritised when someone is free",
+            "Dead panels, isolated zones and missing systems treated differently",
+            "Temporary cover only when it is safe and agreed",
+            "Permanent work still designed to BS 5839"
+        ],
+        "faq": [
+            [
+                "Do you guarantee attendance within an hour?",
+                "No. We say the next realistic window when an engineer is free."
+            ],
+            [
+                "Can you install a replacement the same day?",
+                "Only if the survey and the parts allow it. Otherwise the quote splits make-safe and the permanent install."
+            ],
+            [
+                "Is emergency work a different price list?",
+                "There is no price list. Emergency and planned work are both price on application."
+            ]
+        ],
+        "seo_keywords": "emergency fire alarm installer, urgent fire alarm install, fire alarm panel down UK"
+    },
+    "fire-alarm-companies": {
+        "name": "Fire Alarm Companies",
+        "service": "fire-alarms",
+        "related": "fire-alarm-company",
+        "hub_only": true,
+        "h1": "Fire alarm companies",
+        "seo_title": "Fire Alarm Companies | UK | iComply",
+        "intro": "People compare fire alarm companies by whether they will survey, whether the paperwork matches the visit, and whether the price is invented before anyone sees the building. iComply publishes the scope rules here and the town pages on the installer guides. Comparison shopping still ends in a price-on-application quote.",
+        "body": "Ask a company who commissions the system and where the logbook will live. Those two answers sort a real installer from a box-shift. We answer them on the quote. Multi-site managing agents can use one company for many towns. Each town page describes that place. The commercial terms stay on the quote, not in a table of fees.",
+        "meta_desc": "How to compare fire alarm companies on the UK mainland. Survey, commissioning and POA quotes. iComply, Stockport.",
+        "focus_points": [
+            "Survey before a price",
+            "Commissioning named in the quote",
+            "Logbook location agreed at handover",
+            "Multi-site work still priced per building"
+        ],
+        "faq": [
+            [
+                "Why are there no prices?",
+                "Buildings differ. A fee table would be fiction."
+            ],
+            [
+                "Do you work alongside other contractors?",
+                "Yes. The fire alarm scope is still ours to commission."
+            ],
+            [
+                "Which company page should a local search use?",
+                "Open the installer or installation town page for the place. This page explains the company."
+            ]
+        ],
+        "seo_keywords": "fire alarm companies, compare fire alarm companies, UK fire detection company"
+    },
+    "fire-alarm-company": {
+        "name": "Fire Alarm Company",
+        "service": "fire-alarms",
+        "related": "fire-alarm-companies",
+        "hub_only": true,
+        "h1": "Fire alarm company",
+        "seo_title": "Fire Alarm Company | UK | iComply",
+        "intro": "A fire alarm company should be able to design, install, commission and then service the system it hands over. iComply is that company for UK mainland premises, working from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. We are not a lead-generation desk. The quote is price on application.",
+        "body": "You get a named scope, a date, and paperwork for the work that was done. We do not franchise the visit out under a badge we do not hold. When a specialist ticket is required for a related trade, that limit is said in the quote. Fire alarm work itself is carried out as BS 5839 design, installation and commissioning.",
+        "meta_desc": "Fire alarm company for UK mainland design, installation, commissioning and service. Stockport workshop. Price on application.",
+        "focus_points": [
+            "Design, install, commission and service from one company",
+            "Named scope rather than a routed lead",
+            "Stockport workshop address on the paperwork",
+            "Related trades limited in writing"
+        ],
+        "faq": [
+            [
+                "Are you a national call centre?",
+                "No. Jobs are arranged from the Stockport workshop."
+            ],
+            [
+                "Do you cover the whole UK?",
+                "England, Wales and mainland Scotland on the published town list. Not Northern Ireland or the excluded islands."
+            ],
+            [
+                "Can you maintain a system another company installed?",
+                "Yes, after an initial visit that records what is actually on the wall."
+            ]
+        ],
+        "seo_keywords": "fire alarm company, UK fire alarm company, fire alarm company Stockport"
+    },
+    "fire-alarm-contractor": {
+        "name": "Fire Alarm Contractor",
+        "service": "fire-alarms",
+        "related": "fire-alarm-contractors",
+        "hub_only": true,
+        "h1": "Fire alarm contractor",
+        "seo_title": "Fire Alarm Contractor | UK | iComply",
+        "intro": "A fire alarm contractor is instructed by a main contractor, a landlord or a facilities manager to deliver a defined detection package. iComply takes that instruction for UK mainland projects. We price the package on application against drawings and the fire strategy, and we commission what we install.",
+        "body": "Programme, ceiling type and builders-work holes are agreed before the start. Variations are written when the site changes. We do not absorb extra floors into the original quote without saying so. Practical completion is the commissioned system and the documents, not a panel powered up with zones still spare and unnamed.",
+        "meta_desc": "Fire alarm contractor for UK mainland projects. Drawn scope, variations in writing, BS 5839 commissioning. Price on application.",
+        "focus_points": [
+            "Instructions from main contractors, landlords and FM teams",
+            "Drawings and fire strategy priced before start",
+            "Variations written when the site changes",
+            "Completion means commissioned, not just powered"
+        ],
+        "faq": [
+            [
+                "Can you be instructed on a construction job?",
+                "Yes. The form of contract is agreed in the quote. The fire alarm scope is design, installation and commissioning."
+            ],
+            [
+                "Do you design and build?",
+                "Yes. Design and installation can be one instruction or split if your designer has already finished the cause and effect."
+            ],
+            [
+                "Who holds the drawings?",
+                "The instructing client. We issue the as-fitted information for the work we did."
+            ]
+        ],
+        "seo_keywords": "fire alarm contractor, fire alarm subcontractor, construction fire alarm install UK"
+    },
+    "fire-alarm-contractors": {
+        "name": "Fire Alarm Contractors",
+        "service": "fire-alarms",
+        "related": "fire-alarm-contractor",
+        "hub_only": true,
+        "h1": "Fire alarm contractors",
+        "seo_title": "Fire Alarm Contractors | UK | iComply",
+        "intro": "Fire alarm contractors on a live site need a scope, a programme and a person who can sign the cause and effect. iComply supplies that contracting role across UK mainland projects from Stockport. Several operatives can attend. The commercial offer is still one quote, price on application.",
+        "body": "We attend pre-start meetings when the programme needs it. RAMS for the fire alarm work are issued for the site rules you send. Containment that belongs to the electrician is not silently taken into our price. If you want us to supply containment, it is a line in the quote. Commissioning is booked as its own day when the ceilings are closed.",
+        "meta_desc": "Fire alarm contractors for live UK mainland sites. Programme, RAMS and commissioning day. Price on application.",
+        "focus_points": [
+            "Pre-start meetings when the programme needs them",
+            "RAMS for the fire alarm work",
+            "Containment only if the quote includes it",
+            "Commissioning booked when ceilings are closed"
+        ],
+        "faq": [
+            [
+                "Can you provide more than one operative?",
+                "Yes. The quote states how many the programme needs."
+            ],
+            [
+                "Do you work nights on construction sites?",
+                "When the site is running nights and the quote includes that shift."
+            ],
+            [
+                "Will you certify the builder's cable?",
+                "Only cable we have tested. Untested containment is excluded in writing."
+            ]
+        ],
+        "seo_keywords": "fire alarm contractors, site fire alarm contractor, UK fire alarm installation contractor"
+    },
+    "fire-alarm-engineers": {
+        "name": "Fire Alarm Engineers",
+        "service": "fire-alarms",
+        "related": "fire-alarm-engineer",
+        "hub_only": true,
+        "h1": "Fire alarm engineers",
+        "seo_title": "Fire Alarm Engineers | UK | iComply",
+        "intro": "Fire alarm engineers diagnose panels, loops and devices, then either repair them or say what must be replaced. iComply arranges that engineering across the UK mainland from Stockport. This hub is the trade page. Town pages that name a place sit on the installer, installation and engineer guides.",
+        "body": "Engineers arrive with test equipment and the paperwork the visit has to update. They do not silence a panel and leave the cause unwritten. If the fault needs parts that are not on the van, the return visit is quoted before it is booked. Out-of-hours attendance is only offered when someone is actually free. It is not a retained 24-hour contract.",
+        "meta_desc": "Fire alarm engineers for UK mainland premises. Faults, service and installs to BS 5839. Price on application.",
+        "focus_points": [
+            "Panel, loop and device diagnosis",
+            "Cause written down, not only silenced",
+            "Parts and return visits quoted before booking",
+            "No retained 24-hour contract on this page"
+        ],
+        "faq": [
+            [
+                "Are you a 24-hour fire alarm company?",
+                "No retained overnight contract is sold here. Attendance is when an engineer is free."
+            ],
+            [
+                "Do engineers cover commercial and domestic sites?",
+                "Yes. The category and the paperwork follow the building type."
+            ],
+            [
+                "How is engineering priced?",
+                "Price on application after the panel, the fault text and the address are known."
+            ]
+        ],
+        "seo_keywords": "fire alarm engineers, UK fire alarm engineer, BS 5839 engineer, fire panel engineer"
+    },
+    "fire-alarm-fitter": {
+        "name": "Fire Alarm Fitter",
+        "service": "fire-alarms",
+        "related": "fire-alarm-fitters",
+        "hub_only": true,
+        "h1": "Fire alarm fitter",
+        "seo_title": "Fire Alarm Fitter | UK | iComply",
+        "intro": "A fire alarm fitter is the person on the tools: devices, cable and the panel terminations. iComply's fitters work to a design that has already been agreed for UK mainland sites. Fitting without a design is how zones get missed. The quote is price on application and includes the commissioning of what was fitted.",
+        "body": "First fix and second fix can be split on a construction programme. The fitter does not leave bases unlabelled. At handover the device that is on the ceiling matches the schedule. If a ceiling change moved a head, that is a variation, not a quiet extra. Domestic fitters and commercial fitters are scheduled against the right standard.",
+        "meta_desc": "Fire alarm fitter for agreed BS 5839 designs on the UK mainland. First and second fix. Commissioning included in the scope. POA.",
+        "focus_points": [
+            "Fitting follows an agreed design",
+            "First fix and second fix can be split",
+            "Devices labelled to the schedule",
+            "Ceiling changes treated as variations"
+        ],
+        "faq": [
+            [
+                "Can I hire a fitter by the day?",
+                "We do not publish a day rate. The quote is for the scope, which may be one day or several."
+            ],
+            [
+                "Do fitters commission as well?",
+                "The scope includes commissioning of the devices fitted. A fitter-only instruction with no test is declined."
+            ],
+            [
+                "Will a fitter work to our drawings?",
+                "Yes, and we will flag drawings that contradict BS 5839 before cable is pulled."
+            ]
+        ],
+        "seo_keywords": "fire alarm fitter, fire alarm first fix, fire alarm installation fitter UK"
+    },
+    "fire-alarm-fitters": {
+        "name": "Fire Alarm Fitters",
+        "service": "fire-alarms",
+        "related": "fire-alarm-fitter",
+        "hub_only": true,
+        "h1": "Fire alarm fitters",
+        "seo_title": "Fire Alarm Fitters | UK | iComply",
+        "intro": "Fire alarm fitters, plural, are what a multi-floor fit-out needs so containment and devices keep up with the ceiling contractor. iComply books that team for UK mainland projects. The number of fitters is in the quote. It is not a standing gang with a published weekly rate.",
+        "body": "We pair fitters with the programme you send: one floor a week, or a single weekend for a small unit. Materials are called off against the device schedule so the site is not storing the wrong heads. Snagging after the ceiling grid is closed is included when the quote says the ceilings were open at first fix and closed before test.",
+        "meta_desc": "Fire alarm fitters for UK mainland fit-outs. Team size in the quote. Device schedule and commissioning. Price on application.",
+        "focus_points": [
+            "Team size written in the quote",
+            "Programme matched to the ceiling contractor",
+            "Materials called off against the device schedule",
+            "Snagging after the grid is closed, when quoted"
+        ],
+        "faq": [
+            [
+                "Can fitters start before the design is finished?",
+                "Only containment that the design has already fixed. Devices wait for the schedule."
+            ],
+            [
+                "Do you supply the cable?",
+                "When the quote includes it. Electrician's fire cable already on site is used only if the specification matches."
+            ],
+            [
+                "How do you avoid idle fitters?",
+                "The start date is when the ceilings and power are actually ready. We will not mobilise onto a floor that is still a shell unless that is the agreed first fix."
+            ]
+        ],
+        "seo_keywords": "fire alarm fitters, fire alarm installation team, fit-out fire alarm UK"
+    },
+    "fire-alarm-installation-near-me": {
+        "name": "Fire Alarm Installation Near Me",
+        "service": "fire-alarms",
+        "related": "fire-alarm-installation",
+        "h1": "Fire alarm installation near me",
+        "seo_title": "Fire Alarm Installation Near Me | UK | iComply",
+        "intro": "Fire alarm installation near me is a request for a new system or a major extension in a named place. iComply writes the BS 5839 scope first, then installs and commissions. Town pages cover the UK mainland list. The workshop is in Offerton, Stockport. The quote is price on application.",
+        "body": "Installation near a town is still installation: category, device schedule, cause and effect, certificates for the work we verified. We do not treat a near-me search as a different product with a lower spec. If you already have a panel and only need a repair, use the repair guide rather than this install page.",
+        "meta_desc": "Fire alarm installation near me for UK mainland towns. BS 5839 design and commissioning. Price on application.",
+        "focus_points": [
+            "New systems and major extensions",
+            "Category agreed before devices are ordered",
+            "Commissioning of the work we installed",
+            "Repairs directed to the repair guide"
+        ],
+        "faq": [
+            [
+                "Is near-me installation cheaper?",
+                "No price is published. Travel and scope are both in the quote."
+            ],
+            [
+                "Will you install a system specified by someone else?",
+                "Yes, when we can verify the design. If the design cannot be built as drawn, we say so before work starts."
+            ],
+            [
+                "Do you install Grade D alarms in houses?",
+                "Domestic categories are BS 5839-6. The domestic installation page is the right guide for houses and flats."
+            ]
+        ],
+        "seo_keywords": "fire alarm installation near me, local fire alarm installation, BS 5839 installation UK"
+    },
+    "fire-alarm-installations": {
+        "name": "Fire Alarm Installations",
+        "service": "fire-alarms",
+        "related": "fire-alarm-installation",
+        "hub_only": true,
+        "h1": "Fire alarm installations",
+        "seo_title": "Fire Alarm Installations | UK | iComply",
+        "intro": "Fire alarm installations are complete systems: design, containment, devices, panel and commissioning. iComply carries out that sequence for commercial and residential buildings across the UK mainland. The price is on application because two buildings with the same floor area rarely need the same category.",
+        "body": "An installation record should say what was new, what was retained and how the cause and effect was proved. We leave that with the client. Conventional and addressable systems are both in scope. The choice follows the building, not a preferred panel brand. Servicing after handover is a separate instruction.",
+        "meta_desc": "Fire alarm installations across the UK mainland. Design, fit and commission to BS 5839. Price on application from Stockport.",
+        "focus_points": [
+            "Full installations, not device-only swaps",
+            "Conventional or addressable as the building needs",
+            "Commissioning record of what was proved",
+            "Servicing quoted separately from the install"
+        ],
+        "faq": [
+            [
+                "Is an installation the same as a service visit?",
+                "No. Installation is new work or a major alteration. A service visit maintains a system that already exists."
+            ],
+            [
+                "Can you install in an occupied building?",
+                "Often, if access and isolation are agreed. The programme is written into the quote."
+            ],
+            [
+                "Do you list equipment prices here?",
+                "No. Equipment and labour are price on application inside one scope."
+            ]
+        ],
+        "seo_keywords": "fire alarm installations, UK fire alarm installation, BS 5839 system install, new fire alarm system"
+    },
+    "fire-alarm-installer": {
+        "name": "Fire Alarm Installer",
+        "service": "fire-alarms",
+        "related": "fire-alarm-installers",
+        "h1": "Fire alarm installer",
+        "seo_title": "Fire Alarm Installer | UK | iComply",
+        "intro": "A fire alarm installer designs the system, fits the devices and commissions it so the responsible person can take the logbook. iComply arranges that work for premises across England, Wales and mainland Scotland from the Stockport workshop. The quote is price on application after the building and the BS 5839 category are known.",
+        "body": "The installer visit is not a van with a box of detectors and a guessed layout. We read the fire strategy, walk the escape routes and agree detection, call points, sounders and any interfaces before cable is pulled. Commissioning proves the cause and effect that was written down. Paperwork stays with the instructing client. There is no catalogue price and no invented accreditation badge on this page.",
+        "meta_desc": "Fire alarm installer for UK mainland premises. BS 5839 design, install and commissioning from Stockport. Price on application.",
+        "focus_points": [
+            "BS 5839 design agreed before installation",
+            "Panels, devices, call points and sounders fitted to that design",
+            "Commissioning and a logbook the dutyholder can keep",
+            "Price on application after the building is known"
+        ],
+        "faq": [
+            [
+                "Do you publish a price for a fire alarm installer?",
+                "No. The quote is price on application once the category, device count and access are clear."
+            ],
+            [
+                "Which standard do you install to?",
+                "Non-domestic work is planned against BS 5839-1. Dwellings are planned against BS 5839-6. The survey says which one applies."
+            ],
+            [
+                "Where is the workshop?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Travel to the site is part of the quote."
+            ]
+        ],
+        "seo_keywords": "fire alarm installer, UK fire alarm installer, BS 5839 installer, fire alarm install Stockport"
+    },
+    "fire-alarm-installer-near-me": {
+        "name": "Fire Alarm Installer Near Me",
+        "service": "fire-alarms",
+        "related": "fire-alarm-installer",
+        "h1": "Fire alarm installer near me",
+        "seo_title": "Fire Alarm Installer Near Me | UK | iComply",
+        "intro": "Searching for a fire alarm installer near you only helps if that installer will actually survey the building. iComply publishes a page for every UK mainland town over 10,000 people so the local page names the place. The engineer is scheduled from Stockport. The quote is price on application.",
+        "body": "Send the postcode, the panel make if you know it, and whether this is a new system or a fault on one that already exists. We say which town page matches the site and what the first visit has to prove. Near-me searches from places outside the mainland list are not given a town page. Ask and we will say whether the visit can be scheduled.",
+        "meta_desc": "Fire alarm installer near me, with a page for every UK mainland town over 10,000. BS 5839. Price on application.",
+        "focus_points": [
+            "Town pages for mainland places over 10,000 people",
+            "Postcode and panel details before a date is set",
+            "New installs and faults kept as different scopes",
+            "Price on application, including travel"
+        ],
+        "faq": [
+            [
+                "Why is there a town page if you are based in Stockport?",
+                "So the local search names the town you actually need, with travel written into the quote."
+            ],
+            [
+                "Do you cover my village?",
+                "Town pages are the mainland list over 10,000 people. Smaller places can still be quoted. They do not have their own page in this set."
+            ],
+            [
+                "How soon can an installer attend?",
+                "When the diary allows. We do not promise a response time on this page."
+            ]
+        ],
+        "seo_keywords": "fire alarm installer near me, local fire alarm installer, fire alarm installer UK town"
+    },
+    "fire-alarm-installers": {
+        "name": "Fire Alarm Installers",
+        "service": "fire-alarms",
+        "related": "fire-alarm-installer",
+        "h1": "Fire alarm installers",
+        "seo_title": "Fire Alarm Installers | UK | iComply",
+        "intro": "Fire alarm installers are the people who turn a written design into a working system. iComply sends competent engineers for new installs and extensions across the UK mainland, scheduled from Stockport. Each job is quoted price on application. We do not sell a day rate on this page.",
+        "body": "Installers need the panel type, the loop or zone plan and a building that can be accessed. We agree that before attendance. On site the work is device location, cable routes, cause and effect, and a handover the facilities lead can follow. Multi-site clients can book several premises on one instruction. Each building still gets its own scope.",
+        "meta_desc": "Fire alarm installers for mainland UK sites. Competent engineers, BS 5839 commissioning, price on application. Stockport base.",
+        "focus_points": [
+            "Competent installers for new systems and extensions",
+            "Scope written before anyone travels",
+            "Handover includes the logbook and zone information",
+            "Multi-site instructions quoted per building"
+        ],
+        "faq": [
+            [
+                "Can several installers attend one estate?",
+                "Yes, when the diary and the access plan allow. Each building is still scoped on its own."
+            ],
+            [
+                "Do installers cover Scotland and Wales?",
+                "Yes. England, Wales and mainland Scotland are on the town list. Islands and Northern Ireland are not."
+            ],
+            [
+                "Is there a fixed call-out price?",
+                "No. Attendance is price on application after the fault or the install scope is described."
+            ]
+        ],
+        "seo_keywords": "fire alarm installers, UK fire alarm installers, BS 5839 installers, commercial fire alarm installers"
+    },
+    "fire-alarm-installers-near-me": {
+        "name": "Fire Alarm Installers Near Me",
+        "service": "fire-alarms",
+        "related": "fire-alarm-installers",
+        "h1": "Fire alarm installers near me",
+        "seo_title": "Fire Alarm Installers Near Me | UK | iComply",
+        "intro": "Fire alarm installers near me means a team that will name your town and still tell you the job is scoped from a real survey. iComply covers the UK mainland town list from Stockport. Plural just means more than one engineer can be booked when the building needs it. Pricing stays price on application.",
+        "body": "A single fitter is enough for a small conventional panel. A larger addressable install may need two people for containment and commissioning on the same day. We say which one the survey supports. You do not pay a published pair-rate. The instruction names the headcount after the scope is clear.",
+        "meta_desc": "Fire alarm installers near me across UK mainland towns. Survey first, BS 5839 commissioning, price on application.",
+        "focus_points": [
+            "One engineer or a pair, decided in the scope",
+            "Mainland town pages, not a single national doorway",
+            "Addressable and conventional installs",
+            "No published pair-rate or day rate"
+        ],
+        "faq": [
+            [
+                "Do two installers cost double?",
+                "Not as a rule of thumb. The quote states the people the scope needs."
+            ],
+            [
+                "Can you attend outside England?",
+                "Wales and mainland Scotland are on the same town list. Northern Ireland is not."
+            ],
+            [
+                "Which page should I open for my town?",
+                "Use the town page under this guide. The hub explains the service. The town page names the place."
+            ]
+        ],
+        "seo_keywords": "fire alarm installers near me, local fire alarm company, fire alarm engineers near me"
+    },
+    "fire-alarm-maintenance-near-me": {
+        "name": "Fire Alarm Maintenance Near Me",
+        "service": "fire-alarms",
+        "related": "fire-alarm-service-near-me",
+        "hub_only": true,
+        "h1": "Fire alarm maintenance near me",
+        "seo_title": "Fire Alarm Maintenance Near Me | UK | iComply",
+        "intro": "Fire alarm maintenance near me is the ongoing plan: scheduled visits, defect close-out and a logbook that matches the panel. iComply agrees that plan for UK mainland buildings. Maintenance is price on application for the year or for a single visit. It is not a subscription with a hidden call-out table.",
+        "body": "We record false alarms, isolations and the devices tested. Repeat false alarms from one kitchen or one loading door are called out in the report so the cause can be designed out. A maintenance agreement does not make iComply the responsible person. The dutyholder keeps that role. We keep the system evidence up to date.",
+        "meta_desc": "Fire alarm maintenance near me for UK mainland sites. Scheduled BS 5839 visits and defect reports. Price on application.",
+        "focus_points": [
+            "Scheduled visits and a matching logbook",
+            "False alarm patterns written into the report",
+            "Single visits or a longer plan, both POA",
+            "Dutyholder remains the responsible person"
+        ],
+        "faq": [
+            [
+                "Do you take over legal responsibility?",
+                "No. Maintenance evidence is ours. The responsible person is still the dutyholder."
+            ],
+            [
+                "Can maintenance include emergency lighting?",
+                "Only if that is a separate instruction. It is not assumed on a fire alarm page."
+            ],
+            [
+                "What if we miss a visit?",
+                "The logbook should show the gap. We book the next one. We do not backdate a certificate."
+            ]
+        ],
+        "seo_keywords": "fire alarm maintenance near me, fire alarm service contract, BS 5839 maintenance UK"
+    },
+    "fire-alarm-repair-near-me": {
+        "name": "Fire Alarm Repair Near Me",
+        "service": "fire-alarms",
+        "related": "fire-alarm-service-near-me",
+        "hub_only": true,
+        "h1": "Fire alarm repair near me",
+        "seo_title": "Fire Alarm Repair Near Me | UK | iComply",
+        "intro": "Fire alarm repair near me is a fault on a system you already have: earth fault, open circuit, a dead sounder, a panel that will not reset. iComply diagnoses that across UK mainland towns. Repair is not a new installation. The quote is price on application after the fault text is known.",
+        "body": "Send a photo of the panel display and the postcode. We bring test gear for the likely cause and we do not replace a panel because a single device is dirty. If the repair needs a part on order, the building is left with a written note of what is isolated. A repair certificate covers the repair we made, not the whole historic system.",
+        "meta_desc": "Fire alarm repair near me on the UK mainland. Panel and device faults diagnosed. Price on application. Not a new-install page.",
+        "focus_points": [
+            "Faults on existing systems",
+            "Panel photo and postcode before attendance",
+            "Device repair before panel replacement",
+            "Written note of anything left isolated"
+        ],
+        "faq": [
+            [
+                "Can you repair any brand?",
+                "Most UK panels. If the panel is obsolete and parts do not exist, we say replacement is the repair."
+            ],
+            [
+                "Do you charge to look?",
+                "Attendance is quoted. We do not hide a look-see fee in small print on this page."
+            ],
+            [
+                "Is repair the same as a service?",
+                "No. Repair fixes a fault. A service is the planned BS 5839 visit."
+            ]
+        ],
+        "seo_keywords": "fire alarm repair near me, fire panel repair, fire alarm fault UK"
+    },
+    "fire-alarm-service-near-me": {
+        "name": "Fire Alarm Service Near Me",
+        "service": "fire-alarms",
+        "related": "fire-alarm-maintenance-near-me",
+        "hub_only": true,
+        "h1": "Fire alarm service near me",
+        "seo_title": "Fire Alarm Service Near Me | UK | iComply",
+        "intro": "Fire alarm service near me is the planned BS 5839 maintenance visit, not a breakdown call. iComply carries out that service for UK mainland premises from Stockport. The period between visits follows the standard and the risk assessment, not a slogan. The quote is price on application.",
+        "body": "A service visit tests a portion of the devices, the panel, the batteries and the logbook, and records defects. It does not automatically include repairs. Defects are quoted before they are fixed, unless the instruction already allows minor parts. You get a service certificate for the visit, filed with the logbook.",
+        "meta_desc": "Fire alarm service near me. Planned BS 5839 maintenance for UK mainland sites. Defects quoted separately. Price on application.",
+        "focus_points": [
+            "Planned maintenance, not an emergency call",
+            "Devices, batteries, panel and logbook checked",
+            "Defects quoted before they are fixed",
+            "Service certificate for the visit itself"
+        ],
+        "faq": [
+            [
+                "How often is a fire alarm serviced?",
+                "BS 5839-1 sets the usual non-domestic pattern. We confirm the interval for your building rather than inventing a shorter one to sell visits."
+            ],
+            [
+                "Does the service include batteries?",
+                "Battery condition is checked. Replacement is in the quote when the test says they are due."
+            ],
+            [
+                "Can one visit cover several sites near each other?",
+                "Yes. Each site still gets its own certificate."
+            ]
+        ],
+        "seo_keywords": "fire alarm service near me, BS 5839 service, fire alarm maintenance visit UK"
+    },
+    "fire-alarm-specialist": {
+        "name": "Fire Alarm Specialist",
+        "service": "fire-alarms",
+        "related": "fire-alarm-specialists",
+        "hub_only": true,
+        "h1": "Fire alarm specialist",
+        "seo_title": "Fire Alarm Specialist | UK | iComply",
+        "intro": "A fire alarm specialist is the person you call when the system is awkward: cause and effect that nobody wrote down, a panel with no zone chart, or a design that no longer matches the building. iComply does that specialist work across the UK mainland. It is still BS 5839 work. The quote is price on application.",
+        "body": "Specialist does not mean a secret qualification we cannot name. It means time to investigate. We trace loops, rebuild zone text and say which devices are in the wrong room. If the honest outcome is a new system, we quote that instead of another year of fault-finding. Reports are written in plain language for the dutyholder.",
+        "meta_desc": "Fire alarm specialist for difficult UK mainland systems. Cause and effect, zone charts and honest replacement advice. POA.",
+        "focus_points": [
+            "Missing zone charts and undocumented cause and effect",
+            "Loop tracing and device location",
+            "Plain-language report for the dutyholder",
+            "Replacement quoted when repair is no longer honest"
+        ],
+        "faq": [
+            [
+                "Do you only do specialist investigations?",
+                "No. Installs and services are on their own pages. This page is the difficult-system work."
+            ],
+            [
+                "Can you decode an old panel program?",
+                "Often. If the software or the password is unavailable, we say the panel cannot be supported."
+            ],
+            [
+                "Is a specialist visit more expensive?",
+                "It takes longer. The quote says so. There is no specialist tariff printed here."
+            ]
+        ],
+        "seo_keywords": "fire alarm specialist, fire alarm cause and effect, fire panel investigation UK"
+    },
+    "fire-alarm-specialists": {
+        "name": "Fire Alarm Specialists",
+        "service": "fire-alarms",
+        "related": "fire-alarm-specialist",
+        "hub_only": true,
+        "h1": "Fire alarm specialists",
+        "seo_title": "Fire Alarm Specialists | UK | iComply",
+        "intro": "Fire alarm specialists, as a team, cover design questions, legacy panels and buildings where the fire strategy and the devices disagree. iComply fields that team from Stockport for UK mainland clients. You still get one point of contact. The quote is price on application.",
+        "body": "Use this page when more than one discipline is in the room: the assessor, the landlord and the contractor. We will attend a design meeting and then put the agreed category into an installation scope. We will not sit on a retained advisory fee with no visit. Advice that needs the building is a survey.",
+        "meta_desc": "Fire alarm specialists for design meetings and legacy systems. UK mainland. One point of contact. Price on application.",
+        "focus_points": [
+            "Design meetings with assessors, landlords and contractors",
+            "Legacy panels and mismatched strategies",
+            "One point of contact on the instruction",
+            "Advice that needs the building is a survey, not a retainer"
+        ],
+        "faq": [
+            [
+                "Can you review a specification before tender?",
+                "Yes. The review is quoted. We mark what cannot be built as drawn."
+            ],
+            [
+                "Do specialists also install?",
+                "Yes. The install is a separate line if you want us to build what we designed."
+            ],
+            [
+                "Are you independent of a panel manufacturer?",
+                "We are not tied to one factory. The panel is chosen for the protocol and the parts, and named in the quote."
+            ]
+        ],
+        "seo_keywords": "fire alarm specialists, fire alarm consultant installer, fire detection specialist UK"
+    },
+    "hmo-fire-alarm-installation": {
+        "name": "HMO Fire Alarm Installation",
+        "service": "fire-alarms",
+        "related": "landlord-fire-alarm-installer",
+        "hub_only": true,
+        "h1": "HMO fire alarm installation",
+        "seo_title": "HMO Fire Alarm Installation | UK | iComply",
+        "intro": "HMO fire alarm installation follows the licence and BS 5839-6 for houses in multiple occupation: typically a higher grade than a single-family house, with coverage of bedrooms, the escape route and the kitchen. iComply installs that scope across UK mainland HMOs. The quote is price on application after the room count is known.",
+        "body": "We need the current licence conditions or the fire risk assessment actions before we specify. A mixed Grade A system in the common parts and Grade D in the flats is common and must not be muddled into one certificate. Testing includes the bedrooms the licence names, not only the hallway panel. Occupied rooms are booked with the manager so residents are not surprised.",
+        "meta_desc": "HMO fire alarm installation to the licence and BS 5839-6. UK mainland. Common parts and bedrooms scoped separately. POA.",
+        "focus_points": [
+            "Licence conditions read before the design",
+            "Bedrooms, escape route and kitchen covered as specified",
+            "Grade A common parts and Grade D dwellings kept distinct",
+            "Occupied rooms booked with the manager"
+        ],
+        "faq": [
+            [
+                "Is every HMO a Grade A system?",
+                "No. The licence and the building decide. We do not apply one grade to every HMO."
+            ],
+            [
+                "Can you install while tenants are in?",
+                "Yes, room by room, when the manager has told them."
+            ],
+            [
+                "Do you deal with the council?",
+                "We provide the installation evidence. Speaking for the licence is the landlord's role unless you instruct us to attend a meeting."
+            ]
+        ],
+        "seo_keywords": "HMO fire alarm installation, house in multiple occupation fire alarm, BS 5839-6 HMO UK"
+    },
+    "landlord-fire-alarm-installer": {
+        "name": "Landlord Fire Alarm Installer",
+        "service": "fire-alarms",
+        "related": "hmo-fire-alarm-installation",
+        "hub_only": true,
+        "h1": "Landlord fire alarm installer",
+        "seo_title": "Landlord Fire Alarm Installer | UK | iComply",
+        "intro": "A landlord fire alarm installer fits and documents detection for rented houses, flats and small blocks. iComply works for landlords and agents across the UK mainland. The alarm grade follows BS 5839-6 and the licence or fire risk assessment, not a generic landlord pack. Price on application.",
+        "body": "We ask which storeys are let, whether there is a shared hallway, and what the local licence already requires. A single house and an HMO are not the same design. Paperwork is written so an agent can file it against the property address. We do not supply a one-page certificate that hides untested rooms.",
+        "meta_desc": "Landlord fire alarm installer for rented homes on the UK mainland. BS 5839-6. Agent-ready paperwork. Price on application.",
+        "focus_points": [
+            "Rented houses, flats and small blocks",
+            "Grade matched to the licence and BS 5839-6",
+            "Shared hallways treated differently from single houses",
+            "Paperwork filed against the property address"
+        ],
+        "faq": [
+            [
+                "Do all landlords need the same alarms?",
+                "No. Storeys, inner rooms and HMO status change the category."
+            ],
+            [
+                "Can you invoice the agent?",
+                "Yes, when the agent is the instructing client. The property address is still on the paperwork."
+            ],
+            [
+                "Do you also do the gas safety certificate?",
+                "Gas work, where it is instructed, is carried out by Gas Safe registered engineers. iComply is not Gas Safe registered. This page is the fire alarm install."
+            ]
+        ],
+        "seo_keywords": "landlord fire alarm installer, rental property fire alarms, BS 5839-6 landlord UK"
+    },
+    "same-day-fire-alarm-installer": {
+        "name": "Same Day Fire Alarm Installer",
+        "service": "fire-alarms",
+        "related": "emergency-fire-alarm-installer",
+        "hub_only": true,
+        "h1": "Same day fire alarm installer",
+        "seo_title": "Same Day Fire Alarm Installer | UK | iComply",
+        "intro": "A same-day fire alarm installer is a request for attendance today, not a promise that every part will be fitted today. iComply will say yes only when an engineer and the right materials are actually free for a UK mainland site. If they are not, we give the next window. The quote is price on application.",
+        "body": "Same-day work is usually a fault, a single device, or making a zone safe. A full addressable install is rarely a same-day product because the design and the cable take longer than a diary gap. We will not pretend otherwise. When same-day attendance happens, the notes still name the cause and the test result.",
+        "meta_desc": "Same day fire alarm installer when an engineer is free. UK mainland. Faults and make-safe, not a guaranteed full install. POA.",
+        "focus_points": [
+            "Attendance today only when someone is free",
+            "Faults and make-safe more often than full installs",
+            "Next window given when today is not possible",
+            "Test result still written down"
+        ],
+        "faq": [
+            [
+                "Can you guarantee same-day arrival?",
+                "No. The page describes the request. The diary decides."
+            ],
+            [
+                "Will you start a new install the day I call?",
+                "Only for a very small agreed scope. Larger installs are surveyed first."
+            ],
+            [
+                "Do you charge more for same-day?",
+                "There is no surcharge table. The quote says what the visit costs."
+            ]
+        ],
+        "seo_keywords": "same day fire alarm installer, fire alarm engineer today, urgent fire alarm UK"
+    },
+    "warehouse-fire-alarm-installation": {
+        "name": "Warehouse Fire Alarm Installation",
+        "service": "fire-alarms",
+        "related": "factory-fire-alarm-system",
+        "hub_only": true,
+        "h1": "Warehouse fire alarm installation",
+        "seo_title": "Warehouse Fire Alarm Installation | UK | iComply",
+        "intro": "Warehouse fire alarm installation has to cope with height, racking and dust. iComply surveys the shed before naming beams, aspirating pipe or heat detection. The work is commissioned to BS 5839 and quoted price on application for UK mainland warehouses.",
+        "body": "A point smoke detector under a 12 metre roof often does nothing useful. We say so. Cable routes stay out of forklift paths. Cause and effect can release shutters or signal the sprinkler interface only when the strategy includes that. Out-of-hours testing is available when the operation cannot stop a pick-face during the day. It is booked, not assumed.",
+        "meta_desc": "Warehouse fire alarm installation for high-bay and racked buildings. BS 5839 survey first. Price on application.",
+        "focus_points": [
+            "Height and racking surveyed before device choice",
+            "Beam, aspirating or heat detection when point smoke is wrong",
+            "Cable kept out of forklift routes",
+            "Shutters and sprinklers only if the strategy includes them"
+        ],
+        "faq": [
+            [
+                "Do you install in live warehouses?",
+                "Yes, with a traffic plan. We do not pull cable across an active aisle without an agreed window."
+            ],
+            [
+                "Can one system cover several units?",
+                "Sometimes. Party walls and landlord risers decide it. The survey says whether they are one system or several."
+            ],
+            [
+                "Is a warehouse quote the same as an office quote?",
+                "No. Volume and access change the labour. Both are price on application."
+            ]
+        ],
+        "seo_keywords": "warehouse fire alarm installation, high bay fire detection, industrial fire alarm UK"
+    }
 }
