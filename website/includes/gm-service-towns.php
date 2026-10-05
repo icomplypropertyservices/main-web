@@ -779,8 +779,40 @@ function icomplyGmEnrichFireTownFamilies(array $rows): array
     $slugs = [
         'brinnington', 'castleton', 'davyhulme', 'dialstone', 'edgeley', 'gatley',
         'heaton-mersey', 'heaton-norris', 'lostock', 'newhey', 'partington', 'reddish',
+        // Pack D dual-ring fire×town gaps (AOV/barriers live; fire missing)
+        'barnoldswick', 'brierfield', 'glossop', 'haslingden', 'todmorden',
     ];
     $neighbourDefault = ['manchester', 'stockport', 'sale', 'bolton'];
+
+    $stubs = [
+        'barnoldswick' => ['Barnoldswick', 10000, 'Lancashire', 53.9170, -2.1870, 'BB18'],
+        'brierfield' => ['Brierfield', 9000, 'Lancashire', 53.8240, -2.2340, 'BB9'],
+        'glossop' => ['Glossop', 33000, 'Derbyshire', 53.4430, -1.9490, 'SK13'],
+        'haslingden' => ['Haslingden', 16000, 'Lancashire', 53.7080, -2.3260, 'BB4'],
+        'todmorden' => ['Todmorden', 15000, 'West Yorkshire', 53.7140, -2.0970, 'OL14'],
+    ];
+    foreach ($stubs as $slug => $meta) {
+        if (isset($rows[$slug])) {
+            continue;
+        }
+        [$name, $pop, $county, $lat, $lng, $outward] = $meta;
+        $rows[$slug] = icomplyGmTown(
+            $name,
+            $pop,
+            $county,
+            $lat,
+            $lng,
+            [],
+            $outward,
+            [],
+            [],
+            [],
+            [],
+            '/pages/areas',
+            $name
+        );
+    }
+
     foreach ($slugs as $slug) {
         if (!isset($rows[$slug])) {
             continue;
