@@ -364,6 +364,19 @@ function routerHandleRequest(): void {
         return;
     }
 
+    // P0 job slug that already has a keyword hub: one canonical URL.
+    if (preg_match('#^/pages/jobs/([a-z0-9\-]+)$#', $path, $p0JobMatch)) {
+        if (!function_exists('nationwideP0KeywordRedirect')) {
+            require_once __DIR__ . '/nationwide-p0-jobs.php';
+        }
+        $p0Target = nationwideP0KeywordRedirect($p0JobMatch[1]);
+        if ($p0Target !== null) {
+            header('Location: ' . url($p0Target), true, 301);
+            icomplyRequestExit();
+            return;
+        }
+    }
+
     // Home
     if ($path === '/' || $path === '/index') {
         require SITE_ROOT . '/index.php';
