@@ -125,7 +125,7 @@ foreach ($samples as [$path, $needle, $townPage]) {
     if ($mainStart !== false && $mainEnd !== false && $mainEnd > $mainStart) {
         $copy = substr($html, $mainStart, $mainEnd - $mainStart);
     }
-    $ok($rendered && str_contains($html, $needle), "{$path} renders {$needle}");
+    $ok($rendered && stripos($html, $needle) !== false, "{$path} renders {$needle}");
     $ok(!str_contains($copy, 'approved subcontractor'), "{$path} has no approved-subcontractor wording");
     $ok(!preg_match('/£\s*\d/', $copy), "{$path} has no £ price");
     $ok(!preg_match('/\bb\d{5,}\b/', $copy), "{$path} has no visible uniqueness token");
