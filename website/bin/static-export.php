@@ -1009,7 +1009,10 @@ __MATRIX_REDIRECTS__
 
 TXT;
     $txt = str_replace("__MATRIX_REDIRECTS__\n", icomplyUnpublishedMatrixRedirects(), $base);
-    return rtrim($txt, "\r\n") . "\n" . icomplyAovLegacyRedirectLines() . <<<'TXT'
+    // Exact place-alias 301s must come before /pages/barriers/:slug and /pages/aov 200! rules.
+    return icomplyPlaceAliasRedirectLines()
+        . rtrim($txt, "\r\n") . "\n"
+        . icomplyAovLegacyRedirectLines() . <<<'TXT'
 
 # Splat pretty URLs. No force — /assets and real files win.
 /*                       /:splat.php                  200
@@ -1063,6 +1066,59 @@ function icomplyUnpublishedMatrixRedirects(): string
     return implode("\n", $lines);
 }
 
+function icomplyPlaceAliasRedirectLines(): string
+{
+    $lines = [
+        '# Place aliases FIRST: missing area slugs → published barrier/AOV towns',
+        '# (must precede barrier/AOV town force-rewrites later in this file)',
+    ];
+    $aliasFile = SITE_ROOT . '/data/place-aliases.json';
+    if (!is_file($aliasFile)) {
+        return implode("\n", $lines) . "\n\n";
+    }
+    $decoded = json_decode((string)file_get_contents($aliasFile), true);
+    $bp = [];
+    $rows = is_file(SITE_ROOT . '/data/barriers-places.json')
+        ? json_decode((string)file_get_contents(SITE_ROOT . '/data/barriers-places.json'), true)
+        : [];
+    foreach (is_array($rows) ? $rows : [] as $row) {
+        if (is_array($row) && !empty($row['slug'])) {
+            $bp[(string)$row['slug']] = true;
+        }
+    }
+    $aov = [];
+    $aovFile = SITE_ROOT . '/data/uk-towns-10k.json';
+    if (is_file($aovFile)) {
+        $rows = json_decode((string)file_get_contents($aovFile), true);
+        foreach (is_array($rows) ? $rows : [] as $row) {
+            if (is_array($row) && !empty($row['slug'])) {
+                $aov[(string)$row['slug']] = true;
+            }
+        }
+    }
+    foreach (['barriers' => '/pages/barriers/', 'aov' => '/pages/aov/'] as $family => $prefix) {
+        $map = is_array($decoded[$family] ?? null) ? $decoded[$family] : [];
+        foreach ($map as $from => $to) {
+            $from = trim((string)$from);
+            $to = trim((string)$to);
+            if ($from === '' || $to === '' || $from === $to) {
+                continue;
+            }
+            if ($family === 'barriers' && isset($bp[$from])) {
+                continue;
+            }
+            if ($family === 'aov' && isset($aov[$from])) {
+                continue;
+            }
+            $src = $prefix . $from;
+            $dst = $prefix . $to;
+            $lines[] = $src . '  ' . $dst . '  301';
+            $lines[] = $src . '/  ' . $dst . '  301';
+        }
+    }
+    return implode("\n", $lines) . "\n\n";
+}
+
 function icomplyAovLegacyRedirectLines(): string
 {
     $lines = [
@@ -1087,33 +1143,6 @@ function icomplyAovLegacyRedirectLines(): string
             }
             $lines[] = '/pages/aov-air-handling/' . $slug . '   ' . $dest . '  301';
             $lines[] = '/pages/aov-air-handling/' . $slug . '/  ' . $dest . '  301';
-        }
-    }
-
-    $aliasFile = SITE_ROOT . '/data/place-aliases.json';
-    if (is_file($aliasFile)) {
-        $decoded = json_decode((string)file_get_contents($aliasFile), true);
-        $lines[] = '# Place aliases: missing area slugs → published barrier/AOV towns';
-        foreach (['barriers' => '/pages/barriers/', 'aov' => '/pages/aov/'] as $family => $prefix) {
-            $map = is_array($decoded[$family] ?? null) ? $decoded[$family] : [];
-            foreach ($map as $from => $to) {
-                $from = trim((string)$from);
-                $to = trim((string)$to);
-                if ($from === '' || $to === '' || $from === $to) {
-                    continue;
-                }
-                // Skip alias when the source slug already has a real page.
-                if ($family === 'aov' && isset($places[$from])) {
-                    continue;
-                }
-                if ($family === 'barriers' && function_exists('barriersPlaceBySlug') && barriersPlaceBySlug($from)) {
-                    continue;
-                }
-                $src = $prefix . $from;
-                $dst = $prefix . $to;
-                $lines[] = $src . '  ' . $dst . '  301';
-                $lines[] = $src . '/  ' . $dst . '  301';
-            }
         }
     }
 
