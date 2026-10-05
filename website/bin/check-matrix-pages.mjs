@@ -131,6 +131,16 @@ function shingles(html) {
   return out;
 }
 
+function proseWords(html) {
+  const parts = [];
+  const re = /<(p|h[1-4]|summary|dt|dd)\b[^>]*>([\s\S]*?)<\/\1>/gi;
+  let match;
+  while ((match = re.exec(String(html)))) {
+    parts.push(match[2].replace(/<[^>]+>/g, " "));
+  }
+  return parts.join(" ").trim().split(/\s+/).filter(Boolean).length;
+}
+
 function jaccard(a, b) {
   let inter = 0;
   for (const item of a) {
@@ -166,8 +176,15 @@ for (const page of pages) {
   ok(!/iComply does not carry out gas/i.test(page.html), `no gas denial on ${page.path}`);
   ok(!/iComply does not issue CP12/i.test(page.html), `no CP12 denial on ${page.path}`);
   ok(page.words >= 250, `body words ${page.words} on ${page.path}`);
+  ok(proseWords(page.html) >= 800, `prose words ${proseWords(page.html)} on ${page.path}`);
   ok(/price on application|\bPOA\b/.test(page.html), `POA on ${page.path}`);
-  ok(page.html.includes("approved subcontractors"), `subcontractors on ${page.path}`);
+  ok(page.html.includes('property="og:title"'), `og:title on ${page.path}`);
+  ok(page.html.includes('property="og:description"'), `og:description on ${page.path}`);
+  ok(/property="og:image" content="https:\/\/icomplypropertyservices\.co\.uk\/assets\/images\/[^"]+"/.test(page.html), `absolute og:image on ${page.path}`);
+  const imgs = new Set([...page.html.matchAll(/<img\b[^>]*\bsrc="([^"]+)"/gi)].map((m) => m[1]));
+  ok(imgs.size >= 3, `content images ${imgs.size} on ${page.path}`);
+  ok((page.html.match(/<details\b/gi) || []).length >= 3, `faq questions on ${page.path}`);
+  ok(page.html.includes('"@type":"FAQPage"') || page.html.includes('"@type": "FAQPage"'), `FAQPage on ${page.path}`);
 }
 
 const eicrTowns = pages.slice(0, 3);
@@ -217,11 +234,83 @@ ok(jobFire && jobFire.robots === "noindex, follow", "fire alarm job outside the 
 ok(jobGas && jobGas.html.includes("iComply is not Gas Safe registered."), "gas job keeps the legal sentence");
 ok([came, rolecLocal, jobLocal, jobFire, aberdeenFire].every((page) => scoreHtml(page.html, { local: ["aberdeen", "stockport"] }).score === 100), "new page types score 100");
 
+const ogSample = [
+  ["service", "electrical", "stockport"],
+  ["service", "electrical", "manchester"],
+  ["service", "gas-systems", "stockport"],
+  ["service", "windows-doors", "manchester"],
+  ["service", "kitchens", "stockport"],
+  ["keyword", "eicr", "stockport"],
+  ["keyword", "eicr", "manchester"],
+  ["keyword", "eicr", "high-legh"],
+  ["keyword", "boiler", "stockport"],
+  ["keyword", "fire-door-survey", "stockport"],
+  ["job", "eicr", "stockport"],
+  ["job", "eicr", "manchester"],
+  ["job", "gas-safety-cp12", "stockport"],
+  ["job", "fire-alarms", "stockport"],
+  ["job", "fire-alarms", "manchester"],
+];
+let ogHits = 0;
+for (const [kind, slug, town] of ogSample) {
+  const input = { kind, town, catalogue };
+  if (kind === "service") input.service = slug;
+  if (kind === "keyword") input.keyword = slug;
+  if (kind === "job") input.job = slug;
+  const page = renderTownPage(input);
+  const ogOk = page
+    && page.html.includes('property="og:title"')
+    && page.html.includes('property="og:description"')
+    && /property="og:image" content="https:\/\/icomplypropertyservices\.co\.uk\//.test(page.html)
+    && proseWords(page.html) >= 800;
+  if (ogOk) ogHits += 1;
+}
+ok(ogHits >= 15, `thin OG and prose sample ${ogHits}/15`);
+
 const kitchen = renderTownPage({ kind: "service", service: "kitchens", town: "stockport", catalogue });
 ok(kitchen && kitchen.status === 200 && kitchen.robots === "index, follow", "kitchen town page in Stockport is indexable");
 ok(kitchen && kitchen.html.toLowerCase().includes("price on application"), "kitchen town page is POA");
 ok(kitchen && !kitchen.html.includes("£"), "kitchen town page has no price");
 ok(kitchen && scoreHtml(kitchen.html, { local: ["stockport"] }).score === 100, "kitchen town score 100");
+
+const marker = "pe closeq body marker";
+const peBody = `${marker} ` + Array.from({ length: 820 }, () => "scope").join(" ") + " price on application";
+const pePage = renderTownPage({
+  kind: "service",
+  service: "electrical",
+  town: "stockport",
+  catalogue,
+  closeQPages: {
+    "service/electrical/stockport": {
+      body: peBody,
+      images: [
+        { src: "/assets/images/services/cctv.jpg", alt: "hero alt marker" },
+        { src: "/assets/images/services/cctv-photo.jpg", alt: "work alt marker" },
+        { src: "/assets/images/manufacturers/hikvision.jpg", alt: "context alt marker" },
+      ],
+      faqs: [
+        { q: "PE question one?", a: "PE answer one is price on application." },
+        { q: "PE question two?", a: "PE answer two." },
+        { q: "PE question three?", a: "PE answer three." },
+      ],
+    },
+  },
+});
+ok(pePage && pePage.html.includes(marker), "PE body fills q1 prose");
+ok(pePage && pePage.html.includes('data-pe-slot="q1-service-town-prose"'), "PE body stays in q1-service-town-prose");
+ok(pePage && pePage.html.includes('data-pe-slot="q2-image-hero" src="/assets/images/services/cctv.jpg"'), "PE hero image");
+ok(pePage && pePage.html.includes('data-pe-slot="q2-image-work"') && pePage.html.includes('alt="work alt marker"'), "PE work image");
+ok(pePage && pePage.html.includes('data-pe-slot="q2-image-context"') && pePage.html.includes("hikvision.jpg"), "PE context image");
+ok(pePage && pePage.html.includes("PE question one?") && pePage.html.includes('data-pe-slot="q5-thin-faq"'), "PE faqs use q/a");
+ok(pePage && pePage.html.includes('property="og:title"') && pePage.html.includes('property="og:image"'), "PE page still uses thinOgMeta");
+const missing = renderTownPage({
+  kind: "service",
+  service: "electrical",
+  town: "stockport",
+  catalogue,
+  closeQPages: {},
+});
+ok(missing && !missing.html.includes(marker) && proseWords(missing.html) >= 800, "missing close-q key keeps the floor");
 
 console.log(fail === 0 ? "PASS" : `FAIL ${fail}`);
 process.exit(fail === 0 ? 0 : 1);

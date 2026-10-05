@@ -28,6 +28,19 @@ require SITE_ROOT . '/includes/header.php';
         </label>
     </div>
 </section>
+<section class="max-w-3xl mx-auto px-6 py-14">
+    <?php
+    require_once SITE_ROOT . '/includes/quality-bar.php';
+    echo icomplyQualityBarAovImages()['html'];
+    echo icomplyQualityBarAovProseHtml();
+    echo icomplyQualityBarFaqHtml(
+        icomplyQualityBarAovFaqs(),
+        'q6-aov-faq',
+        'q6-aov-faq-jsonld',
+        'Questions about AOV and smoke control'
+    );
+    ?>
+</section>
 <section class="max-w-7xl mx-auto px-6 py-12 space-y-12">
     <?php foreach ($byNation as $nation => $rows): ?>
         <section>
@@ -50,4 +63,12 @@ document.getElementById('aov-town-filter').addEventListener('input', function (e
   });
 });
 </script>
-<?php require SITE_ROOT . '/includes/footer.php'; ?>
+<?php
+aovQuoteForm(
+    'Tell us the vent, not a catalogue code',
+    'Phone if the stair vent is stuck. Otherwise send the panel brand, the town and whether you need a supply kit or an engineer. Installation is price on application.',
+    'AOV and smoke control',
+    'Town, postcode, stair or corridor, panel brand, stuck open or shut, roof access.'
+);
+require SITE_ROOT . '/includes/footer.php';
+?>

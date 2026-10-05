@@ -232,6 +232,14 @@ function renderJobArticle(array $page): void
             <?php endforeach; ?>
         </ul>
         <p class="mt-8 text-sm text-zinc-600">Price on application after we know the site. We do not publish a fee on this page.</p>
+        <?php
+        require_once SITE_ROOT . '/includes/quality-bar.php';
+        $jobImageSlug = 'fire-alarms';
+        if (preg_match('#/assets/images/services/([a-z0-9\-]+)\.jpg#', $image, $jobImgMatch)) {
+            $jobImageSlug = $jobImgMatch[1];
+        }
+        echo icomplyQualityBarImages($jobImageSlug, $h1, 'q2-hub-images')['html'];
+        ?>
     </div>
 </section>
 <section class="bg-zinc-50 border-y">

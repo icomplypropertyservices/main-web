@@ -173,6 +173,13 @@ if (function_exists('accessControlLaneKeywordStrip')) {
     </div>
 </section>
 
+<?php
+require_once SITE_ROOT . '/includes/quality-bar.php';
+echo '<section class="max-w-7xl mx-auto px-6 py-10">';
+echo icomplyQualityBarImages((string)$serviceSlug, (string)$keywordName, 'q2-hub-images')['html'];
+echo '</section>';
+?>
+
 <!-- MANUFACTURERS -->
 <section class="bg-white border-y-2 border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-14">

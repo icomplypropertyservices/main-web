@@ -9,6 +9,7 @@
 import { renderVariantPage, renderVariantSitemap } from "../lib/variant-matrix.js";
 import { breadcrumbHtml, isGmTown, isLocalTown, matrixRelatedHtml } from "../lib/link-blocks.js";
 import { gmTownBlurb } from "../lib/gm-blurbs.js";
+import { thinFaqHtml, thinFaqs, thinImages, thinOgMeta, thinProseHtml } from "../lib/thin-quality-bar.js";
 
 const RESERVED = new Set([
   "keywords", "services", "areas", "manufacturers", "resources", "packages",
@@ -62,13 +63,6 @@ function stripBriefTokens(text) {
     .replace(/\s{2,}/g, " ")
     .replace(/\s+([,.;:])/g, "$1")
     .trim();
-}
-
-function proseSentences(text) {
-  return stripBriefTokens(text)
-    .split(/(?<=[.!?])\s+/)
-    .map((part) => part.trim())
-    .filter((part) => part.length > 40);
 }
 
 function hashStr(value) {
@@ -281,9 +275,6 @@ export function renderTownPage(input) {
     `${subject} in ${place.name}, ${place.region}. ${housing} Quote is price on application (POA). Cover also reaches ${near}.`
   );
   const imageSlug = IMAGE_SLUG[serviceSlug] || serviceSlug;
-  const imageSrc = `/assets/images/services/${imageSlug}.jpg`;
-  const ogImage = `https://icomplypropertyservices.co.uk${imageSrc}`;
-  const imageAlt = `${subject} in ${place.name} — ${serviceName}`;
 
   const gas = keyword.gas || serviceSlug === "gas-systems" || serviceSlug === "heating";
   const packed = (kind === "keyword" || kind === "service")
@@ -293,13 +284,40 @@ export function renderTownPage(input) {
   if (gas && prose && !/Gas Safe registered engineers/.test(prose)) {
     prose = `${prose} ${GAS_SENTENCE}`;
   }
-  const packedLead = prose
-    ? `${packed && packed.h2 ? `<h2>${escapeHtml(stripBriefTokens(packed.h2))}</h2>` : ""}<p>${escapeHtml(prose)}</p>`
-    : "";
-  const localOnly = [place.housing ? housing : "", place.industry ? industry : "", place.population ? pop : ""]
-    .filter(Boolean)
-    .join(" ");
-  const paragraphs = prose ? [] : (localOnly ? [localOnly] : []);
+  const qualityCtx = {
+    kind,
+    seed,
+    place: place.name,
+    subject,
+    service: serviceName,
+    audience,
+    visit,
+    near,
+    housing,
+    industry,
+    pop,
+    gas,
+    blurb: prose,
+  };
+  const closeQPages = input.closeQPages && typeof input.closeQPages === "object" ? input.closeQPages : null;
+  const pageSlug = kind === "keyword"
+    ? input.keyword
+    : kind === "job"
+      ? input.job
+      : kind === "service"
+        ? serviceSlug
+        : "";
+  const pe = closeQPages && pageSlug ? closeQPages[`${kind}/${pageSlug}/${townSlug}`] : null;
+  if (pe && typeof pe.body === "string" && pe.body.trim()) {
+    qualityCtx.peBody = pe.body;
+  }
+  if (pe && Array.isArray(pe.faqs)) {
+    qualityCtx.peFaqs = pe.faqs;
+  }
+  const images = thinImages(imageSlug, subject, place.name, seed, pe && Array.isArray(pe.images) ? pe.images : null);
+  const proseHtml = thinProseHtml(qualityCtx);
+  const faqs = thinFaqs(qualityCtx);
+  const faqBlock = thinFaqHtml(qualityCtx);
 
   const hubHref = kind === "keyword"
     ? `/pages/keywords/${input.keyword}`
@@ -330,24 +348,7 @@ export function renderTownPage(input) {
   crumbItems.push({ label: `${subject} in ${place.name}` });
   const crumbs = breadcrumbHtml(crumbItems);
 
-  const bits = proseSentences(prose || localOnly);
-  const faqs = [];
-  if (bits[0]) {
-    faqs.push([`What is particular about ${subject} in ${place.name}?`, bits[0]]);
-  }
-  if (bits[1]) {
-    faqs.push([`What should the ${place.name} file show before a quote?`, bits[1]]);
-  }
-  if (gas && prose) {
-    faqs.push([`Who carries out gas work for this ${place.name} visit?`, `${GAS_SENTENCE} ${bits[bits.length - 1] || ""}`.trim()]);
-  } else if (bits[2]) {
-    faqs.push([`How is the ${place.name} price decided?`, bits[2]]);
-  }
-  const faqHtml = faqs.map(([q, a]) => (
-    `<details><summary>${escapeHtml(q)}</summary><p>${escapeHtml(a)}</p></details>`
-  )).join("");
   const focusHtml = focus.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
-  const bodyHtml = packedLead + paragraphs.map((paragraph) => `<p>${escapeHtml(stripBriefTokens(paragraph))}</p>`).join("");
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -392,11 +393,7 @@ export function renderTownPage(input) {
 <meta name="description" content="${escapeHtml(description)}">
 <meta name="robots" content="${robots}">
 <link rel="canonical" href="${canonical}">
-<meta property="og:type" content="website">
-<meta property="og:title" content="${escapeHtml(title)}">
-<meta property="og:description" content="${escapeHtml(description)}">
-<meta property="og:url" content="${escapeHtml(canonical)}">
-<meta property="og:image" content="${escapeHtml(ogImage)}">
+${thinOgMeta({ title, description, canonical, image: images.ogImage })}
 <link rel="stylesheet" href="/assets/css/site.css">
 <script type="application/ld+json">${jsonLd(schema)}</script>
 </head>
@@ -407,14 +404,12 @@ export function renderTownPage(input) {
 <main>
 ${crumbs}
 <h1>${escapeHtml(h1)}</h1>
-<figure>
-<img src="${imageSrc}" alt="${escapeHtml(imageAlt)}" width="1200" height="630">
-</figure>
+${images.html}
 <article id="local-copy">
-${bodyHtml}
+${proseHtml}
+${focusHtml ? `<ul>${focusHtml}</ul>` : ""}
 ${relatedHtml}
-<h2>Questions about ${escapeHtml(place.name)}</h2>
-${faqHtml}
+${faqBlock}
 </article>
 </main>
 </body>
@@ -436,6 +431,42 @@ ${faqHtml}
 
 let cataloguePromise = null;
 let variantPromise = null;
+let closeQTownPagesPromise = null;
+
+/**
+ * pages map from website/data/close-q/town-prose.json.
+ * The edge bundle reads the repo file when it is present, otherwise the
+ * copy static-export publishes at /assets/close-q/town-prose.json
+ * (/data/* is a public 404). Empty object keeps the generated floor.
+ */
+async function loadCloseQTownPages(origin) {
+  if (!closeQTownPagesPromise) {
+    closeQTownPagesPromise = readCloseQTownPages(origin);
+  }
+  return closeQTownPagesPromise;
+}
+
+async function readCloseQTownPages(origin) {
+  if (typeof Deno !== "undefined" && typeof Deno.readTextFile === "function") {
+    try {
+      const fileUrl = new URL("../../website/data/close-q/town-prose.json", import.meta.url);
+      const data = JSON.parse(await Deno.readTextFile(fileUrl));
+      if (data && data.pages && typeof data.pages === "object") return data.pages;
+    } catch {
+      // File is owned by the Page Enrichment checkout and may be absent here.
+    }
+  }
+  try {
+    const response = await fetch(new URL("/assets/close-q/town-prose.json", origin));
+    if (response.ok) {
+      const data = await response.json();
+      if (data && data.pages && typeof data.pages === "object") return data.pages;
+    }
+  } catch {
+    // Published copy missing. Generated floor still renders.
+  }
+  return {};
+}
 
 async function loadVariants(origin) {
   if (!variantPromise) {
@@ -584,10 +615,16 @@ export default async (request, context) => {
     return context.next();
   }
   let catalogue;
+  let closeQPages = {};
   try {
     catalogue = await loadCatalogue(url.origin);
   } catch {
     return context.next();
+  }
+  try {
+    closeQPages = await loadCloseQTownPages(url.origin);
+  } catch {
+    closeQPages = {};
   }
   let rendered = null;
   if (manufacturerMatch) {
@@ -596,6 +633,7 @@ export default async (request, context) => {
       brand: manufacturerMatch[1],
       town: manufacturerMatch[2],
       catalogue,
+      closeQPages,
     });
   } else if (jobMatch) {
     rendered = renderTownPage({
@@ -603,6 +641,7 @@ export default async (request, context) => {
       job: jobMatch[1],
       town: jobMatch[2],
       catalogue,
+      closeQPages,
     });
   } else if (keywordMatch) {
     rendered = renderTownPage({
@@ -610,6 +649,7 @@ export default async (request, context) => {
       keyword: keywordMatch[1],
       town: keywordMatch[2],
       catalogue,
+      closeQPages,
     });
   } else {
     rendered = renderTownPage({
@@ -617,6 +657,7 @@ export default async (request, context) => {
       service: serviceMatch[1],
       town: serviceMatch[2],
       catalogue,
+      closeQPages,
     });
   }
   if (!rendered) return context.next();

@@ -483,6 +483,18 @@ echo testimonialsSectionHtml();
     </div>
 </section>
 
+<?php
+require_once SITE_ROOT . '/includes/quality-bar.php';
+echo '<section class="max-w-3xl mx-auto px-6 py-12">';
+echo icomplyQualityBarFaqHtml(
+    icomplyQualityBarHomeFaqs(),
+    'q5-home-faq',
+    'q5-home-faq-jsonld',
+    'Questions about iComply'
+);
+echo '</section>';
+?>
+
 <section class="max-w-3xl mx-auto px-6 py-10">
     <?php require_once SITE_ROOT . '/includes/share.php'; ?>
     <?= shareButtonsHtml($pageTitle, $metaDesc) ?>

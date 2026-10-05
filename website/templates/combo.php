@@ -257,6 +257,19 @@ $schema = [
     </div>
 </section>
 
+<?php
+require_once SITE_ROOT . '/includes/quality-bar.php';
+echo icomplyQualityBarThinBlock(
+    'service',
+    (string)$serviceName,
+    (string)$serviceName,
+    (string)$serviceSlug,
+    (string)$areaName,
+    (string)$blurb,
+    $serviceSlug === 'gas-systems' || $serviceSlug === 'heating'
+);
+?>
+
 <!-- TRUST -->
 <section class="bg-white border-b">
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

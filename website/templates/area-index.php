@@ -187,6 +187,19 @@ $schema = [
     </div>
 </section>
 
+<?php
+require_once SITE_ROOT . '/includes/quality-bar.php';
+echo '<section class="max-w-7xl mx-auto px-6 py-12"><h2 class="text-2xl font-semibold text-black">Work we quote in ' . htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') . '</h2>';
+echo icomplyQualityBarAreaImages($areaName)['html'];
+echo '</section>';
+echo icomplyQualityBarFaqHtml(
+    icomplyQualityBarAreaFaqs($areaName),
+    'q5-area-faq',
+    'q5-area-faq-jsonld',
+    'Questions about ' . $areaName
+);
+?>
+
 <section class="bg-white border-b">
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <?php
