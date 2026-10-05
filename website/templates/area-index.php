@@ -55,16 +55,21 @@ foreach (getPopularKeywordSlugs() as $slug) {
 $ukPlaces = ['London', 'Birmingham', 'Leeds', 'Cardiff', 'Glasgow', 'Bristol'];
 $sister = $areaName === 'Manchester' ? 'Burnley' : ($areaName === 'Burnley' ? 'Manchester' : '');
 
-$nearby = [];
-$idx = array_search($areaName, $allAreas, true);
-if ($idx === false) {
-    $nearby = array_slice($allAreas, 0, 12);
-} else {
-    $start = max(0, (int)$idx - 6);
-    $nearby = array_values(array_filter(array_slice($allAreas, $start, 14), static function ($a) use ($areaName) {
-        return $a !== $areaName;
-    }));
-    $nearby = array_slice($nearby, 0, 12);
+if (!function_exists('icomplyGmAdjacentTownNames')) {
+    require_once SITE_ROOT . '/includes/building-hub-copy.php';
+}
+$nearby = icomplyGmAdjacentTownNames($areaName, 12);
+if (!$nearby) {
+    $idx = array_search($areaName, $allAreas, true);
+    if ($idx === false) {
+        $nearby = array_slice($allAreas, 0, 12);
+    } else {
+        $start = max(0, (int)$idx - 6);
+        $nearby = array_values(array_filter(array_slice($allAreas, $start, 14), static function ($a) use ($areaName) {
+            return $a !== $areaName;
+        }));
+        $nearby = array_slice($nearby, 0, 12);
+    }
 }
 
 $districts = (string)($profile['districts'] ?? '');
@@ -78,6 +83,9 @@ $metaDesc = 'Full ' . $areaName . ' service index — every iComply trade listed
 $metaKeywords = $areaName . ' property services, ' . $areaName . ' fire alarms, ' . $areaName . ' EICR, fire safety UK, ' . $districts;
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/areas/' . $areaSlugVal . '.php');
+$metaRobots = function_exists('icomplyRobotsMetaForPath')
+    ? icomplyRobotsMetaForPath('/pages/areas/' . $areaSlugVal)
+    : 'index, follow';
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
@@ -113,6 +121,7 @@ $schema = [
                 '@type' => 'PostalAddress',
                 'streetAddress' => '17 Woodlands Park Road, Offerton',
                 'addressLocality' => 'Stockport',
+                'addressRegion' => 'Cheshire',
                 'postalCode' => 'SK2 5DE',
                 'addressCountry' => 'GB',
             ],
@@ -377,6 +386,18 @@ $schema = [
     </div>
 </section>
 <?php endif; ?>
+
+<section class="related-links bg-white border-t">
+    <div class="max-w-7xl mx-auto px-6 py-16">
+        <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local keyword pages</div>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Guides for <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></h2>
+        <p class="mt-2 text-zinc-600 max-w-2xl">Every keyword guide has a <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> page, the same set the other Greater Manchester area hubs link.</p>
+        <?php
+        require_once SITE_ROOT . '/includes/related.php';
+        echo keywordAreaLinksHtml($AREA, null, 0);
+        ?>
+    </div>
+</section>
 
 <?php if ($nearby): ?>
 <section class="bg-zinc-50 border-t">

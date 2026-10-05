@@ -1,0 +1,54 @@
+{
+  "official": [
+    {
+      "platform": "Website",
+      "url": "https://icomplypropertyservices.co.uk",
+      "status": "live",
+      "note": "This website. Use it as the canonical profile URL."
+    },
+    {
+      "platform": "Google Business Profile",
+      "url": "",
+      "status": "managed",
+      "note": "The profile is managed. The public Maps URL is added here when it is confirmed."
+    },
+    {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/@icomplypropertyservices",
+      "status": "live",
+      "note": "Official channel."
+    },
+    {
+      "platform": "Apple Business Connect",
+      "url": "",
+      "status": "pending",
+      "note": "Listed here when the profile is live."
+    },
+    {
+      "platform": "Bing Places",
+      "url": "",
+      "status": "pending",
+      "note": "Listed here when the profile is live."
+    }
+  ],
+  "directories": [
+    {
+      "platform": "Yell",
+      "url": "",
+      "status": "pending",
+      "note": "Claim in progress. Use the street address on this page."
+    },
+    {
+      "platform": "FreeIndex",
+      "url": "",
+      "status": "pending",
+      "note": "Claim in progress. Use the street address on this page."
+    },
+    {
+      "platform": "Thomson Local",
+      "url": "",
+      "status": "pending",
+      "note": "Claim in progress. Use the street address on this page."
+    }
+  ]
+}
