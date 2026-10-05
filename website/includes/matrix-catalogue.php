@@ -678,6 +678,12 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
 
     $coreKeys = array_keys($places);
     $familyKeywordTown = 0;
+    if (function_exists('icomplyBuildingDualExtraKeywordTownPaths')) {
+        foreach (icomplyBuildingDualExtraKeywordTownPaths($places) as $dualPath) {
+            $writeLoc($dualPath);
+            $familyKeywordTown++;
+        }
+    }
     $familyServiceTown = 0;
     $manufacturerTown = 0;
     foreach (array_keys($manufacturers) as $brandSlug) {
@@ -691,6 +697,13 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
         foreach ($coreKeys as $placeSlug) {
             $writeLoc('/pages/jobs/' . $jobSlug . '/' . $placeSlug);
             $jobTown++;
+        }
+    }
+    $buildingJobTown = 0;
+    if (function_exists('icomplyBuildingDualJobTownPaths')) {
+        foreach (icomplyBuildingDualJobTownPaths() as $dualPath) {
+            $writeLoc($dualPath);
+            $buildingJobTown++;
         }
     }
     if ($chunkHandle !== null) {
@@ -753,7 +766,7 @@ export default async () => {
 export const config = { path: "/robots.txt" };
 JS);
 
-    $sitemapUrls = $hubs + $keywordTown + $serviceTown + $familyKeywordTown + $familyServiceTown + $manufacturerTown + $jobTown;
+    $sitemapUrls = $hubs + $keywordTown + $serviceTown + $familyKeywordTown + $familyServiceTown + $manufacturerTown + $jobTown + $buildingJobTown;
     $stats = [
         'target' => ICOMPLY_MATRIX_URL_TARGET,
         'hub_urls' => $hubs,
@@ -772,6 +785,7 @@ JS);
         'family_service_town_urls' => $familyServiceTown,
         'manufacturer_town_urls' => $manufacturerTown,
         'job_town_urls' => $jobTown,
+        'building_job_town_urls' => $buildingJobTown,
         'sitemap_urls' => $sitemapUrls,
         'variant_services' => $variantMeta['services'] ?? 0,
         'variant_towns' => $variantMeta['towns'] ?? 0,
@@ -797,6 +811,7 @@ JS);
         . ' family_service×town=' . $familyServiceTown
         . ' manufacturer×town=' . $manufacturerTown
         . ' job×town=' . $jobTown
+        . ' building_job×town=' . $buildingJobTown
         . ' sitemap_urls=' . $sitemapUrls
         . ' variant_urls=' . ($variantMeta['urls'] ?? 0) . "\n");
     return $stats;

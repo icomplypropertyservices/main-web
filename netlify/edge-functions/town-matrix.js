@@ -8,6 +8,7 @@
 import { renderVariantPage, renderVariantSitemap } from "../lib/variant-matrix.js";
 import { breadcrumbHtml, isGmTown, matrixRelatedHtml } from "../lib/link-blocks.js";
 import { gmTownBlurb } from "../lib/gm-blurbs.js";
+import { buildingDualExempt, renderBuildingDualTown } from "../lib/building-dual.js";
 
 const RESERVED = new Set([
   "keywords", "services", "areas", "manufacturers", "resources", "packages",
@@ -141,6 +142,8 @@ function resolvePlace(townSlug, catalogue) {
 }
 
 export function renderTownPage(input) {
+  const dual = renderBuildingDualTown(input);
+  if (dual) return dual;
   const catalogue = input.catalogue || {};
   const keywords = catalogue.keywords || {};
   const services = catalogue.services || {};
@@ -345,7 +348,13 @@ export function renderTownPage(input) {
     `<details><summary>${escapeHtml(q)}</summary><p>${escapeHtml(a)}</p></details>`
   )).join("");
   const focusHtml = focus.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
-  const bodyHtml = packedLead + paragraphs.map((paragraph) => `<p>${escapeHtml(stripBriefTokens(paragraph))}</p>`).join("");
+  let bodyHtml = packedLead + paragraphs.map((paragraph) => `<p>${escapeHtml(stripBriefTokens(paragraph))}</p>`).join("");
+  if (!/price on application|\bPOA\b/i.test(description) && !/price on application|\bPOA\b/i.test(bodyHtml)) {
+    bodyHtml += "<p>The quote is price on application.</p>";
+  }
+  if (gas && !bodyHtml.includes("iComply is not Gas Safe registered.")) {
+    bodyHtml += "<p>Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.</p>";
+  }
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -494,7 +503,8 @@ function placeAliasRedirect(path) {
   return `/pages/${family}/${dest}`;
 }
 
-function nonGmMatrixRedirect(path) {
+export function nonGmMatrixRedirect(path) {
+  if (buildingDualExempt(path)) return null;
   let m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   if (m) return isGmTown(m[2]) ? null : `/pages/keywords/${m[1]}`;
   m = path.match(/^\/pages\/manufacturers\/([a-z0-9-]+)\/([a-z0-9-]+)$/);

@@ -136,6 +136,11 @@ function renderKeywordPage(string $slug): void {
         icomplyRequestExit();
         return;
     }
+    if (function_exists('icomplyBuildingDualIsP0') && icomplyBuildingDualIsP0($slug)) {
+        icomplyBuildingDualRenderHub('keyword', $slug);
+        icomplyRequestExit();
+        return;
+    }
     $meta = $keywords[$slug];
     $services = getServices();
     $serviceSlug = $meta['service'] ?? 'electrical';

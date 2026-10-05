@@ -231,7 +231,7 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     <?php endif; ?>
     </script>
 </head>
-<body class="theme-dark bg-zinc-50 text-black">
+<body class="theme-dark bg-zinc-50 text-black"<?= !empty($seoFamily) ? ' data-seo-family="' . htmlspecialchars((string)$seoFamily, ENT_QUOTES, 'UTF-8') . '"' : '' ?>>
 <a href="#main-content" class="skip-to-content">Skip to main content</a>
 <?php
 require_once __DIR__ . '/site-nav.php';

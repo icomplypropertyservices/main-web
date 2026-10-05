@@ -127,7 +127,7 @@ function icomplyFooterHtml(): string
     $shopHub = icomplyNavH('/shop/');
 
     return <<<HTML
-<footer class="site-footer" data-site-footer>
+<footer class="site-footer" data-site-footer data-seo-shared="1">
   <div class="foot-wrap">
     <div class="foot-nap">
       <div class="foot-brand">{$brand}</div>
