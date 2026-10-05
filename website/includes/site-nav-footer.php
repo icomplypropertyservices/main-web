@@ -15,6 +15,7 @@ function icomplyFooterHtml(): string
     $brand = icomplyNavH($n['brand']);
     $year = date('Y');
     $contact = icomplyNavH(url('/contact.php'));
+    $renewals = icomplyNavH(url('/renewals.php'));
     $svcCount = count($n['services']);
     $areaCount = count($n['areas']);
     $kwCount = count($n['keywords']);
@@ -88,6 +89,7 @@ function icomplyFooterHtml(): string
 
     $legalDrop = '<div class="foot-links">';
     $legalDrop .= icomplyNavLink(url('/contact.php'), 'Contact / quote');
+    $legalDrop .= icomplyNavLink(url('/renewals.php'), 'Log renewal dates');
     $legalDrop .= icomplyNavLink('/become-a-subcontractor', 'Work with us');
     $legalDrop .= icomplyNavLink($n['phoneHref'], 'Call ' . $n['phone']);
     $legalDrop .= '<a href="mailto:' . $email . '">' . $email . '</a>';
@@ -186,6 +188,7 @@ function icomplyFooterHtml(): string
       <div>© {$year} {$brand}. All rights reserved.</div>
       <div class="foot-base-links">
         <a href="{$contact}">Contact</a>
+        <a href="{$renewals}">Renewals</a>
         <a href="{$subcontract}">Work with us</a>
         <a href="{$privacy}">Privacy</a>
         <a href="{$terms}">Terms</a>

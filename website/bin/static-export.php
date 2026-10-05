@@ -206,6 +206,8 @@ $required = [
     '/privacy',
     '/terms',
     '/contact',
+    '/renewals',
+    '/renewals/thanks',
     '/pages/about',
     '/pages/areas',
     '/pages/manufacturers',
@@ -387,6 +389,8 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         '/terms',
         '/contact',
         '/thank-you',
+        '/renewals',
+        '/renewals/thanks',
         '/products',
     ];
 
@@ -944,6 +948,12 @@ function icomplyPrettyUrlRedirects(): string
 /terms/                  /terms.php                   200!
 /contact                 /contact.php                 200!
 /contact/                /contact.php                 200!
+/renewals                /renewals.php                200!
+/renewals/               /renewals.php                200!
+/renewals/thanks         /renewals/thanks.php         200!
+/renewals/thanks/        /renewals/thanks.php         200!
+/pages/renewals          /renewals                    301
+/pages/renewals/         /renewals                    301
 /become-a-subcontractor  /become-a-subcontractor.php  200!
 /become-a-subcontractor/ /become-a-subcontractor.php  200!
 /pages/about             /pages/about.php             200!
@@ -1147,6 +1157,14 @@ function icomplyPrettyUrlHeaders(): string
   Content-Type: text/html; charset=utf-8
   X-Content-Type-Options: nosniff
 
+/renewals
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/renewals/thanks
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
 /pages/services
   Content-Type: text/html; charset=utf-8
   X-Content-Type-Options: nosniff
@@ -1154,6 +1172,12 @@ function icomplyPrettyUrlHeaders(): string
 /pages/*
   Content-Type: text/html; charset=utf-8
   X-Content-Type-Options: nosniff
+
+/assets/contact/*.vcf
+  Content-Type: text/vcard; charset=utf-8
+  Content-Disposition: attachment
+  X-Content-Type-Options: nosniff
+  Cache-Control: public, max-age=86400
 
 /robots.txt
   Cache-Control: public, max-age=3600

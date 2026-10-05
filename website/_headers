@@ -77,6 +77,20 @@
   Content-Type: text/html; charset=utf-8
   X-Content-Type-Options: nosniff
 
+/renewals
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/renewals/thanks
+  Content-Type: text/html; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/assets/contact/*.vcf
+  Content-Type: text/vcard; charset=utf-8
+  Content-Disposition: attachment
+  X-Content-Type-Options: nosniff
+  Cache-Control: public, max-age=86400
+
 /pages/services
   Content-Type: text/html; charset=utf-8
   X-Content-Type-Options: nosniff

@@ -884,3 +884,25 @@
   for = "/*"
   [headers.values]
     Content-Security-Policy = "script-src 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.google.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://icomplypropertyservices.co.uk/assets/ https://www.icomplypropertyservices.co.uk/assets/ https://*.netlify.app/assets/"
+
+# Renewal logger + vCard (also emitted by static-export into dist/_headers)
+[[headers]]
+  for = "/renewals"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/renewals/thanks"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/assets/contact/*.vcf"
+  [headers.values]
+    Content-Type = "text/vcard; charset=utf-8"
+    Content-Disposition = "attachment"
+    X-Content-Type-Options = "nosniff"
+    Cache-Control = "public, max-age=86400"
+
