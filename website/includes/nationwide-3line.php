@@ -7,6 +7,8 @@
  */
 declare(strict_types=1);
 
+require_once __DIR__ . '/aov-barriers-deep.php';
+
 const ICOMPLY_NATIONWIDE_NAP = '17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE';
 
 function icomplyNationwide3lineFamily(): array
@@ -52,7 +54,8 @@ function icomplyNationwide3lineIsP0(string $slug): bool
         $set = array_fill_keys(icomplyNationwide3lineP0Slugs(), true);
     }
     $slug = function_exists('keywordSlug') ? keywordSlug($slug) : strtolower($slug);
-    return isset($set[$slug]);
+    // AOV + Barriers DEEP P0 hubs share the nationwide hub template and town routing.
+    return isset($set[$slug]) || icomplyAovBarriersDeepIsP0($slug);
 }
 
 function icomplyNationwide3lineHub(string $slug): ?array
@@ -73,6 +76,9 @@ function icomplyNationwide3lineHub(string $slug): ?array
 /** @return list<string> */
 function icomplyNationwide3lineImages(string $slug): array
 {
+    if (icomplyAovBarriersDeepIsP0($slug)) {
+        return icomplyAovBarriersDeepImages($slug);
+    }
     $hub = icomplyNationwide3lineHub($slug);
     $images = is_array($hub) ? ($hub['images'] ?? []) : [];
     $out = [];
@@ -128,6 +134,9 @@ function icomplyNationwide3lineNationwidePath(string $path): bool
     if (!preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         return false;
     }
+    if (icomplyAovBarriersDeepIsP0($m[1])) {
+        return icomplyAovBarriersDeepNationwideTown($m[1], $m[2]);
+    }
     return icomplyNationwide3lineIsP0($m[1]) && icomplyTop5000TownBySlug($m[2]) !== null;
 }
 
@@ -138,6 +147,9 @@ function icomplyNationwide3lineIndexablePath(string $path): bool
     $path = rtrim($path, '/') ?: '/';
     if (!preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         return false;
+    }
+    if (icomplyAovBarriersDeepIsP0($m[1])) {
+        return icomplyAovBarriersDeepKeepsTown($m[1], $m[2]);
     }
     if (!icomplyNationwide3lineIsP0($m[1])) {
         return false;
@@ -183,7 +195,8 @@ function icomplyNationwide3lineApplyKeywords(array $keywords): array
         unset($row['hub_only']);
         $keywords[$slug] = $row;
     }
-    return $keywords;
+    // DEEP P0 copy wins where a slug is in both packs (lock: prefer DEEP on overlap).
+    return icomplyAovBarriersDeepApplyKeywords($keywords);
 }
 
 /**
@@ -282,6 +295,10 @@ function icomplyNationwide3lineRenderTown(string $keywordSlug, string $townSlug)
 {
     $keywordSlug = function_exists('keywordSlug') ? keywordSlug($keywordSlug) : strtolower($keywordSlug);
     $townSlug = function_exists('areaSlug') ? areaSlug($townSlug) : strtolower($townSlug);
+    if (icomplyAovBarriersDeepIsP0($keywordSlug)) {
+        icomplyAovBarriersDeepRenderTown($keywordSlug, $townSlug);
+        return;
+    }
     $pack = icomplyNationwide3lineKeywords()[$keywordSlug] ?? null;
     $town = icomplyTop5000TownBySlug($townSlug);
     $gm = $town === null && function_exists('icomplyCrawlTownSlug') && icomplyCrawlTownSlug($townSlug);

@@ -693,7 +693,8 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
     }
     $familyPaths = array_values(array_unique(array_merge(
         icomplyNationwide3lineExtraTownPaths($places),
-        icomplyFireAlarmInstallerExtraTownPaths($places)
+        icomplyFireAlarmInstallerExtraTownPaths($places),
+        icomplyAovBarriersDeepExtraTownPaths($places)
     )));
     foreach ($familyPaths as $familyPath) {
         $writeLoc($familyPath);

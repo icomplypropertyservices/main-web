@@ -35,6 +35,11 @@ $top5000Towns = [];
 if ($nationwideP0 && function_exists('icomplyTop5000Towns')) {
     $top5000Towns = icomplyTop5000Towns();
 }
+// AOV + Barriers DEEP P0: manufacturer heads link Greater Manchester core 60 only.
+$deepGmOnly = function_exists('icomplyAovBarriersDeepGmOnly') && icomplyAovBarriersDeepGmOnly((string)$keywordSlug);
+if ($deepGmOnly) {
+    $top5000Towns = icomplyAovBarriersDeepTownRows((string)$keywordSlug);
+}
 
 $popularTowns = array_values(array_filter(
     ['Manchester', 'Salford', 'Bolton', 'Bury', 'Oldham', 'Rochdale', 'Stockport', 'Tameside', 'Trafford', 'Wigan', 'Altrincham', 'Sale', 'Ashton-under-Lyne'],
@@ -149,7 +154,7 @@ if (function_exists('accessControlLaneKeywordStrip')) {
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <?php
         $trust = [
-            [($nationwideP0 || $fireInstallerFamily) ? 'UK mainland' : 'Local engineers', $nationwideP0 ? 'Stockport base — TOP 5000 towns' : ($fireInstallerFamily ? 'Stockport base — mainland towns over 10,000' : 'Stockport base — 150+ North West towns')],
+            [($nationwideP0 || $fireInstallerFamily) ? 'UK mainland' : 'Local engineers', $nationwideP0 ? ($deepGmOnly ? 'Stockport base — Greater Manchester' : 'Stockport base — TOP 5000 towns') : ($fireInstallerFamily ? 'Stockport base — mainland towns over 10,000' : 'Stockport base — 150+ North West towns')],
             ['Standards-led', 'British Standards & manufacturer guidance'],
             [$poaService ? 'POA / enquire' : 'Fixed quotes', $poaService ? 'Written scope — no invented £' : 'Clear scope before work starts'],
             ['Full paperwork', $poaService ? 'Survey or briefing notes for the dutyholder file' : 'Certificates & logbooks for compliance'],
@@ -227,7 +232,9 @@ if (function_exists('accessControlLaneKeywordStrip')) {
 <?php
 require_once SITE_ROOT . '/includes/quality-bar.php';
 echo '<section class="max-w-7xl mx-auto px-6 py-10">';
-echo icomplyQualityBarImages((string)$serviceSlug, (string)$keywordName, 'q2-hub-images')['html'];
+echo (function_exists('icomplyAovBarriersDeepIsP0') && icomplyAovBarriersDeepIsP0((string)$keywordSlug))
+    ? icomplyAovBarriersDeepImageFigure((string)$keywordSlug, (string)$keywordName)
+    : icomplyQualityBarImages((string)$serviceSlug, (string)$keywordName, 'q2-hub-images')['html'];
 echo '</section>';
 ?>
 
@@ -263,8 +270,13 @@ echo '</section>';
 <?php elseif ($nationwideP0): ?>
 <section class="bg-zinc-100">
     <div class="max-w-7xl mx-auto px-6 py-14">
+        <?php if ($deepGmOnly): ?>
+        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> across Greater Manchester</h2>
+        <p class="mt-2 text-zinc-800">Greater Manchester core places (<?= count($top5000Towns) ?>). Each place has its own page. Sites elsewhere are quoted from this hub.</p>
+        <?php else: ?>
         <h2 class="text-2xl md:text-3xl font-bold text-[#061828]"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> across the UK mainland</h2>
         <p class="mt-2 text-zinc-800">TOP 5000 towns by population (<?= count($top5000Towns) ?> places). Each place has its own page. Greater Manchester area hubs, including places outside that population list, stay linked below.</p>
+        <?php endif; ?>
         <div class="mt-6 flex flex-wrap gap-2">
             <?php foreach ($popularTowns as $a):
                 $popularSlug = '';
