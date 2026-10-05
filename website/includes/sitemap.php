@@ -466,6 +466,17 @@ function icomplySitemapEntries(): array
             $add((string)$townPath, $depth > 1 ? '0.64' : '0.86');
         }
     }
+    if (!function_exists('icomplyGmServiceTownRoutes')) {
+        $gmFile = SITE_ROOT . '/includes/gm-service-towns.php';
+        if (is_file($gmFile)) {
+            require_once $gmFile;
+        }
+    }
+    if (function_exists('icomplyGmServiceTownRoutes')) {
+        foreach (icomplyGmServiceTownRoutes() as $townPath) {
+            $add((string)$townPath, '0.64');
+        }
+    }
 
     return $entries;
 }

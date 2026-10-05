@@ -1,13 +1,5 @@
 {
   "barriers": {
-    "trafford": "hale-trafford",
-    "tameside": "hyde-tameside",
-    "shaw": "shaw-oldham",
-    "milnrow": "rochdale",
-    "pendlebury": "swinton-salford",
-    "cadishead": "irlam",
-    "chorlton": "manchester",
-    "withington": "manchester",
     "crosby": "crosby-sefton",
     "ince": "ince-in-makerfield",
     "thornton-cleveleys": "cleveleys",
@@ -45,16 +37,6 @@
     "whalley": "blackburn-blackburn-with-darwen",
     "windermere": "kendal"
   },
-  "aov": {
-    "worsley": "walkden",
-    "wythenshawe": "manchester",
-    "pendlebury": "salford",
-    "cadishead": "eccles",
-    "trafford": "hale-trafford",
-    "chorlton": "manchester",
-    "withington": "manchester",
-    "tameside": "hyde-tameside",
-    "shaw": "shaw-oldham"
-  },
-  "note": "Maps area-hub / legacy town slugs to published barrier (barriers-places.json) or AOV (uk-towns-10k.json) place pages so internal links and Netlify redirects do not 404."
+  "aov": {},
+  "note": "Maps area-hub / legacy town slugs to published barrier (barriers-places.json) or AOV (uk-towns-10k.json) place pages so internal links and Netlify redirects do not 404. Cadishead, Chorlton, Milnrow, Pendlebury, Shaw, Tameside, Trafford, Withington, Worsley and Wythenshawe have their own pages and are not aliased."
 }

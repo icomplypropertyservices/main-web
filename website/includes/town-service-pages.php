@@ -6,6 +6,7 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/uk-towns.php';
+require_once __DIR__ . '/gm-service-towns.php';
 
 function icomplyTownFamilies(): array
 {
@@ -557,6 +558,27 @@ function icomplyRenderTownHub(string $family): void
         echo '<a class="px-3 py-1 border rounded-full text-sm font-semibold" href="#letter-' . htmlspecialchars($letter, ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($letter, ENT_QUOTES, 'UTF-8') . '</a>';
     }
     echo '</nav>';
+    if (!function_exists('icomplyGmServiceTownRecords')) {
+        require_once __DIR__ . '/gm-service-towns.php';
+    }
+    $gmTowns = [];
+    foreach (icomplyGmServiceTownRecords() as $gmTown) {
+        if (in_array($family, $gmTown['families'], true)) {
+            $gmTowns[] = $gmTown;
+        }
+    }
+    if ($gmTowns !== []) {
+        echo '<h2 class="mt-10 text-2xl font-semibold" id="greater-manchester">Greater Manchester</h2>';
+        echo '<p class="mt-2 max-w-3xl">These districts and boroughs are published because iComply already covers them from Stockport. They are not clones of the nearest gazetteer town.</p>';
+        echo '<ul class="mt-3 grid sm:grid-cols-2 md:grid-cols-3 gap-2">';
+        foreach ($gmTowns as $gmTown) {
+            $href = url('/pages/' . $family . '/' . $gmTown['slug']);
+            echo '<li><a class="text-[#0B1F3A] hover:text-[#ff6b00] font-medium" href="' . htmlspecialchars($href, ENT_QUOTES, 'UTF-8') . '">'
+                . htmlspecialchars((string)$gmTown['name'], ENT_QUOTES, 'UTF-8') . '</a> '
+                . '<span class="text-xs text-zinc-500">' . htmlspecialchars((string)$gmTown['county'], ENT_QUOTES, 'UTF-8') . '</span></li>';
+        }
+        echo '</ul>';
+    }
     foreach ($letters as $letter => $group) {
         echo '<h2 class="mt-10 text-2xl font-semibold" id="letter-' . htmlspecialchars($letter, ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($letter, ENT_QUOTES, 'UTF-8') . '</h2>';
         echo '<ul class="mt-3 grid sm:grid-cols-2 md:grid-cols-3 gap-2">';
@@ -572,10 +594,27 @@ function icomplyRenderTownHub(string $family): void
     require SITE_ROOT . '/includes/footer.php';
 }
 
-function icomplyRenderTownPage(string $family, string $slug): void
+function icomplyTownPageRecord(string $slug): ?array
 {
     $town = icomplyUkTownBySlug($slug);
+    if ($town !== null) {
+        return $town;
+    }
+    if (!function_exists('icomplyGmServiceTown')) {
+        require_once __DIR__ . '/gm-service-towns.php';
+    }
+    return icomplyGmServiceTown($slug);
+}
+
+function icomplyRenderTownPage(string $family, string $slug): void
+{
+    $town = icomplyTownPageRecord($slug);
     if ($town === null || !in_array($family, icomplyTownFamilies(), true)) {
+        http_response_code(404);
+        echo 'Town page not found';
+        return;
+    }
+    if (!empty($town['families']) && !in_array($family, $town['families'], true)) {
         http_response_code(404);
         echo 'Town page not found';
         return;
@@ -594,6 +633,20 @@ function icomplyRenderTownPage(string $family, string $slug): void
         $metaDesc = 'AOV and smoke control in ' . $ctx['name'] . ' (' . $ctx['pop'] . ' people, ' . $ctx['county'] . '). EN 12101. About ' . $ctx['miles'] . ' miles from Stockport. 07517806082.';
         $kicker = 'AOV and smoke control';
         $h1 = 'AOV and smoke control in ' . $ctx['name'];
+    }
+    if (!empty($town['gm_local'])) {
+        $metaTitleExact = true;
+        $pageTitle = (string)($town['titles'][$family] ?? $pageTitle);
+        $metaDesc = (string)($town['metas'][$family] ?? $metaDesc);
+        $local = $town['copy'][$family] ?? [];
+        if (is_array($local) && $local !== []) {
+            $edit['paragraphs'] = array_merge($local, $edit['paragraphs']);
+        }
+        $why = 'Population on this list is ' . $ctx['pop'] . ', which is why the page exists.';
+        $instead = $ctx['name'] . ' is published because iComply covers this Greater Manchester place from Stockport, including ' . (string)($town['outward'] ?? '') . '. It is not a renamed copy of the nearest gazetteer town.';
+        foreach ($edit['paragraphs'] as $i => $paragraph) {
+            $edit['paragraphs'][$i] = str_replace($why, $instead, $paragraph);
+        }
     }
     $metaKeywords = $h1 . ', ' . $ctx['county'] . ', ' . $ctx['region'];
     $canonicalUrl = url('/pages/' . $family . '/' . $ctx['slug']);
@@ -644,7 +697,23 @@ function icomplyRenderTownPage(string $family, string $slug): void
     }
     echo '</div></section>';
     echo '<section class="mt-12"><h2 class="text-2xl font-semibold">Nearby towns</h2><ul class="mt-3 flex flex-wrap gap-3">';
-    foreach (icomplyUkTownNeighbours($ctx['slug'], 6) as $n) {
+    $nearList = icomplyUkTownNeighbours($ctx['slug'], 6);
+    if (!empty($town['neighbours'][$family]) && is_array($town['neighbours'][$family])) {
+        $nearList = [];
+        foreach ($town['neighbours'][$family] as $nslug) {
+            $n = icomplyUkTownBySlug((string)$nslug);
+            if ($n === null) {
+                $n = icomplyGmServiceTown((string)$nslug);
+                if ($n !== null && !in_array($family, $n['families'] ?? [], true)) {
+                    $n = null;
+                }
+            }
+            if ($n !== null) {
+                $nearList[] = ['name' => (string)$n['name'], 'slug' => (string)$n['slug']];
+            }
+        }
+    }
+    foreach ($nearList as $n) {
         $href = url('/pages/' . $family . '/' . $n['slug']);
         echo '<li><a class="px-4 py-2 border rounded-full text-sm font-semibold hover:border-[#ff6b00]" href="' . htmlspecialchars($href, ENT_QUOTES, 'UTF-8') . '">'
             . htmlspecialchars($n['name'], ENT_QUOTES, 'UTF-8') . '</a></li>';
@@ -663,7 +732,15 @@ function icomplyRenderTownPage(string $family, string $slug): void
         $switchLabel = $family === 'barriers' ? 'AOV in ' . $ctx['name'] : 'Barriers in ' . $ctx['name'];
     }
     echo '<p class="mt-4 text-sm"><a class="text-[#ff6b00] font-semibold" href="' . htmlspecialchars($hub, ENT_QUOTES, 'UTF-8') . '">All towns</a>';
-    echo ' · <a class="text-[#ff6b00] font-semibold" href="' . htmlspecialchars($switch, ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($switchLabel, ENT_QUOTES, 'UTF-8') . '</a></p>';
+    echo ' · <a class="text-[#ff6b00] font-semibold" href="' . htmlspecialchars($switch, ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($switchLabel, ENT_QUOTES, 'UTF-8') . '</a>';
+    if (!empty($town['gm_local'])) {
+        $areaHref = url((string)($town['area_hub'] ?? ('/pages/areas/' . $ctx['slug'])));
+        $servicePath = $family === 'barriers' ? '/pages/services/barriers' : '/pages/services/aov-air-handling';
+        $serviceLabel = $family === 'barriers' ? 'Barriers hub' : 'AOV hub';
+        echo ' · <a class="text-[#ff6b00] font-semibold" href="' . htmlspecialchars($areaHref, ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($ctx['name'], ENT_QUOTES, 'UTF-8') . ' area</a>';
+        echo ' · <a class="text-[#ff6b00] font-semibold" href="' . htmlspecialchars(url($servicePath), ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($serviceLabel, ENT_QUOTES, 'UTF-8') . '</a>';
+    }
+    echo '</p>';
     echo '</section>';
     echo '<section class="mt-12 bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">';
     echo '<h2 class="text-2xl font-semibold">Speak to iComply about ' . htmlspecialchars($ctx['name'], ENT_QUOTES, 'UTF-8') . '</h2>';
@@ -682,7 +759,7 @@ function icomplyDispatchTownPath(string $path): bool
     if (preg_match('#^/pages/(aov|barriers)/([a-z0-9\-]+)$#', $path, $m)) {
         // Only claim census towns we know. Other published AOV / barrier place
         // slugs fall through to aov-place.php / barriers.php handlers.
-        if (icomplyUkTownBySlug($m[2]) === null) {
+        if (icomplyUkTownBySlug($m[2]) === null && !icomplyGmServiceTownServes($m[1], $m[2])) {
             return false;
         }
         icomplyRenderTownPage($m[1], $m[2]);
