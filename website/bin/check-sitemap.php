@@ -283,6 +283,10 @@ if ($indexMode === 'tiered') {
             echo "OK: sitemap Greater Manchester area hubs=60\n";
         }
     }
+    if (stripos($xml, 'burnley') !== false) {
+        $fail++;
+        echo "FAIL: tiered sitemap still names Burnley\n";
+    }
 }
 
 $committed = is_file(SITE_ROOT . '/sitemap.xml') ? (string)file_get_contents(SITE_ROOT . '/sitemap.xml') : '';
@@ -311,6 +315,10 @@ foreach ([
         $fail++;
         echo "FAIL: committed sitemap lists {$ban}\n";
     }
+}
+if (stripos($committed, 'burnley') !== false) {
+    $fail++;
+    echo "FAIL: committed sitemap still names Burnley\n";
 }
 
 echo "URLs={$count} bytes=" . strlen($xml) . PHP_EOL;

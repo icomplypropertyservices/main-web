@@ -117,6 +117,10 @@ function icomplySitemapEntries(): array
         if ($path === '') {
             $path = '/';
         }
+        // Burnley is Lancashire, not Greater Manchester. Keep it off every sitemap loc.
+        if (preg_match('#(?:^|/)burnley(?:$|/)#', $path) || str_ends_with($path, '-burnley')) {
+            return;
+        }
         if (isset($seen[$path]) || isset($banned[$path])) {
             return;
         }
