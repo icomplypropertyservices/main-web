@@ -162,6 +162,16 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
+<?php
+require_once SITE_ROOT . '/includes/quality-bar.php';
+$landingImageSlug = 'electrical';
+if (!empty($ogImage) && preg_match('#/assets/images/services/([a-z0-9\-]+)\.jpg#', (string)$ogImage, $landingImgMatch)) {
+    $landingImageSlug = $landingImgMatch[1];
+}
+echo '<section class="max-w-7xl mx-auto px-6 pt-12">';
+echo icomplyQualityBarImages($landingImageSlug, (string)($landing['h1'] ?? 'Job'), 'q2-hub-images')['html'];
+echo '</section>';
+?>
 <section class="max-w-7xl mx-auto px-6 py-16 md:py-20">
     <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Scope</div>
     <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mt-2"><?= htmlspecialchars((string)$landing['scopeTitle'], ENT_QUOTES, 'UTF-8') ?></h2>

@@ -361,6 +361,16 @@ $schema = [
 </section>
 <?php endif; ?>
 
+<?php
+require_once SITE_ROOT . '/includes/quality-bar.php';
+echo icomplyQualityBarFaqHtml(
+    icomplyQualityBarAreaFaqs($areaName),
+    'q5-area-faq',
+    'q5-area-faq-jsonld',
+    'Questions about ' . $areaName
+);
+?>
+
 <!-- CTA -->
 <section class="bg-[#0B1F3A] text-white">
     <div class="max-w-7xl mx-auto px-6 py-14 flex flex-col md:flex-row md:items-center md:justify-between gap-8">

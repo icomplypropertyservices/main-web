@@ -125,7 +125,7 @@ function icomplyMatrixShared(): array
     return $s;
 }
 
-function icomplyMatrixChromeStart(string $title, string $desc, string $canonical, string $robots = 'index, follow'): string
+function icomplyMatrixChromeStart(string $title, string $desc, string $canonical, string $robots = 'index, follow', string $imagePath = '/assets/images/services/fire-alarms.jpg'): string
 {
     $s = icomplyMatrixShared();
     $t = icomplyMatrixH($title);
@@ -146,6 +146,7 @@ function icomplyMatrixChromeStart(string $title, string $desc, string $canonical
         . '<meta property="og:title" content="' . $t . '">'
         . '<meta property="og:description" content="' . $d . '">'
         . '<meta property="og:url" content="' . $c . '">'
+        . '<meta property="og:image" content="' . icomplyMatrixH(icomply_absolute_url($imagePath)) . '">'
         . '<link rel="stylesheet" href="' . icomplyMatrixH(assetUrl('/assets/css/utilities.css')) . '">'
         . '<link rel="stylesheet" href="' . $css . '">'
         . '</head><body class="matrix-page bg-zinc-50 text-black">'
@@ -267,7 +268,8 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
     if (!function_exists('icomplyGmBriefHtml')) {
         require_once SITE_ROOT . '/includes/gm-enrichment.php';
     }
-    $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots);
+    $kwImagePath = '/assets/images/services/' . $svcSlug . '.jpg';
+    $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots, $kwImagePath);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
         . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($svcName) . ' · ' . icomplyMatrixH($areaName) . '</p>'
         . '<h1>' . icomplyMatrixH($kwName) . ' <span class="accent">in ' . icomplyMatrixH($areaName) . '</span></h1>'
@@ -308,11 +310,35 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
             'kind' => 'keyword',
         ])
         : '';
+    if (!function_exists('icomplyQualityBarThinProseHtml')) {
+        require_once SITE_ROOT . '/includes/quality-bar.php';
+    }
+    $kwGas = $svcSlug === 'gas-systems' || $svcSlug === 'heating' || !empty($meta['gas']);
+    $kwQuality = icomplyQualityBarImages($svcSlug, $kwName . ' in ' . $areaName, 'q2-thin-images')['html']
+        . icomplyQualityBarThinProseHtml('keyword', [
+            'place' => $areaName,
+            'subject' => $kwName,
+            'service' => $svcName,
+            'audience' => 'landlords and managing agents',
+            'visit' => 'a planned daytime visit',
+            'near' => 'nearby Greater Manchester towns',
+            'housing' => '',
+            'industry' => '',
+            'pop' => '',
+            'gas' => $kwGas,
+            'blurb' => is_array($packed) ? (string)($packed['blurb'] ?? '') : '',
+        ])
+        . icomplyQualityBarFaqHtml([
+            ['How is ' . $kwName . ' in ' . $areaName . ' quoted?', 'The quote is price on application after the scope names the building and the access. This page does not publish a fee.'],
+            ['Where is the team that covers ' . $areaName . ' based?', 'Visits are arranged from ' . ICOMPLY_NAP . '.'],
+            ['What should be sent before a ' . $areaName . ' visit?', 'Send the postcode, the property type and anything already known about the installation.'],
+        ], 'q5-thin-faq', 'q5-thin-faq-jsonld', 'Questions about ' . $areaName);
     $html .= '<main class="matrix-wrap py-10 space-y-10">'
         . '<article class="matrix-card space-y-4">'
         . '<h2 class="text-2xl font-semibold">' . icomplyMatrixH($packedHeading) . '</h2>'
         . ($packedCta !== '' ? '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($packedCta) . '</p>' : '')
         . '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($body) . '</p>'
+        . $kwQuality
         . $kwEnrich;
     if ($bullets) {
         $html .= '<ul class="space-y-2 text-zinc-700">';
@@ -414,7 +440,8 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         }
     }
     $tier1 = function_exists('icomplyTier1ServiceArticle') ? icomplyTier1ServiceArticle($serviceSlug, $areaName) : '';
-    $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots);
+    $svcImagePath = '/assets/images/services/' . $serviceSlug . '.jpg';
+    $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots, $svcImagePath);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
         . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($areaName) . ' · ' . icomplyMatrixH($coverageLabel) . '</p>'
         . '<h1>' . icomplyMatrixH($svcName) . ' <span class="accent">in ' . icomplyMatrixH($areaName) . '</span></h1>'
@@ -445,10 +472,34 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
             'imageAlt' => $svcName . ' in ' . $areaName,
         ])
         : '';
+    if (!function_exists('icomplyQualityBarThinProseHtml')) {
+        require_once SITE_ROOT . '/includes/quality-bar.php';
+    }
+    $svcGas = $serviceSlug === 'gas-systems' || $serviceSlug === 'heating';
+    $svcQuality = icomplyQualityBarImages($serviceSlug, $svcName . ' in ' . $areaName, 'q2-thin-images')['html']
+        . icomplyQualityBarThinProseHtml('service', [
+            'place' => $areaName,
+            'subject' => $svcName,
+            'service' => $svcName,
+            'audience' => 'landlords and managing agents',
+            'visit' => 'a planned daytime visit',
+            'near' => 'nearby Greater Manchester towns',
+            'housing' => '',
+            'industry' => '',
+            'pop' => '',
+            'gas' => $svcGas,
+            'blurb' => is_array($packed) ? (string)($packed['blurb'] ?? '') : '',
+        ])
+        . icomplyQualityBarFaqHtml([
+            ['How is ' . $svcName . ' in ' . $areaName . ' quoted?', 'The quote is price on application after the scope names the building and the access. This page does not publish a fee.'],
+            ['Where is the team that covers ' . $areaName . ' based?', 'Visits are arranged from ' . ICOMPLY_NAP . '.'],
+            ['What should be sent before a ' . $areaName . ' visit?', 'Send the postcode, the property type and anything already known about the installation.'],
+        ], 'q5-thin-faq', 'q5-thin-faq-jsonld', 'Questions about ' . $areaName);
     $html .= '<main class="matrix-wrap py-10 space-y-10">'
         . '<article class="matrix-card space-y-4">'
         . '<h2 class="text-2xl font-semibold">' . icomplyMatrixH($packedHeading) . '</h2>'
         . $svcEnrich
+        . $svcQuality
         . '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($blurb) . '</p>'
         . ($packedCta !== '' ? '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($packedCta) . '</p>' : '')
         . '<p class="text-sm">Service hub: <a class="text-[#ff6b00] font-semibold" href="'

@@ -127,6 +127,19 @@ $h = static function ($s): string {
                     'keywordSlug' => (string)$keywordSlug,
                     'kind' => 'keyword',
                 ]) ?>
+                <?php
+                require_once SITE_ROOT . '/includes/quality-bar.php';
+                $kwGas = $serviceSlug === 'gas-systems' || $serviceSlug === 'heating';
+                echo icomplyQualityBarThinBlock(
+                    'keyword',
+                    (string)$keywordName,
+                    (string)$serviceName,
+                    (string)$serviceSlug,
+                    (string)$areaName,
+                    is_array($gmPacked) ? (string)($gmPacked['blurb'] ?? '') : '',
+                    $kwGas
+                );
+                ?>
             </div>
             <div class="mt-6 grid sm:grid-cols-3 gap-4">
                 <?php foreach (['Install' => 'New works in ' . $AREA, 'Service' => 'Repairs & maintenance', 'Certify' => 'Compliance paperwork'] as $t => $d): ?>

@@ -131,6 +131,16 @@ function shingles(html) {
   return out;
 }
 
+function proseWords(html) {
+  const parts = [];
+  const re = /<(p|h[1-4]|summary|dt|dd)\b[^>]*>([\s\S]*?)<\/\1>/gi;
+  let match;
+  while ((match = re.exec(String(html)))) {
+    parts.push(match[2].replace(/<[^>]+>/g, " "));
+  }
+  return parts.join(" ").trim().split(/\s+/).filter(Boolean).length;
+}
+
 function jaccard(a, b) {
   let inter = 0;
   for (const item of a) {
@@ -166,8 +176,15 @@ for (const page of pages) {
   ok(!/iComply does not carry out gas/i.test(page.html), `no gas denial on ${page.path}`);
   ok(!/iComply does not issue CP12/i.test(page.html), `no CP12 denial on ${page.path}`);
   ok(page.words >= 250, `body words ${page.words} on ${page.path}`);
+  ok(proseWords(page.html) >= 800, `prose words ${proseWords(page.html)} on ${page.path}`);
   ok(/price on application|\bPOA\b/.test(page.html), `POA on ${page.path}`);
-  ok(page.html.includes("approved subcontractors"), `subcontractors on ${page.path}`);
+  ok(page.html.includes('property="og:title"'), `og:title on ${page.path}`);
+  ok(page.html.includes('property="og:description"'), `og:description on ${page.path}`);
+  ok(/property="og:image" content="https:\/\/icomplypropertyservices\.co\.uk\/assets\/images\/[^"]+"/.test(page.html), `absolute og:image on ${page.path}`);
+  const imgs = new Set([...page.html.matchAll(/<img\b[^>]*\bsrc="([^"]+)"/gi)].map((m) => m[1]));
+  ok(imgs.size >= 3, `content images ${imgs.size} on ${page.path}`);
+  ok((page.html.match(/<details\b/gi) || []).length >= 3, `faq questions on ${page.path}`);
+  ok(page.html.includes('"@type":"FAQPage"') || page.html.includes('"@type": "FAQPage"'), `FAQPage on ${page.path}`);
 }
 
 const eicrTowns = pages.slice(0, 3);
@@ -216,6 +233,39 @@ ok(jobFar && jobFar.robots === "noindex, follow", "EICR job is not nationwide");
 ok(jobFire && jobFire.robots === "noindex, follow", "fire alarm job outside the catalogue stays noindex");
 ok(jobGas && jobGas.html.includes("iComply is not Gas Safe registered."), "gas job keeps the legal sentence");
 ok([came, rolecLocal, jobLocal, jobFire, aberdeenFire].every((page) => scoreHtml(page.html, { local: ["aberdeen", "stockport"] }).score === 100), "new page types score 100");
+
+const ogSample = [
+  ["service", "electrical", "stockport"],
+  ["service", "electrical", "manchester"],
+  ["service", "gas-systems", "stockport"],
+  ["service", "windows-doors", "manchester"],
+  ["service", "kitchens", "stockport"],
+  ["keyword", "eicr", "stockport"],
+  ["keyword", "eicr", "manchester"],
+  ["keyword", "eicr", "high-legh"],
+  ["keyword", "boiler", "stockport"],
+  ["keyword", "fire-door-survey", "stockport"],
+  ["job", "eicr", "stockport"],
+  ["job", "eicr", "manchester"],
+  ["job", "gas-safety-cp12", "stockport"],
+  ["job", "fire-alarms", "stockport"],
+  ["job", "fire-alarms", "manchester"],
+];
+let ogHits = 0;
+for (const [kind, slug, town] of ogSample) {
+  const input = { kind, town, catalogue };
+  if (kind === "service") input.service = slug;
+  if (kind === "keyword") input.keyword = slug;
+  if (kind === "job") input.job = slug;
+  const page = renderTownPage(input);
+  const ogOk = page
+    && page.html.includes('property="og:title"')
+    && page.html.includes('property="og:description"')
+    && /property="og:image" content="https:\/\/icomplypropertyservices\.co\.uk\//.test(page.html)
+    && proseWords(page.html) >= 800;
+  if (ogOk) ogHits += 1;
+}
+ok(ogHits >= 15, `thin OG and prose sample ${ogHits}/15`);
 
 const kitchen = renderTownPage({ kind: "service", service: "kitchens", town: "stockport", catalogue });
 ok(kitchen && kitchen.status === 200 && kitchen.robots === "index, follow", "kitchen town page in Stockport is indexable");
