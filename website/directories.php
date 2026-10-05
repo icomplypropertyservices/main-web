@@ -141,8 +141,7 @@ require SITE_ROOT . '/includes/header.php';
             <span>Listings and directories</span>
         </nav>
         <h1 class="text-4xl font-semibold tracking-tight">Find us online</h1>
-        <p class="mt-4 text-lg text-white/80">iComply Property Services is based in Offerton, Stockport, and arranges compliance and property work across Greater Manchester. This page lists the official profiles and directory entries we keep in the same name, address and phone number.</p>
-        <p class="mt-3 text-white/70">Quotes are price on application. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.</p>
+        <p class="mt-4 text-lg text-white/80">iComply Property Services is based in Offerton, Stockport, Cheshire, and arranges compliance and property work across Greater Manchester. Use this page for the official name, address and phone we keep consistent across directories. Quotes are price on application. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.</p>
     </div>
 </section>
 <main class="max-w-3xl mx-auto px-6 py-12 space-y-12">

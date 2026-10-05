@@ -6,7 +6,7 @@
 
 import { breadcrumbHtml, isGmTown, matrixRelatedHtml } from "./link-blocks.js";
 
-const GAS_SENTENCE = "Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.";
+const GAS_SENTENCE = "Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.";
 const SUBCONTRACT_SENTENCE = "The work is carried out by relevant qualified people. Where a visit needs a specialist ticket, iComply uses approved subcontractors.";
 
 function hashStr(value) {

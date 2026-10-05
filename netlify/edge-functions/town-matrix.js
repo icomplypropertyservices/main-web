@@ -7,6 +7,7 @@
  */
 import { renderVariantPage, renderVariantSitemap } from "../lib/variant-matrix.js";
 import { breadcrumbHtml, isGmTown, matrixRelatedHtml } from "../lib/link-blocks.js";
+import { gmTownBlurb } from "../lib/gm-blurbs.js";
 
 const RESERVED = new Set([
   "keywords", "services", "areas", "manufacturers", "resources", "packages",
@@ -43,7 +44,7 @@ const VISIT_STYLES = [
   "a survey followed by a return visit for the agreed scope",
 ];
 
-const GAS_SENTENCE = "Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.";
+const GAS_SENTENCE = "Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.";
 const SUBCONTRACT_SENTENCE = "The work is carried out by relevant qualified people. Where a visit needs a specialist ticket, iComply uses approved subcontractors.";
 
 function hashStr(value) {
@@ -299,6 +300,12 @@ export function renderTownPage(input) {
   ].filter(Boolean);
   const intro = keyword.intro ? keyword.intro.replace(/\s+/g, " ").trim() : "";
   const gas = keyword.gas ? GAS_SENTENCE : "";
+  const packed = (kind === "keyword" || kind === "service")
+    ? gmTownBlurb(kind, kind === "keyword" ? input.keyword : serviceSlug, townSlug)
+    : null;
+  const packedLead = packed && packed.blurb
+    ? `${packed.h2 ? `<h2>${escapeHtml(packed.h2)}</h2>` : ""}<p>${escapeHtml(packed.blurb)}</p>${packed.cta ? `<p>${escapeHtml(packed.cta)}</p>` : ""}`
+    : "";
   const paragraphs = [
     pick(openings, seed),
     intro,
@@ -357,7 +364,7 @@ export function renderTownPage(input) {
   )).join("");
   const focusHtml = focus.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
   const processHtml = process.map((step) => `<li>${escapeHtml(step)}</li>`).join("");
-  const bodyHtml = paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("");
+  const bodyHtml = packedLead + paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("");
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
