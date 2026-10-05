@@ -653,6 +653,66 @@
   force = true
 
 [[redirects]]
+  from = "/pages/ev-chargers"
+  to = "/pages/services/ev-chargers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/ev-chargers/"
+  to = "/pages/services/ev-chargers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/water-wras"
+  to = "/pages/services/water-wras"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/water-wras/"
+  to = "/pages/services/water-wras"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/windows-doors"
+  to = "/pages/services/windows-doors"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/windows-doors/"
+  to = "/pages/services/windows-doors"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/products/product/:handle"
+  to = "/products/product/:handle.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/products/product/:handle/"
+  to = "/products/product/:handle.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/products/:handle"
+  to = "/shop/products/:handle.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/products/:handle/"
+  to = "/shop/products/:handle.php"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/:splat.php"
   status = 200

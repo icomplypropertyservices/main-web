@@ -54,7 +54,7 @@ $mainPages = [
     ['href' => url('/pages/landlords.php'), 'label' => 'Landlords'],
     ['href' => url('/pages/commercial.php'), 'label' => 'Commercial / FM'],
     ['href' => url('/pages/care-homes.php'), 'label' => 'Care homes'],
-    ['href' => url('/pages/ev-chargers.php'), 'label' => 'EV chargers'],
+    ['href' => url('/pages/services/ev-chargers'), 'label' => 'EV chargers'],
     ['href' => url('/pages/maintenance.php'), 'label' => 'Maintenance contracts'],
     ['href' => url('/pages/emergency.php'), 'label' => 'Emergency call-out'],
     ['href' => url('/pages/reviews.php'), 'label' => 'Reviews'],

@@ -1,4 +1,5 @@
 import { renderTownPage } from "../../netlify/edge-functions/town-matrix.js";
+import { scoreHtml } from "./score-pages.mjs";
 
 const catalogue = {
   keywords: {
@@ -21,6 +22,13 @@ const catalogue = {
       service: "painting-decorating",
       intro: "Exterior painting covers preparation and coatings on the outside of the building.",
       focus: ["Preparation", "Coatings", "Access"],
+      gas: false,
+    },
+    "fire-door-survey": {
+      name: "Fire door survey",
+      service: "fire-doors",
+      intro: "A fire door survey looks at the leaf, the frame, the closer and the gaps.",
+      focus: ["Leaf and frame", "Closer", "Gaps"],
       gas: false,
     },
   },
@@ -59,13 +67,40 @@ const catalogue = {
       "gas-systems": "Gas systems",
       "painting-decorating": "Painting and decorating",
       "windows-doors": "Windows and doors",
+      "water-wras": "Water fittings",
+      "fire-doors": "Fire doors",
+      barriers: "Vehicle barriers",
+      "ev-chargers": "EV chargers",
     },
     keywords: {
       electrical: ["eicr"],
       "gas-systems": ["boiler"],
       "painting-decorating": ["exterior-painting"],
       "windows-doors": [],
+      "water-wras": [],
+      "fire-doors": ["fire-door-survey"],
     },
+    family: ["fire-doors", "fire-alarms", "barriers", "aov-air-handling"],
+  },
+  nationwide: {
+    aberdeen: {
+      name: "Aberdeen",
+      region: "Aberdeen City",
+      country: "Scotland",
+      population: 198590,
+      housing: "",
+      industry: "published workplace class city",
+      neighbours: ["Dundee"],
+    },
+  },
+  manufacturers: {
+    came: { name: "CAME", service: "barriers", nationwide: true },
+    "rolec-ev": { name: "Rolec", service: "ev-chargers", nationwide: false },
+  },
+  jobs: {
+    eicr: { name: "EICR", service: "electrical", gas: false, nationwide: false },
+    "fire-alarms": { name: "Fire alarms", service: "fire-alarms", gas: false, nationwide: true },
+    "gas-safety-cp12": { name: "Landlord gas safety certificate", service: "gas-systems", gas: true, nationwide: false },
   },
 };
 
@@ -149,6 +184,37 @@ ok(jaccard(sets[0], sets[1]) < 0.55, `stockport/manchester overlap ${jaccard(set
 ok(jaccard(sets[0], sets[2]) < 0.55, `stockport/high-legh overlap ${jaccard(sets[0], sets[2]).toFixed(3)}`);
 ok(pages[4].h1.includes("High Legh") && pages[4].title.includes("Exterior painting"), "High Legh exterior painting title");
 ok(pages[5].canonical === "https://icomplypropertyservices.co.uk/pages/windows-doors/manchester", "service canonical");
+
+const scored = pages.map((page) => scoreHtml(page.html, { local: ["stockport", "manchester", "high legh", "ashopton", "ellesmere", "north west"] }));
+ok(scored.every((row) => row.score === 100), `sample scores ${scored.map((row) => row.score).join(",")}`);
+
+const water = renderTownPage({ kind: "service", service: "water-wras", town: "stockport", catalogue });
+ok(water && water.status === 200 && water.robots === "index, follow", "water-wras town page is indexable");
+ok(water && water.html.includes("/assets/images/services/plumbing.jpg"), "water-wras uses the plumbing image");
+ok(scoreHtml(water.html, { local: ["stockport"] }).score === 100, "water-wras score 100");
+
+const aberdeenFire = renderTownPage({ kind: "keyword", keyword: "fire-door-survey", town: "aberdeen", catalogue });
+const aberdeenEicr = renderTownPage({ kind: "keyword", keyword: "eicr", town: "aberdeen", catalogue });
+ok(aberdeenFire && aberdeenFire.robots === "index, follow", "fire keyword in Aberdeen is indexable");
+ok(aberdeenEicr && aberdeenEicr.robots === "noindex, follow", "electrical keyword in Aberdeen stays noindex");
+
+const came = renderTownPage({ kind: "manufacturer", brand: "came", town: "aberdeen", catalogue });
+const rolec = renderTownPage({ kind: "manufacturer", brand: "rolec-ev", town: "aberdeen", catalogue });
+const rolecLocal = renderTownPage({ kind: "manufacturer", brand: "rolec-ev", town: "stockport", catalogue });
+ok(came && came.robots === "index, follow" && came.path === "/pages/manufacturers/came/aberdeen", "nationwide manufacturer town");
+ok(rolec && rolec.robots === "noindex, follow", "local manufacturer stays noindex outside the core list");
+ok(rolecLocal && rolecLocal.robots === "index, follow", "local manufacturer town in the core list");
+ok(renderTownPage({ kind: "manufacturer", brand: "tunstall", town: "stockport", catalogue }) === null, "tunstall is not published");
+
+const jobLocal = renderTownPage({ kind: "job", job: "eicr", town: "stockport", catalogue });
+const jobFar = renderTownPage({ kind: "job", job: "eicr", town: "aberdeen", catalogue });
+const jobFire = renderTownPage({ kind: "job", job: "fire-alarms", town: "aberdeen", catalogue });
+const jobGas = renderTownPage({ kind: "job", job: "gas-safety-cp12", town: "stockport", catalogue });
+ok(jobLocal && jobLocal.robots === "index, follow", "EICR job town page");
+ok(jobFar && jobFar.robots === "noindex, follow", "EICR job is not nationwide");
+ok(jobFire && jobFire.robots === "index, follow", "fire alarm job is nationwide");
+ok(jobGas && jobGas.html.includes("iComply is not Gas Safe registered."), "gas job keeps the legal sentence");
+ok([came, rolecLocal, jobLocal, jobFire, aberdeenFire].every((page) => scoreHtml(page.html, { local: ["aberdeen", "stockport"] }).score === 100), "new page types score 100");
 
 console.log(fail === 0 ? "PASS" : `FAIL ${fail}`);
 process.exit(fail === 0 ? 0 : 1);

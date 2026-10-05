@@ -227,7 +227,7 @@ function icomplyServiceHubLinks(string $slug): array
             ['/pages/services/gas-systems', 'Gas records'],
         ],
         'ev-chargers' => [
-            ['/pages/ev-chargers', 'EV charger brands'],
+            ['/pages/services/ev-chargers', 'EV charger brands'],
             ['/pages/services/electrical', 'Electrical'],
         ],
         'aov-air-handling' => [
@@ -235,7 +235,7 @@ function icomplyServiceHubLinks(string $slug): array
             ['/pages/commercial-fire-safety', 'Commercial fire safety'],
         ],
         'water-wras' => [
-            ['/pages/water-wras', 'Water fittings jobs'],
+            ['/pages/services/water-wras', 'Water fittings jobs'],
             ['/pages/services/legionella-risk-assessment', 'Legionella'],
             ['/pages/services/plumbing', 'Plumbing'],
         ],

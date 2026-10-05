@@ -211,7 +211,7 @@ function icomplyNavPackageLinks(): array
         ['href' => url('/pages/pricing.php'), 'label' => 'Pricing guide (POA)'],
         ['href' => url('/pages/maintenance.php'), 'label' => 'Maintenance contracts'],
         ['href' => url('/pages/emergency.php'), 'label' => 'Emergency call-out'],
-        ['href' => url('/pages/ev-chargers.php'), 'label' => 'EV chargers'],
+        ['href' => url('/pages/services/ev-chargers'), 'label' => 'EV chargers'],
         ['href' => url('/pages/about.php'), 'label' => 'About'],
         ['href' => url('/pages/faq.php'), 'label' => 'FAQ'],
         ['href' => url('/pages/reviews.php'), 'label' => 'Reviews'],

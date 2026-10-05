@@ -283,6 +283,23 @@ $schema = [
     </div>
 </section>
 
+<section class="bg-white border-b border-zinc-200">
+    <div class="max-w-7xl mx-auto px-6 py-12">
+        <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-[#061828]">How a <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> visit runs</h2>
+        <p class="mt-3 text-zinc-800 max-w-3xl">Work is arranged from Stockport. The quote for <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> is price on application. The work is carried out by relevant qualified people. Where a visit needs a specialist ticket, iComply uses approved subcontractors.</p>
+        <ol class="mt-6 grid md:grid-cols-2 gap-4 text-zinc-800">
+            <li class="rounded-2xl border border-zinc-200 p-4"><strong>1. The building.</strong> Send the address, what <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> has to cover, and whether the site is occupied.</li>
+            <li class="rounded-2xl border border-zinc-200 p-4"><strong>2. The scope.</strong> iComply confirms the visit in writing. This page does not publish a price for that visit.</li>
+            <li class="rounded-2xl border border-zinc-200 p-4"><strong>3. The attendance.</strong> Access and occupation in the town decide the appointment. Travel is part of the POA quote.</li>
+            <li class="rounded-2xl border border-zinc-200 p-4"><strong>4. The record.</strong> Certificates, test sheets or reports go to the instructing client.</li>
+        </ol>
+        <?php if ($serviceSlug === 'gas-systems' && function_exists('icomplyGasLegalSentence')): ?>
+            <p class="mt-4 text-zinc-800 max-w-3xl"><?= htmlspecialchars(icomplyGasLegalSentence(), ENT_QUOTES, 'UTF-8') ?></p>
+        <?php endif; ?>
+        <p class="mt-4 text-sm"><a class="font-semibold text-[#ff6b00]" href="<?= url('/contact') ?>">Request a <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> quote</a> · <a class="font-semibold text-[#ff6b00]" href="<?= url('/pages/areas') ?>">Towns covered from Stockport</a></p>
+    </div>
+</section>
+
 <?php if ($serviceSlug === 'nurse-call'): ?>
 <section class="bg-white border-b">
     <div class="max-w-7xl mx-auto px-6 py-10">

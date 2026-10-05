@@ -24,6 +24,22 @@ function icomplyMatrixSlug(string $value): string
     return preg_match('/^[a-z0-9]+(?:-[a-z0-9]+)*$/', $slug) ? $slug : '';
 }
 
+/** Fire, barriers and AOV use the nationwide gazetteer as well as the core towns. */
+function icomplyMatrixFamilyServiceSlugs(): array
+{
+    return [
+        'fire-alarms', 'fire-risk-assessments', 'fire-extinguishers', 'fire-doors',
+        'fire-stopping', 'fire-suppression', 'fire-signage', 'fire-compartmentation',
+        'dry-risers', 'emergency-lighting', 'barriers', 'aov-air-handling',
+    ];
+}
+
+function icomplyMatrixNormalName(string $name): string
+{
+    $name = preg_replace('/\s*\([^)]*\)/u', '', $name) ?? $name;
+    return icomplyMatrixSlug($name);
+}
+
 /**
  * @param array<string,array<string,mixed>> $bySlug
  * @param array<string,mixed> $row
@@ -39,7 +55,7 @@ function icomplyMatrixRememberPlace(array &$bySlug, string $slug, array $row, in
 }
 
 /**
- * @return array{selected:array<string,array<string,mixed>>,available:int,remaining:int}
+ * @return array{selected:array<string,array<string,mixed>>,available:int,remaining:int,skipped_duplicates:int}
  */
 function icomplyMatrixSelectPlaces(int $wanted): array
 {
@@ -177,11 +193,27 @@ function icomplyMatrixSelectPlaces(int $wanted): array
         return strcmp((string)$a['slug'], (string)$b['slug']);
     });
 
-    $available = count($ranked);
+    $deduped = [];
+    $seenNames = [];
+    $skippedDuplicates = 0;
+    foreach ($ranked as $row) {
+        $slug = (string)$row['slug'];
+        $nameKey = icomplyMatrixNormalName((string)($row['name'] ?? $slug));
+        if (preg_match('/^([a-z0-9]+)-\1$/', $slug) || ($nameKey !== '' && isset($seenNames[$nameKey]))) {
+            $skippedDuplicates++;
+            continue;
+        }
+        if ($nameKey !== '') {
+            $seenNames[$nameKey] = $slug;
+        }
+        $deduped[] = $row;
+    }
+
+    $available = count($deduped);
     if ($wanted < 1) {
         $wanted = $available;
     }
-    $chosen = array_slice($ranked, 0, min($wanted, $available));
+    $chosen = array_slice($deduped, 0, min($wanted, $available));
     $selected = [];
     $names = [];
     foreach ($chosen as $row) {
@@ -226,7 +258,142 @@ function icomplyMatrixSelectPlaces(int $wanted): array
         'selected' => $selected,
         'available' => $available,
         'remaining' => max(0, $available - count($selected)),
+        'skipped_duplicates' => $skippedDuplicates,
     ];
+}
+
+/**
+ * UK towns over 10,000. Used for fire, barriers, AOV, nationwide manufacturers and those job types.
+ *
+ * @return array<string,array<string,mixed>>
+ */
+function icomplyMatrixNationwidePlaces(): array
+{
+    $file = SITE_ROOT . '/data/uk-towns-10k.json';
+    $decoded = is_file($file) ? json_decode((string)file_get_contents($file), true) : [];
+    $places = [];
+    if (!is_array($decoded)) {
+        return $places;
+    }
+    foreach ($decoded as $row) {
+        if (!is_array($row)) {
+            continue;
+        }
+        $slug = icomplyMatrixSlug((string)($row['slug'] ?? ''));
+        if ($slug === '' || isset($places[$slug])) {
+            continue;
+        }
+        $workplace = trim((string)($row['workplace'] ?? ''));
+        $places[$slug] = [
+            'name' => (string)($row['name'] ?? $slug),
+            'region' => (string)($row['region'] ?? 'United Kingdom'),
+            'country' => (string)($row['nation'] ?? 'United Kingdom'),
+            'population' => (int)($row['pop'] ?? 0),
+            'housing' => '',
+            'industry' => $workplace !== '' ? 'published workplace class ' . strtolower($workplace) : '',
+            'neighbours' => [],
+        ];
+    }
+    return $places;
+}
+
+function icomplyMatrixManufacturerMode(string $slug, array $entry): ?string
+{
+    if ($slug === '' || $slug === 'tunstall') {
+        return null;
+    }
+    if (function_exists('manufacturerCoverageMode')) {
+        $entry['slug'] = $slug;
+        return manufacturerCoverageMode($entry);
+    }
+    $national = ['fire-alarms', 'aov-air-handling', 'barriers', 'access-control', 'nurse-call'];
+    foreach ($entry['services'] ?? [] as $service) {
+        if (in_array((string)$service, $national, true)) {
+            return 'nationwide';
+        }
+    }
+    return !empty($entry['services']) ? 'local' : null;
+}
+
+/**
+ * @return array<string,array{name:string,service:string,nationwide:bool}>
+ */
+function icomplyMatrixManufacturerRecords(): array
+{
+    $out = [];
+    if (!function_exists('getManufacturerCatalog')) {
+        return $out;
+    }
+    foreach (getManufacturerCatalog() as $slug => $entry) {
+        if (!is_array($entry)) {
+            continue;
+        }
+        $slug = icomplyMatrixSlug((string)$slug);
+        $mode = icomplyMatrixManufacturerMode($slug, $entry);
+        if ($mode === null) {
+            continue;
+        }
+        $service = '';
+        foreach ($entry['services'] ?? [] as $candidate) {
+            $service = icomplyMatrixSlug((string)$candidate);
+            if ($service !== '') {
+                break;
+            }
+        }
+        if ($service === '') {
+            $service = 'building-maintenance';
+        }
+        $name = trim((string)($entry['name'] ?? ''));
+        $out[$slug] = [
+            'name' => $name !== '' ? $name : ucwords(str_replace('-', ' ', $slug)),
+            'service' => $service,
+            'nationwide' => $mode === 'nationwide',
+        ];
+    }
+    return $out;
+}
+
+/**
+ * Job-type landings under /pages/jobs/{slug}. Nationwide when the trade is fire, barriers or AOV.
+ *
+ * @return array<string,array{name:string,service:string,gas:bool,nationwide:bool}>
+ */
+function icomplyMatrixJobRecords(): array
+{
+    $rows = [
+        'bs-5839-maintenance' => ['BS 5839 fire alarm maintenance', 'fire-alarms', false, true],
+        'came-gard-gt4' => ['CAME Gard GT4 barrier', 'barriers', false, true],
+        'car-park-barrier' => ['Car park barrier', 'barriers', false, true],
+        'eicr' => ['EICR', 'electrical', false, false],
+        'false-alarm-investigation' => ['False alarm investigation', 'fire-alarms', false, true],
+        'fire-alarm-call-out' => ['Fire alarm call out', 'fire-alarms', false, true],
+        'fire-alarm-ppm' => ['Fire alarm PPM', 'fire-alarms', false, true],
+        'fire-alarm-replacement' => ['Fire alarm replacement', 'fire-alarms', false, true],
+        'fire-alarms' => ['Fire alarms', 'fire-alarms', false, true],
+        'fire-risk-assessment' => ['Fire risk assessment', 'fire-risk-assessments', false, true],
+        'fra' => ['Fire risk assessment', 'fire-risk-assessments', false, true],
+        'fra-other' => ['Fire risk assessment, other premises', 'fire-risk-assessments', false, true],
+        'gas-safety' => ['Gas safety', 'gas-systems', true, false],
+        'gas-safety-cp12' => ['Landlord gas safety certificate', 'gas-systems', true, false],
+        'hmo-compliance' => ['HMO compliance', 'landlord-compliance', false, false],
+        'hmo-fire-safety' => ['HMO fire safety', 'fire-alarms', false, true],
+        'hmo-occupancy' => ['HMO occupancy', 'landlord-compliance', false, false],
+        'hmo' => ['HMO', 'landlord-compliance', false, false],
+        'landlord-bundle' => ['Landlord compliance bundle', 'landlord-compliance', false, false],
+        'landlord-compliance' => ['Landlord compliance', 'landlord-compliance', false, false],
+        'landlord-gas-safety' => ['Landlord gas safety', 'gas-systems', true, false],
+        'maglock-installation' => ['Maglock installation', 'access-control', false, false],
+    ];
+    $out = [];
+    foreach ($rows as $slug => $row) {
+        $out[$slug] = [
+            'name' => $row[0],
+            'service' => $row[1],
+            'gas' => $row[2],
+            'nationwide' => $row[3],
+        ];
+    }
+    return $out;
 }
 
 /**
@@ -381,12 +548,20 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
     if (!is_dir($assetDir) && !mkdir($assetDir, 0755, true) && !is_dir($assetDir)) {
         throw new RuntimeException('Cannot mkdir ' . $assetDir);
     }
+    $nationwide = icomplyMatrixNationwidePlaces();
+    $manufacturers = icomplyMatrixManufacturerRecords();
+    $jobs = icomplyMatrixJobRecords();
+    $family = icomplyMatrixFamilyServiceSlugs();
     file_put_contents($assetDir . '/keywords.json', icomplyMatrixJson($keywords));
     file_put_contents($assetDir . '/places.json', icomplyMatrixJson($places));
+    file_put_contents($assetDir . '/nationwide.json', icomplyMatrixJson($nationwide));
+    file_put_contents($assetDir . '/manufacturers.json', icomplyMatrixJson($manufacturers));
+    file_put_contents($assetDir . '/jobs.json', icomplyMatrixJson($jobs));
     file_put_contents($assetDir . '/services.json', icomplyMatrixJson([
         'labels' => $labels,
         'keywords' => $records['service_keywords'],
         'excluded' => icomplyMatrixExcludedServiceSlugs(),
+        'family' => $family,
     ]));
 
     $hubXml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
@@ -449,6 +624,49 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
             $serviceTown++;
         }
     }
+
+    $coreKeys = array_keys($places);
+    $nationKeys = array_keys($nationwide);
+    $extraTowns = array_values(array_diff($nationKeys, $coreKeys));
+    $familySet = array_fill_keys($family, true);
+    $familyKeywordTown = 0;
+    foreach ($keywords as $keywordSlug => $meta) {
+        $serviceSlug = (string)($meta['service'] ?? '');
+        if (!isset($familySet[$serviceSlug])) {
+            continue;
+        }
+        foreach ($extraTowns as $placeSlug) {
+            $writeLoc('/pages/keywords/' . $keywordSlug . '/' . $placeSlug);
+            $familyKeywordTown++;
+        }
+    }
+    $familyServiceTown = 0;
+    foreach (array_keys($services) as $serviceSlug) {
+        if (!isset($familySet[$serviceSlug])) {
+            continue;
+        }
+        foreach ($extraTowns as $placeSlug) {
+            $writeLoc('/pages/' . $serviceSlug . '/' . $placeSlug);
+            $familyServiceTown++;
+        }
+    }
+    $familyTowns = array_values(array_unique(array_merge($coreKeys, $nationKeys)));
+    $manufacturerTown = 0;
+    foreach ($manufacturers as $brandSlug => $meta) {
+        $towns = !empty($meta['nationwide']) ? $familyTowns : $coreKeys;
+        foreach ($towns as $placeSlug) {
+            $writeLoc('/pages/manufacturers/' . $brandSlug . '/' . $placeSlug);
+            $manufacturerTown++;
+        }
+    }
+    $jobTown = 0;
+    foreach ($jobs as $jobSlug => $meta) {
+        $towns = !empty($meta['nationwide']) ? $familyTowns : $coreKeys;
+        foreach ($towns as $placeSlug) {
+            $writeLoc('/pages/jobs/' . $jobSlug . '/' . $placeSlug);
+            $jobTown++;
+        }
+    }
     if ($chunkHandle !== null) {
         fwrite($chunkHandle, '</urlset>' . "\n");
         fclose($chunkHandle);
@@ -505,7 +723,7 @@ export default async () => {
 export const config = { path: "/robots.txt" };
 JS);
 
-    $sitemapUrls = $hubs + $keywordTown + $serviceTown;
+    $sitemapUrls = $hubs + $keywordTown + $serviceTown + $familyKeywordTown + $familyServiceTown + $manufacturerTown + $jobTown;
     $stats = [
         'target' => ICOMPLY_MATRIX_URL_TARGET,
         'hub_urls' => $hubs,
@@ -513,9 +731,17 @@ JS);
         'services' => count($services),
         'places' => count($places),
         'places_available' => $placePick['available'],
+        'skipped_duplicate_places' => $placePick['skipped_duplicates'] ?? 0,
+        'nationwide_places' => count($nationwide),
+        'manufacturers' => count($manufacturers),
+        'jobs' => count($jobs),
         'next_chunk_places' => $placePick['remaining'],
         'keyword_town_urls' => $keywordTown,
         'service_town_urls' => $serviceTown,
+        'family_keyword_town_urls' => $familyKeywordTown,
+        'family_service_town_urls' => $familyServiceTown,
+        'manufacturer_town_urls' => $manufacturerTown,
+        'job_town_urls' => $jobTown,
         'sitemap_urls' => $sitemapUrls,
         'sitemap_parts' => array_merge(['sitemap.xml', 'sitemap0.xml'], $chunkPaths),
         'url_list' => '/sitemap-urls.txt',
@@ -528,7 +754,14 @@ JS);
             . 'catalogue keyword and one page per service, still HTTP 200 via the town-matrix edge function.',
     ];
     file_put_contents($dist . '/matrix-stats.json', json_encode($stats, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . "\n");
-    $log('town matrix places=' . count($places) . ' keyword×town=' . $keywordTown
-        . ' service×town=' . $serviceTown . ' sitemap_urls=' . $sitemapUrls . "\n");
+    $log('town matrix places=' . count($places)
+        . ' skipped_duplicates=' . ($placePick['skipped_duplicates'] ?? 0)
+        . ' keyword×town=' . $keywordTown
+        . ' service×town=' . $serviceTown
+        . ' family_keyword×town=' . $familyKeywordTown
+        . ' family_service×town=' . $familyServiceTown
+        . ' manufacturer×town=' . $manufacturerTown
+        . ' job×town=' . $jobTown
+        . ' sitemap_urls=' . $sitemapUrls . "\n");
     return $stats;
 }

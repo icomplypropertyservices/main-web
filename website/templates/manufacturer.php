@@ -30,10 +30,8 @@ if (function_exists('icomplyStripTimingFragment')) {
 $gasBrand = function_exists('icomplyManufacturerEntryIsGas') && icomplyManufacturerEntryIsGas($entry);
 if ($gasBrand && function_exists('icomplyGasBrandBlurb')) {
     $MFR_BLURB = icomplyGasBrandBlurb($mfrName);
-    $metaDesc = $MFR_BLURB;
-} else {
-    $metaDesc = $MFR_BLURB;
 }
+$metaDesc = seo_fit_meta($MFR_BLURB . ' Serviced from Stockport SK2 by iComply.');
 $ogImage = manufacturerImageUrl($mfrSlug, $primaryService);
 if ($ogImage === '') {
     $ogImage = url('/assets/images/og-default.svg');

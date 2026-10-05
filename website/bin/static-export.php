@@ -269,6 +269,8 @@ if (!icomplyLooksLikeHtml($notFoundHtml)) {
 file_put_contents($dist . '/404.html', $notFoundHtml);
 
 icomplyCopyStaticAssets($websiteRoot, $repoRoot, $dist);
+$productPages = icomplyExportProductPages($dist, $log);
+$log("product pages={$productPages}\n");
 icomplyWriteDistRedirects($dist);
 icomplyWriteDistHeaders($dist);
 if (!icomplyPublishDistSitemap($websiteRoot, $dist, $log)) {
@@ -615,6 +617,51 @@ function icomplyLooksLikeHtml(string $html): bool
         );
 }
 
+function icomplyExportProductPages(string $dist, callable $log): int
+{
+    require_once SITE_ROOT . '/includes/product-pdp.php';
+    $catalog = getShopCatalog();
+    $seen = [];
+    $written = 0;
+    foreach ($catalog['products'] ?? [] as $product) {
+        if (!is_array($product)) {
+            continue;
+        }
+        $handle = strtolower(trim((string)($product['handle'] ?? '')));
+        if ($handle === '' || isset($seen[$handle]) || !preg_match('/^[a-z0-9\-]+$/', $handle)) {
+            continue;
+        }
+        $seen[$handle] = true;
+        foreach (['/products/product', '/shop/products'] as $prefix) {
+            $_GET['handle'] = $handle;
+            $_SERVER['REQUEST_URI'] = $prefix . '/' . $handle;
+            $_SERVER['QUERY_STRING'] = 'handle=' . $handle;
+            ob_start();
+            icomplyRenderProductPdp($prefix);
+            $html = ob_get_clean();
+            if (!is_string($html) || !icomplyLooksLikeHtml($html) || str_contains($html, 'Product not found')) {
+                $log("FAIL product {$prefix}/{$handle}\n");
+                throw new RuntimeException('Product page failed for ' . $handle);
+            }
+            icomplyWritePrettyFiles($dist, $prefix . '/' . $handle, $html);
+        }
+        $written++;
+    }
+    $_GET = [];
+    $required = [
+        'svc-ac-fgas-tm44',
+        'svc-ac-domestic-annual',
+        'svc-ac-commercial-quarterly',
+        'svc-fire-eml-contract-combo',
+    ];
+    foreach ($required as $handle) {
+        if (!isset($seen[$handle])) {
+            throw new RuntimeException('Catalog is missing product ' . $handle);
+        }
+    }
+    return $written;
+}
+
 function icomplyWritePrettyFiles(string $dist, string $path, string $html): void
 {
     if ($path === '/' || $path === '') {
@@ -846,9 +893,11 @@ function icomplyPrettyUrlRedirects(): string
 /products/door-entry-package             /pages/services/door-entry           301
 /products/intercoms-package              /pages/services/intercoms            301
 
-# Catalogue PDPs (before the products hub rewrite)
-/products/product/*      /products/product.php?handle=:splat   200
-/shop/products/*         /shop/products.php?handle=:splat      200
+# Catalogue PDPs are pre-rendered HTML stored as {handle}.php.
+/products/product/:handle     /products/product/:handle.php    200!
+/products/product/:handle/    /products/product/:handle.php    200!
+/shop/products/:handle        /shop/products/:handle.php       200!
+/shop/products/:handle/       /shop/products/:handle.php       200!
 # Real XML files are written at /products/sitemap.xml and /shop/sitemap.xml.
 
 # Shop / products — trade hubs (never 301 to packages)
@@ -926,6 +975,15 @@ __MATRIX_REDIRECTS__
 # /pages/aov/{town}.php makes /pages/aov a directory. Force the directory index.
 /pages/aov               /pages/aov.php               200!
 /pages/aov/              /pages/aov.php               200!
+
+# These slugs are services. The PHP router 301s the bare path to the service hub,
+# and the town directory would otherwise 404 the pretty URL on Netlify.
+/pages/ev-chargers       /pages/services/ev-chargers   301!
+/pages/ev-chargers/      /pages/services/ev-chargers   301!
+/pages/water-wras        /pages/services/water-wras    301!
+/pages/water-wras/       /pages/services/water-wras    301!
+/pages/windows-doors     /pages/services/windows-doors 301!
+/pages/windows-doors/    /pages/services/windows-doors 301!
 
 TXT;
     $txt = str_replace("__MATRIX_REDIRECTS__\n", icomplyUnpublishedMatrixRedirects(), $base);
