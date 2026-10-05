@@ -59,13 +59,9 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/automatic-barrier-repair</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/barrier-arm-replacement</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/barrier-call-out</loc><priority>0.8</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/barrier-installation</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/barrier-loop-detector</loc><priority>0.8</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/barrier-maintenance</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/barrier-motor-replacement</loc><priority>0.8</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/barrier-repair</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/barrier-replacement</loc><priority>0.8</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/barrier-service</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/barrier-stuck-down</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/bft-barrier-repair</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/bs-5839-maintenance</loc><priority>0.8</priority></url>
@@ -75,7 +71,6 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/came-barrier-service</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/came-gard-gt4-installation</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/came-gard-gt4</loc><priority>0.8</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/car-park-barrier-installation</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/car-park-barrier-maintenance</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/car-park-barrier-repair</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/car-park-barrier-servicing</loc><priority>0.8</priority></url>
@@ -84,7 +79,6 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/conventional-fire-alarm-installation</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/d-h-aov-repair</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/eicr</loc><priority>0.8</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/emergency-aov-repair</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/emergency-fire-alarm-repair</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/faac-barrier-repair</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/false-alarm-investigation</loc><priority>0.8</priority></url>
@@ -112,7 +106,6 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/maglock-installation</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/morley-fire-alarm-repair</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/nice-barrier-repair</loc><priority>0.8</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/rising-arm-barrier-installation</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/rising-arm-barrier-repair</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/se-controls-aov-repair</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/se-controls-aov-service</loc><priority>0.8</priority></url>
@@ -122,8 +115,6 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/smoke-vent-maintenance</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/smoke-vent-repair</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/smoke-vent-service</loc><priority>0.8</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/smoke-ventilation-installation</loc><priority>0.8</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/vehicle-barrier-installation</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/vehicle-barrier-repair</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/wireless-fire-alarm-installation</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/commercial/commercial-access-control</loc><priority>0.7</priority></url>
