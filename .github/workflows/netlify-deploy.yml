@@ -68,7 +68,7 @@ jobs:
       - name: Static export (PHP → HTML in dist/)
         env:
           SITE_URL: https://icomplypropertyservices.co.uk
-        run: php website/bin/static-export.php --keyword-towns=priority
+        run: php website/bin/static-export.php --keyword-towns=none
         timeout-minutes: 180
 
       - name: Verify dist/ pretty URLs

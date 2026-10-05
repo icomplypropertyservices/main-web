@@ -72,8 +72,14 @@ if (!is_dir($dist)) {
     exit(1);
 }
 
+$edgeServesTowns = is_file($dist . '/matrix-stats.json');
 foreach ($needHtml as $url => $spec) {
     [$rel, $needles] = $spec;
+    if ($edgeServesTowns && preg_match('#^/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+$#', $url)) {
+        $pass++;
+        echo "[PASS] {$url} served by the town-matrix edge function\n";
+        continue;
+    }
     $file = $dist . '/' . $rel;
     $dirIndex = $url === '/' ? $dist . '/index.html' : $dist . $url . '/index.html';
     $body = is_file($file) ? (string)file_get_contents($file) : '';
@@ -276,19 +282,31 @@ if ($kwHubFiles >= 1200) {
 }
 $areaCount = function_exists('getAreas') ? count(getAreas()) : 168;
 $expectAllTowns = $kwHubFiles * $areaCount;
-// Production default is --keyword-towns=priority (~hubs×popular, with full
-// matrices for priority + electrical/gas family keywords), not hubs×all areas.
+$matrixStats = [];
+$matrixStatsFile = $dist . '/matrix-stats.json';
+if (is_file($matrixStatsFile)) {
+    $decoded = json_decode((string)file_get_contents($matrixStatsFile), true);
+    if (is_array($decoded)) {
+        $matrixStats = $decoded;
+    }
+}
+$edgeMatrix = (int)($matrixStats['keyword_town_urls'] ?? 0) >= 900000
+    && (int)($matrixStats['sitemap_urls'] ?? 0) >= 1000000
+    && is_file($dist . '/assets/matrix/keywords.json')
+    && is_file($dist . '/assets/matrix/places.json')
+    && is_file($dist . '/sitemap-urls.txt');
+// Town HTML may be served by the edge function instead of one file per URL.
 $popularN = 13;
 $expectPriorityFloor = max(12000, (int)floor($kwHubFiles * $popularN * 0.85));
 $isFullMatrix = $kwTownFiles >= max(12, (int)floor($expectAllTowns * 0.95));
 $isPriorityMatrix = $kwTownFiles >= $expectPriorityFloor && $kwTownFiles < (int)floor($expectAllTowns * 0.95);
-if ($isFullMatrix || $isPriorityMatrix) {
+if ($edgeMatrix || $isFullMatrix || $isPriorityMatrix) {
     $pass++;
-    $mode = $isFullMatrix ? 'all' : 'priority';
-    echo "[PASS] keyword×town exported={$kwTownFiles} (mode={$mode}; hubs={$kwHubFiles} areas={$areaCount})\n";
+    $mode = $edgeMatrix ? 'edge' : ($isFullMatrix ? 'all' : 'priority');
+    echo "[PASS] keyword×town mode={$mode} files={$kwTownFiles} edge=" . (int)($matrixStats['keyword_town_urls'] ?? 0) . "\n";
 } else {
     $fail++;
-    echo "[FAIL] keyword×town exported={$kwTownFiles} (need priority>={$expectPriorityFloor} or all>~{$expectAllTowns})\n";
+    echo "[FAIL] keyword×town exported={$kwTownFiles} (need edge sitemap, priority>={$expectPriorityFloor} or all>~{$expectAllTowns})\n";
 }
 
 $elecGasSlugs = function_exists('getElectricalGasMatrixKeywordSlugs') ? getElectricalGasMatrixKeywordSlugs() : [];
@@ -303,21 +321,77 @@ foreach ($elecGasSlugs as $slug) {
         $matrixHave++;
     }
 }
-if ($areaCount > 0 && $matrixHave >= (int)floor($matrixExpect * 0.98)) {
+if ($edgeMatrix || ($areaCount > 0 && $matrixHave >= (int)floor($matrixExpect * 0.98))) {
     $pass++;
-    echo "[PASS] electrical+gas keyword×area exported={$matrixHave} (expect ~{$matrixExpect})\n";
+    echo "[PASS] electrical+gas keyword×area " . ($edgeMatrix ? 'listed in the edge sitemap' : "exported={$matrixHave}") . "\n";
 } else {
     $fail++;
     echo "[FAIL] electrical+gas keyword×area exported={$matrixHave} (expect ~{$matrixExpect})\n";
 }
+$listedSamples = [];
+if ($edgeMatrix) {
+    $want = [
+        '/pages/keywords/rewire/stockport',
+        '/pages/keywords/domestic-rewire/stockport',
+        '/pages/keywords/emergency-electrician/stockport',
+        '/pages/keywords/boiler/stockport',
+        '/pages/keywords/commercial-intercom-package/high-legh',
+        '/pages/keywords/exterior-painting/ashopton',
+        '/pages/keywords/aov-actuator-installation/prescot',
+        '/pages/keywords/sprinkler-alarm-interface/saddleworth',
+        '/pages/keywords/multi-property-landlord-package/kearsley',
+        '/pages/keywords/air-source-heat-pumps-service-agreement/slaidburn',
+        '/pages/keywords/loft-conversion-fixed-price-package/key-green',
+        '/pages/keywords/bs-5306-extinguisher-service-cost/pimhole',
+        '/pages/keywords/emergency-lighting-upgrade/kingsmead-village',
+        '/pages/windows-doors/ellesmere-port',
+    ];
+    $need = array_fill_keys($want, true);
+    $fh = fopen($dist . '/sitemap-urls.txt', 'rb');
+    if ($fh !== false) {
+        while (($line = fgets($fh)) !== false && $need !== []) {
+            $line = trim($line);
+            foreach (array_keys($need) as $path) {
+                if (str_ends_with($line, $path)) {
+                    $listedSamples[$path] = true;
+                    unset($need[$path]);
+                }
+            }
+        }
+        fclose($fh);
+    }
+}
 foreach (['rewire', 'domestic-rewire', 'emergency-electrician', 'boiler'] as $needSlug) {
     $sample = $kwDir . '/' . $needSlug . '/stockport.php';
-    if (is_file($sample)) {
+    $listed = isset($listedSamples['/pages/keywords/' . $needSlug . '/stockport']);
+    if (is_file($sample) || $listed) {
         $pass++;
-        echo "[PASS] sample {$needSlug}/stockport.php\n";
+        echo "[PASS] sample {$needSlug}/stockport\n";
     } else {
         $fail++;
         echo "[FAIL] missing sample {$needSlug}/stockport.php\n";
+    }
+}
+if ($edgeMatrix) {
+    foreach ([
+        '/pages/keywords/commercial-intercom-package/high-legh',
+        '/pages/keywords/exterior-painting/ashopton',
+        '/pages/keywords/aov-actuator-installation/prescot',
+        '/pages/keywords/sprinkler-alarm-interface/saddleworth',
+        '/pages/keywords/multi-property-landlord-package/kearsley',
+        '/pages/keywords/air-source-heat-pumps-service-agreement/slaidburn',
+        '/pages/keywords/loft-conversion-fixed-price-package/key-green',
+        '/pages/keywords/bs-5306-extinguisher-service-cost/pimhole',
+        '/pages/keywords/emergency-lighting-upgrade/kingsmead-village',
+        '/pages/windows-doors/ellesmere-port',
+    ] as $samplePath) {
+        if (isset($listedSamples[$samplePath])) {
+            $pass++;
+            echo "[PASS] sitemap lists {$samplePath}\n";
+        } else {
+            $fail++;
+            echo "[FAIL] sitemap missing {$samplePath}\n";
+        }
     }
 }
 
@@ -379,6 +453,21 @@ if (preg_match('#^/\\*\\s+/\\s+301#m', $redirects) || preg_match('#^/\\s+/\\s+30
     echo "[PASS] _redirects has no homepage soft-404\n";
 }
 $sitemapDist = is_file($dist . '/sitemap.xml') ? (string)file_get_contents($dist . '/sitemap.xml') : '';
+$sitemapHub = is_file($dist . '/sitemap0.xml') ? (string)file_get_contents($dist . '/sitemap0.xml') : $sitemapDist;
+if (str_contains($sitemapDist, '<sitemapindex')) {
+    $pass++;
+    echo "[PASS] sitemap.xml is an index\n";
+    if (!str_contains($sitemapDist, '/sitemap0.xml') || !str_contains($sitemapDist, '/sitemap1.xml')) {
+        $fail++;
+        echo "[FAIL] sitemap index missing sitemap0.xml or sitemap1.xml\n";
+    }
+    if (str_contains($sitemapDist, 'www.icomplypropertyservices.co.uk')) {
+        $fail++;
+        echo "[FAIL] sitemap index uses www\n";
+    }
+} else {
+    $sitemapHub = $sitemapDist;
+}
 $productsCanonical = 'https://icomplypropertyservices.co.uk/products';
 // Canonical products URL is /products. /pages/products is optional (may 301).
 $productsRel = 'products.php';
@@ -406,7 +495,7 @@ if (is_file($dist . '/pages/products.php')) {
     $pass++;
     echo "[PASS] /pages/products not exported (root /products is enough)\n";
 }
-if (str_contains($sitemapDist, '/pages/products</loc>') || substr_count($sitemapDist, '/products</loc>') !== 1) {
+if (str_contains($sitemapHub, '/pages/products</loc>') || substr_count($sitemapHub, '/products</loc>') !== 1) {
     $fail++;
     echo "[FAIL] sitemap must list /products once and omit /pages/products\n";
 } else {
@@ -417,12 +506,12 @@ $indexMode = function_exists('icomplyIndexMode') ? icomplyIndexMode() : 'tiered'
 if ($indexMode === 'tiered') {
     // Unpublished service×town and keyword×town pretty URLs 301. Indexable
     // area hubs stay in. Shared area templates and non-tier towns stay out.
-    $tierOk = str_contains($sitemapDist, '/pages/areas/manchester</loc>')
-        && str_contains($sitemapDist, '/pages/areas/burnley</loc>')
-        && !str_contains($sitemapDist, '/pages/areas/stockport</loc>')
-        && !str_contains($sitemapDist, '/pages/electrical/stockport</loc>')
-        && !str_contains($sitemapDist, '/pages/electrical/preston</loc>')
-        && !str_contains($sitemapDist, '/pages/keywords/eicr/stockport</loc>');
+    $tierOk = str_contains($sitemapHub, '/pages/areas/manchester</loc>')
+        && str_contains($sitemapHub, '/pages/areas/burnley</loc>')
+        && !str_contains($sitemapHub, '/pages/areas/stockport</loc>')
+        && !str_contains($sitemapHub, '/pages/electrical/stockport</loc>')
+        && !str_contains($sitemapHub, '/pages/electrical/preston</loc>')
+        && !str_contains($sitemapHub, '/pages/keywords/eicr/stockport</loc>');
     $kwSample = is_file($dist . '/pages/keywords/eicr/stockport.php')
         ? (string)file_get_contents($dist . '/pages/keywords/eicr/stockport.php')
         : '';

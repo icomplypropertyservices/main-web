@@ -36,7 +36,7 @@ if (PHP_SAPI !== 'cli') {
     exit(1);
 }
 
-$options = getopt('', ['full', 'out::', 'help', 'keyword-towns::', 'print-redirects']);
+$options = getopt('', ['full', 'out::', 'help', 'keyword-towns::', 'print-redirects', 'collect-only']);
 if (isset($options['help'])) {
     echo "Usage: php website/bin/static-export.php [--full] [--keyword-towns=priority|popular|all|none] [--out=dist] [--print-redirects]\n";
     exit(0);
@@ -96,12 +96,6 @@ if (empty($_SESSION['csrf'])) {
 if (isset($options['print-redirects'])) {
     $txt = icomplyPrettyUrlRedirects();
     $needles = [
-        '/pages/keywords/:slug/:town',
-        '/pages/electrical/:town',
-        '/pages/fire-alarms/:town',
-        '/pages/gas-systems/:town',
-        '/pages/nurse-call/:town',
-        '/pages/emergency-lighting/:town',
         '/products/aov-air-handling-package',
         '/products/intruder-alarm-package',
         '/manifest.webmanifest',
@@ -115,6 +109,12 @@ if (isset($options['print-redirects'])) {
             fwrite(STDERR, "redirects missing {$n}\n");
             exit(1);
         }
+    }
+    if (preg_match('#^/pages/keywords/:slug/:town\\s+\\S+\\s+301#m', $txt)
+        || preg_match('#^/pages/electrical/:town\\s+\\S+\\s+301#m', $txt)
+        || preg_match('#^/pages/windows-doors/:town\\s+\\S+\\s+301#m', $txt)) {
+        fwrite(STDERR, "keyword×town and service×town must not 301 to a hub\n");
+        exit(1);
     }
     if (preg_match('#^/shop\\s+/pages/packages#m', $txt) || preg_match('#^/products\\s+/pages/packages#m', $txt)) {
         fwrite(STDERR, "redirects still send /shop or /products to /pages/packages\n");
@@ -183,6 +183,10 @@ icomplyCopyStaticAssets($websiteRoot, $repoRoot, $dist);
 $routes = icomplyCollectExportRoutes($full, $keywordTowns);
 sort($routes);
 $routes = array_values(array_unique($routes));
+if (isset($options['collect-only'])) {
+    echo count($routes) . "\n";
+    exit(0);
+}
 $kwHubs = 0;
 $kwTowns = 0;
 foreach ($routes as $path) {
@@ -761,8 +765,18 @@ function icomplyPublishDistSitemap(string $websiteRoot, string $dist, callable $
         fwrite(STDERR, 'Published sitemap has only ' . count($entries) . " URLs\n");
         return false;
     }
-    file_put_contents($dist . '/sitemap.xml', icomplySitemapXmlFromEntries($baseUrl, $entries));
-    $log('sitemap published urls=' . count($entries) . "\n");
+    $log('sitemap hub urls=' . count($entries) . "\n");
+    $matrixFile = $websiteRoot . '/includes/matrix-catalogue.php';
+    if (!is_file($matrixFile)) {
+        fwrite(STDERR, "matrix catalogue missing\n");
+        return false;
+    }
+    require_once $matrixFile;
+    $stats = icomplyPublishTownMatrix($dist, $entries, $log);
+    if (($stats['sitemap_urls'] ?? 0) < 1000000) {
+        fwrite(STDERR, 'Town matrix sitemap has ' . ($stats['sitemap_urls'] ?? 0) . " URLs, under 1000000\n");
+        return false;
+    }
     return true;
 }
 
@@ -835,8 +849,7 @@ function icomplyPrettyUrlRedirects(): string
 # Catalogue PDPs (before the products hub rewrite)
 /products/product/*      /products/product.php?handle=:splat   200
 /shop/products/*         /shop/products.php?handle=:splat      200
-/products/sitemap.xml    /products/sitemap.php                 200
-/shop/sitemap.xml        /shop/sitemap.php                     200
+# Real XML files are written at /products/sitemap.xml and /shop/sitemap.xml.
 
 # Shop / products — trade hubs (never 301 to packages)
 /shop                    /shop/index.html              200!
@@ -963,26 +976,10 @@ function icomplyUnpublishedMatrixRedirects(): string
         '/pages/services/barriers/:town                /pages/services/barriers/:town.php                200',
         '/pages/services/barriers/:town/               /pages/services/barriers/:town.php                200',
         '',
-        '# Unpublished matrix URLs (linked from nav/hubs, 404 on the static site).',
-        '# Keyword×town → that keyword hub. Service×town → that service hub.',
-        '# aov, barriers, and aov-* / barriers* slugs are not in this list.',
-        '/pages/keywords/:slug/:town     /pages/keywords/:slug    301',
-        '/pages/keywords/:slug/:town/    /pages/keywords/:slug    301',
+        '# Keyword×town and service×town are real pages (edge function, HTTP 200).',
+        '# Do not 301 them to the hub. AOV and Barriers keep the 200 rewrites above.',
         '',
     ];
-    $reserved = ['keywords', 'services', 'manufacturers', 'areas', 'resources', 'packages'];
-    foreach (array_keys(getServices()) as $slug) {
-        $slug = (string)$slug;
-        if (!preg_match('/^[a-z0-9\-]+$/', $slug) || in_array($slug, $reserved, true)) {
-            continue;
-        }
-        if (icomplyTownExportMustNotRedirect($slug)) {
-            continue;
-        }
-        $lines[] = "/pages/{$slug}/:town     /pages/services/{$slug}    301";
-        $lines[] = "/pages/{$slug}/:town/    /pages/services/{$slug}    301";
-    }
-    $lines[] = '';
     return implode("\n", $lines);
 }
 
@@ -1005,9 +1002,9 @@ function icomplyAovLegacyRedirectLines(): string
             $lines[] = '/pages/aov-air-handling/' . $slug . '/  ' . $dest . '  301';
         }
     }
-    // Keyword×town already 301s via /pages/keywords/:slug/:town.
-    // A per-slug "/pages/keywords/{slug}/*" rule is more specific than the
-    // hub rewrite and Netlify answers the hub itself with 404.
+    // Do not add /pages/keywords/{slug}/* . That splat is more specific than
+    // the hub rewrite and Netlify answers the hub itself with 404.
+    // Keyword×town is served by netlify/edge-functions/town-matrix.js.
     return implode("\n", $lines) . "\n";
 }
 

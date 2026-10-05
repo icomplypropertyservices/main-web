@@ -1,0 +1,44 @@
+[
+  {
+    "slug": "high-legh",
+    "name": "High Legh",
+    "region": "North West",
+    "country": "England",
+    "neighbours": ["Altrincham", "Lymm", "Knutsford"]
+  },
+  {
+    "slug": "slaidburn",
+    "name": "Slaidburn",
+    "region": "North West",
+    "country": "England",
+    "neighbours": ["Clitheroe", "Bentham", "Long Preston"]
+  },
+  {
+    "slug": "pimhole",
+    "name": "Pimhole",
+    "region": "North West",
+    "country": "England",
+    "neighbours": ["Bury", "Heywood", "Radcliffe"]
+  },
+  {
+    "slug": "kingsmead-village",
+    "name": "Kingsmead Village",
+    "region": "North West",
+    "country": "England",
+    "neighbours": ["Northwich", "Winsford", "Hartford"]
+  },
+  {
+    "slug": "key-green",
+    "name": "Key Green",
+    "region": "North West",
+    "country": "England",
+    "neighbours": ["Congleton", "Macclesfield", "Bosley"]
+  },
+  {
+    "slug": "ashopton",
+    "name": "Ashopton",
+    "region": "East Midlands",
+    "country": "England",
+    "neighbours": ["Bamford", "Hathersage", "Hope"]
+  }
+]
