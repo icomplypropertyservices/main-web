@@ -97,7 +97,7 @@ $ok(!str_contains($sitemapXml, '/pages/gas-systems/stockport</loc>'), 'sitemap o
 $ok(!str_contains($sitemapXml, '/pages/electrical/stockport</loc>'), 'sitemap omits unpublished electrical/stockport');
 $ok(!str_contains($sitemapXml, '/pages/emergency-lighting/stockport</loc>'), 'sitemap omits unpublished emergency-lighting/stockport');
 $ok(!str_contains($sitemapXml, '/pages/electrical/preston</loc>'), 'sitemap omits electrical/preston');
-$ok(str_contains($sitemapXml, '/pages/areas/manchester</loc>') && str_contains($sitemapXml, '/pages/areas/burnley</loc>'), 'sitemap lists Manchester and Burnley area hubs');
+$ok(str_contains($sitemapXml, '/pages/areas/manchester</loc>') && !str_contains($sitemapXml, '/pages/areas/burnley</loc>'), 'sitemap lists Manchester and omits Burnley');
 $ok(!str_contains($sitemapXml, '/pages/epc/stockport'), 'sitemap has no thin /pages/epc/stockport');
 $ok(str_contains($sitemapXml, '/pages/services/gas-systems</loc>'), 'sitemap still lists gas-systems service hub');
 $ok(str_contains($sitemapXml, '/pages/keywords/boiler</loc>'), 'sitemap still lists boiler keyword hub');
@@ -149,7 +149,7 @@ foreach ($am[1] as $i => $first) {
         $badAreaLinks[] = $first . '/' . $town;
     }
 }
-$ok($badAreaLinks === [] && str_contains($areaHub, 'noindex'), 'area hub links real towns and is noindex' . ($badAreaLinks ? ' bad=' . implode(',', array_slice($badAreaLinks, 0, 4)) : ''));
+$ok($badAreaLinks === [] && str_contains($areaHub, 'index, follow') && !str_contains($areaHub, 'noindex'), 'Stockport area hub links real towns and is indexable' . ($badAreaLinks ? ' bad=' . implode(',', array_slice($badAreaLinks, 0, 4)) : ''));
 
 echo str_repeat('=', 56) . "\n";
 echo "PASS={$pass} FAIL={$fail}\n";
