@@ -4,7 +4,7 @@
  * existing job appears inside the first 10,000 variants of a service.
  */
 
-import { breadcrumbHtml, isGmTown, matrixRelatedHtml } from "./link-blocks.js";
+import { breadcrumbHtml, isLocalTown, matrixRelatedHtml } from "./link-blocks.js";
 
 const GAS_SENTENCE = "Gas work is carried out by Gas Safe registered engineers.";
 
@@ -301,7 +301,7 @@ function pageHtml(options) {
     { href: "/pages/keywords", label: "Guides" },
     { href: `/pages/keywords/${variantSlugValue}`, label: subject },
   ];
-  if (isGmTown(place.slug || "")) {
+  if (isLocalTown(place.slug || "")) {
     crumbItems.push({ href: `/pages/areas/${place.slug}`, label: placeName });
   }
   crumbItems.push({ label: h1 });
@@ -391,7 +391,7 @@ ${relatedHtml}
 
 export function renderVariantPage({ spec, keyword, town }) {
   const townSlug = String(town || "");
-  if (townSlug && !isGmTown(townSlug)) {
+  if (townSlug && !isLocalTown(townSlug)) {
     const keywordSlug = String(keyword || "enquiry");
     const safeSlug = /^[a-z0-9-]+$/.test(keywordSlug) ? keywordSlug : "enquiry";
     const location = `/pages/keywords/${safeSlug}`;
@@ -445,7 +445,7 @@ export function renderVariantSitemap(spec, partIndex) {
   for (let g = start; g < end; g++) {
     const locPath = variantPath(spec, g);
     const parts = locPath.split("/");
-    if (parts.length >= 5 && !isGmTown(parts[4])) continue;
+    if (parts.length >= 5 && !isLocalTown(parts[4])) continue;
     lines.push(`  <url><loc>${site}${locPath}</loc><priority>0.5</priority></url>`);
   }
   lines.push("</urlset>");

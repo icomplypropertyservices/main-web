@@ -4,8 +4,11 @@
  *
  * Pages are not stored as a million HTML files. static-export writes a compact
  * catalogue under dist/assets/matrix/ and a sitemap index whose locs the edge
- * function answers with HTTP 200. Places are the 60 Greater Manchester towns.
- * Non-GM gazetteer rows are not added to reach ICOMPLY_MATRIX_URL_TARGET.
+ * function answers with HTTP 200. Places are the 269 dual-ring towns
+ * (Greater Manchester core plus 50 miles of Manchester and of Burnley).
+ * Keyword×town, local service×town and job×town use that set.
+ * Manufacturer×town stays on the Greater Manchester core of 60.
+ * Gazetteer rows outside the dual ring are not added.
  */
 declare(strict_types=1);
 
@@ -184,42 +187,39 @@ function icomplyMatrixSelectPlaces(int $wanted): array
         }
     }
 
-    $gmCopy = SITE_ROOT . '/includes/building-hub-copy.php';
-    if (!function_exists('icomplyGreaterManchesterTownNames') && is_file($gmCopy)) {
-        require_once $gmCopy;
+    if (!function_exists('icomplyDualRingTownRows')) {
+        $crawlFile = SITE_ROOT . '/includes/gm-crawl.php';
+        if (is_file($crawlFile)) {
+            require_once $crawlFile;
+        }
     }
-    if (function_exists('icomplyGreaterManchesterTownNames')) {
-        $gmSlugs = [];
-        foreach (icomplyGreaterManchesterTownNames() as $gmName) {
-            $gmSlug = icomplyMatrixSlug((string)$gmName);
-            if ($gmSlug !== '') {
-                $gmSlugs[$gmSlug] = (string)$gmName;
-            }
-        }
-        foreach ($bySlug as $slug => $row) {
-            if (isset($gmSlugs[$slug])) {
-                $bySlug[$slug]['tier'] = 0;
-            }
-        }
-        $gmOnly = [];
-        foreach ($gmSlugs as $gmSlug => $gmName) {
-            if (isset($bySlug[$gmSlug])) {
-                $gmOnly[$gmSlug] = $bySlug[$gmSlug];
-                $gmOnly[$gmSlug]['tier'] = 0;
+    if (function_exists('icomplyDualRingTownRows')) {
+        $localOnly = [];
+        foreach (icomplyDualRingTownRows() as $row) {
+            $localSlug = icomplyMatrixSlug((string)$row['slug']);
+            $localName = (string)$row['name'];
+            if ($localSlug === '' || $localName === '') {
                 continue;
             }
-            icomplyMatrixRememberPlace($gmOnly, $gmSlug, [
-                'name' => $gmName,
-                'region' => 'Greater Manchester',
+            $tier = ($row['bucket'] ?? '') === 'gm_core' ? 0 : 1;
+            if (isset($bySlug[$localSlug])) {
+                $localOnly[$localSlug] = $bySlug[$localSlug];
+                $localOnly[$localSlug]['name'] = $localName;
+                $localOnly[$localSlug]['tier'] = $tier;
+                continue;
+            }
+            icomplyMatrixRememberPlace($localOnly, $localSlug, [
+                'name' => $localName,
+                'region' => $tier === 0 ? 'Greater Manchester' : 'North West',
                 'country' => 'England',
                 'population' => 0,
                 'housing' => '',
                 'industry' => '',
                 'neighbours' => [],
-                'source' => 'gm-allowlist',
-            ], 0);
+                'source' => 'dual-ring-allowlist',
+            ], $tier);
         }
-        $bySlug = $gmOnly;
+        $bySlug = $localOnly;
     }
 
     $ranked = array_values($bySlug);
@@ -677,11 +677,17 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
     }
 
     $coreKeys = array_keys($places);
+    $gmKeys = [];
+    foreach ($coreKeys as $placeSlug) {
+        if (function_exists('icomplyCrawlTownSlug') && icomplyCrawlTownSlug((string)$placeSlug)) {
+            $gmKeys[] = $placeSlug;
+        }
+    }
     $familyKeywordTown = 0;
     $familyServiceTown = 0;
     $manufacturerTown = 0;
     foreach (array_keys($manufacturers) as $brandSlug) {
-        foreach ($coreKeys as $placeSlug) {
+        foreach ($gmKeys as $placeSlug) {
             $writeLoc('/pages/manufacturers/' . $brandSlug . '/' . $placeSlug);
             $manufacturerTown++;
         }
@@ -783,10 +789,10 @@ JS);
         'variant_per_service' => $variantMeta['per_service'] ?? [],
         'sitemap_parts' => array_merge(['sitemap.xml', 'sitemap0.xml'], $chunkPaths),
         'url_list' => '/sitemap-urls.txt',
-        'blocker' => count($places) === 60 && ($placePick['remaining'] ?? 0) === 0
+        'blocker' => count($places) === 269 && count($gmKeys) === 60 && ($placePick['remaining'] ?? 0) === 0
             ? null
-            : 'Greater Manchester matrix is short: places=' . count($places) . ' remaining=' . (int)($placePick['remaining'] ?? 0) . '.',
-        'next_chunk' => 'Matrix places are the 60 Greater Manchester towns. Non-GM gazetteer rows stay out of the sitemap.',
+            : 'Dual-ring matrix is short: places=' . count($places) . ' gm=' . count($gmKeys) . ' remaining=' . (int)($placePick['remaining'] ?? 0) . '.',
+        'next_chunk' => 'Matrix places are the 269 dual-ring towns. Manufacturer×town stays on the 60 Greater Manchester towns. Towns outside the rings stay out.',
     ];
     file_put_contents($dist . '/matrix-stats.json', json_encode($stats, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . "\n");
     $log('town matrix places=' . count($places)

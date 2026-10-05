@@ -280,8 +280,9 @@ if ($kwHubFiles >= 1200) {
     $fail++;
     echo "[FAIL] keyword hubs exported={$kwHubFiles} (need >= 1200 sitemap slugs)\n";
 }
+$localTowns = function_exists('icomplyLocalTownNames') ? count(icomplyLocalTownNames()) : 269;
 $gmTowns = function_exists('icomplyCrawlTownNames') ? count(icomplyCrawlTownNames()) : 60;
-$areaCount = $gmTowns;
+$areaCount = $localTowns;
 $expectAllTowns = $kwHubFiles * $areaCount;
 $matrixStats = [];
 $matrixStatsFile = $dist . '/matrix-stats.json';
@@ -294,10 +295,13 @@ if (is_file($matrixStatsFile)) {
 $edgePlaces = (int)($matrixStats['places'] ?? 0);
 $edgeKeywords = (int)($matrixStats['keywords'] ?? 0);
 $edgeKwTown = (int)($matrixStats['keyword_town_urls'] ?? 0);
-$edgeMatrix = $gmTowns === 60
-    && $edgePlaces === $gmTowns
+$edgeMatrix = $localTowns === 269
+    && $gmTowns === 60
+    && $edgePlaces === $localTowns
     && $edgeKeywords >= 1000
-    && $edgeKwTown === $edgeKeywords * $gmTowns
+    && $edgeKwTown === $edgeKeywords * $localTowns
+    && (int)($matrixStats['job_town_urls'] ?? 0) === (int)($matrixStats['jobs'] ?? 0) * $localTowns
+    && (int)($matrixStats['manufacturer_town_urls'] ?? 0) === (int)($matrixStats['manufacturers'] ?? 0) * $gmTowns
     && (int)($matrixStats['sitemap_urls'] ?? 0) >= $edgeKwTown
     && is_file($dist . '/assets/matrix/keywords.json')
     && is_file($dist . '/assets/matrix/places.json')
@@ -628,7 +632,7 @@ foreach (array_keys(function_exists('getServices') ? getServices() : []) as $sSl
         if ($town === '') {
             continue;
         }
-        if ($nationwide || (function_exists('icomplyCrawlTownSlug') && icomplyCrawlTownSlug($town))) {
+        if ($nationwide || (function_exists('icomplyLocalTownSlug') && icomplyLocalTownSlug($town))) {
             $svcAreaExpect++;
         }
     }
@@ -713,8 +717,21 @@ if (str_contains($sitemapHub, '/pages/products</loc>') || substr_count($sitemapH
 $indexMode = function_exists('icomplyIndexMode') ? icomplyIndexMode() : 'tiered';
 $urlList = $dist . '/sitemap-urls.txt';
 if (is_file($urlList)) {
-    $nonGmLocs = 0;
-    $nonGmSample = '';
+    $manufacturerLeaks = 0;
+    $manufacturerSample = '';
+    $outsideLeaks = 0;
+    $outsideSample = '';
+    $needLocs = [
+        '/pages/areas/burnley' => false,
+        '/pages/areas/york' => false,
+        '/pages/areas/barrow-in-furness' => false,
+        '/pages/access-control/burnley' => false,
+        '/pages/jobs/eicr/burnley' => false,
+        '/pages/aov/liverpool' => false,
+        '/pages/barriers/liverpool' => false,
+        '/pages/fire-alarms/liverpool' => false,
+    ];
+    $keywordBurnley = false;
     $urlHandle = fopen($urlList, 'rb');
     if ($urlHandle !== false) {
         while (($urlLine = fgets($urlHandle)) !== false) {
@@ -722,26 +739,43 @@ if (is_file($urlList)) {
             if ($urlPath === '') {
                 continue;
             }
+            if (isset($needLocs[$urlPath])) {
+                $needLocs[$urlPath] = true;
+            }
+            if (preg_match('#^/pages/keywords/[^/]+/burnley$#', $urlPath)) {
+                $keywordBurnley = true;
+            }
+            if (preg_match('#^/pages/manufacturers/[^/]+/(?:burnley|liverpool|york|preston)$#', $urlPath)) {
+                $manufacturerLeaks++;
+                if ($manufacturerSample === '') {
+                    $manufacturerSample = $urlPath;
+                }
+            }
             if (function_exists('icomplyNationwideTownPath') && icomplyNationwideTownPath($urlPath)) {
                 continue;
             }
-            $localNonGm = preg_match('#/(?:burnley|liverpool|preston|chester|warrington|blackpool)(?:/|$)#i', $urlPath)
-                || preg_match('#-(?:burnley|liverpool|preston|chester|warrington|blackpool)$#i', $urlPath);
-            if ($localNonGm) {
-                $nonGmLocs++;
-                if ($nonGmSample === '') {
-                    $nonGmSample = trim($urlLine);
+            if (preg_match('#/(?:birmingham|london|cardiff)(?:/|$)#', $urlPath)
+                || preg_match('#-(?:birmingham|london|cardiff)$#', $urlPath)) {
+                $outsideLeaks++;
+                if ($outsideSample === '') {
+                    $outsideSample = $urlPath;
                 }
             }
         }
         fclose($urlHandle);
     }
-    if ($nonGmLocs === 0) {
+    $missingLocs = array_keys(array_filter($needLocs, static fn(bool $ok): bool => !$ok));
+    if ($manufacturerLeaks === 0 && $outsideLeaks === 0 && $keywordBurnley && $missingLocs === []) {
         $pass++;
-        echo "[PASS] sitemap-urls.txt has zero local Burnley/Liverpool/non-GM locs\n";
+        echo "[PASS] sitemap-urls.txt lists dual-ring local depth and keeps manufacturer×town on GM core\n";
     } else {
         $fail++;
-        echo "[FAIL] sitemap-urls.txt non-GM locs={$nonGmLocs} sample={$nonGmSample}\n";
+        echo '[FAIL] sitemap-urls.txt dual-ring depth'
+            . " manufacturer_leaks={$manufacturerLeaks} {$manufacturerSample}"
+            . " outside={$outsideLeaks} {$outsideSample}"
+            . ' keyword_burnley=' . ($keywordBurnley ? 'yes' : 'no')
+            . ($missingLocs ? ' missing=' . implode(',', $missingLocs) : '')
+            . "\n";
     }
 }
 if ($indexMode === 'tiered') {
@@ -749,8 +783,10 @@ if ($indexMode === 'tiered') {
     // area hubs stay in. Shared area templates and non-tier towns stay out.
     $tierOk = str_contains($sitemapHub, '/pages/areas/manchester</loc>')
         && str_contains($sitemapHub, '/pages/areas/stockport</loc>')
-        && !str_contains($sitemapHub, '/pages/areas/burnley</loc>')
-        && !str_contains($sitemapHub, '/pages/areas/liverpool</loc>')
+        && str_contains($sitemapHub, '/pages/areas/burnley</loc>')
+        && str_contains($sitemapHub, '/pages/areas/liverpool</loc>')
+        && str_contains($sitemapHub, '/pages/areas/york</loc>')
+        && !str_contains($sitemapHub, '/pages/areas/birmingham</loc>')
         && !str_contains($sitemapHub, '/pages/electrical/stockport</loc>')
         && !str_contains($sitemapHub, '/pages/electrical/preston</loc>')
         && !str_contains($sitemapHub, '/pages/keywords/eicr/stockport</loc>');

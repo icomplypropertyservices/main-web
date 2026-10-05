@@ -18,6 +18,8 @@
  * files are not guessed here (some GM localities 404 on those templates).
  */
 
+import { LOCAL_TOWN_SET } from "./dual-ring-allowlist.js";
+
 const GM_TOWNS = [
   ["altrincham", "Altrincham"],
   ["ashton-under-lyne", "Ashton-under-Lyne"],
@@ -135,6 +137,11 @@ export function escapeHtml(value) {
 
 export function isGmTown(slug) {
   return Object.prototype.hasOwnProperty.call(GM_NAME, slug);
+}
+
+/** Dual-ring allowlist: area hubs, local services, keyword×town and job×town. */
+export function isLocalTown(slug) {
+  return LOCAL_TOWN_SET.has(slug);
 }
 
 export function gmTownName(slug) {
@@ -255,8 +262,9 @@ export function matrixRelatedHtml(catalogue, identity) {
     const label = serviceLabel(catalogue, serviceSlug);
     if (label) parents.push({ href: `/pages/services/${serviceSlug}`, label: label });
   }
-  if (townSlug && GM_NAME[townSlug]) {
-    parents.push({ href: `/pages/areas/${townSlug}`, label: `Property services in ${townName}` });
+  if (townSlug && isLocalTown(townSlug)) {
+    const linkedName = townName || gmTownName(townSlug);
+    parents.push({ href: `/pages/areas/${townSlug}`, label: `Property services in ${linkedName}` });
   }
   parents.push({ href: "/pages/areas", label: "Greater Manchester areas" });
 

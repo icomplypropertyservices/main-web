@@ -23,7 +23,7 @@ $fireLaneLabel = $fireLane ? fireAlarmsLaneLabel($fireLane) : '';
 $fireLaneHub = url('/pages/jobs/fire-alarms.php');
 $relatedSlug = $RELATED_SLUG;
 $relatedName = $RELATED_NAME;
-$allAreas = function_exists('icomplyCrawlTownNames') ? icomplyCrawlTownNames() : getAreas();
+$allAreas = function_exists('icomplyLocalTownNames') ? icomplyLocalTownNames() : getAreas();
 $allServices = getServices();
 
 $popularTowns = array_values(array_filter(

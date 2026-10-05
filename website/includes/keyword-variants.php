@@ -294,7 +294,16 @@ function icomplyKeywordVariantCatalogue(): array
     }
 
     $towns = [];
-    foreach (icomplyGreaterManchesterTownNames() as $name) {
+    if (!function_exists('icomplyLocalTownNames')) {
+        $crawlFile = SITE_ROOT . '/includes/gm-crawl.php';
+        if (is_file($crawlFile)) {
+            require_once $crawlFile;
+        }
+    }
+    $variantTowns = function_exists('icomplyLocalTownNames')
+        ? icomplyLocalTownNames()
+        : icomplyGreaterManchesterTownNames();
+    foreach ($variantTowns as $name) {
         $name = (string)$name;
         $slug = icomplyKeywordVariantSlugPart($name);
         if ($slug === '' || isset($towns[$slug])) {

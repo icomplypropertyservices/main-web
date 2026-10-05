@@ -306,10 +306,10 @@ exit(0);
  */
 function icomplyExportTownOk(string $slug): bool
 {
-    if (!function_exists('icomplyCrawlTownSlug')) {
+    if (!function_exists('icomplyLocalTownSlug')) {
         require_once SITE_ROOT . '/includes/gm-crawl.php';
     }
-    return icomplyCrawlTownSlug($slug);
+    return icomplyLocalTownSlug($slug);
 }
 
 function icomplyPopularTownNames(): array
@@ -348,7 +348,7 @@ function icomplyCollectKeywordRoutes(string $townMode): array
         return $routes;
     }
 
-    $areas = function_exists('icomplyCrawlTownNames') ? icomplyCrawlTownNames() : getAreas();
+    $areas = function_exists('icomplyLocalTownNames') ? icomplyLocalTownNames() : getAreas();
     $popularTowns = icomplyPopularTownNames();
     $priorityKw = [];
     if (function_exists('getPopularKeywordSlugs')) {
@@ -455,7 +455,8 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
     foreach (array_keys(getServices()) as $slug) {
         $routes[] = '/pages/services/' . $slug;
     }
-    foreach (getAreas() as $area) {
+    $areaNames = function_exists('icomplyLocalTownNames') ? icomplyLocalTownNames() : getAreas();
+    foreach ($areaNames as $area) {
         $slug = areaSlug((string)$area);
         if (!icomplyExportTownOk($slug)) {
             continue;
@@ -467,7 +468,7 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         if (is_array($entry) && function_exists('manufacturerAreasFor')) {
             foreach (manufacturerAreasFor($entry) as $area) {
                 $town = areaSlug((string)$area);
-                if (!icomplyExportTownOk($town)) {
+                if (!function_exists('icomplyCrawlTownSlug') || !icomplyCrawlTownSlug($town)) {
                     continue;
                 }
                 $routes[] = '/pages/manufacturers/' . $slug . '/' . $town;
@@ -493,7 +494,13 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
             continue;
         }
         $nationwide = function_exists('icomplyNationwideTownService') && icomplyNationwideTownService($sSlug);
-        $areasFor = function_exists('getAreasForService') ? getAreasForService($sSlug) : getAreas();
+        if ($nationwide) {
+            $areasFor = function_exists('getAreasForService') ? getAreasForService($sSlug) : getAreas();
+        } elseif (function_exists('icomplyLocalTownNames')) {
+            $areasFor = icomplyLocalTownNames();
+        } else {
+            $areasFor = function_exists('getAreasForService') ? getAreasForService($sSlug) : getAreas();
+        }
         foreach ($areasFor as $area) {
             $town = areaSlug((string)$area);
             if (!$nationwide && !icomplyExportTownOk($town)) {
@@ -863,13 +870,27 @@ function icomplyPublishDistSitemap(string $websiteRoot, string $dist, callable $
     }
     require_once $matrixFile;
     $stats = icomplyPublishTownMatrix($dist, $entries, $log);
+    $localTowns = function_exists('icomplyLocalTownNames') ? count(icomplyLocalTownNames()) : 269;
     $gmTowns = function_exists('icomplyCrawlTownNames') ? count(icomplyCrawlTownNames()) : 60;
     $places = (int)($stats['places'] ?? 0);
     $keywords = (int)($stats['keywords'] ?? 0);
     $keywordTown = (int)($stats['keyword_town_urls'] ?? 0);
-    if ($gmTowns !== 60 || $places !== $gmTowns || $keywords < 1 || $keywordTown !== $keywords * $places) {
-        fwrite(STDERR, 'Town matrix must be every keyword × the 60 Greater Manchester towns'
+    $jobTown = (int)($stats['job_town_urls'] ?? 0);
+    $jobs = (int)($stats['jobs'] ?? 0);
+    $manufacturerTown = (int)($stats['manufacturer_town_urls'] ?? 0);
+    $manufacturers = (int)($stats['manufacturers'] ?? 0);
+    if ($localTowns !== 269 || $gmTowns !== 60 || $places !== $localTowns || $keywords < 1 || $keywordTown !== $keywords * $places) {
+        fwrite(STDERR, 'Town matrix must be every keyword × the 269 dual-ring towns'
             . " (places={$places} keywords={$keywords} keyword×town={$keywordTown})\n");
+        return false;
+    }
+    if ($jobs > 0 && $jobTown !== $jobs * $places) {
+        fwrite(STDERR, "Job×town must cover the dual ring (job×town={$jobTown} jobs={$jobs} places={$places})\n");
+        return false;
+    }
+    if ($manufacturers > 0 && $manufacturerTown !== $manufacturers * $gmTowns) {
+        fwrite(STDERR, "Manufacturer×town must stay on the 60 Greater Manchester towns"
+            . " (manufacturer×town={$manufacturerTown} brands={$manufacturers})\n");
         return false;
     }
     return true;
