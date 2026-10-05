@@ -21,5 +21,8 @@ export function gmTownBlurb(kind, slug, town) {
   if (FORMULAIC.test(row.blurb) || /\b(SK2Base|CityWards|BoltonCentre|WiganPier|SalfordCrescent)\b/.test(row.blurb)) {
     return null;
   }
-  return row;
+  if (/\bsub-?contract/i.test(row.blurb)) return null;
+  const blurb = String(row.blurb).replace(/\bb\d{4,6}\b/g, "").replace(/\s{2,}/g, " ").replace(/\s+([,.;:])/g, "$1").trim();
+  if (!blurb) return null;
+  return { ...row, blurb };
 }

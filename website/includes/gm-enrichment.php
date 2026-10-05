@@ -3,20 +3,17 @@
  * Extra body, FAQ, image and internal links for Greater Manchester town pages.
  *
  * Builds on icomplyGmTownBlurb() and the existing chip clouds. Does not
- * replace those blocks. Uniqueness tokens (bNNNNN) stay in the HTML and are
- * hidden with .seo-brief-id.
+ * replace those blocks. Brief tokens (bNNNNN) are removed before render so
+ * they never appear in text content.
  */
 declare(strict_types=1);
 
 function icomplyGmBriefHtml(string $text): string
 {
-    $safe = htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
-    $hidden = preg_replace(
-        '/\b(b\d{4,6})\b/',
-        '<span class="seo-brief-id">$1</span>',
-        $safe
-    );
-    return is_string($hidden) ? $hidden : $safe;
+    $clean = preg_replace('/\bb\d{4,6}\b/', '', $text) ?? $text;
+    $clean = preg_replace('/\s{2,}/', ' ', $clean) ?? $clean;
+    $clean = preg_replace('/\s+([,.;:])/', '$1', $clean) ?? $clean;
+    return htmlspecialchars(trim($clean), ENT_QUOTES, 'UTF-8');
 }
 
 function icomplyGmTownAllowed(string $townName, string $kind = 'service'): bool
@@ -493,10 +490,29 @@ function icomplyGmLinksHtml(string $heading, array $links, string $chrome): stri
  * @param list<array{0:string,1:string}> $extraFaqs
  * @return array{0:string,1:string}[]
  */
-function icomplyGmBuildFaqs(string $topic, string $townName, string $serviceSlug, bool $gas, array $extraFaqs): array
+function icomplyGmBuildFaqs(string $topic, string $townName, string $serviceSlug, bool $gas, array $extraFaqs, string $localProse = ''): array
 {
     $place = $townName;
     $faqs = [];
+    $sentences = preg_split('/(?<=[.!?])\s+/', trim($localProse)) ?: [];
+    $sentences = array_values(array_filter($sentences, static function (string $sentence): bool {
+        return strlen(trim($sentence)) > 40;
+    }));
+    if ($sentences) {
+        $faqs[] = ['What is particular about ' . $topic . ' in ' . $townName . '?', $sentences[0]];
+        if (isset($sentences[1])) {
+            $faqs[] = ['What should the ' . $townName . ' file show before a quote?', $sentences[1]];
+        }
+        if ($gas || $serviceSlug === 'gas-systems' || $serviceSlug === 'heating') {
+            $faqs[] = [
+                'Who carries out gas work in ' . $townName . '?',
+                'Gas work is carried out by Gas Safe registered engineers. ' . ($sentences[2] ?? $sentences[0]),
+            ];
+        } elseif (isset($sentences[2])) {
+            $faqs[] = ['How is the ' . $townName . ' price decided?', $sentences[2]];
+        }
+        return array_slice($faqs, 0, 4);
+    }
     foreach ($extraFaqs as $faq) {
         if (is_array($faq) && count($faq) >= 2 && (string)$faq[0] !== '' && (string)$faq[1] !== '') {
             $faqs[] = [(string)$faq[0], (string)$faq[1]];
@@ -599,7 +615,7 @@ function icomplyGmEnrichmentHtml(array $ctx): string
     $imageAlt = (string)($ctx['imageAlt'] ?? ($topic . ' in ' . $townName));
     $html .= icomplyGmImageHtml($imageSrc, $imageAlt, $chrome);
 
-    $faqs = icomplyGmBuildFaqs($topic, $townName, $serviceSlug, $gas, $ctx['extraFaqs'] ?? []);
+    $faqs = icomplyGmBuildFaqs($topic, $townName, $serviceSlug, $gas, $ctx['extraFaqs'] ?? [], (string)($ctx['localProse'] ?? ''));
     $html .= icomplyGmFaqHtml('Questions about ' . $topic . ' in ' . $townName, $faqs, $chrome);
 
     $links = [];
@@ -648,11 +664,10 @@ function icomplyGmEnrichmentHtml(array $ctx): string
         $cta .= ' Gas work is carried out by Gas Safe registered engineers.';
     }
     if ($chrome === 'matrix') {
-        $html .= '<p><a class="matrix-cta matrix-cta-accent" href="' . $h(url('/contact')) . '">Request a POA quote</a></p>'
-            . '<p class="text-sm">' . $h($cta) . '</p>';
+        $html .= '<p><a class="matrix-cta matrix-cta-accent" href="' . $h(url('/contact')) . '">Request a POA quote</a></p>';
     } else {
         $html .= '<p class="mt-6"><a class="inline-block px-6 py-3 rounded-2xl bg-[#ff6b00] text-white font-semibold" href="'
-            . $h(url('/contact')) . '">Request a POA quote</a></p><p class="mt-3 text-sm text-zinc-700">' . $h($cta) . '</p>';
+            . $h(url('/contact')) . '">Request a POA quote</a></p>';
     }
     return $html;
 }

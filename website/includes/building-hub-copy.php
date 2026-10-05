@@ -127,7 +127,7 @@ function icomplyBuildingHubCopy(string $slug): ?array
         (string)$row['lead'],
         'Each Greater Manchester borough already on this site, and the towns listed with them, has its own ' . $name . ' page. Visits are arranged from Offerton, Stockport, SK2. ' . (string)$row['local'],
         'Quotes are price on application (POA) after ' . (string)$row['scope'] . '. This page does not publish a fee, a review or an accreditation.',
-        'The work is carried out by relevant qualified people. Where a visit needs a specialist ticket, iComply uses approved subcontractors.',
+        'The visit is carried out by people qualified for the trade on the page. A specialist ticket, where the building needs one, is named in the written scope.',
     ];
     if (!empty($row['gas'])) {
         $intro[] = 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.';
@@ -143,7 +143,7 @@ function icomplyBuildingHubCopy(string $slug): ?array
         ],
         [
             'Who attends?',
-            'The work is carried out by relevant qualified people. Where a visit needs a specialist ticket, iComply uses approved subcontractors.',
+            'The visit is carried out by people qualified for the trade on the page. A specialist ticket, where the building needs one, is named in the written scope.',
         ],
     ];
     if (!empty($row['faq']) && is_array($row['faq'])) {
@@ -806,7 +806,7 @@ function icomplyBuildingHubRows(): array
             'h2' => 'Lists, not a blank day',
             'paragraphs' => [
                 'Send the address and the list. We will say which lines this visit can close and which belong to electrical, gas, roofing or a specialist ticket. A day on site is not sold as unlimited work.',
-                'Where a line needs a specialist ticket, an approved subcontractor attends. The quote names that rather than folding it into a general handy visit.',
+                'Where a line needs a specialist ticket, that ticket is named in the quote rather than folded into a general handy visit.',
             ],
             'faq' => ['Is this a retained contract?', 'It can be planned visits or a one-off list. Either way the scope is written down and the price is on application. There is no unnamed retainer on this page.'],
             'cta' => 'Address and the list of jobs, or the fault. POA.',

@@ -32,8 +32,21 @@ function icomplyGmTownBlurb(string $slug, string $townSlug, string $kind = 'serv
     if (!is_array($row) || empty($row['blurb'])) {
         return null;
     }
-    $blurb = (string)$row['blurb'];
+    $strip = static function (string $text): string {
+        $text = (string)preg_replace('/\bb\d{4,6}\b/', '', $text);
+        $text = (string)preg_replace('/\s{2,}/', ' ', $text);
+        $text = (string)preg_replace('/\s+([,.;:])/', '$1', $text);
+        return trim($text);
+    };
+    $blurb = $strip((string)$row['blurb']);
+    $h2 = $strip((string)($row['h2'] ?? ''));
+    if ($blurb === '') {
+        return null;
+    }
     if (preg_match('/\bGM\d{2,}[a-z0-9]/i', $blurb) || preg_match('/\b(SK2Base|CityWards|BoltonCentre|WiganPier|SalfordCrescent)\b/', $blurb)) {
+        return null;
+    }
+    if (preg_match('/\bsub-?contract/i', $blurb . ' ' . $h2)) {
         return null;
     }
     if ($kind === 'keyword' && !in_array($townSlug, ['bolton', 'manchester', 'stockport'], true)) {
@@ -43,8 +56,8 @@ function icomplyGmTownBlurb(string $slug, string $townSlug, string $kind = 'serv
         return null;
     }
     return [
-        'h2' => (string)($row['h2'] ?? ''),
-        'blurb' => (string)$row['blurb'],
+        'h2' => $h2,
+        'blurb' => $blurb,
         'cta' => (string)($row['cta'] ?? ''),
     ];
 }

@@ -140,8 +140,8 @@ foreach ($renderSlugs as $slug) {
     if (!str_contains(strtolower($html), 'price on application')) {
         $bad("{$slug} hub does not say price on application");
     }
-    if (!str_contains($html, 'approved subcontractors')) {
-        $bad("{$slug} hub missing subcontractor sentence");
+    if (stripos($html, 'subcontract') !== false) {
+        $bad("{$slug} hub still mentions subcontractors");
     }
     echo "rendered {$slug} bytes=" . strlen($html) . "\n";
 }

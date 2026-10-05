@@ -367,6 +367,7 @@ $schema = [
         'serviceName' => $serviceName,
         'showGuide' => false,
         'skipImage' => true,
+        'localProse' => is_array($gmPacked) ? (string)($gmPacked['blurb'] ?? '') : '',
     ]) ?>
 
     <!-- Pillars -->

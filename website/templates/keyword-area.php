@@ -123,6 +123,7 @@ $h = static function ($s): string {
                     'serviceName' => (string)$serviceName,
                     'showGuide' => false,
                     'skipImage' => true,
+                    'localProse' => is_array($gmPacked) ? (string)($gmPacked['blurb'] ?? '') : '',
                     'keywordSlug' => (string)$keywordSlug,
                     'kind' => 'keyword',
                 ]) ?>

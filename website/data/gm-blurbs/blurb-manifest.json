@@ -5,7 +5,7 @@
   "email": "info@icomplypropertyservices.co.uk",
   "site": "https://icomplypropertyservices.co.uk",
   "gm_towns": 60,
-  "keyword_gm_blurbs": 252,
+  "keyword_gm_blurbs": 264,
   "gm_service_town_blurbs": 660,
   "gm_service_town_samples": 200,
   "job_hubs": 22,
@@ -13,8 +13,12 @@
   "gas_missing_phrase": [],
   "cta": "POA fixed quote after scope",
   "keyword_set": {
-    "towns": ["bolton", "manchester", "stockport"],
-    "note": "252 rows are the SEO copy pack for keyword slugs that exist in keywords.json. 63 pack rows were omitted because those keyword slugs are not live. Formulaic GM-token blurbs were removed."
+    "towns": [
+      "bolton",
+      "manchester",
+      "stockport"
+    ],
+    "note": "Rewritten local prose for live keyword slugs. No b-tokens. No subcontractor lines."
   },
   "hi_services": [
     "access-control",
