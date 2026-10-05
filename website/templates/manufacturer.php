@@ -340,9 +340,9 @@ if ($acnBrand && function_exists('acnCities')):
     <div class="flex flex-wrap gap-2">
         <?php
         require_once SITE_ROOT . '/includes/barriers.php';
-        foreach (['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Bury'] as $t):
+        foreach (['Manchester', 'Birmingham', 'Leeds', 'Glasgow', 'Cardiff', 'Westminster', 'Aberdeen', 'Stockport'] as $t):
             $tSlug = barriersPlaceSlugByName($t);
-            if (!$tSlug || (function_exists('icomplyCrawlTownSlug') && !icomplyCrawlTownSlug($tSlug))) {
+            if (!$tSlug) {
                 continue;
             }
         ?>

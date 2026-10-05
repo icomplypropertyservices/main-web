@@ -39,7 +39,8 @@ if (function_exists('getServices')) {
             $rel = 'pages/' . $sSlug . '/' . $town . '.php';
             $needle = '/pages/' . $sSlug . '/' . $town . '</loc>';
             $has = is_file(SITE_ROOT . '/' . $rel) || is_file($distRoot . '/' . $rel);
-            $virtualTown = in_array($sSlug, ['aov', 'barriers', 'aov-air-handling', 'nurse-call'], true);
+            $virtualTown = in_array($sSlug, ['aov', 'barriers', 'aov-air-handling', 'nurse-call'], true)
+                || (function_exists('isFireSafetyService') && isFireSafetyService($sSlug));
             $indexableTown = function_exists('icomplyPathIsIndexable')
                 && icomplyPathIsIndexable('/pages/' . $sSlug . '/' . $town);
             if (str_contains($xml, $needle) && !$has && !$virtualTown && !$indexableTown) {
@@ -210,12 +211,15 @@ $svcAreaExpect = $indexMode === 'tiered' ? ($svcCount * $tier1Count) : ($svcCoun
 if ($indexMode === 'tiered') {
     $redirectTown = [];
     $unexpectedTown = [];
-    $redirectServices = ['electrical' => true, 'gas-systems' => true, 'fire-alarms' => true, 'emergency-lighting' => true];
+    $redirectServices = ['electrical' => true, 'gas-systems' => true];
     foreach ($serviceAreaHits as $path) {
         if (!preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
             continue;
         }
         if (isset($virtualTownPrefixes[$m[1]])) {
+            continue;
+        }
+        if (function_exists('isFireSafetyService') && isFireSafetyService($m[1])) {
             continue;
         }
         if (isset($redirectServices[$m[1]])) {
@@ -233,7 +237,7 @@ if ($indexMode === 'tiered') {
         echo 'FAIL: tiered sitemap lists a service×town that 301s ' . implode(',', array_slice($unexpectedTown, 0, 6)) . "\n";
     }
     if ($redirectTown === [] && $unexpectedTown === []) {
-        echo 'OK: sitemap service×area count=' . count($serviceAreaHits) . " (AOV/barrier towns only; unpublished service×town omitted)\n";
+        echo 'OK: sitemap service×area count=' . count($serviceAreaHits) . " (AOV/barrier/fire towns kept; local service×town omitted)\n";
     }
 } elseif ($indexMode !== 'tiered' && count($serviceAreaHits) < (int)floor($svcAreaExpect * 0.98)) {
     $fail++;
@@ -283,9 +287,9 @@ if ($indexMode === 'tiered') {
             echo "OK: sitemap Greater Manchester area hubs=60\n";
         }
     }
-    if (stripos($xml, 'burnley') !== false) {
+    if (preg_match('#/pages/(?:areas|keywords)/[^<]*burnley#i', $xml)) {
         $fail++;
-        echo "FAIL: tiered sitemap still names Burnley\n";
+        echo "FAIL: tiered sitemap still names Burnley on a local hub\n";
     }
 }
 
@@ -316,18 +320,31 @@ foreach ([
         echo "FAIL: committed sitemap lists {$ban}\n";
     }
 }
-if (stripos($committed, 'burnley') !== false) {
-    $fail++;
-    echo "FAIL: committed sitemap still names Burnley\n";
-}
-
 $bannedTowns = ['burnley', 'liverpool', 'preston', 'chester', 'warrington', 'blackpool'];
-foreach (['generated' => $xml, 'committed' => $committed] as $label => $blob) {
+$purgedFamily = static function (string $path) use ($bannedTowns): bool {
+    if (function_exists('icomplyNationwideTownPath') && icomplyNationwideTownPath($path)) {
+        return false;
+    }
     foreach ($bannedTowns as $town) {
-        if (preg_match('#(?:^|[^a-z])' . $town . '(?:[^a-z]|$)#i', $blob)) {
-            $fail++;
-            echo "FAIL: {$label} sitemap names {$town}\n";
+        if (preg_match('#/(?:' . $town . ')(?:/|$)#', $path) || str_ends_with($path, '-' . $town)) {
+            return true;
         }
+    }
+    return false;
+};
+foreach (['generated' => $xml, 'committed' => $committed] as $label => $blob) {
+    if (!preg_match_all('#<loc>https://icomplypropertyservices\.co\.uk([^<]*)</loc>#', $blob, $locRows)) {
+        continue;
+    }
+    $leaks = [];
+    foreach ($locRows[1] as $path) {
+        if ($purgedFamily($path)) {
+            $leaks[] = $path;
+        }
+    }
+    if ($leaks !== []) {
+        $fail++;
+        echo 'FAIL: ' . $label . ' sitemap local non-GM loc ' . implode(',', array_slice($leaks, 0, 6)) . "\n";
     }
 }
 
@@ -335,20 +352,34 @@ $redirectCases = [
     '/pages/keywords/access-control-near-me/burnley' => '/pages/keywords/access-control-near-me',
     '/pages/keywords/rewire/liverpool' => '/pages/keywords/rewire',
     '/pages/access-control/burnley' => '/pages/services/access-control',
-    '/pages/barriers/liverpool' => '/pages/services/barriers',
-    '/pages/aov/liverpool' => '/pages/aov',
     '/pages/areas/liverpool' => '/pages/areas',
     '/pages/areas/burnley' => '/pages/areas',
-    '/pages/aov-air-handling/blackpool' => '/pages/services/aov-air-handling',
     '/pages/windows-doors/warrington' => '/pages/services/windows-doors',
     '/pages/nurse-call/cardiff' => '/pages/services/nurse-call',
+    '/pages/manufacturers/came/liverpool' => '/pages/manufacturers/came',
+    '/pages/jobs/eicr/burnley' => '/pages/jobs/eicr',
 ];
 $stayCases = [
     '/pages/aov/chorlton',
     '/pages/aov/manchester',
     '/pages/aov/cadishead',
+    '/pages/aov/leeds',
+    '/pages/aov/birmingham',
+    '/pages/aov/burnley',
+    '/pages/aov/liverpool',
     '/pages/barriers/trafford',
     '/pages/barriers/milnrow',
+    '/pages/barriers/leeds',
+    '/pages/barriers/birmingham',
+    '/pages/barriers/burnley',
+    '/pages/barriers/liverpool',
+    '/pages/fire-alarms/leeds',
+    '/pages/fire-alarms/birmingham',
+    '/pages/fire-alarms/burnley',
+    '/pages/fire-alarms/liverpool',
+    '/pages/fire-extinguishers/leeds',
+    '/pages/fire-extinguishers/burnley',
+    '/pages/aov-air-handling/blackpool',
     '/pages/areas/stockport',
     '/pages/keywords/eicr/stockport',
     '/pages/electrical/stockport',
@@ -369,7 +400,33 @@ if (!function_exists('icomplyNonGmMatrixRedirect')) {
     foreach ($stayCases as $path) {
         if (icomplyNonGmMatrixRedirect($path) !== null || icomplySitemapOmitsNonGm($path)) {
             $fail++;
-            echo "FAIL: GM URL must stay: {$path}\n";
+            echo "FAIL: nationwide or GM URL must stay: {$path}\n";
+        }
+    }
+}
+$nationwideLocs = [
+    '/pages/aov/leeds',
+    '/pages/aov/birmingham',
+    '/pages/aov/burnley',
+    '/pages/aov/liverpool',
+    '/pages/barriers/leeds',
+    '/pages/barriers/birmingham',
+    '/pages/barriers/burnley',
+    '/pages/barriers/liverpool',
+    '/pages/fire-alarms/leeds',
+    '/pages/fire-alarms/birmingham',
+    '/pages/fire-alarms/burnley',
+    '/pages/fire-alarms/liverpool',
+    '/pages/fire-extinguishers/leeds',
+    '/pages/fire-extinguishers/birmingham',
+    '/pages/fire-extinguishers/burnley',
+    '/pages/fire-extinguishers/liverpool',
+];
+foreach (['generated' => $xml, 'committed' => $committed] as $label => $blob) {
+    foreach ($nationwideLocs as $path) {
+        if (!str_contains($blob, $path . '</loc>')) {
+            $fail++;
+            echo "FAIL: {$label} sitemap missing {$path}\n";
         }
     }
 }

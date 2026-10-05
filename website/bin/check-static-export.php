@@ -511,15 +511,19 @@ foreach (array_keys(function_exists('getServices') ? getServices() : []) as $svc
 }
 $svcAreaExpect = 0;
 foreach (array_keys(function_exists('getServices') ? getServices() : []) as $sSlug) {
-    if ($sSlug === 'barriers' || $sSlug === 'aov-air-handling') {
+    if ($sSlug === 'barriers') {
         continue;
     }
+    $nationwide = function_exists('icomplyNationwideTownService') && icomplyNationwideTownService($sSlug);
     $areasFor = function_exists('getAreasForService')
         ? getAreasForService($sSlug)
         : (function_exists('getAreas') ? getAreas() : []);
     foreach ($areasFor as $area) {
         $town = function_exists('areaSlug') ? areaSlug((string)$area) : '';
-        if ($town !== '' && function_exists('icomplyCrawlTownSlug') && icomplyCrawlTownSlug($town)) {
+        if ($town === '') {
+            continue;
+        }
+        if ($nationwide || (function_exists('icomplyCrawlTownSlug') && icomplyCrawlTownSlug($town))) {
             $svcAreaExpect++;
         }
     }
@@ -609,7 +613,16 @@ if (is_file($urlList)) {
     $urlHandle = fopen($urlList, 'rb');
     if ($urlHandle !== false) {
         while (($urlLine = fgets($urlHandle)) !== false) {
-            if (preg_match('#/(?:burnley|liverpool|preston|chester|warrington|blackpool)(?:/|\s|$)#i', $urlLine)) {
+            $urlPath = (string)(parse_url(trim($urlLine), PHP_URL_PATH) ?? '');
+            if ($urlPath === '') {
+                continue;
+            }
+            if (function_exists('icomplyNationwideTownPath') && icomplyNationwideTownPath($urlPath)) {
+                continue;
+            }
+            $localNonGm = preg_match('#/(?:burnley|liverpool|preston|chester|warrington|blackpool)(?:/|$)#i', $urlPath)
+                || preg_match('#-(?:burnley|liverpool|preston|chester|warrington|blackpool)$#i', $urlPath);
+            if ($localNonGm) {
                 $nonGmLocs++;
                 if ($nonGmSample === '') {
                     $nonGmSample = trim($urlLine);
@@ -620,7 +633,7 @@ if (is_file($urlList)) {
     }
     if ($nonGmLocs === 0) {
         $pass++;
-        echo "[PASS] sitemap-urls.txt has zero Burnley/Liverpool/non-GM locs\n";
+        echo "[PASS] sitemap-urls.txt has zero local Burnley/Liverpool/non-GM locs\n";
     } else {
         $fail++;
         echo "[FAIL] sitemap-urls.txt non-GM locs={$nonGmLocs} sample={$nonGmSample}\n";

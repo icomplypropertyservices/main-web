@@ -110,6 +110,15 @@ $keywordTowns = array_values(array_filter(
     }
 ));
 $popularTowns = $keywordTowns;
+if ($ownsMainland) {
+    $popularTowns = array_values(array_filter(
+        ['London', 'Birmingham', 'Leeds', 'Bristol', 'Cardiff', 'Edinburgh', 'Glasgow', 'Manchester', 'Stockport', 'Newcastle upon Tyne', 'Southampton', 'Nottingham'],
+        function ($t) use ($allAreas) {
+            return in_array($t, $allAreas, true);
+        }
+    ));
+}
+$popularTowns = array_values(array_unique($popularTowns));
 
 $keywordImages = getKeywordImages($serviceSlug);
 $img2 = $keywordImages[0] ?? $serviceSlug;
@@ -590,6 +599,29 @@ $gmBoroughs = function_exists('icomplyGreaterManchesterBoroughs') ? icomplyGreat
             </a>
         <?php endforeach; ?>
     </div>
+    <?php if ($ownsMainland): ?>
+    <h3 class="mt-10 text-lg font-semibold text-black">UK mainland places</h3>
+    <p class="mt-2 text-zinc-600">Every UK mainland place we list for <?= htmlspecialchars($mainlandJobPlural, ENT_QUOTES, 'UTF-8') ?>. Each link is that place’s page.</p>
+    <div class="mt-4 flex flex-wrap gap-2">
+        <?php foreach ($popularTowns as $a): ?>
+            <a href="<?= htmlspecialchars(exportedServiceLocalUrl($SERVICE_SLUG, $a, 'service'), ENT_QUOTES, 'UTF-8') ?>"
+               class="px-4 py-2 bg-white border rounded-full text-sm text-black hover:border-[#ff6b00]">
+                <?= htmlspecialchars($serviceName . ' in ' . $a, ENT_QUOTES, 'UTF-8') ?>
+            </a>
+        <?php endforeach; ?>
+    </div>
+    <h3 class="mt-10 text-lg font-semibold text-black">Other published towns</h3>
+    <div class="mt-4 flex flex-wrap gap-2">
+        <?php foreach ($allAreas as $a):
+            if (in_array($a, $gmTowns, true)) continue;
+        ?>
+            <a href="<?= htmlspecialchars(exportedServiceLocalUrl($SERVICE_SLUG, $a, 'service'), ENT_QUOTES, 'UTF-8') ?>"
+               class="px-3 py-1.5 bg-zinc-50 border rounded-full text-xs text-zinc-700 hover:border-[#ff6b00]">
+                <?= htmlspecialchars($a, ENT_QUOTES, 'UTF-8') ?>
+            </a>
+        <?php endforeach; ?>
+    </div>
+    <?php endif; ?>
     <p class="mt-6 text-sm"><a href="<?= url('/pages/areas/index.php') ?>" class="font-semibold text-[#ff6b00]">All <?= count($gmTowns) ?> Greater Manchester areas →</a></p>
 </section>
 

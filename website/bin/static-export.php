@@ -489,13 +489,14 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
     // AOV and barriers use their own town lists, not the North West matrix.
     // Match router allowlists so export does not queue soft-404 boroughs.
     foreach (array_keys(getServices()) as $sSlug) {
-        if ($sSlug === 'barriers' || $sSlug === 'aov-air-handling') {
+        if ($sSlug === 'barriers') {
             continue;
         }
+        $nationwide = function_exists('icomplyNationwideTownService') && icomplyNationwideTownService($sSlug);
         $areasFor = function_exists('getAreasForService') ? getAreasForService($sSlug) : getAreas();
         foreach ($areasFor as $area) {
             $town = areaSlug((string)$area);
-            if (!icomplyExportTownOk($town)) {
+            if (!$nationwide && !icomplyExportTownOk($town)) {
                 continue;
             }
             $routes[] = '/pages/' . $sSlug . '/' . $town;
@@ -507,7 +508,7 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         if (function_exists('barriersPlaces')) {
             foreach (barriersPlaces() as $place) {
                 $slug = (string)($place['slug'] ?? '');
-                if ($slug !== '' && icomplyExportTownOk($slug)) {
+                if ($slug !== '') {
                     $routes[] = '/pages/barriers/' . $slug;
                 }
             }
@@ -518,19 +519,14 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         require_once SITE_ROOT . '/includes/uk-towns.php';
     }
     foreach (icomplyUkTownRoutes() as $townPath) {
-        if (preg_match('#^/pages/(?:aov|barriers)/([a-z0-9\-]+)$#', (string)$townPath, $townMatch)
-            && !icomplyExportTownOk($townMatch[1])) {
-            continue;
-        }
         $routes[] = $townPath;
     }
     require_once SITE_ROOT . '/includes/aov-place.php';
     $routes[] = '/pages/aov';
     foreach (array_keys(aovPlaces()) as $slug) {
-        if (!icomplyExportTownOk((string)$slug)) {
-            continue;
+        if ($slug !== '') {
+            $routes[] = '/pages/aov/' . $slug;
         }
-        $routes[] = '/pages/aov/' . $slug;
     }
     if (!function_exists('icomplyGmServiceTownRoutes')) {
         require_once SITE_ROOT . '/includes/gm-service-towns.php';
@@ -543,7 +539,7 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
     if (function_exists('getMainlandAreaRecords')) {
         foreach (getMainlandAreaRecords() as $row) {
             $slug = (string)($row['slug'] ?? '');
-            if ($slug !== '' && icomplyExportTownOk($slug)) {
+            if ($slug !== '') {
                 $routes[] = '/pages/fire-risk-assessments/' . $slug;
             }
         }
@@ -596,7 +592,8 @@ function icomplyRenderExportRoute(string $path): array
         && $m[1] !== 'barriers'
         && function_exists('getServices')
         && isset(getServices()[$m[1]])) {
-        if (!icomplyExportTownOk($m[2])) {
+        $nationwide = function_exists('icomplyNationwideTownService') && icomplyNationwideTownService($m[1]);
+        if (!$nationwide && !icomplyExportTownOk($m[2])) {
             return ['html' => '', 'status' => 301];
         }
         $area = function_exists('areaFromSlug') ? areaFromSlug($m[2]) : $m[2];

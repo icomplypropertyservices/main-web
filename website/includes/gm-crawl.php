@@ -1,8 +1,8 @@
 <?php
 /**
- * Greater Manchester crawl allowlist.
- * Sitemap locs, nav, and matrix generation use these 60 towns.
- * Any other town matrix URL 301s to its GM parent hub.
+ * Greater Manchester crawl allowlist for local matrices.
+ * Area hubs, keyword×town, local service×town, job×town and manufacturer×town
+ * use these 60 towns. AOV, barriers and fire-family town pages stay UK-wide.
  */
 declare(strict_types=1);
 
@@ -32,6 +32,22 @@ function icomplyCrawlTownSlug(string $areaOrSlug): bool
         && icomplyIsGreaterManchesterAreaSlug($areaOrSlug);
 }
 
+/** AOV, barriers and every fire-safety service keep UK town pages. */
+function icomplyNationwideTownService(string $slug): bool
+{
+    $slug = function_exists('areaSlug') ? areaSlug($slug) : strtolower($slug);
+    if (in_array($slug, ['aov', 'barriers', 'aov-air-handling'], true)) {
+        return true;
+    }
+    return function_exists('isFireSafetyService') && isFireSafetyService($slug);
+}
+
+function icomplyNationwideTownPath(string $path): bool
+{
+    return (bool)preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)
+        && icomplyNationwideTownService($m[1]);
+}
+
 /**
  * Non-GM matrix URL → the GM parent. Null means the URL stays (hub or GM town).
  */
@@ -54,14 +70,8 @@ function icomplyNonGmMatrixRedirect(string $path): ?string
     if (preg_match('#^/pages/areas/([a-z0-9\-]+)$#', $path, $m)) {
         return icomplyCrawlTownSlug($m[1]) ? null : '/pages/areas';
     }
-    if (preg_match('#^/pages/aov/([a-z0-9\-]+)$#', $path, $m)) {
-        return icomplyCrawlTownSlug($m[1]) ? null : '/pages/aov';
-    }
-    if (preg_match('#^/pages/barriers/([a-z0-9\-]+)$#', $path, $m)) {
-        return icomplyCrawlTownSlug($m[1]) ? null : '/pages/services/barriers';
-    }
-    if (preg_match('#^/pages/aov-air-handling/([a-z0-9\-]+)$#', $path, $m)) {
-        return icomplyCrawlTownSlug($m[1]) ? null : '/pages/services/aov-air-handling';
+    if (icomplyNationwideTownPath($path)) {
+        return null;
     }
     if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         $reserved = [
