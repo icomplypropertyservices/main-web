@@ -8,6 +8,7 @@
 import { renderVariantPage, renderVariantSitemap } from "../lib/variant-matrix.js";
 import { breadcrumbHtml, isGmTown, matrixRelatedHtml } from "../lib/link-blocks.js";
 import { gmTownBlurb } from "../lib/gm-blurbs.js";
+import { renderSecurityDualRing, securityDualRingHandles } from "../lib/security-dual-ring.js";
 
 const RESERVED = new Set([
   "keywords", "services", "areas", "manufacturers", "resources", "packages",
@@ -495,6 +496,7 @@ function placeAliasRedirect(path) {
 }
 
 function nonGmMatrixRedirect(path) {
+  if (securityDualRingHandles(path)) return null;
   let m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   if (m) return isGmTown(m[2]) ? null : `/pages/keywords/${m[1]}`;
   m = path.match(/^\/pages\/manufacturers\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
@@ -518,6 +520,17 @@ export default async (request, context) => {
   const matrixTo = nonGmMatrixRedirect(path);
   if (matrixTo) {
     return Response.redirect(new URL(matrixTo, url.origin).toString(), 301);
+  }
+  const securityHtml = renderSecurityDualRing(path);
+  if (securityHtml) {
+    return new Response(securityHtml, {
+      status: 200,
+      headers: {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=3600",
+        "x-robots-tag": "index, follow",
+      },
+    });
   }
   // AOV, barriers and fire-family town HTML is exported. Do not replace it
   // with the Greater Manchester matrix renderer.

@@ -693,6 +693,19 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
             $jobTown++;
         }
     }
+    $securityTown = 0;
+    if (!function_exists('securityDualRingSitemapPaths')) {
+        $securityFile = __DIR__ . '/security-dual-ring.php';
+        if (is_file($securityFile)) {
+            require_once $securityFile;
+        }
+    }
+    if (function_exists('securityDualRingSitemapPaths')) {
+        foreach (securityDualRingSitemapPaths() as $securityPath) {
+            $writeLoc($securityPath);
+            $securityTown++;
+        }
+    }
     if ($chunkHandle !== null) {
         fwrite($chunkHandle, '</urlset>' . "\n");
         fclose($chunkHandle);
@@ -772,6 +785,7 @@ JS);
         'family_service_town_urls' => $familyServiceTown,
         'manufacturer_town_urls' => $manufacturerTown,
         'job_town_urls' => $jobTown,
+        'security_dual_ring_urls' => $securityTown,
         'sitemap_urls' => $sitemapUrls,
         'variant_services' => $variantMeta['services'] ?? 0,
         'variant_towns' => $variantMeta['towns'] ?? 0,
