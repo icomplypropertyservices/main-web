@@ -268,6 +268,7 @@ export function renderTownPage(input) {
   );
   const imageSlug = IMAGE_SLUG[serviceSlug] || serviceSlug;
   const imageSrc = `/assets/images/services/${imageSlug}.jpg`;
+  const ogImage = `https://icomplypropertyservices.co.uk${imageSrc}`;
   const imageAlt = `${subject} in ${place.name} — ${serviceName}`;
 
   const openings = [
@@ -419,6 +420,11 @@ export function renderTownPage(input) {
 <meta name="description" content="${escapeHtml(description)}">
 <meta name="robots" content="${robots}">
 <link rel="canonical" href="${canonical}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="${escapeHtml(title)}">
+<meta property="og:description" content="${escapeHtml(description)}">
+<meta property="og:url" content="${escapeHtml(canonical)}">
+<meta property="og:image" content="${escapeHtml(ogImage)}">
 <link rel="stylesheet" href="/assets/css/site.css">
 <script type="application/ld+json">${jsonLd(schema)}</script>
 </head>
