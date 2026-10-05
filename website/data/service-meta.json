@@ -473,5 +473,37 @@
         "short": "PAT of portable appliances — not an EICR",
         "standards": "IET in-service inspection guidance · risk-based frequency",
         "pricing": "POA"
+    },
+    "it-support": {
+        "seo_title": "IT support for property and offices | Stockport & North West | iComply",
+        "seo_desc": "IT support for offices, letting agents, landlords and managed buildings from Stockport. Onsite and remote help, scoped in writing. Price on application.",
+        "blurb": "Onsite and remote IT support for offices, letting agents, managed blocks and HMOs across the 269 dual-ring towns. Price on application after scope.",
+        "short": "IT support for landlords, offices and managed buildings",
+        "standards": "Vendor guidance · Cyber Essentials controls as a reference · UK GDPR for data handling",
+        "pricing": "POA"
+    },
+    "networking": {
+        "seo_title": "Network installation and support | Stockport & North West | iComply",
+        "seo_desc": "Office and building network installation, switch and firewall set-up, fault-finding and upgrades from Stockport. Survey first. Price on application.",
+        "blurb": "Wired network installation, switching, firewalls and fault-finding for offices, blocks and HMOs. Price on application after a survey.",
+        "short": "Network installation, support and repair",
+        "standards": "BS EN 50173 cabling structure · BS 6701 telecoms installation · vendor configuration guidance",
+        "pricing": "POA"
+    },
+    "wifi": {
+        "seo_title": "Wi-Fi installation, support and Bluetooth set-up | iComply",
+        "seo_desc": "Wi-Fi surveys, access points, mesh, guest Wi-Fi and Bluetooth device set-up for offices, HMOs and blocks from Stockport. Price on application.",
+        "blurb": "Business, guest and HMO Wi-Fi, access points, mesh, dead-spot surveys and Bluetooth device set-up. Price on application after a survey.",
+        "short": "Wi-Fi installation, coverage fixes and Bluetooth set-up",
+        "standards": "IEEE 802.11 Wi-Fi standards · Ofcom licence-exempt rules · vendor guidance",
+        "pricing": "POA"
+    },
+    "structured-cabling": {
+        "seo_title": "Structured cabling: Cat6, Cat6a and fibre | Stockport | iComply",
+        "seo_desc": "Structured data cabling, patch panels, comms cabinets and fibre for offices and blocks from Stockport. Tested, labelled, price on application.",
+        "blurb": "Cat6, Cat6a and fibre structured cabling, patch panels and comms cabinets, tested and labelled. Price on application after a survey.",
+        "short": "Cat6, Cat6a and fibre cabling with test results",
+        "standards": "BS EN 50173 · BS EN 50174 · BS 6701 · BS 7671 where power is involved",
+        "pricing": "POA"
     }
 }

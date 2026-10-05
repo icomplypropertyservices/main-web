@@ -29,6 +29,14 @@ const PHOTO = new Set([
   "nurse-call",
 ]);
 
+// Networking / IT pack services: all three images stay on IT, network, Wi-Fi and cabling work.
+const PACK_THIRD = {
+  "it-support": "networking",
+  networking: "structured-cabling",
+  wifi: "networking",
+  "structured-cabling": "networking-photo",
+};
+
 const POOL = [
   "building-maintenance",
   "fire-alarms",
@@ -143,11 +151,14 @@ export function thinImages(serviceSlug, subject, placeName, seed, peImages) {
   }
   const slug = String(serviceSlug || "fire-alarms");
   const primary = `/assets/images/services/${slug}.jpg`;
-  let second = PHOTO.has(slug)
+  const packThird = PACK_THIRD[slug];
+  let second = PHOTO.has(slug) || packThird
     ? `/assets/images/services/${slug}-photo.jpg`
     : `/assets/images/services/${POOL[seed % POOL.length]}.jpg`;
   if (second === primary) second = "/assets/images/services/building-maintenance.jpg";
-  let third = `/assets/images/services/${POOL[(seed + 3) % POOL.length]}.jpg`;
+  let third = packThird
+    ? `/assets/images/services/${packThird}.jpg`
+    : `/assets/images/services/${POOL[(seed + 3) % POOL.length]}.jpg`;
   if (third === primary || third === second) third = "/assets/images/services/cctv.jpg";
   if (third === primary || third === second) third = "/assets/images/services/electrical.jpg";
   if (third === primary || third === second) third = "/assets/images/services/access-control.jpg";

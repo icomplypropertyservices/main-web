@@ -192,6 +192,14 @@ function icomplyKeywordVariantCatalogue(): array
     ];
 
     $serviceNames = getServices();
+    // Networking / IT pack services stay off the 10,000-variant matrix until SEO
+    // releases crawl budget for them (lock: dual-ring 269 hubs + ×town only).
+    if (!function_exists('icomplyNetworkingItServiceSlugs')) {
+        require_once __DIR__ . '/networking-it.php';
+    }
+    foreach (icomplyNetworkingItServiceSlugs() as $packService) {
+        unset($serviceNames[$packService]);
+    }
     $byService = [];
     foreach ($serviceNames as $slug => $label) {
         $slug = icomplyKeywordVariantSlugPart((string)$slug);

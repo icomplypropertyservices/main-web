@@ -90,5 +90,15 @@
             "landscaping",
             "commercial-fit-out"
         ]
+    },
+    "it-networking": {
+        "label": "IT, Networking & Wi-Fi",
+        "blurb": "IT support, networks, Wi-Fi, Bluetooth set-up and structured cabling for offices, blocks and HMOs. Price on application.",
+        "services": [
+            "it-support",
+            "networking",
+            "wifi",
+            "structured-cabling"
+        ]
     }
 }

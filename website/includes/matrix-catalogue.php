@@ -431,6 +431,15 @@ function icomplyMatrixJobRecords(): array
             'nationwide' => $row[3],
         ];
     }
+    // Networking / Wi-Fi / Bluetooth + IT P0 job hubs: job×town on the dual-ring 269.
+    if (!function_exists('icomplyNetworkingItMatrixJobs')) {
+        require_once __DIR__ . '/networking-it.php';
+    }
+    foreach (icomplyNetworkingItMatrixJobs() as $slug => $row) {
+        if (!isset($out[$slug])) {
+            $out[$slug] = $row;
+        }
+    }
     return $out;
 }
 

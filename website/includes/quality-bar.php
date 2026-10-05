@@ -284,6 +284,17 @@ function icomplyQualityBarImages(string $serviceSlug, string $altPrefix, string 
         'access-control', 'emergency-lighting', 'gas-systems', 'door-entry',
     ];
     $slug = $serviceSlug !== '' ? $serviceSlug : 'fire-alarms';
+    // Networking / IT pack: keep all three images on IT, network, Wi-Fi and cabling work.
+    $packThird = [
+        'it-support' => 'networking',
+        'networking' => 'structured-cabling',
+        'wifi' => 'networking',
+        'structured-cabling' => 'networking-photo',
+    ];
+    if (isset($packThird[$slug])) {
+        $photo[] = $slug;
+        $pool = [$packThird[$slug]];
+    }
     $primary = '/assets/images/services/' . $slug . '.jpg';
     $second = in_array($slug, $photo, true)
         ? '/assets/images/services/' . $slug . '-photo.jpg'

@@ -43,6 +43,23 @@ $groups = [
     ],
 ];
 
+// Networking / Wi-Fi / Bluetooth + IT P0 job hubs (data/networking-it-pack.json).
+require_once SITE_ROOT . '/includes/networking-it.php';
+$networkingItGroups = [
+    'it-support' => 'IT support',
+    'networking' => 'Networking',
+    'wifi' => 'Wi-Fi & Bluetooth',
+    'structured-cabling' => 'Structured cabling',
+];
+foreach (icomplyNetworkingItJobs() as $nitSlug => $nitJob) {
+    $nitGroup = $networkingItGroups[(string)($nitJob['service'] ?? '')] ?? 'IT support';
+    $groups[$nitGroup][] = [
+        'slug' => (string)$nitSlug,
+        'name' => (string)($nitJob['name'] ?? $nitSlug),
+        'blurb' => (string)($nitJob['lede'] ?? ''),
+    ];
+}
+
 $faqs = [
     [
         'Do you publish fixed prices on job pages?',
@@ -90,7 +107,7 @@ require SITE_ROOT . '/includes/header.php';
         <ul class="mt-6 grid sm:grid-cols-2 gap-3">
             <?php foreach ($jobs as $job):
                 $slug = $job['slug'];
-                $name = ucwords(str_replace('-', ' ', $slug));
+                $name = $job['name'] ?? ucwords(str_replace('-', ' ', $slug));
                 ?>
             <li class="border border-zinc-200 rounded-2xl p-4 bg-white">
                 <a class="font-semibold text-[#061828] hover:text-[#ff6b00]" href="<?= $h(url('/pages/jobs/' . $slug)) ?>"><?= $h($name) ?></a>

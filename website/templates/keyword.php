@@ -195,6 +195,7 @@ if (function_exists('accessControlLaneKeywordStrip')) {
                     <p class="mt-4 text-base text-zinc-900 leading-relaxed">Workshop: 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Design, installation and commissioning follow BS 5839. Quotes are price on application.</p>
                     <?php endif; ?>
                     <ul class="mt-6 space-y-3"><?= $KEYWORD_FOCUS_HTML ?></ul>
+                    <?= $KEYWORD_SECTIONS_HTML ?? '' ?>
                     <p class="mt-6 text-sm text-zinc-800">
                         Part of our
                         <a href="<?= url('/pages/services/' . $SERVICE_SLUG . '.php') ?>" class="font-bold text-[#ff6b00] hover:underline"><?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?></a>
