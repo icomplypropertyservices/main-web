@@ -131,19 +131,9 @@ function icomplyLive404Redirects(): array
         '/services' => '/pages/services',
         '/site-map' => '/pages/site-map',
         '/sitemap' => '/sitemap.xml',
-        // Pack D keyword aliases + redish fire typos
-        '/pages/emergency-lighting/redish' => '/pages/emergency-lighting/reddish',
-        '/pages/fire-alarms/redish' => '/pages/fire-alarms/reddish',
-        '/pages/fire-doors/redish' => '/pages/fire-doors/reddish',
-        '/pages/keywords/24hr-aov' => '/pages/keywords/24-hour-aov',
-        '/pages/keywords/24hr-gas-engineer' => '/pages/keywords/emergency-gas-engineer',
-        '/pages/keywords/24hr-plumber' => '/pages/keywords/24-hour-plumber',
+        // Pack D — unique keyword aliases only (do not 301 away hub_only pages
+        // that root vanity overflow targets: same-day-boiler, same-day-heating).
         '/pages/keywords/emergency-barrier' => '/pages/keywords/emergency-barrier-repair',
-        '/pages/keywords/emergency-emergency-lighting' => '/pages/services/emergency-lighting',
-        '/pages/keywords/next-day-locksmith' => '/contact',
-        '/pages/keywords/same-day-boiler' => '/pages/keywords/same-day-boiler-repair',
-        '/pages/keywords/same-day-heating' => '/pages/keywords/same-day-heating-engineer',
-        '/pages/keywords/same-day-locksmith' => '/contact',
     ];
     foreach ($keywords as $slug => $dest) {
         $map['/' . $slug] = $dest;

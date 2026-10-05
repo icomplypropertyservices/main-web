@@ -505,6 +505,10 @@ $gapRedirects = [
     '/same-day-heating-engineer' => '/pages/keywords/same-day-heating-engineer',
     '/plumber-near-me' => '/pages/keywords/plumber-near-me',
     '/fire-risk-assessment-near-me' => '/pages/keywords/fire-risk-assessment-near-me',
+    // Backlog vanity overflow (post Pack A–D)
+    '/pat-testing-near-me' => '/pages/keywords/pat-testing-near-me',
+    '/next-day-locksmith' => '/contact',
+    '/same-day-locksmith' => '/contact',
 ];
 foreach ($gapRedirects as $from => $to) {
     if (!preg_match('#^' . preg_quote($from, '#') . '\\s+' . preg_quote($to, '#') . '\\s+301\\b#m', $redirects)) {
@@ -603,6 +607,14 @@ $gapKeywords = [
     'same-day-electrician',
     'same-day-gas-engineer',
     'same-day-plumber',
+    // Pack D hubs targeted by backlog root vanity
+    'next-day-heating',
+    'plumber-near-me',
+    'same-day-barrier',
+    'same-day-boiler',
+    'same-day-fire-alarm',
+    'same-day-heating',
+    'same-day-heating-engineer',
 ];
 foreach ($gapKeywords as $slug) {
     $path = '/pages/keywords/' . $slug;
