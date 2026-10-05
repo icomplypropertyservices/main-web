@@ -1,0 +1,43 @@
+{
+  "path": "/pages/aov",
+  "title": "AOV installation | iComply Property Services",
+  "description": "AOV installation for block managers and landlords across Greater Manchester, arranged from Stockport, Offerton SK2, Cheshire. Request a quote — POA",
+  "body": "AOV installation is the work of fitting automatic opening vents so a stair, lobby or corridor can clear smoke when the fire alarm calls for it. The vent may be a roof hatch, a façade window, a louvre or a shaft damper. iComply surveys and installs that equipment for blocks and commercial stairs from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. The price is on application after the smoke strategy and the free area are known. This is not a catalogue hatch price.\n\nThe usual references are the building’s fire strategy, BS 9991 where a residential block is being designed or refurbished to that code, and the EN 12101 family for the ventilators and controls. We do not invent a free-area number to suit a vent we already have on the van. If the strategy names a geometric area or an aerodynamic area, the survey checks the opening that is actually available, including restricts, curtains and furniture that have crept in front of the sash.\n\nA stair vent that also tries to be a comfort window is a common failure. Rain sensors and temperature control must lose to the fire input. On commissioning we simulate the fire-alarm contact and watch whether a wet sensor still holds the vent shut. If it does, the logic is wrong and the hatch is not a smoke vent until that is corrected. We write that test into the handover note.\n\nControls, actuators and batteries are the part residents never see and the part that fails quietly. Chain actuators seize. Hinges drop. Batteries date out while a green LED still looks healthy. Installation includes the panel location, the battery capacity for the connected load, and a manual override the responsible person can find. We label the key location. A panel locked in a cupboard nobody can open is not commissioned.\n\nThe fire alarm interface is part of the AOV job when the strategy says the vent opens on a specified zone or on a common-alarm signal. We identify the panel, the output and the cause-and-effect line. Taking a spare core and hoping is not an interface. If the fire alarm contractor is someone else, we still need a witnessed test or we record that the interface was not proved.\n\nRoof work and façade work need access equipment, weather and a plan for an occupied block. Residents cannot be left with a stair that is open to the weather overnight because a hatch was removed and the weather turned. We agree the sequence: make safe, fit, prove, and only then leave. Scaffold or a cherry picker is in the quote when the survey shows it is required, not as a surprise on the day.\n\nRetained systems are common on refurbishments. An existing actuator and panel stay when they can still be tested and supported. We name the manufacturer on the note. A takeover is offered only when the brand can still be worked on. Mixing a new chain onto a tired vent without measuring the stroke is how sashes get torn off their hinges.\n\nHandover is a certificate for the work installed, a short user note, and the test we actually did: fire input, battery open, manual override, and rain-sensor priority. The responsible person should be able to describe the weekly or monthly look they own. We do not pretend a maintenance contract exists because an installer once visited.\n\nTell us the address, storeys, stair count, whether the strategy already exists, and a photo of any current AOV panel. Greater Manchester blocks in Manchester, Salford, Stockport, Bolton and Wigan are typical of the diary. The same questions apply in every published town. Call 07517806082. Related pages are the AOV hub and the fire alarms service, because the interface often sits on that panel.\n\nWe will not certify a vent we have not seen travel, we will not bridge out a safety or fire input to force a demonstration, and we will not price the job as a domestic window. Smoke control is price on application after the stair is surveyed. The office remains 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE.\n\nOn a AOV installation quote the useful detail is the checklist, not a slogan. We confirm each of these before the written price: the fire strategy and the free area it names. roof, window or louvre, stated separately. rain-sensor logic that loses to the fire input. battery open, not only a mains test. the fire-alarm contact actually witnessed. actuator stroke measured against the vent. a key location the responsible person can find. weather and access equipment included when the survey shows them. If one of those items is unknown, the quote says it is unknown. We do not smooth the gap so the email looks finished.\n\nWhat we will not do on AOV installation is price a smoke vent as a domestic window or bridge out a fire input to force a demonstration. The written scope names the address, the person instructing iComply, and the limit of the visit. Travel from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE is inside the price on application, not a line added after you have said yes. Call 07517806082 or use the contact form. Ask for AOV installation and give the postcode first. Attach photos of the existing equipment when you have them. We confirm the visit in writing before anyone is dispatched from Offerton. If the building is occupied, name the person who can open the doors. The figure remains price on application after that scope. We would rather ask one more question than attend and find the brief was a different job. Say if a previous visit left anything isolated, bridged or unfinished. Related hubs stay linked from the page that renders this copy. Until the scope is agreed there is no fee to publish and no fee to invent.",
+  "word_count": 978,
+  "images": [
+    {
+      "src": "/assets/images/services/aov-air-handling.jpg",
+      "alt": "Automatic opening vent for smoke control — AOV installation, iComply Property Services"
+    },
+    {
+      "src": "/assets/images/services/aov-air-handling-photo.jpg",
+      "alt": "AOV actuator and stair vent — AOV installation, iComply Property Services"
+    },
+    {
+      "src": "/assets/images/services/fire-alarms.jpg",
+      "alt": "Fire alarm interface that opens the vent — AOV installation, iComply Property Services"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I ask for AOV installation across Greater Manchester?",
+      "a": "Send the address, the building type and what AOV installation needs to cover. iComply replies with a written scope. The price is on application. Nothing on this page is a fee list."
+    },
+    {
+      "q": "Who attends AOV installation across Greater Manchester?",
+      "a": "The visit is carried out by qualified people for that trade. The office is in Offerton, Stockport. Travel is part of the POA quote, not a surprise extra."
+    },
+    {
+      "q": "Do you publish a price for AOV installation?",
+      "a": "No. Quotes are price on application after the building, access and scope are known. We do not invent a starting fee."
+    },
+    {
+      "q": "What should I have ready?",
+      "a": "Postcode, floor count, whether the building is occupied, and any existing certificate or panel brand. Photos of the board, panel or appliance speed the reply. The base is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE."
+    }
+  ],
+  "poa": true,
+  "nap": "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE",
+  "_note": "CLOSE-Q6 body, FAQ and image paths for /pages/aov. Shell markup stays with WT. Do not point this pack at /pages/services/aov.",
+  "h1": "AOV and smoke control"
+}
