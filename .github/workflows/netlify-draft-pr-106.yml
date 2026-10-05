@@ -6,6 +6,9 @@ name: Draft preview PR 106
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - cursor/fix-live-404s-1df0
 
 concurrency:
   group: netlify-draft-pr-106
