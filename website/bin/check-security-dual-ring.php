@@ -151,7 +151,7 @@ $render = static function (string $surface, string $slug, string $town) use ($wo
     ob_start();
     securityDualRingRender($surface, $slug, $town);
     $html = (string)ob_get_clean();
-    if (!str_contains($html, '<title>') || !str_contains($html, 'rel="canonical"') || !str_contains($html, 'property="og:image"') || !str_contains($html, 'property="og:title"') || !str_contains($html, 'name="description"')) {
+    if (!str_contains($html, '<title>') || !str_contains($html, 'rel="canonical"') || !str_contains($html, 'property="og:type" content="website"') || !str_contains($html, 'property="og:image"') || !str_contains($html, 'property="og:title"') || !str_contains($html, 'name="description"')) {
         $bad("meta missing {$surface} {$slug} {$town}");
     }
     if (substr_count($html, '<img ') < 3) {

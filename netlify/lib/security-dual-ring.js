@@ -139,6 +139,10 @@ export function renderSecurityDualRing(path) {
     + `<meta name="description" content="${escapeHtml(description)}">`
     + `<meta name="robots" content="index, follow">`
     + `<link rel="canonical" href="${escapeHtml(canonical)}">`
+    + `<meta property="og:type" content="website">`
+    + `<meta property="og:locale" content="en_GB">`
+    + `<meta property="og:locale:alternate" content="en_US">`
+    + `<meta property="og:site_name" content="iComply Property Services">`
     + `<meta property="og:title" content="${escapeHtml(title)}">`
     + `<meta property="og:description" content="${escapeHtml(description)}">`
     + `<meta property="og:url" content="${escapeHtml(canonical)}">`

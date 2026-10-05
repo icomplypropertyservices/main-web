@@ -35,6 +35,12 @@ else {
   if ((html.match(/<img /g) || []).length < 3) bad("images");
   if (!html.includes('data-seo-faq="1"')) bad("faq");
   if (!html.includes('rel="canonical" href="https://icomplypropertyservices.co.uk/pages/keywords/cctv-monitoring/burnley"')) bad("canonical");
+  if (!html.includes('property="og:type" content="website"')) bad("og type");
+  if (!html.includes('property="og:locale" content="en_GB"')) bad("og locale");
+  if (!html.includes('property="og:site_name" content="iComply Property Services"')) bad("og site name");
+  if (!html.includes('property="og:title"')) bad("og title");
+  if (!html.includes('property="og:description"')) bad("og description");
+  if (!html.includes('property="og:url" content="https://icomplypropertyservices.co.uk/pages/keywords/cctv-monitoring/burnley"')) bad("og url");
   if (!html.includes('property="og:image" content="https://icomplypropertyservices.co.uk/')) bad("og image");
   if (!html.includes("does not claim police response") && !html.includes("does not operate an alarm receiving centre")) bad("monitoring honesty");
   const desc = html.match(/name="description" content="([^"]*)"/);
