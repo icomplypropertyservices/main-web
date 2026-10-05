@@ -223,11 +223,17 @@ function icomplyRenderFireAlarmInstallerTown(string $keywordSlug, string $townSl
         }
     }
 
+    $ogImage = 'https://icomplypropertyservices.co.uk/assets/images/services/fire-alarms.jpg';
     echo '<!DOCTYPE html><html lang="en-GB"><head><meta charset="utf-8">'
         . '<meta name="viewport" content="width=device-width, initial-scale=1">'
         . '<title>' . $h($title) . '</title>'
         . '<meta name="description" content="' . $h($desc) . '">'
         . '<meta name="robots" content="index, follow">'
+        . '<meta property="og:type" content="website">'
+        . '<meta property="og:title" content="' . $h($title) . '">'
+        . '<meta property="og:description" content="' . $h($desc) . '">'
+        . '<meta property="og:url" content="' . $h($canonical) . '">'
+        . '<meta property="og:image" content="' . $h($ogImage) . '">'
         . '<link rel="canonical" href="' . $h($canonical) . '">'
         . '</head><body>'
         . '<header><p>'

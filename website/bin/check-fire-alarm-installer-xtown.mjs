@@ -90,6 +90,28 @@ ok(london && london.html.includes("/pages/services/fire-alarms"), "service hub l
 ok(london && !london.html.includes("approved subcontractor"), "no approved-subcontractor wording");
 ok(london && !/£\s*\d/.test(london.html), "no price");
 ok(london && /price on application|\bPOA\b/i.test(london.html), "POA");
+function ogOk(page, label) {
+  if (!page) {
+    ok(false, `${label} rendered`);
+    return;
+  }
+  const tags = {
+    "og:title": page.title,
+    "og:description": page.description,
+    "og:url": page.canonical,
+    "og:type": "website",
+  };
+  for (const [prop, value] of Object.entries(tags)) {
+    ok(page.html.includes(`property="${prop}" content="${value}"`), `${label} ${prop}`);
+  }
+  const image = page.html.match(/property="og:image" content="([^"]+)"/);
+  ok(Boolean(image && image[1].startsWith("https://")), `${label} og:image absolute https ${image ? image[1] : "missing"}`);
+  ok(page.html.includes("<title>") && page.html.includes('name="description"') && page.html.includes('rel="canonical"'), `${label} keeps title, description and canonical`);
+}
+ogOk(london, "London installer");
+for (const town of ["glasgow", "cardiff", "birmingham"]) {
+  ogOk(renderTownPage({ kind: "keyword", keyword: "fire-alarm-installer", town, catalogue }), `${town} installer`);
+}
 const hrefs = new Set([...(london.html.match(/href="([^"]+)"/g) || [])]);
 ok(hrefs.size >= 80, `unique hrefs ${hrefs.size}`);
 

@@ -130,6 +130,13 @@ foreach ($samples as [$path, $needle, $townPage]) {
     $ok(!preg_match('/£\s*\d/', $copy), "{$path} has no £ price");
     $ok(!preg_match('/\bb\d{5,}\b/', $copy), "{$path} has no visible uniqueness token");
     $ok(stripos($copy, 'fixed-price') === false && stripos($copy, 'fixed price') === false, "{$path} is POA only");
+    if (preg_match('#^/pages/keywords/[^/]+/[^/]+$#', $path)) {
+        foreach (['og:title', 'og:description', 'og:url', 'og:type', 'og:image'] as $prop) {
+            $ok(str_contains($html, 'property="' . $prop . '"'), "{$path} has {$prop}");
+        }
+        $ok((bool)preg_match('/property="og:image" content="https:\/\//', $html), "{$path} og:image is absolute https");
+        $ok(str_contains($html, 'property="og:type" content="website"'), "{$path} og:type is website");
+    }
     if ($townPage && str_contains($path, '/london') || str_contains($path, '/glasgow') || str_contains($path, '/cardiff')) {
         $ok(str_contains($html, '17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE'), "{$path} shows the NAP");
         $ok(str_contains($html, '/pages/services/fire-alarms'), "{$path} links the fire alarm service");

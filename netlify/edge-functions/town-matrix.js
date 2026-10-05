@@ -334,6 +334,7 @@ export function renderTownPage(input) {
   const imageSrc = `/assets/images/services/${imageSlug}.jpg`;
   const ogImage = `https://icomplypropertyservices.co.uk${imageSrc}`;
   const imageAlt = `${subject} in ${place.name} — ${serviceName}`;
+  const ogImage = `https://icomplypropertyservices.co.uk${imageSrc}`;
 
   const gas = keyword.gas || serviceSlug === "gas-systems" || serviceSlug === "heating";
   const packed = (kind === "keyword" || kind === "service")
@@ -457,6 +458,11 @@ export function renderTownPage(input) {
 <title>${escapeHtml(title)}</title>
 <meta name="description" content="${escapeHtml(description)}">
 <meta name="robots" content="${robots}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="${escapeHtml(title)}">
+<meta property="og:description" content="${escapeHtml(description)}">
+<meta property="og:url" content="${escapeHtml(canonical)}">
+<meta property="og:image" content="${escapeHtml(ogImage)}">
 <link rel="canonical" href="${canonical}">
 <meta property="og:type" content="website">
 <meta property="og:title" content="${escapeHtml(title)}">
