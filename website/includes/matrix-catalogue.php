@@ -685,6 +685,13 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
     }
     $familyKeywordTown = 0;
     $familyServiceTown = 0;
+    if (!function_exists('icomplyFireAlarmInstallerExtraTownPaths')) {
+        require_once __DIR__ . '/fire-alarm-installer.php';
+    }
+    foreach (icomplyFireAlarmInstallerExtraTownPaths($places) as $familyPath) {
+        $writeLoc($familyPath);
+        $familyKeywordTown++;
+    }
     $manufacturerTown = 0;
     foreach (array_keys($manufacturers) as $brandSlug) {
         foreach ($gmKeys as $placeSlug) {

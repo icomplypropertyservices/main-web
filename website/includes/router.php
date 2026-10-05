@@ -157,6 +157,11 @@ function routerDispatchVirtual(string $path): bool {
 
     // /pages/keywords/{kw}/{area}
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        if (function_exists('icomplyFireAlarmInstallerNationwidePath')
+            && icomplyFireAlarmInstallerNationwidePath($path)) {
+            icomplyRenderFireAlarmInstallerTown($m[1], $m[2]);
+            return true;
+        }
         renderKeywordAreaPage($m[1], $m[2]);
         return true;
     }

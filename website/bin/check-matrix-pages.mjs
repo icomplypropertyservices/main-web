@@ -185,6 +185,7 @@ for (const page of pages) {
   ok(imgs.size >= 3, `content images ${imgs.size} on ${page.path}`);
   ok((page.html.match(/<details\b/gi) || []).length >= 3, `faq questions on ${page.path}`);
   ok(page.html.includes('"@type":"FAQPage"') || page.html.includes('"@type": "FAQPage"'), `FAQPage on ${page.path}`);
+  ok(!page.html.includes("approved subcontractors"), `no subcontractor wording on ${page.path}`);
 }
 
 const eicrTowns = pages.slice(0, 3);
