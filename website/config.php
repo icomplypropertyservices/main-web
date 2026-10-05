@@ -410,8 +410,10 @@ function icomplyPathIsIndexable(string $path): bool
         $path = '/';
     }
     if (preg_match('#^/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+$#', $path)) {
-        if (function_exists('icomplyFireAlarmInstallerNationwidePath')
-            && icomplyFireAlarmInstallerNationwidePath($path)) {
+        if ((function_exists('icomplyNationwide3lineIndexablePath')
+                && icomplyNationwide3lineIndexablePath($path))
+            || (function_exists('icomplyFireAlarmInstallerNationwidePath')
+                && icomplyFireAlarmInstallerNationwidePath($path))) {
             return true;
         }
         return false;
@@ -876,6 +878,9 @@ function getMajorKeywords(): array {
         $normalized = openJobLanesApply($normalized);
     }
     $normalized = icomplyApplyCustomerKeywordCopy($normalized);
+    if (function_exists('icomplyNationwide3lineApplyKeywords')) {
+        $normalized = icomplyNationwide3lineApplyKeywords($normalized);
+    }
     $cached = $normalized;
     return $cached;
 }

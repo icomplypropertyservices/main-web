@@ -685,10 +685,17 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
     }
     $familyKeywordTown = 0;
     $familyServiceTown = 0;
+    if (!function_exists('icomplyNationwide3lineExtraTownPaths')) {
+        require_once __DIR__ . '/nationwide-3line.php';
+    }
     if (!function_exists('icomplyFireAlarmInstallerExtraTownPaths')) {
         require_once __DIR__ . '/fire-alarm-installer.php';
     }
-    foreach (icomplyFireAlarmInstallerExtraTownPaths($places) as $familyPath) {
+    $familyPaths = array_values(array_unique(array_merge(
+        icomplyNationwide3lineExtraTownPaths($places),
+        icomplyFireAlarmInstallerExtraTownPaths($places)
+    )));
+    foreach ($familyPaths as $familyPath) {
         $writeLoc($familyPath);
         $familyKeywordTown++;
     }

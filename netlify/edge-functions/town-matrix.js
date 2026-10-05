@@ -9,6 +9,7 @@
 import { renderVariantPage, renderVariantSitemap } from "../lib/variant-matrix.js";
 import { breadcrumbHtml, isGmTown, isLocalTown, matrixRelatedHtml } from "../lib/link-blocks.js";
 import { gmTownBlurb } from "../lib/gm-blurbs.js";
+import { p0KeepsTown, renderNationwideP0Town } from "../lib/nationwide-p0.js";
 import { thinFaqHtml, thinFaqs, thinImages, thinOgMeta, thinProseHtml } from "../lib/thin-quality-bar.js";
 import fireAlarmFamily from "../../website/data/fire-alarm-installer-family.json" with { type: "json" };
 import mainlandTownDoc from "../../website/data/uk-mainland-towns-10k.json" with { type: "json" };
@@ -603,8 +604,8 @@ function placeAliasRedirect(path) {
 export function nonGmMatrixRedirect(path) {
   let m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   if (m) {
-    if (fireInstallerNationwide(m[1], m[2])) return null;
-    return isLocalTown(m[2]) ? null : `/pages/keywords/${m[1]}`;
+    if (isLocalTown(m[2]) || p0KeepsTown(m[1], m[2]) || fireInstallerNationwide(m[1], m[2])) return null;
+    return `/pages/keywords/${m[1]}`;
   }
   m = path.match(/^\/pages\/manufacturers\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   if (m) return isGmTown(m[2]) ? null : `/pages/manufacturers/${m[1]}`;
@@ -715,13 +716,18 @@ export default async (request, context) => {
       closeQPages,
     });
   } else if (keywordMatch) {
-    rendered = renderTownPage({
-      kind: "keyword",
-      keyword: keywordMatch[1],
-      town: keywordMatch[2],
-      catalogue,
-      closeQPages,
-    });
+    if (p0KeepsTown(keywordMatch[1], keywordMatch[2])) {
+      rendered = renderNationwideP0Town(keywordMatch[1], keywordMatch[2]);
+    }
+    if (!rendered) {
+      rendered = renderTownPage({
+        kind: "keyword",
+        keyword: keywordMatch[1],
+        town: keywordMatch[2],
+        catalogue,
+        closeQPages,
+      });
+    }
   } else {
     rendered = renderTownPage({
       kind: "service",

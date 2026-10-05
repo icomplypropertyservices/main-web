@@ -53,6 +53,11 @@ jobs:
       - name: Town matrix page uniqueness
         run: node website/bin/check-matrix-pages.mjs
 
+      - name: Nationwide 3-line P0 keywords
+        env:
+          SITE_URL: https://icomplypropertyservices.co.uk
+        run: php website/bin/check-nationwide-3line-p0.php && node website/bin/check-nationwide-3line-p0.mjs
+
       - name: Fire alarm installer family
         env:
           SITE_URL: https://icomplypropertyservices.co.uk

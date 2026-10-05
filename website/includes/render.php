@@ -240,6 +240,26 @@ function keywordTemplatePlaceholders(
 
     $kwImg = url('/assets/images/keywords/' . $slug . '.jpg');
     $svcImg = url('/assets/images/services/' . $serviceSlug . '.jpg');
+    $inlineImg = $kwImg;
+    if (function_exists('icomplyNationwide3lineIsP0') && icomplyNationwide3lineIsP0($slug)) {
+        $gallery = icomplyNationwide3lineImages($slug);
+        if (count($gallery) >= 3) {
+            $kwImg = url($gallery[0]);
+            $inlineImg = url($gallery[1]);
+            $svcImg = url($gallery[2]);
+        }
+        if ($seoTitle === '' || !str_contains($seoTitle, 'iComply')) {
+            $seoTitle = function_exists('icomplyNationwide3lineTitle')
+                ? icomplyNationwide3lineTitle($name)
+                : ($name . ' | iComply Property Services');
+        }
+        $storedMeta = trim((string)($meta['meta_desc'] ?? ''));
+        if (strlen($storedMeta) >= 140 && strlen($storedMeta) <= 160) {
+            $metaDesc = $storedMeta;
+        } elseif (function_exists('icomplyNationwide3lineMeta')) {
+            $metaDesc = icomplyNationwide3lineMeta($name, 'the UK mainland');
+        }
+    }
     // Prefer keyword image path; template onerror falls back to service
 
     return [
@@ -265,6 +285,7 @@ function keywordTemplatePlaceholders(
             'mainEntity' => $faqEntities,
         ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT),
         'KEYWORD_IMAGE' => $kwImg,
+        'KEYWORD_INLINE' => $inlineImg,
         'SERVICE_IMAGE' => $svcImg,
     ];
 }
