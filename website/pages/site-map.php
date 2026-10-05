@@ -61,6 +61,7 @@ $mainPages = [
     ['href' => url('/pages/resources/index.php'), 'label' => 'Resources hub'],
     ['href' => url('/pages/faq.php'), 'label' => 'FAQ'],
     ['href' => url('/contact.php'), 'label' => 'Contact / free quote'],
+    ['href' => url('/renewals.php'), 'label' => 'Log renewal dates'],
     ['href' => '/become-a-subcontractor', 'label' => 'Work with us'],
     ['href' => url('/privacy.php'), 'label' => 'Privacy policy'],
     ['href' => url('/terms.php'), 'label' => 'Terms & conditions'],

@@ -22,6 +22,8 @@ function icomplySitemapBannedPaths(): array
         '/terms-and-conditions' => true,
         '/terms-and-conditions/' => true,
         '/thank-you' => true,
+        '/renewals/thanks' => true,
+        '/renewals/thanks/' => true,
         '/404' => true,
         '/404/' => true,
         '/lead-popup-form' => true,
@@ -189,6 +191,7 @@ function icomplySitemapEntries(): array
     $static = [
         ['/', '1.0', 'index.php'],
         ['/contact', '0.85', 'contact.php'],
+        ['/renewals', '0.8', 'renewals.php'],
         ['/become-a-subcontractor', '0.7', 'become-a-subcontractor.php'],
         ['/privacy', '0.3', 'privacy.php'],
         ['/terms', '0.3', 'terms.php'],
