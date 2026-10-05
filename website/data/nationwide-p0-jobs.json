@@ -407,7 +407,7 @@
         "AOV service"
       ],
       [
-        "/pages/jobs/emergency-aov-repair",
+        "/pages/keywords/emergency-aov-repair",
         "Emergency AOV repair"
       ],
       [
@@ -724,7 +724,7 @@
         "All job types"
       ],
       [
-        "/pages/jobs/emergency-aov-repair",
+        "/pages/keywords/emergency-aov-repair",
         "Emergency AOV repair"
       ],
       [
@@ -747,113 +747,6 @@
     "area_served": "United Kingdom",
     "show_nap": true,
     "word_count": 1231
-  },
-  "emergency-aov-repair": {
-    "slug": "emergency-aov-repair",
-    "line": "aov-smoke",
-    "kind": "generic",
-    "brand": "",
-    "policy": "none",
-    "name": "Emergency AOV repair",
-    "title": "Emergency AOV repair | iComply Property Services",
-    "meta": "Emergency AOV repair for car-park operators, arranged UK-wide from Stockport. Scope is confirmed on site before anyone attends. Request a quote — POA.",
-    "keywords": "Emergency AOV repair, AOV and smoke control, Stockport, UK-wide",
-    "h1": "Emergency AOV repair",
-    "kicker": "AOV and smoke control",
-    "lede": "Emergency AOV repair for car-park operators, arranged UK-wide from Stockport. Price on application after we have seen the site.",
-    "card": "Emergency AOV repair for car-park operators. Price on application after survey.",
-    "paragraphs": [
-      "Emergency AOV repair is a site visit, not a packaged price. We arrange it UK-wide from Stockport for car-park operators. A typical instruction arrives when the the AOV that has failed open, failed shut, or will not answer the panel has failed, stuck, or started reporting a fault. The building we are usually called to is the common parts of a house in multiple occupation. Before a date is offered we ask what equipment is already there, who holds the keys, and whether the area has to stay in use. We do not claim a local office in that town. The engineer comes from our Stockport base at iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Call 07517806082 or email info@icomplypropertyservices.co.uk.",
-      "Access for Emergency AOV repair is part of the scope. On this sort of visit, the escape route stays clear; we do not leave boards or tools in the stair. We do not start by isolating the AOV that has failed open, failed shut, or will not answer the panel until the duty holder knows the system may be offline and for how long. The useful first measurement is the extinguisher's weight, gauge and service date against the label. We do not assume that a replacement part can be ordered from the nameplate alone. Photographs of the nameplate, the supply and the surrounding fixings are taken before anything is removed, so the note matches the building rather than a generic description of emergency aov repair.",
-      "The work standard we write against on Emergency AOV repair is BS EN 12101 and BS 7346-8. That is the standard for the task, not an accreditation and not a certificate number. We do not claim a third-party approval body, and we do not invent a membership number. Where the fire strategy or the specification asks for a particular category or a particular cause-and-effect, we follow that document and we record any place the installed the AOV that has failed open, failed shut, or will not answer the panel does not match it. If the strategy is missing, we say so and we stop short of inventing a design.",
-      "The make of the AOV that has failed open, failed shut, or will not answer the panel is confirmed on site. We do not claim manufacturer approval or an authorised-dealer status for any brand on this page. iComply is a CAME partner for barrier installation only, and that statement stays in plain words with no number. This page does not use that partnership to imply approval for fire alarm or smoke-control brands.",
-      "Identify the AOV that has failed open, failed shut, or will not answer the panel from the nameplate and compare it with the report of the the AOV that has failed open, failed shut, or will not answer the panel has failed, stuck, or started reporting a fault. This is done while the the AOV that has failed open, failed shut, or will not answer the panel is still in the condition we found it, so the note for Emergency AOV repair explains the fault rather than only the repair. The result is written in plain language for car-park operators. If a part is required and is not on the van, we do not pretend it was fitted.",
-      "Next we deal with this specific point of Emergency AOV repair: Prove the supply, the signal and the mechanical travel before ordering parts for Emergency AOV repair. The check is repeated once after the adjustment so a single lucky result is not treated as finished. Anything that still fails stays on the list. Price for the extra item is on application; it is not added as a surprise on the day.",
-      "For Emergency AOV repair we also confirm the following, because it changes the scope: Record the the AOV that has failed open, failed shut, or will not answer the panel has failed, stuck, or started reporting a fault against the last log entry so the visit does not repeat a fix that already failed. The observation is tied back to BS EN 12101 and BS 7346-8. We name the room, the lane or the stair in the note so a later visit can find the same the AOV that has failed open, failed shut, or will not answer the panel.",
-      "Check the safety device or the fire interface that sits next to the AOV that has failed open, failed shut, or will not answer the panel, not only the obvious failed part. That step matters on Emergency AOV repair when the building is the common parts of a house in multiple occupation. Rushing it is how a second call-out is created. We would rather leave a clear defect than a silent temporary fix that the next engineer cannot see.",
-      "The instructing client can expect this from the Emergency AOV repair visit: Write the result against BS EN 12101 and BS 7346-8, as a work standard rather than as an accreditation. We explain it to the person who met us, and we put the same words in a written note of the visit for the site file. Verbal-only handovers are not the record.",
-      "Before we close Emergency AOV repair we make sure of one more thing: Hand over a written note of the visit for the site file, and list any item still open so Emergency AOV repair is not signed off early. If that check fails, the system is not described as complete. The outstanding item is quoted price on application after the survey we have just done, using the measurements already taken.",
-      "The paperwork for Emergency AOV repair is a written note of the visit for the site file. It names the address, the date, the the AOV that has failed open, failed shut, or will not answer the panel, and the result. It does not carry a fake approval logo. Certificate-style wording on this page means the note we issue for the work done, not a claim that iComply holds a third-party registration. The duty holder keeps the copy. We can resend it to the managing agent when the instruction asks for that. No figure is given on the phone until the equipment and the access are known.",
-      "Pricing for Emergency AOV repair is price on application after survey. We do not publish a pound figure, a band, or a from-price. The survey has to see the AOV that has failed open, failed shut, or will not answer the panel, the access, and whether the visit is a repair, a service or a new installation. A phone call can book the survey. It cannot produce a serious figure while the model is unknown. CAME supply packs, where a barrier job uses them, are also price on application on this page. We are instructed by car-park operators, and the quote is addressed to that client.",
-      "Coverage for Emergency AOV repair is UK-wide from Stockport. iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Call 07517806082 or email info@icomplypropertyservices.co.uk. Town pages, when they are published in a later wave, will use the real county and region. This hub does not pretend we have a branch in every town, and it does not use a Greater Manchester-only town list for a nationwide trade. The intent of this page is repair: we do the work the instruction describes, and we do not pad it with unrelated trades. These lines are not gas work, so this page does not use gas-registration wording."
-    ],
-    "points": [
-      "Instruction understood before attendance: the the AOV that has failed open, failed shut, or will not answer the panel has failed, stuck, or started reporting a fault.",
-      "Equipment confirmed on site: the AOV that has failed open, failed shut, or will not answer the panel.",
-      "Work standard named in the note: BS EN 12101 and BS 7346-8.",
-      "Record left with the client: a written note of the visit for the site file.",
-      "Price on application after survey. No published pound figure.",
-      "Arranged UK-wide from Stockport for car-park operators."
-    ],
-    "faqs": [
-      [
-        "How is Emergency AOV repair quoted?",
-        "Emergency AOV repair is price on application after we have seen the AOV that has failed open, failed shut, or will not answer the panel and the access. We do not publish a pound figure or a from-price."
-      ],
-      [
-        "Do you cover my town for Emergency AOV repair?",
-        "Yes. Emergency AOV repair is arranged UK-wide from our Stockport base for car-park operators. We do not claim a local office in each town."
-      ],
-      [
-        "What standard do you work to on Emergency AOV repair?",
-        "We work to BS EN 12101 and BS 7346-8 as the standard for the task. That is not an accreditation and we do not quote a membership number."
-      ],
-      [
-        "Which brands does Emergency AOV repair cover?",
-        "The make is confirmed on site. We do not claim manufacturer approval on this page."
-      ],
-      [
-        "What should I have ready when I ask for Emergency AOV repair?",
-        "The full address, what has failed or what you want installed, any log or previous note, and who can meet us. Photos of the nameplate help. They do not replace the survey."
-      ]
-    ],
-    "images": [
-      [
-        "/assets/images/lanes/aov-air-handling/41.jpg",
-        "Emergency AOV repair — equipment looked at on site by iComply Property Services"
-      ],
-      [
-        "/assets/images/lanes/aov-air-handling/43.jpg",
-        "Emergency AOV repair — the control or lane position recorded before any part is changed"
-      ],
-      [
-        "/assets/images/services/aov-air-handling.jpg",
-        "Emergency AOV repair — the note left with the instructing client after the visit"
-      ]
-    ],
-    "links": [
-      [
-        "/pages/services/aov-air-handling",
-        "AOV and smoke control"
-      ],
-      [
-        "/pages/jobs",
-        "All job types"
-      ],
-      [
-        "/pages/jobs/se-controls-aov-repair",
-        "SE Controls AOV repair"
-      ],
-      [
-        "/pages/jobs/smoke-control-system-repair",
-        "Smoke control system repair"
-      ],
-      [
-        "/pages/jobs/smoke-ventilation-installation",
-        "Smoke ventilation installation"
-      ]
-    ],
-    "service_label": "AOV and smoke control",
-    "service_href": "/pages/services/aov-air-handling",
-    "parent_label": "Job types",
-    "parent_href": "/pages/jobs",
-    "form_options": [
-      "Emergency AOV repair",
-      "AOV and smoke control"
-    ],
-    "area_served": "United Kingdom",
-    "show_nap": true,
-    "word_count": 1278
   },
   "se-controls-aov-repair": {
     "slug": "se-controls-aov-repair",
@@ -1370,7 +1263,7 @@
         "Smoke vent maintenance"
       ],
       [
-        "/pages/jobs/smoke-ventilation-installation",
+        "/pages/keywords/smoke-ventilation-installation",
         "Smoke ventilation installation"
       ],
       [
@@ -1687,7 +1580,7 @@
         "All job types"
       ],
       [
-        "/pages/jobs/smoke-ventilation-installation",
+        "/pages/keywords/smoke-ventilation-installation",
         "Smoke ventilation installation"
       ],
       [
@@ -1695,7 +1588,7 @@
         "AOV panel repair"
       ],
       [
-        "/pages/jobs/emergency-aov-repair",
+        "/pages/keywords/emergency-aov-repair",
         "Emergency AOV repair"
       ]
     ],
@@ -1710,113 +1603,6 @@
     "area_served": "United Kingdom",
     "show_nap": true,
     "word_count": 1266
-  },
-  "smoke-ventilation-installation": {
-    "slug": "smoke-ventilation-installation",
-    "line": "aov-smoke",
-    "kind": "generic",
-    "brand": "",
-    "policy": "none",
-    "name": "Smoke ventilation installation",
-    "title": "Smoke ventilation installation | iComply Property Services",
-    "meta": "Smoke ventilation installation for care-home managers, arranged UK-wide from Stockport. Scope is confirmed on site before anyone attends. Request a quote — POA.",
-    "keywords": "Smoke ventilation installation, AOV and smoke control, Stockport, UK-wide",
-    "h1": "Smoke ventilation installation",
-    "kicker": "AOV and smoke control",
-    "lede": "Smoke ventilation installation for care-home managers, arranged UK-wide from Stockport. Price on application after we have seen the site.",
-    "card": "Smoke ventilation installation for care-home managers. Price on application after survey.",
-    "paragraphs": [
-      "Smoke ventilation installation is a site visit, not a packaged price. We arrange it UK-wide from Stockport for care-home managers. A typical instruction arrives when a new installation of the smoke-ventilation installation, natural or mechanical as the strategy requires has been instructed. The building we are usually called to is a leisure centre with wet changing rooms near the panel. Before a date is offered we ask what equipment is already there, who holds the keys, and whether the area has to stay in use. We do not claim a local office in that town. The engineer comes from our Stockport base at iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Call 07517806082 or email info@icomplypropertyservices.co.uk.",
-      "Access for Smoke ventilation installation is part of the scope. On this sort of visit, the roof is only reached with a planned access method, not a borrowed ladder. We do not start by isolating the smoke-ventilation installation, natural or mechanical as the strategy requires until the duty holder knows the system may be offline and for how long. The useful first measurement is boom length and spring balance on the arm that is actually fitted. We do not assume that the drawing matches the vent that is fitted. Photographs of the nameplate, the supply and the surrounding fixings are taken before anything is removed, so the note matches the building rather than a generic description of smoke ventilation installation.",
-      "The work standard we write against on Smoke ventilation installation is BS EN 12101 and BS 7346-8. That is the standard for the task, not an accreditation and not a certificate number. We do not claim a third-party approval body, and we do not invent a membership number. Where the fire strategy or the specification asks for a particular category or a particular cause-and-effect, we follow that document and we record any place the installed the smoke-ventilation installation, natural or mechanical as the strategy requires does not match it. If the strategy is missing, we say so and we stop short of inventing a design.",
-      "The make of the smoke-ventilation installation, natural or mechanical as the strategy requires is confirmed on site. We do not claim manufacturer approval or an authorised-dealer status for any brand on this page. iComply is a CAME partner for barrier installation only, and that statement stays in plain words with no number. This page does not use that partnership to imply approval for fire alarm or smoke-control brands.",
-      "Identify the smoke-ventilation installation, natural or mechanical as the strategy requires from the nameplate and compare it with the report of a new installation of the smoke-ventilation installation, natural or mechanical as the strategy requires has been instructed. This is done while the the smoke-ventilation installation, natural or mechanical as the strategy requires is still in the condition we found it, so the note for Smoke ventilation installation explains the fault rather than only the repair. The result is written in plain language for care-home managers. If a part is required and is not on the van, we do not pretend it was fitted.",
-      "Next we deal with this specific point of Smoke ventilation installation: Prove the supply, the signal and the mechanical travel before ordering parts for Smoke ventilation installation. The check is repeated once after the adjustment so a single lucky result is not treated as finished. Anything that still fails stays on the list. Price for the extra item is on application; it is not added as a surprise on the day.",
-      "For Smoke ventilation installation we also confirm the following, because it changes the scope: Record a new installation of the smoke-ventilation installation, natural or mechanical as the strategy requires has been instructed against the last log entry so the visit does not repeat a fix that already failed. The observation is tied back to BS EN 12101 and BS 7346-8. We name the room, the lane or the stair in the note so a later visit can find the same the smoke-ventilation installation, natural or mechanical as the strategy requires.",
-      "Check the safety device or the fire interface that sits next to the smoke-ventilation installation, natural or mechanical as the strategy requires, not only the obvious failed part. That step matters on Smoke ventilation installation when the building is a leisure centre with wet changing rooms near the panel. Rushing it is how a second call-out is created. We would rather leave a clear defect than a silent temporary fix that the next engineer cannot see.",
-      "The instructing client can expect this from the Smoke ventilation installation visit: Write the result against BS EN 12101 and BS 7346-8, as a work standard rather than as an accreditation. We explain it to the person who met us, and we put the same words in an installation note describing what was fitted, how it was tested, and what the client must do weekly. Verbal-only handovers are not the record.",
-      "Before we close Smoke ventilation installation we make sure of one more thing: Hand over an installation note describing what was fitted, how it was tested, and what the client must do weekly, and list any item still open so Smoke ventilation installation is not signed off early. If that check fails, the system is not described as complete. The outstanding item is quoted price on application after the survey we have just done, using the measurements already taken.",
-      "The paperwork for Smoke ventilation installation is an installation note describing what was fitted, how it was tested, and what the client must do weekly. It names the address, the date, the the smoke-ventilation installation, natural or mechanical as the strategy requires, and the result. It does not carry a fake approval logo. Certificate-style wording on this page means the note we issue for the work done, not a claim that iComply holds a third-party registration. The duty holder keeps the copy. We can resend it to the managing agent when the instruction asks for that. A failed device stays labelled so the next person can see what was found.",
-      "Pricing for Smoke ventilation installation is price on application after survey. We do not publish a pound figure, a band, or a from-price. The survey has to see the smoke-ventilation installation, natural or mechanical as the strategy requires, the access, and whether the visit is a repair, a service or a new installation. A phone call can book the survey. It cannot produce a serious figure while the model is unknown. CAME supply packs, where a barrier job uses them, are also price on application on this page. We are instructed by care-home managers, and the quote is addressed to that client.",
-      "Coverage for Smoke ventilation installation is UK-wide from Stockport. iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Call 07517806082 or email info@icomplypropertyservices.co.uk. Town pages, when they are published in a later wave, will use the real county and region. This hub does not pretend we have a branch in every town, and it does not use a Greater Manchester-only town list for a nationwide trade. The intent of this page is installation: we do the work the instruction describes, and we do not pad it with unrelated trades. These lines are not gas work, so this page does not use gas-registration wording."
-    ],
-    "points": [
-      "Instruction understood before attendance: a new installation of the smoke-ventilation installation, natural or mechanical as the strategy requires has been instructed.",
-      "Equipment confirmed on site: the smoke-ventilation installation, natural or mechanical as the strategy requires.",
-      "Work standard named in the note: BS EN 12101 and BS 7346-8.",
-      "Record left with the client: an installation note describing what was fitted, how it was tested, and what the client must do weekly.",
-      "Price on application after survey. No published pound figure.",
-      "Arranged UK-wide from Stockport for care-home managers."
-    ],
-    "faqs": [
-      [
-        "How is Smoke ventilation installation quoted?",
-        "Smoke ventilation installation is price on application after we have seen the smoke-ventilation installation, natural or mechanical as the strategy requires and the access. We do not publish a pound figure or a from-price."
-      ],
-      [
-        "Do you cover my town for Smoke ventilation installation?",
-        "Yes. Smoke ventilation installation is arranged UK-wide from our Stockport base for care-home managers. We do not claim a local office in each town."
-      ],
-      [
-        "What standard do you work to on Smoke ventilation installation?",
-        "We work to BS EN 12101 and BS 7346-8 as the standard for the task. That is not an accreditation and we do not quote a membership number."
-      ],
-      [
-        "Which brands does Smoke ventilation installation cover?",
-        "The make is confirmed on site. We do not claim manufacturer approval on this page."
-      ],
-      [
-        "What should I have ready when I ask for Smoke ventilation installation?",
-        "The full address, what has failed or what you want installed, any log or previous note, and who can meet us. Photos of the nameplate help. They do not replace the survey."
-      ]
-    ],
-    "images": [
-      [
-        "/assets/images/lanes/aov-air-handling/41.jpg",
-        "Smoke ventilation installation — equipment looked at on site by iComply Property Services"
-      ],
-      [
-        "/assets/images/lanes/aov-air-handling/43.jpg",
-        "Smoke ventilation installation — the control or lane position recorded before any part is changed"
-      ],
-      [
-        "/assets/images/services/aov-air-handling.jpg",
-        "Smoke ventilation installation — the note left with the instructing client after the visit"
-      ]
-    ],
-    "links": [
-      [
-        "/pages/services/aov-air-handling",
-        "AOV and smoke control"
-      ],
-      [
-        "/pages/jobs",
-        "All job types"
-      ],
-      [
-        "/pages/jobs/aov-actuator-repair",
-        "AOV actuator repair"
-      ],
-      [
-        "/pages/jobs/aov-replacement",
-        "AOV replacement"
-      ],
-      [
-        "/pages/jobs/se-controls-aov-repair",
-        "SE Controls AOV repair"
-      ]
-    ],
-    "service_label": "AOV and smoke control",
-    "service_href": "/pages/services/aov-air-handling",
-    "parent_label": "Job types",
-    "parent_href": "/pages/jobs",
-    "form_options": [
-      "Smoke ventilation installation",
-      "AOV and smoke control"
-    ],
-    "area_served": "United Kingdom",
-    "show_nap": true,
-    "word_count": 1260
   },
   "automatic-barrier-installation": {
     "slug": "automatic-barrier-installation",
@@ -1909,7 +1695,7 @@
         "Barrier call-out"
       ],
       [
-        "/pages/jobs/barrier-repair",
+        "/pages/keywords/barrier-repair",
         "Barrier repair"
       ]
     ],
@@ -2012,7 +1798,7 @@
         "Automatic barrier repair"
       ],
       [
-        "/pages/jobs/barrier-installation",
+        "/pages/keywords/barrier-installation",
         "Barrier installation"
       ],
       [
@@ -2123,7 +1909,7 @@
         "Barrier loop detector"
       ],
       [
-        "/pages/jobs/barrier-service",
+        "/pages/keywords/barrier-service",
         "Barrier service"
       ]
     ],
@@ -2226,7 +2012,7 @@
         "Barrier call-out"
       ],
       [
-        "/pages/jobs/barrier-maintenance",
+        "/pages/keywords/barrier-maintenance",
         "Barrier maintenance"
       ],
       [
@@ -2329,7 +2115,7 @@
         "All job types"
       ],
       [
-        "/pages/jobs/barrier-installation",
+        "/pages/keywords/barrier-installation",
         "Barrier installation"
       ],
       [
@@ -2352,113 +2138,6 @@
     "area_served": "United Kingdom",
     "show_nap": true,
     "word_count": 1269
-  },
-  "barrier-installation": {
-    "slug": "barrier-installation",
-    "line": "barrier",
-    "kind": "generic",
-    "brand": "",
-    "policy": "came_new",
-    "name": "Barrier installation",
-    "title": "Barrier installation | iComply Property Services",
-    "meta": "Barrier installation for facilities managers, arranged UK-wide from Stockport. Scope is confirmed on site before anyone attends. Request a quote — POA.",
-    "keywords": "Barrier installation, Barriers, Stockport, UK-wide",
-    "h1": "Barrier installation",
-    "kicker": "Barriers",
-    "lede": "Barrier installation for facilities managers, arranged UK-wide from Stockport. Price on application after we have seen the site.",
-    "card": "Barrier installation for facilities managers. Price on application after survey.",
-    "paragraphs": [
-      "Barrier installation is a site visit, not a packaged price. We arrange it UK-wide from Stockport for facilities managers. A typical instruction arrives when a new installation of the vehicle barrier installation, island, supply and safety devices has been instructed. The building we are usually called to is a light-industrial estate unit with a roller shutter and a side stair. Before a date is offered we ask what equipment is already there, who holds the keys, and whether the area has to stay in use. We do not claim a local office in that town. The engineer comes from our Stockport base at iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Call 07517806082 or email info@icomplypropertyservices.co.uk.",
-      "Access for Barrier installation is part of the scope. On this sort of visit, a second person is needed at the vent while the other watches the panel. We do not start by isolating the vehicle barrier installation, island, supply and safety devices until the duty holder knows the system may be offline and for how long. The useful first measurement is battery voltage under load, recorded rather than guessed. We do not assume that the previous log's 'reset' means the fault has gone. Photographs of the nameplate, the supply and the surrounding fixings are taken before anything is removed, so the note matches the building rather than a generic description of barrier installation.",
-      "The work standard we write against on Barrier installation is BS EN 12453. That is the standard for the task, not an accreditation and not a certificate number. We do not claim a third-party approval body, and we do not invent a membership number. Where the fire strategy or the specification asks for a particular category or a particular cause-and-effect, we follow that document and we record any place the installed the vehicle barrier installation, island, supply and safety devices does not match it. If the strategy is missing, we say so and we stop short of inventing a design.",
-      "Barrier installation is specified as CAME. iComply is a CAME partner. We state that in plain words and we do not publish a partner number, an accreditation number, or an authorised-dealer claim. The lane, the boom length, the supply and the safety devices are measured on site. Installation is price on application after that survey. We do not print a pack price or a from-price on this page. If an older barrier of another make is already in the lane and the incumbent should stay, we say so in the note and we repair that existing kit instead of forcing a change of make. The model is confirmed on site before parts are ordered.",
-      "Identify the vehicle barrier installation, island, supply and safety devices from the nameplate and compare it with the report of a new installation of the vehicle barrier installation, island, supply and safety devices has been instructed. This is done while the the vehicle barrier installation, island, supply and safety devices is still in the condition we found it, so the note for Barrier installation explains the fault rather than only the repair. The result is written in plain language for facilities managers. If a part is required and is not on the van, we do not pretend it was fitted.",
-      "Next we deal with this specific point of Barrier installation: Prove the supply, the signal and the mechanical travel before ordering parts for Barrier installation. The check is repeated once after the adjustment so a single lucky result is not treated as finished. Anything that still fails stays on the list. Price for the extra item is on application; it is not added as a surprise on the day.",
-      "For Barrier installation we also confirm the following, because it changes the scope: Record a new installation of the vehicle barrier installation, island, supply and safety devices has been instructed against the last log entry so the visit does not repeat a fix that already failed. The observation is tied back to BS EN 12453. We name the room, the lane or the stair in the note so a later visit can find the same the vehicle barrier installation, island, supply and safety devices.",
-      "Check the safety device or the fire interface that sits next to the vehicle barrier installation, island, supply and safety devices, not only the obvious failed part. That step matters on Barrier installation when the building is a light-industrial estate unit with a roller shutter and a side stair. Rushing it is how a second call-out is created. We would rather leave a clear defect than a silent temporary fix that the next engineer cannot see.",
-      "The instructing client can expect this from the Barrier installation visit: Write the result against BS EN 12453, as a work standard rather than as an accreditation. We explain it to the person who met us, and we put the same words in an installation note describing what was fitted, how it was tested, and what the client must do weekly. Verbal-only handovers are not the record.",
-      "Before we close Barrier installation we make sure of one more thing: Hand over an installation note describing what was fitted, how it was tested, and what the client must do weekly, and list any item still open so Barrier installation is not signed off early. If that check fails, the system is not described as complete. The outstanding item is quoted price on application after the survey we have just done, using the measurements already taken.",
-      "The paperwork for Barrier installation is an installation note describing what was fitted, how it was tested, and what the client must do weekly. It names the address, the date, the the vehicle barrier installation, island, supply and safety devices, and the result. It does not carry a fake approval logo. Certificate-style wording on this page means the note we issue for the work done, not a claim that iComply holds a third-party registration. The duty holder keeps the copy. We can resend it to the managing agent when the instruction asks for that. A failed device stays labelled so the next person can see what was found.",
-      "Pricing for Barrier installation is price on application after survey. We do not publish a pound figure, a band, or a from-price. The survey has to see the vehicle barrier installation, island, supply and safety devices, the access, and whether the visit is a repair, a service or a new installation. A phone call can book the survey. It cannot produce a serious figure while the model is unknown. CAME supply packs, where a barrier job uses them, are also price on application on this page. We are instructed by facilities managers, and the quote is addressed to that client.",
-      "Coverage for Barrier installation is UK-wide from Stockport. iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Call 07517806082 or email info@icomplypropertyservices.co.uk. Town pages, when they are published in a later wave, will use the real county and region. This hub does not pretend we have a branch in every town, and it does not use a Greater Manchester-only town list for a nationwide trade. The intent of this page is installation: we do the work the instruction describes, and we do not pad it with unrelated trades. These lines are not gas work, so this page does not use gas-registration wording."
-    ],
-    "points": [
-      "Instruction understood before attendance: a new installation of the vehicle barrier installation, island, supply and safety devices has been instructed.",
-      "Equipment confirmed on site: the vehicle barrier installation, island, supply and safety devices.",
-      "Work standard named in the note: BS EN 12453.",
-      "Record left with the client: an installation note describing what was fitted, how it was tested, and what the client must do weekly.",
-      "Price on application after survey. No published pound figure.",
-      "Arranged UK-wide from Stockport for facilities managers."
-    ],
-    "faqs": [
-      [
-        "How is Barrier installation quoted?",
-        "Barrier installation is price on application after we have seen the vehicle barrier installation, island, supply and safety devices and the access. We do not publish a pound figure or a from-price."
-      ],
-      [
-        "Do you cover my town for Barrier installation?",
-        "Yes. Barrier installation is arranged UK-wide from our Stockport base for facilities managers. We do not claim a local office in each town."
-      ],
-      [
-        "What standard do you work to on Barrier installation?",
-        "We work to BS EN 12453 as the standard for the task. That is not an accreditation and we do not quote a membership number."
-      ],
-      [
-        "Which brands does Barrier installation cover?",
-        "New barrier installation on this page is CAME. iComply is a CAME partner. We do not publish a partner number."
-      ],
-      [
-        "What should I have ready when I ask for Barrier installation?",
-        "The full address, what has failed or what you want installed, any log or previous note, and who can meet us. Photos of the nameplate help. They do not replace the survey."
-      ]
-    ],
-    "images": [
-      [
-        "/assets/images/lanes/barriers/08.jpg",
-        "Barrier installation — equipment looked at on site by iComply Property Services"
-      ],
-      [
-        "/assets/images/lanes/barriers/11.jpg",
-        "Barrier installation — the control or lane position recorded before any part is changed"
-      ],
-      [
-        "/assets/images/lanes/barriers/14.jpg",
-        "Barrier installation — the note left with the instructing client after the visit"
-      ]
-    ],
-    "links": [
-      [
-        "/pages/services/barriers",
-        "Barriers"
-      ],
-      [
-        "/pages/jobs",
-        "All job types"
-      ],
-      [
-        "/pages/jobs/barrier-loop-detector",
-        "Barrier loop detector"
-      ],
-      [
-        "/pages/jobs/barrier-repair",
-        "Barrier repair"
-      ],
-      [
-        "/pages/jobs/came-barrier-installation",
-        "CAME barrier installation"
-      ]
-    ],
-    "service_label": "Barriers",
-    "service_href": "/pages/services/barriers",
-    "parent_label": "Job types",
-    "parent_href": "/pages/jobs",
-    "form_options": [
-      "Barrier installation",
-      "Barriers"
-    ],
-    "area_served": "United Kingdom",
-    "show_nap": true,
-    "word_count": 1256
   },
   "barrier-loop-detector": {
     "slug": "barrier-loop-detector",
@@ -2543,7 +2222,7 @@
         "All job types"
       ],
       [
-        "/pages/jobs/barrier-maintenance",
+        "/pages/keywords/barrier-maintenance",
         "Barrier maintenance"
       ],
       [
@@ -2566,113 +2245,6 @@
     "area_served": "United Kingdom",
     "show_nap": true,
     "word_count": 1261
-  },
-  "barrier-maintenance": {
-    "slug": "barrier-maintenance",
-    "line": "barrier",
-    "kind": "generic",
-    "brand": "",
-    "policy": "incumbent_generic",
-    "name": "Barrier maintenance",
-    "title": "Barrier maintenance | iComply Property Services",
-    "meta": "Barrier maintenance for housing associations, arranged UK-wide from Stockport. Scope is confirmed on site before anyone attends. Request a quote — POA.",
-    "keywords": "Barrier maintenance, Barriers, Stockport, UK-wide",
-    "h1": "Barrier maintenance",
-    "kicker": "Barriers",
-    "lede": "Barrier maintenance for housing associations, arranged UK-wide from Stockport. Price on application after we have seen the site.",
-    "card": "Barrier maintenance for housing associations. Price on application after survey.",
-    "paragraphs": [
-      "Barrier maintenance is a site visit, not a packaged price. We arrange it UK-wide from Stockport for housing associations. A typical instruction arrives when planned maintenance of the barrier motor, arm, springs, loop and photocells is due. The building we are usually called to is a stair core in a occupied block where the vents must still open during the visit. Before a date is offered we ask what equipment is already there, who holds the keys, and whether the area has to stay in use. We do not claim a local office in that town. The engineer comes from our Stockport base at iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Call 07517806082 or email info@icomplypropertyservices.co.uk.",
-      "Access for Barrier maintenance is part of the scope. On this sort of visit, the roof is only reached with a planned access method, not a borrowed ladder. We do not start by isolating the barrier motor, arm, springs, loop and photocells until the duty holder knows the system may be offline and for how long. The useful first measurement is travel of the actuator against the vent's free movement. We do not assume that the drawing matches the vent that is fitted. Photographs of the nameplate, the supply and the surrounding fixings are taken before anything is removed, so the note matches the building rather than a generic description of barrier maintenance.",
-      "The work standard we write against on Barrier maintenance is BS EN 12453. That is the standard for the task, not an accreditation and not a certificate number. We do not claim a third-party approval body, and we do not invent a membership number. Where the fire strategy or the specification asks for a particular category or a particular cause-and-effect, we follow that document and we record any place the installed the barrier motor, arm, springs, loop and photocells does not match it. If the strategy is missing, we say so and we stop short of inventing a design.",
-      "Barrier maintenance is carried out on the barrier that is already in the lane. The make and model are confirmed on site. New barrier installation and full barrier replacement are specified as CAME, because iComply is a CAME partner. We do not publish a partner number. Other makes stay in service when the incumbent should remain: we repair, service and maintain that existing kit, and we do not describe that work as a new installation of that other make. Arm changes and motor changes on an existing cabinet are parts for the kit that is there, not a new brand install.",
-      "Identify the barrier motor, arm, springs, loop and photocells from the nameplate and compare it with the report of planned maintenance of the barrier motor, arm, springs, loop and photocells is due. This is done while the the barrier motor, arm, springs, loop and photocells is still in the condition we found it, so the note for Barrier maintenance explains the fault rather than only the repair. The result is written in plain language for housing associations. If a part is required and is not on the van, we do not pretend it was fitted.",
-      "Next we deal with this specific point of Barrier maintenance: Prove the supply, the signal and the mechanical travel before ordering parts for Barrier maintenance. The check is repeated once after the adjustment so a single lucky result is not treated as finished. Anything that still fails stays on the list. Price for the extra item is on application; it is not added as a surprise on the day.",
-      "For Barrier maintenance we also confirm the following, because it changes the scope: Record planned maintenance of the barrier motor, arm, springs, loop and photocells is due against the last log entry so the visit does not repeat a fix that already failed. The observation is tied back to BS EN 12453. We name the room, the lane or the stair in the note so a later visit can find the same the barrier motor, arm, springs, loop and photocells.",
-      "Check the safety device or the fire interface that sits next to the barrier motor, arm, springs, loop and photocells, not only the obvious failed part. That step matters on Barrier maintenance when the building is a stair core in a occupied block where the vents must still open during the visit. Rushing it is how a second call-out is created. We would rather leave a clear defect than a silent temporary fix that the next engineer cannot see.",
-      "The instructing client can expect this from the Barrier maintenance visit: Write the result against BS EN 12453, as a work standard rather than as an accreditation. We explain it to the person who met us, and we put the same words in a service note listing what was inspected, what failed, and the date of the next planned visit. Verbal-only handovers are not the record.",
-      "Before we close Barrier maintenance we make sure of one more thing: Hand over a service note listing what was inspected, what failed, and the date of the next planned visit, and list any item still open so Barrier maintenance is not signed off early. If that check fails, the system is not described as complete. The outstanding item is quoted price on application after the survey we have just done, using the measurements already taken.",
-      "The paperwork for Barrier maintenance is a service note listing what was inspected, what failed, and the date of the next planned visit. It names the address, the date, the the barrier motor, arm, springs, loop and photocells, and the result. It does not carry a fake approval logo. Certificate-style wording on this page means the note we issue for the work done, not a claim that iComply holds a third-party registration. The duty holder keeps the copy. We can resend it to the managing agent when the instruction asks for that. If the agreed work needs a return visit, that visit is scoped on its own and quoted again.",
-      "Pricing for Barrier maintenance is price on application after survey. We do not publish a pound figure, a band, or a from-price. The survey has to see the barrier motor, arm, springs, loop and photocells, the access, and whether the visit is a repair, a service or a new installation. A phone call can book the survey. It cannot produce a serious figure while the model is unknown. CAME supply packs, where a barrier job uses them, are also price on application on this page. We are instructed by housing associations, and the quote is addressed to that client.",
-      "Coverage for Barrier maintenance is UK-wide from Stockport. iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Call 07517806082 or email info@icomplypropertyservices.co.uk. Town pages, when they are published in a later wave, will use the real county and region. This hub does not pretend we have a branch in every town, and it does not use a Greater Manchester-only town list for a nationwide trade. The intent of this page is maintenance: we do the work the instruction describes, and we do not pad it with unrelated trades. These lines are not gas work, so this page does not use gas-registration wording."
-    ],
-    "points": [
-      "Instruction understood before attendance: planned maintenance of the barrier motor, arm, springs, loop and photocells is due.",
-      "Equipment confirmed on site: the barrier motor, arm, springs, loop and photocells.",
-      "Work standard named in the note: BS EN 12453.",
-      "Record left with the client: a service note listing what was inspected, what failed, and the date of the next planned visit.",
-      "Price on application after survey. No published pound figure.",
-      "Arranged UK-wide from Stockport for housing associations."
-    ],
-    "faqs": [
-      [
-        "How is Barrier maintenance quoted?",
-        "Barrier maintenance is price on application after we have seen the barrier motor, arm, springs, loop and photocells and the access. We do not publish a pound figure or a from-price."
-      ],
-      [
-        "Do you cover my town for Barrier maintenance?",
-        "Yes. Barrier maintenance is arranged UK-wide from our Stockport base for housing associations. We do not claim a local office in each town."
-      ],
-      [
-        "What standard do you work to on Barrier maintenance?",
-        "We work to BS EN 12453 as the standard for the task. That is not an accreditation and we do not quote a membership number."
-      ],
-      [
-        "Which brands does Barrier maintenance cover?",
-        "We work on the barrier that is already there. New installation and full replacement are specified as CAME. iComply is a CAME partner, stated in plain words with no number."
-      ],
-      [
-        "What should I have ready when I ask for Barrier maintenance?",
-        "The full address, what has failed or what you want installed, any log or previous note, and who can meet us. Photos of the nameplate help. They do not replace the survey."
-      ]
-    ],
-    "images": [
-      [
-        "/assets/images/lanes/barriers/14.jpg",
-        "Barrier maintenance — equipment looked at on site by iComply Property Services"
-      ],
-      [
-        "/assets/images/lanes/barriers/18.jpg",
-        "Barrier maintenance — the control or lane position recorded before any part is changed"
-      ],
-      [
-        "/assets/images/lanes/barriers/22.jpg",
-        "Barrier maintenance — the note left with the instructing client after the visit"
-      ]
-    ],
-    "links": [
-      [
-        "/pages/services/barriers",
-        "Barriers"
-      ],
-      [
-        "/pages/jobs",
-        "All job types"
-      ],
-      [
-        "/pages/jobs/barrier-motor-replacement",
-        "Barrier motor replacement"
-      ],
-      [
-        "/pages/jobs/barrier-service",
-        "Barrier service"
-      ],
-      [
-        "/pages/jobs/came-barrier-service",
-        "CAME barrier service"
-      ]
-    ],
-    "service_label": "Barriers",
-    "service_href": "/pages/services/barriers",
-    "parent_label": "Job types",
-    "parent_href": "/pages/jobs",
-    "form_options": [
-      "Barrier maintenance",
-      "Barriers"
-    ],
-    "area_served": "United Kingdom",
-    "show_nap": true,
-    "word_count": 1231
   },
   "barrier-motor-replacement": {
     "slug": "barrier-motor-replacement",
@@ -2757,7 +2329,7 @@
         "All job types"
       ],
       [
-        "/pages/jobs/barrier-repair",
+        "/pages/keywords/barrier-repair",
         "Barrier repair"
       ],
       [
@@ -2780,113 +2352,6 @@
     "area_served": "United Kingdom",
     "show_nap": true,
     "word_count": 1284
-  },
-  "barrier-repair": {
-    "slug": "barrier-repair",
-    "line": "barrier",
-    "kind": "generic",
-    "brand": "",
-    "policy": "incumbent_generic",
-    "name": "Barrier repair",
-    "title": "Barrier repair | iComply Property Services",
-    "meta": "Barrier repair for care-home managers, arranged UK-wide from Stockport. Scope is confirmed on site before anyone attends. Request a quote — POA.",
-    "keywords": "Barrier repair, Barriers, Stockport, UK-wide",
-    "h1": "Barrier repair",
-    "kicker": "Barriers",
-    "lede": "Barrier repair for care-home managers, arranged UK-wide from Stockport. Price on application after we have seen the site.",
-    "card": "Barrier repair for care-home managers. Price on application after survey.",
-    "paragraphs": [
-      "Barrier repair is a site visit, not a packaged price. We arrange it UK-wide from Stockport for care-home managers. A typical instruction arrives when the the barrier cabinet, motor and safety circuit has failed, stuck, or started reporting a fault. The building we are usually called to is a school plant room that is only free after the pupils have left. Before a date is offered we ask what equipment is already there, who holds the keys, and whether the area has to stay in use. We do not claim a local office in that town. The engineer comes from our Stockport base at iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Call 07517806082 or email info@icomplypropertyservices.co.uk.",
-      "Access for Barrier repair is part of the scope. On this sort of visit, a second person is needed at the vent while the other watches the panel. We do not start by isolating the barrier cabinet, motor and safety circuit until the duty holder knows the system may be offline and for how long. The useful first measurement is whether the manual release still lets the lane open. We do not assume that a like-for-like device is still the right category for the room. Photographs of the nameplate, the supply and the surrounding fixings are taken before anything is removed, so the note matches the building rather than a generic description of barrier repair.",
-      "The work standard we write against on Barrier repair is BS EN 12453. That is the standard for the task, not an accreditation and not a certificate number. We do not claim a third-party approval body, and we do not invent a membership number. Where the fire strategy or the specification asks for a particular category or a particular cause-and-effect, we follow that document and we record any place the installed the barrier cabinet, motor and safety circuit does not match it. If the strategy is missing, we say so and we stop short of inventing a design.",
-      "Barrier repair is carried out on the barrier that is already in the lane. The make and model are confirmed on site. New barrier installation and full barrier replacement are specified as CAME, because iComply is a CAME partner. We do not publish a partner number. Other makes stay in service when the incumbent should remain: we repair, service and maintain that existing kit, and we do not describe that work as a new installation of that other make. Arm changes and motor changes on an existing cabinet are parts for the kit that is there, not a new brand install.",
-      "Identify the barrier cabinet, motor and safety circuit from the nameplate and compare it with the report of the the barrier cabinet, motor and safety circuit has failed, stuck, or started reporting a fault. This is done while the the barrier cabinet, motor and safety circuit is still in the condition we found it, so the note for Barrier repair explains the fault rather than only the repair. The result is written in plain language for care-home managers. If a part is required and is not on the van, we do not pretend it was fitted.",
-      "Next we deal with this specific point of Barrier repair: Prove the supply, the signal and the mechanical travel before ordering parts for Barrier repair. The check is repeated once after the adjustment so a single lucky result is not treated as finished. Anything that still fails stays on the list. Price for the extra item is on application; it is not added as a surprise on the day.",
-      "For Barrier repair we also confirm the following, because it changes the scope: Record the the barrier cabinet, motor and safety circuit has failed, stuck, or started reporting a fault against the last log entry so the visit does not repeat a fix that already failed. The observation is tied back to BS EN 12453. We name the room, the lane or the stair in the note so a later visit can find the same the barrier cabinet, motor and safety circuit.",
-      "Check the safety device or the fire interface that sits next to the barrier cabinet, motor and safety circuit, not only the obvious failed part. That step matters on Barrier repair when the building is a school plant room that is only free after the pupils have left. Rushing it is how a second call-out is created. We would rather leave a clear defect than a silent temporary fix that the next engineer cannot see.",
-      "The instructing client can expect this from the Barrier repair visit: Write the result against BS EN 12453, as a work standard rather than as an accreditation. We explain it to the person who met us, and we put the same words in a written note of the visit for the site file. Verbal-only handovers are not the record.",
-      "Before we close Barrier repair we make sure of one more thing: Hand over a written note of the visit for the site file, and list any item still open so Barrier repair is not signed off early. If that check fails, the system is not described as complete. The outstanding item is quoted price on application after the survey we have just done, using the measurements already taken.",
-      "The paperwork for Barrier repair is a written note of the visit for the site file. It names the address, the date, the the barrier cabinet, motor and safety circuit, and the result. It does not carry a fake approval logo. Certificate-style wording on this page means the note we issue for the work done, not a claim that iComply holds a third-party registration. The duty holder keeps the copy. We can resend it to the managing agent when the instruction asks for that. Where the building has a waking watch or a management procedure, we tell them what changed before we leave.",
-      "Pricing for Barrier repair is price on application after survey. We do not publish a pound figure, a band, or a from-price. The survey has to see the barrier cabinet, motor and safety circuit, the access, and whether the visit is a repair, a service or a new installation. A phone call can book the survey. It cannot produce a serious figure while the model is unknown. CAME supply packs, where a barrier job uses them, are also price on application on this page. We are instructed by care-home managers, and the quote is addressed to that client.",
-      "Coverage for Barrier repair is UK-wide from Stockport. iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Call 07517806082 or email info@icomplypropertyservices.co.uk. Town pages, when they are published in a later wave, will use the real county and region. This hub does not pretend we have a branch in every town, and it does not use a Greater Manchester-only town list for a nationwide trade. The intent of this page is repair: we do the work the instruction describes, and we do not pad it with unrelated trades. These lines are not gas work, so this page does not use gas-registration wording."
-    ],
-    "points": [
-      "Instruction understood before attendance: the the barrier cabinet, motor and safety circuit has failed, stuck, or started reporting a fault.",
-      "Equipment confirmed on site: the barrier cabinet, motor and safety circuit.",
-      "Work standard named in the note: BS EN 12453.",
-      "Record left with the client: a written note of the visit for the site file.",
-      "Price on application after survey. No published pound figure.",
-      "Arranged UK-wide from Stockport for care-home managers."
-    ],
-    "faqs": [
-      [
-        "How is Barrier repair quoted?",
-        "Barrier repair is price on application after we have seen the barrier cabinet, motor and safety circuit and the access. We do not publish a pound figure or a from-price."
-      ],
-      [
-        "Do you cover my town for Barrier repair?",
-        "Yes. Barrier repair is arranged UK-wide from our Stockport base for care-home managers. We do not claim a local office in each town."
-      ],
-      [
-        "What standard do you work to on Barrier repair?",
-        "We work to BS EN 12453 as the standard for the task. That is not an accreditation and we do not quote a membership number."
-      ],
-      [
-        "Which brands does Barrier repair cover?",
-        "We work on the barrier that is already there. New installation and full replacement are specified as CAME. iComply is a CAME partner, stated in plain words with no number."
-      ],
-      [
-        "What should I have ready when I ask for Barrier repair?",
-        "The full address, what has failed or what you want installed, any log or previous note, and who can meet us. Photos of the nameplate help. They do not replace the survey."
-      ]
-    ],
-    "images": [
-      [
-        "/assets/images/lanes/barriers/22.jpg",
-        "Barrier repair — equipment looked at on site by iComply Property Services"
-      ],
-      [
-        "/assets/images/services/barriers.jpg",
-        "Barrier repair — the control or lane position recorded before any part is changed"
-      ],
-      [
-        "/assets/images/lanes/barriers/01.jpg",
-        "Barrier repair — the note left with the instructing client after the visit"
-      ]
-    ],
-    "links": [
-      [
-        "/pages/services/barriers",
-        "Barriers"
-      ],
-      [
-        "/pages/jobs",
-        "All job types"
-      ],
-      [
-        "/pages/jobs/barrier-replacement",
-        "Barrier replacement"
-      ],
-      [
-        "/pages/jobs/bft-barrier-repair",
-        "BFT barrier repair"
-      ],
-      [
-        "/pages/jobs/car-park-barrier-installation",
-        "Car park barrier installation"
-      ]
-    ],
-    "service_label": "Barriers",
-    "service_href": "/pages/services/barriers",
-    "parent_label": "Job types",
-    "parent_href": "/pages/jobs",
-    "form_options": [
-      "Barrier repair",
-      "Barriers"
-    ],
-    "area_served": "United Kingdom",
-    "show_nap": true,
-    "word_count": 1214
   },
   "barrier-replacement": {
     "slug": "barrier-replacement",
@@ -2971,7 +2436,7 @@
         "All job types"
       ],
       [
-        "/pages/jobs/barrier-service",
+        "/pages/keywords/barrier-service",
         "Barrier service"
       ],
       [
@@ -2994,113 +2459,6 @@
     "area_served": "United Kingdom",
     "show_nap": true,
     "word_count": 1278
-  },
-  "barrier-service": {
-    "slug": "barrier-service",
-    "line": "barrier",
-    "kind": "generic",
-    "brand": "",
-    "policy": "incumbent_generic",
-    "name": "Barrier service",
-    "title": "Barrier service | iComply Property Services",
-    "meta": "Barrier service for warehouse and industrial occupiers, arranged UK-wide from Stockport. The figure follows the survey. Request a quote — POA.",
-    "keywords": "Barrier service, Barriers, Stockport, UK-wide",
-    "h1": "Barrier service",
-    "kicker": "Barriers",
-    "lede": "Barrier service for warehouse and industrial occupiers, arranged UK-wide from Stockport. Price on application after we have seen the site.",
-    "card": "Barrier service for warehouse and industrial occupiers. Price on application after survey.",
-    "paragraphs": [
-      "Barrier service is a site visit, not a packaged price. We arrange it UK-wide from Stockport for warehouse and industrial occupiers. A typical instruction arrives when a planned service of the barrier, its manual release and its safety devices is due. The building we are usually called to is a care-home corridor where residents stay in their rooms while we work. Before a date is offered we ask what equipment is already there, who holds the keys, and whether the area has to stay in use. We do not claim a local office in that town. The engineer comes from our Stockport base at iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Call 07517806082 or email info@icomplypropertyservices.co.uk.",
-      "Access for Barrier service is part of the scope. On this sort of visit, the roof is only reached with a planned access method, not a borrowed ladder. We do not start by isolating the barrier, its manual release and its safety devices until the duty holder knows the system may be offline and for how long. The useful first measurement is boom length and spring balance on the arm that is actually fitted. We do not assume that every brand on the old panel is still supported. Photographs of the nameplate, the supply and the surrounding fixings are taken before anything is removed, so the note matches the building rather than a generic description of barrier service.",
-      "The work standard we write against on Barrier service is BS EN 12453. That is the standard for the task, not an accreditation and not a certificate number. We do not claim a third-party approval body, and we do not invent a membership number. Where the fire strategy or the specification asks for a particular category or a particular cause-and-effect, we follow that document and we record any place the installed the barrier, its manual release and its safety devices does not match it. If the strategy is missing, we say so and we stop short of inventing a design.",
-      "Barrier service is carried out on the barrier that is already in the lane. The make and model are confirmed on site. New barrier installation and full barrier replacement are specified as CAME, because iComply is a CAME partner. We do not publish a partner number. Other makes stay in service when the incumbent should remain: we repair, service and maintain that existing kit, and we do not describe that work as a new installation of that other make. Arm changes and motor changes on an existing cabinet are parts for the kit that is there, not a new brand install.",
-      "Identify the barrier, its manual release and its safety devices from the nameplate and compare it with the report of a planned service of the barrier, its manual release and its safety devices is due. This is done while the the barrier, its manual release and its safety devices is still in the condition we found it, so the note for Barrier service explains the fault rather than only the repair. The result is written in plain language for warehouse and industrial occupiers. If a part is required and is not on the van, we do not pretend it was fitted.",
-      "Next we deal with this specific point of Barrier service: Prove the supply, the signal and the mechanical travel before ordering parts for Barrier service. The check is repeated once after the adjustment so a single lucky result is not treated as finished. Anything that still fails stays on the list. Price for the extra item is on application; it is not added as a surprise on the day.",
-      "For Barrier service we also confirm the following, because it changes the scope: Record a planned service of the barrier, its manual release and its safety devices is due against the last log entry so the visit does not repeat a fix that already failed. The observation is tied back to BS EN 12453. We name the room, the lane or the stair in the note so a later visit can find the same the barrier, its manual release and its safety devices.",
-      "Check the safety device or the fire interface that sits next to the barrier, its manual release and its safety devices, not only the obvious failed part. That step matters on Barrier service when the building is a care-home corridor where residents stay in their rooms while we work. Rushing it is how a second call-out is created. We would rather leave a clear defect than a silent temporary fix that the next engineer cannot see.",
-      "The instructing client can expect this from the Barrier service visit: Write the result against BS EN 12453, as a work standard rather than as an accreditation. We explain it to the person who met us, and we put the same words in a service note listing what was inspected, what failed, and the date of the next planned visit. Verbal-only handovers are not the record.",
-      "Before we close Barrier service we make sure of one more thing: Hand over a service note listing what was inspected, what failed, and the date of the next planned visit, and list any item still open so Barrier service is not signed off early. If that check fails, the system is not described as complete. The outstanding item is quoted price on application after the survey we have just done, using the measurements already taken.",
-      "The paperwork for Barrier service is a service note listing what was inspected, what failed, and the date of the next planned visit. It names the address, the date, the the barrier, its manual release and its safety devices, and the result. It does not carry a fake approval logo. Certificate-style wording on this page means the note we issue for the work done, not a claim that iComply holds a third-party registration. The duty holder keeps the copy. We can resend it to the managing agent when the instruction asks for that. A failed device stays labelled so the next person can see what was found.",
-      "Pricing for Barrier service is price on application after survey. We do not publish a pound figure, a band, or a from-price. The survey has to see the barrier, its manual release and its safety devices, the access, and whether the visit is a repair, a service or a new installation. A phone call can book the survey. It cannot produce a serious figure while the model is unknown. CAME supply packs, where a barrier job uses them, are also price on application on this page. We are instructed by warehouse and industrial occupiers, and the quote is addressed to that client.",
-      "Coverage for Barrier service is UK-wide from Stockport. iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Call 07517806082 or email info@icomplypropertyservices.co.uk. Town pages, when they are published in a later wave, will use the real county and region. This hub does not pretend we have a branch in every town, and it does not use a Greater Manchester-only town list for a nationwide trade. The intent of this page is service: we do the work the instruction describes, and we do not pad it with unrelated trades. These lines are not gas work, so this page does not use gas-registration wording."
-    ],
-    "points": [
-      "Instruction understood before attendance: a planned service of the barrier, its manual release and its safety devices is due.",
-      "Equipment confirmed on site: the barrier, its manual release and its safety devices.",
-      "Work standard named in the note: BS EN 12453.",
-      "Record left with the client: a service note listing what was inspected, what failed, and the date of the next planned visit.",
-      "Price on application after survey. No published pound figure.",
-      "Arranged UK-wide from Stockport for warehouse and industrial occupiers."
-    ],
-    "faqs": [
-      [
-        "How is Barrier service quoted?",
-        "Barrier service is price on application after we have seen the barrier, its manual release and its safety devices and the access. We do not publish a pound figure or a from-price."
-      ],
-      [
-        "Do you cover my town for Barrier service?",
-        "Yes. Barrier service is arranged UK-wide from our Stockport base for warehouse and industrial occupiers. We do not claim a local office in each town."
-      ],
-      [
-        "What standard do you work to on Barrier service?",
-        "We work to BS EN 12453 as the standard for the task. That is not an accreditation and we do not quote a membership number."
-      ],
-      [
-        "Which brands does Barrier service cover?",
-        "We work on the barrier that is already there. New installation and full replacement are specified as CAME. iComply is a CAME partner, stated in plain words with no number."
-      ],
-      [
-        "What should I have ready when I ask for Barrier service?",
-        "The full address, what has failed or what you want installed, any log or previous note, and who can meet us. Photos of the nameplate help. They do not replace the survey."
-      ]
-    ],
-    "images": [
-      [
-        "/assets/images/lanes/barriers/01.jpg",
-        "Barrier service — equipment looked at on site by iComply Property Services"
-      ],
-      [
-        "/assets/images/lanes/barriers/04.jpg",
-        "Barrier service — the control or lane position recorded before any part is changed"
-      ],
-      [
-        "/assets/images/lanes/barriers/06.jpg",
-        "Barrier service — the note left with the instructing client after the visit"
-      ]
-    ],
-    "links": [
-      [
-        "/pages/services/barriers",
-        "Barriers"
-      ],
-      [
-        "/pages/jobs",
-        "All job types"
-      ],
-      [
-        "/pages/jobs/barrier-stuck-down",
-        "Barrier stuck down"
-      ],
-      [
-        "/pages/jobs/came-barrier-repair",
-        "CAME barrier repair"
-      ],
-      [
-        "/pages/jobs/car-park-barrier-repair",
-        "Car park barrier repair"
-      ]
-    ],
-    "service_label": "Barriers",
-    "service_href": "/pages/services/barriers",
-    "parent_label": "Job types",
-    "parent_href": "/pages/jobs",
-    "form_options": [
-      "Barrier service",
-      "Barriers"
-    ],
-    "area_served": "United Kingdom",
-    "show_nap": true,
-    "word_count": 1245
   },
   "barrier-stuck-down": {
     "slug": "barrier-stuck-down",
@@ -3403,7 +2761,7 @@
         "CAME barrier repair"
       ],
       [
-        "/pages/jobs/car-park-barrier-installation",
+        "/pages/keywords/car-park-barrier-installation",
         "Car park barrier installation"
       ],
       [
@@ -3514,7 +2872,7 @@
         "Car park barrier maintenance"
       ],
       [
-        "/pages/jobs/rising-arm-barrier-installation",
+        "/pages/keywords/rising-arm-barrier-installation",
         "Rising arm barrier installation"
       ]
     ],
@@ -3720,7 +3078,7 @@
         "All job types"
       ],
       [
-        "/pages/jobs/car-park-barrier-installation",
+        "/pages/keywords/car-park-barrier-installation",
         "Car park barrier installation"
       ],
       [
@@ -3728,7 +3086,7 @@
         "Car park barrier servicing"
       ],
       [
-        "/pages/jobs/vehicle-barrier-installation",
+        "/pages/keywords/vehicle-barrier-installation",
         "Vehicle barrier installation"
       ]
     ],
@@ -3743,113 +3101,6 @@
     "area_served": "United Kingdom",
     "show_nap": true,
     "word_count": 1266
-  },
-  "car-park-barrier-installation": {
-    "slug": "car-park-barrier-installation",
-    "line": "barrier",
-    "kind": "generic",
-    "brand": "",
-    "policy": "came_new",
-    "name": "Car park barrier installation",
-    "title": "Car park barrier installation | iComply Property Services",
-    "meta": "Car park barrier installation for school and college estates teams, arranged UK-wide from Stockport. Scope is confirmed on site. Request a quote — POA.",
-    "keywords": "Car park barrier installation, Barriers, Stockport, UK-wide",
-    "h1": "Car park barrier installation",
-    "kicker": "Barriers",
-    "lede": "Car park barrier installation for school and college estates teams, arranged UK-wide from Stockport. Price on application after we have seen the site.",
-    "card": "Car park barrier installation for school and college estates teams. Price on application after survey.",
-    "paragraphs": [
-      "Car park barrier installation is a site visit, not a packaged price. We arrange it UK-wide from Stockport for school and college estates teams. A typical instruction arrives when a new installation of the car-park barrier, island and entry lane has been instructed. The building we are usually called to is a housing-association block with a concierge log we have to sign. Before a date is offered we ask what equipment is already there, who holds the keys, and whether the area has to stay in use. We do not claim a local office in that town. The engineer comes from our Stockport base at iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Call 07517806082 or email info@icomplypropertyservices.co.uk.",
-      "Access for Car park barrier installation is part of the scope. On this sort of visit, the escape route stays clear; we do not leave boards or tools in the stair. We do not start by isolating the car-park barrier, island and entry lane until the duty holder knows the system may be offline and for how long. The useful first measurement is cause-and-effect from the fire panel input to the vent output. We do not assume that the fire strategy allows the stair to be used as the only escape during the test. Photographs of the nameplate, the supply and the surrounding fixings are taken before anything is removed, so the note matches the building rather than a generic description of car park barrier installation.",
-      "The work standard we write against on Car park barrier installation is BS EN 12453. That is the standard for the task, not an accreditation and not a certificate number. We do not claim a third-party approval body, and we do not invent a membership number. Where the fire strategy or the specification asks for a particular category or a particular cause-and-effect, we follow that document and we record any place the installed the car-park barrier, island and entry lane does not match it. If the strategy is missing, we say so and we stop short of inventing a design.",
-      "Car park barrier installation is specified as CAME. iComply is a CAME partner. We state that in plain words and we do not publish a partner number, an accreditation number, or an authorised-dealer claim. The lane, the boom length, the supply and the safety devices are measured on site. Installation is price on application after that survey. We do not print a pack price or a from-price on this page. If an older barrier of another make is already in the lane and the incumbent should stay, we say so in the note and we repair that existing kit instead of forcing a change of make. The model is confirmed on site before parts are ordered.",
-      "Identify the car-park barrier, island and entry lane from the nameplate and compare it with the report of a new installation of the car-park barrier, island and entry lane has been instructed. This is done while the the car-park barrier, island and entry lane is still in the condition we found it, so the note for Car park barrier installation explains the fault rather than only the repair. The result is written in plain language for school and college estates teams. If a part is required and is not on the van, we do not pretend it was fitted.",
-      "Next we deal with this specific point of Car park barrier installation: Prove the supply, the signal and the mechanical travel before ordering parts for Car park barrier installation. The check is repeated once after the adjustment so a single lucky result is not treated as finished. Anything that still fails stays on the list. Price for the extra item is on application; it is not added as a surprise on the day.",
-      "For Car park barrier installation we also confirm the following, because it changes the scope: Record a new installation of the car-park barrier, island and entry lane has been instructed against the last log entry so the visit does not repeat a fix that already failed. The observation is tied back to BS EN 12453. We name the room, the lane or the stair in the note so a later visit can find the same the car-park barrier, island and entry lane.",
-      "Check the safety device or the fire interface that sits next to the car-park barrier, island and entry lane, not only the obvious failed part. That step matters on Car park barrier installation when the building is a housing-association block with a concierge log we have to sign. Rushing it is how a second call-out is created. We would rather leave a clear defect than a silent temporary fix that the next engineer cannot see.",
-      "The instructing client can expect this from the Car park barrier installation visit: Write the result against BS EN 12453, as a work standard rather than as an accreditation. We explain it to the person who met us, and we put the same words in an installation note describing what was fitted, how it was tested, and what the client must do weekly. Verbal-only handovers are not the record.",
-      "Before we close Car park barrier installation we make sure of one more thing: Hand over an installation note describing what was fitted, how it was tested, and what the client must do weekly, and list any item still open so Car park barrier installation is not signed off early. If that check fails, the system is not described as complete. The outstanding item is quoted price on application after the survey we have just done, using the measurements already taken.",
-      "The paperwork for Car park barrier installation is an installation note describing what was fitted, how it was tested, and what the client must do weekly. It names the address, the date, the the car-park barrier, island and entry lane, and the result. It does not carry a fake approval logo. Certificate-style wording on this page means the note we issue for the work done, not a claim that iComply holds a third-party registration. The duty holder keeps the copy. We can resend it to the managing agent when the instruction asks for that. We do not leave the system isolated overnight unless the duty holder has accepted that in writing.",
-      "Pricing for Car park barrier installation is price on application after survey. We do not publish a pound figure, a band, or a from-price. The survey has to see the car-park barrier, island and entry lane, the access, and whether the visit is a repair, a service or a new installation. A phone call can book the survey. It cannot produce a serious figure while the model is unknown. CAME supply packs, where a barrier job uses them, are also price on application on this page. We are instructed by school and college estates teams, and the quote is addressed to that client.",
-      "Coverage for Car park barrier installation is UK-wide from Stockport. iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Call 07517806082 or email info@icomplypropertyservices.co.uk. Town pages, when they are published in a later wave, will use the real county and region. This hub does not pretend we have a branch in every town, and it does not use a Greater Manchester-only town list for a nationwide trade. The intent of this page is installation: we do the work the instruction describes, and we do not pad it with unrelated trades. These lines are not gas work, so this page does not use gas-registration wording."
-    ],
-    "points": [
-      "Instruction understood before attendance: a new installation of the car-park barrier, island and entry lane has been instructed.",
-      "Equipment confirmed on site: the car-park barrier, island and entry lane.",
-      "Work standard named in the note: BS EN 12453.",
-      "Record left with the client: an installation note describing what was fitted, how it was tested, and what the client must do weekly.",
-      "Price on application after survey. No published pound figure.",
-      "Arranged UK-wide from Stockport for school and college estates teams."
-    ],
-    "faqs": [
-      [
-        "How is Car park barrier installation quoted?",
-        "Car park barrier installation is price on application after we have seen the car-park barrier, island and entry lane and the access. We do not publish a pound figure or a from-price."
-      ],
-      [
-        "Do you cover my town for Car park barrier installation?",
-        "Yes. Car park barrier installation is arranged UK-wide from our Stockport base for school and college estates teams. We do not claim a local office in each town."
-      ],
-      [
-        "What standard do you work to on Car park barrier installation?",
-        "We work to BS EN 12453 as the standard for the task. That is not an accreditation and we do not quote a membership number."
-      ],
-      [
-        "Which brands does Car park barrier installation cover?",
-        "New barrier installation on this page is CAME. iComply is a CAME partner. We do not publish a partner number."
-      ],
-      [
-        "What should I have ready when I ask for Car park barrier installation?",
-        "The full address, what has failed or what you want installed, any log or previous note, and who can meet us. Photos of the nameplate help. They do not replace the survey."
-      ]
-    ],
-    "images": [
-      [
-        "/assets/images/lanes/barriers/22.jpg",
-        "Car park barrier installation — equipment looked at on site by iComply Property Services"
-      ],
-      [
-        "/assets/images/services/barriers.jpg",
-        "Car park barrier installation — the control or lane position recorded before any part is changed"
-      ],
-      [
-        "/assets/images/lanes/barriers/01.jpg",
-        "Car park barrier installation — the note left with the instructing client after the visit"
-      ]
-    ],
-    "links": [
-      [
-        "/pages/services/barriers",
-        "Barriers"
-      ],
-      [
-        "/pages/jobs",
-        "All job types"
-      ],
-      [
-        "/pages/jobs/car-park-barrier-maintenance",
-        "Car park barrier maintenance"
-      ],
-      [
-        "/pages/jobs/faac-barrier-repair",
-        "FAAC barrier repair"
-      ],
-      [
-        "/pages/jobs/vehicle-barrier-repair",
-        "Vehicle barrier repair"
-      ]
-    ],
-    "service_label": "Barriers",
-    "service_href": "/pages/services/barriers",
-    "parent_label": "Job types",
-    "parent_href": "/pages/jobs",
-    "form_options": [
-      "Car park barrier installation",
-      "Barriers"
-    ],
-    "area_served": "United Kingdom",
-    "show_nap": true,
-    "word_count": 1299
   },
   "car-park-barrier-maintenance": {
     "slug": "car-park-barrier-maintenance",
@@ -4045,7 +3296,7 @@
         "Car park barrier servicing"
       ],
       [
-        "/pages/jobs/rising-arm-barrier-installation",
+        "/pages/keywords/rising-arm-barrier-installation",
         "Rising arm barrier installation"
       ],
       [
@@ -4259,7 +3510,7 @@
         "Nice barrier repair"
       ],
       [
-        "/pages/jobs/vehicle-barrier-installation",
+        "/pages/keywords/vehicle-barrier-installation",
         "Vehicle barrier installation"
       ],
       [
@@ -4362,7 +3613,7 @@
         "All job types"
       ],
       [
-        "/pages/jobs/rising-arm-barrier-installation",
+        "/pages/keywords/rising-arm-barrier-installation",
         "Rising arm barrier installation"
       ],
       [
@@ -4385,113 +3636,6 @@
     "area_served": "United Kingdom",
     "show_nap": true,
     "word_count": 1185
-  },
-  "rising-arm-barrier-installation": {
-    "slug": "rising-arm-barrier-installation",
-    "line": "barrier",
-    "kind": "generic",
-    "brand": "",
-    "policy": "incumbent_generic",
-    "name": "Rising arm barrier installation",
-    "title": "Rising arm barrier installation | iComply Property Services",
-    "meta": "Rising arm barrier installation for landlords and letting agents, arranged UK-wide from Stockport. Scope is confirmed on site. Request a quote — POA.",
-    "keywords": "Rising arm barrier installation, Barriers, Stockport, UK-wide",
-    "h1": "Rising arm barrier installation",
-    "kicker": "Barriers",
-    "lede": "Rising arm barrier installation for landlords and letting agents, arranged UK-wide from Stockport. Price on application after we have seen the site.",
-    "card": "Rising arm barrier installation for landlords and letting agents. Price on application after survey.",
-    "paragraphs": [
-      "Rising arm barrier installation is a site visit, not a packaged price. We arrange it UK-wide from Stockport for landlords and letting agents. A typical instruction arrives when a new installation of the rising-arm barrier, boom and safety devices has been instructed. The building we are usually called to is a logistics yard where HGVs queue if the barrier stays down. Before a date is offered we ask what equipment is already there, who holds the keys, and whether the area has to stay in use. We do not claim a local office in that town. The engineer comes from our Stockport base at iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Call 07517806082 or email info@icomplypropertyservices.co.uk.",
-      "Access for Rising arm barrier installation is part of the scope. On this sort of visit, the ceiling void is congested, so we photograph the route before we cut anything. We do not start by isolating the rising-arm barrier, boom and safety devices until the duty holder knows the system may be offline and for how long. The useful first measurement is loop or zone resistance before any device is changed. We do not assume that the managing agent wants a full rip-out when a module repair will do. Photographs of the nameplate, the supply and the surrounding fixings are taken before anything is removed, so the note matches the building rather than a generic description of rising arm barrier installation.",
-      "The work standard we write against on Rising arm barrier installation is BS EN 12453. That is the standard for the task, not an accreditation and not a certificate number. We do not claim a third-party approval body, and we do not invent a membership number. Where the fire strategy or the specification asks for a particular category or a particular cause-and-effect, we follow that document and we record any place the installed the rising-arm barrier, boom and safety devices does not match it. If the strategy is missing, we say so and we stop short of inventing a design.",
-      "Rising arm barrier installation is carried out on the barrier that is already in the lane. The make and model are confirmed on site. New barrier installation and full barrier replacement are specified as CAME, because iComply is a CAME partner. We do not publish a partner number. Other makes stay in service when the incumbent should remain: we repair, service and maintain that existing kit, and we do not describe that work as a new installation of that other make. Arm changes and motor changes on an existing cabinet are parts for the kit that is there, not a new brand install.",
-      "Identify the rising-arm barrier, boom and safety devices from the nameplate and compare it with the report of a new installation of the rising-arm barrier, boom and safety devices has been instructed. This is done while the the rising-arm barrier, boom and safety devices is still in the condition we found it, so the note for Rising arm barrier installation explains the fault rather than only the repair. The result is written in plain language for landlords and letting agents. If a part is required and is not on the van, we do not pretend it was fitted.",
-      "Next we deal with this specific point of Rising arm barrier installation: Prove the supply, the signal and the mechanical travel before ordering parts for Rising arm barrier installation. The check is repeated once after the adjustment so a single lucky result is not treated as finished. Anything that still fails stays on the list. Price for the extra item is on application; it is not added as a surprise on the day.",
-      "For Rising arm barrier installation we also confirm the following, because it changes the scope: Record a new installation of the rising-arm barrier, boom and safety devices has been instructed against the last log entry so the visit does not repeat a fix that already failed. The observation is tied back to BS EN 12453. We name the room, the lane or the stair in the note so a later visit can find the same the rising-arm barrier, boom and safety devices.",
-      "Check the safety device or the fire interface that sits next to the rising-arm barrier, boom and safety devices, not only the obvious failed part. That step matters on Rising arm barrier installation when the building is a logistics yard where HGVs queue if the barrier stays down. Rushing it is how a second call-out is created. We would rather leave a clear defect than a silent temporary fix that the next engineer cannot see.",
-      "The instructing client can expect this from the Rising arm barrier installation visit: Write the result against BS EN 12453, as a work standard rather than as an accreditation. We explain it to the person who met us, and we put the same words in an installation note describing what was fitted, how it was tested, and what the client must do weekly. Verbal-only handovers are not the record.",
-      "Before we close Rising arm barrier installation we make sure of one more thing: Hand over an installation note describing what was fitted, how it was tested, and what the client must do weekly, and list any item still open so Rising arm barrier installation is not signed off early. If that check fails, the system is not described as complete. The outstanding item is quoted price on application after the survey we have just done, using the measurements already taken.",
-      "The paperwork for Rising arm barrier installation is an installation note describing what was fitted, how it was tested, and what the client must do weekly. It names the address, the date, the the rising-arm barrier, boom and safety devices, and the result. It does not carry a fake approval logo. Certificate-style wording on this page means the note we issue for the work done, not a claim that iComply holds a third-party registration. The duty holder keeps the copy. We can resend it to the managing agent when the instruction asks for that. We do not leave the system isolated overnight unless the duty holder has accepted that in writing.",
-      "Pricing for Rising arm barrier installation is price on application after survey. We do not publish a pound figure, a band, or a from-price. The survey has to see the rising-arm barrier, boom and safety devices, the access, and whether the visit is a repair, a service or a new installation. A phone call can book the survey. It cannot produce a serious figure while the model is unknown. CAME supply packs, where a barrier job uses them, are also price on application on this page. We are instructed by landlords and letting agents, and the quote is addressed to that client.",
-      "Coverage for Rising arm barrier installation is UK-wide from Stockport. iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Call 07517806082 or email info@icomplypropertyservices.co.uk. Town pages, when they are published in a later wave, will use the real county and region. This hub does not pretend we have a branch in every town, and it does not use a Greater Manchester-only town list for a nationwide trade. The intent of this page is installation: we do the work the instruction describes, and we do not pad it with unrelated trades. These lines are not gas work, so this page does not use gas-registration wording."
-    ],
-    "points": [
-      "Instruction understood before attendance: a new installation of the rising-arm barrier, boom and safety devices has been instructed.",
-      "Equipment confirmed on site: the rising-arm barrier, boom and safety devices.",
-      "Work standard named in the note: BS EN 12453.",
-      "Record left with the client: an installation note describing what was fitted, how it was tested, and what the client must do weekly.",
-      "Price on application after survey. No published pound figure.",
-      "Arranged UK-wide from Stockport for landlords and letting agents."
-    ],
-    "faqs": [
-      [
-        "How is Rising arm barrier installation quoted?",
-        "Rising arm barrier installation is price on application after we have seen the rising-arm barrier, boom and safety devices and the access. We do not publish a pound figure or a from-price."
-      ],
-      [
-        "Do you cover my town for Rising arm barrier installation?",
-        "Yes. Rising arm barrier installation is arranged UK-wide from our Stockport base for landlords and letting agents. We do not claim a local office in each town."
-      ],
-      [
-        "What standard do you work to on Rising arm barrier installation?",
-        "We work to BS EN 12453 as the standard for the task. That is not an accreditation and we do not quote a membership number."
-      ],
-      [
-        "Which brands does Rising arm barrier installation cover?",
-        "We work on the barrier that is already there. New installation and full replacement are specified as CAME. iComply is a CAME partner, stated in plain words with no number."
-      ],
-      [
-        "What should I have ready when I ask for Rising arm barrier installation?",
-        "The full address, what has failed or what you want installed, any log or previous note, and who can meet us. Photos of the nameplate help. They do not replace the survey."
-      ]
-    ],
-    "images": [
-      [
-        "/assets/images/lanes/barriers/11.jpg",
-        "Rising arm barrier installation — equipment looked at on site by iComply Property Services"
-      ],
-      [
-        "/assets/images/lanes/barriers/14.jpg",
-        "Rising arm barrier installation — the control or lane position recorded before any part is changed"
-      ],
-      [
-        "/assets/images/lanes/barriers/18.jpg",
-        "Rising arm barrier installation — the note left with the instructing client after the visit"
-      ]
-    ],
-    "links": [
-      [
-        "/pages/services/barriers",
-        "Barriers"
-      ],
-      [
-        "/pages/jobs",
-        "All job types"
-      ],
-      [
-        "/pages/jobs/rising-arm-barrier-repair",
-        "Rising arm barrier repair"
-      ],
-      [
-        "/pages/jobs/automatic-barrier-installation",
-        "Automatic barrier installation"
-      ],
-      [
-        "/pages/jobs/barrier-installation",
-        "Barrier installation"
-      ]
-    ],
-    "service_label": "Barriers",
-    "service_href": "/pages/services/barriers",
-    "parent_label": "Job types",
-    "parent_href": "/pages/jobs",
-    "form_options": [
-      "Rising arm barrier installation",
-      "Barriers"
-    ],
-    "area_served": "United Kingdom",
-    "show_nap": true,
-    "word_count": 1273
   },
   "rising-arm-barrier-repair": {
     "slug": "rising-arm-barrier-repair",
@@ -4576,7 +3720,7 @@
         "All job types"
       ],
       [
-        "/pages/jobs/vehicle-barrier-installation",
+        "/pages/keywords/vehicle-barrier-installation",
         "Vehicle barrier installation"
       ],
       [
@@ -4599,113 +3743,6 @@
     "area_served": "United Kingdom",
     "show_nap": true,
     "word_count": 1292
-  },
-  "vehicle-barrier-installation": {
-    "slug": "vehicle-barrier-installation",
-    "line": "barrier",
-    "kind": "generic",
-    "brand": "",
-    "policy": "came_new",
-    "name": "Vehicle barrier installation",
-    "title": "Vehicle barrier installation | iComply Property Services",
-    "meta": "Vehicle barrier installation for commercial tenants and their agents, arranged UK-wide from Stockport. Scope is confirmed on site. Request a quote — POA.",
-    "keywords": "Vehicle barrier installation, Barriers, Stockport, UK-wide",
-    "h1": "Vehicle barrier installation",
-    "kicker": "Barriers",
-    "lede": "Vehicle barrier installation for commercial tenants and their agents, arranged UK-wide from Stockport. Price on application after we have seen the site.",
-    "card": "Vehicle barrier installation for commercial tenants and their agents. Price on application after survey.",
-    "paragraphs": [
-      "Vehicle barrier installation is a site visit, not a packaged price. We arrange it UK-wide from Stockport for commercial tenants and their agents. A typical instruction arrives when a new installation of the vehicle barrier controlling the lane has been instructed. The building we are usually called to is a theatre plant space reached by a cat ladder. Before a date is offered we ask what equipment is already there, who holds the keys, and whether the area has to stay in use. We do not claim a local office in that town. The engineer comes from our Stockport base at iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Call 07517806082 or email info@icomplypropertyservices.co.uk.",
-      "Access for Vehicle barrier installation is part of the scope. On this sort of visit, the escape route stays clear; we do not leave boards or tools in the stair. We do not start by isolating the vehicle barrier controlling the lane until the duty holder knows the system may be offline and for how long. The useful first measurement is the extinguisher's weight, gauge and service date against the label. We do not assume that the fire strategy allows the stair to be used as the only escape during the test. Photographs of the nameplate, the supply and the surrounding fixings are taken before anything is removed, so the note matches the building rather than a generic description of vehicle barrier installation.",
-      "The work standard we write against on Vehicle barrier installation is BS EN 12453. That is the standard for the task, not an accreditation and not a certificate number. We do not claim a third-party approval body, and we do not invent a membership number. Where the fire strategy or the specification asks for a particular category or a particular cause-and-effect, we follow that document and we record any place the installed the vehicle barrier controlling the lane does not match it. If the strategy is missing, we say so and we stop short of inventing a design.",
-      "Vehicle barrier installation is specified as CAME. iComply is a CAME partner. We state that in plain words and we do not publish a partner number, an accreditation number, or an authorised-dealer claim. The lane, the boom length, the supply and the safety devices are measured on site. Installation is price on application after that survey. We do not print a pack price or a from-price on this page. If an older barrier of another make is already in the lane and the incumbent should stay, we say so in the note and we repair that existing kit instead of forcing a change of make. The model is confirmed on site before parts are ordered.",
-      "Identify the vehicle barrier controlling the lane from the nameplate and compare it with the report of a new installation of the vehicle barrier controlling the lane has been instructed. This is done while the the vehicle barrier controlling the lane is still in the condition we found it, so the note for Vehicle barrier installation explains the fault rather than only the repair. The result is written in plain language for commercial tenants and their agents. If a part is required and is not on the van, we do not pretend it was fitted.",
-      "Next we deal with this specific point of Vehicle barrier installation: Prove the supply, the signal and the mechanical travel before ordering parts for Vehicle barrier installation. The check is repeated once after the adjustment so a single lucky result is not treated as finished. Anything that still fails stays on the list. Price for the extra item is on application; it is not added as a surprise on the day.",
-      "For Vehicle barrier installation we also confirm the following, because it changes the scope: Record a new installation of the vehicle barrier controlling the lane has been instructed against the last log entry so the visit does not repeat a fix that already failed. The observation is tied back to BS EN 12453. We name the room, the lane or the stair in the note so a later visit can find the same the vehicle barrier controlling the lane.",
-      "Check the safety device or the fire interface that sits next to the vehicle barrier controlling the lane, not only the obvious failed part. That step matters on Vehicle barrier installation when the building is a theatre plant space reached by a cat ladder. Rushing it is how a second call-out is created. We would rather leave a clear defect than a silent temporary fix that the next engineer cannot see.",
-      "The instructing client can expect this from the Vehicle barrier installation visit: Write the result against BS EN 12453, as a work standard rather than as an accreditation. We explain it to the person who met us, and we put the same words in an installation note describing what was fitted, how it was tested, and what the client must do weekly. Verbal-only handovers are not the record.",
-      "Before we close Vehicle barrier installation we make sure of one more thing: Hand over an installation note describing what was fitted, how it was tested, and what the client must do weekly, and list any item still open so Vehicle barrier installation is not signed off early. If that check fails, the system is not described as complete. The outstanding item is quoted price on application after the survey we have just done, using the measurements already taken.",
-      "The paperwork for Vehicle barrier installation is an installation note describing what was fitted, how it was tested, and what the client must do weekly. It names the address, the date, the the vehicle barrier controlling the lane, and the result. It does not carry a fake approval logo. Certificate-style wording on this page means the note we issue for the work done, not a claim that iComply holds a third-party registration. The duty holder keeps the copy. We can resend it to the managing agent when the instruction asks for that. No figure is given on the phone until the equipment and the access are known.",
-      "Pricing for Vehicle barrier installation is price on application after survey. We do not publish a pound figure, a band, or a from-price. The survey has to see the vehicle barrier controlling the lane, the access, and whether the visit is a repair, a service or a new installation. A phone call can book the survey. It cannot produce a serious figure while the model is unknown. CAME supply packs, where a barrier job uses them, are also price on application on this page. We are instructed by commercial tenants and their agents, and the quote is addressed to that client.",
-      "Coverage for Vehicle barrier installation is UK-wide from Stockport. iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Call 07517806082 or email info@icomplypropertyservices.co.uk. Town pages, when they are published in a later wave, will use the real county and region. This hub does not pretend we have a branch in every town, and it does not use a Greater Manchester-only town list for a nationwide trade. The intent of this page is installation: we do the work the instruction describes, and we do not pad it with unrelated trades. These lines are not gas work, so this page does not use gas-registration wording."
-    ],
-    "points": [
-      "Instruction understood before attendance: a new installation of the vehicle barrier controlling the lane has been instructed.",
-      "Equipment confirmed on site: the vehicle barrier controlling the lane.",
-      "Work standard named in the note: BS EN 12453.",
-      "Record left with the client: an installation note describing what was fitted, how it was tested, and what the client must do weekly.",
-      "Price on application after survey. No published pound figure.",
-      "Arranged UK-wide from Stockport for commercial tenants and their agents."
-    ],
-    "faqs": [
-      [
-        "How is Vehicle barrier installation quoted?",
-        "Vehicle barrier installation is price on application after we have seen the vehicle barrier controlling the lane and the access. We do not publish a pound figure or a from-price."
-      ],
-      [
-        "Do you cover my town for Vehicle barrier installation?",
-        "Yes. Vehicle barrier installation is arranged UK-wide from our Stockport base for commercial tenants and their agents. We do not claim a local office in each town."
-      ],
-      [
-        "What standard do you work to on Vehicle barrier installation?",
-        "We work to BS EN 12453 as the standard for the task. That is not an accreditation and we do not quote a membership number."
-      ],
-      [
-        "Which brands does Vehicle barrier installation cover?",
-        "New barrier installation on this page is CAME. iComply is a CAME partner. We do not publish a partner number."
-      ],
-      [
-        "What should I have ready when I ask for Vehicle barrier installation?",
-        "The full address, what has failed or what you want installed, any log or previous note, and who can meet us. Photos of the nameplate help. They do not replace the survey."
-      ]
-    ],
-    "images": [
-      [
-        "/assets/images/lanes/barriers/18.jpg",
-        "Vehicle barrier installation — equipment looked at on site by iComply Property Services"
-      ],
-      [
-        "/assets/images/lanes/barriers/22.jpg",
-        "Vehicle barrier installation — the control or lane position recorded before any part is changed"
-      ],
-      [
-        "/assets/images/services/barriers.jpg",
-        "Vehicle barrier installation — the note left with the instructing client after the visit"
-      ]
-    ],
-    "links": [
-      [
-        "/pages/services/barriers",
-        "Barriers"
-      ],
-      [
-        "/pages/jobs",
-        "All job types"
-      ],
-      [
-        "/pages/jobs/vehicle-barrier-repair",
-        "Vehicle barrier repair"
-      ],
-      [
-        "/pages/jobs/automatic-barrier-repair",
-        "Automatic barrier repair"
-      ],
-      [
-        "/pages/jobs/barrier-maintenance",
-        "Barrier maintenance"
-      ]
-    ],
-    "service_label": "Barriers",
-    "service_href": "/pages/services/barriers",
-    "parent_label": "Job types",
-    "parent_href": "/pages/jobs",
-    "form_options": [
-      "Vehicle barrier installation",
-      "Barriers"
-    ],
-    "area_served": "United Kingdom",
-    "show_nap": true,
-    "word_count": 1251
   },
   "vehicle-barrier-repair": {
     "slug": "vehicle-barrier-repair",

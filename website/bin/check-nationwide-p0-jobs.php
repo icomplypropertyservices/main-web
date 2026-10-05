@@ -43,7 +43,9 @@ foreach ($rows as $slug => $row) {
     if ($target !== null) {
         $redirects++;
         $ok(!is_file($file), $slug . ' has no duplicate job body');
-        $ok(isset(getMajorKeywords()[$slug]), $slug . ' keyword hub exists');
+        $ok(!isset($jobs[$slug]), $slug . ' has no job copy');
+        $reserved = isset(nationwideP0KeywordCanonicalSlugs()[$slug]);
+        $ok($reserved || isset(getMajorKeywords()[$slug]), $slug . ' keyword hub exists');
         $ok(str_contains($redirectLines, '/pages/jobs/' . $slug . ' '), $slug . ' redirect is emitted');
         continue;
     }
@@ -149,15 +151,23 @@ foreach ($jobs as $slug => $job) {
 }
 
 $xml = icomplyBuildSitemapXml('https://icomplypropertyservices.co.uk');
+$committed = is_file(SITE_ROOT . '/sitemap.xml') ? (string)file_get_contents(SITE_ROOT . '/sitemap.xml') : '';
 foreach (array_keys($jobs) as $slug) {
+    if (nationwideP0KeywordRedirect($slug) !== null) {
+        continue;
+    }
     $ok(str_contains($xml, '/pages/jobs/' . $slug . '</loc>'), 'sitemap lists /pages/jobs/' . $slug);
+    $ok(str_contains($committed, '/pages/jobs/' . $slug . '</loc>'), 'committed sitemap lists /pages/jobs/' . $slug);
 }
 foreach ($rows as $slug => $_row) {
     if (nationwideP0KeywordRedirect($slug) === null) {
         continue;
     }
     $ok(!str_contains($xml, '/pages/jobs/' . $slug . '</loc>'), 'sitemap omits redirected /pages/jobs/' . $slug);
-    $ok(str_contains($xml, '/pages/keywords/' . $slug . '</loc>'), 'sitemap keeps keyword canonical /pages/keywords/' . $slug);
+    $ok(!str_contains($committed, '/pages/jobs/' . $slug . '</loc>'), 'committed sitemap omits redirected /pages/jobs/' . $slug);
+    if (isset(getMajorKeywords()[$slug])) {
+        $ok(str_contains($xml, '/pages/keywords/' . $slug . '</loc>'), 'sitemap keeps keyword canonical /pages/keywords/' . $slug);
+    }
 }
 
 echo ($fail === 0 ? "PASS ({$pass})\n" : "FAIL ({$fail}) pass={$pass}\n");

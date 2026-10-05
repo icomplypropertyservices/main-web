@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Build unique W1a P0 job-hub copy for /pages/jobs/{slug}.
 
-Slugs that already exist in keywords.json are not given a second body.
-They 301 to /pages/keywords/{slug}. Every other P0 slug gets a hub with
+Slugs that already exist in keywords.json, barriers-keywords.json, or
+KEYWORD_CANONICAL are not given a second body. They 301 to
+/pages/keywords/{slug}. Every other P0 slug gets a hub with
 800+ words, FAQs, three images and full meta.
 """
 from __future__ import annotations
@@ -17,6 +18,19 @@ CSV_PATH = ROOT / "data" / "nationwide-p0.csv"
 KEYWORDS_PATH = ROOT / "data" / "keywords.json"
 OUT_JSON = ROOT / "data" / "nationwide-p0-jobs.json"
 JOBS_DIR = ROOT / "pages" / "jobs"
+
+# Keyword wins. These hubs ship on nationwide keywords P0, not as job pages.
+KEYWORD_CANONICAL = {
+    "barrier-installation",
+    "barrier-maintenance",
+    "barrier-repair",
+    "barrier-service",
+    "car-park-barrier-installation",
+    "emergency-aov-repair",
+    "rising-arm-barrier-installation",
+    "smoke-ventilation-installation",
+    "vehicle-barrier-installation",
+}
 
 BRAND_SUFFIX = " | iComply Property Services"
 CTA = "Request a quote — POA."
@@ -746,6 +760,7 @@ def build() -> None:
     barriers = ROOT / "data" / "barriers-keywords.json"
     if barriers.is_file():
         keywords.update(json.loads(barriers.read_text()))
+    keywords.update(KEYWORD_CANONICAL)
     rows = list(csv.DictReader(CSV_PATH.open()))
     assert len(rows) == 90, len(rows)
     missing_files = [src for src in AOV_IMAGES + BARRIER_IMAGES + FIRE_IMAGES["default"] + FIRE_IMAGES["emergency-lighting"] + FIRE_IMAGES["fire-door"] + FIRE_IMAGES["fire-extinguisher"] if not (ROOT / src.lstrip("/")).is_file()]

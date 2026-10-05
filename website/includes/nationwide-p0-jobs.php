@@ -57,6 +57,27 @@ function nationwideP0Jobs(): array
 }
 
 /**
+ * P0 slugs whose keyword hub is the canonical URL even when that hub
+ * is published by the nationwide keywords pack rather than this branch.
+ *
+ * @return array<string, true>
+ */
+function nationwideP0KeywordCanonicalSlugs(): array
+{
+    return [
+        'barrier-installation' => true,
+        'barrier-maintenance' => true,
+        'barrier-repair' => true,
+        'barrier-service' => true,
+        'car-park-barrier-installation' => true,
+        'emergency-aov-repair' => true,
+        'rising-arm-barrier-installation' => true,
+        'smoke-ventilation-installation' => true,
+        'vehicle-barrier-installation' => true,
+    ];
+}
+
+/**
  * Keyword URL when this P0 slug already has a keyword hub. Null when the job page is canonical.
  */
 function nationwideP0KeywordRedirect(string $slug): ?string
@@ -64,6 +85,9 @@ function nationwideP0KeywordRedirect(string $slug): ?string
     $slug = function_exists('keywordSlug') ? keywordSlug($slug) : $slug;
     if ($slug === '' || !isset(nationwideP0Rows()[$slug])) {
         return null;
+    }
+    if (isset(nationwideP0KeywordCanonicalSlugs()[$slug])) {
+        return '/pages/keywords/' . $slug;
     }
     if (!function_exists('getMajorKeywords')) {
         return null;
