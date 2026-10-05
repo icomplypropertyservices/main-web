@@ -273,5 +273,44 @@ ok(kitchen && kitchen.html.toLowerCase().includes("price on application"), "kitc
 ok(kitchen && !kitchen.html.includes("£"), "kitchen town page has no price");
 ok(kitchen && scoreHtml(kitchen.html, { local: ["stockport"] }).score === 100, "kitchen town score 100");
 
+const marker = "pe closeq body marker";
+const peBody = `${marker} ` + Array.from({ length: 820 }, () => "scope").join(" ") + " price on application";
+const pePage = renderTownPage({
+  kind: "service",
+  service: "electrical",
+  town: "stockport",
+  catalogue,
+  closeQPages: {
+    "service/electrical/stockport": {
+      body: peBody,
+      images: [
+        { src: "/assets/images/services/cctv.jpg", alt: "hero alt marker" },
+        { src: "/assets/images/services/cctv-photo.jpg", alt: "work alt marker" },
+        { src: "/assets/images/manufacturers/hikvision.jpg", alt: "context alt marker" },
+      ],
+      faqs: [
+        { q: "PE question one?", a: "PE answer one is price on application." },
+        { q: "PE question two?", a: "PE answer two." },
+        { q: "PE question three?", a: "PE answer three." },
+      ],
+    },
+  },
+});
+ok(pePage && pePage.html.includes(marker), "PE body fills q1 prose");
+ok(pePage && pePage.html.includes('data-pe-slot="q1-service-town-prose"'), "PE body stays in q1-service-town-prose");
+ok(pePage && pePage.html.includes('data-pe-slot="q2-image-hero" src="/assets/images/services/cctv.jpg"'), "PE hero image");
+ok(pePage && pePage.html.includes('data-pe-slot="q2-image-work"') && pePage.html.includes('alt="work alt marker"'), "PE work image");
+ok(pePage && pePage.html.includes('data-pe-slot="q2-image-context"') && pePage.html.includes("hikvision.jpg"), "PE context image");
+ok(pePage && pePage.html.includes("PE question one?") && pePage.html.includes('data-pe-slot="q5-thin-faq"'), "PE faqs use q/a");
+ok(pePage && pePage.html.includes('property="og:title"') && pePage.html.includes('property="og:image"'), "PE page still uses thinOgMeta");
+const missing = renderTownPage({
+  kind: "service",
+  service: "electrical",
+  town: "stockport",
+  catalogue,
+  closeQPages: {},
+});
+ok(missing && !missing.html.includes(marker) && proseWords(missing.html) >= 800, "missing close-q key keeps the floor");
+
 console.log(fail === 0 ? "PASS" : `FAIL ${fail}`);
 process.exit(fail === 0 ? 0 : 1);

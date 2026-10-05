@@ -33,7 +33,7 @@ $proseWords = static function (string $html): int {
 };
 
 $aov = icomplyQualityBarAovProseHtml()
-    . icomplyQualityBarImages('aov-air-handling', 'AOV', 'q6-aov-images')['html']
+    . icomplyQualityBarAovImages()['html']
     . icomplyQualityBarFaqHtml(icomplyQualityBarAovFaqs(), 'q6-aov-faq', 'q6-aov-faq-jsonld', 'Questions about AOV');
 $ok($proseWords($aov) >= 800, 'AOV shell prose ' . $proseWords($aov));
 $ok(substr_count($aov, '<img ') >= 3, 'AOV images');
@@ -58,6 +58,29 @@ $ok(str_contains($gas, 'carried out by Gas Safe registered engineers'), 'gas eng
 $ok(str_contains($gas, 'iComply is not Gas Safe registered.'), 'not Gas Safe registered');
 $ok(!preg_match('/iComply is Gas Safe registered\./', str_replace('iComply is not Gas Safe registered.', '', $gas)), 'no positive Gas Safe claim');
 
+$qa = icomplyQualityBarFaqHtml(
+    [['q' => 'Question from q?', 'a' => 'Answer from a.']],
+    'q5-thin-faq',
+    'q5-thin-faq-jsonld',
+    'Questions'
+);
+$ok(str_contains($qa, 'Question from q?') && str_contains($qa, 'Answer from a.'), 'FAQ mapper reads q/a');
+$ok(!str_contains($qa, 'question/answer'), 'FAQ mapper does not require question/answer keys');
+
+$peTown = icomplyCloseQTownPage('service', 'cctv', 'stockport');
+if (is_array($peTown) && isset($peTown['body'])) {
+    $ok(str_contains($thin, 'Outward codes SK1'), 'PE town-prose body for service/cctv/stockport');
+    $ok(str_contains($thin, 'data-pe-slot="q2-image-hero"') && str_contains($thin, 'hikvision.jpg'), 'PE town images');
+    $ok(str_contains($thin, 'How do I ask for CCTV in Stockport?'), 'PE town faqs q/a');
+}
+$peArea = icomplyCloseQLoad('area-faqs.json');
+if (!empty($peArea['homepage']['faqs'])) {
+    $ok(str_contains($homeFaq, (string)$peArea['homepage']['faqs'][0]['q']), 'PE homepage.faqs');
+}
+if (!empty($peArea['stockport']['faqs'])) {
+    $ok(str_contains($areaFaq, (string)$peArea['stockport']['faqs'][0]['q']), 'PE stockport.faqs');
+}
+
 ob_start();
 renderAreaHubPage('Stockport');
 $stockport = (string)ob_get_clean();
@@ -80,6 +103,12 @@ $ok(str_contains($directory, 'data-pe-slot="q6-aov-prose"'), 'AOV directory pros
 $ok($proseWords($directory) >= 800, 'AOV directory prose ' . $proseWords($directory));
 $ok(substr_count($directory, '<img ') >= 3, 'AOV directory images');
 $ok(str_contains($directory, 'rel="canonical"') && str_contains($directory, 'og:image'), 'AOV meta still complete');
+if (!empty($peArea['manchester_images']['images'][2]['src'])) {
+    $ok(str_contains($manchester, (string)$peArea['manchester_images']['images'][2]['src']), 'PE manchester_images');
+}
+if (!empty(icomplyCloseQLoad('aov-hub.json')['body'])) {
+    $ok(str_contains($directory, 'automatic opening vents'), 'PE aov-hub.body');
+}
 
 echo $fail === 0 ? "PASS\n" : "FAIL {$fail}\n";
 exit($fail === 0 ? 0 : 1);

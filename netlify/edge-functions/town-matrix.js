@@ -299,7 +299,22 @@ export function renderTownPage(input) {
     gas,
     blurb: prose,
   };
-  const images = thinImages(imageSlug, subject, place.name, seed);
+  const closeQPages = input.closeQPages && typeof input.closeQPages === "object" ? input.closeQPages : null;
+  const pageSlug = kind === "keyword"
+    ? input.keyword
+    : kind === "job"
+      ? input.job
+      : kind === "service"
+        ? serviceSlug
+        : "";
+  const pe = closeQPages && pageSlug ? closeQPages[`${kind}/${pageSlug}/${townSlug}`] : null;
+  if (pe && typeof pe.body === "string" && pe.body.trim()) {
+    qualityCtx.peBody = pe.body;
+  }
+  if (pe && Array.isArray(pe.faqs)) {
+    qualityCtx.peFaqs = pe.faqs;
+  }
+  const images = thinImages(imageSlug, subject, place.name, seed, pe && Array.isArray(pe.images) ? pe.images : null);
   const proseHtml = thinProseHtml(qualityCtx);
   const faqs = thinFaqs(qualityCtx);
   const faqBlock = thinFaqHtml(qualityCtx);
@@ -416,6 +431,42 @@ ${faqBlock}
 
 let cataloguePromise = null;
 let variantPromise = null;
+let closeQTownPagesPromise = null;
+
+/**
+ * pages map from website/data/close-q/town-prose.json.
+ * The edge bundle reads the repo file when it is present, otherwise the
+ * copy static-export publishes at /assets/close-q/town-prose.json
+ * (/data/* is a public 404). Empty object keeps the generated floor.
+ */
+async function loadCloseQTownPages(origin) {
+  if (!closeQTownPagesPromise) {
+    closeQTownPagesPromise = readCloseQTownPages(origin);
+  }
+  return closeQTownPagesPromise;
+}
+
+async function readCloseQTownPages(origin) {
+  if (typeof Deno !== "undefined" && typeof Deno.readTextFile === "function") {
+    try {
+      const fileUrl = new URL("../../website/data/close-q/town-prose.json", import.meta.url);
+      const data = JSON.parse(await Deno.readTextFile(fileUrl));
+      if (data && data.pages && typeof data.pages === "object") return data.pages;
+    } catch {
+      // File is owned by the Page Enrichment checkout and may be absent here.
+    }
+  }
+  try {
+    const response = await fetch(new URL("/assets/close-q/town-prose.json", origin));
+    if (response.ok) {
+      const data = await response.json();
+      if (data && data.pages && typeof data.pages === "object") return data.pages;
+    }
+  } catch {
+    // Published copy missing. Generated floor still renders.
+  }
+  return {};
+}
 
 async function loadVariants(origin) {
   if (!variantPromise) {
@@ -564,10 +615,16 @@ export default async (request, context) => {
     return context.next();
   }
   let catalogue;
+  let closeQPages = {};
   try {
     catalogue = await loadCatalogue(url.origin);
   } catch {
     return context.next();
+  }
+  try {
+    closeQPages = await loadCloseQTownPages(url.origin);
+  } catch {
+    closeQPages = {};
   }
   let rendered = null;
   if (manufacturerMatch) {
@@ -576,6 +633,7 @@ export default async (request, context) => {
       brand: manufacturerMatch[1],
       town: manufacturerMatch[2],
       catalogue,
+      closeQPages,
     });
   } else if (jobMatch) {
     rendered = renderTownPage({
@@ -583,6 +641,7 @@ export default async (request, context) => {
       job: jobMatch[1],
       town: jobMatch[2],
       catalogue,
+      closeQPages,
     });
   } else if (keywordMatch) {
     rendered = renderTownPage({
@@ -590,6 +649,7 @@ export default async (request, context) => {
       keyword: keywordMatch[1],
       town: keywordMatch[2],
       catalogue,
+      closeQPages,
     });
   } else {
     rendered = renderTownPage({
@@ -597,6 +657,7 @@ export default async (request, context) => {
       service: serviceMatch[1],
       town: serviceMatch[2],
       catalogue,
+      closeQPages,
     });
   }
   if (!rendered) return context.next();

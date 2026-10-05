@@ -31,7 +31,7 @@ require SITE_ROOT . '/includes/header.php';
 <section class="max-w-3xl mx-auto px-6 py-14">
     <?php
     require_once SITE_ROOT . '/includes/quality-bar.php';
-    echo icomplyQualityBarImages('aov-air-handling', 'Automatic opening vents and smoke control', 'q6-aov-images')['html'];
+    echo icomplyQualityBarAovImages()['html'];
     echo icomplyQualityBarAovProseHtml();
     echo icomplyQualityBarFaqHtml(
         icomplyQualityBarAovFaqs(),

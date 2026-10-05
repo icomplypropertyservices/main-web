@@ -190,7 +190,7 @@ $schema = [
 <?php
 require_once SITE_ROOT . '/includes/quality-bar.php';
 echo '<section class="max-w-7xl mx-auto px-6 py-12"><h2 class="text-2xl font-semibold text-black">Work we quote in ' . htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') . '</h2>';
-echo icomplyQualityBarImages('fire-alarms', 'Property compliance in ' . $areaName, 'q2-area-images')['html'];
+echo icomplyQualityBarAreaImages($areaName)['html'];
 echo '</section>';
 echo icomplyQualityBarFaqHtml(
     icomplyQualityBarAreaFaqs($areaName),

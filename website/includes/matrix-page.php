@@ -310,29 +310,20 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
             'kind' => 'keyword',
         ])
         : '';
-    if (!function_exists('icomplyQualityBarThinProseHtml')) {
+    if (!function_exists('icomplyQualityBarThinBlock')) {
         require_once SITE_ROOT . '/includes/quality-bar.php';
     }
     $kwGas = $svcSlug === 'gas-systems' || $svcSlug === 'heating' || !empty($meta['gas']);
-    $kwQuality = icomplyQualityBarImages($svcSlug, $kwName . ' in ' . $areaName, 'q2-thin-images')['html']
-        . icomplyQualityBarThinProseHtml('keyword', [
-            'place' => $areaName,
-            'subject' => $kwName,
-            'service' => $svcName,
-            'audience' => 'landlords and managing agents',
-            'visit' => 'a planned daytime visit',
-            'near' => 'nearby Greater Manchester towns',
-            'housing' => '',
-            'industry' => '',
-            'pop' => '',
-            'gas' => $kwGas,
-            'blurb' => is_array($packed) ? (string)($packed['blurb'] ?? '') : '',
-        ])
-        . icomplyQualityBarFaqHtml([
-            ['How is ' . $kwName . ' in ' . $areaName . ' quoted?', 'The quote is price on application after the scope names the building and the access. This page does not publish a fee.'],
-            ['Where is the team that covers ' . $areaName . ' based?', 'Visits are arranged from ' . ICOMPLY_NAP . '.'],
-            ['What should be sent before a ' . $areaName . ' visit?', 'Send the postcode, the property type and anything already known about the installation.'],
-        ], 'q5-thin-faq', 'q5-thin-faq-jsonld', 'Questions about ' . $areaName);
+    $kwQuality = icomplyQualityBarThinBlock(
+        'keyword',
+        $kwName,
+        $svcName,
+        $svcSlug,
+        $areaName,
+        is_array($packed) ? (string)($packed['blurb'] ?? '') : '',
+        $kwGas,
+        $keywordSlug
+    );
     $html .= '<main class="matrix-wrap py-10 space-y-10">'
         . '<article class="matrix-card space-y-4">'
         . '<h2 class="text-2xl font-semibold">' . icomplyMatrixH($packedHeading) . '</h2>'
@@ -472,29 +463,20 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
             'imageAlt' => $svcName . ' in ' . $areaName,
         ])
         : '';
-    if (!function_exists('icomplyQualityBarThinProseHtml')) {
+    if (!function_exists('icomplyQualityBarThinBlock')) {
         require_once SITE_ROOT . '/includes/quality-bar.php';
     }
     $svcGas = $serviceSlug === 'gas-systems' || $serviceSlug === 'heating';
-    $svcQuality = icomplyQualityBarImages($serviceSlug, $svcName . ' in ' . $areaName, 'q2-thin-images')['html']
-        . icomplyQualityBarThinProseHtml('service', [
-            'place' => $areaName,
-            'subject' => $svcName,
-            'service' => $svcName,
-            'audience' => 'landlords and managing agents',
-            'visit' => 'a planned daytime visit',
-            'near' => 'nearby Greater Manchester towns',
-            'housing' => '',
-            'industry' => '',
-            'pop' => '',
-            'gas' => $svcGas,
-            'blurb' => is_array($packed) ? (string)($packed['blurb'] ?? '') : '',
-        ])
-        . icomplyQualityBarFaqHtml([
-            ['How is ' . $svcName . ' in ' . $areaName . ' quoted?', 'The quote is price on application after the scope names the building and the access. This page does not publish a fee.'],
-            ['Where is the team that covers ' . $areaName . ' based?', 'Visits are arranged from ' . ICOMPLY_NAP . '.'],
-            ['What should be sent before a ' . $areaName . ' visit?', 'Send the postcode, the property type and anything already known about the installation.'],
-        ], 'q5-thin-faq', 'q5-thin-faq-jsonld', 'Questions about ' . $areaName);
+    $svcQuality = icomplyQualityBarThinBlock(
+        'service',
+        $svcName,
+        $svcName,
+        $serviceSlug,
+        $areaName,
+        is_array($packed) ? (string)($packed['blurb'] ?? '') : '',
+        $svcGas,
+        $serviceSlug
+    );
     $html .= '<main class="matrix-wrap py-10 space-y-10">'
         . '<article class="matrix-card space-y-4">'
         . '<h2 class="text-2xl font-semibold">' . icomplyMatrixH($packedHeading) . '</h2>'

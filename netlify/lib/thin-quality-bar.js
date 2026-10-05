@@ -72,7 +72,31 @@ function mixIndex(seed, pass, bankIndex, length) {
  * by seed, so neighbouring towns do not repeat the same paragraph order.
  * @returns {string} HTML inside the Q1 slot
  */
+function proseSlot(kind) {
+  if (kind === "job") return "q1-job-town-prose";
+  if (kind === "keyword") return "q1-keyword-town-prose";
+  if (kind === "service") return "q1-service-town-prose";
+  return "q1-thin-prose";
+}
+
+function paragraphHtml(body) {
+  return String(body)
+    .split(/\n\s*\n/)
+    .map((chunk) => chunk.replace(/\s+/g, " ").trim())
+    .filter(Boolean)
+    .map((text) => `<p>${escapeHtml(text)}</p>`)
+    .join("");
+}
+
 export function thinProseHtml(ctx) {
+  const slot = proseSlot(ctx.kind);
+  if (typeof ctx.peBody === "string" && ctx.peBody.trim()) {
+    let html = paragraphHtml(ctx.peBody);
+    if (ctx.gas && !/Gas Safe registered engineers/.test(ctx.peBody)) {
+      html += "<p>Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.</p>";
+    }
+    return `<div data-pe-slot="${slot}" id="q1-thin-prose">${html}</div>`;
+  }
   const banks = fragments.banks || [];
   const parts = [];
   if (ctx.blurb) {
@@ -90,17 +114,33 @@ export function thinProseHtml(ctx) {
   if (ctx.gas) {
     parts.push("<p>Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.</p>");
   }
-  const slot = ctx.kind === "job"
-    ? "q1-job-town-prose"
-    : ctx.kind === "keyword"
-      ? "q1-keyword-town-prose"
-      : ctx.kind === "service"
-        ? "q1-service-town-prose"
-        : "q1-thin-prose";
   return `<div data-pe-slot="${slot}" id="q1-thin-prose">${parts.join("")}</div>`;
 }
 
-export function thinImages(serviceSlug, subject, placeName, seed) {
+function absoluteOg(src) {
+  if (/^https:\/\//i.test(src)) return src;
+  const path = src.startsWith("/") ? src : `/${src}`;
+  return `${ORIGIN}${path}`;
+}
+
+export function thinImages(serviceSlug, subject, placeName, seed, peImages) {
+  if (Array.isArray(peImages)) {
+    const picked = [];
+    for (const image of peImages) {
+      if (!image || typeof image.src !== "string" || !image.src.trim()) continue;
+      picked.push({ src: image.src.trim(), alt: String(image.alt || "") });
+      if (picked.length === 3) break;
+    }
+    if (picked.length === 3) {
+      const slots = ["q2-image-hero", "q2-image-work", "q2-image-context"];
+      const html = `<figure class="quality-bar-images" data-pe-slot="q2-thin-images">`
+        + picked.map((image, index) => (
+          `<img data-pe-slot="${slots[index]}" src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" width="1200" height="630">`
+        )).join("")
+        + `</figure>`;
+      return { html, heroSrc: picked[0].src, ogImage: absoluteOg(picked[0].src) };
+    }
+  }
   const slug = String(serviceSlug || "fire-alarms");
   const primary = `/assets/images/services/${slug}.jpg`;
   let second = PHOTO.has(slug)
@@ -126,7 +166,26 @@ export function thinImages(serviceSlug, subject, placeName, seed) {
   };
 }
 
+function faqPair(row) {
+  if (!row || typeof row !== "object") return null;
+  if (Object.prototype.hasOwnProperty.call(row, "q") || Object.prototype.hasOwnProperty.call(row, "a")) {
+    const q = String(row.q || "").trim();
+    const a = String(row.a || "").trim();
+    return q && a ? [q, a] : null;
+  }
+  if (Array.isArray(row)) {
+    const q = String(row[0] || "").trim();
+    const a = String(row[1] || "").trim();
+    return q && a ? [q, a] : null;
+  }
+  return null;
+}
+
 export function thinFaqs(ctx) {
+  if (Array.isArray(ctx.peFaqs)) {
+    const mapped = ctx.peFaqs.map(faqPair).filter(Boolean);
+    if (mapped.length >= 3) return mapped;
+  }
   const faqs = [
     [
       `How is ${ctx.subject} in ${ctx.place} quoted?`,

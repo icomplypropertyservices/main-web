@@ -137,7 +137,8 @@ $h = static function ($s): string {
                     (string)$serviceSlug,
                     (string)$areaName,
                     is_array($gmPacked) ? (string)($gmPacked['blurb'] ?? '') : '',
-                    $kwGas
+                    $kwGas,
+                    (string)$keywordSlug
                 );
                 ?>
             </div>

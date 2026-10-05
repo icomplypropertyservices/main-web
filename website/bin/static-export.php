@@ -789,6 +789,14 @@ function icomplyCopyStaticAssets(string $websiteRoot, string $repoRoot, string $
         }
     }
 
+    // /data/* is a public 404. Publish the same close-q JSON under /assets/close-q/
+    // so the edge ×town renderer can fetch town-prose.json. PHP still reads
+    // website/data/close-q/ directly.
+    $closeQ = $websiteRoot . '/data/close-q';
+    if (is_dir($closeQ)) {
+        icomplyCopyDir($closeQ, $dist . '/assets/close-q');
+    }
+
     // PR #9 trade hubs: /shop/index.html + Fire/Electrical/Security/Gas (never PHP source).
     icomplyCopyShopStatic($websiteRoot . '/shop', $dist . '/shop');
 }

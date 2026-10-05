@@ -9,6 +9,10 @@
  * AOV and the PHP/matrix twins of thin pages.
  *
  * Hook names: docs/pe-quality-bar-slots.md
+ *
+ * Page Enrichment copy is read from website/data/close-q/ and preferred
+ * over the generated floor whenever the key exists. Missing files and
+ * missing keys keep the floor below.
  */
 declare(strict_types=1);
 
@@ -19,6 +23,168 @@ const ICOMPLY_GAS_NOT_REGISTERED = 'iComply is not Gas Safe registered.';
 function icomplyQualityBarH(string $value): string
 {
     return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+}
+
+function icomplyCloseQRoot(): string
+{
+    $root = defined('SITE_ROOT') ? SITE_ROOT : dirname(__DIR__);
+    return $root . '/data/close-q';
+}
+
+function icomplyCloseQSlug(string $value): string
+{
+    if (function_exists('areaSlug')) {
+        return areaSlug($value);
+    }
+    $slug = strtolower(trim($value));
+    $slug = preg_replace('/[^a-z0-9]+/', '-', $slug) ?? $slug;
+    return trim($slug, '-');
+}
+
+/**
+ * Load one Page Enrichment file from website/data/close-q/.
+ * Empty array when the file is not on this checkout yet.
+ *
+ * @return array<string,mixed>
+ */
+function icomplyCloseQLoad(string $filename): array
+{
+    static $cache = [];
+    if (isset($cache[$filename])) {
+        return $cache[$filename];
+    }
+    $path = icomplyCloseQRoot() . '/' . $filename;
+    if (!is_file($path)) {
+        return $cache[$filename] = [];
+    }
+    $decoded = json_decode((string)file_get_contents($path), true);
+    return $cache[$filename] = is_array($decoded) ? $decoded : [];
+}
+
+/**
+ * town-prose.json pages["{kind}/{slug}/{town}"].
+ *
+ * @return array<string,mixed>|null
+ */
+function icomplyCloseQTownPage(string $kind, string $slug, string $town): ?array
+{
+    $pages = icomplyCloseQLoad('town-prose.json')['pages'] ?? null;
+    if (!is_array($pages)) {
+        return null;
+    }
+    $key = $kind . '/' . icomplyCloseQSlug($slug) . '/' . icomplyCloseQSlug($town);
+    $row = $pages[$key] ?? null;
+    return is_array($row) ? $row : null;
+}
+
+/**
+ * Accept PE {q,a} objects and the older [question, answer] pairs.
+ *
+ * @return list<array{0:string,1:string}>
+ */
+function icomplyCloseQFaqList(mixed $faqs): array
+{
+    if (!is_array($faqs)) {
+        return [];
+    }
+    $out = [];
+    foreach ($faqs as $faq) {
+        if (!is_array($faq)) {
+            continue;
+        }
+        if (array_key_exists('q', $faq) || array_key_exists('a', $faq)) {
+            $q = trim((string)($faq['q'] ?? ''));
+            $a = trim((string)($faq['a'] ?? ''));
+        } else {
+            $q = trim((string)($faq[0] ?? ''));
+            $a = trim((string)($faq[1] ?? ''));
+        }
+        if ($q !== '' && $a !== '') {
+            $out[] = [$q, $a];
+        }
+    }
+    return $out;
+}
+
+function icomplyCloseQProseSlot(string $kind): string
+{
+    if ($kind === 'job') {
+        return 'q1-job-town-prose';
+    }
+    if ($kind === 'keyword') {
+        return 'q1-keyword-town-prose';
+    }
+    if ($kind === 'service') {
+        return 'q1-service-town-prose';
+    }
+    return 'q1-thin-prose';
+}
+
+function icomplyCloseQProseHtml(string $body, string $slot, string $id): string
+{
+    $chunks = preg_split("/\n\s*\n/", trim($body)) ?: [];
+    $html = '';
+    foreach ($chunks as $chunk) {
+        $text = trim(preg_replace('/\s+/', ' ', (string)$chunk) ?? '');
+        if ($text === '') {
+            continue;
+        }
+        $html .= '<p>' . icomplyQualityBarH($text) . '</p>';
+    }
+    return '<div data-pe-slot="' . icomplyQualityBarH($slot) . '" id="' . icomplyQualityBarH($id) . '">' . $html . '</div>';
+}
+
+/**
+ * images[0] hero, images[1] work, images[2] context.
+ * Null unless three src values are present.
+ *
+ * @param list<mixed> $images
+ * @return array{html:string,hero:string,og:string}|null
+ */
+function icomplyCloseQImagesHtml(array $images, string $slot): ?array
+{
+    $slots = ['q2-image-hero', 'q2-image-work', 'q2-image-context'];
+    $picked = [];
+    foreach ($images as $image) {
+        if (!is_array($image)) {
+            continue;
+        }
+        $src = trim((string)($image['src'] ?? ''));
+        if ($src === '') {
+            continue;
+        }
+        $picked[] = [
+            'src' => $src,
+            'alt' => trim((string)($image['alt'] ?? '')),
+        ];
+        if (count($picked) === 3) {
+            break;
+        }
+    }
+    if (count($picked) < 3) {
+        return null;
+    }
+    $srcUrl = static function (string $path): string {
+        if (preg_match('#^https?://#i', $path) === 1) {
+            return $path;
+        }
+        return function_exists('url') ? url($path) : $path;
+    };
+    $h = 'icomplyQualityBarH';
+    $html = '<figure class="quality-bar-images" data-pe-slot="' . $h($slot) . '">';
+    foreach ($picked as $i => $image) {
+        $html .= '<img data-pe-slot="' . $slots[$i] . '" src="' . $h($srcUrl($image['src'])) . '" alt="' . $h($image['alt']) . '" width="1200" height="630">';
+    }
+    $html .= '</figure>';
+    $hero = $picked[0]['src'];
+    if (function_exists('icomply_absolute_url') && preg_match('#^https?://#i', $hero) !== 1) {
+        $og = icomply_absolute_url($hero);
+    } elseif (preg_match('#^https?://#i', $hero) === 1) {
+        $og = $hero;
+    } else {
+        $og = 'https://icomplypropertyservices.co.uk' . (str_starts_with($hero, '/') ? $hero : '/' . $hero);
+    }
+    return ['html' => $html, 'hero' => $hero, 'og' => $og];
 }
 
 /** @return array{banks:list<list<string>>} */
@@ -152,9 +318,9 @@ function icomplyQualityBarFaqHtml(array $faqs, string $slot, string $jsonId, str
 {
     $items = '';
     $entities = [];
-    foreach ($faqs as $faq) {
-        $q = trim((string)($faq[0] ?? ''));
-        $a = trim((string)($faq[1] ?? ''));
+    foreach (icomplyCloseQFaqList($faqs) as $faq) {
+        $q = $faq[0];
+        $a = $faq[1];
         if ($q === '' || $a === '') {
             continue;
         }
@@ -180,6 +346,14 @@ function icomplyQualityBarFaqHtml(array $faqs, string $slot, string $jsonId, str
 /** @return list<array{0:string,1:string}> */
 function icomplyQualityBarAreaFaqs(string $areaName): array
 {
+    $slug = icomplyCloseQSlug($areaName);
+    $block = icomplyCloseQLoad('area-faqs.json')[$slug] ?? null;
+    if (is_array($block)) {
+        $fromFile = icomplyCloseQFaqList($block['faqs'] ?? null);
+        if (count($fromFile) >= 3) {
+            return $fromFile;
+        }
+    }
     return [
         [
             'How do I request a quote for work in ' . $areaName . '?',
@@ -203,6 +377,13 @@ function icomplyQualityBarAreaFaqs(string $areaName): array
 /** @return list<array{0:string,1:string}> */
 function icomplyQualityBarHomeFaqs(): array
 {
+    $block = icomplyCloseQLoad('area-faqs.json')['homepage'] ?? null;
+    if (is_array($block)) {
+        $fromFile = icomplyCloseQFaqList($block['faqs'] ?? null);
+        if (count($fromFile) >= 3) {
+            return $fromFile;
+        }
+    }
     return [
         [
             'What does iComply quote?',
@@ -226,6 +407,10 @@ function icomplyQualityBarHomeFaqs(): array
 /** @return list<array{0:string,1:string}> */
 function icomplyQualityBarAovFaqs(): array
 {
+    $fromFile = icomplyCloseQFaqList(icomplyCloseQLoad('aov-hub.json')['faqs'] ?? null);
+    if (count($fromFile) >= 3) {
+        return $fromFile;
+    }
     return [
         [
             'How is AOV installation priced?',
@@ -246,8 +431,63 @@ function icomplyQualityBarAovFaqs(): array
     ];
 }
 
-function icomplyQualityBarThinBlock(string $kind, string $subject, string $serviceName, string $serviceSlug, string $place, string $blurb, bool $gas): string
+/**
+ * Manchester area images come from area-faqs.json manchester_images.
+ * Other area indexes keep the generated three-image floor.
+ *
+ * @return array{html:string,hero:string,og:string}
+ */
+function icomplyQualityBarAreaImages(string $areaName): array
 {
+    $fallback = icomplyQualityBarImages('fire-alarms', 'Property compliance in ' . $areaName, 'q2-area-images');
+    if (icomplyCloseQSlug($areaName) !== 'manchester') {
+        return $fallback;
+    }
+    $block = icomplyCloseQLoad('area-faqs.json')['manchester_images'] ?? null;
+    if (!is_array($block)) {
+        return $fallback;
+    }
+    $fromFile = icomplyCloseQImagesHtml(is_array($block['images'] ?? null) ? $block['images'] : [], 'q2-area-images');
+    return $fromFile ?? $fallback;
+}
+
+/**
+ * @return array{html:string,hero:string,og:string}
+ */
+function icomplyQualityBarAovImages(): array
+{
+    $fromFile = icomplyCloseQImagesHtml(
+        is_array(icomplyCloseQLoad('aov-hub.json')['images'] ?? null) ? icomplyCloseQLoad('aov-hub.json')['images'] : [],
+        'q6-aov-images'
+    );
+    return $fromFile ?? icomplyQualityBarImages('aov-air-handling', 'Automatic opening vents and smoke control', 'q6-aov-images');
+}
+
+function icomplyQualityBarThinBlock(
+    string $kind,
+    string $subject,
+    string $serviceName,
+    string $serviceSlug,
+    string $place,
+    string $blurb,
+    bool $gas,
+    string $pageSlug = ''
+): string {
+    $lookupSlug = $pageSlug !== '' ? $pageSlug : ($kind === 'service' ? $serviceSlug : '');
+    $page = $lookupSlug !== '' ? icomplyCloseQTownPage($kind, $lookupSlug, $place) : null;
+    if (is_array($page)) {
+        $fromImages = icomplyCloseQImagesHtml(is_array($page['images'] ?? null) ? $page['images'] : [], 'q2-thin-images');
+        $body = trim((string)($page['body'] ?? ''));
+        $fromFaqs = icomplyCloseQFaqList($page['faqs'] ?? null);
+        if ($fromImages !== null && $body !== '' && count($fromFaqs) >= 3) {
+            if ($gas && !str_contains($body, 'Gas Safe registered engineers')) {
+                $body .= "\n\n" . ICOMPLY_GAS_ENGINEERS . ' ' . ICOMPLY_GAS_NOT_REGISTERED;
+            }
+            return $fromImages['html']
+                . icomplyCloseQProseHtml($body, icomplyCloseQProseSlot($kind), 'q1-thin-prose')
+                . icomplyQualityBarFaqHtml($fromFaqs, 'q5-thin-faq', 'q5-thin-faq-jsonld', 'Questions about ' . $place);
+        }
+    }
     $ctx = [
         'place' => $place,
         'subject' => $subject,
@@ -276,6 +516,10 @@ function icomplyQualityBarThinBlock(string $kind, string $subject, string $servi
 
 function icomplyQualityBarAovProseHtml(): string
 {
+    $body = trim((string)(icomplyCloseQLoad('aov-hub.json')['body'] ?? ''));
+    if ($body !== '') {
+        return icomplyCloseQProseHtml($body, 'q6-aov-prose', 'q6-aov-prose');
+    }
     $paragraphs = [
         'An automatic opening vent is a ventilator that opens when the fire strategy says it should. On most of the buildings we are asked about, that is a roof hatch or a façade vent at the head of a stair, sometimes a corridor or lobby opening into a smoke shaft. The vent is life-safety equipment. We treat the work as fire protection and quote it across the UK from our Stockport yard. This index lists the town pages. It is not a depot map and it is not a catalogue of fixed install prices.',
         'The visit we can actually describe is a test of the equipment that is already there, or an install that has a written scope. Full travel of the vents the strategy names, the manual point at the landing, battery standby, and the fire-alarm contact are the usual checks. A green panel with a seized roof lid is a fail. We write down what moved and what did not. We do not turn a failed travel test into a pass because the panel lamp is healthy.',
