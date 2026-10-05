@@ -1112,7 +1112,8 @@ TXT;
     // Exact place-alias 301s must come before /pages/barriers/:slug and /pages/aov 200! rules.
     return icomplyPlaceAliasRedirectLines()
         . rtrim($txt, "\r\n") . "\n"
-        . icomplyAovLegacyRedirectLines() . <<<'TXT'
+        . icomplyAovLegacyRedirectLines()
+        . icomplyNationwideP0JobRedirectLines() . <<<'TXT'
 
 # Splat pretty URLs. No force — /assets and real files win.
 /*                       /:splat.php                  200
@@ -1126,6 +1127,19 @@ TXT;
  * because Netlify only skips an unforced rule when a file exists at the
  * request path itself.
  */
+function icomplyNationwideP0JobRedirectLines(): string
+{
+    $file = SITE_ROOT . '/includes/nationwide-p0-jobs.php';
+    if (!is_file($file)) {
+        return '';
+    }
+    require_once $file;
+    if (!function_exists('nationwideP0RedirectLines')) {
+        return '';
+    }
+    return nationwideP0RedirectLines();
+}
+
 function icomplyTownExportMustNotRedirect(string $slug): bool
 {
     return $slug === 'aov'

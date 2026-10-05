@@ -269,9 +269,19 @@ function icomplySitemapEntries(): array
     $add('/pages/keywords/car-park-barrier-access', '0.8');
 
     // Resource articles that exist on the publish root (not source-only).
+    if (!function_exists('nationwideP0KeywordRedirect')) {
+        $p0Jobs = SITE_ROOT . '/includes/nationwide-p0-jobs.php';
+        if (is_file($p0Jobs)) {
+            require_once $p0Jobs;
+        }
+    }
     foreach (glob($publish . '/pages/jobs/*.php') ?: [] as $jobFile) {
         $base = basename($jobFile, '.php');
         if ($base === 'index') {
+            continue;
+        }
+        // Keyword hub is the canonical URL. Do not also list the job path.
+        if (function_exists('nationwideP0KeywordRedirect') && nationwideP0KeywordRedirect($base) !== null) {
             continue;
         }
         $add('/pages/jobs/' . $base, '0.8');

@@ -104,8 +104,23 @@ function renderJobArticle(array $page): void
     $accent = trim((string)($page['accent'] ?? ''));
     $kicker = trim((string)($page['kicker'] ?? 'Job'));
     $lede = trim((string)($page['lede'] ?? $paragraphs[0]));
+    $images = [];
+    foreach ((array)($page['images'] ?? []) as $imageRow) {
+        if (!is_array($imageRow) || count($imageRow) < 2) {
+            continue;
+        }
+        $src = trim((string)$imageRow[0]);
+        $alt = trim((string)$imageRow[1]);
+        if ($src !== '' && $alt !== '' && is_file(SITE_ROOT . $src)) {
+            $images[] = [$src, $alt];
+        }
+    }
     $image = trim((string)($page['image'] ?? '/assets/images/services/fire-alarms.jpg'));
     $imageAlt = trim((string)($page['image_alt'] ?? $h1));
+    if ($images !== []) {
+        $image = $images[0][0];
+        $imageAlt = $images[0][1];
+    }
     $crumbService = trim((string)($page['service_label'] ?? 'Services'));
     $crumbServiceHref = trim((string)($page['service_href'] ?? '/pages/services'));
     $parentLabel = trim((string)($page['parent_label'] ?? ''));
@@ -165,7 +180,7 @@ function renderJobArticle(array $page): void
                 'serviceType' => $h1,
                 'description' => $meta,
                 'url' => $canonicalUrl,
-                'areaServed' => 'North West England',
+                'areaServed' => trim((string)($page['area_served'] ?? 'North West England')),
                 'provider' => [
                     '@type' => 'LocalBusiness',
                     'name' => SITE_NAME,
@@ -183,6 +198,17 @@ function renderJobArticle(array $page): void
             ],
         ],
     ];
+    if (!empty($page['show_nap'])) {
+        $schema['@graph'][0]['provider']['email'] = EMAIL;
+        $schema['@graph'][0]['provider']['address'] = [
+            '@type' => 'PostalAddress',
+            'streetAddress' => '17 Woodlands Park Road, Offerton',
+            'addressLocality' => 'Stockport',
+            'addressRegion' => 'Cheshire',
+            'postalCode' => 'SK2 5DE',
+            'addressCountry' => 'GB',
+        ];
+    }
 
     require_once SITE_ROOT . '/includes/share.php';
     require SITE_ROOT . '/includes/header.php';
@@ -220,7 +246,7 @@ function renderJobArticle(array $page): void
         </div>
     </div>
 </section>
-<section class="bg-white">
+<section class="bg-white" id="job-body">
     <div class="max-w-3xl mx-auto px-6 py-14">
         <?php foreach ($paragraphs as $para): ?>
         <p class="mt-4 text-lg text-zinc-700 leading-relaxed first:mt-0"><?= $h($para) ?></p>
@@ -231,6 +257,15 @@ function renderJobArticle(array $page): void
             <li class="flex gap-3 text-zinc-800"><span class="text-[#ff6b00] font-bold">●</span><span><?= $h($point) ?></span></li>
             <?php endforeach; ?>
         </ul>
+        <?php if ($images !== []): ?>
+        <div class="mt-8 grid gap-4 sm:grid-cols-3">
+            <?php foreach ($images as [$src, $alt]): ?>
+            <figure class="m-0">
+                <img src="<?= $h(url($src)) ?>" alt="<?= $h($alt) ?>" class="w-full h-40 object-cover rounded-2xl border border-zinc-200" width="640" height="420" loading="lazy">
+            </figure>
+            <?php endforeach; ?>
+        </div>
+        <?php endif; ?>
         <p class="mt-8 text-sm text-zinc-600">Price on application after we know the site. We do not publish a fee on this page.</p>
         <?php
         require_once SITE_ROOT . '/includes/quality-bar.php';
