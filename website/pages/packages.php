@@ -48,7 +48,7 @@ $packages = [
             'Coordinated visit planning to minimise access days',
         ],
         'service_slugs' => ['electrical', 'gas-systems', 'emergency-lighting', 'fire-alarms'],
-        'wa_text' => 'Hi Icomply, I need a quote for the Landlord Essentials package',
+        'wa_text' => 'Hi iComply, I need a quote for the Landlord Essentials package',
     ],
     [
         'id' => 'fire',
@@ -69,7 +69,7 @@ $packages = [
             'Optional design / upgrade quote if systems fail',
         ],
         'service_slugs' => ['fire-alarms', 'emergency-lighting', 'aov-air-handling'],
-        'wa_text' => 'Hi Icomply, I need a quote for the Fire Package',
+        'wa_text' => 'Hi iComply, I need a quote for the Fire Package',
     ],
     [
         'id' => 'security',
@@ -90,7 +90,7 @@ $packages = [
             'One point of contact for all security trades',
         ],
         'service_slugs' => ['barriers', 'cctv', 'access-control', 'door-entry', 'intercoms', 'intruder-alarm'],
-        'wa_text' => 'Hi Icomply, I need a quote for the Security Package',
+        'wa_text' => 'Hi iComply, I need a quote for the Security Package',
     ],
     [
         'id' => 'full-fm',
@@ -115,7 +115,7 @@ $packages = [
             'aov-air-handling', 'barriers', 'nurse-call', 'cctv', 'access-control',
             'door-entry', 'intercoms', 'intruder-alarm',
         ],
-        'wa_text' => 'Hi Icomply, I need a quote for the Full FM compliance package',
+        'wa_text' => 'Hi iComply, I need a quote for the Full FM compliance package',
     ],
 ];
 
@@ -149,7 +149,7 @@ require SITE_ROOT . '/includes/header.php';
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#packages" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">View packages</a>
                 <a href="#quote" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">Free quote</a>
-                <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi Icomply, I need a multi-service compliance package quote') ?>"
+                <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi iComply, I need a multi-service compliance package quote') ?>"
                    target="_blank" rel="noopener"
                    class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
             </div>
@@ -312,7 +312,7 @@ require SITE_ROOT . '/includes/header.php';
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
                    class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
-                <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi Icomply, I need a compliance package quote') ?>"
+                <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi iComply, I need a compliance package quote') ?>"
                    target="_blank" rel="noopener"
                    class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>
                 <a href="#quote" class="px-6 py-3 rounded-2xl border border-white/30 font-semibold hover:bg-white/10">Quote form</a>
@@ -363,7 +363,7 @@ require SITE_ROOT . '/includes/header.php';
             </p>
         </form>
         <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm">
-            <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi Icomply, I need a compliance package quote') ?>"
+            <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi iComply, I need a compliance package quote') ?>"
                target="_blank" rel="noopener"
                class="px-5 py-2.5 rounded-2xl bg-green-600 hover:bg-green-500 text-white font-semibold">WhatsApp us instead</a>
             <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"

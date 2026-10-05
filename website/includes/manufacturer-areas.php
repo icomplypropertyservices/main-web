@@ -330,8 +330,8 @@ function manufacturerLocalIntro(array $entry, string $area): string
 function manufacturerAreaTitle(string $brand, string $area): string
 {
     $candidates = [
-        $brand . ' in ' . $area . ' | Icomply',
-        $brand . ' | ' . $area . ' | Icomply',
+        $brand . ' in ' . $area . ' | iComply',
+        $brand . ' | ' . $area . ' | iComply',
         $area . ' | ' . $brand,
     ];
     foreach ($candidates as $title) {

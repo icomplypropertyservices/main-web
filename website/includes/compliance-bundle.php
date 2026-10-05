@@ -187,7 +187,7 @@ function icomplyComplianceBundleOfferJsonLd(string $canonicalUrl): array
         'availability' => 'https://schema.org/InStock',
         'seller' => [
             '@type' => 'LocalBusiness',
-            'name' => defined('SITE_NAME') ? SITE_NAME : 'Icomply Property Services',
+            'name' => defined('SITE_NAME') ? SITE_NAME : 'iComply Property Services',
         ],
     ];
 }

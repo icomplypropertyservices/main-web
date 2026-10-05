@@ -91,7 +91,7 @@ $h = static function ($s): string {
                     Serving <strong class="text-[#061828]"><?= $h($AREA) ?></strong>: <?= $h($KEYWORD_BODY) ?>
                 </p>
                 <p class="mt-4 text-base text-zinc-900 leading-relaxed">
-                    Searching for <strong><?= $h($KEYWORD_NAME) ?> near <?= $h($AREA) ?></strong>? Book Icomply for install, service, testing or certification.
+                    Searching for <strong><?= $h($KEYWORD_NAME) ?> near <?= $h($AREA) ?></strong>? Book iComply for install, service, testing or certification.
                     Also see
                     <a class="font-bold text-[#ff6b00] hover:underline" href="<?= url('/pages/keywords/' . rawurlencode($RELATED_SLUG) . '/' . rawurlencode($AREA_SLUG) . '.php') ?>"><?= $h($RELATED_NAME) ?> in <?= $h($AREA) ?></a>
                     and

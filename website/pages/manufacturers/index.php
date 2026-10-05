@@ -82,7 +82,7 @@ require SITE_ROOT . '/includes/header.php';
                 <a class="px-4 py-2 rounded-full bg-white text-[#0B1F3A] font-semibold" href="<?= url('/pages/services/barriers.php') ?>">All barrier brands</a>
             </div>
         </div>
-        <img src="<?= htmlspecialchars(barrierCameHeroImage(), ENT_QUOTES, 'UTF-8') ?>" alt="CAME GARD barrier — Icomply partner range" class="w-full h-56 object-cover rounded-2xl" loading="lazy">
+        <img src="<?= htmlspecialchars(barrierCameHeroImage(), ENT_QUOTES, 'UTF-8') ?>" alt="CAME GARD barrier — iComply partner range" class="w-full h-56 object-cover rounded-2xl" loading="lazy">
     </div>
 </section>
 <?php endif; ?>
@@ -102,7 +102,7 @@ require SITE_ROOT . '/includes/header.php';
            class="group bg-white border rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
             <div class="h-32 bg-zinc-100 overflow-hidden">
                 <img src="<?= htmlspecialchars(manufacturerImageUrl($slug, $primary), ENT_QUOTES, 'UTF-8') ?>"
-                     alt="<?= htmlspecialchars($entry['name'], ENT_QUOTES, 'UTF-8') ?> equipment — Icomply Property Services"
+                     alt="<?= htmlspecialchars($entry['name'], ENT_QUOTES, 'UTF-8') ?> equipment — iComply Property Services"
                      class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
                      loading="lazy">
             </div>

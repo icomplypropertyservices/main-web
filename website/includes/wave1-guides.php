@@ -357,7 +357,7 @@ function wave1FortnightGuides(): array
                 ],
                 [
                     'h2' => 'Book servicing',
-                    'p' => ['[Fire extinguishers](/pages/services/fire-extinguishers) or [contact](/contact). Same-day access with alarm or emergency-lighting visits is often the efficient option.'],
+                    'p' => ['[Fire extinguishers](/pages/services/fire-extinguishers) or [contact](/contact). Combining the visit with alarm or emergency-lighting work is often the efficient option.'],
                 ],
             ],
             'faqs' => [

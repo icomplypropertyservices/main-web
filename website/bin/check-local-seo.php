@@ -100,7 +100,7 @@ function localSeoCheckPage(string $label, string $html, string $canonical, bool 
             $got = $rawTitle[1] . ' (' . strlen($rawTitle[1]) . ' chars)';
         }
         localSeoFail("{$label} title length {$got}");
-    } elseif (!str_contains($title[1], 'Icomply')) {
+    } elseif (!str_contains($title[1], 'iComply') && !str_contains($title[1], 'Icomply')) {
         localSeoFail("{$label} title missing brand");
     }
     if (!preg_match('/name="description" content="([^"]{70,165})"/', $html, $desc)) {

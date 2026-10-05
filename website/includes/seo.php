@@ -493,39 +493,39 @@ function icomply_service_hub_seo(string $slug, string $serviceName, bool $poa): 
 {
     $top = [
         'electrical' => [
-            'title' => 'Electrical and EICR in Stockport | Icomply',
+            'title' => 'Electrical and EICR in Stockport | iComply',
             'description' => 'EICR, rewires and electrical installation in Stockport and Greater Manchester. BS 7671 testing and certification. Written quote after scope.',
         ],
         'gas-systems' => [
-            'title' => 'Gas Safety and CP12 in Stockport | Icomply',
+            'title' => 'Gas Safety and CP12 in Stockport | iComply',
             'description' => 'Landlord gas safety (CP12) and gas servicing in Stockport and Greater Manchester. Gas Safe checks. Written quote after scope.',
         ],
         'fire-risk-assessments' => [
-            'title' => 'Fire Risk Assessments Stockport | Icomply',
+            'title' => 'Fire Risk Assessments Stockport | iComply',
             'description' => 'Fire risk assessments for landlords, HMOs and commercial sites in Stockport and Greater Manchester. Written quote after scope.',
         ],
         'landlord-compliance' => [
-            'title' => 'Landlord Compliance Stockport | Icomply',
+            'title' => 'Landlord Compliance Stockport | iComply',
             'description' => 'Landlord compliance in Stockport and Greater Manchester, including EICR, gas safety and fire risk support. Written quote after scope.',
         ],
         'kitchens' => [
-            'title' => 'Kitchen Fitting in Stockport | Icomply',
+            'title' => 'Kitchen Fitting in Stockport | iComply',
             'description' => 'Kitchen fitting in Stockport and Greater Manchester. Supply and installation for homes and rentals. Written quote after scope.',
         ],
         'renovation' => [
-            'title' => 'Property Renovation Stockport | Icomply',
+            'title' => 'Property Renovation Stockport | iComply',
             'description' => 'Property renovation in Stockport and Greater Manchester. Refurbishment scoped to the building. Written quote after we confirm the job.',
         ],
         'cctv' => [
-            'title' => 'CCTV Installation Stockport | Icomply',
+            'title' => 'CCTV Installation Stockport | iComply',
             'description' => 'CCTV design and installation in Stockport and Greater Manchester. IP cameras, recording and remote viewing. Written quote after scope.',
         ],
         'legionella-risk-assessment' => [
-            'title' => 'Legionella Assessment Stockport | Icomply',
+            'title' => 'Legionella Assessment Stockport | iComply',
             'description' => 'Legionella risk assessments in Stockport and Greater Manchester. Water hygiene scoped to the system. Price on application.',
         ],
         'asbestos-survey' => [
-            'title' => 'Asbestos Surveys in Stockport | Icomply',
+            'title' => 'Asbestos Surveys in Stockport | iComply',
             'description' => 'Asbestos management and refurbishment surveys in Stockport and Greater Manchester. Removal is booked separately. Price on application.',
         ],
     ];
@@ -533,9 +533,9 @@ function icomply_service_hub_seo(string $slug, string $serviceName, bool $poa): 
         return $top[$slug];
     }
 
-    $title = $serviceName . ' in Stockport | Icomply';
+    $title = $serviceName . ' in Stockport | iComply';
     if (mb_strlen(htmlspecialchars($title, ENT_QUOTES, 'UTF-8')) > 70) {
-        $title = $serviceName . ' | Icomply';
+        $title = $serviceName . ' | iComply';
     }
 
     if ($poa) {
@@ -645,12 +645,12 @@ function icomply_service_hub_jsonld(
 function seo_document_title(string $raw): string {
     $raw = trim(preg_replace('/\s+/u', ' ', $raw) ?? $raw);
     if ($raw === '') {
-        $raw = 'Icomply Property Services';
+        $raw = 'iComply Property Services';
     }
-    $hasBrand = stripos($raw, 'Icomply') !== false;
+    $hasBrand = stripos($raw, 'iComply') !== false;
     if (!$hasBrand) {
-        $full = $raw . ' | Icomply Property Services';
-        $short = $raw . ' | Icomply';
+        $full = $raw . ' | iComply Property Services';
+        $short = $raw . ' | iComply';
         if (mb_strlen($full) <= 65) {
             $raw = $full;
         } elseif (mb_strlen($short) <= 65) {
@@ -666,8 +666,8 @@ function seo_document_title(string $raw): string {
             $raw = $cut;
         }
     }
-    if (mb_strlen($raw) < 30 && stripos($raw, 'Icomply') === false) {
-        $raw .= ' | Icomply Property Services';
+    if (mb_strlen($raw) < 30 && stripos($raw, 'iComply') === false) {
+        $raw .= ' | iComply Property Services';
         if (mb_strlen($raw) > 65) {
             $raw = mb_substr($raw, 0, 65);
         }
@@ -695,7 +695,7 @@ function seo_fit_meta(string $text): string {
 
 /**
  * Rewrite company self-claims of NICEIC / Gas Safe registration.
- * Sentences that only state the legal duty (no we/our/Icomply) are left alone.
+ * Sentences that only state the legal duty (no we/our/iComply) are left alone.
  */
 function scrub_unverified_accreditation(string $text): string {
     $text = trim($text);

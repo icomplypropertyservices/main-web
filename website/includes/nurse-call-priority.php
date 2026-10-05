@@ -511,7 +511,7 @@ function nurseCallPriorityKeywordOverlay(): array
                 'Notes sent to the person who keeps the care file',
             ],
             'faq' => [
-                ['Is servicing the same as a repair?', 'Servicing is the planned test. A repair is the room that failed. We can do the repair on the same day if the part is a common lead or cord.'],
+                ['Is servicing the same as a repair?', 'Servicing is the planned test. A repair is the room that failed. We quote the repair separately if the part is a common lead or cord.'],
                 ['Do you need staff with you?', 'Someone who can open bedrooms and stand at the lamp. We do not test occupied rooms alone.'],
                 ['What is the number?', $phone . '. Say which floor is free.'],
             ],

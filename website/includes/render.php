@@ -170,7 +170,7 @@ function keywordTemplatePlaceholders(
     if ($seoTitle === '') {
         $seoTitle = $name . ' | North West';
     }
-    $intro = (string)($meta['intro'] ?? "Professional {$name} from Icomply Property Services across the North West.");
+    $intro = (string)($meta['intro'] ?? "Professional {$name} from iComply Property Services across the North West.");
     $body = (string)($meta['body'] ?? "We install, service and certify {$name} as part of our {$serviceName} range for landlords, FM teams and commercial sites.");
     $metaDesc = (string)($meta['meta_desc'] ?? "{$name} across Greater Manchester & the North West. Fixed-price quotes. Local engineers.");
     $seoKw = (string)($meta['seo_keywords'] ?? getSeoKeywords($serviceSlug, $areaName));

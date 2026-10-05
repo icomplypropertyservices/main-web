@@ -17,7 +17,7 @@ $metaTitleExact = true;
 $metaDesc = 'Fire alarm install, maintenance and servicing to BS 5839 across Stockport, Greater Manchester and the North West. '
     . $counts['install'] . ' install guides, ' . $counts['maintain'] . ' maintenance guides and ' . $counts['service']
     . ' service guides. Written quotes after scope. No published fees.';
-$metaKeywords = 'fire alarm installation, fire alarm maintenance, fire alarm servicing, BS 5839, Stockport, Manchester, North West, Icomply';
+$metaKeywords = 'fire alarm installation, fire alarm maintenance, fire alarm servicing, BS 5839, Stockport, Manchester, North West, iComply';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/jobs/fire-alarms');
 $omitPriceRange = true;
@@ -124,7 +124,7 @@ require SITE_ROOT . '/includes/header.php';
             <span class="text-[#ff6b00]">maintenance and servicing</span>
         </h1>
         <p class="mt-6 text-lg text-white/80 max-w-2xl">
-            Icomply designs, installs, maintains and services BS 5839 fire detection and alarm systems
+            iComply designs, installs, maintains and services BS 5839 fire detection and alarm systems
             from Stockport across Greater Manchester and the North West. Pick a lane below.
             Quotes are written after scope. Price on application — we do not publish fees.
         </p>

@@ -15,7 +15,7 @@ function icomplyWhatsappFloatHtml(?string $number = null): string
     if ($digits === '') {
         $digits = '447517806082';
     }
-    $href = 'https://wa.me/' . $digits . '?text=' . rawurlencode('Hi Icomply, I need a quote for compliance services');
+    $href = 'https://wa.me/' . $digits . '?text=' . rawurlencode('Hi iComply, I need a quote for compliance services');
     $safe = htmlspecialchars($href, ENT_QUOTES, 'UTF-8');
 
     return '<a href="' . $safe . '" target="_blank" rel="noopener" aria-label="WhatsApp" class="wa-float">💬</a>';

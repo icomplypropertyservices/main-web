@@ -1,7 +1,7 @@
 <?php
 /** @var array $place @var array $article */
 require_once SITE_ROOT . '/includes/aov-brands.php';
-$pageTitle = $article['title'] . ' | Icomply';
+$pageTitle = $article['title'] . ' | iComply';
 $metaDesc = $article['meta'];
 $metaKeywords = 'AOV ' . $place['name'] . ', smoke vent ' . $place['name'] . ', automatic opening vent ' . $place['region'] . ', smoke control ' . $place['nation'];
 $canonicalUrl = url('/pages/aov/' . $place['slug']);

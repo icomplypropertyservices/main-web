@@ -18,7 +18,7 @@ $services = getServices();
 $areas = getAreas();
 
 $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
-$waText = rawurlencode('Hi Icomply, emergency / 24h lane. Fault type, postcode and whether this is live or within 24 hours: ');
+$waText = rawurlencode('Hi iComply, emergency / 24h lane. Fault type, postcode and whether this is live or within 24 hours: ');
 $waUrl = 'https://wa.me/' . WHATSAPP . '?text=' . $waText;
 
 $windows = [

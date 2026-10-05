@@ -137,16 +137,16 @@ function icomplyMfrPageTitle(string $serviceName, string $area): string
 {
     $title = $area === ''
         ? ($serviceName . ' | North West')
-        : ($serviceName . ' in ' . $area . ' | Icomply');
+        : ($serviceName . ' in ' . $area . ' | iComply');
     if (mb_strlen($title) <= 70) {
         return $title;
     }
     $short = $area === '' ? $serviceName : ($serviceName . ' in ' . $area);
-    $withBrand = $short . ' | Icomply';
+    $withBrand = $short . ' | iComply';
     if (mb_strlen($withBrand) <= 70) {
         return $withBrand;
     }
-    return mb_substr($short, 0, 58) . ' | Icomply';
+    return mb_substr($short, 0, 58) . ' | iComply';
 }
 
 function icomplyMfrMetaDesc(string $serviceSlug, string $area): string
@@ -177,7 +177,7 @@ function icomplyMfrFaqs(string $serviceSlug): array
     if (areaSlug($serviceSlug) === 'aov-air-handling') {
         return [
             ['Which AOV manufacturers do you work on?', 'Every brand in the manufacturer grid on this page. If your panel is not listed, call 07517806082 and we will say whether we can attend it.'],
-            ['Are brand prices listed?', 'No. The Icomply AOV equipment kit list is separate and ex VAT. Manufacturer supply and all installation are POA after survey.'],
+            ['Are brand prices listed?', 'No. The iComply AOV equipment kit list is separate and ex VAT. Manufacturer supply and all installation are POA after survey.'],
             ['Can you service a system that is already fitted?', 'Yes, once we have identified the manufacturer and the fault. We do not guess a model from a photo of a closed vent.'],
         ];
     }
@@ -190,7 +190,7 @@ function icomplyMfrServiceCopy(string $serviceSlug): ?array
     if (areaSlug($serviceSlug) === 'barriers') {
         return [
             'intro' => [
-                'Icomply supplies vehicle barriers as a CAME partner and services existing booms from the other manufacturers listed below. The only prices on this page are the CAME 5m supply packs already published for BAR-5M-STD, BAR-5M-VIDEX, BAR-5M-PAXTON, BAR-5M-GSM and BAR-5M-ALLIN.',
+                'iComply supplies vehicle barriers as a CAME partner and services existing booms from the other manufacturers listed below. The only prices on this page are the CAME 5m supply packs already published for BAR-5M-STD, BAR-5M-VIDEX, BAR-5M-PAXTON, BAR-5M-GSM and BAR-5M-ALLIN.',
                 'Installation, induction loops, safety edges, power and commissioning are quoted after we see the lane. We do not invent a call-out fee. Phone 07517806082.',
             ],
             'pillars' => [
@@ -203,8 +203,8 @@ function icomplyMfrServiceCopy(string $serviceSlug): ?array
     if (areaSlug($serviceSlug) === 'aov-air-handling') {
         return [
             'intro' => [
-                'Icomply installs and services automatic opening vents and the smoke-control plant listed below. Each card names the product lines we actually work on for that manufacturer.',
-                'There is no manufacturer price list here. The Icomply AOV equipment kits have locked ex VAT supply figures. Labour, inspection and commissioning stay POA. Phone 07517806082.',
+                'iComply installs and services automatic opening vents and the smoke-control plant listed below. Each card names the product lines we actually work on for that manufacturer.',
+                'There is no manufacturer price list here. The iComply AOV equipment kits have locked ex VAT supply figures. Labour, inspection and commissioning stay POA. Phone 07517806082.',
             ],
             'pillars' => [
                 ['title' => 'Brand identified first', 'text' => 'We name the panel or actuator from the label on site before ordering parts.'],
@@ -432,13 +432,13 @@ function icomplyMfrShowcaseHtml(string $serviceSlug, string $area = ''): string
     $html .= '<form id="mfr-quote" class="mfr-wizard bg-white border rounded-3xl" action="' . htmlspecialchars(url('/contact.php'), ENT_QUOTES, 'UTF-8') . '" method="post">';
     $html .= '<h3>' . ($isBarriers ? 'Barrier quote helper' : 'AOV quote helper') . '</h3>';
     $html .= '<p class="mfr-wizard-note">Choose the brand and the job. Supply figures appear only for published CAME packs'
-        . ($isBarriers ? '' : ' or the Icomply AOV kit list') . '. Installation stays POA.</p>';
+        . ($isBarriers ? '' : ' or the iComply AOV kit list') . '. Installation stays POA.</p>';
     $html .= '<input type="hidden" name="csrf" value="' . $csrf . '">';
     $html .= '<input type="hidden" name="service" value="' . $serviceValue . '">';
     $html .= '<div class="mfr-wizard-grid">';
     $html .= '<label>Brand<select id="mfr-quote-brand" name="mfr_brand">' . $brandOptions . '</select></label>';
     $html .= '<label>Job<select id="mfr-quote-job" name="mfr_job"><option>New install</option><option>Service existing</option><option>Fault finding</option><option>Parts only</option></select></label>';
-    $html .= '<label>' . ($isBarriers ? 'CAME supply pack' : 'Icomply equipment kit (optional)') . '<select id="mfr-quote-kit"><option value="">Not selected — quote POA</option>' . $kitOptions . '</select></label>';
+    $html .= '<label>' . ($isBarriers ? 'CAME supply pack' : 'iComply equipment kit (optional)') . '<select id="mfr-quote-kit"><option value="">Not selected — quote POA</option>' . $kitOptions . '</select></label>';
     $html .= '<label>Name<input name="name" required maxlength="120" autocomplete="name"></label>';
     $html .= '<label>Email<input type="email" name="email" required autocomplete="email"></label>';
     $html .= '<label>Phone<input type="tel" name="phone" required maxlength="40" autocomplete="tel"></label>';

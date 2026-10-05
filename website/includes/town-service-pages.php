@@ -540,7 +540,7 @@ function icomplyRenderTownHub(string $family): void
     echo '<section class="max-w-6xl mx-auto px-6 py-16">';
     echo '<p class="text-sm uppercase tracking-[3px] text-[#ff6b00]">Mainland towns · population over 10,000</p>';
     echo '<h1 class="mt-2 text-4xl md:text-5xl font-semibold tracking-tight">' . htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . '</h1>';
-    echo '<p class="mt-4 text-lg max-w-3xl">Icomply publishes one page per mainland town on the ' . count($towns) . '-place list (England, Scotland and Wales, population over 10,000). ';
+    echo '<p class="mt-4 text-lg max-w-3xl">iComply publishes one page per mainland town on the ' . count($towns) . '-place list (England, Scotland and Wales, population over 10,000). ';
     echo $family === 'barriers'
         ? 'CAME is the barrier partner. Other barrier and access manufacturers are listed on every town page.'
         : 'Each town page lists the AOV manufacturers we support, with nameplates and links.';
@@ -657,7 +657,7 @@ function icomplyRenderTownPage(string $family, string $slug): void
     echo ' · <a class="text-[#ff6b00] font-semibold" href="' . htmlspecialchars($switch, ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($switchLabel, ENT_QUOTES, 'UTF-8') . '</a></p>';
     echo '</section>';
     echo '<section class="mt-12 bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">';
-    echo '<h2 class="text-2xl font-semibold">Speak to Icomply about ' . htmlspecialchars($ctx['name'], ENT_QUOTES, 'UTF-8') . '</h2>';
+    echo '<h2 class="text-2xl font-semibold">Speak to iComply about ' . htmlspecialchars($ctx['name'], ENT_QUOTES, 'UTF-8') . '</h2>';
     echo '<p class="mt-2 text-white/80">Offerton, Stockport, SK2 5DE. About ' . htmlspecialchars($ctx['miles'], ENT_QUOTES, 'UTF-8') . ' miles.</p>';
     echo '<a class="inline-block mt-4 bg-[#ff6b00] px-8 py-3 rounded-2xl font-semibold" href="tel:07517806082">Call 07517806082</a>';
     echo '</section></article>';

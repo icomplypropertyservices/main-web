@@ -280,7 +280,7 @@ function acnRenderHub(): void
         ['Which manufacturers do you cover?', 'The access-control brands linked on this page, including Paxton, HID Global, Salto Systems and ASSA ABLOY. Tunstall is nurse call and is excluded.'],
         ['How is the work priced?', 'Price on application after a survey or clear photos of the doors and the controller. No door price is published here.'],
         ['What standard do you read electronic access control against?', 'BS EN 60839-11 for the electronic access-control system. Door release on a fire alarm is read against BS 7273-4. Older specifications still say BS EN 50133. That standard was withdrawn. We do not treat it as the current design code.'],
-        ['Do you offer a 24-hour access-control contract on this page?', 'No. Same-day help in the North West depends on the diary. It is not an SLA.'],
+        ['Do you offer a 24-hour access-control contract on this page?', 'No. Help in the North West depends on the diary. It is not an SLA.'],
     ];
     ob_start();
     ?>
@@ -339,7 +339,7 @@ function acnRenderHub(): void
         ['name' => 'Access control systems', 'href' => ''],
     ];
     acnRender([
-        'title' => 'Access control systems UK | Icomply',
+        'title' => 'Access control systems UK | iComply',
         'meta' => 'Access control systems across the UK from our Stockport workshop. City pages, keyword guides and manufacturer links. POA. ' . PHONE . '.',
         'keywords' => 'access control systems UK, access control installation, Paxton, HID, Salto, door access control, ' . PHONE,
         'canonical' => $canonical,
@@ -427,7 +427,7 @@ function acnRenderCity(array $city): void
     <?php
     $body = (string)ob_get_clean();
     acnRender([
-        'title' => 'Access control in ' . $name . ' | Icomply',
+        'title' => 'Access control in ' . $name . ' | iComply',
         'meta' => (string)$city['meta'],
         'keywords' => 'access control systems ' . $name . ', door access ' . $name . ', ' . PHONE,
         'canonical' => $canonical,

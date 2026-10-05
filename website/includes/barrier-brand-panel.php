@@ -492,7 +492,7 @@ function barrierManufacturerAreaExportHtml(string $mfrSlug, string $areaName): s
     if ($brand === null || $areaName === '') {
         return '';
     }
-    $title = barrierH((string)$brand['name'] . ' barriers in ' . $areaName . ' | Icomply');
+    $title = barrierH((string)$brand['name'] . ' barriers in ' . $areaName . ' | iComply');
     $desc = barrierH((string)($brand['blurb'] ?? ''));
     $canonical = barrierH(url('/pages/manufacturers/' . $mfrSlug . '/' . areaSlug($areaName)));
     return '<!DOCTYPE html><html lang="en-GB"><head><meta charset="utf-8">'

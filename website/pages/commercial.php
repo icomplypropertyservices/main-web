@@ -154,7 +154,7 @@ require SITE_ROOT . '/includes/header.php';
                 ?>
                 <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                    class="group relative rounded-3xl overflow-hidden border border-white/10 min-h-[140px] bg-white/5 hover:border-[#ff6b00] transition">
-                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> for commercial sites — Icomply Property Services"
+                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> for commercial sites — iComply Property Services"
                          class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-55 transition" loading="lazy"
                          onerror="this.style.display='none'">
                     <div class="relative p-5 h-full flex flex-col justify-end">
@@ -375,7 +375,7 @@ require SITE_ROOT . '/includes/header.php';
                 ?>
                 <a href="<?= url('/shop/index.php') ?>"
                    class="relative rounded-3xl overflow-hidden min-h-[120px] border border-zinc-200 group">
-                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?> products and kits — Icomply Property Services"
+                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?> products and kits — iComply Property Services"
                          class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-90 transition" loading="lazy"
                          onerror="this.style.display='none'">
                     <div class="relative p-4 h-full flex items-end bg-gradient-to-t from-black/50 to-transparent">

@@ -3,7 +3,7 @@
  * Emergency Lighting job-lane index.
  */
 $pageTitle = 'Emergency Lighting Jobs | BS 5266 | North West';
-$metaDesc = 'Emergency lighting job guides from Icomply: BS 5266 testing, installation, certificates, LED conversions and maintenance across the North West. Enquire for a POA quote.';
+$metaDesc = 'Emergency lighting job guides from iComply: BS 5266 testing, installation, certificates, LED conversions and maintenance across the North West. Enquire for a POA quote.';
 $metaKeywords = 'emergency lighting jobs, BS 5266, emergency lighting testing, emergency lighting installation, North West, Stockport';
 $canonicalUrl = $EL_CANONICAL;
 $ogImage = url('/assets/images/services/emergency-lighting.jpg');

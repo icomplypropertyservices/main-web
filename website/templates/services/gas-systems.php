@@ -3,7 +3,7 @@
  * Gas Systems service template
  * 3 images · 3 paragraphs · manufacturers · SEO
  */
-$pageTitle = '{{SERVICE_NAME}} in {{AREA}} | Icomply Property Services';
+$pageTitle = '{{SERVICE_NAME}} in {{AREA}} | iComply Property Services';
 $metaDesc = 'Landlord gas safety records, boiler servicing and commercial gas in {{AREA}}. Worcester Bosch, Vaillant, Ideal, Baxi. Registration is checked per job.';
 $metaKeywords = 'gas safety certificate {{AREA}}, gas boiler servicing {{AREA}}, landlord gas safety {{AREA}}, Worcester Bosch, Vaillant, Ideal, Baxi, gas engineer {{AREA}}';
 $ogImage = url('/assets/images/services/gas-systems.jpg');
@@ -78,7 +78,7 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 1 -->
     <p class="mt-8 text-lg text-black max-w-3xl leading-relaxed">
-        Icomply Property Services provides <strong>gas systems</strong> work across <strong>{{AREA}}</strong>. This legacy template is unused. Live pages do not claim Gas Safe registration. Landlord gas records are only issued by an engineer registered for that appliance.
+        iComply Property Services provides <strong>gas systems</strong> work across <strong>{{AREA}}</strong>. This legacy template is unused. Live pages do not claim Gas Safe registration. Landlord gas records are only issued by an engineer registered for that appliance.
     </p>
 
     <!-- PARAGRAPH 2 -->
