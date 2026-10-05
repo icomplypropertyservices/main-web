@@ -1053,6 +1053,12 @@ function icomplyResolvePlaceSlug(string $family, string $slug): string {
     if ($slug === '') {
         return '';
     }
+    if (!function_exists('icomplyGmServiceTownServes')) {
+        require_once __DIR__ . '/gm-service-towns.php';
+    }
+    if (icomplyGmServiceTownServes($family, $slug)) {
+        return $slug;
+    }
     $aliases = icomplyPlaceAliases();
     $map = [];
     if ($family === 'barriers') {
@@ -1083,6 +1089,12 @@ function icomplyPlaceSlugExists(string $family, string $slug): bool {
     $slug = areaSlug($slug);
     if ($slug === '') {
         return false;
+    }
+    if (!function_exists('icomplyGmServiceTownServes')) {
+        require_once __DIR__ . '/gm-service-towns.php';
+    }
+    if (icomplyGmServiceTownServes($family, $slug)) {
+        return true;
     }
     if ($family === 'barriers') {
         if (function_exists('barriersPlaceBySlug')) {

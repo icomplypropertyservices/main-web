@@ -450,86 +450,6 @@
 
 # Place aliases generated for missing barrier/AOV town slugs
 [[redirects]]
-  from = "/pages/barriers/trafford"
-  to = "/pages/barriers/hale-trafford"
-  status = 301
-
-[[redirects]]
-  from = "/pages/barriers/trafford/"
-  to = "/pages/barriers/hale-trafford"
-  status = 301
-
-[[redirects]]
-  from = "/pages/barriers/tameside"
-  to = "/pages/barriers/hyde-tameside"
-  status = 301
-
-[[redirects]]
-  from = "/pages/barriers/tameside/"
-  to = "/pages/barriers/hyde-tameside"
-  status = 301
-
-[[redirects]]
-  from = "/pages/barriers/shaw"
-  to = "/pages/barriers/shaw-oldham"
-  status = 301
-
-[[redirects]]
-  from = "/pages/barriers/shaw/"
-  to = "/pages/barriers/shaw-oldham"
-  status = 301
-
-[[redirects]]
-  from = "/pages/barriers/milnrow"
-  to = "/pages/barriers/rochdale"
-  status = 301
-
-[[redirects]]
-  from = "/pages/barriers/milnrow/"
-  to = "/pages/barriers/rochdale"
-  status = 301
-
-[[redirects]]
-  from = "/pages/barriers/pendlebury"
-  to = "/pages/barriers/swinton-salford"
-  status = 301
-
-[[redirects]]
-  from = "/pages/barriers/pendlebury/"
-  to = "/pages/barriers/swinton-salford"
-  status = 301
-
-[[redirects]]
-  from = "/pages/barriers/cadishead"
-  to = "/pages/barriers/irlam"
-  status = 301
-
-[[redirects]]
-  from = "/pages/barriers/cadishead/"
-  to = "/pages/barriers/irlam"
-  status = 301
-
-[[redirects]]
-  from = "/pages/barriers/chorlton"
-  to = "/pages/barriers/manchester"
-  status = 301
-
-[[redirects]]
-  from = "/pages/barriers/chorlton/"
-  to = "/pages/barriers/manchester"
-  status = 301
-
-[[redirects]]
-  from = "/pages/barriers/withington"
-  to = "/pages/barriers/manchester"
-  status = 301
-
-[[redirects]]
-  from = "/pages/barriers/withington/"
-  to = "/pages/barriers/manchester"
-  status = 301
-
-[[redirects]]
   from = "/pages/barriers/crosby"
   to = "/pages/barriers/crosby-sefton"
   status = 301
@@ -890,104 +810,6 @@
   status = 301
 
 [[redirects]]
-  from = "/pages/aov/worsley"
-  to = "/pages/aov/walkden"
-  status = 301
-
-[[redirects]]
-  from = "/pages/aov/worsley/"
-  to = "/pages/aov/walkden"
-  status = 301
-
-[[redirects]]
-  from = "/pages/aov/wythenshawe"
-  to = "/pages/aov/manchester"
-  status = 301
-
-[[redirects]]
-  from = "/pages/aov/wythenshawe/"
-  to = "/pages/aov/manchester"
-  status = 301
-
-[[redirects]]
-  from = "/pages/aov/pendlebury"
-  to = "/pages/aov/salford"
-  status = 301
-
-[[redirects]]
-  from = "/pages/aov/pendlebury/"
-  to = "/pages/aov/salford"
-  status = 301
-
-[[redirects]]
-  from = "/pages/aov/cadishead"
-  to = "/pages/aov/eccles"
-  status = 301
-
-[[redirects]]
-  from = "/pages/aov/cadishead/"
-  to = "/pages/aov/eccles"
-  status = 301
-
-[[redirects]]
-  from = "/pages/aov/trafford"
-  to = "/pages/aov/hale-trafford"
-  status = 301
-
-[[redirects]]
-  from = "/pages/aov/trafford/"
-  to = "/pages/aov/hale-trafford"
-  status = 301
-
-[[redirects]]
-  from = "/pages/aov/chorlton"
-  to = "/pages/aov/manchester"
-  status = 301
-
-[[redirects]]
-  from = "/pages/aov/chorlton/"
-  to = "/pages/aov/manchester"
-  status = 301
-
-[[redirects]]
-  from = "/pages/aov/withington"
-  to = "/pages/aov/manchester"
-  status = 301
-
-[[redirects]]
-  from = "/pages/aov/withington/"
-  to = "/pages/aov/manchester"
-  status = 301
-
-[[redirects]]
-  from = "/pages/aov/tameside"
-  to = "/pages/aov/hyde-tameside"
-  status = 301
-
-[[redirects]]
-  from = "/pages/aov/tameside/"
-  to = "/pages/aov/hyde-tameside"
-  status = 301
-
-[[redirects]]
-  from = "/pages/aov/shaw"
-  to = "/pages/aov/shaw-oldham"
-  status = 301
-
-[[redirects]]
-  from = "/pages/aov/shaw/"
-  to = "/pages/aov/shaw-oldham"
-  status = 301
-
-# 200, no force. These must never 301. An exported file at the path wins;
-# otherwise the .php sibling is served:
-#   /pages/aov/{town}
-#   /pages/barriers/{town}
-#   /pages/services/aov/{town}
-#   /pages/services/aov-air-handling/{town}
-#   /pages/services/barriers/{town}
-#   /pages/aov-air-handling/{town}
-[[redirects]]
   from = "/pages/aov/:town"
   to = "/pages/aov/:town.php"
   status = 200
@@ -1203,6 +1025,37 @@
   to = "/pages/keywords.php"
   status = 200
   force = true
+
+# Retired keyword hubs. Exact paths only, so /pages/keywords/{slug}/{town} stays on the matrix.
+[[redirects]]
+  from = "/pages/keywords/air-source-heat-pumps-service-agreement"
+  to = "/pages/services/heating"
+  status = 301
+
+[[redirects]]
+  from = "/pages/keywords/air-source-heat-pumps-service-agreement/"
+  to = "/pages/services/heating"
+  status = 301
+
+[[redirects]]
+  from = "/pages/keywords/bs-5306-extinguisher-service-cost"
+  to = "/pages/services/fire-extinguishers"
+  status = 301
+
+[[redirects]]
+  from = "/pages/keywords/bs-5306-extinguisher-service-cost/"
+  to = "/pages/services/fire-extinguishers"
+  status = 301
+
+[[redirects]]
+  from = "/pages/keywords/loft-conversion-fixed-price-package"
+  to = "/pages/services/loft-conversions"
+  status = 301
+
+[[redirects]]
+  from = "/pages/keywords/loft-conversion-fixed-price-package/"
+  to = "/pages/services/loft-conversions"
+  status = 301
 
 # Child town files must not 301 /pages/keywords/{slug} → trailing slash.
 [[redirects]]

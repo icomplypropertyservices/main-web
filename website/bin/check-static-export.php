@@ -426,6 +426,71 @@ foreach ([
         echo "[PASS] {$from} is not a 301\n";
     }
 }
+$gapRedirects = [
+    '/cookies' => '/privacy',
+    '/thanks' => '/thank-you',
+    '/thankyou' => '/thank-you',
+    '/pages/privacy' => '/privacy',
+    '/pages/terms' => '/terms',
+    '/pages/residential' => '/pages/landlords',
+    '/pages/keywords/air-source-heat-pumps-service-agreement' => '/pages/services/heating',
+    '/pages/keywords/bs-5306-extinguisher-service-cost' => '/pages/services/fire-extinguishers',
+    '/pages/keywords/loft-conversion-fixed-price-package' => '/pages/services/loft-conversions',
+];
+foreach ($gapRedirects as $from => $to) {
+    if (!preg_match('#^' . preg_quote($from, '#') . '\\s+' . preg_quote($to, '#') . '\\s+301\\b#m', $redirects)) {
+        $fail++;
+        echo "[FAIL] missing 301 {$from} -> {$to}\n";
+    } else {
+        $pass++;
+        echo "[PASS] 301 {$from} -> {$to}\n";
+    }
+}
+$gapPages = [
+    '/pages/aov/cadishead',
+    '/pages/aov/chorlton',
+    '/pages/aov/pendlebury',
+    '/pages/aov/shaw',
+    '/pages/aov/tameside',
+    '/pages/aov/trafford',
+    '/pages/aov/withington',
+    '/pages/aov/worsley',
+    '/pages/aov/wythenshawe',
+    '/pages/barriers/cadishead',
+    '/pages/barriers/chorlton',
+    '/pages/barriers/milnrow',
+    '/pages/barriers/pendlebury',
+    '/pages/barriers/shaw',
+    '/pages/barriers/tameside',
+    '/pages/barriers/trafford',
+    '/pages/barriers/withington',
+];
+foreach ($gapPages as $path) {
+    $file = $dist . $path . '.php';
+    if (preg_match('#^' . preg_quote($path, '#') . '\\s+\\S+\\s+301\\b#m', $redirects)) {
+        $fail++;
+        echo "[FAIL] {$path} is still a 301\n";
+        continue;
+    }
+    if (!is_file($file)) {
+        $fail++;
+        echo "[FAIL] missing town page {$file}\n";
+        continue;
+    }
+    $html = (string)file_get_contents($file);
+    if (!str_contains($html, '07517806082') || !str_contains($html, 'wa-float') || !str_contains($html, '/pages/areas/')) {
+        $fail++;
+        echo "[FAIL] town page incomplete {$path}\n";
+        continue;
+    }
+    if (str_contains($html, 'Icomply') || str_contains($html, 'Same Day') || str_contains($html, '£149') || str_contains($html, 'Powered by Netlify')) {
+        $fail++;
+        echo "[FAIL] town page brand rule {$path}\n";
+        continue;
+    }
+    $pass++;
+    echo "[PASS] town page {$path}\n";
+}
 $svcAreaFiles = 0;
 $svcCount = function_exists('getServices') ? count(getServices()) : 0;
 foreach (array_keys(function_exists('getServices') ? getServices() : []) as $svcSlug) {

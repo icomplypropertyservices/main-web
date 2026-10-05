@@ -502,6 +502,12 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
     foreach (array_keys(aovPlaces()) as $slug) {
         $routes[] = '/pages/aov/' . $slug;
     }
+    if (!function_exists('icomplyGmServiceTownRoutes')) {
+        require_once SITE_ROOT . '/includes/gm-service-towns.php';
+    }
+    foreach (icomplyGmServiceTownRoutes() as $townPath) {
+        $routes[] = $townPath;
+    }
 
     // FRA only: every UK mainland town, including places outside the North West list.
     if (function_exists('getMainlandAreaRecords')) {
@@ -886,6 +892,12 @@ function icomplyPrettyUrlRedirects(): string
 /thankyou/               /thank-you  301
 /pages/residential       /pages/landlords 301
 /pages/residential/      /pages/landlords 301
+/pages/keywords/air-source-heat-pumps-service-agreement   /pages/services/heating  301
+/pages/keywords/air-source-heat-pumps-service-agreement/  /pages/services/heating  301
+/pages/keywords/bs-5306-extinguisher-service-cost         /pages/services/fire-extinguishers  301
+/pages/keywords/bs-5306-extinguisher-service-cost/        /pages/services/fire-extinguishers  301
+/pages/keywords/loft-conversion-fixed-price-package       /pages/services/loft-conversions  301
+/pages/keywords/loft-conversion-fixed-price-package/      /pages/services/loft-conversions  301
 /blog                    /pages/resources 301
 /blog/                   /pages/resources 301
 /news                    /pages/resources 301
@@ -1103,6 +1115,12 @@ function icomplyPlaceAliasRedirectLines(): string
             $from = trim((string)$from);
             $to = trim((string)$to);
             if ($from === '' || $to === '' || $from === $to) {
+                continue;
+            }
+            if (!function_exists('icomplyGmServiceTownServes')) {
+                require_once SITE_ROOT . '/includes/gm-service-towns.php';
+            }
+            if (icomplyGmServiceTownServes($family, $from)) {
                 continue;
             }
             if ($family === 'barriers' && isset($bp[$from])) {
