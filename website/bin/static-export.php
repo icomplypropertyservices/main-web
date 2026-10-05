@@ -780,7 +780,6 @@ function icomplyCopyDir(string $src, string $dest): void
 function icomplyWriteDistRedirects(string $dist): void
 {
     file_put_contents($dist . '/_redirects', icomplyPrettyUrlRedirects());
-    icomplyWritePlaceAliasFiles($dist);
 }
 
 function icomplyWriteDistHeaders(string $dist): void
@@ -1067,41 +1066,6 @@ function icomplyUnpublishedMatrixRedirects(): string
     return implode("\n", $lines);
 }
 
-
-function icomplyWritePlaceAliasFiles(string $dist): void
-{
-    $aliasFile = SITE_ROOT . '/data/place-aliases.json';
-    if (!is_file($aliasFile)) {
-        return;
-    }
-    $decoded = json_decode((string)file_get_contents($aliasFile), true);
-    if (!is_array($decoded)) {
-        return;
-    }
-    foreach (['barriers' => '/pages/barriers/', 'aov' => '/pages/aov/'] as $family => $prefix) {
-        $map = is_array($decoded[$family] ?? null) ? $decoded[$family] : [];
-        foreach ($map as $from => $to) {
-            $from = trim((string)$from);
-            $to = trim((string)$to);
-            if ($from === '' || $to === '' || $from === $to) {
-                continue;
-            }
-            $dir = $dist . $prefix;
-            if (!is_dir($dir)) {
-                mkdir($dir, 0775, true);
-            }
-            $dest = $prefix . $to;
-            $html = '<!DOCTYPE html><html lang="en-GB"><head><meta charset="utf-8">'
-                . '<title>Moved</title>'
-                . '<link rel="canonical" href="https://icomplypropertyservices.co.uk' . htmlspecialchars($dest, ENT_QUOTES, 'UTF-8') . '">'
-                . '<meta http-equiv="refresh" content="0;url=' . htmlspecialchars($dest, ENT_QUOTES, 'UTF-8') . '">'
-                . '<script>location.replace(' . json_encode($dest) . ');</script>'
-                . '</head><body><p>Moved to <a href="' . htmlspecialchars($dest, ENT_QUOTES, 'UTF-8') . '">'
-                . htmlspecialchars($dest, ENT_QUOTES, 'UTF-8') . '</a>.</p></body></html>';
-            file_put_contents($dir . $from . '.php', $html);
-        }
-    }
-}
 
 function icomplyPlaceAliasRedirectLines(): string
 {
