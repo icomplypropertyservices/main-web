@@ -143,6 +143,7 @@ function icomplyMatrixChromeStart(string $title, string $desc, string $canonical
         . '<title>' . $t . '</title>'
         . '<meta name="description" content="' . $d . '">'
         . '<link rel="canonical" href="' . $c . '">'
+        . '<meta property="og:type" content="website">'
         . '<meta property="og:title" content="' . $t . '">'
         . '<meta property="og:description" content="' . $d . '">'
         . '<meta property="og:url" content="' . $c . '">'

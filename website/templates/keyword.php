@@ -17,7 +17,11 @@ $keywordH1 = !empty($KEYWORD_H1) ? $KEYWORD_H1 : $KEYWORD_NAME;
 $keywordSlug = $KEYWORD_SLUG;
 $serviceName = $SERVICE_NAME;
 $serviceSlug = $SERVICE_SLUG;
-$poaService = function_exists('isPoaService') && isPoaService((string)$serviceSlug);
+$fireInstallerFamily = function_exists('icomplyFireAlarmInstallerIsFamily')
+    && icomplyFireAlarmInstallerIsFamily((string)$keywordSlug);
+$fireInstallerP0 = function_exists('icomplyFireAlarmInstallerIsP0')
+    && icomplyFireAlarmInstallerIsP0((string)$keywordSlug);
+$poaService = (function_exists('isPoaService') && isPoaService((string)$serviceSlug)) || $fireInstallerFamily;
 $fireLane = function_exists('fireAlarmsLaneForSlug') ? fireAlarmsLaneForSlug((string)$keywordSlug) : null;
 $fireLaneLabel = $fireLane ? fireAlarmsLaneLabel($fireLane) : '';
 $fireLaneHub = url('/pages/jobs/fire-alarms.php');
@@ -30,6 +34,18 @@ $popularTowns = array_values(array_filter(
     ['Manchester', 'Salford', 'Bolton', 'Bury', 'Oldham', 'Rochdale', 'Stockport', 'Tameside', 'Trafford', 'Wigan', 'Altrincham', 'Sale', 'Ashton-under-Lyne'],
     fn($t) => in_array($t, $allAreas, true)
 ));
+if ($fireInstallerP0 && function_exists('icomplyUkTowns')) {
+    $allAreas = [];
+    foreach (icomplyUkTowns() as $townRow) {
+        if (!empty($townRow['name'])) {
+            $allAreas[] = (string)$townRow['name'];
+        }
+    }
+    $popularTowns = array_values(array_filter(
+        ['London', 'Birmingham', 'Leeds', 'Glasgow', 'Cardiff', 'Edinburgh', 'Manchester', 'Stockport', 'Bristol', 'Liverpool'],
+        static fn($t) => in_array($t, $allAreas, true)
+    ));
+}
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
@@ -49,7 +65,7 @@ require SITE_ROOT . '/includes/header.php';
             'name' => $keywordName,
             'description' => $metaDesc,
             'provider' => ['@type' => 'LocalBusiness', 'name' => SITE_NAME, 'telephone' => PHONE, 'url' => SITE_URL],
-            'areaServed' => 'North West England',
+            'areaServed' => $fireInstallerFamily ? 'United Kingdom' : 'North West England',
             'serviceType' => $serviceName,
             'url' => $canonicalUrl,
         ],
@@ -115,7 +131,7 @@ if (function_exists('accessControlLaneKeywordStrip')) {
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <?php
         $trust = [
-            ['Local engineers', 'Stockport base — 150+ North West towns'],
+            [$fireInstallerFamily ? 'UK mainland' : 'Local engineers', $fireInstallerFamily ? 'Stockport base — mainland towns over 10,000' : 'Stockport base — 150+ North West towns'],
             ['Standards-led', 'British Standards & manufacturer guidance'],
             [$poaService ? 'POA / enquire' : 'Fixed quotes', $poaService ? 'Written scope — no invented £' : 'Clear scope before work starts'],
             ['Full paperwork', $poaService ? 'Survey or briefing notes for the dutyholder file' : 'Certificates & logbooks for compliance'],
@@ -143,6 +159,9 @@ if (function_exists('accessControlLaneKeywordStrip')) {
                     </h2>
                     <p class="mt-4 text-base md:text-lg text-zinc-900 leading-relaxed font-medium"><?= htmlspecialchars($KEYWORD_INTRO, ENT_QUOTES, 'UTF-8') ?></p>
                     <p class="mt-4 text-base md:text-lg text-zinc-900 leading-relaxed"><?= htmlspecialchars($KEYWORD_BODY, ENT_QUOTES, 'UTF-8') ?></p>
+                    <?php if ($fireInstallerFamily): ?>
+                    <p class="mt-4 text-base text-zinc-900 leading-relaxed">Workshop: 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Design, installation and commissioning follow BS 5839. Quotes are price on application.</p>
+                    <?php endif; ?>
                     <ul class="mt-6 space-y-3"><?= $KEYWORD_FOCUS_HTML ?></ul>
                     <p class="mt-6 text-sm text-zinc-800">
                         Part of our
@@ -209,12 +228,35 @@ echo '</section>';
         </div>
     </div>
 </section>
+<?php elseif ($fireInstallerFamily && !$fireInstallerP0): ?>
+<section class="bg-zinc-100">
+    <div class="max-w-7xl mx-auto px-6 py-14">
+        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">UK mainland, quoted from Stockport</h2>
+        <p class="mt-2 text-zinc-800 max-w-3xl">This guide is nationwide. Town pages for the installer, installation and engineer wording are published separately. Open the fire alarm service and the related guides below.</p>
+        <div class="mt-6 flex flex-wrap gap-2">
+            <a href="<?= url('/pages/services/fire-alarms') ?>" class="px-4 py-2.5 bg-[#ff6b00] text-white rounded-full text-sm font-semibold">Fire alarms</a>
+            <?php
+            $familyLinks = function_exists('icomplyFireAlarmInstallerP0Slugs') ? icomplyFireAlarmInstallerP0Slugs() : [];
+            $familyKeywords = function_exists('getMajorKeywords') ? getMajorKeywords() : [];
+            foreach ($familyLinks as $familySlug):
+                if ($familySlug === $keywordSlug || !isset($familyKeywords[$familySlug])) {
+                    continue;
+                }
+                $familyLabel = (string)($familyKeywords[$familySlug]['name'] ?? $familySlug);
+            ?>
+            <a href="<?= url('/pages/keywords/' . $familySlug) ?>" class="px-4 py-2.5 bg-[#061828] text-white rounded-full text-sm font-semibold hover:bg-[#ff6b00]"><?= htmlspecialchars($familyLabel, ENT_QUOTES, 'UTF-8') ?></a>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
 <?php else: ?>
 <!-- AREAS — every town linked (keyword × area pages) -->
 <section class="bg-zinc-100">
     <div class="max-w-7xl mx-auto px-6 py-14">
         <h2 class="text-2xl md:text-3xl font-bold text-[#061828]"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> by area</h2>
-        <p class="mt-2 text-zinc-800">Local landing pages for every town we cover (<?= count($allAreas) ?> areas) — e.g. <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> in Stockport.</p>
+        <p class="mt-2 text-zinc-800"><?= $fireInstallerP0
+            ? 'UK mainland towns with population over 10,000 (' . count($allAreas) . ' places), each with its own page.'
+            : 'Local landing pages for every town we cover (' . count($allAreas) . ' areas) — e.g. ' . htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') . ' in Stockport.' ?></p>
         <div class="mt-6 flex flex-wrap gap-2">
             <?php foreach ($popularTowns as $a): ?>
                 <a href="<?= url('/pages/keywords/' . $KEYWORD_SLUG . '/' . areaSlug($a) . '.php') ?>"
@@ -231,6 +273,29 @@ echo '</section>';
                    class="px-3 py-1.5 bg-white border-2 border-zinc-300 text-zinc-900 rounded-full text-xs font-medium hover:border-[#ff6b00] hover:text-[#ff6b00]">
                     <?= htmlspecialchars($KEYWORD_NAME . ' · ' . $a, ENT_QUOTES, 'UTF-8') ?>
                 </a>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
+<?php if ($fireInstallerFamily): ?>
+<section class="bg-white border-t-2 border-zinc-200">
+    <div class="max-w-7xl mx-auto px-6 py-14">
+        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">Related fire alarm installer guides</h2>
+        <p class="mt-2 text-zinc-800 max-w-3xl">These pages sit with the fire alarm service. This wave publishes town pages for the installer, installation and engineer wording. The other guides stay as hubs until a later town wave.</p>
+        <div class="mt-6 flex flex-wrap gap-2">
+            <a href="<?= url('/pages/services/fire-alarms') ?>" class="px-4 py-2.5 bg-[#ff6b00] text-white rounded-full text-sm font-semibold">Fire alarms</a>
+            <?php
+            $familyHubSlugs = function_exists('icomplyFireAlarmInstallerHubSlugs') ? icomplyFireAlarmInstallerHubSlugs() : [];
+            $familyKeywords = function_exists('getMajorKeywords') ? getMajorKeywords() : [];
+            foreach ($familyHubSlugs as $familySlug):
+                if ($familySlug === $keywordSlug || !isset($familyKeywords[$familySlug])) {
+                    continue;
+                }
+                $familyLabel = (string)($familyKeywords[$familySlug]['name'] ?? $familySlug);
+            ?>
+            <a href="<?= url('/pages/keywords/' . $familySlug) ?>" class="px-3 py-1.5 bg-white border-2 border-zinc-300 text-zinc-900 rounded-full text-xs font-semibold hover:border-[#ff6b00]"><?= htmlspecialchars($familyLabel, ENT_QUOTES, 'UTF-8') ?></a>
             <?php endforeach; ?>
         </div>
     </div>
