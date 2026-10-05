@@ -78,12 +78,30 @@ function nationwideP0KeywordCanonicalSlugs(): array
 }
 
 /**
+ * W1a P0 slugs whose job page stays canonical even though a later keyword
+ * family (#113 fire-alarm-installer) added a keyword entry for the same slug.
+ * Keeps W1a at 52 job hubs + 38 redirects.
+ *
+ * @return array<string, true>
+ */
+function nationwideP0JobCanonicalSlugs(): array
+{
+    return [
+        'addressable-fire-alarm-installation' => true,
+        'conventional-fire-alarm-installation' => true,
+    ];
+}
+
+/**
  * Keyword URL when this P0 slug already has a keyword hub. Null when the job page is canonical.
  */
 function nationwideP0KeywordRedirect(string $slug): ?string
 {
     $slug = function_exists('keywordSlug') ? keywordSlug($slug) : $slug;
     if ($slug === '' || !isset(nationwideP0Rows()[$slug])) {
+        return null;
+    }
+    if (isset(nationwideP0JobCanonicalSlugs()[$slug])) {
         return null;
     }
     if (isset(nationwideP0KeywordCanonicalSlugs()[$slug])) {
