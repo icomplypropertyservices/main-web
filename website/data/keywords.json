@@ -42118,5 +42118,565 @@
         "Quote is price on application"
     ],
     "meta_desc": "BS 5306 extinguisher servicing is the routine check, test and record for portable extinguishers. iComply arranges qualified people to do the visit. The quo."
+  },
+"24-hour-electrician": {
+    "name": "24 hour electrician",
+    "service": "electrical",
+    "related": "emergency-electrician",
+    "intro": "A 24 hour electrician request is an electrical fault that cannot wait for a planned slot. iComply confirms attendance on the phone from Stockport SK2. This page does not promise an all-night contract.",
+    "body": "Power loss, a burning smell or a board that will not reset is triaged first. Our qualified engineers make the installation safe, then agree any permanent repair. Call 07517806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "24 hour electrician enquiries across Greater Manchester. Attendance confirmed from Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Urgent electrical faults triaged on the phone",
+      "Make-safe first, repair when the scope is agreed",
+      "Stockport SK2 base covering Greater Manchester",
+      "Price on application"
+    ],
+    "faq": [
+      [
+        "Do you guarantee a night visit?",
+        "No. We confirm whether an engineer can attend before anyone is sent."
+      ],
+      [
+        "What should I do if I smell burning?",
+        "If it is safe, switch off at the consumer unit and keep clear. Call us with the postcode."
+      ]
+    ],
+    "seo_keywords": "24 hour electrician, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "24 hour electrician",
+    "seo_title": "24 hour electrician | iComply"
+  },
+  "24-hour-plumber": {
+    "name": "24 hour plumber",
+    "service": "plumbing",
+    "related": "emergency-plumber",
+    "intro": "A 24 hour plumber request is a leak, a blocked stack or a loss of water that cannot wait for a planned slot. iComply confirms attendance from Stockport SK2. This is plumbing, not a gas appliance visit.",
+    "body": "We isolate what we can, then agree the repair. Gas appliances are a separate instruction carried out by Gas Safe registered engineers. Call 07517806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "24 hour plumber enquiries across Greater Manchester. Plumbing attendance from Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Leaks and loss of water triaged on the phone",
+      "Plumbing only on this page",
+      "Stockport SK2 base covering Greater Manchester",
+      "Price on application"
+    ],
+    "faq": [
+      [
+        "Is this a gas boiler call?",
+        "No. Boiler work is quoted on the gas pages and carried out by Gas Safe registered engineers."
+      ],
+      [
+        "Will someone come tonight?",
+        "Only if we confirm attendance on the phone. The diary decides."
+      ]
+    ],
+    "seo_keywords": "24 hour plumber, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "24 hour plumber",
+    "seo_title": "24 hour plumber | iComply"
+  },
+  "emergency-aov": {
+    "name": "Emergency AOV",
+    "service": "aov-air-handling",
+    "related": "aov-repair",
+    "intro": "An emergency AOV request is a smoke vent that has failed open, failed shut, or lost its fire-alarm contact. iComply surveys the stair from Stockport SK2.",
+    "body": "We name the panel and the actuator before parts are ordered. A stuck-open roof vent is logged as a fault and as a leak risk. Call 07517806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Emergency AOV and smoke vent faults across Greater Manchester. Survey from Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Failed-open and failed-shut vents",
+      "Fire-alarm contact checked, not assumed",
+      "Stockport SK2 base",
+      "Price on application"
+    ],
+    "faq": [
+      [
+        "Do you attend every stair the same day?",
+        "The visit is booked when the diary and access allow. We confirm that on the phone."
+      ],
+      [
+        "Is a green LED a pass?",
+        "No. We test the vent the fire alarm is supposed to open."
+      ]
+    ],
+    "seo_keywords": "Emergency AOV, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Emergency AOV",
+    "seo_title": "Emergency AOV | iComply"
+  },
+  "emergency-barrier-repair": {
+    "name": "Emergency barrier repair",
+    "service": "barriers",
+    "related": "rising-arm-barrier",
+    "intro": "An emergency barrier repair is a boom that will not rise, will not lower, or has a safety loop that has been bridged. iComply attends the lane the site names, from Stockport SK2.",
+    "body": "CAME is the barrier partner for a new boom. The cabinet already on the lane is kept when the survey says it is sound. We do not force a close by defeating the safety edges. Call 07517806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Emergency vehicle barrier repair across Greater Manchester. CAME partner. Quoted from Stockport SK2. 07517806082.",
+    "focus_points": [
+      "One lane, named by the site",
+      "Safety edges stay in circuit",
+      "CAME for a new boom",
+      "Price on application"
+    ],
+    "faq": [
+      [
+        "Will you bridge the loop so cars can leave?",
+        "No. A defeated safety loop is left as a fault, not a repair."
+      ],
+      [
+        "Which brand do you fit?",
+        "CAME is the partner for a new boom. A sound existing cabinet can stay."
+      ]
+    ],
+    "seo_keywords": "Emergency barrier repair, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Emergency barrier repair",
+    "seo_title": "Emergency barrier repair | iComply"
+  },
+  "emergency-eicr": {
+    "name": "Emergency EICR",
+    "service": "electrical",
+    "related": "eicr",
+    "intro": "An emergency EICR is an electrical condition report asked for because a let, a sale or an insurer will not wait for the next planned week. iComply scopes it from Stockport SK2.",
+    "body": "The report covers the fixed installation we have been asked to inspect. Remedials are quoted separately. The published list price for a typical North West 6-bed HMO is on the EICR page. Other sizes stay price on application. Call 07517806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Emergency EICR enquiries across Greater Manchester. Scoped from Stockport SK2. 07517806082.",
+    "focus_points": [
+      "Fixed wiring inspection to the agreed scope",
+      "Remedials quoted separately",
+      "Greater Manchester from Stockport SK2",
+      "Price confirmed before the visit"
+    ],
+    "faq": [
+      [
+        "Is every EICR the HMO list price?",
+        "The published figure is for a typical North West 6-bed HMO. Other properties are price on application."
+      ],
+      [
+        "Do you issue the report on the visit?",
+        "The report follows the inspection. We say on the phone when it will be sent."
+      ]
+    ],
+    "seo_keywords": "Emergency EICR, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Emergency EICR",
+    "seo_title": "Emergency EICR | iComply"
+  },
+  "emergency-fire-alarm": {
+    "name": "Emergency fire alarm",
+    "service": "fire-alarms",
+    "related": "fire-alarm-repair",
+    "intro": "An emergency fire alarm request is a panel in fault, a zone that will not silence, or a system that did not sound when it should have. iComply attends from Stockport SK2.",
+    "body": "We identify the panel before parts are ordered. A silenced panel is not treated as a repair. The cause is written down. Call 07517806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Emergency fire alarm faults across Greater Manchester. Attendance from Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Panel fault and zone faults",
+      "The cause is recorded",
+      "Stockport SK2 base",
+      "Price on application"
+    ],
+    "faq": [
+      [
+        "Will you just silence the panel?",
+        "No. Silencing without a cause is not the repair."
+      ],
+      [
+        "Do you cover Greater Manchester?",
+        "Yes, from the Stockport SK2 workshop, when the diary allows."
+      ]
+    ],
+    "seo_keywords": "Emergency fire alarm, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Emergency fire alarm",
+    "seo_title": "Emergency fire alarm | iComply"
+  },
+  "emergency-heating": {
+    "name": "Emergency heating",
+    "service": "heating",
+    "related": "heating-engineer",
+    "intro": "An emergency heating request is a loss of heat from the heating system, controls or radiators. iComply confirms the visit from Stockport SK2.",
+    "body": "If the fault is a gas boiler or a gas appliance, that work is carried out by Gas Safe registered engineers and is quoted on the gas pages. This page is the heating enquiry. iComply is not Gas Safe registered. Call 07517806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Emergency heating enquiries across Greater Manchester. Quoted from Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Heating controls and radiators on this page",
+      "Gas appliances go to Gas Safe registered engineers",
+      "iComply is not Gas Safe registered",
+      "Price on application"
+    ],
+    "faq": [
+      [
+        "Is this a boiler repair?",
+        "Boiler repair is quoted separately and carried out by Gas Safe registered engineers."
+      ],
+      [
+        "How soon can you attend?",
+        "We confirm a slot on the phone. The diary decides."
+      ]
+    ],
+    "seo_keywords": "Emergency heating, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Emergency heating",
+    "seo_title": "Emergency heating | iComply"
+  },
+  "next-day-aov": {
+    "name": "Next day AOV",
+    "service": "aov-air-handling",
+    "related": "aov-repair",
+    "intro": "A next day AOV request is a smoke vent the site wants surveyed on the following working visit. iComply books it from Stockport SK2 when access and the diary allow.",
+    "body": "Send the panel make and which stair has failed. We do not treat the page title as a promise that every core is seen tomorrow. Call 07517806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Next day AOV survey requests across Greater Manchester. Booked from Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Panel make asked for before travel",
+      "Access agreed before the diary is held",
+      "Stockport SK2 base",
+      "Price on application"
+    ],
+    "faq": [
+      [
+        "Does next day mean tomorrow morning?",
+        "It means the next visit we can confirm. We say the slot on the phone."
+      ],
+      [
+        "What should I send?",
+        "Panel make, which core, and whether the vent failed open or shut."
+      ]
+    ],
+    "seo_keywords": "Next day AOV, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Next day AOV",
+    "seo_title": "Next day AOV | iComply"
+  },
+  "next-day-boiler-repair": {
+    "name": "Next day boiler repair",
+    "service": "gas-systems",
+    "related": "emergency-boiler-repair",
+    "intro": "A next day boiler repair is a boiler fault the household wants seen on the following working visit. Boiler and gas appliance work is carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.",
+    "body": "Tell us the postcode, the make and whether there is hot water. Smell of gas is a National Gas Emergency Service matter first, on 0800 111 999. Call 07517806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Next day boiler repair enquiries across Greater Manchester. Gas Safe registered engineers. iComply is not Gas Safe registered. 07517806082.",
+    "focus_points": [
+      "Gas Safe registered engineers carry out the boiler work",
+      "iComply is not Gas Safe registered",
+      "Make and postcode taken on the phone",
+      "Price on application"
+    ],
+    "faq": [
+      [
+        "Who repairs the boiler?",
+        "Boiler and gas appliance work is carried out by Gas Safe registered engineers. iComply is not Gas Safe registered."
+      ],
+      [
+        "What if I smell gas?",
+        "Leave the appliance alone, ventilate if it is safe, and call the National Gas Emergency Service on 0800 111 999."
+      ]
+    ],
+    "seo_keywords": "Next day boiler repair, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Next day boiler repair",
+    "seo_title": "Next day boiler repair | iComply"
+  },
+  "next-day-eicr": {
+    "name": "Next day EICR",
+    "service": "electrical",
+    "related": "eicr",
+    "intro": "A next day EICR is an electrical condition report the client wants on the following working visit. iComply scopes the property from Stockport SK2 before the diary is held.",
+    "body": "We need the postcode, the approximate size and whether it is a let. The report follows the inspection. Call 07517806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Next day EICR requests across Greater Manchester. Scoped from Stockport SK2. 07517806082.",
+    "focus_points": [
+      "Scope agreed before the visit",
+      "Lets and sales triaged on the phone",
+      "Stockport SK2 base",
+      "Price confirmed before booking"
+    ],
+    "faq": [
+      [
+        "Can you inspect tomorrow?",
+        "When the diary and access allow. We confirm the slot before it is held."
+      ],
+      [
+        "Is the report instant?",
+        "The report follows the inspection. We say when it will be sent."
+      ]
+    ],
+    "seo_keywords": "Next day EICR, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Next day EICR",
+    "seo_title": "Next day EICR | iComply"
+  },
+  "next-day-electrician": {
+    "name": "Next day electrician",
+    "service": "electrical",
+    "related": "emergency-electrician",
+    "intro": "A next day electrician request is electrical work the client wants on the following working visit. iComply confirms the slot from Stockport SK2.",
+    "body": "Faults that are unsafe are triaged ahead of planned upgrades. The visit is not held until we have the postcode and the symptom. Call 07517806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Next day electrician requests across Greater Manchester. Booked from Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Unsafe faults triaged first",
+      "Postcode and symptom taken on the phone",
+      "Stockport SK2 base",
+      "Price on application"
+    ],
+    "faq": [
+      [
+        "Is tomorrow guaranteed?",
+        "No. We confirm the slot. The page is the request, not a held diary."
+      ],
+      [
+        "Do you cover Greater Manchester?",
+        "Yes, from Stockport SK2."
+      ]
+    ],
+    "seo_keywords": "Next day electrician, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Next day electrician",
+    "seo_title": "Next day electrician | iComply"
+  },
+  "next-day-fire-door": {
+    "name": "Next day fire door",
+    "service": "fire-doors",
+    "related": "fire-door-repair",
+    "intro": "A next day fire door request is a door that does not close, a missing strip, or a closer that has failed, asked for on the following working visit. iComply books it from Stockport SK2.",
+    "body": "We look at the leaf, the frame, the closer and the seals. A door that does not latch is not passed because the leaf looks new. Call 07517806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Next day fire door repairs across Greater Manchester. Quoted from Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Closer, seals and latch checked",
+      "The leaf is not passed on appearance",
+      "Stockport SK2 base",
+      "Price on application"
+    ],
+    "faq": [
+      [
+        "Do you replace every door?",
+        "Only the doors in the agreed scope. A closer or seal is a different job from a new leaf."
+      ],
+      [
+        "When can you attend?",
+        "On the slot we confirm from Stockport. Next day is the request, not a promise."
+      ]
+    ],
+    "seo_keywords": "Next day fire door, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Next day fire door",
+    "seo_title": "Next day fire door | iComply"
+  },
+  "next-day-gas-engineer": {
+    "name": "Next day gas engineer",
+    "service": "gas-systems",
+    "related": "emergency-gas-engineer",
+    "intro": "A next day gas engineer request is a gas appliance fault the client wants seen on the following working visit. Boiler and gas appliance work is carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.",
+    "body": "Tell us the appliance and the postcode. If you smell gas, call the National Gas Emergency Service on 0800 111 999 before a private visit. Call 07517806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Next day gas engineer requests across Greater Manchester. Gas Safe registered engineers. iComply is not Gas Safe registered. 07517806082.",
+    "focus_points": [
+      "Gas Safe registered engineers carry out the work",
+      "iComply is not Gas Safe registered",
+      "Appliance and postcode taken first",
+      "Price on application"
+    ],
+    "faq": [
+      [
+        "Who does the gas work?",
+        "Boiler and gas appliance work is carried out by Gas Safe registered engineers. iComply is not Gas Safe registered."
+      ],
+      [
+        "What if I smell gas?",
+        "Call the National Gas Emergency Service on 0800 111 999. Do not wait for a private visit."
+      ]
+    ],
+    "seo_keywords": "Next day gas engineer, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Next day gas engineer",
+    "seo_title": "Next day gas engineer | iComply"
+  },
+  "next-day-heating-engineer": {
+    "name": "Next day heating engineer",
+    "service": "heating",
+    "related": "heating-engineer",
+    "intro": "A next day heating engineer request is a heating fault the client wants seen on the following working visit. iComply books heating controls and radiators from Stockport SK2.",
+    "body": "Gas boiler repairs are carried out by Gas Safe registered engineers and are quoted on the gas pages. iComply is not Gas Safe registered. Call 07517806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Next day heating engineer requests across Greater Manchester. Quoted from Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Heating controls and radiators",
+      "Gas boilers are a separate gas instruction",
+      "iComply is not Gas Safe registered",
+      "Price on application"
+    ],
+    "faq": [
+      [
+        "Do you repair the boiler on this visit?",
+        "Boiler repair is quoted on the gas pages and carried out by Gas Safe registered engineers."
+      ],
+      [
+        "Is tomorrow guaranteed?",
+        "We confirm the slot. The diary decides."
+      ]
+    ],
+    "seo_keywords": "Next day heating engineer, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Next day heating engineer",
+    "seo_title": "Next day heating engineer | iComply"
+  },
+  "next-day-plumber": {
+    "name": "Next day plumber",
+    "service": "plumbing",
+    "related": "emergency-plumber",
+    "intro": "A next day plumber request is a leak or a fitting the client wants seen on the following working visit. iComply confirms plumbing attendance from Stockport SK2.",
+    "body": "This page is plumbing. Gas appliances are not repaired on a plumbing instruction. Call 07517806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Next day plumber requests across Greater Manchester. Booked from Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Leaks and fittings",
+      "Plumbing, not gas appliances",
+      "Stockport SK2 base",
+      "Price on application"
+    ],
+    "faq": [
+      [
+        "Is this a boiler engineer?",
+        "No. Boiler work is on the gas pages."
+      ],
+      [
+        "Can you come tomorrow?",
+        "When the diary allows. We confirm the slot on the phone."
+      ]
+    ],
+    "seo_keywords": "Next day plumber, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Next day plumber",
+    "seo_title": "Next day plumber | iComply"
+  },
+  "same-day-aov-repair": {
+    "name": "AOV repair call-out",
+    "service": "aov-air-handling",
+    "related": "aov-repair",
+    "intro": "An AOV repair call-out is a smoke vent the site wants surveyed on the day they ring, if the diary and the roof access allow. iComply confirms that from Stockport SK2.",
+    "body": "We do not order an actuator from a photograph of the wrong panel. The visit names the vent that failed. Call 07517806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "AOV repair call-out across Greater Manchester. Confirmed from Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Diary confirmed before travel",
+      "Panel identified first",
+      "Stockport SK2 base",
+      "Price on application"
+    ],
+    "faq": [
+      [
+        "Can you come today?",
+        "Only if we confirm it. Access to the stair and the roof has to be agreed."
+      ],
+      [
+        "Which vents do you repair?",
+        "The vent on the building in front of us, to the fire strategy for that stair."
+      ]
+    ],
+    "seo_keywords": "AOV repair call-out, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "AOV repair call-out",
+    "seo_title": "AOV repair call-out | iComply"
+  },
+  "same-day-boiler-repair": {
+    "name": "Boiler repair call-out",
+    "service": "gas-systems",
+    "related": "emergency-boiler-repair",
+    "intro": "A boiler repair call-out is a boiler fault the household wants seen on the day they ring, if a Gas Safe registered engineer can attend. Boiler and gas appliance work is carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.",
+    "body": "No heat and no hot water are triaged on the phone. Smell of gas goes to the National Gas Emergency Service on 0800 111 999 first. Call 07517806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Boiler repair call-out across Greater Manchester. Gas Safe registered engineers. iComply is not Gas Safe registered. 07517806082.",
+    "focus_points": [
+      "Gas Safe registered engineers carry out the repair",
+      "iComply is not Gas Safe registered",
+      "Make and symptoms taken first",
+      "Price on application"
+    ],
+    "faq": [
+      [
+        "Who attends the boiler?",
+        "Boiler and gas appliance work is carried out by Gas Safe registered engineers. iComply is not Gas Safe registered."
+      ],
+      [
+        "Do you publish a call-out fee?",
+        "No. The quote is price on application before anyone is sent."
+      ]
+    ],
+    "seo_keywords": "Boiler repair call-out, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Boiler repair call-out",
+    "seo_title": "Boiler repair call-out | iComply"
+  },
+  "same-day-electrician": {
+    "name": "Electrician call-out",
+    "service": "electrical",
+    "related": "emergency-electrician",
+    "intro": "An electrician call-out is an electrical fault the client wants seen on the day they ring. iComply confirms whether an engineer can attend from Stockport SK2.",
+    "body": "Unsafe faults are triaged ahead of upgrades. We make safe first. A permanent repair is agreed after the fault is known. Call 07517806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Electrician call-out across Greater Manchester. Confirmed from Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Unsafe faults first",
+      "Make-safe, then an agreed repair",
+      "Stockport SK2 base",
+      "Price on application"
+    ],
+    "faq": [
+      [
+        "Can you attend today?",
+        "When an engineer is free and the fault justifies it. We say so on the phone."
+      ],
+      [
+        "Will I get a certificate?",
+        "Significant alterations are certified. A make-safe visit is written up for what was done."
+      ]
+    ],
+    "seo_keywords": "Electrician call-out, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Electrician call-out",
+    "seo_title": "Electrician call-out | iComply"
+  },
+  "same-day-gas-engineer": {
+    "name": "Gas engineer call-out",
+    "service": "gas-systems",
+    "related": "emergency-gas-engineer",
+    "intro": "A gas engineer call-out is a gas appliance fault the client wants seen on the day they ring. Boiler and gas appliance work is carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.",
+    "body": "We need the appliance make and the postcode before the diary is held. Smell of gas is the National Gas Emergency Service on 0800 111 999. Call 07517806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Gas engineer call-out across Greater Manchester. Gas Safe registered engineers. iComply is not Gas Safe registered. 07517806082.",
+    "focus_points": [
+      "Gas Safe registered engineers carry out the visit",
+      "iComply is not Gas Safe registered",
+      "Appliance details taken first",
+      "Price on application"
+    ],
+    "faq": [
+      [
+        "Who attends?",
+        "Boiler and gas appliance work is carried out by Gas Safe registered engineers. iComply is not Gas Safe registered."
+      ],
+      [
+        "What if I smell gas?",
+        "Call 0800 111 999. Do not treat this page as the gas emergency service."
+      ]
+    ],
+    "seo_keywords": "Gas engineer call-out, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Gas engineer call-out",
+    "seo_title": "Gas engineer call-out | iComply"
+  },
+  "same-day-plumber": {
+    "name": "Plumber call-out",
+    "service": "plumbing",
+    "related": "emergency-plumber",
+    "intro": "A plumber call-out is a leak or a fitting the client wants seen on the day they ring. iComply confirms plumbing attendance from Stockport SK2.",
+    "body": "Active leaks are triaged ahead of planned replacements. Gas appliances are not part of this plumbing visit. Call 07517806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Plumber call-out across Greater Manchester. Confirmed from Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Active leaks first",
+      "Plumbing, not gas appliances",
+      "Stockport SK2 base",
+      "Price on application"
+    ],
+    "faq": [
+      [
+        "Can you attend today?",
+        "When a plumber is free. We confirm it before travelling."
+      ],
+      [
+        "Do you repair boilers?",
+        "No. Boiler repair is on the gas pages."
+      ]
+    ],
+    "seo_keywords": "Plumber call-out, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Plumber call-out",
+    "seo_title": "Plumber call-out | iComply"
   }
 }

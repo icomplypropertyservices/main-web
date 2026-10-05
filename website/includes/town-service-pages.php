@@ -737,7 +737,8 @@ function icomplyRenderTownPage(string $family, string $slug): void
         $areaHref = url((string)($town['area_hub'] ?? ('/pages/areas/' . $ctx['slug'])));
         $servicePath = $family === 'barriers' ? '/pages/services/barriers' : '/pages/services/aov-air-handling';
         $serviceLabel = $family === 'barriers' ? 'Barriers hub' : 'AOV hub';
-        echo ' · <a class="text-[#ff6b00] font-semibold" href="' . htmlspecialchars($areaHref, ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($ctx['name'], ENT_QUOTES, 'UTF-8') . ' area</a>';
+        $areaLabel = (string)($town['area_label'] ?? $ctx['name']);
+        echo ' · <a class="text-[#ff6b00] font-semibold" href="' . htmlspecialchars($areaHref, ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($areaLabel, ENT_QUOTES, 'UTF-8') . ' area</a>';
         echo ' · <a class="text-[#ff6b00] font-semibold" href="' . htmlspecialchars(url($servicePath), ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($serviceLabel, ENT_QUOTES, 'UTF-8') . '</a>';
     }
     echo '</p>';

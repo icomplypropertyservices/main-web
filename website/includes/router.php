@@ -324,6 +324,10 @@ function routerHandleRequest(): void {
         '/pages/keywords/tunstall-nurse-call' => '/pages/nurse-call-systems',
         '/pages/manufacturers/tunstall' => '/pages/nurse-call-systems',
     ];
+    if (!function_exists('icomplyLive404Redirects')) {
+        require_once __DIR__ . '/live-404-redirects.php';
+    }
+    $legacyAliases = array_merge($legacyAliases, icomplyLive404Redirects());
     if (isset($legacyAliases[$path])) {
         header('Location: ' . url($legacyAliases[$path]), true, 301);
         icomplyRequestExit();

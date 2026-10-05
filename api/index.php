@@ -117,6 +117,10 @@ $legacyAliases = [
     '/news' => '/pages/resources',
     '/group' => '/',
 ];
+if (!function_exists('icomplyLive404Redirects')) {
+    require_once $root . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'live-404-redirects.php';
+}
+$legacyAliases = array_merge($legacyAliases, icomplyLive404Redirects());
 if (isset($legacyAliases[$aliasPath])) {
     header('Location: ' . $base_url . $legacyAliases[$aliasPath], true, 301);
     exit;

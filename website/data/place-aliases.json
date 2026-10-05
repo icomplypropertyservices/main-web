@@ -35,8 +35,11 @@
     "tarvin": "chester",
     "wesham": "blackpool",
     "whalley": "blackburn-blackburn-with-darwen",
-    "windermere": "kendal"
+    "windermere": "kendal",
+    "redish": "reddish"
   },
-  "aov": {},
-  "note": "Maps area-hub / legacy town slugs to published barrier (barriers-places.json) or AOV (uk-towns-10k.json) place pages so internal links and Netlify redirects do not 404. Cadishead, Chorlton, Milnrow, Pendlebury, Shaw, Tameside, Trafford, Withington, Worsley and Wythenshawe have their own pages and are not aliased."
+  "aov": {
+    "redish": "reddish"
+  },
+  "note": "Maps area-hub / legacy town slugs to published barrier (barriers-places.json) or AOV (uk-towns-10k.json) place pages so internal links and Netlify redirects do not 404. Cadishead, Chorlton, Milnrow, Pendlebury, Shaw, Tameside, Trafford, Withington, Worsley and Wythenshawe have their own pages and are not aliased. Redish is a spelling of Reddish. Brinnington, Castleton, Davyhulme, Dialstone, Edgeley, Gatley, Heaton Mersey, Heaton Norris, Lostock, Newhey, Partington and Reddish are real pages, not neighbour aliases."
 }
