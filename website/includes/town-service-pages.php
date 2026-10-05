@@ -651,8 +651,17 @@ function icomplyRenderTownPage(string $family, string $slug): void
     }
     echo '</ul>';
     $hub = url($family === 'barriers' ? '/pages/barriers' : '/pages/aov');
-    $switch = url($family === 'barriers' ? '/pages/aov/' . $ctx['slug'] : '/pages/barriers/' . $ctx['slug']);
-    $switchLabel = $family === 'barriers' ? 'AOV in ' . $ctx['name'] : 'Barriers in ' . $ctx['name'];
+    $switchFamily = $family === 'barriers' ? 'aov' : 'barriers';
+    $switchSlug = function_exists('icomplyResolvePlaceSlug')
+        ? icomplyResolvePlaceSlug($switchFamily, (string)$ctx['slug'])
+        : (string)$ctx['slug'];
+    if ($switchSlug === '' || (function_exists('icomplyPlaceSlugExists') && !icomplyPlaceSlugExists($switchFamily, $switchSlug))) {
+        $switch = $hub === url('/pages/barriers') ? url('/pages/aov') : url('/pages/barriers');
+        $switchLabel = $family === 'barriers' ? 'AOV towns' : 'Barrier towns';
+    } else {
+        $switch = url(($switchFamily === 'aov' ? '/pages/aov/' : '/pages/barriers/') . $switchSlug);
+        $switchLabel = $family === 'barriers' ? 'AOV in ' . $ctx['name'] : 'Barriers in ' . $ctx['name'];
+    }
     echo '<p class="mt-4 text-sm"><a class="text-[#ff6b00] font-semibold" href="' . htmlspecialchars($hub, ENT_QUOTES, 'UTF-8') . '">All towns</a>';
     echo ' · <a class="text-[#ff6b00] font-semibold" href="' . htmlspecialchars($switch, ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($switchLabel, ENT_QUOTES, 'UTF-8') . '</a></p>';
     echo '</section>';

@@ -42082,5 +42082,41 @@
             ]
         ],
         "hub_only": true
-    }
+    },
+  "air-source-heat-pumps-service-agreement": {
+    "name": "Air source heat pump service agreement",
+    "service": "heating",
+    "related": "air-source-heat-pumps-service-agreement",
+    "intro": "An air source heat pump service agreement is a planned visit to check the outdoor unit, filters, controls and the heat curve. iComply arranges the visit from Stockport. The quote is price on application (POA), not a published fixed fee.",
+    "focus_points": [
+        "Outdoor unit and filter check",
+        "Controls and heat-curve review",
+        "Quote is price on application"
+    ],
+    "meta_desc": "An air source heat pump service agreement is a planned visit to check the outdoor unit, filters, controls and the heat curve. iComply arranges the visit fr."
+  },
+  "loft-conversion-fixed-price-package": {
+    "name": "Loft conversion package",
+    "service": "loft-conversions",
+    "related": "loft-conversion-fixed-price-package",
+    "intro": "A loft conversion package covers the survey, the agreed structural and fit-out scope, and the paperwork the client needs to keep. The quote is price on application (POA). This page does not offer a fixed price.",
+    "focus_points": [
+        "Survey before any strip-out",
+        "Scope agreed in writing",
+        "Quote is price on application"
+    ],
+    "meta_desc": "A loft conversion package covers the survey, the agreed structural and fit-out scope, and the paperwork the client needs to keep. The quote is price on app."
+  },
+  "bs-5306-extinguisher-service-cost": {
+    "name": "BS 5306 extinguisher service",
+    "service": "fire-extinguishers",
+    "related": "bs-5306-extinguisher-service-cost",
+    "intro": "BS 5306 extinguisher servicing is the routine check, test and record for portable extinguishers. iComply arranges qualified people to do the visit. The quote is price on application (POA). This page does not publish a call-out price.",
+    "focus_points": [
+        "Extinguisher condition and pressure",
+        "Service record for the site file",
+        "Quote is price on application"
+    ],
+    "meta_desc": "BS 5306 extinguisher servicing is the routine check, test and record for portable extinguishers. iComply arranges qualified people to do the visit. The quo."
+  }
 }

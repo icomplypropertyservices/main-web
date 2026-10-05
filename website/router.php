@@ -39,6 +39,12 @@ $legacyAliases = [
     '/news' => '/pages/resources',
     '/pages/keywords/tunstall-nurse-call' => '/pages/nurse-call-systems',
     '/pages/manufacturers/tunstall' => '/pages/nurse-call-systems',
+    '/pages/privacy' => '/privacy',
+    '/pages/terms' => '/terms',
+    '/cookies' => '/privacy',
+    '/thanks' => '/thank-you',
+    '/thankyou' => '/thank-you',
+    '/pages/residential' => '/pages/landlords',
 ];
 if (isset($legacyAliases[$aliasPath])) {
     header('Location: ' . $legacyAliases[$aliasPath], true, 301);

@@ -267,6 +267,67 @@
   to = "/privacy"
   status = 301
 
+
+[[redirects]]
+  from = "/pages/privacy"
+  to = "/privacy"
+  status = 301
+
+[[redirects]]
+  from = "/pages/privacy/"
+  to = "/privacy"
+  status = 301
+
+[[redirects]]
+  from = "/pages/terms"
+  to = "/terms"
+  status = 301
+
+[[redirects]]
+  from = "/pages/terms/"
+  to = "/terms"
+  status = 301
+
+[[redirects]]
+  from = "/cookies"
+  to = "/privacy"
+  status = 301
+
+[[redirects]]
+  from = "/cookies/"
+  to = "/privacy"
+  status = 301
+
+[[redirects]]
+  from = "/thanks"
+  to = "/thank-you"
+  status = 301
+
+[[redirects]]
+  from = "/thanks/"
+  to = "/thank-you"
+  status = 301
+
+[[redirects]]
+  from = "/thankyou"
+  to = "/thank-you"
+  status = 301
+
+[[redirects]]
+  from = "/thankyou/"
+  to = "/thank-you"
+  status = 301
+
+[[redirects]]
+  from = "/pages/residential"
+  to = "/pages/landlords"
+  status = 301
+
+[[redirects]]
+  from = "/pages/residential/"
+  to = "/pages/landlords"
+  status = 301
+
 [[redirects]]
   from = "/blog"
   to = "/pages/resources"
@@ -905,4 +966,535 @@
     Content-Disposition = "attachment"
     X-Content-Type-Options = "nosniff"
     Cache-Control = "public, max-age=86400"
+
+# Place aliases generated for missing barrier/AOV town slugs
+[[redirects]]
+  from = "/pages/barriers/trafford"
+  to = "/pages/barriers/hale-trafford"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/trafford/"
+  to = "/pages/barriers/hale-trafford"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/tameside"
+  to = "/pages/barriers/hyde-tameside"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/tameside/"
+  to = "/pages/barriers/hyde-tameside"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/shaw"
+  to = "/pages/barriers/shaw-oldham"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/shaw/"
+  to = "/pages/barriers/shaw-oldham"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/milnrow"
+  to = "/pages/barriers/rochdale"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/milnrow/"
+  to = "/pages/barriers/rochdale"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/pendlebury"
+  to = "/pages/barriers/swinton-salford"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/pendlebury/"
+  to = "/pages/barriers/swinton-salford"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/cadishead"
+  to = "/pages/barriers/irlam"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/cadishead/"
+  to = "/pages/barriers/irlam"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/chorlton"
+  to = "/pages/barriers/manchester"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/chorlton/"
+  to = "/pages/barriers/manchester"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/withington"
+  to = "/pages/barriers/manchester"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/withington/"
+  to = "/pages/barriers/manchester"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/crosby"
+  to = "/pages/barriers/crosby-sefton"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/crosby/"
+  to = "/pages/barriers/crosby-sefton"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/ince"
+  to = "/pages/barriers/ince-in-makerfield"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/ince/"
+  to = "/pages/barriers/ince-in-makerfield"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/thornton-cleveleys"
+  to = "/pages/barriers/cleveleys"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/thornton-cleveleys/"
+  to = "/pages/barriers/cleveleys"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/ainsdale"
+  to = "/pages/barriers/southport"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/ainsdale/"
+  to = "/pages/barriers/southport"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/ambleside"
+  to = "/pages/barriers/kendal"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/ambleside/"
+  to = "/pages/barriers/kendal"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/appleton"
+  to = "/pages/barriers/warrington"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/appleton/"
+  to = "/pages/barriers/warrington"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/birchwood"
+  to = "/pages/barriers/warrington"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/birchwood/"
+  to = "/pages/barriers/warrington"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/burscough"
+  to = "/pages/barriers/ormskirk"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/burscough/"
+  to = "/pages/barriers/ormskirk"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/carnforth"
+  to = "/pages/barriers/lancaster"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/carnforth/"
+  to = "/pages/barriers/lancaster"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/clayton-le-moors"
+  to = "/pages/barriers/accrington"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/clayton-le-moors/"
+  to = "/pages/barriers/accrington"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/cockermouth"
+  to = "/pages/barriers/workington"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/cockermouth/"
+  to = "/pages/barriers/workington"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/culcheth"
+  to = "/pages/barriers/warrington"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/culcheth/"
+  to = "/pages/barriers/warrington"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/dalton-in-furness"
+  to = "/pages/barriers/barrow-in-furness"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/dalton-in-furness/"
+  to = "/pages/barriers/barrow-in-furness"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/frodsham"
+  to = "/pages/barriers/runcorn"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/frodsham/"
+  to = "/pages/barriers/runcorn"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/garstang"
+  to = "/pages/barriers/preston-preston"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/garstang/"
+  to = "/pages/barriers/preston-preston"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/halton"
+  to = "/pages/barriers/runcorn"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/halton/"
+  to = "/pages/barriers/runcorn"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/handforth"
+  to = "/pages/barriers/wilmslow"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/handforth/"
+  to = "/pages/barriers/wilmslow"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/helsby"
+  to = "/pages/barriers/runcorn"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/helsby/"
+  to = "/pages/barriers/runcorn"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/holmes-chapel"
+  to = "/pages/barriers/crewe"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/holmes-chapel/"
+  to = "/pages/barriers/crewe"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/hoylake"
+  to = "/pages/barriers/wallasey"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/hoylake/"
+  to = "/pages/barriers/wallasey"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/keswick"
+  to = "/pages/barriers/workington"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/keswick/"
+  to = "/pages/barriers/workington"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/kirkham"
+  to = "/pages/barriers/blackpool"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/kirkham/"
+  to = "/pages/barriers/blackpool"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/longridge"
+  to = "/pages/barriers/preston-preston"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/longridge/"
+  to = "/pages/barriers/preston-preston"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/maryport"
+  to = "/pages/barriers/workington"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/maryport/"
+  to = "/pages/barriers/workington"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/millom"
+  to = "/pages/barriers/barrow-in-furness"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/millom/"
+  to = "/pages/barriers/barrow-in-furness"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/penketh"
+  to = "/pages/barriers/warrington"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/penketh/"
+  to = "/pages/barriers/warrington"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/rainford"
+  to = "/pages/barriers/st-helens-st-helens"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/rainford/"
+  to = "/pages/barriers/st-helens-st-helens"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/risley"
+  to = "/pages/barriers/warrington"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/risley/"
+  to = "/pages/barriers/warrington"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/rossendale"
+  to = "/pages/barriers/rawtenstall"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/rossendale/"
+  to = "/pages/barriers/rawtenstall"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/shevington"
+  to = "/pages/barriers/wigan"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/shevington/"
+  to = "/pages/barriers/wigan"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/stockton-heath"
+  to = "/pages/barriers/warrington"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/stockton-heath/"
+  to = "/pages/barriers/warrington"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/tarporley"
+  to = "/pages/barriers/chester"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/tarporley/"
+  to = "/pages/barriers/chester"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/tarvin"
+  to = "/pages/barriers/chester"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/tarvin/"
+  to = "/pages/barriers/chester"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/wesham"
+  to = "/pages/barriers/blackpool"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/wesham/"
+  to = "/pages/barriers/blackpool"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/whalley"
+  to = "/pages/barriers/blackburn-blackburn-with-darwen"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/whalley/"
+  to = "/pages/barriers/blackburn-blackburn-with-darwen"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/windermere"
+  to = "/pages/barriers/kendal"
+  status = 301
+
+[[redirects]]
+  from = "/pages/barriers/windermere/"
+  to = "/pages/barriers/kendal"
+  status = 301
+
+[[redirects]]
+  from = "/pages/aov/worsley"
+  to = "/pages/aov/walkden"
+  status = 301
+
+[[redirects]]
+  from = "/pages/aov/worsley/"
+  to = "/pages/aov/walkden"
+  status = 301
+
+[[redirects]]
+  from = "/pages/aov/wythenshawe"
+  to = "/pages/aov/manchester"
+  status = 301
+
+[[redirects]]
+  from = "/pages/aov/wythenshawe/"
+  to = "/pages/aov/manchester"
+  status = 301
+
+[[redirects]]
+  from = "/pages/aov/pendlebury"
+  to = "/pages/aov/salford"
+  status = 301
+
+[[redirects]]
+  from = "/pages/aov/pendlebury/"
+  to = "/pages/aov/salford"
+  status = 301
+
+[[redirects]]
+  from = "/pages/aov/cadishead"
+  to = "/pages/aov/eccles"
+  status = 301
+
+[[redirects]]
+  from = "/pages/aov/cadishead/"
+  to = "/pages/aov/eccles"
+  status = 301
+
+[[redirects]]
+  from = "/pages/aov/trafford"
+  to = "/pages/aov/hale-trafford"
+  status = 301
+
+[[redirects]]
+  from = "/pages/aov/trafford/"
+  to = "/pages/aov/hale-trafford"
+  status = 301
+
+[[redirects]]
+  from = "/pages/aov/chorlton"
+  to = "/pages/aov/manchester"
+  status = 301
+
+[[redirects]]
+  from = "/pages/aov/chorlton/"
+  to = "/pages/aov/manchester"
+  status = 301
+
+[[redirects]]
+  from = "/pages/aov/withington"
+  to = "/pages/aov/manchester"
+  status = 301
+
+[[redirects]]
+  from = "/pages/aov/withington/"
+  to = "/pages/aov/manchester"
+  status = 301
+
+[[redirects]]
+  from = "/pages/aov/tameside"
+  to = "/pages/aov/hyde-tameside"
+  status = 301
+
+[[redirects]]
+  from = "/pages/aov/tameside/"
+  to = "/pages/aov/hyde-tameside"
+  status = 301
+
+[[redirects]]
+  from = "/pages/aov/shaw"
+  to = "/pages/aov/shaw-oldham"
+  status = 301
+
+[[redirects]]
+  from = "/pages/aov/shaw/"
+  to = "/pages/aov/shaw-oldham"
+  status = 301
 
