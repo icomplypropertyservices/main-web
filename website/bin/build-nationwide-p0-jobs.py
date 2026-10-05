@@ -32,6 +32,12 @@ KEYWORD_CANONICAL = {
     "vehicle-barrier-installation",
 }
 
+# Job page stays canonical even when keywords.json also has the slug (#113 overlap).
+JOB_CANONICAL = {
+    "addressable-fire-alarm-installation",
+    "conventional-fire-alarm-installation",
+}
+
 BRAND_SUFFIX = " | iComply Property Services"
 CTA = "Request a quote — POA."
 NAP = (
@@ -128,73 +134,191 @@ FIRE_IMAGES = {
     ],
 }
 
-SCENES = [
-    "a stair core in a occupied block where the vents must still open during the visit",
-    "a car-park lane that cannot stay closed for a full day",
-    "a school plant room that is only free after the pupils have left",
-    "a warehouse loading door with a smoke vent above the shutter",
-    "a care-home corridor where residents stay in their rooms while we work",
-    "an office riser that is shared with other tenants",
-    "a retail unit with the shop trading on the ground floor",
-    "the common parts of a house in multiple occupation",
-    "a hotel plant deck that is reached from a service stair",
-    "a hospital plant room booked around clinical hours",
-    "an industrial unit with a mezzanine and a single stair",
-    "a housing-association block with a concierge log we have to sign",
-    "a multi-storey car park with a rising-arm at the entry island",
-    "a purpose-built block of flats with a smoke shaft at the stair head",
-    "a mixed-use building where the commercial demise sits under flats",
-    "a student block with a short window between check-in days",
-    "a leisure centre with wet changing rooms near the panel",
-    "a logistics yard where HGVs queue if the barrier stays down",
-    "a clinic with a reception that cannot lose its escape lighting",
-    "a theatre plant space reached by a cat ladder",
-    "a data room where the panel is inside a locked cupboard",
-    "a church hall used as a weekday nursery",
-    "a light-industrial estate unit with a roller shutter and a side stair",
-    "a sheltered scheme with a house manager on site",
-]
+SCENES_BY_LINE = {
+    "fire": [
+        "a stair core in an occupied block where sounders must still be heard during the visit",
+        "a school plant room that is only free after the pupils have left",
+        "a care-home corridor where residents stay in their rooms while we work",
+        "an office riser that is shared with other tenants",
+        "a retail unit with the shop trading on the ground floor",
+        "the common parts of a house in multiple occupation",
+        "a hotel plant deck that is reached from a service stair",
+        "a hospital plant room booked around clinical hours",
+        "an industrial unit with a mezzanine and a single stair",
+        "a housing-association block with a concierge log we have to sign",
+        "a purpose-built block of flats with detectors on each landing",
+        "a mixed-use building where the commercial demise sits under flats",
+        "a student block with a short window between check-in days",
+        "a leisure centre with wet changing rooms near the panel",
+        "a clinic with a reception that cannot lose its escape lighting",
+        "a theatre plant space reached by a cat ladder",
+        "a data room where the panel is inside a locked cupboard",
+        "a church hall used as a weekday nursery",
+        "a light-industrial estate unit with a roller shutter and a side stair",
+        "a sheltered scheme with a house manager on site",
+    ],
+    "aov-smoke": [
+        "a stair core in an occupied block where the vents must still open during the visit",
+        "a school plant room that is only free after the pupils have left",
+        "a warehouse loading door with a smoke vent above the shutter",
+        "a care-home corridor where residents stay in their rooms while we work",
+        "an office riser that is shared with other tenants",
+        "a retail unit with the shop trading on the ground floor",
+        "a hotel plant deck that is reached from a service stair",
+        "a hospital plant room booked around clinical hours",
+        "an industrial unit with a mezzanine and a single stair",
+        "a housing-association block with a concierge log we have to sign",
+        "a purpose-built block of flats with a smoke shaft at the stair head",
+        "a mixed-use building where the commercial demise sits under flats",
+        "a student block with a short window between check-in days",
+        "a leisure centre with wet changing rooms near the panel",
+        "a theatre plant space reached by a cat ladder",
+        "a light-industrial estate unit with a roller shutter and a side stair",
+        "a sheltered scheme with a house manager on site",
+        "a clinic with a reception that cannot lose its escape lighting",
+    ],
+    "barrier": [
+        "a car-park lane that cannot stay closed for a full day",
+        "a multi-storey car park with a rising-arm at the entry island",
+        "a logistics yard where HGVs queue if the barrier stays down",
+        "a retail unit with the shop trading on the ground floor",
+        "a housing-association block with a concierge log we have to sign",
+        "a mixed-use building where the commercial demise sits under flats",
+        "a student block with a short window between check-in days",
+        "a leisure centre with wet changing rooms near the panel",
+        "a light-industrial estate unit with a roller shutter and a side stair",
+        "a hotel plant deck that is reached from a service stair",
+        "an industrial unit with a mezzanine and a single stair",
+        "a sheltered scheme with a house manager on site",
+        "a warehouse loading door beside the entry lane",
+        "an office car park shared with other tenants",
+        "a care-home staff car park that must stay open for ambulances",
+        "a school site that is only free after the pupils have left",
+    ],
+}
 
-ACCESS = [
-    "the roof is only reached with a planned access method, not a borrowed ladder",
-    "the lane must stay usable for residents while we work on one barrier",
-    "keys are held by the managing agent and released against a timed booking",
-    "the ceiling void is congested, so we photograph the route before we cut anything",
-    "the panel is in a cupboard that also stores cleaning kit, which we move and put back",
-    "evening attendance is required because the building is open to the public by day",
-    "a second person is needed at the vent while the other watches the panel",
-    "the car park is ticketed, so the operator stays with us until the lane is proven",
-    "induction and a permit are required before we enter the plant room",
-    "the escape route stays clear; we do not leave boards or tools in the stair",
-    "parking for the van is off the main entrance and agreed before the day",
-    "the incumbent contractor's log is on site and we read it before we isolate",
-]
+ACCESS_BY_LINE = {
+    "fire": [
+        "the roof is only reached with a planned access method, not a borrowed ladder",
+        "keys are held by the managing agent and released against a timed booking",
+        "the ceiling void is congested, so we photograph the route before we cut anything",
+        "the panel is in a cupboard that also stores cleaning kit, which we move and put back",
+        "evening attendance is required because the building is open to the public by day",
+        "induction and a permit are required before we enter the plant room",
+        "the escape route stays clear; we do not leave boards or tools in the stair",
+        "parking for the van is off the main entrance and agreed before the day",
+        "the incumbent contractor's log is on site and we read it before we isolate",
+        "a second person is needed at the panel while the other walks the floors",
+    ],
+    "aov-smoke": [
+        "the roof is only reached with a planned access method, not a borrowed ladder",
+        "keys are held by the managing agent and released against a timed booking",
+        "the ceiling void is congested, so we photograph the route before we cut anything",
+        "the panel is in a cupboard that also stores cleaning kit, which we move and put back",
+        "evening attendance is required because the building is open to the public by day",
+        "a second person is needed at the vent while the other watches the panel",
+        "induction and a permit are required before we enter the plant room",
+        "the escape route stays clear; we do not leave boards or tools in the stair",
+        "parking for the van is off the main entrance and agreed before the day",
+        "the incumbent contractor's log is on site and we read it before we isolate",
+    ],
+    "barrier": [
+        "the lane must stay usable for residents while we work on one barrier",
+        "keys are held by the managing agent and released against a timed booking",
+        "evening attendance is required because the building is open to the public by day",
+        "the car park is ticketed, so the operator stays with us until the lane is proven",
+        "induction and a permit are required before we enter the plant room",
+        "parking for the van is off the main entrance and agreed before the day",
+        "the incumbent contractor's log is on site and we read it before we isolate",
+        "the escape route stays clear; we do not leave boards or tools in the stair",
+        "a second person is needed at the island while the other watches the cabinet",
+        "the roof is only reached with a planned access method, not a borrowed ladder",
+    ],
+}
 
-MEASURES = [
-    "travel of the actuator against the vent's free movement",
-    "loop or zone resistance before any device is changed",
-    "battery voltage under load, recorded rather than guessed",
-    "safety-edge and loop reaction while the lane is walked",
-    "duration of the emergency fitting once the supply is dropped",
-    "door-closer speed and latch without holding the leaf shut by hand",
-    "sound pressure at the furthest bedroom or workstation",
-    "cause-and-effect from the fire panel input to the vent output",
-    "boom length and spring balance on the arm that is actually fitted",
-    "current draw of the motor at the start of travel and at stall",
-    "whether the manual release still lets the lane open",
-    "the extinguisher's weight, gauge and service date against the label",
-]
+MEASURES_BY_LINE = {
+    "fire": [
+        "loop or zone resistance before any device is changed",
+        "battery voltage under load, recorded rather than guessed",
+        "duration of the emergency fitting once the supply is dropped",
+        "sound pressure at the furthest bedroom or workstation",
+        "cause-and-effect from the call point to the sounders",
+        "the extinguisher's weight, gauge and service date against the label",
+        "detector contamination or sensing chamber condition against the panel reading",
+        "zone continuity after the last device is landed",
+        "panel fault LED and log entry before and after the repair",
+        "isolation of the correct loop or zone without silencing the whole building",
+        "battery standby calculation against the load already fitted",
+        "device address and label against the as-fitted schedule",
+    ],
+    "aov-smoke": [
+        "travel of the actuator against the vent's free movement",
+        "loop or zone resistance before any device is changed",
+        "battery voltage under load, recorded rather than guessed",
+        "cause-and-effect from the fire panel input to the vent output",
+        "door-closer speed and latch without holding the leaf shut by hand",
+        "end-of-line signal at the vent after the actuator has moved",
+        "open and close time of the vent against the strategy note",
+        "manual override still opens the vent when the panel is isolated",
+        "current draw of the actuator at the start of travel",
+        "damper position against the panel status after a fire-input test",
+    ],
+    "barrier": [
+        "safety-edge and loop reaction while the lane is walked",
+        "boom length and spring balance on the arm that is actually fitted",
+        "current draw of the motor at the start of travel and at stall",
+        "whether the manual release still lets the lane open",
+        "loop detector sensitivity with a vehicle in the detection zone",
+        "limit-switch travel at the fully open and fully closed stops",
+        "photocell alignment across the lane before the arm is left in service",
+        "cabinet supply voltage under load while the arm is moving",
+        "ground loop continuity before any detector pack is changed",
+        "arm rest and latch without holding the boom by hand",
+    ],
+}
 
-ASSUMPTIONS = [
-    "that the drawing matches the vent that is fitted",
-    "that a replacement part can be ordered from the nameplate alone",
-    "that the previous log's 'reset' means the fault has gone",
-    "that a new barrier is required when the arm or the loop is the real fault",
-    "that every brand on the old panel is still supported",
-    "that the fire strategy allows the stair to be used as the only escape during the test",
-    "that a like-for-like device is still the right category for the room",
-    "that the managing agent wants a full rip-out when a module repair will do",
-]
+ASSUMPTIONS_BY_LINE = {
+    "fire": [
+        "that a replacement part can be ordered from the nameplate alone",
+        "that the previous log's 'reset' means the fault has gone",
+        "that every brand on the old panel is still supported",
+        "that the fire strategy allows the stair to be used as the only escape during the test",
+        "that a like-for-like device is still the right category for the room",
+        "that the managing agent wants a full rip-out when a module repair will do",
+        "that the existing cause-and-effect still matches the occupied layout",
+        "that wireless devices can be added without checking battery and signal margins",
+    ],
+    "aov-smoke": [
+        "that the drawing matches the vent that is fitted",
+        "that a replacement part can be ordered from the nameplate alone",
+        "that the previous log's 'reset' means the fault has gone",
+        "that every brand on the old panel is still supported",
+        "that the fire strategy allows the stair to be used as the only escape during the test",
+        "that a like-for-like device is still the right category for the room",
+        "that the managing agent wants a full rip-out when a module repair will do",
+        "that the vent free area still matches the smoke-control strategy",
+    ],
+    "barrier": [
+        "that a replacement part can be ordered from the nameplate alone",
+        "that the previous log's 'reset' means the fault has gone",
+        "that a new barrier is required when the arm or the loop is the real fault",
+        "that the managing agent wants a full rip-out when a module repair will do",
+        "that the existing loop layout still matches the lane markings",
+        "that a like-for-like motor is still the right duty for the boom length",
+        "that the safety edge can be bypassed for a temporary reopen",
+        "that the credential system is out of scope when the arm will not travel",
+    ],
+}
+
+
+def pools_for(line: str) -> tuple[list[str], list[str], list[str], list[str]]:
+    key = line if line in SCENES_BY_LINE else "fire"
+    return (
+        SCENES_BY_LINE[key],
+        ACCESS_BY_LINE[key],
+        MEASURES_BY_LINE[key],
+        ASSUMPTIONS_BY_LINE[key],
+    )
 
 CLOSERS = [
     "If the agreed work needs a return visit, that visit is scoped on its own and quoted again.",
@@ -440,7 +564,7 @@ def policy_of(slug: str, brand: str, line: str) -> str:
     return "incumbent_generic"
 
 
-def brand_paragraph(name: str, slug: str, brand: str, policy: str, equipment: str) -> str:
+def brand_paragraph(name: str, slug: str, brand: str, policy: str, equipment: str, line: str = "fire") -> str:
     if policy == "came_new":
         product = "CAME GARD GT4" if "gt4" in slug else "CAME"
         return (
@@ -501,13 +625,19 @@ def brand_paragraph(name: str, slug: str, brand: str, policy: str, equipment: st
             f"We service and repair what is already fitted. We do not claim manufacturer approval, "
             f"an authorised-dealer status, or an accreditation number for {label}. "
             f"If a part is obsolete we say so, and we describe the alternative in writing before it is fitted. "
-            f"The {equipment} is identified from the nameplate and the wiring, not from a catalogue photograph."
+            f"{equipment[0].upper() + equipment[1:]} is identified from the nameplate and the wiring, "
+            f"not from a catalogue photograph."
+        )
+    if line == "barrier":
+        return (
+            f"The make of {equipment} is confirmed on site. "
+            f"We do not claim manufacturer approval or an authorised-dealer status for any brand on this page. "
+            f"iComply is a CAME partner for barrier installation only, and that statement stays in plain words with no number."
         )
     return (
         f"The make of {equipment} is confirmed on site. "
         f"We do not claim manufacturer approval or an authorised-dealer status for any brand on this page. "
-        f"iComply is a CAME partner for barrier installation only, and that statement stays in plain words with no number. "
-        f"This page does not use that partnership to imply approval for fire alarm or smoke-control brands."
+        f"Brand and model are taken from the equipment that is actually fitted, not from a catalogue photograph."
     )
 
 
@@ -557,10 +687,12 @@ def paragraphs_for(spec: dict, index: int) -> list[str]:
     standard = spec["standard"]
     paper = spec["paper"]
     who = spec["who"]
-    scene = SCENES[index % len(SCENES)]
-    access = ACCESS[(index * 3) % len(ACCESS)]
-    measure = MEASURES[(index * 5) % len(MEASURES)]
-    assumption = ASSUMPTIONS[(index * 7) % len(ASSUMPTIONS)]
+    line = spec.get("line", "fire")
+    scenes, access_pool, measures, assumptions = pools_for(line)
+    scene = scenes[index % len(scenes)]
+    access = access_pool[(index * 3) % len(access_pool)]
+    measure = measures[(index * 5) % len(measures)]
+    assumption = assumptions[(index * 7) % len(assumptions)]
     closer = CLOSERS[(index * 11) % len(CLOSERS)]
     intent = spec["intent"]
     steps = spec["steps"]
@@ -596,7 +728,7 @@ def paragraphs_for(spec: dict, index: int) -> list[str]:
     step_paras = []
     shapes = [
         (
-            "{step} This is done while the {equipment} is still in the condition we found it, "
+            "{step} This is done while {equipment} is still in the condition we found it, "
             "so the note for {name} explains the fault rather than only the repair. "
             "The result is written in plain language for {who}. "
             "If a part is required and is not on the van, we do not pretend it was fitted."
@@ -610,7 +742,7 @@ def paragraphs_for(spec: dict, index: int) -> list[str]:
         (
             "For {name} we also confirm the following, because it changes the scope: {step} "
             "The observation is tied back to {standard}. "
-            "We name the room, the lane or the stair in the note so a later visit can find the same {equipment}."
+            "We name the room or the stair in the note so a later visit can find {equipment} again."
         ),
         (
             "{step} That step matters on {name} when the building is {scene}. "
@@ -644,19 +776,24 @@ def paragraphs_for(spec: dict, index: int) -> list[str]:
         )
     paperwork = (
         f"The paperwork for {name} is {paper}. "
-        f"It names the address, the date, the {equipment}, and the result. "
+        f"It names the address, the date, {equipment}, and the result. "
         f"It does not carry a fake approval logo. "
         f"Certificate-style wording on this page means the note we issue for the work done, "
         f"not a claim that iComply holds a third-party registration. "
         f"The duty holder keeps the copy. We can resend it to the managing agent when the instruction asks for that. "
         f"{closer}"
     )
+    came_money = (
+        "CAME supply packs, where a barrier job uses them, are also price on application on this page. "
+        if line == "barrier"
+        else ""
+    )
     money = (
         f"Pricing for {name} is price on application after survey. "
         f"We do not publish a pound figure, a band, or a from-price. "
         f"The survey has to see {equipment}, the access, and whether the visit is a repair, a service or a new installation. "
         f"A phone call can book the survey. It cannot produce a serious figure while the model is unknown. "
-        f"CAME supply packs, where a barrier job uses them, are also price on application on this page. "
+        f"{came_money}"
         f"We are instructed by {who}, and the quote is addressed to that client."
     )
     nationwide = (
@@ -767,7 +904,10 @@ def build() -> None:
     if missing_files:
         raise SystemExit("missing images: " + ", ".join(missing_files))
 
-    create_rows = [row for row in rows if row["slug"] not in keywords]
+    create_rows = [
+        row for row in rows
+        if row["slug"] not in keywords or row["slug"] in JOB_CANONICAL
+    ]
     peers_by_line: dict[str, list[str]] = {}
     for row in create_rows:
         peers_by_line.setdefault(row["line"], []).append(row["slug"])
@@ -782,7 +922,7 @@ def build() -> None:
         intent = intent_of(slug)
         equipment = equipment_of(slug, line, brand)
         fault = {
-            "repair": f"the {equipment} has failed, stuck, or started reporting a fault",
+            "repair": f"{equipment} has failed, stuck, or started reporting a fault",
             "service": f"a planned service of {equipment} is due",
             "servicing": f"a planned servicing visit for {equipment} is due",
             "maintenance": f"planned maintenance of {equipment} is due",
@@ -790,7 +930,9 @@ def build() -> None:
             "replacement": f"{equipment} is to be replaced rather than patched again",
             "testing": f"a recorded test of {equipment} is due",
             "call-out": f"someone needs a call-out because {equipment} has failed today",
-            "fault": f"the lane or the system is stuck and {equipment} needs a same-day look",
+            "fault": f"the system is stuck and {equipment} needs a same-day look"
+            if line != "barrier"
+            else f"the lane is stuck and {equipment} needs a same-day look",
             "fault-finding": f"the cause of a fault on {equipment} is not yet known",
             "commissioning": f"{equipment} has been fitted and now needs commissioning",
             "inspection": f"an inspection of {equipment} is required for the site file",
@@ -802,7 +944,7 @@ def build() -> None:
         who = WHOS[index % len(WHOS)]
         policy = policy_of(slug, brand, line)
         service_slug, service_label, service_href = service_for(slug, line)
-        brand_p = brand_paragraph(name, slug, brand, policy, equipment)
+        brand_p = brand_paragraph(name, slug, brand, policy, equipment, line)
         spec = {
             "name": name,
             "equipment": equipment,
@@ -812,6 +954,7 @@ def build() -> None:
             "who": who,
             "intent": intent,
             "policy": policy,
+            "line": line,
             "brand_paragraph": brand_p,
             "steps": steps_for(name, equipment, fault, standard, paper),
         }
@@ -890,7 +1033,12 @@ def build() -> None:
     for row in rows:
         slug = row["slug"]
         target = JOBS_DIR / f"{slug}.php"
-        if slug in keywords and target.is_file() and "nationwideP0Render" in target.read_text():
+        if (
+            slug in keywords
+            and slug not in JOB_CANONICAL
+            and target.is_file()
+            and "nationwideP0Render" in target.read_text()
+        ):
             target.unlink()
     written = 0
     for slug in jobs:
@@ -902,7 +1050,10 @@ def build() -> None:
             f"nationwideP0Render({slug!r});\n"
         )
         written += 1
-    redirect = [row["slug"] for row in rows if row["slug"] in keywords]
+    redirect = [
+        row["slug"] for row in rows
+        if row["slug"] in keywords and row["slug"] not in JOB_CANONICAL
+    ]
     print(f"hubs={written} keyword_canonical={len(redirect)} words_min={min(j['word_count'] for j in jobs.values())} words_max={max(j['word_count'] for j in jobs.values())}")
 
 
