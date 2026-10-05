@@ -1,6 +1,9 @@
 # Draft Netlify preview for PR 106. Never production.
 # `netlify deploy` is invoked without `--prod`. This workflow must not
 # POST /sites/{id}/builds (that queues a production build).
+# workflow_dispatch is included, but GitHub only lists a workflow for
+# manual dispatch once the file is on the default branch. Push to this
+# branch starts the same job without merging.
 
 name: Draft preview PR 106
 
@@ -123,7 +126,11 @@ jobs:
           import json, os, re, urllib.request
           from urllib.parse import urlparse
 
-          log = open("/tmp/netlify-draft.txt", encoding="utf-8", errors="replace").read()
+          raw = open("/tmp/netlify-draft.txt", encoding="utf-8", errors="replace").read()
+          # Keep OSC-8 link targets, drop the wrappers, and strip ANSI colors.
+          # The CLI also prints links as <https://...>.
+          log = re.sub(r"\x1b\]8;;(.*?)\x1b\\", r" \1 ", raw)
+          log = re.sub(r"\x1b\[[0-9;]*[A-Za-z]", "", log)
           if "Deploy aborted" in log:
               raise SystemExit("Netlify aborted the draft deploy. Production was not published.")
           if re.search(r"Production URL\s*:", log):
@@ -137,11 +144,17 @@ jobs:
               except Exception:
                   return ""
 
+          def clean_url(url):
+              return url.strip().lstrip("<").rstrip(">").rstrip(").,")
+
           labeled = {}
           for line in log.splitlines():
-              match = re.search(r"(Draft URL|Website Draft URL|Website URL|Unique Deploy URL|Unique deploy URL)\s*:\s*(https://\S+)", line)
+              match = re.search(
+                  r"(Draft URL|Website Draft URL|Website URL|Unique Deploy URL|Unique deploy URL)\s*:\s*<?(https://[^>\s]+)>?",
+                  line,
+              )
               if match:
-                  labeled[match.group(1)] = match.group(2).rstrip(").,")
+                  labeled[match.group(1)] = clean_url(match.group(2))
 
           deploy_id = ""
           id_match = re.search(r"/deploys/([0-9a-f]{24})", log)
