@@ -194,7 +194,11 @@ function icomplySitemapEntries(): array
             $isManufacturerHub = is_array($brandEntry);
             $isBarrierBrandLoc = $isManufacturerHub && in_array('barriers', $brandEntry['services'] ?? [], true);
         }
-        if (!$isKeywordLoc && !$isTownLoc && !$isFireTownLoc && !$isMfrTown && !$isBarrierBrandLoc && !$isManufacturerHub && !$isPublishedAreaHub && !icomplySitemapUrlHasFile($path)) {
+        $isBuildingJobHub = false;
+        if (preg_match('#^/pages/jobs/([a-z0-9\-]+)$#', $path, $jobHub) && $jobHub[1] !== 'index') {
+            $isBuildingJobHub = function_exists('icomplyBuildingDualIsP0') && icomplyBuildingDualIsP0($jobHub[1]);
+        }
+        if (!$isKeywordLoc && !$isTownLoc && !$isFireTownLoc && !$isMfrTown && !$isBarrierBrandLoc && !$isManufacturerHub && !$isPublishedAreaHub && !$isBuildingJobHub && !icomplySitemapUrlHasFile($path)) {
             return;
         }
         $seen[$path] = true;
@@ -382,6 +386,11 @@ function icomplySitemapEntries(): array
                 }
                 $add('/pages/keywords/' . $slug . '/' . $town, '0.55');
             }
+        }
+    }
+    if (function_exists('icomplyBuildingDualSlugs')) {
+        foreach (icomplyBuildingDualSlugs() as $dualSlug) {
+            $add('/pages/jobs/' . $dualSlug, '0.8');
         }
     }
     $barriersInc = SITE_ROOT . '/includes/barriers.php';

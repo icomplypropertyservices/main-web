@@ -478,6 +478,11 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
     foreach (icomplyCollectKeywordRoutes($keywordTowns) as $path) {
         $routes[] = $path;
     }
+    if (function_exists('icomplyBuildingDualSlugs')) {
+        foreach (icomplyBuildingDualSlugs() as $dualSlug) {
+            $routes[] = '/pages/jobs/' . $dualSlug;
+        }
+    }
 
     if (function_exists('acnRoutes')) {
         foreach (acnRoutes() as $path) {

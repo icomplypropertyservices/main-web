@@ -59,12 +59,18 @@ function icomplyNonGmMatrixRedirect(string $path): ?string
     $path = rtrim($path, '/') ?: '/';
 
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        if (function_exists('icomplyBuildingDualCoversPath') && icomplyBuildingDualCoversPath($path)) {
+            return null;
+        }
         return icomplyCrawlTownSlug($m[2]) ? null : '/pages/keywords/' . $m[1];
     }
     if (preg_match('#^/pages/manufacturers/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         return icomplyCrawlTownSlug($m[2]) ? null : '/pages/manufacturers/' . $m[1];
     }
     if (preg_match('#^/pages/jobs/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        if (function_exists('icomplyBuildingDualCoversPath') && icomplyBuildingDualCoversPath($path)) {
+            return null;
+        }
         return icomplyCrawlTownSlug($m[2]) ? null : '/pages/jobs/' . $m[1];
     }
     if (preg_match('#^/pages/areas/([a-z0-9\-]+)$#', $path, $m)) {

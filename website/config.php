@@ -387,6 +387,7 @@ function icomplyIsGreaterManchesterAreaSlug(string $areaOrSlug): bool
 }
 
 require_once __DIR__ . '/includes/gm-crawl.php';
+require_once __DIR__ . '/includes/building-services-dual.php';
 
 /**
  * In tiered mode, keyword×area pages, shared area-town templates, and service×town
@@ -409,7 +410,7 @@ function icomplyPathIsIndexable(string $path): bool
         $path = '/';
     }
     if (preg_match('#^/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+$#', $path)) {
-        return false;
+        return function_exists('icomplyBuildingDualCoversPath') && icomplyBuildingDualCoversPath($path);
     }
     // Area hubs are indexable only for Greater Manchester. Burnley stays a page
     // (featured template) but is Lancashire, so it is not in this set.
@@ -870,6 +871,9 @@ function getMajorKeywords(): array {
         $normalized = openJobLanesApply($normalized);
     }
     $normalized = icomplyApplyCustomerKeywordCopy($normalized);
+    if (function_exists('icomplyBuildingDualApplyKeywords')) {
+        $normalized = icomplyBuildingDualApplyKeywords($normalized);
+    }
     $cached = $normalized;
     return $cached;
 }

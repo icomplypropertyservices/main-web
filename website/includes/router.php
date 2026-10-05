@@ -155,10 +155,26 @@ function routerDispatchVirtual(string $path): bool {
         return true;
     }
 
-    // /pages/keywords/{kw}/{area}
+    // Building-services P0 × dual 269, then the ordinary keyword matrix.
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        if (function_exists('icomplyBuildingDualCovers') && icomplyBuildingDualCovers($m[1], $m[2])) {
+            icomplyBuildingDualRenderTown('keyword', $m[1], $m[2]);
+            return true;
+        }
         renderKeywordAreaPage($m[1], $m[2]);
         return true;
+    }
+    if (preg_match('#^/pages/jobs/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        if (function_exists('icomplyBuildingDualCovers') && icomplyBuildingDualCovers($m[1], $m[2])) {
+            icomplyBuildingDualRenderTown('job', $m[1], $m[2]);
+            return true;
+        }
+    }
+    if (preg_match('#^/pages/jobs/([a-z0-9\-]+)$#', $path, $m) && $m[1] !== 'index') {
+        if (function_exists('icomplyBuildingDualIsP0') && icomplyBuildingDualIsP0($m[1])) {
+            icomplyBuildingDualRenderHub('job', $m[1]);
+            return true;
+        }
     }
     // /pages/keywords/{kw}  (not the directory index)
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)$#', $path, $m) && $m[1] !== 'index') {
