@@ -343,6 +343,33 @@ $schema = [
         </div>
     </div>
 
+    <?php
+    require_once SITE_ROOT . '/includes/gm-enrichment.php';
+    if (!function_exists('icomplyGmTownBlurb')) {
+        require_once SITE_ROOT . '/includes/gm-blurbs.php';
+    }
+    $gmPacked = icomplyGmTownBlurb($serviceSlug, $areaSlugVal, 'service');
+    if (is_array($gmPacked) && ($gmPacked['blurb'] ?? '') !== ''):
+    ?>
+    <div class="mt-10 max-w-3xl">
+        <h3 class="text-2xl font-semibold text-black"><?= htmlspecialchars((string)$gmPacked['h2'], ENT_QUOTES, 'UTF-8') ?></h3>
+        <p class="mt-3 text-lg text-zinc-700 leading-relaxed"><?= icomplyGmBriefHtml((string)$gmPacked['blurb']) ?></p>
+        <?php if (($gmPacked['cta'] ?? '') !== ''): ?>
+        <p class="mt-3 text-sm font-semibold text-[#061828]"><?= htmlspecialchars((string)$gmPacked['cta'], ENT_QUOTES, 'UTF-8') ?></p>
+        <?php endif; ?>
+    </div>
+    <?php endif; ?>
+    <?= icomplyGmEnrichmentHtml([
+        'chrome' => 'site',
+        'topic' => $serviceName,
+        'townName' => $areaName,
+        'serviceSlug' => $serviceSlug,
+        'serviceName' => $serviceName,
+        'showGuide' => false,
+        'skipImage' => true,
+        'localProse' => is_array($gmPacked) ? (string)($gmPacked['blurb'] ?? '') : '',
+    ]) ?>
+
     <!-- Pillars -->
     <div class="mt-14 grid md:grid-cols-3 gap-6">
         <?php

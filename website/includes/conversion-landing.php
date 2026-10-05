@@ -211,6 +211,17 @@ require SITE_ROOT . '/includes/header.php';
 </section>
 <?php endif; ?>
 
+<?php
+if (!empty($landing['gmTowns']) && is_array($landing['gmTowns'])) {
+    require_once SITE_ROOT . '/includes/gm-enrichment.php';
+    echo icomplyGmJobTownStripHtml(
+        (string)($landing['gmTopic'] ?? 'This job'),
+        $landing['gmTowns'],
+        (string)($landing['gmService'] ?? ''),
+        (string)($landing['gmKeyword'] ?? '')
+    );
+}
+?>
 <section class="max-w-3xl mx-auto px-6 py-16 md:py-20">
     <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">FAQ</div>
     <h2 class="text-3xl font-semibold tracking-tight mt-2">Questions we can answer accurately</h2>

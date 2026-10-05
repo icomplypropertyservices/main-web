@@ -119,4 +119,9 @@ $landing = [
     'ctaText' => 'Bring a Landlord Gas Safety Record up to date, or add an **EICR** on the same schedule. Guide from **' . $gasFrom . '**. The fixed quote follows what is included.',
 ];
 
+$landing['gmTopic'] = 'Gas safety';
+$landing['gmTowns'] = ['Wigan', 'Manchester', 'Stockport', 'Bolton'];
+$landing['gmService'] = 'gas-systems';
+$landing['gmKeyword'] = 'gas-safety-certificate';
+
 require SITE_ROOT . '/includes/conversion-landing.php';

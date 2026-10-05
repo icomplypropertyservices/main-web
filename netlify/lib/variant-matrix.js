@@ -6,8 +6,7 @@
 
 import { breadcrumbHtml, isGmTown, matrixRelatedHtml } from "./link-blocks.js";
 
-const GAS_SENTENCE = "Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.";
-const SUBCONTRACT_SENTENCE = "The work is carried out by relevant qualified people. Where a visit needs a specialist ticket, iComply uses approved subcontractors.";
+const GAS_SENTENCE = "Gas work is carried out by Gas Safe registered engineers.";
 
 function hashStr(value) {
   let h = 2166136261;
@@ -259,7 +258,7 @@ function pageHtml(options) {
       `${placeName} is in Greater Manchester. This address did not match a published variant, so the page is not indexed.`,
       `You can still ask for a visit in ${placeName}. The quote is price on application after the scope is clear.`,
       `Published variant pages use a double hyphen in the keyword slug and a Greater Manchester town.`,
-      `iComply arranges the visit from Stockport. ${SUBCONTRACT_SENTENCE}`,
+      `iComply arranges the visit from the Stockport office. The figure is agreed after the building is seen.`,
       `Say which building in ${placeName} you mean and what the visit has to cover.`,
       `There is no price list on this page. Cheap, emergency and next day are enquiry types on the published variants, not a published rate.`,
       `${placeName} stays on the Greater Manchester list when the town is one of the published area pages.`,
@@ -269,8 +268,6 @@ function pageHtml(options) {
     audience.note,
     scope.note,
     intent.note,
-    `The quote for ${subject} in ${placeName} is price on application (POA). This page does not publish a fee.`,
-    SUBCONTRACT_SENTENCE,
     gas ? GAS_SENTENCE : "",
     `Phone 07517806082 or use the contact form. Name the ${placeName} building, whether it is occupied, and the ${scope.label} you want quoted.`,
   ].filter(Boolean);
@@ -311,7 +308,7 @@ function pageHtml(options) {
   const crumbs = breadcrumbHtml(crumbItems);
   const faqs = [
     [`Do you cover ${placeName} for ${subject}?`, `Yes, where ${placeName} is in Greater Manchester. The quote is price on application once the building and the ${scope.label} scope are known.`],
-    [`Who carries out ${subject} in ${placeName}?`, `${SUBCONTRACT_SENTENCE}${gas ? ` ${GAS_SENTENCE}` : ""}`],
+    [`Who carries out ${subject} in ${placeName}?`, gas ? GAS_SENTENCE : `The ${placeName} visit is scoped to the building named on the enquiry. The figure follows that scope.`],
     [`How is ${subject} priced in ${placeName}?`, `The quote is price on application. ${modifier.slug === "cheap" ? "This page does not publish a low rate." : "No fixed price is published for this visit."}`],
   ];
   const schema = {
@@ -369,7 +366,7 @@ ${body.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("\n")}
 <li>Send the ${escapeHtml(placeName)} address and what ${escapeHtml(subject)} has to cover.</li>
 <li>iComply confirms the ${escapeHtml(scope.label)} scope in writing. The quote is POA.</li>
 <li>${escapeHtml(modifier.note)}</li>
-<li>The result is handed to the instructing client. ${escapeHtml(SUBCONTRACT_SENTENCE)}</li>
+<li>The result is handed to the person who instructed the visit.</li>
 </ol>
 <h2>Questions about ${escapeHtml(placeName)}</h2>
 ${faqs.map(([q, a]) => `<details><summary>${escapeHtml(q)}</summary><p>${escapeHtml(a)}</p></details>`).join("")}

@@ -53,8 +53,22 @@ const VISIT_STYLES = [
   "a survey followed by a return visit for the agreed scope",
 ];
 
-const GAS_SENTENCE = "Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.";
-const SUBCONTRACT_SENTENCE = "The work is carried out by relevant qualified people. Where a visit needs a specialist ticket, iComply uses approved subcontractors.";
+const GAS_SENTENCE = "Gas work is carried out by Gas Safe registered engineers.";
+
+function stripBriefTokens(text) {
+  return String(text || "")
+    .replace(/\bb\d{4,6}\b/g, "")
+    .replace(/\s{2,}/g, " ")
+    .replace(/\s+([,.;:])/g, "$1")
+    .trim();
+}
+
+function proseSentences(text) {
+  return stripBriefTokens(text)
+    .split(/(?<=[.!?])\s+/)
+    .map((part) => part.trim())
+    .filter((part) => part.length > 40);
+}
 
 function hashStr(value) {
   let h = 2166136261;
@@ -269,61 +283,21 @@ export function renderTownPage(input) {
   const imageSrc = `/assets/images/services/${imageSlug}.jpg`;
   const imageAlt = `${subject} in ${place.name} — ${serviceName}`;
 
-  const openings = [
-    `${subject} in ${place.name} is booked from the Stockport workshop for ${audience} who want the visit tied to that site, not a generic national script.`,
-    `Clients ask for ${subject} in ${place.name} when a landlord, agent or facilities lead needs ${serviceName.toLowerCase()} arranged around the way that town is actually built.`,
-    `A ${subject} enquiry in ${place.name} starts with the building, the access and the paperwork the instructing client has to keep.`,
-  ];
-  const scopes = [
-    `The scope for ${subject} is confirmed in writing before anyone attends ${place.name}. ${focus.map((item) => String(item).replace(/\.$/, "")).join(". ")}.`,
-    `On ${visit}, the person on site works to the agreed ${subject} scope and leaves the certificate, test sheet or report with the person who instructed iComply.`,
-    `We do not invent a day rate on this page. The quote for ${subject} in ${place.name} is price on application (POA) after the scope is clear.`,
-  ];
-  const processes = [
-    [
-      `Phone or write with the ${place.name} address, what ${subject} has to cover, and whether the building is occupied.`,
-      `iComply confirms the ${serviceName.toLowerCase()} scope in writing. The quote for this ${place.name} visit is POA.`,
-      `${visit.charAt(0).toUpperCase()}${visit.slice(1)} is booked around access in ${place.name}.`,
-      `The result is handed to the instructing client. ${SUBCONTRACT_SENTENCE}`,
-    ],
-    [
-      `For ${audience} in ${place.name}, send photos of the plant or the board before asking for a date.`,
-      `The ${subject} scope names what will be looked at and what is outside the visit.`,
-      `Travel from Stockport to ${place.name} is part of the POA quote, not a hidden extra.`,
-      `If a specialist ticket is required in ${place.region}, an approved subcontractor attends with the relevant qualification.`,
-    ],
-    [
-      `Start with the postcode in ${place.name} and the reason for the ${subject} visit.`,
-      `A written scope comes back before anyone is dispatched. There is no catalogue fee on this page.`,
-      `The visit follows ${housing.charAt(0).toLowerCase()}${housing.slice(1)}`,
-      `Paperwork names ${place.name} and the agreed ${serviceName.toLowerCase()} work.`,
-    ],
-  ];
-  const process = pick(processes, seed >>> 7);
-  const travel = [
-    `${place.name} is in ${place.region}, ${place.country}. Travel is planned from Stockport, with nearby cover in ${near}.`,
-    pop,
-    housing,
-    industry,
-    `If the job sits just outside ${place.name}, say in ${near}, it is still quoted as one visit rather than split into a different product.`,
-  ].filter(Boolean);
-  const intro = keyword.intro ? keyword.intro.replace(/\s+/g, " ").trim() : "";
-  const gas = keyword.gas ? GAS_SENTENCE : "";
+  const gas = keyword.gas || serviceSlug === "gas-systems" || serviceSlug === "heating";
   const packed = (kind === "keyword" || kind === "service")
     ? gmTownBlurb(kind, kind === "keyword" ? input.keyword : serviceSlug, townSlug)
     : null;
-  const packedLead = packed && packed.blurb
-    ? `${packed.h2 ? `<h2>${escapeHtml(packed.h2)}</h2>` : ""}<p>${escapeHtml(packed.blurb)}</p>${packed.cta ? `<p>${escapeHtml(packed.cta)}</p>` : ""}`
+  let prose = packed && packed.blurb ? stripBriefTokens(packed.blurb) : "";
+  if (gas && prose && !/Gas Safe registered engineers/.test(prose)) {
+    prose = `${prose} ${GAS_SENTENCE}`;
+  }
+  const packedLead = prose
+    ? `${packed && packed.h2 ? `<h2>${escapeHtml(stripBriefTokens(packed.h2))}</h2>` : ""}<p>${escapeHtml(prose)}</p>`
     : "";
-  const paragraphs = [
-    pick(openings, seed),
-    intro,
-    pick(scopes, seed >>> 5),
-    travel.join(" "),
-    SUBCONTRACT_SENTENCE,
-    gas,
-    `Ask for ${subject} in ${place.name} by phone on 07517806082 or through the contact form. Say which building, whether it is occupied, and whether you need ${visit}. The reply quotes the work as POA and names the ${serviceName.toLowerCase()} scope before a date is fixed.`,
-  ].filter(Boolean);
+  const localOnly = [place.housing ? housing : "", place.industry ? industry : "", place.population ? pop : ""]
+    .filter(Boolean)
+    .join(" ");
+  const paragraphs = prose ? [] : (localOnly ? [localOnly] : []);
 
   const hubHref = kind === "keyword"
     ? `/pages/keywords/${input.keyword}`
@@ -354,26 +328,24 @@ export function renderTownPage(input) {
   crumbItems.push({ label: `${subject} in ${place.name}` });
   const crumbs = breadcrumbHtml(crumbItems);
 
-  const faqs = [
-    [
-      `Do you cover ${place.name} for ${subject}?`,
-      `Yes. ${place.name} is covered from Stockport, including nearby ${near}. The quote is POA once the building and the scope are known.`,
-    ],
-    [
-      `Who carries out ${subject} in ${place.name}?`,
-      `${SUBCONTRACT_SENTENCE} ${gas}`.trim(),
-    ],
-    [
-      `How is ${subject} priced in ${place.name}?`,
-      `The quote is price on application. We do not publish a fixed price for ${subject} in ${place.name} because access, condition and the agreed scope change the visit.`,
-    ],
-  ];
+  const bits = proseSentences(prose || localOnly);
+  const faqs = [];
+  if (bits[0]) {
+    faqs.push([`What is particular about ${subject} in ${place.name}?`, bits[0]]);
+  }
+  if (bits[1]) {
+    faqs.push([`What should the ${place.name} file show before a quote?`, bits[1]]);
+  }
+  if (gas && prose) {
+    faqs.push([`Who carries out gas work for this ${place.name} visit?`, `${GAS_SENTENCE} ${bits[bits.length - 1] || ""}`.trim()]);
+  } else if (bits[2]) {
+    faqs.push([`How is the ${place.name} price decided?`, bits[2]]);
+  }
   const faqHtml = faqs.map(([q, a]) => (
     `<details><summary>${escapeHtml(q)}</summary><p>${escapeHtml(a)}</p></details>`
   )).join("");
   const focusHtml = focus.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
-  const processHtml = process.map((step) => `<li>${escapeHtml(step)}</li>`).join("");
-  const bodyHtml = packedLead + paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("");
+  const bodyHtml = packedLead + paragraphs.map((paragraph) => `<p>${escapeHtml(stripBriefTokens(paragraph))}</p>`).join("");
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -431,15 +403,8 @@ ${crumbs}
 <figure>
 <img src="${imageSrc}" alt="${escapeHtml(imageAlt)}" width="1200" height="630">
 </figure>
-<p>${escapeHtml(serviceName)} arranged from Stockport for ${escapeHtml(place.name)} and ${escapeHtml(place.region)}.</p>
 <article id="local-copy">
 ${bodyHtml}
-<h2>How the ${escapeHtml(subject)} visit runs in ${escapeHtml(place.name)}</h2>
-<ol>${processHtml}</ol>
-<h2>What the ${escapeHtml(subject)} visit covers in ${escapeHtml(place.name)}</h2>
-<ul>${focusHtml}</ul>
-<h2>Quote</h2>
-<p>The quote is price on application (POA). Published list prices on other iComply pages are not a price for this ${escapeHtml(place.name)} visit.</p>
 ${relatedHtml}
 <h2>Questions about ${escapeHtml(place.name)}</h2>
 ${faqHtml}
