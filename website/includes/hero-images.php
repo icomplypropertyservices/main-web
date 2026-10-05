@@ -185,6 +185,16 @@ function icomplyHubHero(string $serviceSlug): ?string
 
 function icomplyHubInline(string $serviceSlug, int $slot): ?string
 {
+    // Networking / Wi-Fi / IT P0 pack: on-topic inline images (no keyword-image set exists yet).
+    $packInline = [
+        'it-support' => ['it-support-photo', 'networking'],
+        'networking' => ['networking-photo', 'structured-cabling'],
+        'wifi' => ['wifi-photo', 'networking'],
+        'structured-cabling' => ['structured-cabling-photo', 'networking-photo'],
+    ];
+    if (isset($packInline[$serviceSlug])) {
+        return '/assets/images/services/' . $packInline[$serviceSlug][$slot === 2 ? 1 : 0] . '.jpg';
+    }
     $pool = icomplyPoolForService($serviceSlug);
     if ($pool === null) {
         return null;

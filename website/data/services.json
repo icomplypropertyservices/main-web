@@ -60,5 +60,9 @@
     "smoke-co-alarms": "Smoke & CO Alarms",
     "pat-testing": "PAT Testing",
     "legionella-risk-assessment": "Legionella Risk Assessment",
-    "asbestos-survey": "Asbestos Survey"
+    "asbestos-survey": "Asbestos Survey",
+    "it-support": "IT Support",
+    "networking": "Networking",
+    "wifi": "Wi-Fi & Bluetooth",
+    "structured-cabling": "Structured Cabling"
 }

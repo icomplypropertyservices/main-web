@@ -881,6 +881,32 @@ function getMajorKeywords(): array {
     if (function_exists('icomplyNationwide3lineApplyKeywords')) {
         $normalized = icomplyNationwide3lineApplyKeywords($normalized);
     }
+    // Networking / Wi-Fi / Bluetooth + IT P0 pack (data/networking-it-pack.json).
+    if (!function_exists('icomplyNetworkingItKeywords')) {
+        require_once __DIR__ . '/includes/networking-it.php';
+    }
+    foreach (icomplyNetworkingItKeywords() as $slug => $meta) {
+        $slug = keywordSlug((string)$slug);
+        if ($slug === '' || isset($normalized[$slug]) || !is_array($meta)) {
+            continue;
+        }
+        $row = [
+            'name' => (string)($meta['name'] ?? keywordDisplayName($slug)),
+            'service' => (string)($meta['service'] ?? 'it-support'),
+            'related' => keywordSlug((string)($meta['related'] ?? $slug)),
+        ];
+        foreach (['intro', 'body', 'meta_desc', 'seo_keywords', 'seo_title', 'h1'] as $field) {
+            if (!empty($meta[$field]) && is_string($meta[$field])) {
+                $row[$field] = $meta[$field];
+            }
+        }
+        foreach (['focus_points', 'faq', 'sections'] as $field) {
+            if (!empty($meta[$field]) && is_array($meta[$field])) {
+                $row[$field] = $meta[$field];
+            }
+        }
+        $normalized[$slug] = $row;
+    }
     $cached = $normalized;
     return $cached;
 }

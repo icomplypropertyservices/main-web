@@ -138,5 +138,68 @@
     "title": "File:--and a corresponding fire escape vent on the ceiling (37092579982).jpg",
     "license": "CC BY 2.0",
     "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/77742560@N06\">shankar s.</a> from Dubai, united arab emirates"
+  },
+  {
+    "file": "/assets/images/services/it-support.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File%3ATechnician_with_laptop_working_on_server_rack_at_NERSC.jpg",
+    "title": "File:Technician with laptop working on server rack at NERSC.jpg",
+    "license": "CC0",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/29507259@N02\">Derrick Coetzee</a> from Berkeley, CA, USA"
+  },
+  {
+    "file": "/assets/images/services/it-support-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File%3AComputer_repair_in_progress.jpg",
+    "title": "File:Computer repair in progress.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Vintechcomputerservices&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Vintechcomputerservices (page does not exist)\">Vintechcomputerservices</a>"
+  },
+  {
+    "file": "/assets/images/services/networking.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File%3ANetwork_switches_arranged_in_a_server_rack_with_visible_LED_lights_indicating_connection_status_and_power_levels.jpg",
+    "title": "File:Network switches arranged in a server rack with visible LED lights indicating connection status and power levels.jpg",
+    "license": "CC BY 2.0",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Shixart1985\" title=\"User:Shixart1985\">Shixart1985</a>"
+  },
+  {
+    "file": "/assets/images/services/networking-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File%3ARear_of_rack_at_NERSC_data_center_-_closeup.jpg",
+    "title": "File:Rear of rack at NERSC data center - closeup.jpg",
+    "license": "CC0",
+    "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/29507259@N02\">Derrick Coetzee</a> from Berkeley, CA, USA"
+  },
+  {
+    "file": "/assets/images/services/wifi.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File%3AUnifi_AC_Lite_Access_Point.jpg",
+    "title": "File:Unifi AC Lite Access Point.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:ServerGuruBrisbane&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:ServerGuruBrisbane (page does not exist)\">ServerGuruBrisbane</a>"
+  },
+  {
+    "file": "/assets/images/services/wifi-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File%3AOutdoors_Wireless_Access_Point.jpg",
+    "title": "File:Outdoors Wireless Access Point.jpg",
+    "license": "CC BY 4.0",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Mbrickn\" title=\"User:Mbrickn\">Mbrickn</a>"
+  },
+  {
+    "file": "/assets/images/services/structured-cabling.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File%3A19-inch_rackmount_Ethernet_switches_and_patch_panels.jpg",
+    "title": "File:19-inch rackmount Ethernet switches and patch panels.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Dsimic\" title=\"User:Dsimic\">Dsimic</a>"
+  },
+  {
+    "file": "/assets/images/services/structured-cabling-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File%3AEthernet_Patch_Panel_20171121_130458.jpg",
+    "title": "File:Ethernet Patch Panel 20171121 130458.jpg",
+    "license": "CC BY 4.0",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Kbh3rd\" title=\"User:Kbh3rd\">Kbh3rd</a>"
+  },
+  {
+    "file": "/assets/images/keywords/bluetooth-support.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File%3ABluetooth_headset_WEP-200-8934.jpg",
+    "title": "File:Bluetooth headset WEP-200-8934.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "<bdi><a href=\"https://www.wikidata.org/wiki/Q108103612\" class=\"extiw\" title=\"d:Q108103612\"><span title=\"Wikipedian and OpenStreetMap mapper from Cologne, Open Data activist\">Raimond Spekking</span></a></bdi>"
   }
 ]

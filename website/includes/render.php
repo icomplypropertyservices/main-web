@@ -240,6 +240,11 @@ function keywordTemplatePlaceholders(
 
     $kwImg = url('/assets/images/keywords/' . $slug . '.jpg');
     $svcImg = url('/assets/images/services/' . $serviceSlug . '.jpg');
+    // Pack keywords without their own photo use the service photo, so og:image never 404s.
+    if (!empty($meta['sections']) && !is_file(SITE_ROOT . '/assets/images/keywords/' . $slug . '.jpg')
+        && is_file(SITE_ROOT . '/assets/images/services/' . $serviceSlug . '.jpg')) {
+        $kwImg = $svcImg;
+    }
     $inlineImg = $kwImg;
     if (function_exists('icomplyNationwide3lineIsP0') && icomplyNationwide3lineIsP0($slug)) {
         $gallery = icomplyNationwide3lineImages($slug);
@@ -259,6 +264,13 @@ function keywordTemplatePlaceholders(
         } elseif (function_exists('icomplyNationwide3lineMeta')) {
             $metaDesc = icomplyNationwide3lineMeta($name, 'the UK mainland');
         }
+    }
+    $sectionsHtml = '';
+    if (!empty($meta['sections'])) {
+        if (!function_exists('icomplyNetworkingItSectionsHtml')) {
+            require_once SITE_ROOT . '/includes/networking-it.php';
+        }
+        $sectionsHtml = icomplyNetworkingItSectionsHtml($meta['sections']);
     }
     // Prefer keyword image path; template onerror falls back to service
 
@@ -287,6 +299,7 @@ function keywordTemplatePlaceholders(
         'KEYWORD_IMAGE' => $kwImg,
         'KEYWORD_INLINE' => $inlineImg,
         'SERVICE_IMAGE' => $svcImg,
+        'KEYWORD_SECTIONS_HTML' => $sectionsHtml,
     ];
 }
 
