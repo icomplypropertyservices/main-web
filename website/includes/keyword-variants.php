@@ -192,6 +192,13 @@ function icomplyKeywordVariantCatalogue(): array
     ];
 
     $serviceNames = getServices();
+    // Property SEO pack services stay off the 10,000-variant matrix (locks: hubs + dual-ring ×town only).
+    if (!function_exists('icomplyPropertyPackServiceSlugs')) {
+        require_once __DIR__ . '/property-packs.php';
+    }
+    foreach (icomplyPropertyPackServiceSlugs() as $packService) {
+        unset($serviceNames[$packService]);
+    }
     $byService = [];
     foreach ($serviceNames as $slug => $label) {
         $slug = icomplyKeywordVariantSlugPart((string)$slug);

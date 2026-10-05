@@ -365,7 +365,18 @@ export function renderTownPage(input) {
   if (pe && Array.isArray(pe.faqs)) {
     qualityCtx.peFaqs = pe.faqs;
   }
-  const images = thinImages(imageSlug, subject, place.name, seed, pe && Array.isArray(pe.images) ? pe.images : null);
+  // Property SEO pack services ship three on-topic images (catalogue services.pack_images).
+  const packImageList = services.pack_images && Array.isArray(services.pack_images[imageSlug])
+    ? services.pack_images[imageSlug]
+    : null;
+  const packImages = packImageList && packImageList.length >= 3
+    ? [
+      { src: packImageList[0], alt: `${subject} in ${place.name}` },
+      { src: packImageList[1], alt: `${subject} work planned for ${place.name}` },
+      { src: packImageList[2], alt: `${subject} project context near ${place.name}` },
+    ]
+    : null;
+  const images = thinImages(imageSlug, subject, place.name, seed, pe && Array.isArray(pe.images) ? pe.images : packImages);
   let proseHtml = thinProseHtml(qualityCtx);
   const faqs = thinFaqs(qualityCtx).slice();
   if (fireTown || fireFamily) {

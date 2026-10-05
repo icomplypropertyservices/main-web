@@ -241,6 +241,12 @@ function keywordTemplatePlaceholders(
     $kwImg = url('/assets/images/keywords/' . $slug . '.jpg');
     $svcImg = url('/assets/images/services/' . $serviceSlug . '.jpg');
     $inlineImg = $kwImg;
+    // Property SEO pack hubs carry three on-topic images (hero/og, inline, side).
+    if (!empty($meta['pack']) && !empty($meta['images']) && is_array($meta['images']) && count($meta['images']) >= 3) {
+        $kwImg = url((string)$meta['images'][0]);
+        $inlineImg = url((string)$meta['images'][1]);
+        $svcImg = url((string)$meta['images'][2]);
+    }
     if (function_exists('icomplyNationwide3lineIsP0') && icomplyNationwide3lineIsP0($slug)) {
         $gallery = icomplyNationwide3lineImages($slug);
         if (count($gallery) >= 3) {
@@ -259,6 +265,13 @@ function keywordTemplatePlaceholders(
         } elseif (function_exists('icomplyNationwide3lineMeta')) {
             $metaDesc = icomplyNationwide3lineMeta($name, 'the UK mainland');
         }
+    }
+    $sectionsHtml = '';
+    if (!empty($meta['sections'])) {
+        if (!function_exists('icomplyPropertyPackSectionsHtml')) {
+            require_once SITE_ROOT . '/includes/property-packs.php';
+        }
+        $sectionsHtml = icomplyPropertyPackSectionsHtml($meta['sections']);
     }
     // Prefer keyword image path; template onerror falls back to service
 
@@ -287,6 +300,7 @@ function keywordTemplatePlaceholders(
         'KEYWORD_IMAGE' => $kwImg,
         'KEYWORD_INLINE' => $inlineImg,
         'SERVICE_IMAGE' => $svcImg,
+        'KEYWORD_SECTIONS_HTML' => $sectionsHtml,
     ];
 }
 

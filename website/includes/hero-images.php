@@ -185,6 +185,14 @@ function icomplyHubHero(string $serviceSlug): ?string
 
 function icomplyHubInline(string $serviceSlug, int $slot): ?string
 {
+    // Property SEO pack services: on-topic inline images from the pack.
+    if (!function_exists('icomplyPropertyPackServiceImages')) {
+        require_once __DIR__ . '/property-packs.php';
+    }
+    $packImages = icomplyPropertyPackServiceImages($serviceSlug);
+    if ($packImages !== null) {
+        return $packImages[$slot === 2 ? 2 : 1];
+    }
     $pool = icomplyPoolForService($serviceSlug);
     if ($pool === null) {
         return null;

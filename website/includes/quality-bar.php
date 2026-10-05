@@ -284,6 +284,11 @@ function icomplyQualityBarImages(string $serviceSlug, string $altPrefix, string 
         'access-control', 'emergency-lighting', 'gas-systems', 'door-entry',
     ];
     $slug = $serviceSlug !== '' ? $serviceSlug : 'fire-alarms';
+    // Property SEO pack services carry their own three on-topic images.
+    if (!function_exists('icomplyPropertyPackServiceImages')) {
+        require_once __DIR__ . '/property-packs.php';
+    }
+    $packImages = icomplyPropertyPackServiceImages($slug);
     $primary = '/assets/images/services/' . $slug . '.jpg';
     $second = in_array($slug, $photo, true)
         ? '/assets/images/services/' . $slug . '-photo.jpg'
@@ -297,6 +302,9 @@ function icomplyQualityBarImages(string $serviceSlug, string $altPrefix, string 
     }
     if ($third === $primary || $third === $second) {
         $third = '/assets/images/services/electrical.jpg';
+    }
+    if ($packImages !== null) {
+        [$primary, $second, $third] = $packImages;
     }
     $src = static function (string $path): string {
         return function_exists('url') ? url($path) : $path;

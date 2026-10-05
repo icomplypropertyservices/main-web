@@ -43,6 +43,14 @@ $groups = [
     ],
 ];
 
+// Property SEO pack job hubs (data/property-packs/*.json).
+require_once SITE_ROOT . '/includes/property-packs.php';
+foreach (icomplyPropertyPackJobGroups() as $packGroup => $packJobs) {
+    foreach ($packJobs as $packJob) {
+        $groups[$packGroup][] = $packJob;
+    }
+}
+
 $faqs = [
     [
         'Do you publish fixed prices on job pages?',
@@ -90,7 +98,7 @@ require SITE_ROOT . '/includes/header.php';
         <ul class="mt-6 grid sm:grid-cols-2 gap-3">
             <?php foreach ($jobs as $job):
                 $slug = $job['slug'];
-                $name = ucwords(str_replace('-', ' ', $slug));
+                $name = $job['name'] ?? ucwords(str_replace('-', ' ', $slug));
                 ?>
             <li class="border border-zinc-200 rounded-2xl p-4 bg-white">
                 <a class="font-semibold text-[#061828] hover:text-[#ff6b00]" href="<?= $h(url('/pages/jobs/' . $slug)) ?>"><?= $h($name) ?></a>

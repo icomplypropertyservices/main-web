@@ -431,6 +431,13 @@ function icomplyMatrixJobRecords(): array
             'nationwide' => $row[3],
         ];
     }
+    // Property SEO pack job hubs: job×town on the dual-ring 269.
+    require_once __DIR__ . '/property-packs.php';
+    foreach (icomplyPropertyPackMatrixJobs() as $slug => $row) {
+        if (!isset($out[$slug])) {
+            $out[$slug] = $row;
+        }
+    }
     return $out;
 }
 
@@ -600,6 +607,7 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
         'keywords' => $records['service_keywords'],
         'excluded' => icomplyMatrixExcludedServiceSlugs(),
         'family' => $family,
+        'pack_images' => function_exists('icomplyPropertyPackMatrixImages') ? icomplyPropertyPackMatrixImages() : [],
     ]));
     if (!function_exists('icomplyKeywordVariantCatalogue')) {
         require_once __DIR__ . '/keyword-variants.php';

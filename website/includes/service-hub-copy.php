@@ -16,6 +16,13 @@ if (is_file($buildingHubCopy)) {
 function icomplyServiceHubCopy(string $slug): ?array
 {
     $slug = areaSlug($slug);
+    if (!function_exists('icomplyPropertyPackServiceHubCopy')) {
+        require_once __DIR__ . '/property-packs.php';
+    }
+    $packHub = icomplyPropertyPackServiceHubCopy($slug);
+    if ($packHub !== null) {
+        return $packHub;
+    }
     if ($slug === 'gas-systems' && function_exists('icomplyGasServicePageCopy')) {
         return icomplyGasServicePageCopy();
     }
@@ -171,6 +178,13 @@ function icomplyServiceHubCopy(string $slug): ?array
 function icomplyServiceHubLinks(string $slug): array
 {
     $slug = areaSlug($slug);
+    if (!function_exists('icomplyPropertyPackServiceHubLinks')) {
+        require_once __DIR__ . '/property-packs.php';
+    }
+    $packLinks = icomplyPropertyPackServiceHubLinks($slug);
+    if ($packLinks) {
+        return $packLinks;
+    }
     if (function_exists('icomplyBuildingHubLinks')) {
         $buildingLinks = icomplyBuildingHubLinks($slug);
         if ($buildingLinks) {

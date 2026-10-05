@@ -25,7 +25,8 @@ $bad = static function (string $message) use (&$fail): void {
 $catalogue = icomplyKeywordVariantCatalogue();
 $counts = icomplyKeywordVariantCounts($catalogue);
 $services = $catalogue['services'];
-$expectedServices = count(getServices());
+// Property SEO pack services are deliberately kept off the 10k variant matrix.
+$expectedServices = count(getServices()) - (function_exists('icomplyPropertyPackServiceSlugs') ? count(icomplyPropertyPackServiceSlugs()) : 0);
 if (count($services) !== $expectedServices) {
     $bad('service count ' . count($services) . ' != ' . $expectedServices);
 }

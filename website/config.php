@@ -273,7 +273,9 @@ function icomplyQuoteFormOpen(string $class = '', string $extra = ''): string
 function getServices(): array {
     $base = loadJsonData('services', []);
     $custom = loadJsonData('services-custom', []);
-    return array_merge($base, $custom);
+    // Property SEO packs (data/property-packs/*.json) add their own service hubs.
+    require_once __DIR__ . '/includes/property-packs.php';
+    return icomplyPropertyPackMergeServices(array_merge($base, $custom));
 }
 
 /**
@@ -283,7 +285,8 @@ function getServices(): array {
 function getServiceCategories(): array {
     $cats = loadJsonData('service-categories', []);
     if ($cats) {
-        return $cats;
+        require_once __DIR__ . '/includes/property-packs.php';
+        return icomplyPropertyPackMergeCategories($cats);
     }
     // Fallback: single bucket if categories file missing
     return [
@@ -881,6 +884,9 @@ function getMajorKeywords(): array {
     if (function_exists('icomplyNationwide3lineApplyKeywords')) {
         $normalized = icomplyNationwide3lineApplyKeywords($normalized);
     }
+    // Property SEO packs (data/property-packs/*.json, one per SEO lock).
+    require_once __DIR__ . '/includes/property-packs.php';
+    $normalized = icomplyPropertyPackApplyKeywords($normalized);
     $cached = $normalized;
     return $cached;
 }
@@ -1228,7 +1234,8 @@ function getSeoKeywords(string $service, string $area = ''): string {
 
 /** Canonical service blurbs / standards (data/service-meta.json) */
 function getServiceMeta(string $slug = ''): array {
-    $all = loadJsonData('service-meta', []);
+    require_once __DIR__ . '/includes/property-packs.php';
+    $all = icomplyPropertyPackMergeServiceMeta(loadJsonData('service-meta', []));
     if ($slug === '') {
         return $all;
     }
