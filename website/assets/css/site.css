@@ -566,18 +566,6 @@ h1, h2, h3 { letter-spacing: -0.03em; }
   gap: 0.75rem;
   margin: 0 0 1.25rem;
 }
-.foot-families {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem 1rem;
-  margin: 0 0 1.25rem;
-}
-.foot-families a {
-  color: #fff;
-  font-weight: 650;
-  text-decoration: none;
-}
-.foot-families a:hover { color: var(--accent); }
 .foot-featured a {
   display: flex;
   flex-direction: column;

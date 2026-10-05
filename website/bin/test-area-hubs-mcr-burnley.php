@@ -58,7 +58,7 @@ foreach (['Manchester', 'Burnley'] as $area) {
     }
 
     $ok(str_contains($html, '/pages/keywords/rewire/' . $slug), "{$area} keeps local rewire link");
-    $ok(str_contains($html, '/pages/keywords/fire-alarm-service/' . $slug), "{$area} lists the same keyword×town set as other area hubs");
+    $ok(!preg_match('#/pages/keywords/fire-alarm-service/' . preg_quote($slug, '#') . '#', $html), "{$area} fire-alarm-service keyword is not town-locked");
     $ok(str_contains($html, '/pages/keywords/fire-alarm-service'), "{$area} links the national fire-alarm-service guide");
     $ok(str_contains($html, '#uk-london'), "{$area} includes a London fire fragment");
     $ok(str_contains($html, '#uk-glasgow'), "{$area} includes a Glasgow fire fragment");

@@ -109,10 +109,9 @@ foreach (icomplyTier1Towns() as $town) {
 
 $ok(!icomplyPathIsIndexable('/pages/electrical/preston'), 'preston electrical is noindex');
 $ok(!icomplyPathIsIndexable('/pages/plastering/stockport'), 'plastering stockport has no bespoke article');
-$ok(icomplyPathIsIndexable('/pages/areas/stockport'), 'Greater Manchester area hubs are indexable');
-$ok(!icomplyPathIsIndexable('/pages/areas/liverpool'), 'non-GM area hubs stay noindex');
+$ok(!icomplyPathIsIndexable('/pages/areas/stockport'), 'templated area towns stay noindex');
 $ok(icomplyPathIsIndexable('/pages/areas/manchester'), 'Manchester area hub is indexable');
-$ok(!icomplyPathIsIndexable('/pages/areas/burnley'), 'Burnley is Lancashire and is not a GM area hub');
+$ok(icomplyPathIsIndexable('/pages/areas/burnley'), 'Burnley area hub is indexable');
 $ok(!icomplyPathIsIndexable('/pages/keywords/eicr/stockport'), 'keyword×town stays noindex');
 $ok(icomplyPathIsIndexable('/pages/areas'), 'areas index stays indexable');
 
@@ -122,8 +121,7 @@ foreach ($articles as $path => $row) {
 }
 $ok(!str_contains($xml, '/pages/electrical/preston</loc>'), 'sitemap omits preston');
 $ok(!str_contains($xml, '/pages/plastering/stockport</loc>'), 'sitemap omits thin plastering town page');
-$ok(str_contains($xml, '/pages/areas/stockport</loc>'), 'sitemap lists Greater Manchester area hubs');
-$ok(!str_contains($xml, '/pages/areas/liverpool</loc>') && !str_contains($xml, '/pages/areas/burnley</loc>'), 'sitemap omits non-GM area hubs');
+$ok(!str_contains($xml, '/pages/areas/stockport</loc>'), 'sitemap omits templated area hub');
 $ok(!preg_match('#/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+</loc>#', $xml), 'sitemap omits keyword×town');
 
 $seen = [];

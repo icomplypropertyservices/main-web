@@ -229,20 +229,9 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         ? 'Price on application after we confirm property type, access and scope. No catalogue fee.'
         : 'Written quote after we confirm scope. We do not invent a price on this page.';
 
-    if (!function_exists('icomplyGmTownBlurb')) {
-        $gmBlurbs = SITE_ROOT . '/includes/gm-blurbs.php';
-        if (is_file($gmBlurbs)) {
-            require_once $gmBlurbs;
-        }
-    }
-    $packed = function_exists('icomplyGmTownBlurb')
-        ? icomplyGmTownBlurb($keywordSlug, $areaSlugVal, 'keyword')
-        : null;
-    $intro = is_array($packed) && $packed['blurb'] !== ''
-        ? $packed['blurb']
-        : (function_exists('seo_unique_intro')
-            ? seo_unique_intro($svcName, $svcSlug, $areaName)
-            : $kwName . ' in ' . $areaName . ' from iComply Property Services.');
+    $intro = function_exists('seo_unique_intro')
+        ? seo_unique_intro($svcName, $svcSlug, $areaName)
+        : $kwName . ' in ' . $areaName . ' from iComply Property Services.';
     if (function_exists('waterAsbestosAreaIntro')) {
         $extra = waterAsbestosAreaIntro($svcSlug, $areaName);
         if ($extra !== '') {
@@ -276,14 +265,9 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         . '<p class="mt-4 text-sm text-white/60">' . icomplyMatrixH($priceLine) . '</p>'
         . '</div></section>';
 
-    $packedHeading = is_array($packed) && ($packed['h2'] ?? '') !== ''
-        ? (string)$packed['h2']
-        : 'About this ' . $areaName . ' page';
-    $packedCta = is_array($packed) ? (string)($packed['cta'] ?? '') : '';
     $html .= '<main class="matrix-wrap py-10 space-y-10">'
         . '<article class="matrix-card space-y-4">'
-        . '<h2 class="text-2xl font-semibold">' . icomplyMatrixH($packedHeading) . '</h2>'
-        . ($packedCta !== '' ? '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($packedCta) . '</p>' : '')
+        . '<h2 class="text-2xl font-semibold">About this ' . icomplyMatrixH($areaName) . ' page</h2>'
         . '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($body) . '</p>';
     if ($bullets) {
         $html .= '<ul class="space-y-2 text-zinc-700">';
@@ -334,20 +318,9 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     if ($serviceSlug === 'fire-risk-assessments' && function_exists('fraGuidePrice')) {
         $priceLine = 'Guide price ' . fraGuidePrice() . ' for a standard assessment on UK mainland. Larger premises confirmed in writing.';
     }
-    if (!function_exists('icomplyGmTownBlurb')) {
-        $gmBlurbs = SITE_ROOT . '/includes/gm-blurbs.php';
-        if (is_file($gmBlurbs)) {
-            require_once $gmBlurbs;
-        }
-    }
-    $packed = function_exists('icomplyGmTownBlurb')
-        ? icomplyGmTownBlurb($serviceSlug, $areaSlugVal, 'service')
-        : null;
-    $intro = is_array($packed) && $packed['blurb'] !== ''
-        ? $packed['blurb']
-        : (function_exists('seo_unique_intro')
-            ? seo_unique_intro($svcName, $serviceSlug, $areaName)
-            : $svcName . ' in ' . $areaName . '.');
+    $intro = function_exists('seo_unique_intro')
+        ? seo_unique_intro($svcName, $serviceSlug, $areaName)
+        : $svcName . ' in ' . $areaName . '.';
     if (function_exists('waterAsbestosAreaIntro')) {
         $extra = waterAsbestosAreaIntro($serviceSlug, $areaName);
         if ($extra !== '') {
@@ -387,15 +360,10 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         . '<p class="mt-4 text-sm text-white/60">' . icomplyMatrixH($standards) . ' · ' . icomplyMatrixH($priceLine) . '</p>'
         . '</div></section>';
 
-    $packedHeading = is_array($packed) && ($packed['h2'] ?? '') !== ''
-        ? (string)$packed['h2']
-        : 'What we do in ' . $areaName;
-    $packedCta = is_array($packed) ? (string)($packed['cta'] ?? '') : '';
     $html .= '<main class="matrix-wrap py-10 space-y-10">'
         . '<article class="matrix-card space-y-4">'
-        . '<h2 class="text-2xl font-semibold">' . icomplyMatrixH($packedHeading) . '</h2>'
+        . '<h2 class="text-2xl font-semibold">What we do in ' . icomplyMatrixH($areaName) . '</h2>'
         . '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($blurb) . '</p>'
-        . ($packedCta !== '' ? '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($packedCta) . '</p>' : '')
         . '<p class="text-sm">Service hub: <a class="text-[#ff6b00] font-semibold" href="'
         . icomplyMatrixH(url('/pages/services/' . $serviceSlug)) . '">' . icomplyMatrixH($svcName) . '</a>'
         . ' · Town: <a class="text-[#ff6b00] font-semibold" href="'

@@ -4,8 +4,6 @@
  * existing job appears inside the first 10,000 variants of a service.
  */
 
-import { breadcrumbHtml, isGmTown, matrixRelatedHtml } from "./link-blocks.js";
-
 const GAS_SENTENCE = "Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.";
 const SUBCONTRACT_SENTENCE = "The work is carried out by relevant qualified people. Where a visit needs a specialist ticket, iComply uses approved subcontractors.";
 
@@ -277,38 +275,20 @@ function pageHtml(options) {
   const seed = hashStr(`${path}|${placeName}`);
   const rotated = sentences.slice(seed % Math.max(1, sentences.length)).concat(sentences.slice(0, seed % Math.max(1, sentences.length)));
   const body = [...rotated, ...extras];
-  const labels = {};
-  for (const row of spec.services || []) {
-    if (row && row.slug && row.label) labels[row.slug] = row.label;
+  const towns = spec.towns || [];
+  const links = [];
+  links.push(`<li><a href="/pages/services/${escapeHtml(service.slug)}">${escapeHtml(service.label)}</a></li>`);
+  links.push(`<li><a href="/pages/areas">Greater Manchester areas</a></li>`);
+  links.push(`<li><a href="/contact">Contact iComply</a></li>`);
+  if (parsed && parsed.ok) {
+    const slug = variantSlug(service.slug, parsed);
+    links.push(`<li><a href="/pages/keywords/${slug}">${escapeHtml(subject)} in Greater Manchester</a></li>`);
+    for (let i = 1; i <= 3 && towns.length; i++) {
+      const town = towns[(seed + i) % towns.length];
+      if (!town || town.slug === place.slug) continue;
+      links.push(`<li><a href="/pages/keywords/${slug}/${town.slug}">${escapeHtml(subject)} in ${escapeHtml(town.name)}</a></li>`);
+    }
   }
-  const variantSlugValue = parsed && parsed.ok ? variantSlug(service.slug, parsed) : String(keyword || "");
-  const variantCatalogue = {
-    keywords: {},
-    services: { labels, keywords: {}, excluded: ["barriers", "aov-air-handling"] },
-    jobs: {},
-    manufacturers: {},
-  };
-  const relatedHtml = matrixRelatedHtml(variantCatalogue, {
-    kind: "variant",
-    subject,
-    serviceSlug: service.slug,
-    serviceName: service.label,
-    townSlug: place.slug || "",
-    townName: placeName,
-    keyword: variantSlugValue,
-    selfPath: path,
-    towns: spec.towns || [],
-  });
-  const crumbItems = [
-    { href: "/", label: "Home" },
-    { href: "/pages/keywords", label: "Guides" },
-    { href: `/pages/keywords/${variantSlugValue}`, label: subject },
-  ];
-  if (isGmTown(place.slug || "")) {
-    crumbItems.push({ href: `/pages/areas/${place.slug}`, label: placeName });
-  }
-  crumbItems.push({ label: h1 });
-  const crumbs = breadcrumbHtml(crumbItems);
   const faqs = [
     [`Do you cover ${placeName} for ${subject}?`, `Yes, where ${placeName} is in Greater Manchester. The quote is price on application once the building and the ${scope.label} scope are known.`],
     [`Who carries out ${subject} in ${placeName}?`, `${SUBCONTRACT_SENTENCE}${gas ? ` ${GAS_SENTENCE}` : ""}`],
@@ -353,10 +333,9 @@ function pageHtml(options) {
 </head>
 <body>
 <header>
-<p><a href="/">iComply Property Services</a> · <a href="/pages/services">Services</a> · <a href="/pages/jobs">Jobs</a> · <a href="/pages/keywords">Keywords</a> · <a href="/pages/areas">Areas</a> · <a href="/pages/manufacturers">Manufacturers</a> · <a href="/directories">Directories</a> · <a href="/contact">Contact</a></p>
+<p><a href="/">iComply Property Services</a> · <a href="/pages/services">Services</a> · <a href="/pages/keywords">Keywords</a> · <a href="/contact">Contact</a></p>
 </header>
 <main>
-${crumbs}
 <h1>${escapeHtml(h1)}</h1>
 <figure>
 <img src="${imageSrc}" alt="${escapeHtml(imageAlt)}" width="1400" height="900">
@@ -373,7 +352,10 @@ ${body.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("\n")}
 </ol>
 <h2>Questions about ${escapeHtml(placeName)}</h2>
 ${faqs.map(([q, a]) => `<details><summary>${escapeHtml(q)}</summary><p>${escapeHtml(a)}</p></details>`).join("")}
-${relatedHtml}
+<h2>Related ${escapeHtml(subject)} pages</h2>
+<ul>
+${links.join("\n")}
+</ul>
 </article>
 </main>
 </body>

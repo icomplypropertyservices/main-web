@@ -51,59 +51,6 @@ function icomplyGreaterManchesterTownNames(): array
     return $out;
 }
 
-/**
- * Nearby Greater Manchester towns for one published town. Borough groups first,
- * then the ten borough anchors. Not an A–Z slice.
- *
- * @return list<string>
- */
-function icomplyGmAdjacentTownNames(string $area, int $limit = 12): array
-{
-    $names = icomplyGreaterManchesterTownNames();
-    $bySlug = [];
-    foreach ($names as $name) {
-        $bySlug[areaSlug((string)$name)] = (string)$name;
-    }
-    $slug = areaSlug($area);
-    if (!isset($bySlug[$slug])) {
-        return [];
-    }
-    $groups = [
-        ['bolton', 'leigh', 'atherton', 'tyldesley', 'horwich', 'westhoughton', 'farnworth', 'kearsley', 'little-lever'],
-        ['bury', 'radcliffe', 'whitefield', 'prestwich', 'heywood'],
-        ['manchester', 'chorlton', 'didsbury', 'withington', 'wythenshawe', 'failsworth'],
-        ['oldham', 'chadderton', 'shaw', 'royton', 'lees', 'uppermill', 'saddleworth', 'middleton'],
-        ['rochdale', 'heywood', 'milnrow', 'littleborough', 'middleton'],
-        ['salford', 'swinton', 'eccles', 'walkden', 'worsley', 'pendlebury', 'irlam', 'cadishead'],
-        ['stockport', 'cheadle', 'cheadle-hulme', 'bramhall', 'hazel-grove', 'marple', 'romiley'],
-        ['tameside', 'hyde', 'stalybridge', 'dukinfield', 'ashton-under-lyne', 'mossley', 'droylsden', 'denton'],
-        ['trafford', 'altrincham', 'sale', 'stretford', 'urmston', 'chorlton'],
-        ['wigan', 'leigh', 'atherton', 'tyldesley'],
-    ];
-    $anchors = ['manchester', 'stockport', 'salford', 'bolton', 'oldham', 'rochdale', 'bury', 'tameside', 'trafford', 'wigan'];
-    $out = [];
-    $seen = [$slug => true];
-    $push = static function (string $candidate) use (&$out, &$seen, $bySlug, $limit): void {
-        if (isset($seen[$candidate]) || !isset($bySlug[$candidate]) || count($out) >= $limit) {
-            return;
-        }
-        $seen[$candidate] = true;
-        $out[] = $bySlug[$candidate];
-    };
-    foreach ($groups as $group) {
-        if (!in_array($slug, $group, true)) {
-            continue;
-        }
-        foreach ($group as $candidate) {
-            $push($candidate);
-        }
-    }
-    foreach ($anchors as $candidate) {
-        $push($candidate);
-    }
-    return $out;
-}
-
 /** @return list<string> */
 function icomplyBuildingWorkSlugs(): array
 {

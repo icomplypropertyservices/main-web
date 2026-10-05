@@ -1,6 +1,6 @@
 <?php
 /**
- * Compact sitemap — hubs, the 60 Greater Manchester area hubs, and
+ * Compact sitemap — hubs, featured area indexes (Manchester, Burnley), and
  * AOV/barrier town pages for places over 10,000. Keyword×town and other
  * service×town pretty URLs 301 to the hub because they are not published, so
  * they stay out. Shared area-town templates are noindex and stay out.
@@ -119,10 +119,6 @@ function icomplySitemapEntries(): array
         if ($path === '') {
             $path = '/';
         }
-        // Burnley is Lancashire, not Greater Manchester. Keep it off every sitemap loc.
-        if (preg_match('#(?:^|/)burnley(?:$|/)#', $path) || str_ends_with($path, '-burnley')) {
-            return;
-        }
         if (isset($seen[$path]) || isset($banned[$path])) {
             return;
         }
@@ -150,15 +146,11 @@ function icomplySitemapEntries(): array
         if (preg_match('#^/pages/nurse-call/[a-z0-9\-]+$#', $path)) {
             return;
         }
-        // Greater Manchester area hubs are indexable and served by the router
-        // (Manchester has a stub file; the other GM towns do not). Burnley is
-        // Lancashire and stays out. Other area templates stay out.
-        $isPublishedAreaHub = false;
+        // Shared area templates are noindex. Featured indexes (Manchester, Burnley) stay.
         if (preg_match('#^/pages/areas/[a-z0-9\-]+$#', $path)) {
             if (!function_exists('icomplyPathIsIndexable') || !icomplyPathIsIndexable($path)) {
                 return;
             }
-            $isPublishedAreaHub = true;
         }
         // Hard reject /pages/{service}/{town} even if a leftover matrix file
         // sits in dist/. Those pretty URLs 301 to the service hub. Keep hub
@@ -182,7 +174,7 @@ function icomplySitemapEntries(): array
             $isManufacturerHub = is_array($brandEntry);
             $isBarrierBrandLoc = $isManufacturerHub && in_array('barriers', $brandEntry['services'] ?? [], true);
         }
-        if (!$isKeywordLoc && !$isTownLoc && !$isMfrTown && !$isBarrierBrandLoc && !$isManufacturerHub && !$isPublishedAreaHub && !icomplySitemapUrlHasFile($path)) {
+        if (!$isKeywordLoc && !$isTownLoc && !$isMfrTown && !$isBarrierBrandLoc && !$isManufacturerHub && !icomplySitemapUrlHasFile($path)) {
             return;
         }
         $seen[$path] = true;
@@ -231,9 +223,8 @@ function icomplySitemapEntries(): array
         ['/pages/packages/fire-ready', '0.78', 'pages/packages/fire-ready.php'],
         ['/pages/services', '0.95', 'pages/services.php'],
         ['/pages/areas', '0.9', 'pages/areas.php'],
-        ['/pages/jobs', '0.85', 'pages/jobs/index.php'],
-        ['/directories', '0.45', 'directories.php'],
         ['/pages/areas/manchester', '0.8', 'pages/areas/manchester.php'],
+        ['/pages/areas/burnley', '0.8', 'pages/areas/burnley.php'],
         ['/pages/manufacturers', '0.9', 'pages/manufacturers.php'],
         ['/pages/keywords', '0.9', 'pages/keywords.php'],
         ['/pages/aov', '0.85', 'pages/aov/index.php'],

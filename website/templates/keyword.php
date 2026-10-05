@@ -230,25 +230,6 @@ if (function_exists('accessControlLaneKeywordStrip')) {
 </section>
 <?php endif; ?>
 
-<section class="related-links bg-white border-t">
-    <div class="max-w-7xl mx-auto px-6 py-14">
-        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">Greater Manchester area hubs</h2>
-        <p class="mt-2 text-zinc-800">Each town hub below is the parent for <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> in that town.</p>
-        <div class="mt-6 flex flex-wrap gap-2">
-            <?php
-            if (!function_exists('icomplyGreaterManchesterTownNames')) {
-                require_once SITE_ROOT . '/includes/building-hub-copy.php';
-            }
-            foreach (icomplyGreaterManchesterTownNames() as $gmTown):
-                $gmSlug = areaSlug((string)$gmTown);
-            ?>
-                <a href="<?= url('/pages/areas/' . $gmSlug) ?>" class="px-3 py-1.5 bg-white border-2 border-zinc-300 text-zinc-900 rounded-full text-xs font-medium hover:border-[#ff6b00]"><?= htmlspecialchars((string)$gmTown, ENT_QUOTES, 'UTF-8') ?></a>
-                <a href="<?= url('/pages/keywords/' . $KEYWORD_SLUG . '/' . $gmSlug) ?>" class="px-3 py-1.5 bg-[#061828] text-white rounded-full text-xs font-semibold hover:bg-[#ff6b00]"><?= htmlspecialchars($KEYWORD_NAME . ' in ' . $gmTown, ENT_QUOTES, 'UTF-8') ?></a>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</section>
-
 <!-- RELATED KEYWORDS same service -->
 <section class="bg-white border-y-2 border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-14">

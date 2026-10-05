@@ -520,9 +520,8 @@ if ($indexMode === 'tiered') {
     // Unpublished service×town and keyword×town pretty URLs 301. Indexable
     // area hubs stay in. Shared area templates and non-tier towns stay out.
     $tierOk = str_contains($sitemapHub, '/pages/areas/manchester</loc>')
-        && str_contains($sitemapHub, '/pages/areas/stockport</loc>')
-        && !str_contains($sitemapHub, '/pages/areas/burnley</loc>')
-        && !str_contains($sitemapHub, '/pages/areas/liverpool</loc>')
+        && str_contains($sitemapHub, '/pages/areas/burnley</loc>')
+        && !str_contains($sitemapHub, '/pages/areas/stockport</loc>')
         && !str_contains($sitemapHub, '/pages/electrical/stockport</loc>')
         && !str_contains($sitemapHub, '/pages/electrical/preston</loc>')
         && !str_contains($sitemapHub, '/pages/keywords/eicr/stockport</loc>');
