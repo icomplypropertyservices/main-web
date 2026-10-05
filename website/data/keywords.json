@@ -42678,5 +42678,929 @@
     "hub_only": true,
     "h1": "Plumber call-out",
     "seo_title": "Plumber call-out | iComply"
-  }
+  },
+    "three-phase-electrician":     {
+        "name": "Three Phase Electrician",
+        "service": "electrical",
+        "related": "qualified-electrician",
+        "intro": "Three Phase Electrician is three-phase electrical work: supply, board, circuit or test as the scope says. Workshops, commercial plant and some EV loads are typical. The existing supply is confirmed before any upgrade is quoted, price on application. The commercial line for Three Phase Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Three Phase Electrician is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Three Phase Electrician across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Three Phase Electrician priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "qualified-electrician":     {
+        "name": "Qualified Electrician",
+        "service": "electrical",
+        "related": "part-p-electrician",
+        "intro": "Qualified Electrician is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Qualified Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Qualified Electrician is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Qualified Electrician across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Qualified Electrician priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "part-p-electrician":     {
+        "name": "Part P Electrician",
+        "service": "electrical",
+        "related": "same-day-electrician",
+        "intro": "Part P Electrician refers to Part P of the Building Regulations for notifiable electrical work in dwellings. Notification, where it applies, is part of the agreed scope. It is not a claim that iComply holds a competent-person scheme registration. The commercial line for Part P Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Part P Electrician is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Part P Electrician across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Part P Electrician priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "same-day-electrician":     {
+        "name": "Same Day Electrician",
+        "service": "electrical",
+        "related": "24-hour-emergency-electrician",
+        "intro": "Same Day Electrician is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Same Day Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Same Day Electrician is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Same Day Electrician across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Same Day Electrician priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "24-hour-electrician":     {
+        "name": "24 Hour Electrician",
+        "service": "electrical",
+        "related": "out-of-hours-electrician",
+        "intro": "24 Hour Electrician is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for 24 Hour Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "24 Hour Electrician is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "24 Hour Electrician across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is 24 Hour Electrician priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "next-day-electrician":     {
+        "name": "Next Day Electrician",
+        "service": "electrical",
+        "related": "emergency-eicr",
+        "intro": "Next Day Electrician is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Next Day Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Next Day Electrician is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Next Day Electrician across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Next Day Electrician priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "emergency-eicr":     {
+        "name": "Emergency EICR",
+        "service": "electrical",
+        "related": "same-day-eicr",
+        "intro": "Emergency EICR is inspection and testing of the fixed electrical installation, with the report issued to the instructing client. Codes and any remedials are explained from the written report. Pricing other than the published HMO list on the main EICR page is price on application. The commercial line for Emergency EICR does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Emergency EICR is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Emergency EICR across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Emergency EICR priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "same-day-eicr":     {
+        "name": "Same Day EICR",
+        "service": "electrical",
+        "related": "commercial-eicr",
+        "intro": "Same Day EICR is inspection and testing of the fixed electrical installation, with the report issued to the instructing client. Codes and any remedials are explained from the written report. Pricing other than the published HMO list on the main EICR page is price on application. The commercial line for Same Day EICR does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Same Day EICR is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Same Day EICR across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Same Day EICR priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "pat-testing-near-me":     {
+        "name": "PAT Testing Near Me",
+        "service": "electrical",
+        "related": "ev-charger-installation",
+        "intro": "PAT Testing Near Me is in-service inspection and testing of portable appliances, with labelling and a register. It is not an EICR. The quote is price on application after the appliance count is known. Failed items are quoted as separate remedials. The commercial line for PAT Testing Near Me does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "PAT Testing Near Me is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "PAT Testing Near Me across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is PAT Testing Near Me priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "3-phase-electrician":     {
+        "name": "3 Phase Electrician",
+        "service": "electrical",
+        "related": "local-electrician",
+        "intro": "3 Phase Electrician is three-phase electrical work: supply, board, circuit or test as the scope says. Workshops, commercial plant and some EV loads are typical. The existing supply is confirmed before any upgrade is quoted, price on application. The commercial line for 3 Phase Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "3 Phase Electrician is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "3 Phase Electrician across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is 3 Phase Electrician priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "local-electrician":     {
+        "name": "Local Electrician",
+        "service": "electrical",
+        "related": "electrician-manchester",
+        "intro": "Local Electrician is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Local Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Local Electrician is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Local Electrician across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Local Electrician priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "electrician-manchester":     {
+        "name": "Electrician Manchester",
+        "service": "electrical",
+        "related": "emergency-electrician-near-me",
+        "intro": "Electrician Manchester is a place-led search inside this Greater Manchester electrical pack. Manchester is the primary hub city and the Stockport base is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. The visit is still scoped to the building, price on application. The commercial line for Electrician Manchester does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Electrician Manchester is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Electrician Manchester across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Electrician Manchester priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "emergency-electrician-near-me":     {
+        "name": "Emergency Electrician Near Me",
+        "service": "electrical",
+        "related": "rewire-near-me",
+        "intro": "Emergency Electrician Near Me is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Emergency Electrician Near Me does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Emergency Electrician Near Me is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Emergency Electrician Near Me across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Emergency Electrician Near Me priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "rewire-near-me":     {
+        "name": "Rewire Near Me",
+        "service": "electrical",
+        "related": "consumer-unit-near-me",
+        "intro": "Rewire Near Me is rewire work on the fixed installation, full or partial as agreed. Containment, finishes and which rooms are in the job are written down first. The quote is price on application. Notifiable work is notified where Part P requires it. The commercial line for Rewire Near Me does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Rewire Near Me is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Rewire Near Me across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Rewire Near Me priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "consumer-unit-near-me":     {
+        "name": "Consumer Unit Near Me",
+        "service": "electrical",
+        "related": "fuse-board-near-me",
+        "intro": "Consumer Unit Near Me is consumer-unit or fuse-board work: replacement, upgrade or a specified device layout. The board is identified, labelled and tested before it is left energised. The quote is price on application after the existing board is known. The commercial line for Consumer Unit Near Me does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Consumer Unit Near Me is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Consumer Unit Near Me across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Consumer Unit Near Me priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "fuse-board-near-me":     {
+        "name": "Fuse Board Near Me",
+        "service": "electrical",
+        "related": "electrical-engineer-near-me",
+        "intro": "Fuse Board Near Me is consumer-unit or fuse-board work: replacement, upgrade or a specified device layout. The board is identified, labelled and tested before it is left energised. The quote is price on application after the existing board is known. The commercial line for Fuse Board Near Me does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Fuse Board Near Me is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Fuse Board Near Me across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Fuse Board Near Me priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "electrical-engineer-near-me":     {
+        "name": "Electrical Engineer Near Me",
+        "service": "electrical",
+        "related": "nic-electrician",
+        "intro": "Electrical Engineer Near Me is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Electrical Engineer Near Me does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Electrical Engineer Near Me is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Electrical Engineer Near Me across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Electrical Engineer Near Me priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "nic-electrician":     {
+        "name": "NIC Electrician",
+        "service": "electrical",
+        "related": "bs-7671-electrician",
+        "intro": "NIC Electrician is a scheme-search phrase. iComply does not claim NICEIC, NIC, NAPIT or Elecsa membership, and this page does not show a scheme badge. Ask what registration the attending electrician can show. If you need a named scheme contractor and that registration cannot be shown, we say so before you book. The commercial line for NIC Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "NIC Electrician is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "NIC Electrician across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is NIC Electrician priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "bs-7671-electrician":     {
+        "name": "BS 7671 Electrician",
+        "service": "electrical",
+        "related": "eicr-cost",
+        "intro": "BS 7671 Electrician means electrical work judged against BS 7671, the IET Wiring Regulations, including inspection, testing and the certificates that match the job. Quoting the standard is not a scheme badge. The commercial line for BS 7671 Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "BS 7671 Electrician is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "BS 7671 Electrician across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is BS 7671 Electrician priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "industrial-electrician":     {
+        "name": "Industrial Electrician",
+        "service": "electrical",
+        "related": "electrical-remedial-works",
+        "intro": "Industrial Electrician is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Industrial Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Industrial Electrician is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Industrial Electrician across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Industrial Electrician priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "three-phase-supply":     {
+        "name": "Three Phase Supply",
+        "service": "electrical",
+        "related": "three-phase-board",
+        "intro": "Three Phase Supply is three-phase electrical work: supply, board, circuit or test as the scope says. Workshops, commercial plant and some EV loads are typical. The existing supply is confirmed before any upgrade is quoted, price on application. The commercial line for Three Phase Supply does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Three Phase Supply is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Three Phase Supply across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Three Phase Supply priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "three-phase-board":     {
+        "name": "Three Phase Board",
+        "service": "electrical",
+        "related": "ev-charger",
+        "intro": "Three Phase Board is three-phase electrical work: supply, board, circuit or test as the scope says. Workshops, commercial plant and some EV loads are typical. The existing supply is confirmed before any upgrade is quoted, price on application. The commercial line for Three Phase Board does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Three Phase Board is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Three Phase Board across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Three Phase Board priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "ev-charger":     {
+        "name": "EV Charger",
+        "service": "electrical",
+        "related": "portable-appliance-testing",
+        "intro": "EV Charger is the installation of electric-vehicle charging equipment on a supply that can take it. The survey checks the board, the earthing and the cable route. The quote is price on application. Charger hardware is only specified when it suits the installation. The commercial line for EV Charger does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "EV Charger is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "EV Charger across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is EV Charger priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "electrician-stockport":     {
+        "name": "Electrician Stockport",
+        "service": "electrical",
+        "related": "eicr-manchester",
+        "intro": "Electrician Stockport is a place-led search inside this Greater Manchester electrical pack. Manchester is the primary hub city and the Stockport base is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. The visit is still scoped to the building, price on application. The commercial line for Electrician Stockport does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Electrician Stockport is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Electrician Stockport across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Electrician Stockport priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "eicr-manchester":     {
+        "name": "EICR Manchester",
+        "service": "electrical",
+        "related": "rewire-manchester",
+        "intro": "EICR Manchester is inspection and testing of the fixed electrical installation, with the report issued to the instructing client. Codes and any remedials are explained from the written report. Pricing other than the published HMO list on the main EICR page is price on application. The commercial line for EICR Manchester does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "EICR Manchester is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "EICR Manchester across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is EICR Manchester priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "rewire-manchester":     {
+        "name": "Rewire Manchester",
+        "service": "electrical",
+        "related": "emergency-electrician-manchester",
+        "intro": "Rewire Manchester is rewire work on the fixed installation, full or partial as agreed. Containment, finishes and which rooms are in the job are written down first. The quote is price on application. Notifiable work is notified where Part P requires it. The commercial line for Rewire Manchester does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Rewire Manchester is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Rewire Manchester across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Rewire Manchester priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "emergency-electrician-manchester":     {
+        "name": "Emergency Electrician Manchester",
+        "service": "electrical",
+        "related": "landlord-electrician",
+        "intro": "Emergency Electrician Manchester is a place-led search inside this Greater Manchester electrical pack. Manchester is the primary hub city and the Stockport base is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. The visit is still scoped to the building, price on application. The commercial line for Emergency Electrician Manchester does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Emergency Electrician Manchester is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Emergency Electrician Manchester across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Emergency Electrician Manchester priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "landlord-electrician":     {
+        "name": "Landlord Electrician",
+        "service": "electrical",
+        "related": "cheap-electrician",
+        "intro": "Landlord Electrician is landlord electrical work: the report, the certificate and any remedials the file needs. England private-rented electrical safety duties should be read from current official guidance. This page is the commercial route to book the visit, price on application. The commercial line for Landlord Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Landlord Electrician is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Landlord Electrician across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Landlord Electrician priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "cheap-electrician":     {
+        "name": "Cheap Electrician",
+        "service": "electrical",
+        "related": "best-electrician-near-me",
+        "intro": "Cheap Electrician is a price-led search. We do not publish a cheap fixed fee, and we do not win the job by skipping tests or certificates. The quote is price on application after the scope is clear. A lower number that leaves the installation untested is not what this page is selling. The commercial line for Cheap Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Cheap Electrician is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Cheap Electrician across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Cheap Electrician priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "best-electrician-near-me":     {
+        "name": "Best Electrician Near Me",
+        "service": "electrical",
+        "related": "electrical-company-near-me",
+        "intro": "Best Electrician Near Me is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Best Electrician Near Me does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Best Electrician Near Me is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Best Electrician Near Me across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Best Electrician Near Me priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "electrical-company-near-me":     {
+        "name": "Electrical Company Near Me",
+        "service": "electrical",
+        "related": "domestic-electrical-services",
+        "intro": "Electrical Company Near Me is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Electrical Company Near Me does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Electrical Company Near Me is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Electrical Company Near Me across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Electrical Company Near Me priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "domestic-electrical-services":     {
+        "name": "Domestic Electrical Services",
+        "service": "electrical",
+        "related": "commercial-electrical-contractor",
+        "intro": "Domestic Electrical Services is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Domestic Electrical Services does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Domestic Electrical Services is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Domestic Electrical Services across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Domestic Electrical Services priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    },
+    "commercial-electrical-contractor":     {
+        "name": "Commercial Electrical Contractor",
+        "service": "electrical",
+        "related": "emergency-electrician",
+        "intro": "Commercial Electrical Contractor is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Commercial Electrical Contractor does not change by town: price on application, scope in writing, paperwork to the instructing client.",
+        "body": "Commercial Electrical Contractor is arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE for Greater Manchester. The quote is price on application after the scope is written. Qualified electricians work to BS 7671. iComply does not claim NICEIC, NAPIT or Elecsa membership.",
+        "meta_desc": "Commercial Electrical Contractor across Greater Manchester. Price on application from Stockport. Call 07517806082.",
+        "focus_points": [
+            "Price on application after scope",
+            "BS 7671 and Part P notification where it applies",
+            "Greater Manchester cover from Stockport",
+            "No invented scheme badge"
+        ],
+        "faq": [
+            [
+                "How is Commercial Electrical Contractor priced?",
+                "Price on application after the building and the scope are known."
+            ],
+            [
+                "Do you claim NICEIC membership?",
+                "No. Ask what registration the attending electrician can show."
+            ],
+            [
+                "Where are you based?",
+                "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
+            ]
+        ]
+    }
 }

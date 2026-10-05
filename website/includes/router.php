@@ -155,13 +155,32 @@ function routerDispatchVirtual(string $path): bool {
         return true;
     }
 
-    // /pages/keywords/{kw}/{area}
+    if (!function_exists('manchesterElectricalP0Handle')) {
+        require_once __DIR__ . '/manchester-electrical-p0.php';
+    }
+    // Manchester electrical P0: rich keyword and job pages, GM-core towns only.
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        if (manchesterElectricalP0Handle('keyword', $m[1], $m[2])) {
+            return true;
+        }
         renderKeywordAreaPage($m[1], $m[2]);
         return true;
     }
+    if (preg_match('#^/pages/jobs/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        if (manchesterElectricalP0Handle('job', $m[1], $m[2])) {
+            return true;
+        }
+    }
+    if (preg_match('#^/pages/jobs/([a-z0-9\-]+)$#', $path, $m) && $m[1] !== 'index') {
+        if (manchesterElectricalP0Handle('job', $m[1], '')) {
+            return true;
+        }
+    }
     // /pages/keywords/{kw}  (not the directory index)
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)$#', $path, $m) && $m[1] !== 'index') {
+        if (manchesterElectricalP0Handle('keyword', $m[1], '')) {
+            return true;
+        }
         renderKeywordPage($m[1]);
         return true;
     }
