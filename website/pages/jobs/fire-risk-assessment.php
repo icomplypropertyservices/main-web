@@ -128,4 +128,9 @@ $landing = [
     'ctaText' => 'Tell us HMO size, floors and borough (Stockport, Manchester or other North West), or describe a commercial / multi-occupied building so we can say whether it is in scope. Guide from **' . $fraFrom . '**. The fixed price follows what is included.',
 ];
 
+$landing['gmTopic'] = 'Fire risk assessment';
+$landing['gmTowns'] = ['Bolton', 'Manchester', 'Stockport', 'Wigan'];
+$landing['gmService'] = 'fire-risk-assessments';
+$landing['gmKeyword'] = 'fire-risk-assessment';
+
 require SITE_ROOT . '/includes/conversion-landing.php';

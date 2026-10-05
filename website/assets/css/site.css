@@ -242,6 +242,19 @@ h1, h2, h3 { letter-spacing: -0.03em; }
 .matrix-cta-accent { background: var(--accent); color: #fff; }
 .matrix-cta-light { background: #fff; color: var(--brand); }
 .chip-cloud { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.seo-brief-id {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.gm-faq details { margin-top: 0.75rem; }
+.gm-faq summary { cursor: pointer; }
+.matrix-figure { margin: 0; overflow: hidden; }
+.matrix-figure img { display: block; width: 100%; height: 12rem; object-fit: cover; }
 
 /* Lead popup */
 .lead-popup[hidden] { display: none !important; }

@@ -264,11 +264,14 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         ? icomplyRobotsMetaForPath('/pages/keywords/' . $keywordSlug . '/' . $areaSlugVal)
         : 'noindex, follow';
 
+    if (!function_exists('icomplyGmBriefHtml')) {
+        require_once SITE_ROOT . '/includes/gm-enrichment.php';
+    }
     $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
         . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($svcName) . ' · ' . icomplyMatrixH($areaName) . '</p>'
         . '<h1>' . icomplyMatrixH($kwName) . ' <span class="accent">in ' . icomplyMatrixH($areaName) . '</span></h1>'
-        . '<p class="mt-4 text-white/80 max-w-2xl">' . icomplyMatrixH($intro) . '</p>'
+        . '<p class="mt-4 text-white/80 max-w-2xl">' . icomplyGmBriefHtml($intro) . '</p>'
         . '<div class="mt-6 flex flex-wrap gap-3">'
         . '<a class="matrix-cta matrix-cta-accent" href="' . icomplyMatrixH($s['contact']) . '">Request a quote</a>'
         . '<a class="matrix-cta matrix-cta-light" href="' . icomplyMatrixH($s['phoneHref']) . '">' . icomplyMatrixH($s['phone']) . '</a>'
@@ -280,11 +283,35 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         ? (string)$packed['h2']
         : 'About this ' . $areaName . ' page';
     $packedCta = is_array($packed) ? (string)($packed['cta'] ?? '') : '';
+    $kwImage = function_exists('keywordImageUrl') ? keywordImageUrl($keywordSlug, $svcSlug) : '';
+    $kwFaqs = [];
+    if (!empty($meta['faq']) && is_array($meta['faq'])) {
+        foreach ($meta['faq'] as $faq) {
+            if (is_array($faq) && count($faq) >= 2) {
+                $kwFaqs[] = [(string)$faq[0], (string)$faq[1]];
+            }
+        }
+    }
+    $kwEnrich = function_exists('icomplyGmEnrichmentHtml')
+        ? icomplyGmEnrichmentHtml([
+            'chrome' => 'matrix',
+            'topic' => $kwName,
+            'townName' => $areaName,
+            'serviceSlug' => $svcSlug,
+            'serviceName' => $svcName,
+            'showGuide' => str_word_count(strip_tags($body)) < 80,
+            'imageSrc' => $kwImage,
+            'imageAlt' => $kwName . ' in ' . $areaName,
+            'extraFaqs' => $kwFaqs,
+            'keywordSlug' => $keywordSlug,
+        ])
+        : '';
     $html .= '<main class="matrix-wrap py-10 space-y-10">'
         . '<article class="matrix-card space-y-4">'
         . '<h2 class="text-2xl font-semibold">' . icomplyMatrixH($packedHeading) . '</h2>'
         . ($packedCta !== '' ? '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($packedCta) . '</p>' : '')
-        . '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($body) . '</p>';
+        . '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($body) . '</p>'
+        . $kwEnrich;
     if ($bullets) {
         $html .= '<ul class="space-y-2 text-zinc-700">';
         foreach ($bullets as $b) {
@@ -375,11 +402,21 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         ? url('/pages/areas/' . $areaSlugVal)
         : $canonical;
 
+    if (!function_exists('icomplyGmBriefHtml')) {
+        require_once SITE_ROOT . '/includes/gm-enrichment.php';
+    }
+    if (!function_exists('icomplyTier1ServiceArticle')) {
+        $tier1File = SITE_ROOT . '/includes/tier1-copy.php';
+        if (is_file($tier1File)) {
+            require_once $tier1File;
+        }
+    }
+    $tier1 = function_exists('icomplyTier1ServiceArticle') ? icomplyTier1ServiceArticle($serviceSlug, $areaName) : '';
     $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
         . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($areaName) . ' · ' . icomplyMatrixH($coverageLabel) . '</p>'
         . '<h1>' . icomplyMatrixH($svcName) . ' <span class="accent">in ' . icomplyMatrixH($areaName) . '</span></h1>'
-        . '<p class="mt-4 text-white/80 max-w-2xl">' . icomplyMatrixH($intro) . '</p>'
+        . '<p class="mt-4 text-white/80 max-w-2xl">' . icomplyGmBriefHtml($intro) . '</p>'
         . '<div class="mt-6 flex flex-wrap gap-3">'
         . '<a class="matrix-cta matrix-cta-accent" href="' . icomplyMatrixH($s['contact']) . '">Request a quote</a>'
         . '<a class="matrix-cta matrix-cta-light" href="' . icomplyMatrixH($s['phoneHref']) . '">' . icomplyMatrixH($s['phone']) . '</a>'
@@ -391,9 +428,24 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         ? (string)$packed['h2']
         : 'What we do in ' . $areaName;
     $packedCta = is_array($packed) ? (string)($packed['cta'] ?? '') : '';
+    $svcImage = function_exists('serviceImageUrl') ? serviceImageUrl($serviceSlug) : '';
+    $svcEnrich = function_exists('icomplyGmEnrichmentHtml')
+        ? icomplyGmEnrichmentHtml([
+            'chrome' => 'matrix',
+            'topic' => $svcName,
+            'townName' => $areaName,
+            'serviceSlug' => $serviceSlug,
+            'serviceName' => $svcName,
+            'tier1' => $tier1,
+            'showGuide' => $tier1 === '',
+            'imageSrc' => $svcImage,
+            'imageAlt' => $svcName . ' in ' . $areaName,
+        ])
+        : '';
     $html .= '<main class="matrix-wrap py-10 space-y-10">'
         . '<article class="matrix-card space-y-4">'
         . '<h2 class="text-2xl font-semibold">' . icomplyMatrixH($packedHeading) . '</h2>'
+        . $svcEnrich
         . '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($blurb) . '</p>'
         . ($packedCta !== '' ? '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($packedCta) . '</p>' : '')
         . '<p class="text-sm">Service hub: <a class="text-[#ff6b00] font-semibold" href="'

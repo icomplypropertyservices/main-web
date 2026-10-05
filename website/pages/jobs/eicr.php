@@ -124,4 +124,9 @@ $landing = [
     'ctaText' => 'Single let, HMO or a small portfolio — or line electrical checks up with gas and fire on one schedule. Share the postcode and property type. Guide from **' . $eicrFrom . '**. The fixed price follows scope.',
 ];
 
+$landing['gmTopic'] = 'EICR';
+$landing['gmTowns'] = ['Stockport', 'Manchester', 'Bolton', 'Salford'];
+$landing['gmService'] = 'electrical';
+$landing['gmKeyword'] = 'eicr';
+
 require SITE_ROOT . '/includes/conversion-landing.php';

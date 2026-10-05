@@ -421,6 +421,29 @@ $schema = [
 </section>
 <?php endif; ?>
 
+<?php
+require_once SITE_ROOT . '/includes/gm-enrichment.php';
+$areaFaqs = [
+    [
+        'How do I book work in ' . $areaName . '?',
+        'Use the contact form or call ' . (defined('PHONE') ? PHONE : '07517806082') . ' with the ' . $areaName . ' postcode and the service you need. The quote is POA after scope. The office is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE.',
+    ],
+    [
+        'Do fire links on this ' . $areaName . ' index stay on national hubs?',
+        'Yes. Fire safety links open the UK-wide service hubs so they stay valid outside the North West town list. Electrical, gas and building pages stay on the local ' . $areaName . ' routes.',
+    ],
+    [
+        'Who carries out gas work for ' . $areaName . ' landlords?',
+        'Gas work is carried out by Gas Safe registered engineers. This index does not show an iComply Gas Safe registration number.',
+    ],
+    [
+        'Which other Greater Manchester hubs should I open?',
+        'Stockport and Bolton use the same town-hub pattern as the rest of Greater Manchester. Manchester keeps this full service index, with the local guides linked above.',
+    ],
+];
+echo icomplyGmFaqHtml('Questions about property services in ' . $areaName, $areaFaqs, 'site');
+?>
+
 <section class="bg-[#0B1F3A] text-white">
     <div class="max-w-7xl mx-auto px-6 py-14 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
         <div>

@@ -98,6 +98,33 @@ $h = static function ($s): string {
                     <a class="font-bold text-[#ff6b00] hover:underline" href="<?= url('/pages/' . rawurlencode($SERVICE_SLUG) . '/' . rawurlencode($AREA_SLUG) . '.php') ?>"><?= $h($SERVICE_NAME) ?> in <?= $h($AREA) ?></a>.
                 </p>
                 <ul class="mt-6 space-y-3"><?= $KEYWORD_FOCUS_HTML ?></ul>
+                <?php if (!empty($KEYWORD_FAQ_HTML)): ?>
+                <div class="mt-8 space-y-3" aria-label="Questions"><?= $KEYWORD_FAQ_HTML ?></div>
+                <?php endif; ?>
+                <?php
+                require_once SITE_ROOT . '/includes/gm-enrichment.php';
+                if (!function_exists('icomplyGmTownBlurb')) {
+                    require_once SITE_ROOT . '/includes/gm-blurbs.php';
+                }
+                $gmPacked = icomplyGmTownBlurb((string)$keywordSlug, (string)$areaSlugVal, 'keyword');
+                if (is_array($gmPacked) && ($gmPacked['blurb'] ?? '') !== ''):
+                ?>
+                <h3 class="mt-8 text-xl font-bold text-[#061828]"><?= htmlspecialchars((string)$gmPacked['h2'], ENT_QUOTES, 'UTF-8') ?></h3>
+                <p class="mt-3 text-base text-zinc-900 leading-relaxed"><?= icomplyGmBriefHtml((string)$gmPacked['blurb']) ?></p>
+                <?php if (($gmPacked['cta'] ?? '') !== ''): ?>
+                <p class="mt-2 text-sm font-semibold text-[#061828]"><?= htmlspecialchars((string)$gmPacked['cta'], ENT_QUOTES, 'UTF-8') ?></p>
+                <?php endif; ?>
+                <?php endif; ?>
+                <?= icomplyGmEnrichmentHtml([
+                    'chrome' => 'site',
+                    'topic' => (string)$keywordName,
+                    'townName' => (string)$areaName,
+                    'serviceSlug' => (string)$serviceSlug,
+                    'serviceName' => (string)$serviceName,
+                    'showGuide' => false,
+                    'skipImage' => true,
+                    'keywordSlug' => (string)$keywordSlug,
+                ]) ?>
             </div>
             <div class="mt-6 grid sm:grid-cols-3 gap-4">
                 <?php foreach (['Install' => 'New works in ' . $AREA, 'Service' => 'Repairs & maintenance', 'Certify' => 'Compliance paperwork'] as $t => $d): ?>
