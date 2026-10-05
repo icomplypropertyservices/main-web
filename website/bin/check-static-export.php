@@ -449,6 +449,7 @@ $gapRedirects = [
     '/pages/keywords/emergency-locksmith' => '/contact',
     '/pages/aov/redish' => '/pages/aov/reddish',
     '/pages/barriers/redish' => '/pages/barriers/reddish',
+    '/pages/aov/newcastle' => '/pages/aov/newcastle-upon-tyne',
     '/24-hour-electrician' => '/pages/keywords/24-hour-electrician',
     '/24-hour-plumber' => '/pages/keywords/24-hour-plumber',
     '/24hr-electrician' => '/pages/keywords/24-hour-electrician',

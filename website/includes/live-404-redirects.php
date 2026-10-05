@@ -47,6 +47,7 @@ function icomplyLive404Redirects(): array
         '/pages/keywords/emergency-locksmith' => '/contact',
         '/pages/aov/redish' => '/pages/aov/reddish',
         '/pages/barriers/redish' => '/pages/barriers/reddish',
+        '/pages/aov/newcastle' => '/pages/aov/newcastle-upon-tyne',
     ];
     foreach ($keywords as $slug => $dest) {
         $map['/' . $slug] = $dest;
