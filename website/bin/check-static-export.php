@@ -482,7 +482,7 @@ $gapRedirects = [
     '/same-day-gas-engineer' => '/pages/keywords/same-day-gas-engineer',
     '/same-day-plumber' => '/pages/keywords/same-day-plumber',
     '/pages/keywords/24hr-aov' => '/pages/keywords/24-hour-aov',
-    '/pages/keywords/24hr-gas-engineer' => '/pages/keywords/24-hour-gas-engineer',
+    '/pages/keywords/24hr-gas-engineer' => '/pages/keywords/emergency-gas-engineer',
     '/pages/keywords/24hr-plumber' => '/pages/keywords/24-hour-plumber',
     '/pages/keywords/emergency-emergency-lighting' => '/pages/services/emergency-lighting',
     '/pages/keywords/next-day-locksmith' => '/contact',
@@ -504,7 +504,8 @@ $gapRedirects = [
     '/same-day-heating' => '/pages/keywords/same-day-heating',
     '/same-day-heating-engineer' => '/pages/keywords/same-day-heating-engineer',
     '/plumber-near-me' => '/pages/keywords/plumber-near-me',
-    '/fire-risk-assessment-near-me' => '/pages/keywords/fire-risk-assessment-near-me',];
+    '/fire-risk-assessment-near-me' => '/pages/keywords/fire-risk-assessment-near-me',
+];
 foreach ($gapRedirects as $from => $to) {
     if (!preg_match('#^' . preg_quote($from, '#') . '\\s+' . preg_quote($to, '#') . '\\s+301\\b#m', $redirects)) {
         $fail++;
