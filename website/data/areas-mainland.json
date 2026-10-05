@@ -3764,5 +3764,35 @@
     "region": "Dumfries and Galloway",
     "local": false,
     "districts": "DG6"
+  },
+  {
+    "name": "Barnoldswick",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Brierfield",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Glossop",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": true
+  },
+  {
+    "name": "Haslingden",
+    "nation": "England",
+    "region": "North West",
+    "local": true
+  },
+  {
+    "name": "Todmorden",
+    "nation": "England",
+    "region": "Yorkshire and The Humber",
+    "local": true
   }
 ]
