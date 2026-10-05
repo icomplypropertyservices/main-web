@@ -83,6 +83,9 @@ $metaDesc = 'Full ' . $areaName . ' service index — every iComply trade listed
 $metaKeywords = $areaName . ' property services, ' . $areaName . ' fire alarms, ' . $areaName . ' EICR, fire safety UK, ' . $districts;
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/areas/' . $areaSlugVal . '.php');
+$metaRobots = function_exists('icomplyRobotsMetaForPath')
+    ? icomplyRobotsMetaForPath('/pages/areas/' . $areaSlugVal)
+    : 'index, follow';
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();

@@ -97,7 +97,7 @@ $ok(!str_contains($sitemapXml, '/pages/gas-systems/stockport</loc>'), 'sitemap o
 $ok(!str_contains($sitemapXml, '/pages/electrical/stockport</loc>'), 'sitemap omits unpublished electrical/stockport');
 $ok(!str_contains($sitemapXml, '/pages/emergency-lighting/stockport</loc>'), 'sitemap omits unpublished emergency-lighting/stockport');
 $ok(!str_contains($sitemapXml, '/pages/electrical/preston</loc>'), 'sitemap omits electrical/preston');
-$ok(str_contains($sitemapXml, '/pages/areas/manchester</loc>') && str_contains($sitemapXml, '/pages/areas/burnley</loc>'), 'sitemap lists Manchester and Burnley area hubs');
+$ok(str_contains($sitemapXml, '/pages/areas/manchester</loc>') && !str_contains($sitemapXml, '/pages/areas/burnley</loc>'), 'sitemap lists Manchester and omits Burnley');
 $ok(!str_contains($sitemapXml, '/pages/epc/stockport'), 'sitemap has no thin /pages/epc/stockport');
 $ok(str_contains($sitemapXml, '/pages/services/gas-systems</loc>'), 'sitemap still lists gas-systems service hub');
 $ok(str_contains($sitemapXml, '/pages/keywords/boiler</loc>'), 'sitemap still lists boiler keyword hub');

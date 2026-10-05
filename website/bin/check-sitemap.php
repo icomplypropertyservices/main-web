@@ -76,7 +76,6 @@ $required = [
     '/pages/keywords/rewire</loc>',
     '/pages/keywords/boiler</loc>',
     '/pages/areas/manchester</loc>',
-    '/pages/areas/burnley</loc>',
     '/pages/areas/stockport</loc>',
     '/pages/areas/wigan</loc>',
     '/pages/jobs</loc>',
@@ -255,20 +254,40 @@ if ($indexMode === 'tiered') {
         $fail++;
         echo "FAIL: tiered sitemap missing a Greater Manchester area hub\n";
     }
-    if (str_contains($xml, '/pages/areas/liverpool</loc>')) {
+    if (str_contains($xml, '/pages/areas/liverpool</loc>') || str_contains($xml, '/pages/areas/burnley</loc>')) {
         $fail++;
         echo "FAIL: tiered sitemap lists a non-GM area hub\n";
     }
-    if (!str_contains($xml, '/pages/areas/manchester</loc>') || !str_contains($xml, '/pages/areas/burnley</loc>')) {
+    if (!str_contains($xml, '/pages/areas/manchester</loc>')) {
         $fail++;
-        echo "FAIL: tiered sitemap missing an indexable area hub\n";
+        echo "FAIL: tiered sitemap missing Manchester\n";
+    }
+    if (function_exists('icomplyGreaterManchesterTownNames') && function_exists('areaSlug')) {
+        preg_match_all('#/pages/areas/([a-z0-9\-]+)</loc>#', $xml, $areaLocs);
+        $listed = array_values(array_unique($areaLocs[1] ?? []));
+        $gm = [];
+        foreach (icomplyGreaterManchesterTownNames() as $name) {
+            $gm[] = areaSlug((string)$name);
+        }
+        sort($listed);
+        sort($gm);
+        if (count($gm) !== 60 || $listed !== $gm) {
+            $fail++;
+            $missing = array_values(array_diff($gm, $listed));
+            $extra = array_values(array_diff($listed, $gm));
+            echo 'FAIL: sitemap area hubs ' . count($listed) . ' (want the 60 GM towns)'
+                . ($missing ? ' missing=' . implode(',', array_slice($missing, 0, 6)) : '')
+                . ($extra ? ' extra=' . implode(',', array_slice($extra, 0, 6)) : '')
+                . "\n";
+        } else {
+            echo "OK: sitemap Greater Manchester area hubs=60\n";
+        }
     }
 }
 
 $committed = is_file(SITE_ROOT . '/sitemap.xml') ? (string)file_get_contents(SITE_ROOT . '/sitemap.xml') : '';
 foreach ([
     '/pages/areas/manchester</loc>',
-    '/pages/areas/burnley</loc>',
     '/pages/areas/stockport</loc>',
     '/pages/areas/wigan</loc>',
     '/pages/jobs</loc>',
@@ -284,6 +303,7 @@ foreach ([
     '/pages/ev-chargers</loc>',
     '/pages/manufacturers/tunstall</loc>',
     '/pages/areas/liverpool</loc>',
+    '/pages/areas/burnley</loc>',
     '/pages/electrical/stockport</loc>',
     '/pages/keywords/rewire/stockport</loc>',
 ] as $ban) {

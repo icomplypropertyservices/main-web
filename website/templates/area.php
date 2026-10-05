@@ -237,7 +237,7 @@ $schema = [
                 The buildings we usually see are <?= htmlspecialchars($areaProfile['stock'], ENT_QUOTES, 'UTF-8') ?>.
                 Local priority on this page: <?= htmlspecialchars($areaProfile['focus'], ENT_QUOTES, 'UTF-8') ?>.
                 Fire alarms, AOV and smoke control, nurse call, and vehicle barriers are covered here.
-                Other trades are indexed when the town is Greater Manchester or Burnley.
+                Other trades are indexed when the town is in Greater Manchester.
             </p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
                 The office is 17 Woodlands Park Road, Offerton, Stockport SK2 5DE. Visits in

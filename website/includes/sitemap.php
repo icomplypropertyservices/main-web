@@ -1,6 +1,6 @@
 <?php
 /**
- * Compact sitemap — hubs, featured area indexes (Manchester, Burnley), and
+ * Compact sitemap — hubs, the 60 Greater Manchester area hubs, and
  * AOV/barrier town pages for places over 10,000. Keyword×town and other
  * service×town pretty URLs 301 to the hub because they are not published, so
  * they stay out. Shared area-town templates are noindex and stay out.
@@ -145,7 +145,8 @@ function icomplySitemapEntries(): array
             return;
         }
         // Greater Manchester area hubs are indexable and served by the router
-        // (only Manchester and Burnley have stub files). Other area templates stay out.
+        // (Manchester has a stub file; the other GM towns do not). Burnley is
+        // Lancashire and stays out. Other area templates stay out.
         $isPublishedAreaHub = false;
         if (preg_match('#^/pages/areas/[a-z0-9\-]+$#', $path)) {
             if (!function_exists('icomplyPathIsIndexable') || !icomplyPathIsIndexable($path)) {
@@ -226,7 +227,6 @@ function icomplySitemapEntries(): array
         ['/pages/jobs', '0.85', 'pages/jobs/index.php'],
         ['/directories', '0.45', 'directories.php'],
         ['/pages/areas/manchester', '0.8', 'pages/areas/manchester.php'],
-        ['/pages/areas/burnley', '0.8', 'pages/areas/burnley.php'],
         ['/pages/manufacturers', '0.9', 'pages/manufacturers.php'],
         ['/pages/keywords', '0.9', 'pages/keywords.php'],
         ['/pages/aov', '0.85', 'pages/aov/index.php'],
