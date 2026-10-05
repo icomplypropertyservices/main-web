@@ -80,6 +80,17 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
             $ogImage = url('/assets/images/services/fire-alarms.jpg');
         }
     }
+    // Jack meta bar: og:image must be absolute https (url() is root-relative).
+    $ogImage = (string) $ogImage;
+    if ($ogImage !== '' && !preg_match('#^https?://#i', $ogImage)) {
+        if (function_exists('icomply_absolute_url')) {
+            $ogImage = icomply_absolute_url($ogImage);
+        } else {
+            $ogImage = rtrim((string) SITE_URL, '/') . '/' . ltrim($ogImage, '/');
+        }
+    } elseif (stripos($ogImage, 'http://') === 0) {
+        $ogImage = 'https://' . substr($ogImage, 7);
+    }
     $ogImageSafe = htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8');
     $ogAltSafe = htmlspecialchars(
         $ogImageAlt ?? ($rawPageTitle . ' — iComply Property Services, Stockport and the North West'),
