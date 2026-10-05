@@ -689,6 +689,7 @@ function icomplyGmServiceTownRecords(): array
             'Stockport'
         ),
     ];
+    $rows = icomplyGmEnrichFireTownFamilies($rows);
     return $rows;
 }
 
@@ -764,3 +765,68 @@ function icomplyGmServiceTownRoutes(): array
     }
     return $routes;
 }
+
+/**
+ * Pack B (2026-10-05): GM local towns that already ship AOV/barriers also serve
+ * fire-alarms, emergency-lighting and fire-doors town pages.
+ *
+ * @param array<string, array<string, mixed>> $rows
+ * @return array<string, array<string, mixed>>
+ */
+function icomplyGmEnrichFireTownFamilies(array $rows): array
+{
+    $families = ['fire-alarms', 'emergency-lighting', 'fire-doors'];
+    $slugs = [
+        'brinnington', 'castleton', 'davyhulme', 'dialstone', 'edgeley', 'gatley',
+        'heaton-mersey', 'heaton-norris', 'lostock', 'newhey', 'partington', 'reddish',
+    ];
+    $neighbourDefault = ['manchester', 'stockport', 'sale', 'bolton'];
+    foreach ($slugs as $slug) {
+        if (!isset($rows[$slug])) {
+            continue;
+        }
+        $name = (string) $rows[$slug]['name'];
+        $outward = (string) ($rows[$slug]['outward'] ?? '');
+        foreach ($families as $fam) {
+            if (!in_array($fam, $rows[$slug]['families'], true)) {
+                $rows[$slug]['families'][] = $fam;
+            }
+            if ($fam === 'fire-alarms') {
+                $label = 'Fire alarms';
+                $meta = $name . ' ' . $outward . ' fire alarm install, service and BS 5839 work from Stockport SK2. Price on application. 07517806082.';
+                $copy = [
+                    'Fire alarm work in ' . $name . ' covers detection, panels and cause-and-effect for the stairs and common parts that actually need it.',
+                    'iComply surveys from the Offerton workshop in SK2. Our qualified engineers name the panel, the devices and the interfaces before a price is locked. Quotes stay on application after the visit.',
+                ];
+            } elseif ($fam === 'emergency-lighting') {
+                $label = 'Emergency lighting';
+                $meta = $name . ' ' . $outward . ' emergency lighting tests and upgrades from Stockport SK2. Price on application. 07517806082.';
+                $copy = [
+                    'Emergency lighting in ' . $name . ' is about escape routes, duration tests and fittings that still work when the mains drop.',
+                    'iComply tests and upgrades from Stockport SK2. Our qualified engineers record the circuit and the duration result. The quote is price on application.',
+                ];
+            } else {
+                $label = 'Fire doors';
+                $meta = $name . ' ' . $outward . ' fire door survey, repair and certification from Stockport SK2. Price on application. 07517806082.';
+                $copy = [
+                    'Fire doors in ' . $name . ' fail on gaps, seals, closers and ironmongery long before the leaf looks tired.',
+                    'iComply inspects from Stockport SK2. Our qualified engineers note the defects and the certification route. Pricing is on application after the survey.',
+                ];
+            }
+            if (!isset($rows[$slug]['titles'][$fam])) {
+                $rows[$slug]['titles'][$fam] = $label . ' in ' . $name . ' | iComply';
+            }
+            if (!isset($rows[$slug]['metas'][$fam])) {
+                $rows[$slug]['metas'][$fam] = $meta;
+            }
+            if (!isset($rows[$slug]['copy'][$fam])) {
+                $rows[$slug]['copy'][$fam] = $copy;
+            }
+            if (!isset($rows[$slug]['neighbours'][$fam])) {
+                $rows[$slug]['neighbours'][$fam] = $neighbourDefault;
+            }
+        }
+    }
+    return $rows;
+}
+

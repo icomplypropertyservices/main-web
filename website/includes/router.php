@@ -268,6 +268,17 @@ function routerDispatchVirtual(string $path): bool {
             }
         }
         if ($area === null) {
+            if (!function_exists('icomplyGmServiceTownServes')) {
+                require_once __DIR__ . '/gm-service-towns.php';
+            }
+            if (icomplyGmServiceTownServes($serviceSlug, $areaSlugVal)) {
+                $gm = icomplyGmServiceTown($areaSlugVal);
+                if ($gm !== null) {
+                    $area = (string) $gm['name'];
+                }
+            }
+        }
+        if ($area === null) {
             return false;
         }
         renderServiceAreaPage($serviceSlug, $area);
