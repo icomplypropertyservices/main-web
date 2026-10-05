@@ -19,6 +19,18 @@ function icomplyGmBriefHtml(string $text): string
     return is_string($hidden) ? $hidden : $safe;
 }
 
+function icomplyGmTownAllowed(string $townName, string $kind = 'service'): bool
+{
+    $slug = function_exists('areaSlug') ? areaSlug($townName) : strtolower(trim($townName));
+    if ($kind === 'keyword') {
+        return in_array($slug, ['bolton', 'manchester', 'stockport'], true);
+    }
+    if (function_exists('icomplyIsGreaterManchesterAreaSlug')) {
+        return icomplyIsGreaterManchesterAreaSlug($townName);
+    }
+    return false;
+}
+
 function icomplyGmTownTag(string $townSlug): string
 {
     static $tags = null;
@@ -357,7 +369,7 @@ function icomplyGmServiceTownHref(string $serviceSlug, string $townName): string
  */
 function icomplyGmPopularTowns(): array
 {
-    return ['Manchester', 'Burnley', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'];
+    return ['Manchester', 'Stockport', 'Bolton'];
 }
 
 function icomplyGmKeywordHref(string $keywordSlug, string $townName): string
@@ -483,8 +495,7 @@ function icomplyGmLinksHtml(string $heading, array $links, string $chrome): stri
  */
 function icomplyGmBuildFaqs(string $topic, string $townName, string $serviceSlug, bool $gas, array $extraFaqs): array
 {
-    $tag = icomplyGmTownTag(areaSlug($townName));
-    $place = $tag !== '' ? $townName . ' (' . $tag . ')' : $townName;
+    $place = $townName;
     $faqs = [];
     foreach ($extraFaqs as $faq) {
         if (is_array($faq) && count($faq) >= 2 && (string)$faq[0] !== '' && (string)$faq[1] !== '') {
@@ -537,14 +548,22 @@ function icomplyGmEnrichmentHtml(array $ctx): string
     if ($topic === '' || $townName === '' || $serviceSlug === '') {
         return '';
     }
-    $pack = icomplyGmServicePack($serviceSlug);
-    $gas = (bool)$pack['gas'] || $serviceSlug === 'gas-systems';
+    $kind = (string)($ctx['kind'] ?? 'service');
     $h = static function (string $s): string {
         return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
     };
+    $tier1Early = trim((string)($ctx['tier1'] ?? ''));
+    if (!icomplyGmTownAllowed($townName, $kind)) {
+        if ($tier1Early === '') {
+            return '';
+        }
+        return '<div id="local-copy"><p>' . $h($tier1Early) . '</p></div>';
+    }
+    $pack = icomplyGmServicePack($serviceSlug);
+    $gas = (bool)$pack['gas'] || $serviceSlug === 'gas-systems';
 
     $html = '';
-    $tier1 = trim((string)($ctx['tier1'] ?? ''));
+    $tier1 = $tier1Early;
     if ($tier1 !== '') {
         $html .= '<div id="local-copy"><p>' . $h($tier1) . '</p></div>';
     }
@@ -667,11 +686,8 @@ function icomplyGmJobTownStripHtml(string $topic, array $towns, string $serviceS
         if ($kw !== '') {
             $bits[] = '<a class="text-[#ff6b00] font-semibold" href="' . $h($kw) . '">Local guide</a>';
         }
-        $tag = icomplyGmTownTag(areaSlug($town));
-        $note = $tag !== '' ? ' Diary label ' . $tag . '.' : '';
         $cards .= '<article class="border border-zinc-200 rounded-2xl p-4 bg-white"><h3 class="font-semibold text-[#061828]">' . $h($topic . ' in ' . $town)
-            . '</h3><p class="mt-2 text-sm text-zinc-700">Book ' . $h($town) . ' from the Stockport office. POA fixed quote after scope.'
-            . $h($note) . '</p><p class="mt-3 flex flex-wrap gap-3 text-sm">' . implode('', array_map(static function (string $bit): string {
+            . '</h3><p class="mt-2 text-sm text-zinc-700">Book ' . $h($town) . ' from the Stockport office. POA fixed quote after scope.</p><p class="mt-3 flex flex-wrap gap-3 text-sm">' . implode('', array_map(static function (string $bit): string {
                 return '<span>' . $bit . '</span>';
             }, $bits)) . '</p></article>';
     }

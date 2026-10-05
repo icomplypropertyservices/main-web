@@ -5,32 +5,16 @@
   "email": "info@icomplypropertyservices.co.uk",
   "site": "https://icomplypropertyservices.co.uk",
   "gm_towns": 60,
-  "keyword_gm_blurbs": 315,
+  "keyword_gm_blurbs": 252,
   "gm_service_town_blurbs": 660,
+  "gm_service_town_samples": 200,
   "job_hubs": 22,
   "uniqueness_clashes": 0,
   "gas_missing_phrase": [],
   "cta": "POA fixed quote after scope",
   "keyword_set": {
-    "all60": [
-      "eicr",
-      "eicr-near-me",
-      "gas-safety-certificate",
-      "fire-risk-assessment",
-      "access-control-near-me"
-    ],
-    "featured5towns": [
-      "landlord-compliance",
-      "cctv-installation",
-      "emergency-lighting-test"
-    ],
-    "featured_towns": [
-      "manchester",
-      "stockport",
-      "salford",
-      "bolton",
-      "wigan"
-    ]
+    "towns": ["bolton", "manchester", "stockport"],
+    "note": "252 rows are the SEO copy pack for keyword slugs that exist in keywords.json. 63 pack rows were omitted because those keyword slugs are not live. Formulaic GM-token blurbs were removed."
   },
   "hi_services": [
     "access-control",

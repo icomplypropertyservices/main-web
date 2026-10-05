@@ -304,6 +304,7 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
             'imageAlt' => $kwName . ' in ' . $areaName,
             'extraFaqs' => $kwFaqs,
             'keywordSlug' => $keywordSlug,
+            'kind' => 'keyword',
         ])
         : '';
     $html .= '<main class="matrix-wrap py-10 space-y-10">'

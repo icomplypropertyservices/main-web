@@ -422,6 +422,7 @@ $schema = [
 <?php endif; ?>
 
 <?php
+if ($areaName === 'Manchester') {
 require_once SITE_ROOT . '/includes/gm-enrichment.php';
 $areaFaqs = [
     [
@@ -442,6 +443,7 @@ $areaFaqs = [
     ],
 ];
 echo icomplyGmFaqHtml('Questions about property services in ' . $areaName, $areaFaqs, 'site');
+}
 ?>
 
 <section class="bg-[#0B1F3A] text-white">

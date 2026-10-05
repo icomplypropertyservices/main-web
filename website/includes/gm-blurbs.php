@@ -32,6 +32,16 @@ function icomplyGmTownBlurb(string $slug, string $townSlug, string $kind = 'serv
     if (!is_array($row) || empty($row['blurb'])) {
         return null;
     }
+    $blurb = (string)$row['blurb'];
+    if (preg_match('/\bGM\d{2,}[a-z0-9]/i', $blurb) || preg_match('/\b(SK2Base|CityWards|BoltonCentre|WiganPier|SalfordCrescent)\b/', $blurb)) {
+        return null;
+    }
+    if ($kind === 'keyword' && !in_array($townSlug, ['bolton', 'manchester', 'stockport'], true)) {
+        return null;
+    }
+    if ($kind === 'service' && function_exists('icomplyIsGreaterManchesterAreaSlug') && !icomplyIsGreaterManchesterAreaSlug($townSlug)) {
+        return null;
+    }
     return [
         'h2' => (string)($row['h2'] ?? ''),
         'blurb' => (string)$row['blurb'],

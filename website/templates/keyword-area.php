@@ -124,6 +124,7 @@ $h = static function ($s): string {
                     'showGuide' => false,
                     'skipImage' => true,
                     'keywordSlug' => (string)$keywordSlug,
+                    'kind' => 'keyword',
                 ]) ?>
             </div>
             <div class="mt-6 grid sm:grid-cols-3 gap-4">
