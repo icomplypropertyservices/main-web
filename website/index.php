@@ -27,7 +27,7 @@ $contactUrl = url('/contact.php');
 $trust = [
     ['title' => 'Call ' . PHONE, 'text' => 'Phone or WhatsApp — same Stockport team', 'href' => $phoneHref],
     ['title' => 'AOV & barriers first', 'text' => 'Smoke control and 5m barrier packs are the priority quotes'],
-    ['title' => 'Reply aim: 2 hours', 'text' => 'Business days, subject to capacity'],
+    ['title' => 'Phone, WhatsApp or form', 'text' => 'Send the postcode and property type to start a quote', 'href' => $contactUrl],
     ['title' => 'Scoped quotes', 'text' => 'Written figure after scope — AOV install and barrier install are POA'],
 ];
 
@@ -423,7 +423,7 @@ echo testimonialsSectionHtml();
         <div class="text-center mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request your free quote</h2>
-            <p class="mt-3 text-zinc-600">We aim to respond within 2 hours on business days. All quotes are fixed-price after scope is agreed.</p>
+            <p class="mt-3 text-zinc-600">Send the postcode, property type and what is on site. All quotes are fixed-price after scope is agreed.</p>
         </div>
 
         <form name="contact" method="POST" action="/contact" data-netlify="true" data-contact-form="home" netlify-honeypot="bot-field" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm" aria-label="Free quote form">
