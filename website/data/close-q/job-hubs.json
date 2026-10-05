@@ -1,0 +1,127 @@
+{
+  "_note": "CLOSE-Q4 job hubs. fire-alarm-call-out body is also written into website/data/fire-alarms-lane.json content.body, which the job renderer already prints. eicr and gas-safety-cp12 are image lists for hubs the word count already clears. hmo-compliance prose is here for the HMO content slot; hmo-jobs.php is left unchanged.",
+  "hubs": {
+    "fire-alarm-call-out": {
+      "path": "/pages/jobs/fire-alarm-call-out",
+      "title": "Fire alarm call-out | iComply Property Services",
+      "description": "Fire alarm call-out for sites with a panel fault across Greater Manchester, arranged from Stockport, Offerton SK2, Cheshire. Request a quote — POA",
+      "body": "A fire alarm call-out is the visit you book when the panel is in fault, the system will not reset, or the building cannot safely carry on with the indication it has. It is not a planned service, and it is not an installation. iComply arranges that attendance from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. The price is on application once we know the panel, the fault text and whether people are still inside. There is no call-out menu on this page.\n\nBefore anyone travels, tell us the panel brand if you can read it, the exact text on the display, and whether the sounders are still running. Kentec, Advanced, C-Tec, Morley, Hochiki and Apollo covers are common in Greater Manchester. A photograph of the panel door, taken only if it is safe, saves a wasted first hour. If you can smell burning or you believe there is a fire, follow the premises procedure and call 999. This page is for the alarm system after life safety has been dealt with.\n\nThe engineer’s first job is to understand the event, not to silence the panel and leave. Silencing without a record is how false alarms become a habit and how real faults get lost. We agree with the responsible person what may be isolated, for how long, and what remains protected. Isolation is written down. A zone left off overnight without a note is not a repair.\n\nCommon causes are tired batteries, a detector in a kitchen or dusty void, a call point that has been left operated, water in a device, or a loop fault after other trades have been in the ceiling. We carry ordinary service parts where that is honest. If the fault needs a replacement device, a loop repair or a panel decision, that work is a separate quote. We do not fold an unknown repair into a pretend fixed fee.\n\nFalse alarms are investigated rather than shrugged at. A kitchen detector that burns toast every Friday is a device-choice question against the fire strategy, not a reason to bag the head. We will say if a heat or multi-sensor device is the better fit, and we will not swap heads ad hoc when the category depends on smoke detection in that room. The fire risk assessment and any licence conditions stay in view.\n\nDocumentation from a call-out is short and specific: time on site, panel text, what was reset, what was isolated, parts fitted, and the recommended next step. That note belongs in the logbook. Insurers and councils ask for it after a run of unwanted alarms. We do not replace the logbook with a text message.\n\nOccupied buildings need a plan for the hour we are there. Shops may need the visit before opening. Shared houses need the responsible person or a keyholder who can make decisions. We will not accept a verbal instruction from someone who cannot authorise isolation. If access fails, the abort is still a real event and is reported as such.\n\nPlanned maintenance is the way to have fewer of these visits. For many commercial systems the competent-person gap should not exceed six months, with the weekly user test remaining on site. A call-out does not reset that clock into a full service unless the visit was scoped as one. If you want both, say so when you book and we will price the larger scope.\n\nCoverage is Greater Manchester first, including Manchester, Stockport, Bolton, Salford and Wigan, with other published towns quoted from the same Stockport base. Travel is inside the POA figure. Phone 07517806082 and lead with the town, the panel and whether the system is still in alarm. The contact form takes the same facts overnight.\n\nRelated pages are the fire alarms service, the fire alarm installation guide and the fire alarm job lane. Use those for new systems and for servicing. Use this page when something is wrong today. The quote remains price on application. We do not publish a night rate or a minimum hour on this hub.\n\nOn a Fire alarm call-out quote the useful detail is the checklist, not a slogan. We confirm each of these before the written price: the panel text before travel. whether sounders are still running. who may authorise isolation. a written note for the logbook. parts fitted only when they are the cause. a separate quote if the fault needs a return. no silencing without a record. 999 first if there is an actual fire. If one of those items is unknown, the quote says it is unknown. We do not smooth the gap so the email looks finished.\n\nWhat we will not do on Fire alarm call-out is publish a call-out tariff or leave a zone isolated overnight without a note. The written scope names the address, the person instructing iComply, and the limit of the visit. Travel from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE is inside the price on application, not a line added after you have said yes. Call 07517806082 or use the contact form. Ask for Fire alarm call-out and give the postcode first. Attach photos of the existing equipment when you have them. We confirm the visit in writing before anyone is dispatched from Offerton. If the building is occupied, name the person who can open the doors. The figure remains price on application after that scope. We would rather ask one more question than attend and find the brief was a different job. Say if a previous visit left anything isolated, bridged or unfinished. Related hubs stay linked from the page that renders this copy. Until the scope is agreed there is no fee to publish and no fee to invent.",
+      "word_count": 955,
+      "images": [
+        {
+          "src": "/assets/images/services/fire-alarms.jpg",
+          "alt": "Fire alarm panel and devices — Fire alarm call-out, iComply Property Services"
+        },
+        {
+          "src": "/assets/images/services/fire-alarms-photo.jpg",
+          "alt": "Fire alarm installation on site — Fire alarm call-out, iComply Property Services"
+        },
+        {
+          "src": "/assets/images/manufacturers/apollo-fire.jpg",
+          "alt": "Apollo fire detection devices — Fire alarm call-out, iComply Property Services"
+        }
+      ],
+      "faqs": [
+        {
+          "q": "How do I ask for Fire alarm call-out across Greater Manchester?",
+          "a": "Send the address, the building type and what Fire alarm call-out needs to cover. iComply replies with a written scope. The price is on application. Nothing on this page is a fee list."
+        },
+        {
+          "q": "Who attends Fire alarm call-out across Greater Manchester?",
+          "a": "The visit is carried out by qualified people for that trade. The office is in Offerton, Stockport. Travel is part of the POA quote, not a surprise extra."
+        },
+        {
+          "q": "Do you publish a price for Fire alarm call-out?",
+          "a": "No. Quotes are price on application after the building, access and scope are known. We do not invent a starting fee."
+        },
+        {
+          "q": "What should I have ready?",
+          "a": "Postcode, floor count, whether the building is occupied, and any existing certificate or panel brand. Photos of the board, panel or appliance speed the reply. The base is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE."
+        }
+      ],
+      "poa": true,
+      "nap": "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE",
+      "images_only": false
+    },
+    "hmo-compliance": {
+      "path": "/pages/jobs/hmo-compliance",
+      "title": "HMO compliance | iComply Property Services",
+      "description": "HMO compliance for HMO landlords and agents across Greater Manchester, arranged from Stockport, Offerton SK2, Cheshire. Request a quote — POA",
+      "body": "HMO compliance support is the evidence a shared house often needs before and during a licence: the fire risk assessment where one is required, the electrical report, the gas safety record if gas is present, and the fire precautions the layout and the council conditions actually name. iComply arranges that work from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. We do not issue the HMO licence. The council does. The price of our visits is on application unless a separate published list on the job page already states a figure for a defined typical house. This copy does not add a new price.\n\nA typical shared house and a building that only looks like one are different. Storeys, basements, inner rooms, and whether the stair is protected change the fire conversation. We read the last licence conditions if you have them. We do not assume every council in Greater Manchester uses the same checklist. Manchester, Salford, Stockport, Bolton and Wigan each publish their own landlord pages. Bring the PDF you were sent.\n\nFire precautions may be management (closers that are missing, extinguishers that are not the right answer, signage) or physical (detection, emergency lighting, doors). Detection for a shared stair is often a designed system, not a domestic alarm on a landing. We will say which we think you are being asked for, and we will quote the install separately from the assessment. The assessment does not include the install unless the quote says it does.\n\nThe EICR covers the fixed wiring of the house as scoped. Bedsits with their own boards need those boards on the brief. A single board in the hall may not be the whole installation. Limitations are written if a room is locked. The gas record, where the duty applies, is carried out by Gas Safe registered engineers. iComply is not Gas Safe registered. No-gas houses should be described as no-gas so nobody expects a record that cannot exist.\n\nOccupancy and amenity questions — bathrooms, kitchens, room sizes — are mostly your measurements and the council’s standard. We do not redraw the plans as a planning consultant. If a condition asks for a certificate we do provide, it goes on the list. If it asks for something we do not do, we say so rather than stretching the visit.\n\nThe file you should end up with is boring and complete: reports named by address, a note of remedials still open, and dates. We do not store your licence on your behalf. We do not talk to the council as your agent unless you have asked us, in writing, to explain a technical point about work we did.\n\nRemedials after an unsatisfactory electrical report, a failed detector, or a door that does not close are each price on application. Doing them is what makes the file true. Leaving them as a PDF action with no follow-up is how licences stall. We can quote the work. We cannot mark it done if it is not done.\n\nAccess in a lived-in shared house is the hardest part. Tell every occupant. We need the boards, the stair, the kitchens and the rooms the brief names. A room we cannot enter is a gap, not a pass. Night working is only booked when the house can actually let us in.\n\nCall 07517806082 with the postcode, the number of storeys, the number of households, and whether gas is present. The HMO job page is the operational hub. The fire risk assessment and EICR pages carry those single subjects. This note is the joined-up brief, still quoted on application.\n\nThe office is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. We will not promise a licence, we will not invent council conditions, and we will not use the word registered for gas about iComply itself. The work you book is the work that gets a document.\n\nOn a HMO compliance quote the useful detail is the checklist, not a slogan. We confirm each of these before the written price: storeys, households and whether facilities are shared. the council PDF, not a guess at local rules. sleeping risk and inner rooms. boards in bedsits called out on the brief. gas present or explicitly absent. assessment and install quoted apart. locked rooms recorded as gaps. the licence application left with you and the council. If one of those items is unknown, the quote says it is unknown. We do not smooth the gap so the email looks finished.\n\nWhat we will not do on HMO compliance is promise an HMO licence or mark remedial work done when it is not. The written scope names the address, the person instructing iComply, and the limit of the visit. Travel from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE is inside the price on application, not a line added after you have said yes. Call 07517806082 or use the contact form. Ask for HMO compliance and give the postcode first. Attach photos of the existing equipment when you have them. We confirm the visit in writing before anyone is dispatched from Offerton. If the building is occupied, name the person who can open the doors. The figure remains price on application after that scope. We would rather ask one more question than attend and find the brief was a different job. Say if a previous visit left anything isolated, bridged or unfinished. Related hubs stay linked from the page that renders this copy. Until the scope is agreed there is no fee to publish and no fee to invent.",
+      "word_count": 926,
+      "images": [
+        {
+          "src": "/assets/images/services/fire-risk-assessments.jpg",
+          "alt": "Fire risk assessment notes on a building visit — HMO compliance, iComply Property Services"
+        },
+        {
+          "src": "/assets/images/services/fire-risk-assessments-photo.jpg",
+          "alt": "Survey of escape routes and fire doors — HMO compliance, iComply Property Services"
+        },
+        {
+          "src": "/assets/images/services/fire-alarms.jpg",
+          "alt": "Existing fire alarm recorded in the assessment — HMO compliance, iComply Property Services"
+        }
+      ],
+      "faqs": [
+        {
+          "q": "How do I ask for HMO compliance across Greater Manchester?",
+          "a": "Send the address, the building type and what HMO compliance needs to cover. iComply replies with a written scope. The price is on application. Nothing on this page is a fee list."
+        },
+        {
+          "q": "Who attends HMO compliance across Greater Manchester?",
+          "a": "The visit is carried out by qualified people for that trade. The office is in Offerton, Stockport. Travel is part of the POA quote, not a surprise extra."
+        },
+        {
+          "q": "Do you publish a price for HMO compliance?",
+          "a": "No. Quotes are price on application after the building, access and scope are known. We do not invent a starting fee."
+        },
+        {
+          "q": "What should I have ready?",
+          "a": "Postcode, floor count, whether the building is occupied, and any existing certificate or panel brand. Photos of the board, panel or appliance speed the reply. The base is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE."
+        }
+      ],
+      "poa": true,
+      "nap": "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE",
+      "images_only": false
+    },
+    "eicr": {
+      "path": "/pages/jobs/eicr",
+      "images_only": true,
+      "images": [
+        {
+          "src": "/assets/images/services/electrical.jpg",
+          "alt": "Consumer unit prepared for an EICR — EICR, iComply Property Services"
+        },
+        {
+          "src": "/assets/images/services/electrical-photo.jpg",
+          "alt": "Electrical inspection and testing — EICR, iComply Property Services"
+        },
+        {
+          "src": "/assets/images/manufacturers/hager-consumer-unit.jpg",
+          "alt": "Hager consumer unit — EICR, iComply Property Services"
+        }
+      ],
+      "_note": "CLOSE-Q4 images only. These hubs already clear 800 words. Drop these three src values into the image partial. Do not replace the existing page body, FAQ, or meta."
+    },
+    "gas-safety-cp12": {
+      "path": "/pages/jobs/gas-safety-cp12",
+      "images_only": true,
+      "images": [
+        {
+          "src": "/assets/images/services/gas-systems.jpg",
+          "alt": "Gas appliance prepared for a safety check — Gas safety certificate, iComply Property Services"
+        },
+        {
+          "src": "/assets/images/services/gas-systems-photo.jpg",
+          "alt": "Landlord gas safety visit — Gas safety certificate, iComply Property Services"
+        },
+        {
+          "src": "/assets/images/manufacturers/worcester-bosch.jpg",
+          "alt": "Worcester Bosch appliance on a surveyed site — Gas safety certificate, iComply Property Services"
+        }
+      ],
+      "_note": "CLOSE-Q4 images only. These hubs already clear 800 words. Drop these three src values into the image partial. Do not replace the existing page body, FAQ, or meta."
+    }
+  }
+}
