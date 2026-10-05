@@ -3,7 +3,7 @@
  * Electrical service template
  * 3 images · 3 paragraphs · manufacturers · SEO
  */
-$pageTitle = '{{SERVICE_NAME}} in {{AREA}} | Icomply Property Services';
+$pageTitle = '{{SERVICE_NAME}} in {{AREA}} | iComply Property Services';
 $metaDesc = 'BS 7671 electrical installation, EICR, PAT testing and EV charger installation in {{AREA}}. Schneider, Hager, Wylex, Rolec, Myenergi.';
 $metaKeywords = 'electrician {{AREA}}, EICR {{AREA}}, electrical installation {{AREA}}, EV charger {{AREA}}, certified electrician {{AREA}}, commercial electrician {{AREA}}, PAT testing {{AREA}}, Schneider, Hager, Wylex, Rolec, Myenergi';
 $ogImage = url('/assets/images/services/electrical.jpg');
@@ -78,7 +78,7 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 1 -->
     <p class="mt-8 text-lg text-black max-w-3xl leading-relaxed">
-        Icomply Property Services provides <strong>electrical</strong> design, installation, testing and certification across <strong>{{AREA}}</strong>. This legacy template is unused. Live pages do not claim NICEIC registration. Work follows BS 7671 and is quoted after scope.
+        iComply Property Services provides <strong>electrical</strong> design, installation, testing and certification across <strong>{{AREA}}</strong>. This legacy template is unused. Live pages do not claim NICEIC registration. Work follows BS 7671 and is quoted after scope.
     </p>
 
     <!-- PARAGRAPH 2 -->

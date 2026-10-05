@@ -567,6 +567,139 @@ function keywordSlug($phrase): string {
     return areaSlug((string)$phrase);
 }
 
+/**
+ * Visible keyword labels. Slugs stay put; these only change anchor text, H1 and title.
+ *
+ * @return array<string,string>
+ */
+function icomplyCustomerKeywordLabels(): array
+{
+    return [
+        'same-day-eicr' => 'EICR Certificates',
+        'same-day-cp12' => 'Gas Safety Certificate (CP12)',
+        'same-day-gas-safety-certificate' => 'CP12 record for a let',
+        'gas-certificate-same-day' => 'Gas certificate for a tenancy',
+        'gas-safe-engineer-stockport' => 'Gas Safety Checks Stockport',
+        'gas-safe-registered-engineer' => 'Gas work carried out by qualified engineers',
+        'gas-safe-register-engineer' => 'Gas checks by qualified engineers',
+        'gas-safe-engineer' => 'Qualified gas safety checks',
+    ];
+}
+
+function icomplyKeywordSeoTitle(string $label): string
+{
+    $withBrand = $label . ' | iComply';
+    if (mb_strlen($withBrand) >= 30 && mb_strlen($withBrand) <= 65) {
+        return $withBrand;
+    }
+    $withPlace = $label . ' | North West';
+    if (mb_strlen($withPlace . ' | iComply Property Services') <= 70) {
+        return $withPlace;
+    }
+    return $withBrand;
+}
+
+function icomplyScrubCustomerCopy(string $text): string
+{
+    $text = str_replace('I' . 'comply', 'iComply', $text);
+    $text = preg_replace('/\bsame-day\b/iu', 'scheduled', $text) ?? $text;
+    $text = preg_replace('/\bsame day\b/iu', 'scheduled', $text) ?? $text;
+    return $text;
+}
+
+/**
+ * @param mixed $value
+ * @return mixed
+ */
+function icomplyMapCustomerStrings($value, callable $fn, string $key = '')
+{
+    if (is_string($value)) {
+        if (in_array($key, ['slug', 'service', 'related'], true)) {
+            return $value;
+        }
+        return $fn($value);
+    }
+    if (!is_array($value)) {
+        return $value;
+    }
+    foreach ($value as $childKey => $child) {
+        $nextKey = is_string($childKey) ? $childKey : $key;
+        $value[$childKey] = icomplyMapCustomerStrings($child, $fn, $nextKey);
+    }
+    return $value;
+}
+
+/**
+ * @param array<string,mixed> $keywords
+ * @return array<string,mixed>
+ */
+function icomplyApplyCustomerKeywordCopy(array $keywords): array
+{
+    $labels = icomplyCustomerKeywordLabels();
+    $gasSlugs = [
+        'gas-safe-engineer',
+        'gas-safe-engineer-stockport',
+        'gas-safe-register-engineer',
+        'gas-safe-registered-engineer',
+        'gas-certificate-same-day',
+        'same-day-cp12',
+        'same-day-gas-safety-certificate',
+    ];
+    $legal = 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.';
+    foreach ($keywords as $slug => $row) {
+        if (!is_array($row)) {
+            continue;
+        }
+        $slug = (string)$slug;
+        $old = (string)($row['name'] ?? '');
+        $label = $labels[$slug] ?? '';
+        $row = icomplyMapCustomerStrings($row, static function (string $text) use ($old, $label): string {
+            if ($label !== '' && $old !== '' && strcasecmp($old, $label) !== 0) {
+                $text = str_ireplace($old, $label, $text);
+            }
+            return icomplyScrubCustomerCopy($text);
+        });
+        if ($label !== '') {
+            $row['name'] = $label;
+            $row['h1'] = $label;
+            $row['seo_title'] = icomplyKeywordSeoTitle($label);
+        }
+        if (in_array($slug, $gasSlugs, true)) {
+            $shown = $label !== '' ? $label : (string)($row['name'] ?? 'Gas safety');
+            $row['intro'] = $shown . '. ' . $legal;
+            $row['body'] = 'Book from Stockport SK2 when the diary allows. Tell us the postcode and the appliances. Electrical, fire, water hygiene and asbestos work on the same property is quoted separately. Call 07517806082.';
+            $row['meta_desc'] = $legal;
+            $row['focus_points'] = [
+                'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers',
+                'iComply is not Gas Safe registered',
+                'Quoted from Stockport SK2',
+                'The visit date follows the diary',
+            ];
+            $row['faq'] = [
+                ['Who carries out the gas safety check?', $legal],
+                ['Does iComply hold a Gas Safe registration?', 'No. iComply is not Gas Safe registered. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.'],
+            ];
+        }
+        if ($slug === 'same-day-eicr') {
+            $row['intro'] = 'EICR certificates from our Stockport SK2 base. The published EICR list price is £249 for a typical North West 6-bed HMO. Other domestic sizes and commercial EICRs stay POA.';
+            $row['body'] = 'We look at the installation, confirm the scope against BS 7671, and send a written figure before the visit is booked. Call 07517806082.';
+            $row['meta_desc'] = 'EICR certificates from Stockport SK2. £249 for a typical North West 6-bed HMO. Other sizes are POA. Call 07517806082.';
+            $row['focus_points'] = [
+                'BS 7671 Electrical Installation Condition Report',
+                '£249 for a typical North West 6-bed HMO',
+                'Other domestic sizes and commercial EICRs stay POA',
+                'Written scope before the visit is booked',
+            ];
+            $row['faq'] = [
+                ['What does an EICR certificate include?', 'Inspection and testing of the fixed installation, and the report, for the property we have scoped. Remedials are quoted separately.'],
+                ['When can you attend?', 'The visit is booked when the diary allows. Call 07517806082 with the postcode.'],
+            ];
+        }
+        $keywords[$slug] = $row;
+    }
+    return $keywords;
+}
+
 function keywordDisplayName($slugOrName): string {
     $name = str_replace('-', ' ', (string)$slugOrName);
     $name = ucwords($name);
@@ -711,6 +844,7 @@ function getMajorKeywords(): array {
     if (function_exists('openJobLanesApply')) {
         $normalized = openJobLanesApply($normalized);
     }
+    $normalized = icomplyApplyCustomerKeywordCopy($normalized);
     $cached = $normalized;
     return $cached;
 }
@@ -1080,9 +1214,9 @@ function icomplyMergeBarrierManufacturers(array $catalog): array
             'slug' => $slug,
             'services' => ['access-control'],
             'blurb' => $partner
-                ? 'CAME is the vehicle-barrier partner for Icomply Property Services. New lanes are specified on the CAME GARD range. Existing CAME booms, loops and safety edges are serviced from our Stockport workshop. Installation is POA. Call 07517806082.'
-                : "Icomply services existing {$name} vehicle barriers and gate automation. New barrier lanes are normally specified on our CAME partner range unless the survey supports keeping {$name}. Quotes are POA from Stockport. Call 07517806082.",
-            'seo_title' => $partner ? 'CAME Barrier Partner | Vehicle Barriers' : "{$name} Barrier Service | Icomply",
+                ? 'CAME is the vehicle-barrier partner for iComply Property Services. New lanes are specified on the CAME GARD range. Existing CAME booms, loops and safety edges are serviced from our Stockport workshop. Installation is POA. Call 07517806082.'
+                : "iComply services existing {$name} vehicle barriers and gate automation. New barrier lanes are normally specified on our CAME partner range unless the survey supports keeping {$name}. Quotes are POA from Stockport. Call 07517806082.",
+            'seo_title' => $partner ? 'CAME Barrier Partner | Vehicle Barriers' : "{$name} Barrier Service | iComply",
             'seo_desc' => $partner
                 ? 'CAME vehicle barrier partner. GARD booms, servicing and POA installation. Call 07517806082.'
                 : "{$name} barrier servicing. CAME is the partner for new lanes. POA after survey. Call 07517806082.",
@@ -1184,7 +1318,7 @@ function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
         $href = htmlspecialchars($brandHref, ENT_QUOTES, 'UTF-8');
         $src = htmlspecialchars(manufacturerImageUrl($slug, $serviceSlug !== '' ? $serviceSlug : 'fire-alarms'), ENT_QUOTES, 'UTF-8');
         $html .= '<a href="' . $href . '" class="bg-white border-2 border-zinc-200 rounded-2xl overflow-hidden hover:border-[#ff6b00] hover:shadow-md transition block group">'
-            . '<img src="' . $src . '" alt="' . $label . ' products and service — Icomply" width="640" height="360" '
+            . '<img src="' . $src . '" alt="' . $label . ' products and service — iComply" width="640" height="360" '
             . 'class="w-full h-28 object-cover group-hover:scale-105 transition duration-300" loading="lazy" '
             . 'onerror="this.src=\'' . $fallback . '\'">'
             . '<div class="p-3 text-sm text-black text-center font-semibold">' . $label

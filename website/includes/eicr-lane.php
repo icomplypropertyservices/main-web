@@ -74,7 +74,7 @@ function eicrLanePriceSentence(): string
 function eicrLaneStripDenials(string $text): string
 {
     $needles = [
-        'Pricing for this search is POA after we confirm scope — Icomply does not invent pound prices.',
+        'Pricing for this search is POA after we confirm scope — iComply does not invent pound prices.',
         'Cost and price enquiries are answered with a written POA quote, never a guessed £ figure.',
         'EICR price for a flat, house, HMO or commercial unit is POA. Circuit count, access and number of boards decide the inspection time — we do not invent a pound price here.',
         'we do not invent a pound price here.',
@@ -111,7 +111,7 @@ function eicrLaneKeywordReplacements(): array
         'eicr-cost' => [
             'intro' => 'EICR cost on this site is one published list price, not a menu of guessed fees. ' . $sentence,
             'body' => 'A studio, a 3-bed house and a shop are not the same visit as a typical 6-bed HMO. Those stay price on application once bedrooms, consumer units and access are known. The £249 list is per property and covers the inspection plus the report. Coded remedials are a second quote. Stockport engineers cover Greater Manchester and the wider North West. Travel outside the North West is agreed before booking. The report describes the installation on the day of the test.',
-            'meta_desc' => 'EICR list price £249 for a typical North West 6-bed HMO. Other sizes and commercial EICRs are POA. Remedials extra. Icomply, Stockport.',
+            'meta_desc' => 'EICR list price £249 for a typical North West 6-bed HMO. Other sizes and commercial EICRs are POA. Remedials extra. iComply, Stockport.',
             'focus_points' => [
                 '£249 list for a typical North West 6-bed HMO only',
                 '1-bed and commercial EICRs are price on application',
@@ -123,7 +123,7 @@ function eicrLaneKeywordReplacements(): array
         'eicr-price' => [
             'intro' => 'EICR price, for the one scope we publish, is £249. ' . $sentence,
             'body' => 'Landlords searching “EICR price” usually want a number before they book. The published number is the 6-bed HMO list. Anything else — fewer bedrooms, a different layout, or a commercial board — is confirmed in writing after we know the installation. Reports are coded to BS 7671. We do not publish a cheaper “from” price for a smaller flat, and we do not relabel the HMO list as a commercial fee.',
-            'meta_desc' => 'EICR price £249 for a typical 6-bed HMO in the North West. 1-bed and commercial EICR prices are POA. Icomply Stockport.',
+            'meta_desc' => 'EICR price £249 for a typical 6-bed HMO in the North West. 1-bed and commercial EICR prices are POA. iComply Stockport.',
             'focus_points' => [
                 'Published list: £249, typical 6-bed HMO, North West',
                 'No invented from-price for flats or shops',

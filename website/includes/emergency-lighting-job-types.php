@@ -185,9 +185,9 @@ function emergencyLightingJobsApplyOverlay(array $keywords): array
 function emergencyLightingSynthesizeCopy(string $name): array
 {
     return [
-        'intro' => $name . ' from Icomply Property Services for landlords, facilities teams and commercial sites across Greater Manchester and the North West. Scope is confirmed on survey. Enquire for a POA quote — we do not publish a fixed £ figure before the site is seen.',
+        'intro' => $name . ' from iComply Property Services for landlords, facilities teams and commercial sites across Greater Manchester and the North West. Scope is confirmed on survey. Enquire for a POA quote — we do not publish a fixed £ figure before the site is seen.',
         'body' => 'Work follows BS 5266 and BS EN 1838: escape-route, open-area and high-risk task lighting, maintained and non-maintained fittings, central battery and self-test systems. Engineers work from our Stockport base. Handover includes the logbook notes and certificates the visit actually produced.',
-        'meta_desc' => $name . ' across the North West. BS 5266 testing, installation and certification. Enquire for a POA quote from Icomply in Stockport.',
+        'meta_desc' => $name . ' across the North West. BS 5266 testing, installation and certification. Enquire for a POA quote from iComply in Stockport.',
         'focus_points' => [
             'Survey before a POA quote for ' . $name,
             'BS 5266 monthly function and annual duration testing where the visit requires it',

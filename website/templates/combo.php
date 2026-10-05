@@ -9,7 +9,7 @@
 $poaCombo = function_exists('isPoaService') && isPoaService($SERVICE_SLUG);
 $ownsMainland = function_exists('serviceOwnsMainlandAreas') && serviceOwnsMainlandAreas($SERVICE_SLUG);
 $coveragePhrase = $ownsMainland ? 'UK mainland' : 'the North West';
-$pageTitle = $SERVICE_NAME . ' in ' . $AREA . ' | Icomply Property Services';
+$pageTitle = $SERVICE_NAME . ' in ' . $AREA . ' | iComply Property Services';
 $metaDesc = $poaCombo
     ? ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Price on application after scope. Local North West team from Stockport.')
     : ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing and certification. ' . ($ownsMainland ? 'UK mainland fire protection, scheduled from Stockport.' : 'Local engineers.') . ' Written quote after scope.');
@@ -243,7 +243,7 @@ $schema = [
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
                 <img src="<?= htmlspecialchars(serviceImageUrl($serviceSlug), ENT_QUOTES, 'UTF-8') ?>"
-                     alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation and servicing in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> by Icomply Property Services"
+                     alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation and servicing in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> by iComply Property Services"
                      width="1200" height="800"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
                      loading="eager"
@@ -303,7 +303,7 @@ $schema = [
                 <?php endforeach; ?>
             <?php else: ?>
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
-                Icomply Property Services provides complete <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong>
+                iComply Property Services provides complete <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong>
                 design, installation, commissioning, maintenance and certification across
                 <strong><?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></strong> and the wider <?= htmlspecialchars($coveragePhrase, ENT_QUOTES, 'UTF-8') ?>.
                 Our qualified engineers deliver fixed-price quotes, same-week appointments and full compliance documentation on every job.
@@ -324,7 +324,7 @@ $schema = [
         <div class="lg:col-span-2 space-y-4">
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
                 <img src="<?= url('/assets/images/keywords/' . $KEYWORD_IMAGE_1 . '.jpg') ?>"
-                     alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> panel and equipment used by Icomply in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
+                     alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> panel and equipment used by iComply in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
                      width="800" height="600"
                      class="w-full h-44 object-cover"
                      loading="lazy"
@@ -376,7 +376,7 @@ $schema = [
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Manufacturers</div>
                 <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Brands we install &amp; service in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></h2>
-                <p class="mt-2 text-zinc-600 max-w-2xl">Looking for your exact panel brand? We support major <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturers so customers searching for their equipment in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> find Icomply.</p>
+                <p class="mt-2 text-zinc-600 max-w-2xl">Looking for your exact panel brand? We support major <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturers so customers searching for their equipment in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> find iComply.</p>
             </div>
             <a href="<?= url('/shop/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Browse trade shop →</a>
         </div>
@@ -388,7 +388,7 @@ $schema = [
         </div>
         <div class="mt-10 rounded-3xl overflow-hidden border bg-white">
             <img src="<?= url('/assets/images/keywords/' . $KEYWORD_IMAGE_3 . '.jpg') ?>"
-                 alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturer panels and equipment — Icomply <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
+                 alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturer panels and equipment — iComply <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
                  width="1200" height="700"
                  class="w-full h-64 md:h-80 object-cover"
                  loading="lazy"

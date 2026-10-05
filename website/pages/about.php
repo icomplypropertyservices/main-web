@@ -10,8 +10,8 @@ if (is_file($shopifyLib) && str_starts_with(ltrim((string)file_get_contents($sho
 
 $seoFamily = 'static';
 $pageTitle = 'About Us | Fire Safety, Professional & Construction | Stockport';
-$metaDesc = 'About Icomply Property Services at Stockport SK2 5DE. Fire, electrical and landlord work is quoted after we see the building. Call 07517806082.';
-$metaKeywords = 'about Icomply, fire risk assessment Stockport, kitchen fitting North West, property compliance Stockport, construction services Greater Manchester';
+$metaDesc = 'About iComply Property Services at Stockport SK2 5DE. Fire, electrical and landlord work is quoted after we see the building. Call 07517806082.';
+$metaKeywords = 'about iComply, fire risk assessment Stockport, kitchen fitting North West, property compliance Stockport, construction services Greater Manchester';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/about.php');
 

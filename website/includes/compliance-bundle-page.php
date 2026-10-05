@@ -22,7 +22,7 @@ $pageTitle = $isLandlord
 $metaDesc = $bundle['name'] . ' (' . strtolower($bundle['alias']) . ') at ' . $bundle['price_label']
     . ' for one residential property: EICR, landlord gas safety record and fire risk assessment, in one file. North West. Extras outside the published scope are quoted separately.';
 $metaKeywords = 'compliance bundle, landlord pack, landlord compliance pack ' . $bundle['price_label']
-    . ', EICR gas FRA bundle, landlord certificates North West, Icomply';
+    . ', EICR gas FRA bundle, landlord certificates North West, iComply';
 $ogImage = url('/assets/images/services/landlord-compliance.jpg');
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
@@ -32,7 +32,7 @@ if (empty($_SESSION['csrf'])) {
     $_SESSION['csrf'] = bin2hex(random_bytes(16));
 }
 
-$waText = 'Hi Icomply, I want the ' . $bundle['name'] . ' (' . $bundle['alias'] . ') at ' . $bundle['price_label'];
+$waText = 'Hi iComply, I want the ' . $bundle['name'] . ' (' . $bundle['alias'] . ') at ' . $bundle['price_label'];
 $waHref = 'https://wa.me/' . WHATSAPP . '?text=' . rawurlencode($waText);
 $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
 $h1 = $isLandlord ? $bundle['alias'] : $bundle['name'];

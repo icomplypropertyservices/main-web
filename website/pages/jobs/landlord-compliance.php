@@ -104,7 +104,7 @@ $landing = [
         ],
         [
             'q' => 'Will everything happen in one visit?',
-            'a' => 'Often we can coordinate certificates on one schedule to reduce access visits. Same-day or same-week completion depends on scope and capacity. We will say so when the diary needs a split plan.',
+            'a' => 'Often we can coordinate certificates on one schedule to reduce access visits. Completion depends on scope and capacity. We will say so when the diary needs a split plan.',
         ],
     ],
     'links' => [

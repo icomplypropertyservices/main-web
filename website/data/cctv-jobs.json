@@ -8,7 +8,7 @@
       "name": "4K CCTV System",
       "service": "cctv",
       "related": "hd-cctv-camera",
-      "intro": "A 4K CCTV system captures ultra-high-definition video for wide scenes where you still need to digitally zoom for faces, clothing or vehicle detail. Icomply design and install 4K camera systems across the North West with NVRs, switches and hard drives sized for the higher bandwidth and storage that true 4K demands.",
+      "intro": "A 4K CCTV system captures ultra-high-definition video for wide scenes where you still need to digitally zoom for faces, clothing or vehicle detail. iComply design and install 4K camera systems across the North West with NVRs, switches and hard drives sized for the higher bandwidth and storage that true 4K demands.",
       "body": "4K is not automatically better if lenses, lighting or network are weak — we match 4K cameras to views that benefit from the resolution, and use HD elsewhere to control cost. Designs include PoE budgets, uplink capacity, retention days at 4K bitrates and client PC/mobile playback performance. Ideal for large retail floors, warehouses, car-park overviews and main entrances. Stockport engineers commission focusing, compression settings and remote access for commercial clients across Greater Manchester.",
       "meta_desc": "4K CCTV system design & install. Ultra-HD cameras, NVR & storage sizing across Greater Manchester, Stockport & the North West.",
       "focus_points": [
@@ -38,9 +38,9 @@
       "name": "ANPR Camera Advice",
       "service": "cctv",
       "related": "retail-cctv-system",
-      "intro": "Want ANPR Camera Advice delivered to current UK standards with local engineers? Icomply Property Services survey, deliver and document ANPR Camera Advice as part of our CCTV Systems offering, working to BS EN 62676 · GDPR / DPA camera siting.",
-      "body": "Icomply Property Services survey, deliver and document ANPR Camera Advice as part of our CCTV Systems offering, working to BS EN 62676 · GDPR / DPA camera siting. Tell us your postcode, property type and timescales — we aim to respond on business days within 2 hours. Typical jobs include survey, agreed works, quality checks and paperwork suitable for landlords, insurers and facilities managers. Local engineers attend from Stockport with North West coverage including Manchester, Bolton, Liverpool, Preston, Chester and surrounding towns.",
-      "meta_desc": "ANPR Camera Advice across the North West. CCTV Systems from Icomply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.",
+      "intro": "Want ANPR Camera Advice delivered to current UK standards with local engineers? iComply Property Services survey, deliver and document ANPR Camera Advice as part of our CCTV Systems offering, working to BS EN 62676 · GDPR / DPA camera siting.",
+      "body": "iComply Property Services survey, deliver and document ANPR Camera Advice as part of our CCTV Systems offering, working to BS EN 62676 · GDPR / DPA camera siting. Tell us your postcode, property type and timescales — we aim to respond on business days within 2 hours. Typical jobs include survey, agreed works, quality checks and paperwork suitable for landlords, insurers and facilities managers. Local engineers attend from Stockport with North West coverage including Manchester, Bolton, Liverpool, Preston, Chester and surrounding towns.",
+      "meta_desc": "ANPR Camera Advice across the North West. CCTV Systems from iComply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.",
       "seo_keywords": "anpr camera advice, anpr camera advice north west, anpr camera advice manchester, anpr camera advice stockport, cctv systems, property services greater manchester",
       "focus_points": [
         "Survey and fixed-price quote for ANPR Camera Advice",
@@ -72,7 +72,7 @@
       "name": "ANPR Car Park Camera",
       "service": "cctv",
       "related": "anpr-cctv-system",
-      "intro": "An ANPR car park camera is a dedicated plate-capture view at an entrance, exit or barrier, not a wide overview camera asked to read plates as an afterthought. Icomply survey approach speed, camera height, shutter and lighting, then install a lane camera that can support authorised lists or incident review.",
+      "intro": "An ANPR car park camera is a dedicated plate-capture view at an entrance, exit or barrier, not a wide overview camera asked to read plates as an afterthought. iComply survey approach speed, camera height, shutter and lighting, then install a lane camera that can support authorised lists or incident review.",
       "body": "Car park plates fail when the camera looks across headlights, sits too high, or shares a recorder stream sized for a general view. We set a lane-specific camera, infrared or white-light fill where night capture needs it, and a retention period that matches why you store vehicle data. Barrier and intercom integration is scoped only when the existing controller can accept it. Coverage is Greater Manchester and the wider North West from our Stockport base. Written quotes follow the survey. We do not publish a catalogue fee for lane cameras.",
       "meta_desc": "ANPR car park camera surveys and installs for entry and exit lanes. Plate capture, lighting and retention scoped across Greater Manchester and the North West.",
       "focus_points": [
@@ -102,9 +102,9 @@
       "name": "ANPR CCTV System",
       "service": "cctv",
       "related": "commercial-cctv-system",
-      "intro": "An ANPR CCTV system captures and reads vehicle number plates for car parks, commercial yards, residential estates and enforcement-style access workflows. Icomply Property Services design and install ANPR CCTV systems across Greater Manchester and the North West, combining suitable cameras, lighting strategy, recording platforms and software rules. From Stockport we survey approach speeds, plate angles and mounting points so capture rates are realistic, then deliver fixed-price installs with secure viewing and data-handling guidance.",
+      "intro": "An ANPR CCTV system captures and reads vehicle number plates for car parks, commercial yards, residential estates and enforcement-style access workflows. iComply Property Services design and install ANPR CCTV systems across Greater Manchester and the North West, combining suitable cameras, lighting strategy, recording platforms and software rules. From Stockport we survey approach speeds, plate angles and mounting points so capture rates are realistic, then deliver fixed-price installs with secure viewing and data-handling guidance.",
       "body": "ANPR success depends on camera height, angle, shutter performance, infrared or white-light fill, and lane layout more than brand marketing claims. We design for UK plates in typical weather and night conditions, set retention policies that match your purpose, and discuss GDPR-style responsibilities for vehicle data. Integration can open barriers for authorised lists or alert security to watch-list plates when systems support it. Cabling, PoE and network security are treated as part of the design. Aftercare includes focus checks, firmware discipline and storage health. Related CCTV works cover overview cameras for context footage alongside plate capture. Coverage includes Manchester, Cheshire, Lancashire, Merseyside and Cumbria.",
-      "meta_desc": "ANPR CCTV system design & install for car parks & sites. Plate capture, recording & alerts. Icomply Stockport & North West.",
+      "meta_desc": "ANPR CCTV system design & install for car parks & sites. Plate capture, recording & alerts. iComply Stockport & North West.",
       "focus_points": [
         "Site survey for plate angles, speed and lighting",
         "ANPR camera and NVR/software installation",
@@ -132,7 +132,7 @@
       "name": "Axis Camera Installation",
       "service": "cctv",
       "related": "cctv-installation",
-      "intro": "Axis camera installation suits organisations that want enterprise-grade IP video, open platform analytics and long-term cybersecurity support. Icomply design and install Axis Communications cameras for commercial, education and multi-site clients across the North West, integrating with preferred VMS platforms and structured networks.",
+      "intro": "Axis camera installation suits organisations that want enterprise-grade IP video, open platform analytics and long-term cybersecurity support. iComply design and install Axis Communications cameras for commercial, education and multi-site clients across the North West, integrating with preferred VMS platforms and structured networks.",
       "body": "Axis is often specified for higher-end estates needing reliable firmware paths, strong partner ecosystems and flexible mounting options. We handle PoE design, switch capacity, camera profiles, edge storage where used and VMS enrolment. Projects include schools, offices, logistics and public-facing premises that need durable outdoor housings and clear evidence quality. From Stockport we support Greater Manchester deployments with documentation FM and IT teams can audit.",
       "meta_desc": "Axis camera installation for enterprise IP CCTV. Design, PoE & VMS integration across Manchester, Stockport & the North West.",
       "focus_points": [
@@ -162,7 +162,7 @@
       "name": "Bullet Camera Installation",
       "service": "cctv",
       "related": "cctv-installation",
-      "intro": "Bullet camera installation suits external walls, yards and long approach views where visible deterrence and flexible mounting matter. Icomply install bullet CCTV cameras across the North West with correct brackets, weather sealing and IR setup for sharp night images on commercial and domestic premises.",
+      "intro": "Bullet camera installation suits external walls, yards and long approach views where visible deterrence and flexible mounting matter. iComply install bullet CCTV cameras across the North West with correct brackets, weather sealing and IR setup for sharp night images on commercial and domestic premises.",
       "body": "Bullet housings make camera direction obvious — useful as a deterrent on façades, loading doors and driveways. We specify focal lengths for gate or car-park distances, avoid IR reflection from nearby walls, and use junction boxes for tidy cable management. Combined with overview and close-up cameras, bullets form part of layered site design. Stockport engineers cover Greater Manchester installs and upgrades including lens recommissioning on existing bullets that were never focused correctly.",
       "meta_desc": "Bullet camera installation for exteriors, yards & driveways. Weather-rated CCTV across Manchester, Stockport & the North West.",
       "focus_points": [
@@ -192,9 +192,9 @@
       "name": "Business Security Cameras",
       "service": "cctv",
       "related": "commercial-cctv-system",
-      "intro": "Business security cameras protect stock, staff and premises while supporting insurance and compliance expectations. Icomply design, install, maintain and upgrade commercial CCTV for shops, warehouses, offices and multi-site operators across Greater Manchester and the North West, working to BS EN 62676 and practical siting guidance with system handover packs that stand up to audits.",
+      "intro": "Business security cameras protect stock, staff and premises while supporting insurance and compliance expectations. iComply design, install, maintain and upgrade commercial CCTV for shops, warehouses, offices and multi-site operators across Greater Manchester and the North West, working to BS EN 62676 and practical siting guidance with system handover packs that stand up to audits.",
       "body": "We specify IP and hybrid cameras, NVRs, remote viewing and appropriate storage retention for your risk profile — not a one-size kit list. Based in Stockport, we serve landlords, FM teams and owner-managed businesses from single retail units to estate-wide roll-outs. Related needs often include access control integration, night-time coverage, ANPR-ready positions and clear user training so your team can export evidence when it matters.",
-      "meta_desc": "Business security cameras across Greater Manchester & the North West. Icomply design, install & maintain commercial CCTV with fixed-price quotes.",
+      "meta_desc": "Business security cameras across Greater Manchester & the North West. iComply design, install & maintain commercial CCTV with fixed-price quotes.",
       "focus_points": [
         "Commercial camera design matched to risk, lighting and retention needs",
         "Fixed-price install, upgrade and multi-site standardisation",
@@ -222,7 +222,7 @@
       "name": "CCTV After Network Change",
       "service": "cctv",
       "related": "cctv-remote-viewing-setup",
-      "intro": "CCTV after a network change is the recommission that follows a new firewall, broadband provider, VLAN or Wi-Fi swap, when cameras and remote viewing stop talking to the recorder. Icomply trace IP, PoE and port forwarding and put the system back into a known working state.",
+      "intro": "CCTV after a network change is the recommission that follows a new firewall, broadband provider, VLAN or Wi-Fi swap, when cameras and remote viewing stop talking to the recorder. iComply trace IP, PoE and port forwarding and put the system back into a known working state.",
       "body": "A router replacement is a common reason a previously stable NVR disappears from the phone app. We record the camera and recorder addresses, check the PoE switch, DNS and any VPN the client actually uses, then restore remote viewing without leaving old ports open. If the new network cannot carry the camera bitrate we say so and quote a switch or recorder change rather than masking the fault. Stockport engineers cover Greater Manchester, Cheshire, Lancashire and Merseyside. The visit is quoted from what changed, not from a fixed menu.",
       "meta_desc": "CCTV recommission after a router, firewall or broadband change. IP, PoE and remote viewing restored across the North West.",
       "focus_points": [
@@ -252,7 +252,7 @@
       "name": "CCTV Cabling Installation",
       "service": "cctv",
       "related": "cctv-installation",
-      "intro": "CCTV cabling installation is the backbone of reliable video — poor coax, CAT cable or power routes cause dropouts, noise and failed remote access. Icomply plan and install CCTV cabling across the North West using appropriate cable types, containment, labelling and test practices for new builds, refurbishments and camera expansions.",
+      "intro": "CCTV cabling installation is the backbone of reliable video — poor coax, CAT cable or power routes cause dropouts, noise and failed remote access. iComply plan and install CCTV cabling across the North West using appropriate cable types, containment, labelling and test practices for new builds, refurbishments and camera expansions.",
       "body": "We survey routes through ceilings, risers, external walls and underground ducts, then install RG59/coax, CAT5e/CAT6 or composite cables with correct bend radii and segregation from heavy power where practical. External runs are weather-sealed; internal runs use trunking or basket as the site requires. Labelling at camera and recorder ends speeds future maintenance. Cable-only packages are available for electrical contractors, with full camera terminations optional from our Stockport engineers.",
       "meta_desc": "CCTV cabling installation — coax, CAT6 & containment. Neat tested routes across Greater Manchester, Stockport & the North West.",
       "focus_points": [
@@ -282,7 +282,7 @@
       "name": "CCTV Camera Installation",
       "service": "cctv",
       "related": "cctv-installation",
-      "intro": "Professional CCTV camera installation ensures cameras are sited, focused and recorded correctly — not just fixed to a wall. Icomply install CCTV cameras for commercial and domestic clients across Greater Manchester and the North West, covering mounts, cabling, recorders, network setup and full system testing from Stockport.",
+      "intro": "Professional CCTV camera installation ensures cameras are sited, focused and recorded correctly — not just fixed to a wall. iComply install CCTV cameras for commercial and domestic clients across Greater Manchester and the North West, covering mounts, cabling, recorders, network setup and full system testing from Stockport.",
       "body": "Whether you need a single additional camera or a complete new array, we match lens type, resolution and housing to each view. Installation includes secure fixings, weather sealing outdoors, neat internal containment, recorder configuration and remote app pairing. We also reposition poorly aimed existing cameras that miss doors or number plates. Fixed-price quotes follow a short survey or clear photo brief for simple add-ons.",
       "meta_desc": "CCTV camera installation by North West engineers. New cameras, add-ons & recommissioning across Manchester & Stockport.",
       "focus_points": [
@@ -312,9 +312,9 @@
       "name": "CCTV Certification",
       "service": "cctv",
       "related": "cctv-compliance",
-      "intro": "CCTV certification and professional handover documentation show that your system was designed, installed and tested to a clear standard—valuable for insurers, landlords and corporate compliance teams. Icomply issues practical system packs for new installs and major upgrades across the North West, covering camera schedules, user accounts, viewing guidance and test notes aligned with BS EN 62676 practice. We focus on usable paperwork, not empty certificates.",
+      "intro": "CCTV certification and professional handover documentation show that your system was designed, installed and tested to a clear standard—valuable for insurers, landlords and corporate compliance teams. iComply issues practical system packs for new installs and major upgrades across the North West, covering camera schedules, user accounts, viewing guidance and test notes aligned with BS EN 62676 practice. We focus on usable paperwork, not empty certificates.",
       "body": "Whether you manage a single shop or a multi-site portfolio, our Stockport engineers document what was fitted, where cameras point, how long footage is retained and who can access live and recorded video. That supports GDPR accountability and smoother insurance discussions after an incident. Certification-style packs are included where agreed in the quote for install or major remedial works. Combine with compliance advice, testing and remote access setup for a complete CCTV audit trail.",
-      "meta_desc": "CCTV certification & handover packs across the North West. Install documentation, test notes & GDPR-aware records from Icomply, Stockport.",
+      "meta_desc": "CCTV certification & handover packs across the North West. Install documentation, test notes & GDPR-aware records from iComply, Stockport.",
       "focus_points": [
         "Camera schedule, as-fitted notes and system overview drawings",
         "Commissioning checks and test records after install or upgrade",
@@ -342,9 +342,9 @@
       "name": "CCTV Compliance",
       "service": "cctv",
       "related": "cctv-certification",
-      "intro": "CCTV compliance means running cameras lawfully and proportionately—clear purpose, signage, retention limits, secure access and documentation that stands up to scrutiny. Icomply helps North West organisations align installations and procedures with UK data protection expectations and practical workplace guidance, alongside technical design to BS EN 62676 principles. We install and maintain systems that support your policies rather than working against them.",
+      "intro": "CCTV compliance means running cameras lawfully and proportionately—clear purpose, signage, retention limits, secure access and documentation that stands up to scrutiny. iComply helps North West organisations align installations and procedures with UK data protection expectations and practical workplace guidance, alongside technical design to BS EN 62676 principles. We install and maintain systems that support your policies rather than working against them.",
       "body": "From Stockport we advise on camera placement that avoids unnecessary intrusion, configure role-based logins, set retention that matches your stated purpose, and supply handover packs for audits. Landlords, schools, healthcare-adjacent estates and retail chains all face different stakeholder expectations; we tailor recommendations accordingly. Compliance support pairs naturally with certification packs, testing and remote access hardening. Request a review of an existing system or include compliance notes in a new install quote.",
-      "meta_desc": "CCTV compliance support across the North West: retention, access control, signage-aware installs & audit-ready packs. Icomply, Stockport.",
+      "meta_desc": "CCTV compliance support across the North West: retention, access control, signage-aware installs & audit-ready packs. iComply, Stockport.",
       "focus_points": [
         "Proportionate camera siting and coverage recommendations",
         "Secure user access, passwords and remote viewing controls",
@@ -372,7 +372,7 @@
       "name": "CCTV Engineer",
       "service": "cctv",
       "related": "cctv-near-me",
-      "intro": "Need a CCTV engineer in Greater Manchester or the wider North West? Icomply supply experienced CCTV engineers for design, installation, maintenance, repairs and system upgrades from our Stockport base. We work on IP and HD systems for homes, landlords and commercial sites, with neat installations, GDPR-aware camera siting and clear handover so you can retrieve footage when required.",
+      "intro": "Need a CCTV engineer in Greater Manchester or the wider North West? iComply supply experienced CCTV engineers for design, installation, maintenance, repairs and system upgrades from our Stockport base. We work on IP and HD systems for homes, landlords and commercial sites, with neat installations, GDPR-aware camera siting and clear handover so you can retrieve footage when required.",
       "body": "Our engineers handle NVR/DVR setup, PoE networking, remote viewing, storage expansion and camera replacement programmes. Multi-site businesses can request standardised configurations and reporting. You also benefit from a wider property-services team if alarms, access control or electrical works sit alongside your CCTV project. Tell us site type, camera count goals and any brand already installed—we aim to respond within two hours on business days with practical next steps.",
       "meta_desc": "CCTV engineer Stockport & Manchester. Install, service, repair & upgrades across the North West. Free advice & quotes.",
       "focus_points": [
@@ -402,9 +402,9 @@
       "name": "CCTV Engineers Near Me",
       "service": "cctv",
       "related": "cctv-installation",
-      "intro": "Searching for CCTV engineers near me in Greater Manchester or the wider North West? Icomply Property Services deploys local Stockport-based engineers who survey, install, fault-find and upgrade business and residential camera systems with clear fixed-price quotes. We work to BS EN 62676 and practical siting guidance, issue system handover packs and viewing setup notes, and cover multi-site estates as well as single premises.",
+      "intro": "Searching for CCTV engineers near me in Greater Manchester or the wider North West? iComply Property Services deploys local Stockport-based engineers who survey, install, fault-find and upgrade business and residential camera systems with clear fixed-price quotes. We work to BS EN 62676 and practical siting guidance, issue system handover packs and viewing setup notes, and cover multi-site estates as well as single premises.",
       "body": "Whether you need a reactive engineer for a failed NVR, a full redesign of camera coverage, or a planned maintenance visit, our team arrives with the tools and documentation to leave your CCTV usable and auditable. From SK2 we reach Manchester, Stockport, Bolton, Liverpool, Preston, Cheshire and Cumbria with same-week appointments where capacity allows. Tell us your postcode, property type and existing brand — we aim to reply within two hours on business days.",
-      "meta_desc": "CCTV engineers near me across Greater Manchester & the North West. Icomply survey, install & maintain with fixed quotes from Stockport.",
+      "meta_desc": "CCTV engineers near me across Greater Manchester & the North West. iComply survey, install & maintain with fixed quotes from Stockport.",
       "focus_points": [
         "Local North West CCTV engineers for install, repair and upgrade",
         "Site survey, camera siting advice and fixed-price quotation",
@@ -432,7 +432,7 @@
       "name": "CCTV Export for Incident",
       "service": "cctv",
       "related": "cctv-recording",
-      "intro": "A CCTV export for an incident is a time-bounded clip, stills and a note of which camera and recorder produced them, saved in a format someone else can open. Icomply attend when staff cannot export, the player is missing, or the footage has to be handed to an insurer or the police.",
+      "intro": "A CCTV export for an incident is a time-bounded clip, stills and a note of which camera and recorder produced them, saved in a format someone else can open. iComply attend when staff cannot export, the player is missing, or the footage has to be handed to an insurer or the police.",
       "body": "Exports fail when the incident window has already overwritten, the operator account cannot download, or the file is a proprietary bundle with no player. We check retention first, then export the relevant cameras with a readable player or an open format where the recorder allows it, and label the disc or download with camera name, time zone and who produced it. We do not promise footage that the recorder has already deleted. Chain-of-custody wording is factual: what was exported, when, and from which device. Quotes follow the number of cameras and whether we have to recover a failing drive.",
       "meta_desc": "CCTV incident export and stills from NVRs and DVRs. Readable clips for insurers and police, scoped across Greater Manchester and the North West.",
       "focus_points": [
@@ -462,7 +462,7 @@
       "name": "CCTV for Business",
       "service": "cctv",
       "related": "commercial-cctv-system",
-      "intro": "CCTV for business protects stock, staff and premises while supporting insurance and incident investigation. Icomply design commercial CCTV for retail, industrial, office and multi-site operators across the North West — from compact four-camera kits to multi-recorder estates with remote management and clear GDPR-minded positioning guidance.",
+      "intro": "CCTV for business protects stock, staff and premises while supporting insurance and incident investigation. iComply design commercial CCTV for retail, industrial, office and multi-site operators across the North West — from compact four-camera kits to multi-recorder estates with remote management and clear GDPR-minded positioning guidance.",
       "body": "We start with a risk walk-through: public entrances, stock rooms, loading bays, cash areas and external façades. Cameras and storage are sized for retention periods your insurer or process requires, with options for analytics, audio where lawful, and integration notes for access control. Installs are scheduled to limit trading disruption, and we train nominated managers on export of evidence clips. Stockport-based teams cover Greater Manchester, Cheshire, Lancashire and Merseyside commercial sites.",
       "meta_desc": "CCTV for business — design, install & remote monitoring setup across Greater Manchester & the North West. Fixed-price surveys.",
       "focus_points": [
@@ -492,7 +492,7 @@
       "name": "CCTV for Car Parks",
       "service": "cctv",
       "related": "commercial-cctv-system",
-      "intro": "CCTV for car parks deters vehicle crime, documents accidents and supports barrier or permit operations. Icomply design external car-park camera systems for retail parks, offices, residential blocks and private lots across the North West, combining overview coverage with entrance plate or face capture where required.",
+      "intro": "CCTV for car parks deters vehicle crime, documents accidents and supports barrier or permit operations. iComply design external car-park camera systems for retail parks, offices, residential blocks and private lots across the North West, combining overview coverage with entrance plate or face capture where required.",
       "body": "Open car parks challenge cameras with distance, headlights and weather. We specify suitable housings, poles or building mounts, and lighting-aware camera models for night use. Entrance and exit lanes get priority views; overview cameras track movement between rows. Integration with ANPR or intercoms is available. Installs include tidy underground or façade cable routes and remote viewing for security or FM teams covering Greater Manchester sites.",
       "meta_desc": "CCTV for car parks — entrance, bay & perimeter coverage. External camera design across Manchester, Stockport & the North West.",
       "focus_points": [
@@ -522,7 +522,7 @@
       "name": "CCTV for Care Homes",
       "service": "cctv",
       "related": "commercial-cctv-system",
-      "intro": "CCTV for care homes protects residents, staff and premises at entrances, medication rooms, fire exits and external grounds while carefully avoiding private bedrooms and intimate care areas. Icomply install care-sector CCTV across the North West with dignity-led design, reliable recording and remote access for registered managers when policy allows.",
+      "intro": "CCTV for care homes protects residents, staff and premises at entrances, medication rooms, fire exits and external grounds while carefully avoiding private bedrooms and intimate care areas. iComply install care-sector CCTV across the North West with dignity-led design, reliable recording and remote access for registered managers when policy allows.",
       "body": "We consult on purpose: security, entry monitoring or loft/plant protection — not covert monitoring of personal care. Cameras commonly cover reception, external doors, car parks and service yards. Night performance and clear entrance face capture support incident reviews. Installs are planned around residents’ routines, with tidy containment and minimal disruption. Combined packages with nurse call or door entry are available for care estates served from Stockport across Greater Manchester.",
       "meta_desc": "CCTV for care homes — dignity-led entrance & perimeter cameras. Design & install across Greater Manchester & the North West.",
       "focus_points": [
@@ -552,7 +552,7 @@
       "name": "CCTV for Schools",
       "service": "cctv",
       "related": "commercial-cctv-system",
-      "intro": "CCTV for schools supports safer perimeters, visitor management and after-hours building protection while respecting safeguarding and privacy expectations. Icomply design and install education-sector camera systems across Greater Manchester and the North West, working with premises managers around term-time constraints and clear signage practice.",
+      "intro": "CCTV for schools supports safer perimeters, visitor management and after-hours building protection while respecting safeguarding and privacy expectations. iComply design and install education-sector camera systems across Greater Manchester and the North West, working with premises managers around term-time constraints and clear signage practice.",
       "body": "Typical school designs cover main entrances, reception approaches, bike shelters, playground perimeters and isolated external doors — not intrusive classroom monitoring unless a documented policy requires it. We schedule noisy or ladder work outside peak teaching where possible, train nominated staff on playback, and document system purpose for governors or trust policies. Wired reliability is preferred on large campuses; wireless may support temporary buildings. Stockport engineers understand multi-building education sites.",
       "meta_desc": "CCTV for schools — safeguarding-aware perimeter & entrance cameras. Install across Greater Manchester, Stockport & the North West.",
       "focus_points": [
@@ -582,7 +582,7 @@
       "name": "CCTV Hard Drive Upgrade",
       "service": "cctv",
       "related": "nvr-installation",
-      "intro": "A CCTV hard drive upgrade extends how many days of footage you retain and replaces noisy, failing or full disks before recording stops. Icomply supply and fit surveillance-rated hard drives in DVRs and NVRs across Greater Manchester, with careful rebuild of recording settings and checks that cameras still write reliably after the swap.",
+      "intro": "A CCTV hard drive upgrade extends how many days of footage you retain and replaces noisy, failing or full disks before recording stops. iComply supply and fit surveillance-rated hard drives in DVRs and NVRs across Greater Manchester, with careful rebuild of recording settings and checks that cameras still write reliably after the swap.",
       "body": "Desktop PC drives are a poor fit for 24/7 CCTV workloads; we use surveillance-class disks sized to your camera count and retention target. Upgrades can expand from 1TB to multi-terabyte arrays where the recorder supports them. We back up essential settings where possible, install drives, reformat as required by the unit, confirm recording schedules and restore remote access. Ideal preventive maintenance for shops, landlords and warehouses served from Stockport.",
       "meta_desc": "CCTV hard drive upgrade for longer retention & failed disks. Surveillance HDD fit across Manchester, Stockport & the North West.",
       "focus_points": [
@@ -642,7 +642,7 @@
       "name": "CCTV IR Illuminator",
       "service": "cctv",
       "related": "external-cctv-installation",
-      "intro": "A CCTV IR illuminator is an extra infrared lamp for yards, loading areas and long driveways where the camera's built-in LEDs fade out before the view does. Icomply match beam angle and range to the lens so the picture is even rather than a white hotspot.",
+      "intro": "A CCTV IR illuminator is an extra infrared lamp for yards, loading areas and long driveways where the camera's built-in LEDs fade out before the view does. iComply match beam angle and range to the lens so the picture is even rather than a white hotspot.",
       "body": "Built-in IR is often enough for a doorway and useless across a car park. We measure the view, choose a lamp that covers it without blasting the near field, and power it from a suitable supply or PoE injector where the product allows. Aim, photocell threshold and camera exposure are set at night or with the scene darkened, not from a daytime guess. If white light is a better fit for colour recognition we say so. Installs are quoted after we see mounting height, cable route and the camera already on site.",
       "meta_desc": "CCTV infrared illuminators for yards and long views. Beam angle matched to the camera across Greater Manchester and the North West.",
       "focus_points": [
@@ -672,7 +672,7 @@
       "name": "CCTV Maintenance",
       "service": "cctv",
       "related": "cctv-servicing",
-      "intro": "CCTV maintenance keeps cameras clean, focused and recording when incidents occur. Icomply provide planned CCTV maintenance for commercial, residential and multi-site systems across Greater Manchester and the North West, checking image quality, cables, power, NVRs/DVRs and remote viewing. Working from Stockport to BS EN 62676-aware practice, we leave service records and recommendations so evidence remains usable for investigations and insurers.",
+      "intro": "CCTV maintenance keeps cameras clean, focused and recording when incidents occur. iComply provide planned CCTV maintenance for commercial, residential and multi-site systems across Greater Manchester and the North West, checking image quality, cables, power, NVRs/DVRs and remote viewing. Working from Stockport to BS EN 62676-aware practice, we leave service records and recommendations so evidence remains usable for investigations and insurers.",
       "body": "Maintenance visits typically include lens cleaning where accessible, field-of-view checks, focus and IR review, storage health, time sync, firmware notes where appropriate, and backup of critical settings. We flag failing drives before they lose footage and can expand retention if your policy requires longer archives. Portfolio clients benefit from scheduled rounds and consistent reporting across branches. Ask about contracts that combine CCTV with intruder alarm or access control maintenance for one security compliance day.",
       "meta_desc": "CCTV maintenance for business & residential systems. NVR health, cameras & viewing checks — Stockport & North West.",
       "focus_points": [
@@ -702,9 +702,9 @@
       "name": "CCTV Monitoring",
       "service": "cctv",
       "related": "remote-cctv-access",
-      "intro": "CCTV monitoring keeps eyes on your premises when staff cannot—whether that means live viewing from a phone, a reception desk wall, or structured checks by nominated site contacts. Icomply designs viewing layouts, user permissions and alert workflows for commercial and multi-site clients across the North West. We are not a third-party ARC alarm receiving centre by default; we focus on on-site and remote self-monitoring that works reliably with your cameras, NVR and network.",
+      "intro": "CCTV monitoring keeps eyes on your premises when staff cannot—whether that means live viewing from a phone, a reception desk wall, or structured checks by nominated site contacts. iComply designs viewing layouts, user permissions and alert workflows for commercial and multi-site clients across the North West. We are not a third-party ARC alarm receiving centre by default; we focus on on-site and remote self-monitoring that works reliably with your cameras, NVR and network.",
       "body": "From Stockport we set up multi-monitor stations, mobile apps, event bookmarks and optional analytics-driven motion alerts so teams respond faster to incidents. For landlords and FM providers we can standardise access across several buildings with clear role-based logins. Combine monitoring setup with IP system design, remote access hardening and planned testing. Tell us how many users need view-only versus admin rights and we will build a fixed-price configuration plan.",
-      "meta_desc": "CCTV monitoring setup for live & remote viewing across the North West. Desk stations, apps & alerts. Fixed quotes from Icomply, Stockport.",
+      "meta_desc": "CCTV monitoring setup for live & remote viewing across the North West. Desk stations, apps & alerts. Fixed quotes from iComply, Stockport.",
       "focus_points": [
         "Live view layouts for reception, security desk or FM office",
         "Mobile and browser access with role-based user accounts",
@@ -732,7 +732,7 @@
       "name": "CCTV Monitoring Setup",
       "service": "cctv",
       "related": "cctv-installation",
-      "intro": "CCTV monitoring setup configures how live video is watched — on-site monitors, guard desks, mobile alerts or links toward professional monitoring centres. Icomply implement monitoring-ready CCTV across the North West with camera layouts, display walls, alert rules and network paths that make human monitoring practical rather than overwhelming.",
+      "intro": "CCTV monitoring setup configures how live video is watched — on-site monitors, guard desks, mobile alerts or links toward professional monitoring centres. iComply implement monitoring-ready CCTV across the North West with camera layouts, display walls, alert rules and network paths that make human monitoring practical rather than overwhelming.",
       "body": "Effective monitoring is about the right cameras, not endless screens. We prioritise entrances and alarm-linked views, set sensible motion or analytics alerts, and train staff on escalation. Where you use a remote monitoring provider, we prepare camera lists, multipoint views and connectivity notes to their requirements. For self-monitoring SMEs we configure reliable apps and optional push alerts. Based in Stockport, we support shops, warehouses and multi-site operators across Greater Manchester.",
       "meta_desc": "CCTV monitoring setup for guard desks, apps & alarm-linked views. Configuration across Manchester, Stockport & the North West.",
       "focus_points": [
@@ -762,9 +762,9 @@
       "name": "CCTV Near Me",
       "service": "cctv",
       "related": "cctv-engineer",
-      "intro": "Searching for CCTV near me in the North West? Icomply is a Stockport-based team installing, repairing and maintaining CCTV for homes, landlords and commercial sites across Greater Manchester and neighbouring counties. Local engineers mean faster surveys, familiar planning constraints and fixed-price quotes without long-distance call-out padding. Tell us your postcode and property type and we will confirm coverage and appointment windows.",
+      "intro": "Searching for CCTV near me in the North West? iComply is a Stockport-based team installing, repairing and maintaining CCTV for homes, landlords and commercial sites across Greater Manchester and neighbouring counties. Local engineers mean faster surveys, familiar planning constraints and fixed-price quotes without long-distance call-out padding. Tell us your postcode and property type and we will confirm coverage and appointment windows.",
       "body": "We regularly work in Manchester, Stockport, Bolton, Oldham, Trafford, Cheshire towns and into Lancashire and Merseyside. Services include new IP systems, HD camera upgrades, recording repairs, remote access and planned testing. Prefer a single contractor for CCTV plus access control or door entry? We can scope multi-discipline visits. Same-week capacity is often available for reactive faults. Use the form on this page, call or WhatsApp—we aim to respond within two business hours.",
-      "meta_desc": "CCTV near me in Greater Manchester & the North West. Local Stockport engineers, fixed-price installs & repairs. Quick quotes from Icomply.",
+      "meta_desc": "CCTV near me in Greater Manchester & the North West. Local Stockport engineers, fixed-price installs & repairs. Quick quotes from iComply.",
       "focus_points": [
         "Local North West engineers from our Stockport base",
         "Survey-to-install CCTV with transparent fixed pricing",
@@ -792,7 +792,7 @@
       "name": "CCTV Privacy Masking",
       "service": "cctv",
       "related": "cctv-compliance",
-      "intro": "CCTV privacy masking blocks parts of a live or recorded view, such as a neighbour's window or a private garden, so the camera can still cover your entrance. Icomply set masks on the recorder or camera and check them after any zoom or preset change.",
+      "intro": "CCTV privacy masking blocks parts of a live or recorded view, such as a neighbour's window or a private garden, so the camera can still cover your entrance. iComply set masks on the recorder or camera and check them after any zoom or preset change.",
       "body": "A mask that looks right on a wide shot can slip when someone later zooms the lens or recalls a PTZ preset. We apply privacy zones for the views you must not record, document which cameras are masked, and tell you if a physical resite is more reliable than a software block. Masks are not a substitute for a camera that should never have pointed that way. Where the system cannot mask cleanly we recommend a different lens or mounting position. The work is quoted from the number of cameras and whether we can reach them safely.",
       "meta_desc": "CCTV privacy masking for windows, gardens and neighbouring property. Zones set and checked across Greater Manchester and the North West.",
       "focus_points": [
@@ -822,9 +822,9 @@
       "name": "CCTV Recording",
       "service": "cctv",
       "related": "cctv-monitoring",
-      "intro": "Reliable CCTV recording is what turns cameras into evidence: correct retention, healthy hard disks, accurate timestamps and easy export for police or insurers. Icomply configures and maintains NVR/DVR recording for businesses and landlords across Greater Manchester, Cheshire and Lancashire. We size storage to your retention policy, set motion and schedule rules that avoid silent gaps, and leave you with clear handover notes so managers know how to find and download footage.",
+      "intro": "Reliable CCTV recording is what turns cameras into evidence: correct retention, healthy hard disks, accurate timestamps and easy export for police or insurers. iComply configures and maintains NVR/DVR recording for businesses and landlords across Greater Manchester, Cheshire and Lancashire. We size storage to your retention policy, set motion and schedule rules that avoid silent gaps, and leave you with clear handover notes so managers know how to find and download footage.",
       "body": "Failed drives, full disks and wrong time zones are common causes of ‘the cameras were on but nothing recorded’. Our Stockport-based team checks disk health, RAID or mirroring options on multi-drive units, network time sync and user permissions. We also advise on GDPR-aware retention for workplace CCTV and secure remote export where needed. Pair recording work with system testing, remote access setup or a full commercial CCTV refresh. Fixed-price remedial or new install quotes after a short site or remote assessment.",
-      "meta_desc": "CCTV recording setup & NVR storage across Greater Manchester & the North West. Retention, disk health & export help from Icomply, Stockport.",
+      "meta_desc": "CCTV recording setup & NVR storage across Greater Manchester & the North West. Retention, disk health & export help from iComply, Stockport.",
       "focus_points": [
         "Storage sizing against your footage retention policy",
         "NVR/DVR configuration, time sync and motion/schedule rules",
@@ -852,7 +852,7 @@
       "name": "CCTV Remote User Training",
       "service": "cctv",
       "related": "remote-cctv-access",
-      "intro": "CCTV remote user training shows the people who actually open the app how to view cameras, export a clip and spot a full disk, without sharing the installer password. Icomply run a short handover on the recorder and phones your team already uses.",
+      "intro": "CCTV remote user training shows the people who actually open the app how to view cameras, export a clip and spot a full disk, without sharing the installer password. iComply run a short handover on the recorder and phones your team already uses.",
       "body": "Most 'the CCTV is down' calls are a viewer who cannot find playback or who is logged into an old app. We create named operator accounts, walk through live view, search and export, and leave a one-page note of what not to change. Installer and admin passwords stay with the site owner, not in a group chat. Training is on the system you have, including Hikvision, Dahua, Axis and other recorders we can log into. It is quoted as a visit, not as a packaged course fee, and can sit on the end of an install or remote-viewing setup.",
       "meta_desc": "CCTV remote viewing training for site staff. Live view, playback and export on your recorder, from Stockport across the North West.",
       "focus_points": [
@@ -882,7 +882,7 @@
       "name": "CCTV Remote Viewing Setup",
       "service": "cctv",
       "related": "cctv-installation",
-      "intro": "CCTV remote viewing setup lets owners and managers check live and recorded video from phones, tablets or PCs without being on site. Icomply configure secure remote access for new and existing CCTV systems across Greater Manchester, including router ports or P2P apps, strong credentials and multi-user permissions.",
+      "intro": "CCTV remote viewing setup lets owners and managers check live and recorded video from phones, tablets or PCs without being on site. iComply configure secure remote access for new and existing CCTV systems across Greater Manchester, including router ports or P2P apps, strong credentials and multi-user permissions.",
       "body": "Many systems are installed without reliable remote access, or apps stop working after router changes. We audit your recorder, network and mobile devices, then implement a stable connection method suited to your router and IT policy. Training covers live view, playback, clip export and password changes. For multi-site clients we standardise app layouts so regional managers see consistent camera naming from Stockport to Liverpool and beyond.",
       "meta_desc": "CCTV remote viewing setup on phone & PC. Secure app configuration across Greater Manchester, Stockport & the North West.",
       "focus_points": [
@@ -912,7 +912,7 @@
       "name": "CCTV Repair",
       "service": "cctv",
       "related": "cctv-engineer",
-      "intro": "Blurry images, dead cameras or a recorder that will not play back? Icomply provide CCTV repair across the North West for homes, shops, offices and industrial sites. Our Stockport engineers diagnose camera, cable, PoE, switch and NVR/DVR faults, restore recording where possible and advise honestly when replacement is better value than repair.",
+      "intro": "Blurry images, dead cameras or a recorder that will not play back? iComply provide CCTV repair across the North West for homes, shops, offices and industrial sites. Our Stockport engineers diagnose camera, cable, PoE, switch and NVR/DVR faults, restore recording where possible and advise honestly when replacement is better value than repair.",
       "body": "Typical repairs include failed IR arrays, water-ingress cameras, crushed cables, overloaded PoE switches, corrupt storage and misconfigured remote apps. We re-establish viewing for managers and owners, re-aim cameras after storms or vandalism, and document changes for site security folders. Commercial clients can request priority attendance when coverage of cash or loading areas is lost. Share recorder brand, camera count and fault symptoms when booking so we bring likely spares.",
       "meta_desc": "CCTV repair — cameras, cables & NVR/DVR faults fixed. Engineers from Stockport across Greater Manchester & the North West.",
       "focus_points": [
@@ -942,7 +942,7 @@
       "name": "CCTV Servicing",
       "service": "cctv",
       "related": "cctv-testing",
-      "intro": "CCTV servicing is a structured health check of your entire video system—not just a wipe of the lenses. Icomply deliver professional CCTV servicing for residential and commercial clients across Greater Manchester and the wider North West, verifying image quality, recording integrity, timestamps and user access. From Stockport we schedule services that fit trading hours and provide written reports for facilities and compliance files.",
+      "intro": "CCTV servicing is a structured health check of your entire video system—not just a wipe of the lenses. iComply deliver professional CCTV servicing for residential and commercial clients across Greater Manchester and the wider North West, verifying image quality, recording integrity, timestamps and user access. From Stockport we schedule services that fit trading hours and provide written reports for facilities and compliance files.",
       "body": "During a service we review camera positions against current site risks, check privacy masking where GDPR/DPA siting matters, confirm retention settings and test playback from the recorder. Outdoor housings, brackets and weather seals are inspected to prevent water damage. After servicing you know whether the system still meets the purpose it was installed for, or whether extra cameras or storage are advisable. Bundle servicing with intruder alarm visits to reduce engineer days on site.",
       "meta_desc": "CCTV servicing with full system checks & reports. Business & home systems — Stockport, Manchester & the North West.",
       "focus_points": [
@@ -972,7 +972,7 @@
       "name": "CCTV Switch and PoE Check",
       "service": "cctv",
       "related": "cctv-cabling-installation",
-      "intro": "A CCTV switch and PoE check finds cameras that reboot, drop offline overnight or never get enough power because the switch budget or the cable run is wrong. Icomply measure the PoE load and the links before anyone condemns the cameras.",
+      "intro": "A CCTV switch and PoE check finds cameras that reboot, drop offline overnight or never get enough power because the switch budget or the cable run is wrong. iComply measure the PoE load and the links before anyone condemns the cameras.",
       "body": "A 16-camera switch with a small power budget will brown out the furthest infrared cameras at night when the LEDs draw more. We list which ports are up, which cameras are under-voltage, and whether the fault is the switch, a damaged pair, or a camera that needs its own injector. Spare ports and uplink capacity are noted so the next camera add does not repeat the fault. If the switch has to be replaced we quote the model against the load, not a guess from the box size. Greater Manchester and North West coverage from Stockport.",
       "meta_desc": "CCTV PoE switch checks for cameras that drop offline or reboot. Power budget and cabling tested across the North West.",
       "focus_points": [
@@ -1002,7 +1002,7 @@
       "name": "CCTV System Design",
       "service": "cctv",
       "related": "cctv-installation",
-      "intro": "CCTV system design turns security goals into a practical camera map, storage plan and network architecture before hardware is ordered. Icomply produce clear CCTV designs for businesses, landlords and multi-site estates across the North West, preventing wasted cameras, blind spots and undersized hard drives.",
+      "intro": "CCTV system design turns security goals into a practical camera map, storage plan and network architecture before hardware is ordered. iComply produce clear CCTV designs for businesses, landlords and multi-site estates across the North West, preventing wasted cameras, blind spots and undersized hard drives.",
       "body": "Our design process covers risk areas, required identification levels (detect, recognise, identify), lighting, mounting structures, cable or wireless pathways, recorder location, retention days and remote user roles. You receive a proposal with camera counts, indicative views and fixed install pricing. Designs can phase IP migration from legacy coax, and align with access control or ANPR later. Ideal for new builds, refurbishments and insurer-driven upgrades from our Stockport team.",
       "meta_desc": "CCTV system design for commercial & multi-site estates. Risk-led layouts & fixed quotes across Greater Manchester & North West.",
       "focus_points": [
@@ -1034,7 +1034,7 @@
       "related": "anpr-camera-advice",
       "intro": "Planning CCTV System Upgrade for a home, rental portfolio or commercial site? From first survey to handover, we survey, deliver and document CCTV System Upgrade with transparent pricing after scope is agreed.",
       "body": "From first survey to handover, we survey, deliver and document CCTV System Upgrade with transparent pricing after scope is agreed. Browse local pages for your town or request a combined quote with related services. Typical jobs include survey, agreed works, quality checks and paperwork suitable for landlords, insurers and facilities managers. Local engineers attend from Stockport with North West coverage including Manchester, Bolton, Liverpool, Preston, Chester and surrounding towns.",
-      "meta_desc": "CCTV System Upgrade across the North West. CCTV Systems from Icomply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.",
+      "meta_desc": "CCTV System Upgrade across the North West. CCTV Systems from iComply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.",
       "seo_keywords": "cctv system upgrade, cctv system upgrade north west, cctv system upgrade manchester, cctv system upgrade stockport, cctv systems, property services greater manchester",
       "focus_points": [
         "Survey and fixed-price quote for CCTV System Upgrade",
@@ -1066,9 +1066,9 @@
       "name": "CCTV Testing",
       "service": "cctv",
       "related": "cctv-servicing",
-      "intro": "Regular CCTV testing proves cameras still record, focus and cover the zones you rely on—before an incident exposes a blind spot or failed disk. Icomply carries out CCTV testing and health checks for commercial and multi-residential sites across Greater Manchester and the North West. We verify image quality, timestamps, retention, user logins, IR performance and export paths, then report clear pass/fail items with fixed-price remedials where needed.",
+      "intro": "Regular CCTV testing proves cameras still record, focus and cover the zones you rely on—before an incident exposes a blind spot or failed disk. iComply carries out CCTV testing and health checks for commercial and multi-residential sites across Greater Manchester and the North West. We verify image quality, timestamps, retention, user logins, IR performance and export paths, then report clear pass/fail items with fixed-price remedials where needed.",
       "body": "Testing fits well alongside planned maintenance contracts for landlords, retailers and FM teams. Our Stockport engineers can attend single sites or run multi-property rounds with consistent checklists. Findings support insurance and internal audits and reduce the risk of discovering failures only when police request footage. Book a one-off test or include CCTV in a wider compliance visit with access control or fire systems. Same-week slots where capacity allows.",
-      "meta_desc": "CCTV testing & health checks across Greater Manchester & the North West. Image, recording & login verification from Icomply engineers.",
+      "meta_desc": "CCTV testing & health checks across Greater Manchester & the North West. Image, recording & login verification from iComply engineers.",
       "focus_points": [
         "Camera-by-camera image and coverage verification",
         "Recording, retention and hard-disk health checks",
@@ -1096,7 +1096,7 @@
       "name": "CCTV Upgrade",
       "service": "cctv",
       "related": "cctv-installation",
-      "intro": "A CCTV upgrade modernises blurry, unreliable or incomplete camera systems without always starting from scratch. Icomply upgrade CCTV across the North West — higher resolution cameras, new recorders, remote viewing, extra coverage and cybersecurity hardening — while reusing quality cabling and mounts wherever testing allows.",
+      "intro": "A CCTV upgrade modernises blurry, unreliable or incomplete camera systems without always starting from scratch. iComply upgrade CCTV across the North West — higher resolution cameras, new recorders, remote viewing, extra coverage and cybersecurity hardening — while reusing quality cabling and mounts wherever testing allows.",
       "body": "Typical upgrade drivers include poor night images, full hard drives, dead remote apps, missing entrance face shots and insurer recommendations. We audit the estate, prioritise quick wins (re-aiming, extra entrance camera, NVR swap) and plan longer IP migrations if needed. Phased budgets suit multi-site and landlord clients. After upgrade you receive updated channel maps, passwords guidance and training so the new capability is actually used across Greater Manchester sites.",
       "meta_desc": "CCTV upgrade to HD/4K, new NVRs & remote viewing. Phased modernisation across Manchester, Stockport & the North West.",
       "focus_points": [
@@ -1128,7 +1128,7 @@
       "related": "bullet-camera-installation",
       "intro": "Looking for expert Commercial CCTV Package across Greater Manchester and the North West? Our team survey, deliver and document Commercial CCTV Package for landlords, homeowners, FM teams and commercial clients, with handover packs, certificates and job records on completion where applicable.",
       "body": "Our team survey, deliver and document Commercial CCTV Package for landlords, homeowners, FM teams and commercial clients, with handover packs, certificates and job records on completion where applicable. Ask about multi-property packages if you manage several sites or a void programme. Typical jobs include survey, agreed works, quality checks and paperwork suitable for landlords, insurers and facilities managers. Local engineers attend from Stockport with North West coverage including Manchester, Bolton, Liverpool, Preston, Chester and surrounding towns.",
-      "meta_desc": "Commercial CCTV Package across the North West. CCTV Systems from Icomply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.",
+      "meta_desc": "Commercial CCTV Package across the North West. CCTV Systems from iComply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.",
       "seo_keywords": "commercial cctv package, commercial cctv package north west, commercial cctv package manchester, commercial cctv package stockport, cctv systems, property services greater manchester",
       "focus_points": [
         "Survey and fixed-price quote for Commercial CCTV Package",
@@ -1160,9 +1160,9 @@
       "name": "Commercial CCTV System",
       "service": "cctv",
       "related": "cctv-installation",
-      "intro": "A commercial CCTV system protects stock, staff and visitors while giving managers the visibility they need across opening hours and out of hours. Icomply designs, installs and maintains commercial CCTV for retail, industrial, office and hospitality sites throughout Greater Manchester, Cheshire, Lancashire and Merseyside. From first risk-based camera plan to NVR storage, remote viewing and staff training, we deliver fixed-price projects with clear scopes and no surprise day-rate creep.",
-      "body": "Multi-entrance premises, loading bays and shared car parks need careful camera choice and lighting assessment. We specify IP or hybrid architectures, integrate with access control where useful, and schedule works to limit disruption to trading. Landlords and FM teams can add several units under one maintenance arrangement. Based in Stockport (SK2), Icomply covers 150+ North West towns with local engineers. Start with a survey and receive a transparent commercial CCTV proposal tailored to your budget and risk profile.",
-      "meta_desc": "Commercial CCTV system design & install for North West businesses. Retail, industrial & office. Fixed-price quotes from Icomply, Stockport.",
+      "intro": "A commercial CCTV system protects stock, staff and visitors while giving managers the visibility they need across opening hours and out of hours. iComply designs, installs and maintains commercial CCTV for retail, industrial, office and hospitality sites throughout Greater Manchester, Cheshire, Lancashire and Merseyside. From first risk-based camera plan to NVR storage, remote viewing and staff training, we deliver fixed-price projects with clear scopes and no surprise day-rate creep.",
+      "body": "Multi-entrance premises, loading bays and shared car parks need careful camera choice and lighting assessment. We specify IP or hybrid architectures, integrate with access control where useful, and schedule works to limit disruption to trading. Landlords and FM teams can add several units under one maintenance arrangement. Based in Stockport (SK2), iComply covers 150+ North West towns with local engineers. Start with a survey and receive a transparent commercial CCTV proposal tailored to your budget and risk profile.",
+      "meta_desc": "Commercial CCTV system design & install for North West businesses. Retail, industrial & office. Fixed-price quotes from iComply, Stockport.",
       "focus_points": [
         "Commercial risk survey and camera coverage plan",
         "Business-grade IP/hybrid CCTV with scalable storage",
@@ -1183,14 +1183,14 @@
           "Where needed we can programme evening or weekend works for retail and logistics. Out-of-hours availability is confirmed at quoting stage."
         ]
       ],
-      "seo_keywords": "commercial CCTV system, business CCTV installation, retail CCTV Manchester, industrial CCTV North West, office security cameras Stockport, commercial NVR, Icomply CCTV"
+      "seo_keywords": "commercial CCTV system, business CCTV installation, retail CCTV Manchester, industrial CCTV North West, office security cameras Stockport, commercial NVR, iComply CCTV"
     },
     {
       "slug": "dahua-cctv-installation",
       "name": "Dahua CCTV Installation",
       "service": "cctv",
       "related": "cctv-installation",
-      "intro": "Dahua CCTV installation provides a full range of IP and HD-over-coax cameras for retail, industrial and residential projects that need solid performance and value. Icomply install and commission Dahua camera and recorder systems across Greater Manchester and the wider North West with neat cabling, storage sizing and secure remote viewing.",
+      "intro": "Dahua CCTV installation provides a full range of IP and HD-over-coax cameras for retail, industrial and residential projects that need solid performance and value. iComply install and commission Dahua camera and recorder systems across Greater Manchester and the wider North West with neat cabling, storage sizing and secure remote viewing.",
       "body": "We select Dahua domes, turrets and bullets for the lighting and distance at each view, pair them with compatible NVRs or XVRs, and configure recording, motion and user accounts properly at handover. Upgrades from mixed analogue estates are common using hybrid recorders. Cyber hygiene — changing defaults, segmenting networks where advised — is part of our standard install. Trade and FM customers can request multi-site Dahua standardisation from our Stockport base.",
       "meta_desc": "Dahua CCTV installation & NVR setup across Greater Manchester & the North West. Fixed-price commercial and domestic installs.",
       "focus_points": [
@@ -1220,7 +1220,7 @@
       "name": "Dome Camera Installation",
       "service": "cctv",
       "related": "cctv-installation",
-      "intro": "Dome camera installation is popular for indoor ceilings and protected outdoor canopies where a discreet, vandal-resistant look is preferred. Icomply supply and fit dome and turret-style cameras across Greater Manchester for offices, shops, schools and communal residential areas, with careful aiming through the dome cover for clear evidence-grade images.",
+      "intro": "Dome camera installation is popular for indoor ceilings and protected outdoor canopies where a discreet, vandal-resistant look is preferred. iComply supply and fit dome and turret-style cameras across Greater Manchester for offices, shops, schools and communal residential areas, with careful aiming through the dome cover for clear evidence-grade images.",
       "body": "Domes suit reception areas, corridors and retail sales floors where aesthetics matter. We select IR domes for low light, choose fixed or varifocal lenses for the view distance, and use outdoor-rated housings where weather exposure exists. Installation includes secure base plates, sealed cable entry, clean finish rings and full recorder integration. Existing dome replacements can often reuse back boxes to cut decoration costs on North West sites.",
       "meta_desc": "Dome camera installation for offices, shops & interiors. Discreet HD domes across Greater Manchester, Stockport & North West.",
       "focus_points": [
@@ -1250,7 +1250,7 @@
       "name": "Domestic CCTV Installation",
       "service": "cctv",
       "related": "cctv-installation",
-      "intro": "Domestic CCTV installation gives homeowners and landlords clearer views of driveways, gardens, porches and shared residential entrances. Icomply supply and fit home security cameras across the North West with app-based remote viewing, night vision options and neighbour-considerate positioning that avoids overlooking private spaces unnecessarily.",
+      "intro": "Domestic CCTV installation gives homeowners and landlords clearer views of driveways, gardens, porches and shared residential entrances. iComply supply and fit home security cameras across the North West with app-based remote viewing, night vision options and neighbour-considerate positioning that avoids overlooking private spaces unnecessarily.",
       "body": "We recommend camera counts based on property layout rather than selling excess hardware — front door, rear garden and side access cover most semi-detached and terraced homes. Wired systems remain our preference for reliability; wireless kits are used where cable routes are impractical. Installs include secure Wi-Fi or network setup, password hygiene guidance and simple playback training. Landlord HMOs and small blocks can share structured systems with managed access for agents from our Stockport base.",
       "meta_desc": "Domestic CCTV installation for homes & landlords. Wired & wireless options across Greater Manchester, Stockport & North West.",
       "focus_points": [
@@ -1282,7 +1282,7 @@
       "related": "nvr-installation",
       "intro": "Looking for expert DVR CCTV System across Greater Manchester and the North West? We handle DVR CCTV System alongside related CCTV Systems works so one contractor can reduce site disruption.",
       "body": "We handle DVR CCTV System alongside related CCTV Systems works so one contractor can reduce site disruption. Based in Offerton, Stockport (SK2 5DE), we cover 150+ towns across the North West. Typical jobs include survey, agreed works, quality checks and paperwork suitable for landlords, insurers and facilities managers. Local engineers attend from Stockport with North West coverage including Manchester, Bolton, Liverpool, Preston, Chester and surrounding towns.",
-      "meta_desc": "DVR CCTV System across the North West. CCTV Systems from Icomply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.",
+      "meta_desc": "DVR CCTV System across the North West. CCTV Systems from iComply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.",
       "seo_keywords": "dvr cctv system, dvr cctv system north west, dvr cctv system manchester, dvr cctv system stockport, cctv systems, property services greater manchester",
       "focus_points": [
         "Survey and fixed-price quote for DVR CCTV System",
@@ -1314,7 +1314,7 @@
       "name": "DVR Installation",
       "service": "cctv",
       "related": "cctv-recording",
-      "intro": "DVR installation configures digital video recorders for coaxial and hybrid CCTV systems, setting recording schedules, motion detection, retention and user access. Icomply install and replace DVRs across the North West so older camera estates keep working reliably while you plan IP upgrades at your own pace.",
+      "intro": "DVR installation configures digital video recorders for coaxial and hybrid CCTV systems, setting recording schedules, motion detection, retention and user access. iComply install and replace DVRs across the North West so older camera estates keep working reliably while you plan IP upgrades at your own pace.",
       "body": "When a DVR fails or storage runs out, cameras may still be sound. We match replacement units to camera type (analogue, HD-over-coax or hybrid), install larger hard drives where needed, migrate settings and re-establish remote viewing. Rack mounting, UPS notes and ventilation are considered for plant cupboards and server rooms. Our Stockport engineers support shops, offices, landlords and industrial sites across Greater Manchester.",
       "meta_desc": "DVR installation & replacement for CCTV systems. Hybrid recorders, storage & remote setup across Manchester & the North West.",
       "focus_points": [
@@ -1344,7 +1344,7 @@
       "name": "External CCTV Installation",
       "service": "cctv",
       "related": "cctv-installation",
-      "intro": "External CCTV installation protects façades, yards, fire exits and approach paths where most unauthorised access begins. Icomply fit weather-rated outdoor cameras across the North West with correct IP-rated housings, sealed cable entry, night illumination performance and mounts that survive wind and rain on commercial and domestic buildings.",
+      "intro": "External CCTV installation protects façades, yards, fire exits and approach paths where most unauthorised access begins. iComply fit weather-rated outdoor cameras across the North West with correct IP-rated housings, sealed cable entry, night illumination performance and mounts that survive wind and rain on commercial and domestic buildings.",
       "body": "Outdoor design considers sunlight glare, IR reflection, mounting height against vandalism, and cable UV protection. We use bullets, turrets or outdoor domes as each elevation demands, and set wide overview plus tighter entrance views. Perimeter upgrades often combine external cameras with better entrance face capture. Installs include secure fixings into suitable substrates and testing after dark where night performance is critical. Stockport engineers cover Greater Manchester and neighbouring counties.",
       "meta_desc": "External CCTV installation for façades, yards & exits. Weather-rated cameras across Greater Manchester, Stockport & North West.",
       "focus_points": [
@@ -1374,7 +1374,7 @@
       "name": "GDPR Camera Siting Review",
       "service": "cctv",
       "related": "cctv-compliance",
-      "intro": "A GDPR camera siting review walks the views you record and flags cameras that cover neighbours, public pavements beyond your boundary, or staff areas without a clear purpose. Icomply mark what to mask, resite or remove, and what signage should say.",
+      "intro": "A GDPR camera siting review walks the views you record and flags cameras that cover neighbours, public pavements beyond your boundary, or staff areas without a clear purpose. iComply mark what to mask, resite or remove, and what signage should say.",
       "body": "UK sites use the Data Protection Act and UK GDPR when CCTV identifies people. We are not a law firm and we do not issue a certificate that makes a system 'GDPR approved'. We do record each camera's aim, whether it needs a privacy mask, and whether the stated purpose still matches the view. You get a short schedule you can keep with your CCTV policy, plus a quote for any resites or masks you want us to carry out. Signage wording is practical: who operates the system and how to ask for footage. Stockport engineers cover the North West.",
       "meta_desc": "GDPR camera siting review for business and landlord CCTV. Aims, masks and signage noted. No invented compliance certificate. North West.",
       "focus_points": [
@@ -1404,9 +1404,9 @@
       "name": "HD CCTV Camera",
       "service": "cctv",
       "related": "ptz-camera-installation",
-      "intro": "HD CCTV cameras capture the detail you need for faces, number plates and stock movement—essential for insurers, dispute resolution and day-to-day site management. Icomply supplies and installs HD and Full HD cameras across Stockport, Manchester and the wider North West, matching lens, IR range and housing to each viewpoint. From single-door coverage to full perimeter rings, we quote fixed prices after survey and commission clean, usable footage—not marketing megapixel claims that fail on site.",
+      "intro": "HD CCTV cameras capture the detail you need for faces, number plates and stock movement—essential for insurers, dispute resolution and day-to-day site management. iComply supplies and installs HD and Full HD cameras across Stockport, Manchester and the wider North West, matching lens, IR range and housing to each viewpoint. From single-door coverage to full perimeter rings, we quote fixed prices after survey and commission clean, usable footage—not marketing megapixel claims that fail on site.",
       "body": "Our engineers work to practical siting guidance aligned with BS EN 62676 principles: correct height, lighting, cable quality and recorder settings. Upgrade paths from older SD or 960H cameras are common on retail and industrial estates; we reuse viable cabling where quality allows and flag when rewire is the safer option. Browse related pages for IP systems, recording, monitoring and PTZ, or ask for a multi-site camera refresh package. Share photos and a floor plan for a faster preliminary estimate.",
-      "meta_desc": "HD CCTV camera install & upgrades across the North West. Clear evidence-grade footage, fixed quotes from Icomply engineers in Stockport & Manchester.",
+      "meta_desc": "HD CCTV camera install & upgrades across the North West. Clear evidence-grade footage, fixed quotes from iComply engineers in Stockport & Manchester.",
       "focus_points": [
         "HD/Full HD camera selection matched to each viewing task",
         "Correct mounting, IR and lighting for usable night images",
@@ -1427,14 +1427,14 @@
           "With suitable IR or low-light sensors, yes. We specify housings and IR range against the actual distance and ambient light on your site."
         ]
       ],
-      "seo_keywords": "HD CCTV camera, Full HD CCTV, HD security camera install, CCTV camera Manchester, HD CCTV Stockport, camera upgrade North West, commercial HD CCTV, Icomply CCTV"
+      "seo_keywords": "HD CCTV camera, Full HD CCTV, HD security camera install, CCTV camera Manchester, HD CCTV Stockport, camera upgrade North West, commercial HD CCTV, iComply CCTV"
     },
     {
       "slug": "hd-cctv-camera-installation",
       "name": "HD CCTV Camera Installation",
       "service": "cctv",
       "related": "hd-cctv-camera",
-      "intro": "HD CCTV camera installation delivers sharp live and recorded video for shops, offices, warehouses and homes that need clearer identification of people and vehicles. Icomply design, install and commission high-definition camera systems across Greater Manchester and the North West, with secure remote viewing and tidy cabling from our Stockport engineers.",
+      "intro": "HD CCTV camera installation delivers sharp live and recorded video for shops, offices, warehouses and homes that need clearer identification of people and vehicles. iComply design, install and commission high-definition camera systems across Greater Manchester and the North West, with secure remote viewing and tidy cabling from our Stockport engineers.",
       "body": "We specify camera resolution, lens type and storage to match lighting conditions and risk points — entrances, tills, yards and car parks. HD systems can be IP or high-definition coaxial depending on existing infrastructure and budget. Every install includes camera aiming, focus, recorder setup, user training and a simple handover pack. Upgrades from older analogue kits are common; we reuse cabling where quality allows to control cost without compromising image quality.",
       "meta_desc": "HD CCTV camera installation for business & home. Design, install & remote viewing across Manchester, Stockport & North West.",
       "focus_points": [
@@ -1464,9 +1464,9 @@
       "name": "HD CCTV Installation",
       "service": "cctv",
       "related": "ip-cctv-system",
-      "intro": "Looking for expert HD CCTV Installation across Greater Manchester and the North West? Icomply Property Services survey, deliver and document HD CCTV Installation as part of our CCTV Systems offering, working to BS EN 62676 · GDPR / DPA camera siting.",
-      "body": "Icomply Property Services survey, deliver and document HD CCTV Installation as part of our CCTV Systems offering, working to BS EN 62676 · GDPR / DPA camera siting. Tell us your postcode, property type and timescales — we aim to respond on business days within 2 hours. Typical jobs include survey, agreed works, quality checks and paperwork suitable for landlords, insurers and facilities managers. Local engineers attend from Stockport with North West coverage including Manchester, Bolton, Liverpool, Preston, Chester and surrounding towns.",
-      "meta_desc": "HD CCTV Installation across the North West. CCTV Systems from Icomply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.",
+      "intro": "Looking for expert HD CCTV Installation across Greater Manchester and the North West? iComply Property Services survey, deliver and document HD CCTV Installation as part of our CCTV Systems offering, working to BS EN 62676 · GDPR / DPA camera siting.",
+      "body": "iComply Property Services survey, deliver and document HD CCTV Installation as part of our CCTV Systems offering, working to BS EN 62676 · GDPR / DPA camera siting. Tell us your postcode, property type and timescales — we aim to respond on business days within 2 hours. Typical jobs include survey, agreed works, quality checks and paperwork suitable for landlords, insurers and facilities managers. Local engineers attend from Stockport with North West coverage including Manchester, Bolton, Liverpool, Preston, Chester and surrounding towns.",
+      "meta_desc": "HD CCTV Installation across the North West. CCTV Systems from iComply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.",
       "seo_keywords": "hd cctv installation, hd cctv installation north west, hd cctv installation manchester, hd cctv installation stockport, cctv systems, property services greater manchester",
       "focus_points": [
         "Survey and fixed-price quote for HD CCTV Installation",
@@ -1498,9 +1498,9 @@
       "name": "Hikvision CCTV",
       "service": "cctv",
       "related": "cctv-installation",
-      "intro": "Hikvision CCTV remains one of the most widely deployed video surveillance platforms for UK businesses, landlords and multi-site operators. Icomply Property Services design, install, configure and maintain Hikvision CCTV systems across Greater Manchester and the North West — from compact NVR kits to multi-camera estates with remote viewing. Working to practical BS EN 62676 siting guidance, our Stockport engineers deliver fixed-price surveys, professional cable routes, tuned imaging and handover packs your team can actually use.",
+      "intro": "Hikvision CCTV remains one of the most widely deployed video surveillance platforms for UK businesses, landlords and multi-site operators. iComply Property Services design, install, configure and maintain Hikvision CCTV systems across Greater Manchester and the North West — from compact NVR kits to multi-camera estates with remote viewing. Working to practical BS EN 62676 siting guidance, our Stockport engineers deliver fixed-price surveys, professional cable routes, tuned imaging and handover packs your team can actually use.",
       "body": "Hikvision projects succeed when camera selection matches the scene: entrance identification, car parks, yards, retail floors or internal corridors each need different lenses, housings and lighting strategy. We position cameras to reduce glare and blind spots, set recording retention to your policy, and secure network access with strong credentials. PoE switches, surge protection and neat containment protect long-term reliability. For existing Hikvision systems we expand cameras, replace failed NVRs, recover passwords where legitimate ownership is proven, and upgrade storage. Privacy and signage obligations are discussed so you deploy surveillance responsibly. Coverage includes Manchester, Cheshire, Lancashire, Merseyside and Cumbria with multi-site packages for FM teams.",
-      "meta_desc": "Hikvision CCTV install, configure & maintain. NVRs, IP cameras & remote viewing. Icomply — Stockport & North West.",
+      "meta_desc": "Hikvision CCTV install, configure & maintain. NVRs, IP cameras & remote viewing. iComply — Stockport & North West.",
       "focus_points": [
         "Hikvision camera and NVR system design for real-world scenes",
         "Professional install, PoE networking and secure remote access",
@@ -1528,7 +1528,7 @@
       "name": "Hikvision CCTV Installation",
       "service": "cctv",
       "related": "cctv-installation",
-      "intro": "Hikvision CCTV installation remains one of the most requested commercial and domestic platforms in the UK for capable HD and 4K imaging at competitive cost. Icomply supply, install and maintain Hikvision camera and recorder systems across Greater Manchester and the North West, with proper commissioning, cybersecurity basics and user training from Stockport.",
+      "intro": "Hikvision CCTV installation remains one of the most requested commercial and domestic platforms in the UK for capable HD and 4K imaging at competitive cost. iComply supply, install and maintain Hikvision camera and recorder systems across Greater Manchester and the North West, with proper commissioning, cybersecurity basics and user training from Stockport.",
       "body": "We specify Hikvision domes, turrets, bullets and AcuSense-style analytics where nuisance alerts need reducing, paired with compatible NVRs or hybrid recorders and correctly sized hard drives. Installs include network segmentation advice where IT requires it, strong passwords replacing defaults, firmware awareness and remote app setup. Existing Hikvision estates can be expanded, re-aimed or migrated to higher resolution without discarding all infrastructure.",
       "meta_desc": "Hikvision CCTV installation, expansion & service across Greater Manchester & the North West. Fixed-price surveys from Stockport.",
       "focus_points": [
@@ -1560,7 +1560,7 @@
       "related": "outdoor-cctv-installation",
       "intro": "Want Indoor CCTV Installation delivered to current UK standards with local engineers? We handle Indoor CCTV Installation alongside related CCTV Systems works so one contractor can reduce site disruption.",
       "body": "We handle Indoor CCTV Installation alongside related CCTV Systems works so one contractor can reduce site disruption. Based in Offerton, Stockport (SK2 5DE), we cover 150+ towns across the North West. Typical jobs include survey, agreed works, quality checks and paperwork suitable for landlords, insurers and facilities managers. Local engineers attend from Stockport with North West coverage including Manchester, Bolton, Liverpool, Preston, Chester and surrounding towns.",
-      "meta_desc": "Indoor CCTV Installation across the North West. CCTV Systems from Icomply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.",
+      "meta_desc": "Indoor CCTV Installation across the North West. CCTV Systems from iComply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.",
       "seo_keywords": "indoor cctv installation, indoor cctv installation north west, indoor cctv installation manchester, indoor cctv installation stockport, cctv systems, property services greater manchester",
       "focus_points": [
         "Survey and fixed-price quote for Indoor CCTV Installation",
@@ -1592,7 +1592,7 @@
       "name": "Internal CCTV Installation",
       "service": "cctv",
       "related": "cctv-installation",
-      "intro": "Internal CCTV installation covers receptions, corridors, stockrooms, production areas and communal halls with discreet cameras that still deliver clear evidence. Icomply install indoor CCTV across Greater Manchester and the North West, balancing security needs with privacy expectations and clean finishes suited to customer-facing spaces.",
+      "intro": "Internal CCTV installation covers receptions, corridors, stockrooms, production areas and communal halls with discreet cameras that still deliver clear evidence. iComply install indoor CCTV across Greater Manchester and the North West, balancing security needs with privacy expectations and clean finishes suited to customer-facing spaces.",
       "body": "Indoors we favour dome and turret cameras for aesthetics, careful cable concealment in suspended ceilings, and positions that capture doorways without unnecessary intrusion into private rooms. Low-light corridors and window glare are handled with suitable sensors and angles. Systems integrate with existing recorders or new NVRs, and we train staff on GDPR-minded use and signage. Ideal for offices, shops, schools’ circulation areas, care communal zones and apartment blocks from our Stockport base.",
       "meta_desc": "Internal CCTV installation for offices, retail & communal areas. Discreet indoor cameras across Manchester, Stockport & North West.",
       "focus_points": [
@@ -1622,9 +1622,9 @@
       "name": "IP CCTV System",
       "service": "cctv",
       "related": "hd-cctv-camera",
-      "intro": "An IP CCTV system streams high-resolution video over your network, giving clearer evidence, flexible camera placement and app-based viewing for sites across Greater Manchester and the North West. Icomply designs and installs IP CCTV for shops, warehouses, offices and multi-site estates—specifying cameras, NVRs, PoE switching and remote access so images stay sharp day and night. We survey coverage risks, agree a fixed-price scope and commission the system with a practical handover pack.",
+      "intro": "An IP CCTV system streams high-resolution video over your network, giving clearer evidence, flexible camera placement and app-based viewing for sites across Greater Manchester and the North West. iComply designs and installs IP CCTV for shops, warehouses, offices and multi-site estates—specifying cameras, NVRs, PoE switching and remote access so images stay sharp day and night. We survey coverage risks, agree a fixed-price scope and commission the system with a practical handover pack.",
       "body": "From Stockport (SK2) our engineers cover Manchester, Cheshire, Lancashire, Merseyside and Cumbria with same-week surveys where capacity allows. Whether you need a compact four-camera IP kit or a multi-building network video platform, we align cabling, storage retention and user permissions to how your team actually works. Related options include HD cameras, PTZ units, wireless links for awkward spans and integration with access control. Request a quote with postcode, site type and preferred retention period—we aim to reply within two business hours.",
-      "meta_desc": "IP CCTV system design & install across Greater Manchester & the North West. Fixed-price quotes, PoE NVR setups, remote viewing. Icomply, Stockport.",
+      "meta_desc": "IP CCTV system design & install across Greater Manchester & the North West. Fixed-price quotes, PoE NVR setups, remote viewing. iComply, Stockport.",
       "focus_points": [
         "Site survey, camera plan and fixed-price IP CCTV quote",
         "PoE cameras, NVR storage and secure remote viewing setup",
@@ -1654,7 +1654,7 @@
       "related": "commercial-cctv-package",
       "intro": "Need reliable Landlord CCTV Installation from a Stockport-based team with fixed-price quotes? Our team survey, deliver and document Landlord CCTV Installation for landlords, homeowners, FM teams and commercial clients, with handover packs, certificates and job records on completion where applicable.",
       "body": "Our team survey, deliver and document Landlord CCTV Installation for landlords, homeowners, FM teams and commercial clients, with handover packs, certificates and job records on completion where applicable. Ask about multi-property packages if you manage several sites or a void programme. Typical jobs include survey, agreed works, quality checks and paperwork suitable for landlords, insurers and facilities managers. Local engineers attend from Stockport with North West coverage including Manchester, Bolton, Liverpool, Preston, Chester and surrounding towns.",
-      "meta_desc": "Landlord CCTV Installation across the North West. CCTV Systems from Icomply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.",
+      "meta_desc": "Landlord CCTV Installation across the North West. CCTV Systems from iComply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.",
       "seo_keywords": "landlord cctv installation, landlord cctv installation north west, landlord cctv installation manchester, landlord cctv installation stockport, cctv systems, property services greater manchester",
       "focus_points": [
         "Survey and fixed-price quote for Landlord CCTV Installation",
@@ -1686,7 +1686,7 @@
       "name": "Landlord Common Part CCTV",
       "service": "cctv",
       "related": "landlord-cctv-installation",
-      "intro": "Landlord common-part CCTV covers entrances, bin stores, car parks and stair lobbies in blocks and HMOs, not cameras inside tenants' homes. Icomply design those shared views with signage, a named operator and a retention period a managing agent can explain.",
+      "intro": "Landlord common-part CCTV covers entrances, bin stores, car parks and stair lobbies in blocks and HMOs, not cameras inside tenants' homes. iComply design those shared views with signage, a named operator and a retention period a managing agent can explain.",
       "body": "Block cameras fail audits when they point at front doors from an angle that looks into flats, or when nobody knows who can export footage. We place cameras on the common parts you control, keep views out of dwellings, and set remote access for the agent rather than every resident. Door-entry and access-control integration is optional and quoted only when those systems are already on site. Install, repair and drive changes are the same Stockport team. You receive a written quote after we see risers, power and where the recorder can live.",
       "meta_desc": "CCTV for landlord common parts: entrances, stairs, bin stores and car parks. Signage and retention discussed. North West blocks and HMOs.",
       "focus_points": [
@@ -1716,7 +1716,7 @@
       "name": "Loading Bay Camera Add",
       "service": "cctv",
       "related": "warehouse-cctv",
-      "intro": "A loading bay camera add is one or more extra views on a dock, yard door or goods-in lane, using the recorder you already have where it still has channels and disk. Icomply check capacity first so the new camera does not shorten retention on the rest of the site.",
+      "intro": "A loading bay camera add is one or more extra views on a dock, yard door or goods-in lane, using the recorder you already have where it still has channels and disk. iComply check capacity first so the new camera does not shorten retention on the rest of the site.",
       "body": "Goods-in disputes need a camera that sees the vehicle, the door and the threshold, not a dome lost in the roof steel. We test spare NVR channels, PoE ports and days of recording at the current settings, then quote a camera, cabling and a drive increase if the maths needs it. External housings and IR are specified for the bay lighting. If the recorder is full we say whether a larger unit is the honest next step. Warehouses and trade counters across Greater Manchester and the North West are covered from Stockport.",
       "meta_desc": "Add loading bay and goods-in CCTV cameras to an existing recorder. Channel, PoE and retention checked first. North West warehouses.",
       "focus_points": [
@@ -1746,7 +1746,7 @@
       "name": "Multi Site CCTV",
       "service": "cctv",
       "related": "commercial-cctv-system",
-      "intro": "Multi-site CCTV gives regional businesses and housing providers consistent camera standards, remote oversight and simpler maintenance across many premises. Icomply deploy and support multi-site CCTV estates throughout the North West with repeatable designs, centralised viewing options and coordinated engineer attendance from Stockport.",
+      "intro": "Multi-site CCTV gives regional businesses and housing providers consistent camera standards, remote oversight and simpler maintenance across many premises. iComply deploy and support multi-site CCTV estates throughout the North West with repeatable designs, centralised viewing options and coordinated engineer attendance from Stockport.",
       "body": "We standardise camera naming, recorder platforms and app access so managers are not learning a different system in every town. Roll-outs can prioritise highest-risk sites first while keeping budgets controlled. Service agreements cover health checks, hard-drive monitoring and reactive call-outs. Whether you run retail branches, care sites, warehouses or residential blocks, one partner for design, install and upkeep reduces supplier sprawl across Greater Manchester and beyond.",
       "meta_desc": "Multi-site CCTV design, install & support for regional estates. Standardised systems across Greater Manchester & the North West.",
       "focus_points": [
@@ -1778,7 +1778,7 @@
       "related": "cctv-system-upgrade",
       "intro": "Want Multi Site CCTV Monitoring Setup delivered to current UK standards with local engineers? We handle Multi Site CCTV Monitoring Setup alongside related CCTV Systems works so one contractor can reduce site disruption.",
       "body": "We handle Multi Site CCTV Monitoring Setup alongside related CCTV Systems works so one contractor can reduce site disruption. Based in Offerton, Stockport (SK2 5DE), we cover 150+ towns across the North West. Typical jobs include survey, agreed works, quality checks and paperwork suitable for landlords, insurers and facilities managers. Local engineers attend from Stockport with North West coverage including Manchester, Bolton, Liverpool, Preston, Chester and surrounding towns.",
-      "meta_desc": "Multi Site CCTV Monitoring Setup across the North West. CCTV Systems from Icomply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.",
+      "meta_desc": "Multi Site CCTV Monitoring Setup across the North West. CCTV Systems from iComply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.",
       "seo_keywords": "multi site cctv monitoring setup, multi site cctv monitoring setup north west, multi site cctv monitoring setup manchester, multi site cctv monitoring setup stockport, cctv systems, property services greater manchester",
       "focus_points": [
         "Survey and fixed-price quote for Multi Site CCTV Monitoring Setup",
@@ -1810,7 +1810,7 @@
       "name": "Number Plate Recognition Camera",
       "service": "cctv",
       "related": "anpr-cctv-system",
-      "intro": "Number plate recognition cameras (ANPR) capture vehicle registration plates at gates, car parks and yard entrances for security, parking control and incident investigation. Icomply design and install ANPR-capable camera solutions across the North West with correct angles, lighting consideration and recorder or software integration for reliable plate reads.",
+      "intro": "Number plate recognition cameras (ANPR) capture vehicle registration plates at gates, car parks and yard entrances for security, parking control and incident investigation. iComply design and install ANPR-capable camera solutions across the North West with correct angles, lighting consideration and recorder or software integration for reliable plate reads.",
       "body": "Successful plate capture depends on camera height, shutter performance, IR design and vehicle approach speed — not just megapixels. We survey entry lanes, recommend dedicated ANPR or proven general cameras for slower sites, and set up review workflows for security teams. Data protection applies when plates are stored; we help you document purpose and retention. Ideal for warehouses, private car parks, dealerships and multi-tenant commercial estates around Greater Manchester.",
       "meta_desc": "Number plate recognition camera installation (ANPR) for gates & car parks. Design & install across Manchester & the North West.",
       "focus_points": [
@@ -1840,9 +1840,9 @@
       "name": "NVR Installation",
       "service": "cctv",
       "related": "cctv-recording",
-      "intro": "NVR installation is the backbone of modern IP CCTV — recording cameras reliably, managing storage and enabling secure playback. Icomply Property Services supply and install network video recorders for businesses, landlords and multi-site operators across the North West. From Stockport we size NVRs for camera count, resolution and retention targets, install them in ventilated secure locations, configure networks and user accounts, and hand over systems your team can operate day to day.",
+      "intro": "NVR installation is the backbone of modern IP CCTV — recording cameras reliably, managing storage and enabling secure playback. iComply Property Services supply and install network video recorders for businesses, landlords and multi-site operators across the North West. From Stockport we size NVRs for camera count, resolution and retention targets, install them in ventilated secure locations, configure networks and user accounts, and hand over systems your team can operate day to day.",
       "body": "Good NVR installation covers more than racking a box: PoE switch capacity, cable certification where needed, UPS options, hard-drive health, cyber hygiene and remote access hardening all matter. We migrate existing IP cameras where compatible, or install new camera estates with matching licences and firmware. RAID or multi-drive setups are specified for higher-resilience sites. Training covers live view, search, export for incidents and basic troubleshooting. Maintenance plans include health checks and storage warnings before disks fail. NVR works pair with Hikvision and other major platforms we support. Coverage spans Greater Manchester, Cheshire, Lancashire, Merseyside and Cumbria with same-week appointments where capacity allows.",
-      "meta_desc": "NVR installation for IP CCTV. Storage sizing, secure setup & training. Icomply engineers — Stockport & North West.",
+      "meta_desc": "NVR installation for IP CCTV. Storage sizing, secure setup & training. iComply engineers — Stockport & North West.",
       "focus_points": [
         "NVR specification for camera count, resolution and retention",
         "Secure physical install, networking and user account setup",
@@ -1870,7 +1870,7 @@
       "name": "Office CCTV Installation",
       "service": "cctv",
       "related": "commercial-cctv-system",
-      "intro": "Office CCTV installation balances security with a professional environment — covering receptions, server rooms, fire exits and car parks without intrusive clutter. Icomply install discrete HD systems for SMEs and multi-floor offices across Greater Manchester, with privacy-aware positioning and secure remote access for facilities managers.",
+      "intro": "Office CCTV installation balances security with a professional environment — covering receptions, server rooms, fire exits and car parks without intrusive clutter. iComply install discrete HD systems for SMEs and multi-floor offices across Greater Manchester, with privacy-aware positioning and secure remote access for facilities managers.",
       "body": "We map public versus staff-only areas, avoid unnecessary monitoring of break rooms where policy discourages it, and document camera purposes for your compliance approach. Reception face capture, lift lobbies, IT rooms and perimeter doors are common priorities. Networked IP systems integrate cleanly with modern offices; existing analogue lines can be hybridised during phased upgrades. Install and commissioning from our Stockport team include user training for reception or FM leads.",
       "meta_desc": "Office CCTV installation — discreet HD cameras for receptions, exits & IT rooms. Greater Manchester, Stockport & North West.",
       "focus_points": [
@@ -1900,9 +1900,9 @@
       "name": "Outdoor CCTV Installation",
       "service": "cctv",
       "related": "multi-site-cctv-monitoring-setup",
-      "intro": "Planning Outdoor CCTV Installation for a home, rental portfolio or commercial site? Icomply Property Services survey, deliver and document Outdoor CCTV Installation as part of our CCTV Systems offering, working to BS EN 62676 · GDPR / DPA camera siting.",
-      "body": "Icomply Property Services survey, deliver and document Outdoor CCTV Installation as part of our CCTV Systems offering, working to BS EN 62676 · GDPR / DPA camera siting. Tell us your postcode, property type and timescales — we aim to respond on business days within 2 hours. Typical jobs include survey, agreed works, quality checks and paperwork suitable for landlords, insurers and facilities managers. Local engineers attend from Stockport with North West coverage including Manchester, Bolton, Liverpool, Preston, Chester and surrounding towns.",
-      "meta_desc": "Outdoor CCTV Installation across the North West. CCTV Systems from Icomply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.",
+      "intro": "Planning Outdoor CCTV Installation for a home, rental portfolio or commercial site? iComply Property Services survey, deliver and document Outdoor CCTV Installation as part of our CCTV Systems offering, working to BS EN 62676 · GDPR / DPA camera siting.",
+      "body": "iComply Property Services survey, deliver and document Outdoor CCTV Installation as part of our CCTV Systems offering, working to BS EN 62676 · GDPR / DPA camera siting. Tell us your postcode, property type and timescales — we aim to respond on business days within 2 hours. Typical jobs include survey, agreed works, quality checks and paperwork suitable for landlords, insurers and facilities managers. Local engineers attend from Stockport with North West coverage including Manchester, Bolton, Liverpool, Preston, Chester and surrounding towns.",
+      "meta_desc": "Outdoor CCTV Installation across the North West. CCTV Systems from iComply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.",
       "seo_keywords": "outdoor cctv installation, outdoor cctv installation north west, outdoor cctv installation manchester, outdoor cctv installation stockport, cctv systems, property services greater manchester",
       "focus_points": [
         "Survey and fixed-price quote for Outdoor CCTV Installation",
@@ -1934,9 +1934,9 @@
       "name": "PTZ Camera Installation",
       "service": "cctv",
       "related": "cctv-installation",
-      "intro": "PTZ camera installation gives you pan, tilt and zoom control over large yards, car parks and open industrial floors where fixed cameras alone leave blind gaps. Icomply installs and commissions PTZ units across Greater Manchester and the North West—specifying mounts, brackets, power, network and presets so operators can patrol or jump to key views in seconds. We balance PTZ coverage with fixed cameras for continuous recording of critical doors and till points.",
+      "intro": "PTZ camera installation gives you pan, tilt and zoom control over large yards, car parks and open industrial floors where fixed cameras alone leave blind gaps. iComply installs and commissions PTZ units across Greater Manchester and the North West—specifying mounts, brackets, power, network and presets so operators can patrol or jump to key views in seconds. We balance PTZ coverage with fixed cameras for continuous recording of critical doors and till points.",
       "body": "PTZ systems need sturdy poles or buildings, weather-rated housings and careful bandwidth planning on IP links. Our engineers programme home positions, patrol tours and privacy masks where required, and train nominated users on joystick or software control. Ideal for logistics depots, schools with large grounds and retail parks. Based in Stockport, we offer fixed-price quotes after survey including cabling routes and lightning/surge considerations for exposed mounts. Ask about hybrid fixed-plus-PTZ designs for best evidence quality.",
-      "meta_desc": "PTZ camera installation across Greater Manchester & the North West. Pan-tilt-zoom CCTV, presets & training. Fixed quotes from Icomply.",
+      "meta_desc": "PTZ camera installation across Greater Manchester & the North West. Pan-tilt-zoom CCTV, presets & training. Fixed quotes from iComply.",
       "focus_points": [
         "Survey for PTZ coverage, mounting height and power/network",
         "Install of weather-rated PTZ with secure brackets and cabling",
@@ -1964,9 +1964,9 @@
       "name": "Remote CCTV Access",
       "service": "cctv",
       "related": "cctv-monitoring",
-      "intro": "Remote CCTV access lets owners and managers view live and recorded video from anywhere with a secure connection—vital for multi-site estates, out-of-hours response and travelling directors. Icomply configures remote CCTV access across the North West with encrypted apps or browsers, strong passwords, two-factor options where supported, and network settings that do not expose your whole LAN. Fixed-price setup after we understand your recorder model and broadband.",
+      "intro": "Remote CCTV access lets owners and managers view live and recorded video from anywhere with a secure connection—vital for multi-site estates, out-of-hours response and travelling directors. iComply configures remote CCTV access across the North West with encrypted apps or browsers, strong passwords, two-factor options where supported, and network settings that do not expose your whole LAN. Fixed-price setup after we understand your recorder model and broadband.",
       "body": "Poor remote setups—default ports, shared passwords, UPnP free-for-alls—are a common security risk. Our Stockport engineers harden access, create named users and train you on mobile and desktop viewing. We also verify that remote sessions do not stop local recording. Compatible with IP CCTV systems, commercial NVRs and many hybrid recorders. Covering Greater Manchester and surrounding counties, we can attend site or guide IT contacts through firewall rules when preferred.",
-      "meta_desc": "Secure remote CCTV access setup across Greater Manchester & the North West. Apps, users & encryption. Fixed quotes from Icomply.",
+      "meta_desc": "Secure remote CCTV access setup across Greater Manchester & the North West. Apps, users & encryption. Fixed quotes from iComply.",
       "focus_points": [
         "Encrypted remote viewing via app or browser",
         "Named user accounts instead of shared passwords",
@@ -1996,7 +1996,7 @@
       "related": "cctv-maintenance",
       "intro": "Searching for professional Remote Viewing CCTV with clear scope and documentation? Our team survey, deliver and document Remote Viewing CCTV for landlords, homeowners, FM teams and commercial clients, with handover packs, certificates and job records on completion where applicable.",
       "body": "Our team survey, deliver and document Remote Viewing CCTV for landlords, homeowners, FM teams and commercial clients, with handover packs, certificates and job records on completion where applicable. Ask about multi-property packages if you manage several sites or a void programme. Typical jobs include survey, agreed works, quality checks and paperwork suitable for landlords, insurers and facilities managers. Local engineers attend from Stockport with North West coverage including Manchester, Bolton, Liverpool, Preston, Chester and surrounding towns.",
-      "meta_desc": "Remote Viewing CCTV across the North West. CCTV Systems from Icomply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.",
+      "meta_desc": "Remote Viewing CCTV across the North West. CCTV Systems from iComply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.",
       "seo_keywords": "remote viewing cctv, remote viewing cctv north west, remote viewing cctv manchester, remote viewing cctv stockport, cctv systems, property services greater manchester",
       "focus_points": [
         "Survey and fixed-price quote for Remote Viewing CCTV",
@@ -2030,7 +2030,7 @@
       "related": "warehouse-cctv",
       "intro": "Planning Retail CCTV System for a home, rental portfolio or commercial site? Our team survey, deliver and document Retail CCTV System for landlords, homeowners, FM teams and commercial clients, with handover packs, certificates and job records on completion where applicable.",
       "body": "Our team survey, deliver and document Retail CCTV System for landlords, homeowners, FM teams and commercial clients, with handover packs, certificates and job records on completion where applicable. Ask about multi-property packages if you manage several sites or a void programme. Typical jobs include survey, agreed works, quality checks and paperwork suitable for landlords, insurers and facilities managers. Local engineers attend from Stockport with North West coverage including Manchester, Bolton, Liverpool, Preston, Chester and surrounding towns.",
-      "meta_desc": "Retail CCTV System across the North West. CCTV Systems from Icomply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.",
+      "meta_desc": "Retail CCTV System across the North West. CCTV Systems from iComply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.",
       "seo_keywords": "retail cctv system, retail cctv system north west, retail cctv system manchester, retail cctv system stockport, cctv systems, property services greater manchester",
       "focus_points": [
         "Survey and fixed-price quote for Retail CCTV System",
@@ -2062,7 +2062,7 @@
       "name": "Security Camera Installation",
       "service": "cctv",
       "related": "cctv-installation",
-      "intro": "Security camera installation from Icomply covers the full journey from survey to live recording — cameras, mounts, cabling, recorders and remote access for homes and businesses across Greater Manchester and the North West. We focus on usable evidence, reliable uptime and clear fixed-price quotes from our Stockport engineers.",
+      "intro": "Security camera installation from iComply covers the full journey from survey to live recording — cameras, mounts, cabling, recorders and remote access for homes and businesses across Greater Manchester and the North West. We focus on usable evidence, reliable uptime and clear fixed-price quotes from our Stockport engineers.",
       "body": "Whether you call them security cameras or CCTV, outcomes matter: deter crime, review incidents and support staff safety. We specify indoor and outdoor cameras, day/night performance and storage retention, then install with neat finishes and full testing. Upgrades replace blind-spot layouts and obsolete recorders without unnecessary waste. Landlords, retailers, offices and homeowners receive the same professional commissioning standard and handover training.",
       "meta_desc": "Security camera installation for home & business. Survey, install & remote viewing across Greater Manchester & the North West.",
       "focus_points": [
@@ -2092,7 +2092,7 @@
       "name": "Shop CCTV Installation",
       "service": "cctv",
       "related": "commercial-cctv-system",
-      "intro": "Shop CCTV installation deters theft, monitors till points and covers stockrooms and rear exits where retail losses often occur. Icomply fit discreet and overt camera systems for high-street, parade and retail-park shops across Greater Manchester, with HD or 4K options, remote viewing for owners and tidy installs that respect customer-facing presentation.",
+      "intro": "Shop CCTV installation deters theft, monitors till points and covers stockrooms and rear exits where retail losses often occur. iComply fit discreet and overt camera systems for high-street, parade and retail-park shops across Greater Manchester, with HD or 4K options, remote viewing for owners and tidy installs that respect customer-facing presentation.",
       "body": "Typical shop designs cover entrance face-on views, till and counter angles, aisles, stock areas and rear delivery doors. We select dome or turret cameras for ceilings and bullet or turret units for exteriors, set recording retention for incident review, and configure smartphone alerts where useful. Works can be completed outside peak trading hours. Combined quotes with intruder alarms or access control are available for full retail security packages from Stockport.",
       "meta_desc": "Shop CCTV installation for retail theft prevention & till coverage. HD systems across Manchester, Stockport & the North West.",
       "focus_points": [
@@ -2122,9 +2122,9 @@
       "name": "Video Surveillance System",
       "service": "cctv",
       "related": "cctv-installation",
-      "intro": "A video surveillance system is more than a row of cameras—it is the end-to-end design of capture, transmission, storage, viewing and response. Icomply delivers video surveillance systems for North West businesses, landlords and multi-site operators, combining HD/IP cameras, structured networking, NVRs and clear operating procedures. We work to practical BS EN 62676-aligned siting and provide handover packs that help managers use the system under pressure.",
+      "intro": "A video surveillance system is more than a row of cameras—it is the end-to-end design of capture, transmission, storage, viewing and response. iComply delivers video surveillance systems for North West businesses, landlords and multi-site operators, combining HD/IP cameras, structured networking, NVRs and clear operating procedures. We work to practical BS EN 62676-aligned siting and provide handover packs that help managers use the system under pressure.",
       "body": "Projects range from boutique retail to warehouses and apartment schemes. Our Stockport team surveys pinch points, lighting and network capacity, then installs and commissions with fixed pricing after agreement. You can expand later with PTZ, analytics or access-control integration without starting from scratch. Coverage spans Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria. Contact us with site plans and priority risks for a focused surveillance proposal.",
-      "meta_desc": "Video surveillance system design & install across the North West. HD/IP cameras, NVR storage & training. Fixed quotes from Icomply, Stockport.",
+      "meta_desc": "Video surveillance system design & install across the North West. HD/IP cameras, NVR storage & training. Fixed quotes from iComply, Stockport.",
       "focus_points": [
         "End-to-end surveillance design: cameras, network and storage",
         "Evidence-quality images with correct siting and lighting",
@@ -2145,14 +2145,14 @@
           "Handover includes live view, search and export basics for nominated users. Extra training sessions can be added for larger teams."
         ]
       ],
-      "seo_keywords": "video surveillance system, video surveillance installation, commercial surveillance North West, IP surveillance Manchester, security video system Stockport, NVR surveillance, Icomply CCTV"
+      "seo_keywords": "video surveillance system, video surveillance installation, commercial surveillance North West, IP surveillance Manchester, security video system Stockport, NVR surveillance, iComply CCTV"
     },
     {
       "slug": "warehouse-cctv",
       "name": "Warehouse CCTV",
       "service": "cctv",
       "related": "commercial-cctv-system",
-      "intro": "Warehouse CCTV monitors loading bays, racking aisles, yards and perimeter fences where goods, plant and vehicles are most exposed. Icomply design and install warehouse camera systems across the North West with long-range external cameras, high-mounted internal views and storage sized for multi-shift operations and insurance reviews.",
+      "intro": "Warehouse CCTV monitors loading bays, racking aisles, yards and perimeter fences where goods, plant and vehicles are most exposed. iComply design and install warehouse camera systems across the North West with long-range external cameras, high-mounted internal views and storage sized for multi-shift operations and insurance reviews.",
       "body": "Industrial sites need careful lens selection for distance, height and lighting — including night operations and HGV movement. We plan cable routes through warehouse steelwork, use weather-rated housings outdoors and position cameras to reduce blind spots behind racking. Remote multi-user access supports shift supervisors and off-site managers. Power, network and pole or bracket works are coordinated so installs suit live logistics environments around Greater Manchester and neighbouring counties.",
       "meta_desc": "Warehouse CCTV for loading bays, yards & aisles. Industrial camera design & install across Greater Manchester & the North West.",
       "focus_points": [
@@ -2182,9 +2182,9 @@
       "name": "Wireless CCTV",
       "service": "cctv",
       "related": "ip-cctv-system",
-      "intro": "Wireless CCTV bridges gaps where digging ducts or running long cables is impractical—temporary sites, listed buildings, wide yards and multi-building estates. Icomply designs wireless CCTV links and battery or mains-powered camera options across the North West, always pairing radio with solid recording and cybersecurity so ‘wireless’ never means ‘unsecured’. We survey line-of-sight, interference and power so expectations match real-world performance.",
+      "intro": "Wireless CCTV bridges gaps where digging ducts or running long cables is impractical—temporary sites, listed buildings, wide yards and multi-building estates. iComply designs wireless CCTV links and battery or mains-powered camera options across the North West, always pairing radio with solid recording and cybersecurity so ‘wireless’ never means ‘unsecured’. We survey line-of-sight, interference and power so expectations match real-world performance.",
       "body": "True wireless may mean wireless bridging between buildings with cameras still on PoE locally, or fully wireless cameras with robust encryption. We explain the trade-offs in range, reliability and maintenance compared with cabled IP CCTV. Stockport-based engineers cover Greater Manchester and neighbouring counties; fixed quotes follow a site radio check where required. Ideal companions include remote access setup, recording configuration and planned battery or solar checks on remote poles.",
-      "meta_desc": "Wireless CCTV design & install across Greater Manchester & the North West. Bridge links, secure cameras & fixed quotes from Icomply.",
+      "meta_desc": "Wireless CCTV design & install across Greater Manchester & the North West. Bridge links, secure cameras & fixed quotes from iComply.",
       "focus_points": [
         "Radio survey for line-of-sight and interference risks",
         "Secure wireless bridges or encrypted wireless cameras",
@@ -2212,7 +2212,7 @@
       "name": "Wireless CCTV Installation",
       "service": "cctv",
       "related": "cctv-installation",
-      "intro": "Wireless CCTV installation suits buildings where cable routes are impractical — listed interiors, temporary sites, outbuildings or rapid deployments. Icomply design wireless and hybrid CCTV across Greater Manchester with careful attention to Wi-Fi or point-to-point links, power availability and recording reliability so wireless does not mean weak security.",
+      "intro": "Wireless CCTV installation suits buildings where cable routes are impractical — listed interiors, temporary sites, outbuildings or rapid deployments. iComply design wireless and hybrid CCTV across Greater Manchester with careful attention to Wi-Fi or point-to-point links, power availability and recording reliability so wireless does not mean weak security.",
       "body": "We assess signal paths, interference and mounting for wireless bridges or Wi-Fi cameras, and prefer recording to a local NVR rather than solely to a phone cloud when continuous evidence matters. Power-over-Ethernet injectors, spurs and solar/battery options can be discussed for remote gates. Hybrid designs use wired cores with wireless edge cameras. Honest advice is part of the service: if cable is feasible and more reliable, we will say so. Coverage from Stockport spans the wider North West.",
       "meta_desc": "Wireless CCTV installation for difficult cable routes & outbuildings. Hybrid designs across Manchester, Stockport & the North West.",
       "focus_points": [

@@ -270,7 +270,7 @@ $schema = [
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
                 <img src="<?= htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8') ?>"
-                     alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> by Icomply Property Services"
+                     alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> by iComply Property Services"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
                      loading="eager"
                      onerror="this.style.display='none'">
@@ -357,7 +357,7 @@ $schema = [
                 <?php endforeach; ?>
             <?php else: ?>
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
-                Icomply Property Services designs, installs, commissions, maintains and certifies
+                iComply Property Services designs, installs, commissions, maintains and certifies
                 <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong>
                 <?php if ($ownsMainland): ?>
                 for commercial, industrial, multi-let, care and residential properties across England, Wales and mainland Scotland.

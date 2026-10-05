@@ -92,7 +92,7 @@ require SITE_ROOT . '/includes/header.php';
             <p class="text-xs uppercase tracking-[0.2em] text-[#ff6b00] font-semibold mb-3"><?= manufacturerH(manufacturerCoverageLabel($entry)) ?> · town <?= (int)$pos ?> of <?= count($areasForBrand) ?></p>
             <h1 class="text-4xl md:text-5xl font-semibold tracking-tight leading-tight"><?= manufacturerH($brand) ?> <span class="text-[#ff6b00]">in <?= manufacturerH($areaName) ?></span></h1>
             <?php if (manufacturerIsBarriersPartner($entry)): ?>
-                <p class="mfr-partner-banner mt-4">Barriers partner: CAME. Gard barriers and gate operators are specified with Icomply.</p>
+                <p class="mfr-partner-banner mt-4">Barriers partner: CAME. Gard barriers and gate operators are specified with iComply.</p>
             <?php endif; ?>
             <p class="mt-6 text-lg text-white/85 leading-relaxed"><?= manufacturerH($intro) ?></p>
             <div class="mt-8 flex flex-wrap gap-3">

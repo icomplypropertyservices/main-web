@@ -23,7 +23,7 @@ require SITE_ROOT . '/includes/header.php';
 
 <section class="relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="absolute inset-0">
-        <img src="<?= htmlspecialchars($EL_SERVICE_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($EL_NAME, ENT_QUOTES, 'UTF-8') ?> — Icomply Property Services" class="w-full h-full object-cover opacity-30" loading="eager">
+        <img src="<?= htmlspecialchars($EL_SERVICE_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($EL_NAME, ENT_QUOTES, 'UTF-8') ?> — iComply Property Services" class="w-full h-full object-cover opacity-30" loading="eager">
         <div class="absolute inset-0 bg-gradient-to-r from-[#0B1F3A] via-[#0B1F3A]/95 to-[#0B1F3A]/75"></div>
     </div>
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">

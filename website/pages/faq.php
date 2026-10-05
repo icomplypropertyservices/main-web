@@ -6,7 +6,7 @@ require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/share.php';
 
 $pageTitle = 'FAQ | Property Compliance Questions Answered';
-$metaDesc = 'FAQ for Icomply Property Services, Stockport. EICR, fire alarms, emergency lighting, gas safety, CCTV, access, construction, quotes and coverage. Call 07517806082. No scheme badges we cannot verify.';
+$metaDesc = 'FAQ for iComply Property Services, Stockport. EICR, fire alarms, emergency lighting, gas safety, CCTV, access, construction, quotes and coverage. Call 07517806082. No scheme badges we cannot verify.';
 $metaKeywords = 'property compliance FAQ, EICR questions, BS 5839 fire alarm, emergency lighting testing, gas safety certificate, CCTV installation, access control, North West';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/faq.php');
@@ -138,7 +138,7 @@ $faqs = [
     // Shop
     [
         'cat' => 'Shop & products',
-        'q' => 'What can I buy in the Icomply shop?',
+        'q' => 'What can I buy in the iComply shop?',
         'a' => 'The trade shop lists kits, parts and products. Checkout is the Shopify store when it is connected. Prices and stock on a product page are the store’s, not figures we invent on this FAQ. If checkout is not connected, ask us and we will say so.',
         'link' => ['/shop/index.php', 'Visit the shop'],
     ],
@@ -165,7 +165,7 @@ $faqs = [
         'cat' => 'Manufacturers & other services',
         'q' => 'How do I get started?',
         'a' => 'Call ' . PHONE . ', WhatsApp the same mobile, email ' . EMAIL . ', or use the quote form on the contact page. Include your postcode and the service. We confirm scope before we talk about a date.',
-        'link' => ['/contact.php', 'Contact Icomply'],
+        'link' => ['/contact.php', 'Contact iComply'],
     ],
     [
         'cat' => 'Fire risk assessments',
@@ -189,7 +189,7 @@ $faqs = [
         'cat' => 'Accreditations',
         'q' => 'Are you NICEIC, BAFE or Gas Safe registered as a company?',
         'a' => 'This page does not claim NICEIC, BAFE, CHAS, SafeContractor, UKAS, a company Gas Safe registration number, or an EPC assessor accreditation number. Gas work is only booked when the engineer who attends is on the Gas Safe Register for that appliance — ask for the ID and check the register. An energy performance certificate has to be produced by an accredited assessor; we do not print that number here. Electrical, fire and emergency-lighting paperwork is for the visit we complete. If you need a named scheme member and we cannot show that registration, we will say so before you book. Call ' . PHONE . '.',
-        'link' => ['/pages/about.php', 'About Icomply'],
+        'link' => ['/pages/about.php', 'About iComply'],
     ],
 ];
 

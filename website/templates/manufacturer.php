@@ -7,7 +7,7 @@
 require_once SITE_ROOT . '/includes/seo.php';
 $seoFamily = 'manufacturer';
 $pageTitle = $MFR_NAME . ' products and service';
-$metaDesc = seo_fit_meta($MFR_BLURB . ' Serviced from Stockport SK2 by Icomply. Call 07517806082.');
+$metaDesc = seo_fit_meta($MFR_BLURB . ' Serviced from Stockport SK2 by iComply. Call 07517806082.');
 $metaKeywords = $MFR_SEO_KEYWORDS;
 $canonicalUrl = url('/pages/manufacturers/' . $MFR_SLUG . '.php');
 
@@ -168,7 +168,7 @@ $schema = [
                 <?php $mfrHero = manufacturerImageUrl($mfrSlug, $primaryService); ?>
                 <?php if ($mfrHero !== ''): ?>
                 <img src="<?= htmlspecialchars($mfrHero, ENT_QUOTES, 'UTF-8') ?>"
-                     alt="<?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> equipment — Icomply Property Services"
+                     alt="<?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> equipment — iComply Property Services"
                      width="1200" height="800"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
                      loading="eager">
