@@ -6,9 +6,14 @@ require_once __DIR__ . '/../../config.php';
 require_once SITE_ROOT . '/includes/share.php';
 
 $keywords = getMajorKeywords();
+foreach (array_keys($keywords) as $kwSlug) {
+    if (preg_match('/-(?:burnley|liverpool|preston|chester|warrington|blackpool)$/', (string)$kwSlug)) {
+        unset($keywords[$kwSlug]);
+    }
+}
 ksort($keywords);
 $services = getServices();
-$areas = getAreas();
+$areas = function_exists('icomplyCrawlTownNames') ? icomplyCrawlTownNames() : getAreas();
 
 // Counts per service for filter chips
 $serviceCounts = [];
@@ -19,7 +24,7 @@ foreach ($keywords as $meta) {
 
 $categories = getServiceCategories();
 $pageTitle = 'Keyword Guides | Fire Safety, Professional & Construction Topics';
-$metaDesc = 'Browse ' . count($keywords) . '+ guides covering fire risk assessments, fire safety systems, electrical, security, landlord compliance, kitchens, bathrooms, renovation and construction across the North West.';
+$metaDesc = 'Browse ' . count($keywords) . '+ guides covering fire risk assessments, fire safety systems, electrical, security, landlord compliance, kitchens, bathrooms, renovation and construction across Greater Manchester.';
 $metaKeywords = 'fire risk assessment guide, kitchen fitting guide, EICR, fire alarm installation, bathroom renovation, plastering, landlord compliance North West';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/keywords/index.php');
@@ -55,7 +60,7 @@ require SITE_ROOT . '/includes/header.php';
                 <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl">
                     Fire risk assessments, fire systems, electrical, security, professional compliance,
                     kitchens, bathrooms, renovation and construction trades —
-                    each guide links to local pages across <?= count($areas) ?>+ North West towns.
+                    each guide links to local pages across <?= count($areas) ?> Greater Manchester towns.
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#directory" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Browse guides</a>
@@ -125,7 +130,7 @@ require SITE_ROOT . '/includes/header.php';
         $trust = [
             ['Full catalogue', 'Fire safety, professional & construction topics'],
             ['Service-linked', 'Every guide maps to one of ' . count($services) . ' services'],
-            ['Local coverage', count($areas) . '+ North West towns on related pages'],
+            ['Local coverage', count($areas) . ' Greater Manchester towns on related pages'],
             ['Fixed-price quotes', 'Clear scope before work starts'],
         ];
         foreach ($trust as [$t, $d]): ?>

@@ -73,7 +73,7 @@ $ok(isset($nations['England'], $nations['Wales'], $nations['Scotland']), 'Englan
 
 $ok(serviceOwnsMainlandAreas('fire-alarms'), 'fire-alarms owns mainland areas');
 $ok(!serviceOwnsMainlandAreas('electrical'), 'electrical does not own mainland areas');
-$ok(!serviceOwnsMainlandAreas('emergency-lighting'), 'emergency lighting stays North West');
+$ok(serviceOwnsMainlandAreas('emergency-lighting'), 'emergency lighting is a fire-family nationwide town service');
 $ok(count(getAreasForService('fire-alarms')) === count($mainland), 'fire-alarms area count is the mainland list');
 $ok(count(getAreasForService('electrical')) === count($nw), 'electrical area count is the North West list');
 
@@ -128,7 +128,11 @@ $ok($belfast === false, 'Belfast fire alarms 404');
 ob_start();
 $elecLondon = routerDispatchVirtual('/pages/electrical/london');
 ob_end_clean();
-$ok($elecLondon === false, 'electrical London 404');
+$ok(
+    $elecLondon === true
+        && icomplyNonGmMatrixRedirect('/pages/electrical/london') === '/pages/services/electrical',
+    'electrical London 301s to the service hub'
+);
 
 ob_start();
 $stockportOk = routerDispatchVirtual('/pages/fire-alarms/stockport');

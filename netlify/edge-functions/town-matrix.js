@@ -21,6 +21,15 @@ const FAMILY = new Set([
   "dry-risers", "emergency-lighting", "barriers", "aov-air-handling",
 ]);
 
+// Mirrors website fire-safety category plus AOV and barriers. These town pages stay UK-wide.
+const NATIONWIDE_TOWN = new Set([
+  "aov", "barriers", "aov-air-handling",
+  "fire-alarms", "emergency-lighting", "fire-risk-assessments", "fire-extinguishers",
+  "fire-doors", "fire-stopping", "fire-suppression", "sprinkler-systems", "dry-risers",
+  "fire-signage", "evacuation-alerts", "kitchen-fire-suppression", "fire-compartmentation",
+  "smoke-co-alarms",
+]);
+
 const IMAGE_SLUG = {};
 
 const AUDIENCES = [
@@ -512,10 +521,26 @@ function placeAliasRedirect(path) {
   if (!m) return null;
   const family = m[1];
   const slug = m[2];
+  // #106 publishes real Greater Manchester AOV and barrier pages. Leave those on 200.
+  if (isGmTown(slug)) return null;
   const map = family === "barriers" ? PLACE_ALIAS_BARRIERS : PLACE_ALIAS_AOV;
   const dest = map[slug];
   if (!dest || dest === slug) return null;
   return `/pages/${family}/${dest}`;
+}
+
+function nonGmMatrixRedirect(path) {
+  let m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
+  if (m) return isGmTown(m[2]) ? null : `/pages/keywords/${m[1]}`;
+  m = path.match(/^\/pages\/manufacturers\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
+  if (m) return isGmTown(m[2]) ? null : `/pages/manufacturers/${m[1]}`;
+  m = path.match(/^\/pages\/jobs\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
+  if (m) return isGmTown(m[2]) ? null : `/pages/jobs/${m[1]}`;
+  m = path.match(/^\/pages\/areas\/([a-z0-9-]+)$/);
+  if (m) return isGmTown(m[1]) ? null : "/pages/areas";
+  m = path.match(/^\/pages\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
+  if (!m || RESERVED.has(m[1]) || NATIONWIDE_TOWN.has(m[1]) || isGmTown(m[2])) return null;
+  return `/pages/services/${m[1]}`;
 }
 
 export default async (request, context) => {
@@ -524,6 +549,16 @@ export default async (request, context) => {
   const aliasTo = placeAliasRedirect(path);
   if (aliasTo) {
     return Response.redirect(new URL(aliasTo, url.origin).toString(), 301);
+  }
+  const matrixTo = nonGmMatrixRedirect(path);
+  if (matrixTo) {
+    return Response.redirect(new URL(matrixTo, url.origin).toString(), 301);
+  }
+  // AOV, barriers and fire-family town HTML is exported. Do not replace it
+  // with the Greater Manchester matrix renderer.
+  const nationwidePage = path.match(/^\/pages\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
+  if (nationwidePage && NATIONWIDE_TOWN.has(nationwidePage[1])) {
+    return context.next();
   }
   const sitemapMatch = path.match(/^\/matrix-sitemap\/(\d+)(?:\.xml)?$/);
   if (sitemapMatch) {
@@ -553,11 +588,15 @@ export default async (request, context) => {
   if (variantSlug.includes("--")) {
     try {
       const spec = await loadVariants(url.origin);
-      return variantResponse(renderVariantPage({
+      const rendered = renderVariantPage({
         spec,
         keyword: variantSlug,
         town: variantTown ? variantTown[2] : "",
-      }));
+      });
+      if (rendered.status === 301 && rendered.location) {
+        return Response.redirect(new URL(rendered.location, url.origin).toString(), 301);
+      }
+      return variantResponse(rendered);
     } catch {
       return new Response("Variant page unavailable", {
         status: 503,

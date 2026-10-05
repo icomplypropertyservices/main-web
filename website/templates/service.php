@@ -77,17 +77,17 @@ $serviceFaqs = [
         ['What does it cost?', 'Price on application. Size, access and how intrusive the survey must be all change the quote. No invented starting price.'],
     ],
     'access-control' => [
-        ['Why are car park barriers the hardest access job?', 'A rising arm needs the boom, induction loops, safety devices and the credential that opens the lane. A door maglock does not cover that work. Manchester and Burnley have their own barrier pages.'],
+        ['Why are car park barriers the hardest access job?', 'A rising arm needs the boom, induction loops, safety devices and the credential that opens the lane. A door maglock does not cover that work. Manchester and Stockport have their own barrier pages.'],
         ['Do you install maglocks as well as barriers?', 'Yes. Maglocks, strikes and fire release are scoped for the pedestrian door. The barrier lane is quoted separately, POA after survey.'],
         ['How do you price access control?', 'Price on application after we confirm doors, any barrier lane, brand and access. No catalogue price on this page.'],
     ],
     'door-entry' => [
-        ['Can door entry open a car park barrier?', 'Sometimes, when the panel has a clean release into the barrier controller. Barriers stay the hardest job and are surveyed on their own, including for Manchester and Burnley.'],
+        ['Can door entry open a car park barrier?', 'Sometimes, when the panel has a clean release into the barrier controller. Barriers stay the hardest job and are surveyed on their own, including for Manchester and Stockport.'],
         ['Do you replace flat handsets and panels?', 'Yes. We survey the panel, cabling and the lock it releases, then quote POA. Maglocks on that door are included in the survey when they are part of the release.'],
         ['How do you price door entry?', 'Price on application after panel condition, handset count and cabling are known. No catalogue price on this page.'],
     ],
     'default' => [
-        ['What areas do you cover for ' . $SERVICE_NAME . '?', 'We cover every town in our published areas list across Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria from our Stockport base.'],
+        ['What areas do you cover for ' . $SERVICE_NAME . '?', 'We cover the Greater Manchester towns on the published areas list from our Stockport base.'],
         ['How do you price the work?', $poaService ? 'Price on application after we confirm scope, standards and access. No catalogue prices on this page.' : 'After we confirm scope, standards and access we issue a written quote. We do not invent a fee here.'],
         ['Can you maintain systems already on site?', 'Where the service is about existing systems, we inspect, service and document. For survey-led work we record what is there and what should happen next.'],
     ],
@@ -102,9 +102,9 @@ if (!empty($svcCopy['faq']) && is_array($svcCopy['faq'])) {
 }
 $hubLinks = function_exists('icomplyServiceHubLinks') ? icomplyServiceHubLinks($serviceSlug) : [];
 
-$nwAreas = getAreas();
+$nwAreas = function_exists('icomplyCrawlTownNames') ? icomplyCrawlTownNames() : getAreas();
 $keywordTowns = array_values(array_filter(
-    ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool', 'Bury', 'Sale', 'Altrincham', 'Macclesfield', 'Burnley', 'Blackburn', 'Warrington', 'St Helens'],
+    ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Bury', 'Sale', 'Altrincham'],
     function ($t) use ($nwAreas) {
         return in_array($t, $nwAreas, true);
     }
@@ -307,11 +307,11 @@ $schema = [
 <section class="bg-white border-b">
     <div class="max-w-7xl mx-auto px-6 py-10">
         <h2 class="text-2xl font-semibold tracking-tight text-black">Care home, ward, or warden scheme</h2>
-        <p class="mt-3 text-zinc-700 max-w-3xl leading-relaxed">A bedroom pear lead, a ward staff station and a sheltered-scheme speech unit are three quotes. The specification is on the nurse call hub. Manchester and Burnley have their own pages. Fire and lighting for the same home are on the care homes page. Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
+        <p class="mt-3 text-zinc-700 max-w-3xl leading-relaxed">A bedroom pear lead, a ward staff station and a sheltered-scheme speech unit are three quotes. The specification is on the nurse call hub. Manchester and Stockport have their own pages. Fire and lighting for the same home are on the care homes page. Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
         <div class="mt-5 flex flex-wrap gap-2">
             <a href="<?= url('/pages/nurse-call-systems') ?>" class="px-4 py-2 rounded-full bg-[#0B1F3A] text-white text-sm font-semibold hover:bg-[#ff6b00]">Nurse call hub</a>
             <a href="<?= url('/pages/nurse-call-manchester') ?>" class="px-4 py-2 rounded-full border border-zinc-300 text-sm font-semibold hover:border-[#ff6b00]">Manchester</a>
-            <a href="<?= url('/pages/nurse-call-burnley') ?>" class="px-4 py-2 rounded-full border border-zinc-300 text-sm font-semibold hover:border-[#ff6b00]">Burnley</a>
+            <a href="<?= url('/pages/nurse-call/stockport') ?>" class="px-4 py-2 rounded-full border border-zinc-300 text-sm font-semibold hover:border-[#ff6b00]">Stockport</a>
             <a href="<?= url('/pages/care-homes') ?>" class="px-4 py-2 rounded-full border border-zinc-300 text-sm font-semibold hover:border-[#ff6b00]">Care homes</a>
             <a href="<?= url('/pages/keywords/warden-call') ?>" class="px-4 py-2 rounded-full border border-zinc-300 text-sm font-semibold hover:border-[#ff6b00]">Warden call</a>
         </div>
@@ -395,8 +395,8 @@ $schema = [
                 Attendance outside the North West is scheduled from our Stockport (SK2) base and confirmed on the quote.
                 <?php else: ?>
                 From new system design to reactive call-outs and planned maintenance contracts, our engineers deliver
-                fixed-price quotes, clear scope and full compliance documentation. Based in Stockport (SK2), we cover
-                Manchester, Bolton, Oldham, Rochdale, Wigan, Liverpool, Preston and 140+ surrounding towns.
+                a written quote that is price on application, with a clear scope and full compliance documentation. Based in Stockport (SK2), we cover
+                Manchester, Stockport, Bolton, Salford, Oldham, Rochdale, Wigan, Bury, Trafford and Tameside.
                 <?php endif; ?>
             </p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
@@ -569,7 +569,6 @@ if (function_exists('accessControlLaneHubSection')) {
 <?php
 $gmTowns = function_exists('icomplyGreaterManchesterTownNames') ? icomplyGreaterManchesterTownNames() : [];
 $gmBoroughs = function_exists('icomplyGreaterManchesterBoroughs') ? icomplyGreaterManchesterBoroughs() : [];
-$gmSet = array_fill_keys($gmTowns, true);
 ?>
 <section class="max-w-7xl mx-auto px-6 py-16" id="greater-manchester">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
@@ -611,49 +610,32 @@ $gmSet = array_fill_keys($gmTowns, true);
             </a>
         <?php endforeach; ?>
     </div>
-    <?php endif; ?>
     <h3 class="mt-10 text-lg font-semibold text-black">Other published towns</h3>
     <div class="mt-4 flex flex-wrap gap-2">
         <?php foreach ($allAreas as $a):
-            if (isset($gmSet[$a])) continue;
+            if (in_array($a, $gmTowns, true)) continue;
         ?>
             <a href="<?= htmlspecialchars(exportedServiceLocalUrl($SERVICE_SLUG, $a, 'service'), ENT_QUOTES, 'UTF-8') ?>"
                class="px-3 py-1.5 bg-zinc-50 border rounded-full text-xs text-zinc-700 hover:border-[#ff6b00]">
                 <?= htmlspecialchars($a, ENT_QUOTES, 'UTF-8') ?>
             </a>
         <?php endforeach; ?>
-        <a href="<?= url('/pages/areas/index.php') ?>" class="px-3 py-1.5 text-xs font-semibold text-[#ff6b00]">Areas hub →</a>
     </div>
+    <?php endif; ?>
+    <p class="mt-6 text-sm"><a href="<?= url('/pages/areas/index.php') ?>" class="font-semibold text-[#ff6b00]">All <?= count($gmTowns) ?> Greater Manchester areas →</a></p>
 </section>
 
-<?php if ($serviceSlug === 'nurse-call' && function_exists('getNationwideAreaRows')):
-    $ncByNation = [];
-    foreach (getNationwideAreaRows() as $ncRow) {
-        $ncByNation[$ncRow['nation']][] = $ncRow;
-    }
-?>
+<?php if ($serviceSlug === 'nurse-call'): ?>
 <section id="nurse-call-uk" class="max-w-7xl mx-auto px-6 pb-16 scroll-mt-24">
     <div class="mb-8">
-        <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Nurse call outside the North West</div>
-        <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Nurse call across the UK</h2>
+        <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Nurse call</div>
+        <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Nurse call in Greater Manchester</h2>
         <p class="mt-2 text-zinc-600 max-w-3xl">
-            <?= count(getNationwideAreaRows()) ?> places outside the North West town list.
-            These pages are nurse call only. iComply is based in Stockport SK2.
-            A visit is confirmed after you send the postcode. Quotes are POA after scope.
+            Town pages are the Greater Manchester list. iComply is based in Stockport SK2.
+            A visit outside that list is confirmed after you send the postcode. Quotes are POA after scope.
             Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.
         </p>
     </div>
-    <?php foreach ($ncByNation as $nationName => $nationRows): ?>
-    <h3 class="text-lg font-semibold text-black mt-8 mb-3"><?= htmlspecialchars((string)$nationName, ENT_QUOTES, 'UTF-8') ?></h3>
-    <div class="flex flex-wrap gap-2">
-        <?php foreach ($nationRows as $ncRow): ?>
-            <a href="<?= url('/pages/nurse-call/' . $ncRow['slug']) ?>"
-               class="px-3 py-1.5 bg-white border rounded-full text-xs text-zinc-800 hover:border-[#ff6b00]">
-                <?= htmlspecialchars($ncRow['name'], ENT_QUOTES, 'UTF-8') ?>
-            </a>
-        <?php endforeach; ?>
-    </div>
-    <?php endforeach; ?>
 </section>
 <?php endif; ?>
 

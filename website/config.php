@@ -386,6 +386,8 @@ function icomplyIsGreaterManchesterAreaSlug(string $areaOrSlug): bool
     return $slug !== '' && isset($set[$slug]);
 }
 
+require_once __DIR__ . '/includes/gm-crawl.php';
+
 /**
  * In tiered mode, keyword×area pages, shared area-town templates, and service×town
  * pages without a bespoke article stay live (200) but are not indexable. Area hubs
@@ -480,10 +482,9 @@ function mainlandAreaRecord(string $name): ?array {
     return $map[$name] ?? null;
 }
 
-/** Fire alarms and fire risk assessments own every mainland area. Other services stay on the North West list. */
+/** Fire-family town pages are UK mainland. Other local services stay on the North West list. */
 function serviceOwnsMainlandAreas(string $serviceSlug): bool {
-    $slug = areaSlug($serviceSlug);
-    return $slug === 'fire-alarms' || $slug === 'fire-risk-assessments';
+    return function_exists('isFireSafetyService') && isFireSafetyService($serviceSlug);
 }
 
 /** @return list<string> */
@@ -1136,7 +1137,9 @@ function exportedServiceLocalUrl(string $serviceSlug, string $area, string $from
     $serviceSlug = areaSlug($serviceSlug);
     $town = areaSlug($area);
     $keepTownPath = $from === 'area'
-        || in_array($serviceSlug, ['fire-alarms', 'fire-risk-assessments', 'barriers', 'nurse-call'], true);
+        || $serviceSlug === 'barriers'
+        || $serviceSlug === 'nurse-call'
+        || (function_exists('isFireSafetyService') && isFireSafetyService($serviceSlug));
     if (!$keepTownPath && in_array($serviceSlug, getElectricalGasFamilyServices(), true)) {
         $featured = getElectricalGasFeaturedKeywordSlugs();
         $bucket = $serviceSlug === 'gas-systems' ? 'gas' : 'electrical';
@@ -1182,7 +1185,7 @@ function getPopularKeywordSlugs(): array {
         'vehicle-barriers', 'rising-arm-barrier', 'parking-barrier', 'access-barrier',
         'barrier-installation', 'car-park-barrier',
         'cctv-installation', 'access-control-system', 'door-entry-system',
-        'car-park-barrier', 'car-park-barrier-manchester', 'car-park-barrier-burnley',
+        'car-park-barrier', 'car-park-barrier-manchester',
         'came-barrier', 'maglock-installation',
         'nurse-call-system', 'landlord-compliance',
         'legionella-risk-assessment', 'legionella-testing', 'water-hygiene-testing',

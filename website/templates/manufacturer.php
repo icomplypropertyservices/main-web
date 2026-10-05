@@ -362,8 +362,8 @@ if ($acnBrand && function_exists('acnCities')):
         <?php
         $scoped = function_exists('manufacturerAreasFor') ? manufacturerAreasFor($entry) : getAreas();
         $towns = array_values(array_filter(
-            ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool', 'Burnley'],
-            fn($t) => in_array($t, $scoped, true)
+            ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Bury', 'Trafford', 'Tameside'],
+            fn($t) => in_array($t, $scoped, true) && (!function_exists('icomplyCrawlTownSlug') || icomplyCrawlTownSlug($t))
         ));
         foreach ($towns as $t):
         ?>

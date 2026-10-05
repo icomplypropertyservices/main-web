@@ -119,8 +119,15 @@ function icomplySitemapEntries(): array
         if ($path === '') {
             $path = '/';
         }
-        // Burnley is Lancashire, not Greater Manchester. Keep it off every sitemap loc.
-        if (preg_match('#(?:^|/)burnley(?:$|/)#', $path) || str_ends_with($path, '-burnley')) {
+        if (!function_exists('icomplySitemapOmitsNonGm') || !function_exists('icomplyNationwideTownPath')) {
+            require_once __DIR__ . '/gm-crawl.php';
+        }
+        // Burnley stays off local matrices. AOV, barriers and fire town pages keep it.
+        if ((preg_match('#(?:^|/)burnley(?:$|/)#', $path) || str_ends_with($path, '-burnley'))
+            && !icomplyNationwideTownPath($path)) {
+            return;
+        }
+        if (icomplySitemapOmitsNonGm($path)) {
             return;
         }
         if (isset($seen[$path]) || isset($banned[$path])) {
@@ -165,16 +172,21 @@ function icomplySitemapEntries(): array
         // prefixes and AOV/barrier town files, which are published as 200.
         if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
             $okPrefix = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'jobs', 'commercial', 'nurse-call', 'aov', 'aov-air-handling', 'barriers'];
-            if (!in_array($m[1], $okPrefix, true)) {
+            $fireTown = function_exists('isFireSafetyService') && isFireSafetyService($m[1]);
+            if (!in_array($m[1], $okPrefix, true) && !$fireTown) {
                 return;
             }
         }
         // Keyword hubs and AOV/barrier town pages are generated at export time.
         $isKeywordLoc = (bool)preg_match('#^/pages/keywords(/[a-z0-9\-]+){1,2}$#', $path);
         $isTownLoc = (bool)preg_match('#^/pages/(aov|barriers)(/[a-z0-9\-]+)?$#', $path);
-        // Barriers town files are published (200). aov-air-handling/{town} 404s
-        // unless that file was actually exported, so it cannot skip the file check.
+        // Barriers town files are published (200). Fire-family town pages are
+        // generated for every mainland town and do not have a source stub.
         $isMfrTown = (bool)preg_match('#^/pages/barriers/([a-z0-9\-]+)$#', $path);
+        $isFireTownLoc = false;
+        if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $fireLoc)) {
+            $isFireTownLoc = function_exists('isFireSafetyService') && isFireSafetyService($fireLoc[1]);
+        }
         $isManufacturerHub = false;
         $isBarrierBrandLoc = false;
         if (preg_match('#^/pages/manufacturers/([a-z0-9\-]+)$#', $path, $brandMatch) && function_exists('getManufacturerBySlug')) {
@@ -182,7 +194,7 @@ function icomplySitemapEntries(): array
             $isManufacturerHub = is_array($brandEntry);
             $isBarrierBrandLoc = $isManufacturerHub && in_array('barriers', $brandEntry['services'] ?? [], true);
         }
-        if (!$isKeywordLoc && !$isTownLoc && !$isMfrTown && !$isBarrierBrandLoc && !$isManufacturerHub && !$isPublishedAreaHub && !icomplySitemapUrlHasFile($path)) {
+        if (!$isKeywordLoc && !$isTownLoc && !$isFireTownLoc && !$isMfrTown && !$isBarrierBrandLoc && !$isManufacturerHub && !$isPublishedAreaHub && !icomplySitemapUrlHasFile($path)) {
             return;
         }
         $seen[$path] = true;
@@ -475,6 +487,19 @@ function icomplySitemapEntries(): array
     if (function_exists('icomplyGmServiceTownRoutes')) {
         foreach (icomplyGmServiceTownRoutes() as $townPath) {
             $add((string)$townPath, '0.64');
+        }
+    }
+    if (function_exists('getFireSafetyServiceSlugs') && function_exists('getMainlandAreaRecords')) {
+        foreach (getFireSafetyServiceSlugs() as $fireSlug) {
+            if ($fireSlug === 'barriers') {
+                continue;
+            }
+            foreach (getMainlandAreaRecords() as $row) {
+                $fireTown = (string)($row['slug'] ?? '');
+                if ($fireTown !== '') {
+                    $add('/pages/' . $fireSlug . '/' . $fireTown, '0.55');
+                }
+            }
         }
     }
 

@@ -25,7 +25,7 @@ function manufacturerNationwideServiceSlugs(): array
     return ['fire-alarms', 'aov-air-handling', 'barriers', 'access-control', 'nurse-call'];
 }
 
-/** Greater Manchester towns in areas.json, plus Burnley. */
+/** Greater Manchester towns in areas.json. */
 function manufacturerLocalAreaNames(): array
 {
     return [
@@ -36,7 +36,7 @@ function manufacturerLocalAreaNames(): array
         'Withington', 'Wythenshawe', 'Cheadle', 'Cheadle Hulme', 'Bramhall', 'Hazel Grove', 'Marple', 'Romiley',
         'Hyde', 'Stalybridge', 'Dukinfield', 'Ashton-under-Lyne', 'Mossley', 'Droylsden', 'Denton', 'Failsworth',
         'Middleton', 'Chadderton', 'Heywood', 'Milnrow', 'Littleborough', 'Shaw', 'Royton', 'Lees',
-        'Uppermill', 'Saddleworth', 'Burnley',
+        'Uppermill', 'Saddleworth',
     ];
 }
 
@@ -88,7 +88,7 @@ function manufacturerCoverageLabel(array $entry): string
 {
     return manufacturerCoverageMode($entry) === 'nationwide'
         ? 'Every published town'
-        : 'Greater Manchester and Burnley';
+        : 'Greater Manchester';
 }
 
 /** @return array<string, list<array{0:string,1:string}>> */
@@ -361,7 +361,7 @@ function manufacturerAreaMeta(array $entry, string $area): string
     $line = $lines[0]['label'] ?? $brand;
     $scope = manufacturerCoverageMode($entry) === 'nationwide'
         ? 'North West town list'
-        : 'Greater Manchester and Burnley';
+        : 'Greater Manchester';
     $desc = $brand . ' in ' . $area . ' (' . $p['districts'] . '). ' . $line . '. Install and service. ' . $scope . '. Written quote, no invented install fee.';
     if (strlen($desc) > 165) {
         $desc = $brand . ' in ' . $area . '. ' . $line . '. ' . $scope . '. Written quote after survey.';
@@ -532,6 +532,9 @@ function manufacturerAreaChipsHtml(array $entry): string
     $slug = (string)$entry['slug'];
     $html = '<div class="chip-cloud">';
     foreach (manufacturerAreasFor($entry) as $area) {
+        if (function_exists('icomplyCrawlTownSlug') && !icomplyCrawlTownSlug((string)$area)) {
+            continue;
+        }
         $href = url('/pages/manufacturers/' . $slug . '/' . areaSlug($area));
         $html .= '<a class="mfr-text-link" href="' . manufacturerH($href) . '">' . manufacturerH($area) . '</a>';
     }

@@ -4,8 +4,8 @@
  *
  * Pages are not stored as a million HTML files. static-export writes a compact
  * catalogue under dist/assets/matrix/ and a sitemap index whose locs the edge
- * function answers with HTTP 200. Raise ICOMPLY_MATRIX_URL_TARGET to pull in
- * the rest of the gazetteer (see matrix-stats.json next_chunk_places).
+ * function answers with HTTP 200. Places are the 60 Greater Manchester towns.
+ * Non-GM gazetteer rows are not added to reach ICOMPLY_MATRIX_URL_TARGET.
  */
 declare(strict_types=1);
 
@@ -193,7 +193,7 @@ function icomplyMatrixSelectPlaces(int $wanted): array
         foreach (icomplyGreaterManchesterTownNames() as $gmName) {
             $gmSlug = icomplyMatrixSlug((string)$gmName);
             if ($gmSlug !== '') {
-                $gmSlugs[$gmSlug] = true;
+                $gmSlugs[$gmSlug] = (string)$gmName;
             }
         }
         foreach ($bySlug as $slug => $row) {
@@ -201,6 +201,25 @@ function icomplyMatrixSelectPlaces(int $wanted): array
                 $bySlug[$slug]['tier'] = 0;
             }
         }
+        $gmOnly = [];
+        foreach ($gmSlugs as $gmSlug => $gmName) {
+            if (isset($bySlug[$gmSlug])) {
+                $gmOnly[$gmSlug] = $bySlug[$gmSlug];
+                $gmOnly[$gmSlug]['tier'] = 0;
+                continue;
+            }
+            icomplyMatrixRememberPlace($gmOnly, $gmSlug, [
+                'name' => $gmName,
+                'region' => 'Greater Manchester',
+                'country' => 'England',
+                'population' => 0,
+                'housing' => '',
+                'industry' => '',
+                'neighbours' => [],
+                'source' => 'gm-allowlist',
+            ], 0);
+        }
+        $bySlug = $gmOnly;
     }
 
     $ranked = array_values($bySlug);
@@ -627,6 +646,12 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
         $chunkCount = 0;
     };
     $writeLoc = static function (string $path) use (&$chunkCount, &$chunkHandle, $openChunk, $urlList, $base): void {
+        if (!function_exists('icomplySitemapOmitsNonGm')) {
+            require_once __DIR__ . '/gm-crawl.php';
+        }
+        if (icomplySitemapOmitsNonGm($path)) {
+            return;
+        }
         if ($chunkHandle === null || $chunkCount >= ICOMPLY_MATRIX_SITEMAP_CHUNK) {
             $openChunk();
         }
@@ -758,13 +783,10 @@ JS);
         'variant_per_service' => $variantMeta['per_service'] ?? [],
         'sitemap_parts' => array_merge(['sitemap.xml', 'sitemap0.xml'], $chunkPaths),
         'url_list' => '/sitemap-urls.txt',
-        'blocker' => $sitemapUrls >= ICOMPLY_MATRIX_URL_TARGET
+        'blocker' => count($places) === 60 && ($placePick['remaining'] ?? 0) === 0
             ? null
-            : 'Approved gazetteers only contain ' . $placePick['available'] . ' places.',
-        'next_chunk' => 'Increase ICOMPLY_MATRIX_URL_TARGET in website/includes/matrix-catalogue.php. '
-            . $placePick['remaining'] . ' further places are already in areas.json, barriers-places.json, '
-            . 'mainland-areas.txt and matrix-extra-places.json. Each extra place adds one keyword page per '
-            . 'catalogue keyword and one page per service, still HTTP 200 via the town-matrix edge function.',
+            : 'Greater Manchester matrix is short: places=' . count($places) . ' remaining=' . (int)($placePick['remaining'] ?? 0) . '.',
+        'next_chunk' => 'Matrix places are the 60 Greater Manchester towns. Non-GM gazetteer rows stay out of the sitemap.',
     ];
     file_put_contents($dist . '/matrix-stats.json', json_encode($stats, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . "\n");
     $log('town matrix places=' . count($places)

@@ -4,18 +4,18 @@
  */
 require_once __DIR__ . '/../../config.php';
 
-$areas = getAreas();
+$areas = function_exists('icomplyCrawlTownNames') ? icomplyCrawlTownNames() : getAreas();
 $services = getServices();
 
-$pageTitle = 'Areas We Cover | ' . count($areas) . '+ North West Towns';
-$metaDesc = 'iComply covers ' . count($areas) . '+ towns across Greater Manchester and the North West. Every town hub links fire safety, electrical, professional services, kitchens, bathrooms and construction trades.';
-$metaKeywords = 'fire risk assessment Manchester, kitchen fitting Stockport, EICR Bolton, fire alarms Liverpool, property services North West towns';
+$pageTitle = 'Areas We Cover | ' . count($areas) . ' Greater Manchester Towns';
+$metaDesc = 'iComply covers ' . count($areas) . ' towns across Greater Manchester. Every town hub links fire safety, electrical, professional services, kitchens, bathrooms and construction trades.';
+$metaKeywords = 'fire risk assessment Manchester, kitchen fitting Stockport, EICR Bolton, property services Greater Manchester towns';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/areas');
 $categories = getServiceCategories();
 
 $featured = array_values(array_filter(
-    ['Manchester', 'Burnley', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
+    ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Bury', 'Trafford', 'Tameside'],
     function ($t) use ($areas) {
         return in_array($t, $areas, true);
     }
@@ -54,14 +54,14 @@ require SITE_ROOT . '/includes/header.php';
             <div>
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs tracking-widest uppercase mb-5">
                     <span class="w-2 h-2 rounded-full bg-[#ff6b00]"></span>
-                    North West coverage
+                    Greater Manchester coverage
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
                     Areas we<br>
                     <span class="text-[#ff6b00]">cover</span>
                 </h1>
                 <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl">
-                    Local team serving <strong class="text-white"><?= count($areas) ?> towns</strong> —
+                    Local team serving <strong class="text-white"><?= count($areas) ?> Greater Manchester towns</strong> —
                     fire safety (including FRAs), electrical &amp; gas, security, professional support,
                     kitchens, bathrooms, renovation and construction trades in every hub.
                 </p>
@@ -124,7 +124,7 @@ require SITE_ROOT . '/includes/header.php';
         <div>
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Featured</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Major towns</h2>
-            <p class="mt-2 text-zinc-600">High-demand coverage areas with full service menus. Manchester and Burnley are complete indexes — every service is listed, and their fire links open UK-wide hubs.</p>
+            <p class="mt-2 text-zinc-600">Greater Manchester boroughs with full service menus. Manchester lists every service. Fire links open the service hubs.</p>
         </div>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">

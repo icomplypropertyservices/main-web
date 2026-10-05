@@ -6,13 +6,13 @@ require_once __DIR__ . '/config.php';
 require_once SITE_ROOT . '/includes/shopify.php';
 
 $pageTitle = 'Property Maintenance & Compliance | iComply Property Services';
-$metaDesc = 'iComply Property Services — AOV and smoke control, vehicle barriers, landlord compliance (EICR, CP12/gas, FRA), electrical, gas and fire safety across Greater Manchester and the North West. Call 07517806082. Stockport SK2 5DE.';
+$metaDesc = 'iComply Property Services — AOV and smoke control, vehicle barriers, landlord compliance (EICR, CP12/gas, FRA), electrical, gas and fire safety across Greater Manchester. Call 07517806082. Stockport SK2 5DE.';
 $canonicalUrl = url('/');
 $metaKeywords = 'AOV smoke control, vehicle barriers, landlord compliance Stockport, EICR Manchester, gas safety CP12, fire risk assessment, North West';
 $ogImage = url('/assets/images/android-chrome-512.png');
 
 $services = getServices();
-$areas = getAreas();
+$areas = function_exists('icomplyCrawlTownNames') ? icomplyCrawlTownNames() : getAreas();
 $categories = getServiceCategories();
 $catalog = getShopCatalog();
 $featuredProducts = array_slice($catalog['products'], 0, 4);
@@ -32,7 +32,7 @@ $trust = [
 ];
 
 $popularTowns = array_values(array_filter(
-    ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
+    ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Bury', 'Trafford', 'Tameside'],
     function ($t) use ($areas) {
         return in_array($t, $areas, true);
     }
@@ -54,12 +54,12 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
 <section class="home-hero">
     <div class="home-hero-inner">
         <div>
-            <p class="home-hero-kicker"><i></i> Greater Manchester &amp; North West</p>
+            <p class="home-hero-kicker"><i></i> Greater Manchester</p>
             <h1>Property maintenance<br><span>&amp; compliance</span></h1>
             <p class="hero-lede">
                 AOV and smoke control, plus vehicle barriers, lead the work — then landlord
                 certificates (EICR, CP12 / gas, FRA), electrical, gas and fire safety. One
-                Stockport team covering Greater Manchester and the North West.
+                Stockport team covering Greater Manchester.
             </p>
             <div class="home-hero-cta">
                 <a class="btn-hero-accent" href="<?= htmlspecialchars($aovUrl, ENT_QUOTES, 'UTF-8') ?>">AOV &amp; smoke control</a>
@@ -118,7 +118,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
     <div class="max-w-7xl mx-auto px-6 py-10">
         <p class="text-xs uppercase tracking-[3px] text-[#ffb27a] font-semibold">Priority services</p>
         <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mt-2">Barriers and AOV</h2>
-        <p class="mt-3 text-white/80 max-w-3xl">Vehicle and parking barriers are UK-wide, with Came as the partner brand and a full manufacturer list. AOV and smoke control stays the paired life-safety priority. Manchester and Burnley are covered from Stockport on the car park barrier job. Quotes are on application. Phone <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
+        <p class="mt-3 text-white/80 max-w-3xl">Vehicle and parking barriers are covered across Greater Manchester, with Came as the partner brand and a full manufacturer list. AOV and smoke control stays the paired life-safety priority. Manchester and Stockport are covered from the Stockport yard on the car park barrier job. Quotes are on application. Phone <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
         <div class="mt-6 flex flex-wrap gap-2">
             <a class="px-4 py-2 rounded-full bg-[#ff6b00] font-semibold" href="<?= url('/pages/services/barriers.php') ?>">Barriers hub</a>
             <a class="px-4 py-2 rounded-full bg-white text-[#0B1F3A] font-semibold" href="<?= url('/pages/services/aov-air-handling.php') ?>">AOV &amp; smoke control</a>
@@ -225,7 +225,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local SEO guides</div>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">EICR, gas, fire, Legionella, asbestos &amp; more by town</h2>
                 <p class="mt-2 text-zinc-600 max-w-2xl">
-                    Every guide has a dedicated page for each North West area — e.g.
+                    Every guide has a dedicated page for each Greater Manchester town — e.g.
                     <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/keywords/eicr-report/stockport.php') ?>">EICR report in Stockport</a>,
                     <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/keywords/eicr/manchester.php') ?>">EICR in Manchester</a>.
                 </p>
@@ -368,7 +368,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
         <div>
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Coverage</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Serving <?= count($areas) ?>+ towns</h2>
-            <p class="mt-3 text-zinc-600">Local response across Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria. Pick a town for full service links.</p>
+            <p class="mt-3 text-zinc-600">Local response across Greater Manchester. Pick a town for full service links.</p>
             <div class="mt-6 flex flex-wrap gap-2">
                 <?php foreach ($popularTowns as $town): ?>
                     <a href="<?= url('/pages/areas/' . areaSlug($town) . '.php') ?>"
