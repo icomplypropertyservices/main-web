@@ -874,6 +874,18 @@ function icomplyPrettyUrlRedirects(): string
 /contact-us/             /contact    301
 /cookie-policy           /privacy    301
 /cookie-policy/          /privacy    301
+/pages/privacy           /privacy    301
+/pages/privacy/          /privacy    301
+/pages/terms             /terms      301
+/pages/terms/            /terms      301
+/cookies                 /privacy    301
+/cookies/                /privacy    301
+/thanks                  /thank-you  301
+/thanks/                 /thank-you  301
+/thankyou                /thank-you  301
+/thankyou/               /thank-you  301
+/pages/residential       /pages/landlords 301
+/pages/residential/      /pages/landlords 301
 /blog                    /pages/resources 301
 /blog/                   /pages/resources 301
 /news                    /pages/resources 301
@@ -1066,10 +1078,45 @@ function icomplyAovLegacyRedirectLines(): string
             $dest = isset($places[$slug])
                 ? '/pages/aov/' . $slug
                 : '/pages/services/aov-air-handling';
+            // Prefer a published place alias when the area slug itself is missing.
+            if (!isset($places[$slug]) && function_exists('icomplyResolvePlaceSlug')) {
+                $resolved = icomplyResolvePlaceSlug('aov', $slug);
+                if ($resolved !== '' && isset($places[$resolved])) {
+                    $dest = '/pages/aov/' . $resolved;
+                }
+            }
             $lines[] = '/pages/aov-air-handling/' . $slug . '   ' . $dest . '  301';
             $lines[] = '/pages/aov-air-handling/' . $slug . '/  ' . $dest . '  301';
         }
     }
+
+    $aliasFile = SITE_ROOT . '/data/place-aliases.json';
+    if (is_file($aliasFile)) {
+        $decoded = json_decode((string)file_get_contents($aliasFile), true);
+        $lines[] = '# Place aliases: missing area slugs → published barrier/AOV towns';
+        foreach (['barriers' => '/pages/barriers/', 'aov' => '/pages/aov/'] as $family => $prefix) {
+            $map = is_array($decoded[$family] ?? null) ? $decoded[$family] : [];
+            foreach ($map as $from => $to) {
+                $from = trim((string)$from);
+                $to = trim((string)$to);
+                if ($from === '' || $to === '' || $from === $to) {
+                    continue;
+                }
+                // Skip alias when the source slug already has a real page.
+                if ($family === 'aov' && isset($places[$from])) {
+                    continue;
+                }
+                if ($family === 'barriers' && function_exists('barriersPlaceBySlug') && barriersPlaceBySlug($from)) {
+                    continue;
+                }
+                $src = $prefix . $from;
+                $dst = $prefix . $to;
+                $lines[] = $src . '  ' . $dst . '  301';
+                $lines[] = $src . '/  ' . $dst . '  301';
+            }
+        }
+    }
+
     // Do not add /pages/keywords/{slug}/* . That splat is more specific than
     // the hub rewrite and Netlify answers the hub itself with 404.
     // Keyword×town is served by netlify/edge-functions/town-matrix.js.

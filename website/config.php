@@ -1009,6 +1009,93 @@ function fireNationwideKeywordUrl(string $keywordSlug): string {
  * Fire from an area page → national service hub (UK-wide, not town-locked).
  * Other services → area hub (from a service page) or the service hub (from an area page).
  */
+/**
+ * Resolve an area/town slug to a published barriers or AOV place page.
+ * Unknown GM localities and NW stubs map via website/data/place-aliases.json.
+ */
+function icomplyPlaceAliases(): array {
+    static $aliases = null;
+    if ($aliases !== null) {
+        return $aliases;
+    }
+    $file = SITE_ROOT . '/data/place-aliases.json';
+    $decoded = is_file($file) ? json_decode((string)file_get_contents($file), true) : [];
+    $aliases = is_array($decoded) ? $decoded : [];
+    return $aliases;
+}
+
+function icomplyResolvePlaceSlug(string $family, string $slug): string {
+    $slug = areaSlug($slug);
+    if ($slug === '') {
+        return '';
+    }
+    $aliases = icomplyPlaceAliases();
+    $map = [];
+    if ($family === 'barriers') {
+        $map = is_array($aliases['barriers'] ?? null) ? $aliases['barriers'] : [];
+        if (isset($map[$slug])) {
+            return areaSlug((string)$map[$slug]);
+        }
+        if (function_exists('barriersPlaceBySlug') && barriersPlaceBySlug($slug)) {
+            return $slug;
+        }
+        // barriersPlaces may not be loaded yet; treat known file as existence via alias miss → hub caller
+        return $slug;
+    }
+    if ($family === 'aov') {
+        $map = is_array($aliases['aov'] ?? null) ? $aliases['aov'] : [];
+        if (isset($map[$slug])) {
+            return areaSlug((string)$map[$slug]);
+        }
+        if (function_exists('aovPlace') && aovPlace($slug)) {
+            return $slug;
+        }
+        return $slug;
+    }
+    return $slug;
+}
+
+function icomplyPlaceSlugExists(string $family, string $slug): bool {
+    $slug = areaSlug($slug);
+    if ($slug === '') {
+        return false;
+    }
+    if ($family === 'barriers') {
+        if (function_exists('barriersPlaceBySlug')) {
+            return barriersPlaceBySlug($slug) !== null;
+        }
+        static $bp = null;
+        if ($bp === null) {
+            $rows = loadJsonData('barriers-places', []);
+            $bp = [];
+            foreach (is_array($rows) ? $rows : [] as $row) {
+                if (is_array($row) && !empty($row['slug'])) {
+                    $bp[areaSlug((string)$row['slug'])] = true;
+                }
+            }
+        }
+        return isset($bp[$slug]);
+    }
+    if ($family === 'aov') {
+        if (function_exists('aovPlace')) {
+            return aovPlace($slug) !== null;
+        }
+        static $ut = null;
+        if ($ut === null) {
+            $file = SITE_ROOT . '/data/uk-towns-10k.json';
+            $rows = is_file($file) ? json_decode((string)file_get_contents($file), true) : [];
+            $ut = [];
+            foreach (is_array($rows) ? $rows : [] as $row) {
+                if (is_array($row) && !empty($row['slug'])) {
+                    $ut[areaSlug((string)$row['slug'])] = true;
+                }
+            }
+        }
+        return isset($ut[$slug]);
+    }
+    return false;
+}
+
 function exportedServiceLocalUrl(string $serviceSlug, string $area, string $from = 'service'): string {
     $serviceSlug = areaSlug($serviceSlug);
     $town = areaSlug($area);
@@ -1024,6 +1111,21 @@ function exportedServiceLocalUrl(string $serviceSlug, string $area, string $from
                 return url('/pages/keywords/' . $kw . '/' . $town . '.php');
             }
         }
+    }
+    // Barriers and AOV town URLs only when a published place page exists (or an alias).
+    if ($serviceSlug === 'barriers') {
+        $resolved = icomplyResolvePlaceSlug('barriers', $town);
+        if ($resolved !== '' && icomplyPlaceSlugExists('barriers', $resolved)) {
+            return url('/pages/barriers/' . $resolved . '.php');
+        }
+        return url('/pages/services/barriers.php');
+    }
+    if ($serviceSlug === 'aov-air-handling' || $serviceSlug === 'aov') {
+        $resolved = icomplyResolvePlaceSlug('aov', $town);
+        if ($resolved !== '' && icomplyPlaceSlugExists('aov', $resolved)) {
+            return url('/pages/aov/' . $resolved . '.php');
+        }
+        return url('/pages/services/aov-air-handling.php');
     }
     return url('/pages/' . $serviceSlug . '/' . $town . '.php');
 }
