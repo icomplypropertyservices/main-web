@@ -1,0 +1,201 @@
+rank,slug,kind,status,intent_tier,notes
+1,cctv-installation,both,existing,P0,CCTV install head
+2,cctv-near-me,both,existing,P0,Near-me CCTV
+3,cctv-repair,both,existing,P0,CCTV repair
+4,cctv-maintenance,both,existing,P0,CCTV maintenance
+5,cctv-engineer,both,existing,P0,CCTV engineer
+6,cctv-engineers-near-me,both,existing,P0,Near-me CCTV engineers
+7,security-camera-installation,both,existing,P0,Security camera install
+8,commercial-cctv-system,both,existing,P0,Commercial CCTV
+9,domestic-cctv-installation,both,existing,P0,Domestic CCTV
+10,access-control-installation,both,existing,P0,Access control install
+11,access-control-system,both,existing,P0,Access control head
+12,access-control-near-me,both,existing,P0,Near-me access control
+13,access-control-repair,both,existing,P0,Access control repair
+14,access-control-maintenance,both,existing,P0,Access control maintenance
+15,access-control-engineers,both,existing,P0,Access control engineers
+16,commercial-access-control,both,existing,P0,Commercial access
+17,door-access-control,both,existing,P0,Door access head
+18,burglar-alarm-installation,both,existing,P0,Burglar alarm install
+19,burglar-alarm-system,both,existing,P0,Burglar alarm head
+20,intruder-alarm-installation,both,existing,P0,Intruder alarm install
+21,intruder-alarm-near-me,both,existing,P0,Near-me intruder alarm
+22,intruder-alarm-repair,both,existing,P0,Intruder alarm repair
+23,intruder-alarm-maintenance,both,existing,P0,Intruder alarm maintenance
+24,security-alarm-installation,both,existing,P0,Security alarm install
+25,commercial-intruder-alarm,both,existing,P0,Commercial intruder
+26,domestic-burglar-alarm,both,existing,P0,Domestic burglar
+27,door-entry-system,both,existing,P0,Door entry head
+28,door-entry-installation,both,existing,P0,Door entry install
+29,door-entry-repair,both,existing,P0,Door entry repair
+30,door-entry-maintenance,both,existing,P0,Door entry maintenance
+31,door-entry-engineers-near-me,both,existing,P0,Near-me door entry engineers
+32,video-door-entry,both,existing,P0,Video door entry
+33,anpr-cctv-system,both,existing,P0,ANPR CCTV
+34,cctv-monitoring,both,existing,P0,CCTV monitoring — honest language only
+35,intruder-alarm-monitoring,both,existing,P0,Alarm monitoring — honest language only
+36,alarm-monitoring-setup,both,existing,P0,Monitoring setup — no fake ARC/NSI claims
+37,monitored-intruder-alarm,both,existing,P0,Monitored alarm intent — honest copy
+38,emergency-cctv-repair,keyword,create,P0,CREATE — emergency CCTV repair
+39,emergency-access-control-repair,keyword,create,P0,CREATE — emergency access repair
+40,emergency-alarm-call-out,both,create,P0,CREATE — emergency alarm call-out
+41,24-hour-cctv-engineer,keyword,create,P0,CREATE — 24h CCTV engineer
+42,same-day-cctv-repair,keyword,create,P0,CREATE — same-day CCTV
+43,same-day-alarm-repair,keyword,create,P0,CREATE — same-day alarm
+44,cctv-servicing,both,existing,P0,CCTV servicing
+45,access-control-servicing,both,existing,P0,Access servicing
+46,intruder-alarm-servicing,both,existing,P0,Alarm servicing
+47,burglar-alarm-service,both,existing,P0,Burglar service
+48,door-entry-servicing,both,existing,P0,Door entry servicing
+49,intercom-installation,both,existing,P0,Intercom install
+50,intercom-near-me,both,existing,P0,Near-me intercom
+51,intercom-repair,both,existing,P0,Intercom repair
+52,video-intercom,both,existing,P0,Video intercom
+53,paxton-access-control,both,existing,P0,Paxton brand intent
+54,hikvision-cctv-installation,both,existing,P0,Hikvision CCTV
+55,ip-cctv-system,both,existing,P0,IP CCTV
+56,wireless-cctv,both,existing,P0,Wireless CCTV
+57,maglock-installation,both,existing,P0,Maglock install
+58,fob-access-control,both,existing,P0,Fob access
+59,security-systems-near-me,keyword,create,P0,CREATE — security systems near-me
+60,security-system-installation,both,create,P0,CREATE — security system install head
+61,anpr-installation,both,create,P0,CREATE — ANPR install
+62,anpr-near-me,keyword,create,P0,CREATE — ANPR near-me
+63,access-control-emergency,keyword,create,P0,CREATE — emergency access
+64,intruder-alarm-emergency,keyword,create,P0,CREATE — emergency alarm
+65,door-entry-near-me,keyword,create,P0,CREATE — door entry near-me
+66,cctv-installers-near-me,keyword,create,P0,CREATE — installers near-me
+67,alarm-installers-near-me,keyword,create,P0,CREATE — alarm installers near-me
+68,cctv-camera-installation,both,existing,P1,Camera install
+69,cctv-system-design,both,existing,P1,CCTV design
+70,cctv-system-upgrade,both,existing,P1,CCTV upgrade
+71,cctv-upgrade,both,existing,P1,CCTV upgrade short
+72,cctv-testing,both,existing,P1,CCTV testing
+73,cctv-for-business,both,existing,P1,Business CCTV
+74,business-security-cameras,both,existing,P1,Business cameras
+75,commercial-cctv-package,both,existing,P1,Commercial package
+76,office-cctv-installation,both,existing,P1,Office CCTV
+77,shop-cctv-installation,both,existing,P1,Shop CCTV
+78,retail-cctv-system,both,existing,P1,Retail CCTV
+79,warehouse-cctv,both,existing,P1,Warehouse CCTV
+80,landlord-cctv-installation,both,existing,P1,Landlord CCTV
+81,outdoor-cctv-installation,both,existing,P1,Outdoor CCTV
+82,indoor-cctv-installation,both,existing,P1,Indoor CCTV
+83,external-cctv-installation,both,existing,P1,External CCTV
+84,internal-cctv-installation,both,existing,P1,Internal CCTV
+85,hd-cctv-installation,both,existing,P1,HD CCTV
+86,hd-cctv-camera-installation,both,existing,P1,HD camera install
+87,4k-cctv-system,both,existing,P1,4K CCTV
+88,nvr-installation,both,existing,P1,NVR install
+89,dvr-cctv-system,both,existing,P1,DVR CCTV
+90,dvr-installation,both,existing,P1,DVR install
+91,wireless-cctv-installation,both,existing,P1,Wireless install
+92,remote-viewing-cctv,both,existing,P1,Remote viewing
+93,remote-cctv-access,both,existing,P1,Remote access
+94,cctv-remote-viewing-setup,both,existing,P1,Remote viewing setup
+95,cctv-monitoring-setup,both,existing,P1,Monitoring setup
+96,multi-site-cctv,both,existing,P1,Multi-site CCTV
+97,multi-site-cctv-monitoring-setup,both,existing,P1,Multi-site monitoring
+98,cctv-for-car-parks,both,existing,P1,Car park CCTV
+99,cctv-for-schools,both,existing,P1,School CCTV
+100,cctv-for-care-homes,both,existing,P1,Care home CCTV
+101,dahua-cctv-installation,both,existing,P1,Dahua CCTV
+102,hikvision-cctv,both,existing,P1,Hikvision short
+103,axis-camera-installation,both,existing,P1,Axis cameras
+104,dome-camera-installation,both,existing,P1,Dome camera
+105,bullet-camera-installation,both,existing,P1,Bullet camera
+106,ptz-camera-installation,both,existing,P1,PTZ camera
+107,anpr-car-park-camera,both,existing,P1,ANPR car park
+108,number-plate-recognition-camera,both,existing,P1,NPR camera
+109,anpr-camera-advice,both,existing,P1,ANPR advice
+110,video-surveillance-system,both,existing,P1,Video surveillance
+111,cctv-cabling-installation,both,existing,P1,CCTV cabling
+112,cctv-hard-drive-upgrade,both,existing,P1,HDD upgrade
+113,cctv-recording,both,existing,P1,CCTV recording
+114,cctv-compliance,both,existing,P1,CCTV compliance / GDPR honest
+115,cctv-certification,both,existing,P1,CCTV certification — no fake badges
+116,access-control-upgrade,both,existing,P1,Access upgrade
+117,access-control-system-design,both,existing,P1,Access design
+118,access-control-panel,both,existing,P1,Access panel
+119,access-control-card-programming,both,existing,P1,Card programming
+120,door-access-control-system,both,existing,P1,Door access system
+121,office-access-control,both,existing,P1,Office access
+122,office-access-control-system,both,existing,P1,Office access system
+123,apartment-access-control,both,existing,P1,Apartment access
+124,biometric-access-control,both,existing,P1,Biometric access
+125,fingerprint-access-control,both,existing,P1,Fingerprint access
+126,keypad-access-control,both,existing,P1,Keypad access
+127,cloud-access-control,both,existing,P1,Cloud access
+128,wireless-access-control,both,existing,P1,Wireless access
+129,multi-door-access-control,both,existing,P1,Multi-door access
+130,multi-site-access-control,both,existing,P1,Multi-site access
+131,gate-access-control,both,existing,P1,Gate access
+132,lift-access-control,both,existing,P1,Lift access
+133,card-access-system,both,existing,P1,Card access
+134,proximity-card-reader,both,existing,P1,Proximity reader
+135,proximity-card-reader-installation,both,existing,P1,Proximity install
+136,proximity-reader-installation,both,existing,P1,Proximity reader install
+137,magnetic-lock-installation,both,existing,P1,Magnetic lock
+138,electric-strike-installation,both,existing,P1,Electric strike
+139,electric-door-release,both,existing,P1,Door release
+140,door-controller-installation,both,existing,P1,Door controller
+141,building-access-system,both,existing,P1,Building access
+142,time-attendance-access-control,both,existing,P1,Time attendance
+143,visitor-access-management,both,existing,P1,Visitor access
+144,paxton-access,both,existing,P1,Paxton short
+145,paxton-net2-install,both,existing,P1,Paxton Net2
+146,paxton-net2-maintenance,both,existing,P1,Paxton Net2 maint
+147,salto-access-control,both,existing,P1,Salto access
+148,hid-access-control,both,existing,P1,HID access
+149,assa-abloy-access-control,both,existing,P1,ASSA ABLOY
+150,access-control-after-staff-change,both,existing,P1,Staff change credentials
+151,broken-fob-emergency-visit,both,existing,P1,Broken fob emergency
+152,intercom-access,both,existing,P1,Intercom + access
+153,secure-door-entry-access,both,existing,P1,Secure door entry
+154,home-intruder-alarm,both,existing,P1,Home intruder
+155,residential-intruder-alarm,both,existing,P1,Residential intruder
+156,office-alarm-installation,both,existing,P1,Office alarm
+157,shop-alarm-installation,both,existing,P1,Shop alarm
+158,warehouse-intruder-alarm,both,existing,P1,Warehouse alarm
+159,warehouse-alarm-system,both,existing,P1,Warehouse alarm system
+160,business-premises-alarm,both,existing,P1,Business premises alarm
+161,wireless-intruder-alarm,both,existing,P1,Wireless alarm
+162,wired-intruder-alarm,both,existing,P1,Wired alarm
+163,wired-intruder-alarm-system,both,existing,P1,Wired alarm system
+164,grade-2-intruder-alarm,both,existing,P1,Grade 2 — honest grading language
+165,grade-3-intruder-alarm,both,existing,P1,Grade 3 — honest grading language
+166,police-response-alarm,both,existing,P1,Police response intent — no fake NSI/URN claims
+167,pd-6662-alarm-system,both,existing,P1,PD 6662 practice language
+168,intruder-alarm-engineer,both,existing,P1,Alarm engineer
+169,intruder-alarm-engineers,both,existing,P1,Alarm engineers
+170,intruder-alarm-panel,both,existing,P1,Alarm panel
+171,intruder-alarm-panel-replacement,both,existing,P1,Panel replacement
+172,intruder-alarm-testing,both,existing,P1,Alarm testing
+173,intruder-alarm-maintenance-contract,both,existing,P1,Alarm maint contract
+174,alarm-maintenance-contract,both,existing,P1,Alarm contract
+175,alarm-panel-upgrade,both,existing,P1,Panel upgrade
+176,alarm-system-upgrade,both,existing,P1,System upgrade
+177,alarm-system-design,both,existing,P1,Alarm design
+178,alarm-keypad-installation,both,existing,P1,Keypad install
+179,alarm-keypad-replacement,both,existing,P1,Keypad replace
+180,alarm-battery-replacement,both,existing,P1,Battery replace
+181,pir-sensor-installation,both,existing,P1,PIR sensor
+182,door-contact-alarm-installation,both,existing,P1,Door contact
+183,shock-sensor-installation,both,existing,P1,Shock sensor
+184,ajax-alarm-installation,both,existing,P1,Ajax brand
+185,texecom-alarm-installation,both,existing,P1,Texecom brand
+186,texecom-intruder-alarm,both,existing,P1,Texecom intruder
+187,pyronix-alarm-installation,both,existing,P1,Pyronix brand
+188,risco-alarm-installation,both,existing,P1,Risco brand
+189,smart-home-alarm-installation,both,existing,P1,Smart home alarm
+190,multi-site-alarm-maintenance,both,existing,P1,Multi-site alarm
+191,apartment-door-entry,both,existing,P1,Apartment door entry
+192,apartment-door-entry-system,both,existing,P1,Apartment door entry system
+193,audio-door-entry,both,existing,P1,Audio door entry
+194,commercial-door-entry,both,existing,P1,Commercial door entry
+195,residential-door-entry,both,existing,P1,Residential door entry
+196,communal-door-entry-system,both,existing,P1,Communal door entry
+197,block-of-flats-door-entry,both,existing,P1,Flats door entry
+198,landlord-door-entry,both,existing,P1,Landlord door entry
+199,gsm-door-entry,both,existing,P1,GSM door entry
+200,gsm-door-entry-system,both,existing,P1,GSM door entry system

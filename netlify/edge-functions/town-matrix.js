@@ -108,6 +108,7 @@ const SERVICE_HUB_ALIAS = {
   "fire-risk-assessment": "/pages/services/fire-risk-assessments",
   "ev-charging": "/pages/services/ev-chargers",
 };
+import { renderSecurityDualRing, securityDualRingHandles } from "../lib/security-dual-ring.js";
 
 const RESERVED = new Set([
   "keywords", "services", "areas", "manufacturers", "resources", "packages",
@@ -700,6 +701,7 @@ function placeAliasRedirect(path) {
 
 export function nonGmMatrixRedirect(path) {
   if (GSC_KEEP.has(path)) return null;
+  if (securityDualRingHandles(path)) return null;
   let m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   if (m) {
     if (isLocalTown(m[2]) || p0KeepsTown(m[1], m[2]) || fireInstallerNationwide(m[1], m[2])) return null;
@@ -731,6 +733,17 @@ export default async (request, context) => {
   const matrixTo = nonGmMatrixRedirect(path);
   if (matrixTo) {
     return Response.redirect(new URL(matrixTo, url.origin).toString(), 301);
+  }
+  const securityHtml = renderSecurityDualRing(path);
+  if (securityHtml) {
+    return new Response(securityHtml, {
+      status: 200,
+      headers: {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=3600",
+        "x-robots-tag": "index, follow",
+      },
+    });
   }
   // AOV, barriers and fire-family town HTML is exported. Do not replace it
   // with the Greater Manchester matrix renderer.

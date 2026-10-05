@@ -889,6 +889,15 @@ function getMajorKeywords(): array {
     if (function_exists('openJobLanesApply')) {
         $normalized = openJobLanesApply($normalized);
     }
+    if (!function_exists('securityDualRingApplyKeywords')) {
+        $securityPack = __DIR__ . '/includes/security-dual-ring.php';
+        if (is_file($securityPack)) {
+            require_once $securityPack;
+        }
+    }
+    if (function_exists('securityDualRingApplyKeywords')) {
+        $normalized = securityDualRingApplyKeywords($normalized);
+    }
     $normalized = icomplyApplyCustomerKeywordCopy($normalized);
     if (function_exists('icomplyNationwide3lineApplyKeywords')) {
         $normalized = icomplyNationwide3lineApplyKeywords($normalized);

@@ -130,6 +130,16 @@ function routerDispatchVirtual(string $path): bool {
         return true;
     }
 
+    if (preg_match('#^/pages/jobs/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        if (!function_exists('securityDualRingHandlesPath')) {
+            require_once __DIR__ . '/security-dual-ring.php';
+        }
+        if (securityDualRingHandlesPath($path)) {
+            securityDualRingRender('job', $m[1], $m[2]);
+            return true;
+        }
+    }
+
     if (!function_exists('icomplyDispatchTownPath')) {
         require_once __DIR__ . '/town-service-pages.php';
     }

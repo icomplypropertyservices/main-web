@@ -6,6 +6,7 @@
  * area hubs, local service×town, keyword×town and job×town.
  * Manufacturer×town stays on the Greater Manchester core of 60.
  * AOV, barriers and fire-family town pages stay UK-wide.
+ * Security P0 keyword×town and job×town stay on the dual 269 ring.
  */
 declare(strict_types=1);
 
@@ -142,6 +143,16 @@ function icomplyNonGmMatrixRedirect(string $path): ?string
         return null; // GSC-ranked town page: keep (mirrors edge GSC_KEEP)
     }
     $path = rtrim($path, '/') ?: '/';
+
+    if (!function_exists('securityDualRingHandlesPath')) {
+        $security = __DIR__ . '/security-dual-ring.php';
+        if (is_file($security)) {
+            require_once $security;
+        }
+    }
+    if (function_exists('securityDualRingHandlesPath') && securityDualRingHandlesPath($path)) {
+        return null;
+    }
 
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         if (icomplyNationwide3lineNationwidePath($path) || icomplyFireAlarmInstallerNationwidePath($path)) {
