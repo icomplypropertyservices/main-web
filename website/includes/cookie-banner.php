@@ -73,9 +73,21 @@ $privacyUrl = function_exists('url') ? url('/privacy') : (rtrim(SITE_URL, '/') .
         if (localStorage.getItem(KEY)) return;
     } catch (e) { /* private mode — still show banner */ }
     banner.hidden = false;
+    // Keep the WhatsApp bubble visible above the notice while it is open.
+    var root = document.documentElement;
+    function liftWa() {
+        if (banner.hidden) return;
+        var lift = Math.max(0, window.innerHeight - banner.getBoundingClientRect().top) + 12;
+        root.style.setProperty('--wa-lift', lift + 'px');
+        root.classList.add('cookie-open');
+    }
+    liftWa();
+    window.addEventListener('resize', liftWa);
     btn.addEventListener('click', function () {
         try { localStorage.setItem(KEY, 'accepted'); } catch (e) {}
         banner.hidden = true;
+        root.classList.remove('cookie-open');
+        window.removeEventListener('resize', liftWa);
         if (window.__icomplyAnalytics && typeof window.__icomplyAnalytics.load === 'function') {
             window.__icomplyAnalytics.load();
         }

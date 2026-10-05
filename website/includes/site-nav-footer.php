@@ -12,6 +12,8 @@ function icomplyFooterHtml(): string
         $waDigits = '447517806082';
     }
     $wa = icomplyNavH($waDigits);
+    require_once __DIR__ . '/netlify-badge.php';
+    $waFloat = icomplyWhatsappFloatHtml($waDigits);
     $brand = icomplyNavH($n['brand']);
     $year = date('Y');
     $contact = icomplyNavH(url('/contact.php'));
@@ -225,7 +227,7 @@ function icomplyFooterHtml(): string
     </div>
   </div>
 </footer>
-<a href="https://wa.me/{$wa}?text=Hi%20iComply%2C%20I%20need%20a%20quote%20for%20compliance%20services" target="_blank" rel="noopener" aria-label="WhatsApp" class="wa-float">💬</a>
+{$waFloat}
 <div id="mobile-sticky-cta" class="mobile-sticky-cta">
   <a href="{$phoneHref}">Call {$phone}</a>
   <a class="sticky-quote" href="{$contact}">Free quote</a>
