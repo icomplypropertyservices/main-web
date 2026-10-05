@@ -7,6 +7,7 @@
  * on the Greater Manchester core. Other places stay noindex.
  */
 import { renderVariantPage, renderVariantSitemap } from "../lib/variant-matrix.js";
+import { renderManchesterElectricalPage } from "../lib/manchester-electrical-p0.js";
 import { breadcrumbHtml, isGmTown, isLocalTown, matrixRelatedHtml } from "../lib/link-blocks.js";
 import { gmTownBlurb } from "../lib/gm-blurbs.js";
 
@@ -54,7 +55,7 @@ const VISIT_STYLES = [
   "a survey followed by a return visit for the agreed scope",
 ];
 
-const GAS_SENTENCE = "Gas work is carried out by Gas Safe registered engineers.";
+const GAS_SENTENCE = "Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.";
 
 function stripBriefTokens(text) {
   return String(text || "")
@@ -290,9 +291,6 @@ export function renderTownPage(input) {
     ? gmTownBlurb(kind, kind === "keyword" ? input.keyword : serviceSlug, townSlug)
     : null;
   let prose = packed && packed.blurb ? stripBriefTokens(packed.blurb) : "";
-  if (gas && prose && !/Gas Safe registered engineers/.test(prose)) {
-    prose = `${prose} ${GAS_SENTENCE}`;
-  }
   const packedLead = prose
     ? `${packed && packed.h2 ? `<h2>${escapeHtml(stripBriefTokens(packed.h2))}</h2>` : ""}<p>${escapeHtml(prose)}</p>`
     : "";
@@ -338,16 +336,18 @@ export function renderTownPage(input) {
   if (bits[1]) {
     faqs.push([`What should the ${place.name} file show before a quote?`, bits[1]]);
   }
-  if (gas && prose) {
-    faqs.push([`Who carries out gas work for this ${place.name} visit?`, `${GAS_SENTENCE} ${bits[bits.length - 1] || ""}`.trim()]);
-  } else if (bits[2]) {
+  if (bits[2]) {
     faqs.push([`How is the ${place.name} price decided?`, bits[2]]);
   }
   const faqHtml = faqs.map(([q, a]) => (
     `<details><summary>${escapeHtml(q)}</summary><p>${escapeHtml(a)}</p></details>`
   )).join("");
   const focusHtml = focus.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
-  const bodyHtml = packedLead + paragraphs.map((paragraph) => `<p>${escapeHtml(stripBriefTokens(paragraph))}</p>`).join("");
+  const poaLine = `The quote for ${subject} in ${place.name} is price on application (POA).`;
+  const complianceHtml = `<p>${escapeHtml(poaLine)}</p>${
+    gas && !/iComply is not Gas Safe registered/i.test(prose) ? `<p>${escapeHtml(GAS_SENTENCE)}</p>` : ""
+  }`;
+  const bodyHtml = packedLead + paragraphs.map((paragraph) => `<p>${escapeHtml(stripBriefTokens(paragraph))}</p>`).join("") + complianceHtml;
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -580,6 +580,28 @@ export default async (request, context) => {
   const jobMatch = path.match(/^\/pages\/jobs\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   const keywordMatch = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   const serviceMatch = path.match(/^\/pages\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
+  if (keywordMatch || jobMatch) {
+    try {
+      const rich = await renderManchesterElectricalPage({
+        origin: url.origin,
+        surface: keywordMatch ? "keyword" : "job",
+        slug: (keywordMatch || jobMatch)[1],
+        town: (keywordMatch || jobMatch)[2],
+      });
+      if (rich) {
+        return new Response(rich, {
+          status: 200,
+          headers: {
+            "content-type": "text/html; charset=utf-8",
+            "cache-control": "public, max-age=3600",
+            "x-robots-tag": "index, follow",
+          },
+        });
+      }
+    } catch {
+      // Thin matrix renderer remains the fallback when the P0 spec is unavailable.
+    }
+  }
   if (!manufacturerMatch && !jobMatch && !keywordMatch && !serviceMatch) {
     return context.next();
   }

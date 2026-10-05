@@ -114,7 +114,8 @@ $ok(icomplyPathIsIndexable('/pages/areas/liverpool'), 'dual-ring area hubs are i
 $ok(icomplyPathIsIndexable('/pages/areas/manchester'), 'Manchester area hub is indexable');
 $ok(icomplyPathIsIndexable('/pages/areas/burnley'), 'Burnley area hub is indexable');
 $ok(!icomplyPathIsIndexable('/pages/areas/birmingham'), 'towns outside the rings stay noindex');
-$ok(!icomplyPathIsIndexable('/pages/keywords/eicr/stockport'), 'keyword×town stays noindex');
+$ok(icomplyPathIsIndexable('/pages/keywords/eicr/stockport'), 'Manchester electrical P0 keyword×town is indexable');
+$ok(!icomplyPathIsIndexable('/pages/keywords/boiler/stockport'), 'non-P0 keyword×town stays noindex');
 $ok(icomplyPathIsIndexable('/pages/areas'), 'areas index stays indexable');
 
 $xml = icomplyBuildSitemapXml('https://icomplypropertyservices.co.uk');

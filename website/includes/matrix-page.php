@@ -213,6 +213,13 @@ function icomplyMatrixKeywordChips(string $serviceSlug): string
 
 function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): string
 {
+    if (!function_exists('manchesterElectricalP0Html')) {
+        require_once __DIR__ . '/manchester-electrical-p0.php';
+    }
+    $rich = manchesterElectricalP0Html('keyword', $keywordSlug, $areaName);
+    if ($rich !== '') {
+        return $rich;
+    }
     $s = icomplyMatrixShared();
     $keywords = getMajorKeywords();
     $keywordSlug = keywordSlug($keywordSlug);

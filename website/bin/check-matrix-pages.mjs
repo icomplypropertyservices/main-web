@@ -167,7 +167,7 @@ for (const page of pages) {
   ok(!/iComply does not issue CP12/i.test(page.html), `no CP12 denial on ${page.path}`);
   ok(page.words >= 250, `body words ${page.words} on ${page.path}`);
   ok(/price on application|\bPOA\b/.test(page.html), `POA on ${page.path}`);
-  ok(page.html.includes("approved subcontractors"), `subcontractors on ${page.path}`);
+  ok(!page.html.includes("approved subcontractors"), `no subcontractors on ${page.path}`);
 }
 
 const eicrTowns = pages.slice(0, 3);

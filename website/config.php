@@ -409,7 +409,13 @@ function icomplyPathIsIndexable(string $path): bool
     if ($path === '') {
         $path = '/';
     }
-    if (preg_match('#^/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+$#', $path)) {
+    if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $kwTown)) {
+        if (!function_exists('manchesterElectricalP0TownIndexable')) {
+            require_once __DIR__ . '/includes/manchester-electrical-p0.php';
+        }
+        if (manchesterElectricalP0TownIndexable('keyword', $kwTown[1], $kwTown[2])) {
+            return true;
+        }
         return false;
     }
     // Area hubs are indexable for the dual-ring allowlist, including Burnley.
