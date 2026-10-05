@@ -447,525 +447,6 @@
   status = 301
 
 # AOV and Barriers × town (pop > 10k) are real exports stored as .php.
-# 200, no force. These must never 301. An exported file at the path wins;
-# otherwise the .php sibling is served:
-#   /pages/aov/{town}
-#   /pages/barriers/{town}
-#   /pages/services/aov/{town}
-#   /pages/services/aov-air-handling/{town}
-#   /pages/services/barriers/{town}
-#   /pages/aov-air-handling/{town}
-[[redirects]]
-  from = "/pages/aov/:town"
-  to = "/pages/aov/:town.php"
-  status = 200
-
-[[redirects]]
-  from = "/pages/aov/:town/"
-  to = "/pages/aov/:town.php"
-  status = 200
-
-[[redirects]]
-  from = "/pages/barriers/:town"
-  to = "/pages/barriers/:town.php"
-  status = 200
-
-[[redirects]]
-  from = "/pages/barriers/:town/"
-  to = "/pages/barriers/:town.php"
-  status = 200
-
-[[redirects]]
-  from = "/pages/aov-air-handling/:town"
-  to = "/pages/aov-air-handling/:town.php"
-  status = 200
-
-[[redirects]]
-  from = "/pages/aov-air-handling/:town/"
-  to = "/pages/aov-air-handling/:town.php"
-  status = 200
-
-[[redirects]]
-  from = "/pages/services/aov/:town"
-  to = "/pages/services/aov/:town.php"
-  status = 200
-
-[[redirects]]
-  from = "/pages/services/aov/:town/"
-  to = "/pages/services/aov/:town.php"
-  status = 200
-
-[[redirects]]
-  from = "/pages/services/aov-air-handling/:town"
-  to = "/pages/services/aov-air-handling/:town.php"
-  status = 200
-
-[[redirects]]
-  from = "/pages/services/aov-air-handling/:town/"
-  to = "/pages/services/aov-air-handling/:town.php"
-  status = 200
-
-[[redirects]]
-  from = "/pages/services/barriers/:town"
-  to = "/pages/services/barriers/:town.php"
-  status = 200
-
-[[redirects]]
-  from = "/pages/services/barriers/:town/"
-  to = "/pages/services/barriers/:town.php"
-  status = 200
-
-# Linked keyword×town and service×town URLs 404 when the matrix is not published.
-# aov, barriers, and aov-* slugs are not in the service×town 301 list.
-[[redirects]]
-  from = "/assets/css/site.css"
-  to = "/assets/css/site.css"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/sitemap-*.xml"
-  to = "/sitemap.xml"
-  status = 301
-  force = true
-
-# Old hyphenated chunk names (/sitemap-1.xml) and /sitemaps/* redirect to the
-# index. /sitemap0.xml and /sitemap1.xml are real files (no hyphen) and must
-# not match this rule. /products/sitemap.xml and /shop/sitemap.xml are real
-# urlsets written by the static export. Do not touch /shop or /products hubs.
-[[redirects]]
-  from = "/sitemaps/*"
-  to = "/sitemap.xml"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/assets/images/services/*-photo.jpg"
-  to = "/assets/images/services/:splat.jpg"
-  status = 200
-
-[[redirects]]
-  from = "/assets/images/manufacturers/*"
-  to = "/assets/images/services/fire-alarms.jpg"
-  status = 200
-
-# Pretty URLs → pre-rendered HTML (stored as .php).
-# force=true on these hubs so a child-file directory (pages/areas/*)
-# cannot 301 /pages/areas → /pages/areas/. Splat has no force: /assets wins.
-[[redirects]]
-  from = "/privacy"
-  to = "/privacy.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/privacy/"
-  to = "/privacy.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/terms"
-  to = "/terms.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/terms/"
-  to = "/terms.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/contact"
-  to = "/contact.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/contact/"
-  to = "/contact.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/become-a-subcontractor"
-  to = "/become-a-subcontractor.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/become-a-subcontractor/"
-  to = "/become-a-subcontractor.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/pages/about"
-  to = "/pages/about.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/pages/about/"
-  to = "/pages/about.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/pages/areas"
-  to = "/pages/areas.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/pages/areas/"
-  to = "/pages/areas.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/pages/services"
-  to = "/pages/services.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/pages/services/"
-  to = "/pages/services.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/pages/manufacturers"
-  to = "/pages/manufacturers.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/pages/manufacturers/"
-  to = "/pages/manufacturers.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/pages/resources"
-  to = "/pages/resources.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/pages/resources/"
-  to = "/pages/resources.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/pages/keywords"
-  to = "/pages/keywords.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/pages/keywords/"
-  to = "/pages/keywords.php"
-  status = 200
-  force = true
-
-# Child town files must not 301 /pages/keywords/{slug} → trailing slash.
-[[redirects]]
-  from = "/pages/keywords/:slug"
-  to = "/pages/keywords/:slug.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/pages/keywords/:slug/"
-  to = "/pages/keywords/:slug.php"
-  status = 200
-  force = true
-
-
-# BEGIN legacy-matrix-redirects
-# END legacy-matrix-redirects
-
-[[redirects]]
-  from = "/pages/barriers"
-  to = "/pages/services/barriers.php"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/pages/barriers/"
-  to = "/pages/services/barriers.php"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/pages/barriers/:slug"
-  to = "/pages/barriers/:slug.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/pages/barriers/:slug/"
-  to = "/pages/barriers/:slug.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/pages/ev-chargers"
-  to = "/pages/services/ev-chargers"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/pages/ev-chargers/"
-  to = "/pages/services/ev-chargers"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/pages/water-wras"
-  to = "/pages/services/water-wras"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/pages/water-wras/"
-  to = "/pages/services/water-wras"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/pages/windows-doors"
-  to = "/pages/services/windows-doors"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/pages/windows-doors/"
-  to = "/pages/services/windows-doors"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/products/product/:handle"
-  to = "/products/product/:handle.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/products/product/:handle/"
-  to = "/products/product/:handle.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/shop/products/:handle"
-  to = "/shop/products/:handle.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/shop/products/:handle/"
-  to = "/shop/products/:handle.php"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/*"
-  to = "/:splat.php"
-  status = 200
-
-[[headers]]
-  for = "/*.php"
-  [headers.values]
-    Content-Type = "text/html; charset=utf-8"
-    X-Content-Type-Options = "nosniff"
-
-[[headers]]
-  for = "/privacy"
-  [headers.values]
-    Content-Type = "text/html; charset=utf-8"
-    X-Content-Type-Options = "nosniff"
-
-[[headers]]
-  for = "/terms"
-  [headers.values]
-    Content-Type = "text/html; charset=utf-8"
-    X-Content-Type-Options = "nosniff"
-
-[[headers]]
-  for = "/contact"
-  [headers.values]
-    Content-Type = "text/html; charset=utf-8"
-    X-Content-Type-Options = "nosniff"
-
-[[headers]]
-  for = "/become-a-subcontractor"
-  [headers.values]
-    Content-Type = "text/html; charset=utf-8"
-    X-Content-Type-Options = "nosniff"
-
-[[headers]]
-  for = "/become-a-subcontractor/"
-  [headers.values]
-    Content-Type = "text/html; charset=utf-8"
-    X-Content-Type-Options = "nosniff"
-
-[[headers]]
-  for = "/shop"
-  [headers.values]
-    Content-Type = "text/html; charset=utf-8"
-    X-Content-Type-Options = "nosniff"
-
-[[headers]]
-  for = "/shop/"
-  [headers.values]
-    Content-Type = "text/html; charset=utf-8"
-    X-Content-Type-Options = "nosniff"
-
-[[headers]]
-  for = "/shop/fire"
-  [headers.values]
-    Content-Type = "text/html; charset=utf-8"
-    X-Content-Type-Options = "nosniff"
-
-[[headers]]
-  for = "/shop/fire/"
-  [headers.values]
-    Content-Type = "text/html; charset=utf-8"
-    X-Content-Type-Options = "nosniff"
-
-[[headers]]
-  for = "/shop/electrical"
-  [headers.values]
-    Content-Type = "text/html; charset=utf-8"
-    X-Content-Type-Options = "nosniff"
-
-[[headers]]
-  for = "/shop/electrical/"
-  [headers.values]
-    Content-Type = "text/html; charset=utf-8"
-    X-Content-Type-Options = "nosniff"
-
-[[headers]]
-  for = "/shop/security"
-  [headers.values]
-    Content-Type = "text/html; charset=utf-8"
-    X-Content-Type-Options = "nosniff"
-
-[[headers]]
-  for = "/shop/security/"
-  [headers.values]
-    Content-Type = "text/html; charset=utf-8"
-    X-Content-Type-Options = "nosniff"
-
-[[headers]]
-  for = "/shop/gas"
-  [headers.values]
-    Content-Type = "text/html; charset=utf-8"
-    X-Content-Type-Options = "nosniff"
-
-[[headers]]
-  for = "/shop/gas/"
-  [headers.values]
-    Content-Type = "text/html; charset=utf-8"
-    X-Content-Type-Options = "nosniff"
-
-[[headers]]
-  for = "/shop/assets/*.css"
-  [headers.values]
-    Content-Type = "text/css; charset=utf-8"
-
-[[headers]]
-  for = "/shop/assets/*.svg"
-  [headers.values]
-    Content-Type = "image/svg+xml"
-
-[[headers]]
-  for = "/products"
-  [headers.values]
-    Content-Type = "text/html; charset=utf-8"
-    X-Content-Type-Options = "nosniff"
-
-[[headers]]
-  for = "/thank-you"
-  [headers.values]
-    Content-Type = "text/html; charset=utf-8"
-    X-Content-Type-Options = "nosniff"
-
-[[headers]]
-  for = "/pages/*"
-  [headers.values]
-    Content-Type = "text/html; charset=utf-8"
-    X-Content-Type-Options = "nosniff"
-
-[[headers]]
-  for = "/robots.txt"
-  [headers.values]
-    Cache-Control = "public, max-age=3600"
-
-[[headers]]
-  for = "/assets/css/*"
-  [headers.values]
-    Content-Type = "text/css; charset=utf-8"
-
-[[headers]]
-  for = "/manifest.json"
-  [headers.values]
-    Content-Type = "application/manifest+json; charset=utf-8"
-    Cache-Control = "public, max-age=3600"
-
-[[headers]]
-  for = "/manifest.webmanifest"
-  [headers.values]
-    Content-Type = "application/manifest+json; charset=utf-8"
-    Cache-Control = "public, max-age=3600"
-
-[[headers]]
-  for = "/site.webmanifest"
-  [headers.values]
-    Content-Type = "application/manifest+json; charset=utf-8"
-    Cache-Control = "public, max-age=3600"
-
-[[headers]]
-  for = "/sitemap*.xml"
-  [headers.values]
-    Content-Type = "application/xml; charset=utf-8"
-    Cache-Control = "public, max-age=3600"
-
-# Powered by Netlify badge: Netlify injects /.netlify/scripts/hud at the edge
-# (Project configuration → General → Powered by Netlify badge). That toggle
-# is not in git. This policy allows inline scripts and same-site /assets/
-# only, so the HUD script cannot execute on the next deploy.
-# Keep this path-scoped. Adding 'self' would allow the badge back.
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Content-Security-Policy = "script-src 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.google.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://icomplypropertyservices.co.uk/assets/ https://www.icomplypropertyservices.co.uk/assets/ https://*.netlify.app/assets/"
-
-# Renewal logger + vCard (also emitted by static-export into dist/_headers)
-[[headers]]
-  for = "/renewals"
-  [headers.values]
-    Content-Type = "text/html; charset=utf-8"
-    X-Content-Type-Options = "nosniff"
-
-[[headers]]
-  for = "/renewals/thanks"
-  [headers.values]
-    Content-Type = "text/html; charset=utf-8"
-    X-Content-Type-Options = "nosniff"
-
-[[headers]]
-  for = "/assets/contact/*.vcf"
-  [headers.values]
-    Content-Type = "text/vcard; charset=utf-8"
-    Content-Disposition = "attachment"
-    X-Content-Type-Options = "nosniff"
-    Cache-Control = "public, max-age=86400"
 
 # Place aliases generated for missing barrier/AOV town slugs
 [[redirects]]
@@ -1498,3 +979,522 @@
   to = "/pages/aov/shaw-oldham"
   status = 301
 
+# 200, no force. These must never 301. An exported file at the path wins;
+# otherwise the .php sibling is served:
+#   /pages/aov/{town}
+#   /pages/barriers/{town}
+#   /pages/services/aov/{town}
+#   /pages/services/aov-air-handling/{town}
+#   /pages/services/barriers/{town}
+#   /pages/aov-air-handling/{town}
+[[redirects]]
+  from = "/pages/aov/:town"
+  to = "/pages/aov/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/aov/:town/"
+  to = "/pages/aov/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/barriers/:town"
+  to = "/pages/barriers/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/barriers/:town/"
+  to = "/pages/barriers/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/aov-air-handling/:town"
+  to = "/pages/aov-air-handling/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/aov-air-handling/:town/"
+  to = "/pages/aov-air-handling/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/services/aov/:town"
+  to = "/pages/services/aov/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/services/aov/:town/"
+  to = "/pages/services/aov/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/services/aov-air-handling/:town"
+  to = "/pages/services/aov-air-handling/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/services/aov-air-handling/:town/"
+  to = "/pages/services/aov-air-handling/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/services/barriers/:town"
+  to = "/pages/services/barriers/:town.php"
+  status = 200
+
+[[redirects]]
+  from = "/pages/services/barriers/:town/"
+  to = "/pages/services/barriers/:town.php"
+  status = 200
+
+# Linked keyword×town and service×town URLs 404 when the matrix is not published.
+# aov, barriers, and aov-* slugs are not in the service×town 301 list.
+[[redirects]]
+  from = "/assets/css/site.css"
+  to = "/assets/css/site.css"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/sitemap-*.xml"
+  to = "/sitemap.xml"
+  status = 301
+  force = true
+
+# Old hyphenated chunk names (/sitemap-1.xml) and /sitemaps/* redirect to the
+# index. /sitemap0.xml and /sitemap1.xml are real files (no hyphen) and must
+# not match this rule. /products/sitemap.xml and /shop/sitemap.xml are real
+# urlsets written by the static export. Do not touch /shop or /products hubs.
+[[redirects]]
+  from = "/sitemaps/*"
+  to = "/sitemap.xml"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/assets/images/services/*-photo.jpg"
+  to = "/assets/images/services/:splat.jpg"
+  status = 200
+
+[[redirects]]
+  from = "/assets/images/manufacturers/*"
+  to = "/assets/images/services/fire-alarms.jpg"
+  status = 200
+
+# Pretty URLs → pre-rendered HTML (stored as .php).
+# force=true on these hubs so a child-file directory (pages/areas/*)
+# cannot 301 /pages/areas → /pages/areas/. Splat has no force: /assets wins.
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/privacy/"
+  to = "/privacy.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/terms"
+  to = "/terms.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/terms/"
+  to = "/terms.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/contact/"
+  to = "/contact.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/become-a-subcontractor"
+  to = "/become-a-subcontractor.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/become-a-subcontractor/"
+  to = "/become-a-subcontractor.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/about"
+  to = "/pages/about.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/about/"
+  to = "/pages/about.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/areas"
+  to = "/pages/areas.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/areas/"
+  to = "/pages/areas.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/services"
+  to = "/pages/services.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/services/"
+  to = "/pages/services.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/manufacturers"
+  to = "/pages/manufacturers.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/manufacturers/"
+  to = "/pages/manufacturers.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/resources"
+  to = "/pages/resources.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/resources/"
+  to = "/pages/resources.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords"
+  to = "/pages/keywords.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/"
+  to = "/pages/keywords.php"
+  status = 200
+  force = true
+
+# Child town files must not 301 /pages/keywords/{slug} → trailing slash.
+[[redirects]]
+  from = "/pages/keywords/:slug"
+  to = "/pages/keywords/:slug.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/:slug/"
+  to = "/pages/keywords/:slug.php"
+  status = 200
+  force = true
+
+
+# BEGIN legacy-matrix-redirects
+# END legacy-matrix-redirects
+
+[[redirects]]
+  from = "/pages/barriers"
+  to = "/pages/services/barriers.php"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/barriers/"
+  to = "/pages/services/barriers.php"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/barriers/:slug"
+  to = "/pages/barriers/:slug.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/barriers/:slug/"
+  to = "/pages/barriers/:slug.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pages/ev-chargers"
+  to = "/pages/services/ev-chargers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/ev-chargers/"
+  to = "/pages/services/ev-chargers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/water-wras"
+  to = "/pages/services/water-wras"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/water-wras/"
+  to = "/pages/services/water-wras"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/windows-doors"
+  to = "/pages/services/windows-doors"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/windows-doors/"
+  to = "/pages/services/windows-doors"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/products/product/:handle"
+  to = "/products/product/:handle.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/products/product/:handle/"
+  to = "/products/product/:handle.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/products/:handle"
+  to = "/shop/products/:handle.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/shop/products/:handle/"
+  to = "/shop/products/:handle.php"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/:splat.php"
+  status = 200
+
+[[headers]]
+  for = "/*.php"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/privacy"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/terms"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/contact"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/become-a-subcontractor"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/become-a-subcontractor/"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/fire"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/fire/"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/electrical"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/electrical/"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/security"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/security/"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/gas"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/gas/"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/shop/assets/*.css"
+  [headers.values]
+    Content-Type = "text/css; charset=utf-8"
+
+[[headers]]
+  for = "/shop/assets/*.svg"
+  [headers.values]
+    Content-Type = "image/svg+xml"
+
+[[headers]]
+  for = "/products"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/thank-you"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/pages/*"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Content-Type = "text/css; charset=utf-8"
+
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Content-Type = "application/manifest+json; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/manifest.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/site.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/sitemap*.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
+
+# Powered by Netlify badge: Netlify injects /.netlify/scripts/hud at the edge
+# (Project configuration → General → Powered by Netlify badge). That toggle
+# is not in git. This policy allows inline scripts and same-site /assets/
+# only, so the HUD script cannot execute on the next deploy.
+# Keep this path-scoped. Adding 'self' would allow the badge back.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "script-src 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.google.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://icomplypropertyservices.co.uk/assets/ https://www.icomplypropertyservices.co.uk/assets/ https://*.netlify.app/assets/"
+
+# Renewal logger + vCard (also emitted by static-export into dist/_headers)
+[[headers]]
+  for = "/renewals"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/renewals/thanks"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/assets/contact/*.vcf"
+  [headers.values]
+    Content-Type = "text/vcard; charset=utf-8"
+    Content-Disposition = "attachment"
+    X-Content-Type-Options = "nosniff"
+    Cache-Control = "public, max-age=86400"

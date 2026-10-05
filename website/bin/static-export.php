@@ -1066,6 +1066,7 @@ function icomplyUnpublishedMatrixRedirects(): string
     return implode("\n", $lines);
 }
 
+
 function icomplyPlaceAliasRedirectLines(): string
 {
     $lines = [
@@ -1112,8 +1113,8 @@ function icomplyPlaceAliasRedirectLines(): string
             }
             $src = $prefix . $from;
             $dst = $prefix . $to;
-            $lines[] = $src . '  ' . $dst . '  301';
-            $lines[] = $src . '/  ' . $dst . '  301';
+            $lines[] = $src . '  ' . $dst . '  301!';
+            $lines[] = $src . '/  ' . $dst . '  301!';
         }
     }
     return implode("\n", $lines) . "\n\n";
