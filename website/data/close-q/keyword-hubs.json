@@ -1,0 +1,341 @@
+{
+  "_note": "CLOSE-Q4 keyword hub copy. Existing keyword template reads body, faq, meta_desc and seo_title from keywords.json. This file is the full pack, including image paths for the Q2 image slot. fire-alarm-installation is NOT written back into keywords.json because PR #113 already edits that record.",
+  "hubs": {
+    "fire-alarm-installation": {
+      "path": "/pages/keywords/fire-alarm-installation",
+      "title": "Fire alarm installation | iComply Property Services",
+      "description": "Fire alarm installation for landlords and commercial occupiers across Greater Manchester, arranged from Stockport, Offerton SK2. Request a quote — POA",
+      "body": "Fire alarm installation is the design, supply, fit and commissioning of a detection and alarm system that matches the building in front of us. It is not a tray of domestic smoke alarms treated as if they were a BS 5839 system for a shared stair. iComply arranges installation for landlords, managing agents and commercial occupiers from the workshop at 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. The figure is price on application after survey. This page does not carry a per-device price.\n\nThe first split is which part of BS 5839 the building actually needs. BS 5839-6 is the domestic recommendation set, used with care on houses and some flats. BS 5839-1 is the non-domestic code for offices, shops, warehouses and many common parts. A house in multiple occupation, a purpose-built block and a mill conversion do not share one diagram. We say which document we are working to before devices are ordered. If the fire risk assessment or the licence conditions already name a category, we read that and challenge it only when the building does not match the paper.\n\nA survey walks the escape route, the rooms where people sleep or work, the plant spaces and the places a panel can actually be read. Ceiling heights, voids, kitchen heat, dusty workshops and outdoor canopies change device choice. We note what is already on the wall: Kentec, Advanced, C-Tec, Morley, Hochiki, Apollo and the mixed systems that appear after several contractors. Keeping a sound panel is often the right job. Replacing it because a catalogue prefers another brand is not.\n\nCategory language is plain once it is tied to the building. A manual system, an automatic life-protection system and a property-protection system are different promises. Call points at storey exits, detection in bedrooms or escape routes, and sound levels through doors are design choices, not decorations. Cause and effect — what the panel does to door holders, lifts, vents or plant — is written down. We do not leave an interface as a spare core that nobody has tested.\n\nInstallation itself is containment, cable type, device bases, sounders, beacons where noise or hearing means a bell is not enough, and a panel position the responsible person can reach. Loop integrity, address labels and zone charts are part of the job, not a later tidy-up. On an occupied building we agree isolation windows. Silencing a live alarm to make the fit easier, without the responsible person knowing, is not how we work.\n\nCommissioning is the point the system becomes evidence. We prove devices, battery standby, charger health and the interfaces named in the design. The pack left on site includes the certificate for the work done, a logbook start, a zone chart and a short note of what the responsible person tests weekly. That weekly test stays with the building. It is not a visit we pretend to have done from Stockport.\n\nVariations are written in English. If a bedroom is not covered, if a void is inaccessible, or if an existing device is retained with a known limit, the certificate says so. A clean page that hides those limits is worse than a page with a variation. Insurers and fire officers read the notes. So do the agents who inherit the file next year.\n\nAfter handover, servicing is a separate instruction. For many BS 5839-1 systems the gap between competent-person visits should not exceed six months, and the user still does the weekly test. This installation page is not a maintenance contract and it is not a call-out tariff. Faults, false alarms and device changes are quoted when they arise. Price on application. No menu.\n\nAsk for the work with the full address, storeys, whether anyone sleeps there, the last fire risk assessment if you have it, and a photo of the current panel. Manchester, Stockport, Bolton, Salford and Wigan are on the Greater Manchester diary. Other published towns are quoted the same way: scope first, then a written price. Call 07517806082 or use the contact form. Related reading sits on the fire alarms service page and the fire alarm job lane.\n\nWe will not certify a system we have not proved, we will not invent a British Standard category to win a short email, and we will not describe iComply as a scheme-registered fire alarm body if that badge is not held. The useful promise is narrower: a surveyed design, devices that match it, a commissioning pack, and a quote that stays price on application until the building is known.\n\nOn a Fire alarm installation quote the useful detail is the checklist, not a slogan. We confirm each of these before the written price: which part of BS 5839 applies. whether anyone sleeps in the building. the panel brand already on the wall. cause and effect to doors, plant or vents. a zone chart the responsible person can read. battery standby rather than a green lamp alone. variations written in English. a logbook start, not a promise that we do the weekly test. If one of those items is unknown, the quote says it is unknown. We do not smooth the gap so the email looks finished.\n\nWhat we will not do on Fire alarm installation is certify a system we have not proved, or describe a handful of domestic detectors as a full commercial system. The written scope names the address, the person instructing iComply, and the limit of the visit. Travel from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE is inside the price on application, not a line added after you have said yes. Call 07517806082 or use the contact form. Ask for Fire alarm installation and give the postcode first. Attach photos of the existing equipment when you have them. We confirm the visit in writing before anyone is dispatched from Offerton. If the building is occupied, name the person who can open the doors. The figure remains price on application after that scope. We would rather ask one more question than attend and find the brief was a different job. Say if a previous visit left anything isolated, bridged or unfinished. Related hubs stay linked from the page that renders this copy. Until the scope is agreed there is no fee to publish and no fee to invent.",
+      "word_count": 1049,
+      "images": [
+        {
+          "src": "/assets/images/services/fire-alarms.jpg",
+          "alt": "Fire alarm panel and devices — Fire alarm installation, iComply Property Services"
+        },
+        {
+          "src": "/assets/images/services/fire-alarms-photo.jpg",
+          "alt": "Fire alarm installation on site — Fire alarm installation, iComply Property Services"
+        },
+        {
+          "src": "/assets/images/manufacturers/apollo-fire.jpg",
+          "alt": "Apollo fire detection devices — Fire alarm installation, iComply Property Services"
+        }
+      ],
+      "faqs": [
+        {
+          "q": "How do I ask for Fire alarm installation across Greater Manchester?",
+          "a": "Send the address, the building type and what Fire alarm installation needs to cover. iComply replies with a written scope. The price is on application. Nothing on this page is a fee list."
+        },
+        {
+          "q": "Who attends Fire alarm installation across Greater Manchester?",
+          "a": "The visit is carried out by qualified people for that trade. The office is in Offerton, Stockport. Travel is part of the POA quote, not a surprise extra."
+        },
+        {
+          "q": "Do you publish a price for Fire alarm installation?",
+          "a": "No. Quotes are price on application after the building, access and scope are known. We do not invent a starting fee."
+        },
+        {
+          "q": "What should I have ready?",
+          "a": "Postcode, floor count, whether the building is occupied, and any existing certificate or panel brand. Photos of the board, panel or appliance speed the reply. The base is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE."
+        }
+      ],
+      "poa": true,
+      "nap": "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE",
+      "essay_key": "fire-alarm-installation"
+    },
+    "aov-installation": {
+      "path": "/pages/keywords/aov-installation",
+      "title": "AOV installation | iComply Property Services",
+      "description": "AOV installation for block managers and landlords across Greater Manchester, arranged from Stockport, Offerton SK2, Cheshire. Request a quote — POA",
+      "body": "AOV installation is the work of fitting automatic opening vents so a stair, lobby or corridor can clear smoke when the fire alarm calls for it. The vent may be a roof hatch, a façade window, a louvre or a shaft damper. iComply surveys and installs that equipment for blocks and commercial stairs from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. The price is on application after the smoke strategy and the free area are known. This is not a catalogue hatch price.\n\nThe usual references are the building’s fire strategy, BS 9991 where a residential block is being designed or refurbished to that code, and the EN 12101 family for the ventilators and controls. We do not invent a free-area number to suit a vent we already have on the van. If the strategy names a geometric area or an aerodynamic area, the survey checks the opening that is actually available, including restricts, curtains and furniture that have crept in front of the sash.\n\nA stair vent that also tries to be a comfort window is a common failure. Rain sensors and temperature control must lose to the fire input. On commissioning we simulate the fire-alarm contact and watch whether a wet sensor still holds the vent shut. If it does, the logic is wrong and the hatch is not a smoke vent until that is corrected. We write that test into the handover note.\n\nControls, actuators and batteries are the part residents never see and the part that fails quietly. Chain actuators seize. Hinges drop. Batteries date out while a green LED still looks healthy. Installation includes the panel location, the battery capacity for the connected load, and a manual override the responsible person can find. We label the key location. A panel locked in a cupboard nobody can open is not commissioned.\n\nThe fire alarm interface is part of the AOV job when the strategy says the vent opens on a specified zone or on a common-alarm signal. We identify the panel, the output and the cause-and-effect line. Taking a spare core and hoping is not an interface. If the fire alarm contractor is someone else, we still need a witnessed test or we record that the interface was not proved.\n\nRoof work and façade work need access equipment, weather and a plan for an occupied block. Residents cannot be left with a stair that is open to the weather overnight because a hatch was removed and the weather turned. We agree the sequence: make safe, fit, prove, and only then leave. Scaffold or a cherry picker is in the quote when the survey shows it is required, not as a surprise on the day.\n\nRetained systems are common on refurbishments. An existing actuator and panel stay when they can still be tested and supported. We name the manufacturer on the note. A takeover is offered only when the brand can still be worked on. Mixing a new chain onto a tired vent without measuring the stroke is how sashes get torn off their hinges.\n\nHandover is a certificate for the work installed, a short user note, and the test we actually did: fire input, battery open, manual override, and rain-sensor priority. The responsible person should be able to describe the weekly or monthly look they own. We do not pretend a maintenance contract exists because an installer once visited.\n\nTell us the address, storeys, stair count, whether the strategy already exists, and a photo of any current AOV panel. Greater Manchester blocks in Manchester, Salford, Stockport, Bolton and Wigan are typical of the diary. The same questions apply in every published town. Call 07517806082. Related pages are the AOV hub and the fire alarms service, because the interface often sits on that panel.\n\nWe will not certify a vent we have not seen travel, we will not bridge out a safety or fire input to force a demonstration, and we will not price the job as a domestic window. Smoke control is price on application after the stair is surveyed. The office remains 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE.\n\nOn a AOV installation quote the useful detail is the checklist, not a slogan. We confirm each of these before the written price: the fire strategy and the free area it names. roof, window or louvre, stated separately. rain-sensor logic that loses to the fire input. battery open, not only a mains test. the fire-alarm contact actually witnessed. actuator stroke measured against the vent. a key location the responsible person can find. weather and access equipment included when the survey shows them. If one of those items is unknown, the quote says it is unknown. We do not smooth the gap so the email looks finished.\n\nWhat we will not do on AOV installation is price a smoke vent as a domestic window or bridge out a fire input to force a demonstration. The written scope names the address, the person instructing iComply, and the limit of the visit. Travel from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE is inside the price on application, not a line added after you have said yes. Call 07517806082 or use the contact form. Ask for AOV installation and give the postcode first. Attach photos of the existing equipment when you have them. We confirm the visit in writing before anyone is dispatched from Offerton. If the building is occupied, name the person who can open the doors. The figure remains price on application after that scope. We would rather ask one more question than attend and find the brief was a different job. Say if a previous visit left anything isolated, bridged or unfinished. Related hubs stay linked from the page that renders this copy. Until the scope is agreed there is no fee to publish and no fee to invent.",
+      "word_count": 978,
+      "images": [
+        {
+          "src": "/assets/images/services/aov-air-handling.jpg",
+          "alt": "Automatic opening vent for smoke control — AOV installation, iComply Property Services"
+        },
+        {
+          "src": "/assets/images/services/aov-air-handling-photo.jpg",
+          "alt": "AOV actuator and stair vent — AOV installation, iComply Property Services"
+        },
+        {
+          "src": "/assets/images/services/fire-alarms.jpg",
+          "alt": "Fire alarm interface that opens the vent — AOV installation, iComply Property Services"
+        }
+      ],
+      "faqs": [
+        {
+          "q": "How do I ask for AOV installation across Greater Manchester?",
+          "a": "Send the address, the building type and what AOV installation needs to cover. iComply replies with a written scope. The price is on application. Nothing on this page is a fee list."
+        },
+        {
+          "q": "Who attends AOV installation across Greater Manchester?",
+          "a": "The visit is carried out by qualified people for that trade. The office is in Offerton, Stockport. Travel is part of the POA quote, not a surprise extra."
+        },
+        {
+          "q": "Do you publish a price for AOV installation?",
+          "a": "No. Quotes are price on application after the building, access and scope are known. We do not invent a starting fee."
+        },
+        {
+          "q": "What should I have ready?",
+          "a": "Postcode, floor count, whether the building is occupied, and any existing certificate or panel brand. Photos of the board, panel or appliance speed the reply. The base is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE."
+        }
+      ],
+      "poa": true,
+      "nap": "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE",
+      "essay_key": "aov-installation"
+    },
+    "cctv-installation": {
+      "path": "/pages/keywords/cctv-installation",
+      "title": "CCTV installation | iComply Property Services",
+      "description": "CCTV installation for businesses and landlords across Greater Manchester, arranged from Stockport, Offerton SK2, Cheshire. Request a quote — POA",
+      "body": "CCTV installation here means a system that produces footage a manager can actually use: the right view, enough light, a recorder that keeps the days you asked for, and a way for a named person to export a clip. iComply designs and fits that for shops, yards, landlords and offices from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. The quote is price on application after a walk of the site. Camera counts are not sold as a bundle price.\n\nThe survey marks entrances, tills, loading doors, car parks and the corridors that matter, then rejects the views that only film sky or a neighbour’s garden. Lens, mounting height and lighting decide whether a face or a number plate is realistic. We say so before the cable goes in. A wide overview and a tight identification view are different cameras. Putting one device in the middle and hoping is how disputes end with useless footage.\n\nRecorders, switches and disks are sized for the retention you need at the quality you need, including nights. True high resolution on every camera is often the wrong spend if the network and the disks cannot hold it. We mix detail where it helps and simpler views where it does not. Remote viewing is configured for named users, with passwords that stay under the client’s control. We do not leave a factory password on a router.\n\nCabling is part of the design. Power-over-Ethernet budgets, external containment and a sensible place for the recorder matter as much as the camera body. Wireless is offered only where a cable is genuinely unreasonable, and we say when a cable would be more reliable. Hybrid recorders stay in play where an older analogue run is still sound. Ripping it out for the sake of a new logo is not the default.\n\nData protection is practical on this page, not a lecture. Cameras should film the client’s property and the approaches they are entitled to watch. Signage is part of handover where the site needs it. Audio is not added as a novelty. We will not aim a camera into a neighbour’s window to fill a corner of the plan. If a landlord and a commercial tenant both want access, the user list is written down.\n\nBrands we regularly meet include Hikvision, Dahua and Axis, plus the recorders already in cupboards. We support what is on site when it can still be worked on, and we specify a replacement when the recorder cannot hold the streams or the firmware path is dead. Naming a manufacturer is not a claim that iComply is that manufacturer’s exclusive partner.\n\nCommissioning checks focus, infrared or white light at night, recording on motion or continuous as agreed, time sync, and an export of a test clip while we are still there. If the client cannot find yesterday’s footage with the instructions we leave, the job is not finished. A one-page note of camera names beats a login nobody remembers.\n\nMaintenance and extra cameras are later quotes. A failed disk, a camera down after a knock, or a request to add the rear gate are price on application. This installation page is not a monitoring-station contract and it does not promise police response. It is the system on the wall and the evidence it can produce.\n\nSend the address, what you need to see, roughly how many days of footage you want to keep, and whether anyone already has a recorder. Manchester yards, Stockport industrial units, Bolton retail parks, Salford quayside blocks and Wigan commercial corridors are all in range from Stockport. Call 07517806082 or use the contact form.\n\nWe will not invent a camera count to match a budget slogan, we will not hide a recurring fee inside the install, and we will not quote a monitoring centre we do not provide. The written price follows the survey. Until then the work is price on application.\n\nOn a CCTV installation quote the useful detail is the checklist, not a slogan. We confirm each of these before the written price: the views that need identification rather than a wide overview. night lighting, not just megapixels. retention days at the quality you asked for. named users and no factory passwords. cable routes and recorder location. signage where the site needs it. a test export while we are still there. no camera aimed into a neighbour’s window. If one of those items is unknown, the quote says it is unknown. We do not smooth the gap so the email looks finished.\n\nWhat we will not do on CCTV installation is sell a camera count as a bundle price or promise a monitoring centre we do not provide. The written scope names the address, the person instructing iComply, and the limit of the visit. Travel from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE is inside the price on application, not a line added after you have said yes. Call 07517806082 or use the contact form. Ask for CCTV installation and give the postcode first. Attach photos of the existing equipment when you have them. We confirm the visit in writing before anyone is dispatched from Offerton. If the building is occupied, name the person who can open the doors. The figure remains price on application after that scope. We would rather ask one more question than attend and find the brief was a different job. Say if a previous visit left anything isolated, bridged or unfinished. Related hubs stay linked from the page that renders this copy. Until the scope is agreed there is no fee to publish and no fee to invent.",
+      "word_count": 937,
+      "images": [
+        {
+          "src": "/assets/images/services/cctv.jpg",
+          "alt": "CCTV cameras and recorder — CCTV installation, iComply Property Services"
+        },
+        {
+          "src": "/assets/images/services/cctv-photo.jpg",
+          "alt": "CCTV installation on a commercial building — CCTV installation, iComply Property Services"
+        },
+        {
+          "src": "/assets/images/manufacturers/hikvision.jpg",
+          "alt": "Hikvision camera used on surveyed systems — CCTV installation, iComply Property Services"
+        }
+      ],
+      "faqs": [
+        {
+          "q": "How do I ask for CCTV installation across Greater Manchester?",
+          "a": "Send the address, the building type and what CCTV installation needs to cover. iComply replies with a written scope. The price is on application. Nothing on this page is a fee list."
+        },
+        {
+          "q": "Who attends CCTV installation across Greater Manchester?",
+          "a": "The visit is carried out by qualified people for that trade. The office is in Offerton, Stockport. Travel is part of the POA quote, not a surprise extra."
+        },
+        {
+          "q": "Do you publish a price for CCTV installation?",
+          "a": "No. Quotes are price on application after the building, access and scope are known. We do not invent a starting fee."
+        },
+        {
+          "q": "What should I have ready?",
+          "a": "Postcode, floor count, whether the building is occupied, and any existing certificate or panel brand. Photos of the board, panel or appliance speed the reply. The base is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE."
+        }
+      ],
+      "poa": true,
+      "nap": "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE",
+      "essay_key": "cctv-installation"
+    },
+    "cctv-near-me": {
+      "path": "/pages/keywords/cctv-near-me",
+      "title": "CCTV near me | iComply Property Services",
+      "description": "CCTV near me for businesses and landlords across Greater Manchester, arranged from Stockport, Offerton SK2, Cheshire today. Request a quote — POA",
+      "body": "People searching for CCTV near me usually need a local engineer who can survey this week, not a national script and a van from the other side of the country. iComply works from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Greater Manchester is the core diary: Manchester, Stockport, Bolton, Salford, Wigan and the other published towns. The quote is price on application after we know the building. Travel is not padded as a separate mystery charge.\n\nNear me covers three different jobs, and we ask which one you mean. A new installation is a design and fit. A repair is a camera, a disk, a switch or a password that has locked the client out. A short service visit is a check that the views you rely on are still recording. Quoting all three as one product is how the wrong person arrives with the wrong parts. Say which it is, and send a photo if something has already failed.\n\nLocal knowledge changes the survey. Stockport industrial estates, Manchester rear alleys, Bolton retail parks and Salford apartment car parks do not share a mounting height or a lighting problem. We look at the actual wall, the power, the place a recorder can live, and who is allowed to see the pictures. A landlord and a shop tenant often both think they own the system. We write down who instructs us.\n\nThe technical standard is the same as a planned installation. Views have to be usable, nights have to be considered, and the recorder has to keep the days you asked for. We do not fit a domestic doorbell camera and call it a yard system. We also do not overspecify a dozen high-resolution cameras when four honest views would answer the question. The survey is where that is decided, on site, near you.\n\nExisting brands stay when they are sound. Hikvision, Dahua, Axis and a long list of older recorders are what we find in cupboards. If we can work on it, we say so. If the recorder cannot take another camera or the passwords are unknown and unrecoverable, replacement is a separate line on the quote. We do not scrap a working camera to enlarge the job.\n\nReactive visits are arranged around occupation. A shop that can only close the lane before 8am, or a block where the recorder is in a landlord’s cupboard, needs that fact in the booking. Same-week attendance is discussed against the diary. It is not promised for every postcode on every afternoon. If we cannot attend in the window you need, we say so before you wait in.\n\nData protection still applies because the engineer is local. Cameras film the client’s risk, not the neighbour’s kitchen. Signage and named users are part of handover. We will not share logins with a third party because someone at the door asked. Export of a clip is shown to the instructing client.\n\nMulti-trade visits are possible when you want them. Access control or door entry on the same entrance can be surveyed in one walk, then quoted as the trades they are. They are not silently included in a CCTV price. Price on application for each scope.\n\nTo book, send the postcode first. Then the building type, whether this is a new system or a fault, and a phone number that is answered on the day. Call 07517806082. Email and the contact form land in the same queue. We reply with what we think the visit is, and we correct it if we have misunderstood.\n\nThis page is the local route into CCTV. The installation guide covers design in more depth. The CCTV service page is the hub. None of them carries a package price. The work near you is price on application after the address is known.\n\nOn a CCTV near me quote the useful detail is the checklist, not a slogan. We confirm each of these before the written price: whether you need an install, a repair or a check. the postcode before any diary claim. who instructs us, landlord or tenant. the recorder brand if one already exists. a photo of the fault if something has failed. occupation limits on when we can attend. local travel from Stockport inside the POA quote. a separate line if access control is on the same door. If one of those items is unknown, the quote says it is unknown. We do not smooth the gap so the email looks finished.\n\nWhat we will not do on CCTV near me is promise same-day attendance for every town or scrap a working camera to enlarge the job. The written scope names the address, the person instructing iComply, and the limit of the visit. Travel from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE is inside the price on application, not a line added after you have said yes. Call 07517806082 or use the contact form. Ask for CCTV near me and give the postcode first. Attach photos of the existing equipment when you have them. We confirm the visit in writing before anyone is dispatched from Offerton. If the building is occupied, name the person who can open the doors. The figure remains price on application after that scope. We would rather ask one more question than attend and find the brief was a different job. Say if a previous visit left anything isolated, bridged or unfinished. Related hubs stay linked from the page that renders this copy. Until the scope is agreed there is no fee to publish and no fee to invent.",
+      "word_count": 928,
+      "images": [
+        {
+          "src": "/assets/images/services/cctv.jpg",
+          "alt": "CCTV cameras and recorder — CCTV near me, iComply Property Services"
+        },
+        {
+          "src": "/assets/images/services/cctv-photo.jpg",
+          "alt": "CCTV installation on a commercial building — CCTV near me, iComply Property Services"
+        },
+        {
+          "src": "/assets/images/manufacturers/hikvision.jpg",
+          "alt": "Hikvision camera used on surveyed systems — CCTV near me, iComply Property Services"
+        }
+      ],
+      "faqs": [
+        {
+          "q": "How do I ask for CCTV near me across Greater Manchester?",
+          "a": "Send the address, the building type and what CCTV near me needs to cover. iComply replies with a written scope. The price is on application. Nothing on this page is a fee list."
+        },
+        {
+          "q": "Who attends CCTV near me across Greater Manchester?",
+          "a": "The visit is carried out by qualified people for that trade. The office is in Offerton, Stockport. Travel is part of the POA quote, not a surprise extra."
+        },
+        {
+          "q": "Do you publish a price for CCTV near me?",
+          "a": "No. Quotes are price on application after the building, access and scope are known. We do not invent a starting fee."
+        },
+        {
+          "q": "What should I have ready?",
+          "a": "Postcode, floor count, whether the building is occupied, and any existing certificate or panel brand. Photos of the board, panel or appliance speed the reply. The base is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE."
+        }
+      ],
+      "poa": true,
+      "nap": "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE",
+      "essay_key": "cctv-near-me"
+    },
+    "eicr": {
+      "path": "/pages/keywords/eicr",
+      "title": "EICR | iComply Property Services",
+      "description": "EICR for landlords and letting agents across Greater Manchester, arranged from Stockport, Offerton SK2, Cheshire today. Request a quote — POA",
+      "body": "An Electrical Installation Condition Report, the EICR, is the inspection and test of the fixed wiring: consumer unit, circuits, and the accessories that form part of the installation. It is not a portable appliance test and it is not a gas record. iComply carries out EICRs for landlords, agents and commercial occupiers from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. The quote is price on application once we know the boards, the property type and the access. There is no per-circuit menu on this page.\n\nIn England, private landlords of relevant homes generally need the installation inspected and tested on the cycle set out in the electrical safety standards and the current GOV.UK guidance. Five years is the figure people repeat. The report itself can demand a shorter interval, and a change of tenancy can bring the date forward. This page is not legal advice. Read the current guidance for the dwelling you actually let. HMOs can have licence conditions on top. Check the council as well as the statute.\n\nThe visit opens the distribution board, samples or tests circuits as the inspection requires, and records observations with the usual codes: C1 for danger present, C2 for potentially dangerous, C3 for improvement recommended, and FI where further investigation is required. A satisfactory or unsatisfactory outcome is the report’s conclusion, not a sticker we choose. We explain the codes in plain English so an agent can see what must be done and what is advisory.\n\nAccess is the part that makes or breaks the appointment. We need the board, the rooms the circuits serve, and enough time to isolate where isolation is required. Tenants should know we are coming. Commercial sites should say which boards cannot be switched off during trading. If a board is buried in a locked shopfront or a locked bedroom, the limitation goes on the report. We do not write a satisfactory outcome for circuits we could not see.\n\nRemedial work is a separate instruction. An unsatisfactory report is not, by itself, the repair. We can quote the C1 and C2 items, and the further investigation, after the report exists. Sometimes that is the same week, sometimes it needs parts and a second access. Price on application. We do not sell a pass. A retest covers what was repaired, and the paperwork should show that, not a silent edit of the first PDF.\n\nConsumer unit condition, earthing, bonding, and obvious thermal damage are part of what the inspector is there to see. We do not upgrade a board because it is old if the report does not require it. We also do not ignore a cracked enclosure or a board with signs of overheating because a landlord hoped for a one-line satisfactory. The observation is written. The quote for work comes after.\n\nPortfolios are booked as a list, not as a discount slogan. Each address still has its own board and its own access. An agent can send postcodes, last report dates and key details. We schedule against the diary from Stockport. Combining an EICR with other compliance on the same day is discussed when you ask. It is not assumed, and it does not change the electrical scope.\n\nThe pack you receive is the report, the schedules, and a short note of what we could not access. Digital copies suit most agents. Keep them with the tenancy file. The next due date is the one the report states, not a reminder we invent in a marketing email. If you want a diary note from us as well, ask for it.\n\nSend the postcode, house or flat or commercial, how many boards you know about, and the last EICR date if you have it. Manchester terraces, Stockport semis, Bolton mills, Salford apartments and Wigan estates are all attended from the same base. Call 07517806082. The contact form takes the same facts.\n\nWe will not issue a satisfactory report to win a renewal, we will not test only the kitchen and call it the installation, and we will not quote a made-up call-out fee. The EICR is price on application after scope. Landlord gas safety, where it applies, is a different trade: Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.\n\nOn a EICR quote the useful detail is the checklist, not a slogan. We confirm each of these before the written price: dwelling or commercial, stated up front. how many boards you know about. access to the rooms the circuits serve. C1, C2, C3 and FI written as themselves. limitations where we could not look. remedials quoted after the report, not instead of it. no PAT items slipped in unless you asked. the next date taken from the report. If one of those items is unknown, the quote says it is unknown. We do not smooth the gap so the email looks finished.\n\nWhat we will not do on EICR is issue a satisfactory outcome for circuits we did not see, or publish a per-circuit fee. The written scope names the address, the person instructing iComply, and the limit of the visit. Travel from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE is inside the price on application, not a line added after you have said yes. Call 07517806082 or use the contact form. Ask for EICR and give the postcode first. Attach photos of the existing equipment when you have them. We confirm the visit in writing before anyone is dispatched from Offerton. If the building is occupied, name the person who can open the doors. The figure remains price on application after that scope. We would rather ask one more question than attend and find the brief was a different job. Say if a previous visit left anything isolated, bridged or unfinished. Related hubs stay linked from the page that renders this copy. Until the scope is agreed there is no fee to publish and no fee to invent.",
+      "word_count": 997,
+      "images": [
+        {
+          "src": "/assets/images/services/electrical.jpg",
+          "alt": "Consumer unit prepared for an EICR — EICR, iComply Property Services"
+        },
+        {
+          "src": "/assets/images/services/electrical-photo.jpg",
+          "alt": "Electrical inspection and testing — EICR, iComply Property Services"
+        },
+        {
+          "src": "/assets/images/manufacturers/hager-consumer-unit.jpg",
+          "alt": "Hager consumer unit — EICR, iComply Property Services"
+        }
+      ],
+      "faqs": [
+        {
+          "q": "How do I ask for EICR across Greater Manchester?",
+          "a": "Send the address, the building type and what EICR needs to cover. iComply replies with a written scope. The price is on application. Nothing on this page is a fee list."
+        },
+        {
+          "q": "Who attends EICR across Greater Manchester?",
+          "a": "The visit is carried out by qualified people for that trade. The office is in Offerton, Stockport. Travel is part of the POA quote, not a surprise extra."
+        },
+        {
+          "q": "Do you publish a price for EICR?",
+          "a": "No. Quotes are price on application after the building, access and scope are known. We do not invent a starting fee."
+        },
+        {
+          "q": "What should I have ready?",
+          "a": "Postcode, floor count, whether the building is occupied, and any existing certificate or panel brand. Photos of the board, panel or appliance speed the reply. The base is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE."
+        }
+      ],
+      "poa": true,
+      "nap": "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE",
+      "essay_key": "eicr"
+    },
+    "eicr-certificate": {
+      "path": "/pages/keywords/eicr-certificate",
+      "title": "EICR certificate | iComply Property Services",
+      "description": "EICR certificate for landlords and letting agents across Greater Manchester, arranged from Stockport, Offerton SK2, Cheshire. Request a quote — POA",
+      "body": "When someone asks for an EICR certificate they almost always need the Electrical Installation Condition Report itself: the document that says whether the fixed wiring was satisfactory and what was observed. iComply produces that report for rented homes and commercial units from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. We do not sell a certificate detached from the inspection. If the wiring has not been inspected and tested, there is nothing honest to issue.\n\nThe word certificate is loose in adverts. The report is the record. It includes the outcome, the observation codes, the circuit details the inspector could verify, and the recommended next inspection date. Agents file it. Tenants may need a copy under the current English guidance. This page does not restate the statute as if it were complete. Check current GOV.UK wording for who must receive what, and by when.\n\nA satisfactory outcome means the inspector did not find danger that makes the installation unsatisfactory, within the limits of what was accessible. It does not mean every C3 recommendation was ignored as irrelevant, and it does not mean the portable appliances were tested. PAT is a different visit. An unsatisfactory outcome means C1, C2 or FI items need action. The certificate you wanted is then a report that tells you to do more work, which is the correct document, not a failure of the visit.\n\nPeople also ask us to replace a missing report when a previous electrician cannot be contacted. We cannot recreate someone else’s test results. We can carry out a new inspection and issue our own report. Limitations are stated if furniture, locked rooms or a live shop floor stop a full look. A report with limitations is more useful than a confident page about circuits nobody opened.\n\nCoding is explained when we hand the file over. C1 is dealt with as danger present, often before we leave if the isolation is agreed. C2 is potentially dangerous and needs remedial work on a defined timescale, which your own duty and the report will frame. C3 is improvement. FI means we could not conclude without opening something further. We do not collapse those into a single traffic light.\n\nRemedials and any retest are quoted after the report, price on application. The retest should identify what changed. We do not overwrite history. Landlords who need the electrical report and a gas record in the same week can ask for both to be scheduled. They remain different scopes. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.\n\nFor commercial units the interval is not automatically five years. It follows the use, the previous report and the insurer or client rule you are actually under. Tell us if a shop, office or warehouse is the building. A flat above a shop can be two conversations: the dwelling and the commercial installation. We will not force one report to cover both if the supplies are separate.\n\nWhat to send: postcode, dwelling or commercial, number of consumer units if you know it, and whether a previous PDF exists. A photo of the board helps the quote. It does not replace the visit. Access arrangements matter more than the brand of the board.\n\nGreater Manchester coverage includes Manchester, Stockport, Bolton, Salford and Wigan, arranged from Stockport. Call 07517806082 or use the contact form and say you need the EICR report, not a PAT sticker and not a visual only. The electrical service page is the wider hub. The EICR guide sits beside this certificate page so the wording stays honest.\n\nThe price is on application. We do not offer a same-day certificate without the test, and we do not add a scheme logo the report is not entitled to carry. You receive the report for the installation we inspected, with the limitations written in it.\n\nOn a EICR certificate quote the useful detail is the checklist, not a slogan. We confirm each of these before the written price: that the document required is the condition report itself. no recreation of another electrician’s lost results. limitations written rather than implied. codes explained at handover. a retest only for what was repaired. commercial intervals not assumed to be five years. flat and shop supplies kept separate when they are. digital copy named with the address and date. If one of those items is unknown, the quote says it is unknown. We do not smooth the gap so the email looks finished.\n\nWhat we will not do on EICR certificate is offer a same-day certificate without the inspection. The written scope names the address, the person instructing iComply, and the limit of the visit. Travel from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE is inside the price on application, not a line added after you have said yes. Call 07517806082 or use the contact form. Ask for EICR certificate and give the postcode first. Attach photos of the existing equipment when you have them. We confirm the visit in writing before anyone is dispatched from Offerton. If the building is occupied, name the person who can open the doors. The figure remains price on application after that scope. We would rather ask one more question than attend and find the brief was a different job. Say if a previous visit left anything isolated, bridged or unfinished. Related hubs stay linked from the page that renders this copy. Until the scope is agreed there is no fee to publish and no fee to invent.",
+      "word_count": 923,
+      "images": [
+        {
+          "src": "/assets/images/services/electrical.jpg",
+          "alt": "Consumer unit prepared for an EICR — EICR certificate, iComply Property Services"
+        },
+        {
+          "src": "/assets/images/services/electrical-photo.jpg",
+          "alt": "Electrical inspection and testing — EICR certificate, iComply Property Services"
+        },
+        {
+          "src": "/assets/images/manufacturers/hager-consumer-unit.jpg",
+          "alt": "Hager consumer unit — EICR certificate, iComply Property Services"
+        }
+      ],
+      "faqs": [
+        {
+          "q": "How do I ask for EICR certificate across Greater Manchester?",
+          "a": "Send the address, the building type and what EICR certificate needs to cover. iComply replies with a written scope. The price is on application. Nothing on this page is a fee list."
+        },
+        {
+          "q": "Who attends EICR certificate across Greater Manchester?",
+          "a": "The visit is carried out by qualified people for that trade. The office is in Offerton, Stockport. Travel is part of the POA quote, not a surprise extra."
+        },
+        {
+          "q": "Do you publish a price for EICR certificate?",
+          "a": "No. Quotes are price on application after the building, access and scope are known. We do not invent a starting fee."
+        },
+        {
+          "q": "What should I have ready?",
+          "a": "Postcode, floor count, whether the building is occupied, and any existing certificate or panel brand. Photos of the board, panel or appliance speed the reply. The base is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE."
+        }
+      ],
+      "poa": true,
+      "nap": "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE",
+      "essay_key": "eicr-certificate"
+    },
+    "access-control-near-me": {
+      "path": "/pages/keywords/access-control-near-me",
+      "title": "Access control near me | iComply Property Services",
+      "description": "Access control near me for offices, blocks and landlords across Greater Manchester, arranged from Stockport, Offerton SK2. Request a quote — POA",
+      "body": "Access control near me is the local request for readers, tokens, door release and the programming that decides who can come in. iComply surveys and fits that from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE, across Greater Manchester including Manchester, Stockport, Bolton, Salford and Wigan. The quote is price on application after the doors are known. A maglock on a pedestrian door is not the same job as a car park barrier, and we do not price them as one item.\n\nThe near-me part matters because doors fail on a Tuesday and the person with the software password may have left the company. We attend to look at the controller, the reader, the lock and the power supply, not to sell a new system by default. Paxton and other common UK brands are what we find. If we can work on the software, we say so. If the tokens are an unknown format, we say that too, before anyone promises a clone of every fob.\n\nA new installation starts with the door, not the reader colour. Leaf, frame, escape, fire-alarm release and how the door is used at 8am decide the lock: maglock, strike, or a different piece of hardware. We do not put a maglock on a fire escape and forget the release. The fire alarm interface, the green break-glass and the mechanical override are part of the survey when the door is on an escape route.\n\nProgramming is the part that keeps the system honest after we leave. Joiners, leavers, lost cards and time zones should be something your administrator can do, or a visit you book. We document the naming of doors and cards. We do not leave a single master fob as the only way in. If you want us to hold programming, that is a scoped arrangement, price on application, not an invisible subscription.\n\nBlocks and offices differ. A block may need trades buttons, resident fobs and a door-entry panel that releases the same lock. An office may need departments and a door that locks on a schedule. We write the rules down. Door entry is a related trade with its own page. CCTV on the same entrance can be surveyed in the same walk and is quoted separately.\n\nBarriers are the job we refuse to hide inside an access quote. A rising arm, loops and safety edges are a lane. Manchester and Stockport have plenty of private yards where someone asks for a fob that also opens the boom. The boom is specified on its own. The reader that gives the signal can sit on the access quote. The two scopes stay visible.\n\nRepairs quote from symptoms: door will not release, door will not lock, reader dead, tokens declined, or a fire-alarm release that has been left link-fitted. We will not bridge a fire release to force a lock on. If a previous contractor did that, we record it and price the reinstatement. Life safety is not a convenience setting.\n\nCabling in occupied buildings is agreed before we drill. Listed doors, glass, and landlord consent in a multi-let block change the method. If consent is missing, we wait. A neat reader on a door we were not allowed to touch becomes your problem the next morning.\n\nSend the postcode, the number of doors, the brand if you know it, and whether the trouble is a new entrance or a fault. Photos of the reader and the power supply help. Call 07517806082. The access control service page is the hub. This page is the local way in.\n\nPrices stay on application. We do not publish a per-door fee, we do not claim to be the manufacturer’s exclusive agent, and we do not describe a barrier lane as a door. The engineer is local to the Stockport base. The survey still has to see the door.\n\nOn a Access control near me quote the useful detail is the checklist, not a slogan. We confirm each of these before the written price: door count and whether any leaf is an escape. existing brand and whether the software password is known. maglock, strike or other hardware named in the quote. fire-alarm release and break-glass still in circuit. token format checked before anyone promises a clone. barrier lanes kept off this quote. administrator handover so one master fob is not the system. consent to drill in a multi-let block. If one of those items is unknown, the quote says it is unknown. We do not smooth the gap so the email looks finished.\n\nWhat we will not do on Access control near me is bridge a fire release to keep a door locked, or price a barrier as a door. The written scope names the address, the person instructing iComply, and the limit of the visit. Travel from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE is inside the price on application, not a line added after you have said yes. Call 07517806082 or use the contact form. Ask for Access control near me and give the postcode first. Attach photos of the existing equipment when you have them. We confirm the visit in writing before anyone is dispatched from Offerton. If the building is occupied, name the person who can open the doors. The figure remains price on application after that scope. We would rather ask one more question than attend and find the brief was a different job. Say if a previous visit left anything isolated, bridged or unfinished. Related hubs stay linked from the page that renders this copy. Until the scope is agreed there is no fee to publish and no fee to invent.",
+      "word_count": 942,
+      "images": [
+        {
+          "src": "/assets/images/services/access-control.jpg",
+          "alt": "Access control reader and door hardware — Access control near me, iComply Property Services"
+        },
+        {
+          "src": "/assets/images/services/access-control-photo.jpg",
+          "alt": "Access control installation — Access control near me, iComply Property Services"
+        },
+        {
+          "src": "/assets/images/manufacturers/paxton.jpg",
+          "alt": "Paxton access control equipment — Access control near me, iComply Property Services"
+        }
+      ],
+      "faqs": [
+        {
+          "q": "How do I ask for Access control near me across Greater Manchester?",
+          "a": "Send the address, the building type and what Access control near me needs to cover. iComply replies with a written scope. The price is on application. Nothing on this page is a fee list."
+        },
+        {
+          "q": "Who attends Access control near me across Greater Manchester?",
+          "a": "The visit is carried out by qualified people for that trade. The office is in Offerton, Stockport. Travel is part of the POA quote, not a surprise extra."
+        },
+        {
+          "q": "Do you publish a price for Access control near me?",
+          "a": "No. Quotes are price on application after the building, access and scope are known. We do not invent a starting fee."
+        },
+        {
+          "q": "What should I have ready?",
+          "a": "Postcode, floor count, whether the building is occupied, and any existing certificate or panel brand. Photos of the board, panel or appliance speed the reply. The base is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE."
+        }
+      ],
+      "poa": true,
+      "nap": "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE",
+      "essay_key": "access-control-near-me"
+    },
+    "gas-safety-certificate": {
+      "path": "/pages/keywords/gas-safety-certificate",
+      "title": "Gas safety certificate | iComply Property Services",
+      "description": "Gas safety certificate for landlords and letting agents across Greater Manchester, arranged from Stockport, Offerton SK2. Request a quote — POA",
+      "body": "A landlord gas safety record — often called a CP12 — is the written result of a safety check on the gas appliances, flues and relevant pipework that fall under the landlord’s duty. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered. iComply arranges the visit from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. The price is on application after the address and the appliance list are known. This page does not show a registration number or a badge.\n\nThe check is not automatically a full manufacturer service, and it is not an EICR. The engineer records what was inspected, the results, and defects or follow-up. That paper, under its formal name, is what belongs in the tenancy file. Industry shorthand still says CP12. Use the name that is on the document when you hand it to an agent or a tenant.\n\nWhere the duty applies, landlords plan a check at least every 12 months. New tenancies need the record in the file on the timetable set out in current HSE and GOV.UK guidance. This page does not invent a day-count. Read that guidance, and give tenants a copy within the period it states. Keep proof of when the copy was given. HMO licence conditions in Greater Manchester can ask for more. Check the council as well.\n\nWhat is usually in scope, when those items are the landlord’s responsibility, includes boilers, gas fires and cookers that the duty covers, the flues and ventilation that serve them, and the relevant installation pipework. Appliances the tenant owns can sit outside the landlord duty. Tell us what is whose. We will not guess from a photograph of a kitchen.\n\nDefects are written, not smoothed over. An appliance that fails the check needs the action the record describes. Do not treat next year’s visit as the remedy. Follow-up work is quoted separately, still carried out by Gas Safe registered engineers, still price on application. iComply does not publish a repair menu and does not claim the registration for itself.\n\nNo-gas properties are a different question. If there is no supply and no gas appliance, the paperwork position may differ. Confirm that against official guidance rather than asking a marketing page to decide. We would rather record no gas, where that is true, than invent an appliance list.\n\nAgents with several addresses can send a schedule: postcode, access, meter location, and last record date. Each property is still its own check. Combining the gas record with an EICR on one diary day is possible when you ask and when capacity allows. The trades stay separate. The electrical report does not make the gas record valid, or the reverse.\n\nSmell of gas is not this booking. Open windows if it is safe, avoid switches and flames, turn the supply off at the meter if you can do so safely, leave if advised, and call the National Gas Emergency Service on 0800 111 999. Contact us after the supply is safe if you need a recorded check or a repair visit.\n\nGreater Manchester towns including Manchester, Stockport, Bolton, Salford and Wigan are arranged from Offerton. Call 07517806082 and say gas safety record, the town, and how many appliances you believe are in the landlord’s scope. The contact form takes the same note. The gas systems service page is the wider hub.\n\nWe will not put a Gas Safe logo on this page, we will not quote a made-up certificate fee, and we will not describe iComply as Gas Safe registered. The sentence that matters is the true one: Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered. The price of the visit is on application.\n\nOn a Gas safety certificate quote the useful detail is the checklist, not a slogan. We confirm each of these before the written price: appliance list and who owns each appliance. flues and ventilation in the agreed scope. the formal record name, not only the CP12 shorthand. defects written with the action the record describes. no-gas properties described as no-gas. 0800 111 999 first if you smell gas. engineers who are Gas Safe registered doing the check. no registration number printed for iComply. If one of those items is unknown, the quote says it is unknown. We do not smooth the gap so the email looks finished.\n\nWhat we will not do on Gas safety certificate is describe iComply as Gas Safe registered or publish a certificate fee. The written scope names the address, the person instructing iComply, and the limit of the visit. Travel from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE is inside the price on application, not a line added after you have said yes. Call 07517806082 or use the contact form. Ask for Gas safety certificate and give the postcode first. Attach photos of the existing equipment when you have them. We confirm the visit in writing before anyone is dispatched from Offerton. If the building is occupied, name the person who can open the doors. The figure remains price on application after that scope. We would rather ask one more question than attend and find the brief was a different job. Say if a previous visit left anything isolated, bridged or unfinished. Related hubs stay linked from the page that renders this copy. Until the scope is agreed there is no fee to publish and no fee to invent.",
+      "word_count": 916,
+      "images": [
+        {
+          "src": "/assets/images/services/gas-systems.jpg",
+          "alt": "Gas appliance prepared for a safety check — Gas safety certificate, iComply Property Services"
+        },
+        {
+          "src": "/assets/images/services/gas-systems-photo.jpg",
+          "alt": "Landlord gas safety visit — Gas safety certificate, iComply Property Services"
+        },
+        {
+          "src": "/assets/images/manufacturers/worcester-bosch.jpg",
+          "alt": "Worcester Bosch appliance on a surveyed site — Gas safety certificate, iComply Property Services"
+        }
+      ],
+      "faqs": [
+        {
+          "q": "How do I ask for Gas safety certificate across Greater Manchester?",
+          "a": "Send the address, the building type and what Gas safety certificate needs to cover. iComply replies with a written scope. The price is on application. Nothing on this page is a fee list."
+        },
+        {
+          "q": "Who attends Gas safety certificate across Greater Manchester?",
+          "a": "Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered. The office is in Offerton, Stockport. Travel is part of the POA quote, not a surprise extra."
+        },
+        {
+          "q": "Do you publish a price for Gas safety certificate?",
+          "a": "No. Quotes are price on application after the building, access and scope are known. We do not invent a starting fee."
+        },
+        {
+          "q": "What should I have ready?",
+          "a": "Postcode, floor count, whether the building is occupied, and any existing certificate or panel brand. Photos of the board, panel or appliance speed the reply. The base is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE."
+        }
+      ],
+      "poa": true,
+      "nap": "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE",
+      "essay_key": "gas-safety-certificate"
+    }
+  }
+}

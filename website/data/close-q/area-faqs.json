@@ -1,0 +1,105 @@
+{
+  "_note": "CLOSE-Q5 FAQ copy for WT’s FAQ partial and FAQPage JSON-LD. This file is not the partial. Manchester entry is images only (CLOSE-Q2).",
+  "homepage": {
+    "path": "/",
+    "faqs": [
+      {
+        "q": "What does iComply quote for?",
+        "a": "Electrical reports, fire alarms, emergency lighting, CCTV, access control, door entry and related compliance visits. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered. The price is on application."
+      },
+      {
+        "q": "Where are you based?",
+        "a": "The office is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Greater Manchester is the core diary, including Manchester, Stockport, Bolton, Salford and Wigan."
+      },
+      {
+        "q": "How do I request a quote?",
+        "a": "Call 07517806082 or use the contact form with the address and the job. We reply with a scope. Request a quote — POA. No fee is printed as a starting price on this homepage pack."
+      },
+      {
+        "q": "Do you cover a town outside Greater Manchester?",
+        "a": "Only where that service is already published for the town. If the live URL redirects, use the hub instead of a town page that is not indexed."
+      }
+    ]
+  },
+  "stockport": {
+    "path": "/pages/areas/stockport",
+    "faqs": [
+      {
+        "q": "How do I ask for Property compliance in Stockport?",
+        "a": "Send the address, the building type and what Property compliance needs to cover. iComply replies with a written scope. The price is on application. Nothing on this page is a fee list."
+      },
+      {
+        "q": "Who attends Property compliance in Stockport?",
+        "a": "The visit is carried out by qualified people for that trade. The office is in Offerton, Stockport. Travel is part of the POA quote, not a surprise extra."
+      },
+      {
+        "q": "Do you publish a price for Property compliance?",
+        "a": "No. Quotes are price on application after the building, access and scope are known. We do not invent a starting fee."
+      },
+      {
+        "q": "What should I have ready?",
+        "a": "Postcode, floor count, whether the building is occupied, and any existing certificate or panel brand. Photos of the board, panel or appliance speed the reply. The base is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE."
+      }
+    ]
+  },
+  "bolton": {
+    "path": "/pages/areas/bolton",
+    "faqs": [
+      {
+        "q": "How do I ask for Property compliance in Bolton?",
+        "a": "Send the address, the building type and what Property compliance needs to cover. iComply replies with a written scope. The price is on application. Nothing on this page is a fee list."
+      },
+      {
+        "q": "Who attends Property compliance in Bolton?",
+        "a": "The visit is carried out by qualified people for that trade. The office is in Offerton, Stockport. Travel is part of the POA quote, not a surprise extra."
+      },
+      {
+        "q": "Do you publish a price for Property compliance?",
+        "a": "No. Quotes are price on application after the building, access and scope are known. We do not invent a starting fee."
+      },
+      {
+        "q": "What should I have ready?",
+        "a": "Postcode, floor count, whether the building is occupied, and any existing certificate or panel brand. Photos of the board, panel or appliance speed the reply. The base is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE."
+      }
+    ]
+  },
+  "wigan": {
+    "path": "/pages/areas/wigan",
+    "faqs": [
+      {
+        "q": "How do I ask for Property compliance in Wigan?",
+        "a": "Send the address, the building type and what Property compliance needs to cover. iComply replies with a written scope. The price is on application. Nothing on this page is a fee list."
+      },
+      {
+        "q": "Who attends Property compliance in Wigan?",
+        "a": "The visit is carried out by qualified people for that trade. The office is in Offerton, Stockport. Travel is part of the POA quote, not a surprise extra."
+      },
+      {
+        "q": "Do you publish a price for Property compliance?",
+        "a": "No. Quotes are price on application after the building, access and scope are known. We do not invent a starting fee."
+      },
+      {
+        "q": "What should I have ready?",
+        "a": "Postcode, floor count, whether the building is occupied, and any existing certificate or panel brand. Photos of the board, panel or appliance speed the reply. The base is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE."
+      }
+    ]
+  },
+  "manchester_images": {
+    "path": "/pages/areas/manchester",
+    "_note": "CLOSE-Q2 images only. FAQ markup stays with WT.",
+    "images": [
+      {
+        "src": "/assets/images/services/fire-alarms.jpg",
+        "alt": "Fire alarm panel and devices in Manchester — Property compliance, iComply Property Services"
+      },
+      {
+        "src": "/assets/images/services/electrical.jpg",
+        "alt": "Consumer unit prepared for an EICR in Manchester — Property compliance, iComply Property Services"
+      },
+      {
+        "src": "/assets/images/services/cctv.jpg",
+        "alt": "CCTV cameras and recorder in Manchester — Property compliance, iComply Property Services"
+      }
+    ]
+  }
+}
