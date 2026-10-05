@@ -443,6 +443,40 @@ $gapRedirects = [
     '/pages/keywords/air-source-heat-pumps-service-agreement' => '/pages/services/heating',
     '/pages/keywords/bs-5306-extinguisher-service-cost' => '/pages/services/fire-extinguishers',
     '/pages/keywords/loft-conversion-fixed-price-package' => '/pages/services/loft-conversions',
+    '/pages/cookies' => '/privacy',
+    '/pages/thanks' => '/thank-you',
+    '/pages/keywords/24hr-electrician' => '/pages/keywords/24-hour-electrician',
+    '/pages/keywords/emergency-locksmith' => '/contact',
+    '/pages/aov/redish' => '/pages/aov/reddish',
+    '/pages/barriers/redish' => '/pages/barriers/reddish',
+    '/pages/aov/newcastle' => '/pages/aov/newcastle-upon-tyne',
+    '/24-hour-electrician' => '/pages/keywords/24-hour-electrician',
+    '/24-hour-plumber' => '/pages/keywords/24-hour-plumber',
+    '/24hr-electrician' => '/pages/keywords/24-hour-electrician',
+    '/emergency-aov' => '/pages/keywords/emergency-aov',
+    '/emergency-barrier-repair' => '/pages/keywords/emergency-barrier-repair',
+    '/emergency-boiler-repair' => '/pages/keywords/emergency-boiler-repair',
+    '/emergency-eicr' => '/pages/keywords/emergency-eicr',
+    '/emergency-electrician' => '/pages/keywords/emergency-electrician',
+    '/emergency-fire-alarm' => '/pages/keywords/emergency-fire-alarm',
+    '/emergency-gas-engineer' => '/pages/keywords/emergency-gas-engineer',
+    '/emergency-heating' => '/pages/keywords/emergency-heating',
+    '/emergency-locksmith' => '/contact',
+    '/emergency-plumber' => '/pages/keywords/emergency-plumber',
+    '/next-day-aov' => '/pages/keywords/next-day-aov',
+    '/next-day-boiler-repair' => '/pages/keywords/next-day-boiler-repair',
+    '/next-day-eicr' => '/pages/keywords/next-day-eicr',
+    '/next-day-electrician' => '/pages/keywords/next-day-electrician',
+    '/next-day-fire-door' => '/pages/keywords/next-day-fire-door',
+    '/next-day-gas-engineer' => '/pages/keywords/next-day-gas-engineer',
+    '/next-day-heating-engineer' => '/pages/keywords/next-day-heating-engineer',
+    '/next-day-plumber' => '/pages/keywords/next-day-plumber',
+    '/same-day-aov-repair' => '/pages/keywords/same-day-aov-repair',
+    '/same-day-boiler-repair' => '/pages/keywords/same-day-boiler-repair',
+    '/same-day-eicr' => '/pages/keywords/same-day-eicr',
+    '/same-day-electrician' => '/pages/keywords/same-day-electrician',
+    '/same-day-gas-engineer' => '/pages/keywords/same-day-gas-engineer',
+    '/same-day-plumber' => '/pages/keywords/same-day-plumber',
 ];
 foreach ($gapRedirects as $from => $to) {
     if (!preg_match('#^' . preg_quote($from, '#') . '\\s+' . preg_quote($to, '#') . '\\s+301\\b#m', $redirects)) {
@@ -471,6 +505,28 @@ $gapPages = [
     '/pages/barriers/tameside',
     '/pages/barriers/trafford',
     '/pages/barriers/withington',
+    '/pages/aov/brinnington',
+    '/pages/aov/castleton',
+    '/pages/aov/davyhulme',
+    '/pages/aov/dialstone',
+    '/pages/aov/edgeley',
+    '/pages/aov/heaton-mersey',
+    '/pages/aov/heaton-norris',
+    '/pages/aov/lostock',
+    '/pages/aov/newhey',
+    '/pages/aov/partington',
+    '/pages/aov/reddish',
+    '/pages/barriers/brinnington',
+    '/pages/barriers/castleton',
+    '/pages/barriers/davyhulme',
+    '/pages/barriers/dialstone',
+    '/pages/barriers/edgeley',
+    '/pages/barriers/gatley',
+    '/pages/barriers/heaton-mersey',
+    '/pages/barriers/heaton-norris',
+    '/pages/barriers/lostock',
+    '/pages/barriers/newhey',
+    '/pages/barriers/partington',
 ];
 foreach ($gapPages as $path) {
     $file = $dist . $path . '.php';
@@ -497,6 +553,55 @@ foreach ($gapPages as $path) {
     }
     $pass++;
     echo "[PASS] town page {$path}\n";
+}
+$gapKeywords = [
+    '24-hour-electrician',
+    '24-hour-plumber',
+    'emergency-aov',
+    'emergency-barrier-repair',
+    'emergency-eicr',
+    'emergency-fire-alarm',
+    'emergency-heating',
+    'next-day-aov',
+    'next-day-boiler-repair',
+    'next-day-eicr',
+    'next-day-electrician',
+    'next-day-fire-door',
+    'next-day-gas-engineer',
+    'next-day-heating-engineer',
+    'next-day-plumber',
+    'same-day-aov-repair',
+    'same-day-boiler-repair',
+    'same-day-electrician',
+    'same-day-gas-engineer',
+    'same-day-plumber',
+];
+foreach ($gapKeywords as $slug) {
+    $path = '/pages/keywords/' . $slug;
+    $file = $dist . $path . '.php';
+    if (preg_match('#^' . preg_quote($path, '#') . '\\s+\\S+\\s+301\\b#m', $redirects)) {
+        $fail++;
+        echo "[FAIL] keyword page is a 301 {$path}\n";
+        continue;
+    }
+    if (!is_file($file)) {
+        $fail++;
+        echo "[FAIL] missing keyword page {$file}\n";
+        continue;
+    }
+    $html = (string)file_get_contents($file);
+    if (!str_contains($html, '07517806082') || str_contains($html, 'Keyword not found') || str_contains($html, '<?php')) {
+        $fail++;
+        echo "[FAIL] keyword page incomplete {$path}\n";
+        continue;
+    }
+    if (str_contains($html, 'locksmith')) {
+        $fail++;
+        echo "[FAIL] keyword page mentions locksmith {$path}\n";
+        continue;
+    }
+    $pass++;
+    echo "[PASS] keyword page {$path}\n";
 }
 $svcAreaFiles = 0;
 $svcCount = function_exists('getServices') ? count(getServices()) : 0;

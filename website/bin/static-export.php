@@ -936,6 +936,7 @@ function icomplyPrettyUrlRedirects(): string
 /pages/keywords/bs-5306-extinguisher-service-cost/        /pages/services/fire-extinguishers  301
 /pages/keywords/loft-conversion-fixed-price-package       /pages/services/loft-conversions  301
 /pages/keywords/loft-conversion-fixed-price-package/      /pages/services/loft-conversions  301
+__LIVE_404_REDIRECTS__
 /blog                    /pages/resources 301
 /blog/                   /pages/resources 301
 /news                    /pages/resources 301
@@ -1058,7 +1059,11 @@ __MATRIX_REDIRECTS__
 /pages/windows-doors/    /pages/services/windows-doors 301!
 
 TXT;
-    $txt = str_replace("__MATRIX_REDIRECTS__\n", icomplyUnpublishedMatrixRedirects(), $base);
+    if (!function_exists('icomplyLive404RedirectLines')) {
+        require_once SITE_ROOT . '/includes/live-404-redirects.php';
+    }
+    $txt = str_replace("__LIVE_404_REDIRECTS__\n", icomplyLive404RedirectLines(), $base);
+    $txt = str_replace("__MATRIX_REDIRECTS__\n", icomplyUnpublishedMatrixRedirects(), $txt);
     // Exact place-alias 301s must come before /pages/barriers/:slug and /pages/aov 200! rules.
     return icomplyPlaceAliasRedirectLines()
         . rtrim($txt, "\r\n") . "\n"

@@ -49,6 +49,10 @@ $legacyAliases = [
     '/pages/keywords/bs-5306-extinguisher-service-cost' => '/pages/services/fire-extinguishers',
     '/pages/keywords/loft-conversion-fixed-price-package' => '/pages/services/loft-conversions',
 ];
+if (!function_exists('icomplyLive404Redirects')) {
+    require_once __DIR__ . '/includes/live-404-redirects.php';
+}
+$legacyAliases = array_merge($legacyAliases, icomplyLive404Redirects());
 if (isset($legacyAliases[$aliasPath])) {
     header('Location: ' . $legacyAliases[$aliasPath], true, 301);
     return true;

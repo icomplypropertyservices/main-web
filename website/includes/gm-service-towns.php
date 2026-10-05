@@ -306,6 +306,388 @@ function icomplyGmServiceTownRecords(): array
                 'barriers' => ['rochdale', 'littleborough', 'oldham', 'shaw'],
             ]
         ),
+        'brinnington' => icomplyGmTown(
+            'Brinnington',
+            9000,
+            'Stockport',
+            53.4320,
+            -2.1480,
+            ['aov', 'barriers'],
+            'SK5',
+            [
+                'aov' => 'AOV smoke control in Brinnington | iComply',
+                'barriers' => 'CAME barriers in Brinnington | iComply',
+            ],
+            [
+                'aov' => 'Brinnington SK5 smoke vents are on low blocks off Brinnington Road, not a city-centre shaft. iComply surveys from Stockport SK2. Price on application. 07517806082.',
+                'barriers' => 'Brinnington SK5 barriers are on yards at the edge of the estate, not the residential streets. CAME partner. Quoted from Stockport SK2. 07517806082.',
+            ],
+            [
+                'aov' => [
+                    'Brinnington is the SK5 estate north of Stockport, between Reddish and the Tame. Most homes are houses and low flats off Brinnington Road. The stairs that need smoke control are those low blocks, not a tower core.',
+                    'iComply surveys that vent from the Offerton workshop in SK2, a short run from the estate. Our qualified engineers name the actuator, the panel and the fire-alarm contact. The quote is price on application after the stair is seen.',
+                ],
+                'barriers' => [
+                    'Vehicle barriers in Brinnington are on the commercial yards at the edge of the SK5 estate, not on the residential streets off Brinnington Road. A lane here is usually one boom and a loop.',
+                    'CAME is the barrier partner for a new boom. An existing cabinet is kept when the survey shows the springs and safety edges are still the right kit. The price is on application from Stockport SK2.',
+                ],
+            ],
+            [
+                'aov' => ['stockport', 'manchester', 'hyde', 'sale'],
+                'barriers' => ['stockport', 'manchester', 'hyde', 'sale'],
+            ],
+            '/pages/areas/stockport',
+            'Stockport'
+        ),
+        'castleton' => icomplyGmTown(
+            'Castleton',
+            10000,
+            'Rochdale',
+            53.5900,
+            -2.1750,
+            ['aov', 'barriers'],
+            'OL11',
+            [
+                'aov' => 'AOV smoke control in Castleton | iComply',
+                'barriers' => 'CAME barriers in Castleton | iComply',
+            ],
+            [
+                'aov' => 'Castleton OL11 smoke vents are on converted stairs between Rochdale and Heywood. iComply surveys from Stockport SK2. Price on application. 07517806082.',
+                'barriers' => 'Castleton OL11 barriers are mill yards and private car parks, not the canal towpath. CAME partner. Quoted from Stockport SK2. 07517806082.',
+            ],
+            [
+                'aov' => [
+                    'Castleton is the OL11 stretch between Rochdale and Heywood, with terraces, the canal and older mill floors. A smoke vent here is commonly a chain actuator on a converted stair, or a roof hatch that rain has seized.',
+                    'iComply asks for the panel make before the visit from Stockport SK2. Our qualified engineers free a dragging casement before fitting a new chain. The figure is price on application.',
+                ],
+                'barriers' => [
+                    'Barrier work in Castleton is the yards and staff car parks off the mill streets in OL11, not the canal path. The cabinets are often an older brand with a tired loop.',
+                    'CAME is the barrier partner when the lane is replaced. The manufacturer already on the cabinet is serviced when the survey says it should stay. iComply quotes that lane on application.',
+                ],
+            ],
+            [
+                'aov' => ['rochdale', 'oldham', 'manchester', 'stockport'],
+                'barriers' => ['rochdale', 'oldham', 'manchester', 'stockport'],
+            ],
+            '/pages/areas/rochdale',
+            'Rochdale'
+        ),
+        'davyhulme' => icomplyGmTown(
+            'Davyhulme',
+            19000,
+            'Trafford',
+            53.4520,
+            -2.3680,
+            ['aov', 'barriers'],
+            'M41',
+            [
+                'aov' => 'AOV smoke control in Davyhulme | iComply',
+                'barriers' => 'CAME barriers in Davyhulme | iComply',
+            ],
+            [
+                'aov' => 'Davyhulme M41 smoke vents are on private stairs near Urmston. Hospital sites are not assumed. iComply quotes from SK2. 07517806082.',
+                'barriers' => 'Davyhulme M41 barriers are private car parks, not hospital grounds. CAME partner. Quoted from Stockport SK2. 07517806082.',
+            ],
+            [
+                'aov' => [
+                    'Davyhulme is the M41 district beside Urmston. Trafford General sits in this postcode. iComply does not assume a hospital contract. The stairs we are asked about are private blocks and converted buildings off the residential streets.',
+                    'On a private stair in M41 our qualified engineers identify the actuator and the fire-alarm interface, then test them. The quote is price on application from the Stockport SK2 workshop.',
+                ],
+                'barriers' => [
+                    'Davyhulme barriers are private car parks and yards in M41, not the hospital grounds and not the residential cul-de-sacs. A short lane is surveyed for boom length and whether pedestrians share the opening.',
+                    'CAME is the barrier partner if the lane is replaced. An existing cabinet is kept when it is sound. iComply will not specify a boom for a hospital site unless that site instructs the work.',
+                ],
+            ],
+            [
+                'aov' => ['urmston', 'stretford', 'sale', 'manchester'],
+                'barriers' => ['urmston', 'stretford', 'sale', 'manchester'],
+            ],
+            '/pages/areas/urmston',
+            'Urmston'
+        ),
+        'dialstone' => icomplyGmTown(
+            'Dialstone',
+            5500,
+            'Stockport',
+            53.4020,
+            -2.1450,
+            ['aov', 'barriers'],
+            'SK2',
+            [
+                'aov' => 'AOV smoke control in Dialstone | iComply',
+                'barriers' => 'CAME barriers in Dialstone | iComply',
+            ],
+            [
+                'aov' => 'Dialstone SK2 smoke vents are on low blocks off Dialstone Lane, next to the Offerton workshop. Price on application. 07517806082.',
+                'barriers' => 'Dialstone SK2 barriers are private courts off Dialstone Lane, not the lane itself. CAME partner. Quoted from Stockport SK2. 07517806082.',
+            ],
+            [
+                'aov' => [
+                    'Dialstone is the SK2 neighbourhood along Dialstone Lane, on the Offerton side of Stockport. The workshop is in the same outward code. Homes are mostly houses. Smoke vents turn up on the occasional low block set off the lane.',
+                    'Because the stair is close to SK2, iComply can survey it without treating the visit as a long trip. Our qualified engineers still name the panel and test the fire-alarm contact. The quote is price on application.',
+                ],
+                'barriers' => [
+                    'Dialstone does not have an industrial ring road of gates. The barriers that exist are private courts and small car parks off Dialstone Lane in SK2. A short boom in a tight court is a different survey from a retail-park lane.',
+                    'CAME is the barrier partner when the lane is replaced. iComply records the loop and the manual release before parts are ordered. The price is on application.',
+                ],
+            ],
+            [
+                'aov' => ['stockport', 'manchester', 'hyde', 'sale'],
+                'barriers' => ['stockport', 'manchester', 'hyde', 'sale'],
+            ],
+            '/pages/areas/stockport',
+            'Stockport'
+        ),
+        'edgeley' => icomplyGmTown(
+            'Edgeley',
+            14000,
+            'Stockport',
+            53.4000,
+            -2.1700,
+            ['aov', 'barriers'],
+            'SK3',
+            [
+                'aov' => 'AOV smoke control in Edgeley | iComply',
+                'barriers' => 'CAME barriers in Edgeley | iComply',
+            ],
+            [
+                'aov' => 'Edgeley SK3 smoke vents are on stairs off Castle Street and near the station. iComply surveys from Stockport SK2. Price on application. 07517806082.',
+                'barriers' => 'Edgeley SK3 barriers are yards and private car parks, not Castle Street. CAME partner. Quoted from Stockport SK2. 07517806082.',
+            ],
+            [
+                'aov' => [
+                    'Edgeley is the SK3 district south-west of Stockport station, around Castle Street and the terraces toward Edgeley Park. The stairs that need an automatic opening vent are the flats and converted buildings off the shopping street, not the two-storey terraces themselves.',
+                    'iComply surveys from Offerton SK2. Our qualified engineers identify the panel before a takeover is offered and test what the fire alarm actually opens. The quote is price on application.',
+                ],
+                'barriers' => [
+                    'Vehicle barriers in Edgeley are on yards and private car parks behind the SK3 streets, not on Castle Street and not at the football ground unless that site instructs the lane. A lane here is usually one boom.',
+                    'CAME is the barrier partner for a new boom. The incumbent manufacturer stays on the quote when the cabinet, springs and edges are sound. iComply will not bridge a safety loop to force the boom down.',
+                ],
+            ],
+            [
+                'aov' => ['stockport', 'manchester', 'sale', 'hyde'],
+                'barriers' => ['stockport', 'manchester', 'sale', 'hyde'],
+            ],
+            '/pages/areas/stockport',
+            'Stockport'
+        ),
+        'gatley' => icomplyGmTown(
+            'Gatley',
+            21627,
+            'Stockport',
+            53.3930,
+            -2.2320,
+            ['barriers'],
+            'SK8',
+            [
+                'barriers' => 'CAME barriers in Gatley | iComply',
+            ],
+            [
+                'barriers' => 'Gatley SK8 barriers are private car parks off the village, not the green. CAME partner. Quoted from Stockport SK2. 07517806082.',
+            ],
+            [
+                'barriers' => [
+                    'Gatley is the SK8 village south of Stockport, toward Cheadle. The green and the shopping street are not a lane iComply controls. Vehicle barriers here are private car parks and office courts set off those streets.',
+                    'CAME is the barrier partner for a new boom. An existing cabinet is kept when the survey shows it should stay. iComply quotes that lane on application from the Stockport SK2 workshop. Smoke vents in Gatley stay on the separate AOV page.',
+                ],
+            ],
+            [
+                'barriers' => ['stockport', 'sale', 'altrincham', 'manchester'],
+            ],
+            '/pages/areas/cheadle',
+            'Cheadle'
+        ),
+        'heaton-mersey' => icomplyGmTown(
+            'Heaton Mersey',
+            12000,
+            'Stockport',
+            53.4100,
+            -2.2100,
+            ['aov', 'barriers'],
+            'SK4',
+            [
+                'aov' => 'AOV smoke control in Heaton Mersey | iComply',
+                'barriers' => 'CAME barriers in Heaton Mersey | iComply',
+            ],
+            [
+                'aov' => 'Heaton Mersey SK4 smoke vents are on apartment stairs between Didsbury and Stockport. iComply surveys from SK2. 07517806082.',
+                'barriers' => 'Heaton Mersey SK4 barriers are private courts, not the park. CAME partner. Quoted from Stockport SK2. 07517806082.',
+            ],
+            [
+                'aov' => [
+                    'Heaton Mersey is the SK4 district between Stockport and Didsbury, with semis along the park and newer apartments set back from the main road. The smoke vent is on those apartment stairs, not on a house landing.',
+                    'iComply writes down the panel make and whether the fire alarm still has a contact for that vent. Our qualified engineers do not treat a green LED as a test. The quote stays price on application.',
+                ],
+                'barriers' => [
+                    'Heaton Mersey has few industrial gates. The barriers that exist are private courts and small car parks in SK4, not a boom across the park. Boom length and pedestrian use are written down before a pack is ordered.',
+                    'CAME is the barrier partner when the lane is replaced. The survey records the manual release. iComply services the incumbent manufacturer when the hardware is still sound.',
+                ],
+            ],
+            [
+                'aov' => ['stockport', 'manchester', 'sale', 'hyde'],
+                'barriers' => ['stockport', 'manchester', 'sale', 'hyde'],
+            ],
+            '/pages/areas/stockport',
+            'Stockport'
+        ),
+        'heaton-norris' => icomplyGmTown(
+            'Heaton Norris',
+            15000,
+            'Stockport',
+            53.4200,
+            -2.1650,
+            ['aov', 'barriers'],
+            'SK4',
+            [
+                'aov' => 'AOV smoke control in Heaton Norris | iComply',
+                'barriers' => 'CAME barriers in Heaton Norris | iComply',
+            ],
+            [
+                'aov' => 'Heaton Norris SK4 smoke vents are on stairs toward the M60 and Stockport centre. iComply surveys from SK2. 07517806082.',
+                'barriers' => 'Heaton Norris SK4 barriers are yards off the main road, not the terraces. CAME partner. Quoted from Stockport SK2. 07517806082.',
+            ],
+            [
+                'aov' => [
+                    'Heaton Norris is the SK4 district north of Stockport centre, toward the pyramid and the M60. Terraces make up most of the streets. Newer flats and low blocks are where an automatic opening vent is asked about.',
+                    'Those cores are low. The vent is often a stair window or a roof hatch. iComply surveys from Stockport SK2 and names the panel before a takeover is offered. The quote is price on application.',
+                ],
+                'barriers' => [
+                    'Barrier work in Heaton Norris is the yards off the main road in SK4, not a gate on the terraced streets. A lane is usually one boom, a loop in the tarmac and a reader the site already owns.',
+                    'CAME is the barrier partner for a new boom. Paxton or Videx release is specified as access control, separate from the barrier manufacturer. The price is on application.',
+                ],
+            ],
+            [
+                'aov' => ['stockport', 'manchester', 'hyde', 'sale'],
+                'barriers' => ['stockport', 'manchester', 'hyde', 'sale'],
+            ],
+            '/pages/areas/stockport',
+            'Stockport'
+        ),
+        'lostock' => icomplyGmTown(
+            'Lostock',
+            12000,
+            'Bolton',
+            53.5720,
+            -2.5000,
+            ['aov', 'barriers'],
+            'BL6',
+            [
+                'aov' => 'AOV smoke control in Lostock | iComply',
+                'barriers' => 'CAME barriers in Lostock | iComply',
+            ],
+            [
+                'aov' => 'Lostock BL6 smoke vents are on apartment stairs near Lostock Junction, not Lostock Hall in Preston. iComply quotes from SK2. 07517806082.',
+                'barriers' => 'Lostock BL6 barriers are business-park lanes near the junction, not the residential closes. CAME partner. Quoted from Stockport SK2. 07517806082.',
+            ],
+            [
+                'aov' => [
+                    'Lostock in this page is the BL6 district of Bolton around Lostock Junction, not Lostock Hall near Preston. Houses line most streets. Smoke vents are on the apartment stairs and the newer blocks set off the junction.',
+                    'The drive from Stockport SK2 is longer than a Stockport estate, so the visit is batched. Our qualified engineers still test the vent, the battery and the fire-alarm contact. The quote is for that core, on application.',
+                ],
+                'barriers' => [
+                    'Vehicle barriers in Lostock are the business-park lanes and private car parks near BL6, not a boom on a residential close. The site has to say which lane. iComply does not treat the railway junction as a gate.',
+                    'CAME is the barrier partner for a new boom. The survey records boom length and the manual release before anyone orders a pack. Existing manufacturers are serviced when the hardware is sound.',
+                ],
+            ],
+            [
+                'aov' => ['bolton', 'manchester', 'stockport', 'sale'],
+                'barriers' => ['bolton', 'manchester', 'stockport', 'sale'],
+            ],
+            '/pages/areas/bolton',
+            'Bolton'
+        ),
+        'newhey' => icomplyGmTown(
+            'Newhey',
+            7000,
+            'Rochdale',
+            53.6020,
+            -2.0900,
+            ['aov', 'barriers'],
+            'OL16',
+            [
+                'aov' => 'AOV smoke control in Newhey | iComply',
+                'barriers' => 'CAME barriers in Newhey | iComply',
+            ],
+            [
+                'aov' => 'Newhey OL16 smoke vents are on converted mill stairs east of Milnrow. iComply surveys from Stockport SK2. Price on application. 07517806082.',
+                'barriers' => 'Newhey OL16 barriers are mill yards, not the village street. CAME partner. Quoted from Stockport SK2. 07517806082.',
+            ],
+            [
+                'aov' => [
+                    'Newhey is the OL16 village east of Milnrow, with stone terraces and small mill buildings. A smoke vent here is commonly a chain actuator on a converted stair. Pennine rain seizes roof hatches. A lid that will not close is both a leak and a failed smoke vent.',
+                    'iComply asks for a photo of the panel before travelling from Stockport SK2. Our qualified engineers free a dragging casement before fitting a new chain. The figure is price on application.',
+                ],
+                'barriers' => [
+                    'Newhey vehicle barriers sit on the mill yards and private car parks in OL16, not on the village street and not on the path up to the moor. Milnrow has its own barrier page for the next settlement west.',
+                    'CAME is the barrier partner when the lane is replaced. A loop full of water is written down, not bridged out. iComply quotes that lane on application.',
+                ],
+            ],
+            [
+                'aov' => ['rochdale', 'oldham', 'stockport', 'manchester'],
+                'barriers' => ['rochdale', 'oldham', 'stockport', 'manchester'],
+            ],
+            '/pages/areas/rochdale',
+            'Rochdale'
+        ),
+        'partington' => icomplyGmTown(
+            'Partington',
+            8000,
+            'Trafford',
+            53.4200,
+            -2.4300,
+            ['aov', 'barriers'],
+            'M31',
+            [
+                'aov' => 'AOV smoke control in Partington | iComply',
+                'barriers' => 'CAME barriers in Partington | iComply',
+            ],
+            [
+                'aov' => 'Partington M31 smoke vents are on low blocks in the village, not the Carrington works. iComply quotes from SK2. 07517806082.',
+                'barriers' => 'Partington M31 barriers are lanes on the Carrington industrial edge, not the village street. CAME partner. Quoted from Stockport SK2. 07517806082.',
+            ],
+            [
+                'aov' => [
+                    'Partington is the M31 village west of Sale. Most homes are houses. The stairs that need smoke control are the low blocks in the village. The chemical and industrial sites at Carrington are a different instruction and are not assumed from the postcode.',
+                    'iComply surveys a village stair from Stockport SK2 and names the panel before a takeover is offered. Our qualified engineers record whether the vent failed open or failed shut. The quote is price on application.',
+                ],
+                'barriers' => [
+                    'Vehicle barriers for a Partington enquiry are usually a lane on the Carrington industrial edge in M31, not a boom on the village street. iComply attends only the lane the site instructs. A works entrance and a village court are quoted as separate lanes.',
+                    'CAME is the barrier partner for a new boom. The survey records the loop, the safety edges and the manual release. The price is on application from Stockport SK2.',
+                ],
+            ],
+            [
+                'aov' => ['sale', 'altrincham', 'urmston', 'manchester'],
+                'barriers' => ['sale', 'altrincham', 'urmston', 'manchester'],
+            ],
+            '/pages/areas/sale',
+            'Sale'
+        ),
+        'reddish' => icomplyGmTown(
+            'Reddish',
+            22200,
+            'Stockport',
+            53.4380,
+            -2.1600,
+            ['aov'],
+            'SK5',
+            [
+                'aov' => 'AOV smoke control in Reddish | iComply',
+            ],
+            [
+                'aov' => 'Reddish SK5 smoke vents are on low blocks between Reddish North and Reddish South. iComply surveys from Stockport SK2. Price on application. 07517806082.',
+            ],
+            [
+                'aov' => [
+                    'Reddish is the SK5 district north of Stockport, between Reddish North and Reddish South. The published barrier page already uses the Census 2021 usual-resident count of 22,200. Homes are mostly semis and terraces, with flats on some streets. Smoke vents are on those low blocks, not a city shaft.',
+                    'iComply surveys the stair from Offerton SK2. Our qualified engineers name the actuator and test the fire-alarm contact. Vehicle barriers in Reddish stay on the existing barrier page. The smoke-vent quote is price on application.',
+                ],
+            ],
+            [
+                'aov' => ['stockport', 'manchester', 'hyde', 'sale'],
+            ],
+            '/pages/areas/stockport',
+            'Stockport'
+        ),
     ];
     return $rows;
 }
@@ -329,7 +711,9 @@ function icomplyGmTown(
     array $titles,
     array $metas,
     array $copy,
-    array $neighbours
+    array $neighbours,
+    string $areaHub = '',
+    string $areaLabel = ''
 ): array {
     $slug = function_exists('areaSlug') ? areaSlug($name) : strtolower($name);
     return [
@@ -344,7 +728,8 @@ function icomplyGmTown(
         'gm_local' => true,
         'families' => $families,
         'outward' => $outward,
-        'area_hub' => '/pages/areas/' . $slug,
+        'area_hub' => $areaHub !== '' ? $areaHub : '/pages/areas/' . $slug,
+        'area_label' => $areaLabel !== '' ? $areaLabel : $name,
         'titles' => $titles,
         'metas' => $metas,
         'copy' => $copy,
