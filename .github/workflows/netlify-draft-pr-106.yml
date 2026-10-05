@@ -12,6 +12,9 @@ on:
   push:
     branches:
       - cursor/fix-live-404s-1df0
+    # A commit that only changes this parser must not upload dist/ again.
+    paths-ignore:
+      - .github/workflows/netlify-draft-pr-106.yml
 
 concurrency:
   group: netlify-draft-pr-106
@@ -144,13 +147,25 @@ jobs:
               except Exception:
                   return ""
 
-          def clean_url(url):
-              return url.strip().lstrip("<").rstrip(">").rstrip(").,")
+          def clean_url(value):
+              """Strip CLI autolinks and markdown before any URL check."""
+              value = value.strip().strip("`")
+              # [label](https://example) or [https://example](https://example)
+              markdown = re.search(r"\((https://[^)\s]+)\)", value)
+              if markdown:
+                  value = markdown.group(1)
+              bracketed = re.search(r"<(https://[^>\s]+)>", value)
+              if bracketed:
+                  value = bracketed.group(1)
+              value = value.strip().strip("<>").rstrip(").,")
+              if value.startswith("<") and value.endswith(">"):
+                  value = value[1:-1].strip()
+              return value
 
           labeled = {}
           for line in log.splitlines():
               match = re.search(
-                  r"(Draft URL|Website Draft URL|Website URL|Unique Deploy URL|Unique deploy URL)\s*:\s*<?(https://[^>\s]+)>?",
+                  r"(Draft URL|Website Draft URL|Website URL|Unique Deploy URL|Unique deploy URL)\s*:\s*(.+)$",
                   line,
               )
               if match:
