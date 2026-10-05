@@ -1054,7 +1054,7 @@ function icomplyResolvePlaceSlug(string $family, string $slug): string {
         return '';
     }
     if (!function_exists('icomplyGmServiceTownServes')) {
-        require_once __DIR__ . '/gm-service-towns.php';
+        require_once __DIR__ . '/includes/gm-service-towns.php';
     }
     if (icomplyGmServiceTownServes($family, $slug)) {
         return $slug;
@@ -1091,7 +1091,7 @@ function icomplyPlaceSlugExists(string $family, string $slug): bool {
         return false;
     }
     if (!function_exists('icomplyGmServiceTownServes')) {
-        require_once __DIR__ . '/gm-service-towns.php';
+        require_once __DIR__ . '/includes/gm-service-towns.php';
     }
     if (icomplyGmServiceTownServes($family, $slug)) {
         return true;
