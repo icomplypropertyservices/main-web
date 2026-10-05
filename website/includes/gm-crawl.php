@@ -1,10 +1,77 @@
 <?php
 /**
- * Greater Manchester crawl allowlist for local matrices.
- * Area hubs, keyword×town, local service×town, job×town and manufacturer×town
- * use these 60 towns. AOV, barriers and fire-family town pages stay UK-wide.
+ * Local crawl allowlists.
+ *
+ * Dual-ring 269 (GM core ∪ 50 miles of Manchester ∪ 50 miles of Burnley):
+ * area hubs, local service×town, keyword×town and job×town.
+ * Manufacturer×town stays on the Greater Manchester core of 60.
+ * AOV, barriers and fire-family town pages stay UK-wide.
  */
 declare(strict_types=1);
+
+/** @return list<array{slug:string,name:string,bucket:string}> */
+function icomplyDualRingTownRows(): array
+{
+    static $rows = null;
+    if ($rows !== null) {
+        return $rows;
+    }
+    $file = dirname(__DIR__) . '/data/dual-ring-allowlist.json';
+    $decoded = is_file($file) ? json_decode((string)file_get_contents($file), true) : null;
+    $rows = [];
+    foreach (is_array($decoded['towns'] ?? null) ? $decoded['towns'] : [] as $row) {
+        if (!is_array($row)) {
+            continue;
+        }
+        $slug = strtolower(trim((string)($row['slug'] ?? '')));
+        $name = trim((string)($row['name'] ?? ''));
+        if ($slug === '' || $name === '') {
+            continue;
+        }
+        $rows[] = [
+            'slug' => $slug,
+            'name' => $name,
+            'bucket' => (string)($row['bucket'] ?? ''),
+        ];
+    }
+    return $rows;
+}
+
+/** @return list<string> */
+function icomplyLocalTownNames(): array
+{
+    $names = [];
+    foreach (icomplyDualRingTownRows() as $row) {
+        $names[] = $row['name'];
+    }
+    return $names;
+}
+
+function icomplyLocalTownSlug(string $areaOrSlug): bool
+{
+    static $set = null;
+    if ($set === null) {
+        $set = [];
+        foreach (icomplyDualRingTownRows() as $row) {
+            $set[$row['slug']] = true;
+        }
+    }
+    $slug = function_exists('areaSlug') ? areaSlug($areaOrSlug) : strtolower($areaOrSlug);
+    return $slug !== '' && isset($set[$slug]);
+}
+
+function icomplyLocalTownName(string $areaOrSlug): ?string
+{
+    static $names = null;
+    if ($names === null) {
+        $names = [];
+        foreach (icomplyDualRingTownRows() as $row) {
+            $names[$row['slug']] = $row['name'];
+        }
+    }
+    $slug = function_exists('areaSlug') ? areaSlug($areaOrSlug) : strtolower($areaOrSlug);
+    return $names[$slug] ?? null;
+}
 
 function icomplyEnsureGmTownHelpers(): void
 {
@@ -16,7 +83,11 @@ function icomplyEnsureGmTownHelpers(): void
     }
 }
 
-/** @return list<string> */
+/**
+ * Greater Manchester core of 60. Manufacturer×town uses this list.
+ *
+ * @return list<string>
+ */
 function icomplyCrawlTownNames(): array
 {
     icomplyEnsureGmTownHelpers();
@@ -26,6 +97,7 @@ function icomplyCrawlTownNames(): array
     return icomplyGreaterManchesterTownNames();
 }
 
+/** True for the Greater Manchester core. Not the wider dual-ring list. */
 function icomplyCrawlTownSlug(string $areaOrSlug): bool
 {
     return function_exists('icomplyIsGreaterManchesterAreaSlug')
@@ -49,7 +121,8 @@ function icomplyNationwideTownPath(string $path): bool
 }
 
 /**
- * Non-GM matrix URL → the GM parent. Null means the URL stays (hub or GM town).
+ * Outside-allowlist matrix URL → the parent hub.
+ * Null means the URL stays (hub, dual-ring local page, GM manufacturer page, or nationwide family).
  */
 function icomplyNonGmMatrixRedirect(string $path): ?string
 {
@@ -59,16 +132,16 @@ function icomplyNonGmMatrixRedirect(string $path): ?string
     $path = rtrim($path, '/') ?: '/';
 
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
-        return icomplyCrawlTownSlug($m[2]) ? null : '/pages/keywords/' . $m[1];
+        return icomplyLocalTownSlug($m[2]) ? null : '/pages/keywords/' . $m[1];
     }
     if (preg_match('#^/pages/manufacturers/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         return icomplyCrawlTownSlug($m[2]) ? null : '/pages/manufacturers/' . $m[1];
     }
     if (preg_match('#^/pages/jobs/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
-        return icomplyCrawlTownSlug($m[2]) ? null : '/pages/jobs/' . $m[1];
+        return icomplyLocalTownSlug($m[2]) ? null : '/pages/jobs/' . $m[1];
     }
     if (preg_match('#^/pages/areas/([a-z0-9\-]+)$#', $path, $m)) {
-        return icomplyCrawlTownSlug($m[1]) ? null : '/pages/areas';
+        return icomplyLocalTownSlug($m[1]) ? null : '/pages/areas';
     }
     if (icomplyNationwideTownPath($path)) {
         return null;
@@ -85,7 +158,7 @@ function icomplyNonGmMatrixRedirect(string $path): ?string
         if (function_exists('getServices') && !isset(getServices()[$m[1]])) {
             return null;
         }
-        return icomplyCrawlTownSlug($m[2]) ? null : '/pages/services/' . $m[1];
+        return icomplyLocalTownSlug($m[2]) ? null : '/pages/services/' . $m[1];
     }
     return null;
 }

@@ -12,7 +12,7 @@ $metaKeywords = 'AOV smoke control, vehicle barriers, landlord compliance Stockp
 $ogImage = url('/assets/images/android-chrome-512.png');
 
 $services = getServices();
-$areas = function_exists('icomplyCrawlTownNames') ? icomplyCrawlTownNames() : getAreas();
+$areas = function_exists('icomplyLocalTownNames') ? icomplyLocalTownNames() : getAreas();
 $categories = getServiceCategories();
 $catalog = getShopCatalog();
 $featuredProducts = array_slice($catalog['products'], 0, 4);
@@ -368,7 +368,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
         <div>
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Coverage</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Serving <?= count($areas) ?>+ towns</h2>
-            <p class="mt-3 text-zinc-600">Local response across Greater Manchester. Pick a town for full service links.</p>
+            <p class="mt-3 text-zinc-600">Greater Manchester, plus towns within 50 miles of Manchester and Burnley. Pick a town for full service links.</p>
             <div class="mt-6 flex flex-wrap gap-2">
                 <?php foreach ($popularTowns as $town): ?>
                     <a href="<?= url('/pages/areas/' . areaSlug($town) . '.php') ?>"

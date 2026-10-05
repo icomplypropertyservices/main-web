@@ -1,9 +1,11 @@
 <?php
 /**
- * Compact sitemap — hubs, the 60 Greater Manchester area hubs, and
- * AOV/barrier town pages for places over 10,000. Keyword×town and other
- * service×town pretty URLs 301 to the hub because they are not published, so
- * they stay out. Shared area-town templates are noindex and stay out.
+ * Compact sitemap — hubs, dual-ring area hubs (Greater Manchester plus the
+ * 50-mile Manchester and Burnley rings), and AOV/barrier/fire town pages.
+ * Keyword×town, job×town and local service×town are listed in the matrix
+ * sitemap written at export, not in this compact urlset. Manufacturer×town
+ * stays on the Greater Manchester core. Shared area-town templates that are
+ * outside the allowlist stay out.
  * Broken or unknown URLs stay out.
  * Never lists /shop/sitemap.xml or /products/sitemap.xml (separate sites; 404 here).
  */
@@ -122,12 +124,13 @@ function icomplySitemapEntries(): array
         if (!function_exists('icomplySitemapOmitsNonGm') || !function_exists('icomplyNationwideTownPath')) {
             require_once __DIR__ . '/gm-crawl.php';
         }
-        // Burnley stays off local matrices. AOV, barriers and fire town pages keep it.
-        if ((preg_match('#(?:^|/)burnley(?:$|/)#', $path) || str_ends_with($path, '-burnley'))
-            && !icomplyNationwideTownPath($path)) {
+        if (icomplySitemapOmitsNonGm($path)) {
             return;
         }
-        if (icomplySitemapOmitsNonGm($path)) {
+        // Town-stuffed keyword hubs (…-burnley) stay out. Real town paths
+        // (/pages/areas/burnley, /pages/keywords/{kw}/burnley) do not match.
+        if (preg_match('#-(?:burnley|liverpool|preston|chester|warrington|blackpool)$#', $path)
+            && !icomplyNationwideTownPath($path)) {
             return;
         }
         if (isset($seen[$path]) || isset($banned[$path])) {
@@ -157,9 +160,9 @@ function icomplySitemapEntries(): array
         if (preg_match('#^/pages/nurse-call/[a-z0-9\-]+$#', $path)) {
             return;
         }
-        // Greater Manchester area hubs are indexable and served by the router
-        // (Manchester has a stub file; the other GM towns do not). Burnley is
-        // Lancashire and stays out. Other area templates stay out.
+        // Dual-ring area hubs are indexable and served by the router
+        // (Manchester has a stub file; the other allowlist towns do not).
+        // Towns outside the Manchester/Burnley rings stay out.
         $isPublishedAreaHub = false;
         if (preg_match('#^/pages/areas/[a-z0-9\-]+$#', $path)) {
             if (!function_exists('icomplyPathIsIndexable') || !icomplyPathIsIndexable($path)) {
@@ -414,6 +417,11 @@ function icomplySitemapEntries(): array
     }
     if (function_exists('getAreas') && function_exists('areaSlug')) {
         foreach (getAreas() as $area) {
+            $add('/pages/areas/' . areaSlug((string)$area), '0.6');
+        }
+    }
+    if (function_exists('icomplyLocalTownNames') && function_exists('areaSlug')) {
+        foreach (icomplyLocalTownNames() as $area) {
             $add('/pages/areas/' . areaSlug((string)$area), '0.6');
         }
     }

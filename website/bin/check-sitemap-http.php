@@ -41,7 +41,8 @@ $say(!str_contains($xml, '/pages/electrical/manchester'), 'no /pages/electrical/
 $say(!str_contains($xml, '/pages/ev-chargers</loc>'), 'no /pages/ev-chargers (404)');
 $say(!str_contains($xml, '/pages/manufacturers/tunstall'), 'no /pages/manufacturers/tunstall (404)');
 $say(str_contains($xml, '/pages/areas/stockport'), 'Greater Manchester area hubs are listed');
-$say(!str_contains($xml, '/pages/areas/liverpool') && !str_contains($xml, '/pages/areas/burnley'), 'non-GM area hubs stay out');
+$say(str_contains($xml, '/pages/areas/liverpool') && str_contains($xml, '/pages/areas/burnley'), 'dual-ring area hubs are listed');
+$say(!str_contains($xml, '/pages/areas/birmingham'), 'towns outside the rings stay out');
 $say(str_contains($xml, '/pages/areas') && str_contains($xml, '/pages/resources/eicr-guide'), 'includes hubs + resource guide');
 
 $samples = [

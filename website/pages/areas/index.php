@@ -4,11 +4,11 @@
  */
 require_once __DIR__ . '/../../config.php';
 
-$areas = function_exists('icomplyCrawlTownNames') ? icomplyCrawlTownNames() : getAreas();
+$areas = function_exists('icomplyLocalTownNames') ? icomplyLocalTownNames() : getAreas();
 $services = getServices();
 
-$pageTitle = 'Areas We Cover | ' . count($areas) . ' Greater Manchester Towns';
-$metaDesc = 'iComply covers ' . count($areas) . ' towns across Greater Manchester. Every town hub links fire safety, electrical, professional services, kitchens, bathrooms and construction trades.';
+$pageTitle = 'Areas We Cover | ' . count($areas) . ' Towns';
+$metaDesc = 'iComply covers ' . count($areas) . ' towns: Greater Manchester plus places within 50 miles of Manchester and Burnley. Every town hub links fire safety, electrical, professional services, kitchens, bathrooms and construction trades.';
 $metaKeywords = 'fire risk assessment Manchester, kitchen fitting Stockport, EICR Bolton, property services Greater Manchester towns';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/areas');
@@ -54,14 +54,14 @@ require SITE_ROOT . '/includes/header.php';
             <div>
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs tracking-widest uppercase mb-5">
                     <span class="w-2 h-2 rounded-full bg-[#ff6b00]"></span>
-                    Greater Manchester coverage
+                    Manchester and Burnley rings
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
                     Areas we<br>
                     <span class="text-[#ff6b00]">cover</span>
                 </h1>
                 <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl">
-                    Local team serving <strong class="text-white"><?= count($areas) ?> Greater Manchester towns</strong> —
+                    Local team serving <strong class="text-white"><?= count($areas) ?> towns</strong> across Greater Manchester and within 50 miles of Manchester and Burnley —
                     fire safety (including FRAs), electrical &amp; gas, security, professional support,
                     kitchens, bathrooms, renovation and construction trades in every hub.
                 </p>

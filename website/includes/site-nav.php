@@ -21,7 +21,7 @@ function icomplyNavCatalog(): array
     }
 
     $services = getServices();
-    $areas = function_exists('icomplyCrawlTownNames') ? icomplyCrawlTownNames() : getAreas();
+    $areas = function_exists('icomplyLocalTownNames') ? icomplyLocalTownNames() : getAreas();
     $cats = function_exists('getServiceCategories') ? getServiceCategories() : [];
     $keywords = getMajorKeywords();
 

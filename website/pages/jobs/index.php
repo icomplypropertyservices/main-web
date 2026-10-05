@@ -54,7 +54,7 @@ $faqs = [
     ],
     [
         'Which towns get job×town pages?',
-        'Greater Manchester hubs in the 60-town set have job×town URLs. Start from the hub, then pick your town (Stockport is linked on each card as a working example).',
+        'Towns in the dual ring (Greater Manchester plus 50 miles of Manchester and of Burnley) have job×town URLs. Manufacturer×town pages stay on the Greater Manchester core. Start from the hub, then pick your town (Stockport is linked on each card as a working example).',
     ],
     [
         'How do I request a visit?',

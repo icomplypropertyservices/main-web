@@ -13,7 +13,7 @@ foreach (array_keys($keywords) as $kwSlug) {
 }
 ksort($keywords);
 $services = getServices();
-$areas = function_exists('icomplyCrawlTownNames') ? icomplyCrawlTownNames() : getAreas();
+$areas = function_exists('icomplyLocalTownNames') ? icomplyLocalTownNames() : getAreas();
 
 // Counts per service for filter chips
 $serviceCounts = [];
@@ -60,7 +60,7 @@ require SITE_ROOT . '/includes/header.php';
                 <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl">
                     Fire risk assessments, fire systems, electrical, security, professional compliance,
                     kitchens, bathrooms, renovation and construction trades —
-                    each guide links to local pages across <?= count($areas) ?> Greater Manchester towns.
+                    each guide links to local pages across <?= count($areas) ?> towns in the Manchester and Burnley rings.
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#directory" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Browse guides</a>
@@ -130,7 +130,7 @@ require SITE_ROOT . '/includes/header.php';
         $trust = [
             ['Full catalogue', 'Fire safety, professional & construction topics'],
             ['Service-linked', 'Every guide maps to one of ' . count($services) . ' services'],
-            ['Local coverage', count($areas) . ' Greater Manchester towns on related pages'],
+            ['Local coverage', count($areas) . ' towns on related pages (Manchester and Burnley rings)'],
             ['Fixed-price quotes', 'Clear scope before work starts'],
         ];
         foreach ($trust as [$t, $d]): ?>

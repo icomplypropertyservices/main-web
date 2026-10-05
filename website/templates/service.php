@@ -102,7 +102,7 @@ if (!empty($svcCopy['faq']) && is_array($svcCopy['faq'])) {
 }
 $hubLinks = function_exists('icomplyServiceHubLinks') ? icomplyServiceHubLinks($serviceSlug) : [];
 
-$nwAreas = function_exists('icomplyCrawlTownNames') ? icomplyCrawlTownNames() : getAreas();
+$nwAreas = function_exists('icomplyLocalTownNames') ? icomplyLocalTownNames() : getAreas();
 $keywordTowns = array_values(array_filter(
     ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Bury', 'Sale', 'Altrincham'],
     function ($t) use ($nwAreas) {

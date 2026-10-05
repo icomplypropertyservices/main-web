@@ -258,38 +258,42 @@ if ($indexMode === 'tiered') {
         $fail++;
         echo "FAIL: tiered sitemap missing a Greater Manchester area hub\n";
     }
-    if (str_contains($xml, '/pages/areas/liverpool</loc>') || str_contains($xml, '/pages/areas/burnley</loc>')) {
+    if (!str_contains($xml, '/pages/areas/liverpool</loc>') || !str_contains($xml, '/pages/areas/burnley</loc>') || !str_contains($xml, '/pages/areas/york</loc>')) {
         $fail++;
-        echo "FAIL: tiered sitemap lists a non-GM area hub\n";
+        echo "FAIL: tiered sitemap missing a dual-ring area hub\n";
+    }
+    if (str_contains($xml, '/pages/areas/birmingham</loc>') || str_contains($xml, '/pages/areas/london</loc>')) {
+        $fail++;
+        echo "FAIL: tiered sitemap lists a town outside the rings\n";
     }
     if (!str_contains($xml, '/pages/areas/manchester</loc>')) {
         $fail++;
         echo "FAIL: tiered sitemap missing Manchester\n";
     }
-    if (function_exists('icomplyGreaterManchesterTownNames') && function_exists('areaSlug')) {
+    if (function_exists('icomplyLocalTownNames') && function_exists('areaSlug')) {
         preg_match_all('#/pages/areas/([a-z0-9\-]+)</loc>#', $xml, $areaLocs);
         $listed = array_values(array_unique($areaLocs[1] ?? []));
-        $gm = [];
-        foreach (icomplyGreaterManchesterTownNames() as $name) {
-            $gm[] = areaSlug((string)$name);
+        $want = [];
+        foreach (icomplyLocalTownNames() as $name) {
+            $want[] = areaSlug((string)$name);
         }
         sort($listed);
-        sort($gm);
-        if (count($gm) !== 60 || $listed !== $gm) {
+        sort($want);
+        if (count($want) !== 269 || $listed !== $want) {
             $fail++;
-            $missing = array_values(array_diff($gm, $listed));
-            $extra = array_values(array_diff($listed, $gm));
-            echo 'FAIL: sitemap area hubs ' . count($listed) . ' (want the 60 GM towns)'
+            $missing = array_values(array_diff($want, $listed));
+            $extra = array_values(array_diff($listed, $want));
+            echo 'FAIL: sitemap area hubs ' . count($listed) . ' (want the 269 dual-ring towns)'
                 . ($missing ? ' missing=' . implode(',', array_slice($missing, 0, 6)) : '')
                 . ($extra ? ' extra=' . implode(',', array_slice($extra, 0, 6)) : '')
                 . "\n";
         } else {
-            echo "OK: sitemap Greater Manchester area hubs=60\n";
+            echo "OK: sitemap dual-ring area hubs=269\n";
         }
     }
-    if (preg_match('#/pages/(?:areas|keywords)/[^<]*burnley#i', $xml)) {
+    if (preg_match('#/pages/keywords/[^<]*burnley#i', $xml)) {
         $fail++;
-        echo "FAIL: tiered sitemap still names Burnley on a local hub\n";
+        echo "FAIL: tiered compact sitemap lists a Burnley keyword loc\n";
     }
 }
 
@@ -298,6 +302,10 @@ foreach ([
     '/pages/areas/manchester</loc>',
     '/pages/areas/stockport</loc>',
     '/pages/areas/wigan</loc>',
+    '/pages/areas/burnley</loc>',
+    '/pages/areas/liverpool</loc>',
+    '/pages/areas/york</loc>',
+    '/pages/areas/barrow-in-furness</loc>',
     '/pages/jobs</loc>',
     '/directories</loc>',
     '/pages/areas</loc>',
@@ -310,8 +318,8 @@ foreach ([
 foreach ([
     '/pages/ev-chargers</loc>',
     '/pages/manufacturers/tunstall</loc>',
-    '/pages/areas/liverpool</loc>',
-    '/pages/areas/burnley</loc>',
+    '/pages/areas/birmingham</loc>',
+    '/pages/areas/london</loc>',
     '/pages/electrical/stockport</loc>',
     '/pages/keywords/rewire/stockport</loc>',
 ] as $ban) {
@@ -323,6 +331,11 @@ foreach ([
 $bannedTowns = ['burnley', 'liverpool', 'preston', 'chester', 'warrington', 'blackpool'];
 $purgedFamily = static function (string $path) use ($bannedTowns): bool {
     if (function_exists('icomplyNationwideTownPath') && icomplyNationwideTownPath($path)) {
+        return false;
+    }
+    if (preg_match('#^/pages/areas/([a-z0-9\-]+)$#', $path, $areaHub)
+        && function_exists('icomplyLocalTownSlug')
+        && icomplyLocalTownSlug($areaHub[1])) {
         return false;
     }
     foreach ($bannedTowns as $town) {
@@ -349,15 +362,17 @@ foreach (['generated' => $xml, 'committed' => $committed] as $label => $blob) {
 }
 
 $redirectCases = [
-    '/pages/keywords/access-control-near-me/burnley' => '/pages/keywords/access-control-near-me',
-    '/pages/keywords/rewire/liverpool' => '/pages/keywords/rewire',
-    '/pages/access-control/burnley' => '/pages/services/access-control',
-    '/pages/areas/liverpool' => '/pages/areas',
-    '/pages/areas/burnley' => '/pages/areas',
-    '/pages/windows-doors/warrington' => '/pages/services/windows-doors',
+    '/pages/keywords/rewire/birmingham' => '/pages/keywords/rewire',
+    '/pages/keywords/access-control-near-me/london' => '/pages/keywords/access-control-near-me',
+    '/pages/access-control/birmingham' => '/pages/services/access-control',
+    '/pages/areas/birmingham' => '/pages/areas',
+    '/pages/areas/london' => '/pages/areas',
+    '/pages/windows-doors/cardiff' => '/pages/services/windows-doors',
     '/pages/nurse-call/cardiff' => '/pages/services/nurse-call',
     '/pages/manufacturers/came/liverpool' => '/pages/manufacturers/came',
-    '/pages/jobs/eicr/burnley' => '/pages/jobs/eicr',
+    '/pages/manufacturers/came/burnley' => '/pages/manufacturers/came',
+    '/pages/manufacturers/came/york' => '/pages/manufacturers/came',
+    '/pages/jobs/eicr/birmingham' => '/pages/jobs/eicr',
 ];
 $stayCases = [
     '/pages/aov/chorlton',
@@ -381,9 +396,23 @@ $stayCases = [
     '/pages/fire-extinguishers/burnley',
     '/pages/aov-air-handling/blackpool',
     '/pages/areas/stockport',
+    '/pages/areas/burnley',
+    '/pages/areas/liverpool',
+    '/pages/areas/york',
+    '/pages/areas/barrow-in-furness',
+    '/pages/areas/haxby',
     '/pages/keywords/eicr/stockport',
+    '/pages/keywords/access-control-near-me/burnley',
+    '/pages/keywords/rewire/liverpool',
     '/pages/electrical/stockport',
+    '/pages/access-control/burnley',
+    '/pages/windows-doors/warrington',
+    '/pages/jobs/eicr/burnley',
+    '/pages/jobs/eicr/york',
+    '/pages/manufacturers/came/stockport',
+    '/pages/manufacturers/came/manchester',
     '/pages/nurse-call/manchester',
+    '/pages/nurse-call/burnley',
     '/pages/services/electrical',
 ];
 if (!function_exists('icomplyNonGmMatrixRedirect')) {
@@ -435,27 +464,33 @@ $matrixFile = SITE_ROOT . '/includes/matrix-catalogue.php';
 if (is_file($matrixFile)) {
     require_once $matrixFile;
 }
-if (!function_exists('icomplyMatrixSelectPlaces') || !function_exists('icomplyGreaterManchesterTownNames') || !function_exists('areaSlug')) {
+if (!function_exists('icomplyMatrixSelectPlaces') || !function_exists('icomplyLocalTownNames') || !function_exists('areaSlug')) {
     $fail++;
     echo "FAIL: matrix place selector missing\n";
 } else {
     $selected = array_keys(icomplyMatrixSelectPlaces(500)['selected']);
     $want = [];
-    foreach (icomplyGreaterManchesterTownNames() as $name) {
+    foreach (icomplyLocalTownNames() as $name) {
         $want[] = areaSlug((string)$name);
     }
     sort($selected);
     sort($want);
-    if (count($want) !== 60 || $selected !== $want) {
+    if (count($want) !== 269 || $selected !== $want) {
         $fail++;
         $missing = array_values(array_diff($want, $selected));
         $extra = array_values(array_diff($selected, $want));
-        echo 'FAIL: matrix places ' . count($selected) . ' (want the 60 GM towns)'
+        echo 'FAIL: matrix places ' . count($selected) . ' (want the 269 dual-ring towns)'
             . ($missing ? ' missing=' . implode(',', array_slice($missing, 0, 8)) : '')
             . ($extra ? ' extra=' . implode(',', array_slice($extra, 0, 8)) : '')
             . "\n";
     } else {
-        echo "OK: matrix places are the 60 Greater Manchester towns\n";
+        echo "OK: matrix places are the 269 dual-ring towns\n";
+    }
+    if (!function_exists('icomplyCrawlTownNames') || count(icomplyCrawlTownNames()) !== 60) {
+        $fail++;
+        echo "FAIL: Greater Manchester core is no longer 60\n";
+    } else {
+        echo "OK: manufacturer depth stays on the 60 Greater Manchester towns\n";
     }
 }
 

@@ -2,11 +2,12 @@
  * Unique town × keyword, town × service, manufacturer × town and job × town HTML.
  * Catalogue JSON is written by website/includes/matrix-catalogue.php.
  * Keyword variants ({service}--{stem}--…) and /matrix-sitemap/{n}.xml are
- * decoded from assets/matrix/variants.json. Greater Manchester towns are
- * index,follow. Other places, including the nationwide gazetteer, stay noindex.
+ * decoded from assets/matrix/variants.json. Dual-ring towns (269) are
+ * index,follow for keyword, service and job pages. Manufacturer×town stays
+ * on the Greater Manchester core. Other places stay noindex.
  */
 import { renderVariantPage, renderVariantSitemap } from "../lib/variant-matrix.js";
-import { breadcrumbHtml, isGmTown, matrixRelatedHtml } from "../lib/link-blocks.js";
+import { breadcrumbHtml, isGmTown, isLocalTown, matrixRelatedHtml } from "../lib/link-blocks.js";
 import { gmTownBlurb } from "../lib/gm-blurbs.js";
 
 const RESERVED = new Set([
@@ -348,7 +349,7 @@ export function renderTownPage(input) {
     { href: "/", label: "Home" },
     { href: hubHref, label: subject },
   ];
-  if (isGmTown(townSlug)) {
+  if (isLocalTown(townSlug)) {
     crumbItems.push({ href: `/pages/areas/${townSlug}`, label: place.name });
   }
   crumbItems.push({ label: `${subject} in ${place.name}` });
@@ -531,15 +532,15 @@ function placeAliasRedirect(path) {
 
 function nonGmMatrixRedirect(path) {
   let m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
-  if (m) return isGmTown(m[2]) ? null : `/pages/keywords/${m[1]}`;
+  if (m) return isLocalTown(m[2]) ? null : `/pages/keywords/${m[1]}`;
   m = path.match(/^\/pages\/manufacturers\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   if (m) return isGmTown(m[2]) ? null : `/pages/manufacturers/${m[1]}`;
   m = path.match(/^\/pages\/jobs\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
-  if (m) return isGmTown(m[2]) ? null : `/pages/jobs/${m[1]}`;
+  if (m) return isLocalTown(m[2]) ? null : `/pages/jobs/${m[1]}`;
   m = path.match(/^\/pages\/areas\/([a-z0-9-]+)$/);
-  if (m) return isGmTown(m[1]) ? null : "/pages/areas";
+  if (m) return isLocalTown(m[1]) ? null : "/pages/areas";
   m = path.match(/^\/pages\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
-  if (!m || RESERVED.has(m[1]) || NATIONWIDE_TOWN.has(m[1]) || isGmTown(m[2])) return null;
+  if (!m || RESERVED.has(m[1]) || NATIONWIDE_TOWN.has(m[1]) || isLocalTown(m[2])) return null;
   return `/pages/services/${m[1]}`;
 }
 

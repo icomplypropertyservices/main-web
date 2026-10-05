@@ -246,7 +246,14 @@ function routerDispatchVirtual(string $path): bool {
         if (!isset($services[$serviceSlug])) {
             return false;
         }
-        $allowed = function_exists('getAreasForService') ? getAreasForService($serviceSlug) : getAreas();
+        $nationwideService = function_exists('icomplyNationwideTownService') && icomplyNationwideTownService($serviceSlug);
+        if ($nationwideService) {
+            $allowed = function_exists('getAreasForService') ? getAreasForService($serviceSlug) : getAreas();
+        } elseif (function_exists('icomplyLocalTownNames')) {
+            $allowed = icomplyLocalTownNames();
+        } else {
+            $allowed = function_exists('getAreasForService') ? getAreasForService($serviceSlug) : getAreas();
+        }
         $area = null;
         foreach ($allowed as $a) {
             if (areaSlug((string)$a) === $areaSlugVal) {

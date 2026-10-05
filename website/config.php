@@ -391,7 +391,8 @@ require_once __DIR__ . '/includes/gm-crawl.php';
 /**
  * In tiered mode, keyword×area pages, shared area-town templates, and service×town
  * pages without a bespoke article stay live (200) but are not indexable. Area hubs
- * are indexable only for Greater Manchester. Burnley is Lancashire and stays out.
+ * are indexable for the dual-ring allowlist (Greater Manchester plus 50 miles of
+ * Manchester and of Burnley). Towns outside that allowlist stay out.
  * A service×town URL is
  * indexable only for a Tier-1 town that has its own written article. Those pretty
  * URLs still 301 on the static site until they are published, so the sitemap omits
@@ -411,10 +412,11 @@ function icomplyPathIsIndexable(string $path): bool
     if (preg_match('#^/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+$#', $path)) {
         return false;
     }
-    // Area hubs are indexable only for Greater Manchester. Burnley stays a page
-    // (featured template) but is Lancashire, so it is not in this set.
+    // Area hubs are indexable for the dual-ring allowlist, including Burnley.
     if (preg_match('#^/pages/areas/([a-z0-9\-]+)$#', $path, $areaMatch)) {
-        return icomplyIsGreaterManchesterAreaSlug($areaMatch[1]);
+        return function_exists('icomplyLocalTownSlug')
+            ? icomplyLocalTownSlug($areaMatch[1])
+            : icomplyIsGreaterManchesterAreaSlug($areaMatch[1]);
     }
     if (preg_match('#^/pages/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         $reserved = ['services', 'keywords', 'areas', 'manufacturers', 'resources', 'packages', 'jobs'];
@@ -1567,6 +1569,12 @@ function areaFromSlug(string $slug): ?string {
         $mainland = mainlandAreaName($slug);
         if ($mainland !== null) {
             return $mainland;
+        }
+    }
+    if (function_exists('icomplyLocalTownName')) {
+        $local = icomplyLocalTownName($slug);
+        if ($local !== null) {
+            return $local;
         }
     }
     return null;

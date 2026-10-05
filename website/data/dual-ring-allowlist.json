@@ -1,0 +1,2182 @@
+{
+  "source": "AREA-HUB-ALLOWLIST-50MI-DUAL-2026-10-05.csv",
+  "rule": "Union of towns within 50 miles of Manchester (53.4808,-2.2426), towns within 50 miles of Burnley (53.8,-2.23333), and the Greater Manchester core of 60.",
+  "counts": {
+    "total": 269,
+    "gm_core": 60,
+    "radius_only": 209,
+    "burnley_circle_only": 8
+  },
+  "burnley_circle_only": [
+    "barrow-in-furness",
+    "haxby",
+    "kendal",
+    "northallerton",
+    "ripon",
+    "selby",
+    "ulverston",
+    "york"
+  ],
+  "depth": {
+    "area_hubs": "all 269",
+    "local_service_town": "all 269",
+    "keyword_town": "all 269",
+    "job_town": "all 269",
+    "manufacturer_town": "gm_core 60 only",
+    "aov_barriers_fire": "uk-wide unchanged"
+  },
+  "towns": [
+    {
+      "slug": "abram",
+      "name": "Abram",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "14.5",
+      "mi_burnley": "24.9"
+    },
+    {
+      "slug": "accrington",
+      "name": "Accrington",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "19.5",
+      "mi_burnley": "6.0"
+    },
+    {
+      "slug": "adwick-le-street",
+      "name": "Adwick le Street",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "43.9",
+      "mi_burnley": "45.7"
+    },
+    {
+      "slug": "alfreton",
+      "name": "Alfreton",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "44.3",
+      "mi_burnley": "59.8"
+    },
+    {
+      "slug": "allerton",
+      "name": "Allerton",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "27.9",
+      "mi_burnley": "40.4"
+    },
+    {
+      "slug": "alsager",
+      "name": "Alsager",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "26.7",
+      "mi_burnley": "48.7"
+    },
+    {
+      "slug": "altrincham",
+      "name": "Altrincham",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "7.8",
+      "mi_burnley": "28.9"
+    },
+    {
+      "slug": "armthorpe",
+      "name": "Armthorpe",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "49.0",
+      "mi_burnley": "51.7"
+    },
+    {
+      "slug": "ashton-in-makerfield",
+      "name": "Ashton in Makerfield",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "16.8",
+      "mi_burnley": "27.7"
+    },
+    {
+      "slug": "ashton-under-lyne",
+      "name": "Ashton-under-Lyne",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "5.9",
+      "mi_burnley": "22.2"
+    },
+    {
+      "slug": "atherton",
+      "name": "Atherton",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "10.7",
+      "mi_burnley": "21.9"
+    },
+    {
+      "slug": "bacup",
+      "name": "Bacup",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "15.5",
+      "mi_burnley": "6.8"
+    },
+    {
+      "slug": "baildon",
+      "name": "Baildon",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "31.4",
+      "mi_burnley": "18.5"
+    },
+    {
+      "slug": "barnoldswick",
+      "name": "Barnoldswick",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "30.2",
+      "mi_burnley": "8.3"
+    },
+    {
+      "slug": "barnsley",
+      "name": "Barnsley",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "31.6",
+      "mi_burnley": "35.2"
+    },
+    {
+      "slug": "barrow-in-furness",
+      "name": "Barrow in Furness",
+      "bucket": "radius",
+      "circles": "burnley",
+      "mi_manchester": "59.3",
+      "mi_burnley": "45.8"
+    },
+    {
+      "slug": "batley",
+      "name": "Batley",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "29.3",
+      "mi_burnley": "25.4"
+    },
+    {
+      "slug": "bebington",
+      "name": "Bebington",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "33.1",
+      "mi_burnley": "44.7"
+    },
+    {
+      "slug": "beighton",
+      "name": "Beighton",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "38.8",
+      "mi_burnley": "49.0"
+    },
+    {
+      "slug": "belper",
+      "name": "Belper",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "44.6",
+      "mi_burnley": "62.0"
+    },
+    {
+      "slug": "bentley",
+      "name": "Bentley",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "45.0",
+      "mi_burnley": "48.0"
+    },
+    {
+      "slug": "biddulph",
+      "name": "Biddulph",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "25.3",
+      "mi_burnley": "47.2"
+    },
+    {
+      "slug": "bingley",
+      "name": "Bingley",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "30.3",
+      "mi_burnley": "16.4"
+    },
+    {
+      "slug": "birkenhead",
+      "name": "Birkenhead",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "32.4",
+      "mi_burnley": "42.6"
+    },
+    {
+      "slug": "blackburn",
+      "name": "Blackburn",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "21.1",
+      "mi_burnley": "10.8"
+    },
+    {
+      "slug": "blackpool",
+      "name": "Blackpool",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "40.4",
+      "mi_burnley": "33.3"
+    },
+    {
+      "slug": "blacon",
+      "name": "Blacon",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "33.9",
+      "mi_burnley": "49.8"
+    },
+    {
+      "slug": "bolsover",
+      "name": "Bolsover",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "42.9",
+      "mi_burnley": "55.3"
+    },
+    {
+      "slug": "bolton",
+      "name": "Bolton",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "10.6",
+      "mi_burnley": "17.1"
+    },
+    {
+      "slug": "bolton-upon-dearne",
+      "name": "Bolton upon Dearne",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "38.1",
+      "mi_burnley": "42.3"
+    },
+    {
+      "slug": "bootle",
+      "name": "Bootle",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "31.8",
+      "mi_burnley": "39.5"
+    },
+    {
+      "slug": "bradford",
+      "name": "Bradford",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "29.5",
+      "mi_burnley": "19.6"
+    },
+    {
+      "slug": "bramhall",
+      "name": "Bramhall",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "9.1",
+      "mi_burnley": "30.7"
+    },
+    {
+      "slug": "bredbury",
+      "name": "Bredbury",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "6.8",
+      "mi_burnley": "26.9"
+    },
+    {
+      "slug": "brierfield",
+      "name": "Brierfield",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "23.8",
+      "mi_burnley": "1.7"
+    },
+    {
+      "slug": "brighouse",
+      "name": "Brighouse",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "24.3",
+      "mi_burnley": "19.5"
+    },
+    {
+      "slug": "bromborough",
+      "name": "Bromborough",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "31.7",
+      "mi_burnley": "43.7"
+    },
+    {
+      "slug": "brymbo",
+      "name": "Brymbo",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "44.5",
+      "mi_burnley": "61.2"
+    },
+    {
+      "slug": "buckley",
+      "name": "Buckley",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "40.9",
+      "mi_burnley": "56.0"
+    },
+    {
+      "slug": "burngreave",
+      "name": "Burngreave",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "32.9",
+      "mi_burnley": "42.4"
+    },
+    {
+      "slug": "burnley",
+      "name": "Burnley",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "22.1",
+      "mi_burnley": "0.0"
+    },
+    {
+      "slug": "bury",
+      "name": "Bury",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "8.6",
+      "mi_burnley": "14.1"
+    },
+    {
+      "slug": "buxton",
+      "name": "Buxton",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "20.7",
+      "mi_burnley": "39.8"
+    },
+    {
+      "slug": "cadishead",
+      "name": "Cadishead",
+      "bucket": "gm_core",
+      "circles": "gm_forced",
+      "mi_manchester": "",
+      "mi_burnley": ""
+    },
+    {
+      "slug": "castleford",
+      "name": "Castleford",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "39.9",
+      "mi_burnley": "35.9"
+    },
+    {
+      "slug": "chadderton",
+      "name": "Chadderton",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "6.1",
+      "mi_burnley": "18.0"
+    },
+    {
+      "slug": "chapel-allerton",
+      "name": "Chapel Allerton",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "37.6",
+      "mi_burnley": "28.4"
+    },
+    {
+      "slug": "chapeltown",
+      "name": "Chapeltown",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "31.7",
+      "mi_burnley": "38.8"
+    },
+    {
+      "slug": "cheadle",
+      "name": "Cheadle",
+      "bucket": "gm_core",
+      "circles": "mcr",
+      "mi_manchester": "36.0",
+      "mi_burnley": "57.4"
+    },
+    {
+      "slug": "cheadle-hulme",
+      "name": "Cheadle Hulme",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "7.6",
+      "mi_burnley": "29.3"
+    },
+    {
+      "slug": "chester",
+      "name": "Chester",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "33.5",
+      "mi_burnley": "50.1"
+    },
+    {
+      "slug": "chesterfield",
+      "name": "Chesterfield",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "37.6",
+      "mi_burnley": "50.7"
+    },
+    {
+      "slug": "childwall",
+      "name": "Childwall",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "27.5",
+      "mi_burnley": "38.9"
+    },
+    {
+      "slug": "chorley",
+      "name": "Chorley",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "19.3",
+      "mi_burnley": "18.8"
+    },
+    {
+      "slug": "chorlton",
+      "name": "Chorlton",
+      "bucket": "gm_core",
+      "circles": "gm_forced",
+      "mi_manchester": "",
+      "mi_burnley": ""
+    },
+    {
+      "slug": "clayton-le-woods",
+      "name": "Clayton-le-Woods",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "23.0",
+      "mi_burnley": "19.1"
+    },
+    {
+      "slug": "cleckheaton",
+      "name": "Cleckheaton",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "27.5",
+      "mi_burnley": "21.9"
+    },
+    {
+      "slug": "cleveleys",
+      "name": "Cleveleys",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "42.6",
+      "mi_burnley": "33.3"
+    },
+    {
+      "slug": "clitheroe",
+      "name": "Clitheroe",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "27.4",
+      "mi_burnley": "8.2"
+    },
+    {
+      "slug": "colne",
+      "name": "Colne",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "26.2",
+      "mi_burnley": "4.8"
+    },
+    {
+      "slug": "congleton",
+      "name": "Congleton",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "22.0",
+      "mi_burnley": "44.0"
+    },
+    {
+      "slug": "conisbrough",
+      "name": "Conisbrough",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "41.5",
+      "mi_burnley": "46.5"
+    },
+    {
+      "slug": "crewe",
+      "name": "Crewe",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "27.7",
+      "mi_burnley": "49.3"
+    },
+    {
+      "slug": "cross-hills",
+      "name": "Cross Hills",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "31.2",
+      "mi_burnley": "12.5"
+    },
+    {
+      "slug": "cudworth",
+      "name": "Cudworth",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "34.5",
+      "mi_burnley": "37.0"
+    },
+    {
+      "slug": "darton",
+      "name": "Darton",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "30.3",
+      "mi_burnley": "32.4"
+    },
+    {
+      "slug": "darwen",
+      "name": "Darwen",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "17.6",
+      "mi_burnley": "11.8"
+    },
+    {
+      "slug": "denton",
+      "name": "Denton",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "5.4",
+      "mi_burnley": "24.2"
+    },
+    {
+      "slug": "derby",
+      "name": "Derby",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "49.9",
+      "mi_burnley": "68.2"
+    },
+    {
+      "slug": "dewsbury",
+      "name": "Dewsbury",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "29.0",
+      "mi_burnley": "25.8"
+    },
+    {
+      "slug": "didsbury",
+      "name": "Didsbury",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "4.4",
+      "mi_burnley": "26.5"
+    },
+    {
+      "slug": "dingle",
+      "name": "Dingle",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "30.4",
+      "mi_burnley": "41.6"
+    },
+    {
+      "slug": "dinnington",
+      "name": "Dinnington",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "43.6",
+      "mi_burnley": "51.9"
+    },
+    {
+      "slug": "doncaster",
+      "name": "Doncaster",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "45.8",
+      "mi_burnley": "49.0"
+    },
+    {
+      "slug": "dronfield",
+      "name": "Dronfield",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "33.9",
+      "mi_burnley": "46.4"
+    },
+    {
+      "slug": "droylsden",
+      "name": "Droylsden",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "4.0",
+      "mi_burnley": "22.4"
+    },
+    {
+      "slug": "dukinfield",
+      "name": "Dukinfield",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "6.4",
+      "mi_burnley": "23.2"
+    },
+    {
+      "slug": "eccles",
+      "name": "Eccles",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "3.7",
+      "mi_burnley": "22.3"
+    },
+    {
+      "slug": "elland",
+      "name": "Elland",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "21.8",
+      "mi_burnley": "18.0"
+    },
+    {
+      "slug": "ellesmere-port-town",
+      "name": "Ellesmere Port Town",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "30.5",
+      "mi_burnley": "45.3"
+    },
+    {
+      "slug": "failsworth",
+      "name": "Failsworth",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "3.6",
+      "mi_burnley": "20.6"
+    },
+    {
+      "slug": "farnworth",
+      "name": "Farnworth",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "8.0",
+      "mi_burnley": "18.6"
+    },
+    {
+      "slug": "fazakerley",
+      "name": "Fazakerley",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "28.2",
+      "mi_burnley": "36.9"
+    },
+    {
+      "slug": "featherstone",
+      "name": "Featherstone",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "38.8",
+      "mi_burnley": "36.8"
+    },
+    {
+      "slug": "fleetwood",
+      "name": "Fleetwood",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "43.9",
+      "mi_burnley": "32.8"
+    },
+    {
+      "slug": "flint",
+      "name": "Flint",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "40.1",
+      "mi_burnley": "53.2"
+    },
+    {
+      "slug": "formby",
+      "name": "Formby",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "34.4",
+      "mi_burnley": "38.1"
+    },
+    {
+      "slug": "fulwood",
+      "name": "Fulwood",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "29.9",
+      "mi_burnley": "41.9"
+    },
+    {
+      "slug": "fylde",
+      "name": "Fylde",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "36.8",
+      "mi_burnley": "28.0"
+    },
+    {
+      "slug": "garforth",
+      "name": "Garforth",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "41.3",
+      "mi_burnley": "34.8"
+    },
+    {
+      "slug": "garston",
+      "name": "Garston",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "28.9",
+      "mi_burnley": "42.3"
+    },
+    {
+      "slug": "glossop",
+      "name": "Glossop",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "12.4",
+      "mi_burnley": "27.3"
+    },
+    {
+      "slug": "golborne",
+      "name": "Golborne",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "14.6",
+      "mi_burnley": "26.8"
+    },
+    {
+      "slug": "great-harwood",
+      "name": "Great Harwood",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "22.1",
+      "mi_burnley": "7.2"
+    },
+    {
+      "slug": "great-sankey",
+      "name": "Great Sankey",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "17.5",
+      "mi_burnley": "32.7"
+    },
+    {
+      "slug": "guiseley",
+      "name": "Guiseley",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "34.9",
+      "mi_burnley": "21.9"
+    },
+    {
+      "slug": "hale",
+      "name": "Hale",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "8.0",
+      "mi_burnley": "29.4"
+    },
+    {
+      "slug": "halewood",
+      "name": "Halewood",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "25.7",
+      "mi_burnley": "39.1"
+    },
+    {
+      "slug": "halifax",
+      "name": "Halifax",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "22.9",
+      "mi_burnley": "16.7"
+    },
+    {
+      "slug": "harrogate",
+      "name": "Harrogate",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "45.5",
+      "mi_burnley": "31.3"
+    },
+    {
+      "slug": "haslingden",
+      "name": "Haslingden",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "15.7",
+      "mi_burnley": "7.6"
+    },
+    {
+      "slug": "hawarden",
+      "name": "Hawarden",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "38.2",
+      "mi_burnley": "53.6"
+    },
+    {
+      "slug": "haxby",
+      "name": "Haxby",
+      "bucket": "radius",
+      "circles": "burnley",
+      "mi_manchester": "60.4",
+      "mi_burnley": "49.6"
+    },
+    {
+      "slug": "haydock",
+      "name": "Haydock",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "18.1",
+      "mi_burnley": "29.4"
+    },
+    {
+      "slug": "hazel-grove",
+      "name": "Hazel Grove",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "8.5",
+      "mi_burnley": "29.2"
+    },
+    {
+      "slug": "heanor",
+      "name": "Heanor",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "48.9",
+      "mi_burnley": "65.3"
+    },
+    {
+      "slug": "heckmondwike",
+      "name": "Heckmondwike",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "27.9",
+      "mi_burnley": "23.6"
+    },
+    {
+      "slug": "heswall",
+      "name": "Heswall",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "36.7",
+      "mi_burnley": "48.2"
+    },
+    {
+      "slug": "heysham",
+      "name": "Heysham",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "47.1",
+      "mi_burnley": "31.7"
+    },
+    {
+      "slug": "heywood",
+      "name": "Heywood",
+      "bucket": "gm_core",
+      "circles": "gm_forced",
+      "mi_manchester": "",
+      "mi_burnley": ""
+    },
+    {
+      "slug": "hindley",
+      "name": "Hindley",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "14.5",
+      "mi_burnley": "23.3"
+    },
+    {
+      "slug": "hollinwood",
+      "name": "Hollinwood",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "5.1",
+      "mi_burnley": "20.0"
+    },
+    {
+      "slug": "horbury",
+      "name": "Horbury",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "30.6",
+      "mi_burnley": "29.2"
+    },
+    {
+      "slug": "horsforth",
+      "name": "Horsforth",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "35.2",
+      "mi_burnley": "24.5"
+    },
+    {
+      "slug": "horwich",
+      "name": "Horwich",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "15.1",
+      "mi_burnley": "18.9"
+    },
+    {
+      "slug": "hoyland-nether",
+      "name": "Hoyland Nether",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "32.6",
+      "mi_burnley": "38.2"
+    },
+    {
+      "slug": "huddersfield",
+      "name": "Huddersfield",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "22.1",
+      "mi_burnley": "21.1"
+    },
+    {
+      "slug": "huyton",
+      "name": "Huyton",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "25.0",
+      "mi_burnley": "36.6"
+    },
+    {
+      "slug": "hyde",
+      "name": "Hyde",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "7.0",
+      "mi_burnley": "24.9"
+    },
+    {
+      "slug": "ilkley",
+      "name": "Ilkley",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "35.1",
+      "mi_burnley": "18.8"
+    },
+    {
+      "slug": "ince-in-makerfield",
+      "name": "Ince-in-Makerfield",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "15.8",
+      "mi_burnley": "24.2"
+    },
+    {
+      "slug": "irlam",
+      "name": "Irlam",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "7.9",
+      "mi_burnley": "25.9"
+    },
+    {
+      "slug": "kearsley",
+      "name": "Kearsley",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "6.8",
+      "mi_burnley": "19.4"
+    },
+    {
+      "slug": "keighley",
+      "name": "Keighley",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "30.1",
+      "mi_burnley": "14.1"
+    },
+    {
+      "slug": "kendal",
+      "name": "Kendal",
+      "bucket": "radius",
+      "circles": "burnley",
+      "mi_manchester": "62.0",
+      "mi_burnley": "41.9"
+    },
+    {
+      "slug": "kidsgrove",
+      "name": "Kidsgrove",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "27.2",
+      "mi_burnley": "49.3"
+    },
+    {
+      "slug": "kippax",
+      "name": "Kippax",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "40.8",
+      "mi_burnley": "35.3"
+    },
+    {
+      "slug": "kirk-sandall",
+      "name": "Kirk Sandall",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "48.5",
+      "mi_burnley": "50.4"
+    },
+    {
+      "slug": "kirkby",
+      "name": "Kirkby",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "26.7",
+      "mi_burnley": "34.8"
+    },
+    {
+      "slug": "kirkby-in-ashfield",
+      "name": "Kirkby in Ashfield",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "48.9",
+      "mi_burnley": "63.2"
+    },
+    {
+      "slug": "knaresborough",
+      "name": "Knaresborough",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "48.3",
+      "mi_burnley": "34.3"
+    },
+    {
+      "slug": "knottingley",
+      "name": "Knottingley",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "43.4",
+      "mi_burnley": "40.4"
+    },
+    {
+      "slug": "knotty-ash",
+      "name": "Knotty Ash",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "27.3",
+      "mi_burnley": "38.0"
+    },
+    {
+      "slug": "knutsford",
+      "name": "Knutsford",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "13.4",
+      "mi_burnley": "34.8"
+    },
+    {
+      "slug": "lancaster",
+      "name": "Lancaster",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "45.2",
+      "mi_burnley": "28.7"
+    },
+    {
+      "slug": "leeds",
+      "name": "Leeds",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "35.9",
+      "mi_burnley": "28.0"
+    },
+    {
+      "slug": "leek",
+      "name": "Leek",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "27.6",
+      "mi_burnley": "48.8"
+    },
+    {
+      "slug": "lees",
+      "name": "Lees",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "8.0",
+      "mi_burnley": "19.3"
+    },
+    {
+      "slug": "leigh",
+      "name": "Leigh",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "11.4",
+      "mi_burnley": "24.0"
+    },
+    {
+      "slug": "leyland",
+      "name": "Leyland",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "23.6",
+      "mi_burnley": "19.9"
+    },
+    {
+      "slug": "litherland",
+      "name": "Litherland",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "31.1",
+      "mi_burnley": "38.8"
+    },
+    {
+      "slug": "little-hulton",
+      "name": "Little Hulton",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "8.0",
+      "mi_burnley": "19.9"
+    },
+    {
+      "slug": "little-lever",
+      "name": "Little Lever",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "8.0",
+      "mi_burnley": "17.4"
+    },
+    {
+      "slug": "littleborough",
+      "name": "Littleborough",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "12.8",
+      "mi_burnley": "12.1"
+    },
+    {
+      "slug": "liverpool",
+      "name": "Liverpool",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "30.6",
+      "mi_burnley": "40.7"
+    },
+    {
+      "slug": "liversedge",
+      "name": "Liversedge",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "27.3",
+      "mi_burnley": "23.0"
+    },
+    {
+      "slug": "lofthouse",
+      "name": "Lofthouse",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "35.1",
+      "mi_burnley": "30.5"
+    },
+    {
+      "slug": "longton",
+      "name": "Longton",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "34.7",
+      "mi_burnley": "56.6"
+    },
+    {
+      "slug": "lymm",
+      "name": "Lymm",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "11.9",
+      "mi_burnley": "30.6"
+    },
+    {
+      "slug": "lytham-st-annes",
+      "name": "Lytham St Annes",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "35.8",
+      "mi_burnley": "31.4"
+    },
+    {
+      "slug": "macclesfield",
+      "name": "Macclesfield",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "16.0",
+      "mi_burnley": "37.6"
+    },
+    {
+      "slug": "maghull",
+      "name": "Maghull",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "28.8",
+      "mi_burnley": "35.0"
+    },
+    {
+      "slug": "maltby",
+      "name": "Maltby",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "43.1",
+      "mi_burnley": "50.0"
+    },
+    {
+      "slug": "manchester",
+      "name": "Manchester",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "0.2",
+      "mi_burnley": "22.0"
+    },
+    {
+      "slug": "mansfield",
+      "name": "Mansfield",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "49.3",
+      "mi_burnley": "62.7"
+    },
+    {
+      "slug": "mansfield-woodhouse",
+      "name": "Mansfield Woodhouse",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "48.5",
+      "mi_burnley": "61.3"
+    },
+    {
+      "slug": "market-drayton",
+      "name": "Market Drayton",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "41.1",
+      "mi_burnley": "62.7"
+    },
+    {
+      "slug": "marple",
+      "name": "Marple",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "9.5",
+      "mi_burnley": "28.9"
+    },
+    {
+      "slug": "matlock",
+      "name": "Matlock",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "36.9",
+      "mi_burnley": "53.5"
+    },
+    {
+      "slug": "mexborough",
+      "name": "Mexborough",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "39.1",
+      "mi_burnley": "44.0"
+    },
+    {
+      "slug": "middleton",
+      "name": "Middleton",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "5.1",
+      "mi_burnley": "17.3"
+    },
+    {
+      "slug": "middlewich",
+      "name": "Middlewich",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "21.6",
+      "mi_burnley": "42.8"
+    },
+    {
+      "slug": "milnrow",
+      "name": "Milnrow",
+      "bucket": "gm_core",
+      "circles": "gm_forced",
+      "mi_manchester": "",
+      "mi_burnley": ""
+    },
+    {
+      "slug": "mirfield",
+      "name": "Mirfield",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "26.1",
+      "mi_burnley": "23.6"
+    },
+    {
+      "slug": "mold",
+      "name": "Mold",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "43.0",
+      "mi_burnley": "57.5"
+    },
+    {
+      "slug": "morecambe",
+      "name": "Morecambe",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "47.8",
+      "mi_burnley": "31.6"
+    },
+    {
+      "slug": "moreton",
+      "name": "Moreton",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "36.4",
+      "mi_burnley": "45.6"
+    },
+    {
+      "slug": "morley",
+      "name": "Morley",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "31.9",
+      "mi_burnley": "26.2"
+    },
+    {
+      "slug": "mossley",
+      "name": "Mossley",
+      "bucket": "gm_core",
+      "circles": "gm_forced",
+      "mi_manchester": "",
+      "mi_burnley": ""
+    },
+    {
+      "slug": "mossley-hill",
+      "name": "Mossley Hill",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "28.5",
+      "mi_burnley": "40.4"
+    },
+    {
+      "slug": "nantwich",
+      "name": "Nantwich",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "30.7",
+      "mi_burnley": "51.9"
+    },
+    {
+      "slug": "nelson",
+      "name": "Nelson",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "24.4",
+      "mi_burnley": "2.7"
+    },
+    {
+      "slug": "neston",
+      "name": "Neston",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "36.0",
+      "mi_burnley": "49.0"
+    },
+    {
+      "slug": "new-mills",
+      "name": "New Mills",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "12.8",
+      "mi_burnley": "31.5"
+    },
+    {
+      "slug": "newcastle-under-lyme",
+      "name": "Newcastle under Lyme",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "33.2",
+      "mi_burnley": "55.3"
+    },
+    {
+      "slug": "newport",
+      "name": "Newport",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "49.6",
+      "mi_burnley": "71.6"
+    },
+    {
+      "slug": "newton-le-willows",
+      "name": "Newton-le-Willows",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "14.9",
+      "mi_burnley": "28.5"
+    },
+    {
+      "slug": "northallerton",
+      "name": "Northallerton",
+      "bucket": "radius",
+      "circles": "burnley",
+      "mi_manchester": "67.8",
+      "mi_burnley": "49.4"
+    },
+    {
+      "slug": "northwich",
+      "name": "Northwich",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "19.1",
+      "mi_burnley": "39.2"
+    },
+    {
+      "slug": "old-swan",
+      "name": "Old Swan",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "27.8",
+      "mi_burnley": "38.5"
+    },
+    {
+      "slug": "oldham",
+      "name": "Oldham",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "6.6",
+      "mi_burnley": "18.5"
+    },
+    {
+      "slug": "ormskirk",
+      "name": "Ormskirk",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "26.9",
+      "mi_burnley": "31.0"
+    },
+    {
+      "slug": "ossett",
+      "name": "Ossett",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "30.5",
+      "mi_burnley": "28.0"
+    },
+    {
+      "slug": "otley",
+      "name": "Otley",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "36.9",
+      "mi_burnley": "23.2"
+    },
+    {
+      "slug": "padiham",
+      "name": "Padiham",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "22.4",
+      "mi_burnley": "3.3"
+    },
+    {
+      "slug": "pendlebury",
+      "name": "Pendlebury",
+      "bucket": "gm_core",
+      "circles": "gm_forced",
+      "mi_manchester": "",
+      "mi_burnley": ""
+    },
+    {
+      "slug": "penistone",
+      "name": "Penistone",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "25.4",
+      "mi_burnley": "31.1"
+    },
+    {
+      "slug": "pinxton",
+      "name": "Pinxton",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "46.8",
+      "mi_burnley": "61.8"
+    },
+    {
+      "slug": "pontefract",
+      "name": "Pontefract",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "40.8",
+      "mi_burnley": "38.4"
+    },
+    {
+      "slug": "poulton-le-fylde",
+      "name": "Poulton-le-Fylde",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "38.9",
+      "mi_burnley": "30.7"
+    },
+    {
+      "slug": "poynton",
+      "name": "Poynton",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "10.4",
+      "mi_burnley": "31.5"
+    },
+    {
+      "slug": "prenton",
+      "name": "Prenton",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "34.3",
+      "mi_burnley": "45.0"
+    },
+    {
+      "slug": "prescot",
+      "name": "Prescot",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "23.2",
+      "mi_burnley": "34.6"
+    },
+    {
+      "slug": "prestatyn",
+      "name": "Prestatyn",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "49.0",
+      "mi_burnley": "57.8"
+    },
+    {
+      "slug": "preston",
+      "name": "Preston",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "27.2",
+      "mi_burnley": "19.4"
+    },
+    {
+      "slug": "prestwich",
+      "name": "Prestwich",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "4.0",
+      "mi_burnley": "18.5"
+    },
+    {
+      "slug": "pudsey",
+      "name": "Pudsey",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "32.2",
+      "mi_burnley": "23.3"
+    },
+    {
+      "slug": "radcliffe",
+      "name": "Radcliffe",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "6.5",
+      "mi_burnley": "16.9"
+    },
+    {
+      "slug": "rainhill",
+      "name": "Rainhill",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "22.0",
+      "mi_burnley": "34.4"
+    },
+    {
+      "slug": "ramsbottom",
+      "name": "Ramsbottom",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "11.9",
+      "mi_burnley": "11.1"
+    },
+    {
+      "slug": "rastrick",
+      "name": "Rastrick",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "23.7",
+      "mi_burnley": "19.7"
+    },
+    {
+      "slug": "rawmarsh",
+      "name": "Rawmarsh",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "37.0",
+      "mi_burnley": "43.3"
+    },
+    {
+      "slug": "rawtenstall",
+      "name": "Rawtenstall",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "15.3",
+      "mi_burnley": "7.2"
+    },
+    {
+      "slug": "rhosllannerchrugog",
+      "name": "Rhosllannerchrugog",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "46.9",
+      "mi_burnley": "64.3"
+    },
+    {
+      "slug": "ripley",
+      "name": "Ripley",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "46.6",
+      "mi_burnley": "63.1"
+    },
+    {
+      "slug": "ripon",
+      "name": "Ripon",
+      "bucket": "radius",
+      "circles": "burnley",
+      "mi_manchester": "53.8",
+      "mi_burnley": "36.9"
+    },
+    {
+      "slug": "rochdale",
+      "name": "Rochdale",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "10.1",
+      "mi_burnley": "13.0"
+    },
+    {
+      "slug": "romiley",
+      "name": "Romiley",
+      "bucket": "gm_core",
+      "circles": "gm_forced",
+      "mi_manchester": "",
+      "mi_burnley": ""
+    },
+    {
+      "slug": "rotherham",
+      "name": "Rotherham",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "36.6",
+      "mi_burnley": "44.1"
+    },
+    {
+      "slug": "royton",
+      "name": "Royton",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "7.6",
+      "mi_burnley": "16.9"
+    },
+    {
+      "slug": "runcorn",
+      "name": "Runcorn",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "22.3",
+      "mi_burnley": "37.7"
+    },
+    {
+      "slug": "saddleworth",
+      "name": "Saddleworth",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "10.8",
+      "mi_burnley": "19.7"
+    },
+    {
+      "slug": "sale",
+      "name": "Sale",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "5.1",
+      "mi_burnley": "26.2"
+    },
+    {
+      "slug": "salford",
+      "name": "Salford",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "2.0",
+      "mi_burnley": "21.7"
+    },
+    {
+      "slug": "sandbach",
+      "name": "Sandbach",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "23.7",
+      "mi_burnley": "45.6"
+    },
+    {
+      "slug": "selby",
+      "name": "Selby",
+      "bucket": "radius",
+      "circles": "burnley",
+      "mi_manchester": "52.5",
+      "mi_burnley": "47.6"
+    },
+    {
+      "slug": "shaw",
+      "name": "Shaw",
+      "bucket": "gm_core",
+      "circles": "gm_forced",
+      "mi_manchester": "",
+      "mi_burnley": ""
+    },
+    {
+      "slug": "sheffield",
+      "name": "Sheffield",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "32.7",
+      "mi_burnley": "42.7"
+    },
+    {
+      "slug": "shipley",
+      "name": "Shipley",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "31.2",
+      "mi_burnley": "19.2"
+    },
+    {
+      "slug": "shirebrook",
+      "name": "Shirebrook",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "46.6",
+      "mi_burnley": "58.8"
+    },
+    {
+      "slug": "skelmersdale",
+      "name": "Skelmersdale",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "22.3",
+      "mi_burnley": "28.0"
+    },
+    {
+      "slug": "skipton",
+      "name": "Skipton",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "34.5",
+      "mi_burnley": "14.2"
+    },
+    {
+      "slug": "south-elmsall",
+      "name": "South Elmsall",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "40.3",
+      "mi_burnley": "41.4"
+    },
+    {
+      "slug": "southport",
+      "name": "Southport",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "33.5",
+      "mi_burnley": "33.5"
+    },
+    {
+      "slug": "speke",
+      "name": "Speke",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "26.5",
+      "mi_burnley": "40.4"
+    },
+    {
+      "slug": "st-helens",
+      "name": "St Helens",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "20.3",
+      "mi_burnley": "31.7"
+    },
+    {
+      "slug": "stafford",
+      "name": "Stafford",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "47.0",
+      "mi_burnley": "68.9"
+    },
+    {
+      "slug": "stalybridge",
+      "name": "Stalybridge",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "7.5",
+      "mi_burnley": "23.0"
+    },
+    {
+      "slug": "staveley",
+      "name": "Staveley",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "39.7",
+      "mi_burnley": "51.7"
+    },
+    {
+      "slug": "stockport",
+      "name": "Stockport",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "6.0",
+      "mi_burnley": "27.1"
+    },
+    {
+      "slug": "stocksbridge",
+      "name": "Stocksbridge",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "26.7",
+      "mi_burnley": "34.2"
+    },
+    {
+      "slug": "stoke-on-trent",
+      "name": "Stoke-on-Trent",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "33.0",
+      "mi_burnley": "55.0"
+    },
+    {
+      "slug": "stone",
+      "name": "Stone",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "39.9",
+      "mi_burnley": "61.9"
+    },
+    {
+      "slug": "stretford",
+      "name": "Stretford",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "3.7",
+      "mi_burnley": "24.4"
+    },
+    {
+      "slug": "sutton-in-ashfield",
+      "name": "Sutton in Ashfield",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "47.4",
+      "mi_burnley": "61.4"
+    },
+    {
+      "slug": "swinton",
+      "name": "Swinton",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "4.6",
+      "mi_burnley": "21.3"
+    },
+    {
+      "slug": "tameside",
+      "name": "Tameside",
+      "bucket": "gm_core",
+      "circles": "gm_forced",
+      "mi_manchester": "",
+      "mi_burnley": ""
+    },
+    {
+      "slug": "timperley",
+      "name": "Timperley",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "6.7",
+      "mi_burnley": "27.9"
+    },
+    {
+      "slug": "todmorden",
+      "name": "Todmorden",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "17.2",
+      "mi_burnley": "8.1"
+    },
+    {
+      "slug": "trafford",
+      "name": "Trafford",
+      "bucket": "gm_core",
+      "circles": "gm_forced",
+      "mi_manchester": "",
+      "mi_burnley": ""
+    },
+    {
+      "slug": "tyldesley",
+      "name": "Tyldesley",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "9.5",
+      "mi_burnley": "22.0"
+    },
+    {
+      "slug": "ulverston",
+      "name": "Ulverston",
+      "bucket": "radius",
+      "circles": "burnley",
+      "mi_manchester": "60.4",
+      "mi_burnley": "44.5"
+    },
+    {
+      "slug": "uppermill",
+      "name": "Uppermill",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "10.8",
+      "mi_burnley": "19.7"
+    },
+    {
+      "slug": "urmston",
+      "name": "Urmston",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "5.1",
+      "mi_burnley": "24.8"
+    },
+    {
+      "slug": "uttoxeter",
+      "name": "Uttoxeter",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "43.2",
+      "mi_burnley": "64.1"
+    },
+    {
+      "slug": "wakefield",
+      "name": "Wakefield",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "33.6",
+      "mi_burnley": "31.1"
+    },
+    {
+      "slug": "walkden",
+      "name": "Walkden",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "6.9",
+      "mi_burnley": "20.7"
+    },
+    {
+      "slug": "wallasey",
+      "name": "Wallasey",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "34.1",
+      "mi_burnley": "42.9"
+    },
+    {
+      "slug": "warrington",
+      "name": "Warrington",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "15.2",
+      "mi_burnley": "31.5"
+    },
+    {
+      "slug": "wath-upon-dearne",
+      "name": "Wath upon Dearne",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "36.9",
+      "mi_burnley": "41.7"
+    },
+    {
+      "slug": "west-derby",
+      "name": "West Derby",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "27.6",
+      "mi_burnley": "37.6"
+    },
+    {
+      "slug": "westhoughton",
+      "name": "Westhoughton",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "12.5",
+      "mi_burnley": "21.0"
+    },
+    {
+      "slug": "wetherby",
+      "name": "Wetherby",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "46.7",
+      "mi_burnley": "35.6"
+    },
+    {
+      "slug": "whiston",
+      "name": "Whiston",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "22.9",
+      "mi_burnley": "34.8"
+    },
+    {
+      "slug": "whitchurch",
+      "name": "Whitchurch",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "39.9",
+      "mi_burnley": "60.5"
+    },
+    {
+      "slug": "whitefield",
+      "name": "Whitefield",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "5.3",
+      "mi_burnley": "17.5"
+    },
+    {
+      "slug": "widnes",
+      "name": "Widnes",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "21.8",
+      "mi_burnley": "36.6"
+    },
+    {
+      "slug": "wigan",
+      "name": "Wigan",
+      "bucket": "gm_core",
+      "circles": "mcr+burnley",
+      "mi_manchester": "16.8",
+      "mi_burnley": "24.3"
+    },
+    {
+      "slug": "wilmslow",
+      "name": "Wilmslow",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "10.6",
+      "mi_burnley": "32.6"
+    },
+    {
+      "slug": "winsford",
+      "name": "Winsford",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "23.1",
+      "mi_burnley": "43.7"
+    },
+    {
+      "slug": "withington",
+      "name": "Withington",
+      "bucket": "gm_core",
+      "circles": "gm_forced",
+      "mi_manchester": "",
+      "mi_burnley": ""
+    },
+    {
+      "slug": "wombwell",
+      "name": "Wombwell",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "34.9",
+      "mi_burnley": "39.3"
+    },
+    {
+      "slug": "woolton",
+      "name": "Woolton",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "26.9",
+      "mi_burnley": "39.3"
+    },
+    {
+      "slug": "worksop",
+      "name": "Worksop",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "47.7",
+      "mi_burnley": "57.1"
+    },
+    {
+      "slug": "worsley",
+      "name": "Worsley",
+      "bucket": "gm_core",
+      "circles": "gm_forced",
+      "mi_manchester": "",
+      "mi_burnley": ""
+    },
+    {
+      "slug": "wrexham",
+      "name": "Wrexham",
+      "bucket": "radius",
+      "circles": "mcr",
+      "mi_manchester": "43.1",
+      "mi_burnley": "60.7"
+    },
+    {
+      "slug": "wythenshawe",
+      "name": "Wythenshawe",
+      "bucket": "gm_core",
+      "circles": "gm_forced",
+      "mi_manchester": "",
+      "mi_burnley": ""
+    },
+    {
+      "slug": "yeadon",
+      "name": "Yeadon",
+      "bucket": "radius",
+      "circles": "mcr+burnley",
+      "mi_manchester": "34.9",
+      "mi_burnley": "22.7"
+    },
+    {
+      "slug": "york",
+      "name": "York",
+      "bucket": "radius",
+      "circles": "burnley",
+      "mi_manchester": "57.7",
+      "mi_burnley": "48.1"
+    }
+  ]
+}
