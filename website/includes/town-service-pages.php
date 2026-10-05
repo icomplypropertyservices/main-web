@@ -267,7 +267,7 @@ function icomplyTownPools(string $family): array
                 'local' => [
                     '{name} is close enough for a planned day from Stockport SK2, about {miles} miles. We still book the lane closure rather than arriving unannounced.',
                     'At roughly {miles} miles, {name} sits in the local run from Offerton. Access, induction time and a working height for the boom are confirmed first.',
-                    'Same-week attendance is realistic for {name} when the lane can be coned. Distance is about {miles} miles from the workshop.',
+                    'Attendance for {name} follows the diary and when the lane can be coned. Distance is about {miles} miles from the workshop.',
                 ],
                 'regional' => [
                     '{name} is a regional visit, about {miles} miles from SK2. We group it with other {region} work where the diaries allow, and we still quote the single lane on its own.',

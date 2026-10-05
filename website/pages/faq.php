@@ -100,14 +100,14 @@ $faqs = [
         'a' => 'Yes. Audio and video door entry and multi-tenant intercoms are in the catalogue, including equipment such as Aiphone, Fermax and Videx where it suits the riser and is available. Flats, HMOs and commercial receptions are typical jobs. Fire door release and access control can be included when the quote says so. Brand names are not scheme memberships.',
         'link' => ['/pages/services/door-entry.php', 'Door entry services'],
     ],
-    // Response times
+    // Contact & appointments
     [
-        'cat' => 'Response times & appointments',
-        'q' => 'How quickly do you respond to enquiries and emergencies?',
-        'a' => 'On business days we aim to reply to quote and contact messages within 2 hours during typical hours (Monday–Friday 08:00–18:00). That is a target, not a service-level agreement and not a 24-hour emergency contract. Same-week appointments depend on engineer capacity and access. Urgent faults on fire, life-safety and security systems are prioritised when someone is free. Call ' . PHONE . ' or WhatsApp the same mobile.',
+        'cat' => 'Contact & appointments',
+        'q' => 'How do I contact you about enquiries and emergencies?',
+        'a' => 'Use the form, phone or WhatsApp with the postcode, property type and what is on site to start a quote. We do not publish a reply-time promise or run a 24-hour emergency contract. Appointment dates depend on engineer capacity and access. Urgent faults on fire, life-safety and security systems are prioritised when someone is free. Call ' . PHONE . ' or WhatsApp the same mobile.',
     ],
     [
-        'cat' => 'Response times & appointments',
+        'cat' => 'Contact & appointments',
         'q' => 'Do you offer planned maintenance contracts?',
         'a' => 'Yes, where we agree a contract. Landlords and facilities managers book planned visits for fire alarms, emergency lighting, nurse call, AOV and other systems we already look after, so the logbook matches the visits. Ask if you want more than one service on the same schedule. We do not sell a one-line national retainer or a badge that covers every trade.',
     ],
@@ -296,7 +296,7 @@ require SITE_ROOT . '/includes/header.php';
                 'Gas safety' => 'gas-safety',
                 'CCTV' => 'cctv',
                 'Access control & door entry' => 'access-control-door-entry',
-                'Response times & appointments' => 'response-times-appointments',
+                'Contact & appointments' => 'contact-appointments',
                 'Areas we cover' => 'areas-we-cover',
                 'Quotes & pricing' => 'quotes-pricing',
                 'Shop & products' => 'shop-products',
@@ -327,7 +327,7 @@ require SITE_ROOT . '/includes/header.php';
             'Gas safety' => 'gas-safety',
             'CCTV' => 'cctv',
             'Access control & door entry' => 'access-control-door-entry',
-            'Response times & appointments' => 'response-times-appointments',
+            'Contact & appointments' => 'contact-appointments',
             'Areas we cover' => 'areas-we-cover',
             'Quotes & pricing' => 'quotes-pricing',
             'Shop & products' => 'shop-products',
@@ -394,7 +394,7 @@ require SITE_ROOT . '/includes/header.php';
             <a href="<?= url('/contact.php') ?>" class="service-card bg-zinc-50 border rounded-3xl p-6 hover:border-[#ff6b00] transition">
                 <div class="text-2xl mb-3">✉️</div>
                 <div class="font-semibold text-black text-lg">Contact / free quote</div>
-                <p class="mt-2 text-sm text-zinc-600">Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>, WhatsApp or the form. Reply aim: 2 hours on business days.</p>
+                <p class="mt-2 text-sm text-zinc-600">Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>, WhatsApp or the form. Send the postcode and property type to start a quote.</p>
                 <div class="mt-4 text-sm font-semibold text-[#ff6b00]">Get a quote →</div>
             </a>
         </div>
@@ -429,7 +429,7 @@ require SITE_ROOT . '/includes/header.php';
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> BS 5839, BS 5266 and BS 7671 as job references — not scheme memberships</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Installation, servicing and records for the work agreed</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> <?= (int)$areaCount ?>+ towns on our North West list</li>
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Reply aim: within 2 hours on business days. Phone <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></li>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Phone, WhatsApp or form. Phone <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></li>
         </ul>
     </div>
 </section>

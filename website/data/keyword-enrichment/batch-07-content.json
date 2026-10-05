@@ -1,7 +1,7 @@
 {
     "ip-cctv-system": {
         "intro": "An IP CCTV system streams high-resolution video over your network, giving clearer evidence, flexible camera placement and app-based viewing for sites across Greater Manchester and the North West. iComply designs and installs IP CCTV for shops, warehouses, offices and multi-site estates—specifying cameras, NVRs, PoE switching and remote access so images stay sharp day and night. We survey coverage risks, agree a fixed-price scope and commission the system with a practical handover pack.",
-        "body": "From Stockport (SK2) our engineers cover Manchester, Cheshire, Lancashire, Merseyside and Cumbria with same-week surveys where capacity allows. Whether you need a compact four-camera IP kit or a multi-building network video platform, we align cabling, storage retention and user permissions to how your team actually works. Related options include HD cameras, PTZ units, wireless links for awkward spans and integration with access control. Request a quote with postcode, site type and preferred retention period—we aim to reply within two business hours.",
+        "body": "From Stockport (SK2) our engineers cover Manchester, Cheshire, Lancashire, Merseyside and Cumbria with surveys booked when the diary allows. Whether you need a compact four-camera IP kit or a multi-building network video platform, we align cabling, storage retention and user permissions to how your team actually works. Related options include HD cameras, PTZ units, wireless links for awkward spans and integration with access control. Request a quote with postcode, site type and preferred retention period.",
         "meta_desc": "IP CCTV system design & install across Greater Manchester & the North West. Fixed-price quotes, PoE NVR setups, remote viewing. iComply, Stockport.",
         "focus_points": [
             "Site survey, camera plan and fixed-price IP CCTV quote",
@@ -235,7 +235,7 @@
     },
     "cctv-testing": {
         "intro": "Regular CCTV testing proves cameras still record, focus and cover the zones you rely on—before an incident exposes a blind spot or failed disk. iComply carries out CCTV testing and health checks for commercial and multi-residential sites across Greater Manchester and the North West. We verify image quality, timestamps, retention, user logins, IR performance and export paths, then report clear pass/fail items with fixed-price remedials where needed.",
-        "body": "Testing fits well alongside planned maintenance contracts for landlords, retailers and FM teams. Our Stockport engineers can attend single sites or run multi-property rounds with consistent checklists. Findings support insurance and internal audits and reduce the risk of discovering failures only when police request footage. Book a one-off test or include CCTV in a wider compliance visit with access control or fire systems. Same-week slots where capacity allows.",
+        "body": "Testing fits well alongside planned maintenance contracts for landlords, retailers and FM teams. Our Stockport engineers can attend single sites or run multi-property rounds with consistent checklists. Findings support insurance and internal audits and reduce the risk of discovering failures only when police request footage. Book a one-off test or include CCTV in a wider compliance visit with access control or fire systems. Visit dates follow the diary.",
         "meta_desc": "CCTV testing & health checks across Greater Manchester & the North West. Image, recording & login verification from iComply engineers.",
         "focus_points": [
             "Camera-by-camera image and coverage verification",
@@ -313,7 +313,7 @@
     },
     "cctv-near-me": {
         "intro": "Searching for CCTV near me in the North West? iComply is a Stockport-based team installing, repairing and maintaining CCTV for homes, landlords and commercial sites across Greater Manchester and neighbouring counties. Local engineers mean faster surveys, familiar planning constraints and fixed-price quotes without long-distance call-out padding. Tell us your postcode and property type and we will confirm coverage and appointment windows.",
-        "body": "We regularly work in Manchester, Stockport, Bolton, Oldham, Trafford, Cheshire towns and into Lancashire and Merseyside. Services include new IP systems, HD camera upgrades, recording repairs, remote access and planned testing. Prefer a single contractor for CCTV plus access control or door entry? We can scope multi-discipline visits. Same-week capacity is often available for reactive faults. Use the form on this page, call or WhatsApp—we aim to respond within two business hours.",
+        "body": "We regularly work in Manchester, Stockport, Bolton, Oldham, Trafford, Cheshire towns and into Lancashire and Merseyside. Services include new IP systems, HD camera upgrades, recording repairs, remote access and planned testing. Prefer a single contractor for CCTV plus access control or door entry? We can scope multi-discipline visits. Use the form on this page, call or WhatsApp to start a quote.",
         "meta_desc": "CCTV near me in Greater Manchester & the North West. Local Stockport engineers, fixed-price installs & repairs. Quick quotes from iComply.",
         "focus_points": [
             "Local North West engineers from our Stockport base",
@@ -417,7 +417,7 @@
     },
     "door-access-control": {
         "intro": "Door access control replaces vulnerable keys with managed credentials on the doors that matter most—front entrances, stock rooms, plant rooms and staff-only zones. iComply installs and services door access control throughout Greater Manchester, Cheshire and Lancashire, selecting locks and readers that suit timber, metal and glass doors without compromising escape routes. Fixed quotes after survey keep budget and programme clear for landlords and FM teams.",
-        "body": "We programme who can pass which door at which times, produce audit reports when incidents occur and train local admins to enrol leavers and joiners quickly. Electric releases, maglocks, shearmagnets and motorised locks are chosen for duty cycle and fire strategy. Combine door access with video or audio door entry for visitors. Stockport-based engineers aim for same-week reactive help when a door fails safe or secure incorrectly. Multi-door phased rollouts available.",
+        "body": "We programme who can pass which door at which times, produce audit reports when incidents occur and train local admins to enrol leavers and joiners quickly. Electric releases, maglocks, shearmagnets and motorised locks are chosen for duty cycle and fire strategy. Combine door access with video or audio door entry for visitors. Stockport-based engineers book reactive help when the diary allows if a door fails safe or secure incorrectly. Multi-door phased rollouts available.",
         "meta_desc": "Door access control install & service across the North West. Readers, locks & schedules with fire-safe design. Quotes from iComply.",
         "focus_points": [
             "Per-door hardware selection for strength and escape",
@@ -677,7 +677,7 @@
     },
     "access-control-near-me": {
         "intro": "Looking for access control near me? iComply provides local design, installation, programming and repair of door access systems from Stockport across Greater Manchester and the North West. Nearby engineers mean quicker surveys, faster fault attendance and fixed-price work without inflated travel. Share your postcode, door count and any existing brand for a rapid suitability check.",
-        "body": "We install proximity, PIN, mobile and biometric solutions for offices, apartments and commercial sites near you, and we maintain systems others fitted when documentation allows. Coverage routinely includes Manchester, Stockport, Cheshire towns, Bolton corridor and into Lancashire. Bundle access control with CCTV or door entry on one visit to reduce disruption. Aim for same-week reactive slots when doors fail. Contact form, phone or WhatsApp—business-hour replies typically within two hours.",
+        "body": "We install proximity, PIN, mobile and biometric solutions for offices, apartments and commercial sites near you, and we maintain systems others fitted when documentation allows. Coverage routinely includes Manchester, Stockport, Cheshire towns, Bolton corridor and into Lancashire. Bundle access control with CCTV or door entry on one visit to reduce disruption. Reactive visits for failed doors are booked when the diary allows. Contact form, phone or WhatsApp.",
         "meta_desc": "Access control near me in Greater Manchester & the North West. Local Stockport engineers, installs & repairs. Fast quotes from iComply.",
         "focus_points": [
             "Local North West access control engineers near your site",
@@ -692,7 +692,7 @@
             ],
             [
                 "Can you help today if our door will not release?",
-                "We prioritise safety-critical door faults when engineers are available. Call for the latest same-day or next-day options."
+                "We prioritise safety-critical door faults when engineers are available. Call for current diary options."
             ],
             [
                 "Is the quote free?",
@@ -885,7 +885,7 @@
     },
     "door-entry-repair": {
         "intro": "Door entry repair restores speech, video, handsets and door release when communal or office entrances fail—often urgently. iComply provides reactive door entry repair across Greater Manchester and the North West, diagnosing panels, wiring, power supplies, handsets and locks with clear fixed prices before major parts are ordered. Stockport-based engineers understand legacy and modern systems alike.",
-        "body": "Common jobs include dead risers, water-damaged outdoor stations, failed electric releases, non-registering apps and intermittent buzzing locks. We stabilise security first—ensuring doors can still be secured or released safely—then complete lasting repairs. Multi-tenant blocks can request priority SLAs. If equipment is obsolete we quote repair versus upgrade honestly. Contact us with panel photos and fault description for faster triage. Same-week attendance where capacity allows.",
+        "body": "Common jobs include dead risers, water-damaged outdoor stations, failed electric releases, non-registering apps and intermittent buzzing locks. We stabilise security first—ensuring doors can still be secured or released safely—then complete lasting repairs. Multi-tenant blocks can request priority SLAs. If equipment is obsolete we quote repair versus upgrade honestly. Contact us with panel photos and fault description for faster triage. Visit dates follow the diary.",
         "meta_desc": "Door entry repair across the North West. Handsets, panels, speech & release faults fixed. Fast local response from iComply, Stockport.",
         "focus_points": [
             "Rapid diagnosis of speech, video, power and lock faults",
@@ -963,7 +963,7 @@
     },
     "door-entry-engineer": {
         "intro": "Need a door entry engineer in the North West? iComply’s Stockport-based engineers install, fault-find, reprogramme and maintain audio and video door entry for residential blocks and commercial sites. You get trade-competent attendance, clear explanations and fixed pricing—not vague call-out fees that climb by the hour without a scope. Describe the fault or project and we will match an engineer with the right system experience.",
-        "body": "Our engineers work daily with panels, handsets, IP video, electric releases and hybrid access control. Coverage includes Greater Manchester, Cheshire, Lancashire, Merseyside and selected Cumbria jobs. Reactive repairs, full installations and planned servicing are all in scope. We carry common tools and frequent spares to raise first-visit fix rates. For managing agents we can operate under PPMs with agreed response targets. Request an engineer via the form, phone or WhatsApp—typical business-day reply within two hours.",
+        "body": "Our engineers work daily with panels, handsets, IP video, electric releases and hybrid access control. Coverage includes Greater Manchester, Cheshire, Lancashire, Merseyside and selected Cumbria jobs. Reactive repairs, full installations and planned servicing are all in scope. We carry common tools and frequent spares to raise first-visit fix rates. For managing agents we can operate under PPMs with agreed response targets. Request an engineer via the form, phone or WhatsApp.",
         "meta_desc": "Door entry engineer across Greater Manchester & the North West. Install, repair & programme audio/video systems. iComply, Stockport.",
         "focus_points": [
             "Local door entry engineers from Stockport covering the North West",
@@ -974,7 +974,7 @@
         "faq": [
             [
                 "Can a door entry engineer attend at short notice?",
-                "We aim for same-week visits and prioritise buildings where security or escape is affected, subject to engineer availability."
+                "We book visits when the diary allows and prioritise buildings where security or escape is affected, subject to engineer availability."
             ],
             [
                 "Do your engineers work on any brand?",
@@ -989,7 +989,7 @@
     },
     "intercom-installation": {
         "intro": "Intercom installation connects people across doors, gates, desks and departments—essential for offices, factories, schools, healthcare sites and reception-led buildings. iComply installs commercial and residential intercoms across the North West, from simple door stations to multi-master systems and IP/SIP platforms. We survey acoustics, cable routes and integration with locks or phone systems before fixing a price.",
-        "body": "Stockport engineers programme call routing, priority calls, door release permissions and any public-address style features the platform supports. Clean installation and labelled wiring keep future service straightforward. Projects often sit alongside access control and CCTV for a complete security front of house. Fixed quotes, commissioning records and user guides included when in scope. Covering Greater Manchester, Cheshire, Lancashire and Merseyside with same-week surveys where capacity allows.",
+        "body": "Stockport engineers programme call routing, priority calls, door release permissions and any public-address style features the platform supports. Clean installation and labelled wiring keep future service straightforward. Projects often sit alongside access control and CCTV for a complete security front of house. Fixed quotes, commissioning records and user guides included when in scope. Covering Greater Manchester, Cheshire, Lancashire and Merseyside with surveys booked when the diary allows.",
         "meta_desc": "Intercom installation across Greater Manchester & the North West. Door, desk & multi-master systems. Fixed quotes from iComply.",
         "focus_points": [
             "Needs analysis for door, desk and multi-zone intercoms",

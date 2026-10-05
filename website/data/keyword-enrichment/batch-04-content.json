@@ -172,11 +172,11 @@
       ],
       [
         "How fast can a local engineer attend?",
-        "We aim for same-week visits where capacity allows and prioritise safety-critical failures when engineers are available."
+        "We book visits when the diary allows and prioritise safety-critical failures when engineers are available."
       ],
       [
         "How do I get a local quote?",
-        "Use the form on this page with your postcode and property type, or call/WhatsApp — we aim to respond within two hours on business days."
+        "Use the form on this page with your postcode and property type, or call/WhatsApp to start a quote."
       ]
     ],
     "seo_keywords": "emergency lighting near me, emergency lighting near me Manchester, local emergency lighting engineer, emergency light testing near me, BS 5266 near me Stockport, emergency lighting Greater Manchester, North West emergency lighting company"
@@ -261,7 +261,7 @@
   },
   "aov-repair": {
     "intro": "When an AOV fails to open, shows a panel fault or sticks part-way, swift AOV repair restores a key part of your smoke-control strategy. iComply diagnose and repair automatic opening vents, actuators, control panels and interfaces across the North West, prioritising life-safety faults for landlords and FM teams from our Stockport base.",
-    "body": "Engineers arrive prepared for common failures — motorised chain actuators, spindle drives, roof vent gearboxes, PSU and battery issues, and wiring faults to the fire alarm. We isolate safely, repair or replace defective parts, retest open/close under mains and backup power, and update service records. If repair is uneconomic we quote a clear replacement option. Coverage includes Greater Manchester, Cheshire, Lancashire and Merseyside with same-week aims where capacity allows.",
+    "body": "Engineers arrive prepared for common failures — motorised chain actuators, spindle drives, roof vent gearboxes, PSU and battery issues, and wiring faults to the fire alarm. We isolate safely, repair or replace defective parts, retest open/close under mains and backup power, and update service records. If repair is uneconomic we quote a clear replacement option. Coverage includes Greater Manchester, Cheshire, Lancashire and Merseyside with appointments booked when the diary allows.",
     "meta_desc": "AOV repair — actuators, panels, batteries & vents. Fast North West response from Stockport. Smoke-control specialists — iComply.",
     "focus_points": [
       "Fault finding on vents, actuators and control panels",
@@ -807,7 +807,7 @@
   },
   "aov-near-me": {
     "intro": "Looking for AOV near me in the North West? iComply provide local automatic opening vent installation, maintenance, repair and testing from Stockport across 150+ towns in Greater Manchester, Cheshire, Lancashire, Merseyside and beyond. Local engineers mean practical attendance for seized roof vents, panel faults and landlord smoke-control compliance.",
-    "body": "Searchers wanting nearby AOV help often need same-week fault response or a trustworthy maintenance team for a single block. We offer both: reactive repairs and planned contracts with transparent pricing. Share your postcode and a photo of the control panel to start. Area pages and multi-site packages support agents with buildings spread across the region. Life-safety systems deserve a local specialist, not a distant call centre.",
+    "body": "Searchers wanting nearby AOV help often need fault response or a trustworthy maintenance team for a single block. We offer both: reactive repairs and planned contracts with transparent pricing. Share your postcode and a photo of the control panel to start. Area pages and multi-site packages support agents with buildings spread across the region. Life-safety systems deserve a local specialist, not a distant call centre.",
     "meta_desc": "AOV near me? Local smoke-vent engineers across Greater Manchester & the North West. Install, repair & maintain — iComply Stockport.",
     "focus_points": [
       "Local North West AOV engineers from Stockport",
@@ -822,7 +822,7 @@
       ],
       [
         "How quickly can you get to my building?",
-        "We aim for same-week attendance where capacity allows and prioritise systems left in fault on escape routes."
+        "We book visits when the diary allows and prioritise systems left in fault on escape routes."
       ],
       [
         "Do you only work on new systems?",

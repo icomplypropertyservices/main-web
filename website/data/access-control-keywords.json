@@ -64,8 +64,8 @@
     "service": "access-control",
     "related": "fob-access-control",
     "intro": "A broken fob visit is for a token that no longer opens a door people need today — a cracked fob, a dead mobile credential, or a reader that beeps and does nothing. It is not a promise that an engineer is waiting at night.",
-    "body": "From Stockport we can often attend North West sites the same day when the diary has a gap. London, Scotland, Wales and Northern Ireland are scheduled, not ‘a van around the corner’. If the door is on a keypad code because the fob failed, say so: shared codes are the risk we remove when the new token is enrolled. We do not publish a call-out fee. The visit is POA. For a fire, a person stuck, or a door that will not release on an escape route, use 999 first. Call 07517806082 for the access fault once people are safe.",
-    "meta_desc": "Broken door fob and dead token visits. Same-day in the North West when the diary allows. UK sites by arrangement. POA. 07517806082.",
+    "body": "From Stockport we attend North West sites when the diary has a gap. London, Scotland, Wales and Northern Ireland are scheduled, not ‘a van around the corner’. If the door is on a keypad code because the fob failed, say so: shared codes are the risk we remove when the new token is enrolled. We do not publish a call-out fee. The visit is POA. For a fire, a person stuck, or a door that will not release on an escape route, use 999 first. Call 07517806082 for the access fault once people are safe.",
+    "meta_desc": "Broken door fob and dead token visits. North West visits when the diary allows. UK sites by arrangement. POA. 07517806082.",
     "focus_points": [
       "Token or reader fault confirmed before parts are changed",
       "New credential enrolled and the old one deleted",

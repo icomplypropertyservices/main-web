@@ -159,7 +159,7 @@ $h = static function ($s): string {
             </div>
             <div class="bg-[#061828] text-white rounded-3xl p-6 shadow-lg">
                 <h3 class="text-xl font-bold">Quote — <?= $h($AREA) ?></h3>
-                <p class="mt-2 text-white/95 text-sm font-medium">Same-week visits where capacity allows. Include postcode &amp; brand.</p>
+                <p class="mt-2 text-white/95 text-sm font-medium">Visit dates follow the diary. Include postcode &amp; brand.</p>
                 <a href="#quote" class="inline-block mt-4 px-5 py-3 bg-[#ff6b00] rounded-xl font-bold">Request quote</a>
                 <a href="<?= url('/pages/areas/' . rawurlencode($AREA_SLUG) . '.php') ?>" class="block mt-3 text-sm font-semibold text-[#ff6b00] hover:underline">All services in <?= $h($AREA) ?> →</a>
             </div>

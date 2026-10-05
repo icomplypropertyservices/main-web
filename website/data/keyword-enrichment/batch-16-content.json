@@ -116,7 +116,7 @@
     "faq": [
       [
         "How quickly can you attend a nurse call repair?",
-        "We prioritise safety-critical faults and aim for same-week or faster attendance depending on engineer capacity, location and parts. Priority options are available under contract."
+        "We prioritise safety-critical faults and book attendance depending on engineer capacity, location and parts. Priority options are available under contract."
       ],
       [
         "Do you repair all nurse call brands?",
@@ -261,7 +261,7 @@
   },
   "nurse-call-engineers": {
     "intro": "Need experienced nurse call engineers for installation, service or emergency call-outs? iComply’s North West team works daily on care home and healthcare call systems—installing devices, programming panels, diagnosing faults and completing PPM with clear documentation. Based in Stockport, our engineers understand HTM 08-03 practice, occupied-building etiquette and the pressure of keeping resident call coverage live.",
-    "body": "Specialist nurse call engineers save time compared with general electricians who only see these systems occasionally. We handle new installs, extensions, repairs, battery programmes and multi-site maintenance contracts. Site work includes neat containment, labelled terminations, functional testing of every point, and handover training for staff. Reactive visits target panel faults, dead zones and device failures with methodical fault-finding. Portfolio clients receive consistent engineer standards and reporting formats across Greater Manchester, Cheshire, Lancashire and Merseyside. Tell us the brand on site if known, property type and urgency—we aim to respond quickly on business days with fixed pricing once scope is clear.",
+    "body": "Specialist nurse call engineers save time compared with general electricians who only see these systems occasionally. We handle new installs, extensions, repairs, battery programmes and multi-site maintenance contracts. Site work includes neat containment, labelled terminations, functional testing of every point, and handover training for staff. Reactive visits target panel faults, dead zones and device failures with methodical fault-finding. Portfolio clients receive consistent engineer standards and reporting formats across Greater Manchester, Cheshire, Lancashire and Merseyside. Tell us the brand on site if known, property type and urgency—we confirm fixed pricing once scope is clear.",
     "meta_desc": "Nurse call engineers for install, PPM & repair. Care sector specialists across Greater Manchester, Stockport & the North West.",
     "focus_points": [
       "Specialist install, programme and commission of nurse call systems",

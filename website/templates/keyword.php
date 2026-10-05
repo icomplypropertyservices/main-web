@@ -21,7 +21,9 @@ $fireInstallerFamily = function_exists('icomplyFireAlarmInstallerIsFamily')
     && icomplyFireAlarmInstallerIsFamily((string)$keywordSlug);
 $fireInstallerP0 = function_exists('icomplyFireAlarmInstallerIsP0')
     && icomplyFireAlarmInstallerIsP0((string)$keywordSlug);
-$poaService = (function_exists('isPoaService') && isPoaService((string)$serviceSlug)) || $fireInstallerFamily;
+$nationwideP0 = function_exists('icomplyNationwide3lineIsP0') && icomplyNationwide3lineIsP0((string)$keywordSlug);
+// og:image is made absolute in includes/header.php (main #113).
+$poaService = (function_exists('isPoaService') && isPoaService((string)$serviceSlug)) || $nationwideP0 || $fireInstallerFamily;
 $fireLane = function_exists('fireAlarmsLaneForSlug') ? fireAlarmsLaneForSlug((string)$keywordSlug) : null;
 $fireLaneLabel = $fireLane ? fireAlarmsLaneLabel($fireLane) : '';
 $fireLaneHub = url('/pages/jobs/fire-alarms.php');
@@ -29,12 +31,28 @@ $relatedSlug = $RELATED_SLUG;
 $relatedName = $RELATED_NAME;
 $allAreas = function_exists('icomplyLocalTownNames') ? icomplyLocalTownNames() : getAreas();
 $allServices = getServices();
+$top5000Towns = [];
+if ($nationwideP0 && function_exists('icomplyTop5000Towns')) {
+    $top5000Towns = icomplyTop5000Towns();
+}
 
 $popularTowns = array_values(array_filter(
     ['Manchester', 'Salford', 'Bolton', 'Bury', 'Oldham', 'Rochdale', 'Stockport', 'Tameside', 'Trafford', 'Wigan', 'Altrincham', 'Sale', 'Ashton-under-Lyne'],
     fn($t) => in_array($t, $allAreas, true)
 ));
-if ($fireInstallerP0 && function_exists('icomplyUkTowns')) {
+if ($nationwideP0 && $top5000Towns) {
+    $popularWanted = ['London', 'Birmingham', 'Leeds', 'Glasgow', 'Cardiff', 'Edinburgh', 'Manchester', 'Stockport', 'Bristol', 'Liverpool'];
+    $byName = [];
+    foreach ($top5000Towns as $townRow) {
+        $byName[(string)$townRow['name']] = (string)$townRow['slug'];
+    }
+    $popularTowns = [];
+    foreach ($popularWanted as $wanted) {
+        if (isset($byName[$wanted])) {
+            $popularTowns[] = $wanted;
+        }
+    }
+} elseif ($fireInstallerP0 && function_exists('icomplyUkTowns')) {
     $allAreas = [];
     foreach (icomplyUkTowns() as $townRow) {
         if (!empty($townRow['name'])) {
@@ -65,7 +83,7 @@ require SITE_ROOT . '/includes/header.php';
             'name' => $keywordName,
             'description' => $metaDesc,
             'provider' => ['@type' => 'LocalBusiness', 'name' => SITE_NAME, 'telephone' => PHONE, 'url' => SITE_URL],
-            'areaServed' => $fireInstallerFamily ? 'United Kingdom' : 'North West England',
+            'areaServed' => ($nationwideP0 || $fireInstallerFamily) ? 'United Kingdom' : 'North West England',
             'serviceType' => $serviceName,
             'url' => $canonicalUrl,
         ],
@@ -131,7 +149,7 @@ if (function_exists('accessControlLaneKeywordStrip')) {
     <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <?php
         $trust = [
-            [$fireInstallerFamily ? 'UK mainland' : 'Local engineers', $fireInstallerFamily ? 'Stockport base — mainland towns over 10,000' : 'Stockport base — 150+ North West towns'],
+            [($nationwideP0 || $fireInstallerFamily) ? 'UK mainland' : 'Local engineers', $nationwideP0 ? 'Stockport base — TOP 5000 towns' : ($fireInstallerFamily ? 'Stockport base — mainland towns over 10,000' : 'Stockport base — 150+ North West towns')],
             ['Standards-led', 'British Standards & manufacturer guidance'],
             [$poaService ? 'POA / enquire' : 'Fixed quotes', $poaService ? 'Written scope — no invented £' : 'Clear scope before work starts'],
             ['Full paperwork', $poaService ? 'Survey or briefing notes for the dutyholder file' : 'Certificates & logbooks for compliance'],
@@ -158,8 +176,22 @@ if (function_exists('accessControlLaneKeywordStrip')) {
                         About <?= htmlspecialchars($keywordName, ENT_QUOTES, 'UTF-8') ?>
                     </h2>
                     <p class="mt-4 text-base md:text-lg text-zinc-900 leading-relaxed font-medium"><?= htmlspecialchars($KEYWORD_INTRO, ENT_QUOTES, 'UTF-8') ?></p>
-                    <p class="mt-4 text-base md:text-lg text-zinc-900 leading-relaxed"><?= htmlspecialchars($KEYWORD_BODY, ENT_QUOTES, 'UTF-8') ?></p>
-                    <?php if ($fireInstallerFamily): ?>
+                    <?php
+                    $bodyParas = preg_split("/\R\R+/", trim((string)$KEYWORD_BODY)) ?: [];
+                    if ($bodyParas === [] || $bodyParas === ['']) {
+                        $bodyParas = [(string)$KEYWORD_BODY];
+                    }
+                    foreach ($bodyParas as $bodyPara):
+                        $bodyPara = trim((string)$bodyPara);
+                        if ($bodyPara === '') {
+                            continue;
+                        }
+                    ?>
+                    <p class="mt-4 text-base md:text-lg text-zinc-900 leading-relaxed"><?= htmlspecialchars($bodyPara, ENT_QUOTES, 'UTF-8') ?></p>
+                    <?php endforeach; ?>
+                    <?php if ($nationwideP0): ?>
+                    <p class="mt-4 text-base text-zinc-900 leading-relaxed">Workshop: 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Quotes are price on application. iComply does not claim BAFE or NSI badges.</p>
+                    <?php elseif ($fireInstallerFamily): ?>
                     <p class="mt-4 text-base text-zinc-900 leading-relaxed">Workshop: 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Design, installation and commissioning follow BS 5839. Quotes are price on application.</p>
                     <?php endif; ?>
                     <ul class="mt-6 space-y-3"><?= $KEYWORD_FOCUS_HTML ?></ul>
@@ -224,6 +256,45 @@ echo '</section>';
             ];
             foreach ($nurseCallLocals as [$href, $label]): ?>
                 <a href="<?= url($href) ?>" class="px-4 py-2.5 bg-[#061828] text-white rounded-full text-sm font-semibold hover:bg-[#ff6b00] transition shadow"><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?></a>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+<?php elseif ($nationwideP0): ?>
+<section class="bg-zinc-100">
+    <div class="max-w-7xl mx-auto px-6 py-14">
+        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> across the UK mainland</h2>
+        <p class="mt-2 text-zinc-800">TOP 5000 towns by population (<?= count($top5000Towns) ?> places). Each place has its own page. Greater Manchester area hubs, including places outside that population list, stay linked below.</p>
+        <div class="mt-6 flex flex-wrap gap-2">
+            <?php foreach ($popularTowns as $a):
+                $popularSlug = '';
+                foreach ($top5000Towns as $townRow) {
+                    if ((string)$townRow['name'] === $a) {
+                        $popularSlug = (string)$townRow['slug'];
+                        break;
+                    }
+                }
+                if ($popularSlug === '') {
+                    continue;
+                }
+            ?>
+                <a href="<?= url('/pages/keywords/' . $KEYWORD_SLUG . '/' . $popularSlug) ?>"
+                   class="px-4 py-2.5 bg-[#061828] text-white rounded-full text-sm font-semibold hover:bg-[#ff6b00] transition shadow">
+                    <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> in <?= htmlspecialchars($a, ENT_QUOTES, 'UTF-8') ?>
+                </a>
+            <?php endforeach; ?>
+        </div>
+        <div class="mt-4 flex flex-wrap gap-2">
+            <?php foreach ($top5000Towns as $townRow):
+                $townName = (string)$townRow['name'];
+                if (in_array($townName, $popularTowns, true)) {
+                    continue;
+                }
+            ?>
+                <a href="<?= url('/pages/keywords/' . $KEYWORD_SLUG . '/' . (string)$townRow['slug']) ?>"
+                   class="px-3 py-1.5 bg-white border-2 border-zinc-300 text-zinc-900 rounded-full text-xs font-medium hover:border-[#ff6b00] hover:text-[#ff6b00]">
+                    <?= htmlspecialchars($KEYWORD_NAME . ' · ' . $townName, ENT_QUOTES, 'UTF-8') ?>
+                </a>
             <?php endforeach; ?>
         </div>
     </div>

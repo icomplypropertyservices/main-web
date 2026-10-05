@@ -49,8 +49,8 @@ require SITE_ROOT . '/includes/header.php';
             Thank you — we’ll be in touch.
         </h1>
         <p class="mt-5 text-lg md:text-xl text-white/80 max-w-xl mx-auto">
-            A member of the team aims to respond within <strong class="text-white">2 hours</strong> on business days.
-            Need something sooner? Call or WhatsApp us now.
+            The team will pick up your request from here.
+            Want to add photos or details? Call or WhatsApp us now.
         </p>
         <div class="mt-8 flex flex-wrap justify-center gap-3">
             <a href="<?= htmlspecialchars($waUrl, ENT_QUOTES, 'UTF-8') ?>"
@@ -104,7 +104,7 @@ require SITE_ROOT . '/includes/header.php';
         <a href="<?= htmlspecialchars($waUrl, ENT_QUOTES, 'UTF-8') ?>"
            target="_blank" rel="noopener"
            class="group block bg-white border rounded-3xl p-8 hover:border-green-500 transition shadow-sm">
-            <div class="text-xs uppercase tracking-[3px] text-green-600 font-semibold mb-2">Fastest reply</div>
+            <div class="text-xs uppercase tracking-[3px] text-green-600 font-semibold mb-2">Photos &amp; details</div>
             <h2 class="text-2xl font-semibold text-black group-hover:text-green-700">Chat on WhatsApp</h2>
             <p class="mt-3 text-zinc-600 text-sm">Send photos, postcodes or panel brands — useful if you want a steer on the job.</p>
             <div class="mt-6 inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-green-600 text-white font-semibold text-sm group-hover:bg-green-500">

@@ -90,8 +90,8 @@ $middles = [
 ];
 
 $closers = [
-    'Based in Stockport (SK2), we cover Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria with same-week appointments where capacity allows.',
-    'Tell us your postcode, property type and any panel brand — we aim to respond within 2 hours on business days.',
+    'Based in Stockport (SK2), we cover Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria with appointments booked when the diary allows.',
+    'Tell us your postcode, property type and any panel brand to start a quote.',
     'Browse local pages for your town, or request a multi-property package if you manage several sites.',
     'Manufacturer support is listed below so you can find us when searching for your exact equipment brand.',
 ];
@@ -166,11 +166,11 @@ foreach ($keywords as $slug => &$meta) {
             ],
             [
                 'How quickly can you attend for ' . $name . '?',
-                'We aim for same-week appointments where capacity and site access allow, and we prioritise reactive faults when engineers are available.',
+                'We book appointments when the diary allows, and we prioritise reactive faults when engineers are available.',
             ],
             [
                 'How do I get a quote for ' . $name . '?',
-                'Use the form on this page, call, or WhatsApp with postcode, property type and any brand already on site. We aim to reply within 2 hours on business days.',
+                'Use the form on this page, call, or WhatsApp with postcode, property type and any brand already on site.',
             ],
         ];
     }

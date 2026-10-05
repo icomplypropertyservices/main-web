@@ -253,7 +253,7 @@ $schema = [
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Fixed-price multi-service quotes</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Full documentation for audits &amp; insurers</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Maintenance contracts available</li>
-                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> WhatsApp or phone for a fast response</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> WhatsApp, phone or form — send the postcode to start a quote</li>
             </ul>
             <a href="#quote" class="inline-block mt-8 px-6 py-3 bg-[#ff6b00] rounded-2xl font-semibold hover:bg-orange-600">Start your quote</a>
         </div>

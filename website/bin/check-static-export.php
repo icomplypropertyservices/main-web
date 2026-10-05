@@ -790,6 +790,9 @@ if (is_file($urlList)) {
             if (function_exists('icomplyNationwideTownPath') && icomplyNationwideTownPath($urlPath)) {
                 continue;
             }
+            if (function_exists('icomplyNationwide3lineNationwidePath') && icomplyNationwide3lineNationwidePath($urlPath)) {
+                continue;
+            }
             if (function_exists('icomplyFireAlarmInstallerNationwidePath') && icomplyFireAlarmInstallerNationwidePath($urlPath)) {
                 continue;
             }

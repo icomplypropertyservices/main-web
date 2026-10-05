@@ -694,7 +694,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2"><?= $nurseCallFocus ? 'Nurse call quote for this care home' : 'Care home quote request' ?></h2>
             <p class="mt-3 text-zinc-600"><?= $nurseCallFocus
                 ? 'Panel brand, bed count, and install, repair or maintenance. Fire and lighting can share the visit. The figure comes after we see the home.'
-                : 'Tell us about the home, the nurse call brand and any other systems. We aim to respond within 2 hours on business days.' ?></p>
+                : 'Tell us about the home, the nurse call brand and any other systems. Phone, WhatsApp or the form all reach the same team.' ?></p>
         </div>
 
         <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">

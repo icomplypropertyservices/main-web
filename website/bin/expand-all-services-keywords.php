@@ -585,7 +585,7 @@ $middles = [
 ];
 $closers = [
     'Based in Offerton, Stockport (SK2 5DE), we cover 150+ towns across the North West.',
-    'Tell us your postcode, property type and timescales — we aim to respond on business days within 2 hours.',
+    'Tell us your postcode, property type and timescales to start a quote.',
     'Ask about multi-property packages if you manage several sites or a void programme.',
     'Browse local pages for your town or request a combined quote with related services.',
 ];
@@ -618,7 +618,7 @@ function buildUniqueContent(string $name, string $serviceSlug, array $copy, int 
     ];
     $closers = [
         'Based in Offerton, Stockport (SK2 5DE), we cover 150+ towns across the North West.',
-        'Tell us your postcode, property type and timescales — we aim to respond on business days within 2 hours.',
+        'Tell us your postcode, property type and timescales to start a quote.',
         'Ask about multi-property packages if you manage several sites or a void programme.',
         'Browse local pages for your town or request a combined quote with related services.',
     ];
@@ -638,7 +638,7 @@ function buildUniqueContent(string $name, string $serviceSlug, array $copy, int 
     $faq = [
         ["What does {$name} include?", "Scope is confirmed after survey — typically labour, agreed materials and documentation for {$name} under our {$svc} service."],
         ["Do you cover my town for {$name}?", 'Yes — we cover 150+ towns across Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria from Stockport.'],
-        ["How quickly can you start {$name}?", 'Many jobs can be surveyed same week depending on capacity and access. Emergency and priority works are prioritised where possible.'],
+        ["How quickly can you start {$name}?", 'Survey dates follow the diary and site access. Emergency and priority works are prioritised where possible.'],
         ["Do you provide certificates for {$name}?", "Where the work type requires certification or a formal report, we issue the relevant paperwork with your job pack."],
     ];
     return compact('intro', 'body', 'meta', 'seo', 'focus', 'faq');
