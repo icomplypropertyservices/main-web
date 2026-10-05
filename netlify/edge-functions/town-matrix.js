@@ -497,9 +497,28 @@ async function loadCatalogue(origin) {
   return cataloguePromise;
 }
 
+
+const PLACE_ALIAS_BARRIERS = {"trafford":"hale-trafford","tameside":"hyde-tameside","shaw":"shaw-oldham","milnrow":"rochdale","pendlebury":"swinton-salford","cadishead":"irlam","chorlton":"manchester","withington":"manchester","crosby":"crosby-sefton","ince":"ince-in-makerfield","thornton-cleveleys":"cleveleys","ainsdale":"southport","ambleside":"kendal","appleton":"warrington","birchwood":"warrington","burscough":"ormskirk","carnforth":"lancaster","clayton-le-moors":"accrington","cockermouth":"workington","culcheth":"warrington","dalton-in-furness":"barrow-in-furness","frodsham":"runcorn","garstang":"preston-preston","halton":"runcorn","handforth":"wilmslow","helsby":"runcorn","holmes-chapel":"crewe","hoylake":"wallasey","keswick":"workington","kirkham":"blackpool","longridge":"preston-preston","maryport":"workington","millom":"barrow-in-furness","penketh":"warrington","rainford":"st-helens-st-helens","risley":"warrington","rossendale":"rawtenstall","shevington":"wigan","stockton-heath":"warrington","tarporley":"chester","tarvin":"chester","wesham":"blackpool","whalley":"blackburn-blackburn-with-darwen","windermere":"kendal"};
+const PLACE_ALIAS_AOV = {"worsley":"walkden","wythenshawe":"manchester","pendlebury":"salford","cadishead":"eccles","trafford":"hale-trafford","chorlton":"manchester","withington":"manchester","tameside":"hyde-tameside","shaw":"shaw-oldham"};
+
+function placeAliasRedirect(path) {
+  let m = path.match(/^\/pages\/(barriers|aov)\/([a-z0-9-]+)$/);
+  if (!m) return null;
+  const family = m[1];
+  const slug = m[2];
+  const map = family === "barriers" ? PLACE_ALIAS_BARRIERS : PLACE_ALIAS_AOV;
+  const dest = map[slug];
+  if (!dest || dest === slug) return null;
+  return `/pages/${family}/${dest}`;
+}
+
 export default async (request, context) => {
   const url = new URL(request.url);
   const path = url.pathname.replace(/\/+$/, "") || "/";
+  const aliasTo = placeAliasRedirect(path);
+  if (aliasTo) {
+    return Response.redirect(new URL(aliasTo, url.origin).toString(), 301);
+  }
   const sitemapMatch = path.match(/^\/matrix-sitemap\/(\d+)(?:\.xml)?$/);
   if (sitemapMatch) {
     try {
