@@ -344,6 +344,11 @@ function pageHtml(options) {
 <title>${escapeHtml(title)}</title>
 <meta name="description" content="${escapeHtml(description)}">
 <meta name="robots" content="${robots}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="${escapeHtml(title)}">
+<meta property="og:description" content="${escapeHtml(description)}">
+<meta property="og:url" content="${escapeHtml(canonical)}">
+<meta property="og:image" content="${escapeHtml(`${String(site).replace(/^http:/, "https:")}${imageSrc}`)}">
 <link rel="canonical" href="${escapeHtml(canonical)}">
 <link rel="stylesheet" href="/assets/css/site.css">
 <script type="application/ld+json">${jsonLd(schema)}</script>
