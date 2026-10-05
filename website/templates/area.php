@@ -347,7 +347,7 @@ $schema = [
                 <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Other towns we cover</h2>
                 <p class="mt-2 text-zinc-600">Also serving areas near <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> across the North West.</p>
             </div>
-            <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All <?= count($allAreas) ?> areas →</a>
+            <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All <?= count(function_exists('icomplyCrawlTownNames') ? icomplyCrawlTownNames() : $allAreas) ?> areas →</a>
         </div>
         <div class="flex flex-wrap gap-2">
             <?php foreach ($nearby as $town): ?>

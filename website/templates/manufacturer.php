@@ -340,9 +340,9 @@ if ($acnBrand && function_exists('acnCities')):
     <div class="flex flex-wrap gap-2">
         <?php
         require_once SITE_ROOT . '/includes/barriers.php';
-        foreach (['Manchester', 'Birmingham', 'Leeds', 'Glasgow', 'Cardiff', 'Westminster', 'Aberdeen', 'Stockport'] as $t):
+        foreach (['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Bury'] as $t):
             $tSlug = barriersPlaceSlugByName($t);
-            if (!$tSlug) {
+            if (!$tSlug || (function_exists('icomplyCrawlTownSlug') && !icomplyCrawlTownSlug($tSlug))) {
                 continue;
             }
         ?>
@@ -362,8 +362,8 @@ if ($acnBrand && function_exists('acnCities')):
         <?php
         $scoped = function_exists('manufacturerAreasFor') ? manufacturerAreasFor($entry) : getAreas();
         $towns = array_values(array_filter(
-            ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool', 'Burnley'],
-            fn($t) => in_array($t, $scoped, true)
+            ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale', 'Wigan', 'Bury', 'Trafford', 'Tameside'],
+            fn($t) => in_array($t, $scoped, true) && (!function_exists('icomplyCrawlTownSlug') || icomplyCrawlTownSlug($t))
         ));
         foreach ($towns as $t):
         ?>

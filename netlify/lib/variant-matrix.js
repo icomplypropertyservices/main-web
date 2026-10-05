@@ -393,8 +393,26 @@ ${relatedHtml}
 }
 
 export function renderVariantPage({ spec, keyword, town }) {
-  const parsed = parseVariantKeyword(spec, keyword);
   const townSlug = String(town || "");
+  if (townSlug && !isGmTown(townSlug)) {
+    const keywordSlug = String(keyword || "enquiry");
+    const safeSlug = /^[a-z0-9-]+$/.test(keywordSlug) ? keywordSlug : "enquiry";
+    const location = `/pages/keywords/${safeSlug}`;
+    return {
+      html: "",
+      title: "",
+      description: "",
+      h1: "",
+      canonical: location,
+      robots: "noindex, nofollow",
+      indexable: false,
+      path: location,
+      status: 301,
+      location,
+      words: 0,
+    };
+  }
+  const parsed = parseVariantKeyword(spec, keyword);
   const knownTown = townSlug
     ? (spec.towns || []).find((row) => row.slug === townSlug) || null
     : null;
@@ -428,7 +446,10 @@ export function renderVariantSitemap(spec, partIndex) {
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
   ];
   for (let g = start; g < end; g++) {
-    lines.push(`  <url><loc>${site}${variantPath(spec, g)}</loc><priority>0.5</priority></url>`);
+    const locPath = variantPath(spec, g);
+    const parts = locPath.split("/");
+    if (parts.length >= 5 && !isGmTown(parts[4])) continue;
+    lines.push(`  <url><loc>${site}${locPath}</loc><priority>0.5</priority></url>`);
   }
   lines.push("</urlset>");
   return lines.join("\n") + "\n";

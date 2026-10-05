@@ -53,7 +53,7 @@ const invalid = renderVariantPage({ spec, keyword: "electrical--not-a-real-stem-
 ok(stockport.status === 200 && stockport.indexable && stockport.robots === "index, follow", "stockport indexable");
 ok(hub.indexable && hub.canonical.endsWith(`/pages/keywords/${cheapSlug}`), "hub canonical");
 ok(stockport.canonical === `https://icomplypropertyservices.co.uk/pages/keywords/${cheapSlug}/stockport`, "town canonical");
-ok(!burnley.indexable && burnley.status === 200 && burnley.robots.startsWith("noindex"), "burnley noindex 200");
+ok(!burnley.indexable && burnley.status === 301 && burnley.location === `/pages/keywords/${cheapSlug}`, "burnley 301 to the keyword hub");
 ok(!invalid.indexable && invalid.status === 200, "unknown variant 200 noindex");
 ok(stockport.html.includes("does not publish a low rate"), "cheap copy");
 ok(stockport.html.includes("price on application"), "POA");

@@ -280,7 +280,8 @@ if ($kwHubFiles >= 1200) {
     $fail++;
     echo "[FAIL] keyword hubs exported={$kwHubFiles} (need >= 1200 sitemap slugs)\n";
 }
-$areaCount = function_exists('getAreas') ? count(getAreas()) : 168;
+$gmTowns = function_exists('icomplyCrawlTownNames') ? count(icomplyCrawlTownNames()) : 60;
+$areaCount = $gmTowns;
 $expectAllTowns = $kwHubFiles * $areaCount;
 $matrixStats = [];
 $matrixStatsFile = $dist . '/matrix-stats.json';
@@ -290,13 +291,19 @@ if (is_file($matrixStatsFile)) {
         $matrixStats = $decoded;
     }
 }
-$edgeMatrix = (int)($matrixStats['keyword_town_urls'] ?? 0) >= 900000
-    && (int)($matrixStats['sitemap_urls'] ?? 0) >= 1000000
+$edgePlaces = (int)($matrixStats['places'] ?? 0);
+$edgeKeywords = (int)($matrixStats['keywords'] ?? 0);
+$edgeKwTown = (int)($matrixStats['keyword_town_urls'] ?? 0);
+$edgeMatrix = $gmTowns === 60
+    && $edgePlaces === $gmTowns
+    && $edgeKeywords >= 1000
+    && $edgeKwTown === $edgeKeywords * $gmTowns
+    && (int)($matrixStats['sitemap_urls'] ?? 0) >= $edgeKwTown
     && is_file($dist . '/assets/matrix/keywords.json')
     && is_file($dist . '/assets/matrix/places.json')
     && is_file($dist . '/sitemap-urls.txt');
 // Town HTML may be served by the edge function instead of one file per URL.
-$popularN = 13;
+$popularN = 10;
 $expectPriorityFloor = max(12000, (int)floor($kwHubFiles * $popularN * 0.85));
 $isFullMatrix = $kwTownFiles >= max(12, (int)floor($expectAllTowns * 0.95));
 $isPriorityMatrix = $kwTownFiles >= $expectPriorityFloor && $kwTownFiles < (int)floor($expectAllTowns * 0.95);
@@ -335,16 +342,16 @@ if ($edgeMatrix) {
         '/pages/keywords/domestic-rewire/stockport',
         '/pages/keywords/emergency-electrician/stockport',
         '/pages/keywords/boiler/stockport',
-        '/pages/keywords/commercial-intercom-package/high-legh',
-        '/pages/keywords/exterior-painting/ashopton',
-        '/pages/keywords/aov-actuator-installation/prescot',
+        '/pages/keywords/commercial-intercom-package/kearsley',
+        '/pages/keywords/exterior-painting/altrincham',
+        '/pages/keywords/aov-actuator-installation/horwich',
         '/pages/keywords/sprinkler-alarm-interface/saddleworth',
-        '/pages/keywords/multi-property-landlord-package/kearsley',
-        '/pages/keywords/air-source-heat-pumps-service-agreement/slaidburn',
-        '/pages/keywords/loft-conversion-fixed-price-package/key-green',
-        '/pages/keywords/bs-5306-extinguisher-service-cost/pimhole',
-        '/pages/keywords/emergency-lighting-upgrade/kingsmead-village',
-        '/pages/windows-doors/ellesmere-port',
+        '/pages/keywords/multi-property-landlord-package/leigh',
+        '/pages/keywords/air-source-heat-pumps-service-agreement/littleborough',
+        '/pages/keywords/loft-conversion-fixed-price-package/marple',
+        '/pages/keywords/bs-5306-extinguisher-service-cost/romiley',
+        '/pages/keywords/emergency-lighting-upgrade/westhoughton',
+        '/pages/windows-doors/wigan',
     ];
     $need = array_fill_keys($want, true);
     $fh = fopen($dist . '/sitemap-urls.txt', 'rb');
@@ -374,16 +381,16 @@ foreach (['rewire', 'domestic-rewire', 'emergency-electrician', 'boiler'] as $ne
 }
 if ($edgeMatrix) {
     foreach ([
-        '/pages/keywords/commercial-intercom-package/high-legh',
-        '/pages/keywords/exterior-painting/ashopton',
-        '/pages/keywords/aov-actuator-installation/prescot',
+        '/pages/keywords/commercial-intercom-package/kearsley',
+        '/pages/keywords/exterior-painting/altrincham',
+        '/pages/keywords/aov-actuator-installation/horwich',
         '/pages/keywords/sprinkler-alarm-interface/saddleworth',
-        '/pages/keywords/multi-property-landlord-package/kearsley',
-        '/pages/keywords/air-source-heat-pumps-service-agreement/slaidburn',
-        '/pages/keywords/loft-conversion-fixed-price-package/key-green',
-        '/pages/keywords/bs-5306-extinguisher-service-cost/pimhole',
-        '/pages/keywords/emergency-lighting-upgrade/kingsmead-village',
-        '/pages/windows-doors/ellesmere-port',
+        '/pages/keywords/multi-property-landlord-package/leigh',
+        '/pages/keywords/air-source-heat-pumps-service-agreement/littleborough',
+        '/pages/keywords/loft-conversion-fixed-price-package/marple',
+        '/pages/keywords/bs-5306-extinguisher-service-cost/romiley',
+        '/pages/keywords/emergency-lighting-upgrade/westhoughton',
+        '/pages/windows-doors/wigan',
     ] as $samplePath) {
         if (isset($listedSamples[$samplePath])) {
             $pass++;
@@ -502,7 +509,21 @@ foreach (array_keys(function_exists('getServices') ? getServices() : []) as $svc
         $svcAreaFiles++;
     }
 }
-$svcAreaExpect = $svcCount * $areaCount;
+$svcAreaExpect = 0;
+foreach (array_keys(function_exists('getServices') ? getServices() : []) as $sSlug) {
+    if ($sSlug === 'barriers' || $sSlug === 'aov-air-handling') {
+        continue;
+    }
+    $areasFor = function_exists('getAreasForService')
+        ? getAreasForService($sSlug)
+        : (function_exists('getAreas') ? getAreas() : []);
+    foreach ($areasFor as $area) {
+        $town = function_exists('areaSlug') ? areaSlug((string)$area) : '';
+        if ($town !== '' && function_exists('icomplyCrawlTownSlug') && icomplyCrawlTownSlug($town)) {
+            $svcAreaExpect++;
+        }
+    }
+}
 if ($svcAreaFiles >= (int)floor($svcAreaExpect * 0.98)) {
     $pass++;
     echo "[PASS] service×area exported={$svcAreaFiles} (expect ~{$svcAreaExpect})\n";
@@ -581,6 +602,30 @@ if (str_contains($sitemapHub, '/pages/products</loc>') || substr_count($sitemapH
     echo "[PASS] sitemap lists /products only\n";
 }
 $indexMode = function_exists('icomplyIndexMode') ? icomplyIndexMode() : 'tiered';
+$urlList = $dist . '/sitemap-urls.txt';
+if (is_file($urlList)) {
+    $nonGmLocs = 0;
+    $nonGmSample = '';
+    $urlHandle = fopen($urlList, 'rb');
+    if ($urlHandle !== false) {
+        while (($urlLine = fgets($urlHandle)) !== false) {
+            if (preg_match('#/(?:burnley|liverpool|preston|chester|warrington|blackpool)(?:/|\s|$)#i', $urlLine)) {
+                $nonGmLocs++;
+                if ($nonGmSample === '') {
+                    $nonGmSample = trim($urlLine);
+                }
+            }
+        }
+        fclose($urlHandle);
+    }
+    if ($nonGmLocs === 0) {
+        $pass++;
+        echo "[PASS] sitemap-urls.txt has zero Burnley/Liverpool/non-GM locs\n";
+    } else {
+        $fail++;
+        echo "[FAIL] sitemap-urls.txt non-GM locs={$nonGmLocs} sample={$nonGmSample}\n";
+    }
+}
 if ($indexMode === 'tiered') {
     // Unpublished service×town and keyword×town pretty URLs 301. Indexable
     // area hubs stay in. Shared area templates and non-tier towns stay out.

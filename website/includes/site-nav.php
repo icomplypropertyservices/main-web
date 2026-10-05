@@ -21,7 +21,7 @@ function icomplyNavCatalog(): array
     }
 
     $services = getServices();
-    $areas = getAreas();
+    $areas = function_exists('icomplyCrawlTownNames') ? icomplyCrawlTownNames() : getAreas();
     $cats = function_exists('getServiceCategories') ? getServiceCategories() : [];
     $keywords = getMajorKeywords();
 
@@ -38,6 +38,11 @@ function icomplyNavCatalog(): array
             $kws = function_exists('getKeywordsForService') ? getKeywordsForService((string)$slug) : [];
             foreach (['niceic-certified', 'part-p-certified', 'gas-certificate-same-day', 'certified-electrician', 'gas-safe-engineer'] as $hideSlug) {
                 unset($kws[$hideSlug]);
+            }
+            foreach (array_keys($kws) as $kwSlug) {
+                if (preg_match('/-(?:burnley|liverpool|preston|chester|warrington|blackpool)$/', (string)$kwSlug)) {
+                    unset($kws[$kwSlug]);
+                }
             }
             if ($kws) {
                 $kwForCat[$slug] = [
@@ -82,6 +87,9 @@ function icomplyNavCatalog(): array
     $popularKw = function_exists('getPopularKeywordSlugs') ? getPopularKeywordSlugs() : [];
     $featuredKw = [];
     foreach ($popularKw as $slug) {
+        if (preg_match('/-(?:burnley|liverpool|preston|chester|warrington|blackpool)$/', (string)$slug)) {
+            continue;
+        }
         if (isset($keywords[$slug])) {
             $featuredKw[$slug] = (string)$keywords[$slug]['name'];
         }
@@ -95,7 +103,7 @@ function icomplyNavCatalog(): array
         'areasByLetter' => $areasByLetter,
         'featuredKw' => $featuredKw,
         'popularAreas' => array_values(array_filter(
-            ['Manchester', 'Burnley', 'Stockport', 'Salford', 'Bolton', 'Oldham', 'Rochdale', 'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool'],
+            ['Manchester', 'Stockport', 'Salford', 'Bolton', 'Oldham', 'Rochdale', 'Wigan', 'Bury', 'Trafford', 'Tameside'],
             static fn($a) => in_array($a, $areas, true)
         )),
         'resources' => icomplyNavResourceLinks(),

@@ -321,6 +321,87 @@ if (stripos($committed, 'burnley') !== false) {
     echo "FAIL: committed sitemap still names Burnley\n";
 }
 
+$bannedTowns = ['burnley', 'liverpool', 'preston', 'chester', 'warrington', 'blackpool'];
+foreach (['generated' => $xml, 'committed' => $committed] as $label => $blob) {
+    foreach ($bannedTowns as $town) {
+        if (preg_match('#(?:^|[^a-z])' . $town . '(?:[^a-z]|$)#i', $blob)) {
+            $fail++;
+            echo "FAIL: {$label} sitemap names {$town}\n";
+        }
+    }
+}
+
+$redirectCases = [
+    '/pages/keywords/access-control-near-me/burnley' => '/pages/keywords/access-control-near-me',
+    '/pages/keywords/rewire/liverpool' => '/pages/keywords/rewire',
+    '/pages/access-control/burnley' => '/pages/services/access-control',
+    '/pages/barriers/liverpool' => '/pages/services/barriers',
+    '/pages/aov/liverpool' => '/pages/aov',
+    '/pages/areas/liverpool' => '/pages/areas',
+    '/pages/areas/burnley' => '/pages/areas',
+    '/pages/aov-air-handling/blackpool' => '/pages/services/aov-air-handling',
+    '/pages/windows-doors/warrington' => '/pages/services/windows-doors',
+    '/pages/nurse-call/cardiff' => '/pages/services/nurse-call',
+];
+$stayCases = [
+    '/pages/aov/chorlton',
+    '/pages/aov/manchester',
+    '/pages/aov/cadishead',
+    '/pages/barriers/trafford',
+    '/pages/barriers/milnrow',
+    '/pages/areas/stockport',
+    '/pages/keywords/eicr/stockport',
+    '/pages/electrical/stockport',
+    '/pages/nurse-call/manchester',
+    '/pages/services/electrical',
+];
+if (!function_exists('icomplyNonGmMatrixRedirect')) {
+    $fail++;
+    echo "FAIL: icomplyNonGmMatrixRedirect missing\n";
+} else {
+    foreach ($redirectCases as $path => $dest) {
+        $got = icomplyNonGmMatrixRedirect($path);
+        if ($got !== $dest || !icomplySitemapOmitsNonGm($path)) {
+            $fail++;
+            echo "FAIL: {$path} redirects to " . ($got ?? 'null') . " (want {$dest})\n";
+        }
+    }
+    foreach ($stayCases as $path) {
+        if (icomplyNonGmMatrixRedirect($path) !== null || icomplySitemapOmitsNonGm($path)) {
+            $fail++;
+            echo "FAIL: GM URL must stay: {$path}\n";
+        }
+    }
+}
+
+$matrixFile = SITE_ROOT . '/includes/matrix-catalogue.php';
+if (is_file($matrixFile)) {
+    require_once $matrixFile;
+}
+if (!function_exists('icomplyMatrixSelectPlaces') || !function_exists('icomplyGreaterManchesterTownNames') || !function_exists('areaSlug')) {
+    $fail++;
+    echo "FAIL: matrix place selector missing\n";
+} else {
+    $selected = array_keys(icomplyMatrixSelectPlaces(500)['selected']);
+    $want = [];
+    foreach (icomplyGreaterManchesterTownNames() as $name) {
+        $want[] = areaSlug((string)$name);
+    }
+    sort($selected);
+    sort($want);
+    if (count($want) !== 60 || $selected !== $want) {
+        $fail++;
+        $missing = array_values(array_diff($want, $selected));
+        $extra = array_values(array_diff($selected, $want));
+        echo 'FAIL: matrix places ' . count($selected) . ' (want the 60 GM towns)'
+            . ($missing ? ' missing=' . implode(',', array_slice($missing, 0, 8)) : '')
+            . ($extra ? ' extra=' . implode(',', array_slice($extra, 0, 8)) : '')
+            . "\n";
+    } else {
+        echo "OK: matrix places are the 60 Greater Manchester towns\n";
+    }
+}
+
 echo "URLs={$count} bytes=" . strlen($xml) . PHP_EOL;
 echo ($fail === 0 ? "PASS\n" : "FAIL ({$fail})\n");
 exit($fail === 0 ? 0 : 1);

@@ -23,11 +23,11 @@ $fireLaneLabel = $fireLane ? fireAlarmsLaneLabel($fireLane) : '';
 $fireLaneHub = url('/pages/jobs/fire-alarms.php');
 $relatedSlug = $RELATED_SLUG;
 $relatedName = $RELATED_NAME;
-$allAreas = getAreas();
+$allAreas = function_exists('icomplyCrawlTownNames') ? icomplyCrawlTownNames() : getAreas();
 $allServices = getServices();
 
 $popularTowns = array_values(array_filter(
-    ['Manchester', 'Salford', 'Bolton', 'Bury', 'Oldham', 'Rochdale', 'Stockport', 'Tameside', 'Trafford', 'Wigan', 'Altrincham', 'Sale', 'Ashton-under-Lyne', 'Liverpool', 'Preston', 'Chester'],
+    ['Manchester', 'Salford', 'Bolton', 'Bury', 'Oldham', 'Rochdale', 'Stockport', 'Tameside', 'Trafford', 'Wigan', 'Altrincham', 'Sale', 'Ashton-under-Lyne'],
     fn($t) => in_array($t, $allAreas, true)
 ));
 
@@ -185,14 +185,14 @@ if (function_exists('accessControlLaneKeywordStrip')) {
 <?php if (($SERVICE_SLUG ?? '') === 'nurse-call'): ?>
 <section class="bg-zinc-100">
     <div class="max-w-7xl mx-auto px-6 py-14">
-        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">Manchester, Burnley, and the hub</h2>
-        <p class="mt-2 text-zinc-800 max-w-3xl">Nurse call is written up properly for Manchester and Burnley. Other North West addresses are quoted from the postcode. Care, ward and warden scopes are split on the hub. Fire and lighting for the same operator sit on the care homes page.</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">Manchester, Stockport, and the hub</h2>
+        <p class="mt-2 text-zinc-800 max-w-3xl">Nurse call is written up for the Greater Manchester towns on the areas list, including Manchester and Stockport. Care, ward and warden scopes are split on the hub. Fire and lighting for the same operator sit on the care homes page.</p>
         <div class="mt-6 flex flex-wrap gap-2">
             <?php
             $nurseCallLocals = [
                 ['/pages/nurse-call-systems', 'Nurse call systems'],
                 ['/pages/nurse-call-manchester', 'Nurse call in Manchester'],
-                ['/pages/nurse-call-burnley', 'Nurse call in Burnley'],
+                ['/pages/nurse-call/stockport', 'Nurse call in Stockport'],
                 ['/pages/care-homes', 'Care homes'],
                 ['/pages/services/nurse-call', 'Nurse call service'],
             ];
@@ -254,9 +254,9 @@ if (function_exists('accessControlLaneKeywordStrip')) {
     <div class="max-w-7xl mx-auto px-6 py-14">
         <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">Related <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> guides</h2>
         <?php if (($SERVICE_SLUG ?? '') === 'nurse-call'): ?>
-        <p class="mt-2 text-zinc-800">More nurse-call topics. Manchester and Burnley are the local pages. Other North West addresses are quoted from the postcode.</p>
+        <p class="mt-2 text-zinc-800">More nurse-call topics. Manchester and Stockport are on the Greater Manchester list.</p>
         <?php else: ?>
-        <p class="mt-2 text-zinc-800">More topics under the same service — each also has pages for every North West town.</p>
+        <p class="mt-2 text-zinc-800">More topics under the same service — each also has pages for every Greater Manchester town.</p>
         <?php endif; ?>
         <div class="mt-6">
             <?php

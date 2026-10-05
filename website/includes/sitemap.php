@@ -123,6 +123,12 @@ function icomplySitemapEntries(): array
         if (preg_match('#(?:^|/)burnley(?:$|/)#', $path) || str_ends_with($path, '-burnley')) {
             return;
         }
+        if (!function_exists('icomplySitemapOmitsNonGm')) {
+            require_once __DIR__ . '/gm-crawl.php';
+        }
+        if (icomplySitemapOmitsNonGm($path)) {
+            return;
+        }
         if (isset($seen[$path]) || isset($banned[$path])) {
             return;
         }

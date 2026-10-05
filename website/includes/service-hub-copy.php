@@ -220,7 +220,7 @@ function icomplyServiceHubLinks(string $slug): array
         'nurse-call' => [
             ['/pages/nurse-call-systems', 'Nurse call hub'],
             ['/pages/nurse-call-manchester', 'Nurse call in Manchester'],
-            ['/pages/nurse-call-burnley', 'Nurse call in Burnley'],
+            ['/pages/nurse-call/stockport', 'Nurse call in Stockport'],
             ['/pages/care-homes', 'Care homes'],
         ],
         'fire-doors' => [

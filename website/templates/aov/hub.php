@@ -40,7 +40,7 @@ $h = static function (string $s): string {
     </article>
     <article class="p-6 border border-zinc-200 rounded-3xl">
         <h2 class="text-xl font-semibold">Where the pages are</h2>
-        <p class="mt-3 text-zinc-700">Dedicated pages exist for published places of 10,000 or more residents, including <a class="text-[#ff6b00] font-semibold" href="<?= $h(url('/pages/aov/manchester')) ?>">Manchester</a> and <a class="text-[#ff6b00] font-semibold" href="<?= $h(url('/pages/aov/burnley')) ?>">Burnley</a>. Smaller places are still quoted. They do not get a cloned town URL.</p>
+        <p class="mt-3 text-zinc-700">Dedicated pages exist for the Greater Manchester towns, including <a class="text-[#ff6b00] font-semibold" href="<?= $h(url('/pages/aov/manchester')) ?>">Manchester</a> and <a class="text-[#ff6b00] font-semibold" href="<?= $h(url('/pages/aov/stockport')) ?>">Stockport</a>. Places outside Greater Manchester are still quoted. They do not get a town URL.</p>
     </article>
 </section>
 

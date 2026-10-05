@@ -386,6 +386,8 @@ function icomplyIsGreaterManchesterAreaSlug(string $areaOrSlug): bool
     return $slug !== '' && isset($set[$slug]);
 }
 
+require_once __DIR__ . '/includes/gm-crawl.php';
+
 /**
  * In tiered mode, keyword×area pages, shared area-town templates, and service×town
  * pages without a bespoke article stay live (200) but are not indexable. Area hubs
@@ -1182,7 +1184,7 @@ function getPopularKeywordSlugs(): array {
         'vehicle-barriers', 'rising-arm-barrier', 'parking-barrier', 'access-barrier',
         'barrier-installation', 'car-park-barrier',
         'cctv-installation', 'access-control-system', 'door-entry-system',
-        'car-park-barrier', 'car-park-barrier-manchester', 'car-park-barrier-burnley',
+        'car-park-barrier', 'car-park-barrier-manchester',
         'came-barrier', 'maglock-installation',
         'nurse-call-system', 'landlord-compliance',
         'legionella-risk-assessment', 'legionella-testing', 'water-hygiene-testing',

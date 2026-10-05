@@ -120,6 +120,16 @@ function routerDispatchVirtual(string $path): bool {
         return false;
     }
 
+    if (!function_exists('icomplyNonGmMatrixRedirect')) {
+        require_once __DIR__ . '/gm-crawl.php';
+    }
+    $gmRedirect = icomplyNonGmMatrixRedirect($path);
+    if ($gmRedirect !== null) {
+        header('Location: ' . url($gmRedirect), true, 301);
+        icomplyRequestExit();
+        return true;
+    }
+
     if (!function_exists('icomplyDispatchTownPath')) {
         require_once __DIR__ . '/town-service-pages.php';
     }

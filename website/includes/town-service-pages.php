@@ -525,12 +525,18 @@ function icomplyTownCsrf(): string
 
 function icomplyRenderTownHub(string $family): void
 {
-    $towns = icomplyUkTowns();
+    $towns = array_values(array_filter(
+        icomplyUkTowns(),
+        static function (array $town): bool {
+            return function_exists('icomplyIsGreaterManchesterAreaSlug')
+                && icomplyIsGreaterManchesterAreaSlug((string)($town['slug'] ?? ''));
+        }
+    ));
     $title = $family === 'barriers' ? 'Vehicle barriers by town' : 'AOV and smoke control by town';
     $pageTitle = $title;
     $metaDesc = $family === 'barriers'
-        ? 'CAME partner vehicle-barrier pages for every UK mainland town with population over 10,000. Phone 07517806082.'
-        : 'AOV and smoke-control pages for every UK mainland town with population over 10,000. Phone 07517806082.';
+        ? 'CAME partner vehicle-barrier pages for Greater Manchester. Phone 07517806082.'
+        : 'AOV and smoke-control pages for Greater Manchester. Phone 07517806082.';
     $metaKeywords = $family === 'barriers'
         ? 'CAME barriers, vehicle barriers, car park barrier, UK towns'
         : 'AOV, smoke control, automatic opening vent, UK towns';
@@ -539,9 +545,9 @@ function icomplyRenderTownHub(string $family): void
     $otherLabel = $family === 'barriers' ? 'AOV towns' : 'Barrier towns';
     require SITE_ROOT . '/includes/header.php';
     echo '<section class="max-w-6xl mx-auto px-6 py-16">';
-    echo '<p class="text-sm uppercase tracking-[3px] text-[#ff6b00]">Mainland towns · population over 10,000</p>';
+    echo '<p class="text-sm uppercase tracking-[3px] text-[#ff6b00]">Greater Manchester</p>';
     echo '<h1 class="mt-2 text-4xl md:text-5xl font-semibold tracking-tight">' . htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . '</h1>';
-    echo '<p class="mt-4 text-lg max-w-3xl">iComply publishes one page per mainland town on the ' . count($towns) . '-place list (England, Scotland and Wales, population over 10,000). ';
+    echo '<p class="mt-4 text-lg max-w-3xl">iComply publishes these ' . count($towns) . ' Greater Manchester town pages. ';
     echo $family === 'barriers'
         ? 'CAME is the barrier partner. Other barrier and access manufacturers are listed on every town page.'
         : 'Each town page lists the AOV manufacturers we support, with nameplates and links.';

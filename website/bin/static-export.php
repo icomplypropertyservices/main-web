@@ -304,12 +304,23 @@ exit(0);
  *
  * @return list<string>
  */
+function icomplyExportTownOk(string $slug): bool
+{
+    if (!function_exists('icomplyCrawlTownSlug')) {
+        require_once SITE_ROOT . '/includes/gm-crawl.php';
+    }
+    return icomplyCrawlTownSlug($slug);
+}
+
 function icomplyPopularTownNames(): array
 {
-    $areas = function_exists('getAreas') ? getAreas() : [];
+    if (!function_exists('icomplyCrawlTownNames')) {
+        require_once SITE_ROOT . '/includes/gm-crawl.php';
+    }
+    $areas = icomplyCrawlTownNames();
     $popular = [
-        'Manchester', 'Burnley', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale',
-        'Wigan', 'Liverpool', 'Preston', 'Chester', 'Warrington', 'Blackpool',
+        'Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Rochdale',
+        'Wigan', 'Bury', 'Trafford', 'Tameside',
     ];
     return array_values(array_filter(
         $popular,
@@ -337,7 +348,7 @@ function icomplyCollectKeywordRoutes(string $townMode): array
         return $routes;
     }
 
-    $areas = getAreas();
+    $areas = function_exists('icomplyCrawlTownNames') ? icomplyCrawlTownNames() : getAreas();
     $popularTowns = icomplyPopularTownNames();
     $priorityKw = [];
     if (function_exists('getPopularKeywordSlugs')) {
@@ -445,13 +456,21 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         $routes[] = '/pages/services/' . $slug;
     }
     foreach (getAreas() as $area) {
-        $routes[] = '/pages/areas/' . areaSlug((string)$area);
+        $slug = areaSlug((string)$area);
+        if (!icomplyExportTownOk($slug)) {
+            continue;
+        }
+        $routes[] = '/pages/areas/' . $slug;
     }
     foreach (getManufacturerCatalog() as $slug => $entry) {
         $routes[] = '/pages/manufacturers/' . $slug;
         if (is_array($entry) && function_exists('manufacturerAreasFor')) {
             foreach (manufacturerAreasFor($entry) as $area) {
-                $routes[] = '/pages/manufacturers/' . $slug . '/' . areaSlug((string)$area);
+                $town = areaSlug((string)$area);
+                if (!icomplyExportTownOk($town)) {
+                    continue;
+                }
+                $routes[] = '/pages/manufacturers/' . $slug . '/' . $town;
             }
         }
     }
@@ -475,7 +494,11 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         }
         $areasFor = function_exists('getAreasForService') ? getAreasForService($sSlug) : getAreas();
         foreach ($areasFor as $area) {
-            $routes[] = '/pages/' . $sSlug . '/' . areaSlug((string)$area);
+            $town = areaSlug((string)$area);
+            if (!icomplyExportTownOk($town)) {
+                continue;
+            }
+            $routes[] = '/pages/' . $sSlug . '/' . $town;
         }
     }
     $barriersInc = SITE_ROOT . '/includes/barriers.php';
@@ -484,7 +507,7 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         if (function_exists('barriersPlaces')) {
             foreach (barriersPlaces() as $place) {
                 $slug = (string)($place['slug'] ?? '');
-                if ($slug !== '') {
+                if ($slug !== '' && icomplyExportTownOk($slug)) {
                     $routes[] = '/pages/barriers/' . $slug;
                 }
             }
@@ -495,11 +518,18 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
         require_once SITE_ROOT . '/includes/uk-towns.php';
     }
     foreach (icomplyUkTownRoutes() as $townPath) {
+        if (preg_match('#^/pages/(?:aov|barriers)/([a-z0-9\-]+)$#', (string)$townPath, $townMatch)
+            && !icomplyExportTownOk($townMatch[1])) {
+            continue;
+        }
         $routes[] = $townPath;
     }
     require_once SITE_ROOT . '/includes/aov-place.php';
     $routes[] = '/pages/aov';
     foreach (array_keys(aovPlaces()) as $slug) {
+        if (!icomplyExportTownOk((string)$slug)) {
+            continue;
+        }
         $routes[] = '/pages/aov/' . $slug;
     }
     if (!function_exists('icomplyGmServiceTownRoutes')) {
@@ -513,7 +543,7 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
     if (function_exists('getMainlandAreaRecords')) {
         foreach (getMainlandAreaRecords() as $row) {
             $slug = (string)($row['slug'] ?? '');
-            if ($slug !== '') {
+            if ($slug !== '' && icomplyExportTownOk($slug)) {
                 $routes[] = '/pages/fire-risk-assessments/' . $slug;
             }
         }
@@ -522,7 +552,7 @@ function icomplyCollectExportRoutes(bool $full, string $keywordTowns = 'priority
     if (function_exists('getNationwideAreaRows')) {
         foreach (getNationwideAreaRows() as $row) {
             $slug = (string)($row['slug'] ?? '');
-            if ($slug !== '') {
+            if ($slug !== '' && icomplyExportTownOk($slug)) {
                 $routes[] = '/pages/nurse-call/' . $slug;
             }
         }
@@ -549,6 +579,9 @@ function icomplyRenderExportRoute(string $path): array
         return icomplyRenderRoute($path);
     }
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        if (!icomplyExportTownOk($m[2])) {
+            return ['html' => '', 'status' => 301];
+        }
         $kwMeta = function_exists('getMajorKeywords') ? (getMajorKeywords()[function_exists('keywordSlug') ? keywordSlug($m[1]) : $m[1]] ?? null) : null;
         if (is_array($kwMeta) && ($kwMeta['service'] ?? '') === 'barriers') {
             return icomplyRenderRoute($path);
@@ -563,6 +596,9 @@ function icomplyRenderExportRoute(string $path): array
         && $m[1] !== 'barriers'
         && function_exists('getServices')
         && isset(getServices()[$m[1]])) {
+        if (!icomplyExportTownOk($m[2])) {
+            return ['html' => '', 'status' => 301];
+        }
         $area = function_exists('areaFromSlug') ? areaFromSlug($m[2]) : $m[2];
         $html = icomplyRenderServiceAreaHtml($m[1], (string)($area ?: $m[2]));
         if ($html !== '' && icomplyLooksLikeHtml($html)) {
@@ -830,8 +866,13 @@ function icomplyPublishDistSitemap(string $websiteRoot, string $dist, callable $
     }
     require_once $matrixFile;
     $stats = icomplyPublishTownMatrix($dist, $entries, $log);
-    if (($stats['sitemap_urls'] ?? 0) < 1000000) {
-        fwrite(STDERR, 'Town matrix sitemap has ' . ($stats['sitemap_urls'] ?? 0) . " URLs, under 1000000\n");
+    $gmTowns = function_exists('icomplyCrawlTownNames') ? count(icomplyCrawlTownNames()) : 60;
+    $places = (int)($stats['places'] ?? 0);
+    $keywords = (int)($stats['keywords'] ?? 0);
+    $keywordTown = (int)($stats['keyword_town_urls'] ?? 0);
+    if ($gmTowns !== 60 || $places !== $gmTowns || $keywords < 1 || $keywordTown !== $keywords * $places) {
+        fwrite(STDERR, 'Town matrix must be every keyword × the 60 Greater Manchester towns'
+            . " (places={$places} keywords={$keywords} keyword×town={$keywordTown})\n");
         return false;
     }
     return true;
