@@ -30,6 +30,8 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 }
 require_once $root . '/config.php';
 require_once $root . '/includes/router.php';
+require_once $root . '/includes/sitemap.php';
+require_once $root . '/includes/matrix-catalogue.php';
 
 $opts = getopt('', ['seo-dir::', 'sample::']);
 $seoDir = (string)($opts['seo-dir'] ?? '/workspace/icomply-ops/seo');
@@ -269,9 +271,63 @@ foreach ($targets as $slug) {
     }
 }
 
+// 7. DEEP wins the canonical (SEO ruling 2026-10-06): overlapping job hubs 301 to the DEEP keyword hub.
+$jobMap = icomplyAovBarriersDeepJobRedirects();
+$jobDoc = json_decode((string)file_get_contents($root . '/data/aov-barriers-deep-job-redirects.json'), true) ?: [];
+$ok(count($jobMap) === 18, 'job→DEEP redirect map has 18 overlaps (got ' . count($jobMap) . ')');
+$ok(($jobMap['car-park-barrier'] ?? '') === 'car-park-barrier', 'main /pages/jobs/car-park-barrier → DEEP car-park-barrier');
+foreach (['came-gard-gt4', 'came-gard-gt4-installation', 'addressable-fire-alarm-installation', 'conventional-fire-alarm-installation'] as $keptJob) {
+    $ok(!isset($jobMap[$keptJob]), "{$keptJob} is not an AOV/barrier DEEP overlap and keeps its job URL");
+}
+$redirectTxt = (string)shell_exec(escapeshellarg(PHP_BINARY) . ' ' . escapeshellarg($root . '/bin/static-export.php') . ' --print-redirects 2>/dev/null');
+$ok(str_contains($redirectTxt, '/*                       /:splat.php'), '_redirects printed');
+$splatAt = strpos($redirectTxt, "\n/*  ");
+$sitemapPaths = array_fill_keys(array_map(static fn(array $e): string => (string)$e['path'], icomplySitemapEntries()), true);
+$matrixJobs = icomplyMatrixJobRecords();
+$jobTownChecked = 0;
+foreach ($jobMap as $job => $keyword) {
+    $ok(icomplyAovBarriersDeepIsP0($keyword), "{$job} target {$keyword} is a DEEP P0 hub");
+    $ok(icomplyAovBarriersDeepJobRedirectPath('/pages/jobs/' . $job) === '/pages/keywords/' . $keyword, "/pages/jobs/{$job} 301 → /pages/keywords/{$keyword}");
+    $ok(icomplyAovBarriersDeepJobRedirectPath('/pages/jobs/' . $job . '/') === '/pages/keywords/' . $keyword, "/pages/jobs/{$job}/ 301 → hub");
+    $gmOnlyKw = icomplyAovBarriersDeepGmOnly($keyword);
+    $ok(icomplyAovBarriersDeepJobRedirectPath('/pages/jobs/' . $job . '/stockport') === '/pages/keywords/' . $keyword . '/stockport', "{$job}/stockport → keyword×town");
+    $ok(icomplyAovBarriersDeepJobRedirectPath('/pages/jobs/' . $job . '/glasgow') === '/pages/keywords/' . $keyword . ($gmOnlyKw ? '' : '/glasgow'), "{$job}/glasgow → " . ($gmOnlyKw ? 'hub (GM-only head)' : 'keyword×town'));
+    $ok(icomplyAovBarriersDeepJobRedirectPath('/pages/jobs/' . $job . '/not-a-real-town-zz') === '/pages/keywords/' . $keyword, "{$job}/unknown town → keyword hub");
+    $jobTownChecked += 3;
+    $hubLine = (bool)preg_match('#^/pages/jobs/' . preg_quote($job, '#') . '\s+/pages/keywords/' . preg_quote($keyword, '#') . '\s+301!$#m', $redirectTxt, $hm, PREG_OFFSET_CAPTURE);
+    $ok($hubLine, "_redirects has /pages/jobs/{$job} → /pages/keywords/{$keyword} 301!");
+    $ok($hubLine && $splatAt !== false && $hm[0][1] < $splatAt, "_redirects {$job} rule precedes the splat");
+    $ok((bool)preg_match('#^/pages/jobs/' . preg_quote($job, '#') . '/:town\s+/pages/keywords/' . preg_quote($keyword, '#') . '/:town\s+301!$#m', $redirectTxt), "_redirects has {$job}/:town → keyword×town");
+    $ok(!isset($sitemapPaths['/pages/jobs/' . $job]), "sitemap omits /pages/jobs/{$job}");
+    $ok(!isset($matrixJobs[$job]), "job×town catalogue omits {$job}");
+    if (($jobDoc['jobs'][$job]['source'] ?? '') === 'main') {
+        $ok(!is_file($root . '/pages/jobs/' . $job . '.php'), "main job page source removed for {$job}");
+    }
+}
+preg_match_all('#^(/pages/jobs/[^\s]+)\s#m', $redirectTxt, $jobRuleFroms);
+$ok(count($jobRuleFroms[1]) === count(array_unique($jobRuleFroms[1])), '_redirects has one rule per job URL (no duplicate from #114 W1a lines)');
+$ok(icomplyAovBarriersDeepJobRedirectPath('/pages/jobs/came-gard-gt4') === null && icomplyAovBarriersDeepJobRedirectPath('/pages/jobs/eicr/stockport') === null, 'non-overlap jobs untouched');
+$ok(isset($sitemapPaths['/pages/jobs/came-gard-gt4']), 'sitemap keeps /pages/jobs/came-gard-gt4');
+$ok(isset($sitemapPaths['/pages/keywords/car-park-barrier']), 'sitemap lists the canonical /pages/keywords/car-park-barrier');
+$ok(count($sitemapPaths) === count(icomplySitemapEntries()), 'compact sitemap entries are unique');
+$linkLeaks = [];
+foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($root, FilesystemIterator::SKIP_DOTS)) as $srcFile) {
+    $srcPath = (string)$srcFile;
+    if (!str_ends_with($srcPath, '.php') || str_contains($srcPath, '/bin/') || str_contains($srcPath, '/includes/aov-barriers-deep.php')) {
+        continue;
+    }
+    $src = (string)file_get_contents($srcPath);
+    foreach (array_keys($jobMap) as $job) {
+        if (preg_match('#/pages/jobs/' . preg_quote($job, '#') . '(?![a-z0-9-])#', $src)) {
+            $linkLeaks[] = substr($srcPath, strlen($root)) . ' → ' . $job;
+        }
+    }
+}
+$ok($linkLeaks === [], 'no internal links to redirected job URLs' . ($linkLeaks ? ': ' . implode(', ', array_slice($linkLeaks, 0, 5)) : ''));
+
 echo ($fail === 0 ? 'PASS' : 'FAIL') . " ({$pass} pass, {$fail} fail)\n";
 printf(
-    "hubs=%d aov=%d barrier=%d gm60=%d min_prose_words=%d min_body_words=%d min_town_words=%d max_jaccard=%.2f extra_town_paths=%d hubs_rendered=%d\n",
-    count($slugs), $lines['aov'], $lines['barrier'], count($gmOnly), $minWords, $minBody, $townWords, $maxJ, count($extra), $rendered
+    "hubs=%d aov=%d barrier=%d gm60=%d min_prose_words=%d min_body_words=%d min_town_words=%d max_jaccard=%.2f extra_town_paths=%d hubs_rendered=%d job_301s=%d\n",
+    count($slugs), $lines['aov'], $lines['barrier'], count($gmOnly), $minWords, $minBody, $townWords, $maxJ, count($extra), $rendered, count($jobMap)
 );
 exit($fail === 0 ? 0 : 1);

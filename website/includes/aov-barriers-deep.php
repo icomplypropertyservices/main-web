@@ -223,6 +223,106 @@ function icomplyAovBarriersDeepExtraTownPaths(array $gmPlaces = []): array
     return $paths;
 }
 
+/**
+ * SEO ruling 2026-10-06: the DEEP keyword slug wins the canonical. Job hubs that
+ * overlap a DEEP hub (main's /pages/jobs/car-park-barrier and the #114 W1a job hubs)
+ * 301 to the matching keyword hub. Map: data/aov-barriers-deep-job-redirects.json.
+ *
+ * @return array<string,string> job slug => DEEP keyword slug
+ */
+function icomplyAovBarriersDeepJobRedirects(): array
+{
+    static $map = null;
+    if ($map !== null) {
+        return $map;
+    }
+    $map = [];
+    $root = defined('SITE_ROOT') ? SITE_ROOT : dirname(__DIR__);
+    $file = $root . '/data/aov-barriers-deep-job-redirects.json';
+    $decoded = is_file($file) ? json_decode((string)file_get_contents($file), true) : null;
+    foreach ((array)($decoded['jobs'] ?? []) as $job => $row) {
+        $job = icomplyAovBarriersDeepNormalise((string)$job);
+        $keyword = icomplyAovBarriersDeepNormalise((string)(is_array($row) ? ($row['keyword'] ?? '') : $row));
+        if ($job !== '' && $keyword !== '' && icomplyAovBarriersDeepIsP0($keyword)) {
+            $map[$job] = $keyword;
+        }
+    }
+    return $map;
+}
+
+/** DEEP keyword slug that a job slug 301s to, or null when the job hub stays. */
+function icomplyAovBarriersDeepJobTarget(string $jobSlug): ?string
+{
+    return icomplyAovBarriersDeepJobRedirects()[icomplyAovBarriersDeepNormalise($jobSlug)] ?? null;
+}
+
+/** True when /pages/keywords/{keyword}/{town} is a live 200 page (DEEP town rules or dual-ring matrix). */
+function icomplyAovBarriersDeepKeywordTownExists(string $keywordSlug, string $townSlug): bool
+{
+    if (icomplyAovBarriersDeepKeepsTown($keywordSlug, $townSlug)) {
+        return true;
+    }
+    if (icomplyAovBarriersDeepGmOnly($keywordSlug)) {
+        return false;
+    }
+    if (!function_exists('icomplyLocalTownSlug')) {
+        $gm = (defined('SITE_ROOT') ? SITE_ROOT : dirname(__DIR__)) . '/includes/gm-crawl.php';
+        if (is_file($gm)) {
+            require_once $gm;
+        }
+    }
+    return function_exists('icomplyLocalTownSlug') && icomplyLocalTownSlug($townSlug);
+}
+
+/**
+ * 301 target for an overlapping job URL: /pages/jobs/{job} → /pages/keywords/{kw};
+ * /pages/jobs/{job}/{town} → /pages/keywords/{kw}/{town} where that town page exists,
+ * else the keyword hub. Null for every other path.
+ */
+function icomplyAovBarriersDeepJobRedirectPath(string $path): ?string
+{
+    $path = rtrim($path, '/');
+    if (!preg_match('#^/pages/jobs/([a-z0-9\-]+)(?:/([a-z0-9\-]+))?$#', $path, $m)) {
+        return null;
+    }
+    $keyword = icomplyAovBarriersDeepJobTarget($m[1]);
+    if ($keyword === null) {
+        return null;
+    }
+    $town = (string)($m[2] ?? '');
+    if ($town !== '' && icomplyAovBarriersDeepKeywordTownExists($keyword, $town)) {
+        return '/pages/keywords/' . $keyword . '/' . $town;
+    }
+    return '/pages/keywords/' . $keyword;
+}
+
+/**
+ * Netlify _redirects lines for the overlapping job hubs (hub + job×town, forced 301).
+ * Skips a hub line that the #114 W1a helper already writes with the same target, so a
+ * merged tree never carries two rules for one URL. The edge function issues the
+ * job×town 301 first (it also knows which keyword×town pages exist); the :town line
+ * here is the static fallback.
+ */
+function icomplyAovBarriersDeepJobRedirectLines(): string
+{
+    $w1aFile = (defined('SITE_ROOT') ? SITE_ROOT : dirname(__DIR__)) . '/includes/nationwide-p0-jobs.php';
+    if (!function_exists('nationwideP0KeywordRedirect') && is_file($w1aFile)) {
+        require_once $w1aFile;
+    }
+    $lines = "# AOV + Barriers DEEP wins the canonical: overlapping job hubs → DEEP keyword hub (SEO ruling 2026-10-06).\n";
+    foreach (icomplyAovBarriersDeepJobRedirects() as $job => $keyword) {
+        $target = '/pages/keywords/' . $keyword;
+        $w1a = function_exists('nationwideP0KeywordRedirect') ? nationwideP0KeywordRedirect($job) : null;
+        if ($w1a !== $target) {
+            $lines .= "/pages/jobs/{$job}    {$target}    301!\n";
+            $lines .= "/pages/jobs/{$job}/   {$target}    301!\n";
+        }
+        $lines .= "/pages/jobs/{$job}/:town    {$target}/:town    301!\n";
+        $lines .= "/pages/jobs/{$job}/:town/   {$target}/:town    301!\n";
+    }
+    return $lines . "\n";
+}
+
 function icomplyAovBarriersDeepParentPaths(string $service): array
 {
     return $service === 'aov-air-handling'

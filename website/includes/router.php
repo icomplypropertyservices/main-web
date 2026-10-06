@@ -358,6 +358,14 @@ function routerHandleRequest(): void {
         require_once __DIR__ . '/live-404-redirects.php';
     }
     $legacyAliases = array_merge($legacyAliases, icomplyLive404Redirects());
+    // AOV + Barriers DEEP wins the canonical: overlapping job hubs and job×town 301 to the DEEP keyword URL.
+    if (!function_exists('icomplyAovBarriersDeepJobRedirectPath')) {
+        require_once __DIR__ . '/aov-barriers-deep.php';
+    }
+    $deepJobTo = icomplyAovBarriersDeepJobRedirectPath($path);
+    if ($deepJobTo !== null && !isset($legacyAliases[$path])) {
+        $legacyAliases[$path] = $deepJobTo;
+    }
     if (isset($legacyAliases[$path])) {
         header('Location: ' . url($legacyAliases[$path]), true, 301);
         icomplyRequestExit();

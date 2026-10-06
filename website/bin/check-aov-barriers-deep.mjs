@@ -2,9 +2,10 @@
  * AOV + Barriers DEEP P0 — edge ×town renderer checks (netlify/lib/aov-barriers-deep.js).
  * Lock: icomply-ops/seo/AOV-BARRIERS-DEEP-LOCK-2026-10-05.md (manual + width/height; no wind theme).
  */
-import { nonGmMatrixRedirect } from "../../netlify/edge-functions/town-matrix.js";
+import townMatrix, { nonGmMatrixRedirect } from "../../netlify/edge-functions/town-matrix.js";
 import { p0KeepsTown, renderNationwideP0Town } from "../../netlify/lib/nationwide-p0.js";
-import { aovBarriersDeepGmOnly, aovBarriersDeepSlugs } from "../../netlify/lib/aov-barriers-deep.js";
+import { aovBarriersDeepGmOnly, aovBarriersDeepJobRedirect, aovBarriersDeepJobTarget, aovBarriersDeepSlugs } from "../../netlify/lib/aov-barriers-deep.js";
+import jobRedirectDoc from "../data/aov-barriers-deep-job-redirects.json" with { type: "json" };
 
 let fail = 0;
 let pass = 0;
@@ -58,6 +59,30 @@ for (const slug of slugs) {
   ok(!timingRe.test(text), `${label} no attendance-time promise`);
   ok(!/£\s*\d/.test(text), `${label} no £`);
   ok(text.includes("17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"), `${label} NAP`);
+}
+
+// DEEP wins the canonical (SEO ruling 2026-10-06): job hubs + job×town 301 at the edge.
+const jobs = Object.entries(jobRedirectDoc.jobs || {});
+ok(jobs.length === 18, `18 job→DEEP overlaps (got ${jobs.length})`);
+for (const [job, row] of jobs) {
+  const kw = row.keyword;
+  ok(aovBarriersDeepJobTarget(job) === kw && slugs.includes(kw), `${job} → DEEP ${kw}`);
+  ok(aovBarriersDeepJobRedirect(`/pages/jobs/${job}`) === `/pages/keywords/${kw}`, `${job} hub → keyword hub`);
+  const gmOnly = aovBarriersDeepGmOnly(kw);
+  ok(aovBarriersDeepJobRedirect(`/pages/jobs/${job}/bolton`) === `/pages/keywords/${kw}/bolton`, `${job}/bolton → keyword×town`);
+  ok(aovBarriersDeepJobRedirect(`/pages/jobs/${job}/glasgow`) === `/pages/keywords/${kw}${gmOnly ? "" : "/glasgow"}`, `${job}/glasgow → ${gmOnly ? "hub" : "keyword×town"}`);
+  ok(aovBarriersDeepJobRedirect(`/pages/jobs/${job}/belfast`) === `/pages/keywords/${kw}`, `${job}/belfast (no town page) → keyword hub`);
+}
+ok(aovBarriersDeepJobRedirect("/pages/jobs/came-gard-gt4/stockport") === null, "came-gard-gt4 job×town untouched");
+const fakeContext = { next: () => new Response("next", { status: 200 }) };
+for (const [path, want] of [
+  ["/pages/jobs/car-park-barrier/stockport", "/pages/keywords/car-park-barrier/stockport"],
+  ["/pages/jobs/car-park-barrier/burnley/", "/pages/keywords/car-park-barrier/burnley"],
+  ["/pages/jobs/car-park-barrier/belfast", "/pages/keywords/car-park-barrier"],
+  ["/pages/jobs/aov-service/leeds", "/pages/keywords/aov-service/leeds"],
+]) {
+  const res = await townMatrix(new Request(`https://icomplypropertyservices.co.uk${path}`), fakeContext);
+  ok(res.status === 301 && new URL(res.headers.get("location")).pathname === want, `edge ${path} 301 → ${want} (got ${res.status} ${res.headers.get("location")})`);
 }
 
 console.log(fail === 0 ? `PASS (${pass} pass, 0 fail)` : `FAIL (${pass} pass, ${fail} fail)`);

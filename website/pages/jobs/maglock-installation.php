@@ -30,7 +30,7 @@ renderJobArticle([
     'links' => [
         ['/pages/services/access-control', 'Access control'],
         ['/pages/services/door-entry', 'Door entry'],
-        ['/pages/jobs/car-park-barrier', 'Car park barriers'],
+        ['/pages/keywords/car-park-barrier', 'Car park barriers'],
         ['/pages/services/fire-alarms', 'Fire alarms'],
         ['/pages/keywords/access-control-installation', 'Access control installation'],
     ],

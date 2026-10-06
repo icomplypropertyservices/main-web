@@ -486,7 +486,7 @@ function accessControlLaneHubSection(string $context): string
         'Burnley' => 'Burnley uses the same job pages. A town name does not change the survey or create a second price.',
     ];
     $published = [
-        '/pages/jobs/car-park-barrier' => 'Car park barriers',
+        '/pages/keywords/car-park-barrier' => 'Car park barriers',
         '/pages/jobs/came-gard-gt4' => 'CAME Gard GT4',
         '/pages/jobs/maglock-installation' => 'Maglock installation',
         '/pages/services/door-entry' => 'Door entry',
@@ -531,7 +531,7 @@ function accessControlLaneHubSection(string $context): string
         . '<div class="lg:col-span-3 grid md:grid-cols-2 gap-4">' . $cards . '</div>'
         . '</div>'
         . '<div class="mt-8 flex flex-wrap gap-3 text-sm">'
-        . '<a class="px-4 py-2 rounded-full bg-white text-[#0B1F3A] font-semibold" href="' . $h(url('/pages/jobs/car-park-barrier')) . '">Car park barriers</a>'
+        . '<a class="px-4 py-2 rounded-full bg-white text-[#0B1F3A] font-semibold" href="' . $h(url('/pages/keywords/car-park-barrier')) . '">Car park barriers</a>'
         . '<a class="px-4 py-2 rounded-full border border-white/30 font-semibold" href="' . $h(url('/pages/jobs/maglock-installation')) . '">Maglock installation</a>'
         . '<a class="px-4 py-2 rounded-full border border-white/30 font-semibold" href="' . $h(url('/pages/services/door-entry.php')) . '">Door entry</a>'
         . '<a class="px-4 py-2 rounded-full border border-white/30 font-semibold" href="#quote">POA quote</a>'
@@ -560,7 +560,7 @@ function accessControlLaneKeywordStrip(string $slug, string $area = ''): string
         : 'Barriers are the hardest job on this lane. This page sits beside that work.';
 
     $links = [
-        '/pages/jobs/car-park-barrier' => 'Car park barriers',
+        '/pages/keywords/car-park-barrier' => 'Car park barriers',
         '/pages/jobs/came-gard-gt4' => 'CAME Gard GT4',
         '/pages/jobs/maglock-installation' => 'Maglocks',
         '/pages/services/door-entry' => 'Door entry',

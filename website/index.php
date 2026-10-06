@@ -123,7 +123,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             <a class="px-4 py-2 rounded-full bg-[#ff6b00] font-semibold" href="<?= url('/pages/services/barriers.php') ?>">Barriers hub</a>
             <a class="px-4 py-2 rounded-full bg-white text-[#0B1F3A] font-semibold" href="<?= url('/pages/services/aov-air-handling.php') ?>">AOV &amp; smoke control</a>
             <a class="px-4 py-2 rounded-full border border-white/30 font-semibold" href="<?= url('/pages/manufacturers/came.php') ?>">Came partner</a>
-            <a class="px-4 py-2 rounded-full border border-white/30 font-semibold" href="<?= url('/pages/jobs/car-park-barrier') ?>">Car park barriers</a>
+            <a class="px-4 py-2 rounded-full border border-white/30 font-semibold" href="<?= url('/pages/keywords/car-park-barrier') ?>">Car park barriers</a>
             <a class="px-4 py-2 rounded-full border border-white/30 font-semibold" href="<?= url('/pages/jobs/came-gard-gt4') ?>">CAME Gard GT4</a>
         </div>
     </div>

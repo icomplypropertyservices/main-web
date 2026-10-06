@@ -8,7 +8,8 @@
  */
 import pack from "../../website/data/aov-barriers-deep-p0.json" with { type: "json" };
 import townDoc from "../../website/data/uk-top5000-towns.json" with { type: "json" };
-import { gmTownName, isGmTown } from "./link-blocks.js";
+import jobRedirectDoc from "../../website/data/aov-barriers-deep-job-redirects.json" with { type: "json" };
+import { gmTownName, isGmTown, isLocalTown } from "./link-blocks.js";
 
 const HUBS = new Map((pack.hubs || []).map((hub) => [hub.slug, hub]));
 const KEYWORDS = pack.keywords || {};
@@ -36,6 +37,35 @@ export function aovBarriersDeepKeepsTown(keyword, town) {
   if (!HUBS.has(keyword)) return false;
   if (aovBarriersDeepGmOnly(keyword)) return isGmTown(town);
   return TOWNS.has(town) || isGmTown(town);
+}
+
+// SEO ruling 2026-10-06: the DEEP keyword slug wins the canonical. Overlapping job
+// hubs (main car-park-barrier, #114 W1a) 301 to the DEEP keyword hub; job×town 301s to
+// keyword×town where that town page exists, else to the keyword hub. Twin of
+// icomplyAovBarriersDeepJobRedirectPath() in website/includes/aov-barriers-deep.php.
+const JOB_REDIRECTS = new Map(
+  Object.entries(jobRedirectDoc.jobs || {})
+    .map(([job, row]) => [job, row && row.keyword])
+    .filter(([job, keyword]) => job && keyword && HUBS.has(keyword)),
+);
+
+export function aovBarriersDeepJobTarget(job) {
+  return JOB_REDIRECTS.get(job) || null;
+}
+
+export function aovBarriersDeepKeywordTownExists(keyword, town) {
+  if (aovBarriersDeepKeepsTown(keyword, town)) return true;
+  if (aovBarriersDeepGmOnly(keyword)) return false;
+  return isLocalTown(town);
+}
+
+export function aovBarriersDeepJobRedirect(path) {
+  const m = String(path).replace(/\/+$/, "").match(/^\/pages\/jobs\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?$/);
+  if (!m) return null;
+  const keyword = aovBarriersDeepJobTarget(m[1]);
+  if (!keyword) return null;
+  if (m[2] && aovBarriersDeepKeywordTownExists(keyword, m[2])) return `/pages/keywords/${keyword}/${m[2]}`;
+  return `/pages/keywords/${keyword}`;
 }
 
 function escapeHtml(value) {

@@ -511,6 +511,16 @@ function icomplySitemapEntries(): array
         }
     }
 
+    // AOV + Barriers DEEP wins the canonical (SEO ruling 2026-10-06): overlapping job
+    // hubs 301 to the DEEP keyword hub, so their job URLs never appear in the sitemap.
+    if (!function_exists('icomplyAovBarriersDeepJobRedirectPath')) {
+        require_once SITE_ROOT . '/includes/aov-barriers-deep.php';
+    }
+    $entries = array_values(array_filter(
+        $entries,
+        static fn(array $entry): bool => icomplyAovBarriersDeepJobRedirectPath((string)($entry['path'] ?? '')) === null
+    ));
+
     return $entries;
 }
 
@@ -641,7 +651,8 @@ function icomplyWriteSitemapEdgeFunctions(string $xml, string $robots): void
     // This module has no path config, so it cannot shadow that file.
     if (strlen($xml) > 200000) {
         file_put_contents($dir . '/sitemap.js', <<<'JS'
-// Static sitemap.xml is the published urlset. No path config on purpose.
+// Static sitemap.xml is served as a file: a sharded sitemap index in dist (sitemap0..N.xml,
+// <=45,000 URLs each). No path config on purpose, so this module never shadows it.
 export default async () => new Response('', { status: 204 });
 JS);
         file_put_contents($dir . '/robots.js', <<<JS
