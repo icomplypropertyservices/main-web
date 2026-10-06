@@ -10,6 +10,7 @@ import { renderVariantPage, renderVariantSitemap } from "../lib/variant-matrix.j
 import { breadcrumbHtml, isGmTown, isLocalTown, matrixRelatedHtml } from "../lib/link-blocks.js";
 import { gmTownBlurb } from "../lib/gm-blurbs.js";
 import { p0KeepsTown, renderNationwideP0Town } from "../lib/nationwide-p0.js";
+import { isMarginDeep, marginDeepKeepsTown, marginDeepRedirect, renderMarginDeepTown } from "../lib/margin-deep.js";
 import { thinFaqHtml, thinFaqs, thinImages, thinOgMeta, thinProseHtml } from "../lib/thin-quality-bar.js";
 import fireAlarmFamily from "../../website/data/fire-alarm-installer-family.json" with { type: "json" };
 import mainlandTownDoc from "../../website/data/uk-mainland-towns-10k.json" with { type: "json" };
@@ -604,6 +605,8 @@ function placeAliasRedirect(path) {
 export function nonGmMatrixRedirect(path) {
   let m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   if (m) {
+    // Margin DEEP hubs: dual-ring 269 (manufacturer heads: GM core 60 only).
+    if (isMarginDeep(m[1])) return marginDeepKeepsTown(m[1], m[2]) ? null : `/pages/keywords/${m[1]}`;
     if (isLocalTown(m[2]) || p0KeepsTown(m[1], m[2]) || fireInstallerNationwide(m[1], m[2])) return null;
     return `/pages/keywords/${m[1]}`;
   }
@@ -621,6 +624,10 @@ export function nonGmMatrixRedirect(path) {
 export default async (request, context) => {
   const url = new URL(request.url);
   const path = url.pathname.replace(/\/+$/, "") || "/";
+  const deepTo = marginDeepRedirect(path);
+  if (deepTo) {
+    return Response.redirect(new URL(deepTo, url.origin).toString(), 301);
+  }
   const aliasTo = placeAliasRedirect(path);
   if (aliasTo) {
     return Response.redirect(new URL(aliasTo, url.origin).toString(), 301);
@@ -716,7 +723,10 @@ export default async (request, context) => {
       closeQPages,
     });
   } else if (keywordMatch) {
-    if (p0KeepsTown(keywordMatch[1], keywordMatch[2])) {
+    if (isMarginDeep(keywordMatch[1])) {
+      rendered = renderMarginDeepTown(keywordMatch[1], keywordMatch[2]);
+    }
+    if (!rendered && p0KeepsTown(keywordMatch[1], keywordMatch[2])) {
       rendered = renderNationwideP0Town(keywordMatch[1], keywordMatch[2]);
     }
     if (!rendered) {

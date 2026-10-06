@@ -582,6 +582,12 @@ function icomplyRenderExportRoute(string $path): array
         return icomplyRenderRoute($path);
     }
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        if (function_exists('icomplyMarginDeepTownPage') && icomplyMarginDeepIsP0($m[1])) {
+            $deepPage = icomplyMarginDeepTownPage($m[1], $m[2]);
+            if ($deepPage !== null) {
+                return ['html' => $deepPage['html'], 'status' => 200];
+            }
+        }
         if (function_exists('icomplyNationwide3lineIndexablePath') && icomplyNationwide3lineIndexablePath($path)) {
             ob_start();
             icomplyNationwide3lineRenderTown($m[1], $m[2]);
@@ -849,7 +855,14 @@ function icomplyCopyDir(string $src, string $dest): void
 
 function icomplyWriteDistRedirects(string $dist): void
 {
-    file_put_contents($dist . '/_redirects', icomplyPrettyUrlRedirects());
+    $redirects = icomplyPrettyUrlRedirects();
+    // Margin DEEP: job hubs superseded by a DEEP keyword hub (forced — the old HTML may still exist).
+    foreach ((function_exists('icomplyMarginDeepPacks') ? icomplyMarginDeepPacks() : []) as $deepDoc) {
+        foreach ((array)($deepDoc['redirects'] ?? []) as $deepFrom => $deepTarget) {
+            $redirects .= $deepFrom . '    ' . $deepTarget . '    301!' . "\n";
+        }
+    }
+    file_put_contents($dist . '/_redirects', $redirects);
 }
 
 function icomplyWriteDistHeaders(string $dist): void

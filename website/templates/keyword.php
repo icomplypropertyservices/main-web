@@ -31,6 +31,12 @@ $relatedSlug = $RELATED_SLUG;
 $relatedName = $RELATED_NAME;
 $allAreas = function_exists('icomplyLocalTownNames') ? icomplyLocalTownNames() : getAreas();
 $allServices = getServices();
+// Margin DEEP hubs: POA only; town pages are the dual-ring 269 (manufacturer heads: GM core 60).
+$marginDeep = function_exists('icomplyMarginDeepIsP0') && icomplyMarginDeepIsP0((string)$keywordSlug);
+if ($marginDeep) {
+    $poaService = true;
+    $allAreas = icomplyMarginDeepTownNames((string)$keywordSlug);
+}
 $top5000Towns = [];
 if ($nationwideP0 && function_exists('icomplyTop5000Towns')) {
     $top5000Towns = icomplyTop5000Towns();
@@ -191,6 +197,8 @@ if (function_exists('accessControlLaneKeywordStrip')) {
                     <?php endforeach; ?>
                     <?php if ($nationwideP0): ?>
                     <p class="mt-4 text-base text-zinc-900 leading-relaxed">Workshop: 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Quotes are price on application. iComply does not claim BAFE or NSI badges.</p>
+                    <?php elseif ($marginDeep): ?>
+                    <p class="mt-4 text-base text-zinc-900 leading-relaxed">Workshop: 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Phone or WhatsApp <a href="https://wa.me/447517806082" class="font-bold text-[#ff6b00] hover:underline">07517 806082</a> or email <a href="mailto:info@icomplypropertyservices.co.uk" class="font-bold text-[#ff6b00] hover:underline">info@icomplypropertyservices.co.uk</a>. Every quote is price on application.</p>
                     <?php elseif ($fireInstallerFamily): ?>
                     <p class="mt-4 text-base text-zinc-900 leading-relaxed">Workshop: 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Design, installation and commissioning follow BS 5839. Quotes are price on application.</p>
                     <?php endif; ?>
@@ -227,7 +235,9 @@ if (function_exists('accessControlLaneKeywordStrip')) {
 <?php
 require_once SITE_ROOT . '/includes/quality-bar.php';
 echo '<section class="max-w-7xl mx-auto px-6 py-10">';
-echo icomplyQualityBarImages((string)$serviceSlug, (string)$keywordName, 'q2-hub-images')['html'];
+echo $marginDeep
+    ? icomplyMarginDeepImageFigure((string)$keywordSlug, (string)$keywordName)
+    : icomplyQualityBarImages((string)$serviceSlug, (string)$keywordName, 'q2-hub-images')['html'];
 echo '</section>';
 ?>
 

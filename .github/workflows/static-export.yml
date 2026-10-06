@@ -63,6 +63,11 @@ jobs:
           SITE_URL: https://icomplypropertyservices.co.uk
         run: php website/bin/check-fire-alarm-installer.php && node website/bin/check-fire-alarm-installer-xtown.mjs
 
+      - name: Margin DEEP packs
+        env:
+          SITE_URL: https://icomplypropertyservices.co.uk
+        run: php website/bin/check-margin-deep.php --sample=12 && node website/bin/check-margin-deep.mjs && python3 website/bin/check-margin-deep-sim.py
+
       - name: Static export
         env:
           SITE_URL: https://icomplypropertyservices.co.uk

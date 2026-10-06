@@ -123,6 +123,12 @@ function routerDispatchVirtual(string $path): bool {
     if (!function_exists('icomplyNonGmMatrixRedirect')) {
         require_once __DIR__ . '/gm-crawl.php';
     }
+    // Margin DEEP: older job URLs that a DEEP keyword hub supersedes 301 to it.
+    if (function_exists('icomplyMarginDeepRedirect') && ($deepTo = icomplyMarginDeepRedirect($path)) !== null) {
+        header('Location: ' . url($deepTo), true, 301);
+        icomplyRequestExit();
+        return true;
+    }
     $gmRedirect = icomplyNonGmMatrixRedirect($path);
     if ($gmRedirect !== null) {
         header('Location: ' . url($gmRedirect), true, 301);
@@ -157,6 +163,10 @@ function routerDispatchVirtual(string $path): bool {
 
     // /pages/keywords/{kw}/{area}
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        if (function_exists('icomplyMarginDeepIsP0') && icomplyMarginDeepIsP0($m[1])) {
+            icomplyMarginDeepRenderTown($m[1], $m[2]);
+            return true;
+        }
         if (function_exists('icomplyNationwide3lineIsP0')
             && icomplyNationwide3lineIsP0($m[1])
             && function_exists('icomplyNationwide3lineIndexablePath')

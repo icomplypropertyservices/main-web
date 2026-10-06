@@ -1,0 +1,105 @@
+"""Fencing DEEP cores: timber closeboard, panel fencing, fence panels, posts."""
+
+CORES = {
+    "closeboard": {
+        "label": "closeboard fencing", "thing": "closeboard fencing", "context": "residential",
+        "hook": "overlapping featheredge boards on arris or cant rails, built in place along the line",
+        "paras": [
+            "Closeboard fencing, sometimes called featheredge fencing, is built on site rather than delivered as ready-made panels. Posts are set in the ground, two or three horizontal rails are fixed between them, and vertical featheredge boards are nailed to the rails so each board overlaps the next. The result is a solid, strong screen that copes with wind better than most panels.",
+            "Because it is built board by board, closeboard follows the ground. On a slope the rails can be raked so the top of the fence runs parallel to the ground, with no stepped gaps underneath. Run lengths do not have to match a panel width, which helps on awkward boundaries, corners and short returns.",
+            "Posts for closeboard are usually treated timber or slotted concrete. Timber posts are commonly 100 mm square for standard heights, and concrete posts with mortices take arris rails and last longer at ground level. A gravel board at the base, in timber or concrete, keeps the featheredge boards off the soil so they do not wick up moisture and rot.",
+            "Rails are either arris rails, which are triangular in section, or cant rails, which are a sloping rectangular section. Three rails are normal for fences around 1.8 m high. Boards are typically featheredge of about 100 mm to 125 mm wide, overlapped by around 25 mm, and fixed with galvanised or stainless nails so they do not streak or rust.",
+            "A capping rail and counter batten along the top throw rainwater off the end grain of the boards and add a finished look. Both are optional but are worth including on a fence that is meant to last. Post caps do the same job for timber posts.",
+            "Closeboard repairs are often possible without taking the fence down. Broken arris rails can be strengthened with galvanised repair brackets or replaced, split boards can be swapped one at a time, and rotten gravel boards replaced. Where the posts themselves have rotted, setting new posts or concrete spurs is usually the lasting answer.",
+            "Treated timber still needs looking after. Pressure-treated boards weather to silver-grey unless they are stained. A preservative or stain every few years extends the life of the fence, and keeping soil and planting off the boards helps more than most treatments.",
+        ],
+        "focus": [
+            "Featheredge boards built in place on arris or cant rails",
+            "Follows slopes without stepped gaps",
+            "Timber or concrete posts with gravel boards",
+            "Capping rail, counter batten and post caps",
+            "Board, rail and post repairs without full replacement",
+        ],
+        "faqs": [
+            ("Is closeboard stronger than fence panels?", "Generally, yes. Closeboard is built in place on rails fixed to posts, so it resists wind and impact better than most lightweight panels."),
+            ("Can closeboard follow a slope?", "Yes. The rails can be raked to follow the ground, so the fence runs smoothly down a slope without stepped gaps."),
+            ("Do I need gravel boards?", "They are strongly recommended. A gravel board keeps the featheredge boards off the soil, which slows rot and makes the base easier to replace later."),
+        ],
+        "cross": ["posts", "panel-fencing", "fence"],
+    },
+    "panel-fencing": {
+        "label": "panel fencing", "thing": "panel fencing", "context": "residential",
+        "hook": "ready-made timber panels slotted or fixed between posts, matched to height and wind exposure",
+        "paras": [
+            "Panel fencing uses ready-made timber panels, usually 1.83 m wide, fixed between posts. It is quick to install and familiar in gardens and communal areas. Common panel styles include lap or waney-edge panels, closeboard-style panels, tongue-and-groove, slatted contemporary panels and decorative trellis tops.",
+            "Panels are fixed either to timber posts with brackets or screws, or slotted into the grooves of concrete posts. Concrete slotted posts with concrete gravel boards are the most durable option at ground level, because nothing timber touches the soil, and panels can be lifted out and replaced without disturbing the posts.",
+            "Wind is the main enemy of panel fences. A solid panel acts like a sail, and lightweight lap panels can blow out on exposed boundaries. On windy sites, heavier closeboard-style panels, slatted panels that let some air through, or a closeboard fence built in place are better choices. The survey notes exposure before a panel is chosen.",
+            "Panel fences on slopes are stepped, with each panel level and the posts set at different heights. The triangular gaps below are filled with gravel boards cut to suit. That stepped look suits some gardens and not others, and the alternative of a raked closeboard fence is mentioned where it fits better.",
+            "Panel quality varies widely. Thicker boards, heavier frames and pressure treatment rather than dip treatment make a real difference to lifespan. The scope names the panel style and treatment so the quote can be compared fairly.",
+            "Panel fence repairs are usually about replacing blown or rotten panels, swapping split timber posts for concrete, or setting a leaning post upright. Where only one or two panels have failed, matching the style and colour of the remaining fence is part of the job.",
+        ],
+        "focus": [
+            "Ready-made panels about 1.83 m wide",
+            "Timber posts or concrete slotted posts",
+            "Panel style chosen for wind exposure",
+            "Stepped on slopes with cut gravel boards",
+            "Price on application",
+        ],
+        "faqs": [
+            ("Are concrete posts better for panel fencing?", "At ground level, yes. Concrete slotted posts and gravel boards do not rot, and panels can be lifted out and replaced without touching the posts."),
+            ("Why do fence panels blow down?", "Solid panels catch the wind. Exposed boundaries need heavier panels, slatted designs or a closeboard fence, and posts set securely to suit."),
+            ("Can panel fencing follow a slope?", "Panel fences are stepped down slopes, with gravel boards filling the triangular gaps. A closeboard fence can be raked instead if a smooth line is preferred."),
+        ],
+        "cross": ["fence-panels", "closeboard", "posts"],
+    },
+    "fence-panels": {
+        "label": "fence panels", "thing": "fence panels", "context": "residential",
+        "hook": "timber fence panels supplied and fitted, or replaced one by one, matched to the existing posts",
+        "paras": [
+            "Fence panels are the individual timber sections that make up a panel fence. Most enquiries about fence panels are about replacing one or more that have blown out, split or rotted, or about fitting new panels between posts that are still sound. The first check is always the posts, because a new panel on a failing post will not last.",
+            "Standard panels are about 1.83 m wide, with heights commonly from around 0.9 m to 1.8 m. Older fences sometimes used other widths, so measuring the gap between posts at top and bottom matters before ordering. Where concrete slotted posts are used, the panel must also fit the slot depth.",
+            "Matching an existing fence is part of replacing panels. Styles, board thickness and colour vary between makers, so an exact match is not always possible. Where it is not, the options are a close match, a stain to blend the new panel in, or replacing a whole run so it looks consistent. The scope sets out which is planned.",
+            "Panels fixed to timber posts are held with galvanised brackets or screws. On concrete slotted posts, the panel simply slides down into the slots and sits on a gravel board. Lifting a panel out of slotted posts usually means removing a capping or lifting the panel clear, which needs headroom and sometimes a second person.",
+            "A panel that blows out repeatedly is a sign of a deeper issue: posts that are loose, panels too light for the exposure or gaps that let the wind work at the fixings. Fixing the cause matters more than replacing the panel again.",
+            "Panels are quoted with the posts, gravel boards and fixings they need. Where only panels are being supplied and fitted, that is stated, and any posts found to be failing on the day are pointed out before work goes ahead.",
+        ],
+        "focus": [
+            "Posts checked before panels are ordered",
+            "Gap measured at top and bottom",
+            "Style and colour matched as closely as possible",
+            "Repeated blow-outs traced to the cause",
+            "Price on application",
+        ],
+        "faqs": [
+            ("Can you replace a single fence panel?", "Yes, as long as the posts either side are sound. We measure the gap and match the style as closely as available panels allow."),
+            ("What size are standard fence panels?", "Most are about 1.83 m wide, in heights from around 0.9 m to 1.8 m. Older fences can vary, so the gap is measured first."),
+            ("Will a new panel match my old fence?", "Often closely, but styles and colours vary by maker. Where an exact match is not available, a stain or replacing the run is discussed."),
+        ],
+        "cross": ["panel-fencing", "posts", "fence"],
+    },
+    "posts": {
+        "label": "fence posts", "thing": "fence posts", "context": "residential",
+        "hook": "timber, concrete and steel posts set, reset or replaced so the fence stands straight",
+        "paras": [
+            "Fence posts carry the whole fence, so when a fence leans or falls it is usually the posts that have failed. Timber posts rot at ground level, where air, water and soil meet. Concrete posts crack or snap when panels are forced or when the fence takes a heavy blow. Steel posts loosen if the foundation is too shallow or the ground is soft.",
+            "Replacing a post means breaking out or working around the old foundation. Where the old concrete can be removed, the new post goes in the same position. Where it cannot, the new post is set alongside, which may mean adjusting the panel or rail fixings. The approach depends on what is found when the ground is opened.",
+            "Concrete fence posts are a long-lasting replacement for timber in panel fences. Slotted concrete posts hold panels in grooves, and mortice posts take arris rails for closeboard. Both are heavy and need careful handling and setting, but they do not rot, and they are the usual choice when timber posts have already failed once.",
+            "A concrete repair spur is a short concrete post set in the ground beside a rotten timber post and bolted to it. It saves taking the fence down and suits fences where the panels or boards are still sound. It is a repair rather than a replacement, and the scope says so.",
+            "Post depth is roughly a quarter to a third of the fence height below ground, more on exposed sites or soft ground. Posts are set in concrete or compacted hardcore, depending on the system and the ground, and are plumbed in two directions and braced while the foundation sets.",
+            "Steel posts for mesh and palisade systems follow the manufacturer's size, spacing and foundation guidance. Base-plated posts are bolted to existing concrete or slabs where digging is not possible, using fixings chosen for the base, and are only used where the base can take the load.",
+        ],
+        "focus": [
+            "Post failure diagnosed first",
+            "Old foundation broken out or worked around",
+            "Concrete posts, repair spurs or steel posts",
+            "Depth about a quarter to a third of the height",
+            "Plumbed, braced and left to set",
+        ],
+        "faqs": [
+            ("Can you replace fence posts without replacing the fence?", "Often, yes. Panels or rails are taken off, the post replaced, and the fence refitted. Where many posts have failed, a new fence may be better value."),
+            ("Are concrete fence posts better than timber?", "They last much longer at ground level because they do not rot. They are heavier to handle but are the usual replacement when timber posts have failed."),
+            ("What is a concrete repair spur?", "A short concrete post set beside a rotten timber post and bolted to it. It is a quick repair when the rest of the fence is sound."),
+        ],
+        "cross": ["fence", "closeboard", "panel-fencing"],
+    },
+}
