@@ -138,7 +138,12 @@ function renderJobArticle(array $page): void
     $ogDescription = $meta;
     $ogImage = url($image);
     $ogImageAlt = $imageAlt;
-    $canonicalUrl = url('/pages/jobs/' . $slug);
+    $selfUrl = url('/pages/jobs/' . $slug);
+    // Optional canonical override (e.g. a kept job hub whose keyword twin is canonical).
+    $canonicalPath = trim((string)($page['canonical_path'] ?? ''));
+    $canonicalUrl = ($canonicalPath !== '' && str_starts_with($canonicalPath, '/pages/'))
+        ? url($canonicalPath)
+        : $selfUrl;
     $omitPriceRange = true;
 
     if (session_status() !== PHP_SESSION_ACTIVE) {
@@ -169,7 +174,7 @@ function renderJobArticle(array $page): void
         $crumbs[] = ['@type' => 'ListItem', 'position' => $pos, 'name' => $parentLabel, 'item' => url($parentHref)];
         $pos++;
     }
-    $crumbs[] = ['@type' => 'ListItem', 'position' => $pos, 'name' => $h1, 'item' => $canonicalUrl];
+    $crumbs[] = ['@type' => 'ListItem', 'position' => $pos, 'name' => $h1, 'item' => $selfUrl];
 
     $schema = [
         '@context' => 'https://schema.org',

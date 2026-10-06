@@ -284,6 +284,10 @@ function icomplySitemapEntries(): array
         if (function_exists('nationwideP0KeywordRedirect') && nationwideP0KeywordRedirect($base) !== null) {
             continue;
         }
+        // Kept job hub whose rel=canonical is its keyword twin: sitemap carries canonical locs only.
+        if (function_exists('nationwideP0JobIsNonCanonical') && nationwideP0JobIsNonCanonical($base)) {
+            continue;
+        }
         $add('/pages/jobs/' . $base, '0.8');
     }
     foreach (glob($publish . '/pages/commercial/*.php') ?: [] as $jobFile) {

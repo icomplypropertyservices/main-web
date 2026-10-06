@@ -32,7 +32,8 @@ KEYWORD_CANONICAL = {
     "vehicle-barrier-installation",
 }
 
-# Job page stays canonical even when keywords.json also has the slug (#113 overlap).
+# Job hub keeps rendering (no 301) even when keywords.json also has the slug (#113 overlap).
+# Its rel=canonical points at /pages/keywords/{slug} (see nationwideP0CanonicalPath in PHP).
 JOB_CANONICAL = {
     "addressable-fire-alarm-installation",
     "conventional-fire-alarm-installation",

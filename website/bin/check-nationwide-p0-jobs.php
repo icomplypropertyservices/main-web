@@ -122,8 +122,17 @@ foreach ($jobs as $slug => $job) {
     $ok(str_contains($html, 'property="og:title"'), $slug . ' og:title');
     $ok(str_contains($html, 'property="og:description"'), $slug . ' og:description');
     $ok(str_contains($html, 'property="og:image"'), $slug . ' og:image');
-    $canonical = 'https://icomplypropertyservices.co.uk/pages/jobs/' . $slug;
-    $ok(str_contains($html, 'rel="canonical" href="' . $canonical . '"'), $slug . ' canonical');
+    // Self-canonical, except kept hubs whose keyword twin is canonical (one URL per slug).
+    $canonicalPath = nationwideP0CanonicalPath($slug);
+    if (isset(nationwideP0JobCanonicalSlugs()[$slug])) {
+        $ok($canonicalPath === '/pages/keywords/' . $slug, $slug . ' canonical points at keyword twin');
+        $ok(isset(getMajorKeywords()[$slug]), $slug . ' keyword twin exists');
+    } else {
+        $ok($canonicalPath === '/pages/jobs/' . $slug, $slug . ' self-canonical');
+    }
+    $canonical = 'https://icomplypropertyservices.co.uk' . $canonicalPath;
+    $ok(str_contains($html, 'rel="canonical" href="' . $canonical . '"'), $slug . ' canonical=' . $canonicalPath);
+    $ok(substr_count($html, 'rel="canonical"') === 1, $slug . ' one canonical tag');
     $ok(str_contains($html, 'property="og:url" content="' . $canonical . '"'), $slug . ' og:url');
     $ok(str_contains($html, 'Cheshire SK2 5DE'), $slug . ' NAP');
     $ok(str_contains($html, '07517806082'), $slug . ' phone');
@@ -154,6 +163,13 @@ $xml = icomplyBuildSitemapXml('https://icomplypropertyservices.co.uk');
 $committed = is_file(SITE_ROOT . '/sitemap.xml') ? (string)file_get_contents(SITE_ROOT . '/sitemap.xml') : '';
 foreach (array_keys($jobs) as $slug) {
     if (nationwideP0KeywordRedirect($slug) !== null) {
+        continue;
+    }
+    if (nationwideP0JobIsNonCanonical($slug)) {
+        // Kept hub canonicalised to its keyword twin: sitemap carries the canonical loc only.
+        $ok(!str_contains($xml, '/pages/jobs/' . $slug . '</loc>'), 'sitemap omits keyword-canonical /pages/jobs/' . $slug);
+        $ok(!str_contains($committed, '/pages/jobs/' . $slug . '</loc>'), 'committed sitemap omits keyword-canonical /pages/jobs/' . $slug);
+        $ok(str_contains($xml, nationwideP0CanonicalPath($slug) . '</loc>'), 'sitemap keeps canonical ' . nationwideP0CanonicalPath($slug));
         continue;
     }
     $ok(str_contains($xml, '/pages/jobs/' . $slug . '</loc>'), 'sitemap lists /pages/jobs/' . $slug);
