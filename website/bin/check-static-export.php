@@ -886,6 +886,16 @@ if (!str_contains($headerFile, '/shop/assets/*.css')) {
  */
 $canonBad = 0;
 $canonSeen = 0;
+// Kept W1a job hubs whose rel=canonical is their keyword twin (one canonical URL per slug).
+$canonJobToKeyword = [];
+if (is_file($websiteRoot . '/includes/nationwide-p0-jobs.php')) {
+    require_once $websiteRoot . '/includes/nationwide-p0-jobs.php';
+    if (function_exists('nationwideP0JobCanonicalSlugs') && function_exists('nationwideP0CanonicalPath')) {
+        foreach (array_keys(nationwideP0JobCanonicalSlugs()) as $keptSlug) {
+            $canonJobToKeyword['/pages/jobs/' . $keptSlug] = nationwideP0CanonicalPath((string)$keptSlug);
+        }
+    }
+}
 $canonIter = new RecursiveIteratorIterator(
     new RecursiveDirectoryIterator($dist, FilesystemIterator::SKIP_DOTS)
 );
@@ -943,7 +953,8 @@ foreach ($canonIter as $canonFile) {
     $allowed = $page === $canonPath
         || ($page === '/pages/products' && $canonPath === '/products')
         || ($page === '/pages/packages/landlord-pack' && $canonPath === '/pages/packages/compliance-bundle')
-        || ($page === '/pages/packages/compliance-bundle' && $canonPath === '/pages/packages/landlord-pack');
+        || ($page === '/pages/packages/compliance-bundle' && $canonPath === '/pages/packages/landlord-pack')
+        || (isset($canonJobToKeyword[$page]) && $canonPath === $canonJobToKeyword[$page]);
     if (!$allowed) {
         $canonBad++;
         if ($canonBad <= 8) {
@@ -953,7 +964,8 @@ foreach ($canonIter as $canonFile) {
 }
 if ($canonBad === 0 && $canonSeen > 1000) {
     $pass++;
-    echo "[PASS] canonicals are self-referencing ({$canonSeen} pages; /pages/products → /products only)\n";
+    echo "[PASS] canonicals are self-referencing ({$canonSeen} pages; /pages/products → /products and "
+        . count($canonJobToKeyword) . " kept job hubs → keyword twin only)\n";
 } else {
     $fail++;
     echo "[FAIL] canonical mismatches={$canonBad} checked={$canonSeen}\n";

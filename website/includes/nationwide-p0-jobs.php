@@ -78,9 +78,13 @@ function nationwideP0KeywordCanonicalSlugs(): array
 }
 
 /**
- * W1a P0 slugs whose job page stays canonical even though a later keyword
- * family (#113 fire-alarm-installer) added a keyword entry for the same slug.
- * Keeps W1a at 52 job hubs + 38 redirects.
+ * W1a P0 slugs that keep a rendered job hub (no 301) even though a later
+ * keyword family (#113 fire-alarm-installer) added a keyword hub for the same
+ * slug. Keeps W1a at 52 job hubs + 38 redirects.
+ *
+ * The job body is close to the keyword body, so the job hub's
+ * rel=canonical (and og:url) points at /pages/keywords/{slug}: one canonical
+ * URL per slug. The job URL is left out of the sitemap.
  *
  * @return array<string, true>
  */
@@ -90,6 +94,33 @@ function nationwideP0JobCanonicalSlugs(): array
         'addressable-fire-alarm-installation' => true,
         'conventional-fire-alarm-installation' => true,
     ];
+}
+
+/**
+ * Canonical path for a rendered P0 job hub. Self for every hub except the
+ * kept-but-keyword-canonical slugs above, which point at their keyword twin
+ * when that keyword hub is published.
+ */
+function nationwideP0CanonicalPath(string $slug): string
+{
+    $slug = function_exists('keywordSlug') ? keywordSlug($slug) : $slug;
+    $self = '/pages/jobs/' . $slug;
+    if ($slug === '' || !isset(nationwideP0JobCanonicalSlugs()[$slug])) {
+        return $self;
+    }
+    if (!function_exists('getMajorKeywords') || !isset(getMajorKeywords()[$slug])) {
+        return $self;
+    }
+    return '/pages/keywords/' . $slug;
+}
+
+/**
+ * True when a rendered P0 job hub canonicalises to another URL (its keyword twin).
+ */
+function nationwideP0JobIsNonCanonical(string $slug): bool
+{
+    $slug = function_exists('keywordSlug') ? keywordSlug($slug) : $slug;
+    return nationwideP0CanonicalPath($slug) !== '/pages/jobs/' . $slug;
 }
 
 /**
@@ -183,6 +214,7 @@ function nationwideP0Render(string $slug): void
         require SITE_ROOT . '/404.php';
         return;
     }
+    $job['canonical_path'] = nationwideP0CanonicalPath($slug);
     require_once SITE_ROOT . '/includes/job-article.php';
     renderJobArticle($job);
 }
