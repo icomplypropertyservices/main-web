@@ -650,6 +650,8 @@ h1, h2, h3 { letter-spacing: -0.03em; }
   text-decoration: none; font-size: 1.4rem; box-shadow: 0 12px 30px rgba(0,0,0,0.35);
 }
 .wa-float:hover { transform: scale(1.05); }
+.wa-float svg { display: block; width: 1.9rem; height: 1.9rem; }
+.wa-float .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 .wa-float:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 .mobile-sticky-cta {
   display: flex; gap: 0.5rem; position: fixed; bottom: 0; inset-inline: 0; z-index: 46;
@@ -663,6 +665,7 @@ h1, h2, h3 { letter-spacing: -0.03em; }
 @media (max-width: 767px) {
   .wa-float { bottom: calc(5.35rem + env(safe-area-inset-bottom, 0px)); }
 }
+html.cookie-open .wa-float { bottom: var(--wa-lift, 7rem) !important; z-index: 10000; }
 @media (min-width: 768px) {
   .wa-float { bottom: max(1.4rem, env(safe-area-inset-bottom)); }
   .mobile-sticky-cta { display: none; }
