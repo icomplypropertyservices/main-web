@@ -707,7 +707,11 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
         }
     }
     $jobTown = 0;
+    $deepSuperseded = function_exists('icomplyMarginDeepSupersededJobs') ? array_fill_keys(icomplyMarginDeepSupersededJobs(), true) : [];
     foreach (array_keys($jobs) as $jobSlug) {
+        if (isset($deepSuperseded[$jobSlug])) {
+            continue;
+        }
         foreach ($coreKeys as $placeSlug) {
             $writeLoc('/pages/jobs/' . $jobSlug . '/' . $placeSlug);
             $jobTown++;

@@ -260,6 +260,18 @@ function keywordTemplatePlaceholders(
             $metaDesc = icomplyNationwide3lineMeta($name, 'the UK mainland');
         }
     }
+    if (function_exists('icomplyMarginDeepIsP0') && icomplyMarginDeepIsP0($slug)) {
+        $deepGallery = icomplyMarginDeepImages($slug);
+        if (count($deepGallery) >= 3) {
+            $kwImg = url($deepGallery[0]);
+            $inlineImg = url($deepGallery[1]);
+            $svcImg = url($deepGallery[2]);
+        }
+        $deepCopy = icomplyMarginDeepCopy($slug);
+        $seoTitle = (string)($deepCopy['seo_title'] ?? $seoTitle);
+        $metaDesc = (string)($deepCopy['meta_desc'] ?? $metaDesc);
+        $serviceName = (string)(icomplyMarginDeepPackFor($slug)['trade_label'] ?? $serviceName);
+    }
     // Prefer keyword image path; template onerror falls back to service
 
     return [

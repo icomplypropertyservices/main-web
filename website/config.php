@@ -410,6 +410,11 @@ function icomplyPathIsIndexable(string $path): bool
         $path = '/';
     }
     if (preg_match('#^/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+$#', $path)) {
+        if (function_exists('icomplyMarginDeepIsP0')
+            && preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $deepMatch)
+            && icomplyMarginDeepIsP0($deepMatch[1])) {
+            return icomplyMarginDeepKeepsTown($deepMatch[1], $deepMatch[2]);
+        }
         if ((function_exists('icomplyNationwide3lineIndexablePath')
                 && icomplyNationwide3lineIndexablePath($path))
             || (function_exists('icomplyFireAlarmInstallerNationwidePath')
@@ -880,6 +885,10 @@ function getMajorKeywords(): array {
     $normalized = icomplyApplyCustomerKeywordCopy($normalized);
     if (function_exists('icomplyNationwide3lineApplyKeywords')) {
         $normalized = icomplyNationwide3lineApplyKeywords($normalized);
+    }
+    // Margin DEEP packs (data/margin-deep/*.json): DEEP copy wins for its slugs.
+    if (function_exists('icomplyMarginDeepApplyKeywords')) {
+        $normalized = icomplyMarginDeepApplyKeywords($normalized);
     }
     $cached = $normalized;
     return $cached;
