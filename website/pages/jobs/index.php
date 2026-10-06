@@ -102,6 +102,34 @@ require SITE_ROOT . '/includes/header.php';
     </section>
     <?php endforeach; ?>
 
+    <?php
+    require_once SITE_ROOT . '/includes/nationwide-p0-jobs.php';
+    $nationwideGroups = [
+        'aov-smoke' => 'AOV and smoke control — UK-wide',
+        'barrier' => 'Barriers — UK-wide',
+        'fire' => 'Fire — UK-wide',
+    ];
+    $nationwideItems = [];
+    foreach (nationwideP0IndexItems() as $item) {
+        $nationwideItems[$item['line']][] = $item;
+    }
+    ?>
+    <section class="mt-12" aria-label="Nationwide job types">
+        <h2 class="text-2xl font-semibold text-[#061828]">Nationwide AOV, barrier and fire job types</h2>
+        <p class="mt-3 text-zinc-700 leading-relaxed max-w-3xl">These three lines are arranged UK-wide from our Stockport base at 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Price on application after survey. Where a job already has a guide, this index links to that one page.</p>
+        <?php foreach ($nationwideGroups as $lineKey => $lineLabel): ?>
+        <h3 class="mt-8 text-xl font-semibold text-[#061828]"><?= $h($lineLabel) ?></h3>
+        <ul class="mt-4 grid sm:grid-cols-2 gap-3">
+            <?php foreach ($nationwideItems[$lineKey] ?? [] as $item): ?>
+            <li class="border border-zinc-200 rounded-2xl p-4 bg-white">
+                <a class="font-semibold text-[#061828] hover:text-[#ff6b00]" href="<?= $h(url($item['href'])) ?>"><?= $h($item['label']) ?></a>
+                <p class="mt-1 text-sm text-zinc-600"><?= $h($item['card']) ?></p>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+        <?php endforeach; ?>
+    </section>
+
     <section class="mt-12" aria-label="Questions">
         <h2 class="text-2xl font-semibold text-[#061828]">Questions</h2>
         <div class="mt-6 space-y-4">
