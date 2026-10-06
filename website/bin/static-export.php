@@ -1163,7 +1163,10 @@ function icomplyUnpublishedMatrixRedirects(): string
         '# Do not 301 them to the hub. AOV and Barriers keep the 200 rewrites above.',
         '',
     ];
-    return implode("\n", $lines);
+    if (!function_exists('icomplyAovBarriersDeepJobRedirectLines')) {
+        require_once SITE_ROOT . '/includes/aov-barriers-deep.php';
+    }
+    return implode("\n", $lines) . icomplyAovBarriersDeepJobRedirectLines();
 }
 
 

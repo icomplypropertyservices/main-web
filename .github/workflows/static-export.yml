@@ -58,6 +58,11 @@ jobs:
           SITE_URL: https://icomplypropertyservices.co.uk
         run: php website/bin/check-nationwide-3line-p0.php && node website/bin/check-nationwide-3line-p0.mjs
 
+      - name: AOV + Barriers DEEP P0 (manual + width/height)
+        env:
+          SITE_URL: https://icomplypropertyservices.co.uk
+        run: php website/bin/check-aov-barriers-deep.php --sample=12 && node website/bin/check-aov-barriers-deep.mjs
+
       - name: Fire alarm installer family
         env:
           SITE_URL: https://icomplypropertyservices.co.uk

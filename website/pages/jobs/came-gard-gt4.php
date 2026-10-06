@@ -28,7 +28,7 @@ renderJobArticle([
         ['Are you stating a CAME accreditation number?', 'No. CAME is the barrier partner we fit and service. This page does not publish a certificate or dealer number.'],
     ],
     'links' => [
-        ['/pages/jobs/car-park-barrier', 'Car park barriers'],
+        ['/pages/keywords/car-park-barrier', 'Car park barriers'],
         ['/pages/manufacturers/came', 'CAME manufacturer page'],
         ['/pages/services/barriers', 'Barriers service'],
         ['/pages/jobs/maglock-installation', 'Maglock on the pedestrian door'],
@@ -39,6 +39,6 @@ renderJobArticle([
     'service_label' => 'Barriers',
     'service_href' => '/pages/services/barriers',
     'parent_label' => 'Car park barriers',
-    'parent_href' => '/pages/jobs/car-park-barrier',
+    'parent_href' => '/pages/keywords/car-park-barrier',
     'form_options' => ['CAME Gard GT4 installation', 'CAME Gard GT4 repair', 'CAME barrier maintenance'],
 ]);

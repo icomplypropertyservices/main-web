@@ -49,7 +49,6 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/car-park-barrier-access</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/bs-5839-maintenance</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/came-gard-gt4</loc><priority>0.8</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/car-park-barrier</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/eicr</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/false-alarm-investigation</loc><priority>0.8</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/jobs/fire-alarm-call-out</loc><priority>0.8</priority></url>
@@ -216,7 +215,10 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/24-hour-gas-engineer</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/32-amp-supply</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/4k-cctv-system</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/4m-barrier-arm</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/5m-barrier-arm</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/63-amp-supply</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/6m-barrier-arm</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/7kw-ev-charger</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/access-barrier</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/access-control-after-staff-change</loc><priority>0.68</priority></url>
@@ -291,11 +293,14 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/annual-lgsr</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/annual-pat-testing</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/anpr-barrier-integration</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/anpr-barrier-system</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/anpr-camera-advice</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/anpr-car-park-camera</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/anpr-cctv-system</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/ansul-style-kitchen-system-service</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-actuator-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-actuator-installer</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-actuator-near-me</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-actuator-replacement</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-actuator</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-annual-service</loc><priority>0.68</priority></url>
@@ -303,7 +308,10 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-battery-replacement</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-certification</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-commissioning</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-control-panel-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-control-panel-installer</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-control-panel</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-emergency-repair</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-engineer-near-me</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-engineer</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-engineers-near-me</loc><priority>0.68</priority></url>
@@ -311,6 +319,7 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-fault-finding</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-fire-alarm-interface</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-for-apartment-blocks</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-for-flats</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-for-high-rise</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-inspection</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-installation-near-me</loc><priority>0.68</priority></url>
@@ -320,19 +329,32 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-installers-near-me</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-installers</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-maintenance-contract</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-maintenance-near-me</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-maintenance</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-near-me</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-panel-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-panel-installer</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-panel-near-me</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-panel-replacement</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-repair-near-me</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-repair</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-service-near-me</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-service</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-servicing-near-me</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-servicing</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-system-design</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-system-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-system-installer</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-system-near-me</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-system</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-testing-and-certification</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/aov-testing</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/apartment-access-control</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/apartment-block-aov-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/apartment-block-aov-installer</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/apartment-block-ev-charging</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/apartment-block-nshevs-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/apartment-block-shevs-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/apartment-block-smoke-control</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/apartment-door-entry-system</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/apartment-door-entry</loc><priority>0.68</priority></url>
@@ -354,6 +376,8 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/artex-cover-up-plastering</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/artex-overlay-to-smooth</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/artex-sample-advice</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/articulated-arm-barrier-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/articulated-arm-barrier</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/asbestos-awareness-before-rewire</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/asbestos-awareness-before-strip-out</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/asbestos-awareness-briefing</loc><priority>0.68</priority></url>
@@ -379,9 +403,14 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/audio-intercom-system</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/audio-intercom</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/automatic-barrier-installer</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/automatic-barrier-repair</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/automatic-barrier</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/automatic-emergency-lighting-test</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/automatic-opening-vent-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/automatic-opening-vent-installer</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/automatic-opening-vent</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/automatic-smoke-vent-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/automatic-smoke-vent-installer</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/automatic-smoke-vent</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/automatic-systems-barrier</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/axis-camera-installation</loc><priority>0.68</priority></url>
@@ -391,10 +420,17 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/ballvalve-replacement</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/banister-repair</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-after-vehicle-strike-manchester</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-arm-length</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-arm-replacement-near-me</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-arm-replacement</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-arm-shortening</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-boom-replacement</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-clearance-survey</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-engineer</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-engineers</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-fail-open</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-for-car-parks</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-height-clearance</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-induction-loop</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-installation-manchester</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-installation-near-me</loc><priority>0.68</priority></url>
@@ -403,10 +439,13 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-installer</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-installers-near-me</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-installers</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-lane-width</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-loop-detector-manchester</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-maintenance-contract</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-maintenance-near-me</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-maintenance</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-near-me</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-opening-width</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-pipe-contaminated-ground</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-price-on-application</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-repair-manchester</loc><priority>0.68</priority></url>
@@ -416,7 +455,9 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-service-near-me</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-service</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-servicing</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-specification</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-stuck-down-manchester</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/barrier-vertical-clearance</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/basement-tanking-support</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/basin-tap-replacement</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/basin-waste-replace</loc><priority>0.68</priority></url>
@@ -506,6 +547,8 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/boiler</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/boiling-water-tap-water-regs</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/bonding-coat-plaster</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/boom-barrier</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/boom-height-clearance</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/booster-pump-wholesome-water</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/booster-set-hygiene-advice</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/bottle-trap-replace</loc><priority>0.68</priority></url>
@@ -566,6 +609,7 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/calorifier-inspection-support</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/calorifier-return-temperature-check</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/calorifier-temperature-check</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/came-barrier-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/came-barrier-manchester</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/came-gard-barrier</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/came-gard-gt4-manchester</loc><priority>0.68</priority></url>
@@ -573,18 +617,26 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/came-gard-pt</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/came-partner</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/canopy-suppression-install</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/car-park-aov-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/car-park-aov-installer</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/car-park-barrier-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/car-park-barrier-installer</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/car-park-barrier-manchester</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/car-park-barrier-repair</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/car-park-barrier</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/car-park-ev-charging</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/car-park-height-barrier-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/car-park-height-barrier</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/car-park-lighting-electrical</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/car-park-lighting-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/car-park-nshevs-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/car-park-shevs-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/car-park-smoke-ventilation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/carbon-monoxide-alarm-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/carbon-monoxide-flue-check</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/card-access-system</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/cardin-barrier</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/care-home-aov-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/care-home-bath-fill-water-regs</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/care-home-call-system</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/care-home-drinking-water-outlets</loc><priority>0.68</priority></url>
@@ -593,9 +645,11 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/care-home-evacuation-alerts</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/care-home-fire-alarm</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/care-home-fire-risk-assessment</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/care-home-nshevs-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/care-home-nurse-call</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/care-home-outlet-repair</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/care-home-sentinel-log-training</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/care-home-shevs-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/care-home-water-hygiene-support</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/care-premises-asbestos-awareness</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/carpentry-after-leak</loc><priority>0.68</priority></url>
@@ -689,6 +743,7 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/cold-water-tank-clean</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/cold-water-tank-insulation-check</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/colour-video-door-entry</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/colt-aov-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/colt-smoke-vent</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/combi-boiler-cost</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/combi-boiler-install</loc><priority>0.68</priority></url>
@@ -704,8 +759,11 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commend-intercom</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-access-control</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-ahu-maintenance</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-aov-actuator-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-aov-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-aov-installer</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-aov-panel-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-aov-system-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-asbestos-survey</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-barrier-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-barrier-installer</loc><priority>0.68</priority></url>
@@ -752,12 +810,20 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-kitchen-gas-safety</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-kitchen-gas-works</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-legionella-risk-assessment</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-louvre-aov-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-nshevs-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-painting</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-pat-testing</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-plastering</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-ppm-package</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-rewire</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-security-lighting</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-shevs-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-smoke-control-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-smoke-curtain-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-smoke-shaft-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-smoke-vent-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-smoke-ventilation-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-sprinkler-service</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-tea-boiler-backflow</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-three-phase-install</loc><priority>0.68</priority></url>
@@ -765,6 +831,7 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-vinyl-flooring</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-washroom-fit-out</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-washroom-plumbing</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-window-aov-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/common-parts-asbestos-survey</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/communal-area-asbestos-awareness</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/communal-area-eicr</loc><priority>0.68</priority></url>
@@ -820,6 +887,8 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/cooker-switch-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/copper-pipe-repair</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/cornice-repair</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/corridor-smoke-vent-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/corridor-smoke-vent-installer</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/corridor-smoke-vent</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/corridor-smoke-ventilation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/cosmetic-renovation-package</loc><priority>0.68</priority></url>
@@ -947,6 +1016,7 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/dry-riser-pressure-test</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/dry-riser-remedial-works</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/dry-riser-testing</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/dual-lane-barrier</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/dual-rcd-consumer-unit</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/dvr-cctv-system</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/dvr-installation</loc><priority>0.68</priority></url>
@@ -1068,6 +1138,7 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/emergency-twin-spot-lights</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/empty-property-bring-back</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/empty-property-refurb</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/en-12101-installer</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/en-12101-smoke-vent</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/en-suite-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/end-of-tenancy-gas-check</loc><priority>0.68</priority></url>
@@ -1136,9 +1207,22 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/facilities-asbestos-awareness-pack</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/facilities-helpdesk-engineer</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/facilities-management-compliance</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/factory-aov-actuator-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/factory-aov-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/factory-aov-panel-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/factory-aov-system-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/factory-fire-alarm-system</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/factory-intercom-system</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/factory-intercom</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/factory-louvre-aov-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/factory-nshevs-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/factory-shevs-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/factory-smoke-control-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/factory-smoke-curtain-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/factory-smoke-shaft-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/factory-smoke-vent-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/factory-smoke-ventilation-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/factory-window-aov-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/fadini-bayt-barrier</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/fail-secure-lock-assessment</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/failed-double-glazed-unit</loc><priority>0.68</priority></url>
@@ -1236,6 +1320,8 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/fire-integrity-survey</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/fire-point-setup</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/fire-protection-company</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/fire-rated-aov-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/fire-rated-aov-installer</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/fire-rated-aov</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/fire-rated-boarding</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/fire-rated-sealant-works</loc><priority>0.68</priority></url>
@@ -1448,18 +1534,36 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/heating-engineer</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/heating-system-flush</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/heating-system-service</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/heavy-duty-manual-barrier</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/height-barrier-and-rising-arm-barrier</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/height-barrier-near-me</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/height-barrier</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/height-restriction-barrier-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/height-restriction-barrier-repair</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/height-restriction-barrier</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/height-restrictor-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/height-restrictor</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hgv-barrier</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hgv-height-restriction-barrier</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hid-access-control</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hidden-voids-fire-survey</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/high-integrity-consumer-unit</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/high-rise-aov-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/high-rise-aov-installer</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/high-rise-aov-maintenance</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/high-rise-dry-riser</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/high-rise-nshevs-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/high-rise-shevs-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/high-rise-water-hygiene-visit</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/high-risk-task-area-lighting</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hikvision-cctv-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hikvision-cctv</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hip-to-gable-conversion-support</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hire-equipment-pat</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hmo-aov-actuator-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hmo-aov-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hmo-aov-panel-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hmo-aov-system-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hmo-asbestos-awareness-pack</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hmo-bathroom-fitting</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hmo-bathroom-plumbing</loc><priority>0.68</priority></url>
@@ -1478,11 +1582,20 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hmo-kitchen-tap-water-regs</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hmo-kitchenette-install</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hmo-licence-water-hygiene-evidence</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hmo-louvre-aov-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hmo-nshevs-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hmo-rewire</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hmo-shevs-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hmo-shower-head-replace-programme</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hmo-smoke-control-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hmo-smoke-curtain-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hmo-smoke-shaft-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hmo-smoke-vent-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hmo-smoke-ventilation-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hmo-void-refurbishment</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hmo-water-fittings-survey</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hmo-water-hygiene-visit</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hmo-window-aov-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hob-connection-electrical</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hochiki-fire-alarm</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hochiki-fire-detection</loc><priority>0.68</priority></url>
@@ -1844,7 +1957,9 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/loft-tank-ballvalve-hygiene</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/loft-tank-ballvalve</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/loft-tank-contamination-screen</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/long-arm-barrier</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/louvre-aov</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/low-headroom-barrier</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/low-water-pressure-visit</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/lpg-boiler-service</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/lpg-cooker-safety</loc><priority>0.68</priority></url>
@@ -1866,7 +1981,19 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/managing-agent-water-hygiene-pack</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/managing-agent-water-regs-briefing</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/mandatory-fire-signage-package</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/manual-barrier-arm-length</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/manual-barrier-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/manual-barrier-near-me</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/manual-barrier-repair</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/manual-barrier-service</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/manual-barrier</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/manual-call-point</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/manual-car-park-barrier</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/manual-height-barrier</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/manual-rising-arm-barrier</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/manual-swing-arm-barrier</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/manual-swing-height-barrier</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/manual-width-restriction-barrier</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/masonry-crack-repair</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/master-key-fire-door-sets</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/master-station-intercom</loc><priority>0.68</priority></url>
@@ -1939,6 +2066,7 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/no-water-call-out</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/non-maintained-emergency-lighting</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/non-potable-pipe-labelling</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/nshevs-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/number-plate-recognition-camera</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/nurse-call-battery-backup</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/nurse-call-battery-replacement</loc><priority>0.68</priority></url>
@@ -2181,6 +2309,7 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/regular-boiler-repair</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/regulation-5-water-notification</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/regulatory-compliance-review</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/reinforced-barrier-arm</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/remote-cctv-access</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/remote-viewing-cctv</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/render-crack-repair</loc><priority>0.68</priority></url>
@@ -2235,6 +2364,7 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/rising-arm-barrier-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/rising-arm-barrier-installer</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/rising-arm-barrier-manchester</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/rising-arm-barrier-repair</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/rising-arm-barrier</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/rising-damp-treatment</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/rising-main-repair-water-regs</loc><priority>0.68</priority></url>
@@ -2281,6 +2411,7 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/school-pat-testing-electrical</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/school-washroom-plumbing</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/school-water-hygiene-visit</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/se-controls-aov-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/se-controls-aov</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/sea-barrier</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/seasonal-occupancy-flush-plan</loc><priority>0.68</priority></url>
@@ -2335,6 +2466,7 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/significant-findings-water-close-out</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/silicone-render-system</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/single-check-valve-outside-tap</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/single-lane-barrier</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/single-storey-extension</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/single-to-three-phase</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/sip-intercom-installation</loc><priority>0.68</priority></url>
@@ -2363,9 +2495,11 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/smoke-control-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/smoke-control-installer</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/smoke-control-installers</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/smoke-control-maintenance</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/smoke-control-panel-service</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/smoke-control-system-maintenance</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/smoke-control-system</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/smoke-curtain-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/smoke-curtain-maintenance</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/smoke-detector-installation-commercial</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/smoke-shaft-aov</loc><priority>0.68</priority></url>
@@ -2375,6 +2509,7 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/smoke-vent-system</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/smoke-ventilation-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/smoke-ventilation-installer</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/smoke-ventilation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/smooth-finish-plastering</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/snagging-survey</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/soakaway-installation-support</loc><priority>0.68</priority></url>
@@ -2441,6 +2576,8 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/surge-protection-device-install</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/suspected-gas-leak</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/swimming-pool-fill-backflow</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/swing-arm-barrier</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/swing-height-barrier</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/system-boiler-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/system-boiler-repair</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/system-inhibitor-service</loc><priority>0.68</priority></url>
@@ -2515,6 +2652,7 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/type-aa-air-gap</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/type-ab-weir-overflow</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/under-sink-filter-advice</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/undercroft-car-park-barrier</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/underfloor-heating-support</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/underfloor-leak-trace</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/underlay-installation</loc><priority>0.68</priority></url>
@@ -2540,6 +2678,7 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/vehicle-barrier-installer</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/vehicle-barrier-survey</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/vehicle-barriers</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/vehicle-height-restriction-barrier</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/vehicle-wash-backflow-advice</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/velux-loft-conversion</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/vertical-flue-installation</loc><priority>0.68</priority></url>
@@ -2650,6 +2789,10 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/wet-wall-board-finish</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/whole-site-water-fittings-survey</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/wholesome-water-advice</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/wide-opening-barrier</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/width-restriction-barrier-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/width-restriction-barrier</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/width-restrictor</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/window-aov</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/window-board-fitting</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/window-cill-brick-repair</loc><priority>0.68</priority></url>
@@ -2692,9 +2835,7 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/24-hour-electrician</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/24-hour-plumber</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/emergency-aov</loc><priority>0.68</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/emergency-barrier-repair</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/emergency-eicr</loc><priority>0.68</priority></url>
-  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/emergency-fire-alarm</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/emergency-heating</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/next-day-aov</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/next-day-boiler-repair</loc><priority>0.68</priority></url>
@@ -2709,6 +2850,44 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/same-day-electrician</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/same-day-gas-engineer</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/same-day-plumber</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/24-hour-aov</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/24-hour-barrier</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/emergency-barrier</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/emergency-cctv</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/emergency-fire-door</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/emergency-sprinkler</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/next-day-barrier</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/next-day-heating</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/same-day-barrier</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/same-day-boiler</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/same-day-fire-alarm</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/same-day-heating</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/same-day-heating-engineer</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/fire-risk-assessment-near-me</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/plumber-near-me</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/24-hour-fire-alarm-engineer</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/addressable-fire-alarm-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/bs-5839-fire-alarm-installer</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/care-home-fire-alarm-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/commercial-fire-alarm-installers</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/conventional-fire-alarm-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/fire-alarm-companies</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/fire-alarm-company</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/fire-alarm-contractor</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/fire-alarm-contractors</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/fire-alarm-engineers</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/fire-alarm-fitter</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/fire-alarm-fitters</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/fire-alarm-installations</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/fire-alarm-maintenance-near-me</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/fire-alarm-repair-near-me</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/fire-alarm-service-near-me</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/fire-alarm-specialist</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/fire-alarm-specialists</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/hmo-fire-alarm-installation</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/landlord-fire-alarm-installer</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/same-day-fire-alarm-installer</loc><priority>0.68</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/keywords/warehouse-fire-alarm-installation</loc><priority>0.68</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/barriers/arnold</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/barriers/ashby-de-la-zouch</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/barriers/balderton</loc><priority>0.55</priority></url>
@@ -8212,26 +8391,77 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/aov/wythenshawe</loc><priority>0.64</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/aov/brinnington</loc><priority>0.64</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/barriers/brinnington</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/brinnington</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/brinnington</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-doors/brinnington</loc><priority>0.64</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/aov/castleton</loc><priority>0.64</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/barriers/castleton</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/castleton</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/castleton</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-doors/castleton</loc><priority>0.64</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/aov/davyhulme</loc><priority>0.64</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/barriers/davyhulme</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/davyhulme</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/davyhulme</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-doors/davyhulme</loc><priority>0.64</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/aov/dialstone</loc><priority>0.64</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/barriers/dialstone</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/dialstone</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/dialstone</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-doors/dialstone</loc><priority>0.64</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/aov/edgeley</loc><priority>0.64</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/barriers/edgeley</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/edgeley</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/edgeley</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-doors/edgeley</loc><priority>0.64</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/barriers/gatley</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/gatley</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/gatley</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-doors/gatley</loc><priority>0.64</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/aov/heaton-mersey</loc><priority>0.64</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/barriers/heaton-mersey</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/heaton-mersey</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/heaton-mersey</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-doors/heaton-mersey</loc><priority>0.64</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/aov/heaton-norris</loc><priority>0.64</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/barriers/heaton-norris</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/heaton-norris</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/heaton-norris</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-doors/heaton-norris</loc><priority>0.64</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/aov/lostock</loc><priority>0.64</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/barriers/lostock</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/lostock</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/lostock</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-doors/lostock</loc><priority>0.64</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/aov/newhey</loc><priority>0.64</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/barriers/newhey</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/newhey</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/newhey</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-doors/newhey</loc><priority>0.64</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/aov/partington</loc><priority>0.64</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/barriers/partington</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/partington</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/partington</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-doors/partington</loc><priority>0.64</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/aov/reddish</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/reddish</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/reddish</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-doors/reddish</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/barnoldswick</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/barnoldswick</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-doors/barnoldswick</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/brierfield</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/brierfield</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-doors/brierfield</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/glossop</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/glossop</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-doors/glossop</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/haslingden</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/haslingden</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-doors/haslingden</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/todmorden</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/todmorden</loc><priority>0.64</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-doors/todmorden</loc><priority>0.64</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/london</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/westminster</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-alarms/camden</loc><priority>0.55</priority></url>
@@ -9020,6 +9250,11 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/aov-air-handling/linlithgow</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/aov-air-handling/broxburn</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/aov-air-handling/kirkcudbright</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/aov-air-handling/barnoldswick</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/aov-air-handling/brierfield</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/aov-air-handling/glossop</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/aov-air-handling/haslingden</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/aov-air-handling/todmorden</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/london</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/westminster</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/emergency-lighting/camden</loc><priority>0.55</priority></url>
@@ -9808,6 +10043,11 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-risk-assessments/linlithgow</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-risk-assessments/broxburn</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-risk-assessments/kirkcudbright</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-risk-assessments/barnoldswick</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-risk-assessments/brierfield</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-risk-assessments/glossop</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-risk-assessments/haslingden</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-risk-assessments/todmorden</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-extinguishers/london</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-extinguishers/westminster</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-extinguishers/camden</loc><priority>0.55</priority></url>
@@ -10202,6 +10442,11 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-extinguishers/linlithgow</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-extinguishers/broxburn</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-extinguishers/kirkcudbright</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-extinguishers/barnoldswick</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-extinguishers/brierfield</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-extinguishers/glossop</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-extinguishers/haslingden</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-extinguishers/todmorden</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-doors/london</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-doors/westminster</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-doors/camden</loc><priority>0.55</priority></url>
@@ -10990,6 +11235,11 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-stopping/linlithgow</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-stopping/broxburn</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-stopping/kirkcudbright</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-stopping/barnoldswick</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-stopping/brierfield</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-stopping/glossop</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-stopping/haslingden</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-stopping/todmorden</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-suppression/london</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-suppression/westminster</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-suppression/camden</loc><priority>0.55</priority></url>
@@ -11384,6 +11634,11 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-suppression/linlithgow</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-suppression/broxburn</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-suppression/kirkcudbright</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-suppression/barnoldswick</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-suppression/brierfield</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-suppression/glossop</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-suppression/haslingden</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-suppression/todmorden</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/sprinkler-systems/london</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/sprinkler-systems/westminster</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/sprinkler-systems/camden</loc><priority>0.55</priority></url>
@@ -11778,6 +12033,11 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/sprinkler-systems/linlithgow</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/sprinkler-systems/broxburn</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/sprinkler-systems/kirkcudbright</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/sprinkler-systems/barnoldswick</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/sprinkler-systems/brierfield</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/sprinkler-systems/glossop</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/sprinkler-systems/haslingden</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/sprinkler-systems/todmorden</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/dry-risers/london</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/dry-risers/westminster</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/dry-risers/camden</loc><priority>0.55</priority></url>
@@ -12172,6 +12432,11 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/dry-risers/linlithgow</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/dry-risers/broxburn</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/dry-risers/kirkcudbright</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/dry-risers/barnoldswick</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/dry-risers/brierfield</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/dry-risers/glossop</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/dry-risers/haslingden</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/dry-risers/todmorden</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-signage/london</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-signage/westminster</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-signage/camden</loc><priority>0.55</priority></url>
@@ -12566,6 +12831,11 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-signage/linlithgow</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-signage/broxburn</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-signage/kirkcudbright</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-signage/barnoldswick</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-signage/brierfield</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-signage/glossop</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-signage/haslingden</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-signage/todmorden</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/evacuation-alerts/london</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/evacuation-alerts/westminster</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/evacuation-alerts/camden</loc><priority>0.55</priority></url>
@@ -12960,6 +13230,11 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/evacuation-alerts/linlithgow</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/evacuation-alerts/broxburn</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/evacuation-alerts/kirkcudbright</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/evacuation-alerts/barnoldswick</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/evacuation-alerts/brierfield</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/evacuation-alerts/glossop</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/evacuation-alerts/haslingden</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/evacuation-alerts/todmorden</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/kitchen-fire-suppression/london</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/kitchen-fire-suppression/westminster</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/kitchen-fire-suppression/camden</loc><priority>0.55</priority></url>
@@ -13354,6 +13629,11 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/kitchen-fire-suppression/linlithgow</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/kitchen-fire-suppression/broxburn</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/kitchen-fire-suppression/kirkcudbright</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/kitchen-fire-suppression/barnoldswick</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/kitchen-fire-suppression/brierfield</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/kitchen-fire-suppression/glossop</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/kitchen-fire-suppression/haslingden</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/kitchen-fire-suppression/todmorden</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-compartmentation/london</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-compartmentation/westminster</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-compartmentation/camden</loc><priority>0.55</priority></url>
@@ -13748,6 +14028,11 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-compartmentation/linlithgow</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-compartmentation/broxburn</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/fire-compartmentation/kirkcudbright</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-compartmentation/barnoldswick</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-compartmentation/brierfield</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-compartmentation/glossop</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-compartmentation/haslingden</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/fire-compartmentation/todmorden</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/smoke-co-alarms/london</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/smoke-co-alarms/westminster</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/smoke-co-alarms/camden</loc><priority>0.55</priority></url>
@@ -14142,4 +14427,9 @@
   <url><loc>https://icomplypropertyservices.co.uk/pages/smoke-co-alarms/linlithgow</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/smoke-co-alarms/broxburn</loc><priority>0.55</priority></url>
   <url><loc>https://icomplypropertyservices.co.uk/pages/smoke-co-alarms/kirkcudbright</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/smoke-co-alarms/barnoldswick</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/smoke-co-alarms/brierfield</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/smoke-co-alarms/glossop</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/smoke-co-alarms/haslingden</loc><priority>0.55</priority></url>
+  <url><loc>https://icomplypropertyservices.co.uk/pages/smoke-co-alarms/todmorden</loc><priority>0.55</priority></url>
 </urlset>

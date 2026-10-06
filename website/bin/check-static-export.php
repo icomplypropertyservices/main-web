@@ -713,6 +713,66 @@ if (str_contains($sitemapDist, '<sitemapindex')) {
         $fail++;
         echo "[FAIL] sitemap index uses www\n";
     }
+    // Sharded index (SEO ruling 2026-10-06): every shard listed and present, <=50,000 URLs
+    // per file, no loc repeated across shards, robots.txt points at the index.
+    preg_match_all('#<sitemap><loc>https://icomplypropertyservices\.co\.uk/([^<]+)</loc></sitemap>#', $sitemapDist, $indexLocs);
+    $indexLocal = array_values(array_filter($indexLocs[1], static fn(string $l): bool => (bool)preg_match('#^sitemap\d+\.xml$#', $l)));
+    $onDisk = array_map('basename', glob($dist . '/sitemap[0-9]*.xml') ?: []);
+    sort($onDisk);
+    $listed = $indexLocal;
+    sort($listed);
+    $shardMax = 0;
+    $shardUrls = 0;
+    $shardDupes = 0;
+    $shardSeen = [];
+    $shardMissing = [];
+    foreach ($indexLocal as $shard) {
+        $fh = @fopen($dist . '/' . $shard, 'rb');
+        if ($fh === false) {
+            $shardMissing[] = $shard;
+            continue;
+        }
+        $n = 0;
+        while (($line = fgets($fh)) !== false) {
+            if (preg_match('#<loc>([^<]+)</loc>#', $line, $lm)) {
+                $n++;
+                $key = md5($lm[1], true);
+                if (isset($shardSeen[$key])) {
+                    $shardDupes++;
+                } else {
+                    $shardSeen[$key] = true;
+                }
+            }
+        }
+        fclose($fh);
+        $shardMax = max($shardMax, $n);
+        $shardUrls += $n;
+    }
+    $shardSeen = [];
+    $variantParts = (int)($matrixStats['variant_sitemap_parts'] ?? 0);
+    $variantUrlsAll = (int)($matrixStats['variant_urls'] ?? 0);
+    $variantOk = $variantParts === 0 || $variantUrlsAll <= $variantParts * 50000;
+    $robotsDist = is_file($dist . '/robots.txt') ? (string)file_get_contents($dist . '/robots.txt') : '';
+    $robotsOkIndex = str_contains($robotsDist, 'Sitemap: https://icomplypropertyservices.co.uk/sitemap.xml');
+    $shardOk = $indexLocal !== []
+        && $shardMissing === []
+        && $listed === $onDisk
+        && $shardMax > 0 && $shardMax <= 50000
+        && $shardDupes === 0
+        && count($indexLocs[1]) <= 50000
+        && strlen($sitemapDist) < 50 * 1024 * 1024
+        && $variantOk
+        && $robotsOkIndex;
+    if ($shardOk) {
+        $pass++;
+        echo '[PASS] sitemap index: ' . count($indexLocal) . " shards + {$variantParts} variant parts, {$shardUrls} unique URLs, max {$shardMax}/file (cap 50000), robots → index\n";
+    } else {
+        $fail++;
+        echo '[FAIL] sitemap shards: listed=' . count($indexLocal) . ' on_disk=' . count($onDisk)
+            . ' missing=' . implode(',', array_slice($shardMissing, 0, 5)) . " max={$shardMax} dupes={$shardDupes}"
+            . ' index_entries=' . count($indexLocs[1]) . ' variant_ok=' . ($variantOk ? 'yes' : 'no')
+            . ' robots=' . ($robotsOkIndex ? 'ok' : 'bad') . "\n";
+    }
 } else {
     $sitemapHub = $sitemapDist;
 }

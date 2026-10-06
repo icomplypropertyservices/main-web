@@ -1,0 +1,83 @@
+{
+  "lock": "icomply-ops/seo/AOV-BARRIERS-DEEP-LOCK-2026-10-05.md",
+  "source": "Wikimedia Commons",
+  "images": [
+    {
+      "file": "/assets/images/lanes/aov-barriers-deep/aov-smoke-vent-trigger-switch.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:20260529_Ausl%C3%B6seschalter_f%C3%BCr_einen_Rauchabzug.jpg",
+      "title": "20260529 Auslöseschalter für einen Rauchabzug.jpg",
+      "license": "CC BY-SA 4.0",
+      "artist": "Ramsch"
+    },
+    {
+      "file": "/assets/images/lanes/aov-barriers-deep/aov-smoke-vent-control-panel.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Mcr_9705_control_panel_for_heat_and_smoke_vents_(01).jpg",
+      "title": "Mcr 9705 control panel for heat and smoke vents (01).jpg",
+      "license": "CC0",
+      "artist": "Georg Pik"
+    },
+    {
+      "file": "/assets/images/lanes/aov-barriers-deep/aov-smoke-vent-panels-plant-room.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:VENTZ_control_panel_for_heat_and_smoke_vents_(01).jpg",
+      "title": "VENTZ control panel for heat and smoke vents (01).jpg",
+      "license": "CC0",
+      "artist": "Georg Pik"
+    },
+    {
+      "file": "/assets/images/lanes/aov-barriers-deep/aov-basement-smoke-outlet.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Smoke_Outlet_@_The_world-famous_InterContinental_Hotel_on_Park_Lane_in_London,_England,_United_Kingdom!_Grand_hospitality!_Enjoy_the_magic!_)_(4620823171).jpg",
+      "title": "Smoke Outlet @ The world-famous InterContinental Hotel on Park Lane in London, England, United Kingdom! Grand hospitality! Enjoy the magic! ) (4620823171).jpg",
+      "license": "CC BY 2.0",
+      "artist": "|| UggBoy♥UggGirl || PHOTO || WORLD || TRAVEL ||"
+    },
+    {
+      "file": "/assets/images/lanes/aov-barriers-deep/height-barrier-retail-car-park.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Sainsbury%27s_car_park_height_restriction_barrier,_Chingford,_London,_England_1.jpg",
+      "title": "Sainsbury's car park height restriction barrier, Chingford, London, England 1.jpg",
+      "license": "CC BY-SA 4.0",
+      "artist": "Acabashi"
+    },
+    {
+      "file": "/assets/images/lanes/aov-barriers-deep/height-barrier-public-car-park.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Height_Barrier_at_the_Glen_Estuary_Car_Park_-_geograph.org.uk_-_7866120.jpg",
+      "title": "Height Barrier at the Glen Estuary Car Park - geograph.org.uk - 7866120.jpg",
+      "license": "CC BY-SA 2.0",
+      "artist": "Eric Jones"
+    },
+    {
+      "file": "/assets/images/lanes/aov-barriers-deep/height-restriction-barrier-lane.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Height_restriction_barrier_on_Job%27s_Lane_by_Job%27s_Corner_-_geograph.org.uk_-_2296822.jpg",
+      "title": "Height restriction barrier on Job's Lane by Job's Corner - geograph.org.uk - 2296822.jpg",
+      "license": "CC BY-SA 2.0",
+      "artist": "Dave Spicer"
+    },
+    {
+      "file": "/assets/images/lanes/aov-barriers-deep/height-restriction-barrier-entrance.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Height_restriction_barrier_at_entrance_to_Warnham_Nature_Reserve_-_geograph.org.uk_-_2661736.jpg",
+      "title": "Height restriction barrier at entrance to Warnham Nature Reserve - geograph.org.uk - 2661736.jpg",
+      "license": "CC BY-SA 2.0",
+      "artist": "Dave Spicer"
+    },
+    {
+      "file": "/assets/images/lanes/aov-barriers-deep/height-barriers-twin-entrance.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Height_barriers_over_the_entrance_to_Abergavenny_Bus_Station_Car_Park_-_geograph.org.uk_-_6006633.jpg",
+      "title": "Height barriers over the entrance to Abergavenny Bus Station Car Park - geograph.org.uk - 6006633.jpg",
+      "license": "CC BY-SA 2.0",
+      "artist": "Jaggery"
+    },
+    {
+      "file": "/assets/images/lanes/aov-barriers-deep/height-barrier-access-road.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Height_barrier_over_a_car_park_access_road,_Carmarthen_-_geograph.org.uk_-_4619067.jpg",
+      "title": "Height barrier over a car park access road, Carmarthen - geograph.org.uk - 4619067.jpg",
+      "license": "CC BY-SA 2.0",
+      "artist": "Jaggery"
+    },
+    {
+      "file": "/assets/images/lanes/aov-barriers-deep/height-barrier-car-park-entrance.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Height_barrier_over_the_entrance_to_Cwmbran_Boating_Lake_car_park_-_geograph.org.uk_-_5352303.jpg",
+      "title": "Height barrier over the entrance to Cwmbran Boating Lake car park - geograph.org.uk - 5352303.jpg",
+      "license": "CC BY-SA 2.0",
+      "artist": "Jaggery"
+    }
+  ]
+}

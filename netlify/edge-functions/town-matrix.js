@@ -10,6 +10,7 @@ import { renderVariantPage, renderVariantSitemap } from "../lib/variant-matrix.j
 import { breadcrumbHtml, isGmTown, isLocalTown, matrixRelatedHtml } from "../lib/link-blocks.js";
 import { gmTownBlurb } from "../lib/gm-blurbs.js";
 import { p0KeepsTown, renderNationwideP0Town } from "../lib/nationwide-p0.js";
+import { aovBarriersDeepJobRedirect } from "../lib/aov-barriers-deep.js";
 import { thinFaqHtml, thinFaqs, thinImages, thinOgMeta, thinProseHtml } from "../lib/thin-quality-bar.js";
 import fireAlarmFamily from "../../website/data/fire-alarm-installer-family.json" with { type: "json" };
 import mainlandTownDoc from "../../website/data/uk-mainland-towns-10k.json" with { type: "json" };
@@ -621,6 +622,11 @@ export function nonGmMatrixRedirect(path) {
 export default async (request, context) => {
   const url = new URL(request.url);
   const path = url.pathname.replace(/\/+$/, "") || "/";
+  // AOV + Barriers DEEP wins the canonical: overlapping job×town → keyword×town (or the hub).
+  const deepJobTo = aovBarriersDeepJobRedirect(path);
+  if (deepJobTo) {
+    return Response.redirect(new URL(deepJobTo, url.origin).toString(), 301);
+  }
   const aliasTo = placeAliasRedirect(path);
   if (aliasTo) {
     return Response.redirect(new URL(aliasTo, url.origin).toString(), 301);

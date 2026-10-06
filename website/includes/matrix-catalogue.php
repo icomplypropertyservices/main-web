@@ -422,8 +422,15 @@ function icomplyMatrixJobRecords(): array
         'landlord-gas-safety' => ['Landlord gas safety', 'gas-systems', true, false],
         'maglock-installation' => ['Maglock installation', 'access-control', false, false],
     ];
+    if (!function_exists('icomplyAovBarriersDeepJobTarget')) {
+        require_once __DIR__ . '/aov-barriers-deep.php';
+    }
     $out = [];
     foreach ($rows as $slug => $row) {
+        // DEEP keyword hub is canonical for this job (SEO ruling 2026-10-06): no job×town locs or links.
+        if (icomplyAovBarriersDeepJobTarget((string)$slug) !== null) {
+            continue;
+        }
         $out[$slug] = [
             'name' => $row[0],
             'service' => $row[1],
@@ -615,8 +622,20 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
     if ($urlList === false) {
         throw new RuntimeException('Cannot write sitemap-urls.txt');
     }
+    if (count($hubEntries) > ICOMPLY_MATRIX_SITEMAP_CHUNK) {
+        // sitemap0.xml is one urlset. Protocol cap is 50,000 URLs per file.
+        throw new RuntimeException('Hub sitemap has ' . count($hubEntries) . ' URLs (cap ' . ICOMPLY_MATRIX_SITEMAP_CHUNK . ' per file)');
+    }
+    // Every loc is written once across sitemap0..N (hub priority wins over a matrix repeat).
+    $sitemapSeen = [];
+    $sitemapDuplicates = 0;
     foreach ($hubEntries as $entry) {
         $path = (string)($entry['path'] ?? '/');
+        if (isset($sitemapSeen[$path])) {
+            $sitemapDuplicates++;
+            continue;
+        }
+        $sitemapSeen[$path] = true;
         $loc = $path === '/' ? $base . '/' : $base . $path;
         $priority = (string)($entry['priority'] ?? '0.5');
         $hubXml .= '  <url><loc>' . htmlspecialchars($loc, ENT_XML1) . '</loc><priority>' . htmlspecialchars($priority, ENT_XML1) . '</priority></url>' . "\n";
@@ -645,13 +664,20 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
         fwrite($chunkHandle, '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n");
         $chunkCount = 0;
     };
-    $writeLoc = static function (string $path) use (&$chunkCount, &$chunkHandle, $openChunk, $urlList, $base): void {
+    $sitemapWritten = count($sitemapSeen);
+    $writeLoc = static function (string $path) use (&$chunkCount, &$chunkHandle, $openChunk, $urlList, $base, &$sitemapSeen, &$sitemapDuplicates, &$sitemapWritten): void {
         if (!function_exists('icomplySitemapOmitsNonGm')) {
             require_once __DIR__ . '/gm-crawl.php';
         }
         if (icomplySitemapOmitsNonGm($path)) {
             return;
         }
+        if (isset($sitemapSeen[$path])) {
+            $sitemapDuplicates++;
+            return;
+        }
+        $sitemapSeen[$path] = true;
+        $sitemapWritten++;
         if ($chunkHandle === null || $chunkCount >= ICOMPLY_MATRIX_SITEMAP_CHUNK) {
             $openChunk();
         }
@@ -693,7 +719,8 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
     }
     $familyPaths = array_values(array_unique(array_merge(
         icomplyNationwide3lineExtraTownPaths($places),
-        icomplyFireAlarmInstallerExtraTownPaths($places)
+        icomplyFireAlarmInstallerExtraTownPaths($places),
+        icomplyAovBarriersDeepExtraTownPaths($places)
     )));
     foreach ($familyPaths as $familyPath) {
         $writeLoc($familyPath);
@@ -718,6 +745,7 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
         fclose($chunkHandle);
     }
     fclose($urlList);
+    $sitemapSeen = [];
 
     $index = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
     $index .= '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
@@ -756,7 +784,8 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
         mkdir($edgeDir, 0755, true);
     }
     file_put_contents($edgeDir . '/sitemap.js', <<<'JS'
-// Static sitemap.xml is the index. No path config, so this cannot shadow it.
+// Static sitemap.xml is served as a file: a sharded sitemap index in dist (sitemap0..N.xml,
+// <=45,000 URLs each). No path config on purpose, so this module never shadows it.
 export default async () => new Response('', { status: 204 });
 JS);
     $robotsJs = str_replace(['\\', '`', '${'], ['\\\\', '\\`', '\\${'], $robots);
@@ -793,6 +822,10 @@ JS);
         'manufacturer_town_urls' => $manufacturerTown,
         'job_town_urls' => $jobTown,
         'sitemap_urls' => $sitemapUrls,
+        'sitemap_unique_urls' => $sitemapWritten,
+        'sitemap_duplicates_skipped' => $sitemapDuplicates,
+        'sitemap_chunk_cap' => ICOMPLY_MATRIX_SITEMAP_CHUNK,
+        'sitemap_files' => 1 + count($chunkPaths),
         'variant_services' => $variantMeta['services'] ?? 0,
         'variant_towns' => $variantMeta['towns'] ?? 0,
         'variant_keywords_per_service' => $variantMeta['keywords_per_service'] ?? 0,
@@ -818,6 +851,9 @@ JS);
         . ' manufacturer×town=' . $manufacturerTown
         . ' job×town=' . $jobTown
         . ' sitemap_urls=' . $sitemapUrls
+        . ' sitemap_unique=' . $sitemapWritten
+        . ' sitemap_dupes_skipped=' . $sitemapDuplicates
+        . ' sitemap_files=' . (1 + count($chunkPaths))
         . ' variant_urls=' . ($variantMeta['urls'] ?? 0) . "\n");
     return $stats;
 }
