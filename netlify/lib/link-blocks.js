@@ -222,7 +222,7 @@ function leafHref(kind, ids, townSlug) {
   if (kind === "job") return `/pages/jobs/${ids.job}/${townSlug}`;
   if (kind === "manufacturer") return `/pages/manufacturers/${ids.brand}/${townSlug}`;
   if (kind === "variant") return `/pages/keywords/${ids.keyword}/${townSlug}`;
-  return `/pages/${ids.service}/${townSlug}`;
+  return `/pages/${ids.service || ids.serviceSlug}/${townSlug}`;
 }
 
 /**

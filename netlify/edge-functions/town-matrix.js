@@ -633,7 +633,12 @@ export default async (request, context) => {
   // with the Greater Manchester matrix renderer.
   const nationwidePage = path.match(/^\/pages\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   if (nationwidePage && NATIONWIDE_TOWN.has(nationwidePage[1])) {
-    return context.next();
+    const staticResponse = await context.next();
+    // Dual-ring towns listed in the sitemap but missing from the static
+    // export fall back to the matrix renderer instead of 404ing.
+    if (staticResponse.status !== 404 || !isLocalTown(nationwidePage[2])) {
+      return staticResponse;
+    }
   }
   const sitemapMatch = path.match(/^\/matrix-sitemap\/(\d+)(?:\.xml)?$/);
   if (sitemapMatch) {
@@ -718,6 +723,15 @@ export default async (request, context) => {
   } else if (keywordMatch) {
     if (p0KeepsTown(keywordMatch[1], keywordMatch[2])) {
       rendered = renderNationwideP0Town(keywordMatch[1], keywordMatch[2]);
+    }
+    if (!rendered && !(catalogue.keywords || {})[keywordMatch[1]]) {
+      // Unknown keyword: answer like the hub (/pages/keywords/{slug} 404s)
+      // instead of a 200 noindex soft 404.
+      const hub = await fetch(new URL(`/pages/keywords/${keywordMatch[1]}`, url.origin), { redirect: "manual" });
+      if (hub.status === 404) {
+        const page = await fetch(new URL("/404.html", url.origin)).then((r) => (r.ok ? r.text() : "Not found")).catch(() => "Not found");
+        return new Response(page, { status: 404, headers: { "content-type": "text/html; charset=utf-8", "x-robots-tag": "noindex" } });
+      }
     }
     if (!rendered) {
       rendered = renderTownPage({
