@@ -43,7 +43,7 @@ function icomplyTownFactsHtml(string $slug, string $town, string $subject, strin
     if (!$g) {
         return '';
     }
-    [$council, $county, $ocs, $wards, $cons, $lat, $lng, $census] = $g + [null, null, [], [], '', 0, 0, null];
+    [$council, $county, $ocs, $wards, $cons, $lat, $lng, $census, $dists] = $g + [null, null, [], [], '', 0, 0, null, []];
     require_once SITE_ROOT . '/includes/town-depth.php';
     $mi = (int)round(townDepthMiles(TOWN_DEPTH_YARD[0], TOWN_DEPTH_YARD[1], (float)$lat, (float)$lng));
     $dir = townDepthBearing(TOWN_DEPTH_YARD[0], TOWN_DEPTH_YARD[1], (float)$lat, (float)$lng);
@@ -56,13 +56,18 @@ function icomplyTownFactsHtml(string $slug, string $town, string $subject, strin
             ' Addresses here mostly start ' . townDepthList($ocs, 'or') . '.',
         ]);
     }
-    if ($wards) {
+    $dl = array_values(array_filter((array)$dists, static fn($d) => is_array($d) && !empty($d[0]) && !empty($d[1])));
+    if (!$dl && $wards) {
         $lead .= ' Wards in those districts include: ' . implode('; ', $wards) . '.';
     }
     if ($cons) {
         $lead .= " Constituency: {$cons}.";
     }
     $p[] = $lead;
+    if ($dl) {
+        // Per-district wards (postcodes.io outcode lookup).
+        $p[] = implode(' ', array_map(static fn($d) => $d[0] . ' takes in ' . townDepthList((array)$d[1]) . '.', $dl));
+    }
     $p[] = $mi <= 3
         ? "Our yard at Offerton, Stockport SK2 5DE is close by, so visits in {$town} fit around other local work."
         : "{$town} is about {$mi} miles {$dir} of our Offerton, Stockport SK2 5DE yard in a straight line. " . ($mi <= 25 ? 'That is a day visit, with travel as a small line on the quote.' : 'Travel is written on the quote.');

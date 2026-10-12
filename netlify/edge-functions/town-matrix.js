@@ -434,7 +434,8 @@ export function renderTownPage(input) {
     job: input.job || "",
     brand: input.brand || "",
     selfPath: path,
-    lean: Boolean(facts), // pages with real town facts drop the repeated all-GM link cloud
+    // pages with real town facts drop the repeated all-GM link cloud (installer hub keeps its link set)
+    lean: Boolean(facts) && input.keyword !== "fire-alarm-installer",
   });
   const crumbItems = [
     { href: "/", label: "Home" },

@@ -85,7 +85,7 @@ function serviceLine(service, town, c, council) {
 export function townFactsBlock({ slug, town, subject, service, hrefFor, names }) {
   const g = geo[slug];
   if (!g) return null;
-  const [council, county, ocs, wards, cons, lat, lng, census] = g;
+  const [council, county, ocs, wards, cons, lat, lng, census, districts] = g;
   const seed = hash(`${slug}|${subject}`);
   const mi = Math.round(miles(YARD, { lat, lng }));
   const dir = bearing(YARD, { lat, lng });
@@ -98,9 +98,14 @@ export function townFactsBlock({ slug, town, subject, service, hrefFor, names })
       ` Give us a postcode starting ${list(ocs, "or")} and we can place the site.`,
     ][seed % 3];
   }
-  if (wards.length) lead += ` Wards in those districts include: ${wards.join("; ")}.`;
+  const dl = Array.isArray(districts) ? districts.filter((d) => d && d[0] && d[1] && d[1].length) : [];
+  if (!dl.length && wards.length) lead += ` Wards in those districts include: ${wards.join("; ")}.`;
   if (cons) lead += ` Constituency: ${cons}.`;
   paras.push(lead);
+  // Per-district wards (postcodes.io outcode lookup).
+  if (dl.length) {
+    paras.push(dl.map(([oc, ws, c]) => `${oc} takes in ${list(ws)}.`).join(" "));
+  }
   paras.push(mi <= 3
     ? `Our yard at Offerton, Stockport SK2 5DE is close by, so ${subject.toLowerCase()} visits in ${town} fit around other local work.`
     : `${town} is about ${mi} miles ${dir} of our Offerton, Stockport SK2 5DE yard in a straight line. ${mi <= 25 ? "That is a day visit, with travel as a small line on the quote." : mi <= 90 ? "Visits at that range are batched into planned days, with travel written on the quote." : "Travel, and any overnight stay, is priced on the quote before anything is booked."}`);
