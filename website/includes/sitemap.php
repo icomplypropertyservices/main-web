@@ -132,7 +132,7 @@ function icomplySitemapEntries(): array
             $file = dirname(__DIR__) . '/data/sitemap-redirect-exclude.txt';
             $redirectExclude = is_file($file) ? array_flip(array_filter(array_map('trim', file($file) ?: []))) : [];
         }
-        // Paths that 301 elsewhere must not be listed (GSC "Page with redirect").
+        // Paths that 301 elsewhere or are noindex must not be listed (GSC "Page with redirect" / "Submitted URL marked noindex").
         if (isset($redirectExclude[$path])) {
             return;
         }
