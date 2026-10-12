@@ -1,7 +1,7 @@
 <?php
 /**
  * HMO landlord package conversion pages (job lane).
- * £650 is the approved list for FRA + EICR + gas on one typical 6-bed HMO
+ * £561 is the approved list for FRA + EICR + gas on one typical 6-bed HMO
  * in the North West (quote builder LAND-PKG-FRA-EICR-GAS-6BED-NW).
  * Discounted units use the same nearest-£1, half-up rule as that list.
  * Not a licence. Not legal advice. Draft / non-production until promoted.
@@ -14,7 +14,7 @@ if (!defined('SITE_ROOT')) {
 
 function hmoJobBundleListPence(): int
 {
-    return 65000;
+    return 56100;
 }
 
 /**
@@ -114,7 +114,7 @@ function hmoJobPages(): array
             'primaryBundle' => true,
             'pageTitle' => 'HMO compliance bundle ' . $bundle . ' | iComply',
             'metaDesc' => 'HMO compliance bundle: FRA, EICR and gas safety for ' . $bundle . ' on a typical 6-bed HMO in the North West. iComply, Stockport. Remedials POA. Not a licence.',
-            'keywords' => 'HMO compliance package, HMO bundle £650, HMO EICR, HMO FRA, HMO gas safety Stockport',
+            'keywords' => 'HMO compliance package, HMO bundle £561, HMO EICR, HMO FRA, HMO gas safety Stockport',
             'ogImage' => '/assets/images/services/electrical.jpg',
             'kicker' => 'FRA + EICR + gas',
             'h1' => 'HMO compliance bundle',
@@ -129,7 +129,7 @@ function hmoJobPages(): array
                 'North West list · all-in · no VAT added',
                 'Portfolio discount on the bundle',
             ],
-            'service' => 'HMO compliance bundle (£650)',
+            'service' => 'HMO compliance bundle (£561)',
             'wa' => 'Hi iComply, I want the HMO compliance bundle (FRA + EICR + gas) at ' . $bundle . ' for a typical 6-bed in the North West.',
             'showCards' => false,
             'ctaTitle' => 'Book the ' . $bundle . ' HMO bundle',
@@ -141,7 +141,7 @@ function hmoJobPages(): array
             'file' => '/pages/jobs/hmo-fire-safety.php',
             'primaryBundle' => false,
             'pageTitle' => 'HMO fire safety pack | iComply',
-            'metaDesc' => 'HMO fire safety for Stockport and the North West: FRA, alarm inspection, emergency lighting and doors as required. The £650 bundle applies when FRA, EICR and gas are booked together.',
+            'metaDesc' => 'HMO fire safety for Stockport and the North West: FRA, alarm inspection, emergency lighting and doors as required. The £561 bundle applies when FRA, EICR and gas are booked together.',
             'keywords' => 'HMO fire safety, HMO fire risk assessment, HMO fire alarm, HMO emergency lighting Stockport',
             'ogImage' => '/assets/images/services/fire-alarms.jpg',
             'kicker' => 'Life safety on an HMO',
@@ -158,7 +158,7 @@ function hmoJobPages(): array
                 'Installs and doors POA after survey',
             ],
             'service' => 'HMO fire safety pack',
-            'wa' => 'Hi iComply, I need an HMO fire safety quote (FRA and any alarms, lighting or doors). I know the £650 bundle is only when FRA, EICR and gas are together.',
+            'wa' => 'Hi iComply, I need an HMO fire safety quote (FRA and any alarms, lighting or doors). I know the £561 bundle is only when FRA, EICR and gas are together.',
             'showCards' => false,
             'ctaTitle' => 'Request an HMO fire safety quote',
             'ctaText' => 'Tell us storeys, number of lets, whether a fire alarm or emergency lighting is already fitted, and if EICR and gas are due as well. If all three certificates are due on a typical 6-bed in the North West, use the **' . $bundle . ' bundle** instead of pricing them separately.',
@@ -169,7 +169,7 @@ function hmoJobPages(): array
             'file' => '/pages/jobs/hmo-occupancy.php',
             'primaryBundle' => false,
             'pageTitle' => 'HMO occupancy pack | iComply',
-            'metaDesc' => 'HMO re-let certificates: EICR and gas safety on the North West 6-bed list, plus smoke and CO as scoped. Add an FRA and the job becomes the £650 bundle.',
+            'metaDesc' => 'HMO re-let certificates: EICR and gas safety on the North West 6-bed list, plus smoke and CO as scoped. Add an FRA and the job becomes the £561 bundle.',
             'keywords' => 'HMO re-let certificates, HMO occupancy pack, HMO EICR gas, HMO void Stockport',
             'ogImage' => '/assets/images/services/smoke-co-alarms.jpg',
             'kicker' => 'Re-let and void',
@@ -181,12 +181,12 @@ function hmoJobPages(): array
                 ['name' => 'Occupancy pack', 'href' => '/pages/jobs/hmo-occupancy', 'current' => true],
             ],
             'proof' => [
-                'EICR £249 · gas £85 · typical 6-bed',
+                'EICR £160 · gas £85 · typical 6-bed',
                 'Smoke and CO scoped on the visit',
                 'FRA added → ' . $bundle . ' bundle',
             ],
             'service' => 'HMO occupancy pack',
-            'wa' => 'Hi iComply, I need an HMO re-let quote (EICR and gas, smoke/CO if required). Add the FRA only if it is due — I know that becomes the £650 bundle on a typical 6-bed.',
+            'wa' => 'Hi iComply, I need an HMO re-let quote (EICR and gas, smoke/CO if required). Add the FRA only if it is due — I know that becomes the £561 bundle on a typical 6-bed.',
             'showCards' => false,
             'ctaTitle' => 'Request an HMO re-let quote',
             'ctaText' => 'Postcode, bedrooms, and whether the fire risk assessment is already in date. If it is due as well, ask for the **' . $bundle . ' compliance bundle** rather than EICR and gas on their own.',
@@ -226,8 +226,8 @@ function hmoJobCards(): array
         [
             'href' => '/pages/jobs/hmo-occupancy',
             'label' => 'Occupancy pack',
-            'price' => 'EICR £249 + gas £85',
-            'blurb' => 'Re-let file without a new FRA. If the FRA is due as well, the job is the £650 bundle.',
+            'price' => 'EICR £160 + gas £85',
+            'blurb' => 'Re-let file without a new FRA. If the FRA is due as well, the job is the £561 bundle.',
             'bundle' => false,
         ],
     ];
@@ -254,7 +254,7 @@ function hmoJobFireLines(): array
 function hmoJobOccupancyLines(): array
 {
     return [
-        ['name' => 'EICR', 'price' => '£249', 'note' => 'Typical 6-bed HMO. Remedials quoted after the inspection.'],
+        ['name' => 'EICR', 'price' => '£160', 'note' => 'Typical 6-bed HMO. Remedials quoted after the inspection.'],
         ['name' => 'Gas safety (CP12)', 'price' => '£85', 'note' => 'Landlord gas safety record. Gas Safe registered engineers. Remedials after the visit.'],
     ];
 }

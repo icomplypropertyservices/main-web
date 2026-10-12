@@ -12,7 +12,7 @@ function icomplyLandlordGuidePrices(): array
 {
     return [
         'eicr' => [
-            'amount' => 249,
+            'amount' => 160,
             'name' => 'EICR',
             'service' => 'Electrical',
             'path' => '/pages/jobs/eicr',
@@ -33,7 +33,7 @@ function icomplyLandlordGuidePrices(): array
             'guide' => 'Guide for an HMO or other multi-occupied FRA. Layout and related installs are confirmed on the quote.',
         ],
         'bundle' => [
-            'amount' => 650,
+            'amount' => 561,
             'name' => 'Landlord compliance pack',
             'service' => 'Landlord Compliance',
             'path' => '/pages/jobs/landlord-compliance',

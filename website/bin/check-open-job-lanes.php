@@ -2,7 +2,7 @@
 <?php
 /**
  * Open job lanes landed from the remaining draft PRs.
- * New hubs only. Published phone, WhatsApp, EICR £249, gas £85, FRA £350 and the £650 bundle stay.
+ * New hubs only. Published phone, WhatsApp, EICR £160, gas £85, FRA £350 and the £561 bundle stay.
  */
 declare(strict_types=1);
 
@@ -102,7 +102,7 @@ $ok(PHONE === '07517806082', 'phone unchanged');
 $ok(WHATSAPP === '447517806082', 'whatsapp unchanged');
 $eicrSrc = (string)file_get_contents(SITE_ROOT . '/includes/eicr-lane.php');
 $gasSrc = (string)file_get_contents(SITE_ROOT . '/includes/gas-job-lane.php');
-$ok(str_contains($eicrSrc, '£249'), 'EICR list price still £249');
+$ok(str_contains($eicrSrc, '£160'), 'EICR list price still £160');
 $ok(str_contains($gasSrc, '£85'), 'gas list price still £85');
 $fra = SITE_ROOT . '/includes/fra-job-lane.php';
 $ok(is_file($fra) && str_contains((string)file_get_contents($fra), '£350'), 'FRA list price still £350');
@@ -117,7 +117,7 @@ $ok(stripos($fabricHtml, '<!DOCTYPE') !== false && str_contains($fabricHtml, 're
 ob_start();
 renderKeywordPage('eicr');
 $eicrHtml = (string)ob_get_clean();
-$ok(str_contains($eicrHtml, '£249') && str_contains($eicrHtml, '07517806082'), 'EICR hub still shows £249 and the phone');
+$ok(str_contains($eicrHtml, '£160') && str_contains($eicrHtml, '07517806082'), 'EICR hub still shows £160 and the phone');
 
 $GAS_JOB = 'gas-safety';
 ob_start();

@@ -39,7 +39,7 @@ $categories = [
         'items' => [
             [
                 'name' => 'EICR — typical 6-bed HMO, North West',
-                'from' => '£249',
+                'from' => '£160',
                 'price_kind' => 'list',
                 'href' => '/pages/jobs/eicr',
                 'typical' => 'List per property (ELEC-EICR-6BED-NW). All-in. 1-bed, other domestic sizes and commercial EICRs stay POA. Remedials are extra.',
@@ -180,7 +180,7 @@ $categories = [
         'hub_href' => '/pages/jobs/fra',
         'hub_label' => 'FRA job lane →',
         'intro' => 'Approved list for a typical North West 6-bed HMO. All-in. VAT is not added. Other premises are priced after scope.',
-        'footer' => '£350 and £650 are approved list prices for a typical North West 6-bed HMO. The pack replaces FRA, EICR and gas — it is not added on top of £350. Other FRA premises stay POA. Remedials are extra.',
+        'footer' => '£350 and £561 are approved list prices for a typical North West 6-bed HMO. The pack replaces FRA, EICR and gas — it is not added on top of £350. Other FRA premises stay POA. Remedials are extra.',
         'items' => [
             [
                 'name' => 'FRA — typical 6-bed HMO',
@@ -199,10 +199,10 @@ $categories = [
             ],
             [
                 'name' => 'Landlord pack: FRA + EICR + gas',
-                'from' => '£650',
+                'from' => '£561',
                 'price_kind' => 'list',
                 'href' => '/pages/jobs/landlord-bundle',
-                'typical' => 'Same typical 6-bed HMO. £650 replaces the three separate lines.',
+                'typical' => 'Same typical 6-bed HMO. £561 replaces the three separate lines.',
                 'includes' => 'FRA, EICR and landlord gas safety record',
             ],
         ],

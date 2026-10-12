@@ -24,10 +24,10 @@ $ok = static function (bool $cond, string $msg) use (&$fail): void {
 
 $bundle = icomplyComplianceBundle();
 $label = icomplyComplianceBundlePriceLabel();
-$ok(icomplyComplianceBundlePriceGbp() === 650, 'price gbp is 650');
-$ok($label === '£650', 'price label is £650');
+$ok(icomplyComplianceBundlePriceGbp() === 561, 'price gbp is 561');
+$ok($label === '£561', 'price label is £561');
 $ok($bundle['price_label'] === $label, 'bundle array uses the label helper');
-$ok($bundle['price_gbp'] === 650, 'bundle array price matches helper');
+$ok($bundle['price_gbp'] === 561, 'bundle array price matches helper');
 
 $root = SITE_ROOT;
 $skip = [
@@ -55,11 +55,11 @@ foreach ($it as $file) {
         continue;
     }
     $contents = (string)file_get_contents($path);
-    if (str_contains($contents, '£650')) {
+    if (str_contains($contents, '£561')) {
         $hardcoded[] = str_replace($root . '/', '', $path);
     }
 }
-$ok($hardcoded === [], 'no hardcoded £650 outside the SSOT (' . implode(', ', $hardcoded) . ')');
+$ok($hardcoded === [], 'no hardcoded £561 outside the SSOT (' . implode(', ', $hardcoded) . ')');
 
 $keys = icomplyComplianceBundleCrossSellKeys();
 $ok($keys === ['electrical', 'gas-systems', 'fire-risk-assessments'], 'cross-sell keys are EICR, gas, FRA');
@@ -102,7 +102,7 @@ foreach ([$bundleHtml, $packHtml] as $html) {
 }
 $ok(count($canonicals) === 2 && $canonicals[0] === $canonicals[1], 'both URLs canonicalise to the Compliance Bundle');
 $ok(str_contains($canonicals[0] ?? '', '/pages/packages/compliance-bundle'), 'canonical path is the bundle URL');
-$ok(str_contains($bundleHtml, '"price":"650"') && str_contains($packHtml, '"price":"650"'), 'Offer schema price is 650');
+$ok(str_contains($bundleHtml, '"price":"561"') && str_contains($packHtml, '"price":"561"'), 'Offer schema price is 561');
 $ok(str_contains($bundleHtml, 'name="service"') && str_contains($bundleHtml, $bundle['service_value']), 'quote form selects the pack');
 
 foreach (['/pages/services/electrical.php', '/pages/services/gas-systems.php', '/pages/services/fire-risk-assessments.php'] as $svc) {

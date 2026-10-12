@@ -8,7 +8,7 @@
  * Seven core-compliance hubs that were not already published.
  *
  * New slugs are hub-only: they do not join the 170-town keyword matrix.
- * Existing electrical, gas, EICR (£249) and CP12 (£85) rows are left in place.
+ * Existing electrical, gas, EICR (£160) and CP12 (£85) rows are left in place.
  */
 declare(strict_types=1);
 
@@ -147,7 +147,7 @@ function openJobElectricalAngle(string $hay): array
         return [
             'standard' => 'BS 7671 Electrical Installation Condition Report (EICR).',
             'focus' => 'EICR coding (C1, C2, C3 and FI) with remedials quoted after the report',
-            'price' => 'The published EICR list price is £249 for a typical North West 6-bed HMO. Other domestic sizes and commercial EICRs stay POA.',
+            'price' => 'The published EICR list price is £160 for a typical North West 6-bed HMO. Other domestic sizes and commercial EICRs stay POA.',
         ];
     }
     if (preg_match('/rewire/', $hay)) {
@@ -175,7 +175,7 @@ function openJobElectricalAngle(string $hay): array
         return [
             'standard' => 'Landlord electrical safety: the EICR cycle, remedials, and the evidence a licence file usually asks for.',
             'focus' => 'Let-ready electrical evidence for agents and landlords',
-            'price' => 'The published EICR list price is £249 for a typical North West 6-bed HMO. Other lets stay POA.',
+            'price' => 'The published EICR list price is £160 for a typical North West 6-bed HMO. Other lets stay POA.',
         ];
     }
     return [

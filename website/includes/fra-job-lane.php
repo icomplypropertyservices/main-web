@@ -2,7 +2,7 @@
 /**
  * Fire risk assessment job lane.
  * Approved list: typical North West 6-bed HMO FRA £350.
- * Pack cross-link: FRA + EICR + gas £650 (replaces the three lines).
+ * Pack cross-link: FRA + EICR + gas £561 (replaces the three lines).
  * Draft content. Do not promote this branch to production.
  */
 declare(strict_types=1);
@@ -60,7 +60,7 @@ if (!function_exists('fraLaneRates')) {
             ],
             'bundle' => [
                 'code' => 'LAND-PKG-FRA-EICR-GAS-6BED-NW',
-                'pence' => 65000,
+                'pence' => 56100,
                 'name' => 'Landlord pack: FRA + EICR + gas',
                 'scope' => 'Same typical 6-bed HMO. Replaces the three separate lines.',
             ],
@@ -175,8 +175,8 @@ if (!function_exists('fraLanePages')) {
                         'a' => 'No. £350 is the list for a typical North West 6-bed HMO. A portfolio discount can reduce the unit price. Other buildings are not this list.',
                     ],
                     [
-                        'q' => 'Does the pack add £350 on top of £650?',
-                        'a' => 'No. The landlord pack is £650 for FRA, EICR and gas together on that same typical 6-bed HMO. Booking the pack means you do not also pay the £350 line.',
+                        'q' => 'Does the pack add £350 on top of £561?',
+                        'a' => 'No. The landlord pack is £561 for FRA, EICR and gas together on that same typical 6-bed HMO. Booking the pack means you do not also pay the £350 line.',
                     ],
                     [
                         'q' => 'Are remedials included?',
@@ -187,7 +187,7 @@ if (!function_exists('fraLanePages')) {
             'other' => [
                 'path' => '/pages/jobs/fra-other',
                 'pageTitle' => 'Fire risk assessment for other premises | POA',
-                'metaDesc' => 'Fire risk assessments for premises that are not a typical North West 6-bed HMO. Priced after scope. The 6-bed list is £350. The landlord pack is £650.',
+                'metaDesc' => 'Fire risk assessments for premises that are not a typical North West 6-bed HMO. Priced after scope. The 6-bed list is £350. The landlord pack is £561.',
                 'ogTitle' => 'FRA for other premises',
                 'kicker' => 'Priced after scope',
                 'h1' => 'Fire risk assessment — other premises',
@@ -219,7 +219,7 @@ if (!function_exists('fraLanePages')) {
                         'a' => 'No. £350 is the typical 6-bed HMO list. An office, shop or block is scoped first.',
                     ],
                     [
-                        'q' => 'Where is the £650 pack explained?',
+                        'q' => 'Where is the £561 pack explained?',
                         'a' => 'On the landlord pack page. It is FRA, EICR and gas for the same typical 6-bed HMO, and it replaces those three separate prices.',
                     ],
                 ],
@@ -257,12 +257,12 @@ if (!function_exists('fraLanePages')) {
                 ],
                 'faqs' => [
                     [
-                        'q' => 'Is £650 FRA plus EICR plus gas added together?',
-                        'a' => 'No. £650 is the pack price for the three on one typical 6-bed HMO. The separate FRA list of £350 is not added on top.',
+                        'q' => 'Is £561 FRA plus EICR plus gas added together?',
+                        'a' => 'No. £561 is the pack price for the three on one typical 6-bed HMO. The separate FRA list of £350 is not added on top.',
                     ],
                     [
                         'q' => 'Does a multi-property discount stack on each certificate?',
-                        'a' => 'No. The portfolio percentage applies to the £650 pack. It is not applied again to FRA, EICR and gas inside that pack.',
+                        'a' => 'No. The portfolio percentage applies to the £561 pack. It is not applied again to FRA, EICR and gas inside that pack.',
                     ],
                 ],
             ],
@@ -290,7 +290,7 @@ $ogTitle = $fraPage['ogTitle'];
 $ogImage = url('/assets/images/services/fire-risk-assessments.jpg');
 $ogImageAlt = 'Fire risk assessment — iComply Property Services, Stockport';
 $canonicalUrl = url($fraPage['path']);
-$metaKeywords = 'fire risk assessment, FRA £350, landlord pack £650, HMO fire risk assessment Stockport';
+$metaKeywords = 'fire risk assessment, FRA £350, landlord pack £561, HMO fire risk assessment Stockport';
 
 $home = rtrim(SITE_URL, '/');
 $crumbs = $fraPage['crumbs'];

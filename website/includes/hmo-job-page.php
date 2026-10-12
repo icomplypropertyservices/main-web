@@ -61,7 +61,7 @@ function hmoJobRender(string $id): void
                 <?= hmoJobH((string)$page['h1']) ?>
             </h1>
             <?php if (!empty($page['primaryBundle'])): ?>
-                <p class="mt-6 text-5xl font-semibold tracking-tight text-[#ff6b00]" data-hmo-bundle="650"><?= hmoJobH($bundleLabel) ?></p>
+                <p class="mt-6 text-5xl font-semibold tracking-tight text-[#ff6b00]" data-hmo-bundle="561"><?= hmoJobH($bundleLabel) ?></p>
                 <p class="mt-2 text-sm text-white">Per property · typical 6-bed HMO · North West. All-in. iComply is not VAT registered, so VAT is not added.</p>
             <?php endif; ?>
             <p class="mt-6 text-lg md:text-xl text-white max-w-2xl"><?= hmoJobRich((string)$page['lede']) ?></p>
@@ -86,7 +86,7 @@ function hmoJobRender(string $id): void
     <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mt-2 text-black">Three HMO routes</h2>
     <div class="mt-8 grid md:grid-cols-3 gap-6">
         <?php foreach (hmoJobCards() as $card): ?>
-            <article class="border border-zinc-200 rounded-3xl p-6 flex flex-col bg-white <?= !empty($card['bundle']) ? 'ring-2 ring-[#ff6b00]' : '' ?>"<?= !empty($card['bundle']) ? ' data-hmo-bundle="650"' : '' ?>>
+            <article class="border border-zinc-200 rounded-3xl p-6 flex flex-col bg-white <?= !empty($card['bundle']) ? 'ring-2 ring-[#ff6b00]' : '' ?>"<?= !empty($card['bundle']) ? ' data-hmo-bundle="561"' : '' ?>>
                 <h3 class="text-xl font-semibold text-black"><?= hmoJobH($card['label']) ?></h3>
                 <p class="mt-3 text-2xl font-semibold text-[#0B1F3A]"><?= hmoJobH($card['price']) ?></p>
                 <p class="mt-3 text-sm text-zinc-600 flex-1"><?= hmoJobH($card['blurb']) ?></p>
@@ -113,7 +113,7 @@ function hmoJobRender(string $id): void
                 <li>Landlord gas safety record where gas is present</li>
                 <li>One documentation pack for the agent or licence file</li>
             </ul>
-            <p class="mt-4 text-sm text-zinc-600">Bought separately on the same list those three are £350 + £249 + £85. The bundle is <?= hmoJobH($bundleLabel) ?>, and the separate lines are not added again.</p>
+            <p class="mt-4 text-sm text-zinc-600">Bought separately on the same list those three are £350 + £160 + £85. The bundle is <?= hmoJobH($bundleLabel) ?>, and the separate lines are not added again.</p>
         </div>
         <div class="border border-zinc-200 rounded-3xl p-6 bg-white">
             <h3 class="font-semibold text-lg text-black">Not included</h3>
@@ -268,7 +268,7 @@ echo '</section>';
     var select = document.getElementById('hmo-job-service');
     if (!select) return;
     var map = {
-        'Compliance bundle': 'HMO compliance bundle (£650)',
+        'Compliance bundle': 'HMO compliance bundle (£561)',
         'Fire safety pack': 'HMO fire safety pack',
         'Occupancy pack': 'HMO occupancy pack'
     };
@@ -336,30 +336,30 @@ function hmoJobFaqs(string $id, string $bundleLabel): array
     $specific = [
         'hmo' => [
             [
-                'q' => 'Which package is £650?',
+                'q' => 'Which package is £561?',
                 'a' => 'Only the compliance bundle: FRA, EICR and gas together on a typical 6-bed HMO in the North West. Fire-only and re-let-only jobs use their own lines.',
             ],
         ],
         'hmo-compliance' => [
             [
                 'q' => 'What if the HMO has no gas?',
-                'a' => 'The £650 bundle is not used. EICR is £249 and the FRA is £350 on the typical 6-bed list. Tell us on the form so we do not include a gas record you do not need.',
+                'a' => 'The £561 bundle is not used. EICR is £160 and the FRA is £350 on the typical 6-bed list. Tell us on the form so we do not include a gas record you do not need.',
             ],
             [
                 'q' => 'What if I already have a current FRA?',
-                'a' => 'Use the occupancy pack for EICR and gas. Do not pay £650 for a certificate you are not booking.',
+                'a' => 'Use the occupancy pack for EICR and gas. Do not pay £561 for a certificate you are not booking.',
             ],
         ],
         'hmo-fire-safety' => [
             [
-                'q' => 'Is the fire pack £650?',
-                'a' => 'No. £650 is FRA plus EICR plus gas. A fire-only visit uses the FRA at £350 and the inspection lines shown, with installs quoted after survey.',
+                'q' => 'Is the fire pack £561?',
+                'a' => 'No. £561 is FRA plus EICR plus gas. A fire-only visit uses the FRA at £350 and the inspection lines shown, with installs quoted after survey.',
             ],
         ],
         'hmo-occupancy' => [
             [
-                'q' => 'When does a re-let become the £650 bundle?',
-                'a' => 'When the fire risk assessment is booked as well, on a typical 6-bed HMO in the North West. FRA, EICR and gas are then one £650 line.',
+                'q' => 'When does a re-let become the £561 bundle?',
+                'a' => 'When the fire risk assessment is booked as well, on a typical 6-bed HMO in the North West. FRA, EICR and gas are then one £561 line.',
             ],
         ],
     ];
@@ -426,7 +426,7 @@ function hmoJobJsonLd(array $page, array $faqs, string $home, string $bundleLabe
             ],
             'offers' => [
                 '@type' => 'Offer',
-                'price' => '650',
+                'price' => '561',
                 'priceCurrency' => 'GBP',
                 'description' => $bundleLabel . ' for a typical 6-bed HMO in the North West. FRA, EICR and gas are included once. Remedials POA. VAT is not added.',
                 'url' => $home . $page['path'],
@@ -443,7 +443,7 @@ function hmoJobServiceOptions(): array
 {
     return [
         'HMO landlord packages' => 'HMO landlord packages',
-        'HMO compliance bundle (£650)' => 'HMO compliance bundle (£650) — FRA + EICR + gas',
+        'HMO compliance bundle (£561)' => 'HMO compliance bundle (£561) — FRA + EICR + gas',
         'HMO fire safety pack' => 'HMO fire safety pack',
         'HMO occupancy pack' => 'HMO occupancy pack (re-let)',
     ];
@@ -456,7 +456,7 @@ function hmoJobRelatedLinks(): array
 {
     return [
         ['href' => '/pages/jobs/hmo', 'label' => 'All HMO packages'],
-        ['href' => '/pages/jobs/hmo-compliance', 'label' => '£650 compliance bundle'],
+        ['href' => '/pages/jobs/hmo-compliance', 'label' => '£561 compliance bundle'],
         ['href' => '/pages/jobs/hmo-fire-safety', 'label' => 'Fire safety pack'],
         ['href' => '/pages/jobs/hmo-occupancy', 'label' => 'Occupancy pack'],
         ['href' => '/pages/landlords', 'label' => 'Landlord services'],

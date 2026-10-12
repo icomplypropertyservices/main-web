@@ -12,15 +12,15 @@ require_once $root . '/includes/fra-job-lane.php';
 $fail = 0;
 $expect = [
     'fra' => 350,
-    'bundle_1' => 650,
+    'bundle_1' => 561,
     'fra_t1' => 333,
     'fra_t2' => 315,
     'fra_t3' => 306,
     'fra_t4' => 298,
-    'bundle_t1' => 618,
+    'bundle_t1' => 533,
     'bundle_t2' => 585,
     'bundle_t3' => 569,
-    'bundle_t4' => 553,
+    'bundle_t4' => 477,
 ];
 $rates = fraLaneRates();
 $got = [
@@ -43,13 +43,13 @@ foreach ($expect as $key => $want) {
 }
 
 $paths = [
-    '/pages/jobs/fra' => ['£350', '£650', '/pages/jobs/landlord-bundle', '/pages/jobs/fire-risk-assessment'],
-    '/pages/jobs/fire-risk-assessment' => ['£350', '£650', 'FIRE-FRA-6BED-NW', '/pages/jobs/landlord-bundle', '£333', '£298'],
-    '/pages/jobs/fra-other' => ['POA', '£350', '£650', 'FIRE-FRA-OTHER'],
-    '/pages/jobs/landlord-bundle' => ['£650', '£350', 'LAND-PKG-FRA-EICR-GAS-6BED-NW', '£618', '£553'],
-    '/pages/fire-risk-assessment' => ['£350', '£650', '/pages/jobs/fra', '/pages/jobs/landlord-bundle'],
-    '/pages/pricing' => ['£350', '£650', 'approved list', '/pages/jobs/fire-risk-assessment', '/pages/jobs/landlord-bundle'],
-    '/pages/packages' => ['£350', '£650', '/pages/jobs/landlord-bundle'],
+    '/pages/jobs/fra' => ['£350', '£561', '/pages/jobs/landlord-bundle', '/pages/jobs/fire-risk-assessment'],
+    '/pages/jobs/fire-risk-assessment' => ['£350', '£561', 'FIRE-FRA-6BED-NW', '/pages/jobs/landlord-bundle', '£333', '£298'],
+    '/pages/jobs/fra-other' => ['POA', '£350', '£561', 'FIRE-FRA-OTHER'],
+    '/pages/jobs/landlord-bundle' => ['£561', '£350', 'LAND-PKG-FRA-EICR-GAS-6BED-NW', '£533', '£477'],
+    '/pages/fire-risk-assessment' => ['£350', '£561', '/pages/jobs/fra', '/pages/jobs/landlord-bundle'],
+    '/pages/pricing' => ['£350', '£561', 'approved list', '/pages/jobs/fire-risk-assessment', '/pages/jobs/landlord-bundle'],
+    '/pages/packages' => ['£350', '£561', '/pages/jobs/landlord-bundle'],
 ];
 
 $runner = sys_get_temp_dir() . '/fra-lane-render.php';

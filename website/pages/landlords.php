@@ -28,7 +28,7 @@ $landlordServices = [
     ],
     'fire-risk-assessments' => [
         'title' => 'Fire risk assessments',
-        'blurb' => 'Suitable and sufficient FRAs. A typical North West 6-bed HMO is listed at £350. The FRA + EICR + gas pack for that same house is £650.',
+        'blurb' => 'Suitable and sufficient FRAs. A typical North West 6-bed HMO is listed at £350. The FRA + EICR + gas pack for that same house is £561.',
         'badge' => 'FSO / PAS 79',
     ],
     'fire-alarms' => [
@@ -165,11 +165,11 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
     <div class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <div>
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">HMO landlords</div>
-            <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mt-2">FRA + EICR + gas · £650</h2>
+            <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mt-2">FRA + EICR + gas · £561</h2>
             <p class="mt-2 text-white/80 max-w-2xl">Typical 6-bed HMO in the North West. The three certificates are one bundle, not three bills. Fire-only and re-let packs sit beside it. Not a licence.</p>
         </div>
         <div class="flex flex-wrap gap-3">
-            <a href="<?= url('/pages/jobs/hmo-compliance.php') ?>" class="px-6 py-3 rounded-2xl bg-[#ff6b00] font-semibold text-white">View the £650 bundle</a>
+            <a href="<?= url('/pages/jobs/hmo-compliance.php') ?>" class="px-6 py-3 rounded-2xl bg-[#ff6b00] font-semibold text-white">View the £561 bundle</a>
             <a href="<?= url('/pages/jobs/hmo.php') ?>" class="px-6 py-3 rounded-2xl border border-white font-semibold">All HMO packages</a>
         </div>
     </div>
@@ -224,7 +224,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
     <p class="mt-6 text-sm text-white">
         FRA job lane: <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/jobs/fra') ?>">hub</a>,
         <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/jobs/fire-risk-assessment') ?>">£350 for a typical 6-bed HMO</a>,
-        <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/jobs/landlord-bundle') ?>">£650 pack</a>
+        <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/jobs/landlord-bundle') ?>">£561 pack</a>
         (FRA, EICR and gas — not added on top).
     </p>
 

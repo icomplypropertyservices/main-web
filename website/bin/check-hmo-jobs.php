@@ -1,6 +1,6 @@
 <?php
 /**
- * HMO job-lane pages: £650 bundle only where it is the offer, CTAs present.
+ * HMO job-lane pages: £561 bundle only where it is the offer, CTAs present.
  * Usage: php bin/check-hmo-jobs.php
  */
 require_once __DIR__ . '/../config.php';
@@ -14,10 +14,10 @@ $say = static function (bool $ok, string $label) use (&$fail): void {
     }
 };
 
-$say(hmoJobFormatPence(hmoJobBundleListPence()) === '£650', 'list bundle is £650');
+$say(hmoJobFormatPence(hmoJobBundleListPence()) === '£561', 'list bundle is £561');
 $say(hmoJobFormatPercent(0) === '0%' && hmoJobFormatPercent(12.5) === '12.5%', 'percent labels');
 $tiers = hmoJobBundleTiers();
-$expect = ['£650', '£618', '£585', '£569', '£553'];
+$expect = ['£561', '£533', '£505', '£491', '£477'];
 $got = array_column($tiers, 'each');
 $say($got === $expect, 'portfolio rounding ' . implode(', ', $got));
 
@@ -42,24 +42,24 @@ foreach ($ids as $id) {
     $say(str_contains($html, 'Not an HMO licence'), $id . ' licence disclaimer');
     $say(str_contains($html, 'not legal advice'), $id . ' legal disclaimer');
     $say(stripos($html, 'Icomply') === false || str_contains($html, 'iComply'), $id . ' uses iComply in new copy');
-    $bundleAttr = substr_count($html, 'data-hmo-bundle="650"');
+    $bundleAttr = substr_count($html, 'data-hmo-bundle="561"');
     if (!empty($page['primaryBundle'])) {
-        $say($bundleAttr >= 1, $id . ' marks £650 offer');
-        $say(str_contains($html, '"price":"650"') || str_contains($html, '"price": "650"'), $id . ' Offer price 650');
-        $say(str_contains($html, '£618') && str_contains($html, '£553'), $id . ' portfolio prices');
+        $say($bundleAttr >= 1, $id . ' marks £561 offer');
+        $say(str_contains($html, '"price":"561"') || str_contains($html, '"price": "561"'), $id . ' Offer price 561');
+        $say(str_contains($html, '£533') && str_contains($html, '£477'), $id . ' portfolio prices');
     } elseif ($id !== 'hmo') {
-        $say($bundleAttr === 0, $id . ' does not mark itself as the £650 offer');
+        $say($bundleAttr === 0, $id . ' does not mark itself as the £561 offer');
     }
     if ($id === 'hmo') {
-        $say($bundleAttr === 1, 'hub marks only the compliance card as £650');
-        $say(str_contains($html, '£650'), 'hub mentions £650');
+        $say($bundleAttr === 1, 'hub marks only the compliance card as £561');
+        $say(str_contains($html, '£561'), 'hub mentions £561');
     }
     if ($id === 'hmo-fire-safety') {
-        $say(str_contains($html, 'Is the fire pack £650?'), 'fire FAQ refuses £650 as the pack price');
+        $say(str_contains($html, 'Is the fire pack £561?'), 'fire FAQ refuses £561 as the pack price');
         $say(str_contains($html, '£350'), 'fire page shows FRA £350');
     }
     if ($id === 'hmo-occupancy') {
-        $say(str_contains($html, '£249') && str_contains($html, '£85'), 'occupancy shows EICR and gas list');
+        $say(str_contains($html, '£160') && str_contains($html, '£85'), 'occupancy shows EICR and gas list');
     }
 }
 

@@ -28,15 +28,15 @@ $ok = static function (bool $cond, string $msg) use (&$fail): void {
 };
 
 $price = eicrLaneListPrice();
-$ok($price['display'] === '£249', 'list display is £249');
-$ok($price['amount'] === '249.00', 'list amount is 249.00');
+$ok($price['display'] === '£160', 'list display is £160');
+$ok($price['amount'] === '160.00', 'list amount is 160.00');
 $ok($price['code'] === 'ELEC-EICR-6BED-NW', 'rate code is the 6-bed HMO code');
 
 $keywords = getMajorKeywords();
 foreach (['eicr', 'eicr-testing', 'eicr-cost', 'eicr-price', 'landlord-eicr', 'commercial-eicr', 'domestic-eicr', 'fixed-wire-testing'] as $slug) {
     $ok(isset($keywords[$slug]), "keyword data has $slug");
     $intro = (string)($keywords[$slug]['intro'] ?? '');
-    $ok(str_contains($intro, '£249'), "$slug intro states £249");
+    $ok(str_contains($intro, '£160'), "$slug intro states £160");
     $ok(stripos($intro, '6-bed') !== false, "$slug intro scopes 6-bed");
     $ok(stripos($intro, 'price on application') !== false, "$slug intro keeps other sizes POA");
     $blob = $intro . ' ' . (string)($keywords[$slug]['body'] ?? '');
@@ -72,7 +72,7 @@ foreach ($pages as $label => $fn) {
     $html = $render($fn);
     $ok(strlen($html) > 2000, "$label rendered");
     $ok(str_contains($html, 'id="eicr-lane"'), "$label has the lane panel");
-    $ok(str_contains($html, 'data-eicr-price="249"'), "$label exposes 249");
+    $ok(str_contains($html, 'data-eicr-price="160"'), "$label exposes 160");
     $ok(str_contains($html, 'ELEC-EICR-6BED-NW'), "$label shows the rate code");
     $ok(str_contains($html, 'price on application'), "$label says other scopes are POA");
     $ok(str_contains($html, 'pages/keywords/eicr-testing'), "$label links to EICR testing");
@@ -93,7 +93,7 @@ $partp = (string)($keywords['part-p-certified']['intro'] ?? '');
 $ok(stripos($partp, 'does not claim a Part P scheme registration') !== false, 'Part P page denies a scheme claim');
 
 $pricing = (string)file_get_contents($root . '/pages/pricing.php');
-$ok(str_contains($pricing, "'from' => '£249'"), 'pricing guide keeps the £249 list row');
+$ok(str_contains($pricing, "'from' => '£160'"), 'pricing guide keeps the £160 list row');
 $ok(str_contains($pricing, 'typical 6-bed HMO'), 'pricing guide names the 6-bed scope');
 $ok(str_contains($pricing, 'EICR — 1-bed / small dwelling'), 'pricing guide lists 1-bed as its own row');
 $ok(str_contains($pricing, 'EICR — commercial'), 'pricing guide lists commercial as its own row');

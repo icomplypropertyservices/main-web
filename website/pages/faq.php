@@ -19,7 +19,7 @@ $faqs = [
     [
         'cat' => 'HMO packages',
         'q' => 'How much is the HMO compliance bundle?',
-        'a' => '£650 for a fire risk assessment, an EICR and landlord gas safety on the same typical 6-bed HMO in the North West. Those three are not charged again on top. Portfolio discounts apply to that £650. Remedials, parts, alarms, lighting and travel outside the North West are separate. It is not an HMO licence and not legal advice.',
+        'a' => '£561 for a fire risk assessment, an EICR and landlord gas safety on the same typical 6-bed HMO in the North West. Those three are not charged again on top. Portfolio discounts apply to that £561. Remedials, parts, alarms, lighting and travel outside the North West are separate. It is not an HMO licence and not legal advice.',
         'link' => ['/pages/jobs/hmo-compliance.php', 'HMO compliance bundle'],
     ],
     // Electrical / EICR

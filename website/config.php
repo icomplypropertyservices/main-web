@@ -714,12 +714,12 @@ function icomplyApplyCustomerKeywordCopy(array $keywords): array
             ];
         }
         if ($slug === 'same-day-eicr') {
-            $row['intro'] = 'EICR certificates from our Stockport SK2 base. The published EICR list price is £249 for a typical North West 6-bed HMO. Other domestic sizes and commercial EICRs stay POA.';
+            $row['intro'] = 'EICR certificates from our Stockport SK2 base. The published EICR list price is £160 for a typical North West 6-bed HMO. Other domestic sizes and commercial EICRs stay POA.';
             $row['body'] = 'We look at the installation, confirm the scope against BS 7671, and send a written figure before the visit is booked. Call 07517806082.';
-            $row['meta_desc'] = 'EICR certificates from Stockport SK2. £249 for a typical North West 6-bed HMO. Other sizes are POA. Call 07517806082.';
+            $row['meta_desc'] = 'EICR certificates from Stockport SK2. £160 for a typical North West 6-bed HMO. Other sizes are POA. Call 07517806082.';
             $row['focus_points'] = [
                 'BS 7671 Electrical Installation Condition Report',
-                '£249 for a typical North West 6-bed HMO',
+                '£160 for a typical North West 6-bed HMO',
                 'Other domestic sizes and commercial EICRs stay POA',
                 'Written scope before the visit is booked',
             ];
@@ -966,7 +966,7 @@ function isCostStyleKeyword(string $slug, string $name = ''): bool {
  */
 function icomplyBlobHasInventedPrice(string $blob): bool
 {
-    $stripped = preg_replace('/£\s*(?:249|85|350|650)\b/', '', $blob) ?? $blob;
+    $stripped = preg_replace('/£\s*(?:160|85|350|561)\b/', '', $blob) ?? $blob;
     return (bool)preg_match('/£\s*\d/', $stripped);
 }
 

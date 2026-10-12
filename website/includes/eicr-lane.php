@@ -2,7 +2,7 @@
 /**
  * EICR / electrical testing job lane.
  *
- * One published list price: £249 for a typical North West 6-bed HMO
+ * One published list price: £160 for a typical North West 6-bed HMO
  * (code ELEC-EICR-6BED-NW). All-in. Remedials are extra.
  * 1-bed, other domestic sizes, and commercial EICRs stay price on application.
  * No invented fees, scheme badges, or “satisfactory” outcome without the visit.
@@ -52,8 +52,8 @@ function eicrLaneIsSlug(string $slug): bool
 function eicrLaneListPrice(): array
 {
     return [
-        'display' => '£249',
-        'amount' => '249.00',
+        'display' => '£160',
+        'amount' => '160.00',
         'code' => 'ELEC-EICR-6BED-NW',
         'name' => 'EICR — typical 6-bed HMO, North West',
         'scope' => 'Typical 6-bed HMO in the North West',
@@ -95,11 +95,11 @@ function eicrLaneKeywordReplacements(): array
     $sentence = eicrLanePriceSentence();
     $sharedFaq = [
         [
-            'What does the £249 EICR list price include?',
+            'What does the £160 EICR list price include?',
             'Inspection and testing of the fixed installation, and the Electrical Installation Condition Report, for a typical 6-bed HMO in the North West. It does not include remedial works, parts, or a different size of property.',
         ],
         [
-            'Is £249 the price of every EICR?',
+            'Is £160 the price of every EICR?',
             'No. It is the list for that 6-bed HMO scope only. 1-bed dwellings and commercial installations are price on application. We confirm the figure before you are booked.',
         ],
         [
@@ -110,10 +110,10 @@ function eicrLaneKeywordReplacements(): array
     return [
         'eicr-cost' => [
             'intro' => 'EICR cost on this site is one published list price, not a menu of guessed fees. ' . $sentence,
-            'body' => 'A studio, a 3-bed house and a shop are not the same visit as a typical 6-bed HMO. Those stay price on application once bedrooms, consumer units and access are known. The £249 list is per property and covers the inspection plus the report. Coded remedials are a second quote. Stockport engineers cover Greater Manchester and the wider North West. Travel outside the North West is agreed before booking. The report describes the installation on the day of the test.',
-            'meta_desc' => 'EICR list price £249 for a typical North West 6-bed HMO. Other sizes and commercial EICRs are POA. Remedials extra. iComply, Stockport.',
+            'body' => 'A studio, a 3-bed house and a shop are not the same visit as a typical 6-bed HMO. Those stay price on application once bedrooms, consumer units and access are known. The £160 list is per property and covers the inspection plus the report. Coded remedials are a second quote. Stockport engineers cover Greater Manchester and the wider North West. Travel outside the North West is agreed before booking. The report describes the installation on the day of the test.',
+            'meta_desc' => 'EICR list price £160 for a typical North West 6-bed HMO. Other sizes and commercial EICRs are POA. Remedials extra. iComply, Stockport.',
             'focus_points' => [
-                '£249 list for a typical North West 6-bed HMO only',
+                '£160 list for a typical North West 6-bed HMO only',
                 '1-bed and commercial EICRs are price on application',
                 'Remedials quoted from the coded report, not bundled in',
                 'All-in list — VAT is not added',
@@ -121,11 +121,11 @@ function eicrLaneKeywordReplacements(): array
             'faq' => $sharedFaq,
         ],
         'eicr-price' => [
-            'intro' => 'EICR price, for the one scope we publish, is £249. ' . $sentence,
+            'intro' => 'EICR price, for the one scope we publish, is £160. ' . $sentence,
             'body' => 'Landlords searching “EICR price” usually want a number before they book. The published number is the 6-bed HMO list. Anything else — fewer bedrooms, a different layout, or a commercial board — is confirmed in writing after we know the installation. Reports are coded to BS 7671. We do not publish a cheaper “from” price for a smaller flat, and we do not relabel the HMO list as a commercial fee.',
-            'meta_desc' => 'EICR price £249 for a typical 6-bed HMO in the North West. 1-bed and commercial EICR prices are POA. iComply Stockport.',
+            'meta_desc' => 'EICR price £160 for a typical 6-bed HMO in the North West. 1-bed and commercial EICR prices are POA. iComply Stockport.',
             'focus_points' => [
-                'Published list: £249, typical 6-bed HMO, North West',
+                'Published list: £160, typical 6-bed HMO, North West',
                 'No invented from-price for flats or shops',
                 'Remedials priced after C1, C2, C3 and FI coding',
                 'Confirmed before booking',
@@ -151,13 +151,13 @@ function eicrLaneAccreditationReplacements(): array
         'niceic-certified' => [
             'name' => 'NICEIC explained',
             'intro' => 'NICEIC is a UK competent-person scheme. This page explains the term. iComply does not publish a NICEIC membership number and does not claim to be NICEIC certified.',
-            'body' => 'An EICR is assessed against BS 7671. A scheme logo is a separate question. If a client, insurer or Building Control body requires a named scheme, say so when you enquire and we will tell you whether we can take the job. We will not invent a membership to win the work. The published EICR list price is £249 for a typical North West 6-bed HMO. Other sizes are price on application.',
-            'meta_desc' => 'What NICEIC means, and what iComply does not claim. EICR testing is to BS 7671. List price £249 for a typical North West 6-bed HMO.',
+            'body' => 'An EICR is assessed against BS 7671. A scheme logo is a separate question. If a client, insurer or Building Control body requires a named scheme, say so when you enquire and we will tell you whether we can take the job. We will not invent a membership to win the work. The published EICR list price is £160 for a typical North West 6-bed HMO. Other sizes are price on application.',
+            'meta_desc' => 'What NICEIC means, and what iComply does not claim. EICR testing is to BS 7671. List price £160 for a typical North West 6-bed HMO.',
             'focus_points' => [
                 'NICEIC is a scheme name, not a result on your EICR',
                 'No membership number is published on this site',
                 'Inspection and testing still follow BS 7671',
-                '£249 list price is only the typical 6-bed HMO EICR',
+                '£160 list price is only the typical 6-bed HMO EICR',
             ],
             'faq' => [
                 ['Are you NICEIC certified?', 'We do not claim NICEIC certification on this website, and we do not publish a membership number. Ask if your file specifically requires a named scheme.'],
@@ -168,8 +168,8 @@ function eicrLaneAccreditationReplacements(): array
         'part-p-certified' => [
             'name' => 'Part P explained',
             'intro' => 'Part P is the Building Regulations requirement for electrical safety in dwellings in England. This page explains that. iComply does not claim a Part P scheme registration here.',
-            'body' => 'Some new circuits, consumer-unit changes and work in special locations are notifiable. Many like-for-like repairs are not. We say which is which when the job is scoped. An EICR is a condition report on an existing installation. It is not a Part P notification and it is not an Electrical Installation Certificate for new work. The only published EICR list price is £249 for a typical North West 6-bed HMO.',
-            'meta_desc' => 'Part P explained without a scheme-badge claim. EICR list price £249 for a typical North West 6-bed HMO. Other electrical work is quoted after scope.',
+            'body' => 'Some new circuits, consumer-unit changes and work in special locations are notifiable. Many like-for-like repairs are not. We say which is which when the job is scoped. An EICR is a condition report on an existing installation. It is not a Part P notification and it is not an Electrical Installation Certificate for new work. The only published EICR list price is £160 for a typical North West 6-bed HMO.',
+            'meta_desc' => 'Part P explained without a scheme-badge claim. EICR list price £160 for a typical North West 6-bed HMO. Other electrical work is quoted after scope.',
             'focus_points' => [
                 'Part P is a Building Regulations duty, not a logo we print',
                 'Notifiable work is confirmed per job',
@@ -206,7 +206,7 @@ function eicrLaneOverlayKeyword(string $slug, array $row): array
     }
     $sentence = eicrLanePriceSentence();
     $intro = (string)($row['intro'] ?? '');
-    if (!str_contains($intro, '£249')) {
+    if (!str_contains($intro, '£160')) {
         $row['intro'] = rtrim($intro, " \t.") . '. ' . $sentence;
     }
     $faqs = is_array($row['faq'] ?? null) ? $row['faq'] : [];
@@ -218,7 +218,7 @@ function eicrLaneOverlayKeyword(string $slug, array $row): array
         $faqs[$i][0] = eicrLaneStripDenials((string)$faq[0]);
         $faqs[$i][1] = eicrLaneStripDenials((string)$faq[1]);
         $blob = $faqs[$i][0] . ' ' . $faqs[$i][1];
-        if (str_contains($blob, '£249') || stripos($blob, 'list price') !== false) {
+        if (str_contains($blob, '£160') || stripos($blob, 'list price') !== false) {
             $hasPriceFaq = true;
         }
     }
@@ -286,7 +286,7 @@ function eicrLaneOfferSchema(): array
 function eicrLaneServiceCopy(): array
 {
     return [
-        'hero_accent' => 'EICR testing. £249 for a typical 6-bed HMO.',
+        'hero_accent' => 'EICR testing. £160 for a typical 6-bed HMO.',
         'intro' => [
             'The electrical testing job is an Electrical Installation Condition Report: a visual inspection and instrument tests of the fixed wiring to BS 7671, with observations coded C1, C2, C3 or FI.',
             eicrLanePriceSentence(),
@@ -295,10 +295,10 @@ function eicrLaneServiceCopy(): array
         'pillars' => [
             ['title' => 'Inspection and testing', 'text' => 'Dead and live tests on the circuits in the agreed scope. If a circuit cannot be isolated or reached, that limitation is written on the report rather than filled in.'],
             ['title' => 'The condition report', 'text' => 'You receive the EICR for the installation as found that day. It is not a guarantee of later years, and a satisfactory result is not promised before the visit.'],
-            ['title' => 'Remedials, separately', 'text' => 'C1, C2 and FI items are quoted after the report. They are outside the £249 list. C3 items are improvement recommendations.'],
+            ['title' => 'Remedials, separately', 'text' => 'C1, C2 and FI items are quoted after the report. They are outside the £160 list. C3 items are improvement recommendations.'],
         ],
-        'band' => 'EICR list price £249 for a typical North West 6-bed HMO. Other sizes, commercial sites and remedials are confirmed before booking.',
-        'cta_line' => 'Postcode, bedrooms and consumer units. We confirm whether the £249 list applies before you are booked.',
+        'band' => 'EICR list price £160 for a typical North West 6-bed HMO. Other sizes, commercial sites and remedials are confirmed before booking.',
+        'cta_line' => 'Postcode, bedrooms and consumer units. We confirm whether the £160 list applies before you are booked.',
     ];
 }
 
@@ -311,10 +311,10 @@ function eicrLanePanelHtml(string $context = 'page'): string
     $phone = defined('PHONE') ? (string)PHONE : '';
     $phoneHref = 'tel:' . preg_replace('/\s+/', '', $phone);
     $wa = defined('WHATSAPP') ? (string)WHATSAPP : '';
-    $waText = rawurlencode('EICR quote. The published list is £249 for a typical North West 6-bed HMO. My property is: ');
+    $waText = rawurlencode('EICR quote. The published list is £160 for a typical North West 6-bed HMO. My property is: ');
     $quoteHref = '#quote';
 
-    $html = '<section id="eicr-lane" data-eicr-price="249" data-eicr-code="' . $h($price['code']) . '" '
+    $html = '<section id="eicr-lane" data-eicr-price="160" data-eicr-code="' . $h($price['code']) . '" '
         . 'class="mt-8 rounded-3xl border-2 border-[#0B1F3A] bg-white p-6 md:p-8 shadow-sm" aria-labelledby="eicr-lane-heading">';
     $html .= '<p class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">EICR testing lane</p>';
     $html .= '<h2 id="eicr-lane-heading" class="mt-2 text-2xl md:text-3xl font-semibold tracking-tight text-[#0B1F3A]">'

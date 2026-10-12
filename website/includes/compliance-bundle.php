@@ -9,7 +9,7 @@ declare(strict_types=1);
 /** Published pack price in whole pounds. Change the offer here only. */
 function icomplyComplianceBundlePriceGbp(): int
 {
-    return 650;
+    return 561;
 }
 
 function icomplyComplianceBundlePriceLabel(): string
