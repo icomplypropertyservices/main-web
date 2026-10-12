@@ -270,6 +270,7 @@ echo icomplyQualityBarThinBlock(
 );
 require_once SITE_ROOT . '/includes/town-facts.php';
 $townFacts = icomplyTownFactsHtml((string)$areaSlugVal, (string)$areaName, (string)$serviceName, (string)$serviceSlug);
+$tfLean = $townFacts !== ''; // real local facts present: trim shared boilerplate blocks
 if ($townFacts !== '') {
     echo '<div class="max-w-4xl mx-auto px-6 py-10">' . $townFacts . '</div>';
 }
@@ -316,10 +317,10 @@ if ($townFacts !== '') {
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars($areaExtra, ENT_QUOTES, 'UTF-8') ?></p>
             <?php endif; ?>
             <?php if (!empty($svcCopy['intro']) && is_array($svcCopy['intro'])): ?>
-                <?php foreach (array_slice($svcCopy['intro'], 0, 2) as $para): ?>
+                <?php foreach (array_slice($svcCopy['intro'], $tfLean ? (crc32((string)$areaSlugVal) % max(1, min(2, count($svcCopy['intro'])))) : 0, $tfLean ? 1 : 2) as $para): ?>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars((string)$para, ENT_QUOTES, 'UTF-8') ?></p>
                 <?php endforeach; ?>
-            <?php else: ?>
+            <?php elseif (!$tfLean): ?>
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
                 iComply Property Services provides complete <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong>
                 design, installation, commissioning, maintenance and certification across
@@ -388,6 +389,7 @@ if ($townFacts !== '') {
         'localProse' => is_array($gmPacked) ? (string)($gmPacked['blurb'] ?? '') : '',
     ]) ?>
 
+    <?php if (!$tfLean): ?>
     <!-- Pillars -->
     <div class="mt-14 grid md:grid-cols-3 gap-6">
         <?php
@@ -406,6 +408,7 @@ if ($townFacts !== '') {
         </div>
         <?php endforeach; ?>
     </div>
+    <?php endif; ?>
 </section>
 
 <?php if ($serviceSlug === 'barriers' && function_exists('barrierPagesBlockHtml')): ?>
@@ -421,13 +424,14 @@ if ($townFacts !== '') {
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Manufacturers</div>
                 <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Brands we install &amp; service in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></h2>
-                <p class="mt-2 text-zinc-600 max-w-2xl">Looking for your exact panel brand? We support major <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturers so customers searching for their equipment in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> find iComply.</p>
+                <?php if (!$tfLean): ?><p class="mt-2 text-zinc-600 max-w-2xl">Looking for your exact panel brand? We support major <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturers so customers searching for their equipment in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> find iComply.</p><?php endif; ?>
             </div>
             <a href="<?= url('/shop/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Browse trade shop →</a>
         </div>
         <div class="flex flex-wrap gap-3 mb-8">
             <?= $MANUFACTURER_TAGS ?>
         </div>
+        <?php if (!$tfLean): ?>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <?= $MANUFACTURER_IMAGES ?>
         </div>
@@ -440,6 +444,7 @@ if ($townFacts !== '') {
                  onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
             <p class="text-xs text-zinc-500 px-4 py-3">Manufacturer panels &amp; systems commonly installed and serviced in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></p>
         </div>
+        <?php endif; ?>
     </div>
 </section>
 <?php endif; ?>
@@ -450,7 +455,7 @@ if ($townFacts !== '') {
         <div>
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Also available</div>
             <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Related services in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></h2>
-            <p class="mt-2 text-zinc-600">Combine multiple compliance services into one visit schedule for landlords and FM teams.</p>
+            <?php if (!$tfLean): ?><p class="mt-2 text-zinc-600">Combine multiple compliance services into one visit schedule for landlords and FM teams.</p><?php endif; ?>
         </div>
         <div class="flex flex-wrap gap-4">
             <a href="<?= url('/pages/areas/' . $AREA_SLUG . '.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All services in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> →</a>
@@ -458,8 +463,17 @@ if ($townFacts !== '') {
         </div>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-        <?php foreach ($allServices as $slug => $name):
-            if ($slug === $serviceSlug) continue;
+        <?php
+        $relServices = $allServices;
+        unset($relServices[$serviceSlug]);
+        if ($tfLean && $relServices !== []) {
+            // Six related services, rotated per town, instead of the full identical grid.
+            $rk = array_keys($relServices);
+            $off = crc32((string)$areaSlugVal) % count($rk);
+            $rk = array_slice(array_merge(array_slice($rk, $off), array_slice($rk, 0, $off)), 0, 6);
+            $relServices = array_intersect_key($relServices, array_flip($rk));
+        }
+        foreach ($relServices as $slug => $name):
         ?>
         <a href="<?= url('/pages/' . $slug . '/' . $AREA_SLUG . '.php') ?>"
            class="group bg-white border rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
@@ -492,7 +506,8 @@ if ($townFacts !== '') {
                 <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">
                     <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> near <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>
                 </h2>
-                <p class="mt-2 text-zinc-600">
+                <?php if ($tfLean) { $popularTowns = []; } ?>
+                <p class="mt-2 text-zinc-600"<?= $tfLean ? ' hidden' : '' ?>>
                     We also cover towns near <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> —
                     open a dedicated local page for the same service.
                 </p>
@@ -536,7 +551,7 @@ if ($townFacts !== '') {
             <h2 class="text-3xl font-semibold tracking-tight">Need <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>?</h2>
             <p class="mt-3 text-white/75"><?= $poaCombo
                 ? 'Price on application after we confirm the property in ' . htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') . '. No invented fee list — call, WhatsApp or send the form.'
-                : 'Written quotes after scope. Visit dates follow the diary. Full certification on every job. Tell us your panel brand or system type.' ?></p>
+                : ($tfLean ? '' : 'Written quotes after scope. Visit dates follow the diary. Full certification on every job. Tell us your panel brand or system type.') ?></p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="#quote" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold">Request quote</a>
                 <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Quote for ' . $serviceName . ' in ' . $areaName) ?>"
@@ -551,13 +566,13 @@ if ($townFacts !== '') {
                 <a href="<?= url('/pages/landlords.php') ?>" class="px-6 py-3 rounded-2xl bg-white/10 border border-white/20 font-semibold hover:bg-white/15">Landlords</a>
             </div>
         </div>
-        <ul class="space-y-3 text-sm text-white/90">
+        <?php if (!$tfLean): ?><ul class="space-y-3 text-sm text-white/90">
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Based in Stockport — covering <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> &amp; <?= htmlspecialchars($coveragePhrase, ENT_QUOTES, 'UTF-8') ?></li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Installation, servicing and certification</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Multi-service packages for landlords &amp; FM teams</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Phone, WhatsApp or form — send the postcode to start a quote</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Manufacturer brands supported — see tags above</li>
-        </ul>
+        </ul><?php endif; ?>
     </div>
 </section>
 
@@ -587,9 +602,9 @@ if ($townFacts !== '') {
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input type="tel" name="phone" placeholder="Phone" required maxlength="40" class="w-full border px-5 py-3.5 rounded-2xl">
                 <select name="service" required class="w-full border px-5 py-3.5 rounded-2xl bg-white">
-                    <?php foreach ($allServices as $slug => $name): ?>
+                    <?php foreach (($tfLean ? [$serviceSlug => $serviceName] + $relServices : $allServices) as $slug => $name): ?>
                         <option value="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>"<?= $slug === $serviceSlug ? ' selected' : '' ?>>
-                            <?= htmlspecialchars($name . ' in ' . $areaName, ENT_QUOTES, 'UTF-8') ?>
+                            <?= htmlspecialchars($tfLean ? $name : $name . ' in ' . $areaName, ENT_QUOTES, 'UTF-8') ?>
                         </option>
                     <?php endforeach; ?>
                     <option value="Multi-service package">Multi-service package — <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></option>

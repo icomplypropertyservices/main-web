@@ -240,7 +240,8 @@ function icomplyQualityBarThinProseHtml(string $kind, array $ctx): string
         $parts[] = '<p data-pe-slot="q1-town-blurb">' . icomplyQualityBarH($blurb) . '</p>';
     }
     $short = !empty($ctx['short']);
-    foreach ($short ? [0] : [0, 1] as $pass) {
+    // Short mode: the real town-facts block replaces the generic bank prose entirely.
+    foreach ($short ? [] : [0, 1] as $pass) {
         $used = 0;
         foreach ($banks as $i => $bank) {
             if (!is_array($bank) || $bank === []) {
@@ -256,10 +257,12 @@ function icomplyQualityBarThinProseHtml(string $kind, array $ctx): string
             $parts[] = '<p>' . icomplyQualityBarH(icomplyQualityBarFill($raw, $ctx)) . '</p>';
         }
     }
-    $parts[] = '<p>' . icomplyQualityBarH(icomplyQualityBarFill(
-        '{pop} {housing} {industry} Places named alongside {place} include {near}.',
-        $ctx
-    )) . '</p>';
+    if (!$short) {
+        $parts[] = '<p>' . icomplyQualityBarH(icomplyQualityBarFill(
+            '{pop} {housing} {industry} Places named alongside {place} include {near}.',
+            $ctx
+        )) . '</p>';
+    }
     if (!empty($ctx['gas'])) {
         $parts[] = '<p>' . icomplyQualityBarH(ICOMPLY_GAS_ENGINEERS . ' ' . ICOMPLY_GAS_NOT_REGISTERED) . '</p>';
     }
@@ -516,6 +519,20 @@ function icomplyQualityBarThinBlock(
         ['Where is the team that covers ' . $place . ' based?', 'Visits are arranged from ' . ICOMPLY_NAP . '.'],
         ['What should be sent before a ' . $place . ' visit?', 'Send the postcode, the property type and anything already known about the installation.'],
     ];
+    if (!empty($ctx['short'])) {
+        // Facts-based FAQs from the town's own geography (postcodes.io / ONS), not shared boilerplate.
+        $g = icomplyTownFactsGeo(areaSlug($place));
+        [$gc, $gco, $gocs, $gw, $gcons] = $g + [null, null, [], [], ''];
+        $faqs = [$faqs[0]];
+        if (is_array($gocs) && $gocs !== []) {
+            $faqs[] = ['Which ' . $place . ' postcodes do you cover for ' . strtolower($subject) . '?',
+                implode(', ', array_slice($gocs, 0, 6)) . ' are all quoted from the Stockport yard; send the full postcode so the scope names the right building.'];
+        }
+        if ($gc) {
+            $faqs[] = ['Which council is ' . $place . ' in?', $place . ' is in the ' . $gc . ' council area' . ($gco && $gco !== $gc ? ', ' . $gco : '')
+                . ($gcons ? ', in the ' . $gcons . ' constituency' : '') . '. Building control and licensing questions go to that council, not to us.'];
+        }
+    }
     if ($gas) {
         $faqs[] = ['Who carries out gas work for this ' . $place . ' visit?', ICOMPLY_GAS_ENGINEERS . ' ' . ICOMPLY_GAS_NOT_REGISTERED];
     }
