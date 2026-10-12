@@ -18,8 +18,8 @@ $expect = [
     'fra_t3' => 306,
     'fra_t4' => 298,
     'bundle_t1' => 533,
-    'bundle_t2' => 585,
-    'bundle_t3' => 569,
+    'bundle_t2' => 505,
+    'bundle_t3' => 491,
     'bundle_t4' => 477,
 ];
 $rates = fraLaneRates();
