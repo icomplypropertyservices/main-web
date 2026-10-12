@@ -260,6 +260,15 @@ $schema = [
     </div>
 </section>
 
+<?php
+require_once SITE_ROOT . '/includes/town-facts.php';
+require_once SITE_ROOT . '/includes/town-deep.php';
+$areaFacts = icomplyTownFactsHtml(areaSlug($AREA), $AREA, 'Property compliance', 'property-compliance');
+if ($areaFacts !== '') {
+    echo '<div class="max-w-4xl mx-auto px-6 py-10">' . $areaFacts . '</div>';
+}
+echo icomplyTownDeepHtml(areaSlug($AREA), $AREA, 'property compliance', 'property-compliance');
+?>
 <!-- POPULAR KEYWORD × THIS AREA (EICR report, FRA, gas cert, etc.) -->
 <section class="related-links max-w-7xl mx-auto px-6 py-16">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
@@ -277,7 +286,11 @@ $schema = [
     </div>
     <?php
     require_once SITE_ROOT . '/includes/related.php';
-    echo keywordAreaLinksHtml($AREA, null, 0);
+    // A per-town rotated set instead of every keyword (the full list made area hubs ~1.2 MB and identical).
+    $kwAll = array_keys(getMajorKeywords());
+    $kwSeed = crc32(areaSlug($AREA));
+    usort($kwAll, static fn($a, $b) => (crc32($a . $kwSeed) <=> crc32($b . $kwSeed)));
+    echo keywordAreaLinksHtml($AREA, array_slice($kwAll, 0, 36), 48);
     ?>
 </section>
 
@@ -292,28 +305,12 @@ $schema = [
             </div>
             <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All service hubs →</a>
         </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            <?php foreach ($allServices as $slug => $name):
-                $blurb = getServiceBlurb($slug, true);
-            ?>
-            <a href="<?= htmlspecialchars(exportedServiceLocalUrl($slug, $AREA, 'area'), ENT_QUOTES, 'UTF-8') ?>"
-               class="group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
-                <div class="h-36 bg-zinc-100 overflow-hidden">
-                    <img src="<?= htmlspecialchars(serviceImageUrl($slug), ENT_QUOTES, 'UTF-8') ?>"
-                         alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>"
-                         width="640" height="360"
-                         class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                         loading="lazy"
-                         onerror="this.parentElement.style.display='none'">
-                </div>
-                <div class="p-5 flex-1 flex flex-col">
-                    <h3 class="font-semibold text-lg text-black"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></h3>
-                    <p class="text-sm text-zinc-600 mt-2 flex-1"><?= htmlspecialchars($blurb, ENT_QUOTES, 'UTF-8') ?></p>
-                    <span class="mt-4 text-sm font-semibold text-[#ff6b00]">View service →</span>
-                </div>
-            </a>
+        <ul class="flex flex-wrap gap-2">
+            <?php foreach ($allServices as $slug => $name): ?>
+            <li><a href="<?= htmlspecialchars(exportedServiceLocalUrl($slug, $AREA, 'area'), ENT_QUOTES, 'UTF-8') ?>"
+               class="inline-block px-4 py-2 bg-white border rounded-full text-sm font-medium text-black hover:border-[#ff6b00]"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></a></li>
             <?php endforeach; ?>
-        </div>
+        </ul>
     </div>
 </section>
 
