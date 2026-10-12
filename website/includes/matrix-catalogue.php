@@ -725,10 +725,9 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
     foreach ($chunkPaths as $name) {
         $index .= '  <sitemap><loc>' . $base . '/' . $name . '</loc></sitemap>' . "\n";
     }
-    $variantPartCount = (int)($variantMeta['sitemap_parts'] ?? 0);
-    for ($variantPart = 0; $variantPart < $variantPartCount; $variantPart++) {
-        $index .= '  <sitemap><loc>' . $base . '/matrix-sitemap/' . $variantPart . '.xml</loc></sitemap>' . "\n";
-    }
+    // Keyword-by-town matrix pages stay live via netlify/edge-functions/town-matrix.js
+    // but are deliberately NOT listed in the sitemap index (approved 2026-10-12):
+    // only the regular sitemap0..N.xml chunks are submitted to Google.
     $index .= '</sitemapindex>' . "\n";
     file_put_contents($dist . '/sitemap.xml', $index);
 

@@ -692,13 +692,13 @@ if ($edgeMatrix) {
     $variantUrls = (int)($matrixStats['variant_urls'] ?? 0);
     $variantReady = $variantUrls >= 10000000
         && is_file($dist . '/assets/matrix/variants.json')
-        && str_contains($sitemapDist, '/matrix-sitemap/0.xml');
+        && !str_contains($sitemapDist, '/matrix-sitemap/');
     if ($variantReady) {
         $pass++;
         echo "[PASS] variant matrix urls={$variantUrls} per_service=" . (int)($matrixStats['variant_keywords_per_service'] ?? 0) . "\n";
     } else {
         $fail++;
-        echo "[FAIL] variant matrix missing from sitemap index or under 10 million URLs ({$variantUrls})\n";
+        echo "[FAIL] variant matrix under 10 million URLs or still listed in sitemap index ({$variantUrls})\n";
     }
 }
 $sitemapHub = is_file($dist . '/sitemap0.xml') ? (string)file_get_contents($dist . '/sitemap0.xml') : $sitemapDist;
