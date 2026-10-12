@@ -411,7 +411,8 @@ function icomplyTownEditorial(string $family, array $town): array
         ];
     $faqs = [];
     $offset = (int)($seed % count($faqPools));
-    for ($i = 0; $i < 3; $i++) {
+    $faqCount = (in_array($family, TOWN_DEPTH_FAMILIES, true) && townDepthGeo((string)$ctx['slug'])) ? 1 : 3;
+    for ($i = 0; $i < $faqCount; $i++) {
         $fq = $faqPools[($offset + $i * 2) % count($faqPools)];
         $ids[] = 'faq:' . (($offset + $i * 2) % count($faqPools));
         $faqs[] = [icomplyTownFill($fq[0], $ctx), icomplyTownFill($fq[1], $ctx)];
@@ -449,33 +450,26 @@ function icomplyTownManufacturerHtml(string $family, array $town): string
     } else {
         $html .= '<p class="mt-3 text-black max-w-3xl">These are the AOV and smoke-control manufacturers we install and service in ' . $name . '. Each card links to the brand page. “Specify” opens the on-page wizard with that name selected.</p>';
     }
-    $current = '';
-    $html .= '<div class="mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">';
-    foreach ($rows as $row) {
-        if ($row['group'] !== $current) {
-            $current = $row['group'];
-        }
-        $slug = htmlspecialchars($row['slug'], ENT_QUOTES, 'UTF-8');
-        $label = htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8');
-        $note = htmlspecialchars($row['note'], ENT_QUOTES, 'UTF-8');
+    $partners = array_values(array_filter($rows, static fn($r) => !empty($r['partner'])));
+    $others = array_values(array_filter($rows, static fn($r) => empty($r['partner'])));
+    $html .= '<div class="mt-6 grid md:grid-cols-3 gap-4">';
+    foreach ($partners as $row) {
         $href = htmlspecialchars(url('/pages/manufacturers/' . $row['slug'] . '.php'), ENT_QUOTES, 'UTF-8');
-        $logo = htmlspecialchars(url('/assets/images/manufacturers/nameplates/' . $row['slug'] . '.svg'), ENT_QUOTES, 'UTF-8');
-        $border = $row['partner'] ? 'border-[#ff6b00] border-2' : 'border-zinc-200 border';
-        $badge = $row['partner'] ? '<span class="inline-block mt-1 text-xs font-semibold uppercase tracking-wide text-[#ff6b00]">Partner</span>' : '';
-        $html .= '<article class="bg-white ' . $border . ' rounded-2xl overflow-hidden flex flex-col" data-manufacturer="' . $slug . '">';
-        $html .= '<a href="' . $href . '"><img class="mfr-nameplate w-full h-28 object-cover" src="' . $logo . '" alt="' . $label . ' nameplate" width="320" height="160" loading="lazy"></a>';
-        $html .= '<div class="p-3 flex-1 flex flex-col">';
-        $html .= '<a class="font-semibold text-black hover:text-[#ff6b00]" href="' . $href . '">' . $label . '</a>';
-        $html .= $badge;
-        if ($row['partner']) {
-            $html .= '<p class="mt-2 text-xs text-zinc-700 flex-1">' . $note . '</p>';
-        } else {
-            $html .= '<span class="flex-1"></span>';
-        }
-        $html .= '<a class="mt-3 text-sm font-semibold text-[#ff6b00]" href="#town-spec-wizard" data-specify-brand="' . $label . '" aria-label="Specify ' . $label . '">Specify</a>';
-        $html .= '</div></article>';
+        $label = htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8');
+        $html .= '<article class="bg-white border-[#ff6b00] border-2 rounded-2xl p-4" data-manufacturer="' . htmlspecialchars($row['slug'], ENT_QUOTES, 'UTF-8') . '">';
+        $html .= '<a href="' . $href . '"><img class="mfr-nameplate w-full h-20 object-contain" src="' . htmlspecialchars(url('/assets/images/manufacturers/nameplates/' . $row['slug'] . '.svg'), ENT_QUOTES, 'UTF-8') . '" alt="' . $label . ' nameplate" width="320" height="160" loading="lazy"></a>';
+        $html .= '<a class="font-semibold text-black hover:text-[#ff6b00]" href="' . $href . '">' . $label . '</a> <span class="text-xs font-semibold uppercase text-[#ff6b00]">Partner</span>';
+        $html .= '<p class="mt-2 text-xs text-zinc-700">' . htmlspecialchars($row['note'], ENT_QUOTES, 'UTF-8') . '</p>';
+        $html .= '<a class="mt-2 inline-block text-sm font-semibold text-[#ff6b00]" href="#town-spec-wizard" data-specify-brand="' . $label . '" aria-label="Specify ' . $label . '">Specify</a></article>';
     }
-    $html .= '</div></section>';
+    $html .= '</div><ul class="mt-4 flex flex-wrap gap-2 text-sm">';
+    foreach ($others as $row) {
+        $href = htmlspecialchars(url('/pages/manufacturers/' . $row['slug'] . '.php'), ENT_QUOTES, 'UTF-8');
+        $label = htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8');
+        $html .= '<li data-manufacturer="' . htmlspecialchars($row['slug'], ENT_QUOTES, 'UTF-8') . '"><a class="inline-block px-3 py-1 border rounded-full hover:border-[#ff6b00]" href="' . $href . '" data-specify-brand="' . $label . '"><img class="inline h-5 w-10 object-contain mr-1 align-middle" src="' . htmlspecialchars(url('/assets/images/manufacturers/nameplates/' . $row['slug'] . '.svg'), ENT_QUOTES, 'UTF-8') . '" alt="" width="40" height="20" loading="lazy">' . $label . '</a></li>';
+    }
+    $html .= '</ul>';
+    $html .= '</section>';
     return $html;
 }
 

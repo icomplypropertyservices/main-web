@@ -178,12 +178,12 @@ function townDepthNationRules(string $service, string $nation, bool $london, int
         ]);
     } else {
         $paras[] = townDepthPick($seed, [
-            'Powered barriers are machinery. A new installation is checked against BS EN 12453 (safety in use of powered gates and barriers) and the supply side falls under the Supply of Machinery (Safety) Regulations 2008, so the installer hands over a declaration of conformity and a risk assessment for that lane.',
-            'A powered rising arm has to meet BS EN 12453 for safety in use, with the force and safety-edge checks that go with it, and is supplied under the Supply of Machinery (Safety) Regulations 2008. The handover pack should include the risk assessment and declaration for that exact lane.',
+            'Powered barriers are machinery: BS EN 12453 for safety in use, with a declaration and lane risk assessment at handover.',
+            'A powered arm is checked against BS EN 12453 and supplied under the Supply of Machinery (Safety) Regulations 2008.',
         ]);
         $paras[0] .= ' ' . townDepthPick($seed >> 2, [
-            'Manual swing barriers, drop-arms with padlocks and fixed width or height restrictors have no motor, so BS EN 12453 does not apply in the same way, but the arm still needs to be visible, locked open or shut securely, and signed at the clearance it really gives.',
-            'Manual barriers and width or height restrictors are not powered machinery, yet they still need a true clearance sign, reflective banding and a lock that holds the arm in both positions. We measure the clearance after fitting rather than trusting the catalogue figure.',
+            'Manual barriers and restrictors have no motor, but still need a true clearance sign and a lock in both positions.',
+            'For manual arms and width or height restrictors we measure the real clearance after fitting and sign that figure.',
         ]);
         if ($nation === 'Scotland') {
             $paras[] = 'In Scotland, work on a private car park entrance may also need a road works permit if it touches the adopted road, which is handled by the council as roads authority.';
@@ -191,7 +191,8 @@ function townDepthNationRules(string $service, string $nation, bool $london, int
             $paras[] = 'In London the borough is highway authority for most local roads, and Transport for London for its red routes, so any barrier footing near the boundary of an adopted road is checked against who owns that strip.';
         }
     }
-    return $paras;
+    // Keep this section short: it is the same law for every town in a nation.
+    return array_slice($paras, 0, 1);
 }
 
 /**
@@ -269,20 +270,25 @@ function townDepth(string $service, string $slug, string $name, string $nation, 
 
         $faq[] = [
             'q' => townDepthPick($seed >> 4, ["Do you cover " . townDepthList(array_slice($ocs, 0, 4), 'and') . "?", "Which {$name} postcodes do you take {$what} work in?"]),
-            'a' => 'Yes. ' . ($ocs ? townDepthList($ocs) . ' are all quoted from the Stockport yard' : 'The whole area is quoted from the Stockport yard') . ", about {$mi} miles away in a straight line. Send the full postcode and a photo of the " . ($isAov ? 'control panel or the vent' : 'barrier cabinet or the entrance') . ' and we will come back with a price and a date.',
+            'a' => 'Yes. ' . ($ocs ? townDepthList($ocs) . ' are all quoted from the Stockport yard' : 'The whole area is quoted from the Stockport yard') . ", about {$mi} miles away in a straight line. Send the full postcode and a photo of the " . ($isAov ? 'control panel or the vent' : 'barrier cabinet or the entrance') . '.' . ($wards ? ' That takes in wards such as ' . townDepthList(array_slice($wards, $seed % max(1, count($wards) - 3), 3)) . '.' : ''),
+        ];
+        $nearFaq = townDepthNearest($slug, $familySlugs, 3);
+        $faq[] = [
+            'q' => townDepthPick($seed >> 6, ["How far is {$name} from your yard?", "Is {$name} too far for a {$what} visit?"]),
+            'a' => "{$name} is about {$mi} miles {$dir} of Offerton, Stockport SK2 5DE as the crow flies" . ($nearFaq ? '. The nearest other places we have pages for are ' . townDepthList(array_map(static fn($n) => $n['name'] . ' (' . (int)max(1, round($n['miles'])) . ' miles ' . $n['dir'] . ')', $nearFaq)) . ', so visits can be combined' : '') . '. Travel is shown on the quote.',
         ];
         if ($isAov) {
             $faq[] = [
                 'q' => "Who signs off a replacement smoke vent in {$name}?",
                 'a' => ($nation === 'Scotland'
                     ? "A building warrant may be needed from {$council} for new or altered smoke ventilation; like-for-like repairs usually are not. We tell you which applies before we start."
-                    : "Like-for-like repairs normally need no application. New or altered smoke ventilation is building work, so it goes to {$council} building control or a registered building control approver" . ($nation === 'England' ? ', or to the Building Safety Regulator if the block is a higher-risk building' : '') . '. We tell you which route applies before we start.'),
+                    : "Like-for-like repairs normally need no application. New or altered smoke ventilation is building work, so it goes to {$council} building control or a registered building control approver" . ($nation === 'England' ? ', or to the Building Safety Regulator if the block is a higher-risk building' : '') . '.'),
             ];
         } else {
             $hw = ($g['county_type'] ?? '') === 'County' && $county !== '' ? $county . ' County Council' : $council;
             $faq[] = [
                 'q' => "Can a barrier go across an entrance off a public road in {$name}?",
-                'a' => "Only on land you own or control. If the arm, its footing or the queue it creates would sit on the adopted road or pavement, {$hw} as highway authority" . ($london ? ' (or TfL on a red route)' : '') . ' has the say. We set the barrier back far enough that a car waiting for the arm is off the carriageway.',
+                'a' => "Only on land you own or control. If the arm, its footing or the queue it creates would sit on the adopted road or pavement, {$hw} as highway authority" . ($london ? ' (or TfL on a red route)' : '') . ' has the say.',
             ];
         }
     }
@@ -391,7 +397,7 @@ function townDepth(string $service, string $slug, string $name, string $nation, 
     if (!$isAov) {
         $faq[] = [
             'q' => "Do you fit manual barriers and height restrictors in {$name}, or only powered arms?",
-            'a' => 'Both. Manual swing and drop-arm barriers, width restrictors and fixed or swing-open height restrictors are fitted as well as CAME powered arms. Tell us the clearance you need and whether delivery or fire vehicles must get through.',
+            'a' => 'Both: manual swing and drop arms, width restrictors and height restrictors as well as CAME powered arms.',
         ];
     }
 
