@@ -391,7 +391,7 @@ echo icomplyQualityBarFaqHtml(
 
 <?php
 require_once SITE_ROOT . '/includes/testimonials.php';
-echo testimonialsSectionHtml();
+// testimonials removed (unverified)
 ?>
 
 <!-- QUOTE -->

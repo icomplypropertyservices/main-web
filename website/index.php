@@ -414,7 +414,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
 
 <?php
 require_once SITE_ROOT . '/includes/testimonials.php';
-echo testimonialsSectionHtml();
+// testimonials removed (unverified)
 ?>
 
 <!-- QUOTE -->

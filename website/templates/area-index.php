@@ -481,7 +481,7 @@ echo icomplyGmFaqHtml('Questions about property services in ' . $areaName, $area
 
 <?php
 require_once SITE_ROOT . '/includes/testimonials.php';
-echo testimonialsSectionHtml();
+// testimonials removed (unverified)
 ?>
 
 <section id="quote" class="bg-zinc-50 border-t">

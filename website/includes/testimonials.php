@@ -50,6 +50,8 @@ function getTestimonials(): array
  */
 function testimonialsSectionHtml(): string
 {
+    // Unverified testimonials removed site-wide (Jack, 12 Oct 2026).
+    return '';
     $items = getTestimonials();
     if ($items === []) {
         return '';

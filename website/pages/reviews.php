@@ -72,7 +72,8 @@ $extraTestimonials = [
     ],
 ];
 
-$allTestimonials = array_merge(getTestimonials(), $extraTestimonials);
+// Jack 12 Oct 2026: none of the stored testimonials are verified, so none are published and no review schema is emitted.
+$allTestimonials = [];
 
 $howWeWork = [
     [
@@ -98,7 +99,6 @@ $howWeWork = [
 ];
 
 $trust = [
-    ['title' => '5★ client feedback', 'text' => 'Landlords, agents and FM teams across the North West'],
     ['title' => 'Standards-led', 'text' => 'BS 7671, BS 5839, BS 5266, gas safety & more'],
     ['title' => 'Fixed-price quotes', 'text' => 'Clear scope, documentation and certification'],
     ['title' => count($areas) . '+ towns', 'text' => 'Greater Manchester, Cheshire, Lancs, Merseyside & Cumbria'],
@@ -156,14 +156,6 @@ $schema = [
                 'postalCode' => 'SK2 5DE',
                 'addressCountry' => 'GB',
             ],
-            'aggregateRating' => [
-                '@type' => 'AggregateRating',
-                'ratingValue' => (string) $avgRating,
-                'reviewCount' => (string) count($allTestimonials),
-                'bestRating' => '5',
-                'worstRating' => '1',
-            ],
-            'review' => $reviewEntities,
             'sameAs' => array_values(array_filter([
                 defined('SOCIAL_FACEBOOK') ? SOCIAL_FACEBOOK : '',
                 defined('SOCIAL_INSTAGRAM') ? SOCIAL_INSTAGRAM : '',
@@ -211,22 +203,13 @@ require SITE_ROOT . '/includes/header.php';
                     <span class="text-[#ff6b00]">testimonials</span>
                 </h1>
                 <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl">
-                    What landlords, letting agents and facilities teams say about our electrical, fire, gas,
-                    emergency lighting, CCTV and access work across Greater Manchester and the North West.
+                    We only publish reviews we can verify. Clients can leave a public review on Google; we do not reproduce or rate them here.
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
-                    <a href="#testimonials" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Read reviews</a>
+                    <a href="#testimonials" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Reviews</a>
                     <a href="<?= url('/contact.php') ?>" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Free quote</a>
                 </div>
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
-                    <div>
-                        <span class="text-white font-semibold text-xl block"><?= htmlspecialchars((string) $avgRating, ENT_QUOTES, 'UTF-8') ?>★</span>
-                        Average rating
-                    </div>
-                    <div>
-                        <span class="text-white font-semibold text-xl block"><?= count($allTestimonials) ?></span>
-                        Featured reviews
-                    </div>
                     <div>
                         <span class="text-white font-semibold text-xl block"><?= count($areas) ?>+</span>
                         Towns covered
@@ -271,10 +254,9 @@ require SITE_ROOT . '/includes/header.php';
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Testimonials</div>
-                <h2 id="reviews-heading" class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">What clients say</h2>
+                <h2 id="reviews-heading" class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Reviews</h2>
                 <p class="mt-2 text-zinc-600 max-w-xl">
-                    Expanded feedback from landlords, agents and facilities teams on compliance, certification and install work —
-                    including the reviews featured on our homepage.
+                    No testimonials are shown on this site because we cannot verify them. If we have worked for you, a Google review is the public record.
                 </p>
             </div>
             <a href="<?= htmlspecialchars(url('/contact.php'), ENT_QUOTES, 'UTF-8') ?>" class="text-sm font-semibold text-[#ff6b00]">Request a quote →</a>

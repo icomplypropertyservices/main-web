@@ -750,7 +750,7 @@ $gmBoroughs = function_exists('icomplyGreaterManchesterBoroughs') ? icomplyGreat
 
 <?php
 require_once SITE_ROOT . '/includes/testimonials.php';
-echo testimonialsSectionHtml();
+// testimonials removed (unverified)
 ?>
 
 <!-- QUOTE -->
