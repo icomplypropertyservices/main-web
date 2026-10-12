@@ -314,6 +314,7 @@ echo icomplyTownDeepHtml(areaSlug($AREA), $AREA, 'property compliance', 'propert
     </div>
 </section>
 
+<?php if (($areaFacts ?? '') === ''): ?>
 <!-- HOW IT WORKS -->
 <section class="max-w-7xl mx-auto px-6 py-16">
     <h2 class="text-3xl font-semibold tracking-tight text-black text-center mb-12">How it works in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></h2>
@@ -333,6 +334,7 @@ echo icomplyTownDeepHtml(areaSlug($AREA), $AREA, 'property compliance', 'propert
         <?php endforeach; ?>
     </div>
 </section>
+<?php endif; ?>
 
 <!-- NEARBY -->
 <?php if (!empty($nearby)): ?>
@@ -360,8 +362,27 @@ echo icomplyTownDeepHtml(areaSlug($AREA), $AREA, 'property compliance', 'propert
 
 <?php
 require_once SITE_ROOT . '/includes/quality-bar.php';
+$areaFaqList = icomplyQualityBarAreaFaqs($areaName);
+// Facts-based FAQs from this town's own geography (postcodes.io / ONS), placed first.
+require_once SITE_ROOT . '/includes/town-depth.php';
+$aGeo = townDepthGeo(areaSlug($areaName));
+if (is_array($aGeo)) {
+    $aCouncil = townDepthCouncil($aGeo);
+    $geoFaq = [];
+    foreach (array_slice((array)($aGeo['districts'] ?? []), 0, 3) as $d) {
+        $w = array_values(array_filter((array)($d['wards'] ?? []), static fn($x) => stripos((string)$x, 'tunstall') === false));
+        if (!empty($d['oc']) && $w) {
+            $geoFaq[] = ['Which wards does ' . $d['oc'] . ' cover?', $d['oc'] . ' takes in ' . townDepthList($w) . ' (' . ($d['council'] ?? $aCouncil) . '). Send the full postcode and we scope the exact building.'];
+        }
+    }
+    if ($aCouncil !== '') {
+        $cons = (array)($aGeo['constituencies'] ?? []);
+        $geoFaq[] = ['Which council covers ' . $areaName . '?', $areaName . ' is in the ' . $aCouncil . ' council area' . ($cons ? ' (' . townDepthList($cons) . ')' : '') . '. Licensing and building control questions go to the council; we handle the inspection, testing and paperwork.'];
+    }
+    $areaFaqList = array_merge($geoFaq, array_slice($areaFaqList, 0, 2));
+}
 echo icomplyQualityBarFaqHtml(
-    icomplyQualityBarAreaFaqs($areaName),
+    $areaFaqList,
     'q5-area-faq',
     'q5-area-faq-jsonld',
     'Questions about ' . $areaName
