@@ -818,4 +818,7 @@ export const config = {
     "/pages/",
     "/matrix-sitemap/:part",
   ],
+  // Static AOV/barrier town pages (~420 KB) 502'd intermittently when
+  // proxied through this function. Their aliases live in netlify.toml.
+  excludedPath: ["/pages/aov/*", "/pages/barriers/*"],
 };
