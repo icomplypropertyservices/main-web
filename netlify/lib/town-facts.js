@@ -4,6 +4,7 @@
  * No invented reviews, projects, response times or statistics.
  */
 import geo from "../../website/data/town-geo-slim.json" with { type: "json" };
+import laCensus from "./la-census-slim.json" with { type: "json" };
 
 const YARD = { lat: 53.3925, lng: -2.1265 };
 const DIRS = ["north", "north-east", "east", "south-east", "south", "south-west", "west", "north-west"];
@@ -106,6 +107,13 @@ export function townFactsBlock({ slug, town, subject, service, hrefFor, names })
   if (census) {
     const line = serviceLine(service, town, census, council);
     if (line) paras.push(line);
+  }
+  // Whole-council housing and tenure (ONS Census 2021 TS044/TS054 or Scotland's Census 2022 UV402/UV404).
+  const laRow = council ? (laCensus[council] || laCensus[council.replace(/^(The )?City of /, "")]) : null;
+  if (laRow) {
+    const [hh, det, semi, terr, flat, own, soc, priv, code, scot] = laRow;
+    const pc = (x) => (x == null ? "?" : `${Math.round(x * 10) / 10}%`);
+    paras.push(`Across the whole ${council} council area (${Number(hh).toLocaleString("en-GB")} households, ${code}): detached ${pc(det)}, semi-detached ${pc(semi)}, terraced ${pc(terr)}, flats ${pc(flat)}; owned ${pc(own)}, social rented ${pc(soc)}, private rented ${pc(priv)} (${scot ? "Scotland's Census 2022" : "ONS Census 2021"}).`);
   }
   const near = names ? nearestTowns(slug, names, 6) : [];
   let html = `<section id="town-facts"><h2>${esc(`${town}: council, postcodes and travel`)}</h2>${paras.map((p) => `<p>${esc(p)}</p>`).join("")}`;
