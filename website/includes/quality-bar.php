@@ -16,6 +16,8 @@
  */
 declare(strict_types=1);
 
+require_once __DIR__ . '/town-facts.php';
+
 const ICOMPLY_NAP = '17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE';
 const ICOMPLY_GAS_ENGINEERS = 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.';
 const ICOMPLY_GAS_NOT_REGISTERED = 'iComply is not Gas Safe registered.';
@@ -237,10 +239,15 @@ function icomplyQualityBarThinProseHtml(string $kind, array $ctx): string
     if ($blurb !== '') {
         $parts[] = '<p data-pe-slot="q1-town-blurb">' . icomplyQualityBarH($blurb) . '</p>';
     }
-    foreach ([0, 1] as $pass) {
+    $short = !empty($ctx['short']);
+    foreach ($short ? [0] : [0, 1] as $pass) {
+        $used = 0;
         foreach ($banks as $i => $bank) {
             if (!is_array($bank) || $bank === []) {
                 continue;
+            }
+            if ($short && ++$used > 5) {
+                break;
             }
             $mixed = ($seed ^ (($i + 1) * 0x9e3779b9) ^ (($pass + 1) * 0x85ebca6b)) & 0xFFFFFFFF;
             $mixed = ($mixed ^ ($mixed >> 16)) * 0x45d9f3b;
@@ -500,6 +507,9 @@ function icomplyQualityBarThinBlock(
         'pop' => '',
         'gas' => $gas,
         'blurb' => $blurb,
+        // Town-facts pages carry real local facts, so keep the generic template prose short.
+        'short' => function_exists('icomplyTownFactsGeo') && in_array($serviceSlug, icomplyTownFactsServices(), true)
+            && icomplyTownFactsGeo(areaSlug($place)) !== null,
     ];
     $faqs = [
         ['How is ' . $subject . ' in ' . $place . ' quoted?', 'The quote is price on application after the scope names the building and the access. This page does not publish a fee.'],
