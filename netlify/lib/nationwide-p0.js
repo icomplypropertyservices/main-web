@@ -6,6 +6,7 @@ import family from "../../website/data/nationwide-3line-p0.json" with { type: "j
 import keywordPack from "../../website/data/nationwide-3line-p0-keywords.json" with { type: "json" };
 import townDoc from "../../website/data/uk-top5000-towns.json" with { type: "json" };
 import { gmTownName, isGmTown } from "./link-blocks.js";
+import { townFactsBlock } from "./town-facts.js";
 
 const P0 = new Map((family.hubs || []).map((hub) => [hub.slug, hub]));
 const TOWNS = new Map((townDoc.towns || []).filter((town) => town && town.slug).map((town) => [town.slug, town]));
@@ -108,26 +109,42 @@ export function renderNationwideP0Town(keywordSlug, townSlug) {
   const images = (hub.images || []).slice(0, 3);
   const ogImage = `${ORIGIN}${images[0] || "/assets/images/services/fire-alarms.jpg"}`;
   const local = `${townName} is in ${place.county || "the UK"}, ${place.region || "the UK"}, ${place.nation || "the UK"}. Published population on this town list is ${Number(place.population || 0).toLocaleString("en-GB")}. ${name} in ${townName} is quoted from ${NAP}. The quote is price on application after the scope is written down. Travel from the Stockport workshop is part of that quote, not a hidden extra.`;
-  const paras = [local, ...String(pack.body || "").split(/\n\s*\n/).map((part) => part.trim()).filter(Boolean)];
+  const body = String(pack.body || "").replace(/Nearby places on the same town list include [^.]*\./g, "");
+  // Town pages carry a short service summary; the full guide stays on the keyword hub.
+  // Paragraphs 0, 2, 7, 8 and 10-15 of the generated pack repeat placeholders
+  // ("the UK mainland") or a mismatched example enquiry, so they are left off.
+  let packParas = body.split(/\n\s*\n/).map((part) => part.trim()).filter(Boolean);
+  if (packParas.length >= 16) packParas = [1, 4, 6].map((i) => packParas[i]);
+  const paras = [local, ...packParas];
   const bodyHtml = paras.map((para) => `<p>${escapeHtml(para)}</p>`).join("");
-  const faqs = Array.isArray(pack.faq) ? pack.faq.slice() : [];
+  const faqs = Array.isArray(pack.faq) ? pack.faq.slice(0, 2) : [];
   faqs.push([
     `How do I ask for ${name} in ${townName}?`,
     `Phone 07517806082 or use the contact form. Name the building in ${townName}. The reply is price on application. Workshop: ${NAP}.`,
   ]);
+  const facts = townFactsBlock({
+    slug: townSlug,
+    town: townName,
+    subject: name,
+    service: pack.service,
+    names: TOWNS,
+    hrefFor: (s) => `/pages/keywords/${keywordSlug}/${s}`,
+  });
+  if (facts) faqs.unshift(...facts.faqs);
   const faqHtml = faqs
     .filter((faq) => Array.isArray(faq) && faq.length >= 2)
     .map(([q, a]) => `<h3>${escapeHtml(q)}</h3><p>${escapeHtml(a)}</p>`)
     .join("");
   const parents = PARENTS[pack.service] || PARENTS["fire-alarms"];
   let links = parents.map((href) => `<li><a href="${href}">${escapeHtml(href.split("/").pop().replace(/-/g, " "))}</a></li>`).join("");
-  links += `<li><a href="/pages/keywords/${keywordSlug}">${escapeHtml(name)} guide</a></li>`;
+  links += `<li><a href="/pages/keywords/${keywordSlug}">${escapeHtml(name)} guide (full scope)</a></li>`;
   links += `<li><a href="/contact">Request a quote</a></li><li><a href="/pages/areas/stockport">Stockport area hub</a></li>`;
   if (isGmTown(townSlug)) {
     links += `<li><a href="/pages/areas/${townSlug}">Property services in ${escapeHtml(townName)}</a></li>`;
   }
-  for (const other of P0.keys()) {
-    if (other === keywordSlug) continue;
+  const siblings = [...P0.keys()].filter((o) => o !== keywordSlug && keywordPack[o]?.service === pack.service);
+  const start = siblings.length ? Math.abs([...townSlug].reduce((h, c) => (h * 31 + c.charCodeAt(0)) | 0, 7)) % siblings.length : 0;
+  for (const other of [...siblings.slice(start), ...siblings.slice(0, start)].slice(0, 8)) {
     const label = keywordPack[other]?.name || other;
     links += `<li><a href="/pages/keywords/${other}">${escapeHtml(label)}</a></li>`;
   }
@@ -151,7 +168,7 @@ export function renderNationwideP0Town(keywordSlug, townSlug) {
 <nav><a href="/">Home</a> / <a href="/pages/keywords/${keywordSlug}">${escapeHtml(name)}</a> / <span>${escapeHtml(townName)}</span></nav>
 <h1>${escapeHtml(`${name} in ${townName}`)}</h1>
 ${gallery}
-<article id="local-copy">${bodyHtml}</article>
+<article id="local-copy">${bodyHtml}${facts ? facts.html : ""}</article>
 <section><h2>${escapeHtml(name)} FAQ</h2>${faqHtml}</section>
 <section><h2>Related guides</h2><ul>${links}</ul></section>
 <p>Workshop: ${escapeHtml(NAP)}. Phone 07517806082. Price on application.</p>

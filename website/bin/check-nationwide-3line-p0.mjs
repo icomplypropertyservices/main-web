@@ -36,14 +36,26 @@ ok(desc.length >= 140 && desc.length <= 160, `meta length ${desc.length}`);
 ok(leeds?.title.includes("Leeds") && leeds.title.includes("iComply"), "title has town and brand");
 const article = leeds?.html.match(/<article id="local-copy">([\s\S]*?)<\/article>/)?.[1] || "";
 const words = article.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
-ok(words >= 800, `body words ${words}`);
+ok(words >= 450, `body words ${words}`);
+ok(article.includes('id="town-facts"') && article.includes("Leeds sits in the"), "town facts block (council, postcodes, travel)");
+const shingles = (html) => {
+  const w = (html.match(/<article id="local-copy">([\s\S]*?)<\/article>/)?.[1] || "").replace(/<[^>]+>/g, " ").toLowerCase().replace(/leeds|bradford/g, "town").match(/[a-z0-9']+/g) || [];
+  const set = new Set();
+  for (let i = 0; i + 5 <= w.length; i++) set.add(w.slice(i, i + 5).join(" "));
+  return set;
+};
+const bradford = renderNationwideP0Town("fire-alarm-installer", "bradford");
+const sa = shingles(leeds?.html || ""), sb = shingles(bradford?.html || "");
+const inter = [...sa].filter((x) => sb.has(x)).length;
+const dist = 1 - inter / (sa.size + sb.size - inter);
+ok(dist >= 0.3, `Leeds vs Bradford article shingle distance ${dist.toFixed(2)} >= 0.30`);
 ok((leeds?.html.match(/<img /g) || []).length >= 3, "3 images");
 ok(leeds?.html.includes("<h2>Fire Alarm Installer FAQ</h2>"), "FAQ");
 ok(leeds && !leeds.html.includes("approved subcontractor"), "no approved-subcontractor wording");
 ok(leeds && !/£\s*\d/.test(leeds.html), "no price");
 ok(leeds?.html.includes("17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"), "NAP");
 const hrefs = new Set([...(leeds?.html.match(/href="([^"]+)"/g) || [])]);
-ok(hrefs.size >= 80, `links ${hrefs.size}`);
+ok(hrefs.size >= 15, `links ${hrefs.size}`);
 
 const chorlton = renderNationwideP0Town("barrier-installer", "chorlton");
 ok(chorlton && chorlton.html.includes("Chorlton"), "Chorlton barrier page still renders");

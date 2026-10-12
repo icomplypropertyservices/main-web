@@ -10,6 +10,7 @@ import { renderVariantPage, renderVariantSitemap } from "../lib/variant-matrix.j
 import { breadcrumbHtml, isGmTown, isLocalTown, matrixRelatedHtml } from "../lib/link-blocks.js";
 import { gmTownBlurb } from "../lib/gm-blurbs.js";
 import { p0KeepsTown, renderNationwideP0Town } from "../lib/nationwide-p0.js";
+import { townFactsBlock } from "../lib/town-facts.js";
 import { thinFaqHtml, thinFaqs, thinImages, thinOgMeta, thinProseHtml } from "../lib/thin-quality-bar.js";
 import fireAlarmFamily from "../../website/data/fire-alarm-installer-family.json" with { type: "json" };
 import mainlandTownDoc from "../../website/data/uk-mainland-towns-10k.json" with { type: "json" };
@@ -380,6 +381,22 @@ export function renderTownPage(input) {
       `Do you cover ${place.name} for ${subject}?`,
       `${subject} in ${place.name} is arranged from ${FIRE_NAP}. ${FIRE_DUTY} The quote is price on application.`,
     ]);
+  }
+  // Facts-only local block (council, postcodes, wards, travel, census) for the
+  // AOV, barrier and fire families, including manufacturer x town and job x town.
+  if (NATIONWIDE_TOWN.has(serviceSlug) || FAMILY.has(serviceSlug)) {
+    const facts = townFactsBlock({
+      slug: townSlug,
+      town: place.name,
+      subject,
+      service: serviceSlug,
+      names: MAINLAND,
+      hrefFor: null, // only the P0 renderer links siblings; other matrix towns may 301
+    });
+    if (facts) {
+      proseHtml += facts.html;
+      faqs.unshift(...facts.faqs);
+    }
   }
   const faqBlock = (fireTown || fireFamily)
     ? `<section id="faq" class="faq" data-pe-slot="q5-thin-faq"><h2>Questions about ${escapeHtml(place.name)}</h2>${faqs.map(([q, a]) => (
