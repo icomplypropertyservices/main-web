@@ -510,16 +510,25 @@ if (function_exists('accessControlLaneHubSection')) {
         if (function_exists('accessControlLaneSortKeywordMap') && in_array($serviceSlug, ['access-control', 'door-entry'], true)) {
             $svcKeywords = accessControlLaneSortKeywordMap($svcKeywords);
         }
+        if ($svcKeywords) {
+            // Keep the lane-critical guides inside the capped card list.
+            foreach (['eicr-testing', 'eicr'] as $pin) {
+                if (isset($svcKeywords[$pin])) {
+                    $svcKeywords = [$pin => $svcKeywords[$pin]] + $svcKeywords;
+                }
+            }
+        }
         if ($svcKeywords):
             $kwPreviewTowns = array_slice($keywordTowns, 0, 6);
         ?>
         <div class="mb-8">
-            <?= relatedKeywordsHtml($serviceSlug, 0) ?>
+            <?= relatedKeywordsHtml($serviceSlug, 60) ?>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <?php
             $shown = 0;
-            $cardLimit = in_array($serviceSlug, getElectricalGasFamilyServices(), true) ? 0 : 18;
+            // Electrical/gas used to list every keyword with every town (1.4 MB); cap the cards and use the preview towns.
+            $cardLimit = in_array($serviceSlug, getElectricalGasFamilyServices(), true) ? 24 : 18;
             if ($serviceSlug === 'access-control') {
                 $cardLimit = 24;
             }
@@ -535,7 +544,7 @@ if (function_exists('accessControlLaneHubSection')) {
                     <?= htmlspecialchars($kwName, ENT_QUOTES, 'UTF-8') ?>
                 </a>
                 <div class="mt-3 flex flex-wrap gap-1.5">
-                    <?php foreach ($keywordTowns as $town): ?>
+                    <?php foreach ($kwPreviewTowns as $town): ?>
                         <a href="<?= url('/pages/keywords/' . rawurlencode($kwSlug) . '/' . areaSlug($town) . '.php') ?>"
                            class="text-[11px] px-2 py-1 bg-white border rounded-full text-zinc-700 hover:border-[#ff6b00] hover:text-[#ff6b00]">
                             <?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?>
@@ -670,28 +679,12 @@ $gmBoroughs = function_exists('icomplyGreaterManchesterBoroughs') ? icomplyGreat
             </div>
             <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All services →</a>
         </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <ul class="flex flex-wrap gap-2">
             <?php foreach ($allServices as $slug => $name):
-                if ($slug === $serviceSlug) continue;
-                $rBlurb = getServiceBlurb($slug, true);
-            ?>
-            <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
-               class="group bg-white border rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
-                <div class="h-32 bg-zinc-100 overflow-hidden">
-                    <img src="<?= htmlspecialchars(serviceImageUrl($slug), ENT_QUOTES, 'UTF-8') ?>"
-                         alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>"
-                         class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                         loading="lazy"
-                         onerror="this.parentElement.style.display='none'">
-                </div>
-                <div class="p-5 flex-1 flex flex-col">
-                    <h3 class="font-semibold text-black"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></h3>
-                    <p class="text-sm text-zinc-600 mt-2 flex-1 line-clamp-2"><?= htmlspecialchars($rBlurb, ENT_QUOTES, 'UTF-8') ?></p>
-                    <span class="mt-3 text-sm font-semibold text-[#ff6b00]">Explore →</span>
-                </div>
-            </a>
+                if ($slug === $serviceSlug) continue; ?>
+            <li><a href="<?= url('/pages/services/' . $slug . '.php') ?>" class="inline-block px-4 py-2 bg-white border rounded-full text-sm font-medium text-black hover:border-[#ff6b00]"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></a></li>
             <?php endforeach; ?>
-        </div>
+        </ul>
     </div>
 </section>
 
