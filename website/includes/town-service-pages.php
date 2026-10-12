@@ -489,6 +489,7 @@ function icomplyTownWizardHtml(string $family, array $town, string $csrf): strin
         : ['Residential stair', 'Office or mixed use', 'School or hotel', 'Smoke shaft', 'Not sure'];
     $html = '<section class="mt-12 bg-white border border-zinc-200 rounded-3xl p-6 md:p-8" id="town-spec-wizard">';
     $html .= '<h2 class="text-2xl font-semibold text-black">Specification wizard — ' . $h($townName) . '</h2>';
+    $html .= '<p class="mt-2 text-sm"><a class="font-semibold text-[#ff6b00]" href="tel:07517806082">07517806082</a></p>';
     $seedW = crc32((string)($town['slug'] ?? $townName));
     $rot = static function (array $a, int $k): array { $k %= max(1, count($a)); return array_merge(array_slice($a, $k), array_slice($a, 0, $k)); };
     $jobs = $rot($jobs, $seedW);
