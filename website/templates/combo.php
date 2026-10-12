@@ -411,6 +411,12 @@ if ($townFacts !== '') {
     <?php endif; ?>
 </section>
 
+<?php
+if ($tfLean) {
+    require_once SITE_ROOT . '/includes/town-deep.php';
+    echo icomplyTownDeepHtml((string)$areaSlugVal, (string)$areaName, (string)$serviceName, (string)$serviceSlug);
+}
+?>
 <?php if ($serviceSlug === 'barriers' && function_exists('barrierPagesBlockHtml')): ?>
 <?= barrierPagesBlockHtml('barriers', $areaName, false) ?>
 <?php elseif ($serviceSlug === 'access-control' && function_exists('camePartnerPanelHtml')): ?>
