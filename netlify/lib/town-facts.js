@@ -54,8 +54,9 @@ export function nearestTowns(slug, names, limit = 6) {
   return out.slice(0, limit);
 }
 
-function serviceLine(service, town, c) {
-  const [flats, social, ind, indPct] = c;
+function serviceLine(service, town, c, council) {
+  const [flats, social, ind, indPct, scope] = c;
+  if (scope === "la") town = `the ${council} council area (whole authority)`;
   const indTxt = ind ? ` The largest employment group among residents is ${ind.toLowerCase()} (${indPct}%).` : "";
   if (service === "aov-air-handling") {
     if (flats == null) return "";
@@ -102,7 +103,7 @@ export function townFactsBlock({ slug, town, subject, service, hrefFor, names })
     ? `Our yard at Offerton, Stockport SK2 5DE is close by, so ${subject.toLowerCase()} visits in ${town} fit around other local work.`
     : `${town} is about ${mi} miles ${dir} of our Offerton, Stockport SK2 5DE yard in a straight line. ${mi <= 25 ? "That is a day visit, with travel as a small line on the quote." : mi <= 90 ? "Visits at that range are batched into planned days, with travel written on the quote." : "Travel, and any overnight stay, is priced on the quote before anything is booked."}`);
   if (census) {
-    const line = serviceLine(service, town, census);
+    const line = serviceLine(service, town, census, council);
     if (line) paras.push(line);
   }
   const near = names ? nearestTowns(slug, names, 6) : [];

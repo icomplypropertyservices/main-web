@@ -86,5 +86,11 @@ with cf.ThreadPoolExecutor(6) as ex:
         county = (pc or {}).get('admin_county') or ''
         out[s] = [council, county, [o['outcode'] for o in oc], wards[:4], (pc or {}).get('parliamentary_constituency') or '',
                   round(towns[s][0], 4), round(towns[s][1], 4), census.get(s)]
+# Whole-council Census 2021 fallback (labelled as such on the page) for towns without built-up-area figures.
+la = json.load(open(D / 'la-census.json')) if (D / 'la-census.json').exists() else {}
+for s_, v in out.items():
+    if v[7] is None and v[0] in la:
+        h = {r[0]: r[2] for r in la[v[0]]['housing']}; t = {r[0]: r[2] for r in la[v[0]]['tenure']}
+        v[7] = [h.get('Flat, maisonette or apartment'), t.get('Social rented'), None, None, 'la']
 json.dump(out, open(D / 'town-geo-slim.json', 'w'), separators=(',', ':'), ensure_ascii=False)
 print('towns', len(slugs), 'geo', len(out), 'census', sum(1 for v in out.values() if v[7]))
