@@ -151,5 +151,14 @@ function icomplyLive404RedirectLines(): string
         $lines[] = $from . '  ' . $to . '  301';
         $lines[] = rtrim($from, '/') . '/  ' . $to . '  301';
     }
+    // Draft (non_prod) lane keyword hubs: 301 to the live service hub.
+    $draft = SITE_ROOT . '/data/draft-lane-hub-redirects.txt';
+    foreach ((is_file($draft) ? file($draft, FILE_IGNORE_NEW_LINES) : []) ?: [] as $row) {
+        $parts = preg_split('/\s+/', trim((string)$row));
+        if (count($parts) === 2 && $parts[0] !== '') {
+            $lines[] = $parts[0] . '  ' . $parts[1] . '  301!';
+            $lines[] = $parts[0] . '/  ' . $parts[1] . '  301!';
+        }
+    }
     return implode("\n", $lines) . "\n";
 }

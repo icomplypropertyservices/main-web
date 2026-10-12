@@ -1057,6 +1057,1363 @@
   to = "/pages/services/loft-conversions"
   status = 301
 
+# Draft access-control/barrier lane hubs (non_prod) — 301 to live service hubs so links never 404 (2026-10-12).
+[[redirects]]
+  from = "/pages/keywords/access-control-burnley"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/access-control-burnley/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/access-control-manchester"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/access-control-manchester/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/anti-trap-barrier"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/anti-trap-barrier/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/apartment-car-park-barrier"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/apartment-car-park-barrier/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/automatic-barrier"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/automatic-barrier/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/automatic-barrier-burnley"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/automatic-barrier-burnley/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/automatic-barrier-installation"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/automatic-barrier-installation/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/automatic-barrier-maintenance"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/automatic-barrier-maintenance/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/automatic-barrier-manchester"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/automatic-barrier-manchester/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/automatic-barrier-repair"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/automatic-barrier-repair/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-access-integration"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-access-integration/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-after-vehicle-strike"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-after-vehicle-strike/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-anpr"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-anpr/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-arm-replacement"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-arm-replacement/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-civil-works"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-civil-works/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-commissioning"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-commissioning/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-control-cabinet"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-control-cabinet/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-credential-interface"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-credential-interface/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-emergency-access"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-emergency-access/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-fails-to-close"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-fails-to-close/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-fails-to-open"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-fails-to-open/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-fault-finding"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-fault-finding/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-fob-reader"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-fob-reader/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-foundation"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-foundation/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-gearbox-repair"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-gearbox-repair/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-gsm-entry"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-gsm-entry/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-intercom"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-intercom/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-island"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-island/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-keypad"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-keypad/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-limit-switch"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-limit-switch/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-loop-detector"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-loop-detector/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-maintenance-contract-burnley"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-maintenance-contract-burnley/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-maintenance-contract-manchester"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-maintenance-contract-manchester/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-manual-release"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-manual-release/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-motor-replacement"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-motor-replacement/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-photocell"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-photocell/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-safety-devices"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-safety-devices/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-safety-edge"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-safety-edge/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-safety-loop"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-safety-loop/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-spring-replacement"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-spring-replacement/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-stuck-down"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-stuck-down/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-stuck-up"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-stuck-up/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-ups-battery"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/barrier-ups-battery/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/bell-system-panel-service"
+  to = "/pages/services/fire-alarms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/bell-system-panel-service/"
+  to = "/pages/services/fire-alarms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/bs-5839-maintenance"
+  to = "/pages/services/fire-alarms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/bs-5839-maintenance/"
+  to = "/pages/services/fire-alarms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/came-barrier"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/came-barrier/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/came-barrier-installation"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/came-barrier-installation/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/came-barrier-maintenance"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/came-barrier-maintenance/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/came-barrier-repair"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/came-barrier-repair/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/came-gard-gt8"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/came-gard-gt8/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/car-park-barrier-installation-burnley"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/car-park-barrier-installation-burnley/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/car-park-barrier-installation-manchester"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/car-park-barrier-installation-manchester/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/car-park-barrier-maintenance"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/car-park-barrier-maintenance/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/car-park-barrier-repair"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/car-park-barrier-repair/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/car-park-barrier-repair-burnley"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/car-park-barrier-repair-burnley/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/car-park-barrier-repair-manchester"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/car-park-barrier-repair-manchester/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/car-park-barrier-servicing"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/car-park-barrier-servicing/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/commercial-car-park-barrier"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/commercial-car-park-barrier/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/communal-entrance-maglock"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/communal-entrance-maglock/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/door-entry-after-water-ingress"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/door-entry-after-water-ingress/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/door-entry-backup-battery"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/door-entry-backup-battery/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/door-entry-camera-module"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/door-entry-camera-module/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/door-entry-fire-override-check"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/door-entry-fire-override-check/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/double-door-maglock"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/double-door-maglock/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/electric-drop-bolt"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/electric-drop-bolt/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/entry-exit-barrier"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/entry-exit-barrier/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/fail-safe-maglock"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/fail-safe-maglock/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/fail-secure-maglock"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/fail-secure-maglock/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/false-alarm-investigation"
+  to = "/pages/services/fire-alarms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/false-alarm-investigation/"
+  to = "/pages/services/fire-alarms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/fire-alarm-call-out"
+  to = "/pages/services/fire-alarms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/fire-alarm-call-out/"
+  to = "/pages/services/fire-alarms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/fire-alarm-ppm"
+  to = "/pages/services/fire-alarms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/fire-alarm-ppm/"
+  to = "/pages/services/fire-alarms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/fire-alarm-replacement"
+  to = "/pages/services/fire-alarms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/fire-alarm-replacement/"
+  to = "/pages/services/fire-alarms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/five-metre-barrier"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/five-metre-barrier/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/glass-door-maglock"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/glass-door-maglock/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/gsm-sim-door-entry"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/gsm-sim-door-entry/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/industrial-yard-barrier"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/industrial-yard-barrier/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/landlord-handset-swap-programme"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/landlord-handset-swap-programme/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-after-door-change"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-after-door-change/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-alignment"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-alignment/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-armature-plate"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-armature-plate/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-battery-backup"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-battery-backup/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-bracket"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-bracket/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-door-loop"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-door-loop/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-fire-release"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-fire-release/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-holding-force"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-holding-force/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-installation-burnley"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-installation-burnley/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-installation-manchester"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-installation-manchester/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-maintenance"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-maintenance/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-power-supply"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-power-supply/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-repair"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-repair/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-repair-burnley"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-repair-burnley/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-repair-manchester"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-repair-manchester/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-replacement"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-replacement/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-servicing"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-servicing/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-survey"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/maglock-survey/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/monitored-maglock"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/monitored-maglock/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/office-car-park-barrier"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/office-car-park-barrier/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/pedestrian-gate-with-barrier"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/pedestrian-gate-with-barrier/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/residential-car-park-barrier"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/residential-car-park-barrier/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/retail-park-barrier"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/retail-park-barrier/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/rising-arm-barrier-repair"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/rising-arm-barrier-repair/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/shear-maglock"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/shear-maglock/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/staff-car-park-barrier"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/staff-car-park-barrier/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/swing-gate-with-barrier"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/swing-gate-with-barrier/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/twin-lane-barrier"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/twin-lane-barrier/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/vehicle-barrier"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/vehicle-barrier/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/vehicle-barrier-burnley"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/vehicle-barrier-burnley/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/vehicle-barrier-manchester"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/vehicle-barrier-manchester/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/vehicle-barrier-repair"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/vehicle-barrier-repair/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/video-door-entry-burnley"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/video-door-entry-burnley/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/video-door-entry-manchester"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/video-door-entry-manchester/"
+  to = "/pages/services/access-control"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/visitor-car-park-barrier"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/visitor-car-park-barrier/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/warehouse-yard-barrier"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/warehouse-yard-barrier/"
+  to = "/pages/services/barriers"
+  status = 301
+  force = true
+
 # Child town files must not 301 /pages/keywords/{slug} → trailing slash.
 [[redirects]]
   from = "/pages/keywords/:slug"
