@@ -48,13 +48,19 @@ function icomplyFooterHtml(): string
         $kwDrop .= '<details class="foot-sub"><summary>' . icomplyNavH($cat['label']) . '</summary>';
         foreach ($cat['keywords'] as $svcSlug => $block) {
             $kwDrop .= '<details class="foot-sub"><summary>' . icomplyNavH($block['name']) . '</summary><div class="foot-links">';
+            // Cap per service: the full ~2,500-link list made every static page ~290 KB heavier (all in the footer).
+            $kwShown = 0;
             foreach ($block['keywords'] as $kSlug => $meta) {
+                if (++$kwShown > 6) {
+                    break;
+                }
                 $kwName = (string)($meta['name'] ?? $kSlug);
                 if (function_exists('seo_unverified_badge_label') && seo_unverified_badge_label($kwName)) {
                     continue;
                 }
                 $kwDrop .= icomplyNavLink(url('/pages/keywords/' . rawurlencode((string)$kSlug) . '.php'), $kwName);
             }
+            $kwDrop .= icomplyNavLink(url('/pages/services/' . rawurlencode((string)$svcSlug) . '.php'), 'All ' . $block['name'] . ' guides →');
             $kwDrop .= '</div></details>';
         }
         $kwDrop .= '</details>';
