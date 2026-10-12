@@ -585,6 +585,18 @@ function icomplySitemapPathUnfit(string $dist, string $path): bool
     if (isset($redirects[$path])) {
         return true;
     }
+    // Paths the town-matrix edge function renders itself (its x-robots-tag,
+    // not the exported file, is what Google sees) are judged by the edge.
+    if (preg_match('#^/pages/(manufacturers|jobs|keywords)/[a-z0-9-]+/[a-z0-9-]+$#', $path)) {
+        return false;
+    }
+    if (preg_match('#^/pages/([a-z0-9-]+)/[a-z0-9-]+$#', $path, $svc)) {
+        $staticTown = in_array($svc[1], ['aov', 'barriers', 'aov-air-handling', 'services', 'areas', 'resources', 'packages', 'commercial', 'keywords', 'manufacturers', 'jobs', 'products', 'shop', 'emergency-lighting-jobs', 'asbestos-jobs', 'nurse-call'], true)
+            || (function_exists('isFireSafetyService') && isFireSafetyService($svc[1]));
+        if (!$staticTown) {
+            return false;
+        }
+    }
     $rel = ltrim($path, '/');
     $found = null;
     foreach ([$rel . '.php', $rel . '.html', $rel . '/index.html', $rel . '/index.php'] as $c) {
