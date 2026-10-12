@@ -246,8 +246,10 @@ $schema = [
                 We do not print a NICEIC or Gas Safe registration number on this town page.
             </p>
         </div>
+        <?php require_once SITE_ROOT . '/includes/town-depth.php'; $areaHasGeo = townDepthGeo(areaSlug($AREA)) !== null; ?>
         <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
             <h3 class="text-2xl font-semibold tracking-tight"><?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> compliance package</h3>
+            <?php if (!$areaHasGeo): ?>
             <p class="mt-3 text-white/80">Combine EICR, fire alarms and emergency lighting into one visit schedule for landlords and FM teams in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.</p>
             <ul class="mt-6 space-y-3 text-sm text-white/90">
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Fixed-price multi-service quotes</li>
@@ -255,6 +257,7 @@ $schema = [
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Maintenance contracts available</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> WhatsApp, phone or form — send the postcode to start a quote</li>
             </ul>
+            <?php endif; ?>
             <a href="#quote" class="inline-block mt-8 px-6 py-3 bg-[#ff6b00] rounded-2xl font-semibold hover:bg-orange-600">Start your quote</a>
         </div>
     </div>
@@ -306,7 +309,11 @@ echo icomplyTownDeepHtml(areaSlug($AREA), $AREA, 'property compliance', 'propert
             <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All service hubs →</a>
         </div>
         <ul class="flex flex-wrap gap-2">
-            <?php foreach ($allServices as $slug => $name): ?>
+            <?php
+            // Same services, ordered per town, so the chip list is not one identical block on every hub.
+            $svcOrder = $allServices;
+            uksort($svcOrder, static fn($a, $b) => crc32($a . areaSlug($AREA)) <=> crc32($b . areaSlug($AREA)));
+            foreach ($svcOrder as $slug => $name): ?>
             <li><a href="<?= htmlspecialchars(exportedServiceLocalUrl($slug, $AREA, 'area'), ENT_QUOTES, 'UTF-8') ?>"
                class="inline-block px-4 py-2 bg-white border rounded-full text-sm font-medium text-black hover:border-[#ff6b00]"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></a></li>
             <?php endforeach; ?>
