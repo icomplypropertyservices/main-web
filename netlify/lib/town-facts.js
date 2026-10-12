@@ -112,6 +112,9 @@ export function townFactsBlock({ slug, town, subject, service, hrefFor, names })
   if (near.length && hrefFor) {
     html += `<h3>${esc(`${subject} near ${town}`)}</h3><ul>${near.map((n) => `<li><a href="${esc(hrefFor(n.slug))}">${esc(`${n.name} (${Math.max(1, Math.round(n.miles))} mi ${n.dir})`)}</a></li>`).join("")}</ul>`;
   }
+  else if (near.length) {
+    html += `<p>${esc(`Nearest other towns, straight line from central ${town}: ${near.map((n) => `${n.name} ${Math.max(1, Math.round(n.miles))} mi ${n.dir}`).join("; ")}.`)}</p>`;
+  }
   html += `</section>`;
   const faqs = [];
   if (ocs.length) {

@@ -360,6 +360,16 @@ export function renderTownPage(input) {
         ? serviceSlug
         : "";
   const pe = closeQPages && pageSlug ? closeQPages[`${kind}/${pageSlug}/${townSlug}`] : null;
+  // Facts-only local block (council, postcodes, wards, travel, census) for every service family.
+  const facts = townFactsBlock({
+    slug: townSlug,
+    town: place.name,
+    subject,
+    service: serviceSlug,
+    names: MAINLAND,
+    hrefFor: null, // only the P0 renderer links siblings; other matrix towns may 301
+  });
+  if (facts) qualityCtx.short = true;
   if (pe && typeof pe.body === "string" && pe.body.trim()) {
     qualityCtx.peBody = pe.body;
   }
@@ -382,23 +392,11 @@ export function renderTownPage(input) {
       `${subject} in ${place.name} is arranged from ${FIRE_NAP}. ${FIRE_DUTY} The quote is price on application.`,
     ]);
   }
-  // Facts-only local block (council, postcodes, wards, travel, census) for the
-  // AOV, barrier and fire families, including manufacturer x town and job x town.
-  if (NATIONWIDE_TOWN.has(serviceSlug) || FAMILY.has(serviceSlug)) {
-    const facts = townFactsBlock({
-      slug: townSlug,
-      town: place.name,
-      subject,
-      service: serviceSlug,
-      names: MAINLAND,
-      hrefFor: null, // only the P0 renderer links siblings; other matrix towns may 301
-    });
-    if (facts) {
-      proseHtml += facts.html;
-      faqs.unshift(...facts.faqs);
-    }
+  if (facts) {
+    proseHtml += facts.html;
+    faqs.unshift(...facts.faqs);
   }
-  const faqBlock = (fireTown || fireFamily)
+  const faqBlock = (fireTown || fireFamily || facts)
     ? `<section id="faq" class="faq" data-pe-slot="q5-thin-faq"><h2>Questions about ${escapeHtml(place.name)}</h2>${faqs.map(([q, a]) => (
       `<details class="faq-item"><summary>${escapeHtml(q)}</summary><p>${escapeHtml(a)}</p></details>`
     )).join("")}</section>`

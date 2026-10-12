@@ -208,7 +208,7 @@ function icomplyMatrixAreaChips(string $hrefPrefix, ?array $areas = null): strin
  */
 function icomplyMatrixNearestAreas(array $areas, string $slug, string $service, int $limit = 40): ?array
 {
-    if (!in_array($service, icomplyTownFactsServices(), true)) {
+    if (!icomplyTownFactsEnabled($service)) {
         return null;
     }
     $me = icomplyTownFactsGeo($slug);

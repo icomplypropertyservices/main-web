@@ -493,11 +493,12 @@ function icomplyQualityBarThinBlock(
             if ($gas && !str_contains($body, 'Gas Safe registered engineers')) {
                 $body .= "\n\n" . ICOMPLY_GAS_ENGINEERS . ' ' . ICOMPLY_GAS_NOT_REGISTERED;
             }
-            $leanQ = function_exists('icomplyTownFactsGeo') && in_array($serviceSlug, icomplyTownFactsServices(), true)
+            $leanQ = function_exists('icomplyTownFactsGeo') && icomplyTownFactsEnabled($serviceSlug)
                 && icomplyTownFactsGeo(areaSlug($place)) !== null;
             return $fromImages['html']
                 // Lean town pages: these bodies are near-identical between neighbouring towns; the facts block carries the local copy.
-                . ($leanQ ? '' : icomplyCloseQProseHtml($body, icomplyCloseQProseSlot($kind), 'q1-thin-prose'))
+                // Lean town pages keep the first two authored paragraphs; the rest repeats across neighbouring towns.
+                . icomplyCloseQProseHtml($leanQ ? implode("\n\n", array_slice(preg_split("/\n\s*\n/", $body) ?: [], 0, 2)) : $body, icomplyCloseQProseSlot($kind), 'q1-thin-prose')
                 . icomplyQualityBarFaqHtml($fromFaqs, 'q5-thin-faq', 'q5-thin-faq-jsonld', 'Questions about ' . $place);
         }
     }
@@ -514,7 +515,7 @@ function icomplyQualityBarThinBlock(
         'gas' => $gas,
         'blurb' => $blurb,
         // Town-facts pages carry real local facts, so keep the generic template prose short.
-        'short' => function_exists('icomplyTownFactsGeo') && in_array($serviceSlug, icomplyTownFactsServices(), true)
+        'short' => function_exists('icomplyTownFactsGeo') && icomplyTownFactsEnabled($serviceSlug)
             && icomplyTownFactsGeo(areaSlug($place)) !== null,
     ];
     $faqs = [

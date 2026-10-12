@@ -103,14 +103,15 @@ export function thinProseHtml(ctx) {
     parts.push(`<p data-pe-slot="q1-town-blurb">${escapeHtml(ctx.blurb)}</p>`);
   }
   const seed = ctx.seed >>> 0;
-  for (let pass = 0; pass < 2; pass++) {
+  // Short mode: a real town-facts block carries the local copy, so keep generic bank prose to 4 paragraphs.
+  for (let pass = 0; pass < (ctx.short ? 1 : 2); pass++) {
     banks.forEach((bank, i) => {
-      if (!bank.length) return;
+      if (!bank.length || (ctx.short && i >= 4)) return;
       const raw = bank[mixIndex(seed, pass, i, bank.length)];
       parts.push(`<p>${escapeHtml(fill(raw, ctx))}</p>`);
     });
   }
-  parts.push(`<p>${escapeHtml(fill("{pop} {housing} {industry} Places named alongside {place} include {near}.", ctx))}</p>`);
+  if (!ctx.short) parts.push(`<p>${escapeHtml(fill("{pop} {housing} {industry} Places named alongside {place} include {near}.", ctx))}</p>`);
   if (ctx.gas) {
     parts.push("<p>Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.</p>");
   }

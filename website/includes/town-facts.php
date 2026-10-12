@@ -17,6 +17,17 @@ function icomplyTownFactsGeo(string $slug): ?array
     return $geo[$slug] ?? null;
 }
 
+/** Town facts now apply to every service family (real geo/census only); keep a list for opt-outs. */
+function icomplyTownFactsEnabled(string $service): bool
+{
+    return $service !== '' && !in_array($service, icomplyTownFactsOptOut(), true);
+}
+
+function icomplyTownFactsOptOut(): array
+{
+    return [];
+}
+
 function icomplyTownFactsServices(): array
 {
     return ['fire-alarms', 'emergency-lighting', 'fire-risk-assessments', 'fire-extinguishers', 'fire-doors', 'fire-stopping',
@@ -25,7 +36,7 @@ function icomplyTownFactsServices(): array
 
 function icomplyTownFactsHtml(string $slug, string $town, string $subject, string $service): string
 {
-    if (!in_array($service, icomplyTownFactsServices(), true)) {
+    if (!icomplyTownFactsEnabled($service)) {
         return '';
     }
     $g = icomplyTownFactsGeo($slug);

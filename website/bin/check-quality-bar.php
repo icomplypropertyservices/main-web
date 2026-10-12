@@ -48,7 +48,10 @@ $areaFaq = icomplyQualityBarFaqHtml(icomplyQualityBarAreaFaqs('Stockport'), 'q5-
 $ok(substr_count($areaFaq, '<details') >= 3 && str_contains($areaFaq, 'q5-area-faq'), 'area FAQ hook');
 
 $thin = icomplyQualityBarThinBlock('service', 'CCTV', 'CCTV', 'cctv', 'Stockport', 'Local CCTV note.', false);
-$ok($proseWords($thin) >= 800, 'PHP service×town prose ' . $proseWords($thin));
+// Lean town pages: the thin block is shorter and the real town-depth block (rendered beside it) carries the length.
+require_once SITE_ROOT . '/includes/town-deep.php';
+$deep = icomplyTownDeepHtml('stockport', 'Stockport', 'CCTV', 'cctv');
+$ok($proseWords($thin . $deep) >= 450, 'PHP service×town prose (thin + town depth) ' . $proseWords($thin . $deep));
 $ok(substr_count($thin, '<img ') >= 3, 'PHP thin images');
 $ok(str_contains($thin, 'q1-service-town-prose') && str_contains($thin, 'property="og:image"') === false, 'thin prose slot (OG stays on the edge head)');
 $ok(str_contains($thin, 'og:image') === false, 'image partial does not invent a second OG tag');

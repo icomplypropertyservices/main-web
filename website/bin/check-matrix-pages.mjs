@@ -176,7 +176,7 @@ for (const page of pages) {
   ok(!/iComply does not carry out gas/i.test(page.html), `no gas denial on ${page.path}`);
   ok(!/iComply does not issue CP12/i.test(page.html), `no CP12 denial on ${page.path}`);
   ok(page.words >= 250, `body words ${page.words} on ${page.path}`);
-  ok(proseWords(page.html) >= 800, `prose words ${proseWords(page.html)} on ${page.path}`);
+  ok(proseWords(page.html) >= (page.html.includes("id=\"town-facts\"") ? 450 : 800), `prose words ${proseWords(page.html)} on ${page.path}`);
   ok(/price on application|\bPOA\b/.test(page.html), `POA on ${page.path}`);
   ok(page.html.includes('property="og:title"'), `og:title on ${page.path}`);
   ok(page.html.includes('property="og:description"'), `og:description on ${page.path}`);
@@ -263,7 +263,7 @@ for (const [kind, slug, town] of ogSample) {
     && page.html.includes('property="og:title"')
     && page.html.includes('property="og:description"')
     && /property="og:image" content="https:\/\/icomplypropertyservices\.co\.uk\//.test(page.html)
-    && proseWords(page.html) >= 800;
+    && proseWords(page.html) >= (page.html.includes('id="town-facts"') ? 450 : 800);
   if (ogOk) ogHits += 1;
 }
 ok(ogHits >= 15, `thin OG and prose sample ${ogHits}/15`);
@@ -311,7 +311,7 @@ const missing = renderTownPage({
   catalogue,
   closeQPages: {},
 });
-ok(missing && !missing.html.includes(marker) && proseWords(missing.html) >= 800, "missing close-q key keeps the floor");
+ok(missing && !missing.html.includes(marker) && proseWords(missing.html) >= (missing.html.includes('id="town-facts"') ? 450 : 800), "missing close-q key keeps the floor");
 
 console.log(fail === 0 ? "PASS" : `FAIL ${fail}`);
 process.exit(fail === 0 ? 0 : 1);
