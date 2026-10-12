@@ -7,6 +7,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/uk-towns.php';
 require_once __DIR__ . '/gm-service-towns.php';
+require_once __DIR__ . '/town-depth.php';
 
 function icomplyTownFamilies(): array
 {
@@ -377,7 +378,8 @@ function icomplyTownEditorial(string $family, array $town): array
         $idx = (int)(abs(crc32($family . '|' . $key . '|' . $ctx['slug'])) % count($pool));
         $ids[] = $key . ':' . $idx;
         $paragraphs[] = icomplyTownFill($pool[$idx], $ctx);
-        if ($key === 'stock' || $key === 'safety' || $key === 'partner') {
+        $depthOn = in_array($family, TOWN_DEPTH_FAMILIES, true) && townDepthGeo((string)$ctx['slug']);
+        if ($depthOn ? false : ($key === 'stock' || $key === 'safety' || $key === 'partner')) {
             $idx2 = ($idx + 3) % count($pool);
             $ids[] = $key . 'b:' . $idx2;
             $paragraphs[] = icomplyTownFill($pool[$idx2], $ctx);
@@ -409,12 +411,30 @@ function icomplyTownEditorial(string $family, array $town): array
         ];
     $faqs = [];
     $offset = (int)($seed % count($faqPools));
-    for ($i = 0; $i < 4; $i++) {
+    for ($i = 0; $i < 3; $i++) {
         $fq = $faqPools[($offset + $i * 2) % count($faqPools)];
         $ids[] = 'faq:' . (($offset + $i * 2) % count($faqPools));
         $faqs[] = [icomplyTownFill($fq[0], $ctx), icomplyTownFill($fq[1], $ctx)];
     }
-    return ['paragraphs' => $paragraphs, 'ids' => $ids, 'faqs' => $faqs, 'ctx' => $ctx];
+    static $familyNames = null;
+    if ($familyNames === null) {
+        $familyNames = [];
+        foreach (icomplyUkTowns() as $ut) {
+            $familyNames[(string)$ut['slug']] = (string)$ut['name'];
+        }
+    }
+    $depth = in_array($family, TOWN_DEPTH_FAMILIES, true)
+        ? townDepth($family, (string)$ctx['slug'], (string)$ctx['name'], (string)$ctx['nation'], $familyNames)
+        : ['sections' => [], 'faq' => []];
+    $geo = townDepthGeo((string)$ctx['slug']);
+    $ids[] = 'geo:' . ($geo ? (string)$geo['outcode'] . '@' . $geo['lat'] . ',' . $geo['lon'] : 'none');
+    $depthText = [];
+    foreach ($depth['sections'] as $sec) {
+        foreach ($sec['p'] as $p) {
+            $depthText[] = $p;
+        }
+    }
+    return ['paragraphs' => $paragraphs, 'ids' => $ids, 'faqs' => $faqs, 'ctx' => $ctx, 'depth' => $depth, 'depth_text' => $depthText];
 }
 
 function icomplyTownManufacturerHtml(string $family, array $town): string
@@ -447,8 +467,12 @@ function icomplyTownManufacturerHtml(string $family, array $town): string
         $html .= '<div class="p-3 flex-1 flex flex-col">';
         $html .= '<a class="font-semibold text-black hover:text-[#ff6b00]" href="' . $href . '">' . $label . '</a>';
         $html .= $badge;
-        $html .= '<p class="mt-2 text-xs text-zinc-700 flex-1">' . $note . '</p>';
-        $html .= '<a class="mt-3 text-sm font-semibold text-[#ff6b00]" href="#town-spec-wizard" data-specify-brand="' . $label . '">Specify ' . $label . '</a>';
+        if ($row['partner']) {
+            $html .= '<p class="mt-2 text-xs text-zinc-700 flex-1">' . $note . '</p>';
+        } else {
+            $html .= '<span class="flex-1"></span>';
+        }
+        $html .= '<a class="mt-3 text-sm font-semibold text-[#ff6b00]" href="#town-spec-wizard" data-specify-brand="' . $label . '" aria-label="Specify ' . $label . '">Specify</a>';
         $html .= '</div></article>';
     }
     $html .= '</div></section>';
@@ -648,6 +672,21 @@ function icomplyRenderTownPage(string $family, string $slug): void
             $edit['paragraphs'][$i] = str_replace($why, $instead, $paragraph);
         }
     }
+    $depth = $edit['depth'];
+    $depthNear = null;
+    foreach ($depth['sections'] as $di => $dsec) {
+        if (!empty($dsec['list'])) {
+            $depthNear = $dsec;
+            unset($depth['sections'][$di]);
+        }
+    }
+    $depth['sections'] = array_values($depth['sections']);
+    $depthFaqs = [];
+    foreach ($depth['faq'] as $df) {
+        $depthFaqs[] = [$df['q'], $df['a']];
+    }
+    $edit['faqs'] = array_merge($depthFaqs, $edit['faqs']);
+    $depth['faq'] = [];
     $metaKeywords = $h1 . ', ' . $ctx['county'] . ', ' . $ctx['region'];
     $canonicalUrl = url('/pages/' . $family . '/' . $ctx['slug']);
     $metaRobots = 'index, follow, max-image-preview:large';
@@ -688,6 +727,7 @@ function icomplyRenderTownPage(string $family, string $slug): void
         echo '<p>' . htmlspecialchars($paragraph, ENT_QUOTES, 'UTF-8') . '</p>';
     }
     echo '</div>';
+    echo '<div class="max-w-3xl" data-town-depth="1">' . townDepthHtml($depth, (string)$ctx['name']) . '</div>';
     echo icomplyTownManufacturerHtml($family, $town);
     echo icomplyTownWizardHtml($family, $town, $csrf);
     echo '<section class="mt-12"><h2 class="text-2xl font-semibold">Questions for ' . htmlspecialchars($ctx['name'], ENT_QUOTES, 'UTF-8') . '</h2><div class="mt-4 space-y-3">';
@@ -712,6 +752,13 @@ function icomplyRenderTownPage(string $family, string $slug): void
                 $nearList[] = ['name' => (string)$n['name'], 'slug' => (string)$n['slug']];
             }
         }
+    }
+    if ($depthNear !== null && empty($town['neighbours'][$family])) {
+        $nearList = [];
+        foreach ($depthNear['list'] as $dl) {
+            $nearList[] = ['name' => $dl['label'], 'slug' => basename($dl['href'])];
+        }
+        echo '<li class="w-full text-sm text-zinc-600">' . htmlspecialchars($depthNear['p'][0], ENT_QUOTES, 'UTF-8') . '</li>';
     }
     foreach ($nearList as $n) {
         $href = url('/pages/' . $family . '/' . $n['slug']);

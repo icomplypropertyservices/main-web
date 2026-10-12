@@ -67,7 +67,7 @@ foreach ($towns as $i => $town) {
             $fail("duplicate editorial signature {$family} {$town['slug']} and {$sigs[$family][$sig]}");
         }
         $sigs[$family][$sig] = $town['slug'];
-        $text = implode(' ', $edit['paragraphs']);
+        $text = implode(' ', array_merge($edit['paragraphs'], $edit['depth_text'] ?? []));
         $words = preg_match_all('/[A-Za-z0-9\']+/', $text);
         if ($words < 220) {
             $fail("thin copy {$family} {$town['slug']} words={$words}");

@@ -6,6 +6,8 @@
  */
 declare(strict_types=1);
 
+require_once __DIR__ . '/town-depth.php';
+
 function aovPlaces(): array
 {
     static $places = null;
@@ -24,6 +26,19 @@ function aovPlaces(): array
         }
     }
     return $places;
+}
+
+/** @return array<string,string> slug => name */
+function aovFamilyNames(): array
+{
+    static $n = null;
+    if ($n === null) {
+        $n = [];
+        foreach (aovPlaces() as $slug => $row) {
+            $n[$slug] = (string)$row['name'];
+        }
+    }
+    return $n;
 }
 
 function aovPlace(string $slug): ?array
@@ -180,6 +195,7 @@ function aovPlaceArticle(array $t): array
         'modules' => $pair,
         'extra' => $extra,
         'nearby' => aovNearbyPlaces($t),
+        'depth' => townDepth('aov', (string)$t['slug'], $name, (string)($t['nation'] ?? ''), aovFamilyNames()),
     ];
 }
 
