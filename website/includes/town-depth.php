@@ -73,6 +73,17 @@ function townDepthOns(string $slug): ?array
     return $idx[$slug] ?? null;
 }
 
+function townDepthLaCensus(string $council): ?array
+{
+    static $la = null;
+    if ($la === null) {
+        $file = SITE_ROOT . '/data/la-census.json';
+        $d = is_file($file) ? json_decode((string)file_get_contents($file), true) : [];
+        $la = is_array($d) ? $d : [];
+    }
+    return $la[$council] ?? null;
+}
+
 function townDepthMiles(float $la, float $lo, float $lb, float $lob): float
 {
     $r = 3958.8;
@@ -212,6 +223,20 @@ function townDepth(string $service, string $slug, string $name, string $nation, 
         }
     }
     $c = townDepthCensus($slug);
+    $censusScope = $name;
+    $isAov = $service === 'aov';
+    if (!$c && $g) {
+        $la = townDepthLaCensus(townDepthCouncil($g));
+        if ($la) {
+            $council = townDepthCouncil($g);
+            $censusScope = "the {$council} council area";
+            $rows = static fn(array $r) => array_map(static fn($x) => ['label' => $x[0], 'count' => $x[1], 'pct' => $x[2]], $r);
+            $c = ['housing' => $rows($la['housing']), 'tenure' => $rows($la['tenure']), 'industry' => [],
+                'source' => 'ONS Census 2021, whole council area', 'code' => '',
+                '_note' => 'ONS Census 2021 tables TS044 and TS054 for the whole ' . $council . ' council area (' . $la['code'] . '), not just ' . $name . '. ' . number_format((float)$la['households']) . ' households. We do not hold town-level census figures for this place. They describe homes, not installed ' . ($isAov ? 'smoke vents' : 'barriers') . '.',
+                'population' => 0, '_households' => $la['households']];
+        }
+    }
     $o = townDepthOns($slug);
     $seed = crc32($slug . '|' . $service . '|depth');
     $sections = [];
@@ -307,22 +332,22 @@ function townDepth(string $service, string $slug, string $name, string $nation, 
         if ($flats !== null) {
             if ($isAov) {
                 $stock[] = $flats >= 30
-                    ? "Flats, maisonettes and apartments are {$flats}% of homes in the {$src} count for {$name}. That is a large flatted share, so most of our calls here are likely to be head-of-stair roof vents, corridor vents into shafts and lobby vents in purpose-built blocks."
+                    ? "Flats, maisonettes and apartments are {$flats}% of homes in the {$src} count for {$censusScope}. That is a large flatted share, so most of our calls here are likely to be head-of-stair roof vents, corridor vents into shafts and lobby vents in purpose-built blocks."
                     : ($flats >= 15
-                        ? "{$flats}% of homes in {$name} are flats or maisonettes ({$src}). Smoke vents sit in the purpose-built blocks within that share, and in schools, care homes, offices and shopping centres rather than in ordinary houses."
-                        : "Only {$flats}% of homes in {$name} are flats ({$src})" . ($det !== null && $det >= 30 ? ", with detached houses at {$det}%" : ($terr !== null && $terr >= 30 ? ", with terraces at {$terr}%" : '')) . '. Houses do not have AOVs, so work here tends to be the smaller number of flat blocks plus schools, care homes, offices, retail units and industrial roofs.');
+                        ? "{$flats}% of homes in {$censusScope} are flats or maisonettes ({$src}). Smoke vents sit in the purpose-built blocks within that share, and in schools, care homes, offices and shopping centres rather than in ordinary houses."
+                        : "Only {$flats}% of homes in {$censusScope} are flats ({$src})" . ($det !== null && $det >= 30 ? ", with detached houses at {$det}%" : ($terr !== null && $terr >= 30 ? ", with terraces at {$terr}%" : '')) . '. Houses do not have AOVs, so work here tends to be the smaller number of flat blocks plus schools, care homes, offices, retail units and industrial roofs.');
             } else {
                 $stock[] = $flats >= 30
-                    ? "{$flats}% of homes in {$name} are flats ({$src}), so shared residents’ car parks under or behind blocks are common, and an arm controlled by fob, ANPR or intercom is the usual request."
+                    ? "{$flats}% of homes in {$censusScope} are flats ({$src}), so shared residents’ car parks under or behind blocks are common, and an arm controlled by fob, ANPR or intercom is the usual request."
                     : ($flats >= 15
-                        ? "Flats make up {$flats}% of homes in {$name} ({$src}). Barrier work is likely to split between residents’ car parks at those blocks and commercial yards."
+                        ? "Flats make up {$flats}% of homes in {$censusScope} ({$src}). Barrier work is likely to split between residents’ car parks at those blocks and commercial yards."
                         : "With flats at only {$flats}% of homes ({$src}), most barrier requests in {$name} are likely to come from business premises, schools, clinics and private car parks rather than residents’ parking.");
             }
         }
         if ($social !== null && $social >= 18) {
             $stock[] = "Social renting is {$social}% of households" . ($prent !== null ? " and private renting {$prent}%" : '') . ', so housing associations and councils manage much of the stock; ' . ($isAov ? 'their fire-safety teams usually want a vent-by-vent record they can file against each block.' : 'they usually want a barrier spec that survives heavy use and a key or fob plan for residents.');
         } elseif ($prent !== null && $prent >= 22) {
-            $stock[] = "Private renting is {$prent}% of households in {$name}, " . ($isAov ? 'so managing agents and freeholders are often the people who call about a vent that will not close.' : 'so managing agents of apartment blocks are often the people who ask about car-park barriers.');
+            $stock[] = "Private renting is {$prent}% of households in {$censusScope}, " . ($isAov ? 'so managing agents and freeholders are often the people who call about a vent that will not close.' : 'so managing agents of apartment blocks are often the people who ask about car-park barriers.');
         }
         if ($topInd !== '') {
             $list = [];
@@ -375,11 +400,13 @@ function townDepth(string $service, string $slug, string $name, string $nation, 
                 $tables[$label] = $rows;
             }
         }
-        if ($tables) {
-            $note = (string)($c['source'] ?? 'ONS Census 2021') . (!empty($c['code']) ? ' ' . $c['code'] : '') . '. ' . number_format((float)($c['population'] ?? 0)) . ' usual residents'
+        if ($tables && !empty($c['_note'])) {
+            $stockTables = ['tables' => $tables, 'note' => (string)$c['_note'], 'scope' => ucfirst($censusScope)];
+        } elseif ($tables) {
+            $note = (string)($c['source'] ?? 'ONS Census 2021') . (!empty($c['code']) ? ' ' . $c['code'] : '') . '. ' . (!empty($c['_households']) ? number_format((float)$c['_households']) . ' households' : number_format((float)($c['population'] ?? 0)) . ' usual residents')
                 . (isset($c['median_age']) ? ', median age ' . $c['median_age'] : '') . (isset($c['employed_pct']) ? ', ' . $c['employed_pct'] . '% of over-16s employed' : '')
                 . '. Counts are rounded by the publisher. They describe residents and homes, not installed ' . ($isAov ? 'smoke vents' : 'barriers') . '.';
-            $stockTables = ['tables' => $tables, 'note' => $note];
+            $stockTables = ['tables' => $tables, 'note' => $note, 'scope' => ucfirst($censusScope)];
         }
     }
     if ($stock) {
@@ -390,7 +417,7 @@ function townDepth(string $service, string $slug, string $name, string $nation, 
         $faq[] = [
             'q' => "Is my {$name} block a higher-risk building?",
             'a' => $nation === 'England'
-                ? 'If it has at least two homes and is at least 18 metres or seven storeys tall, yes, under the Building Safety Act 2022. ' . ($flats !== null ? "{$flats}% of {$name} homes are flats, but most blocks are lower than that. " : '') . 'Either way the smoke vents still need routine testing under the Fire Safety Order.'
+                ? 'If it has at least two homes and is at least 18 metres or seven storeys tall, yes, under the Building Safety Act 2022. ' . ($flats !== null ? "{$flats}% of homes in {$censusScope} are flats, but most blocks are lower than that. " : '') . 'Either way the smoke vents still need routine testing under the Fire Safety Order.'
                 : 'The 18-metre higher-risk regime is English law. In ' . $nation . ' the vents are judged against the building’s own fire strategy and the national rules, and they still need routine testing.',
         ];
     }
@@ -436,7 +463,7 @@ function townDepthHtml(array $depth, string $name, string $tone = 'light'): stri
         if (!empty($sec['tables'])) {
             $out .= '<div class="mt-4 grid sm:grid-cols-2 gap-4 text-sm">';
             foreach ($sec['tables']['tables'] as $label => $rows) {
-                $out .= '<table class="w-full border rounded-xl"><caption class="text-left font-semibold px-3 py-2">' . $h($name . ': ' . strtolower($label)) . '</caption><tbody>';
+                $out .= '<table class="w-full border rounded-xl"><caption class="text-left font-semibold px-3 py-2">' . $h(($sec['tables']['scope'] ?? $name) . ': ' . strtolower($label)) . '</caption><tbody>';
                 foreach ($rows as $r) {
                     $out .= '<tr class="border-t"><td class="px-3 py-1">' . $h($r[0]) . '</td><td class="px-2 py-1 text-right">' . $h($r[1]) . '</td><td class="px-3 py-1 text-right">' . $h($r[2]) . '</td></tr>';
                 }

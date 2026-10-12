@@ -30,14 +30,14 @@ def towns():
     for r in json.load(open(D / 'uk-mainland-towns-10k.json'))['towns']:
         out[r['slug']] = {'name': r['name'], 'country': r['nation'], 'region': r['region'], 'lat': r['lat'], 'lon': r['lng'], 'county': r.get('county', '')}
     for r in json.load(open(D / 'uk-towns-10k.json')):
-        out[r['slug']] = {'name': r['name'], 'country': r['nation'], 'region': r['region']}
+        out.setdefault(r['slug'], {'name': r['name'], 'country': r['nation'], 'region': r['region']})
     for r in json.load(open(D / 'barriers-places.json')):
         out.setdefault(r['slug'], {'name': r['name'], 'country': r['country'], 'region': r['region'], 'kind': r.get('kind')})
     return out
 
 def by_coord(t):
     lat, lon = t['lat'], t['lon']
-    pcs = get(f'/postcodes?lon={lon}&lat={lat}&limit=1&radius=2000')
+    pcs = get(f'/postcodes?lon={lon}&lat={lat}&limit=1&radius=2000') or get(f'/postcodes?lon={lon}&lat={lat}&limit=1&radius=10000')
     if not pcs:
         return None
     pc = pcs[0]
@@ -91,7 +91,7 @@ def finish(t, c):
     REG = {'Eastern': 'East of England', 'Yorkshire and the Humber': 'Yorkshire and The Humber'}
     if c.get('region') in REG:
         c['region'] = REG[c['region']]
-    if t['country'] == 'England' and t['region'] not in ('London',) and c.get('region') and c['region'] != t['region'] and not (t['region'] == 'Yorkshire and The Humber' and 'Yorkshire' in c['region']) and not (t['region'] == 'East of England' and c['region'] == 'East of England'):
+    if 'lat' not in t and t['country'] == 'England' and t['region'] not in ('London',) and c.get('region') and c['region'] != t['region'] and not (t['region'] == 'Yorkshire and The Humber' and 'Yorkshire' in c['region']) and not (t['region'] == 'East of England' and c['region'] == 'East of England'):
         return None
     lat, lon = c['latitude'], c['longitude']
     ocs = get(f'/outcodes?lon={lon}&lat={lat}&limit=12&radius=8000')
