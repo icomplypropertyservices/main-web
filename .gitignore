@@ -118,3 +118,4 @@ website/api/.phpunit*
 website/config.local.php
 website/data/leads.jsonl
 website/data/leads.json
+.netlify

@@ -539,10 +539,7 @@ async function readCloseQTownPages(origin) {
 
 async function loadVariants(origin) {
   if (!variantPromise) {
-    variantPromise = fetch(`${origin}/assets/matrix/variants.json`).then((response) => {
-      if (!response.ok) throw new Error("variants");
-      return response.json();
-    }).catch((error) => {
+    variantPromise = fetchJsonRetry(`${origin}/assets/matrix/variants.json`).catch((error) => {
       variantPromise = null;
       throw error;
     });
@@ -561,12 +558,26 @@ function variantResponse(rendered) {
   });
 }
 
+async function fetchJsonRetry(href, tries = 3) {
+  let lastError;
+  for (let i = 0; i < tries; i++) {
+    try {
+      const response = await fetch(href);
+      if (response.ok) return await response.json();
+      lastError = new Error(`${href} ${response.status}`);
+    } catch (error) {
+      lastError = error;
+    }
+  }
+  throw lastError;
+}
+
 async function loadCatalogue(origin) {
   if (!cataloguePromise) {
     cataloguePromise = (async () => {
       const names = ["keywords", "places", "services", "nationwide", "manufacturers", "jobs"];
       const files = await Promise.all(names.map((name) => (
-        fetch(`${origin}/assets/matrix/${name}.json`).then((response) => response.json())
+        fetchJsonRetry(`${origin}/assets/matrix/${name}.json`)
       )));
       return {
         keywords: files[0],
@@ -621,6 +632,11 @@ export function nonGmMatrixRedirect(path) {
 export default async (request, context) => {
   const url = new URL(request.url);
   const path = url.pathname.replace(/\/+$/, "") || "/";
+  // One canonical form: strip trailing slashes (GSC 404s on /pages/areas/x/,
+  // duplicates on /pages/keywords/x/). Exported files never use the slash form.
+  if (path !== "/" && url.pathname !== path && !path.startsWith("/matrix-sitemap")) {
+    return Response.redirect(new URL(path + url.search, url.origin).toString(), 301);
+  }
   const aliasTo = placeAliasRedirect(path);
   if (aliasTo) {
     return Response.redirect(new URL(aliasTo, url.origin).toString(), 301);
@@ -633,7 +649,18 @@ export default async (request, context) => {
   // with the Greater Manchester matrix renderer.
   const nationwidePage = path.match(/^\/pages\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   if (nationwidePage && NATIONWIDE_TOWN.has(nationwidePage[1])) {
-    return context.next();
+    const staticResponse = await context.next();
+    // Dual-ring towns listed in the sitemap but missing from the static
+    // export fall back to the matrix renderer instead of 404ing.
+    if (staticResponse.status !== 404) {
+      return staticResponse;
+    }
+    // Town outside the export (old 50-mile ring / GM purge URLs): 301 to the
+    // live service hub instead of a 404.
+    if (!isLocalTown(nationwidePage[2])) {
+      const hub = nationwidePage[1] === "aov" ? "/pages/aov" : `/pages/services/${nationwidePage[1]}`;
+      return Response.redirect(new URL(hub, url.origin).toString(), 301);
+    }
   }
   const sitemapMatch = path.match(/^\/matrix-sitemap\/(\d+)(?:\.xml)?$/);
   if (sitemapMatch) {
@@ -691,7 +718,11 @@ export default async (request, context) => {
   try {
     catalogue = await loadCatalogue(url.origin);
   } catch {
-    return context.next();
+    // Transient asset fetch failure: a retryable 503, never a false 404.
+    return new Response("Temporarily unavailable", {
+      status: 503,
+      headers: { "content-type": "text/plain; charset=utf-8", "retry-after": "120" },
+    });
   }
   try {
     closeQPages = await loadCloseQTownPages(url.origin);
@@ -719,6 +750,18 @@ export default async (request, context) => {
     if (p0KeepsTown(keywordMatch[1], keywordMatch[2])) {
       rendered = renderNationwideP0Town(keywordMatch[1], keywordMatch[2]);
     }
+    if (!rendered && !(catalogue.keywords || {})[keywordMatch[1]]) {
+      // Unknown keyword (retired slug): 410 Gone, like a dead hub,
+      // instead of a 200 noindex soft 404.
+      const hub = await fetch(new URL(`/pages/keywords/${keywordMatch[1]}`, url.origin), { redirect: "manual" });
+      if ((hub.status === 301 || hub.status === 308) && hub.headers.get("location")) {
+        return Response.redirect(new URL(hub.headers.get("location"), url.origin).toString(), 301);
+      }
+      if (hub.status === 404) {
+        const page = await fetch(new URL("/404.html", url.origin)).then((r) => (r.ok ? r.text() : "Not found")).catch(() => "Not found");
+        return new Response(page, { status: 410, headers: { "content-type": "text/html; charset=utf-8", "x-robots-tag": "noindex" } });
+      }
+    }
     if (!rendered) {
       rendered = renderTownPage({
         kind: "keyword",
@@ -737,7 +780,18 @@ export default async (request, context) => {
       closeQPages,
     });
   }
-  if (!rendered) return context.next();
+  if (!rendered) {
+    const fallback = await context.next();
+    if (fallback.status !== 404) return fallback;
+    // Unknown brand/job/service in a town path (old slugs, /pages/undefined/x):
+    // 301 to the closest live hub rather than a 404.
+    let to = "/pages/areas";
+    if (manufacturerMatch) to = "/pages/manufacturers";
+    else if (jobMatch) to = "/pages/jobs";
+    else if (keywordMatch) to = "/pages/keywords";
+    else if (serviceMatch && isLocalTown(serviceMatch[2])) to = `/pages/areas/${serviceMatch[2]}`;
+    return Response.redirect(new URL(to, url.origin).toString(), 301);
+  }
   return new Response(rendered.html, {
     status: 200,
     headers: {
@@ -760,6 +814,8 @@ export const config = {
     "/pages/jobs/:job/:town/",
     "/pages/:service/:town",
     "/pages/:service/:town/",
+    "/pages/:section/",
+    "/pages/",
     "/matrix-sitemap/:part",
   ],
 };

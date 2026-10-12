@@ -127,6 +127,15 @@ function icomplySitemapEntries(): array
         if (icomplySitemapOmitsNonGm($path)) {
             return;
         }
+        static $redirectExclude = null;
+        if ($redirectExclude === null) {
+            $file = dirname(__DIR__) . '/data/sitemap-redirect-exclude.txt';
+            $redirectExclude = is_file($file) ? array_flip(array_filter(array_map('trim', file($file) ?: []))) : [];
+        }
+        // Paths that 301 elsewhere or are noindex must not be listed (GSC "Page with redirect" / "Submitted URL marked noindex").
+        if (isset($redirectExclude[$path])) {
+            return;
+        }
         // Town-stuffed keyword hubs (…-burnley) stay out. Real town paths
         // (/pages/areas/burnley, /pages/keywords/{kw}/burnley) do not match.
         if (preg_match('#-(?:burnley|liverpool|preston|chester|warrington|blackpool)$#', $path)

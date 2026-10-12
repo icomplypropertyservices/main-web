@@ -560,6 +560,60 @@ function icomplyMatrixJson(mixed $value): string
 }
 
 /**
+ * GSC hygiene: true when a sitemap path would not answer 200 + indexable.
+ * Drops exact-path 301/302 rules from dist/_redirects, exported HTML that
+ * carries a noindex robots meta, and fire-family service×town paths that
+ * have no exported file and are outside the dual-ring towns (those 301).
+ */
+function icomplySitemapPathUnfit(string $dist, string $path): bool
+{
+    static $redirects = null;
+    if ($redirects === null) {
+        $redirects = [];
+        $file = $dist . '/_redirects';
+        foreach ((is_file($file) ? file($file, FILE_IGNORE_NEW_LINES) : []) ?: [] as $line) {
+            $parts = preg_split('/\s+/', trim((string)$line));
+            if (count($parts) < 3 || ($parts[0][0] ?? '#') !== '/') {
+                continue;
+            }
+            if (!preg_match('/^30[12]!?$/', $parts[2]) || str_contains($parts[0], '*') || str_contains($parts[0], ':')) {
+                continue;
+            }
+            $redirects[rtrim($parts[0], '/') ?: '/'] = true;
+        }
+    }
+    if (isset($redirects[$path])) {
+        return true;
+    }
+    $rel = ltrim($path, '/');
+    $found = null;
+    foreach ([$rel . '.php', $rel . '.html', $rel . '/index.html', $rel . '/index.php'] as $c) {
+        if ($rel !== '' && is_file($dist . '/' . $c)) {
+            $found = $dist . '/' . $c;
+            break;
+        }
+    }
+    if ($found !== null) {
+        $fh = fopen($found, 'rb');
+        $head = $fh ? (string)fread($fh, 16384) : '';
+        if ($fh) {
+            fclose($fh);
+        }
+        return (bool)preg_match('/<meta[^>]+name=["\']robots["\'][^>]*noindex/i', $head);
+    }
+    if (preg_match('#^/pages/([a-z0-9-]+)/([a-z0-9-]+)$#', $path, $m)) {
+        $fire = function_exists('isFireSafetyService') && isFireSafetyService($m[1]);
+        if ($fire || in_array($m[1], ['aov', 'barriers', 'aov-air-handling'], true)) {
+            if (!function_exists('icomplyLocalTownSlug')) {
+                require_once __DIR__ . '/gm-crawl.php';
+            }
+            return !icomplyLocalTownSlug($m[2]);
+        }
+    }
+    return false;
+}
+
+/**
  * @param list<array{path:string,priority:string}> $hubEntries
  * @return array<string,mixed>
  */
@@ -617,6 +671,9 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
     }
     foreach ($hubEntries as $entry) {
         $path = (string)($entry['path'] ?? '/');
+        if ($path !== '/' && icomplySitemapPathUnfit($dist, $path)) {
+            continue;
+        }
         $loc = $path === '/' ? $base . '/' : $base . $path;
         $priority = (string)($entry['priority'] ?? '0.5');
         $hubXml .= '  <url><loc>' . htmlspecialchars($loc, ENT_XML1) . '</loc><priority>' . htmlspecialchars($priority, ENT_XML1) . '</priority></url>' . "\n";
@@ -645,11 +702,14 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
         fwrite($chunkHandle, '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n");
         $chunkCount = 0;
     };
-    $writeLoc = static function (string $path) use (&$chunkCount, &$chunkHandle, $openChunk, $urlList, $base): void {
+    $writeLoc = static function (string $path) use (&$chunkCount, &$chunkHandle, $openChunk, $urlList, $base, $dist): void {
         if (!function_exists('icomplySitemapOmitsNonGm')) {
             require_once __DIR__ . '/gm-crawl.php';
         }
         if (icomplySitemapOmitsNonGm($path)) {
+            return;
+        }
+        if (!str_starts_with($path, '/pages/keywords/') && icomplySitemapPathUnfit($dist, $path)) {
             return;
         }
         if ($chunkHandle === null || $chunkCount >= ICOMPLY_MATRIX_SITEMAP_CHUNK) {

@@ -222,7 +222,7 @@ function leafHref(kind, ids, townSlug) {
   if (kind === "job") return `/pages/jobs/${ids.job}/${townSlug}`;
   if (kind === "manufacturer") return `/pages/manufacturers/${ids.brand}/${townSlug}`;
   if (kind === "variant") return `/pages/keywords/${ids.keyword}/${townSlug}`;
-  return `/pages/${ids.service}/${townSlug}`;
+  return `/pages/${ids.service || ids.serviceSlug}/${townSlug}`;
 }
 
 /**
@@ -272,7 +272,9 @@ export function matrixRelatedHtml(catalogue, identity) {
   if (kind === "service" || kind === "keyword" || kind === "job" || kind === "variant") {
     for (const slug of relatedServiceSlugs(catalogue, serviceSlug, 8)) {
       const name = serviceLabel(catalogue, slug);
-      if (!name || !townSlug) continue;
+      // Service×town pages outside the dual-ring towns 301 (or are not
+      // exported), so never link them from a town page.
+      if (!name || !townSlug || !isLocalTown(townSlug)) continue;
       sameTown.push({ href: `/pages/${slug}/${townSlug}`, label: `${name} in ${townName}` });
     }
   }
@@ -323,7 +325,7 @@ export function matrixRelatedHtml(catalogue, identity) {
     if (!HUB_SKIP.has(slug)) {
       cross.push({ href: `/pages/keywords/${slug}`, label: row.name });
     }
-    if (townSlug && kind !== "keyword" && kind !== "variant") {
+    if (townSlug && isLocalTown(townSlug) && kind !== "keyword" && kind !== "variant") {
       cross.push({ href: `/pages/keywords/${slug}/${townSlug}`, label: `${row.name} in ${townName}` });
     }
   }
@@ -333,7 +335,7 @@ export function matrixRelatedHtml(catalogue, identity) {
   for (const [slug, job] of jobList) {
     if (kind === "job" && slug === identity.job) continue;
     cross.push({ href: `/pages/jobs/${slug}`, label: job.name });
-    if (townSlug) cross.push({ href: `/pages/jobs/${slug}/${townSlug}`, label: `${job.name} in ${townName}` });
+    if (townSlug && isLocalTown(townSlug)) cross.push({ href: `/pages/jobs/${slug}/${townSlug}`, label: `${job.name} in ${townName}` });
   }
   if (kind !== "job") cross.push({ href: "/pages/jobs", label: "Job types" });
 
