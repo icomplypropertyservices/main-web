@@ -14,7 +14,7 @@
 declare(strict_types=1);
 
 /** Page families with town depth switched on (staged rollout). */
-const TOWN_DEPTH_FAMILIES = ['aov'];
+const TOWN_DEPTH_FAMILIES = ['aov', 'barriers'];
 
 const TOWN_DEPTH_YARD = [53.3925, -2.1265]; // Offerton, Stockport SK2 5DE
 
@@ -316,7 +316,7 @@ function townDepth(string $service, string $slug, string $name, string $nation, 
         if ($social !== null && $social >= 18) {
             $stock[] = "Social renting is {$social}% of households" . ($prent !== null ? " and private renting {$prent}%" : '') . ', so housing associations and councils manage much of the stock; ' . ($isAov ? 'their fire-safety teams usually want a vent-by-vent record they can file against each block.' : 'they usually want a barrier spec that survives heavy use and a key or fob plan for residents.');
         } elseif ($prent !== null && $prent >= 22) {
-            $stock[] = "Private renting is {$prent}% of households in {$name}, " . ($isAov ? 'so managing agents and freeholders are often the people who call about a vent that will not close.' : 'so managing agents of apartment blocks are a common client for car-park barriers here.');
+            $stock[] = "Private renting is {$prent}% of households in {$name}, " . ($isAov ? 'so managing agents and freeholders are often the people who call about a vent that will not close.' : 'so managing agents of apartment blocks are often the people who ask about car-park barriers.');
         }
         if ($topInd !== '') {
             $list = [];
