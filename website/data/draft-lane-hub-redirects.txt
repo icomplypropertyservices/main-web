@@ -111,3 +111,4 @@
 /pages/keywords/video-door-entry-manchester /pages/services/access-control
 /pages/keywords/visitor-car-park-barrier /pages/services/barriers
 /pages/keywords/warehouse-yard-barrier /pages/services/barriers
+/pages/undefined/:town /pages/areas/:town

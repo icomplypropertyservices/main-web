@@ -2414,6 +2414,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/pages/undefined/:town"
+  to = "/pages/areas/:town"
+  status = 301
+  force = true
+
 # Child town files must not 301 /pages/keywords/{slug} → trailing slash.
 [[redirects]]
   from = "/pages/keywords/:slug"
