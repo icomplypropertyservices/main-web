@@ -371,7 +371,8 @@ export function renderTownPage(input) {
   });
   if (facts) qualityCtx.short = true;
   if (pe && typeof pe.body === "string" && pe.body.trim()) {
-    qualityCtx.peBody = pe.body;
+    // Lean pages keep the first two authored paragraphs; the rest is a service guide repeated in every town.
+    qualityCtx.peBody = facts ? pe.body.trim().split(/\n\s*\n/).slice(0, 2).join("\n\n") : pe.body;
   }
   if (pe && Array.isArray(pe.faqs)) {
     qualityCtx.peFaqs = pe.faqs;
