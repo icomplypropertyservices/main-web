@@ -493,8 +493,11 @@ function icomplyQualityBarThinBlock(
             if ($gas && !str_contains($body, 'Gas Safe registered engineers')) {
                 $body .= "\n\n" . ICOMPLY_GAS_ENGINEERS . ' ' . ICOMPLY_GAS_NOT_REGISTERED;
             }
+            $leanQ = function_exists('icomplyTownFactsGeo') && in_array($serviceSlug, icomplyTownFactsServices(), true)
+                && icomplyTownFactsGeo(areaSlug($place)) !== null;
             return $fromImages['html']
-                . icomplyCloseQProseHtml($body, icomplyCloseQProseSlot($kind), 'q1-thin-prose')
+                // Lean town pages: these bodies are near-identical between neighbouring towns; the facts block carries the local copy.
+                . ($leanQ ? '' : icomplyCloseQProseHtml($body, icomplyCloseQProseSlot($kind), 'q1-thin-prose'))
                 . icomplyQualityBarFaqHtml($fromFaqs, 'q5-thin-faq', 'q5-thin-faq-jsonld', 'Questions about ' . $place);
         }
     }
