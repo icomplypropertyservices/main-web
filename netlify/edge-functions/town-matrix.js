@@ -53,6 +53,19 @@ function fireInstallerNationwide(keyword, town) {
 const FIRE_DUTY = "Design, installation and commissioning follow BS 5839. Competent fire alarm engineers carry out the visit. iComply does not claim BAFE or NSI badges.";
 const FIRE_NAP = "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE";
 
+const SERVICE_HUB_ALIAS = {
+  "eicr": "/pages/jobs/eicr",
+  "eicr-certificate": "/pages/jobs/eicr",
+  "eicrs": "/pages/jobs/eicr",
+  "electrical-safety": "/pages/jobs/eicr",
+  "pat": "/pages/services/pat-testing",
+  "gas-safety": "/pages/services/gas-systems",
+  "gas-safety-certificate": "/pages/services/gas-systems",
+  "fra": "/pages/services/fire-risk-assessments",
+  "fire-risk-assessment": "/pages/services/fire-risk-assessments",
+  "ev-charging": "/pages/services/ev-chargers",
+};
+
 const RESERVED = new Set([
   "keywords", "services", "areas", "manufacturers", "resources", "packages",
   "jobs", "commercial", "aov", "barriers", "aov-air-handling", "products",
@@ -803,7 +816,11 @@ export default async (request, context) => {
     // Unknown brand/job/service in a town path (old slugs, /pages/undefined/x):
     // 301 to the closest live hub rather than a 404.
     let to = "/pages/areas";
-    if (manufacturerMatch) to = "/pages/manufacturers";
+    const svcHub = path.match(/^\/pages\/services\/([a-z0-9-]+)$/);
+    if (svcHub) {
+      // /pages/services/<slug> with no exported hub: send to the live service page, never to /pages/areas.
+      to = SERVICE_HUB_ALIAS[svcHub[1]] || "/pages/services";
+    } else if (manufacturerMatch) to = "/pages/manufacturers";
     else if (jobMatch) to = "/pages/jobs";
     else if (keywordMatch) to = "/pages/keywords";
     else if (serviceMatch && isLocalTown(serviceMatch[2])) to = `/pages/areas/${serviceMatch[2]}`;
