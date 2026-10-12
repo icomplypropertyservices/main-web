@@ -268,6 +268,11 @@ echo icomplyQualityBarThinBlock(
     (string)$blurb,
     $serviceSlug === 'gas-systems' || $serviceSlug === 'heating'
 );
+require_once SITE_ROOT . '/includes/town-facts.php';
+$townFacts = icomplyTownFactsHtml((string)$areaSlugVal, (string)$areaName, (string)$serviceName, (string)$serviceSlug);
+if ($townFacts !== '') {
+    echo '<div class="max-w-4xl mx-auto px-6 py-10">' . $townFacts . '</div>';
+}
 ?>
 
 <!-- TRUST -->
@@ -455,7 +460,6 @@ echo icomplyQualityBarThinBlock(
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         <?php foreach ($allServices as $slug => $name):
             if ($slug === $serviceSlug) continue;
-            $rBlurb = getServiceBlurb($slug);
         ?>
         <a href="<?= url('/pages/' . $slug . '/' . $AREA_SLUG . '.php') ?>"
            class="group bg-white border rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
@@ -471,8 +475,7 @@ echo icomplyQualityBarThinBlock(
                     <?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>
                     <span class="text-zinc-400 font-normal text-sm">in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></span>
                 </h3>
-                <p class="text-sm text-zinc-600 mt-2 flex-1 line-clamp-2"><?= htmlspecialchars($rBlurb, ENT_QUOTES, 'UTF-8') ?></p>
-                <span class="mt-3 text-sm font-semibold text-[#ff6b00]">View <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> page →</span>
+
             </div>
         </a>
         <?php endforeach; ?>

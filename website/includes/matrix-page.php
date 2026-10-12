@@ -6,6 +6,8 @@
  */
 declare(strict_types=1);
 
+require_once __DIR__ . '/town-facts.php';
+
 function icomplyMatrixIsExport(): bool
 {
     return !empty($_ENV['ICOMPLY_STATIC_EXPORT'])
@@ -200,6 +202,36 @@ function icomplyMatrixAreaChips(string $hrefPrefix, ?array $areas = null): strin
     return $html;
 }
 
+/**
+ * For town-facts services, show the 40 nearest towns (by coordinates) instead of
+ * the full cloud, so each page's links are local. Falls back to the full list.
+ */
+function icomplyMatrixNearestAreas(array $areas, string $slug, string $service, int $limit = 40): ?array
+{
+    if (!in_array($service, icomplyTownFactsServices(), true)) {
+        return null;
+    }
+    $me = icomplyTownFactsGeo($slug);
+    if (!$me) {
+        return null;
+    }
+    $rows = [];
+    foreach ($areas as $a) {
+        $g = icomplyTownFactsGeo((string)$a['slug']);
+        if (!$g || $a['slug'] === $slug) {
+            continue;
+        }
+        $dy = ($g[5] - $me[5]) * 69.0;
+        $dx = ($g[6] - $me[6]) * 69.0 * cos(deg2rad((float)$me[5]));
+        $rows[] = [$dx * $dx + $dy * $dy, $a];
+    }
+    if (count($rows) < 10) {
+        return null;
+    }
+    usort($rows, static fn($x, $y) => $x[0] <=> $y[0]);
+    return array_map(static fn($r) => $r[1], array_slice($rows, 0, $limit));
+}
+
 function icomplyMatrixKeywordChips(string $serviceSlug): string
 {
     $s = icomplyMatrixShared();
@@ -331,6 +363,7 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         . ($packedCta !== '' ? '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($packedCta) . '</p>' : '')
         . '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($body) . '</p>'
         . $kwQuality
+        . icomplyTownFactsHtml(areaSlug($areaName), $areaName, $kwName, $svcSlug)
         . $kwEnrich;
     if ($bullets) {
         $html .= '<ul class="space-y-2 text-zinc-700">';
@@ -347,10 +380,18 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         . icomplyMatrixH(url('/pages/areas/' . $areaSlugVal)) . '">' . icomplyMatrixH($areaName) . '</a></p>'
         . '</article>';
 
-    $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($kwName) . ' in every area we cover</h2>'
-        . '<p class="text-sm text-zinc-600 mb-4">' . count($s['areas']) . ' towns — full list, not a short subset.</p>'
-        . icomplyMatrixAreaChips(url('/pages/keywords/' . $keywordSlug . '/') )
-        . '</section>';
+    $kwNear = icomplyMatrixNearestAreas($s['areas'], $areaSlugVal, $svcSlug);
+    if ($kwNear !== null) {
+        $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($kwName) . ' near ' . icomplyMatrixH($areaName) . '</h2>'
+            . '<p class="text-sm text-zinc-600 mb-4">The ' . count($kwNear) . ' nearest of ' . count($s['areas']) . ' towns. <a class="text-[#ff6b00] font-semibold" href="' . icomplyMatrixH(url('/pages/keywords/' . $keywordSlug)) . '">All towns for ' . icomplyMatrixH($kwName) . '</a>.</p>'
+            . icomplyMatrixAreaChips(url('/pages/keywords/' . $keywordSlug . '/'), $kwNear)
+            . '</section>';
+    } else {
+        $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($kwName) . ' in every area we cover</h2>'
+            . '<p class="text-sm text-zinc-600 mb-4">' . count($s['areas']) . ' towns — full list, not a short subset.</p>'
+            . icomplyMatrixAreaChips(url('/pages/keywords/' . $keywordSlug . '/') )
+            . '</section>';
+    }
 
     $html .= '<section><h2 class="text-2xl font-semibold mb-3">All ' . icomplyMatrixH($svcName) . ' keyword guides</h2>'
         . '<p class="text-sm text-zinc-600 mb-4">Every topic under this service, each with the same full town list.</p>'
@@ -483,6 +524,7 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         . '<h2 class="text-2xl font-semibold">' . icomplyMatrixH($packedHeading) . '</h2>'
         . $svcEnrich
         . $svcQuality
+        . icomplyTownFactsHtml(areaSlug($areaName), $areaName, $svcName, $serviceSlug)
         . '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($blurb) . '</p>'
         . ($packedCta !== '' ? '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($packedCta) . '</p>' : '')
         . '<p class="text-sm">Service hub: <a class="text-[#ff6b00] font-semibold" href="'
@@ -494,14 +536,34 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
             : '')
         . '</article>';
 
-    $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($svcName) . ' in every area</h2>'
-        . '<p class="text-sm text-zinc-600 mb-4">' . count($areaPairs) . ' towns.</p>'
-        . icomplyMatrixAreaChips(url('/pages/' . $serviceSlug . '/'), $areaPairs)
-        . '</section>';
+    $svNear = icomplyMatrixNearestAreas($areaPairs, areaSlug($areaName), $serviceSlug);
+    if ($svNear !== null) {
+        $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($svcName) . ' near ' . icomplyMatrixH($areaName) . '</h2>'
+            . '<p class="text-sm text-zinc-600 mb-4">The ' . count($svNear) . ' nearest of ' . count($areaPairs) . ' towns. <a class="text-[#ff6b00] font-semibold" href="' . icomplyMatrixH(url('/pages/services/' . $serviceSlug)) . '">' . icomplyMatrixH($svcName) . ' hub</a>.</p>'
+            . icomplyMatrixAreaChips(url('/pages/' . $serviceSlug . '/'), $svNear)
+            . '</section>';
+    } else {
+        $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($svcName) . ' in every area</h2>'
+            . '<p class="text-sm text-zinc-600 mb-4">' . count($areaPairs) . ' towns.</p>'
+            . icomplyMatrixAreaChips(url('/pages/' . $serviceSlug . '/'), $areaPairs)
+            . '</section>';
+    }
 
-    $html .= '<section><h2 class="text-2xl font-semibold mb-3">All keywords for this service</h2>'
-        . icomplyMatrixKeywordChips($serviceSlug)
-        . '</section></main>';
+    if ($svNear !== null) {
+        $kwAll = icomplyMatrixShared()['kwByService'][$serviceSlug] ?? [];
+        $kwKeys = array_keys($kwAll);
+        $off = $kwKeys ? crc32(areaSlug($areaName)) % count($kwKeys) : 0;
+        $pickKw = array_slice(array_merge(array_slice($kwKeys, $off), array_slice($kwKeys, 0, $off)), 0, 16);
+        $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($svcName) . ' guides</h2><div class="chip-cloud">';
+        foreach ($pickKw as $k) {
+            $html .= '<a class="kw-chip" href="' . icomplyMatrixH(url('/pages/keywords/' . $k)) . '">' . icomplyMatrixH($kwAll[$k]) . '</a>';
+        }
+        $html .= '</div><p class="text-sm mt-2"><a class="text-[#ff6b00] font-semibold" href="' . icomplyMatrixH(url('/pages/keywords')) . '">All keyword guides</a></p></section></main>';
+    } else {
+        $html .= '<section><h2 class="text-2xl font-semibold mb-3">All keywords for this service</h2>'
+            . icomplyMatrixKeywordChips($serviceSlug)
+            . '</section></main>';
+    }
 
     $foot = $ownsMainland
         ? 'Fire alarms: UK mainland (England, Wales and mainland Scotland), scheduled from Stockport.'
