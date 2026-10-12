@@ -444,14 +444,17 @@ function icomplyTownManufacturerHtml(string $family, array $town): string
     $name = htmlspecialchars((string)$town['name'], ENT_QUOTES, 'UTF-8');
     $html = '<section class="mt-12" id="manufacturers">';
     $html .= '<h2 class="text-3xl font-semibold text-black">Manufacturers for ' . $name . '</h2>';
+    $seedM = crc32((string)($town['slug'] ?? $town['name']));
     if ($family === 'barriers') {
-        $html .= '<p class="mt-3 text-black max-w-3xl">CAME is the partner for new vehicle barriers in ' . $name . '. Every brand below has a nameplate and a link to its brand page. Use “Specify” to open the wizard with that manufacturer selected. Installation is POA.</p>';
-        $html .= '<p class="mt-3"><a class="inline-flex items-center font-semibold text-[#ff6b00]" href="' . htmlspecialchars(url('/products.php'), ENT_QUOTES, 'UTF-8') . '">CAME GARD 5m barrier packs on the products hub →</a></p>';
-    } else {
-        $html .= '<p class="mt-3 text-black max-w-3xl">These are the AOV and smoke-control manufacturers we install and service in ' . $name . '. Each card links to the brand page. “Specify” opens the on-page wizard with that name selected.</p>';
+        $html .= '<p class="mt-3"><a class="inline-flex items-center font-semibold text-[#ff6b00]" href="' . htmlspecialchars(url('/products.php'), ENT_QUOTES, 'UTF-8') . '">CAME GARD 5m packs →</a></p>';
     }
     $partners = array_values(array_filter($rows, static fn($r) => !empty($r['partner'])));
     $others = array_values(array_filter($rows, static fn($r) => empty($r['partner'])));
+    // Rotate the non-partner list per town so the brand strip is not one identical block on every page.
+    if ($others !== []) {
+        $k = $seedM % count($others);
+        $others = array_merge(array_slice($others, $k), array_slice($others, 0, $k));
+    }
     $html .= '<div class="mt-6 grid md:grid-cols-3 gap-4">';
     foreach ($partners as $row) {
         $href = htmlspecialchars(url('/pages/manufacturers/' . $row['slug'] . '.php'), ENT_QUOTES, 'UTF-8');
@@ -459,7 +462,6 @@ function icomplyTownManufacturerHtml(string $family, array $town): string
         $html .= '<article class="bg-white border-[#ff6b00] border-2 rounded-2xl p-4" data-manufacturer="' . htmlspecialchars($row['slug'], ENT_QUOTES, 'UTF-8') . '">';
         $html .= '<a href="' . $href . '"><img class="mfr-nameplate w-full h-20 object-contain" src="' . htmlspecialchars(url('/assets/images/manufacturers/nameplates/' . $row['slug'] . '.svg'), ENT_QUOTES, 'UTF-8') . '" alt="' . $label . ' nameplate" width="320" height="160" loading="lazy"></a>';
         $html .= '<a class="font-semibold text-black hover:text-[#ff6b00]" href="' . $href . '">' . $label . '</a> <span class="text-xs font-semibold uppercase text-[#ff6b00]">Partner</span>';
-        $html .= '<p class="mt-2 text-xs text-zinc-700">' . htmlspecialchars($row['note'], ENT_QUOTES, 'UTF-8') . '</p>';
         $html .= '<a class="mt-2 inline-block text-sm font-semibold text-[#ff6b00]" href="#town-spec-wizard" data-specify-brand="' . $label . '" aria-label="Specify ' . $label . '">Specify</a></article>';
     }
     $html .= '</div><ul class="mt-4 flex flex-wrap gap-2 text-sm">';
@@ -487,7 +489,11 @@ function icomplyTownWizardHtml(string $family, array $town, string $csrf): strin
         : ['Residential stair', 'Office or mixed use', 'School or hotel', 'Smoke shaft', 'Not sure'];
     $html = '<section class="mt-12 bg-white border border-zinc-200 rounded-3xl p-6 md:p-8" id="town-spec-wizard">';
     $html .= '<h2 class="text-2xl font-semibold text-black">Specification wizard — ' . $h($townName) . '</h2>';
-    $html .= '<p class="mt-2 text-sm text-zinc-700 max-w-3xl">Embedded on this page. It posts to the contact form with the town, brand and job attached. You can also call <a class="font-semibold text-[#ff6b00]" href="tel:07517806082">07517806082</a>.</p>';
+    $seedW = crc32((string)($town['slug'] ?? $townName));
+    $rot = static function (array $a, int $k): array { $k %= max(1, count($a)); return array_merge(array_slice($a, $k), array_slice($a, 0, $k)); };
+    $jobs = $rot($jobs, $seedW);
+    $sites = $rot($sites, $seedW >> 4);
+    $rows = $rot($rows, $seedW >> 8);
     $html .= '<form class="mt-6 grid md:grid-cols-2 gap-4" method="post" action="' . $h(url('/contact.php')) . '">';
     $html .= '<input type="hidden" name="csrf" value="' . $h($csrf) . '">';
     $html .= '<input type="hidden" name="service" value="' . $h($service) . '">';

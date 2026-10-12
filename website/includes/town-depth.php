@@ -179,7 +179,6 @@ function townDepthNationRules(string $service, string $nation, bool $london, int
                     'In England new and altered smoke vents are designed to Approved Document B, usually with BS 9991 for flats or BS 9999 for other buildings behind it. Once the building is occupied, the Regulatory Reform (Fire Safety) Order 2005 makes the responsible person keep the system working.',
                     'For an English building the design reference is Approved Document B, normally read with BS 9991 (residential) or BS 9999 (non-residential). The duty to keep vents working afterwards sits with the responsible person under the Regulatory Reform (Fire Safety) Order 2005.',
                 ]);
-                $paras[0] .= ' Blocks of 18 metres or seven storeys and up are higher-risk buildings under the Building Safety Act 2022; we test and record the vents for the accountable person, but we are not the regulator.';
                 break;
         }
         $paras[count($paras) - 1] .= ' ' . townDepthPick($seed >> 3, [
@@ -368,7 +367,7 @@ function townDepth(string $service, string $slug, string $name, string $nation, 
             } else {
                 $hint = $isAov ? 'Offices and mixed-use blocks make up much of the non-residential AOV work in a place like this.' : 'Office car parks and mixed-use blocks make up much of the commercial barrier work in a place like this.';
             }
-            $stock[] = "The largest employment groups among residents are " . townDepthList($list) . ". {$hint} Those are residents’ jobs, not a list of our clients.";
+            $stock[] = "The largest employment groups among residents are " . townDepthList($list) . ". {$hint} " . townDepthPick($seed >> 6, ['Those are residents’ jobs, not a list of our clients.', 'That is who lives here, not who hires us.', 'These describe local workers, not our customer list.']);
         }
     } elseif ($o) {
         $bits = [];
@@ -405,7 +404,7 @@ function townDepth(string $service, string $slug, string $name, string $nation, 
         } elseif ($tables) {
             $note = (string)($c['source'] ?? 'ONS Census 2021') . (!empty($c['code']) ? ' ' . $c['code'] : '') . '. ' . (!empty($c['_households']) ? number_format((float)$c['_households']) . ' households' : number_format((float)($c['population'] ?? 0)) . ' usual residents')
                 . (isset($c['median_age']) ? ', median age ' . $c['median_age'] : '') . (isset($c['employed_pct']) ? ', ' . $c['employed_pct'] . '% of over-16s employed' : '')
-                . '. Counts are rounded by the publisher. They describe residents and homes, not installed ' . ($isAov ? 'smoke vents' : 'barriers') . '.';
+                . '. ' . townDepthPick($seed >> 7, ['Counts are rounded by the publisher and describe homes, not installed ' . ($isAov ? 'smoke vents' : 'barriers') . '.', 'Publisher-rounded; these are household figures, not an equipment count.', 'Figures are rounded at source and say nothing about how many ' . ($isAov ? 'vents' : 'barriers') . ' exist.']);
             $stockTables = ['tables' => $tables, 'note' => $note, 'scope' => ucfirst($censusScope)];
         }
     }
@@ -438,7 +437,7 @@ function townDepth(string $service, string $slug, string $name, string $nation, 
         foreach ($near as $n) {
             $links[] = ['href' => url('/pages/' . $service . '/' . $n['slug']), 'label' => $n['name'] . ' (' . (int)max(1, round($n['miles'])) . ' mi ' . $n['dir'] . ')'];
         }
-        $sections[] = ['h' => "Nearest " . ($isAov ? 'AOV' : 'barrier') . " pages to {$name}", 'p' => ['Straight-line distances from the centre of ' . $name . '. Each page uses its own council, postcode and census figures.'], 'list' => $links];
+        $sections[] = ['h' => "Nearest " . ($isAov ? 'AOV' : 'barrier') . " pages to {$name}", 'p' => [townDepthPick($seed >> 5, ['Measured from the centre of ' . $name . ' as the crow flies.', 'Crow-flies miles from ' . $name . '.', 'Distances are straight lines from central ' . $name . '.'])], 'list' => $links];
     }
 
     // Seeded order for the first sections (rules stay after stock, nearby last).
