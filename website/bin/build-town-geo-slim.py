@@ -26,6 +26,25 @@ for t in json.load(open(D / 'uk-top5000-towns.json'))['towns']:
     towns[t['slug']] = (t['lat'], t['lng'])
 for t in json.load(open(D / 'uk-mainland-towns-10k.json'))['towns']:
     towns.setdefault(t['slug'], (t['lat'], t['lng']))
+import re, urllib.parse
+def slugify(n):
+    return re.sub(r'[^a-z0-9]+', '-', n.lower().replace('&', 'and')).strip('-')
+# Matrix areas (Greater Manchester / North West suburbs) that are not on the town lists.
+EXTRA_GM = ['Brinnington', 'Castleton', 'Davyhulme', 'Dialstone', 'Edgeley', 'Gatley', 'Heaton Mersey', 'Heaton Norris', 'Newhey', 'Reddish']
+for n in json.load(open(D / 'areas.json')) + EXTRA_GM:
+    sl = slugify(n)
+    if sl in towns:
+        continue
+    cands = req('/places?' + urllib.parse.urlencode({'q': n, 'limit': 30})) or []
+    best = None
+    for c in cands:
+        if (c.get('name_1') or '').lower() != n.lower() or c.get('country') != 'England':
+            continue
+        score = (0 if c.get('region') == 'North West' else 10) + {'Town': 0, 'Suburban Area': 1, 'Other Settlement': 2, 'Village': 3}.get(c.get('local_type'), 5)
+        if best is None or score < best[0]:
+            best = (score, c)
+    if best and best[1].get('region') == 'North West':
+        towns[sl] = (best[1]['latitude'], best[1]['longitude'])
 census = {}
 for r in json.load(open(D / 'barriers-places.json')):
     def pct(rows, needle):
