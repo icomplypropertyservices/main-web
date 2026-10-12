@@ -57,7 +57,7 @@ function icomplyTownFactsHtml(string $slug, string $town, string $subject, strin
         : "{$town} is about {$mi} miles {$dir} of our Offerton, Stockport SK2 5DE yard in a straight line. " . ($mi <= 25 ? 'That is a day visit, with travel as a small line on the quote.' : 'Travel is written on the quote.');
     if (is_array($census)) {
         [$flats, $social, $ind, $indPct, $scope] = $census + [null, null, null, null, null];
-        $where = $scope === 'la' ? "the {$council} council area (whole authority)" : $town;
+        $where = ($scope === 'la' || $scope === 'las') ? "the {$council} council area (whole authority)" : $town;
         $bits = [];
         if ($flats !== null) {
             $bits[] = "flats are {$flats}% of homes";
@@ -66,7 +66,7 @@ function icomplyTownFactsHtml(string $slug, string $town, string $subject, strin
             $bits[] = "social renting is {$social}% of households";
         }
         if ($bits) {
-            $line = "In {$where}, " . townDepthList($bits) . ' (ONS Census 2021).';
+            $line = "In {$where}, " . townDepthList($bits) . ($scope === 'las' ? " (Scotland's Census 2022)." : ' (ONS Census 2021).');
             if (str_starts_with($service, 'fire') || $service === 'emergency-lighting' || $service === 'kitchen-fire-suppression') {
                 $line .= ' Common parts of flats and HMOs carry duties under the Regulatory Reform (Fire Safety) Order 2005 in England and Wales, or the Fire (Scotland) Act 2005 in Scotland.';
             } elseif ($service === 'fencing') {

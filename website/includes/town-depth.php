@@ -81,7 +81,12 @@ function townDepthLaCensus(string $council): ?array
         $d = is_file($file) ? json_decode((string)file_get_contents($file), true) : [];
         $la = is_array($d) ? $d : [];
     }
-    return $la[$council] ?? null;
+    if (isset($la[$council])) {
+        return $la[$council];
+    }
+    // postcodes.io names some councils "City of X" / "The City of X"; the census tables use the short name.
+    $alt = preg_replace('/^(The )?City of /', '', $council);
+    return $la[$alt] ?? null;
 }
 
 function townDepthMiles(float $la, float $lo, float $lb, float $lob): float
@@ -231,8 +236,8 @@ function townDepth(string $service, string $slug, string $name, string $nation, 
             $censusScope = "the {$council} council area";
             $rows = static fn(array $r) => array_map(static fn($x) => ['label' => $x[0], 'count' => $x[1], 'pct' => $x[2]], $r);
             $c = ['housing' => $rows($la['housing']), 'tenure' => $rows($la['tenure']), 'industry' => [],
-                'source' => 'ONS Census 2021, whole council area', 'code' => '',
-                '_note' => 'ONS Census 2021 tables TS044 and TS054 for the whole ' . $council . ' council area (' . $la['code'] . '), not just ' . $name . '. ' . number_format((float)$la['households']) . ' households. We do not hold town-level census figures for this place. They describe homes, not installed ' . ($isAov ? 'smoke vents' : 'barriers') . '.',
+                'source' => ($laSrc = !empty($la['source']) ? (string)$la['source'] : 'ONS Census 2021 tables TS044 and TS054') . ', whole council area', 'code' => '',
+                '_note' => $laSrc . ' for the whole ' . $council . ' council area (' . $la['code'] . '), not just ' . $name . '. ' . number_format((float)$la['households']) . ' households. We do not hold town-level census figures for this place. They describe homes, not installed ' . ($isAov ? 'smoke vents' : 'barriers') . '.',
                 'population' => 0, '_households' => $la['households']];
         }
     }

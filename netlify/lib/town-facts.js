@@ -56,25 +56,26 @@ export function nearestTowns(slug, names, limit = 6) {
 
 function serviceLine(service, town, c, council) {
   const [flats, social, ind, indPct, scope] = c;
-  if (scope === "la") town = `the ${council} council area (whole authority)`;
+  if (scope === "la" || scope === "las") town = `the ${council} council area (whole authority)`;
+  const src = scope === "las" ? "Scotland's Census 2022" : "ONS Census 2021";
   const indTxt = ind ? ` The largest employment group among residents is ${ind.toLowerCase()} (${indPct}%).` : "";
   if (service === "aov-air-handling") {
     if (flats == null) return "";
     return flats >= 25
-      ? `Flats are ${flats}% of homes in ${town} (ONS Census 2021), so stair and corridor smoke vents in purpose-built blocks are the usual AOV work.${indTxt}`
-      : `Flats are ${flats}% of homes in ${town} (ONS Census 2021); AOVs here sit in the flat blocks within that share and in schools, care homes, offices and shops.${indTxt}`;
+      ? `Flats are ${flats}% of homes in ${town} (${src}), so stair and corridor smoke vents in purpose-built blocks are the usual AOV work.${indTxt}`
+      : `Flats are ${flats}% of homes in ${town} (${src}); AOVs here sit in the flat blocks within that share and in schools, care homes, offices and shops.${indTxt}`;
   }
   if (service === "barriers") {
     if (flats == null) return "";
     return flats >= 25
-      ? `With flats at ${flats}% of homes (ONS Census 2021), residents' car parks behind blocks are a common barrier site in ${town}, alongside manual arms and width or height restrictors.${indTxt}`
-      : `Flats are only ${flats}% of homes in ${town} (ONS Census 2021), so barrier requests tend to come from business yards, schools, clinics and private car parks.${indTxt}`;
+      ? `With flats at ${flats}% of homes (${src}), residents' car parks behind blocks are a common barrier site in ${town}, alongside manual arms and width or height restrictors.${indTxt}`
+      : `Flats are only ${flats}% of homes in ${town} (${src}), so barrier requests tend to come from business yards, schools, clinics and private car parks.${indTxt}`;
   }
   const bits = [];
   if (flats != null) bits.push(`flats are ${flats}% of homes`);
   if (social != null) bits.push(`social renting is ${social}% of households`);
   if (!bits.length) return "";
-  return `In ${town}, ${list(bits)} (ONS Census 2021). Shared parts of blocks and HMOs carry fire-safety duties under the Regulatory Reform (Fire Safety) Order 2005 in England and Wales, or the equivalent law in Scotland.${indTxt}`;
+  return `In ${town}, ${list(bits)} (${src}). Shared parts of blocks and HMOs carry fire-safety duties under the Regulatory Reform (Fire Safety) Order 2005 in England and Wales, or the equivalent law in Scotland.${indTxt}`;
 }
 
 /**
