@@ -421,6 +421,7 @@ export function renderTownPage(input) {
     job: input.job || "",
     brand: input.brand || "",
     selfPath: path,
+    lean: Boolean(facts), // pages with real town facts drop the repeated all-GM link cloud
   });
   const crumbItems = [
     { href: "/", label: "Home" },

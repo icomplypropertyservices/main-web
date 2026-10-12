@@ -370,10 +370,10 @@ export function matrixRelatedHtml(catalogue, identity) {
       ["Hubs", dedupe(parents, selfPath)],
       [`Related in ${townName}`, dedupe(sameTown, selfPath)],
       ["Nearby areas", dedupe(nearby, selfPath)],
-      ["Same work across Greater Manchester", dedupe(coverage, selfPath)],
+      ["Same work across Greater Manchester", dedupe(identity.lean ? [] : coverage, selfPath)],
       ["Jobs and guides", dedupe(cross, selfPath)],
       ["Manufacturers", dedupe(brands, selfPath)],
-      ["Quotes and guides", dedupe(utility, selfPath)],
+      ["Quotes and guides", dedupe(identity.lean ? utility.slice(0, 3) : utility, selfPath)],
     ],
   });
 }
