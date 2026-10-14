@@ -17,6 +17,7 @@
  * repeating an anchor. Only catalogue slugs are linked. Barriers and AOV town
  * files are not guessed here (some GM localities 404 on those templates).
  */
+import townGeo from "../../website/data/town-geo-slim.json" with { type: "json" };
 
 import { LOCAL_TOWN_SET } from "./dual-ring-allowlist.js";
 
@@ -230,17 +231,32 @@ function leafHref(kind, ids, townSlug) {
  * @param {object} identity Page identity. kind is service|keyword|job|manufacturer|variant.
  */
 /**
- * CLOSE-Q8 (2026-10-14): lean town pages (real facts present) carry a per-town
- * rotated slice of the Greater Manchester coverage list instead of none. The
- * slice start moves with the town slug, so neighbouring pages do not share one
- * identical link cloud, and the hub size cap is untouched.
+ * CLOSE-Q8 (2026-10-14): lean town pages (real facts present) carry the 24
+ * Greater Manchester coverage towns nearest to the page's own town (by
+ * coordinates from town-geo-slim) instead of none. Towns without coordinates
+ * go last. The hub size cap is untouched.
  */
 const LEAN_COVERAGE = 24;
-function rotatedSlice(items, seed, size) {
-  if (!items.length) return [];
-  const h = Math.abs([...String(seed || "")].reduce((acc, ch) => (acc * 31 + ch.charCodeAt(0)) | 0, 7));
-  const start = h % items.length;
-  return [...items.slice(start), ...items.slice(0, start)].slice(0, size);
+function geoOf(slug) {
+  const g = townGeo[slug];
+  return g && Number.isFinite(g[5]) && Number.isFinite(g[6]) ? { lat: g[5], lng: g[6] } : null;
+}
+function milesApart(a, b) {
+  const t = Math.PI / 180;
+  const h = Math.sin((b.lat - a.lat) * t / 2) ** 2 + Math.cos(a.lat * t) * Math.cos(b.lat * t) * Math.sin((b.lng - a.lng) * t / 2) ** 2;
+  return 3958.8 * 2 * Math.asin(Math.sqrt(h));
+}
+function nearestSlice(items, townSlug, size) {
+  const here = geoOf(townSlug);
+  if (!here) return items.slice(0, size);
+  return items
+    .map((item, i) => {
+      const g = geoOf(item.slug);
+      return [g ? milesApart(here, g) : Infinity, i, item];
+    })
+    .sort((a, b) => a[0] - b[0] || a[1] - b[1])
+    .slice(0, size)
+    .map((row) => row[2]);
 }
 
 export function matrixRelatedHtml(catalogue, identity) {
@@ -327,6 +343,7 @@ export function matrixRelatedHtml(catalogue, identity) {
     const item = {
       href: leafHref(kind === "variant" ? "keyword" : kind, identity, town.slug),
       label: `${subject} in ${town.name}`,
+      slug: town.slug,
     };
     if (nearSet.has(town.slug) && nearby.length < 12) nearby.push(item);
     else coverage.push(item);
@@ -385,7 +402,7 @@ export function matrixRelatedHtml(catalogue, identity) {
       ["Hubs", dedupe(parents, selfPath)],
       [`Related in ${townName}`, dedupe(sameTown, selfPath)],
       ["Nearby areas", dedupe(nearby, selfPath)],
-      ["Same work across Greater Manchester", dedupe(identity.lean ? rotatedSlice(coverage, townSlug, LEAN_COVERAGE) : coverage, selfPath)],
+      ["Same work across Greater Manchester", dedupe(identity.lean ? nearestSlice(coverage, townSlug, LEAN_COVERAGE) : coverage, selfPath)],
       ["Jobs and guides", dedupe(cross, selfPath)],
       ["Manufacturers", dedupe(brands, selfPath)],
       ["Quotes and guides", dedupe(utility, selfPath)],
