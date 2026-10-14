@@ -232,6 +232,42 @@ function icomplyMatrixNearestAreas(array $areas, string $slug, string $service, 
     return array_map(static fn($r) => $r[1], array_slice($rows, 0, $limit));
 }
 
+/**
+ * CLOSE-Q8 (2026-10-14): lean service x town pages link the other services
+ * exported for the same town (up to 24), so the page keeps >= 80 internal
+ * links without the old full keyword footer or the uncapped hub lists.
+ */
+function icomplyMatrixOtherServicesInTown(string $serviceSlug, string $areaName, int $limit = 24): string
+{
+    static $areaSets = [];
+    $s = icomplyMatrixShared();
+    $town = areaSlug($areaName);
+    $links = '';
+    $n = 0;
+    foreach ($s['services'] as $slug => $name) {
+        if ($slug === $serviceSlug) {
+            continue;
+        }
+        if (!isset($areaSets[$slug])) {
+            $list = function_exists('getAreasForService') ? getAreasForService((string)$slug) : getAreas();
+            $areaSets[$slug] = array_flip(array_map('strval', (array)$list));
+        }
+        if (!isset($areaSets[$slug][$areaName])) {
+            continue;
+        }
+        $links .= '<a class="area-chip" href="' . icomplyMatrixH(url('/pages/' . $slug . '/' . $town)) . '">'
+            . icomplyMatrixH($name . ' in ' . $areaName) . '</a>';
+        if (++$n >= $limit) {
+            break;
+        }
+    }
+    if ($links === '') {
+        return '';
+    }
+    return '<section><h2 class="text-2xl font-semibold mb-3">Other services in ' . icomplyMatrixH($areaName) . '</h2>'
+        . '<div class="chip-cloud">' . $links . '</div></section>';
+}
+
 function icomplyMatrixKeywordChips(string $serviceSlug): string
 {
     $s = icomplyMatrixShared();
@@ -536,7 +572,11 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
             : '')
         . '</article>';
 
-    $svNear = icomplyMatrixNearestAreas($areaPairs, areaSlug($areaName), $serviceSlug);
+    // CLOSE-Q8: towns with few other local services (mainland-only rows) take
+    // more nearest-town links so every lean page still clears 80 internals.
+    $otherSvc = icomplyMatrixOtherServicesInTown($serviceSlug, $areaName);
+    $otherCount = substr_count($otherSvc, 'class="area-chip"');
+    $svNear = icomplyMatrixNearestAreas($areaPairs, areaSlug($areaName), $serviceSlug, $otherCount < 24 ? 52 + (24 - $otherCount) : 40);
     if ($svNear !== null) {
         $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($svcName) . ' near ' . icomplyMatrixH($areaName) . '</h2>'
             . '<p class="text-sm text-zinc-600 mb-4">The ' . count($svNear) . ' nearest of ' . count($areaPairs) . ' towns. <a class="text-[#ff6b00] font-semibold" href="' . icomplyMatrixH(url('/pages/services/' . $serviceSlug)) . '">' . icomplyMatrixH($svcName) . ' hub</a>.</p>'
@@ -550,6 +590,7 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     }
 
     if ($svNear !== null) {
+        $html .= $otherSvc;
         $kwAll = icomplyMatrixShared()['kwByService'][$serviceSlug] ?? [];
         $kwKeys = array_keys($kwAll);
         $off = $kwKeys ? crc32(areaSlug($areaName)) % count($kwKeys) : 0;

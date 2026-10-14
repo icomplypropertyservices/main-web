@@ -7,6 +7,7 @@ import keywordPack from "../../website/data/nationwide-3line-p0-keywords.json" w
 import townDoc from "../../website/data/uk-top5000-towns.json" with { type: "json" };
 import { gmTownName, isGmTown } from "./link-blocks.js";
 import { townFactsBlock } from "./town-facts.js";
+import townGeo from "../../website/data/town-geo-slim.json" with { type: "json" };
 
 const P0 = new Map((family.hubs || []).map((hub) => [hub.slug, hub]));
 const TOWNS = new Map((townDoc.towns || []).filter((town) => town && town.slug).map((town) => [town.slug, town]));
@@ -96,6 +97,96 @@ function placeFor(townSlug) {
   };
 }
 
+const HUB_LABELS = {
+  "/pages/services/aov-air-handling": "AOV and smoke ventilation services",
+  "/pages/aov": "AOV hub",
+  "/pages/services/barriers": "Barrier services",
+  "/pages/barriers": "Barriers hub",
+  "/pages/services/fire-alarms": "Fire alarm services",
+  "/pages/services/emergency-lighting": "Emergency lighting services",
+  "/pages/services/fire-doors": "Fire door services",
+  "/pages/services/fire-extinguishers": "Fire extinguisher services",
+  "/pages/services/fire-risk-assessments": "Fire risk assessment services",
+  "/pages/services/fire-stopping": "Fire stopping services",
+  "/pages/services/fire-suppression": "Fire suppression services",
+  "/pages/services/sprinkler-systems": "Sprinkler system services",
+};
+const hubLabel = (href) => HUB_LABELS[href] || href.split("/").pop().replace(/-/g, " ");
+const P0_MIN_LINKS = 90; // gate is 85; keep a small margin for catalogue changes
+
+const FAMILY = (service) => (service === "barriers" ? "barriers" : service === "aov-air-handling" ? "aov" : "fire");
+const UTILITY = [
+  ["/pages/services", "All services"],
+  ["/pages/keywords", "All keyword guides"],
+  ["/pages/areas", "Areas we cover"],
+  ["/pages/commercial", "Commercial property services"],
+  ["/pages/landlords", "Landlord compliance"],
+  ["/pages/care-homes", "Care homes"],
+  ["/pages/packages", "Compliance packages"],
+  ["/pages/resources", "Guides and resources"],
+  ["/pages/manufacturers", "Manufacturer hubs"],
+  ["/pages/about", "About iComply"],
+];
+
+function milesBetween(a, b) {
+  const rad = Math.PI / 180;
+  const dLat = (b.lat - a.lat) * rad;
+  const dLng = (b.lng - a.lng) * rad;
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * rad) * Math.cos(b.lat * rad) * Math.sin(dLng / 2) ** 2;
+  return 3959 * 2 * Math.asin(Math.sqrt(h));
+}
+
+/**
+ * CLOSE-Q8 (2026-10-14): P0 keyword x town pages carried ~20 links. Add the
+ * same keyword in the nearest list towns, the other P0 guides of the same
+ * family in this town, every parent service hub and the site utility pages.
+ */
+function p0ExtraLinks(keywordSlug, townSlug, townName, service, existing = "") {
+  const out = [];
+  const seen = new Set([`/pages/keywords/${keywordSlug}/${townSlug}`]);
+  for (const m of existing.matchAll(/href="([^"]+)"/g)) seen.add(m[1]);
+  const push = (href, label) => {
+    if (seen.has(href)) return;
+    seen.add(href);
+    out.push(`<li><a href="${href}">${escapeHtml(label)}</a></li>`);
+  };
+  const name = keywordPack[keywordSlug]?.name || keywordSlug;
+  let nearPool = [];
+  const here = TOWNS.get(townSlug) || (() => {
+    const g = townGeo[townSlug];
+    return g ? { slug: townSlug, lat: g[5], lng: g[6] } : null;
+  })();
+  if (here && Number.isFinite(here.lat) && Number.isFinite(here.lng)) {
+    const near = [...TOWNS.values()]
+      .filter((t) => t.slug !== townSlug && Number.isFinite(t.lat) && Number.isFinite(t.lng))
+      .map((t) => [milesBetween(here, t), t])
+      .sort((a, b) => a[0] - b[0])
+      ;
+    nearPool = near.map(([, t]) => t);
+    for (const t of nearPool.slice(0, 30)) push(`/pages/keywords/${keywordSlug}/${t.slug}`, `${name} in ${t.name}`);
+  }
+  const family = FAMILY(service);
+  for (const other of P0.keys()) {
+    if (other === keywordSlug || FAMILY(keywordPack[other]?.service) !== family) continue;
+    if (!p0KeepsTown(other, townSlug)) continue;
+    push(`/pages/keywords/${other}/${townSlug}`, `${keywordPack[other]?.name || other} in ${townName}`);
+    if (out.length >= 60) break;
+  }
+  // Own family hubs plus the fire alarm service hub only (not every family).
+  const ownHubs = Object.entries(PARENTS)
+    .filter(([svc]) => FAMILY(svc) === family)
+    .flatMap(([, hubs]) => hubs);
+  for (const href of [...ownHubs, "/pages/services/fire-alarms"]) push(href, hubLabel(href));
+  for (const [href, label] of UTILITY) push(href, label);
+  // Top up with more nearby towns until the page reaches P0_MIN_LINKS unique
+  // internal links (~6 fixed links come from the breadcrumb, quote and area hubs).
+  for (const t of nearPool.slice(30)) {
+    if (seen.size + 2 >= P0_MIN_LINKS) break;
+    push(`/pages/keywords/${keywordSlug}/${t.slug}`, `${name} in ${t.name}`);
+  }
+  return out.join("");
+}
+
 export function renderNationwideP0Town(keywordSlug, townSlug) {
   const hub = P0.get(keywordSlug);
   const pack = keywordPack[keywordSlug];
@@ -136,7 +227,7 @@ export function renderNationwideP0Town(keywordSlug, townSlug) {
     .map(([q, a]) => `<h3>${escapeHtml(q)}</h3><p>${escapeHtml(a)}</p>`)
     .join("");
   const parents = PARENTS[pack.service] || PARENTS["fire-alarms"];
-  let links = parents.map((href) => `<li><a href="${href}">${escapeHtml(href.split("/").pop().replace(/-/g, " "))}</a></li>`).join("");
+  let links = parents.map((href) => `<li><a href="${href}">${escapeHtml(hubLabel(href))}</a></li>`).join("");
   links += `<li><a href="/pages/keywords/${keywordSlug}">${escapeHtml(name)} guide (full scope)</a></li>`;
   links += `<li><a href="/contact">Request a quote</a></li><li><a href="/pages/areas/stockport">Stockport area hub</a></li>`;
   if (isGmTown(townSlug)) {
@@ -148,6 +239,7 @@ export function renderNationwideP0Town(keywordSlug, townSlug) {
     const label = keywordPack[other]?.name || other;
     links += `<li><a href="/pages/keywords/${other}">${escapeHtml(label)}</a></li>`;
   }
+  links += p0ExtraLinks(keywordSlug, townSlug, townName, pack.service, links);
   const gallery = images.map((src, index) => (
     `<figure><img src="${escapeHtml(src)}" alt="${escapeHtml(`${name} in ${townName} — photograph ${index + 1}`)}" width="1200" height="630"></figure>`
   )).join("");

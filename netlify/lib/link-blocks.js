@@ -17,6 +17,7 @@
  * repeating an anchor. Only catalogue slugs are linked. Barriers and AOV town
  * files are not guessed here (some GM localities 404 on those templates).
  */
+import townGeo from "../../website/data/town-geo-slim.json" with { type: "json" };
 
 import { LOCAL_TOWN_SET } from "./dual-ring-allowlist.js";
 
@@ -229,6 +230,35 @@ function leafHref(kind, ids, townSlug) {
  * @param {object} catalogue Edge catalogue (keywords, services, jobs, manufacturers).
  * @param {object} identity Page identity. kind is service|keyword|job|manufacturer|variant.
  */
+/**
+ * CLOSE-Q8 (2026-10-14): lean town pages (real facts present) carry the 24
+ * Greater Manchester coverage towns nearest to the page's own town (by
+ * coordinates from town-geo-slim) instead of none. Towns without coordinates
+ * go last. The hub size cap is untouched.
+ */
+const LEAN_COVERAGE = 24;
+function geoOf(slug) {
+  const g = townGeo[slug];
+  return g && Number.isFinite(g[5]) && Number.isFinite(g[6]) ? { lat: g[5], lng: g[6] } : null;
+}
+function milesApart(a, b) {
+  const t = Math.PI / 180;
+  const h = Math.sin((b.lat - a.lat) * t / 2) ** 2 + Math.cos(a.lat * t) * Math.cos(b.lat * t) * Math.sin((b.lng - a.lng) * t / 2) ** 2;
+  return 3958.8 * 2 * Math.asin(Math.sqrt(h));
+}
+function nearestSlice(items, townSlug, size) {
+  const here = geoOf(townSlug);
+  if (!here) return items.slice(0, size);
+  return items
+    .map((item, i) => {
+      const g = geoOf(item.slug);
+      return [g ? milesApart(here, g) : Infinity, i, item];
+    })
+    .sort((a, b) => a[0] - b[0] || a[1] - b[1])
+    .slice(0, size)
+    .map((row) => row[2]);
+}
+
 export function matrixRelatedHtml(catalogue, identity) {
   const kind = identity.kind || "service";
   const townSlug = identity.townSlug || "";
@@ -270,7 +300,8 @@ export function matrixRelatedHtml(catalogue, identity) {
 
   const sameTown = [];
   if (kind === "service" || kind === "keyword" || kind === "job" || kind === "variant") {
-    for (const slug of relatedServiceSlugs(catalogue, serviceSlug, 8)) {
+    // CLOSE-Q8: lean town pages link every related service in the same town (16), not 8.
+    for (const slug of relatedServiceSlugs(catalogue, serviceSlug, identity.lean ? 16 : 8)) {
       const name = serviceLabel(catalogue, slug);
       // Service×town pages outside the dual-ring towns 301 (or are not
       // exported), so never link them from a town page.
@@ -312,6 +343,7 @@ export function matrixRelatedHtml(catalogue, identity) {
     const item = {
       href: leafHref(kind === "variant" ? "keyword" : kind, identity, town.slug),
       label: `${subject} in ${town.name}`,
+      slug: town.slug,
     };
     if (nearSet.has(town.slug) && nearby.length < 12) nearby.push(item);
     else coverage.push(item);
@@ -370,10 +402,10 @@ export function matrixRelatedHtml(catalogue, identity) {
       ["Hubs", dedupe(parents, selfPath)],
       [`Related in ${townName}`, dedupe(sameTown, selfPath)],
       ["Nearby areas", dedupe(nearby, selfPath)],
-      ["Same work across Greater Manchester", dedupe(identity.lean ? [] : coverage, selfPath)],
+      ["Same work across Greater Manchester", dedupe(identity.lean ? nearestSlice(coverage, townSlug, LEAN_COVERAGE) : coverage, selfPath)],
       ["Jobs and guides", dedupe(cross, selfPath)],
       ["Manufacturers", dedupe(brands, selfPath)],
-      ["Quotes and guides", dedupe(identity.lean ? utility.slice(0, 3) : utility, selfPath)],
+      ["Quotes and guides", dedupe(utility, selfPath)],
     ],
   });
 }
