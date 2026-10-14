@@ -100,6 +100,63 @@ function placeFor(townSlug) {
   };
 }
 
+const FAMILY = (service) => (service === "barriers" ? "barriers" : service === "aov-air-handling" ? "aov" : "fire");
+const UTILITY = [
+  ["/pages/services", "All services"],
+  ["/pages/keywords", "All keyword guides"],
+  ["/pages/areas", "Areas we cover"],
+  ["/pages/commercial", "Commercial property services"],
+  ["/pages/landlords", "Landlord compliance"],
+  ["/pages/care-homes", "Care homes"],
+  ["/pages/packages", "Compliance packages"],
+  ["/pages/resources", "Guides and resources"],
+  ["/pages/manufacturers", "Manufacturer hubs"],
+  ["/pages/about", "About iComply"],
+];
+
+function milesBetween(a, b) {
+  const rad = Math.PI / 180;
+  const dLat = (b.lat - a.lat) * rad;
+  const dLng = (b.lng - a.lng) * rad;
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * rad) * Math.cos(b.lat * rad) * Math.sin(dLng / 2) ** 2;
+  return 3959 * 2 * Math.asin(Math.sqrt(h));
+}
+
+/**
+ * CLOSE-Q8 (2026-10-14): P0 keyword x town pages carried ~20 links. Add the
+ * same keyword in the nearest list towns, the other P0 guides of the same
+ * family in this town, every parent service hub and the site utility pages.
+ */
+function p0ExtraLinks(keywordSlug, townSlug, townName, service) {
+  const out = [];
+  const seen = new Set([`/pages/keywords/${keywordSlug}/${townSlug}`]);
+  const push = (href, label) => {
+    if (seen.has(href)) return;
+    seen.add(href);
+    out.push(`<li><a href="${href}">${escapeHtml(label)}</a></li>`);
+  };
+  const name = keywordPack[keywordSlug]?.name || keywordSlug;
+  const here = TOWNS.get(townSlug);
+  if (here && Number.isFinite(here.lat) && Number.isFinite(here.lng)) {
+    const near = [...TOWNS.values()]
+      .filter((t) => t.slug !== townSlug && Number.isFinite(t.lat) && Number.isFinite(t.lng))
+      .map((t) => [milesBetween(here, t), t])
+      .sort((a, b) => a[0] - b[0])
+      .slice(0, 30);
+    for (const [, t] of near) push(`/pages/keywords/${keywordSlug}/${t.slug}`, `${name} in ${t.name}`);
+  }
+  const family = FAMILY(service);
+  for (const other of P0.keys()) {
+    if (other === keywordSlug || FAMILY(keywordPack[other]?.service) !== family) continue;
+    if (!p0KeepsTown(other, townSlug)) continue;
+    push(`/pages/keywords/${other}/${townSlug}`, `${keywordPack[other]?.name || other} in ${townName}`);
+    if (out.length >= 60) break;
+  }
+  for (const hubs of Object.values(PARENTS)) for (const href of hubs) push(href, href.split("/").pop().replace(/-/g, " "));
+  for (const [href, label] of UTILITY) push(href, label);
+  return out.join("");
+}
+
 export function renderNationwideP0Town(keywordSlug, townSlug) {
   const hub = P0.get(keywordSlug);
   const pack = keywordPack[keywordSlug];
@@ -155,6 +212,7 @@ export function renderNationwideP0Town(keywordSlug, townSlug) {
     const label = keywordPack[other]?.name || other;
     links += `<li><a href="/pages/keywords/${other}">${escapeHtml(label)}</a></li>`;
   }
+  links += p0ExtraLinks(keywordSlug, townSlug, townName, pack.service);
   const gallery = images.map((src, index) => (
     `<figure><img src="${escapeHtml(src)}" alt="${escapeHtml(`${name} in ${townName} — photograph ${index + 1}`)}" width="1200" height="630"></figure>`
   )).join("");
