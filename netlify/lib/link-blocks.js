@@ -229,6 +229,20 @@ function leafHref(kind, ids, townSlug) {
  * @param {object} catalogue Edge catalogue (keywords, services, jobs, manufacturers).
  * @param {object} identity Page identity. kind is service|keyword|job|manufacturer|variant.
  */
+/**
+ * CLOSE-Q8 (2026-10-14): lean town pages (real facts present) carry a per-town
+ * rotated slice of the Greater Manchester coverage list instead of none. The
+ * slice start moves with the town slug, so neighbouring pages do not share one
+ * identical link cloud, and the hub size cap is untouched.
+ */
+const LEAN_COVERAGE = 24;
+function rotatedSlice(items, seed, size) {
+  if (!items.length) return [];
+  const h = Math.abs([...String(seed || "")].reduce((acc, ch) => (acc * 31 + ch.charCodeAt(0)) | 0, 7));
+  const start = h % items.length;
+  return [...items.slice(start), ...items.slice(0, start)].slice(0, size);
+}
+
 export function matrixRelatedHtml(catalogue, identity) {
   const kind = identity.kind || "service";
   const townSlug = identity.townSlug || "";
@@ -270,7 +284,8 @@ export function matrixRelatedHtml(catalogue, identity) {
 
   const sameTown = [];
   if (kind === "service" || kind === "keyword" || kind === "job" || kind === "variant") {
-    for (const slug of relatedServiceSlugs(catalogue, serviceSlug, 8)) {
+    // CLOSE-Q8: lean town pages link every related service in the same town (16), not 8.
+    for (const slug of relatedServiceSlugs(catalogue, serviceSlug, identity.lean ? 16 : 8)) {
       const name = serviceLabel(catalogue, slug);
       // Service×town pages outside the dual-ring towns 301 (or are not
       // exported), so never link them from a town page.
@@ -370,10 +385,10 @@ export function matrixRelatedHtml(catalogue, identity) {
       ["Hubs", dedupe(parents, selfPath)],
       [`Related in ${townName}`, dedupe(sameTown, selfPath)],
       ["Nearby areas", dedupe(nearby, selfPath)],
-      ["Same work across Greater Manchester", dedupe(identity.lean ? [] : coverage, selfPath)],
+      ["Same work across Greater Manchester", dedupe(identity.lean ? rotatedSlice(coverage, townSlug, LEAN_COVERAGE) : coverage, selfPath)],
       ["Jobs and guides", dedupe(cross, selfPath)],
       ["Manufacturers", dedupe(brands, selfPath)],
-      ["Quotes and guides", dedupe(identity.lean ? utility.slice(0, 3) : utility, selfPath)],
+      ["Quotes and guides", dedupe(utility, selfPath)],
     ],
   });
 }
