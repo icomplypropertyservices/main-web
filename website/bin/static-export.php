@@ -1357,8 +1357,8 @@ function icomplyPrettyUrlHeaders(): string
   X-Content-Type-Options: nosniff
 
 /assets/contact/*.vcf
-  Content-Type: text/vcard; charset=utf-8
-  Content-Disposition: attachment
+  Content-Type: text/x-vcard
+  Content-Disposition: inline; filename="iComply-Property-Services.vcf"
   X-Content-Type-Options: nosniff
   Cache-Control: public, max-age=86400
 
