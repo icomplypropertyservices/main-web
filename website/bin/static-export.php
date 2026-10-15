@@ -273,6 +273,10 @@ file_put_contents($dist . '/404.html', $notFoundHtml);
 icomplyCopyStaticAssets($websiteRoot, $repoRoot, $dist);
 $productPages = icomplyExportProductPages($dist, $log);
 $log("product pages={$productPages}\n");
+require_once $websiteRoot . '/includes/contact-widgets.php';
+file_put_contents($websiteRoot . '/data/contact-widgets.json', json_encode(['html' => icomplyContactWidgetsHtml()], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
+[$cwPages, $cwInj] = icomplyInjectContactWidgetsDist($dist);
+$log("contact widgets: pages={$cwPages} injected={$cwInj}\n");
 icomplyWriteDistRedirects($dist);
 icomplyWriteDistHeaders($dist);
 if (!icomplyPublishDistSitemap($websiteRoot, $dist, $log)) {
