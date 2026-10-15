@@ -44,7 +44,7 @@ if ($base !== '') {
         $say(str_contains($home, 'function gtag') && str_contains($home, 'googletagmanager.com'), 'rendered gtag snippet');
         $say(str_contains($home, 'SK2 5DE'), 'Stockport SK2 5DE');
         $say(str_contains($home, '07517806082'), 'phone');
-        $say(str_contains($home, 'info@icomplypropertyservices.co.uk'), 'email');
+        $say(str_contains($home, 'icomplypropertyservices@gmail.com'), 'email');
         $say(!str_contains($home, 'fire-risk-assessments-photo'), 'rendered HTML has no FRA -photo src');
         preg_match_all('/<img[^>]*>/i', $home, $imgs);
         $empty = 0;

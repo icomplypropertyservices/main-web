@@ -740,6 +740,19 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
             $keywordTown++;
         }
     }
+    // Town pages Google already ranks (GSC 2026-10-15) — served index,follow by the edge.
+    $gscKeepFile = SITE_ROOT . '/data/gsc-keep-towns.json';
+    if (is_file($gscKeepFile)) {
+        $gscKeep = json_decode((string)file_get_contents($gscKeepFile), true);
+        foreach ((array)($gscKeep['paths'] ?? []) as $kp) {
+            $kp = (string)$kp;
+            $m = [];
+            if (preg_match('#^/pages/keywords/([a-z0-9-]+)/([a-z0-9-]+)$#', $kp, $m)
+                && isset($keywords[$m[1]]) && !isset($places[$m[2]])) {
+                $writeLoc($kp);
+            }
+        }
+    }
     $serviceTown = 0;
     foreach (array_keys($services) as $serviceSlug) {
         foreach (array_keys($places) as $placeSlug) {
@@ -818,9 +831,11 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
     file_put_contents($dist . '/products/sitemap.xml', $leaf($base . '/products'));
     file_put_contents($dist . '/shop/sitemap.xml', $leaf($base . '/shop/'));
 
-    $robots = "User-agent: *\nAllow: /\n\nSitemap: {$base}/sitemap.xml\n\n"
-        . "Disallow: /admin/\nDisallow: /bin/\nDisallow: /data/\n"
-        . "Disallow: /config.php\nDisallow: /config.local.php\n";
+    if (!function_exists('icomplyRobotsTxt')) {
+        require_once SITE_ROOT . '/includes/sitemap.php';
+    }
+    // Single source: website/robots.txt (AI crawler allow-list).
+    $robots = icomplyRobotsTxt($base);
     file_put_contents($dist . '/robots.txt', $robots);
     $edgeDir = dirname(SITE_ROOT) . '/netlify/edge-functions';
     if (!is_dir($edgeDir)) {

@@ -5,7 +5,7 @@
  */
 return [
     'SITE_URL' => 'http://localhost/icomply',
-    'EMAIL' => 'info@icomplypropertyservices.co.uk',
+    'EMAIL' => 'icomplypropertyservices@gmail.com',
     // Optional: where contact leads are emailed (empty = use EMAIL)
     'LEADS_NOTIFY_EMAIL' => '',
     'ADMIN_USER' => 'jackscott',

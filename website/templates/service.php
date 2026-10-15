@@ -25,6 +25,13 @@ if ($seoDesc !== '') {
 } else {
     $metaDesc = $SERVICE_NAME . ' across Greater Manchester and the North West. Written quotes after scope. Local team from Stockport.';
 }
+require_once SITE_ROOT . '/includes/service-boost.php';
+$svcBoost = icomplyServiceBoost($SERVICE_SLUG);
+if ($svcBoost) {
+    $pageTitle = $svcBoost['title'];
+    $metaTitleExact = true;
+    $metaDesc = $svcBoost['meta'];
+}
 $metaKeywords = $SEO_KEYWORDS;
 $hubHeroRel = function_exists('icomplyHubHero') ? icomplyHubHero($SERVICE_SLUG) : null;
 $hubInline1 = function_exists('icomplyHubInline') ? icomplyHubInline($SERVICE_SLUG, 1) : null;
@@ -101,6 +108,17 @@ if (!empty($svcCopy['faq']) && is_array($svcCopy['faq'])) {
     $faqs = $svcCopy['faq'];
 }
 $hubLinks = function_exists('icomplyServiceHubLinks') ? icomplyServiceHubLinks($serviceSlug) : [];
+if ($svcBoost) {
+    $svcCopy = is_array($svcCopy) ? $svcCopy : [];
+    $svcCopy['sections'] = array_merge([$svcBoost['answer']], (array)($svcCopy['sections'] ?? []));
+    $svcCopy['cta_line'] = 'Call or WhatsApp 07517 806082 — same/next-day slots often available. Or send the postcode below.';
+    $faqs = array_merge($svcBoost['faq'], $faqs);
+    $seenLinks = [];
+    foreach ($hubLinks as $l) { $seenLinks[$l[0]] = true; }
+    foreach ($svcBoost['links'] as $l) {
+        if (!isset($seenLinks[$l[0]])) { $hubLinks[] = $l; $seenLinks[$l[0]] = true; }
+    }
+}
 
 $nwAreas = function_exists('icomplyLocalTownNames') ? icomplyLocalTownNames() : getAreas();
 $keywordTowns = array_values(array_filter(

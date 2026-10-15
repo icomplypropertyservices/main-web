@@ -29,7 +29,7 @@ require SITE_ROOT . '/includes/header.php';
 </section>
 <section class="bg-white border-b">
   <div class="max-w-3xl mx-auto px-6 py-12 text-center text-zinc-600">
-    <p>Need a quote for an upcoming renewal? Email <a class="text-[#ff6b00] font-semibold" href="mailto:info@icomplypropertyservices.co.uk">info@icomplypropertyservices.co.uk</a> or
+    <p>Need a quote for an upcoming renewal? Email <a class="text-[#ff6b00] font-semibold" href="mailto:icomplypropertyservices@gmail.com">icomplypropertyservices@gmail.com</a> or
     <a class="text-[#ff6b00] font-semibold" href="https://icomplypropertyservices.co.uk/assets/contact/icomply-property-services.vcf">save our contact card</a>.</p>
   </div>
 </section>

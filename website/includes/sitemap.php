@@ -519,7 +519,6 @@ function icomplySitemapEntries(): array
             }
         }
     }
-
     return $entries;
 }
 
@@ -600,13 +599,13 @@ function icomplyCanonicalSiteBase(string $baseUrl): string
 function icomplyRobotsTxt(string $baseUrl): string
 {
     $base = icomplyCanonicalSiteBase($baseUrl);
-    return "User-agent: *\nAllow: /\n\n"
-        . "Sitemap: {$base}/sitemap.xml\n\n"
-        . "Disallow: /admin/\n"
-        . "Disallow: /bin/\n"
-        . "Disallow: /data/\n"
-        . "Disallow: /config.php\n"
-        . "Disallow: /config.local.php\n";
+    $file = SITE_ROOT . '/robots.txt';
+    $txt = is_file($file) ? (string)file_get_contents($file) : '';
+    if ($txt === '' || !str_contains($txt, 'User-agent')) {
+        $txt = "User-agent: *\nAllow: /\nDisallow: /admin/\nDisallow: /bin/\nDisallow: /data/\nDisallow: /config.php\nDisallow: /config.local.php\n\nSitemap: https://icomplypropertyservices.co.uk/sitemap.xml\n";
+    }
+    // website/robots.txt is the single source (AI crawler allow-list lives there).
+    return str_replace('https://icomplypropertyservices.co.uk/sitemap.xml', $base . '/sitemap.xml', $txt);
 }
 
 function icomplyDeleteSitemapChunks(string $root): void

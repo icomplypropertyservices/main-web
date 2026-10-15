@@ -226,7 +226,7 @@ function gasJobLaneRender(string $slug): void
                 '@type' => 'ProfessionalService',
                 'name' => 'iComply Property Services',
                 'telephone' => '+447517806082',
-                'email' => 'info@icomplypropertyservices.co.uk',
+                'email' => 'icomplypropertyservices@gmail.com',
                 'address' => [
                     '@type' => 'PostalAddress',
                     'streetAddress' => '17 Woodlands Park Road, Offerton',
@@ -414,7 +414,7 @@ function gasJobLaneRender(string $slug): void
         <p class="mt-8 text-sm text-white/80 leading-relaxed">
             iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport SK2 5DE
             · <a class="underline" href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars((string)PHONE, ENT_QUOTES, 'UTF-8') ?></a>
-            · <a class="underline" href="mailto:info@icomplypropertyservices.co.uk">info@icomplypropertyservices.co.uk</a>
+            · <a class="underline" href="mailto:icomplypropertyservices@gmail.com">icomplypropertyservices@gmail.com</a>
         </p>
     </div>
 </section>

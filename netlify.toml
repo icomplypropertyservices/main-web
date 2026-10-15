@@ -2968,3 +2968,33 @@
     Content-Disposition = "inline; filename=\"iComply-Property-Services.vcf\""
     X-Content-Type-Options = "nosniff"
     Cache-Control = "public, max-age=86400"
+
+# GSC 404s (2026-10-15): retired product/shop URLs Google still requests.
+# Not forced, so any exported product file still wins.
+[[redirects]]
+  from = "/products/product/*"
+  to = "/products"
+  status = 301
+
+[[redirects]]
+  from = "/products/brand/*"
+  to = "/products"
+  status = 301
+
+[[redirects]]
+  from = "/products/keywords/*"
+  to = "/products"
+  status = 301
+
+[[redirects]]
+  from = "/shop/products/*"
+  to = "/shop"
+  status = 301
+
+# battery-storage hub was retired to /pages/services (426 GSC impressions, 0 clicks).
+# Send it to the live battery storage page instead.
+[[redirects]]
+  from = "/pages/services/battery-storage"
+  to = "/pages/keywords/battery-storage-electrical"
+  status = 301
+  force = true

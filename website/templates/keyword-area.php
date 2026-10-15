@@ -5,8 +5,10 @@
  * MANUFACTURER_TAGS, KEYWORD_INTRO, KEYWORD_BODY, KEYWORD_META, KEYWORD_FOCUS_HTML,
  * KEYWORD_IMAGE, SERVICE_IMAGE, SEO_KEYWORDS
  */
-$pageTitle = $KEYWORD_NAME . ' in ' . $AREA;
-$metaDesc = $KEYWORD_NAME . ' in ' . $AREA . '. ' . $KEYWORD_META;
+require_once SITE_ROOT . '/includes/ctr-meta.php';
+$pageTitle = icomplyCtrTitle((string)$KEYWORD_NAME, (string)$AREA, (string)$KEYWORD_SLUG, (string)$SERVICE_SLUG);
+$metaTitleExact = true;
+$metaDesc = icomplyCtrDesc((string)$KEYWORD_NAME, (string)$AREA, (string)$KEYWORD_SLUG, (string)$SERVICE_SLUG);
 $metaKeywords = $KEYWORD_NAME . ' ' . $AREA . ', ' . $SERVICE_NAME . ' ' . $AREA . ', ' . $SEO_KEYWORDS;
 $ogImage = $KEYWORD_IMAGE;
 $canonicalUrl = url('/pages/keywords/' . $KEYWORD_SLUG . '/' . $AREA_SLUG . '.php');

@@ -182,7 +182,7 @@ function routerDispatchVirtual(string $path): bool {
         $retiredServicePages = [
             'ev-charging' => '/pages/services/ev-chargers',
             'solar-pv' => '/pages/services',
-            'battery-storage' => '/pages/services',
+            'battery-storage' => '/pages/keywords/battery-storage-electrical',
             'air-source-heat-pumps' => '/pages/services',
             'ground-source-heat-pumps' => '/pages/services',
             'solar-thermal' => '/pages/services',

@@ -102,7 +102,7 @@ foreach ($paths as $path) {
 
 // Auto-fix: robots.txt Sitemap line + production SITE_URL in local files
 $robotsPath = SITE_ROOT . '/robots.txt';
-$robotsWant = "User-agent: *\nAllow: /\n\n"
+$robotsWant = function_exists("icomplyRobotsTxt") ? icomplyRobotsTxt($base) : "User-agent: *\nAllow: /\n\n"
     . "Sitemap: {$base}/sitemap.xml\n\n"
     . "Disallow: /admin/\n"
     . "Disallow: /bin/\n"

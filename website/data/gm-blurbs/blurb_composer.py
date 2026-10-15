@@ -8,7 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 GAS_PHRASE = "carried out by Gas Safe registered engineers"
 PHONE = "07517806082"
-EMAIL = "info@icomplypropertyservices.co.uk"
+EMAIL = "icomplypropertyservices@gmail.com"
 CTA = "POA fixed quote after scope"
 CONTACT_TAIL = f"on {PHONE} or {EMAIL}; pricing stays POA after scope."
 GAS_TAIL = f"gas work is {GAS_PHRASE}."
