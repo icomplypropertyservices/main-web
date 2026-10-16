@@ -780,6 +780,8 @@ function icomplyCopyStaticAssets(string $websiteRoot, string $repoRoot, string $
 
     $copyFiles = [
         'robots.txt',
+        'llms.txt',
+        'llms-full.txt',
         'sitemap.xml',
         'manifest.json',
         'manifest.webmanifest',
@@ -1363,6 +1365,14 @@ function icomplyPrettyUrlHeaders(): string
   Cache-Control: public, max-age=86400
 
 /robots.txt
+  Cache-Control: public, max-age=3600
+
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/llms-full.txt
+  Content-Type: text/plain; charset=utf-8
   Cache-Control: public, max-age=3600
 
 /assets/css/*

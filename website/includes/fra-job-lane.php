@@ -502,7 +502,7 @@ require SITE_ROOT . '/includes/header.php';
     <p class="mt-8 text-sm text-white">
         iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport SK2 5DE
         · <a class="underline text-white" href="tel:+447517806082">07517806082</a>
-        · <a class="underline text-white" href="mailto:info@icomplypropertyservices.co.uk">info@icomplypropertyservices.co.uk</a>
+        · <a class="underline text-white" href="mailto:icomplypropertyservices@gmail.com">icomplypropertyservices@gmail.com</a>
     </p>
 </section>
 <?php require SITE_ROOT . '/includes/footer.php'; ?>

@@ -14,6 +14,43 @@ import { townFactsBlock } from "../lib/town-facts.js";
 import { thinFaqHtml, thinFaqs, thinImages, thinOgMeta, thinProseHtml } from "../lib/thin-quality-bar.js";
 import fireAlarmFamily from "../../website/data/fire-alarm-installer-family.json" with { type: "json" };
 import mainlandTownDoc from "../../website/data/uk-mainland-towns-10k.json" with { type: "json" };
+import gscKeepDoc from "../../website/data/gsc-keep-towns.json" with { type: "json" };
+
+// Town pages Google already ranks (GSC impressions). Never 301 these to a hub;
+// render them index,follow so the rankings are kept.
+const GSC_KEEP = new Set(gscKeepDoc.paths || []);
+const CTR_PHONE = "07517 806082";
+
+function ctrPriceFrom(slug) {
+  const s = String(slug || "");
+  if (/eicr|electrical-(safety|inspection|installation-condition)|landlord-electrical/.test(s)) return "£160";
+  return "";
+}
+
+export function ctrTitle(subject, town, slug) {
+  const price = ctrPriceFrom(slug);
+  const head = `${subject} ${town}`;
+  const opts = [];
+  if (price) {
+    opts.push(`${head} from ${price} | Next-Day | ${CTR_PHONE}`);
+    opts.push(`${head} from ${price} | ${CTR_PHONE}`);
+  }
+  opts.push(`${head} | Same/Next-Day | ${CTR_PHONE}`);
+  opts.push(`${head} | Call ${CTR_PHONE}`);
+  opts.push(`${head} | iComply`);
+  for (const o of opts) if (o.length <= 62) return o;
+  return `${head.slice(0, 52).replace(/\s+\S*$/, "")} | iComply`;
+}
+
+export function ctrDescription(subject, town, slug, gas) {
+  const price = ctrPriceFrom(slug);
+  const lead = `${subject} in ${town}${price ? ` from ${price}` : ""}.`;
+  const who = gas ? " Same/next-day slots, work by Gas Safe registered engineers." : " Same/next-day slots from our Stockport team.";
+  let d = `${lead}${who} Fixed written quote, certificates emailed. Call ${CTR_PHONE}.`;
+  if (d.length > 160) d = `${lead}${who} Call ${CTR_PHONE}.`;
+  if (d.length > 160) d = `${lead} Same/next-day. Call ${CTR_PHONE}.`;
+  return clampMeta(d);
+}
 
 const FIRE_P0 = new Set(fireAlarmFamily.p0 || []);
 const FIRE_HUBS = new Set(fireAlarmFamily.hubs || []);
@@ -316,7 +353,7 @@ export function renderTownPage(input) {
     place.population = Number(mainlandPlace.population) || place.population;
     place.county = mainlandPlace.county || "";
   }
-  const indexable = keywordKnown && !keyword.synthetic && (tier === "core" || fireTown);
+  const indexable = keywordKnown && !keyword.synthetic && (tier === "core" || fireTown || GSC_KEEP.has(path));
   const robots = indexable ? "index, follow" : "noindex, follow";
   const seed = hashStr(`${kind}|${subject}|${serviceSlug}|${townSlug}`);
   const audience = pick(AUDIENCES, seed);
@@ -335,10 +372,10 @@ export function renderTownPage(input) {
   const focus = (keyword.focus && keyword.focus.length ? keyword.focus : [`Scope agreed before ${subject} starts`]).slice(0, 4);
   const canonical = `https://icomplypropertyservices.co.uk${path}`;
   const h1 = `${subject} for ${audience} in ${place.name}`;
-  const title = `${subject} in ${place.name} | ${serviceName} | iComply`;
-  const description = clampMeta(
-    `${subject} in ${place.name}, ${place.region}. ${housing} Quote is price on application (POA). Cover also reaches ${near}.`
-  );
+  const ctrSlug = kind === "keyword" ? input.keyword : serviceSlug;
+  const ctrGas = Boolean(keyword.gas) || serviceSlug === "gas-systems" || serviceSlug === "heating";
+  const title = ctrTitle(subject, place.name, ctrSlug);
+  const description = ctrDescription(subject, place.name, ctrSlug, ctrGas);
   const imageSlug = IMAGE_SLUG[serviceSlug] || serviceSlug;
 
   const gas = keyword.gas || serviceSlug === "gas-systems" || serviceSlug === "heating";
@@ -466,9 +503,19 @@ export function renderTownPage(input) {
         areaServed: place.name,
         description,
         provider: {
-          "@type": "Organization",
+          "@type": "LocalBusiness",
+          "@id": "https://icomplypropertyservices.co.uk/#business",
           name: "iComply Property Services",
           url: "https://icomplypropertyservices.co.uk/",
+          telephone: "+447517806082",
+          email: "icomplypropertyservices@gmail.com",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "17 Woodlands Park Road, Offerton",
+            addressLocality: "Stockport",
+            postalCode: "SK2 5DE",
+            addressCountry: "GB",
+          },
           areaServed: "Stockport and the UK where the service is published",
         },
       },
@@ -644,6 +691,7 @@ function placeAliasRedirect(path) {
 }
 
 export function nonGmMatrixRedirect(path) {
+  if (GSC_KEEP.has(path)) return null;
   let m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   if (m) {
     if (isLocalTown(m[2]) || p0KeepsTown(m[1], m[2]) || fireInstallerNationwide(m[1], m[2])) return null;

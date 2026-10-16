@@ -2,7 +2,7 @@
 
 The 10-second quote popup posts to a **Netlify Form** named `lead-popup`.
 That is a real submission pipeline (not a fake toast). Netlify stores the
-row and can email `info@icomplypropertyservices.co.uk`.
+row and can email `icomplypropertyservices@gmail.com`.
 
 ## What is in the HTML
 
@@ -25,7 +25,7 @@ registers it.
 2. After the first deploy that includes `lead-popup`, the form appears.
 3. **Form notifications** → add **Email notification**:
    - Event: new submission
-   - Address: `info@icomplypropertyservices.co.uk`
+   - Address: `icomplypropertyservices@gmail.com`
    - Confirm the inbox (Netlify sends a confirmation mail).
 
 Until that notification is saved, submissions still land in the Netlify

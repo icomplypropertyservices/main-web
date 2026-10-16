@@ -152,6 +152,17 @@ function icomplyMatrixChromeStart(string $title, string $desc, string $canonical
         . '<meta property="og:image" content="' . icomplyMatrixH(icomply_absolute_url($imagePath)) . '">'
         . '<link rel="stylesheet" href="' . icomplyMatrixH(assetUrl('/assets/css/utilities.css')) . '">'
         . '<link rel="stylesheet" href="' . $css . '">'
+        . '<script type="application/ld+json">' . json_encode([
+            '@context' => 'https://schema.org',
+            '@type' => 'LocalBusiness',
+            '@id' => 'https://icomplypropertyservices.co.uk/#business',
+            'name' => 'iComply Property Services',
+            'url' => 'https://icomplypropertyservices.co.uk/',
+            'telephone' => '+447517806082',
+            'email' => 'icomplypropertyservices@gmail.com',
+            'address' => ['@type' => 'PostalAddress', 'streetAddress' => '17 Woodlands Park Road, Offerton', 'addressLocality' => 'Stockport', 'postalCode' => 'SK2 5DE', 'addressCountry' => 'GB'],
+            'areaServed' => ['Greater Manchester', 'North West England'],
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG) . '</script>'
         . '</head><body class="matrix-page bg-zinc-50 text-black">'
         . '<header class="matrix-header">'
         . '<div class="matrix-wrap py-3 flex flex-wrap items-center justify-between gap-3 text-sm">'
@@ -288,11 +299,9 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         ? seo_unique_local_block($svcName, $svcSlug, $areaName)
         : [];
 
-    $title = $kwName . ' in ' . $areaName . ' | ' . $s['brand'];
-    $desc = $kwName . ' in ' . $areaName . '. ' . $priceLine;
-    if (strlen($desc) > 160) {
-        $desc = substr($desc, 0, 157) . '…';
-    }
+    require_once SITE_ROOT . '/includes/ctr-meta.php';
+    $title = icomplyCtrTitle($kwName, $areaName, $keywordSlug, $svcSlug);
+    $desc = icomplyCtrDesc($kwName, $areaName, $keywordSlug, $svcSlug);
     $canonical = url('/pages/keywords/' . $keywordSlug . '/' . $areaSlugVal);
     $robots = function_exists('icomplyRobotsMetaForPath')
         ? icomplyRobotsMetaForPath('/pages/keywords/' . $keywordSlug . '/' . $areaSlugVal)
@@ -444,8 +453,9 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     }
     $blurb = getServiceBlurb($serviceSlug);
     $standards = getServiceStandards($serviceSlug);
-    $title = $svcName . ' in ' . $areaName . ' | ' . $s['brand'];
-    $desc = $svcName . ' in ' . $areaName . '. ' . $priceLine;
+    require_once SITE_ROOT . '/includes/ctr-meta.php';
+    $title = icomplyCtrTitle($svcName, $areaName, $serviceSlug, $serviceSlug);
+    $desc = icomplyCtrDesc($svcName, $areaName, $serviceSlug, $serviceSlug);
     $canonical = url('/pages/' . $serviceSlug . '/' . $areaSlugVal);
     $robots = function_exists('icomplyRobotsMetaForPath')
         ? icomplyRobotsMetaForPath('/pages/' . $serviceSlug . '/' . $areaSlugVal)

@@ -132,6 +132,15 @@ function icomplyNonGmMatrixRedirect(string $path): ?string
     $path = '/' . ltrim(str_replace('\\', '/', $path), '/');
     $path = preg_replace('#\.php$#i', '', $path) ?? $path;
     $path = preg_replace('#/index$#i', '', $path) ?? $path;
+    static $gscKeep = null;
+    if ($gscKeep === null) {
+        $f = dirname(__DIR__) . '/data/gsc-keep-towns.json';
+        $doc = is_file($f) ? json_decode((string)file_get_contents($f), true) : [];
+        $gscKeep = array_fill_keys((array)($doc['paths'] ?? []), true);
+    }
+    if (isset($gscKeep[$path])) {
+        return null; // GSC-ranked town page: keep (mirrors edge GSC_KEEP)
+    }
     $path = rtrim($path, '/') ?: '/';
 
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {

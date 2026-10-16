@@ -260,7 +260,7 @@ echo '</section>';
             <a href="<?= hmoJobH($wa) ?>" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-2xl bg-green-600 text-white font-semibold">WhatsApp <?= hmoJobH($phone) ?></a>
             <a href="<?= hmoJobH($phoneHref) ?>" class="px-5 py-2.5 rounded-2xl border border-zinc-300 font-semibold text-black">Call <?= hmoJobH($phone) ?></a>
         </div>
-        <p class="mt-6 text-center text-xs text-zinc-500">iComply Property Services · 17 Woodlands Park Road, Offerton, Stockport SK2 5DE · <?= hmoJobH($phone) ?> · <?= hmoJobH(defined('EMAIL') ? (string)EMAIL : 'info@icomplypropertyservices.co.uk') ?></p>
+        <p class="mt-6 text-center text-xs text-zinc-500">iComply Property Services · 17 Woodlands Park Road, Offerton, Stockport SK2 5DE · <?= hmoJobH($phone) ?> · <?= hmoJobH(defined('EMAIL') ? (string)EMAIL : 'icomplypropertyservices@gmail.com') ?></p>
     </div>
 </section>
 <script>

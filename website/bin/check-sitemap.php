@@ -350,7 +350,12 @@ foreach (['generated' => $xml, 'committed' => $committed] as $label => $blob) {
         continue;
     }
     $leaks = [];
+    $gscKeepDoc = json_decode((string)@file_get_contents(SITE_ROOT . '/data/gsc-keep-towns.json'), true);
+    $gscKeepSet = array_fill_keys((array)($gscKeepDoc['paths'] ?? []), true);
     foreach ($locRows[1] as $path) {
+        if (isset($gscKeepSet[$path])) {
+            continue; // GSC-ranked town page kept on purpose (2026-10-15)
+        }
         if ($purgedFamily($path)) {
             $leaks[] = $path;
         }

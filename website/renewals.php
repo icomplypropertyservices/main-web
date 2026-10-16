@@ -1,7 +1,7 @@
 <?php
 /**
  * Certificate / service renewal date logger.
- * Netlify Form "renewals" → notifications to info@icomplypropertyservices.co.uk
+ * Netlify Form "renewals" → notifications to icomplypropertyservices@gmail.com
  * Success page: /renewals/thanks
  */
 require_once __DIR__ . '/config.php';
@@ -106,7 +106,7 @@ require SITE_ROOT . '/includes/header.php';
         <button type="button" id="add-property" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border-2 border-[#0B1F3A] text-[#0B1F3A] font-semibold hover:bg-[#0B1F3A] hover:text-white transition">
           + Add another property
         </button>
-        <noscript><p class="text-sm text-zinc-500 mt-2">JavaScript is off — submit one property now, or email <a class="text-[#ff6b00] font-semibold" href="mailto:info@icomplypropertyservices.co.uk">info@icomplypropertyservices.co.uk</a> a list for the rest.</p></noscript>
+        <noscript><p class="text-sm text-zinc-500 mt-2">JavaScript is off — submit one property now, or email <a class="text-[#ff6b00] font-semibold" href="mailto:icomplypropertyservices@gmail.com">icomplypropertyservices@gmail.com</a> a list for the rest.</p></noscript>
       </div>
 
       <div class="border-t border-zinc-200 pt-6 space-y-4">
@@ -129,7 +129,7 @@ require SITE_ROOT . '/includes/header.php';
         <strong class="text-[#0B1F3A]">Privacy note.</strong>
         We use your details only to send the reminders you asked for and to follow up if a certificate is due with us. We do not sell your data. See our
         <a href="<?= url('/privacy.php') ?>" class="text-[#ff6b00] font-semibold underline">privacy policy</a>.
-        Questions: <a href="mailto:info@icomplypropertyservices.co.uk" class="text-[#ff6b00] font-semibold">info@icomplypropertyservices.co.uk</a>
+        Questions: <a href="mailto:icomplypropertyservices@gmail.com" class="text-[#ff6b00] font-semibold">icomplypropertyservices@gmail.com</a>
         or <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="text-[#ff6b00] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>.
       </div>
 

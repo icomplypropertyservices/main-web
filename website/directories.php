@@ -14,7 +14,7 @@ $ogImage = url('/assets/images/services/building-maintenance.jpg');
 
 $nap = '17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE';
 $phone = defined('PHONE') ? PHONE : '07517806082';
-$email = defined('EMAIL') ? EMAIL : 'info@icomplypropertyservices.co.uk';
+$email = defined('EMAIL') ? EMAIL : 'icomplypropertyservices@gmail.com';
 
 /** @return list<array{platform:string,url:string,status:string,note:string}> */
 function icomplyDirectoryRows(string $file): array

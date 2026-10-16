@@ -58,7 +58,7 @@ $faqs = [
     ],
     [
         'How do I request a visit?',
-        'Call 07517806082, email info@icomplypropertyservices.co.uk, or send the contact form with the job type, address and whether the building is occupied. We reply with a POA quote before locking a date.',
+        'Call 07517806082, email icomplypropertyservices@gmail.com, or send the contact form with the job type, address and whether the building is occupied. We reply with a POA quote before locking a date.',
     ],
 ];
 
@@ -66,7 +66,7 @@ $h = static function (string $s): string {
     return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
 };
 $phone = defined('PHONE') ? PHONE : '07517806082';
-$email = defined('EMAIL') ? EMAIL : 'info@icomplypropertyservices.co.uk';
+$email = defined('EMAIL') ? EMAIL : 'icomplypropertyservices@gmail.com';
 
 require SITE_ROOT . '/includes/header.php';
 ?>
@@ -82,7 +82,7 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 <main class="max-w-5xl mx-auto px-6 py-12">
-    <p class="text-zinc-700 leading-relaxed max-w-3xl">Use this index to reach the right hub before you request a date. Landlord and HMO jobs sit beside fire alarm maintenance, FRAs, electrical testing, gas safety and access hardware. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. Barrier and maglock work is scoped on site so lane lengths, loops and power are clear before a quote. Call 07517806082, email info@icomplypropertyservices.co.uk, or use <a class="text-[#ff6b00] font-semibold" href="<?= $h(url('/contact')) ?>">https://icomplypropertyservices.co.uk/contact</a>. Footer and citation pages must keep Cheshire in the Stockport address.</p>
+    <p class="text-zinc-700 leading-relaxed max-w-3xl">Use this index to reach the right hub before you request a date. Landlord and HMO jobs sit beside fire alarm maintenance, FRAs, electrical testing, gas safety and access hardware. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. Barrier and maglock work is scoped on site so lane lengths, loops and power are clear before a quote. Call 07517806082, email icomplypropertyservices@gmail.com, or use <a class="text-[#ff6b00] font-semibold" href="<?= $h(url('/contact')) ?>">https://icomplypropertyservices.co.uk/contact</a>. Footer and citation pages must keep Cheshire in the Stockport address.</p>
 
     <?php foreach ($groups as $group => $jobs): ?>
     <section class="related-links mt-12" aria-label="<?= $h($group) ?>">
