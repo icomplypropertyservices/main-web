@@ -10,6 +10,7 @@ import { renderVariantPage, renderVariantSitemap } from "../lib/variant-matrix.j
 import { breadcrumbHtml, isGmTown, isLocalTown, matrixRelatedHtml } from "../lib/link-blocks.js";
 import { gmTownBlurb } from "../lib/gm-blurbs.js";
 import { p0KeepsTown, renderNationwideP0Town } from "../lib/nationwide-p0.js";
+import { withContactWidgets } from "../lib/contact-widgets.js";
 import { townFactsBlock } from "../lib/town-facts.js";
 import { thinFaqHtml, thinFaqs, thinImages, thinOgMeta, thinProseHtml } from "../lib/thin-quality-bar.js";
 import fireAlarmFamily from "../../website/data/fire-alarm-installer-family.json" with { type: "json" };
@@ -626,7 +627,7 @@ async function loadVariants(origin) {
 }
 
 function variantResponse(rendered) {
-  return new Response(rendered.html, {
+  return new Response(withContactWidgets(rendered.html), {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",
@@ -875,7 +876,7 @@ export default async (request, context) => {
     else if (serviceMatch && isLocalTown(serviceMatch[2])) to = `/pages/areas/${serviceMatch[2]}`;
     return Response.redirect(new URL(to, url.origin).toString(), 301);
   }
-  return new Response(rendered.html, {
+  return new Response(withContactWidgets(rendered.html), {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",
