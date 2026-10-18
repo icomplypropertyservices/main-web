@@ -23,43 +23,24 @@ $lpServices = function_exists('getServices') ? getServices() : [];
     <input name="source" value="lead-popup">
 </form>
 
-<div id="lead-popup" class="lead-popup" hidden>
-    <div class="lead-popup-dialog" role="dialog" aria-modal="true" aria-labelledby="lead-popup-title" tabindex="-1">
-        <button type="button" class="lead-close" data-lead-close aria-label="Close quote popup">&times;</button>
-        <h2 id="lead-popup-title">Need a compliance quote?</h2>
-        <p>Tell us the property and service. Price on application — no invented fees. Or call / WhatsApp now.</p>
+<div id="lead-popup" class="lead-popup lp-mini" hidden>
+    <div class="lead-popup-dialog" role="dialog" aria-modal="false" aria-labelledby="lead-popup-title" tabindex="-1">
+        <button type="button" class="lead-close" data-lead-close aria-label="Close">&times;</button>
+        <p id="lead-popup-title" class="lp-title">Need a quote? Talk to us now.</p>
         <div class="lead-quick">
-            <a class="lead-call" href="<?= htmlspecialchars($lpPhoneHref, ENT_QUOTES, 'UTF-8') ?>">Call <?= htmlspecialchars($lpPhone, ENT_QUOTES, 'UTF-8') ?></a>
             <a class="lead-wa" href="https://wa.me/<?= htmlspecialchars($lpWa, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi iComply, I need a quote') ?>" target="_blank" rel="noopener">WhatsApp</a>
-            <a class="lead-book" href="<?= htmlspecialchars(url('/contact'), ENT_QUOTES, 'UTF-8') ?>">Book quote</a>
+            <a class="lead-call" href="<?= htmlspecialchars($lpPhoneHref, ENT_QUOTES, 'UTF-8') ?>" aria-label="Call 07517 806082">Call us</a>
         </div>
-        <form id="lead-popup-form" name="lead-popup" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="lead-popup">
-            <p class="sr-only" aria-hidden="true">
-                <label>Leave blank<input name="bot-field" tabindex="-1" autocomplete="off"></label>
-            </p>
-            <label for="lp-name">Name</label>
-            <input id="lp-name" name="name" type="text" required maxlength="120" autocomplete="name">
-            <label for="lp-email">Email</label>
-            <input id="lp-email" name="email" type="email" required autocomplete="email">
-            <label for="lp-phone">Phone</label>
-            <input id="lp-phone" name="phone" type="tel" required maxlength="40" autocomplete="tel">
-            <label for="lp-service">Service interest</label>
-            <select id="lp-service" name="service" required>
-                <option value="">Select…</option>
-                <option value="Legionella Risk Assessment">Legionella risk assessment</option>
-                <option value="Asbestos Survey">Asbestos survey</option>
-                <?php foreach ($lpServices as $name): ?>
-                    <option value="<?= htmlspecialchars((string)$name, ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars((string)$name, ENT_QUOTES, 'UTF-8') ?></option>
-                <?php endforeach; ?>
-                <option value="Multi-service / not sure">Multi-service / not sure</option>
-            </select>
-            <label for="lp-message">Message (short)</label>
-            <textarea id="lp-message" name="message" rows="3" required maxlength="800" placeholder="Postcode, property type, what you need…"></textarea>
-            <input type="hidden" name="source" value="lead-popup">
-            <button type="submit">Send to iComply</button>
-            <p class="lead-status" id="lead-popup-status" role="status" aria-live="polite"></p>
-        </form>
     </div>
 </div>
+<style>
+.lead-popup.lp-mini{position:fixed!important;inset:calc(4.75rem + env(safe-area-inset-top,0px)) auto auto 50%!important;transform:translateX(-50%);background:none!important;width:min(20rem,calc(100vw - 2rem));height:auto!important;z-index:9995;display:block;padding:0!important}
+.lead-popup.lp-mini[hidden]{display:none!important}
+.lp-mini .lead-popup-dialog{position:relative;max-width:none!important;width:100%!important;max-height:none!important;margin:0!important;padding:.85rem 2.6rem .85rem .9rem!important;border-radius:.8rem;background:#0B1F3A!important;color:#fff!important;box-shadow:0 12px 30px rgba(0,0,0,.35);overflow:visible!important}
+.lp-mini .lp-title{margin:0 0 .55rem;font:700 .95rem/1.3 system-ui,sans-serif;color:#fff}
+.lp-mini .lead-quick{display:flex;gap:.5rem;margin:0}
+.lp-mini .lead-quick a{flex:1;text-align:center;padding:.55rem .4rem;border-radius:.5rem;font:700 .85rem/1.2 system-ui,sans-serif;text-decoration:none;color:#fff!important}
+.lp-mini .lead-wa{background:#16a34a!important}.lp-mini .lead-call{background:#FF6B00!important}
+.lp-mini .lead-close{position:absolute;top:.3rem;right:.3rem;width:2.2rem;height:2.2rem;border:0;border-radius:999px;background:rgba(255,255,255,.15);color:#fff;font-size:1.4rem;line-height:1;cursor:pointer}
+</style>
 <script src="<?= htmlspecialchars(assetUrl('/assets/js/lead-popup.js'), ENT_QUOTES, 'UTF-8') ?>" defer></script>
