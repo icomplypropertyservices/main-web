@@ -734,6 +734,8 @@ function icomplyExportProductPages(string $dist, callable $log): int
 
 function icomplyWritePrettyFiles(string $dist, string $path, string $html): void
 {
+    require_once dirname(__DIR__) . '/includes/scrub-meta.php';
+    $html = icomplyScrubMeta($html);
     if ($path === '/' || $path === '') {
         file_put_contents($dist . '/index.html', $html);
         file_put_contents($dist . '/index.php', $html);

@@ -1,3 +1,4 @@
+import { MATRIX_CSS, MATRIX_HEADER, MATRIX_FOOTER, MATRIX_SITE_FOOTER } from "./page-shell.js";
 /**
  * Nationwide P0 keyword × town HTML for the edge renderer.
  * Town set is UK TOP 5000. GM towns stay even when they are outside that list.
@@ -164,15 +165,21 @@ export function renderNationwideP0Town(keywordSlug, townSlug) {
 <meta property="og:description" content="${escapeHtml(description)}">
 <meta property="og:url" content="${canonical}">
 <meta property="og:image" content="${escapeHtml(ogImage)}">
-</head><body><main>
-<nav><a href="/">Home</a> / <a href="/pages/keywords/${keywordSlug}">${escapeHtml(name)}</a> / <span>${escapeHtml(townName)}</span></nav>
+${MATRIX_CSS}
+</head><body class="mx">
+${MATRIX_HEADER}
+<main>
+<nav aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/pages/keywords/${keywordSlug}">${escapeHtml(name)}</a> / <span>${escapeHtml(townName)}</span></nav>
 <h1>${escapeHtml(`${name} in ${townName}`)}</h1>
 ${gallery}
 <article id="local-copy">${bodyHtml}${facts ? facts.html : ""}</article>
 <section><h2>${escapeHtml(name)} FAQ</h2>${faqHtml}</section>
-<section><h2>Related guides</h2><ul>${links}</ul></section>
+<section class="related-links"><h2>Related guides</h2><ul>${links}</ul></section>
 <p>Workshop: ${escapeHtml(NAP)}. Phone 07517806082. Price on application.</p>
-</main></body></html>`;
+${MATRIX_FOOTER}
+</main>
+${MATRIX_SITE_FOOTER}
+</body></html>`;
   return {
     html,
     title,

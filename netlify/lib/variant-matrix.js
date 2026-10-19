@@ -1,3 +1,4 @@
+import { MATRIX_CSS, MATRIX_HEADER, MATRIX_FOOTER, MATRIX_SITE_FOOTER } from "./page-shell.js";
 /**
  * Decode the compact keyword-variant catalogue written by
  * website/includes/keyword-variants.php. Stem is the fastest radix so every
@@ -350,13 +351,11 @@ function pageHtml(options) {
 <meta property="og:url" content="${escapeHtml(canonical)}">
 <meta property="og:image" content="${escapeHtml(`${String(site).replace(/^http:/, "https:")}${imageSrc}`)}">
 <link rel="canonical" href="${escapeHtml(canonical)}">
-<link rel="stylesheet" href="/assets/css/site.css">
+${MATRIX_CSS}
 <script type="application/ld+json">${jsonLd(schema)}</script>
 </head>
-<body>
-<header>
-<p><a href="/">iComply Property Services</a> · <a href="/pages/services">Services</a> · <a href="/pages/jobs">Jobs</a> · <a href="/pages/keywords">Keywords</a> · <a href="/pages/areas">Areas</a> · <a href="/pages/manufacturers">Manufacturers</a> · <a href="/directories">Directories</a> · <a href="/contact">Contact</a></p>
-</header>
+<body class="mx">
+${MATRIX_HEADER}
 <main>
 ${crumbs}
 <h1>${escapeHtml(h1)}</h1>
@@ -377,7 +376,9 @@ ${body.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("\n")}
 ${faqs.map(([q, a]) => `<details><summary>${escapeHtml(q)}</summary><p>${escapeHtml(a)}</p></details>`).join("")}
 ${relatedHtml}
 </article>
+${MATRIX_FOOTER}
 </main>
+${MATRIX_SITE_FOOTER}
 </body>
 </html>`;
   return {

@@ -1,3 +1,5 @@
+import { scrubMeta } from "../lib/scrub-meta.js";
+import { MATRIX_CSS, MATRIX_HEADER, MATRIX_FOOTER, MATRIX_SITE_FOOTER } from "../lib/page-shell.js";
 /**
  * Unique town × keyword, town × service, manufacturer × town and job × town HTML.
  * Catalogue JSON is written by website/includes/matrix-catalogue.php.
@@ -541,13 +543,11 @@ export function renderTownPage(input) {
 <meta name="robots" content="${robots}">
 <link rel="canonical" href="${canonical}">
 ${thinOgMeta({ title, description, canonical, image: images.ogImage })}
-<link rel="stylesheet" href="/assets/css/site.css">
+${MATRIX_CSS}
 <script type="application/ld+json">${jsonLd(schema)}</script>
 </head>
-<body>
-<header>
-<p><a href="/">iComply Property Services</a> · <a href="/pages/services">Services</a> · <a href="/pages/jobs">Jobs</a> · <a href="/pages/keywords">Keywords</a> · <a href="/pages/areas">Areas</a> · <a href="/pages/manufacturers">Manufacturers</a> · <a href="/directories">Directories</a> · <a href="/contact">Contact</a></p>
-</header>
+<body class="mx">
+${MATRIX_HEADER}
 <main>
 ${crumbs}
 <h1>${escapeHtml(h1)}</h1>
@@ -559,7 +559,9 @@ ${fireTown ? `<p>Parent: <a href="/pages/keywords/${escapeHtml(input.keyword)}">
 ${relatedHtml}
 ${faqBlock}
 </article>
+${MATRIX_FOOTER}
 </main>
+${MATRIX_SITE_FOOTER}
 </body>
 </html>`;
 
@@ -627,7 +629,7 @@ async function loadVariants(origin) {
 }
 
 function variantResponse(rendered) {
-  return new Response(withContactWidgets(rendered.html), {
+  return new Response(withContactWidgets(scrubMeta(rendered.html)), {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",
@@ -876,7 +878,7 @@ export default async (request, context) => {
     else if (serviceMatch && isLocalTown(serviceMatch[2])) to = `/pages/areas/${serviceMatch[2]}`;
     return Response.redirect(new URL(to, url.origin).toString(), 301);
   }
-  return new Response(withContactWidgets(rendered.html), {
+  return new Response(withContactWidgets(scrubMeta(rendered.html)), {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",
