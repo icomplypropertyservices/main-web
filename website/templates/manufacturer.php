@@ -313,13 +313,13 @@ if ($acnBrand && function_exists('acnCities')):
     $acnGuide = function_exists('acnBrandGuideSlug') ? acnBrandGuideSlug($mfrSlug) : 'access-control-system';
     $acnCitySample = array_slice(acnCities(), 0, 8);
 ?>
-<section class="bg-[#061828] text-white">
+<section class="bg-[#0B1F3A] text-white">
     <div class="max-w-7xl mx-auto px-6 py-14">
         <h2 class="text-3xl font-semibold"><?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> on UK access-control jobs</h2>
         <p class="mt-3 max-w-3xl text-white/85">This brand is on the access-control list. Tunstall is not. Nationwide city notes and the keyword guide sit with the Stockport workshop, not a local depot in every city.</p>
         <div class="mt-6 flex flex-wrap gap-2">
             <a class="px-4 py-2 rounded-full bg-[#ff6b00] font-semibold" href="<?= url('/pages/access-control-systems') ?>">Access control systems across the UK</a>
-            <a class="px-4 py-2 rounded-full bg-white text-[#061828] font-semibold" href="<?= url('/pages/keywords/' . $acnGuide) ?>">Brand guide</a>
+            <a class="px-4 py-2 rounded-full bg-white text-[#0B1F3A] font-semibold" href="<?= url('/pages/keywords/' . $acnGuide) ?>">Brand guide</a>
             <?php foreach ($acnCitySample as $acnCityRow): ?>
                 <a class="px-4 py-2 rounded-full border border-white/40 text-sm font-semibold" href="<?= url('/pages/access-control-systems/' . areaSlug((string)$acnCityRow['slug'])) ?>"><?= htmlspecialchars((string)$acnCityRow['name'], ENT_QUOTES, 'UTF-8') ?></a>
             <?php endforeach; ?>

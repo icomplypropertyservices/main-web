@@ -160,7 +160,7 @@ require SITE_ROOT . '/includes/header.php';
         <div class="mt-8 space-y-4">
             <?php foreach ($grouped as $country => $regions): ?>
                 <details class="border rounded-2xl bg-zinc-50" <?= $country === 'England' ? 'open' : '' ?>>
-                    <summary class="cursor-pointer px-5 py-4 font-semibold text-[#061828]"><?= htmlspecialchars($country, ENT_QUOTES, 'UTF-8') ?></summary>
+                    <summary class="cursor-pointer px-5 py-4 font-semibold text-[#0B1F3A]"><?= htmlspecialchars($country, ENT_QUOTES, 'UTF-8') ?></summary>
                     <div class="px-5 pb-5 space-y-6">
                         <?php foreach ($regions as $region => $regionPlaces): ?>
                             <div>

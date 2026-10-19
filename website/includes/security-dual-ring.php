@@ -338,14 +338,14 @@ function securityDualRingRender(string $surface, string $slug, string $townSlug 
     }
     echo '</nav>';
     echo '<p class="text-xs font-bold uppercase tracking-wider text-[#ff6b00]">' . $h((string)$intent['service_name']) . ' · Price on application</p>';
-    echo '<h1 class="mt-2 text-4xl font-semibold tracking-tight text-[#061828]">' . $h($h1) . '</h1>';
+    echo '<h1 class="mt-2 text-4xl font-semibold tracking-tight text-[#0B1F3A]">' . $h($h1) . '</h1>';
     foreach ($paragraphs as $paragraph) {
         if (!is_string($paragraph) || trim($paragraph) === '') {
             continue;
         }
         echo '<p class="mt-4 leading-relaxed">' . $h($paragraph) . '</p>';
     }
-    echo '<h2 class="mt-10 text-2xl font-semibold text-[#061828]">Photographs</h2>';
+    echo '<h2 class="mt-10 text-2xl font-semibold text-[#0B1F3A]">Photographs</h2>';
     echo '<div class="mt-4 grid sm:grid-cols-3 gap-3">';
     foreach ($images as $image) {
         if (!is_array($image)) {
@@ -360,7 +360,7 @@ function securityDualRingRender(string $surface, string $slug, string $townSlug 
         echo '</figure>';
     }
     echo '</div>';
-    echo '<h2 class="mt-10 text-2xl font-semibold text-[#061828]">Related pages</h2><ul class="mt-3 space-y-2">';
+    echo '<h2 class="mt-10 text-2xl font-semibold text-[#0B1F3A]">Related pages</h2><ul class="mt-3 space-y-2">';
     $links = [
         [(string)$intent['service_href'], (string)$intent['service_name']],
         ['/contact', 'Request a quote'],
@@ -405,7 +405,7 @@ function securityDualRingRender(string $surface, string $slug, string $townSlug 
     echo '<p class="mt-6 text-sm text-zinc-700">Workshop: ' . $h((string)($pack['nap'] ?? '')) . '. Phone ' . $h((string)($pack['phone'] ?? '')) . '.</p>';
     echo '</article>';
     echo '<section data-seo-faq="1" class="max-w-3xl mx-auto px-6 pb-16">';
-    echo '<h2 class="text-2xl font-semibold text-[#061828]">' . $h($name) . ' questions</h2>';
+    echo '<h2 class="text-2xl font-semibold text-[#0B1F3A]">' . $h($name) . ' questions</h2>';
     echo '<div class="mt-4 space-y-3">';
     foreach ($faqs as $faq) {
         if (!is_array($faq)) {
@@ -425,7 +425,7 @@ function securityDualRingJobIndexHtml(): string
     $h = static function (string $value): string {
         return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
     };
-    $html = '<section class="related-links mt-12" aria-label="Security dual ring"><h2 class="text-2xl font-semibold text-[#061828]">Security jobs (dual ring, P0)</h2>';
+    $html = '<section class="related-links mt-12" aria-label="Security dual ring"><h2 class="text-2xl font-semibold text-[#0B1F3A]">Security jobs (dual ring, P0)</h2>';
     $html .= '<p class="mt-2 text-zinc-700">CCTV, access control, intruder alarms, door entry and intercoms for the 269-town Manchester and Burnley ring. P1 security jobs are a follow-on wave.</p><ul class="mt-6 grid sm:grid-cols-2 gap-3">';
     foreach (securityDualRingPack()['intents'] ?? [] as $slug => $intent) {
         if (!is_array($intent) || ($intent['kind'] ?? '') !== 'both') {
@@ -433,7 +433,7 @@ function securityDualRingJobIndexHtml(): string
         }
         $name = (string)($intent['name'] ?? $slug);
         $html .= '<li class="border border-zinc-200 rounded-2xl p-4 bg-white">';
-        $html .= '<a class="font-semibold text-[#061828] hover:text-[#ff6b00]" href="' . $h(url('/pages/jobs/' . $slug)) . '">' . $h($name) . '</a>';
+        $html .= '<a class="font-semibold text-[#0B1F3A] hover:text-[#ff6b00]" href="' . $h(url('/pages/jobs/' . $slug)) . '">' . $h($name) . '</a>';
         $html .= '<p class="mt-2 text-sm"><a class="text-[#ff6b00] font-medium" href="' . $h(url('/pages/jobs/' . $slug . '/stockport')) . '">' . $h($name . ' in Stockport') . '</a></p>';
         $html .= '</li>';
     }

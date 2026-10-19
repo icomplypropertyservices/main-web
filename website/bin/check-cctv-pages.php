@@ -142,7 +142,7 @@ if (!$skipRender) {
         if (!str_contains($html, 'FAQPage') || !str_contains($html, '/pages/keywords/' . $slug)) {
             $faqMiss[] = $slug . ':schema';
         }
-        if (!str_contains($html, '#ff6b00') || (!str_contains($html, '#061828') && !str_contains($html, '#0B1F3A'))) {
+        if (!str_contains($html, '#ff6b00') || stripos($html, '#0B1F3A') === false) {
             $brandMiss[] = $slug;
         }
         if (preg_match('/£\s*\d/', $html)) {

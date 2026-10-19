@@ -133,10 +133,10 @@ function acnManufacturerHtml(): string
         $guide = htmlspecialchars(url('/pages/keywords/' . acnBrandGuideSlug($mfr['slug'])), ENT_QUOTES, 'UTF-8');
         $name = htmlspecialchars($mfr['name'], ENT_QUOTES, 'UTF-8');
         $html .= '<div class="bg-white border-2 border-zinc-200 rounded-2xl p-4 hover:border-[#ff6b00]">'
-            . '<a class="font-semibold text-[#061828] hover:text-[#ff6b00]" href="' . $href . '">' . $name . '</a>'
+            . '<a class="font-semibold text-[#0B1F3A] hover:text-[#ff6b00]" href="' . $href . '">' . $name . '</a>'
             . '<div class="mt-2 flex flex-wrap gap-3 text-sm">'
             . '<a class="text-[#ff6b00] font-semibold hover:underline" href="' . $href . '">Brand page</a>'
-            . '<a class="text-[#061828] font-semibold hover:underline" href="' . $guide . '">Related guide</a>'
+            . '<a class="text-[#0B1F3A] font-semibold hover:underline" href="' . $guide . '">Related guide</a>'
             . '</div></div>';
     }
     return $html;
@@ -149,7 +149,7 @@ function acnKeywordLinksHtml(array $keywords): string
     foreach ($keywords as $slug => $meta) {
         $name = htmlspecialchars((string)($meta['name'] ?? $slug), ENT_QUOTES, 'UTF-8');
         $href = htmlspecialchars(url('/pages/keywords/' . $slug), ENT_QUOTES, 'UTF-8');
-        $html .= '<a href="' . $href . '" class="px-4 py-2 bg-white border-2 border-zinc-200 rounded-full text-sm font-semibold text-[#061828] hover:border-[#ff6b00]">' . $name . '</a>';
+        $html .= '<a href="' . $href . '" class="px-4 py-2 bg-white border-2 border-zinc-200 rounded-full text-sm font-semibold text-[#0B1F3A] hover:border-[#ff6b00]">' . $name . '</a>';
     }
     return $html;
 }
@@ -158,7 +158,7 @@ function acnQuoteForm(string $place): void
 {
     $prefill = "Lane: access-control-nationwide\nPlace: {$place}\nController brand, door count and postcode:\n";
     ?>
-    <section id="quote" class="bg-[#061828] text-white">
+    <section id="quote" class="bg-[#0B1F3A] text-white">
         <div class="max-w-3xl mx-auto px-6 py-14">
             <h2 class="text-3xl font-bold text-center">Quote for access control<?= $place !== '' ? ' in ' . htmlspecialchars($place, ENT_QUOTES, 'UTF-8') : '' ?></h2>
             <p class="mt-3 text-center text-white/90">Price on application after the doors and the controller are known. Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
@@ -229,7 +229,7 @@ function acnRender(array $view): void
     require SITE_ROOT . '/includes/header.php';
     ?>
     <script type="application/ld+json"><?= json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
-    <section class="bg-[#061828] text-white">
+    <section class="bg-[#0B1F3A] text-white">
         <div class="max-w-7xl mx-auto px-6 py-14 md:py-20">
             <nav class="text-xs text-white/70 mb-5 flex flex-wrap gap-2" aria-label="Breadcrumb">
                 <?php foreach ($view['crumbLinks'] as $i => $c): ?>
@@ -246,7 +246,7 @@ function acnRender(array $view): void
             <p class="mt-5 text-lg text-white/90 max-w-3xl"><?= htmlspecialchars($view['lead'], ENT_QUOTES, 'UTF-8') ?></p>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] font-bold">Request a POA quote</a>
-                <a href="<?= htmlspecialchars(acnPhoneHref(), ENT_QUOTES, 'UTF-8') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#061828] font-bold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                <a href="<?= htmlspecialchars(acnPhoneHref(), ENT_QUOTES, 'UTF-8') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-bold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
                 <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode($view['wa']) ?>" class="px-8 py-4 rounded-2xl border border-white/40 font-bold">WhatsApp</a>
             </div>
         </div>
@@ -256,7 +256,7 @@ function acnRender(array $view): void
     ?>
     <section id="manufacturers" class="bg-white border-t">
         <div class="max-w-7xl mx-auto px-6 py-14">
-            <h2 class="text-3xl font-semibold text-[#061828]">Manufacturers on this work</h2>
+            <h2 class="text-3xl font-semibold text-[#0B1F3A]">Manufacturers on this work</h2>
             <p class="mt-3 max-w-3xl text-zinc-800">Every access-control brand in our catalogue is linked below. Tunstall is a nurse-call system and is not part of this list. We install, take over or service these platforms.</p>
             <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4"><?= acnManufacturerHtml() ?></div>
         </div>
@@ -287,12 +287,12 @@ function acnRenderHub(): void
     <section class="bg-white">
         <div class="max-w-7xl mx-auto px-6 py-14 grid lg:grid-cols-2 gap-10">
             <div>
-                <h2 class="text-3xl font-semibold text-[#061828]">What the visit actually is</h2>
+                <h2 class="text-3xl font-semibold text-[#0B1F3A]">What the visit actually is</h2>
                 <p class="mt-4 text-zinc-900 leading-relaxed">A survey names each door, the lock type, whether it should unlock or stay locked on power loss, and how the fire alarm releases it. Install, takeover and repair then follow that note. Programming covers leavers, holiday calendars and door groups. We do not sell a “solution” in place of a door schedule.</p>
                 <p class="mt-4 text-zinc-900 leading-relaxed">Biometric readers store special-category data. If you want them, the DPIA is yours. We can fit the reader the platform supports. We do not write your data-protection policy.</p>
             </div>
             <div>
-                <h2 class="text-3xl font-semibold text-[#061828]">Where we will travel</h2>
+                <h2 class="text-3xl font-semibold text-[#0B1F3A]">Where we will travel</h2>
                 <p class="mt-4 text-zinc-900 leading-relaxed">Stockport, Manchester and the rest of the published North West town list are diary work. The city pages below are the UK set we will quote properly: London, the Midlands, Scotland, Wales, Northern Ireland and the other cities named. Towns without a page — including Newport, Dundee and Blackpool — can still be quoted. They do not get a thin doorway page.</p>
                 <p class="mt-4 text-zinc-900 leading-relaxed">North West town hubs for every trade stay on the <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/areas') ?>">areas index</a>. The access-control service hub stays at <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/services/access-control') ?>">access control services</a>.</p>
             </div>
@@ -300,10 +300,10 @@ function acnRenderHub(): void
     </section>
     <section id="areas" class="bg-zinc-50 border-t">
         <div class="max-w-7xl mx-auto px-6 py-14">
-            <h2 class="text-3xl font-semibold text-[#061828]">City pages</h2>
+            <h2 class="text-3xl font-semibold text-[#0B1F3A]">City pages</h2>
             <p class="mt-3 max-w-3xl text-zinc-800">Each city has its own note on buildings, doors and how the visit is booked. The notes are not the same paragraph with the place name swapped.</p>
             <?php foreach ($byNation as $nation => $list): ?>
-                <h3 class="mt-8 text-xl font-semibold text-[#061828]"><?= htmlspecialchars($nation, ENT_QUOTES, 'UTF-8') ?></h3>
+                <h3 class="mt-8 text-xl font-semibold text-[#0B1F3A]"><?= htmlspecialchars($nation, ENT_QUOTES, 'UTF-8') ?></h3>
                 <div class="mt-3 flex flex-wrap gap-2">
                     <?php foreach ($list as $city): ?>
                         <a class="px-4 py-2 bg-white border-2 border-zinc-200 rounded-full text-sm font-semibold hover:border-[#ff6b00]" href="<?= url('/pages/access-control-systems/' . areaSlug((string)$city['slug'])) ?>"><?= htmlspecialchars((string)$city['name'], ENT_QUOTES, 'UTF-8') ?></a>
@@ -314,14 +314,14 @@ function acnRenderHub(): void
     </section>
     <section id="keywords" class="bg-white border-t">
         <div class="max-w-7xl mx-auto px-6 py-14">
-            <h2 class="text-3xl font-semibold text-[#061828]">Keyword guides</h2>
+            <h2 class="text-3xl font-semibold text-[#0B1F3A]">Keyword guides</h2>
             <p class="mt-3 max-w-3xl text-zinc-800"><?= count($keywords) ?> access-control guides, including staff-change programming, fire-interface tests and lock assessments. Each guide links to the same manufacturer list, without Tunstall.</p>
             <div class="mt-6 flex flex-wrap gap-2"><?= acnKeywordLinksHtml($keywords) ?></div>
         </div>
     </section>
     <section class="bg-zinc-50 border-t">
         <div class="max-w-3xl mx-auto px-6 py-14">
-            <h2 class="text-3xl font-semibold text-[#061828]">Questions</h2>
+            <h2 class="text-3xl font-semibold text-[#0B1F3A]">Questions</h2>
             <div class="mt-6 space-y-3">
                 <?php foreach ($faqs as $faq): ?>
                     <details class="bg-white border-2 border-zinc-200 rounded-2xl p-5">
@@ -384,36 +384,36 @@ function acnRenderCity(array $city): void
     ?>
     <section class="bg-white">
         <div class="max-w-3xl mx-auto px-6 py-14 space-y-5 text-zinc-900 leading-relaxed">
-            <h2 class="text-3xl font-semibold text-[#061828]">On the ground in <?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></h2>
+            <h2 class="text-3xl font-semibold text-[#0B1F3A]">On the ground in <?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></h2>
             <p><?= htmlspecialchars((string)$city['local'], ENT_QUOTES, 'UTF-8') ?></p>
-            <h2 class="text-2xl font-semibold text-[#061828]">Doors we expect</h2>
+            <h2 class="text-2xl font-semibold text-[#0B1F3A]">Doors we expect</h2>
             <p><?= htmlspecialchars((string)$city['doors'], ENT_QUOTES, 'UTF-8') ?></p>
-            <h2 class="text-2xl font-semibold text-[#061828]">How the visit is booked</h2>
+            <h2 class="text-2xl font-semibold text-[#0B1F3A]">How the visit is booked</h2>
             <p><?= htmlspecialchars((string)$city['visit'], ENT_QUOTES, 'UTF-8') ?></p>
             <p>Electronic access control is read against BS EN 60839-11. Fire-alarm release of a lock is read against BS 7273-4. We do not cite the withdrawn BS EN 50133 as if it were current, and we do not claim an NSI or SSAIB badge on this page.</p>
         </div>
     </section>
     <section class="bg-zinc-50 border-t">
         <div class="max-w-7xl mx-auto px-6 py-14">
-            <h2 class="text-2xl font-semibold text-[#061828]">Other <?= htmlspecialchars((string)$city['nation'], ENT_QUOTES, 'UTF-8') ?> notes, and nearby pages</h2>
+            <h2 class="text-2xl font-semibold text-[#0B1F3A]">Other <?= htmlspecialchars((string)$city['nation'], ENT_QUOTES, 'UTF-8') ?> notes, and nearby pages</h2>
             <div class="mt-4 flex flex-wrap gap-2">
                 <?php foreach ((array)($city['nearby'] ?? []) as $nearSlug): ?>
                     <?php $near = acnCity((string)$nearSlug); if (!$near) continue; ?>
                     <a class="px-4 py-2 bg-white border-2 border-zinc-200 rounded-full text-sm font-semibold hover:border-[#ff6b00]" href="<?= url('/pages/access-control-systems/' . areaSlug((string)$near['slug'])) ?>"><?= htmlspecialchars((string)$near['name'], ENT_QUOTES, 'UTF-8') ?></a>
                 <?php endforeach; ?>
-                <a class="px-4 py-2 bg-[#061828] text-white rounded-full text-sm font-semibold" href="<?= htmlspecialchars($hub, ENT_QUOTES, 'UTF-8') ?>">All UK city pages</a>
+                <a class="px-4 py-2 bg-[#0B1F3A] text-white rounded-full text-sm font-semibold" href="<?= htmlspecialchars($hub, ENT_QUOTES, 'UTF-8') ?>">All UK city pages</a>
             </div>
         </div>
     </section>
     <section class="bg-white border-t">
         <div class="max-w-7xl mx-auto px-6 py-14">
-            <h2 class="text-2xl font-semibold text-[#061828]">Guides that sit beside <?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> door work</h2>
+            <h2 class="text-2xl font-semibold text-[#0B1F3A]">Guides that sit beside <?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> door work</h2>
             <div class="mt-4 flex flex-wrap gap-2"><?= acnKeywordLinksHtml($shown) ?></div>
         </div>
     </section>
     <section class="bg-zinc-50 border-t">
         <div class="max-w-3xl mx-auto px-6 py-14">
-            <h2 class="text-3xl font-semibold text-[#061828]">Questions about <?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></h2>
+            <h2 class="text-3xl font-semibold text-[#0B1F3A]">Questions about <?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></h2>
             <div class="mt-6 space-y-3">
                 <?php foreach ($faqs as $faq): ?>
                     <details class="bg-white border-2 border-zinc-200 rounded-2xl p-5">

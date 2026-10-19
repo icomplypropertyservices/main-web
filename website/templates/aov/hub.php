@@ -12,7 +12,7 @@ $h = static function (string $s): string {
     return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
 };
 ?>
-<section class="bg-[#061828] text-white">
+<section class="bg-[#0B1F3A] text-white">
     <div class="max-w-7xl mx-auto px-6 py-16 grid lg:grid-cols-2 gap-10 items-center">
         <div>
             <p class="text-xs uppercase tracking-[3px] text-[#ffb080]">Fire protection · nationwide</p>
@@ -20,7 +20,7 @@ $h = static function (string $s): string {
             <p class="mt-5 text-lg text-white/80 max-w-xl">An AOV is a ventilator that opens on a fire signal: usually a roof hatch or façade vent at the head of a stair, sometimes a corridor or lobby opening into a smoke shaft. It is life-safety equipment, so we treat it as fire protection and quote it across the UK from our Stockport yard.</p>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a class="px-6 py-3 rounded-2xl bg-[#ff6b00] font-semibold" href="#quote">Get a written quote</a>
-                <a class="px-6 py-3 rounded-2xl bg-white text-[#061828] font-semibold" href="<?= $h(aovPhoneHref()) ?>">Call <?= $h((string)PHONE) ?></a>
+                <a class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold" href="<?= $h(aovPhoneHref()) ?>">Call <?= $h((string)PHONE) ?></a>
                 <a class="px-6 py-3 rounded-2xl border border-white/30 font-semibold" href="#kit">Kit wizard</a>
                 <a class="px-6 py-3 rounded-2xl border border-white/30 font-semibold" href="<?= $h(url('/pages/aov')) ?>"><?= (int)$placeCount ?> town pages</a>
             </div>

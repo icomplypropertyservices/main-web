@@ -102,11 +102,11 @@ require SITE_ROOT . '/includes/header.php';
 <?php endif; ?>
 
 <!-- HERO: solid navy + image with dark overlay for readable text -->
-<section class="relative overflow-hidden bg-[#061828] text-white">
+<section class="relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="absolute inset-0">
         <img src="<?= htmlspecialchars($KEYWORD_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($KEYWORD_NAME ?? 'Property compliance', ENT_QUOTES, 'UTF-8') ?> — iComply Property Services" class="w-full h-full object-cover opacity-35" loading="eager"
              onerror="this.src=$SERVICE_IMAGE">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#061828] via-[#061828]/95 to-[#061828]/75"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0B1F3A] via-[#0B1F3A]/95 to-[#0B1F3A]/75"></div>
     </div>
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
         <nav class="text-xs text-white/70 mb-5 flex flex-wrap gap-2" aria-label="Breadcrumb">
@@ -132,7 +132,7 @@ require SITE_ROOT . '/includes/header.php';
             <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-bold text-white shadow-lg"><?= $poaService ? 'Enquire for POA' : 'Get free quote' ?></a>
             <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode($keywordName . ' quote') ?>"
                target="_blank" rel="noopener" class="px-8 py-4 rounded-2xl bg-green-600 hover:bg-green-500 font-bold text-white shadow-lg">WhatsApp</a>
-            <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="px-8 py-4 rounded-2xl bg-white text-[#061828] font-bold shadow-lg"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+            <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-bold shadow-lg"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
         </div>
     </div>
 </section>
@@ -156,9 +156,9 @@ if (function_exists('accessControlLaneKeywordStrip')) {
         ];
         foreach ($trust as [$t, $d]): ?>
         <div class="flex gap-3">
-            <div class="w-10 h-10 rounded-xl bg-[#061828] text-white flex items-center justify-center font-bold shrink-0">✓</div>
+            <div class="w-10 h-10 rounded-xl bg-[#0B1F3A] text-white flex items-center justify-center font-bold shrink-0">✓</div>
             <div>
-                <div class="font-bold text-[#061828]"><?= htmlspecialchars($t, ENT_QUOTES, 'UTF-8') ?></div>
+                <div class="font-bold text-[#0B1F3A]"><?= htmlspecialchars($t, ENT_QUOTES, 'UTF-8') ?></div>
                 <div class="text-sm text-zinc-800 mt-0.5"><?= htmlspecialchars($d, ENT_QUOTES, 'UTF-8') ?></div>
             </div>
         </div>
@@ -172,7 +172,7 @@ if (function_exists('accessControlLaneKeywordStrip')) {
         <div class="grid lg:grid-cols-5 gap-10">
             <div class="lg:col-span-3">
                 <div class="bg-white border-2 border-zinc-200 rounded-3xl p-6 md:p-8 shadow-sm">
-                    <h2 class="text-2xl md:text-3xl font-bold text-[#061828] tracking-tight">
+                    <h2 class="text-2xl md:text-3xl font-bold text-[#0B1F3A] tracking-tight">
                         About <?= htmlspecialchars($keywordName, ENT_QUOTES, 'UTF-8') ?>
                     </h2>
                     <p class="mt-4 text-base md:text-lg text-zinc-900 leading-relaxed font-medium"><?= htmlspecialchars($KEYWORD_INTRO, ENT_QUOTES, 'UTF-8') ?></p>
@@ -212,12 +212,12 @@ if (function_exists('accessControlLaneKeywordStrip')) {
                     <img src="<?= htmlspecialchars($KEYWORD_INLINE ?? $KEYWORD_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> equipment — iComply Property Services"
                          class="w-full h-52 object-cover" loading="lazy"
                          onerror="this.src=$SERVICE_IMAGE">
-                    <div class="p-3 bg-[#061828] text-white text-sm font-semibold text-center"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></div>
+                    <div class="p-3 bg-[#0B1F3A] text-white text-sm font-semibold text-center"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></div>
                 </div>
                 <div class="rounded-3xl overflow-hidden border-2 border-zinc-300 shadow-md bg-zinc-200">
                     <img src="<?= htmlspecialchars($SERVICE_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> by iComply"
                          class="w-full h-40 object-cover" loading="lazy">
-                    <div class="p-3 bg-white text-[#061828] text-sm font-semibold text-center border-t-2 border-zinc-200"><?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> service</div>
+                    <div class="p-3 bg-white text-[#0B1F3A] text-sm font-semibold text-center border-t-2 border-zinc-200"><?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> service</div>
                 </div>
             </div>
         </div>
@@ -234,7 +234,7 @@ echo '</section>';
 <!-- MANUFACTURERS -->
 <section class="bg-white border-y-2 border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-14">
-        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">Brands we install &amp; service</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-[#0B1F3A]">Brands we install &amp; service</h2>
         <p class="mt-2 text-zinc-800 max-w-2xl">Click a manufacturer for products, kits and install quotes related to <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> and <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?>.</p>
         <div class="mt-6 flex flex-wrap gap-2"><?= $MANUFACTURER_TAGS ?></div>
     </div>
@@ -243,7 +243,7 @@ echo '</section>';
 <?php if (($SERVICE_SLUG ?? '') === 'nurse-call'): ?>
 <section class="bg-zinc-100">
     <div class="max-w-7xl mx-auto px-6 py-14">
-        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">Manchester, Stockport, and the hub</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-[#0B1F3A]">Manchester, Stockport, and the hub</h2>
         <p class="mt-2 text-zinc-800 max-w-3xl">Nurse call is written up for the Greater Manchester towns on the areas list, including Manchester and Stockport. Care, ward and warden scopes are split on the hub. Fire and lighting for the same operator sit on the care homes page.</p>
         <div class="mt-6 flex flex-wrap gap-2">
             <?php
@@ -255,7 +255,7 @@ echo '</section>';
                 ['/pages/services/nurse-call', 'Nurse call service'],
             ];
             foreach ($nurseCallLocals as [$href, $label]): ?>
-                <a href="<?= url($href) ?>" class="px-4 py-2.5 bg-[#061828] text-white rounded-full text-sm font-semibold hover:bg-[#ff6b00] transition shadow"><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?></a>
+                <a href="<?= url($href) ?>" class="px-4 py-2.5 bg-[#0B1F3A] text-white rounded-full text-sm font-semibold hover:bg-[#ff6b00] transition shadow"><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?></a>
             <?php endforeach; ?>
         </div>
     </div>
@@ -263,7 +263,7 @@ echo '</section>';
 <?php elseif ($nationwideP0): ?>
 <section class="bg-zinc-100">
     <div class="max-w-7xl mx-auto px-6 py-14">
-        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> across the UK mainland</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-[#0B1F3A]"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> across the UK mainland</h2>
         <p class="mt-2 text-zinc-800">TOP 5000 towns by population (<?= count($top5000Towns) ?> places). Each place has its own page. Greater Manchester area hubs, including places outside that population list, stay linked below.</p>
         <div class="mt-6 flex flex-wrap gap-2">
             <?php foreach ($popularTowns as $a):
@@ -279,7 +279,7 @@ echo '</section>';
                 }
             ?>
                 <a href="<?= url('/pages/keywords/' . $KEYWORD_SLUG . '/' . $popularSlug) ?>"
-                   class="px-4 py-2.5 bg-[#061828] text-white rounded-full text-sm font-semibold hover:bg-[#ff6b00] transition shadow">
+                   class="px-4 py-2.5 bg-[#0B1F3A] text-white rounded-full text-sm font-semibold hover:bg-[#ff6b00] transition shadow">
                     <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> in <?= htmlspecialchars($a, ENT_QUOTES, 'UTF-8') ?>
                 </a>
             <?php endforeach; ?>
@@ -302,7 +302,7 @@ echo '</section>';
 <?php elseif ($fireInstallerFamily && !$fireInstallerP0): ?>
 <section class="bg-zinc-100">
     <div class="max-w-7xl mx-auto px-6 py-14">
-        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">UK mainland, quoted from Stockport</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-[#0B1F3A]">UK mainland, quoted from Stockport</h2>
         <p class="mt-2 text-zinc-800 max-w-3xl">This guide is nationwide. Town pages for the installer, installation and engineer wording are published separately. Open the fire alarm service and the related guides below.</p>
         <div class="mt-6 flex flex-wrap gap-2">
             <a href="<?= url('/pages/services/fire-alarms') ?>" class="px-4 py-2.5 bg-[#ff6b00] text-white rounded-full text-sm font-semibold">Fire alarms</a>
@@ -315,7 +315,7 @@ echo '</section>';
                 }
                 $familyLabel = (string)($familyKeywords[$familySlug]['name'] ?? $familySlug);
             ?>
-            <a href="<?= url('/pages/keywords/' . $familySlug) ?>" class="px-4 py-2.5 bg-[#061828] text-white rounded-full text-sm font-semibold hover:bg-[#ff6b00]"><?= htmlspecialchars($familyLabel, ENT_QUOTES, 'UTF-8') ?></a>
+            <a href="<?= url('/pages/keywords/' . $familySlug) ?>" class="px-4 py-2.5 bg-[#0B1F3A] text-white rounded-full text-sm font-semibold hover:bg-[#ff6b00]"><?= htmlspecialchars($familyLabel, ENT_QUOTES, 'UTF-8') ?></a>
             <?php endforeach; ?>
         </div>
     </div>
@@ -324,14 +324,14 @@ echo '</section>';
 <!-- AREAS — every town linked (keyword × area pages) -->
 <section class="bg-zinc-100">
     <div class="max-w-7xl mx-auto px-6 py-14">
-        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> by area</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-[#0B1F3A]"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> by area</h2>
         <p class="mt-2 text-zinc-800"><?= $fireInstallerP0
             ? 'UK mainland towns with population over 10,000 (' . count($allAreas) . ' places), each with its own page.'
             : 'Local landing pages for every town we cover (' . count($allAreas) . ' areas) — e.g. ' . htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') . ' in Stockport.' ?></p>
         <div class="mt-6 flex flex-wrap gap-2">
             <?php foreach ($popularTowns as $a): ?>
                 <a href="<?= url('/pages/keywords/' . $KEYWORD_SLUG . '/' . areaSlug($a) . '.php') ?>"
-                   class="px-4 py-2.5 bg-[#061828] text-white rounded-full text-sm font-semibold hover:bg-[#ff6b00] transition shadow">
+                   class="px-4 py-2.5 bg-[#0B1F3A] text-white rounded-full text-sm font-semibold hover:bg-[#ff6b00] transition shadow">
                     <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> in <?= htmlspecialchars($a, ENT_QUOTES, 'UTF-8') ?>
                 </a>
             <?php endforeach; ?>
@@ -353,7 +353,7 @@ echo '</section>';
 <?php if ($fireInstallerFamily): ?>
 <section class="bg-white border-t-2 border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-14">
-        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">Related fire alarm installer guides</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-[#0B1F3A]">Related fire alarm installer guides</h2>
         <p class="mt-2 text-zinc-800 max-w-3xl">These pages sit with the fire alarm service. This wave publishes town pages for the installer, installation and engineer wording. The other guides stay as hubs until a later town wave.</p>
         <div class="mt-6 flex flex-wrap gap-2">
             <a href="<?= url('/pages/services/fire-alarms') ?>" class="px-4 py-2.5 bg-[#ff6b00] text-white rounded-full text-sm font-semibold">Fire alarms</a>
@@ -375,7 +375,7 @@ echo '</section>';
 
 <section class="related-links bg-white border-t">
     <div class="max-w-7xl mx-auto px-6 py-14">
-        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">Greater Manchester area hubs</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-[#0B1F3A]">Greater Manchester area hubs</h2>
         <p class="mt-2 text-zinc-800">Each town hub below is the parent for <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> in that town.</p>
         <div class="mt-6 flex flex-wrap gap-2">
             <?php
@@ -386,7 +386,7 @@ echo '</section>';
                 $gmSlug = areaSlug((string)$gmTown);
             ?>
                 <a href="<?= url('/pages/areas/' . $gmSlug) ?>" class="px-3 py-1.5 bg-white border-2 border-zinc-300 text-zinc-900 rounded-full text-xs font-medium hover:border-[#ff6b00]"><?= htmlspecialchars((string)$gmTown, ENT_QUOTES, 'UTF-8') ?></a>
-                <a href="<?= url('/pages/keywords/' . $KEYWORD_SLUG . '/' . $gmSlug) ?>" class="px-3 py-1.5 bg-[#061828] text-white rounded-full text-xs font-semibold hover:bg-[#ff6b00]"><?= htmlspecialchars($KEYWORD_NAME . ' in ' . $gmTown, ENT_QUOTES, 'UTF-8') ?></a>
+                <a href="<?= url('/pages/keywords/' . $KEYWORD_SLUG . '/' . $gmSlug) ?>" class="px-3 py-1.5 bg-[#0B1F3A] text-white rounded-full text-xs font-semibold hover:bg-[#ff6b00]"><?= htmlspecialchars($KEYWORD_NAME . ' in ' . $gmTown, ENT_QUOTES, 'UTF-8') ?></a>
             <?php endforeach; ?>
         </div>
     </div>
@@ -395,7 +395,7 @@ echo '</section>';
 <!-- RELATED KEYWORDS same service -->
 <section class="bg-white border-y-2 border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-14">
-        <h2 class="text-2xl md:text-3xl font-bold text-[#061828]">Related <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> guides</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-[#0B1F3A]">Related <?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> guides</h2>
         <?php if (($SERVICE_SLUG ?? '') === 'nurse-call'): ?>
         <p class="mt-2 text-zinc-800">More nurse-call topics. Manchester and Stockport are on the Greater Manchester list.</p>
         <?php else: ?>
@@ -413,14 +413,14 @@ echo '</section>';
 <!-- FAQ -->
 <section class="bg-white border-t-2 border-zinc-200">
     <div class="max-w-3xl mx-auto px-6 py-14">
-        <h2 class="text-2xl md:text-3xl font-bold text-[#061828] text-center mb-8"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> FAQ</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-[#0B1F3A] text-center mb-8"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?> FAQ</h2>
         <div class="space-y-3"><?= $KEYWORD_FAQ_HTML ?></div>
         <div class="mt-10"><?= shareButtonsHtml($keywordName, $metaDesc) ?></div>
     </div>
 </section>
 
 <!-- QUOTE -->
-<section id="quote" class="bg-[#061828] text-white">
+<section id="quote" class="bg-[#0B1F3A] text-white">
     <div class="max-w-3xl mx-auto px-6 py-14">
         <h2 class="text-3xl font-bold text-center">Quote for <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></h2>
         <p class="mt-2 text-center text-white/90">Price on application after scope. Stockport base, with North West coverage and further travel quoted where the service is published.</p>
