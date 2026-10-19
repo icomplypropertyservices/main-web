@@ -495,7 +495,7 @@ function icomplyTownWizardHtml(string $family, array $town, string $csrf): strin
     $jobs = $rot($jobs, $seedW);
     $sites = $rot($sites, $seedW >> 4);
     $rows = $rot($rows, $seedW >> 8);
-    $html .= '<form class="mt-6 grid md:grid-cols-2 gap-4" method="post" action="' . $h(url('/contact.php')) . '">';
+    $html .= '<form ' . ICOMPLY_QUOTE_FORM_ATTRS . ' class="mt-6 grid md:grid-cols-2 gap-4">' . icomplyQuoteFormHidden();
     $html .= '<input type="hidden" name="csrf" value="' . $h($csrf) . '">';
     $html .= '<input type="hidden" name="service" value="' . $h($service) . '">';
     $html .= '<input type="hidden" name="town" value="' . $h($townName) . '">';

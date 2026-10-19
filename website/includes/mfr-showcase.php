@@ -429,7 +429,7 @@ function icomplyMfrShowcaseHtml(string $serviceSlug, string $area = ''): string
     $html .= '<div class="mfr-board-head"><p class="mfr-kicker">Manufacturers</p><h2>' . htmlspecialchars($heading, ENT_QUOTES, 'UTF-8') . '</h2>';
     $html .= '<p>' . htmlspecialchars($lead, ENT_QUOTES, 'UTF-8') . ' Phone <a href="' . htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($phone, ENT_QUOTES, 'UTF-8') . '</a>.</p></div>';
     $html .= $aovStrip;
-    $html .= '<form id="mfr-quote" class="mfr-wizard bg-white border rounded-3xl" action="' . htmlspecialchars(url('/contact.php'), ENT_QUOTES, 'UTF-8') . '" method="post">';
+    $html .= '<form ' . ICOMPLY_QUOTE_FORM_ATTRS . ' id="mfr-quote" class="mfr-wizard bg-white border rounded-3xl">' . icomplyQuoteFormHidden();
     $html .= '<h3>' . ($isBarriers ? 'Barrier quote helper' : 'AOV quote helper') . '</h3>';
     $html .= '<p class="mfr-wizard-note">Choose the brand and the job. Supply figures appear only for published CAME packs'
         . ($isBarriers ? '' : ' or the iComply AOV kit list') . '. Installation stays POA.</p>';

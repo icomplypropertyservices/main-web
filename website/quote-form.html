@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <title>Quote form (Netlify registration)</title>
-  <meta name="robots" content="noindex">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://icomplypropertyservices.co.uk/quote-form.html">
 </head>
 <body>
-  <!-- Netlify parses .html at deploy. Pages are published as .php, so this file registers the quote form. -->
+  <!-- Netlify parses .html at deploy. Pages are published as .php, so this file registers the "quote" form used by every on-page enquiry form. -->
   <form name="quote" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">
     <input type="hidden" name="form-name" value="quote">
     <p hidden>
@@ -16,10 +16,28 @@
     <input type="hidden" name="csrf">
     <input type="hidden" name="gclid">
     <input type="hidden" name="fbclid">
-    <input type="text" name="name">
+    <input type="hidden" name="source">
+    <input type="hidden" name="page">
     <input type="email" name="email">
     <input type="tel" name="phone">
+    <input type="text" name="name">
+    <input type="text" name="postcode">
     <input type="text" name="service">
+    <input type="text" name="brand">
+    <input type="text" name="town">
+    <input type="text" name="job">
+    <input type="text" name="job_type">
+    <input type="text" name="site_type">
+    <input type="text" name="need">
+    <input type="text" name="lane">
+    <input type="text" name="urgency">
+    <input type="text" name="boom">
+    <input type="text" name="line">
+    <input type="text" name="addon">
+    <input type="text" name="wizard_job">
+    <input type="text" name="wizard_line">
+    <input type="text" name="wizard_kit">
+    <input type="text" name="detail">
     <textarea name="message"></textarea>
   </form>
 </body>

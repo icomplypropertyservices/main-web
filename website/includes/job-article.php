@@ -270,7 +270,7 @@ function renderJobArticle(array $page): void
     <div class="max-w-3xl mx-auto px-6 py-14">
         <h2 class="text-3xl font-semibold text-center">Quote for <?= $h($h1) ?></h2>
         <p class="mt-2 text-center text-white/80">Tell us the postcode and what is already on site. The figure is written after that scope.</p>
-        <form action="<?= $h(url('/contact.php')) ?>" method="POST" class="mt-8 bg-white text-zinc-900 rounded-3xl p-6 md:p-8 space-y-4">
+        <form <?= ICOMPLY_QUOTE_FORM_ATTRS ?> class="mt-8 bg-white text-zinc-900 rounded-3xl p-6 md:p-8 space-y-4"><?= icomplyQuoteFormHidden() ?>
             <input type="hidden" name="csrf" value="<?= $h((string)$_SESSION['csrf']) ?>">
             <input type="hidden" name="job" value="<?= $h($slug) ?>">
             <div class="grid md:grid-cols-2 gap-4">

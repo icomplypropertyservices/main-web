@@ -108,7 +108,7 @@ function aovQuoteForm(string $heading, string $intro, string $serviceValue, stri
                 <a href="<?= $h(aovPhoneHref()) ?>" class="px-6 py-3 rounded-2xl bg-white text-[#061828] font-semibold">Call <?= $h((string)PHONE) ?></a>
                 <a href="<?= $h(aovWhatsappUrl($serviceValue . ' quote')) ?>" class="px-6 py-3 rounded-2xl bg-green-600 font-semibold" target="_blank" rel="noopener">WhatsApp</a>
             </div>
-            <form action="<?= $h(url('/contact.php')) ?>" method="POST" class="mt-8 bg-white text-zinc-900 rounded-3xl p-6 md:p-8 space-y-4">
+            <form <?= ICOMPLY_QUOTE_FORM_ATTRS ?> class="mt-8 bg-white text-zinc-900 rounded-3xl p-6 md:p-8 space-y-4"><?= icomplyQuoteFormHidden() ?>
                 <input type="hidden" name="csrf" value="<?= $h((string)$_SESSION['csrf']) ?>">
                 <div class="grid md:grid-cols-2 gap-4">
                     <input type="text" name="name" placeholder="Full name" required class="w-full border border-zinc-300 px-4 py-3 rounded-xl">

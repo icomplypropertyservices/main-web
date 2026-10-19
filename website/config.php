@@ -264,10 +264,21 @@ function icomplyQuoteFormOpen(string $class = '', string $extra = ''): string
     if ($extra !== '') {
         $attrs .= ' ' . $extra;
     }
-    return '<form ' . $attrs . '>'
-        . '<input type="hidden" name="form-name" value="quote">'
+    return '<form ' . $attrs . '>' . icomplyQuoteFormHidden();
+}
+
+/**
+ * Hidden Netlify fields for the "quote" form (registered by website/quote-form.html).
+ * Every public enquiry form must carry these, or Netlify answers 400 "missing form".
+ */
+function icomplyQuoteFormHidden(): string
+{
+    return '<input type="hidden" name="form-name" value="quote">'
         . '<p hidden><label>Leave this field blank <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>';
 }
+
+/** Opening attributes for a literal quote <form> tag (Netlify "quote" form). */
+const ICOMPLY_QUOTE_FORM_ATTRS = 'name="quote" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field"';
 
 /** Core services (data/services.json) + any admin-added customs */
 function getServices(): array {

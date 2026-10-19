@@ -132,7 +132,7 @@ require SITE_ROOT . '/includes/header.php';
     <div class="max-w-3xl mx-auto px-6 py-14">
         <h2 class="text-3xl font-bold text-center">Enquire for a POA quote</h2>
         <p class="mt-2 text-center text-white/90">Tell us the site, fitting count and whether you need a test, install or remedial. We price after the survey.</p>
-        <form action="<?= htmlspecialchars(url('/contact.php'), ENT_QUOTES, 'UTF-8') ?>" method="POST" class="mt-8 bg-white text-zinc-900 border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4 shadow-xl">
+        <form <?= ICOMPLY_QUOTE_FORM_ATTRS ?> class="mt-8 bg-white text-zinc-900 border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4 shadow-xl"><?= icomplyQuoteFormHidden() ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($EL_CSRF, ENT_QUOTES, 'UTF-8') ?>">
             <input type="hidden" name="service" value="<?= htmlspecialchars($EL_NAME, ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid md:grid-cols-2 gap-4">
