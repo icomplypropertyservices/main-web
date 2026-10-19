@@ -54,7 +54,7 @@ require SITE_ROOT . '/includes/header.php';
     ],
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
 
-<section class="relative overflow-hidden bg-[#061828] text-white">
+<section class="relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
         <nav class="text-xs text-white/70 mb-5 flex flex-wrap gap-2" aria-label="Breadcrumb">
             <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a>
@@ -68,7 +68,7 @@ require SITE_ROOT . '/includes/header.php';
         <p class="mt-5 text-lg text-white/85 max-w-3xl leading-relaxed"><?= htmlspecialchars($intro, ENT_QUOTES, 'UTF-8') ?></p>
         <div class="mt-8 flex flex-wrap gap-3">
             <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] font-semibold">Price on application</a>
-            <a href="<?= url('/pages/manufacturers/came') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#061828] font-semibold">CAME partner</a>
+            <a href="<?= url('/pages/manufacturers/came') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold">CAME partner</a>
             <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="px-8 py-4 rounded-2xl border border-white/30 font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
         </div>
     </div>

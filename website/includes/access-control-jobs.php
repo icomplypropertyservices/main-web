@@ -571,7 +571,7 @@ function accessControlLaneKeywordStrip(string $slug, string $area = ''): string
         if ($href === $self) {
             continue;
         }
-        $linkHtml .= '<a class="px-3 py-1.5 rounded-full bg-white border border-zinc-300 text-sm font-semibold text-[#061828] hover:border-[#ff6b00]" href="'
+        $linkHtml .= '<a class="px-3 py-1.5 rounded-full bg-white border border-zinc-300 text-sm font-semibold text-[#0B1F3A] hover:border-[#ff6b00]" href="'
             . $h(url($href)) . '">' . $h($label) . '</a>';
     }
 

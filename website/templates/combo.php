@@ -374,7 +374,7 @@ if ($townFacts !== '') {
         <h3 class="text-2xl font-semibold text-black"><?= htmlspecialchars((string)$gmPacked['h2'], ENT_QUOTES, 'UTF-8') ?></h3>
         <p class="mt-3 text-lg text-zinc-700 leading-relaxed"><?= icomplyGmBriefHtml((string)$gmPacked['blurb']) ?></p>
         <?php if (($gmPacked['cta'] ?? '') !== ''): ?>
-        <p class="mt-3 text-sm font-semibold text-[#061828]"><?= htmlspecialchars((string)$gmPacked['cta'], ENT_QUOTES, 'UTF-8') ?></p>
+        <p class="mt-3 text-sm font-semibold text-[#0B1F3A]"><?= htmlspecialchars((string)$gmPacked['cta'], ENT_QUOTES, 'UTF-8') ?></p>
         <?php endif; ?>
     </div>
     <?php endif; ?>
