@@ -1,5 +1,6 @@
 // iComply AI assistant backend — POST /api/chat
-// Env: XAI_API_KEY (required for AI replies), XAI_MODEL (default grok-4.3),
+// Env: DEEPSEEK_API_KEY (preferred AI provider), DEEPSEEK_MODEL (default deepseek-chat),
+//      XAI_API_KEY (fallback provider), XAI_MODEL (default grok-4.3),
 //      XAI_REASONING_EFFORT (default "none"), TELEGRAM_BOT_TOKEN + TELEGRAM_LEAD_CHAT_ID (optional lead alerts).
 // No database: nothing is stored. A lead is forwarded once (Netlify Forms from the browser + optional Telegram).
 import fs from "node:fs";
@@ -108,8 +109,18 @@ export default async (req, context) => {
   const leadAlreadySent = Boolean(body.leadSent);
   if (!msgs.length) return json({ reply: FALLBACK }, 400);
 
-  const key = process.env.XAI_API_KEY;
-  if (!key) {
+  const providers = [];
+  if (process.env.DEEPSEEK_API_KEY) providers.push({
+    url: "https://api.deepseek.com/chat/completions",
+    key: process.env.DEEPSEEK_API_KEY,
+    extra: { model: process.env.DEEPSEEK_MODEL || "deepseek-chat" },
+  });
+  if (process.env.XAI_API_KEY) providers.push({
+    url: "https://api.x.ai/v1/chat/completions",
+    key: process.env.XAI_API_KEY,
+    extra: { model: process.env.XAI_MODEL || "grok-4.3", reasoning_effort: process.env.XAI_REASONING_EFFORT || "none" },
+  });
+  if (!providers.length) {
     // No AI yet: still capture a lead if the visitor typed a phone number.
     const lead = leadAlreadySent ? null : heuristicLead(msgs);
     if (lead) {
@@ -119,32 +130,33 @@ export default async (req, context) => {
     return json({ reply: `Thanks for your message. Our AI assistant is being set up — please call ${PHONE} or WhatsApp us, or leave your phone number and postcode here and Jack will call you back.` });
   }
 
-  try {
-    const ctrl = new AbortController();
-    const timer = setTimeout(() => ctrl.abort(), 20000);
-    const r = await fetch("https://api.x.ai/v1/chat/completions", {
-      method: "POST",
-      signal: ctrl.signal,
-      headers: { "content-type": "application/json", authorization: `Bearer ${key}` },
-      body: JSON.stringify({
-        model: process.env.XAI_MODEL || "grok-4.3",
-        reasoning_effort: process.env.XAI_REASONING_EFFORT || "none",
-        max_tokens: 350,
-        temperature: 0.3,
-        messages: [{ role: "system", content: SYSTEM }, ...msgs],
-      }),
-    });
-    clearTimeout(timer);
-    if (!r.ok) return json({ reply: FALLBACK });
-    const d = await r.json();
-    const raw = d?.choices?.[0]?.message?.content || "";
-    let { reply, lead } = extractLead(raw);
-    if (leadAlreadySent) lead = null;
-    if (lead) await telegram(lead, page);
-    return json({ reply: reply || FALLBACK, lead });
-  } catch {
-    return json({ reply: FALLBACK });
+  for (const p of providers) {
+    try {
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 20000);
+      const r = await fetch(p.url, {
+        method: "POST",
+        signal: ctrl.signal,
+        headers: { "content-type": "application/json", authorization: `Bearer ${p.key}` },
+        body: JSON.stringify({
+          ...p.extra,
+          max_tokens: 350,
+          temperature: 0.3,
+          messages: [{ role: "system", content: SYSTEM }, ...msgs],
+        }),
+      });
+      clearTimeout(timer);
+      if (!r.ok) continue;
+      const d = await r.json();
+      const raw = d?.choices?.[0]?.message?.content || "";
+      if (!raw) continue;
+      let { reply, lead } = extractLead(raw);
+      if (leadAlreadySent) lead = null;
+      if (lead) await telegram(lead, page);
+      return json({ reply: reply || FALLBACK, lead });
+    } catch { /* try next provider */ }
   }
+  return json({ reply: FALLBACK });
 };
 
 export const config = { path: "/api/chat" };

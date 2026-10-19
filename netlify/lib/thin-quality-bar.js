@@ -93,7 +93,7 @@ export function thinProseHtml(ctx) {
   if (typeof ctx.peBody === "string" && ctx.peBody.trim()) {
     let html = paragraphHtml(ctx.peBody);
     if (ctx.gas && !/Gas Safe registered engineers/.test(ctx.peBody)) {
-      html += "<p>Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.</p>";
+      html += "<p>Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.</p>";
     }
     return `<div data-pe-slot="${slot}" id="q1-thin-prose">${html}</div>`;
   }
@@ -113,7 +113,7 @@ export function thinProseHtml(ctx) {
   }
   if (!ctx.short) parts.push(`<p>${escapeHtml(fill("{pop} {housing} {industry} Places named alongside {place} include {near}.", ctx))}</p>`);
   if (ctx.gas) {
-    parts.push("<p>Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.</p>");
+    parts.push("<p>Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.</p>");
   }
   return `<div data-pe-slot="${slot}" id="q1-thin-prose">${parts.join("")}</div>`;
 }
@@ -190,21 +190,21 @@ export function thinFaqs(ctx) {
   const faqs = [
     [
       `How is ${ctx.subject} in ${ctx.place} quoted?`,
-      `The ${ctx.place} quote for ${ctx.subject} is price on application after the scope names the building and the access. This page does not publish a fee.`,
+      `We send a fixed written quote for ${ctx.subject} in ${ctx.place} once we know the building and how we get in${/eicr|electrical inspection/i.test(ctx.subject) ? ". EICRs start from £160" : ""}. Nothing is added without your say-so.`,
     ],
     [
       `Where is the team that covers ${ctx.place} based?`,
-      `Visits for ${ctx.subject} in ${ctx.place} are arranged from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Diary time depends on access and the agreed scope.`,
+      `Our engineers cover ${ctx.place} from our base at 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Same-day and next-day slots are often available.`,
     ],
     [
-      `What should ${ctx.audience} in ${ctx.place} send first?`,
-      `Send the postcode, the property type and anything already known about the ${ctx.service} installation. ${ctx.place} paperwork is confirmed before ${ctx.visit} is booked.`,
+      `What do you need from me to book ${ctx.subject} in ${ctx.place}?`,
+      `Just the postcode, the type of property and anything you already know about the system. A couple of photos help. Call or WhatsApp 07517 806082, or email icomplypropertyservices@gmail.com.`,
     ],
   ];
   if (ctx.gas) {
     faqs.push([
       `Who carries out gas work for this ${ctx.place} visit?`,
-      "Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.",
+      "Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.",
     ]);
   }
   return faqs;

@@ -6,7 +6,7 @@ require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/share.php';
 
 $pageTitle = 'FAQ | Property Compliance Questions Answered';
-$metaDesc = 'FAQ for iComply Property Services, Stockport. EICR, fire alarms, emergency lighting, gas safety, CCTV, access, construction, quotes and coverage. Call 07517806082. No scheme badges we cannot verify.';
+$metaDesc = 'FAQ for iComply Property Services, Stockport. EICR, fire alarms, emergency lighting, gas safety, CCTV, access, construction, quotes and coverage. Call 07517 806082. No scheme badges we cannot verify.';
 $metaKeywords = 'property compliance FAQ, EICR questions, BS 5839 fire alarm, emergency lighting testing, gas safety certificate, CCTV installation, access control, North West';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/faq.php');
@@ -38,7 +38,7 @@ $faqs = [
     [
         'cat' => 'Fire alarms (BS 5839)',
         'q' => 'What is BS 5839 and why does my fire alarm need to comply?',
-        'a' => 'BS 5839 is the British Standard for fire detection and fire alarm systems. Part 1 is the usual reference for non-domestic premises; Part 6 covers dwellings. Responsible persons, insurers and fire officers use it as the reference for design, installation, commissioning and maintenance. We design, install and service systems with the relevant part of BS 5839 and the manufacturer’s instructions in mind, and we issue the records for the work agreed. We do not claim BAFE or another named fire-scheme membership on this page.',
+        'a' => 'BS 5839 is the British Standard for fire detection and fire alarm systems. Part 1 is the usual reference for non-domestic premises; Part 6 covers dwellings. Responsible persons, insurers and fire officers use it as the reference for design, installation, commissioning and maintenance. We design, install and service systems with the relevant part of BS 5839 and the manufacturer’s instructions in mind, and we issue the records for the work agreed.',
     ],
     [
         'cat' => 'Fire alarms (BS 5839)',
@@ -67,7 +67,7 @@ $faqs = [
     [
         'cat' => 'Gas safety',
         'q' => 'What is a landlord gas safety certificate (CP12)?',
-        'a' => 'A landlord gas safety record — people still say CP12 — is the written check of gas appliances, flues and pipework in a rented property. Where those are present, private landlords in Great Britain generally need that check at least every 12 months and must give the record to tenants. Only a Gas Safe registered engineer can do the gas work. This page does not print a company Gas Safe registration number. If we take the job, ask for the attending engineer’s ID and check it on the Gas Safe Register before the visit. CP44 is a name you may hear for some non-domestic records; the document has to match the appliances on site. This is not legal advice.',
+        'a' => 'A landlord gas safety record — people still say CP12 — is the written check of gas appliances, flues and pipework in a rented property. Where those are present, private landlords in Great Britain generally need that check at least every 12 months and must give the record to tenants. Only a Gas Safe registered engineer can do the gas work. If we take the job, ask for the attending engineer’s ID and check it on the Gas Safe Register before the visit. CP44 is a name you may hear for some non-domestic records; the document has to match the appliances on site. This is not legal advice.',
         'link' => ['/pages/services/gas-systems.php', 'Gas systems services'],
     ],
     [
@@ -176,13 +176,13 @@ $faqs = [
     [
         'cat' => 'Construction & fit-out',
         'q' => 'Do you fit kitchens, bathrooms and other building work?',
-        'a' => 'Yes. The construction catalogue includes kitchen and bathroom fitting, renovation, plastering, joinery, roofing, extensions, loft conversions and related trades. Each job is scoped and quoted. Building Regulations apply where the work needs them. We do not claim a construction-scheme membership, an NHBC registration, or a “fully certified builder” badge on this page.',
+        'a' => 'Yes. The construction catalogue includes kitchen and bathroom fitting, renovation, plastering, joinery, roofing, extensions, loft conversions and related trades. Each job is scoped and quoted. Building Regulations apply where the work needs them.',
         'link' => ['/pages/services/kitchens.php', 'Kitchen fitting'],
     ],
     [
         'cat' => 'Water, asbestos & surveys',
         'q' => 'Do you do Legionella risk assessments and asbestos surveys?',
-        'a' => 'Yes, as price-on-application visits. Legionella work follows HSE L8 and HSG274 as guidance: a written assessment of the water system, with sampling only if it helps. Asbestos surveys are management or refurbishment surveys under the Control of Asbestos Regulations 2012, scoped to the building and the planned works. We do not claim UKAS, BOHS or an HSE licence. Licensed asbestos removal is by others.',
+        'a' => 'Yes, as price-on-application visits. Legionella work follows HSE L8 and HSG274 as guidance: a written assessment of the water system, with sampling only if it helps. Asbestos surveys are management or refurbishment surveys under the Control of Asbestos Regulations 2012, scoped to the building and the planned works. Licensed asbestos removal is by others.',
         'link' => ['/pages/services/legionella-risk-assessment.php', 'Legionella risk assessment'],
     ],
     [

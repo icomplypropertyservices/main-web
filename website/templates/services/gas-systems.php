@@ -18,7 +18,7 @@ require SITE_ROOT . '/includes/header.php';
       "@type": "Service",
       "@id": "<?= url('/pages/{{SERVICE_SLUG}}/{{AREA_SLUG}}.php') ?>#service",
       "name": "{{SERVICE_NAME}} in {{AREA}}",
-      "description": "Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers in {{AREA}}. iComply is not Gas Safe registered.",
+      "description": "Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers in {{AREA}}.",
       "url": "<?= url('/pages/{{SERVICE_SLUG}}/{{AREA_SLUG}}.php') ?>",
       "image": "<?= url('/assets/images/services/gas-systems.jpg') ?>",
       "serviceType": "Gas Systems",
@@ -56,7 +56,7 @@ require SITE_ROOT . '/includes/header.php';
         {"@type": "Question", "name": "What is a Gas safety Certificate?", "acceptedAnswer": {"@type": "Answer", "text": "It is a legal requirement for landlords proving gas appliances are safe."}},
         {"@type": "Question", "name": "How often are gas safety checks needed?", "acceptedAnswer": {"@type": "Answer", "text": "Annual gas safety inspections are mandatory for rental properties."}},
         {"@type": "Question", "name": "Do you service commercial gas systems?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we handle commercial boilers, pipework and gas compliance."}},
-        {"@type": "Question", "name": "Do you print a Gas Safe badge on this page?", "acceptedAnswer": {"@type": "Answer", "text": "No. This legacy template does not claim Gas Safe registration. A landlord gas record has to be completed by an engineer registered for that appliance."}}
+        {"@type": "Question", "name": "Do you print a Gas Safe badge on this page?", "acceptedAnswer": {"@type": "Answer", "text": "No. A landlord gas record has to be completed by an engineer registered for that appliance."}}
       ]
     }
   ]
@@ -69,7 +69,7 @@ require SITE_ROOT . '/includes/header.php';
     <!-- IMAGE 1: Hero service image -->
     <div class="mt-8">
         <img src="<?= url('/assets/images/services/gas-systems.jpg') ?>"
-             alt="Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers in {{AREA}}. iComply is not Gas Safe registered."
+             alt="Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers in {{AREA}}."
              width="1200" height="800"
              class="w-full h-72 md:h-96 object-cover rounded-3xl border"
              loading="eager">
@@ -110,13 +110,13 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 3 -->
     <p class="mt-8 text-lg text-black max-w-3xl leading-relaxed">
-        Brand names on this page are trade-supply references. Landlord gas safety certificates (CP12) in {{AREA}} are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.
+        Brand names on this page are trade-supply references. Landlord gas safety certificates (CP12) in {{AREA}} are carried out by Gas Safe registered engineers.
     </p>
 
     <!-- Manufacturers -->
     <div class="mt-12">
         <h2 class="text-3xl font-semibold text-black mb-4">Brands listed as supplies only</h2>
-        <p class="text-black mb-6">Landlord gas safety certificates (CP12) in {{AREA}} are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.</p>
+        <p class="text-black mb-6">Landlord gas safety certificates (CP12) in {{AREA}} are carried out by Gas Safe registered engineers.</p>
                 <div class="flex flex-wrap gap-3">
             <?= manufacturerTagsHtml('gas-systems') ?>
         </div>
@@ -143,11 +143,11 @@ require SITE_ROOT . '/includes/header.php';
         </div>
         <div class="p-8 bg-white rounded-3xl border">
             <h3 class="font-semibold text-black mb-2">Servicing stays with a Gas Safe engineer</h3>
-            <p class="text-sm text-black">Boiler servicing in {{AREA}} is carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.</p>
+            <p class="text-sm text-black">Boiler servicing in {{AREA}} is carried out by Gas Safe registered engineers.</p>
         </div>
         <div class="p-8 bg-white rounded-3xl border">
             <h3 class="font-semibold text-black mb-2">Safety Certificates</h3>
-            <p class="text-sm text-black">Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.</p>
+            <p class="text-sm text-black">Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.</p>
         </div>
     </div>
 
@@ -156,22 +156,22 @@ require SITE_ROOT . '/includes/header.php';
         <div class="space-y-4 text-sm">
             <details class="bg-white border rounded-2xl p-5">
                 <summary class="font-medium cursor-pointer text-black">How often are gas safety checks needed?</summary>
-                <p class="mt-2 text-black">Annual gas safety inspections are a landlord duty where gas is present. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.</p>
+                <p class="mt-2 text-black">Annual gas safety inspections are a landlord duty where gas is present. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.</p>
             </details>
             <details class="bg-white border rounded-2xl p-5">
                 <summary class="font-medium cursor-pointer text-black">Which boiler brands do you service?</summary>
-                <p class="mt-2 text-black">Boiler work in {{AREA}} is carried out by Gas Safe registered engineers. iComply is not Gas Safe registered. The quote is price on application.</p>
+                <p class="mt-2 text-black">Boiler work in {{AREA}} is carried out by Gas Safe registered engineers. The quote is price on application.</p>
             </details>
             <details class="bg-white border rounded-2xl p-5">
                 <summary class="font-medium cursor-pointer text-black">Do you print a Gas Safe badge on this page?</summary>
-                <p class="mt-2 text-black">No. This legacy template does not claim Gas Safe registration. A landlord gas record has to be completed by an engineer registered for that appliance.</p>
+                <p class="mt-2 text-black">No. A landlord gas record has to be completed by an engineer registered for that appliance.</p>
             </details>
         </div>
     </div>
 
     <div class="mt-16 bg-[#0B1F3A] text-white p-12 rounded-3xl text-center">
         <h2 class="text-3xl font-semibold mb-4">Need Gas Systems in {{AREA}}?</h2>
-        <p class="max-w-md mx-auto text-white/90 mb-8">Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered. The quote is price on application.</p>
+        <p class="max-w-md mx-auto text-white/90 mb-8">Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. The quote is price on application.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="<?= url('/contact.php') ?>" class="bg-[#ff6b00] px-10 py-4 rounded-2xl font-semibold">Request Quote</a>
             <a href="https://wa.me/<?= WHATSAPP ?>?text=Quote%20for%20Gas%20Systems%20in%20{{AREA}}"

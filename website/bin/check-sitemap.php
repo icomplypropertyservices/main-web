@@ -125,7 +125,7 @@ if ($indexMode === 'tiered') {
         echo "FAIL: tiered sitemap must omit keyword×town (found {$kwTownCount})\n";
         $fail++;
     } else {
-        echo "OK: sitemap keyword×town count=0 (tiered noindex)\n";
+        echo "OK: compact sitemap keyword×town count=0 (tiered: keyword×town is listed in the export matrix chunks)\n";
     }
 } elseif ($kwTownCount < (int)floor($kwExpect * 0.98)) {
     echo "FAIL: sitemap keyword×town count {$kwTownCount} (want about {$kwExpect})\n";
@@ -291,9 +291,10 @@ if ($indexMode === 'tiered') {
             echo "OK: sitemap dual-ring area hubs=269\n";
         }
     }
-    if (preg_match('#/pages/keywords/[^<]*burnley#i', $xml)) {
+    // Jack 2026-10-19: indexable Burnley keyword hubs (…-burnley) are listed, not pruned.
+    if (!str_contains($xml, '/pages/keywords/maglock-burnley</loc>')) {
         $fail++;
-        echo "FAIL: tiered compact sitemap lists a Burnley keyword loc\n";
+        echo "FAIL: compact sitemap must list the indexable /pages/keywords/maglock-burnley hub\n";
     }
 }
 
@@ -339,7 +340,8 @@ $purgedFamily = static function (string $path) use ($bannedTowns): bool {
         return false;
     }
     foreach ($bannedTowns as $town) {
-        if (preg_match('#/(?:' . $town . ')(?:/|$)#', $path) || str_ends_with($path, '-' . $town)) {
+        // Town-suffixed keyword hubs (…-burnley) are real 200 index,follow pages: not a leak.
+        if (preg_match('#/(?:' . $town . ')(?:/|$)#', $path)) {
             return true;
         }
     }
@@ -510,6 +512,10 @@ if (!function_exists('icomplyMatrixSelectPlaces') || !function_exists('icomplyLo
         echo "OK: manufacturer depth stays on the 60 Greater Manchester towns\n";
     }
 }
+
+// Jack 2026-10-19: no noindex, no prune list (static half; run with --dist after export for the rest).
+require __DIR__ . '/check-sitemap-no-prune.php';
+$fail += $noPruneFail;
 
 echo "URLs={$count} bytes=" . strlen($xml) . PHP_EOL;
 echo ($fail === 0 ? "PASS\n" : "FAIL ({$fail})\n");

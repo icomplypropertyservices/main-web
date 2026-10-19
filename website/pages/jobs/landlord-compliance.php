@@ -96,7 +96,7 @@ $landing = [
         ],
         [
             'q' => 'Are you Gas Safe, NICEIC or BAFE registered?',
-            'a' => 'This page does not claim firm accreditations. Engineers carrying out gas work must be Gas Safe registered where that duty applies. Landlords and tenants can check ID on the public register.',
+            'a' => ' Engineers carrying out gas work must be Gas Safe registered where that duty applies. Landlords and tenants can check ID on the public register.',
         ],
         [
             'q' => 'Can agents use this for several landlords?',

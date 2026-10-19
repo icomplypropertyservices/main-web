@@ -11,8 +11,8 @@ function icomplyServiceBoost(string $slug): ?array
     $phone = '07517 806082';
     $b = [
         'gas-systems' => [
-            'title' => 'Gas Safety Certificate (CP12) Stockport | ' . $phone,
-            'meta' => 'Landlord gas safety certificates (CP12), boiler servicing and gas checks across Greater Manchester. Same/next-day slots, Gas Safe registered engineers. Call ' . $phone . '.',
+            'title' => 'Landlord Gas Safety Certificate (CP12) | Same/Next-Day',
+            'meta' => 'Landlord gas safety certificates (CP12), boiler servicing and gas checks across Greater Manchester. Same/next-day slots, carried out by Gas Safe registered engineers. Call ' . $phone . '.',
             'answer' => [
                 'h2' => 'Gas safety certificate in Greater Manchester — quick answer',
                 'p' => [
@@ -78,8 +78,8 @@ function icomplyServiceBoost(string $slug): ?array
             ],
         ],
         'aov-air-handling' => [
-            'title' => 'AOV & Smoke Vent Servicing, Repair Manchester | ' . $phone,
-            'meta' => 'AOV and smoke ventilation servicing, repairs and panel upgrades to BS 9999 / EN 12101 for blocks across the North West. Fast fault visits. Call ' . $phone . '.',
+            'title' => 'AOV & Smoke Vent Servicing and Repair | Same/Next-Day',
+            'meta' => 'AOV and smoke ventilation servicing, repairs and panel upgrades to BS 9999 / EN 12101 for blocks across the North West. Same/next-day fault visits. Call ' . $phone . '.',
             'answer' => [
                 'h2' => 'AOV servicing — quick answer',
                 'p' => [

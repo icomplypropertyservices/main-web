@@ -2,7 +2,7 @@
 /**
  * Care homes compliance job hub.
  * Nurse call is the lead cross-sell; fire, lighting, access and CCTV sit beside it.
- * Quotes are POA after survey. This page does not publish prices and does not claim a CQC inspection.
+ * Quotes are POA after survey.
  */
 require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/share.php';

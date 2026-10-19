@@ -235,7 +235,7 @@ function seo_unique_intro(string $serviceName, string $slug, string $area): stri
         ? "We scope {$serviceName} against {$standards} for the system or building you actually have — written notes for the file, not a catalogue install. {$angle}"
         : "We design, install, maintain and certificate {$serviceName} with attention to {$standards}. {$angle}";
     $close = (function_exists('isPoaService') && isPoaService($slug))
-        ? "Travel to {$area} is {$p['travel']}. Typical focus in this area: {$p['focus']}. Quotes are price on application after we confirm scope — no invented fee on this page."
+        ? "Travel to {$area} is {$p['travel']}. Typical focus in this area: {$p['focus']}. You get a fixed written quote once we confirm the scope."
         : "Travel to {$area} is {$p['travel']}. Typical focus in this area: {$p['focus']}. Quotes are free; fixed pricing is used whenever the scope is clear after survey or photos.";
     return pick_seeded($openers, $seed, 0) . ' ' . $mid . ' ' . $close;
 }

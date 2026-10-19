@@ -126,11 +126,11 @@ function icomplyBuildingHubCopy(string $slug): ?array
     $intro = [
         (string)$row['lead'],
         'Each Greater Manchester borough already on this site, and the towns listed with them, has its own ' . $name . ' page. Visits are arranged from Offerton, Stockport, SK2. ' . (string)$row['local'],
-        'Quotes are price on application (POA) after ' . (string)$row['scope'] . '. This page does not publish a fee, a review or an accreditation.',
+        'You get a fixed written quote once ' . (string)$row['scope'] . '.',
         'The visit is carried out by people qualified for the trade on the page. A specialist ticket, where the building needs one, is named in the written scope.',
     ];
     if (!empty($row['gas'])) {
-        $intro[] = 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.';
+        $intro[] = 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.';
     }
     $faqs = [
         [
@@ -139,7 +139,7 @@ function icomplyBuildingHubCopy(string $slug): ?array
         ],
         [
             'How is ' . $name . ' priced?',
-            'Quotes are price on application after ' . (string)$row['scope'] . '. There is no fee list on this page.',
+            'You get a fixed written quote once ' . (string)$row['scope'] . '.',
         ],
         [
             'Who attends?',
@@ -755,7 +755,7 @@ function icomplyBuildingHubRows(): array
                 'We identify the fitting, the leak or the new run, and whether the water undertaker expects a notification. Backflow protection is used when the fittings rules require it. A temporary repair is described as temporary.',
                 'Boiler work and landlord gas records are not booked as plumbing. They stay with Gas Safe registered engineers.',
             ],
-            'faq' => ['Do you repair boilers?', 'No. Boiler installation, servicing and landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.'],
+            'faq' => ['Do you repair boilers?', 'No. Boiler installation, servicing and landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.'],
             'cta' => 'What is leaking or being installed, and the postcode. POA.',
             'placeholder' => 'Postcode, leak, bathroom or pipework, access…',
             'pillars' => [

@@ -7,7 +7,7 @@
 require_once __DIR__ . '/config.php';
 
 $pageTitle = 'Listings and directories | iComply Property Services';
-$metaDesc = 'Where to find iComply Property Services online. 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Call 07517806082.';
+$metaDesc = 'Where to find iComply Property Services online. 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Call 07517 806082.';
 $canonicalUrl = url('/directories');
 $metaRobots = 'index, follow';
 $ogImage = url('/assets/images/services/building-maintenance.jpg');

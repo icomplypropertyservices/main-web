@@ -71,3 +71,6 @@ jobs:
 
       - name: Check pretty-URL HTML
         run: php website/bin/check-static-export.php
+
+      - name: Thin x town internal links (CLOSE-Q8)
+        run: node website/bin/check-town-interlinks.mjs dist

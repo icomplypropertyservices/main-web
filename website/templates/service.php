@@ -49,12 +49,12 @@ $serviceName = $SERVICE_NAME;
 
 $serviceFaqs = [
     'gas-systems' => [
-        ['Who carries out the gas check?', 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.'],
-        ['Is iComply Gas Safe registered?', 'No. iComply is not Gas Safe registered. This page does not show a registration number or a Gas Safe badge.'],
+        ['Who carries out the gas check?', 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.'],
+        ['Is iComply Gas Safe registered?', 'No.'],
         ['What does the quote need?', 'Postcode and appliance count. The price is on application. There is no per-appliance fee list on this page.'],
     ],
     'heating' => [
-        ['Do you install boilers?', 'Boiler installation, servicing and landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.'],
+        ['Do you install boilers?', 'Boiler installation, servicing and landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.'],
         ['What heating work is quoted here?', 'Radiators, controls and system flushes, after we see the layout. Price on application. No published boiler price.'],
     ],
     'electrical' => [
@@ -307,12 +307,12 @@ $schema = [
 <section class="bg-white border-b border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-12">
         <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-[#061828]">How a <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> visit runs</h2>
-        <p class="mt-3 text-zinc-800 max-w-3xl">Work is arranged from Stockport. The quote for <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> is price on application. The visit is carried out by people qualified for that trade.</p>
+        <p class="mt-3 text-zinc-800 max-w-3xl">Our engineers work from Stockport, with same-day and next-day slots often available. You get a fixed written quote before any work starts<?= $serviceSlug === 'electrical' ? ' (EICRs from £160)' : '' ?>, and the work is carried out by qualified, experienced engineers.</p>
         <ol class="mt-6 grid md:grid-cols-2 gap-4 text-zinc-800">
             <li class="rounded-2xl border border-zinc-200 p-4"><strong>1. The building.</strong> Send the address, what <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> has to cover, and whether the site is occupied.</li>
-            <li class="rounded-2xl border border-zinc-200 p-4"><strong>2. The scope.</strong> iComply confirms the visit in writing. This page does not publish a price for that visit.</li>
-            <li class="rounded-2xl border border-zinc-200 p-4"><strong>3. The attendance.</strong> Access and occupation in the town decide the appointment. Travel is part of the POA quote.</li>
-            <li class="rounded-2xl border border-zinc-200 p-4"><strong>4. The record.</strong> Certificates, test sheets or reports go to the instructing client.</li>
+            <li class="rounded-2xl border border-zinc-200 p-4"><strong>2. The scope.</strong> We confirm the scope, price and date in writing.</li>
+            <li class="rounded-2xl border border-zinc-200 p-4"><strong>3. The visit.</strong> We book a time that suits you and the building. Travel is included in the quote.</li>
+            <li class="rounded-2xl border border-zinc-200 p-4"><strong>4. The paperwork.</strong> Certificates, test sheets and reports are emailed straight to you.</li>
         </ol>
         <?php if ($serviceSlug === 'gas-systems' && function_exists('icomplyGasLegalSentence')): ?>
             <p class="mt-4 text-zinc-800 max-w-3xl"><?= htmlspecialchars(icomplyGasLegalSentence(), ENT_QUOTES, 'UTF-8') ?></p>

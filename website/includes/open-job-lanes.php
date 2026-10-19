@@ -154,14 +154,14 @@ function openJobElectricalAngle(string $hay): array
         return [
             'standard' => 'BS 7671 rewire practice, with building-control notification where the work is notifiable.',
             'focus' => 'Full or partial rewire scoped against the containment that is already there',
-            'price' => 'Rewires are POA after a look. This page does not publish a catalogue £ figure.',
+            'price' => 'Rewires are POA after a look.',
         ];
     }
     if (preg_match('/consumer unit|fuse board|fuse box|rcbo|rcd|afdd|spd/', $hay)) {
         return [
             'standard' => 'BS 7671 consumer-unit rules, including enclosure, RCD or RCBO protection, and surge protection where required.',
             'focus' => 'Board replacement labelled and tested before it is energised',
-            'price' => 'Consumer-unit work is POA after we see the board. This page does not publish a catalogue £ figure.',
+            'price' => 'Consumer-unit work is POA after we see the board.',
         ];
     }
     if (preg_match('/\bpat\b|portable appliance/', $hay)) {
@@ -181,7 +181,7 @@ function openJobElectricalAngle(string $hay): array
     return [
         'standard' => 'BS 7671, with notification where the work is notifiable.',
         'focus' => 'Electrical work scoped to the installation on site, from Stockport',
-        'price' => 'The visit is POA after we know the property. This page does not publish a catalogue £ figure.',
+        'price' => 'The visit is POA after we know the property.',
     ];
 }
 

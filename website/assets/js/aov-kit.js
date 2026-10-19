@@ -26,7 +26,7 @@
     if (id === "engineer") {
       result.textContent = "Engineer visit for " + (root.getAttribute("data-context") || "this building")
         + (brandName && brandName !== "Not sure" ? " (" + brandName + ")" : "")
-        + ". No supply price — call 07517806082 or use the form. Say whether the vent is stuck open, stuck shut, or the panel is in fault.";
+        + ". No supply price — call 07517 806082 or use the form. Say whether the vent is stuck open, stuck shut, or the panel is in fault.";
     } else if (byId[id]) {
       var kit = byId[id];
       result.textContent = kit.title + " is " + kit.price + " ex VAT for supply. "

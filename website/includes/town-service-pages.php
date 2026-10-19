@@ -146,7 +146,7 @@ function icomplyTownExtra(string $family, array $ctx, array &$ids): string
     ];
     $ends = $family === 'barriers'
         ? [
-            'Call 07517806082 and say which lane.',
+            'Call 07517 806082 and say which lane.',
             'The wizard on this page already selects CAME unless you change it.',
             'Safety edges stay in circuit.',
             'Five-metre CAME packs are on the products hub; fitting is still POA.',
@@ -157,10 +157,10 @@ function icomplyTownExtra(string $family, array $ctx, array &$ids): string
             'Manual release is demonstrated before we leave.',
             'The partner for a new boom is CAME.',
             'Existing manufacturers on the grid are still serviced.',
-            'Phone 07517806082 rather than guessing the board from a boom colour.',
+            'Phone 07517 806082 rather than guessing the board from a boom colour.',
         ]
         : [
-            'Call 07517806082 and name the panel if you can.',
+            'Call 07517 806082 and name the panel if you can.',
             'EN 12101 is the reference, the building decides the category.',
             'The manufacturer grid is the full AOV list for this page.',
             'A photo of the panel door speeds the {name} quote.',
@@ -170,7 +170,7 @@ function icomplyTownExtra(string $family, array $ctx, array &$ids): string
             'Storey count and stair count belong in the wizard.',
             'The logbook should show a functional test.',
             'Interface faults are not left as a key-switch mystery.',
-            'Phone 07517806082 for the {name} stair.',
+            'Phone 07517 806082 for the {name} stair.',
             'POA means the survey comes before the price.',
         ];
     $notes = $family === 'barriers'
@@ -287,8 +287,8 @@ function icomplyTownPools(string $family): array
                 ],
             ],
             'close' => [
-                'Call 07517806082 for a {name} barrier, or use the specification wizard. Say whether the lane is CAME already or another brand.',
-                'The useful first message for {name} is lane count, boom length and the name on the cabinet. Phone 07517806082.',
+                'Call 07517 806082 for a {name} barrier, or use the specification wizard. Say whether the lane is CAME already or another brand.',
+                'The useful first message for {name} is lane count, boom length and the name on the cabinet. Phone 07517 806082.',
                 'Quotes for {name} are POA after scope. The phone number is 07517806082. WhatsApp uses the same line.',
                 'If you manage several entrances around {name}, list them. One survey can cover more than one lane. 07517806082.',
                 'Do not send only a photo of a bent boom and expect a fixed price. Send the cabinet label as well. {name} desk: 07517806082.',
@@ -352,10 +352,10 @@ function icomplyTownPools(string $family): array
             ],
         ],
         'close' => [
-            'Call 07517806082 and name the AOV panel if you know it. The wizard on this page lists every manufacturer we support in {name}.',
-            'Phone 07517806082 for {name} smoke control. Tell us storeys, stair count and whether the vent is open, shut or unknown.',
-            'Quotes are POA. The number is 07517806082. Photos of the panel door help; they do not replace the survey.',
-            'If the {name} system is one of the brands below, pick it in the wizard so the engineer brings the right interface notes. Phone 07517806082.',
+            'Call 07517 806082 and name the AOV panel if you know it. The wizard on this page lists every manufacturer we support in {name}.',
+            'Phone 07517 806082 for {name} smoke control. Tell us storeys, stair count and whether the vent is open, shut or unknown.',
+            'Every quote is fixed and written. The number is 07517806082. Photos of the panel door help; they do not replace the survey.',
+            'If the {name} system is one of the brands below, pick it in the wizard so the engineer brings the right interface notes. Phone 07517 806082.',
             'Maintenance for {name} is a dated test record, not a van on a retainer we cannot staff. Start at 07517806082.',
             'New stairs and inherited panels are different jobs. Say which one {name} is. 07517806082.',
         ],
@@ -394,7 +394,7 @@ function icomplyTownEditorial(string $family, array $town): array
 
     $faqPools = $family === 'barriers'
         ? [
-            ['Who is the barrier partner for {name}?', 'CAME. New lanes are specified on CAME GARD unless the survey supports keeping the existing manufacturer. Call 07517806082.'],
+            ['Who is the barrier partner for {name}?', 'CAME. New lanes are specified on CAME GARD unless the survey supports keeping the existing manufacturer. Call 07517 806082.'],
             ['Will you service a non-CAME barrier in {name}?', 'Yes. The manufacturer grid lists the barrier and access brands this page covers. We identify the cabinet before ordering parts.'],
             ['How far is {name} from your workshop?', 'About {miles} miles from Offerton, Stockport SK2. Attendance is booked around that distance.'],
             ['What should we send for a {name} quote?', 'Lane count, approximate boom length, a photo of the rating plate and how the barrier opens today (loop, fob, reader or attendant).'],
@@ -554,8 +554,8 @@ function icomplyRenderTownHub(string $family): void
     $title = $family === 'barriers' ? 'Vehicle barriers by town' : 'AOV and smoke control by town';
     $pageTitle = $title;
     $metaDesc = $family === 'barriers'
-        ? 'CAME partner vehicle-barrier pages for every UK mainland town with population over 10,000. Phone 07517806082.'
-        : 'AOV and smoke-control pages for every UK mainland town with population over 10,000. Phone 07517806082.';
+        ? 'CAME partner vehicle-barrier pages for every UK mainland town with population over 10,000. Phone 07517 806082.'
+        : 'AOV and smoke-control pages for every UK mainland town with population over 10,000. Phone 07517 806082.';
     $metaKeywords = $family === 'barriers'
         ? 'CAME barriers, vehicle barriers, car park barrier, UK towns'
         : 'AOV, smoke control, automatic opening vent, UK towns';
@@ -794,7 +794,7 @@ function icomplyRenderTownPage(string $family, string $slug): void
     echo '<section class="mt-12 bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">';
     echo '<h2 class="text-2xl font-semibold">Speak to iComply about ' . htmlspecialchars($ctx['name'], ENT_QUOTES, 'UTF-8') . '</h2>';
     echo '<p class="mt-2 text-white/80">Offerton, Stockport, SK2 5DE. About ' . htmlspecialchars($ctx['miles'], ENT_QUOTES, 'UTF-8') . ' miles.</p>';
-    echo '<a class="inline-block mt-4 bg-[#ff6b00] px-8 py-3 rounded-2xl font-semibold" href="tel:07517806082">Call 07517806082</a>';
+    echo '<a class="inline-block mt-4 bg-[#ff6b00] px-8 py-3 rounded-2xl font-semibold" href="tel:07517806082">Call 07517 806082</a>';
     echo '</section></article>';
     require SITE_ROOT . '/includes/footer.php';
 }

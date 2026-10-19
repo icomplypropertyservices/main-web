@@ -13,7 +13,7 @@ if ($ref === '') {
 $pageTitle = 'Thank You — Request Received';
 $metaDesc = 'Thanks for contacting iComply Property Services. We will respond shortly. Prefer faster help? Call or WhatsApp us now.';
 $metaKeywords = 'iComply contact, property compliance quote North West';
-$metaRobots = 'noindex, follow'; // post-submit page — avoid thin/duplicate indexing
+$metaRobots = 'index, follow'; // Jack 2026-10-19: no page is ever noindexed
 $canonicalUrl = url('/thank-you.php');
 
 $services = getServices();
@@ -27,7 +27,7 @@ $serviceBlurbs = [
     'emergency-lighting' => 'BS 5266 testing, upgrades & LED conversions',
     'aov-air-handling' => 'Smoke vents, AOV panels & AHU controls',
     'nurse-call' => 'Care home & hospital nurse call systems',
-    'gas-systems' => 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.',
+    'gas-systems' => 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.',
     'intruder-alarm' => 'Wired & wireless intruder systems',
     'cctv' => 'IP / HD CCTV design, install & monitoring setup',
     'access-control' => 'Paxton, HID, Salto door access',

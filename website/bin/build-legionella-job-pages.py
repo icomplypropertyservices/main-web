@@ -64,7 +64,7 @@ def expand(row: dict) -> dict:
             "Coverage is Greater Manchester and the wider North West from Stockport. "
             "Tell us the postcode, who uses the building, and whether hot or cold water is stored.",
             "Sampling, tank cleaning and any chemical step are separate lines when they are justified. "
-            "We do not invent a laboratory badge or a per-sample price on this page.",
+            "",
         ]
     )
     focus = [
@@ -80,7 +80,7 @@ def expand(row: dict) -> dict:
         raise SystemExit(f"{row['slug']}: expected 2 FAQs")
     meta = (
         f"{name} for {who}. North West water hygiene from Stockport. "
-        f"Price on application. No catalogue fee."
+        f"Price on application."
     )
     return {
         "slug": row["slug"],

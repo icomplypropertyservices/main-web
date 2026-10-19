@@ -85,7 +85,7 @@ function icomplyFireAlarmInstallerNap(): string
 
 function icomplyFireAlarmInstallerDuty(): string
 {
-    return 'Design, installation and commissioning follow BS 5839. Competent fire alarm engineers carry out the visit. iComply does not claim BAFE or NSI badges.';
+    return 'Design, installation and commissioning follow BS 5839. Competent fire alarm engineers carry out the visit.';
 }
 
 /**
@@ -253,7 +253,7 @@ function icomplyRenderFireAlarmInstallerTown(string $keywordSlug, string $townSl
         . '<p>' . $h($local) . '</p>'
         . ($intro !== '' ? '<p>' . $h($intro) . '</p>' : '')
         . '<p>' . $h(icomplyFireAlarmInstallerDuty()) . ' The quote is price on application. There is no catalogue fee on this page.</p>'
-        . '<p>Workshop address: ' . $h(icomplyFireAlarmInstallerNap()) . '. Phone 07517806082.</p>'
+        . '<p>Workshop address: ' . $h(icomplyFireAlarmInstallerNap()) . '. Phone 07517 806082.</p>'
         . '<h2>What the visit covers in ' . $h($ctx['name']) . '</h2><ul>' . $focusHtml . '</ul>'
         . implode('', $blocks)
         . '</article></main></body></html>';

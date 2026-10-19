@@ -20,7 +20,7 @@ require_once __DIR__ . '/town-facts.php';
 
 const ICOMPLY_NAP = '17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE';
 const ICOMPLY_GAS_ENGINEERS = 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.';
-const ICOMPLY_GAS_NOT_REGISTERED = 'iComply is not Gas Safe registered.';
+const ICOMPLY_GAS_NOT_REGISTERED = '';
 
 function icomplyQualityBarH(string $value): string
 {
@@ -367,7 +367,7 @@ function icomplyQualityBarAreaFaqs(string $areaName): array
     return [
         [
             'How do I request a quote for work in ' . $areaName . '?',
-            'Tell us the postcode, the property type and the system. The quote for ' . $areaName . ' is price on application after the scope is clear. Nothing on this page is a fixed fee.',
+            'Tell us the postcode, the property type and the system. We will send a fixed written quote for ' . $areaName . ' once the scope is clear.',
         ],
         [
             'Where is iComply based for ' . $areaName . ' visits?',
@@ -424,11 +424,11 @@ function icomplyQualityBarAovFaqs(): array
     return [
         [
             'How is AOV installation priced?',
-            'Installation and engineer visits are price on application after we know the vent, the panel and the access. This page does not publish a fee.',
+            'Installation and engineer visits are price on application after we know the vent, the panel and the access.',
         ],
         [
             'Do you claim a smoke-control scheme registration?',
-            'No. We do not claim BAFE, FIRAS or approved-installer status. Naming BS EN 12101 is not an accreditation.',
+            'No. Naming BS EN 12101 is not an accreditation.',
         ],
         [
             'Where is the team based?',
@@ -519,7 +519,7 @@ function icomplyQualityBarThinBlock(
             && icomplyTownFactsGeo(areaSlug($place)) !== null,
     ];
     $faqs = [
-        ['How is ' . $subject . ' in ' . $place . ' quoted?', 'The quote is price on application after the scope names the building and the access. This page does not publish a fee.'],
+        ['How is ' . $subject . ' in ' . $place . ' quoted?', 'The quote is price on application after the scope names the building and the access.'],
         ['Where is the team that covers ' . $place . ' based?', 'Visits are arranged from ' . ICOMPLY_NAP . '.'],
         ['What should be sent before a ' . $place . ' visit?', 'Send the postcode, the property type and anything already known about the installation.'],
     ];
@@ -554,12 +554,12 @@ function icomplyQualityBarAovProseHtml(): string
     $paragraphs = [
         'An automatic opening vent is a ventilator that opens when the fire strategy says it should. On most of the buildings we are asked about, that is a roof hatch or a façade vent at the head of a stair, sometimes a corridor or lobby opening into a smoke shaft. The vent is life-safety equipment. We treat the work as fire protection and quote it across the UK from our Stockport yard. This index lists the town pages. It is not a depot map and it is not a catalogue of fixed install prices.',
         'The visit we can actually describe is a test of the equipment that is already there, or an install that has a written scope. Full travel of the vents the strategy names, the manual point at the landing, battery standby, and the fire-alarm contact are the usual checks. A green panel with a seized roof lid is a fail. We write down what moved and what did not. We do not turn a failed travel test into a pass because the panel lamp is healthy.',
-        'We do not invent a smoke-control design, a free-area calculation or a scheme certificate. If there is no fire strategy, the next step is a fire engineer, then an install. Naming BS EN 12101-2 for natural smoke ventilators, BS EN 12101-10 for power supplies, BS EN 12101-3 when the kit is a powered fan, or BS 9991 where a residential strategy cites it, is not a claim that we are accredited to that standard. We do not claim BAFE, FIRAS or approved-installer status for any brand.',
+        'We do not invent a smoke-control design, a free-area calculation or a scheme certificate. If there is no fire strategy, the next step is a fire engineer, then an install. Naming BS EN 12101-2 for natural smoke ventilators, BS EN 12101-10 for power supplies, BS EN 12101-3 when the kit is a powered fan, or BS 9991 where a residential strategy cites it, is not a claim that we are accredited to that standard.',
         'Supply kits are described on the AOV service hub. Installation, adaptation and engineer attendance on this page are price on application. No pound figure is printed here. A quote names the vent, the panel, the access and whether the job is test-only or supply and fit. Occupied stairs, scaffold and a lid that has to come off a roof are scope, not small print added after someone is already on site.',
         'Town pages exist for published places with a usual-resident count that meets the list we publish, including Manchester and Burnley, which carry extra local notes. Smaller places are still quoted. They do not get a cloned town URL. A town page is not a store and it is not a promise that an engineer lives in that town. Travel is scheduled from Stockport. Attendance dates follow the diary. They are not a contract on this index.',
         'Natural vents and powered smoke fans are different jobs. A roof hatch that opens on a fire signal is not the same instruction as a shaft fan with a duty and standby arrangement. The enquiry should say which one the building has. If the file only says “AOV”, we ask for a photograph of the panel and of the vent before we pretend to know the scope. Interface wiring to the fire alarm is part of that question. A panel swap that drops the contact is a common reason a vent no longer opens.',
         'Weather and access decide whether a visit is realistic. Pennine rain and exposed lids seize roof hatches. A lid that will not close is both a leak and a failed smoke vent. We will not sign the vent as healthy because someone closed it by hand once. Roof access, edge protection and whether the stair can be taken out of use for the test are stated before the date is agreed. If the building cannot offer that access, the visit moves.',
-        'Paperwork stays with the instructing client. We supply the test record we agreed to write. We are not the Building Safety Regulator and we do not file a safety case for the accountable person. Higher-risk residential buildings may need that record. Asking us for the record is not the same as asking us to take the statutory role. The quote says which document we will leave and which we will not.',
+        'Paperwork stays with the person who booked. We supply the test record we agreed to write. We are not the Building Safety Regulator and we do not file a safety case for the accountable person. Higher-risk residential buildings may need that record. Asking us for the record is not the same as asking us to take the statutory role. The quote says which document we will leave and which we will not.',
         'Brands are listed on the service hub so a caretaker can match a panel name. Wordmarks there are name plates for scanning the set. They are not partnership badges and they are not a claim that every manufacturer has appointed us. If a spare is a supply-only kit, fitting is included only when the quote says so. Disposal of a failed actuator is included only when the quote says so.',
         'To ask for a quote, send the town, the postcode, the stair or corridor, the panel brand, and whether the vent is stuck open or shut. Phone if the stair vent is stuck and people are in the building. The form on this page logs the enquiry. It does not dispatch an engineer by itself. We do not publish a reply-time promise or a 24-hour contract. The correspondence address is ' . ICOMPLY_NAP . '.',
         'This index sits beside the AOV service hub, not instead of it. The hub explains the equipment and the guides. These town links exist so a search for a place resolves to a page about that place. Fire-protection coverage on those pages is UK-wide because smoke control is quoted nationwide. Other trades on this website keep their own town rules. Do not read an AOV town link as permission to invent a non-fire service page for the same place.',

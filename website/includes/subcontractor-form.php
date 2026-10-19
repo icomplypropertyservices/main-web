@@ -111,7 +111,7 @@ function icomplySubcontractorFormRegistrationDocument(): string
 <head>
   <meta charset="utf-8">
   <title>Onboarding form (Netlify registration)</title>
-  <meta name="robots" content="noindex">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://icomplypropertyservices.co.uk/subcontractor-onboarding-form.html">
 </head>
 <body>
