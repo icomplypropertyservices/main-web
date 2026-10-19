@@ -445,7 +445,8 @@ function icomplyPathIsIndexable(string $path): bool
 
 function icomplyRobotsMetaForPath(string $path): string
 {
-    return icomplyPathIsIndexable($path) ? 'index, follow' : 'noindex, follow';
+    // Jack: no real page is ever noindexed.
+    return 'index, follow';
 }
 
 /**

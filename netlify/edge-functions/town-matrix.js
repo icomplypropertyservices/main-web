@@ -357,7 +357,8 @@ export function renderTownPage(input) {
     place.county = mainlandPlace.county || "";
   }
   const indexable = keywordKnown && !keyword.synthetic && (tier === "core" || fireTown || GSC_KEEP.has(path));
-  const robots = indexable ? "index, follow" : "noindex, follow";
+  // Jack: every real page is indexable. Never emit noindex here.
+  const robots = "index, follow";
   const seed = hashStr(`${kind}|${subject}|${serviceSlug}|${townSlug}`);
   const audience = pick(AUDIENCES, seed);
   const visit = pick(VISIT_STYLES, seed >>> 3);

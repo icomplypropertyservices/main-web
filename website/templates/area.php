@@ -52,7 +52,7 @@ require_once SITE_ROOT . '/includes/share.php';
 $canonicalUrl = url('/pages/areas/' . $areaSlugVal . '.php');
 $metaRobots = function_exists('icomplyRobotsMetaForPath')
     ? icomplyRobotsMetaForPath('/pages/areas/' . $areaSlugVal)
-    : 'noindex, follow';
+    : 'index, follow';
 require SITE_ROOT . '/includes/header.php';
 
 $schema = [
