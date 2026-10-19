@@ -14,7 +14,8 @@ import { gmTownBlurb } from "../lib/gm-blurbs.js";
 import { p0KeepsTown, renderNationwideP0Town } from "../lib/nationwide-p0.js";
 import { withContactWidgets } from "../lib/contact-widgets.js";
 import { townFactsBlock } from "../lib/town-facts.js";
-import { thinFaqHtml, thinFaqs, thinImages, thinOgMeta, thinProseHtml } from "../lib/thin-quality-bar.js";
+import { depthBankParagraphs, thinFaqHtml, thinFaqs, thinImages, thinOgMeta, thinProseHtml } from "../lib/thin-quality-bar.js";
+import { townDepthBlock } from "../lib/town-depth.js";
 import fireAlarmFamily from "../../website/data/fire-alarm-installer-family.json" with { type: "json" };
 import mainlandTownDoc from "../../website/data/uk-mainland-towns-10k.json" with { type: "json" };
 import gscKeepDoc from "../../website/data/gsc-keep-towns.json" with { type: "json" };
@@ -167,6 +168,12 @@ function hashStr(value) {
     h = Math.imul(h, 16777619);
   }
   return h >>> 0;
+}
+
+function mix32(h) {
+  h = Math.imul(h ^ (h >>> 16), 0x85ebca6b);
+  h = Math.imul(h ^ (h >>> 13), 0xc2b2ae35);
+  return (h ^ (h >>> 16)) >>> 0;
 }
 
 function pick(list, seed) {
@@ -448,8 +455,24 @@ export function renderTownPage(input) {
     ]);
   }
   if (facts) {
-    proseHtml += facts.html;
     faqs.unshift(...facts.faqs);
+    // CLOSE-Q1: lean pages sat at 540-700 words; add town-specific depth (>= 800 total).
+    const depth = townDepthBlock({
+      slug: townSlug,
+      town: place.name,
+      subject,
+      service: serviceSlug,
+      names: MAINLAND,
+      nation: place.country || "",
+      extra: depthBankParagraphs(qualityCtx, 3),
+    });
+    // Seeded block order (authored copy, town facts, local notes) for town-to-town uniqueness.
+    const blocks = [proseHtml, facts.html, depth ? depth.html : ""];
+    // Never lead with the facts block: its "{town}: council..." heading would sit straight under the H1.
+    const orders = [[0, 1, 2], [0, 2, 1], [2, 0, 1], [2, 1, 0]];
+    proseHtml = orders[mix32(hashStr(`order|${townSlug}|${subject}`)) % orders.length].map((i) => blocks[i]).join("");
+    const shift = faqs.length ? mix32(hashStr(`faq|${townSlug}|${subject}`)) % faqs.length : 0;
+    faqs.push(...faqs.splice(0, shift));
   }
   const faqBlock = (fireTown || fireFamily || facts)
     ? `<section id="faq" class="faq" data-pe-slot="q5-thin-faq"><h2>Questions about ${escapeHtml(place.name)}</h2>${faqs.map(([q, a]) => (

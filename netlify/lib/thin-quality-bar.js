@@ -63,7 +63,11 @@ function fill(template, ctx) {
 
 function mixIndex(seed, pass, bankIndex, length) {
   let h = (seed ^ Math.imul(bankIndex + 1, 0x9e3779b9) ^ Math.imul(pass + 1, 0x85ebca6b)) >>> 0;
-  h = Math.imul(h ^ (h >>> 16), 0x45d9f3b) >>> 0;
+  // Full murmur3 finaliser: the old single round left the low bits (the ones
+  // % length reads) almost fixed, so neighbouring towns picked the same variants.
+  h = Math.imul(h ^ (h >>> 16), 0x85ebca6b) >>> 0;
+  h = Math.imul(h ^ (h >>> 13), 0xc2b2ae35) >>> 0;
+  h = (h ^ (h >>> 16)) >>> 0;
   return h % length;
 }
 
@@ -122,6 +126,27 @@ function absoluteOg(src) {
   if (/^https:\/\//i.test(src)) return src;
   const path = src.startsWith("/") ? src : `/${src}`;
   return `${ORIGIN}${path}`;
+}
+
+/**
+ * CLOSE-Q1 (2026-10-19): extra bank paragraphs for lean town pages. Picks
+ * `count` of the later banks (price, access, neighbours, standards, follow-up,
+ * instructing client) by seed, so two towns rarely share the same pick.
+ * @returns {string[]} plain-text paragraphs
+ */
+export function depthBankParagraphs(ctx, count = 3) {
+  const banks = fragments.banks || [];
+  const pool = [4, 5, 6, 7, 8, 9].filter((i) => banks[i] && banks[i].length);
+  const seed = ctx.seed >>> 0;
+  const ranked = pool
+    .map((i) => [mixIndex(seed, 7, i, 1 << 30), i])
+    .sort((a, b) => a[0] - b[0])
+    .slice(0, count)
+    .map((r) => r[1]);
+  return ranked.map((i) => {
+    const text = fill(banks[i][mixIndex(seed, 3, i, banks[i].length)], ctx).replace(/\s+/g, " ").trim();
+    return text.charAt(0).toUpperCase() + text.slice(1);
+  });
 }
 
 export function thinImages(serviceSlug, subject, placeName, seed, peImages) {

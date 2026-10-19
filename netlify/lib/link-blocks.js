@@ -18,6 +18,7 @@
  * files are not guessed here (some GM localities 404 on those templates).
  */
 import townGeo from "../../website/data/town-geo-slim.json" with { type: "json" };
+import { BOROUGH_GEO } from "./town-depth.js";
 
 import { LOCAL_TOWN_SET } from "./dual-ring-allowlist.js";
 
@@ -238,7 +239,7 @@ function leafHref(kind, ids, townSlug) {
  */
 const LEAN_COVERAGE = 24;
 function geoOf(slug) {
-  const g = townGeo[slug];
+  const g = townGeo[slug] || BOROUGH_GEO[slug];
   return g && Number.isFinite(g[5]) && Number.isFinite(g[6]) ? { lat: g[5], lng: g[6] } : null;
 }
 function milesApart(a, b) {

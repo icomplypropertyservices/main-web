@@ -560,6 +560,19 @@ function icomplyRenderTownHub(string $family): void
         ? 'CAME barriers, vehicle barriers, car park barrier, UK towns'
         : 'AOV, smoke control, automatic opening vent, UK towns';
     $canonicalUrl = url($family === 'barriers' ? '/pages/barriers' : '/pages/aov');
+    // CLOSE-Q6 (2026-10-19): /pages/aov is a full hub (>= 800 words, FAQ, 3 images,
+    // complete meta), copy from website/data/close-q/aov-hub.json. Barriers unchanged.
+    $aovHub = null;
+    if ($family === 'aov') {
+        require_once __DIR__ . '/quality-bar.php';
+        $aovHub = icomplyCloseQLoad('aov-hub.json');
+        if (!empty($aovHub['description'])) {
+            $metaDesc = (string)$aovHub['description'];
+        }
+        $aovImages = icomplyQualityBarAovImages();
+        $ogImage = $aovImages['og'] ?? url('/assets/images/services/aov-air-handling.jpg');
+        $ogImageAlt = 'Automatic opening vents and smoke control — iComply Property Services';
+    }
     $other = $family === 'barriers' ? '/pages/aov' : '/pages/barriers';
     $otherLabel = $family === 'barriers' ? 'AOV towns' : 'Barrier towns';
     require SITE_ROOT . '/includes/header.php';
@@ -572,6 +585,18 @@ function icomplyRenderTownHub(string $family): void
         : 'Each town page lists the AOV manufacturers we support, with nameplates and links.';
     echo ' Call <a class="font-semibold text-[#ff6b00]" href="tel:07517806082">07517806082</a>. ';
     echo '<a class="font-semibold text-[#ff6b00]" href="' . htmlspecialchars(url($other), ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($otherLabel, ENT_QUOTES, 'UTF-8') . '</a>.</p>';
+    if ($family === 'aov' && is_array($aovHub)) {
+        echo '<div class="mt-10 max-w-3xl">';
+        echo $aovImages['html'];
+        echo icomplyQualityBarAovProseHtml();
+        echo '<p class="mt-4"><a class="font-semibold text-[#ff6b00]" href="' . htmlspecialchars(url('/pages/services/aov-air-handling'), ENT_QUOTES, 'UTF-8') . '">AOV service hub</a> · '
+            . '<a class="font-semibold text-[#ff6b00]" href="' . htmlspecialchars(url('/pages/services/fire-alarms'), ENT_QUOTES, 'UTF-8') . '">Fire alarm services</a> · '
+            . '<a class="font-semibold text-[#ff6b00]" href="' . htmlspecialchars(url('/contact'), ENT_QUOTES, 'UTF-8') . '">Request a quote</a> · '
+            . 'WhatsApp <a class="font-semibold text-[#ff6b00]" href="https://wa.me/447517806082">07517 806082</a> · '
+            . '<a class="font-semibold text-[#ff6b00]" href="mailto:icomplypropertyservices@gmail.com">icomplypropertyservices@gmail.com</a></p>';
+        echo icomplyQualityBarFaqHtml(icomplyQualityBarAovFaqs(), 'q6-aov-faq', 'q6-aov-faq-jsonld', 'Questions about AOV and smoke control');
+        echo '</div>';
+    }
     $letters = [];
     foreach ($towns as $town) {
         $letter = strtoupper(substr((string)$town['name'], 0, 1));
