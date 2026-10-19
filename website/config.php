@@ -18,7 +18,9 @@ $siteDefaults = [
     'ADMIN_USER' => 'admin',
     // Never commit real passwords — set ADMIN_PASS in config.local.php
     'ADMIN_PASS' => '',
-    'GA_MEASUREMENT_ID' => '',
+    // GA4 property. Loaded only by the consent-gated loader in includes/header.php
+    // (never hardcoded in <head>). GA_MEASUREMENT_ID env still overrides.
+    'GA_MEASUREMENT_ID' => 'G-RN048B7861',
     'GTM_CONTAINER_ID' => '',
     'AW_CONVERSION_ID' => '',
     // Google Search Console HTML-tag verification (content= value only)

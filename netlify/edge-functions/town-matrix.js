@@ -907,5 +907,14 @@ export const config = {
   ],
   // Static AOV/barrier town pages (~420 KB) 502'd intermittently when
   // proxied through this function. Their aliases live in netlify.toml.
-  excludedPath: ["/pages/aov/*", "/pages/barriers/*"],
+  excludedPath: [
+    "/pages/aov/*",
+    "/pages/barriers/*",
+    // Wave-1 package 301s live in _redirects; the edge fallback would
+    // otherwise 301 these unknown "service/town" paths to /pages/areas.
+    "/pages/packages/landlord-essentials",
+    "/pages/packages/landlord-essentials/",
+    "/pages/packages/hmo-fire-package",
+    "/pages/packages/hmo-fire-package/",
+  ],
 };
