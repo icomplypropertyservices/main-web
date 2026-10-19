@@ -560,10 +560,13 @@ function icomplyMatrixJson(mixed $value): string
 }
 
 /**
- * GSC hygiene: true when a sitemap path would not answer 200 + indexable.
- * Drops exact-path 301/302 rules from dist/_redirects, exported HTML that
- * carries a noindex robots meta, and fire-family service×town paths that
- * have no exported file and are outside the dual-ring towns (those 301).
+ * GSC hygiene: true when a sitemap path would not answer 200.
+ * Drops exact-path 301/302 rules from dist/_redirects and fire-family /
+ * AOV service×town paths that have no exported file and are outside the
+ * dual-ring towns (the edge 301s those to the service hub).
+ * Jack 2026-10-19: a noindex robots meta is NOT a reason to drop a page.
+ * No real page is noindexed; check-sitemap-no-prune.php fails the build if
+ * an exported sitemap page still renders noindex instead.
  */
 function icomplySitemapPathUnfit(string $dist, string $path): bool
 {
@@ -606,12 +609,7 @@ function icomplySitemapPathUnfit(string $dist, string $path): bool
         }
     }
     if ($found !== null) {
-        $fh = fopen($found, 'rb');
-        $head = $fh ? (string)fread($fh, 16384) : '';
-        if ($fh) {
-            fclose($fh);
-        }
-        return (bool)preg_match('/<meta[^>]+name=["\']robots["\'][^>]*noindex/i', $head);
+        return false;
     }
     if (preg_match('#^/pages/([a-z0-9-]+)/([a-z0-9-]+)$#', $path, $m)) {
         $fire = function_exists('isFireSafetyService') && isFireSafetyService($m[1]);
@@ -681,11 +679,22 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
     if ($urlList === false) {
         throw new RuntimeException('Cannot write sitemap-urls.txt');
     }
+    // Every URL is listed exactly once across sitemap0..N (hub urlset and
+    // matrix chunks share one seen-set).
+    $seenLocs = [];
+    $hubWritten = 0;
+    $duplicatesSkipped = 0;
     foreach ($hubEntries as $entry) {
         $path = (string)($entry['path'] ?? '/');
         if ($path !== '/' && icomplySitemapPathUnfit($dist, $path)) {
             continue;
         }
+        if (isset($seenLocs[$path])) {
+            $duplicatesSkipped++;
+            continue;
+        }
+        $seenLocs[$path] = true;
+        $hubWritten++;
         $loc = $path === '/' ? $base . '/' : $base . $path;
         $priority = (string)($entry['priority'] ?? '0.5');
         $hubXml .= '  <url><loc>' . htmlspecialchars($loc, ENT_XML1) . '</loc><priority>' . htmlspecialchars($priority, ENT_XML1) . '</priority></url>' . "\n";
@@ -714,7 +723,7 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
         fwrite($chunkHandle, '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n");
         $chunkCount = 0;
     };
-    $writeLoc = static function (string $path) use (&$chunkCount, &$chunkHandle, $openChunk, $urlList, $base, $dist): void {
+    $writeLoc = static function (string $path) use (&$chunkCount, &$chunkHandle, &$seenLocs, &$duplicatesSkipped, $openChunk, $urlList, $base, $dist): void {
         if (!function_exists('icomplySitemapOmitsNonGm')) {
             require_once __DIR__ . '/gm-crawl.php';
         }
@@ -724,6 +733,11 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
         if (!str_starts_with($path, '/pages/keywords/') && icomplySitemapPathUnfit($dist, $path)) {
             return;
         }
+        if (isset($seenLocs[$path])) {
+            $duplicatesSkipped++;
+            return;
+        }
+        $seenLocs[$path] = true;
         if ($chunkHandle === null || $chunkCount >= ICOMPLY_MATRIX_SITEMAP_CHUNK) {
             $openChunk();
         }
@@ -810,9 +824,8 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
     foreach ($chunkPaths as $name) {
         $index .= '  <sitemap><loc>' . $base . '/' . $name . '</loc></sitemap>' . "\n";
     }
-    // Keyword-by-town matrix pages stay live via netlify/edge-functions/town-matrix.js
-    // but are deliberately NOT listed in the sitemap index (approved 2026-10-12):
-    // only the regular sitemap0..N.xml chunks are submitted to Google.
+    // Only the regular sitemap0..N.xml chunks are submitted (the edge
+    // /matrix-sitemap/* variant feed is not in the index).
     $index .= '</sitemapindex>' . "\n";
     file_put_contents($dist . '/sitemap.xml', $index);
 
@@ -879,6 +892,9 @@ JS);
         'manufacturer_town_urls' => $manufacturerTown,
         'job_town_urls' => $jobTown,
         'sitemap_urls' => $sitemapUrls,
+        'sitemap_unique_locs' => count($seenLocs),
+        'sitemap_hub_locs' => $hubWritten,
+        'sitemap_duplicates_skipped' => $duplicatesSkipped,
         'variant_services' => $variantMeta['services'] ?? 0,
         'variant_towns' => $variantMeta['towns'] ?? 0,
         'variant_keywords_per_service' => $variantMeta['keywords_per_service'] ?? 0,
@@ -904,6 +920,8 @@ JS);
         . ' manufacturer×town=' . $manufacturerTown
         . ' job×town=' . $jobTown
         . ' sitemap_urls=' . $sitemapUrls
+        . ' unique_locs=' . count($seenLocs)
+        . ' duplicates_skipped=' . $duplicatesSkipped
         . ' variant_urls=' . ($variantMeta['urls'] ?? 0) . "\n");
     return $stats;
 }

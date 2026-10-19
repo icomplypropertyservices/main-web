@@ -171,7 +171,8 @@ for (const page of pages) {
   const h1Count = (page.html.match(/<h1>/g) || []).length;
   ok(h1Count === 1, `one h1 for ${page.path}`);
   ok(page.html.includes(`rel="canonical" href="${page.canonical}"`), `canonical ${page.canonical}`);
-  ok(!page.html.includes("£"), `no price on ${page.path}`);
+  // Jack 2026-10-19: "EICR from £160" STAYS. Any other £ amount is still a POA breach.
+  ok(!page.html.replace(/from £160\b/g, "").includes("£"), `no price other than approved EICR from £160 on ${page.path}`);
   ok(!/NICEIC/i.test(page.html), `no NICEIC on ${page.path}`);
   ok(!/iComply does not carry out gas/i.test(page.html), `no gas denial on ${page.path}`);
   ok(!/iComply does not issue CP12/i.test(page.html), `no CP12 denial on ${page.path}`);
@@ -190,8 +191,8 @@ for (const page of pages) {
 
 const eicrTowns = pages.slice(0, 3);
 ok(eicrTowns.every((page) => page.robots === "index, follow"), "catalogue towns are index,follow");
-ok(pages[6].robots === "noindex, follow" && pages[6].status === 200, "unknown town is 200 noindex");
-ok(pages[7].robots === "noindex, follow" && pages[7].status === 200, "unknown keyword is 200 noindex");
+ok(pages[6].robots === "index, follow" && pages[6].status === 200, "unknown town is 200 index,follow (Jack 2026-10-19: never noindex)");
+ok(pages[7].robots === "index, follow" && pages[7].status === 200, "unknown keyword is 200 index,follow (never noindex)");
 
 const boiler = pages[3];
 ok(boiler.html.includes("Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers."), "gas engineers sentence");
@@ -214,14 +215,14 @@ ok(scoreHtml(water.html, { local: ["stockport"] }).score === 100, "water-wras sc
 
 const aberdeenFire = renderTownPage({ kind: "keyword", keyword: "fire-door-survey", town: "aberdeen", catalogue });
 const aberdeenEicr = renderTownPage({ kind: "keyword", keyword: "eicr", town: "aberdeen", catalogue });
-ok(aberdeenFire && aberdeenFire.robots === "noindex, follow", "fire keyword outside the catalogue stays noindex");
-ok(aberdeenEicr && aberdeenEicr.robots === "noindex, follow", "electrical keyword in Aberdeen stays noindex");
+ok(aberdeenFire && aberdeenFire.robots === "index, follow", "fire keyword outside the catalogue is index,follow");
+ok(aberdeenEicr && aberdeenEicr.robots === "index, follow", "electrical keyword in Aberdeen is index,follow");
 
 const came = renderTownPage({ kind: "manufacturer", brand: "came", town: "aberdeen", catalogue });
 const rolec = renderTownPage({ kind: "manufacturer", brand: "rolec-ev", town: "aberdeen", catalogue });
 const rolecLocal = renderTownPage({ kind: "manufacturer", brand: "rolec-ev", town: "stockport", catalogue });
-ok(came && came.robots === "noindex, follow" && came.path === "/pages/manufacturers/came/aberdeen", "manufacturer outside the catalogue stays noindex");
-ok(rolec && rolec.robots === "noindex, follow", "local manufacturer stays noindex outside the core list");
+ok(came && came.robots === "index, follow" && came.path === "/pages/manufacturers/came/aberdeen", "manufacturer outside the catalogue is index,follow");
+ok(rolec && rolec.robots === "index, follow", "local manufacturer outside the core list is index,follow");
 ok(rolecLocal && rolecLocal.robots === "index, follow", "local manufacturer town in the core list");
 ok(renderTownPage({ kind: "manufacturer", brand: "tunstall", town: "stockport", catalogue }) === null, "tunstall is not published");
 
@@ -230,8 +231,8 @@ const jobFar = renderTownPage({ kind: "job", job: "eicr", town: "aberdeen", cata
 const jobFire = renderTownPage({ kind: "job", job: "fire-alarms", town: "aberdeen", catalogue });
 const jobGas = renderTownPage({ kind: "job", job: "gas-safety-cp12", town: "stockport", catalogue });
 ok(jobLocal && jobLocal.robots === "index, follow", "EICR job town page");
-ok(jobFar && jobFar.robots === "noindex, follow", "EICR job is not nationwide");
-ok(jobFire && jobFire.robots === "noindex, follow", "fire alarm job outside the catalogue stays noindex");
+ok(jobFar && jobFar.robots === "index, follow", "EICR job outside the ring renders index,follow (edge decides 301)");
+ok(jobFire && jobFire.robots === "index, follow", "fire alarm job outside the catalogue is index,follow");
 ok(jobGas && jobGas.html.includes("iComply is not Gas Safe registered."), "gas job keeps the legal sentence");
 ok([came, rolecLocal, jobLocal, jobFire, aberdeenFire].every((page) => scoreHtml(page.html, { local: ["aberdeen", "stockport"] }).score === 100), "new page types score 100");
 
@@ -312,6 +313,11 @@ const missing = renderTownPage({
   closeQPages: {},
 });
 ok(missing && !missing.html.includes(marker) && proseWords(missing.html) >= (missing.html.includes('id="town-facts"') ? 450 : 800), "missing close-q key keeps the floor");
+
+// Jack 2026-10-19: no rendered page may carry noindex.
+for (const page of [...pages, aberdeenFire, aberdeenEicr, came, rolec, rolecLocal, jobLocal, jobFar, jobFire, water].filter(Boolean)) {
+  ok(!/noindex/i.test(page.robots || "") && !/<meta[^>]+name="robots"[^>]*noindex/i.test(page.html), `no noindex on ${page.path}`);
+}
 
 console.log(fail === 0 ? "PASS" : `FAIL ${fail}`);
 process.exit(fail === 0 ? 0 : 1);
