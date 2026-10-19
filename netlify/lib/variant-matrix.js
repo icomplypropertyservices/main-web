@@ -226,7 +226,8 @@ function pageHtml(options) {
     spec, parsed, place, path, indexable, keyword,
   } = options;
   const site = spec.site || "https://icomplypropertyservices.co.uk";
-  const robots = indexable ? "index, follow" : "noindex, follow";
+  // Jack: every real page is indexable. Never emit noindex here.
+  const robots = "index, follow";
   const subject = parsed && parsed.ok ? parsed.stem.label : "Property visit";
   const service = parsed && parsed.service ? parsed.service : { slug: "building-maintenance", label: "Property services", image: "building-maintenance", gas: false };
   const audience = parsed && parsed.ok ? parsed.audience : { label: "clients", title: "Local", note: "The quote is price on application." };

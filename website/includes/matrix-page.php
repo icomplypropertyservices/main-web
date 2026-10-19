@@ -267,7 +267,7 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
     $canonical = url('/pages/keywords/' . $keywordSlug . '/' . $areaSlugVal);
     $robots = function_exists('icomplyRobotsMetaForPath')
         ? icomplyRobotsMetaForPath('/pages/keywords/' . $keywordSlug . '/' . $areaSlugVal)
-        : 'noindex, follow';
+        : 'index, follow';
 
     if (!function_exists('icomplyGmBriefHtml')) {
         require_once SITE_ROOT . '/includes/gm-enrichment.php';
