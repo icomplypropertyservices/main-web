@@ -118,9 +118,10 @@ $outside = icomplyNonGmMatrixRedirect('/pages/keywords/cctv-installation/aberdee
 if ($outside !== '/pages/keywords/cctv-installation') {
     $bad('aberdeen should leave the security ring, got ' . var_export($outside, true));
 }
-$otherFamily = icomplyNonGmMatrixRedirect('/pages/keywords/eicr/york');
+// Main now keeps every family on the dual 269 ring (York is local), so test a town outside it.
+$otherFamily = icomplyNonGmMatrixRedirect('/pages/keywords/eicr/birmingham');
 if ($otherFamily === null) {
-    $bad('non-security york page must stay on the GM redirect');
+    $bad('non-security birmingham page must stay on the local-ring redirect');
 }
 
 $paths = securityDualRingSitemapPaths();
