@@ -43,7 +43,7 @@ BRAND_SUFFIX = " | iComply Property Services"
 CTA = "Request a quote — POA."
 NAP = (
     "iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport, "
-    "Cheshire SK2 5DE. Call 07517806082 or email info@icomplypropertyservices.co.uk."
+    "Cheshire SK2 5DE. Call 07517806082 or email icomplypropertyservices@gmail.com."
 )
 
 TOKEN = {
