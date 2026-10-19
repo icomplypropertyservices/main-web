@@ -409,6 +409,16 @@ function icomplyPathIsIndexable(string $path): bool
     if ($path === '') {
         $path = '/';
     }
+    // P0-CTR-MONEY C1-C15 money pages are always index,follow (SEO brief 2026-10-19; Jack: never noindex).
+    if (!function_exists('icomplyMoneyCtrPages')) {
+        $moneyCtr = __DIR__ . '/includes/money-ctr.php';
+        if (is_file($moneyCtr)) {
+            require_once $moneyCtr;
+        }
+    }
+    if (function_exists('icomplyMoneyCtrPages') && isset(icomplyMoneyCtrPages()[$path])) {
+        return true;
+    }
     if (preg_match('#^/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+$#', $path)) {
         if ((function_exists('icomplyNationwide3lineIndexablePath')
                 && icomplyNationwide3lineIndexablePath($path))

@@ -13,6 +13,7 @@ import { breadcrumbHtml, isGmTown, isLocalTown, matrixRelatedHtml } from "../lib
 import { gmTownBlurb } from "../lib/gm-blurbs.js";
 import { p0KeepsTown, renderNationwideP0Town } from "../lib/nationwide-p0.js";
 import { withContactWidgets } from "../lib/contact-widgets.js";
+import { applyMoneyCtr } from "../lib/money-ctr.js";
 import { townFactsBlock } from "../lib/town-facts.js";
 import { depthBankParagraphs, thinFaqHtml, thinFaqs, thinImages, thinOgMeta, thinProseHtml } from "../lib/thin-quality-bar.js";
 import { townDepthBlock } from "../lib/town-depth.js";
@@ -902,7 +903,7 @@ export default async (request, context) => {
     else if (serviceMatch && isLocalTown(serviceMatch[2])) to = `/pages/areas/${serviceMatch[2]}`;
     return Response.redirect(new URL(to, url.origin).toString(), 301);
   }
-  return new Response(withContactWidgets(scrubMeta(rendered.html)), {
+  return new Response(applyMoneyCtr(path, withContactWidgets(scrubMeta(rendered.html))), {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",
