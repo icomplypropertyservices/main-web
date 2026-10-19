@@ -35,7 +35,7 @@ body {
 
 /* Make the arbitrary brand utilities used across PHP templates actually paint. */
 [class*="bg-[#0B1F3A]"],
-[class*="bg-[#061828]"] { background-color: #0B1F3A !important; }
+[class*="bg-[#0B1F3A]"] { background-color: #0B1F3A !important; }
 [class*="bg-[#ff6b00]"],
 [class*="bg-[#FF6B00]"] { background-color: #FF6B00 !important; color: #fff !important; }
 [class*="text-[#0B1F3A]"] { color: #0B1F3A !important; }
@@ -69,7 +69,7 @@ body.theme-dark .nav-panel-inner {
 
 /* Keep high-contrast white buttons in heroes */
 body.theme-dark a.bg-white[class*="text-[#0B1F3A]"],
-body.theme-dark a.bg-white[class*="text-[#061828]"] {
+body.theme-dark a.bg-white[class*="text-[#0B1F3A]"] {
   background-color: #fff !important;
   color: #0B1F3A !important;
 }

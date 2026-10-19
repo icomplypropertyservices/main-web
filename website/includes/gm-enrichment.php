@@ -410,7 +410,7 @@ function icomplyGmFaqHtml(string $heading, array $faqs, string $chrome): string
         if ($chrome === 'matrix') {
             $items .= '<details class="matrix-card"><summary>' . $h($q) . '</summary><p>' . $h($a) . '</p></details>';
         } else {
-            $items .= '<details class="bg-white border border-zinc-200 rounded-2xl p-4"><summary class="font-semibold text-[#061828] cursor-pointer">'
+            $items .= '<details class="bg-white border border-zinc-200 rounded-2xl p-4"><summary class="font-semibold text-[#0B1F3A] cursor-pointer">'
                 . $h($q) . '</summary><p class="mt-2 text-sm text-zinc-700 leading-relaxed">' . $h($a) . '</p></details>';
         }
     }
@@ -426,7 +426,7 @@ function icomplyGmFaqHtml(string $heading, array $faqs, string $chrome): string
         return $schema . '<section class="gm-faq" aria-label="Questions"><h2 class="text-2xl font-semibold">'
             . $h($heading) . '</h2><div class="mt-4 space-y-3">' . $items . '</div></section>';
     }
-    return $schema . '<section class="gm-faq mt-8" aria-label="Questions"><h2 class="text-2xl font-bold text-[#061828]">'
+    return $schema . '<section class="gm-faq mt-8" aria-label="Questions"><h2 class="text-2xl font-bold text-[#0B1F3A]">'
         . $h($heading) . '</h2><div class="mt-4 space-y-3">' . $items . '</div></section>';
 }
 
@@ -473,7 +473,7 @@ function icomplyGmLinksHtml(string $heading, array $links, string $chrome): stri
         if ($chrome === 'matrix') {
             $items .= '<a class="text-[#ff6b00] font-semibold" href="' . $h($href) . '">' . $h($label) . '</a>';
         } else {
-            $items .= '<a class="px-4 py-2 bg-white border border-zinc-200 rounded-full text-sm font-semibold text-[#061828] hover:border-[#ff6b00]" href="'
+            $items .= '<a class="px-4 py-2 bg-white border border-zinc-200 rounded-full text-sm font-semibold text-[#0B1F3A] hover:border-[#ff6b00]" href="'
                 . $h($href) . '">' . $h($label) . '</a>';
         }
     }
@@ -481,7 +481,7 @@ function icomplyGmLinksHtml(string $heading, array $links, string $chrome): stri
         return '<section><h2 class="text-2xl font-semibold">' . $h($heading) . '</h2><p class="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">'
             . $items . '</p></section>';
     }
-    return '<section class="mt-8"><h2 class="text-2xl font-bold text-[#061828]">' . $h($heading)
+    return '<section class="mt-8"><h2 class="text-2xl font-bold text-[#0B1F3A]">' . $h($heading)
         . '</h2><div class="mt-4 flex flex-wrap gap-2">' . $items . '</div></section>';
 }
 
@@ -705,7 +705,7 @@ function icomplyGmJobTownStripHtml(string $topic, array $towns, string $serviceS
         if ($kw !== '') {
             $bits[] = '<a class="text-[#ff6b00] font-semibold" href="' . $h($kw) . '">Local guide</a>';
         }
-        $cards .= '<article class="border border-zinc-200 rounded-2xl p-4 bg-white"><h3 class="font-semibold text-[#061828]">' . $h($topic . ' in ' . $town)
+        $cards .= '<article class="border border-zinc-200 rounded-2xl p-4 bg-white"><h3 class="font-semibold text-[#0B1F3A]">' . $h($topic . ' in ' . $town)
             . '</h3><p class="mt-2 text-sm text-zinc-700">Book ' . $h($town) . ' from the Stockport office. POA fixed quote after scope.</p><p class="mt-3 flex flex-wrap gap-3 text-sm">' . implode('', array_map(static function (string $bit): string {
                 return '<span>' . $bit . '</span>';
             }, $bits)) . '</p></article>';
@@ -717,7 +717,7 @@ function icomplyGmJobTownStripHtml(string $topic, array $towns, string $serviceS
         ? ' Gas work is carried out by Gas Safe registered engineers.'
         : '';
     return '<section class="max-w-7xl mx-auto px-6 py-16" aria-label="Greater Manchester towns"><div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Greater Manchester</div>'
-        . '<h2 class="text-3xl font-semibold tracking-tight mt-2 text-[#061828]">Town pages that are already live</h2>'
+        . '<h2 class="text-3xl font-semibold tracking-tight mt-2 text-[#0B1F3A]">Town pages that are already live</h2>'
         . '<p class="mt-3 max-w-3xl text-zinc-700">These links go to the area hub, the service page and the keyword guide for each town. Job pages stay on the hub above.'
         . $h($gasNote) . '</p>'
         . '<div class="mt-8 grid md:grid-cols-2 gap-4">' . $cards . '</div></section>';

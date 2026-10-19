@@ -70,7 +70,7 @@ $email = defined('EMAIL') ? EMAIL : 'icomplypropertyservices@gmail.com';
 
 require SITE_ROOT . '/includes/header.php';
 ?>
-<section class="bg-[#061828] text-white">
+<section class="bg-[#0B1F3A] text-white">
     <div class="max-w-5xl mx-auto px-6 py-14">
         <nav class="text-xs text-white/60 mb-4" aria-label="Breadcrumb">
             <a class="hover:text-white" href="<?= $h(rtrim(SITE_URL, '/') . '/') ?>">Home</a>
@@ -86,14 +86,14 @@ require SITE_ROOT . '/includes/header.php';
 
     <?php foreach ($groups as $group => $jobs): ?>
     <section class="related-links mt-12" aria-label="<?= $h($group) ?>">
-        <h2 class="text-2xl font-semibold text-[#061828]"><?= $h($group) ?></h2>
+        <h2 class="text-2xl font-semibold text-[#0B1F3A]"><?= $h($group) ?></h2>
         <ul class="mt-6 grid sm:grid-cols-2 gap-3">
             <?php foreach ($jobs as $job):
                 $slug = $job['slug'];
                 $name = ucwords(str_replace('-', ' ', $slug));
                 ?>
             <li class="border border-zinc-200 rounded-2xl p-4 bg-white">
-                <a class="font-semibold text-[#061828] hover:text-[#ff6b00]" href="<?= $h(url('/pages/jobs/' . $slug)) ?>"><?= $h($name) ?></a>
+                <a class="font-semibold text-[#0B1F3A] hover:text-[#ff6b00]" href="<?= $h(url('/pages/jobs/' . $slug)) ?>"><?= $h($name) ?></a>
                 <p class="mt-1 text-sm text-zinc-600"><?= $h($job['blurb']) ?></p>
                 <p class="mt-2 text-sm"><a class="text-[#ff6b00] font-medium" href="<?= $h(url('/pages/jobs/' . $slug . '/stockport')) ?>"><?= $h($name) ?> in Stockport</a></p>
             </li>
@@ -115,14 +115,14 @@ require SITE_ROOT . '/includes/header.php';
     }
     ?>
     <section class="mt-12" aria-label="Nationwide job types">
-        <h2 class="text-2xl font-semibold text-[#061828]">Nationwide AOV, barrier and fire job types</h2>
+        <h2 class="text-2xl font-semibold text-[#0B1F3A]">Nationwide AOV, barrier and fire job types</h2>
         <p class="mt-3 text-zinc-700 leading-relaxed max-w-3xl">These three lines are arranged UK-wide from our Stockport base at 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Price on application after survey. Where a job already has a guide, this index links to that one page.</p>
         <?php foreach ($nationwideGroups as $lineKey => $lineLabel): ?>
-        <h3 class="mt-8 text-xl font-semibold text-[#061828]"><?= $h($lineLabel) ?></h3>
+        <h3 class="mt-8 text-xl font-semibold text-[#0B1F3A]"><?= $h($lineLabel) ?></h3>
         <ul class="mt-4 grid sm:grid-cols-2 gap-3">
             <?php foreach ($nationwideItems[$lineKey] ?? [] as $item): ?>
             <li class="border border-zinc-200 rounded-2xl p-4 bg-white">
-                <a class="font-semibold text-[#061828] hover:text-[#ff6b00]" href="<?= $h(url($item['href'])) ?>"><?= $h($item['label']) ?></a>
+                <a class="font-semibold text-[#0B1F3A] hover:text-[#ff6b00]" href="<?= $h(url($item['href'])) ?>"><?= $h($item['label']) ?></a>
                 <p class="mt-1 text-sm text-zinc-600"><?= $h($item['card']) ?></p>
             </li>
             <?php endforeach; ?>
@@ -131,11 +131,11 @@ require SITE_ROOT . '/includes/header.php';
     </section>
 
     <section class="mt-12" aria-label="Questions">
-        <h2 class="text-2xl font-semibold text-[#061828]">Questions</h2>
+        <h2 class="text-2xl font-semibold text-[#0B1F3A]">Questions</h2>
         <div class="mt-6 space-y-4">
             <?php foreach ($faqs as [$question, $answer]): ?>
             <details class="border border-zinc-200 rounded-2xl p-4 bg-white">
-                <summary class="font-semibold text-[#061828] cursor-pointer"><?= $h($question) ?></summary>
+                <summary class="font-semibold text-[#0B1F3A] cursor-pointer"><?= $h($question) ?></summary>
                 <p class="mt-2 text-zinc-700"><?= $h($answer) ?></p>
             </details>
             <?php endforeach; ?>
@@ -143,7 +143,7 @@ require SITE_ROOT . '/includes/header.php';
     </section>
 
     <section class="mt-12 bg-zinc-50 border border-zinc-200 rounded-2xl p-6">
-        <h2 class="text-2xl font-semibold text-[#061828]">Request a POA quote</h2>
+        <h2 class="text-2xl font-semibold text-[#0B1F3A]">Request a POA quote</h2>
         <p class="mt-3 text-zinc-700"><a class="text-[#ff6b00] font-semibold" href="tel:<?= $h(preg_replace('/\s+/', '', $phone)) ?>"><?= $h($phone) ?></a> · <a class="text-[#ff6b00] font-semibold" href="mailto:<?= $h($email) ?>"><?= $h($email) ?></a> · <a class="text-[#ff6b00] font-semibold" href="<?= $h(url('/contact')) ?>">https://icomplypropertyservices.co.uk/contact</a></p>
         <p class="mt-2 text-zinc-700">Quote line: “POA fixed quote after scope”.</p>
     </section>

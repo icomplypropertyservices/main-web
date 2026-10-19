@@ -211,7 +211,7 @@ function keywordTemplatePlaceholders(
         $q = htmlspecialchars((string)$faq[0], ENT_QUOTES, 'UTF-8');
         $a = htmlspecialchars((string)$faq[1], ENT_QUOTES, 'UTF-8');
         $faqHtml .= '<details class="bg-white border-2 border-zinc-300 rounded-2xl p-5 group">'
-            . '<summary class="font-bold text-[#061828] cursor-pointer list-none flex justify-between gap-3">'
+            . '<summary class="font-bold text-[#0B1F3A] cursor-pointer list-none flex justify-between gap-3">'
             . $q . '<span class="text-[#ff6b00] text-xl leading-none">+</span></summary>'
             . '<p class="mt-3 text-sm text-zinc-900 leading-relaxed font-medium">' . $a . '</p></details>';
     }
