@@ -218,7 +218,7 @@ export function renderNationwideP0Town(keywordSlug, townSlug) {
   const popLine = Number(place.population) > 0 ? ` Published population on this town list is ${Number(place.population).toLocaleString("en-GB")}.` : "";
   const where = `${place.county || "the UK"}, ${place.region || "the UK"}, ${place.nation || "the UK"}`;
   const local = [
-    `${townName} is in ${where}.${popLine} ${name} in ${townName} is quoted from ${NAP}. The quote is price on application after the scope is written down. Travel from the Stockport workshop is part of that quote, not a hidden extra.`,
+    `Our ${townName} page covers a town in ${where}.${popLine} ${name} in ${townName} is quoted from ${NAP}. The quote is price on application after the scope is written down. Travel from the Stockport workshop is part of that quote, not a hidden extra.`,
     `${name} for buildings in ${townName} (${where}) is arranged from our workshop at ${NAP}.${popLine} Nothing is priced until the scope is written; the figure is then price on application, with travel included rather than added later.`,
     `This page is about ${name.toLowerCase()} in ${townName}, ${where}.${popLine} We work from ${NAP}, and the quote for ${townName} is price on application once the building, the access and the work are written down. Travel is inside that quote.`,
   ][p0Seed(`local|${townSlug}`, keywordSlug) % 3];
