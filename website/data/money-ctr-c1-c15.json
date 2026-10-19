@@ -1,5 +1,5 @@
 {
- "note": "P0-CTR-MONEY C1-C15 (SEO brief /workspace/icomply-ops/seo/MONEY-PAGE-CTR-BRIEFS-2026-10-19.md). Titles/metas are the brief's exact strings. Links are targets verified 200 + index,follow at build time.",
+ "note": "P0-CTR-MONEY C1-C15 (SEO brief /workspace/icomply-ops/seo/MONEY-PAGE-CTR-BRIEFS-2026-10-19.md). Titles/metas are the brief's exact strings. Links are targets verified 200 + index,follow at build time. Same/Next-Day restored in titles that carried it on main (C2, C3, C12) per Jack 19 Oct / SEO-MANAGER-RULES §7, which overrides the brief strings.",
  "pages": {
   "/pages/keywords/emergency-lighting-installation/rochdale": {
    "brief": "C1",
@@ -442,7 +442,7 @@
   "/pages/keywords/eicr/waddington": {
    "brief": "C2",
    "kind": "xtown",
-   "title": "EICR Waddington from £160 | Call 07517 806082",
+   "title": "EICR Waddington from £160 | Next-Day | Call 07517 806082",
    "meta": "EICR in Waddington from £160 for landlords and managers. Fixed written quote, certificates emailed. From Stockport. Call 07517 806082.",
    "h2": "Booking an EICR for a property in Waddington",
    "paras": [
@@ -903,12 +903,13 @@
      "/pages/keywords/electrical-inspection-and-testing/bacup",
      "Electrical Inspection and Testing in Bacup"
     ]
-   ]
+   ],
+   "sameNextDay": true
   },
   "/pages/keywords/eicr-testing/waddington": {
    "brief": "C3",
    "kind": "xtown",
-   "title": "EICR Testing Waddington from £160 | 07517 806082",
+   "title": "EICR Testing Waddington from £160 | Next-Day | 07517 806082",
    "meta": "EICR testing in Waddington from £160. Written quote before work, certificates emailed. From Stockport. Call 07517 806082.",
    "h2": "How EICR testing is carried out in Waddington",
    "paras": [
@@ -1365,7 +1366,8 @@
      "/pages/keywords/electrical-inspection-and-testing/bacup",
      "Electrical Inspection and Testing in Bacup"
     ]
-   ]
+   ],
+   "sameNextDay": true
   },
   "/pages/keywords/eicr-certificate/appley-bridge": {
    "brief": "C5",
@@ -1895,7 +1897,7 @@
     ],
     [
      "/pages/services/fire-risk-assessments",
-     "Fire risk assessment £350"
+     "Fire risk assessments (POA)"
     ],
     [
      "/pages/keywords/emergency-lighting-installation/burscough",
@@ -2289,7 +2291,7 @@
     ],
     [
      "/pages/services/fire-risk-assessments",
-     "Fire risk assessment £350"
+     "Fire risk assessments (POA)"
     ],
     [
      "/pages/fire-risk-assessment",
@@ -2516,7 +2518,7 @@
   "/pages/keywords/eicr/burscough": {
    "brief": "C12",
    "kind": "xtown",
-   "title": "EICR Burscough from £160 | Call 07517 806082",
+   "title": "EICR Burscough from £160 | Next-Day | Call 07517 806082",
    "meta": "EICR in Burscough from £160 for landlords and commercial tenants. Fixed written quote, certificates emailed. Call 07517 806082.",
    "h2": "EICRs for rented homes and units in Burscough",
    "paras": [
@@ -2977,7 +2979,8 @@
      "/pages/keywords/electrical-inspection-and-testing/ashton-in-makerfield",
      "Electrical Inspection and Testing in Ashton in Makerfield"
     ]
-   ]
+   ],
+   "sameNextDay": true
   },
   "/pages/keywords/emergency-lighting-annual-test/warrington": {
    "brief": "C13",
@@ -3582,7 +3585,7 @@
    "links": [
     [
      "/pages/services/fire-risk-assessments",
-     "Fire risk assessment £350"
+     "Fire risk assessments (POA)"
     ]
    ]
   },

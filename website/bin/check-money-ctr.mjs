@@ -3,7 +3,10 @@
  * P0-CTR-MONEY gate (SEO brief 2026-10-19, C1-C15).
  * Usage: node website/bin/check-money-ctr.mjs [dist]
  * Asserts for every page in website/data/money-ctr-c1-c15.json:
- *  - exact brief title (<=60) and meta (<=155), also og:title/og:description
+ *  - exact title (<=60) and meta (<=155), also og/twitter title+description.
+ *    Titles are the brief strings, except Same/Next-Day is kept where the page
+ *    carried it on main (Jack 19 Oct; flagged sameNextDay in the data file).
+ *  - no "£" in related-link labels other than EICR "from £160"
  *  - robots index,follow and absolute https self-canonical
  *  - listed in the published sitemap (dist/sitemap*.xml)
  *  - x town pages: >=800 prose words and >=80 unique internal links
@@ -103,6 +106,12 @@ for (const [p, page] of Object.entries(doc.pages || {})) {
   if (meta !== page.meta) fail(p, `meta "${meta}" != brief`);
   if (ogt !== null && ogt !== page.title) fail(p, "og:title not brief title");
   if (ogd !== null && ogd !== page.meta) fail(p, "og:description not brief meta");
+  const twt = grab(html, /<meta\s+name="twitter:title"\s+content="([^"]*)"/i);
+  const twd = grab(html, /<meta\s+name="twitter:description"\s+content="([^"]*)"/i);
+  if (twt !== null && twt !== page.title) fail(p, "twitter:title not page title");
+  if (twd !== null && twd !== page.meta) fail(p, "twitter:description not page meta");
+  if (page.sameNextDay && !/Next-Day/.test(title || "")) fail(p, "Same/Next-Day missing from title (Jack 19 Oct)");
+  for (const [, label] of page.links || []) if (/£(?!160)/.test(label)) fail(p, `price in link label "${label}"`);
   if (!/^index,\s*follow/i.test(robots)) fail(p, `robots "${robots}"`);
   if (canonical !== `${SITE}${p}`) fail(p, `canonical "${canonical}"`);
   const n = locs.get(`${SITE}${p}`) || 0;
