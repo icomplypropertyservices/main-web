@@ -91,8 +91,8 @@ function wave1QualityHubs(): array
         ],
         'fire-risk-assessment' => [
             'navLabel' => 'Fire risk assessment',
-            'pageTitle' => 'Fire Risk Assessment | UK Mainland | £350',
-            'metaDesc' => 'Fire risk assessments across UK mainland. Guide price £350 for a standard FRA, with a written action plan. Stockport-based. Larger premises confirmed in writing.',
+            'pageTitle' => 'Fire Risk Assessment From £350 | 6-Bed HMO NW | iComply',
+            'metaDesc' => 'From £350 for a typical 6-bed HMO NW, other properties POA. Fire risk assessments across UK mainland with a written action plan. Stockport-based.',
             'metaKeywords' => 'fire risk assessment, FRA £350, UK mainland fire risk assessment, landlord FRA, commercial FRA',
             'ogImage' => '/assets/images/services/fire-risk-assessments.jpg',
             'kicker' => 'Quality hub · Fire · UK mainland',
