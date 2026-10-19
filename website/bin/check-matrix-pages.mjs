@@ -313,5 +313,10 @@ const missing = renderTownPage({
 });
 ok(missing && !missing.html.includes(marker) && proseWords(missing.html) >= (missing.html.includes('id="town-facts"') ? 450 : 800), "missing close-q key keeps the floor");
 
+// Jack 2026-10-19: no rendered page may carry noindex.
+for (const page of [...pages, aberdeenFire, aberdeenEicr, came, rolec, rolecLocal, jobLocal, jobFar, jobFire, water].filter(Boolean)) {
+  ok(!/noindex/i.test(page.robots || "") && !/<meta[^>]+name="robots"[^>]*noindex/i.test(page.html), `no noindex on ${page.path}`);
+}
+
 console.log(fail === 0 ? "PASS" : `FAIL ${fail}`);
 process.exit(fail === 0 ? 0 : 1);

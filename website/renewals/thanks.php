@@ -6,7 +6,7 @@ require_once __DIR__ . '/../config.php';
 
 $pageTitle = 'Renewal dates saved — thank you | iComply';
 $metaDesc = 'Thanks for logging your certificate and service renewal dates with iComply. We will email a reminder before each one is due.';
-$metaRobots = 'noindex, follow';
+$metaRobots = 'index, follow'; // Jack 2026-10-19: no page is ever noindexed
 $canonicalUrl = url('/renewals/thanks.php');
 $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
 

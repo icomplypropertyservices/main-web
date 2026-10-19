@@ -6,7 +6,9 @@
  * sitemap written at export, not in this compact urlset. Manufacturer×town
  * stays on the Greater Manchester core. Shared area-town templates that are
  * outside the allowlist stay out.
- * Broken or unknown URLs stay out.
+ * Broken or unknown URLs stay out. Nothing is left out for being noindex:
+ * every real page is index,follow (Jack 2026-10-19), so the only filters
+ * here are 301/404/410 URLs and duplicates.
  * Never lists /shop/sitemap.xml or /products/sitemap.xml (separate sites; 404 here).
  */
 declare(strict_types=1);
@@ -23,8 +25,10 @@ function icomplySitemapBannedPaths(): array
         '/privacy-policy/' => true,
         '/terms-and-conditions' => true,
         '/terms-and-conditions/' => true,
-        '/thank-you' => true,
-        '/renewals/thanks' => true,
+        // Trailing-slash forms 301/404. The bare /thank-you, /renewals/thanks
+        // and the two Netlify form-registration .html files answer 200 and
+        // are index,follow (Jack 2026-10-19), so they are listed below.
+        '/thank-you/' => true,
         '/renewals/thanks/' => true,
         '/404' => true,
         '/404/' => true,
@@ -127,21 +131,15 @@ function icomplySitemapEntries(): array
         if (icomplySitemapOmitsNonGm($path)) {
             return;
         }
-        static $redirectExclude = null;
-        if ($redirectExclude === null) {
-            $file = dirname(__DIR__) . '/data/sitemap-redirect-exclude.txt';
-            $redirectExclude = is_file($file) ? array_flip(array_filter(array_map('trim', file($file) ?: []))) : [];
-        }
-        // Paths that 301 elsewhere or are noindex must not be listed (GSC "Page with redirect" / "Submitted URL marked noindex").
-        if (isset($redirectExclude[$path])) {
-            return;
-        }
-        // Town-stuffed keyword hubs (…-burnley) stay out. Real town paths
-        // (/pages/areas/burnley, /pages/keywords/{kw}/burnley) do not match.
-        if (preg_match('#-(?:burnley|liverpool|preston|chester|warrington|blackpool)$#', $path)
-            && !icomplyNationwideTownPath($path)) {
-            return;
-        }
+        // Jack 2026-10-19: no page is ever noindexed or pruned from the sitemap.
+        // The old data/sitemap-redirect-exclude.txt list (8,498 lines, mostly
+        // fire-family and AOV town pages that answer 200 index,follow) is gone.
+        // Only real 301/404/410 URLs stay out: exact 301s are dropped from
+        // dist/_redirects at publish (icomplySitemapPathUnfit) and the
+        // outside-ring matrix 301s by icomplySitemapOmitsNonGm above.
+        // Keyword hubs such as /pages/keywords/maglock-burnley answer 200,
+        // index,follow and self-canonical, so they are listed like any hub
+        // (Jack 2026-10-19: no prune list). Exact 301s still drop at publish.
         if (isset($seen[$path]) || isset($banned[$path])) {
             return;
         }
@@ -268,6 +266,11 @@ function icomplySitemapEntries(): array
         ['/shop/security/', '0.75', 'shop/security/index.html'],
         ['/shop/gas/', '0.75', 'shop/gas/index.html'],
         ['/products', '0.8', 'pages/products.php'],
+        // 200 utility pages. Listed because nothing is noindexed or pruned.
+        ['/thank-you', '0.2', 'thank-you.php'],
+        ['/renewals/thanks', '0.2', 'renewals/thanks.php'],
+        ['/lead-popup-form.html', '0.1', 'lead-popup-form.html'],
+        ['/subcontractor-onboarding-form.html', '0.1', 'subcontractor-onboarding-form.html'],
     ];
     foreach ($static as [$path, $pri, $file]) {
         if ($path === '/' || $exists($file) || $exists(preg_replace('#\.php$#', '/index.php', $file) ?? $file)) {
@@ -722,7 +725,8 @@ function icomplyDistHasPage(string $dist, string $path): bool
             return true;
         }
     }
-    return false;
+    // Canonical .html URLs (Netlify form-registration pages) are files as-is.
+    return str_ends_with($rel, '.html') && is_file($dist . '/' . $rel);
 }
 
 /**

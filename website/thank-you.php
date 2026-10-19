@@ -13,7 +13,7 @@ if ($ref === '') {
 $pageTitle = 'Thank You — Request Received';
 $metaDesc = 'Thanks for contacting iComply Property Services. We will respond shortly. Prefer faster help? Call or WhatsApp us now.';
 $metaKeywords = 'iComply contact, property compliance quote North West';
-$metaRobots = 'noindex, follow'; // post-submit page — avoid thin/duplicate indexing
+$metaRobots = 'index, follow'; // Jack 2026-10-19: no page is ever noindexed
 $canonicalUrl = url('/thank-you.php');
 
 $services = getServices();
