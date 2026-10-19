@@ -162,7 +162,7 @@ function acnQuoteForm(string $place): void
         <div class="max-w-3xl mx-auto px-6 py-14">
             <h2 class="text-3xl font-bold text-center">Quote for access control<?= $place !== '' ? ' in ' . htmlspecialchars($place, ENT_QUOTES, 'UTF-8') : '' ?></h2>
             <p class="mt-3 text-center text-white/90">Price on application after the doors and the controller are known. Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
-            <form action="<?= url('/contact') ?>" method="POST" class="mt-8 bg-white text-zinc-900 border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4">
+            <form <?= ICOMPLY_QUOTE_FORM_ATTRS ?> class="mt-8 bg-white text-zinc-900 border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4"><?= icomplyQuoteFormHidden() ?>
                 <input type="hidden" name="csrf" value="<?= htmlspecialchars((string)($_SESSION['csrf'] ?? ''), ENT_QUOTES, 'UTF-8') ?>">
                 <input type="hidden" name="service" value="Access Control">
                 <div class="grid md:grid-cols-2 gap-4">

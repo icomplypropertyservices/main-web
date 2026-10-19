@@ -236,7 +236,7 @@ echo '</section>';
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2"><?= hmoJobH((string)$page['ctaTitle']) ?></h2>
             <p class="mt-3 text-zinc-600"><?= hmoJobRich((string)$page['ctaText']) ?></p>
         </div>
-        <form action="<?= hmoJobH(url('/contact.php')) ?>" method="post" class="bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 space-y-4 shadow-sm">
+        <form <?= ICOMPLY_QUOTE_FORM_ATTRS ?> class="bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 space-y-4 shadow-sm"><?= icomplyQuoteFormHidden() ?>
             <input type="hidden" name="csrf" value="<?= hmoJobH((string)$_SESSION['csrf']) ?>">
             <input type="hidden" name="gclid" value="<?= hmoJobH((string)($_GET['gclid'] ?? '')) ?>">
             <input type="hidden" name="fbclid" value="<?= hmoJobH((string)($_GET['fbclid'] ?? '')) ?>">

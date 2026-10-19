@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <title>Renewals form (Netlify registration)</title>
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://icomplypropertyservices.co.uk/renewals-form.html">
+</head>
+<body>
+  <!-- Netlify parses .html at deploy. /renewals is published as .php, so this file registers the renewals form. -->
+  <form name="renewals" method="POST" action="/renewals/thanks" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="renewals">
+    <p hidden><label>Leave this field blank <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+    <input type="text" name="name">
+    <input type="text" name="company">
+    <input type="text" name="email">
+    <input type="text" name="phone">
+    <input type="text" name="property_address[]">
+    <input type="text" name="property_postcode[]">
+    <input type="text" name="eicr_date[]">
+    <input type="text" name="gas_cp12_date[]">
+    <input type="text" name="fra_date[]">
+    <input type="text" name="fire_alarm_date[]">
+    <input type="text" name="emergency_lighting_date[]">
+    <input type="text" name="pat_date[]">
+    <input type="text" name="legionella_date[]">
+    <input type="text" name="aov_date[]">
+    <input type="text" name="barrier_date[]">
+    <input type="text" name="access_cctv_date[]">
+    <input type="text" name="other_notes[]">
+    <input type="text" name="reminder_days">
+    <input type="text" name="gdpr_consent">
+  </form>
+</body>
+</html>

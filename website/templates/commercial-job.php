@@ -232,7 +232,7 @@ require SITE_ROOT . '/includes/header.php';
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mt-2">Quote <?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></h2>
             <p class="mt-3 text-white/80">Tell us the building, the kit you already have, and whether this is a one-off or a portfolio round. We price after that scope — not from a national grid.</p>
         </div>
-        <form action="<?= url('/contact.php') ?>" method="POST" class="bg-white text-black border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm">
+        <form <?= ICOMPLY_QUOTE_FORM_ATTRS ?> class="bg-white text-black border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm"><?= icomplyQuoteFormHidden() ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <input type="hidden" name="service" value="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">

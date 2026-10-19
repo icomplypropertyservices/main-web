@@ -271,6 +271,8 @@ function icomplySitemapEntries(): array
         ['/renewals/thanks', '0.2', 'renewals/thanks.php'],
         ['/lead-popup-form.html', '0.1', 'lead-popup-form.html'],
         ['/subcontractor-onboarding-form.html', '0.1', 'subcontractor-onboarding-form.html'],
+        ['/quote-form.html', '0.1', 'quote-form.html'],
+        ['/renewals-form.html', '0.1', 'renewals-form.html'],
     ];
     foreach ($static as [$path, $pri, $file]) {
         if ($path === '/' || $exists($file) || $exists(preg_replace('#\.php$#', '/index.php', $file) ?? $file)) {
