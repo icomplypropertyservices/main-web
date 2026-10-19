@@ -4,7 +4,10 @@ unique per town (worst-pair difflib <= 0.70 within each keyword/job/service).
 
 Prose = text of p, h1-h4, summary, dt, dd outside header/nav/footer/script/
 style (the SEO audit method). Similarity = difflib.SequenceMatcher ratio on
-the prose word sequence. Also fails any page that renders noindex (#135).
+the prose word sequence. Also fails any page that renders noindex (#135),
+and any doubled word or doubled 1-4 word phrase (for example a town name
+repeated across a heading join: "...in Heywood Heywood asks...") in the
+prose as the audit joins it (elements joined with a space).
 usage: python3 website/bin/check-town-words.py /tmp/town-sample
 """
 import collections, difflib, itertools, json, os, re, sys
@@ -14,6 +17,12 @@ MIN_WORDS = 800
 MAX_SIM = 0.70
 CHROME = {"header", "nav", "footer", "noscript", "svg", "iframe"}
 PROSE = {"p", "h1", "h2", "h3", "h4", "summary", "dt", "dd"}
+# Same word or same 1-4 word phrase twice in a row, case-insensitive. Numbers excluded.
+DOUBLED = re.compile(r"\b((?:[A-Za-z][\w'’-]*\s+){0,3}[A-Za-z][\w'’-]*)\s+\1\b", re.I)
+
+
+def doubled(text):
+    return [m.group(0) for m in DOUBLED.finditer(text)]
 
 
 class Prose(HTMLParser):
@@ -66,11 +75,17 @@ def main(out):
             fail += 1
         p = Prose()
         p.feed(html)
-        words = " ".join(p.parts).split()
-        if len(words) < MIN_WORDS:
+        joined = " ".join(p.parts)
+        words = joined.split()
+        dups = doubled(joined)
+        if dups:
+            print(f"FAIL doubled {dups[:3]} {r['file']}")
+            fail += 1
+        if r.get("words", True) and len(words) < MIN_WORDS:
             print(f"FAIL {len(words)} words < {MIN_WORDS} {r['file']}")
             fail += 1
-        groups[(r["kind"], r["slug"])].append((r["town"], words))
+        if not r.get("wide"):
+            groups[(r["kind"], r["slug"])].append((r["town"], words))
     for (kind, slug), items in groups.items():
         worst, pair = 0.0, None
         for (ta, a), (tb, b) in itertools.combinations(items, 2):
@@ -82,7 +97,7 @@ def main(out):
         if worst > MAX_SIM:
             fail += 1
         print(f"{status} {kind} {slug}: {len(items)} towns, min {wmin} words, worst-pair {worst:.2f} {pair}")
-    print(f"check-town-words: {fail} failure(s)" if fail else f"check-town-words: OK ({len(rows)} pages; >= {MIN_WORDS} words, worst-pair <= {MAX_SIM})")
+    print(f"check-town-words: {fail} failure(s)" if fail else f"check-town-words: OK ({len(rows)} pages; >= {MIN_WORDS} words, worst-pair <= {MAX_SIM}, no doubled words)")
     return 1 if fail else 0
 
 
