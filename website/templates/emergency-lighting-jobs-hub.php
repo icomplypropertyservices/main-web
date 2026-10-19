@@ -42,7 +42,7 @@ require SITE_ROOT . '/includes/header.php';
     <div class="max-w-3xl mx-auto px-6 py-14">
         <h2 class="text-3xl font-bold text-center">Enquire for a POA quote</h2>
         <p class="mt-2 text-center text-white/90">Share the site, how many fittings, and whether you need a test, an install or a contract.</p>
-        <form action="<?= htmlspecialchars(url('/contact.php'), ENT_QUOTES, 'UTF-8') ?>" method="POST" class="mt-8 bg-white text-zinc-900 border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4">
+        <form <?= ICOMPLY_QUOTE_FORM_ATTRS ?> class="mt-8 bg-white text-zinc-900 border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4"><?= icomplyQuoteFormHidden() ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($EL_CSRF, ENT_QUOTES, 'UTF-8') ?>">
             <input type="hidden" name="service" value="Emergency lighting">
             <div class="grid md:grid-cols-2 gap-4">

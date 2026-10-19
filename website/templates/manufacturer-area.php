@@ -155,7 +155,7 @@ require SITE_ROOT . '/includes/header.php';
     <div class="max-w-3xl mx-auto px-6 py-14">
         <h2 class="text-3xl font-semibold">Quote <?= manufacturerH($brand) ?> in <?= manufacturerH($areaName) ?></h2>
         <p class="mt-3 text-white/75">Installation is POA. If you used the wizard, the choices are copied into the message.</p>
-        <form class="mt-8 space-y-4" method="post" action="<?= url('/contact') ?>" data-mfr-quote>
+        <form <?= ICOMPLY_QUOTE_FORM_ATTRS ?> class="mt-8 space-y-4" data-mfr-quote><?= icomplyQuoteFormHidden() ?>
             <input type="hidden" name="csrf" value="<?= manufacturerH((string)($_SESSION['csrf'] ?? '')) ?>">
             <div class="grid md:grid-cols-2 gap-4">
                 <input class="w-full rounded-2xl px-4 py-3 text-black" name="name" required maxlength="120" placeholder="Name" aria-label="Name">
