@@ -273,7 +273,7 @@ def fit_meta(text: str) -> str:
     pads = [
         " Scope is written first.",
         " No catalogue price.",
-        " Call 07517806082.",
+        " Call 07517 806082.",
         " Scope first.",
         " POA only.",
     ]
@@ -379,12 +379,12 @@ def essay(slug: str, name: str, place: str, county: str, region: str, pop: str, 
             f"{name} is arranged from the Stockport workshop for {place}. "
             f"The enquiry this page is written for is {site}. {angle} "
             f"{standard} The quote is price on application after the scope is written down. "
-            f"There is no catalogue fee and no day rate on this page."
+            f""
         ),
         (
-            f"People searching {name} usually need a survey, not a brochure. "
+            f"Most {name} jobs start with a quick survey. "
             f"Send the postcode, the building use and who keeps the logbook. "
-            f"iComply confirms what will be looked at and what is outside the visit. "
+            f"We confirm exactly what is included before we book. "
             f"Travel to {place} is part of that quote. The workshop is about {miles} from the pin used for this town, "
             f"at {NAP}. Nearby places on the same town list include {near}."
         ),
@@ -402,25 +402,25 @@ def essay(slug: str, name: str, place: str, county: str, region: str, pop: str, 
             f"and a return visit once parts are known are different instructions. Each one is quoted on application."
         ),
         (
-            f"On site, the visit for {name} starts with what is already installed. "
-            f"Labels, zones, battery dates, previous certificates and obvious damage are noted before any new work is promised. "
-            f"If the existing equipment can be kept, the scope says so. If it cannot, the reason is written in plain language. "
-            f"iComply does not claim BAFE or NSI badges. Competent people carry out the visit for {parent}. "
-            f"Where a specialist ticket is required, that ticket is named in the quote. The customer wording on this page does not call that arrangement a hidden extra workforce."
+            f"On site, we start by checking what is already installed. "
+            f"We note labels, previous certificates and any damage before recommending new work. "
+            f"If existing equipment can stay, we say so. If it needs replacing, we explain why in plain English. "
+            f" Experienced engineers carry out the {parent} work. "
+            f"Where a specialist ticket is required, that ticket is named in the quote."
         ),
         (
             f"Paperwork is part of {name}, not an optional extra invented after the invoice. "
             f"The dutyholder should be able to file the note, the test sheet or the commissioning record with the building. "
             f"Zone charts, device lists and user notes are updated when the work changed them. "
-            f"A missing historical certificate is reported as missing. This page does not offer to paper over an unfinished job. "
+            f"A missing historical certificate is reported as missing. "
             f"For {site}, the record names the limitation: access, a locked riser, a vent that could not be reached, or a lane that could not be measured."
         ),
         (
-            f"Pricing stays on application because {name} changes with access, parts and the standard that applies. "
-            f"A single stair is not the same visit as a multi-core block. A straight boom is not the same visit as a low-headroom arm. "
-            f"A BS 5839 category review is not the same visit as a domestic alarm check. "
-            f"Publishing one figure would be a guess. The written quote names the {parent} scope before a date is fixed. "
-            f"Call 07517806082 or use the contact form. Say whether the building is occupied."
+            f"Every quote is written for your building, because access, parts and the relevant standard all change the job. "
+            f" "
+            f" "
+            f" The written quote sets out the full {parent} scope before we fix a date. "
+            f"Call 07517 806082, WhatsApp us or use the contact form. Say whether the building is occupied."
         ),
         (
             f"Coverage for this keyword is the UK mainland TOP 5000 towns by population, England, Scotland and Wales. "
@@ -438,7 +438,7 @@ def essay(slug: str, name: str, place: str, county: str, region: str, pop: str, 
         ),
         (
             f"What {name} does not include is as important as what it does. "
-            f"It does not publish a fee. It does not include a fake accreditation. "
+            f" It does not include a fake accreditation. "
             f"It does not include Northern Ireland or the islands excluded from the mainland town build. "
             f"It does not include air-handling plant that sits under a different service. "
             f"It does not include place-locked barrier pages that were written only for one North West town. "
@@ -448,7 +448,7 @@ def essay(slug: str, name: str, place: str, county: str, region: str, pop: str, 
             f"A practical sequence for {site} runs like this. "
             f"First the address in {place} and a short description of the fault or the project. "
             f"Second a written scope for {name} that a dutyholder can accept or question. "
-            f"Third the visit, with access agreed. Fourth the record, left with the instructing client. "
+            f"Third the visit, with access agreed. Fourth the record, sent to you. "
             f"If parts have to be ordered, the fourth step waits. The page does not pretend a part is on the van when it has not been identified. "
             f"If the survey shows the work is larger than the first note, the quote is revised before anyone starts. "
             f"That revision is still price on application. It is not a surprise catalogue line."
@@ -475,7 +475,7 @@ def essay(slug: str, name: str, place: str, county: str, region: str, pop: str, 
             f"Photos do not replace the survey. They stop the first visit being only a discovery that could have been an email. "
             f"Tell us about asbestos notices, fragile roofs, night-only access and any fire strategy you already have. "
             f"iComply will say if another service has to be quoted beside {parent}. "
-            f"Linked guides on this page are there so you can open the sibling keyword without searching again. "
+            f"Related guides are linked below. "
             f"The contact path is the form, the phone number 07517806082, or WhatsApp from the hub. "
             f"Every one of those paths is asked to keep the reply as price on application."
         ),
@@ -533,7 +533,7 @@ def essay(slug: str, name: str, place: str, county: str, region: str, pop: str, 
         f"Use {name} when the instruction matches {parent}. "
         f"If it does not, ask and the reply will point to the service that does. "
         f"The preferred address when a location is printed is {NAP}. "
-        f"Phone 07517806082. The quote remains price on application."
+        f"Phone 07517 806082. The quote remains price on application."
     )
     return "\n\n".join(paras)
 
@@ -586,21 +586,21 @@ def build_keywords(slugs: list[str]) -> dict:
                 f"Written scope for {name} before anyone attends",
                 "Price on application — no catalogue fee",
                 STANDARDS[service_of(slug)].split(". ")[0] + ".",
-                f"Record left with the instructing client. Workshop: {NAP}.",
+                f"Record sent to you. Workshop: {NAP}.",
             ],
             "faq": [
                 [
                     f"What does {name} include?",
                     f"{name} includes the survey and the work named in the written scope for {service_of(slug).replace('-', ' ')}. "
-                    "It does not publish a fee. Travel from Stockport is part of the quote.",
+                    " Travel from Stockport is part of the quote.",
                 ],
                 [
                     f"How is {name} priced?",
-                    "Price on application after the building, the access and the standard are known. This page does not publish a fee.",
+                    "You get a fixed written quote once we know the building, the access and the standard that applies.",
                 ],
                 [
                     f"Do you claim BAFE or NSI for {name}?",
-                    "No. iComply does not claim BAFE or NSI badges. The visit follows the standard named for this trade and leaves a record.",
+                    "No. The visit follows the standard named for this trade and leaves a record.",
                 ],
                 [
                     f"Where is {name} covered?",

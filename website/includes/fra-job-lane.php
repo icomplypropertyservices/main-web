@@ -379,7 +379,7 @@ require SITE_ROOT . '/includes/header.php';
             <p class="mt-6 text-lg md:text-xl text-white max-w-2xl"><?= fraLaneRich($fraPage['lede']) ?></p>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="/contact" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get a quote</a>
-                <a href="tel:+447517806082" class="px-8 py-4 rounded-2xl border border-white font-semibold text-white hover:bg-white/10">Call 07517806082</a>
+                <a href="tel:+447517806082" class="px-8 py-4 rounded-2xl border border-white font-semibold text-white hover:bg-white/10">Call 07517 806082</a>
             </div>
             <p class="mt-6 text-sm text-white max-w-2xl"><?= fraLaneRich($fraPage['note']) ?></p>
         </div>

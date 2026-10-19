@@ -216,7 +216,7 @@ function localSentences(place, parsed) {
     `${mod} ${scope} in ${name} is arranged around ${stock}. Greater Manchester is the limit of this matrix.`,
     `Clients in ${name} ask for ${subject} when the building is in ${districts}. Neighbouring towns have their own pages.`,
     `The ${name} ${intent} for ${aud} still needs a written ${scope} scope before a date is fixed.`,
-    `${service} visits in ${name} leave the result with the instructing client. ${districts} is written on the note.`,
+    `${service} visits in ${name} send the result to you. ${districts} is written on the note.`,
     `If the building is just outside ${name} but still in Greater Manchester, use the town page that matches the address. This page is ${name}.`,
   ];
 }
@@ -271,7 +271,7 @@ function pageHtml(options) {
     scope.note,
     intent.note,
     gas ? GAS_SENTENCE : "",
-    `Phone 07517806082 or use the contact form. Name the ${placeName} building, whether it is occupied, and the ${scope.label} you want quoted.`,
+    `Phone 07517 806082 or use the contact form. Name the ${placeName} building, whether it is occupied, and the ${scope.label} you want quoted.`,
   ].filter(Boolean);
   const seed = hashStr(`${path}|${placeName}`);
   const rotated = sentences.slice(seed % Math.max(1, sentences.length)).concat(sentences.slice(0, seed % Math.max(1, sentences.length)));
@@ -311,7 +311,7 @@ function pageHtml(options) {
   const faqs = [
     [`Do you cover ${placeName} for ${subject}?`, `Yes, where ${placeName} is in Greater Manchester. The quote is price on application once the building and the ${scope.label} scope are known.`],
     [`Who carries out ${subject} in ${placeName}?`, gas ? GAS_SENTENCE : `The ${placeName} visit is scoped to the building named on the enquiry. The figure follows that scope.`],
-    [`How is ${subject} priced in ${placeName}?`, `The quote is price on application. ${modifier.slug === "cheap" ? "This page does not publish a low rate." : "No fixed price is published for this visit."}`],
+    [`How is ${subject} priced in ${placeName}?`, `The quote is price on application. ${modifier.slug === "cheap" ? "" : "No fixed price is published for this visit."}`],
   ];
   const schema = {
     "@context": "https://schema.org",
@@ -426,7 +426,7 @@ export function renderVariantPage({ spec, keyword, town }) {
       name: titleCaseSlug(townSlug.replace(/[^a-z0-9-]+/g, "")) || "Greater Manchester",
       districts: titleCaseSlug(townSlug.replace(/[^a-z0-9-]+/g, "")) || "Greater Manchester",
       stock: "the building at the address given",
-      focus: "the instructing client",
+      focus: "the person who booked",
     })
     : hubPlace(spec);
   const slug = parsed.ok ? variantSlug(parsed.service.slug, parsed) : String(keyword || "enquiry");

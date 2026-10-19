@@ -13,7 +13,7 @@ renderJobArticle([
     'paragraphs' => [
         'CAME is the barrier partner on this site. A GT4 quote starts with the lane, not with a box price. We check the island, the boom length, the power supply and whether a longer arm or a different Gard cabinet fits better. A 5 metre arm is only specified when the opening needs it.',
         'Install, repair and planned maintenance sit on this page. A boom after a vehicle strike, a motor that will not raise, and a loop that no longer sees a car are all attended from Stockport across Greater Manchester and the North West, including Manchester and Burnley.',
-        'This page does not state a CAME dealer certificate number. It also does not publish a cabinet price. The figure is written after the survey, and a maglock on the pedestrian door beside the lane is listed separately.',
+        ' It also does not publish a cabinet price. The figure is written after the survey, and a maglock on the pedestrian door beside the lane is listed separately.',
     ],
     'points' => [
         'Lane survey before a GT4 is named on the quote',
@@ -25,7 +25,7 @@ renderJobArticle([
     'faqs' => [
         ['Is every car park a GT4?', 'No. We name a GT4 when the lane suits that cabinet. If it does not, the car park barrier page is the wider job and the quote says which operator we recommend.'],
         ['Do you publish a GT4 price?', 'No. Cabinet, arm, civils and safety devices are priced after the survey.'],
-        ['Are you stating a CAME accreditation number?', 'No. CAME is the barrier partner we fit and service. This page does not publish a certificate or dealer number.'],
+        ['Are you stating a CAME accreditation number?', 'No. CAME is the barrier partner we fit and service.'],
     ],
     'links' => [
         ['/pages/jobs/car-park-barrier', 'Car park barriers'],

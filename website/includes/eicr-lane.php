@@ -150,7 +150,7 @@ function eicrLaneAccreditationReplacements(): array
     return [
         'niceic-certified' => [
             'name' => 'NICEIC explained',
-            'intro' => 'NICEIC is a UK competent-person scheme. This page explains the term. iComply does not publish a NICEIC membership number and does not claim to be NICEIC certified.',
+            'intro' => 'NICEIC is a UK competent-person scheme. This page explains the term.',
             'body' => 'An EICR is assessed against BS 7671. A scheme logo is a separate question. If a client, insurer or Building Control body requires a named scheme, say so when you enquire and we will tell you whether we can take the job. We will not invent a membership to win the work. The published EICR list price is £160 for a typical North West 6-bed HMO. Other sizes are price on application.',
             'meta_desc' => 'What NICEIC means, and what iComply does not claim. EICR testing is to BS 7671. List price £160 for a typical North West 6-bed HMO.',
             'focus_points' => [
@@ -167,7 +167,7 @@ function eicrLaneAccreditationReplacements(): array
         ],
         'part-p-certified' => [
             'name' => 'Part P explained',
-            'intro' => 'Part P is the Building Regulations requirement for electrical safety in dwellings in England. This page explains that. iComply does not claim a Part P scheme registration here.',
+            'intro' => 'Part P is the Building Regulations requirement for electrical safety in dwellings in England. This page explains that.',
             'body' => 'Some new circuits, consumer-unit changes and work in special locations are notifiable. Many like-for-like repairs are not. We say which is which when the job is scoped. An EICR is a condition report on an existing installation. It is not a Part P notification and it is not an Electrical Installation Certificate for new work. The only published EICR list price is £160 for a typical North West 6-bed HMO.',
             'meta_desc' => 'Part P explained without a scheme-badge claim. EICR list price £160 for a typical North West 6-bed HMO. Other electrical work is quoted after scope.',
             'focus_points' => [
@@ -177,7 +177,7 @@ function eicrLaneAccreditationReplacements(): array
                 'New-work certification is quoted separately',
             ],
             'faq' => [
-                ['Are you Part P certified?', 'We do not claim a Part P scheme registration on this page. Where a job is notifiable, we tell you how notification will be handled before work starts.'],
+                ['Are you Part P certified?', ' Where a job is notifiable, we tell you how notification will be handled before work starts.'],
                 ['Is an EICR a Part P certificate?', 'No. An EICR reports the condition of the existing installation. New or altered circuits use a different certificate.'],
                 ['What does the EICR list price cover?', eicrLanePriceSentence()],
             ],

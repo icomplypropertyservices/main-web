@@ -53,7 +53,7 @@ function wave1QualityHubs(): array
         'gas-safety-certificate' => [
             'navLabel' => 'Gas safety certificate',
             'pageTitle' => 'Gas Safety Certificate | Landlord CP12 North West',
-            'metaDesc' => 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. Greater Manchester, from Stockport SK2. iComply is not Gas Safe registered. POA.',
+            'metaDesc' => 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. Greater Manchester, from Stockport SK2. POA.',
             'metaKeywords' => 'gas safety certificate, CP12 Stockport, landlord gas safety Greater Manchester, CP44 gas record',
             'ogImage' => '/assets/images/services/gas-systems.jpg',
             'kicker' => 'Quality hub · Gas',
@@ -61,11 +61,11 @@ function wave1QualityHubs(): array
             'h1' => 'Gas safety certificate',
             'h1Accent' => 'the record, not our registration',
             'lede' => 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers. The record has to match the appliances on site. The quote waits for an appliance count.',
-            'honest' => 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered. Unsafe appliances stay unsafe on the record.',
+            'honest' => 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. Unsafe appliances stay unsafe on the record.',
             'coverTitle' => 'The landlord gas record',
             'cover' => [
                 'Private landlords with gas appliances or flues generally need a periodic safety check and a written record for the tenancy. People still call it a CP12. The file needs the current record, not a verbal “it was fine last year”.',
-                'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered. Read the fortnight guide: [gas safety certificate for landlords](/pages/resources/gas-safety-certificate-landlords). Service page: [gas systems](/pages/services/gas-systems).',
+                'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. Read the fortnight guide: [gas safety certificate for landlords](/pages/resources/gas-safety-certificate-landlords). Service page: [gas systems](/pages/services/gas-systems).',
             ],
             'work' => [
                 'What a landlord gas safety record is, and what it is not',
@@ -84,8 +84,8 @@ function wave1QualityHubs(): array
             'formIntro' => 'Appliance count and access decide the visit. Send those first.',
             'formPlaceholder' => 'Postcode, appliances, occupied or void…',
             'faqs' => [
-                ['q' => 'CP12 or CP44?', 'a' => 'You will hear both. What matters is a current landlord gas safety record. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.'],
-                ['q' => 'Is iComply Gas Safe registered?', 'a' => 'No. iComply is not Gas Safe registered and does not show a registration number on this page.'],
+                ['q' => 'CP12 or CP44?', 'a' => 'You will hear both. What matters is a current landlord gas safety record. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.'],
+                ['q' => 'Is iComply Gas Safe registered?', 'a' => 'No.'],
                 ['q' => 'Do you cover Manchester as well as Stockport?', 'a' => 'Yes, when we can resource the diary. The yard is Offerton SK2.'],
             ],
         ],
@@ -512,7 +512,7 @@ function wave1QualityHubs(): array
             'relatedGuides' => ['let-ready-void-checklist', 'booking-compliance-certificates', 'electrical-safety-rented-homes'],
             'formService' => 'Legionella — landlord risk assessment',
             'formHeading' => 'Request a Legionella POA quote',
-            'formIntro' => 'Postcode, property type and whether you have stored water. No catalogue fee.',
+            'formIntro' => 'Postcode, property type and whether you have stored water.',
             'formPlaceholder' => 'Postcode, rented or commercial, tanks / unused showers, access…',
             'faqs' => [
                 ['q' => 'Is this an HMO package page?', 'a' => 'No. Existing Let Ready and workplace packages stay on their own pages. We are not duplicating HMO package landings (PR #3).'],
@@ -530,7 +530,7 @@ function wave1QualityHubs(): array
             'h1' => 'Asbestos for landlords',
             'h1Accent' => 'surveyed for the duty you actually have',
             'lede' => 'Common parts and conversions are a different duty from a purely domestic terrace. We scope management versus refurbishment, then quote POA.',
-            'honest' => 'We do not claim a UKAS, BOHS or HSE licence on this page. Licensed asbestos removal is by others. No invented landlord-pack price.',
+            'honest' => ' Licensed asbestos removal is by others. No invented landlord-pack price.',
             'coverTitle' => 'Duty to manage, not a kit in the post',
             'cover' => [
                 'The Control of Asbestos Regulations 2012 sit behind the duty to manage in non-domestic premises and in the common parts of many multi-occupied buildings. Describe the property; we will say what is proportionate.',

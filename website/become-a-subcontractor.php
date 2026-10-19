@@ -7,7 +7,7 @@ require_once __DIR__ . '/config.php';
 require_once SITE_ROOT . '/includes/subcontractor-form.php';
 
 $pageTitle = 'Become a subcontractor | iComply Property Services';
-$metaDesc = 'Apply to subcontract with iComply Property Services. Electrical, fire, emergency lighting, AOV, CCTV, nurse call and general maintenance across the UK. Call 07517806082.';
+$metaDesc = 'Apply to subcontract with iComply Property Services. Electrical, fire, emergency lighting, AOV, CCTV, nurse call and general maintenance across the UK. Call 07517 806082.';
 $metaKeywords = 'subcontractor, electrical, EICR, fire alarms, emergency lighting, AOV, CCTV, access control, nurse call, general maintenance, UK';
 $canonicalUrl = url('/become-a-subcontractor.php');
 $metaRobots = 'index, follow';

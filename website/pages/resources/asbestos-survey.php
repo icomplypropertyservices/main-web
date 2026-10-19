@@ -33,7 +33,7 @@ require SITE_ROOT . '/includes/header.php';
 </section>
 <article class="max-w-3xl mx-auto px-6 py-12 space-y-8">
     <div class="rounded-2xl bg-amber-50 border border-amber-200 px-5 py-4 text-sm text-amber-950">
-        <strong>Not legal advice.</strong> The Control of Asbestos Regulations 2012 sit behind the duty to manage. We do not claim a UKAS, BOHS or HSE licence on this page. Licensed removal is by others.
+        <strong>Not legal advice.</strong> The Control of Asbestos Regulations 2012 sit behind the duty to manage. Licensed removal is by others.
     </div>
     <div>
         <h2 class="text-2xl font-semibold mb-3">Survey types</h2>
@@ -72,7 +72,7 @@ require SITE_ROOT . '/includes/header.php';
         <p class="text-white/85 mb-6">Building age, floor area, access and whether walls are coming open.</p>
         <div class="flex flex-wrap gap-3 justify-center">
             <a href="<?= url('/contact') ?>" class="bg-[#FF6B00] px-8 py-3.5 rounded-2xl font-semibold inline-block">Contact</a>
-            <a href="tel:07517806082" class="bg-white text-[#0B1F3A] px-8 py-3.5 rounded-2xl font-semibold inline-block">Call 07517806082</a>
+            <a href="tel:07517806082" class="bg-white text-[#0B1F3A] px-8 py-3.5 rounded-2xl font-semibold inline-block">Call 07517 806082</a>
             <a href="https://wa.me/447517806082" target="_blank" rel="noopener" class="border border-white/40 px-8 py-3.5 rounded-2xl font-semibold inline-block">WhatsApp</a>
         </div>
     </div>

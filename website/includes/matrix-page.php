@@ -157,7 +157,7 @@ function icomplyMatrixChromeEnd(string $footNote = ''): string
         . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH(url('/pages/site-map.php')) . '">Site map / full inventory</a>'
         . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH($s['contact']) . '">Contact / POA quote</a>'
         . '</div>'
-        . '<p class="text-white/60 text-xs">Hub pages carry the mega menu and footer dropdowns for every service, town and keyword family. This matrix page stays compact on purpose.</p>'
+        . '<p class="text-white/60 text-xs"></p>'
         . '</div></footer>' . $popup . '</body></html>';
 }
 
@@ -233,8 +233,8 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
     $areaSlugVal = areaSlug($areaName);
     $poa = function_exists('isPoaService') && isPoaService($svcSlug);
     $priceLine = $poa
-        ? 'Price on application after we confirm property type, access and scope. No catalogue fee.'
-        : 'Written quote after we confirm scope. We do not invent a price on this page.';
+        ? 'Price on application after we confirm property type, access and scope.'
+        : 'Fixed written quote once we confirm the scope.';
 
     if (!function_exists('icomplyGmTownBlurb')) {
         $gmBlurbs = SITE_ROOT . '/includes/gm-blurbs.php';
@@ -388,7 +388,7 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     $areaSlugVal = areaSlug($areaName);
     $poa = function_exists('isPoaService') && isPoaService($serviceSlug);
     $priceLine = $poa
-        ? 'Price on application after scope. No invented catalogue price.'
+        ? 'Fixed written quote before any work starts.'
         : 'Written quote after scope is agreed.';
     if ($serviceSlug === 'fire-risk-assessments' && function_exists('fraGuidePrice')) {
         $priceLine = 'Guide price ' . fraGuidePrice() . ' for a standard assessment on UK mainland. Larger premises confirmed in writing.';
@@ -504,7 +504,7 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         . ' · Town: <a class="text-[#ff6b00] font-semibold" href="'
         . icomplyMatrixH($townHub) . '">' . icomplyMatrixH($areaName) . '</a></p>'
         . ($ownsMainland
-            ? '<p class="text-zinc-700 leading-relaxed">Fire protection on this page is UK mainland only: England, Wales and mainland Scotland. Northern Ireland, the Scottish Highlands and Islands, the Isle of Man and the Channel Islands are not listed.</p>'
+            ? '<p class="text-zinc-700 leading-relaxed">We cover fire protection across mainland Britain: England, Wales and mainland Scotland, all from our Stockport base.</p>'
             : '')
         . '</article>';
 

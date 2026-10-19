@@ -257,7 +257,7 @@ function acnRender(array $view): void
     <section id="manufacturers" class="bg-white border-t">
         <div class="max-w-7xl mx-auto px-6 py-14">
             <h2 class="text-3xl font-semibold text-[#061828]">Manufacturers on this work</h2>
-            <p class="mt-3 max-w-3xl text-zinc-800">Every access-control brand in our catalogue is linked below. Tunstall is a nurse-call system and is not part of this list. We install, take over or service these platforms. We do not claim a dealer badge we have not been given.</p>
+            <p class="mt-3 max-w-3xl text-zinc-800">Every access-control brand in our catalogue is linked below. Tunstall is a nurse-call system and is not part of this list. We install, take over or service these platforms.</p>
             <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4"><?= acnManufacturerHtml() ?></div>
         </div>
     </section>
@@ -369,7 +369,7 @@ function acnRenderCity(array $city): void
     $hub = url('/pages/access-control-systems');
     $faqs = [
         [(string)$city['faq_q'], (string)$city['faq_a']],
-        ['Do you publish a price for ' . $name . '?', 'No. The visit is price on application. Door count, the controller and the travel decide the quote.'],
+        ['How is ' . $name . ' priced?', 'Every job gets a fixed written quote based on the number of doors, the controller and travel. Send us the address and a few photos to get started.'],
         ['Which phone number do I use?', 'Call ' . PHONE . '. The workshop is in Offerton, Stockport, even when the doors are in ' . $name . '.'],
     ];
     $keywords = acnKeywords();

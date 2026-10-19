@@ -45,7 +45,7 @@ $priceKey = (string)($landing['priceKey'] ?? '');
 $guide = $priceKey !== '' ? icomplyLandlordGuidePrice($priceKey) : null;
 $quoteHref = $guide ? icomplyLandlordQuoteHref($guide['service']) : '/contact';
 $callHref = 'tel:+447517806082';
-$callLabel = 'Call 07517806082';
+$callLabel = 'Call 07517 806082';
 $guideMoney = $guide ? icomplyLandlordGuideMoney($priceKey) : '';
 $crumbs = $landing['crumbs'] ?? [];
 $faqs = $landing['faqs'] ?? [];

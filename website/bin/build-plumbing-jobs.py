@@ -255,7 +255,7 @@ def main() -> None:
         body = (
             f"{row['work']} {row['limit']} {CLUSTERS[row['cluster']]} "
             f"Tell us the postcode, what is leaking or blocked, and whether the stopcock is already shut. "
-            f"Related plumbing guides are linked on this page, and the full list sits on the plumbing service hub."
+            f"More plumbing guides are listed on our plumbing service page."
         )
         faq = [
             [
@@ -268,7 +268,7 @@ def main() -> None:
             ],
             [
                 f"How is {name} priced?",
-                "Price on application after we confirm access, parts and whether the stopcock holds. We do not publish a catalogue price on this page.",
+                "Price on application after we confirm access, parts and whether the stopcock holds.",
             ],
         ]
         focus = [

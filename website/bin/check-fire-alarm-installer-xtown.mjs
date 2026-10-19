@@ -140,7 +140,7 @@ const aberdeen = renderTownPage({
   town: "aberdeen",
   catalogue,
 });
-ok(aberdeen && aberdeen.robots === "noindex, follow", "non-family Aberdeen stays noindex");
+ok(aberdeen && aberdeen.robots === "index, follow", "non-family Aberdeen is indexable (no noindex, per #135)");
 
 console.log(fail === 0 ? `PASS towns=${towns.length}` : `FAIL ${fail}`);
 process.exit(fail === 0 ? 0 : 1);

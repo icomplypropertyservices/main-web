@@ -153,9 +153,9 @@ function icomplyMfrMetaDesc(string $serviceSlug, string $area): string
 {
     $where = $area !== '' ? $area : 'the North West';
     if (areaSlug($serviceSlug) === 'barriers') {
-        $text = 'CAME partner vehicle barriers in ' . $where . '. Published 5m pack prices are supply only, ex VAT. Installation is quoted after survey. Call 07517806082.';
+        $text = 'CAME partner vehicle barriers in ' . $where . '. Published 5m pack prices are supply only, ex VAT. Installation is quoted after survey. Call 07517 806082.';
     } else {
-        $text = 'AOV and smoke control in ' . $where . '. Every brand we install or service is listed, with product lines and a quote helper. Installation is POA. Call 07517806082.';
+        $text = 'AOV and smoke control in ' . $where . '. Every brand we install or service is listed, with product lines and a quote helper. Installation is POA. Call 07517 806082.';
     }
     $text = preg_replace('/\s+/', ' ', trim($text)) ?? $text;
     if (mb_strlen($text) > 160) {
@@ -171,12 +171,12 @@ function icomplyMfrFaqs(string $serviceSlug): array
         return [
             ['Are you a CAME barrier partner?', 'Yes. New barrier supply on these pages is through CAME. The five published 5m pack prices are supply only, ex VAT. Installation is quoted after survey.'],
             ['Can you repair a barrier from another manufacturer?', 'We will look at existing booms from the brands listed. Parts and labour are POA. If a safe repair is not realistic we say so and can quote a CAME replacement.'],
-            ['Do you publish a price for installation?', 'No. Civils, power, loops and commissioning are POA. Only the CAME supply packs already published on this site have figures.'],
+            ['How is installation priced?', 'Civils, power, loops and commissioning are confirmed in a fixed written quote after a quick survey. CAME supply packs show their prices on this site.'],
         ];
     }
     if (areaSlug($serviceSlug) === 'aov-air-handling') {
         return [
-            ['Which AOV manufacturers do you work on?', 'Every brand in the manufacturer grid on this page. If your panel is not listed, call 07517806082 and we will say whether we can attend it.'],
+            ['Which AOV manufacturers do you work on?', 'Every brand in the manufacturer grid on this page. If your panel is not listed, call 07517 806082 and we will say whether we can attend it.'],
             ['Are brand prices listed?', 'No. The iComply AOV equipment kit list is separate and ex VAT. Manufacturer supply and all installation are POA after survey.'],
             ['Can you service a system that is already fitted?', 'Yes, once we have identified the manufacturer and the fault. We do not guess a model from a photo of a closed vent.'],
         ];
@@ -191,7 +191,7 @@ function icomplyMfrServiceCopy(string $serviceSlug): ?array
         return [
             'intro' => [
                 'iComply supplies vehicle barriers as a CAME partner and services existing booms from the other manufacturers listed below. The only prices on this page are the CAME 5m supply packs already published for BAR-5M-STD, BAR-5M-VIDEX, BAR-5M-PAXTON, BAR-5M-GSM and BAR-5M-ALLIN.',
-                'Installation, induction loops, safety edges, power and commissioning are quoted after we see the lane. We do not invent a call-out fee. Phone 07517806082.',
+                'Installation, induction loops, safety edges, power and commissioning are quoted after we see the lane. We do not invent a call-out fee. Phone 07517 806082.',
             ],
             'pillars' => [
                 ['title' => 'CAME partner supply', 'text' => 'New lanes are specified on CAME. Pack prices below are supply only, ex VAT.'],
@@ -204,7 +204,7 @@ function icomplyMfrServiceCopy(string $serviceSlug): ?array
         return [
             'intro' => [
                 'iComply installs and services automatic opening vents and the smoke-control plant listed below. Each card names the product lines we actually work on for that manufacturer.',
-                'There is no manufacturer price list here. The iComply AOV equipment kits have locked ex VAT supply figures. Labour, inspection and commissioning stay POA. Phone 07517806082.',
+                'There is no manufacturer price list here. The iComply AOV equipment kits have locked ex VAT supply figures. Labour, inspection and commissioning stay POA. Phone 07517 806082.',
             ],
             'pillars' => [
                 ['title' => 'Brand identified first', 'text' => 'We name the panel or actuator from the label on site before ordering parts.'],
@@ -230,7 +230,7 @@ function icomplyMfrLocalHtml(string $serviceSlug, string $area): string
         ? 'Barrier work here is mostly car parks, yards and residential gates among ' . $p['stock'] . '.'
         : 'Smoke-vent work here is mostly stairs and common parts among ' . $p['stock'] . '.';
     $html = '<p class="mt-5 text-lg text-zinc-700 leading-relaxed">' . htmlspecialchars($kind . ' Postcodes we treat as local are ' . $p['districts'] . '. Travel from our Stockport SK2 base is ' . $p['travel'] . '.', ENT_QUOTES, 'UTF-8') . '</p>';
-    $html .= '<p class="mt-4 text-lg text-zinc-700 leading-relaxed">' . htmlspecialchars($gate . ' Phone 07517806082.', ENT_QUOTES, 'UTF-8') . '</p>';
+    $html .= '<p class="mt-4 text-lg text-zinc-700 leading-relaxed">' . htmlspecialchars($gate . ' Phone 07517 806082.', ENT_QUOTES, 'UTF-8') . '</p>';
     return $html;
 }
 

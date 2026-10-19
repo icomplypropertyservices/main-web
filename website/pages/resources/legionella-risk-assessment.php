@@ -51,7 +51,7 @@ require SITE_ROOT . '/includes/header.php';
     </div>
     <div>
         <h2 class="text-2xl font-semibold mb-3">Testing</h2>
-        <p class="text-zinc-700">Water samples are not automatic. Assessment comes first. Sampling is useful on some complex or stored-water systems and is quoted separately as POA if we recommend it. A result is evidence at a point in time. This page does not claim a named laboratory badge.</p>
+        <p class="text-zinc-700">Water samples are not automatic. Assessment comes first. Sampling is useful on some complex or stored-water systems and is quoted separately as POA if we recommend it. A result is evidence at a point in time.</p>
     </div>
     <div>
         <h2 class="text-2xl font-semibold mb-3">Who typically asks</h2>
@@ -82,10 +82,10 @@ require SITE_ROOT . '/includes/header.php';
     </div>
     <div class="bg-[#0B1F3A] text-white p-8 rounded-3xl text-center">
         <h2 class="text-2xl font-semibold mb-3">Request a POA quote</h2>
-        <p class="text-white/85 mb-6">Postcode, property type and whether you have stored water. No catalogue fee.</p>
+        <p class="text-white/85 mb-6">Postcode, property type and whether you have stored water.</p>
         <div class="flex flex-wrap gap-3 justify-center">
             <a href="<?= url('/contact') ?>" class="bg-[#FF6B00] px-8 py-3.5 rounded-2xl font-semibold inline-block">Contact</a>
-            <a href="tel:07517806082" class="bg-white text-[#0B1F3A] px-8 py-3.5 rounded-2xl font-semibold inline-block">Call 07517806082</a>
+            <a href="tel:07517806082" class="bg-white text-[#0B1F3A] px-8 py-3.5 rounded-2xl font-semibold inline-block">Call 07517 806082</a>
             <a href="https://wa.me/447517806082" target="_blank" rel="noopener" class="border border-white/40 px-8 py-3.5 rounded-2xl font-semibold inline-block">WhatsApp</a>
         </div>
     </div>

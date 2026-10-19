@@ -38,21 +38,22 @@ function icomplyCtrCut(string $s, int $max): string
 function icomplyCtrTitle(string $topic, string $town, string $slug, string $svcSlug = ''): string
 {
     $price = icomplyCtrPriceFrom($slug, $svcSlug);
-    $head = $topic . ' ' . $town;
     $opts = [];
     if ($price !== '') {
-        $opts[] = $head . ' from ' . $price . ' | Next-Day | ' . ICOMPLY_CTR_PHONE;
-        $opts[] = $head . ' from ' . $price . ' | ' . ICOMPLY_CTR_PHONE;
+        $opts[] = $topic . ' in ' . $town . ' from ' . $price . ' | Same/Next-Day';
+        $opts[] = $topic . ' ' . $town . ' from ' . $price . ' | Same/Next-Day';
+        $opts[] = $topic . ' ' . $town . ' from ' . $price;
     }
-    $opts[] = $head . ' | Same/Next-Day | ' . ICOMPLY_CTR_PHONE;
-    $opts[] = $head . ' | Call ' . ICOMPLY_CTR_PHONE;
-    $opts[] = $head . ' | iComply';
+    $opts[] = $topic . ' in ' . $town . ' | Same/Next-Day Engineers';
+    $opts[] = $topic . ' in ' . $town . ' | Same/Next-Day';
+    $opts[] = $topic . ' ' . $town . ' | Same/Next-Day';
+    $opts[] = $topic . ' in ' . $town . ' | iComply';
     foreach ($opts as $o) {
-        if (mb_strlen($o) <= 62) {
+        if (mb_strlen($o) <= 60) {
             return $o;
         }
     }
-    return icomplyCtrCut($head, 55) . ' | iComply';
+    return icomplyCtrCut($topic . ' ' . $town, 50) . ' | iComply';
 }
 
 function icomplyCtrDesc(string $topic, string $town, string $slug, string $svcSlug = ''): string
@@ -60,15 +61,13 @@ function icomplyCtrDesc(string $topic, string $town, string $slug, string $svcSl
     $price = icomplyCtrPriceFrom($slug, $svcSlug);
     $lead = $topic . ' in ' . $town . ($price !== '' ? ' from ' . $price : '') . '.';
     $who = icomplyCtrIsGas($slug, $svcSlug)
-        ? ' Same/next-day slots, work by Gas Safe registered engineers.'
-        : ' Same/next-day slots from our Stockport team.';
-    $tail = ' Fixed written quote, certificates emailed. Call ' . ICOMPLY_CTR_PHONE . '.';
-    $d = $lead . $who . $tail;
-    if (mb_strlen($d) > 160) {
-        $d = $lead . $who . ' Call ' . ICOMPLY_CTR_PHONE . '.';
+        ? ' Same/next-day visits, carried out by Gas Safe registered engineers.'
+        : ' Same/next-day engineers from our Stockport team.';
+    $tail = ' Fixed written quote, certificates emailed. Call or WhatsApp ' . ICOMPLY_CTR_PHONE . '.';
+    foreach ([$lead . $who . $tail, $lead . $who . ' Call or WhatsApp ' . ICOMPLY_CTR_PHONE . '.', $lead . ' Same/next-day. Call ' . ICOMPLY_CTR_PHONE . '.'] as $d) {
+        if (mb_strlen($d) <= 160) {
+            return $d;
+        }
     }
-    if (mb_strlen($d) > 160) {
-        $d = $lead . ' Same/next-day. Call ' . ICOMPLY_CTR_PHONE . '.';
-    }
-    return icomplyCtrCut($d, 160);
+    return icomplyCtrCut($lead . ' Same/next-day. Call ' . ICOMPLY_CTR_PHONE . '.', 160);
 }

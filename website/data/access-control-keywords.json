@@ -24,7 +24,7 @@
     "service": "access-control",
     "related": "fire-release-access-control",
     "intro": "A fire interface test checks that the signal from the fire alarm actually lets people through the secured doors. The test is the drop of the lock, not a tick in someone else’s log that the panel ‘went into fire’.",
-    "body": "BS 7273-4 is the usual UK reference for how release mechanisms are actuated. We confirm which doors are on the interface, whether they are fail-safe or fail-secure, and that the break-glass or request-to-exit still works when the interface is reset. If the fire alarm itself needs a service visit, that is booked as fire-alarm work, not assumed from this test. We record what released and what did not. The test is POA after we know the door count. Call 07517806082.",
+    "body": "BS 7273-4 is the usual UK reference for how release mechanisms are actuated. We confirm which doors are on the interface, whether they are fail-safe or fail-secure, and that the break-glass or request-to-exit still works when the interface is reset. If the fire alarm itself needs a service visit, that is booked as fire-alarm work, not assumed from this test. We record what released and what did not. The test is POA after we know the door count. Call 07517 806082.",
     "meta_desc": "Test access-control doors on a fire-alarm interface to BS 7273-4. Lock release recorded. POA. Stockport engineers. 07517806082.",
     "focus_points": [
       "Each door on the interface watched while the alarm is triggered",
@@ -64,7 +64,7 @@
     "service": "access-control",
     "related": "fob-access-control",
     "intro": "A broken fob visit is for a token that no longer opens a door people need today — a cracked fob, a dead mobile credential, or a reader that beeps and does nothing. It is not a promise that an engineer is waiting at night.",
-    "body": "From Stockport we attend North West sites when the diary has a gap. London, Scotland, Wales and Northern Ireland are scheduled, not ‘a van around the corner’. If the door is on a keypad code because the fob failed, say so: shared codes are the risk we remove when the new token is enrolled. We do not publish a call-out fee. The visit is POA. For a fire, a person stuck, or a door that will not release on an escape route, use 999 first. Call 07517806082 for the access fault once people are safe.",
+    "body": "From Stockport we attend North West sites when the diary has a gap. London, Scotland, Wales and Northern Ireland are scheduled, not ‘a van around the corner’. If the door is on a keypad code because the fob failed, say so: shared codes are the risk we remove when the new token is enrolled. We do not publish a call-out fee. The visit is POA. For a fire, a person stuck, or a door that will not release on an escape route, use 999 first. Call 07517 806082 for the access fault once people are safe.",
     "meta_desc": "Broken door fob and dead token visits. North West visits when the diary allows. UK sites by arrangement. POA. 07517806082.",
     "focus_points": [
       "Token or reader fault confirmed before parts are changed",
@@ -104,7 +104,7 @@
     "service": "access-control",
     "related": "electric-door-release",
     "intro": "A fail-secure lock stays locked when power is lost. A fail-safe lock unlocks. The assessment decides which behaviour belongs on each door, using the fire strategy and how people actually leave the building.",
-    "body": "Escape routes are usually fail-safe, with a release on fire alarm and a manual device people can see. A store, a drug cupboard or a plant cage is sometimes fail-secure, and that decision sits with the responsible person, not with a default in the lock catalogue. We survey the door, the hinge side, the existing maglock or strike, and what the fire interface does today. We write the recommendation. We do not sign your fire risk assessment for you. The survey is POA. Call 07517806082.",
+    "body": "Escape routes are usually fail-safe, with a release on fire alarm and a manual device people can see. A store, a drug cupboard or a plant cage is sometimes fail-secure, and that decision sits with the responsible person, not with a default in the lock catalogue. We survey the door, the hinge side, the existing maglock or strike, and what the fire interface does today. We write the recommendation. We do not sign your fire risk assessment for you. The survey is POA. Call 07517 806082.",
     "meta_desc": "Fail-secure or fail-safe lock assessment for each door, read against the fire strategy. Survey is POA. 07517806082.",
     "focus_points": [
       "Each door recorded as fail-safe or fail-secure, with the reason",
@@ -144,7 +144,7 @@
     "service": "access-control",
     "related": "lift-access-control",
     "intro": "Lift floor access advice is about which floors a credential may select. It is not a lift repair, and it is not a change to the safety circuit inside the lift controller.",
-    "body": "The lift contractor remains responsible for the lift. We advise on the reader, the relay or the destination-control interface their panel will accept, and we programme the floors you actually want restricted. A residential block in Manchester and a hospital lift in another city do not get the same floor map. We will not bridge out a safety contact to make a reader ‘work’. If the lift company will not provide a drawing, the advice stops at a written question list. The note is POA. Call 07517806082 to book it.",
+    "body": "The lift contractor remains responsible for the lift. We advise on the reader, the relay or the destination-control interface their panel will accept, and we programme the floors you actually want restricted. A residential block in Manchester and a hospital lift in another city do not get the same floor map. We will not bridge out a safety contact to make a reader ‘work’. If the lift company will not provide a drawing, the advice stops at a written question list. The note is POA. Call 07517 806082 to book it.",
     "meta_desc": "Advice on restricting lift floors with access control. Lift safety stays with the lift contractor. POA. 07517806082.",
     "focus_points": [
       "Floor list agreed before any relay is wired",

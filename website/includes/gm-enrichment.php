@@ -106,7 +106,7 @@ function icomplyGmServicePack(string $slug): array
             'job' => 'eicr',
         ],
         'gas-systems' => [
-            'summary' => 'Landlord gas safety records list the appliances, flues and pipework that were checked. The gas work is carried out by Gas Safe registered engineers. iComply does not print its own Gas Safe registration on this page.',
+            'summary' => 'Landlord gas safety records list the appliances, flues and pipework that were checked. The gas work is carried out by Gas Safe registered engineers.',
             'points' => [
                 'Appliance list and meter location sent with the enquiry',
                 'Safety record for the letting file, separate from a full boiler service',
@@ -499,17 +499,21 @@ function icomplyGmBuildFaqs(string $topic, string $townName, string $serviceSlug
         return strlen(trim($sentence)) > 40;
     }));
     if ($sentences) {
-        $faqs[] = ['What is particular about ' . $topic . ' in ' . $townName . '?', $sentences[0]];
-        if (isset($sentences[1])) {
-            $faqs[] = ['What should the ' . $townName . ' file show before a quote?', $sentences[1]];
-        }
+        $faqs[] = ['What is particular about ' . $topic . ' in ' . $townName . '?', trim($sentences[0] . ' ' . ($sentences[1] ?? ''))];
+        $faqs[] = [
+            'How do I get a quote for ' . $topic . ' in ' . $townName . '?',
+            'Send the address, a few photos and what you need covered, and we will reply with a fixed written quote. Call or WhatsApp 07517 806082. Same-day and next-day slots are often available.',
+        ];
         if ($gas || $serviceSlug === 'gas-systems' || $serviceSlug === 'heating') {
             $faqs[] = [
                 'Who carries out gas work in ' . $townName . '?',
-                'Gas work is carried out by Gas Safe registered engineers. ' . ($sentences[2] ?? $sentences[0]),
+                'Landlord gas safety certificates (CP12) and other gas work in ' . $townName . ' are carried out by Gas Safe registered engineers.',
             ];
-        } elseif (isset($sentences[2])) {
-            $faqs[] = ['How is the ' . $townName . ' price decided?', $sentences[2]];
+        } else {
+            $faqs[] = [
+                'How is the ' . $townName . ' price decided?',
+                'Every job gets a fixed written quote based on the building, the access and what needs doing, with travel from Stockport included.',
+            ];
         }
         return array_slice($faqs, 0, 4);
     }
@@ -520,12 +524,12 @@ function icomplyGmBuildFaqs(string $topic, string $townName, string $serviceSlug
     }
     $faqs[] = [
         'How is ' . $topic . ' quoted in ' . $townName . '?',
-        'Send the ' . $place . ' address, access notes and what you need on the file. The reply is a POA fixed quote after scope. No fee is printed on this page.',
+        'Send the ' . $place . ' address, access notes and what you need on the file. We reply with a fixed written quote.',
     ];
     if ($gas || $serviceSlug === 'gas-systems' || $serviceSlug === 'heating') {
         $faqs[] = [
             'Who carries out gas work in ' . $townName . '?',
-            'Gas work for ' . $townName . ' is carried out by Gas Safe registered engineers. This page does not show an iComply Gas Safe registration number. Confirm the engineer on the public register when they attend.',
+            'Gas work for ' . $townName . ' is carried out by Gas Safe registered engineers. Confirm the engineer on the public register when they attend.',
         ];
     } else {
         $faqs[] = [

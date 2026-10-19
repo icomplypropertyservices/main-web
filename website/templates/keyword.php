@@ -151,7 +151,7 @@ if (function_exists('accessControlLaneKeywordStrip')) {
         $trust = [
             [($nationwideP0 || $fireInstallerFamily) ? 'UK mainland' : 'Local engineers', $nationwideP0 ? 'Stockport base — TOP 5000 towns' : ($fireInstallerFamily ? 'Stockport base — mainland towns over 10,000' : 'Stockport base — 150+ North West towns')],
             ['Standards-led', 'British Standards & manufacturer guidance'],
-            [$poaService ? 'POA / enquire' : 'Fixed quotes', $poaService ? 'Written scope — no invented £' : 'Clear scope before work starts'],
+            [$poaService ? 'POA / enquire' : 'Fixed quotes', $poaService ? 'Fixed written quote' : 'Clear scope before work starts'],
             ['Full paperwork', $poaService ? 'Survey or briefing notes for the dutyholder file' : 'Certificates & logbooks for compliance'],
         ];
         foreach ($trust as [$t, $d]): ?>
@@ -190,7 +190,7 @@ if (function_exists('accessControlLaneKeywordStrip')) {
                     <p class="mt-4 text-base md:text-lg text-zinc-900 leading-relaxed"><?= htmlspecialchars($bodyPara, ENT_QUOTES, 'UTF-8') ?></p>
                     <?php endforeach; ?>
                     <?php if ($nationwideP0): ?>
-                    <p class="mt-4 text-base text-zinc-900 leading-relaxed">Workshop: 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Quotes are price on application. iComply does not claim BAFE or NSI badges.</p>
+                    <p class="mt-4 text-base text-zinc-900 leading-relaxed">Workshop: 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Quotes are price on application.</p>
                     <?php elseif ($fireInstallerFamily): ?>
                     <p class="mt-4 text-base text-zinc-900 leading-relaxed">Workshop: 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Design, installation and commissioning follow BS 5839. Quotes are price on application.</p>
                     <?php endif; ?>
@@ -423,7 +423,7 @@ echo '</section>';
 <section id="quote" class="bg-[#061828] text-white">
     <div class="max-w-3xl mx-auto px-6 py-14">
         <h2 class="text-3xl font-bold text-center">Quote for <?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></h2>
-        <p class="mt-2 text-center text-white/90">Price on application after scope. No catalogue fee. Stockport base, with North West coverage and further travel quoted where the service is published.</p>
+        <p class="mt-2 text-center text-white/90">Price on application after scope. Stockport base, with North West coverage and further travel quoted where the service is published.</p>
         <form action="<?= url('/contact.php') ?>" method="POST" class="mt-8 bg-white text-zinc-900 border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4 shadow-xl">
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid md:grid-cols-2 gap-4">

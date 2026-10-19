@@ -130,7 +130,7 @@ $schema = [
                 </h1>
                 <p class="mt-6 text-lg text-white/80 max-w-xl">
                     Electrical, fire alarms, emergency lighting, CCTV and access control for properties in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> and nearby postcodes.
-                    Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.
+                    Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get free quote</a>
@@ -304,7 +304,7 @@ echo icomplyTownDeepHtml(areaSlug($AREA), $AREA, 'property compliance', 'propert
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Services in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></div>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Everything we do locally</h2>
-                <p class="mt-2 text-zinc-600 max-w-xl">Every service has a page for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Quotes are POA. Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
+                <p class="mt-2 text-zinc-600 max-w-xl">Every service has a page for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Every quote is fixed and written. Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
             </div>
             <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All service hubs →</a>
         </div>

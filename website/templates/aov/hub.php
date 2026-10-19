@@ -17,7 +17,7 @@ $h = static function (string $s): string {
         <div>
             <p class="text-xs uppercase tracking-[3px] text-[#ffb080]">Fire protection · nationwide</p>
             <h1 class="mt-3 text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">Automatic opening vents.<br><span class="text-[#ff6b00]">The stair has to open.</span></h1>
-            <p class="mt-5 text-lg text-white/80 max-w-xl">An AOV is a ventilator that opens on a fire signal: usually a roof hatch or façade vent at the head of a stair, sometimes a corridor or lobby opening into a smoke shaft. It is life-safety equipment, so we treat it as fire protection and quote it across the UK from our Stockport yard. We do not claim BAFE, FIRAS or approved-installer status for any brand.</p>
+            <p class="mt-5 text-lg text-white/80 max-w-xl">An AOV is a ventilator that opens on a fire signal: usually a roof hatch or façade vent at the head of a stair, sometimes a corridor or lobby opening into a smoke shaft. It is life-safety equipment, so we treat it as fire protection and quote it across the UK from our Stockport yard.</p>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a class="px-6 py-3 rounded-2xl bg-[#ff6b00] font-semibold" href="#quote">Get a written quote</a>
                 <a class="px-6 py-3 rounded-2xl bg-white text-[#061828] font-semibold" href="<?= $h(aovPhoneHref()) ?>">Call <?= $h((string)PHONE) ?></a>
@@ -75,7 +75,7 @@ $h = static function (string $s): string {
 <?php
 aovQuoteForm(
     'Tell us the vent, not a catalogue code',
-    'Phone 07517806082 if the stair vent is stuck. Otherwise send the panel brand, the town and whether you need a supply kit or an engineer.',
+    'Phone 07517 806082 if the stair vent is stuck. Otherwise send the panel brand, the town and whether you need a supply kit or an engineer.',
     'AOV and smoke control',
     'Town, postcode, stair or corridor, panel brand, stuck open/shut, roof access…'
 );
