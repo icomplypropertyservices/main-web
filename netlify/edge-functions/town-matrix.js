@@ -469,7 +469,7 @@ export function renderTownPage(input) {
       service: serviceSlug,
       names: MAINLAND,
       nation: place.country || "",
-      extra: depthBankParagraphs(qualityCtx, 3),
+      extra: depthBankParagraphs(qualityCtx, 4),
     });
     // Seeded block order (authored copy, town facts, local notes) for town-to-town uniqueness.
     const blocks = [proseHtml, facts.html, depth ? depth.html : ""];
