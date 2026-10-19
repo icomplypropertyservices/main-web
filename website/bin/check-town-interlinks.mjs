@@ -55,7 +55,10 @@ for (const [kind, slug, town] of samples) {
   else if (kind === "job") r = renderTownPage({ kind, job: slug, town, catalogue, closeQPages });
   else r = isLocalTown(town) ? renderTownPage({ kind, service: slug, town, catalogue, closeQPages }) : null;
   if (!r || !r.html || r.status === 404) continue;
-  if (String(r.robots || "").includes("noindex")) continue;
+  // Jack 2026-10-19 (#135): nothing is noindexed. A noindex town page is a failure.
+  if (String(r.robots || "").includes("noindex") || /<meta name="robots" content="[^"]*noindex/i.test(r.html)) {
+    fail++; console.log(`FAIL noindex ${kind} ${slug}/${town}`); continue;
+  }
   checked++;
   const n = uniqueInternal(r.html);
   const isP0 = kind === "p0" || (kind === "keyword" && p0KeepsTown(slug, town));

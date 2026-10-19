@@ -5,6 +5,7 @@
  */
 import geo from "../../website/data/town-geo-slim.json" with { type: "json" };
 import laCensus from "./la-census-slim.json" with { type: "json" };
+import { geoRow } from "./town-depth.js";
 
 const YARD = { lat: 53.3925, lng: -2.1265 };
 const DIRS = ["north", "north-east", "east", "south-east", "south", "south-west", "west", "north-west"];
@@ -36,12 +37,12 @@ function hash(s) {
 }
 
 export function hasTownFacts(slug) {
-  return Boolean(geo[slug]);
+  return Boolean(geoRow(slug));
 }
 
 /** names: Map slug -> {name} of towns that have a page in this family. */
 export function nearestTowns(slug, names, limit = 6) {
-  const g = geo[slug];
+  const g = geoRow(slug);
   if (!g) return [];
   const here = { lat: g[5], lng: g[6] };
   const out = [];
@@ -83,7 +84,7 @@ function serviceLine(service, town, c, council) {
  * @returns {{html:string, faqs:Array<[string,string]>}|null}
  */
 export function townFactsBlock({ slug, town, subject, service, hrefFor, names }) {
-  const g = geo[slug];
+  const g = geoRow(slug);
   if (!g) return null;
   const [council, county, ocs, wards, cons, lat, lng, census, districts] = g;
   const seed = hash(`${slug}|${subject}`);
