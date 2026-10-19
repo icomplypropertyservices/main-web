@@ -1,21 +1,25 @@
 <?php
 /**
- * FRA "From £350" wording on the two FRA hubs (Jack, 19 Oct).
- * £350 is allowed in <title>/meta/og/twitter on these pages ONLY in this wording:
- *   /pages/services/fire-risk-assessments  title says "From £350" (<=60), meta present (<=155)
- *   /pages/fire-risk-assessment            title says "From £350" (<=60), meta carries
- *       "From £350 for a typical 6-bed HMO NW, other properties POA" (<=155)
- * No other £ figure is allowed in those head tags. /pages/jobs/fra is checked by check-fra-job-lane.php.
+ * FRA "From £350" wording on the two FRA hubs (Jack 19 Oct; Marketing copy verbatim).
+ * These two pages carry Marketing's exact title/meta. The usual 60/155 length limits are
+ * deliberately NOT applied here (Marketing override, these two pages only).
+ * og:title/og:description and twitter:* must match the title/meta exactly.
+ * £350 may appear only in the "from £350 ... typical 6-bed HMO" wording; no other £ figure.
+ * /pages/jobs/fra is checked by check-fra-job-lane.php.
  * Usage: php website/bin/check-fra-from-350.php
  */
 declare(strict_types=1);
 
 $root = dirname(__DIR__);
-$phrase = 'From £350 for a typical 6-bed HMO NW, other properties POA';
 $pages = [
-    '/pages/services/fire-risk-assessments' => ['metaPhrase' => false],
-    '/pages/services/fire-risk-assessment' => ['metaPhrase' => false, 'optional' => true],
-    '/pages/fire-risk-assessment' => ['metaPhrase' => true],
+    '/pages/services/fire-risk-assessments' => [
+        'title' => 'Fire Risk Assessment (FRA) Stockport & NW | From £350 typical 6-bed HMO | Other properties POA',
+        'meta' => 'Fire risk assessments from £350 for a typical 6-bed HMO in the North West. Other properties and multi-site jobs are POA. Same/next-day availability. Call 07517 806082.',
+    ],
+    '/pages/fire-risk-assessment' => [
+        'title' => 'Fire Risk Assessment UK Mainland | From £350 typical 6-bed HMO NW | Other properties POA',
+        'meta' => 'FRA from £350 for a typical 6-bed HMO in the North West. Other properties, nationwide and multi-site jobs are POA. Call 07517 806082 or email icomplypropertyservices@gmail.com.',
+    ],
 ];
 
 $runner = sys_get_temp_dir() . '/fra-from-350-render.php';
@@ -42,10 +46,6 @@ foreach ($pages as $path => $opt) {
     $cmd = escapeshellarg(PHP_BINARY) . ' ' . escapeshellarg($runner) . ' ' . escapeshellarg($path);
     $html = (string)shell_exec($cmd . ' 2>/dev/null');
     if (!str_contains($html, '<title>')) {
-        if (!empty($opt['optional'])) {
-            fwrite(STDOUT, "skip {$path} (served by redirect)\n");
-            continue;
-        }
         $bad("{$path} did not render");
         continue;
     }
@@ -56,22 +56,16 @@ foreach ($pages as $path => $opt) {
     $twT = $attr($html, '~<meta name="twitter:title" content="([^"]*)"~');
     $twD = $attr($html, '~<meta name="twitter:description" content="([^"]*)"~');
 
-    if ($title === null || !str_contains($title, 'From £350')) $bad("{$path} title lacks 'From £350': " . var_export($title, true));
-    if ($title !== null && mb_strlen($title) > 60) $bad("{$path} title " . mb_strlen($title) . " chars > 60");
-    if ($desc === null || $desc === '') $bad("{$path} has no meta description");
-    if ($desc !== null && mb_strlen($desc) > 155) $bad("{$path} meta " . mb_strlen($desc) . " chars > 155");
-    if (!empty($opt['metaPhrase']) && ($desc === null || !str_contains($desc, $phrase))) $bad("{$path} meta lacks '{$phrase}'");
-    if (!empty($opt['metaPhrase']) && ($title === null || !preg_match('/6-Bed HMO NW/i', $title))) $bad("{$path} title lacks 6-bed HMO NW");
-    if ($ogT === null || $ogT === '' || !str_contains($ogT, 'From £350')) $bad("{$path} og:title out of sync: " . var_export($ogT, true));
-    if ($twT !== $ogT) $bad("{$path} twitter:title != og:title");
-    if ($ogD !== $desc) $bad("{$path} og:description != meta description");
-    if ($twD !== $desc) $bad("{$path} twitter:description != meta description");
-    foreach (['title' => $title, 'meta' => $desc, 'og:title' => $ogT] as $k => $v) {
-        $rest = str_replace('£350', '', (string)$v);
-        if (preg_match('/£\s*\d/', $rest)) $bad("{$path} {$k} has a £ figure other than £350: {$v}");
-        if (preg_match('/£350/', (string)$v) && !str_contains((string)$v, 'From £350') && !str_contains((string)$v, 'from £350')) {
-            $bad("{$path} {$k} shows £350 outside the 'From £350' wording: {$v}");
-        }
+    if ($title !== $opt['title']) $bad("{$path} title is not Marketing's copy: " . var_export($title, true));
+    if ($desc !== $opt['meta']) $bad("{$path} meta is not Marketing's copy: " . var_export($desc, true));
+    if ($ogT !== $opt['title']) $bad("{$path} og:title out of sync: " . var_export($ogT, true));
+    if ($twT !== $opt['title']) $bad("{$path} twitter:title out of sync: " . var_export($twT, true));
+    if ($ogD !== $opt['meta']) $bad("{$path} og:description out of sync");
+    if ($twD !== $opt['meta']) $bad("{$path} twitter:description out of sync");
+    foreach (['title' => $title, 'meta' => $desc] as $k => $v) {
+        if (preg_match('/£\s*\d/', str_replace('£350', '', (string)$v))) $bad("{$path} {$k} has a £ figure other than £350");
+        if (!preg_match('/from £350 (for a )?typical 6-bed HMO/i', (string)$v)) $bad("{$path} {$k} lacks the 'from £350 typical 6-bed HMO' wording");
+        if (!str_contains((string)$v, 'POA')) $bad("{$path} {$k} lacks POA");
     }
     if (preg_match('~<meta name="robots" content="[^"]*noindex~i', $html)) $bad("{$path} is noindex");
     fwrite(STDOUT, "{$path}\n  title: {$title}\n  meta:  {$desc}\n");

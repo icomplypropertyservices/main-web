@@ -91,8 +91,9 @@ function wave1QualityHubs(): array
         ],
         'fire-risk-assessment' => [
             'navLabel' => 'Fire risk assessment',
-            'pageTitle' => 'Fire Risk Assessment From £350 | 6-Bed HMO NW | iComply',
-            'metaDesc' => 'From £350 for a typical 6-bed HMO NW, other properties POA. Fire risk assessments across UK mainland with a written action plan. Stockport-based.',
+            'pageTitle' => 'Fire Risk Assessment UK Mainland | From £350 typical 6-bed HMO NW | Other properties POA',
+            'pageTitleExact' => true,
+            'metaDesc' => 'FRA from £350 for a typical 6-bed HMO in the North West. Other properties, nationwide and multi-site jobs are POA. Call 07517 806082 or email icomplypropertyservices@gmail.com.',
             'metaKeywords' => 'fire risk assessment, FRA £350, UK mainland fire risk assessment, landlord FRA, commercial FRA',
             'ogImage' => '/assets/images/services/fire-risk-assessments.jpg',
             'kicker' => 'Quality hub · Fire · UK mainland',
