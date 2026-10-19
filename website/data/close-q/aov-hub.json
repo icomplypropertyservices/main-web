@@ -34,6 +34,14 @@
     {
       "q": "What should I have ready?",
       "a": "Postcode, floor count, whether the building is occupied, and any existing certificate or panel brand. Photos of the board, panel or appliance speed the reply. The base is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE."
+    },
+    {
+      "q": "Can you work on an AOV system another company installed?",
+      "a": "Usually, yes, as long as parts and information for the panel and actuators are still available. We name the brand on the quote, and if something cannot be supported we explain why and set out the options."
+    },
+    {
+      "q": "What happens on an AOV test visit?",
+      "a": "We prove the fire alarm signal opens each vent, try the manual controls on every landing, check the battery backup with the mains off and make sure a rain or wind sensor cannot hold a smoke vent shut. You get a written record of what was tested and what needs attention."
     }
   ],
   "poa": true,
