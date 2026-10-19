@@ -462,7 +462,7 @@ def build_paragraphs(spec: dict, surface: str) -> list[str]:
         (
             f"To ask for {name}, send the postcode, the building type, what is already fitted, and whether the issue is a new install, a fault or a planned service. "
             f"Photos of the recorder, panel, door or camera help. "
-            f"Phone {PHONE} or email info@icomplypropertyservices.co.uk. "
+            f"Phone {PHONE} or email icomplypropertyservices@gmail.com. "
             f"The reply is a price-on-application quote for {joined}. "
             f"Work starts after you accept that quote. "
             f"{'The town page adds the local paragraph for the building you named.' if surface == 'keyword' else 'Bring door codes, recorder or panel passwords, and the name of the person who can stay while the job is done.'}"
@@ -663,7 +663,7 @@ def faqs_for(spec: dict) -> list[dict]:
         {
             "q": f"How do I book {name}?",
             "a": (
-                f"Phone {PHONE} or email info@icomplypropertyservices.co.uk with the postcode, the building and whether you need an install, a repair or a service. "
+                f"Phone {PHONE} or email icomplypropertyservices@gmail.com with the postcode, the building and whether you need an install, a repair or a service. "
                 f"You receive a price-on-application quote before a date is fixed. The workshop address is {NAP}."
             ),
         },
