@@ -61,11 +61,12 @@ function fitMeta(text) {
     const space = cut.lastIndexOf(" ");
     if (space > 40) cut = cut.slice(0, space);
     value = cut.replace(/[ .,;:—-]+$/, "");
-    const extra = " Request a quote - POA.";
-    if (!value.endsWith("POA") && byteLength(value) + byteLength(extra) <= 160) value += extra;
+    const extra = " Call 07517 806082.";
+    if (!value.endsWith("806082.") && byteLength(value) + byteLength(extra) <= 160) value += extra;
   }
-  for (const pad of [" Scope is written first.", " No catalogue price.", " Call 07517806082.", " Scope first.", " POA only."]) {
+  for (const pad of [" Book today.", " Fixed written quote.", " Certificates emailed.", " Call 07517 806082."]) {
     if (byteLength(value) >= 140 && value.length >= 140) break;
+    if (value.toLowerCase().includes(pad.trim().toLowerCase().replace(/\.$/, ""))) continue;
     if (byteLength(value) + byteLength(pad) <= 160) value += pad;
   }
   return value;
@@ -73,14 +74,16 @@ function fitMeta(text) {
 
 export function p0Title(name, town) {
   const lead = town ? `${name} in ${town}` : name;
-  const full = `${lead} | iComply Property Services`;
-  return full.length <= 60 ? full : `${lead} — iComply`;
+  for (const t of [`${lead} | Same/Next-Day Engineers`, `${lead} | Same/Next-Day`, `${lead} | iComply`]) {
+    if (t.length <= 60) return t;
+  }
+  return `${lead.slice(0, 50).replace(/\s+\S*$/, "")} | iComply`;
 }
 
 export function p0Description(name, place) {
-  let text = `${name} in ${place} for landlords, agents and commercial sites. Arranged from Stockport. Request a quote — POA.`;
-  if (byteLength(text) > 160) text = `${name} in ${place} for landlords and agents. Request a quote — POA.`;
-  if (byteLength(text) > 160) text = `${name} in ${place}. Scoped from Stockport. Request a quote — POA.`;
+  let text = `${name} in ${place}. Same/next-day engineers, fixed written quote, certificates emailed. Call or WhatsApp 07517 806082.`;
+  if (byteLength(text) > 160) text = `${name} in ${place}. Same/next-day engineers, fixed written quote. Call 07517 806082.`;
+  if (byteLength(text) > 160) text = `${name} in ${place}. Same/next-day. Call 07517 806082.`;
   return fitMeta(text);
 }
 
@@ -109,19 +112,22 @@ export function renderNationwideP0Town(keywordSlug, townSlug) {
   const canonical = `${ORIGIN}/pages/keywords/${keywordSlug}/${townSlug}`;
   const images = (hub.images || []).slice(0, 3);
   const ogImage = `${ORIGIN}${images[0] || "/assets/images/services/fire-alarms.jpg"}`;
-  const local = `${townName} is in ${place.county || "the UK"}, ${place.region || "the UK"}, ${place.nation || "the UK"}. Published population on this town list is ${Number(place.population || 0).toLocaleString("en-GB")}. ${name} in ${townName} is quoted from ${NAP}. The quote is price on application after the scope is written down. Travel from the Stockport workshop is part of that quote, not a hidden extra.`;
+  const popLine = Number(place.population) > 0 ? ` It is home to about ${Number(place.population).toLocaleString("en-GB")} people.` : "";
+  const workName = name.replace(/\bInstallers?\b/g, "Installation").replace(/\bContractors?\b/g, "Services");
+  const local = `We provide ${workName.toLowerCase()} in ${townName}, ${(place.county && place.county !== townName) ? place.county : (place.region || "the UK")}.${popLine} Our engineers work from ${NAP}, with same-day and next-day slots where the diary allows. You get a fixed written quote before any work starts, with travel included.`;
   const body = String(pack.body || "").replace(/Nearby places on the same town list include [^.]*\./g, "");
   // Town pages carry a short service summary; the full guide stays on the keyword hub.
   // Paragraphs 0, 2, 7, 8 and 10-15 of the generated pack repeat placeholders
   // ("the UK mainland") or a mismatched example enquiry, so they are left off.
   let packParas = body.split(/\n\s*\n/).map((part) => part.trim()).filter(Boolean);
   if (packParas.length >= 16) packParas = [1, 4, 6].map((i) => packParas[i]);
-  const paras = [local, ...packParas];
+  const booking = `To book ${workName.toLowerCase()} in ${townName}, send us the full postcode, a few photos of the existing equipment, the type of building and whether it will be occupied on the day. We reply with a fixed written quote and a date. After the visit, certificates and reports are emailed to you so they can sit with the building records.`;
+  const paras = [local, ...packParas, booking];
   const bodyHtml = paras.map((para) => `<p>${escapeHtml(para)}</p>`).join("");
   const faqs = Array.isArray(pack.faq) ? pack.faq.slice(0, 2) : [];
   faqs.push([
     `How do I ask for ${name} in ${townName}?`,
-    `Phone 07517806082 or use the contact form. Name the building in ${townName}. The reply is price on application. Workshop: ${NAP}.`,
+    `Call 07517 806082, WhatsApp us or use the contact form with the address in ${townName}. We will send a fixed written quote, and same-day or next-day slots are often available.`,
   ]);
   const facts = townFactsBlock({
     slug: townSlug,
@@ -175,7 +181,7 @@ ${gallery}
 <article id="local-copy">${bodyHtml}${facts ? facts.html : ""}</article>
 <section><h2>${escapeHtml(name)} FAQ</h2>${faqHtml}</section>
 <section class="related-links"><h2>Related guides</h2><ul>${links}</ul></section>
-<p>Workshop: ${escapeHtml(NAP)}. Phone 07517806082. Price on application.</p>
+<p>Call or WhatsApp 07517 806082 for a fixed written quote. Our base: ${escapeHtml(NAP)}.</p>
 ${MATRIX_FOOTER}
 </main>
 ${MATRIX_SITE_FOOTER}

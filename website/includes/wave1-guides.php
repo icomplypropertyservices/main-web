@@ -14,19 +14,19 @@ function wave1FortnightGuides(): array
         'gas-safety-certificate-landlords' => [
             'day' => 1, 'batch' => 'A', 'tag' => 'Gas',
             'cardTitle' => 'Gas safety certificate for landlords',
-            'blurb' => 'What a CP12 / landlord gas safety record covers. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.',
+            'blurb' => 'What a CP12 / landlord gas safety record covers. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.',
             'pageTitle' => 'Landlord gas safety certificate (CP12) | North West',
-            'metaDesc' => 'Plain-English guide to landlord gas safety records (often called CP12). Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.',
+            'metaDesc' => 'Plain-English guide to landlord gas safety records (often called CP12). Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.',
             'metaKeywords' => 'landlord gas safety certificate, CP12, CP44, gas safety record landlords North West, Stockport gas safety',
             'ogImage' => '/assets/images/services/gas-systems.jpg',
             'kicker' => 'Day 1 · Gas · Resource guide',
             'crumb' => 'Gas safety certificate',
             'h1' => 'Landlord gas safety certificate',
             'h1Accent' => 'what the record actually is',
-            'lede' => 'A landlord gas safety record is the document agents and tenants ask for when gas appliances or flues are present. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.',
+            'lede' => 'A landlord gas safety record is the document agents and tenants ask for when gas appliances or flues are present. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.',
             'formService' => 'Gas — landlord safety record',
             'formHeading' => 'Request a gas-record quote',
-            'formIntro' => 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered. The quote is price on application.',
+            'formIntro' => 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. The quote is price on application.',
             'formPlaceholder' => 'Postcode, appliance count, flue type, occupied or void…',
             'sections' => [
                 [
@@ -45,7 +45,7 @@ function wave1FortnightGuides(): array
                         'Visible pipework and tightness / operating checks the engineer records on the day',
                         'A written record issued for the landlord or agent file',
                     ],
-                    'note' => 'If an appliance is unsafe, the record should say so. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.',
+                    'note' => 'If an appliance is unsafe, the record should say so. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.',
                 ],
                 [
                     'h2' => 'Timing landlords actually use',
@@ -57,7 +57,7 @@ function wave1FortnightGuides(): array
                 [
                     'h2' => 'How to book from Stockport',
                     'p' => [
-                        'iComply works from Offerton SK2. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered. Send the postcode and appliance count via [contact](/contact).',
+                        'iComply works from Offerton SK2. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. Send the postcode and appliance count via [contact](/contact).',
                         'Related reading: [landlord compliance checklist](/pages/resources/landlord-compliance-checklist) and [gas systems](/pages/services/gas-systems).',
                     ],
                 ],
@@ -555,7 +555,7 @@ function wave1FortnightGuides(): array
                 ],
                 [
                     'h2' => 'How to start',
-                    'p' => ['Read [care homes](/pages/care-homes) or the [nurse call hub](/pages/nurse-call-systems). Manchester and Burnley have their own nurse-call pages. Photos of the panel and a printer ticket help. Call 07517806082.'],
+                    'p' => ['Read [care homes](/pages/care-homes) or the [nurse call hub](/pages/nurse-call-systems). Manchester and Burnley have their own nurse-call pages. Photos of the panel and a printer ticket help. Call 07517 806082.'],
                 ],
             ],
             'faqs' => [

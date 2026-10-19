@@ -20,7 +20,7 @@ STUB_DIR = ROOT / "pages" / "keywords"
 KEYWORDS = ROOT / "data" / "keywords.json"
 
 QUOTE_NOTE = (
-    "Price on application after scope is agreed. No catalogue fee on this page. "
+    "Price on application after scope is agreed. "
     "Stockport engineers · North West coverage."
 )
 
@@ -31,7 +31,7 @@ JOBS: list[tuple[str, str, str, str, str, str, str, str]] = [
      "Water Supply (Water Fittings) Regulations 1999",
      "The question is whether the fitting on the wholesome supply is suitable and protected against backflow.",
      "We look at what is installed, name the likely fluid category, and say whether notification is worth raising with the water undertaker.",
-     "This page does not claim a WRAS scheme membership or that we approve products for a manufacturer."),
+     ""),
     ("water-fittings-regulations-notification", "Water Fittings Regulations Notification", "wras", "anyone about to alter a supply",
      "Regulation 5 of the Water Fittings Regulations",
      "Some proposed work has to be described to the water undertaker before it starts.",
@@ -61,7 +61,7 @@ JOBS: list[tuple[str, str, str, str, str, str, str, str]] = [
      "Reduced pressure zone (RPZ) backflow preventers",
      "An RPZ relieves to waste if the checks fail, so it needs a discharge route and often notification.",
      "We describe whether an RPZ is the device being asked for, where it would sit, and who should notify.",
-     "We do not claim membership of an RPZ commissioning scheme on this page."),
+     ""),
     ("fluid-category-assessment", "Fluid Category Assessment", "wras", "designers and landlords",
      "Fluid categories 1 to 5",
      "The category follows what the water might touch, from wholesome water up to fluids that are a serious health risk.",
@@ -156,7 +156,7 @@ JOBS: list[tuple[str, str, str, str, str, str, str, str]] = [
      "Building Regulations hot-water storage and water fittings",
      "An unvented cylinder is a stored-water and discharge job. Notification under Building Regulations is separate from a water-undertaker notice.",
      "We describe the cylinder, the discharge route and which notice is actually being asked for.",
-     "This page does not claim a G3 registration or a competent-person scheme membership."),
+     ""),
     ("whole-site-water-fittings-survey", "Whole Site Water Fittings Survey", "wras", "blocks and small commercial sites",
      "Site-wide water fittings review",
      "A whole-site look records tanks, boosters, outside taps and appliance feeds in one note.",
@@ -353,7 +353,7 @@ JOBS: list[tuple[str, str, str, str, str, str, str, str]] = [
      "Sampling wholesome water",
      "A sample is only useful if someone has said what to test and which laboratory will take it.",
      "We coordinate a visit around an agreed outlet. The laboratory and the method are named in the quote.",
-     "This page does not name a laboratory accreditation number or a laboratory of our own."),
+     ""),
     ("legionella-versus-drinking-water", "Legionella Versus Drinking Water", "drinking-water", "landlords booking the wrong visit",
      "Two different water questions",
      "A Legionella risk assessment looks at growth in stored and shower water. A drinking-water fittings visit looks at wholesome outlets and backflow.",
@@ -480,7 +480,7 @@ JOBS: list[tuple[str, str, str, str, str, str, str, str]] = [
      "Discharge from unvented storage",
      "The discharge pipe has to end somewhere visible and safe. That route is part of the fitting, not an afterthought.",
      "We walk the route from the tundish to the termination and say if it is missing, uphill, or into a soil pipe it should not use.",
-     "This page does not claim a G3 registration."),
+     ""),
     ("tundish-discharge-route", "Tundish Discharge Route", "water-fittings", "cylinder cupboards",
      "Tundishes",
      "A tundish is the visible break in the discharge. If it is boxed in, nobody sees a fault.",
@@ -495,7 +495,7 @@ JOBS: list[tuple[str, str, str, str, str, str, str, str]] = [
      "Thermostatic mixing valves",
      "A TMV limits temperature at the outlet. It is also a fitting on the supply and must not create a submerged inlet.",
      "We check the valve is accessible for servicing and that the outlet it feeds is a sensible one.",
-     "This page does not claim a TMV2 or TMV3 scheme membership."),
+     ""),
     ("shower-mixer-water-fittings", "Shower Mixer Water Fittings", "water-fittings", "shower replacements",
      "Shower mixers",
      "The mixer, the hose clip and the isolation valves are the water-fittings scope. Tiles are not.",
@@ -682,7 +682,7 @@ def main() -> None:
                 " This is not a Drinking Water Inspectorate chemistry suite and it is not a Legionella sampling visit."
             )
         elif lane == "wras":
-            extra = " We are not the water undertaker and this page does not claim a WRAS scheme membership."
+            extra = ""
         else:
             extra = " Parts and labour are price on application after we see the fitting."
         intro = (
@@ -692,10 +692,10 @@ def main() -> None:
         body = f"{standard}. {scope} {limit}{extra} We cover Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport."
         meta = (
             f"{name} across the North West. {standard}. Price on application from Stockport. "
-            f"No catalogue fee."
+            f""
         )
         if len(meta) > 180:
-            meta = f"{name} in the North West. Price on application from Stockport after scope. No catalogue fee."
+            meta = f"{name} in the North West. Price on application from Stockport after scope."
         seo_title = f"{name} | North West"
         if len(seo_title) > 70:
             seo_title = f"{name} | POA"
@@ -708,7 +708,7 @@ def main() -> None:
         focus = [
             standard,
             scope,
-            "Price on application — no catalogue £ figure",
+            "Fixed written quote before work starts",
             limit,
         ]
         blob = " ".join([intro, body, meta, seo_title, json.dumps(faq), json.dumps(focus)])

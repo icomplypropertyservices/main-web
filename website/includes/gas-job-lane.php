@@ -98,7 +98,7 @@ function gasJobLanePages(): array
             ],
             'points' => [
                 ['title' => 'The record', 'text' => 'Landlord Gas Safety Record (often called CP12) listing the appliances and flues that were checked.'],
-                ['title' => 'Who attends', 'text' => 'A Gas Safe registered engineer. Check the engineer’s ID on the public register. This page does not publish a registration number.'],
+                ['title' => 'Who attends', 'text' => 'A Gas Safe registered engineer. Check the engineer’s ID on the public register.'],
                 ['title' => 'Price boundary', 'text' => $amount . ' is the typical North West 6-bed HMO list price. Smaller or larger homes are confirmed before booking. Commercial sites are not this price.'],
             ],
             'steps' => [

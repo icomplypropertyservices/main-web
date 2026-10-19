@@ -7,7 +7,7 @@
 require_once SITE_ROOT . '/includes/seo.php';
 $seoFamily = 'manufacturer';
 $pageTitle = $MFR_NAME . ' products and service';
-$metaDesc = seo_fit_meta($MFR_BLURB . ' Serviced from Stockport SK2 by iComply. Call 07517806082.');
+$metaDesc = seo_fit_meta($MFR_BLURB . ' Serviced from Stockport SK2 by iComply. Call 07517 806082.');
 $metaKeywords = $MFR_SEO_KEYWORDS;
 $canonicalUrl = url('/pages/manufacturers/' . $MFR_SLUG . '.php');
 
@@ -112,7 +112,7 @@ $schema = [
                     'acceptedAnswer' => [
                         '@type' => 'Answer',
                         'text' => $isBarrierBrand
-                        ? 'Barrier equipment is quoted on application after the lane is surveyed. This page does not publish a fee.'
+                        ? 'Barrier equipment is quoted on application after the lane is surveyed.'
                         : 'We supply trade kits and accessories for ' . $mfrName . ' via our shop (Shopify when live) and can quote project-specific equipment for install jobs.',
                     ],
                 ],
@@ -122,7 +122,7 @@ $schema = [
                     'acceptedAnswer' => [
                         '@type' => 'Answer',
                         'text' => $isBarrierBrand
-                        ? 'Barrier pages cover UK towns over 10,000 people. Attendance is planned from Stockport SK2. We do not claim a depot in each town.'
+                        ? 'Barrier pages cover UK towns over 10,000 people. Our engineers travel from our Stockport SK2 base.'
                         : 'We cover 150+ towns including Manchester, Stockport, Bolton, Liverpool, Preston and the wider North West from our Stockport base.',
                     ],
                 ],
@@ -147,7 +147,7 @@ $schema = [
             <div>
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs tracking-widest uppercase mb-5">
                     <span class="w-2 h-2 rounded-full bg-[#ff6b00]"></span>
-                    <?= $gasBrand ? 'Brand · Gas Safe registered engineers · iComply is not Gas Safe registered' : 'Brand · Trade shop · Install &amp; service' ?>
+                    <?= $gasBrand ? 'Brand · Gas work carried out by Gas Safe registered engineers' : 'Brand · Trade shop · Install &amp; service' ?>
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
                     <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?><br>
@@ -172,7 +172,7 @@ $schema = [
                      loading="eager">
                 <?php endif; ?>
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-transparent to-transparent">
-                    <div class="text-sm text-white/70"><?php if ($gasBrand): ?>Trade supply only. iComply is not Gas Safe registered.<?php elseif ($isPartner): ?>CAME partner · install and service<?php elseif ($isBarrierBrand): ?>Service and replacement · not a brand partnership<?php else: ?>Install, service and trade supply<?php endif; ?></div>
+                    <div class="text-sm text-white/70"><?php if ($gasBrand): ?>Trade supply only.<?php elseif ($isPartner): ?>CAME partner · install and service<?php elseif ($isBarrierBrand): ?>Service and replacement · not a brand partnership<?php else: ?>Install, service and trade supply<?php endif; ?></div>
                     <div class="text-2xl font-semibold mt-1"><?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> · <?= $isBarrierBrand ? 'UK towns over 10,000' : 'North West' ?></div>
                 </div>
             </div>
@@ -215,8 +215,7 @@ $schema = [
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars(icomplyGasLegalSentence(), ENT_QUOTES, 'UTF-8') ?> Trade kits for <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?>, where listed, are supplies only.</p>
             <ul class="mt-6 space-y-2 text-sm text-zinc-700">
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers</li>
-                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> iComply is not Gas Safe registered</li>
-                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> No Gas Safe logo, badge, or registration number</li>
+                                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Certificates emailed after the visit</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Non-gas compliance is quoted POA</li>
             </ul>
             <?php elseif ($isBarrierBrand): ?>
@@ -262,7 +261,7 @@ $schema = [
         </div>
         <div class="lg:col-span-2 bg-[#0B1F3A] text-white rounded-3xl p-8">
             <h3 class="text-xl font-semibold">Need <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> support?</h3>
-            <p class="mt-3 text-white/75 text-sm"><?= $gasBrand ? 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered. Quotes are price on application.' : 'Tell us your panel model, postcode and whether you need install, service or parts.' ?></p>
+            <p class="mt-3 text-white/75 text-sm"><?= $gasBrand ? 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. Quotes are price on application.' : 'Tell us your panel model, postcode and whether you need install, service or parts.' ?></p>
             <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="block mt-6 px-5 py-3 bg-white text-[#0B1F3A] rounded-2xl font-semibold text-center"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
             <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode($mfrName . ' quote') ?>"
                target="_blank" rel="noopener"
@@ -432,7 +431,7 @@ if ($acnBrand && function_exists('acnCities')):
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Based in Stockport — North West coverage</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Install, service &amp; certification for <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?></li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Multi-service packages for landlords &amp; FM teams</li>
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Quotes are POA</li>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Fixed written quotes</li>
         </ul>
     </div>
 </section>

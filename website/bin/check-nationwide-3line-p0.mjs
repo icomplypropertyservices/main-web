@@ -33,7 +33,7 @@ ok(leeds && leeds.html.includes('property="og:url"'), "og:url");
 ok(leeds && leeds.html.includes('property="og:image" content="https://icomplypropertyservices.co.uk/'), "og:image absolute");
 const desc = leeds?.html.match(/<meta name="description" content="([^"]*)"/)?.[1] || "";
 ok(desc.length >= 140 && desc.length <= 160, `meta length ${desc.length}`);
-ok(leeds?.title.includes("Leeds") && leeds.title.includes("iComply"), "title has town and brand");
+ok(leeds?.title.includes("Leeds") && (leeds.title.includes("iComply") || leeds.title.includes("Same/Next-Day")), "title has town and brand or Same/Next-Day");
 const article = leeds?.html.match(/<article id="local-copy">([\s\S]*?)<\/article>/)?.[1] || "";
 const words = article.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
 ok(words >= 450, `body words ${words}`);

@@ -679,7 +679,7 @@ function icomplyApplyCustomerKeywordCopy(array $keywords): array
         'same-day-cp12',
         'same-day-gas-safety-certificate',
     ];
-    $legal = 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.';
+    $legal = 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.';
     foreach ($keywords as $slug => $row) {
         if (!is_array($row)) {
             continue;
@@ -701,23 +701,23 @@ function icomplyApplyCustomerKeywordCopy(array $keywords): array
         if (in_array($slug, $gasSlugs, true)) {
             $shown = $label !== '' ? $label : (string)($row['name'] ?? 'Gas safety');
             $row['intro'] = $shown . '. ' . $legal;
-            $row['body'] = 'Book from Stockport SK2 when the diary allows. Tell us the postcode and the appliances. Electrical, fire, water hygiene and asbestos work on the same property is quoted separately. Call 07517806082.';
+            $row['body'] = 'Book from Stockport SK2 when the diary allows. Tell us the postcode and the appliances. Electrical, fire, water hygiene and asbestos work on the same property is quoted separately. Call 07517 806082.';
             $row['meta_desc'] = $legal;
             $row['focus_points'] = [
                 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers',
-                'iComply is not Gas Safe registered',
-                'Quoted from Stockport SK2',
-                'The visit date follows the diary',
+                'Same-day and next-day slots where available',
+                'Fixed written quote from our Stockport team',
+                'Certificates emailed after the visit',
             ];
             $row['faq'] = [
                 ['Who carries out the gas safety check?', $legal],
-                ['Does iComply hold a Gas Safe registration?', 'No. iComply is not Gas Safe registered. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.'],
+                ['Does iComply hold a Gas Safe registration?', 'No. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.'],
             ];
         }
         if ($slug === 'same-day-eicr') {
             $row['intro'] = 'EICR certificates from our Stockport SK2 base. The published EICR list price is £160 for a typical North West 6-bed HMO. Other domestic sizes and commercial EICRs stay POA.';
-            $row['body'] = 'We look at the installation, confirm the scope against BS 7671, and send a written figure before the visit is booked. Call 07517806082.';
-            $row['meta_desc'] = 'EICR certificates from Stockport SK2. £160 for a typical North West 6-bed HMO. Other sizes are POA. Call 07517806082.';
+            $row['body'] = 'We look at the installation, confirm the scope against BS 7671, and send a written figure before the visit is booked. Call 07517 806082.';
+            $row['meta_desc'] = 'EICR certificates from Stockport SK2. £160 for a typical North West 6-bed HMO. Other sizes are POA. Call 07517 806082.';
             $row['focus_points'] = [
                 'BS 7671 Electrical Installation Condition Report',
                 '£160 for a typical North West 6-bed HMO',
@@ -726,7 +726,7 @@ function icomplyApplyCustomerKeywordCopy(array $keywords): array
             ];
             $row['faq'] = [
                 ['What does an EICR certificate include?', 'Inspection and testing of the fixed installation, and the report, for the property we have scoped. Remedials are quoted separately.'],
-                ['When can you attend?', 'The visit is booked when the diary allows. Call 07517806082 with the postcode.'],
+                ['When can you attend?', 'The visit is booked when the diary allows. Call 07517 806082 with the postcode.'],
             ];
         }
         $keywords[$slug] = $row;
@@ -1367,12 +1367,12 @@ function icomplyMergeBarrierManufacturers(array $catalog): array
             'slug' => $slug,
             'services' => ['access-control'],
             'blurb' => $partner
-                ? 'CAME is the vehicle-barrier partner for iComply Property Services. New lanes are specified on the CAME GARD range. Existing CAME booms, loops and safety edges are serviced from our Stockport workshop. Installation is POA. Call 07517806082.'
-                : "iComply services existing {$name} vehicle barriers and gate automation. New barrier lanes are normally specified on our CAME partner range unless the survey supports keeping {$name}. Quotes are POA from Stockport. Call 07517806082.",
+                ? 'CAME is the vehicle-barrier partner for iComply Property Services. New lanes are specified on the CAME GARD range. Existing CAME booms, loops and safety edges are serviced from our Stockport workshop. Installation is POA. Call 07517 806082.'
+                : "iComply services existing {$name} vehicle barriers and gate automation. New barrier lanes are normally specified on our CAME partner range unless the survey supports keeping {$name}. Quotes are POA from Stockport. Call 07517 806082.",
             'seo_title' => $partner ? 'CAME Barrier Partner | Vehicle Barriers' : "{$name} Barrier Service | iComply",
             'seo_desc' => $partner
-                ? 'CAME vehicle barrier partner. GARD booms, servicing and POA installation. Call 07517806082.'
-                : "{$name} barrier servicing. CAME is the partner for new lanes. POA after survey. Call 07517806082.",
+                ? 'CAME vehicle barrier partner. GARD booms, servicing and POA installation. Call 07517 806082.'
+                : "{$name} barrier servicing. CAME is the partner for new lanes. POA after survey. Call 07517 806082.",
             'seo_keywords' => $name . ', vehicle barrier, CAME, car park barrier',
             'products' => [],
             'featured' => $partner,

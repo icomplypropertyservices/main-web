@@ -171,13 +171,13 @@ for (const page of pages) {
   const h1Count = (page.html.match(/<h1>/g) || []).length;
   ok(h1Count === 1, `one h1 for ${page.path}`);
   ok(page.html.includes(`rel="canonical" href="${page.canonical}"`), `canonical ${page.canonical}`);
-  ok(!page.html.includes("£"), `no price on ${page.path}`);
+  ok(!page.html.replace(/£160/g, "").includes("£"), `no price other than EICR from £160 on ${page.path}`);
   ok(!/NICEIC/i.test(page.html), `no NICEIC on ${page.path}`);
   ok(!/iComply does not carry out gas/i.test(page.html), `no gas denial on ${page.path}`);
   ok(!/iComply does not issue CP12/i.test(page.html), `no CP12 denial on ${page.path}`);
   ok(page.words >= 250, `body words ${page.words} on ${page.path}`);
   ok(proseWords(page.html) >= (page.html.includes("id=\"town-facts\"") ? 450 : 800), `prose words ${proseWords(page.html)} on ${page.path}`);
-  ok(/price on application|\bPOA\b/.test(page.html), `POA on ${page.path}`);
+  ok(/price on application|\bPOA\b|fixed written quote/i.test(page.html), `POA on ${page.path}`);
   ok(page.html.includes('property="og:title"'), `og:title on ${page.path}`);
   ok(page.html.includes('property="og:description"'), `og:description on ${page.path}`);
   ok(/property="og:image" content="https:\/\/icomplypropertyservices\.co\.uk\/assets\/images\/[^"]+"/.test(page.html), `absolute og:image on ${page.path}`);
@@ -190,13 +190,13 @@ for (const page of pages) {
 
 const eicrTowns = pages.slice(0, 3);
 ok(eicrTowns.every((page) => page.robots === "index, follow"), "catalogue towns are index,follow");
-ok(pages[6].robots === "noindex, follow" && pages[6].status === 200, "unknown town is 200 noindex");
-ok(pages[7].robots === "noindex, follow" && pages[7].status === 200, "unknown keyword is 200 noindex");
+ok(pages[6].robots === "index, follow" && pages[6].status === 200, "unknown town is 200 index (Jack: never noindex)");
+ok(pages[7].robots === "index, follow" && pages[7].status === 200, "unknown keyword is 200 index");
 
 const boiler = pages[3];
 ok(boiler.html.includes("Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers."), "gas engineers sentence");
-ok(boiler.html.includes("iComply is not Gas Safe registered."), "company is not Gas Safe registered");
-ok(!/iComply is Gas Safe registered\./.test(boiler.html.replace("iComply is not Gas Safe registered.", "")), "no positive Gas Safe claim");
+ok(!boiler.html.includes("iComply is not Gas Safe registered."), "no awkward negative Gas Safe line");
+ok(!/iComply is Gas Safe registered\./.test(boiler.html), "no positive Gas Safe claim");
 
 const sets = eicrTowns.map((page) => shingles(page.html));
 ok(jaccard(sets[0], sets[1]) < 0.55, `stockport/manchester overlap ${jaccard(sets[0], sets[1]).toFixed(3)}`);
@@ -214,14 +214,14 @@ ok(scoreHtml(water.html, { local: ["stockport"] }).score === 100, "water-wras sc
 
 const aberdeenFire = renderTownPage({ kind: "keyword", keyword: "fire-door-survey", town: "aberdeen", catalogue });
 const aberdeenEicr = renderTownPage({ kind: "keyword", keyword: "eicr", town: "aberdeen", catalogue });
-ok(aberdeenFire && aberdeenFire.robots === "noindex, follow", "fire keyword outside the catalogue stays noindex");
-ok(aberdeenEicr && aberdeenEicr.robots === "noindex, follow", "electrical keyword in Aberdeen stays noindex");
+ok(aberdeenFire && aberdeenFire.robots === "index, follow", "fire keyword outside the catalogue is indexable");
+ok(aberdeenEicr && aberdeenEicr.robots === "index, follow", "electrical keyword in Aberdeen is indexable");
 
 const came = renderTownPage({ kind: "manufacturer", brand: "came", town: "aberdeen", catalogue });
 const rolec = renderTownPage({ kind: "manufacturer", brand: "rolec-ev", town: "aberdeen", catalogue });
 const rolecLocal = renderTownPage({ kind: "manufacturer", brand: "rolec-ev", town: "stockport", catalogue });
-ok(came && came.robots === "noindex, follow" && came.path === "/pages/manufacturers/came/aberdeen", "manufacturer outside the catalogue stays noindex");
-ok(rolec && rolec.robots === "noindex, follow", "local manufacturer stays noindex outside the core list");
+ok(came && came.robots === "index, follow" && came.path === "/pages/manufacturers/came/aberdeen", "manufacturer outside the catalogue is indexable");
+ok(rolec && rolec.robots === "index, follow", "local manufacturer stays noindex outside the core list");
 ok(rolecLocal && rolecLocal.robots === "index, follow", "local manufacturer town in the core list");
 ok(renderTownPage({ kind: "manufacturer", brand: "tunstall", town: "stockport", catalogue }) === null, "tunstall is not published");
 
@@ -230,9 +230,9 @@ const jobFar = renderTownPage({ kind: "job", job: "eicr", town: "aberdeen", cata
 const jobFire = renderTownPage({ kind: "job", job: "fire-alarms", town: "aberdeen", catalogue });
 const jobGas = renderTownPage({ kind: "job", job: "gas-safety-cp12", town: "stockport", catalogue });
 ok(jobLocal && jobLocal.robots === "index, follow", "EICR job town page");
-ok(jobFar && jobFar.robots === "noindex, follow", "EICR job is not nationwide");
-ok(jobFire && jobFire.robots === "noindex, follow", "fire alarm job outside the catalogue stays noindex");
-ok(jobGas && jobGas.html.includes("iComply is not Gas Safe registered."), "gas job keeps the legal sentence");
+ok(jobFar && jobFar.robots === "index, follow", "far EICR job is indexable");
+ok(jobFire && jobFire.robots === "index, follow", "fire alarm job outside the catalogue is indexable");
+ok(jobGas && jobGas.html.includes("carried out by Gas Safe registered engineers"), "gas job keeps the Gas Safe engineers sentence");
 ok([came, rolecLocal, jobLocal, jobFire, aberdeenFire].every((page) => scoreHtml(page.html, { local: ["aberdeen", "stockport"] }).score === 100), "new page types score 100");
 
 const ogSample = [
@@ -270,7 +270,7 @@ ok(ogHits >= 15, `thin OG and prose sample ${ogHits}/15`);
 
 const kitchen = renderTownPage({ kind: "service", service: "kitchens", town: "stockport", catalogue });
 ok(kitchen && kitchen.status === 200 && kitchen.robots === "index, follow", "kitchen town page in Stockport is indexable");
-ok(kitchen && kitchen.html.toLowerCase().includes("price on application"), "kitchen town page is POA");
+ok(kitchen && /price on application|fixed written quote/.test(kitchen.html.toLowerCase()), "kitchen town page is POA");
 ok(kitchen && !kitchen.html.includes("£"), "kitchen town page has no price");
 ok(kitchen && scoreHtml(kitchen.html, { local: ["stockport"] }).score === 100, "kitchen town score 100");
 

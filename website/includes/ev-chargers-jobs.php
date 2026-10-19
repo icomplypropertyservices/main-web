@@ -143,7 +143,7 @@ function evChargersJobsApply(array $keywords): array
         if (!$hasPoa) {
             $faqs[] = [
                 $poaQ,
-                'No. Enquire and we quote POA after survey. This page does not publish a fee.',
+                'No. Enquire and we quote POA after survey.',
             ];
         }
         $merged['faq'] = array_values($faqs);

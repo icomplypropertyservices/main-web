@@ -6,7 +6,7 @@ require_once __DIR__ . '/config.php';
 require_once SITE_ROOT . '/includes/shopify.php';
 
 $pageTitle = 'Property Maintenance & Compliance | iComply Property Services';
-$metaDesc = 'iComply Property Services — AOV and smoke control, vehicle barriers, landlord compliance (EICR, CP12/gas, FRA), electrical, gas and fire safety across Greater Manchester. Call 07517806082. Stockport SK2 5DE.';
+$metaDesc = 'iComply Property Services — AOV and smoke control, vehicle barriers, landlord compliance (EICR, CP12/gas, FRA), electrical, gas and fire safety across Greater Manchester. Call 07517 806082. Stockport SK2 5DE.';
 $canonicalUrl = url('/');
 $metaKeywords = 'AOV smoke control, vehicle barriers, landlord compliance Stockport, EICR Manchester, gas safety CP12, fire risk assessment, North West';
 $ogImage = url('/assets/images/android-chrome-512.png');

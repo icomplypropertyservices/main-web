@@ -32,27 +32,30 @@ function ctrPriceFrom(slug) {
 
 export function ctrTitle(subject, town, slug) {
   const price = ctrPriceFrom(slug);
-  const head = `${subject} ${town}`;
   const opts = [];
   if (price) {
-    opts.push(`${head} from ${price} | Next-Day | ${CTR_PHONE}`);
-    opts.push(`${head} from ${price} | ${CTR_PHONE}`);
+    opts.push(`${subject} in ${town} from ${price} | Same/Next-Day`);
+    opts.push(`${subject} ${town} from ${price} | Same/Next-Day`);
+    opts.push(`${subject} ${town} from ${price}`);
   }
-  opts.push(`${head} | Same/Next-Day | ${CTR_PHONE}`);
-  opts.push(`${head} | Call ${CTR_PHONE}`);
-  opts.push(`${head} | iComply`);
-  for (const o of opts) if (o.length <= 62) return o;
-  return `${head.slice(0, 52).replace(/\s+\S*$/, "")} | iComply`;
+  opts.push(`${subject} in ${town} | Same/Next-Day Engineers`);
+  opts.push(`${subject} in ${town} | Same/Next-Day`);
+  opts.push(`${subject} ${town} | Same/Next-Day`);
+  opts.push(`${subject} in ${town} | iComply`);
+  for (const o of opts) if (o.length <= 60) return o;
+  return `${`${subject} ${town}`.slice(0, 50).replace(/\s+\S*$/, "")} | iComply`;
 }
 
 export function ctrDescription(subject, town, slug, gas) {
   const price = ctrPriceFrom(slug);
   const lead = `${subject} in ${town}${price ? ` from ${price}` : ""}.`;
-  const who = gas ? " Same/next-day slots, work by Gas Safe registered engineers." : " Same/next-day slots from our Stockport team.";
-  let d = `${lead}${who} Fixed written quote, certificates emailed. Call ${CTR_PHONE}.`;
-  if (d.length > 160) d = `${lead}${who} Call ${CTR_PHONE}.`;
-  if (d.length > 160) d = `${lead} Same/next-day. Call ${CTR_PHONE}.`;
-  return clampMeta(d);
+  const who = gas ? " Same/next-day visits, carried out by Gas Safe registered engineers." : " Same/next-day engineers from our Stockport team.";
+  for (const d of [
+    `${lead}${who} Fixed written quote, certificates emailed. Call or WhatsApp ${CTR_PHONE}.`,
+    `${lead}${who} Call or WhatsApp ${CTR_PHONE}.`,
+    `${lead} Same/next-day. Call ${CTR_PHONE}.`,
+  ]) if (d.length <= 160) return d;
+  return clampMeta(`${lead} Same/next-day. Call ${CTR_PHONE}.`);
 }
 
 const FIRE_P0 = new Set(fireAlarmFamily.p0 || []);
@@ -90,7 +93,7 @@ function fireInstallerNationwide(keyword, town) {
   return FIRE_P0.has(keyword) && MAINLAND.has(town);
 }
 
-const FIRE_DUTY = "Design, installation and commissioning follow BS 5839. Competent fire alarm engineers carry out the visit. iComply does not claim BAFE or NSI badges.";
+const FIRE_DUTY = "Design, installation and commissioning follow BS 5839, carried out by experienced fire alarm engineers.";
 const FIRE_NAP = "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE";
 
 const SERVICE_HUB_ALIAS = {
@@ -259,11 +262,11 @@ export function renderTownPage(input) {
     keyword = {
       name: subject,
       service: serviceSlug,
-      intro: `${subject} equipment and visits are arranged from Stockport for sites that already use this manufacturer.`,
+      intro: `We service, repair and maintain ${subject} equipment for landlords, agents and commercial sites, with engineers based in Stockport.`,
       focus: [
         `${subject} parts identified before the visit`,
-        "Quote is price on application",
-        "Paperwork left with the instructing client",
+        "Fixed written quote before work starts",
+        "Certificates and reports emailed after the visit",
       ],
       gas: serviceSlug === "gas-systems",
     };
@@ -279,11 +282,11 @@ export function renderTownPage(input) {
     keyword = {
       name: subject,
       service: serviceSlug,
-      intro: `${subject} is a job type under ${serviceName}, scoped per building rather than sold as a package price.`,
+      intro: `${subject} carried out by our ${serviceName} engineers, with a fixed written quote for your building.`,
       focus: job.focus && job.focus.length ? job.focus : [
-        "Scope agreed before anyone attends",
-        "Quote is price on application",
-        "Result left with the instructing client",
+        "Same-day and next-day slots where available",
+        "Fixed written quote before work starts",
+        "Clear written report after the visit",
       ],
       gas: Boolean(job.gas) || serviceSlug === "gas-systems",
     };
@@ -301,9 +304,9 @@ export function renderTownPage(input) {
         service: gas ? "gas-systems" : "building-maintenance",
         intro: "",
         focus: [
-          "Scope agreed before the visit",
-          "Quote is price on application",
-          "Paperwork left with the instructing client",
+          "Same-day and next-day slots where available",
+          "Fixed written quote before work starts",
+          "Certificates and reports emailed after the visit",
         ],
         gas,
         synthetic: true,
@@ -331,8 +334,8 @@ export function renderTownPage(input) {
         ? relatedKw.focus
         : [
           `Survey and scope for ${serviceName}`,
-          "Quote is price on application",
-          "Paperwork handed to the instructing client",
+          "Fixed written quote before work starts",
+          "Certificates and reports emailed after the visit",
         ],
       gas: serviceSlug === "gas-systems" || Boolean(relatedKw && relatedKw.gas),
     };
@@ -365,14 +368,14 @@ export function renderTownPage(input) {
   const neighbours = Array.isArray(place.neighbours) ? place.neighbours.filter(Boolean) : [];
   const near = neighbours.length ? neighbours.join(", ") : "Stockport, Manchester and the surrounding North West";
   const pop = place.population
-    ? `${place.name} has a published usual-resident population of about ${Number(place.population).toLocaleString("en-GB")}.`
-    : `${place.name} is quoted from the address, not from an invented population figure.`;
+    ? `${place.name} is home to about ${Number(place.population).toLocaleString("en-GB")} people.`
+    : `We work across ${place.name} every week.`;
   const housing = place.housing
     ? `Census housing in ${place.name} includes ${place.housing}.`
     : `Buildings in ${place.name} include rented homes, shops, offices and light-industrial units.`;
   const industry = place.industry
-    ? `Local employment notes for ${place.name} include ${place.industry}, so visits are planned around occupied buildings.`
-    : `Sites in ${place.name} are a mix of housing and commercial units. The scope follows the building, not a stock paragraph.`;
+    ? `Local businesses in ${place.name} include ${place.industry}, so we plan visits around working hours.`
+    : `We work on homes, shops, offices and industrial units across ${place.name}.`;
   const focus = (keyword.focus && keyword.focus.length ? keyword.focus : [`Scope agreed before ${subject} starts`]).slice(0, 4);
   const canonical = `https://icomplypropertyservices.co.uk${path}`;
   const h1 = `${subject} for ${audience} in ${place.name}`;
@@ -390,12 +393,13 @@ export function renderTownPage(input) {
   if (gas && prose && !/Gas Safe registered engineers/.test(prose)) {
     prose = `${prose} ${GAS_SENTENCE}`;
   }
+  const proseService = String(serviceName).replace(/\b([A-Z])([a-z]+)/g, (m, first, rest) => first.toLowerCase() + rest);
   const qualityCtx = {
     kind,
     seed,
     place: place.name,
-    subject,
-    service: serviceName,
+    subject: kind === "manufacturer" ? `${subject} ${proseService}` : subject,
+    service: proseService,
     audience,
     visit,
     near,
@@ -439,12 +443,12 @@ export function renderTownPage(input) {
     const population = place.population
       ? `Published population is about ${Number(place.population).toLocaleString("en-GB")}. `
       : "";
-    proseHtml += `<p data-pe-slot="fire-installer-nap">${escapeHtml(`${subject} in ${place.name} is arranged from ${FIRE_NAP}. ${place.name} is in ${county}${place.region}, ${place.country}. ${population}${FIRE_DUTY} The quote is price on application.`)}</p>`;
+    proseHtml += `<p data-pe-slot="fire-installer-nap">${escapeHtml(`We install and maintain ${subject.toLowerCase()} in ${place.name} from our base at ${FIRE_NAP}. ${place.name} is in ${county}${place.region}, ${place.country}. ${population}${FIRE_DUTY} Call 07517 806082 for a fixed written quote.`)}</p>`;
   }
   if (fireTown) {
     faqs.push([
       `Do you cover ${place.name} for ${subject}?`,
-      `${subject} in ${place.name} is arranged from ${FIRE_NAP}. ${FIRE_DUTY} The quote is price on application.`,
+      `Yes. Our engineers cover ${place.name} from ${FIRE_NAP}. ${FIRE_DUTY} Call 07517 806082 for a fixed written quote.`,
     ]);
   }
   if (facts) {

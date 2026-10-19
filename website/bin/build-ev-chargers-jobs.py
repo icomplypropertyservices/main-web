@@ -400,7 +400,7 @@ JOBS = [
         "h1": "Landlord EV Charger",
         "angle": "charge point for a rental property parking bay",
         "intro": "A landlord EV charger is a charge point on a rental house or a bay you control, with paperwork an agent can file next to the electrical certificate.",
-        "body": "We still survey capacity and earthing. A let does not change Section 722. We note who will own the unit and who may use the app account so a change of tenant is not a mystery. Quotes are POA. Enquire with the tenancy address and whether the bay is allocated.",
+        "body": "We still survey capacity and earthing. A let does not change Section 722. We note who will own the unit and who may use the app account so a change of tenant is not a mystery. Every quote is fixed and written. Enquire with the tenancy address and whether the bay is allocated.",
         "points": [
             "Allocated bay confirmed with the landlord",
             "Certificate suitable for the property file",

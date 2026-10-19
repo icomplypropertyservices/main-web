@@ -2,7 +2,7 @@
 /**
  * AOV manufacturer plates and equipment-kit chooser.
  * Wordmarks are original name plates, not copied trademark artwork.
- * We do not claim approved-installer or scheme accreditation.
+ *
  */
 declare(strict_types=1);
 

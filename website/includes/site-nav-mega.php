@@ -80,7 +80,7 @@ function icomplyMegaHeaderHtml(): string
     foreach (array_keys($n['areasByLetter']) as $letter) {
         $areaCols .= '<a href="' . $areaHub . '#letter-' . icomplyNavH((string)$letter) . '">' . icomplyNavH((string)$letter) . '</a>';
     }
-    $areaCols .= '</div><p class="mega-note">Every town has its own area page. Keyword×town pages open from a keyword hub.</p></div>';
+    $areaCols .= '</div><p class="mega-note">Every town we cover has its own area page.</p></div>';
 
     $drawer = icomplyMobileDrawerHtml($n);
     $svcCount = count($n['services']);

@@ -359,7 +359,7 @@ return [
     'emergency-smoke-ventilation' => [
         'heading' => 'Emergency means the stair is stuck shut or standing open',
         'paragraphs' => [
-            'A vent locked closed on a live stair, or a roof hatch stuck open in rain, is the reactive job. Phone 07517806082 with the postcode and a panel photo. Attendance is priority where someone is free. It is not a promised 24-hour contract.',
+            'A vent locked closed on a live stair, or a roof hatch stuck open in rain, is the reactive job. Phone 07517 806082 with the postcode and a panel photo. Attendance is priority where someone is free. It is not a promised 24-hour contract.',
             'We make safe what we can on the first visit and list parts if the actuator or panel is dead. Making safe is not the same as a full recommission.',
         ],
     ],

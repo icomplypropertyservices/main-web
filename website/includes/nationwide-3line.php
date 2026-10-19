@@ -251,7 +251,7 @@ function icomplyNationwide3lineFitMeta(string $text): string
             $text .= $extra;
         }
     }
-    $pads = [' Scope is written first.', ' No catalogue price.', ' Call 07517806082.', ' Scope first.', ' POA only.'];
+    $pads = [' Scope is written first.', ' No catalogue price.', ' Call 07517 806082.', ' Scope first.', ' POA only.'];
     foreach ($pads as $pad) {
         if (strlen($text) >= 140 && mb_strlen($text) >= 140) {
             break;
@@ -335,7 +335,7 @@ function icomplyNationwide3lineRenderTown(string $keywordSlug, string $townSlug)
     if (is_array($faqs)) {
         $faqs[] = [
             'How do I ask for ' . $name . ' in ' . $place . '?',
-            'Phone 07517806082 or use the contact form. Name the building in ' . $place . '. The reply is price on application. Workshop: ' . ICOMPLY_NATIONWIDE_NAP . '.',
+            'Phone 07517 806082 or use the contact form. Name the building in ' . $place . '. The reply is price on application. Workshop: ' . ICOMPLY_NATIONWIDE_NAP . '.',
         ];
         foreach ($faqs as $faq) {
             if (!is_array($faq) || count($faq) < 2) {
@@ -414,6 +414,6 @@ function icomplyNationwide3lineRenderTown(string $keywordSlug, string $townSlug)
         . '<article id="local-copy">' . $bodyHtml . '</article>'
         . '<section><h2>' . $h($name . ' FAQ') . '</h2>' . $faqHtml . '</section>'
         . '<section><h2>Related guides</h2><ul>' . $links . '</ul></section>'
-        . '<p>Workshop: ' . $h(ICOMPLY_NATIONWIDE_NAP) . '. Phone 07517806082. Price on application.</p>'
+        . '<p>Workshop: ' . $h(ICOMPLY_NATIONWIDE_NAP) . '. Phone 07517 806082. Price on application.</p>'
         . '</main></body></html>';
 }

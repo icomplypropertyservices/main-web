@@ -148,7 +148,7 @@ function icomplyElectricalGasNewKeywords(): array
         $e,
         'price-of-rewire',
         'Rewire cost for North West homes and lets is POA after survey. iComply does not list invented pound prices for full-house or partial rewires.',
-        'Cost depends on storeys, circuit count, chasing versus surface trunking, consumer unit location and how much plaster or decoration you want us to reinstate. We explain those variables on site from our Stockport base, then write a fixed-scope POA quote. Related searches such as price of rewire and domestic rewire cost are answered the same way: no catalogue £ figures.',
+        'Cost depends on storeys, circuit count, chasing versus surface trunking, consumer unit location and how much plaster or decoration you want us to reinstate. We explain those variables on site from our Stockport base, then write a fixed-scope POA quote. Related searches such as price of rewire and domestic rewire cost are answered the same way: a fixed written quote for your property.',
         'Rewire cost across Greater Manchester & the North West is POA after survey. No invented £ prices from iComply.',
         [
             'POA after survey only',
@@ -237,7 +237,7 @@ function icomplyElectricalGasNewKeywords(): array
         'emergency-electrician',
         'Emergency electrician cost is POA. Out-of-hours attendance, make-safe time and any parts needed are explained before we despatch — we do not invent a pound call-out fee on this page.',
         'Burning smells, flooding near electrics or a total loss affecting vulnerable occupants are treated as urgent. Daytime faults that can wait are booked as planned work. From Stockport we cover Greater Manchester and nearby towns when diary and travel allow. Emergency electrician cost is always agreed as POA terms on the call.',
-        'Emergency electrician cost in the North West is POA. Attendance terms explained before despatch — no invented £ call-out prices.',
+        'Emergency electrician cost in the North West is POA. Attendance terms explained before we travel.',
         [
             'POA attendance terms before despatch',
             'Make-safe first, permanent repair when safe',
@@ -411,7 +411,7 @@ function icomplyElectricalGasNewKeywords(): array
         $e,
         'consumer-unit',
         'Consumer unit replacement is the planned swap of an old fuse board or tired consumer unit for a modern protected board. iComply carries out replacements across Greater Manchester and the North West from Stockport.',
-        'We map circuits, isolate, fit the new enclosure and test. Surge protection and RCBO layouts are specified on the quote. Consumer unit replacement cost is POA — see consumer unit cost for the pricing rule (no invented £).',
+        'We map circuits, isolate, fit the new enclosure and test. Surge protection and RCBO layouts are specified on the quote. Consumer unit replacement cost is POA — see consumer unit cost for the pricing rule.',
         'Consumer unit replacement in Stockport and the North West. RCBO/dual-RCD options. POA after we see the existing board.',
         [
             'Mapped circuits before isolation',
@@ -655,7 +655,7 @@ function icomplyElectricalGasNewKeywords(): array
         $g,
         'gas-safety-certificate',
         'Gas safety for rented and occupied homes means competent checks of appliances and flues, and — for landlords — a current gas safety record (often called a CP12). iComply arranges gas safety work across the North West from Stockport.',
-        'Homeowners usually want a service or a tightness check; landlords need the annual record and a copy for tenants. Commercial kitchens and plant are scoped separately. Gas safety certificate cost and CP12 cost are POA. We do not invent pound fees for gas safety on this page.',
+        'Homeowners usually want a service or a tightness check; landlords need the annual record and a copy for tenants. Commercial kitchens and plant are scoped separately. Gas safety certificate and CP12 costs are confirmed in a fixed written quote.',
         'Gas safety checks and landlord records across Greater Manchester and the North West. CP12 and appliance checks. Fees POA.',
         [
             'Landlord annual gas safety records',
@@ -1277,7 +1277,7 @@ function icomplyElectricalGasNewKeywords(): array
         'gas-certificate-for-tenants',
         'A tenant gas certificate is the copy of the landlord gas safety record that tenants should receive. iComply produces the record after the check so landlords and agents can issue it.',
         'Tenants cannot usually commission the legal record themselves unless the landlord agrees. We still explain what the document is. Tenant gas certificate / CP12 cost is billed to the instructing landlord or agent as POA.',
-        'Tenant gas certificate (landlord gas safety record copy) across the North West. Issued after the check. POA to the instructing client.',
+        'Tenant gas certificate (landlord gas safety record copy) across the North West. Issued after the check. POA to the person who booked.',
         [
             'Record suitable to give to tenants',
             'Booked by landlord or agent',

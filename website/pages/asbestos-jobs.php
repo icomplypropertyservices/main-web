@@ -61,7 +61,7 @@ $card = static function (array $job) use ($h): void {
 
 <article class="max-w-7xl mx-auto px-6 py-12 space-y-12">
     <div class="rounded-2xl bg-amber-50 border border-amber-200 px-5 py-4 text-sm text-amber-950 max-w-3xl">
-        <p>These pages do not offer licensed asbestos removal. An awareness briefing is not an accredited training certificate and does not replace a management or refurbishment survey. Quotes are POA. This is not legal advice.</p>
+        <p>These pages do not offer licensed asbestos removal. An awareness briefing is not an accredited training certificate and does not replace a management or refurbishment survey. Every quote is fixed and written. This is not legal advice.</p>
     </div>
 
     <section id="survey-lane">

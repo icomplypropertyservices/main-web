@@ -161,7 +161,7 @@ BRANDS = [
     entry(
         "Gibidi",
         "gibidi",
-        "Gibidi PASS barriers are identified before parts are ordered. iComply does not claim a Gibidi partnership and does not pretend every boom is on the van. A CAME replacement is a separate price on application when the spare lead time is the problem.",
+        "Gibidi PASS barriers are identified before parts are ordered. A CAME replacement is a separate price on application when the spare lead time is the problem.",
         "Gibidi PASS barrier identification and repair. Price on application.",
         "Gibidi PASS barrier, Gibidi barrier repair",
         [
@@ -194,7 +194,7 @@ BRANDS = [
     entry(
         "King Gates",
         "king-gates",
-        "King Gates is often a gate motor and sometimes a short-lane barrier. Powered gates are assessed against BS EN 12453. A rising arm follows the barrier manufacturer's instructions and the site risk assessment. iComply does not claim a King Gates partnership. A true rising arm is specified as CAME. Price on application.",
+        "King Gates is often a gate motor and sometimes a short-lane barrier. Powered gates are assessed against BS EN 12453. A rising arm follows the barrier manufacturer's instructions and the site risk assessment. A true rising arm is specified as CAME. Price on application.",
         "King Gates barriers and gate motors, scoped separately. Price on application.",
         "King Gates barrier, King Gates gate motor, BS EN 12453",
         [

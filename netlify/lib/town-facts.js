@@ -108,7 +108,7 @@ export function townFactsBlock({ slug, town, subject, service, hrefFor, names })
   }
   paras.push(mi <= 3
     ? `Our yard at Offerton, Stockport SK2 5DE is close by, so ${subject.toLowerCase()} visits in ${town} fit around other local work.`
-    : `${town} is about ${mi} miles ${dir} of our Offerton, Stockport SK2 5DE yard in a straight line. ${mi <= 25 ? "That is a day visit, with travel as a small line on the quote." : mi <= 90 ? "Visits at that range are batched into planned days, with travel written on the quote." : "Travel, and any overnight stay, is priced on the quote before anything is booked."}`);
+    : `${town} is about ${mi} miles ${dir} of our Offerton, Stockport SK2 5DE yard in a straight line. ${mi <= 25 ? "We cover it as a normal day visit, with travel included in the quote." : mi <= 90 ? "We plan visits at that distance into set days, with travel included in the quote." : "Travel is included in the quote before anything is booked."}`);
   if (census) {
     const line = serviceLine(service, town, census, council);
     if (line) paras.push(line);
@@ -132,11 +132,11 @@ export function townFactsBlock({ slug, town, subject, service, hrefFor, names })
   const faqs = [];
   if (ocs.length) {
     faqs.push([`Do you cover ${list(ocs.slice(0, 3))} for ${subject.toLowerCase()}?`,
-      `Yes. ${list(ocs)} are quoted from the Stockport yard, about ${mi} miles away. Send the full postcode and a photo, or call 07517806082.`]);
+      `Yes. ${list(ocs)} are covered by our Stockport team, about ${mi} miles away. Send the full postcode and a photo, or call 07517 806082.`]);
   }
   if (near.length) {
     faqs.push([`Can a ${town} visit be combined with nearby sites?`,
-      `Often. The nearest other places we cover are ${list(near.slice(0, 3).map((n) => `${n.name} (${Math.max(1, Math.round(n.miles))} miles ${n.dir})`))}.`]);
+      `Often. The nearest other places we cover are ${list(near.slice(0, 3).map((n) => `${n.name} (${Math.max(1, Math.round(n.miles))} ${Math.max(1, Math.round(n.miles)) === 1 ? "mile" : "miles"} ${n.dir})`))}.`]);
   }
   return { html, faqs };
 }

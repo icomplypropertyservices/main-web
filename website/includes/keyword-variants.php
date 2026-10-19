@@ -16,16 +16,16 @@ const ICOMPLY_VARIANT_KEYWORDS = 10000;
 function icomplyKeywordVariantAudiences(): array
 {
     return [
-        ['slug' => 'landlord', 'label' => 'landlords', 'title' => 'Landlord', 'note' => 'The instruction comes from a landlord or the agent acting for that landlord. The quote names the building and is price on application.'],
-        ['slug' => 'commercial', 'label' => 'commercial clients', 'title' => 'Commercial', 'note' => 'The instruction is for a commercial building. Occupied floors, access times and the written scope are agreed before anyone attends. The quote is price on application.'],
-        ['slug' => 'domestic', 'label' => 'homeowners', 'title' => 'Domestic', 'note' => 'The instruction is for a home. The visit is still scoped in writing and quoted price on application, including where a landlord later asks for the same address.'],
-        ['slug' => 'hmo', 'label' => 'HMO operators', 'title' => 'HMO', 'note' => 'The instruction is for an HMO. Rooms, shared parts and the paperwork the operator has to keep are named in the scope. The quote is price on application.'],
-        ['slug' => 'void', 'label' => 'void properties', 'title' => 'Void', 'note' => 'The instruction is for a void property between tenancies. Access is usually easier, and the scope still has to say what is included. The quote is price on application.'],
-        ['slug' => 'shop', 'label' => 'shops', 'title' => 'Shop', 'note' => 'The instruction is for a shop. Trading hours and the shop front are part of the access note. The quote is price on application.'],
-        ['slug' => 'office', 'label' => 'offices', 'title' => 'Office', 'note' => 'The instruction is for an office. The scope says which floors are included. The quote is price on application.'],
-        ['slug' => 'flat', 'label' => 'flats', 'title' => 'Flat', 'note' => 'The instruction is for a flat. Shared risers, the entrance and the demised rooms are separated in the scope. The quote is price on application.'],
-        ['slug' => 'house', 'label' => 'houses', 'title' => 'House', 'note' => 'The instruction is for a house. The scope follows that building rather than a block. The quote is price on application.'],
-        ['slug' => 'block', 'label' => 'blocks of flats', 'title' => 'Block', 'note' => 'The instruction is for a block. Common parts and individual homes are listed separately if both are in scope. The quote is price on application.'],
+        ['slug' => 'landlord', 'label' => 'landlords', 'title' => 'Landlord', 'note' => 'Ideal for landlords and letting agents. We quote for the building, keep you updated and email the paperwork for your tenancy file.'],
+        ['slug' => 'commercial', 'label' => 'commercial clients', 'title' => 'Commercial', 'note' => 'For commercial buildings. We plan around occupied floors and opening hours, and confirm the full scope in writing before we attend.'],
+        ['slug' => 'domestic', 'label' => 'homeowners', 'title' => 'Domestic', 'note' => 'For homeowners. You get a clear written quote first, and the same standard of work and paperwork as our landlord clients.'],
+        ['slug' => 'hmo', 'label' => 'HMO operators', 'title' => 'HMO', 'note' => 'For HMOs. We cover the rooms, the shared areas and the paperwork your licence asks for.'],
+        ['slug' => 'void', 'label' => 'void properties', 'title' => 'Void', 'note' => 'For empty properties between tenancies. Access is easier, so we can often book quickly and get the paperwork back before the next tenant moves in.'],
+        ['slug' => 'shop', 'label' => 'shops', 'title' => 'Shop', 'note' => 'For shops. We work around your trading hours and keep disruption at the shop front to a minimum.'],
+        ['slug' => 'office', 'label' => 'offices', 'title' => 'Office', 'note' => 'For offices. We confirm which floors are included and plan the visit around your working day.'],
+        ['slug' => 'flat', 'label' => 'flats', 'title' => 'Flat', 'note' => 'For flats. We separate shared risers and entrances from the flat itself, so you know exactly what is covered.'],
+        ['slug' => 'house', 'label' => 'houses', 'title' => 'House', 'note' => 'For houses. The quote is based on your home, not a block, so you only pay for what the job needs.'],
+        ['slug' => 'block', 'label' => 'blocks of flats', 'title' => 'Block', 'note' => 'For blocks. Common parts and individual flats are listed separately when both are included.'],
     ];
 }
 
@@ -35,16 +35,16 @@ function icomplyKeywordVariantAudiences(): array
 function icomplyKeywordVariantModifiers(): array
 {
     return [
-        ['slug' => 'emergency', 'label' => 'Emergency', 'title' => 'Emergency', 'note' => 'The enquiry asks for an emergency attendance. A time is agreed when the quote is accepted. This page does not promise a night call-out.'],
-        ['slug' => 'next-day', 'label' => 'Next day', 'title' => 'Next day', 'note' => 'Next day means the enquiry asks for the following working day where the diary allows. It is not a guaranteed slot. The quote is price on application.'],
-        ['slug' => 'near-me', 'label' => 'Near me', 'title' => 'Near me', 'note' => 'Near me on this matrix means Greater Manchester, arranged from Stockport. It is not a UK-wide search result.'],
-        ['slug' => 'same-day', 'label' => 'Same day', 'title' => 'Same day', 'note' => 'Same day means the enquiry asks for today where someone is free. It is not a guaranteed slot. The quote is price on application.'],
-        ['slug' => '24-hour', 'label' => '24 hour', 'title' => '24 hour', 'note' => '24 hour means the enquiry can be sent at any time. Attendance is agreed when someone is available. This page does not promise a night call-out.'],
-        ['slug' => 'cheap', 'label' => 'Cheap', 'title' => 'Cheap', 'note' => 'Cheap on this page means a competitive quote. The figure is price on application. This page does not publish a low rate.'],
-        ['slug' => 'local', 'label' => 'Local', 'title' => 'Local', 'note' => 'Local means a Greater Manchester visit arranged from Stockport. Town pages name the building\'s town rather than a national script.'],
-        ['slug' => 'stockport', 'label' => 'Stockport', 'title' => 'Stockport', 'note' => 'The enquiry names Stockport. If the building is in another Greater Manchester town, that town page is the one to use. The quote is price on application.'],
-        ['slug' => 'manchester', 'label' => 'Manchester', 'title' => 'Manchester', 'note' => 'The enquiry names Manchester. Coverage on this matrix is Greater Manchester, town by town. The quote is price on application.'],
-        ['slug' => 'greater-manchester', 'label' => 'Greater Manchester', 'title' => 'GM', 'note' => 'The enquiry is for Greater Manchester, not a UK-wide call-out. Each town already on this list has its own page. The quote is price on application.'],
+        ['slug' => 'emergency', 'label' => 'Emergency', 'title' => 'Emergency', 'note' => 'Need help urgently? Call 07517 806082 and we will arrange the earliest available engineer.'],
+        ['slug' => 'next-day', 'label' => 'Next day', 'title' => 'Next day', 'note' => 'Next-day visits are often available. Call 07517 806082 and we will confirm the slot.'],
+        ['slug' => 'near-me', 'label' => 'Near me', 'title' => 'Near me', 'note' => 'Local engineers from our Stockport base, covering Greater Manchester and beyond.'],
+        ['slug' => 'same-day', 'label' => 'Same day', 'title' => 'Same day', 'note' => 'Same-day visits are often available. Call 07517 806082 early in the day and we will confirm the slot.'],
+        ['slug' => '24-hour', 'label' => '24 hour', 'title' => '24 hour', 'note' => 'Send your enquiry any time, day or night. We reply as soon as an engineer is available.'],
+        ['slug' => 'cheap', 'label' => 'Cheap', 'title' => 'Cheap', 'note' => 'Competitive, fixed written quotes with no hidden extras.'],
+        ['slug' => 'local', 'label' => 'Local', 'title' => 'Local', 'note' => 'Local engineers from our Stockport base, covering every Greater Manchester town.'],
+        ['slug' => 'stockport', 'label' => 'Stockport', 'title' => 'Stockport', 'note' => 'Based in Offerton, Stockport, so Stockport jobs are on our doorstep.'],
+        ['slug' => 'manchester', 'label' => 'Manchester', 'title' => 'Manchester', 'note' => 'We cover Manchester and every Greater Manchester town from our Stockport base.'],
+        ['slug' => 'greater-manchester', 'label' => 'Greater Manchester', 'title' => 'GM', 'note' => 'We cover every Greater Manchester town from our Stockport base, and each town has its own page.'],
     ];
 }
 
@@ -54,14 +54,14 @@ function icomplyKeywordVariantModifiers(): array
 function icomplyKeywordVariantScopes(): array
 {
     return [
-        ['slug' => 'install', 'label' => 'installation', 'title' => 'Install', 'note' => 'Installation means new work set out in a written scope. Making good and what is left out are named before the quote. The quote is price on application.'],
-        ['slug' => 'repair', 'label' => 'repair', 'title' => 'Repair', 'note' => 'Repair means the failed part is identified first. The scope says whether the visit is diagnose only or diagnose and repair. The quote is price on application.'],
-        ['slug' => 'service', 'label' => 'servicing', 'title' => 'Service', 'note' => 'Servicing means a planned visit against the agreed checklist. It is not an open-ended repair. The quote is price on application.'],
-        ['slug' => 'inspection', 'label' => 'inspection', 'title' => 'Inspect', 'note' => 'Inspection means a look, a test or a report as agreed. Any later repair is a separate instruction. The quote is price on application.'],
-        ['slug' => 'replacement', 'label' => 'replacement', 'title' => 'Replace', 'note' => 'Replacement means the existing item and the new scope are both named. Disposal is included only if the quote says so. The quote is price on application.'],
-        ['slug' => 'maintenance', 'label' => 'maintenance', 'title' => 'Maintain', 'note' => 'Maintenance means repeat visits or a single planned visit, as the instruction says. The quote is price on application.'],
-        ['slug' => 'survey', 'label' => 'survey', 'title' => 'Survey', 'note' => 'Survey means a written look at the building before any install or repair is instructed. The quote is price on application.'],
-        ['slug' => 'supply', 'label' => 'supply', 'title' => 'Supply', 'note' => 'Supply means equipment or materials listed in the scope. Fitting is included only when the scope says so. The quote is price on application.'],
+        ['slug' => 'install', 'label' => 'installation', 'title' => 'Install', 'note' => 'New installations, planned in writing. We confirm what is included, including making good, before we start.'],
+        ['slug' => 'repair', 'label' => 'repair', 'title' => 'Repair', 'note' => 'We find the fault first, then confirm the repair and the price before any parts are fitted.'],
+        ['slug' => 'service', 'label' => 'servicing', 'title' => 'Service', 'note' => 'Planned servicing against an agreed checklist, with a written record after every visit.'],
+        ['slug' => 'inspection', 'label' => 'inspection', 'title' => 'Inspect', 'note' => 'Inspection and testing with a clear written report. Any repairs are quoted separately.'],
+        ['slug' => 'replacement', 'label' => 'replacement', 'title' => 'Replace', 'note' => 'We replace worn or failed equipment and confirm in writing what is removed and what goes in.'],
+        ['slug' => 'maintenance', 'label' => 'maintenance', 'title' => 'Maintain', 'note' => 'One-off or regular maintenance visits, booked to suit you.'],
+        ['slug' => 'survey', 'label' => 'survey', 'title' => 'Survey', 'note' => 'A site survey before any work, so the quote reflects your building.'],
+        ['slug' => 'supply', 'label' => 'supply', 'title' => 'Supply', 'note' => 'We supply the equipment listed in your quote, with fitting available on request.'],
     ];
 }
 
@@ -71,19 +71,19 @@ function icomplyKeywordVariantScopes(): array
 function icomplyKeywordVariantIntents(): array
 {
     return [
-        ['slug' => 'quote', 'label' => 'Quote', 'title' => 'Quote', 'note' => 'The page is for a written quote. No fee is published here. The figure is price on application after the scope is clear.'],
-        ['slug' => 'book', 'label' => 'Book', 'title' => 'Book', 'note' => 'The page is for a booking request. The date is agreed after the quote, not taken from a live diary on this page.'],
-        ['slug' => 'arrange', 'label' => 'Arrange', 'title' => 'Arrange', 'note' => 'The page is for arranging a visit around access. The quote is price on application and names who instructed the work.'],
-        ['slug' => 'find', 'label' => 'Find', 'title' => 'Find', 'note' => 'The page is for finding cover in Greater Manchester. The visit is still scoped and quoted price on application.'],
-        ['slug' => 'compare', 'label' => 'Compare', 'title' => 'Compare', 'note' => 'Compare means you want this scope set out clearly. There is no price list on this page. The quote is price on application.'],
-        ['slug' => 'schedule', 'label' => 'Schedule', 'title' => 'Schedule', 'note' => 'Schedule means you want a proposed date. Attendance is confirmed only when the quote is accepted.'],
-        ['slug' => 'instruct', 'label' => 'Instruct', 'title' => 'Instruct', 'note' => 'Instruct means you are ready to commission the agreed scope. The quote is price on application and is accepted in writing.'],
-        ['slug' => 'resurvey', 'label' => 'Resurvey', 'title' => 'Resurvey', 'note' => 'Resurvey means a return look after an earlier visit or a change in the building. The quote is price on application.'],
-        ['slug' => 'return', 'label' => 'Return', 'title' => 'Return', 'note' => 'Return means a follow-up visit. The scope says what was left outstanding. The quote is price on application.'],
-        ['slug' => 'landlord-job', 'label' => 'Landlord job', 'title' => 'Landlord', 'note' => 'The page is a landlord instruction. The report or certificate is left with the instructing client. The quote is price on application.'],
-        ['slug' => 'agent-job', 'label' => 'Agent job', 'title' => 'Agent', 'note' => 'The page is an agent instruction. Say who owns the building and who receives the paperwork. The quote is price on application.'],
-        ['slug' => 'occupied', 'label' => 'Occupied', 'title' => 'Occupied', 'note' => 'The building is occupied. The scope has to respect residents, staff or customers on site. The quote is price on application.'],
-        ['slug' => 'vacant', 'label' => 'Vacant', 'title' => 'Vacant', 'note' => 'The building is vacant. Keys, alarms and the void condition are part of the access note. The quote is price on application.'],
+        ['slug' => 'quote', 'label' => 'Quote', 'title' => 'Quote', 'note' => 'Get a fixed written quote. Send the address and a few photos and we will come back to you quickly.'],
+        ['slug' => 'book', 'label' => 'Book', 'title' => 'Book', 'note' => 'Book a visit. We confirm the date as soon as you accept the quote.'],
+        ['slug' => 'arrange', 'label' => 'Arrange', 'title' => 'Arrange', 'note' => 'We arrange the visit around access, tenants and opening hours.'],
+        ['slug' => 'find', 'label' => 'Find', 'title' => 'Find', 'note' => 'Looking for a reliable engineer in Greater Manchester? We cover every town from Stockport.'],
+        ['slug' => 'compare', 'label' => 'Compare', 'title' => 'Compare', 'note' => 'Compare with confidence: every quote sets out the full scope and a fixed price in writing.'],
+        ['slug' => 'schedule', 'label' => 'Schedule', 'title' => 'Schedule', 'note' => 'Pick a date that suits you, and we confirm it when you accept the quote.'],
+        ['slug' => 'instruct', 'label' => 'Instruct', 'title' => 'Instruct', 'note' => 'Ready to go ahead? Accept the quote in writing and we will book the engineer.'],
+        ['slug' => 'resurvey', 'label' => 'Resurvey', 'title' => 'Resurvey', 'note' => 'A return visit after an earlier job or a change to the building.'],
+        ['slug' => 'return', 'label' => 'Return', 'title' => 'Return', 'note' => 'A follow-up visit to finish any items left from an earlier job.'],
+        ['slug' => 'landlord-job', 'label' => 'Landlord job', 'title' => 'Landlord', 'note' => 'For landlords. Certificates and reports are emailed straight to you.'],
+        ['slug' => 'agent-job', 'label' => 'Agent job', 'title' => 'Agent', 'note' => 'For letting agents. Tell us who owns the building and who should receive the paperwork.'],
+        ['slug' => 'occupied', 'label' => 'Occupied', 'title' => 'Occupied', 'note' => 'For occupied buildings. We work around residents, staff and customers.'],
+        ['slug' => 'vacant', 'label' => 'Vacant', 'title' => 'Vacant', 'note' => 'For vacant buildings. Tell us about keys and alarms and we will plan the access.'],
     ];
 }
 

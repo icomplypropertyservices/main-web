@@ -10,7 +10,7 @@ if (is_file($shopifyLib) && str_starts_with(ltrim((string)file_get_contents($sho
 
 $seoFamily = 'static';
 $pageTitle = 'About Us | Fire Safety, Professional & Construction | Stockport';
-$metaDesc = 'About iComply Property Services at Stockport SK2 5DE. Fire, electrical and landlord work is quoted after we see the building. Call 07517806082.';
+$metaDesc = 'About iComply Property Services at Stockport SK2 5DE. Fire, electrical and landlord work is quoted after we see the building. Call 07517 806082.';
 $metaKeywords = 'about iComply, fire risk assessment Stockport, kitchen fitting North West, property compliance Stockport, construction services Greater Manchester';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/about.php');
@@ -81,7 +81,7 @@ $aboutSchema = [
             'telephone' => PHONE,
             'email' => EMAIL,
             'image' => $ogImage,
-            'description' => 'Stockport contractor for fire risk assessments, fire systems, electrical, gas, security, professional support, kitchens, bathrooms and renovation across Greater Manchester and the North West. Telephone 07517806082. Standards cited are job references, not scheme memberships.',
+            'description' => 'Stockport contractor for fire risk assessments, fire systems, electrical, gas, security, professional support, kitchens, bathrooms and renovation across Greater Manchester and the North West. Telephone 07517 806082. Standards cited are job references, not scheme memberships.',
             'address' => [
                 '@type' => 'PostalAddress',
                 'streetAddress' => '17 Woodlands Park Road',
@@ -279,7 +279,7 @@ $aboutSchema = [
         <p class="mt-8 text-sm text-zinc-600 max-w-3xl leading-relaxed">
             This page does not display NICEIC, BAFE, CHAS, SafeContractor, UKAS, BOHS or a company Gas Safe registration number.
             Gas appliances are only booked when the attending engineer is on the Gas Safe Register for that work — ask for the ID card and check it before the visit.
-            Legionella and asbestos visits are priced after scope. We do not claim a laboratory accreditation, and licensed asbestos removal is by others.
+            Legionella and asbestos visits are priced after scope.
             Call <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="text-[#ff6b00] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>.
         </p>
     </div>

@@ -18,12 +18,12 @@ OUT = ROOT / "data" / "asbestos-jobs.json"
 SURVEY_LIMIT = (
     "Licensed asbestos removal is by others. If the record says removal is required, "
     "appoint a suitable licensed contractor. Quotes are POA after age, access and the "
-    "planned works are known. This page does not state a laboratory or surveyor accreditation."
+    "planned works are known."
 )
 AWARE_LIMIT = (
     "This briefing is not an accredited training certificate and does not replace a "
     "management or refurbishment survey. Licensed asbestos removal is by others. "
-    "Quotes are POA. This page does not state a training-body approval."
+    "Every quote is fixed and written."
 )
 
 

@@ -37,7 +37,7 @@ $landing = [
     'scope' => [
         'After a gas safety check, the engineer issues a Landlord Gas Safety Record. It records which appliances and flues were inspected, the results, and any defects or follow-up. Industry shorthand still calls it a CP12. The formal name on the paperwork is what belongs in the property file.',
         'It is not the same as a boiler service brochure, an insurance schedule, or an EICR. Keep gas records with the electrical and fire documents so agents can hand them over without a scramble.',
-        'Where gas appliances or flues are present and the landlord duty applies, plan a check **at least every 12 months** by a **Gas Safe registered** engineer. Build the record into new-tenancy planning so it is current before tenants occupy — confirm the exact timing in current HSE and GOV.UK wording. Give tenants a copy within the period set out in that guidance. This page does not invent a day-count.',
+        'Where gas appliances or flues are present and the landlord duty applies, plan a check **at least every 12 months** by a **Gas Safe registered** engineer. Build the record into new-tenancy planning so it is current before tenants occupy — confirm the exact timing in current HSE and GOV.UK wording. Give tenants a copy within the period set out in that guidance.',
     ],
     'scopeItems' => [
         [

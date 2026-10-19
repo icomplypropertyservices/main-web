@@ -6,7 +6,7 @@
 require_once dirname(__DIR__, 2) . '/config.php';
 
 $pageTitle = 'Job types | Greater Manchester | iComply';
-$metaDesc = 'Job hubs for landlords, fire alarms, gas, electrical, barriers and call-outs across Greater Manchester. POA after scope. Call 07517806082.';
+$metaDesc = 'Job hubs for landlords, fire alarms, gas, electrical, barriers and call-outs across Greater Manchester. POA after scope. Call 07517 806082.';
 $canonicalUrl = url('/pages/jobs');
 $metaRobots = 'index, follow';
 
@@ -58,7 +58,7 @@ $faqs = [
     ],
     [
         'How do I request a visit?',
-        'Call 07517806082, email icomplypropertyservices@gmail.com, or send the contact form with the job type, address and whether the building is occupied. We reply with a POA quote before locking a date.',
+        'Call 07517 806082, email icomplypropertyservices@gmail.com, or send the contact form with the job type, address and whether the building is occupied. We reply with a POA quote before locking a date.',
     ],
 ];
 
@@ -82,7 +82,7 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 <main class="max-w-5xl mx-auto px-6 py-12">
-    <p class="text-zinc-700 leading-relaxed max-w-3xl">Use this index to reach the right hub before you request a date. Landlord and HMO jobs sit beside fire alarm maintenance, FRAs, electrical testing, gas safety and access hardware. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. Barrier and maglock work is scoped on site so lane lengths, loops and power are clear before a quote. Call 07517806082, email icomplypropertyservices@gmail.com, or use <a class="text-[#ff6b00] font-semibold" href="<?= $h(url('/contact')) ?>">https://icomplypropertyservices.co.uk/contact</a>. Footer and citation pages must keep Cheshire in the Stockport address.</p>
+    <p class="text-zinc-700 leading-relaxed max-w-3xl">Use this index to reach the right hub before you request a date. Landlord and HMO jobs sit beside fire alarm maintenance, FRAs, electrical testing, gas safety and access hardware. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. Barrier and maglock work is scoped on site so lane lengths, loops and power are clear before a quote. Call 07517 806082, email icomplypropertyservices@gmail.com, or use <a class="text-[#ff6b00] font-semibold" href="<?= $h(url('/contact')) ?>">https://icomplypropertyservices.co.uk/contact</a>. Footer and citation pages must keep Cheshire in the Stockport address.</p>
 
     <?php foreach ($groups as $group => $jobs): ?>
     <section class="related-links mt-12" aria-label="<?= $h($group) ?>">

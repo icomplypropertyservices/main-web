@@ -125,8 +125,8 @@ function service_faqs(string $slug, string $serviceName, string $area = ''): arr
             ['q' => "Do you offer maintenance contracts?", 'a' => "Yes. Planned visits keep systems reliable and create an audit trail for CQC and internal compliance teams."],
         ],
         'gas-systems' => [
-            ['q' => "Who carries out landlord gas safety certificates{$loc}?", 'a' => "Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered."],
-            ['q' => "Who services boilers{$loc}?", 'a' => "Boiler installation, servicing and landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered."],
+            ['q' => "Who carries out landlord gas safety certificates{$loc}?", 'a' => "Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers."],
+            ['q' => "Who services boilers{$loc}?", 'a' => "Boiler installation, servicing and landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers."],
             ['q' => "What can iComply quote{$loc}?", 'a' => "Electrical, fire, water hygiene and asbestos work is quoted POA. Gas work stays with a Gas Safe registered engineer."],
         ],
         'intruder-alarm' => [
@@ -539,13 +539,13 @@ function icomply_service_hub_seo(string $slug, string $serviceName, bool $poa): 
     }
 
     if ($poa) {
-        $description = 'Professional ' . $serviceName . ' in Stockport and Greater Manchester. Price on application after scope. No published fee.';
+        $description = 'Professional ' . $serviceName . ' in Stockport and Greater Manchester. Same/next-day engineers, fixed written quote. Call or WhatsApp 07517 806082.';
     } else {
         $description = 'Professional ' . $serviceName . ' in Stockport and Greater Manchester. Installation, testing and certification. Written quote after scope.';
     }
     if (mb_strlen(htmlspecialchars($description, ENT_QUOTES, 'UTF-8')) > 165) {
         $description = $poa
-            ? ($serviceName . ' in Stockport and Greater Manchester. Price on application after scope. No published fee.')
+            ? ($serviceName . ' in Stockport and Greater Manchester. Same/next-day engineers, fixed written quote. Call or WhatsApp 07517 806082.')
             : ($serviceName . ' in Stockport and Greater Manchester. Written quote after scope from our Offerton team.');
     }
     if (mb_strlen(htmlspecialchars($description, ENT_QUOTES, 'UTF-8')) < 70) {
@@ -678,7 +678,7 @@ function seo_document_title(string $raw): string {
 /** Meta description length for the hard gate: 70–160 characters. */
 function seo_fit_meta(string $text): string {
     $text = trim(preg_replace('/\s+/u', ' ', $text) ?? $text);
-    $pad = ' Call 07517806082. Stockport SK2.';
+    $pad = ' Call 07517 806082. Stockport SK2.';
     if (mb_strlen($text) < 70) {
         $text .= $pad;
     }
