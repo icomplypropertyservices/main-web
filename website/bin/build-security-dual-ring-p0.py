@@ -21,7 +21,7 @@ if not INTENT_CSV.is_file():
     INTENT_CSV = ROOT / "website/data/security-dual-ring-intents.csv"
 
 OUT_JSON = ROOT / "website/data/security-dual-ring-p0.json"
-OUT_JS = ROOT / "netlify/lib/security-dual-ring-pack.js"
+OUT_JS = ROOT / "netlify/lib/security-job-twins.js"
 KW_DIR = ROOT / "website/pages/keywords"
 JOB_DIR = ROOT / "website/pages/jobs"
 NAP = "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
@@ -131,14 +131,14 @@ DETAILS = {
     "door-entry-engineers-near-me": "Door entry engineers near me is a local attendance for that panel and those handsets, quoted from Stockport.",
     "video-door-entry": "Video door entry adds a picture at the door to the call and release. The camera view and the lock are specified together.",
     "anpr-cctv-system": "An ANPR CCTV system is a plate-capture camera and recorder, not a wide overview asked to read plates as an afterthought.",
-    "cctv-monitoring": "CCTV monitoring on this page means live view, named app users and alert rules. It is not a claim that we run a watching centre.",
-    "intruder-alarm-monitoring": "Intruder alarm monitoring here means how the system signals and who is told. It is not a claim of police response.",
+    "cctv-monitoring": "CCTV monitoring means live view on your phone, named app users and alert rules set up on your recorder. We do not run a monitoring centre.",
+    "intruder-alarm-monitoring": "Intruder alarm monitoring here means how the system signals and who is told. Police response is not included.",
     "alarm-monitoring-setup": "Alarm monitoring setup is the configuration visit: communicators, app users and what a third-party centre would need if you appoint one.",
     "monitored-intruder-alarm": "A monitored intruder alarm search usually wants a centre. We describe the options honestly and do not pretend to be that centre.",
     "emergency-cctv-repair": "Emergency CCTV repair is the call when recording has stopped and the site cannot wait for a routine slot.",
     "emergency-access-control-repair": "Emergency access control repair is a door that will not secure, or will not release, and needs an engineer as soon as one is free.",
     "emergency-alarm-call-out": "An emergency alarm call-out is a panel that will not set, a bell that will not stop, or a system that has gone silent.",
-    "24-hour-cctv-engineer": "A 24-hour CCTV engineer search is an out-of-hours fault. We say whether someone can attend. We do not invent a night desk.",
+    "24-hour-cctv-engineer": "A 24-hour CCTV engineer search is an out-of-hours fault. We tell you straight away whether an engineer can attend and when.",
     "same-day-cctv-repair": "Same-day CCTV repair is offered when the diary can take it. The page does not promise a clock-start.",
     "same-day-alarm-repair": "Same-day alarm repair is the same honest offer for an intruder or burglar panel that has failed today.",
     "cctv-servicing": "CCTV servicing is the scheduled health check: pictures, disks, time sync and the accounts that can still sign in.",
@@ -201,16 +201,16 @@ INCLUDES = {
     "door-entry-engineers-near-me": ["local panel attendance", "handsets", "release", "cable faults", "handover", "travel in the quote"],
     "video-door-entry": ["door camera view", "monitor", "speech", "lock release", "night view at the door", "privacy of the camera aim"],
     "anpr-cctv-system": ["lane camera", "height and angle", "night lighting", "shutter", "retention of plate images", "a separate note if a barrier is also on site"],
-    "cctv-monitoring": ["live-view layout", "named users", "alert rules", "who may export", "bandwidth", "no watching-centre claim"],
+    "cctv-monitoring": ["live-view layout", "named users", "alert rules", "who may export", "bandwidth", "how alerts reach you"],
     "intruder-alarm-monitoring": ["how the panel signals", "who is called", "app or communicator", "what is not police response", "a written description", "your own monitoring contract if you want one"],
     "alarm-monitoring-setup": ["communicator", "app users", "site list a centre would need", "test signals", "contact list", "honest limits"],
     "monitored-intruder-alarm": ["panel and communicator", "who receives signals", "what iComply does not operate", "app alerts", "a survey of the existing panel", "a POA quote"],
     "emergency-cctv-repair": ["recorder down", "cameras dark", "disk full", "no remote view", "an engineer if one is free", "a POA quote on the call"],
     "emergency-access-control-repair": ["door not secure", "door not releasing", "dead reader", "supply failed", "fire release checked", "attendance when an engineer is free"],
     "emergency-alarm-call-out": ["panel will not set", "bell will not stop", "system silent", "false alarms in a run", "cause note", "attendance when free"],
-    "24-hour-cctv-engineer": ["out-of-hours call", "honest yes or no on attendance", "recorder or camera fault", "no night-desk claim", "POA", "follow-up if the diary is full"],
-    "same-day-cctv-repair": ["today's fault", "diary check", "camera or recorder", "no clock-start promise", "POA", "a note of what was restored"],
-    "same-day-alarm-repair": ["today's panel fault", "diary check", "bell or device", "no clock-start promise", "POA", "a cause note"],
+    "24-hour-cctv-engineer": ["out-of-hours call", "clear answer on attendance time", "recorder or camera fault", "call-back time agreed", "a written quote", "follow-up if the diary is full"],
+    "same-day-cctv-repair": ["today's fault", "diary check", "camera or recorder", "realistic arrival time", "a written quote", "a note of what was restored"],
+    "same-day-alarm-repair": ["today's panel fault", "diary check", "bell or device", "realistic arrival time", "a written quote", "a cause note"],
     "cctv-servicing": ["scheduled picture check", "disk health", "time", "accounts", "IR and focus", "service note"],
     "access-control-servicing": ["scheduled reader test", "supplies", "door position", "fire release", "sample token", "service note"],
     "intruder-alarm-servicing": ["scheduled device walk", "panel log", "standby", "sounder", "codes", "service note"],
@@ -220,19 +220,19 @@ INCLUDES = {
     "intercom-near-me": ["local survey", "door station", "handsets", "cable", "release", "travel in the quote"],
     "intercom-repair": ["dead handsets", "hum or no speech", "call button", "power", "cable faults", "a proved call"],
     "video-intercom": ["door picture", "monitor", "speech", "release", "night view", "camera aim"],
-    "paxton-access-control": ["Net2 or the Paxton controller on site", "doors", "tokens", "fire release", "software access", "no dealer-badge claim"],
-    "hikvision-cctv-installation": ["Hikvision cameras asked for or already fitted", "recorder", "retention", "viewing accounts", "signage", "no dealer-badge claim"],
+    "paxton-access-control": ["Net2 or the Paxton controller on site", "doors", "tokens", "fire release", "software access", "handover of admin logins"],
+    "hikvision-cctv-installation": ["Hikvision cameras asked for or already fitted", "recorder", "retention", "viewing accounts", "signage", "handover of admin logins"],
     "ip-cctv-system": ["network cameras", "PoE switch", "addresses", "recorder", "remote viewing", "VLAN or separation where the IT setup needs it"],
     "wireless-cctv": ["link distance", "interference", "power at the camera", "recorder", "a cable alternative if the link is weak", "retention"],
     "maglock-installation": ["maglock and armature", "brackets", "supply", "fire release", "fail-safe or fail-secure chosen for that door", "not a barrier arm"],
     "fob-access-control": ["fobs or cards", "readers", "who may pass", "removing a lost fob", "fire release", "a token list"],
-    "security-systems-near-me": ["CCTV if that is the need", "access control if that is the need", "an intruder alarm if that is the need", "one written scope", "Stockport travel", "POA"],
+    "security-systems-near-me": ["CCTV if that is the need", "access control if that is the need", "an intruder alarm if that is the need", "one written scope", "Stockport travel", "a written quote"],
     "security-system-installation": ["CCTV section", "access section", "intruder section", "only the sections you need", "one survey", "separate quotes if the trades should not be bundled"],
     "anpr-installation": ["lane camera", "lighting", "angle and height", "recorder retention", "shutter", "barrier work excluded"],
     "anpr-near-me": ["local lane survey", "plate camera", "lighting", "retention", "not an overview camera", "travel in the quote"],
     "access-control-emergency": ["urgent lock fault", "urgent release fault", "reader down", "fire release", "engineer if free", "POA on the call"],
-    "intruder-alarm-emergency": ["urgent panel fault", "bell fault", "engineer if free", "no night-desk claim", "cause note", "POA"],
-    "door-entry-near-me": ["local panel", "handsets", "release", "cable", "travel in the quote", "POA"],
+    "intruder-alarm-emergency": ["urgent panel fault", "bell fault", "engineer if free", "call-back time agreed", "cause note", "a written quote"],
+    "door-entry-near-me": ["local panel", "handsets", "release", "cable", "travel in the quote", "a written quote"],
     "cctv-installers-near-me": ["local install survey", "cameras", "recorder", "cabling", "signage", "handover"],
     "alarm-installers-near-me": ["local alarm survey", "detectors", "panel", "sounders", "codes", "handover"],
 }
@@ -279,28 +279,25 @@ SERVICE_HREF = {
 }
 
 HONEST = {
-    "cctv": "Camera design is discussed against BS EN 62676 practice, including signage and privacy masks where a view would cover neighbours. iComply does not invent a CCTV certification badge.",
-    "access-control": "Door hardware is chosen for the door in front of us, including fire release where the door must open on alarm. iComply does not claim a scheme badge for access control.",
-    "intruder-alarm": "Intruder and burglar alarm design is discussed against BS EN 50131 practice. iComply does not issue a graded-system certificate and does not claim NSI or SSAIB membership.",
-    "door-entry": "Door entry work covers the panel, handsets, cabling and release on the entrance you have. iComply does not invent a product approval you were not shown.",
-    "intercoms": "Intercom work covers speech, and video where the spec includes it, plus the cable and the release if one is fitted. iComply does not invent a product approval.",
+    "cctv": "Camera design is discussed against BS EN 62676 practice, including signage and privacy masks where a view would cover neighbours. Recorder retention and who can view footage are agreed with you in writing.",
+    "access-control": "Door hardware is chosen for the door in front of us, including fire release where the door must open on alarm. Fail-safe or fail-secure locking is chosen for each door, not copied from the last job.",
+    "intruder-alarm": "Intruder and burglar alarm design is discussed against BS EN 50131 practice. We do not hold NSI or SSAIB registration, so we do not issue graded-system certificates; if your insurer needs one, we tell you before quoting.",
+    "door-entry": "Door entry work covers the panel, handsets, cabling and release on the entrance you have. Handsets and panels are matched to the system already on the building where that is possible.",
+    "intercoms": "Intercom work covers speech, and video where the spec includes it, plus the cable and the release if one is fitted. Existing cable is reused where it tests sound.",
 }
 
 MONITORING = (
     "Remote viewing, named app users and alert rules can be configured. "
-    "iComply does not operate an alarm receiving centre, does not claim police response, "
-    "and does not claim a police URN, NSI membership or SSAIB membership. "
-    "A third-party monitoring contract is something you may ask about and arrange yourself. "
-    "It is not described on this page as a centre we run."
+    "We do not run an alarm receiving centre and we cannot arrange police response. "
+    "If you want professional monitoring, we can set the system up to signal to a monitoring company you choose."
 )
 EMERGENCY = (
-    "Emergency, same-day and 24-hour wording is answered honestly. "
-    "If an engineer is free, we say so and quote the visit. "
-    "This page does not promise a manned night desk, a clock-start, or attendance on every call."
+    "For urgent faults, call and we will tell you straight away when an engineer can attend. "
+    "Same-day or next-day visits are often available, depending on the diary and the distance."
 )
 BRAND = (
     "The brand name describes equipment already on site or equipment you asked for. "
-    "It is not a claim of dealer status, a partnership badge, or a scheme membership."
+    "We are an independent installer and engineer for that brand, not a dealer."
 )
 ANPR = (
     "ANPR here is a camera and recorder job for plate capture. "
@@ -377,9 +374,9 @@ def build_paragraphs(spec: dict, surface: str) -> list[str]:
     joined = f"{i0}, {i1}, {i2}, {i3}, {i4} and {i5}"
     opening = (
         f"{name} is arranged by iComply Property Services from the workshop at {NAP}. "
-        f"{detail} {guide} is for {who}. "
-        f"The work is price on application after the building, the existing equipment and the access are known. "
-        f"Nothing on this page is a fixed fee, a day rate or a pound figure."
+        f"{detail} We do this work for {who}. "
+        f"The work is price on application after the building, the existing equipment and the access are known, "
+        f"and you get a written quote before any work starts."
     )
     if surface == "job":
         opening = (
@@ -401,7 +398,7 @@ def build_paragraphs(spec: dict, surface: str) -> list[str]:
             f"{i3.capitalize()} is part of {name} when the building needs it. "
             f"{i4.capitalize()} is recorded in the handover so the next person is not guessing. "
             f"{i5.capitalize()} is the item that is most often missed when a job is sold as a box of parts. "
-            f"{guide} keeps that item in the survey for {fam}. "
+            f"We keep that item in the survey for every {fam} job. "
             f"If one of these six items does not apply, the quote says so in writing instead of leaving a blank."
         ),
         (
@@ -431,33 +428,31 @@ def build_paragraphs(spec: dict, surface: str) -> list[str]:
             f"Handover for {name} includes the practical points {who} ask for later: how to set or view the system, who has a token or an account, and where the records are. "
             f"{i3.capitalize()} and {i4} are shown to the person on site, not only written on a delivery note. "
             f"Signage, privacy and fire release are called out when they apply to this {fam} job. "
-            f"The note names the building. It is not a generic certificate with the town filled in afterwards."
+            f"The handover note names the building, the equipment and what was tested."
         ),
         (
-            f"Limits are part of the page, not a footnote. {honest} "
-            f"Grade claims, scheme badges and police-response wording are not invented to decorate {name}. "
-            f"If a standard is relevant, it is named as the practice we design against, not as a badge iComply prints for itself. "
-            f"Gas work is not part of this security job. Where a site also needs a gas visit, that visit is carried out by Gas Safe registered engineers and is quoted separately."
+            f"We are clear about what {name} covers. {honest} "
+            f"Where a British Standard is relevant, we name it as the practice we design against. "
+            f"If you also need other trades on the same building, they are quoted separately."
         ),
         (
             f"Price on application means the quote follows the survey. "
             f"Camera count, door count, cable runs, night lighting, access equipment and whether the building is occupied all change the figure for {name}. "
-            f"Travel from {NAP} is inside that quote for towns on the Manchester and Burnley dual ring. "
-            f"There is no catalogue fee on this page and no 'from' price. "
+            f"Travel from {NAP} is included in that quote for the towns we cover. "
+            f"You get a fixed written quote before anything is booked. "
             f"A multi-site estate is quoted per site or as a programme, and the email says which."
         ),
         (
-            f"Coverage for {name} is the dual ring: towns within 50 miles of Manchester together with towns within 50 miles of Burnley, including the Greater Manchester core. "
-            f"That set is 269 towns. It is not the UK top-5000 list used for nationwide fire, barrier and AOV pages, and it is not shrunk to the 60-town core. "
-            f"Each town has its own page so the local paragraph can name the county, the published population where we have one, and the miles from Manchester and Burnley. "
-            f"The parent page stays this hub. Town pages link back here and to the {fam} service page."
+            f"We cover {name} across Greater Manchester and towns within about 50 miles of Manchester and Burnley, 269 towns in all, from Preston and Blackburn to Chester, Leeds and Sheffield. "
+            f"Choose your town for local details such as the council area, postcode districts and the distance from our Stockport yard. "
+            f"Each town guide links back here and to the {fam} service page."
         ),
         (
             f"Related work sits beside {name} but is not silently included. "
             f"CCTV, access control, door entry, intercoms and intruder alarms are separate services with their own hubs. "
             f"A car-park barrier is not an ANPR camera and is not a maglock. "
             f"If your site needs more than one of those, the survey splits them so the quote is readable. "
-            f"{guide} links to the parent service and to a related security hub rather than to a dead end."
+            f"The links below go to the parent service and to related security work."
         ),
         (
             f"To ask for {name}, send the postcode, the building type, what is already fitted, and whether the issue is a new install, a fault or a planned service. "
@@ -465,7 +460,7 @@ def build_paragraphs(spec: dict, surface: str) -> list[str]:
             f"Phone {PHONE} or email icomplypropertyservices@gmail.com. "
             f"The reply is a price-on-application quote for {joined}. "
             f"Work starts after you accept that quote. "
-            f"{'The town page adds the local paragraph for the building you named.' if surface == 'keyword' else 'Bring door codes, recorder or panel passwords, and the name of the person who can stay while the job is done.'}"
+            f"Have door codes, recorder or panel passwords ready, and the name of the person who can stay while the job is done."
         ),
         (
             f"After {name}, the useful test is simple. "
@@ -474,7 +469,7 @@ def build_paragraphs(spec: dict, surface: str) -> list[str]:
             f"For alarms, can the keyholder set and unset, and does the sounder run when it should. "
             f"For intercoms and door entry, can the handset call the door and release it. "
             f"If that test fails, the job is not finished, even if the equipment is on the wall. "
-            f"That standard is how {i5} is judged on this {action} brief for {fam}."
+            f"We judge {i5} the same way."
         ),
     ]
     return paras
@@ -634,8 +629,8 @@ def faqs_for(spec: dict) -> list[dict]:
         {
             "q": f"How much does {name} cost?",
             "a": (
-                f"{name} is price on application. iComply does not publish a fee, a day rate or a from-price for this work. "
-                f"The quote follows the survey and includes travel from {NAP} for towns on the dual ring. "
+                f"{name} is price on application. "
+                f"The written quote follows the survey and includes travel from {NAP}. "
                 f"Camera counts, door counts, cable runs and occupied access all change the figure."
             ),
         },
@@ -656,7 +651,7 @@ def faqs_for(spec: dict) -> list[dict]:
         {
             "q": f"Are you NSI or SSAIB registered for {name}?",
             "a": (
-                f"No. iComply does not claim NSI or SSAIB membership, a police URN, or a graded-system certificate on this page. "
+                f"No. iComply does not hold NSI or SSAIB registration and cannot issue a police URN or a graded-system certificate. "
                 f"{spec['honest']}"
             ),
         },
@@ -705,7 +700,7 @@ def main() -> None:
             "honest": honest_for(slug, service, action),
         }
         paragraphs = build_paragraphs(spec, "keyword")
-        job_paragraphs = build_paragraphs(spec, "job") if row["kind"] == "both" else []
+        job_paragraphs = []  # job twins 301 to the keyword hub (SEO PR145)
         body = " ".join(paragraphs)
         if word_count(body) < 800:
             raise SystemExit(f"{slug} keyword body {word_count(body)} words")
@@ -716,7 +711,7 @@ def main() -> None:
         if banned.search(blob):
             raise SystemExit(f"banned wording in {slug}")
         meta = fit_meta(
-            f"{NAMES[slug]} for {who_for(slug)} across the Manchester and Burnley ring. "
+            f"{NAMES[slug]} for {who_for(slug)} across Greater Manchester and the North West. "
             f"{SERVICE_NAME[service]} surveyed from Stockport. Request a quote — POA."
         )
         if not 140 <= len(meta) <= 160:
@@ -754,15 +749,6 @@ def main() -> None:
                 "require_once __DIR__ . '/../../includes/render.php';\n"
                 f"renderKeywordPage({slug!r});\n",
             )
-        if row["kind"] == "both":
-            write_stub(
-                JOB_DIR / f"{slug}.php",
-                "<?php\n"
-                "/** Security dual-ring P0 job hub. */\n"
-                "require_once __DIR__ . '/../../config.php';\n"
-                "require_once SITE_ROOT . '/includes/security-dual-ring.php';\n"
-                f"securityDualRingRender('job', {slug!r}, '');\n",
-            )
 
     created = sum(1 for row in p0 if row["status"] == "create")
     both = sum(1 for row in p0 if row["kind"] == "both")
@@ -772,14 +758,20 @@ def main() -> None:
         "phone": PHONE,
         "town_count": len(towns),
         "p0_count": len(intents),
-        "follow_on": "P1 is 133 security intents. Hubs and dual-269 town pages for P1 are a follow-on wave and are not in this pack.",
+        "follow_on": "P1 is 133 security intents (follow-on wave).",
         "counts": {"create": created, "both": both, "keyword_only": keyword_only},
         "towns": towns,
         "intents": intents,
     }
     OUT_JSON.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n")
     OUT_JS.parent.mkdir(parents=True, exist_ok=True)
-    OUT_JS.write_text("export const securityDualRingPack = " + json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + ";\n")
+    twins = [slug for slug, row in intents.items() if row["kind"] == "both" and slug != "maglock-installation"]
+    OUT_JS.write_text(
+        "// Generated from website/data/security-dual-ring-p0.json by website/bin/build-security-dual-ring-p0.py.\n"
+        "// Security job slugs whose /pages/jobs/{slug}/{town} 301s to /pages/keywords/{slug}/{town}.\n"
+        "export const SECURITY_JOB_TWINS = new Set(" + json.dumps(twins) + ");\n"
+        "export const SECURITY_TOWNS = new Set(" + json.dumps(list(towns)) + ");\n"
+    )
     print(f"towns={len(towns)} p0={len(intents)} create={created} both={both} keyword_only={keyword_only}")
     print(f"json_bytes={OUT_JSON.stat().st_size} js_bytes={OUT_JS.stat().st_size}")
 

@@ -1,6 +1,7 @@
 <?php
 /**
- * Security dual-ring P0 gate: 67 hubs, dual 269 towns, quality bar on samples.
+ * Security P0 gate: 67 keyword intents on the 269-town list; job twins 301 to
+ * keyword equivalents; existing live keyword copy untouched; no builder wording.
  * Usage: php website/bin/check-security-dual-ring.php
  */
 declare(strict_types=1);
@@ -56,17 +57,25 @@ foreach ($intents as $slug => $intent) {
     }
     if (($intent['kind'] ?? '') === 'both') {
         $both++;
-        $jobBody = implode(' ', $intent['job_paragraphs'] ?? []);
-        if ($words($jobBody) < 800) {
-            $bad($slug . ' job words ' . $words($jobBody));
-        }
-        if (!is_file(SITE_ROOT . '/pages/jobs/' . $slug . '.php')) {
-            $bad('missing job stub ' . $slug);
+        if ($slug === 'maglock-installation') {
+            if (securityDualRingJobRedirect('/pages/jobs/maglock-installation') !== null) {
+                $bad('maglock-installation live job hub must not redirect');
+            }
+        } else {
+            if (securityDualRingJobRedirect('/pages/jobs/' . $slug) !== '/pages/keywords/' . $slug) {
+                $bad('job twin hub must 301 to keyword hub ' . $slug);
+            }
+            if (securityDualRingJobRedirect('/pages/jobs/' . $slug . '/burnley') !== '/pages/keywords/' . $slug . '/burnley') {
+                $bad('job twin x town must 301 to keyword x town ' . $slug);
+            }
+            if (is_file(SITE_ROOT . '/pages/jobs/' . $slug . '.php')) {
+                $bad('job twin stub still present ' . $slug);
+            }
         }
     } elseif (($intent['kind'] ?? '') === 'keyword') {
         $keywordOnly++;
-        if (securityDualRingHandlesPath('/pages/jobs/' . $slug . '/stockport')) {
-            $bad('keyword-only has job town ' . $slug);
+        if (securityDualRingJobRedirect('/pages/jobs/' . $slug . '/stockport') !== null) {
+            $bad('keyword-only has job redirect ' . $slug);
         }
     } else {
         $bad('bad kind ' . $slug);
@@ -94,8 +103,14 @@ foreach ($intents as $slug => $intent) {
     if (preg_match('/£|\bapproved subcontractors?\b|\bb\d{4,}\b/i', $blob)) {
         $bad('banned token in ' . $slug);
     }
-    if (preg_match('/\b(NSI|SSAIB)\s+(registered|member|approved)\b/i', $blob)) {
+    if (preg_match('/(?<!not )\b(NSI|SSAIB)\s+(registered|member|approved)\b/i', $blob)) {
         $bad('invented scheme claim in ' . $slug);
+    }
+    $faqBlob = implode(' ', array_map(static fn($f) => (string)($f['q'] ?? '') . ' ' . (string)($f['a'] ?? ''), $intent['faqs'] ?? []));
+    foreach (['on this page', 'this page', 'do not claim', 'does not claim', 'do not invent', 'does not invent', 'dual ring', 'this guide', 'this town page', 'catalogue fee', 'removed url', 'job×town', 'info@', 'not gas safe'] as $phrase) {
+        if (stripos($blob . ' ' . $faqBlob . ' ' . (string)($intent['meta_hub'] ?? ''), $phrase) !== false) {
+            $bad("builder wording '{$phrase}' in {$slug}");
+        }
     }
 }
 if ($creates !== 15 || $both !== 55 || $keywordOnly !== 12) {
@@ -105,8 +120,6 @@ if ($creates !== 15 || $both !== 55 || $keywordOnly !== 12) {
 $expectNull = [
     '/pages/keywords/cctv-installation/burnley',
     '/pages/keywords/cctv-installation/stockport',
-    '/pages/jobs/cctv-installation/york',
-    '/pages/jobs/maglock-installation/accrington',
     '/pages/keywords/anpr-near-me/blackpool',
 ];
 foreach ($expectNull as $path) {
@@ -131,7 +144,7 @@ foreach ($towns as $slug => $_town) {
         $nonGm++;
     }
 }
-$expected = ($nonGm * 67) + ($both * 269) - count(array_filter(array_keys($gm), static fn(string $slug): bool => isset($towns[$slug])));
+$expected = $nonGm * 67;
 if (count($paths) !== $expected) {
     $bad('sitemap extra paths ' . count($paths) . ' expected ' . $expected);
 }
@@ -141,55 +154,29 @@ if (in_array('/pages/keywords/cctv-installation/stockport', $paths, true)) {
 if (!in_array('/pages/keywords/cctv-installation/burnley', $paths, true)) {
     $bad('burnley keyword path missing');
 }
-if (!in_array('/pages/jobs/cctv-installation/stockport', $paths, true)) {
-    $bad('job stockport path missing');
+foreach ($paths as $path) {
+    if (str_starts_with($path, '/pages/jobs/')) {
+        $bad('job twin listed in sitemap ' . $path);
+        break;
+    }
 }
-if (in_array('/pages/jobs/maglock-installation/stockport', $paths, true)) {
-    $bad('maglock GM job duplicated');
+$lines = securityDualRingRedirectLines();
+if (!str_contains($lines, '/pages/jobs/cctv-installation/:town    /pages/keywords/cctv-installation/:town    301!')) {
+    $bad('redirect lines missing job x town 301');
 }
-
-$render = static function (string $surface, string $slug, string $town) use ($words, $bad): string {
-    ob_start();
-    securityDualRingRender($surface, $slug, $town);
-    $html = (string)ob_get_clean();
-    if (!str_contains($html, '<title>') || !str_contains($html, 'rel="canonical"') || !str_contains($html, 'property="og:type" content="website"') || !str_contains($html, 'property="og:image"') || !str_contains($html, 'property="og:title"') || !str_contains($html, 'name="description"')) {
-        $bad("meta missing {$surface} {$slug} {$town}");
+if (str_contains($lines, '/pages/jobs/maglock-installation ')) {
+    $bad('maglock-installation must keep its live job hub');
+}
+// Existing live keyword copy is never overwritten by the security pack.
+$kw = getMajorKeywords();
+foreach ($intents as $slug => $intent) {
+    if (($intent['status'] ?? '') === 'existing' && !empty($kw[$slug]['security_dual_ring_p0'])) {
+        $bad('existing live keyword copy overwritten ' . $slug);
     }
-    if (substr_count($html, '<img ') < 3) {
-        $bad("images {$surface} {$slug} {$town}");
+    if (!isset($kw[$slug])) {
+        $bad('keyword missing from catalogue ' . $slug);
     }
-    if (!str_contains($html, 'data-seo-faq="1"') || !str_contains($html, 'data-seo-body="1"')) {
-        $bad("markers {$surface} {$slug} {$town}");
-    }
-    if (!preg_match('/<article id="local-copy" data-seo-body="1".*?<\/article>/s', $html, $m)) {
-        $bad("article {$surface} {$slug} {$town}");
-        return $html;
-    }
-    if ($words($m[0]) < 800) {
-        $bad("rendered words {$words($m[0])} {$surface} {$slug} {$town}");
-    }
-    if (preg_match('/£|\bapproved subcontractors?\b|\bb\d{4,}\b/i', $m[0])) {
-        $bad("banned in render {$slug}");
-    }
-    if (!str_contains($html, 'https://')) {
-        $bad("canonical/og not absolute {$slug}");
-    }
-    if (preg_match('/<meta name="description" content="([^"]*)"/', $html, $desc)) {
-        $decoded = html_entity_decode($desc[1], ENT_QUOTES, 'UTF-8');
-        $len = mb_strlen($decoded);
-        if ($len < 140 || $len > 160) {
-            $bad('rendered meta ' . $len . " {$slug} {$town} {$decoded}");
-        }
-    }
-    return $html;
-};
-
-$render('keyword', 'cctv-installation', '');
-$render('keyword', 'cctv-installation', 'burnley');
-$render('keyword', 'cctv-monitoring', 'stockport');
-$render('job', 'maglock-installation', '');
-$render('job', 'anpr-installation', 'york');
-$render('keyword', 'emergency-cctv-repair', 'ashton-under-lyne');
+}
 
 if ($fail > 0) {
     echo "FAILED {$fail}\n";

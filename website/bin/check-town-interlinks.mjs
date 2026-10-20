@@ -46,7 +46,13 @@ const svcLabels = (catalogue.services && catalogue.services.labels) || {};
 for (const [i, s] of pick(Object.keys(svcLabels).filter((s) => !["aov", "barriers", "aov-air-handling"].includes(s)), 16).entries()) samples.push(["service", s, TOWNS[i % TOWNS.length]]);
 for (const [k, t] of [["fire-alarm-installation", "manchester"], ["aov-installation", "leeds"], ["barrier-installation", "york"], ["fire-risk-assessment", "york"], ["fire-door-installer", "liverpool"], ["smoke-vent-installer", "preston"], ["fire-extinguisher-service", "burnley"], ["sprinkler-system-installer", "london"], ["fire-alarm-installer", "burnley"], ["barrier-repair", "manchester"]]) samples.push(["p0", k, t]);
 
-let fail = 0;
+// P2-20-6 (2026-10-20): security P0 keyword x town pages (incl. the 15 new intents) are gated too.
+const SECURITY = new Set();
+for (const [k, t] of [["cctv-installation", "burnley"], ["emergency-cctv-repair", "preston"], ["access-control-repair", "york"], ["intruder-alarm-installation", "blackburn"], ["door-entry-system", "chester"], ["anpr-installation", "leeds"], ["security-system-installation", "stockport"], ["alarm-installers-near-me", "wigan"]]) {
+  if (catalogue.keywords && catalogue.keywords[k]) { samples.push(["keyword", k, t]); SECURITY.add(`${k}/${t}`); }
+  else { console.log(`FAIL security keyword missing from catalogue: ${k}`); process.exitCode = 1; }
+}
+let fail = process.exitCode ? 1 : 0;
 let checked = 0;
 for (const [kind, slug, town] of samples) {
   let r = null;
@@ -54,7 +60,10 @@ for (const [kind, slug, town] of samples) {
   else if (kind === "keyword") r = p0KeepsTown(slug, town) ? renderNationwideP0Town(slug, town) : renderTownPage({ kind, keyword: slug, town, catalogue, closeQPages });
   else if (kind === "job") r = renderTownPage({ kind, job: slug, town, catalogue, closeQPages });
   else r = isLocalTown(town) ? renderTownPage({ kind, service: slug, town, catalogue, closeQPages }) : null;
-  if (!r || !r.html || r.status === 404) continue;
+  if (!r || !r.html || r.status === 404) {
+    if (kind === "keyword" && SECURITY.has(`${slug}/${town}`)) { fail++; console.log(`FAIL security keyword x town did not render: ${slug}/${town}`); }
+    continue;
+  }
   if (String(r.robots || "").includes("noindex")) continue;
   checked++;
   const n = uniqueInternal(r.html);

@@ -130,12 +130,14 @@ function routerDispatchVirtual(string $path): bool {
         return true;
     }
 
-    if (preg_match('#^/pages/jobs/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
-        if (!function_exists('securityDualRingHandlesPath')) {
+    if (preg_match('#^/pages/jobs/[a-z0-9\-]+(?:/[a-z0-9\-]+)?$#', $path)) {
+        if (!function_exists('securityDualRingJobRedirect')) {
             require_once __DIR__ . '/security-dual-ring.php';
         }
-        if (securityDualRingHandlesPath($path)) {
-            securityDualRingRender('job', $m[1], $m[2]);
+        $securityTo = securityDualRingJobRedirect($path);
+        if ($securityTo !== null) {
+            header('Location: ' . url($securityTo), true, 301);
+            icomplyRequestExit();
             return true;
         }
     }

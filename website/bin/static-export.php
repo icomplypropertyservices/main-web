@@ -1119,8 +1119,13 @@ TXT;
     }
     $txt = str_replace("__LIVE_404_REDIRECTS__\n", icomplyLive404RedirectLines(), $base);
     $txt = str_replace("__MATRIX_REDIRECTS__\n", icomplyUnpublishedMatrixRedirects(), $txt);
+    if (!function_exists('securityDualRingRedirectLines')) {
+        require_once SITE_ROOT . '/includes/security-dual-ring.php';
+    }
     // Exact place-alias 301s must come before /pages/barriers/:slug and /pages/aov 200! rules.
-    return icomplyPlaceAliasRedirectLines()
+    // Security job twins 301 to their keyword equivalents (first match wins).
+    return securityDualRingRedirectLines()
+        . icomplyPlaceAliasRedirectLines()
         . rtrim($txt, "\r\n") . "\n"
         . icomplyAovLegacyRedirectLines() . <<<'TXT'
 
