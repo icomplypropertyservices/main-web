@@ -64,7 +64,8 @@ for (const [kind, slug, town] of samples) {
     if (kind === "keyword" && SECURITY.has(`${slug}/${town}`)) { fail++; console.log(`FAIL security keyword x town did not render: ${slug}/${town}`); }
     continue;
   }
-  if (String(r.robots || "").includes("noindex")) continue;
+  // SEO PR145: every sampled town page is in the sitemap, so a noindex here is a failure, not a skip.
+  if (String(r.robots || "").includes("noindex")) { fail++; console.log(`FAIL noindex on sampled town page: ${kind} ${slug}/${town}`); continue; }
   checked++;
   const n = uniqueInternal(r.html);
   const isP0 = kind === "p0" || (kind === "keyword" && p0KeepsTown(slug, town));

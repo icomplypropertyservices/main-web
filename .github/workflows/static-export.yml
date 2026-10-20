@@ -74,3 +74,8 @@ jobs:
 
       - name: Thin x town internal links (CLOSE-Q8)
         run: node website/bin/check-town-interlinks.mjs dist
+
+      - name: Security keyword x town words + uniqueness (SEO PR145, 15 intents x 20 towns)
+        run: |
+          TOWN_SAMPLE_ONLY=security node website/bin/render-town-sample.mjs dist /tmp/town-sample
+          python3 website/bin/check-town-words.py /tmp/town-sample
