@@ -427,7 +427,7 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         ? 'Fixed written quote before any work starts.'
         : 'Written quote after scope is agreed.';
     if ($serviceSlug === 'fire-risk-assessments' && function_exists('fraGuidePrice')) {
-        $priceLine = 'Guide price ' . fraGuidePrice() . ' for a standard assessment on UK mainland. Larger premises confirmed in writing.';
+        $priceLine = (function_exists('fraFromLine') ? fraFromLine() : 'From £350 for a typical 6-bed HMO in the North West; other properties, nationwide and multi-site jobs are POA.');
     }
     if (!function_exists('icomplyGmTownBlurb')) {
         $gmBlurbs = SITE_ROOT . '/includes/gm-blurbs.php';

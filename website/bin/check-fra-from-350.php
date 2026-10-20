@@ -70,6 +70,28 @@ foreach ($pages as $path => $opt) {
     if (preg_match('~<meta name="robots" content="[^"]*noindex~i', $html)) $bad("{$path} is noindex");
     fwrite(STDOUT, "{$path}\n  title: {$title}\n  meta:  {$desc}\n");
 }
+
+// Body copy must match the titles/metas (Jack 20 Oct): no "guide for a standard assessment" wording
+// on the FRA hubs, FRA town pages, area FRA block or pricing; the hubs must carry the From £350 line.
+$fromLine = 'From £350 for a typical 6-bed HMO in the North West; other properties, nationwide and multi-site jobs are POA.';
+$bodyPages = [
+    '/pages/services/fire-risk-assessments' => true,
+    '/pages/fire-risk-assessment' => true,
+    '/pages/fire-risk-assessments/westhoughton' => true,
+    '/pages/fire-risk-assessments/manchester' => true,
+    '/pages/areas/stockport' => false,
+    '/pages/pricing' => true,
+];
+$banned = '~guide (price )?(for|is) (a )?(£350 )?(for a )?standard|for a standard (assessment|FRA|fire risk assessment)|£350 guide|guide is £350|Guide price\s*(<[^>]+>\s*)*£350~i';
+foreach ($bodyPages as $path => $needLine) {
+    $cmd = escapeshellarg(PHP_BINARY) . ' ' . escapeshellarg($runner) . ' ' . escapeshellarg($path);
+    $html = (string)shell_exec($cmd . ' 2>/dev/null');
+    if (!str_contains($html, '<title>')) { $bad("{$path} did not render"); continue; }
+    $text = html_entity_decode($html, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    if (preg_match($banned, $text, $m)) $bad("{$path} body still has old FRA guide wording: " . $m[0]);
+    if ($needLine && !str_contains($text, $fromLine)) $bad("{$path} body lacks the From £350 line");
+    fwrite(STDOUT, "{$path} body OK-checked\n");
+}
 @unlink($runner);
 
 if ($fail > 0) {

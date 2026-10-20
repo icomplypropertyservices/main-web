@@ -28,15 +28,15 @@ function icomplyServiceHubCopy(string $slug): ?array
     if ($slug === 'fire-risk-assessments') {
         $price = function_exists('fraGuidePrice') ? fraGuidePrice() : '£350';
         return [
-            'hero_accent' => $price . ' guide for a standard assessment.',
+            'hero_accent' => 'From ' . $price . ' for a typical 6-bed HMO.',
             'pillars' => [
                 ['title' => 'This building', 'text' => 'A suitable and sufficient fire risk assessment describes the premises and the people in them, then a prioritised action list.'],
-                ['title' => $price . ' guide', 'text' => 'That figure is the guide for a standard assessment on UK mainland. Larger or higher-risk premises are confirmed in writing before the visit.'],
+                ['title' => 'From ' . $price, 'text' => (function_exists('fraFromLine') ? fraFromLine() : 'From £350 for a typical 6-bed HMO in the North West; other properties, nationwide and multi-site jobs are POA.')],
                 ['title' => 'Not a licence', 'text' => 'An FRA is not an HMO licence, not legal advice, and not a guarantee of an enforcement outcome. Any follow-on fire work gets its own fixed written quote.'],
             ],
             'intro' => [
                 'iComply writes fire risk assessments for shared houses, blocks, offices and other workplaces across England, Wales and mainland Scotland. The yard is Offerton, Stockport, SK2. Attendance outside the North West is scheduled and confirmed on the quote.',
-                'The published guide is ' . $price . ' for a standard FRA. If the building is larger, multi-storey or higher risk, the price is confirmed in writing first. Every assessment is carried out fresh on site.',
+                (function_exists('fraFromLine') ? fraFromLine() : 'From £350 for a typical 6-bed HMO in the North West; other properties, nationwide and multi-site jobs are POA.') . ' Every assessment is carried out fresh on site.',
                 'Northern Ireland, the Scottish Highlands and Islands, the Isle of Man and the Channel Islands are not on this list.',
             ],
             'sections' => [

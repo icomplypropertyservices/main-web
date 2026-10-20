@@ -129,12 +129,12 @@ $categories = [
         'name' => 'Fire risk assessment',
         'icon' => '📋',
         'service_slug' => 'fire-risk-assessments',
-        'intro' => 'Published guide for a standard fire risk assessment on UK mainland. Larger or higher-risk premises are confirmed in writing before the visit.',
+        'intro' => 'From £350 for a typical 6-bed HMO in the North West; other properties, nationwide and multi-site jobs are POA.',
         'items' => [
             [
                 'name' => 'Standard fire risk assessment',
                 'from' => '£350',
-                'typical' => 'Guide price for a standard FRA. Complex, multi-storey or sleeping-risk buildings are scoped before attendance.',
+                'typical' => 'From £350 for a typical 6-bed HMO in the North West; other properties, nationwide and multi-site jobs are POA.',
                 'includes' => 'Site walk, written suitable-and-sufficient FRA, prioritised action plan',
             ],
         ],

@@ -1,3 +1,4 @@
+import imageFamilies from "../../website/data/service-image-families.json" with { type: "json" };
 /**
  * CLOSE-Q1 / Q2 / Q3 shared floor for the edge ×town renderer
  * (netlify/edge-functions/town-matrix.js → renderTownPage).
@@ -14,31 +15,22 @@ import fragments from "../../website/data/quality-bar-prose.json" with { type: "
 
 const ORIGIN = "https://icomplypropertyservices.co.uk";
 
-const PHOTO = new Set([
-  "access-control",
-  "aov-air-handling",
-  "cctv",
-  "door-entry",
-  "electrical",
-  "emergency-lighting",
-  "fire-alarms",
-  "fire-risk-assessments",
-  "gas-systems",
-  "intercoms",
-  "intruder-alarm",
-  "nurse-call",
-]);
+/** Family of a service image slug (falls back to building for unknown slugs). */
+export function imageFamilyOf(slug) {
+  for (const [name, list] of Object.entries(imageFamilies.families)) if (list.includes(slug)) return name;
+  return null;
+}
 
-const POOL = [
-  "building-maintenance",
-  "fire-alarms",
-  "electrical",
-  "cctv",
-  "access-control",
-  "emergency-lighting",
-  "gas-systems",
-  "door-entry",
-];
+/** Two extra photos for `slug`, both from its own family: its -photo first, then family members by seed. */
+export function familyPicks(slug, seed) {
+  const fam = imageFamilies.families[imageFamilyOf(slug) || "building"];
+  const rest = fam.filter((b) => b !== slug && b !== `${slug}-photo`);
+  const n = rest.length;
+  const off = n ? Math.abs(Number(seed) || 0) % n : 0;
+  const rotated = rest.slice(off).concat(rest.slice(0, off));
+  const picks = (fam.includes(`${slug}-photo`) ? [`${slug}-photo`] : []).concat(rotated);
+  return [picks[0], picks[1]];
+}
 
 export function escapeHtml(value) {
   return String(value)
@@ -169,14 +161,8 @@ export function thinImages(serviceSlug, subject, placeName, seed, peImages) {
   }
   const slug = String(serviceSlug || "fire-alarms");
   const primary = `/assets/images/services/${slug}.jpg`;
-  let second = PHOTO.has(slug)
-    ? `/assets/images/services/${slug}-photo.jpg`
-    : `/assets/images/services/${POOL[seed % POOL.length]}.jpg`;
-  if (second === primary) second = "/assets/images/services/building-maintenance.jpg";
-  let third = `/assets/images/services/${POOL[(seed + 3) % POOL.length]}.jpg`;
-  if (third === primary || third === second) third = "/assets/images/services/cctv.jpg";
-  if (third === primary || third === second) third = "/assets/images/services/electrical.jpg";
-  if (third === primary || third === second) third = "/assets/images/services/access-control.jpg";
+  // Jack 20 Oct: only photos from the page's own service family (no CCTV on an EICR page).
+  const [second, third] = familyPicks(slug, seed).map((b) => `/assets/images/services/${b}.jpg`);
   const altHero = `${subject} in ${placeName}`;
   const altWork = `${subject} equipment prepared for ${placeName}`;
   const altContext = `Property compliance visit arranged for ${placeName}`;

@@ -188,9 +188,8 @@ $schema = [
                 FRA in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> — <?= htmlspecialchars(function_exists('fraGuidePrice') ? fraGuidePrice() : '£350', ENT_QUOTES, 'UTF-8') ?>
             </h2>
             <p class="mt-2 text-zinc-600 max-w-2xl">
-                Suitable and sufficient fire risk assessment for this town. Guide price
-                <?= htmlspecialchars(function_exists('fraGuidePrice') ? fraGuidePrice() : '£350', ENT_QUOTES, 'UTF-8') ?>
-                for a standard FRA. UK mainland coverage. Larger premises are confirmed in writing.
+                Suitable and sufficient fire risk assessment for this town.
+                <?= htmlspecialchars((function_exists('fraFromLine') ? fraFromLine() : 'From £350 for a typical 6-bed HMO in the North West; other properties, nationwide and multi-site jobs are POA.'), ENT_QUOTES, 'UTF-8') ?>
             </p>
         </div>
         <a href="<?= htmlspecialchars(url('/pages/fire-risk-assessments/' . $areaSlugVal . '.php'), ENT_QUOTES, 'UTF-8') ?>"

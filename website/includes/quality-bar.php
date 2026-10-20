@@ -282,32 +282,34 @@ function icomplyQualityBarThinProseHtml(string $kind, array $ctx): string
  *
  * @return array{html:string,hero:string,og:string}
  */
+/** @return array{0:string,1:string} two extra photos from the slug's own image family */
+function icomplyServiceImageFamilyPicks(string $slug, int $seed): array
+{
+    static $fams = null;
+    if ($fams === null) {
+        $doc = json_decode((string)@file_get_contents(SITE_ROOT . '/data/service-image-families.json'), true);
+        $fams = is_array($doc['families'] ?? null) ? $doc['families'] : ['building' => ['building-maintenance', 'renovation', 'plastering']];
+    }
+    $fam = $fams['building'] ?? [];
+    foreach ($fams as $list) {
+        if (in_array($slug, $list, true)) { $fam = $list; break; }
+    }
+    $rest = array_values(array_filter($fam, static fn ($b) => $b !== $slug && $b !== $slug . '-photo'));
+    $n = count($rest);
+    $off = $n ? $seed % $n : 0;
+    $rot = array_merge(array_slice($rest, $off), array_slice($rest, 0, $off));
+    $picks = array_merge(in_array($slug . '-photo', $fam, true) ? [$slug . '-photo'] : [], $rot);
+    return [$picks[0] ?? 'building-maintenance', $picks[1] ?? 'renovation'];
+}
+
 function icomplyQualityBarImages(string $serviceSlug, string $altPrefix, string $slot = 'q2-content-images'): array
 {
-    $photo = [
-        'access-control', 'aov-air-handling', 'cctv', 'door-entry', 'electrical',
-        'emergency-lighting', 'fire-alarms', 'fire-risk-assessments', 'gas-systems',
-        'intercoms', 'intruder-alarm', 'nurse-call',
-    ];
-    $pool = [
-        'building-maintenance', 'fire-alarms', 'electrical', 'cctv',
-        'access-control', 'emergency-lighting', 'gas-systems', 'door-entry',
-    ];
+    // Jack 20 Oct: only photos from the page's own service family (website/data/service-image-families.json).
     $slug = $serviceSlug !== '' ? $serviceSlug : 'fire-alarms';
     $primary = '/assets/images/services/' . $slug . '.jpg';
-    $second = in_array($slug, $photo, true)
-        ? '/assets/images/services/' . $slug . '-photo.jpg'
-        : '/assets/images/services/' . $pool[abs(crc32($slug)) % count($pool)] . '.jpg';
-    if ($second === $primary) {
-        $second = '/assets/images/services/building-maintenance.jpg';
-    }
-    $third = '/assets/images/services/' . $pool[(abs(crc32($slug)) + 3) % count($pool)] . '.jpg';
-    if ($third === $primary || $third === $second) {
-        $third = '/assets/images/services/cctv.jpg';
-    }
-    if ($third === $primary || $third === $second) {
-        $third = '/assets/images/services/electrical.jpg';
-    }
+    [$b2, $b3] = icomplyServiceImageFamilyPicks($slug, abs(crc32($slug)));
+    $second = '/assets/images/services/' . $b2 . '.jpg';
+    $third = '/assets/images/services/' . $b3 . '.jpg';
     $src = static function (string $path): string {
         return function_exists('url') ? url($path) : $path;
     };

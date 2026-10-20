@@ -15,7 +15,7 @@ $metaDesc = $poaCombo
     : ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing and certification. ' . ($ownsMainland ? 'UK mainland fire protection, scheduled from Stockport.' : 'Local engineers.') . ' Written quote after scope.');
 if ($SERVICE_SLUG === 'fire-risk-assessments') {
     $fraGuide = function_exists('fraGuidePrice') ? fraGuidePrice() : '£350';
-    $metaDesc = 'Fire risk assessment in ' . $AREA . '. Guide price ' . $fraGuide . ' for a standard FRA on UK mainland. Larger premises confirmed in writing.';
+    $metaDesc = 'Fire risk assessment in ' . $AREA . '. From ' . $fraGuide . ' for a typical 6-bed HMO in the North West; other properties POA.';
 }
 $metaKeywords = $SEO_KEYWORDS;
 $ogImage = function_exists('serviceImageUrl')
@@ -238,7 +238,7 @@ $schema = [
                 <?php if ($serviceSlug === 'fire-risk-assessments'):
                     $fraGuide = function_exists('fraGuidePrice') ? fraGuidePrice() : '£350';
                 ?>
-                <p class="mt-3 text-sm text-white/80">Guide price <?= htmlspecialchars($fraGuide, ENT_QUOTES, 'UTF-8') ?> for a standard fire risk assessment on UK mainland. Larger or higher-risk premises are confirmed in writing.</p>
+                <p class="mt-3 text-sm text-white/80"><?= htmlspecialchars((function_exists('fraFromLine') ? fraFromLine() : 'From £350 for a typical 6-bed HMO in the North West; other properties, nationwide and multi-site jobs are POA.'), ENT_QUOTES, 'UTF-8') ?></p>
                 <?php endif; ?>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">

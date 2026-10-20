@@ -40,9 +40,15 @@ function fraGuidePriceGbp(): int
     return is_numeric($gbp) ? (int)$gbp : 350;
 }
 
+/** Marketing-approved FRA price line (matches the FRA hub titles/metas, 19-20 Oct). */
+function fraFromLine(): string
+{
+    return 'From £350 for a typical 6-bed HMO in the North West; other properties, nationwide and multi-site jobs are POA.';
+}
+
 function fraPriceNote(): string
 {
-    return 'Guide price ' . fraGuidePrice() . ' for a standard fire risk assessment. Larger, multi-storey or higher-risk premises are confirmed in writing before we attend.';
+    return fraFromLine();
 }
 
 /**

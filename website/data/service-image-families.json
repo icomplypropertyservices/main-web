@@ -1,0 +1,91 @@
+{
+ "_doc": "Service image families (Jack 20 Oct): a service page only shows photos from its own family. Used by netlify/lib/thin-quality-bar.js, website/includes/quality-bar.php and website/bin/check-service-images.mjs.",
+ "families": {
+  "electrical": [
+   "electrical",
+   "electrical-photo",
+   "electrics-first-fix",
+   "pat-testing",
+   "ev-chargers"
+  ],
+  "fire": [
+   "fire-alarms",
+   "fire-alarms-photo",
+   "fire-risk-assessments",
+   "fire-risk-assessments-photo",
+   "emergency-lighting",
+   "emergency-lighting-photo",
+   "aov-air-handling",
+   "aov-air-handling-photo",
+   "fire-doors",
+   "fire-extinguishers",
+   "fire-signage",
+   "fire-stopping",
+   "fire-compartmentation",
+   "fire-suppression",
+   "kitchen-fire-suppression",
+   "sprinkler-systems",
+   "dry-risers",
+   "smoke-co-alarms",
+   "evacuation-alerts"
+  ],
+  "security": [
+   "cctv",
+   "cctv-photo",
+   "access-control",
+   "access-control-photo",
+   "door-entry",
+   "door-entry-photo",
+   "intercoms",
+   "intercoms-photo",
+   "intruder-alarm",
+   "intruder-alarm-photo",
+   "barriers",
+   "nurse-call",
+   "nurse-call-photo"
+  ],
+  "gas": [
+   "gas-systems",
+   "gas-systems-photo",
+   "heating",
+   "plumbing"
+  ],
+  "compliance": [
+   "landlord-compliance",
+   "compliance-consultancy",
+   "legionella-risk-assessment",
+   "water-wras",
+   "asbestos-survey",
+   "epc",
+   "building-surveys",
+   "cdm-support"
+  ],
+  "building": [
+   "building-maintenance",
+   "bathrooms",
+   "brickwork",
+   "carpentry",
+   "commercial-fit-out",
+   "damp-proofing",
+   "dry-lining",
+   "extensions",
+   "facilities-management",
+   "flooring",
+   "groundworks",
+   "insulation",
+   "joinery",
+   "kitchens",
+   "landscaping",
+   "loft-conversions",
+   "painting-decorating",
+   "plastering",
+   "project-management",
+   "property-refurbishment-pm",
+   "rendering",
+   "renovation",
+   "roofing",
+   "tiling",
+   "windows-doors"
+  ]
+ }
+}

@@ -277,7 +277,7 @@ $schema = [
                 </h1>
                 <p class="mt-6 text-lg text-white/80 max-w-xl"><?= htmlspecialchars($blurb, ENT_QUOTES, 'UTF-8') ?></p>
                 <?php if ($serviceSlug === 'fire-risk-assessments' && !empty($metaRow['guide_price_label'])): ?>
-                <p class="mt-4 text-sm text-white/80 max-w-xl">Guide price <?= htmlspecialchars((string)$metaRow['guide_price_label'], ENT_QUOTES, 'UTF-8') ?> for a standard fire risk assessment on UK mainland. Larger or higher-risk premises are confirmed in writing.</p>
+                <p class="mt-4 text-sm text-white/80 max-w-xl"><?= htmlspecialchars((function_exists('fraFromLine') ? fraFromLine() : 'From £350 for a typical 6-bed HMO in the North West; other properties, nationwide and multi-site jobs are POA.'), ENT_QUOTES, 'UTF-8') ?></p>
                 <?php endif; ?>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white"><?= $poaService ? 'Request POA quote' : 'Get free quote' ?></a>
