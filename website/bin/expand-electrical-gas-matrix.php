@@ -609,7 +609,7 @@ function icomplyElectricalGasNewKeywords(): array
         'Boiler',
         $g,
         'boiler-installation',
-        'Need a boiler installed, serviced or repaired in Stockport or the wider North West? iComply arranges Gas Safe boiler work — install, repair, breakdown and landlord safety — with written quotes after we understand the appliance and system.',
+        'Need a boiler installed, serviced or repaired in Stockport or the wider North West? iComply arranges boiler work — install, repair, breakdown and landlord safety — with written quotes after we understand the appliance and system, with gas work carried out by Gas Safe registered engineers.',
         'This hub covers the everyday search “boiler”: combi, system and regular appliances, flues, controls and the difference between a service and a CP12. Boiler cost, boiler install cost and new boiler cost are always POA. ',
         'Boiler install, repair and service across Greater Manchester and the North West. Gas Safe engineers from Stockport. Boiler prices are POA.',
         [
@@ -1126,7 +1126,7 @@ function icomplyElectricalGasNewKeywords(): array
         'Heating Engineer',
         $g,
         'gas-central-heating',
-        'Looking for a heating engineer in Stockport or the North West? iComply provides Gas Safe heating engineer visits for boilers, controls and system faults — with POA quotes after we understand the symptom.',
+        'Looking for a heating engineer in Stockport or the North West? iComply provides heating engineer visits for boilers, controls and system faults — with POA quotes after we understand the symptom, with gas work carried out by Gas Safe registered engineers.',
         'A heating engineer visit might be a breakdown, an annual service, a boiler install or a landlord gas safety check. Emergency attendance terms are explained before despatch.',
         'Heating engineer covering Stockport, Manchester and the North West. Boilers and gas heating. Quotes POA.',
         [

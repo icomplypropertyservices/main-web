@@ -734,7 +734,7 @@ function icomplyApplyCustomerKeywordCopy(array $keywords): array
             ];
             $row['faq'] = [
                 ['Who carries out the gas safety check?', $legal],
-                ['Does iComply hold a Gas Safe registration?', 'No. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.'],
+                ['Does iComply hold a Gas Safe registration?', 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.'],
             ];
         }
         if ($slug === 'same-day-eicr') {

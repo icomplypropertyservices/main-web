@@ -296,14 +296,27 @@ function icomplyQualityBarThinProseHtml(string $kind, array $ctx): string
  *
  * @return array{html:string,hero:string,og:string}
  */
-/** @return array{0:string,1:string} two extra photos from the slug's own image family */
+/**
+ * Up to two extra photos for $slug. A slug listed in service_photos shows only
+ * its own photos (SEO 20 Oct: no plastering photo on kitchens/flooring/...);
+ * other slugs draw from their family list.
+ *
+ * @return list<string>
+ */
 function icomplyServiceImageFamilyPicks(string $slug, int $seed): array
 {
-    static $fams = null;
-    if ($fams === null) {
+    static $doc = null;
+    if ($doc === null) {
         $doc = json_decode((string)@file_get_contents(SITE_ROOT . '/data/service-image-families.json'), true);
-        $fams = is_array($doc['families'] ?? null) ? $doc['families'] : ['building' => ['building-maintenance', 'renovation', 'plastering']];
+        if (!is_array($doc)) {
+            $doc = [];
+        }
     }
+    $own = $doc['service_photos'][$slug] ?? null;
+    if (is_array($own)) {
+        return array_slice(array_values(array_filter($own, static fn ($b) => $b !== $slug)), 0, 2);
+    }
+    $fams = is_array($doc['families'] ?? null) ? $doc['families'] : ['building' => ['building-maintenance', 'renovation', 'plastering']];
     $fam = $fams['building'] ?? [];
     foreach ($fams as $list) {
         if (in_array($slug, $list, true)) { $fam = $list; break; }
@@ -313,26 +326,26 @@ function icomplyServiceImageFamilyPicks(string $slug, int $seed): array
     $off = $n ? $seed % $n : 0;
     $rot = array_merge(array_slice($rest, $off), array_slice($rest, 0, $off));
     $picks = array_merge(in_array($slug . '-photo', $fam, true) ? [$slug . '-photo'] : [], $rot);
-    return [$picks[0] ?? 'building-maintenance', $picks[1] ?? 'renovation'];
+    return array_slice($picks, 0, 2);
 }
 
 function icomplyQualityBarImages(string $serviceSlug, string $altPrefix, string $slot = 'q2-content-images'): array
 {
-    // Jack 20 Oct: only photos from the page's own service family (website/data/service-image-families.json).
+    // Jack 20 Oct: only photos from the page's own service (or, outside service_photos, its family).
     $slug = $serviceSlug !== '' ? $serviceSlug : 'fire-alarms';
     $primary = '/assets/images/services/' . $slug . '.jpg';
-    [$b2, $b3] = icomplyServiceImageFamilyPicks($slug, abs(crc32($slug)));
-    $second = '/assets/images/services/' . $b2 . '.jpg';
-    $third = '/assets/images/services/' . $b3 . '.jpg';
+    $extra = icomplyServiceImageFamilyPicks($slug, abs(crc32($slug)));
     $src = static function (string $path): string {
         return function_exists('url') ? url($path) : $path;
     };
     $h = 'icomplyQualityBarH';
     $html = '<figure class="quality-bar-images" data-pe-slot="' . $h($slot) . '">'
-        . '<img data-pe-slot="q2-image-hero" src="' . $h($src($primary)) . '" alt="' . $h($altPrefix) . '" width="1200" height="630">'
-        . '<img data-pe-slot="q2-image-work" src="' . $h($src($second)) . '" alt="' . $h($altPrefix . ' — equipment') . '" width="1200" height="630">'
-        . '<img data-pe-slot="q2-image-context" src="' . $h($src($third)) . '" alt="' . $h($altPrefix . ' — site context') . '" width="1200" height="630">'
-        . '</figure>';
+        . '<img data-pe-slot="q2-image-hero" src="' . $h($src($primary)) . '" alt="' . $h($altPrefix) . '" width="1200" height="630">';
+    $slots = [['q2-image-work', ' — equipment'], ['q2-image-context', ' — site context']];
+    foreach ($extra as $i => $b) {
+        $html .= '<img data-pe-slot="' . $slots[$i][0] . '" src="' . $h($src('/assets/images/services/' . $b . '.jpg')) . '" alt="' . $h($altPrefix . $slots[$i][1]) . '" width="1200" height="630">';
+    }
+    $html .= '</figure>';
     $og = function_exists('icomply_absolute_url') ? icomply_absolute_url($primary) : $primary;
     return ['html' => $html, 'hero' => $primary, 'og' => $og];
 }
