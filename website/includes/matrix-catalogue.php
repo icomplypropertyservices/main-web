@@ -812,6 +812,16 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
             $jobTown++;
         }
     }
+    // Networking, data cabling and mesh Wi-Fi pack (lock 2026-10-20): keyword x
+    // GM-60 and job x GM-60 town pages (service x 269 is covered above).
+    $networkTown = 0;
+    if (!function_exists('icomplyNetworkPackTownPaths')) {
+        require_once __DIR__ . '/network-pack.php';
+    }
+    foreach (icomplyNetworkPackTownPaths() as $networkPath) {
+        $writeLoc((string)$networkPath);
+        $networkTown++;
+    }
     if ($chunkHandle !== null) {
         fwrite($chunkHandle, '</urlset>' . "\n");
         fclose($chunkHandle);
@@ -872,7 +882,7 @@ export default async () => {
 export const config = { path: "/robots.txt" };
 JS);
 
-    $sitemapUrls = $hubs + $keywordTown + $serviceTown + $familyKeywordTown + $familyServiceTown + $manufacturerTown + $jobTown;
+    $sitemapUrls = $hubs + $keywordTown + $serviceTown + $familyKeywordTown + $familyServiceTown + $manufacturerTown + $jobTown + $networkTown;
     $stats = [
         'target' => ICOMPLY_MATRIX_URL_TARGET,
         'hub_urls' => $hubs,
@@ -892,6 +902,7 @@ JS);
         'manufacturer_town_urls' => $manufacturerTown,
         'job_town_urls' => $jobTown,
         'sitemap_urls' => $sitemapUrls,
+        'network_pack_town_urls' => $networkTown,
         'sitemap_unique_locs' => count($seenLocs),
         'sitemap_hub_locs' => $hubWritten,
         'sitemap_duplicates_skipped' => $duplicatesSkipped,

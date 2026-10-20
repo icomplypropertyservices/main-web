@@ -33,7 +33,7 @@
         ]
     },
     "security-care": {
-        "label": "Security & Care Systems",
+        "label": "Security, Networking & Care Systems",
         "blurb": "Barriers, CCTV, access, door entry, intercoms, nurse call and intruder alarms. Vehicle barriers are UK-wide.",
         "services": [
             "barriers",
@@ -42,7 +42,10 @@
             "door-entry",
             "intercoms",
             "intruder-alarm",
-            "nurse-call"
+            "nurse-call",
+            "networking",
+            "structured-cabling",
+            "wifi"
         ]
     },
     "professional": {

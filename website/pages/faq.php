@@ -6,7 +6,7 @@ require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/share.php';
 
 $pageTitle = 'FAQ | Property Compliance Questions Answered';
-$metaDesc = 'FAQ for iComply Property Services, Stockport. EICR, fire alarms, emergency lighting, gas safety, CCTV, access, construction, quotes and coverage. Call 07517 806082. No scheme badges we cannot verify.';
+$metaDesc = 'FAQ for iComply Property Services, Stockport. EICR, fire alarms, emergency lighting, gas safety, CCTV, access, construction, quotes and coverage. Call 07517 806082.';
 $metaKeywords = 'property compliance FAQ, EICR questions, BS 5839 fire alarm, emergency lighting testing, gas safety certificate, CCTV installation, access control, North West';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/faq.php');

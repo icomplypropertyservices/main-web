@@ -521,4 +521,5 @@ require_once SITE_ROOT . '/includes/testimonials.php';
         </form>
     </div>
 </section>
+<?php require_once SITE_ROOT . '/includes/network-pack.php'; echo icomplyNetworkPackLinksHtml(areaSlug((string)$AREA), (string)$AREA); ?>
 <?php require SITE_ROOT . '/includes/footer.php'; ?>

@@ -17,6 +17,7 @@ import { applyMoneyCtr } from "../lib/money-ctr.js";
 import { townFactsBlock } from "../lib/town-facts.js";
 import { depthBankParagraphs, thinFaqHtml, thinFaqs, thinImages, thinOgMeta, thinProseHtml } from "../lib/thin-quality-bar.js";
 import { townDepthBlock } from "../lib/town-depth.js";
+import { networkPackMatch, networkPackHubFor, renderNetworkPackTown } from "../lib/network-pack.js";
 import fireAlarmFamily from "../../website/data/fire-alarm-installer-family.json" with { type: "json" };
 import mainlandTownDoc from "../../website/data/uk-mainland-towns-10k.json" with { type: "json" };
 import gscKeepDoc from "../../website/data/gsc-keep-towns.json" with { type: "json" };
@@ -242,6 +243,11 @@ function resolvePlace(townSlug, catalogue) {
 }
 
 export function renderTownPage(input) {
+  // Networking, data cabling and mesh Wi-Fi pack (lock 2026-10-20) has its own renderer.
+  if (input && (input.kind === "keyword" || input.kind === "job" || input.kind === "service")) {
+    const np = renderNetworkPackTown({ kind: input.kind, slug: input.keyword || input.job || input.service, town: input.town });
+    if (np) return np;
+  }
   const catalogue = input.catalogue || {};
   const keywords = catalogue.keywords || {};
   const services = catalogue.services || {};
@@ -749,6 +755,21 @@ export default async (request, context) => {
   // duplicates on /pages/keywords/x/). Exported files never use the slash form.
   if (path !== "/" && url.pathname !== path && !path.startsWith("/matrix-sitemap")) {
     return Response.redirect(new URL(path + url.search, url.origin).toString(), 301);
+  }
+  // Network pack: render its town set; a pack slug outside its town set 301s
+  // to the hub (one hop). cctv-remote-viewing-setup keeps its 269 matrix towns.
+  const np = networkPackMatch(path);
+  if (np) {
+    const rendered = np.ok ? renderNetworkPackTown(np) : null;
+    if (rendered) {
+      return new Response(withContactWidgets(scrubMeta(rendered.html)), {
+        status: 200,
+        headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=3600", "x-robots-tag": rendered.robots },
+      });
+    }
+    if (!(np.kind === "keyword" && np.slug === "cctv-remote-viewing-setup" && isLocalTown(np.town))) {
+      return Response.redirect(new URL(networkPackHubFor(np), url.origin).toString(), 301);
+    }
   }
   const aliasTo = placeAliasRedirect(path);
   if (aliasTo) {

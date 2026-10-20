@@ -16,7 +16,7 @@ $pageTitle = 'Fire alarm jobs | install, maintenance and servicing | Stockport &
 $metaTitleExact = true;
 $metaDesc = 'Fire alarm install, maintenance and servicing to BS 5839 across Stockport, Greater Manchester and the North West. '
     . $counts['install'] . ' install guides, ' . $counts['maintain'] . ' maintenance guides and ' . $counts['service']
-    . ' service guides. Written quotes after scope. No published fees.';
+    . ' service guides. Written quotes after scope.';
 $metaKeywords = 'fire alarm installation, fire alarm maintenance, fire alarm servicing, BS 5839, Stockport, Manchester, North West, iComply';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/jobs/fire-alarms');

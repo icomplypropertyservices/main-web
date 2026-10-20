@@ -156,7 +156,7 @@ require SITE_ROOT . '/includes/header.php';
         $services = getServices();
         $selectedService = 'Vehicle Barriers';
         $heading = $name . ' — quote on application';
-        $sub = 'No published fee. Call ' . PHONE . ' or send the lane details.';
+        $sub = 'Price on application. Call ' . PHONE . ' or send the lane details.';
         require SITE_ROOT . '/includes/quote-form.php';
         ?>
     </div>

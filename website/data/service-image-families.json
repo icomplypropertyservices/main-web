@@ -86,6 +86,7 @@
    "roofing",
    "tiling",
    "windows-doors"
-  ]
- }
+  ],
+    "networking": ["networking", "networking-photo", "structured-cabling", "structured-cabling-photo", "wifi", "wifi-photo"]
+  }
 }
