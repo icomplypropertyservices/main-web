@@ -411,7 +411,7 @@ document.addEventListener("DOMContentLoaded",function(){
       note.textContent="Published 5m CAME supply price for "+pack.sku+" ("+pack.label+"), ex VAT. Installation POA.";
     }else{
       price.textContent="Quote after survey";
-      note.textContent="No catalogue supply price for this length. Installation is POA. We do not invent a figure.";
+      note.textContent="No catalogue supply price for this length. Installation is POA.";
     }
   }
   document.querySelectorAll("input[name=boom],input[name=came_addon]").forEach(function(el){el.addEventListener("change",sync);});

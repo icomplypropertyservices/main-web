@@ -362,7 +362,7 @@ function accessControlLaneSynthesize(array $job): array
             'Lane survey: boom length, island, loops, photocells and safety edge',
             'CAME Gard GT4 / GT8 and 5 metre arms where the lane needs them',
             'Credential interface: fob, keypad, GSM, intercom or ANPR',
-            'POA written quote — no invented barrier price',
+            'Price on application: written quote after survey',
         ];
         $faqs = [
             ['Why are car park barriers the hardest access job?', 'The civil work, safety devices and the operator have to match the lane. A door maglock does not prepare a rising arm that must stop for a vehicle.'],

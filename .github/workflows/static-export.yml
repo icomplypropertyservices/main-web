@@ -74,3 +74,5 @@ jobs:
 
       - name: Thin x town internal links (CLOSE-Q8)
         run: node website/bin/check-town-interlinks.mjs dist
+      - name: Barrier town copy (no builder wording, housing line follows census)
+        run: python3 website/bin/check-barriers-copy.py dist
