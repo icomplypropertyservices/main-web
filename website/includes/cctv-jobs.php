@@ -83,7 +83,7 @@ function cctvServiceCopy(string $slug): ?array
                 'h2' => 'What this CCTV lane covers',
                 'p' => [
                     'Installs and upgrades (4K, HD, wireless, dome, bullet and PTZ), brand work for Hikvision, Axis, Dahua and the other systems already on site, and the practical jobs that follow: network changes, switch and PoE checks, hard-drive and NVR changes, loading-bay adds and landlord common-part cameras.',
-                    'ANPR is scoped as its own view. A car-park overview is not treated as a plate camera unless the survey shows it can hold a plate. Monitoring and remote apps are set up for your staff. We do not invent a monitoring-centre contract on this page.',
+                    'ANPR is scoped as its own view. A car-park overview is not treated as a plate camera unless the survey shows it can hold a plate. Monitoring and remote apps are set up for your staff. ',
                 ],
             ],
         ],

@@ -12,7 +12,7 @@ require_once __DIR__ . '/access-control-nationwide.php';
 if (!function_exists('shopifyCardFromManufacturerProduct')) {
     /**
      * Used when includes/shopify.php is still the placeholder and has no card helper.
-     * No prices are invented.
+
      */
     function shopifyCardFromManufacturerProduct(array $product, string $brandSlug, string $brandName): string
     {
@@ -172,12 +172,12 @@ function keywordTemplatePlaceholders(
     }
     $intro = (string)($meta['intro'] ?? "Professional {$name} from iComply Property Services across the North West.");
     $body = (string)($meta['body'] ?? "We install, service and certify {$name} as part of our {$serviceName} range for landlords, FM teams and commercial sites.");
-    $metaDesc = (string)($meta['meta_desc'] ?? "{$name} across Greater Manchester & the North West. Fixed-price quotes. Local engineers.");
+    $metaDesc = (string)($meta['meta_desc'] ?? "{$name} across Greater Manchester & the North West. Written quotes. Local engineers.");
     $seoKw = (string)($meta['seo_keywords'] ?? getSeoKeywords($serviceSlug, $areaName));
 
     $focusHtml = '';
     $points = $meta['focus_points'] ?? [
-        "Survey and fixed-price quote for {$name}",
+        "Survey and written quote for {$name}",
         'Local North West engineers from Stockport',
         'Testing and compliance documentation',
         "Manufacturer-aware {$serviceName} support",

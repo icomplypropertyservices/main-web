@@ -67,7 +67,7 @@ $featuredGuides = [
     [
         'slug' => 'legionella-risk-assessment',
         'title' => 'Legionella risk assessment & water hygiene',
-        'blurb' => 'HSE L8 / HSG274-style assessment, when sampling helps, POA only — no invented prices.',
+        'blurb' => 'HSE L8 / HSG274-style assessment, when sampling helps, POA only.',
         'tag' => 'Water hygiene',
         'img' => '/assets/images/services/plumbing.jpg',
     ],
@@ -333,7 +333,7 @@ $batchC = $queue['C'];
             </div>
             <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
                 <h3 class="text-2xl font-semibold">Talk to a local engineer</h3>
-                <p class="mt-3 text-white/80">Fixed-price quotes, clear documentation and appointments booked when the diary allows.</p>
+                <p class="mt-3 text-white/80">Written quotes, clear documentation and appointments booked when the diary allows.</p>
                 <div class="mt-6 flex flex-wrap gap-3">
                     <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>"
                        class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>

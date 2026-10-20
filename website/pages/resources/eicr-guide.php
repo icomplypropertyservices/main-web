@@ -135,7 +135,7 @@ require SITE_ROOT . '/includes/header.php';
     <!-- CTA -->
     <div class="mt-14 bg-[#0B1F3A] text-white p-8 md:p-10 rounded-3xl text-center">
         <h2 class="text-2xl md:text-3xl font-semibold mb-3">Book an EICR quote</h2>
-        <p class="text-white/85 max-w-md mx-auto mb-6">Tell us the postcode, property type and access notes — we provide fixed-price quotes across Greater Manchester and the North West.</p>
+        <p class="text-white/85 max-w-md mx-auto mb-6">Tell us the postcode, property type and access notes — we provide written quotes across Greater Manchester and the North West.</p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
             <a href="#quote" class="bg-[#ff6b00] hover:bg-orange-600 px-8 py-3.5 rounded-2xl font-semibold">Request free quote</a>
             <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Quote%20for%20EICR"
@@ -165,7 +165,7 @@ require SITE_ROOT . '/includes/header.php';
         <div class="text-center mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
             <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Request your EICR quote</h2>
-            <p class="mt-3 text-zinc-600">Fixed-price after scope is agreed. Certificates issued after inspection.</p>
+            <p class="mt-3 text-zinc-600">Quoted after scope is agreed. Certificates issued after inspection.</p>
         </div>
         <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">

@@ -101,7 +101,7 @@ BRIEFS_C = [
         "name": "Care Home Outlet Repair",
         "cluster": "commercial",
         "note": "A care-home outlet repair is a tap, a shower hose or a WC fill that has failed in a resident room or a bathroom. We work around care routines and we do not leave a room without water if a local isolator can keep the rest of the home on.",
-        "work": "We repair the outlet and check the hot is not scalding at that fitting where a thermostatic valve is fitted. If there is no TMV, we say so; we do not invent a temperature record.",
+        "work": "We repair the outlet and check the hot is not scalding at that fitting where a thermostatic valve is fitted. ",
         "limit": "This is not a water-hygiene audit and not a TMV servicing programme.",
     },
     {

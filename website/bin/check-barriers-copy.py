@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
-"""Barrier town copy: no builder/meta wording, and the housing-mix line follows the
-census lead accommodation type. Usage: check-barriers-copy.py [dist]"""
+"""Site-wide customer copy check (started as the barrier town check).
+1. Barrier data: no builder wording; housing-mix line follows the census lead type.
+2. Every exported page in dist (visible text, scripts stripped): no builder/meta
+   wording ("invented", "does not invent", "this readout"...) and no "Fixed-price".
+Usage: check-barriers-copy.py [dist]"""
 import json, pathlib, re, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -28,6 +31,22 @@ for r in rows:
                 fails.append(f"{r['slug']}: lead housing '{lead}' but no '{line}'")
             if k != key and present:
                 fails.append(f"{r['slug']}: says '{line}' but lead housing is '{lead}'")
+SITE_BANNED = re.compile(r"\binvent(?:s|ed|ing)?\b|\bthis readout\b|\bfixed-price\b|\bkeyword guides?\b|\bmade-up\b|\b(?:price|prices|fee|fees)(?: list)? on this page\b", re.I)
+site_pages = 0
+if len(sys.argv) > 1:
+    root = pathlib.Path(sys.argv[1])
+    for f in root.rglob("*"):
+        if f.suffix not in (".php", ".html") or not f.is_file():
+            continue
+        site_pages += 1
+        raw = f.read_text(errors="ignore")
+        body = re.sub(r"<script.*?</script>|<style.*?</style>", " ", raw, flags=re.S)
+        body = re.sub(r"<[^>]+>", " ", body)
+        meta = " ".join(re.findall(r'<(?:meta|img)[^>]+(?:content|alt)="([^"]*)"', raw))
+        m = SITE_BANNED.search(body + " " + meta)
+        if m:
+            ctx = (body + " " + meta)[max(0, m.start() - 50):m.end() + 30]
+            fails.append(f"{f.relative_to(root)}: '{m.group(0)}' in '{' '.join(ctx.split())}'")
 pages = 0
 if len(sys.argv) > 1:
     d = pathlib.Path(sys.argv[1]) / "pages/barriers"
@@ -39,5 +58,5 @@ if len(sys.argv) > 1:
             fails.append(f"{f.name}: rendered builder wording '{m.group(0)}'")
 for x in fails[:20]:
     print("FAIL", x)
-print(f"check-barriers-copy: {'FAIL' if fails else 'OK'} rows={len(rows)} pages={pages} fails={len(fails)}")
+print(f"check-barriers-copy: {'FAIL' if fails else 'OK'} rows={len(rows)} barrier_pages={pages} site_pages={site_pages} fails={len(fails)}")
 sys.exit(1 if fails else 0)

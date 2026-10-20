@@ -25,7 +25,7 @@ renderJobArticle([
     'faqs' => [
         ['Will the door release if the fire alarm sounds?', 'Where the door strategy needs a fire interface, we test release on that door and record it. We do not leave a maglock holding against an alarm.'],
         ['Is this the same job as a car park barrier?', 'No. Barriers are the lane. A maglock is the pedestrian door. They are quoted separately when a site has both.'],
-        ['How is maglock installation priced?', 'Price on application after we see the door, the supply and the bracket. Nothing on this page is a fixed fee.'],
+        ['How is maglock installation priced?', 'Price on application after we see the door, the supply and the bracket. '],
     ],
     'links' => [
         ['/pages/services/access-control', 'Access control'],

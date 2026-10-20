@@ -231,7 +231,7 @@ function renderJobArticle(array $page): void
             <li class="flex gap-3 text-zinc-800"><span class="text-[#ff6b00] font-bold">●</span><span><?= $h($point) ?></span></li>
             <?php endforeach; ?>
         </ul>
-        <p class="mt-8 text-sm text-zinc-600">Price on application after we know the site. We do not publish a fee on this page.</p>
+        <p class="mt-8 text-sm text-zinc-600">Price on application after we know the site.</p>
         <?php
         require_once SITE_ROOT . '/includes/quality-bar.php';
         $jobImageSlug = 'fire-alarms';

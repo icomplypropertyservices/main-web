@@ -93,7 +93,7 @@
     "focus_points": ["Access and Parking ranges distinguished", "HGV loop geometry", "Heavy-arm spring packs", "No Magnetic partnership claim"],
     "faq": [
       ["Is Magnetic the same as FAAC?", "Magnetic Autocontrol is part of the wider FAAC group, but the hardware and spares are not interchangeable with a FAAC 620. We identify the badge on the cabinet."],
-      ["Can this run a car-park payment system?", "Only if that system already provides a clean open command. We do not invent a payment specification."]
+      ["Can this run a car-park payment system?", "Only if that system already provides a clean open command. "]
     ],
     "seo_keywords": "Magnetic Autocontrol barrier, Magnetic Access barrier, Parking barrier"
   },
@@ -176,7 +176,7 @@
     "meta_desc": "Cardin 24V barrier repair, radio faults and replacement. Price on application.",
     "focus_points": ["Radio faults separated from motor faults", "24V board generation checked", "CAME replacement when obsolete", "POA"],
     "faq": [
-      ["Can new fobs be added?", "Only if the receiver still learns them. A dead receiver is a parts job, not a code we invent."],
+      ["Can new fobs be added?", "Only if the receiver still learns them. "],
       ["Are you a Cardin partner?", "No. CAME is the partner."]
     ],
     "seo_keywords": "Cardin barrier, Cardin 24V barrier repair"
@@ -256,7 +256,7 @@
     "service": "barriers",
     "related": "barrier-boom-replacement",
     "intro": "Fadini Bayt 980 barriers are an older Italian arm still in service on some private lanes. Parts availability decides repair versus replacement.",
-    "body": "We check the Bayt model and the boom socket before promising a new arm. If the socket is obsolete, forcing a non-matching boom is unsafe. The alternative we can support properly is a CAME Gard, because that is the partnership. We put both routes in writing. No fee is published on this page.",
+    "body": "We check the Bayt model and the boom socket before promising a new arm. If the socket is obsolete, forcing a non-matching boom is unsafe. The alternative we can support properly is a CAME Gard, because that is the partnership. We put both routes in writing. ",
     "meta_desc": "Fadini Bayt 980 barrier repair where parts exist, or CAME replacement. POA.",
     "focus_points": ["Bayt 980 identified", "Non-matching booms refused", "CAME Gard as the supportable replacement", "POA"],
     "faq": [
@@ -382,9 +382,9 @@
     "service": "barriers",
     "related": "barrier-servicing",
     "intro": "LiftMaster operators are uncommon on UK rising-arm lanes and more familiar as gate or garage operators. When a true LiftMaster barrier is on site, parts lead times are often longer than CAME.",
-    "body": "We confirm it is a barrier operator and not a LiftMaster gate motor before quoting. US-market part numbers do not always land quickly in the UK. If the lane should simply work next month, a CAME Gard replacement is usually the supportable partner route, priced on application against waiting for LiftMaster parts. We do not invent a UK list price.",
+    "body": "We confirm it is a barrier operator and not a LiftMaster gate motor before quoting. US-market part numbers do not always land quickly in the UK. If the lane should simply work next month, a CAME Gard replacement is usually the supportable partner route, priced on application against waiting for LiftMaster parts. ",
     "meta_desc": "LiftMaster barrier identification. Parts lead time versus a CAME Gard replacement. POA.",
-    "focus_points": ["Barrier versus gate motor confirmed", "Lead time stated", "CAME when waiting is the wrong plan", "No invented list price"],
+    "focus_points": ["Barrier versus gate motor confirmed", "Lead time stated", "CAME when waiting is the wrong plan", "Price on application"],
     "faq": [
       ["Do you fit new LiftMaster barriers as a preference?", "No. New rising arms are specified as CAME, our partner range, unless you instruct otherwise."],
       ["Are you a LiftMaster partner?", "No."]
@@ -424,11 +424,11 @@
     "service": "barriers",
     "related": "barrier-maintenance-contract",
     "intro": "Barrier servicing is a planned visit to a known cabinet: boom, spring, loops, photocells, manual release and the log of what failed.",
-    "body": "We do not sell a generic 'barrier health check' with a made-up price. The visit length depends on how many lanes and which manufacturer. CAME Gard visits are the partner routine. Other brands on the hub are serviced when we can get the parts. A service visit is not a substitute for a site risk assessment you have never had. Findings are written down. Price on application.",
+    "body": "We do not sell a generic 'barrier health check'The visit length depends on how many lanes and which manufacturer. CAME Gard visits are the partner routine. Other brands on the hub are serviced when we can get the parts. A service visit is not a substitute for a site risk assessment you have never had. Findings are written down. Price on application.",
     "meta_desc": "Planned vehicle-barrier servicing for CAME and other listed brands. Price on application.",
     "focus_points": ["Per-lane scope, not a flat slogan", "CAME as the routine partner range", "Other brands when parts exist", "Written findings"],
     "faq": [
-      ["How often should a barrier be serviced?", "Follow the manufacturer and how hard the lane works. We do not invent a single interval for every site."],
+      ["How often should a barrier be serviced?", "Follow the manufacturer and how hard the lane works. "],
       ["Do you include the pay machine?", "No, unless a separate instruction says so."]
     ],
     "seo_keywords": "barrier servicing, barrier maintenance, car park barrier service"
@@ -480,9 +480,9 @@
     "service": "barriers",
     "related": "rising-arm-barrier",
     "intro": "Fail-open means the boom rises or releases when power or a fire signal is lost, if that is what the site risk assessment requires. It is a designed behaviour, not a hope.",
-    "body": "We ask what your fire strategy says about the lane. Some private car parks must release so fire appliances are not trapped. Others must not fly open onto a fast road. We wire the input the assessment asks for and we show the manual release to the people who will use it at 2am. We do not invent a fire-strategy clause. CAME Gard logic is what we commission as partner. Price on application.",
+    "body": "We ask what your fire strategy says about the lane. Some private car parks must release so fire appliances are not trapped. Others must not fly open onto a fast road. We wire the input the assessment asks for and we show the manual release to the people who will use it at 2am. CAME Gard logic is what we commission as partner. Price on application.",
     "meta_desc": "Barrier fail-open, fire-signal release and manual release, set to the site assessment. POA.",
-    "focus_points": ["Follows the written fire strategy", "Manual release demonstrated", "No invented cause-and-effect", "POA"],
+    "focus_points": ["Follows the written fire strategy", "Manual release demonstrated", "Cause-and-effect taken from the fire strategy", "POA"],
     "faq": [
       ["Should every barrier fail open?", "No. It depends on the lane and the fire strategy."],
       ["Who writes the fire strategy?", "Not this page. We implement the release the responsible person has already specified."]
@@ -494,9 +494,9 @@
     "service": "barriers",
     "related": "rising-arm-barrier",
     "intro": "ANPR can open a barrier for an allow-list. The camera, the list and the reason you hold plate data are a separate design from the boom.",
-    "body": "We interface a clean open command from an ANPR or access-control system. We do not invent a retention policy or a GDPR wording for you. If the camera cannot read plates at that angle, we say so before selling a boom. CAME Gard accepts a proper open input. The camera brand is specified on its own merits. Price on application for the combined lane.",
+    "body": "We interface a clean open command from an ANPR or access-control system. If the camera cannot read plates at that angle, we say so before selling a boom. CAME Gard accepts a proper open input. The camera brand is specified on its own merits. Price on application for the combined lane.",
     "meta_desc": "ANPR open-command integration to a vehicle barrier. Data protection stays your design. POA.",
-    "focus_points": ["Open command, not a bundled surveillance pitch", "Camera angle checked first", "No invented retention policy", "POA"],
+    "focus_points": ["Open command, not a bundled surveillance pitch", "Camera angle checked first", "Retention set by your policy", "POA"],
     "faq": [
       ["Do you supply the ANPR camera?", "We can scope it. It is not automatically included with a CAME barrier."],
       ["Can ANPR replace a loop?", "No. Presence detection and plate recognition do different jobs."]
@@ -527,7 +527,7 @@
     "focus_points": ["Private land only", "CAME for new arms", "Town pages are population profiles", "POA"],
     "faq": [
       ["Do you cover every town over 10,000?", "Yes for the England and Wales built-up areas, London boroughs and Scottish localities in our published list. Isle of Wight and Northern Ireland are outside that list."],
-      ["Is there a call-out fee on this page?", "No figure is published. It is on application."]
+      ["Is there a call-out fee?", "No figure is published. It is on application."]
     ],
     "seo_keywords": "private car park barrier, car park barrier installation UK"
   },
@@ -554,7 +554,7 @@
     "meta_desc": "Vehicle barrier quotes are price on application. No published starting fee. CAME partner.",
     "focus_points": ["No published starting price", "Photo of the badge speeds the quote", "CAME supply versus other-brand service", "Phone 07517 806082"],
     "faq": [
-      ["Why will you not give a from-price?", "Because a short office lane and a long HGV lane are not the same job, and a made-up from-price would be false."],
+      ["Why will you not give a from-price?", ""],
       ["Is the survey free?", "We do not advertise a free survey fee or a paid one here. Ask and we will say which applies to that lane."]
     ],
     "seo_keywords": "barrier cost, barrier quote, car park barrier price POA"

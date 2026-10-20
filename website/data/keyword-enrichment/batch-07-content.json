@@ -1,10 +1,10 @@
 {
     "ip-cctv-system": {
-        "intro": "An IP CCTV system streams high-resolution video over your network, giving clearer evidence, flexible camera placement and app-based viewing for sites across Greater Manchester and the North West. iComply designs and installs IP CCTV for shops, warehouses, offices and multi-site estates—specifying cameras, NVRs, PoE switching and remote access so images stay sharp day and night. We survey coverage risks, agree a fixed-price scope and commission the system with a practical handover pack.",
+        "intro": "An IP CCTV system streams high-resolution video over your network, giving clearer evidence, flexible camera placement and app-based viewing for sites across Greater Manchester and the North West. iComply designs and installs IP CCTV for shops, warehouses, offices and multi-site estates—specifying cameras, NVRs, PoE switching and remote access so images stay sharp day and night. We survey coverage risks, agree a written scope and commission the system with a practical handover pack.",
         "body": "From Stockport (SK2) our engineers cover Manchester, Cheshire, Lancashire, Merseyside and Cumbria with surveys booked when the diary allows. Whether you need a compact four-camera IP kit or a multi-building network video platform, we align cabling, storage retention and user permissions to how your team actually works. Related options include HD cameras, PTZ units, wireless links for awkward spans and integration with access control. Request a quote with postcode, site type and preferred retention period.",
-        "meta_desc": "IP CCTV system design & install across Greater Manchester & the North West. Fixed-price quotes, PoE NVR setups, remote viewing. iComply, Stockport.",
+        "meta_desc": "IP CCTV system design & install across Greater Manchester & the North West. Written quotes, PoE NVR setups, remote viewing. iComply, Stockport.",
         "focus_points": [
-            "Site survey, camera plan and fixed-price IP CCTV quote",
+            "Site survey, camera plan and quoted IP CCTV quote",
             "PoE cameras, NVR storage and secure remote viewing setup",
             "Day/night coverage, IR and retention configured to your policy",
             "Handover pack, user training and optional maintenance visits"
@@ -33,7 +33,7 @@
             "HD/Full HD camera selection matched to each viewing task",
             "Correct mounting, IR and lighting for usable night images",
             "Recorder and cable checks so resolution is not wasted",
-            "Fixed-price install or upgrade with local North West engineers"
+            "Quoted install or upgrade with local North West engineers"
         ],
         "faq": [
             [
@@ -53,7 +53,7 @@
     },
     "cctv-recording": {
         "intro": "Reliable CCTV recording is what turns cameras into evidence: correct retention, healthy hard disks, accurate timestamps and easy export for police or insurers. iComply configures and maintains NVR/DVR recording for businesses and landlords across Greater Manchester, Cheshire and Lancashire. We size storage to your retention policy, set motion and schedule rules that avoid silent gaps, and leave you with clear handover notes so managers know how to find and download footage.",
-        "body": "Failed drives, full disks and wrong time zones are common causes of ‘the cameras were on but nothing recorded’. Our Stockport-based team checks disk health, RAID or mirroring options on multi-drive units, network time sync and user permissions. We also advise on GDPR-aware retention for workplace CCTV and secure remote export where needed. Pair recording work with system testing, remote access setup or a full commercial CCTV refresh. Fixed-price remedial or new install quotes after a short site or remote assessment.",
+        "body": "Failed drives, full disks and wrong time zones are common causes of ‘the cameras were on but nothing recorded’. Our Stockport-based team checks disk health, RAID or mirroring options on multi-drive units, network time sync and user permissions. We also advise on GDPR-aware retention for workplace CCTV and secure remote export where needed. Pair recording work with system testing, remote access setup or a full commercial CCTV refresh. Quoted remedial or new install quotes after a short site or remote assessment.",
         "meta_desc": "CCTV recording setup & NVR storage across Greater Manchester & the North West. Retention, disk health & export help from iComply, Stockport.",
         "focus_points": [
             "Storage sizing against your footage retention policy",
@@ -79,7 +79,7 @@
     },
     "cctv-monitoring": {
         "intro": "CCTV monitoring keeps eyes on your premises when staff cannot—whether that means live viewing from a phone, a reception desk wall, or structured checks by nominated site contacts. iComply designs viewing layouts, user permissions and alert workflows for commercial and multi-site clients across the North West. We are not a third-party ARC alarm receiving centre by default; we focus on on-site and remote self-monitoring that works reliably with your cameras, NVR and network.",
-        "body": "From Stockport we set up multi-monitor stations, mobile apps, event bookmarks and optional analytics-driven motion alerts so teams respond faster to incidents. For landlords and FM providers we can standardise access across several buildings with clear role-based logins. Combine monitoring setup with IP system design, remote access hardening and planned testing. Tell us how many users need view-only versus admin rights and we will build a fixed-price configuration plan.",
+        "body": "From Stockport we set up multi-monitor stations, mobile apps, event bookmarks and optional analytics-driven motion alerts so teams respond faster to incidents. For landlords and FM providers we can standardise access across several buildings with clear role-based logins. Combine monitoring setup with IP system design, remote access hardening and planned testing. Tell us how many users need view-only versus admin rights and we will build a quoted configuration plan.",
         "meta_desc": "CCTV monitoring setup for live & remote viewing across the North West. Desk stations, apps & alerts. Fixed quotes from iComply, Stockport.",
         "focus_points": [
             "Live view layouts for reception, security desk or FM office",
@@ -105,7 +105,7 @@
     },
     "ptz-camera-installation": {
         "intro": "PTZ camera installation gives you pan, tilt and zoom control over large yards, car parks and open industrial floors where fixed cameras alone leave blind gaps. iComply installs and commissions PTZ units across Greater Manchester and the North West—specifying mounts, brackets, power, network and presets so operators can patrol or jump to key views in seconds. We balance PTZ coverage with fixed cameras for continuous recording of critical doors and till points.",
-        "body": "PTZ systems need sturdy poles or buildings, weather-rated housings and careful bandwidth planning on IP links. Our engineers programme home positions, patrol tours and privacy masks where required, and train nominated users on joystick or software control. Ideal for logistics depots, schools with large grounds and retail parks. Based in Stockport, we offer fixed-price quotes after survey including cabling routes and lightning/surge considerations for exposed mounts. Ask about hybrid fixed-plus-PTZ designs for best evidence quality.",
+        "body": "PTZ systems need sturdy poles or buildings, weather-rated housings and careful bandwidth planning on IP links. Our engineers programme home positions, patrol tours and privacy masks where required, and train nominated users on joystick or software control. Ideal for logistics depots, schools with large grounds and retail parks. Based in Stockport, we offer written quotes after survey including cabling routes and lightning/surge considerations for exposed mounts. Ask about hybrid fixed-plus-PTZ designs for best evidence quality.",
         "meta_desc": "PTZ camera installation across Greater Manchester & the North West. Pan-tilt-zoom CCTV, presets & training. Fixed quotes from iComply.",
         "focus_points": [
             "Survey for PTZ coverage, mounting height and power/network",
@@ -156,9 +156,9 @@
         "seo_keywords": "CCTV certification, CCTV handover pack, CCTV commissioning certificate, BS EN 62676 documentation, CCTV compliance paperwork North West, system test records Manchester"
     },
     "commercial-cctv-system": {
-        "intro": "A commercial CCTV system protects stock, staff and visitors while giving managers the visibility they need across opening hours and out of hours. iComply designs, installs and maintains commercial CCTV for retail, industrial, office and hospitality sites throughout Greater Manchester, Cheshire, Lancashire and Merseyside. From first risk-based camera plan to NVR storage, remote viewing and staff training, we deliver fixed-price projects with clear scopes and no surprise day-rate creep.",
+        "intro": "A commercial CCTV system protects stock, staff and visitors while giving managers the visibility they need across opening hours and out of hours. iComply designs, installs and maintains commercial CCTV for retail, industrial, office and hospitality sites throughout Greater Manchester, Cheshire, Lancashire and Merseyside. From first risk-based camera plan to NVR storage, remote viewing and staff training, we deliver quoted projects with clear scopes and no surprise day-rate creep.",
         "body": "Multi-entrance premises, loading bays and shared car parks need careful camera choice and lighting assessment. We specify IP or hybrid architectures, integrate with access control where useful, and schedule works to limit disruption to trading. Landlords and FM teams can add several units under one maintenance arrangement. Based in Stockport (SK2), iComply covers 150+ North West towns with local engineers. Start with a survey and receive a transparent commercial CCTV proposal tailored to your budget and risk profile.",
-        "meta_desc": "Commercial CCTV system design & install for North West businesses. Retail, industrial & office. Fixed-price quotes from iComply, Stockport.",
+        "meta_desc": "Commercial CCTV system design & install for North West businesses. Retail, industrial & office. Written quotes from iComply, Stockport.",
         "focus_points": [
             "Commercial risk survey and camera coverage plan",
             "Business-grade IP/hybrid CCTV with scalable storage",
@@ -234,14 +234,14 @@
         "seo_keywords": "video surveillance system, video surveillance installation, commercial surveillance North West, IP surveillance Manchester, security video system Stockport, NVR surveillance, iComply CCTV"
     },
     "cctv-testing": {
-        "intro": "Regular CCTV testing proves cameras still record, focus and cover the zones you rely on—before an incident exposes a blind spot or failed disk. iComply carries out CCTV testing and health checks for commercial and multi-residential sites across Greater Manchester and the North West. We verify image quality, timestamps, retention, user logins, IR performance and export paths, then report clear pass/fail items with fixed-price remedials where needed.",
+        "intro": "Regular CCTV testing proves cameras still record, focus and cover the zones you rely on—before an incident exposes a blind spot or failed disk. iComply carries out CCTV testing and health checks for commercial and multi-residential sites across Greater Manchester and the North West. We verify image quality, timestamps, retention, user logins, IR performance and export paths, then report clear pass/fail items with quoted remedials where needed.",
         "body": "Testing fits well alongside planned maintenance contracts for landlords, retailers and FM teams. Our Stockport engineers can attend single sites or run multi-property rounds with consistent checklists. Findings support insurance and internal audits and reduce the risk of discovering failures only when police request footage. Book a one-off test or include CCTV in a wider compliance visit with access control or fire systems. Visit dates follow the diary.",
         "meta_desc": "CCTV testing & health checks across Greater Manchester & the North West. Image, recording & login verification from iComply engineers.",
         "focus_points": [
             "Camera-by-camera image and coverage verification",
             "Recording, retention and hard-disk health checks",
             "Login, remote access and export path validation",
-            "Written findings with fixed-price remedial options"
+            "Written findings with quoted remedial options"
         ],
         "faq": [
             [
@@ -286,7 +286,7 @@
         "seo_keywords": "CCTV compliance, GDPR CCTV, workplace CCTV policy, CCTV data protection North West, CCTV signage guidance Manchester, compliant CCTV install Stockport"
     },
     "remote-cctv-access": {
-        "intro": "Remote CCTV access lets owners and managers view live and recorded video from anywhere with a secure connection—vital for multi-site estates, out-of-hours response and travelling directors. iComply configures remote CCTV access across the North West with encrypted apps or browsers, strong passwords, two-factor options where supported, and network settings that do not expose your whole LAN. Fixed-price setup after we understand your recorder model and broadband.",
+        "intro": "Remote CCTV access lets owners and managers view live and recorded video from anywhere with a secure connection—vital for multi-site estates, out-of-hours response and travelling directors. iComply configures remote CCTV access across the North West with encrypted apps or browsers, strong passwords, two-factor options where supported, and network settings that do not expose your whole LAN. Quoted setup after we understand your recorder model and broadband.",
         "body": "Poor remote setups—default ports, shared passwords, UPnP free-for-alls—are a common security risk. Our Stockport engineers harden access, create named users and train you on mobile and desktop viewing. We also verify that remote sessions do not stop local recording. Compatible with IP CCTV systems, commercial NVRs and many hybrid recorders. Covering Greater Manchester and surrounding counties, we can attend site or guide IT contacts through firewall rules when preferred.",
         "meta_desc": "Secure remote CCTV access setup across Greater Manchester & the North West. Apps, users & encryption. Fixed quotes from iComply.",
         "focus_points": [
@@ -312,9 +312,9 @@
         "seo_keywords": "remote CCTV access, view CCTV on phone, remote NVR login, secure CCTV app North West, remote viewing Manchester, CCTV from home Stockport, multi-site CCTV remote"
     },
     "cctv-near-me": {
-        "intro": "Searching for CCTV near me in the North West? iComply is a Stockport-based team installing, repairing and maintaining CCTV for homes, landlords and commercial sites across Greater Manchester and neighbouring counties. Local engineers mean faster surveys, familiar planning constraints and fixed-price quotes without long-distance call-out padding. Tell us your postcode and property type and we will confirm coverage and appointment windows.",
-        "body": "We regularly work in Manchester, Stockport, Bolton, Oldham, Trafford, Cheshire towns and into Lancashire and Merseyside. Services include new IP systems, HD camera upgrades, recording repairs, remote access and planned testing. Prefer a single contractor for CCTV plus access control or door entry? We can scope multi-discipline visits. Use the form on this page, call or WhatsApp to start a quote.",
-        "meta_desc": "CCTV near me in Greater Manchester & the North West. Local Stockport engineers, fixed-price installs & repairs. Quick quotes from iComply.",
+        "intro": "Searching for CCTV near me in the North West? iComply is a Stockport-based team installing, repairing and maintaining CCTV for homes, landlords and commercial sites across Greater Manchester and neighbouring counties. Local engineers mean faster surveys, familiar planning constraints and written quotes without long-distance call-out padding. Tell us your postcode and property type and we will confirm coverage and appointment windows.",
+        "body": "We regularly work in Manchester, Stockport, Bolton, Oldham, Trafford, Cheshire towns and into Lancashire and Merseyside. Services include new IP systems, HD camera upgrades, recording repairs, remote access and planned testing. Prefer a single contractor for CCTV plus access control or door entry? We can scope multi-discipline visits. ",
+        "meta_desc": "CCTV near me in Greater Manchester & the North West. Local Stockport engineers, quoted installs & repairs. Quick quotes from iComply.",
         "focus_points": [
             "Local North West engineers from our Stockport base",
             "Survey-to-install CCTV with transparent fixed pricing",
@@ -339,7 +339,7 @@
     },
     "access-control-installation": {
         "intro": "Access control installation brings order to who enters your building, when, and through which doors—essential for offices, apartments, warehouses and shared workspaces. iComply designs and installs access control across Greater Manchester and the North West, from single-door kits to multi-door networked systems with cards, fobs, mobile credentials or biometrics. Every project considers fire release, fail-safe or fail-secure locking strategy and clear admin training.",
-        "body": "Our Stockport engineers survey door hardware, cable routes, power supplies and integration with door entry or CCTV. We programme time schedules, anti-passback where needed and audit trails that help facilities managers. Fixed-price quotes follow agreement of door count and credential type. Working to BS EN 50133 principles and fire-safety best practice, we leave commissioning sheets and user notes so your team can add or remove users confidently. Multi-site estates welcome.",
+        "body": "Our Stockport engineers survey door hardware, cable routes, power supplies and integration with door entry or CCTV. We programme time schedules, anti-passback where needed and audit trails that help facilities managers. Written quotes follow agreement of door count and credential type. Working to BS EN 50133 principles and fire-safety best practice, we leave commissioning sheets and user notes so your team can add or remove users confidently. Multi-site estates welcome.",
         "meta_desc": "Access control installation across Greater Manchester & the North West. Cards, fobs, biometrics & fire-safe design. Fixed quotes from iComply.",
         "focus_points": [
             "Door survey, lock type and fire-release strategy",
@@ -371,7 +371,7 @@
             "Scheduled checks of readers, locks and door alignment",
             "PSU, battery and backup power verification",
             "Controller health, database backup and event log review",
-            "Defect reports with transparent fixed-price remedials"
+            "Defect reports with transparent quoted remedials"
         ],
         "faq": [
             [
@@ -392,7 +392,7 @@
     "access-control-system": {
         "intro": "An access control system manages credentials, doors and audit history as one platform—far more controllable than scattered keys. iComply specifies and delivers access control systems for North West workplaces and residential schemes, combining controllers, readers, locks, software and training. Whether you need a simple standalone door or a networked multi-site estate, we design for usability, fire safety and future expansion.",
         "body": "From our Stockport base we cover Greater Manchester and the wider region with survey-led fixed quotes. Options include proximity cards, mobile credentials, PIN pads, intercom integration and lift or turnstile interfaces where required. Documentation includes commissioning notes and admin guides so you are not dependent on a single engineer’s memory. Explore related pages for biometric readers, panels, electric releases and commercial packages. Tell us door counts and peak occupancy for a realistic design.",
-        "meta_desc": "Access control systems for offices, blocks & sites across the North West. Design, install & train. Fixed-price quotes from iComply.",
+        "meta_desc": "Access control systems for offices, blocks & sites across the North West. Design, install & train. Written quotes from iComply.",
         "focus_points": [
             "System design for doors, zones and user roles",
             "Networked or standalone controllers with audit trails",
@@ -443,7 +443,7 @@
     },
     "proximity-card-reader": {
         "intro": "Proximity card readers are the workhorse of modern access control—fast, durable and simple for staff and residents to use. iComply supplies and installs proximity card readers and compatible fobs/cards across the North West, wiring them to quality controllers and power supplies so reads stay reliable in busy doorways. We also replace failed or obsolete readers and re-enrol credentials with minimal downtime.",
-        "body": "Mullion, keypad-combo and vandal-resistant housings are matched to indoor, outdoor and car-park environments. Our Stockport team programmes site codes, manages lost-card revocation and can migrate from older 125 kHz systems to more secure formats where budgets allow. Ideal for offices, gyms, apartments and industrial staff doors. Fixed-price reader swaps or full multi-reader projects after survey. Pair with access panels, electric releases and door entry for complete entrance control.",
+        "body": "Mullion, keypad-combo and vandal-resistant housings are matched to indoor, outdoor and car-park environments. Our Stockport team programmes site codes, manages lost-card revocation and can migrate from older 125 kHz systems to more secure formats where budgets allow. Ideal for offices, gyms, apartments and industrial staff doors. Quoted reader swaps or full multi-reader projects after survey. Pair with access panels, electric releases and door entry for complete entrance control.",
         "meta_desc": "Proximity card reader install & replacement across Greater Manchester & the North West. Fobs, cards & controllers. iComply, Stockport.",
         "focus_points": [
             "Reader selection for indoor, outdoor and high-abuse doors",
@@ -599,7 +599,7 @@
     },
     "access-control-servicing": {
         "intro": "Access control servicing is the hands-on care that keeps doors unlocking for the right people and staying secure against the wrong ones. iComply offers access control servicing across the North West—inspecting hardware, cleaning readers, testing batteries, confirming schedules still match occupancy and fixing minor adjustments before they become callouts. Designed for offices, residential blocks and industrial staff entrances.",
-        "body": "Service visits from our Stockport team follow a consistent checklist so multi-site clients receive comparable reports. We highlight worn maglocks, sticky latches, outdated user lists and controllers needing backup. Fixed-price servicing agreements can include priority reactive rates. Related keywords clients search for include maintenance, certification and commercial upgrades—we can bundle scopes. Book annual servicing or align visits with fire door and emergency lighting rounds for fewer site disruptions.",
+        "body": "Service visits from our Stockport team follow a consistent checklist so multi-site clients receive comparable reports. We highlight worn maglocks, sticky latches, outdated user lists and controllers needing backup. Quoted servicing agreements can include priority reactive rates. Related keywords clients search for include maintenance, certification and commercial upgrades—we can bundle scopes. Book annual servicing or align visits with fire door and emergency lighting rounds for fewer site disruptions.",
         "meta_desc": "Access control servicing across Greater Manchester & the North West. Readers, locks, batteries & reports. Planned visits from iComply.",
         "focus_points": [
             "Full door hardware and reader service checklist",
@@ -624,9 +624,9 @@
         "seo_keywords": "access control servicing, access system service visit, door access servicing North West, ACS service Manchester, access control engineer Stockport, planned access service"
     },
     "commercial-access-control": {
-        "intro": "Commercial access control protects workplaces with scalable credentials, reporting and door schedules that match shift patterns and contractor access. iComply delivers commercial access control for offices, warehouses, retail back-of-house and multi-tenant business centres across the North West. From first design workshop to install, programming and staff training, projects are fixed-price after survey and built for day-two manageability.",
+        "intro": "Commercial access control protects workplaces with scalable credentials, reporting and door schedules that match shift patterns and contractor access. iComply delivers commercial access control for offices, warehouses, retail back-of-house and multi-tenant business centres across the North West. From first design workshop to install, programming and staff training, projects are quoted after survey and built for day-two manageability.",
         "body": "We map zones—public, staff, stock, plant—and apply appropriate readers and locks without creating fire-escape conflicts. Integration with intercoms, CCTV bookmarking and visitor management can be staged. Stockport engineers cover Greater Manchester, Cheshire, Lancashire and Merseyside, with multi-site rollouts for growing companies. Ask about replacing master-key suites that have lost control after years of copied keys. Related services include proximity readers, biometrics and panel upgrades.",
-        "meta_desc": "Commercial access control for North West workplaces. Design, install, programme & train. Fixed-price projects from iComply, Stockport.",
+        "meta_desc": "Commercial access control for North West workplaces. Design, install, programme & train. Quoted projects from iComply, Stockport.",
         "focus_points": [
             "Commercial zone design and door risk assessment",
             "Networked access with audit reports for FM and HR needs",
@@ -676,7 +676,7 @@
         "seo_keywords": "office access control system, office door access, staff fob entry, office security access North West, suite access control Manchester, office ACS Stockport"
     },
     "access-control-near-me": {
-        "intro": "Looking for access control near me? iComply provides local design, installation, programming and repair of door access systems from Stockport across Greater Manchester and the North West. Nearby engineers mean quicker surveys, faster fault attendance and fixed-price work without inflated travel. Share your postcode, door count and any existing brand for a rapid suitability check.",
+        "intro": "Looking for access control near me? iComply provides local design, installation, programming and repair of door access systems from Stockport across Greater Manchester and the North West. Nearby engineers mean quicker surveys, faster fault attendance and quoted work without inflated travel. Share your postcode, door count and any existing brand for a rapid suitability check.",
         "body": "We install proximity, PIN, mobile and biometric solutions for offices, apartments and commercial sites near you, and we maintain systems others fitted when documentation allows. Coverage routinely includes Manchester, Stockport, Cheshire towns, Bolton corridor and into Lancashire. Bundle access control with CCTV or door entry on one visit to reduce disruption. Reactive visits for failed doors are booked when the diary allows. Contact form, phone or WhatsApp.",
         "meta_desc": "Access control near me in Greater Manchester & the North West. Local Stockport engineers, installs & repairs. Fast quotes from iComply.",
         "focus_points": [
@@ -703,7 +703,7 @@
     },
     "door-entry-installation": {
         "intro": "Door entry installation gives residents and staff a controlled way to speak with visitors and release the entrance—foundational security for flats, offices and mixed-use buildings. iComply installs audio and video door entry systems across the North West, from simple two-point kits to multi-tenant panels with hundreds of apartments. Survey-led designs consider cabling, power, lock interface and mobile calling options.",
-        "body": "Our Stockport engineers replace obsolete hardwired systems, fit new blocks on refurbishments and upgrade to IP video where networks allow. We programme directories, test every handset or app endpoint and commission electric releases with fire-safe exit in mind. Fixed-price quotes follow site survey including riser access. Landlords and managing agents can request multi-block programmes. Related services include maintenance, repairs and multi-tenant specialisms.",
+        "body": "Our Stockport engineers replace obsolete hardwired systems, fit new blocks on refurbishments and upgrade to IP video where networks allow. We programme directories, test every handset or app endpoint and commission electric releases with fire-safe exit in mind. Written quotes follow site survey including riser access. Landlords and managing agents can request multi-block programmes. Related services include maintenance, repairs and multi-tenant specialisms.",
         "meta_desc": "Door entry installation across Greater Manchester & the North West. Audio & video systems for flats and offices. Fixed quotes from iComply.",
         "focus_points": [
             "Survey of panels, risers, handsets and lock interfaces",
@@ -729,7 +729,7 @@
     },
     "door-entry-maintenance": {
         "intro": "Door entry maintenance prevents the classic block problems—dead handsets, stuck trades buttons, crackly speech and entrances left propped open because the system cannot be trusted. iComply maintains door entry systems for landlords, agents and commercial sites across Greater Manchester and the North West. Planned visits check panels, power supplies, handsets sample sets, releases and call quality, with clear defect lists.",
-        "body": "From Stockport we run single-block visits or estate-wide rounds with consistent reporting for managing agents. Batteries, rain damage and worn buttons are caught early; software/IP systems get connectivity checks. Fixed-price maintenance agreements can include discounted reactive repairs. Pair maintenance with certification notes or full upgrades when equipment is obsolete. Ask about combining door entry with access control servicing on the same attendance.",
+        "body": "From Stockport we run single-block visits or estate-wide rounds with consistent reporting for managing agents. Batteries, rain damage and worn buttons are caught early; software/IP systems get connectivity checks. Quoted maintenance agreements can include discounted reactive repairs. Pair maintenance with certification notes or full upgrades when equipment is obsolete. Ask about combining door entry with access control servicing on the same attendance.",
         "meta_desc": "Door entry maintenance for blocks & sites across the North West. Panels, handsets, releases & reports. iComply planned visits.",
         "focus_points": [
             "Panel, handset and speech quality checks",
@@ -781,7 +781,7 @@
     },
     "video-door-entry": {
         "intro": "Video door entry lets occupants see visitors before releasing the door—reducing porch piracy risk and unwanted access for apartments, townhouses and offices. iComply designs and installs video door entry systems across Greater Manchester and the North West, from compact villa kits to multi-tenant IP video with smartphone answering. We focus on usable picture quality in real lighting, not brochure screenshots.",
-        "body": "Engineers from Stockport specify cameras with suitable IR, rain covers and mounting heights, and ensure indoor monitors or apps are simple for residents of all ages. Networked systems need thoughtful LAN/PoE design; we coordinate with building IT or provide dedicated switches when required. Fixed-price projects include programming, lock interface and resident guidance sheets. Upgrades from audio-only are a frequent request on residential schemes. Ask about combining video entry with fob access for residents.",
+        "body": "Engineers from Stockport specify cameras with suitable IR, rain covers and mounting heights, and ensure indoor monitors or apps are simple for residents of all ages. Networked systems need thoughtful LAN/PoE design; we coordinate with building IT or provide dedicated switches when required. Quoted projects include programming, lock interface and resident guidance sheets. Upgrades from audio-only are a frequent request on residential schemes. Ask about combining video entry with fob access for residents.",
         "meta_desc": "Video door entry install across the North West. See visitors on monitor or phone before release. Fixed quotes from iComply, Stockport.",
         "focus_points": [
             "Video panel selection for day/night image quality",
@@ -833,7 +833,7 @@
     },
     "apartment-door-entry": {
         "intro": "Apartment door entry systems keep communal entrances secure while letting residents welcome genuine guests—core infrastructure for purpose-built flats, conversions and HMO-style schemes. iComply installs, upgrades and maintains apartment door entry across Stockport, Manchester and the wider North West. We handle multi-way panels, riser cabling, handset or app endpoints and trades button policies agreed with the freeholder or agent.",
-        "body": "Large schemes need careful directory design, spare capacity for future flats and robust outdoor stations that survive weather and vandalism. Our engineers programme clear apartment names or numbers, test every living unit and commission door closers and releases so entrances re-lock. Fixed-price block projects and reactive handset repairs both available. Combine with fob access for residents and video at the main door for higher assurance. Multi-tenant specialism for complex freehold structures.",
+        "body": "Large schemes need careful directory design, spare capacity for future flats and robust outdoor stations that survive weather and vandalism. Our engineers programme clear apartment names or numbers, test every living unit and commission door closers and releases so entrances re-lock. Quoted block projects and reactive handset repairs both available. Combine with fob access for residents and video at the main door for higher assurance. Multi-tenant specialism for complex freehold structures.",
         "meta_desc": "Apartment door entry install & upgrade across Greater Manchester & the North West. Multi-way panels, handsets & apps. iComply.",
         "focus_points": [
             "Multi-apartment panel and directory design",
@@ -937,7 +937,7 @@
     },
     "multi-tenant-door-entry": {
         "intro": "Multi-tenant door entry serves buildings where many independent occupants share entrances—apartment blocks, mixed-use schemes and multi-company offices. iComply specialises in multi-tenant door entry across the North West, designing directories, privacy between tenants, trades access rules and robust panels that cope with high traffic. Systems can blend visitor video/audio with resident fob access for daily entry.",
-        "body": "Complex freehold and managing-agent structures need clear programming ownership: who adds names, who sets trades times, who pays for repairs. We set this out at design stage. Stockport engineers install scalable IP or traditional multi-way systems, test every tenant endpoint and commission re-securing doors. Fixed-price projects after survey including riser strategy. Ideal companion services include access control for internal tenant demises and CCTV in lobbies. Portfolio programmes welcome.",
+        "body": "Complex freehold and managing-agent structures need clear programming ownership: who adds names, who sets trades times, who pays for repairs. We set this out at design stage. Stockport engineers install scalable IP or traditional multi-way systems, test every tenant endpoint and commission re-securing doors. Quoted projects after survey including riser strategy. Ideal companion services include access control for internal tenant demises and CCTV in lobbies. Portfolio programmes welcome.",
         "meta_desc": "Multi-tenant door entry for blocks & mixed-use buildings across the North West. Directories, privacy & scalable systems from iComply.",
         "focus_points": [
             "Multi-tenant directory and privacy design",
@@ -969,7 +969,7 @@
             "Local door entry engineers from Stockport covering the North West",
             "Fault-finding on audio, video, IP and release circuits",
             "Install, upgrade and reprogramming expertise",
-            "Fixed-price scopes and agent-friendly reporting"
+            "Quoted scopes and agent-friendly reporting"
         ],
         "faq": [
             [

@@ -180,12 +180,12 @@ SITES = [
     "a defect list instead of a pretend certificate",
     "a parent service page the enquiry can start from",
     "related service guides for the same trade",
-    "no BAFE badge and no NSI badge on this page",
+    "no BAFE badge and no NSI badge",
     "a price that stays on application until the building is known",
     "the Stockport workshop address when a location is needed",
     "Greater Manchester area hubs where the town is on that list",
     "TOP 5000 coverage for this nationwide keyword",
-    "a page that does not invent a day rate",
+    "a written quote rather than a day rate",
 ]
 
 
@@ -307,7 +307,7 @@ STANDARDS = {
         "An automatic opening vent is not assumed to work because a magnet dropped out. The fire-alarm interface, the battery, the actuator and the free area are recorded."
     ),
     "barriers": (
-        "Vehicle and parking barriers on this page are for private land. A public highway is a different job and is not quoted from this guide. "
+        "A public highway is a different job and is not quoted from this guide. "
         "Lane width, duty cycle, safety devices and who owns the land are agreed before a boom is specified. iComply is a CAME partner for the Gard range. Other brands already on a site can be serviced without a false partnership claim."
     ),
     "fire-alarms": (
@@ -316,7 +316,7 @@ STANDARDS = {
     ),
     "emergency-lighting": (
         "Emergency lighting is specified against BS 5266 and the escape routes the fire strategy already names. "
-        "A failed fitting is a maintenance visit. A missing design is a survey. The two are not given one invented price."
+        "A failed fitting is a maintenance visit. A missing design is a survey. "
     ),
     "fire-doors": (
         "Fire door work follows BS 8214 and the rating of the door that is actually in the opening. "
@@ -324,7 +324,7 @@ STANDARDS = {
     ),
     "fire-extinguishers": (
         "Extinguisher servicing follows BS 5306 practice for the types on site. "
-        "The visit lists what was seen. It does not invent a scheme badge."
+        "The visit lists what was seen. "
     ),
     "fire-risk-assessments": (
         "A fire risk assessment records the premises as found and the actions that follow. "
@@ -350,7 +350,7 @@ ANGLES = {
     "near-me": "Near me means the town page for the place you searched, with travel from Stockport included in the quote rather than hidden.",
     "emergency": "An emergency visit makes the immediate fault safe or open, then books the lasting repair. It is not a promise of an unscoped overnight rebuild.",
     "repair": "Repair starts from the fault that is there. Parts are identified before they are ordered. The quote stays on application.",
-    "maintenance": "Maintenance is a planned visit with a result the dutyholder can file. It is not a rolling contract invented on this page.",
+    "maintenance": "Maintenance is a planned visit with a result the dutyholder can file. ",
     "service": "Service means the agreed inspection and the notes that come back. Defects are listed. They are not quietly absorbed into a fixed fee.",
     "company": "A company enquiry is for the trade as a whole. The first reply names which service page the work sits on.",
     "assessment": "An assessment is a written record of the premises. It recommends work. It does not pretend the work is already done.",
@@ -377,7 +377,7 @@ def essay(slug: str, name: str, place: str, county: str, region: str, pop: str, 
     paras = [
         (
             f"{name} is arranged from the Stockport workshop for {place}. "
-            f"The enquiry this page is written for is {site}. {angle} "
+            f"{angle} "
             f"{standard} The quote is price on application after the scope is written down. "
             f""
         ),
@@ -409,7 +409,7 @@ def essay(slug: str, name: str, place: str, county: str, region: str, pop: str, 
             f"Where a specialist ticket is required, that ticket is named in the quote."
         ),
         (
-            f"Paperwork is part of {name}, not an optional extra invented after the invoice. "
+            f"Paperwork is part of {name}, not an optional extra added after the invoice. "
             f"The dutyholder should be able to file the note, the test sheet or the commissioning record with the building. "
             f"Zone charts, device lists and user notes are updated when the work changed them. "
             f"A missing historical certificate is reported as missing. "
@@ -502,7 +502,7 @@ def essay(slug: str, name: str, place: str, county: str, region: str, pop: str, 
         "maintenance": (
             f"Maintenance for {name} is booked as a round or a single site. "
             f"The interval comes from the fire strategy, the manufacturer note or the insurer's request. "
-            f"This page does not invent a universal twice-yearly rule and then sell it as law."
+            f""
         ),
         "installation": (
             f"A new {name} is designed before it is fitted. "
@@ -521,7 +521,7 @@ def essay(slug: str, name: str, place: str, county: str, region: str, pop: str, 
         "company": (
             f"A fire-protection company search often mixes alarms, doors, extinguishers and stopping. "
             f"This guide starts with {parent} and links the other services. "
-            f"You can ask for more than one trade. Each trade is scoped. None is given a made-up package price."
+            f"You can ask for more than one trade. Each trade is scoped. "
         ),
         "assessment": (
             f"The assessment visit needs access to the places the risk actually sits: plant, stairs, stores and bedrooms used as offices. "

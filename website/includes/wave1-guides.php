@@ -205,7 +205,7 @@ function wave1FortnightGuides(): array
                     'h2' => 'How often?',
                     'p' => [
                         'There is no single statutory “every 12 months” for every toaster in England. Frequency is risk-based: construction sites and shared kitchens wear equipment harder than a locked spare-room lamp.',
-                        'Insurers and corporate clients may set their own interval. We will not invent a legal annual duty that does not exist.',
+                        'Insurers and corporate clients may set their own interval. ',
                     ],
                 ],
                 [
@@ -271,7 +271,7 @@ function wave1FortnightGuides(): array
             'cardTitle' => 'Fire door inspection guide',
             'blurb' => 'What a fire doorset is meant to do, common defects, and why a closer or seal is not a cosmetic extra.',
             'pageTitle' => 'Fire Door Inspection Guide | Seals, Closers & Gaps',
-            'metaDesc' => 'Fire door inspection guide for landlords and FM teams — doorsets, intumescent seals, closers and common defects. Request a North West survey quote, no invented prices.',
+            'metaDesc' => 'Fire door inspection guide for landlords and FM teams — doorsets, intumescent seals, closers and common defects. ',
             'metaKeywords' => 'fire door inspection, fire door survey, intumescent seals, fire door closer, fire doors North West',
             'ogImage' => '/assets/images/services/fire-doors.jpg',
             'kicker' => 'Day 6 · Fire doors · Resource guide',
@@ -370,7 +370,7 @@ function wave1FortnightGuides(): array
             'cardTitle' => 'Kitchen fire suppression',
             'blurb' => 'When a commercial kitchen needs a suppression system over the range, how it ties to the extract, and what a quote needs to know.',
             'pageTitle' => 'Kitchen Fire Suppression Guide | Commercial Catering',
-            'metaDesc' => 'Commercial kitchen fire suppression explained — range protection, extract links, and what we need to quote. North West catering sites; no invented package prices.',
+            'metaDesc' => 'Commercial kitchen fire suppression explained — range protection, extract links, and what we need to quote. ',
             'metaKeywords' => 'kitchen fire suppression, commercial kitchen fire system, range hood suppression, catering fire safety North West',
             'ogImage' => '/assets/images/services/kitchen-fire-suppression.jpg',
             'kicker' => 'Day 8 · Kitchens · Resource guide',
@@ -399,7 +399,7 @@ function wave1FortnightGuides(): array
                 [
                     'h2' => 'Servicing',
                     'p' => [
-                        'These systems need competent inspection on the interval the manufacturer and the risk assessment set. We service and quote replacements; we do not invent a universal monthly legal duty.',
+                        'These systems need competent inspection on the interval the manufacturer and the risk assessment set. ',
                     ],
                 ],
                 [
@@ -438,7 +438,7 @@ function wave1FortnightGuides(): array
                         'Working [smoke and CO alarms](/pages/resources/smoke-and-co-alarms) tested on the day of let',
                         'Valid [EPC](/pages/resources/epc-for-landlords) if you are marketing the let',
                     ],
-                    'note' => 'HMO licence conditions can add FRA, emergency lighting and alarm servicing. That is a different conversation from a single-family void — and not a package landing on this page.',
+                    'note' => 'HMO licence conditions can add FRA, emergency lighting and alarm servicing. ',
                 ],
                 [
                     'h2' => 'Often useful, not always mandatory',
@@ -462,7 +462,7 @@ function wave1FortnightGuides(): array
                 ],
             ],
             'faqs' => [
-                ['q' => 'Is this the Let Ready package page?', 'a' => 'No. This is an educational checklist. The existing Let Ready package landing stays where it is. We will not invent a price for either.'],
+                ['q' => 'Is this the Let Ready package page?', 'a' => 'No. This is an educational checklist. The existing Let Ready package landing stays where it is. '],
                 ['q' => 'Do you guarantee the council will accept the file?', 'a' => 'No. We issue the records for the work we completed. Licensing and enforcement sit with the authority.'],
             ],
         ],
@@ -503,7 +503,7 @@ function wave1FortnightGuides(): array
                 [
                     'h2' => 'Logbooks beat memory',
                     'p' => [
-                        'Insurers and enforcing officers ask for records. A shared spreadsheet is better than “the previous FM knew”. We issue visit records for the work we do; we do not invent a branded accreditation plaque.',
+                        'Insurers and enforcing officers ask for records. A shared spreadsheet is better than “the previous FM knew”. ',
                     ],
                 ],
                 [
@@ -611,7 +611,7 @@ function wave1FortnightGuides(): array
                 ],
             ],
             'faqs' => [
-                ['q' => 'Can I let with an unsatisfactory EICR?', 'a' => 'Agents and many authorities will not treat that as a complete file. Remedial work and a satisfactory outcome (or a clear written position) is the usual path. We will not invent a workaround.'],
+                ['q' => 'Can I let with an unsatisfactory EICR?', 'a' => 'Agents and many authorities will not treat that as a complete file. Remedial work and a satisfactory outcome (or a clear written position) is the usual path. '],
                 ['q' => 'Do you guarantee five years without faults?', 'a' => 'No. The report describes condition on the day. Tenant alterations and wear continue after we leave.'],
             ],
         ],
@@ -648,7 +648,7 @@ function wave1FortnightGuides(): array
                     'h2' => 'How we quote',
                     'p' => [
                         'We do not publish a price grid. Two three-bed terraces are not the same job if one has two consumer units and a loft conversion. You get a written figure after scope.',
-                        'If we cannot do the work, we will say so. We will not invent an accreditation to win the enquiry.',
+                        'If we cannot do the work, we will say so. ',
                     ],
                 ],
                 [

@@ -62,7 +62,7 @@ BRIEFS_A = [
         "cluster": "landlord",
         "note": "An emergency plumbing call is uncontrolled water, a blocked WC that is the only toilet, or no water to a property that is occupied. A dripping tap that can wait until morning is not the same job.",
         "work": "We isolate the supply, stop the damage, and make a temporary or permanent repair that leaves the property usable. The permanent finish is quoted if the ceiling, floor or fitting is beyond the leak itself.",
-        "limit": "We do not promise a timed arrival on this page. Gas escapes are for the gas emergency service, not a plumbing call-out.",
+        "limit": "Gas escapes are for the gas emergency service, not a plumbing call-out.",
     },
     {
         "slug": "frozen-pipe-thaw-support",
@@ -118,7 +118,7 @@ BRIEFS_A = [
         "cluster": "landlord",
         "note": "Landlord repairs are taps, wastes, fills, isolation valves and small pipe repairs that keep a let legal to occupy. They are not a full refit, and they are not a gas safety inspection.",
         "work": "We repair the named fault with WRAS-listed fittings where a fitting is replaced, and we leave isolation so the next visit does not drain the street.",
-        "limit": "We do not issue a gas certificate, an EICR, or an invented plumbing compliance certificate. The paperwork is the job note for the repair we did.",
+        "limit": "The paperwork is the job note for the repair we did.",
     },
     {
         "slug": "leak-detection-support",

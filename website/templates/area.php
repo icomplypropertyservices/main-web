@@ -143,7 +143,7 @@ $schema = [
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
                     <div><span class="text-white font-semibold text-xl block"><?= count($allServices) ?></span> core services</div>
                     <div><span class="text-white font-semibold text-xl block">Diary</span> appointments*</div>
-                    <div><span class="text-white font-semibold text-xl block">Fixed-price</span> quotes</div>
+                    <div><span class="text-white font-semibold text-xl block">Quoted</span> quotes</div>
                 </div>
                 <p class="mt-3 text-[11px] text-white/40">*Subject to engineer capacity and site access.</p>
             </div>
@@ -252,7 +252,7 @@ $schema = [
             <?php if (!$areaHasGeo): ?>
             <p class="mt-3 text-white/80">Combine EICR, fire alarms and emergency lighting into one visit schedule for landlords and FM teams in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.</p>
             <ul class="mt-6 space-y-3 text-sm text-white/90">
-                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Fixed-price multi-service quotes</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Quoted multi-service quotes</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Full documentation for audits &amp; insurers</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Maintenance contracts available</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> WhatsApp, phone or form — send the postcode to start a quote</li>

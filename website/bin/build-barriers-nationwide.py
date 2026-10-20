@@ -10,7 +10,7 @@ Scotland: NRS mid-2020 locality estimates.
 Isle of Wight settlements are omitted (not mainland). Northern Ireland is not
 in these mainland sources and is not given a page.
 
-Uses census facts only, with no made-up landmarks. Each page's substance is that
+Each page's substance is that
 settlement's own published counts.
 """
 from __future__ import annotations

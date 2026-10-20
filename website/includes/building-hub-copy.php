@@ -264,7 +264,7 @@ function icomplyBuildingHubRows(): array
             'pillars' => [
                 ['title' => 'Finish, not structure', 'text' => 'Skim and patch work follow the agreed rooms. A crack that needs a structural engineer is said to be one.'],
                 ['title' => 'Ceilings included when scoped', 'text' => 'Ceiling plaster is part of this trade when the visit names the ceilings.'],
-                ['title' => 'POA', 'text' => 'No price per square metre on this page.'],
+                ['title' => 'POA', 'text' => ''],
             ],
             'links' => [
                 ['/pages/keywords/ceiling-plastering', 'Ceiling plastering'],
@@ -290,7 +290,7 @@ function icomplyBuildingHubRows(): array
             'pillars' => [
                 ['title' => 'Preparation named', 'text' => 'The quote says what is filled, washed or made good before any finish coat.'],
                 ['title' => 'Voids and lived-in homes', 'text' => 'Furniture, floor protection and how long a room can be empty change the programme.'],
-                ['title' => 'POA', 'text' => 'No room-rate card on this page.'],
+                ['title' => 'POA', 'text' => ''],
             ],
             'links' => [
                 ['/pages/services/plastering', 'Plastering'],
@@ -412,7 +412,7 @@ function icomplyBuildingHubRows(): array
             'gas' => false,
             'h2' => 'Pointing and local repairs',
             'paragraphs' => [
-                'We look at the mortar, the brick face and whether water is getting in. Repointing is quoted to the area that needs it, not to a whole elevation by default. New openings need a lintel that is specified. We do not invent a beam size on the page.',
+                'We look at the mortar, the brick face and whether water is getting in. Repointing is quoted to the area that needs it, not to a whole elevation by default. New openings need a lintel that is specified. ',
                 'Masonry crack repair has its own guide, linked to the same towns.',
             ],
             'faq' => ['Will you diagnose every crack?', 'We will say what the brickwork visit can repair. Movement that needs a structural engineer is not written up as a repointing job.'],
@@ -439,7 +439,7 @@ function icomplyBuildingHubRows(): array
             'h2' => 'Repairs before a full strip',
             'paragraphs' => [
                 'We say whether the visit is a local repair or a larger re-cover. A slipped tile is not written up as a new roof. Flat roofs are quoted to the deck we can see, and if the deck is rotten the quote stops and says so.',
-                'There is no per-tile price on this page. Height and access change the figure.',
+                ' Height and access change the figure.',
             ],
             'faq' => ['Do you include scaffolding?', 'When the repair cannot be done safely without it, access is part of the POA quote. It is not a hidden extra after the work starts.'],
             'cta' => 'What is leaking or missing, and whether anyone has been in the loft. POA.',
@@ -464,7 +464,7 @@ function icomplyBuildingHubRows(): array
             'gas' => false,
             'h2' => 'What this page does not decide',
             'paragraphs' => [
-                'Planning and building regulations are applications to the council. We can carry out the building work that a consented design describes, and we will say when a design is not there yet. Party-wall matters with a neighbour are not decided on this page.',
+                'Planning and building regulations are applications to the council. We can carry out the building work that a consented design describes, and we will say when a design is not there yet. ',
                 'Insulation, stairs and the fire separation named on the drawing are in the building scope. An electrical design and a steel design, when the job needs them, are identified rather than guessed.',
             ],
             'faq' => ['Can you start from a photo of the loft?', 'A photo is enough to book a survey. It is not enough to quote a conversion. The price follows the design and the structure that is actually there.'],
@@ -490,7 +490,7 @@ function icomplyBuildingHubRows(): array
             'gas' => false,
             'h2' => 'From the ground to first fix',
             'paragraphs' => [
-                'Foundations, the shell, the roof tie-in and first-fix readiness are the building scope when they are on the drawing. Structural calculations are by the designer named for that role. We do not invent a foundation depth on this page.',
+                'Foundations, the shell, the roof tie-in and first-fix readiness are the building scope when they are on the drawing. Structural calculations are by the designer named for that role. ',
                 'Kitchens, electrics and plumbing that follow the shell are the matching service pages, programmed with the extension when you want one quote.',
             ],
             'faq' => ['Do you handle the planning application?', 'Planning and building regulations are lodged with the local authority. This page is the building work that follows an agreed design.'],
@@ -594,7 +594,7 @@ function icomplyBuildingHubRows(): array
             'gas' => false,
             'h2' => 'Partitions and ceilings',
             'paragraphs' => [
-                'The quote names the wall lines, the board type and whether the finish is tape-and-joint or a skim by the plastering service. A fire-rated or acoustic board is only specified when the design or the brief asks for that performance. We do not invent a fire rating.',
+                'The quote names the wall lines, the board type and whether the finish is tape-and-joint or a skim by the plastering service. A fire-rated or acoustic board is only specified when the design or the brief asks for that performance. ',
                 'Ceiling dry lining already has its own guide. Stud walls that are timber sit with carpentry. Both still have Greater Manchester town pages.',
             ],
             'faq' => ['Is dry lining the same as plastering?', 'No. This page is the framing and the board. Skim over that board is plastering, included only when the quote says so.'],
@@ -603,7 +603,7 @@ function icomplyBuildingHubRows(): array
             'pillars' => [
                 ['title' => 'Set out first', 'text' => 'Wall lines and ceiling levels are agreed before board is fixed.'],
                 ['title' => 'Board to the brief', 'text' => 'Standard, moisture, acoustic or fire-rated board is used only when the brief names it.'],
-                ['title' => 'POA', 'text' => 'No boarding rate on this page.'],
+                ['title' => 'POA', 'text' => ''],
             ],
             'links' => [
                 ['/pages/keywords/ceiling-dry-lining', 'Ceiling dry lining'],
@@ -641,7 +641,7 @@ function icomplyBuildingHubRows(): array
         'renovation' => [
             'name' => 'Renovation',
             'accent' => 'Voids and occupied homes. POA.',
-            'lead' => 'Renovation covers void property works and occupied-home refurbishment: strip-out, the building trades and the sequencing of compliance visits the let actually needs. It is not a single package price and it does not invent a “full refurb” fee.',
+            'lead' => 'Renovation covers void property works and occupied-home refurbishment: strip-out, the building trades and the sequencing of compliance visits the let actually needs. ',
             'local' => 'A void in Bolton is scoped room by room. An occupied house in Didsbury is scoped around the people who are still living there.',
             'scope' => 'the rooms, the occupancy and the certificates the file needs are listed',
             'gas' => true,
@@ -668,7 +668,7 @@ function icomplyBuildingHubRows(): array
         'groundworks' => [
             'name' => 'Groundworks',
             'accent' => 'Drainage, reduced dig, small foundations. POA.',
-            'lead' => 'Groundworks covers drainage runs, reduced-level digs, hardstanding and foundations for the small builds already designed. It is not a civil engineering design and it does not invent a foundation depth.',
+            'lead' => 'Groundworks covers drainage runs, reduced-level digs, hardstanding and foundations for the small builds already designed. ',
             'local' => 'A drain run in Eccles and a patio base in Urmston are set out on the ground that is there, including what the scan or the trial hole shows.',
             'scope' => 'the levels, the drain route or the foundation design are known',
             'gas' => false,
@@ -694,7 +694,7 @@ function icomplyBuildingHubRows(): array
         'landscaping' => [
             'name' => 'Landscaping',
             'accent' => 'Patios, fences and falls. POA.',
-            'lead' => 'Hard landscaping covers patios, paths, fencing and small external works on residential plots. Falls and where the water goes are part of the job. Planting schemes and garden design are not sold as a product on this page.',
+            'lead' => 'Hard landscaping covers patios, paths, fencing and small external works on residential plots. Falls and where the water goes are part of the job. ',
             'local' => 'A patio in Sale and a fence line in Leigh are measured on site, including the boundaries you point out.',
             'scope' => 'the plot is measured and the levels are seen',
             'gas' => false,
@@ -808,7 +808,7 @@ function icomplyBuildingHubRows(): array
                 'Send the address and the list. We will say which lines this visit can close and which belong to electrical, gas, roofing or a specialist ticket. A day on site is not sold as unlimited work.',
                 'Where a line needs a specialist ticket, that ticket is named in the quote rather than folded into a general handy visit.',
             ],
-            'faq' => ['Is this a retained contract?', 'It can be planned visits or a one-off list. Either way the scope is written down and the price is on application. There is no unnamed retainer on this page.'],
+            'faq' => ['Is this a retained contract?', 'It can be planned visits or a one-off list. Either way the scope is written down and the price is on application. '],
             'cta' => 'Address and the list of jobs, or the fault. POA.',
             'placeholder' => 'Address, snag list or fault, access hours…',
             'pillars' => [
@@ -840,7 +840,7 @@ function icomplyBuildingHubRows(): array
             'pillars' => [
                 ['title' => 'One programme', 'text' => 'Trades are ordered so plaster is not waiting on cables that were never booked.'],
                 ['title' => 'Certificates at the right time', 'text' => 'Electrical and gas visits are placed when the installation can actually be inspected.'],
-                ['title' => 'POA', 'text' => 'No management percentage on this page.'],
+                ['title' => 'POA', 'text' => ''],
             ],
             'links' => [
                 ['/pages/services/renovation', 'Renovation'],

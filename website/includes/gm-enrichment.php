@@ -123,7 +123,7 @@ function icomplyGmServicePack(string $slug): array
             'points' => [
                 'Boiler type, age and whether the property is occupied',
                 'Service, repair or replacement scoped separately',
-                'No catalogue boiler price on this page',
+                'Boiler price on application',
                 'POA fixed quote after scope',
             ],
             'gas' => true,
@@ -156,7 +156,7 @@ function icomplyGmServicePack(string $slug): array
             'job' => 'car-park-barrier',
         ],
         'aov-air-handling' => [
-            'summary' => 'Smoke control and AOV visits start from the vents, the control panel and the cause-and-effect the building was actually designed with. We do not invent a category the panel does not support.',
+            'summary' => 'Smoke control and AOV visits start from the vents, the control panel and the cause-and-effect the building was actually designed with. ',
             'points' => [
                 'Vent locations, manual controls and the panel log',
                 'Interfaces with the fire alarm confirmed before a test',

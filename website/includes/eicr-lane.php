@@ -5,7 +5,7 @@
  * One published list price: £160 for a typical North West 6-bed HMO
  * (code ELEC-EICR-6BED-NW). All-in. Remedials are extra.
  * 1-bed, other domestic sizes, and commercial EICRs stay price on application.
- * No invented fees, scheme badges, or “satisfactory” outcome without the visit.
+
  */
 declare(strict_types=1);
 
@@ -74,12 +74,12 @@ function eicrLanePriceSentence(): string
 function eicrLaneStripDenials(string $text): string
 {
     $needles = [
-        'Pricing for this search is POA after we confirm scope — iComply does not invent pound prices.',
+        'Pricing for this search is POA after we confirm scope.',
         'Cost and price enquiries are answered with a written POA quote, never a guessed £ figure.',
-        'EICR price for a flat, house, HMO or commercial unit is POA. Circuit count, access and number of boards decide the inspection time — we do not invent a pound price here.',
-        'we do not invent a pound price here.',
-        'No invented pound prices.',
-        'No. Property size and access vary too much for an honest invented figure.',
+        'EICR price for a flat, house, HMO or commercial unit is POA. ',
+        '',
+        '',
+        'No. ',
         'Do you publish a from-£ EICR list?',
     ];
     $text = str_replace($needles, '', $text);
@@ -126,7 +126,7 @@ function eicrLaneKeywordReplacements(): array
             'meta_desc' => 'EICR price £160 for a typical 6-bed HMO in the North West. 1-bed and commercial EICR prices are POA. iComply Stockport.',
             'focus_points' => [
                 'Published list: £160, typical 6-bed HMO, North West',
-                'No invented from-price for flats or shops',
+                'Flats and shops quoted on application',
                 'Remedials priced after C1, C2, C3 and FI coding',
                 'Confirmed before booking',
             ],
@@ -151,7 +151,7 @@ function eicrLaneAccreditationReplacements(): array
         'niceic-certified' => [
             'name' => 'NICEIC explained',
             'intro' => 'NICEIC is a UK competent-person scheme. This page explains the term.',
-            'body' => 'An EICR is assessed against BS 7671. A scheme logo is a separate question. If a client, insurer or Building Control body requires a named scheme, say so when you enquire and we will tell you whether we can take the job. We will not invent a membership to win the work. The published EICR list price is £160 for a typical North West 6-bed HMO. Other sizes are price on application.',
+            'body' => 'An EICR is assessed against BS 7671. A scheme logo is a separate question. If a client, insurer or Building Control body requires a named scheme, say so when you enquire and we will tell you whether we can take the job. The published EICR list price is £160 for a typical North West 6-bed HMO. Other sizes are price on application.',
             'meta_desc' => 'What NICEIC means, and what iComply does not claim. EICR testing is to BS 7671. List price £160 for a typical North West 6-bed HMO.',
             'focus_points' => [
                 'NICEIC is a scheme name, not a result on your EICR',

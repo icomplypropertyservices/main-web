@@ -36,7 +36,7 @@ $h = static function (string $s): string {
     </article>
     <article class="p-6 border border-zinc-200 rounded-3xl">
         <h2 class="text-xl font-semibold">What we will not sign</h2>
-        <p class="mt-3 text-zinc-700">We do not invent a smoke-control design, a free-area calculation or a scheme certificate. If there is no fire strategy, the next step is a fire engineer, then an install.</p>
+        <p class="mt-3 text-zinc-700">If there is no fire strategy, the next step is a fire engineer, then an install.</p>
     </article>
     <article class="p-6 border border-zinc-200 rounded-3xl">
         <h2 class="text-xl font-semibold">Where the pages are</h2>

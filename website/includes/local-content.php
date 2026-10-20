@@ -265,7 +265,7 @@ function seo_unique_why(string $serviceName, string $area): array {
         "Stockport SK2 base with scheduled {$area} attendance ({$p['travel']})",
         "Paperwork landlords, freeholders and insurers in {$p['region']} expect to see",
         "{$serviceName} plus related fire/electrical/security trades under one contractor",
-        "Clear scope — fixed-price quotes when survey/photos define the works",
+        "Clear scope — written quotes when survey/photos define the works",
         "Experience with {$p['stock']} typical of {$area}",
         "Visit dates in {$area} follow the diary and site access",
         "Remedial advice prioritised so {$area} sites pass the next inspection first time where practical",

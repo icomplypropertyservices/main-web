@@ -277,10 +277,10 @@ function acnRenderHub(): void
     $canonical = url('/pages/access-control-systems');
     $faqs = [
         ['Where are the engineers based?', 'At 17 Woodlands Park Road, Offerton, Stockport, SK2 5DE. The North West diary runs from there. Other UK cities on this site are attended by arrangement. There is no second depot.'],
-        ['Which manufacturers do you cover?', 'The access-control brands linked on this page, including Paxton, HID Global, Salto Systems and ASSA ABLOY. Tunstall is nurse call and is excluded.'],
+        ['Which manufacturers do you cover?', 'Tunstall is nurse call and is excluded.'],
         ['How is the work priced?', 'Price on application after a survey or clear photos of the doors and the controller. No door price is published here.'],
         ['What standard do you read electronic access control against?', 'BS EN 60839-11 for the electronic access-control system. Door release on a fire alarm is read against BS 7273-4. Older specifications still say BS EN 50133. That standard was withdrawn. We do not treat it as the current design code.'],
-        ['Do you offer a 24-hour access-control contract on this page?', 'No. Help in the North West depends on the diary. It is not an SLA.'],
+        ['', 'No. Help in the North West depends on the diary. It is not an SLA.'],
     ];
     ob_start();
     ?>
@@ -390,7 +390,7 @@ function acnRenderCity(array $city): void
             <p><?= htmlspecialchars((string)$city['doors'], ENT_QUOTES, 'UTF-8') ?></p>
             <h2 class="text-2xl font-semibold text-[#061828]">How the visit is booked</h2>
             <p><?= htmlspecialchars((string)$city['visit'], ENT_QUOTES, 'UTF-8') ?></p>
-            <p>Electronic access control is read against BS EN 60839-11. Fire-alarm release of a lock is read against BS 7273-4. We do not cite the withdrawn BS EN 50133 as if it were current, and we do not claim an NSI or SSAIB badge on this page.</p>
+            <p>Electronic access control is read against BS EN 60839-11. Fire-alarm release of a lock is read against BS 7273-4. </p>
         </div>
     </section>
     <section class="bg-zinc-50 border-t">

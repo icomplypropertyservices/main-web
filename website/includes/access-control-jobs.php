@@ -354,7 +354,7 @@ function accessControlLaneSynthesize(array $job): array
         $hard = 'Rising-arm barriers are the hardest job on this access-control lane: boom length, induction loops, photocells, the safety edge, the cabinet and the credential that opens the lane all have to work together.';
         $intro = $name . ' for ' . $place . '. ' . $hard;
         $bits = [
-            'Where the lane suits a CAME Gard cabinet we install and service GT4 and GT8 operators and 5 metre arms. Scope is agreed after a site survey. There is no catalogue price on this page.',
+            'Where the lane suits a CAME Gard cabinet we install and service GT4 and GT8 operators and 5 metre arms. Scope is agreed after a site survey.',
             'A boom stuck up or stuck down is treated as a safety fault first. Manual release, vehicle-strike damage, springs and the gearbox are checked before parts are ordered.',
             'Pedestrian doors beside the lane — maglocks, strikes and video door entry — are looked at on the same visit so the car park and the front door do not fight each other.',
         ];
@@ -382,12 +382,12 @@ function accessControlLaneSynthesize(array $job): array
             'Fail-safe or fail-secure chosen for the actual door',
             'Fire-release interface checked with the door unlocked',
             'Brackets, armature plate and power supply included in the survey',
-            'POA quote — no invented maglock price',
+            'POA quote',
         ];
         $faqs = [
             ['Is a maglock the same job as a car park barrier?', 'No. Barriers are the hardest lane job. A maglock is the pedestrian door beside that lane, or a communal entrance, and it is scoped separately.'],
             ['Will the door release if the fire alarm sounds?', 'Where a fire interface is required we test release on that door and record it. We do not leave a maglock holding against an alarm.'],
-            ['How is ' . $name . ' priced?', 'Price on application after we see the door, the supply and the bracket. No catalogue price on this page.'],
+            ['How is ' . $name . ' priced?', 'Price on application after we see the door, the supply and the bracket.'],
         ];
     } elseif ($family === 'door-entry') {
         $intro = $name . ' for ' . $place . '. Audio and video door entry for flats, HMOs and receptions, including panels that release a maglock or call a barrier lane.';
@@ -400,7 +400,7 @@ function accessControlLaneSynthesize(array $job): array
             'Panel, handset and cabling survey before any swap',
             'Lock release integrated with maglock or strike',
             'Barrier lanes quoted separately when the site has both',
-            'POA quote — no invented door-entry price',
+            'POA quote',
         ];
         $faqs = [
             ['Can door entry open a car park barrier?', 'Sometimes, when the panel has a clean release into the barrier controller. That interface is surveyed. It is not assumed.'],
@@ -418,7 +418,7 @@ function accessControlLaneSynthesize(array $job): array
             'Readers, controllers and credentials scoped per door',
             'Barrier lane called out separately when the site has one',
             'Fire release tested where the door strategy needs it',
-            'POA quote — no invented access-control price',
+            'POA quote',
         ];
         $faqs = [
             ['Do you install barriers as well as door access?', 'Yes. Car park barriers and the CAME Gard GT4 have their own job pages. Manchester and Burnley are attended from Stockport on those pages.'],

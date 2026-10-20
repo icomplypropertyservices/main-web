@@ -207,7 +207,7 @@ function localSentences(place, parsed) {
   const focus = place.focus || name;
   return [
     `${name} is covered from Stockport for ${subject}. The building stock is ${stock}.`,
-    `${name} outward codes on this page are ${districts}. ${subject} for ${aud} uses that place, not a UK-wide script.`,
+    `${subject} for ${aud} uses that place, not a UK-wide script.`,
     `${focus} is the local note for ${name}. ${mod} does not move the address outside Greater Manchester.`,
     `${service} in ${name} follows the ${scope} scope. ${districts} is how this ${name} page is told apart from the next town.`,
     `${intent} is the request type for ${subject} in ${name}. The ${stock} can change access, so the visit is quoted after the scope.`,
@@ -262,7 +262,7 @@ function pageHtml(options) {
       `Published variant pages use a double hyphen in the keyword slug and a Greater Manchester town.`,
       `iComply arranges the visit from the Stockport office. The figure is agreed after the building is seen.`,
       `Say which building in ${placeName} you mean and what the visit has to cover.`,
-      `There is no price list on this page. Cheap, emergency and next day are enquiry types on the published variants, not a published rate.`,
+      ` Cheap, emergency and next day are enquiry types on the published variants, not a published rate.`,
       `${placeName} stays on the Greater Manchester list when the town is one of the published area pages.`,
     ];
   const extras = [

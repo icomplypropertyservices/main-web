@@ -4,7 +4,7 @@
  * Build static iComply Supplies hubs under /shop/ from the live Shopify dump.
  *
  * Source: https://shop.icomplypropertyservices.co.uk/products.json
- * Does not invent products, prices, stock, or images.
+
  *
  * Usage:
  *   php website/bin/build-shop-hubs.php
@@ -288,7 +288,7 @@ function icomplyRenderShopIndex(array $ctx): string
         ['fire', 'Fire', 'Panels, detectors, AOV, wireless fire and the rest of the live fire catalogue.', (int)$counts['fire']],
         ['electrical', 'Electrical', 'Thin live set: batteries and PSU cells, fire cable, clips, SigTEL / disabled refuge, remote LED indicators.', (int)$counts['electrical']],
         ['security', 'Security', 'CAME, Videx and Bell System — gates, barriers, garage doors, intercoms and automation.', (int)$counts['security']],
-        ['gas', 'Gas', 'No live gas SKUs in the Shopify dump. Enquire or POA only — nothing is invented here.', (int)$counts['gas']],
+        ['gas', 'Gas', 'No live gas SKUs in the Shopify dump. ', (int)$counts['gas']],
     ];
 
     $cardHtml = '';
@@ -305,7 +305,7 @@ function icomplyRenderShopIndex(array $ctx): string
     $hero = [
         'kicker' => 'iComply Supplies',
         'title' => 'Trade supplies, four honest hubs',
-        'lead' => 'Fire, electrical, security and gas landings on this site. Titles, SKUs and GBP prices come from the live Shopify catalogue. Checkout stays on shop.icomplypropertyservices.co.uk — we do not invent stock or images.',
+        'lead' => 'Fire, electrical, security and gas landings on this site. Titles, SKUs and GBP prices come from the live Shopify catalogue. Checkout stays on shop.icomplypropertyservices.co.uk.',
     ];
     $main = '<section class="section"><div class="wrap">'
         . '<h2>Browse by category</h2>'
@@ -338,7 +338,7 @@ function icomplyRenderShopCategory(string $slug, array $products, array $ctx): s
         ],
         'gas' => [
             'title' => 'Gas supplies',
-            'lead' => 'The live Shopify dump has no product that is clearly gas. This hub stays empty on purpose. Ask for a quote or POA — we will not invent gas SKUs.',
+            'lead' => 'The live Shopify dump has no product that is clearly gas. This hub stays empty on purpose. ',
         ],
     ];
     $info = $meta[$slug];
@@ -549,7 +549,7 @@ function icomplyShopSourceNote(array $ctx): string
     return '<p class="note">Source: <a href="' . icomplyH((string)$ctx['source']) . '">' . icomplyH((string)$ctx['source']) . '</a>'
         . ' · fetched ' . icomplyH((string)$ctx['fetched_at'])
         . ' · ' . (int)$ctx['total'] . ' live products classified into these hubs. '
-        . 'GBP as published on Shopify — VAT is not invented here. '
+        . 'GBP as published on Shopify. '
         . 'Checkout remains on <a href="' . icomplyH((string)$ctx['shop_url']) . '">shop.icomplypropertyservices.co.uk</a>.</p>';
 }
 

@@ -121,7 +121,7 @@
       "standards": "BS 5839-1 periodic inspection and servicing",
       "premises": "Occupied offices, industrial units, retail parks, managed blocks",
       "deliverable": "A service certificate, updated logbook and a defect list",
-      "honest": "Service frequency follows the standard and the risk assessment, not a one-line retainer price on this page.",
+      "honest": "Service frequency follows the standard and the risk assessment, not a one-line retainer price.",
       "faqs": [
         {
           "q": "How often is a commercial alarm serviced?",
@@ -152,7 +152,7 @@
       "title": "Commercial Fire Alarm System | Panels, Loops & Zones",
       "h1": "Commercial fire alarm system",
       "h1_accent": "the whole system, not a single device",
-      "meta": "Commercial fire alarm systems for North West workplaces — panels, loops or zones, devices and interfaces. Survey-led quotes. No catalogue price on this page.",
+      "meta": "Commercial fire alarm systems for North West workplaces — panels, loops or zones, devices and interfaces. Survey-led quotes.",
       "kicker": "Commercial fire · system",
       "intro": "A system page is for the panel, the field devices and the way they behave together when a call point or detector operates.",
       "paragraphs": [
@@ -309,7 +309,7 @@
       "standards": "Fire door inspection practice aligned to the FRA and BS 8214 installation where doors are replaced",
       "premises": "Offices, stair cores, plant rooms, commercial common parts",
       "deliverable": "A door schedule with repairs or a replacement quote",
-      "honest": "Nominal fire ratings are not a product we invent on the web. The leaf and the frame decide the work.",
+      "honest": "The leaf and the frame decide the work.",
       "faqs": [
         {
           "q": "Can you inspect without replacing?",
@@ -321,7 +321,7 @@
         },
         {
           "q": "Will one failed closer fail the whole survey?",
-          "a": "The survey records it. Whether that stops occupation is the responsible person's decision, not a slogan on this page."
+          "a": "The survey records it. Whether that stops occupation is the responsible person'"
         }
       ],
       "related": [
@@ -544,7 +544,7 @@
       "standards": "Kitchen suppression installed and serviced to the manufacturer's schedule and the FRA",
       "premises": "Restaurants, schools, workplace canteens, dark kitchens",
       "deliverable": "A quoted system or a service record for the canopy we saw",
-      "honest": "Appliance layout changes the design. There is no flat kitchen price on this page.",
+      "honest": "Appliance layout changes the design.",
       "faqs": [
         {
           "q": "Can you service a system you did not install?",
@@ -685,7 +685,7 @@
       "standards": "BS 7671 inspection and testing",
       "premises": "Offices, retail, warehouses, hospitality back-of-house, light industrial",
       "deliverable": "A commercial EICR and, if needed, a remedial quote",
-      "honest": "Circuit count and whether we can isolate in hours decide the fee. Nothing is priced on this page.",
+      "honest": "Circuit count and whether we can isolate in hours decide the fee. ",
       "faqs": [
         {
           "q": "Is a commercial EICR the same as PAT?",
@@ -815,7 +815,7 @@
       "intro": "A workplace charger job starts with the supply, the bay count and who will manage the sockets — not with a domestic wall unit copied onto a car park.",
       "paragraphs": [
         "We check three-phase availability, existing load and where the bays sit relative to the board. Managed workplace schemes are quoted differently from a single bay behind a unit.",
-        "Grant paperwork is only included when a live scheme applies and you ask us to help with it. We do not invent grant values."
+        "Grant paperwork is only included when a live scheme applies and you ask us to help with it. "
       ],
       "points": [
         "Supply capacity checked first",
@@ -920,7 +920,7 @@
       "standards": "In-service inspection and testing of electrical equipment (IET Code of Practice)",
       "premises": "Offices, workshops, salons, furnished commercial units, site cabins",
       "deliverable": "A PAT schedule for the items we tested",
-      "honest": "There is no per-item price on this page. Count and access set the quote.",
+      "honest": " Count and access set the quote.",
       "faqs": [
         {
           "q": "Does PAT replace the commercial EICR?",
@@ -1376,7 +1376,7 @@
       "h1_accent": "a written scope for this building",
       "meta": "Commercial CCTV packages for North West sites: survey, cameras, recording and handover as one scope. Still priced after the building is known. POA.",
       "kicker": "Commercial security · CCTV scope",
-      "intro": "A package here means one quoted scope — survey through handover — not a boxed kit with a made-up camera count.",
+      "intro": "",
       "paragraphs": [
         "You get a schedule of views, a recorder spec and a note of what is excluded (monitoring centre, door access, lighting). Exclusions are how packages stay honest.",
         "Service after install can be added. It is not assumed."
@@ -1390,7 +1390,7 @@
       "standards": "Same practical standard as a surveyed commercial CCTV install",
       "premises": "Single commercial buildings and small retail groups",
       "deliverable": "A written package quote for the views agreed",
-      "honest": "Packages on this page are POA. We are not publishing a four-camera offer.",
+      "honest": "We are not publishing a four-camera offer.",
       "faqs": [
         {
           "q": "Is this the workplace essentials package?",
@@ -1907,7 +1907,7 @@
       "standards": "Each trade visit still follows that trade's standard — the package only joins the diary",
       "premises": "Multi-site offices, retail groups, mixed commercial estates",
       "deliverable": "A PPM quote tied to a named asset list",
-      "honest": "There is no monthly retainer figure on this page. Assets and geography decide it.",
+      "honest": "Assets and geography decide it.",
       "faqs": [
         {
           "q": "Is this the workplace essentials package?",
@@ -2099,7 +2099,7 @@
       "faqs": [
         {
           "q": "Will you write the FRA as well?",
-          "a": "Yes, as its own job. Support visits do not invent an assessment."
+          "a": "Yes, as its own job. "
         },
         {
           "q": "Can one engineer do alarms and lighting on the same day?",

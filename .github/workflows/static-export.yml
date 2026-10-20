@@ -74,7 +74,7 @@ jobs:
 
       - name: Thin x town internal links (CLOSE-Q8)
         run: node website/bin/check-town-interlinks.mjs dist
-      - name: Barrier town copy (no builder wording, housing line follows census)
+      - name: Site-wide banned phrases + barrier census copy
         run: python3 website/bin/check-barriers-copy.py dist
       - name: Fire-family service x town depth (>=800 words, sample similarity <=0.70)
         run: python3 website/bin/check-fire-family-depth.py dist

@@ -156,7 +156,7 @@ require SITE_ROOT . '/includes/header.php';
 <section class="bg-white border-t" id="towns">
     <div class="max-w-7xl mx-auto px-6 py-16">
         <h2 class="text-3xl font-semibold tracking-tight text-black"><?= number_format($placeCount) ?> town pages</h2>
-        <p class="mt-3 text-zinc-700 max-w-3xl">Open a town for its own population, age and housing or industry figures. The page does not invent a business park, a hospital or a local engineer for that town.</p>
+        <p class="mt-3 text-zinc-700 max-w-3xl">Open a town for its own population, age and housing or industry figures. </p>
         <div class="mt-8 space-y-4">
             <?php foreach ($grouped as $country => $regions): ?>
                 <details class="border rounded-2xl bg-zinc-50" <?= $country === 'England' ? 'open' : '' ?>>

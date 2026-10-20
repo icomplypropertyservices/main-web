@@ -87,7 +87,7 @@ $benefits = [
 
 $howItWorks = [
     ['1', 'Share your systems', 'Site list, panel / NVR brands, last service dates and preferred visit windows.'],
-    ['2', 'Agree the SLA', 'We propose visit frequency, inclusions and fixed-price cover after scope is clear.'],
+    ['2', 'Agree the SLA', 'We propose visit frequency, inclusions and quoted cover after scope is clear.'],
     ['3', 'Service & document', 'Engineers attend on schedule, complete works and issue audit-ready reports.'],
 ];
 
@@ -202,7 +202,7 @@ require SITE_ROOT . '/includes/header.php';
                 ready for insurers, auditors and facilities records.
             </p>
             <ul class="mt-6 space-y-3 text-sm text-zinc-700">
-                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Budgetable annual cover with fixed-price quotes after survey</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Budgetable annual cover with written quotes after survey</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Multi-site scheduling for FM teams and portfolio landlords</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Manufacturer-aware engineers across major panel and NVR brands</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Remedials and upgrades quoted clearly when systems need work</li>
@@ -420,7 +420,7 @@ require SITE_ROOT . '/includes/header.php';
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request a maintenance contract quote</h2>
             <p class="mt-3 text-zinc-600">
                 Tell us which systems (fire, emergency lighting, nurse call, CCTV), site count and last service dates.
-                All contracts are quoted fixed-price after scope is agreed — no obligation.
+                All contracts are quoted quoted after scope is agreed — no obligation.
             </p>
         </div>
         <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>

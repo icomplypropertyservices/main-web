@@ -147,7 +147,7 @@ function icomplyTownExtra(string $family, array $ctx, array &$ids): string
     $ends = $family === 'barriers'
         ? [
             'Call 07517 806082 and say which lane.',
-            'The wizard on this page already selects CAME unless you change it.',
+            '',
             'Safety edges stay in circuit.',
             'Five-metre CAME packs are on the products hub; fitting is still POA.',
             'Paxton or Videx release is specified separately from the boom.',
@@ -250,10 +250,10 @@ function icomplyTownPools(string $family): array
             ],
             'partner' => [
                 'CAME is the barrier partner. New booms are specified on the CAME GARD range unless the survey shows the incumbent cabinet, springs and safety edges are still the right kit to keep.',
-                'Partner supply is CAME. A replacement lane is a CAME GARD barrier with loops and edges. We still service the other manufacturers listed on this page.',
+                'Partner supply is CAME. A replacement lane is a CAME GARD barrier with loops and edges. ',
                 'Where {name} needs a new lane, the default specification is CAME. Taking over an existing BFT, FAAC, Nice or Magnetic cabinet is a different quote and stays on that manufacturer if the hardware is sound.',
                 'CAME partnership covers new vehicle barriers and the 5m packs on the products hub. It does not mean we refuse to maintain another brand that is already installed in {name}.',
-                'The partner badge on this page is CAME only. Every other logo is a brand we will open, test and either keep or replace after the survey in {county}.',
+                'Every other logo is a brand we will open, test and either keep or replace after the survey in {county}.',
                 'New {name} installs name CAME on the quotation. Service visits name whatever rating plate is on the cabinet.',
             ],
             'safety' => [
@@ -282,7 +282,7 @@ function icomplyTownPools(string $family): array
                 ],
                 'long' => [
                     '{name} is a long mainland trip, about {miles} miles from Stockport. We will quote it. We will not pretend there is a {name} depot.',
-                    'Attendance in {name} is a dedicated visit. Distance about {miles} miles. The specification wizard on this page is how we decide whether the first journey is a survey or a repair with parts.',
+                    'Attendance in {name} is a dedicated visit. Distance about {miles} miles. ',
                     'Scotland, the far south-west and the north of England are on this list because the population test says so. {name} is about {miles} miles away and is booked as such.',
                 ],
             ],
@@ -314,9 +314,9 @@ function icomplyTownPools(string $family): array
             'Refurbishments in {name} often inherit a panel the current maintainer cannot log into. We identify the manufacturer from the list below before promising a takeover. Local towns: {near}.',
         ],
         'partner' => [
-            'There is no single AOV house brand on this page. SE Controls, Nuaire, Brooks, Geze, D+H, Colt, TROX and the others below are all in scope. The survey says which one is installed.',
+            'SE Controls, Nuaire, Brooks, Geze, D+H, Colt, TROX and the others below are all in scope. The survey says which one is installed.',
             'Every AOV manufacturer on the grid is a real support line for {name}, with a nameplate, a link to the brand page and a way to name that brand in the wizard.',
-            'We will not invent a preferred smoke-vent brand for {name}. If the fire strategy names an actuator, that is the one we test.',
+            'If the fire strategy names an actuator, that is the one we test.',
             'Panel, actuator, vent and interface are quoted as separate lines when {name} only needs one of them. Full replacements are quoted when the system cannot be kept.',
             'Air-handling and smoke-shaft controls sit with the AOV scope where they are part of the same cause-and-effect in {county}.',
             'Brand logos below are our nameplates, linked to the manufacturer page, so a search for the equipment in {name} lands on a page that admits the brand.',
@@ -352,7 +352,7 @@ function icomplyTownPools(string $family): array
             ],
         ],
         'close' => [
-            'Call 07517 806082 and name the AOV panel if you know it. The wizard on this page lists every manufacturer we support in {name}.',
+            'Call 07517 806082 and name the AOV panel if you know it. ',
             'Phone 07517 806082 for {name} smoke control. Tell us storeys, stair count and whether the vent is open, shut or unknown.',
             'Every quote is fixed and written. The number is 07517806082. Photos of the panel door help; they do not replace the survey.',
             'If the {name} system is one of the brands below, pick it in the wizard so the engineer brings the right interface notes. Phone 07517 806082.',
@@ -402,7 +402,7 @@ function icomplyTownEditorial(string $family, array $town): array
             ['Can access control release the {name} lane?', 'Yes when the fire strategy allows it. Paxton, Videx, HID, Comelit and BPT are listed separately from the barrier manufacturer.'],
         ]
         : [
-            ['Which AOV brands do you support in {name}?', 'Every manufacturer in the grid on this page, including SE Controls, Nuaire, Brooks, Geze, D+H, Colt and the rest. The survey confirms which one is installed.'],
+            ['Which AOV brands do you support in {name}?', 'The survey confirms which one is installed.'],
             ['Are AOV quotes fixed before a visit?', 'No. {name} smoke control is POA after the stair, the panel and the fire-alarm interface are known.'],
             ['How far do you travel for {name}?', 'About {miles} miles from our Stockport SK2 workshop. The visit is planned around that.'],
             ['Do AOVs need testing?', 'Yes. Functional tests of actuators, vents and the panel should be in the {name} logbook, not only a visual look.'],

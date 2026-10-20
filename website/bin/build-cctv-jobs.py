@@ -42,7 +42,7 @@ NEW_JOBS: dict[str, dict] = {
             ],
             [
                 "How do you price an ANPR lane?",
-                "After the survey. Lane count, night lighting, civils and whether a barrier interface is required all change the quote. No made-up starting price.",
+                "After the survey. Lane count, night lighting, civils and whether a barrier interface is required all change the quote. ",
             ],
         ],
         "seo_keywords": "ANPR car park camera, car park number plate camera, entry lane ANPR, car park CCTV Stockport, ANPR Manchester, plate capture camera North West",
@@ -227,7 +227,7 @@ NEW_JOBS: dict[str, dict] = {
         "related": "cctv-compliance",
         "intro": "A GDPR camera siting review walks the views you record and flags cameras that cover neighbours, public pavements beyond your boundary, or staff areas without a clear purpose. Icomply mark what to mask, resite or remove, and what signage should say.",
         "body": "UK sites use the Data Protection Act and UK GDPR when CCTV identifies people. We are not a law firm and we do not issue a certificate that makes a system 'GDPR approved'. We do record each camera's aim, whether it needs a privacy mask, and whether the stated purpose still matches the view. You get a short schedule you can keep with your CCTV policy, plus a quote for any resites or masks you want us to carry out. Signage wording is practical: who operates the system and how to ask for footage. Stockport engineers cover the North West.",
-        "meta_desc": "GDPR camera siting review for business and landlord CCTV. Aims, masks and signage noted. No invented compliance certificate. North West.",
+        "meta_desc": "GDPR camera siting review for business and landlord CCTV. Aims, masks and signage noted. North West.",
         "focus_points": [
             "Each camera aim checked against the reason it was installed",
             "Neighbours, gardens and excessive public coverage flagged",

@@ -24,7 +24,7 @@ $writeFamily = static function (string $service, string $file, string $title) us
     $lines[] = '- a hub at `/pages/keywords/{slug}`';
     $lines[] = '- a keyword×area page at `/pages/keywords/{slug}/{town}` for **every** town in `areas.json` (static export)';
     $lines[] = '';
-    $lines[] = 'Cost / price / quote slugs are **POA only**. Never invent a £ figure.';
+    $lines[] = 'Cost / price / quote slugs are **POA only**. ';
     $lines[] = '';
     $lines[] = 'Sitemap must **not** list the full keyword×area matrix (P090 / anti-junk).';
     $lines[] = 'See `seo-matrix-rollout-notes.md`.';
@@ -65,7 +65,7 @@ Official rules for the electrical + gas keyword expansion.
 
 ## Copy / POA
 
-- Cost, price, quote and “how much” keywords always say **POA**. Never invent a £ figure.
+- Cost, price, quote and “how much” keywords always say **POA**. 
 - UK English, Stockport / North West. No fake accreditations, reviews or prices.
 
 ## HMO packages

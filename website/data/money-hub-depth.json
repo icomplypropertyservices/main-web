@@ -1,96 +1,164 @@
 {
-  "_note": "P1-20-2 (SEO FLAW-QUEUE 2026-10-20): extra customer copy and FAQs for money hubs under 800 prose words. No new prices; gas work wording is 'carried out by Gas Safe registered engineers' only.",
-  "services": {
-    "gas-systems": {
-      "sections": [
-        {"h2": "What happens on a gas visit", "p": [
-          "Every gas visit starts with the appliances and pipework you tell us about, then the engineer checks what is actually on site. Gas work is carried out by Gas Safe registered engineers. Boilers, fires, hobs and cookers are checked for safe operation, flues are inspected for correct termination and clear routes, and ventilation is checked against what each appliance needs.",
-          "If something is unsafe, it is explained to the person on site in plain terms and recorded on the paperwork. Where an appliance has to be turned off for safety, you are told why, what the next step is, and roughly how long a repair or replacement would take to arrange."
-        ]},
-        {"h2": "Landlords, agents and portfolios", "p": [
-          "Most of our gas work is for landlords and letting agents. We can hold a renewal date for each property, book the visit with the tenant, and send the record to you and the tenant once it is issued. Portfolios can be grouped by area so visits run on set days, which keeps access easier for tenants and agents.",
-          "If a tenant cannot be reached or access is refused, we tell you the same day so you have a record of the attempts made. Repeated failed access is something the landlord needs to know about quickly, because the annual check still has to be done."
-        ]}
-      ],
-      "faq": [
-        ["Can you work with my letting agent on access?", "Yes. We can book directly with the tenant or through your agent, and send the paperwork to both of you."],
-        ["What if an appliance fails the check?", "The engineer explains the problem, makes it safe where needed, and you get a written quote for the repair or replacement."]
-      ]
+ "_note": "P1-20-2 (SEO FLAW-QUEUE 2026-10-20): extra customer copy and FAQs for money hubs under 800 prose words. No new prices; gas work wording is 'carried out by Gas Safe registered engineers' only.",
+ "services": {
+  "gas-systems": {
+   "sections": [
+    {
+     "h2": "What happens on a gas visit",
+     "p": [
+      "Every gas visit starts with the appliances and pipework you tell us about, then the engineer checks what is actually on site. Gas work is carried out by Gas Safe registered engineers. Boilers, fires, hobs and cookers are checked for safe operation, flues are inspected for correct termination and clear routes, and ventilation is checked against what each appliance needs.",
+      "If something is unsafe, it is explained to the person on site in plain terms and recorded on the paperwork. Where an appliance has to be turned off for safety, you are told why, what the next step is, and roughly how long a repair or replacement would take to arrange."
+     ]
     },
-    "aov-air-handling": {
-      "sections": [
-        {"h2": "Who we do AOV work for", "p": [
-          "Our AOV and smoke control work is mostly for managing agents, freeholders, housing associations and facilities managers looking after blocks of flats, offices, schools and care homes. Many of these buildings have one or two stair vents that have not been looked at since handover, and the first visit is often about finding out what is there and whether it works.",
-          "We service and repair existing systems from most makers, and install new vents, actuators and panels where the fire strategy calls for them. Each visit ends with a written record of what was tested, what passed and what needs doing next, so the responsible person can file it with the fire risk assessment."
-        ]}
-      ],
-      "faq": [
-        ["Do you work on smoke vents fitted by another company?", "Yes. We identify the equipment on site and service or repair it. If a part is no longer made, we explain the compatible options in writing."]
-      ]
-    },
-    "fire-doors": {
-      "sections": [
-        {"h2": "What we check on a fire door", "p": [
-          "A fire door only works if every part of it works together. We check the leaf for damage and alterations, the frame for gaps and movement, the hinges for wear and missing screws, the self-closer for closing and latching from any angle, the intumescent and smoke seals, the glazing and its beads, the signage and any hold-open device.",
-          "Gaps around the leaf are measured rather than guessed, because a gap that is too wide lets smoke and fire through even when the door is shut. Closers are adjusted where possible; seals, hinges and signs are replaced where they have failed."
-        ]},
-        {"h2": "Blocks of flats, HMOs and commercial buildings", "p": [
-          "In blocks of flats, the Fire Safety (England) Regulations 2022 ask responsible persons in buildings over 11 metres to check communal fire doors every three months and flat entrance doors every year, as far as they can. In HMOs and commercial buildings the fire risk assessment sets what is needed.",
-          "We can survey a whole building and give you a door-by-door list with photos, the faults found and what each door needs. Repairs are then planned in a sensible order, starting with doors on escape routes and doors that do not close at all."
-        ]},
-        {"h2": "Repair or replace", "p": [
-          "Many doors can be repaired: closers adjusted or replaced, seals renewed, hinges changed, gaps corrected. Replacement is recommended when a leaf is badly damaged, has been cut or drilled in a way that cannot be made good, or when the door was never a fire door in the first place. We explain which applies to each door before you decide."
-        ]}
-      ],
-      "faq": [
-        ["How often should fire doors be checked?", "It depends on the building. Blocks over 11 metres have set checks under the Fire Safety (England) Regulations 2022; other buildings follow the fire risk assessment. Busy doors may need more frequent checks."],
-        ["Can a fire door be repaired rather than replaced?", "Often yes. Closers, seals, hinges and gaps can usually be put right. We tell you when a door is beyond repair."]
-      ]
+    {
+     "h2": "Landlords, agents and portfolios",
+     "p": [
+      "Most of our gas work is for landlords and letting agents. We can hold a renewal date for each property, book the visit with the tenant, and send the record to you and the tenant once it is issued. Portfolios can be grouped by area so visits run on set days, which keeps access easier for tenants and agents.",
+      "If a tenant cannot be reached or access is refused, we tell you the same day so you have a record of the attempts made. Repeated failed access is something the landlord needs to know about quickly, because the annual check still has to be done."
+     ]
     }
+   ],
+   "faq": [
+    [
+     "Can you work with my letting agent on access?",
+     "Yes. We can book directly with the tenant or through your agent, and send the paperwork to both of you."
+    ],
+    [
+     "What if an appliance fails the check?",
+     "The engineer explains the problem, makes it safe where needed, and you get a written quote for the repair or replacement."
+    ]
+   ]
   },
-  "keywords": {
-    "cp12": {
-      "body_add": [
-        "The landlord gas safety record, often called a CP12, is the record of the annual check landlords must arrange for gas appliances, fittings and flues they provide. The check is carried out by Gas Safe registered engineers. A copy goes to existing tenants within 28 days of the check and to new tenants before they move in, and landlords keep records for at least two years.",
-        "On the visit, each appliance the landlord provides is checked for safe operation. The engineer looks at the flue and its termination, the ventilation the appliance needs, the gas pressure and the safety devices. Pipework that can be seen is checked for soundness. The result for each appliance is written on the record, with any defects and what was done about them.",
-        "If an appliance is found to be unsafe, the engineer explains the risk to whoever is on site and makes it safe. That may mean turning it off and labelling it. The landlord is told straight away, and a written quote follows for the repair or replacement, so the property can be put right quickly.",
-        "For portfolios we keep a renewal date for each property and contact you or your agent before the record runs out. Visits can be grouped so several properties in the same area are done on one day. Tenants are contacted in advance to arrange access, and the record is emailed to you once it is issued.",
-        "The annual record is not the same as a boiler service. A service looks at the boiler in more depth, cleans and adjusts it where needed, and is usually recommended by the manufacturer every year. Many landlords book both on the same visit to save a second appointment for the tenant.",
-        "To book, send us the property address, the tenant's contact details or your agent's, the appliances you know are there, and the date the current record runs out. Same-day and next-day slots are often available. Call or WhatsApp 07517 806082 or email icomplypropertyservices@gmail.com."
-      ],
-      "faq_add": [
-        ["What does the landlord gas safety record cover?", "Every gas appliance, fitting and flue the landlord provides. Appliances owned by the tenant are the tenant's responsibility, though the engineer will mention anything obviously unsafe."],
-        ["How long does the visit take?", "Usually under an hour for a home with a boiler and a hob, longer where there are more appliances or access is difficult."],
-        ["Can you send the record to my tenant directly?", "Yes. We can email the record to you, your agent and the tenant once it is issued."]
-      ]
-    },
-    "gas-leak-detection": {
-      "body_add": [
-        "If you smell gas, leave the building, do not use switches or flames, turn off the gas at the meter if it is safe to do so, and call the National Gas Emergency number on 0800 111 999. The emergency service makes the supply safe. Our work starts after that, finding and repairing the leak so the gas can be put back on.",
-        "Leak detection is carried out by Gas Safe registered engineers. The engineer runs a tightness test on the installation to confirm whether gas is escaping and how fast, then traces the leak along the pipework and at the appliances using a gas detector and leak detection fluid. Joints, valves, meter connections and appliance connections are the most common places to find a leak.",
-        "Once the leak is found, the faulty section or fitting is repaired or replaced, and the installation is tested again before the supply is restored. If an appliance is the cause and cannot be repaired straight away, it is disconnected and labelled, and you get a written quote for the repair or a replacement.",
-        "For landlords and agents, we can attend with or without the tenant, and send a written note of what was found and done. If a leak is found during a routine gas safety check, the same process applies, and the landlord is told the same day.",
-        "Hidden pipework under floors or behind walls can take longer to trace. Where we have to lift boards or open up a boxing, we explain why and agree it with the person on site first."
-      ],
-      "faq_add": [
-        ["What should I do first if I smell gas?", "Get everyone out, avoid switches and flames, turn off the gas at the meter if safe, and call 0800 111 999. Then contact us to find and fix the leak."],
-        ["Will you test the whole system after the repair?", "Yes. The installation is tightness tested again before the gas is turned back on."]
-      ]
-    },
-    "emergency-lighting-test": {
-      "body_add": [
-        "Emergency lighting has to come on when the normal lighting fails, so people can find their way out safely. BS 5266-1 sets out how it should be tested: a short functional test every month, where each fitting is switched to battery and checked it lights, and a full-duration test once a year, where the fittings run on battery for their full rated time, usually three hours.",
-        "The monthly test can be done by the building manager or a trained member of staff using the test key switch. The annual full-duration test needs more care, because the fittings will have flat batteries for some hours afterwards. We plan it for a time when the building is quiet or empty, or test half the fittings at a time so the building always has some emergency lighting ready.",
-        "During the annual test we check every fitting lights and stays lit for the full duration, note any that fail early or do not light at all, check the charging indicators and look at the condition of the fittings and the signs. Exit signs are checked to make sure they are visible from the escape route and point the right way.",
-        "Failed fittings are listed with their location, and we can replace batteries, lamps or whole fittings on the day where we have the parts, or quote for them afterwards. The results go into the emergency lighting logbook, and you get a written test record for the building file.",
-        "If your building has no logbook, or the records have lapsed, we can start a new one and set up a simple monthly testing routine for your staff. Fire risk assessors and insurers will ask to see these records, so keeping them up to date matters as much as the test itself.",
-        "Self-test fittings run their own checks and show a status light. They still need someone to look at the indicators and record the results, and they still need an annual inspection."
-      ],
-      "faq_add": [
-        ["How long does an annual emergency lighting test take?", "The fittings run for their rated duration, usually three hours, plus time to check and record each one. Recharging then takes up to 24 hours."],
-        ["Can the building stay open during the test?", "Usually yes, by testing half the fittings at a time or testing out of hours, so some emergency lighting is always ready."],
-        ["Do self-test emergency lights still need checking?", "Yes. Someone needs to check the indicators and record the results, and an annual inspection is still needed."]
-      ]
+  "aov-air-handling": {
+   "sections": [
+    {
+     "h2": "Who we do AOV work for",
+     "p": [
+      "Our AOV and smoke control work is mostly for managing agents, freeholders, housing associations and facilities managers looking after blocks of flats, offices, schools and care homes. Many of these buildings have one or two stair vents that have not been looked at since handover, and the first visit is often about finding out what is there and whether it works.",
+      "We service and repair existing systems from most makers, and install new vents, actuators and panels where the fire strategy calls for them. Each visit ends with a written record of what was tested, what passed and what needs doing next, so the responsible person can file it with the fire risk assessment."
+     ]
     }
+   ],
+   "faq": [
+    [
+     "Do you work on smoke vents fitted by another company?",
+     "Yes. We identify the equipment on site and service or repair it. If a part is no longer made, we explain the compatible options in writing."
+    ]
+   ]
+  },
+  "fire-doors": {
+   "sections": [
+    {
+     "h2": "What we check on a fire door",
+     "p": [
+      "A fire door only works if every part of it works together. We check the leaf for damage and alterations, the frame for gaps and movement, the hinges for wear and missing screws, the self-closer for closing and latching from any angle, the intumescent and smoke seals, the glazing and its beads, the signage and any hold-open device.",
+      "Gaps around the leaf are measured rather than guessed, because a gap that is too wide lets smoke and fire through even when the door is shut. Closers are adjusted where possible; seals, hinges and signs are replaced where they have failed."
+     ]
+    },
+    {
+     "h2": "Blocks of flats, HMOs and commercial buildings",
+     "p": [
+      "In blocks of flats, the Fire Safety (England) Regulations 2022 ask responsible persons in buildings over 11 metres to check communal fire doors every three months and flat entrance doors every year, as far as they can. In HMOs and commercial buildings the fire risk assessment sets what is needed.",
+      "We can survey a whole building and give you a door-by-door list with photos, the faults found and what each door needs. Repairs are then planned in a sensible order, starting with doors on escape routes and doors that do not close at all."
+     ]
+    },
+    {
+     "h2": "Repair or replace",
+     "p": [
+      "Many doors can be repaired: closers adjusted or replaced, seals renewed, hinges changed, gaps corrected. Replacement is recommended when a leaf is badly damaged, has been cut or drilled in a way that cannot be made good, or when the door was never a fire door in the first place. We explain which applies to each door before you decide."
+     ]
+    }
+   ],
+   "faq": [
+    [
+     "How often should fire doors be checked?",
+     "It depends on the building. Blocks over 11 metres have set checks under the Fire Safety (England) Regulations 2022; other buildings follow the fire risk assessment. Busy doors may need more frequent checks."
+    ],
+    [
+     "Can a fire door be repaired rather than replaced?",
+     "Often yes. Closers, seals, hinges and gaps can usually be put right. We tell you when a door is beyond repair."
+    ]
+   ]
   }
+ },
+ "keywords": {
+  "cp12": {
+   "body_add": [
+    "The landlord gas safety record, often called a CP12, is the record of the annual check landlords must arrange for gas appliances, fittings and flues they provide. The check is carried out by Gas Safe registered engineers. A copy goes to existing tenants within 28 days of the check and to new tenants before they move in, and landlords keep records for at least two years.",
+    "On the visit, each appliance the landlord provides is checked for safe operation. The engineer looks at the flue and its termination, the ventilation the appliance needs, the gas pressure and the safety devices. Pipework that can be seen is checked for soundness. The result for each appliance is written on the record, with any defects and what was done about them.",
+    "If an appliance is found to be unsafe, the engineer explains the risk to whoever is on site and makes it safe. That may mean turning it off and labelling it. The landlord is told straight away, and a written quote follows for the repair or replacement, so the property can be put right quickly.",
+    "For portfolios we keep a renewal date for each property and contact you or your agent before the record runs out. Visits can be grouped so several properties in the same area are done on one day. Tenants are contacted in advance to arrange access, and the record is emailed to you once it is issued.",
+    "The annual record is not the same as a boiler service. A service looks at the boiler in more depth, cleans and adjusts it where needed, and is usually recommended by the manufacturer every year. Many landlords book both on the same visit to save a second appointment for the tenant.",
+    "To book, send us the property address, the tenant's contact details or your agent's, the appliances you know are there, and the date the current record runs out. Same-day and next-day slots are often available. Call or WhatsApp 07517 806082 or email icomplypropertyservices@gmail.com.",
+    "Timing matters. A new record can be done up to two months before the old one runs out and still keep the original anniversary date, so a portfolio does not drift earlier each year. We note the due date of every property when we book, which makes it easier to plan the next round in one go.",
+    "Access is the most common reason a check slips. Landlords need to show they took reasonable steps to get in, so keep copies of the letters, emails and appointment offers sent to tenants. If a tenant cannot be there, tell us early and we will offer another slot rather than leave the record to lapse.",
+    "Where an appliance fails, the record says so and explains the reason in plain terms. Anything immediately dangerous is made safe on the day with the occupier's agreement, and remedial work is quoted separately in writing so you can decide how to proceed before anything else is done.",
+    "Agents and landlords with several homes can combine the gas check with the EICR, smoke and carbon monoxide alarm checks and fire safety visits on the same appointment where the timing lines up. One visit is easier for tenants, and you receive each record separately for your files."
+   ],
+   "faq_add": [
+    [
+     "What does the landlord gas safety record cover?",
+     "Every gas appliance, fitting and flue the landlord provides. Appliances owned by the tenant are the tenant's responsibility, though the engineer will mention anything obviously unsafe."
+    ],
+    [
+     "How long does the visit take?",
+     "Usually under an hour for a home with a boiler and a hob, longer where there are more appliances or access is difficult."
+    ],
+    [
+     "Can you send the record to my tenant directly?",
+     "Yes. We can email the record to you, your agent and the tenant once it is issued."
+    ]
+   ]
+  },
+  "gas-leak-detection": {
+   "body_add": [
+    "If you smell gas, leave the building, do not use switches or flames, turn off the gas at the meter if it is safe to do so, and call the National Gas Emergency number on 0800 111 999. The emergency service makes the supply safe. Our work starts after that, finding and repairing the leak so the gas can be put back on.",
+    "Leak detection is carried out by Gas Safe registered engineers. The engineer runs a tightness test on the installation to confirm whether gas is escaping and how fast, then traces the leak along the pipework and at the appliances using a gas detector and leak detection fluid. Joints, valves, meter connections and appliance connections are the most common places to find a leak.",
+    "Once the leak is found, the faulty section or fitting is repaired or replaced, and the installation is tested again before the supply is restored. If an appliance is the cause and cannot be repaired straight away, it is disconnected and labelled, and you get a written quote for the repair or a replacement.",
+    "For landlords and agents, we can attend with or without the tenant, and send a written note of what was found and done. If a leak is found during a routine gas safety check, the same process applies, and the landlord is told the same day.",
+    "Hidden pipework under floors or behind walls can take longer to trace. Where we have to lift boards or open up a boxing, we explain why and agree it with the person on site first.",
+    "If you smell gas, leave the property, do not use switches or flames, and call the National Gas Emergency Service on 0800 111 999 first. Our work comes after the emergency service has made the supply safe: tracing the leak, repairing the pipework or fitting, and testing the installation before it is used again.",
+    "Leak tracing on a larger property is methodical. Pipework is pressure tested in sections, joints and fittings are checked, and meters, valves and appliances are isolated in turn until the fault is found. The written report shows what was tested, what failed and what was repaired.",
+    "Commercial kitchens, plant rooms and boiler houses often have gas detection and automatic shut-off valves linked to the ventilation. We check that the detectors respond, that the shut-off valve closes and that the interlock behaves as the site's records say it should."
+   ],
+   "faq_add": [
+    [
+     "What should I do first if I smell gas?",
+     "Get everyone out, avoid switches and flames, turn off the gas at the meter if safe, and call 0800 111 999. Then contact us to find and fix the leak."
+    ],
+    [
+     "Will you test the whole system after the repair?",
+     "Yes. The installation is tightness tested again before the gas is turned back on."
+    ]
+   ]
+  },
+  "emergency-lighting-test": {
+   "body_add": [
+    "Emergency lighting has to come on when the normal lighting fails, so people can find their way out safely. BS 5266-1 sets out how it should be tested: a short functional test every month, where each fitting is switched to battery and checked it lights, and a full-duration test once a year, where the fittings run on battery for their full rated time, usually three hours.",
+    "The monthly test can be done by the building manager or a trained member of staff using the test key switch. The annual full-duration test needs more care, because the fittings will have flat batteries for some hours afterwards. We plan it for a time when the building is quiet or empty, or test half the fittings at a time so the building always has some emergency lighting ready.",
+    "During the annual test we check every fitting lights and stays lit for the full duration, note any that fail early or do not light at all, check the charging indicators and look at the condition of the fittings and the signs. Exit signs are checked to make sure they are visible from the escape route and point the right way.",
+    "Failed fittings are listed with their location, and we can replace batteries, lamps or whole fittings on the day where we have the parts, or quote for them afterwards. The results go into the emergency lighting logbook, and you get a written test record for the building file.",
+    "If your building has no logbook, or the records have lapsed, we can start a new one and set up a simple monthly testing routine for your staff. Fire risk assessors and insurers will ask to see these records, so keeping them up to date matters as much as the test itself.",
+    "Self-test fittings run their own checks and show a status light. They still need someone to look at the indicators and record the results, and they still need an annual inspection.",
+    "Monthly tests are short. Each fitting is switched to battery for long enough to prove it lights, then switched back. The annual test runs every fitting for its full rated duration, usually three hours, and any fitting that fails before the end is recorded and replaced or repaired.",
+    "Self-test fittings reduce the routine work but do not remove the duty. Someone still needs to read the status indicators or the panel, record the results in the logbook and act on any failure. We can check the self-test reports during the annual visit and confirm the system is doing what it claims.",
+    "Testing after dark or out of hours is often easiest for offices, shops and communal areas. After a full-duration test the batteries need time to recharge, so we plan the annual test for a time when the building is quiet and the escape routes are not relied on until the batteries are back to charge.",
+    "The logbook should show each test date, the fittings tested, what failed and what was done about it. If your logbook has gaps, we start a fresh record from a baseline test and mark up the fitting positions on a simple plan so later tests are quicker."
+   ],
+   "faq_add": [
+    [
+     "How long does an annual emergency lighting test take?",
+     "The fittings run for their rated duration, usually three hours, plus time to check and record each one. Recharging then takes up to 24 hours."
+    ],
+    [
+     "Can the building stay open during the test?",
+     "Usually yes, by testing half the fittings at a time or testing out of hours, so some emergency lighting is always ready."
+    ],
+    [
+     "Do self-test emergency lights still need checking?",
+     "Yes. Someone needs to check the indicators and record the results, and an annual inspection is still needed."
+    ]
+   ]
+  }
+ }
 }

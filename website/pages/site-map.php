@@ -420,7 +420,7 @@ require SITE_ROOT . '/includes/header.php';
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Next step</div>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mt-2">Need a free quote?</h2>
                 <p class="mt-4 text-white/80 text-lg">
-                    Fixed-price quotes for electrical, fire, gas, emergency lighting, CCTV and access control across the North West.
+                    Written quotes for electrical, fire, gas, emergency lighting, CCTV and access control across the North West.
                 </p>
             </div>
             <div class="flex flex-wrap gap-3 lg:justify-end">

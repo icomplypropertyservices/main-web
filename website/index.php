@@ -289,7 +289,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                class="group bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="w-12 h-12 rounded-2xl bg-[#0B1F3A]/10 text-[#0B1F3A] font-bold flex items-center justify-center text-lg group-hover:bg-[#ff6b00] group-hover:text-white transition">L</div>
                 <h3 class="mt-5 font-semibold text-xl text-black tracking-tight">Landlords &amp; agents</h3>
-                <p class="mt-2 text-sm text-zinc-600 flex-1">EICR, CP12 / gas, FRA, Legionella, asbestos, voids, kitchens and bathrooms for portfolios. HMO work is quoted through existing landlord packages — not a separate invented product.</p>
+                <p class="mt-2 text-sm text-zinc-600 flex-1">EICR, CP12 / gas, FRA, Legionella, asbestos, voids, kitchens and bathrooms for portfolios. HMO work is quoted through existing landlord packages.</p>
                 <span class="mt-5 text-sm font-semibold text-[#ff6b00]">Landlord compliance →</span>
             </a>
             <a href="<?= url('/pages/commercial.php') ?>"
@@ -381,7 +381,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             <h3 class="text-2xl font-semibold tracking-tight">Need a compliance package?</h3>
             <p class="mt-3 text-white/80">Combine EICR, gas, FRA, water hygiene, asbestos surveys, security and refurb works into one visit schedule for landlords and facilities teams.</p>
             <ul class="mt-6 space-y-3 text-sm text-white/90">
-                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Fixed-price multi-service quotes</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Quoted multi-service quotes</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Full documentation for audits &amp; insurers</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Maintenance contracts available</li>
             </ul>
@@ -423,7 +423,7 @@ require_once SITE_ROOT . '/includes/testimonials.php';
         <div class="text-center mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request your free quote</h2>
-            <p class="mt-3 text-zinc-600">Send the postcode, property type and what is on site. All quotes are fixed-price after scope is agreed.</p>
+            <p class="mt-3 text-zinc-600">Send the postcode, property type and what is on site. All quotes are written after scope is agreed.</p>
         </div>
 
         <form name="contact" method="POST" action="/contact" data-netlify="true" data-contact-form="home" netlify-honeypot="bot-field" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm" aria-label="Free quote form">

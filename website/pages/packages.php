@@ -25,7 +25,7 @@ $waBase = 'https://wa.me/' . WHATSAPP;
 $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
 
 /**
- * Packages: honest "from" / POA only — no invented catalogue prices.
+ * Packages: honest "from" / POA only.
  * Related service slugs link to existing hub pages.
  */
 $packages = [
@@ -267,7 +267,7 @@ require SITE_ROOT . '/includes/header.php';
         <h2 class="text-3xl font-semibold tracking-tight text-black text-center mb-4">How package quoting works</h2>
         <p class="text-center text-zinc-600 max-w-2xl mx-auto mb-12">
             We never publish fake fixed prices online — every building is different.
-            You get a clear, fixed-price quote once scope is agreed.
+            You get a clear, written quote once scope is agreed.
         </p>
         <div class="grid md:grid-cols-3 gap-8">
             <?php
@@ -327,7 +327,7 @@ require SITE_ROOT . '/includes/header.php';
         <div class="text-center mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request a package quote</h2>
-            <p class="mt-3 text-zinc-600">Tell us which package and your postcode — we’ll return a fixed-price proposal after scope is agreed. No obligation.</p>
+            <p class="mt-3 text-zinc-600">Tell us which package and your postcode — we’ll return a written proposal after scope is agreed. No obligation.</p>
         </div>
         <form <?= ICOMPLY_QUOTE_FORM_ATTRS ?> class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm"><?= icomplyQuoteFormHidden() ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">

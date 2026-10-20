@@ -197,7 +197,7 @@ function emergencyLightingSynthesizeCopy(string $name): array
         'faq' => [
             [
                 'How is ' . $name . ' quoted?',
-                'We survey the site and send a POA quote. The price depends on fitting count, access and whether remedials are included. Nothing is invented up front.',
+                'We survey the site and send a POA quote. The price depends on fitting count, access and whether remedials are included. ',
             ],
             [
                 'Which standard applies to ' . $name . '?',

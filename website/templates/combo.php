@@ -289,13 +289,13 @@ if ($townFacts !== '') {
                 ['Local to ' . $areaName, 'Stockport-based team covering ' . $areaName . ' and surrounding postcodes'],
                 ['Standards-led', $standards],
                 ['File-ready notes', 'Written assessment or survey notes for landlords, agents and dutyholders'],
-                ['POA quotes', 'No invented prices — scoped after we know the property'],
+                ['POA quotes', 'Scoped after we know the property'],
             ]
             : [
                 ['Local to ' . $areaName, 'Stockport-based engineers covering ' . $areaName . ' and surrounding postcodes'],
                 ['Standards-led', $standards],
                 ['Full certification', 'Documentation for landlords, insurers and fire officers'],
-                ['Fixed-price quotes', 'Clear scope, appointments booked when the diary allows'],
+                ['Written quotes', 'Clear scope, appointments booked when the diary allows'],
             ];
         foreach ($trust as [$t, $d]): ?>
             <div class="flex gap-3 items-start">
@@ -329,7 +329,7 @@ if ($townFacts !== '') {
                 iComply Property Services provides complete <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong>
                 design, installation, commissioning, maintenance and certification across
                 <strong><?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></strong> and the wider <?= htmlspecialchars($coveragePhrase, ENT_QUOTES, 'UTF-8') ?>.
-                Our qualified engineers deliver fixed-price quotes after scope and full compliance documentation on every job.
+                Our qualified engineers deliver written quotes after scope and full compliance documentation on every job.
             </p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
                 Whether you need a new system, an upgrade, periodic testing or emergency repairs, we support commercial,
@@ -560,7 +560,7 @@ if ($tfLean) {
         <div>
             <h2 class="text-3xl font-semibold tracking-tight">Need <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>?</h2>
             <p class="mt-3 text-white/75"><?= $poaCombo
-                ? 'Price on application after we confirm the property in ' . htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') . '. No invented fee list — call, WhatsApp or send the form.'
+                ? 'Price on application after we confirm the property in ' . htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') . '. '
                 : ($tfLean ? '' : 'Written quotes after scope. Visit dates follow the diary. Full certification on every job. Tell us your panel brand or system type.') ?></p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="#quote" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold">Request quote</a>

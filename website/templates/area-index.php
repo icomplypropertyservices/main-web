@@ -489,7 +489,7 @@ require_once SITE_ROOT . '/includes/testimonials.php';
         <div class="text-center mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request a <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> quote</h2>
-            <p class="mt-3 text-zinc-600">Postcode, property type and the service. No price is invented on this page.</p>
+            <p class="mt-3 text-zinc-600">Postcode, property type and the service. </p>
         </div>
         <form <?= ICOMPLY_QUOTE_FORM_ATTRS ?> class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm"><?= icomplyQuoteFormHidden() ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">

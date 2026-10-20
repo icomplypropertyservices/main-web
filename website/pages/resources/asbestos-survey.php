@@ -2,7 +2,7 @@
 /**
  * Resource — asbestos survey / testing for landlords (UK guidance, not legal advice). POA.
  * Source briefs (service-asbestos-landlords.md / seo-outlines) were not mounted;
- * copy follows CAR 2012 duty to manage only — no invented prices, certs or reviews.
+ * copy follows CAR 2012 duty to manage only, certs or reviews.
  */
 require_once __DIR__ . '/../../config.php';
 require_once SITE_ROOT . '/includes/share.php';
@@ -55,7 +55,7 @@ require SITE_ROOT . '/includes/header.php';
         <h2 class="text-2xl font-semibold mb-3">Common questions</h2>
         <div class="space-y-3">
             <details class="bg-white border rounded-2xl p-5"><summary class="font-semibold cursor-pointer">Which survey do I need?</summary><p class="mt-3 text-sm text-zinc-600">A management survey is for normal occupation. A refurbishment or demolition survey is for intrusive works. Tell us the planned work.</p></details>
-            <details class="bg-white border rounded-2xl p-5"><summary class="font-semibold cursor-pointer">Do you remove asbestos?</summary><p class="mt-3 text-sm text-zinc-600">Not as a licensed removal contractor on this page. If removal is required we say so and you appoint a suitable licensed contractor.</p></details>
+            <details class="bg-white border rounded-2xl p-5"><summary class="font-semibold cursor-pointer">Do you remove asbestos?</summary><p class="mt-3 text-sm text-zinc-600">If removal is required we say so and you appoint a suitable licensed contractor.</p></details>
             <details class="bg-white border rounded-2xl p-5"><summary class="font-semibold cursor-pointer">What does it cost?</summary><p class="mt-3 text-sm text-zinc-600">POA. Size, age, access and how intrusive the survey must be all change the quote. We do not publish a fake starting price.</p></details>
         </div>
     </div>

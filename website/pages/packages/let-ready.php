@@ -20,7 +20,7 @@ require SITE_ROOT . '/includes/header.php';
 </section>
 <section class="max-w-7xl mx-auto px-6 py-16">
   <h2 class="text-3xl font-semibold">What is included (indicative)</h2>
-  <p class="mt-2 text-zinc-600">Final scope is confirmed in your quote. No invented catalogue prices.</p>
+  <p class="mt-2 text-zinc-600">Final scope is confirmed in your quote. </p>
   <ul class="mt-6 space-y-2 text-zinc-800">
     <li>✓ EICR (as required for the tenancy)</li>
     <li>✓ Gas safety certificate where a gas supply is present</li>

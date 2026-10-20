@@ -252,7 +252,7 @@ function icomplyRenderFireAlarmInstallerTown(string $keywordSlug, string $townSl
         . '<p>' . $h($opening) . '</p>'
         . '<p>' . $h($local) . '</p>'
         . ($intro !== '' ? '<p>' . $h($intro) . '</p>' : '')
-        . '<p>' . $h(icomplyFireAlarmInstallerDuty()) . ' The quote is price on application. There is no catalogue fee on this page.</p>'
+        . '<p>' . $h(icomplyFireAlarmInstallerDuty()) . ' The quote is price on application.</p>'
         . '<p>Workshop address: ' . $h(icomplyFireAlarmInstallerNap()) . '. Phone 07517 806082.</p>'
         . '<h2>What the visit covers in ' . $h($ctx['name']) . '</h2><ul>' . $focusHtml . '</ul>'
         . implode('', $blocks)

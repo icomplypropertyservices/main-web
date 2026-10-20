@@ -72,7 +72,7 @@ $h = static function ($s): string {
         </h1>
         <p class="mt-5 text-lg text-white font-medium max-w-2xl leading-relaxed drop-shadow">
             Local engineers for <strong><?= $h($KEYWORD_NAME) ?></strong> in <strong><?= $h($AREA) ?></strong> and nearby postcodes.
-            <?= $poaService ? 'POA after scope · no catalogue fee.' : 'Fixed-price quotes.' ?> Stockport-based team covering the North West.
+            <?= $poaService ? 'POA after scope · no catalogue fee.' : 'Written quotes.' ?> Stockport-based team covering the North West.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
             <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-bold text-white shadow-lg"><?= $poaService ? 'Enquire for POA' : 'Get free quote' ?></a>

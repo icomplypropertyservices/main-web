@@ -69,7 +69,7 @@ function icomplyGasServicePageCopy(): array
         'pillars' => [
             ['title' => 'The landlord record', 'text' => 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. The record lists the appliances and flues that were checked.'],
             ['title' => 'Not a company registration', 'text' => ''],
-            ['title' => 'POA only', 'text' => 'Postcode and appliance count first. The quote is price on application. There is no per-appliance price list on this page.'],
+            ['title' => 'POA only', 'text' => 'Postcode and appliance count first. The quote is price on application.'],
         ],
         'intro' => [
             'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.',
@@ -206,7 +206,7 @@ function icomplyManufacturerEntryIsGas(array $entry): bool
 
 function icomplyGasBrandBlurb(string $brand): string
 {
-    return $brand . ' appears on this page as a trade-supply brand. '
+    return $brand . ''
         . icomplyGasLegalSentence()
         . ' Quotes for ' . $brand . ' appliances are price on application.';
 }

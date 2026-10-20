@@ -131,7 +131,7 @@ require SITE_ROOT . '/includes/header.php';
             ['Full catalogue', 'Fire safety, professional & construction topics'],
             ['Service-linked', 'Every guide maps to one of ' . count($services) . ' services'],
             ['Local coverage', count($areas) . ' towns on related pages (Manchester and Burnley rings)'],
-            ['Fixed-price quotes', 'Clear scope before work starts'],
+            ['Written quotes', 'Clear scope before work starts'],
         ];
         foreach ($trust as [$t, $d]): ?>
             <div class="flex gap-3 items-start">
@@ -237,7 +237,7 @@ if (function_exists('accessControlLaneHubSection')) {
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Need the work done?</h2>
             <p class="mt-4 text-zinc-600 text-lg">
                 Guides explain the topic — our engineers install, test and certify across Greater Manchester and the North West.
-                Request a fixed-price quote or browse services and areas.
+                Request a written quote or browse services and areas.
             </p>
             <ul class="mt-6 space-y-3 text-sm text-zinc-700">
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Standards-led install &amp; certification</li>
@@ -270,7 +270,7 @@ if (function_exists('accessControlLaneHubSection')) {
         <div class="text-center mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request your free quote</h2>
-            <p class="mt-3 text-zinc-600">All quotes are fixed-price after scope is agreed.</p>
+            <p class="mt-3 text-zinc-600">All quotes are written after scope is agreed.</p>
         </div>
         <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">

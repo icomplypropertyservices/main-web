@@ -21,7 +21,7 @@ function wave1QualityHubs(): array
             'h1' => 'Landlord certificates',
             'h1Accent' => 'one file, honest scope',
             'lede' => 'The documents agents, tenants and licensing officers ask for — quoted after we know the house, not copied from a national price grid.',
-            'honest' => 'We issue records for the inspections and installs we complete. We do not grant licences, give legal advice, or publish invented package prices.',
+            'honest' => 'We issue records for the inspections and installs we complete. ',
             'coverTitle' => 'The certificates a let file usually holds',
             'cover' => [
                 'Most single lets in England revolve around a current [EICR](/pages/services/electrical), a [gas safety record](/pages/services/gas-systems) where gas is present, working [smoke and CO alarms](/pages/services/smoke-co-alarms), and a valid [EPC](/pages/services/epc) if you are marketing the property.',
@@ -377,7 +377,7 @@ function wave1QualityHubs(): array
             'h1' => 'Emergency lighting',
             'h1Accent' => 'escape routes you can still see',
             'lede' => 'Monthly function tests, an annual full-duration test, a logbook, and upgrades when the fittings no longer cover the route.',
-            'honest' => 'We follow BS 5266 practice as high-level guidance. We do not invent a legal monthly visit for a two-bed single let that has no system.',
+            'honest' => 'We follow BS 5266 practice as high-level guidance. ',
             'coverTitle' => 'Testing first, new fittings when needed',
             'cover' => [
                 'If you already have emergency lighting, the file wants proof it still works. If the FRA says the escape is dark, the quote is for a design and install — not a sticker on a dead fitting.',
@@ -483,7 +483,7 @@ function wave1QualityHubs(): array
         'legionella-landlords' => [
             'navLabel' => 'Legionella for landlords',
             'pageTitle' => 'Legionella Risk Assessment for Landlords | North West',
-            'metaDesc' => 'Landlord Legionella risk assessment from Stockport SK2. HSE L8 / HSG274 language. Sampling only when justified. Price on application — no invented fees or lab badges.',
+            'metaDesc' => 'Landlord Legionella risk assessment from Stockport SK2. HSE L8 / HSG274 language. Sampling only when justified. Price on application or lab badges.',
             'metaKeywords' => 'landlord legionella risk assessment, legionella testing landlords, water hygiene North West, Stockport legionella, Manchester legionella',
             'ogImage' => '/assets/images/services/plumbing.jpg',
             'kicker' => 'Quality hub · Water hygiene',
@@ -491,7 +491,7 @@ function wave1QualityHubs(): array
             'h1' => 'Legionella for landlords',
             'h1Accent' => 'assessed, not a fake annual test',
             'lede' => 'A written look at the water system you actually have — then sampling only if that picture says it would help. Quoted POA from Offerton SK2.',
-            'honest' => 'We do not publish a per-let fee, invent a legal “annual water test” for every terrace, or claim a named laboratory accreditation on this page. Not legal advice.',
+            'honest' => 'Not legal advice.',
             'coverTitle' => 'What landlords usually need written down',
             'cover' => [
                 'HSE expects dutyholders to consider Legionella risk. A combi-fed house with no stored tank is often lower risk than tanks, unused en-suites or a shared system — we still write that if you ask us to assess.',
@@ -530,7 +530,7 @@ function wave1QualityHubs(): array
             'h1' => 'Asbestos for landlords',
             'h1Accent' => 'surveyed for the duty you actually have',
             'lede' => 'Common parts and conversions are a different duty from a purely domestic terrace. We scope management versus refurbishment, then quote POA.',
-            'honest' => ' Licensed asbestos removal is by others. No invented landlord-pack price.',
+            'honest' => ' Licensed asbestos removal is by others. ',
             'coverTitle' => 'Duty to manage, not a kit in the post',
             'cover' => [
                 'The Control of Asbestos Regulations 2012 sit behind the duty to manage in non-domestic premises and in the common parts of many multi-occupied buildings. Describe the property; we will say what is proportionate.',

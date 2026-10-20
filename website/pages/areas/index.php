@@ -103,7 +103,7 @@ require SITE_ROOT . '/includes/header.php';
         $trust = [
             ['Local response', 'Stockport team covering your postcode'],
             ['Full catalogue', count($services) . ' services in every town hub (fire, pro, construction)'],
-            ['Fixed-price quotes', 'Clear scope before work starts'],
+            ['Written quotes', 'Clear scope before work starts'],
             ['Full documentation', 'Certificates, FRAs and handover packs where required'],
         ];
         foreach ($trust as [$t, $d]): ?>

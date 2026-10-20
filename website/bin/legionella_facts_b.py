@@ -46,7 +46,7 @@ FACTS_B = [
         "sites starting a sentinel temperature record",
         "We mark the sentinel taps, show how to take the reading, and leave a log the responsible person can keep",
         "Setup is not a promise that we will fill the log every month",
-        "If your scheme already names the sentinels, we use that list instead of inventing a new one",
+        "If your scheme already names the sentinels, we use that list",
         "which taps are the sentinels",
         "how the reading is taken",
         "what out-of-range means on this site",
@@ -68,7 +68,7 @@ FACTS_B = [
         "tank-fed or mains outlets",
         "showers and en-suites",
         "Is a void flush legally required every time?",
-        "Not as a fee we invented. Stagnant stored water and unused showers are the reason to scope one before occupation.",
+        "Stagnant stored water and unused showers are the reason to scope one before occupation.",
         "Should the assessment be updated as well?",
         "If the void was long or works happened, yes consider a review. The flush alone is the water movement.",
     ),
@@ -138,7 +138,7 @@ FACTS_B = [
         "Will the scale come back?",
         "Often, in hard-water areas. Descale is a control you repeat, not a permanent treatment.",
         "Do you use a brand of descaler we must buy?",
-        "No. We do not specify a retail product on this page. The quote describes the work.",
+        "No. The quote describes the work.",
     ),
     row(
         "dead-leg-flush-plan",
@@ -358,7 +358,7 @@ FACTS_B = [
         "how the set will be read together",
         "How many bottles are in a suite?",
         "The number we agree. A house and a hospital wing are not the same suite.",
-        "Do you choose a laboratory on this page?",
+        "",
         "The laboratory is named at quote stage. We do not print an accreditation claim here.",
     ),
     row(
@@ -376,7 +376,7 @@ FACTS_B = [
         "Is a pre-sample mandatory before a tank clean?",
         "No. Some cleans are condition-based. We sample beforehand only when the result would change the decision.",
         "Who takes it?",
-        "Whoever the quote names, to the method agreed with the laboratory. We do not invent the method on the webpage.",
+        "Whoever the quote names, to the method agreed with the laboratory. ",
     ),
     row(
         "post-clean-water-sample",
@@ -427,7 +427,7 @@ FACTS_B = [
         "Can any detection be ignored?",
         "No. Nor does every detection mean the same panic. We explain it against the system, the outlet and the guidance.",
         "Will you argue with the laboratory?",
-        "We explain the result. We do not rewrite their certificate or invent a different method.",
+        "We explain the result. ",
     ),
     row(
         "water-system-schematic-update",
@@ -546,7 +546,7 @@ FACTS_B = [
         "Can I make the tenant responsible for Legionella?",
         "You can ask them to flush outlets they use. The dutyholder duty does not disappear because a leaflet exists.",
         "Will you print the pack?",
-        "You get the wording to put in the file or the welcome note. We do not run a print shop on this page.",
+        "You get the wording to put in the file or the welcome note. ",
     ),
     row(
         "managing-agent-water-hygiene-pack",

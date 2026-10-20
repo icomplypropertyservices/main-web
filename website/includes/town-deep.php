@@ -5,7 +5,7 @@ declare(strict_types=1);
  * Town-specific depth for service x town pages, built only from published data:
  *  - data/town-geo.json (postcodes.io: postcode districts, wards, councils, constituencies, lat/lon)
  *  - data/barriers-places.json (ONS Census 2021 built-up areas / NRS) or data/la-census.json (whole council)
- * Every number is quoted with its source. No reviews, projects or invented stats.
+ * Every number is quoted with its source. 
  */
 require_once __DIR__ . '/town-depth.php';
 
