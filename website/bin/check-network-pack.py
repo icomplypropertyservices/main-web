@@ -98,7 +98,8 @@ def head_checks(where, html, canonical, fails, min_faq=5):
     for i in set(imgs) | set(re.findall(r'og:image" content="https://icomplypropertyservices\.co\.uk(/assets/[^"]+)"', html)):
         if not (SITE / i.lstrip("/")).is_file() and not (dist / i.lstrip("/")).is_file():
             fails.append(f"{where}: missing image {i}")
-    text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", re.sub(r"<script.*?</script>|<style.*?</style>", " ", html, flags=re.S)))
+    main = html.split("<main", 1)[-1].split("</main>", 1)[0]  # site chrome (nav prices such as the £561 pack) is out of scope
+    text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", re.sub(r"<script.*?</script>|<style.*?</style>", " ", main, flags=re.S)))
     meta = " ".join(re.findall(r'<(?:meta|img)[^>]+(?:content|alt)="([^"]*)"', html))
     for rx, label in ((BANNED, "banned"), (EXTRA, "claim/NAP")):
         m = rx.search(text + " " + meta)
@@ -198,7 +199,7 @@ def main():
             fails.append(f"hub {hub['url']}: not exported"); continue
         html = f.read_text(errors="ignore")
         head_checks(hub["url"], html, BASE + hub["url"], fails)
-        w = len(prose(html.split("<main", 1)[-1].split("<footer", 1)[0]).split())
+        w = len(prose("<body><main" + html.split("<main", 1)[-1].split("</main>", 1)[0] + "</main>").split())
         hubw[key] = w
         need = 1200 if key.startswith("service/") else 800
         if w < need:
