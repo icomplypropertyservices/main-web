@@ -15,7 +15,7 @@ function icomplyFireFamilyDepthData(): array
     return $data;
 }
 
-function icomplyFireFamilyDepthHtml(string $serviceSlug, string $serviceName, string $place, int $count = 11): string
+function icomplyFireFamilyDepthHtml(string $serviceSlug, string $serviceName, string $place, int $count = 12): string
 {
     $data = icomplyFireFamilyDepthData();
     $pool = array_values(array_filter((array)($data['pool'] ?? []), 'is_string'));
