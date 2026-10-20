@@ -74,6 +74,8 @@ jobs:
 
       - name: Thin x town internal links (CLOSE-Q8)
         run: node website/bin/check-town-interlinks.mjs dist
+      - name: No 'keyword guide' wording anywhere in the build
+        run: python3 website/bin/check-keyword-guide-wording.py dist
 
       - name: Security keyword x town words + uniqueness (SEO PR145, 15 intents x 20 towns)
         run: |
