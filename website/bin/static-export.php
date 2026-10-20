@@ -946,6 +946,24 @@ function icomplyPrettyUrlRedirects(): string
 /admin/*                 /404.html    404
 /templates/*             /404.html    404
 
+# Wave-1 old guides / packages -> live resources / packages (Marketing map 2026-10-19)
+# Do not deploy until Jack authorises. /pages/packages/* pair is also excluded
+# from the town-matrix edge function so its unknown-slug -> /pages/areas
+# fallback can no longer catch them.
+/guides                                           /pages/resources                                    301
+/guides/                                          /pages/resources                                    301
+/guides/eicr                                      /pages/resources/eicr-guide                         301
+/guides/landlord-certificate-checklist-england    /pages/resources/landlord-compliance-checklist      301
+/guides/eicr-for-landlords                        /pages/resources/eicr-guide                         301
+/guides/gas-safety-certificate-cp12-landlords     /pages/resources/gas-safety-certificate-landlords   301
+/guides/fire-risk-assessment-hmo-stockport-manchester /pages/resources/fire-risk-assessment-guide     301
+/guides/eicr-hmo-landlords                        /pages/resources/eicr-guide                         301
+/packages/landlord-essentials                     /pages/packages/landlord-pack                       301
+/packages/landlord-essentials-stockport           /pages/packages/landlord-pack                       301
+/packages/hmo-fire-package                        /pages/packages/fire-ready                          301
+/pages/packages/landlord-essentials               /pages/packages/landlord-pack                       301
+/pages/packages/hmo-fire-package                  /pages/packages/fire-ready                          301
+
 # Root PHP aliases that 301 in website/*.php
 /about                   /pages/about    301
 /about/                  /pages/about    301

@@ -160,6 +160,16 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
+        // Consent Mode v2: everything denied until the visitor accepts. Set
+        // before any Google tag so no tag on the page (including a host-level
+        // injected snippet) can store cookies or send identified hits first.
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
+        });
         window.__icomplyAnalytics = {
             ga: <?= json_encode($gaId) ?>,
             aw: <?= json_encode($awId) ?>,
@@ -167,6 +177,12 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
             load: function () {
                 if (window.__icomplyAnalyticsLoaded) return;
                 window.__icomplyAnalyticsLoaded = true;
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
                 if (this.gtm) {
                     var gtmS = document.createElement('script');
                     gtmS.async = true;
