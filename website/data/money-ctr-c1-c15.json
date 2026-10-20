@@ -1,10 +1,10 @@
 {
- "note": "P0-CTR-MONEY C1-C15 (SEO brief /workspace/icomply-ops/seo/MONEY-PAGE-CTR-BRIEFS-2026-10-19.md). Titles/metas are the brief's exact strings. Links are targets verified 200 + index,follow at build time. Same/Next-Day restored in titles that carried it on main (C2, C3, C12) per Jack 19 Oct / SEO-MANAGER-RULES §7, which overrides the brief strings.",
+ "note": "P0-CTR-MONEY C1-C15 (SEO brief /workspace/icomply-ops/seo/MONEY-PAGE-CTR-BRIEFS-2026-10-19.md). Titles/metas are the brief's exact strings. Links are targets verified 200 + index,follow at build time. Same/Next-Day restored in titles that carried it on main (C2, C3, C12) per Jack 19 Oct / SEO-MANAGER-RULES §7, which overrides the brief strings. 2026-10-20 (SEO scorecard PR147): Same/Next-Day restored in all 15 C-titles (main b3675d0 carries it on all 15); C10 keeps main's from £350 framing to match its body copy.",
  "pages": {
   "/pages/keywords/emergency-lighting-installation/rochdale": {
    "brief": "C1",
    "kind": "xtown",
-   "title": "Emergency Lighting Installation Rochdale | iComply",
+   "title": "Emergency Lighting Installation Rochdale | Same/Next-Day",
    "meta": "Emergency lighting installation in Rochdale for landlords and commercial sites. BS 5266 design and test. From Stockport. Call 07517 806082.",
    "h2": "Planning an emergency lighting installation in Rochdale",
    "paras": [
@@ -437,12 +437,13 @@
      "/pages/keywords/emergency-lighting-design/rawtenstall",
      "Emergency Lighting Design in Rawtenstall"
     ]
-   ]
+   ],
+   "sameNextDay": true
   },
   "/pages/keywords/eicr/waddington": {
    "brief": "C2",
    "kind": "xtown",
-   "title": "EICR Waddington from £160 | Next-Day | Call 07517 806082",
+   "title": "EICR Waddington from £160 | Same/Next-Day | 07517 806082",
    "meta": "EICR in Waddington from £160 for landlords and managers. Fixed written quote, certificates emailed. From Stockport. Call 07517 806082.",
    "h2": "Booking an EICR for a property in Waddington",
    "paras": [
@@ -909,7 +910,7 @@
   "/pages/keywords/eicr-testing/waddington": {
    "brief": "C3",
    "kind": "xtown",
-   "title": "EICR Testing Waddington from £160 | Next-Day | 07517 806082",
+   "title": "EICR Testing Waddington from £160 | Same/Next-Day",
    "meta": "EICR testing in Waddington from £160. Written quote before work, certificates emailed. From Stockport. Call 07517 806082.",
    "h2": "How EICR testing is carried out in Waddington",
    "paras": [
@@ -1372,7 +1373,7 @@
   "/pages/keywords/eicr-certificate/appley-bridge": {
    "brief": "C5",
    "kind": "xtown",
-   "title": "EICR Certificate Appley Bridge from £160 | iComply",
+   "title": "EICR Certificate Appley Bridge from £160 | Same/Next-Day",
    "meta": "EICR certificate in Appley Bridge from £160 for landlords and managing agents. Fixed written quote. Certificates emailed. Call 07517 806082.",
    "h2": "EICR certificates for landlords and agents in Appley Bridge",
    "paras": [
@@ -1829,12 +1830,13 @@
      "/pages/keywords/electrical-inspection-and-testing/st-helens",
      "Electrical Inspection and Testing in St Helens"
     ]
-   ]
+   ],
+   "sameNextDay": true
   },
   "/pages/keywords/emergency-lighting-design/burscough": {
    "brief": "C9",
    "kind": "xtown",
-   "title": "Emergency Lighting Design Burscough | iComply",
+   "title": "Emergency Lighting Design Burscough | Same/Next-Day",
    "meta": "Emergency lighting design in Burscough for landlords, agents and commercial sites. BS 5266-aware layouts. From Stockport. Call 07517 806082.",
    "h2": "What emergency lighting design involves for Burscough buildings",
    "paras": [
@@ -2243,13 +2245,14 @@
      "/pages/keywords/emergency-lighting-test/ashton-in-makerfield",
      "Emergency Lighting Test in Ashton in Makerfield"
     ]
-   ]
+   ],
+   "sameNextDay": true
   },
   "/pages/fire-risk-assessments/westhoughton": {
    "brief": "C10",
    "kind": "xtown",
-   "title": "Fire Risk Assessment Westhoughton | POA | iComply",
-   "meta": "Fire risk assessments in Westhoughton for landlords and commercial premises. Written report and action plan. POA. Call 07517 806082.",
+   "title": "Fire Risk Assessment Westhoughton from £350 | Same/Next-Day",
+   "meta": "Fire risk assessments in Westhoughton from £350 for a typical 6-bed HMO, other properties POA. Written report and action plan. Call 07517 806082.",
    "h2": "Fire risk assessments for Westhoughton premises",
    "paras": [
     "Westhoughton, between Bolton and Wigan, has terraced streets converted to flats and HMOs, shops along Market Street, small industrial units around Chequerbent and community buildings used in the evenings. The Regulatory Reform (Fire Safety) Order 2005 requires the responsible person for each of those non-domestic parts to have a suitable and sufficient fire risk assessment.",
@@ -2513,12 +2516,13 @@
      "/pages/keywords/fire-alarm-installation/little-lever",
      "Fire Alarm Installation in Little Lever"
     ]
-   ]
+   ],
+   "sameNextDay": true
   },
   "/pages/keywords/eicr/burscough": {
    "brief": "C12",
    "kind": "xtown",
-   "title": "EICR Burscough from £160 | Next-Day | Call 07517 806082",
+   "title": "EICR Burscough from £160 | Same/Next-Day | 07517 806082",
    "meta": "EICR in Burscough from £160 for landlords and commercial tenants. Fixed written quote, certificates emailed. Call 07517 806082.",
    "h2": "EICRs for rented homes and units in Burscough",
    "paras": [
@@ -2985,7 +2989,7 @@
   "/pages/keywords/emergency-lighting-annual-test/warrington": {
    "brief": "C13",
    "kind": "xtown",
-   "title": "Emergency Lighting Annual Test Warrington",
+   "title": "Emergency Lighting Annual Test Warrington | Same/Next-Day",
    "meta": "Emergency lighting annual test in Warrington for commercial and industrial sites. Certificates after testing. From Stockport. Call 07517 806082.",
    "h2": "Emergency lighting testing, inspection and maintenance in Warrington",
    "paras": [
@@ -3414,12 +3418,13 @@
      "/pages/keywords/emergency-lighting-installation/prescot",
      "Emergency Lighting Installation in Prescot"
     ]
-   ]
+   ],
+   "sameNextDay": true
   },
   "/pages/services/gas-systems": {
    "brief": "C4",
    "kind": "hub",
-   "title": "Gas Safety Certificate CP12 | Greater Manchester",
+   "title": "Gas Safety Certificate CP12 Manchester | Same/Next-Day",
    "meta": "Landlord CP12 gas safety certificates and boiler servicing across Greater Manchester. Carried out by Gas Safe registered engineers. POA. 07517 806082.",
    "faqs": [
     [
@@ -3456,12 +3461,13 @@
      "/pages/keywords/gas-leak-detection",
      "Gas Leak Detection"
     ]
-   ]
+   ],
+   "sameNextDay": true
   },
   "/pages/services/aov-air-handling": {
    "brief": "C6",
    "kind": "hub",
-   "title": "AOV & Smoke Vent Servicing | Manchester & NW",
+   "title": "AOV & Smoke Vent Servicing Manchester & NW | Same/Next-Day",
    "meta": "AOV and smoke ventilation servicing, repair and panel work for blocks across Greater Manchester and the North West. POA. Call 07517 806082.",
    "faqs": [
     [
@@ -3489,12 +3495,13 @@
      "/pages/services/fire-alarms",
      "Fire Alarms"
     ]
-   ]
+   ],
+   "sameNextDay": true
   },
   "/pages/keywords/gas-safety-certificate": {
    "brief": "C7",
    "kind": "hub",
-   "title": "Gas Safety Certificate | Greater Manchester",
+   "title": "Gas Safety Certificate Greater Manchester | Same/Next-Day",
    "meta": "Gas safety certificates for landlords across Greater Manchester. Carried out by Gas Safe registered engineers. POA. Call 07517 806082.",
    "faqs": [
     [
@@ -3526,12 +3533,13 @@
      "/pages/services/gas-systems",
      "Gas Safety Certificate (CP12) Stockport"
     ]
-   ]
+   ],
+   "sameNextDay": true
   },
   "/pages/keywords/gas-leak-detection": {
    "brief": "C8",
    "kind": "hub",
-   "title": "Gas Leak Detection | Greater Manchester | iComply",
+   "title": "Gas Leak Detection Greater Manchester | Same/Next-Day",
    "meta": "Gas leak detection and follow-up repair across Greater Manchester. Carried out by Gas Safe registered engineers. Smell gas? Call 0800 111 999 first.",
    "faqs": [
     [
@@ -3555,12 +3563,13 @@
      "/pages/keywords/cp12",
      "CP12 Gas Safety Certificate"
     ]
-   ]
+   ],
+   "sameNextDay": true
   },
   "/pages/services/fire-doors": {
    "brief": "C11",
    "kind": "hub",
-   "title": "Fire Door Surveys & Repairs | North West",
+   "title": "Fire Door Surveys & Repairs North West | Same/Next-Day",
    "meta": "Fire door surveys, closers, seals and repairs for blocks and commercial stairs across the North West. POA from Stockport. Call 07517 806082.",
    "faqs": [
     [
@@ -3587,12 +3596,13 @@
      "/pages/services/fire-risk-assessments",
      "Fire risk assessments (POA)"
     ]
-   ]
+   ],
+   "sameNextDay": true
   },
   "/pages/keywords/emergency-lighting-test": {
    "brief": "C14",
    "kind": "hub",
-   "title": "Emergency Lighting Test | North West | iComply",
+   "title": "Emergency Lighting Test North West | Same/Next-Day",
    "meta": "Emergency lighting testing and certification to BS 5266 across Greater Manchester and the North West. POA. Call 07517 806082.",
    "faqs": [
     [
@@ -3616,12 +3626,13 @@
      "/pages/keywords/emergency-lighting-installation/rochdale",
      "Emergency Lighting Installation in Rochdale"
     ]
-   ]
+   ],
+   "sameNextDay": true
   },
   "/pages/keywords/cp12": {
    "brief": "C15",
    "kind": "hub",
-   "title": "CP12 Gas Safety Certificate | Greater Manchester",
+   "title": "CP12 Gas Safety Certificate Manchester | Same/Next-Day",
    "meta": "CP12 landlord gas safety certificates across Greater Manchester and the North West. Carried out by Gas Safe registered engineers. POA. 07517 806082.",
    "faqs": [
     [
@@ -3645,7 +3656,8 @@
      "/pages/services/gas-systems",
      "Gas Safety Certificate (CP12) Stockport"
     ]
-   ]
+   ],
+   "sameNextDay": true
   }
  }
 }

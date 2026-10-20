@@ -110,7 +110,17 @@ for (const [p, page] of Object.entries(doc.pages || {})) {
   const twd = grab(html, /<meta\s+name="twitter:description"\s+content="([^"]*)"/i);
   if (twt !== null && twt !== page.title) fail(p, "twitter:title not page title");
   if (twd !== null && twd !== page.meta) fail(p, "twitter:description not page meta");
-  if (page.sameNextDay && !/Next-Day/.test(title || "")) fail(p, "Same/Next-Day missing from title (Jack 19 Oct)");
+  if (!/Same\/Next-Day/.test(title || "")) fail(p, "Same/Next-Day missing from title (Jack 19 Oct)");
+  // C10 rule (SEO scorecard 2026-10-20): a page whose own service has a list price shown in the body
+  // keeps "from £X" in title + meta, never POA alone (G9).
+  {
+    const own = /fire-risk-assessment/.test(p) ? "£350" : (/eicr/.test(p) ? "£160" : "");
+    const bodyText = html.replace(/<head[\s\S]*?<\/head>/i, "");
+    if (own && bodyText.includes(own)) {
+      if (!new RegExp(`from ${own}`, "i").test(title || "")) fail(p, `body shows ${own} but title lacks "from ${own}"`);
+      if (!new RegExp(`from ${own}`, "i").test(meta || "")) fail(p, `body shows ${own} but meta lacks "from ${own}"`);
+    }
+  }
   for (const [, label] of page.links || []) if (/£(?!160)/.test(label)) fail(p, `price in link label "${label}"`);
   if (!/^index,\s*follow/i.test(robots)) fail(p, `robots "${robots}"`);
   if (canonical !== `${SITE}${p}`) fail(p, `canonical "${canonical}"`);
