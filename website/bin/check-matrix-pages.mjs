@@ -1,3 +1,4 @@
+import imageFamiliesDoc from "../data/service-image-families.json" with { type: "json" };
 import { renderTownPage } from "../../netlify/edge-functions/town-matrix.js";
 import { scoreHtml } from "./score-pages.mjs";
 
@@ -182,7 +183,10 @@ for (const page of pages) {
   ok(page.html.includes('property="og:description"'), `og:description on ${page.path}`);
   ok(/property="og:image" content="https:\/\/icomplypropertyservices\.co\.uk\/assets\/images\/[^"]+"/.test(page.html), `absolute og:image on ${page.path}`);
   const imgs = new Set([...page.html.matchAll(/<img\b[^>]*\bsrc="([^"]+)"/gi)].map((m) => m[1]));
-  ok(imgs.size >= 3, `content images ${imgs.size} on ${page.path}`);
+  // SEO 20 Oct: building trades (service_photos) show only their own photo(s), so fewer than 3 is right there.
+  const ownOnly = /quality-bar-images[^>]*><img[^>]*\/assets\/images\/services\/([a-z0-9-]+)\.jpg/.exec(page.html);
+  const ownList = ownOnly && (imageFamiliesDoc.service_photos || {})[ownOnly[1]];
+  ok(imgs.size >= (Array.isArray(ownList) ? Math.min(3, ownList.length) : 3), `content images ${imgs.size} on ${page.path}`);
   ok((page.html.match(/<details\b/gi) || []).length >= 3, `faq questions on ${page.path}`);
   ok(page.html.includes('"@type":"FAQPage"') || page.html.includes('"@type": "FAQPage"'), `FAQPage on ${page.path}`);
   ok(!page.html.includes("approved subcontractors"), `no subcontractor wording on ${page.path}`);
