@@ -31,13 +31,13 @@ const fileHash = (rel) => {
   }
   return hashOfFile.get(rel);
 };
-const optToFile = new Map();
-for (const [k, v] of Object.entries(manifest)) for (const x of v?.variants || []) { const m = /\/opt\/([0-9a-f]+)-/.exec(x.webp || ""); if (m && !optToFile.has(m[1])) optToFile.set(m[1], k); }
+const optToFiles = new Map();
+for (const [k, v] of Object.entries(manifest)) for (const x of v?.variants || []) { const m = /\/opt\/([0-9a-f]+)-/.exec(x.webp || ""); if (m) { if (!optToFiles.has(m[1])) optToFiles.set(m[1], new Set()); optToFiles.get(m[1]).add(k); } }
 const imgFileHashes = (fig) => [...fig.matchAll(/<img\b[^>]*>/g)].map((t) => {
   const src = (/\ssrc="([^"]+)"/.exec(t[0]) || [])[1] || "";
   const o = /\/opt\/([0-9a-f]+)-/.exec(src);
-  const rel = o ? optToFile.get(o[1]) : (src.startsWith("/assets/") ? src : null);
-  return rel ? [rel, fileHash(rel)] : null;
+  const rels = o ? [...(optToFiles.get(o[1]) || [])] : (src.startsWith("/assets/") ? [src] : []);
+  return rels.length ? [rels[0], rels.map(fileHash)] : null;
 }).filter(Boolean);
 
 function figureRule(where, html) {
@@ -49,7 +49,8 @@ function figureRule(where, html) {
       // By service: only the hero service's own photos, by name and by file bytes.
       const okHash = new Set(own.map((b) => fileHash(`/assets/images/services/${b}.jpg`)));
       for (const b of bases.slice(1)) if (!own.includes(b)) bad(`${where}: '${b}' on a ${bases[0]} page (own photos only: ${own.join(", ")})`);
-      for (const [rel, h] of imgFileHashes(fig)) if (h && !okHash.has(h)) bad(`${where}: ${rel} is not a ${bases[0]} photo`);
+      const ownFiles = new Set(own.map((b) => `/assets/images/services/${b}.jpg`));
+      for (const [rel, hs] of imgFileHashes(fig)) if (!ownFiles.has(rel) && hs.every((h) => h && !okHash.has(h))) bad(`${where}: ${rel} is not a ${bases[0]} photo`);
       continue;
     }
     const want = famOf(bases[0]);
