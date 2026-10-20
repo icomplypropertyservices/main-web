@@ -469,6 +469,8 @@ export function renderTownPage(input) {
       names: MAINLAND,
       nation: place.country || "",
       extra: depthBankParagraphs(qualityCtx, 4),
+      // G9: list-price pages (EICR from £160) never carry a POA line.
+      priceFrom: ctrPriceFrom(ctrSlug) || ctrPriceFrom(input.keyword || "") || ctrPriceFrom(input.job || "") || (/from £160\b/.test(`${title} ${description} ${proseHtml}`) ? "£160" : ""),
     });
     // Seeded block order (authored copy, town facts, local notes) for town-to-town uniqueness.
     const blocks = [proseHtml, facts.html, depth ? depth.html : ""];
