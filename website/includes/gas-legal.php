@@ -183,7 +183,7 @@ function icomplyGasServiceHubCopy(): array
             'intro' => [
                 $legal,
                 'Book your landlord gas safety record, carried out by Gas Safe registered engineers, alongside electrical testing, fire alarms, emergency lighting, water hygiene and asbestos surveys. Every job gets a fixed written quote.',
-                'There is no Gas Safe logo, badge, or registration number on this site, because iComply does not hold a Gas Safe registration.',
+                'Gas work is carried out by Gas Safe registered engineers. Your engineer will show their Gas Safe ID card on arrival, and you can check it at gassaferegister.co.uk.',
             ],
             'pillars' => [
                 ['title' => 'What a CP12 is', 'text' => 'A landlord gas safety certificate (CP12) is the written record of a gas safety check. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.'],
