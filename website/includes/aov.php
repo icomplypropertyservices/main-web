@@ -99,13 +99,13 @@ function aovQuoteForm(string $heading, string $intro, string $serviceValue, stri
         return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
     };
     ?>
-    <section id="quote" class="bg-[#061828] text-white">
+    <section id="quote" class="bg-[#0B1F3A] text-white">
         <div class="max-w-3xl mx-auto px-6 py-16">
             <p class="text-xs uppercase tracking-[3px] text-[#ffb080] font-semibold text-center">Call <?= $h((string)PHONE) ?> or send the form</p>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-center mt-3"><?= $h($heading) ?></h2>
             <p class="mt-3 text-center text-white/80 max-w-xl mx-auto"><?= $h($intro) ?></p>
             <div class="mt-6 flex flex-wrap gap-3 justify-center">
-                <a href="<?= $h(aovPhoneHref()) ?>" class="px-6 py-3 rounded-2xl bg-white text-[#061828] font-semibold">Call <?= $h((string)PHONE) ?></a>
+                <a href="<?= $h(aovPhoneHref()) ?>" class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold">Call <?= $h((string)PHONE) ?></a>
                 <a href="<?= $h(aovWhatsappUrl($serviceValue . ' quote')) ?>" class="px-6 py-3 rounded-2xl bg-green-600 font-semibold" target="_blank" rel="noopener">WhatsApp</a>
             </div>
             <form <?= ICOMPLY_QUOTE_FORM_ATTRS ?> class="mt-8 bg-white text-zinc-900 rounded-3xl p-6 md:p-8 space-y-4"><?= icomplyQuoteFormHidden() ?>
