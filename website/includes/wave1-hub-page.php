@@ -23,6 +23,9 @@ if (!$hub) {
 }
 
 $pageTitle = $hub['pageTitle'];
+if (!empty($hub['pageTitleExact'])) {
+    $metaTitleExact = true; // Marketing copy verbatim (no brand suffix)
+}
 $metaDesc = $hub['metaDesc'];
 $metaKeywords = $hub['metaKeywords'];
 $ogImage = url($hub['ogImage']);

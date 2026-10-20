@@ -11,6 +11,9 @@ $seoTitle = trim((string)($metaRow['seo_title'] ?? ''));
 $seoDesc = trim((string)($metaRow['seo_desc'] ?? ''));
 if ($seoTitle !== '') {
     $pageTitle = $seoTitle;
+    if (!empty($metaRow['seo_title_exact'])) {
+        $metaTitleExact = true; // Marketing copy verbatim (no brand suffix)
+    }
 } elseif ($ownsMainland && $SERVICE_SLUG === 'fire-alarms') {
     $pageTitle = $SERVICE_NAME . ' | UK mainland fire protection | iComply';
 } else {
