@@ -172,7 +172,7 @@ if (!function_exists('fraLanePages')) {
                 'faqs' => [
                     [
                         'q' => 'Is £350 a from-price?',
-                        'a' => 'No. £350 is the list for a typical North West 6-bed HMO. A portfolio discount can reduce the unit price. Other buildings are not this list.',
+                        'a' => 'Yes. From £350 for a typical 6-bed HMO in the North West; other buildings are price on application once we know the scope.',
                     ],
                     [
                         'q' => 'Does the pack add £350 on top of £561?',
