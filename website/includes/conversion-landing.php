@@ -155,7 +155,7 @@ require SITE_ROOT . '/includes/header.php';
 
 <section class="bg-[#0B1F3A] border-y border-white/10">
     <div class="max-w-7xl mx-auto px-6 py-5 text-sm text-white">
-        Landlords and agents: services on this page. Trades: materials stay in the site menu under Shop.
+Trades: materials stay in the site menu under Shop.
         <?php if (!empty($landing['shop'])): ?>
             Supply and fit for alarms is linked below.
         <?php endif; ?>

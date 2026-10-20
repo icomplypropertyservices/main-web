@@ -302,7 +302,7 @@ function manufacturerLocalIntro(array $entry, string $area): string
         'Spares are matched to the range on site rather than a lookalike from another maker.',
         'Interfaces to doors, vents or barriers are checked before the job is signed off.',
         'Keys, access equipment and a person on site are agreed before the diary slot.',
-        'Install labour is not given a made-up figure on this page. The quote follows the survey.',
+        'The quote follows the survey.',
         'Battery, fuse and safety-device checks are written down even when the main kit looks healthy.',
     ];
     $closers = [
@@ -362,7 +362,7 @@ function manufacturerAreaMeta(array $entry, string $area): string
     $scope = manufacturerCoverageMode($entry) === 'nationwide'
         ? 'North West town list'
         : 'Greater Manchester';
-    $desc = $brand . ' in ' . $area . ' (' . $p['districts'] . '). ' . $line . '. Install and service. ' . $scope . '. Written quote, no invented install fee.';
+    $desc = $brand . ' in ' . $area . ' (' . $p['districts'] . '). ' . $line . '. Install and service. ' . $scope . '. ';
     if (strlen($desc) > 165) {
         $desc = $brand . ' in ' . $area . '. ' . $line . '. ' . $scope . '. Written quote after survey.';
     }

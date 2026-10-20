@@ -54,7 +54,7 @@ $landing = [
         ],
         [
             'title' => 'Remedial timelines',
-            'text' => 'Follow the timescales in the report and in current GOV.UK guidance. This page does not invent day-counts. Observation codes (C1, C2, C3 and FI) are technical; if the overall result is unsatisfactory, treat remedials as a priority and follow the written report.',
+            'text' => 'Follow the timescales in the report and in current GOV.UK guidance. Observation codes (C1, C2, C3 and FI) are technical; if the overall result is unsatisfactory, treat remedials as a priority and follow the written report.',
         ],
     ],
     'stepsTitle' => 'From enquiry to the report',

@@ -157,7 +157,7 @@ require SITE_ROOT . '/includes/header.php';
     <!-- CTA -->
     <div class="mt-14 bg-[#0B1F3A] text-white p-8 md:p-10 rounded-3xl text-center">
         <h2 class="text-2xl md:text-3xl font-semibold mb-3">Need a landlord compliance package?</h2>
-        <p class="text-white/85 max-w-md mx-auto mb-6">Tell us how many properties and which certificates are due — we quote fixed-price visits across Greater Manchester and the North West.</p>
+        <p class="text-white/85 max-w-md mx-auto mb-6">Tell us how many properties and which certificates are due — we quote quoted visits across Greater Manchester and the North West.</p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
             <a href="#quote" class="bg-[#ff6b00] hover:bg-orange-600 px-8 py-3.5 rounded-2xl font-semibold">Request free quote</a>
             <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Quote%20for%20landlord%20compliance"
@@ -175,7 +175,7 @@ require SITE_ROOT . '/includes/header.php';
     <p class="mt-8 text-sm text-zinc-500">
         <a href="<?= url('/pages/resources/index.php') ?>" class="text-[#ff6b00] hover:underline">← Back to resources</a>
         ·
-        <a href="<?= url('/pages/keywords/index.php') ?>" class="text-[#ff6b00] hover:underline">Keyword guides</a>
+        <a href="<?= url('/pages/keywords/index.php') ?>" class="text-[#ff6b00] hover:underline">Service guides</a>
         ·
         <a href="<?= url('/contact.php') ?>" class="text-[#ff6b00] hover:underline">Contact</a>
     </p>

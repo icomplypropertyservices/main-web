@@ -24,7 +24,7 @@ if ($seoDesc !== '') {
 } elseif ($ownsMainland && $SERVICE_SLUG === 'fire-alarms') {
     $metaDesc = 'Fire alarm design, installation, servicing and certification across UK mainland — England, Wales and mainland Scotland. Scheduled from Stockport. Written quote after scope.';
 } elseif ($poaService) {
-    $metaDesc = $SERVICE_NAME . ' across the North West, priced on application after scope. Local team from Stockport. No invented fees.';
+    $metaDesc = $SERVICE_NAME . ' across the North West, priced on application after scope. Local team from Stockport. ';
 } else {
     $metaDesc = $SERVICE_NAME . ' across Greater Manchester and the North West. Written quotes after scope. Local team from Stockport.';
 }
@@ -54,7 +54,7 @@ $serviceFaqs = [
     'gas-systems' => [
         ['Who carries out the gas check?', 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.'],
         ['Is iComply Gas Safe registered?', 'Gas work is carried out by Gas Safe registered engineers. Your engineer will show their Gas Safe ID card on arrival, and you can check it at gassaferegister.co.uk.'],
-        ['What does the quote need?', 'Postcode and appliance count. The price is on application. There is no per-appliance fee list on this page.'],
+        ['What does the quote need?', 'Postcode and appliance count. The price is on application.'],
     ],
     'heating' => [
         ['Do you install boilers?', 'Boiler installation, servicing and landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.'],
@@ -79,26 +79,26 @@ $serviceFaqs = [
     'legionella-risk-assessment' => [
         ['What is a Legionella risk assessment?', 'A written look at how the water system could allow Legionella to grow, and what controls are proportionate. UK dutyholders use HSE L8 and HSG274 as the usual reference.'],
         ['Do you always take water samples?', 'No. Assessment comes first. Sampling is only recommended when the system and occupancy justify it, and it is quoted POA.'],
-        ['What does it cost?', 'Price on application. We do not publish a made-up fee. Tell us property type, stored water and access.'],
+        ['What does it cost?', 'Price on application. Tell us property type, stored water and access.'],
     ],
     'asbestos-survey' => [
         ['What survey do I need?', 'A management survey is for normal occupation. A refurbishment or demolition survey is for intrusive works. We scope the type to the building and the planned job.'],
         ['Do you remove asbestos?', 'Licensed removal is not this service. If the survey says removal is required, that work is appointed separately.'],
-        ['What does it cost?', 'Price on application. Size, access and how intrusive the survey must be all change the quote. No invented starting price.'],
+        ['What does it cost?', 'Price on application. Size, access and how intrusive the survey must be all change the quote. '],
     ],
     'access-control' => [
         ['Why are car park barriers the hardest access job?', 'A rising arm needs the boom, induction loops, safety devices and the credential that opens the lane. A door maglock does not cover that work. Manchester and Stockport have their own barrier pages.'],
         ['Do you install maglocks as well as barriers?', 'Yes. Maglocks, strikes and fire release are scoped for the pedestrian door. The barrier lane is quoted separately, POA after survey.'],
-        ['How do you price access control?', 'Price on application after we confirm doors, any barrier lane, brand and access. No catalogue price on this page.'],
+        ['How do you price access control?', 'Price on application after we confirm doors, any barrier lane, brand and access.'],
     ],
     'door-entry' => [
         ['Can door entry open a car park barrier?', 'Sometimes, when the panel has a clean release into the barrier controller. Barriers stay the hardest job and are surveyed on their own, including for Manchester and Stockport.'],
         ['Do you replace flat handsets and panels?', 'Yes. We survey the panel, cabling and the lock it releases, then quote POA. Maglocks on that door are included in the survey when they are part of the release.'],
-        ['How do you price door entry?', 'Price on application after panel condition, handset count and cabling are known. No catalogue price on this page.'],
+        ['How do you price door entry?', 'Price on application after panel condition, handset count and cabling are known.'],
     ],
     'default' => [
         ['What areas do you cover for ' . $SERVICE_NAME . '?', 'We cover the Greater Manchester towns on the published areas list from our Stockport base.'],
-        ['How do you price the work?', $poaService ? 'Price on application after we confirm scope, standards and access. No catalogue prices on this page.' : 'After we confirm scope, standards and access we issue a written quote. We do not invent a fee here.'],
+        ['How do you price the work?', $poaService ? 'Price on application after we confirm scope, standards and access.' : 'After we confirm scope, standards and access we issue a written quote. '],
         ['Can you maintain systems already on site?', 'Where the service is about existing systems, we inspect, service and document. For survey-led work we record what is there and what should happen next.'],
     ],
 ];
@@ -109,6 +109,13 @@ $faqs = $serviceFaqs[$serviceSlug] ?? $serviceFaqs['default'];
 $svcCopy = function_exists('icomplyServiceHubCopy') ? icomplyServiceHubCopy($serviceSlug) : null;
 if (!empty($svcCopy['faq']) && is_array($svcCopy['faq'])) {
     $faqs = $svcCopy['faq'];
+}
+require_once SITE_ROOT . '/includes/money-hub-depth.php';
+$depth = icomplyMoneyHubDepthService($serviceSlug);
+if ($depth['sections'] || $depth['faq']) {
+    $svcCopy = is_array($svcCopy) ? $svcCopy : [];
+    $svcCopy['sections'] = array_merge((array)($svcCopy['sections'] ?? []), $depth['sections']);
+    $faqs = array_merge($faqs, $depth['faq']);
 }
 $hubLinks = function_exists('icomplyServiceHubLinks') ? icomplyServiceHubLinks($serviceSlug) : [];
 if ($svcBoost) {
@@ -370,7 +377,7 @@ $schema = [
                 : 'Stockport-based engineers across Greater Manchester & the North West'],
             ['Standards-led', $standards],
             ['Full documentation', 'Records for landlords, insurers, agents and dutyholders'],
-            [$poaService ? 'POA quotes' : 'Written quotes', $poaService ? 'No invented prices — scoped after we see the job' : 'Clear scope before work starts'],
+            [$poaService ? 'POA quotes' : 'Written quotes', $poaService ? 'Scoped after we see the job' : 'Clear scope before work starts'],
         ];
         foreach ($trust as [$t, $d]): ?>
             <div class="flex gap-3 items-start">
@@ -428,14 +435,14 @@ $schema = [
         </div>
         <div class="lg:col-span-2 space-y-4">
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
-                <img src="<?= htmlspecialchars(url($hubInline1 ?: ('/assets/images/keywords/' . $img2 . '.jpg')), ENT_QUOTES, 'UTF-8') ?>"
+                <img src="<?= htmlspecialchars(url($hubInline1 ?: icomplyKeywordImagePath((string)$img2, (string)$serviceSlug)), ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> equipment"
                      class="w-full h-44 object-cover"
                      loading="lazy"
                      onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
             </div>
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
-                <img src="<?= htmlspecialchars(url($hubInline2 ?: ('/assets/images/keywords/' . $img3 . '.jpg')), ENT_QUOTES, 'UTF-8') ?>"
+                <img src="<?= htmlspecialchars(url($hubInline2 ?: icomplyKeywordImagePath((string)$img3, (string)$serviceSlug)), ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation work"
                      class="w-full h-44 object-cover"
                      loading="lazy"
@@ -513,7 +520,7 @@ if (function_exists('accessControlLaneHubSection')) {
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Topic guides</div>
                 <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">
-                    <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> keywords &amp; local pages
+                    <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> guides and local pages
                 </h2>
                 <p class="mt-2 text-zinc-600 max-w-2xl">
                     <?php if ($ownsMainland): ?>
@@ -524,7 +531,7 @@ if (function_exists('accessControlLaneHubSection')) {
                     <?php endif; ?>
                 </p>
             </div>
-            <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All keyword guides →</a>
+            <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All service guides →</a>
         </div>
         <?php
         $svcKeywords = getKeywordsForService($serviceSlug);
@@ -581,16 +588,16 @@ if (function_exists('accessControlLaneHubSection')) {
         </div>
         <?php if ($cardLimit > 0 && count($svcKeywords) > $cardLimit): ?>
             <p class="mt-6 text-sm text-zinc-600">
-                Showing <?= (int)$cardLimit ?> of <?= count($svcKeywords) ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> keyword guides —
-                <a href="<?= url('/pages/keywords/index.php') ?>" class="font-semibold text-[#ff6b00]">view full keyword index</a>.
+                Showing <?= (int)$cardLimit ?> of <?= count($svcKeywords) ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> service guides —
+                <a href="<?= url('/pages/keywords/index.php') ?>" class="font-semibold text-[#ff6b00]">view all guides</a>.
             </p>
         <?php else: ?>
             <p class="mt-6 text-sm text-zinc-600">
-                All <?= count($svcKeywords) ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> keyword guides, each with every town we cover.
+                All <?= count($svcKeywords) ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> service guides, each with every town we cover.
             </p>
         <?php endif; ?>
         <?php else: ?>
-            <p class="text-zinc-600">Keyword guides for this service are being expanded. See the <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/keywords/index.php') ?>">full guides index</a>.</p>
+            <p class="text-zinc-600">More guides for this service are on the way. See the <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/keywords/index.php') ?>">full guides index</a>.</p>
         <?php endif; ?>
     </div>
 </section>
@@ -739,7 +746,7 @@ $gmBoroughs = function_exists('icomplyGreaterManchesterBoroughs') ? icomplyGreat
         <div>
             <h2 class="text-3xl font-semibold tracking-tight">Need <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?>?</h2>
             <p class="mt-3 text-white/75"><?= $poaService
-                ? 'Price on application after we confirm the property and access. Call, WhatsApp or send the form — no invented fee list.'
+                ? 'Price on application after we confirm the property and access. Call, WhatsApp or send the form list.'
                 : 'Written quotes after scope. Visit dates follow the diary. Full certification on every job.' ?></p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Quote for ' . $serviceName) ?>"
@@ -752,7 +759,7 @@ $gmBoroughs = function_exists('icomplyGreaterManchesterBoroughs') ? icomplyGreat
         <ul class="space-y-3 text-sm text-white/90">
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Based in Stockport — <?= $ownsMainland ? ('UK mainland ' . htmlspecialchars($mainlandJobPlural, ENT_QUOTES, 'UTF-8')) : 'North West coverage' ?></li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> <?= $poaService ? 'Written assessment or survey notes for your file' : 'Installation, servicing and certification' ?></li>
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> <?= $poaService ? 'POA only — no invented prices, certs or reviews' : 'Multi-service packages for landlords & FM teams' ?></li>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> <?= $poaService ? 'POA only, certs or reviews' : 'Multi-service packages for landlords & FM teams' ?></li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Phone, WhatsApp or form — send the postcode to start a quote</li>
         </ul>
     </div>

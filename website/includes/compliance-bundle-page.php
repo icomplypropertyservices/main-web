@@ -72,7 +72,7 @@ require SITE_ROOT . '/includes/header.php';
             <div class="rounded-3xl border border-white/15 bg-white/5 p-8">
                 <div class="text-xs uppercase tracking-[3px] text-white/60">Published price</div>
                 <div class="mt-2 text-6xl font-semibold tracking-tight" data-compliance-bundle-price><?= htmlspecialchars($bundle['price_label'], ENT_QUOTES, 'UTF-8') ?></div>
-                <p class="mt-3 text-sm text-white/70">For the pack on this page. VAT is itemised on the written confirmation. Properties outside the scope are quoted before anyone attends.</p>
+                <p class="mt-3 text-sm text-white/70">VAT is itemised on the written confirmation. Properties outside the scope are quoted before anyone attends.</p>
                 <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="inline-block mt-6 font-semibold text-[#ff6b00]">Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
             </div>
         </div>

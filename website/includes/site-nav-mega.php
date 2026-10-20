@@ -47,7 +47,7 @@ function icomplyMegaHeaderHtml(): string
     foreach ($n['qualityHubs'] as $hub) {
         $hubCols .= icomplyNavLink($hub['href'], $hub['label']);
     }
-    $hubCols .= icomplyNavLink(url('/pages/keywords/index.php'), 'All keyword guides →', 'mega-more');
+    $hubCols .= icomplyNavLink(url('/pages/keywords/index.php'), 'All service guides →', 'mega-more');
     $hubCols .= icomplyNavLink(url('/pages/site-map.php'), 'HTML site map →', 'mega-more');
     $hubCols .= '</div>';
 
@@ -191,7 +191,7 @@ function icomplyMobileDrawerHtml(array $n): string
     foreach ($n['qualityHubs'] as $hub) {
         $svc .= icomplyNavLink($hub['href'], $hub['label']);
     }
-    $svc .= icomplyNavLink(url('/pages/keywords/index.php'), 'All keyword guides');
+    $svc .= icomplyNavLink(url('/pages/keywords/index.php'), 'All service guides');
     $svc .= '</div></details>';
 
     $areas = '<a class="drawer-all" href="' . icomplyNavH(url('/pages/areas/index.php')) . '">All ' . count($n['areas']) . ' areas →</a>';

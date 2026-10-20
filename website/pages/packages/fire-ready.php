@@ -20,7 +20,7 @@ require SITE_ROOT . '/includes/header.php';
 </section>
 <section class="max-w-7xl mx-auto px-6 py-16">
   <h2 class="text-3xl font-semibold">What is included (indicative)</h2>
-  <p class="mt-2 text-zinc-600">Final scope is confirmed in your quote. No invented catalogue prices — all work is POA until scoped.</p>
+  <p class="mt-2 text-zinc-600">Final scope is confirmed in your quote. </p>
   <ul class="mt-6 space-y-2 text-zinc-800">
     <li>✓ Fire alarm service / inspection to BS 5839 (as fitted)</li>
     <li>✓ Emergency lighting testing to BS 5266 (as fitted)</li>

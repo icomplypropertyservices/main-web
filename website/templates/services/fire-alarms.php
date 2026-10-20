@@ -39,7 +39,7 @@ require SITE_ROOT . '/includes/header.php';
       "areaServed": {"@type": "City", "name": "{{AREA}}"},
       "offers": {
         "@type": "Offer",
-        "name": "Free fixed-price quote — {{SERVICE_NAME}} in {{AREA}}",
+        "name": "Free written quote — {{SERVICE_NAME}} in {{AREA}}",
         "availability": "https://schema.org/InStock",
         "priceCurrency": "GBP",
         "url": "<?= url('/contact.php') ?>"
@@ -74,7 +74,7 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 1 -->
     <p class="mt-8 text-lg text-black max-w-3xl leading-relaxed">
-        iComply Property Services designs, installs, commissions and maintains <strong>BS 5839 fire alarm systems</strong> across <strong>{{AREA}}</strong> and the wider North West. From addressable multi-loop panels in commercial buildings to conventional and wireless systems for landlords and smaller premises, our engineers deliver fixed-price quotes, appointments booked when the diary allows, and full certification on every job.
+        iComply Property Services designs, installs, commissions and maintains <strong>BS 5839 fire alarm systems</strong> across <strong>{{AREA}}</strong> and the wider North West. From addressable multi-loop panels in commercial buildings to conventional and wireless systems for landlords and smaller premises, our engineers deliver written quotes, appointments booked when the diary allows, and full certification on every job.
     </p>
 
     <!-- PARAGRAPH 2 -->

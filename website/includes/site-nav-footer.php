@@ -74,7 +74,7 @@ function icomplyFooterHtml(): string
         }
         $matrixDrop .= icomplyNavLink(url('/pages/keywords/' . rawurlencode((string)$slug) . '.php'), (string)$name);
     }
-    $matrixDrop .= icomplyNavLink(url('/pages/keywords/index.php'), 'Full keyword index →');
+    $matrixDrop .= icomplyNavLink(url('/pages/keywords/index.php'), 'All service guides →');
     $matrixDrop .= '</div></details>';
     $matrixDrop .= '<details class="foot-sub"><summary>Open an area page (then pick a keyword)</summary><div class="foot-links">';
     foreach ($n['popularAreas'] as $area) {

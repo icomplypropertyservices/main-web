@@ -64,7 +64,7 @@ SURVEY = [
         "survey",
         "An asbestos survey records where asbestos-containing materials may be, so a dutyholder can manage them. iComply scopes management and refurbishment-style surveys for North West property. Price on application.",
         "Survey type follows whether the building is in normal occupation or about to be opened up. Sampling, where the scope needs it, is agreed before the visit.",
-        "Asbestos survey for management or refurbishment across Greater Manchester. POA. No invented licences or prices.",
+        "Asbestos survey for management or refurbishment across Greater Manchester. POA. ",
         ["Management versus refurbishment scoped honestly", "Sampling only where the visit needs it", "Register-style notes for the dutyholder file"],
         [
             ["Do you remove asbestos?", "Not on this service. If removal is required we say so and you appoint a suitable licensed contractor."],
@@ -160,7 +160,7 @@ SURVEY = [
         "This is not a first survey of an unknown building. We need the current register, the last inspection date and access to the same locations. Deterioration is noted; new intrusive opening is a different survey.",
         "Asbestos reinspection of a known register across the North West. POA. Not a first survey.",
         ["Uses the register you already hold", "Condition change recorded against known items", "Does not pretend to be a refurbishment survey"],
-        [["How often is a reinspection?", "The interval follows risk and your management plan. We do not invent a calendar date for marketing."]],
+        [["How often is a reinspection?", "The interval follows risk and your management plan. "]],
         "asbestos-inspection",
     ),
     job(

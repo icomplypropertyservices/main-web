@@ -572,7 +572,7 @@ foreach (['landlord-compliance', 'facilities-management', 'building-maintenance'
 
 $openers = [
     'Looking for expert {kw} across Greater Manchester and the North West?',
-    'Need reliable {kw} from a Stockport-based team with fixed-price quotes?',
+    'Need reliable {kw} from a Stockport-based team with written quotes?',
     'Searching for professional {kw} with clear scope and documentation?',
     'Planning {kw} for a home, rental portfolio or commercial site?',
     'Want {kw} delivered to current UK standards with local engineers?',
@@ -605,7 +605,7 @@ function buildUniqueContent(string $name, string $serviceSlug, array $copy, int 
 
     $openers = [
         "Looking for expert {$name} across Greater Manchester and the North West?",
-        "Need reliable {$name} from a Stockport-based team with fixed-price quotes?",
+        "Need reliable {$name} from a Stockport-based team with written quotes?",
         "Searching for professional {$name} with clear scope and documentation?",
         "Planning {$name} for a home, rental portfolio or commercial site?",
         "Want {$name} delivered to current UK standards with local engineers?",
@@ -627,10 +627,10 @@ function buildUniqueContent(string $name, string $serviceSlug, array $copy, int 
     $c = $closers[($salt + 2) % count($closers)];
     $intro = "{$o} {$m}";
     $body = "{$m} {$c} Typical jobs include survey, agreed works, quality checks and paperwork suitable for landlords, insurers and facilities managers. Local engineers attend from Stockport with North West coverage including Manchester, Bolton, Liverpool, Preston, Chester and surrounding towns.";
-    $meta = "{$name} across the North West. {$svc} from iComply Property Services in Stockport. Fixed-price quotes, local engineers, full documentation.";
+    $meta = "{$name} across the North West. {$svc} from iComply Property Services in Stockport. Written quotes, local engineers, full documentation.";
     $seo = strtolower("{$name}, {$name} North West, {$name} Manchester, {$name} Stockport, {$svc}, property services Greater Manchester");
     $focus = [
-        "Survey and fixed-price quote for {$name}",
+        "Survey and written quote for {$name}",
         "Local North West engineers from Stockport (SK2)",
         "Documentation aligned to {$std}",
         "Suitable for {$who}",

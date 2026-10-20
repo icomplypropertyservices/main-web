@@ -1,7 +1,7 @@
 <?php
 /**
  * Honest hub copy and internal links for /pages/services/{slug}.
- * No invented prices, reviews or accreditations.
+
  */
 declare(strict_types=1);
 
@@ -113,7 +113,7 @@ function icomplyServiceHubCopy(string $slug): ?array
             ],
             'intro' => [
                 'iComply tests and upgrades emergency lighting for shared houses, blocks and workplaces across the North West, from the Stockport SK2 yard.',
-                'A two-bed single let with no system is a different conversation from a protected stair. We will not invent a legal monthly visit for a house that has no emergency lighting, and we will not skip fittings when the escape is blind.',
+                'A two-bed single let with no system is a different conversation from a protected stair. ',
                 'We survey, test, log and install, with same-day and next-day slots often available and a fixed written quote before any work starts.',
             ],
             'cta_line' => 'Existing fittings or a new system, plus the building type.',

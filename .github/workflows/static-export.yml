@@ -91,3 +91,12 @@ jobs:
 
       - name: W1a nationwide job hubs (words, self-canonical, uniqueness)
         run: php website/bin/check-nationwide-p0-jobs.php && python3 website/bin/check-w1a-hub-uniqueness.py dist
+
+      - name: Site-wide banned phrases + barrier census copy
+        run: python3 website/bin/check-barriers-copy.py dist
+
+      - name: Every img and og:image on exported pages exists
+        run: python3 website/bin/check-images-exist.py dist
+
+      - name: Fire-family service x town depth (>=800 words, sample similarity <=0.70)
+        run: python3 website/bin/check-fire-family-depth.py dist

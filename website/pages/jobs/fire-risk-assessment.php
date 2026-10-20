@@ -69,7 +69,7 @@ $landing = [
         ],
         [
             'title' => 'Assess and file the actions',
-            'text' => 'You receive the assessment and a findings trail for the property file. Review when layout, occupation or significant works change, and follow the assessor’s recommendation — not a single invented interval.',
+            'text' => 'You receive the assessment and a findings trail for the property file. ',
         ],
     ],
     'shop' => [
@@ -93,7 +93,7 @@ $landing = [
         ],
         [
             'q' => 'How often should an FRA be reviewed?',
-            'a' => 'Review when something material changes — layout, occupation, significant works, or after a fire or near-miss — and at intervals the assessor recommends for that building. This page does not invent an “every X years” rule.',
+            'a' => 'Review when something material changes — layout, occupation, significant works, or after a fire or near-miss — and at intervals the assessor recommends for that building. ',
         ],
         [
             'q' => 'Do you cover commercial buildings as well as HMOs?',

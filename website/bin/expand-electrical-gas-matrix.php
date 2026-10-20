@@ -62,7 +62,7 @@ function icomplyElectricalGasNewKeywords(): array
             'Full or staged domestic rewire after survey',
             'Consumer unit and circuit protection brought up to current practice',
             'Electrical installation certificate on completion',
-            'POA only — no invented rewire prices',
+            'POA only',
         ],
         [
             ['What is a domestic rewire?', 'It is the planned replacement of fixed wiring and usually the consumer unit in a home or small let, finished with BS 7671 certification.'],
@@ -79,7 +79,7 @@ function icomplyElectricalGasNewKeywords(): array
         $e,
         'consumer-unit-upgrade',
         'A consumer unit (the modern fuse board) is the heart of a domestic or small commercial electrical installation. iComply specifies, upgrades and certificates consumer units across the North West from our Stockport base.',
-        'We replace outdated fuse boards with dual-RCD or RCBO consumer units, add surge protection where the risk justifies it, and label circuits clearly for the next inspection. Work is notifiable where required. A consumer unit job is quoted POA after we see the existing board, tails and earthing arrangement — we do not publish invented pound prices.',
+        'We replace outdated fuse boards with dual-RCD or RCBO consumer units, add surge protection where the risk justifies it, and label circuits clearly for the next inspection. Work is notifiable where required. A consumer unit job is quoted POA after we see the existing board, tails and earthing arrangement.',
         'Consumer unit supply, upgrade and certification in Stockport and the North West. POA after we see the existing board.',
         [
             'RCBO or dual-RCD board specifications after survey',
@@ -124,17 +124,17 @@ function icomplyElectricalGasNewKeywords(): array
         'Price of Rewire',
         $e,
         'rewire',
-        'The price of a rewire is always price on application (POA). Room count, access, making-good, consumer unit type and whether the job is a full or partial rewire all change the figure — we will not invent a pound price on this page.',
+        'The price of a rewire is always price on application (POA). ',
         'Searchers looking for “price of rewire” usually want a honest range conversation, not a fake online number. We survey from Stockport, confirm isolation and finishes, then issue a written POA quote for the agreed scope. Domestic rewires, landlord voids and commercial partial rewires are priced separately because the labour and disruption differ. Ask for a site visit across Greater Manchester and the North West.',
-        'Price of rewire in the North West is POA after survey. iComply will not publish invented £ figures for full or partial rewires.',
+        'Price of rewire in the North West is POA after survey. ',
         [
-            'Always POA — never an invented pound price',
+            'Always price on application',
             'Scope agreed before any rewire starts',
             'Full, partial and landlord void options',
             'Stockport engineers covering 150+ North West towns',
         ],
         [
-            ['Why will you not show a rewire price here?', 'Because a three-bed terrace, a flat with limited access and a commercial unit are not the same job. Publishing a made-up £ figure would be misleading.'],
+            ['Why is a rewire price not shown?', 'Because a three-bed terrace, a flat with limited access and a commercial unit are not the same job. '],
             ['What do you need for a POA rewire quote?', 'Address, property type, photos of the consumer unit if possible, and whether you want making-good included.'],
             ['Is a partial rewire cheaper?', 'Often, if sound circuits can stay. That still needs testing first — the quote remains POA.'],
         ],
@@ -147,9 +147,9 @@ function icomplyElectricalGasNewKeywords(): array
         'Rewire Cost',
         $e,
         'price-of-rewire',
-        'Rewire cost for North West homes and lets is POA after survey. iComply does not list invented pound prices for full-house or partial rewires.',
+        'Rewire cost for North West homes and lets is POA after survey. ',
         'Cost depends on storeys, circuit count, chasing versus surface trunking, consumer unit location and how much plaster or decoration you want us to reinstate. We explain those variables on site from our Stockport base, then write a fixed-scope POA quote. Related searches such as price of rewire and domestic rewire cost are answered the same way: a fixed written quote for your property.',
-        'Rewire cost across Greater Manchester & the North West is POA after survey. No invented £ prices from iComply.',
+        'Rewire cost across Greater Manchester & the North West is POA after survey. ',
         [
             'POA after survey only',
             'Clear scope: full vs partial vs board-only',
@@ -169,14 +169,14 @@ function icomplyElectricalGasNewKeywords(): array
         'Domestic Rewire Cost',
         $e,
         'domestic-rewire',
-        'Domestic rewire cost is POA. Bedroom count alone is not enough to invent a pound price — access, board position and finishes matter more.',
+        'Domestic rewire cost is POA. ',
         'Landlords and owner-occupiers asking for domestic rewire cost usually want to budget a void or a renovation. We survey from Stockport, list circuits to renew, and return a written POA figure for the agreed making-good. We will not publish “from £X” rewire numbers on this site.',
-        'Domestic rewire cost in Stockport and the North West is POA after survey. iComply does not invent £ prices.',
+        'Domestic rewire cost in Stockport and the North West is POA after survey. ',
         [
             'POA written quote after inspection',
             'Domestic houses, flats and small lets',
             'Optional making-good scoped in or out',
-            'No invented pound prices',
+            'Price on application',
         ],
         [
             ['Why do websites show a rewire from £X?', 'Those figures are rarely based on your cables or board. We treat domestic rewire cost as POA so the quote matches the house.'],
@@ -191,9 +191,9 @@ function icomplyElectricalGasNewKeywords(): array
         'Consumer Unit Cost',
         $e,
         'consumer-unit',
-        'Consumer unit cost is POA after we see the existing board, tails and earthing. iComply will not invent a pound price for an RCBO or dual-RCD upgrade.',
+        'Consumer unit cost is POA after we see the existing board, tails and earthing. ',
         'A simple like-for-like swap in an accessible cupboard is a different job from a metal-clad board, SPD, or a meter-operator tail change. We quote from Stockport for Greater Manchester and the North West once that is clear. Related fuse board and consumer unit upgrade pages explain the technical options; this page is only about honest POA pricing.',
-        'Consumer unit cost in the North West is POA after inspection. No invented £ board prices.',
+        'Consumer unit cost in the North West is POA after inspection. ',
         [
             'POA after we see the existing board',
             'RCBO, dual-RCD and SPD options scoped on quote',
@@ -213,18 +213,18 @@ function icomplyElectricalGasNewKeywords(): array
         'EICR Price',
         $e,
         'eicr-cost',
-        'EICR price for a flat, house, HMO or commercial unit is POA. Circuit count, access and number of boards decide the inspection time — we do not invent a pound price here.',
+        'EICR price for a flat, house, HMO or commercial unit is POA. ',
         'Landlords searching “EICR price” want a clear, written figure before we attend. We ask for bedrooms or floor area, then confirm POA once we know boards and limitations. Reports are coded to BS 7671. Remedial works are priced separately after the findings, also POA. Stockport engineers cover the North West.',
-        'EICR price across Greater Manchester and the North West is POA after we know the installation. No invented £ fees.',
+        'EICR price across Greater Manchester and the North West is POA after we know the installation. ',
         [
             'POA inspection fee once boards and access are known',
             'Remedials quoted separately after coding',
             'Domestic, landlord and commercial options',
-            'No invented pound prices',
+            'Price on application',
         ],
         [
             ['Is EICR price the same as EICR cost?', 'Same intent — both are POA. We use whichever phrase you searched.'],
-            ['Do you publish a from-£ EICR list?', 'No. Property size and access vary too much for an honest invented figure.'],
+            ['Do you publish a from-£ EICR list?', 'No. '],
         ],
         'EICR price, EICR cost POA, electrical certificate price Stockport, landlord EICR price'
     );
@@ -235,14 +235,14 @@ function icomplyElectricalGasNewKeywords(): array
         'Emergency Electrician Cost',
         $e,
         'emergency-electrician',
-        'Emergency electrician cost is POA. Out-of-hours attendance, make-safe time and any parts needed are explained before we despatch — we do not invent a pound call-out fee on this page.',
+        'Emergency electrician cost is POA. ',
         'Burning smells, flooding near electrics or a total loss affecting vulnerable occupants are treated as urgent. Daytime faults that can wait are booked as planned work. From Stockport we cover Greater Manchester and nearby towns when diary and travel allow. Emergency electrician cost is always agreed as POA terms on the call.',
         'Emergency electrician cost in the North West is POA. Attendance terms explained before we travel.',
         [
             'POA attendance terms before despatch',
             'Make-safe first, permanent repair when safe',
             'Stockport-based North West cover',
-            'No invented emergency pound fees',
+            'Emergency call-outs quoted on application',
         ],
         [
             ['Will I know the cost before you set off?', 'Yes. Emergency electrician cost is explained as POA terms on the phone so you can decide.'],
@@ -257,14 +257,14 @@ function icomplyElectricalGasNewKeywords(): array
         'Fuse Board Cost',
         $e,
         'fuse-board',
-        'Fuse board cost is POA after we inspect the existing enclosure, tails and earthing. iComply will not invent a pound price for a fuse-board or consumer-unit change.',
+        'Fuse board cost is POA after we inspect the existing enclosure, tails and earthing. ',
         'Search intent overlaps with consumer unit cost. We keep this page so “fuse board cost” reaches the same honest POA message: survey first, written quote second. Stockport engineers cover Greater Manchester and the North West.',
-        'Fuse board cost in Stockport and the North West is POA after inspection. No invented £ prices.',
+        'Fuse board cost in Stockport and the North West is POA after inspection. ',
         [
             'POA after seeing the existing fuse board',
             'Modern consumer unit options explained on quote',
             'Certification included in the agreed scope',
-            'No invented pound prices',
+            'Price on application',
         ],
         [
             ['Can you price a fuse board from a photo?', 'A photo helps us prepare, but fuse board cost stays POA until we confirm tails, earthing and cupboard space.'],
@@ -279,7 +279,7 @@ function icomplyElectricalGasNewKeywords(): array
         $e,
         'electrician-near-me',
         'Looking for an electrician in Stockport, Greater Manchester or the wider North West? iComply provides domestic and commercial electrical work — EICR, rewires, consumer units, fault-finding and planned installs — with written quotes after we understand the job.',
-        'We are based in Offerton, Stockport (SK2 5DE) and travel to 150+ towns. An electrician visit might be a landlord certificate, a consumer unit upgrade, a domestic rewire or an emergency make-safe. We do not invent prices; cost-style jobs are POA. Tell us the postcode, property type and what you need.',
+        'We are based in Offerton, Stockport (SK2 5DE) and travel to 150+ towns. An electrician visit might be a landlord certificate, a consumer unit upgrade, a domestic rewire or an emergency make-safe. Tell us the postcode, property type and what you need.',
         'Electrician covering Stockport, Manchester and the North West. EICR, rewires and consumer units from iComply. Quotes POA where price varies.',
         [
             'Local Stockport-based electricians',
@@ -323,17 +323,17 @@ function icomplyElectricalGasNewKeywords(): array
         $e,
         'rewire',
         'A house rewire replaces dated or unsafe fixed wiring throughout a dwelling and usually includes a new consumer unit. iComply plans house rewires for owner-occupiers and landlords from Stockport across Greater Manchester and the North West.',
-        'This page sits alongside rewire and domestic rewire for people who search the everyday phrase “house rewire”. We survey, isolate, install and certificate. House rewire cost and price of rewire are always POA after survey — we will not invent a £ figure for a three-bed or any other stock type.',
+        'This page sits alongside rewire and domestic rewire for people who search the everyday phrase “house rewire”. We survey, isolate, install and certificate. ',
         'House rewire in Stockport and the North West. BS 7671 install and certification. Price of a house rewire is POA after survey.',
         [
             'Whole-house or phased rewire plans',
             'New consumer unit with the rewire when agreed',
             'Installation certificate on completion',
-            'POA — no invented house rewire prices',
+            'POA',
         ],
         [
             ['How long does a house rewire take?', 'A typical three-bed can take several days depending on access and making-good. We confirm on survey.'],
-            ['What is the price of a house rewire?', 'POA after survey. We will not publish an invented pound price.'],
+            ['What is the price of a house rewire?', 'POA after survey. '],
         ],
         'house rewire, full house rewire, house rewire Stockport, house rewire Manchester, price of rewire POA'
     );
@@ -373,7 +373,7 @@ function icomplyElectricalGasNewKeywords(): array
             'First and second fix around kitchen units',
             'Cooker, hob and extraction supplies',
             'Works with our kitchen-fitting colleagues when needed',
-            'POA — no invented kitchen electrical prices',
+            'POA',
         ],
         [
             ['Should the kitchen be empty?', 'First-fix is easiest before units. We can still work in a refurb if access is agreed.'],
@@ -417,7 +417,7 @@ function icomplyElectricalGasNewKeywords(): array
             'Mapped circuits before isolation',
             'RCBO or dual-RCD replacement boards',
             'Test sheets and certification',
-            'POA — no invented replacement prices',
+            'POA',
         ],
         [
             ['How long does a consumer unit replacement take?', 'Many domestic swaps are a single visit if the cupboard and tails are straightforward. We confirm on survey.'],
@@ -439,7 +439,7 @@ function icomplyElectricalGasNewKeywords(): array
             'Old fuse box to modern consumer unit',
             'RCD/RCBO protection as specified',
             'Certificate for house sale or landlord files',
-            'POA — no invented fuse-box prices',
+            'POA',
         ],
         [
             ['Is a fuse box the same as a consumer unit?', 'Same role. Newer equipment is usually called a consumer unit.'],
@@ -461,7 +461,7 @@ function icomplyElectricalGasNewKeywords(): array
             'Full and partial electrical rewires',
             'Domestic and light commercial',
             'Certification on completion',
-            'POA — no invented rewire prices',
+            'POA',
         ],
         [
             ['Is an electrical rewire the same as a house rewire?', 'For a dwelling, yes. We also rewire small commercial units when that is the right remedy.'],
@@ -477,13 +477,13 @@ function icomplyElectricalGasNewKeywords(): array
         $e,
         'domestic-rewire',
         'A landlord rewire is a domestic or HMO rewire planned around a void, a failed EICR or a portfolio upgrade. iComply programmes landlord rewires across Greater Manchester and the North West from Stockport.',
-        'We work with agents on access, making-good and certificate turnaround so the let can resume. C1/C2 findings sometimes mean a partial rewire rather than a full strip-out — we say which after the EICR. Landlord rewire cost is POA; we do not invent portfolio pound rates on the page.',
+        'We work with agents on access, making-good and certificate turnaround so the let can resume. C1/C2 findings sometimes mean a partial rewire rather than a full strip-out — we say which after the EICR. ',
         'Landlord rewire for rental homes and HMOs in the North West. POA after EICR or survey. Stockport-based team.',
         [
             'Void and between-tenancy programming',
             'Partial rewire where the EICR allows',
             'Certificates for agent and tenant files',
-            'POA — no invented landlord rewire prices',
+            'POA',
         ],
         [
             ['Can you rewire after an unsatisfactory EICR?', 'Yes. We quote the remedial or rewire scope from the coded findings — POA.'],
@@ -505,7 +505,7 @@ function icomplyElectricalGasNewKeywords(): array
             'Evening and weekend make-safe when diary allows',
             'Terms explained before an engineer is despatched',
             'Follow-up permanent repair booking',
-            'POA — no invented out-of-hours £ fees',
+            'POA',
         ],
         [
             ['Is every evening job an emergency?', 'No. We will say if it can wait for a planned visit. Out-of-hours electrician cost is reserved for genuine urgency.'],
@@ -521,13 +521,13 @@ function icomplyElectricalGasNewKeywords(): array
         $e,
         'electrical-fault-finding',
         'An electrical call out is a reactive visit for a fault, trip or power loss. iComply provides electrical call-outs across the North West from Stockport, with make-safe or diagnosis first and a clear next step.',
-        'Call-outs range from a tripped RCD to a failed board or a damaged cable. We explain attendance terms before travel. Electrical call out cost is POA — we do not publish an invented call-out pound fee. Planned EICR and rewire work is booked separately.',
+        'Call-outs range from a tripped RCD to a failed board or a damaged cable. We explain attendance terms before travel. Electrical call out cost is POA. Planned EICR and rewire work is booked separately.',
         'Electrical call out in Stockport, Manchester and the North West. Diagnosis and make-safe. Attendance POA.',
         [
             'Reactive fault-finding from Stockport',
             'Make-safe and advice on lasting repair',
             'Daytime and urgent options',
-            'POA attendance — no invented call-out prices',
+            'POA attendance',
         ],
         [
             ['What should I do before you arrive?', 'If it is safe, leave the board accessible and describe what tripped or failed. Do not reset a board that smells of burning.'],
@@ -543,7 +543,7 @@ function icomplyElectricalGasNewKeywords(): array
         $e,
         'socket-installation',
         'Need an additional socket in a kitchen, home office or rental bedroom? iComply adds sockets on existing or new circuits to BS 7671 for North West homes and small lets.',
-        'We check the existing circuit loading and protection before adding an outlet. Sometimes a new circuit from the consumer unit is the safer answer. Additional socket work is quoted after we see the room and board — POA, not an invented per-socket pound list.',
+        'We check the existing circuit loading and protection before adding an outlet. Sometimes a new circuit from the consumer unit is the safer answer. ',
         'Additional socket installation in Stockport and the North West. Quoted POA after we see the circuit and board.',
         [
             'Load check before adding outlets',
@@ -571,7 +571,7 @@ function icomplyElectricalGasNewKeywords(): array
             'Dedicated cooker circuit when required',
             'Correct isolation switch position',
             'Works with kitchen first/second fix',
-            'POA — no invented cooker-point prices',
+            'POA',
         ],
         [
             ['Do I need a new consumer unit for a cooker point?', 'Not always. We need a spare way and suitable tails. If the board is full or outdated we will say so.'],
@@ -593,7 +593,7 @@ function icomplyElectricalGasNewKeywords(): array
             'Dedicated shower circuit sized after survey',
             'Board space and protection checked first',
             'Bathroom zone and isolation considered',
-            'POA — no invented shower-install prices',
+            'POA',
         ],
         [
             ['Can my existing board take an electric shower?', 'Sometimes. We check spare ways, diversity and cable routes before quoting.'],
@@ -610,17 +610,17 @@ function icomplyElectricalGasNewKeywords(): array
         $g,
         'boiler-installation',
         'Need a boiler installed, serviced or repaired in Stockport or the wider North West? iComply arranges Gas Safe boiler work — install, repair, breakdown and landlord safety — with written quotes after we understand the appliance and system.',
-        'This hub covers the everyday search “boiler”: combi, system and regular appliances, flues, controls and the difference between a service and a CP12. Boiler cost, boiler install cost and new boiler cost are always POA. We do not invent pound prices for boilers on this site.',
+        'This hub covers the everyday search “boiler”: combi, system and regular appliances, flues, controls and the difference between a service and a CP12. Boiler cost, boiler install cost and new boiler cost are always POA. ',
         'Boiler install, repair and service across Greater Manchester and the North West. Gas Safe engineers from Stockport. Boiler prices are POA.',
         [
             'Install, repair and service options',
             'Combi, system and regular boilers after survey',
             'Landlord gas safety (CP12) can be booked alongside',
-            'POA — no invented boiler pound prices',
+            'POA',
         ],
         [
             ['Do you supply the boiler or fit mine?', 'Either can be discussed after we see flue, gas supply and system condition.'],
-            ['What does a new boiler cost?', 'New boiler cost is POA after survey. We will not publish an invented £ figure.'],
+            ['What does a new boiler cost?', 'New boiler cost is POA after survey. '],
             ['Is a boiler service the same as a CP12?', 'Related but not identical. A CP12 is the landlord gas safety record; servicing is additional maintenance.'],
         ],
         'boiler, boiler Stockport, boiler Manchester, boiler engineer North West, gas boiler'
@@ -639,7 +639,7 @@ function icomplyElectricalGasNewKeywords(): array
             'Survey for output, flue and system type',
             'Combi, system and regular options',
             'Commissioning and user handover',
-            'POA — no invented install prices',
+            'POA',
         ],
         [
             ['How long does a boiler install take?', 'A straightforward like-for-like combi can be a day; flue changes or system redesigns take longer. Timescales sit on the POA quote.'],
@@ -661,7 +661,7 @@ function icomplyElectricalGasNewKeywords(): array
             'Landlord annual gas safety records',
             'Appliance and flue checks',
             'Portfolio booking for agents',
-            'POA — no invented gas-safety prices',
+            'POA',
         ],
         [
             ['How often is landlord gas safety due?', 'Appliances and flues in a rented home must be checked every 12 months, with a record issued to the tenant.'],
@@ -683,7 +683,7 @@ function icomplyElectricalGasNewKeywords(): array
             'Annual landlord gas safety records',
             'HMO and multi-let scheduling',
             'Clear advice if an appliance is condemned',
-            'POA — no invented landlord gas prices',
+            'POA',
         ],
         [
             ['Do all rentals need landlord gas checks?', 'If there are gas appliances or flues, yes — annual checks and a tenant record are required.'],
@@ -698,17 +698,17 @@ function icomplyElectricalGasNewKeywords(): array
         'Boiler Cost',
         $g,
         'boiler',
-        'Boiler cost — supply, install or both — is always POA after survey. iComply will not invent a pound price for a combi, system or regular boiler on this page.',
+        'Boiler cost — supply, install or both — is always POA after survey. ',
         'Output, flue, system condition, controls and whether you already own the appliance all change the figure. We survey from Stockport and write a POA quote for the agreed package. Related searches (new boiler cost, boiler install cost, boiler repair cost) follow the same rule.',
-        'Boiler cost in the North West is POA after survey. No invented £ boiler prices from iComply.',
+        'Boiler cost in the North West is POA after survey. ',
         [
-            'Always POA — never an invented pound price',
+            'Always price on application',
             'Supply-and-fit or fit-only options',
             'Flue and system extras scoped in writing',
             'Stockport engineers, North West cover',
         ],
         [
-            ['Why no “from £X” boiler price?', 'Because a simple swap and a new flue with a system clean are not the same job. Invented £ figures mislead.'],
+            ['Why no “from £X” boiler price?', 'Because a simple swap and a new flue with a system clean are not the same job.'],
             ['What do you need for a boiler cost quote?', 'Make, if known, photos of the existing boiler and flue, postcode and whether you want a like-for-like or an upgrade.'],
         ],
         'boiler cost, new boiler cost, boiler price POA, boiler cost Stockport, boiler cost Manchester'
@@ -720,14 +720,14 @@ function icomplyElectricalGasNewKeywords(): array
         'Boiler Install Cost',
         $g,
         'boiler-install',
-        'Boiler install cost is POA after we see the existing appliance, flue and system. iComply does not publish invented pound prices for boiler installs.',
+        'Boiler install cost is POA after we see the existing appliance, flue and system. ',
         'Labour, flue components, magnetic filtration, power flush and controls are listed on the quote so you can compare like with like. Boiler install cost for a combi is still not a catalogue number — access and condensate routes differ. Stockport-based cover across the North West.',
-        'Boiler install cost across Greater Manchester and the North West is POA after survey. No invented £ install fees.',
+        'Boiler install cost across Greater Manchester and the North West is POA after survey. ',
         [
             'POA written install quote after survey',
             'Extras listed rather than hidden',
             'Combi, system and regular installs',
-            'No invented pound prices',
+            'Price on application',
         ],
         [
             ['Is labour-only cheaper?', 'Fit-only can be, if you supply a suitable appliance. It remains POA until we confirm compatibility.'],
@@ -742,14 +742,14 @@ function icomplyElectricalGasNewKeywords(): array
         'Boiler Repair Cost',
         $g,
         'boiler-repair',
-        'Boiler repair cost is POA. Diagnosis comes first; parts and labour are quoted once we know the fault. We will not invent a pound repair price on this page.',
+        'Boiler repair cost is POA. Diagnosis comes first; parts and labour are quoted once we know the fault. ',
         'No heating, no hot water, lockouts and leaks are common call-outs. Some faults are a five-minute reset and advice; others need parts that have to be ordered. Emergency gas engineer attendance terms are also POA. From Stockport we cover Greater Manchester and nearby towns when diary allows.',
-        'Boiler repair cost in the North West is POA after diagnosis. No invented £ repair fees.',
+        'Boiler repair cost in the North West is POA after diagnosis. ',
         [
             'Diagnose first, then POA parts and labour',
             'Honest advice if replacement is wiser than repair',
             'Breakdown and planned repair slots',
-            'No invented pound prices',
+            'Price on application',
         ],
         [
             ['Will you charge just to look?', 'Attendance terms are explained as POA before we travel. Diagnosis and repair can be combined when parts are on the van.'],
@@ -764,18 +764,18 @@ function icomplyElectricalGasNewKeywords(): array
         'Gas Safety Certificate Cost',
         $g,
         'gas-safety-certificate',
-        'Gas safety certificate cost (CP12 / landlord gas safety record) is POA. Appliance count, flues and access decide the visit — we do not invent a pound certificate fee.',
+        'Gas safety certificate cost (CP12 / landlord gas safety record) is POA. Appliance count, flues and access decide the visit.',
         'A studio with one combi is not the same as an HMO with several appliances. We confirm the count, then issue a POA figure for the record. Failed appliances are isolated and explained; remedials are extra and also POA. Stockport engineers cover the North West.',
-        'Gas safety certificate cost in Stockport and the North West is POA. No invented £ CP12 fees.',
+        'Gas safety certificate cost in Stockport and the North West is POA. ',
         [
             'POA once appliance count is known',
             'Landlord record issued after a satisfactory check',
             'Portfolio bookings for agents',
-            'No invented pound prices',
+            'Price on application',
         ],
         [
             ['Is the certificate included in the visit?', 'Yes — the agreed gas safety certificate cost includes the record for the appliances we were asked to check.'],
-            ['Do you charge per appliance?', 'Sometimes the quote is structured that way. Either way it is POA, not an invented website £.'],
+            ['Do you charge per appliance?', 'Sometimes the quote is structured that way. '],
         ],
         'gas safety certificate cost, CP12 cost, landlord gas certificate price POA'
     );
@@ -786,14 +786,14 @@ function icomplyElectricalGasNewKeywords(): array
         'CP12 Cost',
         $g,
         'cp12',
-        'CP12 cost is POA. The landlord gas safety record depends on how many appliances and flues we must check — we will not invent a pound CP12 fee.',
+        'CP12 cost is POA. ',
         'Agents searching CP12 cost want a bookable figure for one let or a portfolio. We confirm addresses and appliance counts, then write POA terms. Same-day CP12 is capacity-dependent, still POA. See gas safety certificate cost for the same rule in longer wording.',
-        'CP12 cost across Greater Manchester and the North West is POA. No invented £ landlord gas fees.',
+        'CP12 cost across Greater Manchester and the North West is POA. ',
         [
             'POA after appliance count is confirmed',
             'Single lets and portfolios',
             'Digital record after the visit',
-            'No invented pound prices',
+            'Price on application',
         ],
         [
             ['Is CP12 cost the same as a boiler service price?', 'No. CP12 is the legal landlord safety record. A service is extra maintenance — also POA if you want both.'],
@@ -808,14 +808,14 @@ function icomplyElectricalGasNewKeywords(): array
         'Emergency Gas Engineer Cost',
         $g,
         'emergency-gas-engineer',
-        'Emergency gas engineer cost is POA. If you smell gas, follow official emergency advice first (supply isolation and the gas emergency service). Our attendance terms are explained before we travel — no invented pound call-out fee.',
+        'Emergency gas engineer cost is POA. If you smell gas, follow official emergency advice first (supply isolation and the gas emergency service). Our attendance terms are explained before we travel.',
         'We attend lockouts, leaks after isolation and no-heating emergencies when it is safe and legal for a private engineer to do so. Smell of gas in the property is a National Gas Emergency situation first. Emergency gas engineer cost is POA on the call. Stockport-based North West cover subject to diary.',
-        'Emergency gas engineer cost in the North West is POA. Safety first. No invented £ call-out prices.',
+        'Emergency gas engineer cost in the North West is POA. Safety first. ',
         [
             'Official gas emergency service first if you smell gas',
             'POA attendance terms before despatch',
             'Breakdown and lockout support when safe',
-            'No invented pound fees',
+            'Price on application',
         ],
         [
             ['I can smell gas — shall I book you first?', 'No. Open vents if safe, turn off the meter if you can, get out and call the official gas emergency number. Book us after the situation is made safe.'],
@@ -830,14 +830,14 @@ function icomplyElectricalGasNewKeywords(): array
         'New Boiler Cost',
         $g,
         'boiler-cost',
-        'New boiler cost is POA after survey. iComply will not invent a pound price for a new combi, system or regular boiler.',
+        'New boiler cost is POA after survey. ',
         'People searching new boiler cost want a budget number. The honest answer is that flue, output, system clean and controls move the figure more than a website table. We survey from Stockport and issue a written POA quote. See boiler cost and boiler install cost for the same rule.',
-        'New boiler cost in Stockport and the North West is POA after survey. No invented £ prices.',
+        'New boiler cost in Stockport and the North West is POA after survey. ',
         [
             'POA after we see flue and system',
             'Supply-and-fit or specified appliance',
             'Optional filters and controls on the quote',
-            'No invented pound prices',
+            'Price on application',
         ],
         [
             ['Can you estimate from the make and model I want?', 'We can discuss suitability, but new boiler cost stays POA until the flue and system are checked.'],
@@ -858,7 +858,7 @@ function icomplyElectricalGasNewKeywords(): array
             'Suitability survey before we recommend a combi',
             'Install, repair and service options',
             'Flue and condensate routes checked',
-            'POA — no invented combi prices',
+            'POA',
         ],
         [
             ['Is a combi cheaper to install than a system boiler?', 'Sometimes, if you already have the right pipework. The figure is still POA.'],
@@ -901,7 +901,7 @@ function icomplyElectricalGasNewKeywords(): array
             'Cylinder and control compatibility checked',
             'Flue and condensate routes planned',
             'Optional system clean scoped on quote',
-            'POA — no invented system-boiler prices',
+            'POA',
         ],
         [
             ['Should I switch to a combi instead?', 'Only if your hot-water demand and pipework suit it. We advise after survey, not from a sales script.'],
@@ -922,7 +922,7 @@ function icomplyElectricalGasNewKeywords(): array
             'Heat-only / regular boiler specification after survey',
             'Tank and cylinder arrangements reviewed',
             'Conversion options explained in plain English',
-            'POA — no invented regular-boiler prices',
+            'POA',
         ],
         [
             ['Is a regular boiler outdated?', 'Not if the system is well designed and you need stored hot water. Suitability is the test.'],
@@ -943,7 +943,7 @@ function icomplyElectricalGasNewKeywords(): array
             'Like-for-like or system-change options',
             'Flue and gas-supply check before we commit',
             'Old appliance removed when in scope',
-            'POA — no invented replacement prices',
+            'POA',
         ],
         [
             ['Is replacement cheaper than another repair?', 'Sometimes, if parts are scarce or the heat exchanger has failed. We explain both POA paths.'],
@@ -958,16 +958,16 @@ function icomplyElectricalGasNewKeywords(): array
         $g,
         'boiler-replacement',
         'A boiler upgrade is a replacement chosen to improve controls, efficiency or hot-water performance — not just to get the heating back on. iComply surveys upgrades across the North West from Stockport.',
-        'We talk through combi versus system, controls and whether a power flush or filter should sit on the same quote. Boiler upgrade cost is POA. We do not invent grant or pound figures.',
+        'We talk through combi versus system, controls and whether a power flush or filter should sit on the same quote. Boiler upgrade cost is POA. ',
         'Boiler upgrade in Stockport, Manchester and the North West. Efficiency and controls after survey. POA.',
         [
             'Upgrade specified after a heating survey',
             'Controls and filtration optional extras',
             'Honest conversation about expected comfort',
-            'POA — no invented upgrade prices',
+            'POA',
         ],
         [
-            ['Do you handle grant paperwork?', 'We can discuss current schemes in general terms. Eligibility is not guaranteed and we do not invent grant values.'],
+            ['Do you handle grant paperwork?', 'We can discuss current schemes in general terms. '],
         ],
         'boiler upgrade, boiler upgrade Stockport, efficient boiler install North West'
     );
@@ -985,7 +985,7 @@ function icomplyElectricalGasNewKeywords(): array
             'Service visit for rented-property boilers',
             'Optional same-visit CP12',
             'Clear report if the appliance is unsafe',
-            'POA — no invented service prices',
+            'POA',
         ],
         [
             ['Is a service legally required as well as a CP12?', 'The legal record is the gas safety check. A service is good practice and often required by warranties.'],
@@ -1006,7 +1006,7 @@ function icomplyElectricalGasNewKeywords(): array
             'Yearly maintenance visit',
             'Combis, system and regular boilers after we identify them',
             'Optional pairing with landlord gas safety',
-            'POA — no invented service prices',
+            'POA',
         ],
         [
             ['Will a service restore a broken boiler?', 'A service is maintenance, not a guaranteed repair. Breakdowns are diagnosed as boiler repair — also POA.'],
@@ -1020,17 +1020,17 @@ function icomplyElectricalGasNewKeywords(): array
         'Boiler Service Cost',
         $g,
         'annual-boiler-service',
-        'Boiler service cost is POA. Appliance type, access and whether you also want a CP12 change the visit — we do not invent a pound service fee.',
+        'Boiler service cost is POA. Appliance type, access and whether you also want a CP12 change the visit.',
         'Homeowners and landlords searching boiler service cost get the same honest rule as CP12 cost: confirm the appliance, then a written POA figure. Stockport engineers cover the North West.',
-        'Boiler service cost in Greater Manchester and the North West is POA. No invented £ service prices.',
+        'Boiler service cost in Greater Manchester and the North West is POA. ',
         [
             'POA once we know the appliance and access',
             'Service-only or service-plus-CP12 options',
-            'No invented pound prices',
+            'Price on application',
             'Local North West attendance from Stockport',
         ],
         [
-            ['Why will you not show a service from £X?', 'Because access, flue type and combined CP12 work change the visit. Invented £ figures are not used.'],
+            ['Why will you not show a service from £X?', 'Because access, flue type and combined CP12 work change the visit.'],
         ],
         'boiler service cost, boiler service price POA, annual boiler service cost Stockport'
     );
@@ -1048,7 +1048,7 @@ function icomplyElectricalGasNewKeywords(): array
             'Appliance and flue / chimney pathway check',
             'Landlord or homeowner booking',
             'Honest fail advice if the fire is unsafe',
-            'POA — no invented gas-fire prices',
+            'POA',
         ],
         [
             ['Can you service a living-flame fire in a bedroom?', 'Location and ventilation rules matter. We advise after we know the room and flue type.'],
@@ -1063,13 +1063,13 @@ function icomplyElectricalGasNewKeywords(): array
         $g,
         'commercial-gas-installation',
         'Commercial gas covers catering plant, boilers in small commercial buildings and landlord plant rooms — not a domestic combi advert. iComply scopes commercial gas work across the North West from Stockport.',
-        'We survey first. Commercial kitchen gas and commercial gas safety certificates are related pages. Commercial gas is always POA because plant, isolation and access vary widely. We do not invent commercial pound rates.',
+        'We survey first. Commercial kitchen gas and commercial gas safety certificates are related pages. Commercial gas is always POA because plant, isolation and access vary widely. ',
         'Commercial gas installation and safety support in Greater Manchester and the North West. POA after survey.',
         [
             'Survey-led commercial gas scope',
             'Catering and small plant options',
             'Safety records where they apply',
-            'POA — no invented commercial gas prices',
+            'POA',
         ],
         [
             ['Do you work in restaurants?', 'Commercial kitchen gas is a common enquiry. We survey extraction, isolation and appliances first.'],
@@ -1091,7 +1091,7 @@ function icomplyElectricalGasNewKeywords(): array
             'Commercial and catering gas attendance',
             'Survey before we commit to plant work',
             'Safety documentation where required',
-            'POA — no invented commercial call-out prices',
+            'POA',
         ],
         [
             ['Can you attend a school or care site?', 'Often yes after we understand access, permits and the appliance list. Still POA.'],
@@ -1112,7 +1112,7 @@ function icomplyElectricalGasNewKeywords(): array
             'Boiler and system viewed together',
             'Controls and filtration optional extras',
             'Repair or upgrade paths after diagnosis',
-            'POA — no invented heating prices',
+            'POA',
         ],
         [
             ['Do you only do gas, not heat pumps?', 'This page is gas central heating. Ask if you also need a different heat source — we will be clear about what we take on.'],
@@ -1127,13 +1127,13 @@ function icomplyElectricalGasNewKeywords(): array
         $g,
         'gas-central-heating',
         'Looking for a heating engineer in Stockport or the North West? iComply provides Gas Safe heating engineer visits for boilers, controls and system faults — with POA quotes after we understand the symptom.',
-        'A heating engineer visit might be a breakdown, an annual service, a boiler install or a landlord gas safety check. We will not invent heating-engineer pound rates. Emergency attendance terms are explained before despatch.',
+        'A heating engineer visit might be a breakdown, an annual service, a boiler install or a landlord gas safety check. Emergency attendance terms are explained before despatch.',
         'Heating engineer covering Stockport, Manchester and the North West. Boilers and gas heating. Quotes POA.',
         [
             'Breakdown, service and install paths',
             'Gas Safe heating work after survey',
             'Landlord and homeowner bookings',
-            'POA — no invented heating-engineer prices',
+            'POA',
         ],
         [
             ['Are you also an emergency gas engineer?', 'For safe, legal private-engineer work, yes when diary allows. Smell of gas still goes to the official emergency service first.'],
@@ -1217,7 +1217,7 @@ function icomplyElectricalGasNewKeywords(): array
             'Official emergency service first if you smell gas',
             'Private engineer follow-up when safe and legal',
             'Landlord isolation and record advice',
-            'POA — no invented emergency prices',
+            'POA',
         ],
         [
             ['What is the official gas emergency number?', 'Use the National Gas Emergency Service number published by the network operator — it is widely listed on official UK pages. Do not wait for a private engineer if you smell gas.'],
@@ -1261,7 +1261,7 @@ function icomplyElectricalGasNewKeywords(): array
             'Annual landlord CP12 records',
             'Tenant copy after a satisfactory check',
             'HMO and single-let options',
-            'POA — no invented CP12 prices',
+            'POA',
         ],
         [
             ['Is landlord CP12 the same as CP12?', 'Yes — landlord wording. It is the gas safety record for the rental.'],
@@ -1282,7 +1282,7 @@ function icomplyElectricalGasNewKeywords(): array
             'Record suitable to give to tenants',
             'Booked by landlord or agent',
             'Clear appliance list on the document',
-            'POA — no invented certificate prices',
+            'POA',
         ],
         [
             ['I am a tenant — can I book this?', 'The legal duty sits with the landlord. We can still explain the document. Booking is normally by the landlord or agent.'],
@@ -1324,7 +1324,7 @@ function icomplyElectricalGasNewKeywords(): array
             'Condensate route planned with the flue',
             'Combi, system or regular condensing types',
             'Commissioning on completion',
-            'POA — no invented condensing-boiler prices',
+            'POA',
         ],
         [
             ['Can you reuse my old flue?', 'Only if it is compatible and safe. Many upgrades need a new concentric flue — we confirm on survey.'],
@@ -1339,12 +1339,12 @@ function icomplyElectricalGasNewKeywords(): array
         $g,
         'boiler-upgrade',
         'A hydrogen-ready boiler is a current gas boiler designed so it can be converted if a future hydrogen blend or switch is confirmed for your area. iComply can discuss hydrogen-ready options as part of a normal boiler survey — we will not oversell a fuel that is not at your meter today.',
-        'Today the appliance still runs on natural gas (or LPG if specified). We will not invent government dates, grants or pound savings. Hydrogen-ready boiler supply and install is POA after the same flue and system survey as any boiler install.',
-        'Hydrogen-ready boiler discussion and install in the North West. Still a gas boiler today. POA after survey. No invented grants or prices.',
+        'Today the appliance still runs on natural gas (or LPG if specified). Hydrogen-ready boiler supply and install is POA after the same flue and system survey as any boiler install.',
+        'Hydrogen-ready boiler discussion and install in the North West. Still a gas boiler today. POA after survey. ',
         [
             'Honest “runs on gas today” explanation',
             'Same survey as any boiler install',
-            'No invented grant or fuel-saving figures',
+            'Grants and savings checked case by case',
             'POA for supply and install',
         ],
         [
@@ -1361,16 +1361,16 @@ function icomplyElectricalGasNewKeywords(): array
         $g,
         'gas-central-heating',
         'Smart heating controls — programmers, room stats and app-connected thermostats — sit on the electrical/controls side of a gas heating system. iComply fits controls as part of boiler and heating jobs across the North West.',
-        'We match controls to the boiler, not the other way around. Smart heating controls are POA because wiring, wireless range and existing valves differ. We do not invent energy-saving pound claims.',
-        'Smart heating controls for gas boilers in Stockport and the North West. Fitted with the heating system. POA. No invented bill-saving figures.',
+        'We match controls to the boiler, not the other way around. Smart heating controls are POA because wiring, wireless range and existing valves differ. ',
+        'Smart heating controls for gas boilers in Stockport and the North West. Fitted with the heating system. POA. ',
         [
             'Controls matched to the boiler and valves',
             'Wired or wireless options after survey',
-            'No invented energy-saving £ claims',
+            'Energy savings checked case by case',
             'POA for supply and fit',
         ],
         [
-            ['Will a smart thermostat cut my bill by a set amount?', 'We will not invent a pound saving. Comfort and control usually improve; bills depend on how you use the system.'],
+            ['Will a smart thermostat cut my bill by a set amount?', 'Comfort and control usually improve; bills depend on how you use the system.'],
         ],
         'smart heating controls, smart thermostat boiler, heating controls Stockport'
     );
@@ -1409,7 +1409,7 @@ function icomplyElectricalGasNewKeywords(): array
             'Same-day only when an engineer is free nearby',
             'Honest no if the diary is full',
             'Record issued after the check',
-            'POA — no invented same-day premiums listed as £',
+            'POA for same-day attendance',
         ],
         [
             ['Is same-day guaranteed?', 'No. We will not pretend otherwise. We try when travel and diary allow.'],
@@ -1425,13 +1425,13 @@ function icomplyElectricalGasNewKeywords(): array
         $g,
         'portfolio-gas-certificates',
         'Portfolio CP12 is batch landlord gas safety for agents and landlords with several addresses. iComply schedules portfolio CP12 runs across Greater Manchester and the North West from Stockport.',
-        'Share a spreadsheet of addresses and due dates. We cluster towns to cut wasted travel. Portfolio CP12 cost is POA for the batch — we do not invent a per-property pound rate on the page.',
+        'Share a spreadsheet of addresses and due dates. We cluster towns to cut wasted travel. ',
         'Portfolio CP12 for North West landlords and agents. Clustered visits. Batch pricing POA.',
         [
             'Multi-address scheduling',
             'Town clustering from a Stockport base',
             'Records returned in a consistent format',
-            'POA for the batch — no invented per-door £',
+            'POA for the batch',
         ],
         [
             ['Can you remind us when CP12s expire?', 'We can keep a simple schedule if you ask. The legal duty remains with the landlord.'],
@@ -1452,7 +1452,7 @@ function icomplyElectricalGasNewKeywords(): array
             'Cooker and hob safety check',
             'Included in landlord CP12 when the appliance is in scope',
             'Clear advice on tenant-owned cookers',
-            'POA — no invented cooker-check prices',
+            'POA',
         ],
         [
             ['Is a tenant-owned cooker on the CP12?', 'Often the landlord record covers landlord appliances. We explain what was tested. Do not assume a tenant cooker is included.'],
@@ -1468,12 +1468,12 @@ function icomplyElectricalGasNewKeywords(): array
         'gas-safety',
         'LPG gas safety covers checks and landlord records for liquefied petroleum gas appliances and tanks where we are competent to work. iComply discusses LPG jobs across the North West from Stockport after we confirm the fuel and appliance type.',
         'LPG is not the same as natural gas. We will not take on an LPG job we cannot do safely. LPG gas safety is POA after we know the installation. If we need to decline, we will say so quickly.',
-        'LPG gas safety discussion and competent checks in the North West. Confirm fuel first. POA. We will not invent LPG prices or claim every LPG job.',
+        'LPG gas safety discussion and competent checks in the North West. Confirm fuel first. POA. ',
         [
             'Fuel type confirmed before we attend',
             'Landlord or homeowner LPG appliances when in competence',
             'Honest decline if the plant is outside our scope',
-            'POA — no invented LPG prices',
+            'POA',
         ],
         [
             ['Do you work on every LPG tank?', 'No. We confirm competence and access first. Large commercial LPG plant may be declined.'],
@@ -1487,14 +1487,14 @@ function icomplyElectricalGasNewKeywords(): array
         'Combi Boiler Cost',
         $g,
         'combi-boiler',
-        'Combi boiler cost — supply, install or both — is POA after survey. iComply will not invent a pound price for a combination boiler.',
+        'Combi boiler cost — supply, install or both — is POA after survey. ',
         'Output, flue, conversion from a tanked system and extras such as a filter all change combi boiler cost. We survey from Stockport and write a POA quote. See boiler cost and boiler install cost for the same rule.',
-        'Combi boiler cost in Stockport and the North West is POA after survey. No invented £ combi prices.',
+        'Combi boiler cost in Stockport and the North West is POA after survey. ',
         [
             'POA after flue and system survey',
             'Supply-and-fit or fit-only',
             'Conversion extras listed when needed',
-            'No invented pound prices',
+            'Price on application',
         ],
         [
             ['Is a combi cheaper than a system boiler?', 'Sometimes on labour, not always on the whole job. The comparison is still POA after survey.'],
@@ -1546,14 +1546,14 @@ foreach ($existing as $slug => $meta) {
         continue;
     }
     $meta['intro'] = rtrim((string)($meta['intro'] ?? ''), '.')
-        . '. Pricing for this search is POA after we confirm scope — iComply does not invent pound prices.';
+        . '. Pricing for this search is POA after we confirm scope.';
     $meta['body'] = rtrim((string)($meta['body'] ?? ''), '.')
         . ' Cost and price enquiries are answered with a written POA quote, never a guessed £ figure.';
     if ($hasInvented && isset($meta['meta_desc'])) {
         $meta['meta_desc'] = preg_replace('/£\s*\d+[,\d]*/', 'POA', (string)$meta['meta_desc']);
     }
     if (empty($meta['meta_desc']) || !preg_match('/\bPOA\b/i', (string)$meta['meta_desc'])) {
-        $meta['meta_desc'] = $name . ' in the North West is POA after scope. No invented £ prices from iComply, Stockport.';
+        $meta['meta_desc'] = $name . ' in the North West is POA after scope. ';
     }
     $existing[$slug] = $meta;
     $patchedPoa++;

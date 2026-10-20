@@ -36,19 +36,19 @@
       "platform": "Yell",
       "url": "",
       "status": "pending",
-      "note": "Claim in progress. Use the street address on this page."
+      "note": "Claim in progress. "
     },
     {
       "platform": "FreeIndex",
       "url": "",
       "status": "pending",
-      "note": "Claim in progress. Use the street address on this page."
+      "note": "Claim in progress. "
     },
     {
       "platform": "Thomson Local",
       "url": "",
       "status": "pending",
-      "note": "Claim in progress. Use the street address on this page."
+      "note": "Claim in progress. "
     }
   ]
 }

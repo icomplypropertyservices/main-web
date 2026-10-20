@@ -94,7 +94,7 @@ function icomplyComplianceBundle(): array
             'pricing' => [
                 'eyebrow' => 'Not a guide ballpark',
                 'title' => $name . ' is a published pack price',
-                'body' => 'Every other figure on this page is a From £X estimate. The ' . $name . ' (' . strtolower($alias) . ') is the fixed published price for one residential property in the scope on its page.',
+                'body' => 'The ' . $name . ' (' . strtolower($alias) . ') is the fixed published price for one residential property in the scope on its page.',
             ],
         ],
     ];

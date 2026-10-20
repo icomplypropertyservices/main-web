@@ -1,11 +1,11 @@
 {
   "cctv-engineers-near-me": {
-    "intro": "Searching for CCTV engineers near me in Greater Manchester or the wider North West? iComply Property Services deploys local Stockport-based engineers who survey, install, fault-find and upgrade business and residential camera systems with clear fixed-price quotes. We work to BS EN 62676 and practical siting guidance, issue system handover packs and viewing setup notes, and cover multi-site estates as well as single premises.",
+    "intro": "Searching for CCTV engineers near me in Greater Manchester or the wider North West? iComply Property Services deploys local Stockport-based engineers who survey, install, fault-find and upgrade business and residential camera systems with clear written quotes. We work to BS EN 62676 and practical siting guidance, issue system handover packs and viewing setup notes, and cover multi-site estates as well as single premises.",
     "body": "Whether you need a reactive engineer for a failed NVR, a full redesign of camera coverage, or a planned maintenance visit, our team arrives with the tools and documentation to leave your CCTV usable and auditable. From SK2 we reach Manchester, Stockport, Bolton, Liverpool, Preston, Cheshire and Cumbria with appointments booked when the diary allows. Tell us your postcode, property type and existing brand to start a quote.",
     "meta_desc": "CCTV engineers near me across Greater Manchester & the North West. iComply survey, install & maintain with fixed quotes from Stockport.",
     "focus_points": [
       "Local North West CCTV engineers for install, repair and upgrade",
-      "Site survey, camera siting advice and fixed-price quotation",
+      "Site survey, camera siting advice and written quotation",
       "Handover packs, viewing setup notes and multi-site support",
       "Reactive fault attendance and planned maintenance contracts"
     ],
@@ -28,10 +28,10 @@
   "business-security-cameras": {
     "intro": "Business security cameras protect stock, staff and premises while supporting insurance and compliance expectations. iComply design, install, maintain and upgrade commercial CCTV for shops, warehouses, offices and multi-site operators across Greater Manchester and the North West, working to BS EN 62676 and practical siting guidance with system handover packs that stand up to audits.",
     "body": "We specify IP and hybrid cameras, NVRs, remote viewing and appropriate storage retention for your risk profile — not a one-size kit list. Based in Stockport, we serve landlords, FM teams and owner-managed businesses from single retail units to estate-wide roll-outs. Related needs often include access control integration, night-time coverage, ANPR-ready positions and clear user training so your team can export evidence when it matters.",
-    "meta_desc": "Business security cameras across Greater Manchester & the North West. iComply design, install & maintain commercial CCTV with fixed-price quotes.",
+    "meta_desc": "Business security cameras across Greater Manchester & the North West. iComply design, install & maintain commercial CCTV with written quotes.",
     "focus_points": [
       "Commercial camera design matched to risk, lighting and retention needs",
-      "Fixed-price install, upgrade and multi-site standardisation",
+      "Quoted install, upgrade and multi-site standardisation",
       "Remote viewing setup and handover documentation",
       "Ongoing maintenance and reactive call-outs for business CCTV"
     ],
@@ -80,7 +80,7 @@
   "paxton-access-control": {
     "intro": "Paxton access control is a proven choice for UK offices, blocks and commercial estates that need reliable proximity, Net2 or Paxton10-style management. iComply design, install, program and maintain Paxton access control as part of our Access Control range, working to BS EN 50133 and fire-release best practice, with commissioning sheets and user training notes for facilities teams and landlords.",
     "body": "Our engineers survey door furniture, cable routes, power and free-escape arrangements before specifying Paxton controllers, readers and tokens that fit your doors. From Stockport we support Greater Manchester and the wider North West for new installs, expansions, PC software issues, reader failures and multi-door upgrades. Related work often includes maglocks, electric strikes, video door entry handovers and aligning credentials so leavers lose access after the visit.",
-    "meta_desc": "Paxton access control across Greater Manchester & the North West. iComply install, program & maintain Net2 and Paxton systems with fixed-price quotes.",
+    "meta_desc": "Paxton access control across Greater Manchester & the North West. iComply install, program & maintain Net2 and Paxton systems with written quotes.",
     "focus_points": [
       "Paxton Net2 / Paxton10-style survey, install and expansion",
       "Reader, controller and credential programming by local engineers",
@@ -105,7 +105,7 @@
   },
   "hid-access-control": {
     "intro": "HID access control underpins many corporate and multi-site estates that standardise on HID readers, cards and credentials. iComply design, install, program and maintain HID-compatible access control across Greater Manchester and the North West, aligning door hardware, controllers and fire-release practice so security and safe egress both work as intended.",
-    "body": "Whether you are rolling out new HID readers, migrating credentials, or repairing a failed door on an HID estate, we provide fixed-price quotes after survey and commissioning documentation for your FM records. Based in Stockport (SK2), we cover offices, industrial units, education and multi-building portfolios. We also advise on card formats, fob options and integration with existing controllers so you avoid stranded hardware where possible.",
+    "body": "Whether you are rolling out new HID readers, migrating credentials, or repairing a failed door on an HID estate, we provide written quotes after survey and commissioning documentation for your FM records. Based in Stockport (SK2), we cover offices, industrial units, education and multi-building portfolios. We also advise on card formats, fob options and integration with existing controllers so you avoid stranded hardware where possible.",
     "meta_desc": "HID access control install & support across Greater Manchester & the North West. iComply engineers program readers, doors & credentials from Stockport.",
     "focus_points": [
       "HID reader and credential-aware system design and install",
@@ -132,7 +132,7 @@
   "proximity-card-reader-installation": {
     "intro": "Proximity card reader installation gives staff and residents a fast, contactless way to enter authorised doors without shared keys. iComply survey, supply, install and commission proximity readers as part of full access control systems for offices, blocks and multi-site estates, working to BS EN 50133 and fire-release best practice with programming and user notes included where agreed.",
     "body": "We position readers for usability and weather exposure, route cabling neatly, interface locks correctly and test free escape before handover. Stockport-based engineers serve Greater Manchester and the wider North West for single-door kits through to multi-door networked systems. If you already have controllers, we check compatibility before fitting new readers so cards, fobs and schedules continue to work as expected.",
-    "meta_desc": "Proximity card reader installation across Greater Manchester & the North West. iComply fit, program & commission readers with fixed-price quotes.",
+    "meta_desc": "Proximity card reader installation across Greater Manchester & the North West. iComply fit, program & commission readers with written quotes.",
     "focus_points": [
       "Site survey for reader type, mounting and cable routes",
       "Install of proximity readers with lock and egress interfaces",
@@ -158,7 +158,7 @@
   "fob-access-control": {
     "intro": "Fob access control is a practical, familiar credential model for offices, apartments and managed blocks that want controlled entry without keys circulating between tenants. iComply design, install, program and maintain fob access control systems across the North West, pairing readers, controllers and door hardware with fire-safe egress and clear admin processes for issuing and cancelling fobs.",
     "body": "We help landlords and FM teams move from master-key chaos to auditable fob lists, time schedules and door groups. From our Stockport base we install new systems, expand existing ones and re-programme lost or stolen fobs quickly. Related searches often include proximity readers, multi-door control, visitor management and integrating fob entry with video door entry for residential blocks.",
-    "meta_desc": "Fob access control across Greater Manchester & the North West. iComply install, program & maintain fob entry systems with fixed-price quotes.",
+    "meta_desc": "Fob access control across Greater Manchester & the North West. iComply install, program & maintain fob entry systems with written quotes.",
     "focus_points": [
       "Fob-based access design for offices, blocks and estates",
       "Reader and controller install with free-escape compliance",
@@ -236,7 +236,7 @@
   "magnetic-lock-installation": {
     "intro": "Magnetic lock installation secures doors with fail-safe holding force when paired correctly with access control, power supplies and fire-release. iComply design and install maglocks for commercial and multi-tenant doors across Greater Manchester and the North West, ensuring free escape, monitoring contacts and commissioning documentation that facilities teams can rely on.",
     "body": "A maglock is only as safe as its egress design: break-glass or fire-panel release, request-to-exit, battery backup and door geometry all matter. Our engineers survey the door leaf, frame and traffic pattern before fitting brackets, armature plates and cable routes that last. Based in Stockport, we also replace failing magnets, upgrade ageing PSUs and integrate maglocks with Paxton, HID-compatible and other access platforms.",
-    "meta_desc": "Magnetic lock installation across Greater Manchester & the North West. iComply fit maglocks with fire-release, egress devices and fixed-price quotes.",
+    "meta_desc": "Magnetic lock installation across Greater Manchester & the North West. iComply fit maglocks with fire-release, egress devices and written quotes.",
     "focus_points": [
       "Survey of door type, holding force and mounting method",
       "Maglock, PSU, RTE and fire-release integration",
@@ -287,8 +287,8 @@
   },
   "office-access-control": {
     "intro": "Office access control keeps staff areas, meeting suites and plant rooms restricted to authorised people while logging who entered and when. iComply design, install, program and maintain office access control systems for SMEs and multi-floor workplaces across Greater Manchester and the North West, with commissioning sheets, schedules and user training for reception and facilities teams.",
-    "body": "Typical office projects include main entrance, server room, stock cupboards and out-of-hours perimeter doors, often linked to visitor procedures or existing CCTV. We specify readers, credentials, locks and software that match your headcount growth and multi-site plans. Stockport-based engineers deliver fixed-price quotes after survey and can standardise access policies if you operate several offices under one brand.",
-    "meta_desc": "Office access control across Greater Manchester & the North West. iComply design, install & program workplace door access with fixed-price quotes.",
+    "body": "Typical office projects include main entrance, server room, stock cupboards and out-of-hours perimeter doors, often linked to visitor procedures or existing CCTV. We specify readers, credentials, locks and software that match your headcount growth and multi-site plans. Stockport-based engineers deliver written quotes after survey and can standardise access policies if you operate several offices under one brand.",
+    "meta_desc": "Office access control across Greater Manchester & the North West. iComply design, install & program workplace door access with written quotes.",
     "focus_points": [
       "Office door risk assessment and access zoning",
       "Staff credentials, schedules and holiday hours programming",
@@ -392,7 +392,7 @@
   "gate-access-control": {
     "intro": "Gate access control secures vehicle and pedestrian gates with readers, keypads, intercoms or remote release while keeping traffic flowing safely. iComply design, install, program and maintain gate access control across Greater Manchester and the North West, coordinating automation interfaces, safety edges and free-escape or manual release arrangements with commissioning notes for site teams.",
     "body": "Industrial yards, residential developments and commercial car parks each need different credential and safety approaches. Our Stockport engineers survey gate motors, loops, photocells and mounting positions before integrating access control. We also repair failed gate readers, upgrade from shared remotes to managed credentials and link gates into multi-door or multi-site systems for estate-wide control.",
-    "meta_desc": "Gate access control across Greater Manchester & the North West. iComply integrate readers & credentials with gate automation and fixed-price quotes.",
+    "meta_desc": "Gate access control across Greater Manchester & the North West. iComply integrate readers & credentials with gate automation and written quotes.",
     "focus_points": [
       "Survey of gate type, automation and safety devices",
       "Reader, keypad or intercom integration with gate control",
@@ -470,7 +470,7 @@
   "cloud-access-control": {
     "intro": "Cloud access control lets managers issue credentials, change schedules and review door events from a browser or app without being on site. iComply design, install and support cloud access control platforms for offices, multi-site retailers and managed blocks across the North West, combining modern controllers with correct lock hardware, fire-release practice and local engineer backup from Stockport.",
     "body": "Cloud systems still need professional door surveys: power quality, network resilience, free escape and reader placement decide real-world reliability. We install hardware, enrol administrators, set access levels and document failover behaviour if the internet drops. Related projects include wireless locks on heritage doors, multi-site roll-outs and visitor credentials that expire automatically.",
-    "meta_desc": "Cloud access control across Greater Manchester & the North West. iComply install app-managed door access with local engineers and fixed-price quotes.",
+    "meta_desc": "Cloud access control across Greater Manchester & the North West. iComply install app-managed door access with local engineers and written quotes.",
     "focus_points": [
       "Cloud platform selection matched to doors and sites",
       "Controller, reader and lock install with network readiness",
@@ -574,7 +574,7 @@
   "door-controller-installation": {
     "intro": "Door controller installation is the backbone of electronic access — the panel that decides which credentials open which doors and when. iComply supply, install, power and commission door controllers for single-door kits through multi-door networked systems across Greater Manchester and the North West, with neat enclosures, battery-backed PSUs and programming handover.",
     "body": "We locate controllers for service access and cable management, label terminations, and test each door’s lock, reader and egress path before sign-off. Stockport engineers expand existing controller banks, replace failed boards and migrate doors during upgrades with minimal downtime. Whether Paxton, HID-compatible or other commercial platforms, we confirm capacity and licence needs before installation starts.",
-    "meta_desc": "Door controller installation across Greater Manchester & the North West. iComply fit, power & program access controllers with fixed-price quotes.",
+    "meta_desc": "Door controller installation across Greater Manchester & the North West. iComply fit, power & program access controllers with written quotes.",
     "focus_points": [
       "Controller sizing for door count and future growth",
       "PSU, battery and enclosure installation to good practice",
@@ -598,7 +598,7 @@
     "seo_keywords": "door controller installation, access control controller, access panel install, multi-door controller Manchester, door control unit Stockport, access control PCB install North West, access system controller upgrade, electronic door controller"
   },
   "access-control-system-design": {
-    "intro": "Access control system design turns a list of doors into a coherent security plan: zones, credentials, free escape, power, cabling or wireless strategy and admin processes. iComply provide survey-led access control system design for offices, residential blocks and multi-site estates across the North West, then install and commission the agreed design with fixed-price clarity.",
+    "intro": "Access control system design turns a list of doors into a coherent security plan: zones, credentials, free escape, power, cabling or wireless strategy and admin processes. iComply provide survey-led access control system design for offices, residential blocks and multi-site estates across the North West, then install and commission the agreed design with quoted clarity.",
     "body": "Good design prevents expensive rework — the wrong lock type on a fire door or undersized controller capacity creates years of frustration. Our Stockport team documents door schedules, risk notes and product choices so landlords, architects and FM stakeholders can approve before materials are ordered. We also redesign legacy estates that have grown organically into unmanageable mixed systems.",
     "meta_desc": "Access control system design across Greater Manchester & the North West. iComply survey, specify & deliver install-ready designs with fixed quotes.",
     "focus_points": [
@@ -677,7 +677,7 @@
   },
   "access-control-engineers": {
     "intro": "Access control engineers from iComply survey, install, program, fault-find and maintain electronic door systems across Greater Manchester and the wider North West. Based in Stockport, our engineers work on multi-door offices, residential blocks and multi-site estates with BS EN 50133 awareness, fire-release best practice and commissioning documentation for facilities managers.",
-    "body": "Whether you need a planned install team or a reactive engineer for a failed door, we provide clear communication, fixed-price scope after assessment and tidy workmanship. We support common commercial platforms including Paxton and HID-compatible readers, plus maglocks, strikes, controllers and cloud systems. Tell us the brand, fault and postcode to start a quote.",
+    "body": "Whether you need a planned install team or a reactive engineer for a failed door, we provide clear communication, written scope after assessment and tidy workmanship. We support common commercial platforms including Paxton and HID-compatible readers, plus maglocks, strikes, controllers and cloud systems. Tell us the brand, fault and postcode to start a quote.",
     "meta_desc": "Access control engineers across Greater Manchester & the North West. iComply install, program & repair door access systems from Stockport.",
     "focus_points": [
       "Qualified local engineers for install and reactive repair",
@@ -782,7 +782,7 @@
   "door-entry-system-installation": {
     "intro": "Door entry system installation gives residents, staff and visitors a clear way to call, identify and release entrances on multi-tenant and commercial buildings. iComply install, repair, upgrade and maintain door entry systems across Greater Manchester and the North West for blocks of flats, offices and mixed-use sites, with handover documentation and panel programming notes for managing agents.",
     "body": "We survey risers, handset locations, entrance panels and lock interfaces before quoting fixed-scope installation. From audio kits to colour video and IP systems, Stockport-based engineers deliver tidy installs, trade button setup where required and training for site staff. Related works include access control credentials on communal doors, maglocks and replacing obsolete panels that no longer have spare parts.",
-    "meta_desc": "Door entry system installation across Greater Manchester & the North West. iComply install audio, video & IP door entry with fixed-price quotes.",
+    "meta_desc": "Door entry system installation across Greater Manchester & the North West. iComply install audio, video & IP door entry with written quotes.",
     "focus_points": [
       "Full survey of panels, handsets, wiring and door locks",
       "Audio, video and IP door entry installation options",
@@ -886,7 +886,7 @@
   "gsm-door-entry-system": {
     "intro": "A GSM door entry system calls a mobile or landline when a visitor presses the panel, ideal where traditional handset wiring is impractical or residents prefer phone answering. iComply install, program and maintain GSM door entry systems across the North West for houses of multiple occupation, small blocks, gates and commercial side doors, with signal checks and clear user setup notes.",
     "body": "GSM success depends on mobile signal, SIM management and correctly interfaced locks. Our Stockport engineers test signal strength, fit panels and program dialling lists so the right people receive visitor calls. We also service systems with failed SIMs, weak reception or unreliable release, and can combine GSM entry with fob access for residents who should not need a phone call every time they come home.",
-    "meta_desc": "GSM door entry systems across Greater Manchester & the North West. iComply install phone-based door entry with SIM setup and fixed-price quotes.",
+    "meta_desc": "GSM door entry systems across Greater Manchester & the North West. iComply install phone-based door entry with SIM setup and written quotes.",
     "focus_points": [
       "Signal survey and SIM planning before install",
       "GSM panel install with secure lock release interface",
@@ -912,7 +912,7 @@
   "ip-door-entry-system": {
     "intro": "An IP door entry system uses network infrastructure to deliver video calling, mobile apps and flexible multi-tenant management for modern blocks and commercial buildings. iComply design, install and maintain IP door entry systems across Greater Manchester and the North West, coordinating PoE, switches, panels and indoor stations with commissioning and programming documentation.",
     "body": "IP door entry shines when Wi-Fi or structured cabling is designed properly — poor networks create poor entry experiences. We survey existing LAN capability, specify panels and apps, and set up resident directories with managing agent workflows in mind. From Stockport we deliver new IP installs, migrations from analogue systems and repairs when stations drop offline or door release fails on network kits.",
-    "meta_desc": "IP door entry systems across Greater Manchester & the North West. iComply install network video door entry with apps, panels & fixed-price quotes.",
+    "meta_desc": "IP door entry systems across Greater Manchester & the North West. iComply install network video door entry with apps, panels & written quotes.",
     "focus_points": [
       "Network-ready design including PoE and switch considerations",
       "IP panel and indoor station installation",
@@ -936,9 +936,9 @@
     "seo_keywords": "IP door entry system, IP video door entry, network door entry, IP intercom install, IP door entry Manchester, PoE door entry Stockport, app door entry North West, multi-tenant IP door entry"
   },
   "colour-video-door-entry": {
-    "intro": "Colour video door entry lets residents and staff see visitors before releasing the door, reducing unwanted entry and improving day-to-day security. iComply install, upgrade and maintain colour video door entry across the North West for apartments, offices and mixed-use buildings, with panel programming, handset setup and lock interface works included in clear fixed-price scopes.",
+    "intro": "Colour video door entry lets residents and staff see visitors before releasing the door, reducing unwanted entry and improving day-to-day security. iComply install, upgrade and maintain colour video door entry across the North West for apartments, offices and mixed-use buildings, with panel programming, handset setup and lock interface works included in clear quoted scopes.",
     "body": "Video quality depends on panel placement, lighting and cabling integrity. Our Stockport engineers survey entrances for camera angles and vandal risk, then install colour video systems that residents will actually use. We upgrade monochrome or failed audio-only systems, replace damaged outdoor panels and train site contacts on directories and privacy settings where multi-tenant video is involved.",
-    "meta_desc": "Colour video door entry across Greater Manchester & the North West. iComply install & upgrade video entry with clear images and fixed-price quotes.",
+    "meta_desc": "Colour video door entry across Greater Manchester & the North West. iComply install & upgrade video entry with clear images and written quotes.",
     "focus_points": [
       "Entrance survey for camera angle, lighting and vandal resistance",
       "Colour video panel and indoor monitor installation",

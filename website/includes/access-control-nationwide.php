@@ -277,10 +277,10 @@ function acnRenderHub(): void
     $canonical = url('/pages/access-control-systems');
     $faqs = [
         ['Where are the engineers based?', 'At 17 Woodlands Park Road, Offerton, Stockport, SK2 5DE. The North West diary runs from there. Other UK cities on this site are attended by arrangement. There is no second depot.'],
-        ['Which manufacturers do you cover?', 'The access-control brands linked on this page, including Paxton, HID Global, Salto Systems and ASSA ABLOY. Tunstall is nurse call and is excluded.'],
+        ['Which manufacturers do you cover?', 'Tunstall is nurse call and is excluded.'],
         ['How is the work priced?', 'Price on application after a survey or clear photos of the doors and the controller. No door price is published here.'],
         ['What standard do you read electronic access control against?', 'BS EN 60839-11 for the electronic access-control system. Door release on a fire alarm is read against BS 7273-4. Older specifications still say BS EN 50133. That standard was withdrawn. We do not treat it as the current design code.'],
-        ['Do you offer a 24-hour access-control contract on this page?', 'No. Help in the North West depends on the diary. It is not an SLA.'],
+        ['', 'No. Help in the North West depends on the diary. It is not an SLA.'],
     ];
     ob_start();
     ?>
@@ -314,7 +314,7 @@ function acnRenderHub(): void
     </section>
     <section id="keywords" class="bg-white border-t">
         <div class="max-w-7xl mx-auto px-6 py-14">
-            <h2 class="text-3xl font-semibold text-[#0B1F3A]">Keyword guides</h2>
+            <h2 class="text-3xl font-semibold text-[#0B1F3A]">Service guides</h2>
             <p class="mt-3 max-w-3xl text-zinc-800"><?= count($keywords) ?> access-control guides, including staff-change programming, fire-interface tests and lock assessments. Each guide links to the same manufacturer list, without Tunstall.</p>
             <div class="mt-6 flex flex-wrap gap-2"><?= acnKeywordLinksHtml($keywords) ?></div>
         </div>
@@ -340,7 +340,7 @@ function acnRenderHub(): void
     ];
     acnRender([
         'title' => 'Access control systems UK | iComply',
-        'meta' => 'Access control systems across the UK from our Stockport workshop. City pages, keyword guides and manufacturer links. POA. ' . PHONE . '.',
+        'meta' => 'Access control systems across the UK from our Stockport workshop. City pages, service guides and manufacturer links. POA. ' . PHONE . '.',
         'keywords' => 'access control systems UK, access control installation, Paxton, HID, Salto, door access control, ' . PHONE,
         'canonical' => $canonical,
         'h1' => 'Access control systems across the UK',
@@ -390,7 +390,7 @@ function acnRenderCity(array $city): void
             <p><?= htmlspecialchars((string)$city['doors'], ENT_QUOTES, 'UTF-8') ?></p>
             <h2 class="text-2xl font-semibold text-[#0B1F3A]">How the visit is booked</h2>
             <p><?= htmlspecialchars((string)$city['visit'], ENT_QUOTES, 'UTF-8') ?></p>
-            <p>Electronic access control is read against BS EN 60839-11. Fire-alarm release of a lock is read against BS 7273-4. We do not cite the withdrawn BS EN 50133 as if it were current, and we do not claim an NSI or SSAIB badge on this page.</p>
+            <p>Electronic access control is read against BS EN 60839-11. Fire-alarm release of a lock is read against BS 7273-4. </p>
         </div>
     </section>
     <section class="bg-zinc-50 border-t">

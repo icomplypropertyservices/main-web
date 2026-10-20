@@ -2,7 +2,7 @@
 /**
  * Resource — Legionella / water hygiene for landlords (UK guidance, not legal advice). POA.
  * Source briefs (service-legionella-landlords.md / seo-outlines) were not mounted;
- * copy follows HSE L8 / HSG274 landlord duties only — no invented prices, certs or reviews.
+ * copy follows HSE L8 / HSG274 landlord duties only, certs or reviews.
  */
 require_once __DIR__ . '/../../config.php';
 require_once SITE_ROOT . '/includes/share.php';
@@ -33,7 +33,7 @@ require SITE_ROOT . '/includes/header.php';
 </section>
 <article class="max-w-3xl mx-auto px-6 py-12 space-y-8">
     <div class="rounded-2xl bg-amber-50 border border-amber-200 px-5 py-4 text-sm text-amber-950">
-        <strong>Not legal advice.</strong> Duties follow current HSE guidance (ACOP L8 and HSG274). We do not invent accreditations, prices or reviews on this page.
+        <strong>Not legal advice.</strong> Duties follow current HSE guidance (ACOP L8 and HSG274). 
     </div>
     <div>
         <h2 class="text-2xl font-semibold mb-3">What it is</h2>
@@ -63,14 +63,14 @@ require SITE_ROOT . '/includes/header.php';
     </div>
     <div>
         <h2 class="text-2xl font-semibold mb-3">Review frequency</h2>
-        <p class="text-zinc-700">Review when the system or occupancy changes, and at an interval that matches risk — not a date invented for marketing. Many landlords book water hygiene in the same conversation as an EICR or gas safety record. Each item is still scoped and POA.</p>
+        <p class="text-zinc-700">Many landlords book water hygiene in the same conversation as an EICR or gas safety record. Each item is still scoped and POA.</p>
     </div>
     <div>
         <h2 class="text-2xl font-semibold mb-3">Common questions</h2>
         <div class="space-y-3">
             <details class="bg-white border rounded-2xl p-5"><summary class="font-semibold cursor-pointer">Do landlords always need a Legionella risk assessment?</summary><p class="mt-3 text-sm text-zinc-600">HSE expects dutyholders to consider Legionella risk. Many simple domestic systems are lower risk, but rented and commercial sites still need a suitable assessment. We confirm what is appropriate after you describe the property.</p></details>
             <details class="bg-white border rounded-2xl p-5"><summary class="font-semibold cursor-pointer">Do you always take water samples?</summary><p class="mt-3 text-sm text-zinc-600">No. Assessment comes first. Sampling is useful on some stored-water or complex systems and is quoted separately as POA if recommended.</p></details>
-            <details class="bg-white border rounded-2xl p-5"><summary class="font-semibold cursor-pointer">What does it cost?</summary><p class="mt-3 text-sm text-zinc-600">Price on application. Outlets, tanks, access and whether sampling is needed all change the work. We do not publish a made-up price.</p></details>
+            <details class="bg-white border rounded-2xl p-5"><summary class="font-semibold cursor-pointer">What does it cost?</summary><p class="mt-3 text-sm text-zinc-600">Price on application. Outlets, tanks, access and whether sampling is needed all change the work. </p></details>
         </div>
     </div>
     <div class="flex flex-wrap gap-2">

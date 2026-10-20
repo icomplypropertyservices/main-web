@@ -268,7 +268,7 @@ BRIEFS_B = [
         "slug": "tenant-damage-plumbing-repair",
         "name": "Tenant Damage Plumbing Repair",
         "cluster": "landlord",
-        "note": "Tenant-damage repairs are the broken tap, the cracked cistern and the waste pulled out of its seal. We describe what we found in plain words so the agent can decide the charge. We do not invent a cause we did not see.",
+        "note": "Tenant-damage repairs are the broken tap, the cracked cistern and the waste pulled out of its seal. We describe what we found in plain words so the agent can decide the charge. ",
         "work": "We repair the damaged fitting and photograph is not promised; the job note states the failed part.",
         "limit": "We do not write a legal blame statement. We write what was broken and what we fitted.",
     },
@@ -302,7 +302,7 @@ BRIEFS_B = [
         "cluster": "landlord",
         "note": "An after-hours visit is for a leak, a blocked only-toilet, or no water. It is not for a tap upgrade or a bathroom quote. Access and a working phone number matter more than a long description.",
         "work": "We make the property safe and complete the repair if the parts are the common ones we carry. Anything else is isolated and booked.",
-        "limit": "We do not publish an after-hours fee on this page. The price is on application when we know the fault and the time.",
+        "limit": " The price is on application when we know the fault and the time.",
     },
     {
         "slug": "flexible-hose-replace",

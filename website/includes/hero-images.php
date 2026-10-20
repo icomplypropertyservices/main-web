@@ -197,7 +197,7 @@ function icomplyHubInline(string $serviceSlug, int $slot): ?string
 function icomplyKeywordHero(string $keywordSlug, string $serviceSlug, string $area = ''): array
 {
     $fallback = [
-        'primary' => '/assets/images/keywords/' . $keywordSlug . '.jpg',
+        'primary' => function_exists('icomplyKeywordImagePath') ? icomplyKeywordImagePath($keywordSlug, $serviceSlug) : '/assets/images/keywords/' . $keywordSlug . '.jpg',
         'inline' => '/assets/images/services/' . ($serviceSlug !== '' ? $serviceSlug : 'fire-alarms') . '.jpg',
         'pool' => null,
     ];

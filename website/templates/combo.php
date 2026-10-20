@@ -1,4 +1,5 @@
 <?php
+require_once SITE_ROOT . '/includes/render.php';
 /**
  * Single data-driven service × area template (all services).
  * Pure PHP vars via executeTemplateVars() (no {{}} / eval).
@@ -250,7 +251,7 @@ $schema = [
                      onerror="this.style.display='none'">
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-[#0B1F3A]/20 to-transparent">
                     <div class="text-sm text-white/70"><?php if (is_array($ncNationwide)): ?>Nurse call in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> · <?= htmlspecialchars($ncNationwide['region'] . ', ' . $ncNationwide['nation'], ENT_QUOTES, 'UTF-8') ?><?php else: ?>Serving <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> &amp; <?= htmlspecialchars($coveragePhrase, ENT_QUOTES, 'UTF-8') ?><?php endif; ?></div>
-                    <div class="text-2xl font-semibold mt-1">Local engineers · Fixed-price quotes</div>
+                    <div class="text-2xl font-semibold mt-1">Local engineers · Written quotes</div>
                 </div>
             </div>
         </div>
@@ -268,6 +269,10 @@ echo icomplyQualityBarThinBlock(
     (string)$blurb,
     $serviceSlug === 'gas-systems' || $serviceSlug === 'heating'
 );
+if (function_exists('isFireSafetyService') && isFireSafetyService((string)$serviceSlug)) {
+    require_once SITE_ROOT . '/includes/fire-family-depth.php';
+    echo '<div class="max-w-4xl mx-auto px-6 pt-10">' . icomplyFireFamilyDepthHtml((string)$serviceSlug, (string)$serviceName, (string)$areaName) . '</div>';
+}
 require_once SITE_ROOT . '/includes/town-facts.php';
 $townFacts = icomplyTownFactsHtml((string)$areaSlugVal, (string)$areaName, (string)$serviceName, (string)$serviceSlug);
 $tfLean = $townFacts !== ''; // real local facts present: trim shared boilerplate blocks
@@ -285,13 +290,13 @@ if ($townFacts !== '') {
                 ['Local to ' . $areaName, 'Stockport-based team covering ' . $areaName . ' and surrounding postcodes'],
                 ['Standards-led', $standards],
                 ['File-ready notes', 'Written assessment or survey notes for landlords, agents and dutyholders'],
-                ['POA quotes', 'No invented prices — scoped after we know the property'],
+                ['POA quotes', 'Scoped after we know the property'],
             ]
             : [
                 ['Local to ' . $areaName, 'Stockport-based engineers covering ' . $areaName . ' and surrounding postcodes'],
                 ['Standards-led', $standards],
                 ['Full certification', 'Documentation for landlords, insurers and fire officers'],
-                ['Fixed-price quotes', 'Clear scope, appointments booked when the diary allows'],
+                ['Written quotes', 'Clear scope, appointments booked when the diary allows'],
             ];
         foreach ($trust as [$t, $d]): ?>
             <div class="flex gap-3 items-start">
@@ -325,7 +330,7 @@ if ($townFacts !== '') {
                 iComply Property Services provides complete <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong>
                 design, installation, commissioning, maintenance and certification across
                 <strong><?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></strong> and the wider <?= htmlspecialchars($coveragePhrase, ENT_QUOTES, 'UTF-8') ?>.
-                Our qualified engineers deliver fixed-price quotes after scope and full compliance documentation on every job.
+                Our qualified engineers deliver written quotes after scope and full compliance documentation on every job.
             </p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
                 Whether you need a new system, an upgrade, periodic testing or emergency repairs, we support commercial,
@@ -342,7 +347,7 @@ if ($townFacts !== '') {
         </div>
         <div class="lg:col-span-2 space-y-4">
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
-                <img src="<?= url('/assets/images/keywords/' . $KEYWORD_IMAGE_1 . '.jpg') ?>"
+                <img src="<?= url(icomplyKeywordImagePath((string)$KEYWORD_IMAGE_1, (string)$SERVICE_SLUG)) ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> panel and equipment used by iComply in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
                      width="800" height="600"
                      class="w-full h-44 object-cover"
@@ -351,7 +356,7 @@ if ($townFacts !== '') {
                 <p class="text-xs text-zinc-500 px-3 py-2"><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> control equipment &amp; panels</p>
             </div>
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
-                <img src="<?= url('/assets/images/keywords/' . $KEYWORD_IMAGE_2 . '.jpg') ?>"
+                <img src="<?= url(icomplyKeywordImagePath((string)$KEYWORD_IMAGE_2, (string)$SERVICE_SLUG)) ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation work and testing in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
                      width="800" height="600"
                      class="w-full h-44 object-cover"
@@ -442,7 +447,7 @@ if ($tfLean) {
             <?= $MANUFACTURER_IMAGES ?>
         </div>
         <div class="mt-10 rounded-3xl overflow-hidden border bg-white">
-            <img src="<?= url('/assets/images/keywords/' . $KEYWORD_IMAGE_3 . '.jpg') ?>"
+            <img src="<?= url(icomplyKeywordImagePath((string)$KEYWORD_IMAGE_3, (string)$SERVICE_SLUG)) ?>"
                  alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturer panels and equipment — iComply <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
                  width="1200" height="700"
                  class="w-full h-64 md:h-80 object-cover"
@@ -556,7 +561,7 @@ if ($tfLean) {
         <div>
             <h2 class="text-3xl font-semibold tracking-tight">Need <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>?</h2>
             <p class="mt-3 text-white/75"><?= $poaCombo
-                ? 'Price on application after we confirm the property in ' . htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') . '. No invented fee list — call, WhatsApp or send the form.'
+                ? 'Price on application after we confirm the property in ' . htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') . '. '
                 : ($tfLean ? '' : 'Written quotes after scope. Visit dates follow the diary. Full certification on every job. Tell us your panel brand or system type.') ?></p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="#quote" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold">Request quote</a>

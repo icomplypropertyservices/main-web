@@ -222,7 +222,7 @@ $schema = [
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
                 <?php if ($isPartner): ?>
                     iComply is a CAME partner. Gard barriers are specified for private lanes, with safety devices taken from the CAME manual for that model.
-                    UK towns over 10,000 each have a barrier page. Those pages carry official population figures. They do not invent a local depot.
+                    UK towns over 10,000 each have a barrier page. Those pages carry official population figures. 
                     The quote is on application.
                 <?php else: ?>
                     <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> barriers are equipment we service or replace.
@@ -316,7 +316,7 @@ if ($acnBrand && function_exists('acnCities')):
 <section class="bg-[#0B1F3A] text-white">
     <div class="max-w-7xl mx-auto px-6 py-14">
         <h2 class="text-3xl font-semibold"><?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> on UK access-control jobs</h2>
-        <p class="mt-3 max-w-3xl text-white/85">This brand is on the access-control list. Tunstall is not. Nationwide city notes and the keyword guide sit with the Stockport workshop, not a local depot in every city.</p>
+        <p class="mt-3 max-w-3xl text-white/85">This brand is on the access-control list. Tunstall is not. Work in other cities is run from our Stockport workshop.</p>
         <div class="mt-6 flex flex-wrap gap-2">
             <a class="px-4 py-2 rounded-full bg-[#ff6b00] font-semibold" href="<?= url('/pages/access-control-systems') ?>">Access control systems across the UK</a>
             <a class="px-4 py-2 rounded-full bg-white text-[#0B1F3A] font-semibold" href="<?= url('/pages/keywords/' . $acnGuide) ?>">Brand guide</a>
@@ -419,7 +419,7 @@ if ($acnBrand && function_exists('acnCities')):
     <div class="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-2 gap-10 items-center">
         <div>
             <h2 class="text-3xl font-semibold tracking-tight">Need <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?>?</h2>
-            <p class="mt-3 text-white/75">Free fixed-price quotes. Install, service and trade products across the North West.</p>
+            <p class="mt-3 text-white/75">Free written quotes. Install, service and trade products across the North West.</p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="#quote" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold">Request quote</a>
                 <a href="<?= url('/shop/index.php') ?>" class="px-6 py-3 rounded-2xl bg-white/10 border border-white/20 font-semibold hover:bg-white/15">Trade shop</a>

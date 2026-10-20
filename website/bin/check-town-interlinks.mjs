@@ -67,6 +67,21 @@ for (const [kind, slug, town] of samples) {
   if (n < min) { fail++; console.log(`FAIL ${n} < ${min} ${label}`); }
   else console.log(`ok ${n} ${label}`);
 }
+// Static service x town pages in dist: every smoke-co-alarms town page (2026-10-20, was 166 under 80).
+{
+  const dir = path.join(dist, "pages/smoke-co-alarms");
+  let smoke = 0, smokeLow = 0, smokeMin = Infinity;
+  for (const f of fs.existsSync(dir) ? fs.readdirSync(dir).filter((x) => x.endsWith(".php")) : []) {
+    const html = fs.readFileSync(path.join(dir, f), "utf8");
+    if (/<meta name="robots" content="[^"]*noindex/i.test(html)) continue;
+    smoke++; checked++;
+    const n = uniqueInternal(html);
+    smokeMin = Math.min(smokeMin, n);
+    if (n < MIN) { fail++; smokeLow++; if (smokeLow <= 10) console.log(`FAIL ${n} < ${MIN} static smoke-co-alarms/${f.replace(/\.php$/, "")}`); }
+  }
+  if (smoke === 0) { fail++; console.log("FAIL no smoke-co-alarms town pages in dist"); }
+  else console.log(`${smokeLow ? "FAIL" : "ok"} smoke-co-alarms static town pages: ${smoke}, min ${smokeMin}, under ${MIN}: ${smokeLow}`);
+}
 if (checked < 20) { console.log(`FAIL only ${checked} pages rendered (need >= 20)`); fail++; }
 console.log(fail ? `check-town-interlinks: ${fail} failure(s)` : `check-town-interlinks: OK (${checked} pages; >= ${MIN}, P0 >= ${MIN_P0})`);
 process.exit(fail ? 1 : 0);

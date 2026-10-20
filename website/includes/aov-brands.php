@@ -25,7 +25,7 @@ function aovManufacturers(): array
         ['slug' => 'flaktgroup', 'name' => 'FlaktGroup', 'line' => 'Fans and air-handling units, not a stair chain actuator.'],
         ['slug' => 'systemair', 'name' => 'Systemair', 'line' => 'Extract and supply fans and their controls.'],
         ['slug' => 'kingspan-air', 'name' => 'Kingspan Air', 'line' => 'Ventilation products listed against this service. Confirm the badge on site before parts are ordered.'],
-        ['slug' => 'brooks', 'name' => 'Brooks', 'line' => 'Listed for smoke-vent work. We match the part to the label, not the logo on this page.'],
+        ['slug' => 'brooks', 'name' => 'Brooks', 'line' => 'Listed for smoke-vent work. '],
         ['slug' => 'ventilux', 'name' => 'Ventilux', 'line' => 'Listed on the AOV set. If the panel is actually emergency lighting, that is a different visit.'],
         ['slug' => 'assa-abloy', 'name' => 'Assa Abloy', 'line' => 'Door and vent hardware when that is what the smoke strategy names. Not every Assa product is an AOV.'],
     ];
@@ -122,7 +122,7 @@ function aovKitWizardHtml(string $context): string
   <div class="max-w-7xl mx-auto px-6 py-14">
     <p class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Equipment</p>
     <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Choose a supply kit, or describe the fault</h2>
-    <p class="mt-3 text-zinc-600 max-w-3xl">List prices are for the supply SKUs Jack locked. Installation, access equipment, commissioning and multi-visit work are priced after we know the building. These name plates are ours. We are not an approved partner of any brand on this page, and we do not hold a BAFE or FIRAS badge for smoke control.</p>
+    <p class="mt-3 text-zinc-600 max-w-3xl">List prices are for the supply SKUs Jack locked. Installation, access equipment, commissioning and multi-visit work are priced after we know the building. These name plates are ours. </p>
     <form class="mt-6 grid md:grid-cols-2 gap-4 bg-white border border-zinc-200 rounded-3xl p-5" data-aov-wizard-form>
       <label class="block text-sm font-semibold text-black">What do you need?
         <select name="need" class="mt-2 w-full border border-zinc-300 rounded-xl px-3 py-3 font-normal" data-aov-need>

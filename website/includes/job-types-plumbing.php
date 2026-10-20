@@ -134,7 +134,7 @@ function jobTypesPlumbingPageHubHtml(string $slug, array $meta): string
     $links = [
         [url('/pages/services/index.php') . '#construction', 'Construction & Fit-Out hub'],
         [url('/pages/services/plumbing.php') . '#plumbing-job-types', 'Plumbing service hub'],
-        [url('/pages/keywords/index.php'), 'Keyword guide hub'],
+        [url('/pages/keywords/index.php'), 'All service guides'],
         [url('/pages/areas/index.php'), 'Area hubs'],
     ];
     $related = keywordSlug((string)($meta['related'] ?? ''));

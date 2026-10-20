@@ -65,7 +65,7 @@ $packages = [
     [
         'name' => 'Single property',
         'text' => 'One-off EICR, fire alarm service or emergency lighting test with certificates ready for your tenancy file. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.',
-        'points' => ['Fixed-price quote', 'Digital certificates', 'Remedial advice included'],
+        'points' => ['Written quote', 'Digital certificates', 'Remedial advice included'],
     ],
     [
         'name' => 'Portfolio package',
@@ -298,7 +298,7 @@ echo icomplyComplianceBundleCrossSellHtml('landlords');
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Stockport engineers, North West coverage</h2>
             <p class="mt-4 text-zinc-600 leading-relaxed">
                 Based in Offerton, Stockport, iComply Property Services supports landlords and letting agents across
-                Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria. We focus on clear scope, fixed-price
+                Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria. We focus on clear scope, quoted
                 quotes and paperwork that stands up to tenancy deposits, local authority checks and insurer audits.
             </p>
             <div class="mt-8 grid sm:grid-cols-2 gap-4">

@@ -32,14 +32,14 @@ $new = [
         'name' => 'EICR Near Me',
         'service' => 'electrical',
         'related' => 'eicr',
-        'intro' => 'Looking for an EICR near you in Greater Manchester or the North West? Local Stockport-based engineers cover 150+ towns with fixed-price quotes.',
+        'intro' => 'Looking for an EICR near you in Greater Manchester or the North West? Local Stockport-based engineers cover 150+ towns with written quotes.',
         'body' => 'Search intent for EICR near me usually means fast local attendance, clear pricing and a proper BS 7671 report. We book from our SK2 base into Manchester, Stockport, Bolton, Oldham and beyond.',
         'meta_desc' => 'EICR near me — local electrical condition reports across Greater Manchester and the North West.',
         'seo_keywords' => 'EICR near me, local EICR, electrical certificate near me, EICR engineer near me',
         'focus_points' => [
             'Local North West coverage',
             'Visit dates follow the diary',
-            'Fixed-price before we attend',
+            'Written quote before we attend',
             'Digital certificate turnaround',
         ],
         'faq' => [

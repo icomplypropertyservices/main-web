@@ -1,7 +1,7 @@
 /**
  * Facts-only local block for edge keyword x town and manufacturer x town pages.
  * Data: website/data/town-geo-slim.json (postcodes.io / ONSPD; census from ONS 2021).
- * No invented reviews, projects, response times or statistics.
+
  */
 import geo from "../../website/data/town-geo-slim.json" with { type: "json" };
 import laCensus from "./la-census-slim.json" with { type: "json" };

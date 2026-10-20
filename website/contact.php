@@ -263,7 +263,7 @@ $contactSchema = [
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
                     Get in touch.<br>
-                    <span class="text-[#ff6b00]">Free fixed-price quote.</span>
+                    <span class="text-[#ff6b00]">Free written quote.</span>
                 </h1>
                 <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl">
                     Call, WhatsApp or send a message — electrical, fire, gas, emergency lighting, CCTV and access control across the North West.

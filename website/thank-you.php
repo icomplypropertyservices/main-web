@@ -85,7 +85,7 @@ require SITE_ROOT . '/includes/header.php';
             $steps = [
                 ['1', 'We review your request', 'Service, postcode and details you sent — no spam, just a clear scope.'],
                 ['2', 'We contact you', 'By phone or email after we have read the enquiry.'],
-                ['3', 'Fixed-price quote', 'Clear price after scope is agreed, then we book engineers.'],
+                ['3', 'Written quote', 'Clear price after scope is agreed, then we book engineers.'],
             ];
             foreach ($steps as [$n, $t, $d]): ?>
             <div class="bg-zinc-50 border rounded-3xl p-6 text-center">

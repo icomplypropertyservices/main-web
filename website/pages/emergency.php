@@ -123,7 +123,7 @@ $faqs = [
     ],
     [
         'q' => 'Do you publish a call-out price?',
-        'a' => 'No. Emergency attendance is price on application. Out-of-hours work usually carries a premium. The terms are explained on the phone so you can decide before an engineer sets off. We do not list a pound call-out fee on this page.',
+        'a' => 'No. Emergency attendance is price on application. Out-of-hours work usually carries a premium. The terms are explained on the phone so you can decide before an engineer sets off.',
     ],
     [
         'q' => 'What should I do if I smell gas?',

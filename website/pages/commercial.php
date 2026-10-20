@@ -7,7 +7,7 @@ require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/share.php';
 
 $pageTitle = 'Commercial & Facilities Management | Fire Safety & Multi-Site';
-$metaDesc = 'Commercial & FM across the North West: fire risk assessments, fire systems, electrical, AOV, nurse call, CCTV, access control, fit-out and planned maintenance. Fixed-price quotes for multi-site portfolios.';
+$metaDesc = 'Commercial & FM across the North West: fire risk assessments, fire systems, electrical, AOV, nurse call, CCTV, access control, fit-out and planned maintenance. Written quotes for multi-site portfolios.';
 $metaKeywords = 'commercial fire risk assessment, multi-site compliance, commercial fire alarms, AOV, nurse call, CCTV, access control, commercial fit out, FM North West';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/commercial.php');
@@ -86,7 +86,7 @@ $contractFeatures = [
 $trust = [
     ['title' => 'FM-ready', 'text' => 'Built for facilities managers, landlords and multi-site operators'],
     ['title' => 'Standards-led', 'text' => 'BS 5839, BS 5266, BS 7671, smoke control & more'],
-    ['title' => 'Fixed-price quotes', 'text' => 'Clear scope, documentation and certification'],
+    ['title' => 'Written quotes', 'text' => 'Clear scope, documentation and certification'],
     ['title' => 'Trade shop', 'text' => 'Kits & parts for engineers and FM stores'],
 ];
 
@@ -315,7 +315,7 @@ require SITE_ROOT . '/includes/header.php';
             </ul>
         </div>
         <div class="text-center md:text-right">
-            <p class="text-zinc-600 mb-4">Tell us site count, system types and preferred visit windows — we return a fixed-price proposal.</p>
+            <p class="text-zinc-600 mb-4">Tell us site count, system types and preferred visit windows — we return a written proposal.</p>
             <a href="#quote" class="inline-flex px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get contract quote</a>
         </div>
     </div>
@@ -444,7 +444,7 @@ require SITE_ROOT . '/includes/header.php';
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request a commercial / FM quote</h2>
             <p class="mt-3 text-zinc-600">
                 Include site count, postcodes, system types and whether you need install, remedials or a maintenance contract.
-                All quotes are fixed-price after scope is agreed.
+                All quotes are written after scope is agreed.
             </p>
         </div>
 

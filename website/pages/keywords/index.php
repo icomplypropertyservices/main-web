@@ -54,7 +54,7 @@ require SITE_ROOT . '/includes/header.php';
                     <?= count($keywords) ?> topics · <?= count($services) ?> services · <?= count($areas) ?>+ towns
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
-                    Topic &amp; keyword<br>
+                    Service<br>
                     <span class="text-[#ff6b00]">guides</span>
                 </h1>
                 <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl">
@@ -69,7 +69,7 @@ require SITE_ROOT . '/includes/header.php';
                     <a href="#quote" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Free quote</a>
                 </div>
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
-                    <div><span class="text-white font-semibold text-xl block"><?= count($keywords) ?></span> keyword guides</div>
+                    <div><span class="text-white font-semibold text-xl block"><?= count($keywords) ?></span> service guides</div>
                     <div><span class="text-white font-semibold text-xl block"><?= count($services) ?></span> services covered</div>
                     <div><span class="text-white font-semibold text-xl block"><?= count($areas) ?>+</span> towns linked</div>
                 </div>
@@ -131,7 +131,7 @@ require SITE_ROOT . '/includes/header.php';
             ['Full catalogue', 'Fire safety, professional & construction topics'],
             ['Service-linked', 'Every guide maps to one of ' . count($services) . ' services'],
             ['Local coverage', count($areas) . ' towns on related pages (Manchester and Burnley rings)'],
-            ['Fixed-price quotes', 'Clear scope before work starts'],
+            ['Written quotes', 'Clear scope before work starts'],
         ];
         foreach ($trust as [$t, $d]): ?>
             <div class="flex gap-3 items-start">
@@ -157,7 +157,7 @@ if (function_exists('accessControlLaneHubSection')) {
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
         <div>
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Directory</div>
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">All keyword guides</h2>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">All service guides</h2>
             <p class="mt-2 text-zinc-600 max-w-xl">Search by topic or filter by service. Showing <span id="kw-visible-count"><?= count($keywords) ?></span> of <?= count($keywords) ?> guides.</p>
         </div>
         <a href="<?= url('/pages/manufacturers/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Manufacturers →</a>
@@ -167,7 +167,7 @@ if (function_exists('accessControlLaneHubSection')) {
     <div class="sticky top-0 z-10 -mx-2 px-2 py-4 mb-8 bg-zinc-50/95 backdrop-blur border-b">
         <div class="flex flex-col lg:flex-row gap-3 lg:items-center">
             <div class="relative flex-1 max-w-xl">
-                <label for="kw-search" class="sr-only">Search keyword guides</label>
+                <label for="kw-search" class="sr-only">Search service guides</label>
                 <input type="search" id="kw-search" autocomplete="off" placeholder="Search guides (e.g. EICR, Paxton, fire panel)…"
                        class="w-full border border-zinc-200 bg-white px-5 py-3.5 rounded-2xl text-sm text-black focus:outline-none focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/20">
             </div>
@@ -237,7 +237,7 @@ if (function_exists('accessControlLaneHubSection')) {
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Need the work done?</h2>
             <p class="mt-4 text-zinc-600 text-lg">
                 Guides explain the topic — our engineers install, test and certify across Greater Manchester and the North West.
-                Request a fixed-price quote or browse services and areas.
+                Request a written quote or browse services and areas.
             </p>
             <ul class="mt-6 space-y-3 text-sm text-zinc-700">
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Standards-led install &amp; certification</li>
@@ -270,7 +270,7 @@ if (function_exists('accessControlLaneHubSection')) {
         <div class="text-center mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request your free quote</h2>
-            <p class="mt-3 text-zinc-600">All quotes are fixed-price after scope is agreed.</p>
+            <p class="mt-3 text-zinc-600">All quotes are written after scope is agreed.</p>
         </div>
         <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">

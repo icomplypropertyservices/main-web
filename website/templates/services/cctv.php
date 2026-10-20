@@ -42,7 +42,7 @@ require SITE_ROOT . '/includes/header.php';
       "areaServed": {"@type": "City", "name": "{{AREA}}"},
       "offers": {
         "@type": "Offer",
-        "name": "Free fixed-price quote — {{SERVICE_NAME}} in {{AREA}}",
+        "name": "Free written quote — {{SERVICE_NAME}} in {{AREA}}",
         "availability": "https://schema.org/InStock",
         "priceCurrency": "GBP",
         "url": "<?= url('/contact.php') ?>"
@@ -82,7 +82,7 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 2 -->
     <p class="mt-4 text-lg text-black max-w-3xl leading-relaxed">
-        Whether you need a multi-camera commercial site, residential HD CCTV, thermal imaging, ANPR for car parks or a cloud-backed upgrade in {{AREA}}, we deliver fixed-price surveys, GDPR-aware signage and secure remote access apps. Systems integrate with intruder alarms, access control and fire detection where required.
+        Whether you need a multi-camera commercial site, residential HD CCTV, thermal imaging, ANPR for car parks or a cloud-backed upgrade in {{AREA}}, we deliver quoted surveys, GDPR-aware signage and secure remote access apps. Systems integrate with intruder alarms, access control and fire detection where required.
     </p>
 
     <!-- IMAGE 2 + 3 grid -->

@@ -10,7 +10,7 @@
       "Leaver deleted from the controller, not just the card collected",
       "Shared codes and copied tokens reviewed",
       "Fire-alarm release left intact after the user change",
-      "POA — no per-person price on this page"
+      "POA"
     ],
     "faq": [
       ["Do you need the old fob back?", "It helps, but the important step is deleting the user in software. A token in a drawer still opens the door until it is removed."],
@@ -44,7 +44,7 @@
     "service": "access-control",
     "related": "access-control-card-programming",
     "intro": "An access level holiday calendar stops weekday door rules running on bank holidays, shutdown days and site-specific closures. Without it, a cleaners’ token can open a door on Christmas Day because the controller still thinks it is a Thursday.",
-    "body": "We programme the calendar inside the platform you already have — Paxton Net2, Salto, HID-based systems and the other brands on the access-control list. We need the real closure list from you. We will not invent your bank-holiday policy. After the change we test one door in each time zone, including a door that must stay open for a public route. The work is POA. It is usually a programming visit, not a new lock.",
+    "body": "We programme the calendar inside the platform you already have — Paxton Net2, Salto, HID-based systems and the other brands on the access-control list. We need the real closure list from you. After the change we test one door in each time zone, including a door that must stay open for a public route. The work is POA. It is usually a programming visit, not a new lock.",
     "meta_desc": "Programme access-control holiday calendars so bank holidays do not follow weekday door rules. POA. 07517806082.",
     "focus_points": [
       "Your closure list, not a generic UK calendar pasted in",
@@ -135,7 +135,7 @@
     "faq": [
       ["Will you service the gate motor?", "No. Motors, edges and force tests stay with the gate specialist. We work on the access-control side of the interface."],
       ["Can a fob open the gate and the lobby door?", "Yes when both systems can share a credential, or when we enrol the same user twice. We check compatibility before we promise one token."],
-      ["What if there is no gate company?", "We will not invent a safety sign-off. You appoint a gate engineer, or we limit our quote to the pedestrian doors."]
+      ["What if there is no gate company?", "You appoint a gate engineer, or we limit our quote to the pedestrian doors."]
     ],
     "seo_keywords": "gate access control, vehicle gate fob, gate reader liaison, intercom gate access, BS EN 12453 interface"
   },

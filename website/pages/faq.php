@@ -26,7 +26,7 @@ $faqs = [
     [
         'cat' => 'Electrical & EICR',
         'q' => 'What is an EICR and how often do I need one?',
-        'a' => 'An Electrical Installation Condition Report (EICR) is an inspection and test of the fixed wiring against BS 7671. For private rented homes in England, the usual rule is a satisfactory report at intervals of no more than 5 years, given to the tenant, and a new one before a tenancy if the current report has run out. The inspector can recommend a shorter interval. Commercial premises follow risk, insurer and client requirements. This is not legal advice. We issue the report for the inspection we carry out and quote remedials where C1, C2 or FI codes appear. We do not name a competent-person scheme on this page.',
+        'a' => 'An Electrical Installation Condition Report (EICR) is an inspection and test of the fixed wiring against BS 7671. For private rented homes in England, the usual rule is a satisfactory report at intervals of no more than 5 years, given to the tenant, and a new one before a tenancy if the current report has run out. The inspector can recommend a shorter interval. Commercial premises follow risk, insurer and client requirements. This is not legal advice. We issue the report for the inspection we carry out and quote remedials where C1, C2 or FI codes appear. ',
     ],
     [
         'cat' => 'Electrical & EICR',
@@ -55,7 +55,7 @@ $faqs = [
     [
         'cat' => 'Emergency lighting',
         'q' => 'How often does emergency lighting need testing?',
-        'a' => 'BS 5266 is the usual UK reference. The responsible person normally keeps a monthly function test and a full-duration test at least once a year. We can quote a testing programme, LED conversions and new installations for escape routes, open areas and high-risk task areas, and we leave the test records for those visits. We do not invent a legal monthly visit for a home that has no emergency lighting system.',
+        'a' => 'BS 5266 is the usual UK reference. The responsible person normally keeps a monthly function test and a full-duration test at least once a year. We can quote a testing programme, LED conversions and new installations for escape routes, open areas and high-risk task areas, and we leave the test records for those visits. ',
         'link' => ['/pages/services/emergency-lighting.php', 'Emergency lighting services'],
     ],
     [
@@ -127,7 +127,7 @@ $faqs = [
     [
         'cat' => 'Quotes & pricing',
         'q' => 'Are quotes free, and are they always a fixed price?',
-        'a' => 'Asking for a quote does not cost a fee. Where the scope is clear from what you send, we confirm a written price. Legionella, asbestos surveys and any job that depends on access or plant condition are priced after that scope is known — we do not invent a catalogue fee. A quote can change if the site differs from the description. Paperwork covers the work in the quote, not a scheme membership.',
+        'a' => 'Asking for a quote does not cost a fee. Where the scope is clear from what you send, we confirm a written price. Legionella, asbestos surveys and any job that depends on access or plant condition are priced after that scope is known. A quote can change if the site differs from the description. Paperwork covers the work in the quote, not a scheme membership.',
         'link' => ['/contact.php', 'Request a free quote'],
     ],
     [
@@ -139,7 +139,7 @@ $faqs = [
     [
         'cat' => 'Shop & products',
         'q' => 'What can I buy in the iComply shop?',
-        'a' => 'The trade shop lists kits, parts and products. Checkout is the Shopify store when it is connected. Prices and stock on a product page are the store’s, not figures we invent on this FAQ. If checkout is not connected, ask us and we will say so.',
+        'a' => 'The trade shop lists kits, parts and products. Checkout is the Shopify store when it is connected. If checkout is not connected, ask us and we will say so.',
         'link' => ['/shop/index.php', 'Visit the shop'],
     ],
     [

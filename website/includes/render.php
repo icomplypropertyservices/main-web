@@ -1,4 +1,33 @@
 <?php
+
+if (!function_exists('icomplyKeywordImagePath')) {
+    /**
+     * 2026-10-20: keyword hero image that exists on disk. Some keywords had no
+     * /assets/images/keywords/{slug}.jpg, so pages pointed at a missing file.
+     */
+    function icomplyKeywordImagePath(string $slug, string $serviceSlug = ''): string
+    {
+        $root = defined('SITE_ROOT') ? SITE_ROOT : dirname(__DIR__);
+        $alias = [
+            'cp12' => 'cp12-gas-certificate',
+            'emergency-lighting-test' => 'emergency-lighting-testing',
+        ];
+        $candidates = ['/assets/images/keywords/' . $slug . '.jpg'];
+        if (isset($alias[$slug])) {
+            $candidates[] = '/assets/images/keywords/' . $alias[$slug] . '.jpg';
+        }
+        if ($serviceSlug !== '') {
+            $candidates[] = '/assets/images/services/' . $serviceSlug . '-photo.jpg';
+            $candidates[] = '/assets/images/services/' . $serviceSlug . '.jpg';
+        }
+        foreach ($candidates as $c) {
+            if (is_file($root . $c)) {
+                return $c;
+            }
+        }
+        return '/assets/images/services/building-maintenance.jpg';
+    }
+}
 /**
  * Runtime page renderer — single source of truth for combo / keyword / area hubs.
  *
@@ -12,7 +41,7 @@ require_once __DIR__ . '/access-control-nationwide.php';
 if (!function_exists('shopifyCardFromManufacturerProduct')) {
     /**
      * Used when includes/shopify.php is still the placeholder and has no card helper.
-     * No prices are invented.
+
      */
     function shopifyCardFromManufacturerProduct(array $product, string $brandSlug, string $brandName): string
     {
@@ -172,12 +201,12 @@ function keywordTemplatePlaceholders(
     }
     $intro = (string)($meta['intro'] ?? "Professional {$name} from iComply Property Services across the North West.");
     $body = (string)($meta['body'] ?? "We install, service and certify {$name} as part of our {$serviceName} range for landlords, FM teams and commercial sites.");
-    $metaDesc = (string)($meta['meta_desc'] ?? "{$name} across Greater Manchester & the North West. Fixed-price quotes. Local engineers.");
+    $metaDesc = (string)($meta['meta_desc'] ?? "{$name} across Greater Manchester & the North West. Written quotes. Local engineers.");
     $seoKw = (string)($meta['seo_keywords'] ?? getSeoKeywords($serviceSlug, $areaName));
 
     $focusHtml = '';
     $points = $meta['focus_points'] ?? [
-        "Survey and fixed-price quote for {$name}",
+        "Survey and written quote for {$name}",
         'Local North West engineers from Stockport',
         'Testing and compliance documentation',
         "Manufacturer-aware {$serviceName} support",
@@ -238,7 +267,7 @@ function keywordTemplatePlaceholders(
             'mainEntity' => $faqEntities,
         ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
-    $kwImg = url('/assets/images/keywords/' . $slug . '.jpg');
+    $kwImg = url(icomplyKeywordImagePath($slug, (string)$serviceSlug));
     $svcImg = url('/assets/images/services/' . $serviceSlug . '.jpg');
     $inlineImg = $kwImg;
     if (function_exists('icomplyNationwide3lineIsP0') && icomplyNationwide3lineIsP0($slug)) {

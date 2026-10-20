@@ -1,6 +1,6 @@
 {
   "addressable-fire-alarm-system": {
-    "intro": "An addressable fire alarm system gives each detector, call point and interface a unique address, so the panel pinpoints the exact device in alarm rather than a broad zone. iComply design, install and commission addressable fire systems to BS 5839 for offices, factories, care premises and multi-tenant buildings across Greater Manchester and the North West. From cause-and-effect programming to battery sizing and zone chart handover, our Stockport engineers deliver clear fixed-price quotes and certification-ready paperwork.",
+    "intro": "An addressable fire alarm system gives each detector, call point and interface a unique address, so the panel pinpoints the exact device in alarm rather than a broad zone. iComply design, install and commission addressable fire systems to BS 5839 for offices, factories, care premises and multi-tenant buildings across Greater Manchester and the North West. From cause-and-effect programming to battery sizing and zone chart handover, our Stockport engineers deliver clear written quotes and certification-ready paperwork.",
     "body": "Addressable loops suit larger or higher-risk buildings where speed of location reduces false evacuation and downtime. We survey existing conventional systems for upgrade paths, integrate sounders, interfaces and networked panels where needed, and train duty holders on silence, reset and weekly testing. Planned maintenance, fault finding and logbook support keep your addressable estate audit-ready for insurers and enforcing authorities.",
     "meta_desc": "Addressable fire alarm system design, install & service to BS 5839. Stockport, Manchester & North West. Fixed quotes from iComply.",
     "focus_points": [
@@ -19,7 +19,7 @@
   "conventional-fire-alarm-system": {
     "intro": "Conventional fire alarm systems group detectors and call points into hard-wired zones, offering a proven, cost-effective solution for smaller commercial units, shops and simple layouts. iComply specify, install and service conventional panels to BS 5839 from our Stockport base, covering Greater Manchester, Cheshire, Lancashire and Merseyside. You receive a transparent scope, fixed pricing after survey and full commissioning documentation for landlords and facilities managers.",
     "body": "We match zone layouts to escape routes and compartmentation, fit MCP and detector coverage to the agreed category, and leave clear zone charts at the panel. Where growth or multi-building complexity is likely, we discuss addressable options honestly so you are not locked into the wrong technology. Ongoing servicing, battery replacement and weekly-test support keep conventional systems reliable and inspection-ready.",
-    "meta_desc": "Conventional fire alarm system install & service to BS 5839. North West coverage from Stockport. Fixed-price quotes — iComply.",
+    "meta_desc": "Conventional fire alarm system install & service to BS 5839. North West coverage from Stockport. Written quotes — iComply.",
     "focus_points": [
       "Zone design aligned to your fire risk assessment",
       "Panel, detector and call-point installation",
@@ -34,7 +34,7 @@
     "seo_keywords": "conventional fire alarm system, conventional fire alarm installation, BS 5839 conventional, fire alarm zones, conventional fire alarm Manchester, conventional fire alarm Stockport, North West fire alarms, iComply"
   },
   "fire-alarm-panel-service": {
-    "intro": "Fire alarm panel service keeps control equipment, batteries, power supplies and indications working when you need them most. iComply engineers inspect, clean, test and certificate panels under BS 5839 planned maintenance across Stockport, Manchester and the wider North West. Whether you run Advanced, Kentec, C-TEC, Hochiki-compatible or mixed estates, we provide fixed-price service visits, clear defect lists and logbook entries your insurer and auditor will recognise.",
+    "intro": "Fire alarm panel service keeps control equipment, batteries, power supplies and indications working when you need them most. iComply engineers inspect, clean, test and certificate panels under BS 5839 planned maintenance across Stockport, Manchester and the wider North West. Whether you run Advanced, Kentec, C-TEC, Hochiki-compatible or mixed estates, we provide quoted service visits, clear defect lists and logbook entries your insurer and auditor will recognise.",
     "body": "A typical panel service covers standby batteries, charger voltage, indicators, sounders, fault simulation and review of recent history. We replace ageing batteries before failure, rectify earth faults and open circuits where scope allows, and escalate major remediations with a written quote. Multi-site contracts and reactive call-outs are available for FM teams managing several buildings.",
     "meta_desc": "Fire alarm panel service & BS 5839 maintenance. Batteries, faults & certificates. Stockport & North West — iComply.",
     "focus_points": [
@@ -119,7 +119,7 @@
     "seo_keywords": "care home fire alarm, care home fire alarm system, nursing home fire detection, BS 5839 care home, care home fire alarm Manchester, care home fire alarm Stockport, North West care fire safety, iComply"
   },
   "office-fire-alarm-installation": {
-    "intro": "Office fire alarm installation protects staff, visitors and business continuity in open-plan floors, meeting suites and multi-tenant blocks. iComply design and install office systems to BS 5839, from compact conventional kits to networked addressable panels, across Manchester, Stockport and the wider North West. Fixed-price proposals after survey cover detection, MCPs, sounders/VADs, interfaces and commissioning paperwork for landlords and occupiers.",
+    "intro": "Office fire alarm installation protects staff, visitors and business continuity in open-plan floors, meeting suites and multi-tenant blocks. iComply design and install office systems to BS 5839, from compact conventional kits to networked addressable panels, across Manchester, Stockport and the wider North West. Written proposals after survey cover detection, MCPs, sounders/VADs, interfaces and commissioning paperwork for landlords and occupiers.",
     "body": "Modern offices often need multi-sensor detection, visual alarm devices for accessibility, and interfaces to access control or HVAC. We coordinate out-of-hours works for fit-outs and refurbishments, label devices clearly for facilities teams, and offer ongoing servicing so your office stays compliant after practical completion.",
     "meta_desc": "Office fire alarm installation to BS 5839. Design, fit & commission across Greater Manchester & North West — iComply.",
     "focus_points": [
@@ -170,7 +170,7 @@
     "seo_keywords": "fire alarm zone chart, zone chart fire alarm, BS 5839 zone plan, fire panel zone diagram, zone chart Manchester, zone chart Stockport, fire alarm documentation, iComply"
   },
   "fire-alarm-fault-finding": {
-    "intro": "Fire alarm fault finding restores systems stuck on earth fault, open circuit, battery trouble or intermittent device errors. iComply diagnose and clear faults on conventional and addressable panels for commercial clients across the North West, working from our Stockport base with manufacturer-aware methods. You get a clear explanation of the cause, fixed-price remedials where possible and a return-to-service test with logbook entry.",
+    "intro": "Fire alarm fault finding restores systems stuck on earth fault, open circuit, battery trouble or intermittent device errors. iComply diagnose and clear faults on conventional and addressable panels for commercial clients across the North West, working from our Stockport base with manufacturer-aware methods. You get a clear explanation of the cause, quoted remedials where possible and a return-to-service test with logbook entry.",
     "body": "We start at the panel event log, isolate loops or zones methodically, and use insulation and device tools to pinpoint damaged cable, water ingress, contaminated heads or failing power supplies. Where full repair needs parts lead time, we agree temporary measures only where safe and permitted. Reactive attendance is prioritised for sites with active faults or isolated detection.",
     "meta_desc": "Fire alarm fault finding & repairs. Earth faults, loop issues & panel errors — North West engineers. iComply Stockport.",
     "focus_points": [
@@ -221,7 +221,7 @@
     "seo_keywords": "L2 fire alarm system, BS 5839 L2, L2 fire detection, category L2 installation, L2 fire alarm Manchester, L2 fire alarm Stockport, North West, iComply"
   },
   "l3-fire-alarm-system": {
-    "intro": "An L3 fire alarm system focuses life protection on escape routes and rooms that open onto those routes, giving early warning to support evacuation. iComply design, install and service L3 systems to BS 5839 for offices, light commercial and many multi-occupancy buildings across Greater Manchester and the North West. From Stockport we provide honest category advice—L3 only where it fits the fire risk assessment—and fixed-price delivery with full documentation.",
+    "intro": "An L3 fire alarm system focuses life protection on escape routes and rooms that open onto those routes, giving early warning to support evacuation. iComply design, install and service L3 systems to BS 5839 for offices, light commercial and many multi-occupancy buildings across Greater Manchester and the North West. From Stockport we provide honest category advice—L3 only where it fits the fire risk assessment—and quoted delivery with full documentation.",
     "body": "Typical L3 scopes include corridor and stair detection, rooms opening onto escapes, manual call points and adequate warning devices. We check door sets, voids and mezzanines that affect route protection, and integrate landlord systems where tenants share means of escape. Aftercare includes servicing and support for weekly tests by the duty holder.",
     "meta_desc": "L3 fire alarm system design & installation to BS 5839. North West offices & commercial sites — iComply Stockport.",
     "focus_points": [
@@ -357,14 +357,14 @@
     "seo_keywords": "beam detection system, beam smoke detector installation, warehouse beam detection, optical beam fire detection, beam detection Manchester, beam detection Stockport, North West, iComply"
   },
   "fire-alarm-engineers-near-me": {
-    "intro": "Searching for fire alarm engineers near me in the North West? iComply provide local, Stockport-based fire engineers for installation, servicing, fault finding and certification across Greater Manchester and surrounding counties. We combine fault triage with BS 5839 competence, fixed-price quotes after we understand the panel and site, and clear communication for landlords, FM teams and business owners who need someone reliable—not a remote call centre.",
+    "intro": "Searching for fire alarm engineers near me in the North West? iComply provide local, Stockport-based fire engineers for installation, servicing, fault finding and certification across Greater Manchester and surrounding counties. We combine fault triage with BS 5839 competence, written quotes after we understand the panel and site, and clear communication for landlords, FM teams and business owners who need someone reliable—not a remote call centre.",
     "body": "Our coverage includes Manchester, Stockport, Bolton, Warrington, Chester, Preston, Liverpool approaches and many towns in between. Tell us your postcode, panel brand and fault message for faster triage. Whether you need a one-off repair or a standing maintenance agreement, local engineers mean realistic attendance times and knowledge of regional building stock.",
     "meta_desc": "Fire alarm engineers near me in Greater Manchester & the North West. BS 5839 install & service — iComply Stockport.",
     "focus_points": [
       "Local North West engineer coverage from Stockport",
       "Install, service, faults and certification",
       "Fast triage when you share panel details",
-      "Fixed-price quotes and maintenance agreements"
+      "Written quotes and maintenance agreements"
     ],
     "faq": [
       ["Which towns do you cover?", "We cover 150+ towns across Greater Manchester, Cheshire, Lancashire, Merseyside and into Cumbria. Check your town page or send a postcode."],

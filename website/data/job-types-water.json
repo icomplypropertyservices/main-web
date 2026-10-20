@@ -417,7 +417,7 @@
       "h1": "Type AA Air Gap",
       "meta_desc": "Type AA Air Gap across the North West. Type AA air gaps. Price on application from Stockport.",
       "intro": "Type AA Air Gap is scoped from Stockport for plant rooms with unrestricted discharge. A Type AA gap is an unrestricted discharge above a spillover, with the inlet clear of the receiving vessel. The figure is price on application once we know the supply and the access.",
-      "body": "Type AA air gaps. We measure the visible break and photograph it for the file when access allows. We do not invent a millimetre figure if we have not seen the fitting. We cover Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport.",
+      "body": "Type AA air gaps. We measure the visible break and photograph it for the file when access allows. We cover Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport.",
       "faq": [
         [
           "What happens on a Type AA Air Gap visit?",
@@ -433,14 +433,14 @@
         ],
         [
           "What will you not claim?",
-          "We do not invent a millimetre figure if we have not seen the fitting."
+          ""
         ]
       ],
       "focus_points": [
         "Type AA air gaps",
         "We measure the visible break and photograph it for the file when access allows.",
         "Fixed written quote before work starts",
-        "We do not invent a millimetre figure if we have not seen the fitting."
+        ""
       ],
       "secondaries": [
         "Type AA Air Gap North West",
@@ -1649,7 +1649,7 @@
       "h1": "Water Undertaker Notification Pack",
       "meta_desc": "Water Undertaker Notification Pack across the North West. Notices to the local water undertaker. Price on application from Stockport.",
       "intro": "Water Undertaker Notification Pack is scoped from Stockport for contractors preparing a notice. Undertakers ask for address, description, drawings and sometimes a start date. The figure is price on application once we know the supply and the access.",
-      "body": "Notices to the local water undertaker. We assemble photos, a fitting list and a one-page description you can attach to their form. Their reference number, if they issue one, is theirs. We do not invent an approval number. We cover Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport.",
+      "body": "Notices to the local water undertaker. We assemble photos, a fitting list and a one-page description you can attach to their form. Their reference number, if they issue one, is theirs. We cover Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport.",
       "faq": [
         [
           "What happens on a Water Undertaker Notification Pack visit?",
@@ -1665,14 +1665,14 @@
         ],
         [
           "What will you not claim?",
-          "Their reference number, if they issue one, is theirs. We do not invent an approval number."
+          "Their reference number, if they issue one, is theirs. "
         ]
       ],
       "focus_points": [
         "Notices to the local water undertaker",
         "We assemble photos, a fitting list and a one-page description you can attach to their form.",
         "Fixed written quote before work starts",
-        "Their reference number, if they issue one, is theirs. We do not invent an approval number."
+        "Their reference number, if they issue one, is theirs. "
       ],
       "secondaries": [
         "Water Undertaker Notification Pack North West",
@@ -2573,7 +2573,7 @@
       "h1": "Stored Drinking Water Turnover",
       "meta_desc": "Stored Drinking Water Turnover across the North West. Turnover of stored wholesome water. Price on application from Stockport.",
       "intro": "Stored Drinking Water Turnover is scoped from Stockport for sites that store wholesome water. Stored drinking water needs to move. A tank that only feeds a rarely used tap is a poor drinking store. The figure is price on application once we know the supply and the access.",
-      "body": "Turnover of stored wholesome water. We map which outlets the tank feeds and whether a mains drinking tap would be the simpler arrangement. We do not set a bacterial sampling frequency on this page. This is not a Drinking Water Inspectorate chemistry suite and it is not a Legionella sampling visit. We cover Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport.",
+      "body": "Turnover of stored wholesome water. We map which outlets the tank feeds and whether a mains drinking tap would be the simpler arrangement. This is not a Drinking Water Inspectorate chemistry suite and it is not a Legionella sampling visit. We cover Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport.",
       "faq": [
         [
           "What happens on a Stored Drinking Water Turnover visit?",
@@ -2589,14 +2589,14 @@
         ],
         [
           "What will you not claim?",
-          "We do not set a bacterial sampling frequency on this page."
+          ""
         ]
       ],
       "focus_points": [
         "Turnover of stored wholesome water",
         "We map which outlets the tank feeds and whether a mains drinking tap would be the simpler arrangement.",
         "Fixed written quote before work starts",
-        "We do not set a bacterial sampling frequency on this page."
+        ""
       ],
       "secondaries": [
         "Stored Drinking Water Turnover North West",
@@ -3233,11 +3233,11 @@
       "h1": "Under-sink Filter Advice",
       "meta_desc": "Under-sink Filter Advice across the North West. Point-of-use filters. Price on application from Stockport.",
       "intro": "Under-sink Filter Advice is scoped from Stockport for kitchens considering a filter. A filter is a fitting on the drinking branch. It needs isolation, a change plan and a waste if the maker requires one. The figure is price on application once we know the supply and the access.",
-      "body": "Point-of-use filters. We install the housing you have chosen and record the model. We do not invent a removal percentage for contaminants. Cartridge subscriptions are not assumed. This is not a Drinking Water Inspectorate chemistry suite and it is not a Legionella sampling visit. We cover Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport.",
+      "body": "Point-of-use filters. We install the housing you have chosen and record the model. Cartridge subscriptions are not assumed. This is not a Drinking Water Inspectorate chemistry suite and it is not a Legionella sampling visit. We cover Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport.",
       "faq": [
         [
           "What happens on a Under-sink Filter Advice visit?",
-          "We install the housing you have chosen and record the model. We do not invent a removal percentage for contaminants."
+          "We install the housing you have chosen and record the model. "
         ],
         [
           "Who is Under-sink Filter Advice for?",
@@ -3254,7 +3254,7 @@
       ],
       "focus_points": [
         "Point-of-use filters",
-        "We install the housing you have chosen and record the model. We do not invent a removal percentage for contaminants.",
+        "We install the housing you have chosen and record the model. ",
         "Fixed written quote before work starts",
         "Cartridge subscriptions are not assumed."
       ],
@@ -3849,7 +3849,7 @@
       "h1": "Isolation Valve on a Wholesome Supply",
       "meta_desc": "Isolation Valve on a Wholesome Supply across the North West. Branch isolation. Price on application from Stockport.",
       "intro": "Isolation Valve on a Wholesome Supply is scoped from Stockport for fit-outs adding a branch. Every new branch on the drinking supply should be isolatable without draining the building. The figure is price on application once we know the supply and the access.",
-      "body": "Branch isolation. We fit the valve at the point the branch leaves the live pipe. Valve brand is confirmed in the quote. It is not listed as a price here. Parts and labour are price on application after we see the fitting. We cover Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport.",
+      "body": "Branch isolation. We fit the valve at the point the branch leaves the live pipe. Valve brand is confirmed in the quote. Parts and labour are price on application after we see the fitting. We cover Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport.",
       "faq": [
         [
           "What happens on a Isolation Valve on a Wholesome Supply visit?",
@@ -3865,14 +3865,14 @@
         ],
         [
           "What will you not claim?",
-          "Valve brand is confirmed in the quote. It is not listed as a price here."
+          "Valve brand is confirmed in the quote. "
         ]
       ],
       "focus_points": [
         "Branch isolation",
         "We fit the valve at the point the branch leaves the live pipe.",
         "Fixed written quote before work starts",
-        "Valve brand is confirmed in the quote. It is not listed as a price here."
+        "Valve brand is confirmed in the quote. "
       ],
       "secondaries": [
         "Isolation Valve on a Wholesome Supply North West",
@@ -5257,7 +5257,7 @@
       "h1": "Water Regs Log for Landlords",
       "meta_desc": "Water Regs Log for Landlords across the North West. A landlord water-fittings log. Price on application from Stockport.",
       "intro": "Water Regs Log for Landlords is scoped from Stockport for landlords who want a file note. The log records the drinking tap, the outside tap, any tank, and the date we looked. The figure is price on application once we know the supply and the access.",
-      "body": "A landlord water-fittings log. We fill that note after the visit. It is a record of what we saw. It is not a Water Regulations approval and it is not a renewal date we invented. Parts and labour are price on application after we see the fitting. We cover Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport.",
+      "body": "A landlord water-fittings log. We fill that note after the visit. It is a record of what we saw. Parts and labour are price on application after we see the fitting. We cover Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport.",
       "faq": [
         [
           "What happens on a Water Regs Log for Landlords visit?",
@@ -5273,14 +5273,14 @@
         ],
         [
           "What will you not claim?",
-          "It is not a Water Regulations approval and it is not a renewal date we invented."
+          ""
         ]
       ],
       "focus_points": [
         "A landlord water-fittings log",
         "We fill that note after the visit. It is a record of what we saw.",
         "Fixed written quote before work starts",
-        "It is not a Water Regulations approval and it is not a renewal date we invented."
+        ""
       ],
       "secondaries": [
         "Water Regs Log for Landlords North West",

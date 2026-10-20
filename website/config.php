@@ -901,6 +901,10 @@ function getMajorKeywords(): array {
     if (function_exists('openJobLanesApply')) {
         $normalized = openJobLanesApply($normalized);
     }
+    if (!function_exists('icomplyMoneyHubDepthApplyKeywords')) {
+        require_once __DIR__ . '/includes/money-hub-depth.php';
+    }
+    $normalized = icomplyMoneyHubDepthApplyKeywords($normalized);
     $normalized = icomplyApplyCustomerKeywordCopy($normalized);
     if (function_exists('icomplyNationwide3lineApplyKeywords')) {
         $normalized = icomplyNationwide3lineApplyKeywords($normalized);

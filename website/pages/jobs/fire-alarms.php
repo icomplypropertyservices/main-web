@@ -126,7 +126,7 @@ require SITE_ROOT . '/includes/header.php';
         <p class="mt-6 text-lg text-white/80 max-w-2xl">
             iComply designs, installs, maintains and services BS 5839 fire detection and alarm systems
             from Stockport across Greater Manchester and the North West. Pick a lane below.
-            Quotes are written after scope. Price on application — we do not publish fees.
+            Quotes are written after scope. Price on application.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
             <a href="#install" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Install <?= (int)$counts['install'] ?></a>

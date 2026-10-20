@@ -141,7 +141,7 @@ foreach ($categories as $catKey => $cat):
             $svcKw = getMajorKeywords();
         ?>
         <div class="mt-8 p-6 bg-white border border-zinc-200 rounded-3xl">
-            <h3 class="font-semibold text-black">Electrical &amp; gas keyword guides</h3>
+            <h3 class="font-semibold text-black">Electrical &amp; gas service guides</h3>
             <p class="text-sm text-zinc-600 mt-1">Each topic has a hub plus a page for every town we cover. Cost and price searches are POA only.</p>
             <div class="mt-4 flex flex-wrap gap-2">
                 <?php foreach (array_merge($svcEg['electrical'] ?? [], $svcEg['gas'] ?? []) as $egSlug):
@@ -228,7 +228,7 @@ foreach ($categories as $catKey => $cat):
         <div class="text-center mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request your free quote</h2>
-            <p class="mt-3 text-zinc-600">All quotes are fixed-price after scope is agreed.</p>
+            <p class="mt-3 text-zinc-600">All quotes are written after scope is agreed.</p>
         </div>
         <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">

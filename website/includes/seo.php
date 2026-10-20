@@ -68,13 +68,13 @@ function seo_combo_intro(string $serviceName, string $slug, string $area): strin
         . "appointments booked when the diary allows and "
         . ((function_exists('isPoaService') && isPoaService($slug))
             ? "a price-on-application quote once scope is clear."
-            : "fixed-price quotes whenever the scope is clear.");
+            : "written quotes whenever the scope is clear.");
 }
 
 function seo_combo_why(string $serviceName, string $area): array {
     return [
         "Local {$area} coverage from a Stockport-based UK compliance team",
-        "Clear scope, fixed-price quotes where possible, and written reports",
+        "Clear scope, written quotes where possible, and written reports",
         "{$serviceName} install, service and certification under one contractor",
         "Documentation packs suitable for landlords, insurers and block managers",
         "Responsive scheduling across Greater Manchester and the North West",
@@ -97,7 +97,7 @@ function service_faqs(string $slug, string $serviceName, string $area = ''): arr
         'electrical' => [
             ['q' => "How often do I need an EICR{$loc}?", 'a' => "Most rented homes need an EICR at least every 5 years (or on change of tenancy). Commercial intervals depend on risk and insurer requirements — we advise based on the property type{$loc}."],
             ['q' => "How is electrical work booked{$loc}?", 'a' => "Appointments are booked when an engineer is available. Emergency fault-finding and consumer unit issues are prioritised for {$area} and surrounding postcodes."],
-            ['q' => "Are quotes fixed-price?", 'a' => "Where the scope is clear after survey or photos, we issue fixed-price quotes for EICR, PAT, installs and upgrades."],
+            ['q' => "Are quotes quoted?", 'a' => "Where the scope is clear after survey or photos, we issue written quotes for EICR, PAT, installs and upgrades."],
         ],
         'fire-alarms' => [
             ['q' => "What standard do fire alarms follow{$loc}?", 'a' => "We design and maintain systems with BS 5839 practice in mind, matched to your fire risk assessment and building use{$loc}."],
@@ -162,7 +162,7 @@ function service_faqs(string $slug, string $serviceName, string $area = ''): arr
         'legionella-risk-assessment' => [
             ['q' => "Do you offer Legionella risk assessments{$loc}?", 'a' => "Yes. We scope a written assessment of the water system{$loc}. Sampling is only added when it helps. Price on application."],
             ['q' => "Are quotes fixed on a price list?", 'a' => "No. Legionella and water hygiene work is POA after we know stored water, outlets and access."],
-            ['q' => "Do you claim a named lab accreditation here?", 'a' => "No. We do not invent laboratory or training badges on this page. Method is confirmed at quote stage."],
+            ['q' => "Do you claim a named lab accreditation here?", 'a' => "No. Method is confirmed at quote stage."],
         ],
         'asbestos-survey' => [
             ['q' => "Do you carry out asbestos surveys{$loc}?", 'a' => "Yes — management or refurbishment surveys scoped to the building and planned works{$loc}. POA."],
@@ -172,7 +172,7 @@ function service_faqs(string $slug, string $serviceName, string $area = ''): arr
     ];
     $faqs = $base[$slug] ?? [
         ['q' => "Do you provide {$serviceName}{$loc}?", 'a' => "Yes. iComply installs, services and certificates {$serviceName}{$loc} for residential and commercial clients."],
-        ['q' => "How do I get a quote?", 'a' => "Call, WhatsApp or use our online form with the postcode and property type for a fast fixed-price style quote."],
+        ['q' => "How do I get a quote?", 'a' => "Call, WhatsApp or use our online form with the postcode and property type for a fast quoted style quote."],
         ['q' => "What areas do you cover?", 'a' => "Greater Manchester and 150+ North West towns from our Stockport base."],
     ];
     // Personalise area name in answers if empty area was used in templates
