@@ -82,9 +82,8 @@ function nationwideP0KeywordCanonicalSlugs(): array
  * keyword family (#113 fire-alarm-installer) added a keyword hub for the same
  * slug. Keeps W1a at 52 job hubs + 38 redirects.
  *
- * The job body is close to the keyword body, so the job hub's
- * rel=canonical (and og:url) points at /pages/keywords/{slug}: one canonical
- * URL per slug. The job URL is left out of the sitemap.
+ * Each job hub is self-canonical, listed in the sitemap, and carries its own
+ * job-specific copy.
  *
  * @return array<string, true>
  */
@@ -97,21 +96,14 @@ function nationwideP0JobCanonicalSlugs(): array
 }
 
 /**
- * Canonical path for a rendered P0 job hub. Self for every hub except the
- * kept-but-keyword-canonical slugs above, which point at their keyword twin
- * when that keyword hub is published.
+ * Canonical path for a rendered P0 job hub: always the hub itself (G10, no
+ * canonicalising away). Addressable/conventional fire alarm installation carry
+ * their own job copy, distinct from the keyword twins.
  */
 function nationwideP0CanonicalPath(string $slug): string
 {
     $slug = function_exists('keywordSlug') ? keywordSlug($slug) : $slug;
-    $self = '/pages/jobs/' . $slug;
-    if ($slug === '' || !isset(nationwideP0JobCanonicalSlugs()[$slug])) {
-        return $self;
-    }
-    if (!function_exists('getMajorKeywords') || !isset(getMajorKeywords()[$slug])) {
-        return $self;
-    }
-    return '/pages/keywords/' . $slug;
+    return '/pages/jobs/' . $slug;
 }
 
 /**
@@ -181,7 +173,7 @@ function nationwideP0IndexItems(): array
                 'href' => $target,
                 'label' => $label,
                 'line' => (string)($row['line'] ?? ''),
-                'card' => 'Published guide for this job. Price on application after survey.',
+                'card' => 'Service guide for this job. Price on application after survey.',
             ];
             continue;
         }

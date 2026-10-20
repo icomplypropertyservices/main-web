@@ -33,7 +33,7 @@ KEYWORD_CANONICAL = {
 }
 
 # Job hub keeps rendering (no 301) even when keywords.json also has the slug (#113 overlap).
-# Its rel=canonical points at /pages/keywords/{slug} (see nationwideP0CanonicalPath in PHP).
+# Self-canonical and listed in the sitemap, with its own job copy (G10).
 JOB_CANONICAL = {
     "addressable-fire-alarm-installation",
     "conventional-fire-alarm-installation",
@@ -893,6 +893,103 @@ def related(slug: str, peers: list[str], names: dict[str, str], service_href: st
     return out
 
 
+
+# ---------------------------------------------------------------------------
+# 2026-10-20 rewrite (SEO PR144 scorecard): job-specific substance from
+# nationwide_p0_profiles, hub-by-hub pool selection, customer wording only.
+import hashlib as _hashlib
+import random as _random
+import sys as _sys
+_sys.path.insert(0, str(Path(__file__).resolve().parent))
+from nationwide_p0_profiles import P as _PROFILES, POOL as _POOL, INTENT as _INTENT, LINE_STANDARD as _LINE_STD  # noqa: E402
+
+_BRAND_LABEL = {
+    "colt": "Colt", "d-h-mechatronic": "D+H", "se-controls": "SE Controls",
+    "advanced-electronics": "Advanced Electronics", "c-tec": "C-Tec", "gent": "Gent",
+    "kentec": "Kentec", "morley": "Morley", "bft": "BFT", "faac": "FAAC", "nice": "Nice", "came": "CAME",
+}
+
+
+def _rng(slug: str) -> _random.Random:
+    return _random.Random(int(_hashlib.sha1(slug.encode()).hexdigest()[:12], 16))
+
+
+def brand_paragraph(name, slug, brand, policy, equipment, line="fire"):  # noqa: F811
+    label = _BRAND_LABEL.get(brand, "")
+    if policy == "came_new":
+        product = "CAME GARD GT4" if "gt4" in slug else "CAME"
+        return (f"New barriers we install are {product}. iComply is a CAME partner, which means we can get "
+                f"current CAME parts and support for the barrier after it is in. Where a sound barrier of "
+                f"another make is already in the lane and the client wants to keep it, we repair that one instead.")
+    if policy == "came_service":
+        return ("iComply is a CAME partner, so parts for current CAME barriers can usually be sourced quickly once "
+                "the model is read from the cabinet. If a barrier is beyond economic repair, a like-for-like CAME "
+                "replacement is quoted separately.")
+    if policy == "incumbent":
+        return (f"We repair and service existing {label} barriers; we do not offer a new {label} installation. "
+                f"If a {label} barrier is beyond repair, the replacement we offer is CAME, as iComply is a CAME "
+                f"partner, and we agree that with you before anything is ordered.")
+    if policy == "incumbent_generic":
+        return ("We work on whatever make is already in the lane. When a barrier needs replacing, we specify CAME, "
+                "because iComply is a CAME partner and can support the new barrier with current parts.")
+    if policy == "brand_service":
+        return (f"We are an independent contractor working on existing {label} equipment. If a {label} part is no "
+                f"longer available, we say so and agree a compatible alternative with you in writing before it is fitted.")
+    return ""
+
+
+def paragraphs_for(spec, index):  # noqa: F811
+    slug = spec["slug"]
+    prof = _PROFILES[slug]
+    line = spec["line"]
+    name = spec["name"]
+    equipment = spec["equipment"]
+    rng = _rng(slug)
+    pool = list(_POOL[line])
+    rng.shuffle(pool)
+    shared = [p.format(name=name, equipment=equipment) for p in pool[:{'fire': 19, 'barrier': 16}.get(line, 13)]]
+    std = _LINE_STD["fire-extinguisher" if slug.startswith("fire-extinguisher") else line]
+    intent_p = _INTENT.get(spec["intent"], _INTENT["service"])
+    cover = rng.choice([
+        f"{name} is arranged UK-wide from our base in Offerton, Stockport. For sites further afield we plan the visit so the engineer arrives with the right parts and access already agreed.",
+        f"We take on {name.lower()} across the UK from Stockport, booking travel around the survey so one visit can do as much as possible.",
+        f"Our engineers travel UK-wide from Stockport for {name.lower()}, and same-day or next-day attendance is often possible for urgent faults.",
+    ])
+    contact = f"To book, call or WhatsApp 07517 806082 or email icomplypropertyservices@gmail.com with the address, what you are seeing and any photos. {NAP.split('. Call')[0]}."
+    body = [prof["symptoms"], prof["parts"], prof["checks"], intent_p + " " + std]
+    b = spec["brand_paragraph"]
+    if b:
+        body.append(b)
+    mixed = body + shared
+    head = mixed[0]
+    rest = mixed[1:]
+    rng.shuffle(rest)
+    return [head, *rest, cover, contact]
+
+
+def points_for(spec):  # noqa: F811
+    prof = _PROFILES[spec["slug"]]
+    return [
+        prof["lede"] + ".",
+        f"Equipment we work on: {spec['equipment']}.",
+        f"Standards: {spec['standard']}.",
+        f"Paperwork left with you: {spec['paper']}.",
+        "Price on application after survey.",
+    ]
+
+
+def faqs_for(spec):  # noqa: F811
+    prof = _PROFILES[spec["slug"]]
+    name = spec["name"]
+    q, a = prof["faq"]
+    return [
+        [q, a],
+        [f"How is {name.lower()} priced?", f"Price on application. We need to see {spec['equipment']} and the access first, then you get a written quote."],
+        [f"Where do you cover for {name.lower()}?", "UK-wide from our Stockport base, with same-day or next-day attendance often available for urgent faults."],
+        ["What should I send when I get in touch?", "The site address, what you are seeing, photos of the panel, cabinet or nameplate, and who can meet the engineer."],
+    ]
+
+
 def build() -> None:
     keywords = set(json.loads(KEYWORDS_PATH.read_text()))
     barriers = ROOT / "data" / "barriers-keywords.json"
@@ -947,6 +1044,7 @@ def build() -> None:
         service_slug, service_label, service_href = service_for(slug, line)
         brand_p = brand_paragraph(name, slug, brand, policy, equipment, line)
         spec = {
+            "slug": slug,
             "name": name,
             "equipment": equipment,
             "fault": fault,
@@ -988,10 +1086,7 @@ def build() -> None:
             "keywords": f"{name}, {service_label}, Stockport, UK-wide",
             "h1": name,
             "kicker": service_label,
-            "lede": (
-                f"{name} for {who}, arranged UK-wide from Stockport. "
-                f"Price on application after we have seen the site."
-            ),
+            "lede": _PROFILES[slug]["lede"] + ", arranged UK-wide from Stockport.",
             "card": card,
             "paragraphs": paras,
             "points": points_for(spec),

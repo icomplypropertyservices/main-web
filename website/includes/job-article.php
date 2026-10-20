@@ -271,7 +271,7 @@ function renderJobArticle(array $page): void
             <?php endforeach; ?>
         </div>
         <?php endif; ?>
-        <p class="mt-8 text-sm text-zinc-600">Price on application after we know the site. We do not publish a fee on this page.</p>
+        <p class="mt-8 text-sm text-zinc-600">Price on application: you get a written quote once we know the site.</p>
         <?php
         require_once SITE_ROOT . '/includes/quality-bar.php';
         $jobImageSlug = 'fire-alarms';
