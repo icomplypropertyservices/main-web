@@ -176,7 +176,7 @@ function relatedManufacturersHtml(string $serviceSlug = '', int $limit = 8): str
 }
 
 /**
- * Keyword guide chips for a service (links to /pages/keywords/{slug}).
+ * Service guide chips for a service (links to /pages/keywords/{slug}).
  */
 function relatedKeywordsHtml(string $serviceSlug, int $limit = 0): string {
     $keywords = getKeywordsForService($serviceSlug);
