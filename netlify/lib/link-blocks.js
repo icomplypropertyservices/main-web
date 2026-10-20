@@ -277,7 +277,7 @@ export function matrixRelatedHtml(catalogue, identity) {
   const parents = [];
   if (kind === "keyword" || kind === "variant") {
     parents.push({ href: `/pages/keywords/${identity.keyword}`, label: `${subject} guide` });
-    parents.push({ href: "/pages/keywords", label: "All keyword guides" });
+    parents.push({ href: "/pages/keywords", label: "All service guides" });
   } else if (kind === "job") {
     parents.push({ href: `/pages/jobs/${identity.job}`, label: `${subject}` });
     parents.push({ href: "/pages/jobs", label: "All job types" });
@@ -299,7 +299,9 @@ export function matrixRelatedHtml(catalogue, identity) {
   parents.push({ href: "/pages/areas", label: "Greater Manchester areas" });
 
   const sameTown = [];
-  if (kind === "service" || kind === "keyword" || kind === "job" || kind === "variant") {
+  // P2-20-5 (2026-10-20): manufacturer x town pages also link the related services in
+  // the same town, so thinner brand catalogues (ABB, Allegion, CDVI...) clear 80 links.
+  if (kind === "service" || kind === "keyword" || kind === "job" || kind === "variant" || kind === "manufacturer") {
     // CLOSE-Q8: lean town pages link every related service in the same town (16), not 8.
     for (const slug of relatedServiceSlugs(catalogue, serviceSlug, identity.lean ? 16 : 8)) {
       const name = serviceLabel(catalogue, slug);

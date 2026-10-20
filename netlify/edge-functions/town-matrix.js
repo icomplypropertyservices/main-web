@@ -560,7 +560,7 @@ ${images.html}
 <article id="local-copy">
 ${proseHtml}
 ${focusHtml ? `<ul>${focusHtml}</ul>` : ""}
-${fireTown ? `<p>Parent: <a href="/pages/keywords/${escapeHtml(input.keyword)}">${escapeHtml(subject)} guide</a> · <a href="/pages/services/fire-alarms">Fire alarms</a> · <a href="/pages/keywords">Keyword guides</a>${isGmTown(townSlug) ? ` · <a href="/pages/areas/${escapeHtml(townSlug)}">Property services in ${escapeHtml(place.name)}</a>` : ` · <a href="/pages/areas/stockport">Stockport area hub</a>`}</p><h2>Nearby mainland towns</h2><ul>${nearestMainland(townSlug, 12).map((near) => `<li><a href="/pages/keywords/${escapeHtml(input.keyword)}/${escapeHtml(near.slug)}">${escapeHtml(subject)} in ${escapeHtml(near.name)}</a></li>`).join("")}</ul>` : ""}
+${fireTown ? `<p>Parent: <a href="/pages/keywords/${escapeHtml(input.keyword)}">${escapeHtml(subject)} guide</a> · <a href="/pages/services/fire-alarms">Fire alarms</a> · <a href="/pages/keywords">Service guides</a>${isGmTown(townSlug) ? ` · <a href="/pages/areas/${escapeHtml(townSlug)}">Property services in ${escapeHtml(place.name)}</a>` : ` · <a href="/pages/areas/stockport">Stockport area hub</a>`}</p><h2>Nearby mainland towns</h2><ul>${nearestMainland(townSlug, 12).map((near) => `<li><a href="/pages/keywords/${escapeHtml(input.keyword)}/${escapeHtml(near.slug)}">${escapeHtml(subject)} in ${escapeHtml(near.name)}</a></li>`).join("")}</ul>` : ""}
 ${relatedHtml}
 ${faqBlock}
 </article>

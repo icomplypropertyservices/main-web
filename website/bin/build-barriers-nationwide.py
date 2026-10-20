@@ -502,6 +502,24 @@ def assert_unique(rows):
             raise SystemExit("too many pages share one skeleton")
 
 
+DOUBLED_NAME = re.compile(r"\b([A-Z][\w' -]*?) \(([^()]+)\)")
+
+
+def tidy_doubled_names(value):
+    """P2-20-6: 'St Helens (St. Helens)' repeats the town; keep 'St Helens'."""
+    def fix(m):
+        a = re.sub(r"[^a-z]", "", m.group(1).lower())
+        b = re.sub(r"[^a-z]", "", m.group(2).lower())
+        return m.group(1) if a.endswith(b) or b == a else m.group(0)
+    if isinstance(value, str):
+        return DOUBLED_NAME.sub(fix, value)
+    if isinstance(value, list):
+        return [tidy_doubled_names(v) for v in value]
+    if isinstance(value, dict):
+        return {k: (v if k == "slug" else tidy_doubled_names(v)) for k, v in value.items()}
+    return value
+
+
 def main():
     rows = collect_ew()
     print("england wales", len(rows))
@@ -513,6 +531,7 @@ def main():
     add_neighbours(rows)
     assert_unique(rows)
     rows.sort(key=lambda r: (r["country"], r["region"], r["name"]))
+    rows = tidy_doubled_names(rows)
     # Drop bulky nulls for scotland/london already present.
     path = DATA / "barriers-places.json"
     path.write_text(json.dumps(rows, ensure_ascii=False, indent=1) + "\n")

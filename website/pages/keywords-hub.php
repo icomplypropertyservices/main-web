@@ -18,7 +18,7 @@ foreach ($keywords as $meta) {
 }
 
 $categories = getServiceCategories();
-$pageTitle = 'Keyword Guides | Fire Safety, Professional & Construction Topics';
+$pageTitle = 'Service Guides | Fire Safety, Professional & Construction Topics';
 $metaDesc = 'Browse ' . count($keywords) . '+ guides covering fire risk assessments, fire safety systems, electrical, security, landlord compliance, kitchens, bathrooms, renovation and construction across the North West.';
 $metaKeywords = 'fire risk assessment guide, kitchen fitting guide, EICR, fire alarm installation, bathroom renovation, plastering, landlord compliance North West';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
@@ -44,7 +44,7 @@ require SITE_ROOT . '/includes/header.php';
         <nav class="text-xs text-white/50 mb-6 flex flex-wrap gap-2 items-center">
             <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a>
             <span>/</span>
-            <span class="text-white/80">Keyword Guides</span>
+            <span class="text-white/80">Service Guides</span>
         </nav>
         <div class="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -67,7 +67,7 @@ require SITE_ROOT . '/includes/header.php';
                     <a href="#quote" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Free quote</a>
                 </div>
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
-                    <div><span class="text-white font-semibold text-xl block"><?= count($keywords) ?></span> keyword guides</div>
+                    <div><span class="text-white font-semibold text-xl block"><?= count($keywords) ?></span> service guides</div>
                     <div><span class="text-white font-semibold text-xl block"><?= count($services) ?></span> services covered</div>
                     <div><span class="text-white font-semibold text-xl block"><?= count($areas) ?>+</span> towns linked</div>
                 </div>
@@ -155,7 +155,7 @@ if (function_exists('accessControlLaneHubSection')) {
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
         <div>
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Directory</div>
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">All keyword guides</h2>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">All service guides</h2>
             <p class="mt-2 text-zinc-600 max-w-xl">Search by topic or filter by service. Showing <span id="kw-visible-count"><?= count($keywords) ?></span> of <?= count($keywords) ?> guides.</p>
         </div>
         <a href="<?= url('/pages/manufacturers/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Manufacturers â†’</a>
@@ -165,7 +165,7 @@ if (function_exists('accessControlLaneHubSection')) {
     <div class="sticky top-0 z-10 -mx-2 px-2 py-4 mb-8 bg-zinc-50/95 backdrop-blur border-b">
         <div class="flex flex-col lg:flex-row gap-3 lg:items-center">
             <div class="relative flex-1 max-w-xl">
-                <label for="kw-search" class="sr-only">Search keyword guides</label>
+                <label for="kw-search" class="sr-only">Search service guides</label>
                 <input type="search" id="kw-search" autocomplete="off" placeholder="Search guides (e.g. EICR, Paxton, fire panel)â€¦"
                        class="w-full border border-zinc-200 bg-white px-5 py-3.5 rounded-2xl text-sm text-black focus:outline-none focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/20">
             </div>

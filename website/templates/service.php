@@ -107,6 +107,13 @@ $svcCopy = function_exists('icomplyServiceHubCopy') ? icomplyServiceHubCopy($ser
 if (!empty($svcCopy['faq']) && is_array($svcCopy['faq'])) {
     $faqs = $svcCopy['faq'];
 }
+require_once SITE_ROOT . '/includes/money-hub-depth.php';
+$depth = icomplyMoneyHubDepthService($serviceSlug);
+if ($depth['sections'] || $depth['faq']) {
+    $svcCopy = is_array($svcCopy) ? $svcCopy : [];
+    $svcCopy['sections'] = array_merge((array)($svcCopy['sections'] ?? []), $depth['sections']);
+    $faqs = array_merge($faqs, $depth['faq']);
+}
 $hubLinks = function_exists('icomplyServiceHubLinks') ? icomplyServiceHubLinks($serviceSlug) : [];
 if ($svcBoost) {
     $svcCopy = is_array($svcCopy) ? $svcCopy : [];
@@ -510,7 +517,7 @@ if (function_exists('accessControlLaneHubSection')) {
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Topic guides</div>
                 <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">
-                    <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> keywords &amp; local pages
+                    <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> guides and local pages
                 </h2>
                 <p class="mt-2 text-zinc-600 max-w-2xl">
                     <?php if ($ownsMainland): ?>
@@ -521,7 +528,7 @@ if (function_exists('accessControlLaneHubSection')) {
                     <?php endif; ?>
                 </p>
             </div>
-            <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All keyword guides →</a>
+            <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All service guides →</a>
         </div>
         <?php
         $svcKeywords = getKeywordsForService($serviceSlug);
@@ -578,16 +585,16 @@ if (function_exists('accessControlLaneHubSection')) {
         </div>
         <?php if ($cardLimit > 0 && count($svcKeywords) > $cardLimit): ?>
             <p class="mt-6 text-sm text-zinc-600">
-                Showing <?= (int)$cardLimit ?> of <?= count($svcKeywords) ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> keyword guides —
-                <a href="<?= url('/pages/keywords/index.php') ?>" class="font-semibold text-[#ff6b00]">view full keyword index</a>.
+                Showing <?= (int)$cardLimit ?> of <?= count($svcKeywords) ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> service guides —
+                <a href="<?= url('/pages/keywords/index.php') ?>" class="font-semibold text-[#ff6b00]">view all guides</a>.
             </p>
         <?php else: ?>
             <p class="mt-6 text-sm text-zinc-600">
-                All <?= count($svcKeywords) ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> keyword guides, each with every town we cover.
+                All <?= count($svcKeywords) ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> service guides, each with every town we cover.
             </p>
         <?php endif; ?>
         <?php else: ?>
-            <p class="text-zinc-600">Keyword guides for this service are being expanded. See the <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/keywords/index.php') ?>">full guides index</a>.</p>
+            <p class="text-zinc-600">More guides for this service are on the way. See the <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/keywords/index.php') ?>">full guides index</a>.</p>
         <?php endif; ?>
     </div>
 </section>

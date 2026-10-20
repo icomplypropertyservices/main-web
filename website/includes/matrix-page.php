@@ -153,7 +153,7 @@ function icomplyMatrixChromeEnd(string $footNote = ''): string
         . '<div class="flex flex-wrap gap-4">'
         . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH($s['svcHub']) . '">All services</a>'
         . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH($s['areasHub']) . '">All areas</a>'
-        . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH($s['kwHub']) . '">All keyword guides</a>'
+        . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH($s['kwHub']) . '">All service guides</a>'
         . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH(url('/pages/site-map.php')) . '">Site map / full inventory</a>'
         . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH($s['contact']) . '">Contact / POA quote</a>'
         . '</div>'
@@ -400,7 +400,7 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
             . '</section>';
     }
 
-    $html .= '<section><h2 class="text-2xl font-semibold mb-3">All ' . icomplyMatrixH($svcName) . ' keyword guides</h2>'
+    $html .= '<section><h2 class="text-2xl font-semibold mb-3">All ' . icomplyMatrixH($svcName) . ' service guides</h2>'
         . '<p class="text-sm text-zinc-600 mb-4">Every topic under this service, each with the same full town list.</p>'
         . icomplyMatrixKeywordChips($svcSlug)
         . '</section></main>';
@@ -513,6 +513,9 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
             'imageAlt' => $svcName . ' in ' . $areaName,
         ])
         : '';
+    if (!function_exists('icomplyFireFamilyDepthHtml')) {
+        require_once SITE_ROOT . '/includes/fire-family-depth.php';
+    }
     if (!function_exists('icomplyQualityBarThinBlock')) {
         require_once SITE_ROOT . '/includes/quality-bar.php';
     }
@@ -532,6 +535,7 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         . '<h2 class="text-2xl font-semibold">' . icomplyMatrixH($packedHeading) . '</h2>'
         . $svcEnrich
         . $svcQuality
+        . ($ownsMainland ? icomplyFireFamilyDepthHtml($serviceSlug, $svcName, $areaName) : '')
         . icomplyTownFactsHtml(areaSlug($areaName), $areaName, $svcName, $serviceSlug)
         . '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($blurb) . '</p>'
         . ($packedCta !== '' ? '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($packedCta) . '</p>' : '')
@@ -571,7 +575,7 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         foreach ($pickKw as $k) {
             $html .= '<a class="kw-chip" href="' . icomplyMatrixH(url('/pages/keywords/' . $k)) . '">' . icomplyMatrixH($kwAll[$k]) . '</a>';
         }
-        $html .= '</div><p class="text-sm mt-2"><a class="text-[#ff6b00] font-semibold" href="' . icomplyMatrixH(url('/pages/keywords')) . '">All keyword guides</a></p></section></main>';
+        $html .= '</div><p class="text-sm mt-2"><a class="text-[#ff6b00] font-semibold" href="' . icomplyMatrixH(url('/pages/keywords')) . '">All service guides</a></p></section></main>';
     } else {
         $html .= '<section><h2 class="text-2xl font-semibold mb-3">All keywords for this service</h2>'
             . icomplyMatrixKeywordChips($serviceSlug)

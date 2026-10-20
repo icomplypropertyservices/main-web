@@ -141,7 +141,7 @@ foreach ($categories as $catKey => $cat):
             $svcKw = getMajorKeywords();
         ?>
         <div class="mt-8 p-6 bg-white border border-zinc-200 rounded-3xl">
-            <h3 class="font-semibold text-black">Electrical &amp; gas keyword guides</h3>
+            <h3 class="font-semibold text-black">Electrical &amp; gas service guides</h3>
             <p class="text-sm text-zinc-600 mt-1">Each topic has a hub plus a page for every town we cover. Cost and price searches are POA only.</p>
             <div class="mt-4 flex flex-wrap gap-2">
                 <?php foreach (array_merge($svcEg['electrical'] ?? [], $svcEg['gas'] ?? []) as $egSlug):

@@ -379,7 +379,7 @@ function icomplyQualityBarAreaFaqs(string $areaName): array
         ],
         [
             'Which services are listed for ' . $areaName . '?',
-            'This page links the services published for ' . $areaName . '. Fire protection, electrical, security and building work are quoted after a survey. Price on application.',
+            'Services we offer in ' . $areaName . '. Fire protection, electrical, security and building work are quoted after a survey. Price on application.',
         ],
     ];
 }

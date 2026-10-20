@@ -25,6 +25,14 @@ ok(nonGmMatrixRedirect("/pages/barriers/liverpool") === null, "barrier Liverpool
 
 const leeds = renderNationwideP0Town("fire-alarm-installer", "leeds");
 ok(leeds && leeds.robots === "index, follow", "Leeds is indexable");
+{
+  const ld = (leeds?.html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g) || []).map((b) => b.replace(/^<script[^>]*>|<\/script>$/g, ""));
+  const faqLd = ld.map((b) => { try { return JSON.parse(b); } catch { return null; } }).find((o) => o && o["@type"] === "FAQPage");
+  const visible = (leeds?.html.match(/<h2>[^<]*FAQ<\/h2>([\s\S]*?)<\/section>/) || [])[1] || "";
+  const visibleQs = (visible.match(/<h3>/g) || []).length;
+  ok(Boolean(faqLd), "P2-20-4 FAQPage JSON-LD present on P0 x town");
+  ok(faqLd && faqLd.mainEntity.length === visibleQs && visibleQs > 0, `FAQPage questions match visible FAQ (${faqLd?.mainEntity?.length} vs ${visibleQs})`);
+}
 ok(leeds && leeds.html.includes("<h1>Fire Alarm Installer in Leeds</h1>"), "Leeds H1");
 ok(leeds && leeds.html.includes('rel="canonical" href="https://icomplypropertyservices.co.uk/pages/keywords/fire-alarm-installer/leeds"'), "canonical");
 ok(leeds && leeds.html.includes('property="og:title"'), "og:title");

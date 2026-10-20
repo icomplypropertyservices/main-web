@@ -79,7 +79,7 @@ require SITE_ROOT . '/includes/header.php';
             </ul>
             <p class="text-zinc-700 mt-4">
                 A short site survey usually saves cost compared with adding cameras after the fact.
-                See also our keyword guides on
+                See also our service guides on
                 <a href="<?= url('/pages/keywords/commercial-cctv-system.php') ?>" class="text-[#ff6b00] hover:underline">commercial CCTV systems</a>
                 and
                 <a href="<?= url('/pages/keywords/ip-cctv-system.php') ?>" class="text-[#ff6b00] hover:underline">IP CCTV</a>.

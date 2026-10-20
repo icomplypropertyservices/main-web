@@ -6,7 +6,7 @@ require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/share.php';
 
 $pageTitle = 'Site Map | iComply Property Services';
-$metaDesc = 'Browse the iComply site map — fire safety, professional and construction services, popular North West areas, manufacturers, keyword guides and XML sitemaps.';
+$metaDesc = 'Browse the iComply site map — fire safety, professional and construction services, popular North West areas, manufacturers, service guides and XML sitemaps.';
 $metaKeywords = 'iComply site map, fire risk assessment, kitchen fitting, property compliance, North West areas, EICR guides';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/site-map.php');
@@ -40,7 +40,7 @@ $mainPages = [
     ['href' => url('/pages/services/index.php'), 'label' => 'All services'],
     ['href' => url('/pages/areas/index.php'), 'label' => 'All areas'],
     ['href' => url('/pages/manufacturers/index.php'), 'label' => 'Manufacturers / brands'],
-    ['href' => url('/pages/keywords/index.php'), 'label' => 'Keyword guides'],
+    ['href' => url('/pages/keywords/index.php'), 'label' => 'Service guides'],
     ['href' => '/shop/', 'label' => 'Shop / supplies hubs'],
     ['href' => '/shop/fire/', 'label' => 'Shop — Fire'],
     ['href' => '/shop/electrical/', 'label' => 'Shop — Electrical'],
@@ -91,7 +91,7 @@ $resourceLinks = [
     ['href' => url('/pages/services/asbestos-survey.php'), 'label' => 'Asbestos survey', 'blurb' => 'Management & refurbishment surveys — POA'],
     ['href' => url('/pages/resources/legionella-risk-assessment.php'), 'label' => 'Legionella guide', 'blurb' => 'L8 / HSG274 plain English'],
     ['href' => url('/pages/resources/asbestos-survey.php'), 'label' => 'Asbestos guide', 'blurb' => 'Duty to manage, CAR 2012'],
-    ['href' => url('/pages/keywords/index.php'), 'label' => "Keyword guides ({$kwCount})", 'blurb' => 'EICR reports, gas certs, security lighting & more'],
+    ['href' => url('/pages/keywords/index.php'), 'label' => "Service guides ({$kwCount})", 'blurb' => 'EICR reports, gas certs, security lighting & more'],
     ['href' => url('/pages/manufacturers/index.php'), 'label' => "Manufacturers ({$mfrCount})", 'blurb' => 'Brand pages and trade kits'],
     ['href' => url('/pages/faq.php'), 'label' => 'FAQ', 'blurb' => 'Common compliance questions answered'],
     ['href' => url('/pages/packages.php'), 'label' => 'Packages', 'blurb' => 'Multi-service landlord & FM packages'],
@@ -122,7 +122,7 @@ require SITE_ROOT . '/includes/header.php';
             </h1>
             <p class="mt-6 text-lg md:text-xl text-white/80 max-w-2xl">
                 Directory of <?= count($services) ?> services (fire safety, professional &amp; construction),
-                <?= count($areas) ?>+ towns, brands, keyword guides and resources.
+                <?= count($areas) ?>+ towns, brands, service guides and resources.
                 Machine-readable list:
                 <a href="<?= url('/sitemap.xml') ?>" class="text-[#ff6b00] hover:underline font-medium">XML sitemap (core pages, services, towns, brands and guides — no junk keyword×area URLs)</a>.
             </p>
@@ -147,7 +147,7 @@ require SITE_ROOT . '/includes/header.php';
                 'services' => 'Services',
                 'service-areas' => 'Service × area',
                 'areas' => 'Popular areas',
-                'keywords' => 'Keyword guides',
+                'keywords' => 'Service guides',
                 'manufacturers' => 'Manufacturers',
                 'resources' => 'Resources',
             ];
@@ -229,7 +229,7 @@ require SITE_ROOT . '/includes/header.php';
         <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local landings</div>
         <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Service hubs &amp; keyword towns</h2>
         <p class="mt-2 text-zinc-600 max-w-2xl">
-            Browse a service hub, then open a keyword guide for your town. We do not publish thin
+            Browse a service hub, then open a service guide for your town. We do not publish thin
             service×area doorway pages for all 168 towns.
         </p>
     </div>
@@ -275,12 +275,12 @@ require SITE_ROOT . '/includes/header.php';
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">SEO guides</div>
-                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Keyword guides</h2>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Service guides</h2>
                 <p class="mt-2 text-zinc-600 max-w-xl">
                     <?= (int)$kwCount ?> topic pages (e.g. EICR, fire alarm servicing) plus local keyword × town landings.
                 </p>
             </div>
-            <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All keyword guides →</a>
+            <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All service guides →</a>
         </div>
         <div class="flex flex-wrap gap-2">
             <?php

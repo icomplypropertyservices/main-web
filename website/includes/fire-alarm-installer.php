@@ -161,7 +161,7 @@ function icomplyRenderFireAlarmInstallerTown(string $keywordSlug, string $townSl
         . '<li>' . $add('/pages/keywords/' . $keywordSlug, $name . ' guide') . '</li>'
         . '<li>' . $add('/pages/services/fire-alarms', 'Fire alarms') . '</li>'
         . '<li>' . $add('/pages/keywords/' . $relatedSlug, $relatedName) . '</li>'
-        . '<li>' . $add('/pages/keywords', 'All keyword guides') . '</li>'
+        . '<li>' . $add('/pages/keywords', 'All service guides') . '</li>'
         . '<li>' . $add('/contact', 'Request a quote') . '</li>'
         . '</ul>';
     if (function_exists('icomplyIsGreaterManchesterAreaSlug') && icomplyIsGreaterManchesterAreaSlug($ctx['slug'])) {

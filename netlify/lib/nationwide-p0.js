@@ -121,7 +121,7 @@ const P0_MIN_LINKS = 90; // gate is 85; keep a small margin for catalogue change
 const FAMILY = (service) => (service === "barriers" ? "barriers" : service === "aov-air-handling" ? "aov" : "fire");
 const UTILITY = [
   ["/pages/services", "All services"],
-  ["/pages/keywords", "All keyword guides"],
+  ["/pages/keywords", "All service guides"],
   ["/pages/areas", "Areas we cover"],
   ["/pages/commercial", "Commercial property services"],
   ["/pages/landlords", "Landlord compliance"],
@@ -229,10 +229,18 @@ export function renderNationwideP0Town(keywordSlug, townSlug) {
     hrefFor: (s) => `/pages/keywords/${keywordSlug}/${s}`,
   });
   if (facts) faqs.unshift(...facts.faqs);
-  const faqHtml = faqs
-    .filter((faq) => Array.isArray(faq) && faq.length >= 2)
+  const faqRows = faqs.filter((faq) => Array.isArray(faq) && faq.length >= 2);
+  const faqHtml = faqRows
     .map(([q, a]) => `<h3>${escapeHtml(q)}</h3><p>${escapeHtml(a)}</p>`)
     .join("");
+  // P2-20-4 (2026-10-20): the visible FAQ is also emitted as FAQPage JSON-LD.
+  const faqLd = faqRows.length
+    ? `<script type="application/ld+json">${JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqRows.map(([q, a]) => ({ "@type": "Question", name: String(q), acceptedAnswer: { "@type": "Answer", text: String(a) } })),
+    }).replace(/</g, "\\u003c")}</script>`
+    : "";
   const parents = PARENTS[pack.service] || PARENTS["fire-alarms"];
   let links = parents.map((href) => `<li><a href="${href}">${escapeHtml(hubLabel(href))}</a></li>`).join("");
   links += `<li><a href="/pages/keywords/${keywordSlug}">${escapeHtml(name)} guide (full scope)</a></li>`;
@@ -263,6 +271,7 @@ export function renderNationwideP0Town(keywordSlug, townSlug) {
 <meta property="og:description" content="${escapeHtml(description)}">
 <meta property="og:url" content="${canonical}">
 <meta property="og:image" content="${escapeHtml(ogImage)}">
+${faqLd}
 ${MATRIX_CSS}
 </head><body class="mx">
 ${MATRIX_HEADER}
