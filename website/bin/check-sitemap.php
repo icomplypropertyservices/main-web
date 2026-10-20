@@ -423,6 +423,7 @@ $stayCases = [
     '/pages/keywords/fire-alarm-installer/liverpool',
     '/pages/keywords/fire-alarm-installation/cardiff',
     '/pages/keywords/domestic-fire-alarm-installation/edinburgh',
+    '/pages/keywords/cctv-installation/burnley',
     '/pages/electrical/stockport',
     '/pages/access-control/burnley',
     '/pages/windows-doors/warrington',

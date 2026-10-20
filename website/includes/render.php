@@ -154,7 +154,7 @@ function renderServiceAreaPage(string $serviceSlug, string $area): void {
 }
 
 /**
- * Keyword guide page.
+ * Service guide page.
  */
 function renderKeywordPage(string $slug): void {
     $keywords = getMajorKeywords();

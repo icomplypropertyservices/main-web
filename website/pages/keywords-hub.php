@@ -1,6 +1,6 @@
 ﻿<?php
 /**
- * KEYWORDS_INDEX_V2 â€” keyword guides directory (handcrafted; generators skip overwrite).
+ * KEYWORDS_INDEX_V2 â€” service guides directory (handcrafted; generators skip overwrite).
  */
 require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/share.php';

@@ -110,6 +110,8 @@ const SERVICE_HUB_ALIAS = {
   "fire-risk-assessment": "/pages/services/fire-risk-assessments",
   "ev-charging": "/pages/services/ev-chargers",
 };
+import { securityJobRedirect } from "../lib/security-dual-ring.js";
+import { SECURITY_NEW_INTENTS, securityTownCopy } from "../lib/security-town-copy.js";
 
 const RESERVED = new Set([
   "keywords", "services", "areas", "manufacturers", "resources", "packages",
@@ -436,6 +438,10 @@ export function renderTownPage(input) {
     hrefFor: null, // only the P0 renderer links siblings; other matrix towns may 301
   });
   if (facts) qualityCtx.short = true;
+  // SEO PR145: the 15 new security intents get town-specific copy so each x town page stands alone;
+  // that copy replaces the long generic template prose on the two borough pages with no centre point.
+  const secLocal = kind === "keyword" && SECURITY_NEW_INTENTS.has(input.keyword) ? securityTownCopy(input.keyword, townSlug) : null;
+  if (secLocal) qualityCtx.short = true;
   if (pe && typeof pe.body === "string" && pe.body.trim()) {
     // Lean pages keep the first two authored paragraphs; the rest is a service guide repeated in every town.
     qualityCtx.peBody = facts ? pe.body.trim().split(/\n\s*\n/).slice(0, 2).join("\n\n") : pe.body;
@@ -481,7 +487,11 @@ export function renderTownPage(input) {
     const shift = faqs.length ? mix32(hashStr(`faq|${townSlug}|${subject}`)) % faqs.length : 0;
     faqs.push(...faqs.splice(0, shift));
   }
-  const faqBlock = (fireTown || fireFamily || facts)
+  if (secLocal) {
+    proseHtml += secLocal.html;
+    faqs.push(...secLocal.faqs);
+  }
+  const faqBlock = (fireTown || fireFamily || facts || secLocal)
     ? `<section id="faq" class="faq" data-pe-slot="q5-thin-faq"><h2>Questions about ${escapeHtml(place.name)}</h2>${faqs.map(([q, a]) => (
       `<details class="faq-item"><summary>${escapeHtml(q)}</summary><p>${escapeHtml(a)}</p></details>`
     )).join("")}</section>`
@@ -753,6 +763,10 @@ export default async (request, context) => {
   const aliasTo = placeAliasRedirect(path);
   if (aliasTo) {
     return Response.redirect(new URL(aliasTo, url.origin).toString(), 301);
+  }
+  const securityTo = securityJobRedirect(path);
+  if (securityTo) {
+    return Response.redirect(new URL(securityTo, url.origin).toString(), 301);
   }
   const matrixTo = nonGmMatrixRedirect(path);
   if (matrixTo) {

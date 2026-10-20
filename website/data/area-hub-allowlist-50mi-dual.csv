@@ -1,0 +1,270 @@
+slug,name,mi_manchester,mi_burnley,circles,county,population,bucket
+abram,Abram,14.5,24.9,mcr+burnley,Wigan,10074,radius_dual
+accrington,Accrington,19.5,6.0,mcr+burnley,Lancashire,34897,radius_dual
+adwick-le-street,Adwick le Street,43.9,45.7,mcr+burnley,Doncaster,19481,radius_dual
+alfreton,Alfreton,44.3,59.8,mcr,Derbyshire,22550,radius_dual
+allerton,Allerton,27.9,40.4,mcr+burnley,Liverpool,15540,radius_dual
+alsager,Alsager,26.7,48.7,mcr+burnley,Cheshire East,13347,radius_dual
+altrincham,Altrincham,7.8,28.9,mcr+burnley,Trafford,49680,gm_core
+armthorpe,Armthorpe,49.0,51.7,mcr,Doncaster,12911,radius_dual
+ashton-in-makerfield,Ashton in Makerfield,16.8,27.7,mcr+burnley,St. Helens,26380,radius_dual
+ashton-under-lyne,Ashton-under-Lyne,5.9,22.2,mcr+burnley,Tameside,43675,gm_core
+atherton,Atherton,10.7,21.9,mcr+burnley,Wigan,22000,gm_core
+bacup,Bacup,15.5,6.8,mcr+burnley,Lancashire,13047,radius_dual
+baildon,Baildon,31.4,18.5,mcr+burnley,Bradford,15710,radius_dual
+barnoldswick,Barnoldswick,30.2,8.3,mcr+burnley,Lancashire,10435,radius_dual
+barnsley,Barnsley,31.6,35.2,mcr+burnley,Barnsley,71447,radius_dual
+barrow-in-furness,Barrow in Furness,59.3,45.8,burnley,Cumbria,55489,radius_dual
+batley,Batley,29.3,25.4,mcr+burnley,Kirklees,39013,radius_dual
+bebington,Bebington,33.1,44.7,mcr+burnley,Wirral,57600,radius_dual
+beighton,Beighton,38.8,49.0,mcr+burnley,Sheffield,10914,radius_dual
+belper,Belper,44.6,62.0,mcr,Derbyshire,23417,radius_dual
+bentley,Bentley,45.0,48.0,mcr+burnley,Doncaster,34821,radius_dual
+biddulph,Biddulph,25.3,47.2,mcr+burnley,Staffordshire,17669,radius_dual
+bingley,Bingley,30.3,16.4,mcr+burnley,Bradford,18040,radius_dual
+birkenhead,Birkenhead,32.4,42.6,mcr+burnley,Wirral,325264,radius_dual
+blackburn,Blackburn,21.1,10.8,mcr+burnley,Blackburn with Darwen,146521,radius_dual
+blackpool,Blackpool,40.4,33.3,mcr+burnley,Blackpool,145007,radius_dual
+blacon,Blacon,33.9,49.8,mcr+burnley,Cheshire West and Chester,13495,radius_dual
+bolsover,Bolsover,42.9,55.3,mcr,Derbyshire,11754,radius_dual
+bolton,Bolton,10.6,17.1,mcr+burnley,Bolton,141331,gm_core
+bolton-upon-dearne,Bolton upon Dearne,38.1,42.3,mcr+burnley,Barnsley,13236,radius_dual
+bootle,Bootle,31.8,39.5,mcr+burnley,Sefton,57791,radius_dual
+bradford,Bradford,29.5,19.6,mcr+burnley,Bradford,366187,radius_dual
+bramhall,Bramhall,9.1,30.7,mcr+burnley,Stockport,17195,gm_core
+bredbury,Bredbury,6.8,26.9,mcr+burnley,Stockport,17040,radius_dual
+brierfield,Brierfield,23.8,1.7,mcr+burnley,Lancashire,10271,radius_dual
+brighouse,Brighouse,24.3,19.5,mcr+burnley,Calderdale,32872,radius_dual
+bromborough,Bromborough,31.7,43.7,mcr+burnley,Wirral,14850,radius_dual
+brymbo,Brymbo,44.5,61.2,mcr,Wrexham,18111,radius_dual
+buckley,Buckley,40.9,56.0,mcr,Flintshire,63576,radius_dual
+burngreave,Burngreave,32.9,42.4,mcr+burnley,Sheffield,27481,radius_dual
+burnley,Burnley,22.1,0.0,mcr+burnley,Lancashire,149422,radius_dual
+bury,Bury,8.6,14.1,mcr+burnley,Bury,61044,gm_core
+buxton,Buxton,20.7,39.8,mcr+burnley,Derbyshire,20048,radius_dual
+cadishead,Cadishead,,,gm_forced,,,gm_core
+castleford,Castleford,39.9,35.9,mcr+burnley,Wakefield,45106,radius_dual
+chadderton,Chadderton,6.1,18.0,mcr+burnley,Oldham,37602,gm_core
+chapel-allerton,Chapel Allerton,37.6,28.4,mcr+burnley,Leeds,18206,radius_dual
+chapeltown,Chapeltown,31.7,38.8,mcr+burnley,Sheffield,23056,radius_dual
+cheadle,Cheadle,36.0,57.4,mcr,Staffordshire,11404,gm_core
+cheadle-hulme,Cheadle Hulme,7.6,29.3,mcr+burnley,Stockport,28952,gm_core
+chester,Chester,33.5,50.1,mcr,Cheshire West and Chester,90524,radius_dual
+chesterfield,Chesterfield,37.6,50.7,mcr,Derbyshire,113057,radius_dual
+childwall,Childwall,27.5,38.9,mcr+burnley,Liverpool,13640,radius_dual
+chorley,Chorley,19.3,18.8,mcr+burnley,Lancashire,33888,radius_dual
+chorlton,Chorlton,,,gm_forced,,,gm_core
+clayton-le-woods,Clayton-le-Woods,23.0,19.1,mcr+burnley,Lancashire,14528,radius_dual
+cleckheaton,Cleckheaton,27.5,21.9,mcr+burnley,Kirklees,27393,radius_dual
+cleveleys,Cleveleys,42.6,33.3,mcr+burnley,Lancashire,15000,radius_dual
+clitheroe,Clitheroe,27.4,8.2,mcr+burnley,Lancashire,14765,radius_dual
+colne,Colne,26.2,4.8,mcr+burnley,Lancashire,20118,radius_dual
+congleton,Congleton,22.0,44.0,mcr+burnley,Cheshire East,26178,radius_dual
+conisbrough,Conisbrough,41.5,46.5,mcr+burnley,Doncaster,15934,radius_dual
+crewe,Crewe,27.7,49.3,mcr+burnley,Cheshire East,76437,radius_dual
+cross-hills,Cross Hills,31.2,12.5,mcr+burnley,North Yorkshire,11731,radius_dual
+cudworth,Cudworth,34.5,37.0,mcr+burnley,Barnsley,11903,radius_dual
+darton,Darton,30.3,32.4,mcr+burnley,Barnsley,21345,radius_dual
+darwen,Darwen,17.6,11.8,mcr+burnley,Blackburn with Darwen,32566,radius_dual
+denton,Denton,5.4,24.2,mcr+burnley,Tameside,27464,gm_core
+derby,Derby,49.9,68.2,mcr,Derby,270468,radius_dual
+dewsbury,Dewsbury,29.0,25.8,mcr+burnley,Kirklees,61035,radius_dual
+didsbury,Didsbury,4.4,26.5,mcr+burnley,Manchester,14292,gm_core
+dingle,Dingle,30.4,41.6,mcr+burnley,Liverpool,13246,radius_dual
+dinnington,Dinnington,43.6,51.9,mcr,Rotherham,19860,radius_dual
+doncaster,Doncaster,45.8,49.0,mcr+burnley,Doncaster,113566,radius_dual
+dronfield,Dronfield,33.9,46.4,mcr+burnley,Derbyshire,21124,radius_dual
+droylsden,Droylsden,4.0,22.4,mcr+burnley,Tameside,23689,gm_core
+dukinfield,Dukinfield,6.4,23.2,mcr+burnley,Tameside,21155,gm_core
+eccles,Eccles,3.7,22.3,mcr+burnley,Salford,37275,gm_core
+elland,Elland,21.8,18.0,mcr+burnley,Calderdale,15625,radius_dual
+ellesmere-port-town,Ellesmere Port Town,30.5,45.3,mcr+burnley,Cheshire West and Chester,65430,radius_dual
+failsworth,Failsworth,3.6,20.6,mcr+burnley,Oldham,20555,gm_core
+farnworth,Farnworth,8.0,18.6,mcr+burnley,Bolton,25680,gm_core
+fazakerley,Fazakerley,28.2,36.9,mcr+burnley,Liverpool,16374,radius_dual
+featherstone,Featherstone,38.8,36.8,mcr+burnley,Wakefield,11060,radius_dual
+fleetwood,Fleetwood,43.9,32.8,mcr+burnley,Lancashire,26232,radius_dual
+flint,Flint,40.1,53.2,mcr,Flintshire,26442,radius_dual
+formby,Formby,34.4,38.1,mcr+burnley,Sefton,23329,radius_dual
+fulwood,Fulwood,29.9,41.9,mcr+burnley,Sheffield,18233,radius_dual
+fylde,Fylde,36.8,28.0,mcr+burnley,Lancashire,76500,radius_dual
+garforth,Garforth,41.3,34.8,mcr+burnley,Leeds,14838,radius_dual
+garston,Garston,28.9,42.3,mcr+burnley,Liverpool,21403,radius_dual
+glossop,Glossop,12.4,27.3,mcr+burnley,Derbyshire,17825,radius_dual
+golborne,Golborne,14.6,26.8,mcr+burnley,Wigan,24021,radius_dual
+great-harwood,Great Harwood,22.1,7.2,mcr+burnley,Lancashire,11467,radius_dual
+great-sankey,Great Sankey,17.5,32.7,mcr+burnley,Warrington,43793,radius_dual
+guiseley,Guiseley,34.9,21.9,mcr+burnley,Leeds,21000,radius_dual
+hale,Hale,8.0,29.4,mcr+burnley,Trafford,16715,radius_dual
+halewood,Halewood,25.7,39.1,mcr+burnley,Knowsley,20430,radius_dual
+halifax,Halifax,22.9,16.7,mcr+burnley,Calderdale,82624,radius_dual
+harrogate,Harrogate,45.5,31.3,mcr+burnley,North Yorkshire,89060,radius_dual
+haslingden,Haslingden,15.7,7.6,mcr+burnley,Lancashire,15204,radius_dual
+hawarden,Hawarden,38.2,53.6,mcr,Flintshire,25513,radius_dual
+haxby,Haxby,60.4,49.6,burnley,York,11894,radius_dual
+haydock,Haydock,18.1,29.4,mcr+burnley,St. Helens,17333,radius_dual
+hazel-grove,Hazel Grove,8.5,29.2,mcr+burnley,Stockport,20170,gm_core
+heanor,Heanor,48.9,65.3,mcr,Derbyshire,23122,radius_dual
+heckmondwike,Heckmondwike,27.9,23.6,mcr+burnley,Kirklees,18149,radius_dual
+heswall,Heswall,36.7,48.2,mcr+burnley,Wirral,29075,radius_dual
+heysham,Heysham,47.1,31.7,mcr+burnley,Lancashire,17016,radius_dual
+heywood,Heywood,,,gm_forced,,,gm_core
+hindley,Hindley,14.5,23.3,mcr+burnley,Wigan,25001,radius_dual
+hollinwood,Hollinwood,5.1,20.0,mcr+burnley,Oldham,12310,radius_dual
+horbury,Horbury,30.6,29.2,mcr+burnley,Wakefield,10225,radius_dual
+horsforth,Horsforth,35.2,24.5,mcr+burnley,Leeds,19350,radius_dual
+horwich,Horwich,15.1,18.9,mcr+burnley,Bolton,18696,gm_core
+hoyland-nether,Hoyland Nether,32.6,38.2,mcr+burnley,Barnsley,15842,radius_dual
+huddersfield,Huddersfield,22.1,21.1,mcr+burnley,Kirklees,149017,radius_dual
+huyton,Huyton,25.0,36.6,mcr+burnley,Knowsley,54738,radius_dual
+hyde,Hyde,7.0,24.9,mcr+burnley,Tameside,35895,gm_core
+ilkley,Ilkley,35.1,18.8,mcr+burnley,Bradford,14809,radius_dual
+ince-in-makerfield,Ince-in-Makerfield,15.8,24.2,mcr+burnley,Wigan,11185,radius_dual
+irlam,Irlam,7.9,25.9,mcr+burnley,Salford,19442,gm_core
+kearsley,Kearsley,6.8,19.4,mcr+burnley,Bolton,10127,gm_core
+keighley,Keighley,30.1,14.1,mcr+burnley,Bradford,50171,radius_dual
+kendal,Kendal,62.0,41.9,burnley,Cumbria,29147,radius_dual
+kidsgrove,Kidsgrove,27.2,49.3,mcr+burnley,Staffordshire,29480,radius_dual
+kippax,Kippax,40.8,35.3,mcr+burnley,Leeds,15965,radius_dual
+kirk-sandall,Kirk Sandall,48.5,50.4,mcr,Doncaster,13572,radius_dual
+kirkby,Kirkby,26.7,34.8,mcr+burnley,Knowsley,45564,radius_dual
+kirkby-in-ashfield,Kirkby in Ashfield,48.9,63.2,mcr,Nottinghamshire,27539,radius_dual
+knaresborough,Knaresborough,48.3,34.3,mcr+burnley,North Yorkshire,14740,radius_dual
+knottingley,Knottingley,43.4,40.4,mcr+burnley,Wakefield,13804,radius_dual
+knotty-ash,Knotty Ash,27.3,38.0,mcr+burnley,Liverpool,14355,radius_dual
+knutsford,Knutsford,13.4,34.8,mcr+burnley,Cheshire East,13191,radius_dual
+lancaster,Lancaster,45.2,28.7,mcr+burnley,Lancashire,47162,radius_dual
+leeds,Leeds,35.9,28.0,mcr+burnley,Leeds,536280,radius_dual
+leek,Leek,27.6,48.8,mcr+burnley,Staffordshire,19385,radius_dual
+lees,Lees,8.0,19.3,mcr+burnley,Oldham,12630,gm_core
+leigh,Leigh,11.4,24.0,mcr+burnley,Wigan,43626,gm_core
+leyland,Leyland,23.6,19.9,mcr+burnley,Lancashire,37614,radius_dual
+litherland,Litherland,31.1,38.8,mcr+burnley,Sefton,22971,radius_dual
+little-hulton,Little Hulton,8.0,19.9,mcr+burnley,Salford,13469,radius_dual
+little-lever,Little Lever,8.0,17.4,mcr+burnley,Bolton,10100,gm_core
+littleborough,Littleborough,12.8,12.1,mcr+burnley,Rochdale,13807,gm_core
+liverpool,Liverpool,30.6,40.7,mcr+burnley,Liverpool,496770,radius_dual
+liversedge,Liversedge,27.3,23.0,mcr+burnley,Kirklees,19420,radius_dual
+lofthouse,Lofthouse,35.1,30.5,mcr+burnley,Leeds,23458,radius_dual
+longton,Longton,34.7,56.6,mcr,Stoke-on-Trent,27214,radius_dual
+lymm,Lymm,11.9,30.6,mcr+burnley,Warrington,11608,radius_dual
+lytham-st-annes,Lytham St Annes,35.8,31.4,mcr+burnley,Lancashire,42695,radius_dual
+macclesfield,Macclesfield,16.0,37.6,mcr+burnley,Cheshire East,54345,radius_dual
+maghull,Maghull,28.8,35.0,mcr+burnley,Sefton,26997,radius_dual
+maltby,Maltby,43.1,50.0,mcr+burnley,Rotherham,17513,radius_dual
+manchester,Manchester,0.2,22.0,mcr+burnley,Manchester,568996,gm_core
+mansfield,Mansfield,49.3,62.7,mcr,Nottinghamshire,171958,radius_dual
+mansfield-woodhouse,Mansfield Woodhouse,48.5,61.3,mcr,Nottinghamshire,18330,radius_dual
+market-drayton,Market Drayton,41.1,62.7,mcr,Shropshire,11773,radius_dual
+marple,Marple,9.5,28.9,mcr+burnley,Stockport,12970,gm_core
+matlock,Matlock,36.9,53.5,mcr,Derbyshire,14956,radius_dual
+mexborough,Mexborough,39.1,44.0,mcr+burnley,Doncaster,15079,radius_dual
+middleton,Middleton,5.1,17.3,mcr+burnley,Rochdale,45589,gm_core
+middlewich,Middlewich,21.6,42.8,mcr+burnley,Cheshire East,13595,radius_dual
+milnrow,Milnrow,,,gm_forced,,,gm_core
+mirfield,Mirfield,26.1,23.6,mcr+burnley,Kirklees,18800,radius_dual
+mold,Mold,43.0,57.5,mcr,Flintshire,10058,radius_dual
+morecambe,Morecambe,47.8,31.6,mcr+burnley,Lancashire,51644,radius_dual
+moreton,Moreton,36.4,45.6,mcr+burnley,Wirral,17670,radius_dual
+morley,Morley,31.9,26.2,mcr+burnley,Leeds,57385,radius_dual
+mossley,Mossley,,,gm_forced,,,gm_core
+mossley-hill,Mossley Hill,28.5,40.4,mcr+burnley,Liverpool,12041,radius_dual
+nantwich,Nantwich,30.7,51.9,mcr,Cheshire East,17226,radius_dual
+nelson,Nelson,24.4,2.7,mcr+burnley,Lancashire,29317,radius_dual
+neston,Neston,36.0,49.0,mcr+burnley,Cheshire West and Chester,15064,radius_dual
+new-mills,New Mills,12.8,31.5,mcr+burnley,Derbyshire,17968,radius_dual
+newcastle-under-lyme,Newcastle under Lyme,33.2,55.3,mcr,Staffordshire,127727,radius_dual
+newport,Newport,49.6,71.6,mcr,Telford and Wrekin,12741,radius_dual
+newton-le-willows,Newton-le-Willows,14.9,28.5,mcr+burnley,St. Helens,24642,radius_dual
+northallerton,Northallerton,67.8,49.4,burnley,North Yorkshire,16832,radius_dual
+northwich,Northwich,19.1,39.2,mcr+burnley,Cheshire West and Chester,47421,radius_dual
+old-swan,Old Swan,27.8,38.5,mcr+burnley,Liverpool,15596,radius_dual
+oldham,Oldham,6.6,18.5,mcr+burnley,Oldham,237110,gm_core
+ormskirk,Ormskirk,26.9,31.0,mcr+burnley,Lancashire,24073,radius_dual
+ossett,Ossett,30.5,28.0,mcr+burnley,Wakefield,21861,radius_dual
+otley,Otley,36.9,23.2,mcr+burnley,Leeds,14668,radius_dual
+padiham,Padiham,22.4,3.3,mcr+burnley,Lancashire,11338,radius_dual
+pendlebury,Pendlebury,,,gm_forced,,,gm_core
+penistone,Penistone,25.4,31.1,mcr+burnley,Barnsley,10956,radius_dual
+pinxton,Pinxton,46.8,61.8,mcr,Derbyshire,14357,radius_dual
+pontefract,Pontefract,40.8,38.4,mcr+burnley,Wakefield,44710,radius_dual
+poulton-le-fylde,Poulton-le-Fylde,38.9,30.7,mcr+burnley,Lancashire,19914,radius_dual
+poynton,Poynton,10.4,31.5,mcr+burnley,Cheshire East,14351,radius_dual
+prenton,Prenton,34.3,45.0,mcr+burnley,Wirral,14429,radius_dual
+prescot,Prescot,23.2,34.6,mcr+burnley,Knowsley,40889,radius_dual
+prestatyn,Prestatyn,49.0,57.8,mcr,Denbighshire,19085,radius_dual
+preston,Preston,27.2,19.4,mcr+burnley,Lancashire,313332,radius_dual
+prestwich,Prestwich,4.0,18.5,mcr+burnley,Bury,31500,gm_core
+pudsey,Pudsey,32.2,23.3,mcr+burnley,Leeds,25393,radius_dual
+radcliffe,Radcliffe,6.5,16.9,mcr+burnley,Bury,29950,gm_core
+rainhill,Rainhill,22.0,34.4,mcr+burnley,St. Helens,10853,radius_dual
+ramsbottom,Ramsbottom,11.9,11.1,mcr+burnley,Bury,17067,radius_dual
+rastrick,Rastrick,23.7,19.7,mcr+burnley,Calderdale,11351,radius_dual
+rawmarsh,Rawmarsh,37.0,43.3,mcr+burnley,Rotherham,18498,radius_dual
+rawtenstall,Rawtenstall,15.3,7.2,mcr+burnley,Lancashire,23000,radius_dual
+rhosllannerchrugog,Rhosllannerchrugog,46.9,64.3,mcr,Wrexham,25362,radius_dual
+ripley,Ripley,46.6,63.1,mcr,Derbyshire,21097,radius_dual
+ripon,Ripon,53.8,36.9,burnley,North Yorkshire,16363,radius_dual
+rochdale,Rochdale,10.1,13.0,mcr+burnley,Rochdale,97550,gm_core
+romiley,Romiley,,,gm_forced,,,gm_core
+rotherham,Rotherham,36.6,44.1,mcr+burnley,Rotherham,117618,radius_dual
+royton,Royton,7.6,16.9,mcr+burnley,Oldham,22848,gm_core
+runcorn,Runcorn,22.3,37.7,mcr+burnley,Halton,61145,radius_dual
+saddleworth,Saddleworth,10.8,19.7,mcr+burnley,Oldham,25441,gm_core
+sale,Sale,5.1,26.2,mcr+burnley,Trafford,62550,gm_core
+salford,Salford,2.0,21.7,mcr+burnley,Salford,129794,gm_core
+sandbach,Sandbach,23.7,45.6,mcr+burnley,Cheshire East,17976,radius_dual
+selby,Selby,52.5,47.6,burnley,North Yorkshire,24859,radius_dual
+shaw,Shaw,,,gm_forced,,,gm_core
+sheffield,Sheffield,32.7,42.7,mcr+burnley,Sheffield,556500,radius_dual
+shipley,Shipley,31.2,19.2,mcr+burnley,Bradford,28544,radius_dual
+shirebrook,Shirebrook,46.6,58.8,mcr,Derbyshire,10885,radius_dual
+skelmersdale,Skelmersdale,22.3,28.0,mcr+burnley,Lancashire,38813,radius_dual
+skipton,Skipton,34.5,14.2,mcr+burnley,North Yorkshire,14623,radius_dual
+south-elmsall,South Elmsall,40.3,41.4,mcr+burnley,Wakefield,18835,radius_dual
+southport,Southport,33.5,33.5,mcr+burnley,Sefton,91703,radius_dual
+speke,Speke,26.5,40.4,mcr+burnley,Liverpool,21403,radius_dual
+st-helens,St Helens,20.3,31.7,mcr+burnley,St. Helens,183200,radius_dual
+stafford,Stafford,47.0,68.9,mcr,Staffordshire,70145,radius_dual
+stalybridge,Stalybridge,7.5,23.0,mcr+burnley,Tameside,26830,gm_core
+staveley,Staveley,39.7,51.7,mcr,Derbyshire,25719,radius_dual
+stockport,Stockport,6.0,27.1,mcr+burnley,Stockport,139052,gm_core
+stocksbridge,Stocksbridge,26.7,34.2,mcr+burnley,Sheffield,13069,radius_dual
+stoke-on-trent,Stoke-on-Trent,33.0,55.0,mcr,Stoke-on-Trent,258366,radius_dual
+stone,Stone,39.9,61.9,mcr,Staffordshire,14258,radius_dual
+stretford,Stretford,3.7,24.4,mcr+burnley,Trafford,41953,gm_core
+sutton-in-ashfield,Sutton in Ashfield,47.4,61.4,mcr,Nottinghamshire,36404,radius_dual
+swinton,Swinton,4.6,21.3,mcr+burnley,Salford,22931,gm_core
+tameside,Tameside,,,gm_forced,,,gm_core
+timperley,Timperley,6.7,27.9,mcr+burnley,Trafford,11323,radius_dual
+todmorden,Todmorden,17.2,8.1,mcr+burnley,Calderdale,11690,radius_dual
+trafford,Trafford,,,gm_forced,,,gm_core
+tyldesley,Tyldesley,9.5,22.0,mcr+burnley,Wigan,35932,gm_core
+ulverston,Ulverston,60.4,44.5,burnley,Cumbria,11356,radius_dual
+uppermill,Uppermill,10.8,19.7,mcr+burnley,Oldham,11191,gm_core
+urmston,Urmston,5.1,24.8,mcr+burnley,Trafford,41731,gm_core
+uttoxeter,Uttoxeter,43.2,64.1,mcr,Staffordshire,14014,radius_dual
+wakefield,Wakefield,33.6,31.1,mcr+burnley,Wakefield,109766,radius_dual
+walkden,Walkden,6.9,20.7,mcr+burnley,Salford,35616,gm_core
+wallasey,Wallasey,34.1,42.9,mcr+burnley,Wirral,58794,radius_dual
+warrington,Warrington,15.2,31.5,mcr+burnley,Warrington,172330,radius_dual
+wath-upon-dearne,Wath upon Dearne,36.9,41.7,mcr+burnley,Rotherham,16964,radius_dual
+west-derby,West Derby,27.6,37.6,mcr+burnley,Liverpool,13837,radius_dual
+westhoughton,Westhoughton,12.5,21.0,mcr+burnley,Bolton,26260,gm_core
+wetherby,Wetherby,46.7,35.6,mcr+burnley,Leeds,13572,radius_dual
+whiston,Whiston,22.9,34.8,mcr+burnley,Knowsley,13629,radius_dual
+whitchurch,Whitchurch,39.9,60.5,mcr,Shropshire,10142,radius_dual
+whitefield,Whitefield,5.3,17.5,mcr+burnley,Bury,23545,gm_core
+widnes,Widnes,21.8,36.6,mcr+burnley,Halton,61464,radius_dual
+wigan,Wigan,16.8,24.3,mcr+burnley,Wigan,175405,gm_core
+wilmslow,Wilmslow,10.6,32.6,mcr+burnley,Cheshire East,25725,radius_dual
+winsford,Winsford,23.1,43.7,mcr+burnley,Cheshire West and Chester,30259,radius_dual
+withington,Withington,,,gm_forced,,,gm_core
+wombwell,Wombwell,34.9,39.3,mcr+burnley,Barnsley,15518,radius_dual
+woolton,Woolton,26.9,39.3,mcr+burnley,Liverpool,12921,radius_dual
+worksop,Worksop,47.7,57.1,mcr,Nottinghamshire,44733,radius_dual
+worsley,Worsley,,,gm_forced,,,gm_core
+wrexham,Wrexham,43.1,60.7,mcr,Wrexham,65692,radius_dual
+wythenshawe,Wythenshawe,,,gm_forced,,,gm_core
+yeadon,Yeadon,34.9,22.7,mcr+burnley,Leeds,37379,radius_dual
+york,York,57.7,48.1,burnley,York,156135,radius_dual

@@ -130,6 +130,13 @@ require SITE_ROOT . '/includes/header.php';
         </ul>
         <?php endforeach; ?>
     </section>
+    if (!function_exists('securityDualRingJobIndexHtml')) {
+        require_once SITE_ROOT . '/includes/security-dual-ring.php';
+    }
+    if (function_exists('securityDualRingJobIndexHtml')) {
+        echo securityDualRingJobIndexHtml();
+    }
+    ?>
 
     <section class="mt-12" aria-label="Questions">
         <h2 class="text-2xl font-semibold text-[#0B1F3A]">Questions</h2>
