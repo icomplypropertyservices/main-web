@@ -886,6 +886,7 @@ if (!str_contains($headerFile, '/shop/assets/*.css')) {
  */
 $canonBad = 0;
 $canonSeen = 0;
+// G10: no job-hub → keyword-twin allow-list; every job hub must be self-canonical.
 $canonIter = new RecursiveIteratorIterator(
     new RecursiveDirectoryIterator($dist, FilesystemIterator::SKIP_DOTS)
 );
@@ -953,7 +954,7 @@ foreach ($canonIter as $canonFile) {
 }
 if ($canonBad === 0 && $canonSeen > 1000) {
     $pass++;
-    echo "[PASS] canonicals are self-referencing ({$canonSeen} pages; /pages/products → /products only)\n";
+    echo "[PASS] canonicals are self-referencing ({$canonSeen} pages; only /pages/products → /products and the landlord-pack pair excepted)\n";
 } else {
     $fail++;
     echo "[FAIL] canonical mismatches={$canonBad} checked={$canonSeen}\n";

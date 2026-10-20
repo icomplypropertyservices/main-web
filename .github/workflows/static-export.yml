@@ -88,3 +88,6 @@ jobs:
         env:
           SITE_URL: https://icomplypropertyservices.co.uk
         run: node website/bin/check-money-ctr.mjs dist
+
+      - name: W1a nationwide job hubs (words, self-canonical, uniqueness)
+        run: php website/bin/check-nationwide-p0-jobs.php && python3 website/bin/check-w1a-hub-uniqueness.py dist
