@@ -90,7 +90,8 @@ require SITE_ROOT . '/includes/header.php';
         <ul class="mt-6 grid sm:grid-cols-2 gap-3">
             <?php foreach ($jobs as $job):
                 $slug = $job['slug'];
-                $name = ucwords(str_replace('-', ' ', $slug));
+                // Keep acronyms upright in card titles (HMO, FRA, EICR, CP12, BS 5839, PPM, CAME GARD GT4).
+                $name = preg_replace_callback('/\\b(Hmo|Fra|Eicr|Cp12|Bs|Ppm|Aov|Cctv|Anpr|Gt4|Gard|Came)\\b/', static fn($m) => strtoupper($m[1]), ucwords(str_replace('-', ' ', $slug)));
                 ?>
             <li class="border border-zinc-200 rounded-2xl p-4 bg-white">
                 <a class="font-semibold text-[#0B1F3A] hover:text-[#ff6b00]" href="<?= $h(url('/pages/jobs/' . $slug)) ?>"><?= $h($name) ?></a>
