@@ -12,7 +12,7 @@
     "h1": "AOV actuator repair",
     "kicker": "AOV and smoke control",
     "lede": "Smoke vent actuators that hum, stall half-way or no longer pull the vent tight, arranged UK-wide from Stockport.",
-    "card": "AOV actuator repair for managing agents and block freeholders. Price on application after survey.",
+    "card": "For managing agents and block freeholders. Price on application after survey.",
     "paragraphs": [
       "An actuator fault usually shows as a vent that opens a few centimetres and stops, a chain that runs out but leaves the leaf hanging, or a spindle motor that clicks without moving. On older stair heads the first sign is often a draught: the vent never quite closes, the latch is not made and the panel still reports the vent as shut because the limit switch was set years ago.",
       "Many blocks have had their stairs repainted since the vents went in. Paint across the gap between leaf and frame can be enough to stop a drive. We check the leaf moves freely by hand before we blame the actuator.",
@@ -120,7 +120,7 @@
     "h1": "AOV call-out",
     "kicker": "AOV and smoke control",
     "lede": "Same-day attendance when a stair or lobby smoke vent is stuck open, stuck shut or in fault, arranged UK-wide from Stockport.",
-    "card": "AOV call-out for landlords and letting agents. Price on application after survey.",
+    "card": "For landlords and letting agents. Price on application after survey.",
     "paragraphs": [
       "Call-outs usually start with a resident reporting rain coming in through an open roof vent, a panel buzzer that will not silence, or a fire alarm activation after which the vents never closed. In winter a vent stuck open over a stair can make a block cold within an hour, so the first job is to make the building weather-tight safely.",
       "Batteries are the most common single cause of smoke control faults. A panel can run for months on mains with a dead battery and show only a small fault light. When the mains goes in a fire, the vents will not move. Batteries are load-tested, not just measured at rest.",
@@ -228,7 +228,7 @@
     "h1": "AOV panel repair",
     "kicker": "AOV and smoke control",
     "lede": "Repairs to AOV and smoke control panels that show fault, will not reset or have lost their batteries, arranged UK-wide from Stockport.",
-    "card": "AOV panel repair for facilities managers. Price on application after survey.",
+    "card": "For facilities managers. Price on application after survey.",
     "paragraphs": [
       "Panel faults show up as a steady fault light, a buzzer that comes back after every reset, a dead display, or vents that respond to the open switch but not to the fire alarm. Some panels report a generic fault for a mains failure, a battery fault, an open-circuit drive line and a missing fire input alike, so the light alone tells you little.",
       "After the work we leave a short written record that the building manager can file with the fire risk assessment: what was tested, what passed, what failed and what we recommend next.",
@@ -336,7 +336,7 @@
     "h1": "AOV replacement",
     "kicker": "AOV and smoke control",
     "lede": "Replacing worn or unsupported AOV systems vent by vent without leaving the stair unprotected, arranged UK-wide from Stockport.",
-    "card": "AOV replacement for commercial tenants and their agents. Price on application after survey.",
+    "card": "For commercial tenants and their agents. Price on application after survey.",
     "paragraphs": [
       "Replacement is usually asked for when parts can no longer be sourced, repeated repairs have not held, a fire risk assessment has flagged the system, or a refurbishment has changed the stair and the old vent no longer gives the free area the strategy needs.",
       "Smoke control equipment is tied to the fire alarm, and many faults sit on the boundary between the two. We test the signal from the fire panel to the smoke control panel as well as the vent itself, so the result tells you whether the system works as a whole.",
@@ -444,7 +444,7 @@
     "h1": "AOV service",
     "kicker": "AOV and smoke control",
     "lede": "Planned servicing of smoke vents, actuators and AOV panels to keep them ready for a fire, arranged UK-wide from Stockport.",
-    "card": "AOV service for housing associations. Price on application after survey.",
+    "card": "For housing associations. Price on application after survey.",
     "paragraphs": [
       "Most clients book a service because the fire risk assessment or insurer asks for one, or because nobody has a record of the vents being opened since handover. Unserviced vents are often found painted shut, held by a forgotten security bolt, or with batteries several years out of date.",
       "Where a vent has been taped, bolted or lashed shut to stop a leak, it no longer protects the stair. We remove such fixes only after telling the responsible person, then repair the real cause of the leak.",
@@ -552,7 +552,7 @@
     "h1": "Colt AOV service",
     "kicker": "AOV and smoke control",
     "lede": "Servicing Colt smoke vents, louvres and control equipment already installed in your building, arranged UK-wide from Stockport.",
-    "card": "Colt AOV service for school and college estates teams. Price on application after survey.",
+    "card": "For school and college estates teams. Price on application after survey.",
     "paragraphs": [
       "Colt kit is common on commercial roofs, warehouses and older stair heads, and the questions we get are usually about louvred ventilators that no longer close evenly, roof vents whose pneumatic or electric drives are sluggish, and control panels whose labels no longer match the zones on site.",
       "Residents rarely notice smoke vents until something goes wrong. The most common report we hear is a cold draught or water on the top landing, which usually means a vent that has not closed fully. That is worth a visit on its own, because a vent that does not close properly may also not open properly.",
@@ -661,7 +661,7 @@
     "h1": "D+H AOV repair",
     "kicker": "AOV and smoke control",
     "lede": "Fault-finding and repair on D+H smoke vent drives and control units, arranged UK-wide from Stockport.",
-    "card": "D+H AOV repair for care-home managers. Price on application after survey.",
+    "card": "For care-home managers. Price on application after survey.",
     "paragraphs": [
       "D+H chain and rack drives are fitted on a large share of UK stair heads and atrium windows. The common complaints are drives that stop short, control units in permanent fault after a power cut, and vents that open on test but not on a fire signal because the interface wiring was altered during later works.",
       "Residents rarely notice smoke vents until something goes wrong. The most common report we hear is a cold draught or water on the top landing, which usually means a vent that has not closed fully. That is worth a visit on its own, because a vent that does not close properly may also not open properly.",
@@ -770,7 +770,7 @@
     "h1": "SE Controls AOV repair",
     "kicker": "AOV and smoke control",
     "lede": "Repairs to SE Controls actuators, OS2 controllers and smoke shaft systems, arranged UK-wide from Stockport.",
-    "card": "SE Controls AOV repair for car-park operators. Price on application after survey.",
+    "card": "For car-park operators. Price on application after survey.",
     "paragraphs": [
       "SE Controls kit is common in newer residential blocks with smoke shafts and in schools. Typical repair calls are a controller in fault after a fire alarm test, a shaft vent that opens but the lobby vent on the fire floor does not, or a natural ventilation window that will no longer close against its seal.",
       "Weather sensors close vents in rain and wind for everyday comfort. In smoke mode they must be overridden. We test that a fire signal opens vents even when the weather sensor is telling them to close.",
@@ -879,7 +879,7 @@
     "h1": "SE Controls AOV service",
     "kicker": "AOV and smoke control",
     "lede": "Planned servicing for SE Controls smoke control and natural ventilation systems, arranged UK-wide from Stockport.",
-    "card": "SE Controls AOV service for warehouse and industrial occupiers. Price on application after survey.",
+    "card": "For warehouse and industrial occupiers. Price on application after survey.",
     "paragraphs": [
       "Blocks with SE Controls systems often run a mix of smoke-control vents and everyday ventilation windows on the same controllers. Service visits pick up windows left in comfort-vent positions, batteries that were never changed after handover, and weather sensors closing windows that should stay open on a fire signal.",
       "Weather sensors close vents in rain and wind for everyday comfort. In smoke mode they must be overridden. We test that a fire signal opens vents even when the weather sensor is telling them to close.",
@@ -988,7 +988,7 @@
     "h1": "Smoke control system installation",
     "kicker": "AOV and smoke control",
     "lede": "Installing natural or mechanical smoke control to the building's fire strategy, arranged UK-wide from Stockport.",
-    "card": "Smoke control system installation for hotel and leisure operators. Price on application after survey.",
+    "card": "For hotel and leisure operators. Price on application after survey.",
     "paragraphs": [
       "Installations come from new-build and conversion projects, refurbishments that have changed a stair, and fire risk assessments that found a common stair without the ventilation its height needs. The fire strategy or the fire engineer's design is the starting point; without it we help you get one rather than guess.",
       "In occupied blocks we tell residents before operating vents, especially in winter or wet weather, and we close every vent before leaving. A vent left open after testing is one of the complaints building managers most often pass on to us.",
@@ -1096,7 +1096,7 @@
     "h1": "Smoke control system repair",
     "kicker": "AOV and smoke control",
     "lede": "Tracing and fixing faults across smoke control panels, vents, dampers and interfaces, arranged UK-wide from Stockport.",
-    "card": "Smoke control system repair for managing agents and block freeholders. Price on application after survey.",
+    "card": "For managing agents and block freeholders. Price on application after survey.",
     "paragraphs": [
       "System faults are often spread across parts: a damper reporting open when it is shut, a fan that will not start in smoke mode, a lobby vent that opens on the wrong floor, or a panel full of faults after building works. These need tracing as a system, not one component at a time.",
       "Weather sensors close vents in rain and wind for everyday comfort. In smoke mode they must be overridden. We test that a fire signal opens vents even when the weather sensor is telling them to close.",
@@ -1204,7 +1204,7 @@
     "h1": "Smoke damper testing",
     "kicker": "AOV and smoke control",
     "lede": "Drop testing and actuation checks on smoke and fire dampers in ductwork and shafts, arranged UK-wide from Stockport.",
-    "card": "Smoke damper testing for landlords and letting agents. Price on application after survey.",
+    "card": "For landlords and letting agents. Price on application after survey.",
     "paragraphs": [
       "Damper testing is usually triggered by an insurer, a fire risk assessment or a building manager who cannot find the last test record. Dampers without access panels, or with panels hidden above fixed ceilings, are a common problem we plan around.",
       "Access to roof vents is planned before the visit. Some need a roof hatch key, some a cat ladder, and some can only be reached safely with a harness system or a mobile platform. Knowing which saves a wasted trip.",
@@ -1312,7 +1312,7 @@
     "h1": "Smoke vent maintenance",
     "kicker": "AOV and smoke control",
     "lede": "Planned maintenance contracts for smoke vents, louvres and their drives, arranged UK-wide from Stockport.",
-    "card": "Smoke vent maintenance for facilities managers. Price on application after survey.",
+    "card": "For facilities managers. Price on application after survey.",
     "paragraphs": [
       "Maintenance clients want the same engineer attending, the same checklist every visit and the history in one place. Most problems found on maintenance visits are small: a drive that has started to labour, a seal that has perished, a vent opened by a contractor and left unpowered.",
       "Smoke ventilation exists to keep an escape stair or corridor clear enough for people to get out and for firefighters to get in. When the smoke vents, louvres and their drives does not work, smoke that reaches the stair has nowhere to go, so a fault that looks minor on a panel can matter a great deal in a fire.",
@@ -1420,7 +1420,7 @@
     "h1": "Smoke vent repair",
     "kicker": "AOV and smoke control",
     "lede": "Repairs to smoke vents that leak, stick, will not latch or no longer answer the panel, arranged UK-wide from Stockport.",
-    "card": "Smoke vent repair for commercial tenants and their agents. Price on application after survey.",
+    "card": "For commercial tenants and their agents. Price on application after survey.",
     "paragraphs": [
       "Common repair calls are a roof vent letting water in, a façade vent that opens but will not close against its seal, broken glass in a vent leaf, a vent damaged by wind while open, or a vent that has been bolted shut by a previous contractor to stop a leak.",
       "In occupied blocks we tell residents before operating vents, especially in winter or wet weather, and we close every vent before leaving. A vent left open after testing is one of the complaints building managers most often pass on to us.",
@@ -1528,7 +1528,7 @@
     "h1": "Smoke vent service",
     "kicker": "AOV and smoke control",
     "lede": "Servicing individual smoke vents and their end-of-line monitoring, arranged UK-wide from Stockport.",
-    "card": "Smoke vent service for housing associations. Price on application after survey.",
+    "card": "For housing associations. Price on application after survey.",
     "paragraphs": [
       "A vent service is often requested for a single stair head vent in a small block, where the building has one vent, one panel and one break-glass. These systems are easy to forget, and we often find the panel batteries dead and the vent last opened at handover.",
       "Firefighter override switches let the fire service open or close vents by hand. They are often behind a key that nobody on site can find. We check the switch works, that it is labelled, and that the building manager knows where the key is kept.",
@@ -1636,7 +1636,7 @@
     "h1": "Automatic barrier installation",
     "kicker": "Barriers",
     "lede": "New automatic rising-arm barriers for car parks, yards and private roads, arranged UK-wide from Stockport.",
-    "card": "Automatic barrier installation for school and college estates teams. Price on application after survey.",
+    "card": "For school and college estates teams. Price on application after survey.",
     "paragraphs": [
       "Installations usually start with a car park that has unauthorised parking, a yard that needs controlled HGV entry, or an old barrier that is not worth repairing. The questions we ask first are about lane width, traffic volume, who needs access and how they will open it.",
       "Heavy goods vehicles, buses and vans with high sides need longer detection and a longer open time. Where the lane takes larger vehicles, we set loops and timers for them, not just for cars.",
@@ -1748,7 +1748,7 @@
     "h1": "Automatic barrier maintenance",
     "kicker": "Barriers",
     "lede": "Planned maintenance for automatic barriers to cut breakdowns and keep safety devices working, arranged UK-wide from Stockport.",
-    "card": "Automatic barrier maintenance for care-home managers. Price on application after survey.",
+    "card": "For care-home managers. Price on application after survey.",
     "paragraphs": [
       "Most barrier breakdowns start small: an arm that bounces at the end of travel, a detector that occasionally misses a car, a photocell knocked out of line by a vehicle. Maintenance visits catch these before the lane is blocked at rush hour.",
       "Maintenance covers the motor and gearbox, springs and balance, boom fixings, loops and detectors, photocells, safety edges, the manual release, limit settings and the control board, plus the access control devices on the lane.",
@@ -1860,7 +1860,7 @@
     "h1": "Automatic barrier repair",
     "kicker": "Barriers",
     "lede": "Repairs to automatic barriers that stop, drift, bounce or have lost a safety device, arranged UK-wide from Stockport.",
-    "card": "Automatic barrier repair for car-park operators. Price on application after survey.",
+    "card": "For car-park operators. Price on application after survey.",
     "paragraphs": [
       "Repair calls include an arm that rises and immediately drops, a barrier that will only open by hand, a lane that opens on its own, a boom drifting down after opening, and a control board showing an error code after a power cut or storm.",
       "Concrete bases and islands crack over time, especially where vehicles clip them. A loose base lets the cabinet rock, which strains the arm and gearbox. We check the fixings and the base while we are on site.",
@@ -1972,7 +1972,7 @@
     "h1": "Barrier arm replacement",
     "kicker": "Barriers",
     "lede": "Replacing damaged barrier booms after vehicle strikes or wind damage, arranged UK-wide from Stockport.",
-    "card": "Barrier arm replacement for warehouse and industrial occupiers. Price on application after survey.",
+    "card": "For warehouse and industrial occupiers. Price on application after survey.",
     "paragraphs": [
       "Arms get hit. The common call is a boom snapped by a van or lorry, a bent arm that no longer meets its rest, a missing breakaway section, or LED strips and skirts torn off. Sometimes the arm looks fine but the hub that holds it has cracked.",
       "On sites with more than one barrier, faults often repeat across lanes because they are the same age and type. We look at the other lanes while we are there and let you know if the same problem is coming.",
@@ -2084,7 +2084,7 @@
     "h1": "Barrier call-out",
     "kicker": "Barriers",
     "lede": "Same-day callouts for barriers stuck open, stuck shut or cycling up and down, arranged UK-wide from Stockport.",
-    "card": "Barrier call-out for hotel and leisure operators. Price on application after survey.",
+    "card": "For hotel and leisure operators. Price on application after survey.",
     "paragraphs": [
       "Call-outs are usually about a lane that is blocked: residents cannot get out, deliveries are queuing, or the barrier is cycling up and down on its own. Sometimes the arm is stuck open and the problem is security rather than access.",
       "Power cuts and storms can reset or damage barrier boards. Some lose their travel limits and need a relearn; others are damaged by surges. Where a site has repeated surge damage, we suggest protection at the supply.",
@@ -2196,7 +2196,7 @@
     "h1": "Barrier loop detector",
     "kicker": "Barriers",
     "lede": "Fixing induction loops and loop detectors that miss vehicles or trigger on their own, arranged UK-wide from Stockport.",
-    "card": "Barrier loop detector for managing agents and block freeholders. Price on application after survey.",
+    "card": "For managing agents and block freeholders. Price on application after survey.",
     "paragraphs": [
       "Loop faults cause barriers that close on cars, fail to open when a car arrives, or open with nothing in the lane. They often follow resurfacing, a cracked saw-cut, water getting into a joint, or a detector set too sensitive for the site.",
       "Most sites need the lane kept usable while we work. We plan the visit so the barrier can be locked open, or we agree a short closure time with the site, and we put cones and signs out while the arm is being worked on.",
@@ -2308,7 +2308,7 @@
     "h1": "Barrier motor replacement",
     "kicker": "Barriers",
     "lede": "Changing a failed barrier motor or gearbox on the existing cabinet, arranged UK-wide from Stockport.",
-    "card": "Barrier motor replacement for landlords and letting agents. Price on application after survey.",
+    "card": "For landlords and letting agents. Price on application after survey.",
     "paragraphs": [
       "A failing motor can be heard before it stops: grinding, slow travel, stalling under load or tripping the supply. Some motors burn out after years of the springs being out of balance and the motor doing work the springs should do.",
       "Barriers usually sit in the open, so cabinets take rain, road salt and condensation. We look for water inside, rusted fixings and corroded terminals, because these cause intermittent faults that are hard to trace later.",
@@ -2420,7 +2420,7 @@
     "h1": "Barrier replacement",
     "kicker": "Barriers",
     "lede": "Replacing old or unsupported barriers with new CAME equipment, arranged UK-wide from Stockport.",
-    "card": "Barrier replacement for facilities managers. Price on application after survey.",
+    "card": "For facilities managers. Price on application after survey.",
     "paragraphs": [
       "Replacement makes sense when spares are no longer available, the cabinet is corroded, repeated repairs have not held, or the site's needs have changed, for example a longer lane or a new access control system.",
       "A barrier is a machine that moves over people and vehicles many times a day, so safety devices matter as much as the motor. Photocells, safety edges and loops must stop and reverse the arm before it touches anything. We test those on every visit, whatever the reason for the call.",
@@ -2532,7 +2532,7 @@
     "h1": "Barrier stuck down",
     "kicker": "Barriers",
     "lede": "Help when a barrier arm is stuck down across the lane and vehicles cannot get out, arranged UK-wide from Stockport.",
-    "card": "Barrier stuck down for commercial tenants and their agents. Price on application after survey.",
+    "card": "For commercial tenants and their agents. Price on application after survey.",
     "paragraphs": [
       "A barrier stuck down traps vehicles and residents and can block emergency access. Typical causes are a power cut, a tripped supply, a failed motor, a board in an error state, or a safety device that thinks something is in the way.",
       "Barrier faults at the start of a working day cause queues, frustrated tenants and sometimes damaged vehicles. We aim to make the lane usable on the first visit, even if a part has to be ordered for the full repair.",
@@ -2644,7 +2644,7 @@
     "h1": "BFT barrier repair",
     "kicker": "Barriers",
     "lede": "Fault-finding, repair and servicing for existing BFT barriers, including Giotto and Moovi models, arranged UK-wide from Stockport.",
-    "card": "BFT barrier repair for housing associations. Price on application after survey.",
+    "card": "For housing associations. Price on application after survey.",
     "paragraphs": [
       "On BFT barriers we often see arms that bounce at the end of travel after spring wear, control boards showing fault codes after a storm, encoders that have lost their limit positions, and Giotto units with sluggish travel as their drives age.",
       "The balance of the arm is the single most important setting on most barriers. When springs are right, the motor only guides the arm. When they are wrong, the motor lifts the full weight and wears out quickly. We check balance with the drive released before changing parts.",
@@ -2756,7 +2756,7 @@
     "h1": "CAME barrier installation",
     "kicker": "Barriers",
     "lede": "New CAME barrier installations, specified and commissioned for your lane, arranged UK-wide from Stockport.",
-    "card": "CAME barrier installation for school and college estates teams. Price on application after survey.",
+    "card": "For school and college estates teams. Price on application after survey.",
     "paragraphs": [
       "Clients come to us for a CAME barrier because they want a supported product with a parts supply, or because their site already uses CAME gates or barriers and they want one system. We start from the lane width, the traffic and the access method.",
       "Manual release lets site staff lift the arm by hand in a power cut or breakdown. We make sure it works, that the key is on site and that someone knows how to use it safely.",
@@ -2868,7 +2868,7 @@
     "h1": "CAME barrier repair",
     "kicker": "Barriers",
     "lede": "Repairs to existing CAME barriers, from GARD series cabinets to older models, arranged UK-wide from Stockport.",
-    "card": "CAME barrier repair for care-home managers. Price on application after survey.",
+    "card": "For care-home managers. Price on application after survey.",
     "paragraphs": [
       "CAME repair calls include arms that rise slowly or not at all, boards showing error messages after a power cut, encoders out of position, and older units where the springs have weakened. We work on current GARD models and older CAME barriers still in service.",
       "iComply is a CAME partner, so parts for current CAME barriers can usually be sourced quickly once the model is read from the cabinet. If a barrier is beyond economic repair, a like-for-like CAME replacement is quoted separately.",
@@ -2980,7 +2980,7 @@
     "h1": "CAME barrier service",
     "kicker": "Barriers",
     "lede": "Planned servicing of CAME barriers and their safety devices, arranged UK-wide from Stockport.",
-    "card": "CAME barrier service for car-park operators. Price on application after survey.",
+    "card": "For car-park operators. Price on application after survey.",
     "paragraphs": [
       "A CAME barrier service is booked to keep a busy lane reliable and to meet insurance or site safety requirements. It catches spring wear, arm damage, loose fixings and drifting detectors before they cause a breakdown.",
       "A barrier is a machine that moves over people and vehicles many times a day, so safety devices matter as much as the motor. Photocells, safety edges and loops must stop and reverse the arm before it touches anything. We test those on every visit, whatever the reason for the call.",
@@ -3092,7 +3092,7 @@
     "h1": "CAME GARD GT4 installation",
     "kicker": "Barriers",
     "lede": "Installing CAME GARD GT4 barriers for lanes up to about four metres, arranged UK-wide from Stockport.",
-    "card": "CAME GARD GT4 installation for warehouse and industrial occupiers. Price on application after survey.",
+    "card": "For warehouse and industrial occupiers. Price on application after survey.",
     "paragraphs": [
       "The CAME GARD GT4 is a compact barrier often chosen for private car parks, residential developments and staff parking, where the lane is narrow and traffic is moderate. Clients often ask whether it is strong enough for their lane; the survey answers that.",
       "Barriers usually sit in the open, so cabinets take rain, road salt and condensation. We look for water inside, rusted fixings and corroded terminals, because these cause intermittent faults that are hard to trace later.",
@@ -3204,7 +3204,7 @@
     "h1": "Car park barrier maintenance",
     "kicker": "Barriers",
     "lede": "Planned contracts for car-park barriers at entry and exit lanes, arranged UK-wide from Stockport.",
-    "card": "Car park barrier maintenance for hotel and leisure operators. Price on application after survey.",
+    "card": "For hotel and leisure operators. Price on application after survey.",
     "paragraphs": [
       "Car parks put barriers through hundreds of cycles a day. Problems found on maintenance include worn springs, loose arms, misaligned photocells, ticket or ANPR integration faults and loops damaged by heavy vehicles.",
       "Power cuts and storms can reset or damage barrier boards. Some lose their travel limits and need a relearn; others are damaged by surges. Where a site has repeated surge damage, we suggest protection at the supply.",
@@ -3316,7 +3316,7 @@
     "h1": "Car park barrier repair",
     "kicker": "Barriers",
     "lede": "Repairs to car-park barriers at entry and exit lanes to get traffic moving, arranged UK-wide from Stockport.",
-    "card": "Car park barrier repair for managing agents and block freeholders. Price on application after survey.",
+    "card": "For managing agents and block freeholders. Price on application after survey.",
     "paragraphs": [
       "Car-park repair calls are usually urgent: a queue at the entry, a lane that will not close, an arm hit by a vehicle, or a barrier that opens for every car regardless of ticket. Each one costs the operator money or security.",
       "Access control decides who the barrier opens for: fobs, keypads, intercoms, ANPR cameras or ticket machines. When a barrier will not open for a valid user, the fault may be in that system rather than the barrier. We test the signal at the barrier board to find out which.",
@@ -3428,7 +3428,7 @@
     "h1": "Car park barrier servicing",
     "kicker": "Barriers",
     "lede": "Routine servicing for car-park barriers to meet operator and insurer requirements, arranged UK-wide from Stockport.",
-    "card": "Car park barrier servicing for landlords and letting agents. Price on application after survey.",
+    "card": "For landlords and letting agents. Price on application after survey.",
     "paragraphs": [
       "Operators book servicing to keep lanes reliable, to satisfy insurers and leases, and to have a record if a vehicle or pedestrian is hit by an arm. Servicing also spots the wear that leads to emergency call-outs.",
       "Concrete bases and islands crack over time, especially where vehicles clip them. A loose base lets the cabinet rock, which strains the arm and gearbox. We check the fixings and the base while we are on site.",
@@ -3540,7 +3540,7 @@
     "h1": "FAAC barrier repair",
     "kicker": "Barriers",
     "lede": "Fault-finding, repair and servicing for existing FAAC barriers, including hydraulic models, arranged UK-wide from Stockport.",
-    "card": "FAAC barrier repair for facilities managers. Price on application after survey.",
+    "card": "For facilities managers. Price on application after survey.",
     "paragraphs": [
       "Many FAAC barriers are hydraulic, so as well as the usual board and safety faults we see oil leaks, a boom that drifts down under its own weight, slow travel in cold weather and pumps that run without moving the arm.",
       "Manual release lets site staff lift the arm by hand in a power cut or breakdown. We make sure it works, that the key is on site and that someone knows how to use it safely.",
@@ -3652,7 +3652,7 @@
     "h1": "Nice barrier repair",
     "kicker": "Barriers",
     "lede": "Fault-finding, repair and servicing for existing Nice barriers such as the M-Bar, S-Bar and Wide ranges, arranged UK-wide from Stockport.",
-    "card": "Nice barrier repair for commercial tenants and their agents. Price on application after survey.",
+    "card": "For commercial tenants and their agents. Price on application after survey.",
     "paragraphs": [
       "Nice barriers commonly come to us with faults after power cuts, encoder or limit faults that stop the arm short, failing batteries on units with battery backup, and radio receivers that no longer recognise remotes.",
       "Concrete bases and islands crack over time, especially where vehicles clip them. A loose base lets the cabinet rock, which strains the arm and gearbox. We check the fixings and the base while we are on site.",
@@ -3764,7 +3764,7 @@
     "h1": "Rising arm barrier repair",
     "kicker": "Barriers",
     "lede": "Repairs to rising-arm barriers that will not lift, will not lock down or stop mid-travel, arranged UK-wide from Stockport.",
-    "card": "Rising arm barrier repair for housing associations. Price on application after survey.",
+    "card": "For housing associations. Price on application after survey.",
     "paragraphs": [
       "Rising-arm faults include arms that stop part-way, arms that will not stay locked down and can be lifted by hand, booms that slam at the end of travel, and barriers that open slowly as springs or drives wear.",
       "The balance of the arm is the single most important setting on most barriers. When springs are right, the motor only guides the arm. When they are wrong, the motor lifts the full weight and wears out quickly. We check balance with the drive released before changing parts.",
@@ -3876,7 +3876,7 @@
     "h1": "Vehicle barrier repair",
     "kicker": "Barriers",
     "lede": "Repairs to vehicle barriers at private roads, depots and residential sites, arranged UK-wide from Stockport.",
-    "card": "Vehicle barrier repair for school and college estates teams. Price on application after survey.",
+    "card": "For school and college estates teams. Price on application after survey.",
     "paragraphs": [
       "Vehicle barriers at depots, private roads and residential developments are often in exposed spots, so we see water ingress into cabinets, corroded terminals, wind-damaged arms and faults after storms, alongside the usual motor and safety device problems.",
       "Barriers usually sit in the open, so cabinets take rain, road salt and condensation. We look for water inside, rusted fixings and corroded terminals, because these cause intermittent faults that are hard to trace later.",
@@ -3988,7 +3988,7 @@
     "h1": "Addressable fire alarm installation",
     "kicker": "Fire alarms",
     "lede": "Addressable fire alarm systems for larger or more complex buildings, arranged UK-wide from Stockport.",
-    "card": "Addressable fire alarm installation for care-home managers. Price on application after survey.",
+    "card": "For care-home managers. Price on application after survey.",
     "paragraphs": [
       "Addressable systems are usually chosen for larger buildings, blocks of flats with communal areas, HMOs over several floors, care homes and offices, where knowing exactly which device has operated saves time in an alarm and makes false alarms easier to trace.",
       "Ceiling heights, beams and air movement all affect where detectors should go. When we add or move detectors we space them to the standard for the room, not just where the old one was.",
@@ -4102,7 +4102,7 @@
     "h1": "Advanced fire alarm repair",
     "kicker": "Fire alarms",
     "lede": "Repairs to Advanced Electronics fire alarm panels, including MxPro systems, arranged UK-wide from Stockport.",
-    "card": "Advanced fire alarm repair for car-park operators. Price on application after survey.",
+    "card": "For car-park operators. Price on application after survey.",
     "paragraphs": [
       "Advanced panels are common in larger commercial and multi-occupancy buildings. Typical calls are loop faults after building work, earth faults, network faults between panels, and devices reporting dirty or missing.",
       "A fire alarm only protects people if it is heard and acted on. Panels in fault, isolated zones and detectors removed during decoration all reduce cover without anyone noticing. Every visit ends with the system's condition written down for the responsible person.",
@@ -4217,7 +4217,7 @@
     "h1": "C-Tec fire alarm repair",
     "kicker": "Fire alarms",
     "lede": "Repairs to C-Tec fire alarm panels and devices in conventional and addressable systems, arranged UK-wide from Stockport.",
-    "card": "C-Tec fire alarm repair for warehouse and industrial occupiers. Price on application after survey.",
+    "card": "For warehouse and industrial occupiers. Price on application after survey.",
     "paragraphs": [
       "C-Tec panels are common in smaller commercial premises, HMOs and schools. We see zone faults from damaged cables, sounder circuit faults, battery and charger failures, and addressable panels reporting device faults after decorating or dust.",
       "BS 5839-1 covers fire detection and alarm systems in non-domestic buildings, and BS 5839-6 covers dwellings including many HMOs. We work to the part that applies to the building and record any departures we see from it.",
@@ -4332,7 +4332,7 @@
     "h1": "Conventional fire alarm installation",
     "kicker": "Fire alarms",
     "lede": "Conventional zoned fire alarm systems for smaller premises and HMOs, arranged UK-wide from Stockport.",
-    "card": "Conventional fire alarm installation for hotel and leisure operators. Price on application after survey.",
+    "card": "For hotel and leisure operators. Price on application after survey.",
     "paragraphs": [
       "Conventional systems suit smaller shops, offices, small HMOs and buildings with a few clearly separated areas, where showing the zone of an alarm is enough to find it quickly.",
       "Cables for fire alarms should be fire-resisting and properly supported. Cables cable-tied to plastic trunking can drop in a fire. We note unsupported or damaged cable when we see it.",
@@ -4446,7 +4446,7 @@
     "h1": "Emergency fire alarm repair",
     "kicker": "Fire alarms",
     "lede": "Urgent repair when a fire alarm is in fault, keeps false alarming or will not reset, arranged UK-wide from Stockport.",
-    "card": "Emergency fire alarm repair for managing agents and block freeholders. Price on application after survey.",
+    "card": "For managing agents and block freeholders. Price on application after survey.",
     "paragraphs": [
       "Emergency calls are about alarms that will not stop, panels that will not reset, repeated false alarms waking a building at night, or a system that has gone into fault and left part of the building unprotected.",
       "Panel zone charts and device labels should match the building as it is now. After refurbishments we often find rooms renamed or split, so we update labels and charts where we can and list the rest.",
@@ -4560,7 +4560,7 @@
     "h1": "False alarm investigation",
     "kicker": "Fire alarms",
     "lede": "Finding the cause of repeated false alarms and unwanted fire signals, arranged UK-wide from Stockport.",
-    "card": "False alarm investigation for landlords and letting agents. Price on application after survey.",
+    "card": "For landlords and letting agents. Price on application after survey.",
     "paragraphs": [
       "False alarms often follow a pattern: the same detector, the same time of day, cooking or showers nearby, dust from building work, or aerosol and vape use. Each one disrupts residents and staff and can lead to call-out charges from the fire service.",
       "Building works are a common cause of fire alarm faults: cut cables, covered detectors, dust in sensing chambers. If works are planned, we can advise on isolating only the right zones and putting the system back afterwards.",
@@ -4674,7 +4674,7 @@
     "h1": "Fire alarm call-out",
     "kicker": "Fire alarms",
     "lede": "Same-day fire alarm callouts for panels in fault or alarms that will not reset, arranged UK-wide from Stockport.",
-    "card": "Fire alarm call-out for facilities managers. Price on application after survey.",
+    "card": "For facilities managers. Price on application after survey.",
     "paragraphs": [
       "Call-outs usually start with a panel bleeping, a fault light on, a sounder that will not stop, or an alarm that went off overnight and now will not reset.",
       "Sounders have to be heard throughout the building. We check sound levels in rooms where people sleep or work alone, because a sounder in a corridor may not wake someone behind a closed door.",
@@ -4788,7 +4788,7 @@
     "h1": "Fire alarm panel repair",
     "kicker": "Fire alarms",
     "lede": "Repairs to fire alarm panels with faults on power, batteries, zones or loop cards, arranged UK-wide from Stockport.",
-    "card": "Fire alarm panel repair for commercial tenants and their agents. Price on application after survey.",
+    "card": "For commercial tenants and their agents. Price on application after survey.",
     "paragraphs": [
       "Panel repairs cover dead or frozen displays, constant fault lights, panels that will not charge their batteries, and zone or loop cards that have failed after a surge or water leak.",
       "In occupied buildings we tell people before sounding the alarm, and we test in a way that keeps disruption to a minimum. In care homes and sheltered housing we agree timings with staff first.",
@@ -4902,7 +4902,7 @@
     "h1": "Fire alarm panel replacement",
     "kicker": "Fire alarms",
     "lede": "Replacing old fire alarm panels while keeping compatible devices where possible, arranged UK-wide from Stockport.",
-    "card": "Fire alarm panel replacement for housing associations. Price on application after survey.",
+    "card": "For housing associations. Price on application after survey.",
     "paragraphs": [
       "Panels are replaced when they are obsolete, parts are unavailable, the panel is failing repeatedly, or the building needs features the old panel cannot provide, such as more zones or new interfaces.",
       "A fire alarm only protects people if it is heard and acted on. Panels in fault, isolated zones and detectors removed during decoration all reduce cover without anyone noticing. Every visit ends with the system's condition written down for the responsible person.",
@@ -5016,7 +5016,7 @@
     "h1": "Fire alarm PPM",
     "kicker": "Fire alarms",
     "lede": "Planned preventive maintenance contracts for fire alarm systems, arranged UK-wide from Stockport.",
-    "card": "Fire alarm PPM for school and college estates teams. Price on application after survey.",
+    "card": "For school and college estates teams. Price on application after survey.",
     "paragraphs": [
       "PPM contracts keep fire alarms tested and serviced on a fixed schedule, so the building has a record for insurers and fire risk assessments, and faults are found before an emergency.",
       "Equipment brought in from another contractor's design is checked for compatibility before it is connected. Mixing detector protocols on one loop is a common cause of faults that come and go.",
@@ -5130,7 +5130,7 @@
     "h1": "Fire alarm replacement",
     "kicker": "Fire alarms",
     "lede": "Replacing a whole fire alarm system that is obsolete or no longer suits the building, arranged UK-wide from Stockport.",
-    "card": "Fire alarm replacement for care-home managers. Price on application after survey.",
+    "card": "For care-home managers. Price on application after survey.",
     "paragraphs": [
       "Full replacement makes sense when the system is old, parts are unavailable, the building has changed, or the fire risk assessment says the current system is not suitable.",
       "Logbooks are often missing or incomplete. We fill in our visit and tell the responsible person if earlier entries are missing, because the weekly test and the service history are part of what a fire risk assessor will check.",
@@ -5244,7 +5244,7 @@
     "h1": "Fire extinguisher servicing",
     "kicker": "Fire extinguishers",
     "lede": "Annual servicing of portable fire extinguishers on your premises, arranged UK-wide from Stockport.",
-    "card": "Fire extinguisher servicing for car-park operators. Price on application after survey.",
+    "card": "For car-park operators. Price on application after survey.",
     "paragraphs": [
       "Extinguisher servicing is required each year, and insurers and fire risk assessments expect to see it. Common findings are extinguishers past their extended service date, missing signs, damaged hoses and the wrong type for the risk.",
       "In HMOs and blocks of flats, the alarm in the common parts and the alarms inside each flat may be separate systems. We check which is which before testing, so residents are not woken by a test they were not told about.",
@@ -5358,7 +5358,7 @@
     "h1": "Gent fire alarm service",
     "kicker": "Fire alarms",
     "lede": "Servicing existing Gent fire alarm systems, including Vigilon and Nano panels, arranged UK-wide from Stockport.",
-    "card": "Gent fire alarm service for warehouse and industrial occupiers. Price on application after survey.",
+    "card": "For warehouse and industrial occupiers. Price on application after survey.",
     "paragraphs": [
       "Gent systems are common in larger commercial buildings, schools and hospitals. Service calls are usually routine, but we also see loop faults, device faults after refurbishment and network faults between panels.",
       "Door holders release fire doors when the alarm sounds. We check they let go on an alarm and that doors then close fully and latch, because a held-open fire door does nothing in a fire.",
@@ -5473,7 +5473,7 @@
     "h1": "Kentec fire alarm repair",
     "kicker": "Fire alarms",
     "lede": "Repairs to Kentec fire alarm panels such as the Syncro range, arranged UK-wide from Stockport.",
-    "card": "Kentec fire alarm repair for hotel and leisure operators. Price on application after survey.",
+    "card": "For hotel and leisure operators. Price on application after survey.",
     "paragraphs": [
       "Kentec Syncro panels are widely used with a range of loop devices. Typical repairs are loop faults, earth faults, battery failures and device faults after works.",
       "Equipment brought in from another contractor's design is checked for compatibility before it is connected. Mixing detector protocols on one loop is a common cause of faults that come and go.",
@@ -5588,7 +5588,7 @@
     "h1": "Morley fire alarm repair",
     "kicker": "Fire alarms",
     "lede": "Repairs to Morley fire alarm panels such as the ZXSe, DXc and Max ranges, arranged UK-wide from Stockport.",
-    "card": "Morley fire alarm repair for managing agents and block freeholders. Price on application after survey.",
+    "card": "For managing agents and block freeholders. Price on application after survey.",
     "paragraphs": [
       "Morley panels are common in older and newer commercial buildings. We see loop and zone faults, network faults, battery failures and older panels with failing displays.",
       "Building works are a common cause of fire alarm faults: cut cables, covered detectors, dust in sensing chambers. If works are planned, we can advise on isolating only the right zones and putting the system back afterwards.",
@@ -5703,7 +5703,7 @@
     "h1": "Wireless fire alarm installation",
     "kicker": "Fire alarms",
     "lede": "Wireless fire alarm systems for buildings where cabling is difficult, arranged UK-wide from Stockport.",
-    "card": "Wireless fire alarm installation for landlords and letting agents. Price on application after survey.",
+    "card": "For landlords and letting agents. Price on application after survey.",
     "paragraphs": [
       "Wireless systems suit listed buildings, occupied premises, temporary buildings and places where running cable would be disruptive or damaging.",
       "Building works are a common cause of fire alarm faults: cut cables, covered detectors, dust in sensing chambers. If works are planned, we can advise on isolating only the right zones and putting the system back afterwards.",
