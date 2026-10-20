@@ -145,8 +145,8 @@ function icomplyMegaHeaderHtml(): string
       <a class="nav-link" href="{$contact}">Contact</a>
     </nav>
     <div class="mega-tools">
-      <a class="mega-phone" href="{$phoneHref}">{$phone}</a>
-      <a class="mega-quote" href="{$contact}">Get a quote</a>
+      <a class="mega-phone" href="{$phoneHref}" aria-label="Call {$phone}"><span class="mega-phone-full">{$phone}</span><span class="mega-phone-short">Call</span></a>
+      <a class="mega-quote" href="{$contact}"><span class="mega-quote-full">Get a quote</span><span class="mega-quote-short">Quote</span></a>
       <button type="button" class="mega-burger" id="nav-toggle" aria-expanded="false" aria-controls="mega-drawer">Menu</button>
     </div>
   </div>

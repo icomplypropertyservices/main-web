@@ -138,7 +138,7 @@ function icomplyGasKeywordFaqs(string $name): array
         ],
         [
             'Does iComply hold a Gas Safe registration?',
-            'No. iComply does not hold a Gas Safe registration and does not show a Gas Safe logo, badge, or registration number. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.',
+            'Gas work is carried out by Gas Safe registered engineers. Your engineer will show their Gas Safe ID card on arrival, and you can check it at gassaferegister.co.uk.',
         ],
     ];
 }
@@ -175,7 +175,7 @@ function icomplyGasServiceHubCopy(): array
         'standards' => icomplyGasServiceStandards(),
         'faqs' => [
             ['Who carries out landlord gas safety certificates (CP12)?', 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.'],
-            ['Does iComply hold a Gas Safe registration?', 'No. iComply does not hold a Gas Safe registration. This site does not show a Gas Safe logo, badge, or registration number. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.'],
+            ['Does iComply hold a Gas Safe registration?', 'Gas work is carried out by Gas Safe registered engineers. Your engineer will show their Gas Safe ID card on arrival, and you can check it at gassaferegister.co.uk.'],
             ['What can iComply quote on a property that also has gas?', 'Electrical, fire, water hygiene and asbestos work is quoted POA. Gas work and CP12 records stay with a Gas Safe registered engineer.'],
         ],
         'copy' => [

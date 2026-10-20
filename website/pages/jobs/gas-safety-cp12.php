@@ -46,7 +46,7 @@ $landing = [
         ],
         [
             'title' => 'Gas Safe registration',
-            'text' => 'Gas work under landlord safety duties must be carried out by a Gas Safe registered engineer. Landlords and tenants should check the engineer’s ID on the public register. This page states that competence expectation only. It does not claim a firm registration number or badge.',
+            'text' => 'Gas work under landlord safety duties must be carried out by a Gas Safe registered engineer. Landlords and tenants should check the engineer’s ID on the public register. Gas work is carried out by Gas Safe registered engineers. Your engineer will show their Gas Safe ID card on arrival, and you can check it at gassaferegister.co.uk.',
         ],
         [
             'title' => 'Records to keep',

@@ -188,7 +188,7 @@ $faqs = [
     [
         'cat' => 'Accreditations',
         'q' => 'Are you NICEIC, BAFE or Gas Safe registered as a company?',
-        'a' => 'This page does not claim NICEIC, BAFE, CHAS, SafeContractor, UKAS, a company Gas Safe registration number, or an EPC assessor accreditation number. Gas work is only booked when the engineer who attends is on the Gas Safe Register for that appliance — ask for the ID and check the register. An energy performance certificate has to be produced by an accredited assessor; we do not print that number here. Electrical, fire and emergency-lighting paperwork is for the visit we complete. If you need a named scheme member and we cannot show that registration, we will say so before you book. Call ' . PHONE . '.',
+        'a' => 'Gas work is carried out by Gas Safe registered engineers. Your engineer will show their Gas Safe ID card on arrival, and you can check it at gassaferegister.co.uk. We do not claim NICEIC, BAFE, CHAS, SafeContractor or UKAS membership here. An energy performance certificate has to be produced by an accredited assessor; we do not print that number here. Electrical, fire and emergency-lighting paperwork is for the visit we complete. If you need a named scheme member and we cannot show that registration, we will say so before you book. Call ' . PHONE . '.',
         'link' => ['/pages/about.php', 'About iComply'],
     ],
 ];

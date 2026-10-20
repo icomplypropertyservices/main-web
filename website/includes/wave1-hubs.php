@@ -85,7 +85,7 @@ function wave1QualityHubs(): array
             'formPlaceholder' => 'Postcode, appliances, occupied or void…',
             'faqs' => [
                 ['q' => 'CP12 or CP44?', 'a' => 'You will hear both. What matters is a current landlord gas safety record. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.'],
-                ['q' => 'Is iComply Gas Safe registered?', 'a' => 'No.'],
+                ['q' => 'Is iComply Gas Safe registered?', 'a' => 'Gas work is carried out by Gas Safe registered engineers. Your engineer will show their Gas Safe ID card on arrival, and you can check it at gassaferegister.co.uk.'],
                 ['q' => 'Do you cover Manchester as well as Stockport?', 'a' => 'Yes, when we can resource the diary. The yard is Offerton SK2.'],
             ],
         ],

@@ -11,7 +11,7 @@ body.mx{margin:0;font:16px/1.65 ui-sans-serif,system-ui,-apple-system,"Segoe UI"
 .mx-nav a{color:#dbe3ee!important;text-decoration:none}
 .mx-nav a:hover{color:var(--orange)!important}
 .mx-call{margin-left:auto;background:var(--orange);color:#fff!important;padding:.5rem .9rem;border-radius:.5rem;font-weight:700;text-decoration:none;white-space:nowrap}
-@media(max-width:767px){.mx-nav{order:3;width:100%;overflow-x:auto;flex-wrap:nowrap;font-size:.85rem;padding-bottom:.2rem}}
+@media(max-width:767px){.mx-nav{order:3;width:100%;flex-wrap:wrap;gap:.35rem .9rem;font-size:.85rem;padding-bottom:.2rem}}
 .mx main{max-width:960px;margin:0 auto;padding:1.25rem 1rem 3rem;background:#fff}
 .mx nav[aria-label=Breadcrumb]{font-size:.85rem;color:var(--muted);margin-bottom:.75rem}
 .mx h1{font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.2;color:var(--ink);margin:.3rem 0 1rem}
