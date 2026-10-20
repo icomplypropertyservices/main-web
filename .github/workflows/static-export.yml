@@ -77,3 +77,8 @@ jobs:
 
       - name: Thin x town prose words + uniqueness (CLOSE-Q1)
         run: node website/bin/render-town-sample.mjs dist /tmp/town-sample && python3 website/bin/check-town-words.py /tmp/town-sample && python3 website/bin/check-town-price-gas.py /tmp/town-sample
+
+      - name: Money-page CTR briefs C1-C15 (titles, metas, depth, links, robots, canonical, sitemap)
+        env:
+          SITE_URL: https://icomplypropertyservices.co.uk
+        run: node website/bin/check-money-ctr.mjs dist

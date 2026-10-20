@@ -109,8 +109,9 @@ foreach ($construction as $slug) {
 foreach (['kitchens', 'bathrooms', 'plumbing', 'renovation', 'property-refurbishment-pm'] as $slug) {
     $copy = icomplyServiceHubCopy($slug);
     $blob = json_encode($copy);
-    if (!is_string($blob) || !str_contains($blob, 'iComply is not Gas Safe registered.')) {
-        $bad("{$slug} is missing the gas sentence");
+    // G12: the only gas wording is "carried out by Gas Safe registered engineers"; the company line is banned.
+    if (!is_string($blob) || str_contains($blob, 'iComply is not Gas Safe registered.')) {
+        $bad("{$slug} still carries the banned 'iComply is not Gas Safe registered.' sentence");
     }
 }
 

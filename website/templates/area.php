@@ -243,7 +243,6 @@ $schema = [
                 The office is 17 Woodlands Park Road, Offerton, Stockport SK2 5DE. Visits in
                 <?= htmlspecialchars($areaProfile['districts'], ENT_QUOTES, 'UTF-8') ?> are diary-booked.
                 Phone <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.
-                We do not print a NICEIC or Gas Safe registration number on this town page.
             </p>
         </div>
         <?php require_once SITE_ROOT . '/includes/town-depth.php'; $areaHasGeo = townDepthGeo(areaSlug($AREA)) !== null; ?>

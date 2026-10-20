@@ -21312,12 +21312,12 @@
     {
       "name": "Waddington",
       "slug": "waddington",
-      "population": 4081,
+      "population": 0,
       "nation": "England",
-      "county": "Lincolnshire",
-      "region": "East Midlands",
-      "lat": 53.16667,
-      "lng": -0.53333,
+      "county": "Lancashire",
+      "region": "North West",
+      "lat": 53.893,
+      "lng": -2.418,
       "source": "geonames-GB",
       "rank": 1775
     },
