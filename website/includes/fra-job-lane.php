@@ -136,6 +136,13 @@ if (!function_exists('fraLanePages')) {
                         ],
                     ],
                 ],
+                // SEO/Jack 2026-10-20: the from-price FAQ must render on /pages/jobs/fra itself (visible + FAQPage schema).
+                'faqs' => [
+                    [
+                        'q' => 'Is £350 a from-price?',
+                        'a' => 'Yes. From £350 for a typical 6-bed HMO in the North West; other buildings are price on application once we know the scope.',
+                    ],
+                ],
             ],
             'fra' => [
                 'path' => '/pages/jobs/fire-risk-assessment',
