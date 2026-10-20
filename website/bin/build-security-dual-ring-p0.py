@@ -680,6 +680,10 @@ def write_stub(path: Path, body: str) -> None:
     path.write_text(body)
 
 
+HUB_COPY_FILE = Path(__file__).resolve().parents[1] / "data" / "security-hub-copy.json"
+HUB_COPY = json.loads(HUB_COPY_FILE.read_text(encoding="utf-8")) if HUB_COPY_FILE.is_file() else {}
+
+
 def main() -> None:
     towns = load_towns()
     p0 = load_p0()
@@ -699,10 +703,14 @@ def main() -> None:
             "action": action,
             "honest": honest_for(slug, service, action),
         }
-        paragraphs = build_paragraphs(spec, "keyword")
+        hub_copy = HUB_COPY.get(slug)
+        # SEO PR145: the 15 new intents use hand-written hub copy (data/security-hub-copy.json), one customer
+        # angle per intent, so hub-vs-hub pairs stay <= 0.70. Rendered pages are held to >= 800 words by
+        # check-town-words.py (security-hub group); the other intents keep the generated body.
+        paragraphs = list(hub_copy["paragraphs"]) if hub_copy else build_paragraphs(spec, "keyword")
         job_paragraphs = []  # job twins 301 to the keyword hub (SEO PR145)
         body = " ".join(paragraphs)
-        if word_count(body) < 800:
+        if not hub_copy and word_count(body) < 800:
             raise SystemExit(f"{slug} keyword body {word_count(body)} words")
         if job_paragraphs and word_count(" ".join(job_paragraphs)) < 800:
             raise SystemExit(f"{slug} job body short")
@@ -729,7 +737,7 @@ def main() -> None:
             "images": pick_images(pools, service, slug, NAMES[slug]),
             "paragraphs": paragraphs,
             "job_paragraphs": job_paragraphs,
-            "faqs": faqs_for(spec),
+            "faqs": list(hub_copy["faqs"]) if hub_copy else faqs_for(spec),
             "title_hub": title_hub(NAMES[slug]),
             "meta_hub": meta,
             "extra_links": (

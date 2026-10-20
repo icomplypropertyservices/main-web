@@ -52,7 +52,12 @@ $both = 0;
 $keywordOnly = 0;
 foreach ($intents as $slug => $intent) {
     $body = implode(' ', $intent['paragraphs'] ?? []);
-    if ($words($body) < 800) {
+    // SEO PR145: the 15 new intents carry hand-written hub copy (data/security-hub-copy.json). Their rendered
+    // hub pages are held to >= 800 prose words and hub-vs-hub <= 0.70 by check-town-words.py (security-hub
+    // group); here the source paragraphs + FAQs must reach 600 words.
+    $isHubCopy = ($intent['status'] ?? '') === 'create';
+    $faqWords = $words(implode(' ', array_map(static fn($f) => (string)($f['q'] ?? '') . ' ' . (string)($f['a'] ?? ''), $intent['faqs'] ?? [])));
+    if ($isHubCopy ? ($words($body) + $faqWords) < 600 : $words($body) < 800) {
         $bad($slug . ' hub words ' . $words($body));
     }
     if (($intent['kind'] ?? '') === 'both') {

@@ -59,6 +59,14 @@ for (const slug of SECURITY_SPECS) {
     rows.push({ kind: "keyword", slug, town, file, robots: r.robots || "" });
   }
 }
+// SEO PR145: the 15 security keyword hubs themselves, compared hub-vs-hub (all 105 pairs <= 0.70, >= 800 words).
+for (const slug of SECURITY_SPECS) {
+  const src = path.join(dist, "pages/keywords", `${slug}.php`);
+  if (!fs.existsSync(src)) { console.error(`render-town-sample: missing hub ${src}`); process.exitCode = 1; continue; }
+  const file = `security__hub__${slug}.html`;
+  fs.copyFileSync(src, path.join(out, file));
+  rows.push({ kind: "security-hub", slug: "all-15", town: slug, file, robots: "" });
+}
 // Wide pass (no similarity): every dual-ring town for each group, plus one
 // manufacturer, so doubled words, noindex and the word floor are checked on
 // all 269 towns and every page type.
