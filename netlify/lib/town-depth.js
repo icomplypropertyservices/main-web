@@ -9,7 +9,7 @@
  * to the service family in that nation. Variants and paragraph order are
  * picked by a town seed so neighbouring towns do not share sentence runs.
  *
- * Rules: price on application only, no attendance-time promise, no invented
+ * Rules: price on application only where there is no list price (G9: EICR from £160 pages say "from £160", never POA), no attendance-time promise, no invented
  * statistic, reviews or accreditation. Gas wording is only "carried out by
  * Gas Safe registered engineers".
  */
@@ -224,7 +224,7 @@ const DUTY = {
   gas: {
     any: [
       "Private renting is {priv} of households across {c} and social renting {soc}. Landlords in {t} need an annual gas safety check under the Gas Safety (Installation and Use) Regulations 1998, carried out by Gas Safe registered engineers, with the record given to tenants within 28 days.",
-      "With {priv} of households in {c} renting privately and {soc} in social housing, many {t} landlords hold a gas safety duty. The annual check is carried out by Gas Safe registered engineers and the record goes to the tenant within 28 days. iComply is not Gas Safe registered.",
+      "With {priv} of households in {c} renting privately and {soc} in social housing, many {t} landlords hold a gas safety duty. The annual check is carried out by Gas Safe registered engineers and the record goes to the tenant within 28 days.",
     ],
   },
   fire: {
@@ -335,7 +335,7 @@ const CHECK = {
 
 const BATCH = [
   "If you also manage property in {n}, say so. Each address gets its own quote, but nearby sites can sometimes share a diary day.",
-  "Managing agents with buildings in {t} and {n} can send the addresses together. They are still quoted one by one, price on application.",
+  "Managing agents with buildings in {t} and {n} can send the addresses together. They are still quoted one by one, each with its own fixed written quote.",
   "The places nearest to {t} on our town list are {n}. A second site there is a separate scope, not an add-on to this one.",
   "Portfolios often cross boundaries: {t} sits close to {n}. List every address in one message and each gets its own written scope.",
 ];
@@ -355,7 +355,7 @@ function choose(arr, seed, salt) {
  * @param {string[]} o.extra extra paragraphs (e.g. bank picks) to shuffle in
  * @returns {{html:string, paragraphs:string[]}|null}
  */
-export function townDepthBlock({ slug, town, subject, service, names = null, extra = [], nation = "" }) {
+export function townDepthBlock({ slug, town, subject, service, names = null, extra = [], nation = "", priceFrom = "" }) {
   const g = geoRow(slug);
   if (!g) return null;
   const [council, , ocs, , , lat, lng] = g;
@@ -391,7 +391,7 @@ export function townDepthBlock({ slug, town, subject, service, names = null, ext
   }
   if (Array.isArray(ocs) && ocs.length) {
     const ck = choose(CHECK[fam] || CHECK.building, seed, "check");
-    if (ck) paras.push(`${fill(ck, { t: town, s: subject, o: list(ocs.slice(0, 4), "or") })} Phone or WhatsApp 07517806082, or email icomplypropertyservices@gmail.com. The quote is price on application.`);
+    if (ck) paras.push(`${fill(ck, { t: town, s: subject, o: list(ocs.slice(0, 4), "or") })} Phone or WhatsApp 07517806082, or email icomplypropertyservices@gmail.com. ${priceFrom ? `${subject} from ${priceFrom}, confirmed in a fixed written quote.` : "The quote is price on application."}`);
   }
   if (names && Number.isFinite(lat) && Number.isFinite(lng)) {
     const here = { lat, lng };
