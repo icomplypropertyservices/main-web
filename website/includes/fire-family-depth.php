@@ -15,7 +15,7 @@ function icomplyFireFamilyDepthData(): array
     return $data;
 }
 
-function icomplyFireFamilyDepthHtml(string $serviceSlug, string $serviceName, string $place, int $count = 10): string
+function icomplyFireFamilyDepthHtml(string $serviceSlug, string $serviceName, string $place, int $count = 11): string
 {
     $data = icomplyFireFamilyDepthData();
     $pool = array_values(array_filter((array)($data['pool'] ?? []), 'is_string'));
@@ -25,7 +25,7 @@ function icomplyFireFamilyDepthHtml(string $serviceSlug, string $serviceName, st
     $seed = crc32($serviceSlug . '|' . strtolower($place));
     $order = [];
     foreach ($pool as $i => $p) {
-        $order[$i] = crc32($seed . ':' . $i);
+        $order[$i] = hexdec(substr(md5($seed . ":" . $i), 0, 7));
     }
     asort($order);
     $picked = array_slice(array_keys($order), 0, min($count, count($pool)));
@@ -39,8 +39,11 @@ function icomplyFireFamilyDepthHtml(string $serviceSlug, string $serviceName, st
     if ($specific !== '') {
         $html .= '<p class="text-zinc-700 leading-relaxed">' . $h($fill($specific)) . '</p>';
     }
+    $alt = array_values((array)($data['alt'] ?? []));
     foreach ($picked as $i) {
-        $html .= '<p class="text-zinc-700 leading-relaxed">' . $h($fill($pool[$i])) . '</p>';
+        // Each paragraph has two phrasings; the town hash picks one, so towns that share a topic rarely share wording.
+        $useAlt = isset($alt[$i]) && is_string($alt[$i]) && (hexdec(substr(md5('alt:' . $seed . ':' . $i), 0, 7)) & 1);
+        $html .= '<p class="text-zinc-700 leading-relaxed">' . $h($fill($useAlt ? $alt[$i] : $pool[$i])) . '</p>';
     }
     return $html . '</section>';
 }
