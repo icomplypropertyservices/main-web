@@ -448,7 +448,7 @@ $areaFaqs = [
     ],
     [
         'Who carries out gas work for ' . $areaName . ' landlords?',
-        'Gas work is carried out by Gas Safe registered engineers. This index does not show an iComply Gas Safe registration number.',
+        'Gas work is carried out by Gas Safe registered engineers.',
     ],
     [
         'Which other Greater Manchester hubs should I open?',

@@ -703,7 +703,8 @@ function scrub_unverified_accreditation(string $text): string {
         return $text;
     }
     $parts = preg_split('/(?<=[.!?])\s+/u', $text) ?: [$text];
-    $denial = 'We do not print a NICEIC or Gas Safe badge here; registration is confirmed against the specific job before anyone is booked.';
+    // G12/G13: no builder wording; replace an unverified self-claim with the approved line.
+    $denial = 'Gas work is carried out by Gas Safe registered engineers, and electrical work by qualified electricians.';
     $out = [];
     foreach ($parts as $sentence) {
         $self = preg_match('/\b(Icomply|iComply|our|we|all engineers)\b/u', $sentence) === 1;

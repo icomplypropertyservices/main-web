@@ -519,7 +519,10 @@ function icomplyQualityBarThinBlock(
             && icomplyTownFactsGeo(areaSlug($place)) !== null,
     ];
     $faqs = [
-        ['How is ' . $subject . ' in ' . $place . ' quoted?', 'The quote is price on application after the scope names the building and the access.'],
+        ['How is ' . $subject . ' in ' . $place . ' quoted?', $serviceSlug === 'fire-risk-assessments'
+            // G9 + SEO scorecard PR147 C10: FRA has a list price, so lead with it.
+            ? 'From £350 for a typical 6-bed HMO; other buildings are price on application once we know the scope.'
+            : 'The quote is price on application after the scope names the building and the access.'],
         ['Where is the team that covers ' . $place . ' based?', 'Visits are arranged from ' . ICOMPLY_NAP . '.'],
         ['What should be sent before a ' . $place . ' visit?', 'Send the postcode, the property type and anything already known about the installation.'],
     ];

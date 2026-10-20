@@ -85,6 +85,7 @@ if (function_exists('manufacturerWriteLineLogos')) {
 }
 require_once $websiteRoot . '/includes/matrix-page.php';
 require_once $websiteRoot . '/bin/build-shop-hubs.php';
+require_once $websiteRoot . '/includes/money-ctr.php';
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
@@ -256,6 +257,8 @@ foreach ($routes as $i => $path) {
         continue;
     }
 
+    // P0-CTR-MONEY C1-C15: exact title/meta + authored depth/links (no robots/canonical change).
+    $html = icomplyApplyMoneyCtr($path, $html);
     icomplyWritePrettyFiles($dist, $path, $html);
     $ok++;
     $every = $total > 2000 ? 500 : ($total > 400 ? 100 : 50);

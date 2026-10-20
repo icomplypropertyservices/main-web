@@ -8,6 +8,8 @@ import keywordPack from "../../website/data/nationwide-3line-p0-keywords.json" w
 import townDoc from "../../website/data/uk-top5000-towns.json" with { type: "json" };
 import { gmTownName, isGmTown } from "./link-blocks.js";
 import { townFactsBlock } from "./town-facts.js";
+import { geoRow, townDepthBlock } from "./town-depth.js";
+import { depthBankParagraphs } from "./thin-quality-bar.js";
 import townGeo from "../../website/data/town-geo-slim.json" with { type: "json" };
 
 const P0 = new Map((family.hubs || []).map((hub) => [hub.slug, hub]));
@@ -157,7 +159,7 @@ function p0ExtraLinks(keywordSlug, townSlug, townName, service, existing = "") {
   const name = keywordPack[keywordSlug]?.name || keywordSlug;
   let nearPool = [];
   const here = TOWNS.get(townSlug) || (() => {
-    const g = townGeo[townSlug];
+    const g = geoRow(townSlug);
     return g ? { slug: townSlug, lat: g[5], lng: g[6] } : null;
   })();
   if (here && Number.isFinite(here.lat) && Number.isFinite(here.lng)) {
@@ -191,6 +193,19 @@ function p0ExtraLinks(keywordSlug, townSlug, townName, service, existing = "") {
   return out.join("");
 }
 
+function p0Seed(keywordSlug, townSlug) {
+  let h = 2166136261;
+  const v = `p0|${keywordSlug}|${townSlug}`;
+  for (let i = 0; i < v.length; i++) { h ^= v.charCodeAt(i); h = Math.imul(h, 16777619); }
+  // murmur3 finaliser: FNV low bits alone correlate between town names.
+  h = Math.imul(h ^ (h >>> 16), 0x85ebca6b);
+  h = Math.imul(h ^ (h >>> 13), 0xc2b2ae35);
+  return (h ^ (h >>> 16)) >>> 0;
+}
+const P0_AUDIENCES = ["landlords", "managing agents", "facilities managers", "block managers", "housing associations", "care home managers"];
+const P0_VISITS = ["a planned daytime visit", "a surveyed site visit", "a booked visit agreed with the site contact"];
+const FAMILY_LABEL = { fire: "Fire safety", aov: "Smoke control", barriers: "Barrier" };
+
 export function renderNationwideP0Town(keywordSlug, townSlug) {
   const hub = P0.get(keywordSlug);
   const pack = keywordPack[keywordSlug];
@@ -205,21 +220,44 @@ export function renderNationwideP0Town(keywordSlug, townSlug) {
   const ogImage = `${ORIGIN}${images[0] || "/assets/images/services/fire-alarms.jpg"}`;
   const popLine = Number(place.population) > 0 ? ` It is home to about ${Number(place.population).toLocaleString("en-GB")} people.` : "";
   const workName = name.replace(/\bInstallers?\b/g, "Installation").replace(/\bContractors?\b/g, "Services");
-  const local = `We provide ${workName.toLowerCase()} in ${townName}, ${(place.county && place.county !== townName) ? place.county : (place.region || "the UK")}.${popLine} Our engineers work from ${NAP}, with same-day and next-day slots where the diary allows. You get a fixed written quote before any work starts, with travel included.`;
+  const area = (place.county && place.county !== townName) ? place.county : (place.region || "the UK");
+  // #140 natural wording, three seeded variants (CLOSE-Q1 town-to-town uniqueness).
+  const local = [
+    `We provide ${workName.toLowerCase()} in ${townName}, ${area}.${popLine} Our engineers work from ${NAP}, with same-day and next-day slots where the diary allows. You get a fixed written quote before any work starts, with travel included.`,
+    `Need ${workName.toLowerCase()} in ${townName}? We cover ${townName} and the rest of ${area} from ${NAP}.${popLine} Same-day and next-day slots are often available, and the fixed written quote includes travel, so there are no surprises.`,
+    `Our team carries out ${workName.toLowerCase()} for buildings across ${townName}, ${area}.${popLine} We travel from ${NAP}, often with same-day or next-day slots. Before anything starts you get a fixed written quote, travel included.`,
+  ][p0Seed(`local|${townSlug}`, keywordSlug) % 3];
   const body = String(pack.body || "").replace(/Nearby places on the same town list include [^.]*\./g, "");
   // Town pages carry a short service summary; the full guide stays on the keyword hub.
   // Paragraphs 0, 2, 7, 8 and 10-15 of the generated pack repeat placeholders
   // ("the UK mainland") or a mismatched example enquiry, so they are left off.
   let packParas = body.split(/\n\s*\n/).map((part) => part.trim()).filter(Boolean);
-  if (packParas.length >= 16) packParas = [1, 4, 6].map((i) => packParas[i]);
+  // CLOSE-Q1 (2026-10-19): paragraphs 1 and 6 carried placeholders ("Travel to the UK mainland")
+  // and other-trade lines (boom arms on fire pages). Keep one of 3-5, picked by town seed so
+  // neighbouring towns rarely share it, plus the short closing paragraph 14 when it is clean.
+  if (packParas.length >= 16) {
+    const all = packParas;
+    const keep = [3, 4, 5][p0Seed(keywordSlug, townSlug) % 3];
+    packParas = [all[keep]];
+    if (all[14] && all[14].split(/\s+/).length <= 60) packParas.push(all[14]);
+  }
   const booking = `To book ${workName.toLowerCase()} in ${townName}, send us the full postcode, a few photos of the existing equipment, the type of building and whether it will be occupied on the day. We reply with a fixed written quote and a date. After the visit, certificates and reports are emailed to you so they can sit with the building records.`;
-  const paras = [local, ...packParas, booking];
-  const bodyHtml = paras.map((para) => `<p>${escapeHtml(para)}</p>`).join("");
-  const faqs = Array.isArray(pack.faq) ? pack.faq.slice(0, 2) : [];
+  const localHtml = `<p>${escapeHtml(local)}</p>`;
+  const bodyHtml = [...packParas, booking].map((para) => `<p>${escapeHtml(para)}</p>`).join("");
+  // Two of the pack FAQs, picked by town seed (the full list stays on the keyword hub).
+  const packFaqs = Array.isArray(pack.faq) ? pack.faq : [];
+  const faqStart = packFaqs.length ? (p0Seed(townSlug, keywordSlug) % packFaqs.length) : 0;
+  const faqs = [...packFaqs.slice(faqStart), ...packFaqs.slice(0, faqStart)].slice(0, 2);
   faqs.push([
-    `How do I ask for ${name} in ${townName}?`,
-    `Call 07517 806082, WhatsApp us or use the contact form with the address in ${townName}. We will send a fixed written quote, and same-day or next-day slots are often available.`,
-  ]);
+    [
+      `How do I ask for ${name} in ${townName}?`,
+      `Call 07517 806082, WhatsApp us or use the contact form with the address in ${townName}. We will send a fixed written quote, and same-day or next-day slots are often available.`,
+    ],
+    [
+      `What is the first step for ${name.toLowerCase()} in ${townName}?`,
+      `Send the ${townName} address, the building type and a few photos by WhatsApp (07517 806082) or email (icomplypropertyservices@gmail.com). We reply with a fixed written quote and a date.`,
+    ],
+  ][p0Seed(`ask|${townSlug}`, keywordSlug) % 2]);
   const facts = townFactsBlock({
     slug: townSlug,
     town: townName,
@@ -229,6 +267,24 @@ export function renderNationwideP0Town(keywordSlug, townSlug) {
     hrefFor: (s) => `/pages/keywords/${keywordSlug}/${s}`,
   });
   if (facts) faqs.unshift(...facts.faqs);
+  // CLOSE-Q1: town-specific depth so P0 x town pages clear 800 prose words.
+  const seed = p0Seed(keywordSlug, townSlug);
+  const bankCtx = {
+    seed,
+    place: townName,
+    subject: name,
+    service: FAMILY_LABEL[FAMILY(pack.service)] || "Fire safety",
+    audience: P0_AUDIENCES[seed % P0_AUDIENCES.length],
+    visit: P0_VISITS[(seed >>> 4) % P0_VISITS.length],
+    near: "the towns listed below",
+    housing: "",
+    industry: "",
+    pop: "",
+  };
+  const depth = townDepthBlock({ slug: townSlug, town: townName, subject: name, service: pack.service, names: TOWNS, nation: place.nation || "", extra: depthBankParagraphs(bankCtx, 3) });
+  // Seeded FAQ order so same-council towns do not share one long FAQ run.
+  const faqShift = faqs.length ? p0Seed(`faq|${townSlug}`, keywordSlug) % faqs.length : 0;
+  faqs.push(...faqs.splice(0, faqShift));
   const faqHtml = faqs
     .filter((faq) => Array.isArray(faq) && faq.length >= 2)
     .map(([q, a]) => `<h3>${escapeHtml(q)}</h3><p>${escapeHtml(a)}</p>`)
@@ -247,6 +303,13 @@ export function renderNationwideP0Town(keywordSlug, townSlug) {
     links += `<li><a href="/pages/keywords/${other}">${escapeHtml(label)}</a></li>`;
   }
   links += p0ExtraLinks(keywordSlug, townSlug, townName, pack.service, links);
+  // Seeded block order (pack copy, town facts, local notes) for town-to-town uniqueness.
+  // The local paragraph leads; pack copy, town facts and local notes follow in a
+  // seeded order, and the pack copy never sits straight after the local paragraph
+  // in two orders out of three.
+  const blocks = [bodyHtml, facts ? facts.html : "", depth ? depth.html : ""];
+  const orders = [[1, 0, 2], [2, 0, 1], [1, 2, 0], [2, 1, 0], [0, 1, 2], [0, 2, 1]];
+  const articleHtml = localHtml + orders[p0Seed(`order|${townSlug}`, keywordSlug) % orders.length].map((i) => blocks[i]).join("");
   const gallery = images.map((src, index) => (
     `<figure><img src="${escapeHtml(src)}" alt="${escapeHtml(`${name} in ${townName} — photograph ${index + 1}`)}" width="1200" height="630"></figure>`
   )).join("");
@@ -270,7 +333,7 @@ ${MATRIX_HEADER}
 <nav aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/pages/keywords/${keywordSlug}">${escapeHtml(name)}</a> / <span>${escapeHtml(townName)}</span></nav>
 <h1>${escapeHtml(`${name} in ${townName}`)}</h1>
 ${gallery}
-<article id="local-copy">${bodyHtml}${facts ? facts.html : ""}</article>
+<article id="local-copy">${articleHtml}</article>
 <section><h2>${escapeHtml(name)} FAQ</h2>${faqHtml}</section>
 <section class="related-links"><h2>Related guides</h2><ul>${links}</ul></section>
 <p>Call or WhatsApp 07517 806082 for a fixed written quote. Our base: ${escapeHtml(NAP)}.</p>
