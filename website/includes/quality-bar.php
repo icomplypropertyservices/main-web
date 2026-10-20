@@ -257,7 +257,21 @@ function icomplyQualityBarThinProseHtml(string $kind, array $ctx): string
             $parts[] = '<p>' . icomplyQualityBarH(icomplyQualityBarFill($raw, $ctx)) . '</p>';
         }
     }
-    if (!$short) {
+    // Fire-family pages without town facts carry their own depth section, so keep a
+    // seeded 8 of the 24 bank paragraphs; the full set repeats word for word across towns.
+    $cap = (int)($ctx['bankCap'] ?? 0);
+    if ($cap > 0) {
+        $head = ($blurb !== '') ? [array_shift($parts)] : [];
+        $keyed = [];
+        foreach ($parts as $i => $html) {
+            $keyed[$i] = hexdec(substr(md5($seed . '#' . $i), 0, 7));
+        }
+        asort($keyed);
+        $keep = array_slice(array_keys($keyed), 0, $cap);
+        sort($keep);
+        $parts = array_merge($head, array_map(static fn($i) => $parts[$i], $keep));
+    }
+    if (!$short && $cap === 0) {
         $parts[] = '<p>' . icomplyQualityBarH(icomplyQualityBarFill(
             '{pop} {housing} {industry} Places named alongside {place} include {near}.',
             $ctx
@@ -514,6 +528,7 @@ function icomplyQualityBarThinBlock(
         'pop' => '',
         'gas' => $gas,
         'blurb' => $blurb,
+        'bankCap' => ($kind === 'service' && function_exists('isFireSafetyService') && isFireSafetyService($serviceSlug)) ? 8 : 0,
         // Town-facts pages carry real local facts, so keep the generic template prose short.
         'short' => function_exists('icomplyTownFactsGeo') && icomplyTownFactsEnabled($serviceSlug)
             && icomplyTownFactsGeo(areaSlug($place)) !== null,

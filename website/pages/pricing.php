@@ -659,7 +659,7 @@ echo icomplyComplianceBundleCrossSellHtml('pricing');
                       class="w-full border px-5 py-3.5 rounded-2xl"></textarea>
             <button type="submit" class="w-full modern-btn text-white py-4 text-lg font-semibold rounded-2xl">Request written quote</button>
             <p class="text-center text-xs text-zinc-500">
-                Submitting this form requests a quote — it does not accept the guide prices on this page as a contract.
+                Submitting this form requests a quote — it does not accept the guide prices shown here as a contract.
                 By submitting you agree to our
                 <a href="<?= url('/privacy.php') ?>" class="underline hover:text-black">Privacy Policy</a>
                 and
