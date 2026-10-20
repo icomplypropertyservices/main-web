@@ -718,7 +718,7 @@ function icomplyGmJobTownStripHtml(string $topic, array $towns, string $serviceS
         : '';
     return '<section class="max-w-7xl mx-auto px-6 py-16" aria-label="Greater Manchester towns"><div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Greater Manchester</div>'
         . '<h2 class="text-3xl font-semibold tracking-tight mt-2 text-[#0B1F3A]">Town pages that are already live</h2>'
-        . '<p class="mt-3 max-w-3xl text-zinc-700">These links go to the area hub, the service page and the keyword guide for each town. Job pages stay on the hub above.'
+        . '<p class="mt-3 max-w-3xl text-zinc-700">These links go to the area hub, the service page and the service guide for each town. Job pages stay on the hub above.'
         . $h($gasNote) . '</p>'
         . '<div class="mt-8 grid md:grid-cols-2 gap-4">' . $cards . '</div></section>';
 }

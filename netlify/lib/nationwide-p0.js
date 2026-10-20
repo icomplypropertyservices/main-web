@@ -121,7 +121,7 @@ const P0_MIN_LINKS = 90; // gate is 85; keep a small margin for catalogue change
 const FAMILY = (service) => (service === "barriers" ? "barriers" : service === "aov-air-handling" ? "aov" : "fire");
 const UTILITY = [
   ["/pages/services", "All services"],
-  ["/pages/keywords", "All keyword guides"],
+  ["/pages/keywords", "All service guides"],
   ["/pages/areas", "Areas we cover"],
   ["/pages/commercial", "Commercial property services"],
   ["/pages/landlords", "Landlord compliance"],

@@ -413,7 +413,7 @@ function icomplyBuildingHubRows(): array
             'h2' => 'Pointing and local repairs',
             'paragraphs' => [
                 'We look at the mortar, the brick face and whether water is getting in. Repointing is quoted to the area that needs it, not to a whole elevation by default. New openings need a lintel that is specified. We do not invent a beam size on the page.',
-                'Masonry crack repair remains its own keyword guide, linked to the same towns.',
+                'Masonry crack repair remains its own service guide, linked to the same towns.',
             ],
             'faq' => ['Will you diagnose every crack?', 'We will say what the brickwork visit can repair. Movement that needs a structural engineer is not written up as a repointing job.'],
             'cta' => 'Which wall, and whether it is pointing, a repair or a small build. POA.',
@@ -595,7 +595,7 @@ function icomplyBuildingHubRows(): array
             'h2' => 'Partitions and ceilings',
             'paragraphs' => [
                 'The quote names the wall lines, the board type and whether the finish is tape-and-joint or a skim by the plastering service. A fire-rated or acoustic board is only specified when the design or the brief asks for that performance. We do not invent a fire rating.',
-                'Ceiling dry lining already has its own keyword guide. Stud walls that are timber sit with carpentry. Both still have Greater Manchester town pages.',
+                'Ceiling dry lining already has its own service guide. Stud walls that are timber sit with carpentry. Both still have Greater Manchester town pages.',
             ],
             'faq' => ['Is dry lining the same as plastering?', 'No. This page is the framing and the board. Skim over that board is plastering, included only when the quote says so.'],
             'cta' => 'Walls, ceilings, or both, and any acoustic or fire note from the design. POA.',
@@ -648,7 +648,7 @@ function icomplyBuildingHubRows(): array
             'h2' => 'Void works and lived-in refurbishment',
             'paragraphs' => [
                 'The programme names which trades are in: kitchens, bathrooms, plaster, decoration, flooring, joinery and the electrical or gas records the instruction includes. Each of those trades still has its own page. The renovation quote is the sequence, not a new catalogue.',
-                'Void property renovation remains a keyword guide, with town pages for the same Greater Manchester places.',
+                'Void property renovation remains a service guide, with town pages for the same Greater Manchester places.',
             ],
             'faq' => ['Is a void a fixed package?', 'No. Two voids with the same bedroom count can need different kitchens, boards and certificates. The quote is price on application after the survey.'],
             'cta' => 'Void or occupied, postcode, and which trades you already know you need. POA.',

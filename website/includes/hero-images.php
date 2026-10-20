@@ -2,7 +2,7 @@
 /**
  * Primary hero assignment for lanes that must not share one stock photo.
  *
- * v1 lanes: AOV (service hub, service × town, keyword guides, keyword × town)
+ * v1 lanes: AOV (service hub, service × town, service guides, keyword × town)
  * and vehicle-barrier guides (car-park barrier + gate access).
  *
  * Threshold: the same image src is allowed on at most HERO_DUP_MAX (8) pages

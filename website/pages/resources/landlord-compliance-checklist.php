@@ -175,7 +175,7 @@ require SITE_ROOT . '/includes/header.php';
     <p class="mt-8 text-sm text-zinc-500">
         <a href="<?= url('/pages/resources/index.php') ?>" class="text-[#ff6b00] hover:underline">← Back to resources</a>
         ·
-        <a href="<?= url('/pages/keywords/index.php') ?>" class="text-[#ff6b00] hover:underline">Keyword guides</a>
+        <a href="<?= url('/pages/keywords/index.php') ?>" class="text-[#ff6b00] hover:underline">Service guides</a>
         ·
         <a href="<?= url('/contact.php') ?>" class="text-[#ff6b00] hover:underline">Contact</a>
     </p>

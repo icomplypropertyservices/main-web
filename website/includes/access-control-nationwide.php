@@ -314,7 +314,7 @@ function acnRenderHub(): void
     </section>
     <section id="keywords" class="bg-white border-t">
         <div class="max-w-7xl mx-auto px-6 py-14">
-            <h2 class="text-3xl font-semibold text-[#0B1F3A]">Keyword guides</h2>
+            <h2 class="text-3xl font-semibold text-[#0B1F3A]">Service guides</h2>
             <p class="mt-3 max-w-3xl text-zinc-800"><?= count($keywords) ?> access-control guides, including staff-change programming, fire-interface tests and lock assessments. Each guide links to the same manufacturer list, without Tunstall.</p>
             <div class="mt-6 flex flex-wrap gap-2"><?= acnKeywordLinksHtml($keywords) ?></div>
         </div>
@@ -340,7 +340,7 @@ function acnRenderHub(): void
     ];
     acnRender([
         'title' => 'Access control systems UK | iComply',
-        'meta' => 'Access control systems across the UK from our Stockport workshop. City pages, keyword guides and manufacturer links. POA. ' . PHONE . '.',
+        'meta' => 'Access control systems across the UK from our Stockport workshop. City pages, service guides and manufacturer links. POA. ' . PHONE . '.',
         'keywords' => 'access control systems UK, access control installation, Paxton, HID, Salto, door access control, ' . PHONE,
         'canonical' => $canonical,
         'h1' => 'Access control systems across the UK',

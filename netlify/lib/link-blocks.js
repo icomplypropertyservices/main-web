@@ -8,7 +8,7 @@
  * A  Parent hubs, including /pages/areas/{town}
  * B  Related services (or sibling keywords / jobs / brands) in the same town
  * C  Nearby Greater Manchester towns for the same leaf (borough adjacency)
- * D  Jobs and keyword guides
+ * D  Jobs and service guides
  * E  Manufacturer hubs for the trade
  * F  Quote, packages, commercial, resources, directories
  *
@@ -277,7 +277,7 @@ export function matrixRelatedHtml(catalogue, identity) {
   const parents = [];
   if (kind === "keyword" || kind === "variant") {
     parents.push({ href: `/pages/keywords/${identity.keyword}`, label: `${subject} guide` });
-    parents.push({ href: "/pages/keywords", label: "All keyword guides" });
+    parents.push({ href: "/pages/keywords", label: "All service guides" });
   } else if (kind === "job") {
     parents.push({ href: `/pages/jobs/${identity.job}`, label: `${subject}` });
     parents.push({ href: "/pages/jobs", label: "All job types" });

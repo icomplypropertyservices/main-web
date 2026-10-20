@@ -153,7 +153,7 @@ function icomplyMatrixChromeEnd(string $footNote = ''): string
         . '<div class="flex flex-wrap gap-4">'
         . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH($s['svcHub']) . '">All services</a>'
         . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH($s['areasHub']) . '">All areas</a>'
-        . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH($s['kwHub']) . '">All keyword guides</a>'
+        . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH($s['kwHub']) . '">All service guides</a>'
         . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH(url('/pages/site-map.php')) . '">Site map / full inventory</a>'
         . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH($s['contact']) . '">Contact / POA quote</a>'
         . '</div>'
@@ -400,7 +400,7 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
             . '</section>';
     }
 
-    $html .= '<section><h2 class="text-2xl font-semibold mb-3">All ' . icomplyMatrixH($svcName) . ' keyword guides</h2>'
+    $html .= '<section><h2 class="text-2xl font-semibold mb-3">All ' . icomplyMatrixH($svcName) . ' service guides</h2>'
         . '<p class="text-sm text-zinc-600 mb-4">Every topic under this service, each with the same full town list.</p>'
         . icomplyMatrixKeywordChips($svcSlug)
         . '</section></main>';
@@ -571,7 +571,7 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         foreach ($pickKw as $k) {
             $html .= '<a class="kw-chip" href="' . icomplyMatrixH(url('/pages/keywords/' . $k)) . '">' . icomplyMatrixH($kwAll[$k]) . '</a>';
         }
-        $html .= '</div><p class="text-sm mt-2"><a class="text-[#ff6b00] font-semibold" href="' . icomplyMatrixH(url('/pages/keywords')) . '">All keyword guides</a></p></section></main>';
+        $html .= '</div><p class="text-sm mt-2"><a class="text-[#ff6b00] font-semibold" href="' . icomplyMatrixH(url('/pages/keywords')) . '">All service guides</a></p></section></main>';
     } else {
         $html .= '<section><h2 class="text-2xl font-semibold mb-3">All keywords for this service</h2>'
             . icomplyMatrixKeywordChips($serviceSlug)

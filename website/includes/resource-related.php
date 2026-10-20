@@ -5,7 +5,7 @@
 function resourceRelatedLinks(string $slug): array {
     $map = [
         'eicr-guide' => [
-            ['href' => url('/pages/keywords/eicr'), 'label' => 'EICR keyword guide'],
+            ['href' => url('/pages/keywords/eicr'), 'label' => 'EICR service guide'],
             ['href' => url('/pages/services/electrical'), 'label' => 'Electrical services'],
         ],
         'fire-alarm-servicing' => [

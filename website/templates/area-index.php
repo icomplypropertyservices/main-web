@@ -404,7 +404,7 @@ echo icomplyQualityBarFaqHtml(
     <div class="max-w-7xl mx-auto px-6 py-16">
         <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local keyword pages</div>
         <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Guides for <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></h2>
-        <p class="mt-2 text-zinc-600 max-w-2xl">Every keyword guide has a <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> page, the same set the other Greater Manchester area hubs link.</p>
+        <p class="mt-2 text-zinc-600 max-w-2xl">Every service guide has a <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> page, the same set the other Greater Manchester area hubs link.</p>
         <?php
         require_once SITE_ROOT . '/includes/related.php';
         echo keywordAreaLinksHtml($AREA, null, 0);

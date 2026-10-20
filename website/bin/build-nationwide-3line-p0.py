@@ -179,7 +179,7 @@ SITES = [
     "a commissioning slot booked only after the scope is signed",
     "a defect list instead of a pretend certificate",
     "a parent service page the enquiry can start from",
-    "related keyword guides for the same trade",
+    "related service guides for the same trade",
     "no BAFE badge and no NSI badge on this page",
     "a price that stays on application until the building is known",
     "the Stockport workshop address when a location is needed",
@@ -430,7 +430,7 @@ def essay(slug: str, name: str, place: str, county: str, region: str, pop: str, 
             f"Manufacturer pages stay on the Greater Manchester core. This keyword does not widen that manufacturer matrix."
         ),
         (
-            f"Internal links from {name} go to the parent {parent} service, to related keyword guides in the same P0 set, "
+            f"Internal links from {name} go to the parent {parent} service, to related service guides in the same P0 set, "
             f"and to the town page when the place is published. "
             f"AOV and smoke-control enquiries can also open the AOV town pages. Barrier enquiries can open the barrier town pages. "
             f"Fire alarm enquiries open the fire alarm service. Doors, extinguishers, emergency lighting, stopping, suppression and sprinklers stay on their own service pages "

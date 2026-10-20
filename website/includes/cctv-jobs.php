@@ -1,6 +1,6 @@
 <?php
 /**
- * CCTV job lane: /pages/services/cctv plus every CCTV keyword guide.
+ * CCTV job lane: /pages/services/cctv plus every CCTV service guide.
  * Catalogue: data/cctv-jobs.json (73). Pages: pages/keywords/<slug>.php.
  */
 declare(strict_types=1);
@@ -71,7 +71,7 @@ function cctvServiceCopy(string $slug): ?array
         'intro' => [
             'iComply Property Services designs, installs and looks after CCTV for shops, warehouses, yards, offices, care settings and landlord common parts across Greater Manchester and the North West.',
             'The work follows the camera and the recorder you actually need: IP and HD views, NVRs and DVRs, ANPR lanes, remote viewing, and extra cameras on systems that still have channels. BS EN 62676 is the reference we design against. Camera aims are discussed with UK data-protection practice in mind, including signage and privacy masks where a view would otherwise cover neighbours.',
-            'This page is the CCTV job lane. Every CCTV keyword guide is listed below and links back here. Quotes are written after a survey or a clear photo set. We do not publish a made-up camera or day rate on this page.',
+            'This page is the CCTV job lane. Every CCTV service guide is listed below and links back here. Quotes are written after a survey or a clear photo set. We do not publish a made-up camera or day rate on this page.',
         ],
         'pillars' => [
             ['title' => 'Design and install', 'text' => 'New IP and HD systems, ANPR lanes, cabling and recorders sized for the retention you asked for, commissioned with remote viewing for the people who need it.'],

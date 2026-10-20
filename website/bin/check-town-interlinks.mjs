@@ -68,6 +68,9 @@ for (const [kind, slug, town] of samples) {
   if (String(r.robots || "").includes("noindex")) { fail++; console.log(`FAIL noindex on sampled town page: ${kind} ${slug}/${town}`); continue; }
   checked++;
   const n = uniqueInternal(r.html);
+  // Banned customer-facing wording on every rendered sample (2026-10-20).
+  const banned = r.html.replace(/<script[\s\S]*?<\/script>/gi, " ").match(/keyword guides?/i);
+  if (banned) { fail++; console.log(`FAIL banned phrase "${banned[0]}" on ${kind} ${slug}/${town}`); }
   const isP0 = kind === "p0" || (kind === "keyword" && p0KeepsTown(slug, town));
   const min = isP0 ? MIN_P0 : MIN;
   const label = `${kind} ${slug}/${town}`;

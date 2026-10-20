@@ -121,7 +121,7 @@ require SITE_ROOT . '/includes/header.php';
             <h2 class="text-2xl font-semibold tracking-tight mb-3">Related iComply services</h2>
             <div class="flex flex-wrap gap-2 not-prose">
                 <a href="<?= url('/pages/services/electrical.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Electrical services</a>
-                <a href="<?= url('/pages/keywords/eicr.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">EICR keyword guide</a>
+                <a href="<?= url('/pages/keywords/eicr.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">EICR service guide</a>
                 <a href="<?= url('/pages/keywords/landlord-electrical-certificate.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Landlord electrical certificate</a>
                 <a href="<?= url('/pages/keywords/electrical-installation-condition-report.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">EICR explained</a>
                 <a href="<?= url('/landlords.php') ?>" class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]">Landlord services</a>
@@ -155,7 +155,7 @@ require SITE_ROOT . '/includes/header.php';
         ·
         <a href="<?= url('/faq.php') ?>" class="text-[#ff6b00] hover:underline">FAQ</a>
         ·
-        <a href="<?= url('/pages/keywords/index.php') ?>" class="text-[#ff6b00] hover:underline">Keyword guides</a>
+        <a href="<?= url('/pages/keywords/index.php') ?>" class="text-[#ff6b00] hover:underline">Service guides</a>
     </p>
 </article>
 

@@ -380,7 +380,7 @@ require SITE_ROOT . '/includes/header.php';
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All areas →</a>
                 <a href="<?= url('/pages/services/electrical.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Electrical service →</a>
-                <a href="<?= url('/pages/keywords/ev-charger-installation.php') ?>" class="text-sm font-semibold text-[#ff6b00]">EV keyword guide →</a>
+                <a href="<?= url('/pages/keywords/ev-charger-installation.php') ?>" class="text-sm font-semibold text-[#ff6b00]">EV service guide →</a>
             </div>
         </div>
         <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">

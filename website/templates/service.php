@@ -521,7 +521,7 @@ if (function_exists('accessControlLaneHubSection')) {
                     <?php endif; ?>
                 </p>
             </div>
-            <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All keyword guides →</a>
+            <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All service guides →</a>
         </div>
         <?php
         $svcKeywords = getKeywordsForService($serviceSlug);
@@ -578,16 +578,16 @@ if (function_exists('accessControlLaneHubSection')) {
         </div>
         <?php if ($cardLimit > 0 && count($svcKeywords) > $cardLimit): ?>
             <p class="mt-6 text-sm text-zinc-600">
-                Showing <?= (int)$cardLimit ?> of <?= count($svcKeywords) ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> keyword guides —
+                Showing <?= (int)$cardLimit ?> of <?= count($svcKeywords) ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> service guides —
                 <a href="<?= url('/pages/keywords/index.php') ?>" class="font-semibold text-[#ff6b00]">view full keyword index</a>.
             </p>
         <?php else: ?>
             <p class="mt-6 text-sm text-zinc-600">
-                All <?= count($svcKeywords) ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> keyword guides, each with every town we cover.
+                All <?= count($svcKeywords) ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> service guides, each with every town we cover.
             </p>
         <?php endif; ?>
         <?php else: ?>
-            <p class="text-zinc-600">Keyword guides for this service are being expanded. See the <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/keywords/index.php') ?>">full guides index</a>.</p>
+            <p class="text-zinc-600">Service guides for this service are being expanded. See the <a class="text-[#ff6b00] font-semibold" href="<?= url('/pages/keywords/index.php') ?>">full guides index</a>.</p>
         <?php endif; ?>
     </div>
 </section>
