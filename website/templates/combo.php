@@ -1,4 +1,5 @@
 <?php
+require_once SITE_ROOT . '/includes/render.php';
 /**
  * Single data-driven service × area template (all services).
  * Pure PHP vars via executeTemplateVars() (no {{}} / eval).
@@ -346,7 +347,7 @@ if ($townFacts !== '') {
         </div>
         <div class="lg:col-span-2 space-y-4">
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
-                <img src="<?= url('/assets/images/keywords/' . $KEYWORD_IMAGE_1 . '.jpg') ?>"
+                <img src="<?= url(icomplyKeywordImagePath((string)$KEYWORD_IMAGE_1, (string)$SERVICE_SLUG)) ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> panel and equipment used by iComply in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
                      width="800" height="600"
                      class="w-full h-44 object-cover"
@@ -355,7 +356,7 @@ if ($townFacts !== '') {
                 <p class="text-xs text-zinc-500 px-3 py-2"><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> control equipment &amp; panels</p>
             </div>
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
-                <img src="<?= url('/assets/images/keywords/' . $KEYWORD_IMAGE_2 . '.jpg') ?>"
+                <img src="<?= url(icomplyKeywordImagePath((string)$KEYWORD_IMAGE_2, (string)$SERVICE_SLUG)) ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation work and testing in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
                      width="800" height="600"
                      class="w-full h-44 object-cover"

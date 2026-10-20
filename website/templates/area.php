@@ -235,9 +235,9 @@ $schema = [
                 <strong><?= htmlspecialchars($areaProfile['districts'], ENT_QUOTES, 'UTF-8') ?></strong>
                 in <?= htmlspecialchars($areaProfile['region'], ENT_QUOTES, 'UTF-8') ?>.
                 The buildings we usually see are <?= htmlspecialchars($areaProfile['stock'], ENT_QUOTES, 'UTF-8') ?>.
-                Local priority on this page: <?= htmlspecialchars($areaProfile['focus'], ENT_QUOTES, 'UTF-8') ?>.
+                Our local focus: <?= htmlspecialchars($areaProfile['focus'], ENT_QUOTES, 'UTF-8') ?>.
                 Fire alarms, AOV and smoke control, nurse call, and vehicle barriers are covered here.
-                Other trades are indexed when the town is in Greater Manchester.
+                Other trades are covered across Greater Manchester.
             </p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
                 The office is 17 Woodlands Park Road, Offerton, Stockport SK2 5DE. Visits in

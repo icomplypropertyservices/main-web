@@ -432,14 +432,14 @@ $schema = [
         </div>
         <div class="lg:col-span-2 space-y-4">
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
-                <img src="<?= htmlspecialchars(url($hubInline1 ?: ('/assets/images/keywords/' . $img2 . '.jpg')), ENT_QUOTES, 'UTF-8') ?>"
+                <img src="<?= htmlspecialchars(url($hubInline1 ?: icomplyKeywordImagePath((string)$img2, (string)$serviceSlug)), ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> equipment"
                      class="w-full h-44 object-cover"
                      loading="lazy"
                      onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
             </div>
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
-                <img src="<?= htmlspecialchars(url($hubInline2 ?: ('/assets/images/keywords/' . $img3 . '.jpg')), ENT_QUOTES, 'UTF-8') ?>"
+                <img src="<?= htmlspecialchars(url($hubInline2 ?: icomplyKeywordImagePath((string)$img3, (string)$serviceSlug)), ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation work"
                      class="w-full h-44 object-cover"
                      loading="lazy"

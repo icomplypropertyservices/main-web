@@ -54,7 +54,7 @@ require SITE_ROOT . '/includes/header.php';
                     <?= count($keywords) ?> topics · <?= count($services) ?> services · <?= count($areas) ?>+ towns
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
-                    Topic &amp; keyword<br>
+                    Service<br>
                     <span class="text-[#ff6b00]">guides</span>
                 </h1>
                 <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl">

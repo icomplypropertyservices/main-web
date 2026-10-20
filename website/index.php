@@ -222,7 +222,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
     <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
             <div>
-                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local SEO guides</div>
+                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local service guides</div>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">EICR, gas, fire, Legionella, asbestos &amp; more by town</h2>
                 <p class="mt-2 text-zinc-600 max-w-2xl">
                     Every guide has a dedicated page for each Greater Manchester town — e.g.

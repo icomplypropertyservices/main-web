@@ -389,8 +389,7 @@ def essay(slug: str, name: str, place: str, county: str, region: str, pop: str, 
             f"at {NAP}. Nearby places on the same town list include {near}."
         ),
         (
-            f"{place} sits in {county}, {region}. Published population context for this page is {pop}. "
-            f"That figure is context for travel and building mix. It is not a claim that every street has already been surveyed. "
+            f"{place} sits in {county}, {region}. "
             f"{name} follows the building in front of the engineer. A {site} is scoped on its own drawings and its own access, "
             f"not by swapping a town name into a national script and calling it local."
         ),
@@ -423,18 +422,8 @@ def essay(slug: str, name: str, place: str, county: str, region: str, pop: str, 
             f"Call 07517 806082, WhatsApp us or use the contact form. Say whether the building is occupied."
         ),
         (
-            f"Coverage for this keyword is the UK mainland TOP 5000 towns by population, England, Scotland and Wales. "
-            f"{place} is on that list when this is a town page, or the guide is the nationwide hub when it is not. "
-            f"Greater Manchester area hubs stay in place for local services, including the ten marketing places that are not in the TOP 5000 population cut. "
-            f"Those ten are not dropped from the local area list. They are simply not the driver for this nationwide keyword family. "
-            f"Manufacturer pages stay on the Greater Manchester core. This keyword does not widen that manufacturer matrix."
-        ),
-        (
-            f"Internal links from {name} go to the parent {parent} service, to related service guides in the same P0 set, "
-            f"and to the town page when the place is published. "
-            f"AOV and smoke-control enquiries can also open the AOV town pages. Barrier enquiries can open the barrier town pages. "
-            f"Fire alarm enquiries open the fire alarm service. Doors, extinguishers, emergency lighting, stopping, suppression and sprinklers stay on their own service pages "
-            f"when that is the work, so a fire-protection company enquiry is not forced into a single product."
+            f"We cover {name} across mainland England, Scotland and Wales from our Stockport base. "
+            f"Greater Manchester towns also have their own local pages for our other services, and each town page shows the travel and local details for that place."
         ),
         (
             f"What {name} does not include is as important as what it does. "

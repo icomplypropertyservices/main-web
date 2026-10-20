@@ -1,4 +1,33 @@
 <?php
+
+if (!function_exists('icomplyKeywordImagePath')) {
+    /**
+     * 2026-10-20: keyword hero image that exists on disk. Some keywords had no
+     * /assets/images/keywords/{slug}.jpg, so pages pointed at a missing file.
+     */
+    function icomplyKeywordImagePath(string $slug, string $serviceSlug = ''): string
+    {
+        $root = defined('SITE_ROOT') ? SITE_ROOT : dirname(__DIR__);
+        $alias = [
+            'cp12' => 'cp12-gas-certificate',
+            'emergency-lighting-test' => 'emergency-lighting-testing',
+        ];
+        $candidates = ['/assets/images/keywords/' . $slug . '.jpg'];
+        if (isset($alias[$slug])) {
+            $candidates[] = '/assets/images/keywords/' . $alias[$slug] . '.jpg';
+        }
+        if ($serviceSlug !== '') {
+            $candidates[] = '/assets/images/services/' . $serviceSlug . '-photo.jpg';
+            $candidates[] = '/assets/images/services/' . $serviceSlug . '.jpg';
+        }
+        foreach ($candidates as $c) {
+            if (is_file($root . $c)) {
+                return $c;
+            }
+        }
+        return '/assets/images/services/building-maintenance.jpg';
+    }
+}
 /**
  * Runtime page renderer — single source of truth for combo / keyword / area hubs.
  *
@@ -238,7 +267,7 @@ function keywordTemplatePlaceholders(
             'mainEntity' => $faqEntities,
         ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
-    $kwImg = url('/assets/images/keywords/' . $slug . '.jpg');
+    $kwImg = url(icomplyKeywordImagePath($slug, (string)$serviceSlug));
     $svcImg = url('/assets/images/services/' . $serviceSlug . '.jpg');
     $inlineImg = $kwImg;
     if (function_exists('icomplyNationwide3lineIsP0') && icomplyNationwide3lineIsP0($slug)) {

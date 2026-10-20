@@ -58,8 +58,7 @@ require SITE_ROOT . '/includes/header.php';
             </h1>
             <p class="mt-4 text-sm text-white/70">Pair brand pages with our <?= count($services) ?> services — fire safety systems, electrical, security and more — across every North West town we cover.</p>
             <p class="mt-4 text-lg text-white/80">
-                Every major brand we install and service has a dedicated page with kits, SEO content and quote CTAs —
-                ready for Shopify product IDs when you sell online.
+                Every major brand we install and service has its own page with kits, product details and a quick way to ask for a quote.
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#directory" class="px-8 py-4 rounded-2xl bg-[#ff6b00] font-semibold text-white">Browse A–Z</a>
