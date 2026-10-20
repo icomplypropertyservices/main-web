@@ -426,6 +426,9 @@ def essay(slug: str, name: str, place: str, county: str, region: str, pop: str, 
             f"Greater Manchester towns also have their own local pages for our other services, and each town page shows the travel and local details for that place."
         ),
         (
+            f"When the work belongs to a different service, such as fire doors, emergency lighting or sprinklers, we say so and point you to that service so the quote covers the right work."
+        ),
+        (
             f"What {name} does not include is as important as what it does. "
             f" It does not include a fake accreditation. "
             f"It does not include Northern Ireland or the islands excluded from the mainland town build. "

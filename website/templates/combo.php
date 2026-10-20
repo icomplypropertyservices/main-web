@@ -447,7 +447,7 @@ if ($tfLean) {
             <?= $MANUFACTURER_IMAGES ?>
         </div>
         <div class="mt-10 rounded-3xl overflow-hidden border bg-white">
-            <img src="<?= url('/assets/images/keywords/' . $KEYWORD_IMAGE_3 . '.jpg') ?>"
+            <img src="<?= url(icomplyKeywordImagePath((string)$KEYWORD_IMAGE_3, (string)$SERVICE_SLUG)) ?>"
                  alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> manufacturer panels and equipment — iComply <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
                  width="1200" height="700"
                  class="w-full h-64 md:h-80 object-cover"
