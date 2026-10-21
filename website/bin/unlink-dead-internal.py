@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""After static export: an internal /pages/ link whose target is not an exported page, a sitemap
-URL or a _redirects source becomes plain text (QM rule broken_internal_link). Never removes pages."""
+"""After static export: an internal keyword/service x town link whose target is not an exported page,
+a sitemap URL or a _redirects source is pointed at that town's area page (or the family hub), else plain text (QM rule broken_internal_link). Never removes pages."""
 import os, re, sys, glob
 dist = sys.argv[1] if len(sys.argv) > 1 else 'dist'
 known = set()
@@ -37,6 +37,10 @@ for root, _, files in os.walk(dist):
             if k in known or '*' in k or k.count('/') < 4 or k.rsplit('/', 1)[0] not in parents:
                 return m.group(0)
             n[0] += 1
+            town = k.rsplit('/', 1)[1]
+            for alt in ('/pages/areas/' + town, k.rsplit('/', 1)[0]):
+                if alt in known:
+                    return m.group(0).replace(m.group(1), alt, 1)
             return m.group(2)
         t = A.sub(fix, s)
         pages += 1
