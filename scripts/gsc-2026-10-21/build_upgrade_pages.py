@@ -119,6 +119,37 @@ CLOSE = [
  "For {kwl} in {town}, ring {phone} or send the details to {mail}. A postcode, a photo and a line about the problem is enough to start. {price}",
 ]
 
+SERVICE_COPY = {
+ "fire-extinguishers": [
+  "Portable fire extinguishers need a basic service every year under BS 5306-3, carried out by a trained technician. That service checks the cylinder for damage and corrosion, confirms the pressure gauge reads in the green, weighs CO2 units, replaces tamper seals and records the visit on the label and in your logbook.",
+  "Every five years water, foam and powder extinguishers need an extended service, which means discharging the unit, inspecting the inside and refilling it; CO2 units are pressure tested or replaced at ten years. We tell you in advance which units are due so you can budget, and swap in a replacement when that is cheaper than refurbishing.",
+  "Choosing the right type matters. Water and foam suit paper, wood and fabric; CO2 suits electrical equipment; wet chemical is for kitchen deep-fat fryers; and powder is usually kept for outdoor or plant areas because it is messy indoors. We match types to the risks in each room rather than leaving the same pair on every landing.",
+  "Units should hang on a bracket with the handle about a metre from the floor, close to exits and on escape routes, with a sign showing the type. Fire blankets belong in kitchens. In HMOs and small blocks the fire risk assessment usually sets out what is needed and where; we can follow it or point out where it looks out of date.",
+  "Common faults we find on extinguisher visits include missing or broken tamper tags, units knocked off brackets and used as door stops, gauges reading low after a discharge nobody reported, and CO2 horns that have cracked. Tenants and staff rarely mention these, so a yearly visit is often the only time they are caught.",
+ ],
+ "fire-stopping": [
+  "Fire stopping seals the gaps where pipes, cables and ducts pass through fire-resisting walls and floors, so smoke and flame cannot jump from one compartment to the next. Holes left by trades during refits are one of the most common findings in fire risk assessments of flats and HMOs.",
+  "We survey service risers, ceiling voids and plant rooms, photograph each penetration and seal it with a tested product suited to what passes through it: intumescent mastic, pillows, collars on plastic pipes, batt and coating systems for cable bundles, or fire-rated boards for larger openings.",
+  "Each seal is labelled and logged with before-and-after photos, the product used and its fire rating, so you have evidence for the fire risk assessment, building insurer or the next survey. Where a seal is outside a product's tested range, we say so rather than guessing.",
+  "Work is planned around residents, with dust kept down and services left running. If the survey shows wider compartment problems, such as missing cavity barriers or poor door sets, we list them separately so you can prioritise.",
+  "Typical problem spots are the riser cupboards on each floor, gaps above suspended ceilings where corridors meet flats, holes around soil stacks, and new data or TV cables pushed through after a block was handed over. A short walk-round often finds dozens in a single building.",
+ ],
+ "fire-suppression": [
+  "Fire suppression covers fixed systems that put a fire out or hold it back automatically: wet chemical systems over commercial cooking, gas or aerosol systems in server and plant rooms, and water mist where sprinklers are not practical.",
+  "Each system is designed around the hazard. A kitchen canopy system has nozzles aimed at each appliance and a gas shut-off; a server room system is sized to the room volume with a sealed enclosure so the agent holds its concentration long enough.",
+  "Systems need servicing to the manufacturer's schedule, usually every six or twelve months: checking cylinders and pressures, detection, release lines, nozzles and interlocks, and testing the link to the fire alarm. We record every visit and tell you about anything that needs replacing before it fails an inspection.",
+  "Insurers often ask for suppression in commercial kitchens and in rooms holding valuable equipment. We can survey what is there, explain whether it still covers the current layout and quote for upgrades where appliances or rooms have changed.",
+  "Changes to a kitchen, such as a new fryer, a moved range or a longer canopy, can leave an older suppression system no longer covering the cooking line. A quick survey after any refit tells you whether nozzles need moving or adding before your next insurer visit.",
+ ],
+ "electrics-first-fix": [
+  "First fix electrics is everything that goes in before the plaster: cable runs, back boxes, ceiling roses, consumer unit position and any containment, all set out from your drawings or a walk-round with you. Getting it right now saves chasing walls later.",
+  "We mark out sockets, switches, lighting, data points and outdoor supplies with you on site, so heights and positions suit how you will use each room. Kitchens, bathrooms and garden rooms get extra attention because their layouts change most often.",
+  "Cables are clipped and protected, notched joists are kept within limits, and safe zones are followed so future drilling does not hit a cable. Circuits are labelled at the consumer unit end ready for second fix and testing.",
+  "First fix fits into the wider build: we coordinate with plumbers, joiners and plasterers so boards go up on time. When the walls are finished we return for second fix, testing and the certificate.",
+  "Typical first fix jobs include extensions, loft conversions, kitchen refits, garage conversions and full rewires during a renovation. We work from your plans, or help draw up a simple layout if you only have an idea of where things should go.",
+ ],
+}
+
 def lst(xs):
     xs = [x for x in xs if x]
     return xs[0] if len(xs) == 1 else ", ".join(xs[:-1]) + " and " + xs[-1] if xs else ""
@@ -149,7 +180,7 @@ def build(path):
     wards = lst((g or {}).get("wards", [])[:4]) or f"the centre of {town}"
     pcs = f" ({', '.join(g['pcs'])} postcodes)" if g and g["pcs"] else ""
     nearl = lst([f"{tname(t)} ({d} miles)" for t, d in nr[:4]]) or "Greater Manchester"
-    fpts = [f.rstrip(".") for f in focus if not re.search(r"facilities managers|investors|light commercial", f, re.I)]
+    fpts = [f.rstrip(".") for f in focus if not re.search(r"facilities managers|investors|light commercial|Gas Safe|£", f, re.I)]
     focus_s = ("It covers " + "; ".join(x[0].lower() + x[1:] for x in fpts[:3]) + ".") if fpts else ""
     town_disp = town or "Greater Manchester"
     fmt = dict(kw=name, kwl=kwl, town=town_disp, wards=wards, pcs=pcs, nearl=nearl, focus=focus_s,
@@ -172,13 +203,36 @@ def build(path):
         towns = [t["name"] for t in ALLOW if t.get("bucket") == "gm_core"][:0] or ["Manchester", "Stockport", "Bolton", "Oldham", "Rochdale", "Wigan", "Bury", "Salford", "Warrington", "Preston", "Blackburn", "Burnley"]
         start = h(seed + "t", len(towns))
         tl = towns[start:] + towns[:start]
-        paras += [
-            f"What affects the cost of {kwl}? Mostly the size of the property, how easy it is to reach the work, the condition of what is already there and whether anything needs making good afterwards. We explain each of those on the visit, so the written quote matches what you actually need. {price_line(kslug)}",
-            f"We carry out {kwl} for homeowners, landlords, letting agents and small businesses. A family home, a rented flat and a shop each need a slightly different approach, so we ask who uses the building and when, and plan the work to cause as little disruption as possible.",
-            f"Our team works across {lst(tl[:8])} and the towns in between. Most visits are booked within a few days, and Same/Next-Day slots are offered where the diary allows. If your property is a little further out, call anyway: we will tell you straight away whether we can help.",
-            f"Before the visit it helps to have a few things ready: any old certificates or reports, photos of the problem, the age of the property if you know it, and the times you or your tenants are in. That lets us bring the right parts and finish {kwl} in as few visits as possible.",
-            f"After the work you get a short summary of what was done, photos of the finished job and any certificate or report that applies. If something needs attention later, we note it with a clear explanation rather than a long list of upsells, so you can plan ahead with confidence.",
-        ]
+        if path.startswith("/pages/services/") and service in SERVICE_COPY:
+            paras += SERVICE_COPY[service]
+        else:
+            bank = [
+                [f"What affects the cost of {kwl}? Mostly the size of the property, access, the condition of what is already there and any making good afterwards. {price_line(kslug)}",
+                 f"The price of {kwl} depends on the building more than anything: how big it is, how easy it is to reach the work and what state the existing installation is in. {price_line(kslug)}",
+                 f"No two {kwl} jobs cost the same. Size, access, existing condition and finishing work all move the figure, which is why we quote after seeing it. {price_line(kslug)}"],
+                [f"We carry out {kwl} for homeowners, landlords, letting agents and small businesses, and plan the work around whoever uses the building.",
+                 f"Customers for {kwl} range from families in terraced homes to landlords with a handful of flats and shop owners who need the work done out of hours.",
+                 f"Whether it is your own home, a rented flat or a small business unit, {kwl} is planned so the people inside are disturbed as little as possible."],
+                [f"Our team works across {lst(tl[:8])}. Same/Next-Day slots are offered where the diary allows.",
+                 f"From {tl[0]} and {tl[1]} to {tl[2]}, {tl[3]} and {tl[4]}, we book {kwl} visits on routes we already drive, which keeps dates short.",
+                 f"We are regularly in {lst(tl[2:7])}, so a {kwl} visit can usually be fitted in within days."],
+                [f"Before the visit, gather any old certificates, photos of the problem and the times the property is occupied. It helps us bring the right parts for {kwl}.",
+                 f"A few photos and any previous paperwork make a big difference: we arrive with the right kit and finish {kwl} in fewer visits.",
+                 f"If you have earlier reports, drawings or photos, send them over before we come out for {kwl}; it saves a return trip."],
+                [f"Afterwards you get a summary, photos of the finished job and any certificate that applies to {kwl}.",
+                 f"Once {kwl} is complete we send the paperwork and photos by email, with any follow-up items explained plainly.",
+                 f"You keep a clear record of the {kwl} work: what was done, when, photos and any certificate or report."],
+            ]
+            order = sorted(range(len(bank)), key=lambda i: h(seed + str(i), 1000))
+            paras += [pick(seed + "b" + str(i), bank[i]) for i in order]
+            rel = [v["name"] for k2, v in KW.items() if v.get("service") == service and k2 != kslug][:40]
+            rel.sort(key=lambda x: h(seed + x, 10**6))
+            if rel: paras.append(f"Related work we often do alongside {kwl}: {lst(rel[:6])}.")
+            paras.append(pick(seed + "w", [
+                f"Why use us for {kwl}? A small local team, a written scope before any work, and the same people from first visit to sign-off. If plans change on site, the change is priced and agreed before it goes ahead, so the final bill matches what you approved.",
+                f"People choose us for {kwl} because we turn up when we say, explain the job in plain English and put everything in writing. Any extra work found on the day is shown to you and priced before we carry on.",
+                f"With {kwl} you deal with one local team from start to finish. We confirm dates in writing, keep you posted during the work and leave the property tidy, with nothing added to the bill that you did not agree first.",
+            ]))
         for q, a_ in ((KW.get(kslug) or {}).get("faq") or [])[:4]:
             if not re.search(r"£|Gas Safe|info@|07471|facilities managers", a_):
                 paras.append(f"{q} {a_}")
@@ -227,6 +281,7 @@ def build(path):
 
 import sys
 DIST = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else None
+P0KEEP = lambda p: p in set(open(D / "queue-edge-200.txt").read().split()) if (D / "queue-edge-200.txt").exists() else False
 REDIRECTS = set(open(D / "queue-redirects.txt").read().split())
 rows = list(csv.DictReader(open(D / "upgrade-queue.csv")))
 pages, skipped = {}, []
@@ -239,6 +294,9 @@ for r in rows:
         skipped.append((p, "not a page (one-hop 301 to its hub, live-checked 21 Oct)")); continue
     if DIST and not p.startswith("/pages/keywords/") and not any((DIST / f).is_file() for f in (p.lstrip("/") + ".php", p.lstrip("/") + ".html", p.lstrip("/") + "/index.html")):
         skipped.append((p, "not a page (one-hop 301 to its hub)")); continue
+    tm = re.match(r"^/pages/keywords/[a-z0-9-]+/([a-z0-9-]+)$", p)
+    if tm and tm.group(1) not in LOCAL and p not in KEEP and not P0KEEP(p):
+        skipped.append((p, "out-of-ring town: one-hop 301 to its keyword hub")); continue
     e = build(p)
     if not e: skipped.append((p, "no keyword/service data")); continue
     e["queue"] = r["problem"]

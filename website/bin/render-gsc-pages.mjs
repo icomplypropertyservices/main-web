@@ -41,7 +41,7 @@ for (const p of paths) {
   } else {
     for (const f of [`${p}.php`, `${p}/index.html`, `${p}.html`]) {
       const full = path.join(dist, f);
-      if (fs.existsSync(full)) { html = fs.readFileSync(full, "utf8"); break; }
+      if (fs.existsSync(full)) { html = applyMoneyCtr(p, fs.readFileSync(full, "utf8").replace(/<section class="money-ctr"[^>]*data-brief="GSC-2026-10-21"[\s\S]*?<\/nav><\/section>|<section class="money-ctr"[^>]*data-brief="GSC-2026-10-21"[\s\S]*?<\/section>/, "")); break; }
     }
     if (!html) status = 404;
   }
