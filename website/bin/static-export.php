@@ -210,6 +210,7 @@ $required = [
     '/renewals',
     '/renewals/thanks',
     '/pages/about',
+    '/pages/photo-credits',
     '/pages/areas',
     '/pages/manufacturers',
     '/pages/resources',
@@ -221,6 +222,10 @@ foreach ($routes as $i => $path) {
     $result = icomplyRenderExportRoute($path);
     if (isset($result['html']) && is_string($result['html']) && function_exists('icomplyPerfRewriteHtml')) {
         $result['html'] = icomplyPerfRewriteHtml($result['html']);
+    }
+    if (isset($result['html']) && is_string($result['html'])) {
+        require_once SITE_ROOT . '/includes/photo-credits.php';
+        $result['html'] = icomplyPhotoCreditInject($result['html']);
     }
     $status = $result['status'];
     $html = $result['html'];
