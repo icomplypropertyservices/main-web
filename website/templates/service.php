@@ -47,6 +47,7 @@ $areaServedNames = $ownsMainland
 $serviceSlug = $SERVICE_SLUG;
 require_once SITE_ROOT . '/includes/building-batch1.php';
 $b1Hub = icomplyB1IsService((string)$serviceSlug);
+$b1Set = [];
 if ($b1Hub) {
     $b1Img = icomplyB1Photo('service', (string)$serviceSlug);
     $ogImage = $b1Img !== '' ? url($b1Img) : $ogImage;
@@ -433,7 +434,9 @@ $schema = [
             </p>
             <?php endif; ?>
         </div>
-        <div class="lg:col-span-2 space-y-4">
+        <?php $b1NoPhotos = $b1Hub && empty($b1Set); /* photo gap (extensions): show no off-topic images */ ?>
+        <div class="lg:col-span-2 space-y-4"<?= $b1NoPhotos ? ' hidden' : '' ?>>
+            <?php if (!$b1NoPhotos): ?>
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
                 <img src="<?= htmlspecialchars(url($hubInline1 ?: ('/assets/images/keywords/' . $img2 . '.jpg')), ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> equipment"
@@ -448,6 +451,7 @@ $schema = [
                      loading="lazy"
                      onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
             </div>
+            <?php endif; ?>
         </div>
     </div>
 

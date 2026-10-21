@@ -133,7 +133,7 @@ function familyBank(fam) { return FAMILIES[fam] || FAMILIES.renovation; }
 
 function imagesHtml(fam, label, town) {
   const set = photos[fam] || [];
-  if (!set.length) return { html: "", og: `${ORIGIN}/assets/images/og-default.jpg`, n: 0 };
+  if (!set.length) return { html: "", og: `${ORIGIN}/assets/images/og-image.jpg`, n: 0 };
   const html = `<div class="b1-photos">${set.map((p, i) => `<img src="${esc(p.src)}" alt="${esc(`${p.scene} – ${lowerLabel(label)} in ${town}`)}" width="1200" height="630"${i ? ' loading="lazy"' : ' fetchpriority="high"'}>`).join("")}</div>`;
   return { html, og: ORIGIN + set[0].src, n: set.length };
 }

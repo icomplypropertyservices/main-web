@@ -74,3 +74,6 @@ jobs:
 
       - name: Thin x town internal links (CLOSE-Q8)
         run: node website/bin/check-town-interlinks.mjs dist
+
+      - name: Batch 1 Manchester building pages (hero call CTA, titles, meta, photos, links, similarity)
+        run: node website/bin/render-batch1.mjs /tmp/batch1 && python3 website/bin/check-batch1.py /tmp/batch1 dist && python3 website/bin/check-images-exist.py /tmp/batch1

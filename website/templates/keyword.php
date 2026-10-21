@@ -14,7 +14,12 @@ $canonicalUrl = url('/pages/keywords/' . $KEYWORD_SLUG . '.php');
 
 require_once SITE_ROOT . '/includes/building-batch1.php';
 $b1Hub = icomplyB1IsKeyword((string)$KEYWORD_SLUG);
-if ($b1Hub && ($b1Img = icomplyB1Photo('keyword', (string)$KEYWORD_SLUG)) !== '') { $ogImage = $b1Img; $KEYWORD_IMAGE = $b1Img; }
+if ($b1Hub && ($b1Img = icomplyB1Photo('keyword', (string)$KEYWORD_SLUG)) !== '') {
+    $ogImage = $b1Img; $KEYWORD_IMAGE = $b1Img;
+    $b1Set = icomplyB1Data()['photos'][icomplyB1Family('keyword', (string)$KEYWORD_SLUG)] ?? [];
+    $KEYWORD_INLINE = $b1Set[1]['src'] ?? $b1Img;
+    $SERVICE_IMAGE = $b1Set[2]['src'] ?? $b1Img;
+}
 $keywordName = $KEYWORD_NAME;
 $keywordH1 = !empty($KEYWORD_H1) ? $KEYWORD_H1 : $KEYWORD_NAME;
 $keywordSlug = $KEYWORD_SLUG;
