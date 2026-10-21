@@ -67,7 +67,7 @@ function fitMeta(text) {
     const extra = " Call 07517 806082.";
     if (!value.endsWith("806082.") && byteLength(value) + byteLength(extra) <= 160) value += extra;
   }
-  for (const pad of [" Book today.", " Fixed written quote.", " Certificates emailed.", " Call 07517 806082."]) {
+  for (const pad of [" Book today.", " Free written quote.", " Certificates emailed.", " Call 07517 806082."]) {
     if (byteLength(value) >= 140 && value.length >= 140) break;
     if (value.toLowerCase().includes(pad.trim().toLowerCase().replace(/\.$/, ""))) continue;
     if (byteLength(value) + byteLength(pad) <= 160) value += pad;

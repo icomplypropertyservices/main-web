@@ -54,7 +54,7 @@ function icomplyServiceHubCopy(string $slug): ?array
     }
     if ($slug === 'epc') {
         return [
-            'hero_accent' => 'Domestic or non-domestic. Fixed written quotes.',
+            'hero_accent' => 'Domestic or non-domestic. Free written quotes.',
             'pillars' => [
                 ['title' => 'The right model', 'text' => 'Houses and flats use the domestic methodology. Shops and offices often need non-domestic. We will not force the cheaper model onto the wrong building.'],
                 ['title' => 'Marketing, not a safety cert', 'text' => 'An EPC lets you advertise a let or a commercial unit. It does not prove the wiring or a gas appliance is safe this year.'],
@@ -92,7 +92,7 @@ function icomplyServiceHubCopy(string $slug): ?array
             'pillars' => [
                 ['title' => 'Domestic alarms', 'text' => 'Many single lets need smoke cover on each storey and a CO alarm where a fixed combustion appliance sits. We site, fit and note the day-of-let test.'],
                 ['title' => 'When a panel is the right answer', 'text' => 'Shared houses and licence conditions often need a designed fire alarm system. We will say so instead of selling a handful of domestics as if they were BS 5839.'],
-                ['title' => 'Fixed written quote', 'text' => 'Tell us the number of storeys and the detectors already fitted, and we will send a written quote.'],
+                ['title' => 'Free written quote', 'text' => 'Tell us the number of storeys and the detectors already fitted, and we will send a written quote.'],
             ],
             'intro' => [
                 'iComply supplies and sites smoke and carbon monoxide alarms for rented homes in the North West, and records what was tested when the tenancy file needs a note.',
@@ -109,7 +109,7 @@ function icomplyServiceHubCopy(string $slug): ?array
             'pillars' => [
                 ['title' => 'The escape route', 'text' => 'Monthly-style function tests, an annual full-duration test, and a logbook the file can hold. BS 5266 is the practice we follow.'],
                 ['title' => 'Upgrades when needed', 'text' => 'LED conversions and extra points when the existing fittings no longer cover the route. Every failed fitting is recorded and fixed or quoted.'],
-                ['title' => 'Fixed written quote', 'text' => 'Height, wiring and access equipment all affect the job, so we quote each building individually.'],
+                ['title' => 'Free written quote', 'text' => 'Height, wiring and access equipment all affect the job, so we quote each building individually.'],
             ],
             'intro' => [
                 'iComply tests and upgrades emergency lighting for shared houses, blocks and workplaces across the North West, from the Stockport SK2 yard.',
@@ -143,7 +143,7 @@ function icomplyServiceHubCopy(string $slug): ?array
             'pillars' => [
                 ['title' => 'Wet heating', 'text' => 'Radiator changes, controls and system flushes, quoted after we see the layout.'],
                 ['title' => 'Gas appliances', 'text' => 'Boiler installation, service and landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.'],
-                ['title' => 'Fixed written quote', 'text' => 'Every heating and gas job gets a written quote. Gas work is carried out by Gas Safe registered engineers.'],
+                ['title' => 'Free written quote', 'text' => 'Every heating and gas job gets a written quote. Gas work is carried out by Gas Safe registered engineers.'],
             ],
             'intro' => [
                 'Heating installation from iComply covers radiators, controls and domestic or light-commercial systems across the North West.',

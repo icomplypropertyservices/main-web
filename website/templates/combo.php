@@ -12,7 +12,7 @@ $ownsMainland = function_exists('serviceOwnsMainlandAreas') && serviceOwnsMainla
 $coveragePhrase = $ownsMainland ? 'UK mainland' : 'the North West';
 $pageTitle = $SERVICE_NAME . ' in ' . $AREA . ' | iComply Property Services';
 $metaDesc = $poaCombo
-    ? ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Fixed written quote, same/next-day engineers from our Stockport team.')
+    ? ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Free written quote, same/next-day engineers from our Stockport team.')
     : ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing and certification. ' . ($ownsMainland ? 'UK mainland fire protection, scheduled from Stockport.' : 'Local engineers.') . ' Written quote after scope.');
 if ($SERVICE_SLUG === 'fire-risk-assessments') {
     $fraGuide = function_exists('fraGuidePrice') ? fraGuidePrice() : '£350';

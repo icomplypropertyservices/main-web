@@ -31,7 +31,7 @@ for r in rows:
                 fails.append(f"{r['slug']}: lead housing '{lead}' but no '{line}'")
             if k != key and present:
                 fails.append(f"{r['slug']}: says '{line}' but lead housing is '{lead}'")
-SITE_BANNED = re.compile(r"\binvent(?:s|ed|ing)?\b|\bthis readout\b|\bfixed-price\b|fixed pricing is used whenever|whenever the scope is clear|\bfixed written quote\b|we do not dump 200,000|you@company|\bkeyword guides?\b|\bmade-up\b|\b(?:price|prices|fee|fees)(?: list)? on this page\b|coverage for this keyword|this keyword does not|topic &(?:amp; )?keyword|local seo guides|seo hubs|seo content|shopify product ids|local priority on this page|all keyword guides|\bP0 set\b|published population context"
+SITE_BANNED = re.compile(r"\binvent(?:s|ed|ing)?\b|\bthis readout\b|\bfixed-price\b|fixed pricing is used whenever|whenever the scope is clear|\bwritten quote\b|we do not dump 200,000|you@company|\bkeyword guides?\b|\bmade-up\b|\b(?:price|prices|fee|fees)(?: list)? on this page\b|coverage for this keyword|this keyword does not|topic &(?:amp; )?keyword|local seo guides|seo hubs|seo content|shopify product ids|local priority on this page|all keyword guides|\bP0 set\b|published population context"
     # G12 gas wording: iComply never holds Gas Safe registration itself (questions are allowed).
     r"|\bi-?comply(?:'s)? (?:\w+ ){0,2}Gas Safe\b[^.?!\n]{0,160}(?=[.!\n]|$)|\bour Gas Safe\b|\bGas Safe competence\b|\bwe(?:'re| are) Gas Safe\b|\bby Gas Safe engineers\b", re.I)
 site_pages = 0

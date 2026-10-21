@@ -55,7 +55,7 @@ export function ctrDescription(subject, town, slug, gas) {
   const lead = `${subject} in ${town}${price ? ` from ${price}` : ""}.`;
   const who = gas ? " Same/next-day visits, carried out by Gas Safe registered engineers." : " Same/next-day engineers from our Stockport team.";
   for (const d of [
-    `${lead}${who} Fixed written quote, certificates emailed. Call or WhatsApp ${CTR_PHONE}.`,
+    `${lead}${who} Free written quote, certificates emailed. Call or WhatsApp ${CTR_PHONE}.`,
     `${lead}${who} Call or WhatsApp ${CTR_PHONE}.`,
     `${lead} Same/next-day. Call ${CTR_PHONE}.`,
   ]) if (d.length <= 160) return d;
@@ -301,7 +301,7 @@ export function renderTownPage(input) {
       intro: `We service, repair and maintain ${subject} equipment for landlords, agents and commercial sites, with engineers based in Stockport.`,
       focus: [
         `${subject} parts identified before the visit`,
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Certificates and reports emailed after the visit",
       ],
       gas: serviceSlug === "gas-systems",
@@ -321,7 +321,7 @@ export function renderTownPage(input) {
       intro: `${subject} carried out by our ${serviceName} engineers, with a written quote for your building.`,
       focus: job.focus && job.focus.length ? job.focus : [
         "Same-day and next-day slots where available",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Clear written report after the visit",
       ],
       gas: Boolean(job.gas) || serviceSlug === "gas-systems",
@@ -341,7 +341,7 @@ export function renderTownPage(input) {
         intro: "",
         focus: [
           "Same-day and next-day slots where available",
-          "Fixed written quote before work starts",
+          "Free written quote before work starts",
           "Certificates and reports emailed after the visit",
         ],
         gas,
@@ -370,7 +370,7 @@ export function renderTownPage(input) {
         ? relatedKw.focus
         : [
           `Survey and scope for ${serviceName}`,
-          "Fixed written quote before work starts",
+          "Free written quote before work starts",
           "Certificates and reports emailed after the visit",
         ],
       gas: serviceSlug === "gas-systems" || Boolean(relatedKw && relatedKw.gas),

@@ -729,7 +729,7 @@ function icomplyApplyCustomerKeywordCopy(array $keywords): array
             $row['focus_points'] = [
                 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers',
                 'Same-day and next-day slots where available',
-                'Fixed written quote from our Stockport team',
+                'Free written quote from our Stockport team',
                 'Certificates emailed after the visit',
             ];
             $row['faq'] = [
