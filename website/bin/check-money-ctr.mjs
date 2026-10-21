@@ -134,8 +134,8 @@ for (const [p, page] of Object.entries(doc.pages || {})) {
   for (const g of block.match(/[^.]*Gas Safe[^.]*/g) || []) if (!/carried out by Gas Safe registered engineers/i.test(g)) fail(p, `gas wording: ${g.trim()}`);
   const words = proseWords(html);
   const links = internalLinks(html).size;
-  if (page.kind === "xtown") {
-    if (words < 800) fail(p, `prose words ${words} < 800`);
+  if (page.kind === "xtown" || page.minWords) {
+    if (words < (page.minWords || 800)) fail(p, `prose words ${words} < 800`);
     if (links < 80) fail(p, `unique internal links ${links} < 80`);
   }
   rows.push(`${page.brief}\t${p}\ttitle=${title.length}\tmeta=${meta.length}\twords=${words}\tlinks=${links}\t${robots}`);

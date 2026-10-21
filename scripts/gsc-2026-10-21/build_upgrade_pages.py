@@ -164,6 +164,24 @@ def build(path):
     paras += [pick(seed + "s", SCOPE).format(**fmt).strip(), pick(seed + "a", AFTER).format(**fmt)]
     if "gas" in service or "boiler" in kslug:
         paras.append("All gas work is carried out by Gas Safe registered engineers, and the safety checks are recorded on the job sheet you receive.")
+    if not town_slug:
+        # Hubs: more page-specific depth (task 5 asks for 800+ words on every queued page).
+        body = (KW.get(kslug) or {}).get("body", "")
+        body = " ".join(x for x in re.split(r"(?<=\.)\s+", body) if not re.search(r"facilities managers|FM teams|investors|£|Gas Safe|info@|07471", x)).strip()
+        if body and body != intro: paras.append(body)
+        towns = [t["name"] for t in ALLOW if t.get("bucket") == "gm_core"][:0] or ["Manchester", "Stockport", "Bolton", "Oldham", "Rochdale", "Wigan", "Bury", "Salford", "Warrington", "Preston", "Blackburn", "Burnley"]
+        start = h(seed + "t", len(towns))
+        tl = towns[start:] + towns[:start]
+        paras += [
+            f"What affects the cost of {kwl}? Mostly the size of the property, how easy it is to reach the work, the condition of what is already there and whether anything needs making good afterwards. We explain each of those on the visit, so the written quote matches what you actually need. {price_line(kslug)}",
+            f"We carry out {kwl} for homeowners, landlords, letting agents and small businesses. A family home, a rented flat and a shop each need a slightly different approach, so we ask who uses the building and when, and plan the work to cause as little disruption as possible.",
+            f"Our team works across {lst(tl[:8])} and the towns in between. Most visits are booked within a few days, and Same/Next-Day slots are offered where the diary allows. If your property is a little further out, call anyway: we will tell you straight away whether we can help.",
+            f"Before the visit it helps to have a few things ready: any old certificates or reports, photos of the problem, the age of the property if you know it, and the times you or your tenants are in. That lets us bring the right parts and finish {kwl} in as few visits as possible.",
+            f"After the work you get a short summary of what was done, photos of the finished job and any certificate or report that applies. If something needs attention later, we note it with a clear explanation rather than a long list of upsells, so you can plan ahead with confidence.",
+        ]
+        for q, a_ in ((KW.get(kslug) or {}).get("faq") or [])[:4]:
+            if not re.search(r"£|Gas Safe|info@|07471|facilities managers", a_):
+                paras.append(f"{q} {a_}")
     paras.append(pick(seed + "c", CLOSE).format(**fmt))
     faqs = [
         [f"How soon can you do {kwl} in {town_disp}?", f"We offer Same/Next-Day visits where the diary allows. Call {PHONE} and we will give you the earliest slot for your postcode."],
@@ -193,6 +211,7 @@ def build(path):
     return {
         "brief": "GSC-2026-10-21",
         "kind": "xtown" if town_slug else "hub",
+        "minWords": 800,
         "title": title_for(name, town, kslug),
         "meta": meta_for(name, town, kslug),
         "h2": f"{name} in {town_disp}: what to expect",
@@ -206,6 +225,8 @@ def build(path):
         "_words": words,
     }
 
+import sys
+DIST = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else None
 rows = list(csv.DictReader(open(D / "upgrade-queue.csv")))
 pages, skipped = {}, []
 for r in rows:
@@ -213,6 +234,8 @@ for r in rows:
     p = re.sub(r"^https?://[^/]+", "", r["url"]).rstrip("/")
     if p in CTR: skipped.append((p, "already in C1-C15")); continue
     if p in pages: skipped.append((p, "duplicate (www/apex)")); continue
+    if DIST and not p.startswith("/pages/keywords/") and not any((DIST / f).is_file() for f in (p.lstrip("/") + ".php", p.lstrip("/") + ".html", p.lstrip("/") + "/index.html")):
+        skipped.append((p, "not a page (one-hop 301 to its hub)")); continue
     e = build(p)
     if not e: skipped.append((p, "no keyword/service data")); continue
     e["queue"] = r["problem"]
