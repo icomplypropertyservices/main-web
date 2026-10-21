@@ -38,6 +38,75 @@
 [[plugins]]
   package = "./netlify/plugins/lock-sitemap"
 
+# 2026-10-21 Manchester building calls audit: head-term trade keywords used to
+# 301 to /pages/areas (lost the visit). Send them to the matching trade/town page.
+[[redirects]]
+  from = "/pages/keywords/plasterer/:town"
+  to = "/pages/plastering/:town"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/plasterers/:town"
+  to = "/pages/plastering/:town"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/plastering/:town"
+  to = "/pages/plastering/:town"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/builder/:town"
+  to = "/pages/building-maintenance/:town"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/builders/:town"
+  to = "/pages/building-maintenance/:town"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/joiner/:town"
+  to = "/pages/joinery/:town"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/joiners/:town"
+  to = "/pages/joinery/:town"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/kitchen-fitters/:town"
+  to = "/pages/kitchens/:town"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/kitchen-fitter/:town"
+  to = "/pages/kitchens/:town"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/extension-builders/:town"
+  to = "/pages/extensions/:town"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/keywords/loft-conversion-builders/:town"
+  to = "/pages/loft-conversions/:town"
+  status = 301
+  force = true
+
+
 [[redirects]]
   from = "https://www.icomplypropertyservices.co.uk/*"
   to = "https://icomplypropertyservices.co.uk/:splat"

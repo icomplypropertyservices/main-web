@@ -149,6 +149,22 @@ const AUDIENCES = [
   "housing associations",
 ];
 
+// Building trades: homeowner/landlord searchers ("plasterer manchester"), not
+// facilities buyers. Trade nouns match what people type into Google.
+const BUILD_TRADES = {
+  plastering: "Plasterers",
+  kitchens: "Kitchen Fitters",
+  extensions: "Extension Builders",
+  joinery: "Joiners",
+  "loft-conversions": "Loft Conversion Builders",
+  renovation: "Renovation Builders",
+  "building-maintenance": "Builders",
+  bathrooms: "Bathroom Fitters",
+  bricklaying: "Bricklayers",
+  "dry-lining": "Dryliners",
+};
+const BUILD_AUDIENCES = ["homeowners", "landlords", "homeowners and landlords"];
+
 const VISIT_STYLES = [
   "a planned daytime visit",
   "an out-of-hours attendance where the site cannot close",
@@ -373,7 +389,8 @@ export function renderTownPage(input) {
   // Jack: every real page is indexable. Never emit noindex here.
   const robots = "index, follow";
   const seed = hashStr(`${kind}|${subject}|${serviceSlug}|${townSlug}`);
-  const audience = pick(AUDIENCES, seed);
+  const buildTrade = kind === "service" ? BUILD_TRADES[serviceSlug] : null;
+  const audience = buildTrade ? pick(BUILD_AUDIENCES, seed) : pick(AUDIENCES, seed);
   const visit = pick(VISIT_STYLES, seed >>> 3);
   const neighbours = Array.isArray(place.neighbours) ? place.neighbours.filter(Boolean) : [];
   const near = neighbours.length ? neighbours.join(", ") : "Stockport, Manchester and the surrounding North West";
@@ -388,10 +405,13 @@ export function renderTownPage(input) {
     : `We work on homes, shops, offices and industrial units across ${place.name}.`;
   const focus = (keyword.focus && keyword.focus.length ? keyword.focus : [`Scope agreed before ${subject} starts`]).slice(0, 4);
   const canonical = `https://icomplypropertyservices.co.uk${path}`;
-  const h1 = `${subject} for ${audience} in ${place.name}`;
+  const h1 = buildTrade
+    ? `${buildTrade} in ${place.name} | Free Quote: 07517 806082`
+    : `${subject} for ${audience} in ${place.name}`;
   const ctrSlug = kind === "keyword" ? input.keyword : serviceSlug;
   const ctrGas = Boolean(keyword.gas) || serviceSlug === "gas-systems" || serviceSlug === "heating";
-  const title = ctrTitle(subject, place.name, ctrSlug);
+  const buildTitle = buildTrade ? `${buildTrade} ${place.name} | Free Quote 07517 806082` : "";
+  const title = buildTitle && buildTitle.length <= 60 ? buildTitle : ctrTitle(subject, place.name, ctrSlug);
   const description = ctrDescription(subject, place.name, ctrSlug, ctrGas);
   const imageSlug = IMAGE_SLUG[serviceSlug] || serviceSlug;
 
