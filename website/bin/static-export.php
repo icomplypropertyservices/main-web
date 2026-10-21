@@ -210,6 +210,7 @@ $required = [
     '/renewals',
     '/renewals/thanks',
     '/pages/about',
+    '/pages/photo-credits',
     '/pages/areas',
     '/pages/manufacturers',
     '/pages/resources',

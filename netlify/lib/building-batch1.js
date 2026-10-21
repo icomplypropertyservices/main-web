@@ -6,6 +6,7 @@
  */
 import geo from "../../website/data/town-geo-slim.json" with { type: "json" };
 import photos from "../../website/data/building-batch1-photos.json" with { type: "json" };
+import creditRows from "../../website/data/hero-image-credits.json" with { type: "json" };
 import { SERVICES, KEYWORDS, FAMILIES, PLASTERBOARD, STEPS_COMMON, GENERIC, FAMILY_EXTRA, GENERIC_FAQS } from "./building-batch1-content.js";
 import { MATRIX_CSS, MATRIX_HEADER, MATRIX_FOOTER, MATRIX_SITE_FOOTER } from "./page-shell.js";
 import { townFactsBlock } from "./town-facts.js";
@@ -131,10 +132,21 @@ function identity(m) {
 const FAM_SERVICE = { gas: "gas-systems", "fire-doors": "fire-doors" };
 function familyBank(fam) { return FAMILIES[fam] || FAMILIES.renovation; }
 
+const decode = (t) => t.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#0?39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+export const CREDITS = Object.fromEntries(creditRows.filter((r) => /^https?:\/\//.test(r.source || "")).map((r) => [r.file, {
+  artist: decode(String(r.artist || "").replace(/<\/li>/g, "; ").replace(/<[^>]+>/g, "")).replace(/\s+/g, " ").replace(/^[\s;]+|[\s;]+$/g, "") || "Unknown author",
+  license: r.license || "", source: r.source,
+}]));
+export function creditHtml(src) {
+  const c = CREDITS[src];
+  if (!c) return "";
+  return `<figcaption class="b1-credit">Example photo, not an iComply job. Photo: ${esc(c.artist)}, ${esc(c.license)}, via <a href="${esc(c.source)}" rel="nofollow noopener" target="_blank">Wikimedia Commons</a>. <a href="/pages/photo-credits">All photo credits</a></figcaption>`;
+}
+
 function imagesHtml(fam, label, town) {
   const set = photos[fam] || [];
   if (!set.length) return { html: "", og: `${ORIGIN}/assets/images/og-image.jpg`, n: 0 };
-  const html = `<div class="b1-photos">${set.map((p, i) => `<img src="${esc(p.src)}" alt="${esc(`${p.scene} – ${lowerLabel(label)} in ${town}`)}" width="1200" height="630"${i ? ' loading="lazy"' : ' fetchpriority="high"'}>`).join("")}</div>`;
+  const html = `<div class="b1-photos">${set.map((p, i) => `<figure><img src="${esc(p.src)}" alt="${esc(`${p.scene} (example ${lowerLabel(label)} photo)`)}" width="1200" height="630"${i ? ' loading="lazy"' : ' fetchpriority="high"'}>${creditHtml(p.src)}</figure>`).join("")}</div>`;
   return { html, og: ORIGIN + set[0].src, n: set.length };
 }
 
@@ -148,8 +160,11 @@ const CSS = `<style>
 .b1-sub{margin:0 0 12px;font-size:.95rem}
 .b1-photos{display:grid;grid-template-columns:2fr 1fr;gap:8px;margin:0 0 18px}
 .b1-photos img{width:100%;height:auto;border-radius:8px;object-fit:cover}
-.b1-photos img:first-child{grid-row:span 2}
-.b1-photos img:only-child{grid-column:1/-1}
+.b1-photos figure{margin:0}
+.b1-photos figure:first-child{grid-row:span 2}
+.b1-photos figure:only-child{grid-column:1/-1}
+.b1-credit{font-size:.75rem;line-height:1.35;color:#444;margin:4px 2px 0}
+.b1-credit a{color:#444;text-decoration:underline}
 .b1-links{columns:2;gap:16px;padding-left:18px}
 @media(min-width:900px){.b1-links{columns:3}}
 .mx main h1{margin:.3em 0 .2em;font-size:clamp(1.6rem,4.6vw,2.4rem);line-height:1.15}

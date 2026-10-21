@@ -312,10 +312,11 @@ $schema = [
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
                 <img src="<?= htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8') ?>"
-                     alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> by iComply Property Services"
+                     alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?><?= !empty($b1Hub) ? ' (example photo)' : ' by iComply Property Services' ?>"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
                      loading="eager"
                      onerror="this.style.display='none'">
+                <?php if (!empty($b1Hub)): ?><div class="absolute top-0 right-0 z-10 max-w-full"><?= icomplyB1Credit((string)$ogImage, 'px-3 py-1 text-[11px] text-white/90 bg-[#0B1F3A]/85 [&_a]:text-white') ?></div><?php endif; ?>
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-[#0B1F3A]/20 to-transparent">
                     <div class="text-sm text-white/70">Serving <?= count($allAreas) ?>+ towns</div>
                     <div class="text-2xl font-semibold mt-1"><?= $poaService ? 'Local team · Price on application' : 'Local engineers · Written quotes' ?></div>
@@ -453,6 +454,7 @@ $schema = [
                      class="w-full h-44 object-cover"
                      loading="lazy"
                      onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
+                <?= !empty($b1Hub) && $hubInline1 ? icomplyB1Credit((string)$hubInline1, 'px-3 py-2 text-xs text-zinc-700 bg-white') : '' ?>
             </div>
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
                 <img src="<?= htmlspecialchars(url($hubInline2 ?: icomplyKeywordImagePath((string)$img3, (string)$serviceSlug)), ENT_QUOTES, 'UTF-8') ?>"
@@ -460,6 +462,7 @@ $schema = [
                      class="w-full h-44 object-cover"
                      loading="lazy"
                      onerror="this.src='<?= url('/assets/images/services/' . $SERVICE_SLUG . '.jpg') ?>'">
+                <?= !empty($b1Hub) && $hubInline2 ? icomplyB1Credit((string)$hubInline2, 'px-3 py-2 text-xs text-zinc-700 bg-white') : '' ?>
             </div>
             <?php endif; ?>
         </div>
