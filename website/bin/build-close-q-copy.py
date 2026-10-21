@@ -462,7 +462,7 @@ def deepen(intent: str, checks: list[str], avoid: str) -> str:
             f"On a {intent} quote the useful detail is the checklist, not a slogan. "
             f"We confirm each of these before the written price: {lines} "
             f"If one of those items is unknown, the quote says it is unknown. "
-            f"We do not smooth the gap so the email looks finished."
+            + ("" if "gas" in intent.lower() else "We do not smooth the gap so the email looks finished.")
         ),
         (
             f"What we will not do on {intent} is {avoid} "
@@ -602,9 +602,8 @@ DEEP = {
             "the formal record name, not only the CP12 shorthand.",
             "defects written with the action the record describes.",
             "no-gas properties described as no-gas.",
-            "0800 111 999 first if you smell gas.",
-            "engineers who are Gas Safe registered doing the check.",
-            "no registration number printed for iComply.",
+            "call the National Gas Emergency Service on 0800 111 999 first if you smell gas.",
+            "gas work carried out by Gas Safe registered engineers.",
         ],
         "describe the gas work as anything other than carried out by Gas Safe registered engineers, or publish a certificate fee.",
     ),
