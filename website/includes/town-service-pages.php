@@ -673,7 +673,9 @@ function icomplyRenderTownPage(string $family, string $slug): void
     $edit = icomplyTownEditorial($family, $town);
     $ctx = $edit['ctx'];
     $csrf = icomplyTownCsrf();
-    $place = $ctx['name'] . ', ' . $ctx['county'];
+    // Never repeat the town ('Stockport, Stockport'): add the county only when it differs.
+    $county = trim((string)($ctx['county'] ?? ''));
+    $place = ($county === '' || strcasecmp($county, (string)$ctx['name']) === 0) ? (string)$ctx['name'] : $ctx['name'] . ', ' . $county;
     if ($family === 'barriers') {
         $pageTitle = 'CAME vehicle barriers in ' . $place;
         $metaDesc = 'Vehicle barriers in ' . $ctx['name'] . ' (' . $ctx['pop'] . ' people, ' . $ctx['county'] . '). CAME partner. About ' . $ctx['miles'] . ' miles from Stockport. 07517806082.';

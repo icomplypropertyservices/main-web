@@ -226,6 +226,7 @@ function icomplySitemapEntries(): array
         ['/privacy', '0.3', 'privacy.php'],
         ['/terms', '0.3', 'terms.php'],
         ['/pages/about', '0.75', 'pages/about.php'],
+        ['/pages/photo-credits', '0.3', 'pages/photo-credits.php'],
         ['/pages/faq', '0.75', 'pages/faq.php'],
         ['/pages/landlords', '0.8', 'pages/landlords.php'],
         ['/pages/commercial', '0.8', 'pages/commercial.php'],
