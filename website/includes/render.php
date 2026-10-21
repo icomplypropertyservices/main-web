@@ -267,8 +267,10 @@ function keywordTemplatePlaceholders(
             'mainEntity' => $faqEntities,
         ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
-    $kwImg = url(icomplyKeywordImagePath($slug, (string)$serviceSlug));
-    $svcImg = url('/assets/images/services/' . $serviceSlug . '.jpg');
+    require_once __DIR__ . '/quality-bar.php';
+    $kwImgService = icomplyPlasterImageSlug($slug, (string)$serviceSlug);
+    $kwImg = url($kwImgService !== (string)$serviceSlug ? '/assets/images/services/' . $kwImgService . '.jpg' : icomplyKeywordImagePath($slug, (string)$serviceSlug));
+    $svcImg = url('/assets/images/services/' . $kwImgService . '.jpg');
     $inlineImg = $kwImg;
     if (function_exists('icomplyNationwide3lineIsP0') && icomplyNationwide3lineIsP0($slug)) {
         $gallery = icomplyNationwide3lineImages($slug);

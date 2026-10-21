@@ -62,25 +62,7 @@ function icomplyB1HomeBlock(): string {
     return $h . '</ul></div></section>';
 }
 
-/** Credits from data/hero-image-credits.json keyed by file path (tags stripped). */
-function icomplyPhotoCredits(): array {
-    static $c = null;
-    if ($c !== null) return $c;
-    $c = [];
-    $rows = json_decode((string) @file_get_contents(SITE_ROOT . '/data/hero-image-credits.json'), true) ?: [];
-    foreach ($rows as $r) {
-        $src = (string) ($r['source'] ?? '');
-        if (!preg_match('~^https?://~', $src)) continue; // own photos: no third-party credit
-        $artist = trim(preg_replace('/\s+/u', ' ', html_entity_decode(strip_tags(str_replace(['</li>', '<li>'], ['; ', ''], (string) ($r['artist'] ?? ''))), ENT_QUOTES, 'UTF-8')), " ;");
-        $c[(string) $r['file']] = [
-            'artist' => $artist !== '' ? $artist : 'Unknown author',
-            'license' => (string) ($r['license'] ?? ''),
-            'source' => $src,
-            'title' => preg_replace('/^File:/', '', (string) ($r['title'] ?? '')),
-        ];
-    }
-    return $c;
-}
+require_once __DIR__ . '/photo-credits.php';
 /** Visible credit line under a stock/Commons photo, or '' for our own photos. */
 function icomplyB1Credit(string $src, string $class = 'mt-1 px-3 pb-2 text-xs text-zinc-600'): string {
     $path = (string) (parse_url($src, PHP_URL_PATH) ?? $src);

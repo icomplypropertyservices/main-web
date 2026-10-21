@@ -329,10 +329,19 @@ function icomplyServiceImageFamilyPicks(string $slug, int $seed): array
     return array_slice($picks, 0, 2);
 }
 
+/** Plastering / plasterboard / dry-lining pages show their own credited photo (never another family's). */
+function icomplyPlasterImageSlug(string $text, string $fallback): string
+{
+    if (preg_match('/dry[- ]?lining/i', $text)) return 'dry-lining';
+    if (preg_match('/plaster|skim/i', $text)) return 'plastering';
+    return $fallback;
+}
+
 function icomplyQualityBarImages(string $serviceSlug, string $altPrefix, string $slot = 'q2-content-images'): array
 {
     // Jack 20 Oct: only photos from the page's own service (or, outside service_photos, its family).
     $slug = $serviceSlug !== '' ? $serviceSlug : 'fire-alarms';
+    $slug = icomplyPlasterImageSlug($altPrefix, $slug);
     $primary = '/assets/images/services/' . $slug . '.jpg';
     $extra = icomplyServiceImageFamilyPicks($slug, abs(crc32($slug)));
     $src = static function (string $path): string {

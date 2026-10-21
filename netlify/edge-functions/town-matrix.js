@@ -422,7 +422,9 @@ export function renderTownPage(input) {
   const buildTitle = buildTrade ? `${buildTrade} ${place.name} | Free Quote 07517 806082` : "";
   const title = buildTitle && buildTitle.length <= 60 ? buildTitle : ctrTitle(subject, place.name, ctrSlug);
   const description = ctrDescription(subject, place.name, ctrSlug, ctrGas);
-  const imageSlug = IMAGE_SLUG[serviceSlug] || serviceSlug;
+  // Plastering / plasterboard / dry-lining pages show their own credited photo.
+  const plasterText = kind === "manufacturer" ? "" : `${path} ${serviceSlug || ""}`;
+  const imageSlug = /dry-?lining/.test(plasterText) ? "dry-lining" : /plaster|skim/.test(plasterText) ? "plastering" : (IMAGE_SLUG[serviceSlug] || serviceSlug);
 
   const gas = keyword.gas || serviceSlug === "gas-systems" || serviceSlug === "heating";
   const packed = (kind === "keyword" || kind === "service")

@@ -39,7 +39,7 @@
     "source": "https://commons.wikimedia.org/wiki/File%3AShaft_dupont_mississauga_on-ar.jpg",
     "title": "File:Shaft dupont mississauga on-ar.jpg",
     "license": "Public domain",
-    "artist": "<ul><li>Original: <a href=\"//commons.wikimedia.org/wiki/User:Achim_Hering\" title=\"User:Achim Hering\">Achim Hering</a></li>\n<li>Derivative: <a href=\"//commons.wikimedia.org/wiki/User:%D8%A8%D8%A7%D8%B3%D9%85\" title=\"User:باسم\">باسم</a></li><"
+    "artist": "<ul><li>Original: <a href=\"//commons.wikimedia.org/wiki/User:Achim_Hering\" title=\"User:Achim Hering\">Achim Hering</a></li>\n<li>Derivative: <a href=\"//commons.wikimedia.org/wiki/User:%D8%A8%D8%A7%D8%B3%D9%85\" title=\"User:\u0628\u0627\u0633\u0645\">\u0628\u0627\u0633\u0645</a></li><"
   },
   {
     "file": "/assets/images/lanes/aov-air-handling/43.jpg",
@@ -102,7 +102,7 @@
     "source": "https://commons.wikimedia.org/wiki/File%3AA_boom_barrier_on_CS-240_road_in_Andorra.jpg",
     "title": "File:A boom barrier on CS-240 road in Andorra.jpg",
     "license": "CC BY-SA 4.0",
-    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9_%D0%A0%D0%BE%D0%BC%D0%B0%D0%BD%D0%B5%D0%BD%D0%BA%D0%BE\" title=\"User:Андрей Романенко\">Андрей Романенко</a>"
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9_%D0%A0%D0%BE%D0%BC%D0%B0%D0%BD%D0%B5%D0%BD%D0%BA%D0%BE\" title=\"User:\u0410\u043d\u0434\u0440\u0435\u0439 \u0420\u043e\u043c\u0430\u043d\u0435\u043d\u043a\u043e\">\u0410\u043d\u0434\u0440\u0435\u0439 \u0420\u043e\u043c\u0430\u043d\u0435\u043d\u043a\u043e</a>"
   },
   {
     "file": "/assets/images/products/bar-5m-videx.jpg",
@@ -186,14 +186,14 @@
     "source": "https://commons.wikimedia.org/wiki/File:Sindelfingen_Haus_%26_Energie_2018_by-RaBoe_026.jpg",
     "title": "File:Sindelfingen Haus & Energie 2018 by-RaBoe 026.jpg",
     "license": "CC BY-SA 3.0 de",
-    "artist": "© Ra Boe / Wikipedia"
+    "artist": "\u00a9 Ra Boe / Wikipedia"
   },
   {
     "file": "/assets/images/services/b1/damp-proofing-3.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:Sindelfingen_Haus_%26_Energie_2018_by-RaBoe_024.jpg",
     "title": "File:Sindelfingen Haus & Energie 2018 by-RaBoe 024.jpg",
     "license": "CC BY-SA 3.0 de",
-    "artist": "© Ra Boe / Wikipedia"
+    "artist": "\u00a9 Ra Boe / Wikipedia"
   },
   {
     "file": "/assets/images/services/b1/flooring-1.jpg",
@@ -308,27 +308,6 @@
     "artist": "David Mulder"
   },
   {
-    "file": "/assets/images/services/b1/plastering-1.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Continued_installation_of_marble_finishes_in_one_of_the_Men%27s_restrooms_in_the_LIRR_passenger_concourse._(CM014B,_07-30-2018)_(43111930774).jpg",
-    "title": "File:Continued installation of marble finishes in one of the Men's restrooms in the LIRR passenger concourse. (CM014B, 07-30-2018) (43111930774).jpg",
-    "license": "CC BY 2.0",
-    "artist": "MTA Capital Construction Mega Projects"
-  },
-  {
-    "file": "/assets/images/services/b1/plastering-2.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Drywall_and_tools.jpg",
-    "title": "File:Drywall and tools.jpg",
-    "license": "CC BY-SA 4.0",
-    "artist": "Timothyjosephwood"
-  },
-  {
-    "file": "/assets/images/services/b1/plastering-3.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Plastering_the_Wall_(2529677768).jpg",
-    "title": "File:Plastering the Wall (2529677768).jpg",
-    "license": "CC BY 2.0",
-    "artist": "Andrew Comings from Same, USA"
-  },
-  {
     "file": "/assets/images/services/b1/plumbing-1.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:247_Home_Rescue_back_of_sink_plumbing.jpg",
     "title": "File:247 Home Rescue back of sink plumbing.jpg",
@@ -387,7 +366,7 @@
   {
     "file": "/assets/images/services/b1/rendering-3.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:Bogot%C3%A1_carrera_6_calle_118.JPG",
-    "title": "File:Bogotá carrera 6 calle 118.JPG",
+    "title": "File:Bogot\u00e1 carrera 6 calle 118.JPG",
     "license": "CC BY-SA 4.0",
     "artist": "Felipe Restrepo Acosta"
   },
@@ -424,12 +403,12 @@
     "source": "https://commons.wikimedia.org/wiki/File:Skifertak_-_slate_roof_natural_stone_cover.JPG",
     "title": "File:Skifertak - slate roof natural stone cover.JPG",
     "license": "CC BY-SA 4.0",
-    "artist": "Øyvind Holmstad"
+    "artist": "\u00d8yvind Holmstad"
   },
   {
     "file": "/assets/images/services/b1/roofing-3.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:Slate_roof,_Sosnov%C3%A1_%C4%8Dp._28,_Opava_District,_Czech_Republic_18.jpg",
-    "title": "File:Slate roof, Sosnová čp. 28, Opava District, Czech Republic 18.jpg",
+    "title": "File:Slate roof, Sosnov\u00e1 \u010dp. 28, Opava District, Czech Republic 18.jpg",
     "license": "CC BY-SA 4.0",
     "artist": "Michal Klajban"
   },
@@ -464,7 +443,7 @@
   {
     "file": "/assets/images/services/b1/windows-doors-2.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:L%C3%BCbeck,_An_der_Mauer_150-152_--_2017_--_0454.jpg",
-    "title": "File:Lübeck, An der Mauer 150-152 -- 2017 -- 0454.jpg",
+    "title": "File:L\u00fcbeck, An der Mauer 150-152 -- 2017 -- 0454.jpg",
     "license": "CC BY-SA 4.0",
     "artist": "Dietmar Rabich"
   },
@@ -485,7 +464,7 @@
   {
     "file": "/assets/images/services/b1/fire-doors-1.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:Brandd%C3%B6rrar_vindsv%C3%A5ning,_G%C3%B6teborg_(S4024074).jpg",
-    "title": "File:Branddörrar vindsvåning, Göteborg (S4024074).jpg",
+    "title": "File:Brandd\u00f6rrar vindsv\u00e5ning, G\u00f6teborg (S4024074).jpg",
     "license": "CC BY-SA 4.0",
     "artist": "Andersreilund"
   },
@@ -502,5 +481,19 @@
     "title": "File:Georgetown PowerPlant - fire door 01.jpg",
     "license": "CC BY-SA 3.0",
     "artist": "Joe Mabel"
+  },
+  {
+    "file": "/assets/images/services/plastering.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Plasterer_at_work_on_a_wall_arp.jpg",
+    "title": "File:Plasterer at work on a wall arp.jpg",
+    "license": "Public domain",
+    "artist": "Adrian Pingstone (Arpingstone)"
+  },
+  {
+    "file": "/assets/images/services/dry-lining.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Hanging_Drywall_(9020064).jpg",
+    "title": "File:Hanging Drywall (9020064).jpg",
+    "license": "Public domain",
+    "artist": "U.S. Navy photo by Petty Officer 3rd Class Thomas Depippo"
   }
 ]

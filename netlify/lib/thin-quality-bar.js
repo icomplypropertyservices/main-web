@@ -11,6 +11,7 @@ import imageFamilies from "../../website/data/service-image-families.json" with 
  * Page Enrichment swaps copy and image files at the data-pe-slot hooks
  * documented in docs/pe-quality-bar-slots.md. Do not add a second OG helper.
  */
+import { photoCreditCaption } from "./photo-credits.js";
 import fragments from "../../website/data/quality-bar-prose.json" with { type: "json" };
 
 const ORIGIN = "https://icomplypropertyservices.co.uk";
@@ -158,6 +159,7 @@ export function thinImages(serviceSlug, subject, placeName, seed, peImages) {
         + picked.map((image, index) => (
           `<img data-pe-slot="${slots[index]}" src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" width="1200" height="630">`
         )).join("")
+        + photoCreditCaption(picked.map((image) => image.src))
         + `</figure>`;
       return { html, heroSrc: picked[0].src, ogImage: absoluteOg(picked[0].src) };
     }
@@ -173,6 +175,7 @@ export function thinImages(serviceSlug, subject, placeName, seed, peImages) {
     + `<img data-pe-slot="q2-image-hero" src="${primary}" alt="${escapeHtml(altHero)}" width="1200" height="630">`
     + (extra[0] ? `<img data-pe-slot="q2-image-work" src="${extra[0]}" alt="${escapeHtml(altWork)}" width="1200" height="630">` : "")
     + (extra[1] ? `<img data-pe-slot="q2-image-context" src="${extra[1]}" alt="${escapeHtml(altContext)}" width="1200" height="630">` : "")
+    + photoCreditCaption([primary, ...extra.slice(0, 2)])
     + `</figure>`;
   return {
     html,
