@@ -676,6 +676,22 @@ function icomplyTownPageRecord(string $slug): ?array
     return icomplyGmServiceTown($slug);
 }
 
+function icomplyDisambiguatedTownName(string $name, string $slug): string
+{
+    $plain = strtolower(trim((string)preg_replace('/[^a-z0-9]+/', '-', $name), '-'));
+    if ($slug === '' || $slug === $plain) {
+        return $name;
+    }
+    if (preg_match('/^' . preg_quote($plain, '/') . '-(.+)$/', $slug, $m)) {
+        $tail = (string)$m[1];
+        if ($tail === $plain) {
+            return $name . ' (' . $name . ')';
+        }
+        return $name . ', ' . ucwords(str_replace('-', ' ', $tail));
+    }
+    return $name . ' (' . ucwords(str_replace('-', ' ', $slug)) . ')';
+}
+
 function icomplyRenderTownPage(string $family, string $slug): void
 {
     $town = icomplyTownPageRecord($slug);
@@ -697,12 +713,12 @@ function icomplyRenderTownPage(string $family, string $slug): void
         $pageTitle = 'CAME vehicle barriers in ' . $place;
         $metaDesc = 'Vehicle barriers in ' . $ctx['name'] . ' (' . $ctx['pop'] . ' people, ' . $ctx['county'] . '). CAME partner. About ' . $ctx['miles'] . ' miles from Stockport. 07517806082.';
         $kicker = 'Vehicle barriers · CAME partner';
-        $h1 = 'Vehicle barriers in ' . $ctx['name'];
+        $h1 = 'Vehicle barriers in ' . icomplyDisambiguatedTownName((string)$ctx['name'], (string)$ctx['slug']);
     } else {
         $pageTitle = 'AOV smoke control in ' . $place;
         $metaDesc = 'AOV and smoke control in ' . $ctx['name'] . ' (' . $ctx['pop'] . ' people, ' . $ctx['county'] . '). EN 12101. About ' . $ctx['miles'] . ' miles from Stockport. 07517806082.';
         $kicker = 'AOV and smoke control';
-        $h1 = 'AOV and smoke control in ' . $ctx['name'];
+        $h1 = 'AOV and smoke control in ' . icomplyDisambiguatedTownName((string)$ctx['name'], (string)$ctx['slug']);
     }
     if (!empty($town['gm_local'])) {
         $metaTitleExact = true;

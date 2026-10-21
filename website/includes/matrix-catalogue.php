@@ -699,7 +699,13 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
     if ($perPlace < 1) {
         throw new RuntimeException('Town matrix catalogue is empty');
     }
-    $placesNeeded = (int)ceil(max(1, ICOMPLY_MATRIX_URL_TARGET - $hubs) / $perPlace);
+    if (!function_exists('icomplyDualRingTownRows')) {
+        require_once __DIR__ . '/gm-crawl.php';
+    }
+    // Every dual-ring town is published even when keyword×town exceeds the
+    // million-URL planning target. Slicing the list drops towns from the sitemap.
+    $dualRingCount = count(icomplyDualRingTownRows());
+    $placesNeeded = max($dualRingCount, (int)ceil(max(1, ICOMPLY_MATRIX_URL_TARGET - $hubs) / $perPlace));
     $placePick = icomplyMatrixSelectPlaces($placesNeeded);
     $places = $placePick['selected'];
     if (count($places) < 1) {

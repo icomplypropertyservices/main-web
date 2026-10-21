@@ -101,7 +101,7 @@ function aovQuoteForm(string $heading, string $intro, string $serviceValue, stri
     ?>
     <section id="quote" class="bg-[#0B1F3A] text-white">
         <div class="max-w-3xl mx-auto px-6 py-16">
-            <p class="text-xs uppercase tracking-[3px] text-[#ffb080] font-semibold text-center">Call <?= $h((string)PHONE) ?> or send the form</p>
+            <p class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold text-center">Call <?= $h((string)PHONE) ?> or send the form</p>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-center mt-3"><?= $h($heading) ?></h2>
             <p class="mt-3 text-center text-white/80 max-w-xl mx-auto"><?= $h($intro) ?></p>
             <div class="mt-6 flex flex-wrap gap-3 justify-center">

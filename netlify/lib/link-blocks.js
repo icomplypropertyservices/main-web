@@ -414,11 +414,15 @@ export function matrixRelatedHtml(catalogue, identity) {
 }
 
 export function breadcrumbHtml(items) {
-  const parts = items.filter((item) => item && item.label).map((item, index) => {
-    if (!item.href || index === items.length - 1) {
-      return `<span>${escapeHtml(item.label)}</span>`;
-    }
-    return `<a href="${escapeHtml(item.href)}">${escapeHtml(item.label)}</a>`;
+  const list = items.filter((item) => item && item.label);
+  const parts = list.map((item, index) => {
+    const name = escapeHtml(item.label);
+    const last = index === list.length - 1;
+    const href = item.href && !last ? escapeHtml(item.href) : "";
+    const body = href
+      ? `<a itemprop="item" href="${href}"><span itemprop="name">${name}</span></a>`
+      : `<span itemprop="name">${name}</span>`;
+    return `<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">${body}<meta itemprop="position" content="${index + 1}"></li>`;
   });
-  return `<nav aria-label="Breadcrumb">${parts.join(" / ")}</nav>`;
+  return `<nav class="breadcrumb" aria-label="Breadcrumb"><ol itemscope itemtype="https://schema.org/BreadcrumbList">${parts.join("")}</ol></nav>`;
 }

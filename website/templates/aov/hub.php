@@ -15,7 +15,7 @@ $h = static function (string $s): string {
 <section class="bg-[#0B1F3A] text-white">
     <div class="max-w-7xl mx-auto px-6 py-16 grid lg:grid-cols-2 gap-10 items-center">
         <div>
-            <p class="text-xs uppercase tracking-[3px] text-[#ffb080]">Fire protection · nationwide</p>
+            <p class="text-xs uppercase tracking-[3px] text-[#ff6b00]">Fire protection · nationwide</p>
             <h1 class="mt-3 text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">Automatic opening vents.<br><span class="text-[#ff6b00]">The stair has to open.</span></h1>
             <p class="mt-5 text-lg text-white/80 max-w-xl">An AOV is a ventilator that opens on a fire signal: usually a roof hatch or façade vent at the head of a stair, sometimes a corridor or lobby opening into a smoke shaft. It is life-safety equipment, so we treat it as fire protection and quote it across the UK from our Stockport yard.</p>
             <div class="mt-8 flex flex-wrap gap-3">

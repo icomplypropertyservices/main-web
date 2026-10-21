@@ -1279,7 +1279,63 @@ function icomplyPlaceAliasRedirectLines(): string
             $lines[] = $src . '/  ' . $dst . '  301!';
         }
     }
+    $lines = array_merge($lines, icomplyOrphanTownRedirectLines());
     return implode("\n", $lines) . "\n\n";
+}
+
+/**
+ * Town slugs that are not in the 269 dual-ring list still appear in old
+ * internal links. Send them at the matching service or keyword, without
+ * touching a town that is now a real page.
+ *
+ * @return list<string>
+ */
+function icomplyOrphanTownRedirectLines(): array
+{
+    $allow = [];
+    $file = SITE_ROOT . '/data/dual-ring-allowlist.json';
+    $doc = is_file($file) ? json_decode((string)file_get_contents($file), true) : [];
+    foreach (is_array($doc['towns'] ?? null) ? $doc['towns'] : [] as $row) {
+        if (is_array($row) && !empty($row['slug'])) {
+            $allow[(string)$row['slug']] = true;
+        }
+    }
+    $aliasFile = SITE_ROOT . '/data/place-aliases.json';
+    $decoded = is_file($aliasFile) ? json_decode((string)file_get_contents($aliasFile), true) : [];
+    $map = [];
+    foreach (is_array($decoded) ? $decoded : [] as $family => $rows) {
+        if (!is_array($rows) || $family === 'note') {
+            continue;
+        }
+        foreach ($rows as $from => $to) {
+            $from = trim((string)$from);
+            $to = trim((string)$to);
+            if ($from !== '' && $to !== '' && $from !== $to) {
+                $map[$from] = $to;
+            }
+        }
+    }
+    foreach ([
+        'bamber-bridge', 'carlisle', 'ellesmere-port', 'penrith', 'penwortham',
+        'standish', 'west-kirby', 'whitehaven', 'workington',
+    ] as $extra) {
+        if (!isset($map[$extra])) {
+            $map[$extra] = 'stockport';
+        }
+    }
+    $lines = ['# Orphan town slugs (not in the 269) keep old links working'];
+    foreach ($map as $from => $to) {
+        if (isset($allow[$from])) {
+            continue;
+        }
+        if (!isset($allow[$to])) {
+            $to = 'stockport';
+        }
+        $lines[] = '/pages/:section/' . $from . '  /pages/:section/' . $to . '  301';
+        $lines[] = '/pages/keywords/:kw/' . $from . '  /pages/keywords/:kw/' . $to . '  301';
+        $lines[] = '/pages/jobs/:job/' . $from . '  /pages/jobs/:job/' . $to . '  301';
+    }
+    return $lines;
 }
 
 function icomplyAovLegacyRedirectLines(): string

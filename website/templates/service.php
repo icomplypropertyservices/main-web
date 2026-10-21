@@ -53,7 +53,7 @@ $serviceName = $SERVICE_NAME;
 $serviceFaqs = [
     'gas-systems' => [
         ['Who carries out the gas check?', 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.'],
-        ['Is iComply Gas Safe registered?', 'Gas work is carried out by Gas Safe registered engineers. Your engineer will show their Gas Safe ID card on arrival, and you can check it at gassaferegister.co.uk.'],
+        ['Who carries out the gas work?', 'Gas work is carried out by Gas Safe registered engineers. Your engineer will show their Gas Safe ID card on arrival, and you can check it at gassaferegister.co.uk.'],
         ['What does the quote need?', 'Postcode and appliance count. The price is on application.'],
     ],
     'heating' => [

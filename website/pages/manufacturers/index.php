@@ -73,7 +73,7 @@ require SITE_ROOT . '/includes/header.php';
 <section class="max-w-7xl mx-auto px-6 pt-12">
     <div class="rounded-3xl border-2 border-[#ff6b00] bg-[#0B1F3A] text-white p-8 md:p-10 grid md:grid-cols-2 gap-8 items-center">
         <div>
-            <p class="text-xs uppercase tracking-[3px] text-[#ffb27a] font-semibold">Barrier partner</p>
+            <p class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Barrier partner</p>
             <h2 class="text-3xl font-semibold tracking-tight mt-2">Came</h2>
             <p class="mt-3 text-white/80">CAME GARD is the rising-arm range we specify first for vehicle and parking barriers. The rest of the barrier manufacturers are listed under the barriers service. Coverage is UK-wide. Price on application. Phone <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
             <div class="mt-6 flex flex-wrap gap-2">

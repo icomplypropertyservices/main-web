@@ -16,6 +16,11 @@ require_once SITE_ROOT . '/includes/shopify.php';
 
 $mfrSlug = $MFR_SLUG;
 $mfrName = $MFR_NAME;
+$mfrPlain = strtolower(trim((string)preg_replace('/[^a-z0-9]+/', '-', $mfrName), '-'));
+if ($mfrPlain !== strtolower((string)$mfrSlug)) {
+    $mfrName = $mfrSlug === 'dh-mechatronic' ? 'DH Mechatronic' : ($mfrName . ' (' . $mfrSlug . ')');
+}
+$pageTitle = $mfrName . ' products and service';
 $entry = getManufacturerBySlug($mfrSlug) ?? [];
 $services = getServices();
 $mfrServices = $entry['services'] ?? [];

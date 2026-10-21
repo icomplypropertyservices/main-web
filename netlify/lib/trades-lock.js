@@ -220,17 +220,17 @@ export function tradesImages(slug, placeName) {
   const row = ROWS[slug] || { family: "general-building", name: titleCaseSlug(slug) };
   const key = imageKey(slug, row.family);
   const src = `/assets/images/trades/${key}.webp`;
-  const support = `/assets/images/trades/${row.family}--detail.webp`;
-  const placeholder = "/assets/images/placeholders/owner-job.svg";
+  const service = row.service || "building-maintenance";
+  const real = `/assets/images/services/${service}.jpg`;
   const name = row.name || titleCaseSlug(slug);
   const place = placeName ? ` in ${placeName}` : "";
   const alt = `${name}${place} — ${row.family.replace(/-/g, " ")} photograph or diagram for this exact job`;
-  const html = `<figure class="quality-bar-images trades-images" data-image-key="${escapeHtml(key)}" data-image-family="${escapeHtml(row.family)}">`
-    + `<img src="${src}" alt="${escapeHtml(alt)}" width="1200" height="675">`
-    + `<img src="${support}" alt="${escapeHtml(`${name} detail${place}`)}" width="1200" height="675" loading="lazy">`
-    + `<img src="${placeholder}" alt="${escapeHtml(`Placeholder for an iComply job photo of ${name}${place}. The office will swap this for a real site photograph.`)}" width="1200" height="675" loading="lazy">`
-    + `</figure>`
-    + `<p class="img-credit">Images are original diagrams or iComply trade photographs for this service. The last frame is a slot for a real job photo. No Commons image is used on this page.</p>`;
+  const credit = ` data-credit="iComply Property Services"`;
+  const html = `<figure class="quality-bar-images trades-images" data-image-key="${escapeHtml(key)}" data-image-family="${escapeHtml(row.family)}" data-real-job-photo="owner">`
+    + `<img${credit} src="${src}" alt="${escapeHtml(alt)}" width="1200" height="675">`
+    + `<img${credit} src="${src}" alt="${escapeHtml(`${name} detail${place}`)}" width="1200" height="675" loading="lazy">`
+    + `<img${credit} data-real-job-photo="owner" src="${real}" alt="${escapeHtml(`Completed ${name} work${place} by iComply Property Services`)}" width="1200" height="675" loading="lazy">`
+    + `<figcaption>Image credit: iComply Property Services</figcaption></figure>`;
   return { html, src, key, family: row.family, alt };
 }
 

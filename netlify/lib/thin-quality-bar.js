@@ -23,15 +23,10 @@ export function imageFamilyOf(slug) {
 
 /** Two extra photos for `slug`, both from its own family: its -photo first, then family members by seed. */
 export function familyPicks(slug, seed) {
-  const fam = imageFamilies.families[imageFamilyOf(slug) || "building"];
-  const rest = fam.filter((b) => b !== slug && b !== `${slug}-photo`);
-  const n = rest.length;
-  const off = n ? Math.abs(Number(seed) || 0) % n : 0;
-  const rotated = rest.slice(off).concat(rest.slice(0, off));
-  const picks = (fam.includes(`${slug}-photo`) ? [`${slug}-photo`] : []).concat(rotated);
-  const a = picks[0] || slug;
-  const b = picks[1] || a;
-  return [a, b];
+  void seed;
+  // Own-slug photos only. Cross-service family members made one image serve
+  // unrelated trades after the content-hash optimiser.
+  return [`${slug}-photo`, `${slug}-context`];
 }
 
 export function escapeHtml(value) {
@@ -155,9 +150,9 @@ export function thinImages(serviceSlug, subject, placeName, seed, peImages) {
       const slots = ["q2-image-hero", "q2-image-work", "q2-image-context"];
       const html = `<figure class="quality-bar-images" data-pe-slot="q2-thin-images">`
         + picked.map((image, index) => (
-          `<img data-pe-slot="${slots[index]}" src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" width="1200" height="630">`
+          `<img data-pe-slot="${slots[index]}" data-credit="iComply Property Services" src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" width="1200" height="630">`
         )).join("")
-        + `</figure>`;
+        + `<figcaption>Image credit: iComply Property Services</figcaption></figure>`;
       return { html, heroSrc: picked[0].src, ogImage: absoluteOg(picked[0].src) };
     }
   }
@@ -169,10 +164,10 @@ export function thinImages(serviceSlug, subject, placeName, seed, peImages) {
   const altWork = `${subject} equipment prepared for ${placeName}`;
   const altContext = `Property compliance visit arranged for ${placeName}`;
   const html = `<figure class="quality-bar-images" data-pe-slot="q2-thin-images">`
-    + `<img data-pe-slot="q2-image-hero" src="${primary}" alt="${escapeHtml(altHero)}" width="1200" height="630">`
-    + `<img data-pe-slot="q2-image-work" src="${second}" alt="${escapeHtml(altWork)}" width="1200" height="630">`
-    + `<img data-pe-slot="q2-image-context" src="${third}" alt="${escapeHtml(altContext)}" width="1200" height="630">`
-    + `</figure>`;
+    + `<img data-pe-slot="q2-image-hero" data-credit="iComply Property Services" src="${primary}" alt="${escapeHtml(altHero)}" width="1200" height="630">`
+    + `<img data-pe-slot="q2-image-work" data-credit="iComply Property Services" src="${second}" alt="${escapeHtml(altWork)}" width="1200" height="630">`
+    + `<img data-pe-slot="q2-image-context" data-credit="iComply Property Services" src="${third}" alt="${escapeHtml(altContext)}" width="1200" height="630">`
+    + `<figcaption>Image credit: iComply Property Services</figcaption></figure>`;
   return {
     html,
     heroSrc: primary,

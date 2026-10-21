@@ -116,7 +116,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
 
 <section class="bg-[#0B1F3A] text-white border-y border-white/10">
     <div class="max-w-7xl mx-auto px-6 py-10">
-        <p class="text-xs uppercase tracking-[3px] text-[#ffb27a] font-semibold">Priority services</p>
+        <p class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Priority services</p>
         <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mt-2">Barriers and AOV</h2>
         <p class="mt-3 text-white/80 max-w-3xl">Vehicle and parking barriers are covered across Greater Manchester, with Came as the partner brand and a full manufacturer list. AOV and smoke control stays the paired life-safety priority. Manchester and Stockport are covered from the Stockport yard on the car park barrier job. Quotes are on application. Phone <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
         <div class="mt-6 flex flex-wrap gap-2">

@@ -661,6 +661,17 @@ function icomplyScrubCustomerCopy(string $text): string
     $text = str_replace('I' . 'comply', 'iComply', $text);
     $text = preg_replace('/\bsame-day\b/iu', 'scheduled', $text) ?? $text;
     $text = preg_replace('/\bsame day\b/iu', 'scheduled', $text) ?? $text;
+    $carried = 'Gas work is carried out by Gas Safe registered engineers';
+    $text = preg_replace('/\bIs iComply Gas Safe\??/iu', 'Who carries out the gas work?', $text) ?? $text;
+    $text = preg_replace('/\b(?:Are|Is)\b[^?\n]{0,90}Gas Safe registered\?/iu', 'Who carries out the gas work?', $text) ?? $text;
+    $text = preg_replace('/Does iComply hold a Gas Safe registration\?/iu', 'Who carries out the gas work?', $text) ?? $text;
+    $text = preg_replace('/\bYes\.\s*Gas work is (?:undertaken|carried out) by Gas Safe registered engineers[^.]*\./iu', $carried . '.', $text) ?? $text;
+    $text = preg_replace('/iComply(?: Property Services)? (?:supply|supplies|provide|provides|arrange|arranges) Gas Safe registered engineers/iu', $carried . '. iComply arranges the visit', $text) ?? $text;
+    $text = preg_replace('/Our Gas Safe registered engineers/iu', 'The engineers booked for the job', $text) ?? $text;
+    $text = preg_replace('/What we will not do[^.]*Gas Safe registered[^.]*\./iu', $carried . '.', $text) ?? $text;
+    $text = preg_replace('/describe iComply as Gas Safe registered/iu', 'leave the Gas Safe registration with the attending engineer', $text) ?? $text;
+    $text = preg_replace('/\biComply is Gas Safe registered\b/iu', $carried, $text) ?? $text;
+    $text = preg_replace('/\bNo\.\s*Gas appliance work is by Gas Safe registered engineers\./iu', $carried . '.', $text) ?? $text;
     return $text;
 }
 
@@ -723,18 +734,18 @@ function icomplyApplyCustomerKeywordCopy(array $keywords): array
         }
         if (in_array($slug, $gasSlugs, true)) {
             $shown = $label !== '' ? $label : (string)($row['name'] ?? 'Gas safety');
-            $row['intro'] = $shown . '. ' . $legal;
-            $row['body'] = 'Book from Stockport SK2 when the diary allows. Tell us the postcode and the appliances. Electrical, fire, water hygiene and asbestos work on the same property is quoted separately. Call 07517 806082.';
-            $row['meta_desc'] = $legal;
+            $row['intro'] = $shown . '. Gas work is carried out by Gas Safe registered engineers. iComply arranges the visit from Stockport.';
+            $row['body'] = $shown . ' is booked from 17 Woodlands Park Road, Offerton, Stockport SK2 5DE. Tell us the postcode and the appliances. Electrical, fire, water hygiene and asbestos work on the same property is quoted separately. Gas work is carried out by Gas Safe registered engineers. Call 07517 806082.';
+            $row['meta_desc'] = $shown . '. Gas work is carried out by Gas Safe registered engineers. Call 07517 806082.';
             $row['focus_points'] = [
-                'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers',
-                'Same-day and next-day slots where available',
-                'Fixed written quote from our Stockport team',
+                'Gas work is carried out by Gas Safe registered engineers',
+                'Scheduled visits where the diary allows',
+                'Written quote from our Stockport team',
                 'Certificates emailed after the visit',
             ];
             $row['faq'] = [
-                ['Who carries out the gas safety check?', $legal],
-                ['Does iComply hold a Gas Safe registration?', 'No. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.'],
+                ['Who carries out the gas safety check?', 'Gas work is carried out by Gas Safe registered engineers.'],
+                ['Who carries out the gas work?', 'Gas work is carried out by Gas Safe registered engineers. The engineer shows a Gas Safe ID card on arrival.'],
             ];
         }
         if ($slug === 'same-day-eicr') {

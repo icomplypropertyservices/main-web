@@ -308,14 +308,10 @@ function icomplyServiceImageFamilyPicks(string $slug, int $seed): array
     foreach ($fams as $list) {
         if (in_array($slug, $list, true)) { $fam = $list; break; }
     }
-    $rest = array_values(array_filter($fam, static fn ($b) => $b !== $slug && $b !== $slug . '-photo'));
-    $n = count($rest);
-    $off = $n ? $seed % $n : 0;
-    $rot = array_merge(array_slice($rest, $off), array_slice($rest, 0, $off));
-    $picks = array_merge(in_array($slug . '-photo', $fam, true) ? [$slug . '-photo'] : [], $rot);
-    $a = $picks[0] ?? $slug;
-    $b = $picks[1] ?? $a;
-    return [$a, $b];
+    // Only this service's own photos. A shared family file becomes one image
+    // across unrelated services once the optimiser hashes the bytes.
+    unset($seed);
+    return [$slug . '-photo', $slug . '-context'];
 }
 
 function icomplyQualityBarImages(string $serviceSlug, string $altPrefix, string $slot = 'q2-content-images'): array
@@ -331,9 +327,10 @@ function icomplyQualityBarImages(string $serviceSlug, string $altPrefix, string 
     };
     $h = 'icomplyQualityBarH';
     $html = '<figure class="quality-bar-images" data-pe-slot="' . $h($slot) . '">'
-        . '<img data-pe-slot="q2-image-hero" src="' . $h($src($primary)) . '" alt="' . $h($altPrefix) . '" width="1200" height="630">'
-        . '<img data-pe-slot="q2-image-work" src="' . $h($src($second)) . '" alt="' . $h($altPrefix . ' — equipment') . '" width="1200" height="630">'
-        . '<img data-pe-slot="q2-image-context" src="' . $h($src($third)) . '" alt="' . $h($altPrefix . ' — site context') . '" width="1200" height="630">'
+        . '<img data-pe-slot="q2-image-hero" data-credit="iComply Property Services" src="' . $h($src($primary)) . '" alt="' . $h($altPrefix) . '" width="1200" height="630">'
+        . '<img data-pe-slot="q2-image-work" data-credit="iComply Property Services" src="' . $h($src($second)) . '" alt="' . $h($altPrefix . ' — equipment') . '" width="1200" height="630">'
+        . '<img data-pe-slot="q2-image-context" data-credit="iComply Property Services" src="' . $h($src($third)) . '" alt="' . $h($altPrefix . ' — site context') . '" width="1200" height="630">'
+        . '<figcaption>Image credit: iComply Property Services</figcaption>'
         . '</figure>';
     $og = function_exists('icomply_absolute_url') ? icomply_absolute_url($primary) : $primary;
     return ['html' => $html, 'hero' => $primary, 'og' => $og];

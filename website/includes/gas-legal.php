@@ -93,10 +93,10 @@ function icomplyGasServicePageCopy(): array
 function icomplyGasMetaDesc(string $name, string $area = ''): string
 {
     $where = $area !== '' ? ' in ' . $area : ' across the North West';
-    $desc = 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. '
-        . $name . $where . '.';
-    if (strlen($desc) > 160) {
-        $desc = 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.';
+    $desc = $name . $where . '. Gas work is carried out by Gas Safe registered engineers.';
+    if (strlen($desc) > 155) {
+        $short = function_exists('mb_substr') ? mb_substr($name, 0, 70) : substr($name, 0, 70);
+        $desc = rtrim($short, ' .,') . '. Gas work is carried out by Gas Safe registered engineers.';
     }
     return $desc;
 }
@@ -137,7 +137,7 @@ function icomplyGasKeywordFaqs(string $name): array
             'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.',
         ],
         [
-            'Does iComply hold a Gas Safe registration?',
+            'Who carries out the gas work?',
             'Gas work is carried out by Gas Safe registered engineers. Your engineer will show their Gas Safe ID card on arrival, and you can check it at gassaferegister.co.uk.',
         ],
     ];
@@ -175,7 +175,7 @@ function icomplyGasServiceHubCopy(): array
         'standards' => icomplyGasServiceStandards(),
         'faqs' => [
             ['Who carries out landlord gas safety certificates (CP12)?', 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.'],
-            ['Does iComply hold a Gas Safe registration?', 'Gas work is carried out by Gas Safe registered engineers. Your engineer will show their Gas Safe ID card on arrival, and you can check it at gassaferegister.co.uk.'],
+            ['Who carries out the gas work?', 'Gas work is carried out by Gas Safe registered engineers. Your engineer will show their Gas Safe ID card on arrival, and you can check it at gassaferegister.co.uk.'],
             ['What can iComply quote on a property that also has gas?', 'Electrical, fire, water hygiene and asbestos work is quoted POA. Gas work and CP12 records stay with a Gas Safe registered engineer.'],
         ],
         'copy' => [
