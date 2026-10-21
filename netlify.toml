@@ -3030,3 +3030,11 @@
   to = "/pages/keywords/battery-storage-electrical"
   status = 301
   force = true
+
+# GSC 21 Oct: retired slug (banned wording) -> its live replacement, one hop.
+# Town URLs follow it in one hop too (town-matrix reads the hub's 301).
+[[redirects]]
+  from = "/pages/keywords/extension-fixed-price-package"
+  to = "/pages/keywords/extension-building-package-quote"
+  status = 301
+  force = true

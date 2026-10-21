@@ -732,9 +732,13 @@ export function placeAliasRedirect(path) {
   return `/pages/${family}/${dest}`;
 }
 
+// Retired keyword slugs (banned wording): every town URL goes straight to the replacement hub.
+const RETIRED_KEYWORD = { "extension-fixed-price-package": "/pages/keywords/extension-building-package-quote" };
+
 export function nonGmMatrixRedirect(path) {
-  if (GSC_KEEP.has(path)) return null;
   let m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
+  if (m && RETIRED_KEYWORD[m[1]]) return RETIRED_KEYWORD[m[1]];
+  if (GSC_KEEP.has(path)) return null;
   if (m) {
     if (isLocalTown(m[2]) || p0KeepsTown(m[1], m[2]) || fireInstallerNationwide(m[1], m[2])) return null;
     return `/pages/keywords/${m[1]}`;

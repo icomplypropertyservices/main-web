@@ -137,7 +137,7 @@ for (const r of rules) {
   if ([301, 302, 308].includes(r.status) && !/[:*]/.test(r.from.replace(/^https?:\/\//, ""))) inputs.add(r.c.host ? r.from : SITE + r.from);
 }
 const lists = process.argv.slice(3);
-if (!lists.length) for (const f of ["404s.txt", "areas12.txt", "hub53.txt"]) lists.push(path.join(repo, "scripts/gsc-2026-10-21", f));
+if (!lists.length) for (const f of ["404s.txt", "areas12.txt", "hub53.txt", "retired.txt"]) lists.push(path.join(repo, "scripts/gsc-2026-10-21", f));
 for (const f of lists) for (const u of fs.readFileSync(f, "utf8").split(/\s+/)) if (u.startsWith("http")) inputs.add(u);
 const q = path.join(repo, "scripts/gsc-2026-10-21/upgrade-queue.csv");
 if (fs.existsSync(q)) for (const line of fs.readFileSync(q, "utf8").split("\n").slice(1)) { const u = line.split(",")[0]; if (u.startsWith("http")) inputs.add(u); }
