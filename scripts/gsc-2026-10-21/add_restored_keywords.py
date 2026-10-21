@@ -51,7 +51,7 @@ S = {
 
 def entry(slug, name, service, related, what, svc_name):
     low = name.lower()
-    price = "EICRs are from £160 for a typical property." if "eicr" in slug else "Pricing is POA: we quote in writing once we have seen the job."
+    price = "EICRs are from £160 for a typical property; larger installations are POA until we know the circuit count." if "eicr" in slug else "Pricing is POA: we quote in writing once we have seen the job."
     gas = slug.startswith("boiler")
     return {
         "name": name,

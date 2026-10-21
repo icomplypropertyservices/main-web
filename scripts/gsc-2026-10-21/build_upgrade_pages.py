@@ -49,7 +49,7 @@ def near(slug, n=8):
     return [(t, round(d, 1)) for d, t in sorted(out)[:n]]
 
 def price_line(slug):
-    if "eicr" in slug: return "EICRs are from £160 for a typical property; larger or older installations are quoted after we know the circuit count."
+    if "eicr" in slug: return "EICRs are from £160 for a typical property; larger or older installations are POA until we know the circuit count."
     if "fire-risk-assessment" in slug: return FRA + "."
     return "Pricing is POA: you get a written quote once the job has been seen, never a guessed figure over the phone."
 
@@ -227,6 +227,7 @@ def build(path):
 
 import sys
 DIST = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else None
+REDIRECTS = set(open(D / "queue-redirects.txt").read().split())
 rows = list(csv.DictReader(open(D / "upgrade-queue.csv")))
 pages, skipped = {}, []
 for r in rows:
@@ -234,6 +235,8 @@ for r in rows:
     p = re.sub(r"^https?://[^/]+", "", r["url"]).rstrip("/")
     if p in CTR: skipped.append((p, "already in C1-C15")); continue
     if p in pages: skipped.append((p, "duplicate (www/apex)")); continue
+    if p in REDIRECTS:
+        skipped.append((p, "not a page (one-hop 301 to its hub, live-checked 21 Oct)")); continue
     if DIST and not p.startswith("/pages/keywords/") and not any((DIST / f).is_file() for f in (p.lstrip("/") + ".php", p.lstrip("/") + ".html", p.lstrip("/") + "/index.html")):
         skipped.append((p, "not a page (one-hop 301 to its hub)")); continue
     e = build(p)
