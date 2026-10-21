@@ -167,6 +167,9 @@ export function renderBatch1(m) {
   const h1 = `${id.label} in ${town}`;
   const fam = familyBank(id.fam);
   const lab = lowerLabel(id.label);
+  // Headings use the service noun ("Plastering"), not the trade noun ("Plasterers").
+  const hn = id.kw ? lab : id.noun;
+  const Hn = id.kw ? id.label : hn[0].toUpperCase() + hn.slice(1);
   const near = gmNear(m.town, 12);
   const nearNames = near.map((n) => n.name);
   const b = borough(m.town);
@@ -203,6 +206,12 @@ export function renderBatch1(m) {
     ? expand(`From ${town} we [also cover|regularly work in] ${list(nearNames.slice(0, 6))}. [The closest|Nearest] ${near[0].name} is about ${Math.max(1, Math.round(near[0].miles))} ${Math.max(1, Math.round(near[0].miles)) === 1 ? "mile" : "miles"} ${near[0].dir}.`, r)
     : "";
   const facts = GEO_FIX[m.town] ? fixFacts(m.town, town, lab) : townFactsBlock({ slug: m.town, town, subject: id.label, service: id.svc, names: GM_NAMES, hrefFor: null });
+  // Homeowner trade pages: the HMO / RR(FS)O fire-duty line belongs on fire pages only.
+  if (facts) {
+    const drop = (t) => t.replace(/ ?Shared parts of blocks and HMOs carry fire-safety duties under the Regulatory Reform \(Fire Safety\) Order 2005 in England and Wales, or the equivalent law in Scotland\./g, "");
+    facts.html = drop(facts.html);
+    if (facts.faqs) facts.faqs = facts.faqs.map(([q, a]) => [drop(q), drop(a)]);
+  }
   const homeTips = ([
     `[Before the visit|Ahead of the survey], [take a few photos of the area and any problem you can see|snap some photos of the job and any damage] and send them to ${PHONE} on WhatsApp. It helps us bring the right materials.`,
     `[If you rent the home|If you are a tenant], let your landlord know first. [If you are the landlord|Landlords], we can arrange access with your tenant.`,
@@ -248,11 +257,11 @@ export function renderBatch1(m) {
 
   // --- sections
   const img = imagesHtml(id.fam, id.label, town);
-  const secJobs = `<section><h2>${esc(`${id.label} jobs we do in ${town}`)}</h2><p>${esc(lead)}</p>${intro.map((p) => `<p>${esc(p)}</p>`).join("")}<ul>${[...jobs, ...extraJobs].map((j) => `<li>${esc(j)}</li>`).join("")}</ul>${[famParas[0], generic[5], famParas[1]].map((p) => `<p>${esc(p)}</p>`).join("")}</section>`;
-  const secRuns = `<section><h2>${esc(`How a ${lab} job runs`)}</h2><ol>${steps.map((s) => `<li>${esc(s)}</li>`).join("")}</ol>${shuffle([...famParas.slice(2), generic[0], generic[1], generic[6], homeTips[0], `${homeTips[1]} ${homeTips[2]}`], r).map((p) => `<p>${esc(p)}</p>`).join("")}</section>`;
-  const secAreas = `<section><h2>${esc(`Areas near ${town} we cover`)}</h2>${localLine ? `<p>${esc(localLine)}</p>` : ""}${facts ? facts.html.replace(/<section id="town-facts"><h2>[^<]*<\/h2>/, "").replace(/<\/section>$/, "") : ""}${linkList(nearLinks)}<h3>${esc(`${id.label} across Greater Manchester`)}</h3>${linkList(allTown)}</section>`;
-  const secFaq = `<section id="faq"><h2>${esc(`${id.label} FAQs – ${town}`)}</h2>${faqUse.map(([q, a]) => `<details class="faq-item" open><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("")}</section>`;
-  const secQuote = `<section><h2>${esc(`Get a ${lab} quote`)}</h2><p>${esc(poa)}</p>${shuffle([generic[2], generic[3], generic[4], why], r).map((p) => `<p>${esc(p)}</p>`).join("")}<p>${esc(`Call or WhatsApp ${PHONE}, or email icomplypropertyservices@gmail.com with your ${town} address, a short description and a few photos.`)}</p><div class="b1-cta"><a class="b1-call" href="tel:07517806082">Call ${PHONE}</a><a class="b1-wa" href="https://wa.me/447517806082">WhatsApp us</a></div><h3>${esc(`Other building work in ${town}`)}</h3>${linkList(siblingSvcs)}${kwLinks.length ? `<h3>${esc(`Related jobs in ${town}`)}</h3>${linkList(kwLinks)}` : ""}<h3>Useful pages</h3>${linkList(hubs)}</section>`;
+  const secJobs = `<section><h2>${esc(`${Hn} jobs we do in ${town}`)}</h2><p>${esc(lead)}</p>${intro.map((p) => `<p>${esc(p)}</p>`).join("")}<ul>${[...jobs, ...extraJobs].map((j) => `<li>${esc(j)}</li>`).join("")}</ul>${[famParas[0], generic[5], famParas[1]].map((p) => `<p>${esc(p)}</p>`).join("")}</section>`;
+  const secRuns = `<section><h2>${esc(`How a ${hn} job runs`)}</h2><ol>${steps.map((s) => `<li>${esc(s)}</li>`).join("")}</ol>${shuffle([...famParas.slice(2), generic[0], generic[1], generic[6], homeTips[0], `${homeTips[1]} ${homeTips[2]}`], r).map((p) => `<p>${esc(p)}</p>`).join("")}</section>`;
+  const secAreas = `<section><h2>${esc(`Areas near ${town} we cover`)}</h2>${localLine ? `<p>${esc(localLine)}</p>` : ""}${facts ? facts.html.replace(/<section id="town-facts"><h2>[^<]*<\/h2>/, "").replace(/<\/section>$/, "") : ""}${linkList(nearLinks)}<h3>${esc(`${Hn}${id.kw ? "" : " work"} across Greater Manchester`)}</h3>${linkList(allTown)}</section>`;
+  const secFaq = `<section id="faq"><h2>${esc(`${Hn} FAQs – ${town}`)}</h2>${faqUse.map(([q, a]) => `<details class="faq-item" open><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("")}</section>`;
+  const secQuote = `<section><h2>${esc(`Get a ${hn} quote`)}</h2><p>${esc(poa)}</p>${shuffle([generic[2], generic[3], generic[4], why], r).map((p) => `<p>${esc(p)}</p>`).join("")}<p>${esc(`Call or WhatsApp ${PHONE}, or email icomplypropertyservices@gmail.com with your ${town} address, a short description and a few photos.`)}</p><div class="b1-cta"><a class="b1-call" href="tel:07517806082">Call ${PHONE}</a><a class="b1-wa" href="https://wa.me/447517806082">WhatsApp us</a></div><h3>${esc(`Other building work in ${town}`)}</h3>${linkList(siblingSvcs)}${kwLinks.length ? `<h3>${esc(`Related jobs in ${town}`)}</h3>${linkList(kwLinks)}` : ""}<h3>Useful pages</h3>${linkList(hubs)}</section>`;
   const middle = r() < 0.5 ? [secRuns, secAreas] : [secRuns, secAreas];
 
   const crumbs = `<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="${esc(id.hubHref)}">${esc(id.hubLabel)}</a> › <a href="/pages/areas/${esc(m.town)}">${esc(town)}</a></nav>`;
