@@ -664,7 +664,7 @@ function variantResponse(rendered) {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",
-      "cache-control": "public, max-age=3600",
+      ...PAGE_CACHE,
       "x-robots-tag": rendered.robots,
     },
   });
@@ -742,7 +742,75 @@ export function nonGmMatrixRedirect(path) {
   return `/pages/services/${m[1]}`;
 }
 
+// GSC 21 Oct (§5): 616 first-load 5xx on town pages (cold renders during crawl
+// bursts). Rendered pages are cached at Netlify's edge for a day and served
+// stale while they refresh, so most crawls never hit a cold render. If a render
+// still fails or runs long, the visitor gets the parent hub as a 200 (not
+// cached) instead of a 5xx.
+const PAGE_CACHE = {
+  "cache-control": "public, max-age=3600",
+  "netlify-cdn-cache-control": "public, s-maxage=86400, stale-while-revalidate=604800, durable",
+};
+const RENDER_BUDGET_MS = 8000;
+
+export function fallbackHubPath(path) {
+  let m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/[a-z0-9-]+$/);
+  if (m) return `/pages/keywords/${m[1].split("--")[0]}`;
+  m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)$/);
+  if (m) return "/pages/keywords";
+  m = path.match(/^\/pages\/(manufacturers|jobs)\/([a-z0-9-]+)\/[a-z0-9-]+$/);
+  if (m) return `/pages/${m[1]}/${m[2]}`;
+  m = path.match(/^\/pages\/(areas)\/[a-z0-9-]+$/);
+  if (m) return "/pages/areas";
+  m = path.match(/^\/pages\/([a-z0-9-]+)\/[a-z0-9-]+$/);
+  if (m) return `/pages/services/${m[1]}`;
+  return "/pages/services";
+}
+
+async function fallbackResponse(url, path) {
+  for (const hub of [fallbackHubPath(path), "/pages/services"]) {
+    try {
+      const r = await fetch(new URL(hub, url.origin), { redirect: "follow" });
+      if (r.ok) {
+        return new Response(await r.text(), {
+          status: 200,
+          headers: {
+            "content-type": "text/html; charset=utf-8",
+            "cache-control": "no-store",
+            "netlify-cdn-cache-control": "no-store",
+            "x-icomply-fallback": hub,
+          },
+        });
+      }
+    } catch {
+      // try the next hub
+    }
+  }
+  return new Response("Temporarily unavailable", { status: 503, headers: { "retry-after": "60" } });
+}
+
 export default async (request, context) => {
+  const url = new URL(request.url);
+  const path = url.pathname.replace(/\/+$/, "") || "/";
+  if (path.startsWith("/matrix-sitemap")) return renderMatrix(request, context);
+  let timer;
+  try {
+    const res = await Promise.race([
+      renderMatrix(request, context),
+      new Promise((resolve) => {
+        timer = setTimeout(() => resolve(null), RENDER_BUDGET_MS);
+      }),
+    ]);
+    if (res && res.status < 500) return res;
+    return fallbackResponse(url, path);
+  } catch {
+    return fallbackResponse(url, path);
+  } finally {
+    clearTimeout(timer);
+  }
+};
+
+async function renderMatrix(request, context) {
   const url = new URL(request.url);
   const path = url.pathname.replace(/\/+$/, "") || "/";
   // One canonical form: strip trailing slashes (GSC 404s on /pages/areas/x/,
@@ -913,11 +981,11 @@ export default async (request, context) => {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",
-      "cache-control": "public, max-age=3600",
+      ...PAGE_CACHE,
       "x-robots-tag": rendered.robots,
     },
   });
-};
+}
 
 export const config = {
   path: [
