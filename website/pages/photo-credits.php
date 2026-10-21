@@ -3,7 +3,7 @@
  * Photo credits: generated from data/hero-image-credits.json (third-party photos only).
  */
 require_once __DIR__ . '/../config.php';
-require_once SITE_ROOT . '/includes/building-batch1.php';
+require_once SITE_ROOT . '/includes/photo-credits.php';
 
 $seoFamily = 'static';
 $pageTitle = 'Photo Credits | iComply Property Services';

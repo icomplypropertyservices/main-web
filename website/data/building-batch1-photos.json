@@ -123,16 +123,8 @@
  ],
  "plastering": [
   {
-   "src": "/assets/images/services/b1/plastering-1.jpg",
-   "scene": "Plasterboard fixed to a new wall ready for finishing"
-  },
-  {
-   "src": "/assets/images/services/b1/plastering-2.jpg",
-   "scene": "Jointing tape and trowels for plasterboard joints"
-  },
-  {
-   "src": "/assets/images/services/b1/plastering-3.jpg",
-   "scene": "Plasterer working on an internal wall"
+   "src": "/assets/images/services/plastering.jpg",
+   "scene": "Plasterer applying plaster to a wall with a hawk and trowel"
   }
  ],
  "plumbing": [
