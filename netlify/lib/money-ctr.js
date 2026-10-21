@@ -7,8 +7,10 @@
  * statically exported pages. Never touches robots, canonical or sitemap.
  */
 import doc from "../../website/data/money-ctr-c1-c15.json" with { type: "json" };
+// GSC 21 Oct upgrade queue (scripts/gsc-2026-10-21/build_upgrade_pages.py). C1-C15 win on overlap.
+import gscDoc from "../../website/data/gsc-upgrade-2026-10-21.json" with { type: "json" };
 
-const PAGES = doc.pages || {};
+const PAGES = { ...(gscDoc.pages || {}), ...(doc.pages || {}) };
 const SITE = "https://icomplypropertyservices.co.uk";
 
 function esc(value) {

@@ -109,6 +109,13 @@ const SERVICE_HUB_ALIAS = {
   "fra": "/pages/services/fire-risk-assessments",
   "fire-risk-assessment": "/pages/services/fire-risk-assessments",
   "ev-charging": "/pages/services/ev-chargers",
+  // GSC 21 Oct (B3): legacy service paths with no hub go straight to the live hub.
+  "solar-thermal": "/pages/services/heating",
+  "ground-source-heat-pumps": "/pages/services/heating",
+  "air-source-heat-pumps": "/pages/services/heating",
+  "heat-pumps": "/pages/services/heating",
+  "battery-storage": "/pages/services/electrical",
+  "solar-pv": "/pages/services/electrical",
 };
 
 const RESERVED = new Set([
@@ -711,7 +718,7 @@ async function loadCatalogue(origin) {
 const PLACE_ALIAS_BARRIERS = {"trafford":"hale-trafford","tameside":"hyde-tameside","shaw":"shaw-oldham","milnrow":"rochdale","pendlebury":"swinton-salford","cadishead":"irlam","chorlton":"manchester","withington":"manchester","crosby":"crosby-sefton","ince":"ince-in-makerfield","thornton-cleveleys":"cleveleys","ainsdale":"southport","ambleside":"kendal","appleton":"warrington","birchwood":"warrington","burscough":"ormskirk","carnforth":"lancaster","clayton-le-moors":"accrington","cockermouth":"workington","culcheth":"warrington","dalton-in-furness":"barrow-in-furness","frodsham":"runcorn","garstang":"preston-preston","halton":"runcorn","handforth":"wilmslow","helsby":"runcorn","holmes-chapel":"crewe","hoylake":"wallasey","keswick":"workington","kirkham":"blackpool","longridge":"preston-preston","maryport":"workington","millom":"barrow-in-furness","penketh":"warrington","rainford":"st-helens-st-helens","risley":"warrington","rossendale":"rawtenstall","shevington":"wigan","stockton-heath":"warrington","tarporley":"chester","tarvin":"chester","wesham":"blackpool","whalley":"blackburn-blackburn-with-darwen","windermere":"kendal"};
 const PLACE_ALIAS_AOV = {"worsley":"walkden","wythenshawe":"manchester","pendlebury":"salford","cadishead":"eccles","trafford":"hale-trafford","chorlton":"manchester","withington":"manchester","tameside":"hyde-tameside","shaw":"shaw-oldham"};
 
-function placeAliasRedirect(path) {
+export function placeAliasRedirect(path) {
   let m = path.match(/^\/pages\/(barriers|aov)\/([a-z0-9-]+)$/);
   if (!m) return null;
   const family = m[1];
@@ -739,7 +746,7 @@ export function nonGmMatrixRedirect(path) {
   if (m) return isLocalTown(m[1]) ? null : "/pages/areas";
   m = path.match(/^\/pages\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   if (!m || RESERVED.has(m[1]) || NATIONWIDE_TOWN.has(m[1]) || isLocalTown(m[2])) return null;
-  return `/pages/services/${m[1]}`;
+  return SERVICE_HUB_ALIAS[m[1]] || `/pages/services/${m[1]}`;
 }
 
 // GSC 21 Oct (§5): 616 first-load 5xx on town pages (cold renders during crawl
@@ -752,6 +759,7 @@ const PAGE_CACHE = {
   "netlify-cdn-cache-control": "public, s-maxage=86400, stale-while-revalidate=604800, durable",
 };
 const RENDER_BUDGET_MS = 8000;
+const APEX = "https://icomplypropertyservices.co.uk";
 
 export function fallbackHubPath(path) {
   let m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/[a-z0-9-]+$/);
@@ -813,18 +821,34 @@ export default async (request, context) => {
 async function renderMatrix(request, context) {
   const url = new URL(request.url);
   const path = url.pathname.replace(/\/+$/, "") || "/";
-  // One canonical form: strip trailing slashes (GSC 404s on /pages/areas/x/,
-  // duplicates on /pages/keywords/x/). Exported files never use the slash form.
-  if (path !== "/" && url.pathname !== path && !path.startsWith("/matrix-sitemap")) {
-    return Response.redirect(new URL(path + url.search, url.origin).toString(), 301);
-  }
+  // GSC 21 Oct: every redirect is ONE hop. This function runs before the
+  // netlify.toml www->apex rule and before the _redirects/toml 301s, so
+  // redirects from here always land on the apex, and a trailing-slash or www
+  // URL goes straight to wherever the clean apex URL ends up.
+  const origin = APEX;
   const aliasTo = placeAliasRedirect(path);
   if (aliasTo) {
-    return Response.redirect(new URL(aliasTo, url.origin).toString(), 301);
+    return Response.redirect(new URL(aliasTo, origin).toString(), 301);
   }
   const matrixTo = nonGmMatrixRedirect(path);
   if (matrixTo) {
-    return Response.redirect(new URL(matrixTo, url.origin).toString(), 301);
+    return Response.redirect(new URL(matrixTo, origin).toString(), 301);
+  }
+  // One canonical form: strip trailing slashes (GSC 404s on /pages/areas/x/,
+  // duplicates on /pages/keywords/x/). Exported files never use the slash form.
+  const wwwHost = url.host !== new URL(APEX).host;
+  if (path !== "/" && !path.startsWith("/matrix-sitemap") && (url.pathname !== path || wwwHost)) {
+    const clean = new URL(path + url.search, origin);
+    try {
+      const probe = await fetch(clean, { redirect: "manual" });
+      const loc = probe.headers.get("location");
+      if (probe.status >= 300 && probe.status < 400 && loc) {
+        return Response.redirect(new URL(loc, origin).toString(), 301);
+      }
+    } catch {
+      // fall through to the plain canonical redirect
+    }
+    return Response.redirect(clean.toString(), 301);
   }
   // AOV, barriers and fire-family town HTML is exported. Do not replace it
   // with the Greater Manchester matrix renderer.
