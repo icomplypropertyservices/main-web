@@ -794,6 +794,8 @@ export function nonGmMatrixRedirect(path) {
 export default async (request, context) => {
   const url = new URL(request.url);
   const path = url.pathname.replace(/\/+$/, "") || "/";
+  // /shop is a directory hub: one 301 to the slash form the static file lives at.
+  if (url.pathname === "/shop") return Response.redirect(new URL("/shop/" + url.search, url.origin).toString(), 301);
   // One canonical form: strip trailing slashes (GSC 404s on /pages/areas/x/,
   // duplicates on /pages/keywords/x/). Exported files never use the slash form.
   if (path !== "/" && url.pathname !== path && !path.startsWith("/matrix-sitemap")) {
@@ -1002,6 +1004,7 @@ export const config = {
     "/pages/:section/",
     "/pages/",
     "/matrix-sitemap/:part",
+    "/shop",
   ],
   // Static AOV/barrier town pages (~420 KB) 502'd intermittently when
   // proxied through this function. Their aliases live in netlify.toml.
