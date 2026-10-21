@@ -69,7 +69,7 @@ jobs:
       - name: Static export
         env:
           SITE_URL: https://icomplypropertyservices.co.uk
-        run: php website/bin/static-export.php --keyword-towns=none
+        run: php website/bin/static-export.php --keyword-towns=none && node website/bin/apply-seo-basics.mjs dist
         timeout-minutes: 180
 
       - name: Check pretty-URL HTML
@@ -94,6 +94,9 @@ jobs:
           SITE_URL: https://icomplypropertyservices.co.uk
           MONEY_CTR_DATA: website/data/gsc-upgrade-2026-10-21.json
         run: node website/bin/check-money-ctr.mjs dist
+
+      - name: SEO basics (JSON-LD FAQ/Service valid, images exist, no noindex)
+        run: python3 website/bin/check-seo-basics.py dist --strict
 
       - name: Every redirect is one hop to a 200
         run: node website/bin/check-redirect-hops.mjs dist
