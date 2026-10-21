@@ -702,7 +702,7 @@ async function loadVariants(origin) {
 }
 
 function variantResponse(rendered) {
-  return new Response(withContactWidgets(finishPage(scrubMeta(rendered.html), rendered.path || "")), {
+  return new Response(withContactWidgets(finishLinks(scrubMeta(rendered.html), rendered.path || "")), {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",
@@ -975,7 +975,7 @@ async function renderMatrix(request, context) {
   if (b1) {
     const page = renderBatch1(b1);
     if (page) {
-      return new Response(withContactWidgets(finishPage(scrubMeta(page.html), path)), {
+      return new Response(withContactWidgets(finishLinks(scrubMeta(page.html), path)), {
         status: 200,
         headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=3600", "x-robots-tag": page.robots },
       });
@@ -1071,7 +1071,7 @@ async function renderMatrix(request, context) {
     else if (serviceMatch && isLocalTown(serviceMatch[2])) to = `/pages/areas/${serviceMatch[2]}`;
     return Response.redirect(new URL(to, url.origin).toString(), 301);
   }
-  return new Response(applySeoBasics(applyMoneyCtr(path, withContactWidgets(finishPage(scrubMeta(rendered.html), path))), { authored: Boolean(moneyCtrPage(path)) }), {
+  return new Response(applySeoBasics(applyMoneyCtr(path, withContactWidgets(finishLinks(scrubMeta(rendered.html), path))), { authored: Boolean(moneyCtrPage(path)) }), {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",
@@ -1111,3 +1111,12 @@ export const config = {
     "/pages/packages/hmo-fire-package/",
   ],
 };
+
+// QM #156 (broken_internal_link): a sibling /pages/ link that would 301 (retired keyword, out-of-area
+// town, trade alias) becomes plain text, then the shared under-H1 CTA / breadcrumb / photo pass runs.
+function finishLinks(html, path) {
+  const out = String(html).replace(/<a\b[^>]*\bhref="(\/pages\/[a-z0-9-]+\/[a-z0-9-]+\/[a-z0-9-]+)"[^>]*>([\s\S]*?)<\/a>/g, (m0, href, text) => {
+    try { return (nonGmMatrixRedirect(href) || tradeSlugRedirect(href)) ? text : m0; } catch { return m0; }
+  });
+  return finishPage(out, path);
+}
