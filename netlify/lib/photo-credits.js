@@ -2,7 +2,7 @@
 // Mirrors website/includes/photo-credits.php (icomplyPhotoCreditInject).
 import creditRows from "../../website/data/hero-image-credits.json" with { type: "json" };
 
-export const VISIBLE_CREDIT = new Set(["/assets/images/services/plastering.jpg", "/assets/images/services/dry-lining.jpg"]);
+export const VISIBLE_CREDIT = new Set(["/assets/images/services/plastering.jpg", "/assets/images/services/dry-lining.jpg", "/assets/images/services/damp-proofing.jpg", "/assets/images/services/building-maintenance.jpg", "/assets/images/services/cdm-support.jpg", "/assets/images/services/groundworks.jpg"]);
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const decode = (t) => t.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#0?39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 export const PHOTO_CREDITS = Object.fromEntries(creditRows.filter((r) => /^https?:\/\//.test(r.source || "")).map((r) => [r.file, {
