@@ -189,7 +189,7 @@ export function renderBatch1(m) {
   ];
   const lead = expand(openers[Math.floor(r() * openers.length)], r);
   const famParas = shuffle([...fam.paras, ...(FAMILY_EXTRA[id.fam] || [])], r).slice(0, 4).map((p) => expand(p, r));
-  const generic = shuffle(GENERIC, r).slice(0, 5).map((p) => expand(p.replace(/\{s\}/g, lab).replace(/\{phone\}/g, PHONE), r));
+  const generic = shuffle(GENERIC, r).slice(0, 7).map((p) => expand(p.replace(/\{s\}/g, lab).replace(/\{phone\}/g, PHONE), r));
   const why = expand(`[Why do people in ${town} choose us|What people in ${town} tell us they want] for ${lab}? [A written quote before anything starts, a start date that is kept, and a tidy site.|A clear written quote, a start date we keep and a clean finish.] [We are a small local team, so you deal with the same people from the first call to the last day.|You deal with the same small team from the first call to handover.]`, r);
   const scope = m.slug === "plasterboard-installation" ? PLASTERBOARD.scope[Math.floor(r() * PLASTERBOARD.scope.length)]
     : (id.kw && id.kw.scope.length ? id.kw.scope : fam.jobs);
@@ -214,13 +214,13 @@ export function renderBatch1(m) {
   if (m.slug === "plasterboard-installation") for (const f of shuffle(PLASTERBOARD.faqs, r).slice(0, 4)) faqs.push(f);
   if (id.kw) for (const f of id.kw.faqs) faqs.push(f);
   for (const f of shuffle(fam.faqs, r).slice(0, 2)) faqs.push(f);
-  for (const f of shuffle(GENERIC_FAQS, r).slice(0, 2)) faqs.push(f);
+  for (const f of shuffle(GENERIC_FAQS, r).slice(0, 3)) faqs.push(f);
   faqs.push([expand(`[Do you cover ${town} for ${lab}?|Is ${town} in your area?|Do you work in ${town}?]`, r), expand(`[Yes.|Yes, every week.] ${town} is [in the area we cover from Stockport|covered by our Stockport team]${near.length ? `, [along with|as are] ${list(nearNames.slice(0, 3))}` : ""}. [Call or WhatsApp ${PHONE} for a free quote.|For a free quote, call or WhatsApp ${PHONE}.]`, r)]);
   faqs.push([expand(`[How much does ${lab} cost in ${town}?|What does ${lab} cost?|Do you publish prices for ${lab}?]`, r), expand(`[Prices are on application.|We price each job on application (POA).] [We give you a written quote after seeing the job, at no cost.|After a free visit you get the price in writing.]`, r)]);
   faqs.push([expand(`[Can you come out the same or next day?|How quickly can you visit ${town}?]`, r), expand(`[Often, yes.|Usually the same or next day.] [Call ${PHONE} and we give you the earliest slot we have in ${town}.|Ring ${PHONE} and we offer the first free slot in ${town}.]`, r)]);
   if (facts) for (const f of facts.faqs) faqs.push(f);
   if (id.gas && !faqs.some(([q, a]) => /Gas Safe registered engineers/.test(a))) faqs.push(["Who carries out the gas work?", "All gas work is carried out by Gas Safe registered engineers."]);
-  const faqUse = faqs.slice(0, 11);
+  const faqUse = faqs.slice(0, 12);
 
   // --- links (unique hrefs)
   const seen = new Set([path]);
@@ -248,8 +248,8 @@ export function renderBatch1(m) {
 
   // --- sections
   const img = imagesHtml(id.fam, id.label, town);
-  const secJobs = `<section><h2>${esc(`${id.label} jobs we do in ${town}`)}</h2><p>${esc(lead)}</p>${intro.map((p) => `<p>${esc(p)}</p>`).join("")}<ul>${[...jobs, ...extraJobs].map((j) => `<li>${esc(j)}</li>`).join("")}</ul>${famParas.slice(0, 2).map((p) => `<p>${esc(p)}</p>`).join("")}</section>`;
-  const secRuns = `<section><h2>${esc(`How a ${lab} job runs`)}</h2><ol>${steps.map((s) => `<li>${esc(s)}</li>`).join("")}</ol>${shuffle([...famParas.slice(2), generic[0], generic[1], homeTips[0], `${homeTips[1]} ${homeTips[2]}`], r).map((p) => `<p>${esc(p)}</p>`).join("")}</section>`;
+  const secJobs = `<section><h2>${esc(`${id.label} jobs we do in ${town}`)}</h2><p>${esc(lead)}</p>${intro.map((p) => `<p>${esc(p)}</p>`).join("")}<ul>${[...jobs, ...extraJobs].map((j) => `<li>${esc(j)}</li>`).join("")}</ul>${[famParas[0], generic[5], famParas[1]].map((p) => `<p>${esc(p)}</p>`).join("")}</section>`;
+  const secRuns = `<section><h2>${esc(`How a ${lab} job runs`)}</h2><ol>${steps.map((s) => `<li>${esc(s)}</li>`).join("")}</ol>${shuffle([...famParas.slice(2), generic[0], generic[1], generic[6], homeTips[0], `${homeTips[1]} ${homeTips[2]}`], r).map((p) => `<p>${esc(p)}</p>`).join("")}</section>`;
   const secAreas = `<section><h2>${esc(`Areas near ${town} we cover`)}</h2>${localLine ? `<p>${esc(localLine)}</p>` : ""}${facts ? facts.html.replace(/<section id="town-facts"><h2>[^<]*<\/h2>/, "").replace(/<\/section>$/, "") : ""}${linkList(nearLinks)}<h3>${esc(`${id.label} across Greater Manchester`)}</h3>${linkList(allTown)}</section>`;
   const secFaq = `<section id="faq"><h2>${esc(`${id.label} FAQs – ${town}`)}</h2>${faqUse.map(([q, a]) => `<details class="faq-item" open><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("")}</section>`;
   const secQuote = `<section><h2>${esc(`Get a ${lab} quote`)}</h2><p>${esc(poa)}</p>${shuffle([generic[2], generic[3], generic[4], why], r).map((p) => `<p>${esc(p)}</p>`).join("")}<p>${esc(`Call or WhatsApp ${PHONE}, or email icomplypropertyservices@gmail.com with your ${town} address, a short description and a few photos.`)}</p><div class="b1-cta"><a class="b1-call" href="tel:07517806082">Call ${PHONE}</a><a class="b1-wa" href="https://wa.me/447517806082">WhatsApp us</a></div><h3>${esc(`Other building work in ${town}`)}</h3>${linkList(siblingSvcs)}${kwLinks.length ? `<h3>${esc(`Related jobs in ${town}`)}</h3>${linkList(kwLinks)}` : ""}<h3>Useful pages</h3>${linkList(hubs)}</section>`;
