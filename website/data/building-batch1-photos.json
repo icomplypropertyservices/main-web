@@ -1,0 +1,265 @@
+{
+ "bathrooms": [
+  {
+   "src": "/assets/images/services/bathrooms.jpg",
+   "scene": "Fitted bathroom with suite and tiling"
+  },
+  {
+   "src": "/assets/images/services/b1/bathrooms-2.jpg",
+   "scene": "New hexagon floor tiles laid round a toilet and vanity unit"
+  },
+  {
+   "src": "/assets/images/services/b1/bathrooms-3.jpg",
+   "scene": "Finished bathroom basin, vanity unit and splashback tiles"
+  }
+ ],
+ "brickwork": [
+  {
+   "src": "/assets/images/services/b1/brickwork-1.jpg",
+   "scene": "Bricklayer building up a new brick wall"
+  },
+  {
+   "src": "/assets/images/services/b1/brickwork-2.jpg",
+   "scene": "Bricklayer laying a course of reclaimed bricks"
+  },
+  {
+   "src": "/assets/images/services/b1/brickwork-3.jpg",
+   "scene": "Bricklaying demonstration on a new wall"
+  }
+ ],
+ "damp-proofing": [
+  {
+   "src": "/assets/images/services/b1/damp-proofing-1.jpg",
+   "scene": "Injected damp-proof course holes along the base of a wall"
+  },
+  {
+   "src": "/assets/images/services/b1/damp-proofing-2.jpg",
+   "scene": "Damp-proof cream injected into a mortar course"
+  },
+  {
+   "src": "/assets/images/services/b1/damp-proofing-3.jpg",
+   "scene": "Chemical damp-proof course injection into brickwork"
+  }
+ ],
+ "flooring": [
+  {
+   "src": "/assets/images/services/b1/flooring-1.jpg",
+   "scene": "Fitters laying laminate boards over underlay"
+  },
+  {
+   "src": "/assets/images/services/b1/flooring-2.jpg",
+   "scene": "Laminate flooring part laid in an empty room"
+  },
+  {
+   "src": "/assets/images/services/b1/flooring-3.jpg",
+   "scene": "New wood-effect floor laid through to a kitchen"
+  }
+ ],
+ "joinery": [
+  {
+   "src": "/assets/images/services/b1/joinery-1.jpg",
+   "scene": "Joiners framing a new stud wall"
+  },
+  {
+   "src": "/assets/images/services/b1/joinery-2.jpg",
+   "scene": "Joiner sanding timber in a workshop"
+  },
+  {
+   "src": "/assets/images/services/b1/joinery-3.jpg",
+   "scene": "Joiner shaping a timber frame by hand"
+  }
+ ],
+ "kitchens": [
+  {
+   "src": "/assets/images/services/b1/kitchens-1.jpg",
+   "scene": "Fitted kitchen with new units, worktop and appliances"
+  },
+  {
+   "src": "/assets/images/services/b1/kitchens-2.jpg",
+   "scene": "Kitchen with island, wall units and worktops"
+  },
+  {
+   "src": "/assets/images/services/b1/kitchens-3.jpg",
+   "scene": "Fitter installing base units in a kitchen"
+  }
+ ],
+ "landscaping": [
+  {
+   "src": "/assets/images/services/landscaping.jpg",
+   "scene": "Landscaped garden"
+  },
+  {
+   "src": "/assets/images/services/b1/landscaping-2.jpg",
+   "scene": "Block paving being pressure-washed"
+  }
+ ],
+ "loft-conversions": [
+  {
+   "src": "/assets/images/services/b1/loft-conversions-1.jpg",
+   "scene": "Scaffolding up for a dormer loft conversion on a semi"
+  },
+  {
+   "src": "/assets/images/services/b1/loft-conversions-2.jpg",
+   "scene": "Loft conversion under way behind scaffolding"
+  },
+  {
+   "src": "/assets/images/services/b1/loft-conversions-3.jpg",
+   "scene": "Scaffolding and roof work for a loft conversion"
+  }
+ ],
+ "painting-decorating": [
+  {
+   "src": "/assets/images/services/b1/painting-decorating-1.jpg",
+   "scene": "Decorator rolling paint onto an interior wall"
+  },
+  {
+   "src": "/assets/images/services/b1/painting-decorating-2.jpg",
+   "scene": "Paint roller applying a new coat to a wall"
+  },
+  {
+   "src": "/assets/images/services/b1/painting-decorating-3.jpg",
+   "scene": "Roller applying white emulsion to a wall"
+  }
+ ],
+ "plastering": [
+  {
+   "src": "/assets/images/services/b1/plastering-1.jpg",
+   "scene": "Plasterboard fixed to a new wall ready for finishing"
+  },
+  {
+   "src": "/assets/images/services/b1/plastering-2.jpg",
+   "scene": "Jointing tape and trowels for plasterboard joints"
+  },
+  {
+   "src": "/assets/images/services/b1/plastering-3.jpg",
+   "scene": "Plasterer working on an internal wall"
+  }
+ ],
+ "plumbing": [
+  {
+   "src": "/assets/images/services/b1/plumbing-1.jpg",
+   "scene": "Pipework and valves under a kitchen sink"
+  },
+  {
+   "src": "/assets/images/services/b1/plumbing-2.jpg",
+   "scene": "Plastic waste pipes and fittings under a floor"
+  },
+  {
+   "src": "/assets/images/services/b1/plumbing-3.jpg",
+   "scene": "Copper pipes coming up through a tiled floor"
+  }
+ ],
+ "property-refurbishment-pm": [
+  {
+   "src": "/assets/images/services/b1/property-refurbishment-pm-1.jpg",
+   "scene": "House stripped back to the studs during refurbishment"
+  },
+  {
+   "src": "/assets/images/services/b1/property-refurbishment-pm-2.jpg",
+   "scene": "Refurbishment with new plasterboard going up"
+  },
+  {
+   "src": "/assets/images/services/b1/property-refurbishment-pm-3.jpg",
+   "scene": "Materials staged in a room ready for refurbishment"
+  }
+ ],
+ "rendering": [
+  {
+   "src": "/assets/images/services/b1/rendering-1.jpg",
+   "scene": "Renderer applying cement render to an outside wall"
+  },
+  {
+   "src": "/assets/images/services/b1/rendering-2.jpg",
+   "scene": "External wall being rendered by hand"
+  },
+  {
+   "src": "/assets/images/services/b1/rendering-3.jpg",
+   "scene": "Finished rendered house wall"
+  }
+ ],
+ "renovation": [
+  {
+   "src": "/assets/images/services/b1/renovation-1.jpg",
+   "scene": "Ceiling opened up to the joists during a house renovation"
+  },
+  {
+   "src": "/assets/images/services/b1/renovation-2.jpg",
+   "scene": "Stud walls and joists exposed in a renovation"
+  },
+  {
+   "src": "/assets/images/services/b1/renovation-3.jpg",
+   "scene": "Renovated room with new walls ready for decoration"
+  }
+ ],
+ "roofing": [
+  {
+   "src": "/assets/images/services/b1/roofing-1.jpg",
+   "scene": "Roofer working on a scaffolded house roof"
+  },
+  {
+   "src": "/assets/images/services/b1/roofing-2.jpg",
+   "scene": "Natural slate roof covering"
+  },
+  {
+   "src": "/assets/images/services/b1/roofing-3.jpg",
+   "scene": "Close view of slate roof courses"
+  }
+ ],
+ "tiling": [
+  {
+   "src": "/assets/images/services/b1/tiling-1.jpg",
+   "scene": "Bathroom wall tiled in large-format tiles"
+  },
+  {
+   "src": "/assets/images/services/b1/tiling-2.jpg",
+   "scene": "Shower floor tiled to a central drain"
+  },
+  {
+   "src": "/assets/images/services/b1/tiling-3.jpg",
+   "scene": "Tiler fixing wall tiles on site"
+  }
+ ],
+ "windows-doors": [
+  {
+   "src": "/assets/images/services/b1/windows-doors-1.jpg",
+   "scene": "White sash window set in a wall"
+  },
+  {
+   "src": "/assets/images/services/b1/windows-doors-2.jpg",
+   "scene": "Front doors and windows on a terraced street"
+  },
+  {
+   "src": "/assets/images/services/b1/windows-doors-3.jpg",
+   "scene": "Dormer window in a tiled roof"
+  }
+ ],
+ "gas": [
+  {
+   "src": "/assets/images/services/b1/gas-1.jpg",
+   "scene": "Combi boiler controls and pressure gauge"
+  },
+  {
+   "src": "/assets/images/services/gas-systems.jpg",
+   "scene": "Gas heating system"
+  },
+  {
+   "src": "/assets/images/services/gas-systems-photo.jpg",
+   "scene": "Gas boiler and pipework"
+  }
+ ],
+ "fire-doors": [
+  {
+   "src": "/assets/images/services/b1/fire-doors-1.jpg",
+   "scene": "Fire doors off a stair landing"
+  },
+  {
+   "src": "/assets/images/services/b1/fire-doors-2.jpg",
+   "scene": "Fire door with closer in a corridor"
+  },
+  {
+   "src": "/assets/images/services/b1/fire-doors-3.jpg",
+   "scene": "Fire door keep closed sign on a door"
+  }
+ ],
+ "extensions": []
+}
