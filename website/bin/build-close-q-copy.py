@@ -603,10 +603,10 @@ DEEP = {
             "defects written with the action the record describes.",
             "no-gas properties described as no-gas.",
             "0800 111 999 first if you smell gas.",
-            "engineers who are Gas Safe registered doing the check.",
+            "the check carried out by Gas Safe registered engineers.",
             "no registration number printed for iComply.",
         ],
-        "describe iComply as Gas Safe registered or publish a certificate fee.",
+        "publish a certificate fee.",
     ),
     "door-entry": (
         "Door entry",

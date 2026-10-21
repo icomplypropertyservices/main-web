@@ -201,7 +201,7 @@ function icomplyBuildingHubRows(): array
             'gas' => true,
             'h2' => 'What the kitchen visit covers',
             'paragraphs' => [
-                'We measure the walls, the window positions, the existing services and how the room is used. Units and worktops are then specified to that measure. A gas hob is isolated and reconnected only by a Gas Safe registered engineer.',
+                'We measure the walls, the window positions, the existing services and how the room is used. Units and worktops are then specified to that measure. A gas hob is isolated and reconnected as part of the fit; gas work is carried out by Gas Safe registered engineers.',
                 'Tiling, flooring and decorating that follow the fit stay on their own service pages and are quoted with the kitchen when you want one programme.',
             ],
             'faq' => ['Do you publish a kitchen price?', 'No. The quote is price on application after the measure. Worktops, appliances and how far the services have to move all change the job.'],
