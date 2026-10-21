@@ -207,7 +207,7 @@ export function thinFaqs(ctx) {
   const faqs = [
     [
       `How is ${ctx.subject} in ${ctx.place} quoted?`,
-      `We send a fixed written quote for ${ctx.subject} in ${ctx.place} once we know the building and how we get in${/eicr|electrical inspection/i.test(ctx.subject) ? ". EICRs start from £160" : ""}. Nothing is added without your say-so.`,
+      `We send a written quote for ${ctx.subject} in ${ctx.place} once we know the building and how we get in${/eicr|electrical inspection/i.test(ctx.subject) ? ". EICRs start from £160" : ""}. Nothing is added without your say-so.`,
     ],
     [
       `Where is the team that covers ${ctx.place} based?`,

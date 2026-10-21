@@ -53,7 +53,18 @@ function icomplyCtrTitle(string $topic, string $town, string $slug, string $svcS
             return $o;
         }
     }
-    return icomplyCtrCut($topic . ' ' . $town, 50) . ' | iComply';
+    // Never drop the town: shorten the topic instead (strip " by …"/" and …" tails, then word-cut).
+    $short = trim(preg_replace('/\s+(by|for|with|from)\s+.*$/i', '', $topic));
+    foreach ([$short . ' in ' . $town . ' | iComply', $short . ' ' . $town . ' | iComply', $short . ' ' . $town] as $o) {
+        if ($short !== '' && mb_strlen($o) <= 60) {
+            return $o;
+        }
+    }
+    $room = 60 - mb_strlen(' ' . $town);
+    if ($room >= 12) {
+        return icomplyCtrCut($short !== '' ? $short : $topic, $room) . ' ' . $town;
+    }
+    return icomplyCtrCut($topic . ' ' . $town, 60);
 }
 
 function icomplyCtrDesc(string $topic, string $town, string $slug, string $svcSlug = ''): string

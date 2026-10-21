@@ -317,7 +317,7 @@ export function renderTownPage(input) {
     keyword = {
       name: subject,
       service: serviceSlug,
-      intro: `${subject} carried out by our ${serviceName} engineers, with a fixed written quote for your building.`,
+      intro: `${subject} carried out by our ${serviceName} engineers, with a written quote for your building.`,
       focus: job.focus && job.focus.length ? job.focus : [
         "Same-day and next-day slots where available",
         "Fixed written quote before work starts",
@@ -488,12 +488,12 @@ export function renderTownPage(input) {
     const population = place.population
       ? `Published population is about ${Number(place.population).toLocaleString("en-GB")}. `
       : "";
-    proseHtml += `<p data-pe-slot="fire-installer-nap">${escapeHtml(`We install and maintain ${subject.toLowerCase()} in ${place.name} from our base at ${FIRE_NAP}. ${place.name} is in ${county}${place.region}, ${place.country}. ${population}${FIRE_DUTY} Call 07517 806082 for a fixed written quote.`)}</p>`;
+    proseHtml += `<p data-pe-slot="fire-installer-nap">${escapeHtml(`We install and maintain ${subject.toLowerCase()} in ${place.name} from our base at ${FIRE_NAP}. ${place.name} is in ${county}${place.region}, ${place.country}. ${population}${FIRE_DUTY} Call 07517 806082 for a written quote.`)}</p>`;
   }
   if (fireTown) {
     faqs.push([
       `Do you cover ${place.name} for ${subject}?`,
-      `Yes. Our engineers cover ${place.name} from ${FIRE_NAP}. ${FIRE_DUTY} Call 07517 806082 for a fixed written quote.`,
+      `Yes. Our engineers cover ${place.name} from ${FIRE_NAP}. ${FIRE_DUTY} Call 07517 806082 for a written quote.`,
     ]);
   }
   if (facts) {

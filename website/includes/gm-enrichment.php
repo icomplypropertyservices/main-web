@@ -502,7 +502,7 @@ function icomplyGmBuildFaqs(string $topic, string $townName, string $serviceSlug
         $faqs[] = ['What is particular about ' . $topic . ' in ' . $townName . '?', trim($sentences[0] . ' ' . ($sentences[1] ?? ''))];
         $faqs[] = [
             'How do I get a quote for ' . $topic . ' in ' . $townName . '?',
-            'Send the address, a few photos and what you need covered, and we will reply with a fixed written quote. Call or WhatsApp 07517 806082. Same-day and next-day slots are often available.',
+            'Send the address, a few photos and what you need covered, and we will reply with a written quote. Call or WhatsApp 07517 806082. Same-day and next-day slots are often available.',
         ];
         if ($gas || $serviceSlug === 'gas-systems' || $serviceSlug === 'heating') {
             $faqs[] = [
@@ -512,7 +512,7 @@ function icomplyGmBuildFaqs(string $topic, string $townName, string $serviceSlug
         } else {
             $faqs[] = [
                 'How is the ' . $townName . ' price decided?',
-                'Every job gets a fixed written quote based on the building, the access and what needs doing, with travel from Stockport included.',
+                'Every job gets a written quote based on the building, the access and what needs doing, with travel from Stockport included.',
             ];
         }
         return array_slice($faqs, 0, 4);
@@ -524,7 +524,7 @@ function icomplyGmBuildFaqs(string $topic, string $townName, string $serviceSlug
     }
     $faqs[] = [
         'How is ' . $topic . ' quoted in ' . $townName . '?',
-        'Send the ' . $place . ' address, access notes and what you need on the file. We reply with a fixed written quote.',
+        'Send the ' . $place . ' address, access notes and what you need on the file. We reply with a written quote.',
     ];
     if ($gas || $serviceSlug === 'gas-systems' || $serviceSlug === 'heating') {
         $faqs[] = [

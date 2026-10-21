@@ -230,7 +230,7 @@ export function renderBatch1(m) {
   const homeTips = ([
     `[Before the visit|Ahead of the survey], [take a few photos of the area and any problem you can see|snap some photos of the job and any damage] and send them to ${PHONE} on WhatsApp. It helps us bring the right materials.`,
     `[If you rent the home|If you are a tenant], let your landlord know first. [If you are the landlord|Landlords], we can arrange access with your tenant.`,
-    `We [work 8am to 5pm on weekdays as standard|usually work weekdays, 8am to 5pm], and [tell you if a job needs an early start|agree any early or late working with you].`,
+    `We [agree working hours with you before the job starts|confirm working hours when we book the job], and [tell you if a job needs an early start|agree any early or late working with you].`,
   ].map((x) => expand(x, r)));
 
   // --- FAQs

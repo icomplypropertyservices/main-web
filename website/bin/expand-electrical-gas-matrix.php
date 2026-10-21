@@ -148,7 +148,7 @@ function icomplyElectricalGasNewKeywords(): array
         $e,
         'price-of-rewire',
         'Rewire cost for North West homes and lets is POA after survey. ',
-        'Cost depends on storeys, circuit count, chasing versus surface trunking, consumer unit location and how much plaster or decoration you want us to reinstate. We explain those variables on site from our Stockport base, then write a fixed-scope POA quote. Related searches such as price of rewire and domestic rewire cost are answered the same way: a fixed written quote for your property.',
+        'Cost depends on storeys, circuit count, chasing versus surface trunking, consumer unit location and how much plaster or decoration you want us to reinstate. We explain those variables on site from our Stockport base, then write a fixed-scope POA quote. Related searches such as price of rewire and domestic rewire cost are answered the same way: a written quote for your property.',
         'Rewire cost across Greater Manchester & the North West is POA after survey. ',
         [
             'POA after survey only',
@@ -655,7 +655,7 @@ function icomplyElectricalGasNewKeywords(): array
         $g,
         'gas-safety-certificate',
         'Gas safety for rented and occupied homes means competent checks of appliances and flues, and — for landlords — a current gas safety record (often called a CP12). iComply arranges gas safety work across the North West from Stockport.',
-        'Homeowners usually want a service or a tightness check; landlords need the annual record and a copy for tenants. Commercial kitchens and plant are scoped separately. Gas safety certificate and CP12 costs are confirmed in a fixed written quote.',
+        'Homeowners usually want a service or a tightness check; landlords need the annual record and a copy for tenants. Commercial kitchens and plant are scoped separately. Gas safety certificate and CP12 costs are confirmed in a written quote.',
         'Gas safety checks and landlord records across Greater Manchester and the North West. CP12 and appliance checks. Fees POA.',
         [
             'Landlord annual gas safety records',

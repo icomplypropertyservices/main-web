@@ -182,7 +182,7 @@ export function securityTownCopy(intentSlug, townSlug) {
     `Landlords in ${town} can instruct us directly; agents can instruct on the landlord's behalf.`,
     `Call 07517806082 from ${town} and ask for a ${svc} survey; we confirm the visit window by text.`,
     `${town} requests received by email get a written reply with the scope, the price and the next free slot.`,
-    `For ${job}, ${town} customers get the same fixed written quote as every other town we cover.`,
+    `For ${job}, ${town} customers get the same written quote as every other town we cover.`,
     `Give us the ${town} address and the best contact number, and we will arrange the survey around your diary.`,
   ];
   const s7 = `${s7all[v(17, 0)]} ${s7all[v(17, 9)]} ${s7all[v(17, 14)]} ${s7all[v(17, 2)]}`;
