@@ -210,6 +210,7 @@ $required = [
     '/renewals',
     '/renewals/thanks',
     '/pages/about',
+    '/pages/photo-credits',
     '/pages/areas',
     '/pages/manufacturers',
     '/pages/resources',
@@ -1116,8 +1117,8 @@ __MATRIX_REDIRECTS__
 
 # Barrier town pages are files under /pages/barriers/. Force the hub redirect
 # and the town pretty URL so a directory does not 301 the leaf.
-/pages/barriers          /pages/services/barriers.php  301
-/pages/barriers/         /pages/services/barriers.php  301
+/pages/barriers          /pages/barriers.php          200!
+/pages/barriers/         /pages/barriers.php          200!
 /pages/barriers/:slug    /pages/barriers/:slug.php     200!
 /pages/barriers/:slug/   /pages/barriers/:slug.php     200!
 
@@ -1140,8 +1141,13 @@ TXT;
     }
     $txt = str_replace("__LIVE_404_REDIRECTS__\n", icomplyLive404RedirectLines(), $base);
     $txt = str_replace("__MATRIX_REDIRECTS__\n", icomplyUnpublishedMatrixRedirects(), $txt);
+    if (!function_exists('securityDualRingRedirectLines')) {
+        require_once SITE_ROOT . '/includes/security-dual-ring.php';
+    }
     // Exact place-alias 301s must come before /pages/barriers/:slug and /pages/aov 200! rules.
-    return icomplyPlaceAliasRedirectLines()
+    // Security job twins 301 to their keyword equivalents (first match wins).
+    return securityDualRingRedirectLines()
+        . icomplyPlaceAliasRedirectLines()
         . rtrim($txt, "\r\n") . "\n"
         . icomplyAovLegacyRedirectLines()
         . icomplyNationwideP0JobRedirectLines() . <<<'TXT'

@@ -1,0 +1,572 @@
+{
+ "emergency-cctv-repair": {
+  "paragraphs": [
+   "When the recorder stops writing footage, every hour without pictures is an hour you cannot evidence. We take emergency CCTV repair calls from our Stockport workshop and tell you on the phone whether an engineer is free to come out.",
+   "Most urgent camera calls fall into four buckets: a recorder that has frozen or keeps rebooting, a hard disk that is full or failing, a run of cameras that have gone black after a power cut, or remote viewing that stopped after a router change. Each has a different first step, so the call starts with a few quick questions rather than a blind dispatch.",
+   "Before anyone drives out, try three things. Check the recorder has power and its lights are on. Look at the monitor for a disk error or a 'no signal' tile pattern. Note whether all cameras dropped together or only one. Those answers often tell us whether the fault is the recorder, the power supply feeding the cameras, or a single cable.",
+   "If an engineer can attend, the aim of the first visit is to get recording back, not to sell a new system. That can mean replacing a dead disk, swapping a blown camera power supply, re-terminating a damaged cable, or restoring a recorder configuration. Anything bigger is written up and quoted separately once pictures are back.",
+   "Footage that already exists matters. If there has been an incident, tell us before the engineer touches the recorder. We will try to export the relevant clip first, because a disk swap or factory reset can destroy what is on the old drive. The export goes to the person who instructed the job, not to the engineer.",
+   "We do not promise a fixed response time. Urgent repair is price on application and depends on who is free and how far away the site is. If nobody can attend today, we say so plainly and offer the earliest slot instead of leaving you waiting for a call that never comes.",
+   "Systems fitted by another installer are fine to repair as long as we can get the admin password or the recorder can be reset safely. Unknown passwords are the single biggest cause of a slow emergency visit, so look for the installer's handover sheet before we arrive.",
+   "After the repair you get a short note: what failed, what was replaced, and what is still at risk, for example a second disk with warnings or a camera with water in the housing. That note is what lets you decide whether to book planned CCTV servicing rather than waiting for the next outage.",
+   "Weather is a frequent trigger. Driving rain gets into poorly sealed junction boxes, frost cracks old connectors, and lightning strikes nearby can take out a power supply and several cameras on the same circuit. When several cameras drop after a storm, we test the supply and surge protection before blaming the cameras.",
+   "Shops and offices often only discover a dead recorder when they need footage after a theft. A quick weekly glance at the playback screen, or an app notification for disk errors, is the cheapest way to avoid making an urgent call at the worst possible time."
+  ],
+  "faqs": [
+   {
+    "q": "My CCTV has stopped recording, what should I check first?",
+    "a": "Check power to the recorder, look for a disk or HDD error on screen, and note whether every camera failed together or just one. Tell us those three things when you call and we can usually narrow the fault before we travel."
+   },
+   {
+    "q": "Can you recover footage from a broken recorder?",
+    "a": "Often, yes, if the disk itself is readable. Tell us about any incident before work starts so we export clips first. We never format a drive that may hold evidence without your say-so."
+   },
+   {
+    "q": "How quickly can an engineer get to me?",
+    "a": "It depends on who is free and the distance from Stockport. We tell you honestly on the call whether someone can come today; we do not quote a guaranteed response time."
+   },
+   {
+    "q": "What does an urgent CCTV callout cost?",
+    "a": "It is price on application. You are told the basis of the charge on the phone, and parts such as a replacement disk are confirmed before they are fitted."
+   },
+   {
+    "q": "Will you repair cameras another company installed?",
+    "a": "Yes, provided the recorder can be accessed or reset safely. Having the admin login ready makes the visit faster and cheaper."
+   }
+  ]
+ },
+ "emergency-access-control-repair": {
+  "paragraphs": [
+   "A door that will not lock, or will not open, is a security problem and a fire safety problem at the same moment. Our urgent access control repair service starts with a phone call to work out which of those risks is biggest at your building right now.",
+   "The usual faults are a maglock that has lost power and left the door free, a strike that stays locked when it should release, readers that stop recognising fobs, or a controller that has dropped its database after a power cut. A door stuck open and a door stuck shut are treated very differently.",
+   "If a door is locked and people cannot get out, use the green break-glass or emergency release first; that is what it is there for. If a door is stuck open, arrange a person or a temporary lock to cover it. Then call us with the door location, the make of reader if you can see it, and what changed just before it failed.",
+   "On site, the engineer proves the fire release and the exit button before anything else. A repaired door that does not fail safe is not repaired. After that comes the lock, the power supply and battery, the reader, and finally the controller and its user list.",
+   "Lost fobs and leavers are a frequent emergency in shared buildings. Where the controller allows it, we can delete a lost credential and re-enrol a replacement on the same visit. If the software lives on an old PC that nobody can log into, we explain the options rather than pretending it can be fixed in minutes.",
+   "We will look at systems installed by other firms. Paxton, Hikvision, generic standalone keypads and cloud platforms all turn up. If parts are obsolete we tell you and quote a sensible replacement for that door instead of a whole new system.",
+   "Urgent attendance is price on application and depends on who is free. We do not advertise a fixed response time. If we cannot come today, we help you make the door safe overnight with the steps you can take yourself.",
+   "Afterwards you receive a note covering the door, what failed, what was replaced, the battery condition and whether the fire alarm interface was tested. That record is useful for a landlord, a managing agent or a fire risk assessor who asks later.",
+   "Power cuts are the root of many access control emergencies. When mains returns, an old controller may boot without its user list, or a flat battery may leave a maglock unable to hold. We check the battery date and the charger output on every urgent visit, because the next cut will expose the same weakness.",
+   "Shared offices, surgeries and schools have extra pressure: staff need to get in for opening time, and visitors must not be able to wander. In those buildings we agree a temporary arrangement, such as a staffed door, while the controller is repaired, and we keep the fire release working throughout.",
+   "Vandalised readers and broken exit buttons are common at street-level entrances. Replacement units are usually carried on the van, but anti-vandal versions may be worth fitting so the same door does not fail again next month."
+  ],
+  "faqs": [
+   {
+    "q": "The door is stuck locked, what should I do?",
+    "a": "Use the green emergency release or break-glass next to the door to let people out, then call us. Never wedge or force a fire door that is part of an escape route."
+   },
+   {
+    "q": "Can you cancel a lost fob over the phone?",
+    "a": "Not remotely unless the system is cloud managed and you give us access. On site we can usually delete the lost fob and enrol a new one on the same visit."
+   },
+   {
+    "q": "Do you fix maglocks that have lost power?",
+    "a": "Yes. We check the power supply, the battery backup, the lock itself and the fire alarm link, then prove the door releases correctly."
+   },
+   {
+    "q": "Is emergency access control repair a fixed price?",
+    "a": "No, it is price on application. You hear the basis of the charge on the phone and parts are confirmed before fitting."
+   },
+   {
+    "q": "Will you work on another installer's access system?",
+    "a": "Yes, where the controller or software can be reached. Obsolete parts are flagged and a replacement for that door is quoted."
+   }
+  ]
+ },
+ "emergency-alarm-call-out": {
+  "paragraphs": [
+   "A burglar alarm ringing at 2am, or a panel that refuses to set as you lock up, needs a quick answer. Our emergency alarm call-out line exists for exactly that, and the first job is to stop the noise or get the building secured without making things worse.",
+   "Common causes are a dying backup battery, a detector that is dusty or has a spider in it, a door contact that has worked loose, a tamper fault on a sounder box, or a code that a new member of staff has entered wrongly. Many of these can be calmed down over the phone if you have a valid user code.",
+   "If the bell box keeps ringing, keyholders should first try to unset the system with their code. Do not pull wires out of the panel or the external sounder; that can trigger a tamper alarm and leave the building unprotected. Note the zone number shown on the keypad.",
+   "When an engineer attends, they read the panel log to find which device triggered and when. That log is the difference between guessing and fixing. Batteries, detectors and contacts are tested, and anything replaced is listed in the visit note.",
+   "Neighbours and the council take repeated false alarms seriously, and a bell that runs for long periods can lead to complaints. If we cannot attend tonight, we explain how to isolate a faulty zone safely so the rest of the building stays protected until a visit.",
+   "We do not hold NSI or SSAIB registration, so we cannot issue a police URN or provide monitored police response. Many landlords and small businesses run audible-only or self-monitored systems, and those are the alarms we look after.",
+   "Call-outs are price on application and depend on whether an engineer is free. We never promise a guaranteed arrival time. If the system is graded and monitored by a police-response company, that company should be your first call.",
+   "Once the alarm is stable we give you a written summary, including whether the battery is due, which detectors are suspect and whether a service visit would prevent the next call-out.",
+   "Wireless systems bring their own call-outs. A detector battery that runs flat at night can trigger a low-battery or supervision fault that sounds the keypad repeatedly. Keeping a note of when batteries were last changed saves a lot of sleepless nights.",
+   "If you manage several properties, give us a keyholder list with names, phone numbers and which code each person holds. On a night call, the biggest delay is often finding someone who can let an engineer in and silence the panel properly.",
+   "Older panels with obsolete keypads can still be serviced, but parts become harder to source. If an emergency exposes a system at the end of its life, we tell you and quote a replacement for later, after the immediate problem is dealt with."
+  ],
+  "faqs": [
+   {
+    "q": "My alarm will not stop ringing, what do I do?",
+    "a": "Enter a valid user code on the keypad to unset it. Do not cut wires at the panel or bell box. Note the zone shown and call us with that number."
+   },
+   {
+    "q": "Why does my alarm keep going off on its own?",
+    "a": "Low batteries, dirty or failing detectors, loose door contacts and tamper faults are the usual causes. The panel log normally shows which one."
+   },
+   {
+    "q": "Can you give me a police URN?",
+    "a": "No. We do not hold NSI or SSAIB registration, so we cannot issue a URN. We maintain audible and self-monitored systems."
+   },
+   {
+    "q": "How much is an emergency alarm call-out?",
+    "a": "It is price on application, based on attendance and any parts needed. You are told the basis before we travel."
+   },
+   {
+    "q": "Can I isolate a faulty zone myself?",
+    "a": "Often, yes, with an engineer or master code. We can talk you through it so the rest of the building stays armed."
+   }
+  ]
+ },
+ "24-hour-cctv-engineer": {
+  "paragraphs": [
+   "Searching for a 24-hour CCTV engineer usually means something has gone wrong outside office hours: a break-in overnight, a recorder that died over the weekend, or cameras that went dark when the power came back. We answer with a straight yes or no on attendance.",
+   "Night and weekend calls need a different conversation from a weekday booking. We ask whether the building is occupied, whether there has been a crime, whether police are already involved, and whether anyone can meet an engineer and let them reach the recorder cabinet safely.",
+   "If a crime has happened, preserving footage comes first. Do not power cycle the recorder repeatedly or let anyone delete clips. Write down the time of the event. Police will often ask for a copy, and an engineer can help export it in a playable format with the correct timestamp.",
+   "Out of hours we focus on restoring recording and viewing, not on upgrades. Typical fixes are a replacement power supply, a reset of a locked recorder, a cable repair after vandalism, or reconnecting remote access so you can watch the site from your phone through the night.",
+   "We will not tell you an engineer is on the way when nobody is free. If attendance has to wait until morning, we agree a call-back time and talk you through what to check and how to protect the site in the meantime.",
+   "Out-of-hours attendance is price on application, and night or weekend work normally costs more than a daytime visit. You hear the basis of the charge before anyone sets off, and parts are confirmed before fitting.",
+   "The engineer leaves a written record of what time they arrived, what they found and what they changed. For an insurance claim or a police report, that record and an exported clip are often more useful than the repair itself.",
+   "If the same fault keeps happening after dark, such as infrared failing or cameras dropping when floodlights switch on, we recommend a daytime survey to fix the cause rather than repeated night calls.",
+   "Retail parks, warehouses and construction sites are the most common out-of-hours callers. Theft often happens when nobody is around, so a camera fault discovered at 6pm on a Friday can mean a whole weekend unprotected. For those sites, even a temporary fix to restore recording can be worth the out-of-hours charge.",
+   "Remote monitoring firms sometimes call us directly when their feed from your site drops. We are happy to work with them, provided you, as the client, authorise the visit and the charges in advance.",
+   "Weekend callers are often property managers who discovered a problem from a resident's complaint. If you manage a block, tell us where the recorder is kept and who has the cabinet key; at night that information saves a great deal of time."
+  ],
+  "faqs": [
+   {
+    "q": "Do you really answer CCTV calls at night?",
+    "a": "Yes, we pick up and tell you honestly whether an engineer can attend. We never claim someone is on the way when they are not."
+   },
+   {
+    "q": "We had a break-in, how do we save the footage?",
+    "a": "Leave the recorder running, note the time of the incident and do not delete or overwrite anything. We can help export the clip for police."
+   },
+   {
+    "q": "Is night-time CCTV repair more expensive?",
+    "a": "Usually, yes. Out-of-hours work is price on application and you are told the basis before an engineer travels."
+   },
+   {
+    "q": "Can you get my remote viewing working tonight?",
+    "a": "Often, if the recorder is healthy and we can reach the router. App and port problems are a common out-of-hours fix."
+   },
+   {
+    "q": "What if nobody is free until morning?",
+    "a": "We agree a call-back time and explain the checks and temporary measures you can take overnight."
+   }
+  ]
+ },
+ "same-day-cctv-repair": {
+  "paragraphs": [
+   "If your cameras failed this morning and you want them fixed before close of business, ask us for a same-day slot. We check the diary while you are on the phone and give you a realistic arrival window, or tell you that tomorrow is the honest answer.",
+   "Daytime faults are usually less dramatic than overnight emergencies: one camera blurred or showing a black image, a recorder beeping about the disk, the phone app showing 'offline', or the picture rolling because a connector has corroded. These are ideal jobs to slot into a working day.",
+   "You can speed things up by sending photos before we arrive. A picture of the recorder label, the error on screen and the camera that has failed lets the engineer bring the right disk, power supply or camera body instead of making a second trip.",
+   "Once on site, the engineer works through the fault list you described and nothing else unless you agree. A typical visit restores the failed camera, checks every other channel is still recording, sets the correct time and date, and confirms you can play back footage.",
+   "We are happy to repair systems installed by other firms. Bring the recorder password, or know who holds it. Without it, the engineer may have to reset the unit, which takes longer and can wipe settings you rely on.",
+   "Same-day work is never guaranteed. It depends on where engineers already are and how many urgent calls came in first. When a slot exists, we confirm it in writing so you are not left waiting by the door all afternoon.",
+   "Pricing is price on application. You get a written quote or the basis of the charge before work starts, and any parts are agreed on the day rather than added afterwards.",
+   "Before the engineer leaves, they write down what was restored, what was tested and anything that looks like the next failure, such as an ageing disk. That gives you a choice between booking a service and waiting for the next fault.",
+   "Shops, pubs and restaurants often call in the morning after spotting a fault at close the night before. Booking early in the day improves the chance of a same-day slot, and sending the photos straight away lets the engineer plan the route.",
+   "If a camera is mounted high on a building, tell us the approximate height. Ladders cover most jobs, but anything above a first-floor window may need a platform, and that has to be arranged before the visit rather than on the day.",
+   "Some faults look urgent but are simple: a camera knocked out of position by a delivery lorry, a recorder showing the wrong date after a power cut, or a phone app logged out after an update. We tell you on the phone if a fix sounds like something you can do yourself.",
+   "If footage is needed for an incident that happened before the fault, tell us when you book. The engineer will export that clip first, before swapping a disk or resetting the recorder, so nothing important is lost in the repair."
+  ],
+  "faqs": [
+   {
+    "q": "Can you fix my CCTV today?",
+    "a": "If the diary has room, yes. We check while you are on the phone and give a realistic window, or tell you plainly that tomorrow is better."
+   },
+   {
+    "q": "What should I send before the visit?",
+    "a": "Photos of the recorder label, the on-screen error and the faulty camera. They help the engineer bring the right parts first time."
+   },
+   {
+    "q": "Do you guarantee same-day repair?",
+    "a": "No. Slots depend on engineer location and urgent calls. When one is available we confirm it in writing."
+   },
+   {
+    "q": "How much does a same-day repair cost?",
+    "a": "It is price on application, with the basis of the charge and any parts agreed before work starts."
+   },
+   {
+    "q": "Will you check the other cameras too?",
+    "a": "Yes, the engineer confirms every channel is recording and that playback works before leaving."
+   }
+  ]
+ },
+ "same-day-alarm-repair": {
+  "paragraphs": [
+   "An intruder alarm that will not set, shows a fault light or beeps every few minutes is a daytime problem you want gone before you lock up tonight. Ask us for a same-day alarm repair slot and we will check engineer availability on the call.",
+   "Daytime alarm faults tend to be predictable: a low battery warning on the panel, a wireless detector whose battery has run down, a door contact that no longer lines up, a keypad showing 'tamper', or a setting fault caused by a window left open in a back room.",
+   "Before you call, read what the keypad says and write it down exactly. Note which zone or device is named. If you have a user manual, check whether the fault can be acknowledged with your code. That information lets us bring the right battery, detector or contact.",
+   "The engineer will read the event log, test every detector by walking the building, and check the panel battery and mains supply. The goal is a system that sets cleanly tonight and will not wake the neighbours later.",
+   "We look after audible and self-monitored alarms in homes, shops, offices and shared buildings. We do not hold NSI or SSAIB registration, so we do not provide police-response monitoring or issue URNs. If your alarm is monitored by such a company, contact them first.",
+   "Slots are offered when the diary allows; we never promise same-day attendance in advance. If today is full, you get the earliest firm time and advice on omitting a faulty zone safely so the rest of the alarm can still be set.",
+   "Repairs are price on application. Parts such as panel batteries, detectors and sounder batteries are agreed with you before they are fitted.",
+   "You get a short report listing the fault, the parts replaced, battery dates and any detectors that look tired. Many customers use it to book an annual alarm service and avoid the next emergency.",
+   "Alarm faults often appear just as you are trying to lock up. If you cannot set the system, do not leave the building with the panel half set; it may sound later. Call us, describe the message, and we will explain whether to omit a zone or wait for the engineer.",
+   "Shops and offices with a fixed closing time should call in the morning. Earlier calls are much more likely to get a slot before the end of the working day.",
+   "Wireless alarms in particular tend to report batteries one device at a time. If one detector has warned, others fitted at the same time are usually close behind, so we may suggest changing them together on the same visit.",
+   "Panel batteries usually last three to five years. If yours has never been changed, a mains blip or a short power cut can be enough to trigger a fault that stops the alarm setting. Replacing an old battery is a quick part of most daytime visits, and we write the date on the battery so you know when it is next due."
+  ],
+  "faqs": [
+   {
+    "q": "My alarm will not set, can you come today?",
+    "a": "If an engineer has space in the diary, yes. Tell us what the keypad says and which zone is shown."
+   },
+   {
+    "q": "Why does my alarm keypad keep beeping?",
+    "a": "Usually a low battery, a mains fault or a device tamper. The keypad message and panel log tell us which."
+   },
+   {
+    "q": "Can I still set the alarm with a faulty zone?",
+    "a": "Often, by omitting that zone with a valid code. We can explain how so the rest stays protected."
+   },
+   {
+    "q": "Do you provide police-monitored alarms?",
+    "a": "No. We do not hold NSI or SSAIB registration. We maintain audible and self-monitored systems."
+   },
+   {
+    "q": "What does a same-day alarm repair cost?",
+    "a": "It is price on application. Parts are agreed with you before fitting."
+   }
+  ]
+ },
+ "security-systems-near-me": {
+  "paragraphs": [
+   "If you are looking for security systems near you, you probably want one local firm that can talk about cameras, door access and burglar alarms in the same conversation. We are based in Offerton, Stockport and cover Greater Manchester and towns within about 50 miles.",
+   "Being nearby matters for security. A local installer can survey without a long travel bill, attend a fault without a two-day wait, and already knows the building types in your area, from Victorian terraces and mill conversions to modern flats and retail parks.",
+   "Start by telling us what worries you. Break-ins, tenants losing keys, deliveries going missing, anti-social behaviour at the bins, or an insurer asking for an alarm all point to different equipment. We would rather fit the right single system than three that overlap.",
+   "For many properties the right answer is a small mix: a few cameras on the entrances, a door entry panel so tenants can see who is calling, and an alarm on the office or plant room. Each part is quoted as its own section so you can choose what to go ahead with.",
+   "We look after systems we did not install. If you have inherited a building with cameras, fobs and an alarm from three different companies, we can survey what is there, tell you what still works and suggest what to keep.",
+   "A survey is arranged by phone and the installation is price on application. You get a written quote that separates CCTV, access control, door entry and intruder alarm so each figure is clear.",
+   "Choose your town from the list below to see local details such as postcode districts, the council area and our distance from the Stockport workshop.",
+   "We do not hold NSI or SSAIB registration, so we do not offer police-response monitoring. We design cameras around BS EN 62676 practice and alarms around BS EN 50131, and we explain where that matters for your insurer.",
+   "Many enquiries come from landlords with houses in multiple occupation, where tenants want to feel safe and the landlord wants fewer lost keys and clearer evidence when there is a dispute. A camera on the front door and a fob-controlled entrance often solve both problems.",
+   "Small businesses on high streets and industrial estates usually start with cameras, then add an alarm when an insurer asks. We plan the first system so the second can be added later without ripping anything out.",
+   "If you are not sure what you need, send us a few photos of the outside of the building and a short description of the worry. We will suggest whether a site visit is the right next step and what a sensible first phase looks like.",
+   "Response after the sale is the real test of a nearby security firm. If a camera drops or a fob stops working, you speak to the same workshop that surveyed and installed it, and the engineer who attends already knows the area and often the building. That continuity is the main reason customers choose a local company over a national call centre."
+  ],
+  "faqs": [
+   {
+    "q": "Do you cover my area?",
+    "a": "We work across Greater Manchester and towns within about 50 miles of Manchester and Burnley, 269 towns in total. Pick your town for local details."
+   },
+   {
+    "q": "Can one company do cameras, fobs and alarms?",
+    "a": "Yes. We quote each system as a separate section so you can choose which parts to go ahead with."
+   },
+   {
+    "q": "Will you take over equipment from another installer?",
+    "a": "Yes. We survey what is there, say what still works and suggest what to keep."
+   },
+   {
+    "q": "How much do security systems cost?",
+    "a": "Installation is price on application after a survey. Each system is priced separately in the written quote."
+   },
+   {
+    "q": "Are you insurer approved?",
+    "a": "We do not hold NSI or SSAIB registration. We follow BS EN 62676 and BS EN 50131 practice and explain what your insurer may require."
+   }
+  ]
+ },
+ "security-system-installation": {
+  "paragraphs": [
+   "Planning a new security installation is easier when the whole building is surveyed once. We design and fit CCTV, access control and intruder alarms for landlords, managing agents and businesses, and write each system up as its own section of one quote.",
+   "A good installation starts with the risk, not the catalogue. We walk the site and ask where intruders would try first, which doors need controlled entry, who must see footage and how long it needs keeping, and what the insurer or lease actually requires.",
+   "For CCTV the design covers camera positions, field of view, night performance, recorder size and retention period. For access control it covers readers, locks, exit devices and the fire alarm release. For alarms it covers detectors, contacts, sounders and setting arrangements.",
+   "Cable routes are planned before anything is ordered. In occupied flats and offices we use existing risers and ceiling voids where possible, keep trunking tidy in communal areas and agree any drilling through fire-stopped walls so the compartment is made good afterwards.",
+   "Installation days are scheduled around tenants and staff. Noisy work is grouped together, power interruptions are agreed in advance and doors are never left unsecured overnight during the changeover from an old system to a new one.",
+   "At commissioning we prove every camera records and plays back, every door releases on fire signal, and every alarm zone triggers correctly. You receive admin passwords in your name, not just the installer's login, and a handover sheet listing each device.",
+   "Installation is price on application after the survey. The quote separates hardware, labour, cabling and any making-good, so you can phase a project over several budgets if needed.",
+   "We do not hold NSI or SSAIB registration and cannot issue police URNs. We design to recognised British and European standards and tell you honestly if a monitored, graded alarm from a registered company would suit your insurer better.",
+   "Larger buildings and estates often install in phases. We can fit cabling and containment for future cameras or doors at the same time as the first phase, which avoids disturbing tenants twice and keeps the later phase cheaper.",
+   "Integration is optional, not automatic. Linking CCTV to door events or alarm triggers can be useful, but it adds complexity. We explain what each link would do for you before adding it to the design.",
+   "After handover we offer planned maintenance, but you are not tied to us. The documentation and passwords we leave behind let any competent engineer look after the system in future.",
+   "Fire doors and escape routes are protected throughout a security installation. Locks on final exits must release on fire signal, cables through fire-rated walls and floors are sealed with suitable products, and any change to a door on an escape route is discussed with the person responsible for the fire risk assessment. Security should never make a building harder to leave in an emergency.",
+   "Training is included: your nominated people learn to view footage, add users and set the alarm before we leave."
+  ],
+  "faqs": [
+   {
+    "q": "Can you install CCTV, access control and an alarm together?",
+    "a": "Yes. We survey once and quote each system as its own section, so you can install all three or phase them."
+   },
+   {
+    "q": "How long does a security installation take?",
+    "a": "Small jobs take a day; larger multi-door or multi-camera projects are planned over several days around occupants."
+   },
+   {
+    "q": "Who keeps the passwords after installation?",
+    "a": "You do. Admin logins are handed over in your name with a device list."
+   },
+   {
+    "q": "How is installation priced?",
+    "a": "Price on application after a site survey, split into hardware, labour, cabling and making-good."
+   },
+   {
+    "q": "Can you install a police-monitored alarm?",
+    "a": "No. We do not hold NSI or SSAIB registration. We say so up front if that is what your insurer needs."
+   }
+  ]
+ },
+ "anpr-installation": {
+  "paragraphs": [
+   "Automatic number plate recognition needs dedicated cameras placed for one job: reading plates. We install ANPR for car parks, gated developments, yards and depots where you need a reliable record of which vehicles came and went.",
+   "The design decisions are specific. Plate cameras want a narrow field of view on a single lane, a mounting height and angle that sees the plate rather than the bonnet, and a shutter speed fast enough for the approach speed. A wide overview camera cannot do the same job.",
+   "Lighting is the most common reason ANPR fails. Headlights flare, plates are retro-reflective and winter mornings are dark. We specify infrared illumination matched to the camera and test reads in daylight and darkness before handover.",
+   "Many projects pair ANPR with a barrier or gate so authorised vehicles open the entrance automatically. The barrier itself is a separate piece of work, and we write it as its own line so you can see what each part costs and who maintains it.",
+   "Plate data is personal data. We set retention periods with you, put up clear signage, and restrict who can search or export reads. If you share access with a parking management firm, we agree in writing who is the controller of that data.",
+   "Before ordering hardware we survey the lane, measure distances and check power and network routes. On longer drives we may recommend fibre or a wireless link rather than copper cable.",
+   "ANPR installation is price on application. The quote lists cameras, illuminators, the software or recorder licence, cabling, poles and any civil work such as ducting, so nothing appears later as an extra.",
+   "At commissioning we run test vehicles in and out, check the read rate at different times of day and show your team how to search plates and export evidence.",
+   "Typical clients include residential developments with resident-only parking, business parks controlling staff spaces, yards recording deliveries, and sites dealing with fly-tipping or unauthorised parking. The use case shapes whether we need whitelists, alerts or just a searchable log.",
+   "Multi-lane entrances need a camera per lane, or a carefully chosen wider model with enough resolution to read two plates side by side. We check this at survey rather than guessing from a site plan.",
+   "Maintenance matters: dirty lenses, spider webs around illuminators and drifting focus all reduce read rates over time. We can include a periodic clean and read-rate check in a service plan.",
+   "Software choices matter as much as cameras. Some sites need a simple searchable log; others want whitelists that open a barrier, alerts for a flagged plate, or reports of how long vehicles stayed. We explain which features need an extra licence, who manages the plate list day to day, and how the data is backed up, so the system keeps working after the installers leave and staff change.",
+   "Poles and civil work are often the biggest variable. If there is no wall or building at the right distance from the lane, a dedicated column is needed, with a foundation, ducting for cable and sometimes a permit from the landowner. We identify that at survey so it is in the written quote from the start."
+  ],
+  "faqs": [
+   {
+    "q": "Can my existing CCTV cameras read number plates?",
+    "a": "Usually not reliably. ANPR needs a narrow lane view, the right angle and infrared lighting, which overview cameras lack."
+   },
+   {
+    "q": "Do you install barriers with ANPR?",
+    "a": "We can link ANPR to a barrier or gate. The barrier is quoted as a separate line."
+   },
+   {
+    "q": "How long should plate reads be kept?",
+    "a": "As long as you have a clear reason. We set a retention period with you and add signage."
+   },
+   {
+    "q": "What affects the cost of ANPR installation?",
+    "a": "Number of lanes, cable distance, poles, lighting and civil work. It is price on application after survey."
+   },
+   {
+    "q": "Will ANPR work at night?",
+    "a": "Yes, with matched infrared illumination. We test reads in darkness before handover."
+   }
+  ]
+ },
+ "anpr-near-me": {
+  "paragraphs": [
+   "Want someone local to look at a number plate camera problem? Whether your car park has none yet or the existing reader is missing plates, we come out from Stockport to the town on the page and survey the lane in person.",
+   "A local visit lets us see what a remote quote cannot: the slope of the entrance, where cars actually stop, overhanging trees, the street lights opposite and the glare from the low winter sun. Those details decide whether a plate camera will read well.",
+   "If you already have ANPR that is underperforming, bring us the read logs or screenshots of failed reads. Missed plates at dusk, partial characters and duplicate entries each point to a different cause, from focus and angle to missing illumination.",
+   "Sometimes the honest finding is that a general CCTV camera has been asked to read plates. We explain why that rarely works and what a dedicated lane camera would change, without insisting on replacing the rest of the system.",
+   "Travel from our Offerton workshop is included in the quote for the towns we cover, so a site in Bolton, Macclesfield or Huddersfield is not priced differently because of the drive.",
+   "Landlords, residents' management companies and small businesses with a single gated entrance make up most local ANPR enquiries. Shared car parks often need a short conversation about who manages the plate list and who can see the data.",
+   "Work is price on application after the visit. You get a written quote describing the lane camera, lighting, mounting and any network work, with retention and signage settings agreed in advance.",
+   "Pick your town below for local details, including postcode districts and the distance from the workshop.",
+   "Local residents' car parks often fight the same problem: non-residents leaving cars overnight. A plate log does not stop parking on its own, but it gives the managing agent or parking firm the evidence to act, which is why the question of who controls the data comes up early.",
+   "Rural and edge-of-town sites bring their own constraints: no street lighting, long cable runs from the building to the gate, and sometimes no network at the entrance. On a local visit we check what power and connectivity exist before suggesting hardware.",
+   "If you are comparing quotes from national firms, ask whether an engineer has actually stood at your entrance. Our quotes are only written after a site visit, so the camera position and lighting are based on what we saw.",
+   "Signs are part of a lawful local ANPR system. Drivers should be told before they enter that plates are recorded, why, and who to contact. We advise on wording and position at the entrance, and we keep a short written record of the retention period and who can search reads. That paperwork is what a managing agent or residents' committee will ask for if a driver ever complains about being recorded.",
+   "Shared driveways and small courtyards can still benefit from a single, well-placed plate camera."
+  ],
+  "faqs": [
+   {
+    "q": "Can you come and look at my car park entrance?",
+    "a": "Yes. We visit the town on the page, watch how cars approach and check light and angles before quoting."
+   },
+   {
+    "q": "Our plate camera misses cars at dusk, why?",
+    "a": "Usually low light, wrong angle or missing infrared. Read logs help us pinpoint it on the visit."
+   },
+   {
+    "q": "Is travel extra for my town?",
+    "a": "No. Travel from Stockport is included in the quote for the towns we cover."
+   },
+   {
+    "q": "Who controls plate data in a shared car park?",
+    "a": "That should be agreed in writing; we help set retention, signage and access to searches."
+   },
+   {
+    "q": "How much does a local ANPR survey and install cost?",
+    "a": "It is price on application after the site visit."
+   }
+  ]
+ },
+ "access-control-emergency": {
+  "paragraphs": [
+   "An access control emergency is rarely about the technology on its own. It is about people: residents locked out in the rain, staff unable to leave, or a front door hanging open onto the street. Call us and we prioritise whichever of those is happening.",
+   "Landlords and managing agents see the same handful of crises. The fob reader on the communal door dies and nobody can get in. A power cut leaves a maglocked entrance unsecured. A former tenant still has a working fob. A delivery driver breaks the exit button. Each needs a different response.",
+   "While you wait, keep the escape route safe. Never chain or prop a fire exit. If the main entrance is unsecured, a member of staff or a temporary padlock on a non-escape door may be the stop-gap. If people are locked out, check whether a key override or a trade button exists.",
+   "For a residential block we can usually restore entry for residents first and deal with the controller second. Readers, power supplies and lock hardware are carried in the van, and the fire alarm release is tested once the door works again.",
+   "Credential problems are fixed at the controller. That might be a local PC, a web portal or a keypad programmed with a master code. We need to know who holds those details; a building where nobody has the login is the slowest emergency we attend.",
+   "Attendance is price on application and depends on engineer availability. We do not advertise a guaranteed response time and will tell you straight if a visit has to wait until the next day.",
+   "After the emergency, think about prevention. Battery backup, a spare reader, and a clear list of who is enrolled cost far less than repeated urgent calls.",
+   "The written note from the visit records the door, the fault, the parts used and the fire release test, which managing agents can share with directors or a fire risk assessor.",
+   "Gyms, surgeries and co-working spaces depend on fob access for opening time. If the system fails first thing in the morning, staff often prop doors open; that is when theft and fire risk rise. Calling early and agreeing a temporary arrangement keeps the building safe while the repair is done.",
+   "Cloud-managed access systems can sometimes be diagnosed remotely if you give us an admin invitation. That can save a wasted trip, because we arrive knowing whether the fault is the reader, the lock or the network.",
+   "Fire safety is never traded for convenience. Every repaired door on an escape route must release when the fire alarm activates and when someone presses the green break-glass. If the fire alarm interface is missing or broken, we tell the responsible person in writing, because that is a matter for the fire risk assessment as well as for us. Where a door has been fitted with a lock that should never have been on an escape route, we say so rather than simply replacing like for like."
+  ],
+  "faqs": [
+   {
+    "q": "Residents are locked out of the block, what now?",
+    "a": "Check for a key override or trade button, then call us. We restore entry first and then fix the controller."
+   },
+   {
+    "q": "Our front door is stuck open after a power cut, is that an emergency?",
+    "a": "Yes, the building is unsecured. Arrange cover for the door and we will check power, battery and lock."
+   },
+   {
+    "q": "Can you stop an old tenant's fob working?",
+    "a": "Yes, at the controller. We need the login or access to the software."
+   },
+   {
+    "q": "What does an access control emergency visit cost?",
+    "a": "It is price on application, depending on attendance and parts."
+   },
+   {
+    "q": "How can we avoid the next emergency?",
+    "a": "Keep battery backup healthy, hold a spare reader and maintain an up-to-date list of enrolled fobs."
+   }
+  ]
+ },
+ "intruder-alarm-emergency": {
+  "paragraphs": [
+   "An intruder alarm emergency usually arrives as one of two calls: the alarm has gone off and you do not know whether there has really been a break-in, or the system has failed and the building is unprotected tonight. We help with both.",
+   "If the alarm has activated, your safety comes first. Do not enter a building where an intruder may still be inside; call the police if you see signs of forced entry. Once it is safe, the panel log shows which detector triggered and in what order, which tells a real intrusion from a fault.",
+   "If the system has failed, check the keypad message and the mains supply. A panel running on battery after a power cut will eventually shut down. A cut or damaged cable to a sounder or detector will show as tamper or fault.",
+   "After a genuine break-in, alarms are often damaged. Detectors may have been knocked, the bell box pulled off or the panel tampered with. We restore protection, replace damaged devices and record the condition for your insurer.",
+   "Keyholders often struggle with codes in an emergency. We can reset user codes on site with the engineer code, and recommend a simple keyholder list so the next activation is handled calmly.",
+   "We do not provide police-response monitoring and do not hold NSI or SSAIB registration. If you need monitored response, we tell you so plainly. We look after audible and self-monitored systems.",
+   "Emergency work is price on application and subject to engineer availability; there is no promised response time.",
+   "Our report after the visit lists what triggered, what was damaged, what was replaced and whether the system is fully restored, which helps both insurers and landlords.",
+   "Commercial premises such as workshops and lock-ups often share walls with neighbours. An alarm that sounds repeatedly can lead to complaints and keyholder frustration. Identifying the faulty device quickly protects your relationship with the neighbours as well as the building.",
+   "Homeowners often discover an alarm emergency when returning from holiday to find the bell box silent and the panel in fault. If the battery has drained completely, the panel may lose its time and log; we reset these and confirm every zone works before leaving.",
+   "A short keyholder briefing after the visit is worth the ten minutes it takes: how to set and unset, how to omit a zone, what the common messages mean and who to call next time.",
+   "Insurers often ask for proof that an alarm was set and working at the time of a break-in. The panel event log can show the time the system was set, which detectors activated and when the alarm was silenced. We can print or photograph that log for you before any reset, so evidence is not lost when the system is repaired and returned to service.",
+   "Where a door or window was forced, the alarm contact on it may now be misaligned or missing. We refit or replace it once the joiner or glazier has made the opening secure, so the zone can be set again that night."
+  ],
+  "faqs": [
+   {
+    "q": "The alarm went off, should I go in?",
+    "a": "Not if there may be an intruder. Call the police if you see forced entry, and wait until it is safe."
+   },
+   {
+    "q": "How do I know if it was a real break-in?",
+    "a": "The panel log shows which detectors triggered and in what order. An engineer can read it for you."
+   },
+   {
+    "q": "Can you repair an alarm damaged in a burglary?",
+    "a": "Yes. We replace damaged devices, restore protection and record the condition for your insurer."
+   },
+   {
+    "q": "Do you monitor alarms?",
+    "a": "No. We do not hold NSI or SSAIB registration and do not provide police-response monitoring."
+   },
+   {
+    "q": "What does an intruder alarm emergency cost?",
+    "a": "It is price on application and depends on attendance and parts."
+   }
+  ]
+ },
+ "door-entry-near-me": {
+  "paragraphs": [
+   "Looking for a door entry engineer near you? Whether the flats' intercom buzzes but will not release the door, a handset upstairs is dead, or you want a video panel fitted, we send an engineer from Stockport to the town named on the page.",
+   "Local knowledge helps with door entry. Older blocks in many towns still run analogue audio systems on multi-core cable, while newer developments use two-wire or IP video. Knowing what is likely in the wall means the engineer turns up with compatible handsets and power supplies.",
+   "Describe the symptom as precisely as you can. A panel that lights but makes no sound, a handset that rings but cannot speak, a release button that clicks but does not open the door, or one flat that never rings all point to different parts of the system.",
+   "Residents can do one useful check before we visit: try the release from two or three flats. If none of them open the door, the fault is probably at the lock or power supply. If only one fails, it is that handset or its cable.",
+   "For new installations we survey the entrance panel position, the number of flats, the cable route up the building and whether video, audio or a smartphone app suits the residents. We also check that the door hardware works with the chosen lock.",
+   "Travel from our workshop is included in the quote for the towns we cover. Repairs and installations are price on application, and you get a written quote first.",
+   "Managing agents often ask us to take over a door entry system fitted by someone else. That is fine; we find out what make it is, what parts are still available and what a sensible upgrade path looks like.",
+   "Use the town list below for local details, including postcodes and the distance from the workshop.",
+   "Converted houses split into flats often have the simplest systems: one panel, a handful of handsets and a single lock. Larger purpose-built blocks may have trade buttons, a concierge unit and separate entrances. Telling us which you have helps us send the right engineer.",
+   "Residents sometimes ask for a smartphone app so they can answer the door from anywhere. That works well on modern IP systems but usually means replacing the panel on older ones, and we explain the cost difference before you decide.",
+   "Door closers and lock alignment cause many reported faults. If the door does not shut fully, the lock cannot hold, however good the intercom is. Our engineers adjust the closer and keep as standard on every visit.",
+   "Access for postal workers and deliveries is a common local request. A trade button timed to work only in the morning, a coded keypad for couriers, or a fob held by the Royal Mail can all reduce the number of times residents are buzzed. We explain the security trade-off of each option before it is set up, and we record the arrangement so the managing agent knows what has been agreed."
+  ],
+  "faqs": [
+   {
+    "q": "The intercom rings but will not open the door, why?",
+    "a": "Usually the lock, its power supply or the release relay. Testing from two or three flats helps narrow it down."
+   },
+   {
+    "q": "Can you replace a single handset in my flat?",
+    "a": "Yes, if a compatible handset is available for the system. We confirm the make first."
+   },
+   {
+    "q": "Do you install video door entry for flats?",
+    "a": "Yes. We survey the entrance, the number of flats and the cable route, then quote audio, video or app options."
+   },
+   {
+    "q": "Is travel to my town charged extra?",
+    "a": "No. Travel from Stockport is included in the quote for the towns we cover."
+   },
+   {
+    "q": "How much does a door entry repair cost?",
+    "a": "It is price on application, with a written quote before work starts."
+   }
+  ]
+ },
+ "cctv-installers-near-me": {
+  "paragraphs": [
+   "Choosing a CCTV installer near you is partly about cameras and partly about who answers the phone when something goes wrong. We are a Stockport-based firm installing and maintaining CCTV across Greater Manchester and the surrounding towns.",
+   "Ask any installer three questions. Will I own the admin password? How long will footage be kept? Who do I call if a camera fails in two years? Our answers are yes, as long as you need, and us, from the same local workshop.",
+   "A local survey means we see your actual building. We stand where the camera will go, check what it will see at night, look for glare from windows and street lights, and plan cable routes that avoid surface trunking across a smart frontage.",
+   "For homes, a few well-placed cameras on the doors and drive usually beat a ring of cameras on every corner. For shops, the till and the entrance matter most. For blocks of flats, bin stores, bike stores and the communal entrance are the common trouble spots.",
+   "Privacy is part of the design. Cameras should not look into neighbours' gardens or windows without good reason, and we use privacy masking where a view overlaps someone else's property. Signage is fitted where required.",
+   "Installation is price on application. The quote lists cameras, recorder, storage, cabling and labour so you can compare it fairly with another local installer.",
+   "We do not hold NSI or SSAIB registration. Our camera designs follow BS EN 62676 practice, and we explain what that means for evidence quality.",
+   "Find your town in the list below to see postcodes and our distance from the workshop.",
+   "Local follow-up is the advantage of using a nearby installer. If a camera is knocked out of alignment or the recorder needs a firmware update, a short visit costs less and happens sooner than waiting for a national company's engineer to be routed to your area.",
+   "Many households now want doorbell cameras alongside a wired system. We can advise whether a separate doorbell device makes sense or whether a wired camera above the door would give better evidence and fewer subscription costs.",
+   "For landlords with several properties in nearby towns, we can standardise on one recorder and app across the portfolio so you can check every building from the same screen.",
+   "Storage is the question most people forget. A recorder with too small a disk will overwrite footage after a few days, which is no help if a problem is noticed a week later. We size storage for the retention you actually need, typically somewhere between two and four weeks, and show you how to check it is still recording. Cloud backup of key cameras is available, but we explain the ongoing cost before recommending it.",
+   "Cabling is where cheap installations cut corners. We run cable through lofts, voids and conduit where possible, fix it neatly where it has to be visible, and use weatherproof boxes at every external joint. A tidy installation is easier to maintain, harder to tamper with, and looks like it belongs on the building rather than being stuck on as an afterthought."
+  ],
+  "faqs": [
+   {
+    "q": "Will I get the admin password for my CCTV?",
+    "a": "Yes. Admin access is handed over in your name, not kept by the installer."
+   },
+   {
+    "q": "How many cameras do I need?",
+    "a": "Usually fewer than people expect. A survey identifies the entrances and trouble spots that matter."
+   },
+   {
+    "q": "Can my cameras look at the street?",
+    "a": "Some views of public areas are acceptable with signage, but we avoid neighbours' property and use masking where needed."
+   },
+   {
+    "q": "How much does CCTV installation cost?",
+    "a": "It is price on application after a survey, with an itemised quote."
+   },
+   {
+    "q": "Do you hold NSI approval?",
+    "a": "No. We follow BS EN 62676 practice and say so plainly."
+   }
+  ]
+ },
+ "alarm-installers-near-me": {
+  "paragraphs": [
+   "Finding a burglar alarm installer near you usually starts with a question from an insurer, a recent break-in on the street, or a new property with an old panel nobody knows the code for. We fit and maintain intruder alarms from our Stockport workshop for homes, landlords and small businesses.",
+   "A sensible alarm design covers the ways in and the routes through a building. That means contacts on accessible doors, detectors in hallways and key rooms, a panel somewhere hidden but reachable, and an external sounder that is visible from the street.",
+   "Wired and wireless systems both have a place. Wired suits renovations and larger buildings with easy cable routes. Wireless suits finished homes and listed interiors but needs battery changes. We explain the trade-off for your property rather than pushing one type.",
+   "Pets, conservatories and draughty older houses can cause false alarms if detectors are positioned carelessly. We choose pet-tolerant detectors where needed and avoid pointing sensors at heaters, windows and stairs a cat might climb.",
+   "Your insurer may specify a grade, a monitoring arrangement or a certificate. We do not hold NSI or SSAIB registration and cannot issue a police URN, so we tell you before quoting if your policy requires a registered company.",
+   "Many customers want an app so they can set and unset from a phone and receive notifications. We can fit self-monitored systems with app control and explain who receives which alerts.",
+   "Installation is price on application after a survey. The quote lists the panel, keypads, detectors, contacts, sounder and labour.",
+   "Take over of an existing alarm is also common: we reset codes with the engineer code where possible, test every zone and tell you whether the system is worth keeping.",
+   "For landlords, a simple alarm in a communal office, plant room or empty unit can prevent expensive thefts of boilers, copper and tools. Void properties are a particular target, and a basic system with an external sounder is often enough to deter casual break-ins.",
+   "Annual servicing keeps an alarm reliable. A typical service tests every detector, checks the battery and mains supply, reviews the log for recurring faults and confirms keyholder details are up to date.",
+   "Because we are local, follow-up visits for code changes, a new detector after an extension, or moving a keypad are straightforward to book.",
+   "Placement of the keypad is a small decision with daily consequences. Put it too far from the entry door and the entry timer becomes a race; put it in full view of the street and anyone can watch codes being entered. We agree keypad, panel and sounder positions with you on the survey, and we set entry and exit times that suit how the building is actually used, so the alarm protects the property without becoming a nuisance to the people who live or work there.",
+   "Exterior sounders double as a deterrent, so we mount them high, visible and away from easy reach."
+  ],
+  "faqs": [
+   {
+    "q": "Should I choose a wired or wireless alarm?",
+    "a": "Wired suits renovations and larger buildings; wireless suits finished homes. We explain the trade-off after a survey."
+   },
+   {
+    "q": "Will my dog set the alarm off?",
+    "a": "Not if pet-tolerant detectors are chosen and placed correctly."
+   },
+   {
+    "q": "Can I control the alarm from my phone?",
+    "a": "Yes, with an app-controlled self-monitored system."
+   },
+   {
+    "q": "Can you give me a certificate for my insurer?",
+    "a": "We do not hold NSI or SSAIB registration and cannot issue a URN. We say so before quoting if your policy needs it."
+   },
+   {
+    "q": "How much does an alarm installation cost?",
+    "a": "It is price on application after a survey, with an itemised quote."
+   }
+  ]
+ }
+}

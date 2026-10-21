@@ -15,12 +15,16 @@ $bundle = icomplyComplianceBundle();
 $variant = $COMPLIANCE_BUNDLE_VARIANT ?? 'bundle';
 $isLandlord = $variant === 'landlord';
 
-$canonicalUrl = url($bundle['canonical_path']);
+// Each URL is self-canonical (SF 2026-10-21): the landlord pack has its own title, meta and H1.
+$canonicalUrl = $isLandlord ? url('/pages/packages/landlord-pack') : url($bundle['canonical_path']);
 $pageTitle = $isLandlord
     ? ($bundle['alias'] . ' | ' . $bundle['name'] . ' ' . $bundle['price_label'])
     : ($bundle['name'] . ' | ' . $bundle['alias'] . ' ' . $bundle['price_label']);
 $metaDesc = $bundle['name'] . ' (' . strtolower($bundle['alias']) . ') at ' . $bundle['price_label']
     . ' for one residential property: EICR, landlord gas safety record and fire risk assessment, in one file. North West. Extras outside the published scope are quoted separately.';
+if ($isLandlord) {
+    $metaDesc = 'Landlord pack for one rental home, ' . $bundle['price_label'] . ': EICR, gas safety record carried out by Gas Safe registered engineers and fire risk assessment. Call 07517 806082.';
+}
 $metaKeywords = 'compliance bundle, landlord pack, landlord compliance pack ' . $bundle['price_label']
     . ', EICR gas FRA bundle, landlord certificates North West, iComply';
 $ogImage = url('/assets/images/services/landlord-compliance.jpg');

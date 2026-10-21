@@ -15,6 +15,7 @@ import { p0KeepsTown, renderNationwideP0Town } from "../lib/nationwide-p0.js";
 import { withContactWidgets } from "../lib/contact-widgets.js";
 import { applyMoneyCtr, moneyCtrPage } from "../lib/money-ctr.js";
 import { applySeoBasics } from "../lib/seo-basics.js";
+import { batch1Match, renderBatch1 } from "../lib/building-batch1.js";
 import { townFactsBlock } from "../lib/town-facts.js";
 import { depthBankParagraphs, thinFaqHtml, thinFaqs, thinImages, thinOgMeta, thinProseHtml } from "../lib/thin-quality-bar.js";
 import { townDepthBlock } from "../lib/town-depth.js";
@@ -118,6 +119,8 @@ const SERVICE_HUB_ALIAS = {
   "battery-storage": "/pages/services/electrical",
   "solar-pv": "/pages/services/electrical",
 };
+import { securityJobRedirect } from "../lib/security-dual-ring.js";
+import { SECURITY_NEW_INTENTS, securityTownCopy } from "../lib/security-town-copy.js";
 
 const RESERVED = new Set([
   "keywords", "services", "areas", "manufacturers", "resources", "packages",
@@ -154,6 +157,22 @@ const AUDIENCES = [
   "retail units",
   "housing associations",
 ];
+
+// Building trades: homeowner/landlord searchers ("plasterer manchester"), not
+// facilities buyers. Trade nouns match what people type into Google.
+const BUILD_TRADES = {
+  plastering: "Plasterers",
+  kitchens: "Kitchen Fitters",
+  extensions: "Extension Builders",
+  joinery: "Joiners",
+  "loft-conversions": "Loft Conversion Builders",
+  renovation: "Renovation Builders",
+  "building-maintenance": "Builders",
+  bathrooms: "Bathroom Fitters",
+  bricklaying: "Bricklayers",
+  "dry-lining": "Dryliners",
+};
+const BUILD_AUDIENCES = ["homeowners", "landlords", "homeowners and landlords"];
 
 const VISIT_STYLES = [
   "a planned daytime visit",
@@ -379,7 +398,8 @@ export function renderTownPage(input) {
   // Jack: every real page is indexable. Never emit noindex here.
   const robots = "index, follow";
   const seed = hashStr(`${kind}|${subject}|${serviceSlug}|${townSlug}`);
-  const audience = pick(AUDIENCES, seed);
+  const buildTrade = kind === "service" ? BUILD_TRADES[serviceSlug] : null;
+  const audience = buildTrade ? pick(BUILD_AUDIENCES, seed) : pick(AUDIENCES, seed);
   const visit = pick(VISIT_STYLES, seed >>> 3);
   const neighbours = Array.isArray(place.neighbours) ? place.neighbours.filter(Boolean) : [];
   const near = neighbours.length ? neighbours.join(", ") : "Stockport, Manchester and the surrounding North West";
@@ -394,10 +414,13 @@ export function renderTownPage(input) {
     : `We work on homes, shops, offices and industrial units across ${place.name}.`;
   const focus = (keyword.focus && keyword.focus.length ? keyword.focus : [`Scope agreed before ${subject} starts`]).slice(0, 4);
   const canonical = `https://icomplypropertyservices.co.uk${path}`;
-  const h1 = `${subject} for ${audience} in ${place.name}`;
+  const h1 = buildTrade
+    ? `${buildTrade} in ${place.name}`
+    : `${subject} for ${audience} in ${place.name}`;
   const ctrSlug = kind === "keyword" ? input.keyword : serviceSlug;
   const ctrGas = Boolean(keyword.gas) || serviceSlug === "gas-systems" || serviceSlug === "heating";
-  const title = ctrTitle(subject, place.name, ctrSlug);
+  const buildTitle = buildTrade ? `${buildTrade} ${place.name} | Free Quote 07517 806082` : "";
+  const title = buildTitle && buildTitle.length <= 60 ? buildTitle : ctrTitle(subject, place.name, ctrSlug);
   const description = ctrDescription(subject, place.name, ctrSlug, ctrGas);
   const imageSlug = IMAGE_SLUG[serviceSlug] || serviceSlug;
 
@@ -444,6 +467,10 @@ export function renderTownPage(input) {
     hrefFor: null, // only the P0 renderer links siblings; other matrix towns may 301
   });
   if (facts) qualityCtx.short = true;
+  // SEO PR145: the 15 new security intents get town-specific copy so each x town page stands alone;
+  // that copy replaces the long generic template prose on the two borough pages with no centre point.
+  const secLocal = kind === "keyword" && SECURITY_NEW_INTENTS.has(input.keyword) ? securityTownCopy(input.keyword, townSlug) : null;
+  if (secLocal) qualityCtx.short = true;
   if (pe && typeof pe.body === "string" && pe.body.trim()) {
     // Lean pages keep the first two authored paragraphs; the rest is a service guide repeated in every town.
     qualityCtx.peBody = facts ? pe.body.trim().split(/\n\s*\n/).slice(0, 2).join("\n\n") : pe.body;
@@ -489,7 +516,11 @@ export function renderTownPage(input) {
     const shift = faqs.length ? mix32(hashStr(`faq|${townSlug}|${subject}`)) % faqs.length : 0;
     faqs.push(...faqs.splice(0, shift));
   }
-  const faqBlock = (fireTown || fireFamily || facts)
+  if (secLocal) {
+    proseHtml += secLocal.html;
+    faqs.push(...secLocal.faqs);
+  }
+  const faqBlock = (fireTown || fireFamily || facts || secLocal)
     ? `<section id="faq" class="faq" data-pe-slot="q5-thin-faq"><h2>Questions about ${escapeHtml(place.name)}</h2>${faqs.map(([q, a]) => (
       `<details class="faq-item"><summary>${escapeHtml(q)}</summary><p>${escapeHtml(a)}</p></details>`
     )).join("")}</section>`
@@ -734,6 +765,23 @@ export function placeAliasRedirect(path) {
 
 // Retired keyword slugs (banned wording): every town URL goes straight to the replacement hub.
 const RETIRED_KEYWORD = { "extension-fixed-price-package": "/pages/keywords/extension-building-package-quote" };
+// Trade head-term keywords (3fae2db). netlify.toml redirects never run for
+// /pages/keywords/:keyword/:town because this edge function serves that path
+// first, so the aliases live here. One hop: local towns go to the trade town
+// page (200), other towns straight to the service hub.
+export const TRADE_SLUG_ALIAS = {
+  plasterer: "plastering", plasterers: "plastering", plastering: "plastering",
+  builder: "building-maintenance", builders: "building-maintenance",
+  joiner: "joinery", joiners: "joinery",
+  "kitchen-fitter": "kitchens", "kitchen-fitters": "kitchens",
+  "extension-builders": "extensions", "loft-conversion-builders": "loft-conversions",
+};
+export function tradeSlugRedirect(path) {
+  const m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
+  if (!m || !TRADE_SLUG_ALIAS[m[1]]) return null;
+  const svc = TRADE_SLUG_ALIAS[m[1]];
+  return isLocalTown(m[2]) ? `/pages/${svc}/${m[2]}` : `/pages/services/${svc}`;
+}
 
 export function nonGmMatrixRedirect(path) {
   let m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
@@ -757,8 +805,8 @@ export function nonGmMatrixRedirect(path) {
 // GSC 21 Oct (§5): 616 first-load 5xx on town pages (cold renders during crawl
 // bursts). Rendered pages are cached at Netlify's edge for a day and served
 // stale while they refresh, so most crawls never hit a cold render. If a render
-// still fails or runs long, the visitor gets the parent hub as a 200 (not
-// cached) instead of a 5xx.
+// still fails or runs long, the response is a 503 with Retry-After (not
+// cached), never another page's HTML.
 const PAGE_CACHE = {
   "cache-control": "public, max-age=3600",
   "netlify-cdn-cache-control": "public, s-maxage=86400, stale-while-revalidate=604800, durable",
@@ -781,30 +829,25 @@ export function fallbackHubPath(path) {
 }
 
 async function fallbackResponse(url, path) {
-  for (const hub of [fallbackHubPath(path), "/pages/services"]) {
-    try {
-      const r = await fetch(new URL(hub, url.origin), { redirect: "follow" });
-      if (r.ok) {
-        return new Response(await r.text(), {
-          status: 200,
-          headers: {
-            "content-type": "text/html; charset=utf-8",
-            "cache-control": "no-store",
-            "netlify-cdn-cache-control": "no-store",
-            "x-icomply-fallback": hub,
-          },
-        });
-      }
-    } catch {
-      // try the next hub
-    }
-  }
-  return new Response("Temporarily unavailable", { status: 503, headers: { "retry-after": "60" } });
+  // SEO 21 Oct (fix 4): never serve another page's HTML (and canonical) at this
+  // URL. A 503 with Retry-After makes Google retry later; nothing is canonicalised away.
+  return new Response("Temporarily unavailable, please retry shortly.", {
+    status: 503,
+    headers: {
+      "content-type": "text/plain; charset=utf-8",
+      "retry-after": "60",
+      "cache-control": "no-store",
+      "netlify-cdn-cache-control": "no-store",
+    },
+  });
 }
 
 export default async (request, context) => {
   const url = new URL(request.url);
   const path = url.pathname.replace(/\/+$/, "") || "/";
+  // /shop is a directory hub: one 301 to the slash form the static file lives at.
+  if (url.pathname === "/shop") return Response.redirect(new URL("/shop/" + url.search, APEX).toString(), 301);
+  if (url.pathname === "/shop/") return context.next(); // never strip the slash here (would loop)
   if (path.startsWith("/matrix-sitemap")) return renderMatrix(request, context);
   let timer;
   try {
@@ -834,6 +877,14 @@ async function renderMatrix(request, context) {
   const aliasTo = placeAliasRedirect(path);
   if (aliasTo) {
     return Response.redirect(new URL(aliasTo, origin).toString(), 301);
+  }
+  const securityTo = securityJobRedirect(path);
+  if (securityTo) {
+    return Response.redirect(new URL(securityTo, origin).toString(), 301);
+  }
+  const tradeTo = tradeSlugRedirect(path);
+  if (tradeTo) {
+    return Response.redirect(new URL(tradeTo, origin).toString(), 301);
   }
   const matrixTo = nonGmMatrixRedirect(path);
   if (matrixTo) {
@@ -913,6 +964,17 @@ async function renderMatrix(request, context) {
       return new Response("Variant page unavailable", {
         status: 503,
         headers: { "content-type": "text/plain; charset=utf-8" },
+      });
+    }
+  }
+  // Batch 1 (2026-10-21): Manchester building work, homeowner template with hero call CTA.
+  const b1 = batch1Match(path);
+  if (b1) {
+    const page = renderBatch1(b1);
+    if (page) {
+      return new Response(withContactWidgets(scrubMeta(page.html)), {
+        status: 200,
+        headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=3600", "x-robots-tag": page.robots },
       });
     }
   }
@@ -1031,6 +1093,7 @@ export const config = {
     "/pages/:section/",
     "/pages/",
     "/matrix-sitemap/:part",
+    "/shop",
   ],
   // Static AOV/barrier town pages (~420 KB) 502'd intermittently when
   // proxied through this function. Their aliases live in netlify.toml.

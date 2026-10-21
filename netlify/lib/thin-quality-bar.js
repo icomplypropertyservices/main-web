@@ -23,13 +23,16 @@ export function imageFamilyOf(slug) {
 
 /** Two extra photos for `slug`, both from its own family: its -photo first, then family members by seed. */
 export function familyPicks(slug, seed) {
+  const own = (imageFamilies.service_photos || {})[slug];
+  // SEO 20 Oct: building-trade slugs show only their own photo(s).
+  if (Array.isArray(own)) return own.filter((b) => b !== slug).slice(0, 2);
   const fam = imageFamilies.families[imageFamilyOf(slug) || "building"];
   const rest = fam.filter((b) => b !== slug && b !== `${slug}-photo`);
   const n = rest.length;
   const off = n ? Math.abs(Number(seed) || 0) % n : 0;
   const rotated = rest.slice(off).concat(rest.slice(0, off));
   const picks = (fam.includes(`${slug}-photo`) ? [`${slug}-photo`] : []).concat(rotated);
-  return [picks[0], picks[1]];
+  return picks.slice(0, 2);
 }
 
 export function escapeHtml(value) {
@@ -162,14 +165,14 @@ export function thinImages(serviceSlug, subject, placeName, seed, peImages) {
   const slug = String(serviceSlug || "fire-alarms");
   const primary = `/assets/images/services/${slug}.jpg`;
   // Jack 20 Oct: only photos from the page's own service family (no CCTV on an EICR page).
-  const [second, third] = familyPicks(slug, seed).map((b) => `/assets/images/services/${b}.jpg`);
+  const extra = familyPicks(slug, seed).map((b) => `/assets/images/services/${b}.jpg`);
   const altHero = `${subject} in ${placeName}`;
   const altWork = `${subject} equipment prepared for ${placeName}`;
   const altContext = `Property compliance visit arranged for ${placeName}`;
   const html = `<figure class="quality-bar-images" data-pe-slot="q2-thin-images">`
     + `<img data-pe-slot="q2-image-hero" src="${primary}" alt="${escapeHtml(altHero)}" width="1200" height="630">`
-    + `<img data-pe-slot="q2-image-work" src="${second}" alt="${escapeHtml(altWork)}" width="1200" height="630">`
-    + `<img data-pe-slot="q2-image-context" src="${third}" alt="${escapeHtml(altContext)}" width="1200" height="630">`
+    + (extra[0] ? `<img data-pe-slot="q2-image-work" src="${extra[0]}" alt="${escapeHtml(altWork)}" width="1200" height="630">` : "")
+    + (extra[1] ? `<img data-pe-slot="q2-image-context" src="${extra[1]}" alt="${escapeHtml(altContext)}" width="1200" height="630">` : "")
     + `</figure>`;
   return {
     html,

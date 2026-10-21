@@ -1,6 +1,6 @@
 <?php
 /**
- * CCTV job lane: /pages/services/cctv plus every CCTV keyword guide.
+ * CCTV job lane: /pages/services/cctv plus every CCTV service guide.
  * Catalogue: data/cctv-jobs.json (73). Pages: pages/keywords/<slug>.php.
  */
 declare(strict_types=1);

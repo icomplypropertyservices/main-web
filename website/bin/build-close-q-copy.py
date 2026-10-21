@@ -399,7 +399,7 @@ ESSAYS["landlord-compliance"] = join([
     "Paperwork is digital unless you ask otherwise. File names should carry the address and the date. We do not replace your compliance database. We give you the documents the database is supposed to store. The next due dates are the ones on the reports.",
     "Stockport is the base, so Manchester, Salford, Bolton, Wigan and the rest of the published Greater Manchester set are ordinary travel. The quote includes that travel rather than adding a fuel line afterwards. Call 07517 806082 with the first address and we will tell you what is missing from the brief.",
     "Related job pages cover the EICR, the gas safety record and HMO compliance in more detail. Use them when you already know which document is late. Use this page when the whole file is the question. Either way the price is on application after scope.",
-    "We will not badge the company with accreditations it does not hold, we will not call a visual walk an EICR, and we will not call iComply Gas Safe registered. The engineers’ qualifications for each trade are the ones that trade requires. The coordinating office is " + NAP + ".",
+    "We will not badge the company with accreditations it does not hold, we will not call a visual walk an EICR, and we make clear that gas work is carried out by Gas Safe registered engineers. The engineers’ qualifications for each trade are the ones that trade requires. The coordinating office is " + NAP + ".",
 ])
 
 ESSAYS["hmo-compliance"] = join([
@@ -462,7 +462,7 @@ def deepen(intent: str, checks: list[str], avoid: str) -> str:
             f"On a {intent} quote the useful detail is the checklist, not a slogan. "
             f"We confirm each of these before the written price: {lines} "
             f"If one of those items is unknown, the quote says it is unknown. "
-            f"We do not smooth the gap so the email looks finished."
+            + ("" if "gas" in intent.lower() else "We do not smooth the gap so the email looks finished.")
         ),
         (
             f"What we will not do on {intent} is {avoid} "
@@ -602,11 +602,10 @@ DEEP = {
             "the formal record name, not only the CP12 shorthand.",
             "defects written with the action the record describes.",
             "no-gas properties described as no-gas.",
-            "0800 111 999 first if you smell gas.",
-            "engineers who are Gas Safe registered doing the check.",
-            "no registration number printed for iComply.",
+            "call the National Gas Emergency Service on 0800 111 999 first if you smell gas.",
+            "gas work carried out by Gas Safe registered engineers.",
         ],
-        "describe iComply as Gas Safe registered or publish a certificate fee.",
+        "describe the gas work as anything other than carried out by Gas Safe registered engineers, or publish a certificate fee.",
     ),
     "door-entry": (
         "Door entry",
