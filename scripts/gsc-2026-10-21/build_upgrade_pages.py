@@ -168,8 +168,14 @@ def build(path):
         if not m2: return None
         service, town_slug = m2.group(1), m2.group(2)
         if path.startswith("/pages/services/"): town_slug = None
-        if path.startswith("/pages/jobs/"): return None
-        name = SVC.get(service) or service.replace("-", " ").title()
+        if path.startswith("/pages/jobs/"):
+            job = m2.group(2) or service
+            service = next((k for k in sorted(SVC, key=len, reverse=True) if k.rstrip("s") in job), "building-maintenance")
+            if "barrier" in job: service = "barriers"
+            town_slug = None
+            name = " ".join(w.capitalize() for w in job.split("-"))
+        else:
+            name = SVC.get(service) or service.replace("-", " ").title()
         kslug = service; focus = []
     svc_name = SVC.get(service, service.replace("-", " ").title())
     town = tname(town_slug) if town_slug else ""
@@ -301,6 +307,13 @@ for r in rows:
     if not e: skipped.append((p, "no keyword/service data")); continue
     e["queue"] = r["problem"]
     pages[p] = e
+# SEO 21 Oct fix 5: the restored keyword x town pages get the same block (links to 85).
+for f in ("areas12.txt", "hub53.txt"):
+    for u in open(D / f).read().split():
+        p = re.sub(r"^https?://[^/]+", "", u).rstrip("/")
+        if p in pages or p in CTR: continue
+        e = build(p)
+        if e: e["queue"] = "restored ranking page"; pages[p] = e
 for e in pages.values(): e.pop("_words", None)
 out = {"note": __doc__.strip().splitlines()[0], "pages": pages}
 (ROOT / "website/data/gsc-upgrade-2026-10-21.json").write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")

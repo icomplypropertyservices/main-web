@@ -3794,5 +3794,20 @@
     "nation": "England",
     "region": "Yorkshire and The Humber",
     "local": true
+  },
+  {
+    "name": "New Brighton",
+    "nation": "England",
+    "region": "North West",
+    "local": false,
+    "districts": "CH45"
+  },
+  {
+    "name": "Wirksworth",
+    "slug": "wirksworth-village",
+    "nation": "England",
+    "region": "East Midlands",
+    "local": false,
+    "districts": "DE4"
   }
 ]

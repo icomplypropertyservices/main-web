@@ -4,5 +4,3 @@
 /pages/ev-chargers
 /pages/fire-risk-assessments/buxworth
 /pages/fire-signage/four-gates
-/pages/fire-signage/new-brighton
-/pages/fire-risk-assessments/wirksworth-village
