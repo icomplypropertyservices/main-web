@@ -90,6 +90,9 @@ function icomplyTownPublishedForService(string $serviceSlug, string $areaOrSlug)
                 }
             }
         }
+        if ($serviceSlug === 'aov-air-handling') {
+            return isset($mainland[$slug]);
+        }
         return isset($mainland[$slug]) || icomplyLocalTownSlug($slug);
     }
     return icomplyLocalTownSlug($slug);
@@ -189,6 +192,23 @@ function icomplyNonGmMatrixRedirect(string $path): ?string
     }
     if (preg_match('#^/pages/areas/([a-z0-9\-]+)$#', $path, $m)) {
         return icomplyLocalTownSlug($m[1]) ? null : '/pages/areas';
+    }
+    if (preg_match('#^/pages/aov-air-handling/([a-z0-9\-]+)$#', $path, $m)) {
+        $built = false;
+        if (function_exists('getMainlandAreaRecords')) {
+            foreach (getMainlandAreaRecords() as $row) {
+                if (!is_array($row)) {
+                    continue;
+                }
+                $name = (string)($row['name'] ?? '');
+                $rowSlug = function_exists('areaSlug') ? areaSlug($name) : strtolower($name);
+                if ($rowSlug === $m[1]) {
+                    $built = true;
+                    break;
+                }
+            }
+        }
+        return $built ? null : '/pages/services/aov-air-handling';
     }
     if (icomplyNationwideTownPath($path)) {
         return null;

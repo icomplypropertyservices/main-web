@@ -311,10 +311,7 @@ function icomplyServiceImageFamilyPicks(string $slug, int $seed): array
     // Only this service's own photos. A shared family file becomes one image
     // across unrelated services once the optimiser hashes the bytes.
     unset($seed);
-    if (in_array($slug, ['fencing', 'drainage', 'driveways', 'demolition'], true)) {
-        return [$slug, $slug];
-    }
-    return [$slug . '-photo', $slug . '-context'];
+    return [$slug, $slug];
 }
 
 function icomplyQualityBarImages(string $serviceSlug, string $altPrefix, string $slot = 'q2-content-images'): array
@@ -385,15 +382,11 @@ function icomplyQualityBarAreaFaqs(string $areaName): array
     return [
         [
             'How do I request a quote for work in ' . $areaName . '?',
-            'Tell us the postcode, the property type and the system. We will send a fixed written quote for ' . $areaName . ' once the scope is clear.',
+            'Tell us the postcode, the property type and the system. We will send a free written quote for ' . $areaName . ' once the scope is clear.',
         ],
         [
             'Where is iComply based for ' . $areaName . ' visits?',
             'The office is ' . ICOMPLY_NAP . '. Visits in ' . $areaName . ' are diary-booked from that Stockport base.',
-        ],
-        [
-            'Who carries out landlord gas safety checks?',
-            ICOMPLY_GAS_ENGINEERS . ' ' . ICOMPLY_GAS_NOT_REGISTERED,
         ],
         [
             'Which services are listed for ' . $areaName . '?',

@@ -539,13 +539,13 @@ function icomply_service_hub_seo(string $slug, string $serviceName, bool $poa): 
     }
 
     if ($poa) {
-        $description = 'Professional ' . $serviceName . ' in Stockport and Greater Manchester. Same/next-day engineers, fixed written quote. Call or WhatsApp 07517 806082.';
+        $description = 'Professional ' . $serviceName . ' in Stockport and Greater Manchester. Same/next-day engineers, free written quote. Call or WhatsApp 07517 806082.';
     } else {
         $description = 'Professional ' . $serviceName . ' in Stockport and Greater Manchester. Installation, testing and certification. Written quote after scope.';
     }
     if (mb_strlen(htmlspecialchars($description, ENT_QUOTES, 'UTF-8')) > 165) {
         $description = $poa
-            ? ($serviceName . ' in Stockport and Greater Manchester. Same/next-day engineers, fixed written quote. Call or WhatsApp 07517 806082.')
+            ? ($serviceName . ' in Stockport and Greater Manchester. Same/next-day engineers, free written quote. Call or WhatsApp 07517 806082.')
             : ($serviceName . ' in Stockport and Greater Manchester. Written quote after scope from our Offerton team.');
     }
     if (mb_strlen(htmlspecialchars($description, ENT_QUOTES, 'UTF-8')) < 70) {

@@ -85,7 +85,7 @@ $openers = [
 $middles = [
     'iComply Property Services {verb} {kw} as part of our {svc} range, working to {std}.',
     'Our engineers {verb} {kw} for {who}, with documentation that stands up to audits and insurers.',
-    'From first survey to final paperwork, we {verb} {kw} with transparent scope and fixed pricing after agreement.',
+    'From first survey to final paperwork, we {verb} {kw} with transparent scope and a free written quote after agreement.',
     'We specialise in {kw} alongside related {svc} works, so one team can cover install, service and certification.',
 ];
 

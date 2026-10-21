@@ -17,8 +17,8 @@ if (!function_exists('icomplyKeywordImagePath')) {
             $candidates[] = '/assets/images/keywords/' . $alias[$slug] . '.jpg';
         }
         if ($serviceSlug !== '') {
-            $candidates[] = '/assets/images/services/' . $serviceSlug . '-photo.jpg';
             $candidates[] = '/assets/images/services/' . $serviceSlug . '.jpg';
+            $candidates[] = '/assets/images/services/' . $serviceSlug . '-photo.jpg';
         }
         foreach ($candidates as $c) {
             if (is_file($root . $c)) {

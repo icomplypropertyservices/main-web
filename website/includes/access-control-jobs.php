@@ -412,7 +412,7 @@ function accessControlLaneSynthesize(array $job): array
         $bits = [
             'Paxton, HID and Salto-style credentials are programmed for joiners and leavers. If the site also has a rising-arm barrier, that lane is surveyed on its own.',
             'Fire release, anti-passback and time zones are set for the doors you actually have. We write the scope before any install date is fixed.',
-            'Manchester (MCR) and Burnley are priority towns. The rest of the North West is covered from Stockport. Every quote is fixed and written.',
+            'Manchester (MCR) and Burnley are priority towns. The rest of the North West is covered from Stockport. Every quote is a free written quote.',
         ];
         $focus = [
             'Readers, controllers and credentials scoped per door',

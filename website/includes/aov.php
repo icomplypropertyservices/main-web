@@ -120,7 +120,7 @@ function aovQuoteForm(string $heading, string $intro, string $serviceValue, stri
                 </div>
                 <textarea name="message" rows="5" required placeholder="<?= $h($placeholder) ?>" class="w-full border border-zinc-300 px-4 py-3 rounded-xl"></textarea>
                 <button type="submit" class="w-full py-4 rounded-xl bg-[#ff6b00] text-white font-semibold">Request a written quote</button>
-                <p class="text-xs text-zinc-500">Fixed written quote before any work starts. Same-day and next-day slots are often available.</p>
+                <p class="text-xs text-zinc-500">Free written quote before any work starts. Same-day and next-day slots are often available.</p>
             </form>
         </div>
     </section>

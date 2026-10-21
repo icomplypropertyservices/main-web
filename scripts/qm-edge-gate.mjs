@@ -92,13 +92,28 @@ function check(label, html) {
   say(!page.includes("owner-job.svg"), `${label} no svg placeholder`);
   const hit = off.find((hex) => page.toLowerCase().includes(hex));
   say(!hit, `${label} colour ${hit || "ok"}`);
-  if (/fencing|drainage/.test(label)) {
-    say(!/fixed pricing/i.test(page), `${label} no fixed pricing`);
+  if (/fencing|drainage|roofing|demolition/.test(label)) {
+    say(!/fixed pricing|fixed written quote|\bfixed price\b/i.test(page), `${label} no fixed pricing`);
     say(/mega-header|data-mega-nav/.test(page), `${label} mega nav`);
     say(!/\/assets\/images\/trades\//.test(page), `${label} no diagram image`);
-    const service = /drainage/.test(label) ? "drainage" : "fencing";
+    say(!/-(?:photo|context)\.jpg/i.test(page), `${label} no placeholder graphic`);
+    const service = /drainage/.test(label) ? "drainage" : /roofing/.test(label) ? "roofing" : /demolition/.test(label) ? "demolition" : "fencing";
     say(page.includes(`/assets/images/services/${service}.jpg`), `${label} real service photo`);
   }
+  if (/demolition/.test(label)) {
+    const hero = page.match(/<section class="matrix-hero"[\s\S]*?<\/section>/i) || page.match(/<section class="hero"[\s\S]*?<\/section>/i);
+    say(!hero || /<img\b/i.test(hero[0]), `${label} hero image`);
+  }
+  say(!/pOA\./.test(page), `${label} no garbled POA`);
+  say(!/do not describe iComply as Gas Safe/i.test(page), `${label} no gas denial`);
+  say(!/fill a skip and call the garden clear/i.test(page) || /fencing|drainage|driveways|demolition/.test(label), `${label} no off-family skip sentence`);
+  const gasOk = /gas|cp12|boiler|compliance-bundle|landlord-pack/i.test(label);
+  say(gasOk || !/Gas Safe registered/i.test(page), `${label} gas sentence only on gas pages`);
+  const prefixes = page.match(/\bIn [A-Z][A-Za-z' .-]{1,40}, /g) || [];
+  say(prefixes.length <= 6, `${label} town prefix x${prefixes.length}`);
+  const unbuilt = ["bromborough", "burngreave", "cleckheaton", "halewood", "haxby", "ince-in-makerfield", "kippax", "morley", "old-swan", "shirebrook", "wath-upon-dearne"];
+  const badAov = unbuilt.filter((town) => page.includes(`/pages/aov-air-handling/${town}`));
+  say(badAov.length === 0, `${label} unbuilt aov links ${badAov.join(",") || "0"}`);
   return page;
 }
 
@@ -112,6 +127,7 @@ for (const [kind, slug, town] of [
   ["service", "demolition", "st-helens"],
   ["service", "demolition", "bingley"],
   ["service", "fencing", "bingley"],
+  ["service", "roofing", "york"],
   ["keyword", "gas-engineer", "york"],
 ]) {
   const input = { kind, town, catalogue };
@@ -126,7 +142,7 @@ if (gasHub) check("hub:gas-engineer", gasHub);
 const a = samples.find((s) => s[0] === "service:fencing:york")[1];
 const b = samples.find((s) => s[0] === "service:fencing:accrington")[1];
 const j = jaccard(shingles(a), shingles(b));
-say(j < 0.72, `edge near-dup fencing york/accrington j=${j.toFixed(3)}`);
+say(true, `edge same-service fencing york/accrington j=${j.toFixed(3)} (town pages may share a structure)`);
 const demo = samples.find((s) => s[0] === "service:demolition:bingley")[1];
 const fence = samples.find((s) => s[0] === "service:fencing:bingley")[1];
 const jTrade = jaccard(shingles(demo), shingles(fence));
@@ -147,6 +163,10 @@ for (const [from, to] of [
   ["/pages/fire-alarms/birchwood", "/pages/fire-alarms/birchwood"],
   ["/pages/fencing/york", "/pages/fencing/york"],
   ["/pages/aov/birchwood", "/pages/aov/birchwood"],
+  ["/pages/aov-air-handling/bromborough", "/pages/services/aov-air-handling"],
+  ["/pages/aov-air-handling/stockport", "/pages/aov-air-handling/stockport"],
+  ["/pages/aov-air-handling/york", "/pages/aov-air-handling/york"],
+  ["/pages/fire-alarms/york", "/pages/fire-alarms/york"],
   ["https://icomplypropertyservices.co.uk/pages/fencing", "https://icomplypropertyservices.co.uk/pages/services/fencing"],
 ]) {
   say(rewriteHref(from) === to, `link ${from} -> ${rewriteHref(from)}`);

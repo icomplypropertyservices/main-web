@@ -100,7 +100,7 @@ function icomplyMatrixChromeStart(string $title, string $desc, string $canonical
     $brand = icomplyMatrixH($s['brand']);
     $phone = icomplyMatrixH($s['phone']);
     $phoneHref = icomplyMatrixH($s['phoneHref']);
-    $mega = in_array($serviceSlug, ['fencing', 'drainage', 'driveways', 'demolition'], true);
+    $mega = in_array($serviceSlug, ['fencing', 'drainage', 'driveways', 'demolition', 'roofing'], true);
     $head = '<!DOCTYPE html><html lang="en-GB"><head><meta charset="utf-8">'
         . '<meta name="viewport" content="width=device-width, initial-scale=1">'
         . '<meta name="theme-color" content="#0B1F3A">'
@@ -284,7 +284,7 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
     $poa = function_exists('isPoaService') && isPoaService($svcSlug);
     $priceLine = $poa
         ? 'Price on application after we confirm property type, access and scope.'
-        : 'Fixed written quote once we confirm the scope.';
+        : 'Free written quote once we confirm the scope.';
 
     if (!function_exists('icomplyGmTownBlurb')) {
         $gmBlurbs = SITE_ROOT . '/includes/gm-blurbs.php';
@@ -438,7 +438,7 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     $areaSlugVal = areaSlug($areaName);
     $poa = function_exists('isPoaService') && isPoaService($serviceSlug);
     $priceLine = $poa
-        ? 'Fixed written quote before any work starts.'
+        ? 'Free written quote before any work starts.'
         : 'Written quote after scope is agreed.';
     if ($serviceSlug === 'fire-risk-assessments' && function_exists('fraGuidePrice')) {
         $priceLine = (function_exists('fraFromLine') ? fraFromLine() : 'From £350 for a typical 6-bed HMO in the North West; other properties, nationwide and multi-site jobs are POA.');
@@ -502,6 +502,7 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     $svcImagePath = '/assets/images/services/' . $serviceSlug . '.jpg';
     $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots, $svcImagePath, $serviceSlug);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
+        . '<img src="' . icomplyMatrixH(function_exists('url') ? url($svcImagePath) : $svcImagePath) . '" alt="' . icomplyMatrixH($svcName . ' in ' . $areaName) . '" width="1200" height="800">'
         . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($areaName) . ' · ' . icomplyMatrixH($coverageLabel) . '</p>'
         . '<h1>' . icomplyMatrixH($svcName) . ' <span class="accent">in ' . icomplyMatrixH($areaName) . '</span></h1>'
         . '<p class="mt-4 text-white/80 max-w-2xl">' . icomplyGmBriefHtml($intro) . '</p>'

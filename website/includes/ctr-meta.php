@@ -63,7 +63,7 @@ function icomplyCtrDesc(string $topic, string $town, string $slug, string $svcSl
     $who = icomplyCtrIsGas($slug, $svcSlug)
         ? ' Same/next-day visits, carried out by Gas Safe registered engineers.'
         : ' Same/next-day engineers from our Stockport team.';
-    $tail = ' Fixed written quote, certificates emailed. Call or WhatsApp ' . ICOMPLY_CTR_PHONE . '.';
+    $tail = ' Free written quote, certificates emailed. Call or WhatsApp ' . ICOMPLY_CTR_PHONE . '.';
     foreach ([$lead . $who . $tail, $lead . $who . ' Call or WhatsApp ' . ICOMPLY_CTR_PHONE . '.', $lead . ' Same/next-day. Call ' . ICOMPLY_CTR_PHONE . '.'] as $d) {
         if (mb_strlen($d) <= 160) {
             return $d;

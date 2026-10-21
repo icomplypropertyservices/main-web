@@ -49,7 +49,7 @@ function icomplyGasServiceBlurb(bool $short = false): string
     }
     return 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. '
         . ' '
-        . 'We can also take care of the electrical, fire, water hygiene and asbestos work on the same property, each with a fixed written quote.';
+        . 'We can also take care of the electrical, fire, water hygiene and asbestos work on the same property, each with a free written quote.';
 }
 
 function icomplyGasServiceStandards(): string
@@ -182,7 +182,7 @@ function icomplyGasServiceHubCopy(): array
             'hero_accent' => 'Carried out by Gas Safe registered engineers.',
             'intro' => [
                 $legal,
-                'Book your landlord gas safety record, carried out by Gas Safe registered engineers, alongside electrical testing, fire alarms, emergency lighting, water hygiene and asbestos surveys. Every job gets a fixed written quote.',
+                'Book your landlord gas safety record, carried out by Gas Safe registered engineers, alongside electrical testing, fire alarms, emergency lighting, water hygiene and asbestos surveys. Every job gets a free written quote.',
                 'Gas work is carried out by Gas Safe registered engineers. Your engineer will show their Gas Safe ID card on arrival, and you can check it at gassaferegister.co.uk.',
             ],
             'pillars' => [

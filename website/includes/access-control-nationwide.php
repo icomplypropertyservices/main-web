@@ -369,7 +369,7 @@ function acnRenderCity(array $city): void
     $hub = url('/pages/access-control-systems');
     $faqs = [
         [(string)$city['faq_q'], (string)$city['faq_a']],
-        ['How is ' . $name . ' priced?', 'Every job gets a fixed written quote based on the number of doors, the controller and travel. Send us the address and a few photos to get started.'],
+        ['How is ' . $name . ' priced?', 'Every job gets a free written quote based on the number of doors, the controller and travel. Send us the address and a few photos to get started.'],
         ['Which phone number do I use?', 'Call ' . PHONE . '. The workshop is in Offerton, Stockport, even when the doors are in ' . $name . '.'],
     ];
     $keywords = acnKeywords();

@@ -200,7 +200,7 @@ export function tradesFaqs(slug, placeName) {
     ],
     [
       `Who is this for?`,
-      `Homeowners and landlords. We explain the work in plain language, book around people who live in the house, and email the quote to you. Gas work, where a job needs it, is carried out by Gas Safe registered engineers.`,
+      `Homeowners and landlords. We explain the work in plain language, book around people who live in the house, and email the quote to you.${/gas|cp12|boiler/i.test(slug) ? " Gas work is carried out by Gas Safe registered engineers." : ""}`,
     ],
     [
       `What should I send before the visit?`,

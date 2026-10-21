@@ -68,7 +68,7 @@ function fitMeta(text) {
     const extra = " Call 07517 806082.";
     if (!value.endsWith("806082.") && byteLength(value) + byteLength(extra) <= 160) value += extra;
   }
-  for (const pad of [" Book today.", " Fixed written quote.", " Certificates emailed.", " Call 07517 806082."]) {
+  for (const pad of [" Book today.", " Free written quote.", " Certificates emailed.", " Call 07517 806082."]) {
     if (byteLength(value) >= 140 && value.length >= 140) break;
     if (value.toLowerCase().includes(pad.trim().toLowerCase().replace(/\.$/, ""))) continue;
     if (byteLength(value) + byteLength(pad) <= 160) value += pad;
@@ -85,8 +85,8 @@ export function p0Title(name, town) {
 }
 
 export function p0Description(name, place) {
-  let text = `${name} in ${place}. Same/next-day engineers, fixed written quote, certificates emailed. Call or WhatsApp 07517 806082.`;
-  if (byteLength(text) > 160) text = `${name} in ${place}. Same/next-day engineers, fixed written quote. Call 07517 806082.`;
+  let text = `${name} in ${place}. Same/next-day engineers, free written quote, certificates emailed. Call or WhatsApp 07517 806082.`;
+  if (byteLength(text) > 160) text = `${name} in ${place}. Same/next-day engineers, free written quote. Call 07517 806082.`;
   if (byteLength(text) > 160) text = `${name} in ${place}. Same/next-day. Call 07517 806082.`;
   return fitMeta(text);
 }
@@ -217,16 +217,21 @@ export function renderNationwideP0Town(keywordSlug, townSlug) {
   const title = p0Title(name, townName);
   const description = p0Description(name, townName);
   const canonical = `${ORIGIN}/pages/keywords/${keywordSlug}/${townSlug}`;
-  const images = (hub.images || []).slice(0, 3);
+  const imageService = hub.service === "aov" ? "aov-air-handling" : (hub.service || "fire-alarms");
+  const images = [
+    `/assets/images/services/${imageService}.jpg`,
+    `/assets/images/services/${imageService}.jpg`,
+    `/assets/images/services/${imageService}.jpg`,
+  ];
   const ogImage = `${ORIGIN}${images[0] || "/assets/images/services/fire-alarms.jpg"}`;
   const popLine = Number(place.population) > 0 ? ` It is home to about ${Number(place.population).toLocaleString("en-GB")} people.` : "";
   const workName = name.replace(/\bInstallers?\b/g, "Installation").replace(/\bContractors?\b/g, "Services");
   const area = (place.county && place.county !== townName) ? place.county : (place.region || "the UK");
   // #140 natural wording, three seeded variants (CLOSE-Q1 town-to-town uniqueness).
   const local = [
-    `We provide ${workName.toLowerCase()} in ${townName}, ${area}.${popLine} Our engineers work from ${NAP}, with same-day and next-day slots where the diary allows. You get a fixed written quote before any work starts, with travel included.`,
-    `Need ${workName.toLowerCase()} in ${townName}? We cover ${townName} and the rest of ${area} from ${NAP}.${popLine} Same-day and next-day slots are often available, and the fixed written quote includes travel, so there are no surprises.`,
-    `Our team carries out ${workName.toLowerCase()} for buildings across ${townName}, ${area}.${popLine} We travel from ${NAP}, often with same-day or next-day slots. Before anything starts you get a fixed written quote, travel included.`,
+    `We provide ${workName.toLowerCase()} in ${townName}, ${area}.${popLine} Our engineers work from ${NAP}, with same-day and next-day slots where the diary allows. You get a free written quote before any work starts, with travel included.`,
+    `Need ${workName.toLowerCase()} in ${townName}? We cover ${townName} and the rest of ${area} from ${NAP}.${popLine} Same-day and next-day slots are often available, and the free written quote includes travel, so there are no surprises.`,
+    `Our team carries out ${workName.toLowerCase()} for buildings across ${townName}, ${area}.${popLine} We travel from ${NAP}, often with same-day or next-day slots. Before anything starts you get a free written quote, travel included.`,
   ][p0Seed(`local|${townSlug}`, keywordSlug) % 3];
   const body = String(pack.body || "").replace(/Nearby places on the same town list include [^.]*\./g, "");
   // Town pages carry a short service summary; the full guide stays on the keyword hub.
@@ -242,7 +247,7 @@ export function renderNationwideP0Town(keywordSlug, townSlug) {
     packParas = [all[keep]];
     if (all[14] && all[14].split(/\s+/).length <= 60) packParas.push(all[14]);
   }
-  const booking = `To book ${workName.toLowerCase()} in ${townName}, send us the full postcode, a few photos of the existing equipment, the type of building and whether it will be occupied on the day. We reply with a fixed written quote and a date. After the visit, certificates and reports are emailed to you so they can sit with the building records.`;
+  const booking = `To book ${workName.toLowerCase()} in ${townName}, send us the full postcode, a few photos of the existing equipment, the type of building and whether it will be occupied on the day. We reply with a free written quote and a date. After the visit, certificates and reports are emailed to you so they can sit with the building records.`;
   const localHtml = `<p>${escapeHtml(local)}</p>`;
   const bodyHtml = [...packParas, booking].map((para) => `<p>${escapeHtml(para)}</p>`).join("");
   // Two of the pack FAQs, picked by town seed (the full list stays on the keyword hub).
@@ -252,11 +257,11 @@ export function renderNationwideP0Town(keywordSlug, townSlug) {
   faqs.push([
     [
       `How do I ask for ${name} in ${townName}?`,
-      `Call 07517 806082, WhatsApp us or use the contact form with the address in ${townName}. We will send a fixed written quote, and same-day or next-day slots are often available.`,
+      `Call 07517 806082, WhatsApp us or use the contact form with the address in ${townName}. We will send a free written quote, and same-day or next-day slots are often available.`,
     ],
     [
       `What is the first step for ${name.toLowerCase()} in ${townName}?`,
-      `Send the ${townName} address, the building type and a few photos by WhatsApp (07517 806082) or email (icomplypropertyservices@gmail.com). We reply with a fixed written quote and a date.`,
+      `Send the ${townName} address, the building type and a few photos by WhatsApp (07517 806082) or email (icomplypropertyservices@gmail.com). We reply with a free written quote and a date.`,
     ],
   ][p0Seed(`ask|${townSlug}`, keywordSlug) % 2]);
   const facts = townFactsBlock({
@@ -346,7 +351,7 @@ ${gallery}
 <article id="local-copy">${articleHtml}</article>
 <section><h2>${escapeHtml(name)} FAQ</h2>${faqHtml}</section>
 <section class="related-links"><h2>Related guides</h2><ul>${links}</ul></section>
-<p>Call or WhatsApp 07517 806082 for a fixed written quote. Our base: ${escapeHtml(NAP)}.</p>
+<p>Call or WhatsApp 07517 806082 for a free written quote. Our base: ${escapeHtml(NAP)}.</p>
 ${MATRIX_FOOTER}
 </main>
 ${MATRIX_SITE_FOOTER}

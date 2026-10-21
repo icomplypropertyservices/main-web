@@ -354,7 +354,7 @@ function icomplyTownPools(string $family): array
         'close' => [
             'Call 07517 806082 and name the AOV panel if you know it. ',
             'Phone 07517 806082 for {name} smoke control. Tell us storeys, stair count and whether the vent is open, shut or unknown.',
-            'Every quote is fixed and written. The number is 07517806082. Photos of the panel door help; they do not replace the survey.',
+            'Every quote is a free written quote. The number is 07517806082. Photos of the panel door help; they do not replace the survey.',
             'If the {name} system is one of the brands below, pick it in the wizard so the engineer brings the right interface notes. Phone 07517 806082.',
             'Maintenance for {name} is a dated test record, not a van on a retainer we cannot staff. Start at 07517806082.',
             'New stairs and inherited panels are different jobs. Say which one {name} is. 07517806082.',

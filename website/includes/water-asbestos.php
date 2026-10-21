@@ -34,7 +34,7 @@ function waterAsbestosKeywordCatalog(): array
                 'Written risk assessment for the water system you actually have',
                 'Temperature, storage and little-used outlet notes',
                 'Sampling only when the assessment supports it',
-                'Fixed written quote',
+                'Free written quote',
             ],
             'faq' => [
                 ['Do landlords always need a Legionella risk assessment?', 'HSE expects dutyholders to consider Legionella risk. Many simple domestic systems are lower risk, but rented and commercial sites still need a suitable assessment. We confirm what is appropriate after you describe the property.'],
@@ -406,7 +406,7 @@ function waterAsbestosAreaIntro(string $slug, string $area): string
         return "Landlords and agents in {$area} ({$p['districts']}) typically ask us to document Legionella risk on {$p['stock']}. We quote POA after we know whether the property has stored water, little-used outlets or shared plant — a combi-fed house is not the same job as a tanked block. Travel is {$p['travel']}. Local focus: {$p['focus']}. ";
     }
     if ($slug === 'asbestos-survey') {
-        return "In {$area} ({$p['districts']}) stock includes {$p['stock']}. Landlord asbestos work here is scoped to occupation versus refurbishment — common parts and conversions are a different duty from a purely domestic terrace. Every quote is fixed and written. Travel is {$p['travel']}. Local focus: {$p['focus']}. Licensed removal, if required, is by others.";
+        return "In {$area} ({$p['districts']}) stock includes {$p['stock']}. Landlord asbestos work here is scoped to occupation versus refurbishment — common parts and conversions are a different duty from a purely domestic terrace. Every quote is a free written quote. Travel is {$p['travel']}. Local focus: {$p['focus']}. Licensed removal, if required, is by others.";
     }
     return '';
 }

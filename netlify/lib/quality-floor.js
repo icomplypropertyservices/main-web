@@ -6,6 +6,9 @@
 import copy from "../../website/data/homeowner-copy.json" with { type: "json" };
 import services from "../../website/data/services.json" with { type: "json" };
 import creditsDoc from "../../website/data/hero-image-credits.json" with { type: "json" };
+import distinctEssays from "../../website/data/distinct-essays.json" with { type: "json" };
+import keywordServices from "../../website/data/keyword-services.json" with { type: "json" };
+import imageManifest from "../../website/data/image-manifest.json" with { type: "json" };
 import { sanitizeInternalLinks } from "./internal-links.js";
 
 const CREDIT = "iComply Property Services";
@@ -79,28 +82,73 @@ function placeFromPath(path) {
   return "Stockport";
 }
 
-function shortSubject(subject, key) {
-  if (key && services[key]) return services[key];
-  const cleaned = String(subject || "").replace(/\s+in\s+.+$/i, "").trim();
-  return cleaned || "the work";
+function shortSubject(subject, key, path = "") {
+  const parts = String(path || "").split("/").filter(Boolean);
+  const slug = parts[1] === "services" ? parts[2] : parts[1];
+  if (slug && services[slug]) return services[slug];
+  if (key && key !== "default" && services[key]) return services[key];
+  let cleaned = String(subject || "").replace(/\s+in\s+.+$/i, "").trim();
+  cleaned = cleaned.replace(/\.\s*POA\.?.*$/i, "").trim();
+  const first = cleaned.split(".")[0].trim();
+  return first || cleaned || "the work";
 }
 
 function wordCount(text) {
   return String(text).trim().split(/\s+/).filter(Boolean).length;
 }
 
-function localise(text, place, subject) {
+const GARDEN_FAMILY = new Set([
+  "fencing", "landscaping", "demolition", "driveways", "garden-clearance", "garden-maintenance", "patios",
+]);
+const GAS_PACKAGE_PATHS = new Set([
+  "/pages/packages/compliance-bundle",
+  "/pages/packages/landlord-pack",
+]);
+const OFFICE = "17 Woodlands Park Road, Offerton, Stockport SK2 5DE";
+const hashToSource = new Map();
+for (const [src, meta] of Object.entries(imageManifest)) {
+  for (const variant of meta.variants || []) {
+    const id = String(variant.webp || "").match(/\/opt\/([a-f0-9]+)-/i);
+    if (id && !hashToSource.has(id[1])) hashToSource.set(id[1], src);
+  }
+}
+
+function escapeReg(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+export function isGasPath(path, subject = "") {
+  const value = `${path} ${subject}`;
+  if (GAS_PACKAGE_PATHS.has(String(path || "").replace(/\/$/, "") || "/")) return true;
+  if (/\/(?:gas-systems|heating)(?:\/|$)/.test(path)) return true;
+  return /\bgas\b|cp12|boiler/i.test(value);
+}
+
+function fillCopy(text, place, subject, budget) {
   const town = place || "Stockport";
   const job = subject || "the work";
-  const filled = String(text).replaceAll("{place}", town).replaceAll("{subject}", job);
-  return filled.split(/(?<=[.!?])\s+/).map((sentence) => {
-    let line = sentence.trim();
-    if (!line) return "";
-    if (!line.toLowerCase().includes(town.toLowerCase())) {
-      line = `In ${town}, ${line.charAt(0).toLowerCase()}${line.slice(1)}`;
-    }
-    return line;
-  }).filter(Boolean).join(" ");
+  return String(text)
+    .replaceAll("{subject}", job)
+    .replaceAll("{place}", () => {
+      budget.n += 1;
+      return budget.n <= 4 ? town : "the area";
+    });
+}
+
+function capPlaceMentions(text, place, max = 6) {
+  const town = place || "Stockport";
+  const held = [];
+  let masked = String(text).replaceAll(OFFICE, () => {
+    held.push(OFFICE);
+    return `\u0001A${held.length - 1}\u0001`;
+  });
+  const re = new RegExp(`\\b${escapeReg(town)}\\b`, "gi");
+  let seen = 0;
+  masked = masked.replace(re, (match) => {
+    seen += 1;
+    return seen <= max ? match : "the area";
+  });
+  return masked.replace(/\u0001A(\d+)\u0001/g, (_, index) => held[Number(index)] || OFFICE);
 }
 
 function packFor(key) {
@@ -113,53 +161,98 @@ function packFor(key) {
   };
 }
 
+function distinctParagraphs(path) {
+  const parts = String(path || "").split("/").filter(Boolean);
+  if (parts[1] === "manufacturers" && distinctEssays.manufacturers?.[parts[2]]) {
+    return distinctEssays.manufacturers[parts[2]];
+  }
+  if (parts[1] === "packages" && distinctEssays.packages?.[parts[2]]) {
+    return distinctEssays.packages[parts[2]];
+  }
+  return null;
+}
+
 export function essayHtml(path, subject, place) {
+  const town = place || "Stockport";
+  const own = distinctParagraphs(path);
+  if (own) {
+    return own.map((text) => `<p>${escapeHtml(capPlaceMentions(text, town))}</p>`).join("");
+  }
   const key = serviceKeyFromPath(path);
   const pack = packFor(key);
-  const job = shortSubject(subject, pack.key);
-  const town = place || "Stockport";
+  const job = shortSubject(subject, pack.key, path);
+  const budget = { n: 0 };
   const blocks = [];
-  const pushAll = (list) => {
-    for (const item of list || []) blocks.push(localise(item, town, job));
-  };
-  pushAll(pack.paragraphs);
-  pushAll(pack.notes);
-  pushAll(pack.facts);
-  return blocks.map((text) => `<p>${escapeHtml(text)}</p>`).join("");
+  for (const list of [pack.paragraphs, pack.notes, pack.facts]) {
+    for (const item of list || []) blocks.push(fillCopy(item, town, job, budget));
+  }
+  const text = capPlaceMentions(blocks.join("\n"), town);
+  return text.split("\n").filter(Boolean).map((line) => `<p>${escapeHtml(line)}</p>`).join("");
+}
+
+function pageFamily(path) {
+  const parts = String(path || "").split("/").filter(Boolean);
+  const head = parts[0] === "pages" ? (parts[1] || "") : (parts[0] || "");
+  const leaf = (parts[parts.length - 1] || "").toLowerCase();
+  if (path === "/" || path === "") return "hub:home";
+  if (head === "services" && services[parts[2]]) return parts[2];
+  if (head === "aov") return "aov-air-handling";
+  if (head === "barriers" || (head === "manufacturers" && BARRIER_BRANDS.has(parts[2] || ""))) return "barriers";
+  if (head === "keywords" && keywordServices[parts[2]]) return keywordServices[parts[2]];
+  if (head === "jobs" && parts[2] && (services[parts[2]] || keywordServices[parts[2]])) {
+    return services[parts[2]] ? parts[2] : keywordServices[parts[2]];
+  }
+  if (head === "jobs" || leaf === "jobs" || leaf === "become-a-subcontractor" || String(path).includes("become-a-subcontractor")) {
+    return "hub:company";
+  }
+  if (head === "packages" || leaf === "packages") return "hub:packages";
+  if (head === "areas" || leaf === "areas") return "hub:areas";
+  if (head === "resources" || leaf === "resources" || head === "directories" || leaf === "directories") return "hub:resources";
+  if (head === "manufacturers" || leaf === "manufacturers") return "hub:manufacturers";
+  if (head === "care-homes" || /care-home/.test(path)) return "nurse-call";
+  if (/asbestos/.test(path)) return "asbestos-survey";
+  if (head === "landlords" || /landlord/.test(leaf)) return "landlord-compliance";
+  if (/^commercial/.test(head) && services["commercial-fit-out"]) return "commercial-fit-out";
+  if (services[head] && !["keywords", "jobs", "areas", "manufacturers", "packages", "resources"].includes(head)) return head;
+  if (REAL_JOB.has(leaf)) return `hub:${leaf === "index" ? "home" : leaf}`;
+  if (REAL_JOB.has(head)) return `hub:${head === "index" ? "home" : head}`;
+  if (head === "products" || head === "shop" || leaf === "products" || leaf === "shop") return "products";
+  return "hub:home";
+}
+
+function canonicalSrc(path) {
+  const family = pageFamily(path);
+  if (family === "products") return "/assets/images/real-job/resources.jpg";
+  if (family.startsWith("hub:")) return `/assets/images/real-job/${family.slice(4)}.jpg`;
+  return `/assets/images/services/${family}.jpg`;
+}
+
+function sourceOfImage(src) {
+  const clean = String(src || "").split("?")[0];
+  const hash = clean.match(/\/opt\/([a-f0-9]+)-/i);
+  if (hash && hashToSource.has(hash[1])) return hashToSource.get(hash[1]);
+  return clean;
+}
+
+function imageFamily(src) {
+  const origin = sourceOfImage(src);
+  const service = origin.match(/\/assets\/images\/services\/([a-z0-9-]+?)(?:-(?:photo|context))?\.jpe?g$/i);
+  if (service) return service[1];
+  const lane = origin.match(/\/assets\/images\/lanes\/([a-z0-9-]+)\//i) || String(src).match(/\/lanes\/([a-z0-9-]+)\//i);
+  if (lane) return lane[1];
+  const hub = origin.match(/\/assets\/images\/real-job\/([a-z0-9-]+)\.jpe?g$/i);
+  if (hub) return `hub:${hub[1]}`;
+  if (/\/assets\/images\/(?:products|shop)\//i.test(origin)) return "products";
+  return "";
+}
+
+function isPlaceholderImage(src) {
+  const origin = sourceOfImage(src);
+  return /-(?:photo|context)\./i.test(origin) || /\/lanes\//i.test(origin) || /\/lanes\//i.test(src);
 }
 
 function slotSrc(path) {
-  const parts = String(path || "").split("/").filter(Boolean);
-  const head = parts[0] === "pages" ? (parts[1] || "") : (parts[0] || "");
-  const leaf = (parts[parts.length - 1] || "home").toLowerCase();
-  const known = {
-    aov: "aov-air-handling",
-    barriers: "barriers",
-    fencing: "fencing",
-    drainage: "drainage",
-    driveways: "driveways",
-    demolition: "demolition",
-  };
-  if (head === "services" && parts[2] && services[parts[2]]) return `/assets/images/services/${parts[2]}.jpg`;
-  if (known[head]) return `/assets/images/services/${known[head]}.jpg`;
-  if (parts[0] === "pages" && services[head] && !["keywords", "jobs", "areas", "manufacturers"].includes(head)) {
-    return `/assets/images/services/${head}.jpg`;
-  }
-  if (BARRIER_BRANDS.has(leaf)) return "/assets/images/services/barriers.jpg";
-  if (head === "manufacturers" || leaf === "manufacturers") return "/assets/images/real-job/manufacturers.jpg";
-  if (leaf === "jobs" || head === "jobs") return "/assets/images/services/building-maintenance.jpg";
-  if (leaf === "become-a-subcontractor" || path.includes("become-a-subcontractor")) {
-    return "/assets/images/services/building-maintenance.jpg";
-  }
-  if (leaf === "products" || head === "products" || leaf === "directories" || head === "directories") {
-    return leaf === "directories" || head === "directories"
-      ? "/assets/images/real-job/resources.jpg"
-      : "/assets/images/services/building-maintenance.jpg";
-  }
-  if (REAL_JOB.has(leaf)) return `/assets/images/real-job/${leaf}.jpg`;
-  if (REAL_JOB.has(head)) return `/assets/images/real-job/${head === "index" ? "home" : head}.jpg`;
-  if (path === "/" || path === "") return "/assets/images/real-job/home.jpg";
-  return "/assets/images/services/building-maintenance.jpg";
+  return canonicalSrc(path);
 }
 
 function crumbBlock(path, subject) {
@@ -211,11 +304,13 @@ function crumbBlock(path, subject) {
     + `<script type="application/ld+json">${JSON.stringify(ld)}</script>`;
 }
 
-function faqBlock(subject, place) {
+function faqBlock(subject, place, path) {
   const q1 = `How is ${subject} booked?`;
-  const a1 = `Call 07517 806082 or WhatsApp the same number. The office is 17 Woodlands Park Road, Offerton, Stockport SK2 5DE. You get a written quote before work is agreed.`;
-  const q2 = `Who attends in ${place}?`;
-  const a2 = `iComply arranges the visit from Stockport. Gas work is carried out by Gas Safe registered engineers.`;
+  const a1 = `Call 07517 806082 or WhatsApp the same number. The office is 17 Woodlands Park Road, Offerton, Stockport SK2 5DE. You get a free written quote before work is agreed.`;
+  const q2 = "Who attends the visit?";
+  const a2 = isGasPath(path, subject)
+    ? "Gas work is carried out by Gas Safe registered engineers."
+    : "iComply arranges the visit from the office at 17 Woodlands Park Road, Offerton, SK2 5DE.";
   const ld = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -268,6 +363,7 @@ function stampCredits(html) {
     let next = String(attrs).replace(/\s*\/\s*$/, "");
     if (skipImg(next) || /\bdata-credit-stamped=/.test(next)) return `<img${next}>`;
     const src = (next.match(/\bsrc\s*=\s*"([^"]*)"/i) || [])[1] || "";
+    if (!src || isPlaceholderImage(src)) return `<img${next}>`;
     const name = creditName(src);
     if (/\bdata-credit=/.test(next)) {
       next = next.replace(/\bdata-credit="[^"]*"/i, `data-credit="${escapeHtml(name)}"`);
@@ -286,9 +382,86 @@ function photoHtml(path, subject) {
   return `<figure class="real-job-photo" data-pe-slot="real-photo" data-real-job-photo="owner"><img src="${escapeHtml(src)}" alt="${escapeHtml(`Completed ${subject} by ${name}`)}" data-pe-slot="real-photo" data-credit="${escapeHtml(name)}" data-credit-stamped="1" width="1200" height="800"><figcaption>Image credit: ${escapeHtml(name)}</figcaption></figure>`;
 }
 
-function scrubFixedPricing(html, path) {
-  if (!/\/(?:fencing|drainage)(?:\/|$)/.test(path)) return html;
-  return String(html).replace(/fixed pricing/gi, "a written quote");
+function scrubFixedPricing(html) {
+  let out = String(html);
+  out = out.replace(/No fixed price is published/gi, "Price on application");
+  out = out.replace(/fixed written quotes/gi, "free written quotes");
+  out = out.replace(/fixed written quote/gi, "free written quote");
+  out = out.replace(/Every quote is fixed and written/gi, "Every quote is a free written quote");
+  out = out.replace(/fixed pricing/gi, "a free written quote");
+  out = out.replace(/\bPOA fixed quote\b/gi, "a free written quote");
+  out = out.replace(/\bfixed price\b/gi, "free written quote");
+  return out;
+}
+
+function scrubSentences(html, path, subject) {
+  const gas = isGasPath(path, subject);
+  const family = pageFamily(path);
+  const garden = GARDEN_FAMILY.has(family);
+  return String(html).replace(/>([^<]+)</g, (full, text) => {
+    if (!/[.!?]/.test(text)) return full;
+    const kept = text.split(/(?<=[.!?])\s+/).filter((sentence) => {
+      const line = sentence.trim();
+      if (!line) return false;
+      if (/do not describe iComply as Gas Safe/i.test(line)) return false;
+      if (/do not claim the company is Gas Safe/i.test(line)) return false;
+      if (/we do not describe iComply as Gas Safe registered/i.test(line)) return false;
+      if (!garden && /fill a skip and call the garden clear/i.test(line)) return false;
+      if (!gas && /Gas Safe registered/i.test(line)) return false;
+      if (/same shape every time/i.test(line)) return false;
+      return true;
+    });
+    return `>${kept.join(" ")}<`;
+  });
+}
+
+function capTownPrefix(html, place) {
+  const town = place || "Stockport";
+  const re = new RegExp(`\\bIn ${escapeReg(town)},\\s+`, "g");
+  let seen = 0;
+  return String(html).replace(re, (match) => {
+    seen += 1;
+    return seen <= 4 ? match : "\u0002";
+  }).replace(/\u0002([a-z])/g, (_, letter) => letter.toUpperCase()).replace(/\u0002/g, "");
+}
+
+function rewriteMetaImages(html, path) {
+  const want = canonicalSrc(path);
+  const family = pageFamily(path);
+  return String(html).replace(/<meta\b[^>]*>/gi, (tag) => {
+    if (!/\b(?:property|name)\s*=\s*"(?:og:image(?::secure_url)?|twitter:image)"/i.test(tag)) return tag;
+    return tag.replace(/\bcontent\s*=\s*"([^"]*)"/i, (full, url) => {
+      const pathOnly = String(url).replace(/^https?:\/\/[^/]+/i, "");
+      const imgFamily = imageFamily(pathOnly);
+      if (!imgFamily || (imgFamily === family && !isPlaceholderImage(pathOnly))) return full;
+      const next = String(url).replace(/\/assets\/images\/[^"?#]+/, want);
+      return `content="${next}"`;
+    });
+  });
+}
+
+function confineImages(html, path) {
+  const want = canonicalSrc(path);
+  const wantFamily = pageFamily(path);
+  const allowProducts = wantFamily === "products";
+  return String(html).replace(/<img\b([^>]*?)>/gi, (tag, attrs) => {
+    let next = String(attrs).replace(/\s*\/\s*$/, "");
+    if (skipImg(next)) return `<img${next}>`;
+    const src = (next.match(/\bsrc\s*=\s*"([^"]*)"/i) || [])[1] || "";
+    if (!src) return `<img${next}>`;
+    const family = imageFamily(src);
+    const placeholder = isPlaceholderImage(src);
+    const product = family === "products" || /\/(?:products|shop)\//i.test(src);
+    if (!placeholder && family === wantFamily) return `<img${next}>`;
+    if (allowProducts && product) return `<img${next}>`;
+    if (!/\bsrc\s*=/.test(next)) next = ` src="${want}"${next}`;
+    else next = next.replace(/\bsrc\s*=\s*"[^"]*"/i, `src="${want}"`);
+    next = next.replace(/\s+srcset\s*=\s*"[^"]*"/gi, "");
+    next = next.replace(/\s+data-srcset\s*=\s*"[^"]*"/gi, "");
+    next = next.replace(/\s+data-perf\s*=\s*"[^"]*"/gi, "");
+    next = next.replace(/\s+onerror\s*=\s*"[^"]*"/gi, "");
+    return `<img${next}>`;
+  });
 }
 
 export function applyQualityFloor(html, ctx = {}) {
@@ -305,7 +478,7 @@ export function applyQualityFloor(html, ctx = {}) {
       + (needsCrumbs ? crumbBlock(path, subject) : "")
       + srcBlock
       + essayHtml(path, subject, place)
-      + (needsFaq ? faqBlock(subject, place) : "")
+      + (needsFaq ? faqBlock(subject, place, path) : "")
       + `</section>`;
     const article = out.toLowerCase().lastIndexOf("</article>");
     if (article !== -1) out = out.slice(0, article) + block + out.slice(article);
@@ -324,7 +497,12 @@ export function applyQualityFloor(html, ctx = {}) {
     out = body === -1 ? out + figure : out.slice(0, body) + figure + out.slice(body);
   }
   out = sanitizeInternalLinks(out);
+  out = confineImages(out, path);
+  out = rewriteMetaImages(out, path);
+  out = scrubSentences(out, path, subject);
+  out = capTownPrefix(out, place);
+  out = out.replace(/\bpOA\./g, "POA.");
+  out = scrubFixedPricing(out);
   out = stampCredits(out);
-  out = scrubFixedPricing(out, path);
   return out;
 }

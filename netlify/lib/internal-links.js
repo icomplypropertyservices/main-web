@@ -6,6 +6,7 @@
 import services from "../../website/data/services.json" with { type: "json" };
 import fireAlarmFamily from "../../website/data/fire-alarm-installer-family.json" with { type: "json" };
 import mainlandTownDoc from "../../website/data/uk-mainland-towns-10k.json" with { type: "json" };
+import areasMainland from "../../website/data/areas-mainland.json" with { type: "json" };
 import gscKeepDoc from "../../website/data/gsc-keep-towns.json" with { type: "json" };
 import serveUpgradeDoc from "../../website/data/seo-upgrade/serve-200.json" with { type: "json" };
 import { isGmTown, isLocalTown } from "./link-blocks.js";
@@ -15,6 +16,10 @@ const GSC_KEEP = new Set(gscKeepDoc.paths || []);
 const SERVE_UPGRADE = new Set(serveUpgradeDoc.paths || []);
 const FIRE_P0 = new Set(fireAlarmFamily.p0 || []);
 const MAINLAND = new Set((mainlandTownDoc.towns || []).map((town) => town && town.slug).filter(Boolean));
+function areaSlug(name) {
+  return String(name || "").toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+}
+const AOV_BUILT = new Set((Array.isArray(areasMainland) ? areasMainland : []).map((row) => areaSlug(row && row.name)).filter(Boolean));
 
 const NATIONWIDE = new Set([
   "aov", "barriers", "aov-air-handling",
@@ -72,6 +77,8 @@ export function rewriteInternalPath(pathname) {
   if (m) return isLocalTown(m[2]) ? path : `/pages/jobs/${m[1]}`;
   m = path.match(/^\/pages\/areas\/([a-z0-9-]+)$/);
   if (m) return isLocalTown(m[1]) ? path : "/pages/areas";
+  m = path.match(/^\/pages\/aov-air-handling\/([a-z0-9-]+)$/);
+  if (m) return AOV_BUILT.has(m[1]) ? path : "/pages/services/aov-air-handling";
   m = path.match(/^\/pages\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   if (m && !RESERVED.has(m[1]) && !NATIONWIDE.has(m[1]) && !isLocalTown(m[2])) {
     return `/pages/services/${m[1]}`;

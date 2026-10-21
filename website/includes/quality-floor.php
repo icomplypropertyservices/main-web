@@ -93,63 +93,299 @@ function icomplyQualityFloorPlace(string $path): string
     return 'Stockport';
 }
 
-function icomplyQualityFloorSubject(string $subject, string $key): string
+function icomplyQualityFloorSubject(string $subject, string $key, string $path = ''): string
 {
-    if (function_exists('getServices')) {
-        $services = getServices();
-        if (isset($services[$key]) && is_string($services[$key]) && $services[$key] !== '') {
-            return $services[$key];
-        }
+    $services = function_exists('getServices') ? getServices() : [];
+    $parts = array_values(array_filter(explode('/', $path), static fn ($p) => $p !== ''));
+    $slug = ($parts[1] ?? '') === 'services' ? ($parts[2] ?? '') : ($parts[1] ?? '');
+    if ($slug !== '' && isset($services[$slug]) && is_string($services[$slug]) && $services[$slug] !== '') {
+        return $services[$slug];
+    }
+    if ($key !== '' && $key !== 'default' && isset($services[$key]) && is_string($services[$key]) && $services[$key] !== '') {
+        return $services[$key];
     }
     $cleaned = trim((string)preg_replace('/\s+in\s+.+$/i', '', $subject));
+    $cleaned = trim((string)preg_replace('/\.\s*POA\.?.*$/i', '', $cleaned));
+    $first = trim(explode('.', $cleaned)[0] ?? '');
+    if ($first !== '') {
+        return $first;
+    }
     return $cleaned !== '' ? $cleaned : 'the work';
 }
 
-function icomplyQualityFloorLocalise(string $text, string $place, string $subject): string
+function icomplyQualityFloorOffice(): string
+{
+    return '17 Woodlands Park Road, Offerton, Stockport SK2 5DE';
+}
+
+function icomplyQualityFloorIsGas(string $path, string $subject = ''): bool
+{
+    $path = rtrim($path, '/') ?: '/';
+    if (in_array($path, ['/pages/packages/compliance-bundle', '/pages/packages/landlord-pack'], true)) {
+        return true;
+    }
+    if (preg_match('#/(?:gas-systems|heating)(?:/|$)#', $path)) {
+        return true;
+    }
+    return (bool)preg_match('/\bgas\b|cp12|boiler/i', $path . ' ' . $subject);
+}
+
+function icomplyQualityFloorFill(string $text, string $place, string $subject, int &$budget): string
 {
     $town = $place !== '' ? $place : 'Stockport';
     $job = $subject !== '' ? $subject : 'the work';
-    $text = str_replace(['{place}', '{subject}'], [$town, $job], $text);
-    $parts = preg_split('/(?<=[.!?])\s+/', trim($text)) ?: [];
-    $out = [];
-    foreach ($parts as $sentence) {
-        $line = trim((string)$sentence);
-        if ($line === '') {
+    $text = str_replace('{subject}', $job, $text);
+    return (string)preg_replace_callback('/\{place\}/', static function () use ($town, &$budget): string {
+        $budget++;
+        return $budget <= 4 ? $town : 'the area';
+    }, $text);
+}
+
+function icomplyQualityFloorCapMentions(string $text, string $place, int $max = 6): string
+{
+    $town = $place !== '' ? $place : 'Stockport';
+    $office = icomplyQualityFloorOffice();
+    $held = [];
+    $masked = str_replace($office, "\x01OFFICE\x01", $text);
+    $pattern = '/\b' . preg_quote($town, '/') . '\b/i';
+    $seen = 0;
+    $masked = (string)preg_replace_callback($pattern, static function (array $m) use (&$seen, $max): string {
+        $seen++;
+        return $seen <= $max ? $m[0] : 'the area';
+    }, $masked);
+    return str_replace("\x01OFFICE\x01", $office, $masked);
+}
+
+/** @return list<string>|null */
+function icomplyQualityFloorDistinct(string $path): ?array
+{
+    static $doc = null;
+    if ($doc === null) {
+        $file = dirname(__DIR__) . '/data/distinct-essays.json';
+        $decoded = is_file($file) ? json_decode((string)file_get_contents($file), true) : [];
+        $doc = is_array($decoded) ? $decoded : [];
+    }
+    $parts = array_values(array_filter(explode('/', $path), static fn ($p) => $p !== ''));
+    $head = $parts[1] ?? '';
+    $leaf = $parts[2] ?? '';
+    if ($head === 'manufacturers' && is_array($doc['manufacturers'][$leaf] ?? null)) {
+        return $doc['manufacturers'][$leaf];
+    }
+    if ($head === 'packages' && is_array($doc['packages'][$leaf] ?? null)) {
+        return $doc['packages'][$leaf];
+    }
+    return null;
+}
+
+/** @return array<string, string> */
+function icomplyQualityFloorKeywordServices(): array
+{
+    static $map = null;
+    if ($map === null) {
+        $file = dirname(__DIR__) . '/data/keyword-services.json';
+        $decoded = is_file($file) ? json_decode((string)file_get_contents($file), true) : [];
+        $map = is_array($decoded) ? $decoded : [];
+    }
+    return $map;
+}
+
+/** @return array<string, string> */
+function icomplyQualityFloorHashSources(): array
+{
+    static $map = null;
+    if ($map !== null) {
+        return $map;
+    }
+    $map = [];
+    if (!function_exists('icomplyPerfManifest')) {
+        $perf = __DIR__ . '/perf.php';
+        if (is_file($perf)) {
+            require_once $perf;
+        }
+    }
+    $manifest = function_exists('icomplyPerfManifest') ? icomplyPerfManifest() : [];
+    foreach ($manifest as $src => $meta) {
+        if (!is_array($meta)) {
             continue;
         }
-        if (stripos($line, $town) === false) {
-            $line = 'In ' . $town . ', ' . lcfirst($line);
+        foreach ($meta['variants'] ?? [] as $variant) {
+            if (!is_array($variant) || empty($variant['webp'])) {
+                continue;
+            }
+            if (preg_match('#/opt/([a-f0-9]+)-#i', (string)$variant['webp'], $m) && !isset($map[$m[1]])) {
+                $map[$m[1]] = (string)$src;
+            }
         }
-        $out[] = $line;
     }
-    return implode(' ', $out);
+    return $map;
 }
 
 function icomplyQualityFloorEssay(string $path, string $subject, string $place): string
 {
+    $town = $place !== '' ? $place : 'Stockport';
+    $own = icomplyQualityFloorDistinct($path);
+    if (is_array($own)) {
+        $html = '';
+        foreach ($own as $item) {
+            if (!is_string($item) || $item === '') {
+                continue;
+            }
+            $html .= '<p>' . icomplyQualityFloorH(icomplyQualityFloorCapMentions($item, $town)) . '</p>';
+        }
+        return $html;
+    }
     $copy = icomplyQualityFloorCopy();
     $key = icomplyQualityFloorServiceKey($path);
     $services = is_array($copy['services'] ?? null) ? $copy['services'] : [];
     if (!isset($services[$key])) {
         $key = 'default';
     }
-    $job = icomplyQualityFloorSubject($subject, $key);
-    $town = $place !== '' ? $place : 'Stockport';
+    $job = icomplyQualityFloorSubject($subject, $key, $path);
     $lists = [
         $services[$key] ?? [],
         is_array($copy['notes'][$key] ?? null) ? $copy['notes'][$key] : [],
         is_array($copy['facts'][$key] ?? null) ? $copy['facts'][$key] : [],
     ];
-    $html = '';
+    $budget = 0;
+    $blocks = [];
     foreach ($lists as $list) {
         foreach ($list as $item) {
             if (!is_string($item) || $item === '') {
                 continue;
             }
-            $html .= '<p>' . icomplyQualityFloorH(icomplyQualityFloorLocalise($item, $town, $job)) . '</p>';
+            $blocks[] = icomplyQualityFloorFill($item, $town, $job, $budget);
         }
     }
+    $text = icomplyQualityFloorCapMentions(implode("\n", $blocks), $town);
+    $html = '';
+    foreach (explode("\n", $text) as $line) {
+        if ($line === '') {
+            continue;
+        }
+        $html .= '<p>' . icomplyQualityFloorH($line) . '</p>';
+    }
     return $html;
+}
+
+function icomplyQualityFloorFamily(string $path): string
+{
+    $parts = array_values(array_filter(explode('/', $path), static fn ($p) => $p !== ''));
+    $head = ($parts[0] ?? '') === 'pages' ? ($parts[1] ?? '') : ($parts[0] ?? '');
+    $leaf = strtolower($parts[count($parts) - 1] ?? '');
+    $services = function_exists('getServices') ? getServices() : [];
+    $keywords = icomplyQualityFloorKeywordServices();
+    $brands = [
+        'apt-controls', 'atg-access', 'avon-barrier', 'dea', 'designa', 'eagle',
+        'frontier-pitts', 'heald', 'hysecurity', 'key-automation', 'life', 'newgate', 'skidata',
+    ];
+    if ($path === '/' || $path === '') {
+        return 'hub:home';
+    }
+    if ($head === 'services' && isset($parts[2], $services[$parts[2]])) {
+        return (string)$parts[2];
+    }
+    if ($head === 'aov') {
+        return 'aov-air-handling';
+    }
+    if ($head === 'barriers' || ($head === 'manufacturers' && in_array($parts[2] ?? '', $brands, true))) {
+        return 'barriers';
+    }
+    if ($head === 'keywords' && isset($keywords[$parts[2] ?? ''])) {
+        return (string)$keywords[$parts[2]];
+    }
+    if ($head === 'jobs' && isset($parts[2]) && (isset($services[$parts[2]]) || isset($keywords[$parts[2]]))) {
+        return isset($services[$parts[2]]) ? (string)$parts[2] : (string)$keywords[$parts[2]];
+    }
+    if ($head === 'jobs' || $leaf === 'jobs' || $leaf === 'become-a-subcontractor' || str_contains($path, 'become-a-subcontractor')) {
+        return 'hub:company';
+    }
+    if ($head === 'packages' || $leaf === 'packages') {
+        return 'hub:packages';
+    }
+    if ($head === 'areas' || $leaf === 'areas') {
+        return 'hub:areas';
+    }
+    if (in_array($head, ['resources', 'directories'], true) || in_array($leaf, ['resources', 'directories'], true)) {
+        return 'hub:resources';
+    }
+    if ($head === 'manufacturers' || $leaf === 'manufacturers') {
+        return 'hub:manufacturers';
+    }
+    if ($head === 'care-homes' || str_contains($path, 'care-home')) {
+        return 'nurse-call';
+    }
+    if (str_contains($path, 'asbestos')) {
+        return 'asbestos-survey';
+    }
+    if ($head === 'landlords' || str_contains($leaf, 'landlord')) {
+        return 'landlord-compliance';
+    }
+    if (str_starts_with($head, 'commercial') && isset($services['commercial-fit-out'])) {
+        return 'commercial-fit-out';
+    }
+    $skip = ['keywords', 'jobs', 'areas', 'manufacturers', 'packages', 'resources'];
+    if (isset($services[$head]) && !in_array($head, $skip, true)) {
+        return $head;
+    }
+    $real = ['index', 'company', 'packages', 'resources', 'manufacturers', 'areas', 'about', 'privacy', 'terms', 'renewals', 'contact', 'home'];
+    if (in_array($leaf, $real, true)) {
+        return 'hub:' . ($leaf === 'index' ? 'home' : $leaf);
+    }
+    if (in_array($head, $real, true)) {
+        return 'hub:' . ($head === 'index' ? 'home' : $head);
+    }
+    if (in_array($head, ['products', 'shop'], true) || in_array($leaf, ['products', 'shop'], true)) {
+        return 'products';
+    }
+    return 'hub:home';
+}
+
+function icomplyQualityFloorCanonicalSrc(string $path): string
+{
+    $family = icomplyQualityFloorFamily($path);
+    if ($family === 'products') {
+        return '/assets/images/real-job/resources.jpg';
+    }
+    if (str_starts_with($family, 'hub:')) {
+        return '/assets/images/real-job/' . substr($family, 4) . '.jpg';
+    }
+    return '/assets/images/services/' . $family . '.jpg';
+}
+
+function icomplyQualityFloorImageSource(string $src): string
+{
+    $clean = (string)strtok($src, '?');
+    if (preg_match('#/opt/([a-f0-9]+)-#i', $clean, $m)) {
+        $mapped = icomplyQualityFloorHashSources()[$m[1]] ?? '';
+        if ($mapped !== '') {
+            return $mapped;
+        }
+    }
+    return $clean;
+}
+
+function icomplyQualityFloorImageFamily(string $src): string
+{
+    $origin = icomplyQualityFloorImageSource($src);
+    if (preg_match('#/assets/images/services/([a-z0-9-]+?)(?:-(?:photo|context))?\.jpe?g$#i', $origin, $m)) {
+        return $m[1];
+    }
+    if (preg_match('#/assets/images/lanes/([a-z0-9-]+)/#i', $origin, $m) || preg_match('#/lanes/([a-z0-9-]+)/#i', $src, $m)) {
+        return $m[1];
+    }
+    if (preg_match('#/assets/images/real-job/([a-z0-9-]+)\.jpe?g$#i', $origin, $m)) {
+        return 'hub:' . $m[1];
+    }
+    if (preg_match('#/assets/images/(?:products|shop)/#i', $origin)) {
+        return 'products';
+    }
+    return '';
+}
+
+function icomplyQualityFloorPlaceholderImage(string $src): bool
+{
+    $origin = icomplyQualityFloorImageSource($src);
+    return (bool)preg_match('/-(?:photo|context)\./i', $origin) || str_contains($origin, '/lanes/') || str_contains($src, '/lanes/');
 }
 
 function icomplyQualityFloorPath(string $html): string
@@ -175,58 +411,7 @@ function icomplyQualityFloorH1(string $html): string
 
 function icomplyQualityFloorSlotSrc(string $path): string
 {
-    $parts = array_values(array_filter(explode('/', $path), static fn ($p) => $p !== ''));
-    $head = ($parts[0] ?? '') === 'pages' ? ($parts[1] ?? '') : ($parts[0] ?? '');
-    $leaf = strtolower($parts[count($parts) - 1] ?? 'home');
-    $known = [
-        'aov' => 'aov-air-handling',
-        'barriers' => 'barriers',
-        'fencing' => 'fencing',
-        'drainage' => 'drainage',
-        'driveways' => 'driveways',
-        'demolition' => 'demolition',
-    ];
-    $services = function_exists('getServices') ? getServices() : [];
-    if ($head === 'services' && isset($parts[2], $services[$parts[2]])) {
-        return '/assets/images/services/' . $parts[2] . '.jpg';
-    }
-    if (isset($known[$head])) {
-        return '/assets/images/services/' . $known[$head] . '.jpg';
-    }
-    $skip = ['keywords', 'jobs', 'areas', 'manufacturers'];
-    if (($parts[0] ?? '') === 'pages' && isset($services[$head]) && !in_array($head, $skip, true)) {
-        return '/assets/images/services/' . $head . '.jpg';
-    }
-    $brands = [
-        'apt-controls', 'atg-access', 'avon-barrier', 'dea', 'designa', 'eagle',
-        'frontier-pitts', 'heald', 'hysecurity', 'key-automation', 'life', 'newgate', 'skidata',
-    ];
-    if (in_array($leaf, $brands, true)) {
-        return '/assets/images/services/barriers.jpg';
-    }
-    $real = ['index', 'company', 'packages', 'resources', 'manufacturers', 'areas', 'about', 'privacy', 'terms', 'renewals', 'contact', 'home'];
-    if ($head === 'manufacturers' || $leaf === 'manufacturers') {
-        return '/assets/images/real-job/manufacturers.jpg';
-    }
-    if ($leaf === 'jobs' || $head === 'jobs' || $leaf === 'become-a-subcontractor' || str_contains($path, 'become-a-subcontractor')) {
-        return '/assets/images/services/building-maintenance.jpg';
-    }
-    if ($leaf === 'directories' || $head === 'directories') {
-        return '/assets/images/real-job/resources.jpg';
-    }
-    if ($leaf === 'products' || $head === 'products') {
-        return '/assets/images/services/building-maintenance.jpg';
-    }
-    if (in_array($leaf, $real, true)) {
-        return '/assets/images/real-job/' . $leaf . '.jpg';
-    }
-    if (in_array($head, $real, true)) {
-        return '/assets/images/real-job/' . ($head === 'index' ? 'home' : $head) . '.jpg';
-    }
-    if ($path === '/' || $path === '') {
-        return '/assets/images/real-job/home.jpg';
-    }
-    return '/assets/images/services/building-maintenance.jpg';
+    return icomplyQualityFloorCanonicalSrc($path);
 }
 
 function icomplyQualityFloorRewritePath(string $path): string
@@ -399,6 +584,9 @@ function icomplyStampImageCredits(string $html): string
         if (preg_match('/\bsrc\s*=\s*"([^"]*)"/i', $attrs, $sm)) {
             $src = $sm[1];
         }
+        if ($src === '' || icomplyQualityFloorPlaceholderImage($src)) {
+            return '<img' . $attrs . '>';
+        }
         $name = icomplyQualityFloorH(icomplyQualityFloorCreditName($src));
         if (preg_match('/\bdata-credit="/i', $attrs)) {
             $attrs = preg_replace('/\bdata-credit="[^"]*"/i', 'data-credit="' . $name . '"', $attrs) ?? $attrs;
@@ -486,12 +674,146 @@ function icomplyQualityFloorPhoto(string $path, string $subject): string
         . icomplyQualityFloorH($name) . '</figcaption></figure>';
 }
 
-function icomplyQualityFloorScrubPricing(string $html, string $path): string
+function icomplyQualityFloorScrubPricing(string $html): string
 {
-    if (!preg_match('#/(?:fencing|drainage)(?:/|$)#', $path)) {
+    $steps = [
+        '/No fixed price is published/i' => 'Price on application',
+        '/fixed written quotes/i' => 'free written quotes',
+        '/fixed written quote/i' => 'free written quote',
+        '/Every quote is fixed and written/i' => 'Every quote is a free written quote',
+        '/fixed pricing/i' => 'a free written quote',
+        '/\bPOA fixed quote\b/i' => 'a free written quote',
+        '/\bfixed price\b/i' => 'free written quote',
+    ];
+    foreach ($steps as $pattern => $replacement) {
+        $next = preg_replace($pattern, $replacement, $html);
+        if (is_string($next)) {
+            $html = $next;
+        }
+    }
+    return $html;
+}
+
+function icomplyQualityFloorScrubSentences(string $html, string $path, string $subject): string
+{
+    $gas = icomplyQualityFloorIsGas($path, $subject);
+    $family = icomplyQualityFloorFamily($path);
+    $garden = in_array($family, ['fencing', 'landscaping', 'demolition', 'driveways', 'garden-clearance', 'garden-maintenance', 'patios'], true);
+    $out = preg_replace_callback('/>([^<]+)</', static function (array $m) use ($gas, $garden): string {
+        $text = $m[1];
+        if (!preg_match('/[.!?]/', $text)) {
+            return $m[0];
+        }
+        $parts = preg_split('/(?<=[.!?])\s+/', $text) ?: [];
+        $kept = [];
+        foreach ($parts as $sentence) {
+            $line = trim((string)$sentence);
+            if ($line === '') {
+                continue;
+            }
+            if (preg_match('/do not describe iComply as Gas Safe/i', $line)) {
+                continue;
+            }
+            if (preg_match('/do not claim the company is Gas Safe/i', $line)) {
+                continue;
+            }
+            if (!$garden && preg_match('/fill a skip and call the garden clear/i', $line)) {
+                continue;
+            }
+            if (!$gas && preg_match('/Gas Safe registered/i', $line)) {
+                continue;
+            }
+            if (preg_match('/same shape every time/i', $line)) {
+                continue;
+            }
+            $kept[] = $line;
+        }
+        return '>' . implode(' ', $kept) . '<';
+    }, $html);
+    return is_string($out) ? $out : $html;
+}
+
+function icomplyQualityFloorCapPrefix(string $html, string $place): string
+{
+    $town = $place !== '' ? $place : 'Stockport';
+    $seen = 0;
+    $out = preg_replace_callback('/\bIn ' . preg_quote($town, '/') . ',\\s+/', static function (array $m) use (&$seen): string {
+        $seen++;
+        return $seen <= 4 ? $m[0] : "\x02";
+    }, $html);
+    if (!is_string($out)) {
         return $html;
     }
-    $out = preg_replace('/fixed pricing/i', 'a written quote', $html);
+    $out = (string)preg_replace_callback('/\x02([a-z])/', static function (array $m): string {
+        return strtoupper($m[1]);
+    }, $out);
+    return str_replace("\x02", '', $out);
+}
+
+function icomplyQualityFloorRewriteMetaImages(string $html, string $path): string
+{
+    $want = icomplyQualityFloorCanonicalSrc($path);
+    $family = icomplyQualityFloorFamily($path);
+    $out = preg_replace_callback('/<meta\b[^>]*>/i', static function (array $m) use ($want, $family): string {
+        $tag = $m[0];
+        if (!preg_match('/\b(?:property|name)\s*=\s*"(?:og:image(?::secure_url)?|twitter:image)"/i', $tag)) {
+            return $tag;
+        }
+        $next = preg_replace_callback('/\bcontent\s*=\s*"([^"]*)"/i', static function (array $cm) use ($want, $family): string {
+            $pathOnly = (string)preg_replace('#^https?://[^/]+#i', '', $cm[1]);
+            $imgFamily = icomplyQualityFloorImageFamily($pathOnly);
+            if ($imgFamily === '' || ($imgFamily === $family && !icomplyQualityFloorPlaceholderImage($pathOnly))) {
+                return $cm[0];
+            }
+            $url = preg_replace('#/assets/images/[^"?]+#', $want, $cm[1]);
+            if (!is_string($url) || $url === '') {
+                return $cm[0];
+            }
+            return 'content="' . $url . '"';
+        }, $tag);
+        return is_string($next) ? $next : $tag;
+    }, $html);
+    return is_string($out) ? $out : $html;
+}
+
+function icomplyQualityFloorConfineImages(string $html, string $path): string
+{
+    $want = icomplyQualityFloorCanonicalSrc($path);
+    $wantFamily = icomplyQualityFloorFamily($path);
+    $allowProducts = $wantFamily === 'products';
+    $out = preg_replace_callback('/<img\b([^>]*?)>/i', static function (array $m) use ($want, $wantFamily, $allowProducts): string {
+        $attrs = rtrim($m[1]);
+        if (str_ends_with($attrs, '/')) {
+            $attrs = rtrim(substr($attrs, 0, -1));
+        }
+        if (icomplyQualityFloorSkipImg($attrs)) {
+            return '<img' . $attrs . '>';
+        }
+        $src = '';
+        if (preg_match('/\bsrc\s*=\s*"([^"]*)"/i', $attrs, $sm)) {
+            $src = $sm[1];
+        }
+        if ($src === '') {
+            return '<img' . $attrs . '>';
+        }
+        $family = icomplyQualityFloorImageFamily($src);
+        $product = $family === 'products' || (bool)preg_match('#/(?:products|shop)/#i', $src);
+        if (!icomplyQualityFloorPlaceholderImage($src) && $family === $wantFamily) {
+            return '<img' . $attrs . '>';
+        }
+        if ($allowProducts && $product) {
+            return '<img' . $attrs . '>';
+        }
+        $attrs = preg_replace('/\bsrc\s*=\s*"[^"]*"/i', 'src="' . $want . '"', $attrs) ?? $attrs;
+        if (!preg_match('/\bsrc\s*=/i', $attrs)) {
+            $attrs = ' src="' . $want . '"' . $attrs;
+        }
+        $attrs = preg_replace('/\s+srcset\s*=\s*"[^"]*"/i', '', $attrs) ?? $attrs;
+        $attrs = preg_replace('/\s+data-srcset\s*=\s*"[^"]*"/i', '', $attrs) ?? $attrs;
+        $attrs = preg_replace('/\s+data-perf\s*=\s*"[^"]*"/i', '', $attrs) ?? $attrs;
+        $attrs = preg_replace('/\s+onerror\s*=\s*"[^"]*"/i', '', $attrs) ?? $attrs;
+        return '<img' . $attrs . '>';
+    }, $html);
     return is_string($out) ? $out : $html;
 }
 
@@ -509,9 +831,11 @@ function icomplyApplyQualityFloor(string $html): string
         $faq = '';
         if ($needsFaq) {
             $q1 = 'How is ' . $subject . ' booked?';
-            $a1 = 'Call 07517 806082 or WhatsApp the same number. The office is 17 Woodlands Park Road, Offerton, Stockport SK2 5DE. You get a written quote before work is agreed.';
-            $q2 = 'Who attends in ' . $place . '?';
-            $a2 = 'iComply arranges the visit from Stockport. Gas work is carried out by Gas Safe registered engineers.';
+            $a1 = 'Call 07517 806082 or WhatsApp the same number. The office is 17 Woodlands Park Road, Offerton, Stockport SK2 5DE. You get a free written quote before work is agreed.';
+            $q2 = 'Who attends the visit?';
+            $a2 = icomplyQualityFloorIsGas($path, $subject)
+                ? 'Gas work is carried out by Gas Safe registered engineers.'
+                : 'iComply arranges the visit from the office at 17 Woodlands Park Road, Offerton, SK2 5DE.';
             $faqLd = json_encode([
                 '@context' => 'https://schema.org',
                 '@type' => 'FAQPage',
@@ -553,6 +877,11 @@ function icomplyApplyQualityFloor(string $html): string
         $html = $body === false ? $html . $figure : substr($html, 0, $body) . $figure . substr($html, $body);
     }
     $html = icomplySanitizeInternalLinks($html);
-    $html = icomplyStampImageCredits($html);
-    return icomplyQualityFloorScrubPricing($html, $path);
+    $html = icomplyQualityFloorConfineImages($html, $path);
+    $html = icomplyQualityFloorRewriteMetaImages($html, $path);
+    $html = icomplyQualityFloorScrubSentences($html, $path, $subject);
+    $html = icomplyQualityFloorCapPrefix($html, $place);
+    $html = str_replace('pOA.', 'POA.', $html);
+    $html = icomplyQualityFloorScrubPricing($html);
+    return icomplyStampImageCredits($html);
 }

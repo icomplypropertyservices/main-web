@@ -74,14 +74,15 @@ function icomplyNationwide3lineHub(string $slug): ?array
 function icomplyNationwide3lineImages(string $slug): array
 {
     $hub = icomplyNationwide3lineHub($slug);
-    $images = is_array($hub) ? ($hub['images'] ?? []) : [];
-    $out = [];
-    foreach ($images as $image) {
-        if (is_string($image) && $image !== '') {
-            $out[] = $image;
-        }
+    $service = is_array($hub) ? (string)($hub['service'] ?? '') : '';
+    if ($service === 'aov') {
+        $service = 'aov-air-handling';
     }
-    return array_slice($out, 0, 3);
+    if ($service === '' || !preg_match('/^[a-z0-9-]+$/', $service)) {
+        $service = 'fire-alarms';
+    }
+    $src = '/assets/images/services/' . $service . '.jpg';
+    return [$src, $src, $src];
 }
 
 function icomplyTop5000Dataset(): array

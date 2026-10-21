@@ -146,7 +146,7 @@ require SITE_ROOT . '/includes/header.php';
     <section class="mt-12 bg-zinc-50 border border-zinc-200 rounded-2xl p-6">
         <h2 class="text-2xl font-semibold text-[#0B1F3A]">Request a POA quote</h2>
         <p class="mt-3 text-zinc-700"><a class="text-[#ff6b00] font-semibold" href="tel:<?= $h(preg_replace('/\s+/', '', $phone)) ?>"><?= $h($phone) ?></a> · <a class="text-[#ff6b00] font-semibold" href="mailto:<?= $h($email) ?>"><?= $h($email) ?></a> · <a class="text-[#ff6b00] font-semibold" href="<?= $h(url('/contact')) ?>">https://icomplypropertyservices.co.uk/contact</a></p>
-        <p class="mt-2 text-zinc-700">Quote line: “POA fixed quote after scope”.</p>
+        <p class="mt-2 text-zinc-700">Quote line: “a free written quote after scope”.</p>
     </section>
 </main>
 <?php require SITE_ROOT . '/includes/footer.php'; ?>

@@ -87,7 +87,7 @@ function icomplyMegaHeaderHtml(): string
     $areaCount = count($n['areas']);
 
     return <<<HTML
-<header class="site-header mega-header" data-site-header>
+<header class="site-header mega-header" data-site-header data-mega-nav="1">
   <div class="mega-bar">
     <a class="mega-logo" href="{$home}">
       <img src="{$logo}" width="36" height="36" alt="iComply" class="mega-logo-img" decoding="async">

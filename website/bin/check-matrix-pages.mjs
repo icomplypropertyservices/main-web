@@ -177,7 +177,7 @@ for (const page of pages) {
   ok(!/iComply does not issue CP12/i.test(page.html), `no CP12 denial on ${page.path}`);
   ok(page.words >= 250, `body words ${page.words} on ${page.path}`);
   ok(proseWords(page.html) >= (page.html.includes("id=\"town-facts\"") ? 450 : 800), `prose words ${proseWords(page.html)} on ${page.path}`);
-  ok(/price on application|\bPOA\b|fixed written quote/i.test(page.html), `POA on ${page.path}`);
+  ok(/price on application|\bPOA\b|free written quote/i.test(page.html), `POA on ${page.path}`);
   ok(page.html.includes('property="og:title"'), `og:title on ${page.path}`);
   ok(page.html.includes('property="og:description"'), `og:description on ${page.path}`);
   ok(/property="og:image" content="https:\/\/icomplypropertyservices\.co\.uk\/assets\/images\/[^"]+"/.test(page.html), `absolute og:image on ${page.path}`);
@@ -270,7 +270,7 @@ ok(ogHits >= 15, `thin OG and prose sample ${ogHits}/15`);
 
 const kitchen = renderTownPage({ kind: "service", service: "kitchens", town: "stockport", catalogue });
 ok(kitchen && kitchen.status === 200 && kitchen.robots === "index, follow", "kitchen town page in Stockport is indexable");
-ok(kitchen && /price on application|fixed written quote/.test(kitchen.html.toLowerCase()), "kitchen town page is POA");
+ok(kitchen && /price on application|free written quote/.test(kitchen.html.toLowerCase()), "kitchen town page is POA");
 ok(kitchen && !kitchen.html.includes("£"), "kitchen town page has no price");
 ok(kitchen && scoreHtml(kitchen.html, { local: ["stockport"] }).score === 100, "kitchen town score 100");
 

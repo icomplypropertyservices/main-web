@@ -302,7 +302,7 @@ echo icomplyTownDeepHtml(areaSlug($AREA), $AREA, 'property compliance', 'propert
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Services in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></div>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Everything we do locally</h2>
-                <p class="mt-2 text-zinc-600 max-w-xl">Every service has a page for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Every quote is fixed and written. Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
+                <p class="mt-2 text-zinc-600 max-w-xl">Every service has a page for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Every quote is a free written quote. Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
             </div>
             <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All service hubs →</a>
         </div>

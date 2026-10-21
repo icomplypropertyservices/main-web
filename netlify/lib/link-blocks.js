@@ -18,9 +18,15 @@
  * files are not guessed here (some GM localities 404 on those templates).
  */
 import townGeo from "../../website/data/town-geo-slim.json" with { type: "json" };
+import areasMainland from "../../website/data/areas-mainland.json" with { type: "json" };
 import { BOROUGH_GEO } from "./town-depth.js";
 
 import { LOCAL_TOWN_SET } from "./dual-ring-allowlist.js";
+
+function mainlandAreaSlug(name) {
+  return String(name || "").toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+}
+const AOV_BUILT = new Set((Array.isArray(areasMainland) ? areasMainland : []).map((row) => mainlandAreaSlug(row && row.name)).filter(Boolean));
 
 const GM_TOWNS = [
   ["altrincham", "Altrincham"],
@@ -309,7 +315,10 @@ export function matrixRelatedHtml(catalogue, identity) {
       // Service×town pages outside the dual-ring towns 301 (or are not
       // exported), so never link them from a town page.
       if (!name || !townSlug || !isLocalTown(townSlug)) continue;
-      sameTown.push({ href: `/pages/${slug}/${townSlug}`, label: `${name} in ${townName}` });
+      const href = slug === "aov-air-handling" && !AOV_BUILT.has(townSlug)
+        ? "/pages/services/aov-air-handling"
+        : `/pages/${slug}/${townSlug}`;
+      sameTown.push({ href, label: `${name} in ${townName}` });
     }
   }
   if (kind === "keyword" || kind === "variant") {

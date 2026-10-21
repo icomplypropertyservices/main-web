@@ -124,7 +124,7 @@ function icomplyGmServicePack(string $slug): array
                 'Boiler type, age and whether the property is occupied',
                 'Service, repair or replacement scoped separately',
                 'Boiler price on application',
-                'POA fixed quote after scope',
+                'a free written quote after scope',
             ],
             'gas' => true,
             'siblings' => ['gas-systems', 'plumbing', 'electrical', 'landlord-compliance'],
@@ -308,7 +308,7 @@ function icomplyGmServicePack(string $slug): array
             'Address, access and the outcome you need on the file',
             'Survey or attendance only for the items on the quote',
             'Paperwork labelled for the agent or dutyholder',
-            'POA fixed quote after scope',
+            'a free written quote after scope',
         ],
         'gas' => false,
         'siblings' => ['electrical', 'fire-alarms', 'emergency-lighting', 'landlord-compliance'],
@@ -502,7 +502,7 @@ function icomplyGmBuildFaqs(string $topic, string $townName, string $serviceSlug
         $faqs[] = ['What is particular about ' . $topic . ' in ' . $townName . '?', trim($sentences[0] . ' ' . ($sentences[1] ?? ''))];
         $faqs[] = [
             'How do I get a quote for ' . $topic . ' in ' . $townName . '?',
-            'Send the address, a few photos and what you need covered, and we will reply with a fixed written quote. Call or WhatsApp 07517 806082. Same-day and next-day slots are often available.',
+            'Send the address, a few photos and what you need covered, and we will reply with a free written quote. Call or WhatsApp 07517 806082. Same-day and next-day slots are often available.',
         ];
         if ($gas || $serviceSlug === 'gas-systems' || $serviceSlug === 'heating') {
             $faqs[] = [
@@ -512,7 +512,7 @@ function icomplyGmBuildFaqs(string $topic, string $townName, string $serviceSlug
         } else {
             $faqs[] = [
                 'How is the ' . $townName . ' price decided?',
-                'Every job gets a fixed written quote based on the building, the access and what needs doing, with travel from Stockport included.',
+                'Every job gets a free written quote based on the building, the access and what needs doing, with travel from Stockport included.',
             ];
         }
         return array_slice($faqs, 0, 4);
@@ -524,7 +524,7 @@ function icomplyGmBuildFaqs(string $topic, string $townName, string $serviceSlug
     }
     $faqs[] = [
         'How is ' . $topic . ' quoted in ' . $townName . '?',
-        'Send the ' . $place . ' address, access notes and what you need on the file. We reply with a fixed written quote.',
+        'Send the ' . $place . ' address, access notes and what you need on the file. We reply with a free written quote.',
     ];
     if ($gas || $serviceSlug === 'gas-systems' || $serviceSlug === 'heating') {
         $faqs[] = [
@@ -539,7 +539,7 @@ function icomplyGmBuildFaqs(string $topic, string $townName, string $serviceSlug
     }
     $faqs[] = [
         'Where is the ' . $townName . ' page linked from?',
-        'Use the ' . $townName . ' area hub for every local service, or the contact form for a POA fixed quote after scope. The office is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE.',
+        'Use the ' . $townName . ' area hub for every local service, or the contact form for a free written quote after scope. The office is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE.',
     ];
     return array_slice($faqs, 0, 6);
 }
@@ -662,7 +662,7 @@ function icomplyGmEnrichmentHtml(array $ctx): string
     $links[] = ['href' => url('/contact'), 'label' => 'POA quote'];
     $html .= icomplyGmLinksHtml('Related pages for ' . $townName, $links, $chrome);
 
-    $cta = 'POA fixed quote after scope. Call ' . (defined('PHONE') ? PHONE : '07517806082')
+    $cta = 'a free written quote after scope. Call ' . (defined('PHONE') ? PHONE : '07517806082')
         . ' or use the contact form with the ' . $townName . ' postcode.';
     if ($gas) {
         $cta .= ' Gas work is carried out by Gas Safe registered engineers.';
@@ -706,7 +706,7 @@ function icomplyGmJobTownStripHtml(string $topic, array $towns, string $serviceS
             $bits[] = '<a class="text-[#ff6b00] font-semibold" href="' . $h($kw) . '">Local guide</a>';
         }
         $cards .= '<article class="border border-zinc-200 rounded-2xl p-4 bg-white"><h3 class="font-semibold text-[#0B1F3A]">' . $h($topic . ' in ' . $town)
-            . '</h3><p class="mt-2 text-sm text-zinc-700">Book ' . $h($town) . ' from the Stockport office. POA fixed quote after scope.</p><p class="mt-3 flex flex-wrap gap-3 text-sm">' . implode('', array_map(static function (string $bit): string {
+            . '</h3><p class="mt-2 text-sm text-zinc-700">Book ' . $h($town) . ' from the Stockport office. a free written quote after scope.</p><p class="mt-3 flex flex-wrap gap-3 text-sm">' . implode('', array_map(static function (string $bit): string {
                 return '<span>' . $bit . '</span>';
             }, $bits)) . '</p></article>';
     }

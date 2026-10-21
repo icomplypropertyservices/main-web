@@ -436,7 +436,7 @@ if ($acnBrand && function_exists('acnCities')):
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Based in Stockport — North West coverage</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Install, service &amp; certification for <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?></li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Multi-service packages for landlords &amp; FM teams</li>
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Fixed written quotes</li>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Free written quotes</li>
         </ul>
     </div>
 </section>

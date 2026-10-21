@@ -63,7 +63,7 @@ export function ctrDescription(subject, town, slug, gas) {
   const lead = `${subject} in ${town}${price ? ` from ${price}` : ""}.`;
   const who = gas ? " Same/next-day visits, carried out by Gas Safe registered engineers." : " Same/next-day engineers from our Stockport team.";
   for (const d of [
-    `${lead}${who} Fixed written quote, certificates emailed. Call or WhatsApp ${CTR_PHONE}.`,
+    `${lead}${who} Free written quote, certificates emailed. Call or WhatsApp ${CTR_PHONE}.`,
     `${lead}${who} Call or WhatsApp ${CTR_PHONE}.`,
     `${lead} Same/next-day. Call ${CTR_PHONE}.`,
   ]) if (d.length <= 155) return d;
@@ -283,7 +283,7 @@ export function renderTownPage(input) {
       intro: `We service, repair and maintain ${subject} equipment for landlords, agents and commercial sites, with engineers based in Stockport.`,
       focus: [
         `${subject} parts identified before the visit`,
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Certificates and reports emailed after the visit",
       ],
       gas: serviceSlug === "gas-systems",
@@ -300,10 +300,10 @@ export function renderTownPage(input) {
     keyword = {
       name: subject,
       service: serviceSlug,
-      intro: `${subject} carried out by our ${serviceName} engineers, with a fixed written quote for your building.`,
+      intro: `${subject} carried out by our ${serviceName} engineers, with a free written quote for your building.`,
       focus: job.focus && job.focus.length ? job.focus : [
         "Same-day and next-day slots where available",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Clear written report after the visit",
       ],
       gas: Boolean(job.gas) || serviceSlug === "gas-systems",
@@ -323,7 +323,7 @@ export function renderTownPage(input) {
         intro: "",
         focus: [
           "Same-day and next-day slots where available",
-          "Fixed written quote before work starts",
+          "Free written quote before work starts",
           "Certificates and reports emailed after the visit",
         ],
         gas,
@@ -353,7 +353,7 @@ export function renderTownPage(input) {
         ? relatedKw.focus
         : [
           `Survey and scope for ${serviceName}`,
-          "Fixed written quote before work starts",
+          "Free written quote before work starts",
           "Certificates and reports emailed after the visit",
         ],
       gas: serviceSlug === "gas-systems" || Boolean(relatedKw && relatedKw.gas),
@@ -464,12 +464,12 @@ export function renderTownPage(input) {
     const population = place.population
       ? `Published population is about ${Number(place.population).toLocaleString("en-GB")}. `
       : "";
-    proseHtml += `<p data-pe-slot="fire-installer-nap">${escapeHtml(`We install and maintain ${subject.toLowerCase()} in ${place.name} from our base at ${FIRE_NAP}. ${place.name} is in ${county}${place.region}, ${place.country}. ${population}${FIRE_DUTY} Call 07517 806082 for a fixed written quote.`)}</p>`;
+    proseHtml += `<p data-pe-slot="fire-installer-nap">${escapeHtml(`We install and maintain ${subject.toLowerCase()} in ${place.name} from our base at ${FIRE_NAP}. ${place.name} is in ${county}${place.region}, ${place.country}. ${population}${FIRE_DUTY} Call 07517 806082 for a free written quote.`)}</p>`;
   }
   if (fireTown) {
     faqs.push([
       `Do you cover ${place.name} for ${subject}?`,
-      `Yes. Our engineers cover ${place.name} from ${FIRE_NAP}. ${FIRE_DUTY} Call 07517 806082 for a fixed written quote.`,
+      `Yes. Our engineers cover ${place.name} from ${FIRE_NAP}. ${FIRE_DUTY} Call 07517 806082 for a free written quote.`,
     ]);
   }
   if (facts) {

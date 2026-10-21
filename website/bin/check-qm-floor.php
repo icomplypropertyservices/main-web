@@ -90,6 +90,18 @@ $paths = [
     '/directories',
     '/products',
     '/pages/manufacturers/apt-controls',
+    '/pages/manufacturers/heald',
+    '/pages/packages/compliance-bundle',
+    '/pages/packages/landlord-pack',
+    '/pages/services/plastering',
+    '/pages/roofing/stockport',
+    '/pages/demolition/bromborough',
+    '/pages/drainage/bromborough',
+    '/pages/fencing/stockport',
+    '/pages/aov',
+    '/pages/areas/stockport',
+    '/pages/areas/bolton',
+    '/pages/areas/wigan',
 ];
 
 function qmWords(string $html): int
@@ -193,9 +205,34 @@ foreach ($paths as $path) {
     $say(!preg_match('/iComply(?: Property Services)? (?:is|are|supply|supplies|arrange|arranges) Gas Safe/i', $html), $path . ' no Gas Safe company claim');
     $say(!preg_match('/\b(?:Are|Is) [^<]{0,80}Gas Safe registered\?/i', $html), $path . ' no Gas Safe yes-question');
     $say(!preg_match('/Does iComply hold a Gas Safe/i', $html), $path . ' no registration question');
-    if (str_contains($path, 'fencing') || str_contains($path, 'drainage')) {
+    if (str_contains($path, 'fencing') || str_contains($path, 'drainage') || str_contains($path, 'roofing') || str_contains($path, 'demolition')) {
         $say(!str_contains(strtolower($html), 'fixed pricing'), $path . ' no fixed pricing');
-        $say(str_contains($html, 'site-nav') || str_contains($html, 'mega'), $path . ' mega nav');
+        $say(str_contains($html, 'mega-header') || str_contains($html, 'data-mega-nav'), $path . ' mega nav');
+        $say(!preg_match('/-(?:photo|context)\.jpg/i', $html), $path . ' no placeholder graphic');
+    }
+    $say(!str_contains($html, 'pOA.'), $path . ' no garbled POA');
+    $say(!preg_match('/fixed written quote|\bfixed price\b/i', $html), $path . ' no fixed-price wording');
+    $say(!preg_match('/do not describe iComply as Gas Safe/i', $html), $path . ' no gas denial');
+    $garden = (bool)preg_match('#/(?:fencing|landscaping|demolition|driveways)(?:/|$)#', $path);
+    $say($garden || !preg_match('/fill a skip and call the garden clear/i', $html), $path . ' no off-family skip sentence');
+    $gasPage = (bool)preg_match('/gas|cp12|boiler|compliance-bundle|landlord-pack/i', $path);
+    $say($gasPage || !preg_match('/Gas Safe registered/i', $html), $path . ' gas sentence only on gas pages');
+    preg_match_all('/\bIn [A-Z][A-Za-z\' .-]{1,40}, /', $html, $prefixHits);
+    $prefixCount = count($prefixHits[0]);
+    $say($prefixCount <= 6, $path . ' town prefix x' . $prefixCount);
+    $unbuiltAov = ['bromborough', 'burngreave', 'cleckheaton', 'halewood', 'haxby', 'ince-in-makerfield', 'kippax', 'morley', 'old-swan', 'shirebrook', 'wath-upon-dearne'];
+    $badAov = [];
+    foreach ($unbuiltAov as $town) {
+        if (str_contains($html, '/pages/aov-air-handling/' . $town)) {
+            $badAov[] = $town;
+        }
+    }
+    $say($badAov === [], $path . ' unbuilt aov links ' . ($badAov === [] ? '0' : implode(',', $badAov)));
+    if (str_contains($path, 'demolition') && preg_match('/<section class="(?:matrix-hero|hero)"[\s\S]*?<\/section>/i', $html, $hero)) {
+        $say(preg_match('/<img\b/i', $hero[0]) === 1, $path . ' hero has an image');
+    }
+    if (!str_contains($path, 'building-maintenance')) {
+        $say(!str_contains($html, '19f957bd50f5') && !str_contains($html, '/assets/images/services/building-maintenance.jpg'), $path . ' no shared maintenance photo');
     }
     if (preg_match('/<title>([^<]*)<\/title>/i', $html, $m)) {
         $titles[$m[1]][] = $path;
@@ -221,17 +258,24 @@ foreach (['title' => $titles, 'meta' => $metas, 'h1' => $h1s] as $kind => $group
 }
 $say(true, 'duplicate scan finished');
 
+function qmBody(string $html): string
+{
+    $html = preg_replace('/<(header|nav|footer)\b[^>]*>.*?<\/\1>/is', ' ', $html) ?? $html;
+    $html = preg_replace('/<script\b[^>]*>.*?<\/script>/is', ' ', $html) ?? $html;
+    $html = preg_replace('/<style\b[^>]*>.*?<\/style>/is', ' ', $html) ?? $html;
+    return $html;
+}
+
 $pairs = [
-    ['/pages/fencing/accrington', '/pages/fencing/abram'],
-    ['/pages/drainage/accrington', '/pages/drainage/abram'],
-    ['/pages/aov/ashford', '/pages/aov/ashford-kent'],
     ['/pages/demolition/bingley', '/pages/fencing/bingley'],
+    ['/pages/manufacturers/apt-controls', '/pages/manufacturers/heald'],
+    ['/pages/packages/compliance-bundle', '/pages/packages/landlord-pack'],
 ];
 foreach ($pairs as [$a, $b]) {
     if (!isset($rendered[$a], $rendered[$b])) {
         continue;
     }
-    $j = qmJaccard(qmShingles($rendered[$a]), qmShingles($rendered[$b]));
+    $j = qmJaccard(qmShingles(qmBody($rendered[$a])), qmShingles(qmBody($rendered[$b])));
     $say($j < 0.72, sprintf('near-dup %s vs %s j=%.3f', $a, $b, $j));
 }
 

@@ -22,14 +22,10 @@ export function imageFamilyOf(slug) {
 }
 
 /** Two extra photos for `slug`, both from its own family: its -photo first, then family members by seed. */
-const REAL_TRADE_PHOTOS = new Set(["fencing", "drainage", "driveways", "demolition"]);
-
 export function familyPicks(slug, seed) {
   void seed;
-  // Own-slug photos only. The four groundwork trades use the real site
-  // photograph, not the diagram stand-ins named -photo and -context.
-  if (REAL_TRADE_PHOTOS.has(slug)) return [slug, slug];
-  return [`${slug}-photo`, `${slug}-context`];
+  // Own photograph only. The -photo and -context files are flat diagrams.
+  return [slug, slug];
 }
 
 export function escapeHtml(value) {
@@ -201,7 +197,7 @@ export function thinFaqs(ctx) {
   const faqs = [
     [
       `How is ${ctx.subject} in ${ctx.place} quoted?`,
-      `We send a fixed written quote for ${ctx.subject} in ${ctx.place} once we know the building and how we get in${/eicr|electrical inspection/i.test(ctx.subject) ? ". EICRs start from £160" : ""}. Nothing is added without your say-so.`,
+      `We send a free written quote for ${ctx.subject} in ${ctx.place} once we know the building and how we get in${/eicr|electrical inspection/i.test(ctx.subject) ? ". EICRs start from £160" : ""}. Nothing is added without your say-so.`,
     ],
     [
       `Where is the team that covers ${ctx.place} based?`,
