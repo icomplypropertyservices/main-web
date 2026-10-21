@@ -14,6 +14,7 @@ import { gmTownBlurb } from "../lib/gm-blurbs.js";
 import { p0KeepsTown, renderNationwideP0Town } from "../lib/nationwide-p0.js";
 import { withContactWidgets } from "../lib/contact-widgets.js";
 import { applyMoneyCtr } from "../lib/money-ctr.js";
+import { batch1Match, renderBatch1 } from "../lib/building-batch1.js";
 import { townFactsBlock } from "../lib/town-facts.js";
 import { depthBankParagraphs, thinFaqHtml, thinFaqs, thinImages, thinOgMeta, thinProseHtml } from "../lib/thin-quality-bar.js";
 import { townDepthBlock } from "../lib/town-depth.js";
@@ -872,6 +873,17 @@ export default async (request, context) => {
       return new Response("Variant page unavailable", {
         status: 503,
         headers: { "content-type": "text/plain; charset=utf-8" },
+      });
+    }
+  }
+  // Batch 1 (2026-10-21): Manchester building work, homeowner template with hero call CTA.
+  const b1 = batch1Match(path);
+  if (b1) {
+    const page = renderBatch1(b1);
+    if (page) {
+      return new Response(withContactWidgets(scrubMeta(page.html)), {
+        status: 200,
+        headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=3600", "x-robots-tag": page.robots },
       });
     }
   }

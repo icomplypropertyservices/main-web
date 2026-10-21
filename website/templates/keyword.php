@@ -12,6 +12,14 @@ $metaKeywords = $SEO_KEYWORDS;
 $ogImage = $KEYWORD_IMAGE;
 $canonicalUrl = url('/pages/keywords/' . $KEYWORD_SLUG . '.php');
 
+require_once SITE_ROOT . '/includes/building-batch1.php';
+$b1Hub = icomplyB1IsKeyword((string)$KEYWORD_SLUG);
+if ($b1Hub && ($b1Img = icomplyB1Photo('keyword', (string)$KEYWORD_SLUG)) !== '') {
+    $ogImage = $b1Img; $KEYWORD_IMAGE = $b1Img;
+    $b1Set = icomplyB1Data()['photos'][icomplyB1Family('keyword', (string)$KEYWORD_SLUG)] ?? [];
+    $KEYWORD_INLINE = $b1Set[1]['src'] ?? $b1Img;
+    $SERVICE_IMAGE = $b1Set[2]['src'] ?? $b1Img;
+}
 $keywordName = $KEYWORD_NAME;
 $keywordH1 = !empty($KEYWORD_H1) ? $KEYWORD_H1 : $KEYWORD_NAME;
 $keywordSlug = $KEYWORD_SLUG;
@@ -125,6 +133,7 @@ require SITE_ROOT . '/includes/header.php';
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white max-w-3xl leading-[1.08] drop-shadow-lg">
             <?= htmlspecialchars($keywordH1, ENT_QUOTES, 'UTF-8') ?>
         </h1>
+        <?php if ($b1Hub) echo icomplyB1HeroCta((string)$keywordName); ?>
         <p class="mt-5 text-lg md:text-xl text-white max-w-2xl leading-relaxed font-medium drop-shadow">
             <?= htmlspecialchars($KEYWORD_INTRO, ENT_QUOTES, 'UTF-8') ?>
         </p>
@@ -392,6 +401,7 @@ echo '</section>';
     </div>
 </section>
 
+<?php if ($b1Hub) echo icomplyB1TownLinks('keyword', (string)$keywordSlug); ?>
 <!-- RELATED KEYWORDS same service -->
 <section class="bg-white border-y-2 border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-14">
