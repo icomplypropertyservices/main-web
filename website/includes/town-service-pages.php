@@ -657,6 +657,24 @@ function icomplyTownPageRecord(string $slug): ?array
     return icomplyGmServiceTown($slug);
 }
 
+/** 'Town, County' only when the county is set and does not already contain the town name. */
+function icomplyPlaceWithCounty(string $name, string $county): string
+{
+    $name = trim($name);
+    $county = trim($county);
+    if ($county === '' || $name === '') {
+        return $name;
+    }
+    $bare = trim((string)preg_replace('/\s*\(.*\)$/', '', $name));
+    if (preg_match('/(^|[^\p{L}])' . preg_quote($bare, '/') . '($|[^\p{L}])/iu', $county)) {
+        return $name;
+    }
+    if (preg_match('/(^|[^\p{L}])' . preg_quote($county, '/') . '($|[^\p{L}])/iu', $name)) {
+        return $name;
+    }
+    return $name . ', ' . $county;
+}
+
 function icomplyRenderTownPage(string $family, string $slug): void
 {
     $town = icomplyTownPageRecord($slug);
@@ -674,8 +692,8 @@ function icomplyRenderTownPage(string $family, string $slug): void
     $ctx = $edit['ctx'];
     $csrf = icomplyTownCsrf();
     // Never repeat the town ('Stockport, Stockport'): add the county only when it differs.
-    $county = trim((string)($ctx['county'] ?? ''));
-    $place = ($county === '' || strcasecmp($county, (string)$ctx['name']) === 0) ? (string)$ctx['name'] : $ctx['name'] . ', ' . $county;
+    // Also skip it when the county already names the town ('Bournemouth, Christchurch and Poole').
+    $place = icomplyPlaceWithCounty((string)$ctx['name'], (string)($ctx['county'] ?? ''));
     if ($family === 'barriers') {
         $pageTitle = 'CAME vehicle barriers in ' . $place;
         $metaDesc = 'Vehicle barriers in ' . $ctx['name'] . ' (' . $ctx['pop'] . ' people, ' . $ctx['county'] . '). CAME partner. About ' . $ctx['miles'] . ' miles from Stockport. 07517806082.';

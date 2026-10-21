@@ -8094,8 +8094,8 @@
         ],
         "barriers": [
             "car-park-barrier-access",
-            "access-control-system",
-            "video-door-entry"
+            "barriers",
+            "car-park-barrier-access"
         ],
         "door-entry": [
             "video-door-entry",

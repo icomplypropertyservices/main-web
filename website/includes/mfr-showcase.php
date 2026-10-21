@@ -273,7 +273,7 @@ function icomplyApplyMfrCoverageCatalog(array $catalog): array
                             'price' => $pack['price'],
                             'handle' => '',
                             'public_href' => url('/pages/services/barriers.php') . '#mfr-came',
-                            'image' => '/assets/images/services/access-control.jpg',
+                            'image' => '/assets/images/services/barriers-photo.jpg',
                             'badge' => '',
                         ];
                     }

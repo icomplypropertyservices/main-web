@@ -49,7 +49,7 @@ if (!function_exists('icomplyPhotoCreditInject')) {
             $map = [];
             $credits = icomplyPhotoCredits();
             $manifest = json_decode((string) @file_get_contents(SITE_ROOT . '/data/image-manifest.json'), true) ?: [];
-            foreach (['/assets/images/services/plastering.jpg', '/assets/images/services/dry-lining.jpg', '/assets/images/services/damp-proofing.jpg', '/assets/images/services/building-maintenance.jpg', '/assets/images/services/cdm-support.jpg', '/assets/images/services/groundworks.jpg'] as $file) {
+            foreach (['/assets/images/services/plastering.jpg', '/assets/images/services/dry-lining.jpg', '/assets/images/services/damp-proofing.jpg', '/assets/images/services/building-maintenance.jpg', '/assets/images/services/cdm-support.jpg', '/assets/images/services/groundworks.jpg', '/assets/images/services/fire-signage.jpg', '/assets/images/services/fire-extinguishers.jpg', '/assets/images/services/smoke-co-alarms.jpg', '/assets/images/services/insulation.jpg', '/assets/images/services/carpentry.jpg', '/assets/images/services/sprinkler-systems.jpg', '/assets/images/services/barriers-photo.jpg', '/assets/images/keywords/car-park-barrier-access.jpg'] as $file) {
                 if (!isset($credits[$file])) continue;
                 $map[$file] = $file;
                 foreach (($manifest[$file]['variants'] ?? []) as $v) {
