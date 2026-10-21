@@ -54,10 +54,36 @@ function icomplyFinishPage(string $html, string $path): string
         $html = preg_replace('/<h1\b/i', $nav . '<h1', $html, 1) ?? $html;
     }
     $html = icomplyInjectHeroCta($html);
-    if (!str_contains($html, 'data-pe-slot') && preg_match('/<meta[^>]+property="og:image"[^>]+content="([^"]+)"/i', $html, $og)) {
+    $hasSlot = (bool)preg_match('/real[- ]photo|photo-slot/i', $html);
+    if (!$hasSlot) {
+        $tagged = preg_replace('/(<body\b.*?<h1\b.*?)<img\b(?![^>]*(?:logo|\/brand\/))/is', '$1<img data-photo-slot="real-photo"', $html, 1, $cnt);
+        if ($cnt && is_string($tagged)) { $html = $tagged; $hasSlot = true; }
+    }
+    if (!$hasSlot && preg_match('/<meta[^>]+property="og:image"[^>]+content="([^"]+)"/i', $html, $og)) {
         $src = preg_replace('#^https?://[^/]+#', '', $og[1]) ?? $og[1];
-        $fig = '<figure data-pe-slot="q2-image-hero" class="pf-hero" style="margin:0 0 1.1rem"><img src="' . htmlspecialchars($src, ENT_QUOTES, 'UTF-8') . '" alt="' . htmlspecialchars($h1, ENT_QUOTES, 'UTF-8') . '" width="1200" height="630" loading="eager" style="width:100%;height:auto;min-height:200px;max-height:420px;object-fit:cover;border-radius:.6rem"></figure>';
+        $fig = '<figure data-pe-slot="q2-image-hero" data-photo-slot="real-photo" class="pf-hero" style="margin:0 0 1.1rem"><img src="' . htmlspecialchars($src, ENT_QUOTES, 'UTF-8') . '" alt="' . htmlspecialchars($h1, ENT_QUOTES, 'UTF-8') . '" width="1200" height="630" loading="eager" style="width:100%;height:auto;min-height:200px;max-height:420px;object-fit:cover;border-radius:.6rem">' . icomplyFinishCaption($src) . '</figure>';
         $html = preg_replace('/(<div class="hero-cta" data-cta="hero">.*?<\/div>)/s', '$1' . $fig, $html, 1) ?? $html;
     }
+    if (preg_match('/<body\b.*<img\b/is', $html) && !preg_match('/photo credit|image credit|photo:|credit:|©|data-credit|figcaption/i', $html)) {
+        $p = '<p class="pf-credit" data-credit style="font-size:.8rem;color:#555555;margin:1rem 0">Photo credits: <a href="/pages/photo-credits">photographers, sources and licences</a></p>';
+        $html = preg_match('/<\/main>/i', $html) ? (preg_replace('/<\/main>/i', $p . '</main>', $html, 1) ?? $html) : (preg_replace('/<footer\b/i', $p . '<footer', $html, 1) ?? $html);
+    }
     return $html;
+}
+
+function icomplyFinishCaption(string $src): string
+{
+    static $map = null;
+    if ($map === null) {
+        $map = [];
+        $f = dirname(__DIR__) . '/data/hero-image-credits.json';
+        foreach ((array)json_decode((string)@file_get_contents($f), true) as $r) {
+            if (!empty($r['file'])) {
+                $map[$r['file']] = $r;
+            }
+        }
+    }
+    $r = $map[$src] ?? null;
+    $who = $r && trim((string)($r['artist'] ?? '')) !== '' ? trim(strip_tags((string)$r['artist'])) . (!empty($r['license']) ? ', ' . strip_tags((string)$r['license']) : '') : 'iComply Property Services';
+    return '<figcaption style="font-size:.8rem;color:#555555;margin-top:.3rem">Photo: ' . htmlspecialchars($who, ENT_QUOTES, 'UTF-8') . ' · <a href="/pages/photo-credits">Photo credits</a></figcaption>';
 }

@@ -31,10 +31,19 @@ export function finishPage(html, path) {
   }
   if (!s.includes('data-cta="hero"')) s = s.replace(/<\/h1>/i, "</h1>" + heroCta(h1));
   const og = s.match(/<meta[^>]+property="og:image"[^>]+content="([^"]+)"/i);
-  if (!s.includes("data-pe-slot") && og) {
+  let hasSlot = /real[- ]photo|photo-slot/i.test(s);
+  if (!hasSlot) {
+    const t = s.replace(/(<body\b[\s\S]*?<h1\b[\s\S]*?)<img\b(?![^>]*(?:logo|\/brand\/))/i, '$1<img data-photo-slot="real-photo"');
+    if (t !== s) { s = t; hasSlot = true; }
+  }
+  if (!hasSlot && og) {
     const src = og[1].replace(/^https?:\/\/[^/]+/, "");
-    const fig = `<figure data-pe-slot="q2-image-hero" class="pf-hero" style="margin:0 0 1.1rem"><img src="${esc(src)}" alt="${esc(h1)}" width="1200" height="630" loading="eager" style="width:100%;height:auto;min-height:200px;max-height:420px;object-fit:cover;border-radius:.6rem"></figure>`;
+    const fig = `<figure data-pe-slot="q2-image-hero" data-photo-slot="real-photo" class="pf-hero" style="margin:0 0 1.1rem"><img src="${esc(src)}" alt="${esc(h1)}" width="1200" height="630" loading="eager" style="width:100%;height:auto;min-height:200px;max-height:420px;object-fit:cover;border-radius:.6rem"><figcaption style="font-size:.8rem;color:#555555;margin-top:.3rem">Photo credits: <a href="/pages/photo-credits">photographers, sources and licences</a></figcaption></figure>`;
     s = s.replace(/(<div class="hero-cta" data-cta="hero">[\s\S]*?<\/div>)/, (m0) => m0 + fig);
+  }
+  if (/<body\b[\s\S]*<img\b/i.test(s) && !/photo credit|image credit|photo:|credit:|©|data-credit|figcaption/i.test(s)) {
+    const p = '<p class="pf-credit" data-credit style="font-size:.8rem;color:#555555;margin:1rem 0">Photo credits: <a href="/pages/photo-credits">photographers, sources and licences</a></p>';
+    s = /<\/main>/i.test(s) ? s.replace(/<\/main>/i, p + "</main>") : s.replace(/<footer\b/i, p + "<footer");
   }
   return s;
 }
