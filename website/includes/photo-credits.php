@@ -70,6 +70,7 @@ if (!function_exists('icomplyPhotoCreditInject')) {
             $out .= substr($html, $pos, $end - $pos);
             $pos = $end;
             if ($file === null) continue;
+            if (str_contains(substr($html, $pos, 700), 'photo-credit')) continue; // template already credits it
             $before = substr($html, max(0, $at - 4000), min(4000, $at));
             $openFig = strrpos($before, '<figure');
             $closeFig = strrpos($before, '</figure>');
