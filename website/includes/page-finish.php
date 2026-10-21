@@ -53,5 +53,11 @@ function icomplyFinishPage(string $html, string $path): string
         $nav = '<nav aria-label="Breadcrumb" class="pf-bc breadcrumb"><ol>' . $lis . '</ol></nav>';
         $html = preg_replace('/<h1\b/i', $nav . '<h1', $html, 1) ?? $html;
     }
-    return icomplyInjectHeroCta($html);
+    $html = icomplyInjectHeroCta($html);
+    if (!str_contains($html, 'data-pe-slot') && preg_match('/<meta[^>]+property="og:image"[^>]+content="([^"]+)"/i', $html, $og)) {
+        $src = preg_replace('#^https?://[^/]+#', '', $og[1]) ?? $og[1];
+        $fig = '<figure data-pe-slot="q2-image-hero" class="pf-hero" style="margin:0 0 1.1rem"><img src="' . htmlspecialchars($src, ENT_QUOTES, 'UTF-8') . '" alt="' . htmlspecialchars($h1, ENT_QUOTES, 'UTF-8') . '" width="1200" height="630" loading="eager" style="width:100%;height:auto;min-height:200px;max-height:420px;object-fit:cover;border-radius:.6rem"></figure>';
+        $html = preg_replace('/(<div class="hero-cta" data-cta="hero">.*?<\/div>)/s', '$1' . $fig, $html, 1) ?? $html;
+    }
+    return $html;
 }

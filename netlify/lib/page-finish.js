@@ -30,5 +30,11 @@ export function finishPage(html, path) {
     s = s.replace(/<h1\b/i, `<nav aria-label="Breadcrumb" class="pf-bc breadcrumb"><ol>${lis}</ol></nav><h1`);
   }
   if (!s.includes('data-cta="hero"')) s = s.replace(/<\/h1>/i, "</h1>" + heroCta(h1));
+  const og = s.match(/<meta[^>]+property="og:image"[^>]+content="([^"]+)"/i);
+  if (!s.includes("data-pe-slot") && og) {
+    const src = og[1].replace(/^https?:\/\/[^/]+/, "");
+    const fig = `<figure data-pe-slot="q2-image-hero" class="pf-hero" style="margin:0 0 1.1rem"><img src="${esc(src)}" alt="${esc(h1)}" width="1200" height="630" loading="eager" style="width:100%;height:auto;min-height:200px;max-height:420px;object-fit:cover;border-radius:.6rem"></figure>`;
+    s = s.replace(/(<div class="hero-cta" data-cta="hero">[\s\S]*?<\/div>)/, (m0) => m0 + fig);
+  }
   return s;
 }
