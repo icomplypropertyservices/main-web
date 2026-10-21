@@ -146,7 +146,7 @@ export function creditHtml(src) {
 function imagesHtml(fam, label, town) {
   const set = photos[fam] || [];
   if (!set.length) return { html: "", og: `${ORIGIN}/assets/images/og-image.jpg`, n: 0 };
-  const html = `<div class="b1-photos">${set.map((p, i) => `<figure><img src="${esc(p.src)}" alt="${esc(`${p.scene} (example ${lowerLabel(label)} photo)`)}" width="1200" height="630"${i ? ' loading="lazy"' : ' fetchpriority="high"'}>${creditHtml(p.src)}</figure>`).join("")}</div>`;
+  const html = `<div class="b1-photos">${set.map((p, i) => `<figure><img src="${esc(p.src)}" alt="${esc(`${p.scene} – example photo, ${lowerLabel(label)} in ${town}`)}" width="1200" height="630"${i ? ' loading="lazy"' : ' fetchpriority="high"'}>${creditHtml(p.src)}</figure>`).join("")}</div>`;
   return { html, og: ORIGIN + set[0].src, n: set.length };
 }
 
