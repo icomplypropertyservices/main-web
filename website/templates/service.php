@@ -315,7 +315,8 @@ $schema = [
                     <p class="mt-4 text-sm"><a class="font-semibold text-[#ff6b00] hover:underline" href="<?= url('/pages/access-control-systems') ?>">Access control systems across the UK, with city notes and manufacturer links</a></p>
                 <?php endif; ?>
             </div>
-            <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
+            <style>.svc-hero-card{min-height:260px}@media (min-width:1024px){.svc-hero-card{min-height:280px}}.svc-hero-card>img{object-fit:cover}</style>
+            <div class="svc-hero-card relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
                 <img src="<?= htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?><?= !empty($b1Hub) ? ' (example photo)' : ' by iComply Property Services' ?>"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"

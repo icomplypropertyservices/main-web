@@ -14,7 +14,7 @@ $pageTitle = $name . ' | Vehicle Barriers';
 $metaDesc = (string)($meta['meta_desc'] ?? ($name . '. CAME partner. Price on application. ' . PHONE . '.'));
 $metaKeywords = (string)($meta['seo_keywords'] ?? $name);
 $canonicalUrl = url('/pages/keywords/' . $slug);
-$ogImage = url('/assets/images/services/access-control.jpg');
+$ogImage = url('/assets/images/services/barriers-photo.jpg');
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
