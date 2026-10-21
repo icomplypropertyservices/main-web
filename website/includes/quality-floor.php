@@ -127,33 +127,47 @@ function icomplyQualityFloorIsGas(string $path, string $subject = ''): bool
     if (preg_match('#/(?:gas-systems|heating)(?:/|$)#', $path)) {
         return true;
     }
+    if (preg_match('/heating/i', $path . ' ' . $subject)) {
+        return true;
+    }
     return (bool)preg_match('/\bgas\b|cp12|boiler/i', $path . ' ' . $subject);
 }
 
 function icomplyQualityFloorFill(string $text, string $place, string $subject, int &$budget): string
 {
+    unset($budget);
     $town = $place !== '' ? $place : 'Stockport';
     $job = $subject !== '' ? $subject : 'the work';
-    $text = str_replace('{subject}', $job, $text);
-    return (string)preg_replace_callback('/\{place\}/', static function () use ($town, &$budget): string {
-        $budget++;
-        return $budget <= 4 ? $town : 'the area';
-    }, $text);
+    return str_replace(['{subject}', '{place}'], [$job, $town], $text);
 }
 
 function icomplyQualityFloorCapMentions(string $text, string $place, int $max = 6): string
 {
+    unset($place, $max);
+    return $text;
+}
+
+function icomplyQualityFloorLandlord(string $path, string $subject, string $place): string
+{
+    static $banks = null;
+    if ($banks === null) {
+        $file = dirname(__DIR__) . '/data/landlord-lines.json';
+        $decoded = is_file($file) ? json_decode((string)file_get_contents($file), true) : [];
+        $banks = is_array($decoded['banks'] ?? null) ? $decoded['banks'] : [];
+    }
+    $job = $subject !== '' ? $subject : 'the work';
     $town = $place !== '' ? $place : 'Stockport';
-    $office = icomplyQualityFloorOffice();
-    $held = [];
-    $masked = str_replace($office, "\x01OFFICE\x01", $text);
-    $pattern = '/\b' . preg_quote($town, '/') . '\b/i';
-    $seen = 0;
-    $masked = (string)preg_replace_callback($pattern, static function (array $m) use (&$seen, $max): string {
-        $seen++;
-        return $seen <= $max ? $m[0] : 'the area';
-    }, $masked);
-    return str_replace("\x01OFFICE\x01", $office, $masked);
+    $parts = [];
+    foreach ($banks as $index => $bank) {
+        if (!is_array($bank) || $bank === []) {
+            continue;
+        }
+        $hash = hash('sha256', $path . '|' . ($index + 1));
+        $n = hexdec(substr($hash, 0, 8));
+        $line = (string)$bank[$n % count($bank)];
+        $parts[] = str_replace(['{subject}', '{place}'], [$job, $town], $line);
+    }
+    return implode(' ', $parts);
 }
 
 /** @return list<string>|null */
@@ -256,7 +270,8 @@ function icomplyQualityFloorEssay(string $path, string $subject, string $place):
             $blocks[] = icomplyQualityFloorFill($item, $town, $job, $budget);
         }
     }
-    $text = icomplyQualityFloorCapMentions(implode("\n", $blocks), $town);
+    $blocks[] = icomplyQualityFloorLandlord($path, $job, $town);
+    $text = implode("\n", $blocks);
     $html = '';
     foreach (explode("\n", $text) as $line) {
         if ($line === '') {
@@ -337,7 +352,13 @@ function icomplyQualityFloorFamily(string $path): string
     if (in_array($head, ['products', 'shop'], true) || in_array($leaf, ['products', 'shop'], true)) {
         return 'products';
     }
-    return 'hub:home';
+    if ($head === 'services' && !isset($parts[2])) {
+        return 'directory:services';
+    }
+    if ($head === 'keywords' && !isset($parts[2])) {
+        return 'directory:keywords';
+    }
+    return 'directory:unknown';
 }
 
 function icomplyQualityFloorCanonicalSrc(string $path): string
@@ -345,6 +366,9 @@ function icomplyQualityFloorCanonicalSrc(string $path): string
     $family = icomplyQualityFloorFamily($path);
     if ($family === 'products') {
         return '/assets/images/real-job/resources.jpg';
+    }
+    if (str_starts_with($family, 'directory:')) {
+        return '/assets/images/real-job/company.jpg';
     }
     if (str_starts_with($family, 'hub:')) {
         return '/assets/images/real-job/' . substr($family, 4) . '.jpg';
@@ -699,6 +723,21 @@ function icomplyQualityFloorScrubSentences(string $html, string $path, string $s
     $gas = icomplyQualityFloorIsGas($path, $subject);
     $family = icomplyQualityFloorFamily($path);
     $garden = in_array($family, ['fencing', 'landscaping', 'demolition', 'driveways', 'garden-clearance', 'garden-maintenance', 'patios'], true);
+    $held = [];
+    $masked = preg_replace_callback('/<(script|style)\b[^>]*>.*?<\/\1>/is', static function (array $m) use (&$held, $gas): string {
+        $block = $m[0];
+        if (!$gas) {
+            $block = preg_replace('/do not describe iComply as Gas Safe[^.!?]*[.!?]/i', 'The office confirms who attends before the visit.', $block) ?? $block;
+            $block = preg_replace('/do not claim the company is Gas Safe[^.!?]*[.!?]/i', 'The office confirms who attends before the visit.', $block) ?? $block;
+            $block = preg_replace('/Landlord gas safety certificates \(CP12\) are carried out by Gas Safe registered engineers\./i', 'The office confirms who attends before the visit.', $block) ?? $block;
+            $block = preg_replace('/Gas work is carried out by Gas Safe registered engineers\./i', 'The office confirms who attends before the visit.', $block) ?? $block;
+        }
+        $held[] = $block;
+        return "\0SCRUB" . (count($held) - 1) . "\0";
+    }, $html);
+    if (!is_string($masked)) {
+        $masked = $html;
+    }
     $out = preg_replace_callback('/>([^<]+)</', static function (array $m) use ($gas, $garden): string {
         $text = $m[1];
         if (!preg_match('/[.!?]/', $text)) {
@@ -729,8 +768,14 @@ function icomplyQualityFloorScrubSentences(string $html, string $path, string $s
             $kept[] = $line;
         }
         return '>' . implode(' ', $kept) . '<';
-    }, $html);
-    return is_string($out) ? $out : $html;
+    }, $masked);
+    if (!is_string($out)) {
+        $out = $masked;
+    }
+    $restored = preg_replace_callback('/\0SCRUB(\d+)\0/', static function (array $m) use ($held): string {
+        return $held[(int)$m[1]] ?? '';
+    }, $out);
+    return is_string($restored) ? $restored : $out;
 }
 
 function icomplyQualityFloorCapPrefix(string $html, string $place): string
@@ -781,7 +826,8 @@ function icomplyQualityFloorConfineImages(string $html, string $path): string
     $want = icomplyQualityFloorCanonicalSrc($path);
     $wantFamily = icomplyQualityFloorFamily($path);
     $allowProducts = $wantFamily === 'products';
-    $out = preg_replace_callback('/<img\b([^>]*?)>/i', static function (array $m) use ($want, $wantFamily, $allowProducts): string {
+    $directory = str_starts_with($wantFamily, 'directory:');
+    $out = preg_replace_callback('/<img\b([^>]*?)>/i', static function (array $m) use ($want, $wantFamily, $allowProducts, $directory): string {
         $attrs = rtrim($m[1]);
         if (str_ends_with($attrs, '/')) {
             $attrs = rtrim(substr($attrs, 0, -1));
@@ -798,20 +844,37 @@ function icomplyQualityFloorConfineImages(string $html, string $path): string
         }
         $family = icomplyQualityFloorImageFamily($src);
         $product = $family === 'products' || (bool)preg_match('#/(?:products|shop)/#i', $src);
-        if (!icomplyQualityFloorPlaceholderImage($src) && $family === $wantFamily) {
+        $placeholder = icomplyQualityFloorPlaceholderImage($src);
+        $swap = static function (string $attrs, string $src): string {
+            $attrs = preg_replace('/\bsrc\s*=\s*"[^"]*"/i', 'src="' . $src . '"', $attrs) ?? $attrs;
+            if (!preg_match('/\bsrc\s*=/i', $attrs)) {
+                $attrs = ' src="' . $src . '"' . $attrs;
+            }
+            $attrs = preg_replace('/\s+srcset\s*=\s*"[^"]*"/i', '', $attrs) ?? $attrs;
+            $attrs = preg_replace('/\s+data-srcset\s*=\s*"[^"]*"/i', '', $attrs) ?? $attrs;
+            $attrs = preg_replace('/\s+data-perf\s*=\s*"[^"]*"/i', '', $attrs) ?? $attrs;
+            $attrs = preg_replace('/\s+onerror\s*=\s*"[^"]*"/i', '', $attrs) ?? $attrs;
+            return $attrs;
+        };
+        if ($directory) {
+            if (!$placeholder && $family !== '' && !str_starts_with($family, 'hub:') && $family !== 'products') {
+                return '<img' . $attrs . '>';
+            }
+            if ($placeholder && $family !== '' && !str_starts_with($family, 'hub:')) {
+                return '<img' . $swap($attrs, '/assets/images/services/' . $family . '.jpg') . '>';
+            }
+            if ($family === 'hub:home' || $placeholder) {
+                return '<img' . $swap($attrs, $want) . '>';
+            }
+            return '<img' . $attrs . '>';
+        }
+        if (!$placeholder && $family === $wantFamily) {
             return '<img' . $attrs . '>';
         }
         if ($allowProducts && $product) {
             return '<img' . $attrs . '>';
         }
-        $attrs = preg_replace('/\bsrc\s*=\s*"[^"]*"/i', 'src="' . $want . '"', $attrs) ?? $attrs;
-        if (!preg_match('/\bsrc\s*=/i', $attrs)) {
-            $attrs = ' src="' . $want . '"' . $attrs;
-        }
-        $attrs = preg_replace('/\s+srcset\s*=\s*"[^"]*"/i', '', $attrs) ?? $attrs;
-        $attrs = preg_replace('/\s+data-srcset\s*=\s*"[^"]*"/i', '', $attrs) ?? $attrs;
-        $attrs = preg_replace('/\s+data-perf\s*=\s*"[^"]*"/i', '', $attrs) ?? $attrs;
-        $attrs = preg_replace('/\s+onerror\s*=\s*"[^"]*"/i', '', $attrs) ?? $attrs;
+        $attrs = $swap($attrs, $want);
         return '<img' . $attrs . '>';
     }, $html);
     return is_string($out) ? $out : $html;
@@ -883,5 +946,27 @@ function icomplyApplyQualityFloor(string $html): string
     $html = icomplyQualityFloorCapPrefix($html, $place);
     $html = str_replace('pOA.', 'POA.', $html);
     $html = icomplyQualityFloorScrubPricing($html);
+    if (!str_contains($html, '"@type":"FAQPage"') && !str_contains($html, '"@type": "FAQPage"') && !str_contains($html, 'itemtype="https://schema.org/FAQPage"')) {
+        $q1 = 'How is ' . $subject . ' booked?';
+        $a1 = 'Call 07517 806082 or WhatsApp the same number. The office is 17 Woodlands Park Road, Offerton, Stockport SK2 5DE. You get a free written quote before work is agreed.';
+        $q2 = 'Who attends the visit?';
+        $a2 = icomplyQualityFloorIsGas($path, $subject)
+            ? 'Gas work is carried out by Gas Safe registered engineers.'
+            : 'iComply arranges the visit from the office at 17 Woodlands Park Road, Offerton, SK2 5DE.';
+        $faqLd = json_encode([
+            '@context' => 'https://schema.org',
+            '@type' => 'FAQPage',
+            'mainEntity' => [
+                ['@type' => 'Question', 'name' => $q1, 'acceptedAnswer' => ['@type' => 'Answer', 'text' => $a1]],
+                ['@type' => 'Question', 'name' => $q2, 'acceptedAnswer' => ['@type' => 'Answer', 'text' => $a2]],
+            ],
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        $faq = '<section class="faq" id="quality-floor-faq"><h2>Questions</h2><details><summary>'
+            . icomplyQualityFloorH($q1) . '</summary><p>' . icomplyQualityFloorH($a1) . '</p></details><details><summary>'
+            . icomplyQualityFloorH($q2) . '</summary><p>' . icomplyQualityFloorH($a2) . '</p></details></section>'
+            . '<script type="application/ld+json">' . $faqLd . '</script>';
+        $body = strripos($html, '</body>');
+        $html = $body === false ? $html . $faq : substr($html, 0, $body) . $faq . substr($html, $body);
+    }
     return icomplyStampImageCredits($html);
 }

@@ -102,7 +102,22 @@ $paths = [
     '/pages/areas/stockport',
     '/pages/areas/bolton',
     '/pages/areas/wigan',
+    '/pages/driveways/wigan',
+    '/pages/aov/belfast',
+    '/pages/drainage/york',
+    '/pages/demolition/stockport',
+    '/pages/services/heating',
+    '/pages/keywords/emergency-heating',
+    '/pages/keywords/next-day-heating',
+    '/pages/keywords/next-day-heating-engineer',
+    '/pages/manufacturers/hysecurity',
+    '/pages/manufacturers/designa',
 ];
+
+function qmBodyWords(string $html): int
+{
+    return qmWords(qmBody($html));
+}
 
 function qmWords(string $html): int
 {
@@ -215,8 +230,12 @@ foreach ($paths as $path) {
     $say(!preg_match('/do not describe iComply as Gas Safe/i', $html), $path . ' no gas denial');
     $garden = (bool)preg_match('#/(?:fencing|landscaping|demolition|driveways)(?:/|$)#', $path);
     $say($garden || !preg_match('/fill a skip and call the garden clear/i', $html), $path . ' no off-family skip sentence');
-    $gasPage = (bool)preg_match('/gas|cp12|boiler|compliance-bundle|landlord-pack/i', $path);
+    $gasPage = (bool)preg_match('/gas|cp12|boiler|heating|compliance-bundle|landlord-pack/i', $path);
     $say($gasPage || !preg_match('/Gas Safe registered/i', $html), $path . ' gas sentence only on gas pages');
+    $say(!preg_match('/\b(?:a|an|the) the area\b/i', $html), $path . ' no broken area grammar');
+    $say(!str_contains($html, 'dump 200,000') && !str_contains($html, '200,000 links'), $path . ' no hub dump line');
+    $say(!str_contains($html, 'arrive unannounced to a tenant') && !str_contains($html, 'will not arrive unannounced'), $path . ' no shared landlord paragraph');
+    $say($path === '/' || !str_contains($html, 'real-job/home.jpg'), $path . ' home.jpg only on home');
     preg_match_all('/\bIn [A-Z][A-Za-z\' .-]{1,40}, /', $html, $prefixHits);
     $prefixCount = count($prefixHits[0]);
     $say($prefixCount <= 6, $path . ' town prefix x' . $prefixCount);
@@ -228,8 +247,11 @@ foreach ($paths as $path) {
         }
     }
     $say($badAov === [], $path . ' unbuilt aov links ' . ($badAov === [] ? '0' : implode(',', $badAov)));
-    if (str_contains($path, 'demolition') && preg_match('/<section class="(?:matrix-hero|hero)"[\s\S]*?<\/section>/i', $html, $hero)) {
+    if (str_contains($path, 'demolition') && preg_match('/<section class="(?:matrix-hero|page-hero|hero)\b[\s\S]*?<\/section>/i', $html, $hero)) {
         $say(preg_match('/<img\b/i', $hero[0]) === 1, $path . ' hero has an image');
+    }
+    if (preg_match('#/manufacturers/(?:hysecurity|heald|designa)$#', $path)) {
+        $say(qmBodyWords($html) >= 800, $path . ' manufacturer body words=' . qmBodyWords($html));
     }
     if (!str_contains($path, 'building-maintenance')) {
         $say(!str_contains($html, '19f957bd50f5') && !str_contains($html, '/assets/images/services/building-maintenance.jpg'), $path . ' no shared maintenance photo');

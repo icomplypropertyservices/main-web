@@ -3,6 +3,7 @@
  * Keyword hubs and the town essay used by the edge renderer.
  */
 import { heroCta } from "./hero-cta.js";
+import { landlordNote } from "./landlord-note.js";
 import { breadcrumbHtml } from "./link-blocks.js";
 import { MATRIX_CSS, MATRIX_HEADER, MATRIX_FOOTER, MATRIX_SITE_FOOTER } from "./page-shell.js";
 import { LOCAL_TOWN_SLUGS } from "./dual-ring-allowlist.js";
@@ -204,7 +205,7 @@ export function tradesFaqs(slug, placeName) {
     ],
     [
       `What should I send before the visit?`,
-      `The postcode, what has failed or what you want built, and a photo if you have one. You do not need to know the trade name. If you are a landlord, say whether the property is empty or occupied.`,
+      `The postcode, what has failed or what you want built, and a photo if you have one. You do not need to know the trade name. ${landlordNote(`/pages/keywords/${slug}/${place}`, name, place)}`,
     ],
   ];
 }

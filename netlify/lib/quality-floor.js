@@ -10,6 +10,7 @@ import distinctEssays from "../../website/data/distinct-essays.json" with { type
 import keywordServices from "../../website/data/keyword-services.json" with { type: "json" };
 import imageManifest from "../../website/data/image-manifest.json" with { type: "json" };
 import { sanitizeInternalLinks } from "./internal-links.js";
+import { landlordNote } from "./landlord-note.js";
 
 const CREDIT = "iComply Property Services";
 const REAL_JOB = new Set([
@@ -121,34 +122,18 @@ export function isGasPath(path, subject = "") {
   const value = `${path} ${subject}`;
   if (GAS_PACKAGE_PATHS.has(String(path || "").replace(/\/$/, "") || "/")) return true;
   if (/\/(?:gas-systems|heating)(?:\/|$)/.test(path)) return true;
+  if (/heating/i.test(value)) return true;
   return /\bgas\b|cp12|boiler/i.test(value);
 }
 
-function fillCopy(text, place, subject, budget) {
+function fillCopy(text, place, subject) {
   const town = place || "Stockport";
   const job = subject || "the work";
-  return String(text)
-    .replaceAll("{subject}", job)
-    .replaceAll("{place}", () => {
-      budget.n += 1;
-      return budget.n <= 4 ? town : "the area";
-    });
+  return String(text).replaceAll("{subject}", job).replaceAll("{place}", town);
 }
 
-function capPlaceMentions(text, place, max = 6) {
-  const town = place || "Stockport";
-  const held = [];
-  let masked = String(text).replaceAll(OFFICE, () => {
-    held.push(OFFICE);
-    return `\u0001A${held.length - 1}\u0001`;
-  });
-  const re = new RegExp(`\\b${escapeReg(town)}\\b`, "gi");
-  let seen = 0;
-  masked = masked.replace(re, (match) => {
-    seen += 1;
-    return seen <= max ? match : "the area";
-  });
-  return masked.replace(/\u0001A(\d+)\u0001/g, (_, index) => held[Number(index)] || OFFICE);
+function capPlaceMentions(text) {
+  return String(text);
 }
 
 function packFor(key) {
@@ -181,13 +166,12 @@ export function essayHtml(path, subject, place) {
   const key = serviceKeyFromPath(path);
   const pack = packFor(key);
   const job = shortSubject(subject, pack.key, path);
-  const budget = { n: 0 };
   const blocks = [];
   for (const list of [pack.paragraphs, pack.notes, pack.facts]) {
-    for (const item of list || []) blocks.push(fillCopy(item, town, job, budget));
+    for (const item of list || []) blocks.push(fillCopy(item, town, job));
   }
-  const text = capPlaceMentions(blocks.join("\n"), town);
-  return text.split("\n").filter(Boolean).map((line) => `<p>${escapeHtml(line)}</p>`).join("");
+  blocks.push(landlordNote(path, job, town));
+  return blocks.filter(Boolean).map((line) => `<p>${escapeHtml(line)}</p>`).join("");
 }
 
 function pageFamily(path) {
@@ -217,12 +201,15 @@ function pageFamily(path) {
   if (REAL_JOB.has(leaf)) return `hub:${leaf === "index" ? "home" : leaf}`;
   if (REAL_JOB.has(head)) return `hub:${head === "index" ? "home" : head}`;
   if (head === "products" || head === "shop" || leaf === "products" || leaf === "shop") return "products";
-  return "hub:home";
+  if (head === "services" && !parts[2]) return "directory:services";
+  if (head === "keywords" && !parts[2]) return "directory:keywords";
+  return "directory:unknown";
 }
 
 function canonicalSrc(path) {
   const family = pageFamily(path);
   if (family === "products") return "/assets/images/real-job/resources.jpg";
+  if (family.startsWith("directory:")) return "/assets/images/real-job/company.jpg";
   if (family.startsWith("hub:")) return `/assets/images/real-job/${family.slice(4)}.jpg`;
   return `/assets/images/services/${family}.jpg`;
 }
@@ -398,7 +385,20 @@ function scrubSentences(html, path, subject) {
   const gas = isGasPath(path, subject);
   const family = pageFamily(path);
   const garden = GARDEN_FAMILY.has(family);
-  return String(html).replace(/>([^<]+)</g, (full, text) => {
+  const held = [];
+  const masked = String(html).replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, (block) => {
+    if (!gas) {
+      block = block
+        .replace(/do not describe iComply as Gas Safe[^.!?]*[.!?]/gi, "The office confirms who attends before the visit.")
+        .replace(/do not claim the company is Gas Safe[^.!?]*[.!?]/gi, "The office confirms who attends before the visit.")
+        .replace(/we do not describe iComply as Gas Safe registered[^.!?]*[.!?]/gi, "The office confirms who attends before the visit.")
+        .replace(/Landlord gas safety certificates \(CP12\) are carried out by Gas Safe registered engineers\./gi, "The office confirms who attends before the visit.")
+        .replace(/Gas work is carried out by Gas Safe registered engineers\./gi, "The office confirms who attends before the visit.");
+    }
+    held.push(block);
+    return `\u0000SCRUB${held.length - 1}\u0000`;
+  });
+  const scrubbed = masked.replace(/>([^<]+)</g, (full, text) => {
     if (!/[.!?]/.test(text)) return full;
     const kept = text.split(/(?<=[.!?])\s+/).filter((sentence) => {
       const line = sentence.trim();
@@ -413,6 +413,7 @@ function scrubSentences(html, path, subject) {
     });
     return `>${kept.join(" ")}<`;
   });
+  return scrubbed.replace(/\u0000SCRUB(\d+)\u0000/g, (_, index) => held[Number(index)] || "");
 }
 
 function capTownPrefix(html, place) {
@@ -440,10 +441,22 @@ function rewriteMetaImages(html, path) {
   });
 }
 
+function replaceImgSrc(attrs, src) {
+  let next = String(attrs);
+  if (!/\bsrc\s*=/.test(next)) next = ` src="${src}"${next}`;
+  else next = next.replace(/\bsrc\s*=\s*"[^"]*"/i, `src="${src}"`);
+  next = next.replace(/\s+srcset\s*=\s*"[^"]*"/gi, "");
+  next = next.replace(/\s+data-srcset\s*=\s*"[^"]*"/gi, "");
+  next = next.replace(/\s+data-perf\s*=\s*"[^"]*"/gi, "");
+  next = next.replace(/\s+onerror\s*=\s*"[^"]*"/gi, "");
+  return next;
+}
+
 function confineImages(html, path) {
   const want = canonicalSrc(path);
   const wantFamily = pageFamily(path);
   const allowProducts = wantFamily === "products";
+  const directory = wantFamily.startsWith("directory:");
   return String(html).replace(/<img\b([^>]*?)>/gi, (tag, attrs) => {
     let next = String(attrs).replace(/\s*\/\s*$/, "");
     if (skipImg(next)) return `<img${next}>`;
@@ -452,15 +465,17 @@ function confineImages(html, path) {
     const family = imageFamily(src);
     const placeholder = isPlaceholderImage(src);
     const product = family === "products" || /\/(?:products|shop)\//i.test(src);
+    if (directory) {
+      if (!placeholder && family && !family.startsWith("hub:") && family !== "products") return `<img${next}>`;
+      if (placeholder && family && !family.startsWith("hub:")) {
+        return `<img${replaceImgSrc(next, `/assets/images/services/${family}.jpg`)}>`;
+      }
+      if (family === "hub:home" || placeholder) return `<img${replaceImgSrc(next, want)}>`;
+      return `<img${next}>`;
+    }
     if (!placeholder && family === wantFamily) return `<img${next}>`;
     if (allowProducts && product) return `<img${next}>`;
-    if (!/\bsrc\s*=/.test(next)) next = ` src="${want}"${next}`;
-    else next = next.replace(/\bsrc\s*=\s*"[^"]*"/i, `src="${want}"`);
-    next = next.replace(/\s+srcset\s*=\s*"[^"]*"/gi, "");
-    next = next.replace(/\s+data-srcset\s*=\s*"[^"]*"/gi, "");
-    next = next.replace(/\s+data-perf\s*=\s*"[^"]*"/gi, "");
-    next = next.replace(/\s+onerror\s*=\s*"[^"]*"/gi, "");
-    return `<img${next}>`;
+    return `<img${replaceImgSrc(next, want)}>`;
   });
 }
 
@@ -503,6 +518,11 @@ export function applyQualityFloor(html, ctx = {}) {
   out = capTownPrefix(out, place);
   out = out.replace(/\bpOA\./g, "POA.");
   out = scrubFixedPricing(out);
+  if (!/"@type"\s*:\s*"FAQPage"/i.test(out) && !/itemtype="https:\/\/schema\.org\/FAQPage"/i.test(out)) {
+    const faq = faqBlock(subject, place, path);
+    const body = out.toLowerCase().lastIndexOf("</body>");
+    out = body === -1 ? out + faq : out.slice(0, body) + faq + out.slice(body);
+  }
   out = stampCredits(out);
   return out;
 }

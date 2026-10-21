@@ -252,8 +252,7 @@ $schema = [
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation and servicing in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> by iComply Property Services"
                      width="1200" height="800"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
-                     loading="eager"
-                     onerror="this.style.display='none'">
+                     loading="eager">
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-[#0B1F3A]/20 to-transparent">
                     <div class="text-sm text-white/70"><?php if (is_array($ncNationwide)): ?>Nurse call in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> · <?= htmlspecialchars($ncNationwide['region'] . ', ' . $ncNationwide['nation'], ENT_QUOTES, 'UTF-8') ?><?php else: ?>Serving <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> &amp; <?= htmlspecialchars($coveragePhrase, ENT_QUOTES, 'UTF-8') ?><?php endif; ?></div>
                     <div class="text-2xl font-semibold mt-1">Local engineers · Written quotes</div>

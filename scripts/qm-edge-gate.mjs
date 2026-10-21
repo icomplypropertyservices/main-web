@@ -101,14 +101,18 @@ function check(label, html) {
     say(page.includes(`/assets/images/services/${service}.jpg`), `${label} real service photo`);
   }
   if (/demolition/.test(label)) {
-    const hero = page.match(/<section class="matrix-hero"[\s\S]*?<\/section>/i) || page.match(/<section class="hero"[\s\S]*?<\/section>/i);
+    const hero = page.match(/<section class="(?:matrix-hero|page-hero|hero)\b[\s\S]*?<\/section>/i);
     say(!hero || /<img\b/i.test(hero[0]), `${label} hero image`);
   }
   say(!/pOA\./.test(page), `${label} no garbled POA`);
   say(!/do not describe iComply as Gas Safe/i.test(page), `${label} no gas denial`);
   say(!/fill a skip and call the garden clear/i.test(page) || /fencing|drainage|driveways|demolition/.test(label), `${label} no off-family skip sentence`);
-  const gasOk = /gas|cp12|boiler|compliance-bundle|landlord-pack/i.test(label);
+  const gasOk = /gas|cp12|boiler|heating|compliance-bundle|landlord-pack/i.test(label);
   say(gasOk || !/Gas Safe registered/i.test(page), `${label} gas sentence only on gas pages`);
+  say(!/\b(?:a|an|the) the area\b/i.test(page), `${label} no broken area grammar`);
+  say(!page.includes("dump 200,000") && !page.includes("200,000 links"), `${label} no hub dump line`);
+  say(!page.includes("arrive unannounced to a tenant") && !page.includes("will not arrive unannounced"), `${label} no shared landlord paragraph`);
+  say(!page.includes("real-job/home.jpg"), `${label} no home.jpg`);
   const prefixes = page.match(/\bIn [A-Z][A-Za-z' .-]{1,40}, /g) || [];
   say(prefixes.length <= 6, `${label} town prefix x${prefixes.length}`);
   const unbuilt = ["bromborough", "burngreave", "cleckheaton", "halewood", "haxby", "ince-in-makerfield", "kippax", "morley", "old-swan", "shirebrook", "wath-upon-dearne"];
@@ -124,6 +128,7 @@ for (const [kind, slug, town] of [
   ["service", "fencing", "accrington"],
   ["service", "drainage", "abram"],
   ["service", "driveways", "york"],
+  ["service", "driveways", "wigan"],
   ["service", "demolition", "st-helens"],
   ["service", "demolition", "bingley"],
   ["service", "fencing", "bingley"],
