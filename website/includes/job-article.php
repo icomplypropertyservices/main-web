@@ -121,6 +121,13 @@ function renderJobArticle(array $page): void
         $image = $images[0][0];
         $imageAlt = $images[0][1];
     }
+    require_once SITE_ROOT . '/includes/quality-bar.php';
+    $plasterSlug = icomplyPlasterImageSlug($h1 . ' ' . (string)($page['slug'] ?? ''), '');
+    if ($plasterSlug !== '') {
+        // Plastering / dry-lining jobs: only the credited photo of that work.
+        $image = '/assets/images/services/' . $plasterSlug . '.jpg';
+        $images = [[$image, $imageAlt]];
+    }
     $crumbService = trim((string)($page['service_label'] ?? 'Services'));
     $crumbServiceHref = trim((string)($page['service_href'] ?? '/pages/services'));
     $parentLabel = trim((string)($page['parent_label'] ?? ''));
