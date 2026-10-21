@@ -51,7 +51,7 @@ function aovBrandGridHtml(): string
         $name = htmlspecialchars($brand['name'], ENT_QUOTES, 'UTF-8');
         $line = htmlspecialchars($brand['line'], ENT_QUOTES, 'UTF-8');
         $html .= '<a href="' . $href . '" class="bg-white border border-zinc-200 rounded-2xl overflow-hidden hover:border-[#ff6b00] transition block">'
-            . '<img src="' . $src . '" alt="' . $name . ' wordmark" width="320" height="120" class="w-full h-24 object-cover bg-[#f7f4ef]" loading="lazy">'
+            . '<img src="' . $src . '" alt="' . $name . ' wordmark" width="320" height="120" class="w-full h-24 object-cover bg-[#f7f7f7]" loading="lazy">'
             . '<div class="p-4"><div class="font-semibold text-black">' . $name . '</div>'
             . '<p class="mt-1 text-sm text-zinc-600">' . $line . '</p>'
             . '<span class="mt-2 inline-block text-sm font-semibold text-[#ff6b00]">Brand page and spares →</span></div></a>';

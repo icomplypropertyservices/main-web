@@ -120,6 +120,7 @@ const SERVICE_HUB_ALIAS = {
   "solar-pv": "/pages/services/electrical",
 };
 import { securityJobRedirect } from "../lib/security-dual-ring.js";
+import { finishPage } from "../lib/page-finish.js";
 import { SECURITY_NEW_INTENTS, securityTownCopy } from "../lib/security-town-copy.js";
 
 const RESERVED = new Set([
@@ -701,7 +702,7 @@ async function loadVariants(origin) {
 }
 
 function variantResponse(rendered) {
-  return new Response(withContactWidgets(scrubMeta(rendered.html)), {
+  return new Response(withContactWidgets(finishPage(scrubMeta(rendered.html), rendered.path || "")), {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",
@@ -974,7 +975,7 @@ async function renderMatrix(request, context) {
   if (b1) {
     const page = renderBatch1(b1);
     if (page) {
-      return new Response(withContactWidgets(scrubMeta(page.html)), {
+      return new Response(withContactWidgets(finishPage(scrubMeta(page.html), path)), {
         status: 200,
         headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=3600", "x-robots-tag": page.robots },
       });
@@ -1070,7 +1071,7 @@ async function renderMatrix(request, context) {
     else if (serviceMatch && isLocalTown(serviceMatch[2])) to = `/pages/areas/${serviceMatch[2]}`;
     return Response.redirect(new URL(to, url.origin).toString(), 301);
   }
-  return new Response(applySeoBasics(applyMoneyCtr(path, withContactWidgets(scrubMeta(rendered.html))), { authored: Boolean(moneyCtrPage(path)) }), {
+  return new Response(applySeoBasics(applyMoneyCtr(path, withContactWidgets(finishPage(scrubMeta(rendered.html), path))), { authored: Boolean(moneyCtrPage(path)) }), {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",

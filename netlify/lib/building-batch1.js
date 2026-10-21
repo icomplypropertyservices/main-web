@@ -8,7 +8,7 @@ import geo from "../../website/data/town-geo-slim.json" with { type: "json" };
 import photos from "../../website/data/building-batch1-photos.json" with { type: "json" };
 import creditRows from "../../website/data/hero-image-credits.json" with { type: "json" };
 import { SERVICES, KEYWORDS, FAMILIES, PLASTERBOARD, STEPS_COMMON, GENERIC, FAMILY_EXTRA, GENERIC_FAQS } from "./building-batch1-content.js";
-import { MATRIX_CSS, MATRIX_HEADER, MATRIX_FOOTER, MATRIX_SITE_FOOTER } from "./page-shell.js";
+import { BRAND_CSS, MATRIX_HEADER, MATRIX_FOOTER, MATRIX_SITE_FOOTER } from "./page-shell.js";
 import { townFactsBlock } from "./town-facts.js";
 import laCensus from "./la-census-slim.json" with { type: "json" };
 
@@ -156,7 +156,7 @@ const CSS = `<style>
 .b1-cta{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 14px}
 .b1-cta a{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:8px;font-weight:700;font-size:1.05rem;text-decoration:none}
 .b1-call{background:#FF6B00;color:#fff!important}
-.b1-wa{background:#25D366;color:#073b1d!important}
+.b1-wa{background:#0B1F3A;color:#fff!important}
 .b1-sub{margin:0 0 12px;font-size:.95rem}
 .b1-photos{display:grid;grid-template-columns:2fr 1fr;gap:8px;margin:0 0 18px}
 .b1-photos img{width:100%;height:auto;border-radius:8px;object-fit:cover}
@@ -305,7 +305,7 @@ export function renderBatch1(m) {
 <meta property="og:url" content="${canonical}">
 <meta property="og:type" content="website">
 <meta property="og:image" content="${esc(img.og)}">
-${MATRIX_CSS}
+${BRAND_CSS}
 ${CSS}
 <script type="application/ld+json">${JSON.stringify(schema).replace(/</g, "\\u003c")}</script>
 </head>
