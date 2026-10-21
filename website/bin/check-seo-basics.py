@@ -38,7 +38,7 @@ for root, _, files in os.walk(dist):
         if re.search(r'http-equiv="refresh"', html): continue
         C["pages"] += 1
         t = re.search(r"<title>([^<]*)</title>", html)
-        tl = len(re.sub(r"&amp;", "&", t.group(1)).strip()) if t else 0
+        tl = len(re.sub(r"&amp;|&#0?39;|&quot;|&lt;|&gt;", "x", t.group(1)).strip()) if t else 0
         if tl == 0: C["title_missing"] += 1; rows.append((rel, "title missing"))
         elif tl > 60: C["title_long"] += 1; rows.append((rel, f"title {tl}"))
         m = re.search(r'<meta\s+name="description"\s+content="([^"]*)"', html)

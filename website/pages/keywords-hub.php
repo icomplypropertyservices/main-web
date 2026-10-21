@@ -188,7 +188,8 @@ if (function_exists('accessControlLaneHubSection')) {
         </div>
     </div>
 
-    <!-- Keyword grid -->
+    <!-- Keyword grid (21 Oct: compact card markup so the page stays well under 2 MB) -->
+    <style>.kc{background:#fff;border:1px solid #e4e4e7;border-radius:1.5rem;padding:1.25rem;display:flex;flex-direction:column;transition:all .15s}.kc:hover{border-color:#ff6b00;box-shadow:0 10px 15px -3px rgba(0,0,0,.1)}.kc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:.75rem}.kc-i{width:2.5rem;height:2.5rem;border-radius:1rem;background:#0B1F3A;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.875rem;flex-shrink:0}.kc-t{font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:.25rem .5rem;border-radius:9999px;background:#f4f4f5;color:#52525b;font-weight:600}.kc-h{margin-top:1rem;font-weight:600;font-size:1.125rem;color:#000;line-height:1.375;flex:1}.kc:hover .kc-h{color:#ff6b00}.kc-r{margin-top:1rem;font-size:.875rem;font-weight:600;color:#ff6b00}</style>
     <div id="kw-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         <?php foreach ($keywords as $slug => $meta):
             $name = $meta['name'] ?? keywordDisplayName($slug);
@@ -197,24 +198,8 @@ if (function_exists('accessControlLaneHubSection')) {
             $href = url('/pages/keywords/' . $slug . '.php');
             $searchBlob = strtolower($name . ' ' . $slug . ' ' . $svcName . ' ' . $svc);
         ?>
-            <a href="<?= htmlspecialchars($href, ENT_QUOTES, 'UTF-8') ?>"
-               class="kw-card group bg-white border border-zinc-200 rounded-3xl p-5 hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col"
-               data-service="<?= htmlspecialchars($svc, ENT_QUOTES, 'UTF-8') ?>"
-               data-search="<?= htmlspecialchars($searchBlob, ENT_QUOTES, 'UTF-8') ?>">
-                <div class="flex items-start justify-between gap-3">
-                    <div class="w-10 h-10 rounded-2xl bg-[#0B1F3A] text-white flex items-center justify-center font-bold text-sm shrink-0">
-                        <?= htmlspecialchars(strtoupper(substr($name, 0, 1)), ENT_QUOTES, 'UTF-8') ?>
-                    </div>
-                    <span class="text-[10px] uppercase tracking-wider px-2 py-1 rounded-full bg-zinc-100 text-zinc-600 font-semibold">
-                        <?= htmlspecialchars($svcName, ENT_QUOTES, 'UTF-8') ?>
-                    </span>
-                </div>
-                <h3 class="mt-4 font-semibold text-lg text-black leading-snug group-hover:text-[#ff6b00] transition">
-                    <?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>
-                </h3>
-                <p class="mt-2 text-sm text-zinc-500 flex-1">Guide Â· local service links</p>
-                <span class="mt-4 text-sm font-semibold text-[#ff6b00]">Read guide â†’</span>
-            </a>
+            <?php $relHref = preg_replace('#^https?://[^/]+#', '', $href) ?: $href; ?>
+            <a href="<?= htmlspecialchars($relHref, ENT_QUOTES, 'UTF-8') ?>" class="kw-card kc" data-service="<?= htmlspecialchars($svc, ENT_QUOTES, 'UTF-8') ?>" data-search="<?= htmlspecialchars($searchBlob, ENT_QUOTES, 'UTF-8') ?>"><span class="kc-top"><span class="kc-i"><?= htmlspecialchars(strtoupper(substr($name, 0, 1)), ENT_QUOTES, 'UTF-8') ?></span><span class="kc-t"><?= htmlspecialchars($svcName, ENT_QUOTES, 'UTF-8') ?></span></span><h3 class="kc-h"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></h3><span class="kc-r">Read guide →</span></a>
         <?php endforeach; ?>
     </div>
 
