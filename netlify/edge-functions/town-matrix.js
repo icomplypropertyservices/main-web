@@ -795,6 +795,7 @@ export default async (request, context) => {
   const path = url.pathname.replace(/\/+$/, "") || "/";
   // /shop is a directory hub: one 301 to the slash form the static file lives at.
   if (url.pathname === "/shop") return Response.redirect(new URL("/shop/" + url.search, url.origin).toString(), 301);
+  if (url.pathname === "/shop/") return context.next(); // never strip the slash here (would loop)
   // One canonical form: strip trailing slashes (GSC 404s on /pages/areas/x/,
   // duplicates on /pages/keywords/x/). Exported files never use the slash form.
   if (path !== "/" && url.pathname !== path && !path.startsWith("/matrix-sitemap")) {
