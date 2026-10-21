@@ -406,7 +406,7 @@ export function renderTownPage(input) {
   const focus = (keyword.focus && keyword.focus.length ? keyword.focus : [`Scope agreed before ${subject} starts`]).slice(0, 4);
   const canonical = `https://icomplypropertyservices.co.uk${path}`;
   const h1 = buildTrade
-    ? `${buildTrade} in ${place.name} | Free Quote: 07517 806082`
+    ? `${buildTrade} in ${place.name}`
     : `${subject} for ${audience} in ${place.name}`;
   const ctrSlug = kind === "keyword" ? input.keyword : serviceSlug;
   const ctrGas = Boolean(keyword.gas) || serviceSlug === "gas-systems" || serviceSlug === "heating";
@@ -754,6 +754,24 @@ function placeAliasRedirect(path) {
   return `/pages/${family}/${dest}`;
 }
 
+// Trade head-term keywords (3fae2db). netlify.toml redirects never run for
+// /pages/keywords/:keyword/:town because this edge function serves that path
+// first, so the aliases live here. One hop: local towns go to the trade town
+// page (200), other towns straight to the service hub.
+export const TRADE_SLUG_ALIAS = {
+  plasterer: "plastering", plasterers: "plastering", plastering: "plastering",
+  builder: "building-maintenance", builders: "building-maintenance",
+  joiner: "joinery", joiners: "joinery",
+  "kitchen-fitter": "kitchens", "kitchen-fitters": "kitchens",
+  "extension-builders": "extensions", "loft-conversion-builders": "loft-conversions",
+};
+export function tradeSlugRedirect(path) {
+  const m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
+  if (!m || !TRADE_SLUG_ALIAS[m[1]]) return null;
+  const svc = TRADE_SLUG_ALIAS[m[1]];
+  return isLocalTown(m[2]) ? `/pages/${svc}/${m[2]}` : `/pages/services/${svc}`;
+}
+
 export function nonGmMatrixRedirect(path) {
   if (GSC_KEEP.has(path)) return null;
   let m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
@@ -787,6 +805,10 @@ export default async (request, context) => {
   const securityTo = securityJobRedirect(path);
   if (securityTo) {
     return Response.redirect(new URL(securityTo, url.origin).toString(), 301);
+  }
+  const tradeTo = tradeSlugRedirect(path);
+  if (tradeTo) {
+    return Response.redirect(new URL(tradeTo, url.origin).toString(), 301);
   }
   const matrixTo = nonGmMatrixRedirect(path);
   if (matrixTo) {
