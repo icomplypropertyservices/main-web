@@ -1035,3 +1035,8 @@ ul.mfr-lines { margin: 0; padding-left: 1.1rem; font-size: 0.92rem; }
 .mfr-towns ul { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; padding: 0; margin: 0.6rem 0 0; }
 .mfr-towns a { display: inline-block; border: 1px solid rgba(255,255,255,0.16); border-radius: 999px; padding: 0.35rem 0.7rem; font-size: 0.8rem; text-decoration: none; }
 body.theme-dark .mfr-kit th, body.theme-dark .mfr-kit td { border-bottom-color: rgba(255,255,255,0.12); }
+
+.hero-cta { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0.35rem 0 1.1rem; }
+.hero-cta a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0.55rem 1rem; border-radius: 0.55rem; font-weight: 700; text-decoration: none; color: #fff !important; }
+.hero-cta a.call { background: #FF6B00; }
+.hero-cta a.wa { background: #128C7E; }

@@ -185,6 +185,11 @@ function icomplyComplianceBundleOfferJsonLd(string $canonicalUrl): array
         'price' => (string)$bundle['price_gbp'],
         'priceCurrency' => 'GBP',
         'availability' => 'https://schema.org/InStock',
+        'itemOffered' => [
+            '@type' => 'Service',
+            'name' => $bundle['name'],
+            'serviceType' => 'Landlord compliance pack',
+        ],
         'seller' => [
             '@type' => 'LocalBusiness',
             'name' => defined('SITE_NAME') ? SITE_NAME : 'iComply Property Services',

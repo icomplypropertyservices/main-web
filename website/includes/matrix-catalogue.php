@@ -431,6 +431,32 @@ function icomplyMatrixJobRecords(): array
             'nationwide' => $row[3],
         ];
     }
+    $lockFile = SITE_ROOT . '/data/seo-lock/p0-index.json';
+    if (is_file($lockFile)) {
+        $lock = json_decode((string)file_get_contents($lockFile), true);
+        foreach ((array)($lock['rows'] ?? []) as $slug => $meta) {
+            if (!is_array($meta) || ($meta['kind'] ?? '') !== 'job') {
+                continue;
+            }
+            $slug = icomplyMatrixSlug((string)$slug);
+            if ($slug === '' || isset($out[$slug])) {
+                continue;
+            }
+            $service = icomplyMatrixSlug((string)($meta['service'] ?? 'building-maintenance'));
+            if ($service === '') {
+                $service = 'building-maintenance';
+            }
+            $family = (string)($meta['family'] ?? '');
+            $nationwide = in_array($service, ['fire-alarms', 'barriers', 'aov-air-handling'], true) || $family === 'aov';
+            $name = trim((string)($meta['name'] ?? ''));
+            $out[$slug] = [
+                'name' => $name !== '' ? $name : ucwords(str_replace('-', ' ', $slug)),
+                'service' => $service,
+                'gas' => false,
+                'nationwide' => $nationwide,
+            ];
+        }
+    }
     return $out;
 }
 
@@ -525,6 +551,40 @@ function icomplyMatrixCatalogueRecords(): array
                 ];
                 $serviceKeywords[$service][] = $slug;
             }
+        }
+    }
+
+    $lockFile = SITE_ROOT . '/data/seo-lock/p0-index.json';
+    if (is_file($lockFile)) {
+        $lock = json_decode((string)file_get_contents($lockFile), true);
+        foreach ((array)($lock['rows'] ?? []) as $slug => $meta) {
+            if (!is_array($meta) || ($meta['kind'] ?? 'keyword') === 'job') {
+                continue;
+            }
+            $slug = icomplyMatrixSlug((string)$slug);
+            if ($slug === '' || isset($keywords[$slug])) {
+                continue;
+            }
+            $service = icomplyMatrixSlug((string)($meta['service'] ?? 'building-maintenance'));
+            if ($service === '') {
+                $service = 'building-maintenance';
+            }
+            $name = trim((string)($meta['name'] ?? ''));
+            if ($name === '') {
+                $name = ucwords(str_replace('-', ' ', $slug));
+            }
+            $keywords[$slug] = [
+                'name' => $name,
+                'service' => $service,
+                'intro' => $name . ' for homeowners and landlords. Free survey and a written quote before any work starts.',
+                'focus' => [
+                    'Free survey on site',
+                    'Written quote before work starts',
+                    'Homeowners and landlords',
+                ],
+                'gas' => false,
+            ];
+            $serviceKeywords[$service][] = $slug;
         }
     }
 

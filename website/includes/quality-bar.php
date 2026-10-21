@@ -313,7 +313,9 @@ function icomplyServiceImageFamilyPicks(string $slug, int $seed): array
     $off = $n ? $seed % $n : 0;
     $rot = array_merge(array_slice($rest, $off), array_slice($rest, 0, $off));
     $picks = array_merge(in_array($slug . '-photo', $fam, true) ? [$slug . '-photo'] : [], $rot);
-    return [$picks[0] ?? 'building-maintenance', $picks[1] ?? 'renovation'];
+    $a = $picks[0] ?? $slug;
+    $b = $picks[1] ?? $a;
+    return [$a, $b];
 }
 
 function icomplyQualityBarImages(string $serviceSlug, string $altPrefix, string $slot = 'q2-content-images'): array

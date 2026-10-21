@@ -68,8 +68,12 @@ function manufacturerWizardHtml(array $entry, string $area, array $lines): strin
         $id = 'wiz-line-' . $i;
         $html .= '<label class="mfr-wizard-option" for="' . $id . '">';
         $html .= '<input id="' . $id . '" type="radio" name="wizard_line" value="' . $h($line['label']) . '"' . ($i === 0 ? ' checked' : '') . '>';
-        $logo = function_exists('url') ? url($line['logo']) : $line['logo'];
-        $html .= '<img class="mfr-line-logo" src="' . $h($logo) . '" alt="" width="72" height="40" loading="lazy">';
+        $logoRel = (string)($line['logo'] ?? '');
+        $logoFile = (defined('SITE_ROOT') ? SITE_ROOT : dirname(__DIR__)) . '/' . ltrim((string)(parse_url($logoRel, PHP_URL_PATH) ?: $logoRel), '/');
+        if ($logoRel !== '' && is_file($logoFile)) {
+            $logo = function_exists('url') ? url($logoRel) : $logoRel;
+            $html .= '<img class="mfr-line-logo" src="' . $h($logo) . '" alt="' . $h($line['label'] . ' logo') . '" width="72" height="40" loading="lazy">';
+        }
         $html .= '<span><strong>' . $h($line['label']) . '</strong><small>' . $h($line['blurb']) . '</small></span>';
         $html .= '</label>';
     }

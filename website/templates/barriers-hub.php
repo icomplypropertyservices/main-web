@@ -3,10 +3,11 @@
  * Nationwide vehicle barriers hub.
  * Expects $places, $grouped, $brands, $keywords from renderBarriersHubPage().
  */
-$pageTitle = 'Vehicle Barriers | CAME Partner | UK Towns over 10,000';
-$metaDesc = 'iComply is a CAME partner for rising-arm vehicle barriers. A page for every UK town over 10,000 people, with that town\'s official population profile. Other barrier brands are serviced, not partnerships. Price on application. ' . PHONE . '.';
+$pageTitle = 'Barrier towns | CAME partner';
+$metaTitleExact = true;
+$metaDesc = 'Town list for rising-arm barriers. CAME partner pages, one settlement each. Call ' . PHONE . ' for a written quote.';
 $metaKeywords = 'CAME partner, vehicle barrier, rising arm barrier, CAME Gard, UK towns over 10000, barrier servicing, price on application';
-$canonicalUrl = url('/pages/services/barriers');
+$canonicalUrl = url('/pages/barriers');
 $ogImage = url('/assets/images/services/access-control.jpg');
 
 if (session_status() !== PHP_SESSION_ACTIVE) {

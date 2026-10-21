@@ -29,7 +29,9 @@ export function familyPicks(slug, seed) {
   const off = n ? Math.abs(Number(seed) || 0) % n : 0;
   const rotated = rest.slice(off).concat(rest.slice(0, off));
   const picks = (fam.includes(`${slug}-photo`) ? [`${slug}-photo`] : []).concat(rotated);
-  return [picks[0], picks[1]];
+  const a = picks[0] || slug;
+  const b = picks[1] || a;
+  return [a, b];
 }
 
 export function escapeHtml(value) {

@@ -942,9 +942,7 @@ foreach ($canonIter as $canonFile) {
     }
     $canonSeen++;
     $allowed = $page === $canonPath
-        || ($page === '/pages/products' && $canonPath === '/products')
-        || ($page === '/pages/packages/landlord-pack' && $canonPath === '/pages/packages/compliance-bundle')
-        || ($page === '/pages/packages/compliance-bundle' && $canonPath === '/pages/packages/landlord-pack');
+        || ($page === '/pages/products' && $canonPath === '/products');
     if (!$allowed) {
         $canonBad++;
         if ($canonBad <= 8) {
@@ -954,7 +952,7 @@ foreach ($canonIter as $canonFile) {
 }
 if ($canonBad === 0 && $canonSeen > 1000) {
     $pass++;
-    echo "[PASS] canonicals are self-referencing ({$canonSeen} pages; only /pages/products → /products and the landlord-pack pair excepted)\n";
+    echo "[PASS] canonicals are self-referencing ({$canonSeen} pages; only /pages/products → /products is excepted)\n";
 } else {
     $fail++;
     echo "[FAIL] canonical mismatches={$canonBad} checked={$canonSeen}\n";

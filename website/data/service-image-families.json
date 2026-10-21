@@ -62,30 +62,153 @@
   ],
   "building": [
    "building-maintenance",
+   "building-maintenance-photo",
+   "building-maintenance-context"
+  ],
+  "bathrooms": [
    "bathrooms",
+   "bathrooms-photo",
+   "bathrooms-context"
+  ],
+  "brickwork": [
    "brickwork",
+   "brickwork-photo",
+   "brickwork-context"
+  ],
+  "carpentry": [
    "carpentry",
+   "carpentry-photo",
+   "carpentry-context"
+  ],
+  "commercial-fit-out": [
    "commercial-fit-out",
+   "commercial-fit-out-photo",
+   "commercial-fit-out-context"
+  ],
+  "damp-proofing": [
    "damp-proofing",
+   "damp-proofing-photo",
+   "damp-proofing-context"
+  ],
+  "dry-lining": [
    "dry-lining",
+   "dry-lining-photo",
+   "dry-lining-context"
+  ],
+  "extensions": [
    "extensions",
+   "extensions-photo",
+   "extensions-context"
+  ],
+  "facilities-management": [
    "facilities-management",
+   "facilities-management-photo",
+   "facilities-management-context"
+  ],
+  "flooring": [
    "flooring",
+   "flooring-photo",
+   "flooring-context"
+  ],
+  "groundworks": [
    "groundworks",
+   "groundworks-photo",
+   "groundworks-context"
+  ],
+  "insulation": [
    "insulation",
+   "insulation-photo",
+   "insulation-context"
+  ],
+  "joinery": [
    "joinery",
+   "joinery-photo",
+   "joinery-context"
+  ],
+  "kitchens": [
    "kitchens",
+   "kitchens-photo",
+   "kitchens-context"
+  ],
+  "landscaping": [
    "landscaping",
+   "landscaping-photo",
+   "landscaping-context"
+  ],
+  "loft-conversions": [
    "loft-conversions",
+   "loft-conversions-photo",
+   "loft-conversions-context"
+  ],
+  "painting-decorating": [
    "painting-decorating",
+   "painting-decorating-photo",
+   "painting-decorating-context"
+  ],
+  "plastering": [
    "plastering",
+   "plastering-photo",
+   "plastering-context"
+  ],
+  "project-management": [
    "project-management",
+   "project-management-photo",
+   "project-management-context"
+  ],
+  "property-refurbishment-pm": [
    "property-refurbishment-pm",
+   "property-refurbishment-pm-photo",
+   "property-refurbishment-pm-context"
+  ],
+  "rendering": [
    "rendering",
+   "rendering-photo",
+   "rendering-context"
+  ],
+  "renovation": [
    "renovation",
+   "renovation-photo",
+   "renovation-context"
+  ],
+  "roofing": [
    "roofing",
+   "roofing-photo",
+   "roofing-context"
+  ],
+  "tiling": [
    "tiling",
-   "windows-doors"
+   "tiling-photo",
+   "tiling-context"
+  ],
+  "windows-doors": [
+   "windows-doors",
+   "windows-doors-photo",
+   "windows-doors-context"
+  ],
+  "drainage": [
+   "drainage",
+   "drainage-photo",
+   "drainage-context"
+  ],
+  "driveways": [
+   "driveways",
+   "driveways-photo",
+   "driveways-context"
+  ],
+  "fencing": [
+   "fencing",
+   "fencing-photo",
+   "fencing-context"
+  ],
+  "demolition": [
+   "demolition",
+   "demolition-photo",
+   "demolition-context"
+  ],
+  "building-maintenance-photo": [
+   "building-maintenance-photo",
+   "building-maintenance-photo-photo",
+   "building-maintenance-photo-context"
   ]
  }
 }

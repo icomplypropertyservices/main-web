@@ -86,6 +86,7 @@ if (function_exists('manufacturerWriteLineLogos')) {
 require_once $websiteRoot . '/includes/matrix-page.php';
 require_once $websiteRoot . '/bin/build-shop-hubs.php';
 require_once $websiteRoot . '/includes/money-ctr.php';
+require_once $websiteRoot . '/includes/hero-cta.php';
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
@@ -259,6 +260,9 @@ foreach ($routes as $i => $path) {
 
     // P0-CTR-MONEY C1-C15: exact title/meta + authored depth/links (no robots/canonical change).
     $html = icomplyApplyMoneyCtr($path, $html);
+    if (function_exists('icomplyInjectHeroCta')) {
+        $html = icomplyInjectHeroCta($html);
+    }
     icomplyWritePrettyFiles($dist, $path, $html);
     $ok++;
     $every = $total > 2000 ? 500 : ($total > 400 ? 100 : 50);
@@ -1044,7 +1048,7 @@ __LIVE_404_REDIRECTS__
 # Real XML files are written at /products/sitemap.xml and /shop/sitemap.xml.
 
 # Shop / products — trade hubs (never 301 to packages)
-/shop                    /shop/index.html              200!
+/shop                    /shop/                        301
 /shop/                   /shop/index.html              200!
 /shop/fire               /shop/fire/index.html         200!
 /shop/fire/              /shop/fire/index.html         200!
@@ -1116,8 +1120,8 @@ __MATRIX_REDIRECTS__
 
 # Barrier town pages are files under /pages/barriers/. Force the hub redirect
 # and the town pretty URL so a directory does not 301 the leaf.
-/pages/barriers          /pages/services/barriers.php  301
-/pages/barriers/         /pages/services/barriers.php  301
+/pages/barriers          /pages/barriers.php           200!
+/pages/barriers/         /pages/barriers.php           200!
 /pages/barriers/:slug    /pages/barriers/:slug.php     200!
 /pages/barriers/:slug/   /pages/barriers/:slug.php     200!
 
@@ -1141,8 +1145,15 @@ TXT;
     $txt = str_replace("__LIVE_404_REDIRECTS__\n", icomplyLive404RedirectLines(), $base);
     $txt = str_replace("__MATRIX_REDIRECTS__\n", icomplyUnpublishedMatrixRedirects(), $txt);
     // Exact place-alias 301s must come before /pages/barriers/:slug and /pages/aov 200! rules.
+    $upgradeRedirects = '';
+    $upgradeFile = SITE_ROOT . '/data/seo-upgrade/product-redirects.txt';
+    if (is_file($upgradeFile)) {
+        $upgradeRedirects = "\n# SEO upgrade: dead product and retired service URLs, one hop.\n"
+            . trim((string)file_get_contents($upgradeFile)) . "\n";
+    }
     return icomplyPlaceAliasRedirectLines()
         . rtrim($txt, "\r\n") . "\n"
+        . $upgradeRedirects
         . icomplyAovLegacyRedirectLines()
         . icomplyNationwideP0JobRedirectLines() . <<<'TXT'
 

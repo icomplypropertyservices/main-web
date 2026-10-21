@@ -1,4 +1,5 @@
 import { MATRIX_CSS, MATRIX_HEADER, MATRIX_FOOTER, MATRIX_SITE_FOOTER } from "./page-shell.js";
+import { heroCta } from "./hero-cta.js";
 /**
  * Nationwide P0 keyword × town HTML for the edge renderer.
  * Town set is UK TOP 5000. GM towns stay even when they are outside that list.
@@ -340,7 +341,7 @@ ${MATRIX_CSS}
 ${MATRIX_HEADER}
 <main>
 <nav aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/pages/keywords/${keywordSlug}">${escapeHtml(name)}</a> / <span>${escapeHtml(townName)}</span></nav>
-<h1>${escapeHtml(`${name} in ${townName}`)}</h1>
+<h1>${escapeHtml(`${name} in ${townName}`)}</h1>${heroCta(`${name} in ${townName}`)}
 ${gallery}
 <article id="local-copy">${articleHtml}</article>
 <section><h2>${escapeHtml(name)} FAQ</h2>${faqHtml}</section>

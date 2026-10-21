@@ -64,7 +64,7 @@
     },
     "construction": {
         "label": "Construction & Fit-Out",
-        "blurb": "Kitchens, bathrooms, plastering, roofing and the other building trades already on the site. Each one has Greater Manchester town pages. Quotes are price on application.",
+        "blurb": "Kitchens, bathrooms, plastering, roofing, drainage, driveways, fencing and the other building trades. Each one has town pages for homeowners and landlords. The survey and the written quote are free.",
         "services": [
             "kitchens",
             "bathrooms",
@@ -87,6 +87,10 @@
             "windows-doors",
             "rendering",
             "groundworks",
+            "drainage",
+            "driveways",
+            "fencing",
+            "demolition",
             "landscaping",
             "commercial-fit-out"
         ]

@@ -44,8 +44,8 @@ require SITE_ROOT . '/includes/header.php';
         "@type": "Offer",
         "name": "Free written quote — {{SERVICE_NAME}} in {{AREA}}",
         "availability": "https://schema.org/InStock",
-        "priceCurrency": "GBP",
-        "url": "<?= url('/contact.php') ?>"
+        "url": "<?= url('/contact.php') ?>",
+        "itemOffered": {"@type": "Service", "name": "{{SERVICE_NAME}} in {{AREA}}", "areaServed": "{{AREA}}"}
       },
       "brand": {"@type": "Brand", "name": <?= json_encode(SITE_NAME) ?>}
     },

@@ -1,0 +1,147 @@
+#!/usr/bin/env python3
+import json
+
+def pack(work, guide, paragraphs, checks, extra):
+    intents = {
+        "guide": "This page is the homeowner and landlord guide to {name}. " + extra,
+        "near": "You searched {name} because you want someone who will come to {place}. We work from Offerton in Stockport and we book {work} around the people who live there. " + extra,
+        "cost": "The honest answer on {name} is that the price follows the building. We survey {place} for free and write the quote before any work starts. " + extra,
+        "quote": "Ask for {name} with the address, a photo and whether anyone is in the house. The written quote for {place} names what is included. " + extra,
+        "emergency": "If {name} cannot wait, call 07517 806082, say {place}, and tell us what has failed. We will say if a same-day visit is realistic. " + extra,
+        "installers": "{name} means the people who do the work, not a directory. We survey {place} and the same enquiry is the one we come back to finish. " + extra,
+        "servicing": "{name} is the follow-up visit: check, adjust, or repair what was agreed. You get a short note of what we found in {place}. " + extra,
+    }
+    return {"work": work, "guide": guide, "paragraphs": paragraphs, "checks": checks, "intents": intents, "fallback": paragraphs[0]}
+
+R = {}
+R["windows-doors"] = pack("windows and doors",
+    "Windows and doors for a house means uPVC, double glazing, composite doors, bifolds, French doors, patio doors, sash repairs and misted units. A window quote is the opening, the glass, the trickle vents and the making good of the plaster inside. Misted glass is a failed sealed unit and it can often be replaced without a whole new frame, if the frame is sound. Sash windows in older {place} houses are repaired and draught-proofed when the timber is worth keeping. We measure twice. A bifold that does not match the structural opening is a steel and a lintel conversation, not just a door conversation. We do not leave you with torn plaster and a promise.",
+    ["uPVC replacements include the sill and the seal to the damp course. A window that leaks at the sill was fitted, not manufactured, badly.",
+     "Misted units are measured to the frame. We do not order glass from a photo of the condensation.",
+     "Composite doors need a square opening and a threshold that does not trip. We check the letterbox and the lock you want.",
+     "Bifold and patio doors are heavy. The lintel and the floor track are part of the survey.",
+     "Sash repair is cords, weights or springs, staff beads and draught seals. Replacement is the honest answer when the timber is gone.",
+     "French doors onto a garden need a threshold that keeps rain out and a floor inside that can take the track.",
+     "We agree the colour, the handle colour and which rooms are in the quote. A whole-house price that misses the bay is not a whole-house price.",
+     "Making good inside is plaster and a decorator's edge. The quote says whether that is included."],
+    ["opening sizes including the bay","misted units or rotten frames","sills and the damp course","lintels over wide doors","sash cords and the weights","the colour and the handles","internal plaster damage","trickle vents","a lock suited to a rental","scaffold or a safe ladder","lead or asbestos on a very old frame","who is decorating afterwards"],
+    "We measure the opening. A window ordered from a guess will not fit, and we will not ask you to live with the gap.")
+
+R["demolition"] = pack("demolition",
+    "Demolition in a house is usually internal: a wall removal, a knock-through, a chimney breast, a strip-out, or taking down what an extension is replacing. It is controlled, propped and cleaned, not a sledgehammer on a Saturday. Load-bearing walls need a design and a beam. Chimney breasts need the stack thought about above, including the neighbour's half on a party wall. Strip-outs for a landlord clear the kitchen or the bathroom so the next trade can start. Rubbish leaves the house. We do not fill the front garden and call that removed. Structural repairs and steel beams sit with this work when the opening is the point of the job.",
+    ["A knock-through is a beam, padstones and the making good. The dusty day is the short part.",
+     "Load-bearing wall removal is not decided by tapping the wall. If we are not sure, we open a small hole and we get it designed.",
+     "Chimney breast removal includes how the stack above is supported. Leaving a stack standing on fresh air is not an option.",
+     "Strip-out protects floors you are keeping and isolates services before anything is cut.",
+     "Internal demolition dust travels. We screen doorways and we agree which rooms stay liveable.",
+     "Steel beam installation is the size on the design, bedded properly, fire-protected as the design asks.",
+     "Rubbish is bagged and removed. The quote says so.",
+     "Party-wall neighbours are told. A breast on a shared chimney is a conversation before it is a hammer."],
+    ["whether the wall is load-bearing","the beam design","padstones and the brick they sit on","the chimney stack above","party wall","services in the wall","dust protection","floors to keep","rubbish removal","how long the room is open","props and how long they stay","plaster and decoration after"],
+    "We prop and we design openings. Knocking a wall out because it 'feels thin' is how ceilings crack.")
+
+R["general-building"] = pack("building work",
+    "General building is the work that holds a house together between the specialist trades: a builder for a renovation, property maintenance, structural repairs, steels, building-regulations work, a handyman day that is actually a proper repair, and refurbishment for a landlord. An HMO conversion build is the walls, the fire doors, the kitchen and the rooms a licence expects, quoted from a survey rather than a template. We are the people who turn up, protect the house, and leave it so the decorator or the tenant can use it. Maintenance is the gutter, the door, the patch of ceiling and the fence, booked as one visit when that saves you three call-outs. We write what is included.",
+    ["A house renovation is sequenced. Strip-out, structure, first fix, plaster, second fix, decoration. Skipping the order costs you weeks.",
+     "Property maintenance for landlords is a list. Send the list. We price the list, not a vague 'sort the house'.",
+     "Structural repairs are opened up enough to see the timber or the crack. We do not sister a joist we have not looked at.",
+     "Handyman work is the smaller end of the same standard. If the job is really a rewire or a roof, we say so.",
+     "Building regulations work is inspected. We do not hide a beam behind plaster the day before an inspection we have not booked.",
+     "Refurbishment between tenancies is dated. You get the keys back when the list is done.",
+     "We coordinate the electrician and the plasterer when they are both on the quote, so you are not the project manager.",
+     "Free surveys are how we stop the quote being a work of fiction. Photos help. They do not replace the visit."],
+    ["the list of what you actually want done","which rooms stay occupied","keys and alarms","the order of trades","building control if it applies","a tenant date","structural timber we cannot see yet","waste","parking for the van in {place}","neighbours","what success looks like on the last day","the photos that will not show the whole storey"],
+    "A builder's quote is a list. If it is not on the list, it is not in the price, and we would rather write the list first.")
+
+R["roofing"] = pack("roofing",
+    "Roofing for a house is leaks, tiles, slate, flat roofs in felt, GRP and EPDM, leadwork, chimneys, gutters, fascias, soffits and the Velux or skylight that lets in more than light. A roof leak is traced. We do not slap mastic on a slipped tile and call it repaired if the valley or the flashing is the real path. Flat roofs are a system: the deck, the upstands, the outlets and the covering. GRP and fibreglass suit some decks. EPDM and rubber suit others. Felt and torch-on still have a place. We say which, after we have stood on the roof or seen it properly. Emergency call-outs stop water entering today. The permanent repair is quoted in daylight. Chimney pointing, lead flashing, ridge tiles, verges and dry-ridge systems are named separately because they fail separately. Gutters and fascias keep the water off the wall. A new roof with a blocked outlet still leaks.",
+    ["GRP flat roofs need a dry deck and the right weather window. We do not lay resin onto a wet board.",
+     "EPDM is a single sheet. The details at the outlet and the upstand are where it succeeds or fails.",
+     "Felt roofs are layered and the laps matter. A patch is cut back to sound felt, not stuck on the dirt.",
+     "Slate and tile repairs include the reason the slate slipped: a nail, a batten, a cracked slate beside it.",
+     "Lead flashing and valleys are dressed, not glued. Cement fillets on a chimney crack and we do not sell them as lead.",
+     "Gutters are reset to fall, and downpipes are checked. A new gutter that ponds will overflow into the fascia.",
+     "Fascia and soffit replacement is the timber or the uPVC, the ventilation, and the gutter put back on a straight line.",
+     "Velux and skylight work includes the flashing kit for that roof, not a generic collar of lead and hope."],
+    ["where the water is appearing inside","the roof covering: tile, slate, felt, GRP, EPDM","valley and chimney lead","ridge and hip mortar or a dry system","gutters and outlets","fascia rot","access and scaffold","a flat roof deck that is soft","moss holding water","storm damage and what the insurer has asked for","Velux age and the flashing","whether anyone is under the drip tonight"],
+    "We find the leak. Flat roofs, lead and gutters are different jobs and the quote says which one you are buying.")
+
+R["electrical"] = pack("electrical work",
+    "Electrical work in a home is rewires, consumer units, EV chargers, outdoor sockets, garden and security lighting, fault finding, EICRs, extra sockets, downlights, smoke alarms and electric showers. An EICR is listed from £160. Everything else on this page is quoted after we see the house. A full rewire is a different disruption from a partial rewire or a new socket. Consumer unit upgrades replace the old fuse board and are tested. Fault finding is the tripping circuit, not a new board sold because we have not looked. Security lighting and garden lighting are cabled properly, not an extension lead across the lawn. Smoke and heat alarms are sited and, where they should be, interlinked. Electric showers need a supply that can take them. We certify the work we do. Part P and minor works are explained in plain words when they apply.",
+    ["A full rewire opens floors and chases walls. We agree how you will live in the house while it happens.",
+     "A partial rewire keeps what is sound and replaces what is not. We test before we condemn a cable we have not seen.",
+     "Consumer unit changes include the labelling and the test sheet. You get the certificate.",
+     "EV charger installation looks at the supply, the earthing and where the cable can run without becoming a trip hazard.",
+     "Outdoor sockets and garden lights are on the right protection. A socket behind a wet tap is refused.",
+     "Security lighting is aimed so it lights your path and not your neighbour's bedroom. PIR settings are shown to you.",
+     "Downlights in a loft need covers or fire hoods where the ceiling requires them, and they are not buried in new insulation without a thought.",
+     "An electric shower that keeps tripping is often the cable or the unit, and we find which before we sell you both."],
+    ["the consumer unit and its age","circuits that trip","the earthing","where an EV cable can run","loft insulation around lights","smoke alarm positions","the shower rating","bonded pipework","a landlord EICR date","access under floors","garden routes for lighting cable","certificates you need for a sale or a licence"],
+    "EICRs are from £160. Other electrical work is quoted from a look at the board and the job, not from a guess on the phone.")
+
+R["aov"] = pack("AOV and smoke control",
+    "AOV and smoke control is the equipment that opens a vent, runs a fan or holds a smoke path when there is a fire. In ordinary buildings that is a roof vent, a stairwell louvre, a window actuator, a smoke shaft, a damper, or a mechanical extract. The panel, the batteries, the call point and the link to the fire alarm are part of the system, not extras. We install, replace motors and actuators, change panels, and service, test, repair and maintain what is already there. Brands we work on include Colt, SE Controls, D+H and WindowMaster, and others when the kit on the wall is one we can support. A stuck-open roof vent is both a leak and a failed vent. An emergency visit makes it safe and we quote the part in daylight. We do not describe this as BAFE-backed. Servicing is a recorded test, not a glance from the landing.",
+    ["Natural smoke ventilation uses the buoyancy of smoke and an opening at the top of the stair. Mechanical extract uses fans. They are not interchangeable because a drawing said 'AOV'.",
+     "Window actuators and AOV motors fail on their own. We replace the motor or the actuator we found, and we test it from the panel.",
+     "A panel replacement includes the batteries, the zones and the cause-and-effect you already have. We do not wipe a working strategy because the box is new.",
+     "Smoke shafts and dampers are inspected and tested. A damper that does not move is written up, not tick-boxed.",
+     "Louvre vents and roof vents need to close against weather as well as open on a fire signal. We check both.",
+     "Stairwell vents are tested when the stair can be managed. We agree that before we fill the stair with a test.",
+     "Servicing is scheduled. You get a note of what passed, what failed, and what we did not pretend to test.",
+     "Car-park ventilation and pressurisation are different systems again. The quote names the one in your building."],
+    ["the panel brand and a photo of it","whether the vent is stuck open or shut","roof access and edge protection","batteries and their date","the fire-alarm interface","window actuators on each floor","smoke dampers we can reach","a stair that is in use","previous test sheets","Colt, SE Controls, D+H or WindowMaster kit","a leak that is really an open vent","who must be told before a test"],
+    "We service and repair the smoke control system that is on the building. We do not say BAFE-backed, and we do not invent a test we did not do.")
+
+R["aov-manufacturers"] = pack("AOV equipment",
+    "Manufacturer work on smoke vents is Colt, SE Controls, D+H, WindowMaster, and the other names that turn up on panels and actuators, including GEZE, Bilco, Brakel, Gilberts, Actulux and Aumuller where that is the kit fitted. We are not the factory. We attend the building, identify the product from the label, and service, repair or replace the part the survey supports. A Colt vent and an SE Controls panel are not a guess from the street. Bring the photo of the label. D+H actuators and WindowMaster motors are replaced like-for-like when that is the right repair, and the panel is tested afterwards. If the product is obsolete we say so and we quote the closest honest replacement, with the interface to the fire alarm included in the conversation.",
+    ["Colt roof vents and louvres are identified from the plate, not from a similar-looking hatch.",
+     "SE Controls panels have their own menus and battery arrangements. We follow that panel, not a generic checklist.",
+     "D+H actuators are matched to the window and the chain or the spindle that is there.",
+     "WindowMaster motors are set up so the window still closes and seals, not only so it opens once.",
+     "A mixer of brands on one stair is common. The quote lists each one we are being asked to touch.",
+     "Obsolete panels are replaced with the cause-and-effect written down first.",
+     "We keep the test record with the building manager or the landlord who booked us.",
+     "Spares are ordered against the label. A wrong actuator shipped to {place} helps nobody."],
+    ["a photograph of the product label","the panel model","how many vents are on the system","batteries","the window size and the actuator stroke","whether the fire alarm triggers the vent","roof access","obsolete kit","who holds the old test sheets","mixed brands on one site","the leak from a vent that will not shut","a date the stair can be tested"],
+    "We work on the brand that is fitted. The label decides the part, not a guess.")
+
+TOPICS = {
+    "coving": "Coving is the decorative moulding where the wall meets the ceiling. We run new lengths, mitre the corners and repair cracked or sagging cornice. A repair is let into the existing run so the profile matches. Filler smeared along a crack is not a coving repair.",
+    "cornice-repair": "Cornice repair matches the existing profile, cuts out the failed length and joins the new piece so the eye does not stop at the patch. We look at whether the ceiling behind it is moving before we stick anything back.",
+    "artex": "Artex and textured coatings are removed or skimmed over once we know what they are stuck to. The room is protected. You are left with a flat ceiling, not a half-scraped texture.",
+    "grp-roofing": "GRP, sometimes called fibreglass, is a resin flat-roof system laid over a dry, sound deck. Trims, outlets and the weather on the day all matter. We do not lay it on a soft or wet board.",
+    "fibreglass-roofing": "Fibreglass roofing is the same family as GRP: a laminated roof on a prepared deck, with the edge trims doing as much work as the flat. We survey the deck first.",
+    "epdm-roofing": "EPDM is a rubber sheet. The sheet is only as good as the outlet, the upstand and the deck it is stuck or laid on. We detail those rather than stretching a membrane over a ponding roof.",
+    "rubber-roofing": "Rubber roofing is a single-ply sheet, usually EPDM. Seams and the detail at the wall are the bits that leak if they are rushed. We look at the falls before we cover them up.",
+    "security-lighting": "Security lighting is an external light, often with a PIR, aimed at your path or drive. It is cabled from a proper point, not plugged into a trailing lead. We aim it so it does not blaze into the house next door.",
+    "aov-motor": "An AOV motor opens and closes the vent. When it fails, the vent sticks open, stuck shut, or moves and does not make the limit. We identify the motor from the label and test it from the panel after it is changed.",
+    "aov-actuator": "A window actuator is the device on the smoke vent or the stair window. Replacement includes the chain or spindle and a test that the window still shuts tight against the weather.",
+    "smoke-damper": "A smoke damper sits in the duct or the shaft and must move when the system asks it to. Testing is a look at the damper moving, not a tick on a sheet from the plant room doorway.",
+    "louvre": "A louvre vent is the bladed opening, often on a stair or a roof plant position. It has to open on the fire signal and close afterwards so the stair is not left open to the rain.",
+    "eicr": "An EICR is the electrical inspection of the installation. It is listed from £160. You get the report. Remedial work is a separate quote, not bundled in without being asked for.",
+    "consumer-unit": "A consumer unit upgrade replaces the fuse board, labels the circuits and is tested. We do not change a board to hide a fault we have not found.",
+    "ev-charger": "An EV charger needs a look at the supply, the earth and a safe route for the cable to the drive. The unit is commissioned and you are shown how it is isolated.",
+    "wet-room": "A wet room is a tanked floor with a fall to a drain, not tiles on a flat bathroom floor. The tanking and the waste are the job. The tiles come after.",
+    "damp-proof": "A damp-proof course is only part of a damp diagnosis. We check gutters, ground levels and the cavity before we talk about injection.",
+    "loft-conversion": "A loft conversion is stairs, structure, insulation and a room that has the headroom. We measure before we name it a dormer, a hip-to-gable or a Velux room.",
+    "kitchen-fit": "Kitchen fitting is units, worktops and services in the right order. Gas connections are carried out by Gas Safe registered engineers.",
+    "flat-roof": "A flat roof is the deck, the falls, the outlets and the covering, whether that covering is felt, GRP or EPDM. We do not cover a rotten deck.",
+    "gutter": "Guttering is the falls, the outlets and the brackets. A gutter full of silt or a downpipe that is disconnected will wet the wall no matter how new the tiles are.",
+    "fascia": "Fascias and soffits are the boards at the eaves. Replacement includes putting the gutter back on a straight line and keeping the roof ventilation.",
+    "chimney": "Chimney work is repointing, flaunching, pots, cowls, lead flashings and, where agreed, taking a stack down. Roof access is part of the quote.",
+    "lead": "Leadwork is flashings, valleys and soakers, dressed to the roof. Cement smeared where lead should be is not leadwork and we will not sell it as such.",
+    "smoke-vent": "A smoke vent is the opening that lets smoke out of the stair or the corridor. It has a panel, a power supply and a reason it opens. We test that chain, not just the hatch.",
+    "smoke-control": "Smoke control is the whole arrangement: vents, fans, dampers, shafts and the panel. Servicing records what moved and what did not.",
+    "rewire": "A rewire replaces the cables and the accessories that are in the scope, and it is tested. We agree how much of the house is open at once.",
+    "downlight": "Downlights are cut into the ceiling, wired, and fitted with the hoods or covers the ceiling needs. They are not buried in insulation without a plan.",
+    "electric-shower": "An electric shower needs a cable and a supply that can take the kilowatts, plus an isolator you can reach. If the old cable is the fault, we say so.",
+    "fence": "Fencing stands or falls on the posts. We set posts that will hold the panel or the close-board, and we hang gates on posts that are not already loose.",
+    "block-paving": "Block paving is a base, an edge and a fall. The blocks are the last layer. A soft base will sink however neat the pattern looks on day one.",
+    "drainage": "Drainage repairs start with where the water is going. A camera survey shows a crack or a root. We do not dig up a drive without that, unless the collapse is already obvious.",
+    "extension": "An extension is foundations, walls, a roof and an opening into the house you already live in. Drains and the neighbour's wall are checked before the dig.",
+    "render": "Rendering is the coat on the outside wall. We find out whether the old coat is hollow and whether the wall is damp before we put a new coat over it.",
+    "plaster": "Plastering makes a flat surface for decoration. We do not skim over damp or over plaster that is hollow and live.",
+}
+
+json.dump({"families": R, "topics": TOPICS}, open("/tmp/fam_rest2.json","w"))
+print("rest2", len(R), "topics", len(TOPICS))

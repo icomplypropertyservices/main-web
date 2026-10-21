@@ -15,18 +15,38 @@ if (!empty($metaTitleExact)) {
 } else {
     $documentTitle = $hasBrandInTitle ? $rawPageTitle : ($rawPageTitle . ' | iComply Property Services');
 }
+if (!function_exists('icomplyCapPlain')) {
+    function icomplyCapPlain(string $text, int $max): string
+    {
+        $text = trim(preg_replace('/\s+/u', ' ', $text) ?? $text);
+        $len = function_exists('mb_strlen') ? mb_strlen($text) : strlen($text);
+        if ($len <= $max) {
+            return $text;
+        }
+        $cut = function_exists('mb_substr') ? mb_substr($text, 0, $max) : substr($text, 0, $max);
+        $sp = function_exists('mb_strrpos') ? mb_strrpos($cut, ' ') : strrpos($cut, ' ');
+        if ($sp !== false && $sp > (int)($max * 0.55)) {
+            $cut = function_exists('mb_substr') ? mb_substr($cut, 0, $sp) : substr($cut, 0, $sp);
+        }
+        return rtrim($cut, " .,;:-");
+    }
+}
+$documentTitle = icomplyCapPlain($documentTitle, 60);
 $pageTitleSafe = htmlspecialchars($documentTitle, ENT_QUOTES, 'UTF-8');
 $ogTitleRaw = trim((string)($ogTitle ?? ''));
 if ($ogTitleRaw === '') {
-    $ogTitleRaw = $rawPageTitle;
+    $ogTitleRaw = $documentTitle;
 }
+$ogTitleRaw = icomplyCapPlain($ogTitleRaw, 60);
 $ogTitleSafe = htmlspecialchars($ogTitleRaw, ENT_QUOTES, 'UTF-8');
-$metaDescRaw = $metaDesc ?? 'iComply Property Services — property maintenance and compliance across Greater Manchester and the North West: EICR, gas, fire, kitchens, renovations, CCTV, Legionella and asbestos. Offerton, Stockport SK2 5DE.';
+$metaDescRaw = $metaDesc ?? 'Property maintenance and compliance from Stockport. Call 07517 806082 for a written quote.';
+$metaDescRaw = icomplyCapPlain((string)$metaDescRaw, 155);
 $metaDescSafe = htmlspecialchars($metaDescRaw, ENT_QUOTES, 'UTF-8');
 $ogDescRaw = trim((string)($ogDescription ?? ''));
 if ($ogDescRaw === '') {
     $ogDescRaw = $metaDescRaw;
 }
+$ogDescRaw = icomplyCapPlain($ogDescRaw, 155);
 $ogDescSafe = htmlspecialchars($ogDescRaw, ENT_QUOTES, 'UTF-8');
 $metaKeywordsSafe = htmlspecialchars(
     $metaKeywords ?? 'property maintenance, landlord compliance, EICR, gas safety, fire risk assessment, kitchens, renovations, CCTV, legionella, asbestos, Stockport, Manchester',

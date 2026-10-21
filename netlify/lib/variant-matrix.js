@@ -1,4 +1,5 @@
 import { MATRIX_CSS, MATRIX_HEADER, MATRIX_FOOTER, MATRIX_SITE_FOOTER } from "./page-shell.js";
+import { heroCta } from "./hero-cta.js";
 /**
  * Decode the compact keyword-variant catalogue written by
  * website/includes/keyword-variants.php. Stem is the fastest radix so every
@@ -36,12 +37,12 @@ function titleCaseSlug(slug) {
 
 function clampMeta(text) {
   const clean = String(text).replace(/\s+/g, " ").trim();
-  if (clean.length <= 158 && clean.length >= 40) return clean;
+  if (clean.length <= 155 && clean.length >= 40) return clean;
   if (clean.length < 40) {
-    return `${clean} Price on application for Greater Manchester.`.slice(0, 158);
+    return `${clean} Written quote for Greater Manchester. Call 07517 806082.`.slice(0, 155);
   }
-  const cut = clean.slice(0, 158).replace(/\s+\S*$/, "");
-  return cut.length >= 40 ? cut : clean.slice(0, 158);
+  const cut = clean.slice(0, 155).replace(/\s+\S*$/, "");
+  return cut.length >= 40 ? cut : clean.slice(0, 155);
 }
 
 function jsonLd(value) {
@@ -359,7 +360,7 @@ ${MATRIX_CSS}
 ${MATRIX_HEADER}
 <main>
 ${crumbs}
-<h1>${escapeHtml(h1)}</h1>
+<h1>${escapeHtml(h1)}</h1>${heroCta(h1)}
 <figure>
 <img src="${imageSrc}" alt="${escapeHtml(imageAlt)}" width="1400" height="900">
 </figure>

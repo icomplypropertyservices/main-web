@@ -13,6 +13,8 @@ import { breadcrumbHtml, isGmTown, isLocalTown, matrixRelatedHtml } from "../lib
 import { gmTownBlurb } from "../lib/gm-blurbs.js";
 import { p0KeepsTown, renderNationwideP0Town } from "../lib/nationwide-p0.js";
 import { withContactWidgets } from "../lib/contact-widgets.js";
+import { heroCta } from "../lib/hero-cta.js";
+import { TRADE_ALIAS, renderTradesHub, tradesFaqs, tradesHas, tradesImages, tradesIsNewService, tradesLinkHtml, tradesProseHtml } from "../lib/trades-lock.js";
 import { applyMoneyCtr } from "../lib/money-ctr.js";
 import { townFactsBlock } from "../lib/town-facts.js";
 import { depthBankParagraphs, thinFaqHtml, thinFaqs, thinImages, thinOgMeta, thinProseHtml } from "../lib/thin-quality-bar.js";
@@ -20,10 +22,18 @@ import { townDepthBlock } from "../lib/town-depth.js";
 import fireAlarmFamily from "../../website/data/fire-alarm-installer-family.json" with { type: "json" };
 import mainlandTownDoc from "../../website/data/uk-mainland-towns-10k.json" with { type: "json" };
 import gscKeepDoc from "../../website/data/gsc-keep-towns.json" with { type: "json" };
+import serveUpgradeDoc from "../../website/data/seo-upgrade/serve-200.json" with { type: "json" };
 
 // Town pages Google already ranks (GSC impressions). Never 301 these to a hub;
 // render them index,follow so the rankings are kept.
 const GSC_KEEP = new Set(gscKeepDoc.paths || []);
+const SERVE_UPGRADE = new Set(serveUpgradeDoc.paths || []);
+// Retired service URLs the upgrade queue asked to serve as 200 town pages.
+// Images come from the live heating family. The public path stays the requested slug.
+const UPGRADE_SERVICE = {
+  "solar-thermal": "heating",
+  "ground-source-heat-pumps": "heating",
+};
 const CTR_PHONE = "07517 806082";
 
 function ctrPriceFrom(slug) {
@@ -56,7 +66,7 @@ export function ctrDescription(subject, town, slug, gas) {
     `${lead}${who} Fixed written quote, certificates emailed. Call or WhatsApp ${CTR_PHONE}.`,
     `${lead}${who} Call or WhatsApp ${CTR_PHONE}.`,
     `${lead} Same/next-day. Call ${CTR_PHONE}.`,
-  ]) if (d.length <= 160) return d;
+  ]) if (d.length <= 155) return d;
   return clampMeta(`${lead} Same/next-day. Call ${CTR_PHONE}.`);
 }
 
@@ -206,9 +216,9 @@ function words(text) {
 
 function clampMeta(text) {
   const clean = String(text).replace(/\s+/g, " ").trim();
-  if (clean.length <= 158) return clean;
-  const cut = clean.slice(0, 158).replace(/\s+\S*$/, "");
-  return cut.length >= 40 ? cut : clean.slice(0, 158);
+  if (clean.length <= 155) return clean;
+  const cut = clean.slice(0, 155).replace(/\s+\S*$/, "");
+  return cut.length >= 40 ? cut : clean.slice(0, 155);
 }
 
 function jsonLd(value) {
@@ -327,7 +337,8 @@ export function renderTownPage(input) {
     path = `/pages/keywords/${input.keyword}/${input.town}`;
   } else {
     serviceSlug = input.service;
-    serviceName = labels[serviceSlug];
+    const upgradeFamily = UPGRADE_SERVICE[serviceSlug] || "";
+    serviceName = labels[serviceSlug] || (upgradeFamily ? titleCaseSlug(serviceSlug) : "");
     if (!serviceName || RESERVED.has(serviceSlug)) return null;
     keywordKnown = true;
     const related = (serviceKeywords[serviceSlug] || [])[0];
@@ -371,7 +382,8 @@ export function renderTownPage(input) {
   // Jack: every real page is indexable. Never emit noindex here.
   const robots = "index, follow";
   const seed = hashStr(`${kind}|${subject}|${serviceSlug}|${townSlug}`);
-  const audience = pick(AUDIENCES, seed);
+  const lockEarly = tradesHas(String(input.keyword || "")) || tradesHas(String(input.job || "")) || tradesIsNewService(String(input.service || ""));
+  const audience = lockEarly ? "homeowners and landlords" : pick(AUDIENCES, seed);
   const visit = pick(VISIT_STYLES, seed >>> 3);
   const neighbours = Array.isArray(place.neighbours) ? place.neighbours.filter(Boolean) : [];
   const near = neighbours.length ? neighbours.join(", ") : "Stockport, Manchester and the surrounding North West";
@@ -389,9 +401,10 @@ export function renderTownPage(input) {
   const h1 = `${subject} for ${audience} in ${place.name}`;
   const ctrSlug = kind === "keyword" ? input.keyword : serviceSlug;
   const ctrGas = Boolean(keyword.gas) || serviceSlug === "gas-systems" || serviceSlug === "heating";
-  const title = ctrTitle(subject, place.name, ctrSlug);
+  let title = ctrTitle(subject, place.name, ctrSlug);
   const description = ctrDescription(subject, place.name, ctrSlug, ctrGas);
-  const imageSlug = IMAGE_SLUG[serviceSlug] || serviceSlug;
+  const imageFamily = UPGRADE_SERVICE[serviceSlug] || serviceSlug;
+  const imageSlug = IMAGE_SLUG[imageFamily] || imageFamily;
 
   const gas = keyword.gas || serviceSlug === "gas-systems" || serviceSlug === "heating";
   const packed = (kind === "keyword" || kind === "service")
@@ -481,11 +494,42 @@ export function renderTownPage(input) {
     const shift = faqs.length ? mix32(hashStr(`faq|${townSlug}|${subject}`)) % faqs.length : 0;
     faqs.push(...faqs.splice(0, shift));
   }
-  const faqBlock = (fireTown || fireFamily || facts)
+  const lockSlug = kind === "keyword"
+    ? String(input.keyword || "")
+    : kind === "job"
+      ? String(input.job || "")
+      : kind === "service"
+        ? String(serviceSlug || "")
+        : "";
+  const lockPage = lockSlug !== "" && (tradesHas(lockSlug) || (kind === "service" && tradesIsNewService(lockSlug)));
+  let tradesGallery = "";
+  if (lockPage) {
+    const fullTitle = `${subject} in ${place.name} | iComply`;
+    if (fullTitle.length <= 60) {
+      title = fullTitle;
+    } else {
+      const tail = String(lockSlug).replace(/-/g, " ");
+      const budget = 60 - ` in ${place.name} | iComply`.length;
+      const cut = tail.slice(Math.max(0, tail.length - budget)).replace(/^\s*\S*\s/, "");
+      title = `${cut} in ${place.name} | iComply`;
+      if (title.length > 60 || title.length < 15) title = `${place.name} ${tail}`.slice(0, 49).trim() + " | iComply";
+    }
+    proseHtml += tradesProseHtml(lockSlug, place.name, townSlug) + tradesLinkHtml(lockSlug, townSlug);
+    const extraFaqs = tradesFaqs(lockSlug, place.name);
+    faqs.push(...extraFaqs);
+    tradesGallery = tradesImages(lockSlug, place.name).html;
+  }
+  let faqBlock = (fireTown || fireFamily || facts)
     ? `<section id="faq" class="faq" data-pe-slot="q5-thin-faq"><h2>Questions about ${escapeHtml(place.name)}</h2>${faqs.map(([q, a]) => (
       `<details class="faq-item"><summary>${escapeHtml(q)}</summary><p>${escapeHtml(a)}</p></details>`
     )).join("")}</section>`
     : thinFaqHtml(qualityCtx);
+  if (lockPage && !(fireTown || fireFamily || facts)) {
+    const extraFaqs = tradesFaqs(lockSlug, place.name);
+    faqBlock += `<section id="faq" class="faq"><h2>Questions about ${escapeHtml(place.name)}</h2>${extraFaqs.map(([q, a]) => (
+      `<details class="faq-item"><summary>${escapeHtml(q)}</summary><p>${escapeHtml(a)}</p></details>`
+    )).join("")}</section>`;
+  }
 
   const hubHref = kind === "keyword"
     ? `/pages/keywords/${input.keyword}`
@@ -581,7 +625,8 @@ ${MATRIX_CSS}
 ${MATRIX_HEADER}
 <main>
 ${crumbs}
-<h1>${escapeHtml(h1)}</h1>
+<h1>${escapeHtml(h1)}</h1>${heroCta(h1)}
+${tradesGallery}
 ${images.html}
 <article id="local-copy">
 ${proseHtml}
@@ -725,7 +770,7 @@ function placeAliasRedirect(path) {
 }
 
 export function nonGmMatrixRedirect(path) {
-  if (GSC_KEEP.has(path)) return null;
+  if (GSC_KEEP.has(path) || SERVE_UPGRADE.has(path)) return null;
   let m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   if (m) {
     if (isLocalTown(m[2]) || p0KeepsTown(m[1], m[2]) || fireInstallerNationwide(m[1], m[2])) return null;
@@ -863,9 +908,9 @@ export default async (request, context) => {
     if (p0KeepsTown(keywordMatch[1], keywordMatch[2])) {
       rendered = renderNationwideP0Town(keywordMatch[1], keywordMatch[2]);
     }
-    if (!rendered && !(catalogue.keywords || {})[keywordMatch[1]]) {
+    if (!rendered && !(catalogue.keywords || {})[keywordMatch[1]] && !tradesHas(keywordMatch[1]) && !SERVE_UPGRADE.has(path)) {
       // Unknown keyword (retired slug): 410 Gone, like a dead hub,
-      // instead of a 200 noindex soft 404.
+      // instead of a 200 noindex soft 404. Lock slugs stay indexable.
       const hub = await fetch(new URL(`/pages/keywords/${keywordMatch[1]}`, url.origin), { redirect: "manual" });
       if ((hub.status === 301 || hub.status === 308) && hub.headers.get("location")) {
         return Response.redirect(new URL(hub.headers.get("location"), url.origin).toString(), 301);
@@ -896,6 +941,23 @@ export default async (request, context) => {
   if (!rendered) {
     const fallback = await context.next();
     if (fallback.status !== 404) return fallback;
+    if (serviceMatch && TRADE_ALIAS[serviceMatch[1]] && isLocalTown(serviceMatch[2])) {
+      const dest = `/pages/${TRADE_ALIAS[serviceMatch[1]]}/${serviceMatch[2]}`;
+      return Response.redirect(new URL(dest, url.origin).toString(), 301);
+    }
+    if (serviceMatch && (serviceMatch[1] === "keywords" || serviceMatch[1] === "jobs") && tradesHas(serviceMatch[2])) {
+      const hubHtml = renderTradesHub(serviceMatch[2]);
+      if (hubHtml) {
+        return new Response(applyMoneyCtr(path, withContactWidgets(scrubMeta(hubHtml))), {
+          status: 200,
+          headers: {
+            "content-type": "text/html; charset=utf-8",
+            "cache-control": "public, max-age=3600",
+            "x-robots-tag": "index, follow",
+          },
+        });
+      }
+    }
     // Unknown brand/job/service in a town path (old slugs, /pages/undefined/x):
     // 301 to the closest live hub rather than a 404.
     let to = "/pages/areas";

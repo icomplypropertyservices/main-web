@@ -312,6 +312,7 @@ function icomplyRenderShopIndex(array $ctx): string
         . '<p class="lead">Counts below are from the public Shopify products dump used to build these pages. Electrical is the thin real set only. Gas stays empty until a live gas SKU exists.</p>'
         . '<div class="hub-grid">' . $cardHtml . '</div>'
         . icomplyShopSourceNote($ctx)
+        . icomplyShopDepthHtml('index')
         . '</div></section>';
 
     return icomplyShopPage('index', $hero, $main, $ctx);
@@ -338,7 +339,7 @@ function icomplyRenderShopCategory(string $slug, array $products, array $ctx): s
         ],
         'gas' => [
             'title' => 'Gas supplies',
-            'lead' => 'The live Shopify dump has no product that is clearly gas. This hub stays empty on purpose. ',
+            'lead' => 'The live Shopify dump has no product that is clearly gas. This page explains how to ask for a written quote instead. Gas work is carried out by Gas Safe registered engineers.',
         ],
     ];
     $info = $meta[$slug];
@@ -381,9 +382,9 @@ function icomplyRenderShopCategory(string $slug, array $products, array $ctx): s
     if ($products === []) {
         $grid = '<div class="empty-card">'
             . '<h2>Nothing to list yet</h2>'
-            . '<p>No live gas products were returned by <code>products.json</code>. Use enquire or POA. When a real gas SKU is published on Shopify it will appear here.</p>'
+            . '<p>No live gas products were returned by <code>products.json</code>. Ask for a written quote. When a real gas SKU is published on Shopify it will appear here. Gas work is carried out by Gas Safe registered engineers.</p>'
             . '<div class="cta-row">'
-            . '<a class="btn btn-orange" href="mailto:' . icomplyH((string)$ctx['enquire_email']) . '?subject=' . rawurlencode('Gas supplies enquiry / POA') . '">Enquire / POA</a>'
+            . '<a class="btn btn-orange" href="mailto:' . icomplyH((string)$ctx['enquire_email']) . '?subject=' . rawurlencode('Gas supplies enquiry') . '">Ask for a written quote</a>'
             . '<a class="btn btn-ghost" href="https://icomplypropertyservices.co.uk/contact">Free quote</a>'
             . '</div></div>';
     } else {
@@ -398,6 +399,7 @@ function icomplyRenderShopCategory(string $slug, array $products, array $ctx): s
         . $lineHtml
         . $grid
         . icomplyShopSourceNote($ctx)
+        . icomplyShopDepthHtml($slug)
         . '</div></section>';
 
     return icomplyShopPage($slug, $hero, $main, $ctx);
@@ -526,6 +528,11 @@ function icomplyShopSpecs(array $product, string $vendor, string $type): string
     $bits = array_values(array_filter([$type, $vendor !== '' ? $vendor : '']));
     $head = implode(' · ', $bits);
     $body = icomplyPlainText((string)($product['body_html'] ?? ''));
+    $body = str_replace(
+        ['07471 454785', '07471454785', 'confirm on 07471'],
+        ['07517 806082', '07517806082', 'confirm on 07517 806082'],
+        $body
+    );
     $body = preg_replace('/Prices? ex VAT.*$/i', '', $body) ?? $body;
     $body = trim($body);
     if ($body !== '') {
@@ -571,7 +578,7 @@ function icomplyShopPage(string $current, array $hero, string $main, array $ctx)
         'fire' => 'Live fire supplies from the iComply Shopify catalogue — panels, detectors, AOV and wireless fire. Order on Shopify or enquire.',
         'electrical' => 'Thin live electrical set from Shopify: batteries, fire cable, clips, SigTEL / disabled refuge and remote LED indicators.',
         'security' => 'CAME, Videx and Bell System supplies from the live Shopify catalogue — gates, barriers, garage doors, intercoms and automation.',
-        'gas' => 'Gas supplies hub. No live gas SKUs in the Shopify dump. Enquire or POA only.',
+        'gas' => 'Gas supplies hub. No gas SKUs in the live dump. Written quote on 07517 806082. Gas work is by Gas Safe registered engineers.',
     ];
     $path = $current === 'index' ? '/shop/' : '/shop/' . $current . '/';
     $canonical = 'https://icomplypropertyservices.co.uk' . $path;
@@ -606,6 +613,7 @@ function icomplyShopPage(string $current, array $hero, string $main, array $ctx)
         . '<section class="hero"><div class="wrap">'
         . '<p class="hero-kicker">' . icomplyH($hero['kicker']) . '</p>'
         . '<h1>' . icomplyH($hero['title']) . '</h1>'
+        . icomplyShopHeroCta((string)$hero['title'])
         . '<p>' . icomplyH($hero['lead']) . '</p>'
         . (isset($hero['meta']) ? '<p class="hero-meta">' . icomplyH($hero['meta']) . '</p>' : '')
         . '</div></section>'
@@ -657,6 +665,24 @@ function icomplyH(string $value): string
     return htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
 }
 
+function icomplyShopHeroCta(string $label): string
+{
+    if (!function_exists('icomplyHeroCtaHtml')) {
+        require_once dirname(__DIR__) . '/includes/hero-cta.php';
+    }
+    return icomplyHeroCtaHtml($label);
+}
+
+function icomplyShopDepthHtml(string $slug): string
+{
+    $safe = preg_replace('/[^a-z0-9-]/', '', $slug) ?? '';
+    $file = dirname(__DIR__) . '/includes/shop-depth/' . $safe . '.html';
+    if (!is_file($file)) {
+        return '';
+    }
+    return (string)file_get_contents($file);
+}
+
 /**
  * Copy static shop files (never PHP source) from website/shop → dest.
  */
@@ -690,9 +716,20 @@ function icomplyCopyShopStatic(string $src, string $dest): void
         if (!is_dir($targetDir) && !mkdir($targetDir, 0755, true) && !is_dir($targetDir)) {
             throw new RuntimeException('Cannot mkdir ' . $targetDir);
         }
-        if ($ext === 'html' && function_exists('icomplyApplyGasLegalHtml')) {
+        if ($ext === 'html') {
             $raw = (string)file_get_contents($file->getPathname());
-            file_put_contents($target, icomplyApplyGasLegalHtml($raw));
+            if (function_exists('icomplyApplyGasLegalHtml')) {
+                $raw = icomplyApplyGasLegalHtml($raw);
+            }
+            if (function_exists('icomplyInjectHeroCta')) {
+                $raw = icomplyInjectHeroCta($raw);
+            }
+            $raw = str_replace(
+                ['07471 454785', '07471454785'],
+                ['07517 806082', '07517806082'],
+                $raw
+            );
+            file_put_contents($target, $raw);
         } else {
             copy($file->getPathname(), $target);
         }

@@ -283,6 +283,10 @@ button { font: inherit; }
   color: var(--white);
 }
 .btn-orange:hover { filter: brightness(1.05); }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 4px; }
+.hero-cta a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 16px; border-radius: 999px; font-weight: 700; text-decoration: none; color: #fff; }
+.hero-cta a.call { background: #FF6B00; }
+.hero-cta a.wa { background: #128C7E; }
 .btn-ghost {
   background: var(--white);
   color: var(--navy);
