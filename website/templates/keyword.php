@@ -330,7 +330,6 @@ echo '</section>';
     </div>
 </section>
 <?php else: ?>
-<?php if ($b1Hub) echo icomplyB1TownLinks('keyword', (string)$keywordSlug); ?>
 <!-- AREAS — every town linked (keyword × area pages) -->
 <section class="bg-zinc-100">
     <div class="max-w-7xl mx-auto px-6 py-14">
@@ -402,6 +401,7 @@ echo '</section>';
     </div>
 </section>
 
+<?php if ($b1Hub) echo icomplyB1TownLinks('keyword', (string)$keywordSlug); ?>
 <!-- RELATED KEYWORDS same service -->
 <section class="bg-white border-y-2 border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-14">
