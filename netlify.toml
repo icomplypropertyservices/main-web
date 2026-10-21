@@ -2794,14 +2794,14 @@
 
 [[redirects]]
   from = "/pages/barriers"
-  to = "/pages/services/barriers.php"
-  status = 301
+  to = "/pages/barriers.php"
+  status = 200
   force = true
 
 [[redirects]]
   from = "/pages/barriers/"
-  to = "/pages/services/barriers.php"
-  status = 301
+  to = "/pages/barriers.php"
+  status = 200
   force = true
 
 [[redirects]]

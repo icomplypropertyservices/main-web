@@ -1116,8 +1116,8 @@ __MATRIX_REDIRECTS__
 
 # Barrier town pages are files under /pages/barriers/. Force the hub redirect
 # and the town pretty URL so a directory does not 301 the leaf.
-/pages/barriers          /pages/services/barriers.php  301
-/pages/barriers/         /pages/services/barriers.php  301
+/pages/barriers          /pages/barriers.php          200!
+/pages/barriers/         /pages/barriers.php          200!
 /pages/barriers/:slug    /pages/barriers/:slug.php     200!
 /pages/barriers/:slug/   /pages/barriers/:slug.php     200!
 
