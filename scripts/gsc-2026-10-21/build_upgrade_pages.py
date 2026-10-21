@@ -154,6 +154,19 @@ def lst(xs):
     xs = [x for x in xs if x]
     return xs[0] if len(xs) == 1 else ", ".join(xs[:-1]) + " and " + xs[-1] if xs else ""
 
+# SEO 21 Oct: wirksworth-village sits next to an existing /wirksworth page, so it carries its own
+# village-specific prose to stay under the 0.70 family similarity limit.
+EXTRA = {"/pages/fire-risk-assessments/wirksworth-village": [
+    "Wirksworth village is not a new-build estate. Much of the housing stock around the market place, the church close and the lanes that climb the hillside is stone-built, often two or three storeys, with narrow stairs, low ceilings and rooms that have been split or knocked through over many decades. That history matters for a fire risk assessment, because the way smoke and fire travel through an old building depends on what is behind the plaster as much as on what you can see.",
+    "When we assess a property in the village we start with the escape route. In a converted terrace or a former shop with flats above, there is often only one staircase, and it may pass a ground-floor kitchen or a commercial unit. We check whether the doors onto that stair would hold back smoke for long enough, whether the stair is kept clear, and whether people upstairs would actually hear an alarm in time to use it.",
+    "Older buildings also hide gaps. Timber floors, lath and plaster partitions, shared roof voids and old service routes can let fire spread sideways between rooms or even between neighbouring properties. Where we can see that compartmentation is missing or has been broken by later work, such as new cables, pipes or extraction ducts pushed through walls, we record it clearly, photograph it and explain what would close the gap.",
+    "Many properties in and around the conservation area need a careful approach to fixes. A heavy modern fire door may not suit a listed staircase, and some changes need consent before they can be made. We note where that applies, and we suggest practical options, such as upgrading an existing door, adding intumescent strips and closers, or improving detection, so that you can talk to the planning team with a clear list in hand rather than a vague worry.",
+    "Small businesses on the main streets often share a building with residential flats. Cafés, shops and workshops bring their own risks: cooking, stored stock, electrical loads and late working. A good assessment looks at how the business and the homes above interact, who is responsible for which part of the building, and whether the alarm and emergency lighting cover everyone who could be inside at any time of day.",
+    "For landlords with rooms let in the village, we look at the basics that inspectors ask about first: working, interlinked smoke detection, a heat detector in the kitchen, fire doors where the layout needs them, clear signage where it helps, and a simple written plan for what tenants should do. We keep the language plain, so the report can be shared with tenants and managing agents without translation.",
+    "After the visit you receive a written report with each finding ranked by priority, a photograph where it helps, and a short note on what would put it right. We do not pad the list. If something is fine, we say so. If something needs doing now, we say that too, and we can quote for the work separately so you can compare it with other trades if you wish.",
+    "If you own or manage a building in Wirksworth village, or in the farms and hamlets on the edge of it, call 07517 806082 or email icomplypropertyservices@gmail.com and tell us the address, how the building is used and roughly how many rooms or units it has. We will confirm what the assessment covers and a date for the visit before anything is booked.",
+]}
+
 def build(path):
     m = re.match(r"^/pages/keywords/([a-z0-9-]+)(?:/([a-z0-9-]+))?$", path)
     town_slug = None
@@ -177,6 +190,8 @@ def build(path):
         else:
             name = SVC.get(service) or service.replace("-", " ").title()
         kslug = service; focus = []
+    # gas wording rule: our block only ever says "carried out by Gas Safe registered engineers"
+    name = re.sub(r"\s*(by\s+)?Gas Safe.*$", "", name, flags=re.I) or name
     svc_name = SVC.get(service, service.replace("-", " ").title())
     town = tname(town_slug) if town_slug else ""
     seed = path
@@ -242,6 +257,7 @@ def build(path):
         for q, a_ in ((KW.get(kslug) or {}).get("faq") or [])[:4]:
             if not re.search(r"£|Gas Safe|info@|07471|facilities managers", a_):
                 paras.append(f"{q} {a_}")
+    paras += EXTRA.get(path, [])
     paras.append(pick(seed + "c", CLOSE).format(**fmt))
     faqs = [
         [f"How soon can you do {kwl} in {town_disp}?", f"We offer Same/Next-Day visits where the diary allows. Call {PHONE} and we will give you the earliest slot for your postcode."],
