@@ -65,6 +65,11 @@ if ($idx === false) {
     }));
     $nearby = array_slice($nearby, 0, 12);
 }
+if (function_exists('icomplyTownPublishedForService')) {
+    $nearby = array_values(array_filter($nearby, static function ($town) use ($serviceSlug) {
+        return icomplyTownPublishedForService((string)$serviceSlug, (string)$town);
+    }));
+}
 if ($ownsMainland && function_exists('mainlandAreaRecord') && function_exists('getMainlandAreaRecords')) {
     $here = mainlandAreaRecord($areaName);
     $region = is_array($here) ? (string)($here['region'] ?? '') : '';
@@ -485,8 +490,12 @@ if ($tfLean) {
             $relServices = array_intersect_key($relServices, array_flip($rk));
         }
         foreach ($relServices as $slug => $name):
+            $relTownOk = function_exists('icomplyTownPublishedForService') && icomplyTownPublishedForService((string)$slug, (string)$AREA_SLUG);
+            $relHref = $relTownOk
+                ? url('/pages/' . $slug . '/' . $AREA_SLUG . '.php')
+                : url('/pages/services/' . $slug . '.php');
         ?>
-        <a href="<?= url('/pages/' . $slug . '/' . $AREA_SLUG . '.php') ?>"
+        <a href="<?= $relHref ?>"
            class="group bg-white border rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
             <div class="h-32 bg-zinc-100 overflow-hidden">
                 <img src="<?= htmlspecialchars(serviceImageUrl($slug), ENT_QUOTES, 'UTF-8') ?>"

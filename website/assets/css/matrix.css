@@ -3,8 +3,8 @@
 *{box-sizing:border-box}
 body.mx{margin:0;font:16px/1.65 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#1f2937;background:#f7f8fa}
 .mx a{color:var(--navy)}
-.mx-top{background:var(--ink);color:#fff;position:sticky;top:0;z-index:50}
-.mx-top-in{max-width:1120px;margin:0 auto;padding:.6rem 1rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.mx-top{background:var(--ink);color:#fff;position:sticky;top:0;z-index:50;max-width:100%;overflow-x:clip}
+.mx-top-in{max-width:min(1120px,100%);margin:0 auto;padding:.6rem 1rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
 .mx-logo{color:#fff!important;font-weight:800;text-decoration:none;font-size:1.1rem}
 .mx-logo span{color:var(--orange)}
 .mx-nav{display:flex;gap:.9rem;flex-wrap:wrap;font-size:.92rem}

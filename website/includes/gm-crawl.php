@@ -63,6 +63,38 @@ function icomplyLocalTownSlug(string $areaOrSlug): bool
     return $slug !== '' && isset($set[$slug]);
 }
 
+/**
+ * True when a service×town URL is actually published.
+ * Fire-family services use the mainland list. Every other service stays on the 269 dual-ring towns.
+ */
+function icomplyTownPublishedForService(string $serviceSlug, string $areaOrSlug): bool
+{
+    $slug = function_exists('areaSlug') ? areaSlug($areaOrSlug) : strtolower(trim($areaOrSlug));
+    if ($slug === '') {
+        return false;
+    }
+    if (function_exists('serviceOwnsMainlandAreas') && serviceOwnsMainlandAreas($serviceSlug)) {
+        static $mainland = null;
+        if ($mainland === null) {
+            $mainland = [];
+            if (function_exists('getMainlandAreaRecords')) {
+                foreach (getMainlandAreaRecords() as $row) {
+                    if (!is_array($row)) {
+                        continue;
+                    }
+                    $name = (string)($row['name'] ?? '');
+                    if ($name === '') {
+                        continue;
+                    }
+                    $mainland[function_exists('areaSlug') ? areaSlug($name) : strtolower($name)] = true;
+                }
+            }
+        }
+        return isset($mainland[$slug]) || icomplyLocalTownSlug($slug);
+    }
+    return icomplyLocalTownSlug($slug);
+}
+
 function icomplyLocalTownName(string $areaOrSlug): ?string
 {
     static $names = null;

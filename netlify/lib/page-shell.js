@@ -1,7 +1,7 @@
 // Shared branded chrome for edge-rendered matrix pages (keeps them styled).
 export const MATRIX_CSS = `<link rel="stylesheet" href="/assets/css/site.css">
 <link rel="stylesheet" href="/assets/css/matrix.css">`;
-export const MATRIX_HEADER = `<header class="mx-top"><div class="mx-top-in">
+export const MATRIX_HEADER = `<header class="mx-top mega-header" data-mega-nav="1"><div class="mx-top-in">
 <a class="mx-logo" href="/">i<span>Comply</span> Property Services</a>
 <nav class="mx-nav" aria-label="Main">
 <a href="/pages/services">Services</a>

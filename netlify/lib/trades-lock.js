@@ -217,19 +217,25 @@ function imageKey(slug, family) {
 }
 
 export function tradesImages(slug, placeName) {
-  const row = ROWS[slug] || { family: "general-building", name: titleCaseSlug(slug) };
+  const isTrade = NEW_SERVICES.has(slug);
+  const row = ROWS[slug] || {
+    family: isTrade ? slug : "general-building",
+    service: isTrade ? slug : "building-maintenance",
+    name: titleCaseSlug(slug),
+  };
   const key = imageKey(slug, row.family);
-  const src = `/assets/images/trades/${key}.webp`;
   const service = row.service || "building-maintenance";
   const real = `/assets/images/services/${service}.jpg`;
+  const tradePhoto = ["fencing", "drainage", "driveways", "demolition"].includes(service) || ["fencing", "drainage", "driveways", "demolition"].includes(row.family);
+  const src = tradePhoto ? real : `/assets/images/trades/${key}.webp`;
   const name = row.name || titleCaseSlug(slug);
   const place = placeName ? ` in ${placeName}` : "";
   const alt = `${name}${place} — ${row.family.replace(/-/g, " ")} photograph or diagram for this exact job`;
   const credit = ` data-credit="iComply Property Services"`;
-  const html = `<figure class="quality-bar-images trades-images" data-image-key="${escapeHtml(key)}" data-image-family="${escapeHtml(row.family)}" data-real-job-photo="owner">`
-    + `<img${credit} src="${src}" alt="${escapeHtml(alt)}" width="1200" height="675">`
+  const html = `<figure class="quality-bar-images trades-images" data-pe-slot="real-photo" data-image-key="${escapeHtml(key)}" data-image-family="${escapeHtml(row.family)}" data-real-job-photo="owner">`
+    + `<img${credit} data-pe-slot="real-photo" src="${real}" alt="${escapeHtml(`Completed ${name} work${place} by iComply Property Services`)}" width="1200" height="675">`
+    + `<img${credit} src="${src}" alt="${escapeHtml(alt)}" width="1200" height="675" loading="lazy">`
     + `<img${credit} src="${src}" alt="${escapeHtml(`${name} detail${place}`)}" width="1200" height="675" loading="lazy">`
-    + `<img${credit} data-real-job-photo="owner" src="${real}" alt="${escapeHtml(`Completed ${name} work${place} by iComply Property Services`)}" width="1200" height="675" loading="lazy">`
     + `<figcaption>Image credit: iComply Property Services</figcaption></figure>`;
   return { html, src, key, family: row.family, alt };
 }

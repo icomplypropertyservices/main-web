@@ -22,10 +22,13 @@ export function imageFamilyOf(slug) {
 }
 
 /** Two extra photos for `slug`, both from its own family: its -photo first, then family members by seed. */
+const REAL_TRADE_PHOTOS = new Set(["fencing", "drainage", "driveways", "demolition"]);
+
 export function familyPicks(slug, seed) {
   void seed;
-  // Own-slug photos only. Cross-service family members made one image serve
-  // unrelated trades after the content-hash optimiser.
+  // Own-slug photos only. The four groundwork trades use the real site
+  // photograph, not the diagram stand-ins named -photo and -context.
+  if (REAL_TRADE_PHOTOS.has(slug)) return [slug, slug];
   return [`${slug}-photo`, `${slug}-context`];
 }
 

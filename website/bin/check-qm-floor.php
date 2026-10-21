@@ -81,6 +81,15 @@ $paths = [
     '/pages/manufacturers/d-h-mechatronic',
     '/pages/driveways/abram',
     '/pages/demolition/abram',
+    '/pages/demolition/bingley',
+    '/pages/fencing/bingley',
+    '/contact',
+    '/pages/about',
+    '/pages/jobs',
+    '/become-a-subcontractor',
+    '/directories',
+    '/products',
+    '/pages/manufacturers/apt-controls',
 ];
 
 function qmWords(string $html): int
@@ -141,11 +150,35 @@ foreach ($paths as $path) {
     $words = qmWords($html);
     $say(strlen($html) > 500, $path . ' rendered ' . strlen($html) . ' bytes');
     $say($words >= 800, $path . ' words=' . $words);
-    $say(str_contains($html, 'data-real-job-photo="owner"'), $path . ' real-job photo');
+    $say(str_contains($html, 'data-pe-slot="real-photo"'), $path . ' real-photo slot');
     $say(str_contains($html, 'itemtype="https://schema.org/BreadcrumbList"'), $path . ' visible breadcrumbs');
     $say(str_contains($html, 'BreadcrumbList'), $path . ' breadcrumb schema');
     $say(str_contains($html, 'FAQPage'), $path . ' faq schema');
-    $say(!preg_match('/<img\b(?![^>]*data-credit=)[^>]*>/i', $html), $path . ' every image credited');
+    $say(!preg_match('/records\s+[a-z]+,\s+then\b/i', $html), $path . ' no salad records');
+    $say(!preg_match('/gets\s+[a-z]+\s+in writing/i', $html), $path . ' no salad writing');
+    $header = '';
+    if (preg_match('/<header\b[^>]*>.*?<\/header>/is', $html, $hm)) {
+        $header = $hm[0];
+    }
+    $say($header === '' || (!str_contains($header, 'image-credit') && !str_contains($header, 'data-credit=')), $path . ' no header credit');
+    $say(str_contains($html, 'data-credit='), $path . ' content image credit');
+    if (preg_match_all('#/assets/images/real-job/([a-z0-9-]+)\.jpg#i', $html, $rm)) {
+        foreach (array_unique($rm[1]) as $leaf) {
+            $file = dirname(__DIR__) . '/assets/images/real-job/' . strtolower((string)$leaf) . '.jpg';
+            $say(is_file($file), $path . ' real-job file ' . $leaf);
+        }
+    }
+    if (preg_match_all('/href\s*=\s*"([^"]*)"/i', $html, $hrefs)) {
+        $bad = [];
+        foreach ($hrefs[1] as $href) {
+            if (icomplyQualityFloorRewriteHref($href) !== $href) {
+                $bad[] = $href;
+            }
+        }
+        $say($bad === [], $path . ' broken links ' . ($bad === [] ? '0' : implode(' ', array_slice($bad, 0, 3))));
+    } else {
+        $say(true, $path . ' broken links 0');
+    }
     $say(!str_contains($html, 'you@company.co.uk'), $path . ' no placeholder email');
     $say(!str_contains($html, 'owner-job.svg'), $path . ' no placeholder svg');
     $lower = strtolower($html);
@@ -192,6 +225,7 @@ $pairs = [
     ['/pages/fencing/accrington', '/pages/fencing/abram'],
     ['/pages/drainage/accrington', '/pages/drainage/abram'],
     ['/pages/aov/ashford', '/pages/aov/ashford-kent'],
+    ['/pages/demolition/bingley', '/pages/fencing/bingley'],
 ];
 foreach ($pairs as [$a, $b]) {
     if (!isset($rendered[$a], $rendered[$b])) {

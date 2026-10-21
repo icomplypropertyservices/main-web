@@ -311,6 +311,9 @@ function icomplyServiceImageFamilyPicks(string $slug, int $seed): array
     // Only this service's own photos. A shared family file becomes one image
     // across unrelated services once the optimiser hashes the bytes.
     unset($seed);
+    if (in_array($slug, ['fencing', 'drainage', 'driveways', 'demolition'], true)) {
+        return [$slug, $slug];
+    }
     return [$slug . '-photo', $slug . '-context'];
 }
 

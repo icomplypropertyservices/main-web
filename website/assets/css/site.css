@@ -330,14 +330,18 @@ h1, h2, h3 { letter-spacing: -0.03em; }
   top: 0;
   z-index: 50;
 }
+.mega-header, .mx-top, .site-header, .matrix-header { max-width: 100%; overflow-x: clip; }
 .mega-bar {
   max-width: 80rem;
   margin: 0 auto;
   padding: 0.7rem 1rem;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 1rem;
 }
+.mega-logo { min-width: 0; }
+.mega-wordmark { min-width: 0; }
 .mega-logo {
   display: flex; align-items: center; gap: 0.5rem;
   color: #fff !important; font-weight: 700; letter-spacing: -0.03em;
@@ -547,6 +551,12 @@ h1, h2, h3 { letter-spacing: -0.03em; }
   .mega-phone-short, .mega-quote-short { display: inline; }
   .mega-phone, .mega-quote { padding: 0.48rem 0.65rem; font-size: 0.75rem; }
   .mega-burger { min-width: 2.75rem; padding: 0.42rem 0.55rem; }
+  .mega-tools { margin-left: auto; max-width: 100%; }
+}
+@media (max-width: 380px) {
+  .mega-quote { display: none; }
+  .mega-wordmark { font-size: 0.95rem; }
+  .mx-call { margin-left: 0; }
 }
 @media (min-width: 1024px) {
   .mega-desktop { display: flex; }

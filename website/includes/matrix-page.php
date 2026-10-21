@@ -89,7 +89,7 @@ function icomplyMatrixShared(): array
     return $s;
 }
 
-function icomplyMatrixChromeStart(string $title, string $desc, string $canonical, string $robots = 'index, follow', string $imagePath = '/assets/images/services/fire-alarms.jpg'): string
+function icomplyMatrixChromeStart(string $title, string $desc, string $canonical, string $robots = 'index, follow', string $imagePath = '/assets/images/services/fire-alarms.jpg', string $serviceSlug = ''): string
 {
     $s = icomplyMatrixShared();
     $t = icomplyMatrixH($title);
@@ -100,7 +100,8 @@ function icomplyMatrixChromeStart(string $title, string $desc, string $canonical
     $brand = icomplyMatrixH($s['brand']);
     $phone = icomplyMatrixH($s['phone']);
     $phoneHref = icomplyMatrixH($s['phoneHref']);
-    return '<!DOCTYPE html><html lang="en-GB"><head><meta charset="utf-8">'
+    $mega = in_array($serviceSlug, ['fencing', 'drainage', 'driveways', 'demolition'], true);
+    $head = '<!DOCTYPE html><html lang="en-GB"><head><meta charset="utf-8">'
         . '<meta name="viewport" content="width=device-width, initial-scale=1">'
         . '<meta name="theme-color" content="#0B1F3A">'
         . '<meta name="robots" content="' . icomplyMatrixH($robots) . '">'
@@ -113,8 +114,11 @@ function icomplyMatrixChromeStart(string $title, string $desc, string $canonical
         . '<meta property="og:url" content="' . $c . '">'
         . '<meta property="og:image" content="' . icomplyMatrixH(icomply_absolute_url($imagePath)) . '">'
         . '<link rel="stylesheet" href="' . icomplyMatrixH(assetUrl('/assets/css/utilities.css')) . '">'
-        . '<link rel="stylesheet" href="' . $css . '">'
-        . '<script type="application/ld+json">' . json_encode([
+        . '<link rel="stylesheet" href="' . $css . '">';
+    if ($mega) {
+        $head .= '<link rel="stylesheet" href="' . icomplyMatrixH(assetUrl('/assets/css/site.css')) . '">';
+    }
+    $head .= '<script type="application/ld+json">' . json_encode([
             '@context' => 'https://schema.org',
             '@type' => 'LocalBusiness',
             '@id' => 'https://icomplypropertyservices.co.uk/#business',
@@ -125,7 +129,14 @@ function icomplyMatrixChromeStart(string $title, string $desc, string $canonical
             'address' => ['@type' => 'PostalAddress', 'streetAddress' => '17 Woodlands Park Road, Offerton', 'addressLocality' => 'Stockport', 'postalCode' => 'SK2 5DE', 'addressCountry' => 'GB'],
             'areaServed' => ['Greater Manchester', 'North West England'],
         ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG) . '</script>'
-        . '</head><body class="matrix-page bg-zinc-50 text-black">'
+        . '</head><body class="matrix-page bg-zinc-50 text-black">';
+    if ($mega) {
+        if (!function_exists('icomplyMegaHeaderHtml')) {
+            require_once __DIR__ . '/site-nav.php';
+        }
+        return $head . icomplyMegaHeaderHtml();
+    }
+    return $head
         . '<header class="matrix-header">'
         . '<div class="matrix-wrap py-3 flex flex-wrap items-center justify-between gap-3 text-sm">'
         . '<a class="font-semibold text-lg" href="' . $home . '">' . $brand . '</a>'
@@ -226,6 +237,9 @@ function icomplyMatrixOtherServicesInTown(string $serviceSlug, string $areaName,
             $areaSets[$slug] = array_flip(array_map('strval', (array)$list));
         }
         if (!isset($areaSets[$slug][$areaName])) {
+            continue;
+        }
+        if (function_exists('icomplyTownPublishedForService') && !icomplyTownPublishedForService((string)$slug, $town)) {
             continue;
         }
         $links .= '<a class="area-chip" href="' . icomplyMatrixH(url('/pages/' . $slug . '/' . $town)) . '">'
@@ -467,9 +481,13 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
             $areaPairs[] = ['name' => (string)$area, 'slug' => areaSlug((string)$area)];
         }
     }
-    $townHub = in_array($areaName, getAreas(), true)
+    $areaPairs = array_values(array_filter($areaPairs, static function ($a) use ($serviceSlug) {
+        $slug = (string)($a['slug'] ?? '');
+        return $slug !== '' && (!function_exists('icomplyTownPublishedForService') || icomplyTownPublishedForService($serviceSlug, $slug));
+    }));
+    $townHub = (function_exists('icomplyLocalTownSlug') && icomplyLocalTownSlug($areaSlugVal))
         ? url('/pages/areas/' . $areaSlugVal)
-        : $canonical;
+        : url('/pages/areas');
 
     if (!function_exists('icomplyGmBriefHtml')) {
         require_once SITE_ROOT . '/includes/gm-enrichment.php';
@@ -482,7 +500,7 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     }
     $tier1 = function_exists('icomplyTier1ServiceArticle') ? icomplyTier1ServiceArticle($serviceSlug, $areaName) : '';
     $svcImagePath = '/assets/images/services/' . $serviceSlug . '.jpg';
-    $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots, $svcImagePath);
+    $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots, $svcImagePath, $serviceSlug);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
         . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($areaName) . ' · ' . icomplyMatrixH($coverageLabel) . '</p>'
         . '<h1>' . icomplyMatrixH($svcName) . ' <span class="accent">in ' . icomplyMatrixH($areaName) . '</span></h1>'
