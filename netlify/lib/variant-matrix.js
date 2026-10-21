@@ -408,7 +408,7 @@ export function renderVariantPage({ spec, keyword, town }) {
       description: "",
       h1: "",
       canonical: location,
-      robots: "noindex, nofollow",
+      robots: "index, follow",
       indexable: false,
       path: location,
       status: 301,

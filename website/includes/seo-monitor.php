@@ -3,16 +3,8 @@
  * Lightweight SEO helpers used by templates and cron.
  */
 if (!function_exists('seoShouldNoindex')) {
+    /** Kept for old callers. Nothing is ever noindexed (Jack 2026-10-19, GSC 21 Oct A1). */
     function seoShouldNoindex(): bool {
-        // Preview/staging hosts
-        $host = strtolower((string)($_SERVER['HTTP_HOST'] ?? ''));
-        if (str_contains($host, 'vercel.app')) {
-            // Own preview deploys (host contains icomply) stay indexable
-            if (str_contains($host, 'icomply')) {
-                return false;
-            }
-            return true;
-        }
         return false;
     }
 }

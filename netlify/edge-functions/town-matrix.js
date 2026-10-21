@@ -871,8 +871,8 @@ export default async (request, context) => {
         return Response.redirect(new URL(hub.headers.get("location"), url.origin).toString(), 301);
       }
       if (hub.status === 404) {
-        const page = await fetch(new URL("/404.html", url.origin)).then((r) => (r.ok ? r.text() : "Not found")).catch(() => "Not found");
-        return new Response(page, { status: 410, headers: { "content-type": "text/html; charset=utf-8", "x-robots-tag": "noindex" } });
+        // GSC 21 Oct (A3): no 410 + noindex. One hop to the live keyword index.
+        return Response.redirect(new URL("/pages/keywords", url.origin).toString(), 301);
       }
     }
     if (!rendered) {

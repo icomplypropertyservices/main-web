@@ -49,10 +49,8 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     <?php endif; ?>
     <?php
     require_once __DIR__ . '/seo-monitor.php';
+    // Jack 2026-10-19 / GSC 21 Oct (A1): no host or helper may force noindex.
     $robotsContent = $metaRobots ?? 'index, follow, max-image-preview:large';
-    if (function_exists('seoShouldNoindex') && seoShouldNoindex()) {
-        $robotsContent = 'noindex,nofollow';
-    }
     ?>
     <meta name="robots" content="<?= htmlspecialchars($robotsContent, ENT_QUOTES, 'UTF-8') ?>">
     <?php
