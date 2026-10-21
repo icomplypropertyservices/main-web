@@ -90,3 +90,28 @@ function icomplyB1Credit(string $src, string $class = 'mt-1 px-3 pb-2 text-xs te
     return '<p class="b1-credit ' . $h($class) . '" data-b1="photo-credit">Example photo, not an iComply job. Photo: ' . $h($c['artist']) . ', ' . $h($c['license'])
         . ', via <a class="underline" href="' . $h($c['source']) . '" rel="nofollow noopener" target="_blank">Wikimedia Commons</a>. <a class="underline" href="/pages/photo-credits">All photo credits</a></p>';
 }
+
+/** Spec §4 hub title (no town): ≤60 chars. */
+function icomplyB1HubTitle(string $label): string {
+    foreach ([$label . ' | Same/Next-Day | iComply', $label . ' | Same/Next-Day', $label . ' | iComply'] as $t) {
+        if (mb_strlen($t) <= 60) return $t;
+    }
+    return mb_substr($label, 0, 60);
+}
+/** Spec §4 hub meta (no town): 140–155 chars; optional plain phrases fill short labels. */
+function icomplyB1HubMeta(string $label, bool $gas): string {
+    $fill = $gas
+        ? [' for landlords and homes', ' with same/next-day slots', ' from Stockport', ' (CP12 records)']
+        : [' Homes, landlords and businesses.', ' Written quote first.', ' Travel included.'];
+    $build = fn(string $f) => $gas
+        ? $label . ' across Greater Manchester' . $f . ', carried out by Gas Safe registered engineers. Call 07517 806082.'
+        : $label . ' across Greater Manchester.' . $f . ' Same/next-day visits from our Stockport team. Free quote, call 07517 806082.';
+    $best = $build('');
+    for ($mask = 0; $mask < (1 << count($fill)); $mask++) {
+        $f = '';
+        foreach ($fill as $k => $p) { if ($mask & (1 << $k)) $f .= $p; }
+        $m = $build($f); $n = mb_strlen($m);
+        if ($n >= 140 && $n <= 155) return $m;
+    }
+    return $best;
+}

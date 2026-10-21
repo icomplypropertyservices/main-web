@@ -50,6 +50,11 @@ $areaServedNames = $ownsMainland
 $serviceSlug = $SERVICE_SLUG;
 require_once SITE_ROOT . '/includes/building-batch1.php';
 $b1Hub = icomplyB1IsService((string)$serviceSlug);
+if ($b1Hub) {
+    $b1Label = (string) (icomplyB1Data()['services'][(string)$serviceSlug] ?? $SERVICE_NAME);
+    $pageTitle = icomplyB1HubTitle($b1Label);
+    $metaDesc = icomplyB1HubMeta($b1Label, false);
+}
 $b1Set = [];
 if ($b1Hub) {
     $b1Img = icomplyB1Photo('service', (string)$serviceSlug);
