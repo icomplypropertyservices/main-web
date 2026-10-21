@@ -14,13 +14,14 @@ for root, _, files in os.walk(dist):
 for sm in glob.glob(f'{dist}/sitemap*.xml') + glob.glob(f'{dist}/sitemaps/*.xml'):
     for u in re.findall(r'<loc>https?://[^/<]+([^<]*)</loc>', open(sm, errors='ignore').read()):
         known.add(u.rstrip('/') or '/')
+parents = {k.rsplit('/', 1)[0] for k in known if k.count('/') >= 4}
 rd = f'{dist}/_redirects'
 if os.path.exists(rd):
     for l in open(rd, errors='ignore'):
         p = l.split()
         if p and p[0].startswith('/'):
             known.add(p[0].rstrip('/') or '/')
-A = re.compile(r'<a\b[^>]*\bhref="(/pages/[^"#?]*)"[^>]*>(.*?)</a>', re.S | re.I)
+A = re.compile(r'<a\b[^>]*\bhref="(?:https?://(?:www\.)?icomplypropertyservices\.co\.uk)?(/pages/[^"#?]*)"[^>]*>(.*?)</a>', re.S | re.I)
 pages = changed = links = 0
 for root, _, files in os.walk(dist):
     for f in files:
@@ -30,7 +31,10 @@ for root, _, files in os.walk(dist):
         s = open(fp, encoding='utf-8', errors='replace').read()
         n = [0]
         def fix(m):
-            if (m.group(1).rstrip('/') or '/') in known or '*' in m.group(1):
+            k = re.sub(r'\.php$', '', m.group(1)).rstrip('/') or '/'
+            # Only a keyword/service x town link whose family is published but whose town is not
+            # (not exported, not in the sitemap, not a _redirects source). Edge-only hubs stay linked.
+            if k in known or '*' in k or k.count('/') < 4 or k.rsplit('/', 1)[0] not in parents:
                 return m.group(0)
             n[0] += 1
             return m.group(2)
