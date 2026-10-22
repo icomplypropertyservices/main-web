@@ -27,7 +27,8 @@
    "sprinkler-systems",
    "dry-risers",
    "smoke-co-alarms",
-   "evacuation-alerts"
+   "evacuation-alerts",
+   "aov-control-panel-1"
   ],
   "security": [
    "cctv",
@@ -192,7 +193,8 @@
   ],
   "aov-air-handling": [
    "aov-air-handling",
-   "aov-air-handling-photo"
+   "aov-air-handling-photo",
+   "aov-control-panel-1"
   ],
   "fire-doors": [
    "fire-doors"

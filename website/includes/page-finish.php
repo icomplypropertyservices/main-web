@@ -87,7 +87,33 @@ function icomplyFinishPage(string $html, string $path): string
         $p = '<p class="pf-credit" data-credit style="font-size:.8rem;color:#555555;margin:1rem 0">Photo credits: <a href="/pages/photo-credits">photographers, sources and licences</a></p>';
         $html = preg_match('/<\/main>/i', $html) ? (preg_replace('/<\/main>/i', $p . '</main>', $html, 1) ?? $html) : (preg_replace('/<footer\b/i', $p . '<footer', $html, 1) ?? $html);
     }
-    return $html;
+    return icomplyFinishNamedCredits($html);
+}
+
+/** QM #158: every credited third-party photo on the page gets a visible, named credit (photographer, licence). */
+function icomplyFinishNamedCredits(string $html): string
+{
+    icomplyFinishCaption('');
+    $map = $GLOBALS['icomplyFinishCreditMap'] ?? [];
+    if (!$map || !preg_match_all('#<img\b[^>]*\bsrc="([^"]+)"#i', $html, $m)) { return $html; }
+    static $webp = null;
+    if ($webp === null) {
+        $webp = [];
+        foreach ((array)json_decode((string)@file_get_contents(dirname(__DIR__) . '/data/image-manifest.json'), true) as $orig => $e) {
+            foreach ((array)($e['variants'] ?? []) as $v) { if (!empty($v['webp'])) { $webp[$v['webp']] ??= $orig; } }
+        }
+    }
+    $names = [];
+    foreach (array_unique($m[1]) as $src) {
+        $path = (string)parse_url($src, PHP_URL_PATH);
+        $r = $map[$path] ?? (isset($webp[$path]) ? ($map[$webp[$path]] ?? null) : null);
+        $who = $r ? trim(strip_tags((string)($r['artist'] ?? ''))) : '';
+        if ($who === '' || mb_strlen($who) > 80 || stripos($html, htmlspecialchars($who, ENT_QUOTES, 'UTF-8')) !== false) { continue; }
+        $names[$who] = $who . (!empty($r['license']) ? ' (' . strip_tags((string)$r['license']) . ')' : '');
+    }
+    if (!$names) { return $html; }
+    $p = '<p class="pf-credit pf-credit-named" data-credit style="font-size:.8rem;color:#555555;margin:1rem 0">Photos: ' . htmlspecialchars(implode('; ', $names), ENT_QUOTES, 'UTF-8') . ' · <a href="/pages/photo-credits">Photo credits</a></p>';
+    return preg_match('/<\/main>/i', $html) ? (preg_replace('/<\/main>/i', $p . '</main>', $html, 1) ?? $html) : (preg_replace('/<footer\b/i', $p . '<footer', $html, 1) ?? $html);
 }
 
 function icomplyFinishCaption(string $src): string
@@ -101,6 +127,7 @@ function icomplyFinishCaption(string $src): string
                 $map[$r['file']] = $r;
             }
         }
+        $GLOBALS['icomplyFinishCreditMap'] = $map;
     }
     $r = $map[$src] ?? null;
     $who = $r && trim((string)($r['artist'] ?? '')) !== '' ? trim(strip_tags((string)$r['artist'])) . (!empty($r['license']) ? ', ' . strip_tags((string)$r['license']) : '') : 'iComply Property Services';
