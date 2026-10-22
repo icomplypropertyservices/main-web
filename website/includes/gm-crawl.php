@@ -191,20 +191,19 @@ function icomplyNonGmMatrixRedirect(string $path): ?string
     }
 
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
-        // Margin DEEP hubs: dual-ring 269 town pages (manufacturer heads: GM core 60 only).
-        if (icomplyMarginDeepIsP0($m[1])) {
-            return icomplyMarginDeepKeepsTown($m[1], $m[2]) ? null : '/pages/keywords/' . $m[1];
-        }
-        if (icomplyNationwide3lineNationwidePath($path) || icomplyFireAlarmInstallerNationwidePath($path)) {
+        if (function_exists('icomplyBuildingDualCoversPath') && icomplyBuildingDualCoversPath($path)) {
             return null;
         }
-        return icomplyLocalTownSlug($m[2]) ? null : '/pages/keywords/' . $m[1];
+        return icomplyCrawlTownSlug($m[2]) ? null : '/pages/keywords/' . $m[1];
     }
     if (preg_match('#^/pages/manufacturers/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         return icomplyCrawlTownSlug($m[2]) ? null : '/pages/manufacturers/' . $m[1];
     }
     if (preg_match('#^/pages/jobs/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
-        return icomplyLocalTownSlug($m[2]) ? null : '/pages/jobs/' . $m[1];
+        if (function_exists('icomplyBuildingDualCoversPath') && icomplyBuildingDualCoversPath($path)) {
+            return null;
+        }
+        return icomplyCrawlTownSlug($m[2]) ? null : '/pages/jobs/' . $m[1];
     }
     if (preg_match('#^/pages/areas/([a-z0-9\-]+)$#', $path, $m)) {
         return icomplyLocalTownSlug($m[1]) ? null : '/pages/areas';

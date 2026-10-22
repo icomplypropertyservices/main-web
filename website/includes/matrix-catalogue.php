@@ -905,6 +905,12 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
         }
     }
     $familyKeywordTown = 0;
+    if (function_exists('icomplyBuildingDualExtraKeywordTownPaths')) {
+        foreach (icomplyBuildingDualExtraKeywordTownPaths($places) as $dualPath) {
+            $writeLoc($dualPath);
+            $familyKeywordTown++;
+        }
+    }
     $familyServiceTown = 0;
     if (!function_exists('icomplyNationwide3lineExtraTownPaths')) {
         require_once __DIR__ . '/nationwide-3line.php';
@@ -939,15 +945,12 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
             $jobTown++;
         }
     }
-    // Networking, data cabling and mesh Wi-Fi pack (lock 2026-10-20): keyword x
-    // GM-60 and job x GM-60 town pages (service x 269 is covered above).
-    $networkTown = 0;
-    if (!function_exists('icomplyNetworkPackTownPaths')) {
-        require_once __DIR__ . '/network-pack.php';
-    }
-    foreach (icomplyNetworkPackTownPaths() as $networkPath) {
-        $writeLoc((string)$networkPath);
-        $networkTown++;
+    $buildingJobTown = 0;
+    if (function_exists('icomplyBuildingDualJobTownPaths')) {
+        foreach (icomplyBuildingDualJobTownPaths() as $dualPath) {
+            $writeLoc($dualPath);
+            $buildingJobTown++;
+        }
     }
     if ($chunkHandle !== null) {
         fwrite($chunkHandle, '</urlset>' . "\n");
@@ -1011,7 +1014,7 @@ export default async () => {
 export const config = { path: "/robots.txt" };
 JS);
 
-    $sitemapUrls = $hubs + $keywordTown + $serviceTown + $familyKeywordTown + $familyServiceTown + $manufacturerTown + $jobTown + $networkTown;
+    $sitemapUrls = $hubs + $keywordTown + $serviceTown + $familyKeywordTown + $familyServiceTown + $manufacturerTown + $jobTown + $buildingJobTown;
     $stats = [
         'target' => ICOMPLY_MATRIX_URL_TARGET,
         'hub_urls' => $hubs,
@@ -1030,7 +1033,7 @@ JS);
         'family_service_town_urls' => $familyServiceTown,
         'manufacturer_town_urls' => $manufacturerTown,
         'job_town_urls' => $jobTown,
-        'security_dual_ring_urls' => $securityTown,
+        'building_job_town_urls' => $buildingJobTown,
         'sitemap_urls' => $sitemapUrls,
         'sitemap_unique_urls' => $sitemapWritten,
         'sitemap_duplicates_skipped' => $sitemapDuplicates,
@@ -1060,6 +1063,7 @@ JS);
         . ' family_service×town=' . $familyServiceTown
         . ' manufacturer×town=' . $manufacturerTown
         . ' job×town=' . $jobTown
+        . ' building_job×town=' . $buildingJobTown
         . ' sitemap_urls=' . $sitemapUrls
         . ' sitemap_unique=' . $sitemapWritten
         . ' sitemap_dupes_skipped=' . $sitemapDuplicates

@@ -403,6 +403,7 @@ function icomplyIsGreaterManchesterAreaSlug(string $areaOrSlug): bool
 }
 
 require_once __DIR__ . '/includes/gm-crawl.php';
+require_once __DIR__ . '/includes/building-services-dual.php';
 
 /**
  * In tiered mode, keyword×area pages, shared area-town templates, and service×town
@@ -436,18 +437,7 @@ function icomplyPathIsIndexable(string $path): bool
         return true;
     }
     if (preg_match('#^/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+$#', $path)) {
-        if (function_exists('icomplyMarginDeepIsP0')
-            && preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $deepMatch)
-            && icomplyMarginDeepIsP0($deepMatch[1])) {
-            return icomplyMarginDeepKeepsTown($deepMatch[1], $deepMatch[2]);
-        }
-        if ((function_exists('icomplyNationwide3lineIndexablePath')
-                && icomplyNationwide3lineIndexablePath($path))
-            || (function_exists('icomplyFireAlarmInstallerNationwidePath')
-                && icomplyFireAlarmInstallerNationwidePath($path))) {
-            return true;
-        }
-        return false;
+        return function_exists('icomplyBuildingDualCoversPath') && icomplyBuildingDualCoversPath($path);
     }
     // Area hubs are indexable for the dual-ring allowlist, including Burnley.
     if (preg_match('#^/pages/areas/([a-z0-9\-]+)$#', $path, $areaMatch)) {
@@ -934,34 +924,8 @@ function getMajorKeywords(): array {
         $normalized = securityDualRingApplyKeywords($normalized);
     }
     $normalized = icomplyApplyCustomerKeywordCopy($normalized);
-    if (function_exists('icomplyNationwide3lineApplyKeywords')) {
-        $normalized = icomplyNationwide3lineApplyKeywords($normalized);
-    }
-    // Networking / Wi-Fi / Bluetooth + IT P0 pack (data/networking-it-pack.json).
-    if (!function_exists('icomplyNetworkingItKeywords')) {
-        require_once __DIR__ . '/includes/networking-it.php';
-    }
-    foreach (icomplyNetworkingItKeywords() as $slug => $meta) {
-        $slug = keywordSlug((string)$slug);
-        if ($slug === '' || isset($normalized[$slug]) || !is_array($meta)) {
-            continue;
-        }
-        $row = [
-            'name' => (string)($meta['name'] ?? keywordDisplayName($slug)),
-            'service' => (string)($meta['service'] ?? 'it-support'),
-            'related' => keywordSlug((string)($meta['related'] ?? $slug)),
-        ];
-        foreach (['intro', 'body', 'meta_desc', 'seo_keywords', 'seo_title', 'h1'] as $field) {
-            if (!empty($meta[$field]) && is_string($meta[$field])) {
-                $row[$field] = $meta[$field];
-            }
-        }
-        foreach (['focus_points', 'faq', 'sections'] as $field) {
-            if (!empty($meta[$field]) && is_array($meta[$field])) {
-                $row[$field] = $meta[$field];
-            }
-        }
-        $normalized[$slug] = $row;
+    if (function_exists('icomplyBuildingDualApplyKeywords')) {
+        $normalized = icomplyBuildingDualApplyKeywords($normalized);
     }
     $cached = $normalized;
     return $cached;
