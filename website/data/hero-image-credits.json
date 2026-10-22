@@ -523,5 +523,59 @@
     "title": "File:Digger excavating trial trenches - geograph.org.uk - 7407043.jpg",
     "license": "CC BY-SA 2.0",
     "artist": "TCExplorer"
+  },
+  {
+    "file": "/assets/images/families/fire-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Gent_1102_Manual_Call_Point.jpg",
+    "title": "File:Gent 1102 Manual Call Point.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Ps14159",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "family": "fire"
+  },
+  {
+    "file": "/assets/images/families/gas-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Wall_mounted_boiler_in_kitchen.jpg",
+    "title": "File:Wall mounted boiler in kitchen.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Turbojet",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "family": "gas"
+  },
+  {
+    "file": "/assets/images/families/security-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:IFacility_CCTV_Cameras.jpg",
+    "title": "File:IFacility CCTV Cameras.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "RickySpanish",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "family": "security"
+  },
+  {
+    "file": "/assets/images/families/electrical-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "family": "electrical"
+  },
+  {
+    "file": "/assets/images/families/building-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Building_renovation,_Spen_Lane_-_geograph.org.uk_-_6822608.jpg",
+    "title": "File:Building renovation, Spen Lane - geograph.org.uk - 6822608.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Stephen Craven",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "family": "building"
+  },
+  {
+    "file": "/assets/images/families/compliance-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Asbestos_warning_label.jpg",
+    "title": "File:Asbestos warning label.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "MetalFusion81",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "family": "compliance"
   }
 ]
