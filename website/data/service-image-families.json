@@ -166,7 +166,8 @@
    "windows-doors"
   ],
   "electrical": [
-   "electrical"
+   "electrical",
+   "electrical-photo"
   ],
   "electrics-first-fix": [
    "electrics-first-fix"
@@ -178,16 +179,20 @@
    "ev-chargers"
   ],
   "fire-alarms": [
-   "fire-alarms"
+   "fire-alarms",
+   "fire-alarms-photo"
   ],
   "fire-risk-assessments": [
-   "fire-risk-assessments"
+   "fire-risk-assessments",
+   "fire-risk-assessments-photo"
   ],
   "emergency-lighting": [
-   "emergency-lighting"
+   "emergency-lighting",
+   "emergency-lighting-photo"
   ],
   "aov-air-handling": [
-   "aov-air-handling"
+   "aov-air-handling",
+   "aov-air-handling-photo"
   ],
   "fire-doors": [
    "fire-doors"
@@ -223,28 +228,36 @@
    "evacuation-alerts"
   ],
   "cctv": [
-   "cctv"
+   "cctv",
+   "cctv-photo"
   ],
   "access-control": [
-   "access-control"
+   "access-control",
+   "access-control-photo"
   ],
   "door-entry": [
-   "door-entry"
+   "door-entry",
+   "door-entry-photo"
   ],
   "intercoms": [
-   "intercoms"
+   "intercoms",
+   "intercoms-photo"
   ],
   "intruder-alarm": [
-   "intruder-alarm"
+   "intruder-alarm",
+   "intruder-alarm-photo"
   ],
   "barriers": [
-   "barriers"
+   "barriers",
+   "barriers-photo"
   ],
   "nurse-call": [
-   "nurse-call"
+   "nurse-call",
+   "nurse-call-photo"
   ],
   "gas-systems": [
-   "gas-systems"
+   "gas-systems",
+   "gas-systems-photo"
   ],
   "heating": [
    "heating"

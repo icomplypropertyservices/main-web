@@ -78,7 +78,7 @@ function icomplyRenderProductPdp(string $pathPrefix = '/products/product'): void
         (string)(($product['id'] ?? '') . ' ' . $handle . ' ' . $title)
     );
     // QM #158: the same product lives at /shop/products/ and /products/product/; one canonical (never noindex).
-    $canonicalPath = '/shop/products/' . rawurlencode($handle);
+    $canonicalPath = '/products/product/' . rawurlencode($handle);
     $isShopCopy = str_starts_with('/' . trim($pathPrefix, '/'), '/shop');
     $canonicalUrl = url($canonicalPath);
     $shopHref = shopifyStoreUrl();
