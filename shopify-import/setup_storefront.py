@@ -27,7 +27,7 @@ MENU_MANUAL_PATH = ROOT / "MENU_MANUAL.md"
 
 # Shop contact defaults (Stockport, UK)
 SHOP_PHONE = "07517806082"
-SHOP_EMAIL = "sales@icomplysupplys.co.uk"  # best-effort; only set if API allows
+SHOP_EMAIL = "icomplypropertyservices@gmail.com"  # best-effort; only set if API allows
 SHOP_ADDRESS = {
     "city": "Stockport",
     "province": "Greater Manchester",

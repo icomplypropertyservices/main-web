@@ -22,7 +22,7 @@ API prep already done (or re-runnable via `setup_google_services.py`):
 Before connecting Google services:
 
 1. **Shopify Admin access** — Owner or staff with permission for Sales channels, Online Store, and Settings → Payments / Apps.
-2. **Google account** — Prefer a dedicated business account (e.g. `sales@icomplysupplys.co.uk` or a Google Workspace user), not a personal-only account if possible.
+2. **Google account** — Prefer a dedicated business account (e.g. `icomplypropertyservices@gmail.com` or a Google Workspace user), not a personal-only account if possible.
 3. **Business details ready**
    - Legal business name
    - UK registered address / trading address (Stockport area)
